@@ -1,0 +1,7 @@
+D:\ProjectGenesis\ProjectGenesis1\ProjectGenesis\bin\Release\ProjectGenesis.dll
+D:\ProjectGenesis\ProjectGenesis1\ProjectGenesis\bin\Release\ProjectGenesis.pdb
+D:\ProjectGenesis\ProjectGenesis1\ProjectGenesis\obj\Release\ProjectGenesis.csproj.CoreCompileInputs.cache
+D:\ProjectGenesis\ProjectGenesis1\ProjectGenesis\obj\Release\ProjectGenesis.dll
+D:\ProjectGenesis\ProjectGenesis1\ProjectGenesis\obj\Release\ProjectGenesis.pdb
+C:\Users\HiddenSummer\Desktop\ProjectGenesis.dll
+C:\Users\HiddenSummer\Desktop\ProjectGenesis.pdb
