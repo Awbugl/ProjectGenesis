@@ -96,6 +96,7 @@
     <Compile Include="DeepCopyHelper.cs" />
     <Compile Include="ERecipeType.cs" />
     <Compile Include="ItemData.cs" />
+    <Compile Include="JsonHelper.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="Patches\MultiProductionPatches.cs" />
     <Compile Include="Patches\OceanDischargePatches.cs" />
@@ -105,8 +106,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include=".editorconfig" />
-    <EmbeddedResource Include="temp" />
-    <EmbeddedResource Include="genesistexpack" />
+    <EmbeddedResource Include="items" />
+    <EmbeddedResource Include="recipes" />
+    <EmbeddedResource Include="techs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Newtonsoft.Json.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
