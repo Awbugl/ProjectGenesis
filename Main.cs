@@ -5,6 +5,7 @@ using BepInEx;
 using UnityEngine;
 using UnityEngine.UI;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 using CommonAPI;
 using CommonAPI.Systems;
@@ -51,12 +52,12 @@ namespace ProjectGenesis
         {
             PreFix();
 
-            ref var techs = ref AccessTools.StaticFieldRefAccess<TechProtoSet>(typeof(LDB), "_techs");
-            ref var items = ref AccessTools.StaticFieldRefAccess<ItemProtoSet>(typeof(LDB), "_items");
-            ref var recipes = ref AccessTools.StaticFieldRefAccess<RecipeProtoSet>(typeof(LDB), "_recipes");
-            techs.Init(0);
-            items.Init(0);
-            recipes.Init(0);
+            // ref var techs = ref AccessTools.StaticFieldRefAccess<TechProtoSet>(typeof(LDB), "_techs");
+            // ref var items = ref AccessTools.StaticFieldRefAccess<ItemProtoSet>(typeof(LDB), "_items");
+            // ref var recipes = ref AccessTools.StaticFieldRefAccess<RecipeProtoSet>(typeof(LDB), "_recipes");
+            // techs.Init(0);
+            // items.Init(0);
+            // recipes.Init(0);
 
             var ItemProtos = new Dictionary<int, ItemProto>();
             var RecipeProtos = new Dictionary<int, RecipeProto>();
@@ -64,121 +65,211 @@ namespace ProjectGenesis
 
             foreach (var techjson in JsonHelper.TechProtos())
             {
-                var i = new TechProto()
-                        {
-                            ID = techjson.ID,
-                            Name = techjson.Name,
-                            Desc = techjson.Desc,
-                            Conclusion = techjson.Conclusion,
-                            Published = techjson.Published,
-                            Level = techjson.Level,
-                            MaxLevel = techjson.MaxLevel,
-                            LevelCoef1 = techjson.LevelCoef1,
-                            LevelCoef2 = techjson.LevelCoef2,
-                            IconPath = techjson.IconPath,
-                            IsLabTech = techjson.IsLabTech,
-                            PreTechs = techjson.PreTechs ?? new int[] { },
-                            PreTechsImplicit = techjson.PreTechsImplicit ?? new int[] { },
-                            PreTechsMax = techjson.PreTechsMax,
-                            Items = techjson.Items ?? new int[] { },
-                            ItemPoints = techjson.ItemPoints ?? new int[] { },
-                            HashNeeded = techjson.HashNeeded,
-                            UnlockRecipes = techjson.UnlockRecipes ?? new int[] { },
-                            UnlockFunctions = techjson.UnlockFunctions ?? new int[] { },
-                            UnlockValues = techjson.UnlockValues ?? new double[] { },
-                            AddItems = techjson.AddItems ?? new int[] { },
-                            AddItemCounts = techjson.AddItemCounts ?? new int[] { },
-                            Position = new Vector2(techjson.Position[0], techjson.Position[1])
-                        };
-                TechProtos.Add(i.ID, i);
-                LDBTool.PreAddProto(i);
+                var proto = LDB.techs.Exist(techjson.ID) ? LDB.techs.Select(techjson.ID) : null;
+
+                if (proto == null)
+                {
+                    proto = new TechProto()
+                    {
+                        ID = techjson.ID,
+                        Name = techjson.Name,
+                        Desc = techjson.Desc,
+                        Conclusion = techjson.Conclusion,
+                        Published = techjson.Published,
+                        Level = techjson.Level,
+                        MaxLevel = techjson.MaxLevel,
+                        LevelCoef1 = techjson.LevelCoef1,
+                        LevelCoef2 = techjson.LevelCoef2,
+                        IconPath = techjson.IconPath,
+                        IsLabTech = techjson.IsLabTech,
+                        PreTechs = techjson.PreTechs ?? new int[] { },
+                        PreTechsImplicit = techjson.PreTechsImplicit ?? new int[] { },
+                        PreTechsMax = techjson.PreTechsMax,
+                        Items = techjson.Items ?? new int[] { },
+                        ItemPoints = techjson.ItemPoints ?? new int[] { },
+                        HashNeeded = techjson.HashNeeded,
+                        UnlockRecipes = techjson.UnlockRecipes ?? new int[] { },
+                        unlockRecipeArray = new RecipeProto[] { },
+                        UnlockFunctions = techjson.UnlockFunctions ?? new int[] { },
+                        UnlockValues = techjson.UnlockValues ?? new double[] { },
+                        AddItems = techjson.AddItems ?? new int[] { },
+                        AddItemCounts = techjson.AddItemCounts ?? new int[] { },
+                        Position = new Vector2(techjson.Position[0], techjson.Position[1]),
+                    };
+                    LDBTool.PreAddProto(proto);
+                } 
+                else
+                {
+                    proto.ID = techjson.ID;
+                    proto.Name = techjson.Name;
+                    proto.Desc = techjson.Desc;
+                    proto.Conclusion = techjson.Conclusion;
+                    proto.Published = techjson.Published;
+                    proto.Level = techjson.Level;
+                    proto.MaxLevel = techjson.MaxLevel;
+                    proto.LevelCoef1 = techjson.LevelCoef1;
+                    proto.LevelCoef2 = techjson.LevelCoef2;
+                    proto.IconPath = techjson.IconPath;
+                    proto.IsLabTech = techjson.IsLabTech;
+                    proto.PreTechs = techjson.PreTechs ?? new int[] { };
+                    proto.PreTechsImplicit = techjson.PreTechsImplicit ?? new int[] { };
+                    proto.PreTechsMax = techjson.PreTechsMax;
+                    proto.Items = techjson.Items ?? new int[] { };
+                    proto.ItemPoints = techjson.ItemPoints ?? new int[] { };
+                    proto.HashNeeded = techjson.HashNeeded;
+                    proto.UnlockRecipes = techjson.UnlockRecipes ?? new int[] { };
+                    proto.unlockRecipeArray = new RecipeProto[] { };
+                    proto.UnlockFunctions = techjson.UnlockFunctions ?? new int[] { };
+                    proto.UnlockValues = techjson.UnlockValues ?? new double[] { };
+                    proto.AddItems = techjson.AddItems ?? new int[] { };
+                    proto.AddItemCounts = techjson.AddItemCounts ?? new int[] { };
+                    proto.Position = new Vector2(techjson.Position[0], techjson.Position[1]);
+                }
+                TechProtos.Add(proto.ID, proto);
             }
 
             foreach (var itemjson in JsonHelper.ItemProtos())
             {
-                var i = new ItemProto()
-                        {
-                            ID = itemjson.ID,
-                            Name = itemjson.Name,
-                            Description = itemjson.Description,
-                            IconPath = itemjson.IconPath,
-                            GridIndex = itemjson.GridIndex,
-                            StackSize = itemjson.StackSize,
-                            preTech = TechProtos[itemjson.PreTech],
-                            FuelType = itemjson.FuelType,
-                            HeatValue = itemjson.HeatValue,
-                            ReactorInc = itemjson.ReactorInc,
-                            DescFields = itemjson.DescFields ?? new int[] { },
-                            IsFluid = itemjson.IsFluid,
-                            Type = (EItemType)itemjson.Type,
-                            SubID = itemjson.SubID,
-                            MiningFrom = itemjson.MiningFrom,
-                            ProduceFrom = itemjson.ProduceFrom,
-                            Grade = itemjson.Grade,
-                            Upgrades = itemjson.Upgrades ?? new int[] { },
-                            IsEntity = itemjson.IsEntity,
-                            CanBuild = itemjson.CanBuild,
-                            BuildInGas = itemjson.BuildInGas,
-                            ModelIndex = itemjson.ModelIndex,
-                            ModelCount = itemjson.ModelCount,
-                            HpMax = itemjson.HpMax,
-                            Ability = itemjson.Ability,
-                            Potential = itemjson.Potential,
-                            BuildIndex = itemjson.BuildIndex,
-                            BuildMode = itemjson.BuildMode,
-                            UnlockKey = itemjson.UnlockKey,
-                            PreTechOverride = itemjson.PreTechOverride,
-                            Productive = itemjson.Productive,
-                            MechaMaterialID = itemjson.MechaMaterialID
-                        };
-                ItemProtos.Add(i.ID, i);
-                LDBTool.PreAddProto(i);
+                var proto = LDB.items.Exist(itemjson.ID) ? LDB.items.Select(itemjson.ID) : null;
+                
+                if (proto == null)
+                {
+                    proto = new ItemProto()
+                    {
+                        ID = itemjson.ID,
+                        Name = itemjson.Name,
+                        Description = itemjson.Description,
+                        IconPath = itemjson.IconPath,
+                        GridIndex = itemjson.GridIndex,
+                        StackSize = itemjson.StackSize,
+                        preTech = TechProtos[itemjson.PreTech],
+                        FuelType = itemjson.FuelType,
+                        HeatValue = itemjson.HeatValue,
+                        ReactorInc = itemjson.ReactorInc,
+                        DescFields = itemjson.DescFields ?? new int[] { },
+                        IsFluid = itemjson.IsFluid,
+                        Type = (EItemType)itemjson.Type,
+                        SubID = itemjson.SubID,
+                        MiningFrom = itemjson.MiningFrom,
+                        ProduceFrom = itemjson.ProduceFrom,
+                        Grade = itemjson.Grade,
+                        Upgrades = itemjson.Upgrades ?? new int[] { },
+                        IsEntity = itemjson.IsEntity,
+                        CanBuild = itemjson.CanBuild,
+                        BuildInGas = itemjson.BuildInGas,
+                        ModelIndex = itemjson.ModelIndex,
+                        ModelCount = itemjson.ModelCount,
+                        HpMax = itemjson.HpMax,
+                        Ability = itemjson.Ability,
+                        Potential = itemjson.Potential,
+                        BuildIndex = itemjson.BuildIndex,
+                        BuildMode = itemjson.BuildMode,
+                        UnlockKey = itemjson.UnlockKey,
+                        PreTechOverride = itemjson.PreTechOverride,
+                        Productive = itemjson.Productive,
+                        MechaMaterialID = itemjson.MechaMaterialID,
+                        prefabDesc = PrefabDesc.none,
+                    };
+                    LDBTool.PreAddProto(proto);
+                }
+                else
+                {
+                    proto.ID = itemjson.ID;
+                    proto.Name = itemjson.Name;
+                    proto.Description = itemjson.Description;
+                    proto.IconPath = itemjson.IconPath;
+                    proto.GridIndex = itemjson.GridIndex;
+                    proto.StackSize = itemjson.StackSize;
+                    proto.preTech = TechProtos[itemjson.PreTech];
+                    proto.FuelType = itemjson.FuelType;
+                    proto.HeatValue = itemjson.HeatValue;
+                    proto.ReactorInc = itemjson.ReactorInc;
+                    proto.DescFields = itemjson.DescFields ?? new int[] { };
+                    proto.IsFluid = itemjson.IsFluid;
+                    proto.Type = (EItemType)itemjson.Type;
+                    proto.SubID = itemjson.SubID;
+                    proto.MiningFrom = itemjson.MiningFrom;
+                    proto.ProduceFrom = itemjson.ProduceFrom;
+                    proto.Grade = itemjson.Grade;
+                    proto.Upgrades = itemjson.Upgrades ?? new int[] { };
+                    proto.IsEntity = itemjson.IsEntity;
+                    proto.CanBuild = itemjson.CanBuild;
+                    proto.BuildInGas = itemjson.BuildInGas;
+                    proto.ModelIndex = itemjson.ModelIndex;
+                    proto.ModelCount = itemjson.ModelCount;
+                    proto.HpMax = itemjson.HpMax;
+                    proto.Ability = itemjson.Ability;
+                    proto.Potential = itemjson.Potential;
+                    proto.BuildIndex = itemjson.BuildIndex;
+                    proto.BuildMode = itemjson.BuildMode;
+                    proto.UnlockKey = itemjson.UnlockKey;
+                    proto.PreTechOverride = itemjson.PreTechOverride;
+                    proto.Productive = itemjson.Productive;
+                    proto.MechaMaterialID = itemjson.MechaMaterialID;
+                }
+                ItemProtos.Add(proto.ID, proto); 
             }
 
             foreach (var recipeJson in JsonHelper.RecipeProtos())
             {
-                var i = new RecipeProto()
-                        {
-                            ID = recipeJson.ID,
-                            Name = recipeJson.Name,
-                            Description = recipeJson.Description,
-                            IconPath = recipeJson.IconPath,
-                            GridIndex = recipeJson.GridIndex,
-                            Type = (ERecipeType_1)recipeJson.Type,
-                            Handcraft = recipeJson.Handcraft,
-                            TimeSpend = recipeJson.Time,
-                            NonProductive = recipeJson.NonProductive,
-                            preTech = TechProtos[recipeJson.PreTech],
-                            Explicit = recipeJson.Explicit,
-                            Items = recipeJson.Input ?? new int[] { },
-                            ItemCounts = recipeJson.InCounts ?? new int[] { },
-                            Results = recipeJson.Output ?? new int[] { },
-                            ResultCounts = recipeJson.OutCounts ?? new int[] { }
-                        };
-                RecipeProtos.Add(i.ID, i);
-                LDBTool.PreAddProto(i);
+                var proto = LDB.recipes.Exist(recipeJson.ID) ? LDB.recipes.Select(recipeJson.ID) : null;
+                if (proto == null)
+                {
+                    proto = new RecipeProto()
+                    {
+                        ID = recipeJson.ID,
+                        Name = recipeJson.Name,
+                        Description = recipeJson.Description,
+                        IconPath = recipeJson.IconPath,
+                        GridIndex = recipeJson.GridIndex,
+                        Type = (ERecipeType_1)recipeJson.Type,
+                        Handcraft = recipeJson.Handcraft,
+                        TimeSpend = recipeJson.Time,
+                        NonProductive = recipeJson.NonProductive,
+                        preTech = TechProtos[recipeJson.PreTech],
+                        Explicit = recipeJson.Explicit,
+                        Items = recipeJson.Input ?? new int[] { },
+                        ItemCounts = recipeJson.InCounts ?? new int[] { },
+                        Results = recipeJson.Output ?? new int[] { },
+                        ResultCounts = recipeJson.OutCounts ?? new int[] { }
+                    };
+                    LDBTool.PreAddProto(proto);
+                }
+                else
+                {
+                    proto.ID = recipeJson.ID;
+                    proto.Name = recipeJson.Name;
+                    proto.Description = recipeJson.Description;
+                    proto.IconPath = recipeJson.IconPath;
+                    proto.GridIndex = recipeJson.GridIndex;
+                    proto.Type = (ERecipeType_1)recipeJson.Type;
+                    proto.Handcraft = recipeJson.Handcraft;
+                    proto.TimeSpend = recipeJson.Time;
+                    proto.NonProductive = recipeJson.NonProductive;
+                    proto.preTech = TechProtos[recipeJson.PreTech];
+                    proto.Explicit = recipeJson.Explicit;
+                    proto.Items = recipeJson.Input ?? new int[] { };
+                    proto.ItemCounts = recipeJson.InCounts ?? new int[] { };
+                    proto.Results = recipeJson.Output ?? new int[] { };
+                    proto.ResultCounts = recipeJson.OutCounts ?? new int[] { };
+                }
+                RecipeProtos.Add(proto.ID, proto);
             }
 
             //techs.dataArray = new List<TechProto>(TechProtos.Values).ToArray();
             //items.dataArray = new List<ItemProto>(ItemProtos.Values).ToArray();
             //recipes.dataArray = new List<RecipeProto>(RecipeProtos.Values).ToArray();
 
-            //foreach (var tech in TechProtos.Values)
-            //{
-            //    tech.Preload();
-            //    tech.Preload2();
-            //    LDBTool.PreAddProto(tech);
-            //}
 
-            //LDB.techs.OnAfterDeserialize();
+
 
             //var index = 0;
-            foreach (var item in ItemProtos.Values)
-            {
-                item.prefabDesc = PrefabDesc.none;
+            // foreach (var item in ItemProtos.Values)
+            // {
+             //   item.prefabDesc = PrefabDesc.none;
                 //item.Preload(index++);
                 //LDBTool.PreAddProto(item);
-            }
+            //}
 
             //foreach (var recipe in RecipeProtos.Values)
             //{
@@ -213,6 +304,11 @@ namespace ProjectGenesis
             LDB.milestones.Select(9).Name = "钨";
             LDB.milestones.Select(9).defaultDesc = "你采集了钨矿,宇宙珍奇之一.它是一种用途广泛的新材料.";
             LDB.milestones.Select(9).DefaultDesc = "你采集了钨矿,宇宙珍奇之一.它是一种用途广泛的新材料.";
+
+            LDB.items.Select(物品.单极磁石).ID = 6980;
+
+            LDB.items.Select(物品.硫酸).ID = 6998;
+            LDB.items.OnAfterDeserialize();
         }
 
         public void PostFix(ref Dictionary<int, ItemProto> itemProtos)
@@ -266,6 +362,24 @@ namespace ProjectGenesis
 
         private void PostAddDataAction()
         {
+
+            foreach (var proto in LDB.techs.dataArray)
+            {
+                proto.Preload();
+            }
+            for (var i = 0; i < LDB.items.dataArray.Length; ++i)
+            {
+                LDB.items.dataArray[i].Preload(i);
+            }
+            for (var i = 0; i < LDB.recipes.dataArray.Length; ++i)
+            {
+                LDB.recipes.dataArray[i].Preload(i);
+            }
+            foreach (var proto in LDB.techs.dataArray)
+            {
+                proto.Preload2();
+            }
+
             ItemProto.InitFluids();
             ItemProto.InitItemIds();
             ItemProto.InitFuelNeeds();
