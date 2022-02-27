@@ -9192,13 +9192,13 @@
     "ID": 1801,
     "Name": "基础机械组件",
     "Desc": "开发日志#1\n嗯……现在是2022年，一月三十日，大年二十九的凌晨三点半。\n我不知道我是怀着怎样的心态写下这个企划。\n我只希望我能做到心目中的最好。\n凌晨四点。\n我给自己定下的目标是，二月底之前，一个月。\n我希望自己能做到。\n晚安。",
-    "Conclusion": "半导体材料结果",
+    "Conclusion": "",
     "Published": true,
     "Level": 0,
     "MaxLevel": 0,
     "LevelCoef1": 0,
     "LevelCoef2": 0,
-    "IconPath": "Icons/Tech/1311",
+    "IconPath": "Assets/texpack/基础组件",
     "IsLabTech": true,
     "PreTechs": [
       1001
@@ -9215,7 +9215,6 @@
     ],
     "HashNeeded": 1800,
     "UnlockRecipes": [
-      641,
       641
     ],
     "UnlockFunctions": [
@@ -9239,13 +9238,13 @@
     "ID": 1802,
     "Name": "先进机械组件",
     "Desc": "开发日志#2\n2022.01.30，晚上八点零三分。\n我感觉自己受到了双重打击……api作者做出了我梦寐以求的东西，他的源码我却看不懂。\n我还能坚持下去吗？这个企划会胎死腹中吗？\n……………………\n好吧，也许会。我很不愿意这么说……但恐怕这次，我只能做出一个半成品了。\n希望你不会责备我。",
-    "Conclusion": "半导体材料结果",
+    "Conclusion": "",
     "Published": true,
     "Level": 0,
     "MaxLevel": 0,
     "LevelCoef1": 0,
     "LevelCoef2": 0,
-    "IconPath": "Icons/Tech/1311",
+    "IconPath": "Assets/texpack/先进组件",
     "IsLabTech": true,
     "PreTechs": [
       1801
@@ -9267,8 +9266,7 @@
     "HashNeeded": 36000,
     "UnlockRecipes": [
       642,
-      821,
-      642
+      821
     ],
     "UnlockFunctions": [
 
@@ -9291,13 +9289,13 @@
     "ID": 1803,
     "Name": "尖端机械组件",
     "Desc": "开发日志#3\n咕了好久终于正式启动了，图标，科技，新物品……\n现在是2022年，2月1日，大年初一。\n我又有了一个新的想法，不过要回去看看另一套源码才能决定能不能实现……我想改变火箭的结构点数。\n我能成功吗？\n血的教训。\n不要，TMD，犯，低级错误。还有，一定要debug。\n（死目）\n哦对，结构点数没改成。\n啊对，记得回去加一个配方类型的修改方法。",
-    "Conclusion": "半导体材料结果",
+    "Conclusion": "",
     "Published": true,
     "Level": 0,
     "MaxLevel": 0,
     "LevelCoef1": 0,
     "LevelCoef2": 0,
-    "IconPath": "Icons/Tech/1311",
+    "IconPath": "Assets/texpack/尖端组件",
     "IsLabTech": true,
     "PreTechs": [
       1802
@@ -9319,8 +9317,7 @@
     "HashNeeded": 72000,
     "UnlockRecipes": [
       643,
-      822,
-      643
+      822
     ],
     "UnlockFunctions": [
 
@@ -9343,13 +9340,13 @@
     "ID": 1804,
     "Name": "钨强化金属",
     "Desc": "开发日志#4\n偏偏这个时候出现了一个更多页面的mod\n那自然是……拿来主义）\n成为我的前置吧！（笑）\n既然这样，那这个游戏就有更多的可能性了……钛晶圆，钨晶圆，功率IC，电路基板，化工……\n2022.02.03，现在是大年初三晚上十点五十分。化工线基本完成，接下来就是烦人的代码环节……\n顺便把科技树图标做完了。\n今晚应该又要熬夜吧。",
-    "Conclusion": "半导体材料结果",
+    "Conclusion": "",
     "Published": true,
     "Level": 0,
     "MaxLevel": 0,
     "LevelCoef1": 0,
     "LevelCoef2": 0,
-    "IconPath": "Icons/Tech/1311",
+    "IconPath": "Assets/texpack/钨钢",
     "IsLabTech": true,
     "PreTechs": [
       1414
@@ -9370,7 +9367,6 @@
     ],
     "HashNeeded": 144000,
     "UnlockRecipes": [
-      776,
       776
     ],
     "UnlockFunctions": [
@@ -9394,13 +9390,13 @@
     "ID": 1805,
     "Name": "电路基板",
     "Desc": "开发日志#5\n……坏事了，unity好像不支持中文名诶？！\n我需要，做个小小的实验……\n顺便，现在是2022.02.04，大年初四,凌晨零点二十分。\n……凌晨一点十三分，我好像又踩了一个坑。\n我希望这是个坑，因为那样我就不用继续debug了。",
-    "Conclusion": "半导体材料结果",
+    "Conclusion": "",
     "Published": true,
     "Level": 0,
     "MaxLevel": 0,
     "LevelCoef1": 0,
     "LevelCoef2": 0,
-    "IconPath": "Icons/Tech/1311",
+    "IconPath": "Assets/texpack/电路基板",
     "IsLabTech": true,
     "PreTechs": [
       1001
@@ -9417,12 +9413,6 @@
     ],
     "HashNeeded": 18000,
     "UnlockRecipes": [
-      751,
-      752,
-      753,
-      754,
-      755,
-      756,
       751,
       752,
       753,
@@ -9451,13 +9441,13 @@
     "ID": 1806,
     "Name": "IC晶片",
     "Desc": "开发日志#6\n现在是，2022.02.04，星期五，凌晨一点四十六分。\n我感觉我所学不多且不成体系的编程知识在此刻受到了严重冲击。\n写下上一条日志的时候，我的工程文件不管怎么编译，修改，都在报错。\n我debug了将近一个小时，始终无果。\n就在刚才，我第不知道多少次重新编译源码——\n嘿，您猜怎么着？\n我的代码跑起来辣！\n草。",
-    "Conclusion": "半导体材料结果",
+    "Conclusion": "",
     "Published": true,
     "Level": 0,
     "MaxLevel": 0,
     "LevelCoef1": 0,
     "LevelCoef2": 0,
-    "IconPath": "Icons/Tech/1311",
+    "IconPath": "Assets/texpack/电路板",
     "IsLabTech": true,
     "PreTechs": [
       1805
@@ -9484,16 +9474,7 @@
       763,
       764,
       765,
-      766,
-      761,
-      762,
-      763,
-      764,
-      765,
-      766,
-      777,
-      778,
-      779
+      766
     ],
     "UnlockFunctions": [
 
@@ -9516,13 +9497,13 @@
     "ID": 1807,
     "Name": "虚拟技术革新",
     "Desc": "开发日志#7\n现在是，2022.02.04，下午两点零八分。\n化工线的第一个配方终于成功写入。\n这是第一步，但绝不是最后一步。\n……又踩了个坑。\n戴森球的配方逻辑是，配方会继承第一个产物的信息，包括名字介绍这些。\n当然也不会显示副产物。\n想要修改必须使用公式配方作为元数据。\n草。",
-    "Conclusion": "半导体材料结果",
+    "Conclusion": "",
     "Published": true,
     "Level": 0,
     "MaxLevel": 0,
     "LevelCoef1": 0,
     "LevelCoef2": 0,
-    "IconPath": "Icons/Tech/1311",
+    "IconPath": "Assets/texpack/虚拟技术革新",
     "IsLabTech": true,
     "PreTechs": [
       1303
@@ -9545,9 +9526,6 @@
     ],
     "HashNeeded": 144000,
     "UnlockRecipes": [
-      791,
-      792,
-      793,
       791,
       792,
       793,
@@ -9576,13 +9554,13 @@
     "ID": 1808,
     "Name": "生物神经技术",
     "Desc": "开发日志#8\n现在是，2022.02.04，晚上七点零四分。\n化工线做到一半发现一点问题。\n稍微思考了一下，我决定还是自己打开gtnh……然后把化工线重新捋一遍。\n因为群友提醒了我，虽然木头是不可再生的……\n——但是有个东西，叫煤焦油。",
-    "Conclusion": "半导体材料结果",
+    "Conclusion": "",
     "Published": true,
     "Level": 0,
     "MaxLevel": 0,
     "LevelCoef1": 0,
     "LevelCoef2": 0,
-    "IconPath": "Icons/Tech/1311",
+    "IconPath": "Assets/texpack/生物神经",
     "IsLabTech": true,
     "PreTechs": [
       1133
@@ -9605,7 +9583,6 @@
     ],
     "HashNeeded": 144000,
     "UnlockRecipes": [
-      794,
       794,
       780
     ],
@@ -9630,13 +9607,13 @@
     "ID": 1809,
     "Name": "超级纳米计算机",
     "Desc": "开发日志#9\n现在是，2022.02.05，上午十点三十九分。\n做完彻底完成了化工线，只剩两个最终产物了，顺便把电路基板和IC晶片的配方做了一下。\n距离物品系统实装又近了一步。\n现在是，2022.02.05，下午五点五十六分。\n又踩了个坑。\n戴森球的配方上限是825……怪。",
-    "Conclusion": "半导体材料结果",
+    "Conclusion": "",
     "Published": true,
     "Level": 0,
     "MaxLevel": 0,
     "LevelCoef1": 0,
     "LevelCoef2": 0,
-    "IconPath": "Icons/Tech/1311",
+    "IconPath": "Assets/texpack/主机科技",
     "IsLabTech": true,
     "PreTechs": [
       1807
@@ -9659,7 +9636,6 @@
     ],
     "HashNeeded": 144000,
     "UnlockRecipes": [
-      795,
       795
     ],
     "UnlockFunctions": [
@@ -9683,13 +9659,13 @@
     "ID": 1810,
     "Name": "生物活性计算机",
     "Desc": "开发日志#10\n现在是，2022.02.06，凌晨零点五十七分。\n现实里遇到一些胃疼的事，开发进度可能会延缓一点。\n顺便给化工线加了点新东西。\n物品已经彻底完成，接下来就是覆写配方和科技树。\n这将是一个漫长的过程。\n现在是，2022.02.06，凌晨两点零三分。\n有一小部分配方出现了莫名其妙的数组越界现象，但是我找不到问题在哪。\n似乎并没有影响到游戏。",
-    "Conclusion": "半导体材料结果",
+    "Conclusion": "",
     "Published": true,
     "Level": 0,
     "MaxLevel": 0,
     "LevelCoef1": 0,
     "LevelCoef2": 0,
-    "IconPath": "Icons/Tech/1311",
+    "IconPath": "Assets/texpack/主机科技",
     "IsLabTech": true,
     "PreTechs": [
       1808
@@ -9712,7 +9688,6 @@
     ],
     "HashNeeded": 288000,
     "UnlockRecipes": [
-      569,
       569
     ],
     "UnlockFunctions": [
@@ -9736,13 +9711,13 @@
     "ID": 1811,
     "Name": "钨强化玻璃",
     "Desc": "开发日志#11\n……凌晨两点二十三分。\n它莫名其妙被我修好了。\n程序，很奇妙罢）\n凌晨两点二十九分。\n我找到制造逻辑了，芜湖~\n是makes。\n现在是，2022.02.06，下午两点二十⑨分。\n我突然有个想法。\n我不能添加新矿物，但是原版有几个没啥大用的旧矿物……\n嘿嘿嘿。",
-    "Conclusion": "半导体材料结果",
+    "Conclusion": "",
     "Published": true,
     "Level": 0,
     "MaxLevel": 0,
     "LevelCoef1": 0,
     "LevelCoef2": 0,
-    "IconPath": "Icons/Tech/1311",
+    "IconPath": "Assets/texpack/玻璃科技",
     "IsLabTech": true,
     "PreTechs": [
       1126
@@ -9763,7 +9738,6 @@
     ],
     "HashNeeded": 144000,
     "UnlockRecipes": [
-      775,
       775
     ],
     "UnlockFunctions": [
@@ -9787,13 +9761,13 @@
     "ID": 1812,
     "Name": "先进精炼技术",
     "Desc": "开发日志#12\n……凌晨两点二十三分。\n它莫名其妙被我修好了。\n程序，很奇妙罢）\n凌晨两点二十九分。\n我找到制造逻辑了，芜湖~\n是makes。\n现在是，2022.02.06，下午两点二十⑨分。\n我突然有个想法。\n我不能添加新矿物，但是原版有几个没啥大用的旧矿物……\n嘿嘿嘿。",
-    "Conclusion": "半导体材料结果",
+    "Conclusion": "",
     "Published": true,
     "Level": 0,
     "MaxLevel": 0,
     "LevelCoef1": 0,
     "LevelCoef2": 0,
-    "IconPath": "Icons/Tech/1311",
+    "IconPath": "Assets/texpack/精炼科技",
     "IsLabTech": true,
     "PreTechs": [
       1102
@@ -9813,9 +9787,6 @@
       702,
       713,
       701,
-      701,
-      702,
-      713,
       501,
       502,
       503,
@@ -9848,13 +9819,13 @@
     "ID": 1813,
     "Name": "海洋排污",
     "Desc": "这听起来好像不太环保....",
-    "Conclusion": "半导体材料结果",
+    "Conclusion": "",
     "Published": true,
     "Level": 0,
     "MaxLevel": 0,
     "LevelCoef1": 0,
     "LevelCoef2": 0,
-    "IconPath": "Icons/Tech/1311",
+    "IconPath": "Icons/Tech/1120",
     "IsLabTech": true,
     "PreTechs": [
       1103
@@ -9866,18 +9837,14 @@
     "Items": [
       6001,
       6002,
-      6003,
-      6004,
-      6005
+      6003
     ],
     "ItemPoints": [
       20,
       20,
-      20,
-      20,
       20
     ],
-    "HashNeeded": 288000,
+    "HashNeeded": 144000,
     "UnlockRecipes": [
 
     ],
@@ -9902,16 +9869,16 @@
     "ID": 1814,
     "Name": "化工技术革新",
     "Desc": "\"说真的,我一直很好奇为什么这样就能提升机器效率....\"",
-    "Conclusion": "半导体材料结果",
+    "Conclusion": "",
     "Published": true,
     "Level": 0,
     "MaxLevel": 0,
     "LevelCoef1": 0,
     "LevelCoef2": 0,
-    "IconPath": "Icons/Tech/1311",
+    "IconPath": "Assets/texpack/化工科技",
     "IsLabTech": true,
     "PreTechs": [
-      1813
+      1815
     ],
     "PreTechsImplicit": [
 
@@ -9932,6 +9899,58 @@
       20
     ],
     "HashNeeded": 576000,
+    "UnlockRecipes": [
+
+    ],
+    "UnlockFunctions": [
+
+    ],
+    "UnlockValues": [
+
+    ],
+    "AddItems": [
+
+    ],
+    "AddItemCounts": [
+
+    ],
+    "Position": [
+      37.0,
+      -31.0
+    ]
+  },
+  {
+    "ID": 1815,
+    "Name": "海洋排污2",
+    "Desc": "这听起来更不环保了...",
+    "Conclusion": "",
+    "Published": true,
+    "Level": 0,
+    "MaxLevel": 0,
+    "LevelCoef1": 0,
+    "LevelCoef2": 0,
+    "IconPath": "Icons/Tech/1120",
+    "IsLabTech": true,
+    "PreTechs": [
+      1813
+    ],
+    "PreTechsImplicit": [
+
+    ],
+    "PreTechsMax": false,
+    "Items": [
+      6001,
+      6002,
+      6003,
+      6004
+    ],
+    "ItemPoints": [
+      20,
+      20,
+      20,
+      20
+    ],
+    "HashNeeded": 288000,
     "UnlockRecipes": [
 
     ],
