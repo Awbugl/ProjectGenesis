@@ -141,33 +141,13 @@ namespace ProjectGenesis
                 }
             }
 
-            var type_9 = AssemblerRecipeSystem.RegisterRecipeType("电路蚀刻");
-            var type_10 = AssemblerRecipeSystem.RegisterRecipeType("高精度加工");
-
             foreach (var recipeJson in JsonHelper.RecipeProtos())
             {
                 if (!LDB.recipes.Exist(recipeJson.ID))
                 {
-                    RecipeProto proto;
-                    if (recipeJson.Type == 9 || recipeJson.Type == 10)
-                    {
-                        proto = ProtoRegistry.RegisterRecipe(recipeJson.ID, recipeJson.Type == 9
-                                                                 ? type_9
-                                                                 : type_10, recipeJson.Time,
-                                                             recipeJson.Input, recipeJson.InCounts, recipeJson.Output ?? new int[] { },
-                                                             recipeJson.OutCounts ?? new int[] { }, recipeJson.Description,
-                                                             recipeJson.PreTech, recipeJson.GridIndex, recipeJson.Name,
-                                                             recipeJson.IconPath);
-                    } else
-                    {
-                        proto = ProtoRegistry.RegisterRecipe(recipeJson.ID, (ERecipeType_1)recipeJson.Type, recipeJson.Time,
-                                                                recipeJson.Input, recipeJson.InCounts, recipeJson.Output ?? new int[] { },
-                                                                recipeJson.OutCounts ?? new int[] { }, recipeJson.Description,
-                                                                recipeJson.PreTech, recipeJson.GridIndex, recipeJson.Name,
-                                                                recipeJson.IconPath);
-
-                    }
-
+                    RecipeProto proto = ProtoRegistry.RegisterRecipe(recipeJson.ID, (ERecipeType_1)recipeJson.Type, recipeJson.Time,
+                        recipeJson.Input, recipeJson.InCounts, recipeJson.Output ?? new int[] { },
+                        recipeJson.OutCounts ?? new int[] { }, recipeJson.Description, recipeJson.PreTech, recipeJson.GridIndex, recipeJson.Name, recipeJson.IconPath);
                     proto.Explicit = recipeJson.Explicit;
                     proto.Name = recipeJson.Name;
                     proto.Handcraft = recipeJson.Handcraft;
