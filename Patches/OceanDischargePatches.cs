@@ -60,7 +60,7 @@ namespace ProjectGenesis.Patches
                         FactoryProductionStat factoryProductionStat
                             = GameMain.statistics.production.factoryStatPool[factory.index];
                         int[] consumeRegister = factoryProductionStat.consumeRegister;
-                        int itemId = factory.cargoTraffic.TryPickItemAtRear(beltId, 0, ItemProto.fluids, out stack,
+                        int itemId = factory.cargoTraffic.TryPickItemAtRear(beltId, 0, GameMain.history.TechUnlocked(1815) ? null : ItemProto.fluids, out stack,
                                                                             out inc);
                         if (itemId > 0)
                         {
@@ -90,6 +90,10 @@ namespace ProjectGenesis.Patches
                 
                 case 1814:
                     __result = "化工厂生产速度翻倍";
+                    break;
+
+                case 1815:
+                    __result = "海洋排污也能排放固体";
                     break;
             }
         }
