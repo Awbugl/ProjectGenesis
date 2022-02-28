@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using xiaoye97;
+﻿using xiaoye97;
 using HarmonyLib;
 using BepInEx;
 using UnityEngine;
@@ -10,7 +8,6 @@ using System.Reflection;
 using CommonAPI;
 using CommonAPI.Systems;
 using ProjectGenesis.Patches;
-using ERecipeType_1 = ERecipeType;
 
 // ReSharper disable UnusedVariable
 // ReSharper disable UnusedMember.Local
@@ -25,6 +22,8 @@ namespace ProjectGenesis
                                   nameof(AssemblerRecipeSystem))]
     public class Main : BaseUnityPlugin
     {
+        private int TableID, TableID2;
+
         public void Awake()
         {
             var pluginfolder = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
@@ -32,10 +31,10 @@ namespace ProjectGenesis
             resources.LoadAssetBundle("texpack");
             ProtoRegistry.AddResource(resources);
 
-            int TableID = TabSystem.RegisterTab("org.LoShin.GenesisBook:org.LoShin.GenesisBookTab",
-                                                new TabData("3", "Assets/texpack/主机科技"));
-            int TableID2 = TabSystem.RegisterTab("org.LoShin.GenesisBook:org.LoShin.GenesisBookTab2",
-                                                 new TabData("4", "Assets/texpack/化工科技"));
+            TableID = TabSystem.RegisterTab("org.LoShin.GenesisBook:org.LoShin.GenesisBookTab",
+                                            new TabData("3", "Assets/texpack/主机科技"));
+            TableID2 = TabSystem.RegisterTab("org.LoShin.GenesisBook:org.LoShin.GenesisBookTab2",
+                                             new TabData("4", "Assets/texpack/化工科技"));
 
             LDBTool.PreAddDataAction += InitData;
             LDBTool.PostAddDataAction += PostAddDataAction;
@@ -46,25 +45,17 @@ namespace ProjectGenesis
             Harmony.CreateAndPatchAll(typeof(OceanDischargePatches));
         }
 
-        /// <summary>
-        /// 目前还是用不了
-        /// </summary>
         public void InitData()
         {
             PreFix();
-
-            // ref var techs = ref AccessTools.StaticFieldRefAccess<TechProtoSet>(typeof(LDB), "_techs");
-            // ref var items = ref AccessTools.StaticFieldRefAccess<ItemProtoSet>(typeof(LDB), "_items");
-            // ref var recipes = ref AccessTools.StaticFieldRefAccess<RecipeProtoSet>(typeof(LDB), "_recipes");
-            // techs.Init(0);
-            // items.Init(0);
-            // recipes.Init(0);
 
             var templateTech = LDB.techs.Select(1311);
 
             foreach (var techjson in JsonHelper.TechProtos())
             {
-                var proto = LDB.techs.Exist(techjson.ID) ? LDB.techs.Select(techjson.ID) : templateTech.Copy();
+                var proto = LDB.techs.Exist(techjson.ID)
+                    ? LDB.techs.Select(techjson.ID)
+                    : templateTech.Copy();
                 proto.ID = techjson.ID;
                 proto.Name = techjson.Name;
                 proto.Desc = techjson.Desc;
@@ -80,14 +71,17 @@ namespace ProjectGenesis
                 proto.AddItems = techjson.AddItems ?? new int[] { };
                 proto.AddItemCounts = techjson.AddItemCounts ?? new int[] { };
                 proto.Position = new Vector2(techjson.Position[0], techjson.Position[1]);
-                if (!LDB.techs.Exist(techjson.ID))
-                {
-                    LDBTool.PreAddProto(proto);
-                }
+
+                if (!LDB.techs.Exist(techjson.ID)) LDBTool.PreAddProto(proto);
             }
 
             foreach (var itemjson in JsonHelper.ItemProtos())
             {
+                if (itemjson.GridIndex > 4000)
+                    itemjson.GridIndex = TableID2 * 1000 + (itemjson.GridIndex - 4000);
+                else if (itemjson.GridIndex > 3000) 
+                    itemjson.GridIndex = TableID * 1000 + (itemjson.GridIndex - 3000);
+
                 if (!LDB.items.Exist(itemjson.ID))
                 {
                     var proto = ProtoRegistry.RegisterItem(itemjson.ID, itemjson.Name, itemjson.Description,
@@ -113,7 +107,6 @@ namespace ProjectGenesis
                     proto.IconPath = itemjson.IconPath;
                     proto.GridIndex = itemjson.GridIndex;
                     proto.StackSize = itemjson.StackSize;
-                    // proto.preTech = TechProtos[itemjson.PreTech];
                     proto.FuelType = itemjson.FuelType;
                     proto.HeatValue = itemjson.HeatValue;
                     proto.ReactorInc = itemjson.ReactorInc;
@@ -149,23 +142,27 @@ namespace ProjectGenesis
                 if (!LDB.recipes.Exist(recipeJson.ID))
                 {
                     RecipeProto proto;
+
                     if (recipeJson.Type == 9 || recipeJson.Type == 10)
                     {
                         proto = ProtoRegistry.RegisterRecipe(recipeJson.ID, recipeJson.Type == 9
                                                                  ? type_9
-                                                                 : type_10, recipeJson.Time,
-                                                             recipeJson.Input, recipeJson.InCounts, recipeJson.Output ?? new int[] { },
-                                                             recipeJson.OutCounts ?? new int[] { }, recipeJson.Description,
-                                                             recipeJson.PreTech, recipeJson.GridIndex, recipeJson.Name,
+                                                                 : type_10, recipeJson.Time, recipeJson.Input,
+                                                             recipeJson.InCounts, recipeJson.Output ?? new int[] { },
+                                                             recipeJson.OutCounts ?? new int[] { },
+                                                             recipeJson.Description, recipeJson.PreTech,
+                                                             recipeJson.GridIndex, recipeJson.Name,
                                                              recipeJson.IconPath);
-                    } else
+                    }
+                    else
                     {
-                        proto = ProtoRegistry.RegisterRecipe(recipeJson.ID, (ERecipeType_1)recipeJson.Type, recipeJson.Time,
-                                                                recipeJson.Input, recipeJson.InCounts, recipeJson.Output ?? new int[] { },
-                                                                recipeJson.OutCounts ?? new int[] { }, recipeJson.Description,
-                                                                recipeJson.PreTech, recipeJson.GridIndex, recipeJson.Name,
-                                                                recipeJson.IconPath);
-
+                        proto = ProtoRegistry.RegisterRecipe(recipeJson.ID, (global::ERecipeType)recipeJson.Type,
+                                                             recipeJson.Time, recipeJson.Input, recipeJson.InCounts,
+                                                             recipeJson.Output ?? new int[] { },
+                                                             recipeJson.OutCounts ?? new int[] { },
+                                                             recipeJson.Description, recipeJson.PreTech,
+                                                             recipeJson.GridIndex, recipeJson.Name,
+                                                             recipeJson.IconPath);
                     }
 
                     proto.Explicit = recipeJson.Explicit;
@@ -176,9 +173,10 @@ namespace ProjectGenesis
                 else
                 {
                     var proto = LDB.recipes.Select(recipeJson.ID);
-                    ProtoRegistry.EditRecipe(recipeJson.ID, (ERecipeType_1)recipeJson.Type, recipeJson.Time,
-                                              recipeJson.Input, recipeJson.InCounts, recipeJson.Output ?? new int[] { }, recipeJson.OutCounts ?? new int[] { }, recipeJson.Description
-                                              , recipeJson.PreTech, recipeJson.GridIndex, recipeJson.IconPath);
+                    ProtoRegistry.EditRecipe(recipeJson.ID, (global::ERecipeType)recipeJson.Type, recipeJson.Time,
+                                             recipeJson.Input, recipeJson.InCounts, recipeJson.Output ?? new int[] { },
+                                             recipeJson.OutCounts ?? new int[] { }, recipeJson.Description,
+                                             recipeJson.PreTech, recipeJson.GridIndex, recipeJson.IconPath);
 
                     proto.Explicit = recipeJson.Explicit;
                     proto.Name = recipeJson.Name;
@@ -203,56 +201,68 @@ namespace ProjectGenesis
 
             LDB.items.Select(物品.单极磁石).ID = 6980;
             LDB.items.Select(物品.硫酸).ID = 6998;
+
             LDB.items.OnAfterDeserialize();
         }
 
         public void PostFix(ItemProtoSet itemProtos)
         {
             LDB.items.OnAfterDeserialize();
-            itemProtos.Select(物品.一级制造台).prefabDesc.assemblerSpeed = 20000;
+
             itemProtos.Select(物品.二级制造台).prefabDesc.assemblerRecipeType = (global::ERecipeType)ERecipeType.电路蚀刻;
-            itemProtos.Select(物品.二级制造台).prefabDesc.assemblerSpeed = 20000;
             itemProtos.Select(物品.三级制造台).prefabDesc.assemblerRecipeType = (global::ERecipeType)ERecipeType.高精度加工;
+
+            itemProtos.Select(物品.一级制造台).prefabDesc.assemblerSpeed = 20000;
+            itemProtos.Select(物品.二级制造台).prefabDesc.assemblerSpeed = 20000;
             itemProtos.Select(物品.三级制造台).prefabDesc.assemblerSpeed = 20000;
-            itemProtos.Select(物品.火力发电机).prefabDesc.useFuelPerTick = 200000;
-            itemProtos.Select(物品.采矿机).prefabDesc.minerPeriod = 600000;
-            itemProtos.Select(物品.大型采矿机).prefabDesc.minerPeriod = 300000;
+
             itemProtos.Select(物品.位面熔炉).prefabDesc.assemblerSpeed = 40000;
             itemProtos.Select(物品.化工厂).prefabDesc.assemblerSpeed = 20000;
-            itemProtos.Select(物品.原油采集站).prefabDesc.minerPeriod = 300000;
             itemProtos.Select(物品.原油精炼厂).prefabDesc.assemblerSpeed = 20000;
-            itemProtos.Select(物品.研究站).prefabDesc.labResearchSpeed = 2;
+            itemProtos.Select(物品.粒子对撞机).prefabDesc.assemblerSpeed = 40000;
+
+            itemProtos.Select(物品.采矿机).prefabDesc.minerPeriod = 600000;
+            itemProtos.Select(物品.大型采矿机).prefabDesc.minerPeriod = 300000;
+            itemProtos.Select(物品.原油采集站).prefabDesc.minerPeriod = 300000;
+            itemProtos.Select(物品.水泵).prefabDesc.minerPeriod = 360000;
+
             itemProtos.Select(物品.研究站).prefabDesc.labAssembleSpeed = 2;
+            itemProtos.Select(物品.研究站).prefabDesc.labResearchSpeed = 2;
+
             itemProtos.Select(物品.电磁轨道弹射器).prefabDesc.ejectorChargeFrame = 20;
             itemProtos.Select(物品.电磁轨道弹射器).prefabDesc.ejectorColdFrame = 10;
+
             itemProtos.Select(物品.垂直发射井).prefabDesc.siloChargeFrame = 24;
             itemProtos.Select(物品.垂直发射井).prefabDesc.siloColdFrame = 6;
-            itemProtos.Select(物品.粒子对撞机).prefabDesc.assemblerSpeed = 40000;
-            itemProtos.Select(物品.卫星配电站).prefabDesc.powerCoverRadius = 2600.5f;
+
             itemProtos.Select(物品.卫星配电站).prefabDesc.powerConnectDistance = 5300.5f;
+            itemProtos.Select(物品.卫星配电站).prefabDesc.powerCoverRadius = 2600.5f;
             itemProtos.Select(物品.电力感应塔).prefabDesc.powerConnectDistance = 44.5f;
             itemProtos.Select(物品.电力感应塔).prefabDesc.powerCoverRadius = 20.5f;
+            itemProtos.Select(物品.风力涡轮机).prefabDesc.powerConnectDistance = 32.5f;
+            itemProtos.Select(物品.风力涡轮机).prefabDesc.powerCoverRadius = 14.9f;
+
             itemProtos.Select(物品.火力发电机).prefabDesc.genEnergyPerTick = 200000;
             itemProtos.Select(物品.太阳能板).prefabDesc.genEnergyPerTick = 40000;
             itemProtos.Select(物品.地热发电机).prefabDesc.genEnergyPerTick = 400000;
             itemProtos.Select(物品.聚变发电机).prefabDesc.genEnergyPerTick = 2500000;
-
-            itemProtos.Select(物品.风力涡轮机).prefabDesc.powerConnectDistance = 32.5f;
-            itemProtos.Select(物品.风力涡轮机).prefabDesc.powerCoverRadius = 14.9f;
             itemProtos.Select(物品.风力涡轮机).prefabDesc.genEnergyPerTick = 50000;
             itemProtos.Select(物品.人造恒星).prefabDesc.genEnergyPerTick = 120000000;
+
+            itemProtos.Select(物品.火力发电机).prefabDesc.useFuelPerTick = 200000;
 
             itemProtos.Select(物品.低速传送带).prefabDesc.beltSpeed = 3;
             itemProtos.Select(物品.高速传送带).prefabDesc.beltSpeed = 5;
             itemProtos.Select(物品.极速传送带).prefabDesc.beltSpeed = 10;
+
             itemProtos.Select(物品.低速分拣器).prefabDesc.inserterSTT = 100000;
             itemProtos.Select(物品.高速分拣器).prefabDesc.inserterSTT = 50000;
             itemProtos.Select(物品.极速分拣器).prefabDesc.inserterSTT = 25000;
+
             itemProtos.Select(物品.卫星配电站).prefabDesc.idleEnergyPerTick = 1200000;
             itemProtos.Select(物品.卫星配电站).prefabDesc.workEnergyPerTick = 40000000;
 
             itemProtos.Select(物品.电弧熔炉).prefabDesc.assemblerSpeed = 20000;
-            itemProtos.Select(物品.水泵).prefabDesc.minerPeriod = 360000;
             itemProtos.Select(物品.无线输电塔).prefabDesc.powerConnectDistance = 90.5f;
         }
 
@@ -303,7 +313,6 @@ namespace ProjectGenesis
                 : "Assets/texpack/英文图标";
 
             image.texture = Resources.Load<Sprite>(iconstr).texture;
-
 
             rectTransform.sizeDelta = new Vector2(800f, 500f);
             rectTransform.anchoredPosition
