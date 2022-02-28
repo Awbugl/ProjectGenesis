@@ -2552,7 +2552,7 @@
   },
   {
     "ID": 1405,
-    "Name": "推进器2",
+    "Name": "推进器",
     "Description": "I推进器",
     "IconPath": "Icons/ItemRecipe/fuel-thruster",
     "GridIndex": 1311,

@@ -77,9 +77,10 @@ namespace ProjectGenesis
 
             foreach (var itemjson in JsonHelper.ItemProtos())
             {
-                if (itemjson.GridIndex > 4000)
+                if (itemjson.GridIndex >= 4000 && itemjson.GridIndex < 5000)
                     itemjson.GridIndex = TableID2 * 1000 + (itemjson.GridIndex - 4000);
-                else if (itemjson.GridIndex > 3000) 
+                
+                else if (itemjson.GridIndex >= 3000) 
                     itemjson.GridIndex = TableID * 1000 + (itemjson.GridIndex - 3000);
 
                 if (!LDB.items.Exist(itemjson.ID))
@@ -141,6 +142,12 @@ namespace ProjectGenesis
             {
                 if (!LDB.recipes.Exist(recipeJson.ID))
                 {
+                    if (recipeJson.GridIndex >= 4000 && recipeJson.GridIndex < 5000)
+                        recipeJson.GridIndex = TableID2 * 1000 + (recipeJson.GridIndex - 4000);
+                
+                    else if (recipeJson.GridIndex >= 3000) 
+                        recipeJson.GridIndex = TableID * 1000 + (recipeJson.GridIndex - 3000);
+                    
                     RecipeProto proto;
 
                     if (recipeJson.Type == 9 || recipeJson.Type == 10)
