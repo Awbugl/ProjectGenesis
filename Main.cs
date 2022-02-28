@@ -94,6 +94,7 @@ namespace ProjectGenesis
                     proto.DescFields = itemjson.DescFields ?? new int[] { };
                     proto.IsFluid = itemjson.IsFluid;
                     proto.Type = (EItemType)itemjson.Type;
+                    proto.MiningFrom = itemjson.MiningFrom;
                     proto.PreTechOverride = itemjson.PreTechOverride;
                     proto.Productive = itemjson.Productive;
                     proto.UnlockKey = itemjson.UnlockKey;
