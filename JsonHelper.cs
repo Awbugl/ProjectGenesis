@@ -7,12 +7,12 @@ namespace ProjectGenesis
 {
     public static class JsonHelper
     {
-        private static readonly Assembly _assembly = Assembly.GetExecutingAssembly();
+        private static readonly Assembly Assembly = Assembly.GetExecutingAssembly();
 
         public static ItemProtoJson[] ItemProtos()
         {
             return
-                JsonConvert.DeserializeObject<ItemProtoJson[]>(new StreamReader(_assembly
+                JsonConvert.DeserializeObject<ItemProtoJson[]>(new StreamReader(Assembly
                                                                                     .GetManifestResourceStream("ProjectGenesis.items"))
                                                                    .ReadToEnd());
         }
@@ -20,7 +20,7 @@ namespace ProjectGenesis
         public static RecipeProtoJson[] RecipeProtos()
         {
             return
-                JsonConvert.DeserializeObject<RecipeProtoJson[]>(new StreamReader(_assembly
+                JsonConvert.DeserializeObject<RecipeProtoJson[]>(new StreamReader(Assembly
                                                                                       .GetManifestResourceStream("ProjectGenesis.recipes"))
                                                                      .ReadToEnd());
         }
@@ -28,7 +28,7 @@ namespace ProjectGenesis
         public static TechProtoJson[] TechProtos()
         {
             return
-                JsonConvert.DeserializeObject<TechProtoJson[]>(new StreamReader(_assembly
+                JsonConvert.DeserializeObject<TechProtoJson[]>(new StreamReader(Assembly
                                                                                     .GetManifestResourceStream("ProjectGenesis.techs"))
                                                                    .ReadToEnd());
         }

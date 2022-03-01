@@ -2072,7 +2072,7 @@
     "StackSize": 30,
     "PreTech": 1112,
     "FuelType": 1,
-    "HeatValue": 64800004,
+    "HeatValue": 64800000,
     "ReactorInc": 2.0,
     "DescFields": [
       2,
@@ -2552,7 +2552,7 @@
   },
   {
     "ID": 1405,
-    "Name": "推进器2",
+    "Name": "推进器",
     "Description": "I推进器",
     "IconPath": "Icons/ItemRecipe/fuel-thruster",
     "GridIndex": 1311,
@@ -7564,7 +7564,7 @@
     "StackSize": 20,
     "PreTech": 1112,
     "FuelType": 1,
-    "HeatValue": 9000000,
+    "HeatValue": 54000000,
     "ReactorInc": 1.0,
     "DescFields": [
       2,
@@ -7842,7 +7842,7 @@
     "StackSize": 20,
     "PreTech": 1812,
     "FuelType": 1,
-    "HeatValue": 54000000,
+    "HeatValue": 9000000,
     "ReactorInc": 1.0,
     "DescFields": [
       0,
