@@ -102,8 +102,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CustomFunction.cs" />
-    <Compile Include="DeepCopyHelper.cs" />
     <Compile Include="ERecipeType.cs" />
     <Compile Include="ItemData.cs" />
     <Compile Include="JsonHelper.cs" />
