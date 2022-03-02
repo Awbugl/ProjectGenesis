@@ -266,7 +266,7 @@ namespace ProjectGenesis
 
         private void PostAddDataAction()
         {
-            LDB.techs.OnAfterDeserialize();
+            LDB.items.OnAfterDeserialize();
             LDB.recipes.OnAfterDeserialize();
             
             foreach (var proto in LDB.techs.dataArray)
@@ -278,6 +278,7 @@ namespace ProjectGenesis
             {
                 LDB.items.dataArray[i].Preload(i);
             }
+            
             for (var i = 0; i < LDB.recipes.dataArray.Length; ++i)
             {
                 LDB.recipes.dataArray[i].Preload(i);
@@ -287,7 +288,6 @@ namespace ProjectGenesis
             {
                 proto.Preload2();
             }
-
 
             PostFix(LDB.items);
 
