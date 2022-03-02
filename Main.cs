@@ -24,7 +24,7 @@ namespace ProjectGenesis
     public class Main : BaseUnityPlugin
     {
         private int TableID, TableID2;
-
+       
         public void Awake()
         {
             var pluginfolder = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
@@ -57,6 +57,7 @@ namespace ProjectGenesis
                 var proto = LDB.techs.Exist(techjson.ID)
                     ? LDB.techs.Select(techjson.ID)
                     : templateTech.Copy();
+                
                 proto.ID = techjson.ID;
                 proto.Name = techjson.Name;
                 proto.Desc = techjson.Desc;
@@ -73,7 +74,10 @@ namespace ProjectGenesis
                 proto.AddItemCounts = techjson.AddItemCounts ?? new int[] { };
                 proto.Position = new Vector2(techjson.Position[0], techjson.Position[1]);
 
-                if (!LDB.techs.Exist(techjson.ID)) LDBTool.PreAddProto(proto);
+                if (!LDB.techs.Exist(techjson.ID))
+                {
+                    LDBTool.PreAddProto(proto);
+                }
             }
 
             foreach (var itemjson in JsonHelper.ItemProtos())
@@ -87,14 +91,13 @@ namespace ProjectGenesis
                 if (!LDB.items.Exist(itemjson.ID))
                 {
                     var proto = ProtoRegistry.RegisterItem(itemjson.ID, itemjson.Name, itemjson.Description,
-                                                           itemjson.IconPath, itemjson.GridIndex, itemjson.StackSize);
+                                                           itemjson.IconPath, itemjson.GridIndex, itemjson.StackSize,(EItemType)itemjson.Type);
 
                     proto.FuelType = itemjson.FuelType;
                     proto.HeatValue = itemjson.HeatValue;
                     proto.ReactorInc = itemjson.ReactorInc;
                     proto.DescFields = itemjson.DescFields ?? new int[] { };
                     proto.IsFluid = itemjson.IsFluid;
-                    proto.Type = (EItemType)itemjson.Type;
                     proto.MiningFrom = itemjson.MiningFrom;
                     proto.PreTechOverride = itemjson.PreTechOverride;
                     proto.Productive = itemjson.Productive;
@@ -146,7 +149,7 @@ namespace ProjectGenesis
                     else if (recipeJson.GridIndex >= 3000)
                         recipeJson.GridIndex = TableID * 1000 + (recipeJson.GridIndex - 3000);
 
-                    RecipeProto proto = ProtoRegistry.RegisterRecipe(recipeJson.ID, (ERecipeType_1)recipeJson.Type, recipeJson.Time,
+                    var proto = ProtoRegistry.RegisterRecipe(recipeJson.ID, (ERecipeType_1)recipeJson.Type, recipeJson.Time,
                         recipeJson.Input, recipeJson.InCounts, recipeJson.Output ?? new int[] { },
                         recipeJson.OutCounts ?? new int[] { }, recipeJson.Description, recipeJson.PreTech, recipeJson.GridIndex, recipeJson.Name, recipeJson.IconPath);
 
@@ -158,11 +161,21 @@ namespace ProjectGenesis
                 else
                 {
                     var proto = LDB.recipes.Select(recipeJson.ID);
-                    ProtoRegistry.EditRecipe(recipeJson.ID, (global::ERecipeType)recipeJson.Type, recipeJson.Time,
-                                             recipeJson.Input, recipeJson.InCounts, recipeJson.Output ?? new int[] { },
-                                             recipeJson.OutCounts ?? new int[] { }, recipeJson.Description,
-                                             recipeJson.PreTech, recipeJson.GridIndex, recipeJson.IconPath);
-
+                    
+                    proto.Explicit = recipeJson.Explicit;
+                    proto.Name = recipeJson.Name;
+                    proto.Handcraft = recipeJson.Handcraft;
+                    proto.NonProductive = recipeJson.NonProductive;
+                    proto.Type = (global::ERecipeType)recipeJson.Type;
+                    proto.TimeSpend = recipeJson.Time;
+                    proto.Items =  recipeJson.Input;
+                    proto.ItemCounts = recipeJson.InCounts;
+                    proto.Results = recipeJson.Output ?? new int[] { };
+                    proto.ResultCounts =  recipeJson.OutCounts ?? new int[] { };
+                    proto.Description = recipeJson.Description;
+                    proto.preTech = LDB.techs.Select(recipeJson.PreTech);
+                    proto.GridIndex = recipeJson.GridIndex;
+                    proto.IconPath = recipeJson.IconPath;
                     proto.Explicit = recipeJson.Explicit;
                     proto.Name = recipeJson.Name;
                     proto.Handcraft = recipeJson.Handcraft;
@@ -253,6 +266,9 @@ namespace ProjectGenesis
 
         private void PostAddDataAction()
         {
+            LDB.techs.OnAfterDeserialize();
+            LDB.recipes.OnAfterDeserialize();
+            
             foreach (var proto in LDB.techs.dataArray)
             {
                 proto.Preload();
@@ -262,7 +278,6 @@ namespace ProjectGenesis
             {
                 LDB.items.dataArray[i].Preload(i);
             }
-
             for (var i = 0; i < LDB.recipes.dataArray.Length; ++i)
             {
                 LDB.recipes.dataArray[i].Preload(i);
@@ -272,6 +287,7 @@ namespace ProjectGenesis
             {
                 proto.Preload2();
             }
+
 
             PostFix(LDB.items);
 
