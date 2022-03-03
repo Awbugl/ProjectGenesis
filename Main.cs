@@ -297,9 +297,7 @@ namespace ProjectGenesis
             ItemProto.InitItemIndices();
             ItemProto.InitMechaMaterials();
 
-            var dataArray = LDB.items.dataArray;
-
-            foreach (var proto in dataArray)
+            foreach (var proto in LDB.items.dataArray)
             {
                 StorageComponent.itemIsFuel[proto.ID] = proto.HeatValue > 0L;
                 StorageComponent.itemStackCount[proto.ID] = proto.StackSize;
