@@ -238,14 +238,15 @@ namespace ProjectGenesis
             itemProtos.Select(物品.风力涡轮机).prefabDesc.powerCoverRadius = 14.9f;
 
             itemProtos.Select(物品.火力发电机).prefabDesc.genEnergyPerTick = 200000;
+            itemProtos.Select(物品.聚变发电机).prefabDesc.genEnergyPerTick = 2500000;
+            
             itemProtos.Select(物品.太阳能板).prefabDesc.genEnergyPerTick = 40000;
             itemProtos.Select(物品.地热发电机).prefabDesc.genEnergyPerTick = 400000;
-            itemProtos.Select(物品.聚变发电机).prefabDesc.genEnergyPerTick = 2500000;
-            itemProtos.Select(物品.聚变发电机).prefabDesc.useFuelPerTick = 2500000;
             itemProtos.Select(物品.风力涡轮机).prefabDesc.genEnergyPerTick = 50000;
             itemProtos.Select(物品.人造恒星).prefabDesc.genEnergyPerTick = 120000000;
 
             itemProtos.Select(物品.火力发电机).prefabDesc.useFuelPerTick = 200000;
+            itemProtos.Select(物品.聚变发电机).prefabDesc.useFuelPerTick = 2500000;
 
             itemProtos.Select(物品.低速传送带).prefabDesc.beltSpeed = 3;
             itemProtos.Select(物品.高速传送带).prefabDesc.beltSpeed = 5;
