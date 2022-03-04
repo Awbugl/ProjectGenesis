@@ -224,9 +224,6 @@ namespace ProjectGenesis
             itemProtos.Select(物品.原油采集站).prefabDesc.minerPeriod = 300000;
             itemProtos.Select(物品.水泵).prefabDesc.minerPeriod = 360000;
 
-            itemProtos.Select(物品.研究站).prefabDesc.labAssembleSpeed = 2;
-            itemProtos.Select(物品.研究站).prefabDesc.labResearchSpeed = 2;
-
             itemProtos.Select(物品.电磁轨道弹射器).prefabDesc.ejectorChargeFrame = 20;
             itemProtos.Select(物品.电磁轨道弹射器).prefabDesc.ejectorColdFrame = 10;
 
@@ -244,6 +241,7 @@ namespace ProjectGenesis
             itemProtos.Select(物品.太阳能板).prefabDesc.genEnergyPerTick = 40000;
             itemProtos.Select(物品.地热发电机).prefabDesc.genEnergyPerTick = 400000;
             itemProtos.Select(物品.聚变发电机).prefabDesc.genEnergyPerTick = 2500000;
+            itemProtos.Select(物品.聚变发电机).prefabDesc.useFuelPerTick = 2500000;
             itemProtos.Select(物品.风力涡轮机).prefabDesc.genEnergyPerTick = 50000;
             itemProtos.Select(物品.人造恒星).prefabDesc.genEnergyPerTick = 120000000;
 
