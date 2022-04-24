@@ -8980,18 +8980,18 @@
   {
     "ID": 6229,
     "Name": "量子储液罐",
-    "Description": "这是一种新的储液罐.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "将量子技术应用于液体存储上的科研成果,这种储罐有着远超普通储液罐的液体容量.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Icons/ItemRecipe/storage-tank",
     "GridIndex": 4309,
     "StackSize": 50,
-    "PreTech": 1120,
+    "PreTech": 1303,
     "FuelType": 0,
     "HeatValue": 0,
     "ReactorInc": 0.0,
     "DescFields": [
-    30,
-    1,
-    40
+      30,
+      1,
+      40
     ],
     "IsFluid": false,
     "Type": 5,
@@ -8999,8 +8999,8 @@
     "MiningFrom": "",
     "ProduceFrom": "",
     "Grade": 0,
-    "Upgrades": [  
-    
+    "Upgrades": [
+
     ],
     "IsEntity": true,
     "CanBuild": true,
