@@ -25,7 +25,7 @@ namespace ProjectGenesis
     public class Main : BaseUnityPlugin
     {
         private int TableID, TableID2;
-       
+
         public void Awake()
         {
             var pluginfolder = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
@@ -51,6 +51,15 @@ namespace ProjectGenesis
         {
             PreFix();
 
+#region ModelProto
+
+            var TankModel = CopyModelProto(121, 301, Color.blue);
+            LDBTool.PreAddProto(TankModel);
+
+#endregion
+
+#region TechProto
+
             var templateTech = LDB.techs.Select(1311);
 
             foreach (var techjson in JsonHelper.TechProtos())
@@ -58,7 +67,7 @@ namespace ProjectGenesis
                 var proto = LDB.techs.Exist(techjson.ID)
                     ? LDB.techs.Select(techjson.ID)
                     : templateTech.Copy();
-                
+
                 proto.ID = techjson.ID;
                 proto.Name = techjson.Name;
                 proto.Desc = techjson.Desc;
@@ -68,12 +77,12 @@ namespace ProjectGenesis
                 proto.IsLabTech = techjson.IsLabTech;
                 proto.PreTechs = techjson.PreTechs;
                 proto.PreTechsImplicit = techjson.PreTechs;
-                proto.Items = techjson.Items ?? new int[] { };
-                proto.ItemPoints = techjson.ItemPoints ?? new int[] { };
+                proto.Items = techjson.Items ?? Array.Empty<int>();
+                proto.ItemPoints = techjson.ItemPoints ?? Array.Empty<int>();
                 proto.HashNeeded = techjson.HashNeeded;
                 proto.UnlockRecipes = techjson.UnlockRecipes;
-                proto.AddItems = techjson.AddItems ?? new int[] { };
-                proto.AddItemCounts = techjson.AddItemCounts ?? new int[] { };
+                proto.AddItems = techjson.AddItems ?? Array.Empty<int>();
+                proto.AddItemCounts = techjson.AddItemCounts ?? Array.Empty<int>();
                 proto.Position = new Vector2(techjson.Position[0], techjson.Position[1]);
 
                 if (!LDB.techs.Exist(techjson.ID))
@@ -82,65 +91,57 @@ namespace ProjectGenesis
                 }
             }
 
+#endregion
+
+#region ItemProto
+
             foreach (var itemjson in JsonHelper.ItemProtos())
             {
                 if (itemjson.GridIndex >= 4000 && itemjson.GridIndex < 5000)
                     itemjson.GridIndex = TableID2 * 1000 + (itemjson.GridIndex - 4000);
-                
-                else if (itemjson.GridIndex >= 3000) 
-                    itemjson.GridIndex = TableID * 1000 + (itemjson.GridIndex - 3000);
 
-                if (!LDB.items.Exist(itemjson.ID))
-                {
-                    var proto = ProtoRegistry.RegisterItem(itemjson.ID, itemjson.Name, itemjson.Description,
-                                                           itemjson.IconPath, itemjson.GridIndex, itemjson.StackSize,(EItemType)itemjson.Type);
+                else if (itemjson.GridIndex >= 3000) itemjson.GridIndex = TableID * 1000 + (itemjson.GridIndex - 3000);
 
-                    proto.FuelType = itemjson.FuelType;
-                    proto.HeatValue = itemjson.HeatValue;
-                    proto.ReactorInc = itemjson.ReactorInc;
-                    proto.DescFields = itemjson.DescFields ?? new int[] { };
-                    proto.IsFluid = itemjson.IsFluid;
-                    proto.MiningFrom = itemjson.MiningFrom;
-                    proto.PreTechOverride = itemjson.PreTechOverride;
-                    proto.Productive = itemjson.Productive;
-                    proto.UnlockKey = itemjson.UnlockKey;
-                    proto.ModelIndex = itemjson.ModelIndex;
-                }
-                else
-                {
-                    var proto = LDB.items.Select(itemjson.ID);
-                    proto.ID = itemjson.ID;
-                    proto.Name = itemjson.Name;
-                    proto.Description = itemjson.Description;
-                    proto.IconPath = itemjson.IconPath;
-                    proto.GridIndex = itemjson.GridIndex;
-                    proto.StackSize = itemjson.StackSize;
-                    proto.FuelType = itemjson.FuelType;
-                    proto.HeatValue = itemjson.HeatValue;
-                    proto.ReactorInc = itemjson.ReactorInc;
-                    proto.DescFields = itemjson.DescFields ?? new int[] { };
-                    proto.IsFluid = itemjson.IsFluid;
-                    proto.Type = (EItemType)itemjson.Type;
-                    proto.SubID = itemjson.SubID;
-                    proto.MiningFrom = itemjson.MiningFrom;
-                    proto.ProduceFrom = itemjson.ProduceFrom;
-                    proto.Grade = itemjson.Grade;
-                    proto.Upgrades = itemjson.Upgrades ?? new int[] { };
-                    proto.IsEntity = itemjson.IsEntity;
-                    proto.CanBuild = itemjson.CanBuild;
-                    proto.BuildInGas = itemjson.BuildInGas;
-                    proto.ModelIndex = itemjson.ModelIndex;
-                    proto.ModelCount = itemjson.ModelCount;
-                    proto.HpMax = itemjson.HpMax;
-                    proto.Ability = itemjson.Ability;
-                    proto.Potential = itemjson.Potential;
-                    proto.BuildIndex = itemjson.BuildIndex;
-                    proto.BuildMode = itemjson.BuildMode;
-                    proto.UnlockKey = itemjson.UnlockKey;
-                    proto.PreTechOverride = itemjson.PreTechOverride;
-                    proto.Productive = itemjson.Productive;
-                }
+                var proto = LDB.items.Exist(itemjson.ID)
+                    ? LDB.items.Select(itemjson.ID)
+                    : ProtoRegistry.RegisterItem(itemjson.ID, itemjson.Name, itemjson.Description, itemjson.IconPath,
+                                                 itemjson.GridIndex, itemjson.StackSize, (EItemType)itemjson.Type);
+
+                proto.ID = itemjson.ID;
+                proto.Name = itemjson.Name;
+                proto.Description = itemjson.Description;
+                proto.IconPath = itemjson.IconPath;
+                proto.GridIndex = itemjson.GridIndex;
+                proto.StackSize = itemjson.StackSize;
+                proto.FuelType = itemjson.FuelType;
+                proto.HeatValue = itemjson.HeatValue;
+                proto.ReactorInc = itemjson.ReactorInc;
+                proto.DescFields = itemjson.DescFields ?? Array.Empty<int>();
+                proto.IsFluid = itemjson.IsFluid;
+                proto.Type = (EItemType)itemjson.Type;
+                proto.SubID = itemjson.SubID;
+                proto.MiningFrom = itemjson.MiningFrom;
+                proto.ProduceFrom = itemjson.ProduceFrom;
+                proto.Grade = itemjson.Grade;
+                proto.Upgrades = itemjson.Upgrades ?? Array.Empty<int>();
+                proto.IsEntity = itemjson.IsEntity;
+                proto.CanBuild = itemjson.CanBuild;
+                proto.BuildInGas = itemjson.BuildInGas;
+                proto.ModelIndex = itemjson.ModelIndex;
+                proto.ModelCount = itemjson.ModelCount;
+                proto.HpMax = itemjson.HpMax;
+                proto.Ability = itemjson.Ability;
+                proto.Potential = itemjson.Potential;
+                proto.BuildIndex = itemjson.BuildIndex;
+                proto.BuildMode = itemjson.BuildMode;
+                proto.UnlockKey = itemjson.UnlockKey;
+                proto.PreTechOverride = itemjson.PreTechOverride;
+                proto.Productive = itemjson.Productive;
             }
+
+#endregion
+
+#region RecipeProto
 
             foreach (var recipeJson in JsonHelper.RecipeProtos())
             {
@@ -151,9 +152,13 @@ namespace ProjectGenesis
                     else if (recipeJson.GridIndex >= 3000)
                         recipeJson.GridIndex = TableID * 1000 + (recipeJson.GridIndex - 3000);
 
-                    var proto = ProtoRegistry.RegisterRecipe(recipeJson.ID, (ERecipeType_1)recipeJson.Type, recipeJson.Time,
-                        recipeJson.Input, recipeJson.InCounts, recipeJson.Output ?? new int[] { },
-                        recipeJson.OutCounts ?? new int[] { }, recipeJson.Description, recipeJson.PreTech, recipeJson.GridIndex, recipeJson.Name, recipeJson.IconPath);
+                    var proto = ProtoRegistry.RegisterRecipe(recipeJson.ID, (ERecipeType_1)recipeJson.Type,
+                                                             recipeJson.Time, recipeJson.Input, recipeJson.InCounts,
+                                                             recipeJson.Output ?? Array.Empty<int>(),
+                                                             recipeJson.OutCounts ?? Array.Empty<int>(),
+                                                             recipeJson.Description, recipeJson.PreTech,
+                                                             recipeJson.GridIndex, recipeJson.Name,
+                                                             recipeJson.IconPath);
 
                     proto.Explicit = recipeJson.Explicit;
                     proto.Name = recipeJson.Name;
@@ -163,17 +168,17 @@ namespace ProjectGenesis
                 else
                 {
                     var proto = LDB.recipes.Select(recipeJson.ID);
-                    
+
                     proto.Explicit = recipeJson.Explicit;
                     proto.Name = recipeJson.Name;
                     proto.Handcraft = recipeJson.Handcraft;
                     proto.NonProductive = recipeJson.NonProductive;
                     proto.Type = (global::ERecipeType)recipeJson.Type;
                     proto.TimeSpend = recipeJson.Time;
-                    proto.Items =  recipeJson.Input;
+                    proto.Items = recipeJson.Input;
                     proto.ItemCounts = recipeJson.InCounts;
-                    proto.Results = recipeJson.Output ?? new int[] { };
-                    proto.ResultCounts =  recipeJson.OutCounts ?? new int[] { };
+                    proto.Results = recipeJson.Output ?? Array.Empty<int>();
+                    proto.ResultCounts = recipeJson.OutCounts ?? Array.Empty<int>();
                     proto.Description = recipeJson.Description;
                     proto.preTech = LDB.techs.Select(recipeJson.PreTech);
                     proto.GridIndex = recipeJson.GridIndex;
@@ -184,50 +189,13 @@ namespace ProjectGenesis
                     proto.NonProductive = recipeJson.NonProductive;
                 }
             }
+
+#endregion
         }
 
-        private static ModelProto CopyModelProto(int oriId, int id, Color color)
-        {
-            var oriModel = LDB.models.Select(oriId);
-            var model = oriModel.Copy();
-            model.name = id.ToString();
-            model.Name = id.ToString();//这俩至少有一个必须加，否则LDBTool报冲突导致后面null
-            model.ID = id;
-            PrefabDesc desc = oriModel.prefabDesc;
-            model.prefabDesc = new PrefabDesc(id, desc.prefab, desc.colliderPrefab);
-            for (int i = 0; i < model.prefabDesc.lodMaterials.Length; i++)
-            {
-                if (model.prefabDesc.lodMaterials[i] == null) continue;
-                for (int j = 0; j < model.prefabDesc.lodMaterials[i].Length; j++)
-                {
-                    if (model.prefabDesc.lodMaterials[i][j] == null) continue;
-                    model.prefabDesc.lodMaterials[i][j] = new Material(desc.lodMaterials[i][j]);
-                }
-            }
-            try
-            {
-                model.prefabDesc.lodMaterials[0][0].color = color;
-                model.prefabDesc.lodMaterials[1][0].color = color;
-                model.prefabDesc.lodMaterials[2][0].color = color;
-            }
-            catch (Exception)
-            {
-            }
-            model.prefabDesc.hasBuildCollider = true;
-            model.prefabDesc.colliders = desc.colliders;
-            model.prefabDesc.buildCollider = desc.buildCollider;
-            model.prefabDesc.buildColliders = desc.buildColliders;
-            model.prefabDesc.colliderPrefab = desc.colliderPrefab;
-            model.sid = "";
-            model.SID = "";
-            return model;
-        }
+
         public void PreFix()
         {
-            var TankModel = CopyModelProto(121, 301, Color.blue);
-            TankModel.prefabDesc.fluidStorageCount = 10000000;
-            LDBTool.PreAddProto(TankModel);
-
             LDB.strings.Select(2314).name = "剧毒液体海洋";
             LDB.strings.Select(2314).Name = "剧毒液体海洋";
 
@@ -244,10 +212,6 @@ namespace ProjectGenesis
 
             LDB.items.Select(物品.单极磁石).ID = 6980;
             LDB.items.Select(物品.硫酸).ID = 6998;
-
-           // LDB.techs.Select(1607).preTechArray = new TechProto[] { 科技类.电磁学 };
-            //LDB.techs.Select(1607).PreTechs = new int[] { 1001 };
-            //LDB.techs.Select(1607).PreTechsImplicit = new int[] { 1001 };
 
             LDB.items.OnAfterDeserialize();
         }
@@ -272,9 +236,6 @@ namespace ProjectGenesis
             itemProtos.Select(物品.大型采矿机).prefabDesc.minerPeriod = 300000;
             itemProtos.Select(物品.原油采集站).prefabDesc.minerPeriod = 300000;
             itemProtos.Select(物品.水泵).prefabDesc.minerPeriod = 360000;
-
-            //itemProtos.Select(物品.研究站).prefabDesc.labAssembleSpeed = 2;
-            //itemProtos.Select(物品.研究站).prefabDesc.labResearchSpeed = 2;
 
             itemProtos.Select(物品.电磁轨道弹射器).prefabDesc.ejectorChargeFrame = 20;
             itemProtos.Select(物品.电磁轨道弹射器).prefabDesc.ejectorColdFrame = 10;
@@ -312,13 +273,21 @@ namespace ProjectGenesis
 
             itemProtos.Select(物品.电弧熔炉).prefabDesc.assemblerSpeed = 20000;
             itemProtos.Select(物品.无线输电塔).prefabDesc.powerConnectDistance = 90.5f;
+
+            itemProtos.Select(6229).prefabDesc.fluidStorageCount = 10000000;
         }
 
         private void PostAddDataAction()
         {
             LDB.items.OnAfterDeserialize();
             LDB.recipes.OnAfterDeserialize();
-            
+            LDB.models.OnAfterDeserialize();
+
+            foreach (var proto in LDB.models.dataArray)
+            {
+                proto.Preload();
+            }
+
             foreach (var proto in LDB.techs.dataArray)
             {
                 proto.Preload();
@@ -328,7 +297,7 @@ namespace ProjectGenesis
             {
                 LDB.items.dataArray[i].Preload(i);
             }
-            
+
             for (var i = 0; i < LDB.recipes.dataArray.Length; ++i)
             {
                 LDB.recipes.dataArray[i].Preload(i);
@@ -347,9 +316,7 @@ namespace ProjectGenesis
             ItemProto.InitItemIndices();
             ItemProto.InitMechaMaterials();
 
-            var dataArray = LDB.items.dataArray;
-
-            foreach (var proto in dataArray)
+            foreach (var proto in LDB.items.dataArray)
             {
                 StorageComponent.itemIsFuel[proto.ID] = proto.HeatValue > 0L;
                 StorageComponent.itemStackCount[proto.ID] = proto.StackSize;
@@ -368,16 +335,45 @@ namespace ProjectGenesis
             rectTransform.sizeDelta = new Vector2(800f, 500f);
             rectTransform.anchoredPosition
                 = new Vector2(rectTransform.anchoredPosition.x, rectTransform.anchoredPosition.y + 50f);
+        }
 
-            LDB.models.Select(301).prefabDesc.modelIndex = 301;
-            LDB.items.Select(6229).ModelIndex = 301;
-            LDB.items.Select(6229).prefabDesc = LDB.models.Select(301).prefabDesc;
-            LDB.items.Select(6229).BuildIndex = 501;
-            LDB.items.Select(6229).BuildMode = 1;
-            LDB.items.Select(6229).CanBuild = true;
-            LDB.items.Select(6229).ModelCount = 1;
-            LDB.items.Select(6229).IsEntity = true;
+        private static ModelProto CopyModelProto(int oriId, int id, Color color)
+        {
+            var oriModel = LDB.models.Select(oriId);
+            var model = oriModel.Copy();
+            model.name = id.ToString();
+            model.Name = id.ToString(); //这俩至少有一个必须加，否则LDBTool报冲突导致后面null
+            model.ID = id;
+            var desc = oriModel.prefabDesc;
+            model.prefabDesc = new PrefabDesc(id, desc.prefab, desc.colliderPrefab);
+            for (var i = 0; i < model.prefabDesc.lodMaterials.Length; i++)
+            {
+                if (model.prefabDesc.lodMaterials[i] == null) continue;
+                for (var j = 0; j < model.prefabDesc.lodMaterials[i].Length; j++)
+                {
+                    if (model.prefabDesc.lodMaterials[i][j] == null) continue;
+                    model.prefabDesc.lodMaterials[i][j] = new Material(desc.lodMaterials[i][j]);
+                }
+            }
 
+            try
+            {
+                model.prefabDesc.lodMaterials[0][0].color = color;
+                model.prefabDesc.lodMaterials[1][0].color = color;
+                model.prefabDesc.lodMaterials[2][0].color = color;
+            }
+            catch { }
+
+            model.prefabDesc.modelIndex = id;
+            model.prefabDesc.hasBuildCollider = true;
+            model.prefabDesc.colliders = desc.colliders;
+            model.prefabDesc.buildCollider = desc.buildCollider;
+            model.prefabDesc.buildColliders = desc.buildColliders;
+            model.prefabDesc.colliderPrefab = desc.colliderPrefab;
+
+            model.sid = "";
+            model.SID = "";
+            return model;
         }
     }
 }
