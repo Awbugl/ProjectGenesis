@@ -8976,5 +8976,44 @@
     "PreTechOverride": 0,
     "Productive": false,
     "MechaMaterialID": 0
+  },
+  {
+    "ID": 6229,
+    "Name": "量子储液罐",
+    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/高纯钚块",
+    "GridIndex": 4309,
+    "StackSize": 100,
+    "PreTech": 1416,
+    "FuelType": 0,
+    "HeatValue": 0,
+    "ReactorInc": 0,
+    "DescFields": [
+      1,
+      40
+    ],
+    "IsFluid": false,
+    "Type": 2,
+    "SubID": 0,
+    "MiningFrom": null,
+    "ProduceFrom": null,
+    "Grade": 0,
+    "Upgrades": [
+
+    ],
+    "IsEntity": true,
+    "CanBuild": true,
+    "BuildInGas": false,
+    "ModelIndex": 0,
+    "ModelCount": 0,
+    "HpMax": 0,
+    "Ability": 0,
+    "Potential": 0,
+    "BuildIndex": 501,
+    "BuildMode": 1,
+    "UnlockKey": 1,
+    "PreTechOverride": 0,
+    "Productive": false,
+    "MechaMaterialID": 0
   }
 ]
