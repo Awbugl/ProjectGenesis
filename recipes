@@ -5680,5 +5680,34 @@
     "Explicit": true,
     "Handcraft": false,
     "NonProductive": false
+  },
+  {
+    "ID": 522,
+    "Type": 4,
+    "Time": 900,
+    "Input": [
+      1107,
+      1124,
+      1305
+    ],
+    "InCounts": [
+      16,
+      8,
+      4
+    ],
+    "Output": [
+      6229
+    ],
+    "OutCounts": [
+      1
+    ],
+    "Description": "这个公式能让你更加高效的生产硫酸.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "PreTech": 1303,
+    "GridIndex": 3206,
+    "Name": "量子储液罐",
+    "IconPath": "Icons/ItemRecipe/storage-tank",
+    "Explicit": false,
+    "Handcraft": false,
+    "NonProductive": false
   }
 ]
