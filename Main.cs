@@ -51,14 +51,14 @@ namespace ProjectGenesis
         {
             PreFix();
 
-#region ModelProto
+            #region ModelProto
 
             var TankModel = CopyModelProto(121, 301, Color.blue);
             LDBTool.PreAddProto(TankModel);
 
-#endregion
+            #endregion
 
-#region TechProto
+            #region TechProto
 
             var templateTech = LDB.techs.Select(1311);
 
@@ -91,9 +91,9 @@ namespace ProjectGenesis
                 }
             }
 
-#endregion
+            #endregion
 
-#region ItemProto
+            #region ItemProto
 
             foreach (var itemjson in JsonHelper.ItemProtos())
             {
@@ -139,9 +139,9 @@ namespace ProjectGenesis
                 proto.Productive = itemjson.Productive;
             }
 
-#endregion
+            #endregion
 
-#region RecipeProto
+            #region RecipeProto
 
             foreach (var recipeJson in JsonHelper.RecipeProtos())
             {
@@ -190,7 +190,7 @@ namespace ProjectGenesis
                 }
             }
 
-#endregion
+            #endregion
         }
 
 
@@ -274,7 +274,8 @@ namespace ProjectGenesis
             itemProtos.Select(物品.电弧熔炉).prefabDesc.assemblerSpeed = 20000;
             itemProtos.Select(物品.无线输电塔).prefabDesc.powerConnectDistance = 90.5f;
 
-            itemProtos.Select(6229).prefabDesc.fluidStorageCount = 10000000;
+            itemProtos.Select(6229).prefabDesc.fluidStorageCount = 1000000;
+            LDBTool.SetBuildBar(4, 4, 6229);
         }
 
         private void PostAddDataAction()
