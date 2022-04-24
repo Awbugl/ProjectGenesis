@@ -9,29 +9,20 @@ namespace ProjectGenesis
     {
         private static readonly Assembly Assembly = Assembly.GetExecutingAssembly();
 
-        public static ItemProtoJson[] ItemProtos()
-        {
-            return
-                JsonConvert.DeserializeObject<ItemProtoJson[]>(new StreamReader(Assembly
-                                                                                    .GetManifestResourceStream("ProjectGenesis.items"))
-                                                                   .ReadToEnd());
-        }
+        internal static ItemProtoJson[] ItemProtos() =>
+            JsonConvert.DeserializeObject<ItemProtoJson[]>(new StreamReader(Assembly
+                                                                                .GetManifestResourceStream("ProjectGenesis.items"))
+                                                               .ReadToEnd());
 
-        public static RecipeProtoJson[] RecipeProtos()
-        {
-            return
-                JsonConvert.DeserializeObject<RecipeProtoJson[]>(new StreamReader(Assembly
-                                                                                      .GetManifestResourceStream("ProjectGenesis.recipes"))
-                                                                     .ReadToEnd());
-        }
+        internal static RecipeProtoJson[] RecipeProtos() =>
+            JsonConvert.DeserializeObject<RecipeProtoJson[]>(new StreamReader(Assembly
+                                                                                  .GetManifestResourceStream("ProjectGenesis.recipes"))
+                                                                 .ReadToEnd());
 
-        public static TechProtoJson[] TechProtos()
-        {
-            return
-                JsonConvert.DeserializeObject<TechProtoJson[]>(new StreamReader(Assembly
-                                                                                    .GetManifestResourceStream("ProjectGenesis.techs"))
-                                                                   .ReadToEnd());
-        }
+        internal static TechProtoJson[] TechProtos() =>
+            JsonConvert.DeserializeObject<TechProtoJson[]>(new StreamReader(Assembly
+                                                                                .GetManifestResourceStream("ProjectGenesis.techs"))
+                                                               .ReadToEnd());
 
 
         [Serializable]

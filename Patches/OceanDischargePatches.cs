@@ -40,6 +40,20 @@ namespace ProjectGenesis.Patches
             }
         }
 
+        [HarmonyPrefix]
+        [HarmonyPatch(typeof(MinerComponent), "InternalUpdate")]
+        public static void MinerComponent_InternalUpdate_PreFix(ref MinerComponent __instance, PlanetFactory factory,
+                                                                VeinData[] veinPool, float power, float miningRate,
+                                                                float miningSpeed, int[] productRegister)
+        {
+            if (__instance.type == EMinerType.Water 
+                && __instance.insertTarget < 0
+                && GameMain.history.TechUnlocked(1813) 
+                && factory.entityPool[-__instance.insertTarget].beltId > 0)
+                __instance.speedDamper = 1;
+        }
+
+
         [HarmonyPostfix]
         [HarmonyPatch(typeof(MinerComponent), "InternalUpdate")]
         public static void MinerComponent_InternalUpdate(ref MinerComponent __instance, PlanetFactory factory,
@@ -48,7 +62,7 @@ namespace ProjectGenesis.Patches
         {
             if (power < 0.1f) return;
             if (__instance.type == EMinerType.Water && __instance.insertTarget < 0
-                                                    && (1813 == 0 || GameMain.history.TechUnlocked(1813)))
+                                                    && GameMain.history.TechUnlocked(1813))
             {
                 int beltId = factory.entityPool[-__instance.insertTarget].beltId;
                 if (beltId > 0)
@@ -56,12 +70,15 @@ namespace ProjectGenesis.Patches
                     if (__instance.time >= __instance.period)
                     {
                         __instance.time -= __instance.period;
-                        byte stack, inc;
                         FactoryProductionStat factoryProductionStat
                             = GameMain.statistics.production.factoryStatPool[factory.index];
                         int[] consumeRegister = factoryProductionStat.consumeRegister;
-                        int itemId = factory.cargoTraffic.TryPickItemAtRear(beltId, 0, GameMain.history.TechUnlocked(1815) ? null : ItemProto.fluids, out stack,
-                                                                            out inc);
+                        
+                        int itemId = factory.cargoTraffic.TryPickItemAtRear
+                            (beltId, 0,
+                             GameMain.history.TechUnlocked(1815) ? null : ItemProto.fluids, 
+                             out var stack, out _);
+                        
                         if (itemId > 0)
                         {
                             lock (consumeRegister)
