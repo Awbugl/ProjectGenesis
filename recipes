@@ -940,7 +940,7 @@
       1
     ],
     "Description": "",
-    "PreTech": 1416,
+    "PreTech": 1821,
     "GridIndex": 1508,
     "Name": "氘核燃料棒",
     "IconPath": "",
@@ -4822,7 +4822,7 @@
       1
     ],
     "Description": "这玩意看上去好像也差点啥.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1416,
+    "PreTech": 1821,
     "GridIndex": 2510,
     "Name": "氘核燃料",
     "IconPath": "Assets/texpack/氘核燃料",
@@ -5705,8 +5705,528 @@
     "PreTech": 1303,
     "GridIndex": 3206,
     "Name": "量子储液罐",
-    "IconPath": "Icons/ItemRecipe/storage-tank",
+    "IconPath": "Assets/texpack/量子储液罐",
     "Explicit": false,
+    "Handcraft": false,
+    "NonProductive": false
+  },
+  {
+    "ID": 523,
+    "Type": 4,
+    "Time": 600,
+    "Input": [
+      6502,
+      1107,
+      7821,
+      1303
+    ],
+    "InCounts": [
+      2,
+      8,
+      4,
+      2
+    ],
+    "Output": [
+      6230
+    ],
+    "OutCounts": [
+      1
+    ],
+    "Description": "这个公式能让你更加高效的生产硫酸.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "PreTech": 1413,
+    "GridIndex": 3207,
+    "Name": "矿物处理厂",
+    "IconPath": "Assets/texpack/矿物处理厂",
+    "Explicit": false,
+    "Handcraft": false,
+    "NonProductive": false
+  },
+  {
+    "ID": 531,
+    "Type": 11,
+    "Time": 60,
+    "Input": [
+      1001
+    ],
+    "InCounts": [
+      1
+    ],
+    "Output": [
+      6252
+    ],
+    "OutCounts": [
+      2
+    ],
+    "Description": "这个公式能让你更加高效的生产硫酸.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "PreTech": 1303,
+    "GridIndex": 3701,
+    "Name": "铁矿粉",
+    "IconPath": "Assets/texpack/铁矿粉",
+    "Explicit": false,
+    "Handcraft": false,
+    "NonProductive": false
+  },
+  {
+    "ID": 532,
+    "Type": 11,
+    "Time": 60,
+    "Input": [
+      1002
+    ],
+    "InCounts": [
+      1
+    ],
+    "Output": [
+      6253
+    ],
+    "OutCounts": [
+      2
+    ],
+    "Description": "这个公式能让你更加高效的生产硫酸.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "PreTech": 1303,
+    "GridIndex": 3702,
+    "Name": "铜矿粉",
+    "IconPath": "Assets/texpack/铜矿粉",
+    "Explicit": false,
+    "Handcraft": false,
+    "NonProductive": false
+  },
+  {
+    "ID": 533,
+    "Type": 11,
+    "Time": 60,
+    "Input": [
+      1003
+    ],
+    "InCounts": [
+      1
+    ],
+    "Output": [
+      6254
+    ],
+    "OutCounts": [
+      2
+    ],
+    "Description": "这个公式能让你更加高效的生产硫酸.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "PreTech": 1303,
+    "GridIndex": 3703,
+    "Name": "硅矿粉",
+    "IconPath": "Assets/texpack/硅矿粉",
+    "Explicit": false,
+    "Handcraft": false,
+    "NonProductive": false
+  },
+  {
+    "ID": 534,
+    "Type": 11,
+    "Time": 60,
+    "Input": [
+      1004
+    ],
+    "InCounts": [
+      1
+    ],
+    "Output": [
+      6255
+    ],
+    "OutCounts": [
+      2
+    ],
+    "Description": "这个公式能让你更加高效的生产硫酸.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "PreTech": 1303,
+    "GridIndex": 3704,
+    "Name": "钛矿粉",
+    "IconPath": "Assets/texpack/钛矿粉",
+    "Explicit": false,
+    "Handcraft": false,
+    "NonProductive": false
+  },
+  {
+    "ID": 535,
+    "Type": 11,
+    "Time": 60,
+    "Input": [
+      1005
+    ],
+    "InCounts": [
+      1
+    ],
+    "Output": [
+      6251
+    ],
+    "OutCounts": [
+      2
+    ],
+    "Description": "这个公式能让你更加高效的生产硫酸.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "PreTech": 1303,
+    "GridIndex": 3705,
+    "Name": "石粉",
+    "IconPath": "Assets/texpack/石粉",
+    "Explicit": false,
+    "Handcraft": false,
+    "NonProductive": false
+  },
+  {
+    "ID": 536,
+    "Type": 11,
+    "Time": 60,
+    "Input": [
+      1006
+    ],
+    "InCounts": [
+      1
+    ],
+    "Output": [
+      6256
+    ],
+    "OutCounts": [
+      2
+    ],
+    "Description": "这个公式能让你更加高效的生产硫酸.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "PreTech": 1303,
+    "GridIndex": 3706,
+    "Name": "煤矿粉",
+    "IconPath": "Assets/texpack/煤矿粉",
+    "Explicit": false,
+    "Handcraft": false,
+    "NonProductive": false
+  },
+  {
+    "ID": 401,
+    "Type": 11,
+    "Time": 240,
+    "Input": [
+      1003,
+      7020
+    ],
+    "InCounts": [
+      8,
+      16
+    ],
+    "Output": [
+      6222
+    ],
+    "OutCounts": [
+      4
+    ],
+    "Description": "利用氢氧化钠晶体作为催化剂,能够将硅石中含有的放射性物质沉降分离.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "PreTech": 1816,
+    "GridIndex": 3501,
+    "Name": "放射性矿物处理",
+    "IconPath": "Assets/texpack/放射性矿物碎块",
+    "Explicit": true,
+    "Handcraft": false,
+    "NonProductive": false
+  },
+  {
+    "ID": 402,
+    "Type": 11,
+    "Time": 240,
+    "Input": [
+      6222,
+      7020
+    ],
+    "InCounts": [
+      2,
+      1
+    ],
+    "Output": [
+      6223
+    ],
+    "OutCounts": [
+      1
+    ],
+    "Description": "利用氢氧化钠晶体作为催化剂,能够将硅石中含有的放射性物质沉降分离.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "PreTech": 1817,
+    "GridIndex": 3502,
+    "Name": "铀碎块",
+    "IconPath": "Assets/texpack/发光铀碎块",
+    "Explicit": false,
+    "Handcraft": false,
+    "NonProductive": false
+  },
+  {
+    "ID": 403,
+    "Type": 11,
+    "Time": 240,
+    "Input": [
+      6222,
+      7020
+    ],
+    "InCounts": [
+      2,
+      1
+    ],
+    "Output": [
+      6224
+    ],
+    "OutCounts": [
+      1
+    ],
+    "Description": "利用氢氧化钠晶体作为催化剂,能够将硅石中含有的放射性物质沉降分离.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "PreTech": 1817,
+    "GridIndex": 3503,
+    "Name": "钚碎块",
+    "IconPath": "Assets/texpack/晶质钚碎块",
+    "Explicit": false,
+    "Handcraft": false,
+    "NonProductive": false
+  },
+  {
+    "ID": 404,
+    "Type": 11,
+    "Time": 240,
+    "Input": [
+      6223,
+      7020
+    ],
+    "InCounts": [
+      2,
+      1
+    ],
+    "Output": [
+      6225
+    ],
+    "OutCounts": [
+      2
+    ],
+    "Description": "利用氢氧化钠晶体作为催化剂,能够将硅石中含有的放射性物质沉降分离.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "PreTech": 1818,
+    "GridIndex": 3504,
+    "Name": "铀矿",
+    "IconPath": "Assets/texpack/铀矿",
+    "Explicit": false,
+    "Handcraft": false,
+    "NonProductive": false
+  },
+  {
+    "ID": 405,
+    "Type": 11,
+    "Time": 240,
+    "Input": [
+      6224,
+      7020
+    ],
+    "InCounts": [
+      2,
+      1
+    ],
+    "Output": [
+      6226
+    ],
+    "OutCounts": [
+      2
+    ],
+    "Description": "利用氢氧化钠晶体作为催化剂,能够将硅石中含有的放射性物质沉降分离.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "PreTech": 1818,
+    "GridIndex": 3505,
+    "Name": "钚矿",
+    "IconPath": "Assets/texpack/钚矿",
+    "Explicit": false,
+    "Handcraft": false,
+    "NonProductive": false
+  },
+  {
+    "ID": 406,
+    "Type": 11,
+    "Time": 120,
+    "Input": [
+      6225
+    ],
+    "InCounts": [
+      1
+    ],
+    "Output": [
+      6227
+    ],
+    "OutCounts": [
+      1
+    ],
+    "Description": "利用氢氧化钠晶体作为催化剂,能够将硅石中含有的放射性物质沉降分离.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "PreTech": 1819,
+    "GridIndex": 3506,
+    "Name": "高纯铀块",
+    "IconPath": "Assets/texpack/高纯铀块",
+    "Explicit": false,
+    "Handcraft": false,
+    "NonProductive": false
+  },
+  {
+    "ID": 407,
+    "Type": 11,
+    "Time": 120,
+    "Input": [
+      6226
+    ],
+    "InCounts": [
+      1
+    ],
+    "Output": [
+      6228
+    ],
+    "OutCounts": [
+      1
+    ],
+    "Description": "利用氢氧化钠晶体作为催化剂,能够将硅石中含有的放射性物质沉降分离.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "PreTech": 1819,
+    "GridIndex": 3507,
+    "Name": "高纯钚块",
+    "IconPath": "Assets/texpack/高纯钚块",
+    "Explicit": false,
+    "Handcraft": false,
+    "NonProductive": false
+  },
+  {
+    "ID": 408,
+    "Type": 4,
+    "Time": 120,
+    "Input": [
+      6509,
+      6227
+    ],
+    "InCounts": [
+      1,
+      4
+    ],
+    "Output": [
+      6242
+    ],
+    "OutCounts": [
+      1
+    ],
+    "Description": "利用氢氧化钠晶体作为催化剂,能够将硅石中含有的放射性物质沉降分离.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "PreTech": 1820,
+    "GridIndex": 3508,
+    "Name": "铀燃料棒",
+    "IconPath": "Assets/texpack/铀235燃料棒",
+    "Explicit": false,
+    "Handcraft": false,
+    "NonProductive": false
+  },
+  {
+    "ID": 409,
+    "Type": 4,
+    "Time": 120,
+    "Input": [
+      6509,
+      6228
+    ],
+    "InCounts": [
+      1,
+      4
+    ],
+    "Output": [
+      6241
+    ],
+    "OutCounts": [
+      1
+    ],
+    "Description": "利用氢氧化钠晶体作为催化剂,能够将硅石中含有的放射性物质沉降分离.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "PreTech": 1820,
+    "GridIndex": 3509,
+    "Name": "钚燃料棒",
+    "IconPath": "Assets/texpack/钚燃料棒",
+    "Explicit": false,
+    "Handcraft": false,
+    "NonProductive": false
+  },
+  {
+    "ID": 411,
+    "Type": 1,
+    "Time": 60,
+    "Input": [
+      6252
+    ],
+    "InCounts": [
+      1
+    ],
+    "Output": [
+      1101
+    ],
+    "OutCounts": [
+      1
+    ],
+    "Description": "从原矿中分离的纯净粉可以实现效率更高的生产.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "PreTech": 1413,
+    "GridIndex": 3601,
+    "Name": "铁矿精炼",
+    "IconPath": "Icons/ItemRecipe/iron-plate",
+    "Explicit": true,
+    "Handcraft": false,
+    "NonProductive": false
+  },
+  {
+    "ID": 412,
+    "Type": 1,
+    "Time": 60,
+    "Input": [
+      6253
+    ],
+    "InCounts": [
+      1
+    ],
+    "Output": [
+      1104
+    ],
+    "OutCounts": [
+      1
+    ],
+    "Description": "从原矿中分离的纯净粉可以实现效率更高的生产.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "PreTech": 1413,
+    "GridIndex": 3602,
+    "Name": "铜矿精炼",
+    "IconPath": "Icons/ItemRecipe/copper-plate",
+    "Explicit": true,
+    "Handcraft": false,
+    "NonProductive": false
+  },
+  {
+    "ID": 413,
+    "Type": 1,
+    "Time": 60,
+    "Input": [
+      6254
+    ],
+    "InCounts": [
+      1
+    ],
+    "Output": [
+      1105
+    ],
+    "OutCounts": [
+      1
+    ],
+    "Description": "从原矿中分离的纯净粉可以实现效率更高的生产.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "PreTech": 1413,
+    "GridIndex": 3603,
+    "Name": "硅矿精炼",
+    "IconPath": "Icons/ItemRecipe/silicium-single-crystal",
+    "Explicit": true,
+    "Handcraft": false,
+    "NonProductive": false
+  },
+  {
+    "ID": 414,
+    "Type": 1,
+    "Time": 60,
+    "Input": [
+      6255
+    ],
+    "InCounts": [
+      1
+    ],
+    "Output": [
+      1106
+    ],
+    "OutCounts": [
+      1
+    ],
+    "Description": "从原矿中分离的纯净粉可以实现效率更高的生产.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "PreTech": 1413,
+    "GridIndex": 3604,
+    "Name": "钛矿精炼",
+    "IconPath": "Icons/ItemRecipe/titanium-plate",
+    "Explicit": true,
     "Handcraft": false,
     "NonProductive": false
   }
