@@ -1,4 +1,4 @@
-﻿namespace ProjectGenesis
+namespace ProjectGenesis
 {
     public enum ERecipeType
     {
@@ -13,6 +13,7 @@
         Fractionate = 8,
         电路蚀刻 = 9,
         高精度加工 = 10,
+        矿物处理 = 11,
         Research = 0xF
     }
 }
