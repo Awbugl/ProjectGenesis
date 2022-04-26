@@ -2256,9 +2256,7 @@
     ],
     "HashNeeded": 180000,
     "UnlockRecipes": [
-      113,
-      41,
-      682
+      113
     ],
     "UnlockFunctions": [
 
@@ -9970,5 +9968,361 @@
       33.0,
       -31.0
     ]
+  },
+  {
+    "ID": 1816,
+    "Name": "核子先驱:放射原料",
+    "Desc": "硅石中蕴含放射性物质,在氢氧化钠的作用下,硅石中蕴含的放射原料将被沉降并分离成稳定化合物(我瞎编的,别信).",
+    "Conclusion": "",
+    "Published": true,
+    "Level": 0,
+    "MaxLevel": 0,
+    "LevelCoef1": 0,
+    "LevelCoef2": 0,
+    "IconPath": "Icons/Tech/1416",
+    "IsLabTech": true,
+    "PreTechs": [
+
+    ],
+    "PreTechsImplicit": [
+
+    ],
+    "PreTechsMax": false,
+    "Items": [
+      6001,
+      6002
+    ],
+    "ItemPoints": [
+      20,
+      20
+    ],
+    "HashNeeded": 36000,
+    "UnlockRecipes": [
+      401
+    ],
+    "UnlockFunctions": [
+
+    ],
+    "UnlockValues": [
+
+    ],
+    "AddItems": [
+
+    ],
+    "AddItemCounts": [
+
+    ],
+    "Position": [
+      13.0,
+      -47.0
+    ]
+  },
+  {
+    "ID": 1817,
+    "Name": "核子先驱:进一步分离",
+    "Desc": "钚和铀的化学性质不同,利用这一点,可以从初步提取的放射原料中分离出钚和铀.",
+    "Conclusion": "",
+    "Published": true,
+    "Level": 0,
+    "MaxLevel": 0,
+    "LevelCoef1": 0,
+    "LevelCoef2": 0,
+    "IconPath": "Icons/Tech/1416",
+    "IsLabTech": true,
+    "PreTechs": [
+      1816
+    ],
+    "PreTechsImplicit": [
+
+    ],
+    "PreTechsMax": false,
+    "Items": [
+      6001,
+      6002
+    ],
+    "ItemPoints": [
+      20,
+      20
+    ],
+    "HashNeeded": 72000,
+    "UnlockRecipes": [
+      402,
+      403
+    ],
+    "UnlockFunctions": [
+
+    ],
+    "UnlockValues": [
+
+    ],
+    "AddItems": [
+
+    ],
+    "AddItemCounts": [
+
+    ],
+    "Position": [
+      17.0,
+      -47.0
+    ]
+  },
+  {
+    "ID": 1818,
+    "Name": "核子先驱:原矿精炼",
+    "Desc": "将得到的原料进一步提纯,得到纯净的钚和铀.",
+    "Conclusion": "",
+    "Published": true,
+    "Level": 0,
+    "MaxLevel": 0,
+    "LevelCoef1": 0,
+    "LevelCoef2": 0,
+    "IconPath": "Icons/Tech/1416",
+    "IsLabTech": true,
+    "PreTechs": [
+      1817
+    ],
+    "PreTechsImplicit": [
+
+    ],
+    "PreTechsMax": false,
+    "Items": [
+      6001,
+      6002,
+      6003
+    ],
+    "ItemPoints": [
+      20,
+      20,
+      20
+    ],
+    "HashNeeded": 72000,
+    "UnlockRecipes": [
+      404,
+      405
+    ],
+    "UnlockFunctions": [
+
+    ],
+    "UnlockValues": [
+
+    ],
+    "AddItems": [
+
+    ],
+    "AddItemCounts": [
+
+    ],
+    "Position": [
+      21.0,
+      -47.0
+    ]
+  },
+  {
+    "ID": 1819,
+    "Name": "核子先驱:放射性物质萃取",
+    "Desc": "将得到的钚矿石和铀矿石提炼成可供进一步加工的工业原料.",
+    "Conclusion": "",
+    "Published": true,
+    "Level": 0,
+    "MaxLevel": 0,
+    "LevelCoef1": 0,
+    "LevelCoef2": 0,
+    "IconPath": "Icons/Tech/1416",
+    "IsLabTech": true,
+    "PreTechs": [
+      1818
+    ],
+    "PreTechsImplicit": [
+
+    ],
+    "PreTechsMax": false,
+    "Items": [
+      6001,
+      6002,
+      6003
+    ],
+    "ItemPoints": [
+      20,
+      20,
+      20
+    ],
+    "HashNeeded": 108000,
+    "UnlockRecipes": [
+      406,
+      407
+    ],
+    "UnlockFunctions": [
+
+    ],
+    "UnlockValues": [
+
+    ],
+    "AddItems": [
+
+    ],
+    "AddItemCounts": [
+
+    ],
+    "Position": [
+      25.0,
+      -47.0
+    ]
+  },
+  {
+    "ID": 1820,
+    "Name": "核子先驱:裂变能源",
+    "Desc": "经历了漫长的工序,你得到了稳定可控的裂变燃料.",
+    "Conclusion": "",
+    "Published": true,
+    "Level": 0,
+    "MaxLevel": 0,
+    "LevelCoef1": 0,
+    "LevelCoef2": 0,
+    "IconPath": "Icons/Tech/1416",
+    "IsLabTech": true,
+    "PreTechs": [
+      1819
+    ],
+    "PreTechsImplicit": [
+
+    ],
+    "PreTechsMax": false,
+    "Items": [
+      6001,
+      6002,
+      6003
+    ],
+    "ItemPoints": [
+      20,
+      20,
+      20
+    ],
+    "HashNeeded": 144000,
+    "UnlockRecipes": [
+      408,
+      409
+    ],
+    "UnlockFunctions": [
+
+    ],
+    "UnlockValues": [
+
+    ],
+    "AddItems": [
+
+    ],
+    "AddItemCounts": [
+
+    ],
+    "Position": [
+      29.0,
+      -47.0
+    ]
+  },
+  {
+    "ID": 1821,
+    "Name": "核子先驱:同位素提取",
+    "Desc": "随着开拓者的工业水平进一步发展,裂变能已经无法满足需求.",
+    "Conclusion": "",
+    "Published": true,
+    "Level": 0,
+    "MaxLevel": 0,
+    "LevelCoef1": 0,
+    "LevelCoef2": 0,
+    "IconPath": "Icons/Tech/1416",
+    "IsLabTech": true,
+    "PreTechs": [
+      1820
+    ],
+    "PreTechsImplicit": [
+
+    ],
+    "PreTechsMax": false,
+    "Items": [
+      6001,
+      6002,
+      6003,
+      6004
+    ],
+    "ItemPoints": [
+      20,
+      20,
+      20,
+      20
+    ],
+    "HashNeeded": 180000,
+    "UnlockRecipes": [
+      41,
+      682
+    ],
+    "UnlockFunctions": [
+
+    ],
+    "UnlockValues": [
+
+    ],
+    "AddItems": [
+
+    ],
+    "AddItemCounts": [
+
+    ],
+    "Position": [
+      33.0,
+      -47.0
+    ]
+  },
+  {
+    "ID": 1822,
+    "Name": "核子先驱:聚变能源",
+    "Desc": "使用放射性同位素制作的聚变燃料.",
+    "Conclusion": "",
+    "Published": false,
+    "Level": 0,
+    "MaxLevel": 0,
+    "LevelCoef1": 0,
+    "LevelCoef2": 0,
+    "IconPath": "Icons/Tech/1416",
+    "IsLabTech": true,
+    "PreTechs": [
+      1821
+    ],
+    "PreTechsImplicit": [
+
+    ],
+    "PreTechsMax": false,
+    "Items": [
+      6001,
+      6002,
+      6003,
+      6004
+    ],
+    "ItemPoints": [
+      20,
+      20,
+      20,
+      20
+    ],
+    "HashNeeded": 288000,
+    "UnlockRecipes": [
+
+    ],
+    "UnlockFunctions": [
+
+    ],
+    "UnlockValues": [
+
+    ],
+    "AddItems": [
+
+    ],
+    "AddItemCounts": [
+
+    ],
+    "Position": [
+      37.0,
+      -47.0
+    ]
   }
+
 ]
