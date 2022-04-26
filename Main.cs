@@ -53,8 +53,11 @@ namespace ProjectGenesis
 
             #region ModelProto
 
-            var TankModel = CopyModelProto(121, 301, Color.blue);
+            var TankModel = CopyModelProto(121, 301, Color.HSVToRGB(0.5571f, 0.3188f, 0.8980f));
             LDBTool.PreAddProto(TankModel);
+
+            var OreFactoryModel = CopyModelProto(194, 302, Color.HSVToRGB(0.2035f, 0.8326f, 0.9373f));
+            LDBTool.PreAddProto(OreFactoryModel);
 
             #endregion
 
@@ -220,6 +223,7 @@ namespace ProjectGenesis
         {
             LDB.items.OnAfterDeserialize();
 
+
             itemProtos.Select(物品.二级制造台).prefabDesc.assemblerRecipeType = (global::ERecipeType)ERecipeType.电路蚀刻;
             itemProtos.Select(物品.三级制造台).prefabDesc.assemblerRecipeType = (global::ERecipeType)ERecipeType.高精度加工;
 
@@ -274,8 +278,19 @@ namespace ProjectGenesis
             itemProtos.Select(物品.电弧熔炉).prefabDesc.assemblerSpeed = 20000;
             itemProtos.Select(物品.无线输电塔).prefabDesc.powerConnectDistance = 90.5f;
 
+            itemProtos.Select(6230).prefabDesc.assemblerRecipeType = (global::ERecipeType)ERecipeType.矿物处理;
+            itemProtos.Select(6230).prefabDesc.idleEnergyPerTick = 400;
+            itemProtos.Select(6230).prefabDesc.workEnergyPerTick = 12000;
+
             itemProtos.Select(6229).prefabDesc.fluidStorageCount = 1000000;
             LDBTool.SetBuildBar(4, 4, 6229);
+
+
+
+            /*foreach (Material material in LDB.items.Select(6229).prefabDesc.materials)
+            {
+                material.color = new Color(0.2196078f, 0.6745098f, 0.9254901f);
+            }*/
         }
 
         private void PostAddDataAction()
@@ -284,10 +299,24 @@ namespace ProjectGenesis
             LDB.recipes.OnAfterDeserialize();
             LDB.models.OnAfterDeserialize();
 
-            foreach (var proto in LDB.models.dataArray)
+            //LDB.models.Select(302).prefabDesc.modelIndex = 302;
+            //LDB.items.Select(6230).ModelIndex = 302;
+            //LDB.items.Select(6230).prefabDesc = LDB.models.Select(302).prefabDesc;
+
+            /*LDB.models.Select(301).prefabDesc.modelIndex = 301;
+            LDB.items.Select(6229).ModelIndex = 301;
+            LDB.items.Select(6229).prefabDesc = LDB.models.Select(301).prefabDesc;*/
+
+
+
+
+
+            GameMain.gpuiManager.Init();
+
+            /*foreach (var proto in LDB.models.dataArray)
             {
                 proto.Preload();
-            }
+            }*/
 
             foreach (var proto in LDB.techs.dataArray)
             {
