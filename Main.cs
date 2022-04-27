@@ -59,6 +59,9 @@ namespace ProjectGenesis
             var OreFactoryModel = CopyModelProto(194, 302, Color.HSVToRGB(0.2035f, 0.8326f, 0.9373f));
             LDBTool.PreAddProto(OreFactoryModel);
 
+            var TestCraftingTableModel = CopyModelProto(50, 303, Color.white);
+            LDBTool.PreAddProto(TestCraftingTableModel);
+
             #endregion
 
             #region TechProto
@@ -285,6 +288,17 @@ namespace ProjectGenesis
             itemProtos.Select(6229).prefabDesc.fluidStorageCount = 1000000;
             LDBTool.SetBuildBar(4, 4, 6229);
 
+            //行星装配站调试部分
+            itemProtos.Select(6257).prefabDesc.isAssembler = true;
+            itemProtos.Select(6257).prefabDesc.isStation = false;
+            itemProtos.Select(6257).prefabDesc.isStellarStation = false;
+            itemProtos.Select(6257).prefabDesc.assemblerSpeed = 100000;
+            itemProtos.Select(6257).prefabDesc.stationMaxDroneCount = 0;
+            itemProtos.Select(6257).prefabDesc.stationMaxEnergyAcc = 0;
+            itemProtos.Select(6257).prefabDesc.stationMaxItemCount = 0;
+            itemProtos.Select(6257).prefabDesc.stationMaxItemKinds = 0;
+            itemProtos.Select(6257).prefabDesc.stationMaxShipCount = 0;
+            itemProtos.Select(6257).prefabDesc.assemblerRecipeType = (global::ERecipeType)ERecipeType.Assemble;
 
 
             /*foreach (Material material in LDB.items.Select(6229).prefabDesc.materials)
