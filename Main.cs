@@ -51,7 +51,7 @@ namespace ProjectGenesis
         {
             PreFix();
 
-            #region ModelProto
+#region ModelProto
 
             var TankModel = CopyModelProto(121, 301, Color.HSVToRGB(0.5571f, 0.3188f, 0.8980f));
             LDBTool.PreAddProto(TankModel);
@@ -62,9 +62,9 @@ namespace ProjectGenesis
             var TestCraftingTableModel = CopyModelProto(50, 303, Color.white);
             LDBTool.PreAddProto(TestCraftingTableModel);
 
-            #endregion
+#endregion
 
-            #region TechProto
+#region TechProto
 
             var templateTech = LDB.techs.Select(1311);
 
@@ -97,9 +97,9 @@ namespace ProjectGenesis
                 }
             }
 
-            #endregion
+#endregion
 
-            #region ItemProto
+#region ItemProto
 
             foreach (var itemjson in JsonHelper.ItemProtos())
             {
@@ -145,9 +145,9 @@ namespace ProjectGenesis
                 proto.Productive = itemjson.Productive;
             }
 
-            #endregion
+#endregion
 
-            #region RecipeProto
+#region RecipeProto
 
             foreach (var recipeJson in JsonHelper.RecipeProtos())
             {
@@ -196,7 +196,7 @@ namespace ProjectGenesis
                 }
             }
 
-            #endregion
+#endregion
         }
 
 
@@ -287,24 +287,6 @@ namespace ProjectGenesis
 
             itemProtos.Select(6229).prefabDesc.fluidStorageCount = 1000000;
             LDBTool.SetBuildBar(4, 4, 6229);
-
-            //行星装配站调试部分
-            itemProtos.Select(6257).prefabDesc.isAssembler = true;
-            itemProtos.Select(6257).prefabDesc.isStation = false;
-            itemProtos.Select(6257).prefabDesc.isStellarStation = false;
-            itemProtos.Select(6257).prefabDesc.assemblerSpeed = 100000;
-            itemProtos.Select(6257).prefabDesc.stationMaxDroneCount = 0;
-            itemProtos.Select(6257).prefabDesc.stationMaxEnergyAcc = 0;
-            itemProtos.Select(6257).prefabDesc.stationMaxItemCount = 0;
-            itemProtos.Select(6257).prefabDesc.stationMaxItemKinds = 0;
-            itemProtos.Select(6257).prefabDesc.stationMaxShipCount = 0;
-            itemProtos.Select(6257).prefabDesc.assemblerRecipeType = (global::ERecipeType)ERecipeType.Assemble;
-
-
-            /*foreach (Material material in LDB.items.Select(6229).prefabDesc.materials)
-            {
-                material.color = new Color(0.2196078f, 0.6745098f, 0.9254901f);
-            }*/
         }
 
         private void PostAddDataAction()
@@ -312,26 +294,25 @@ namespace ProjectGenesis
             LDB.items.OnAfterDeserialize();
             LDB.recipes.OnAfterDeserialize();
             LDB.models.OnAfterDeserialize();
-
-            //LDB.models.Select(302).prefabDesc.modelIndex = 302;
-            //LDB.items.Select(6230).ModelIndex = 302;
-            //LDB.items.Select(6230).prefabDesc = LDB.models.Select(302).prefabDesc;
-
-            /*LDB.models.Select(301).prefabDesc.modelIndex = 301;
-            LDB.items.Select(6229).ModelIndex = 301;
-            LDB.items.Select(6229).prefabDesc = LDB.models.Select(301).prefabDesc;*/
-
-
-
-
-
             GameMain.gpuiManager.Init();
-
-            /*foreach (var proto in LDB.models.dataArray)
-            {
-                proto.Preload();
-            }*/
-
+            
+            //行星装配站调试部分
+            var TestCraftingTableModel = LDB.models.Select(303);
+            TestCraftingTableModel.Preload();
+            TestCraftingTableModel.prefabDesc.isAssembler = true;
+            TestCraftingTableModel.prefabDesc.assemblerRecipeType = (global::ERecipeType)ERecipeType.Assemble;
+            TestCraftingTableModel.prefabDesc.assemblerSpeed = 100000;
+            TestCraftingTableModel.prefabDesc.isStation = false;
+            TestCraftingTableModel.prefabDesc.isStellarStation = false;
+            TestCraftingTableModel.prefabDesc.stationMaxDroneCount = 0;
+            TestCraftingTableModel.prefabDesc.stationMaxEnergyAcc = 0;
+            TestCraftingTableModel.prefabDesc.stationMaxItemCount = 0;
+            TestCraftingTableModel.prefabDesc.stationMaxItemKinds = 0;
+            TestCraftingTableModel.prefabDesc.stationMaxShipCount = 0;
+            TestCraftingTableModel.prefabDesc.slotPoses = TestCraftingTableModel.prefabDesc.portPoses;
+            TestCraftingTableModel.prefabDesc.portPoses = Array.Empty<Pose>();
+                       
+            
             foreach (var proto in LDB.techs.dataArray)
             {
                 proto.Preload();
@@ -406,7 +387,10 @@ namespace ProjectGenesis
                 model.prefabDesc.lodMaterials[1][0].color = color;
                 model.prefabDesc.lodMaterials[2][0].color = color;
             }
-            catch { }
+            catch
+            {
+                // ignored
+            }
 
             model.prefabDesc.modelIndex = id;
             model.prefabDesc.hasBuildCollider = true;
