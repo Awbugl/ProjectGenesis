@@ -10323,6 +10323,210 @@
       37.0,
       -47.0
     ]
+  },
+  {
+    "ID": 1823,
+    "Name": "行星级组装厂",
+    "Desc": "高度智能化的大型工厂,有着远超小型制造台的效率.",
+    "Conclusion": "",
+    "Published": true,
+    "Level": 0,
+    "MaxLevel": 0,
+    "LevelCoef1": 0,
+    "LevelCoef2": 0,
+    "IconPath": "Icons/Tech/1604",
+    "IsLabTech": true,
+    "PreTechs": [
+    ],
+    "PreTechsImplicit": [
+
+    ],
+    "PreTechsMax": false,
+    "Items": [
+      6001,
+      6002,
+      6003,
+      6004
+    ],
+    "ItemPoints": [
+      20,
+      20,
+      20,
+      5
+    ],
+    "HashNeeded": 288000,
+    "UnlockRecipes": [
+      416
+    ],
+    "UnlockFunctions": [
+
+    ],
+    "UnlockValues": [
+
+    ],
+    "AddItems": [
+
+    ],
+    "AddItemCounts": [
+
+    ],
+    "Position": [
+      13.0,
+      -51.0
+    ]
+  },
+  {
+    "ID": 1824,
+    "Name": "行星级熔炼厂",
+    "Desc": "高度智能化的大型工厂,有着远超小型制造台的效率.",
+    "Conclusion": "",
+    "Published": false,
+    "Level": 0,
+    "MaxLevel": 0,
+    "LevelCoef1": 0,
+    "LevelCoef2": 0,
+    "IconPath": "Icons/Tech/1604",
+    "IsLabTech": true,
+    "PreTechs": [
+    ],
+    "PreTechsImplicit": [
+
+    ],
+    "PreTechsMax": false,
+    "Items": [
+      6001,
+      6002,
+      6003,
+      6004
+    ],
+    "ItemPoints": [
+      20,
+      20,
+      20,
+      5
+    ],
+    "HashNeeded": 288000,
+    "UnlockRecipes": [
+
+    ],
+    "UnlockFunctions": [
+
+    ],
+    "UnlockValues": [
+
+    ],
+    "AddItems": [
+
+    ],
+    "AddItemCounts": [
+
+    ],
+    "Position": [
+      17.0,
+      -51.0
+    ]
+  },
+  {
+    "ID": 1825,
+    "Name": "行星级化学反应釜",
+    "Desc": "高度智能化的大型工厂,有着远超小型制造台的效率.",
+    "Conclusion": "",
+    "Published": false,
+    "Level": 0,
+    "MaxLevel": 0,
+    "LevelCoef1": 0,
+    "LevelCoef2": 0,
+    "IconPath": "Icons/Tech/1604",
+    "IsLabTech": true,
+    "PreTechs": [
+    ],
+    "PreTechsImplicit": [
+
+    ],
+    "PreTechsMax": false,
+    "Items": [
+      6001,
+      6002,
+      6003,
+      6004
+    ],
+    "ItemPoints": [
+      20,
+      20,
+      20,
+      5
+    ],
+    "HashNeeded": 288000,
+    "UnlockRecipes": [
+
+    ],
+    "UnlockFunctions": [
+
+    ],
+    "UnlockValues": [
+
+    ],
+    "AddItems": [
+
+    ],
+    "AddItemCounts": [
+
+    ],
+    "Position": [
+      21.0,
+      -51.0
+    ]
+  },
+  {
+    "ID": 1826,
+    "Name": "行星级精确组装厂",
+    "Desc": "高度智能化的大型工厂,有着远超小型制造台的效率.",
+    "Conclusion": "",
+    "Published": false,
+    "Level": 0,
+    "MaxLevel": 0,
+    "LevelCoef1": 0,
+    "LevelCoef2": 0,
+    "IconPath": "Icons/Tech/1604",
+    "IsLabTech": true,
+    "PreTechs": [
+    ],
+    "PreTechsImplicit": [
+
+    ],
+    "PreTechsMax": false,
+    "Items": [
+      6001,
+      6002,
+      6003,
+      6004
+    ],
+    "ItemPoints": [
+      20,
+      20,
+      20,
+      5
+    ],
+    "HashNeeded": 288000,
+    "UnlockRecipes": [
+
+    ],
+    "UnlockFunctions": [
+
+    ],
+    "UnlockValues": [
+
+    ],
+    "AddItems": [
+
+    ],
+    "AddItemCounts": [
+
+    ],
+    "Position": [
+      25.0,
+      -51.0
+    ]
   }
 
 ]
