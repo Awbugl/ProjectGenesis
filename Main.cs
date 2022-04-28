@@ -51,7 +51,7 @@ namespace ProjectGenesis
         {
             PreFix();
 
-#region ModelProto
+            #region ModelProto
 
             var TankModel = CopyModelProto(121, 301, Color.HSVToRGB(0.5571f, 0.3188f, 0.8980f));
             LDBTool.PreAddProto(TankModel);
@@ -59,12 +59,18 @@ namespace ProjectGenesis
             var OreFactoryModel = CopyModelProto(194, 302, Color.HSVToRGB(0.2035f, 0.8326f, 0.9373f));
             LDBTool.PreAddProto(OreFactoryModel);
 
-            var TestCraftingTableModel = CopyModelProto(50, 303, Color.white);
+            var TestCraftingTableModel = CopyModelProto(49, 303, Color.HSVToRGB(0.0710f, 0.7412f, 0.8941f));
             LDBTool.PreAddProto(TestCraftingTableModel);
+            var TestCraftingTableModel2 = CopyModelProto(49, 304, Color.HSVToRGB(0.6174f, 0.6842f, 0.9686f));
+            LDBTool.PreAddProto(TestCraftingTableModel2);
+            var TestCraftingTableModel3 = CopyModelProto(49, 305, Color.HSVToRGB(0.1404f, 0.8294f, 0.9882f));
+            LDBTool.PreAddProto(TestCraftingTableModel3);
+            var TestCraftingTableModel4 = CopyModelProto(49, 306, Color.HSVToRGB(0.9814f, 0.6620f, 0.8471f));
+            LDBTool.PreAddProto(TestCraftingTableModel4);
 
-#endregion
+            #endregion
 
-#region TechProto
+            #region TechProto
 
             var templateTech = LDB.techs.Select(1311);
 
@@ -97,9 +103,9 @@ namespace ProjectGenesis
                 }
             }
 
-#endregion
+            #endregion
 
-#region ItemProto
+            #region ItemProto
 
             foreach (var itemjson in JsonHelper.ItemProtos())
             {
@@ -145,9 +151,9 @@ namespace ProjectGenesis
                 proto.Productive = itemjson.Productive;
             }
 
-#endregion
+            #endregion
 
-#region RecipeProto
+            #region RecipeProto
 
             foreach (var recipeJson in JsonHelper.RecipeProtos())
             {
@@ -196,7 +202,7 @@ namespace ProjectGenesis
                 }
             }
 
-#endregion
+            #endregion
         }
 
 
@@ -231,8 +237,14 @@ namespace ProjectGenesis
             itemProtos.Select(物品.三级制造台).prefabDesc.assemblerRecipeType = (global::ERecipeType)ERecipeType.高精度加工;
 
             itemProtos.Select(物品.一级制造台).prefabDesc.assemblerSpeed = 20000;
+            itemProtos.Select(物品.一级制造台).prefabDesc.idleEnergyPerTick = itemProtos.Select(物品.一级制造台).prefabDesc.idleEnergyPerTick * 2;
+            itemProtos.Select(物品.一级制造台).prefabDesc.workEnergyPerTick = itemProtos.Select(物品.一级制造台).prefabDesc.workEnergyPerTick * 2;
             itemProtos.Select(物品.二级制造台).prefabDesc.assemblerSpeed = 20000;
+            itemProtos.Select(物品.二级制造台).prefabDesc.idleEnergyPerTick = itemProtos.Select(物品.二级制造台).prefabDesc.idleEnergyPerTick * 2;
+            itemProtos.Select(物品.二级制造台).prefabDesc.workEnergyPerTick = itemProtos.Select(物品.二级制造台).prefabDesc.workEnergyPerTick * 2;
             itemProtos.Select(物品.三级制造台).prefabDesc.assemblerSpeed = 20000;
+            itemProtos.Select(物品.三级制造台).prefabDesc.idleEnergyPerTick = itemProtos.Select(物品.三级制造台).prefabDesc.idleEnergyPerTick * 2;
+            itemProtos.Select(物品.三级制造台).prefabDesc.workEnergyPerTick = itemProtos.Select(物品.三级制造台).prefabDesc.workEnergyPerTick * 2;
 
             itemProtos.Select(物品.位面熔炉).prefabDesc.assemblerSpeed = 40000;
             itemProtos.Select(物品.化工厂).prefabDesc.assemblerSpeed = 20000;
@@ -258,14 +270,14 @@ namespace ProjectGenesis
             itemProtos.Select(物品.风力涡轮机).prefabDesc.powerCoverRadius = 14.9f;
 
             itemProtos.Select(物品.火力发电机).prefabDesc.genEnergyPerTick = 200000;
-            itemProtos.Select(物品.太阳能板).prefabDesc.genEnergyPerTick = 40000;
+            itemProtos.Select(物品.太阳能板).prefabDesc.genEnergyPerTick = 30000;
             itemProtos.Select(物品.地热发电机).prefabDesc.genEnergyPerTick = 400000;
             itemProtos.Select(物品.聚变发电机).prefabDesc.genEnergyPerTick = 2500000;
             itemProtos.Select(物品.聚变发电机).prefabDesc.useFuelPerTick = 2500000;
-            itemProtos.Select(物品.风力涡轮机).prefabDesc.genEnergyPerTick = 50000;
+            itemProtos.Select(物品.风力涡轮机).prefabDesc.genEnergyPerTick = 25000;
             itemProtos.Select(物品.人造恒星).prefabDesc.genEnergyPerTick = 120000000;
 
-            itemProtos.Select(物品.火力发电机).prefabDesc.useFuelPerTick = 200000;
+            itemProtos.Select(物品.火力发电机).prefabDesc.useFuelPerTick = 150000;
 
             itemProtos.Select(物品.低速传送带).prefabDesc.beltSpeed = 3;
             itemProtos.Select(物品.高速传送带).prefabDesc.beltSpeed = 5;
@@ -279,6 +291,8 @@ namespace ProjectGenesis
             itemProtos.Select(物品.卫星配电站).prefabDesc.workEnergyPerTick = 40000000;
 
             itemProtos.Select(物品.电弧熔炉).prefabDesc.assemblerSpeed = 20000;
+            itemProtos.Select(物品.电弧熔炉).prefabDesc.idleEnergyPerTick = itemProtos.Select(物品.电弧熔炉).prefabDesc.idleEnergyPerTick * 2;
+            itemProtos.Select(物品.电弧熔炉).prefabDesc.workEnergyPerTick = itemProtos.Select(物品.电弧熔炉).prefabDesc.workEnergyPerTick * 2;
             itemProtos.Select(物品.无线输电塔).prefabDesc.powerConnectDistance = 90.5f;
 
             itemProtos.Select(6230).prefabDesc.assemblerRecipeType = (global::ERecipeType)ERecipeType.矿物处理;
@@ -295,13 +309,16 @@ namespace ProjectGenesis
             LDB.recipes.OnAfterDeserialize();
             LDB.models.OnAfterDeserialize();
             GameMain.gpuiManager.Init();
-            
+
             //行星装配站调试部分
             var TestCraftingTableModel = LDB.models.Select(303);
-            TestCraftingTableModel.Preload();
+            var TestCraftingTableModel2 = LDB.models.Select(304);
+            var TestCraftingTableModel3 = LDB.models.Select(305);
+            var TestCraftingTableModel4 = LDB.models.Select(306);
+            //TestCraftingTableModel.Preload();
             TestCraftingTableModel.prefabDesc.isAssembler = true;
             TestCraftingTableModel.prefabDesc.assemblerRecipeType = (global::ERecipeType)ERecipeType.Assemble;
-            TestCraftingTableModel.prefabDesc.assemblerSpeed = 100000;
+            TestCraftingTableModel.prefabDesc.assemblerSpeed = 400000;
             TestCraftingTableModel.prefabDesc.isStation = false;
             TestCraftingTableModel.prefabDesc.isStellarStation = false;
             TestCraftingTableModel.prefabDesc.stationMaxDroneCount = 0;
@@ -309,10 +326,110 @@ namespace ProjectGenesis
             TestCraftingTableModel.prefabDesc.stationMaxItemCount = 0;
             TestCraftingTableModel.prefabDesc.stationMaxItemKinds = 0;
             TestCraftingTableModel.prefabDesc.stationMaxShipCount = 0;
+            TestCraftingTableModel.prefabDesc.idleEnergyPerTick = 100000;
+            TestCraftingTableModel.prefabDesc.workEnergyPerTick = 500000;
             TestCraftingTableModel.prefabDesc.slotPoses = TestCraftingTableModel.prefabDesc.portPoses;
             TestCraftingTableModel.prefabDesc.portPoses = Array.Empty<Pose>();
-                       
-            
+            TestCraftingTableModel.prefabDesc.slotPoses = new Pose[] {
+                new Pose(new Vector3(1.3f, 0.0f, 3.3f), new Quaternion(0f, 0f, 0f, 1f)),
+                new Pose(new Vector3(0f, 0.0f, 3.3f), new Quaternion(0f, 0f, 0f, 1f)),
+                new Pose(new Vector3(-1.3f, 0.0f, 3.3f), new Quaternion(0f, 0f, 0f, 1f)),
+                new Pose(new Vector3(-3.3f, 0.0f, 1.3f), new Quaternion(0f, -0.7f, 0f, 0.7f)),
+                new Pose(new Vector3(-3.3f, 0.0f, 0.0f), new Quaternion(0f, -0.7f, 0f, 0.7f)),
+                new Pose(new Vector3(-3.3f, 0.0f, -1.3f), new Quaternion(0f, -0.7f, 0f, 0.7f)),
+                new Pose(new Vector3(-1.3f, 0.0f, -3.3f), new Quaternion(0f, -1f, 0f, 0f)),
+                new Pose(new Vector3(0.0f, 0.0f, -3.3f), new Quaternion(0f, -1f, 0f, 0f)),
+                new Pose(new Vector3(1.3f, 0.0f, -3.3f), new Quaternion(0f, -1f, 0f, 0f)),
+                new Pose(new Vector3(3.3f, 0.0f, -1.3f), new Quaternion(0f, 0.7f, 0f, 0.7f)),
+                new Pose(new Vector3(3.3f, 0.0f, 0.0f), new Quaternion(0f, 0.7f, 0f, 0.7f)),
+                new Pose(new Vector3(3.3f, 0.0f, 1.3f), new Quaternion(0f, 0.7f, 0f, 0.7f))
+            }; 
+            TestCraftingTableModel2.prefabDesc.isAssembler = true;
+            TestCraftingTableModel2.prefabDesc.assemblerRecipeType = (global::ERecipeType)ERecipeType.Smelt;
+            TestCraftingTableModel2.prefabDesc.assemblerSpeed = 400000;
+            TestCraftingTableModel2.prefabDesc.isStation = false;
+            TestCraftingTableModel2.prefabDesc.isStellarStation = false;
+            TestCraftingTableModel2.prefabDesc.stationMaxDroneCount = 0;
+            TestCraftingTableModel2.prefabDesc.stationMaxEnergyAcc = 0;
+            TestCraftingTableModel2.prefabDesc.stationMaxItemCount = 0;
+            TestCraftingTableModel2.prefabDesc.stationMaxItemKinds = 0;
+            TestCraftingTableModel2.prefabDesc.stationMaxShipCount = 0;
+            TestCraftingTableModel2.prefabDesc.idleEnergyPerTick = 100000;
+            TestCraftingTableModel2.prefabDesc.workEnergyPerTick = 500000;
+            TestCraftingTableModel2.prefabDesc.slotPoses = TestCraftingTableModel2.prefabDesc.portPoses;
+            TestCraftingTableModel2.prefabDesc.portPoses = Array.Empty<Pose>();
+            TestCraftingTableModel2.prefabDesc.slotPoses = new Pose[] {
+                new Pose(new Vector3(1.3f, 0.0f, 3.3f), new Quaternion(0f, 0f, 0f, 1f)),
+                new Pose(new Vector3(0f, 0.0f, 3.3f), new Quaternion(0f, 0f, 0f, 1f)),
+                new Pose(new Vector3(-1.3f, 0.0f, 3.3f), new Quaternion(0f, 0f, 0f, 1f)),
+                new Pose(new Vector3(-3.3f, 0.0f, 1.3f), new Quaternion(0f, -0.7f, 0f, 0.7f)),
+                new Pose(new Vector3(-3.3f, 0.0f, 0.0f), new Quaternion(0f, -0.7f, 0f, 0.7f)),
+                new Pose(new Vector3(-3.3f, 0.0f, -1.3f), new Quaternion(0f, -0.7f, 0f, 0.7f)),
+                new Pose(new Vector3(-1.3f, 0.0f, -3.3f), new Quaternion(0f, -1f, 0f, 0f)),
+                new Pose(new Vector3(0.0f, 0.0f, -3.3f), new Quaternion(0f, -1f, 0f, 0f)),
+                new Pose(new Vector3(1.3f, 0.0f, -3.3f), new Quaternion(0f, -1f, 0f, 0f)),
+                new Pose(new Vector3(3.3f, 0.0f, -1.3f), new Quaternion(0f, 0.7f, 0f, 0.7f)),
+                new Pose(new Vector3(3.3f, 0.0f, 0.0f), new Quaternion(0f, 0.7f, 0f, 0.7f)),
+                new Pose(new Vector3(3.3f, 0.0f, 1.3f), new Quaternion(0f, 0.7f, 0f, 0.7f))
+            };
+            TestCraftingTableModel3.prefabDesc.isAssembler = true;
+            TestCraftingTableModel3.prefabDesc.assemblerRecipeType = (global::ERecipeType)ERecipeType.Chemical;
+            TestCraftingTableModel3.prefabDesc.assemblerSpeed = 400000;
+            TestCraftingTableModel3.prefabDesc.isStation = false;
+            TestCraftingTableModel3.prefabDesc.isStellarStation = false;
+            TestCraftingTableModel3.prefabDesc.stationMaxDroneCount = 0;
+            TestCraftingTableModel3.prefabDesc.stationMaxEnergyAcc = 0;
+            TestCraftingTableModel3.prefabDesc.stationMaxItemCount = 0;
+            TestCraftingTableModel3.prefabDesc.stationMaxItemKinds = 0;
+            TestCraftingTableModel3.prefabDesc.stationMaxShipCount = 0;
+            TestCraftingTableModel3.prefabDesc.idleEnergyPerTick = 100000;
+            TestCraftingTableModel3.prefabDesc.workEnergyPerTick = 500000;
+            TestCraftingTableModel3.prefabDesc.slotPoses = TestCraftingTableModel3.prefabDesc.portPoses;
+            TestCraftingTableModel3.prefabDesc.portPoses = Array.Empty<Pose>();
+            TestCraftingTableModel3.prefabDesc.slotPoses = new Pose[] {
+                new Pose(new Vector3(1.3f, 0.0f, 3.3f), new Quaternion(0f, 0f, 0f, 1f)),
+                new Pose(new Vector3(0f, 0.0f, 3.3f), new Quaternion(0f, 0f, 0f, 1f)),
+                new Pose(new Vector3(-1.3f, 0.0f, 3.3f), new Quaternion(0f, 0f, 0f, 1f)),
+                new Pose(new Vector3(-3.3f, 0.0f, 1.3f), new Quaternion(0f, -0.7f, 0f, 0.7f)),
+                new Pose(new Vector3(-3.3f, 0.0f, 0.0f), new Quaternion(0f, -0.7f, 0f, 0.7f)),
+                new Pose(new Vector3(-3.3f, 0.0f, -1.3f), new Quaternion(0f, -0.7f, 0f, 0.7f)),
+                new Pose(new Vector3(-1.3f, 0.0f, -3.3f), new Quaternion(0f, -1f, 0f, 0f)),
+                new Pose(new Vector3(0.0f, 0.0f, -3.3f), new Quaternion(0f, -1f, 0f, 0f)),
+                new Pose(new Vector3(1.3f, 0.0f, -3.3f), new Quaternion(0f, -1f, 0f, 0f)),
+                new Pose(new Vector3(3.3f, 0.0f, -1.3f), new Quaternion(0f, 0.7f, 0f, 0.7f)),
+                new Pose(new Vector3(3.3f, 0.0f, 0.0f), new Quaternion(0f, 0.7f, 0f, 0.7f)),
+                new Pose(new Vector3(3.3f, 0.0f, 1.3f), new Quaternion(0f, 0.7f, 0f, 0.7f))
+            }; 
+            TestCraftingTableModel4.prefabDesc.isAssembler = true;
+            TestCraftingTableModel4.prefabDesc.assemblerRecipeType = (global::ERecipeType)ERecipeType.高精度加工;
+            TestCraftingTableModel4.prefabDesc.assemblerSpeed = 400000;
+            TestCraftingTableModel4.prefabDesc.isStation = false;
+            TestCraftingTableModel4.prefabDesc.isStellarStation = false;
+            TestCraftingTableModel4.prefabDesc.stationMaxDroneCount = 0;
+            TestCraftingTableModel4.prefabDesc.stationMaxEnergyAcc = 0;
+            TestCraftingTableModel4.prefabDesc.stationMaxItemCount = 0;
+            TestCraftingTableModel4.prefabDesc.stationMaxItemKinds = 0;
+            TestCraftingTableModel4.prefabDesc.stationMaxShipCount = 0;
+            TestCraftingTableModel4.prefabDesc.idleEnergyPerTick = 100000;
+            TestCraftingTableModel4.prefabDesc.workEnergyPerTick = 500000;
+            TestCraftingTableModel4.prefabDesc.slotPoses = TestCraftingTableModel4.prefabDesc.portPoses;
+            TestCraftingTableModel4.prefabDesc.portPoses = Array.Empty<Pose>();
+            TestCraftingTableModel4.prefabDesc.slotPoses = new Pose[] {
+                new Pose(new Vector3(1.3f, 0.0f, 3.3f), new Quaternion(0f, 0f, 0f, 1f)),
+                new Pose(new Vector3(0f, 0.0f, 3.3f), new Quaternion(0f, 0f, 0f, 1f)),
+                new Pose(new Vector3(-1.3f, 0.0f, 3.3f), new Quaternion(0f, 0f, 0f, 1f)),
+                new Pose(new Vector3(-3.3f, 0.0f, 1.3f), new Quaternion(0f, -0.7f, 0f, 0.7f)),
+                new Pose(new Vector3(-3.3f, 0.0f, 0.0f), new Quaternion(0f, -0.7f, 0f, 0.7f)),
+                new Pose(new Vector3(-3.3f, 0.0f, -1.3f), new Quaternion(0f, -0.7f, 0f, 0.7f)),
+                new Pose(new Vector3(-1.3f, 0.0f, -3.3f), new Quaternion(0f, -1f, 0f, 0f)),
+                new Pose(new Vector3(0.0f, 0.0f, -3.3f), new Quaternion(0f, -1f, 0f, 0f)),
+                new Pose(new Vector3(1.3f, 0.0f, -3.3f), new Quaternion(0f, -1f, 0f, 0f)),
+                new Pose(new Vector3(3.3f, 0.0f, -1.3f), new Quaternion(0f, 0.7f, 0f, 0.7f)),
+                new Pose(new Vector3(3.3f, 0.0f, 0.0f), new Quaternion(0f, 0.7f, 0f, 0.7f)),
+                new Pose(new Vector3(3.3f, 0.0f, 1.3f), new Quaternion(0f, 0.7f, 0f, 0.7f))
+            };
+
+
             foreach (var proto in LDB.techs.dataArray)
             {
                 proto.Preload();
