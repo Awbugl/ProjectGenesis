@@ -1860,12 +1860,12 @@
     "Time": 360,
     "Input": [
       6502,
-      1107,
+      6249,
       1303
     ],
     "InCounts": [
       4,
-      18,
+      16,
       4
     ],
     "Output": [
@@ -2297,11 +2297,13 @@
     "Input": [
       6501,
       1103,
+      6249,
       1303
     ],
     "InCounts": [
+      10,
+      30,
       20,
-      60,
       10
     ],
     "Output": [
@@ -2353,12 +2355,14 @@
     "Input": [
       6502,
       1107,
+      6249,
       1305
     ],
     "InCounts": [
       20,
+      60,
       40,
-      5
+      2
     ],
     "Output": [
       2104
@@ -3004,15 +3008,15 @@
     "Time": 240,
     "Input": [
       6502,
-      1107,
+      6249,
       1119,
       1305
     ],
     "InCounts": [
       10,
       10,
-      6,
-      4
+      4,
+      2
     ],
     "Output": [
       2313
@@ -3121,14 +3125,16 @@
     "Input": [
       6502,
       1107,
+      6249,
       1205,
       1305
     ],
     "InCounts": [
       10,
-      40,
+      30,
+      20,
       16,
-      6
+      4
     ],
     "Output": [
       2211
@@ -5758,7 +5764,7 @@
       2
     ],
     "Description": "这个公式能让你更加高效的生产硫酸.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1303,
+    "PreTech": 1413,
     "GridIndex": 3701,
     "Name": "铁矿粉",
     "IconPath": "Assets/texpack/铁矿粉",
@@ -5783,7 +5789,7 @@
       2
     ],
     "Description": "这个公式能让你更加高效的生产硫酸.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1303,
+    "PreTech": 1413,
     "GridIndex": 3702,
     "Name": "铜矿粉",
     "IconPath": "Assets/texpack/铜矿粉",
@@ -5808,7 +5814,7 @@
       2
     ],
     "Description": "这个公式能让你更加高效的生产硫酸.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1303,
+    "PreTech": 1413,
     "GridIndex": 3703,
     "Name": "硅矿粉",
     "IconPath": "Assets/texpack/硅矿粉",
@@ -5833,7 +5839,7 @@
       2
     ],
     "Description": "这个公式能让你更加高效的生产硫酸.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1303,
+    "PreTech": 1413,
     "GridIndex": 3704,
     "Name": "钛矿粉",
     "IconPath": "Assets/texpack/钛矿粉",
@@ -5858,7 +5864,7 @@
       2
     ],
     "Description": "这个公式能让你更加高效的生产硫酸.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1303,
+    "PreTech": 1413,
     "GridIndex": 3705,
     "Name": "石粉",
     "IconPath": "Assets/texpack/石粉",
@@ -5883,7 +5889,7 @@
       2
     ],
     "Description": "这个公式能让你更加高效的生产硫酸.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1303,
+    "PreTech": 1413,
     "GridIndex": 3706,
     "Name": "煤矿粉",
     "IconPath": "Assets/texpack/煤矿粉",
@@ -6227,6 +6233,70 @@
     "Name": "钛矿精炼",
     "IconPath": "Icons/ItemRecipe/titanium-plate",
     "Explicit": true,
+    "Handcraft": false,
+    "NonProductive": false
+  },
+  {
+    "ID": 415,
+    "Type": 4,
+    "Time": 60,
+    "Input": [
+      1103,
+      6251,
+      1112,
+      1000
+    ],
+    "InCounts": [
+      4,
+      8,
+      2,
+      4
+    ],
+    "Output": [
+      6249
+    ],
+    "OutCounts": [
+      2
+    ],
+    "Description": "从原矿中分离的纯净粉可以实现效率更高的生产.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "PreTech": 1415,
+    "GridIndex": 3605,
+    "Name": "混凝土",
+    "IconPath": "Assets/texpack/混凝土",
+    "Explicit": false,
+    "Handcraft": false,
+    "NonProductive": false
+  },
+  {
+    "ID": 416,
+    "Type": 4,
+    "Time": 7200,
+    "Input": [
+      6502,
+      1107,
+      6249,
+      2013,
+      1305
+    ],
+    "InCounts": [
+      20,
+      60,
+      40,
+      20,
+      10
+    ],
+    "Output": [
+      6257
+    ],
+    "OutCounts": [
+      1
+    ],
+    "Description": "从原矿中分离的纯净粉可以实现效率更高的生产.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "PreTech": 1823,
+    "GridIndex": 3102,
+    "Name": "行星级装配站",
+    "IconPath": "Assets/texpack/行星组装站",
+    "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   }
