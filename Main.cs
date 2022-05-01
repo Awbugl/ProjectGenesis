@@ -17,6 +17,7 @@ using ERecipeType_1 = ERecipeType;
 
 namespace ProjectGenesis
 {
+
     [BepInPlugin("org.LoShin.GenesisBook", "Genesis", "1.0.0")]
     [BepInDependency("me.xiaoye97.plugin.Dyson.LDBTool")]
     [BepInDependency("dsp.common-api.CommonAPI")]
@@ -25,6 +26,8 @@ namespace ProjectGenesis
     public class Main : BaseUnityPlugin
     {
         private int TableID, TableID2;
+
+        private bool StackSizeButton = false;
 
         public void Awake()
         {
@@ -125,8 +128,9 @@ namespace ProjectGenesis
                 proto.Name = itemjson.Name;
                 proto.Description = itemjson.Description;
                 proto.IconPath = itemjson.IconPath;
-                proto.GridIndex = itemjson.GridIndex;
-                proto.StackSize = itemjson.StackSize;
+                if(StackSizeButton==true)proto.StackSize = 10000000;
+                else proto.StackSize = itemjson.StackSize;
+                    proto.GridIndex = itemjson.GridIndex;
                 proto.FuelType = itemjson.FuelType;
                 proto.HeatValue = itemjson.HeatValue;
                 proto.ReactorInc = itemjson.ReactorInc;
@@ -227,6 +231,15 @@ namespace ProjectGenesis
             LDB.items.Select(物品.单极磁石).ID = 6980;
             LDB.items.Select(物品.硫酸).ID = 6998;
 
+
+            //矿场修复
+            var OreFactory = LDB.items.Select(6230);
+            var OreFactoryModel = LDB.items.Select(302);
+            OreFactoryModel.prefabDesc.dragBuild = true;
+            OreFactoryModel.prefabDesc.dragBuildDist = new Vector2(2.9f, 2.9f);
+            OreFactory.prefabDesc.dragBuild = true;
+            OreFactory.prefabDesc.dragBuildDist = new Vector2(2.9f, 2.9f);
+
             LDB.items.OnAfterDeserialize();
         }
 
@@ -304,6 +317,15 @@ namespace ProjectGenesis
 
             itemProtos.Select(6229).prefabDesc.fluidStorageCount = 1000000;
             LDBTool.SetBuildBar(4, 4, 6229);
+
+            //矿场修复
+            var OreFactory = LDB.items.Select(6230);
+            var OreFactoryModel = LDB.items.Select(302);
+            OreFactoryModel.prefabDesc.dragBuild = true;
+            OreFactoryModel.prefabDesc.dragBuildDist = new Vector2(2.9f, 2.9f);
+            OreFactory.prefabDesc.dragBuild = true;
+            OreFactory.prefabDesc.dragBuildDist = new Vector2(2.9f, 2.9f);
+
         }
 
         private void PostAddDataAction()
@@ -437,6 +459,7 @@ namespace ProjectGenesis
                 new Pose(new Vector3(3.3f, 0.0f, 1.3f), new Quaternion(0f, 0.7f, 0f, 0.7f))
             };
 
+
             LDB.items.Select(2211).prefabDesc.fuelMask = 5;
             LDB.items.Select(2210).prefabDesc.fuelMask = 6;
             AntiMatterModel.prefabDesc.fuelMask = 4;
@@ -476,7 +499,9 @@ namespace ProjectGenesis
             foreach (var proto in LDB.items.dataArray)
             {
                 StorageComponent.itemIsFuel[proto.ID] = proto.HeatValue > 0L;
-                StorageComponent.itemStackCount[proto.ID] = proto.StackSize;
+                //StorageComponent.itemStackCount[proto.ID] = proto.StackSize;
+                if(StackSizeButton==true) StorageComponent.itemStackCount[proto.ID] = 10000000;
+                else StorageComponent.itemStackCount[proto.ID] = proto.StackSize;
             }
 
             var logo = GameObject.Find("UI Root/Overlay Canvas/Main Menu/dsp-logo");
