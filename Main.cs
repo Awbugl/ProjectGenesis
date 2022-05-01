@@ -67,6 +67,8 @@ namespace ProjectGenesis
             LDBTool.PreAddProto(TestCraftingTableModel3);
             var TestCraftingTableModel4 = CopyModelProto(49, 306, Color.HSVToRGB(0.9814f, 0.6620f, 0.8471f));
             LDBTool.PreAddProto(TestCraftingTableModel4);
+            var AntiMatterModel = CopyModelProto(118, 307, Color.HSVToRGB(0.5985f, 0.7333f, 0.2353f));
+            LDBTool.PreAddProto(AntiMatterModel);
 
             #endregion
 
@@ -219,8 +221,8 @@ namespace ProjectGenesis
             LDB.milestones.Select(9).defaultDesc = "你采集了钨矿,宇宙珍奇之一.它是一种用途广泛的新材料.";
             LDB.milestones.Select(9).DefaultDesc = "你采集了钨矿,宇宙珍奇之一.它是一种用途广泛的新材料.";
 
-            LDB.items.Select(物品.聚变发电机).name = "核子能源发电站";
-            LDB.items.Select(物品.聚变发电机).Name = "核子能源发电站";
+            LDB.items.Select(物品.聚变发电机).name = "裂变能源发电站";
+            LDB.items.Select(物品.聚变发电机).Name = "裂变能源发电站";
 
             LDB.items.Select(物品.单极磁石).ID = 6980;
             LDB.items.Select(物品.硫酸).ID = 6998;
@@ -275,7 +277,8 @@ namespace ProjectGenesis
             itemProtos.Select(物品.聚变发电机).prefabDesc.genEnergyPerTick = 2500000;
             itemProtos.Select(物品.聚变发电机).prefabDesc.useFuelPerTick = 2500000;
             itemProtos.Select(物品.风力涡轮机).prefabDesc.genEnergyPerTick = 25000;
-            itemProtos.Select(物品.人造恒星).prefabDesc.genEnergyPerTick = 120000000;
+            itemProtos.Select(物品.人造恒星).prefabDesc.genEnergyPerTick = 10000000;
+            itemProtos.Select(物品.人造恒星).prefabDesc.useFuelPerTick = 10000000;
 
             itemProtos.Select(物品.火力发电机).prefabDesc.useFuelPerTick = 150000;
 
@@ -287,8 +290,8 @@ namespace ProjectGenesis
             itemProtos.Select(物品.高速分拣器).prefabDesc.inserterSTT = 50000;
             itemProtos.Select(物品.极速分拣器).prefabDesc.inserterSTT = 25000;
 
-            itemProtos.Select(物品.卫星配电站).prefabDesc.idleEnergyPerTick = 1200000;
-            itemProtos.Select(物品.卫星配电站).prefabDesc.workEnergyPerTick = 40000000;
+            itemProtos.Select(物品.卫星配电站).prefabDesc.idleEnergyPerTick = 12000000;
+            itemProtos.Select(物品.卫星配电站).prefabDesc.workEnergyPerTick = 48000000;
 
             itemProtos.Select(物品.电弧熔炉).prefabDesc.assemblerSpeed = 20000;
             itemProtos.Select(物品.电弧熔炉).prefabDesc.idleEnergyPerTick = itemProtos.Select(物品.电弧熔炉).prefabDesc.idleEnergyPerTick * 2;
@@ -315,6 +318,7 @@ namespace ProjectGenesis
             var TestCraftingTableModel2 = LDB.models.Select(304);
             var TestCraftingTableModel3 = LDB.models.Select(305);
             var TestCraftingTableModel4 = LDB.models.Select(306);
+            var AntiMatterModel = LDB.models.Select(307);
             //TestCraftingTableModel.Preload();
             TestCraftingTableModel.prefabDesc.isAssembler = true;
             TestCraftingTableModel.prefabDesc.assemblerRecipeType = (global::ERecipeType)ERecipeType.Assemble;
@@ -414,6 +418,10 @@ namespace ProjectGenesis
             TestCraftingTableModel4.prefabDesc.workEnergyPerTick = 500000;
             TestCraftingTableModel4.prefabDesc.slotPoses = TestCraftingTableModel4.prefabDesc.portPoses;
             TestCraftingTableModel4.prefabDesc.portPoses = Array.Empty<Pose>();
+            //奇怪的测试
+            //LDB.items.Select(2302).prefabDesc.portPoses = LDB.items.Select(2302).prefabDesc.slotPoses;
+            //LDB.items.Select(2302).prefabDesc.slotPoses = Array.Empty<Pose>();
+            //果然不行x_x
             TestCraftingTableModel4.prefabDesc.slotPoses = new Pose[] {
                 new Pose(new Vector3(1.3f, 0.0f, 3.3f), new Quaternion(0f, 0f, 0f, 1f)),
                 new Pose(new Vector3(0f, 0.0f, 3.3f), new Quaternion(0f, 0f, 0f, 1f)),
@@ -428,6 +436,12 @@ namespace ProjectGenesis
                 new Pose(new Vector3(3.3f, 0.0f, 0.0f), new Quaternion(0f, 0.7f, 0f, 0.7f)),
                 new Pose(new Vector3(3.3f, 0.0f, 1.3f), new Quaternion(0f, 0.7f, 0f, 0.7f))
             };
+
+            LDB.items.Select(2211).prefabDesc.fuelMask = 5;
+            LDB.items.Select(2210).prefabDesc.fuelMask = 6;
+            AntiMatterModel.prefabDesc.fuelMask = 4;
+            AntiMatterModel.prefabDesc.genEnergyPerTick = 1200000000;
+            AntiMatterModel.prefabDesc.useFuelPerTick = 12000000;
 
 
             foreach (var proto in LDB.techs.dataArray)
@@ -457,7 +471,7 @@ namespace ProjectGenesis
             ItemProto.InitFuelNeeds();
             ItemProto.InitItemIndices();
             ItemProto.InitMechaMaterials();
-
+            ItemProto.fuelNeeds[5] = new int[] { 6241, 6242, 6243 };
             foreach (var proto in LDB.items.dataArray)
             {
                 StorageComponent.itemIsFuel[proto.ID] = proto.HeatValue > 0L;
