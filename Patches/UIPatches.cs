@@ -77,6 +77,8 @@ namespace ProjectGenesis.Patches
 
         [HarmonyPostfix]
         [HarmonyPatch(typeof(RecipeProto), "madeFromString", MethodType.Getter)]
+
+       
         public static void RecipeProto_madeFromString(ref RecipeProto __instance, ref string __result)
         {
             ERecipeType type = (ERecipeType)__instance.Type;
@@ -93,6 +95,58 @@ namespace ProjectGenesis.Patches
                 __result = "矿物处理厂".Translate();
             }
         }
+
+        [HarmonyPostfix]
+        [HarmonyPatch(typeof(ItemProto), "fuelTypeString", MethodType.Getter)]
+
+        public static void ItemProto_fuelTypeString(ref ItemProto __instance, ref string __result)
+        {
+            int type = (int)__instance.FuelType;
+            if (type == 5)
+            {
+                __result = "裂变能".Translate();
+            }
+            if (type == 6)
+            {
+                __result = "聚变能".Translate();
+            }
+        }
+
+        //发电类型
+        [HarmonyPostfix]
+        [HarmonyPatch(typeof(ItemProto), "GetPropValue")]
+        public static void GetPropValuePatch(ref ItemProto __instance, int index, ref string __result) 
+        {
+
+            if ((ulong)index >= (ulong)((long)__instance.DescFields.Length))
+            {
+                __result = "";
+                return;
+            }
+            switch (__instance.DescFields[index])
+            {
+                case 4:
+                    if (__instance.prefabDesc.isPowerGen)
+                    {
+                        if (__instance.prefabDesc.fuelMask == 4)
+                        {
+                            __result = "质能转换";
+                        }
+                        if (__instance.prefabDesc.fuelMask == 5) {
+                            __result = "裂变能";
+                        }
+                        if (__instance.prefabDesc.fuelMask == 6)
+                        {
+                            __result = "仿星器";
+                        }
+                    }
+                    return;
+            }
+
+
+        }
+        
+
 
         [HarmonyPrefix]
         [HarmonyPatch(typeof(AssemblerComponent), "InternalUpdate")]
