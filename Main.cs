@@ -472,6 +472,7 @@ namespace ProjectGenesis
             ItemProto.InitItemIndices();
             ItemProto.InitMechaMaterials();
             ItemProto.fuelNeeds[5] = new int[] { 6241, 6242, 6243 };
+            ItemProto.fuelNeeds[6] = new int[] { 1121, 6532, 1802, 6244, 6245 };
             foreach (var proto in LDB.items.dataArray)
             {
                 StorageComponent.itemIsFuel[proto.ID] = proto.HeatValue > 0L;
