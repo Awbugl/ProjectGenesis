@@ -1197,7 +1197,7 @@
   },
   {
     "ID": 1144,
-    "Name": "终极目标:人造恒星",
+    "Name": "终极目标:反物质能量炉",
     "Desc": "人造恒星描述",
     "Conclusion": "人造恒星结果",
     "Published": true,
@@ -1208,7 +1208,7 @@
     "IconPath": "Icons/Tech/1144",
     "IsLabTech": true,
     "PreTechs": [
-      1145
+      1828
     ],
     "PreTechsImplicit": [
 
@@ -1222,15 +1222,17 @@
       6005
     ],
     "ItemPoints": [
-      20,
-      20,
-      20,
-      20,
-      20
+      100,
+      100,
+      100,
+      100,
+      100
     ],
-    "HashNeeded": 4320000,
+    "HashNeeded": 3600000,
     "UnlockRecipes": [
-      43
+      419,
+      683,
+      44
     ],
     "UnlockFunctions": [
 
@@ -1246,7 +1248,7 @@
     ],
     "Position": [
       53.0,
-      -7.0
+      -27.0
     ]
   },
   {
@@ -1279,7 +1281,7 @@
     "HashNeeded": 600000,
     "UnlockRecipes": [
       42,
-      44
+      417
     ],
     "UnlockFunctions": [
 
@@ -2227,7 +2229,7 @@
   },
   {
     "ID": 1416,
-    "Name": "T微型核聚变发电",
+    "Name": "裂变发电站",
     "Desc": "微型核聚变发电描述",
     "Conclusion": "微型核聚变发电结果",
     "Published": true,
@@ -2271,7 +2273,7 @@
 
     ],
     "Position": [
-      29.0,
+      21.0,
       -11.0
     ]
   },
@@ -2607,7 +2609,6 @@
     "HashNeeded": 540000,
     "UnlockRecipes": [
       74,
-      683,
       541
     ],
     "UnlockFunctions": [
@@ -3688,7 +3689,7 @@
     "IconPath": "Icons/Tech/1712",
     "IsLabTech": true,
     "PreTechs": [
-      1711
+      1828
     ],
     "PreTechsImplicit": [
 
@@ -3702,13 +3703,13 @@
       6005
     ],
     "ItemPoints": [
-      18,
-      18,
-      18,
-      18,
-      18
+      100,
+      100,
+      100,
+      100,
+      100
     ],
-    "HashNeeded": 4800000,
+    "HashNeeded": 3600000,
     "UnlockRecipes": [
       73
     ],
@@ -3725,8 +3726,8 @@
 
     ],
     "Position": [
-      37.0,
-      -39.0
+      53.0,
+      -23.0
     ]
   },
   {
@@ -10252,8 +10253,9 @@
     ],
     "HashNeeded": 180000,
     "UnlockRecipes": [
-      41,
-      682
+      682,
+      420,
+      421
     ],
     "UnlockFunctions": [
 
@@ -10277,7 +10279,7 @@
     "Name": "核子先驱:聚变能源",
     "Desc": "使用放射性同位素制作的聚变燃料.",
     "Conclusion": "",
-    "Published": false,
+    "Published": true,
     "Level": 0,
     "MaxLevel": 0,
     "LevelCoef1": 0,
@@ -10305,7 +10307,9 @@
     ],
     "HashNeeded": 288000,
     "UnlockRecipes": [
-
+      41,
+      422,
+      423
     ],
     "UnlockFunctions": [
 
@@ -10526,6 +10530,222 @@
     "Position": [
       25.0,
       -51.0
+    ]
+  },
+  {
+    "ID": 1827,
+    "Name": "人造恒星",
+    "Desc": "欠着....",
+    "Conclusion": "",
+    "Published": true,
+    "Level": 0,
+    "MaxLevel": 0,
+    "LevelCoef1": 0,
+    "LevelCoef2": 0,
+    "IconPath": "Icons/Tech/1144",
+    "IsLabTech": true,
+    "PreTechs": [
+      1416
+    ],
+    "PreTechsImplicit": [
+
+    ],
+    "PreTechsMax": false,
+    "Items": [
+      6001,
+      6002,
+      6003,
+      6004
+    ],
+    "ItemPoints": [
+      20,
+      20,
+      20,
+      20
+    ],
+    "HashNeeded": 144000,
+    "UnlockRecipes": [
+      43,
+      418
+    ],
+    "UnlockFunctions": [
+
+    ],
+    "UnlockValues": [
+
+    ],
+    "AddItems": [
+
+    ],
+    "AddItemCounts": [
+
+    ],
+    "Position": [
+      29.0,
+      -11.0
+    ]
+  },
+  {
+    "ID": 1828,
+    "Name": "不再是菜鸟的证明",
+    "Desc": "欢迎来到地狱....",
+    "Conclusion": "",
+    "Published": true,
+    "Level": 0,
+    "MaxLevel": 0,
+    "LevelCoef1": 0,
+    "LevelCoef2": 0,
+    "IconPath": "Assets/texpack/终极科技",
+    "IsLabTech": true,
+    "PreTechs": [
+
+    ],
+    "PreTechsImplicit": [
+
+    ],
+    "PreTechsMax": false,
+    "Items": [
+      6001,
+      6002,
+      6003,
+      6004,
+      6005
+    ],
+    "ItemPoints": [
+      100,
+      100,
+      100,
+      100,
+      100
+    ],
+    "HashNeeded": 36000000,
+    "UnlockRecipes": [
+
+    ],
+    "UnlockFunctions": [
+
+    ],
+    "UnlockValues": [
+
+    ],
+    "AddItems": [
+
+    ],
+    "AddItemCounts": [
+
+    ],
+    "Position": [
+      49.0,
+      -23.0
+    ]
+  },
+  {
+    "ID": 1829,
+    "Name": "终极目标:无尽材料学",
+    "Desc": "传统材料已经无法满足需求...",
+    "Conclusion": "",
+    "Published": true,
+    "Level": 0,
+    "MaxLevel": 0,
+    "LevelCoef1": 0,
+    "LevelCoef2": 0,
+    "IconPath": "Icons/Tech/1414",
+    "IsLabTech": true,
+    "PreTechs": [
+      1828
+    ],
+    "PreTechsImplicit": [
+
+    ],
+    "PreTechsMax": false,
+    "Items": [
+      6001,
+      6002,
+      6003,
+      6004,
+      6005
+    ],
+    "ItemPoints": [
+      100,
+      100,
+      100,
+      100,
+      100
+    ],
+    "HashNeeded": 3600000,
+    "UnlockRecipes": [
+      424,
+      425
+    ],
+    "UnlockFunctions": [
+
+    ],
+    "UnlockValues": [
+
+    ],
+    "AddItems": [
+
+    ],
+    "AddItemCounts": [
+
+    ],
+    "Position": [
+      53.0,
+      -15.0
+    ]
+  },
+  {
+    "ID": 1830,
+    "Name": "终极目标:先驱者遗物",
+    "Desc": "先驱者文明的遗产.",
+    "Conclusion": "",
+    "Published": true,
+    "Level": 0,
+    "MaxLevel": 0,
+    "LevelCoef1": 0,
+    "LevelCoef2": 0,
+    "IconPath": "Icons/Tech/1303",
+    "IsLabTech": true,
+    "PreTechs": [
+      1828
+    ],
+    "PreTechsImplicit": [
+
+    ],
+    "PreTechsMax": false,
+    "Items": [
+      6001,
+      6002,
+      6003,
+      6004,
+      6005
+    ],
+    "ItemPoints": [
+      100,
+      100,
+      100,
+      100,
+      100
+    ],
+    "HashNeeded": 3600000,
+    "UnlockRecipes": [
+      426
+    ],
+    "UnlockFunctions": [
+
+    ],
+    "UnlockValues": [
+
+    ],
+    "AddItems": [
+
+    ],
+    "AddItemCounts": [
+
+    ],
+    "Position": [
+      53.0,
+      -19.0
     ]
   }
 
