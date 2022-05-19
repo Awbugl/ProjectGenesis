@@ -14,6 +14,8 @@ namespace ProjectGenesis
         电路蚀刻 = 9,
         高精度加工 = 10,
         矿物处理 = 11,
+        精密组装 = 12,
+        聚变生产 = 13,
         Research = 0xF
     }
 }
