@@ -950,8 +950,8 @@
   },
   {
     "ID": 42,
-    "Type": 10,
-    "Time": 36000,
+    "Type": 12,
+    "Time": 3600,
     "Input": [
       6271,
       6262,
@@ -1735,7 +1735,7 @@
   {
     "ID": 73,
     "Type": 10,
-    "Time": 216000,
+    "Time": 10800,
     "Input": [
       6271,
       6503,
@@ -6362,8 +6362,8 @@
   },
   {
     "ID": 419,
-    "Type": 10,
-    "Time": 216000,
+    "Type": 12,
+    "Time": 10800,
     "Input": [
       6271,
       6503,
@@ -6499,8 +6499,8 @@
   },
   {
     "ID": 424,
-    "Type": 5,
-    "Time": 36000,
+    "Type": 13,
+    "Time": 3600,
     "Input": [
       1103,
       1107,
@@ -6528,8 +6528,8 @@
   },
   {
     "ID": 425,
-    "Type": 5,
-    "Time": 36000,
+    "Type": 13,
+    "Time": 3600,
     "Input": [
       1208
     ],
@@ -6553,8 +6553,8 @@
   },
   {
     "ID": 426,
-    "Type": 10,
-    "Time": 108000,
+    "Type": 12,
+    "Time": 5400,
     "Input": [
       6271,
       6272,
@@ -6575,8 +6575,70 @@
     "PreTech": 1830,
     "GridIndex": 3411,
     "Name": "先驱者晶片",
-    "IconPath": "Assets/texpack/先驱者晶片",
+    "IconPath": "Assets/texpack/紫色先驱者晶片",
     "Explicit": true,
+    "Handcraft": false,
+    "NonProductive": false
+  },
+  {
+    "ID": 427,
+    "Type": 10,
+    "Time": 10800,
+    "Input": [
+      2305,
+      2003,
+      7707,
+      7803
+    ],
+    "InCounts": [
+      10,
+      40,
+      20,
+      10
+    ],
+    "Output": [
+      6275
+    ],
+    "OutCounts": [
+      1
+    ],
+    "Description": "利用粒子加速器的庞大能量创造全新的材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "PreTech": 1828,
+    "GridIndex": 3609,
+    "Name": "精密组装厂",
+    "IconPath": "Assets/texpack/红制造台",
+    "Explicit": false,
+    "Handcraft": false,
+    "NonProductive": false
+  },
+  {
+    "ID": 428,
+    "Type": 10,
+    "Time": 10800,
+    "Input": [
+      2310,
+      1125,
+      1205,
+      7806
+    ],
+    "InCounts": [
+      40,
+      60,
+      120,
+      5
+    ],
+    "Output": [
+      6276
+    ],
+    "OutCounts": [
+      1
+    ],
+    "Description": "利用粒子加速器的庞大能量创造全新的材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "PreTech": 1828,
+    "GridIndex": 3610,
+    "Name": "回旋加速器",
+    "IconPath": "Icons/ItemRecipe/hadron-collider",
+    "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   }
