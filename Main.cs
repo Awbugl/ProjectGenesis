@@ -10,6 +10,7 @@ using CommonAPI;
 using CommonAPI.Systems;
 using ProjectGenesis.Patches;
 using ERecipeType_1 = ERecipeType;
+using BepInEx.Logging;
 
 // ReSharper disable UnusedVariable
 // ReSharper disable UnusedMember.Local
@@ -27,10 +28,14 @@ namespace ProjectGenesis
     {
         private int TableID, TableID2;
 
+        public static ManualLogSource logger;
+        //无限堆叠开关(私货)
         private bool StackSizeButton = false;
 
         public void Awake()
         {
+
+            logger = Logger;
             var pluginfolder = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
             var resources = new ResourceData("org.LoShin.GenesisBook", "texpack", pluginfolder);
             resources.LoadAssetBundle("texpack");
@@ -72,6 +77,10 @@ namespace ProjectGenesis
             LDBTool.PreAddProto(TestCraftingTableModel4);
             var AntiMatterModel = CopyModelProto(118, 307, Color.HSVToRGB(0.5985f, 0.7333f, 0.2353f));
             LDBTool.PreAddProto(AntiMatterModel);
+            var AssembleModel = CopyModelProto(67, 308, Color.HSVToRGB(0.9688f, 0.9068f, 0.9255f));
+            LDBTool.PreAddProto(AssembleModel);
+            var CircleModel = CopyModelProto(69, 309, Color.grey);
+            LDBTool.PreAddProto(CircleModel);
 
             #endregion
 
@@ -316,6 +325,15 @@ namespace ProjectGenesis
             itemProtos.Select(6230).prefabDesc.workEnergyPerTick = 12000;
 
             itemProtos.Select(6229).prefabDesc.fluidStorageCount = 1000000;
+            itemProtos.Select(6275).prefabDesc.assemblerSpeed = 500;
+            itemProtos.Select(6275).prefabDesc.workEnergyPerTick = 2000000;
+            itemProtos.Select(6275).prefabDesc.idleEnergyPerTick = 100000;
+            itemProtos.Select(6275).prefabDesc.assemblerRecipeType = (global::ERecipeType)ERecipeType.精密组装;
+            itemProtos.Select(6276).prefabDesc.assemblerSpeed = 1000;
+            itemProtos.Select(6276).prefabDesc.workEnergyPerTick = 8000000;
+            itemProtos.Select(6276).prefabDesc.idleEnergyPerTick = 200000;
+            itemProtos.Select(6276).prefabDesc.assemblerSpeed = 1000;
+            itemProtos.Select(6276).prefabDesc.assemblerRecipeType = (global::ERecipeType)ERecipeType.聚变生产;
             LDBTool.SetBuildBar(4, 4, 6229);
 
             //矿场修复
@@ -464,7 +482,7 @@ namespace ProjectGenesis
             LDB.items.Select(2210).prefabDesc.fuelMask = 6;
             AntiMatterModel.prefabDesc.fuelMask = 4;
             AntiMatterModel.prefabDesc.genEnergyPerTick = 1200000000;
-            AntiMatterModel.prefabDesc.useFuelPerTick = 12000000;
+            AntiMatterModel.prefabDesc.useFuelPerTick = 1200000000;
 
 
             foreach (var proto in LDB.techs.dataArray)
@@ -494,6 +512,7 @@ namespace ProjectGenesis
             ItemProto.InitFuelNeeds();
             ItemProto.InitItemIndices();
             ItemProto.InitMechaMaterials();
+            ItemProto.fuelNeeds[4] = new int[] { 6533, 1803 };
             ItemProto.fuelNeeds[5] = new int[] { 6241, 6242, 6243 };
             ItemProto.fuelNeeds[6] = new int[] { 1121, 6532, 1802, 6244, 6245 };
             foreach (var proto in LDB.items.dataArray)
