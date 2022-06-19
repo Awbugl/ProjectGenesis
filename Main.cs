@@ -22,7 +22,7 @@ namespace ProjectGenesis
     [BepInPlugin("org.LoShin.GenesisBook", "Genesis", "1.0.0")]
     [BepInDependency("me.xiaoye97.plugin.Dyson.LDBTool")]
     [BepInDependency("dsp.common-api.CommonAPI")]
-    [CommonAPISubmoduleDependency(nameof(ProtoRegistry), nameof(CustomDescSystem), nameof(TabSystem),
+    [CommonAPISubmoduleDependency(nameof(ProtoRegistry), nameof(CustomDescSystem), nameof(TabSystem),nameof(ComponentExtension),
                                   nameof(AssemblerRecipeSystem))]
     public class Main : BaseUnityPlugin
     {
@@ -45,10 +45,11 @@ namespace ProjectGenesis
                                             new TabData("3", "Assets/texpack/主机科技"));
             TableID2 = TabSystem.RegisterTab("org.LoShin.GenesisBook:org.LoShin.GenesisBookTab2",
                                              new TabData("4", "Assets/texpack/化工科技"));
-
+            
+            ComponentExtension.componentRegistry.Register(MegaAssemblerComponent.componentID, typeof(MegaAssemblerComponent));
+            
             LDBTool.PreAddDataAction += InitData;
             LDBTool.PostAddDataAction += PostAddDataAction;
-
             Harmony.CreateAndPatchAll(typeof(UIPatches));
             Harmony.CreateAndPatchAll(typeof(MultiProductionPatches));
             Harmony.CreateAndPatchAll(typeof(PlanetGasPatches));
@@ -372,7 +373,7 @@ namespace ProjectGenesis
             TestCraftingTableModel.prefabDesc.stationMaxShipCount = 0;
             TestCraftingTableModel.prefabDesc.idleEnergyPerTick = 100000;
             TestCraftingTableModel.prefabDesc.workEnergyPerTick = 500000;
-            TestCraftingTableModel.prefabDesc.slotPoses = TestCraftingTableModel.prefabDesc.portPoses;
+           /* TestCraftingTableModel.prefabDesc.slotPoses = TestCraftingTableModel.prefabDesc.portPoses;
             TestCraftingTableModel.prefabDesc.portPoses = Array.Empty<Pose>();
             TestCraftingTableModel.prefabDesc.slotPoses = new Pose[] {
                 new Pose(new Vector3(1.3f, 0.0f, 3.3f), new Quaternion(0f, 0f, 0f, 1f)),
@@ -387,7 +388,14 @@ namespace ProjectGenesis
                 new Pose(new Vector3(3.3f, 0.0f, -1.3f), new Quaternion(0f, 0.7f, 0f, 0.7f)),
                 new Pose(new Vector3(3.3f, 0.0f, 0.0f), new Quaternion(0f, 0.7f, 0f, 0.7f)),
                 new Pose(new Vector3(3.3f, 0.0f, 1.3f), new Quaternion(0f, 0.7f, 0f, 0.7f))
-            }; 
+            };
+            */
+            // try to modify component but failed 
+             ComponentDesc desc = TestCraftingTableModel.prefabDesc.prefab.AddComponent<ComponentDesc>();
+             desc.componentId = MegaAssemblerComponent.componentID;
+             desc.ApplyProperties(TestCraftingTableModel.prefabDesc);
+             TestCraftingTableModel.prefabDesc.prefab.AddComponent<UIAssemblerWindow>();
+            
             TestCraftingTableModel2.prefabDesc.isAssembler = true;
             TestCraftingTableModel2.prefabDesc.assemblerRecipeType = (global::ERecipeType)ERecipeType.Smelt;
             TestCraftingTableModel2.prefabDesc.assemblerSpeed = 400000;
