@@ -1,11 +1,8 @@
 using System;
-using System.IO;
 using System.Collections.Generic;
 using System.Text;
 using HarmonyLib;
 using UnityEngine;
-using BepInEx.Logging;
-using UnityEngine.UI;
 using ERecipeType_1 = ERecipeType;
 
 namespace ProjectGenesis.Patches

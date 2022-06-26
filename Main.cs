@@ -11,6 +11,7 @@ using CommonAPI.Systems;
 using ProjectGenesis.Patches;
 using ERecipeType_1 = ERecipeType;
 using BepInEx.Logging;
+using crecheng.DSPModSave;
 
 // ReSharper disable UnusedVariable
 // ReSharper disable UnusedMember.Local
@@ -19,15 +20,14 @@ using BepInEx.Logging;
 namespace ProjectGenesis
 {
 
-    [BepInPlugin("org.LoShin.GenesisBook", "Genesis", "1.0.0")]
-    [BepInDependency("me.xiaoye97.plugin.Dyson.LDBTool")]
-    [BepInDependency("dsp.common-api.CommonAPI")]
-    [CommonAPISubmoduleDependency(nameof(ProtoRegistry), nameof(CustomDescSystem), nameof(TabSystem),nameof(ComponentExtension),
-                                  nameof(AssemblerRecipeSystem))]
-    public class Main : BaseUnityPlugin
+    [BepInPlugin("org.LoShin.GenesisBook", "GenesisBook", "1.0.0")]
+    [BepInDependency(DSPModSavePlugin.MODGUID)]
+    [BepInDependency(CommonAPIPlugin.GUID)]
+    [BepInDependency(LDBToolPlugin.MODGUID)]
+    [CommonAPISubmoduleDependency(nameof(ProtoRegistry), nameof(CustomDescSystem), nameof(TabSystem), nameof(AssemblerRecipeSystem))]
+    public class Main : BaseUnityPlugin , IModCanSave
     {
         private int TableID, TableID2;
-
         public static ManualLogSource logger;
         //无限堆叠开关(私货)
         private bool StackSizeButton = false;
@@ -46,14 +46,13 @@ namespace ProjectGenesis
             TableID2 = TabSystem.RegisterTab("org.LoShin.GenesisBook:org.LoShin.GenesisBookTab2",
                                              new TabData("4", "Assets/texpack/化工科技"));
             
-            ComponentExtension.componentRegistry.Register(MegaAssemblerComponent.componentID, typeof(MegaAssemblerComponent));
-            
             LDBTool.PreAddDataAction += InitData;
             LDBTool.PostAddDataAction += PostAddDataAction;
             Harmony.CreateAndPatchAll(typeof(UIPatches));
             Harmony.CreateAndPatchAll(typeof(MultiProductionPatches));
             Harmony.CreateAndPatchAll(typeof(PlanetGasPatches));
             Harmony.CreateAndPatchAll(typeof(OceanDischargePatches));
+            Harmony.CreateAndPatchAll(typeof(MegaAssemblerPatches));
         }
 
         public void InitData()
@@ -138,9 +137,8 @@ namespace ProjectGenesis
                 proto.Name = itemjson.Name;
                 proto.Description = itemjson.Description;
                 proto.IconPath = itemjson.IconPath;
-                if(StackSizeButton==true)proto.StackSize = 10000000;
-                else proto.StackSize = itemjson.StackSize;
-                    proto.GridIndex = itemjson.GridIndex;
+                proto.StackSize = StackSizeButton ? 10000000 : itemjson.StackSize;
+                proto.GridIndex = itemjson.GridIndex;
                 proto.FuelType = itemjson.FuelType;
                 proto.HeatValue = itemjson.HeatValue;
                 proto.ReactorInc = itemjson.ReactorInc;
@@ -390,12 +388,7 @@ namespace ProjectGenesis
                 new Pose(new Vector3(3.3f, 0.0f, 1.3f), new Quaternion(0f, 0.7f, 0f, 0.7f))
             };
             */
-            // try to modify component but failed 
-             ComponentDesc desc = TestCraftingTableModel.prefabDesc.prefab.AddComponent<ComponentDesc>();
-             desc.componentId = MegaAssemblerComponent.componentID;
-             desc.ApplyProperties(TestCraftingTableModel.prefabDesc);
-             TestCraftingTableModel.prefabDesc.prefab.AddComponent<UIAssemblerWindow>();
-            
+         
             TestCraftingTableModel2.prefabDesc.isAssembler = true;
             TestCraftingTableModel2.prefabDesc.assemblerRecipeType = (global::ERecipeType)ERecipeType.Smelt;
             TestCraftingTableModel2.prefabDesc.assemblerSpeed = 400000;
@@ -523,27 +516,31 @@ namespace ProjectGenesis
             ItemProto.fuelNeeds[4] = new int[] { 6533, 1803 };
             ItemProto.fuelNeeds[5] = new int[] { 6241, 6242, 6243 };
             ItemProto.fuelNeeds[6] = new int[] { 1121, 6532, 1802, 6244, 6245 };
+            
             foreach (var proto in LDB.items.dataArray)
             {
                 StorageComponent.itemIsFuel[proto.ID] = proto.HeatValue > 0L;
-                //StorageComponent.itemStackCount[proto.ID] = proto.StackSize;
-                if(StackSizeButton==true) StorageComponent.itemStackCount[proto.ID] = 10000000;
+                if(StackSizeButton) StorageComponent.itemStackCount[proto.ID] = 10000000;
                 else StorageComponent.itemStackCount[proto.ID] = proto.StackSize;
             }
 
-            var logo = GameObject.Find("UI Root/Overlay Canvas/Main Menu/dsp-logo");
-            var image = logo.GetComponent<RawImage>();
-            var rectTransform = logo.GetComponent<RectTransform>();
+            
+            var mainLogo = GameObject.Find("UI Root/Overlay Canvas/Main Menu/dsp-logo");
+            var escLogo = GameObject.Find("UI Root/Overlay Canvas/In Game/Esc Menu/logo");
 
             var iconstr = Localization.language == Language.zhCN
                 ? "Assets/texpack/中文图标"
                 : "Assets/texpack/英文图标";
 
-            image.texture = Resources.Load<Sprite>(iconstr).texture;
+            var texture = Resources.Load<Sprite>(iconstr).texture;
 
-            rectTransform.sizeDelta = new Vector2(800f, 500f);
-            rectTransform.anchoredPosition
-                = new Vector2(rectTransform.anchoredPosition.x, rectTransform.anchoredPosition.y + 50f);
+            mainLogo.GetComponent<RawImage>().texture = texture;
+            escLogo.GetComponent<RawImage>().texture = texture;
+            mainLogo.GetComponent<RectTransform>().sizeDelta = new Vector2(texture.width, texture.height);
+            escLogo.GetComponent<RectTransform>().sizeDelta = new Vector2(texture.width, texture.height);
+            
+            var rectTransform = mainLogo.GetComponent<RectTransform>();
+            rectTransform.anchoredPosition = new Vector2(rectTransform.anchoredPosition.x, rectTransform.anchoredPosition.y + 50f);
         }
 
         private static ModelProto CopyModelProto(int oriId, int id, Color color)
@@ -586,6 +583,21 @@ namespace ProjectGenesis
             model.sid = "";
             model.SID = "";
             return model;
+        }
+
+        public void Export(BinaryWriter w)
+        {
+            MegaAssemblerPatches.Export(w);
+        }
+
+        public void Import(BinaryReader r)
+        {
+            MegaAssemblerPatches.Import(r);
+        }
+
+        public void IntoOtherSave()
+        {
+            
         }
     }
 }
