@@ -19,33 +19,32 @@ using crecheng.DSPModSave;
 
 namespace ProjectGenesis
 {
-
     [BepInPlugin("org.LoShin.GenesisBook", "GenesisBook", "1.0.0")]
     [BepInDependency(DSPModSavePlugin.MODGUID)]
     [BepInDependency(CommonAPIPlugin.GUID)]
     [BepInDependency(LDBToolPlugin.MODGUID)]
     [CommonAPISubmoduleDependency(nameof(ProtoRegistry), nameof(CustomDescSystem), nameof(TabSystem), nameof(AssemblerRecipeSystem))]
-    public class Main : BaseUnityPlugin , IModCanSave
+    public class Main : BaseUnityPlugin, IModCanSave
     {
         private int TableID, TableID2;
-        public static ManualLogSource logger;
+
+        internal static ManualLogSource logger;
+
         //无限堆叠开关(私货)
-        private bool StackSizeButton = false;
+        private readonly bool StackSizeButton = false;
 
         public void Awake()
         {
-
             logger = Logger;
+            logger.Log(LogLevel.Info, "GenesisBook Awake");
             var pluginfolder = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
             var resources = new ResourceData("org.LoShin.GenesisBook", "texpack", pluginfolder);
             resources.LoadAssetBundle("texpack");
             ProtoRegistry.AddResource(resources);
 
-            TableID = TabSystem.RegisterTab("org.LoShin.GenesisBook:org.LoShin.GenesisBookTab",
-                                            new TabData("3", "Assets/texpack/主机科技"));
-            TableID2 = TabSystem.RegisterTab("org.LoShin.GenesisBook:org.LoShin.GenesisBookTab2",
-                                             new TabData("4", "Assets/texpack/化工科技"));
-            
+            TableID = TabSystem.RegisterTab("org.LoShin.GenesisBook:org.LoShin.GenesisBookTab", new TabData("3", "Assets/texpack/主机科技"));
+            TableID2 = TabSystem.RegisterTab("org.LoShin.GenesisBook:org.LoShin.GenesisBookTab2", new TabData("4", "Assets/texpack/化工科技"));
+
             LDBTool.PreAddDataAction += InitData;
             LDBTool.PostAddDataAction += PostAddDataAction;
             Harmony.CreateAndPatchAll(typeof(UIPatches));
@@ -55,11 +54,11 @@ namespace ProjectGenesis
             Harmony.CreateAndPatchAll(typeof(MegaAssemblerPatches));
         }
 
-        public void InitData()
+        private void InitData()
         {
             PreFix();
 
-            #region ModelProto
+#region ModelProto
 
             var TankModel = CopyModelProto(121, 301, Color.HSVToRGB(0.5571f, 0.3188f, 0.8980f));
             LDBTool.PreAddProto(TankModel);
@@ -82,17 +81,15 @@ namespace ProjectGenesis
             var CircleModel = CopyModelProto(69, 309, Color.grey);
             LDBTool.PreAddProto(CircleModel);
 
-            #endregion
+#endregion
 
-            #region TechProto
+#region TechProto
 
             var templateTech = LDB.techs.Select(1311);
 
             foreach (var techjson in JsonHelper.TechProtos())
             {
-                var proto = LDB.techs.Exist(techjson.ID)
-                    ? LDB.techs.Select(techjson.ID)
-                    : templateTech.Copy();
+                var proto = LDB.techs.Exist(techjson.ID) ? LDB.techs.Select(techjson.ID) : templateTech.Copy();
 
                 proto.ID = techjson.ID;
                 proto.Name = techjson.Name;
@@ -117,9 +114,9 @@ namespace ProjectGenesis
                 }
             }
 
-            #endregion
+#endregion
 
-            #region ItemProto
+#region ItemProto
 
             foreach (var itemjson in JsonHelper.ItemProtos())
             {
@@ -129,9 +126,9 @@ namespace ProjectGenesis
                 else if (itemjson.GridIndex >= 3000) itemjson.GridIndex = TableID * 1000 + (itemjson.GridIndex - 3000);
 
                 var proto = LDB.items.Exist(itemjson.ID)
-                    ? LDB.items.Select(itemjson.ID)
-                    : ProtoRegistry.RegisterItem(itemjson.ID, itemjson.Name, itemjson.Description, itemjson.IconPath,
-                                                 itemjson.GridIndex, itemjson.StackSize, (EItemType)itemjson.Type);
+                                ? LDB.items.Select(itemjson.ID)
+                                : ProtoRegistry.RegisterItem(itemjson.ID, itemjson.Name, itemjson.Description, itemjson.IconPath, itemjson.GridIndex,
+                                                             itemjson.StackSize, (EItemType)itemjson.Type);
 
                 proto.ID = itemjson.ID;
                 proto.Name = itemjson.Name;
@@ -165,9 +162,9 @@ namespace ProjectGenesis
                 proto.Productive = itemjson.Productive;
             }
 
-            #endregion
+#endregion
 
-            #region RecipeProto
+#region RecipeProto
 
             foreach (var recipeJson in JsonHelper.RecipeProtos())
             {
@@ -175,16 +172,12 @@ namespace ProjectGenesis
                 {
                     if (recipeJson.GridIndex >= 4000 && recipeJson.GridIndex < 5000)
                         recipeJson.GridIndex = TableID2 * 1000 + (recipeJson.GridIndex - 4000);
-                    else if (recipeJson.GridIndex >= 3000)
-                        recipeJson.GridIndex = TableID * 1000 + (recipeJson.GridIndex - 3000);
+                    else if (recipeJson.GridIndex >= 3000) recipeJson.GridIndex = TableID * 1000 + (recipeJson.GridIndex - 3000);
 
-                    var proto = ProtoRegistry.RegisterRecipe(recipeJson.ID, (ERecipeType_1)recipeJson.Type,
-                                                             recipeJson.Time, recipeJson.Input, recipeJson.InCounts,
-                                                             recipeJson.Output ?? Array.Empty<int>(),
-                                                             recipeJson.OutCounts ?? Array.Empty<int>(),
-                                                             recipeJson.Description, recipeJson.PreTech,
-                                                             recipeJson.GridIndex, recipeJson.Name,
-                                                             recipeJson.IconPath);
+                    var proto = ProtoRegistry.RegisterRecipe(recipeJson.ID, (ERecipeType_1)recipeJson.Type, recipeJson.Time, recipeJson.Input,
+                                                             recipeJson.InCounts, recipeJson.Output ?? Array.Empty<int>(),
+                                                             recipeJson.OutCounts ?? Array.Empty<int>(), recipeJson.Description, recipeJson.PreTech,
+                                                             recipeJson.GridIndex, recipeJson.Name, recipeJson.IconPath);
 
                     proto.Explicit = recipeJson.Explicit;
                     proto.Name = recipeJson.Name;
@@ -198,7 +191,6 @@ namespace ProjectGenesis
                     proto.Explicit = recipeJson.Explicit;
                     proto.Name = recipeJson.Name;
                     proto.Handcraft = recipeJson.Handcraft;
-                    proto.NonProductive = recipeJson.NonProductive;
                     proto.Type = (global::ERecipeType)recipeJson.Type;
                     proto.TimeSpend = recipeJson.Time;
                     proto.Items = recipeJson.Input;
@@ -209,18 +201,14 @@ namespace ProjectGenesis
                     proto.preTech = LDB.techs.Select(recipeJson.PreTech);
                     proto.GridIndex = recipeJson.GridIndex;
                     proto.IconPath = recipeJson.IconPath;
-                    proto.Explicit = recipeJson.Explicit;
-                    proto.Name = recipeJson.Name;
-                    proto.Handcraft = recipeJson.Handcraft;
                     proto.NonProductive = recipeJson.NonProductive;
                 }
             }
 
-            #endregion
+#endregion
         }
 
-
-        public void PreFix()
+        private void PreFix()
         {
             LDB.strings.Select(2314).name = "剧毒液体海洋";
             LDB.strings.Select(2314).Name = "剧毒液体海洋";
@@ -251,7 +239,7 @@ namespace ProjectGenesis
             LDB.items.OnAfterDeserialize();
         }
 
-        public void PostFix(ItemProtoSet itemProtos)
+        private void PostFix(ItemProtoSet itemProtos)
         {
             LDB.items.OnAfterDeserialize();
 
@@ -342,7 +330,6 @@ namespace ProjectGenesis
             OreFactoryModel.prefabDesc.dragBuildDist = new Vector2(2.9f, 2.9f);
             OreFactory.prefabDesc.dragBuild = true;
             OreFactory.prefabDesc.dragBuildDist = new Vector2(2.9f, 2.9f);
-
         }
 
         private void PostAddDataAction()
@@ -371,24 +358,7 @@ namespace ProjectGenesis
             TestCraftingTableModel.prefabDesc.stationMaxShipCount = 0;
             TestCraftingTableModel.prefabDesc.idleEnergyPerTick = 100000;
             TestCraftingTableModel.prefabDesc.workEnergyPerTick = 500000;
-           /* TestCraftingTableModel.prefabDesc.slotPoses = TestCraftingTableModel.prefabDesc.portPoses;
-            TestCraftingTableModel.prefabDesc.portPoses = Array.Empty<Pose>();
-            TestCraftingTableModel.prefabDesc.slotPoses = new Pose[] {
-                new Pose(new Vector3(1.3f, 0.0f, 3.3f), new Quaternion(0f, 0f, 0f, 1f)),
-                new Pose(new Vector3(0f, 0.0f, 3.3f), new Quaternion(0f, 0f, 0f, 1f)),
-                new Pose(new Vector3(-1.3f, 0.0f, 3.3f), new Quaternion(0f, 0f, 0f, 1f)),
-                new Pose(new Vector3(-3.3f, 0.0f, 1.3f), new Quaternion(0f, -0.7f, 0f, 0.7f)),
-                new Pose(new Vector3(-3.3f, 0.0f, 0.0f), new Quaternion(0f, -0.7f, 0f, 0.7f)),
-                new Pose(new Vector3(-3.3f, 0.0f, -1.3f), new Quaternion(0f, -0.7f, 0f, 0.7f)),
-                new Pose(new Vector3(-1.3f, 0.0f, -3.3f), new Quaternion(0f, -1f, 0f, 0f)),
-                new Pose(new Vector3(0.0f, 0.0f, -3.3f), new Quaternion(0f, -1f, 0f, 0f)),
-                new Pose(new Vector3(1.3f, 0.0f, -3.3f), new Quaternion(0f, -1f, 0f, 0f)),
-                new Pose(new Vector3(3.3f, 0.0f, -1.3f), new Quaternion(0f, 0.7f, 0f, 0.7f)),
-                new Pose(new Vector3(3.3f, 0.0f, 0.0f), new Quaternion(0f, 0.7f, 0f, 0.7f)),
-                new Pose(new Vector3(3.3f, 0.0f, 1.3f), new Quaternion(0f, 0.7f, 0f, 0.7f))
-            };
-            */
-         
+
             TestCraftingTableModel2.prefabDesc.isAssembler = true;
             TestCraftingTableModel2.prefabDesc.assemblerRecipeType = (global::ERecipeType)ERecipeType.Smelt;
             TestCraftingTableModel2.prefabDesc.assemblerSpeed = 400000;
@@ -401,22 +371,6 @@ namespace ProjectGenesis
             TestCraftingTableModel2.prefabDesc.stationMaxShipCount = 0;
             TestCraftingTableModel2.prefabDesc.idleEnergyPerTick = 100000;
             TestCraftingTableModel2.prefabDesc.workEnergyPerTick = 500000;
-            TestCraftingTableModel2.prefabDesc.slotPoses = TestCraftingTableModel2.prefabDesc.portPoses;
-            TestCraftingTableModel2.prefabDesc.portPoses = Array.Empty<Pose>();
-            TestCraftingTableModel2.prefabDesc.slotPoses = new Pose[] {
-                new Pose(new Vector3(1.3f, 0.0f, 3.3f), new Quaternion(0f, 0f, 0f, 1f)),
-                new Pose(new Vector3(0f, 0.0f, 3.3f), new Quaternion(0f, 0f, 0f, 1f)),
-                new Pose(new Vector3(-1.3f, 0.0f, 3.3f), new Quaternion(0f, 0f, 0f, 1f)),
-                new Pose(new Vector3(-3.3f, 0.0f, 1.3f), new Quaternion(0f, -0.7f, 0f, 0.7f)),
-                new Pose(new Vector3(-3.3f, 0.0f, 0.0f), new Quaternion(0f, -0.7f, 0f, 0.7f)),
-                new Pose(new Vector3(-3.3f, 0.0f, -1.3f), new Quaternion(0f, -0.7f, 0f, 0.7f)),
-                new Pose(new Vector3(-1.3f, 0.0f, -3.3f), new Quaternion(0f, -1f, 0f, 0f)),
-                new Pose(new Vector3(0.0f, 0.0f, -3.3f), new Quaternion(0f, -1f, 0f, 0f)),
-                new Pose(new Vector3(1.3f, 0.0f, -3.3f), new Quaternion(0f, -1f, 0f, 0f)),
-                new Pose(new Vector3(3.3f, 0.0f, -1.3f), new Quaternion(0f, 0.7f, 0f, 0.7f)),
-                new Pose(new Vector3(3.3f, 0.0f, 0.0f), new Quaternion(0f, 0.7f, 0f, 0.7f)),
-                new Pose(new Vector3(3.3f, 0.0f, 1.3f), new Quaternion(0f, 0.7f, 0f, 0.7f))
-            };
             TestCraftingTableModel3.prefabDesc.isAssembler = true;
             TestCraftingTableModel3.prefabDesc.assemblerRecipeType = (global::ERecipeType)ERecipeType.Chemical;
             TestCraftingTableModel3.prefabDesc.assemblerSpeed = 400000;
@@ -429,22 +383,6 @@ namespace ProjectGenesis
             TestCraftingTableModel3.prefabDesc.stationMaxShipCount = 0;
             TestCraftingTableModel3.prefabDesc.idleEnergyPerTick = 100000;
             TestCraftingTableModel3.prefabDesc.workEnergyPerTick = 500000;
-            TestCraftingTableModel3.prefabDesc.slotPoses = TestCraftingTableModel3.prefabDesc.portPoses;
-            TestCraftingTableModel3.prefabDesc.portPoses = Array.Empty<Pose>();
-            TestCraftingTableModel3.prefabDesc.slotPoses = new Pose[] {
-                new Pose(new Vector3(1.3f, 0.0f, 3.3f), new Quaternion(0f, 0f, 0f, 1f)),
-                new Pose(new Vector3(0f, 0.0f, 3.3f), new Quaternion(0f, 0f, 0f, 1f)),
-                new Pose(new Vector3(-1.3f, 0.0f, 3.3f), new Quaternion(0f, 0f, 0f, 1f)),
-                new Pose(new Vector3(-3.3f, 0.0f, 1.3f), new Quaternion(0f, -0.7f, 0f, 0.7f)),
-                new Pose(new Vector3(-3.3f, 0.0f, 0.0f), new Quaternion(0f, -0.7f, 0f, 0.7f)),
-                new Pose(new Vector3(-3.3f, 0.0f, -1.3f), new Quaternion(0f, -0.7f, 0f, 0.7f)),
-                new Pose(new Vector3(-1.3f, 0.0f, -3.3f), new Quaternion(0f, -1f, 0f, 0f)),
-                new Pose(new Vector3(0.0f, 0.0f, -3.3f), new Quaternion(0f, -1f, 0f, 0f)),
-                new Pose(new Vector3(1.3f, 0.0f, -3.3f), new Quaternion(0f, -1f, 0f, 0f)),
-                new Pose(new Vector3(3.3f, 0.0f, -1.3f), new Quaternion(0f, 0.7f, 0f, 0.7f)),
-                new Pose(new Vector3(3.3f, 0.0f, 0.0f), new Quaternion(0f, 0.7f, 0f, 0.7f)),
-                new Pose(new Vector3(3.3f, 0.0f, 1.3f), new Quaternion(0f, 0.7f, 0f, 0.7f))
-            }; 
             TestCraftingTableModel4.prefabDesc.isAssembler = true;
             TestCraftingTableModel4.prefabDesc.assemblerRecipeType = (global::ERecipeType)ERecipeType.高精度加工;
             TestCraftingTableModel4.prefabDesc.assemblerSpeed = 400000;
@@ -457,30 +395,10 @@ namespace ProjectGenesis
             TestCraftingTableModel4.prefabDesc.stationMaxShipCount = 0;
             TestCraftingTableModel4.prefabDesc.idleEnergyPerTick = 100000;
             TestCraftingTableModel4.prefabDesc.workEnergyPerTick = 500000;
-            TestCraftingTableModel4.prefabDesc.slotPoses = TestCraftingTableModel4.prefabDesc.portPoses;
-            TestCraftingTableModel4.prefabDesc.portPoses = Array.Empty<Pose>();
-            //奇怪的测试
-            //LDB.items.Select(2302).prefabDesc.portPoses = LDB.items.Select(2302).prefabDesc.slotPoses;
-            //LDB.items.Select(2302).prefabDesc.slotPoses = Array.Empty<Pose>();
-            //果然不行x_x
-            TestCraftingTableModel4.prefabDesc.slotPoses = new Pose[] {
-                new Pose(new Vector3(1.3f, 0.0f, 3.3f), new Quaternion(0f, 0f, 0f, 1f)),
-                new Pose(new Vector3(0f, 0.0f, 3.3f), new Quaternion(0f, 0f, 0f, 1f)),
-                new Pose(new Vector3(-1.3f, 0.0f, 3.3f), new Quaternion(0f, 0f, 0f, 1f)),
-                new Pose(new Vector3(-3.3f, 0.0f, 1.3f), new Quaternion(0f, -0.7f, 0f, 0.7f)),
-                new Pose(new Vector3(-3.3f, 0.0f, 0.0f), new Quaternion(0f, -0.7f, 0f, 0.7f)),
-                new Pose(new Vector3(-3.3f, 0.0f, -1.3f), new Quaternion(0f, -0.7f, 0f, 0.7f)),
-                new Pose(new Vector3(-1.3f, 0.0f, -3.3f), new Quaternion(0f, -1f, 0f, 0f)),
-                new Pose(new Vector3(0.0f, 0.0f, -3.3f), new Quaternion(0f, -1f, 0f, 0f)),
-                new Pose(new Vector3(1.3f, 0.0f, -3.3f), new Quaternion(0f, -1f, 0f, 0f)),
-                new Pose(new Vector3(3.3f, 0.0f, -1.3f), new Quaternion(0f, 0.7f, 0f, 0.7f)),
-                new Pose(new Vector3(3.3f, 0.0f, 0.0f), new Quaternion(0f, 0.7f, 0f, 0.7f)),
-                new Pose(new Vector3(3.3f, 0.0f, 1.3f), new Quaternion(0f, 0.7f, 0f, 0.7f))
-            };
-
 
             LDB.items.Select(2211).prefabDesc.fuelMask = 5;
             LDB.items.Select(2210).prefabDesc.fuelMask = 6;
+            
             AntiMatterModel.prefabDesc.fuelMask = 4;
             AntiMatterModel.prefabDesc.genEnergyPerTick = 1200000000;
             AntiMatterModel.prefabDesc.useFuelPerTick = 1200000000;
@@ -516,31 +434,15 @@ namespace ProjectGenesis
             ItemProto.fuelNeeds[4] = new int[] { 6533, 1803 };
             ItemProto.fuelNeeds[5] = new int[] { 6241, 6242, 6243 };
             ItemProto.fuelNeeds[6] = new int[] { 1121, 6532, 1802, 6244, 6245 };
-            
+
             foreach (var proto in LDB.items.dataArray)
             {
                 StorageComponent.itemIsFuel[proto.ID] = proto.HeatValue > 0L;
-                if(StackSizeButton) StorageComponent.itemStackCount[proto.ID] = 10000000;
-                else StorageComponent.itemStackCount[proto.ID] = proto.StackSize;
+                if (StackSizeButton)
+                    StorageComponent.itemStackCount[proto.ID] = 10000000;
+                else
+                    StorageComponent.itemStackCount[proto.ID] = proto.StackSize;
             }
-
-            
-            var mainLogo = GameObject.Find("UI Root/Overlay Canvas/Main Menu/dsp-logo");
-            var escLogo = GameObject.Find("UI Root/Overlay Canvas/In Game/Esc Menu/logo");
-
-            var iconstr = Localization.language == Language.zhCN
-                ? "Assets/texpack/中文图标"
-                : "Assets/texpack/英文图标";
-
-            var texture = Resources.Load<Sprite>(iconstr).texture;
-
-            mainLogo.GetComponent<RawImage>().texture = texture;
-            escLogo.GetComponent<RawImage>().texture = texture;
-            mainLogo.GetComponent<RectTransform>().sizeDelta = new Vector2(texture.width, texture.height);
-            escLogo.GetComponent<RectTransform>().sizeDelta = new Vector2(texture.width, texture.height);
-            
-            var rectTransform = mainLogo.GetComponent<RectTransform>();
-            rectTransform.anchoredPosition = new Vector2(rectTransform.anchoredPosition.x, rectTransform.anchoredPosition.y + 50f);
         }
 
         private static ModelProto CopyModelProto(int oriId, int id, Color color)
@@ -585,19 +487,10 @@ namespace ProjectGenesis
             return model;
         }
 
-        public void Export(BinaryWriter w)
-        {
-            MegaAssemblerPatches.Export(w);
-        }
+        public void Export(BinaryWriter w) => MegaAssemblerPatches.Export(w);
 
-        public void Import(BinaryReader r)
-        {
-            MegaAssemblerPatches.Import(r);
-        }
+        public void Import(BinaryReader r) => MegaAssemblerPatches.Import(r);
 
-        public void IntoOtherSave()
-        {
-            
-        }
+        public void IntoOtherSave() => MegaAssemblerPatches.IntoOtherSave();
     }
 }

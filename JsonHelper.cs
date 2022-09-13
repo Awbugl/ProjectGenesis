@@ -9,21 +9,17 @@ namespace ProjectGenesis
     {
         private static readonly Assembly Assembly = Assembly.GetExecutingAssembly();
 
-        internal static ItemProtoJson[] ItemProtos() =>
-            JsonConvert.DeserializeObject<ItemProtoJson[]>(new StreamReader(Assembly
-                                                                                .GetManifestResourceStream("ProjectGenesis.items"))
-                                                               .ReadToEnd());
-
-        internal static RecipeProtoJson[] RecipeProtos() =>
-            JsonConvert.DeserializeObject<RecipeProtoJson[]>(new StreamReader(Assembly
-                                                                                  .GetManifestResourceStream("ProjectGenesis.recipes"))
+        internal static ItemProtoJson[] ItemProtos()
+            => JsonConvert.DeserializeObject<ItemProtoJson[]>(new StreamReader(Assembly.GetManifestResourceStream("ProjectGenesis.items"))
                                                                  .ReadToEnd());
 
-        internal static TechProtoJson[] TechProtos() =>
-            JsonConvert.DeserializeObject<TechProtoJson[]>(new StreamReader(Assembly
-                                                                                .GetManifestResourceStream("ProjectGenesis.techs"))
-                                                               .ReadToEnd());
+        internal static RecipeProtoJson[] RecipeProtos()
+            => JsonConvert.DeserializeObject<RecipeProtoJson[]>(new StreamReader(Assembly.GetManifestResourceStream("ProjectGenesis.recipes"))
+                                                                   .ReadToEnd());
 
+        internal static TechProtoJson[] TechProtos()
+            => JsonConvert.DeserializeObject<TechProtoJson[]>(new StreamReader(Assembly.GetManifestResourceStream("ProjectGenesis.techs"))
+                                                                 .ReadToEnd());
 
         [Serializable]
         public class ItemProtoJson
