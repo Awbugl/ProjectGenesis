@@ -761,9 +761,8 @@ namespace ProjectGenesis.Patches
         private static readonly FieldInfo StationIdField = AccessTools.Field(typeof(EntityData), nameof(EntityData.stationId));
         private static readonly FieldInfo AssemblerIdField = AccessTools.Field(typeof(EntityData), nameof(EntityData.assemblerId));
 
-        // work but filter is empty
-        //[HarmonyPatch(typeof(UISlotPicker), "Determine")]
-        //[HarmonyTranspiler]
+        [HarmonyPatch(typeof(UISlotPicker), "Determine")]
+        [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> UISlotPicker_Determine_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
             List<CodeInstruction> codes = instructions.ToList();
@@ -774,8 +773,6 @@ namespace ProjectGenesis.Patches
                 codes[index + 2].opcode == OpCodes.Ldloc_S &&
                 codes[index + 1].operand == codes[index + 2].operand)
             {
-                Main.logger.LogInfo("[UISlotPicker_Determine] Found StationIdField at index " + index);
-
                 CodeInstruction[] result = codes.Take(index + 1).Concat(codes.Skip(index - 5).Take(5))
                                                 .Append(new CodeInstruction(OpCodes.Ldfld, AssemblerIdField)).Append(new CodeInstruction(OpCodes.Or))
                                                 .Concat(codes.Skip(index + 1)).ToArray();
@@ -785,126 +782,6 @@ namespace ProjectGenesis.Patches
             }
 
             return codes;
-        }
-
-        [HarmonyPatch(typeof(UISlotPicker), "Determine")]
-        [HarmonyPrefix]
-        //couldn't work
-        public static bool Determine(ref UISlotPicker __instance, ref GameData ___gameData, ref Camera ___cam)
-        {
-            var localPlanet = ___gameData.localPlanet;
-            if (!VFInput.readyToBuild || localPlanet == null)
-            {
-                __instance.SetOutputEntity(0, -1);
-                __instance._Close();
-            }
-            else
-            {
-                var mainPlayer = ___gameData.mainPlayer;
-                var controller = mainPlayer.controller;
-                if (mainPlayer.inhandItemId != 0 || controller.cmd.type == ECommand.Build && controller.cmd.mode != 0 || VFInput.shift)
-                {
-                    __instance._Close();
-                }
-                else
-                {
-                    var factory = localPlanet.factory;
-                    if (__instance.active &&
-                        __instance.outputEntityId != 0 &&
-                        (___cam.transform.position - factory.entityPool[__instance.outputEntityId].pos).magnitude > 70.0)
-                    {
-                        __instance.SetOutputEntity(0, -1);
-                        __instance._Close();
-                    }
-                    else
-                    {
-                        if (__instance.expand) return false;
-
-                        var flag = false;
-                        if (!localPlanet.factoryLoaded ||
-                            !VFInput.readyToBuild ||
-                            (VFInput.onGUI && !__instance.isPointEnter) ||
-                            mainPlayer.inhandItemId != 0 ||
-                            (controller.cmd.type == ECommand.Build && controller.cmd.mode != 0) ||
-                            VFInput.shift)
-                            return false;
-                        var raycastLogic = localPlanet.physics.raycastLogic;
-                        if (raycastLogic.castAllCount <= 0) return false;
-                        var raycastData = raycastLogic.castAll[0];
-                        if (raycastData.objType != EObjectType.Entity || raycastData.rch.dist >= 60.0) return false;
-                        var stationId = factory.entityPool[raycastData.objId].stationId;
-                        var assemblerId = factory.entityPool[raycastData.objId].assemblerId;
-                        if (stationId == 0 && factory.factorySystem.assemblerPool[assemblerId].speed < 100000) return false;
-
-                        var modelProto = LDB.models.Select(factory.entityPool[raycastData.objId].modelIndex);
-                        if (modelProto == null) return false;
-
-                        var prefabDesc = modelProto.prefabDesc;
-                        if (prefabDesc.portPoses == null || prefabDesc.portPoses.Length == 0) return false;
-
-                        var pos = factory.entityPool[raycastData.objId].pos;
-                        var rot = factory.entityPool[raycastData.objId].rot;
-                        Pose[] portPoses = prefabDesc.portPoses;
-                        var slot1 = -1;
-                        var length = 80f;
-
-                        for (var slot2 = 0; slot2 < portPoses.Length; ++slot2)
-                        {
-                            factory.ReadObjectConn(raycastData.objId, slot2, out var isOutput, out var otherObjId, out var _);
-                            if (!isOutput || otherObjId <= 0) continue;
-                            var center = pos + rot * (prefabDesc.portPoses[slot2].position + new Vector3(0.0f, 2.4f, 0.0f));
-                            var vector3 = rot * portPoses[slot2].forward;
-                            if (Vector3.Dot(vector3, raycastData.rch.normal) > 0.5 &&
-                                Vector3.Angle(vector3, Maths.HorzVector(___cam.transform.position - pos, pos.normalized)) < 40.0)
-                            {
-                                var ray = ___cam.ScreenPointToRay(Input.mousePosition);
-                                if (Phys.RayCastOBB(ray.origin, ray.direction, length, new Vector3(0.625f, 2.5f, 0.2f), center,
-                                                    rot * portPoses[slot2].rotation, out var rch))
-                                {
-                                    slot1 = slot2;
-                                    length = rch.dist;
-                                }
-                            }
-                        }
-
-                        if (slot1 >= 0 && ((stationId > 0 && !prefabDesc.isVeinCollector) || assemblerId > 0))
-                        {
-                            flag = true;
-                            __instance._Open();
-                            __instance.SetOutputEntity(raycastData.objId, slot1);
-                        }
-
-                        if (!flag)
-                        {
-                            __instance.SetOutputEntity(0, -1);
-                            __instance._Close();
-                        }
-
-                        if (__instance.active)
-                        {
-                            var pos1 = factory.entityPool[raycastData.objId].pos;
-                            var rot1 = factory.entityPool[raycastData.objId].rot;
-                            var modelProto1 = LDB.models.Select(factory.entityPool[raycastData.objId].modelIndex);
-                            if (modelProto1 == null)
-                            {
-                                __instance._Close();
-                            }
-                            else
-                            {
-                                var modelprefabDesc = modelProto1.prefabDesc;
-                                if (modelprefabDesc.portPoses == null || __instance.outputSlotId >= modelprefabDesc.portPoses.Length)
-                                    __instance._Close();
-                                else
-                                    __instance.position = pos1 +
-                                                          rot1 *
-                                                          (modelprefabDesc.portPoses[__instance.outputSlotId].position + new Vector3(0.0f, 3f, 0.0f));
-                            }
-                        }
-                    }
-                }
-            }
-
-            return false;
         }
 
         #endregion
