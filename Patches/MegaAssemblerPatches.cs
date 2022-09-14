@@ -14,7 +14,7 @@ using Object = UnityEngine.Object;
 
 namespace ProjectGenesis.Patches
 {
-    class MegaAssemblerPatches
+    internal static class MegaAssemblerPatches
     {
         #region Internal Fields & Functions
 
@@ -79,7 +79,6 @@ namespace ProjectGenesis.Patches
                 var assembler = factory.factorySystem.assemblerPool[assemblerId];
                 if (parameters != null && parameters.Length >= 1) assembler.forceAccMode = parameters[0] > 0;
                 if (assembler.id == assemblerId && assembler.speed > 100000)
-                {
                     if (parameters != null && parameters.Length >= 2048)
                     {
                         SlotData[] slots = GetSlots(entityId);
@@ -90,7 +89,6 @@ namespace ProjectGenesis.Patches
                             slots[index].storageIdx = parameters[num4 + index * 4 + 1];
                         }
                     }
-                }
             }
         }
 
@@ -99,6 +97,26 @@ namespace ProjectGenesis.Patches
         public static void BuildingParameters_FromParamsArray(ref BuildingParameters __instance, int[] _parameters)
         {
             if (_parameters.Length >= 2048) Array.Copy(_parameters, 192, __instance.parameters, 192, 1856);
+        }
+
+        [HarmonyPostfix]
+        [HarmonyPatch(typeof(BuildingParameters), "ToParamsArray")]
+        public static void BuildingParameters_ToParamsArray(ref BuildingParameters __instance, ref int[] _parameters, ref int _paramCount)
+        {
+            if (__instance.type == BuildingType.Assembler)
+            {
+                if (__instance.parameters.Length >= 2048)
+                {
+                    if (_parameters == null || _parameters.Length < 2048) _parameters = new int[2048];
+                    Array.Copy(__instance.parameters, _parameters, 2048);
+                    _paramCount = _parameters.Length;
+                }
+
+                _paramCount = 1;
+
+                if (_parameters == null || _parameters.Length < _paramCount) _parameters = new int[_paramCount];
+                _parameters[0] = __instance.parameters[0];
+            }
         }
 
         [HarmonyPostfix]
@@ -277,7 +295,6 @@ namespace ProjectGenesis.Patches
                             var index2 = slotdata[index1].storageIdx - 1;
                             var itemId = 0;
                             if (index2 >= 0)
-                            {
                                 if (index2 < __instance.products.Length)
                                 {
                                     itemId = __instance.products[index2];
@@ -287,7 +304,6 @@ namespace ProjectGenesis.Patches
                                         if (cargoPath.TryInsertItemAtHeadAndFillBlank(itemId, (byte)num2, 0)) __instance.produced[index2] -= num2;
                                     }
                                 }
-                            }
 
                             signPool[entityId].iconType = 1U;
                             signPool[entityId].iconId0 = (uint)itemId;
@@ -331,7 +347,7 @@ namespace ProjectGenesis.Patches
                                     __instance.incServed[needIdx] += inc;
                                 }
 
-                                slotdata[index].storageIdx = __instance.products.Length + needIdx + 1;
+                                // slotdata[index].storageIdx = __instance.products.Length + needIdx + 1;
                             }
                             else if (itemId > 0)
                             {
@@ -499,7 +515,6 @@ namespace ProjectGenesis.Patches
             var entityData = factory.entityPool[__instance.outputEntityId];
 
             if (entityData.assemblerId > 0)
-            {
                 if (__instance.outputSlotId < 12)
                 {
                     var assemblerComponent = factory.factorySystem.assemblerPool[entityData.assemblerId];
@@ -510,7 +525,6 @@ namespace ProjectGenesis.Patches
                         if (entityData.stationId > 0) entityData.stationId = 0;
                     }
                 }
-            }
 
             if (entityData.stationId > 0)
             {
@@ -701,7 +715,6 @@ namespace ProjectGenesis.Patches
 
 
             if (entityData.assemblerId > 0)
-            {
                 if (__instance.outputSlotId < 12)
                 {
                     var assemblerComponent = factory.factorySystem.assemblerPool[entityData.assemblerId];
@@ -712,7 +725,6 @@ namespace ProjectGenesis.Patches
                         if (entityData.stationId > 0) entityData.stationId = 0;
                     }
                 }
-            }
 
             if (entityData.stationId > 0)
             {
@@ -822,22 +834,13 @@ namespace ProjectGenesis.Patches
                         if (raycastData.objType != EObjectType.Entity || raycastData.rch.dist >= 60.0) return false;
                         var stationId = factory.entityPool[raycastData.objId].stationId;
                         var assemblerId = factory.entityPool[raycastData.objId].assemblerId;
-                        if (stationId == 0 && factory.factorySystem.assemblerPool[assemblerId].speed < 100000)
-                        {
-                            return false;
-                        }
+                        if (stationId == 0 && factory.factorySystem.assemblerPool[assemblerId].speed < 100000) return false;
 
                         var modelProto = LDB.models.Select(factory.entityPool[raycastData.objId].modelIndex);
-                        if (modelProto == null)
-                        {
-                            return false;
-                        }
+                        if (modelProto == null) return false;
 
                         var prefabDesc = modelProto.prefabDesc;
-                        if (prefabDesc.portPoses == null || prefabDesc.portPoses.Length == 0)
-                        {
-                            return false;
-                        }
+                        if (prefabDesc.portPoses == null || prefabDesc.portPoses.Length == 0) return false;
 
                         var pos = factory.entityPool[raycastData.objId].pos;
                         var rot = factory.entityPool[raycastData.objId].rot;

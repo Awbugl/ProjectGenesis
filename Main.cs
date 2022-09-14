@@ -2,7 +2,6 @@ using xiaoye97;
 using HarmonyLib;
 using BepInEx;
 using UnityEngine;
-using UnityEngine.UI;
 using System.IO;
 using System;
 using System.Reflection;
@@ -12,6 +11,8 @@ using ProjectGenesis.Patches;
 using ERecipeType_1 = ERecipeType;
 using BepInEx.Logging;
 using crecheng.DSPModSave;
+
+#pragma warning disable CS0618
 
 // ReSharper disable UnusedVariable
 // ReSharper disable UnusedMember.Local
@@ -24,6 +25,9 @@ namespace ProjectGenesis
     [BepInDependency(CommonAPIPlugin.GUID)]
     [BepInDependency(LDBToolPlugin.MODGUID)]
     [CommonAPISubmoduleDependency(nameof(ProtoRegistry), nameof(CustomDescSystem), nameof(TabSystem), nameof(AssemblerRecipeSystem))]
+
+    // ReSharper disable once ClassNeverInstantiated.Global
+    // ReSharper disable once MemberCanBeInternal
     public class Main : BaseUnityPlugin, IModCanSave
     {
         private int TableID, TableID2;
@@ -58,7 +62,7 @@ namespace ProjectGenesis
         {
             PreFix();
 
-#region ModelProto
+            #region ModelProto
 
             var TankModel = CopyModelProto(121, 301, Color.HSVToRGB(0.5571f, 0.3188f, 0.8980f));
             LDBTool.PreAddProto(TankModel);
@@ -81,9 +85,9 @@ namespace ProjectGenesis
             var CircleModel = CopyModelProto(69, 309, Color.grey);
             LDBTool.PreAddProto(CircleModel);
 
-#endregion
+            #endregion
 
-#region TechProto
+            #region TechProto
 
             var templateTech = LDB.techs.Select(1311);
 
@@ -108,15 +112,12 @@ namespace ProjectGenesis
                 proto.AddItemCounts = techjson.AddItemCounts ?? Array.Empty<int>();
                 proto.Position = new Vector2(techjson.Position[0], techjson.Position[1]);
 
-                if (!LDB.techs.Exist(techjson.ID))
-                {
-                    LDBTool.PreAddProto(proto);
-                }
+                if (!LDB.techs.Exist(techjson.ID)) LDBTool.PreAddProto(proto);
             }
 
-#endregion
+            #endregion
 
-#region ItemProto
+            #region ItemProto
 
             foreach (var itemjson in JsonHelper.ItemProtos())
             {
@@ -162,9 +163,9 @@ namespace ProjectGenesis
                 proto.Productive = itemjson.Productive;
             }
 
-#endregion
+            #endregion
 
-#region RecipeProto
+            #region RecipeProto
 
             foreach (var recipeJson in JsonHelper.RecipeProtos())
             {
@@ -205,7 +206,7 @@ namespace ProjectGenesis
                 }
             }
 
-#endregion
+            #endregion
         }
 
         private void PreFix()
@@ -398,31 +399,19 @@ namespace ProjectGenesis
 
             LDB.items.Select(2211).prefabDesc.fuelMask = 5;
             LDB.items.Select(2210).prefabDesc.fuelMask = 6;
-            
+
             AntiMatterModel.prefabDesc.fuelMask = 4;
             AntiMatterModel.prefabDesc.genEnergyPerTick = 1200000000;
             AntiMatterModel.prefabDesc.useFuelPerTick = 1200000000;
 
 
-            foreach (var proto in LDB.techs.dataArray)
-            {
-                proto.Preload();
-            }
+            foreach (var proto in LDB.techs.dataArray) proto.Preload();
 
-            for (var i = 0; i < LDB.items.dataArray.Length; ++i)
-            {
-                LDB.items.dataArray[i].Preload(i);
-            }
+            for (var i = 0; i < LDB.items.dataArray.Length; ++i) LDB.items.dataArray[i].Preload(i);
 
-            for (var i = 0; i < LDB.recipes.dataArray.Length; ++i)
-            {
-                LDB.recipes.dataArray[i].Preload(i);
-            }
+            for (var i = 0; i < LDB.recipes.dataArray.Length; ++i) LDB.recipes.dataArray[i].Preload(i);
 
-            foreach (var proto in LDB.techs.dataArray)
-            {
-                proto.Preload2();
-            }
+            foreach (var proto in LDB.techs.dataArray) proto.Preload2();
 
             PostFix(LDB.items);
 
