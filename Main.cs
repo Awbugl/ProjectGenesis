@@ -261,7 +261,7 @@ namespace ProjectGenesis
             LDB.items.OnAfterDeserialize();
         }
 
-        private void PostFix(ItemProtoSet itemProtos)
+        private void ItemPostFix(ItemProtoSet itemProtos)
         {
             LDB.items.OnAfterDeserialize();
 
@@ -354,21 +354,15 @@ namespace ProjectGenesis
             OreFactory.prefabDesc.dragBuildDist = new Vector2(2.9f, 2.9f);
         }
 
-        private void PostAddDataAction()
+        private void ModelPostFix(ModelProtoSet models)
         {
-            LDB.items.OnAfterDeserialize();
-            LDB.recipes.OnAfterDeserialize();
-            LDB.models.OnAfterDeserialize();
-            GameMain.gpuiManager.Init();
-
             //行星装配站调试部分
-            var TestCraftingTableModel = LDB.models.Select(303);
-            var TestCraftingTableModel2 = LDB.models.Select(304);
-            var TestCraftingTableModel3 = LDB.models.Select(305);
-            var TestCraftingTableModel4 = LDB.models.Select(306);
-            var AntiMatterModel = LDB.models.Select(307);
-
-            var TestCraftingTableModel5 = LDB.models.Select(310);
+            var TestCraftingTableModel = models.Select(303);
+            var TestCraftingTableModel2 = models.Select(304);
+            var TestCraftingTableModel3 = models.Select(305);
+            var TestCraftingTableModel4 = models.Select(306);
+            var TestCraftingTableModel5 = models.Select(310);
+            var AntiMatterModel = models.Select(307);
 
             TestCraftingTableModel.prefabDesc.isAssembler = true;
             TestCraftingTableModel.prefabDesc.assemblerRecipeType = (ERecipeType_1)ERecipeType.Assemble;
@@ -441,7 +435,21 @@ namespace ProjectGenesis
             AntiMatterModel.prefabDesc.fuelMask = 4;
             AntiMatterModel.prefabDesc.genEnergyPerTick = 1200000000;
             AntiMatterModel.prefabDesc.useFuelPerTick = 1200000000;
+        }
 
+        private void PostAddDataAction()
+        {
+            LDB.items.OnAfterDeserialize();
+            LDB.recipes.OnAfterDeserialize();
+            LDB.models.OnAfterDeserialize();
+            GameMain.gpuiManager.Init();
+
+            //飞行舱拆除
+            var @base = LDB.veges.Select(9999);
+            @base.MiningItem = new[] { 1801, 1101, 1104 };
+            @base.MiningCount = new[] { 3, 10, 20 };
+            @base.MiningChance = new float[] { 1, 1, 1 };
+            @base.Preload();
 
             foreach (var proto in LDB.techs.dataArray) proto.Preload();
 
@@ -456,7 +464,8 @@ namespace ProjectGenesis
                 proto.Preload2();
             }
 
-            PostFix(LDB.items);
+            ModelPostFix(LDB.models);
+            ItemPostFix(LDB.items);
 
             ItemProto.InitFluids();
             ItemProto.InitItemIds();
@@ -475,7 +484,7 @@ namespace ProjectGenesis
                 else
                     StorageComponent.itemStackCount[proto.ID] = proto.StackSize;
             }
-            
+
             // JsonHelper.ExportAsJson(@"C:\Git\ProjectGenesis");
         }
 

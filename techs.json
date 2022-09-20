@@ -616,8 +616,8 @@
     "Desc": "先驱者文明的遗产.",
     "Conclusion": "",
     "Position": [
-      49.0,
-      -19.0
+      45.0,
+      -23.0
     ],
     "PreTechs": [
       1152
@@ -911,8 +911,8 @@
     "Desc": "传统材料已经无法满足需求...",
     "Conclusion": "",
     "Position": [
-      49.0,
-      -15.0
+      45.0,
+      -19.0
     ],
     "PreTechs": [
       1152
@@ -1086,8 +1086,8 @@
     "Desc": "人造恒星描述",
     "Conclusion": "人造恒星结果",
     "Position": [
-      49.0,
-      -27.0
+      45.0,
+      -31.0
     ],
     "PreTechs": [
       1152
@@ -1220,13 +1220,13 @@
     "Desc": "欢迎来到地狱....",
     "Conclusion": "",
     "Position": [
-      45.0,
-      -23.0
+      41.0,
+      -27.0
     ],
-    "PreTechs": [
+    "PreTechs": [],
+    "PreTechsImplicit": [
       1508
     ],
-    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -3261,8 +3261,8 @@
     "Desc": "卫星配电系统描述",
     "Conclusion": "卫星配电系统结果",
     "Position": [
-      49.0,
-      -23.0
+      45.0,
+      -27.0
     ],
     "PreTechs": [
       1152
@@ -8105,10 +8105,10 @@
     ],
     "PreTechsImplicit": [],
     "Items": [
-      6001
+      1301
     ],
     "ItemPoints": [
-      40
+      20
     ],
     "HashNeeded": 1800,
     "UnlockRecipes": [
@@ -8121,7 +8121,7 @@
     "MaxLevel": 0,
     "LevelCoef1": 0,
     "LevelCoef2": 0,
-    "IsLabTech": true,
+    "IsLabTech": false,
     "PreTechsMax": false,
     "AddItems": [],
     "AddItemCounts": [],
@@ -8632,7 +8632,9 @@
       -43.0
     ],
     "PreTechs": [],
-    "PreTechsImplicit": [],
+    "PreTechsImplicit": [
+      1402
+    ],
     "Items": [
       6001,
       6002
