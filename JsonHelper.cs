@@ -175,7 +175,7 @@ namespace ProjectGenesis
                        Items = i.Items,
                        ItemPoints = i.ItemPoints,
                        HashNeeded = i.HashNeeded,
-                       UnlockRecipes = i.UnlockRecipes,
+                       UnlockRecipes = i.UnlockRecipes.Distinct().ToArray(),
                        UnlockFunctions = i.UnlockFunctions,
                        UnlockValues = i.UnlockValues,
                        AddItems = i.AddItems,

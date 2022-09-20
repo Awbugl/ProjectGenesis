@@ -1,7 +1,12 @@
 [
   {
     "ID": 1,
+    "Name": "铁块",
+    "Description": "",
+    "IconPath": "",
     "Type": 1,
+    "GridIndex": 1101,
+    "PreTech": 0,
     "Time": 60,
     "Input": [
       1001
@@ -15,18 +20,43 @@
     "OutCounts": [
       1
     ],
+    "Explicit": false,
+    "Handcraft": true,
+    "NonProductive": false
+  },
+  {
+    "ID": 2,
+    "Name": "磁铁",
     "Description": "",
-    "PreTech": 1,
-    "GridIndex": 1101,
-    "Name": "铁块",
     "IconPath": "",
+    "Type": 1,
+    "GridIndex": 2817,
+    "PreTech": 0,
+    "Time": 60,
+    "Input": [
+      1001
+    ],
+    "InCounts": [
+      1
+    ],
+    "Output": [
+      1102
+    ],
+    "OutCounts": [
+      1
+    ],
     "Explicit": false,
     "Handcraft": true,
     "NonProductive": false
   },
   {
     "ID": 3,
+    "Name": "铜块",
+    "Description": "",
+    "IconPath": "",
     "Type": 1,
+    "GridIndex": 1102,
+    "PreTech": 0,
     "Time": 60,
     "Input": [
       1002
@@ -40,18 +70,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "",
-    "PreTech": 1,
-    "GridIndex": 1102,
-    "Name": "铜块",
-    "IconPath": "",
     "Explicit": false,
     "Handcraft": true,
     "NonProductive": false
   },
   {
     "ID": 4,
+    "Name": "石材",
+    "Description": "",
+    "IconPath": "",
     "Type": 1,
+    "GridIndex": 1107,
+    "PreTech": 0,
     "Time": 60,
     "Input": [
       1005
@@ -65,18 +95,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "",
-    "PreTech": 1,
-    "GridIndex": 1107,
-    "Name": "石材",
-    "IconPath": "",
     "Explicit": false,
     "Handcraft": true,
     "NonProductive": false
   },
   {
     "ID": 5,
+    "Name": "齿轮",
+    "Description": "",
+    "IconPath": "",
     "Type": 4,
+    "GridIndex": 1301,
+    "PreTech": 0,
     "Time": 60,
     "Input": [
       1101
@@ -90,18 +120,45 @@
     "OutCounts": [
       1
     ],
+    "Explicit": false,
+    "Handcraft": true,
+    "NonProductive": false
+  },
+  {
+    "ID": 6,
+    "Name": "磁线圈",
     "Description": "",
-    "PreTech": 1,
-    "GridIndex": 1301,
-    "Name": "齿轮",
     "IconPath": "",
+    "Type": 4,
+    "GridIndex": 2816,
+    "PreTech": 0,
+    "Time": 60,
+    "Input": [
+      1102,
+      1104
+    ],
+    "InCounts": [
+      2,
+      1
+    ],
+    "Output": [
+      1202
+    ],
+    "OutCounts": [
+      2
+    ],
     "Explicit": false,
     "Handcraft": true,
     "NonProductive": false
   },
   {
     "ID": 7,
+    "Name": "风力涡轮机",
+    "Description": "",
+    "IconPath": "",
     "Type": 4,
+    "GridIndex": 2104,
+    "PreTech": 1001,
     "Time": 120,
     "Input": [
       1101,
@@ -117,18 +174,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "",
-    "PreTech": 1001,
-    "GridIndex": 2104,
-    "Name": "风力涡轮机",
-    "IconPath": "",
     "Explicit": false,
     "Handcraft": true,
     "NonProductive": false
   },
   {
     "ID": 8,
+    "Name": "电力感应塔",
+    "Description": "",
+    "IconPath": "",
     "Type": 4,
+    "GridIndex": 2101,
+    "PreTech": 1001,
     "Time": 60,
     "Input": [
       1101,
@@ -144,18 +201,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "",
-    "PreTech": 1001,
-    "GridIndex": 2101,
-    "Name": "电力感应塔",
-    "IconPath": "",
     "Explicit": false,
     "Handcraft": true,
     "NonProductive": false
   },
   {
     "ID": 9,
+    "Name": "电磁矩阵",
+    "Description": "",
+    "IconPath": "",
     "Type": 15,
+    "GridIndex": 1701,
+    "PreTech": 1002,
     "Time": 180,
     "Input": [
       7823,
@@ -171,18 +228,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "",
-    "PreTech": 1002,
-    "GridIndex": 1701,
-    "Name": "电磁矩阵",
-    "IconPath": "",
     "Explicit": false,
     "Handcraft": true,
     "NonProductive": false
   },
   {
     "ID": 10,
+    "Name": "矩阵研究站",
+    "Description": "",
+    "IconPath": "",
     "Type": 4,
+    "GridIndex": 2309,
+    "PreTech": 1002,
     "Time": 120,
     "Input": [
       6501,
@@ -202,18 +259,43 @@
     "OutCounts": [
       1
     ],
+    "Explicit": false,
+    "Handcraft": true,
+    "NonProductive": false
+  },
+  {
+    "ID": 11,
+    "Name": "棱镜",
     "Description": "",
-    "PreTech": 1002,
-    "GridIndex": 2309,
-    "Name": "矩阵研究站",
     "IconPath": "",
+    "Type": 4,
+    "GridIndex": 2812,
+    "PreTech": 1101,
+    "Time": 120,
+    "Input": [
+      1110
+    ],
+    "InCounts": [
+      3
+    ],
+    "Output": [
+      1111
+    ],
+    "OutCounts": [
+      2
+    ],
     "Explicit": false,
     "Handcraft": true,
     "NonProductive": false
   },
   {
     "ID": 12,
+    "Name": "电浆激发器",
+    "Description": "",
+    "IconPath": "",
     "Type": 4,
+    "GridIndex": 2409,
+    "PreTech": 1101,
     "Time": 120,
     "Input": [
       1110,
@@ -229,18 +311,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "",
-    "PreTech": 1101,
-    "GridIndex": 2409,
-    "Name": "电浆激发器",
-    "IconPath": "",
     "Explicit": false,
     "Handcraft": true,
     "NonProductive": false
   },
   {
     "ID": 13,
+    "Name": "无线输电塔",
+    "Description": "",
+    "IconPath": "",
     "Type": 4,
+    "GridIndex": 2102,
+    "PreTech": 1101,
     "Time": 180,
     "Input": [
       2201,
@@ -256,18 +338,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "",
-    "PreTech": 1101,
-    "GridIndex": 2102,
-    "Name": "无线输电塔",
-    "IconPath": "",
     "Explicit": false,
     "Handcraft": true,
     "NonProductive": false
   },
   {
     "ID": 14,
+    "Name": "原油萃取站",
+    "Description": "",
+    "IconPath": "",
     "Type": 4,
+    "GridIndex": 2307,
+    "PreTech": 1102,
     "Time": 240,
     "Input": [
       6501,
@@ -287,18 +369,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "",
-    "PreTech": 1102,
-    "GridIndex": 2307,
-    "Name": "原油萃取站",
-    "IconPath": "",
     "Explicit": false,
     "Handcraft": true,
     "NonProductive": false
   },
   {
     "ID": 15,
+    "Name": "原油精炼厂",
+    "Description": "",
+    "IconPath": "",
     "Type": 4,
+    "GridIndex": 2308,
+    "PreTech": 1102,
     "Time": 120,
     "Input": [
       6501,
@@ -318,18 +400,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "",
-    "PreTech": 1102,
-    "GridIndex": 2308,
-    "Name": "原油精炼厂",
-    "IconPath": "",
     "Explicit": false,
     "Handcraft": true,
     "NonProductive": false
   },
   {
     "ID": 16,
+    "Name": "等离子精炼",
+    "Description": "R等离子精炼",
+    "IconPath": "Icons/ItemRecipe/plasma-refining",
     "Type": 3,
+    "GridIndex": 1511,
+    "PreTech": 1102,
     "Time": 120,
     "Input": [
       1007
@@ -345,18 +427,18 @@
       2,
       1
     ],
-    "Description": "R等离子精炼",
-    "PreTech": 1102,
-    "GridIndex": 1511,
-    "Name": "等离子精炼",
-    "IconPath": "Icons/ItemRecipe/plasma-refining",
     "Explicit": true,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 17,
+    "Name": "高能石墨",
+    "Description": "",
+    "IconPath": "",
     "Type": 1,
+    "GridIndex": 1106,
+    "PreTech": 1402,
     "Time": 60,
     "Input": [
       1006
@@ -370,18 +452,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "",
-    "PreTech": 1402,
-    "GridIndex": 1106,
-    "Name": "高能石墨",
-    "IconPath": "",
     "Explicit": false,
     "Handcraft": true,
     "NonProductive": false
   },
   {
     "ID": 18,
+    "Name": "能量矩阵",
+    "Description": "",
+    "IconPath": "",
     "Type": 15,
+    "GridIndex": 1702,
+    "PreTech": 1111,
     "Time": 180,
     "Input": [
       1109,
@@ -397,18 +479,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "",
-    "PreTech": 1111,
-    "GridIndex": 1702,
-    "Name": "能量矩阵",
-    "IconPath": "",
     "Explicit": false,
     "Handcraft": true,
     "NonProductive": false
   },
   {
     "ID": 19,
+    "Name": "氢燃料棒",
+    "Description": "",
+    "IconPath": "",
     "Type": 4,
+    "GridIndex": 1408,
+    "PreTech": 1112,
     "Time": 120,
     "Input": [
       6509,
@@ -424,18 +506,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "",
-    "PreTech": 1112,
-    "GridIndex": 1408,
-    "Name": "氢燃料棒",
-    "IconPath": "",
     "Explicit": false,
     "Handcraft": true,
     "NonProductive": false
   },
   {
     "ID": 20,
+    "Name": "推进器",
+    "Description": "",
+    "IconPath": "",
     "Type": 4,
+    "GridIndex": 1209,
+    "PreTech": 1113,
     "Time": 120,
     "Input": [
       1103,
@@ -451,18 +533,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "",
-    "PreTech": 1113,
-    "GridIndex": 1209,
-    "Name": "推进器",
-    "IconPath": "",
     "Explicit": false,
     "Handcraft": true,
     "NonProductive": false
   },
   {
     "ID": 21,
+    "Name": "加力推进器",
+    "Description": "",
+    "IconPath": "",
     "Type": 4,
+    "GridIndex": 1309,
+    "PreTech": 1114,
     "Time": 240,
     "Input": [
       1405,
@@ -480,18 +562,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "",
-    "PreTech": 1114,
-    "GridIndex": 1309,
-    "Name": "加力推进器",
-    "IconPath": "",
     "Explicit": false,
     "Handcraft": true,
     "NonProductive": false
   },
   {
     "ID": 22,
+    "Name": "化工厂",
+    "Description": "",
+    "IconPath": "",
     "Type": 4,
+    "GridIndex": 2406,
+    "PreTech": 1121,
     "Time": 240,
     "Input": [
       6501,
@@ -511,18 +593,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "",
-    "PreTech": 1121,
-    "GridIndex": 2406,
-    "Name": "化工厂",
-    "IconPath": "",
     "Explicit": false,
     "Handcraft": true,
     "NonProductive": false
   },
   {
     "ID": 23,
+    "Name": "塑料",
+    "Description": "",
+    "IconPath": "",
     "Type": 2,
+    "GridIndex": 1109,
+    "PreTech": 1121,
     "Time": 120,
     "Input": [
       7001,
@@ -538,18 +620,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "",
-    "PreTech": 1121,
-    "GridIndex": 1109,
-    "Name": "塑料",
-    "IconPath": "",
     "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 24,
+    "Name": "硫酸",
+    "Description": "",
+    "IconPath": "",
     "Type": 2,
+    "GridIndex": 2408,
+    "PreTech": 1121,
     "Time": 60,
     "Input": [
       7103,
@@ -567,18 +649,74 @@
       1,
       2
     ],
-    "Description": "",
-    "PreTech": 1121,
-    "GridIndex": 2408,
-    "Name": "硫酸",
-    "IconPath": "",
     "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
   {
+    "ID": 25,
+    "Name": "有机晶体",
+    "Description": "",
+    "IconPath": "",
+    "Type": 2,
+    "GridIndex": 2803,
+    "PreTech": 1122,
+    "Time": 360,
+    "Input": [
+      1115,
+      1114,
+      1000
+    ],
+    "InCounts": [
+      2,
+      1,
+      1
+    ],
+    "Output": [
+      1117
+    ],
+    "OutCounts": [
+      1
+    ],
+    "Explicit": false,
+    "Handcraft": false,
+    "NonProductive": false
+  },
+  {
+    "ID": 26,
+    "Name": "钛晶石",
+    "Description": "",
+    "IconPath": "",
+    "Type": 4,
+    "GridIndex": 2805,
+    "PreTech": 1123,
+    "Time": 240,
+    "Input": [
+      1117,
+      1106
+    ],
+    "InCounts": [
+      1,
+      3
+    ],
+    "Output": [
+      1118
+    ],
+    "OutCounts": [
+      1
+    ],
+    "Explicit": false,
+    "Handcraft": true,
+    "NonProductive": false
+  },
+  {
     "ID": 27,
+    "Name": "结构矩阵",
+    "Description": "",
+    "IconPath": "",
     "Type": 15,
+    "GridIndex": 1703,
+    "PreTech": 1124,
     "Time": 180,
     "Input": [
       1112,
@@ -594,18 +732,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "",
-    "PreTech": 1124,
-    "GridIndex": 1703,
-    "Name": "结构矩阵",
-    "IconPath": "",
     "Explicit": false,
     "Handcraft": true,
     "NonProductive": false
   },
   {
     "ID": 28,
+    "Name": "卡西米尔晶体",
+    "Description": "",
+    "IconPath": "",
     "Type": 4,
+    "GridIndex": 1510,
+    "PreTech": 1125,
     "Time": 120,
     "Input": [
       1112,
@@ -621,18 +759,47 @@
     "OutCounts": [
       1
     ],
-    "Description": "",
-    "PreTech": 1125,
-    "GridIndex": 1510,
-    "Name": "卡西米尔晶体",
-    "IconPath": "",
     "Explicit": false,
     "Handcraft": true,
     "NonProductive": false
   },
   {
-    "ID": 30,
+    "ID": 29,
+    "Name": "卡西米尔晶体（高效）",
+    "Description": "R卡西米尔晶体（高效）",
+    "IconPath": "Icons/ItemRecipe/casimir-crystal-lv2",
     "Type": 4,
+    "GridIndex": 2808,
+    "PreTech": 1125,
+    "Time": 240,
+    "Input": [
+      1014,
+      1123,
+      1120
+    ],
+    "InCounts": [
+      4,
+      2,
+      12
+    ],
+    "Output": [
+      1126
+    ],
+    "OutCounts": [
+      1
+    ],
+    "Explicit": true,
+    "Handcraft": false,
+    "NonProductive": false
+  },
+  {
+    "ID": 30,
+    "Name": "钛化玻璃",
+    "Description": "",
+    "IconPath": "",
+    "Type": 4,
+    "GridIndex": 1405,
+    "PreTech": 1126,
     "Time": 240,
     "Input": [
       1110,
@@ -648,18 +815,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "",
-    "PreTech": 1126,
-    "GridIndex": 1405,
-    "Name": "钛化玻璃",
-    "IconPath": "",
     "Explicit": false,
     "Handcraft": true,
     "NonProductive": false
   },
   {
     "ID": 31,
+    "Name": "石墨烯",
+    "Description": "",
+    "IconPath": "",
     "Type": 2,
+    "GridIndex": 1205,
+    "PreTech": 1131,
     "Time": 120,
     "Input": [
       1109,
@@ -675,18 +842,18 @@
     "OutCounts": [
       2
     ],
-    "Description": "",
-    "PreTech": 1131,
-    "GridIndex": 1205,
-    "Name": "石墨烯",
-    "IconPath": "",
     "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 32,
+    "Name": "石墨烯（高效）",
+    "Description": "R石墨烯（高效）",
+    "IconPath": "Icons/ItemRecipe/graphene-lv2",
     "Type": 2,
+    "GridIndex": 1305,
+    "PreTech": 1131,
     "Time": 120,
     "Input": [
       1011
@@ -702,18 +869,18 @@
       2,
       1
     ],
-    "Description": "R石墨烯（高效）",
-    "PreTech": 1131,
-    "GridIndex": 1305,
-    "Name": "石墨烯（高效）",
-    "IconPath": "Icons/ItemRecipe/graphene-lv2",
     "Explicit": true,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 33,
+    "Name": "碳纳米管",
+    "Description": "",
+    "IconPath": "",
     "Type": 2,
+    "GridIndex": 1206,
+    "PreTech": 1132,
     "Time": 120,
     "Input": [
       1123
@@ -727,18 +894,18 @@
     "OutCounts": [
       2
     ],
-    "Description": "",
-    "PreTech": 1132,
-    "GridIndex": 1206,
-    "Name": "碳纳米管",
-    "IconPath": "",
     "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 34,
+    "Name": "硅石",
+    "Description": "",
+    "IconPath": "",
     "Type": 1,
+    "GridIndex": 1611,
+    "PreTech": 1402,
     "Time": 60,
     "Input": [
       1005
@@ -752,18 +919,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "",
-    "PreTech": 1402,
-    "GridIndex": 1611,
-    "Name": "硅石",
-    "IconPath": "",
     "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 35,
+    "Name": "碳纳米管（高效）",
+    "Description": "R碳纳米管（高效）",
+    "IconPath": "Icons/ItemRecipe/nanotube-lv2",
     "Type": 2,
+    "GridIndex": 1306,
+    "PreTech": 1132,
     "Time": 60,
     "Input": [
       1015
@@ -777,18 +944,18 @@
     "OutCounts": [
       2
     ],
-    "Description": "R碳纳米管（高效）",
-    "PreTech": 1132,
-    "GridIndex": 1306,
-    "Name": "碳纳米管（高效）",
-    "IconPath": "Icons/ItemRecipe/nanotube-lv2",
     "Explicit": true,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 36,
+    "Name": "粒子宽带",
+    "Description": "",
+    "IconPath": "",
     "Type": 10,
+    "GridIndex": 1404,
+    "PreTech": 1133,
     "Time": 240,
     "Input": [
       1124,
@@ -804,18 +971,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "",
-    "PreTech": 1133,
-    "GridIndex": 1404,
-    "Name": "粒子宽带",
-    "IconPath": "",
     "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 37,
+    "Name": "晶格硅",
+    "Description": "",
+    "IconPath": "",
     "Type": 1,
+    "GridIndex": 1207,
+    "PreTech": 1403,
     "Time": 120,
     "Input": [
       1105
@@ -829,18 +996,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "",
-    "PreTech": 1403,
-    "GridIndex": 1207,
-    "Name": "晶格硅",
-    "IconPath": "",
     "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 38,
+    "Name": "位面过滤器",
+    "Description": "",
+    "IconPath": "",
     "Type": 10,
+    "GridIndex": 1610,
+    "PreTech": 1141,
     "Time": 360,
     "Input": [
       1126,
@@ -856,18 +1023,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "",
-    "PreTech": 1141,
-    "GridIndex": 1610,
-    "Name": "位面过滤器",
-    "IconPath": "",
     "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 39,
+    "Name": "微型粒子对撞机",
+    "Description": "",
+    "IconPath": "",
     "Type": 10,
+    "GridIndex": 2310,
+    "PreTech": 1142,
     "Time": 3600,
     "Input": [
       6502,
@@ -887,18 +1054,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "",
-    "PreTech": 1142,
-    "GridIndex": 2310,
-    "Name": "微型粒子对撞机",
-    "IconPath": "",
     "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 40,
+    "Name": "重氢",
+    "Description": "",
+    "IconPath": "",
     "Type": 2,
+    "GridIndex": 1211,
+    "PreTech": 1142,
     "Time": 120,
     "Input": [
       1120
@@ -912,18 +1079,18 @@
     "OutCounts": [
       2
     ],
-    "Description": "",
-    "PreTech": 1121,
-    "GridIndex": 1211,
-    "Name": "重氢",
-    "IconPath": "",
     "Explicit": false,
     "Handcraft": false,
     "NonProductive": true
   },
   {
     "ID": 41,
+    "Name": "氘核燃料棒",
+    "Description": "",
+    "IconPath": "",
     "Type": 4,
+    "GridIndex": 1508,
+    "PreTech": 1822,
     "Time": 240,
     "Input": [
       6509,
@@ -939,18 +1106,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "",
-    "PreTech": 1822,
-    "GridIndex": 1508,
-    "Name": "氘核燃料棒",
-    "IconPath": "",
     "Explicit": false,
     "Handcraft": true,
     "NonProductive": false
   },
   {
     "ID": 42,
+    "Name": "湮灭约束球",
+    "Description": "",
+    "IconPath": "",
     "Type": 12,
+    "GridIndex": 1710,
+    "PreTech": 1145,
     "Time": 3600,
     "Input": [
       6271,
@@ -968,18 +1135,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "",
-    "PreTech": 1145,
-    "GridIndex": 1710,
-    "Name": "湮灭约束球",
-    "IconPath": "",
     "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 43,
+    "Name": "人造恒星",
+    "Description": "",
+    "IconPath": "",
     "Type": 10,
+    "GridIndex": 2112,
+    "PreTech": 1827,
     "Time": 18000,
     "Input": [
       6503,
@@ -999,18 +1166,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "",
-    "PreTech": 1827,
-    "GridIndex": 2112,
-    "Name": "人造恒星",
-    "IconPath": "",
     "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 44,
+    "Name": "反物质燃料棒",
+    "Description": "",
+    "IconPath": "",
     "Type": 4,
+    "GridIndex": 1608,
+    "PreTech": 1144,
     "Time": 480,
     "Input": [
       6509,
@@ -1026,18 +1193,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "",
-    "PreTech": 1145,
-    "GridIndex": 1608,
-    "Name": "反物质燃料棒",
-    "IconPath": "",
     "Explicit": false,
     "Handcraft": false,
     "NonProductive": true
   },
   {
     "ID": 45,
+    "Name": "制造台 Mk.I",
+    "Description": "",
+    "IconPath": "",
     "Type": 4,
+    "GridIndex": 2401,
+    "PreTech": 1201,
     "Time": 60,
     "Input": [
       6501,
@@ -1055,18 +1222,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "",
-    "PreTech": 1201,
-    "GridIndex": 2401,
-    "Name": "制造台 Mk.I",
-    "IconPath": "",
     "Explicit": false,
     "Handcraft": true,
     "NonProductive": false
   },
   {
     "ID": 46,
+    "Name": "制造台 Mk.II",
+    "Description": "",
+    "IconPath": "",
     "Type": 4,
+    "GridIndex": 2402,
+    "PreTech": 1202,
     "Time": 120,
     "Input": [
       6501,
@@ -1084,18 +1251,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "",
-    "PreTech": 1202,
-    "GridIndex": 2402,
-    "Name": "制造台 Mk.II",
-    "IconPath": "",
     "Explicit": false,
     "Handcraft": true,
     "NonProductive": false
   },
   {
     "ID": 47,
+    "Name": "制造台 Mk.III",
+    "Description": "",
+    "IconPath": "",
     "Type": 4,
+    "GridIndex": 2403,
+    "PreTech": 1203,
     "Time": 360,
     "Input": [
       6502,
@@ -1115,18 +1282,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "",
-    "PreTech": 1203,
-    "GridIndex": 2403,
-    "Name": "制造台 Mk.III",
-    "IconPath": "",
     "Explicit": false,
     "Handcraft": true,
     "NonProductive": false
   },
   {
     "ID": 48,
+    "Name": "采矿机",
+    "Description": "",
+    "IconPath": "",
     "Type": 4,
+    "GridIndex": 2304,
+    "PreTech": 1001,
     "Time": 120,
     "Input": [
       6501,
@@ -1144,18 +1311,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "",
-    "PreTech": 1001,
-    "GridIndex": 2304,
-    "Name": "采矿机",
-    "IconPath": "",
     "Explicit": false,
     "Handcraft": true,
     "NonProductive": false
   },
   {
     "ID": 49,
+    "Name": "抽水站",
+    "Description": "",
+    "IconPath": "",
     "Type": 4,
+    "GridIndex": 2306,
+    "PreTech": 1120,
     "Time": 240,
     "Input": [
       6501,
@@ -1173,18 +1340,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "",
-    "PreTech": 1120,
-    "GridIndex": 2306,
-    "Name": "抽水站",
-    "IconPath": "",
     "Explicit": false,
     "Handcraft": true,
     "NonProductive": false
   },
   {
     "ID": 50,
+    "Name": "电路板",
+    "Description": "",
+    "IconPath": "",
     "Type": 4,
+    "GridIndex": 2407,
+    "PreTech": 0,
     "Time": 60,
     "Input": [
       1101,
@@ -1200,18 +1367,18 @@
     "OutCounts": [
       2
     ],
-    "Description": "",
-    "PreTech": 1,
-    "GridIndex": 2407,
-    "Name": "电路板",
-    "IconPath": "",
     "Explicit": false,
     "Handcraft": true,
     "NonProductive": false
   },
   {
     "ID": 51,
+    "Name": "处理器",
+    "Description": "",
+    "IconPath": "",
     "Type": 4,
+    "GridIndex": 1507,
+    "PreTech": 1302,
     "Time": 240,
     "Input": [
       7502,
@@ -1229,18 +1396,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "",
-    "PreTech": 1302,
-    "GridIndex": 1507,
-    "Name": "处理器",
-    "IconPath": "",
     "Explicit": false,
     "Handcraft": true,
     "NonProductive": false
   },
   {
     "ID": 52,
+    "Name": "量子芯片",
+    "Description": "",
+    "IconPath": "",
     "Type": 10,
+    "GridIndex": 1607,
+    "PreTech": 1303,
     "Time": 360,
     "Input": [
       7503,
@@ -1258,18 +1425,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "",
-    "PreTech": 1303,
-    "GridIndex": 1607,
-    "Name": "量子芯片",
-    "IconPath": "",
     "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 53,
+    "Name": "微晶元件",
+    "Description": "",
+    "IconPath": "",
     "Type": 4,
+    "GridIndex": 1407,
+    "PreTech": 1311,
     "Time": 120,
     "Input": [
       7501,
@@ -1287,18 +1454,47 @@
     "OutCounts": [
       1
     ],
-    "Description": "",
-    "PreTech": 1311,
-    "GridIndex": 1407,
-    "Name": "微晶元件",
-    "IconPath": "",
     "Explicit": false,
     "Handcraft": true,
     "NonProductive": false
   },
   {
+    "ID": 54,
+    "Name": "有机晶体（原始）",
+    "Description": "R有机晶体（原始）",
+    "IconPath": "Icons/ItemRecipe/crystal-rubber-lv0",
+    "Type": 4,
+    "GridIndex": 2804,
+    "PreTech": 1122,
+    "Time": 360,
+    "Input": [
+      1030,
+      1031,
+      1000
+    ],
+    "InCounts": [
+      20,
+      30,
+      10
+    ],
+    "Output": [
+      1117
+    ],
+    "OutCounts": [
+      1
+    ],
+    "Explicit": true,
+    "Handcraft": true,
+    "NonProductive": false
+  },
+  {
     "ID": 55,
+    "Name": "信息矩阵",
+    "Description": "",
+    "IconPath": "",
     "Type": 15,
+    "GridIndex": 1704,
+    "PreTech": 1312,
     "Time": 180,
     "Input": [
       1126,
@@ -1314,18 +1510,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "",
-    "PreTech": 1312,
-    "GridIndex": 1704,
-    "Name": "信息矩阵",
-    "IconPath": "",
     "Explicit": false,
     "Handcraft": true,
     "NonProductive": false
   },
   {
     "ID": 56,
+    "Name": "电弧熔炉",
+    "Description": "",
+    "IconPath": "",
     "Type": 4,
+    "GridIndex": 2404,
+    "PreTech": 1401,
     "Time": 120,
     "Input": [
       6501,
@@ -1343,18 +1539,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "",
-    "PreTech": 1401,
-    "GridIndex": 2404,
-    "Name": "电弧熔炉",
-    "IconPath": "",
     "Explicit": false,
     "Handcraft": true,
     "NonProductive": false
   },
   {
     "ID": 57,
+    "Name": "玻璃",
+    "Description": "",
+    "IconPath": "",
     "Type": 1,
+    "GridIndex": 1108,
+    "PreTech": 1401,
     "Time": 120,
     "Input": [
       1005
@@ -1368,18 +1564,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "",
-    "PreTech": 1401,
-    "GridIndex": 1108,
-    "Name": "玻璃",
-    "IconPath": "",
     "Explicit": false,
     "Handcraft": true,
     "NonProductive": false
   },
   {
     "ID": 58,
+    "Name": "X射线裂解",
+    "Description": "RX射线裂解",
+    "IconPath": "Icons/ItemRecipe/X-ray",
     "Type": 3,
+    "GridIndex": 1411,
+    "PreTech": 1103,
     "Time": 120,
     "Input": [
       7218,
@@ -1397,18 +1593,18 @@
       3,
       1
     ],
-    "Description": "RX射线裂解",
-    "PreTech": 1103,
-    "GridIndex": 1411,
-    "Name": "X射线裂解",
-    "IconPath": "Icons/ItemRecipe/X-ray",
     "Explicit": true,
     "Handcraft": false,
     "NonProductive": true
   },
   {
     "ID": 59,
+    "Name": "高纯硅块",
+    "Description": "",
+    "IconPath": "",
     "Type": 1,
+    "GridIndex": 1103,
+    "PreTech": 1402,
     "Time": 60,
     "Input": [
       1003
@@ -1422,18 +1618,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "",
-    "PreTech": 1402,
-    "GridIndex": 1103,
-    "Name": "高纯硅块",
-    "IconPath": "",
     "Explicit": false,
     "Handcraft": true,
     "NonProductive": false
   },
   {
     "ID": 60,
+    "Name": "金刚石",
+    "Description": "",
+    "IconPath": "",
     "Type": 1,
+    "GridIndex": 1204,
+    "PreTech": 1403,
     "Time": 120,
     "Input": [
       1109
@@ -1447,18 +1643,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "",
-    "PreTech": 1403,
-    "GridIndex": 1204,
-    "Name": "金刚石",
-    "IconPath": "",
     "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 61,
+    "Name": "金刚石（高效）",
+    "Description": "R金刚石（高效）",
+    "IconPath": "Icons/ItemRecipe/diamond-lv2",
     "Type": 1,
+    "GridIndex": 1304,
+    "PreTech": 1403,
     "Time": 60,
     "Input": [
       1012
@@ -1472,18 +1668,18 @@
     "OutCounts": [
       2
     ],
-    "Description": "R金刚石（高效）",
-    "PreTech": 1403,
-    "GridIndex": 1304,
-    "Name": "金刚石（高效）",
-    "IconPath": "Icons/ItemRecipe/diamond-lv2",
     "Explicit": true,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 62,
+    "Name": "晶格硅（高效）",
+    "Description": "R晶格硅（高效）",
+    "IconPath": "Icons/ItemRecipe/silicium-high-purity-lv2",
     "Type": 4,
+    "GridIndex": 3209,
+    "PreTech": 1133,
     "Time": 60,
     "Input": [
       1013
@@ -1497,18 +1693,18 @@
     "OutCounts": [
       2
     ],
-    "Description": "R晶格硅（高效）",
-    "PreTech": 1133,
-    "GridIndex": 3209,
-    "Name": "晶格硅（高效）",
-    "IconPath": "Icons/ItemRecipe/silicium-high-purity-lv2",
     "Explicit": true,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 63,
+    "Name": "钢材",
+    "Description": "",
+    "IconPath": "",
     "Type": 1,
+    "GridIndex": 1201,
+    "PreTech": 1411,
     "Time": 120,
     "Input": [
       1101
@@ -1522,18 +1718,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "",
-    "PreTech": 1411,
-    "GridIndex": 1201,
-    "Name": "钢材",
-    "IconPath": "",
     "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 64,
+    "Name": "火力发电厂",
+    "Description": "",
+    "IconPath": "",
     "Type": 4,
+    "GridIndex": 2105,
+    "PreTech": 1412,
     "Time": 240,
     "Input": [
       1103,
@@ -1553,18 +1749,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "",
-    "PreTech": 1412,
-    "GridIndex": 2105,
-    "Name": "火力发电厂",
-    "IconPath": "",
     "Explicit": false,
     "Handcraft": true,
     "NonProductive": false
   },
   {
     "ID": 65,
+    "Name": "钛块",
+    "Description": "",
+    "IconPath": "",
     "Type": 1,
+    "GridIndex": 1104,
+    "PreTech": 1413,
     "Time": 60,
     "Input": [
       1004
@@ -1578,18 +1774,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "",
-    "PreTech": 1413,
-    "GridIndex": 1104,
-    "Name": "钛块",
-    "IconPath": "",
     "Explicit": false,
     "Handcraft": true,
     "NonProductive": false
   },
   {
     "ID": 66,
+    "Name": "钛合金",
+    "Description": "",
+    "IconPath": "",
     "Type": 1,
+    "GridIndex": 1202,
+    "PreTech": 1414,
     "Time": 360,
     "Input": [
       1103,
@@ -1605,18 +1801,18 @@
     "OutCounts": [
       4
     ],
-    "Description": "",
-    "PreTech": 1414,
-    "GridIndex": 1202,
-    "Name": "钛合金",
-    "IconPath": "",
     "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 67,
+    "Name": "太阳能板",
+    "Description": "",
+    "IconPath": "",
     "Type": 4,
+    "GridIndex": 2106,
+    "PreTech": 1501,
     "Time": 240,
     "Input": [
       1101,
@@ -1634,18 +1830,72 @@
     "OutCounts": [
       1
     ],
-    "Description": "",
-    "PreTech": 1501,
-    "GridIndex": 2106,
-    "Name": "太阳能板",
-    "IconPath": "",
     "Explicit": false,
     "Handcraft": true,
     "NonProductive": false
   },
   {
+    "ID": 68,
+    "Name": "光子合并器",
+    "Description": "",
+    "IconPath": "",
+    "Type": 4,
+    "GridIndex": 2809,
+    "PreTech": 1502,
+    "Time": 180,
+    "Input": [
+      1111,
+      1301
+    ],
+    "InCounts": [
+      2,
+      1
+    ],
+    "Output": [
+      1404
+    ],
+    "OutCounts": [
+      1
+    ],
+    "Explicit": false,
+    "Handcraft": true,
+    "NonProductive": false
+  },
+  {
+    "ID": 69,
+    "Name": "光子合并器（高效）",
+    "Description": "R光子合并器（高效）",
+    "IconPath": "Icons/ItemRecipe/photo-shifter-lv2",
+    "Type": 4,
+    "GridIndex": 2810,
+    "PreTech": 1502,
+    "Time": 180,
+    "Input": [
+      1014,
+      1301
+    ],
+    "InCounts": [
+      1,
+      1
+    ],
+    "Output": [
+      1404
+    ],
+    "OutCounts": [
+      1
+    ],
+    "Explicit": true,
+    "Handcraft": false,
+    "NonProductive": false
+  },
+  {
     "ID": 70,
+    "Name": "太阳帆",
+    "Description": "",
+    "IconPath": "",
     "Type": 10,
+    "GridIndex": 1409,
+    "PreTech": 1503,
     "Time": 120,
     "Input": [
       7709,
@@ -1661,18 +1911,18 @@
     "OutCounts": [
       6
     ],
-    "Description": "",
-    "PreTech": 1503,
-    "GridIndex": 1409,
-    "Name": "太阳帆",
-    "IconPath": "",
     "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 71,
+    "Name": "电磁轨道弹射器",
+    "Description": "",
+    "IconPath": "",
     "Type": 10,
+    "GridIndex": 2311,
+    "PreTech": 1503,
     "Time": 360,
     "Input": [
       6503,
@@ -1692,18 +1942,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "",
-    "PreTech": 1503,
-    "GridIndex": 2311,
-    "Name": "电磁轨道弹射器",
-    "IconPath": "",
     "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 72,
+    "Name": "射线接收站",
+    "Description": "",
+    "IconPath": "",
     "Type": 10,
+    "GridIndex": 2111,
+    "PreTech": 1504,
     "Time": 360,
     "Input": [
       6503,
@@ -1723,18 +1973,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "",
-    "PreTech": 1504,
-    "GridIndex": 2111,
-    "Name": "射线接收站",
-    "IconPath": "",
     "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 73,
+    "Name": "卫星配电站",
+    "Description": "",
+    "IconPath": "",
     "Type": 10,
+    "GridIndex": 2103,
+    "PreTech": 1712,
     "Time": 10800,
     "Input": [
       6271,
@@ -1754,18 +2004,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "",
-    "PreTech": 1712,
-    "GridIndex": 2103,
-    "Name": "卫星配电站",
-    "IconPath": "",
     "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 74,
+    "Name": "光子物质化",
+    "Description": "R光子物质化",
+    "IconPath": "Icons/ItemRecipe/photon-formula",
     "Type": 5,
+    "GridIndex": 1412,
+    "PreTech": 1506,
     "Time": 120,
     "Input": [
       1208
@@ -1781,18 +2031,18 @@
       2,
       2
     ],
-    "Description": "R光子物质化",
-    "PreTech": 1506,
-    "GridIndex": 1412,
-    "Name": "光子物质化",
-    "IconPath": "Icons/ItemRecipe/photon-formula",
     "Explicit": true,
     "Handcraft": false,
     "NonProductive": true
   },
   {
     "ID": 75,
+    "Name": "宇宙矩阵",
+    "Description": "",
+    "IconPath": "",
     "Type": 15,
+    "GridIndex": 1706,
+    "PreTech": 1507,
     "Time": 180,
     "Input": [
       6001,
@@ -1816,18 +2066,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "",
-    "PreTech": 1507,
-    "GridIndex": 1706,
-    "Name": "宇宙矩阵",
-    "IconPath": "",
     "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 76,
+    "Name": "蓄电器",
+    "Description": "",
+    "IconPath": "",
     "Type": 4,
+    "GridIndex": 2107,
+    "PreTech": 1511,
     "Time": 240,
     "Input": [
       1101,
@@ -1845,18 +2095,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "",
-    "PreTech": 1511,
-    "GridIndex": 2107,
-    "Name": "蓄电器",
-    "IconPath": "",
     "Explicit": false,
     "Handcraft": true,
     "NonProductive": false
   },
   {
     "ID": 77,
+    "Name": "能量枢纽",
+    "Description": "",
+    "IconPath": "",
     "Type": 4,
+    "GridIndex": 2110,
+    "PreTech": 1512,
     "Time": 360,
     "Input": [
       6502,
@@ -1874,18 +2124,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "",
-    "PreTech": 1512,
-    "GridIndex": 2110,
-    "Name": "能量枢纽",
-    "IconPath": "",
     "Explicit": false,
     "Handcraft": true,
     "NonProductive": false
   },
   {
     "ID": 78,
+    "Name": "空间翘曲器",
+    "Description": "",
+    "IconPath": "",
     "Type": 4,
+    "GridIndex": 1208,
+    "PreTech": 1704,
     "Time": 600,
     "Input": [
       1209
@@ -1899,18 +2149,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "",
-    "PreTech": 1704,
-    "GridIndex": 1208,
-    "Name": "空间翘曲器",
-    "IconPath": "",
     "Explicit": false,
     "Handcraft": true,
     "NonProductive": false
   },
   {
     "ID": 79,
+    "Name": "空间翘曲器（高级）",
+    "Description": "R空间翘曲器（高级）",
+    "IconPath": "Icons/ItemRecipe/space-warper-lv2",
     "Type": 4,
+    "GridIndex": 1308,
+    "PreTech": 1705,
     "Time": 600,
     "Input": [
       6005
@@ -1924,18 +2174,18 @@
     "OutCounts": [
       8
     ],
-    "Description": "R空间翘曲器（高级）",
-    "PreTech": 1705,
-    "GridIndex": 1308,
-    "Name": "空间翘曲器（高级）",
-    "IconPath": "Icons/ItemRecipe/space-warper-lv2",
     "Explicit": true,
     "Handcraft": true,
     "NonProductive": false
   },
   {
     "ID": 80,
+    "Name": "框架材料",
+    "Description": "",
+    "IconPath": "",
     "Type": 4,
+    "GridIndex": 1509,
+    "PreTech": 1521,
     "Time": 60,
     "Input": [
       7707,
@@ -1951,18 +2201,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "",
-    "PreTech": 1521,
-    "GridIndex": 1509,
-    "Name": "框架材料",
-    "IconPath": "",
     "Explicit": false,
     "Handcraft": true,
     "NonProductive": false
   },
   {
     "ID": 81,
+    "Name": "戴森球组件",
+    "Description": "",
+    "IconPath": "",
     "Type": 4,
+    "GridIndex": 1609,
+    "PreTech": 1521,
     "Time": 60,
     "Input": [
       1125,
@@ -1978,18 +2228,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "",
-    "PreTech": 1521,
-    "GridIndex": 1609,
-    "Name": "戴森球组件",
-    "IconPath": "",
     "Explicit": false,
     "Handcraft": true,
     "NonProductive": false
   },
   {
     "ID": 82,
+    "Name": "垂直发射井",
+    "Description": "",
+    "IconPath": "",
     "Type": 10,
+    "GridIndex": 2312,
+    "PreTech": 1522,
     "Time": 900,
     "Input": [
       6503,
@@ -2009,18 +2259,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "",
-    "PreTech": 1522,
-    "GridIndex": 2312,
-    "Name": "垂直发射井",
-    "IconPath": "",
     "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 83,
+    "Name": "小型运载火箭",
+    "Description": "",
+    "IconPath": "",
     "Type": 10,
+    "GridIndex": 1709,
+    "PreTech": 1522,
     "Time": 120,
     "Input": [
       1502,
@@ -2038,18 +2288,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "",
-    "PreTech": 1522,
-    "GridIndex": 1709,
-    "Name": "小型运载火箭",
-    "IconPath": "",
     "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 84,
+    "Name": "低速传送带",
+    "Description": "",
+    "IconPath": "",
     "Type": 4,
+    "GridIndex": 2201,
+    "PreTech": 1601,
     "Time": 60,
     "Input": [
       1101,
@@ -2065,18 +2315,18 @@
     "OutCounts": [
       3
     ],
-    "Description": "",
-    "PreTech": 1601,
-    "GridIndex": 2201,
-    "Name": "低速传送带",
-    "IconPath": "",
     "Explicit": false,
     "Handcraft": true,
     "NonProductive": false
   },
   {
     "ID": 85,
+    "Name": "低速分拣器",
+    "Description": "",
+    "IconPath": "",
     "Type": 4,
+    "GridIndex": 2301,
+    "PreTech": 1601,
     "Time": 60,
     "Input": [
       1101,
@@ -2092,18 +2342,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "",
-    "PreTech": 1601,
-    "GridIndex": 2301,
-    "Name": "低速分拣器",
-    "IconPath": "",
     "Explicit": false,
     "Handcraft": true,
     "NonProductive": false
   },
   {
     "ID": 86,
+    "Name": "小型储物仓",
+    "Description": "",
+    "IconPath": "",
     "Type": 4,
+    "GridIndex": 2207,
+    "PreTech": 1607,
     "Time": 120,
     "Input": [
       1101,
@@ -2119,18 +2369,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "",
-    "PreTech": 1607,
-    "GridIndex": 2207,
-    "Name": "小型储物仓",
-    "IconPath": "",
     "Explicit": false,
     "Handcraft": true,
     "NonProductive": false
   },
   {
     "ID": 87,
+    "Name": "四向分流器",
+    "Description": "",
+    "IconPath": "",
     "Type": 4,
+    "GridIndex": 2204,
+    "PreTech": 1601,
     "Time": 120,
     "Input": [
       1101,
@@ -2146,18 +2396,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "",
-    "PreTech": 1601,
-    "GridIndex": 2204,
-    "Name": "四向分流器",
-    "IconPath": "",
     "Explicit": false,
     "Handcraft": true,
     "NonProductive": false
   },
   {
     "ID": 88,
+    "Name": "高速分拣器",
+    "Description": "",
+    "IconPath": "",
     "Type": 4,
+    "GridIndex": 2302,
+    "PreTech": 1602,
     "Time": 60,
     "Input": [
       2011,
@@ -2173,18 +2423,18 @@
     "OutCounts": [
       2
     ],
-    "Description": "",
-    "PreTech": 1602,
-    "GridIndex": 2302,
-    "Name": "高速分拣器",
-    "IconPath": "",
     "Explicit": false,
     "Handcraft": true,
     "NonProductive": false
   },
   {
     "ID": 89,
+    "Name": "高速传送带",
+    "Description": "",
+    "IconPath": "",
     "Type": 4,
+    "GridIndex": 2202,
+    "PreTech": 1602,
     "Time": 60,
     "Input": [
       2001,
@@ -2200,18 +2450,18 @@
     "OutCounts": [
       3
     ],
-    "Description": "",
-    "PreTech": 1602,
-    "GridIndex": 2202,
-    "Name": "高速传送带",
-    "IconPath": "",
     "Explicit": false,
     "Handcraft": true,
     "NonProductive": false
   },
   {
     "ID": 90,
+    "Name": "极速分拣器",
+    "Description": "",
+    "IconPath": "",
     "Type": 4,
+    "GridIndex": 2303,
+    "PreTech": 1603,
     "Time": 60,
     "Input": [
       2012,
@@ -2227,18 +2477,18 @@
     "OutCounts": [
       2
     ],
-    "Description": "",
-    "PreTech": 1603,
-    "GridIndex": 2303,
-    "Name": "极速分拣器",
-    "IconPath": "",
     "Explicit": false,
     "Handcraft": true,
     "NonProductive": false
   },
   {
     "ID": 91,
+    "Name": "大型储物仓",
+    "Description": "",
+    "IconPath": "",
     "Type": 4,
+    "GridIndex": 2208,
+    "PreTech": 1607,
     "Time": 240,
     "Input": [
       1101,
@@ -2254,18 +2504,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "",
-    "PreTech": 1607,
-    "GridIndex": 2208,
-    "Name": "大型储物仓",
-    "IconPath": "",
     "Explicit": false,
     "Handcraft": true,
     "NonProductive": false
   },
   {
     "ID": 92,
+    "Name": "极速传送带",
+    "Description": "",
+    "IconPath": "",
     "Type": 4,
+    "GridIndex": 2203,
+    "PreTech": 1603,
     "Time": 60,
     "Input": [
       2002,
@@ -2281,18 +2531,18 @@
     "OutCounts": [
       3
     ],
-    "Description": "",
-    "PreTech": 1603,
-    "GridIndex": 2203,
-    "Name": "极速传送带",
-    "IconPath": "",
     "Explicit": false,
     "Handcraft": true,
     "NonProductive": false
   },
   {
     "ID": 93,
+    "Name": "物流运输站",
+    "Description": "",
+    "IconPath": "",
     "Type": 4,
+    "GridIndex": 2210,
+    "PreTech": 1604,
     "Time": 900,
     "Input": [
       6501,
@@ -2312,18 +2562,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "",
-    "PreTech": 1604,
-    "GridIndex": 2210,
-    "Name": "物流运输站",
-    "IconPath": "",
     "Explicit": false,
     "Handcraft": true,
     "NonProductive": false
   },
   {
     "ID": 94,
+    "Name": "物流运输机",
+    "Description": "",
+    "IconPath": "",
     "Type": 4,
+    "GridIndex": 1210,
+    "PreTech": 1604,
     "Time": 120,
     "Input": [
       1101,
@@ -2339,18 +2589,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "",
-    "PreTech": 1604,
-    "GridIndex": 1210,
-    "Name": "物流运输机",
-    "IconPath": "",
     "Explicit": false,
     "Handcraft": true,
     "NonProductive": false
   },
   {
     "ID": 95,
+    "Name": "星际物流运输站",
+    "Description": "",
+    "IconPath": "",
     "Type": 4,
+    "GridIndex": 2211,
+    "PreTech": 1605,
     "Time": 1800,
     "Input": [
       6502,
@@ -2370,18 +2620,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "",
-    "PreTech": 1605,
-    "GridIndex": 2211,
-    "Name": "星际物流运输站",
-    "IconPath": "",
     "Explicit": false,
     "Handcraft": true,
     "NonProductive": false
   },
   {
     "ID": 96,
+    "Name": "星际物流运输船",
+    "Description": "",
+    "IconPath": "",
     "Type": 4,
+    "GridIndex": 1310,
+    "PreTech": 1605,
     "Time": 240,
     "Input": [
       1107,
@@ -2397,18 +2647,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "",
-    "PreTech": 1605,
-    "GridIndex": 1310,
-    "Name": "星际物流运输船",
-    "IconPath": "",
     "Explicit": false,
     "Handcraft": true,
     "NonProductive": false
   },
   {
     "ID": 97,
+    "Name": "电动机",
+    "Description": "",
+    "IconPath": "",
     "Type": 4,
+    "GridIndex": 1601,
+    "PreTech": 1701,
     "Time": 120,
     "Input": [
       1101,
@@ -2424,18 +2674,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "",
-    "PreTech": 1701,
-    "GridIndex": 1601,
-    "Name": "电动机",
-    "IconPath": "",
     "Explicit": false,
     "Handcraft": true,
     "NonProductive": false
   },
   {
     "ID": 98,
+    "Name": "电磁涡轮",
+    "Description": "",
+    "IconPath": "",
     "Type": 4,
+    "GridIndex": 1602,
+    "PreTech": 1702,
     "Time": 120,
     "Input": [
       1203,
@@ -2451,292 +2701,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "",
-    "PreTech": 1702,
-    "GridIndex": 1602,
-    "Name": "电磁涡轮",
-    "IconPath": "",
     "Explicit": false,
     "Handcraft": true,
-    "NonProductive": false
-  },
-  {
-    "ID": 101,
-    "Type": 4,
-    "Time": 240,
-    "Input": [
-      1112,
-      1127
-    ],
-    "InCounts": [
-      1,
-      1
-    ],
-    "Output": [
-      1209
-    ],
-    "OutCounts": [
-      1
-    ],
-    "Description": "",
-    "PreTech": 1704,
-    "GridIndex": 1410,
-    "Name": "引力透镜",
-    "IconPath": "",
-    "Explicit": false,
-    "Handcraft": true,
-    "NonProductive": false
-  },
-  {
-    "ID": 102,
-    "Type": 15,
-    "Time": 180,
-    "Input": [
-      1209,
-      1304
-    ],
-    "InCounts": [
-      1,
-      1
-    ],
-    "Output": [
-      6005
-    ],
-    "OutCounts": [
-      2
-    ],
-    "Description": "",
-    "PreTech": 1705,
-    "GridIndex": 1705,
-    "Name": "引力矩阵",
-    "IconPath": "",
-    "Explicit": false,
-    "Handcraft": true,
-    "NonProductive": false
-  },
-  {
-    "ID": 6,
-    "Type": 4,
-    "Time": 60,
-    "Input": [
-      1102,
-      1104
-    ],
-    "InCounts": [
-      2,
-      1
-    ],
-    "Output": [
-      1202
-    ],
-    "OutCounts": [
-      2
-    ],
-    "Description": "",
-    "PreTech": 0,
-    "GridIndex": 2816,
-    "Name": "磁线圈",
-    "IconPath": "",
-    "Explicit": false,
-    "Handcraft": true,
-    "NonProductive": false
-  },
-  {
-    "ID": 11,
-    "Type": 4,
-    "Time": 120,
-    "Input": [
-      1110
-    ],
-    "InCounts": [
-      3
-    ],
-    "Output": [
-      1111
-    ],
-    "OutCounts": [
-      2
-    ],
-    "Description": "",
-    "PreTech": 1101,
-    "GridIndex": 2812,
-    "Name": "棱镜",
-    "IconPath": "",
-    "Explicit": false,
-    "Handcraft": true,
-    "NonProductive": false
-  },
-  {
-    "ID": 25,
-    "Type": 2,
-    "Time": 360,
-    "Input": [
-      1115,
-      1114,
-      1000
-    ],
-    "InCounts": [
-      2,
-      1,
-      1
-    ],
-    "Output": [
-      1117
-    ],
-    "OutCounts": [
-      1
-    ],
-    "Description": "",
-    "PreTech": 1122,
-    "GridIndex": 2803,
-    "Name": "有机晶体",
-    "IconPath": "",
-    "Explicit": false,
-    "Handcraft": false,
-    "NonProductive": false
-  },
-  {
-    "ID": 26,
-    "Type": 4,
-    "Time": 240,
-    "Input": [
-      1117,
-      1106
-    ],
-    "InCounts": [
-      1,
-      3
-    ],
-    "Output": [
-      1118
-    ],
-    "OutCounts": [
-      1
-    ],
-    "Description": "",
-    "PreTech": 1123,
-    "GridIndex": 2805,
-    "Name": "钛晶石",
-    "IconPath": "",
-    "Explicit": false,
-    "Handcraft": true,
-    "NonProductive": false
-  },
-  {
-    "ID": 29,
-    "Type": 4,
-    "Time": 240,
-    "Input": [
-      1014,
-      1123,
-      1120
-    ],
-    "InCounts": [
-      4,
-      2,
-      12
-    ],
-    "Output": [
-      1126
-    ],
-    "OutCounts": [
-      1
-    ],
-    "Description": "R卡西米尔晶体（高效）",
-    "PreTech": 1125,
-    "GridIndex": 2808,
-    "Name": "卡西米尔晶体（高效）",
-    "IconPath": "Icons/ItemRecipe/casimir-crystal-lv2",
-    "Explicit": true,
-    "Handcraft": false,
-    "NonProductive": false
-  },
-  {
-    "ID": 54,
-    "Type": 4,
-    "Time": 360,
-    "Input": [
-      1030,
-      1031,
-      1000
-    ],
-    "InCounts": [
-      20,
-      30,
-      10
-    ],
-    "Output": [
-      1117
-    ],
-    "OutCounts": [
-      1
-    ],
-    "Description": "R有机晶体（原始）",
-    "PreTech": 1122,
-    "GridIndex": 2804,
-    "Name": "有机晶体（原始）",
-    "IconPath": "Icons/ItemRecipe/crystal-rubber-lv0",
-    "Explicit": true,
-    "Handcraft": true,
-    "NonProductive": false
-  },
-  {
-    "ID": 68,
-    "Type": 4,
-    "Time": 180,
-    "Input": [
-      1111,
-      1301
-    ],
-    "InCounts": [
-      2,
-      1
-    ],
-    "Output": [
-      1404
-    ],
-    "OutCounts": [
-      1
-    ],
-    "Description": "",
-    "PreTech": 1502,
-    "GridIndex": 2809,
-    "Name": "光子合并器",
-    "IconPath": "",
-    "Explicit": false,
-    "Handcraft": true,
-    "NonProductive": false
-  },
-  {
-    "ID": 69,
-    "Type": 4,
-    "Time": 180,
-    "Input": [
-      1014,
-      1301
-    ],
-    "InCounts": [
-      1,
-      1
-    ],
-    "Output": [
-      1404
-    ],
-    "OutCounts": [
-      1
-    ],
-    "Description": "R光子合并器（高效）",
-    "PreTech": 1502,
-    "GridIndex": 2810,
-    "Name": "光子合并器（高效）",
-    "IconPath": "Icons/ItemRecipe/photo-shifter-lv2",
-    "Explicit": true,
-    "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 99,
+    "Name": "粒子容器",
+    "Description": "",
+    "IconPath": "",
     "Type": 4,
+    "GridIndex": 2806,
+    "PreTech": 1703,
     "Time": 240,
     "Input": [
       1204,
@@ -2754,18 +2730,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "",
-    "PreTech": 1703,
-    "GridIndex": 2806,
-    "Name": "粒子容器",
-    "IconPath": "",
     "Explicit": false,
     "Handcraft": true,
     "NonProductive": false
   },
   {
     "ID": 100,
+    "Name": "粒子容器（高效）",
+    "Description": "R粒子容器（高效）",
+    "IconPath": "Icons/ItemRecipe/partical-capacitor-lv2",
     "Type": 4,
+    "GridIndex": 2807,
+    "PreTech": 1703,
     "Time": 240,
     "Input": [
       1016,
@@ -2781,149 +2757,72 @@
     "OutCounts": [
       1
     ],
-    "Description": "R粒子容器（高效）",
-    "PreTech": 1703,
-    "GridIndex": 2807,
-    "Name": "粒子容器（高效）",
-    "IconPath": "Icons/ItemRecipe/partical-capacitor-lv2",
     "Explicit": true,
     "Handcraft": false,
     "NonProductive": false
   },
   {
-    "ID": 106,
-    "Type": 4,
-    "Time": 30,
-    "Input": [
-      1006
-    ],
-    "InCounts": [
-      1
-    ],
-    "Output": [
-      1141
-    ],
-    "OutCounts": [
-      1
-    ],
+    "ID": 101,
+    "Name": "引力透镜",
     "Description": "",
-    "PreTech": 1151,
-    "GridIndex": 2813,
-    "Name": "增产剂 Mk.I",
     "IconPath": "",
-    "Explicit": false,
-    "Handcraft": true,
-    "NonProductive": false
-  },
-  {
-    "ID": 107,
     "Type": 4,
-    "Time": 60,
-    "Input": [
-      1141,
-      1112
-    ],
-    "InCounts": [
-      2,
-      1
-    ],
-    "Output": [
-      1142
-    ],
-    "OutCounts": [
-      1
-    ],
-    "Description": "",
-    "PreTech": 1152,
-    "GridIndex": 2814,
-    "Name": "增产剂 Mk.II",
-    "IconPath": "",
-    "Explicit": false,
-    "Handcraft": true,
-    "NonProductive": false
-  },
-  {
-    "ID": 115,
-    "Type": 8,
-    "Time": 1,
-    "Input": [
-      1120
-    ],
-    "InCounts": [
-      100
-    ],
-    "Output": [
-      1121
-    ],
-    "OutCounts": [
-      1
-    ],
-    "Description": "R重氢分馏",
-    "PreTech": 1134,
-    "GridIndex": 2811,
-    "Name": "重氢分馏",
-    "IconPath": "Icons/ItemRecipe/deuterium-formula",
-    "Explicit": true,
-    "Handcraft": false,
-    "NonProductive": false
-  },
-  {
-    "ID": 120,
-    "Type": 4,
+    "GridIndex": 1410,
+    "PreTech": 1704,
     "Time": 240,
     "Input": [
-      6501,
-      2001,
-      1301
+      1112,
+      1127
     ],
     "InCounts": [
-      2,
-      2,
-      2
+      1,
+      1
     ],
     "Output": [
-      2040
+      1209
     ],
     "OutCounts": [
       1
     ],
-    "Description": "",
-    "PreTech": 1607,
-    "GridIndex": 2205,
-    "Name": "自动集装机",
-    "IconPath": "",
     "Explicit": false,
     "Handcraft": true,
     "NonProductive": false
   },
   {
-    "ID": 2,
-    "Type": 1,
-    "Time": 60,
+    "ID": 102,
+    "Name": "引力矩阵",
+    "Description": "",
+    "IconPath": "",
+    "Type": 15,
+    "GridIndex": 1705,
+    "PreTech": 1705,
+    "Time": 180,
     "Input": [
-      1001
+      1209,
+      1304
     ],
     "InCounts": [
+      1,
       1
     ],
     "Output": [
-      1102
+      6005
     ],
     "OutCounts": [
-      1
+      2
     ],
-    "Description": "",
-    "PreTech": 0,
-    "GridIndex": 2817,
-    "Name": "磁铁",
-    "IconPath": "",
     "Explicit": false,
     "Handcraft": true,
     "NonProductive": false
   },
   {
     "ID": 103,
+    "Name": "超级磁场环",
+    "Description": "",
+    "IconPath": "",
     "Type": 4,
+    "GridIndex": 1603,
+    "PreTech": 1711,
     "Time": 120,
     "Input": [
       1204,
@@ -2939,18 +2838,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "",
-    "PreTech": 1711,
-    "GridIndex": 1603,
-    "Name": "超级磁场环",
-    "IconPath": "",
     "Explicit": false,
     "Handcraft": true,
     "NonProductive": false
   },
   {
     "ID": 104,
+    "Name": "奇异物质",
+    "Description": "",
+    "IconPath": "",
     "Type": 4,
+    "GridIndex": 1212,
+    "PreTech": 1143,
     "Time": 240,
     "Input": [
       1113,
@@ -2966,18 +2865,70 @@
     "OutCounts": [
       1
     ],
-    "Description": "",
-    "PreTech": 1143,
-    "GridIndex": 1212,
-    "Name": "奇异物质",
-    "IconPath": "",
     "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
   {
-    "ID": 108,
+    "ID": 106,
+    "Name": "增产剂 Mk.I",
+    "Description": "",
+    "IconPath": "",
     "Type": 4,
+    "GridIndex": 2813,
+    "PreTech": 0,
+    "Time": 30,
+    "Input": [
+      1006
+    ],
+    "InCounts": [
+      1
+    ],
+    "Output": [
+      1141
+    ],
+    "OutCounts": [
+      1
+    ],
+    "Explicit": false,
+    "Handcraft": true,
+    "NonProductive": false
+  },
+  {
+    "ID": 107,
+    "Name": "增产剂 Mk.II",
+    "Description": "",
+    "IconPath": "",
+    "Type": 4,
+    "GridIndex": 2814,
+    "PreTech": 1152,
+    "Time": 60,
+    "Input": [
+      1141,
+      1112
+    ],
+    "InCounts": [
+      2,
+      1
+    ],
+    "Output": [
+      1142
+    ],
+    "OutCounts": [
+      1
+    ],
+    "Explicit": false,
+    "Handcraft": true,
+    "NonProductive": false
+  },
+  {
+    "ID": 108,
+    "Name": "增产剂",
+    "Description": "",
+    "IconPath": "",
+    "Type": 4,
+    "GridIndex": 3208,
+    "PreTech": 1151,
     "Time": 120,
     "Input": [
       1124,
@@ -2993,18 +2944,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "",
-    "PreTech": 1153,
-    "GridIndex": 3208,
-    "Name": "增产剂",
-    "IconPath": "",
     "Explicit": false,
     "Handcraft": true,
     "NonProductive": false
   },
   {
     "ID": 109,
+    "Name": "喷涂机",
+    "Description": "",
+    "IconPath": "",
     "Type": 10,
+    "GridIndex": 2108,
+    "PreTech": 1151,
     "Time": 240,
     "Input": [
       6502,
@@ -3024,18 +2975,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "",
-    "PreTech": 1151,
-    "GridIndex": 2108,
-    "Name": "喷涂机",
-    "IconPath": "",
     "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 110,
+    "Name": "分馏塔",
+    "Description": "",
+    "IconPath": "",
     "Type": 4,
+    "GridIndex": 2802,
+    "PreTech": 1134,
     "Time": 180,
     "Input": [
       1103,
@@ -3055,18 +3006,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "",
-    "PreTech": 1134,
-    "GridIndex": 2802,
-    "Name": "分馏塔",
-    "IconPath": "",
     "Explicit": false,
     "Handcraft": true,
     "NonProductive": false
   },
   {
     "ID": 111,
+    "Name": "轨道采集器",
+    "Description": "",
+    "IconPath": "",
     "Type": 4,
+    "GridIndex": 2212,
+    "PreTech": 1606,
     "Time": 1800,
     "Input": [
       2104,
@@ -3082,18 +3033,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "",
-    "PreTech": 1606,
-    "GridIndex": 2212,
-    "Name": "轨道采集器",
-    "IconPath": "",
     "Explicit": false,
     "Handcraft": true,
     "NonProductive": false
   },
   {
     "ID": 112,
+    "Name": "地基",
+    "Description": "",
+    "IconPath": "",
     "Type": 4,
+    "GridIndex": 1707,
+    "PreTech": 1415,
     "Time": 60,
     "Input": [
       1108,
@@ -3109,18 +3060,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "",
-    "PreTech": 1415,
-    "GridIndex": 1707,
-    "Name": "地基",
-    "IconPath": "",
     "Explicit": false,
     "Handcraft": true,
     "NonProductive": false
   },
   {
     "ID": 113,
+    "Name": "微型聚变发电站",
+    "Description": "",
+    "IconPath": "",
     "Type": 10,
+    "GridIndex": 2109,
+    "PreTech": 1416,
     "Time": 1800,
     "Input": [
       6502,
@@ -3142,18 +3093,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "",
-    "PreTech": 1416,
-    "GridIndex": 2109,
-    "Name": "微型聚变发电站",
-    "IconPath": "",
     "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 114,
+    "Name": "储液罐",
+    "Description": "",
+    "IconPath": "",
     "Type": 4,
+    "GridIndex": 2209,
+    "PreTech": 1120,
     "Time": 120,
     "Input": [
       1101,
@@ -3171,18 +3122,43 @@
     "OutCounts": [
       1
     ],
-    "Description": "",
-    "PreTech": 1120,
-    "GridIndex": 2209,
-    "Name": "储液罐",
-    "IconPath": "",
     "Explicit": false,
     "Handcraft": true,
     "NonProductive": false
   },
   {
+    "ID": 115,
+    "Name": "重氢分馏",
+    "Description": "R重氢分馏",
+    "IconPath": "Icons/ItemRecipe/deuterium-formula",
+    "Type": 8,
+    "GridIndex": 2811,
+    "PreTech": 1134,
+    "Time": 1,
+    "Input": [
+      1120
+    ],
+    "InCounts": [
+      100
+    ],
+    "Output": [
+      1121
+    ],
+    "OutCounts": [
+      1
+    ],
+    "Explicit": true,
+    "Handcraft": false,
+    "NonProductive": false
+  },
+  {
     "ID": 116,
+    "Name": "位面熔炉",
+    "Description": "",
+    "IconPath": "",
     "Type": 10,
+    "GridIndex": 2405,
+    "PreTech": 1417,
     "Time": 240,
     "Input": [
       6502,
@@ -3202,18 +3178,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "",
-    "PreTech": 1417,
-    "GridIndex": 2405,
-    "Name": "位面熔炉",
-    "IconPath": "",
     "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 117,
+    "Name": "流速监测器",
+    "Description": "",
+    "IconPath": "",
     "Type": 4,
+    "GridIndex": 2206,
+    "PreTech": 1602,
     "Time": 120,
     "Input": [
       1101,
@@ -3229,18 +3205,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "",
-    "PreTech": 1602,
-    "GridIndex": 2206,
-    "Name": "流速监测器",
-    "IconPath": "",
     "Explicit": false,
     "Handcraft": true,
     "NonProductive": false
   },
   {
     "ID": 118,
+    "Name": "地热发电站",
+    "Description": "",
+    "IconPath": "",
     "Type": 4,
+    "GridIndex": 2908,
+    "PreTech": 1513,
     "Time": 360,
     "Input": [
       2204,
@@ -3258,18 +3234,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "",
-    "PreTech": 1513,
-    "GridIndex": 2908,
-    "Name": "地热发电站",
-    "IconPath": "",
     "Explicit": false,
     "Handcraft": true,
     "NonProductive": false
   },
   {
     "ID": 119,
+    "Name": "大型采矿机",
+    "Description": "",
+    "IconPath": "",
     "Type": 10,
+    "GridIndex": 2305,
+    "PreTech": 1304,
     "Time": 600,
     "Input": [
       6503,
@@ -3289,18 +3265,76 @@
     "OutCounts": [
       1
     ],
-    "Description": "",
-    "PreTech": 1304,
-    "GridIndex": 2305,
-    "Name": "大型采矿机",
-    "IconPath": "",
     "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
   {
-    "ID": 701,
+    "ID": 120,
+    "Name": "自动集装机",
+    "Description": "",
+    "IconPath": "",
+    "Type": 4,
+    "GridIndex": 2205,
+    "PreTech": 1603,
+    "Time": 240,
+    "Input": [
+      6501,
+      2001,
+      1301
+    ],
+    "InCounts": [
+      2,
+      2,
+      2
+    ],
+    "Output": [
+      2040
+    ],
+    "OutCounts": [
+      1
+    ],
+    "Explicit": false,
+    "Handcraft": true,
+    "NonProductive": false
+  },
+  {
+    "ID": 121,
+    "Name": "重整精炼",
+    "Description": "R重整精炼",
+    "IconPath": "Icons/ItemRecipe/reforming-refine",
     "Type": 3,
+    "GridIndex": 1307,
+    "PreTech": 1104,
+    "Time": 240,
+    "Input": [
+      1114,
+      1120,
+      1006
+    ],
+    "InCounts": [
+      2,
+      1,
+      1
+    ],
+    "Output": [
+      1114
+    ],
+    "OutCounts": [
+      3
+    ],
+    "Explicit": true,
+    "Handcraft": false,
+    "NonProductive": true
+  },
+  {
+    "ID": 701,
+    "Name": "石油裂化",
+    "Description": "这是一个新的化学公式.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/石油裂化",
+    "Type": 3,
+    "GridIndex": 2502,
+    "PreTech": 1812,
     "Time": 120,
     "Input": [
       1007
@@ -3318,18 +3352,18 @@
       1,
       1
     ],
-    "Description": "这是一个新的化学公式.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1812,
-    "GridIndex": 2502,
-    "Name": "石油裂化",
-    "IconPath": "Assets/texpack/石油裂化",
     "Explicit": true,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 702,
+    "Name": "水电解",
+    "Description": "这个公式可以为你提供氧气.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/电解水",
     "Type": 2,
+    "GridIndex": 2503,
+    "PreTech": 1812,
     "Time": 120,
     "Input": [
       1000
@@ -3345,18 +3379,18 @@
       4,
       2
     ],
-    "Description": "这个公式可以为你提供氧气.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1812,
-    "GridIndex": 2503,
-    "Name": "水电解",
-    "IconPath": "Assets/texpack/电解水",
     "Explicit": true,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 703,
+    "Name": "氢氧化钠",
+    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/氢氧化钠",
     "Type": 2,
+    "GridIndex": 2504,
+    "PreTech": 1121,
     "Time": 120,
     "Input": [
       7018
@@ -3372,18 +3406,18 @@
       2,
       2
     ],
-    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1121,
-    "GridIndex": 2504,
-    "Name": "氢氧化钠",
-    "IconPath": "Assets/texpack/氢氧化钠",
     "Explicit": true,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 801,
+    "Name": "氯化钠",
+    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/氯化钠",
     "Type": 4,
+    "GridIndex": 2505,
+    "PreTech": 1121,
     "Time": 180,
     "Input": [
       1005
@@ -3401,18 +3435,18 @@
       1,
       1
     ],
-    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1121,
-    "GridIndex": 2505,
-    "Name": "氯化钠",
-    "IconPath": "Assets/texpack/氯化钠",
     "Explicit": true,
     "Handcraft": true,
     "NonProductive": false
   },
   {
     "ID": 704,
+    "Name": "环氧氯丙烷",
+    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/环氧氯丙烷",
     "Type": 2,
+    "GridIndex": 2710,
+    "PreTech": 1121,
     "Time": 120,
     "Input": [
       7009,
@@ -3430,18 +3464,18 @@
       1,
       2
     ],
-    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1121,
-    "GridIndex": 2710,
-    "Name": "环氧氯丙烷",
-    "IconPath": "Assets/texpack/环氧氯丙烷",
     "Explicit": true,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 705,
+    "Name": "盐水",
+    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/盐水",
     "Type": 2,
+    "GridIndex": 2706,
+    "PreTech": 1121,
     "Time": 60,
     "Input": [
       1000,
@@ -3457,18 +3491,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1121,
-    "GridIndex": 2706,
-    "Name": "盐水",
-    "IconPath": "Assets/texpack/盐水",
     "Explicit": false,
     "Handcraft": true,
     "NonProductive": false
   },
   {
     "ID": 706,
+    "Name": "双酚A",
+    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/双酚A",
     "Type": 2,
+    "GridIndex": 2703,
+    "PreTech": 1121,
     "Time": 120,
     "Input": [
       7014,
@@ -3488,18 +3522,18 @@
       1,
       1
     ],
-    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1121,
-    "GridIndex": 2703,
-    "Name": "双酚A",
-    "IconPath": "Assets/texpack/双酚A",
     "Explicit": true,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 707,
+    "Name": "硝酸",
+    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/硝酸",
     "Type": 2,
+    "GridIndex": 2704,
+    "PreTech": 1121,
     "Time": 120,
     "Input": [
       7102,
@@ -3517,18 +3551,18 @@
       2,
       1
     ],
-    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1121,
-    "GridIndex": 2704,
-    "Name": "硝酸",
-    "IconPath": "Assets/texpack/硝酸",
     "Explicit": true,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 708,
+    "Name": "二硝基氯苯",
+    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/二硝基氯苯",
     "Type": 2,
+    "GridIndex": 2708,
+    "PreTech": 1121,
     "Time": 60,
     "Input": [
       7017,
@@ -3544,18 +3578,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1121,
-    "GridIndex": 2708,
-    "Name": "二硝基氯苯",
-    "IconPath": "Assets/texpack/二硝基氯苯",
     "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 709,
+    "Name": "二氯联苯胺",
+    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/二氯联苯胺",
     "Type": 2,
+    "GridIndex": 2707,
+    "PreTech": 1121,
     "Time": 60,
     "Input": [
       7008,
@@ -3571,18 +3605,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1121,
-    "GridIndex": 2707,
-    "Name": "二氯联苯胺",
-    "IconPath": "Assets/texpack/二氯联苯胺",
     "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 710,
+    "Name": "氨",
+    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/氨",
     "Type": 2,
+    "GridIndex": 2702,
+    "PreTech": 1121,
     "Time": 60,
     "Input": [
       7102,
@@ -3602,18 +3636,18 @@
       2,
       12
     ],
-    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1121,
-    "GridIndex": 2702,
-    "Name": "氨",
-    "IconPath": "Assets/texpack/氨",
     "Explicit": true,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 711,
+    "Name": "二氨基联苯胺",
+    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/二氨基联苯胺",
     "Type": 2,
+    "GridIndex": 2705,
+    "PreTech": 1121,
     "Time": 120,
     "Input": [
       7007,
@@ -3631,18 +3665,18 @@
       1,
       2
     ],
-    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1121,
-    "GridIndex": 2705,
-    "Name": "二氨基联苯胺",
-    "IconPath": "Assets/texpack/二氨基联苯胺",
     "Explicit": true,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 712,
+    "Name": "煤焦油",
+    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/煤焦油",
     "Type": 3,
+    "GridIndex": 2709,
+    "PreTech": 1121,
     "Time": 60,
     "Input": [
       1006
@@ -3656,18 +3690,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1121,
-    "GridIndex": 2709,
-    "Name": "煤焦油",
-    "IconPath": "Assets/texpack/煤焦油",
     "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 713,
+    "Name": "焦油分馏",
+    "Description": "这是一个新的化学公式.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/煤焦油",
     "Type": 2,
+    "GridIndex": 2501,
+    "PreTech": 1812,
     "Time": 60,
     "Input": [
       7218
@@ -3685,18 +3719,18 @@
       1,
       1
     ],
-    "Description": "这是一个新的化学公式.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1812,
-    "GridIndex": 2501,
-    "Name": "焦油分馏",
-    "IconPath": "Assets/texpack/煤焦油",
     "Explicit": true,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 714,
+    "Name": "邻苯二甲酸",
+    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/邻苯二甲酸",
     "Type": 2,
+    "GridIndex": 2712,
+    "PreTech": 1121,
     "Time": 120,
     "Input": [
       7019,
@@ -3714,18 +3748,18 @@
       1,
       2
     ],
-    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1121,
-    "GridIndex": 2712,
-    "Name": "邻苯二甲酸",
-    "IconPath": "Assets/texpack/邻苯二甲酸",
     "Explicit": true,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 715,
+    "Name": "间苯二甲酸二苯酯",
+    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/间苯二甲酸二苯酯",
     "Type": 2,
+    "GridIndex": 2711,
+    "PreTech": 1121,
     "Time": 60,
     "Input": [
       7003,
@@ -3741,18 +3775,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1121,
-    "GridIndex": 2711,
-    "Name": "间苯二甲酸二苯酯",
-    "IconPath": "Assets/texpack/间苯二甲酸二苯酯",
     "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 716,
+    "Name": "三氯化铁",
+    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/三氯化铁",
     "Type": 2,
+    "GridIndex": 2701,
+    "PreTech": 1121,
     "Time": 360,
     "Input": [
       7014,
@@ -3772,18 +3806,18 @@
       4,
       6
     ],
-    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1121,
-    "GridIndex": 2701,
-    "Name": "三氯化铁",
-    "IconPath": "Assets/texpack/三氯化铁",
     "Explicit": true,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 791,
+    "Name": "生物微晶元件",
+    "Description": "这是一个人类未曾涉及的领域.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/生物微晶元件",
     "Type": 10,
+    "GridIndex": 1406,
+    "PreTech": 1807,
     "Time": 120,
     "Input": [
       7504,
@@ -3801,18 +3835,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "这是一个人类未曾涉及的领域.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1807,
-    "GridIndex": 1406,
-    "Name": "生物微晶元件",
-    "IconPath": "Assets/texpack/生物微晶元件",
     "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 792,
+    "Name": "先进生物电路",
+    "Description": "这是一个人类未曾涉及的领域.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/先进生物电路",
     "Type": 10,
+    "GridIndex": 1506,
+    "PreTech": 1807,
     "Time": 240,
     "Input": [
       7505,
@@ -3830,18 +3864,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "这是一个人类未曾涉及的领域.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1807,
-    "GridIndex": 1506,
-    "Name": "先进生物电路",
-    "IconPath": "Assets/texpack/先进生物电路",
     "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 793,
+    "Name": "超生物计算集群",
+    "Description": "这是一个人类未曾涉及的领域.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/超生物计算集群",
     "Type": 10,
+    "GridIndex": 1606,
+    "PreTech": 1807,
     "Time": 480,
     "Input": [
       7506,
@@ -3859,18 +3893,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "这是一个人类未曾涉及的领域.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1807,
-    "GridIndex": 1606,
-    "Name": "超生物计算集群",
-    "IconPath": "Assets/texpack/超生物计算集群",
     "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 794,
+    "Name": "生物神经纤维",
+    "Description": "这是一个人类未曾涉及的领域.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/生物神经纤维",
     "Type": 10,
+    "GridIndex": 1504,
+    "PreTech": 1808,
     "Time": 240,
     "Input": [
       1402,
@@ -3888,18 +3922,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "这是一个人类未曾涉及的领域.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1808,
-    "GridIndex": 1504,
-    "Name": "生物神经纤维",
-    "IconPath": "Assets/texpack/生物神经纤维",
     "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 795,
+    "Name": "超级纳米电脑",
+    "Description": "这是一个人类未曾涉及的领域.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/超级纳米电脑",
     "Type": 10,
+    "GridIndex": 1604,
+    "PreTech": 1809,
     "Time": 3600,
     "Input": [
       1107,
@@ -3917,18 +3951,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "这是一个人类未曾涉及的领域.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1809,
-    "GridIndex": 1604,
-    "Name": "超级纳米电脑",
-    "IconPath": "Assets/texpack/超级纳米电脑",
     "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 569,
+    "Name": "湿件主机",
+    "Description": "这是一个人类未曾涉及的领域.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/湿件主机",
     "Type": 10,
+    "GridIndex": 1605,
+    "PreTech": 1810,
     "Time": 5400,
     "Input": [
       7707,
@@ -3946,18 +3980,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "这是一个人类未曾涉及的领域.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1810,
-    "GridIndex": 1605,
-    "Name": "湿件主机",
-    "IconPath": "Assets/texpack/湿件主机",
     "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 751,
+    "Name": "塑料基板",
+    "Description": "这是一种新的材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/塑料基板",
     "Type": 9,
+    "GridIndex": 2601,
+    "PreTech": 1805,
     "Time": 120,
     "Input": [
       1115,
@@ -3973,18 +4007,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "这是一种新的材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1805,
-    "GridIndex": 2601,
-    "Name": "塑料基板",
-    "IconPath": "Assets/texpack/塑料基板",
     "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 752,
+    "Name": "覆层塑料基板",
+    "Description": "这是一种新的材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/覆层塑料基板",
     "Type": 9,
+    "GridIndex": 2602,
+    "PreTech": 1805,
     "Time": 120,
     "Input": [
       7501,
@@ -4002,18 +4036,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "这是一种新的材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1805,
-    "GridIndex": 2602,
-    "Name": "覆层塑料基板",
-    "IconPath": "Assets/texpack/覆层塑料基板",
     "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 753,
+    "Name": "钛蚀刻覆层塑料基板",
+    "Description": "这是一种新的材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/钛蚀刻覆层塑料基板",
     "Type": 9,
+    "GridIndex": 2603,
+    "PreTech": 1805,
     "Time": 120,
     "Input": [
       7502,
@@ -4031,18 +4065,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "这是一种新的材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1805,
-    "GridIndex": 2603,
-    "Name": "钛蚀刻覆层塑料基板",
-    "IconPath": "Assets/texpack/钛蚀刻覆层塑料基板",
     "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 754,
+    "Name": "生物基板",
+    "Description": "这是一种新的材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/生物基板",
     "Type": 9,
+    "GridIndex": 2604,
+    "PreTech": 1805,
     "Time": 240,
     "Input": [
       7709,
@@ -4058,18 +4092,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "这是一种新的材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1805,
-    "GridIndex": 2604,
-    "Name": "生物基板",
-    "IconPath": "Assets/texpack/生物基板",
     "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 755,
+    "Name": "覆层生物基板",
+    "Description": "这是一种新的材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/覆层生物基板",
     "Type": 9,
+    "GridIndex": 2605,
+    "PreTech": 1805,
     "Time": 240,
     "Input": [
       7504,
@@ -4087,18 +4121,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "这是一种新的材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1805,
-    "GridIndex": 2605,
-    "Name": "覆层生物基板",
-    "IconPath": "Assets/texpack/覆层生物基板",
     "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 756,
+    "Name": "钨蚀刻覆层生物基板",
+    "Description": "这是一种新的材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/钨蚀刻覆层生物基板",
     "Type": 9,
+    "GridIndex": 2606,
+    "PreTech": 1805,
     "Time": 240,
     "Input": [
       7505,
@@ -4116,18 +4150,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "这是一种新的材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1805,
-    "GridIndex": 2606,
-    "Name": "钨蚀刻覆层生物基板",
-    "IconPath": "Assets/texpack/钨蚀刻覆层生物基板",
     "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 761,
+    "Name": "超低功率IC晶片",
+    "Description": "一片非金属晶片,世界上精度最高的人造物.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/超低功率IC晶片",
     "Type": 4,
+    "GridIndex": 2607,
+    "PreTech": 1806,
     "Time": 120,
     "Input": [
       7701
@@ -4141,18 +4175,18 @@
     "OutCounts": [
       16
     ],
-    "Description": "一片非金属晶片,世界上精度最高的人造物.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1806,
-    "GridIndex": 2607,
-    "Name": "超低功率IC晶片",
-    "IconPath": "Assets/texpack/超低功率IC晶片",
     "Explicit": false,
     "Handcraft": true,
     "NonProductive": false
   },
   {
     "ID": 762,
+    "Name": "低功率IC晶片",
+    "Description": "一片非金属晶片,世界上精度最高的人造物.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/低功率IC晶片",
     "Type": 4,
+    "GridIndex": 2608,
+    "PreTech": 1806,
     "Time": 120,
     "Input": [
       7701
@@ -4166,18 +4200,18 @@
     "OutCounts": [
       8
     ],
-    "Description": "一片非金属晶片,世界上精度最高的人造物.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1806,
-    "GridIndex": 2608,
-    "Name": "低功率IC晶片",
-    "IconPath": "Assets/texpack/低功率IC晶片",
     "Explicit": false,
     "Handcraft": true,
     "NonProductive": false
   },
   {
     "ID": 763,
+    "Name": "标准功率IC晶片",
+    "Description": "一片非金属晶片,世界上精度最高的人造物.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/标准功率IC晶片",
     "Type": 10,
+    "GridIndex": 2609,
+    "PreTech": 1806,
     "Time": 120,
     "Input": [
       7702
@@ -4191,18 +4225,18 @@
     "OutCounts": [
       16
     ],
-    "Description": "一片非金属晶片,世界上精度最高的人造物.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1806,
-    "GridIndex": 2609,
-    "Name": "标准功率IC晶片",
-    "IconPath": "Assets/texpack/标准功率IC晶片",
     "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 764,
+    "Name": "高功率IC晶片",
+    "Description": "一片非金属晶片,世界上精度最高的人造物.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/高功率IC晶片",
     "Type": 10,
+    "GridIndex": 2610,
+    "PreTech": 1806,
     "Time": 120,
     "Input": [
       7702
@@ -4216,18 +4250,18 @@
     "OutCounts": [
       8
     ],
-    "Description": "一片非金属晶片,世界上精度最高的人造物.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1806,
-    "GridIndex": 2610,
-    "Name": "高功率IC晶片",
-    "IconPath": "Assets/texpack/高功率IC晶片",
     "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 765,
+    "Name": "超高功率IC晶片",
+    "Description": "一片非金属晶片,世界上精度最高的人造物.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/超高功率IC晶片",
     "Type": 10,
+    "GridIndex": 2611,
+    "PreTech": 1806,
     "Time": 120,
     "Input": [
       7703
@@ -4241,18 +4275,18 @@
     "OutCounts": [
       16
     ],
-    "Description": "一片非金属晶片,世界上精度最高的人造物.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1806,
-    "GridIndex": 2611,
-    "Name": "超高功率IC晶片",
-    "IconPath": "Assets/texpack/超高功率IC晶片",
     "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 766,
+    "Name": "生物IC晶片",
+    "Description": "一片非金属晶片,世界上精度最高的人造物.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/生物IC晶片",
     "Type": 10,
+    "GridIndex": 2612,
+    "PreTech": 1806,
     "Time": 120,
     "Input": [
       7703
@@ -4266,18 +4300,18 @@
     "OutCounts": [
       8
     ],
-    "Description": "一片非金属晶片,世界上精度最高的人造物.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1806,
-    "GridIndex": 2612,
-    "Name": "生物IC晶片",
-    "IconPath": "Assets/texpack/生物IC晶片",
     "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 771,
+    "Name": "环氧树脂",
+    "Description": "一种新的制造材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/环氧树脂",
     "Type": 2,
+    "GridIndex": 1110,
+    "PreTech": 1121,
     "Time": 120,
     "Input": [
       7016,
@@ -4297,18 +4331,18 @@
       1,
       1
     ],
-    "Description": "一种新的制造材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1121,
-    "GridIndex": 1110,
-    "Name": "环氧树脂",
-    "IconPath": "Assets/texpack/环氧树脂",
     "Explicit": true,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 772,
+    "Name": "聚苯并咪唑",
+    "Description": "一种新的制造材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/聚苯并咪唑",
     "Type": 2,
+    "GridIndex": 1111,
+    "PreTech": 1121,
     "Time": 120,
     "Input": [
       7005,
@@ -4326,18 +4360,18 @@
       1,
       1
     ],
-    "Description": "一种新的制造材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1121,
-    "GridIndex": 1111,
-    "Name": "聚苯并咪唑",
-    "IconPath": "Assets/texpack/聚苯并咪唑",
     "Explicit": true,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 773,
+    "Name": "钨矿",
+    "Description": "一种新的制造材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/钨矿",
     "Type": 2,
+    "GridIndex": 1711,
+    "PreTech": 1413,
     "Time": 360,
     "Input": [
       1004,
@@ -4353,18 +4387,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "一种新的制造材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1413,
-    "GridIndex": 1711,
-    "Name": "钨矿",
-    "IconPath": "Assets/texpack/钨矿",
     "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 774,
+    "Name": "钨块",
+    "Description": "一种新的制造材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/钨块",
     "Type": 1,
+    "GridIndex": 1105,
+    "PreTech": 1413,
     "Time": 60,
     "Input": [
       1016
@@ -4378,18 +4412,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "一种新的制造材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1413,
-    "GridIndex": 1105,
-    "Name": "钨块",
-    "IconPath": "Assets/texpack/钨块",
     "Explicit": false,
     "Handcraft": true,
     "NonProductive": false
   },
   {
     "ID": 775,
+    "Name": "钨强化玻璃",
+    "Description": "一种新的制造材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/钨强化玻璃",
     "Type": 2,
+    "GridIndex": 1505,
+    "PreTech": 1811,
     "Time": 120,
     "Input": [
       1110,
@@ -4405,18 +4439,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "一种新的制造材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1811,
-    "GridIndex": 1505,
-    "Name": "钨强化玻璃",
-    "IconPath": "Assets/texpack/钨强化玻璃",
     "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 776,
+    "Name": "钨复合金属",
+    "Description": "一种新的制造材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/钨复合金属",
     "Type": 1,
+    "GridIndex": 1203,
+    "PreTech": 1804,
     "Time": 480,
     "Input": [
       1103,
@@ -4434,18 +4468,18 @@
     "OutCounts": [
       4
     ],
-    "Description": "一种新的制造材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1804,
-    "GridIndex": 1203,
-    "Name": "钨复合金属",
-    "IconPath": "Assets/texpack/钨复合金属",
     "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 777,
+    "Name": "硅晶圆",
+    "Description": "电子工业的基础.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/硅晶圆",
     "Type": 1,
+    "GridIndex": 1501,
+    "PreTech": 1806,
     "Time": 480,
     "Input": [
       1105
@@ -4459,18 +4493,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "电子工业的基础.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1806,
-    "GridIndex": 1501,
-    "Name": "硅晶圆",
-    "IconPath": "Assets/texpack/硅晶圆",
     "Explicit": false,
     "Handcraft": true,
     "NonProductive": false
   },
   {
     "ID": 778,
+    "Name": "钛掺杂的硅晶圆",
+    "Description": "电子工业的基础.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/钛掺杂的硅晶圆",
     "Type": 1,
+    "GridIndex": 1502,
+    "PreTech": 1806,
     "Time": 480,
     "Input": [
       1105,
@@ -4486,18 +4520,18 @@
     "OutCounts": [
       2
     ],
-    "Description": "电子工业的基础.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1806,
-    "GridIndex": 1502,
-    "Name": "钛掺杂的硅晶圆",
-    "IconPath": "Assets/texpack/钛掺杂的硅晶圆",
     "Explicit": false,
     "Handcraft": true,
     "NonProductive": false
   },
   {
     "ID": 779,
+    "Name": "钨掺杂的硅晶圆",
+    "Description": "电子工业的基础.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/钨掺杂的硅晶圆",
     "Type": 1,
+    "GridIndex": 1503,
+    "PreTech": 1806,
     "Time": 480,
     "Input": [
       1105,
@@ -4513,18 +4547,18 @@
     "OutCounts": [
       4
     ],
-    "Description": "电子工业的基础.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1806,
-    "GridIndex": 1503,
-    "Name": "钨掺杂的硅晶圆",
-    "IconPath": "Assets/texpack/钨掺杂的硅晶圆",
     "Explicit": false,
     "Handcraft": true,
     "NonProductive": false
   },
   {
     "ID": 780,
+    "Name": "活性生物纤维",
+    "Description": "一种新的制造材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/活性生物纤维",
     "Type": 2,
+    "GridIndex": 1112,
+    "PreTech": 1808,
     "Time": 120,
     "Input": [
       1117
@@ -4538,18 +4572,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "一种新的制造材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1808,
-    "GridIndex": 1112,
-    "Name": "活性生物纤维",
-    "IconPath": "Assets/texpack/活性生物纤维",
     "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 821,
+    "Name": "钛齿轮",
+    "Description": "一种新的制造材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/钛齿轮",
     "Type": 4,
+    "GridIndex": 1302,
+    "PreTech": 1802,
     "Time": 60,
     "Input": [
       1106
@@ -4563,18 +4597,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "一种新的制造材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1802,
-    "GridIndex": 1302,
-    "Name": "钛齿轮",
-    "IconPath": "Assets/texpack/钛齿轮",
     "Explicit": false,
     "Handcraft": true,
     "NonProductive": false
   },
   {
     "ID": 822,
+    "Name": "钨齿轮",
+    "Description": "一种新的制造材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/钨齿轮",
     "Type": 4,
+    "GridIndex": 1303,
+    "PreTech": 1803,
     "Time": 60,
     "Input": [
       7705
@@ -4588,18 +4622,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "一种新的制造材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1803,
-    "GridIndex": 1303,
-    "Name": "钨齿轮",
-    "IconPath": "Assets/texpack/钨齿轮",
     "Explicit": false,
     "Handcraft": true,
     "NonProductive": false
   },
   {
     "ID": 623,
+    "Name": "铜线圈",
+    "Description": "一种新的制造材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/铜线圈",
     "Type": 4,
+    "GridIndex": 2506,
+    "PreTech": 1,
     "Time": 60,
     "Input": [
       1104
@@ -4613,18 +4647,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "一种新的制造材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1,
-    "GridIndex": 2506,
-    "Name": "铜线圈",
-    "IconPath": "Assets/texpack/铜线圈",
     "Explicit": false,
     "Handcraft": true,
     "NonProductive": false
   },
   {
     "ID": 624,
+    "Name": "石墨线圈",
+    "Description": "一种新的制造材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/石墨线圈",
     "Type": 4,
+    "GridIndex": 2507,
+    "PreTech": 1201,
     "Time": 60,
     "Input": [
       1109
@@ -4638,18 +4672,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "一种新的制造材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1201,
-    "GridIndex": 2507,
-    "Name": "石墨线圈",
-    "IconPath": "Assets/texpack/石墨线圈",
     "Explicit": false,
     "Handcraft": true,
     "NonProductive": false
   },
   {
     "ID": 625,
+    "Name": "钛线圈",
+    "Description": "一种新的制造材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/钛线圈",
     "Type": 4,
+    "GridIndex": 2508,
+    "PreTech": 1201,
     "Time": 60,
     "Input": [
       1106
@@ -4663,18 +4697,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "一种新的制造材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1201,
-    "GridIndex": 2508,
-    "Name": "钛线圈",
-    "IconPath": "Assets/texpack/钛线圈",
     "Explicit": false,
     "Handcraft": true,
     "NonProductive": false
   },
   {
     "ID": 641,
+    "Name": "基础机械组件",
+    "Description": "一个通用组件包,用途广泛.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/基础机械组件",
     "Type": 4,
+    "GridIndex": 1401,
+    "PreTech": 1801,
     "Time": 120,
     "Input": [
       1101,
@@ -4692,18 +4726,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "一个通用组件包,用途广泛.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1801,
-    "GridIndex": 1401,
-    "Name": "基础机械组件",
-    "IconPath": "Assets/texpack/基础机械组件",
     "Explicit": false,
     "Handcraft": true,
     "NonProductive": false
   },
   {
     "ID": 642,
+    "Name": "先进机械组件",
+    "Description": "一个通用组件包,用途广泛.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/先进机械组件",
     "Type": 4,
+    "GridIndex": 1402,
+    "PreTech": 1802,
     "Time": 240,
     "Input": [
       6501,
@@ -4721,18 +4755,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "一个通用组件包,用途广泛.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1802,
-    "GridIndex": 1402,
-    "Name": "先进机械组件",
-    "IconPath": "Assets/texpack/先进机械组件",
     "Explicit": false,
     "Handcraft": true,
     "NonProductive": false
   },
   {
     "ID": 643,
+    "Name": "尖端机械组件",
+    "Description": "一个通用组件包,用途广泛.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/尖端机械组件",
     "Type": 10,
+    "GridIndex": 1403,
+    "PreTech": 1803,
     "Time": 360,
     "Input": [
       6502,
@@ -4750,18 +4784,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "一个通用组件包,用途广泛.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1803,
-    "GridIndex": 1403,
-    "Name": "尖端机械组件",
-    "IconPath": "Assets/texpack/尖端机械组件",
     "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 644,
+    "Name": "空燃料棒",
+    "Description": "呃,也许它还差点什么?\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/空燃料棒",
     "Type": 4,
+    "GridIndex": 1708,
+    "PreTech": 1201,
     "Time": 120,
     "Input": [
       1101,
@@ -4777,18 +4811,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "呃,也许它还差点什么?\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1201,
-    "GridIndex": 1708,
-    "Name": "空燃料棒",
-    "IconPath": "Assets/texpack/空燃料棒",
     "Explicit": false,
     "Handcraft": true,
     "NonProductive": false
   },
   {
     "ID": 681,
+    "Name": "氢燃料",
+    "Description": "这玩意看上去好像也差点啥.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/氢燃料",
     "Type": 2,
+    "GridIndex": 2509,
+    "PreTech": 1112,
     "Time": 120,
     "Input": [
       1120
@@ -4802,18 +4836,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "这玩意看上去好像也差点啥.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1112,
-    "GridIndex": 2509,
-    "Name": "氢燃料",
-    "IconPath": "Assets/texpack/氢燃料",
     "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 682,
+    "Name": "氘核燃料",
+    "Description": "这玩意看上去好像也差点啥.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/氘核燃料",
     "Type": 2,
+    "GridIndex": 2510,
+    "PreTech": 1821,
     "Time": 240,
     "Input": [
       1121
@@ -4827,18 +4861,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "这玩意看上去好像也差点啥.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1821,
-    "GridIndex": 2510,
-    "Name": "氘核燃料",
-    "IconPath": "Assets/texpack/氘核燃料",
     "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 683,
+    "Name": "反物质燃料",
+    "Description": "这玩意看上去好像也差点啥.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/反物质燃料",
     "Type": 2,
+    "GridIndex": 2511,
+    "PreTech": 1144,
     "Time": 360,
     "Input": [
       1122
@@ -4852,18 +4886,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "这玩意看上去好像也差点啥.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1506,
-    "GridIndex": 2511,
-    "Name": "反物质燃料",
-    "IconPath": "Assets/texpack/反物质燃料",
     "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 541,
+    "Name": "质能储存(高效)",
+    "Description": "这个公式能让你更加高效的生产反物质.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/高效反物质",
     "Type": 5,
+    "GridIndex": 1512,
+    "PreTech": 1506,
     "Time": 60,
     "Input": [
       1208
@@ -4877,18 +4911,18 @@
     "OutCounts": [
       2
     ],
-    "Description": "这个公式能让你更加高效的生产反物质.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1506,
-    "GridIndex": 1512,
-    "Name": "质能储存(高效)",
-    "IconPath": "Assets/texpack/高效反物质",
     "Explicit": true,
     "Handcraft": false,
     "NonProductive": true
   },
   {
     "ID": 542,
+    "Name": "奇异物质(高效)",
+    "Description": "这个公式能让你更加高效的生产奇异物质.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/高效奇异物质",
     "Type": 4,
+    "GridIndex": 1312,
+    "PreTech": 1143,
     "Time": 60,
     "Input": [
       1105,
@@ -4904,18 +4938,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "这个公式能让你更加高效的生产奇异物质.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1143,
-    "GridIndex": 1312,
-    "Name": "奇异物质(高效)",
-    "IconPath": "Assets/texpack/高效奇异物质",
     "Explicit": true,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 543,
+    "Name": "石墨烯(极效)",
+    "Description": "这个公式能让你更加高效的生产石墨烯.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/极效石墨烯",
     "Type": 2,
+    "GridIndex": 1612,
+    "PreTech": 1132,
     "Time": 120,
     "Input": [
       1011
@@ -4929,18 +4963,18 @@
     "OutCounts": [
       4
     ],
-    "Description": "这个公式能让你更加高效的生产石墨烯.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1132,
-    "GridIndex": 1612,
-    "Name": "石墨烯(极效)",
-    "IconPath": "Assets/texpack/极效石墨烯",
     "Explicit": true,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 544,
+    "Name": "重氢(高效)",
+    "Description": "这个公式能让你更加高效的生产重氢.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/高效重氢",
     "Type": 2,
+    "GridIndex": 1311,
+    "PreTech": 1121,
     "Time": 60,
     "Input": [
       1120
@@ -4954,18 +4988,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "这个公式能让你更加高效的生产重氢.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1121,
-    "GridIndex": 1311,
-    "Name": "重氢(高效)",
-    "IconPath": "Assets/texpack/高效重氢",
     "Explicit": true,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 545,
+    "Name": "等离子精炼(高效)",
+    "Description": "这个公式能让你更加高效的生产氢.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/精炼氢",
     "Type": 3,
+    "GridIndex": 1712,
+    "PreTech": 1121,
     "Time": 120,
     "Input": [
       1007
@@ -4979,18 +5013,18 @@
     "OutCounts": [
       4
     ],
-    "Description": "这个公式能让你更加高效的生产氢.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1121,
-    "GridIndex": 1712,
-    "Name": "等离子精炼(高效)",
-    "IconPath": "Assets/texpack/精炼氢",
     "Explicit": true,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 546,
+    "Name": "有机液体离心",
+    "Description": "这个公式能让你离心有机液体.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/剧毒有机液体",
     "Type": 2,
+    "GridIndex": 2512,
+    "PreTech": 1121,
     "Time": 120,
     "Input": [
       1116
@@ -5010,18 +5044,18 @@
       1,
       1
     ],
-    "Description": "这个公式能让你离心有机液体.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1121,
-    "GridIndex": 2512,
-    "Name": "有机液体离心",
-    "IconPath": "Assets/texpack/剧毒有机液体",
     "Explicit": true,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 547,
+    "Name": "硅晶圆(高效)",
+    "Description": "这个公式能让你更加高效的生产晶圆.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/高效硅晶圆",
     "Type": 1,
+    "GridIndex": 2410,
+    "PreTech": 1122,
     "Time": 240,
     "Input": [
       1105,
@@ -5037,18 +5071,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "这个公式能让你更加高效的生产晶圆.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1122,
-    "GridIndex": 2410,
-    "Name": "硅晶圆(高效)",
-    "IconPath": "Assets/texpack/高效硅晶圆",
     "Explicit": true,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 548,
+    "Name": "含钛硅晶圆(高效)",
+    "Description": "这个公式能让你更加高效的生产晶圆.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/高效钛晶圆",
     "Type": 1,
+    "GridIndex": 2411,
+    "PreTech": 1122,
     "Time": 240,
     "Input": [
       1105,
@@ -5066,18 +5100,18 @@
     "OutCounts": [
       2
     ],
-    "Description": "这个公式能让你更加高效的生产晶圆.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1122,
-    "GridIndex": 2411,
-    "Name": "含钛硅晶圆(高效)",
-    "IconPath": "Assets/texpack/高效钛晶圆",
     "Explicit": true,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 549,
+    "Name": "含钨硅晶圆(高效)",
+    "Description": "这个公式能让你更加高效的生产晶圆.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/高效钨晶圆",
     "Type": 1,
+    "GridIndex": 2412,
+    "PreTech": 1122,
     "Time": 240,
     "Input": [
       1105,
@@ -5095,18 +5129,18 @@
     "OutCounts": [
       4
     ],
-    "Description": "这个公式能让你更加高效的生产晶圆.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1122,
-    "GridIndex": 2412,
-    "Name": "含钨硅晶圆(高效)",
-    "IconPath": "Assets/texpack/高效钨晶圆",
     "Explicit": true,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 551,
+    "Name": "聚乙烯(高效)",
+    "Description": "这个公式能让你更高效的生产聚乙烯.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/高效塑料",
     "Type": 2,
+    "GridIndex": 3101,
+    "PreTech": 1122,
     "Time": 60,
     "Input": [
       1117,
@@ -5124,18 +5158,18 @@
     "OutCounts": [
       2
     ],
-    "Description": "这个公式能让你更高效的生产聚乙烯.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1122,
-    "GridIndex": 3101,
-    "Name": "聚乙烯(高效)",
-    "IconPath": "Assets/texpack/高效塑料",
     "Explicit": true,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 501,
+    "Name": "燃油精炼",
+    "Description": "有人说这是工业的血液....\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/燃油精炼",
     "Type": 3,
+    "GridIndex": 3201,
+    "PreTech": 1812,
     "Time": 240,
     "Input": [
       1007
@@ -5151,18 +5185,18 @@
       1,
       3
     ],
-    "Description": "有人说这是工业的血液....\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1812,
-    "GridIndex": 3201,
-    "Name": "燃油精炼",
-    "IconPath": "Assets/texpack/燃油精炼",
     "Explicit": true,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 502,
+    "Name": "轻燃油脱硫",
+    "Description": "有人说这是工业的血液....\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/轻燃油",
     "Type": 2,
+    "GridIndex": 3202,
+    "PreTech": 1812,
     "Time": 180,
     "Input": [
       6204,
@@ -5180,18 +5214,18 @@
       2,
       1
     ],
-    "Description": "有人说这是工业的血液....\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1812,
-    "GridIndex": 3202,
-    "Name": "轻燃油脱硫",
-    "IconPath": "Assets/texpack/轻燃油",
     "Explicit": true,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 503,
+    "Name": "重燃油脱硫",
+    "Description": "有人说这是工业的血液....\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/重燃油",
     "Type": 2,
+    "GridIndex": 3203,
+    "PreTech": 1812,
     "Time": 60,
     "Input": [
       6203,
@@ -5209,18 +5243,18 @@
       2,
       1
     ],
-    "Description": "有人说这是工业的血液....\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1812,
-    "GridIndex": 3203,
-    "Name": "重燃油脱硫",
-    "IconPath": "Assets/texpack/重燃油",
     "Explicit": true,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 504,
+    "Name": "柴油搅拌",
+    "Description": "有人说这是工业的血液....\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/柴油",
     "Type": 2,
+    "GridIndex": 3204,
+    "PreTech": 1812,
     "Time": 180,
     "Input": [
       6202,
@@ -5236,18 +5270,18 @@
     "OutCounts": [
       4
     ],
-    "Description": "有人说这是工业的血液....\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1812,
-    "GridIndex": 3204,
-    "Name": "柴油搅拌",
-    "IconPath": "Assets/texpack/柴油",
     "Explicit": true,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 505,
+    "Name": "一氧化碳",
+    "Description": "未充分燃烧的煤会形成一氧化碳.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/一氧化碳",
     "Type": 2,
+    "GridIndex": 3301,
+    "PreTech": 1121,
     "Time": 240,
     "Input": [
       1006,
@@ -5263,18 +5297,18 @@
     "OutCounts": [
       2
     ],
-    "Description": "未充分燃烧的煤会形成一氧化碳.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1121,
-    "GridIndex": 3301,
-    "Name": "一氧化碳",
-    "IconPath": "Assets/texpack/一氧化碳",
     "Explicit": true,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 507,
+    "Name": "甲醇",
+    "Description": "充分燃烧的煤会形成二氧化碳.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/甲醇",
     "Type": 2,
+    "GridIndex": 3302,
+    "PreTech": 1121,
     "Time": 240,
     "Input": [
       6205,
@@ -5290,18 +5324,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "充分燃烧的煤会形成二氧化碳.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1121,
-    "GridIndex": 3302,
-    "Name": "甲醇",
-    "IconPath": "Assets/texpack/甲醇",
     "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 508,
+    "Name": "乙酸",
+    "Description": "充分燃烧的煤会形成二氧化碳.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/乙酸",
     "Type": 2,
+    "GridIndex": 3303,
+    "PreTech": 1121,
     "Time": 240,
     "Input": [
       6205,
@@ -5317,18 +5351,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "充分燃烧的煤会形成二氧化碳.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1121,
-    "GridIndex": 3303,
-    "Name": "乙酸",
-    "IconPath": "Assets/texpack/乙酸",
     "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 509,
+    "Name": "乙酸甲酯",
+    "Description": "充分燃烧的煤会形成二氧化碳.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/乙酸甲酯",
     "Type": 2,
+    "GridIndex": 3304,
+    "PreTech": 1121,
     "Time": 240,
     "Input": [
       6208,
@@ -5346,18 +5380,18 @@
       1,
       1
     ],
-    "Description": "充分燃烧的煤会形成二氧化碳.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1121,
-    "GridIndex": 3304,
-    "Name": "乙酸甲酯",
-    "IconPath": "Assets/texpack/乙酸甲酯",
     "Explicit": true,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 510,
+    "Name": "次氯酸",
+    "Description": "充分燃烧的煤会形成二氧化碳.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/次氯酸",
     "Type": 2,
+    "GridIndex": 3305,
+    "PreTech": 1121,
     "Time": 240,
     "Input": [
       7014,
@@ -5373,18 +5407,18 @@
     "OutCounts": [
       2
     ],
-    "Description": "充分燃烧的煤会形成二氧化碳.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1121,
-    "GridIndex": 3305,
-    "Name": "次氯酸",
-    "IconPath": "Assets/texpack/次氯酸",
     "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 511,
+    "Name": "四硝基甲烷",
+    "Description": "它蕴含着巨大的能量....但好像还差些什么\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/四硝基甲烷",
     "Type": 2,
+    "GridIndex": 3306,
+    "PreTech": 1121,
     "Time": 360,
     "Input": [
       7017,
@@ -5404,18 +5438,18 @@
       10,
       16
     ],
-    "Description": "它蕴含着巨大的能量....但好像还差些什么\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1121,
-    "GridIndex": 3306,
-    "Name": "四硝基甲烷",
-    "IconPath": "Assets/texpack/四硝基甲烷",
     "Explicit": true,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 512,
+    "Name": "硝基柴油",
+    "Description": "它蕴含着巨大的能量....但好像还差一步\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/硝基柴油",
     "Type": 2,
+    "GridIndex": 3307,
+    "PreTech": 1812,
     "Time": 480,
     "Input": [
       6211,
@@ -5431,18 +5465,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "它蕴含着巨大的能量....但好像还差一步\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1812,
-    "GridIndex": 3307,
-    "Name": "硝基柴油",
-    "IconPath": "Assets/texpack/硝基柴油",
     "Explicit": true,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 513,
+    "Name": "偏二甲肼",
+    "Description": "它蕴含着巨大的能量....但好像还差一步\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/偏二甲肼",
     "Type": 2,
+    "GridIndex": 3401,
+    "PreTech": 1812,
     "Time": 600,
     "Input": [
       6210,
@@ -5462,18 +5496,18 @@
       1,
       2
     ],
-    "Description": "它蕴含着巨大的能量....但好像还差一步\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1812,
-    "GridIndex": 3401,
-    "Name": "偏二甲肼",
-    "IconPath": "Assets/texpack/偏二甲肼",
     "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 514,
+    "Name": "火箭燃料",
+    "Description": "它蕴含着巨大的能量....但好像还差一步\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/火箭燃料",
     "Type": 2,
+    "GridIndex": 3402,
+    "PreTech": 1812,
     "Time": 900,
     "Input": [
       6213,
@@ -5489,18 +5523,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "它蕴含着巨大的能量....但好像还差一步\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1812,
-    "GridIndex": 3402,
-    "Name": "火箭燃料",
-    "IconPath": "Assets/texpack/火箭燃料",
     "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 515,
+    "Name": "硝基柴油燃料棒",
+    "Description": "它蕴含着巨大的能量....但好像还差一步\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/硝基柴油燃料棒",
     "Type": 4,
+    "GridIndex": 3403,
+    "PreTech": 1812,
     "Time": 600,
     "Input": [
       6509,
@@ -5516,18 +5550,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "它蕴含着巨大的能量....但好像还差一步\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1812,
-    "GridIndex": 3403,
-    "Name": "硝基柴油燃料棒",
-    "IconPath": "Assets/texpack/硝基柴油燃料棒",
     "Explicit": false,
     "Handcraft": true,
     "NonProductive": false
   },
   {
     "ID": 516,
+    "Name": "偏二甲肼燃料棒",
+    "Description": "它蕴含着巨大的能量....但好像还差一步\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/偏二甲肼燃料棒",
     "Type": 4,
+    "GridIndex": 3404,
+    "PreTech": 1812,
     "Time": 600,
     "Input": [
       6509,
@@ -5543,18 +5577,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "它蕴含着巨大的能量....但好像还差一步\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1812,
-    "GridIndex": 3404,
-    "Name": "偏二甲肼燃料棒",
-    "IconPath": "Assets/texpack/偏二甲肼燃料棒",
     "Explicit": false,
     "Handcraft": true,
     "NonProductive": false
   },
   {
     "ID": 517,
+    "Name": "火箭燃料棒",
+    "Description": "它蕴含着巨大的能量....但好像还差一步\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/火箭燃料棒",
     "Type": 4,
+    "GridIndex": 3405,
+    "PreTech": 1812,
     "Time": 600,
     "Input": [
       6509,
@@ -5570,18 +5604,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "它蕴含着巨大的能量....但好像还差一步\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1812,
-    "GridIndex": 3405,
-    "Name": "火箭燃料棒",
-    "IconPath": "Assets/texpack/火箭燃料棒",
     "Explicit": false,
     "Handcraft": true,
     "NonProductive": false
   },
   {
     "ID": 518,
+    "Name": "微晶元件(高效)",
+    "Description": "这个公式能让你更加高效的生产微晶元件.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/高效微晶元件",
     "Type": 10,
+    "GridIndex": 3406,
+    "PreTech": 1807,
     "Time": 60,
     "Input": [
       7502,
@@ -5597,18 +5631,18 @@
     "OutCounts": [
       2
     ],
-    "Description": "这个公式能让你更加高效的生产微晶元件.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1807,
-    "GridIndex": 3406,
-    "Name": "微晶元件(高效)",
-    "IconPath": "Assets/texpack/高效微晶元件",
     "Explicit": true,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 519,
+    "Name": "处理器(高效)",
+    "Description": "这个公式能让你更加高效的生产处理器.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/高效处理器",
     "Type": 10,
+    "GridIndex": 3407,
+    "PreTech": 1807,
     "Time": 120,
     "Input": [
       7503,
@@ -5624,18 +5658,18 @@
     "OutCounts": [
       2
     ],
-    "Description": "这个公式能让你更加高效的生产处理器.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1807,
-    "GridIndex": 3407,
-    "Name": "处理器(高效)",
-    "IconPath": "Assets/texpack/高效处理器",
     "Explicit": true,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 520,
+    "Name": "量子芯片(高效)",
+    "Description": "这个公式能让你更加高效的生产量子芯片.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/高效量子芯片",
     "Type": 10,
+    "GridIndex": 3408,
+    "PreTech": 1807,
     "Time": 180,
     "Input": [
       7504,
@@ -5651,18 +5685,18 @@
     "OutCounts": [
       2
     ],
-    "Description": "这个公式能让你更加高效的生产量子芯片.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1807,
-    "GridIndex": 3408,
-    "Name": "量子芯片(高效)",
-    "IconPath": "Assets/texpack/高效量子芯片",
     "Explicit": true,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 521,
+    "Name": "硫酸(高效)",
+    "Description": "这个公式能让你更加高效的生产硫酸.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/高效硫酸",
     "Type": 2,
+    "GridIndex": 3205,
+    "PreTech": 1122,
     "Time": 60,
     "Input": [
       6215,
@@ -5678,18 +5712,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "这个公式能让你更加高效的生产硫酸.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1122,
-    "GridIndex": 3205,
-    "Name": "硫酸(高效)",
-    "IconPath": "Assets/texpack/高效硫酸",
     "Explicit": true,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 522,
+    "Name": "量子储液罐",
+    "Description": "这个公式能让你更加高效的生产硫酸.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/量子储液罐",
     "Type": 4,
+    "GridIndex": 3206,
+    "PreTech": 1303,
     "Time": 900,
     "Input": [
       1107,
@@ -5707,18 +5741,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "这个公式能让你更加高效的生产硫酸.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1303,
-    "GridIndex": 3206,
-    "Name": "量子储液罐",
-    "IconPath": "Assets/texpack/量子储液罐",
     "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 523,
+    "Name": "矿物处理厂",
+    "Description": "这个公式能让你更加高效的生产硫酸.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/矿物处理厂",
     "Type": 4,
+    "GridIndex": 3207,
+    "PreTech": 1413,
     "Time": 600,
     "Input": [
       6502,
@@ -5738,18 +5772,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "这个公式能让你更加高效的生产硫酸.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1413,
-    "GridIndex": 3207,
-    "Name": "矿物处理厂",
-    "IconPath": "Assets/texpack/矿物处理厂",
     "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 531,
+    "Name": "铁矿粉",
+    "Description": "这个公式能让你更加高效的生产硫酸.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/铁矿粉",
     "Type": 11,
+    "GridIndex": 3701,
+    "PreTech": 1413,
     "Time": 60,
     "Input": [
       1001
@@ -5763,18 +5797,18 @@
     "OutCounts": [
       2
     ],
-    "Description": "这个公式能让你更加高效的生产硫酸.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1413,
-    "GridIndex": 3701,
-    "Name": "铁矿粉",
-    "IconPath": "Assets/texpack/铁矿粉",
     "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 532,
+    "Name": "铜矿粉",
+    "Description": "这个公式能让你更加高效的生产硫酸.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/铜矿粉",
     "Type": 11,
+    "GridIndex": 3702,
+    "PreTech": 1413,
     "Time": 60,
     "Input": [
       1002
@@ -5788,18 +5822,18 @@
     "OutCounts": [
       2
     ],
-    "Description": "这个公式能让你更加高效的生产硫酸.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1413,
-    "GridIndex": 3702,
-    "Name": "铜矿粉",
-    "IconPath": "Assets/texpack/铜矿粉",
     "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 533,
+    "Name": "硅矿粉",
+    "Description": "这个公式能让你更加高效的生产硫酸.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/硅矿粉",
     "Type": 11,
+    "GridIndex": 3703,
+    "PreTech": 1413,
     "Time": 60,
     "Input": [
       1003
@@ -5813,18 +5847,18 @@
     "OutCounts": [
       2
     ],
-    "Description": "这个公式能让你更加高效的生产硫酸.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1413,
-    "GridIndex": 3703,
-    "Name": "硅矿粉",
-    "IconPath": "Assets/texpack/硅矿粉",
     "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 534,
+    "Name": "钛矿粉",
+    "Description": "这个公式能让你更加高效的生产硫酸.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/钛矿粉",
     "Type": 11,
+    "GridIndex": 3704,
+    "PreTech": 1413,
     "Time": 60,
     "Input": [
       1004
@@ -5838,18 +5872,18 @@
     "OutCounts": [
       2
     ],
-    "Description": "这个公式能让你更加高效的生产硫酸.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1413,
-    "GridIndex": 3704,
-    "Name": "钛矿粉",
-    "IconPath": "Assets/texpack/钛矿粉",
     "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 535,
+    "Name": "石粉",
+    "Description": "这个公式能让你更加高效的生产硫酸.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/石粉",
     "Type": 11,
+    "GridIndex": 3705,
+    "PreTech": 1413,
     "Time": 60,
     "Input": [
       1005
@@ -5863,18 +5897,18 @@
     "OutCounts": [
       2
     ],
-    "Description": "这个公式能让你更加高效的生产硫酸.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1413,
-    "GridIndex": 3705,
-    "Name": "石粉",
-    "IconPath": "Assets/texpack/石粉",
     "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 536,
+    "Name": "煤矿粉",
+    "Description": "这个公式能让你更加高效的生产硫酸.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/煤矿粉",
     "Type": 11,
+    "GridIndex": 3706,
+    "PreTech": 1413,
     "Time": 60,
     "Input": [
       1006
@@ -5888,18 +5922,18 @@
     "OutCounts": [
       2
     ],
-    "Description": "这个公式能让你更加高效的生产硫酸.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1413,
-    "GridIndex": 3706,
-    "Name": "煤矿粉",
-    "IconPath": "Assets/texpack/煤矿粉",
     "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 401,
+    "Name": "放射性矿物处理",
+    "Description": "利用氢氧化钠晶体作为催化剂,能够将硅石中含有的放射性物质沉降分离.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/放射性矿物碎块",
     "Type": 11,
+    "GridIndex": 3501,
+    "PreTech": 1816,
     "Time": 240,
     "Input": [
       1003,
@@ -5915,18 +5949,18 @@
     "OutCounts": [
       4
     ],
-    "Description": "利用氢氧化钠晶体作为催化剂,能够将硅石中含有的放射性物质沉降分离.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1816,
-    "GridIndex": 3501,
-    "Name": "放射性矿物处理",
-    "IconPath": "Assets/texpack/放射性矿物碎块",
     "Explicit": true,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 402,
+    "Name": "铀碎块",
+    "Description": "利用氢氧化钠晶体作为催化剂,能够将硅石中含有的放射性物质沉降分离.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/发光铀碎块",
     "Type": 11,
+    "GridIndex": 3502,
+    "PreTech": 1817,
     "Time": 240,
     "Input": [
       6222,
@@ -5942,18 +5976,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "利用氢氧化钠晶体作为催化剂,能够将硅石中含有的放射性物质沉降分离.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1817,
-    "GridIndex": 3502,
-    "Name": "铀碎块",
-    "IconPath": "Assets/texpack/发光铀碎块",
     "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 403,
+    "Name": "钚碎块",
+    "Description": "利用氢氧化钠晶体作为催化剂,能够将硅石中含有的放射性物质沉降分离.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/晶质钚碎块",
     "Type": 11,
+    "GridIndex": 3503,
+    "PreTech": 1817,
     "Time": 240,
     "Input": [
       6222,
@@ -5969,18 +6003,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "利用氢氧化钠晶体作为催化剂,能够将硅石中含有的放射性物质沉降分离.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1817,
-    "GridIndex": 3503,
-    "Name": "钚碎块",
-    "IconPath": "Assets/texpack/晶质钚碎块",
     "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 404,
+    "Name": "铀矿",
+    "Description": "利用氢氧化钠晶体作为催化剂,能够将硅石中含有的放射性物质沉降分离.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/铀矿",
     "Type": 11,
+    "GridIndex": 3504,
+    "PreTech": 1818,
     "Time": 240,
     "Input": [
       6223,
@@ -5996,18 +6030,18 @@
     "OutCounts": [
       2
     ],
-    "Description": "利用氢氧化钠晶体作为催化剂,能够将硅石中含有的放射性物质沉降分离.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1818,
-    "GridIndex": 3504,
-    "Name": "铀矿",
-    "IconPath": "Assets/texpack/铀矿",
     "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 405,
+    "Name": "钚矿",
+    "Description": "利用氢氧化钠晶体作为催化剂,能够将硅石中含有的放射性物质沉降分离.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/钚矿",
     "Type": 11,
+    "GridIndex": 3505,
+    "PreTech": 1818,
     "Time": 240,
     "Input": [
       6224,
@@ -6023,18 +6057,18 @@
     "OutCounts": [
       2
     ],
-    "Description": "利用氢氧化钠晶体作为催化剂,能够将硅石中含有的放射性物质沉降分离.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1818,
-    "GridIndex": 3505,
-    "Name": "钚矿",
-    "IconPath": "Assets/texpack/钚矿",
     "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 406,
+    "Name": "高纯铀块",
+    "Description": "利用氢氧化钠晶体作为催化剂,能够将硅石中含有的放射性物质沉降分离.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/高纯铀块",
     "Type": 11,
+    "GridIndex": 3506,
+    "PreTech": 1819,
     "Time": 120,
     "Input": [
       6225
@@ -6048,18 +6082,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "利用氢氧化钠晶体作为催化剂,能够将硅石中含有的放射性物质沉降分离.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1819,
-    "GridIndex": 3506,
-    "Name": "高纯铀块",
-    "IconPath": "Assets/texpack/高纯铀块",
     "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 407,
+    "Name": "高纯钚块",
+    "Description": "利用氢氧化钠晶体作为催化剂,能够将硅石中含有的放射性物质沉降分离.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/高纯钚块",
     "Type": 11,
+    "GridIndex": 3507,
+    "PreTech": 1819,
     "Time": 120,
     "Input": [
       6226
@@ -6073,18 +6107,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "利用氢氧化钠晶体作为催化剂,能够将硅石中含有的放射性物质沉降分离.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1819,
-    "GridIndex": 3507,
-    "Name": "高纯钚块",
-    "IconPath": "Assets/texpack/高纯钚块",
     "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 408,
+    "Name": "铀燃料棒",
+    "Description": "利用氢氧化钠晶体作为催化剂,能够将硅石中含有的放射性物质沉降分离.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/铀235燃料棒",
     "Type": 4,
+    "GridIndex": 3508,
+    "PreTech": 1820,
     "Time": 120,
     "Input": [
       6509,
@@ -6100,18 +6134,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "利用氢氧化钠晶体作为催化剂,能够将硅石中含有的放射性物质沉降分离.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1820,
-    "GridIndex": 3508,
-    "Name": "铀燃料棒",
-    "IconPath": "Assets/texpack/铀235燃料棒",
     "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 409,
+    "Name": "钚燃料棒",
+    "Description": "利用氢氧化钠晶体作为催化剂,能够将硅石中含有的放射性物质沉降分离.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/钚燃料棒",
     "Type": 4,
+    "GridIndex": 3509,
+    "PreTech": 1820,
     "Time": 120,
     "Input": [
       6509,
@@ -6127,18 +6161,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "利用氢氧化钠晶体作为催化剂,能够将硅石中含有的放射性物质沉降分离.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1820,
-    "GridIndex": 3509,
-    "Name": "钚燃料棒",
-    "IconPath": "Assets/texpack/钚燃料棒",
     "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 411,
+    "Name": "铁矿精炼",
+    "Description": "从原矿中分离的纯净粉可以实现效率更高的生产.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Icons/ItemRecipe/iron-plate",
     "Type": 1,
+    "GridIndex": 3601,
+    "PreTech": 1413,
     "Time": 60,
     "Input": [
       6252
@@ -6152,18 +6186,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "从原矿中分离的纯净粉可以实现效率更高的生产.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1413,
-    "GridIndex": 3601,
-    "Name": "铁矿精炼",
-    "IconPath": "Icons/ItemRecipe/iron-plate",
     "Explicit": true,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 412,
+    "Name": "铜矿精炼",
+    "Description": "从原矿中分离的纯净粉可以实现效率更高的生产.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Icons/ItemRecipe/copper-plate",
     "Type": 1,
+    "GridIndex": 3602,
+    "PreTech": 1413,
     "Time": 60,
     "Input": [
       6253
@@ -6177,18 +6211,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "从原矿中分离的纯净粉可以实现效率更高的生产.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1413,
-    "GridIndex": 3602,
-    "Name": "铜矿精炼",
-    "IconPath": "Icons/ItemRecipe/copper-plate",
     "Explicit": true,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 413,
+    "Name": "硅矿精炼",
+    "Description": "从原矿中分离的纯净粉可以实现效率更高的生产.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Icons/ItemRecipe/silicium-single-crystal",
     "Type": 1,
+    "GridIndex": 3603,
+    "PreTech": 1413,
     "Time": 60,
     "Input": [
       6254
@@ -6202,18 +6236,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "从原矿中分离的纯净粉可以实现效率更高的生产.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1413,
-    "GridIndex": 3603,
-    "Name": "硅矿精炼",
-    "IconPath": "Icons/ItemRecipe/silicium-single-crystal",
     "Explicit": true,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 414,
+    "Name": "钛矿精炼",
+    "Description": "从原矿中分离的纯净粉可以实现效率更高的生产.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Icons/ItemRecipe/titanium-plate",
     "Type": 1,
+    "GridIndex": 3604,
+    "PreTech": 1413,
     "Time": 60,
     "Input": [
       6255
@@ -6227,18 +6261,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "从原矿中分离的纯净粉可以实现效率更高的生产.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1413,
-    "GridIndex": 3604,
-    "Name": "钛矿精炼",
-    "IconPath": "Icons/ItemRecipe/titanium-plate",
     "Explicit": true,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 415,
+    "Name": "混凝土",
+    "Description": "从原矿中分离的纯净粉可以实现效率更高的生产.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/混凝土",
     "Type": 4,
+    "GridIndex": 3605,
+    "PreTech": 1415,
     "Time": 60,
     "Input": [
       1103,
@@ -6258,18 +6292,18 @@
     "OutCounts": [
       2
     ],
-    "Description": "从原矿中分离的纯净粉可以实现效率更高的生产.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1415,
-    "GridIndex": 3605,
-    "Name": "混凝土",
-    "IconPath": "Assets/texpack/混凝土",
     "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 416,
+    "Name": "行星级组装站",
+    "Description": "从原矿中分离的纯净粉可以实现效率更高的生产.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/行星组装站",
     "Type": 10,
+    "GridIndex": 3102,
+    "PreTech": 1823,
     "Time": 18000,
     "Input": [
       6502,
@@ -6291,18 +6325,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "从原矿中分离的纯净粉可以实现效率更高的生产.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1823,
-    "GridIndex": 3102,
-    "Name": "行星级组装站",
-    "IconPath": "Assets/texpack/行星组装站",
     "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 417,
+    "Name": "反物质约束单元",
+    "Description": "从原矿中分离的纯净粉可以实现效率更高的生产.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/反物质约束单元",
     "Type": 10,
+    "GridIndex": 3606,
+    "PreTech": 1145,
     "Time": 1800,
     "Input": [
       1125,
@@ -6322,18 +6356,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "从原矿中分离的纯净粉可以实现效率更高的生产.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1145,
-    "GridIndex": 3606,
-    "Name": "反物质约束单元",
-    "IconPath": "Assets/texpack/反物质约束单元",
     "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 418,
+    "Name": "氦闪约束器1",
+    "Description": "从原矿中分离的纯净粉可以实现效率更高的生产.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/氦闪抑制器",
     "Type": 10,
+    "GridIndex": 3607,
+    "PreTech": 1827,
     "Time": 900,
     "Input": [
       7707,
@@ -6351,18 +6385,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "从原矿中分离的纯净粉可以实现效率更高的生产.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1827,
-    "GridIndex": 3607,
-    "Name": "氦闪约束器1",
-    "IconPath": "Assets/texpack/氦闪抑制器",
     "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 419,
+    "Name": "反物质能量炉1",
+    "Description": "从原矿中分离的纯净粉可以实现效率更高的生产.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/反物质能量炉",
     "Type": 12,
+    "GridIndex": 3608,
+    "PreTech": 1144,
     "Time": 10800,
     "Input": [
       6271,
@@ -6382,18 +6416,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "从原矿中分离的纯净粉可以实现效率更高的生产.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1823,
-    "GridIndex": 3608,
-    "Name": "反物质能量炉1",
-    "IconPath": "Assets/texpack/反物质能量炉",
     "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 420,
+    "Name": "氦元素离心",
+    "Description": "从光栅石中分离氦.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/氦",
     "Type": 2,
+    "GridIndex": 3308,
+    "PreTech": 1821,
     "Time": 240,
     "Input": [
       1014
@@ -6407,18 +6441,18 @@
     "OutCounts": [
       4
     ],
-    "Description": "从光栅石中分离氦.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1821,
-    "GridIndex": 3308,
-    "Name": "氦元素离心",
-    "IconPath": "Assets/texpack/氦",
     "Explicit": true,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 421,
+    "Name": "氦三",
+    "Description": "从光栅石中分离氦.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/氦三",
     "Type": 2,
+    "GridIndex": 3309,
+    "PreTech": 1821,
     "Time": 240,
     "Input": [
       6234
@@ -6432,18 +6466,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "从光栅石中分离氦.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1821,
-    "GridIndex": 3309,
-    "Name": "氦三",
-    "IconPath": "Assets/texpack/氦三",
     "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 422,
+    "Name": "氦三燃料棒",
+    "Description": "从光栅石中分离氦.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/氦三燃料棒",
     "Type": 4,
+    "GridIndex": 3510,
+    "PreTech": 1822,
     "Time": 600,
     "Input": [
       6509,
@@ -6459,18 +6493,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "从光栅石中分离氦.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1822,
-    "GridIndex": 3510,
-    "Name": "氦三燃料棒",
-    "IconPath": "Assets/texpack/氦三燃料棒",
     "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 423,
+    "Name": "氘氦三混合聚变燃料棒",
+    "Description": "从光栅石中分离氦.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/氘氦三混合聚变燃料棒",
     "Type": 4,
+    "GridIndex": 3511,
+    "PreTech": 1822,
     "Time": 600,
     "Input": [
       1802,
@@ -6488,18 +6522,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "从光栅石中分离氦.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1822,
-    "GridIndex": 3511,
-    "Name": "氘氦三混合聚变燃料棒",
-    "IconPath": "Assets/texpack/氘氦三混合聚变燃料棒",
     "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 424,
+    "Name": "无尽材料精炼",
+    "Description": "利用粒子加速器的庞大能量创造全新的材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/三元精金",
     "Type": 13,
+    "GridIndex": 3409,
+    "PreTech": 1829,
     "Time": 3600,
     "Input": [
       1103,
@@ -6517,18 +6551,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "利用粒子加速器的庞大能量创造全新的材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1829,
-    "GridIndex": 3409,
-    "Name": "无尽材料精炼",
-    "IconPath": "Assets/texpack/三元精金",
     "Explicit": true,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 425,
+    "Name": "光子结晶化",
+    "Description": "在高能环境下将光子压缩成固体.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/光子结晶",
     "Type": 13,
+    "GridIndex": 3410,
+    "PreTech": 1829,
     "Time": 3600,
     "Input": [
       1208
@@ -6542,18 +6576,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "在高能环境下将光子压缩成固体.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1829,
-    "GridIndex": 3410,
-    "Name": "光子结晶化",
-    "IconPath": "Assets/texpack/光子结晶",
     "Explicit": true,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 426,
+    "Name": "先驱者晶片",
+    "Description": "异星文明留下的遗产,这份蓝图的价值无可估量.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/紫色先驱者晶片",
     "Type": 12,
+    "GridIndex": 3411,
+    "PreTech": 1830,
     "Time": 5400,
     "Input": [
       6271,
@@ -6571,18 +6605,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "异星文明留下的遗产,这份蓝图的价值无可估量.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1830,
-    "GridIndex": 3411,
-    "Name": "先驱者晶片",
-    "IconPath": "Assets/texpack/紫色先驱者晶片",
     "Explicit": true,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 427,
+    "Name": "精密组装厂",
+    "Description": "利用粒子加速器的庞大能量创造全新的材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/红制造台",
     "Type": 10,
+    "GridIndex": 3609,
+    "PreTech": 1828,
     "Time": 10800,
     "Input": [
       2305,
@@ -6602,18 +6636,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "利用粒子加速器的庞大能量创造全新的材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1828,
-    "GridIndex": 3609,
-    "Name": "精密组装厂",
-    "IconPath": "Assets/texpack/红制造台",
     "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 428,
+    "Name": "回旋加速器",
+    "Description": "利用粒子加速器的庞大能量创造全新的材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Icons/ItemRecipe/hadron-collider",
     "Type": 10,
+    "GridIndex": 3610,
+    "PreTech": 1828,
     "Time": 10800,
     "Input": [
       2310,
@@ -6633,18 +6667,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "利用粒子加速器的庞大能量创造全新的材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1828,
-    "GridIndex": 3610,
-    "Name": "回旋加速器",
-    "IconPath": "Icons/ItemRecipe/hadron-collider",
     "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 429,
+    "Name": "垃圾回收",
+    "Description": "将物质分解成量子尘埃云.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/垃圾回收",
     "Type": 14,
+    "GridIndex": 3611,
+    "PreTech": 1831,
     "Time": 10800,
     "Input": [],
     "InCounts": [],
@@ -6654,18 +6688,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "将物质分解成量子尘埃云.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1831,
-    "GridIndex": 3611,
-    "Name": "垃圾回收",
-    "IconPath": "Assets/texpack/垃圾回收",
     "Explicit": true,
     "Handcraft": false,
     "NonProductive": true
   },
   {
     "ID": 430,
+    "Name": "聚变物质裂解工厂",
+    "Description": "从原矿中分离的纯净粉可以实现效率更高的生产.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/行星熔炉",
     "Type": 10,
+    "GridIndex": 3103,
+    "PreTech": 1824,
     "Time": 18000,
     "Input": [
       6502,
@@ -6687,18 +6721,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "从原矿中分离的纯净粉可以实现效率更高的生产.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1824,
-    "GridIndex": 3103,
-    "Name": "聚变物质裂解工厂",
-    "IconPath": "Assets/texpack/行星熔炉",
     "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 431,
+    "Name": "巨型化学反应釜",
+    "Description": "从原矿中分离的纯净粉可以实现效率更高的生产.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/行星化工厂",
     "Type": 10,
+    "GridIndex": 3104,
+    "PreTech": 1825,
     "Time": 18000,
     "Input": [
       6502,
@@ -6720,18 +6754,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "从原矿中分离的纯净粉可以实现效率更高的生产.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1825,
-    "GridIndex": 3104,
-    "Name": "巨型化学反应釜",
-    "IconPath": "Assets/texpack/行星化工厂",
     "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 432,
+    "Name": "大型精密组装厂",
+    "Description": "从原矿中分离的纯净粉可以实现效率更高的生产.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/行星精密组装厂",
     "Type": 10,
+    "GridIndex": 3105,
+    "PreTech": 1826,
     "Time": 18000,
     "Input": [
       6503,
@@ -6753,18 +6787,18 @@
     "OutCounts": [
       1
     ],
-    "Description": "从原矿中分离的纯净粉可以实现效率更高的生产.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1826,
-    "GridIndex": 3105,
-    "Name": "大型精密组装厂",
-    "IconPath": "Assets/texpack/行星精密组装厂",
     "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 433,
+    "Name": "物质分解设施",
+    "Description": "从原矿中分离的纯净粉可以实现效率更高的生产.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/回收塔",
     "Type": 10,
+    "GridIndex": 3106,
+    "PreTech": 1831,
     "Time": 7200,
     "Input": [
       6502,
@@ -6786,11 +6820,6 @@
     "OutCounts": [
       1
     ],
-    "Description": "从原矿中分离的纯净粉可以实现效率更高的生产.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "PreTech": 1831,
-    "GridIndex": 3106,
-    "Name": "物质分解设施",
-    "IconPath": "Assets/texpack/回收塔",
     "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
