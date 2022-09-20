@@ -9446,8 +9446,8 @@
     },
     {
         "ID": 6257,
-        "Name": "行星级装配站",
-        "Description": "大型组装工厂.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+        "Name": "天穹装配厂",
+        "Description": "一座规模庞大的巨型工厂,包括大量的加工单元,高速运输轨道和精密机械臂.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
         "IconPath": "Assets/texpack/行星组装站",
         "GridIndex": 4707,
         "StackSize": 10,
@@ -9486,8 +9486,8 @@
     },
     {
         "ID": 6258,
-        "Name": "聚变物质裂解工厂",
-        "Description": "使用裂解光束对原矿进行加工熔炼的大型工厂,拥有极高的效率.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+        "Name": "物质裂解塔",
+        "Description": "使用裂解光束对基础矿物进行加工熔炼的大型工厂,高功率裂解光束能够以极高的效率处理矿物.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
         "IconPath": "Assets/texpack/行星熔炉",
         "GridIndex": 4708,
         "StackSize": 10,
@@ -9527,7 +9527,7 @@
     {
         "ID": 6259,
         "Name": "巨型化学反应釜",
-        "Description": "大型化工厂.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+        "Description": "一座大型化工厂,当你置身其中,犹如进入了一片管道森林.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
         "IconPath": "Assets/texpack/行星化工厂",
         "GridIndex": 4709,
         "StackSize": 10,
@@ -9566,8 +9566,8 @@
     },
     {
         "ID": 6260,
-        "Name": "大型精密组装厂",
-        "Description": "....我实在编不出介绍了=_=.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+        "Name": "精密结构组装厂",
+        "Description": "这座工厂将精密装配线进行大规模集成以提升运转效率.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
         "IconPath": "Assets/texpack/行星精密组装厂",
         "GridIndex": 4710,
         "StackSize": 10,
@@ -9607,7 +9607,7 @@
     {
         "ID": 6264,
         "Name": "大型垃圾回收设施",
-        "Description": "....我实在编不出介绍了=_=.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+        "Description": "有些人管这叫做浪费.\n我们称之为高效.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
         "IconPath": "Assets/texpack/回收塔",
         "GridIndex": 4712,
         "StackSize": 10,
