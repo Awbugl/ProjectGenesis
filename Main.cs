@@ -66,7 +66,6 @@ namespace ProjectGenesis
 
             var TankModel = CopyModelProto(121, 301, Color.HSVToRGB(0.5571f, 0.3188f, 0.8980f));
             LDBTool.PreAddProto(TankModel);
-
             var OreFactoryModel = CopyModelProto(194, 302, Color.HSVToRGB(0.2035f, 0.8326f, 0.9373f));
             LDBTool.PreAddProto(OreFactoryModel);
 
@@ -78,12 +77,17 @@ namespace ProjectGenesis
             LDBTool.PreAddProto(TestCraftingTableModel3);
             var TestCraftingTableModel4 = CopyModelProto(49, 306, Color.HSVToRGB(0.9814f, 0.6620f, 0.8471f));
             LDBTool.PreAddProto(TestCraftingTableModel4);
+            
             var AntiMatterModel = CopyModelProto(118, 307, Color.HSVToRGB(0.5985f, 0.7333f, 0.2353f));
             LDBTool.PreAddProto(AntiMatterModel);
             var AssembleModel = CopyModelProto(67, 308, Color.HSVToRGB(0.9688f, 0.9068f, 0.9255f));
             LDBTool.PreAddProto(AssembleModel);
             var CircleModel = CopyModelProto(69, 309, Color.grey);
             LDBTool.PreAddProto(CircleModel);
+            
+            var TestCraftingTableModel5 = CopyModelProto(49, 310, Color.grey);
+            LDBTool.PreAddProto(TestCraftingTableModel5);
+
 
             #endregion
 
@@ -205,7 +209,6 @@ namespace ProjectGenesis
                     proto.NonProductive = recipeJson.NonProductive;
                 }
             }
-
             #endregion
         }
 
@@ -243,7 +246,6 @@ namespace ProjectGenesis
         private void PostFix(ItemProtoSet itemProtos)
         {
             LDB.items.OnAfterDeserialize();
-
 
             itemProtos.Select(物品.二级制造台).prefabDesc.assemblerRecipeType = (global::ERecipeType)ERecipeType.电路蚀刻;
             itemProtos.Select(物品.三级制造台).prefabDesc.assemblerRecipeType = (global::ERecipeType)ERecipeType.高精度加工;
@@ -322,6 +324,9 @@ namespace ProjectGenesis
             itemProtos.Select(6276).prefabDesc.idleEnergyPerTick = 200000;
             itemProtos.Select(6276).prefabDesc.assemblerSpeed = 1000;
             itemProtos.Select(6276).prefabDesc.assemblerRecipeType = (global::ERecipeType)ERecipeType.聚变生产;
+            
+            itemProtos.Select(6264).prefabDesc.assemblerRecipeType = (global::ERecipeType)ERecipeType.Smelt;
+            
             LDBTool.SetBuildBar(4, 4, 6229);
 
             //矿场修复
@@ -346,7 +351,9 @@ namespace ProjectGenesis
             var TestCraftingTableModel3 = LDB.models.Select(305);
             var TestCraftingTableModel4 = LDB.models.Select(306);
             var AntiMatterModel = LDB.models.Select(307);
-            //TestCraftingTableModel.Preload();
+            
+            var TestCraftingTableModel5 = LDB.models.Select(310);
+            
             TestCraftingTableModel.prefabDesc.isAssembler = true;
             TestCraftingTableModel.prefabDesc.assemblerRecipeType = (global::ERecipeType)ERecipeType.Assemble;
             TestCraftingTableModel.prefabDesc.assemblerSpeed = 400000;
@@ -372,6 +379,7 @@ namespace ProjectGenesis
             TestCraftingTableModel2.prefabDesc.stationMaxShipCount = 0;
             TestCraftingTableModel2.prefabDesc.idleEnergyPerTick = 100000;
             TestCraftingTableModel2.prefabDesc.workEnergyPerTick = 500000;
+            
             TestCraftingTableModel3.prefabDesc.isAssembler = true;
             TestCraftingTableModel3.prefabDesc.assemblerRecipeType = (global::ERecipeType)ERecipeType.Chemical;
             TestCraftingTableModel3.prefabDesc.assemblerSpeed = 400000;
@@ -384,6 +392,7 @@ namespace ProjectGenesis
             TestCraftingTableModel3.prefabDesc.stationMaxShipCount = 0;
             TestCraftingTableModel3.prefabDesc.idleEnergyPerTick = 100000;
             TestCraftingTableModel3.prefabDesc.workEnergyPerTick = 500000;
+            
             TestCraftingTableModel4.prefabDesc.isAssembler = true;
             TestCraftingTableModel4.prefabDesc.assemblerRecipeType = (global::ERecipeType)ERecipeType.高精度加工;
             TestCraftingTableModel4.prefabDesc.assemblerSpeed = 400000;
@@ -396,6 +405,19 @@ namespace ProjectGenesis
             TestCraftingTableModel4.prefabDesc.stationMaxShipCount = 0;
             TestCraftingTableModel4.prefabDesc.idleEnergyPerTick = 100000;
             TestCraftingTableModel4.prefabDesc.workEnergyPerTick = 500000;
+            
+            TestCraftingTableModel5.prefabDesc.isAssembler = true;
+            TestCraftingTableModel5.prefabDesc.assemblerRecipeType = (global::ERecipeType)ERecipeType.Smelt;
+            TestCraftingTableModel5.prefabDesc.assemblerSpeed = 400000;
+            TestCraftingTableModel5.prefabDesc.isStation = false;
+            TestCraftingTableModel5.prefabDesc.isStellarStation = false;
+            TestCraftingTableModel5.prefabDesc.stationMaxDroneCount = 0;
+            TestCraftingTableModel5.prefabDesc.stationMaxEnergyAcc = 0;
+            TestCraftingTableModel5.prefabDesc.stationMaxItemCount = 0;
+            TestCraftingTableModel5.prefabDesc.stationMaxItemKinds = 0;
+            TestCraftingTableModel5.prefabDesc.stationMaxShipCount = 0;
+            TestCraftingTableModel5.prefabDesc.idleEnergyPerTick = 100000;
+            TestCraftingTableModel5.prefabDesc.workEnergyPerTick = 500000;
 
             LDB.items.Select(2211).prefabDesc.fuelMask = 5;
             LDB.items.Select(2210).prefabDesc.fuelMask = 6;

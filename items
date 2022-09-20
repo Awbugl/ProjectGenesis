@@ -10099,6 +10099,48 @@
     "MechaMaterialID": 0
   },
   {
+    "ID": 6264,
+    "Name": "大型垃圾回收设施",
+    "Description": "....我实在编不出介绍了=_=.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/行星精密组装厂",
+    "GridIndex": 4712,
+    "StackSize": 10,
+    "PreTech": 1826,
+    "FuelType": 0,
+    "HeatValue": 0,
+    "ReactorInc": 0,
+    "DescFields": [
+      22,
+      11,
+      12,
+      1,
+      40
+    ],
+    "IsFluid": false,
+    "Type": 2,
+    "SubID": 0,
+    "MiningFrom": null,
+    "ProduceFrom": null,
+    "Grade": 0,
+    "Upgrades": [
+ 
+    ],
+    "IsEntity": true,
+    "CanBuild": true,
+    "BuildInGas": false,
+    "ModelIndex": 310,
+    "ModelCount": 1,
+    "HpMax": 0,
+    "Ability": 0,
+    "Potential": 0,
+    "BuildIndex": 409,
+    "BuildMode": 1,
+    "UnlockKey": 0,
+    "PreTechOverride": 0,
+    "Productive": true,
+    "MechaMaterialID": 0
+  },
+  {
     "ID": 6261,
     "Name": "反物质能量炉",
     "Description": "掌控质能.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",

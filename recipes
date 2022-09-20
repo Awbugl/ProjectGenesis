@@ -6641,5 +6641,30 @@
     "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
+  },
+  {
+    "ID": 429,
+    "Type": 1,
+    "Time": 10800,
+    "Input": [  
+    1116  
+    ],
+    "InCounts": [  
+    2  
+    ],
+    "Output": [
+    1116
+    ],
+    "OutCounts": [
+    1
+    ],
+    "Description": "利用粒子加速器的庞大能量创造全新的材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "PreTech": 1828,
+    "GridIndex": 3611,
+    "Name": "垃圾回收",
+    "IconPath": "Assets/texpack/行星组装站",
+    "Explicit": true,
+    "Handcraft": false,
+    "NonProductive": false
   }
 ]

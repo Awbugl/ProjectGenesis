@@ -8,6 +8,7 @@ using System.Reflection.Emit;
 using HarmonyLib;
 using UnityEngine;
 using UnityEngine.UI;
+using ERecipeType_1 = ERecipeType;
 using Object = UnityEngine.Object;
 
 // ReSharper disable InconsistentNaming
@@ -266,7 +267,7 @@ namespace ProjectGenesis.Patches
 
                 var stationPilerLevel = GameMain.history.stationPilerLevel;
 
-                UpdateInputSlots(ref __instance, cargoTraffic, slotdata, entitySignPool);
+                UpdateInputSlots(ref __instance, factory, cargoTraffic, slotdata, entitySignPool);
                 UpdateOutputSlots(ref __instance, cargoTraffic, slotdata, entitySignPool, stationPilerLevel);
             }
         }
@@ -320,6 +321,7 @@ namespace ProjectGenesis.Patches
 
         private static void UpdateInputSlots(
             ref AssemblerComponent __instance,
+            PlanetFactory factory,
             CargoTraffic traffic,
             SlotData[] slotdata,
             SignData[] signPool)
@@ -338,21 +340,39 @@ namespace ProjectGenesis.Patches
                         var cargoPath = traffic.GetCargoPath(traffic.beltPool[slotdata[index].beltId].segPathId);
                         if (cargoPath != null)
                         {
-                            var itemId = cargoPath.TryPickItemAtRear(__instance.needs, out var needIdx, out var stack, out var inc);
-                            if (needIdx >= 0)
+                            if (__instance.recipeId == 429)
                             {
-                                if (itemId > 0 && __instance.needs[needIdx] == itemId)
-                                {
-                                    __instance.served[needIdx] += stack;
-                                    __instance.incServed[needIdx] += inc;
-                                }
+                                var consumeRegister = GameMain.statistics.production.factoryStatPool[factory.index].consumeRegister;
+                                var itemId = factory.cargoTraffic.TryPickItemAtRear(slotdata[index].beltId, 0, null, out var stack, out _);
 
-                                // slotdata[index].storageIdx = __instance.products.Length + needIdx + 1;
+                                if (itemId > 0)
+                                {
+                                    lock (consumeRegister)
+                                    {
+                                        consumeRegister[itemId] += stack;
+                                    }
+
+                                    GameMain.mainPlayer.SetSandCount(GameMain.mainPlayer.sandCount + stack * 1000);
+                                }
                             }
-                            else if (itemId > 0)
+                            else
                             {
-                                signPool[entityId].iconType = 1U;
-                                signPool[entityId].iconId0 = (uint)itemId;
+                                var itemId = cargoPath.TryPickItemAtRear(__instance.needs, out var needIdx, out var stack, out var inc);
+                                if (needIdx >= 0)
+                                {
+                                    if (itemId > 0 && __instance.needs[needIdx] == itemId)
+                                    {
+                                        __instance.served[needIdx] += stack;
+                                        __instance.incServed[needIdx] += inc;
+                                    }
+
+                                    // slotdata[index].storageIdx = __instance.products.Length + needIdx + 1;
+                                }
+                                else if (itemId > 0)
+                                {
+                                    signPool[entityId].iconType = 1U;
+                                    signPool[entityId].iconId0 = (uint)itemId;
+                                }
                             }
                         }
                     }
