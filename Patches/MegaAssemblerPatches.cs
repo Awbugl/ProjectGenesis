@@ -64,7 +64,6 @@ namespace ProjectGenesis.Patches
         {
             if (speed >= TrashSpeed)
             {
-                if (speed == TrashSpeed) __instance.assemblerPool[__result].SetRecipe(429, __instance.factory.entitySignPool);
                 _entityId2planetId[entityId] = __instance.planet.id;
                 __instance.factory.entityPool[entityId].stationId = 0;
             }

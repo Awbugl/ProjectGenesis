@@ -717,7 +717,7 @@
         "AddItems": [],
         "AddItemCounts": [],
         "Position": [
-            25.0,
+            21.0,
             -27.0
         ]
     },
@@ -757,7 +757,7 @@
         "AddItems": [],
         "AddItemCounts": [],
         "Position": [
-            29.0,
+            25.0,
             -27.0
         ]
     },
@@ -2576,7 +2576,8 @@
         "HashNeeded": 72000,
         "UnlockRecipes": [
             92,
-            90
+            90,
+            120
         ],
         "UnlockFunctions": [],
         "UnlockValues": [],

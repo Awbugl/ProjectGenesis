@@ -2803,7 +2803,7 @@
     },
     {
         "ID": 1143,
-        "Name": "增产剂 Mk.III",
+        "Name": "增产剂",
         "Description": "I增产剂 Mk.III",
         "IconPath": "Icons/ItemRecipe/accelerator-3",
         "GridIndex": 1606,
