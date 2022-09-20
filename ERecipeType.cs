@@ -16,6 +16,7 @@ namespace ProjectGenesis
         矿物处理 = 11,
         精密组装 = 12,
         聚变生产 = 13,
+        垃圾回收 = 14,
         Research = 15
     }
 }

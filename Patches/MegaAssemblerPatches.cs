@@ -17,6 +17,9 @@ namespace ProjectGenesis.Patches
 {
     internal static class MegaAssemblerPatches
     {
+        internal const int TrashSpeed = 60000;
+        internal const int MegaAssemblerSpeed = 400000;
+
         #region Internal Fields & Functions
 
         private static ConcurrentDictionary<int, SlotData[]> _slotdata = new ConcurrentDictionary<int, SlotData[]>();
@@ -26,7 +29,6 @@ namespace ProjectGenesis.Patches
         private static SlotData[] GetSlots(int entityId)
         {
             if (!_slotdata.ContainsKey(entityId) || _slotdata[entityId] == null) _slotdata[entityId] = new SlotData[12];
-
             return _slotdata[entityId];
         }
 
@@ -54,10 +56,15 @@ namespace ProjectGenesis.Patches
 
         [HarmonyPostfix]
         [HarmonyPatch(typeof(FactorySystem), "NewAssemblerComponent")]
-        public static void FactorySystem_NewAssemblerComponent(ref FactorySystem __instance, int entityId, int speed)
+        public static void FactorySystem_NewAssemblerComponent(
+            ref FactorySystem __instance,
+            ref int __result,
+            int entityId,
+            int speed)
         {
-            if (speed > 100000)
+            if (speed >= TrashSpeed)
             {
+                if (speed == TrashSpeed) __instance.assemblerPool[__result].SetRecipe(429, __instance.factory.entitySignPool);
                 _entityId2planetId[entityId] = __instance.planet.id;
                 __instance.factory.entityPool[entityId].stationId = 0;
             }
@@ -79,7 +86,7 @@ namespace ProjectGenesis.Patches
             {
                 var assembler = factory.factorySystem.assemblerPool[assemblerId];
                 if (parameters != null && parameters.Length >= 1) assembler.forceAccMode = parameters[0] > 0;
-                if (assembler.id == assemblerId && assembler.speed > 100000)
+                if (assembler.id == assemblerId && assembler.speed >= TrashSpeed)
                     if (parameters != null && parameters.Length >= 2048)
                     {
                         SlotData[] slots = GetSlots(entityId);
@@ -134,7 +141,7 @@ namespace ProjectGenesis.Patches
                 if (assemblerId > 0)
                 {
                     var assembler = factory.factorySystem.assemblerPool[assemblerId];
-                    if (assembler.id == assemblerId && assembler.speed > 100000)
+                    if (assembler.id == assemblerId && assembler.speed >= TrashSpeed)
                     {
                         var par0 = __instance.parameters[0];
 
@@ -169,7 +176,7 @@ namespace ProjectGenesis.Patches
             if (assemblerId > 0)
             {
                 var assembler = __instance.factorySystem.assemblerPool[assemblerId];
-                if (assembler.id == assemblerId && assembler.speed > 100000)
+                if (assembler.id == assemblerId && assembler.speed >= TrashSpeed)
                 {
                     var beltId = __instance.entityPool[insertTarget].beltId;
                     if (beltId <= 0) return;
@@ -195,7 +202,7 @@ namespace ProjectGenesis.Patches
             if (assemblerId > 0)
             {
                 var assembler = __instance.factorySystem.assemblerPool[assemblerId];
-                if (assembler.id == assemblerId && assembler.speed > 100000)
+                if (assembler.id == assemblerId && assembler.speed >= TrashSpeed)
                 {
                     var beltId = __instance.entityPool[pickTarget].beltId;
                     if (beltId <= 0) return;
@@ -222,7 +229,7 @@ namespace ProjectGenesis.Patches
             if (assemblerId > 0)
             {
                 var assembler = __instance.factorySystem.assemblerPool[assemblerId];
-                if (assembler.id == assemblerId && assembler.speed > 100000)
+                if (assembler.id == assemblerId && assembler.speed >= TrashSpeed)
                 {
                     var beltId = __instance.entityPool[removingEntityId].beltId;
                     if (beltId <= 0) return;
@@ -241,7 +248,7 @@ namespace ProjectGenesis.Patches
         public static bool AssemblerComponent_UpdateNeeds(ref AssemblerComponent __instance)
         {
             var length = __instance.requires.Length;
-            var cache = __instance.speed > 100000 ? 10 : 3;
+            var cache = __instance.speed >= TrashSpeed ? 10 : 3;
             for (var i = 0; i < length; ++i)
                 __instance.needs[i] = __instance.served[i] < __instance.requireCounts[i] * cache ? __instance.requires[i] : 0;
             return false;
@@ -257,7 +264,7 @@ namespace ProjectGenesis.Patches
         {
             if (power < 0.1f) return;
 
-            if (__instance.speed > 100000)
+            if (__instance.speed >= TrashSpeed)
             {
                 var factory = GetPlanetFactory(__instance.entityId);
                 SlotData[] slotdata = GetSlots(__instance.entityId);
@@ -365,8 +372,6 @@ namespace ProjectGenesis.Patches
                                         __instance.served[needIdx] += stack;
                                         __instance.incServed[needIdx] += inc;
                                     }
-
-                                    // slotdata[index].storageIdx = __instance.products.Length + needIdx + 1;
                                 }
                                 else if (itemId > 0)
                                 {
@@ -436,7 +441,7 @@ namespace ProjectGenesis.Patches
                     {
                         var assemblerComponent = factory.factorySystem.assemblerPool[entityData.assemblerId];
 
-                        if (assemblerComponent.speed > 100000)
+                        if (assemblerComponent.speed >= TrashSpeed)
                         {
                             var assemblerComponentProducts = assemblerComponent.products;
                             if (assemblerComponentProducts != null && assemblerComponentProducts.Length > 0)
@@ -539,7 +544,7 @@ namespace ProjectGenesis.Patches
                 {
                     var assemblerComponent = factory.factorySystem.assemblerPool[entityData.assemblerId];
 
-                    if (assemblerComponent.speed > 100000)
+                    if (assemblerComponent.speed >= TrashSpeed)
                     {
                         GetSlots(__instance.outputEntityId)[__instance.outputSlotId].storageIdx = __instance.selectedIndex;
                         if (entityData.stationId > 0) entityData.stationId = 0;
@@ -618,7 +623,7 @@ namespace ProjectGenesis.Patches
                     {
                         var assemblerComponent = factory.factorySystem.assemblerPool[entityData.assemblerId];
 
-                        if (assemblerComponent.speed > 100000)
+                        if (assemblerComponent.speed >= TrashSpeed)
                         {
                             var assemblerComponentProducts = assemblerComponent.products;
                             if (assemblerComponentProducts != null && assemblerComponentProducts.Length > 0)
@@ -739,7 +744,7 @@ namespace ProjectGenesis.Patches
                 {
                     var assemblerComponent = factory.factorySystem.assemblerPool[entityData.assemblerId];
 
-                    if (assemblerComponent.speed > 100000)
+                    if (assemblerComponent.speed >= TrashSpeed)
                     {
                         GetSlots(__instance.outputEntityId)[__instance.outputSlotId].storageIdx = __instance.selectedIndex;
                         if (entityData.stationId > 0) entityData.stationId = 0;
