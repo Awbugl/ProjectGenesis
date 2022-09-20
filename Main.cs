@@ -1,5 +1,6 @@
 using System;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 using BepInEx;
 using BepInEx.Logging;
@@ -448,7 +449,12 @@ namespace ProjectGenesis
 
             for (var i = 0; i < LDB.recipes.dataArray.Length; ++i) LDB.recipes.dataArray[i].Preload(i);
 
-            foreach (var proto in LDB.techs.dataArray) proto.Preload2();
+            foreach (var proto in LDB.techs.dataArray)
+            {
+                proto.PreTechsImplicit = proto.PreTechsImplicit.Except(proto.PreTechs).ToArray();
+                proto.UnlockRecipes = proto.UnlockRecipes.Distinct().ToArray();
+                proto.Preload2();
+            }
 
             PostFix(LDB.items);
 
@@ -469,6 +475,8 @@ namespace ProjectGenesis
                 else
                     StorageComponent.itemStackCount[proto.ID] = proto.StackSize;
             }
+            
+            // JsonHelper.ExportAsJson(@"C:\Git\ProjectGenesis");
         }
 
         private static ModelProto CopyModelProto(int oriId, int id, Color color)

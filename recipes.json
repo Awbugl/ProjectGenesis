@@ -689,7 +689,7 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 2805,
-    "PreTech": 1123,
+    "PreTech": 0,
     "Time": 240,
     "Input": [
       1117,
@@ -1841,7 +1841,7 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 2809,
-    "PreTech": 1502,
+    "PreTech": 0,
     "Time": 180,
     "Input": [
       1111,
@@ -1868,7 +1868,7 @@
     "IconPath": "Icons/ItemRecipe/photo-shifter-lv2",
     "Type": 4,
     "GridIndex": 2810,
-    "PreTech": 1502,
+    "PreTech": 0,
     "Time": 180,
     "Input": [
       1014,
@@ -2712,7 +2712,7 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 2806,
-    "PreTech": 1703,
+    "PreTech": 0,
     "Time": 240,
     "Input": [
       1204,
@@ -2741,7 +2741,7 @@
     "IconPath": "Icons/ItemRecipe/partical-capacitor-lv2",
     "Type": 4,
     "GridIndex": 2807,
-    "PreTech": 1703,
+    "PreTech": 0,
     "Time": 240,
     "Input": [
       1016,
@@ -2901,7 +2901,7 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 2814,
-    "PreTech": 1152,
+    "PreTech": 0,
     "Time": 60,
     "Input": [
       1141,
@@ -2986,7 +2986,7 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 2802,
-    "PreTech": 1134,
+    "PreTech": 0,
     "Time": 180,
     "Input": [
       1103,
@@ -3133,7 +3133,7 @@
     "IconPath": "Icons/ItemRecipe/deuterium-formula",
     "Type": 8,
     "GridIndex": 2811,
-    "PreTech": 1134,
+    "PreTech": 0,
     "Time": 1,
     "Input": [
       1120
@@ -3216,7 +3216,7 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 2908,
-    "PreTech": 1513,
+    "PreTech": 0,
     "Time": 360,
     "Input": [
       2204,

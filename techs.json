@@ -44,9 +44,7 @@
     "PreTechs": [
       1
     ],
-    "PreTechsImplicit": [
-      1
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       7823
     ],
@@ -100,9 +98,7 @@
     "PreTechs": [
       1001
     ],
-    "PreTechsImplicit": [
-      1001
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       7823,
       1301
@@ -151,8 +147,7 @@
     "PreTechs": [
       1001
     ],
-    "PreTechsImplicit": [
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001
     ],
@@ -196,8 +191,7 @@
     "PreTechs": [
       1101
     ],
-    "PreTechsImplicit": [
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001
     ],
@@ -320,9 +314,7 @@
     "PreTechs": [
       1002
     ],
-    "PreTechsImplicit": [
-      1002
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001
     ],
@@ -584,8 +576,7 @@
     "PreTechs": [
       1121
     ],
-    "PreTechsImplicit": [
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002
@@ -625,15 +616,13 @@
     "Desc": "先驱者文明的遗产.",
     "Conclusion": "",
     "Position": [
-      53.0,
+      49.0,
       -19.0
     ],
     "PreTechs": [
-      1828
+      1152
     ],
-    "PreTechsImplicit": [
-      1828
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -679,9 +668,7 @@
     "PreTechs": [
       1111
     ],
-    "PreTechsImplicit": [
-      1111
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002
@@ -806,8 +793,7 @@
     "PreTechs": [
       1122
     ],
-    "PreTechsImplicit": [
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001
     ],
@@ -846,8 +832,7 @@
     "PreTechs": [
       1131
     ],
-    "PreTechsImplicit": [
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6002,
       6003
@@ -926,15 +911,13 @@
     "Desc": "传统材料已经无法满足需求...",
     "Conclusion": "",
     "Position": [
-      53.0,
+      49.0,
       -15.0
     ],
     "PreTechs": [
-      1828
+      1152
     ],
-    "PreTechsImplicit": [
-      1828
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -981,8 +964,7 @@
     "PreTechs": [
       1125
     ],
-    "PreTechsImplicit": [
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -1018,15 +1000,13 @@
     "Desc": "微型粒子对撞机描述",
     "Conclusion": "微型粒子对撞机结果",
     "Position": [
-      45.0,
+      37.0,
       -11.0
     ],
     "PreTechs": [
       1503
     ],
-    "PreTechsImplicit": [
-      1503
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -1069,8 +1049,7 @@
     "PreTechs": [
       1125
     ],
-    "PreTechsImplicit": [
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -1107,15 +1086,13 @@
     "Desc": "人造恒星描述",
     "Conclusion": "人造恒星结果",
     "Position": [
-      53.0,
+      49.0,
       -27.0
     ],
     "PreTechs": [
-      1828
+      1152
     ],
-    "PreTechsImplicit": [
-      1828
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -1157,15 +1134,13 @@
     "Desc": "可控湮灭反应描述",
     "Conclusion": "可控湮灭反应结果",
     "Position": [
-      49.0,
+      41.0,
       -7.0
     ],
     "PreTechs": [
       1506
     ],
-    "PreTechsImplicit": [
-      1506
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6002,
       6005
@@ -1206,9 +1181,7 @@
     "PreTechs": [
       1803
     ],
-    "PreTechsImplicit": [
-      1803
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -1247,10 +1220,12 @@
     "Desc": "欢迎来到地狱....",
     "Conclusion": "",
     "Position": [
-      49.0,
+      45.0,
       -23.0
     ],
-    "PreTechs": [],
+    "PreTechs": [
+      1508
+    ],
     "PreTechsImplicit": [],
     "Items": [
       6001,
@@ -1566,8 +1541,7 @@
     "PreTechs": [
       1704
     ],
-    "PreTechsImplicit": [
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -1652,8 +1626,7 @@
     "PreTechs": [
       1124
     ],
-    "PreTechsImplicit": [
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002
@@ -1693,9 +1666,7 @@
     "PreTechs": [
       1801
     ],
-    "PreTechsImplicit": [
-      1801
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       7823,
       1301
@@ -2172,8 +2143,7 @@
     "PreTechs": [
       1120
     ],
-    "PreTechsImplicit": [
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -2207,15 +2177,13 @@
     "Desc": "太阳帆轨道系统描述",
     "Conclusion": "太阳帆轨道系统结果",
     "Position": [
-      25.0,
+      33.0,
       1.0
     ],
     "PreTechs": [
       1501
     ],
-    "PreTechsImplicit": [
-      1501
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002
@@ -2250,15 +2218,13 @@
     "Desc": "射线接收站描述",
     "Conclusion": "射线接收站结果",
     "Position": [
-      45.0,
+      37.0,
       -3.0
     ],
     "PreTechs": [
       1503
     ],
-    "PreTechsImplicit": [
-      1503
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002
@@ -2292,15 +2258,13 @@
     "Desc": "行星电离层利用描述",
     "Conclusion": "行星电离层利用结果",
     "Position": [
-      53.0,
+      41.0,
       -3.0
     ],
     "PreTechs": [
       1504
     ],
-    "PreTechsImplicit": [
-      1504
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -2340,15 +2304,13 @@
     "Desc": "狄拉克逆变机制描述",
     "Conclusion": "狄拉克逆变机制结果",
     "Position": [
-      45.0,
+      37.0,
       -7.0
     ],
     "PreTechs": [
       1503
     ],
-    "PreTechsImplicit": [
-      1503
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -2396,8 +2358,7 @@
     "PreTechs": [
       1705
     ],
-    "PreTechsImplicit": [
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -2437,15 +2398,13 @@
     "Desc": "任务完成描述",
     "Conclusion": "任务完成结果",
     "Position": [
-      57.0,
+      45.0,
       1.0
     ],
     "PreTechs": [
       1522
     ],
-    "PreTechsImplicit": [
-      1522
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6006
     ],
@@ -2652,15 +2611,13 @@
     "Desc": "垂直发射井描述",
     "Conclusion": "垂直发射井结果",
     "Position": [
-      45.0,
+      37.0,
       1.0
     ],
     "PreTechs": [
       1503
     ],
-    "PreTechsImplicit": [
-      1503
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -2699,15 +2656,13 @@
     "Desc": "戴森球应力系统描述",
     "Conclusion": "戴森球应力系统结果",
     "Position": [
-      45.0,
+      37.0,
       5.0
     ],
     "PreTechs": [
       1503
     ],
-    "PreTechsImplicit": [
-      1503
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -2755,9 +2710,7 @@
     "PreTechs": [
       1607
     ],
-    "PreTechsImplicit": [
-      1607
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       1301,
       1201
@@ -2809,9 +2762,7 @@
     "PreTechs": [
       1601
     ],
-    "PreTechsImplicit": [
-      1601
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001
     ],
@@ -2859,9 +2810,7 @@
     "PreTechs": [
       1602
     ],
-    "PreTechsImplicit": [
-      1602
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002
@@ -2903,9 +2852,7 @@
     "PreTechs": [
       1801
     ],
-    "PreTechsImplicit": [
-      1801
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002
@@ -2946,9 +2893,7 @@
     "PreTechs": [
       1604
     ],
-    "PreTechsImplicit": [
-      1604
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -2991,9 +2936,7 @@
     "PreTechs": [
       1605
     ],
-    "PreTechsImplicit": [
-      1605
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -3035,9 +2978,7 @@
     "PreTechs": [
       1001
     ],
-    "PreTechsImplicit": [
-      1001
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       1301
     ],
@@ -3154,8 +3095,7 @@
     "PreTechs": [
       1502
     ],
-    "PreTechsImplicit": [
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -3197,8 +3137,7 @@
     "PreTechs": [
       1143
     ],
-    "PreTechsImplicit": [
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -3241,8 +3180,7 @@
     "PreTechs": [
       1312
     ],
-    "PreTechsImplicit": [
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -3289,8 +3227,7 @@
     "PreTechs": [
       1113
     ],
-    "PreTechsImplicit": [
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002
@@ -3324,15 +3261,13 @@
     "Desc": "卫星配电系统描述",
     "Conclusion": "卫星配电系统结果",
     "Position": [
-      53.0,
+      49.0,
       -23.0
     ],
     "PreTechs": [
-      1828
+      1152
     ],
-    "PreTechsImplicit": [
-      1828
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -3422,9 +3357,7 @@
     "PreTechs": [
       2101
     ],
-    "PreTechsImplicit": [
-      2101
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002
@@ -3466,9 +3399,7 @@
     "PreTechs": [
       2102
     ],
-    "PreTechsImplicit": [
-      2102
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -3512,9 +3443,7 @@
     "PreTechs": [
       2103
     ],
-    "PreTechsImplicit": [
-      2103
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -3560,9 +3489,7 @@
     "PreTechs": [
       2104
     ],
-    "PreTechsImplicit": [
-      2104
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -3610,9 +3537,7 @@
     "PreTechs": [
       2105
     ],
-    "PreTechsImplicit": [
-      2105
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6006
     ],
@@ -3694,9 +3619,7 @@
     "PreTechs": [
       2201
     ],
-    "PreTechsImplicit": [
-      2201
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002
@@ -3738,9 +3661,7 @@
     "PreTechs": [
       2202
     ],
-    "PreTechsImplicit": [
-      2202
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002
@@ -3782,9 +3703,7 @@
     "PreTechs": [
       2203
     ],
-    "PreTechsImplicit": [
-      2203
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -3828,9 +3747,7 @@
     "PreTechs": [
       2204
     ],
-    "PreTechsImplicit": [
-      2204
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -3874,9 +3791,7 @@
     "PreTechs": [
       2205
     ],
-    "PreTechsImplicit": [
-      2205
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -3922,9 +3837,7 @@
     "PreTechs": [
       2206
     ],
-    "PreTechsImplicit": [
-      2206
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -3970,9 +3883,7 @@
     "PreTechs": [
       2207
     ],
-    "PreTechsImplicit": [
-      2207
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -4064,9 +3975,7 @@
     "PreTechs": [
       2301
     ],
-    "PreTechsImplicit": [
-      2301
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002
@@ -4108,9 +4017,7 @@
     "PreTechs": [
       2302
     ],
-    "PreTechsImplicit": [
-      2302
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -4154,9 +4061,7 @@
     "PreTechs": [
       2303
     ],
-    "PreTechsImplicit": [
-      2303
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -4200,9 +4105,7 @@
     "PreTechs": [
       2304
     ],
-    "PreTechsImplicit": [
-      2304
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -4246,9 +4149,7 @@
     "PreTechs": [
       2305
     ],
-    "PreTechsImplicit": [
-      2305
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -4334,9 +4235,7 @@
     "PreTechs": [
       2401
     ],
-    "PreTechsImplicit": [
-      2401
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002
@@ -4378,9 +4277,7 @@
     "PreTechs": [
       2402
     ],
-    "PreTechsImplicit": [
-      2402
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002
@@ -4422,9 +4319,7 @@
     "PreTechs": [
       2403
     ],
-    "PreTechsImplicit": [
-      2403
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -4468,9 +4363,7 @@
     "PreTechs": [
       2404
     ],
-    "PreTechsImplicit": [
-      2404
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -4516,9 +4409,7 @@
     "PreTechs": [
       2405
     ],
-    "PreTechsImplicit": [
-      2405
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -4566,9 +4457,7 @@
     "PreTechs": [
       2406
     ],
-    "PreTechsImplicit": [
-      2406
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6006
     ],
@@ -4654,9 +4543,7 @@
     "PreTechs": [
       2501
     ],
-    "PreTechsImplicit": [
-      2501
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002
@@ -4698,9 +4585,7 @@
     "PreTechs": [
       2502
     ],
-    "PreTechsImplicit": [
-      2502
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -4744,9 +4629,7 @@
     "PreTechs": [
       2503
     ],
-    "PreTechsImplicit": [
-      2503
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -4790,9 +4673,7 @@
     "PreTechs": [
       2504
     ],
-    "PreTechsImplicit": [
-      2504
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -4840,9 +4721,7 @@
     "PreTechs": [
       2505
     ],
-    "PreTechsImplicit": [
-      2505
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6006
     ],
@@ -4920,9 +4799,7 @@
     "PreTechs": [
       2601
     ],
-    "PreTechsImplicit": [
-      2601
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002
@@ -4964,9 +4841,7 @@
     "PreTechs": [
       2602
     ],
-    "PreTechsImplicit": [
-      2602
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -5010,9 +4885,7 @@
     "PreTechs": [
       2603
     ],
-    "PreTechsImplicit": [
-      2603
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -5058,9 +4931,7 @@
     "PreTechs": [
       2604
     ],
-    "PreTechsImplicit": [
-      2604
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -5108,9 +4979,7 @@
     "PreTechs": [
       2605
     ],
-    "PreTechsImplicit": [
-      2605
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6006
     ],
@@ -5192,9 +5061,7 @@
     "PreTechs": [
       2701
     ],
-    "PreTechsImplicit": [
-      2701
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001
     ],
@@ -5234,9 +5101,7 @@
     "PreTechs": [
       2702
     ],
-    "PreTechsImplicit": [
-      2702
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002
@@ -5278,9 +5143,7 @@
     "PreTechs": [
       2703
     ],
-    "PreTechsImplicit": [
-      2703
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -5324,9 +5187,7 @@
     "PreTechs": [
       2704
     ],
-    "PreTechsImplicit": [
-      2704
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -5416,9 +5277,7 @@
     "PreTechs": [
       2901
     ],
-    "PreTechsImplicit": [
-      2901
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002
@@ -5460,9 +5319,7 @@
     "PreTechs": [
       2902
     ],
-    "PreTechsImplicit": [
-      2902
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -5506,9 +5363,7 @@
     "PreTechs": [
       2903
     ],
-    "PreTechsImplicit": [
-      2903
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -5552,9 +5407,7 @@
     "PreTechs": [
       2904
     ],
-    "PreTechsImplicit": [
-      2904
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -5600,9 +5453,7 @@
     "PreTechs": [
       2905
     ],
-    "PreTechsImplicit": [
-      2905
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6006
     ],
@@ -5684,9 +5535,7 @@
     "PreTechs": [
       3101
     ],
-    "PreTechsImplicit": [
-      3101
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -5730,9 +5579,7 @@
     "PreTechs": [
       3102
     ],
-    "PreTechsImplicit": [
-      3102
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -5776,9 +5623,7 @@
     "PreTechs": [
       3103
     ],
-    "PreTechsImplicit": [
-      3103
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -5824,9 +5669,7 @@
     "PreTechs": [
       3104
     ],
-    "PreTechsImplicit": [
-      3104
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -5872,9 +5715,7 @@
     "PreTechs": [
       3105
     ],
-    "PreTechsImplicit": [
-      3105
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -5962,9 +5803,7 @@
     "PreTechs": [
       3201
     ],
-    "PreTechsImplicit": [
-      3201
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -6008,9 +5847,7 @@
     "PreTechs": [
       3202
     ],
-    "PreTechsImplicit": [
-      3202
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -6054,9 +5891,7 @@
     "PreTechs": [
       3203
     ],
-    "PreTechsImplicit": [
-      3203
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -6102,9 +5937,7 @@
     "PreTechs": [
       3204
     ],
-    "PreTechsImplicit": [
-      3204
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -6150,9 +5983,7 @@
     "PreTechs": [
       3205
     ],
-    "PreTechsImplicit": [
-      3205
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -6200,9 +6031,7 @@
     "PreTechs": [
       3206
     ],
-    "PreTechsImplicit": [
-      3206
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -6250,9 +6079,7 @@
     "PreTechs": [
       3207
     ],
-    "PreTechsImplicit": [
-      3207
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6006
     ],
@@ -6334,9 +6161,7 @@
     "PreTechs": [
       3301
     ],
-    "PreTechsImplicit": [
-      3301
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -6380,9 +6205,7 @@
     "PreTechs": [
       3302
     ],
-    "PreTechsImplicit": [
-      3302
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -6426,9 +6249,7 @@
     "PreTechs": [
       3303
     ],
-    "PreTechsImplicit": [
-      3303
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -6472,9 +6293,7 @@
     "PreTechs": [
       3304
     ],
-    "PreTechsImplicit": [
-      3304
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -6560,9 +6379,7 @@
     "PreTechs": [
       3401
     ],
-    "PreTechsImplicit": [
-      3401
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -6606,9 +6423,7 @@
     "PreTechs": [
       3402
     ],
-    "PreTechsImplicit": [
-      3402
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -6654,9 +6469,7 @@
     "PreTechs": [
       3403
     ],
-    "PreTechsImplicit": [
-      3403
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -6706,9 +6519,7 @@
     "PreTechs": [
       3404
     ],
-    "PreTechsImplicit": [
-      3404
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -6758,9 +6569,7 @@
     "PreTechs": [
       3405
     ],
-    "PreTechsImplicit": [
-      3405
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -6810,9 +6619,7 @@
     "PreTechs": [
       3406
     ],
-    "PreTechsImplicit": [
-      3406
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6006
     ],
@@ -6896,9 +6703,7 @@
     "PreTechs": [
       3501
     ],
-    "PreTechsImplicit": [
-      3501
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -6942,9 +6747,7 @@
     "PreTechs": [
       3502
     ],
-    "PreTechsImplicit": [
-      3502
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -6990,9 +6793,7 @@
     "PreTechs": [
       3503
     ],
-    "PreTechsImplicit": [
-      3503
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -7038,9 +6839,7 @@
     "PreTechs": [
       3504
     ],
-    "PreTechsImplicit": [
-      3504
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -7088,9 +6887,7 @@
     "PreTechs": [
       3505
     ],
-    "PreTechsImplicit": [
-      3505
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -7138,9 +6935,7 @@
     "PreTechs": [
       3506
     ],
-    "PreTechsImplicit": [
-      3506
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -7190,9 +6985,7 @@
     "PreTechs": [
       3507
     ],
-    "PreTechsImplicit": [
-      3507
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -7242,9 +7035,7 @@
     "PreTechs": [
       3508
     ],
-    "PreTechsImplicit": [
-      3508
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6006
     ],
@@ -7290,9 +7081,7 @@
     "PreTechs": [
       3509
     ],
-    "PreTechsImplicit": [
-      3509
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6006
     ],
@@ -7376,9 +7165,7 @@
     "PreTechs": [
       3801
     ],
-    "PreTechsImplicit": [
-      3801
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6006
     ],
@@ -7418,9 +7205,7 @@
     "PreTechs": [
       3802
     ],
-    "PreTechsImplicit": [
-      3802
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6006
     ],
@@ -7502,9 +7287,7 @@
     "PreTechs": [
       3601
     ],
-    "PreTechsImplicit": [
-      3601
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -7550,9 +7333,7 @@
     "PreTechs": [
       3602
     ],
-    "PreTechsImplicit": [
-      3602
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -7600,9 +7381,7 @@
     "PreTechs": [
       3603
     ],
-    "PreTechsImplicit": [
-      3603
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -7650,9 +7429,7 @@
     "PreTechs": [
       3604
     ],
-    "PreTechsImplicit": [
-      3604
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -7702,9 +7479,7 @@
     "PreTechs": [
       3605
     ],
-    "PreTechsImplicit": [
-      3605
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6006
     ],
@@ -7786,9 +7561,7 @@
     "PreTechs": [
       3701
     ],
-    "PreTechsImplicit": [
-      3701
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6002
     ],
@@ -7830,9 +7603,7 @@
     "PreTechs": [
       3702
     ],
-    "PreTechsImplicit": [
-      3702
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6002,
       6003
@@ -7876,9 +7647,7 @@
     "PreTechs": [
       3703
     ],
-    "PreTechsImplicit": [
-      3703
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -7924,9 +7693,7 @@
     "PreTechs": [
       3704
     ],
-    "PreTechsImplicit": [
-      3704
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -7972,9 +7739,7 @@
     "PreTechs": [
       3705
     ],
-    "PreTechsImplicit": [
-      3705
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -8060,9 +7825,7 @@
     "PreTechs": [
       3901
     ],
-    "PreTechsImplicit": [
-      3901
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6004
     ],
@@ -8102,9 +7865,7 @@
     "PreTechs": [
       3902
     ],
-    "PreTechsImplicit": [
-      3902
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6004
     ],
@@ -8144,9 +7905,7 @@
     "PreTechs": [
       3903
     ],
-    "PreTechsImplicit": [
-      3903
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6006
     ],
@@ -8224,9 +7983,7 @@
     "PreTechs": [
       4101
     ],
-    "PreTechsImplicit": [
-      4101
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001
     ],
@@ -8266,9 +8023,7 @@
     "PreTechs": [
       4102
     ],
-    "PreTechsImplicit": [
-      4102
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001
     ],
@@ -8308,9 +8063,7 @@
     "PreTechs": [
       4103
     ],
-    "PreTechsImplicit": [
-      4103
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001
     ],
@@ -8350,9 +8103,7 @@
     "PreTechs": [
       1001
     ],
-    "PreTechsImplicit": [
-      1001
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001
     ],
@@ -8390,9 +8141,7 @@
     "PreTechs": [
       1801
     ],
-    "PreTechsImplicit": [
-      1801
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -8435,9 +8184,7 @@
     "PreTechs": [
       1802
     ],
-    "PreTechsImplicit": [
-      1802
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -8837,8 +8584,7 @@
     "PreTechs": [
       1102
     ],
-    "PreTechsImplicit": [
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001
     ],
@@ -8926,9 +8672,7 @@
     "PreTechs": [
       1816
     ],
-    "PreTechsImplicit": [
-      1816
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002
@@ -8969,9 +8713,7 @@
     "PreTechs": [
       1817
     ],
-    "PreTechsImplicit": [
-      1817
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -9014,9 +8756,7 @@
     "PreTechs": [
       1818
     ],
-    "PreTechsImplicit": [
-      1818
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -9059,9 +8799,7 @@
     "PreTechs": [
       1819
     ],
-    "PreTechsImplicit": [
-      1819
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -9104,9 +8842,7 @@
     "PreTechs": [
       1820
     ],
-    "PreTechsImplicit": [
-      1820
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -9152,9 +8888,7 @@
     "PreTechs": [
       1821
     ],
-    "PreTechsImplicit": [
-      1821
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -9200,7 +8934,10 @@
     "PreTechs": [
       1203
     ],
-    "PreTechsImplicit": [],
+    "PreTechsImplicit": [
+      1803,
+      1604
+    ],
     "Items": [
       6001,
       6002,
@@ -9244,7 +8981,10 @@
     "PreTechs": [
       1417
     ],
-    "PreTechsImplicit": [],
+    "PreTechsImplicit": [
+      1803,
+      1604
+    ],
     "Items": [
       6001,
       6002,
@@ -9288,7 +9028,10 @@
     "PreTechs": [
       1513
     ],
-    "PreTechsImplicit": [],
+    "PreTechsImplicit": [
+      1803,
+      1604
+    ],
     "Items": [
       6001,
       6002,
@@ -9332,7 +9075,10 @@
     "PreTechs": [
       1823
     ],
-    "PreTechsImplicit": [],
+    "PreTechsImplicit": [
+      1803,
+      1604
+    ],
     "Items": [
       6001,
       6002,
@@ -9371,13 +9117,16 @@
     "Conclusion": "",
     "Position": [
       29.0,
-      -31.0
+      -27.0
     ],
     "PreTechs": [
       1703,
       1304
     ],
-    "PreTechsImplicit": [],
+    "PreTechsImplicit": [
+      1803,
+      1604
+    ],
     "Items": [
       6001,
       6002,
@@ -9416,8 +9165,8 @@
     "Desc": "基础化工描述",
     "Conclusion": "I化工厂",
     "Position": [
-      13.0,
-      17.0
+      17.0,
+      13.0
     ],
     "PreTechs": [
       1801
