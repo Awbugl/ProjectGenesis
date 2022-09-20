@@ -1499,7 +1499,7 @@
         ],
         "Description": "R晶格硅（高效）",
         "PreTech": 1133,
-        "GridIndex": 1307,
+        "GridIndex": 3209,
         "Name": "晶格硅（高效）",
         "IconPath": "Icons/ItemRecipe/silicium-high-purity-lv2",
         "Explicit": true,
