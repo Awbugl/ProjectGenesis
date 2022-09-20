@@ -71,7 +71,7 @@ namespace ProjectGenesis.Patches
             int[] productRegister,
             int[] consumeRegister)
         {
-            if (GameMain.history.TechUnlocked(1814) && __instance.recipeType == (ERecipeType_1)ERecipeType.Chemical && __instance.speed == 20000)
+            if (GameMain.history.TechUnlocked(1513) && __instance.recipeType == (ERecipeType_1)ERecipeType.Chemical && __instance.speed == 20000)
                 __instance.speed = 40000;
         }
 

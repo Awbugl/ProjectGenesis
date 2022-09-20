@@ -57,7 +57,7 @@ namespace ProjectGenesis.Patches
         {
             if (__instance.type == EMinerType.Water &&
                 __instance.insertTarget < 0 &&
-                GameMain.history.TechUnlocked(1813) &&
+                GameMain.history.TechUnlocked(1502) &&
                 factory.entityPool[-__instance.insertTarget].beltId > 0)
                 __instance.speedDamper = 1;
         }
@@ -74,7 +74,7 @@ namespace ProjectGenesis.Patches
             int[] productRegister)
         {
             if (power < 0.1f) return;
-            if (__instance.type == EMinerType.Water && __instance.insertTarget < 0 && GameMain.history.TechUnlocked(1813))
+            if (__instance.type == EMinerType.Water && __instance.insertTarget < 0 && GameMain.history.TechUnlocked(1502))
             {
                 var beltId = factory.entityPool[-__instance.insertTarget].beltId;
                 if (beltId > 0)
@@ -84,7 +84,7 @@ namespace ProjectGenesis.Patches
                         var factoryProductionStat = GameMain.statistics.production.factoryStatPool[factory.index];
                         var consumeRegister = factoryProductionStat.consumeRegister;
 
-                        var itemId = factory.cargoTraffic.TryPickItemAtRear(beltId, 0, GameMain.history.TechUnlocked(1815) ? null : ItemProto.fluids,
+                        var itemId = factory.cargoTraffic.TryPickItemAtRear(beltId, 0, GameMain.history.TechUnlocked(1703) ? null : ItemProto.fluids,
                                                                             out var stack, out _);
 
                         if (itemId > 0)
@@ -102,7 +102,7 @@ namespace ProjectGenesis.Patches
         {
             switch (__instance.ID)
             {
-                case 1813:
+                case 1502:
                     __result = "将传送带反向连入抽水站,可以将不需要的液体排入大海.(抽水站蓄满时才会排放)".Translate();
                     break;
 
@@ -110,11 +110,11 @@ namespace ProjectGenesis.Patches
                     __result = "欢迎加入创世之书讨论群:991895539".Translate();
                     break;
 
-                case 1814:
+                case 1513:
                     __result = "化工厂生产速度翻倍";
                     break;
 
-                case 1815:
+                case 1703:
                     __result = "海洋排污也能排放固体";
                     break;
             }

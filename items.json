@@ -4067,7 +4067,7 @@
     "GridIndex": 2408,
     "StackSize": 30,
     "Type": 6,
-    "PreTech": 1121,
+    "PreTech": 1832,
     "PreTechOverride": 0,
     "DescFields": [
       22,
@@ -4467,7 +4467,7 @@
     "GridIndex": 2111,
     "StackSize": 20,
     "Type": 6,
-    "PreTech": 1827,
+    "PreTech": 1153,
     "PreTechOverride": 0,
     "DescFields": [
       1,
@@ -9728,7 +9728,7 @@
     "GridIndex": 4402,
     "StackSize": 100,
     "Type": 2,
-    "PreTech": 1827,
+    "PreTech": 1153,
     "PreTechOverride": 0,
     "DescFields": [
       1,
@@ -9765,7 +9765,7 @@
     "GridIndex": 4501,
     "StackSize": 100,
     "Type": 2,
-    "PreTech": 1829,
+    "PreTech": 1134,
     "PreTechOverride": 0,
     "DescFields": [
       1,
@@ -9802,7 +9802,7 @@
     "GridIndex": 4502,
     "StackSize": 100,
     "Type": 2,
-    "PreTech": 1829,
+    "PreTech": 1134,
     "PreTechOverride": 0,
     "DescFields": [
       1,
@@ -9876,7 +9876,7 @@
     "GridIndex": 4503,
     "StackSize": 100,
     "Type": 2,
-    "PreTech": 1830,
+    "PreTech": 1123,
     "PreTechOverride": 0,
     "DescFields": [
       1,
@@ -9913,7 +9913,7 @@
     "GridIndex": 4611,
     "StackSize": 20,
     "Type": 2,
-    "PreTech": 1828,
+    "PreTech": 1152,
     "PreTechOverride": 0,
     "DescFields": [
       22,
@@ -9953,7 +9953,7 @@
     "GridIndex": 4612,
     "StackSize": 20,
     "Type": 2,
-    "PreTech": 1828,
+    "PreTech": 1152,
     "PreTechOverride": 0,
     "DescFields": [
       22,

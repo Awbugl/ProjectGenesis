@@ -573,7 +573,7 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 2406,
-    "PreTech": 1121,
+    "PreTech": 1832,
     "Time": 240,
     "Input": [
       6501,
@@ -1146,7 +1146,7 @@
     "IconPath": "",
     "Type": 10,
     "GridIndex": 2112,
-    "PreTech": 1827,
+    "PreTech": 1153,
     "Time": 18000,
     "Input": [
       6503,
@@ -6367,7 +6367,7 @@
     "IconPath": "Assets/texpack/氦闪抑制器",
     "Type": 10,
     "GridIndex": 3607,
-    "PreTech": 1827,
+    "PreTech": 1153,
     "Time": 900,
     "Input": [
       7707,
@@ -6533,7 +6533,7 @@
     "IconPath": "Assets/texpack/三元精金",
     "Type": 13,
     "GridIndex": 3409,
-    "PreTech": 1829,
+    "PreTech": 1134,
     "Time": 3600,
     "Input": [
       1103,
@@ -6562,7 +6562,7 @@
     "IconPath": "Assets/texpack/光子结晶",
     "Type": 13,
     "GridIndex": 3410,
-    "PreTech": 1829,
+    "PreTech": 1134,
     "Time": 3600,
     "Input": [
       1208
@@ -6587,7 +6587,7 @@
     "IconPath": "Assets/texpack/紫色先驱者晶片",
     "Type": 12,
     "GridIndex": 3411,
-    "PreTech": 1830,
+    "PreTech": 1123,
     "Time": 5400,
     "Input": [
       6271,
@@ -6616,7 +6616,7 @@
     "IconPath": "Assets/texpack/红制造台",
     "Type": 10,
     "GridIndex": 3609,
-    "PreTech": 1828,
+    "PreTech": 1152,
     "Time": 10800,
     "Input": [
       2305,
@@ -6647,7 +6647,7 @@
     "IconPath": "Icons/ItemRecipe/hadron-collider",
     "Type": 10,
     "GridIndex": 3610,
-    "PreTech": 1828,
+    "PreTech": 1152,
     "Time": 10800,
     "Input": [
       2310,

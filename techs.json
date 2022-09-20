@@ -95,7 +95,7 @@
     "Conclusion": "电磁矩阵结果",
     "Position": [
       13.0,
-      -43.0
+      -47.0
     ],
     "PreTechs": [
       1001
@@ -146,13 +146,12 @@
     "Conclusion": "高效电浆控制结果",
     "Position": [
       13.0,
-      -31.0
+      -39.0
     ],
     "PreTechs": [
       1001
     ],
     "PreTechsImplicit": [
-      1001
     ],
     "Items": [
       6001
@@ -192,13 +191,12 @@
     "Conclusion": "等离子萃取精炼结果",
     "Position": [
       17.0,
-      -31.0
+      -39.0
     ],
     "PreTechs": [
       1101
     ],
     "PreTechsImplicit": [
-      1101
     ],
     "Items": [
       6001
@@ -233,11 +231,11 @@
     "Desc": "X射线裂解描述",
     "Conclusion": "X射线裂解结果",
     "Position": [
-      25.0,
-      -31.0
+      21.0,
+      -39.0
     ],
     "PreTechs": [
-      1812
+      1102
     ],
     "PreTechsImplicit": [
       1812
@@ -275,10 +273,11 @@
     "Desc": "重整精炼描述",
     "Conclusion": "重整精炼结果",
     "Position": [
-      29.0,
-      -27.0
+      25.0,
+      -35.0
     ],
     "PreTechs": [
+      1812,
       1103
     ],
     "PreTechsImplicit": [],
@@ -316,7 +315,7 @@
     "Conclusion": "能量矩阵结果",
     "Position": [
       17.0,
-      -43.0
+      -47.0
     ],
     "PreTechs": [
       1002
@@ -355,15 +354,13 @@
     "Desc": "氢燃料棒描述",
     "Conclusion": "氢燃料棒结果",
     "Position": [
-      13.0,
-      -19.0
+      17.0,
+      -15.0
     ],
     "PreTechs": [
-      1001
+      1412
     ],
-    "PreTechsImplicit": [
-      1001
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6002
     ],
@@ -396,15 +393,13 @@
     "Desc": "推进器描述",
     "Conclusion": "推进器结果",
     "Position": [
-      17.0,
+      21.0,
       -19.0
     ],
     "PreTechs": [
-      1112
+      1702
     ],
-    "PreTechsImplicit": [
-      1112
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6002
     ],
@@ -436,15 +431,13 @@
     "Desc": "加力推进器描述",
     "Conclusion": "加力推进器结果",
     "Position": [
-      21.0,
+      29.0,
       -19.0
     ],
     "PreTechs": [
-      1113
+      1711
     ],
-    "PreTechsImplicit": [
-      1113
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6002
     ],
@@ -477,14 +470,12 @@
     "Conclusion": "流体储存封装结果",
     "Position": [
       13.0,
-      -23.0
+      -27.0
     ],
     "PreTechs": [
       1001
     ],
-    "PreTechsImplicit": [
-      1001
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001
     ],
@@ -521,11 +512,11 @@
     "Desc": "基础化工描述",
     "Conclusion": "基础化工结果",
     "Position": [
-      17.0,
+      13.0,
       -23.0
     ],
     "PreTechs": [
-      1120
+      1001
     ],
     "PreTechsImplicit": [
       1120
@@ -538,7 +529,6 @@
     ],
     "HashNeeded": 72000,
     "UnlockRecipes": [
-      22,
       23,
       24,
       703,
@@ -588,14 +578,13 @@
     "Desc": "高分子化工描述",
     "Conclusion": "高分子化工结果",
     "Position": [
-      21.0,
+      17.0,
       -23.0
     ],
     "PreTechs": [
       1121
     ],
     "PreTechsImplicit": [
-      1121
     ],
     "Items": [
       6001,
@@ -631,31 +620,41 @@
   },
   {
     "ID": 1123,
-    "Name": "前面的区域,以后再来探索吧!",
-    "IconPath": "Icons/Tech/1123",
-    "Desc": "高强度晶体描述",
-    "Conclusion": "高强度晶体结果",
+    "Name": "终极目标:先驱者遗物",
+    "IconPath": "Icons/Tech/1303",
+    "Desc": "先驱者文明的遗产.",
+    "Conclusion": "",
     "Position": [
-      61.0,
-      -11.0
+      53.0,
+      -19.0
     ],
-    "PreTechs": [],
-    "PreTechsImplicit": [],
+    "PreTechs": [
+      1828
+    ],
+    "PreTechsImplicit": [
+      1828
+    ],
     "Items": [
       6001,
-      6002
+      6002,
+      6003,
+      6004,
+      6005
     ],
     "ItemPoints": [
-      20,
-      20
+      100,
+      100,
+      100,
+      100,
+      100
     ],
-    "HashNeeded": 108000,
+    "HashNeeded": 3600000,
     "UnlockRecipes": [
-      26
+      426
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
-    "Published": false,
+    "Published": true,
     "Level": 0,
     "MaxLevel": 0,
     "LevelCoef1": 0,
@@ -675,7 +674,7 @@
     "Conclusion": "结构矩阵结果",
     "Position": [
       21.0,
-      -43.0
+      -47.0
     ],
     "PreTechs": [
       1111
@@ -716,11 +715,11 @@
     "Desc": "卡西米尔晶体描述",
     "Conclusion": "卡西米尔晶体结果",
     "Position": [
-      25.0,
-      -23.0
+      13.0,
+      -31.0
     ],
     "PreTechs": [
-      1122
+      1001
     ],
     "PreTechsImplicit": [
       1122
@@ -761,15 +760,13 @@
     "Desc": "高强度玻璃描述",
     "Conclusion": "高强度玻璃结果",
     "Position": [
-      13.0,
-      -27.0
+      25.0,
+      -7.0
     ],
     "PreTechs": [
-      1001
+      1413
     ],
-    "PreTechsImplicit": [
-      1001
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6002,
       6003
@@ -804,13 +801,12 @@
     "Conclusion": "应用型超导体结果",
     "Position": [
       21.0,
-      -27.0
+      -23.0
     ],
     "PreTechs": [
       1122
     ],
     "PreTechsImplicit": [
-      1122
     ],
     "Items": [
       6001
@@ -845,13 +841,12 @@
     "Conclusion": "高强度材料结果",
     "Position": [
       25.0,
-      -27.0
+      -23.0
     ],
     "PreTechs": [
       1131
     ],
     "PreTechsImplicit": [
-      1131
     ],
     "Items": [
       6002,
@@ -888,15 +883,13 @@
     "Desc": "粒子可控技术描述",
     "Conclusion": "粒子可控技术结果",
     "Position": [
-      29.0,
-      -19.0
+      25.0,
+      5.0
     ],
     "PreTechs": [
       1302
     ],
-    "PreTechsImplicit": [
-      1302
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -928,32 +921,42 @@
   },
   {
     "ID": 1134,
-    "Name": "前面的区域,以后再来探索吧!",
-    "IconPath": "Icons/Tech/1134",
-    "Desc": "重氢分馏描述",
-    "Conclusion": "重氢分馏结果",
+    "Name": "终极目标:无尽材料学",
+    "IconPath": "Icons/Tech/1414",
+    "Desc": "传统材料已经无法满足需求...",
+    "Conclusion": "",
     "Position": [
-      61.0,
-      9.0
+      53.0,
+      -15.0
     ],
-    "PreTechs": [],
-    "PreTechsImplicit": [],
+    "PreTechs": [
+      1828
+    ],
+    "PreTechsImplicit": [
+      1828
+    ],
     "Items": [
       6001,
-      6002
+      6002,
+      6003,
+      6004,
+      6005
     ],
     "ItemPoints": [
-      20,
-      30
+      100,
+      100,
+      100,
+      100,
+      100
     ],
-    "HashNeeded": 36000,
+    "HashNeeded": 3600000,
     "UnlockRecipes": [
-      110,
-      115
+      424,
+      425
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
-    "Published": false,
+    "Published": true,
     "Level": 0,
     "MaxLevel": 0,
     "LevelCoef1": 0,
@@ -972,14 +975,13 @@
     "Desc": "波函数干扰描述",
     "Conclusion": "波函数干扰结果",
     "Position": [
-      29.0,
-      -23.0
+      17.0,
+      -35.0
     ],
     "PreTechs": [
       1125
     ],
     "PreTechsImplicit": [
-      1125
     ],
     "Items": [
       6001,
@@ -1061,14 +1063,13 @@
     "Desc": "奇异物质描述",
     "Conclusion": "奇异物质结果",
     "Position": [
-      33.0,
-      -27.0
+      17.0,
+      -31.0
     ],
     "PreTechs": [
-      1132
+      1125
     ],
     "PreTechsImplicit": [
-      1132
     ],
     "Items": [
       6001,
@@ -1199,14 +1200,14 @@
     "Desc": "增产剂 Mk.I描述",
     "Conclusion": "增产剂 Mk.I结果",
     "Position": [
-      37.0,
-      25.0
+      25.0,
+      29.0
     ],
     "PreTechs": [
-      1602
+      1803
     ],
     "PreTechsImplicit": [
-      1602
+      1803
     ],
     "Items": [
       6001,
@@ -1241,31 +1242,38 @@
   },
   {
     "ID": 1152,
-    "Name": "前面的区域,以后再来探索吧!",
-    "IconPath": "Icons/Tech/1152",
-    "Desc": "增产剂 Mk.II描述",
-    "Conclusion": "增产剂 Mk.II结果",
+    "Name": "不再是菜鸟的证明",
+    "IconPath": "Assets/texpack/终极科技",
+    "Desc": "欢迎来到地狱....",
+    "Conclusion": "",
     "Position": [
-      61.0,
-      -3.0
+      49.0,
+      -23.0
     ],
     "PreTechs": [],
     "PreTechsImplicit": [],
     "Items": [
       6001,
-      6002
+      6002,
+      6003,
+      6004,
+      6005
     ],
     "ItemPoints": [
-      16,
-      12
+      100,
+      100,
+      100,
+      100,
+      100
     ],
-    "HashNeeded": 180000,
+    "HashNeeded": 36000000,
     "UnlockRecipes": [
-      107
+      427,
+      428
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
-    "Published": false,
+    "Published": true,
     "Level": 0,
     "MaxLevel": 0,
     "LevelCoef1": 0,
@@ -1279,33 +1287,38 @@
   },
   {
     "ID": 1153,
-    "Name": "前面的区域,以后再来探索吧!",
-    "IconPath": "Icons/Tech/1153",
-    "Desc": "增产剂 Mk.III描述",
-    "Conclusion": "增产剂 Mk.III结果",
+    "Name": "人造恒星",
+    "IconPath": "Icons/Tech/1144",
+    "Desc": "使用约束技术将聚变反应稳定掌控,并将其作为能源利用.",
+    "Conclusion": "",
     "Position": [
-      61.0,
-      -7.0
+      25.0,
+      -15.0
     ],
-    "PreTechs": [],
+    "PreTechs": [
+      1416
+    ],
     "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
-      6003
+      6003,
+      6004
     ],
     "ItemPoints": [
-      8,
-      6,
-      4
+      20,
+      20,
+      20,
+      20
     ],
-    "HashNeeded": 360000,
+    "HashNeeded": 144000,
     "UnlockRecipes": [
-      108
+      43,
+      418
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
-    "Published": false,
+    "Published": true,
     "Level": 0,
     "MaxLevel": 0,
     "LevelCoef1": 0,
@@ -1324,15 +1337,13 @@
     "Desc": "基础制造工艺描述",
     "Conclusion": "基础制造工艺结果",
     "Position": [
-      13.0,
-      -7.0
+      17.0,
+      17.0
     ],
     "PreTechs": [
-      1001
+      1801
     ],
-    "PreTechsImplicit": [
-      1001
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       1301,
       1201
@@ -1377,15 +1388,13 @@
     "Desc": "高速制造工艺描述",
     "Conclusion": "高速制造工艺结果",
     "Position": [
-      21.0,
-      -7.0
+      17.0,
+      9.0
     ],
     "PreTechs": [
-      1201
+      1801
     ],
-    "PreTechsImplicit": [
-      1201
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001
     ],
@@ -1421,15 +1430,13 @@
     "Desc": "量子打印技术描述",
     "Conclusion": "量子打印技术结果",
     "Position": [
-      29.0,
-      -7.0
+      21.0,
+      17.0
     ],
     "PreTechs": [
-      1202
+      1201
     ],
-    "PreTechsImplicit": [
-      1202
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -1470,10 +1477,11 @@
     "Conclusion": "处理器结果",
     "Position": [
       21.0,
-      -15.0
+      5.0
     ],
     "PreTechs": [
-      1311
+      1202,
+      1806
     ],
     "PreTechsImplicit": [
       1311
@@ -1509,15 +1517,13 @@
     "Desc": "量子芯片描述",
     "Conclusion": "量子芯片结果",
     "Position": [
-      29.0,
-      -15.0
+      25.0,
+      9.0
     ],
     "PreTechs": [
       1302
     ],
-    "PreTechsImplicit": [
-      1302
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -1554,14 +1560,13 @@
     "Desc": "大型采矿机描述",
     "Conclusion": "大型采矿机结果",
     "Position": [
-      45.0,
-      13.0
+      25.0,
+      -31.0
     ],
     "PreTechs": [
-      1606
+      1704
     ],
     "PreTechsImplicit": [
-      1606
     ],
     "Items": [
       6001,
@@ -1602,15 +1607,14 @@
     "Desc": "半导体材料描述",
     "Conclusion": "半导体材料结果",
     "Position": [
-      13.0,
-      -15.0
+      21.0,
+      9.0
     ],
     "PreTechs": [
-      1001
+      1202,
+      1806
     ],
-    "PreTechsImplicit": [
-      1001
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001
     ],
@@ -1643,13 +1647,12 @@
     "Conclusion": "信息矩阵结果",
     "Position": [
       25.0,
-      -43.0
+      -47.0
     ],
     "PreTechs": [
       1124
     ],
     "PreTechsImplicit": [
-      1124
     ],
     "Items": [
       6001,
@@ -1684,14 +1687,14 @@
     "Desc": "自动化冶金描述",
     "Conclusion": "自动化冶金结果",
     "Position": [
-      13.0,
-      9.0
+      17.0,
+      21.0
     ],
     "PreTechs": [
-      1001
+      1801
     ],
     "PreTechsImplicit": [
-      1001
+      1801
     ],
     "Items": [
       7823,
@@ -1735,11 +1738,11 @@
     "Desc": "冶炼提纯描述",
     "Conclusion": "冶炼提纯结果",
     "Position": [
-      21.0,
-      9.0
+      13.0,
+      -7.0
     ],
     "PreTechs": [
-      1401
+      1001
     ],
     "PreTechsImplicit": [
       1401
@@ -1777,15 +1780,13 @@
     "Desc": "晶体冶炼描述",
     "Conclusion": "晶体冶炼结果",
     "Position": [
-      29.0,
-      9.0
+      17.0,
+      -3.0
     ],
     "PreTechs": [
       1402
     ],
-    "PreTechsImplicit": [
-      1402
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002
@@ -1821,15 +1822,13 @@
     "Desc": "钢材冶炼描述",
     "Conclusion": "钢材冶炼结果",
     "Position": [
-      21.0,
-      17.0
+      17.0,
+      -7.0
     ],
     "PreTechs": [
-      1401
+      1402
     ],
-    "PreTechsImplicit": [
-      1401
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001
     ],
@@ -1862,14 +1861,12 @@
     "Conclusion": "火力发电结果",
     "Position": [
       13.0,
-      -11.0
+      -15.0
     ],
     "PreTechs": [
       1001
     ],
-    "PreTechsImplicit": [
-      1001
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001
     ],
@@ -1905,15 +1902,13 @@
     "Desc": "钛矿冶炼描述",
     "Conclusion": "钛矿冶炼结果",
     "Position": [
-      37.0,
-      9.0
+      21.0,
+      -7.0
     ],
     "PreTechs": [
-      1403
+      1411
     ],
-    "PreTechsImplicit": [
-      1403
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002
@@ -1960,14 +1955,14 @@
     "Desc": "高强度钛合金描述",
     "Conclusion": "高强度钛合金结果",
     "Position": [
-      29.0,
-      17.0
+      17.0,
+      -11.0
     ],
     "PreTechs": [
-      1411
+      1402
     ],
     "PreTechsImplicit": [
-      1411
+      1413
     ],
     "Items": [
       6001,
@@ -2004,15 +1999,13 @@
     "Desc": "移山填海工程描述",
     "Conclusion": "移山填海工程结果",
     "Position": [
-      29.0,
+      13.0,
       13.0
     ],
     "PreTechs": [
-      1411
+      1001
     ],
-    "PreTechsImplicit": [
-      1411
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001
     ],
@@ -2046,14 +2039,12 @@
     "Conclusion": "微型核聚变发电结果",
     "Position": [
       21.0,
-      -11.0
+      -15.0
     ],
     "PreTechs": [
-      1412
+      1112
     ],
-    "PreTechsImplicit": [
-      1412
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -2089,15 +2080,13 @@
     "Desc": "位面冶金描述",
     "Conclusion": "位面冶金结果",
     "Position": [
-      33.0,
-      -23.0
+      21.0,
+      21.0
     ],
     "PreTechs": [
-      1141
+      1401
     ],
-    "PreTechsImplicit": [
-      1141
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -2135,15 +2124,13 @@
     "Desc": "太阳能收集描述",
     "Conclusion": "太阳能收集结果",
     "Position": [
-      21.0,
+      17.0,
       1.0
     ],
     "PreTechs": [
       1001
     ],
-    "PreTechsImplicit": [
-      1001
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001
     ],
@@ -2174,32 +2161,34 @@
   },
   {
     "ID": 1502,
-    "Name": "前面的区域,以后再来探索吧!",
-    "IconPath": "Icons/Tech/1502",
-    "Desc": "光子变频描述",
-    "Conclusion": "光子变频结果",
+    "Name": "海洋排污",
+    "IconPath": "Icons/Tech/1120",
+    "Desc": "这听起来好像不太环保....",
+    "Conclusion": "",
     "Position": [
-      61.0,
-      1.0
+      17.0,
+      -27.0
     ],
-    "PreTechs": [],
-    "PreTechsImplicit": [],
+    "PreTechs": [
+      1120
+    ],
+    "PreTechsImplicit": [
+    ],
     "Items": [
       6001,
-      6002
+      6002,
+      6003
     ],
     "ItemPoints": [
       20,
+      20,
       20
     ],
-    "HashNeeded": 36000,
-    "UnlockRecipes": [
-      68,
-      69
-    ],
+    "HashNeeded": 144000,
+    "UnlockRecipes": [],
     "UnlockFunctions": [],
     "UnlockValues": [],
-    "Published": false,
+    "Published": true,
     "Level": 0,
     "MaxLevel": 0,
     "LevelCoef1": 0,
@@ -2218,7 +2207,7 @@
     "Desc": "太阳帆轨道系统描述",
     "Conclusion": "太阳帆轨道系统结果",
     "Position": [
-      33.0,
+      25.0,
       1.0
     ],
     "PreTechs": [
@@ -2402,13 +2391,12 @@
     "Conclusion": "宇宙矩阵结果",
     "Position": [
       33.0,
-      -43.0
+      -47.0
     ],
     "PreTechs": [
       1705
     ],
     "PreTechsImplicit": [
-      1705
     ],
     "Items": [
       6001,
@@ -2498,14 +2486,12 @@
     "Conclusion": "能量储存结果",
     "Position": [
       21.0,
-      5.0
+      -3.0
     ],
     "PreTechs": [
-      1401
+      1403
     ],
-    "PreTechsImplicit": [
-      1401
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002
@@ -2539,15 +2525,13 @@
     "Desc": "星际电力运输描述",
     "Conclusion": "星际电力运输结果",
     "Position": [
-      29.0,
-      5.0
+      25.0,
+      -3.0
     ],
     "PreTechs": [
       1511
     ],
-    "PreTechsImplicit": [
-      1511
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -2578,31 +2562,37 @@
   },
   {
     "ID": 1513,
-    "Name": "前面的区域,以后再来探索吧!",
-    "IconPath": "Icons/Tech/1513",
-    "Desc": "地热开采描述",
-    "Conclusion": "地热开采结果",
+    "Name": "化工技术革新",
+    "IconPath": "Assets/texpack/化工科技",
+    "Desc": "\"说真的,我一直很好奇为什么这样就能提升机器效率....\"",
+    "Conclusion": "",
     "Position": [
-      33.0,
-      -11.0
+      21.0,
+      13.0
     ],
-    "PreTechs": [],
+    "PreTechs": [
+      1832
+    ],
     "PreTechsImplicit": [],
     "Items": [
       6001,
-      6002
+      6002,
+      6003,
+      6004,
+      6005
     ],
     "ItemPoints": [
       20,
+      20,
+      20,
+      20,
       20
     ],
-    "HashNeeded": 144000,
-    "UnlockRecipes": [
-      118
-    ],
+    "HashNeeded": 576000,
+    "UnlockRecipes": [],
     "UnlockFunctions": [],
     "UnlockValues": [],
-    "Published": false,
+    "Published": true,
     "Level": 0,
     "MaxLevel": 0,
     "LevelCoef1": 0,
@@ -2621,15 +2611,13 @@
     "Desc": "高强度轻质结构描述",
     "Conclusion": "高强度轻质结构结果",
     "Position": [
-      45.0,
-      17.0
+      25.0,
+      -11.0
     ],
     "PreTechs": [
       1804
     ],
-    "PreTechsImplicit": [
-      1804
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6003
@@ -2761,8 +2749,8 @@
     "Desc": "基础物流系统描述",
     "Conclusion": "基础物流系统结果",
     "Position": [
-      21.0,
-      21.0
+      17.0,
+      33.0
     ],
     "PreTechs": [
       1607
@@ -2815,8 +2803,8 @@
     "Desc": "改良物流系统描述",
     "Conclusion": "改良物流系统结果",
     "Position": [
-      29.0,
-      21.0
+      21.0,
+      33.0
     ],
     "PreTechs": [
       1601
@@ -2865,8 +2853,8 @@
     "Desc": "高效物流系统描述",
     "Conclusion": "高效物流系统结果",
     "Position": [
-      37.0,
-      21.0
+      25.0,
+      33.0
     ],
     "PreTechs": [
       1602
@@ -2909,14 +2897,14 @@
     "Desc": "行星物流系统描述",
     "Conclusion": "行星物流系统结果",
     "Position": [
-      45.0,
-      21.0
+      17.0,
+      25.0
     ],
     "PreTechs": [
-      1603
+      1801
     ],
     "PreTechsImplicit": [
-      1603
+      1801
     ],
     "Items": [
       6001,
@@ -2952,8 +2940,8 @@
     "Desc": "星际物流系统描述",
     "Conclusion": "星际物流系统结果",
     "Position": [
-      53.0,
-      21.0
+      21.0,
+      25.0
     ],
     "PreTechs": [
       1604
@@ -2997,14 +2985,14 @@
     "Desc": "气态行星开采描述",
     "Conclusion": "气态行星开采结果",
     "Position": [
-      37.0,
-      13.0
+      25.0,
+      25.0
     ],
     "PreTechs": [
-      1415
+      1605
     ],
     "PreTechsImplicit": [
-      1415
+      1605
     ],
     "Items": [
       6001,
@@ -3042,7 +3030,7 @@
     "Conclusion": "集装物流系统结果",
     "Position": [
       13.0,
-      21.0
+      33.0
     ],
     "PreTechs": [
       1001
@@ -3083,14 +3071,12 @@
     "Conclusion": "电磁驱动结果",
     "Position": [
       13.0,
-      -39.0
+      -19.0
     ],
     "PreTechs": [
       1001
     ],
-    "PreTechsImplicit": [
-      1001
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001
     ],
@@ -3122,15 +3108,13 @@
     "Desc": "磁悬浮技术描述",
     "Conclusion": "磁悬浮技术结果",
     "Position": [
-      21.0,
-      -39.0
+      17.0,
+      -19.0
     ],
     "PreTechs": [
       1701
     ],
-    "PreTechsImplicit": [
-      1701
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002
@@ -3159,32 +3143,36 @@
   },
   {
     "ID": 1703,
-    "Name": "前面的区域,以后再来探索吧!",
-    "IconPath": "Icons/Tech/1703",
-    "Desc": "粒子磁力阱描述",
-    "Conclusion": "粒子磁力阱结果",
+    "Name": "海洋排污2",
+    "IconPath": "Icons/Tech/1120",
+    "Desc": "这听起来更不环保了...",
+    "Conclusion": "",
     "Position": [
-      61.0,
-      5.0
+      21.0,
+      -27.0
     ],
-    "PreTechs": [],
-    "PreTechsImplicit": [],
+    "PreTechs": [
+      1502
+    ],
+    "PreTechsImplicit": [
+    ],
     "Items": [
       6001,
-      6002
+      6002,
+      6003,
+      6004
     ],
     "ItemPoints": [
       20,
-      10
+      20,
+      20,
+      20
     ],
     "HashNeeded": 288000,
-    "UnlockRecipes": [
-      99,
-      100
-    ],
+    "UnlockRecipes": [],
     "UnlockFunctions": [],
     "UnlockValues": [],
-    "Published": false,
+    "Published": true,
     "Level": 0,
     "MaxLevel": 0,
     "LevelCoef1": 0,
@@ -3203,14 +3191,13 @@
     "Desc": "引力波折射描述",
     "Conclusion": "引力波折射结果",
     "Position": [
-      37.0,
-      -27.0
+      21.0,
+      -31.0
     ],
     "PreTechs": [
       1143
     ],
     "PreTechsImplicit": [
-      1143
     ],
     "Items": [
       6001,
@@ -3249,13 +3236,12 @@
     "Conclusion": "引力矩阵结果",
     "Position": [
       29.0,
-      -43.0
+      -47.0
     ],
     "PreTechs": [
       1312
     ],
     "PreTechsImplicit": [
-      1312
     ],
     "Items": [
       6001,
@@ -3297,14 +3283,13 @@
     "Desc": "超级磁场发生器描述",
     "Conclusion": "超级磁场发生器结果",
     "Position": [
-      29.0,
-      -39.0
+      25.0,
+      -19.0
     ],
     "PreTechs": [
-      1702
+      1113
     ],
     "PreTechsImplicit": [
-      1702
     ],
     "Items": [
       6001,
@@ -8360,7 +8345,7 @@
     "Conclusion": "",
     "Position": [
       13.0,
-      25.0
+      21.0
     ],
     "PreTechs": [
       1001
@@ -8399,8 +8384,8 @@
     "Desc": "开发日志#2\n2022.01.30，晚上八点零三分。\n我感觉自己受到了双重打击……api作者做出了我梦寐以求的东西，他的源码我却看不懂。\n我还能坚持下去吗？这个企划会胎死腹中吗？\n……………………\n好吧，也许会。我很不愿意这么说……但恐怕这次，我只能做出一个半成品了。\n希望你不会责备我。",
     "Conclusion": "",
     "Position": [
-      21.0,
-      25.0
+      17.0,
+      29.0
     ],
     "PreTechs": [
       1801
@@ -8444,8 +8429,8 @@
     "Desc": "开发日志#3\n咕了好久终于正式启动了，图标，科技，新物品……\n现在是2022年，2月1日，大年初一。\n我又有了一个新的想法，不过要回去看看另一套源码才能决定能不能实现……我想改变火箭的结构点数。\n我能成功吗？\n血的教训。\n不要，TMD，犯，低级错误。还有，一定要debug。\n（死目）\n哦对，结构点数没改成。\n啊对，记得回去加一个配方类型的修改方法。",
     "Conclusion": "",
     "Position": [
-      29.0,
-      25.0
+      21.0,
+      29.0
     ],
     "PreTechs": [
       1802
@@ -8489,15 +8474,13 @@
     "Desc": "开发日志#4\n偏偏这个时候出现了一个更多页面的mod\n那自然是……拿来主义）\n成为我的前置吧！（笑）\n既然这样，那这个游戏就有更多的可能性了……钛晶圆，钨晶圆，功率IC，电路基板，化工……\n2022.02.03，现在是大年初三晚上十点五十分。化工线基本完成，接下来就是烦人的代码环节……\n顺便把科技树图标做完了。\n今晚应该又要熬夜吧。",
     "Conclusion": "",
     "Position": [
-      37.0,
-      17.0
+      21.0,
+      -11.0
     ],
     "PreTechs": [
       1414
     ],
-    "PreTechsImplicit": [
-      1414
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -8534,14 +8517,12 @@
     "Conclusion": "",
     "Position": [
       13.0,
-      -3.0
+      5.0
     ],
     "PreTechs": [
       1001
     ],
-    "PreTechsImplicit": [
-      1001
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001
     ],
@@ -8578,15 +8559,13 @@
     "Desc": "开发日志#6\n现在是，2022.02.04，星期五，凌晨一点四十六分。\n我感觉我所学不多且不成体系的编程知识在此刻受到了严重冲击。\n写下上一条日志的时候，我的工程文件不管怎么编译，修改，都在报错。\n我debug了将近一个小时，始终无果。\n就在刚才，我第不知道多少次重新编译源码——\n嘿，您猜怎么着？\n我的代码跑起来辣！\n草。",
     "Conclusion": "",
     "Position": [
-      21.0,
-      -3.0
+      17.0,
+      5.0
     ],
     "PreTechs": [
       1805
     ],
-    "PreTechsImplicit": [
-      1805
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002
@@ -8628,15 +8607,13 @@
     "Desc": "开发日志#7\n现在是，2022.02.04，下午两点零八分。\n化工线的第一个配方终于成功写入。\n这是第一步，但绝不是最后一步。\n……又踩了个坑。\n戴森球的配方逻辑是，配方会继承第一个产物的信息，包括名字介绍这些。\n当然也不会显示副产物。\n想要修改必须使用公式配方作为元数据。\n草。",
     "Conclusion": "",
     "Position": [
-      37.0,
-      -15.0
+      29.0,
+      9.0
     ],
     "PreTechs": [
       1303
     ],
-    "PreTechsImplicit": [
-      1303
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -8679,15 +8656,13 @@
     "Desc": "开发日志#8\n现在是，2022.02.04，晚上七点零四分。\n化工线做到一半发现一点问题。\n稍微思考了一下，我决定还是自己打开gtnh……然后把化工线重新捋一遍。\n因为群友提醒了我，虽然木头是不可再生的……\n——但是有个东西，叫煤焦油。",
     "Conclusion": "",
     "Position": [
-      37.0,
-      -19.0
+      29.0,
+      5.0
     ],
     "PreTechs": [
       1133
     ],
-    "PreTechsImplicit": [
-      1133
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -8726,15 +8701,13 @@
     "Desc": "开发日志#9\n现在是，2022.02.05，上午十点三十九分。\n做完彻底完成了化工线，只剩两个最终产物了，顺便把电路基板和IC晶片的配方做了一下。\n距离物品系统实装又近了一步。\n现在是，2022.02.05，下午五点五十六分。\n又踩了个坑。\n戴森球的配方上限是825……怪。",
     "Conclusion": "",
     "Position": [
-      45.0,
-      -15.0
+      33.0,
+      9.0
     ],
     "PreTechs": [
       1807
     ],
-    "PreTechsImplicit": [
-      1807
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -8772,15 +8745,13 @@
     "Desc": "开发日志#10\n现在是，2022.02.06，凌晨零点五十七分。\n现实里遇到一些胃疼的事，开发进度可能会延缓一点。\n顺便给化工线加了点新东西。\n物品已经彻底完成，接下来就是覆写配方和科技树。\n这将是一个漫长的过程。\n现在是，2022.02.06，凌晨两点零三分。\n有一小部分配方出现了莫名其妙的数组越界现象，但是我找不到问题在哪。\n似乎并没有影响到游戏。",
     "Conclusion": "",
     "Position": [
-      45.0,
-      -19.0
+      33.0,
+      5.0
     ],
     "PreTechs": [
       1808
     ],
-    "PreTechsImplicit": [
-      1808
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -8818,15 +8789,13 @@
     "Desc": "开发日志#11\n……凌晨两点二十三分。\n它莫名其妙被我修好了。\n程序，很奇妙罢）\n凌晨两点二十九分。\n我找到制造逻辑了，芜湖~\n是makes。\n现在是，2022.02.06，下午两点二十⑨分。\n我突然有个想法。\n我不能添加新矿物，但是原版有几个没啥大用的旧矿物……\n嘿嘿嘿。",
     "Conclusion": "",
     "Position": [
-      17.0,
-      -27.0
+      29.0,
+      -7.0
     ],
     "PreTechs": [
       1126
     ],
-    "PreTechsImplicit": [
-      1126
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6002,
       6003,
@@ -8863,13 +8832,12 @@
     "Conclusion": "",
     "Position": [
       21.0,
-      -31.0
+      -35.0
     ],
     "PreTechs": [
       1102
     ],
     "PreTechsImplicit": [
-      1102
     ],
     "Items": [
       6001
@@ -8908,138 +8876,6 @@
     "PropertyItemCounts": []
   },
   {
-    "ID": 1813,
-    "Name": "海洋排污",
-    "IconPath": "Icons/Tech/1120",
-    "Desc": "这听起来好像不太环保....",
-    "Conclusion": "",
-    "Position": [
-      29.0,
-      -31.0
-    ],
-    "PreTechs": [
-      1103
-    ],
-    "PreTechsImplicit": [
-      1103
-    ],
-    "Items": [
-      6001,
-      6002,
-      6003
-    ],
-    "ItemPoints": [
-      20,
-      20,
-      20
-    ],
-    "HashNeeded": 144000,
-    "UnlockRecipes": [],
-    "UnlockFunctions": [],
-    "UnlockValues": [],
-    "Published": true,
-    "Level": 0,
-    "MaxLevel": 0,
-    "LevelCoef1": 0,
-    "LevelCoef2": 0,
-    "IsLabTech": true,
-    "PreTechsMax": false,
-    "AddItems": [],
-    "AddItemCounts": [],
-    "PropertyOverrideItems": [],
-    "PropertyItemCounts": []
-  },
-  {
-    "ID": 1814,
-    "Name": "化工技术革新",
-    "IconPath": "Assets/texpack/化工科技",
-    "Desc": "\"说真的,我一直很好奇为什么这样就能提升机器效率....\"",
-    "Conclusion": "",
-    "Position": [
-      37.0,
-      -31.0
-    ],
-    "PreTechs": [
-      1815
-    ],
-    "PreTechsImplicit": [
-      1815
-    ],
-    "Items": [
-      6001,
-      6002,
-      6003,
-      6004,
-      6005
-    ],
-    "ItemPoints": [
-      20,
-      20,
-      20,
-      20,
-      20
-    ],
-    "HashNeeded": 576000,
-    "UnlockRecipes": [],
-    "UnlockFunctions": [],
-    "UnlockValues": [],
-    "Published": true,
-    "Level": 0,
-    "MaxLevel": 0,
-    "LevelCoef1": 0,
-    "LevelCoef2": 0,
-    "IsLabTech": true,
-    "PreTechsMax": false,
-    "AddItems": [],
-    "AddItemCounts": [],
-    "PropertyOverrideItems": [],
-    "PropertyItemCounts": []
-  },
-  {
-    "ID": 1815,
-    "Name": "海洋排污2",
-    "IconPath": "Icons/Tech/1120",
-    "Desc": "这听起来更不环保了...",
-    "Conclusion": "",
-    "Position": [
-      33.0,
-      -31.0
-    ],
-    "PreTechs": [
-      1813
-    ],
-    "PreTechsImplicit": [
-      1813
-    ],
-    "Items": [
-      6001,
-      6002,
-      6003,
-      6004
-    ],
-    "ItemPoints": [
-      20,
-      20,
-      20,
-      20
-    ],
-    "HashNeeded": 288000,
-    "UnlockRecipes": [],
-    "UnlockFunctions": [],
-    "UnlockValues": [],
-    "Published": true,
-    "Level": 0,
-    "MaxLevel": 0,
-    "LevelCoef1": 0,
-    "LevelCoef2": 0,
-    "IsLabTech": true,
-    "PreTechsMax": false,
-    "AddItems": [],
-    "AddItemCounts": [],
-    "PropertyOverrideItems": [],
-    "PropertyItemCounts": []
-  },
-  {
     "ID": 1816,
     "Name": "核子先驱:放射原料",
     "IconPath": "Icons/Tech/1416",
@@ -9047,7 +8883,7 @@
     "Conclusion": "",
     "Position": [
       13.0,
-      -47.0
+      -43.0
     ],
     "PreTechs": [],
     "PreTechsImplicit": [],
@@ -9085,7 +8921,7 @@
     "Conclusion": "",
     "Position": [
       17.0,
-      -47.0
+      -43.0
     ],
     "PreTechs": [
       1816
@@ -9128,7 +8964,7 @@
     "Conclusion": "",
     "Position": [
       21.0,
-      -47.0
+      -43.0
     ],
     "PreTechs": [
       1817
@@ -9173,7 +9009,7 @@
     "Conclusion": "",
     "Position": [
       25.0,
-      -47.0
+      -43.0
     ],
     "PreTechs": [
       1818
@@ -9218,7 +9054,7 @@
     "Conclusion": "",
     "Position": [
       29.0,
-      -47.0
+      -43.0
     ],
     "PreTechs": [
       1819
@@ -9263,7 +9099,7 @@
     "Conclusion": "",
     "Position": [
       33.0,
-      -47.0
+      -43.0
     ],
     "PreTechs": [
       1820
@@ -9311,7 +9147,7 @@
     "Conclusion": "",
     "Position": [
       37.0,
-      -47.0
+      -43.0
     ],
     "PreTechs": [
       1821
@@ -9358,10 +9194,12 @@
     "Desc": "高度智能化的大型工厂,有着远超制造台的效率.",
     "Conclusion": "",
     "Position": [
-      13.0,
-      -51.0
+      25.0,
+      17.0
     ],
-    "PreTechs": [],
+    "PreTechs": [
+      1203
+    ],
     "PreTechsImplicit": [],
     "Items": [
       6001,
@@ -9400,10 +9238,12 @@
     "Desc": "使用聚变能源驱动的裂解炉,能够对矿物进行最高效率的利用.",
     "Conclusion": "",
     "Position": [
-      17.0,
-      -51.0
+      25.0,
+      21.0
     ],
-    "PreTechs": [],
+    "PreTechs": [
+      1417
+    ],
     "PreTechsImplicit": [],
     "Items": [
       6001,
@@ -9442,10 +9282,12 @@
     "Desc": "一座史无前例的巨型化工厂.",
     "Conclusion": "",
     "Position": [
-      21.0,
-      -51.0
+      25.0,
+      13.0
     ],
-    "PreTechs": [],
+    "PreTechs": [
+      1513
+    ],
     "PreTechsImplicit": [],
     "Items": [
       6001,
@@ -9484,10 +9326,12 @@
     "Desc": "精密装配线的未来.",
     "Conclusion": "",
     "Position": [
-      25.0,
-      -51.0
+      29.0,
+      17.0
     ],
-    "PreTechs": [],
+    "PreTechs": [
+      1823
+    ],
     "PreTechsImplicit": [],
     "Items": [
       6001,
@@ -9520,195 +9364,6 @@
     "PropertyItemCounts": []
   },
   {
-    "ID": 1827,
-    "Name": "人造恒星",
-    "IconPath": "Icons/Tech/1144",
-    "Desc": "使用约束技术将聚变反应稳定掌控,并将其作为能源利用.",
-    "Conclusion": "",
-    "Position": [
-      29.0,
-      -11.0
-    ],
-    "PreTechs": [
-      1416
-    ],
-    "PreTechsImplicit": [
-      1416
-    ],
-    "Items": [
-      6001,
-      6002,
-      6003,
-      6004
-    ],
-    "ItemPoints": [
-      20,
-      20,
-      20,
-      20
-    ],
-    "HashNeeded": 144000,
-    "UnlockRecipes": [
-      43,
-      418
-    ],
-    "UnlockFunctions": [],
-    "UnlockValues": [],
-    "Published": true,
-    "Level": 0,
-    "MaxLevel": 0,
-    "LevelCoef1": 0,
-    "LevelCoef2": 0,
-    "IsLabTech": true,
-    "PreTechsMax": false,
-    "AddItems": [],
-    "AddItemCounts": [],
-    "PropertyOverrideItems": [],
-    "PropertyItemCounts": []
-  },
-  {
-    "ID": 1828,
-    "Name": "不再是菜鸟的证明",
-    "IconPath": "Assets/texpack/终极科技",
-    "Desc": "欢迎来到地狱....",
-    "Conclusion": "",
-    "Position": [
-      49.0,
-      -23.0
-    ],
-    "PreTechs": [],
-    "PreTechsImplicit": [],
-    "Items": [
-      6001,
-      6002,
-      6003,
-      6004,
-      6005
-    ],
-    "ItemPoints": [
-      100,
-      100,
-      100,
-      100,
-      100
-    ],
-    "HashNeeded": 36000000,
-    "UnlockRecipes": [
-      427,
-      428
-    ],
-    "UnlockFunctions": [],
-    "UnlockValues": [],
-    "Published": true,
-    "Level": 0,
-    "MaxLevel": 0,
-    "LevelCoef1": 0,
-    "LevelCoef2": 0,
-    "IsLabTech": true,
-    "PreTechsMax": false,
-    "AddItems": [],
-    "AddItemCounts": [],
-    "PropertyOverrideItems": [],
-    "PropertyItemCounts": []
-  },
-  {
-    "ID": 1829,
-    "Name": "终极目标:无尽材料学",
-    "IconPath": "Icons/Tech/1414",
-    "Desc": "传统材料已经无法满足需求...",
-    "Conclusion": "",
-    "Position": [
-      53.0,
-      -15.0
-    ],
-    "PreTechs": [
-      1828
-    ],
-    "PreTechsImplicit": [
-      1828
-    ],
-    "Items": [
-      6001,
-      6002,
-      6003,
-      6004,
-      6005
-    ],
-    "ItemPoints": [
-      100,
-      100,
-      100,
-      100,
-      100
-    ],
-    "HashNeeded": 3600000,
-    "UnlockRecipes": [
-      424,
-      425
-    ],
-    "UnlockFunctions": [],
-    "UnlockValues": [],
-    "Published": true,
-    "Level": 0,
-    "MaxLevel": 0,
-    "LevelCoef1": 0,
-    "LevelCoef2": 0,
-    "IsLabTech": true,
-    "PreTechsMax": false,
-    "AddItems": [],
-    "AddItemCounts": [],
-    "PropertyOverrideItems": [],
-    "PropertyItemCounts": []
-  },
-  {
-    "ID": 1830,
-    "Name": "终极目标:先驱者遗物",
-    "IconPath": "Icons/Tech/1303",
-    "Desc": "先驱者文明的遗产.",
-    "Conclusion": "",
-    "Position": [
-      53.0,
-      -19.0
-    ],
-    "PreTechs": [
-      1828
-    ],
-    "PreTechsImplicit": [
-      1828
-    ],
-    "Items": [
-      6001,
-      6002,
-      6003,
-      6004,
-      6005
-    ],
-    "ItemPoints": [
-      100,
-      100,
-      100,
-      100,
-      100
-    ],
-    "HashNeeded": 3600000,
-    "UnlockRecipes": [
-      426
-    ],
-    "UnlockFunctions": [],
-    "UnlockValues": [],
-    "Published": true,
-    "Level": 0,
-    "MaxLevel": 0,
-    "LevelCoef1": 0,
-    "LevelCoef2": 0,
-    "IsLabTech": true,
-    "PreTechsMax": false,
-    "AddItems": [],
-    "AddItemCounts": [],
-    "PropertyOverrideItems": [],
-    "PropertyItemCounts": []
-  },
-  {
     "ID": 1831,
     "Name": "巨型建筑:物质分解设施",
     "IconPath": "Assets/texpack/回收科技",
@@ -9716,9 +9371,12 @@
     "Conclusion": "",
     "Position": [
       29.0,
-      -51.0
+      -31.0
     ],
-    "PreTechs": [],
+    "PreTechs": [
+      1703,
+      1304
+    ],
     "PreTechsImplicit": [],
     "Items": [
       6001,
@@ -9736,6 +9394,44 @@
     "UnlockRecipes": [
       429,
       433
+    ],
+    "UnlockFunctions": [],
+    "UnlockValues": [],
+    "Published": true,
+    "Level": 0,
+    "MaxLevel": 0,
+    "LevelCoef1": 0,
+    "LevelCoef2": 0,
+    "IsLabTech": true,
+    "PreTechsMax": false,
+    "AddItems": [],
+    "AddItemCounts": [],
+    "PropertyOverrideItems": [],
+    "PropertyItemCounts": []
+  },
+  {
+    "ID": 1832,
+    "Name": "化工厂",
+    "IconPath": "Icons/Tech/1121",
+    "Desc": "基础化工描述",
+    "Conclusion": "I化工厂",
+    "Position": [
+      13.0,
+      17.0
+    ],
+    "PreTechs": [
+      1801
+    ],
+    "PreTechsImplicit": [],
+    "Items": [
+      6001
+    ],
+    "ItemPoints": [
+      10
+    ],
+    "HashNeeded": 72000,
+    "UnlockRecipes": [
+      22
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
