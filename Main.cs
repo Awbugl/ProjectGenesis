@@ -118,14 +118,23 @@ namespace ProjectGenesis
                 proto.IconPath = techjson.IconPath;
                 proto.IsLabTech = techjson.IsLabTech;
                 proto.PreTechs = techjson.PreTechs;
-                proto.PreTechsImplicit = techjson.PreTechs;
+                proto.PreTechsImplicit = techjson.PreTechsImplicit;
+                proto.PreTechsMax = techjson.PreTechsMax;
                 proto.Items = techjson.Items ?? Array.Empty<int>();
                 proto.ItemPoints = techjson.ItemPoints ?? Array.Empty<int>();
-                proto.HashNeeded = techjson.HashNeeded;
-                proto.UnlockRecipes = techjson.UnlockRecipes;
                 proto.AddItems = techjson.AddItems ?? Array.Empty<int>();
                 proto.AddItemCounts = techjson.AddItemCounts ?? Array.Empty<int>();
                 proto.Position = new Vector2(techjson.Position[0], techjson.Position[1]);
+                proto.HashNeeded = techjson.HashNeeded;
+                proto.UnlockRecipes = techjson.UnlockRecipes;
+                proto.UnlockFunctions = techjson.UnlockFunctions;
+                proto.UnlockValues = techjson.UnlockValues;
+                proto.Level = techjson.Level;
+                proto.MaxLevel = techjson.MaxLevel;
+                proto.LevelCoef1 = techjson.LevelCoef1;
+                proto.LevelCoef2 = techjson.LevelCoef2;
+                proto.PropertyOverrideItems = techjson.PropertyOverrideItems;
+                proto.PropertyItemCounts = techjson.PropertyItemCounts;
 
                 if (!LDB.techs.Exist(techjson.ID)) LDBTool.PreAddProto(proto);
             }
@@ -171,6 +180,7 @@ namespace ProjectGenesis
                 proto.BuildIndex = itemjson.BuildIndex;
                 proto.BuildMode = itemjson.BuildMode;
                 proto.UnlockKey = itemjson.UnlockKey;
+                proto.MechaMaterialID = itemjson.MechaMaterialID;
                 proto.PreTechOverride = itemjson.PreTechOverride;
                 proto.Productive = itemjson.Productive;
             }
