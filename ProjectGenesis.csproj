@@ -152,10 +152,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include=".editorconfig" />
-    <EmbeddedResource Include="items" />
-    <EmbeddedResource Include="recipes" />
-    <EmbeddedResource Include="techs" />
+    <EmbeddedResource Include="items.json" />
+    <EmbeddedResource Include="recipes.json" />
+    <EmbeddedResource Include="techs.json" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Newtonsoft.Json.dll" />

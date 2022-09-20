@@ -1,16 +1,16 @@
-using xiaoye97;
-using HarmonyLib;
-using BepInEx;
-using UnityEngine;
-using System.IO;
 using System;
+using System.IO;
 using System.Reflection;
+using BepInEx;
+using BepInEx.Logging;
 using CommonAPI;
 using CommonAPI.Systems;
-using ProjectGenesis.Patches;
-using ERecipeType_1 = ERecipeType;
-using BepInEx.Logging;
 using crecheng.DSPModSave;
+using HarmonyLib;
+using ProjectGenesis.Patches;
+using UnityEngine;
+using xiaoye97;
+using ERecipeType_1 = ERecipeType;
 
 #pragma warning disable CS0618
 
@@ -30,9 +30,9 @@ namespace ProjectGenesis
     // ReSharper disable once MemberCanBeInternal
     public class Main : BaseUnityPlugin, IModCanSave
     {
-        private int TableID, TableID2;
+        private int[] TableID = new int[3];
 
-        internal static ManualLogSource logger;
+        private static ManualLogSource logger;
 
         //无限堆叠开关(私货)
         private readonly bool StackSizeButton = false;
@@ -46,8 +46,12 @@ namespace ProjectGenesis
             resources.LoadAssetBundle("texpack");
             ProtoRegistry.AddResource(resources);
 
-            TableID = TabSystem.RegisterTab("org.LoShin.GenesisBook:org.LoShin.GenesisBookTab", new TabData("3", "Assets/texpack/主机科技"));
-            TableID2 = TabSystem.RegisterTab("org.LoShin.GenesisBook:org.LoShin.GenesisBookTab2", new TabData("4", "Assets/texpack/化工科技"));
+            TableID = new int[]
+                      {
+                          TabSystem.RegisterTab("org.LoShin.GenesisBook:org.LoShin.GenesisBookTab1", new TabData("3", "Assets/texpack/主机科技")),
+                          TabSystem.RegisterTab("org.LoShin.GenesisBook:org.LoShin.GenesisBookTab2", new TabData("4", "Assets/texpack/化工科技")),
+                          TabSystem.RegisterTab("org.LoShin.GenesisBook:org.LoShin.GenesisBookTab3", new TabData("5", "Assets/texpack/虚拟技术革新"))
+                      };
 
             LDBTool.PreAddDataAction += InitData;
             LDBTool.PostAddDataAction += PostAddDataAction;
@@ -56,6 +60,14 @@ namespace ProjectGenesis
             Harmony.CreateAndPatchAll(typeof(PlanetGasPatches));
             Harmony.CreateAndPatchAll(typeof(OceanDischargePatches));
             Harmony.CreateAndPatchAll(typeof(MegaAssemblerPatches));
+        }
+
+        private int GetTableID(int gridIndex)
+        {
+            if (gridIndex >= 5000) return TableID[2] * 1000 + (gridIndex - 5000);
+            if (gridIndex >= 4000) return TableID[1] * 1000 + (gridIndex - 4000);
+            if (gridIndex >= 3000) return TableID[0] * 1000 + (gridIndex - 3000);
+            return gridIndex;
         }
 
         private void InitData()
@@ -124,10 +136,7 @@ namespace ProjectGenesis
 
             foreach (var itemjson in JsonHelper.ItemProtos())
             {
-                if (itemjson.GridIndex >= 4000 && itemjson.GridIndex < 5000)
-                    itemjson.GridIndex = TableID2 * 1000 + (itemjson.GridIndex - 4000);
-
-                else if (itemjson.GridIndex >= 3000) itemjson.GridIndex = TableID * 1000 + (itemjson.GridIndex - 3000);
+                itemjson.GridIndex = GetTableID(itemjson.GridIndex);
 
                 var proto = LDB.items.Exist(itemjson.ID)
                                 ? LDB.items.Select(itemjson.ID)
@@ -174,9 +183,7 @@ namespace ProjectGenesis
             {
                 if (!LDB.recipes.Exist(recipeJson.ID))
                 {
-                    if (recipeJson.GridIndex >= 4000 && recipeJson.GridIndex < 5000)
-                        recipeJson.GridIndex = TableID2 * 1000 + (recipeJson.GridIndex - 4000);
-                    else if (recipeJson.GridIndex >= 3000) recipeJson.GridIndex = TableID * 1000 + (recipeJson.GridIndex - 3000);
+                    recipeJson.GridIndex = GetTableID(recipeJson.GridIndex);
 
                     var proto = ProtoRegistry.RegisterRecipe(recipeJson.ID, (ERecipeType_1)recipeJson.Type, recipeJson.Time, recipeJson.Input,
                                                              recipeJson.InCounts, recipeJson.Output ?? Array.Empty<int>(),
@@ -195,7 +202,7 @@ namespace ProjectGenesis
                     proto.Explicit = recipeJson.Explicit;
                     proto.Name = recipeJson.Name;
                     proto.Handcraft = recipeJson.Handcraft;
-                    proto.Type = (global::ERecipeType)recipeJson.Type;
+                    proto.Type = (ERecipeType_1)recipeJson.Type;
                     proto.TimeSpend = recipeJson.Time;
                     proto.Items = recipeJson.Input;
                     proto.ItemCounts = recipeJson.InCounts;
@@ -247,8 +254,8 @@ namespace ProjectGenesis
         {
             LDB.items.OnAfterDeserialize();
 
-            itemProtos.Select(物品.二级制造台).prefabDesc.assemblerRecipeType = (global::ERecipeType)ERecipeType.电路蚀刻;
-            itemProtos.Select(物品.三级制造台).prefabDesc.assemblerRecipeType = (global::ERecipeType)ERecipeType.高精度加工;
+            itemProtos.Select(物品.二级制造台).prefabDesc.assemblerRecipeType = (ERecipeType_1)ERecipeType.电路蚀刻;
+            itemProtos.Select(物品.三级制造台).prefabDesc.assemblerRecipeType = (ERecipeType_1)ERecipeType.高精度加工;
 
             itemProtos.Select(物品.一级制造台).prefabDesc.assemblerSpeed = 20000;
             itemProtos.Select(物品.一级制造台).prefabDesc.idleEnergyPerTick = itemProtos.Select(物品.一级制造台).prefabDesc.idleEnergyPerTick * 2;
@@ -310,7 +317,7 @@ namespace ProjectGenesis
             itemProtos.Select(物品.电弧熔炉).prefabDesc.workEnergyPerTick = itemProtos.Select(物品.电弧熔炉).prefabDesc.workEnergyPerTick * 2;
             itemProtos.Select(物品.无线输电塔).prefabDesc.powerConnectDistance = 90.5f;
 
-            itemProtos.Select(6230).prefabDesc.assemblerRecipeType = (global::ERecipeType)ERecipeType.矿物处理;
+            itemProtos.Select(6230).prefabDesc.assemblerRecipeType = (ERecipeType_1)ERecipeType.矿物处理;
             itemProtos.Select(6230).prefabDesc.idleEnergyPerTick = 400;
             itemProtos.Select(6230).prefabDesc.workEnergyPerTick = 12000;
 
@@ -318,12 +325,12 @@ namespace ProjectGenesis
             itemProtos.Select(6275).prefabDesc.assemblerSpeed = 500;
             itemProtos.Select(6275).prefabDesc.workEnergyPerTick = 2000000;
             itemProtos.Select(6275).prefabDesc.idleEnergyPerTick = 100000;
-            itemProtos.Select(6275).prefabDesc.assemblerRecipeType = (global::ERecipeType)ERecipeType.精密组装;
+            itemProtos.Select(6275).prefabDesc.assemblerRecipeType = (ERecipeType_1)ERecipeType.精密组装;
             itemProtos.Select(6276).prefabDesc.assemblerSpeed = 1000;
             itemProtos.Select(6276).prefabDesc.workEnergyPerTick = 8000000;
             itemProtos.Select(6276).prefabDesc.idleEnergyPerTick = 200000;
             itemProtos.Select(6276).prefabDesc.assemblerSpeed = 1000;
-            itemProtos.Select(6276).prefabDesc.assemblerRecipeType = (global::ERecipeType)ERecipeType.聚变生产;
+            itemProtos.Select(6276).prefabDesc.assemblerRecipeType = (ERecipeType_1)ERecipeType.聚变生产;
 
             LDBTool.SetBuildBar(4, 4, 6229);
 
@@ -353,7 +360,7 @@ namespace ProjectGenesis
             var TestCraftingTableModel5 = LDB.models.Select(310);
 
             TestCraftingTableModel.prefabDesc.isAssembler = true;
-            TestCraftingTableModel.prefabDesc.assemblerRecipeType = (global::ERecipeType)ERecipeType.Assemble;
+            TestCraftingTableModel.prefabDesc.assemblerRecipeType = (ERecipeType_1)ERecipeType.Assemble;
             TestCraftingTableModel.prefabDesc.assemblerSpeed = MegaAssemblerPatches.MegaAssemblerSpeed;
             TestCraftingTableModel.prefabDesc.isStation = false;
             TestCraftingTableModel.prefabDesc.isStellarStation = false;
@@ -366,7 +373,7 @@ namespace ProjectGenesis
             TestCraftingTableModel.prefabDesc.workEnergyPerTick = 500000;
 
             TestCraftingTableModel2.prefabDesc.isAssembler = true;
-            TestCraftingTableModel2.prefabDesc.assemblerRecipeType = (global::ERecipeType)ERecipeType.Smelt;
+            TestCraftingTableModel2.prefabDesc.assemblerRecipeType = (ERecipeType_1)ERecipeType.Smelt;
             TestCraftingTableModel2.prefabDesc.assemblerSpeed = MegaAssemblerPatches.MegaAssemblerSpeed;
             TestCraftingTableModel2.prefabDesc.isStation = false;
             TestCraftingTableModel2.prefabDesc.isStellarStation = false;
@@ -379,7 +386,7 @@ namespace ProjectGenesis
             TestCraftingTableModel2.prefabDesc.workEnergyPerTick = 500000;
 
             TestCraftingTableModel3.prefabDesc.isAssembler = true;
-            TestCraftingTableModel3.prefabDesc.assemblerRecipeType = (global::ERecipeType)ERecipeType.Chemical;
+            TestCraftingTableModel3.prefabDesc.assemblerRecipeType = (ERecipeType_1)ERecipeType.Chemical;
             TestCraftingTableModel3.prefabDesc.assemblerSpeed = MegaAssemblerPatches.MegaAssemblerSpeed;
             TestCraftingTableModel3.prefabDesc.isStation = false;
             TestCraftingTableModel3.prefabDesc.isStellarStation = false;
@@ -392,7 +399,7 @@ namespace ProjectGenesis
             TestCraftingTableModel3.prefabDesc.workEnergyPerTick = 500000;
 
             TestCraftingTableModel4.prefabDesc.isAssembler = true;
-            TestCraftingTableModel4.prefabDesc.assemblerRecipeType = (global::ERecipeType)ERecipeType.高精度加工;
+            TestCraftingTableModel4.prefabDesc.assemblerRecipeType = (ERecipeType_1)ERecipeType.高精度加工;
             TestCraftingTableModel4.prefabDesc.assemblerSpeed = MegaAssemblerPatches.MegaAssemblerSpeed;
             TestCraftingTableModel4.prefabDesc.isStation = false;
             TestCraftingTableModel4.prefabDesc.isStellarStation = false;
@@ -405,7 +412,7 @@ namespace ProjectGenesis
             TestCraftingTableModel4.prefabDesc.workEnergyPerTick = 500000;
 
             TestCraftingTableModel5.prefabDesc.isAssembler = true;
-            TestCraftingTableModel5.prefabDesc.assemblerRecipeType = (global::ERecipeType)ERecipeType.垃圾回收;
+            TestCraftingTableModel5.prefabDesc.assemblerRecipeType = (ERecipeType_1)ERecipeType.垃圾回收;
             TestCraftingTableModel5.prefabDesc.assemblerSpeed = MegaAssemblerPatches.TrashSpeed;
             TestCraftingTableModel5.prefabDesc.isStation = false;
             TestCraftingTableModel5.prefabDesc.isStellarStation = false;

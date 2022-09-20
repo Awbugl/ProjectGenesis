@@ -1,5 +1,5 @@
-﻿using HarmonyLib;
-using System.Text;
+﻿using System.Text;
+using HarmonyLib;
 
 // ReSharper disable InconsistentNaming
 
