@@ -225,14 +225,12 @@
     "Conclusion": "X射线裂解结果",
     "Position": [
       21.0,
-      -39.0
+      -35.0
     ],
     "PreTechs": [
       1102
     ],
-    "PreTechsImplicit": [
-      1812
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002
@@ -243,7 +241,9 @@
     ],
     "HashNeeded": 72000,
     "UnlockRecipes": [
-      58
+      58,
+      545,
+      546
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -261,18 +261,15 @@
   },
   {
     "ID": 1104,
-    "Name": "T重整精炼",
-    "IconPath": "Icons/Tech/1104",
-    "Desc": "重整精炼描述",
-    "Conclusion": "重整精炼结果",
+    "Name": "地热开采",
+    "IconPath": "Icons/Tech/1513",
+    "Desc": "地热开采描述",
+    "Conclusion": "地热开采结果",
     "Position": [
-      25.0,
-      -35.0
+      21.0,
+      -15.0
     ],
-    "PreTechs": [
-      1812,
-      1103
-    ],
+    "PreTechs": [1112],
     "PreTechsImplicit": [],
     "Items": [
       6001,
@@ -282,9 +279,9 @@
       20,
       20
     ],
-    "HashNeeded": 90000,
+    "HashNeeded": 144000,
     "UnlockRecipes": [
-      121
+      118
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -500,7 +497,7 @@
     "ID": 1121,
     "Name": "T基础化工",
     "IconPath": "Icons/Tech/1121",
-    "Desc": "基础化工描述",
+    "Desc": "没有化工的科学是停滞不前的。\n[由于显示限制，解锁配方显示不完全]",
     "Conclusion": "基础化工结果",
     "Position": [
       13.0,
@@ -530,16 +527,9 @@
       707,
       708,
       709,
-      710,
-      711,
-      712,
-      714,
-      715,
-      716,
+      710,     
       771,
       772,
-      545,
-      546,
       505,
       507,
       508,
@@ -565,7 +555,7 @@
     "ID": 1122,
     "Name": "T高分子化工",
     "IconPath": "Icons/Tech/1122",
-    "Desc": "高分子化工描述",
+    "Desc": "现在可以合成更多种类的化工原料。\n[由于显示限制，解锁配方显示不完全]",
     "Conclusion": "高分子化工结果",
     "Position": [
       17.0,
@@ -584,12 +574,14 @@
       20
     ],
     "HashNeeded": 72000,
-    "UnlockRecipes": [      
-      547,
-      548,
-      549,
+    "UnlockRecipes": [
       551,
-      521
+      521,
+      711,
+      712,
+      714,
+      715,
+      716
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -635,7 +627,7 @@
     ],
     "HashNeeded": 3600000,
     "UnlockRecipes": [
-      426
+      11
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -929,8 +921,8 @@
     ],
     "HashNeeded": 3600000,
     "UnlockRecipes": [
-      424,
-      425
+      57,
+      623
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -1015,8 +1007,7 @@
     "HashNeeded": 240000,
     "UnlockRecipes": [
       39,
-      40,
-      544
+      40
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -1105,7 +1096,7 @@
     ],
     "HashNeeded": 3600000,
     "UnlockRecipes": [
-      419,
+      110,
       683,
       44
     ],
@@ -1148,7 +1139,7 @@
     "HashNeeded": 600000,
     "UnlockRecipes": [
       42,
-      417
+      121
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -1239,8 +1230,8 @@
     ],
     "HashNeeded": 36000000,
     "UnlockRecipes": [
-      427,
-      428
+      25,
+      26
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -1287,7 +1278,7 @@
     "HashNeeded": 144000,
     "UnlockRecipes": [
       43,
-      418
+      115
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -1676,7 +1667,7 @@
     "HashNeeded": 1800,
     "UnlockRecipes": [
       56,
-      57
+      34
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -1723,8 +1714,7 @@
       20
     ],
     "HashNeeded": 18000,
-    "UnlockRecipes": [
-      34,
+    "UnlockRecipes": [     
       17,
       59
     ],
@@ -1786,9 +1776,9 @@
   },
   {
     "ID": 1411,
-    "Name": "T钢材冶炼",
+    "Name": "先进冶炼",
     "IconPath": "Icons/Tech/1411",
-    "Desc": "钢材冶炼描述",
+    "Desc": "利用熔炉对铁块进行进一步冶炼，可获得性能出众的钢材；进一步对矿石进行预先粉碎处理可明显提高熔炉的效率。",
     "Conclusion": "钢材冶炼结果",
     "Position": [
       17.0,
@@ -1806,7 +1796,18 @@
     ],
     "HashNeeded": 21600,
     "UnlockRecipes": [
-      63
+      63,
+      523,
+      531,
+      532,
+      533,
+      534,
+      535,
+      536,
+      411,
+      412,
+      413,
+      414
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -1890,18 +1891,7 @@
     "UnlockRecipes": [
       65,
       773,
-      774,
-      523,
-      531,
-      532,
-      533,
-      534,
-      535,
-      536,
-      411,
-      412,
-      413,
-      414
+      774      
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -2011,7 +2001,7 @@
       -15.0
     ],
     "PreTechs": [
-      1513
+      1104
     ],
     "PreTechsImplicit": [],
     "Items": [
@@ -2442,11 +2432,11 @@
     "Desc": "能量储存描述",
     "Conclusion": "能量储存结果",
     "Position": [
-      21.0,
+      25.0,
       -3.0
     ],
     "PreTechs": [
-      1403
+      1833
     ],
     "PreTechsImplicit": [],
     "Items": [
@@ -2482,7 +2472,7 @@
     "Desc": "星际电力运输描述",
     "Conclusion": "星际电力运输结果",
     "Position": [
-      25.0,
+      29.0,
       -3.0
     ],
     "PreTechs": [
@@ -8320,10 +8310,7 @@
       10
     ],
     "HashNeeded": 36000,
-    "UnlockRecipes": [
-      777,
-      778,
-      779,
+    "UnlockRecipes": [     
       761,
       762,
       763,
@@ -8375,10 +8362,7 @@
     "UnlockRecipes": [
       791,
       792,
-      793,
-      518,
-      519,
-      520
+      793
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -8467,7 +8451,9 @@
     ],
     "HashNeeded": 144000,
     "UnlockRecipes": [
-      795
+      795,
+      519,
+      520
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -8511,7 +8497,8 @@
     ],
     "HashNeeded": 288000,
     "UnlockRecipes": [
-      569
+      569,
+      518
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -8573,23 +8560,25 @@
     "ID": 1812,
     "Name": "先进精炼技术",
     "IconPath": "Assets/texpack/精炼科技",
-    "Desc": "开发日志#12\n……凌晨两点二十三分。\n它莫名其妙被我修好了。\n程序，很奇妙罢）\n凌晨两点二十九分。\n我找到制造逻辑了，芜湖~\n是makes。\n现在是，2022.02.06，下午两点二十⑨分。\n我突然有个想法。\n我不能添加新矿物，但是原版有几个没啥大用的旧矿物……\n嘿嘿嘿。",
+    "Desc": "随着对化工精炼技术的理解逐渐深入，现在可以合成更多种类的化工原料。\n[由于显示限制，解锁配方显示不完全]",
     "Conclusion": "",
     "Position": [
       21.0,
-      -35.0
+      -39.0
     ],
     "PreTechs": [
       1102
     ],
     "PreTechsImplicit": [],
     "Items": [
-      6001
+      6001,
+      6002
     ],
     "ItemPoints": [
-      10
+      20,
+      20
     ],
-    "HashNeeded": 36000,
+    "HashNeeded": 72000,
     "UnlockRecipes": [
       702,
       713,
@@ -8803,12 +8792,14 @@
     "Items": [
       6001,
       6002,
-      6003
+      6003,
+      6004
     ],
     "ItemPoints": [
       20,
       20,
-      20
+      20,
+      10
     ],
     "HashNeeded": 144000,
     "UnlockRecipes": [
@@ -8836,13 +8827,13 @@
     "Desc": "随着开拓者的工业水平进一步发展,裂变能已经无法满足需求.",
     "Conclusion": "",
     "Position": [
-      33.0,
-      -43.0
+      25.0,
+      -39.0
     ],
     "PreTechs": [
-      1820
+      1812
     ],
-    "PreTechsImplicit": [],
+    "PreTechsImplicit": [1820],
     "Items": [
       6001,
       6002,
@@ -8860,8 +8851,8 @@
     "HashNeeded": 180000,
     "UnlockRecipes": [
       682,
-      420,
-      421
+      107,
+106
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -8884,8 +8875,8 @@
     "Desc": "使用放射性同位素制作的聚变燃料.",
     "Conclusion": "",
     "Position": [
-      37.0,
-      -43.0
+      29.0,
+      -39.0
     ],
     "PreTechs": [
       1821
@@ -8908,8 +8899,8 @@
     "HashNeeded": 288000,
     "UnlockRecipes": [
       41,
-      422,
-      423
+      99,
+      100
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -9003,7 +8994,7 @@
     ],
     "HashNeeded": 288000,
     "UnlockRecipes": [
-      430
+      29
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -9050,7 +9041,7 @@
     ],
     "HashNeeded": 288000,
     "UnlockRecipes": [
-      431
+      54
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -9097,7 +9088,7 @@
     ],
     "HashNeeded": 288000,
     "UnlockRecipes": [
-      432
+      68
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -9146,7 +9137,7 @@
     "HashNeeded": 288000,
     "UnlockRecipes": [
       429,
-      433
+      69
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -9201,41 +9192,48 @@
     "PropertyItemCounts": []
   },
   {
-    "ID": 1833,
-    "Name": "地热开采",
-    "IconPath": "Icons/Tech/1513",
-    "Desc": "地热开采描述",
-    "Conclusion": "地热开采结果",
-    "Position": [
-      21.0,
-      -15.0
-    ],
-    "PreTechs": [1112],
-    "PreTechsImplicit": [],
-    "Items": [
-      6001,
-      6002
-    ],
-    "ItemPoints": [
-      20,
-      20
-    ],
-    "HashNeeded": 144000,  
-    "UnlockRecipes": [
-    118
+  "ID": 1833,
+  "Name": "晶圆冶炼",
+  "IconPath": "Icons/Tech/1403",
+  "Desc": "深入了解晶体冶炼技术后，我们可以将硅冶炼成硅晶圆。",
+  "Conclusion": "",
+  "Position": [
+    21.0,
+    -3.0
   ],
-    "UnlockFunctions": [],
-    "UnlockValues": [],
-    "Published": true,
-    "Level": 0,
-    "MaxLevel": 0,
-    "LevelCoef1": 0,
-    "LevelCoef2": 0,
-    "IsLabTech": true,
-    "PreTechsMax": false,
-    "AddItems": [],
-    "AddItemCounts": [],
-    "PropertyOverrideItems": [],
-    "PropertyItemCounts": []
-  }
+  "PreTechs": [
+    1403
+  ],
+  "PreTechsImplicit": [],
+  "Items": [
+    6001,
+    6002
+  ],
+  "ItemPoints": [
+    20,
+    20
+  ],
+  "HashNeeded": 90000,
+  "UnlockRecipes": [
+    777,
+    778,
+    779,
+    547,
+    548,
+    549
+  ],
+  "UnlockFunctions": [],
+  "UnlockValues": [],
+  "Published": true,
+  "Level": 0,
+  "MaxLevel": 0,
+  "LevelCoef1": 0,
+  "LevelCoef2": 0,
+  "IsLabTech": true,
+  "PreTechsMax": false,
+  "AddItems": [],
+  "AddItemCounts": [],
+  "PropertyOverrideItems": [],
+  "PropertyItemCounts": []
+}
 ]

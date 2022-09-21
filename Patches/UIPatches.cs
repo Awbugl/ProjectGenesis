@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using HarmonyLib;
 using UnityEngine;
@@ -7,6 +9,8 @@ using UnityEngine.UI;
 using ERecipeType_1 = ERecipeType;
 
 // ReSharper disable InconsistentNaming
+// ReSharper disable LoopCanBePartlyConvertedToQuery
+// ReSharper disable ForCanBeConvertedToForeach
 
 namespace ProjectGenesis.Patches
 {
@@ -25,7 +29,9 @@ namespace ProjectGenesis.Patches
                 __result = "矿物处理厂".Translate();
             else if (type == ERecipeType.精密组装)
                 __result = "精密组装厂".Translate();
-            else if (type == ERecipeType.聚变生产) __result = "紧凑式回旋加速器".Translate();
+            else if (type == ERecipeType.聚变生产)
+                __result = "紧凑式回旋加速器".Translate();
+            else if (type == ERecipeType.垃圾回收) __result = "物质分解设施".Translate();
         }
 
         [HarmonyPostfix]
@@ -90,7 +96,7 @@ namespace ProjectGenesis.Patches
                 index == 22)
                 __result = "4x";
         }
-        
+
         #region FluidColorPatch
 
         // Specify color of each fluid here, one per line.
@@ -203,6 +209,107 @@ namespace ProjectGenesis.Patches
             escLogo.GetComponent<RawImage>().texture = texture;
             mainLogo.GetComponent<RectTransform>().sizeDelta = new Vector2(texture.width, texture.height);
             escLogo.GetComponent<RectTransform>().sizeDelta = new Vector2(texture.width, texture.height);
+        }
+
+        #endregion
+
+        #region RecipeExpandPatches 
+        // from https: //github.com/appuns/DSPMoreRecipes/blob/main/DSPMoreRecipes.cs
+
+        private static bool _resized, _resized2;
+
+        private static ref TU FieldRefAccess<T, TU>(T instance, string fieldName) => ref FieldRefAccess<T, TU>(fieldName)(instance);
+
+        private static AccessTools.FieldRef<T, TU> FieldRefAccess<T, TU>(string fieldName)
+            => AccessTools.FieldRefAccess<T, TU>(AccessTools.Field(typeof(T), fieldName));
+
+        [HarmonyPatch(typeof(UIReplicatorWindow), "_OnInit")]
+        [HarmonyPrefix]
+        public static void UIReplicatorWindow_OnInit_Prefix()
+        {
+            ref Text[] local = ref AccessTools.FieldRefAccess<UIReplicatorWindow, Text[]>(UIRoot.instance.uiGame.replicator, "queueNumTexts");
+            Array.Resize(ref local, 17);
+        }
+
+        [HarmonyPatch(typeof(VFPreload), "InvokeOnLoadWorkEnded")]
+        [HarmonyPostfix]
+        [HarmonyPriority(1)]
+        public static void VFPreload_InvokeOnLoadWorkEnded_Postfix()
+        {
+            if (!_resized2)
+            {
+                ref var local1 = ref FieldRefAccess<UIReplicatorWindow, RectTransform>(UIRoot.instance.uiGame.replicator, "windowRect");
+                local1.sizeDelta = new Vector2(local1.sizeDelta.x + 230f, local1.sizeDelta.y);
+                ref var local2 = ref FieldRefAccess<UIReplicatorWindow, RectTransform>(UIRoot.instance.uiGame.replicator, "recipeGroup");
+                local2.sizeDelta = new Vector2(local2.sizeDelta.x + 230f, local2.sizeDelta.y);
+                ref var local3 = ref FieldRefAccess<UIRecipePicker, RectTransform>(UIRoot.instance.uiGame.recipePicker, "pickerTrans");
+                local3.sizeDelta = new Vector2(local3.sizeDelta.x + 230f, local3.sizeDelta.y);
+                ref var local4 = ref FieldRefAccess<UIAssemblerWindow, RectTransform>(UIRoot.instance.uiGame.assemblerWindow, "recipeGroup");
+                local4.sizeDelta = new Vector2(local4.sizeDelta.x + 230f, local4.sizeDelta.y);
+                GameObject.Find("UI Root/Overlay Canvas/In Game/Windows/Replicator Window/queue-group").GetComponentInChildren<RectTransform>()
+                          .sizeDelta = new Vector2(782f, 46f);
+                _resized2 = true;
+            }
+        }
+
+        [HarmonyPatch(typeof(UIRecipePicker), "_OnOpen")]
+        [HarmonyPostfix]
+        public static void Postfix()
+        {
+            if (_resized) return;
+            // ReSharper disable once PossibleInvalidCastExceptionInForeachLoop
+            foreach (GameObject gameObject in UnityEngine.Object.FindObjectsOfType(typeof(GameObject)))
+            {
+                if (gameObject.name.Contains("Recipe"))
+                    foreach (Transform transform in gameObject.transform)
+                    {
+                        if (transform.name.Contains("content"))
+                        {
+                            transform.GetComponent<RectTransform>().sizeDelta
+                                = new Vector2(transform.GetComponent<RectTransform>().sizeDelta.x + 230f,
+                                              transform.GetComponent<RectTransform>().sizeDelta.y);
+                            _resized = true;
+                        }
+                    }
+            }
+        }
+
+        [HarmonyPatch(typeof(UIReplicatorWindow), "RefreshRecipeIcons")]
+        [HarmonyPatch(typeof(UIReplicatorWindow), "TestMouseRecipeIndex")]
+        [HarmonyPatch(typeof(UIReplicatorWindow), "SetSelectedRecipeIndex")]
+        [HarmonyPatch(typeof(UIReplicatorWindow), "SetSelectedRecipe")]
+        [HarmonyPatch(typeof(UIReplicatorWindow), "_OnInit")]
+        [HarmonyPatch(typeof(UIReplicatorWindow), "RepositionQueueText")]
+        [HarmonyPatch(typeof(UIReplicatorWindow), "RefreshQueueIcons")]
+        [HarmonyPatch(typeof(UIReplicatorWindow), "TestMouseQueueIndex")]
+        [HarmonyPatch(typeof(UIRecipePicker), "_OnUpdate")]
+        [HarmonyPatch(typeof(UIRecipePicker), "RefreshIcons")]
+        [HarmonyPatch(typeof(UIRecipePicker), "TestMouseIndex")]
+        [HarmonyTranspiler]
+        public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
+        {
+            var source = new List<CodeInstruction>(instructions);
+            for (var index = 0; index < source.Count; ++index)
+            {
+                if (source[index].opcode == OpCodes.Ldc_I4_S && (sbyte)source[index].operand == 12) source[index].operand = 17;
+            }
+
+            return source.AsEnumerable();
+        }
+
+        [HarmonyPatch(typeof(UIReplicatorWindow), "SetMaterialProps")]
+        [HarmonyPatch(typeof(UIRecipePicker), "SetMaterialProps")]
+        [HarmonyTranspiler]
+        public static IEnumerable<CodeInstruction> SetMaterialProps_Transpiler(IEnumerable<CodeInstruction> instructions)
+        {
+            var source = new List<CodeInstruction>(instructions);
+            for (var index = 0; index < source.Count; ++index)
+            {
+                // ReSharper disable once CompareOfFloatsByEqualityOperator
+                if (source[index].opcode == OpCodes.Ldc_R4 && source[index].operand is float operand && operand == 12.0) source[index].operand = 17f;
+            }
+
+            return source.AsEnumerable();
         }
 
         #endregion

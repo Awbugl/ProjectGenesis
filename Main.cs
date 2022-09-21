@@ -110,7 +110,6 @@ namespace ProjectGenesis
             foreach (var techjson in JsonHelper.TechProtos())
             {
                 var proto = LDB.techs.Exist(techjson.ID) ? LDB.techs.Select(techjson.ID) : templateTech.Copy();
-
                 proto.ID = techjson.ID;
                 proto.Name = techjson.Name;
                 proto.Desc = techjson.Desc;
@@ -453,7 +452,12 @@ namespace ProjectGenesis
 
             foreach (var proto in LDB.techs.dataArray) proto.Preload();
 
-            for (var i = 0; i < LDB.items.dataArray.Length; ++i) LDB.items.dataArray[i].Preload(i);
+            for (var i = 0; i < LDB.items.dataArray.Length; ++i)
+            {
+                LDB.items.dataArray[i].recipes = null;
+                LDB.items.dataArray[i].rawMats = null;
+                LDB.items.dataArray[i].Preload(i);
+            }
 
             for (var i = 0; i < LDB.recipes.dataArray.Length; ++i) LDB.recipes.dataArray[i].Preload(i);
 

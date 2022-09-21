@@ -26,18 +26,18 @@
   },
   {
     "ID": 2,
-    "Name": "磁铁",
-    "Description": "",
-    "IconPath": "",
-    "Type": 1,
-    "GridIndex": 2817,
+    "Name": "铜线圈",
+    "Description": "一种新的制造材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/铜线圈",
+    "Type": 4,
+    "GridIndex": 2506,
     "PreTech": 0,
     "Time": 60,
     "Input": [
-      1001
+      1104
     ],
     "InCounts": [
-      1
+      2
     ],
     "Output": [
       1102
@@ -48,7 +48,7 @@
     "Explicit": false,
     "Handcraft": true,
     "NonProductive": false
-  },
+  },  
   {
     "ID": 3,
     "Name": "铜块",
@@ -126,29 +126,58 @@
   },
   {
     "ID": 6,
-    "Name": "磁线圈",
+    "Name": "电路板",
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 2816,
+    "GridIndex": 2407,
     "PreTech": 0,
     "Time": 60,
     "Input": [
-      1102,
+      1101,
       1104
     ],
     "InCounts": [
-      2,
+      1,
       1
     ],
     "Output": [
-      1202
+      1301
     ],
     "OutCounts": [
       2
     ],
     "Explicit": false,
     "Handcraft": true,
+    "NonProductive": false
+  },
+  {
+    "ID": 57,
+    "Name": "无尽材料精炼",
+    "Description": "利用粒子加速器的庞大能量创造全新的材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/三元精金",
+    "Type": 13,
+    "GridIndex": 3409,
+    "PreTech": 1134,
+    "Time": 3600,
+    "Input": [
+      1103,
+      1107,
+      7707
+    ],
+    "InCounts": [
+      10,
+      10,
+      10
+    ],
+    "Output": [
+      6271
+    ],
+    "OutCounts": [
+      1
+    ],
+    "Explicit": false,
+    "Handcraft": false,
     "NonProductive": false
   },
   {
@@ -189,7 +218,7 @@
     "Time": 60,
     "Input": [
       1101,
-      7823
+      1102
     ],
     "InCounts": [
       1,
@@ -215,7 +244,7 @@
     "PreTech": 1002,
     "Time": 180,
     "Input": [
-      7823,
+      1102,
       1301
     ],
     "InCounts": [
@@ -265,27 +294,31 @@
   },
   {
     "ID": 11,
-    "Name": "棱镜",
-    "Description": "",
-    "IconPath": "",
-    "Type": 4,
-    "GridIndex": 2812,
-    "PreTech": 0,
-    "Time": 120,
+    "Name": "先驱者晶片",
+    "Description": "异星文明留下的遗产,这份蓝图的价值无可估量.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/紫色先驱者晶片",
+    "Type": 12,
+    "GridIndex": 3411,
+    "PreTech": 1123,
+    "Time": 5400,
     "Input": [
-      1110
+      6271,
+      6272,
+      7806
     ],
     "InCounts": [
-      3
+      40,
+      20,
+      10
     ],
     "Output": [
-      1111
+      6274
     ],
     "OutCounts": [
-      2
+      1
     ],
     "Explicit": false,
-    "Handcraft": true,
+    "Handcraft": false,
     "NonProductive": false
   },
   {
@@ -299,7 +332,7 @@
     "Time": 120,
     "Input": [
       1110,
-      7823
+      1102
     ],
     "InCounts": [
       1,
@@ -421,7 +454,7 @@
     ],
     "Output": [
       1120,
-      7218
+      1114
     ],
     "OutCounts": [
       2,
@@ -655,25 +688,27 @@
   },
   {
     "ID": 25,
-    "Name": "有机晶体",
-    "Description": "",
-    "IconPath": "",
-    "Type": 2,
-    "GridIndex": 2803,
-    "PreTech": 0,
-    "Time": 360,
+    "Name": "精密组装厂",
+    "Description": "利用粒子加速器的庞大能量创造全新的材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/红制造台",
+    "Type": 10,
+    "GridIndex": 3609,
+    "PreTech": 1152,
+    "Time": 10800,
     "Input": [
-      1115,
-      1114,
-      1000
+      2305,
+      2003,
+      7707,
+      7803
     ],
     "InCounts": [
-      2,
-      1,
-      1
+      10,
+      40,
+      20,
+      10
     ],
     "Output": [
-      1117
+      6275
     ],
     "OutCounts": [
       1
@@ -684,29 +719,33 @@
   },
   {
     "ID": 26,
-    "Name": "钛晶石",
-    "Description": "",
-    "IconPath": "",
-    "Type": 4,
-    "GridIndex": 2805,
-    "PreTech": 0,
-    "Time": 240,
+    "Name": "回旋加速器",
+    "Description": "利用粒子加速器的庞大能量创造全新的材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Icons/ItemRecipe/hadron-collider",
+    "Type": 10,
+    "GridIndex": 3610,
+    "PreTech": 1152,
+    "Time": 10800,
     "Input": [
-      1117,
-      1106
+      2310,
+      1125,
+      1205,
+      7806
     ],
     "InCounts": [
-      1,
-      3
+      40,
+      60,
+      120,
+      5
     ],
     "Output": [
-      1118
+      6276
     ],
     "OutCounts": [
       1
     ],
     "Explicit": false,
-    "Handcraft": true,
+    "Handcraft": false,
     "NonProductive": false
   },
   {
@@ -767,30 +806,34 @@
   },
   {
     "ID": 29,
-    "Name": "卡西米尔晶体（高效）",
-    "Description": "R卡西米尔晶体（高效）",
-    "IconPath": "Icons/ItemRecipe/casimir-crystal-lv2",
-    "Type": 4,
-    "GridIndex": 2808,
-    "PreTech": 0,
-    "Time": 240,
+    "Name": "聚变物质裂解工厂",
+    "Description": "从原矿中分离的纯净粉可以实现效率更高的生产.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/行星熔炉",
+    "Type": 10,
+    "GridIndex": 3103,
+    "PreTech": 1824,
+    "Time": 18000,
     "Input": [
-      1014,
-      1123,
-      1120
+      6502,
+      1107,
+      1206,
+      2302,
+      1305
     ],
     "InCounts": [
-      4,
-      2,
-      6
+      60,
+      180,
+      240,
+      20,
+      60
     ],
     "Output": [
-      1126
+      6258
     ],
     "OutCounts": [
       1
     ],
-    "Explicit": true,
+    "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
@@ -1346,33 +1389,7 @@
     "Handcraft": true,
     "NonProductive": false
   },
-  {
-    "ID": 50,
-    "Name": "电路板",
-    "Description": "",
-    "IconPath": "",
-    "Type": 4,
-    "GridIndex": 2407,
-    "PreTech": 0,
-    "Time": 60,
-    "Input": [
-      1101,
-      1104
-    ],
-    "InCounts": [
-      1,
-      1
-    ],
-    "Output": [
-      1301
-    ],
-    "OutCounts": [
-      2
-    ],
-    "Explicit": false,
-    "Handcraft": true,
-    "NonProductive": false
-  },
+  
   {
     "ID": 51,
     "Name": "处理器",
@@ -1462,31 +1479,35 @@
   },
   {
     "ID": 54,
-    "Name": "有机晶体（原始）",
-    "Description": "R有机晶体（原始）",
-    "IconPath": "Icons/ItemRecipe/crystal-rubber-lv0",
-    "Type": 4,
-    "GridIndex": 2804,
-    "PreTech": 0,
-    "Time": 360,
+    "Name": "巨型化学反应釜",
+    "Description": "从原矿中分离的纯净粉可以实现效率更高的生产.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/行星化工厂",
+    "Type": 10,
+    "GridIndex": 3104,
+    "PreTech": 1825,
+    "Time": 18000,
     "Input": [
-      1030,
-      1031,
-      1000
+      6502,
+      1107,
+      1206,
+      2309,
+      1305
     ],
     "InCounts": [
+      60,
+      180,
+      240,
       20,
-      30,
-      10
+      60
     ],
     "Output": [
-      1117
+      6259
     ],
     "OutCounts": [
       1
     ],
-    "Explicit": true,
-    "Handcraft": true,
+    "Explicit": false,
+    "Handcraft": false,
     "NonProductive": false
   },
   {
@@ -1528,7 +1549,7 @@
     "Input": [
       6501,
       1101,
-      7823
+      1102
     ],
     "InCounts": [
       1,
@@ -1546,13 +1567,13 @@
     "NonProductive": false
   },
   {
-    "ID": 57,
+    "ID": 50,
     "Name": "玻璃",
     "Description": "",
     "IconPath": "",
     "Type": 1,
     "GridIndex": 1108,
-    "PreTech": 1401,
+    "PreTech": 0,
     "Time": 120,
     "Input": [
       1005
@@ -1580,7 +1601,7 @@
     "PreTech": 1103,
     "Time": 120,
     "Input": [
-      7218,
+      1114,
       1120
     ],
     "InCounts": [
@@ -1680,7 +1701,7 @@
     "Description": "R晶格硅（高效）",
     "IconPath": "Icons/ItemRecipe/silicium-high-purity-lv2",
     "Type": 4,
-    "GridIndex": 3209,
+    "GridIndex": 1307,
     "PreTech": 1133,
     "Time": 60,
     "Input": [
@@ -1838,55 +1859,67 @@
   },
   {
     "ID": 68,
-    "Name": "光子合并器",
-    "Description": "",
-    "IconPath": "",
-    "Type": 4,
-    "GridIndex": 2809,
-    "PreTech": 0,
-    "Time": 180,
+    "Name": "大型精密组装厂",
+    "Description": "从原矿中分离的纯净粉可以实现效率更高的生产.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/行星精密组装厂",
+    "Type": 10,
+    "GridIndex": 3105,
+    "PreTech": 1826,
+    "Time": 18000,
     "Input": [
-      1111,
-      1301
+      6503,
+      7707,
+      1206,
+      2305,
+      1305
     ],
     "InCounts": [
-      2,
-      1
+      30,
+      60,
+      360,
+      20,
+      120
     ],
     "Output": [
-      1404
+      6260
     ],
     "OutCounts": [
       1
     ],
     "Explicit": false,
-    "Handcraft": true,
+    "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 69,
-    "Name": "光子合并器（高效）",
-    "Description": "R光子合并器（高效）",
-    "IconPath": "Icons/ItemRecipe/photo-shifter-lv2",
-    "Type": 4,
-    "GridIndex": 2810,
-    "PreTech": 0,
-    "Time": 180,
+    "Name": "物质分解设施",
+    "Description": "从原矿中分离的纯净粉可以实现效率更高的生产.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/回收塔",
+    "Type": 10,
+    "GridIndex": 3106,
+    "PreTech": 1831,
+    "Time": 7200,
     "Input": [
-      1014,
-      1301
+      6502,
+      1107,
+      1206,
+      2013,
+      1305
     ],
     "InCounts": [
-      1,
-      1
+      20,
+      60,
+      40,
+      20,
+      10
     ],
     "Output": [
-      1404
+      6264
     ],
     "OutCounts": [
       1
     ],
-    "Explicit": true,
+    "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
@@ -2112,7 +2145,7 @@
     "Time": 360,
     "Input": [
       6502,
-      6249,
+      1206,
       1303
     ],
     "InCounts": [
@@ -2549,7 +2582,7 @@
     "Input": [
       6501,
       1103,
-      6249,
+      1206,
       1303
     ],
     "InCounts": [
@@ -2607,7 +2640,7 @@
     "Input": [
       6502,
       1107,
-      6249,
+      1206,
       1305
     ],
     "InCounts": [
@@ -2664,7 +2697,7 @@
     "Time": 120,
     "Input": [
       1101,
-      7823
+      1102
     ],
     "InCounts": [
       1,
@@ -2691,7 +2724,7 @@
     "Time": 120,
     "Input": [
       1203,
-      7824
+      1202
     ],
     "InCounts": [
       1,
@@ -2709,57 +2742,58 @@
   },
   {
     "ID": 99,
-    "Name": "粒子容器",
-    "Description": "",
-    "IconPath": "",
+    "Name": "氘氦三混合聚变燃料棒",
+    "Description": "从光栅石中分离氦.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/氘氦三混合聚变燃料棒",
     "Type": 4,
-    "GridIndex": 2806,
-    "PreTech": 0,
-    "Time": 240,
+    "GridIndex": 3511,
+    "PreTech": 1822,
+    "Time": 600,
     "Input": [
-      1204,
-      1104,
-      1123
+      1802,
+      6244,
+      6263
     ],
     "InCounts": [
-      2,
-      2,
-      2
+      1,
+      1,
+      1
     ],
     "Output": [
-      1206
+      6245
     ],
     "OutCounts": [
       1
     ],
     "Explicit": false,
-    "Handcraft": true,
+    "Handcraft": false,
     "NonProductive": false
   },
+
   {
     "ID": 100,
-    "Name": "粒子容器（高效）",
-    "Description": "R粒子容器（高效）",
-    "IconPath": "Icons/ItemRecipe/partical-capacitor-lv2",
+    "Name": "氦三燃料棒",
+    "Description": "从光栅石中分离氦.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/氦三燃料棒",
     "Type": 4,
-    "GridIndex": 2807,
-    "PreTech": 0,
-    "Time": 240,
+    "GridIndex": 3510,
+    "PreTech": 1822,
+    "Time": 600,
     "Input": [
-      1016,
-      1104
+      6509,
+      6235
     ],
     "InCounts": [
-      10,
-      2
+      1,
+      20
     ],
     "Output": [
-      1206
+      6244
     ],
     "OutCounts": [
       1
     ],
-    "Explicit": true,
+    "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
@@ -2828,7 +2862,7 @@
     "Time": 120,
     "Input": [
       1204,
-      7825
+      1118
     ],
     "InCounts": [
       1,
@@ -2873,56 +2907,56 @@
   },
   {
     "ID": 106,
-    "Name": "增产剂 Mk.I",
-    "Description": "",
-    "IconPath": "",
-    "Type": 4,
-    "GridIndex": 2813,
-    "PreTech": 0,
-    "Time": 30,
+    "Name": "氦三",
+    "Description": "从光栅石中分离氦.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/氦三",
+    "Type": 2,
+    "GridIndex": 3309,
+    "PreTech": 1821,
+    "Time": 240,
     "Input": [
-      1006
+      6234
     ],
     "InCounts": [
-      1
+      4
     ],
     "Output": [
-      1141
+      6235
     ],
     "OutCounts": [
       1
     ],
     "Explicit": false,
-    "Handcraft": true,
+    "Handcraft": false,
     "NonProductive": false
   },
+
   {
     "ID": 107,
-    "Name": "增产剂 Mk.II",
-    "Description": "",
-    "IconPath": "",
-    "Type": 4,
-    "GridIndex": 2814,
-    "PreTech": 0,
-    "Time": 60,
+    "Name": "氦元素离心",
+    "Description": "从光栅石中分离氦.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/氦",
+    "Type": 2,
+    "GridIndex": 3308,
+    "PreTech": 1821,
+    "Time": 240,
     "Input": [
-      1141,
-      1112
+      1014
     ],
     "InCounts": [
-      2,
-      1
+      2
     ],
     "Output": [
-      1142
+      6234
     ],
     "OutCounts": [
-      1
+      4
     ],
-    "Explicit": false,
-    "Handcraft": true,
+    "Explicit": true,
+    "Handcraft": false,
     "NonProductive": false
   },
+
   {
     "ID": 108,
     "Name": "增产剂",
@@ -2961,7 +2995,7 @@
     "Time": 240,
     "Input": [
       6502,
-      6249,
+      1206,
       1119,
       1305
     ],
@@ -2983,33 +3017,33 @@
   },
   {
     "ID": 110,
-    "Name": "分馏塔",
-    "Description": "",
-    "IconPath": "",
-    "Type": 4,
-    "GridIndex": 2802,
-    "PreTech": 0,
-    "Time": 180,
+    "Name": "反物质能量炉1",
+    "Description": "从原矿中分离的纯净粉可以实现效率更高的生产.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/反物质能量炉",
+    "Type": 12,
+    "GridIndex": 3608,
+    "PreTech": 1144,
+    "Time": 10800,
     "Input": [
-      1103,
-      1108,
-      1110,
-      1303
+      6271,
+      6503,
+      1403,
+      6274
     ],
     "InCounts": [
-      8,
-      4,
-      4,
-      1
+      240,
+      120,
+      120,
+      8
     ],
     "Output": [
-      2314
+      6261
     ],
     "OutCounts": [
       1
     ],
     "Explicit": false,
-    "Handcraft": true,
+    "Handcraft": false,
     "NonProductive": false
   },
   {
@@ -3078,7 +3112,7 @@
     "Input": [
       6502,
       1107,
-      6249,
+      1206,
       1205,
       1305
     ],
@@ -3130,29 +3164,34 @@
   },
   {
     "ID": 115,
-    "Name": "重氢分馏",
-    "Description": "R重氢分馏",
-    "IconPath": "Icons/ItemRecipe/deuterium-formula",
-    "Type": 8,
-    "GridIndex": 2811,
-    "PreTech": 0,
-    "Time": 1,
+    "Name": "氦闪约束器1",
+    "Description": "从原矿中分离的纯净粉可以实现效率更高的生产.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/氦闪抑制器",
+    "Type": 10,
+    "GridIndex": 3607,
+    "PreTech": 1153,
+    "Time": 900,
     "Input": [
-      1120
+      7707,
+      1205,
+      1305
     ],
     "InCounts": [
-      100
+      8,
+      4,
+      1
     ],
     "Output": [
-      1121
+      6263
     ],
     "OutCounts": [
       1
     ],
-    "Explicit": true,
+    "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
+
   {
     "ID": 116,
     "Name": "位面熔炉",
@@ -3231,7 +3270,7 @@
       4
     ],
     "Output": [
-      6277
+      2213
     ],
     "OutCounts": [
       1
@@ -3302,33 +3341,36 @@
   },
   {
     "ID": 121,
-    "Name": "重整精炼",
-    "Description": "R重整精炼",
-    "IconPath": "Icons/ItemRecipe/reforming-refine",
-    "Type": 3,
-    "GridIndex": 1307,
-    "PreTech": 1104,
-    "Time": 240,
+    "Name": "反物质约束单元",
+    "Description": "从原矿中分离的纯净粉可以实现效率更高的生产.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/反物质约束单元",
+    "Type": 10,
+    "GridIndex": 3606,
+    "PreTech": 1145,
+    "Time": 1800,
     "Input": [
-      7218,
-      1120,
-      1006
+      1125,
+      1304,
+      1205,
+      1305
     ],
     "InCounts": [
-      2,
-      1,
-      1
+      8,
+      4,
+      4,
+      2
     ],
     "Output": [
-      7218
+      6262
     ],
     "OutCounts": [
-      3
+      1
     ],
-    "Explicit": true,
+    "Explicit": false,
     "Handcraft": false,
-    "NonProductive": true
+    "NonProductive": false
   },
+
   {
     "ID": 701,
     "Name": "石油裂化",
@@ -3687,7 +3729,7 @@
       1
     ],
     "Output": [
-      7218
+      1114
     ],
     "OutCounts": [
       1
@@ -3706,7 +3748,7 @@
     "PreTech": 1812,
     "Time": 60,
     "Input": [
-      7218
+      1114
     ],
     "InCounts": [
       1
@@ -4481,7 +4523,7 @@
     "IconPath": "Assets/texpack/硅晶圆",
     "Type": 1,
     "GridIndex": 1501,
-    "PreTech": 1806,
+    "PreTech": 1833,
     "Time": 480,
     "Input": [
       1105
@@ -4506,7 +4548,7 @@
     "IconPath": "Assets/texpack/钛掺杂的硅晶圆",
     "Type": 1,
     "GridIndex": 1502,
-    "PreTech": 1806,
+    "PreTech": 1833,
     "Time": 480,
     "Input": [
       1105,
@@ -4533,7 +4575,7 @@
     "IconPath": "Assets/texpack/钨掺杂的硅晶圆",
     "Type": 1,
     "GridIndex": 1503,
-    "PreTech": 1806,
+    "PreTech": 1833,
     "Time": 480,
     "Input": [
       1105,
@@ -4594,7 +4636,7 @@
       1
     ],
     "Output": [
-      7821
+      1111
     ],
     "OutCounts": [
       1
@@ -4619,7 +4661,7 @@
       1
     ],
     "Output": [
-      7822
+      1404
     ],
     "OutCounts": [
       1
@@ -4630,27 +4672,27 @@
   },
   {
     "ID": 623,
-    "Name": "铜线圈",
-    "Description": "一种新的制造材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "IconPath": "Assets/texpack/铜线圈",
-    "Type": 4,
-    "GridIndex": 2506,
-    "PreTech": 1,
-    "Time": 60,
+    "Name": "光子结晶化",
+    "Description": "在高能环境下将光子压缩成固体.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/光子结晶",
+    "Type": 13,
+    "GridIndex": 3410,
+    "PreTech": 1134,
+    "Time": 3600,
     "Input": [
-      1104
+      1208
     ],
     "InCounts": [
-      2
+      10
     ],
     "Output": [
-      7823
+      6272
     ],
     "OutCounts": [
       1
     ],
     "Explicit": false,
-    "Handcraft": true,
+    "Handcraft": false,
     "NonProductive": false
   },
   {
@@ -4669,7 +4711,7 @@
       2
     ],
     "Output": [
-      7824
+      1202
     ],
     "OutCounts": [
       1
@@ -4694,7 +4736,7 @@
       2
     ],
     "Output": [
-      7825
+      1118
     ],
     "OutCounts": [
       1
@@ -4743,7 +4785,7 @@
     "Time": 240,
     "Input": [
       6501,
-      7821,
+      1111,
       1303
     ],
     "InCounts": [
@@ -4772,7 +4814,7 @@
     "Time": 360,
     "Input": [
       6502,
-      7822,
+      1404,
       1305
     ],
     "InCounts": [
@@ -4894,7 +4936,7 @@
   },
   {
     "ID": 541,
-    "Name": "质能储存(高效)",
+    "Name": "质能储存（高效）",
     "Description": "这个公式能让你更加高效的生产反物质.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/高效反物质",
     "Type": 5,
@@ -4919,7 +4961,7 @@
   },
   {
     "ID": 542,
-    "Name": "奇异物质(高效)",
+    "Name": "奇异物质（高效）",
     "Description": "这个公式能让你更加高效的生产奇异物质.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/高效奇异物质",
     "Type": 5,
@@ -4970,38 +5012,13 @@
     "NonProductive": false
   },
   {
-    "ID": 544,
-    "Name": "重氢(高效)",
-    "Description": "这个公式能让你更加高效的生产重氢.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "IconPath": "Assets/texpack/高效重氢",
-    "Type": 5,
-    "GridIndex": 1311,
-    "PreTech": 1142,
-    "Time": 60,
-    "Input": [
-      1120
-    ],
-    "InCounts": [
-      2
-    ],
-    "Output": [
-      1121
-    ],
-    "OutCounts": [
-      1
-    ],
-    "Explicit": true,
-    "Handcraft": false,
-    "NonProductive": false
-  },
-  {
     "ID": 545,
-    "Name": "等离子精炼(高效)",
+    "Name": "等离子精炼（高效）",
     "Description": "这个公式能让你更加高效的生产氢.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/精炼氢",
     "Type": 3,
     "GridIndex": 1712,
-    "PreTech": 1121,
+    "PreTech": 1103,
     "Time": 120,
     "Input": [
       1007
@@ -5026,7 +5043,7 @@
     "IconPath": "Assets/texpack/剧毒有机液体",
     "Type": 2,
     "GridIndex": 2512,
-    "PreTech": 1121,
+    "PreTech": 1103,
     "Time": 120,
     "Input": [
       1116
@@ -5038,7 +5055,7 @@
       7017,
       7002,
       7014,
-      7218
+      1114
     ],
     "OutCounts": [
       1,
@@ -5052,12 +5069,12 @@
   },
   {
     "ID": 547,
-    "Name": "硅晶圆(高效)",
+    "Name": "硅晶圆（高效）",
     "Description": "这个公式能让你更加高效的生产晶圆.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/高效硅晶圆",
     "Type": 1,
     "GridIndex": 2410,
-    "PreTech": 1122,
+    "PreTech": 1833,
     "Time": 240,
     "Input": [
       1105,
@@ -5079,12 +5096,12 @@
   },
   {
     "ID": 548,
-    "Name": "含钛硅晶圆(高效)",
+    "Name": "含钛硅晶圆（高效）",
     "Description": "这个公式能让你更加高效的生产晶圆.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/高效钛晶圆",
     "Type": 1,
     "GridIndex": 2411,
-    "PreTech": 1122,
+    "PreTech": 1833,
     "Time": 240,
     "Input": [
       1105,
@@ -5108,12 +5125,12 @@
   },
   {
     "ID": 549,
-    "Name": "含钨硅晶圆(高效)",
+    "Name": "含钨硅晶圆（高效）",
     "Description": "这个公式能让你更加高效的生产晶圆.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/高效钨晶圆",
     "Type": 1,
     "GridIndex": 2412,
-    "PreTech": 1122,
+    "PreTech": 1833,
     "Time": 240,
     "Input": [
       1105,
@@ -5137,7 +5154,7 @@
   },
   {
     "ID": 551,
-    "Name": "聚乙烯(高效)",
+    "Name": "聚乙烯（高效）",
     "Description": "这个公式能让你更高效的生产聚乙烯.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/高效塑料",
     "Type": 2,
@@ -5612,7 +5629,7 @@
   },
   {
     "ID": 518,
-    "Name": "微晶元件(高效)",
+    "Name": "微晶元件（高效）",
     "Description": "这个公式能让你更加高效的生产微晶元件.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/高效微晶元件",
     "Type": 10,
@@ -5639,7 +5656,7 @@
   },
   {
     "ID": 519,
-    "Name": "处理器(高效)",
+    "Name": "处理器（高效）",
     "Description": "这个公式能让你更加高效的生产处理器.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/高效处理器",
     "Type": 10,
@@ -5666,7 +5683,7 @@
   },
   {
     "ID": 520,
-    "Name": "量子芯片(高效)",
+    "Name": "量子芯片（高效）",
     "Description": "这个公式能让你更加高效的生产量子芯片.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/高效量子芯片",
     "Type": 10,
@@ -5693,7 +5710,7 @@
   },
   {
     "ID": 521,
-    "Name": "硫酸(高效)",
+    "Name": "硫酸（高效）",
     "Description": "这个公式能让你更加高效的生产硫酸.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/高效硫酸",
     "Type": 2,
@@ -5754,12 +5771,12 @@
     "IconPath": "Assets/texpack/矿物处理厂",
     "Type": 4,
     "GridIndex": 3207,
-    "PreTech": 1413,
+    "PreTech": 1411,
     "Time": 600,
     "Input": [
       6502,
       1107,
-      7821,
+      1111,
       1303
     ],
     "InCounts": [
@@ -5781,11 +5798,11 @@
   {
     "ID": 531,
     "Name": "铁矿粉",
-    "Description": "这个公式能让你更加高效的生产硫酸.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "这个公式能让你更加高效的生产铁.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/铁矿粉",
     "Type": 11,
     "GridIndex": 3701,
-    "PreTech": 1413,
+    "PreTech": 1411,
     "Time": 60,
     "Input": [
       1001
@@ -5810,7 +5827,7 @@
     "IconPath": "Assets/texpack/铜矿粉",
     "Type": 11,
     "GridIndex": 3702,
-    "PreTech": 1413,
+    "PreTech": 1411,
     "Time": 60,
     "Input": [
       1002
@@ -5835,7 +5852,7 @@
     "IconPath": "Assets/texpack/硅矿粉",
     "Type": 11,
     "GridIndex": 3703,
-    "PreTech": 1413,
+    "PreTech": 1411,
     "Time": 60,
     "Input": [
       1003
@@ -5860,7 +5877,7 @@
     "IconPath": "Assets/texpack/钛矿粉",
     "Type": 11,
     "GridIndex": 3704,
-    "PreTech": 1413,
+    "PreTech": 1411,
     "Time": 60,
     "Input": [
       1004
@@ -5885,7 +5902,7 @@
     "IconPath": "Assets/texpack/石粉",
     "Type": 11,
     "GridIndex": 3705,
-    "PreTech": 1413,
+    "PreTech": 1411,
     "Time": 60,
     "Input": [
       1005
@@ -5910,7 +5927,7 @@
     "IconPath": "Assets/texpack/煤矿粉",
     "Type": 11,
     "GridIndex": 3706,
-    "PreTech": 1413,
+    "PreTech": 1411,
     "Time": 60,
     "Input": [
       1006
@@ -6174,7 +6191,7 @@
     "IconPath": "Icons/ItemRecipe/iron-plate",
     "Type": 1,
     "GridIndex": 3601,
-    "PreTech": 1413,
+    "PreTech": 1411,
     "Time": 60,
     "Input": [
       6252
@@ -6199,7 +6216,7 @@
     "IconPath": "Icons/ItemRecipe/copper-plate",
     "Type": 1,
     "GridIndex": 3602,
-    "PreTech": 1413,
+    "PreTech": 1411,
     "Time": 60,
     "Input": [
       6253
@@ -6224,7 +6241,7 @@
     "IconPath": "Icons/ItemRecipe/silicium-single-crystal",
     "Type": 1,
     "GridIndex": 3603,
-    "PreTech": 1413,
+    "PreTech": 1411,
     "Time": 60,
     "Input": [
       6254
@@ -6249,7 +6266,7 @@
     "IconPath": "Icons/ItemRecipe/titanium-plate",
     "Type": 1,
     "GridIndex": 3604,
-    "PreTech": 1413,
+    "PreTech": 1411,
     "Time": 60,
     "Input": [
       6255
@@ -6289,7 +6306,7 @@
       4
     ],
     "Output": [
-      6249
+      1206
     ],
     "OutCounts": [
       2
@@ -6310,7 +6327,7 @@
     "Input": [
       6502,
       1107,
-      6249,
+      1206,
       2013,
       1305
     ],
@@ -6323,348 +6340,6 @@
     ],
     "Output": [
       6257
-    ],
-    "OutCounts": [
-      1
-    ],
-    "Explicit": false,
-    "Handcraft": false,
-    "NonProductive": false
-  },
-  {
-    "ID": 417,
-    "Name": "反物质约束单元",
-    "Description": "从原矿中分离的纯净粉可以实现效率更高的生产.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "IconPath": "Assets/texpack/反物质约束单元",
-    "Type": 10,
-    "GridIndex": 3606,
-    "PreTech": 1145,
-    "Time": 1800,
-    "Input": [
-      1125,
-      1304,
-      1205,
-      1305
-    ],
-    "InCounts": [
-      8,
-      4,
-      4,
-      2
-    ],
-    "Output": [
-      6262
-    ],
-    "OutCounts": [
-      1
-    ],
-    "Explicit": false,
-    "Handcraft": false,
-    "NonProductive": false
-  },
-  {
-    "ID": 418,
-    "Name": "氦闪约束器1",
-    "Description": "从原矿中分离的纯净粉可以实现效率更高的生产.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "IconPath": "Assets/texpack/氦闪抑制器",
-    "Type": 10,
-    "GridIndex": 3607,
-    "PreTech": 1153,
-    "Time": 900,
-    "Input": [
-      7707,
-      1205,
-      1305
-    ],
-    "InCounts": [
-      8,
-      4,
-      1
-    ],
-    "Output": [
-      6263
-    ],
-    "OutCounts": [
-      1
-    ],
-    "Explicit": false,
-    "Handcraft": false,
-    "NonProductive": false
-  },
-  {
-    "ID": 419,
-    "Name": "反物质能量炉1",
-    "Description": "从原矿中分离的纯净粉可以实现效率更高的生产.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "IconPath": "Assets/texpack/反物质能量炉",
-    "Type": 12,
-    "GridIndex": 3608,
-    "PreTech": 1144,
-    "Time": 10800,
-    "Input": [
-      6271,
-      6503,
-      1403,
-      6274
-    ],
-    "InCounts": [
-      240,
-      120,
-      120,
-      8
-    ],
-    "Output": [
-      6261
-    ],
-    "OutCounts": [
-      1
-    ],
-    "Explicit": false,
-    "Handcraft": false,
-    "NonProductive": false
-  },
-  {
-    "ID": 420,
-    "Name": "氦元素离心",
-    "Description": "从光栅石中分离氦.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "IconPath": "Assets/texpack/氦",
-    "Type": 2,
-    "GridIndex": 3308,
-    "PreTech": 1821,
-    "Time": 240,
-    "Input": [
-      1014
-    ],
-    "InCounts": [
-      2
-    ],
-    "Output": [
-      6234
-    ],
-    "OutCounts": [
-      4
-    ],
-    "Explicit": true,
-    "Handcraft": false,
-    "NonProductive": false
-  },
-  {
-    "ID": 421,
-    "Name": "氦三",
-    "Description": "从光栅石中分离氦.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "IconPath": "Assets/texpack/氦三",
-    "Type": 2,
-    "GridIndex": 3309,
-    "PreTech": 1821,
-    "Time": 240,
-    "Input": [
-      6234
-    ],
-    "InCounts": [
-      4
-    ],
-    "Output": [
-      6235
-    ],
-    "OutCounts": [
-      1
-    ],
-    "Explicit": false,
-    "Handcraft": false,
-    "NonProductive": false
-  },
-  {
-    "ID": 422,
-    "Name": "氦三燃料棒",
-    "Description": "从光栅石中分离氦.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "IconPath": "Assets/texpack/氦三燃料棒",
-    "Type": 4,
-    "GridIndex": 3510,
-    "PreTech": 1822,
-    "Time": 600,
-    "Input": [
-      6509,
-      6235
-    ],
-    "InCounts": [
-      1,
-      20
-    ],
-    "Output": [
-      6244
-    ],
-    "OutCounts": [
-      1
-    ],
-    "Explicit": false,
-    "Handcraft": false,
-    "NonProductive": false
-  },
-  {
-    "ID": 423,
-    "Name": "氘氦三混合聚变燃料棒",
-    "Description": "从光栅石中分离氦.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "IconPath": "Assets/texpack/氘氦三混合聚变燃料棒",
-    "Type": 4,
-    "GridIndex": 3511,
-    "PreTech": 1822,
-    "Time": 600,
-    "Input": [
-      1802,
-      6244,
-      6263
-    ],
-    "InCounts": [
-      1,
-      1,
-      1
-    ],
-    "Output": [
-      6245
-    ],
-    "OutCounts": [
-      1
-    ],
-    "Explicit": false,
-    "Handcraft": false,
-    "NonProductive": false
-  },
-  {
-    "ID": 424,
-    "Name": "无尽材料精炼",
-    "Description": "利用粒子加速器的庞大能量创造全新的材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "IconPath": "Assets/texpack/三元精金",
-    "Type": 13,
-    "GridIndex": 3409,
-    "PreTech": 1134,
-    "Time": 3600,
-    "Input": [
-      1103,
-      1107,
-      7707
-    ],
-    "InCounts": [
-      10,
-      10,
-      10
-    ],
-    "Output": [
-      6271
-    ],
-    "OutCounts": [
-      1
-    ],
-    "Explicit": true,
-    "Handcraft": false,
-    "NonProductive": false
-  },
-  {
-    "ID": 425,
-    "Name": "光子结晶化",
-    "Description": "在高能环境下将光子压缩成固体.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "IconPath": "Assets/texpack/光子结晶",
-    "Type": 13,
-    "GridIndex": 3410,
-    "PreTech": 1134,
-    "Time": 3600,
-    "Input": [
-      1208
-    ],
-    "InCounts": [
-      10
-    ],
-    "Output": [
-      6272
-    ],
-    "OutCounts": [
-      1
-    ],
-    "Explicit": true,
-    "Handcraft": false,
-    "NonProductive": false
-  },
-  {
-    "ID": 426,
-    "Name": "先驱者晶片",
-    "Description": "异星文明留下的遗产,这份蓝图的价值无可估量.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "IconPath": "Assets/texpack/紫色先驱者晶片",
-    "Type": 12,
-    "GridIndex": 3411,
-    "PreTech": 1123,
-    "Time": 5400,
-    "Input": [
-      6271,
-      6272,
-      7806
-    ],
-    "InCounts": [
-      40,
-      20,
-      10
-    ],
-    "Output": [
-      6274
-    ],
-    "OutCounts": [
-      1
-    ],
-    "Explicit": true,
-    "Handcraft": false,
-    "NonProductive": false
-  },
-  {
-    "ID": 427,
-    "Name": "精密组装厂",
-    "Description": "利用粒子加速器的庞大能量创造全新的材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "IconPath": "Assets/texpack/红制造台",
-    "Type": 10,
-    "GridIndex": 3609,
-    "PreTech": 1152,
-    "Time": 10800,
-    "Input": [
-      2305,
-      2003,
-      7707,
-      7803
-    ],
-    "InCounts": [
-      10,
-      40,
-      20,
-      10
-    ],
-    "Output": [
-      6275
-    ],
-    "OutCounts": [
-      1
-    ],
-    "Explicit": false,
-    "Handcraft": false,
-    "NonProductive": false
-  },
-  {
-    "ID": 428,
-    "Name": "回旋加速器",
-    "Description": "利用粒子加速器的庞大能量创造全新的材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "IconPath": "Icons/ItemRecipe/hadron-collider",
-    "Type": 10,
-    "GridIndex": 3610,
-    "PreTech": 1152,
-    "Time": 10800,
-    "Input": [
-      2310,
-      1125,
-      1205,
-      7806
-    ],
-    "InCounts": [
-      40,
-      60,
-      120,
-      5
-    ],
-    "Output": [
-      6276
     ],
     "OutCounts": [
       1
@@ -6693,137 +6368,5 @@
     "Explicit": true,
     "Handcraft": false,
     "NonProductive": true
-  },
-  {
-    "ID": 430,
-    "Name": "聚变物质裂解工厂",
-    "Description": "从原矿中分离的纯净粉可以实现效率更高的生产.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "IconPath": "Assets/texpack/行星熔炉",
-    "Type": 10,
-    "GridIndex": 3103,
-    "PreTech": 1824,
-    "Time": 18000,
-    "Input": [
-      6502,
-      1107,
-      6249,
-      2302,
-      1305
-    ],
-    "InCounts": [
-      60,
-      180,
-      240,
-      20,
-      60
-    ],
-    "Output": [
-      6258
-    ],
-    "OutCounts": [
-      1
-    ],
-    "Explicit": false,
-    "Handcraft": false,
-    "NonProductive": false
-  },
-  {
-    "ID": 431,
-    "Name": "巨型化学反应釜",
-    "Description": "从原矿中分离的纯净粉可以实现效率更高的生产.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "IconPath": "Assets/texpack/行星化工厂",
-    "Type": 10,
-    "GridIndex": 3104,
-    "PreTech": 1825,
-    "Time": 18000,
-    "Input": [
-      6502,
-      1107,
-      6249,
-      2309,
-      1305
-    ],
-    "InCounts": [
-      60,
-      180,
-      240,
-      20,
-      60
-    ],
-    "Output": [
-      6259
-    ],
-    "OutCounts": [
-      1
-    ],
-    "Explicit": false,
-    "Handcraft": false,
-    "NonProductive": false
-  },
-  {
-    "ID": 432,
-    "Name": "大型精密组装厂",
-    "Description": "从原矿中分离的纯净粉可以实现效率更高的生产.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "IconPath": "Assets/texpack/行星精密组装厂",
-    "Type": 10,
-    "GridIndex": 3105,
-    "PreTech": 1826,
-    "Time": 18000,
-    "Input": [
-      6503,
-      7707,
-      6249,
-      2305,
-      1305
-    ],
-    "InCounts": [
-      30,
-      60,
-      360,
-      20,
-      120
-    ],
-    "Output": [
-      6260
-    ],
-    "OutCounts": [
-      1
-    ],
-    "Explicit": false,
-    "Handcraft": false,
-    "NonProductive": false
-  },
-  {
-    "ID": 433,
-    "Name": "物质分解设施",
-    "Description": "从原矿中分离的纯净粉可以实现效率更高的生产.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "IconPath": "Assets/texpack/回收塔",
-    "Type": 10,
-    "GridIndex": 3106,
-    "PreTech": 1831,
-    "Time": 7200,
-    "Input": [
-      6502,
-      1107,
-      6249,
-      2013,
-      1305
-    ],
-    "InCounts": [
-      20,
-      60,
-      40,
-      20,
-      10
-    ],
-    "Output": [
-      6264
-    ],
-    "OutCounts": [
-      1
-    ],
-    "Explicit": false,
-    "Handcraft": false,
-    "NonProductive": false
   }
 ]
