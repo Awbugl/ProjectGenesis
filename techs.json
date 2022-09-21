@@ -539,7 +539,6 @@
       716,
       771,
       772,
-      544,
       545,
       546,
       505,
@@ -1019,8 +1018,7 @@
     ],
     "HashNeeded": 240000,
     "UnlockRecipes": [
-      39,
-      40
+      39
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -8863,7 +8861,9 @@
     "UnlockRecipes": [
       682,
       420,
-      421
+      421,
+      40,
+      544
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
