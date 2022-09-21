@@ -491,7 +491,7 @@
     "Type": 4,
     "GridIndex": 1408,
     "PreTech": 1112,
-    "Time": 120,
+    "Time": 600,
     "Input": [
       6509,
       6531
@@ -1067,7 +1067,7 @@
     "IconPath": "",
     "Type": 2,
     "GridIndex": 1211,
-    "PreTech": 1142,
+    "PreTech": 1821,
     "Time": 120,
     "Input": [
       1120
@@ -1093,7 +1093,7 @@
     "Type": 4,
     "GridIndex": 1508,
     "PreTech": 1822,
-    "Time": 240,
+    "Time": 600,
     "Input": [
       6509,
       6532
@@ -1180,7 +1180,7 @@
     "Type": 4,
     "GridIndex": 1608,
     "PreTech": 1144,
-    "Time": 480,
+    "Time": 600,
     "Input": [
       6509,
       6533
@@ -4976,7 +4976,7 @@
     "IconPath": "Assets/texpack/高效重氢",
     "Type": 2,
     "GridIndex": 1311,
-    "PreTech": 1121,
+    "PreTech": 1821,
     "Time": 60,
     "Input": [
       1120
@@ -6121,7 +6121,7 @@
     "Type": 4,
     "GridIndex": 3508,
     "PreTech": 1820,
-    "Time": 120,
+    "Time": 600,
     "Input": [
       6509,
       6227
@@ -6148,7 +6148,7 @@
     "Type": 4,
     "GridIndex": 3509,
     "PreTech": 1820,
-    "Time": 120,
+    "Time": 600,
     "Input": [
       6509,
       6228
