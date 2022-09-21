@@ -21,7 +21,7 @@ using ERecipeType_1 = ERecipeType;
 
 namespace ProjectGenesis
 {
-    [BepInPlugin("org.LoShin.GenesisBook", "GenesisBook", "1.0.0")]
+    [BepInPlugin("org.LoShin.GenesisBook", "GenesisBook", "1.5.0")]
     [BepInDependency(DSPModSavePlugin.MODGUID)]
     [BepInDependency(CommonAPIPlugin.GUID)]
     [BepInDependency(LDBToolPlugin.MODGUID)]
@@ -77,29 +77,29 @@ namespace ProjectGenesis
 
             #region ModelProto
 
-            var TankModel = CopyModelProto(121, 301, Color.HSVToRGB(0.5571f, 0.3188f, 0.8980f));
+            var TankModel = CopyModelProto(121, 401, Color.HSVToRGB(0.5571f, 0.3188f, 0.8980f));
             LDBTool.PreAddProto(TankModel);
-            var OreFactoryModel = CopyModelProto(194, 302, Color.HSVToRGB(0.2035f, 0.8326f, 0.9373f));
+            var OreFactoryModel = CopyModelProto(194, 402, Color.HSVToRGB(0.2035f, 0.8326f, 0.9373f));
             LDBTool.PreAddProto(OreFactoryModel);
 
-            var TestCraftingTableModel = CopyModelProto(49, 303, Color.HSVToRGB(0.0710f, 0.7412f, 0.8941f));
+            var TestCraftingTableModel = CopyModelProto(49, 403, Color.HSVToRGB(0.0710f, 0.7412f, 0.8941f));
             LDBTool.PreAddProto(TestCraftingTableModel);
-            var TestCraftingTableModel2 = CopyModelProto(49, 304, Color.HSVToRGB(0.6174f, 0.6842f, 0.9686f));
+            var TestCraftingTableModel2 = CopyModelProto(49, 404, Color.HSVToRGB(0.6174f, 0.6842f, 0.9686f));
             LDBTool.PreAddProto(TestCraftingTableModel2);
-            var TestCraftingTableModel3 = CopyModelProto(49, 305, Color.HSVToRGB(0.1404f, 0.8294f, 0.9882f));
+            var TestCraftingTableModel3 = CopyModelProto(49, 405, Color.HSVToRGB(0.1404f, 0.8294f, 0.9882f));
             LDBTool.PreAddProto(TestCraftingTableModel3);
-            var TestCraftingTableModel4 = CopyModelProto(49, 306, Color.HSVToRGB(0.9814f, 0.6620f, 0.8471f));
+            var TestCraftingTableModel4 = CopyModelProto(49, 406, Color.HSVToRGB(0.9814f, 0.6620f, 0.8471f));
             LDBTool.PreAddProto(TestCraftingTableModel4);
-
-            var AntiMatterModel = CopyModelProto(118, 307, Color.HSVToRGB(0.5985f, 0.7333f, 0.2353f));
+            var TestCraftingTableModel5 = CopyModelProto(49, 410, new Color(0.3216F, 0.8157F, 0.09020F));
+            LDBTool.PreAddProto(TestCraftingTableModel5);
+            
+            var AntiMatterModel = CopyModelProto(118, 407, Color.HSVToRGB(0.5985f, 0.7333f, 0.2353f));
             LDBTool.PreAddProto(AntiMatterModel);
-            var AssembleModel = CopyModelProto(67, 308, Color.HSVToRGB(0.9688f, 0.9068f, 0.9255f));
+            var AssembleModel = CopyModelProto(67, 408, Color.HSVToRGB(0.9688f, 0.9068f, 0.9255f));
             LDBTool.PreAddProto(AssembleModel);
-            var CircleModel = CopyModelProto(69, 309, Color.grey);
+            var CircleModel = CopyModelProto(69, 409, Color.grey);
             LDBTool.PreAddProto(CircleModel);
 
-            var TestCraftingTableModel5 = CopyModelProto(49, 310, new Color(0.3216F, 0.8157F, 0.09020F));
-            LDBTool.PreAddProto(TestCraftingTableModel5);
 
             #endregion
 
@@ -357,12 +357,12 @@ namespace ProjectGenesis
         private void ModelPostFix(ModelProtoSet models)
         {
             //行星装配站调试部分
-            var TestCraftingTableModel = models.Select(303);
-            var TestCraftingTableModel2 = models.Select(304);
-            var TestCraftingTableModel3 = models.Select(305);
-            var TestCraftingTableModel4 = models.Select(306);
-            var TestCraftingTableModel5 = models.Select(310);
-            var AntiMatterModel = models.Select(307);
+            var TestCraftingTableModel = models.Select(403);
+            var TestCraftingTableModel2 = models.Select(404);
+            var TestCraftingTableModel3 = models.Select(405);
+            var TestCraftingTableModel4 = models.Select(406);
+            var TestCraftingTableModel5 = models.Select(410);
+            var AntiMatterModel = models.Select(407);
 
             TestCraftingTableModel.prefabDesc.isAssembler = true;
             TestCraftingTableModel.prefabDesc.assemblerRecipeType = (ERecipeType_1)ERecipeType.Assemble;

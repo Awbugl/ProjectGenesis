@@ -156,7 +156,6 @@
     ],
     "HashNeeded": 9000,
     "UnlockRecipes": [
-      11,
       12,
       13
     ],
@@ -519,7 +518,7 @@
     "ItemPoints": [
       10
     ],
-    "HashNeeded": 72000,
+    "HashNeeded": 36000,
     "UnlockRecipes": [
       23,
       24,
@@ -585,9 +584,7 @@
       20
     ],
     "HashNeeded": 72000,
-    "UnlockRecipes": [
-      25,
-      54,
+    "UnlockRecipes": [      
       547,
       548,
       549,
@@ -722,8 +719,7 @@
     ],
     "HashNeeded": 240000,
     "UnlockRecipes": [
-      28,
-      29
+      28
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -1267,7 +1263,7 @@
     "Desc": "使用约束技术将聚变反应稳定掌控,并将其作为能源利用.",
     "Conclusion": "",
     "Position": [
-      25.0,
+      29.0,
       -15.0
     ],
     "PreTechs": [
@@ -2011,11 +2007,11 @@
     "Desc": "微型核聚变发电描述",
     "Conclusion": "微型核聚变发电结果",
     "Position": [
-      21.0,
+      25.0,
       -15.0
     ],
     "PreTechs": [
-      1112
+      1513
     ],
     "PreTechsImplicit": [],
     "Items": [
@@ -9184,12 +9180,50 @@
       6001
     ],
     "ItemPoints": [
-      10
+      20
     ],
-    "HashNeeded": 72000,
+    "HashNeeded": 18000,
     "UnlockRecipes": [
       22
     ],
+    "UnlockFunctions": [],
+    "UnlockValues": [],
+    "Published": true,
+    "Level": 0,
+    "MaxLevel": 0,
+    "LevelCoef1": 0,
+    "LevelCoef2": 0,
+    "IsLabTech": true,
+    "PreTechsMax": false,
+    "AddItems": [],
+    "AddItemCounts": [],
+    "PropertyOverrideItems": [],
+    "PropertyItemCounts": []
+  },
+  {
+    "ID": 1833,
+    "Name": "地热开采",
+    "IconPath": "Icons/Tech/1513",
+    "Desc": "地热开采描述",
+    "Conclusion": "地热开采结果",
+    "Position": [
+      21.0,
+      -15.0
+    ],
+    "PreTechs": [1112],
+    "PreTechsImplicit": [],
+    "Items": [
+      6001,
+      6002
+    ],
+    "ItemPoints": [
+      20,
+      20
+    ],
+    "HashNeeded": 144000,  
+    "UnlockRecipes": [
+    118
+  ],
     "UnlockFunctions": [],
     "UnlockValues": [],
     "Published": true,

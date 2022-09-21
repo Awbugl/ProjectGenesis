@@ -270,7 +270,7 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 2812,
-    "PreTech": 1101,
+    "PreTech": 0,
     "Time": 120,
     "Input": [
       1110
@@ -660,7 +660,7 @@
     "IconPath": "",
     "Type": 2,
     "GridIndex": 2803,
-    "PreTech": 1122,
+    "PreTech": 0,
     "Time": 360,
     "Input": [
       1115,
@@ -746,14 +746,14 @@
     "PreTech": 1125,
     "Time": 120,
     "Input": [
-      1111,
+      1205,
       1123,
-      1205
+      1120
     ],
     "InCounts": [
-      8,
+      2,
       4,
-      2
+      4
     ],
     "Output": [
       1126
@@ -772,7 +772,7 @@
     "IconPath": "Icons/ItemRecipe/casimir-crystal-lv2",
     "Type": 4,
     "GridIndex": 2808,
-    "PreTech": 1125,
+    "PreTech": 0,
     "Time": 240,
     "Input": [
       1014,
@@ -782,7 +782,7 @@
     "InCounts": [
       4,
       2,
-      12
+      6
     ],
     "Output": [
       1126
@@ -1467,7 +1467,7 @@
     "IconPath": "Icons/ItemRecipe/crystal-rubber-lv0",
     "Type": 4,
     "GridIndex": 2804,
-    "PreTech": 1122,
+    "PreTech": 0,
     "Time": 360,
     "Input": [
       1030,
@@ -2859,7 +2859,7 @@
     ],
     "InCounts": [
       2,
-      8
+      4
     ],
     "Output": [
       1127
@@ -3217,8 +3217,8 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 2908,
-    "PreTech": 0,
+    "GridIndex": 3209,
+    "PreTech": 1833,
     "Time": 360,
     "Input": [
       2204,
@@ -3231,7 +3231,7 @@
       4
     ],
     "Output": [
-      2213
+      6277
     ],
     "OutCounts": [
       1
@@ -3310,7 +3310,7 @@
     "PreTech": 1104,
     "Time": 240,
     "Input": [
-      1114,
+      7218,
       1120,
       1006
     ],
@@ -3320,7 +3320,7 @@
       1
     ],
     "Output": [
-      1114
+      7218
     ],
     "OutCounts": [
       3

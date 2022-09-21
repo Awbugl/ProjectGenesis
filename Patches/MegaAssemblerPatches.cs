@@ -358,7 +358,7 @@ namespace ProjectGenesis.Patches
                                         consumeRegister[itemId] += stack;
                                     }
 
-                                    GameMain.mainPlayer.SetSandCount(GameMain.mainPlayer.sandCount + stack * 100);
+                                    GameMain.mainPlayer.SetSandCount(GameMain.mainPlayer.sandCount + stack * 20);
                                 }
                             }
                             else
