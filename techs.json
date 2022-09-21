@@ -1018,7 +1018,9 @@
     ],
     "HashNeeded": 240000,
     "UnlockRecipes": [
-      39
+      39,
+      40,
+      544
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -1276,13 +1278,15 @@
       6001,
       6002,
       6003,
-      6004
+      6004,
+      6005
     ],
     "ItemPoints": [
-      20,
-      20,
-      20,
-      20
+      40,
+      40,
+      40,
+      40,
+      40
     ],
     "HashNeeded": 144000,
     "UnlockRecipes": [
@@ -8861,9 +8865,7 @@
     "UnlockRecipes": [
       682,
       420,
-      421,
-      40,
-      544
+      421
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
