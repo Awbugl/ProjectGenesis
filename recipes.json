@@ -30,7 +30,7 @@
     "Description": "一种新的制造材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/铜线圈",
     "Type": 4,
-    "GridIndex": 2506,
+    "GridIndex": 1313,
     "PreTech": 0,
     "Time": 60,
     "Input": [
@@ -48,7 +48,7 @@
     "Explicit": false,
     "Handcraft": true,
     "NonProductive": false
-  },  
+  },
   {
     "ID": 3,
     "Name": "铜块",
@@ -130,7 +130,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 2407,
+    "GridIndex": 1605,
     "PreTech": 0,
     "Time": 60,
     "Input": [
@@ -157,7 +157,7 @@
     "Description": "利用粒子加速器的庞大能量创造全新的材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/三元精金",
     "Type": 13,
-    "GridIndex": 3409,
+    "GridIndex": 3103,
     "PreTech": 1134,
     "Time": 3600,
     "Input": [
@@ -298,7 +298,7 @@
     "Description": "异星文明留下的遗产,这份蓝图的价值无可估量.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/紫色先驱者晶片",
     "Type": 12,
-    "GridIndex": 3411,
+    "GridIndex": 3105,
     "PreTech": 1123,
     "Time": 5400,
     "Input": [
@@ -327,7 +327,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 2409,
+    "GridIndex": 1604,
     "PreTech": 1101,
     "Time": 120,
     "Input": [
@@ -443,7 +443,7 @@
     "Description": "R等离子精炼",
     "IconPath": "Icons/ItemRecipe/plasma-refining",
     "Type": 3,
-    "GridIndex": 1511,
+    "GridIndex": 1411,
     "PreTech": 1102,
     "Time": 120,
     "Input": [
@@ -605,7 +605,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 2406,
+    "GridIndex": 2407,
     "PreTech": 1832,
     "Time": 240,
     "Input": [
@@ -663,7 +663,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 2,
-    "GridIndex": 2408,
+    "GridIndex": 1714,
     "PreTech": 1121,
     "Time": 60,
     "Input": [
@@ -692,7 +692,7 @@
     "Description": "利用粒子加速器的庞大能量创造全新的材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/红制造台",
     "Type": 10,
-    "GridIndex": 3609,
+    "GridIndex": 2404,
     "PreTech": 1152,
     "Time": 10800,
     "Input": [
@@ -702,10 +702,10 @@
       7803
     ],
     "InCounts": [
-      10,
-      40,
-      20,
-      10
+      60,
+      240,
+      120,
+      60
     ],
     "Output": [
       6275
@@ -723,7 +723,7 @@
     "Description": "利用粒子加速器的庞大能量创造全新的材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Icons/ItemRecipe/hadron-collider",
     "Type": 10,
-    "GridIndex": 3610,
+    "GridIndex": 2411,
     "PreTech": 1152,
     "Time": 10800,
     "Input": [
@@ -734,7 +734,7 @@
     ],
     "InCounts": [
       40,
-      60,
+      240,
       120,
       5
     ],
@@ -810,7 +810,7 @@
     "Description": "从原矿中分离的纯净粉可以实现效率更高的生产.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/行星熔炉",
     "Type": 10,
-    "GridIndex": 3103,
+    "GridIndex": 2214,
     "PreTech": 1824,
     "Time": 18000,
     "Input": [
@@ -1078,7 +1078,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 10,
-    "GridIndex": 2310,
+    "GridIndex": 2410,
     "PreTech": 1142,
     "Time": 3600,
     "Input": [
@@ -1109,7 +1109,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 5,
-    "GridIndex": 1211,
+    "GridIndex": 1511,
     "PreTech": 1142,
     "Time": 120,
     "Input": [
@@ -1190,7 +1190,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 10,
-    "GridIndex": 2112,
+    "GridIndex": 2111,
     "PreTech": 1153,
     "Time": 18000,
     "Input": [
@@ -1337,7 +1337,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 2304,
+    "GridIndex": 2408,
     "PreTech": 1001,
     "Time": 120,
     "Input": [
@@ -1389,14 +1389,14 @@
     "Handcraft": true,
     "NonProductive": false
   },
-  
+
   {
     "ID": 51,
     "Name": "处理器",
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 1507,
+    "GridIndex": 1513,
     "PreTech": 1302,
     "Time": 240,
     "Input": [
@@ -1406,8 +1406,8 @@
     ],
     "InCounts": [
       2,
-      1,
-      4
+      2,
+      2
     ],
     "Output": [
       1303
@@ -1425,7 +1425,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 10,
-    "GridIndex": 1607,
+    "GridIndex": 1613,
     "PreTech": 1303,
     "Time": 360,
     "Input": [
@@ -1436,7 +1436,7 @@
     "InCounts": [
       2,
       2,
-      8
+      2
     ],
     "Output": [
       1305
@@ -1454,7 +1454,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 1407,
+    "GridIndex": 1413,
     "PreTech": 1311,
     "Time": 120,
     "Input": [
@@ -1465,7 +1465,7 @@
     "InCounts": [
       2,
       2,
-      4
+      2
     ],
     "Output": [
       1302
@@ -1483,7 +1483,7 @@
     "Description": "从原矿中分离的纯净粉可以实现效率更高的生产.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/行星化工厂",
     "Type": 10,
-    "GridIndex": 3104,
+    "GridIndex": 2215,
     "PreTech": 1825,
     "Time": 18000,
     "Input": [
@@ -1543,7 +1543,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 2404,
+    "GridIndex": 2405,
     "PreTech": 1401,
     "Time": 120,
     "Input": [
@@ -1597,7 +1597,7 @@
     "Description": "RX射线裂解",
     "IconPath": "Icons/ItemRecipe/X-ray",
     "Type": 3,
-    "GridIndex": 1411,
+    "GridIndex": 1211,
     "PreTech": 1103,
     "Time": 120,
     "Input": [
@@ -1863,7 +1863,7 @@
     "Description": "从原矿中分离的纯净粉可以实现效率更高的生产.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/行星精密组装厂",
     "Type": 10,
-    "GridIndex": 3105,
+    "GridIndex": 2216,
     "PreTech": 1826,
     "Time": 18000,
     "Input": [
@@ -1896,7 +1896,7 @@
     "Description": "从原矿中分离的纯净粉可以实现效率更高的生产.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/回收塔",
     "Type": 10,
-    "GridIndex": 3106,
+    "GridIndex": 2217,
     "PreTech": 1831,
     "Time": 7200,
     "Input": [
@@ -1987,7 +1987,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 10,
-    "GridIndex": 2111,
+    "GridIndex": 2110,
     "PreTech": 1504,
     "Time": 360,
     "Input": [
@@ -2017,7 +2017,7 @@
     "Name": "卫星配电站",
     "Description": "",
     "IconPath": "",
-    "Type": 10,
+    "Type": 12,
     "GridIndex": 2103,
     "PreTech": 1712,
     "Time": 10800,
@@ -2080,18 +2080,10 @@
     "PreTech": 1507,
     "Time": 180,
     "Input": [
-      6001,
-      6002,
-      6003,
-      6004,
-      6005,
+      6280,
       1122
     ],
     "InCounts": [
-      1,
-      1,
-      1,
-      1,
       1,
       1
     ],
@@ -2140,7 +2132,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 2110,
+    "GridIndex": 2310,
     "PreTech": 1512,
     "Time": 360,
     "Input": [
@@ -2221,7 +2213,7 @@
     "Type": 4,
     "GridIndex": 1509,
     "PreTech": 1521,
-    "Time": 60,
+    "Time": 240,
     "Input": [
       7707,
       7709
@@ -2248,7 +2240,7 @@
     "Type": 4,
     "GridIndex": 1609,
     "PreTech": 1521,
-    "Time": 60,
+    "Time": 360,
     "Input": [
       1125,
       1501
@@ -2306,7 +2298,7 @@
     "Type": 10,
     "GridIndex": 1709,
     "PreTech": 1522,
-    "Time": 120,
+    "Time": 600,
     "Input": [
       1502,
       1305,
@@ -2387,7 +2379,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 2207,
+    "GridIndex": 2304,
     "PreTech": 1607,
     "Time": 120,
     "Input": [
@@ -2522,7 +2514,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 2208,
+    "GridIndex": 2305,
     "PreTech": 1607,
     "Time": 240,
     "Input": [
@@ -2609,7 +2601,7 @@
     "Type": 4,
     "GridIndex": 1210,
     "PreTech": 1604,
-    "Time": 120,
+    "Time": 600,
     "Input": [
       1101,
       1405
@@ -2667,7 +2659,7 @@
     "Type": 4,
     "GridIndex": 1310,
     "PreTech": 1605,
-    "Time": 240,
+    "Time": 900,
     "Input": [
       1107,
       1406
@@ -2692,7 +2684,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 1601,
+    "GridIndex": 1213,
     "PreTech": 1701,
     "Time": 120,
     "Input": [
@@ -2719,7 +2711,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 1602,
+    "GridIndex": 1214,
     "PreTech": 1702,
     "Time": 120,
     "Input": [
@@ -2746,7 +2738,7 @@
     "Description": "从光栅石中分离氦.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/氘氦三混合聚变燃料棒",
     "Type": 4,
-    "GridIndex": 3511,
+    "GridIndex": 1607,
     "PreTech": 1822,
     "Time": 600,
     "Input": [
@@ -2776,7 +2768,7 @@
     "Description": "从光栅石中分离氦.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/氦三燃料棒",
     "Type": 4,
-    "GridIndex": 3510,
+    "GridIndex": 1115,
     "PreTech": 1822,
     "Time": 600,
     "Input": [
@@ -2857,7 +2849,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 1603,
+    "GridIndex": 1215,
     "PreTech": 1711,
     "Time": 120,
     "Input": [
@@ -2911,7 +2903,7 @@
     "Description": "从光栅石中分离氦.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/氦三",
     "Type": 2,
-    "GridIndex": 3309,
+    "GridIndex": 1114,
     "PreTech": 1821,
     "Time": 240,
     "Input": [
@@ -2937,7 +2929,7 @@
     "Description": "从光栅石中分离氦.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/氦",
     "Type": 2,
-    "GridIndex": 3308,
+    "GridIndex": 1113,
     "PreTech": 1821,
     "Time": 240,
     "Input": [
@@ -2963,7 +2955,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 3208,
+    "GridIndex": 1117,
     "PreTech": 1151,
     "Time": 120,
     "Input": [
@@ -2990,7 +2982,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 10,
-    "GridIndex": 2108,
+    "GridIndex": 2209,
     "PreTech": 1151,
     "Time": 240,
     "Input": [
@@ -3021,7 +3013,7 @@
     "Description": "从原矿中分离的纯净粉可以实现效率更高的生产.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/反物质能量炉",
     "Type": 12,
-    "GridIndex": 3608,
+    "GridIndex": 2112,
     "PreTech": 1144,
     "Time": 10800,
     "Input": [
@@ -3139,7 +3131,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 2209,
+    "GridIndex": 2207,
     "PreTech": 1120,
     "Time": 120,
     "Input": [
@@ -3168,7 +3160,7 @@
     "Description": "从原矿中分离的纯净粉可以实现效率更高的生产.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/氦闪抑制器",
     "Type": 10,
-    "GridIndex": 3607,
+    "GridIndex": 3102,
     "PreTech": 1153,
     "Time": 900,
     "Input": [
@@ -3198,7 +3190,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 10,
-    "GridIndex": 2405,
+    "GridIndex": 2505,
     "PreTech": 1417,
     "Time": 240,
     "Input": [
@@ -3256,7 +3248,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 3209,
+    "GridIndex": 2108,
     "PreTech": 1833,
     "Time": 360,
     "Input": [
@@ -3285,7 +3277,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 10,
-    "GridIndex": 2305,
+    "GridIndex": 2409,
     "PreTech": 1304,
     "Time": 600,
     "Input": [
@@ -3345,7 +3337,7 @@
     "Description": "从原矿中分离的纯净粉可以实现效率更高的生产.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/反物质约束单元",
     "Type": 10,
-    "GridIndex": 3606,
+    "GridIndex": 3101,
     "PreTech": 1145,
     "Time": 1800,
     "Input": [
@@ -3377,7 +3369,7 @@
     "Description": "这是一个新的化学公式.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/石油裂化",
     "Type": 3,
-    "GridIndex": 2502,
+    "GridIndex": 1311,
     "PreTech": 1812,
     "Time": 120,
     "Input": [
@@ -3406,7 +3398,7 @@
     "Description": "这个公式可以为你提供氧气.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/电解水",
     "Type": 2,
-    "GridIndex": 2503,
+    "GridIndex": 1116,
     "PreTech": 1812,
     "Time": 120,
     "Input": [
@@ -3433,7 +3425,7 @@
     "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/氢氧化钠",
     "Type": 2,
-    "GridIndex": 2504,
+    "GridIndex": 4117,
     "PreTech": 1121,
     "Time": 120,
     "Input": [
@@ -3456,11 +3448,11 @@
   },
   {
     "ID": 801,
-    "Name": "氯化钠",
+    "Name": "金属盐分解",
     "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/氯化钠",
     "Type": 4,
-    "GridIndex": 2505,
+    "GridIndex": 4116,
     "PreTech": 1121,
     "Time": 180,
     "Input": [
@@ -3489,7 +3481,7 @@
     "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/环氧氯丙烷",
     "Type": 2,
-    "GridIndex": 2710,
+    "GridIndex": 4110,
     "PreTech": 1121,
     "Time": 120,
     "Input": [
@@ -3518,7 +3510,7 @@
     "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/盐水",
     "Type": 2,
-    "GridIndex": 2706,
+    "GridIndex": 4106,
     "PreTech": 1121,
     "Time": 60,
     "Input": [
@@ -3545,7 +3537,7 @@
     "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/双酚A",
     "Type": 2,
-    "GridIndex": 2703,
+    "GridIndex": 4103,
     "PreTech": 1121,
     "Time": 120,
     "Input": [
@@ -3576,7 +3568,7 @@
     "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/硝酸",
     "Type": 2,
-    "GridIndex": 2704,
+    "GridIndex": 4104,
     "PreTech": 1121,
     "Time": 120,
     "Input": [
@@ -3605,7 +3597,7 @@
     "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/二硝基氯苯",
     "Type": 2,
-    "GridIndex": 2708,
+    "GridIndex": 4108,
     "PreTech": 1121,
     "Time": 60,
     "Input": [
@@ -3632,7 +3624,7 @@
     "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/二氯联苯胺",
     "Type": 2,
-    "GridIndex": 2707,
+    "GridIndex": 4107,
     "PreTech": 1121,
     "Time": 60,
     "Input": [
@@ -3659,7 +3651,7 @@
     "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/氨",
     "Type": 2,
-    "GridIndex": 2702,
+    "GridIndex": 4102,
     "PreTech": 1121,
     "Time": 60,
     "Input": [
@@ -3690,7 +3682,7 @@
     "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/二氨基联苯胺",
     "Type": 2,
-    "GridIndex": 2705,
+    "GridIndex": 4105,
     "PreTech": 1121,
     "Time": 120,
     "Input": [
@@ -3719,7 +3711,7 @@
     "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/煤焦油",
     "Type": 3,
-    "GridIndex": 2709,
+    "GridIndex": 4109,
     "PreTech": 1121,
     "Time": 60,
     "Input": [
@@ -3744,7 +3736,7 @@
     "Description": "这是一个新的化学公式.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/煤焦油",
     "Type": 2,
-    "GridIndex": 2501,
+    "GridIndex": 4113,
     "PreTech": 1812,
     "Time": 60,
     "Input": [
@@ -3773,7 +3765,7 @@
     "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/邻苯二甲酸",
     "Type": 2,
-    "GridIndex": 2712,
+    "GridIndex": 4112,
     "PreTech": 1121,
     "Time": 120,
     "Input": [
@@ -3802,7 +3794,7 @@
     "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/间苯二甲酸二苯酯",
     "Type": 2,
-    "GridIndex": 2711,
+    "GridIndex": 4111,
     "PreTech": 1121,
     "Time": 60,
     "Input": [
@@ -3829,7 +3821,7 @@
     "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/三氯化铁",
     "Type": 2,
-    "GridIndex": 2701,
+    "GridIndex": 4101,
     "PreTech": 1121,
     "Time": 360,
     "Input": [
@@ -3860,7 +3852,7 @@
     "Description": "这是一个人类未曾涉及的领域.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/生物微晶元件",
     "Type": 10,
-    "GridIndex": 1406,
+    "GridIndex": 1415,
     "PreTech": 1807,
     "Time": 120,
     "Input": [
@@ -3889,7 +3881,7 @@
     "Description": "这是一个人类未曾涉及的领域.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/先进生物电路",
     "Type": 10,
-    "GridIndex": 1506,
+    "GridIndex": 1515,
     "PreTech": 1807,
     "Time": 240,
     "Input": [
@@ -3918,9 +3910,9 @@
     "Description": "这是一个人类未曾涉及的领域.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/超生物计算集群",
     "Type": 10,
-    "GridIndex": 1606,
+    "GridIndex": 1615,
     "PreTech": 1807,
-    "Time": 480,
+    "Time": 360,
     "Input": [
       7506,
       7802,
@@ -3976,7 +3968,7 @@
     "Description": "这是一个人类未曾涉及的领域.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/超级纳米电脑",
     "Type": 10,
-    "GridIndex": 1604,
+    "GridIndex": 1713,
     "PreTech": 1809,
     "Time": 3600,
     "Input": [
@@ -4005,7 +3997,7 @@
     "Description": "这是一个人类未曾涉及的领域.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/湿件主机",
     "Type": 10,
-    "GridIndex": 1605,
+    "GridIndex": 1715,
     "PreTech": 1810,
     "Time": 5400,
     "Input": [
@@ -4034,7 +4026,7 @@
     "Description": "这是一种新的材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/塑料基板",
     "Type": 9,
-    "GridIndex": 2601,
+    "GridIndex": 1216,
     "PreTech": 1805,
     "Time": 120,
     "Input": [
@@ -4061,7 +4053,7 @@
     "Description": "这是一种新的材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/覆层塑料基板",
     "Type": 9,
-    "GridIndex": 2602,
+    "GridIndex": 1316,
     "PreTech": 1805,
     "Time": 120,
     "Input": [
@@ -4090,7 +4082,7 @@
     "Description": "这是一种新的材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/钛蚀刻覆层塑料基板",
     "Type": 9,
-    "GridIndex": 2603,
+    "GridIndex": 1416,
     "PreTech": 1805,
     "Time": 120,
     "Input": [
@@ -4119,7 +4111,7 @@
     "Description": "这是一种新的材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/生物基板",
     "Type": 9,
-    "GridIndex": 2604,
+    "GridIndex": 1516,
     "PreTech": 1805,
     "Time": 240,
     "Input": [
@@ -4146,7 +4138,7 @@
     "Description": "这是一种新的材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/覆层生物基板",
     "Type": 9,
-    "GridIndex": 2605,
+    "GridIndex": 1616,
     "PreTech": 1805,
     "Time": 240,
     "Input": [
@@ -4175,7 +4167,7 @@
     "Description": "这是一种新的材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/钨蚀刻覆层生物基板",
     "Type": 9,
-    "GridIndex": 2606,
+    "GridIndex": 1716,
     "PreTech": 1805,
     "Time": 240,
     "Input": [
@@ -4204,7 +4196,7 @@
     "Description": "一片非金属晶片,世界上精度最高的人造物.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/超低功率IC晶片",
     "Type": 4,
-    "GridIndex": 2607,
+    "GridIndex": 1217,
     "PreTech": 1806,
     "Time": 120,
     "Input": [
@@ -4217,7 +4209,7 @@
       7601
     ],
     "OutCounts": [
-      16
+      12
     ],
     "Explicit": false,
     "Handcraft": true,
@@ -4229,7 +4221,7 @@
     "Description": "一片非金属晶片,世界上精度最高的人造物.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/低功率IC晶片",
     "Type": 4,
-    "GridIndex": 2608,
+    "GridIndex": 1317,
     "PreTech": 1806,
     "Time": 120,
     "Input": [
@@ -4242,7 +4234,7 @@
       7602
     ],
     "OutCounts": [
-      8
+      12
     ],
     "Explicit": false,
     "Handcraft": true,
@@ -4254,7 +4246,7 @@
     "Description": "一片非金属晶片,世界上精度最高的人造物.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/标准功率IC晶片",
     "Type": 10,
-    "GridIndex": 2609,
+    "GridIndex": 1417,
     "PreTech": 1806,
     "Time": 120,
     "Input": [
@@ -4267,7 +4259,7 @@
       7603
     ],
     "OutCounts": [
-      16
+      12
     ],
     "Explicit": false,
     "Handcraft": false,
@@ -4279,7 +4271,7 @@
     "Description": "一片非金属晶片,世界上精度最高的人造物.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/高功率IC晶片",
     "Type": 10,
-    "GridIndex": 2610,
+    "GridIndex": 1517,
     "PreTech": 1806,
     "Time": 120,
     "Input": [
@@ -4292,7 +4284,7 @@
       7604
     ],
     "OutCounts": [
-      8
+      12
     ],
     "Explicit": false,
     "Handcraft": false,
@@ -4304,7 +4296,7 @@
     "Description": "一片非金属晶片,世界上精度最高的人造物.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/超高功率IC晶片",
     "Type": 10,
-    "GridIndex": 2611,
+    "GridIndex": 1617,
     "PreTech": 1806,
     "Time": 120,
     "Input": [
@@ -4317,7 +4309,7 @@
       7605
     ],
     "OutCounts": [
-      16
+      12
     ],
     "Explicit": false,
     "Handcraft": false,
@@ -4329,7 +4321,7 @@
     "Description": "一片非金属晶片,世界上精度最高的人造物.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/生物IC晶片",
     "Type": 10,
-    "GridIndex": 2612,
+    "GridIndex": 1717,
     "PreTech": 1806,
     "Time": 120,
     "Input": [
@@ -4342,7 +4334,7 @@
       7606
     ],
     "OutCounts": [
-      8
+      12
     ],
     "Explicit": false,
     "Handcraft": false,
@@ -4495,7 +4487,7 @@
     "Type": 1,
     "GridIndex": 1203,
     "PreTech": 1804,
-    "Time": 480,
+    "Time": 720,
     "Input": [
       1103,
       1107,
@@ -4676,7 +4668,7 @@
     "Description": "在高能环境下将光子压缩成固体.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/光子结晶",
     "Type": 13,
-    "GridIndex": 3410,
+    "GridIndex": 3104,
     "PreTech": 1134,
     "Time": 3600,
     "Input": [
@@ -4701,7 +4693,7 @@
     "Description": "一种新的制造材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/石墨线圈",
     "Type": 4,
-    "GridIndex": 2507,
+    "GridIndex": 1315,
     "PreTech": 1201,
     "Time": 60,
     "Input": [
@@ -4726,7 +4718,7 @@
     "Description": "一种新的制造材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/钛线圈",
     "Type": 4,
-    "GridIndex": 2508,
+    "GridIndex": 1314,
     "PreTech": 1201,
     "Time": 60,
     "Input": [
@@ -4865,7 +4857,7 @@
     "Description": "这玩意看上去好像也差点啥.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/氢燃料",
     "Type": 2,
-    "GridIndex": 2509,
+    "GridIndex": 4214,
     "PreTech": 1112,
     "Time": 120,
     "Input": [
@@ -4890,7 +4882,7 @@
     "Description": "这玩意看上去好像也差点啥.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/氘核燃料",
     "Type": 2,
-    "GridIndex": 2510,
+    "GridIndex": 4215,
     "PreTech": 1821,
     "Time": 240,
     "Input": [
@@ -4915,7 +4907,7 @@
     "Description": "这玩意看上去好像也差点啥.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/反物质燃料",
     "Type": 2,
-    "GridIndex": 2511,
+    "GridIndex": 4216,
     "PreTech": 1144,
     "Time": 360,
     "Input": [
@@ -5042,7 +5034,7 @@
     "Description": "这个公式能让你离心有机液体.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/剧毒有机液体",
     "Type": 2,
-    "GridIndex": 2512,
+    "GridIndex": 4114,
     "PreTech": 1103,
     "Time": 120,
     "Input": [
@@ -5073,7 +5065,7 @@
     "Description": "这个公式能让你更加高效的生产晶圆.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/高效硅晶圆",
     "Type": 1,
-    "GridIndex": 2410,
+    "GridIndex": 1601,
     "PreTech": 1833,
     "Time": 240,
     "Input": [
@@ -5100,7 +5092,7 @@
     "Description": "这个公式能让你更加高效的生产晶圆.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/高效钛晶圆",
     "Type": 1,
-    "GridIndex": 2411,
+    "GridIndex": 1602,
     "PreTech": 1833,
     "Time": 240,
     "Input": [
@@ -5129,7 +5121,7 @@
     "Description": "这个公式能让你更加高效的生产晶圆.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/高效钨晶圆",
     "Type": 1,
-    "GridIndex": 2412,
+    "GridIndex": 1603,
     "PreTech": 1833,
     "Time": 240,
     "Input": [
@@ -5158,7 +5150,7 @@
     "Description": "这个公式能让你更高效的生产聚乙烯.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/高效塑料",
     "Type": 2,
-    "GridIndex": 3101,
+    "GridIndex": 4301,
     "PreTech": 1122,
     "Time": 60,
     "Input": [
@@ -5187,7 +5179,7 @@
     "Description": "有人说这是工业的血液....\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/燃油精炼",
     "Type": 3,
-    "GridIndex": 3201,
+    "GridIndex": 4201,
     "PreTech": 1812,
     "Time": 240,
     "Input": [
@@ -5214,7 +5206,7 @@
     "Description": "有人说这是工业的血液....\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/轻燃油",
     "Type": 2,
-    "GridIndex": 3202,
+    "GridIndex": 4202,
     "PreTech": 1812,
     "Time": 180,
     "Input": [
@@ -5243,7 +5235,7 @@
     "Description": "有人说这是工业的血液....\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/重燃油",
     "Type": 2,
-    "GridIndex": 3203,
+    "GridIndex": 4203,
     "PreTech": 1812,
     "Time": 60,
     "Input": [
@@ -5272,7 +5264,7 @@
     "Description": "有人说这是工业的血液....\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/柴油",
     "Type": 2,
-    "GridIndex": 3204,
+    "GridIndex": 4204,
     "PreTech": 1812,
     "Time": 180,
     "Input": [
@@ -5299,7 +5291,7 @@
     "Description": "未充分燃烧的煤会形成一氧化碳.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/一氧化碳",
     "Type": 2,
-    "GridIndex": 3301,
+    "GridIndex": 4205,
     "PreTech": 1121,
     "Time": 240,
     "Input": [
@@ -5326,7 +5318,7 @@
     "Description": "充分燃烧的煤会形成二氧化碳.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/甲醇",
     "Type": 2,
-    "GridIndex": 3302,
+    "GridIndex": 4206,
     "PreTech": 1121,
     "Time": 240,
     "Input": [
@@ -5353,7 +5345,7 @@
     "Description": "充分燃烧的煤会形成二氧化碳.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/乙酸",
     "Type": 2,
-    "GridIndex": 3303,
+    "GridIndex": 4207,
     "PreTech": 1121,
     "Time": 240,
     "Input": [
@@ -5380,7 +5372,7 @@
     "Description": "充分燃烧的煤会形成二氧化碳.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/乙酸甲酯",
     "Type": 2,
-    "GridIndex": 3304,
+    "GridIndex": 4208,
     "PreTech": 1121,
     "Time": 240,
     "Input": [
@@ -5409,7 +5401,7 @@
     "Description": "充分燃烧的煤会形成二氧化碳.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/次氯酸",
     "Type": 2,
-    "GridIndex": 3305,
+    "GridIndex": 4209,
     "PreTech": 1121,
     "Time": 240,
     "Input": [
@@ -5436,7 +5428,7 @@
     "Description": "它蕴含着巨大的能量....但好像还差些什么\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/四硝基甲烷",
     "Type": 2,
-    "GridIndex": 3306,
+    "GridIndex": 4210,
     "PreTech": 1121,
     "Time": 360,
     "Input": [
@@ -5467,7 +5459,7 @@
     "Description": "它蕴含着巨大的能量....但好像还差一步\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/硝基柴油",
     "Type": 2,
-    "GridIndex": 3307,
+    "GridIndex": 4211,
     "PreTech": 1812,
     "Time": 480,
     "Input": [
@@ -5494,7 +5486,7 @@
     "Description": "它蕴含着巨大的能量....但好像还差一步\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/偏二甲肼",
     "Type": 2,
-    "GridIndex": 3401,
+    "GridIndex": 4212,
     "PreTech": 1812,
     "Time": 600,
     "Input": [
@@ -5525,7 +5517,7 @@
     "Description": "它蕴含着巨大的能量....但好像还差一步\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/火箭燃料",
     "Type": 2,
-    "GridIndex": 3402,
+    "GridIndex": 4213,
     "PreTech": 1812,
     "Time": 900,
     "Input": [
@@ -5552,7 +5544,7 @@
     "Description": "它蕴含着巨大的能量....但好像还差一步\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/硝基柴油燃料棒",
     "Type": 4,
-    "GridIndex": 3403,
+    "GridIndex": 1406,
     "PreTech": 1812,
     "Time": 600,
     "Input": [
@@ -5579,7 +5571,7 @@
     "Description": "它蕴含着巨大的能量....但好像还差一步\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/偏二甲肼燃料棒",
     "Type": 4,
-    "GridIndex": 3404,
+    "GridIndex": 1506,
     "PreTech": 1812,
     "Time": 600,
     "Input": [
@@ -5606,7 +5598,7 @@
     "Description": "它蕴含着巨大的能量....但好像还差一步\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/火箭燃料棒",
     "Type": 4,
-    "GridIndex": 3405,
+    "GridIndex": 1606,
     "PreTech": 1812,
     "Time": 600,
     "Input": [
@@ -5633,7 +5625,7 @@
     "Description": "这个公式能让你更加高效的生产微晶元件.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/高效微晶元件",
     "Type": 10,
-    "GridIndex": 3406,
+    "GridIndex": 1414,
     "PreTech": 1807,
     "Time": 60,
     "Input": [
@@ -5660,7 +5652,7 @@
     "Description": "这个公式能让你更加高效的生产处理器.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/高效处理器",
     "Type": 10,
-    "GridIndex": 3407,
+    "GridIndex": 1514,
     "PreTech": 1807,
     "Time": 120,
     "Input": [
@@ -5687,7 +5679,7 @@
     "Description": "这个公式能让你更加高效的生产量子芯片.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/高效量子芯片",
     "Type": 10,
-    "GridIndex": 3408,
+    "GridIndex": 1614,
     "PreTech": 1807,
     "Time": 180,
     "Input": [
@@ -5714,7 +5706,7 @@
     "Description": "这个公式能让你更加高效的生产硫酸.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/高效硫酸",
     "Type": 2,
-    "GridIndex": 3205,
+    "GridIndex": 4115,
     "PreTech": 1122,
     "Time": 60,
     "Input": [
@@ -5741,7 +5733,7 @@
     "Description": "这个公式能让你更加高效的生产硫酸.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/量子储液罐",
     "Type": 4,
-    "GridIndex": 3206,
+    "GridIndex": 2208,
     "PreTech": 1303,
     "Time": 900,
     "Input": [
@@ -5770,7 +5762,7 @@
     "Description": "这个公式能让你更加高效的生产硫酸.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/矿物处理厂",
     "Type": 4,
-    "GridIndex": 3207,
+    "GridIndex": 2406,
     "PreTech": 1411,
     "Time": 600,
     "Input": [
@@ -5801,7 +5793,7 @@
     "Description": "这个公式能让你更加高效的生产铁.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/铁矿粉",
     "Type": 11,
-    "GridIndex": 3701,
+    "GridIndex": 4401,
     "PreTech": 1411,
     "Time": 60,
     "Input": [
@@ -5826,7 +5818,7 @@
     "Description": "这个公式能让你更加高效的生产硫酸.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/铜矿粉",
     "Type": 11,
-    "GridIndex": 3702,
+    "GridIndex": 4402,
     "PreTech": 1411,
     "Time": 60,
     "Input": [
@@ -5851,7 +5843,7 @@
     "Description": "这个公式能让你更加高效的生产硫酸.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/硅矿粉",
     "Type": 11,
-    "GridIndex": 3703,
+    "GridIndex": 4403,
     "PreTech": 1411,
     "Time": 60,
     "Input": [
@@ -5876,7 +5868,7 @@
     "Description": "这个公式能让你更加高效的生产硫酸.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/钛矿粉",
     "Type": 11,
-    "GridIndex": 3704,
+    "GridIndex": 4404,
     "PreTech": 1411,
     "Time": 60,
     "Input": [
@@ -5901,7 +5893,7 @@
     "Description": "这个公式能让你更加高效的生产硫酸.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/石粉",
     "Type": 11,
-    "GridIndex": 3705,
+    "GridIndex": 4405,
     "PreTech": 1411,
     "Time": 60,
     "Input": [
@@ -5926,7 +5918,7 @@
     "Description": "这个公式能让你更加高效的生产硫酸.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/煤矿粉",
     "Type": 11,
-    "GridIndex": 3706,
+    "GridIndex": 4406,
     "PreTech": 1411,
     "Time": 60,
     "Input": [
@@ -5951,7 +5943,7 @@
     "Description": "利用氢氧化钠晶体作为催化剂,能够将硅石中含有的放射性物质沉降分离.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/放射性矿物碎块",
     "Type": 11,
-    "GridIndex": 3501,
+    "GridIndex": 4302,
     "PreTech": 1816,
     "Time": 240,
     "Input": [
@@ -5978,7 +5970,7 @@
     "Description": "利用氢氧化钠晶体作为催化剂,能够将硅石中含有的放射性物质沉降分离.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/发光铀碎块",
     "Type": 11,
-    "GridIndex": 3502,
+    "GridIndex": 4303,
     "PreTech": 1817,
     "Time": 240,
     "Input": [
@@ -6005,7 +5997,7 @@
     "Description": "利用氢氧化钠晶体作为催化剂,能够将硅石中含有的放射性物质沉降分离.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/晶质钚碎块",
     "Type": 11,
-    "GridIndex": 3503,
+    "GridIndex": 4304,
     "PreTech": 1817,
     "Time": 240,
     "Input": [
@@ -6032,7 +6024,7 @@
     "Description": "利用氢氧化钠晶体作为催化剂,能够将硅石中含有的放射性物质沉降分离.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/铀矿",
     "Type": 11,
-    "GridIndex": 3504,
+    "GridIndex": 4305,
     "PreTech": 1818,
     "Time": 240,
     "Input": [
@@ -6059,7 +6051,7 @@
     "Description": "利用氢氧化钠晶体作为催化剂,能够将硅石中含有的放射性物质沉降分离.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/钚矿",
     "Type": 11,
-    "GridIndex": 3505,
+    "GridIndex": 4306,
     "PreTech": 1818,
     "Time": 240,
     "Input": [
@@ -6086,7 +6078,7 @@
     "Description": "利用氢氧化钠晶体作为催化剂,能够将硅石中含有的放射性物质沉降分离.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/高纯铀块",
     "Type": 11,
-    "GridIndex": 3506,
+    "GridIndex": 4307,
     "PreTech": 1819,
     "Time": 120,
     "Input": [
@@ -6111,7 +6103,7 @@
     "Description": "利用氢氧化钠晶体作为催化剂,能够将硅石中含有的放射性物质沉降分离.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/高纯钚块",
     "Type": 11,
-    "GridIndex": 3507,
+    "GridIndex": 4308,
     "PreTech": 1819,
     "Time": 120,
     "Input": [
@@ -6136,7 +6128,7 @@
     "Description": "利用氢氧化钠晶体作为催化剂,能够将硅石中含有的放射性物质沉降分离.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/铀235燃料棒",
     "Type": 4,
-    "GridIndex": 3508,
+    "GridIndex": 1507,
     "PreTech": 1820,
     "Time": 600,
     "Input": [
@@ -6163,7 +6155,7 @@
     "Description": "利用氢氧化钠晶体作为催化剂,能够将硅石中含有的放射性物质沉降分离.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/钚燃料棒",
     "Type": 4,
-    "GridIndex": 3509,
+    "GridIndex": 1407,
     "PreTech": 1820,
     "Time": 600,
     "Input": [
@@ -6190,7 +6182,7 @@
     "Description": "从原矿中分离的纯净粉可以实现效率更高的生产.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Icons/ItemRecipe/iron-plate",
     "Type": 1,
-    "GridIndex": 3601,
+    "GridIndex": 4501,
     "PreTech": 1411,
     "Time": 60,
     "Input": [
@@ -6215,7 +6207,7 @@
     "Description": "从原矿中分离的纯净粉可以实现效率更高的生产.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Icons/ItemRecipe/copper-plate",
     "Type": 1,
-    "GridIndex": 3602,
+    "GridIndex": 4502,
     "PreTech": 1411,
     "Time": 60,
     "Input": [
@@ -6240,7 +6232,7 @@
     "Description": "从原矿中分离的纯净粉可以实现效率更高的生产.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Icons/ItemRecipe/silicium-single-crystal",
     "Type": 1,
-    "GridIndex": 3603,
+    "GridIndex": 4503,
     "PreTech": 1411,
     "Time": 60,
     "Input": [
@@ -6265,7 +6257,7 @@
     "Description": "从原矿中分离的纯净粉可以实现效率更高的生产.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Icons/ItemRecipe/titanium-plate",
     "Type": 1,
-    "GridIndex": 3604,
+    "GridIndex": 4504,
     "PreTech": 1411,
     "Time": 60,
     "Input": [
@@ -6290,7 +6282,7 @@
     "Description": "从原矿中分离的纯净粉可以实现效率更高的生产.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/混凝土",
     "Type": 4,
-    "GridIndex": 3605,
+    "GridIndex": 4505,
     "PreTech": 1415,
     "Time": 60,
     "Input": [
@@ -6321,7 +6313,7 @@
     "Description": "从原矿中分离的纯净粉可以实现效率更高的生产.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/行星组装站",
     "Type": 10,
-    "GridIndex": 3102,
+    "GridIndex": 2213,
     "PreTech": 1823,
     "Time": 18000,
     "Input": [
@@ -6354,7 +6346,7 @@
     "Description": "将物质分解成量子尘埃云.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/垃圾回收",
     "Type": 14,
-    "GridIndex": 3611,
+    "GridIndex": 4217,
     "PreTech": 1831,
     "Time": 10800,
     "Input": [],
@@ -6368,5 +6360,142 @@
     "Explicit": true,
     "Handcraft": false,
     "NonProductive": true
+  },
+  {
+    "ID": 537,
+    "Name": "硫矿粉",
+    "Description": "这个公式能让你更加高效的生产硫酸.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/硫矿粉",
+    "Type": 11,
+    "GridIndex": 4407,
+    "PreTech": 1411,
+    "Time": 60,
+    "Input": [
+      6256
+    ],
+    "InCounts": [
+      2
+    ],
+    "Output": [
+      6277
+    ],
+    "OutCounts": [
+      1
+    ],
+    "Explicit": false,
+    "Handcraft": false,
+    "NonProductive": false
+  },
+  {
+    "ID": 538,
+    "Name": "硫酸化合",
+    "Description": "这个公式能让你更加高效的生产硫酸....好吧,我承认这不太科学.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/硫酸",
+    "Type": 2,
+    "GridIndex": 4601,
+    "PreTech": 1122,
+    "Time": 120,
+    "Input": [
+      6277,
+      1000,
+      7019
+    ],
+    "InCounts": [
+      2,
+      2,
+      6
+    ],
+    "Output": [
+      6999
+    ],
+    "OutCounts": [
+      2
+    ],
+    "Explicit": true,
+    "Handcraft": false,
+    "NonProductive": false
+  },
+  {
+    "ID": 539,
+    "Name": "稳定矩阵",
+    "Description": "这个公式能让你更加高效的生产硫酸....好吧,我承认这不太科学.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/稳定矩阵",
+    "Type": 4,
+    "GridIndex": 3106,
+    "PreTech": 1111,
+    "Time": 180,
+    "Input": [
+      6001,
+      6002
+    ],
+    "InCounts": [
+      1,
+      1
+    ],
+    "Output": [
+      6278
+    ],
+    "OutCounts": [
+      1
+    ],
+    "Explicit": false,
+    "Handcraft": false,
+    "NonProductive": false
+  },
+  {
+    "ID": 540,
+    "Name": "虚空矩阵",
+    "Description": "这个公式能让你更加高效的生产硫酸....好吧,我承认这不太科学.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/虚空矩阵",
+    "Type": 4,
+    "GridIndex": 3107,
+    "PreTech": 1312,
+    "Time": 180,
+    "Input": [
+      6003,
+      6004
+    ],
+    "InCounts": [
+      1,
+      1
+    ],
+    "Output": [
+      6279
+    ],
+    "OutCounts": [
+      1
+    ],
+    "Explicit": false,
+    "Handcraft": false,
+    "NonProductive": false
+  },
+  {
+    "ID": 544,
+    "Name": "宇宙矩阵粗坯",
+    "Description": "这个公式能让你更加高效的生产硫酸....好吧,我承认这不太科学.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/生宇宙矩阵",
+    "Type": 4,
+    "GridIndex": 3108,
+    "PreTech": 1507,
+    "Time": 180,
+    "Input": [
+      6278,
+      6279,
+      6005
+    ],
+    "InCounts": [
+      1,
+      1,
+      1
+    ],
+    "Output": [
+      6280
+    ],
+    "OutCounts": [
+      1
+    ],
+    "Explicit": false,
+    "Handcraft": false,
+    "NonProductive": false
   }
 ]
