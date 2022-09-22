@@ -21,7 +21,7 @@ using ERecipeType_1 = ERecipeType;
 
 namespace ProjectGenesis
 {
-    [BepInPlugin("org.LoShin.GenesisBook", "GenesisBook", "1.5.0")]
+    [BepInPlugin("org.LoShin.GenesisBook", "GenesisBook", "2.0.0")]
     [BepInDependency(DSPModSavePlugin.MODGUID)]
     [BepInDependency(CommonAPIPlugin.GUID)]
     [BepInDependency(LDBToolPlugin.MODGUID)]
@@ -90,14 +90,12 @@ namespace ProjectGenesis
             LDBTool.PreAddProto(TestCraftingTableModel4);
             var TestCraftingTableModel5 = CopyModelProto(49, 410, new Color(0.3216F, 0.8157F, 0.09020F));
             LDBTool.PreAddProto(TestCraftingTableModel5);
-            
             var AntiMatterModel = CopyModelProto(118, 407, Color.HSVToRGB(0.5985f, 0.7333f, 0.2353f));
             LDBTool.PreAddProto(AntiMatterModel);
             var AssembleModel = CopyModelProto(67, 408, Color.HSVToRGB(0.9688f, 0.9068f, 0.9255f));
             LDBTool.PreAddProto(AssembleModel);
             var CircleModel = CopyModelProto(69, 409, Color.grey);
             LDBTool.PreAddProto(CircleModel);
-
 
             #endregion
 
@@ -245,6 +243,65 @@ namespace ProjectGenesis
 
             LDB.items.OnAfterDeserialize();
         }
+
+        private void PostAddDataAction()
+        {
+            LDB.items.OnAfterDeserialize();
+            LDB.recipes.OnAfterDeserialize();
+            LDB.models.OnAfterDeserialize();
+            GameMain.gpuiManager.Init();
+
+            //飞行舱拆除
+            var @base = LDB.veges.Select(9999);
+            @base.MiningItem = new[] { 1801, 1101, 1104 };
+            @base.MiningCount = new[] { 3, 10, 20 };
+            @base.MiningChance = new float[] { 1, 1, 1 };
+            @base.Preload();
+
+            foreach (var proto in LDB.techs.dataArray) proto.Preload();
+
+            for (var i = 0; i < LDB.items.dataArray.Length; ++i)
+            {
+                LDB.items.dataArray[i].recipes = null;
+                LDB.items.dataArray[i].rawMats = null;
+                LDB.items.dataArray[i].Preload(i);
+            }
+
+            for (var i = 0; i < LDB.recipes.dataArray.Length; ++i) LDB.recipes.dataArray[i].Preload(i);
+
+            foreach (var proto in LDB.techs.dataArray)
+            {
+                proto.PreTechsImplicit = proto.PreTechsImplicit.Except(proto.PreTechs).ToArray();
+                proto.UnlockRecipes = proto.UnlockRecipes.Distinct().ToArray();
+                proto.Preload2();
+            }
+
+            ModelPostFix(LDB.models);
+            ItemPostFix(LDB.items);
+
+            ItemProto.InitFluids();
+            ItemProto.InitItemIds();
+            ItemProto.InitFuelNeeds();
+            ItemProto.InitItemIndices();
+            ItemProto.InitMechaMaterials();
+            ItemProto.fuelNeeds[4] = new int[] { 6533, 1803 };
+            ItemProto.fuelNeeds[5] = new int[] { 6241, 6242, 6243 };
+            ItemProto.fuelNeeds[6] = new int[] { 1121, 6532, 1802, 6244, 6245 };
+
+            foreach (var proto in LDB.items.dataArray)
+            {
+                StorageComponent.itemIsFuel[proto.ID] = proto.HeatValue > 0L;
+
+                if (StackSizeButton)
+                    StorageComponent.itemStackCount[proto.ID] = 10000000;
+                else
+                    StorageComponent.itemStackCount[proto.ID] = proto.StackSize;
+            }
+
+            // JsonHelper.ExportAsJson(@"C:\Git\ProjectGenesis");
+        }
+
+        #region PrefabDescPostFix
 
         private void ItemPostFix(ItemProtoSet itemProtos)
         {
@@ -422,62 +479,9 @@ namespace ProjectGenesis
             AntiMatterModel.prefabDesc.useFuelPerTick = 1200000000;
         }
 
-        private void PostAddDataAction()
-        {
-            LDB.items.OnAfterDeserialize();
-            LDB.recipes.OnAfterDeserialize();
-            LDB.models.OnAfterDeserialize();
-            GameMain.gpuiManager.Init();
+        #endregion
 
-            //飞行舱拆除
-            var @base = LDB.veges.Select(9999);
-            @base.MiningItem = new[] { 1801, 1101, 1104 };
-            @base.MiningCount = new[] { 3, 10, 20 };
-            @base.MiningChance = new float[] { 1, 1, 1 };
-            @base.Preload();
-
-            foreach (var proto in LDB.techs.dataArray) proto.Preload();
-
-            for (var i = 0; i < LDB.items.dataArray.Length; ++i)
-            {
-                LDB.items.dataArray[i].recipes = null;
-                LDB.items.dataArray[i].rawMats = null;
-                LDB.items.dataArray[i].Preload(i);
-            }
-
-            for (var i = 0; i < LDB.recipes.dataArray.Length; ++i) LDB.recipes.dataArray[i].Preload(i);
-
-            foreach (var proto in LDB.techs.dataArray)
-            {
-                proto.PreTechsImplicit = proto.PreTechsImplicit.Except(proto.PreTechs).ToArray();
-                proto.UnlockRecipes = proto.UnlockRecipes.Distinct().ToArray();
-                proto.Preload2();
-            }
-
-            ModelPostFix(LDB.models);
-            ItemPostFix(LDB.items);
-
-            ItemProto.InitFluids();
-            ItemProto.InitItemIds();
-            ItemProto.InitFuelNeeds();
-            ItemProto.InitItemIndices();
-            ItemProto.InitMechaMaterials();
-            ItemProto.fuelNeeds[4] = new int[] { 6533, 1803 };
-            ItemProto.fuelNeeds[5] = new int[] { 6241, 6242, 6243 };
-            ItemProto.fuelNeeds[6] = new int[] { 1121, 6532, 1802, 6244, 6245 };
-
-            foreach (var proto in LDB.items.dataArray)
-            {
-                StorageComponent.itemIsFuel[proto.ID] = proto.HeatValue > 0L;
-                
-                if (StackSizeButton)
-                    StorageComponent.itemStackCount[proto.ID] = 10000000;
-                else
-                    StorageComponent.itemStackCount[proto.ID] = proto.StackSize;
-            }
-
-            // JsonHelper.ExportAsJson(@"C:\Git\ProjectGenesis");
-        }
+        #region CopyModelProto
 
         private static ModelProto CopyModelProto(int oriId, int id, Color color)
         {
@@ -521,10 +525,16 @@ namespace ProjectGenesis
             return model;
         }
 
+        #endregion
+
+        #region IModCanSave
+
         public void Export(BinaryWriter w) => MegaAssemblerPatches.Export(w);
 
         public void Import(BinaryReader r) => MegaAssemblerPatches.Import(r);
 
         public void IntoOtherSave() => MegaAssemblerPatches.IntoOtherSave();
+
+        #endregion
     }
 }
