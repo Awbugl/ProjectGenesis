@@ -98,66 +98,88 @@ namespace ProjectGenesis.Patches
                 __result = "4x";
         }
 
+        // ReSharper disable  RedundantAssignment
+
         [HarmonyPrefix]
         [HarmonyPatch(typeof(UIResearchResultWindow), "SetTechId")]
         public static bool UIResearchResultWindow_SetTechId(
             ref UIResearchResultWindow __instance,
-            // ReSharper disable once RedundantAssignment
             ref TechProto ___techProto,
             ref StringBuilder ___sb,
+            ref int ___techId,
             ref float ___windowHeight,
             int _techId)
         {
+            if (__instance.active && ___techId > 0) GameMain.gameScenario.NotifyTechResult(___techId);
+            ___techId = _techId;
+
             ___techProto = LDB.techs.Select(_techId);
-
-            if (___techProto == null) return true;
-
-            RecipeProto[] unlockRecipeArray = ___techProto.unlockRecipeArray;
-
-            var num1 = unlockRecipeArray.Length;
 
             if (___techProto != null)
             {
+                RecipeProto[] unlockRecipeArray = ___techProto.unlockRecipeArray;
+
+                var num1 = unlockRecipeArray.Length;
+
                 if (__instance.itemIcons.Length < num1)
                 {
                     Array.Resize(ref __instance.itemIcons, num1);
                     Array.Resize(ref __instance.itemButtons, num1);
                 }
 
-                for (var i = 0; i < num1; i++)
+                var i = 0;
+
+                for (; i < num1; i++)
                 {
                     if (__instance.itemIcons[i] == null)
                     {
                         __instance.itemIcons[i] = Object.Instantiate(__instance.itemIcons[0], __instance.itemIcons[0].transform.parent);
-                        __instance.itemIcons[i].gameObject.SetActive(false);
                     }
 
                     if (__instance.itemButtons[i] == null)
                     {
-                        __instance.itemButtons[i] = Object.Instantiate(__instance.itemButtons[0], __instance.itemButtons[0].transform.parent);
-                        __instance.itemButtons[i].gameObject.SetActive(false);
+                        __instance.itemButtons[i] = Object.Instantiate(__instance.itemButtons[0]);
+                        __instance.itemButtons[i].transform.Translate(i * 90, 0, 0);
                     }
 
                     __instance.itemIcons[i].gameObject.SetActive(true);
                     __instance.itemIcons[i].sprite = unlockRecipeArray[i].iconSprite;
                     __instance.itemButtons[i].tips.itemId
                         = unlockRecipeArray[i].Explicit ? -unlockRecipeArray[i].ID : unlockRecipeArray[i].Results[0];
+                    __instance.itemButtons[i].UpdateTip();
                     var x = (float)((num1 - 1.0) * -45.0 + 90.0 * i);
                     __instance.itemIcons[i].rectTransform.anchoredPosition = new Vector2(x, 0.0f);
                 }
-            }
 
-            var num2 = num1 != 0 ? 90 : 0;
-            var str = ___techProto.UnlockFunctionText(___sb);
-            __instance.functionText.text = str;
-            __instance.functionText.rectTransform.anchoredPosition = new Vector2(0.0f, -num2);
-            if (!string.IsNullOrEmpty(str)) num2 = num2 + (int)__instance.functionText.preferredHeight + 5;
-            __instance.conclusionText.rectTransform.anchoredPosition = new Vector2(0.0f, -num2);
-            __instance.conclusionText.text = ___techProto.conclusion;
-            if (!string.IsNullOrEmpty(___techProto.conclusion)) num2 = num2 + (int)__instance.conclusionText.preferredHeight + 5;
-            ___windowHeight = num2 + 110;
-            __instance.windowTrans.sizeDelta = new Vector2(num1 < 5 ? 400f : (num1 + 1) * 80, 0.0f);
-            __instance._Open();
+                if (__instance.itemIcons.Length > num1)
+                    for (; i < __instance.itemIcons.Length; i++)
+                    {
+                        __instance.itemIcons[i].gameObject.SetActive(false);
+                        __instance.itemIcons[i].sprite = null;
+                        __instance.itemButtons[i].tips.itemId = 0;
+                    }
+
+                var num2 = num1 != 0 ? 90 : 0;
+                var str = ___techProto.UnlockFunctionText(___sb);
+                __instance.functionText.text = str;
+                __instance.functionText.rectTransform.anchoredPosition = new Vector2(0.0f, -num2);
+                if (!string.IsNullOrEmpty(str)) num2 = num2 + (int)__instance.functionText.preferredHeight + 5;
+                __instance.conclusionText.rectTransform.anchoredPosition = new Vector2(0.0f, -num2);
+                __instance.conclusionText.text = ___techProto.conclusion;
+                if (!string.IsNullOrEmpty(___techProto.conclusion)) num2 = num2 + (int)__instance.conclusionText.preferredHeight + 5;
+                ___windowHeight = num2 + 110;
+                __instance.windowTrans.sizeDelta = new Vector2(num1 < 5 ? 400f : num1 * 90 + 40, 0.0f);
+                __instance._Open();
+            }
+            else
+            {
+                for (var index = 0; index < __instance.itemIcons.Length; ++index) __instance.itemIcons[index].gameObject.SetActive(false);
+                __instance.functionText.text = "";
+                __instance.conclusionText.text = "";
+                ___techId = 0;
+                ___techProto = null;
+                ___windowHeight = 0.0f;
+            }
 
             return false;
         }
