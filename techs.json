@@ -607,7 +607,7 @@
     "Conclusion": "",
     "Position": [
       45.0,
-      -23.0
+      -27.0
     ],
     "PreTechs": [
       1152
@@ -1076,7 +1076,7 @@
     "Conclusion": "人造恒星结果",
     "Position": [
       45.0,
-      -31.0
+      -35.0
     ],
     "PreTechs": [
       1152
@@ -1118,27 +1118,33 @@
   },
   {
     "ID": 1145,
-    "Name": "T可控湮灭反应",
+    "Name": "终极目标:可控湮灭反应",
     "IconPath": "Icons/Tech/1145",
     "Desc": "可控湮灭反应描述",
     "Conclusion": "可控湮灭反应结果",
     "Position": [
-      41.0,
-      -7.0
+      45.0,
+      -23.0
     ],
     "PreTechs": [
-      1506
+      1152
     ],
     "PreTechsImplicit": [],
     "Items": [
+      6001,
       6002,
+      6003,
+      6004,
       6005
     ],
     "ItemPoints": [
-      24,
-      12
+      100,
+      100,
+      100,
+      100,
+      100
     ],
-    "HashNeeded": 600000,
+    "HashNeeded": 3600000,
     "UnlockRecipes": [
       42,
       121
@@ -2320,8 +2326,7 @@
     "HashNeeded": 540000,
     "UnlockRecipes": [
       74,
-      541,
-      683
+      541
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -3255,7 +3260,7 @@
     "Conclusion": "卫星配电系统结果",
     "Position": [
       45.0,
-      -27.0
+      -31.0
     ],
     "PreTechs": [
       1152

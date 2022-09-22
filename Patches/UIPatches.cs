@@ -222,7 +222,7 @@ namespace ProjectGenesis.Patches
 
         private static AccessTools.FieldRef<T, TU> FieldRefAccess<T, TU>(string fieldName)
             => AccessTools.FieldRefAccess<T, TU>(AccessTools.Field(typeof(T), fieldName));
-
+       
         [HarmonyPatch(typeof(UIReplicatorWindow), "_OnInit")]
         [HarmonyPrefix]
         public static void UIReplicatorWindow_OnInit_Prefix()

@@ -1848,8 +1848,8 @@
     "GridIndex": 1110,
     "StackSize": 20,
     "Type": 2,
-    "PreTech": 1134,
-    "PreTechOverride": 1134,
+    "PreTech": 1142,
+    "PreTechOverride": 0,
     "DescFields": [
       1,
       2,
@@ -6145,7 +6145,7 @@
     "GridIndex": 1512,
     "StackSize": 100,
     "Type": 2,
-    "PreTech": 1413,
+    "PreTech": 0,
     "PreTechOverride": 0,
     "DescFields": [
       1

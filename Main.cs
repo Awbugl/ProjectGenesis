@@ -49,9 +49,8 @@ namespace ProjectGenesis
 
             TableID = new int[]
                       {
-                          TabSystem.RegisterTab("org.LoShin.GenesisBook:org.LoShin.GenesisBookTab1", new TabData("3", "Assets/texpack/主机科技")),
-                          TabSystem.RegisterTab("org.LoShin.GenesisBook:org.LoShin.GenesisBookTab2", new TabData("4", "Assets/texpack/化工科技")),
-                          TabSystem.RegisterTab("org.LoShin.GenesisBook:org.LoShin.GenesisBookTab3", new TabData("5", "Assets/texpack/虚拟技术革新"))
+                          TabSystem.RegisterTab("org.LoShin.GenesisBook:org.LoShin.GenesisBookTab1", new TabData("精炼", "Assets/texpack/主机科技")),
+                          TabSystem.RegisterTab("org.LoShin.GenesisBook:org.LoShin.GenesisBookTab2", new TabData("化工", "Assets/texpack/化工科技")),
                       };
 
             LDBTool.PreAddDataAction += InitData;
