@@ -152,35 +152,6 @@
     "NonProductive": false
   },
   {
-    "ID": 57,
-    "Name": "无尽材料精炼",
-    "Description": "利用粒子加速器的庞大能量创造全新的材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "IconPath": "Assets/texpack/三元精金",
-    "Type": 13,
-    "GridIndex": 3103,
-    "PreTech": 1134,
-    "Time": 3600,
-    "Input": [
-      1103,
-      1107,
-      7707
-    ],
-    "InCounts": [
-      10,
-      10,
-      10
-    ],
-    "Output": [
-      6271
-    ],
-    "OutCounts": [
-      1
-    ],
-    "Explicit": false,
-    "Handcraft": false,
-    "NonProductive": false
-  },
-  {
     "ID": 7,
     "Name": "风力涡轮机",
     "Description": "",
@@ -950,7 +921,7 @@
     "IconPath": "",
     "Type": 1,
     "GridIndex": 1511,
-    "PreTech": 1402,
+    "PreTech": 1401,
     "Time": 60,
     "Input": [
       1005
@@ -999,7 +970,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 10,
-    "GridIndex": 1702,
+    "GridIndex": 1712,
     "PreTech": 1133,
     "Time": 240,
     "Input": [
@@ -1389,7 +1360,31 @@
     "Handcraft": true,
     "NonProductive": false
   },
-
+  {
+    "ID": 50,
+    "Name": "玻璃",
+    "Description": "",
+    "IconPath": "",
+    "Type": 1,
+    "GridIndex": 1108,
+    "PreTech": 0,
+    "Time": 120,
+    "Input": [
+      1005
+    ],
+    "InCounts": [
+      2
+    ],
+    "Output": [
+      1110
+    ],
+    "OutCounts": [
+      1
+    ],
+    "Explicit": false,
+    "Handcraft": true,
+    "NonProductive": false
+  },
   {
     "ID": 51,
     "Name": "处理器",
@@ -1567,28 +1562,32 @@
     "NonProductive": false
   },
   {
-    "ID": 50,
-    "Name": "玻璃",
-    "Description": "",
-    "IconPath": "",
-    "Type": 1,
-    "GridIndex": 1108,
-    "PreTech": 0,
-    "Time": 120,
+    "ID": 57,
+    "Name": "无尽材料精炼",
+    "Description": "利用粒子加速器的庞大能量创造全新的材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/三元精金",
+    "Type": 13,
+    "GridIndex": 3103,
+    "PreTech": 1134,
+    "Time": 3600,
     "Input": [
-      1005
+      1103,
+      1107,
+      7707
     ],
     "InCounts": [
-      2
+      10,
+      10,
+      10
     ],
     "Output": [
-      1110
+      6271
     ],
     "OutCounts": [
       1
     ],
     "Explicit": false,
-    "Handcraft": true,
+    "Handcraft": false,
     "NonProductive": false
   },
   {
@@ -2761,7 +2760,6 @@
     "Handcraft": false,
     "NonProductive": false
   },
-
   {
     "ID": 100,
     "Name": "氦三燃料棒",
@@ -2922,7 +2920,6 @@
     "Handcraft": false,
     "NonProductive": false
   },
-
   {
     "ID": 107,
     "Name": "氦元素离心",
@@ -2948,7 +2945,6 @@
     "Handcraft": false,
     "NonProductive": false
   },
-
   {
     "ID": 108,
     "Name": "增产剂",
@@ -3183,7 +3179,6 @@
     "Handcraft": false,
     "NonProductive": false
   },
-
   {
     "ID": 116,
     "Name": "位面熔炉",
@@ -3249,7 +3244,7 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 2108,
-    "PreTech": 1833,
+    "PreTech": 1104,
     "Time": 360,
     "Input": [
       2204,
@@ -3362,7 +3357,6 @@
     "Handcraft": false,
     "NonProductive": false
   },
-
   {
     "ID": 701,
     "Name": "石油裂化",
@@ -4663,7 +4657,7 @@
     "NonProductive": false
   },
   {
-    "ID": 623,
+    "ID": 425,
     "Name": "光子结晶化",
     "Description": "在高能环境下将光子压缩成固体.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/光子结晶",
@@ -5626,7 +5620,7 @@
     "IconPath": "Assets/texpack/高效微晶元件",
     "Type": 10,
     "GridIndex": 1413,
-    "PreTech": 1807,
+    "PreTech": 1810,
     "Time": 60,
     "Input": [
       7502,
@@ -5653,7 +5647,7 @@
     "IconPath": "Assets/texpack/高效处理器",
     "Type": 10,
     "GridIndex": 1513,
-    "PreTech": 1807,
+    "PreTech": 1809,
     "Time": 120,
     "Input": [
       7503,
@@ -5680,7 +5674,7 @@
     "IconPath": "Assets/texpack/高效量子芯片",
     "Type": 10,
     "GridIndex": 1613,
-    "PreTech": 1807,
+    "PreTech": 1809,
     "Time": 180,
     "Input": [
       7504,
@@ -6499,4 +6493,3 @@
     "NonProductive": false
   }
 ]
-

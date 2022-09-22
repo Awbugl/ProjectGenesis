@@ -7,6 +7,7 @@ using HarmonyLib;
 using UnityEngine;
 using UnityEngine.UI;
 using ERecipeType_1 = ERecipeType;
+using Object = UnityEngine.Object;
 
 // ReSharper disable InconsistentNaming
 // ReSharper disable LoopCanBePartlyConvertedToQuery
@@ -95,6 +96,70 @@ namespace ProjectGenesis.Patches
                 __instance.prefabDesc.assemblerRecipeType == (ERecipeType_1)ERecipeType.Chemical &&
                 index == 22)
                 __result = "4x";
+        }
+
+        [HarmonyPrefix]
+        [HarmonyPatch(typeof(UIResearchResultWindow), "SetTechId")]
+        public static bool UIResearchResultWindow_SetTechId(
+            ref UIResearchResultWindow __instance,
+            // ReSharper disable once RedundantAssignment
+            ref TechProto ___techProto,
+            ref StringBuilder ___sb,
+            ref float ___windowHeight,
+            int _techId)
+        {
+            ___techProto = LDB.techs.Select(_techId);
+
+            if (___techProto == null) return true;
+
+            RecipeProto[] unlockRecipeArray = ___techProto.unlockRecipeArray;
+
+            var num1 = unlockRecipeArray.Length;
+
+            if (___techProto != null)
+            {
+                if (__instance.itemIcons.Length < num1)
+                {
+                    Array.Resize(ref __instance.itemIcons, num1);
+                    Array.Resize(ref __instance.itemButtons, num1);
+                }
+
+                for (var i = 0; i < num1; i++)
+                {
+                    if (__instance.itemIcons[i] == null)
+                    {
+                        __instance.itemIcons[i] = Object.Instantiate(__instance.itemIcons[0], __instance.itemIcons[0].transform.parent);
+                        __instance.itemIcons[i].gameObject.SetActive(false);
+                    }
+
+                    if (__instance.itemButtons[i] == null)
+                    {
+                        __instance.itemButtons[i] = Object.Instantiate(__instance.itemButtons[0], __instance.itemButtons[0].transform.parent);
+                        __instance.itemButtons[i].gameObject.SetActive(false);
+                    }
+
+                    __instance.itemIcons[i].gameObject.SetActive(true);
+                    __instance.itemIcons[i].sprite = unlockRecipeArray[i].iconSprite;
+                    __instance.itemButtons[i].tips.itemId
+                        = unlockRecipeArray[i].Explicit ? -unlockRecipeArray[i].ID : unlockRecipeArray[i].Results[0];
+                    var x = (float)((num1 - 1.0) * -45.0 + 90.0 * i);
+                    __instance.itemIcons[i].rectTransform.anchoredPosition = new Vector2(x, 0.0f);
+                }
+            }
+
+            var num2 = num1 != 0 ? 90 : 0;
+            var str = ___techProto.UnlockFunctionText(___sb);
+            __instance.functionText.text = str;
+            __instance.functionText.rectTransform.anchoredPosition = new Vector2(0.0f, -num2);
+            if (!string.IsNullOrEmpty(str)) num2 = num2 + (int)__instance.functionText.preferredHeight + 5;
+            __instance.conclusionText.rectTransform.anchoredPosition = new Vector2(0.0f, -num2);
+            __instance.conclusionText.text = ___techProto.conclusion;
+            if (!string.IsNullOrEmpty(___techProto.conclusion)) num2 = num2 + (int)__instance.conclusionText.preferredHeight + 5;
+            ___windowHeight = num2 + 110;
+            __instance.windowTrans.sizeDelta = new Vector2(num1 < 5 ? 400f : (num1 + 1) * 80, 0.0f);
+            __instance._Open();
+
+            return false;
         }
 
         #region FluidColorPatch
@@ -213,7 +278,8 @@ namespace ProjectGenesis.Patches
 
         #endregion
 
-        #region RecipeExpandPatches 
+        #region GridIndexExpandPatches
+
         // from https: //github.com/appuns/DSPMoreRecipes/blob/main/DSPMoreRecipes.cs
 
         private static bool _resized, _resized2;
@@ -222,7 +288,7 @@ namespace ProjectGenesis.Patches
 
         private static AccessTools.FieldRef<T, TU> FieldRefAccess<T, TU>(string fieldName)
             => AccessTools.FieldRefAccess<T, TU>(AccessTools.Field(typeof(T), fieldName));
-       
+
         [HarmonyPatch(typeof(UIReplicatorWindow), "_OnInit")]
         [HarmonyPrefix]
         public static void UIReplicatorWindow_OnInit_Prefix()
@@ -242,10 +308,13 @@ namespace ProjectGenesis.Patches
                 local1.sizeDelta = new Vector2(local1.sizeDelta.x + 230f, local1.sizeDelta.y);
                 ref var local2 = ref FieldRefAccess<UIReplicatorWindow, RectTransform>(UIRoot.instance.uiGame.replicator, "recipeGroup");
                 local2.sizeDelta = new Vector2(local2.sizeDelta.x + 230f, local2.sizeDelta.y);
-                ref var local3 = ref FieldRefAccess<UIRecipePicker, RectTransform>(UIRoot.instance.uiGame.recipePicker, "pickerTrans");
+                ref var local3 = ref FieldRefAccess<UIAssemblerWindow, RectTransform>(UIRoot.instance.uiGame.assemblerWindow, "recipeGroup");
                 local3.sizeDelta = new Vector2(local3.sizeDelta.x + 230f, local3.sizeDelta.y);
-                ref var local4 = ref FieldRefAccess<UIAssemblerWindow, RectTransform>(UIRoot.instance.uiGame.assemblerWindow, "recipeGroup");
+                ref var local4 = ref FieldRefAccess<UIRecipePicker, RectTransform>(UIRoot.instance.uiGame.recipePicker, "pickerTrans");
                 local4.sizeDelta = new Vector2(local4.sizeDelta.x + 230f, local4.sizeDelta.y);
+                ref var local5 = ref FieldRefAccess<UIItemPicker, RectTransform>(UIRoot.instance.uiGame.itemPicker, "pickerTrans");
+                local5.sizeDelta = new Vector2(local5.sizeDelta.x + 230f, local5.sizeDelta.y);
+
                 GameObject.Find("UI Root/Overlay Canvas/In Game/Windows/Replicator Window/queue-group").GetComponentInChildren<RectTransform>()
                           .sizeDelta = new Vector2(782f, 46f);
                 _resized2 = true;
@@ -253,14 +322,15 @@ namespace ProjectGenesis.Patches
         }
 
         [HarmonyPatch(typeof(UIRecipePicker), "_OnOpen")]
+        [HarmonyPatch(typeof(UIItemPicker), "_OnOpen")]
         [HarmonyPostfix]
         public static void Postfix()
         {
             if (_resized) return;
             // ReSharper disable once PossibleInvalidCastExceptionInForeachLoop
-            foreach (GameObject gameObject in UnityEngine.Object.FindObjectsOfType(typeof(GameObject)))
+            foreach (GameObject gameObject in Object.FindObjectsOfType(typeof(GameObject)))
             {
-                if (gameObject.name.Contains("Recipe"))
+                if (gameObject.name.Contains("Recipe") || gameObject.name.Contains("Item"))
                     foreach (Transform transform in gameObject.transform)
                     {
                         if (transform.name.Contains("content"))
@@ -282,9 +352,12 @@ namespace ProjectGenesis.Patches
         [HarmonyPatch(typeof(UIReplicatorWindow), "RepositionQueueText")]
         [HarmonyPatch(typeof(UIReplicatorWindow), "RefreshQueueIcons")]
         [HarmonyPatch(typeof(UIReplicatorWindow), "TestMouseQueueIndex")]
-        [HarmonyPatch(typeof(UIRecipePicker), "_OnUpdate")]
         [HarmonyPatch(typeof(UIRecipePicker), "RefreshIcons")]
         [HarmonyPatch(typeof(UIRecipePicker), "TestMouseIndex")]
+        [HarmonyPatch(typeof(UIRecipePicker), "_OnUpdate")]
+        [HarmonyPatch(typeof(UIItemPicker), "_OnUpdate")]
+        [HarmonyPatch(typeof(UIItemPicker), "RefreshIcons")]
+        [HarmonyPatch(typeof(UIItemPicker), "TestMouseIndex")]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
         {
@@ -299,6 +372,7 @@ namespace ProjectGenesis.Patches
 
         [HarmonyPatch(typeof(UIReplicatorWindow), "SetMaterialProps")]
         [HarmonyPatch(typeof(UIRecipePicker), "SetMaterialProps")]
+        [HarmonyPatch(typeof(UIItemPicker), "SetMaterialProps")]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> SetMaterialProps_Transpiler(IEnumerable<CodeInstruction> instructions)
         {

@@ -269,7 +269,9 @@
       21.0,
       -15.0
     ],
-    "PreTechs": [1112],
+    "PreTechs": [
+      1112
+    ],
     "PreTechsImplicit": [],
     "Items": [
       6001,
@@ -528,7 +530,7 @@
       707,
       708,
       709,
-      710,     
+      710,
       771,
       772,
       505,
@@ -536,7 +538,12 @@
       508,
       509,
       510,
-      511
+      511,
+      711,
+      712,
+      714,
+      715,
+      716
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -924,7 +931,8 @@
     "HashNeeded": 3600000,
     "UnlockRecipes": [
       57,
-      623
+      623,
+      425
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -1723,7 +1731,7 @@
       20
     ],
     "HashNeeded": 18000,
-    "UnlockRecipes": [     
+    "UnlockRecipes": [
       17,
       59
     ],
@@ -1901,7 +1909,7 @@
     "UnlockRecipes": [
       65,
       773,
-      774      
+      774
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -8320,7 +8328,7 @@
       10
     ],
     "HashNeeded": 36000,
-    "UnlockRecipes": [     
+    "UnlockRecipes": [
       761,
       762,
       763,
@@ -8843,7 +8851,9 @@
     "PreTechs": [
       1812
     ],
-    "PreTechsImplicit": [1820],
+    "PreTechsImplicit": [
+      1820
+    ],
     "Items": [
       6001,
       6002,
@@ -8862,7 +8872,7 @@
     "UnlockRecipes": [
       682,
       107,
-106
+      106
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -9202,48 +9212,48 @@
     "PropertyItemCounts": []
   },
   {
-  "ID": 1833,
-  "Name": "晶圆冶炼",
-  "IconPath": "Icons/Tech/1403",
-  "Desc": "深入了解晶体冶炼技术后，我们可以将硅冶炼成硅晶圆。",
-  "Conclusion": "",
-  "Position": [
-    21.0,
-    -3.0
-  ],
-  "PreTechs": [
-    1403
-  ],
-  "PreTechsImplicit": [],
-  "Items": [
-    6001,
-    6002
-  ],
-  "ItemPoints": [
-    20,
-    20
-  ],
-  "HashNeeded": 90000,
-  "UnlockRecipes": [
-    777,
-    778,
-    779,
-    547,
-    548,
-    549
-  ],
-  "UnlockFunctions": [],
-  "UnlockValues": [],
-  "Published": true,
-  "Level": 0,
-  "MaxLevel": 0,
-  "LevelCoef1": 0,
-  "LevelCoef2": 0,
-  "IsLabTech": true,
-  "PreTechsMax": false,
-  "AddItems": [],
-  "AddItemCounts": [],
-  "PropertyOverrideItems": [],
-  "PropertyItemCounts": []
-}
+    "ID": 1833,
+    "Name": "晶圆冶炼",
+    "IconPath": "Icons/Tech/1403",
+    "Desc": "深入了解晶体冶炼技术后，我们可以将硅冶炼成硅晶圆。",
+    "Conclusion": "",
+    "Position": [
+      21.0,
+      -3.0
+    ],
+    "PreTechs": [
+      1403
+    ],
+    "PreTechsImplicit": [],
+    "Items": [
+      6001,
+      6002
+    ],
+    "ItemPoints": [
+      20,
+      20
+    ],
+    "HashNeeded": 90000,
+    "UnlockRecipes": [
+      777,
+      778,
+      779,
+      547,
+      548,
+      549
+    ],
+    "UnlockFunctions": [],
+    "UnlockValues": [],
+    "Published": true,
+    "Level": 0,
+    "MaxLevel": 0,
+    "LevelCoef1": 0,
+    "LevelCoef2": 0,
+    "IsLabTech": true,
+    "PreTechsMax": false,
+    "AddItems": [],
+    "AddItemCounts": [],
+    "PropertyOverrideItems": [],
+    "PropertyItemCounts": []
+  }
 ]

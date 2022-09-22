@@ -81,7 +81,7 @@
     "GridIndex": 1105,
     "StackSize": 100,
     "Type": 1,
-    "PreTech": 1402,
+    "PreTech": 1401,
     "PreTechOverride": 0,
     "DescFields": [
       0,
@@ -494,18 +494,17 @@
     "MechaMaterialID": 0
   },
   {
-    "ID": 6980,
-    "Name": "单极磁石",
-    "Description": "I单极磁石",
-    "IconPath": "Icons/ItemRecipe/mono-mag-ore",
+    "ID": 1016,
+    "Name": "钨矿",
+    "Description": "一种新的制造材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/钨矿",
     "GridIndex": 1512,
-    "StackSize": 50,
-    "Type": 1,
-    "PreTech": 0,
+    "StackSize": 100,
+    "Type": 2,
+    "PreTech": 1413,
     "PreTechOverride": 0,
     "DescFields": [
-      0,
-      40
+      1
     ],
     "FuelType": 0,
     "HeatValue": 0,
@@ -513,8 +512,8 @@
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
-    "MiningFrom": "单极磁矿（珍奇）",
-    "ProduceFrom": "",
+    "MiningFrom": null,
+    "ProduceFrom": null,
     "Grade": 0,
     "Upgrades": [],
     "IsEntity": false,
@@ -522,13 +521,13 @@
     "BuildInGas": false,
     "ModelIndex": 0,
     "ModelCount": 0,
-    "HpMax": 1,
+    "HpMax": 0,
     "Ability": 0,
     "Potential": 0,
     "BuildIndex": 0,
     "BuildMode": 0,
-    "UnlockKey": 1206,
-    "MechaMaterialID": 23
+    "UnlockKey": 0,
+    "MechaMaterialID": 0
   },
   {
     "ID": 1101,
@@ -837,7 +836,7 @@
     "GridIndex": 1303,
     "StackSize": 100,
     "Type": 2,
-    "PreTech": 1401,
+    "PreTech": 0,
     "PreTechOverride": 0,
     "DescFields": [
       1,
@@ -1055,14 +1054,13 @@
   },
   {
     "ID": 1102,
-
     "Name": "铜线圈",
     "Description": "一种新的制造材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/铜线圈",
     "GridIndex": 3305,
     "StackSize": 100,
     "Type": 2,
-    "PreTech": 1,
+    "PreTech": 0,
     "PreTechOverride": 0,
     "DescFields": [
       1
@@ -1652,7 +1650,7 @@
     "GridIndex": 1107,
     "StackSize": 20,
     "Type": 1,
-    "PreTech": 0,
+    "PreTech": 1121,
     "PreTechOverride": 0,
     "DescFields": [
       0,
@@ -1762,19 +1760,17 @@
     "MechaMaterialID": 0
   },
   {
-    "ID": 6998,
-    "Name": "硫酸",
-    "Description": "I硫酸",
-    "IconPath": "Icons/ItemRecipe/sulphuric-acid",
-    "GridIndex": 4615,
+    "ID": 1116,
+    "Name": "剧毒有机液体",
+    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "IconPath": "Assets/texpack/剧毒有机液体",
+    "GridIndex": 3406,
     "StackSize": 20,
     "Type": 2,
-    "PreTech": 1121,
-    "PreTechOverride": 0,
+    "PreTech": 1,
+    "PreTechOverride": 1,
     "DescFields": [
-      1,
-      0,
-      40
+      0
     ],
     "FuelType": 0,
     "HeatValue": 0,
@@ -1782,8 +1778,8 @@
     "IsFluid": true,
     "Productive": true,
     "SubID": 0,
-    "MiningFrom": "硫酸海洋",
-    "ProduceFrom": "",
+    "MiningFrom": "剧毒液体海洋",
+    "ProduceFrom": null,
     "Grade": 0,
     "Upgrades": [],
     "IsEntity": false,
@@ -1791,12 +1787,12 @@
     "BuildInGas": false,
     "ModelIndex": 0,
     "ModelCount": 0,
-    "HpMax": 1,
+    "HpMax": 0,
     "Ability": 0,
     "Potential": 0,
     "BuildIndex": 0,
     "BuildMode": 0,
-    "UnlockKey": 0,
+    "UnlockKey": -1,
     "MechaMaterialID": 0
   },
   {
@@ -2199,7 +2195,7 @@
     "GridIndex": 1309,
     "StackSize": 100,
     "Type": 1,
-    "PreTech": 1122,
+    "PreTech": 0,
     "PreTechOverride": 0,
     "DescFields": [
       2,
@@ -3727,6 +3723,45 @@
     "MechaMaterialID": 0
   },
   {
+    "ID": 2213,
+    "Name": "地热发电站",
+    "Description": "I地热发电站",
+    "IconPath": "Icons/ItemRecipe/geothermal-power-station",
+    "GridIndex": 2107,
+    "StackSize": 50,
+    "Type": 6,
+    "PreTech": 1104,
+    "PreTechOverride": 0,
+    "DescFields": [
+      4,
+      39,
+      1,
+      40
+    ],
+    "FuelType": 0,
+    "HeatValue": 0,
+    "ReactorInc": 0.0,
+    "IsFluid": false,
+    "Productive": true,
+    "SubID": 12,
+    "MiningFrom": "",
+    "ProduceFrom": "",
+    "Grade": 0,
+    "Upgrades": [],
+    "IsEntity": true,
+    "CanBuild": true,
+    "BuildInGas": false,
+    "ModelIndex": 255,
+    "ModelCount": 1,
+    "HpMax": 2000,
+    "Ability": 0,
+    "Potential": 0,
+    "BuildIndex": 107,
+    "BuildMode": 1,
+    "UnlockKey": 0,
+    "MechaMaterialID": 0
+  },
+  {
     "ID": 2301,
     "Name": "采矿机",
     "Description": "I采矿机",
@@ -4841,42 +4876,6 @@
     "MechaMaterialID": 30
   },
   {
-    "ID": 1116,
-    "Name": "剧毒有机液体",
-    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "IconPath": "Assets/texpack/剧毒有机液体",
-    "GridIndex": 3406,
-    "StackSize": 20,
-    "Type": 2,
-    "PreTech": 1,
-    "PreTechOverride": 1,
-    "DescFields": [
-      0
-    ],
-    "FuelType": 0,
-    "HeatValue": 0,
-    "ReactorInc": 0.0,
-    "IsFluid": true,
-    "Productive": true,
-    "SubID": 0,
-    "MiningFrom": "剧毒液体海洋",
-    "ProduceFrom": null,
-    "Grade": 0,
-    "Upgrades": [],
-    "IsEntity": false,
-    "CanBuild": false,
-    "BuildInGas": false,
-    "ModelIndex": 0,
-    "ModelCount": 0,
-    "HpMax": 0,
-    "Ability": 0,
-    "Potential": 0,
-    "BuildIndex": 0,
-    "BuildMode": 0,
-    "UnlockKey": -1,
-    "MechaMaterialID": 0
-  },
-  {
     "ID": 6999,
     "Name": "硫酸",
     "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
@@ -5596,7 +5595,6 @@
     "UnlockKey": 0,
     "MechaMaterialID": 0
   },
-
   {
     "ID": 7501,
     "Name": "塑料基板",
@@ -6138,42 +6136,6 @@
     "MechaMaterialID": 0
   },
   {
-    "ID": 1016,
-    "Name": "钨矿",
-    "Description": "一种新的制造材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "IconPath": "Assets/texpack/钨矿",
-    "GridIndex": 1512,
-    "StackSize": 100,
-    "Type": 2,
-    "PreTech": 0,
-    "PreTechOverride": 0,
-    "DescFields": [
-      1
-    ],
-    "FuelType": 0,
-    "HeatValue": 0,
-    "ReactorInc": 0.0,
-    "IsFluid": false,
-    "Productive": true,
-    "SubID": 0,
-    "MiningFrom": null,
-    "ProduceFrom": null,
-    "Grade": 0,
-    "Upgrades": [],
-    "IsEntity": false,
-    "CanBuild": false,
-    "BuildInGas": false,
-    "ModelIndex": 0,
-    "ModelCount": 0,
-    "HpMax": 0,
-    "Ability": 0,
-    "Potential": 0,
-    "BuildIndex": 0,
-    "BuildMode": 0,
-    "UnlockKey": 0,
-    "MechaMaterialID": 0
-  },
-  {
     "ID": 7705,
     "Name": "钨块",
     "Description": "一种新的制造材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
@@ -6605,11 +6567,6 @@
     "UnlockKey": 0,
     "MechaMaterialID": 0
   },
-
-
-
-
-
   {
     "ID": 6501,
     "Name": "基础机械组件",
@@ -7946,46 +7903,6 @@
     "MechaMaterialID": 0
   },
   {
-    "ID": 6221,
-    "Name": "金属氢",
-    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "IconPath": "Assets/texpack/金属氢",
-    "GridIndex": 4301,
-    "StackSize": 100,
-    "Type": 2,
-    "PreTech": 0,
-    "PreTechOverride": 0,
-    "DescFields": [
-      2,
-      3,
-      1,
-      31,
-      40
-    ],
-    "FuelType": 3,
-    "HeatValue": 900000000,
-    "ReactorInc": 2.0,
-    "IsFluid": false,
-    "Productive": true,
-    "SubID": 0,
-    "MiningFrom": null,
-    "ProduceFrom": null,
-    "Grade": 0,
-    "Upgrades": [],
-    "IsEntity": false,
-    "CanBuild": false,
-    "BuildInGas": false,
-    "ModelIndex": 0,
-    "ModelCount": 0,
-    "HpMax": 0,
-    "Ability": 0,
-    "Potential": 0,
-    "BuildIndex": 0,
-    "BuildMode": 0,
-    "UnlockKey": 1,
-    "MechaMaterialID": 0
-  },
-  {
     "ID": 6222,
     "Name": "放射性矿物碎块",
     "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
@@ -8508,44 +8425,6 @@
     "MechaMaterialID": 0
   },
   {
-    "ID": 6236,
-    "Name": "氦三燃料",
-    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "IconPath": "Assets/texpack/氦三燃料",
-    "GridIndex": 4506,
-    "StackSize": 100,
-    "Type": 2,
-    "PreTech": 0,
-    "PreTechOverride": 0,
-    "DescFields": [
-      1,
-      40
-    ],
-    "FuelType": 6,
-    "HeatValue": 0,
-    "ReactorInc": 0.0,
-    "IsFluid": true,
-    "Productive": true,
-    "SubID": 0,
-    "MiningFrom": null,
-    "ProduceFrom": null,
-    "Grade": 0,
-    "Upgrades": [],
-    "IsEntity": false,
-    "CanBuild": false,
-    "BuildInGas": false,
-    "ModelIndex": 0,
-    "ModelCount": 0,
-    "HpMax": 0,
-    "Ability": 0,
-    "Potential": 0,
-    "BuildIndex": 0,
-    "BuildMode": 0,
-    "UnlockKey": 0,
-    "MechaMaterialID": 0
-  },
-
-  {
     "ID": 6241,
     "Name": "钚燃料棒",
     "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
@@ -8625,7 +8504,6 @@
     "UnlockKey": 0,
     "MechaMaterialID": 0
   },
-
   {
     "ID": 6244,
     "Name": "氦三燃料棒",
@@ -8706,7 +8584,6 @@
     "UnlockKey": 0,
     "MechaMaterialID": 0
   },
-
   {
     "ID": 6251,
     "Name": "石粉",
@@ -9316,7 +9193,6 @@
     "UnlockKey": 0,
     "MechaMaterialID": 0
   },
-
   {
     "ID": 6274,
     "Name": "先驱者晶片",
@@ -9430,45 +9306,6 @@
     "Ability": 0,
     "Potential": 0,
     "BuildIndex": 410,
-    "BuildMode": 1,
-    "UnlockKey": 0,
-    "MechaMaterialID": 0
-  },
-  {
-    "ID": 2213,
-    "Name": "地热发电站",
-    "Description": "I地热发电站",
-    "IconPath": "Icons/ItemRecipe/geothermal-power-station",
-    "GridIndex": 2107,
-    "StackSize": 50,
-    "Type": 6,
-    "PreTech": 1833,
-    "PreTechOverride": 0,
-    "DescFields": [
-      4,
-      39,
-      1,
-      40
-    ],
-    "FuelType": 0,
-    "HeatValue": 0,
-    "ReactorInc": 0.0,
-    "IsFluid": false,
-    "Productive": true,
-    "SubID": 12,
-    "MiningFrom": "",
-    "ProduceFrom": "",
-    "Grade": 0,
-    "Upgrades": [],
-    "IsEntity": true,
-    "CanBuild": true,
-    "BuildInGas": false,
-    "ModelIndex": 255,
-    "ModelCount": 1,
-    "HpMax": 2000,
-    "Ability": 0,
-    "Potential": 0,
-    "BuildIndex": 107,
     "BuildMode": 1,
     "UnlockKey": 0,
     "MechaMaterialID": 0

@@ -64,7 +64,6 @@ namespace ProjectGenesis
 
         private int GetTableID(int gridIndex)
         {
-            if (gridIndex >= 5000) return TableID[2] * 1000 + (gridIndex - 5000);
             if (gridIndex >= 4000) return TableID[1] * 1000 + (gridIndex - 4000);
             if (gridIndex >= 3000) return TableID[0] * 1000 + (gridIndex - 3000);
             return gridIndex;
@@ -243,18 +242,6 @@ namespace ProjectGenesis
 
             LDB.items.Select(物品.聚变发电机).name = "裂变能源发电站";
             LDB.items.Select(物品.聚变发电机).Name = "裂变能源发电站";
-
-            LDB.items.Select(物品.单极磁石).ID = 6980;
-            LDB.items.Select(物品.硫酸).ID = 6998;
-
-
-            //矿场修复
-            var OreFactory = LDB.items.Select(6230);
-            var OreFactoryModel = LDB.items.Select(302);
-            OreFactoryModel.prefabDesc.dragBuild = true;
-            OreFactoryModel.prefabDesc.dragBuildDist = new Vector2(2.9f, 2.9f);
-            OreFactory.prefabDesc.dragBuild = true;
-            OreFactory.prefabDesc.dragBuildDist = new Vector2(2.9f, 2.9f);
 
             LDB.items.OnAfterDeserialize();
         }
@@ -482,6 +469,7 @@ namespace ProjectGenesis
             foreach (var proto in LDB.items.dataArray)
             {
                 StorageComponent.itemIsFuel[proto.ID] = proto.HeatValue > 0L;
+                
                 if (StackSizeButton)
                     StorageComponent.itemStackCount[proto.ID] = 10000000;
                 else
