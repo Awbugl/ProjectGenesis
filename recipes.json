@@ -1396,7 +1396,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 1513,
+    "GridIndex": 1514,
     "PreTech": 1302,
     "Time": 240,
     "Input": [
@@ -1425,7 +1425,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 10,
-    "GridIndex": 1613,
+    "GridIndex": 1614,
     "PreTech": 1303,
     "Time": 360,
     "Input": [
@@ -1454,7 +1454,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 1413,
+    "GridIndex": 1414,
     "PreTech": 1311,
     "Time": 120,
     "Input": [
@@ -5625,7 +5625,7 @@
     "Description": "这个公式能让你更加高效的生产微晶元件.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/高效微晶元件",
     "Type": 10,
-    "GridIndex": 1414,
+    "GridIndex": 1413,
     "PreTech": 1807,
     "Time": 60,
     "Input": [
@@ -5652,7 +5652,7 @@
     "Description": "这个公式能让你更加高效的生产处理器.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/高效处理器",
     "Type": 10,
-    "GridIndex": 1514,
+    "GridIndex": 1513,
     "PreTech": 1807,
     "Time": 120,
     "Input": [
@@ -5679,7 +5679,7 @@
     "Description": "这个公式能让你更加高效的生产量子芯片.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/高效量子芯片",
     "Type": 10,
-    "GridIndex": 1614,
+    "GridIndex": 1613,
     "PreTech": 1807,
     "Time": 180,
     "Input": [
@@ -6499,3 +6499,4 @@
     "NonProductive": false
   }
 ]
+
