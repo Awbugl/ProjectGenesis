@@ -999,7 +999,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 10,
-    "GridIndex": 1404,
+    "GridIndex": 1702,
     "PreTech": 1133,
     "Time": 240,
     "Input": [
@@ -2161,7 +2161,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 1712,
+    "GridIndex": 1404,
     "PreTech": 1704,
     "Time": 600,
     "Input": [
@@ -2186,7 +2186,7 @@
     "Description": "R空间翘曲器（高级）",
     "IconPath": "Icons/ItemRecipe/space-warper-lv2",
     "Type": 4,
-    "GridIndex": 1713,
+    "GridIndex": 1504,
     "PreTech": 1705,
     "Time": 600,
     "Input": [
@@ -3160,7 +3160,7 @@
     "Description": "从原矿中分离的纯净粉可以实现效率更高的生产.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/氦闪抑制器",
     "Type": 10,
-    "GridIndex": 1612,
+    "GridIndex": 1604,
     "PreTech": 1153,
     "Time": 900,
     "Input": [
@@ -3939,7 +3939,7 @@
     "Description": "这是一个人类未曾涉及的领域.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/生物神经纤维",
     "Type": 10,
-    "GridIndex": 1504,
+    "GridIndex": 1713,
     "PreTech": 1808,
     "Time": 240,
     "Input": [
@@ -6282,7 +6282,7 @@
     "Description": "从原矿中分离的纯净粉可以实现效率更高的生产.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "IconPath": "Assets/texpack/混凝土",
     "Type": 4,
-    "GridIndex": 1604,
+    "GridIndex": 1612,
     "PreTech": 1415,
     "Time": 60,
     "Input": [
