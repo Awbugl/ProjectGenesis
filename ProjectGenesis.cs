@@ -35,12 +35,11 @@ namespace ProjectGenesis
     {
         public const string MODGUID = "org.LoShin.GenesisBook";
         private const string VERSION = "2.0.0";
-        
+
         private static ProjectGenesis Instance { get; set; }
         private Harmony Harmony { get; set; }
 
         private int[] TableID = new int[3];
-        
 
         public string Version => VERSION;
 
@@ -122,6 +121,18 @@ namespace ProjectGenesis
             LDBTool.PreAddProto(AssembleModel);
             var CircleModel = CopyModelProto(69, 409, Color.grey);
             LDBTool.PreAddProto(CircleModel);
+
+            #endregion
+
+            #region StringProto
+
+            foreach (var stringProto in JsonHelper.StringProtos())
+            {
+                if (LDB.strings.Exist(stringProto.Name))
+                    ProtoRegistry.EditString(stringProto.Name, stringProto.ENUS, stringProto.ZHCN);
+                else
+                    ProtoRegistry.RegisterString(stringProto.Name, stringProto.ENUS, stringProto.ZHCN);
+            }
 
             #endregion
 
@@ -324,7 +335,8 @@ namespace ProjectGenesis
                     StorageComponent.itemStackCount[proto.ID] = proto.StackSize;
             }
 
-            JsonHelper.ExportAsJson(@"C:\Git\ProjectGenesis");
+            // JsonHelper.ExportAsJson(@"C:\Git\ProjectGenesis");
+            JsonHelper.ExportStrings(@"C:\Git\ProjectGenesis");
         }
 
         #region PrefabDescPostFix
