@@ -336,7 +336,6 @@ namespace ProjectGenesis
             }
 
             // JsonHelper.ExportAsJson(@"C:\Git\ProjectGenesis");
-            JsonHelper.ExportStrings(@"C:\Git\ProjectGenesis");
         }
 
         #region PrefabDescPostFix
