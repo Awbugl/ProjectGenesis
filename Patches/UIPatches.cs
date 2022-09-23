@@ -218,7 +218,7 @@ namespace ProjectGenesis.Patches
 
         // from https: //github.com/appuns/DSPMoreRecipes/blob/main/DSPMoreRecipes.cs
 
-        private static bool _resized, _resized2;
+        private static bool _itemresized, _reciperesized, _resized2;
 
         private static ref TU FieldRefAccess<T, TU>(T instance, string fieldName) => ref FieldRefAccess<T, TU>(fieldName)(instance);
 
@@ -258,15 +258,14 @@ namespace ProjectGenesis.Patches
         }
 
         [HarmonyPatch(typeof(UIRecipePicker), "_OnOpen")]
-        [HarmonyPatch(typeof(UIItemPicker), "_OnOpen")]
         [HarmonyPostfix]
-        public static void Postfix()
+        public static void UIRecipePicker_OnOpen_Postfix()
         {
-            if (_resized) return;
+            if (_reciperesized) return;
             // ReSharper disable once PossibleInvalidCastExceptionInForeachLoop
             foreach (GameObject gameObject in Object.FindObjectsOfType(typeof(GameObject)))
             {
-                if (gameObject.name.Contains("Recipe") || gameObject.name.Contains("Item"))
+                if (gameObject.name.Contains("Recipe"))
                     foreach (Transform transform in gameObject.transform)
                     {
                         if (transform.name.Contains("content"))
@@ -274,7 +273,29 @@ namespace ProjectGenesis.Patches
                             transform.GetComponent<RectTransform>().sizeDelta
                                 = new Vector2(transform.GetComponent<RectTransform>().sizeDelta.x + 230f,
                                               transform.GetComponent<RectTransform>().sizeDelta.y);
-                            _resized = true;
+                            _reciperesized = true;
+                        }
+                    }
+            }
+        }
+
+        [HarmonyPatch(typeof(UIItemPicker), "_OnOpen")]
+        [HarmonyPostfix]
+        public static void UIItemPicker_OnOpen_Postfix()
+        {
+            if (_itemresized) return;
+            // ReSharper disable once PossibleInvalidCastExceptionInForeachLoop
+            foreach (GameObject gameObject in Object.FindObjectsOfType(typeof(GameObject)))
+            {
+                if (gameObject.name.Contains("Item"))
+                    foreach (Transform transform in gameObject.transform)
+                    {
+                        if (transform.name.Contains("content"))
+                        {
+                            transform.GetComponent<RectTransform>().sizeDelta
+                                = new Vector2(transform.GetComponent<RectTransform>().sizeDelta.x + 230f,
+                                              transform.GetComponent<RectTransform>().sizeDelta.y);
+                            _itemresized = true;
                         }
                     }
             }

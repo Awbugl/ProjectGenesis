@@ -385,7 +385,23 @@ namespace ProjectGenesis
             itemProtos.Select(6276).prefabDesc.assemblerSpeed = 1000;
             itemProtos.Select(6276).prefabDesc.assemblerRecipeType = (ERecipeType_1)ERecipeType.聚变生产;
 
+            LDBTool.SetBuildBar(1,10, 6261);
+            LDBTool.SetBuildBar(3,10, 2313);
             LDBTool.SetBuildBar(4, 4, 6229);
+            LDBTool.SetBuildBar(5,3,6230);
+            LDBTool.SetBuildBar(5,4,2303);
+            LDBTool.SetBuildBar(5,5,2304);
+            LDBTool.SetBuildBar(5,6,2305);
+            LDBTool.SetBuildBar(5,7,6275);
+            LDBTool.SetBuildBar(5,8,2308);
+            LDBTool.SetBuildBar(5,9,2309);
+            LDBTool.SetBuildBar(5,10,2310);
+            LDBTool.SetBuildBar(7,9,6276);
+            LDBTool.SetBuildBar(7,3,6257);
+            LDBTool.SetBuildBar(7,4,6258);
+            LDBTool.SetBuildBar(7,5,6259);
+            LDBTool.SetBuildBar(7,6,6260);
+            LDBTool.SetBuildBar(7,7,6264);
 
             //矿场修复
             var OreFactory = LDB.items.Select(6230);
