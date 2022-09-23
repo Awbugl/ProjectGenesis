@@ -97,9 +97,16 @@ namespace ProjectGenesis.Patches
                 index == 22)
                 __result = "4x";
         }
+        
+        [HarmonyPrefix]
+        [HarmonyPatch(typeof(UIPowerGizmo), "DrawArea")]
+        [HarmonyPatch(typeof(UIPowerGizmo), "DrawCover")]
+        public static bool UIPowerGizmo_Draw(
+            ref UIPowerGizmo __instance,Vector3 center, float radius)
+            => radius < 2000;
 
         #region FluidColorPatch
-
+        
         // Specify color of each fluid here, one per line.
         private static readonly Dictionary<int, Color32> FluidColor = new Dictionary<int, Color32>
                                                                       {
