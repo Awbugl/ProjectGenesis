@@ -139,25 +139,31 @@
       <HintPath>..\..\Program Files (x86)\Steam\steamapps\common\Dyson Sphere Program\DSPGAME_Data\Managed\UnityEngine.WindModule.dll</HintPath>
     </Reference>
   </ItemGroup>
-  <ItemGroup>
+    <ItemGroup>
     <Compile Include="ERecipeType.cs" />
     <Compile Include="ItemData.cs" />
     <Compile Include="JsonHelper.cs" />
-    <Compile Include="Main.cs" />
+    <Compile Include="Patches\MutliPlayerPatches.cs" />
+    <Compile Include="ProjectGenesis.cs" />
     <Compile Include="Patches\MegaAssemblerPatches.cs" />
     <Compile Include="Patches\MultiProductionPatches.cs" />
+    <Compile Include="Patches\MutliPlayerPacket.cs" />
     <Compile Include="Patches\OceanDischargePatches.cs" />
     <Compile Include="Patches\PlanetGasPatches.cs" />
     <Compile Include="Patches\UIPatches.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="items.json" />
     <EmbeddedResource Include="recipes.json" />
     <EmbeddedResource Include="techs.json" />
+    <EmbeddedResource Include="strings.json" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Newtonsoft.Json.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="DysonSphereProgram.Modding.CommonAPI" Version="1.5.4" />
+    <PackageReference Include="DysonSphereProgram.Modding.DSPModSave" Version="1.1.3" />
+    <PackageReference Include="DysonSphereProgram.Modding.LDBTool" Version="2.0.5" />
+    <PackageReference Include="DysonSphereProgram.Modding.NebulaMultiplayerModApi" Version="1.3.0" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>
