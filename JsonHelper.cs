@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
 using Newtonsoft.Json;
+// ReSharper disable InconsistentNaming
 
 // ReSharper disable MemberCanBeInternal
 // ReSharper disable UnusedAutoPropertyAccessor.Global
@@ -26,6 +28,10 @@ namespace ProjectGenesis
         internal static TechProtoJson[] TechProtos()
             => JsonConvert.DeserializeObject<TechProtoJson[]>(new StreamReader(Assembly.GetManifestResourceStream("ProjectGenesis.techs.json"))
                                                                  .ReadToEnd());
+        
+        internal static StringProtoJson[] StringProtos()
+            => JsonConvert.DeserializeObject<StringProtoJson[]>(new StreamReader(Assembly.GetManifestResourceStream("ProjectGenesis.strings.json"))
+                                                                   .ReadToEnd());
 
         internal static string SerializeObject(object obj)
             => JsonConvert.SerializeObject(obj, Formatting.Indented,
@@ -36,6 +42,124 @@ namespace ProjectGenesis
             File.WriteAllText($"{path}/techs.json", SerializeObject(LDB.techs.dataArray.Select(TechProtoJson.FromProto)));
             File.WriteAllText($"{path}/items.json", SerializeObject(LDB.items.dataArray.Select(ItemProtoJson.FromProto)));
             File.WriteAllText($"{path}/recipes.json", SerializeObject(LDB.recipes.dataArray.Select(RecipeProtoJson.FromProto)));
+        }
+
+        internal static void ExportStrings(string path)
+        {
+            var strls = LDB.strings.dataArray.Select(StringProtoJson.FromProto);
+            
+            File.WriteAllText($"{path}/strings.json", SerializeObject(strls));
+            
+            var dict =  strls.Select(i=>i.Name).Distinct().ToList();
+
+            var resultls = new List<StringProtoJson>();
+
+            var items = ItemProtos();
+            
+            foreach (var itemProto in items)
+            {
+                if (!dict.Contains(itemProto.Name))
+                {
+                    resultls.Add(new StringProtoJson
+                    {
+                        Name = itemProto.Name,
+                        ZHCN = itemProto.Name,
+                        ENUS = ""
+                    });
+                }
+                
+                if (!string.IsNullOrWhiteSpace(itemProto.Description) && !dict.Contains(itemProto.Description))
+                {
+
+                    resultls.Add(new StringProtoJson
+                                 {
+                                     Name = "I"+itemProto.Name,
+                                     ZHCN = itemProto.Description,
+                                     ENUS = ""
+                                 });
+                    
+                    itemProto.Description = "I"+itemProto.Name;
+                }
+            }
+            File.WriteAllText($"{path}/items_new.json", SerializeObject(items));
+            
+            var recipes = RecipeProtos();
+            foreach (var recipeProto in recipes)
+            {
+                if (!dict.Contains(recipeProto.Name))
+                {
+                    resultls.Add(new StringProtoJson
+                                 {
+                                     Name = recipeProto.Name,
+                                     ZHCN = recipeProto.Name,
+                                     ENUS = ""
+                                 });
+                }
+                
+                if (!string.IsNullOrWhiteSpace(recipeProto.Description) && !dict.Contains(recipeProto.Description))
+                {
+                    
+                    
+                    resultls.Add(new StringProtoJson
+                                 {
+                                     Name = "R"+recipeProto.Name,
+                                     ZHCN = recipeProto.Description,
+                                     ENUS = ""
+                                 });
+                    
+                    recipeProto.Description = "R"+recipeProto.Name;
+                }
+            }
+            File.WriteAllText($"{path}/recipes_new.json", SerializeObject(recipes));
+            
+            var techs = TechProtos();
+            foreach (var techProto in techs)
+            {
+                if (!dict.Contains(techProto.Name) && techProto.Name[0] != 'T')
+                {
+                    resultls.Add(new StringProtoJson
+                                 {
+                                     Name = 'T'+techProto.Name,
+                                     ZHCN = techProto.Name,
+                                     ENUS = ""
+                                 });
+                    
+                    techProto.Name = 'T'+techProto.Name;
+                    
+                }
+                if (!string.IsNullOrWhiteSpace(techProto.Desc) && !dict.Contains(techProto.Desc))
+                {
+                    
+                    
+                    resultls.Add(new StringProtoJson
+                                 {
+                                     Name = techProto.Name+"描述",
+                                     ZHCN = techProto.Desc,
+                                     ENUS = ""
+                                 });
+                    
+                    
+                    techProto.Desc = techProto.Name+"描述";
+                }
+                if (!string.IsNullOrWhiteSpace(techProto.Conclusion) && !dict.Contains(techProto.Conclusion))
+                {
+                    
+                    
+                    resultls.Add(new StringProtoJson
+                                 {
+                                     Name = techProto.Name+"结果",
+                                     ZHCN = techProto.Conclusion,
+                                     ENUS = ""
+                                 });
+                    
+                    
+                    techProto.Desc = techProto.Name+"结果";
+                }
+                
+            }
+            File.WriteAllText($"{path}/techs_new.json", SerializeObject(techs));
+            
+            File.WriteAllText($"{path}/strings_new.json", SerializeObject(resultls));
         }
 
         [Serializable]
@@ -117,7 +241,7 @@ namespace ProjectGenesis
         {
             public static RecipeProtoJson FromProto(RecipeProto i)
                 => new RecipeProtoJson
-                   {  
+                   {
                        ID = i.ID,
                        Explicit = i.Explicit,
                        Name = i.Name,
@@ -211,5 +335,14 @@ namespace ProjectGenesis
             public int[] PropertyOverrideItems { get; set; }
             public int[] PropertyItemCounts { get; set; }
         }
+    }
+
+    public class StringProtoJson
+    {
+        public static StringProtoJson FromProto(StringProto i) => new StringProtoJson() { Name = i.Name, ZHCN = i.ZHCN, ENUS = i.ENUS };
+
+        public string Name { get; set; }
+        public string ZHCN { get; set; }
+        public string ENUS { get; set; }
     }
 }
