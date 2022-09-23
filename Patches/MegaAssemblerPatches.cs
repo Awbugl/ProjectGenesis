@@ -30,12 +30,12 @@ namespace ProjectGenesis.Patches
         {
             _slotdata[entityId] = slotDatas;
         }
-        
+
         internal static void SyncEntityId(int entityId, int planetId)
         {
             _entityId2planetId[entityId] = planetId;
         }
-        
+
         private static SlotData[] GetSlots(int entityId)
         {
             if (!_slotdata.ContainsKey(entityId) || _slotdata[entityId] == null)
@@ -120,7 +120,7 @@ namespace ProjectGenesis.Patches
         [HarmonyPatch(typeof(BuildingParameters), "FromParamsArray")]
         public static void BuildingParameters_FromParamsArray(ref BuildingParameters __instance, int[] _parameters)
         {
-            if (_parameters.Length >= 2048) Array.Copy(_parameters, 192, __instance.parameters, 192, 1856);
+            if (_parameters != null && _parameters.Length >= 2048) Array.Copy(_parameters, 192, __instance.parameters, 192, 1856);
         }
 
         [HarmonyPostfix]
