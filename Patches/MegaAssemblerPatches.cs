@@ -26,9 +26,23 @@ namespace ProjectGenesis.Patches
         private static ConcurrentDictionary<int, int> _entityId2planetId = new ConcurrentDictionary<int, int>();
         private static ConcurrentDictionary<int, PlanetFactory> _planetId2planetFactories = new ConcurrentDictionary<int, PlanetFactory>();
 
+        internal static void SyncSlots(int entityId, SlotData[] slotDatas)
+        {
+            _slotdata[entityId] = slotDatas;
+        }
+        
+        internal static void SyncEntityId(int entityId, int planetId)
+        {
+            _entityId2planetId[entityId] = planetId;
+        }
+        
         private static SlotData[] GetSlots(int entityId)
         {
-            if (!_slotdata.ContainsKey(entityId) || _slotdata[entityId] == null) _slotdata[entityId] = new SlotData[12];
+            if (!_slotdata.ContainsKey(entityId) || _slotdata[entityId] == null)
+            {
+                _slotdata[entityId] = new SlotData[12];
+            }
+
             return _slotdata[entityId];
         }
 
@@ -65,6 +79,7 @@ namespace ProjectGenesis.Patches
             if (speed >= TrashSpeed)
             {
                 _entityId2planetId[entityId] = __instance.planet.id;
+                EntityId2PlanetIdData.Sync(entityId, __instance.planet.id);
                 __instance.factory.entityPool[entityId].stationId = 0;
             }
         }
@@ -95,6 +110,8 @@ namespace ProjectGenesis.Patches
                             slots[index].dir = (IODir)parameters[num4 + index * 4];
                             slots[index].storageIdx = parameters[num4 + index * 4 + 1];
                         }
+
+                        SyncSlotsData.Sync(entityId, slots);
                     }
             }
         }
@@ -156,6 +173,8 @@ namespace ProjectGenesis.Patches
                             __instance.parameters[num2 + index * 4] = (int)slots[index].dir;
                             __instance.parameters[num2 + index * 4 + 1] = slots[index].storageIdx;
                         }
+
+                        SyncSlotsData.Sync(objectId, slots);
                     }
                 }
             }
@@ -183,6 +202,7 @@ namespace ProjectGenesis.Patches
                     slotdata[slotId].dir = IODir.Output;
                     slotdata[slotId].beltId = beltId;
                     slotdata[slotId].counter = 0;
+                    SyncSlotsData.Sync(entityId, slotdata);
                 }
             }
         }
@@ -210,6 +230,7 @@ namespace ProjectGenesis.Patches
                     slotdata[slotId].beltId = beltId;
                     slotdata[slotId].storageIdx = 0;
                     slotdata[slotId].counter = 0;
+                    SyncSlotsData.Sync(entityId, slotdata);
                 }
             }
         }
@@ -238,6 +259,8 @@ namespace ProjectGenesis.Patches
                     slotdata[otherSlotId].beltId = 0;
                     slotdata[otherSlotId].storageIdx = 0;
                     slotdata[otherSlotId].counter = 0;
+
+                    SyncSlotsData.Sync(otherEntityId, slotdata);
                 }
             }
         }
@@ -545,7 +568,9 @@ namespace ProjectGenesis.Patches
 
                     if (assemblerComponent.speed >= TrashSpeed)
                     {
-                        GetSlots(__instance.outputEntityId)[__instance.outputSlotId].storageIdx = __instance.selectedIndex;
+                        SlotData[] slotDatas = GetSlots(__instance.outputEntityId);
+                        slotDatas[__instance.outputSlotId].storageIdx = __instance.selectedIndex;
+                        SyncSlotsData.Sync(__instance.outputEntityId, slotDatas);
                         if (entityData.stationId > 0) entityData.stationId = 0;
                     }
                 }
@@ -745,7 +770,9 @@ namespace ProjectGenesis.Patches
 
                     if (assemblerComponent.speed >= TrashSpeed)
                     {
-                        GetSlots(__instance.outputEntityId)[__instance.outputSlotId].storageIdx = __instance.selectedIndex;
+                        var slotDatas = GetSlots(__instance.outputEntityId);
+                        slotDatas[__instance.outputSlotId].storageIdx = __instance.selectedIndex;
+                        SyncSlotsData.Sync(__instance.outputEntityId, slotDatas);
                         if (entityData.stationId > 0) entityData.stationId = 0;
                     }
                 }

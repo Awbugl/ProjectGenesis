@@ -8,6 +8,7 @@ using CommonAPI;
 using CommonAPI.Systems;
 using crecheng.DSPModSave;
 using HarmonyLib;
+using NebulaAPI;
 using ProjectGenesis.Patches;
 using UnityEngine;
 using xiaoye97;
@@ -21,17 +22,27 @@ using ERecipeType_1 = ERecipeType;
 
 namespace ProjectGenesis
 {
-    [BepInPlugin("org.LoShin.GenesisBook", "GenesisBook", "2.0.0")]
+    [BepInPlugin(MODGUID, "GenesisBook", "2.0.0")]
     [BepInDependency(DSPModSavePlugin.MODGUID)]
     [BepInDependency(CommonAPIPlugin.GUID)]
     [BepInDependency(LDBToolPlugin.MODGUID)]
+    [BepInDependency(NebulaModAPI.API_GUID)]
     [CommonAPISubmoduleDependency(nameof(ProtoRegistry), nameof(CustomDescSystem), nameof(TabSystem), nameof(AssemblerRecipeSystem))]
 
-    // ReSharper disable once ClassNeverInstantiated.Global
-    // ReSharper disable once MemberCanBeInternal
-    public class Main : BaseUnityPlugin, IModCanSave
+    // ReSharper disable ClassNeverInstantiated.Global
+    // ReSharper disable MemberCanBeInternal
+    public class ProjectGenesis : BaseUnityPlugin, IModCanSave, IMultiplayerMod
     {
+        public const string MODGUID = "org.LoShin.GenesisBook";
+        private const string VERSION = "2.0.0";
+        
+        private static ProjectGenesis Instance { get; set; }
+        private Harmony Harmony { get; set; }
+
         private int[] TableID = new int[3];
+        
+
+        public string Version => VERSION;
 
         private static ManualLogSource logger;
 
@@ -42,6 +53,7 @@ namespace ProjectGenesis
         {
             logger = Logger;
             logger.Log(LogLevel.Info, "GenesisBook Awake");
+
             var pluginfolder = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
             var resources = new ResourceData("org.LoShin.GenesisBook", "texpack", pluginfolder);
             resources.LoadAssetBundle("texpack");
@@ -53,13 +65,27 @@ namespace ProjectGenesis
                           TabSystem.RegisterTab("org.LoShin.GenesisBook:org.LoShin.GenesisBookTab2", new TabData("化工", "Assets/texpack/化工科技")),
                       };
 
+
+            Instance = this;
+
             LDBTool.PreAddDataAction += InitData;
             LDBTool.PostAddDataAction += PostAddDataAction;
-            Harmony.CreateAndPatchAll(typeof(UIPatches));
-            Harmony.CreateAndPatchAll(typeof(MultiProductionPatches));
-            Harmony.CreateAndPatchAll(typeof(PlanetGasPatches));
-            Harmony.CreateAndPatchAll(typeof(OceanDischargePatches));
-            Harmony.CreateAndPatchAll(typeof(MegaAssemblerPatches));
+
+            NebulaModAPI.RegisterPackets(Assembly.GetExecutingAssembly());
+
+            Harmony = new Harmony(MODGUID);
+            Harmony.PatchAll(typeof(UIPatches));
+            Harmony.PatchAll(typeof(MultiProductionPatches));
+            Harmony.PatchAll(typeof(MutliPlayerPatches));
+            Harmony.PatchAll(typeof(PlanetGasPatches));
+            Harmony.PatchAll(typeof(OceanDischargePatches));
+            Harmony.PatchAll(typeof(MegaAssemblerPatches));
+        }
+
+        public void OnDestroy()
+        {
+            Harmony.UnpatchAll();
+            Harmony = null;
         }
 
         private int GetTableID(int gridIndex)
@@ -298,7 +324,7 @@ namespace ProjectGenesis
                     StorageComponent.itemStackCount[proto.ID] = proto.StackSize;
             }
 
-            // JsonHelper.ExportAsJson(@"C:\Git\ProjectGenesis");
+            JsonHelper.ExportAsJson(@"C:\Git\ProjectGenesis");
         }
 
         #region PrefabDescPostFix
@@ -385,23 +411,23 @@ namespace ProjectGenesis
             itemProtos.Select(6276).prefabDesc.assemblerSpeed = 1000;
             itemProtos.Select(6276).prefabDesc.assemblerRecipeType = (ERecipeType_1)ERecipeType.聚变生产;
 
-            LDBTool.SetBuildBar(1,10, 6261);
-            LDBTool.SetBuildBar(3,10, 2313);
+            LDBTool.SetBuildBar(1, 10, 6261);
+            LDBTool.SetBuildBar(3, 10, 2313);
             LDBTool.SetBuildBar(4, 4, 6229);
-            LDBTool.SetBuildBar(5,3,6230);
-            LDBTool.SetBuildBar(5,4,2303);
-            LDBTool.SetBuildBar(5,5,2304);
-            LDBTool.SetBuildBar(5,6,2305);
-            LDBTool.SetBuildBar(5,7,6275);
-            LDBTool.SetBuildBar(5,8,2308);
-            LDBTool.SetBuildBar(5,9,2309);
-            LDBTool.SetBuildBar(5,10,2310);
-            LDBTool.SetBuildBar(7,9,6276);
-            LDBTool.SetBuildBar(7,3,6257);
-            LDBTool.SetBuildBar(7,4,6258);
-            LDBTool.SetBuildBar(7,5,6259);
-            LDBTool.SetBuildBar(7,6,6260);
-            LDBTool.SetBuildBar(7,7,6264);
+            LDBTool.SetBuildBar(5, 3, 6230);
+            LDBTool.SetBuildBar(5, 4, 2303);
+            LDBTool.SetBuildBar(5, 5, 2304);
+            LDBTool.SetBuildBar(5, 6, 2305);
+            LDBTool.SetBuildBar(5, 7, 6275);
+            LDBTool.SetBuildBar(5, 8, 2308);
+            LDBTool.SetBuildBar(5, 9, 2309);
+            LDBTool.SetBuildBar(5, 10, 2310);
+            LDBTool.SetBuildBar(7, 9, 6276);
+            LDBTool.SetBuildBar(7, 3, 6257);
+            LDBTool.SetBuildBar(7, 4, 6258);
+            LDBTool.SetBuildBar(7, 5, 6259);
+            LDBTool.SetBuildBar(7, 6, 6260);
+            LDBTool.SetBuildBar(7, 7, 6264);
 
             //矿场修复
             var OreFactory = LDB.items.Select(6230);
@@ -549,8 +575,29 @@ namespace ProjectGenesis
 
         public void Import(BinaryReader r) => MegaAssemblerPatches.Import(r);
 
+        internal static byte[] Export()
+        {
+            if (Instance != null)
+                using (var p = NebulaModAPI.GetBinaryWriter())
+                {
+                    Instance.Export(p.BinaryWriter);
+                    return p.CloseAndGetBytes();
+                }
+
+            return Array.Empty<byte>();
+        }
+
+        internal static void Import(byte[] bytes)
+        {
+            if (Instance != null)
+                using (var p = NebulaModAPI.GetBinaryReader(bytes))
+                    Instance.Import(p.BinaryReader);
+        }
+
         public void IntoOtherSave() => MegaAssemblerPatches.IntoOtherSave();
 
         #endregion
+
+        public bool CheckVersion(string hostVersion, string clientVersion) => hostVersion.Equals(clientVersion);
     }
 }
