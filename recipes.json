@@ -27,7 +27,7 @@
   {
     "ID": 2,
     "Name": "铜线圈",
-    "Description": "一种新的制造材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R铜线圈",
     "IconPath": "Assets/texpack/铜线圈",
     "Type": 4,
     "GridIndex": 1313,
@@ -266,7 +266,7 @@
   {
     "ID": 11,
     "Name": "先驱者晶片",
-    "Description": "异星文明留下的遗产,这份蓝图的价值无可估量.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R先驱者晶片",
     "IconPath": "Assets/texpack/紫色先驱者晶片",
     "Type": 12,
     "GridIndex": 3105,
@@ -660,7 +660,7 @@
   {
     "ID": 25,
     "Name": "精密组装厂",
-    "Description": "利用粒子加速器的庞大能量创造全新的材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R精密组装厂",
     "IconPath": "Assets/texpack/红制造台",
     "Type": 10,
     "GridIndex": 2404,
@@ -691,7 +691,7 @@
   {
     "ID": 26,
     "Name": "回旋加速器",
-    "Description": "利用粒子加速器的庞大能量创造全新的材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R回旋加速器",
     "IconPath": "Icons/ItemRecipe/hadron-collider",
     "Type": 10,
     "GridIndex": 2412,
@@ -778,7 +778,7 @@
   {
     "ID": 29,
     "Name": "聚变物质裂解工厂",
-    "Description": "从原矿中分离的纯净粉可以实现效率更高的生产.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R聚变物质裂解工厂",
     "IconPath": "Assets/texpack/行星熔炉",
     "Type": 10,
     "GridIndex": 2502,
@@ -917,7 +917,7 @@
   {
     "ID": 34,
     "Name": "硅石筛选",
-    "Description": "利用化学性质不同,筛选出含硅量较高的硅石.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R硅石筛选",
     "IconPath": "",
     "Type": 1,
     "GridIndex": 1511,
@@ -1475,7 +1475,7 @@
   {
     "ID": 54,
     "Name": "巨型化学反应釜",
-    "Description": "从原矿中分离的纯净粉可以实现效率更高的生产.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R巨型化学反应釜",
     "IconPath": "Assets/texpack/行星化工厂",
     "Type": 10,
     "GridIndex": 2503,
@@ -1564,7 +1564,7 @@
   {
     "ID": 57,
     "Name": "无尽材料精炼",
-    "Description": "利用粒子加速器的庞大能量创造全新的材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R无尽材料精炼",
     "IconPath": "Assets/texpack/三元精金",
     "Type": 13,
     "GridIndex": 3103,
@@ -1859,7 +1859,7 @@
   {
     "ID": 68,
     "Name": "大型精密组装厂",
-    "Description": "从原矿中分离的纯净粉可以实现效率更高的生产.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R大型精密组装厂",
     "IconPath": "Assets/texpack/行星精密组装厂",
     "Type": 10,
     "GridIndex": 2504,
@@ -1892,7 +1892,7 @@
   {
     "ID": 69,
     "Name": "物质分解设施",
-    "Description": "从原矿中分离的纯净粉可以实现效率更高的生产.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R物质分解设施",
     "IconPath": "Assets/texpack/回收塔",
     "Type": 10,
     "GridIndex": 2505,
@@ -2734,7 +2734,7 @@
   {
     "ID": 99,
     "Name": "氘氦三混合聚变燃料棒",
-    "Description": "从光栅石中分离氦.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R氘氦三混合聚变燃料棒",
     "IconPath": "Assets/texpack/氘氦三混合聚变燃料棒",
     "Type": 4,
     "GridIndex": 1607,
@@ -2763,7 +2763,7 @@
   {
     "ID": 100,
     "Name": "氦三燃料棒",
-    "Description": "从光栅石中分离氦.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R氦三燃料棒",
     "IconPath": "Assets/texpack/氦三燃料棒",
     "Type": 4,
     "GridIndex": 1505,
@@ -2898,7 +2898,7 @@
   {
     "ID": 106,
     "Name": "氦三",
-    "Description": "从光栅石中分离氦.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R氦三",
     "IconPath": "Assets/texpack/氦三",
     "Type": 2,
     "GridIndex": 4408,
@@ -2923,7 +2923,7 @@
   {
     "ID": 107,
     "Name": "氦元素离心",
-    "Description": "从光栅石中分离氦.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R氦元素离心",
     "IconPath": "Assets/texpack/氦",
     "Type": 2,
     "GridIndex": 4407,
@@ -3006,7 +3006,7 @@
   {
     "ID": 110,
     "Name": "反物质能量炉1",
-    "Description": "从原矿中分离的纯净粉可以实现效率更高的生产.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R反物质能量炉1",
     "IconPath": "Assets/texpack/反物质能量炉",
     "Type": 12,
     "GridIndex": 2112,
@@ -3153,7 +3153,7 @@
   {
     "ID": 115,
     "Name": "氦闪约束器",
-    "Description": "从原矿中分离的纯净粉可以实现效率更高的生产.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R氦闪约束器",
     "IconPath": "Assets/texpack/氦闪抑制器",
     "Type": 10,
     "GridIndex": 1604,
@@ -3329,7 +3329,7 @@
   {
     "ID": 121,
     "Name": "反物质约束单元",
-    "Description": "从原矿中分离的纯净粉可以实现效率更高的生产.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R反物质约束单元",
     "IconPath": "Assets/texpack/反物质约束单元",
     "Type": 10,
     "GridIndex": 3101,
@@ -3360,7 +3360,7 @@
   {
     "ID": 701,
     "Name": "石油裂化",
-    "Description": "这是一个新的化学公式.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R石油裂化",
     "IconPath": "Assets/texpack/石油裂化",
     "Type": 3,
     "GridIndex": 3202,
@@ -3389,7 +3389,7 @@
   {
     "ID": 702,
     "Name": "水电解",
-    "Description": "这个公式可以为你提供氧气.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R水电解",
     "IconPath": "Assets/texpack/电解水",
     "Type": 2,
     "GridIndex": 1114,
@@ -3416,7 +3416,7 @@
   {
     "ID": 703,
     "Name": "氢氧化钠",
-    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R氢氧化钠",
     "IconPath": "Assets/texpack/氢氧化钠",
     "Type": 2,
     "GridIndex": 4211,
@@ -3443,7 +3443,7 @@
   {
     "ID": 801,
     "Name": "金属盐分解",
-    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R金属盐分解",
     "IconPath": "Assets/texpack/氯化钠",
     "Type": 4,
     "GridIndex": 1115,
@@ -3472,7 +3472,7 @@
   {
     "ID": 704,
     "Name": "环氧氯丙烷",
-    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R环氧氯丙烷",
     "IconPath": "Assets/texpack/环氧氯丙烷",
     "Type": 2,
     "GridIndex": 4110,
@@ -3501,7 +3501,7 @@
   {
     "ID": 705,
     "Name": "盐水",
-    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R盐水",
     "IconPath": "Assets/texpack/盐水",
     "Type": 2,
     "GridIndex": 4106,
@@ -3528,7 +3528,7 @@
   {
     "ID": 706,
     "Name": "双酚A",
-    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R双酚A",
     "IconPath": "Assets/texpack/双酚A",
     "Type": 2,
     "GridIndex": 4103,
@@ -3559,7 +3559,7 @@
   {
     "ID": 707,
     "Name": "硝酸",
-    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R硝酸",
     "IconPath": "Assets/texpack/硝酸",
     "Type": 2,
     "GridIndex": 4104,
@@ -3588,7 +3588,7 @@
   {
     "ID": 708,
     "Name": "二硝基氯苯",
-    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R二硝基氯苯",
     "IconPath": "Assets/texpack/二硝基氯苯",
     "Type": 2,
     "GridIndex": 4108,
@@ -3615,7 +3615,7 @@
   {
     "ID": 709,
     "Name": "二氯联苯胺",
-    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R二氯联苯胺",
     "IconPath": "Assets/texpack/二氯联苯胺",
     "Type": 2,
     "GridIndex": 4107,
@@ -3642,7 +3642,7 @@
   {
     "ID": 710,
     "Name": "氨",
-    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R氨",
     "IconPath": "Assets/texpack/氨",
     "Type": 2,
     "GridIndex": 4102,
@@ -3673,7 +3673,7 @@
   {
     "ID": 711,
     "Name": "二氨基联苯胺",
-    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R二氨基联苯胺",
     "IconPath": "Assets/texpack/二氨基联苯胺",
     "Type": 2,
     "GridIndex": 4105,
@@ -3702,7 +3702,7 @@
   {
     "ID": 712,
     "Name": "焦油转化",
-    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R焦油转化",
     "IconPath": "Assets/texpack/煤焦油生产",
     "Type": 3,
     "GridIndex": 3206,
@@ -3727,7 +3727,7 @@
   {
     "ID": 713,
     "Name": "焦油分馏",
-    "Description": "这是一个新的化学公式.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R焦油分馏",
     "IconPath": "Assets/texpack/煤焦油",
     "Type": 3,
     "GridIndex": 3207,
@@ -3756,7 +3756,7 @@
   {
     "ID": 714,
     "Name": "邻苯二甲酸",
-    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R邻苯二甲酸",
     "IconPath": "Assets/texpack/邻苯二甲酸",
     "Type": 2,
     "GridIndex": 4109,
@@ -3785,7 +3785,7 @@
   {
     "ID": 715,
     "Name": "间苯二甲酸二苯酯",
-    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R间苯二甲酸二苯酯",
     "IconPath": "Assets/texpack/间苯二甲酸二苯酯",
     "Type": 2,
     "GridIndex": 4111,
@@ -3812,7 +3812,7 @@
   {
     "ID": 716,
     "Name": "三氯化铁",
-    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R三氯化铁",
     "IconPath": "Assets/texpack/三氯化铁",
     "Type": 2,
     "GridIndex": 4101,
@@ -3843,7 +3843,7 @@
   {
     "ID": 791,
     "Name": "生物微晶元件",
-    "Description": "这是一个人类未曾涉及的领域.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R生物微晶元件",
     "IconPath": "Assets/texpack/生物微晶元件",
     "Type": 10,
     "GridIndex": 1415,
@@ -3872,7 +3872,7 @@
   {
     "ID": 792,
     "Name": "先进生物电路",
-    "Description": "这是一个人类未曾涉及的领域.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R先进生物电路",
     "IconPath": "Assets/texpack/先进生物电路",
     "Type": 10,
     "GridIndex": 1515,
@@ -3901,7 +3901,7 @@
   {
     "ID": 793,
     "Name": "超生物计算集群",
-    "Description": "这是一个人类未曾涉及的领域.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R超生物计算集群",
     "IconPath": "Assets/texpack/超生物计算集群",
     "Type": 10,
     "GridIndex": 1615,
@@ -3930,7 +3930,7 @@
   {
     "ID": 794,
     "Name": "生物神经纤维",
-    "Description": "这是一个人类未曾涉及的领域.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R生物神经纤维",
     "IconPath": "Assets/texpack/生物神经纤维",
     "Type": 10,
     "GridIndex": 1713,
@@ -3959,7 +3959,7 @@
   {
     "ID": 795,
     "Name": "超级纳米电脑",
-    "Description": "这是一个人类未曾涉及的领域.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R超级纳米电脑",
     "IconPath": "Assets/texpack/超级纳米电脑",
     "Type": 10,
     "GridIndex": 1714,
@@ -3988,7 +3988,7 @@
   {
     "ID": 569,
     "Name": "湿件主机",
-    "Description": "这是一个人类未曾涉及的领域.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R湿件主机",
     "IconPath": "Assets/texpack/湿件主机",
     "Type": 10,
     "GridIndex": 1715,
@@ -4017,7 +4017,7 @@
   {
     "ID": 751,
     "Name": "塑料基板",
-    "Description": "这是一种新的材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R塑料基板",
     "IconPath": "Assets/texpack/塑料基板",
     "Type": 9,
     "GridIndex": 1216,
@@ -4044,7 +4044,7 @@
   {
     "ID": 752,
     "Name": "覆层塑料基板",
-    "Description": "这是一种新的材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R覆层塑料基板",
     "IconPath": "Assets/texpack/覆层塑料基板",
     "Type": 9,
     "GridIndex": 1316,
@@ -4073,7 +4073,7 @@
   {
     "ID": 753,
     "Name": "钛蚀刻覆层塑料基板",
-    "Description": "这是一种新的材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R钛蚀刻覆层塑料基板",
     "IconPath": "Assets/texpack/钛蚀刻覆层塑料基板",
     "Type": 9,
     "GridIndex": 1416,
@@ -4102,7 +4102,7 @@
   {
     "ID": 754,
     "Name": "生物基板",
-    "Description": "这是一种新的材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R生物基板",
     "IconPath": "Assets/texpack/生物基板",
     "Type": 9,
     "GridIndex": 1516,
@@ -4129,7 +4129,7 @@
   {
     "ID": 755,
     "Name": "覆层生物基板",
-    "Description": "这是一种新的材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R覆层生物基板",
     "IconPath": "Assets/texpack/覆层生物基板",
     "Type": 9,
     "GridIndex": 1616,
@@ -4158,7 +4158,7 @@
   {
     "ID": 756,
     "Name": "钨蚀刻覆层生物基板",
-    "Description": "这是一种新的材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R钨蚀刻覆层生物基板",
     "IconPath": "Assets/texpack/钨蚀刻覆层生物基板",
     "Type": 9,
     "GridIndex": 1716,
@@ -4187,7 +4187,7 @@
   {
     "ID": 761,
     "Name": "超低功率IC晶片",
-    "Description": "一片非金属晶片,世界上精度最高的人造物.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R超低功率IC晶片",
     "IconPath": "Assets/texpack/超低功率IC晶片",
     "Type": 4,
     "GridIndex": 1217,
@@ -4212,7 +4212,7 @@
   {
     "ID": 762,
     "Name": "低功率IC晶片",
-    "Description": "一片非金属晶片,世界上精度最高的人造物.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R低功率IC晶片",
     "IconPath": "Assets/texpack/低功率IC晶片",
     "Type": 4,
     "GridIndex": 1317,
@@ -4237,7 +4237,7 @@
   {
     "ID": 763,
     "Name": "标准功率IC晶片",
-    "Description": "一片非金属晶片,世界上精度最高的人造物.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R标准功率IC晶片",
     "IconPath": "Assets/texpack/标准功率IC晶片",
     "Type": 10,
     "GridIndex": 1417,
@@ -4262,7 +4262,7 @@
   {
     "ID": 764,
     "Name": "高功率IC晶片",
-    "Description": "一片非金属晶片,世界上精度最高的人造物.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R高功率IC晶片",
     "IconPath": "Assets/texpack/高功率IC晶片",
     "Type": 10,
     "GridIndex": 1517,
@@ -4287,7 +4287,7 @@
   {
     "ID": 765,
     "Name": "超高功率IC晶片",
-    "Description": "一片非金属晶片,世界上精度最高的人造物.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R超高功率IC晶片",
     "IconPath": "Assets/texpack/超高功率IC晶片",
     "Type": 10,
     "GridIndex": 1617,
@@ -4312,7 +4312,7 @@
   {
     "ID": 766,
     "Name": "生物IC晶片",
-    "Description": "一片非金属晶片,世界上精度最高的人造物.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R生物IC晶片",
     "IconPath": "Assets/texpack/生物IC晶片",
     "Type": 10,
     "GridIndex": 1717,
@@ -4337,7 +4337,7 @@
   {
     "ID": 771,
     "Name": "环氧树脂",
-    "Description": "一种新的制造材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R环氧树脂",
     "IconPath": "Assets/texpack/环氧树脂",
     "Type": 2,
     "GridIndex": 1110,
@@ -4368,7 +4368,7 @@
   {
     "ID": 772,
     "Name": "聚苯并咪唑",
-    "Description": "一种新的制造材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R聚苯并咪唑",
     "IconPath": "Assets/texpack/聚苯并咪唑",
     "Type": 2,
     "GridIndex": 1111,
@@ -4397,7 +4397,7 @@
   {
     "ID": 773,
     "Name": "钨矿精炼",
-    "Description": "利用硝酸从钛矿中分离含钨的伴生矿.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R钨矿精炼",
     "IconPath": "Assets/texpack/钨矿",
     "Type": 2,
     "GridIndex": 1611,
@@ -4424,7 +4424,7 @@
   {
     "ID": 774,
     "Name": "钨块",
-    "Description": "一种新的制造材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R钨块",
     "IconPath": "Assets/texpack/钨块",
     "Type": 1,
     "GridIndex": 1105,
@@ -4449,7 +4449,7 @@
   {
     "ID": 775,
     "Name": "钨强化玻璃",
-    "Description": "一种新的制造材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R钨强化玻璃",
     "IconPath": "Assets/texpack/钨强化玻璃",
     "Type": 4,
     "GridIndex": 1308,
@@ -4476,7 +4476,7 @@
   {
     "ID": 776,
     "Name": "钨复合金属",
-    "Description": "一种新的制造材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R钨复合金属",
     "IconPath": "Assets/texpack/钨复合金属",
     "Type": 1,
     "GridIndex": 1203,
@@ -4505,7 +4505,7 @@
   {
     "ID": 777,
     "Name": "硅晶圆",
-    "Description": "电子工业的基础.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R硅晶圆",
     "IconPath": "Assets/texpack/硅晶圆",
     "Type": 1,
     "GridIndex": 1501,
@@ -4530,7 +4530,7 @@
   {
     "ID": 778,
     "Name": "钛掺杂的硅晶圆",
-    "Description": "电子工业的基础.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R钛掺杂的硅晶圆",
     "IconPath": "Assets/texpack/钛掺杂的硅晶圆",
     "Type": 1,
     "GridIndex": 1502,
@@ -4557,7 +4557,7 @@
   {
     "ID": 779,
     "Name": "钨掺杂的硅晶圆",
-    "Description": "电子工业的基础.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R钨掺杂的硅晶圆",
     "IconPath": "Assets/texpack/钨掺杂的硅晶圆",
     "Type": 1,
     "GridIndex": 1503,
@@ -4584,7 +4584,7 @@
   {
     "ID": 780,
     "Name": "活性生物纤维",
-    "Description": "一种新的制造材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R活性生物纤维",
     "IconPath": "Assets/texpack/活性生物纤维",
     "Type": 2,
     "GridIndex": 1112,
@@ -4609,7 +4609,7 @@
   {
     "ID": 821,
     "Name": "钛齿轮",
-    "Description": "一种新的制造材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R钛齿轮",
     "IconPath": "Assets/texpack/钛齿轮",
     "Type": 4,
     "GridIndex": 1302,
@@ -4634,7 +4634,7 @@
   {
     "ID": 822,
     "Name": "钨齿轮",
-    "Description": "一种新的制造材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R钨齿轮",
     "IconPath": "Assets/texpack/钨齿轮",
     "Type": 4,
     "GridIndex": 1303,
@@ -4659,7 +4659,7 @@
   {
     "ID": 425,
     "Name": "光子结晶化",
-    "Description": "在高能环境下将光子压缩成固体.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R光子结晶化",
     "IconPath": "Assets/texpack/光子结晶",
     "Type": 13,
     "GridIndex": 3104,
@@ -4684,7 +4684,7 @@
   {
     "ID": 624,
     "Name": "石墨线圈",
-    "Description": "一种新的制造材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R石墨线圈",
     "IconPath": "Assets/texpack/石墨线圈",
     "Type": 4,
     "GridIndex": 1315,
@@ -4709,7 +4709,7 @@
   {
     "ID": 625,
     "Name": "钛线圈",
-    "Description": "一种新的制造材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R钛线圈",
     "IconPath": "Assets/texpack/钛线圈",
     "Type": 4,
     "GridIndex": 1314,
@@ -4734,7 +4734,7 @@
   {
     "ID": 641,
     "Name": "基础机械组件",
-    "Description": "一个通用组件包,用途广泛.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R基础机械组件",
     "IconPath": "Assets/texpack/基础机械组件",
     "Type": 4,
     "GridIndex": 1401,
@@ -4763,7 +4763,7 @@
   {
     "ID": 642,
     "Name": "先进机械组件",
-    "Description": "一个通用组件包,用途广泛.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R先进机械组件",
     "IconPath": "Assets/texpack/先进机械组件",
     "Type": 4,
     "GridIndex": 1402,
@@ -4792,7 +4792,7 @@
   {
     "ID": 643,
     "Name": "尖端机械组件",
-    "Description": "一个通用组件包,用途广泛.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R尖端机械组件",
     "IconPath": "Assets/texpack/尖端机械组件",
     "Type": 10,
     "GridIndex": 1403,
@@ -4821,7 +4821,7 @@
   {
     "ID": 644,
     "Name": "空燃料棒",
-    "Description": "呃,也许它还差点什么?\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R空燃料棒",
     "IconPath": "Assets/texpack/空燃料棒",
     "Type": 4,
     "GridIndex": 1605,
@@ -4848,7 +4848,7 @@
   {
     "ID": 681,
     "Name": "氢燃料",
-    "Description": "这玩意看上去好像也差点啥.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R氢燃料",
     "IconPath": "Assets/texpack/氢燃料",
     "Type": 2,
     "GridIndex": 4401,
@@ -4873,7 +4873,7 @@
   {
     "ID": 682,
     "Name": "氘核燃料",
-    "Description": "这玩意看上去好像也差点啥.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R氘核燃料",
     "IconPath": "Assets/texpack/氘核燃料",
     "Type": 2,
     "GridIndex": 4402,
@@ -4898,7 +4898,7 @@
   {
     "ID": 683,
     "Name": "反物质燃料",
-    "Description": "这玩意看上去好像也差点啥.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R反物质燃料",
     "IconPath": "Assets/texpack/反物质燃料",
     "Type": 2,
     "GridIndex": 4403,
@@ -4923,7 +4923,7 @@
   {
     "ID": 541,
     "Name": "质能储存（高效）",
-    "Description": "这个公式能让你更加高效的生产反物质.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R质能储存（高效）",
     "IconPath": "Assets/texpack/高效反物质",
     "Type": 5,
     "GridIndex": 1312,
@@ -4948,7 +4948,7 @@
   {
     "ID": 542,
     "Name": "奇异物质（高效）",
-    "Description": "这个公式能让你更加高效的生产奇异物质.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R奇异物质（高效）",
     "IconPath": "Assets/texpack/高效奇异物质",
     "Type": 5,
     "GridIndex": 1311,
@@ -4975,7 +4975,7 @@
   {
     "ID": 543,
     "Name": "石墨烯（极效）",
-    "Description": "这个公式能让你更加高效的生产石墨烯.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R石墨烯（极效）",
     "IconPath": "Assets/texpack/极效石墨烯",
     "Type": 2,
     "GridIndex": 1405,
@@ -5000,7 +5000,7 @@
   {
     "ID": 545,
     "Name": "等离子精炼（高效）",
-    "Description": "这个公式能让你更加高效的生产氢.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R等离子精炼（高效）",
     "IconPath": "Assets/texpack/精炼氢",
     "Type": 3,
     "GridIndex": 3204,
@@ -5025,7 +5025,7 @@
   {
     "ID": 546,
     "Name": "有机液体离心",
-    "Description": "这个公式能让你离心有机液体.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R有机液体离心",
     "IconPath": "Assets/texpack/有机液体离心",
     "Type": 2,
     "GridIndex": 4212,
@@ -5056,7 +5056,7 @@
   {
     "ID": 547,
     "Name": "硅晶圆（高效）",
-    "Description": "这个公式能让你更加高效的生产晶圆.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R硅晶圆（高效）",
     "IconPath": "Assets/texpack/高效硅晶圆",
     "Type": 1,
     "GridIndex": 1601,
@@ -5083,7 +5083,7 @@
   {
     "ID": 548,
     "Name": "含钛硅晶圆（高效）",
-    "Description": "这个公式能让你更加高效的生产晶圆.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R含钛硅晶圆（高效）",
     "IconPath": "Assets/texpack/高效钛晶圆",
     "Type": 1,
     "GridIndex": 1602,
@@ -5112,7 +5112,7 @@
   {
     "ID": 549,
     "Name": "含钨硅晶圆（高效）",
-    "Description": "这个公式能让你更加高效的生产晶圆.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R含钨硅晶圆（高效）",
     "IconPath": "Assets/texpack/高效钨晶圆",
     "Type": 1,
     "GridIndex": 1603,
@@ -5141,7 +5141,7 @@
   {
     "ID": 551,
     "Name": "聚乙烯（高效）",
-    "Description": "这个公式能让你更高效的生产聚乙烯.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R聚乙烯（高效）",
     "IconPath": "Assets/texpack/高效塑料",
     "Type": 2,
     "GridIndex": 1113,
@@ -5170,7 +5170,7 @@
   {
     "ID": 501,
     "Name": "燃油精炼",
-    "Description": "有人说这是工业的血液....\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R燃油精炼",
     "IconPath": "Assets/texpack/燃油精炼",
     "Type": 3,
     "GridIndex": 3205,
@@ -5197,7 +5197,7 @@
   {
     "ID": 502,
     "Name": "轻燃油脱硫",
-    "Description": "有人说这是工业的血液....\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R轻燃油脱硫",
     "IconPath": "Assets/texpack/轻燃油",
     "Type": 2,
     "GridIndex": 4202,
@@ -5226,7 +5226,7 @@
   {
     "ID": 503,
     "Name": "重燃油脱硫",
-    "Description": "有人说这是工业的血液....\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R重燃油脱硫",
     "IconPath": "Assets/texpack/重燃油",
     "Type": 2,
     "GridIndex": 4203,
@@ -5255,7 +5255,7 @@
   {
     "ID": 504,
     "Name": "柴油搅拌",
-    "Description": "有人说这是工业的血液....\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R柴油搅拌",
     "IconPath": "Assets/texpack/柴油",
     "Type": 2,
     "GridIndex": 4204,
@@ -5282,7 +5282,7 @@
   {
     "ID": 505,
     "Name": "一氧化碳",
-    "Description": "未充分燃烧的煤会形成一氧化碳.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R一氧化碳",
     "IconPath": "Assets/texpack/一氧化碳",
     "Type": 2,
     "GridIndex": 4205,
@@ -5309,7 +5309,7 @@
   {
     "ID": 507,
     "Name": "甲醇",
-    "Description": "充分燃烧的煤会形成二氧化碳.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R甲醇",
     "IconPath": "Assets/texpack/甲醇",
     "Type": 2,
     "GridIndex": 4206,
@@ -5336,7 +5336,7 @@
   {
     "ID": 508,
     "Name": "乙酸",
-    "Description": "充分燃烧的煤会形成二氧化碳.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R乙酸",
     "IconPath": "Assets/texpack/乙酸",
     "Type": 2,
     "GridIndex": 4207,
@@ -5363,7 +5363,7 @@
   {
     "ID": 509,
     "Name": "乙酸甲酯",
-    "Description": "充分燃烧的煤会形成二氧化碳.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R乙酸甲酯",
     "IconPath": "Assets/texpack/乙酸甲酯",
     "Type": 2,
     "GridIndex": 4208,
@@ -5392,7 +5392,7 @@
   {
     "ID": 510,
     "Name": "次氯酸",
-    "Description": "充分燃烧的煤会形成二氧化碳.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R次氯酸",
     "IconPath": "Assets/texpack/次氯酸",
     "Type": 2,
     "GridIndex": 4209,
@@ -5419,7 +5419,7 @@
   {
     "ID": 511,
     "Name": "四硝基甲烷",
-    "Description": "它蕴含着巨大的能量....但好像还差些什么\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R四硝基甲烷",
     "IconPath": "Assets/texpack/四硝基甲烷",
     "Type": 2,
     "GridIndex": 4210,
@@ -5450,7 +5450,7 @@
   {
     "ID": 512,
     "Name": "硝基柴油",
-    "Description": "它蕴含着巨大的能量....但好像还差一步\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R硝基柴油",
     "IconPath": "Assets/texpack/硝基柴油",
     "Type": 2,
     "GridIndex": 4404,
@@ -5477,7 +5477,7 @@
   {
     "ID": 513,
     "Name": "偏二甲肼",
-    "Description": "它蕴含着巨大的能量....但好像还差一步\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R偏二甲肼",
     "IconPath": "Assets/texpack/偏二甲肼",
     "Type": 2,
     "GridIndex": 4405,
@@ -5508,7 +5508,7 @@
   {
     "ID": 514,
     "Name": "火箭燃料",
-    "Description": "它蕴含着巨大的能量....但好像还差一步\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R火箭燃料",
     "IconPath": "Assets/texpack/火箭燃料",
     "Type": 2,
     "GridIndex": 4406,
@@ -5535,7 +5535,7 @@
   {
     "ID": 515,
     "Name": "硝基柴油燃料棒",
-    "Description": "它蕴含着巨大的能量....但好像还差一步\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R硝基柴油燃料棒",
     "IconPath": "Assets/texpack/硝基柴油燃料棒",
     "Type": 4,
     "GridIndex": 1406,
@@ -5562,7 +5562,7 @@
   {
     "ID": 516,
     "Name": "偏二甲肼燃料棒",
-    "Description": "它蕴含着巨大的能量....但好像还差一步\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R偏二甲肼燃料棒",
     "IconPath": "Assets/texpack/偏二甲肼燃料棒",
     "Type": 4,
     "GridIndex": 1506,
@@ -5589,7 +5589,7 @@
   {
     "ID": 517,
     "Name": "火箭燃料棒",
-    "Description": "它蕴含着巨大的能量....但好像还差一步\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R火箭燃料棒",
     "IconPath": "Assets/texpack/火箭燃料棒",
     "Type": 4,
     "GridIndex": 1606,
@@ -5616,7 +5616,7 @@
   {
     "ID": 518,
     "Name": "微晶元件（高效）",
-    "Description": "这个公式能让你更加高效的生产微晶元件.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R微晶元件（高效）",
     "IconPath": "Assets/texpack/高效微晶元件",
     "Type": 10,
     "GridIndex": 1413,
@@ -5643,7 +5643,7 @@
   {
     "ID": 519,
     "Name": "处理器（高效）",
-    "Description": "这个公式能让你更加高效的生产处理器.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R处理器（高效）",
     "IconPath": "Assets/texpack/高效处理器",
     "Type": 10,
     "GridIndex": 1513,
@@ -5670,7 +5670,7 @@
   {
     "ID": 520,
     "Name": "量子芯片（高效）",
-    "Description": "这个公式能让你更加高效的生产量子芯片.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R量子芯片（高效）",
     "IconPath": "Assets/texpack/高效量子芯片",
     "Type": 10,
     "GridIndex": 1613,
@@ -5697,7 +5697,7 @@
   {
     "ID": 521,
     "Name": "硫酸（高效）",
-    "Description": "这个公式能让你更加高效的生产硫酸.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R硫酸（高效）",
     "IconPath": "Assets/texpack/高效硫酸",
     "Type": 2,
     "GridIndex": 4213,
@@ -5724,7 +5724,7 @@
   {
     "ID": 522,
     "Name": "量子储液罐",
-    "Description": "这个公式能让你更加高效的生产硫酸.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R量子储液罐",
     "IconPath": "Assets/texpack/量子储液罐",
     "Type": 4,
     "GridIndex": 2208,
@@ -5753,7 +5753,7 @@
   {
     "ID": 523,
     "Name": "矿物处理厂",
-    "Description": "这个公式能让你更加高效的生产硫酸.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R矿物处理厂",
     "IconPath": "Assets/texpack/矿物处理厂",
     "Type": 4,
     "GridIndex": 2407,
@@ -5784,7 +5784,7 @@
   {
     "ID": 531,
     "Name": "铁矿粉",
-    "Description": "这个公式能让你更加高效的生产铁.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R铁矿粉",
     "IconPath": "Assets/texpack/铁矿粉",
     "Type": 11,
     "GridIndex": 3401,
@@ -5809,7 +5809,7 @@
   {
     "ID": 532,
     "Name": "铜矿粉",
-    "Description": "这个公式能让你更加高效的生产硫酸.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R铜矿粉",
     "IconPath": "Assets/texpack/铜矿粉",
     "Type": 11,
     "GridIndex": 3402,
@@ -5834,7 +5834,7 @@
   {
     "ID": 533,
     "Name": "硅矿粉",
-    "Description": "这个公式能让你更加高效的生产硫酸.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R硅矿粉",
     "IconPath": "Assets/texpack/硅矿粉",
     "Type": 11,
     "GridIndex": 3403,
@@ -5859,7 +5859,7 @@
   {
     "ID": 534,
     "Name": "钛矿粉",
-    "Description": "这个公式能让你更加高效的生产硫酸.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R钛矿粉",
     "IconPath": "Assets/texpack/钛矿粉",
     "Type": 11,
     "GridIndex": 3404,
@@ -5884,7 +5884,7 @@
   {
     "ID": 535,
     "Name": "石粉",
-    "Description": "这个公式能让你更加高效的生产硫酸.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R石粉",
     "IconPath": "Assets/texpack/石粉",
     "Type": 11,
     "GridIndex": 3405,
@@ -5909,7 +5909,7 @@
   {
     "ID": 536,
     "Name": "煤矿粉",
-    "Description": "这个公式能让你更加高效的生产硫酸.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R煤矿粉",
     "IconPath": "Assets/texpack/煤矿粉",
     "Type": 11,
     "GridIndex": 3406,
@@ -5934,7 +5934,7 @@
   {
     "ID": 401,
     "Name": "放射性矿物处理",
-    "Description": "利用氢氧化钠晶体作为催化剂,能够将硅石中含有的放射性物质沉降分离.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R放射性矿物处理",
     "IconPath": "Assets/texpack/放射性矿物碎块",
     "Type": 11,
     "GridIndex": 3301,
@@ -5961,7 +5961,7 @@
   {
     "ID": 402,
     "Name": "铀碎块",
-    "Description": "利用氢氧化钠晶体作为催化剂,能够将硅石中含有的放射性物质沉降分离.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R铀碎块",
     "IconPath": "Assets/texpack/发光铀碎块",
     "Type": 11,
     "GridIndex": 3302,
@@ -5988,7 +5988,7 @@
   {
     "ID": 403,
     "Name": "钚碎块",
-    "Description": "利用氢氧化钠晶体作为催化剂,能够将硅石中含有的放射性物质沉降分离.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R钚碎块",
     "IconPath": "Assets/texpack/晶质钚碎块",
     "Type": 11,
     "GridIndex": 3303,
@@ -6015,7 +6015,7 @@
   {
     "ID": 404,
     "Name": "铀矿",
-    "Description": "利用氢氧化钠晶体作为催化剂,能够将硅石中含有的放射性物质沉降分离.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R铀矿",
     "IconPath": "Assets/texpack/铀矿",
     "Type": 11,
     "GridIndex": 3304,
@@ -6042,7 +6042,7 @@
   {
     "ID": 405,
     "Name": "钚矿",
-    "Description": "利用氢氧化钠晶体作为催化剂,能够将硅石中含有的放射性物质沉降分离.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R钚矿",
     "IconPath": "Assets/texpack/钚矿",
     "Type": 11,
     "GridIndex": 3305,
@@ -6069,7 +6069,7 @@
   {
     "ID": 406,
     "Name": "高纯铀块",
-    "Description": "利用氢氧化钠晶体作为催化剂,能够将硅石中含有的放射性物质沉降分离.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R高纯铀块",
     "IconPath": "Assets/texpack/高纯铀块",
     "Type": 11,
     "GridIndex": 3306,
@@ -6094,7 +6094,7 @@
   {
     "ID": 407,
     "Name": "高纯钚块",
-    "Description": "利用氢氧化钠晶体作为催化剂,能够将硅石中含有的放射性物质沉降分离.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R高纯钚块",
     "IconPath": "Assets/texpack/高纯钚块",
     "Type": 11,
     "GridIndex": 3307,
@@ -6119,7 +6119,7 @@
   {
     "ID": 408,
     "Name": "铀燃料棒",
-    "Description": "利用氢氧化钠晶体作为催化剂,能够将硅石中含有的放射性物质沉降分离.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R铀燃料棒",
     "IconPath": "Assets/texpack/铀235燃料棒",
     "Type": 4,
     "GridIndex": 1507,
@@ -6146,7 +6146,7 @@
   {
     "ID": 409,
     "Name": "钚燃料棒",
-    "Description": "利用氢氧化钠晶体作为催化剂,能够将硅石中含有的放射性物质沉降分离.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R钚燃料棒",
     "IconPath": "Assets/texpack/钚燃料棒",
     "Type": 4,
     "GridIndex": 1407,
@@ -6173,7 +6173,7 @@
   {
     "ID": 411,
     "Name": "铁矿精炼",
-    "Description": "从原矿中分离的纯净粉可以实现效率更高的生产.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R铁矿精炼",
     "IconPath": "Icons/ItemRecipe/iron-plate",
     "Type": 1,
     "GridIndex": 3501,
@@ -6198,7 +6198,7 @@
   {
     "ID": 412,
     "Name": "铜矿精炼",
-    "Description": "从原矿中分离的纯净粉可以实现效率更高的生产.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R铜矿精炼",
     "IconPath": "Icons/ItemRecipe/copper-plate",
     "Type": 1,
     "GridIndex": 3502,
@@ -6223,7 +6223,7 @@
   {
     "ID": 413,
     "Name": "硅矿精炼",
-    "Description": "从原矿中分离的纯净粉可以实现效率更高的生产.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R硅矿精炼",
     "IconPath": "Icons/ItemRecipe/silicium-single-crystal",
     "Type": 1,
     "GridIndex": 3503,
@@ -6248,7 +6248,7 @@
   {
     "ID": 414,
     "Name": "钛矿精炼",
-    "Description": "从原矿中分离的纯净粉可以实现效率更高的生产.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R钛矿精炼",
     "IconPath": "Icons/ItemRecipe/titanium-plate",
     "Type": 1,
     "GridIndex": 3504,
@@ -6273,7 +6273,7 @@
   {
     "ID": 415,
     "Name": "混凝土",
-    "Description": "从原矿中分离的纯净粉可以实现效率更高的生产.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R混凝土",
     "IconPath": "Assets/texpack/混凝土",
     "Type": 4,
     "GridIndex": 1612,
@@ -6304,7 +6304,7 @@
   {
     "ID": 416,
     "Name": "行星级组装站",
-    "Description": "从原矿中分离的纯净粉可以实现效率更高的生产.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R行星级组装站",
     "IconPath": "Assets/texpack/行星组装站",
     "Type": 10,
     "GridIndex": 2501,
@@ -6337,7 +6337,7 @@
   {
     "ID": 429,
     "Name": "物质回收",
-    "Description": "将物质分解成沙土.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R物质回收",
     "IconPath": "Assets/texpack/垃圾回收",
     "Type": 14,
     "GridIndex": 1711,
@@ -6358,7 +6358,7 @@
   {
     "ID": 537,
     "Name": "硫矿粉",
-    "Description": "这个公式能让你更加高效的生产硫酸.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R硫矿粉",
     "IconPath": "Assets/texpack/硫矿粉",
     "Type": 11,
     "GridIndex": 3407,
@@ -6383,7 +6383,7 @@
   {
     "ID": 538,
     "Name": "硫酸化合",
-    "Description": "这个公式能让你更加高效的生产硫酸....好吧,我承认这不太科学.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R硫酸化合",
     "IconPath": "Assets/texpack/硫酸化合",
     "Type": 2,
     "GridIndex": 4112,
@@ -6412,7 +6412,7 @@
   {
     "ID": 539,
     "Name": "稳定矩阵",
-    "Description": "这个公式能让你更加高效的生产硫酸....好吧,我承认这不太科学.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R稳定矩阵",
     "IconPath": "Assets/texpack/稳定矩阵",
     "Type": 4,
     "GridIndex": 1707,
@@ -6439,7 +6439,7 @@
   {
     "ID": 540,
     "Name": "虚空矩阵",
-    "Description": "这个公式能让你更加高效的生产硫酸....好吧,我承认这不太科学.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R虚空矩阵",
     "IconPath": "Assets/texpack/虚空矩阵",
     "Type": 4,
     "GridIndex": 1708,
@@ -6466,7 +6466,7 @@
   {
     "ID": 544,
     "Name": "宇宙矩阵粗坯",
-    "Description": "这个公式能让你更加高效的生产硫酸....好吧,我承认这不太科学.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "R宇宙矩阵粗坯",
     "IconPath": "Assets/texpack/生宇宙矩阵",
     "Type": 4,
     "GridIndex": 1709,

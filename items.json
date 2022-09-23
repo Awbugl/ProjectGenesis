@@ -496,7 +496,7 @@
   {
     "ID": 1016,
     "Name": "钨矿",
-    "Description": "一种新的制造材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I钨矿",
     "IconPath": "Assets/texpack/钨矿",
     "GridIndex": 1115,
     "StackSize": 100,
@@ -905,7 +905,7 @@
   {
     "ID": 1111,
     "Name": "钛齿轮",
-    "Description": "一种新的制造材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I钛齿轮",
     "IconPath": "Assets/texpack/钛齿轮",
     "GridIndex": 1302,
     "StackSize": 100,
@@ -1055,7 +1055,7 @@
   {
     "ID": 1102,
     "Name": "铜线圈",
-    "Description": "一种新的制造材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I铜线圈",
     "IconPath": "Assets/texpack/铜线圈",
     "GridIndex": 1313,
     "StackSize": 100,
@@ -1091,7 +1091,7 @@
   {
     "ID": 1202,
     "Name": "石墨线圈",
-    "Description": "一种新的制造材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I石墨线圈",
     "IconPath": "Assets/texpack/石墨线圈",
     "GridIndex": 1315,
     "StackSize": 100,
@@ -1238,7 +1238,7 @@
   {
     "ID": 1206,
     "Name": "混凝土",
-    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I混凝土",
     "IconPath": "Assets/texpack/混凝土",
     "GridIndex": 1405,
     "StackSize": 100,
@@ -1571,7 +1571,7 @@
   {
     "ID": 1404,
     "Name": "钨齿轮",
-    "Description": "一种新的制造材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I钨齿轮",
     "IconPath": "Assets/texpack/钨齿轮",
     "GridIndex": 1303,
     "StackSize": 100,
@@ -1722,7 +1722,7 @@
   {
     "ID": 1114,
     "Name": "煤焦油",
-    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I煤焦油",
     "IconPath": "Assets/texpack/煤焦油",
     "GridIndex": 3206,
     "StackSize": 20,
@@ -1762,7 +1762,7 @@
   {
     "ID": 1116,
     "Name": "剧毒有机液体",
-    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I剧毒有机液体",
     "IconPath": "Assets/texpack/剧毒有机液体",
     "GridIndex": 4212,
     "StackSize": 20,
@@ -2073,7 +2073,7 @@
   {
     "ID": 1115,
     "Name": "聚乙烯",
-    "Description": "一种初级化工产品,广泛应用于各种行业.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I聚乙烯",
     "IconPath": "Icons/ItemRecipe/plastic",
     "GridIndex": 1211,
     "StackSize": 100,
@@ -2231,7 +2231,7 @@
   {
     "ID": 1118,
     "Name": "钛线圈",
-    "Description": "一种新的制造材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I钛线圈",
     "IconPath": "Assets/texpack/钛线圈",
     "GridIndex": 1314,
     "StackSize": 100,
@@ -3406,7 +3406,7 @@
   {
     "ID": 2304,
     "Name": "电路蚀刻机",
-    "Description": "一台专门用于生产电路基板的机器.\n <color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I电路蚀刻机",
     "IconPath": "Icons/ItemRecipe/assembler-2",
     "GridIndex": 2402,
     "StackSize": 50,
@@ -3446,7 +3446,7 @@
   {
     "ID": 2305,
     "Name": "高精度装配线",
-    "Description": "一台用于生产精密仪器的机器,当然,不包括它自己.\n <color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I高精度装配线",
     "IconPath": "Icons/ItemRecipe/assembler-3",
     "GridIndex": 2403,
     "StackSize": 50,
@@ -4878,7 +4878,7 @@
   {
     "ID": 6201,
     "Name": "重燃油",
-    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I重燃油",
     "IconPath": "Assets/texpack/重燃油",
     "GridIndex": 4203,
     "StackSize": 20,
@@ -4918,7 +4918,7 @@
   {
     "ID": 6202,
     "Name": "轻燃油",
-    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I轻燃油",
     "IconPath": "Assets/texpack/轻燃油",
     "GridIndex": 4202,
     "StackSize": 20,
@@ -4958,7 +4958,7 @@
   {
     "ID": 6203,
     "Name": "含硫重燃油",
-    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I含硫重燃油",
     "IconPath": "Assets/texpack/含硫重燃油",
     "GridIndex": 3205,
     "StackSize": 20,
@@ -4998,7 +4998,7 @@
   {
     "ID": 6204,
     "Name": "含硫轻燃油",
-    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I含硫轻燃油",
     "IconPath": "Assets/texpack/含硫轻燃油",
     "GridIndex": 3204,
     "StackSize": 20,
@@ -5038,7 +5038,7 @@
   {
     "ID": 6205,
     "Name": "一氧化碳",
-    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I一氧化碳",
     "IconPath": "Assets/texpack/一氧化碳",
     "GridIndex": 4205,
     "StackSize": 20,
@@ -5074,7 +5074,7 @@
   {
     "ID": 6207,
     "Name": "甲醇",
-    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I甲醇",
     "IconPath": "Assets/texpack/甲醇",
     "GridIndex": 4206,
     "StackSize": 20,
@@ -5114,7 +5114,7 @@
   {
     "ID": 6208,
     "Name": "乙酸",
-    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I乙酸",
     "IconPath": "Assets/texpack/乙酸",
     "GridIndex": 4207,
     "StackSize": 20,
@@ -5154,7 +5154,7 @@
   {
     "ID": 6209,
     "Name": "乙酸甲酯",
-    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I乙酸甲酯",
     "IconPath": "Assets/texpack/乙酸甲酯",
     "GridIndex": 4208,
     "StackSize": 20,
@@ -5194,7 +5194,7 @@
   {
     "ID": 6210,
     "Name": "次氯酸",
-    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I次氯酸",
     "IconPath": "Assets/texpack/次氯酸",
     "GridIndex": 4209,
     "StackSize": 20,
@@ -5234,7 +5234,7 @@
   {
     "ID": 6211,
     "Name": "四硝基甲烷",
-    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I四硝基甲烷",
     "IconPath": "Assets/texpack/四硝基甲烷",
     "GridIndex": 4210,
     "StackSize": 20,
@@ -5274,7 +5274,7 @@
   {
     "ID": 6212,
     "Name": "硝基柴油",
-    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I硝基柴油",
     "IconPath": "Assets/texpack/硝基柴油",
     "GridIndex": 4404,
     "StackSize": 20,
@@ -5314,7 +5314,7 @@
   {
     "ID": 6213,
     "Name": "偏二甲肼",
-    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I偏二甲肼",
     "IconPath": "Assets/texpack/偏二甲肼",
     "GridIndex": 4405,
     "StackSize": 20,
@@ -5354,7 +5354,7 @@
   {
     "ID": 6214,
     "Name": "火箭燃料",
-    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I火箭燃料",
     "IconPath": "Assets/texpack/火箭燃料",
     "GridIndex": 4406,
     "StackSize": 20,
@@ -5394,7 +5394,7 @@
   {
     "ID": 6215,
     "Name": "硫化氢",
-    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I硫化氢",
     "IconPath": "Assets/texpack/硫化氢",
     "GridIndex": 4112,
     "StackSize": 20,
@@ -5430,7 +5430,7 @@
   {
     "ID": 6216,
     "Name": "硝基柴油燃料棒",
-    "Description": "它蕴含着巨大的能量....\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I硝基柴油燃料棒",
     "IconPath": "Assets/texpack/硝基柴油燃料棒",
     "GridIndex": 1406,
     "StackSize": 100,
@@ -5470,7 +5470,7 @@
   {
     "ID": 6217,
     "Name": "偏二甲肼燃料棒",
-    "Description": "它蕴含着巨大的能量....\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I偏二甲肼燃料棒",
     "IconPath": "Assets/texpack/偏二甲肼燃料棒",
     "GridIndex": 1506,
     "StackSize": 100,
@@ -5510,7 +5510,7 @@
   {
     "ID": 6218,
     "Name": "火箭燃料棒",
-    "Description": "它蕴含着巨大的能量....\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I火箭燃料棒",
     "IconPath": "Assets/texpack/火箭燃料棒",
     "GridIndex": 1606,
     "StackSize": 100,
@@ -5550,7 +5550,7 @@
   {
     "ID": 6219,
     "Name": "柴油",
-    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I柴油",
     "IconPath": "Assets/texpack/柴油",
     "GridIndex": 4204,
     "StackSize": 20,
@@ -5590,7 +5590,7 @@
   {
     "ID": 6222,
     "Name": "放射性矿物碎块",
-    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I放射性矿物碎块",
     "IconPath": "Assets/texpack/放射性矿物碎块",
     "GridIndex": 3301,
     "StackSize": 100,
@@ -5627,7 +5627,7 @@
   {
     "ID": 6223,
     "Name": "发光铀碎块",
-    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I发光铀碎块",
     "IconPath": "Assets/texpack/发光铀碎块",
     "GridIndex": 3302,
     "StackSize": 100,
@@ -5664,7 +5664,7 @@
   {
     "ID": 6224,
     "Name": "晶质钚碎块",
-    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I晶质钚碎块",
     "IconPath": "Assets/texpack/晶质钚碎块",
     "GridIndex": 3303,
     "StackSize": 100,
@@ -5701,7 +5701,7 @@
   {
     "ID": 6225,
     "Name": "铀矿",
-    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I铀矿",
     "IconPath": "Assets/texpack/铀矿",
     "GridIndex": 3304,
     "StackSize": 100,
@@ -5738,7 +5738,7 @@
   {
     "ID": 6226,
     "Name": "钚矿",
-    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I钚矿",
     "IconPath": "Assets/texpack/钚矿",
     "GridIndex": 3305,
     "StackSize": 100,
@@ -5775,7 +5775,7 @@
   {
     "ID": 6227,
     "Name": "高纯铀块",
-    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I高纯铀块",
     "IconPath": "Assets/texpack/高纯铀块",
     "GridIndex": 3306,
     "StackSize": 100,
@@ -5812,7 +5812,7 @@
   {
     "ID": 6228,
     "Name": "高纯钚块",
-    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I高纯钚块",
     "IconPath": "Assets/texpack/高纯钚块",
     "GridIndex": 3307,
     "StackSize": 100,
@@ -5849,7 +5849,7 @@
   {
     "ID": 6229,
     "Name": "量子储液罐",
-    "Description": "将量子技术应用于液体存储上的科研成果,这种储罐有着远超普通储液罐的液体容量.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I量子储液罐",
     "IconPath": "Assets/texpack/量子储液罐",
     "GridIndex": 2208,
     "StackSize": 50,
@@ -5887,7 +5887,7 @@
   {
     "ID": 6230,
     "Name": "矿物处理厂",
-    "Description": "介绍没想好怎么编...先欠着.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I矿物处理厂",
     "IconPath": "Assets/texpack/矿物处理厂",
     "GridIndex": 2407,
     "StackSize": 50,
@@ -5927,7 +5927,7 @@
   {
     "ID": 6231,
     "Name": "钚燃料",
-    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I钚燃料",
     "IconPath": "Assets/texpack/钚燃料",
     "GridIndex": 4520,
     "StackSize": 100,
@@ -5964,7 +5964,7 @@
   {
     "ID": 6232,
     "Name": "铀燃料",
-    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I铀燃料",
     "IconPath": "Assets/texpack/铀燃料",
     "GridIndex": 4620,
     "StackSize": 100,
@@ -6001,7 +6001,7 @@
   {
     "ID": 6233,
     "Name": "MOX燃料",
-    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "IMOX燃料",
     "IconPath": "Assets/texpack/MOX燃料",
     "GridIndex": 4720,
     "StackSize": 100,
@@ -6038,7 +6038,7 @@
   {
     "ID": 6234,
     "Name": "氦",
-    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I氦",
     "IconPath": "Assets/texpack/氦",
     "GridIndex": 4407,
     "StackSize": 100,
@@ -6075,7 +6075,7 @@
   {
     "ID": 6235,
     "Name": "氦三",
-    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I氦三",
     "IconPath": "Assets/texpack/氦三",
     "GridIndex": 4408,
     "StackSize": 100,
@@ -6112,7 +6112,7 @@
   {
     "ID": 6241,
     "Name": "钚燃料棒",
-    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I钚燃料棒",
     "IconPath": "Assets/texpack/钚燃料棒",
     "GridIndex": 1407,
     "StackSize": 30,
@@ -6152,7 +6152,7 @@
   {
     "ID": 6242,
     "Name": "铀燃料棒",
-    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I铀燃料棒",
     "IconPath": "Assets/texpack/铀235燃料棒",
     "GridIndex": 1507,
     "StackSize": 30,
@@ -6192,7 +6192,7 @@
   {
     "ID": 6244,
     "Name": "氦三燃料棒",
-    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I氦三燃料棒",
     "IconPath": "Assets/texpack/氦三燃料棒",
     "GridIndex": 1505,
     "StackSize": 30,
@@ -6232,7 +6232,7 @@
   {
     "ID": 6245,
     "Name": "氘氦混合聚变燃料棒",
-    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I氘氦混合聚变燃料棒",
     "IconPath": "Assets/texpack/氘氦三混合聚变燃料棒",
     "GridIndex": 1607,
     "StackSize": 30,
@@ -6272,7 +6272,7 @@
   {
     "ID": 6251,
     "Name": "石粉",
-    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I石粉",
     "IconPath": "Assets/texpack/石粉",
     "GridIndex": 3405,
     "StackSize": 100,
@@ -6309,7 +6309,7 @@
   {
     "ID": 6252,
     "Name": "铁矿粉",
-    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I铁矿粉",
     "IconPath": "Assets/texpack/铁矿粉",
     "GridIndex": 3401,
     "StackSize": 100,
@@ -6346,7 +6346,7 @@
   {
     "ID": 6253,
     "Name": "铜矿粉",
-    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I铜矿粉",
     "IconPath": "Assets/texpack/铜矿粉",
     "GridIndex": 3402,
     "StackSize": 100,
@@ -6383,7 +6383,7 @@
   {
     "ID": 6254,
     "Name": "硅矿粉",
-    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I硅矿粉",
     "IconPath": "Assets/texpack/硅矿粉",
     "GridIndex": 3403,
     "StackSize": 100,
@@ -6420,7 +6420,7 @@
   {
     "ID": 6255,
     "Name": "钛矿粉",
-    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I钛矿粉",
     "IconPath": "Assets/texpack/钛矿粉",
     "GridIndex": 3404,
     "StackSize": 100,
@@ -6457,7 +6457,7 @@
   {
     "ID": 6256,
     "Name": "煤矿粉",
-    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I煤矿粉",
     "IconPath": "Assets/texpack/煤矿粉",
     "GridIndex": 3406,
     "StackSize": 100,
@@ -6494,7 +6494,7 @@
   {
     "ID": 6257,
     "Name": "天穹装配厂",
-    "Description": "一座规模庞大的巨型工厂,包括大量的加工单元,高速运输轨道和精密机械臂.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I天穹装配厂",
     "IconPath": "Assets/texpack/行星组装站",
     "GridIndex": 2501,
     "StackSize": 10,
@@ -6534,7 +6534,7 @@
   {
     "ID": 6258,
     "Name": "物质裂解塔",
-    "Description": "使用裂解光束对基础矿物进行加工熔炼的大型工厂,高功率裂解光束能够以极高的效率处理矿物.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I物质裂解塔",
     "IconPath": "Assets/texpack/行星熔炉",
     "GridIndex": 2502,
     "StackSize": 10,
@@ -6574,7 +6574,7 @@
   {
     "ID": 6259,
     "Name": "巨型化学反应釜",
-    "Description": "一座大型化工厂,当你置身其中,犹如进入了一片管道森林.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I巨型化学反应釜",
     "IconPath": "Assets/texpack/行星化工厂",
     "GridIndex": 2503,
     "StackSize": 10,
@@ -6614,7 +6614,7 @@
   {
     "ID": 6260,
     "Name": "精密结构组装厂",
-    "Description": "这座工厂将精密装配线进行大规模集成以提升运转效率.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I精密结构组装厂",
     "IconPath": "Assets/texpack/行星精密组装厂",
     "GridIndex": 2504,
     "StackSize": 10,
@@ -6654,7 +6654,7 @@
   {
     "ID": 6261,
     "Name": "反物质能量炉",
-    "Description": "掌控质能.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I反物质能量炉",
     "IconPath": "Assets/texpack/反物质能量炉",
     "GridIndex": 2112,
     "StackSize": 20,
@@ -6693,7 +6693,7 @@
   {
     "ID": 6262,
     "Name": "反物质约束单元",
-    "Description": "懒得写介绍....\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I反物质约束单元",
     "IconPath": "Assets/texpack/反物质约束单元",
     "GridIndex": 3101,
     "StackSize": 100,
@@ -6730,7 +6730,7 @@
   {
     "ID": 6263,
     "Name": "氦闪约束器",
-    "Description": "懒得写介绍....\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I氦闪约束器",
     "IconPath": "Assets/texpack/氦闪抑制器",
     "GridIndex": 1504,
     "StackSize": 100,
@@ -6767,7 +6767,7 @@
   {
     "ID": 6264,
     "Name": "物质分解设施",
-    "Description": "有些人管这叫做浪费.\n我们称之为高效.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I物质分解设施",
     "IconPath": "Assets/texpack/回收塔",
     "GridIndex": 2505,
     "StackSize": 10,
@@ -6807,7 +6807,7 @@
   {
     "ID": 6271,
     "Name": "三元精金",
-    "Description": "你创造了新元素.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I三元精金",
     "IconPath": "Assets/texpack/三元精金",
     "GridIndex": 3103,
     "StackSize": 100,
@@ -6844,7 +6844,7 @@
   {
     "ID": 6272,
     "Name": "光子结晶",
-    "Description": "你创造了新元素.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I光子结晶",
     "IconPath": "Assets/texpack/光子结晶",
     "GridIndex": 3104,
     "StackSize": 100,
@@ -6881,7 +6881,7 @@
   {
     "ID": 6274,
     "Name": "先驱者晶片",
-    "Description": "未知文明留下的蓝图.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I先驱者晶片",
     "IconPath": "Assets/texpack/紫色先驱者晶片",
     "GridIndex": 3105,
     "StackSize": 100,
@@ -6918,7 +6918,7 @@
   {
     "ID": 6275,
     "Name": "精密制造厂",
-    "Description": "这座工厂能够将蓝图以物质世界基本单位的尺度精准还原.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I精密制造厂",
     "IconPath": "Assets/texpack/红制造台",
     "GridIndex": 2404,
     "StackSize": 20,
@@ -6958,7 +6958,7 @@
   {
     "ID": 6276,
     "Name": "紧凑式回旋加速器",
-    "Description": "一座大型粒子加速器.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I紧凑式回旋加速器",
     "IconPath": "Icons/ItemRecipe/hadron-collider",
     "GridIndex": 2412,
     "StackSize": 20,
@@ -6998,7 +6998,7 @@
   {
     "ID": 6277,
     "Name": "硫粉",
-    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I硫粉",
     "IconPath": "Assets/texpack/硫矿粉",
     "GridIndex": 3407,
     "StackSize": 100,
@@ -7035,7 +7035,7 @@
   {
     "ID": 6278,
     "Name": "稳定矩阵",
-    "Description": "用于优化宇宙矩阵生产过程的复合型超级矩阵.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I稳定矩阵",
     "IconPath": "Assets/texpack/稳定矩阵",
     "GridIndex": 1707,
     "StackSize": 200,
@@ -7072,7 +7072,7 @@
   {
     "ID": 6279,
     "Name": "虚空矩阵",
-    "Description": "用于优化宇宙矩阵生产过程的复合型超级矩阵.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I虚空矩阵",
     "IconPath": "Assets/texpack/虚空矩阵",
     "GridIndex": 1708,
     "StackSize": 200,
@@ -7109,7 +7109,7 @@
   {
     "ID": 6280,
     "Name": "宇宙矩阵粗坯",
-    "Description": "用于优化宇宙矩阵生产过程的复合型超级矩阵,它还需要充能.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I宇宙矩阵粗坯",
     "IconPath": "Assets/texpack/生宇宙矩阵",
     "GridIndex": 1709,
     "StackSize": 200,
@@ -7146,7 +7146,7 @@
   {
     "ID": 6501,
     "Name": "基础机械组件",
-    "Description": "一个通用组件包,用途广泛.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I基础机械组件",
     "IconPath": "Assets/texpack/基础机械组件",
     "GridIndex": 1401,
     "StackSize": 100,
@@ -7182,7 +7182,7 @@
   {
     "ID": 6502,
     "Name": "先进机械组件",
-    "Description": "一个通用组件包,用途广泛.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I先进机械组件",
     "IconPath": "Assets/texpack/先进机械组件",
     "GridIndex": 1402,
     "StackSize": 100,
@@ -7218,7 +7218,7 @@
   {
     "ID": 6503,
     "Name": "尖端机械组件",
-    "Description": "一个通用组件包,用途广泛.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I尖端机械组件",
     "IconPath": "Assets/texpack/尖端机械组件",
     "GridIndex": 1403,
     "StackSize": 100,
@@ -7254,7 +7254,7 @@
   {
     "ID": 6504,
     "Name": "超级机械组件",
-    "Description": "这是......什么?\n(To be announced)\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I超级机械组件",
     "IconPath": "Assets/texpack/超级机械组件",
     "GridIndex": 3120,
     "StackSize": 100,
@@ -7290,7 +7290,7 @@
   {
     "ID": 6505,
     "Name": "终极机械组件",
-    "Description": "一个通用组件包,用途广泛.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I终极机械组件",
     "IconPath": "Assets/texpack/终极机械组件",
     "GridIndex": 3220,
     "StackSize": 100,
@@ -7326,7 +7326,7 @@
   {
     "ID": 6506,
     "Name": "创世之书",
-    "Description": "如果你拿到这本书,那我想,你应该已经试着接受这个MOD了.欢迎来到第一阶段,开拓者.\n在这个阶段,你需要做的并不是很多,也不会很难,\n我没有什么能留给你的指点,希望我能在下一个阶段见到你.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I创世之书",
     "IconPath": "Assets/texpack/创世之书",
     "GridIndex": 3320,
     "StackSize": 1,
@@ -7360,7 +7360,7 @@
   {
     "ID": 6507,
     "Name": "虚空之书",
-    "Description": "我曾经无数次仰望星空,幻想银河彼端是否存在另一个文明,\n而现在,你已经踏出了远航星海的第一步.欢迎来到第二阶段,开拓者.\n在这个阶段,钛和硅将成为重要的资源,希望我能在下一个阶段见到你.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I虚空之书",
     "IconPath": "Assets/texpack/虚空之书",
     "GridIndex": 3420,
     "StackSize": 1,
@@ -7394,7 +7394,7 @@
   {
     "ID": 6508,
     "Name": "起源之书",
-    "Description": "我很高兴你能走到这一步,开拓者.\n欢迎来到最终阶段,宇宙的终点对你来说已经触手可及.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I起源之书",
     "IconPath": "Assets/texpack/起源之书",
     "GridIndex": 3520,
     "StackSize": 1,
@@ -7428,7 +7428,7 @@
   {
     "ID": 6509,
     "Name": "空燃料棒",
-    "Description": "呃,也许它还差点什么?\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I空燃料棒",
     "IconPath": "Assets/texpack/空燃料棒",
     "GridIndex": 1605,
     "StackSize": 30,
@@ -7464,7 +7464,7 @@
   {
     "ID": 6531,
     "Name": "氢燃料",
-    "Description": "这玩意看上去好像也差点啥.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I氢燃料",
     "IconPath": "Assets/texpack/氢燃料",
     "GridIndex": 4401,
     "StackSize": 20,
@@ -7504,7 +7504,7 @@
   {
     "ID": 6532,
     "Name": "氘核燃料",
-    "Description": "这玩意看上去好像也差点啥.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I氘核燃料",
     "IconPath": "Assets/texpack/氘核燃料",
     "GridIndex": 4402,
     "StackSize": 20,
@@ -7544,7 +7544,7 @@
   {
     "ID": 6533,
     "Name": "反物质燃料",
-    "Description": "这玩意看上去好像也差点啥.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I反物质燃料",
     "IconPath": "Assets/texpack/反物质燃料",
     "GridIndex": 4403,
     "StackSize": 20,
@@ -7584,7 +7584,7 @@
   {
     "ID": 6999,
     "Name": "硫酸",
-    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I硫酸",
     "IconPath": "Assets/texpack/硫酸",
     "GridIndex": 4201,
     "StackSize": 20,
@@ -7624,7 +7624,7 @@
   {
     "ID": 7001,
     "Name": "乙烯",
-    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I乙烯",
     "IconPath": "Assets/texpack/乙烯",
     "GridIndex": 3201,
     "StackSize": 20,
@@ -7664,7 +7664,7 @@
   {
     "ID": 7002,
     "Name": "氨",
-    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I氨",
     "IconPath": "Assets/texpack/氨",
     "GridIndex": 4102,
     "StackSize": 20,
@@ -7704,7 +7704,7 @@
   {
     "ID": 7003,
     "Name": "苯酚",
-    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I苯酚",
     "IconPath": "Assets/texpack/苯酚",
     "GridIndex": 3207,
     "StackSize": 20,
@@ -7744,7 +7744,7 @@
   {
     "ID": 7004,
     "Name": "丙酮",
-    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I丙酮",
     "IconPath": "Assets/texpack/丙酮",
     "GridIndex": 3209,
     "StackSize": 20,
@@ -7784,7 +7784,7 @@
   {
     "ID": 7005,
     "Name": "二氨基联苯胺",
-    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I二氨基联苯胺",
     "IconPath": "Assets/texpack/二氨基联苯胺",
     "GridIndex": 4105,
     "StackSize": 20,
@@ -7820,7 +7820,7 @@
   {
     "ID": 7006,
     "Name": "二甲苯",
-    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I二甲苯",
     "IconPath": "Assets/texpack/二甲苯",
     "GridIndex": 3208,
     "StackSize": 20,
@@ -7860,7 +7860,7 @@
   {
     "ID": 7007,
     "Name": "二氯联苯胺",
-    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I二氯联苯胺",
     "IconPath": "Assets/texpack/二氯联苯胺",
     "GridIndex": 4107,
     "StackSize": 20,
@@ -7896,7 +7896,7 @@
   {
     "ID": 7008,
     "Name": "二硝基氯苯",
-    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I二硝基氯苯",
     "IconPath": "Assets/texpack/二硝基氯苯",
     "GridIndex": 4108,
     "StackSize": 20,
@@ -7932,7 +7932,7 @@
   {
     "ID": 7009,
     "Name": "甘油",
-    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I甘油",
     "IconPath": "Assets/texpack/甘油",
     "GridIndex": 3202,
     "StackSize": 20,
@@ -7972,7 +7972,7 @@
   {
     "ID": 7010,
     "Name": "环氧氯丙烷",
-    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I环氧氯丙烷",
     "IconPath": "Assets/texpack/环氧氯丙烷",
     "GridIndex": 4110,
     "StackSize": 20,
@@ -8008,7 +8008,7 @@
   {
     "ID": 7011,
     "Name": "间苯二甲酸二苯酯",
-    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I间苯二甲酸二苯酯",
     "IconPath": "Assets/texpack/间苯二甲酸二苯酯",
     "GridIndex": 4111,
     "StackSize": 20,
@@ -8044,7 +8044,7 @@
   {
     "ID": 7012,
     "Name": "邻苯二甲酸",
-    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I邻苯二甲酸",
     "IconPath": "Assets/texpack/邻苯二甲酸",
     "GridIndex": 4109,
     "StackSize": 20,
@@ -8080,7 +8080,7 @@
   {
     "ID": 7013,
     "Name": "氯苯",
-    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I氯苯",
     "IconPath": "Assets/texpack/氯苯",
     "GridIndex": 3203,
     "StackSize": 20,
@@ -8120,7 +8120,7 @@
   {
     "ID": 7014,
     "Name": "氢氯酸",
-    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I氢氯酸",
     "IconPath": "Assets/texpack/氢氯酸",
     "GridIndex": 4213,
     "StackSize": 20,
@@ -8156,7 +8156,7 @@
   {
     "ID": 7015,
     "Name": "三氯化铁",
-    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I三氯化铁",
     "IconPath": "Assets/texpack/三氯化铁",
     "GridIndex": 4101,
     "StackSize": 20,
@@ -8192,7 +8192,7 @@
   {
     "ID": 7016,
     "Name": "双酚A",
-    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I双酚A",
     "IconPath": "Assets/texpack/双酚A",
     "GridIndex": 4103,
     "StackSize": 20,
@@ -8228,7 +8228,7 @@
   {
     "ID": 7017,
     "Name": "硝酸",
-    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I硝酸",
     "IconPath": "Assets/texpack/硝酸",
     "GridIndex": 4104,
     "StackSize": 20,
@@ -8268,7 +8268,7 @@
   {
     "ID": 7018,
     "Name": "盐水",
-    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I盐水",
     "IconPath": "Assets/texpack/盐水",
     "GridIndex": 4106,
     "StackSize": 20,
@@ -8304,7 +8304,7 @@
   {
     "ID": 7019,
     "Name": "氧",
-    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I氧",
     "IconPath": "Assets/texpack/氧气",
     "GridIndex": 1117,
     "StackSize": 20,
@@ -8345,7 +8345,7 @@
   {
     "ID": 7020,
     "Name": "氢氧化钠",
-    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I氢氧化钠",
     "IconPath": "Assets/texpack/氢氧化钠",
     "GridIndex": 4211,
     "StackSize": 100,
@@ -8381,7 +8381,7 @@
   {
     "ID": 7101,
     "Name": "氯化钠",
-    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I氯化钠",
     "IconPath": "Assets/texpack/氯化钠",
     "GridIndex": 1212,
     "StackSize": 100,
@@ -8417,7 +8417,7 @@
   {
     "ID": 7102,
     "Name": "硝酸钠",
-    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I硝酸钠",
     "IconPath": "Assets/texpack/硝酸钠",
     "GridIndex": 1312,
     "StackSize": 100,
@@ -8453,7 +8453,7 @@
   {
     "ID": 7103,
     "Name": "硫酸钠",
-    "Description": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I硫酸钠",
     "IconPath": "Assets/texpack/硫酸钠",
     "GridIndex": 1412,
     "StackSize": 100,
@@ -8489,7 +8489,7 @@
   {
     "ID": 7501,
     "Name": "塑料基板",
-    "Description": "这是一种新的材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I塑料基板",
     "IconPath": "Assets/texpack/塑料基板",
     "GridIndex": 1216,
     "StackSize": 100,
@@ -8525,7 +8525,7 @@
   {
     "ID": 7502,
     "Name": "覆层塑料基板",
-    "Description": "这是一种新的材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I覆层塑料基板",
     "IconPath": "Assets/texpack/覆层塑料基板",
     "GridIndex": 1316,
     "StackSize": 100,
@@ -8561,7 +8561,7 @@
   {
     "ID": 7503,
     "Name": "钛蚀刻覆层塑料基板",
-    "Description": "这是一种新的材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I钛蚀刻覆层塑料基板",
     "IconPath": "Assets/texpack/钛蚀刻覆层塑料基板",
     "GridIndex": 1416,
     "StackSize": 200,
@@ -8597,7 +8597,7 @@
   {
     "ID": 7504,
     "Name": "生物基板",
-    "Description": "这是一种新的材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I生物基板",
     "IconPath": "Assets/texpack/生物基板",
     "GridIndex": 1516,
     "StackSize": 200,
@@ -8633,7 +8633,7 @@
   {
     "ID": 7505,
     "Name": "覆层生物基板",
-    "Description": "这是一种新的材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I覆层生物基板",
     "IconPath": "Assets/texpack/覆层生物基板",
     "GridIndex": 1616,
     "StackSize": 200,
@@ -8669,7 +8669,7 @@
   {
     "ID": 7506,
     "Name": "钨蚀刻覆层生物基板",
-    "Description": "这是一种新的材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I钨蚀刻覆层生物基板",
     "IconPath": "Assets/texpack/钨蚀刻覆层生物基板",
     "GridIndex": 1716,
     "StackSize": 200,
@@ -8705,7 +8705,7 @@
   {
     "ID": 7601,
     "Name": "超低功率IC晶片",
-    "Description": "一片非金属晶片,世界上精度最高的人造物.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I超低功率IC晶片",
     "IconPath": "Assets/texpack/超低功率IC晶片",
     "GridIndex": 1217,
     "StackSize": 200,
@@ -8741,7 +8741,7 @@
   {
     "ID": 7602,
     "Name": "低功率IC晶片",
-    "Description": "一片非金属晶片,世界上精度最高的人造物.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I低功率IC晶片",
     "IconPath": "Assets/texpack/低功率IC晶片",
     "GridIndex": 1317,
     "StackSize": 200,
@@ -8777,7 +8777,7 @@
   {
     "ID": 7603,
     "Name": "标准功率IC晶片",
-    "Description": "一片非金属晶片,世界上精度最高的人造物.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I标准功率IC晶片",
     "IconPath": "Assets/texpack/标准功率IC晶片",
     "GridIndex": 1417,
     "StackSize": 200,
@@ -8813,7 +8813,7 @@
   {
     "ID": 7604,
     "Name": "高功率IC晶片",
-    "Description": "一片非金属晶片,世界上精度最高的人造物.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I高功率IC晶片",
     "IconPath": "Assets/texpack/高功率IC晶片",
     "GridIndex": 1517,
     "StackSize": 200,
@@ -8849,7 +8849,7 @@
   {
     "ID": 7605,
     "Name": "超高功率IC晶片",
-    "Description": "一片非金属晶片,世界上精度最高的人造物.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I超高功率IC晶片",
     "IconPath": "Assets/texpack/超高功率IC晶片",
     "GridIndex": 1617,
     "StackSize": 200,
@@ -8885,7 +8885,7 @@
   {
     "ID": 7606,
     "Name": "生物IC晶片",
-    "Description": "一片非金属晶片,世界上精度最高的人造物.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I生物IC晶片",
     "IconPath": "Assets/texpack/生物IC晶片",
     "GridIndex": 1717,
     "StackSize": 200,
@@ -8921,7 +8921,7 @@
   {
     "ID": 7701,
     "Name": "硅晶圆",
-    "Description": "电子工业的基础.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I硅晶圆",
     "IconPath": "Assets/texpack/硅晶圆",
     "GridIndex": 1501,
     "StackSize": 100,
@@ -8957,7 +8957,7 @@
   {
     "ID": 7702,
     "Name": "钛掺杂的硅晶圆",
-    "Description": "电子工业的基础.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I钛掺杂的硅晶圆",
     "IconPath": "Assets/texpack/钛掺杂的硅晶圆",
     "GridIndex": 1502,
     "StackSize": 100,
@@ -8993,7 +8993,7 @@
   {
     "ID": 7703,
     "Name": "钨掺杂的硅晶圆",
-    "Description": "电子工业的基础.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I钨掺杂的硅晶圆",
     "IconPath": "Assets/texpack/钨掺杂的硅晶圆",
     "GridIndex": 1503,
     "StackSize": 100,
@@ -9029,7 +9029,7 @@
   {
     "ID": 7705,
     "Name": "钨块",
-    "Description": "一种新的制造材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I钨块",
     "IconPath": "Assets/texpack/钨块",
     "GridIndex": 1306,
     "StackSize": 100,
@@ -9065,7 +9065,7 @@
   {
     "ID": 7706,
     "Name": "钨强化玻璃",
-    "Description": "一种新的制造材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I钨强化玻璃",
     "IconPath": "Assets/texpack/钨强化玻璃",
     "GridIndex": 1603,
     "StackSize": 100,
@@ -9101,7 +9101,7 @@
   {
     "ID": 7707,
     "Name": "钨复合金属",
-    "Description": "一种新的制造材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I钨复合金属",
     "IconPath": "Assets/texpack/钨复合金属",
     "GridIndex": 1203,
     "StackSize": 100,
@@ -9137,7 +9137,7 @@
   {
     "ID": 7708,
     "Name": "环氧树脂",
-    "Description": "一种新的制造材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I环氧树脂",
     "IconPath": "Assets/texpack/环氧树脂",
     "GridIndex": 1311,
     "StackSize": 100,
@@ -9173,7 +9173,7 @@
   {
     "ID": 7709,
     "Name": "聚苯并咪唑",
-    "Description": "一种新的制造材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I聚苯并咪唑",
     "IconPath": "Assets/texpack/聚苯并咪唑",
     "GridIndex": 1411,
     "StackSize": 100,
@@ -9209,7 +9209,7 @@
   {
     "ID": 7710,
     "Name": "活性生物纤维",
-    "Description": "一种新的制造材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I活性生物纤维",
     "IconPath": "Assets/texpack/活性生物纤维",
     "GridIndex": 1511,
     "StackSize": 100,
@@ -9245,7 +9245,7 @@
   {
     "ID": 7801,
     "Name": "生物微晶元件",
-    "Description": "这是一个人类未曾涉及的领域.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I生物微晶元件",
     "IconPath": "Assets/texpack/生物微晶元件",
     "GridIndex": 1415,
     "StackSize": 100,
@@ -9281,7 +9281,7 @@
   {
     "ID": 7802,
     "Name": "先进生物电路",
-    "Description": "这是一个人类未曾涉及的领域.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I先进生物电路",
     "IconPath": "Assets/texpack/先进生物电路",
     "GridIndex": 1515,
     "StackSize": 100,
@@ -9317,7 +9317,7 @@
   {
     "ID": 7803,
     "Name": "超生物计算集群",
-    "Description": "这是一个人类未曾涉及的领域.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I超生物计算集群",
     "IconPath": "Assets/texpack/超生物计算集群",
     "GridIndex": 1615,
     "StackSize": 100,
@@ -9353,7 +9353,7 @@
   {
     "ID": 7804,
     "Name": "生物神经纤维",
-    "Description": "这是一个人类未曾涉及的领域.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I生物神经纤维",
     "IconPath": "Assets/texpack/生物神经纤维",
     "GridIndex": 1713,
     "StackSize": 100,
@@ -9389,7 +9389,7 @@
   {
     "ID": 7805,
     "Name": "超级纳米电脑",
-    "Description": "这是一个人类未曾涉及的领域.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I超级纳米电脑",
     "IconPath": "Assets/texpack/超级纳米电脑",
     "GridIndex": 1714,
     "StackSize": 50,
@@ -9425,7 +9425,7 @@
   {
     "ID": 7806,
     "Name": "湿件主机",
-    "Description": "这是一个人类未曾涉及的领域.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "Description": "I湿件主机",
     "IconPath": "Assets/texpack/湿件主机",
     "GridIndex": 1715,
     "StackSize": 50,
