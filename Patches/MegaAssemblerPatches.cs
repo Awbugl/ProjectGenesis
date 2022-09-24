@@ -120,7 +120,12 @@ namespace ProjectGenesis.Patches
         [HarmonyPatch(typeof(BuildingParameters), "FromParamsArray")]
         public static void BuildingParameters_FromParamsArray(ref BuildingParameters __instance, int[] _parameters)
         {
-            if (_parameters != null && _parameters.Length >= 2048) Array.Copy(_parameters, 192, __instance.parameters, 192, 1856);
+            if (_parameters != null && _parameters.Length >= 2048)
+            {
+                if (__instance.parameters.Length < 2048) Array.Resize(ref __instance.parameters, 2048);
+
+                Array.Copy(_parameters, 192, __instance.parameters, 192, 1856);
+            }
         }
 
         [HarmonyPostfix]

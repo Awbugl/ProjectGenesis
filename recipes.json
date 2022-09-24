@@ -4687,7 +4687,7 @@
     "Description": "R石墨线圈",
     "IconPath": "Assets/texpack/石墨线圈",
     "Type": 4,
-    "GridIndex": 1315,
+    "GridIndex": 1314,
     "PreTech": 1201,
     "Time": 60,
     "Input": [
@@ -4712,7 +4712,7 @@
     "Description": "R钛线圈",
     "IconPath": "Assets/texpack/钛线圈",
     "Type": 4,
-    "GridIndex": 1314,
+    "GridIndex": 1315,
     "PreTech": 1201,
     "Time": 60,
     "Input": [
