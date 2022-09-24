@@ -156,7 +156,7 @@ namespace ProjectGenesis.Patches
             PlanetFactory factory,
             bool copyInserters)
         {
-            if (__instance.type == BuildingType.Assembler)
+            if (objectId > 0 && factory.entityPool[objectId].id == objectId && __instance.type == BuildingType.Assembler)
             {
                 var assemblerId = factory.entityPool[objectId].assemblerId;
                 if (assemblerId > 0)
@@ -164,10 +164,8 @@ namespace ProjectGenesis.Patches
                     var assembler = factory.factorySystem.assemblerPool[assemblerId];
                     if (assembler.id == assemblerId && assembler.speed >= TrashSpeed)
                     {
-                        var par0 = __instance.parameters[0];
-
                         __instance.parameters = new int[2048];
-                        __instance.parameters[0] = par0;
+                        __instance.parameters[0] = assembler.forceAccMode ? 1 : 0;
 
                         var num2 = 192;
 
