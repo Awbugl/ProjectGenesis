@@ -31,7 +31,6 @@ namespace ProjectGenesis.Patches
         [HarmonyPatch(typeof(UIPowerGizmo), "DrawCover")]
         public static bool UIPowerGizmo_Draw(ref UIPowerGizmo __instance, Vector3 center, float radius) => radius < 2000;
 
-
         #region UITechNode
 
         [HarmonyPostfix]
@@ -53,7 +52,7 @@ namespace ProjectGenesis.Patches
                                                              __instance.panelRect.sizeDelta.y);
 
             __instance.titleText.rectTransform.sizeDelta
-                = new Vector2(__instance.panelRect.sizeDelta.x - ((GameMain.history.TechState(__instance.techProto.ID).curLevel > 0) ? 65 : 25), 24f);
+                = new Vector2(__instance.panelRect.sizeDelta.x - (GameMain.history.TechState(__instance.techProto.ID).curLevel > 0 ? 65 : 25), 24f);
         }
 
         #endregion

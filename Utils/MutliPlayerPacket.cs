@@ -4,14 +4,14 @@ namespace ProjectGenesis.Patches
 {
     public class NcModSaveRequest
     {
-        internal string Guid { get; set; }
-
         public NcModSaveRequest() { }
 
         internal NcModSaveRequest(string guid)
         {
             Guid = guid;
         }
+
+        internal string Guid { get; set; }
 
         internal static void OnReceive(string guid, INebulaConnection conn)
         {
@@ -28,9 +28,6 @@ namespace ProjectGenesis.Patches
 
     public class NcModSaveData
     {
-        internal string Guid { get; set; }
-        internal byte[] Bytes { get; set; }
-
         public NcModSaveData() { }
 
         internal NcModSaveData(string guid, byte[] bytes)
@@ -38,6 +35,9 @@ namespace ProjectGenesis.Patches
             Guid = guid;
             Bytes = bytes;
         }
+
+        internal string Guid { get; set; }
+        internal byte[] Bytes { get; set; }
 
         internal static void OnReceive(string guid, byte[] bytes)
         {
@@ -61,11 +61,6 @@ namespace ProjectGenesis.Patches
 
     public class SyncSlotsData
     {
-        internal string Guid { get; set; }
-        internal int EntityId { get; set; }
-
-        internal SlotData[] SlotsData { get; set; }
-
         public SyncSlotsData() { }
 
         public SyncSlotsData(string guid, int entityId, SlotData[] slotsData)
@@ -74,6 +69,11 @@ namespace ProjectGenesis.Patches
             EntityId = entityId;
             SlotsData = slotsData;
         }
+
+        internal string Guid { get; set; }
+        internal int EntityId { get; set; }
+
+        internal SlotData[] SlotsData { get; set; }
 
         internal static void Sync(int entityId, SlotData[] slotsData)
         {
@@ -103,10 +103,6 @@ namespace ProjectGenesis.Patches
 
     public class EntityId2PlanetIdData
     {
-        internal string Guid { get; set; }
-        internal int EntityId { get; set; }
-        internal int PlanetId { get; set; }
-
         public EntityId2PlanetIdData() { }
 
         public EntityId2PlanetIdData(string guid, int entityId, int planetId)
@@ -115,6 +111,10 @@ namespace ProjectGenesis.Patches
             EntityId = entityId;
             PlanetId = planetId;
         }
+
+        internal string Guid { get; set; }
+        internal int EntityId { get; set; }
+        internal int PlanetId { get; set; }
 
         internal static void Sync(int entityId, int planetId)
         {

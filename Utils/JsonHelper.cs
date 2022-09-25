@@ -1,9 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
 using Newtonsoft.Json;
+
 // ReSharper disable InconsistentNaming
 
 // ReSharper disable MemberCanBeInternal
@@ -13,7 +13,7 @@ using Newtonsoft.Json;
 
 namespace ProjectGenesis
 {
-    public static class JsonHelper
+    internal static class JsonHelper
     {
         private static readonly Assembly Assembly = Assembly.GetExecutingAssembly();
 
@@ -28,7 +28,7 @@ namespace ProjectGenesis
         internal static TechProtoJson[] TechProtos()
             => JsonConvert.DeserializeObject<TechProtoJson[]>(new StreamReader(Assembly.GetManifestResourceStream("ProjectGenesis.techs.json"))
                                                                  .ReadToEnd());
-        
+
         internal static StringProtoJson[] StringProtos()
             => JsonConvert.DeserializeObject<StringProtoJson[]>(new StreamReader(Assembly.GetManifestResourceStream("ProjectGenesis.strings.json"))
                                                                    .ReadToEnd());
@@ -48,6 +48,39 @@ namespace ProjectGenesis
         [Serializable]
         public class ItemProtoJson
         {
+            public int ID { get; set; }
+            public string Name { get; set; }
+            public string Description { get; set; }
+            public string IconPath { get; set; }
+            public int GridIndex { get; set; }
+            public int StackSize { get; set; }
+            public int Type { get; set; }
+            public int PreTech { get; set; }
+            public int PreTechOverride { get; set; }
+            public int[] DescFields { get; set; }
+            public int FuelType { get; set; }
+            public long HeatValue { get; set; }
+            public float ReactorInc { get; set; }
+            public bool IsFluid { get; set; }
+            public bool Productive { get; set; }
+            public int SubID { get; set; }
+            public string MiningFrom { get; set; }
+            public string ProduceFrom { get; set; }
+            public int Grade { get; set; }
+            public int[] Upgrades { get; set; }
+            public bool IsEntity { get; set; }
+            public bool CanBuild { get; set; }
+            public bool BuildInGas { get; set; }
+            public int ModelIndex { get; set; }
+            public int ModelCount { get; set; }
+            public int HpMax { get; set; }
+            public int Ability { get; set; }
+            public long Potential { get; set; }
+            public int BuildIndex { get; set; }
+            public int BuildMode { get; set; }
+            public int UnlockKey { get; set; }
+            public int MechaMaterialID { get; set; }
+
             public static ItemProtoJson FromProto(ItemProto i)
                 => new ItemProtoJson
                    {
@@ -84,44 +117,27 @@ namespace ProjectGenesis
                        Productive = i.Productive,
                        MechaMaterialID = i.MechaMaterialID
                    };
-
-            public int ID { get; set; }
-            public string Name { get; set; }
-            public string Description { get; set; }
-            public string IconPath { get; set; }
-            public int GridIndex { get; set; }
-            public int StackSize { get; set; }
-            public int Type { get; set; }
-            public int PreTech { get; set; }
-            public int PreTechOverride { get; set; }
-            public int[] DescFields { get; set; }
-            public int FuelType { get; set; }
-            public long HeatValue { get; set; }
-            public float ReactorInc { get; set; }
-            public bool IsFluid { get; set; }
-            public bool Productive { get; set; }
-            public int SubID { get; set; }
-            public string MiningFrom { get; set; }
-            public string ProduceFrom { get; set; }
-            public int Grade { get; set; }
-            public int[] Upgrades { get; set; }
-            public bool IsEntity { get; set; }
-            public bool CanBuild { get; set; }
-            public bool BuildInGas { get; set; }
-            public int ModelIndex { get; set; }
-            public int ModelCount { get; set; }
-            public int HpMax { get; set; }
-            public int Ability { get; set; }
-            public long Potential { get; set; }
-            public int BuildIndex { get; set; }
-            public int BuildMode { get; set; }
-            public int UnlockKey { get; set; }
-            public int MechaMaterialID { get; set; }
         }
 
         [Serializable]
         public class RecipeProtoJson
         {
+            public int ID { get; set; }
+            public string Name { get; set; }
+            public string Description { get; set; }
+            public string IconPath { get; set; }
+            public int Type { get; set; }
+            public int GridIndex { get; set; }
+            public int PreTech { get; set; }
+            public int Time { get; set; }
+            public int[] Input { get; set; }
+            public int[] InCounts { get; set; }
+            public int[] Output { get; set; }
+            public int[] OutCounts { get; set; }
+            public bool Explicit { get; set; }
+            public bool Handcraft { get; set; }
+            public bool NonProductive { get; set; }
+
             public static RecipeProtoJson FromProto(RecipeProto i)
                 => new RecipeProtoJson
                    {
@@ -139,29 +155,39 @@ namespace ProjectGenesis
                        PreTech = i.preTech?.ID ?? 0,
                        GridIndex = i.GridIndex,
                        IconPath = i.IconPath,
-                       NonProductive = i.NonProductive,
+                       NonProductive = i.NonProductive
                    };
-
-            public int ID { get; set; }
-            public string Name { get; set; }
-            public string Description { get; set; }
-            public string IconPath { get; set; }
-            public int Type { get; set; }
-            public int GridIndex { get; set; }
-            public int PreTech { get; set; }
-            public int Time { get; set; }
-            public int[] Input { get; set; }
-            public int[] InCounts { get; set; }
-            public int[] Output { get; set; }
-            public int[] OutCounts { get; set; }
-            public bool Explicit { get; set; }
-            public bool Handcraft { get; set; }
-            public bool NonProductive { get; set; }
         }
 
         [Serializable]
         public class TechProtoJson
         {
+            public int ID { get; set; }
+            public string Name { get; set; }
+            public string IconPath { get; set; }
+            public string Desc { get; set; }
+            public string Conclusion { get; set; }
+            public float[] Position { get; set; }
+            public int[] PreTechs { get; set; }
+            public int[] PreTechsImplicit { get; set; }
+            public int[] Items { get; set; }
+            public int[] ItemPoints { get; set; }
+            public long HashNeeded { get; set; }
+            public int[] UnlockRecipes { get; set; }
+            public int[] UnlockFunctions { get; set; }
+            public double[] UnlockValues { get; set; }
+            public bool Published { get; set; }
+            public int Level { get; set; }
+            public int MaxLevel { get; set; }
+            public int LevelCoef1 { get; set; }
+            public int LevelCoef2 { get; set; }
+            public bool IsLabTech { get; set; }
+            public bool PreTechsMax { get; set; }
+            public int[] AddItems { get; set; }
+            public int[] AddItemCounts { get; set; }
+            public int[] PropertyOverrideItems { get; set; }
+            public int[] PropertyItemCounts { get; set; }
+
             public static TechProtoJson FromProto(TechProto i)
                 => new TechProtoJson
                    {
@@ -189,44 +215,17 @@ namespace ProjectGenesis
                        AddItemCounts = i.AddItemCounts,
                        Position = new[] { i.Position.x, i.Position.y },
                        PropertyOverrideItems = i.PropertyOverrideItems,
-                       PropertyItemCounts = i.PropertyItemCounts,
+                       PropertyItemCounts = i.PropertyItemCounts
                    };
-
-            public int ID { get; set; }
-            public string Name { get; set; }
-            public string IconPath { get; set; }
-            public string Desc { get; set; }
-            public string Conclusion { get; set; }
-            public float[] Position { get; set; }
-            public int[] PreTechs { get; set; }
-            public int[] PreTechsImplicit { get; set; }
-            public int[] Items { get; set; }
-            public int[] ItemPoints { get; set; }
-            public long HashNeeded { get; set; }
-            public int[] UnlockRecipes { get; set; }
-            public int[] UnlockFunctions { get; set; }
-            public double[] UnlockValues { get; set; }
-            public bool Published { get; set; }
-            public int Level { get; set; }
-            public int MaxLevel { get; set; }
-            public int LevelCoef1 { get; set; }
-            public int LevelCoef2 { get; set; }
-            public bool IsLabTech { get; set; }
-            public bool PreTechsMax { get; set; }
-            public int[] AddItems { get; set; }
-            public int[] AddItemCounts { get; set; }
-            public int[] PropertyOverrideItems { get; set; }
-            public int[] PropertyItemCounts { get; set; }
         }
     }
 
     [Serializable]
     public class StringProtoJson
     {
-        public static StringProtoJson FromProto(StringProto i) => new StringProtoJson() { Name = i.Name, ZHCN = i.ZHCN, ENUS = i.ENUS };
-
         public string Name { get; set; }
         public string ZHCN { get; set; }
         public string ENUS { get; set; }
+        public static StringProtoJson FromProto(StringProto i) => new StringProtoJson { Name = i.Name, ZHCN = i.ZHCN, ENUS = i.ENUS };
     }
 }

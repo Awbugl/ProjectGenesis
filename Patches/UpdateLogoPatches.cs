@@ -26,9 +26,7 @@ namespace ProjectGenesis.Patches
             var escLogo = GameObject.Find("UI Root/Overlay Canvas/In Game/Esc Menu/logo");
 
             var iconstr = Localization.language == Language.zhCN ? "Assets/texpack/中文图标" : "Assets/texpack/英文图标";
-
             var texture = Resources.Load<Sprite>(iconstr).texture;
-
             mainLogo.GetComponent<RawImage>().texture = texture;
             escLogo.GetComponent<RawImage>().texture = texture;
             mainLogo.GetComponent<RectTransform>().sizeDelta = new Vector2(texture.width, texture.height);

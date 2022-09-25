@@ -15,9 +15,9 @@ using Object = UnityEngine.Object;
 namespace ProjectGenesis.Patches
 {
     /// <summary>
-    /// from https: //github.com/appuns/DSPMoreRecipes/blob/main/DSPMoreRecipes.cs
+    ///     from https: //github.com/appuns/DSPMoreRecipes/blob/main/DSPMoreRecipes.cs
     /// </summary>
-    public static class GridIndexExpandPatches
+    internal static class GridIndexExpandPatches
     {
         private static bool _itemresized, _reciperesized, _signalresized, _resized2;
 
@@ -148,9 +148,8 @@ namespace ProjectGenesis.Patches
         {
             var source = new List<CodeInstruction>(instructions);
             for (var index = 0; index < source.Count; ++index)
-            {
-                if (source[index].opcode == OpCodes.Ldc_I4_S && (sbyte)source[index].operand == 12) source[index].operand = 17;
-            }
+                if (source[index].opcode == OpCodes.Ldc_I4_S && (sbyte)source[index].operand == 12)
+                    source[index].operand = 17;
 
             return source.AsEnumerable();
         }
@@ -164,10 +163,9 @@ namespace ProjectGenesis.Patches
         {
             var source = new List<CodeInstruction>(instructions);
             for (var index = 0; index < source.Count; ++index)
-            {
                 // ReSharper disable once CompareOfFloatsByEqualityOperator
-                if (source[index].opcode == OpCodes.Ldc_R4 && source[index].operand is float operand && operand == 12.0) source[index].operand = 17f;
-            }
+                if (source[index].opcode == OpCodes.Ldc_R4 && source[index].operand is float operand && operand == 12.0)
+                    source[index].operand = 17f;
 
             return source.AsEnumerable();
         }

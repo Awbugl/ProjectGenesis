@@ -1,12 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using HarmonyLib;
 
-// ReSharper disable InconsistentNaming
-
-namespace ProjectGenesis.Patches
+namespace ProjectGenesis
 {
-    internal static class TranslatePatches
+    internal static class TranslateUtils
     {
         private static Dictionary<string, StringProtoJson> _stringProtoJsons;
 
@@ -20,30 +17,13 @@ namespace ProjectGenesis.Patches
             }
         }
 
-        [HarmonyPostfix]
-        [HarmonyPatch(typeof(StringTranslate), "Translate")]
-        public static void StringTranslate_Translate(string s, ref string __result)
-        {
-            if (s == null) return;
-
-            if (StringProtoJsons.TryGetValue(s, out var stringProtoJson))
-                switch (Localization.language)
-                {
-                    case Language.zhCN:
-                        __result = stringProtoJson.ZHCN;
-                        break;
-
-                    case Language.enUS:
-                        __result = stringProtoJson.ENUS;
-                        break;
-                }
-        }
-
         public static string TranslateFromJson(this string s)
         {
             if (s == null) return "";
 
-            if (StringProtoJsons.TryGetValue(s, out var stringProtoJson))
+            if (StringProtoJsons.ContainsKey(s))
+            {
+                var stringProtoJson = StringProtoJsons[s];
                 switch (Localization.language)
                 {
                     case Language.zhCN:
@@ -52,8 +32,27 @@ namespace ProjectGenesis.Patches
                     case Language.enUS:
                         return stringProtoJson.ENUS;
                 }
+            }
 
-            return s;
+            var strings = LDB.strings;
+            if (strings == null) return s;
+
+            var stringProto = strings[s];
+            if (stringProto == null) return s;
+            switch (Localization.language)
+            {
+                case Language.zhCN:
+                    return stringProto.ZHCN;
+
+                case Language.enUS:
+                    return stringProto.ENUS;
+
+                case Language.frFR:
+                    return stringProto.FRFR;
+
+                default:
+                    return s;
+            }
         }
     }
 }

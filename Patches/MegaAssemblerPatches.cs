@@ -26,22 +26,13 @@ namespace ProjectGenesis.Patches
         private static ConcurrentDictionary<int, int> _entityId2planetId = new ConcurrentDictionary<int, int>();
         private static ConcurrentDictionary<int, PlanetFactory> _planetId2planetFactories = new ConcurrentDictionary<int, PlanetFactory>();
 
-        internal static void SyncSlots(int entityId, SlotData[] slotDatas)
-        {
-            _slotdata[entityId] = slotDatas;
-        }
+        internal static void SyncSlots(int entityId, SlotData[] slotDatas) => _slotdata[entityId] = slotDatas;
 
-        internal static void SyncEntityId(int entityId, int planetId)
-        {
-            _entityId2planetId[entityId] = planetId;
-        }
+        internal static void SyncEntityId(int entityId, int planetId) => _entityId2planetId[entityId] = planetId;
 
         private static SlotData[] GetSlots(int entityId)
         {
-            if (!_slotdata.ContainsKey(entityId) || _slotdata[entityId] == null)
-            {
-                _slotdata[entityId] = new SlotData[12];
-            }
+            if (!_slotdata.ContainsKey(entityId) || _slotdata[entityId] == null) _slotdata[entityId] = new SlotData[12];
 
             return _slotdata[entityId];
         }
@@ -778,7 +769,7 @@ namespace ProjectGenesis.Patches
 
                     if (assemblerComponent.speed >= TrashSpeed)
                     {
-                        var slotDatas = GetSlots(__instance.outputEntityId);
+                        SlotData[] slotDatas = GetSlots(__instance.outputEntityId);
                         slotDatas[__instance.outputSlotId].storageIdx = __instance.selectedIndex;
                         SyncSlotsData.Sync(__instance.outputEntityId, slotDatas);
                         if (entityData.stationId > 0) entityData.stationId = 0;

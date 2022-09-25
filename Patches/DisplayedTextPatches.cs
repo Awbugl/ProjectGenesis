@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace ProjectGenesis.Patches
 {
-    public static class DisplayedTextPatches
+    internal static class DisplayedTextPatches
     {
         [HarmonyPostfix]
         [HarmonyPatch(typeof(RecipeProto), "madeFromString", MethodType.Getter)]
@@ -14,16 +14,16 @@ namespace ProjectGenesis.Patches
         {
             var type = (ERecipeType)__instance.Type;
             if (type == ERecipeType.电路蚀刻)
-                __result = "电路蚀刻机".Translate();
+                __result = "电路蚀刻机".TranslateFromJson();
             else if (type == ERecipeType.高精度加工)
-                __result = "高精度装配线".Translate();
+                __result = "高精度装配线".TranslateFromJson();
             else if (type == ERecipeType.矿物处理)
-                __result = "矿物处理厂".Translate();
+                __result = "矿物处理厂".TranslateFromJson();
             else if (type == ERecipeType.精密组装)
-                __result = "精密制造厂".Translate();
+                __result = "精密制造厂".TranslateFromJson();
             else if (type == ERecipeType.聚变生产)
-                __result = "紧凑式回旋加速器".Translate();
-            else if (type == ERecipeType.垃圾回收) __result = "物质分解设施".Translate();
+                __result = "紧凑式回旋加速器".TranslateFromJson();
+            else if (type == ERecipeType.垃圾回收) __result = "物质分解设施".TranslateFromJson();
         }
 
         [HarmonyPostfix]
@@ -31,8 +31,8 @@ namespace ProjectGenesis.Patches
         public static void ItemProto_fuelTypeString(ref ItemProto __instance, ref string __result)
         {
             var type = __instance.FuelType;
-            if (type == 5) __result = "裂变能".Translate();
-            if (type == 6) __result = "聚变能".Translate();
+            if (type == 5) __result = "裂变能".TranslateFromJson();
+            if (type == 6) __result = "聚变能".TranslateFromJson();
         }
 
         //发电类型
@@ -52,9 +52,9 @@ namespace ProjectGenesis.Patches
                 case 4:
                     if (__instance.prefabDesc.isPowerGen)
                     {
-                        if (__instance.prefabDesc.fuelMask == 4) __result = "质能转换";
-                        if (__instance.prefabDesc.fuelMask == 5) __result = "裂变能";
-                        if (__instance.prefabDesc.fuelMask == 6) __result = "仿星器";
+                        if (__instance.prefabDesc.fuelMask == 4) __result = "质能转换".TranslateFromJson();
+                        if (__instance.prefabDesc.fuelMask == 5) __result = "裂变能".TranslateFromJson();
+                        if (__instance.prefabDesc.fuelMask == 6) __result = "仿星器".TranslateFromJson();
                     }
 
                     return;
@@ -68,7 +68,7 @@ namespace ProjectGenesis.Patches
             switch (__instance.ID)
             {
                 case 1502:
-                    __result = "海洋排污文字描述".Translate();
+                    __result = "海洋排污文字描述".TranslateFromJson();
                     break;
 
                 case 1508: // (int)科技.任务完成
@@ -76,11 +76,11 @@ namespace ProjectGenesis.Patches
                     break;
 
                 case 1513:
-                    __result = "化工技术革新文字描述".Translate();
+                    __result = "化工技术革新文字描述".TranslateFromJson();
                     break;
 
                 case 1703:
-                    __result = "海洋排污2文字描述".Translate();
+                    __result = "海洋排污2文字描述".TranslateFromJson();
                     break;
             }
         }

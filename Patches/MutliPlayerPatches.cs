@@ -3,7 +3,7 @@ using NebulaAPI;
 
 namespace ProjectGenesis.Patches
 {
-    public static class MutliPlayerPatches
+    internal static class MutliPlayerPatches
     {
         [HarmonyPostfix]
         [HarmonyPatch(typeof(GameMain), nameof(GameMain.Begin))]

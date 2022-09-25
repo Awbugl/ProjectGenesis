@@ -114,7 +114,7 @@
     "ZHCN": "仿星器",
     "ENUS": "Stellarator"
   },
-  { 
+  {
     "Name": "海洋排污文字描述",
     "ZHCN": "允许将传送带反向连入抽水站, 将不需要的液体排入大海.(抽水站蓄满时才会排放)",
     "ENUS": "Allow allowed to connect the conveyor belt to the pumping station in the opposite direction and discharge the unwanted liquid into the sea. (The liquid will only be discharged when the station is full)"
@@ -128,6 +128,61 @@
     "Name": "化工技术革新文字描述",
     "ZHCN": "化工厂生产速度翻倍.",
     "ENUS": "Doubling production speed in chemical factories."
+  },
+  {
+    "Name": "铁矿",
+    "ZHCN": "铁矿",
+    "ENUS": "Iron ore"
+  },
+  {
+    "Name": "铜矿",
+    "ZHCN": "铜矿",
+    "ENUS": "Copper ore"
+  },
+  {
+    "Name": "硅石",
+    "ZHCN": "硅石",
+    "ENUS": "Silicon ore"
+  },
+  {
+    "Name": "钛石",
+    "ZHCN": "钛石",
+    "ENUS": "Titanium ore"
+  },
+  {
+    "Name": "石矿",
+    "ZHCN": "石矿",
+    "ENUS": "Stone"
+  },
+  {
+    "Name": "煤矿",
+    "ZHCN": "煤矿",
+    "ENUS": "Coal"
+  },
+  {
+    "Name": "可燃冰",
+    "ZHCN": "可燃冰",
+    "ENUS": "Fire ice"
+  },
+  {
+    "Name": "金伯利矿石",
+    "ZHCN": "金伯利矿石",
+    "ENUS": "Kimberlite ore"
+  },
+  {
+    "Name": "分形硅石",
+    "ZHCN": "分形硅石",
+    "ENUS": "Fractal silicon"
+  },
+  {
+    "Name": "光栅石",
+    "ZHCN": "光栅石",
+    "ENUS": "Optical grating crystal"
+  },
+  {
+    "Name": "刺笋结晶",
+    "ZHCN": "刺笋结晶",
+    "ENUS": "Spiniform stalagmite crystal"
   },
   {
     "Name": "钨矿",

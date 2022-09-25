@@ -67,7 +67,7 @@ namespace ProjectGenesis.Patches
                 button.tips.type = UIButton.ItemTipType.IgnoreIncPoint;
                 image.sprite = itemProto?.iconSprite;
                 text.gameObject.SetActive(num > 1);
-                text.text = num > 1 ? ("x" + num) : "";
+                text.text = num > 1 ? "x" + num : "";
 
                 image.GetComponent<RectTransform>().anchoredPosition = new Vector2(-32 * (results - 1) + 64 * (i + 2), 0f);
                 text.GetComponent<RectTransform>().anchoredPosition = new Vector2(-32 * (results - 1) + 64 * (i + 2) - 24, -11f);
@@ -151,7 +151,7 @@ namespace ProjectGenesis.Patches
                                                                                                           .TryAddItemToPackage(assemblerComponent.products[index],
                                                                                                                                assemblerComponent
                                                                                                                                   .produced[index], 0,
-                                                                                                                               throwTrash: false);
+                                                                                                                               false);
                                                                                             assemblerComponent.produced[index] = 0;
 
                                                                                             if (num > 0)
