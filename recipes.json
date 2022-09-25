@@ -659,7 +659,7 @@
   },
   {
     "ID": 25,
-    "Name": "精密组装厂",
+    "Name": "精密制造厂",
     "Description": "",
     "IconPath": "Assets/texpack/红制造台",
     "Type": 10,
@@ -690,7 +690,7 @@
   },
   {
     "ID": 26,
-    "Name": "回旋加速器",
+    "Name": "紧凑式回旋加速器",
     "Description": "",
     "IconPath": "Icons/ItemRecipe/hadron-collider",
     "Type": 10,
@@ -777,7 +777,7 @@
   },
   {
     "ID": 29,
-    "Name": "聚变物质裂解工厂",
+    "Name": "物质裂解塔",
     "Description": "",
     "IconPath": "Assets/texpack/行星熔炉",
     "Type": 10,

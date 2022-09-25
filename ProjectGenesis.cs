@@ -60,8 +60,8 @@ namespace ProjectGenesis
 
             TableID = new int[]
                       {
-                          TabSystem.RegisterTab("org.LoShin.GenesisBook:org.LoShin.GenesisBookTab1", new TabData("精炼", "Assets/texpack/主机科技")),
-                          TabSystem.RegisterTab("org.LoShin.GenesisBook:org.LoShin.GenesisBookTab2", new TabData("化工", "Assets/texpack/化工科技")),
+                          TabSystem.RegisterTab("org.LoShin.GenesisBook:org.LoShin.GenesisBookTab1", new TabData("精炼页面".TranslateFromJson(), "Assets/texpack/主机科技")),
+                          TabSystem.RegisterTab("org.LoShin.GenesisBook:org.LoShin.GenesisBookTab2", new TabData("化工页面".TranslateFromJson(), "Assets/texpack/化工科技")),
                       };
 
 
@@ -73,11 +73,16 @@ namespace ProjectGenesis
             NebulaModAPI.RegisterPackets(Assembly.GetExecutingAssembly());
 
             Harmony = new Harmony(MODGUID);
-            Harmony.PatchAll(typeof(UIPatches));
+            Harmony.PatchAll(typeof(DisplayedTextPatches));
+            Harmony.PatchAll(typeof(FluidColorPatches));
+            Harmony.PatchAll(typeof(GridIndexExpandPatches));
+            Harmony.PatchAll(typeof(MegaAssemblerPatches));
             Harmony.PatchAll(typeof(MultiProductionPatches));
             Harmony.PatchAll(typeof(MutliPlayerPatches));
             Harmony.PatchAll(typeof(OceanDischargePatches));
-            Harmony.PatchAll(typeof(MegaAssemblerPatches));
+            Harmony.PatchAll(typeof(TranslatePatches));
+            Harmony.PatchAll(typeof(UIPatches));
+            Harmony.PatchAll(typeof(UpdateLogoPatches));
         }
 
         public void OnDestroy()
@@ -125,7 +130,9 @@ namespace ProjectGenesis
 
             #region StringProto
 
-            foreach (var stringProto in JsonHelper.StringProtos())
+            StringProtoJson[] stringProtoJsons = JsonHelper.StringProtos();
+            
+            foreach (var stringProto in stringProtoJsons)
             {
                 if (LDB.strings.Exist(stringProto.Name))
                     ProtoRegistry.EditString(stringProto.Name, stringProto.ENUS, stringProto.ZHCN);
@@ -263,29 +270,34 @@ namespace ProjectGenesis
 
         private void PreFix()
         {
-            LDB.strings.Select(2314).name = "剧毒液体海洋";
             LDB.strings.Select(2314).Name = "剧毒液体海洋";
-
+            LDB.strings.Select(2314).name = "剧毒液体海洋".TranslateFromJson();
             LDB.veins.Select(14).Name = "钨矿";
-            LDB.veins.Select(14).name = "钨矿";
-
-            LDB.milestones.Select(9).name = "钨";
+            LDB.veins.Select(14).name = "钨矿".TranslateFromJson();
             LDB.milestones.Select(9).Name = "钨";
-            LDB.milestones.Select(9).defaultDesc = "你采集了钨矿,宇宙珍奇之一.它是一种用途广泛的新材料.";
+            LDB.milestones.Select(9).name = "钨".TranslateFromJson();
             LDB.milestones.Select(9).DefaultDesc = "你采集了钨矿,宇宙珍奇之一.它是一种用途广泛的新材料.";
-
-            LDB.items.Select(物品.聚变发电机).name = "裂变能源发电站";
-            LDB.items.Select(物品.聚变发电机).Name = "裂变能源发电站";
+            LDB.milestones.Select(9).defaultDesc = "你采集了钨矿,宇宙珍奇之一.它是一种用途广泛的新材料.".TranslateFromJson();
 
             LDB.items.OnAfterDeserialize();
         }
 
         private void PostAddDataAction()
         {
+            LDB.strings.OnAfterDeserialize();
             LDB.items.OnAfterDeserialize();
             LDB.recipes.OnAfterDeserialize();
+            LDB.techs.OnAfterDeserialize();
             LDB.models.OnAfterDeserialize();
+            LDB.veins.OnAfterDeserialize();
+
+            ref var locstrs = ref AccessTools.StaticFieldRefAccess<StringProtoSet>(AccessTools.Field(typeof(Localization), "_strings")).Invoke();
+            locstrs = LDB.strings;
+
             GameMain.gpuiManager.Init();
+            LDB.veins.Select(14).Preload();
+            LDB.milestones.Select(9).Preload();
+
 
             //飞行舱拆除
             var @base = LDB.veges.Select(9999);
@@ -539,7 +551,6 @@ namespace ProjectGenesis
         {
             var oriModel = LDB.models.Select(oriId);
             var model = oriModel.Copy();
-            model.name = id.ToString();
             model.Name = id.ToString(); //这俩至少有一个必须加，否则LDBTool报冲突导致后面null
             model.ID = id;
             var desc = oriModel.prefabDesc;

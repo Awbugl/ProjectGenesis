@@ -85,7 +85,8 @@ namespace ProjectGenesis.Patches
                 = new Vector2(-32 * (results - 1) + 64 * 1 - 24, -11f);
 
 
-            ref List<UIButton> treeUpList = ref AccessTools.FieldRefAccess<UIReplicatorWindow, List<UIButton>>(UIRoot.instance.uiGame.replicator, "treeUpList");
+            ref List<UIButton> treeUpList
+                = ref AccessTools.FieldRefAccess<UIReplicatorWindow, List<UIButton>>(UIRoot.instance.uiGame.replicator, "treeUpList");
 
             foreach (var treeUp in treeUpList) treeUp.gameObject.SetActive(false);
         }

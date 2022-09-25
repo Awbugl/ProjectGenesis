@@ -1,5 +1,135 @@
 [
   {
+    "Name": "精炼页面",
+    "ZHCN": "精炼",
+    "ENUS": "Refining"
+  },
+  {
+    "Name": "化工页面",
+    "ZHCN": "化工",
+    "ENUS": "Chemical"
+  },
+  {
+    "Name": "剧毒液体海洋",
+    "ZHCN": "剧毒液体海洋",
+    "ENUS": "Toxic organic liquid ocean"
+  },
+  {
+    "Name": "钨",
+    "ZHCN": "钨",
+    "ENUS": "Tungsten"
+  },
+  {
+    "Name": "你采集了钨矿,宇宙珍奇之一.它是一种用途广泛的新材料.",
+    "ZHCN": "你采集了钨矿,宇宙珍奇之一.它是一种用途广泛的新材料.",
+    "ENUS": "You have harvested tungsten, one of the wonders of the universe. It is a new and versatile material."
+  },
+  {
+    "Name": "铁矿脉",
+    "ZHCN": "铁矿脉",
+    "ENUS": "Iron veins"
+  },
+  {
+    "Name": "铜矿脉",
+    "ZHCN": "铜矿脉",
+    "ENUS": "Copper veins"
+  },
+  {
+    "Name": "硅矿脉",
+    "ZHCN": "硅矿脉",
+    "ENUS": "Silicon veins"
+  },
+  {
+    "Name": "钛矿脉",
+    "ZHCN": "钛矿脉",
+    "ENUS": "Titanium veins"
+  },
+  {
+    "Name": "石矿脉",
+    "ZHCN": "石矿脉",
+    "ENUS": "Stone veins"
+  },
+  {
+    "Name": "煤矿脉",
+    "ZHCN": "煤矿脉",
+    "ENUS": "Coal veins"
+  },
+  {
+    "Name": "原油涌泉",
+    "ZHCN": "原油涌泉",
+    "ENUS": "Crude oil seep"
+  },
+  {
+    "Name": "可燃冰矿",
+    "ZHCN": "可燃冰矿",
+    "ENUS": "Fire ice vein"
+  },
+  {
+    "Name": "金伯利矿",
+    "ZHCN": "金伯利矿",
+    "ENUS": "Kimberlite vein"
+  },
+  {
+    "Name": "分形硅矿",
+    "ZHCN": "分形硅矿",
+    "ENUS": "Fractal silicon vein"
+  },
+  {
+    "Name": "有机晶体矿",
+    "ZHCN": "有机晶体矿",
+    "ENUS": "Organic crystal vein"
+  },
+  {
+    "Name": "光栅石矿",
+    "ZHCN": "光栅石矿",
+    "ENUS": "Optical grating crystal vein"
+  },
+  {
+    "Name": "刺笋矿脉",
+    "ZHCN": "刺笋矿脉",
+    "ENUS": "Spiniform stalagmite crystal vein"
+  },
+  {
+    "Name": "钨矿脉",
+    "ZHCN": "钨矿脉",
+    "ENUS": "Tungsten vein"
+  },
+  {
+    "Name": "裂变能",
+    "ZHCN": "裂变能",
+    "ENUS": "Fission Energy"
+  },
+  {
+    "Name": "聚变能",
+    "ZHCN": "聚变能",
+    "ENUS": "Fusion Energy"
+  },
+  {
+    "Name": "质能转换",
+    "ZHCN": "质能转换",
+    "ENUS": "Mass-Energy Conversion"
+  },
+  {
+    "Name": "仿星器",
+    "ZHCN": "仿星器",
+    "ENUS": "Stellarator"
+  },
+  { 
+    "Name": "海洋排污文字描述",
+    "ZHCN": "允许将传送带反向连入抽水站, 将不需要的液体排入大海.(抽水站蓄满时才会排放)",
+    "ENUS": "Allow allowed to connect the conveyor belt to the pumping station in the opposite direction and discharge the unwanted liquid into the sea. (The liquid will only be discharged when the station is full)"
+  },
+  {
+    "Name": "海洋排污2文字描述",
+    "ZHCN": "允许海洋排污排放所有物品.",
+    "ENUS": "Allow Ocean Outfall discharge of all items."
+  },
+  {
+    "Name": "化工技术革新文字描述",
+    "ZHCN": "化工厂生产速度翻倍.",
+    "ENUS": "Doubling production speed in chemical factories."
+  },
+  {
     "Name": "钨矿",
     "ZHCN": "钨矿",
     "ENUS": "Tungsten ore"
@@ -1355,21 +1485,6 @@
     "ENUS": "This is a field that has never been involved by human beings.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
-    "Name": "精密组装厂",
-    "ZHCN": "精密组装厂",
-    "ENUS": "铜线圈"
-  },
-  {
-    "Name": "回旋加速器",
-    "ZHCN": "回旋加速器",
-    "ENUS": "铜线圈"
-  },
-  {
-    "Name": "聚变物质裂解工厂",
-    "ZHCN": "聚变物质裂解工厂",
-    "ENUS": "铜线圈"
-  },
-  {
     "Name": "硅石筛选",
     "ZHCN": "硅石筛选",
     "ENUS": "Silicon ore screening"
@@ -1735,7 +1850,7 @@
     "ENUS": "Quantum chip (advanced)"
   },
   {
-    "Name": "R量子芯片（高效）", 
+    "Name": "R量子芯片（高效）",
     "ZHCN": "利用主机算力对生产流程大幅优化, 批量生产量子芯片变得简单.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "ENUS": "The production process of quantum chip is greatly optimized by mainframe computing power, making it easy to produce in batch.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },

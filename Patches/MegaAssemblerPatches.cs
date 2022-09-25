@@ -287,6 +287,11 @@ namespace ProjectGenesis.Patches
             int[] productRegister,
             int[] consumeRegister)
         {
+            // 化工技术革新效果
+            if (GameMain.history.TechUnlocked(1513) && __instance.recipeType == (ERecipeType_1)ERecipeType.Chemical && __instance.speed == 20000)
+                __instance.speed = 40000;
+
+            // 巨型建筑效果
             if (power < 0.1f) return;
 
             if (__instance.speed >= TrashSpeed)

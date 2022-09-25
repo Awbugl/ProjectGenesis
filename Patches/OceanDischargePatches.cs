@@ -95,29 +95,5 @@ namespace ProjectGenesis.Patches
                     }
             }
         }
-
-        [HarmonyPostfix]
-        [HarmonyPatch(typeof(TechProto), "UnlockFunctionText")]
-        public static void TechProto_UnlockFunctionText(ref TechProto __instance, ref string __result, StringBuilder sb)
-        {
-            switch (__instance.ID)
-            {
-                case 1502:
-                    __result = "将传送带反向连入抽水站,可以将不需要的液体排入大海.(抽水站蓄满时才会排放)".Translate();
-                    break;
-
-                case 1508: // (int)科技.任务完成
-                    __result = "欢迎加入创世之书讨论群:991895539".Translate();
-                    break;
-
-                case 1513:
-                    __result = "化工厂生产速度翻倍";
-                    break;
-
-                case 1703:
-                    __result = "海洋排污也能排放固体";
-                    break;
-            }
-        }
     }
 }

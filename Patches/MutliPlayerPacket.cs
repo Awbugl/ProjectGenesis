@@ -58,33 +58,33 @@ namespace ProjectGenesis.Patches
             NcModSaveData.OnReceive(packet.Guid, packet.Bytes);
         }
     }
-    
+
     public class SyncSlotsData
     {
         internal string Guid { get; set; }
         internal int EntityId { get; set; }
-        
+
         internal SlotData[] SlotsData { get; set; }
 
         public SyncSlotsData() { }
 
-        public SyncSlotsData(string guid, int entityId,SlotData[] slotsData)
+        public SyncSlotsData(string guid, int entityId, SlotData[] slotsData)
         {
             Guid = guid;
             EntityId = entityId;
             SlotsData = slotsData;
         }
-        
-        internal static void Sync(int entityId,SlotData[] slotsData)
+
+        internal static void Sync(int entityId, SlotData[] slotsData)
         {
-            if (NebulaModAPI.IsMultiplayerActive) 
-                    NebulaModAPI.MultiplayerSession.Network.SendPacket(new SyncSlotsData(ProjectGenesis.MODGUID, entityId,slotsData));
+            if (NebulaModAPI.IsMultiplayerActive)
+                NebulaModAPI.MultiplayerSession.Network.SendPacket(new SyncSlotsData(ProjectGenesis.MODGUID, entityId, slotsData));
         }
 
-        internal static void OnReceive(string guid,int entityId,SlotData[] slotsData)
+        internal static void OnReceive(string guid, int entityId, SlotData[] slotsData)
         {
             if (guid != ProjectGenesis.MODGUID) return;
-            MegaAssemblerPatches.SyncSlots(entityId,slotsData);
+            MegaAssemblerPatches.SyncSlots(entityId, slotsData);
         }
     }
 
@@ -97,36 +97,35 @@ namespace ProjectGenesis.Patches
                 // Broadcast changes to other users
                 NebulaModAPI.MultiplayerSession.Network.SendPacketExclude(packet, conn);
 
-            SyncSlotsData.OnReceive(packet.Guid, packet.EntityId,packet.SlotsData);
+            SyncSlotsData.OnReceive(packet.Guid, packet.EntityId, packet.SlotsData);
         }
     }
-    
+
     public class EntityId2PlanetIdData
     {
         internal string Guid { get; set; }
         internal int EntityId { get; set; }
         internal int PlanetId { get; set; }
-        
 
         public EntityId2PlanetIdData() { }
 
-        public EntityId2PlanetIdData(string guid, int entityId,int planetId)
+        public EntityId2PlanetIdData(string guid, int entityId, int planetId)
         {
             Guid = guid;
             EntityId = entityId;
             PlanetId = planetId;
         }
-        
-        internal static void Sync(int entityId,int planetId)
+
+        internal static void Sync(int entityId, int planetId)
         {
-            if (NebulaModAPI.IsMultiplayerActive) 
-                NebulaModAPI.MultiplayerSession.Network.SendPacket(new EntityId2PlanetIdData(ProjectGenesis.MODGUID, entityId,planetId));
+            if (NebulaModAPI.IsMultiplayerActive)
+                NebulaModAPI.MultiplayerSession.Network.SendPacket(new EntityId2PlanetIdData(ProjectGenesis.MODGUID, entityId, planetId));
         }
 
-        internal static void OnReceive(string guid,int entityId,int planetId)
+        internal static void OnReceive(string guid, int entityId, int planetId)
         {
             if (guid != ProjectGenesis.MODGUID) return;
-            MegaAssemblerPatches.SyncEntityId(entityId,planetId);
+            MegaAssemblerPatches.SyncEntityId(entityId, planetId);
         }
     }
 
@@ -139,7 +138,7 @@ namespace ProjectGenesis.Patches
                 // Broadcast changes to other users
                 NebulaModAPI.MultiplayerSession.Network.SendPacketExclude(packet, conn);
 
-            EntityId2PlanetIdData.OnReceive(packet.Guid, packet.EntityId,packet.PlanetId);
+            EntityId2PlanetIdData.OnReceive(packet.Guid, packet.EntityId, packet.PlanetId);
         }
     }
 }

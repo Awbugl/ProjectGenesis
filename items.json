@@ -512,7 +512,7 @@
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
-    "MiningFrom": null,
+    "MiningFrom": "钨矿脉",
     "ProduceFrom": null,
     "Grade": 0,
     "Upgrades": [],
@@ -3685,7 +3685,7 @@
   },
   {
     "ID": 2211,
-    "Name": "核子能源发电站",
+    "Name": "裂变能源发电站",
     "Description": "I微型聚变发电站",
     "IconPath": "Icons/ItemRecipe/fusion-power-station",
     "GridIndex": 2109,
