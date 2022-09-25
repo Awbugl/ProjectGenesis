@@ -100,6 +100,16 @@
     "ENUS": "Fission Energy"
   },
   {
+    "Name": "裂变能源发电站",
+    "ZHCN": "裂变能源发电站",
+    "ENUS": "Fission Power Station"
+  },
+  {
+    "Name": "制造台",
+    "ZHCN": "制造台",
+    "ENUS": "Assembler"
+  },
+  {
     "Name": "聚变能",
     "ZHCN": "聚变能",
     "ENUS": "Fusion Energy"

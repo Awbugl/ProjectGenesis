@@ -603,7 +603,7 @@
   },
   {
     "ID": 23,
-    "Name": "塑料",
+    "Name": "聚乙烯",
     "Description": "",
     "IconPath": "",
     "Type": 2,
@@ -1215,7 +1215,7 @@
   },
   {
     "ID": 45,
-    "Name": "制造台 Mk.I",
+    "Name": "制造台",
     "Description": "",
     "IconPath": "",
     "Type": 4,
@@ -1244,7 +1244,7 @@
   },
   {
     "ID": 46,
-    "Name": "制造台 Mk.II",
+    "Name": "电路蚀刻机",
     "Description": "",
     "IconPath": "",
     "Type": 4,
@@ -1273,7 +1273,7 @@
   },
   {
     "ID": 47,
-    "Name": "制造台 Mk.III",
+    "Name": "高精度装配线",
     "Description": "",
     "IconPath": "",
     "Type": 4,
@@ -2013,7 +2013,7 @@
   },
   {
     "ID": 73,
-    "Name": "卫星配电站",
+    "Name": "广播式能源塔",
     "Description": "",
     "IconPath": "",
     "Type": 12,
@@ -3090,7 +3090,7 @@
   },
   {
     "ID": 113,
-    "Name": "微型聚变发电站",
+    "Name": "裂变能源发电站",
     "Description": "",
     "IconPath": "",
     "Type": 10,

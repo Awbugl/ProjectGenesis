@@ -2796,7 +2796,7 @@
   {
     "ID": 1143,
     "Name": "增产剂",
-    "Description": "I增产剂 Mk.III",
+    "Description": "I增产剂 Mk.I",
     "IconPath": "Icons/ItemRecipe/accelerator-3",
     "GridIndex": 1611,
     "StackSize": 200,
@@ -3365,7 +3365,7 @@
   },
   {
     "ID": 2303,
-    "Name": "制造台 Mk.I",
+    "Name": "制造台",
     "Description": "I制造台 Mk.I",
     "IconPath": "Icons/ItemRecipe/assembler-1",
     "GridIndex": 2401,
