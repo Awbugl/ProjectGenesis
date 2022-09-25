@@ -1858,7 +1858,7 @@
   },
   {
     "ID": 68,
-    "Name": "大型精密组装厂",
+    "Name": "精密结构组装厂",
     "Description": "",
     "IconPath": "Assets/texpack/行星精密组装厂",
     "Type": 10,
@@ -2733,7 +2733,7 @@
   },
   {
     "ID": 99,
-    "Name": "氘氦三混合聚变燃料棒",
+    "Name": "氘氦混合聚变燃料棒",
     "Description": "",
     "IconPath": "Assets/texpack/氘氦三混合聚变燃料棒",
     "Type": 4,
@@ -3005,7 +3005,7 @@
   },
   {
     "ID": 110,
-    "Name": "反物质能量炉1",
+    "Name": "反物质能量炉",
     "Description": "",
     "IconPath": "Assets/texpack/反物质能量炉",
     "Type": 12,
@@ -5960,7 +5960,7 @@
   },
   {
     "ID": 402,
-    "Name": "铀碎块",
+    "Name": "发光铀碎块",
     "Description": "",
     "IconPath": "Assets/texpack/发光铀碎块",
     "Type": 11,
@@ -5987,7 +5987,7 @@
   },
   {
     "ID": 403,
-    "Name": "钚碎块",
+    "Name": "晶质钚碎块",
     "Description": "",
     "IconPath": "Assets/texpack/晶质钚碎块",
     "Type": 11,

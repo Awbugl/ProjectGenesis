@@ -967,12 +967,12 @@
   {
     "Name": "邻苯二甲酸",
     "ZHCN": "邻苯二甲酸",
-    "ENUS": ""
+    "ENUS": "Phthalate"
   },
   {
     "Name": "I邻苯二甲酸",
     "ZHCN": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Phthalic acid"
+    "ENUS": "A new chemical material.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "氯苯",
@@ -1390,16 +1390,6 @@
     "ENUS": "Using the massive energy of particle gas pedals to create entirely new materials.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
-    "Name": "大型精密组装厂",
-    "ZHCN": "大型精密组装厂",
-    "ENUS": "硅石筛选"
-  },
-  {
-    "Name": "氘氦三混合聚变燃料棒",
-    "ZHCN": "氘氦三混合聚变燃料棒",
-    "ENUS": "硅石筛选"
-  },
-  {
     "Name": "氦元素离心",
     "ZHCN": "氦元素离心",
     "ENUS": "Helium centrifugation"
@@ -1408,11 +1398,6 @@
     "Name": "R氦元素离心",
     "ZHCN": "从光栅石中分离氦.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "ENUS": "Separation of helium from optical grating crystal.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
-    "Name": "反物质能量炉1",
-    "ZHCN": "反物质能量炉1",
-    "ENUS": "增产剂"
   },
   {
     "Name": "石油裂化",
@@ -1716,8 +1701,8 @@
   },
   {
     "Name": "R乙酸甲酯",
-    "ZHCN": "充分燃烧的煤会形成二氧化碳.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "甲醇"
+    "ZHCN": "未充分燃烧的煤会形成一氧化碳.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Under-burned coal can form carbon monoxide.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "高分子化合: 四硝基甲烷",
@@ -1773,16 +1758,6 @@
     "Name": "R放射性矿物处理",
     "ZHCN": "利用氢氧化钠晶体作为催化剂,能够将硅石中含有的放射性物质沉降分离.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "ENUS": "Using sodium hydroxide crystals as a catalyst, the radioactive material contained in the Silicon ore can be separated by precipitation.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
-    "Name": "铀碎块",
-    "ZHCN": "铀碎块",
-    "ENUS": "铀碎块"
-  },
-  {
-    "Name": "钚碎块",
-    "ZHCN": "钚碎块",
-    "ENUS": "铀碎块"
   },
   {
     "Name": "铁矿精炼",
@@ -1863,6 +1838,11 @@
     "Name": "T终极目标:先驱者遗物",
     "ZHCN": "终极目标: 先驱者遗物",
     "ENUS": "Ultimate Goal: Ancient Alien relics"
+  },
+  {
+    "Name": "T终极目标:先驱者遗物描述",
+    "ZHCN": "先驱者文明的遗产.",
+    "ENUS": "Heritage of unknown civilization."
   },
   {
     "Name": "T终极目标:无尽材料学",
@@ -1947,7 +1927,7 @@
   {
     "Name": "T戴森球计划:太阳帆轨道系统",
     "ZHCN": "戴森球计划: 太阳帆轨道系统",
-    "ENUS": ""
+    "ENUS": "Dyson Sphere Program: Solar sail orbital system"
   },
   {
     "Name": "T戴森球计划:戴森球能源传输系统",
