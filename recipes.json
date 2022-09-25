@@ -27,7 +27,7 @@
   {
     "ID": 2,
     "Name": "铜线圈",
-    "Description": "R铜线圈",
+    "Description": "",
     "IconPath": "Assets/texpack/铜线圈",
     "Type": 4,
     "GridIndex": 1313,
@@ -266,7 +266,7 @@
   {
     "ID": 11,
     "Name": "先驱者晶片",
-    "Description": "R先驱者晶片",
+    "Description": "",
     "IconPath": "Assets/texpack/紫色先驱者晶片",
     "Type": 12,
     "GridIndex": 3105,
@@ -660,7 +660,7 @@
   {
     "ID": 25,
     "Name": "精密组装厂",
-    "Description": "R精密组装厂",
+    "Description": "",
     "IconPath": "Assets/texpack/红制造台",
     "Type": 10,
     "GridIndex": 2404,
@@ -691,7 +691,7 @@
   {
     "ID": 26,
     "Name": "回旋加速器",
-    "Description": "R回旋加速器",
+    "Description": "",
     "IconPath": "Icons/ItemRecipe/hadron-collider",
     "Type": 10,
     "GridIndex": 2412,
@@ -778,7 +778,7 @@
   {
     "ID": 29,
     "Name": "聚变物质裂解工厂",
-    "Description": "R聚变物质裂解工厂",
+    "Description": "",
     "IconPath": "Assets/texpack/行星熔炉",
     "Type": 10,
     "GridIndex": 2502,
@@ -1475,7 +1475,7 @@
   {
     "ID": 54,
     "Name": "巨型化学反应釜",
-    "Description": "R巨型化学反应釜",
+    "Description": "",
     "IconPath": "Assets/texpack/行星化工厂",
     "Type": 10,
     "GridIndex": 2503,
@@ -1859,7 +1859,7 @@
   {
     "ID": 68,
     "Name": "大型精密组装厂",
-    "Description": "R大型精密组装厂",
+    "Description": "",
     "IconPath": "Assets/texpack/行星精密组装厂",
     "Type": 10,
     "GridIndex": 2504,
@@ -1892,7 +1892,7 @@
   {
     "ID": 69,
     "Name": "物质分解设施",
-    "Description": "R物质分解设施",
+    "Description": "",
     "IconPath": "Assets/texpack/回收塔",
     "Type": 10,
     "GridIndex": 2505,
@@ -2734,7 +2734,7 @@
   {
     "ID": 99,
     "Name": "氘氦三混合聚变燃料棒",
-    "Description": "R氘氦三混合聚变燃料棒",
+    "Description": "",
     "IconPath": "Assets/texpack/氘氦三混合聚变燃料棒",
     "Type": 4,
     "GridIndex": 1607,
@@ -2763,7 +2763,7 @@
   {
     "ID": 100,
     "Name": "氦三燃料棒",
-    "Description": "R氦三燃料棒",
+    "Description": "",
     "IconPath": "Assets/texpack/氦三燃料棒",
     "Type": 4,
     "GridIndex": 1505,
@@ -2898,7 +2898,7 @@
   {
     "ID": 106,
     "Name": "氦三",
-    "Description": "R氦三",
+    "Description": "",
     "IconPath": "Assets/texpack/氦三",
     "Type": 2,
     "GridIndex": 4408,
@@ -3006,7 +3006,7 @@
   {
     "ID": 110,
     "Name": "反物质能量炉1",
-    "Description": "R反物质能量炉1",
+    "Description": "",
     "IconPath": "Assets/texpack/反物质能量炉",
     "Type": 12,
     "GridIndex": 2112,
@@ -3153,7 +3153,7 @@
   {
     "ID": 115,
     "Name": "氦闪约束器",
-    "Description": "R氦闪约束器",
+    "Description": "",
     "IconPath": "Assets/texpack/氦闪抑制器",
     "Type": 10,
     "GridIndex": 1604,
@@ -3329,7 +3329,7 @@
   {
     "ID": 121,
     "Name": "反物质约束单元",
-    "Description": "R反物质约束单元",
+    "Description": "",
     "IconPath": "Assets/texpack/反物质约束单元",
     "Type": 10,
     "GridIndex": 3101,
@@ -3501,7 +3501,7 @@
   {
     "ID": 705,
     "Name": "盐水",
-    "Description": "R盐水",
+    "Description": "",
     "IconPath": "Assets/texpack/盐水",
     "Type": 2,
     "GridIndex": 4106,
@@ -3588,7 +3588,7 @@
   {
     "ID": 708,
     "Name": "二硝基氯苯",
-    "Description": "R二硝基氯苯",
+    "Description": "",
     "IconPath": "Assets/texpack/二硝基氯苯",
     "Type": 2,
     "GridIndex": 4108,
@@ -3615,7 +3615,7 @@
   {
     "ID": 709,
     "Name": "二氯联苯胺",
-    "Description": "R二氯联苯胺",
+    "Description": "",
     "IconPath": "Assets/texpack/二氯联苯胺",
     "Type": 2,
     "GridIndex": 4107,
@@ -3785,7 +3785,7 @@
   {
     "ID": 715,
     "Name": "间苯二甲酸二苯酯",
-    "Description": "R间苯二甲酸二苯酯",
+    "Description": "",
     "IconPath": "Assets/texpack/间苯二甲酸二苯酯",
     "Type": 2,
     "GridIndex": 4111,
@@ -3843,7 +3843,7 @@
   {
     "ID": 791,
     "Name": "生物微晶元件",
-    "Description": "R生物微晶元件",
+    "Description": "",
     "IconPath": "Assets/texpack/生物微晶元件",
     "Type": 10,
     "GridIndex": 1415,
@@ -3872,7 +3872,7 @@
   {
     "ID": 792,
     "Name": "先进生物电路",
-    "Description": "R先进生物电路",
+    "Description": "",
     "IconPath": "Assets/texpack/先进生物电路",
     "Type": 10,
     "GridIndex": 1515,
@@ -3901,7 +3901,7 @@
   {
     "ID": 793,
     "Name": "超生物计算集群",
-    "Description": "R超生物计算集群",
+    "Description": "",
     "IconPath": "Assets/texpack/超生物计算集群",
     "Type": 10,
     "GridIndex": 1615,
@@ -3930,7 +3930,7 @@
   {
     "ID": 794,
     "Name": "生物神经纤维",
-    "Description": "R生物神经纤维",
+    "Description": "",
     "IconPath": "Assets/texpack/生物神经纤维",
     "Type": 10,
     "GridIndex": 1713,
@@ -3959,7 +3959,7 @@
   {
     "ID": 795,
     "Name": "超级纳米电脑",
-    "Description": "R超级纳米电脑",
+    "Description": "",
     "IconPath": "Assets/texpack/超级纳米电脑",
     "Type": 10,
     "GridIndex": 1714,
@@ -3988,7 +3988,7 @@
   {
     "ID": 569,
     "Name": "湿件主机",
-    "Description": "R湿件主机",
+    "Description": "",
     "IconPath": "Assets/texpack/湿件主机",
     "Type": 10,
     "GridIndex": 1715,
@@ -4017,7 +4017,7 @@
   {
     "ID": 751,
     "Name": "塑料基板",
-    "Description": "R塑料基板",
+    "Description": "",
     "IconPath": "Assets/texpack/塑料基板",
     "Type": 9,
     "GridIndex": 1216,
@@ -4044,7 +4044,7 @@
   {
     "ID": 752,
     "Name": "覆层塑料基板",
-    "Description": "R覆层塑料基板",
+    "Description": "",
     "IconPath": "Assets/texpack/覆层塑料基板",
     "Type": 9,
     "GridIndex": 1316,
@@ -4073,7 +4073,7 @@
   {
     "ID": 753,
     "Name": "钛蚀刻覆层塑料基板",
-    "Description": "R钛蚀刻覆层塑料基板",
+    "Description": "",
     "IconPath": "Assets/texpack/钛蚀刻覆层塑料基板",
     "Type": 9,
     "GridIndex": 1416,
@@ -4102,7 +4102,7 @@
   {
     "ID": 754,
     "Name": "生物基板",
-    "Description": "R生物基板",
+    "Description": "",
     "IconPath": "Assets/texpack/生物基板",
     "Type": 9,
     "GridIndex": 1516,
@@ -4129,7 +4129,7 @@
   {
     "ID": 755,
     "Name": "覆层生物基板",
-    "Description": "R覆层生物基板",
+    "Description": "",
     "IconPath": "Assets/texpack/覆层生物基板",
     "Type": 9,
     "GridIndex": 1616,
@@ -4158,7 +4158,7 @@
   {
     "ID": 756,
     "Name": "钨蚀刻覆层生物基板",
-    "Description": "R钨蚀刻覆层生物基板",
+    "Description": "",
     "IconPath": "Assets/texpack/钨蚀刻覆层生物基板",
     "Type": 9,
     "GridIndex": 1716,
@@ -4187,7 +4187,7 @@
   {
     "ID": 761,
     "Name": "超低功率IC晶片",
-    "Description": "R超低功率IC晶片",
+    "Description": "",
     "IconPath": "Assets/texpack/超低功率IC晶片",
     "Type": 4,
     "GridIndex": 1217,
@@ -4212,7 +4212,7 @@
   {
     "ID": 762,
     "Name": "低功率IC晶片",
-    "Description": "R低功率IC晶片",
+    "Description": "",
     "IconPath": "Assets/texpack/低功率IC晶片",
     "Type": 4,
     "GridIndex": 1317,
@@ -4237,7 +4237,7 @@
   {
     "ID": 763,
     "Name": "标准功率IC晶片",
-    "Description": "R标准功率IC晶片",
+    "Description": "",
     "IconPath": "Assets/texpack/标准功率IC晶片",
     "Type": 10,
     "GridIndex": 1417,
@@ -4262,7 +4262,7 @@
   {
     "ID": 764,
     "Name": "高功率IC晶片",
-    "Description": "R高功率IC晶片",
+    "Description": "",
     "IconPath": "Assets/texpack/高功率IC晶片",
     "Type": 10,
     "GridIndex": 1517,
@@ -4287,7 +4287,7 @@
   {
     "ID": 765,
     "Name": "超高功率IC晶片",
-    "Description": "R超高功率IC晶片",
+    "Description": "",
     "IconPath": "Assets/texpack/超高功率IC晶片",
     "Type": 10,
     "GridIndex": 1617,
@@ -4312,7 +4312,7 @@
   {
     "ID": 766,
     "Name": "生物IC晶片",
-    "Description": "R生物IC晶片",
+    "Description": "",
     "IconPath": "Assets/texpack/生物IC晶片",
     "Type": 10,
     "GridIndex": 1717,
@@ -4424,7 +4424,7 @@
   {
     "ID": 774,
     "Name": "钨块",
-    "Description": "R钨块",
+    "Description": "",
     "IconPath": "Assets/texpack/钨块",
     "Type": 1,
     "GridIndex": 1105,
@@ -4449,7 +4449,7 @@
   {
     "ID": 775,
     "Name": "钨强化玻璃",
-    "Description": "R钨强化玻璃",
+    "Description": "",
     "IconPath": "Assets/texpack/钨强化玻璃",
     "Type": 4,
     "GridIndex": 1308,
@@ -4476,7 +4476,7 @@
   {
     "ID": 776,
     "Name": "钨复合金属",
-    "Description": "R钨复合金属",
+    "Description": "",
     "IconPath": "Assets/texpack/钨复合金属",
     "Type": 1,
     "GridIndex": 1203,
@@ -4505,7 +4505,7 @@
   {
     "ID": 777,
     "Name": "硅晶圆",
-    "Description": "R硅晶圆",
+    "Description": "",
     "IconPath": "Assets/texpack/硅晶圆",
     "Type": 1,
     "GridIndex": 1501,
@@ -4530,7 +4530,7 @@
   {
     "ID": 778,
     "Name": "钛掺杂的硅晶圆",
-    "Description": "R钛掺杂的硅晶圆",
+    "Description": "",
     "IconPath": "Assets/texpack/钛掺杂的硅晶圆",
     "Type": 1,
     "GridIndex": 1502,
@@ -4557,7 +4557,7 @@
   {
     "ID": 779,
     "Name": "钨掺杂的硅晶圆",
-    "Description": "R钨掺杂的硅晶圆",
+    "Description": "",
     "IconPath": "Assets/texpack/钨掺杂的硅晶圆",
     "Type": 1,
     "GridIndex": 1503,
@@ -4584,7 +4584,7 @@
   {
     "ID": 780,
     "Name": "活性生物纤维",
-    "Description": "R活性生物纤维",
+    "Description": "",
     "IconPath": "Assets/texpack/活性生物纤维",
     "Type": 2,
     "GridIndex": 1112,
@@ -4609,7 +4609,7 @@
   {
     "ID": 821,
     "Name": "钛齿轮",
-    "Description": "R钛齿轮",
+    "Description": "",
     "IconPath": "Assets/texpack/钛齿轮",
     "Type": 4,
     "GridIndex": 1302,
@@ -4634,7 +4634,7 @@
   {
     "ID": 822,
     "Name": "钨齿轮",
-    "Description": "R钨齿轮",
+    "Description": "",
     "IconPath": "Assets/texpack/钨齿轮",
     "Type": 4,
     "GridIndex": 1303,
@@ -4684,7 +4684,7 @@
   {
     "ID": 624,
     "Name": "石墨线圈",
-    "Description": "R石墨线圈",
+    "Description": "",
     "IconPath": "Assets/texpack/石墨线圈",
     "Type": 4,
     "GridIndex": 1314,
@@ -4709,7 +4709,7 @@
   {
     "ID": 625,
     "Name": "钛线圈",
-    "Description": "R钛线圈",
+    "Description": "",
     "IconPath": "Assets/texpack/钛线圈",
     "Type": 4,
     "GridIndex": 1315,
@@ -4734,7 +4734,7 @@
   {
     "ID": 641,
     "Name": "基础机械组件",
-    "Description": "R基础机械组件",
+    "Description": "",
     "IconPath": "Assets/texpack/基础机械组件",
     "Type": 4,
     "GridIndex": 1401,
@@ -4763,7 +4763,7 @@
   {
     "ID": 642,
     "Name": "先进机械组件",
-    "Description": "R先进机械组件",
+    "Description": "",
     "IconPath": "Assets/texpack/先进机械组件",
     "Type": 4,
     "GridIndex": 1402,
@@ -4792,7 +4792,7 @@
   {
     "ID": 643,
     "Name": "尖端机械组件",
-    "Description": "R尖端机械组件",
+    "Description": "",
     "IconPath": "Assets/texpack/尖端机械组件",
     "Type": 10,
     "GridIndex": 1403,
@@ -4821,7 +4821,7 @@
   {
     "ID": 644,
     "Name": "空燃料棒",
-    "Description": "R空燃料棒",
+    "Description": "",
     "IconPath": "Assets/texpack/空燃料棒",
     "Type": 4,
     "GridIndex": 1605,
@@ -4848,7 +4848,7 @@
   {
     "ID": 681,
     "Name": "氢燃料",
-    "Description": "R氢燃料",
+    "Description": "",
     "IconPath": "Assets/texpack/氢燃料",
     "Type": 2,
     "GridIndex": 4401,
@@ -4873,7 +4873,7 @@
   {
     "ID": 682,
     "Name": "氘核燃料",
-    "Description": "R氘核燃料",
+    "Description": "",
     "IconPath": "Assets/texpack/氘核燃料",
     "Type": 2,
     "GridIndex": 4402,
@@ -4898,7 +4898,7 @@
   {
     "ID": 683,
     "Name": "反物质燃料",
-    "Description": "R反物质燃料",
+    "Description": "",
     "IconPath": "Assets/texpack/反物质燃料",
     "Type": 2,
     "GridIndex": 4403,
@@ -5309,7 +5309,7 @@
   {
     "ID": 507,
     "Name": "甲醇",
-    "Description": "R甲醇",
+    "Description": "",
     "IconPath": "Assets/texpack/甲醇",
     "Type": 2,
     "GridIndex": 4206,
@@ -5336,7 +5336,7 @@
   {
     "ID": 508,
     "Name": "乙酸",
-    "Description": "R乙酸",
+    "Description": "",
     "IconPath": "Assets/texpack/乙酸",
     "Type": 2,
     "GridIndex": 4207,
@@ -5392,7 +5392,7 @@
   {
     "ID": 510,
     "Name": "次氯酸",
-    "Description": "R次氯酸",
+    "Description": "",
     "IconPath": "Assets/texpack/次氯酸",
     "Type": 2,
     "GridIndex": 4209,
@@ -5450,7 +5450,7 @@
   {
     "ID": 512,
     "Name": "硝基柴油",
-    "Description": "R硝基柴油",
+    "Description": "",
     "IconPath": "Assets/texpack/硝基柴油",
     "Type": 2,
     "GridIndex": 4404,
@@ -5477,7 +5477,7 @@
   {
     "ID": 513,
     "Name": "偏二甲肼",
-    "Description": "R偏二甲肼",
+    "Description": "",
     "IconPath": "Assets/texpack/偏二甲肼",
     "Type": 2,
     "GridIndex": 4405,
@@ -5508,7 +5508,7 @@
   {
     "ID": 514,
     "Name": "火箭燃料",
-    "Description": "R火箭燃料",
+    "Description": "",
     "IconPath": "Assets/texpack/火箭燃料",
     "Type": 2,
     "GridIndex": 4406,
@@ -5535,7 +5535,7 @@
   {
     "ID": 515,
     "Name": "硝基柴油燃料棒",
-    "Description": "R硝基柴油燃料棒",
+    "Description": "",
     "IconPath": "Assets/texpack/硝基柴油燃料棒",
     "Type": 4,
     "GridIndex": 1406,
@@ -5562,7 +5562,7 @@
   {
     "ID": 516,
     "Name": "偏二甲肼燃料棒",
-    "Description": "R偏二甲肼燃料棒",
+    "Description": "",
     "IconPath": "Assets/texpack/偏二甲肼燃料棒",
     "Type": 4,
     "GridIndex": 1506,
@@ -5589,7 +5589,7 @@
   {
     "ID": 517,
     "Name": "火箭燃料棒",
-    "Description": "R火箭燃料棒",
+    "Description": "",
     "IconPath": "Assets/texpack/火箭燃料棒",
     "Type": 4,
     "GridIndex": 1606,
@@ -5724,7 +5724,7 @@
   {
     "ID": 522,
     "Name": "量子储液罐",
-    "Description": "R量子储液罐",
+    "Description": "",
     "IconPath": "Assets/texpack/量子储液罐",
     "Type": 4,
     "GridIndex": 2208,
@@ -5753,7 +5753,7 @@
   {
     "ID": 523,
     "Name": "矿物处理厂",
-    "Description": "R矿物处理厂",
+    "Description": "",
     "IconPath": "Assets/texpack/矿物处理厂",
     "Type": 4,
     "GridIndex": 2407,
@@ -5784,7 +5784,7 @@
   {
     "ID": 531,
     "Name": "铁矿粉",
-    "Description": "R铁矿粉",
+    "Description": "",
     "IconPath": "Assets/texpack/铁矿粉",
     "Type": 11,
     "GridIndex": 3401,
@@ -5809,7 +5809,7 @@
   {
     "ID": 532,
     "Name": "铜矿粉",
-    "Description": "R铜矿粉",
+    "Description": "",
     "IconPath": "Assets/texpack/铜矿粉",
     "Type": 11,
     "GridIndex": 3402,
@@ -5834,7 +5834,7 @@
   {
     "ID": 533,
     "Name": "硅矿粉",
-    "Description": "R硅矿粉",
+    "Description": "",
     "IconPath": "Assets/texpack/硅矿粉",
     "Type": 11,
     "GridIndex": 3403,
@@ -5859,7 +5859,7 @@
   {
     "ID": 534,
     "Name": "钛矿粉",
-    "Description": "R钛矿粉",
+    "Description": "",
     "IconPath": "Assets/texpack/钛矿粉",
     "Type": 11,
     "GridIndex": 3404,
@@ -5884,7 +5884,7 @@
   {
     "ID": 535,
     "Name": "石粉",
-    "Description": "R石粉",
+    "Description": "",
     "IconPath": "Assets/texpack/石粉",
     "Type": 11,
     "GridIndex": 3405,
@@ -5909,7 +5909,7 @@
   {
     "ID": 536,
     "Name": "煤矿粉",
-    "Description": "R煤矿粉",
+    "Description": "",
     "IconPath": "Assets/texpack/煤矿粉",
     "Type": 11,
     "GridIndex": 3406,
@@ -5961,7 +5961,7 @@
   {
     "ID": 402,
     "Name": "铀碎块",
-    "Description": "R铀碎块",
+    "Description": "",
     "IconPath": "Assets/texpack/发光铀碎块",
     "Type": 11,
     "GridIndex": 3302,
@@ -5988,7 +5988,7 @@
   {
     "ID": 403,
     "Name": "钚碎块",
-    "Description": "R钚碎块",
+    "Description": "",
     "IconPath": "Assets/texpack/晶质钚碎块",
     "Type": 11,
     "GridIndex": 3303,
@@ -6015,7 +6015,7 @@
   {
     "ID": 404,
     "Name": "铀矿",
-    "Description": "R铀矿",
+    "Description": "",
     "IconPath": "Assets/texpack/铀矿",
     "Type": 11,
     "GridIndex": 3304,
@@ -6042,7 +6042,7 @@
   {
     "ID": 405,
     "Name": "钚矿",
-    "Description": "R钚矿",
+    "Description": "",
     "IconPath": "Assets/texpack/钚矿",
     "Type": 11,
     "GridIndex": 3305,
@@ -6069,7 +6069,7 @@
   {
     "ID": 406,
     "Name": "高纯铀块",
-    "Description": "R高纯铀块",
+    "Description": "",
     "IconPath": "Assets/texpack/高纯铀块",
     "Type": 11,
     "GridIndex": 3306,
@@ -6094,7 +6094,7 @@
   {
     "ID": 407,
     "Name": "高纯钚块",
-    "Description": "R高纯钚块",
+    "Description": "",
     "IconPath": "Assets/texpack/高纯钚块",
     "Type": 11,
     "GridIndex": 3307,
@@ -6119,7 +6119,7 @@
   {
     "ID": 408,
     "Name": "铀燃料棒",
-    "Description": "R铀燃料棒",
+    "Description": "",
     "IconPath": "Assets/texpack/铀235燃料棒",
     "Type": 4,
     "GridIndex": 1507,
@@ -6146,7 +6146,7 @@
   {
     "ID": 409,
     "Name": "钚燃料棒",
-    "Description": "R钚燃料棒",
+    "Description": "",
     "IconPath": "Assets/texpack/钚燃料棒",
     "Type": 4,
     "GridIndex": 1407,
@@ -6273,7 +6273,7 @@
   {
     "ID": 415,
     "Name": "混凝土",
-    "Description": "R混凝土",
+    "Description": "",
     "IconPath": "Assets/texpack/混凝土",
     "Type": 4,
     "GridIndex": 1612,
@@ -6412,7 +6412,7 @@
   {
     "ID": 539,
     "Name": "稳定矩阵",
-    "Description": "R稳定矩阵",
+    "Description": "",
     "IconPath": "Assets/texpack/稳定矩阵",
     "Type": 4,
     "GridIndex": 1707,
@@ -6439,7 +6439,7 @@
   {
     "ID": 540,
     "Name": "虚空矩阵",
-    "Description": "R虚空矩阵",
+    "Description": "",
     "IconPath": "Assets/texpack/虚空矩阵",
     "Type": 4,
     "GridIndex": 1708,
@@ -6466,7 +6466,7 @@
   {
     "ID": 544,
     "Name": "宇宙矩阵粗坯",
-    "Description": "R宇宙矩阵粗坯",
+    "Description": "",
     "IconPath": "Assets/texpack/生宇宙矩阵",
     "Type": 4,
     "GridIndex": 1709,
