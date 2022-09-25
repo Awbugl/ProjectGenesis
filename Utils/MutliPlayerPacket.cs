@@ -1,6 +1,7 @@
 ﻿using NebulaAPI;
+using ProjectGenesis.Patches;
 
-namespace ProjectGenesis.Patches
+namespace ProjectGenesis.Utils
 {
     public class NcModSaveRequest
     {

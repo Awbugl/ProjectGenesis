@@ -10,6 +10,7 @@ using crecheng.DSPModSave;
 using HarmonyLib;
 using NebulaAPI;
 using ProjectGenesis.Patches;
+using ProjectGenesis.Utils;
 using xiaoye97;
 using ERecipeType_1 = ERecipeType;
 using static ProjectGenesis.Utils.PrefabFixUtils;

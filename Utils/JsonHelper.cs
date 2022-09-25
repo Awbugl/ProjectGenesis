@@ -11,7 +11,7 @@ using Newtonsoft.Json;
 // ReSharper disable AssignNullToNotNullAttribute
 // ReSharper disable MemberCanBePrivate.Global
 
-namespace ProjectGenesis
+namespace ProjectGenesis.Utils
 {
     internal static class JsonHelper
     {

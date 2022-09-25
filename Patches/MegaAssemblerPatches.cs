@@ -6,6 +6,7 @@ using System.Linq;
 using System.Reflection;
 using System.Reflection.Emit;
 using HarmonyLib;
+using ProjectGenesis.Utils;
 using UnityEngine;
 using UnityEngine.UI;
 using ERecipeType_1 = ERecipeType;
@@ -279,7 +280,7 @@ namespace ProjectGenesis.Patches
             int[] consumeRegister)
         {
             // 化工技术革新效果
-            if (GameMain.history.TechUnlocked(1513) && __instance.recipeType == (ERecipeType_1)ERecipeType.Chemical && __instance.speed == 20000)
+            if (GameMain.history.TechUnlocked(1513) && __instance.recipeType == (ERecipeType_1)Utils.ERecipeType.Chemical && __instance.speed == 20000)
                 __instance.speed = 40000;
 
             // 巨型建筑效果

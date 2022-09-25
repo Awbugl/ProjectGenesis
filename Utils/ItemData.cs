@@ -1,4 +1,4 @@
-﻿namespace ProjectGenesis
+﻿namespace ProjectGenesis.Utils
 {
     internal static class 物品
     {

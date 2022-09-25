@@ -21,7 +21,7 @@ namespace ProjectGenesis.Patches
         {
             if (GameMain.history.TechUnlocked(1814) &&
                 __instance.Type == EItemType.Production &&
-                __instance.prefabDesc.assemblerRecipeType == (ERecipeType_1)ERecipeType.Chemical &&
+                __instance.prefabDesc.assemblerRecipeType == (ERecipeType_1)Utils.ERecipeType.Chemical &&
                 index == 22)
                 __result = "4x";
         }

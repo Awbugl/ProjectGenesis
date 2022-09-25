@@ -1,4 +1,4 @@
-namespace ProjectGenesis
+namespace ProjectGenesis.Utils
 {
     internal enum ERecipeType
     {
