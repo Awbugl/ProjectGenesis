@@ -148,10 +148,13 @@ namespace ProjectGenesis.Patches
             PlanetFactory factory,
             bool copyInserters)
         {
-            if (objectId > 0 && factory.entityPool[objectId].id == objectId && __instance.type == BuildingType.Assembler)
+            if (objectId > 0 &&
+                factory.entityPool.Length > objectId &&
+                factory.entityPool[objectId].id == objectId &&
+                __instance.type == BuildingType.Assembler)
             {
                 var assemblerId = factory.entityPool[objectId].assemblerId;
-                if (assemblerId > 0)
+                if (assemblerId > 0 && factory.factorySystem.assemblerPool.Length > assemblerId)
                 {
                     var assembler = factory.factorySystem.assemblerPool[assemblerId];
                     if (assembler.id == assemblerId && assembler.speed >= TrashSpeed)
@@ -280,7 +283,9 @@ namespace ProjectGenesis.Patches
             int[] consumeRegister)
         {
             // 化工技术革新效果
-            if (GameMain.history.TechUnlocked(1513) && __instance.recipeType == (ERecipeType_1)Utils.ERecipeType.Chemical && __instance.speed == 20000)
+            if (GameMain.history.TechUnlocked(1513) &&
+                __instance.recipeType == (ERecipeType_1)Utils.ERecipeType.Chemical &&
+                __instance.speed == 20000)
                 __instance.speed = 40000;
 
             // 巨型建筑效果
