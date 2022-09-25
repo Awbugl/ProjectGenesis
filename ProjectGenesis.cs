@@ -76,7 +76,6 @@ namespace ProjectGenesis
             Harmony.PatchAll(typeof(UIPatches));
             Harmony.PatchAll(typeof(MultiProductionPatches));
             Harmony.PatchAll(typeof(MutliPlayerPatches));
-            Harmony.PatchAll(typeof(PlanetGasPatches));
             Harmony.PatchAll(typeof(OceanDischargePatches));
             Harmony.PatchAll(typeof(MegaAssemblerPatches));
         }
