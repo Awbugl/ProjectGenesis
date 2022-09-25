@@ -1355,18 +1355,8 @@
     "ENUS": "This is a field that has never been involved by human beings.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
-    "Name": "铜线圈",
-    "ZHCN": "铜线圈",
-    "ENUS": "铜线圈"
-  },
-  {
     "Name": "R铜线圈",
     "ZHCN": "一种新的制造材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "铜线圈"
-  },
-  {
-    "Name": "先驱者晶片",
-    "ZHCN": "先驱者晶片",
     "ENUS": "铜线圈"
   },
   {
@@ -1415,11 +1405,6 @@
     "ENUS": "The silica with higher silica content is selected by using different chemical properties.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
-    "Name": "巨型化学反应釜",
-    "ZHCN": "巨型化学反应釜",
-    "ENUS": "硅石筛选"
-  },
-  {
     "Name": "R巨型化学反应釜",
     "ZHCN": "从原矿中分离的纯净粉可以实现效率更高的生产.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "ENUS": "硅石筛选"
@@ -1445,11 +1430,6 @@
     "ENUS": "硅石筛选"
   },
   {
-    "Name": "物质分解设施",
-    "ZHCN": "物质分解设施",
-    "ENUS": "硅石筛选"
-  },
-  {
     "Name": "R物质分解设施",
     "ZHCN": "从原矿中分离的纯净粉可以实现效率更高的生产.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "ENUS": "硅石筛选"
@@ -1465,18 +1445,8 @@
     "ENUS": "硅石筛选"
   },
   {
-    "Name": "氦三燃料棒",
-    "ZHCN": "氦三燃料棒",
-    "ENUS": "硅石筛选"
-  },
-  {
     "Name": "R氦三燃料棒",
     "ZHCN": "从光栅石中分离氦.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "硅石筛选"
-  },
-  {
-    "Name": "氦三",
-    "ZHCN": "氦三",
     "ENUS": "硅石筛选"
   },
   {
@@ -1495,11 +1465,6 @@
     "ENUS": "Separation of helium from optical grating crystal.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
-    "Name": "增产剂",
-    "ZHCN": "增产剂",
-    "ENUS": "增产剂"
-  },
-  {
     "Name": "反物质能量炉1",
     "ZHCN": "反物质能量炉1",
     "ENUS": "增产剂"
@@ -1510,23 +1475,8 @@
     "ENUS": "增产剂"
   },
   {
-    "Name": "氦闪约束器",
-    "ZHCN": "氦闪约束器",
-    "ENUS": "增产剂"
-  },
-  {
     "Name": "R氦闪约束器",
     "ZHCN": "从原矿中分离的纯净粉可以实现效率更高的生产.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "增产剂"
-  },
-  {
-    "Name": "流速监测器",
-    "ZHCN": "流速监测器",
-    "ENUS": "增产剂"
-  },
-  {
-    "Name": "反物质约束单元",
-    "ZHCN": "反物质约束单元",
     "ENUS": "增产剂"
   },
   {
@@ -1555,12 +1505,12 @@
     "ENUS": "This is a new chemical formula, you can use this formula to produce oxygen.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
-    "Name": "氢氧化钠",
+    "Name": "盐水分解",
     "ZHCN": "盐水分解",
     "ENUS": "Salt water decomposition"
   },
   {
-    "Name": "R氢氧化钠",
+    "Name": "R盐水分解",
     "ZHCN": "从盐水中提取氢氧化钠,留下氢氯酸.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "ENUS": "Extraction of sodium hydroxide from salt water, leaving hydrochloric acid.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
@@ -1575,19 +1525,14 @@
     "ENUS": "Precipitation of different metal cations from minerals using differential velocity method.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
-    "Name": "环氧氯丙烷",
+    "Name": "高分子化合: 环氧氯丙烷",
     "ZHCN": "高分子化合: 环氧氯丙烷",
     "ENUS": "Polymer compounding: Epichlorohydrin"
   },
   {
-    "Name": "R环氧氯丙烷",
+    "Name": "R高分子化合: 环氧氯丙烷",
     "ZHCN": "使用甘油和氢氯酸合成环氧氯丙烷分子团.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "ENUS": "Synthesis of epichlorohydrin molecular groups using glycerol and hydrochloric acid.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
-    "Name": "盐水",
-    "ZHCN": "盐水",
-    "ENUS": "盐离子"
   },
   {
     "Name": "R盐水",
@@ -1595,38 +1540,28 @@
     "ENUS": "盐离子"
   },
   {
-    "Name": "双酚A",
+    "Name": "高分子化合: 双酚A",
     "ZHCN": "高分子化合: 双酚A",
     "ENUS": "Polymer compounding: Bisphenol A"
   },
   {
-    "Name": "R双酚A",
+    "Name": "R高分子化合: 双酚A",
     "ZHCN": "使用氢氯酸, 苯酚和丙酮合成双酚A分子团.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "ENUS": "Synthesis of bisphenol A molecular groups using hydrochloric acid, phenol and acetone.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
-    "Name": "硝酸",
+    "Name": "硝酸化合",
     "ZHCN": "硝酸化合",
     "ENUS": "Nitric acid chemistry"
   },
   {
-    "Name": "R硝酸",
+    "Name": "R硝酸化合",
     "ZHCN": "硝酸钠和硫酸反应, 产生硫酸钠和硝酸.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "ENUS": "Sodium nitrate and sulfuric acid react to produce sodium sulfate and nitric acid.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
-    "Name": "二硝基氯苯",
-    "ZHCN": "二硝基氯苯",
-    "ENUS": "硝酸化合"
-  },
-  {
     "Name": "R二硝基氯苯",
     "ZHCN": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "硝酸化合"
-  },
-  {
-    "Name": "二氯联苯胺",
-    "ZHCN": "二氯联苯胺",
     "ENUS": "硝酸化合"
   },
   {
@@ -1635,22 +1570,22 @@
     "ENUS": "硝酸化合"
   },
   {
-    "Name": "氨",
+    "Name": "氨提取",
     "ZHCN": "氨提取",
     "ENUS": "Ammonia extraction"
   },
   {
-    "Name": "R氨",
+    "Name": "R氨提取",
     "ZHCN": "利用硝酸钠和水发生化学反应提取氨.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "ENUS": "Extraction of ammonia by chemical reaction between sodium nitrate and water.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
-    "Name": "二氨基联苯胺",
+    "Name": "高分子化合: 二氨基联苯胺",
     "ZHCN": "高分子化合: 二氨基联苯胺",
     "ENUS": "Polymer compound: Diaminobenzidine"
   },
   {
-    "Name": "R二氨基联苯胺",
+    "Name": "R高分子化合: 二氨基联苯胺",
     "ZHCN": "二氯联苯胺和氨反应, 生成二氨基联苯胺.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "ENUS": "Dichlorobenzidine reacts with ammonia to form diaminobenzidine.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
@@ -1675,19 +1610,14 @@
     "ENUS": "Extraction of compounds from coal tar.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
-    "Name": "邻苯二甲酸",
+    "Name": "高分子化合: 邻苯二甲酸",
     "ZHCN": "高分子化合: 邻苯二甲酸",
     "ENUS": "Polymer compounding: Phthalic acid"
   },
   {
-    "Name": "R邻苯二甲酸",
+    "Name": "R高分子化合: 邻苯二甲酸",
     "ZHCN": "氧气和二甲苯发生反应, 产生邻苯二甲酸.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "ENUS": "Oxygen reacts with xylene to produce phthalic acid.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
-    "Name": "间苯二甲酸二苯酯",
-    "ZHCN": "间苯二甲酸二苯酯",
-    "ENUS": "焦油转化"
   },
   {
     "Name": "R间苯二甲酸二苯酯",
@@ -1695,28 +1625,13 @@
     "ENUS": "焦油转化"
   },
   {
-    "Name": "三氯化铁",
-    "ZHCN": "三氯化铁",
-    "ENUS": "Ferric chloride"
-  },
-  {
     "Name": "R三氯化铁",
     "ZHCN": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "ENUS": "A new chemical material.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
-    "Name": "生物微晶元件",
-    "ZHCN": "生物微晶元件",
-    "ENUS": "焦油转化"
-  },
-  {
     "Name": "R生物微晶元件",
     "ZHCN": "这是一个人类未曾涉及的领域.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "焦油转化"
-  },
-  {
-    "Name": "先进生物电路",
-    "ZHCN": "先进生物电路",
     "ENUS": "焦油转化"
   },
   {
@@ -1725,18 +1640,8 @@
     "ENUS": "焦油转化"
   },
   {
-    "Name": "超生物计算集群",
-    "ZHCN": "超生物计算集群",
-    "ENUS": "焦油转化"
-  },
-  {
     "Name": "R超生物计算集群",
     "ZHCN": "这是一个人类未曾涉及的领域.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "焦油转化"
-  },
-  {
-    "Name": "生物神经纤维",
-    "ZHCN": "生物神经纤维",
     "ENUS": "焦油转化"
   },
   {
@@ -1745,18 +1650,8 @@
     "ENUS": "焦油转化"
   },
   {
-    "Name": "超级纳米电脑",
-    "ZHCN": "超级纳米电脑",
-    "ENUS": "焦油转化"
-  },
-  {
     "Name": "R超级纳米电脑",
     "ZHCN": "这是一个人类未曾涉及的领域.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "焦油转化"
-  },
-  {
-    "Name": "湿件主机",
-    "ZHCN": "湿件主机",
     "ENUS": "焦油转化"
   },
   {
@@ -1765,18 +1660,8 @@
     "ENUS": "焦油转化"
   },
   {
-    "Name": "塑料基板",
-    "ZHCN": "塑料基板",
-    "ENUS": "焦油转化"
-  },
-  {
     "Name": "R塑料基板",
     "ZHCN": "这是一种新的材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "焦油转化"
-  },
-  {
-    "Name": "覆层塑料基板",
-    "ZHCN": "覆层塑料基板",
     "ENUS": "焦油转化"
   },
   {
@@ -1785,18 +1670,8 @@
     "ENUS": "焦油转化"
   },
   {
-    "Name": "钛蚀刻覆层塑料基板",
-    "ZHCN": "钛蚀刻覆层塑料基板",
-    "ENUS": "焦油转化"
-  },
-  {
     "Name": "R钛蚀刻覆层塑料基板",
     "ZHCN": "这是一种新的材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "焦油转化"
-  },
-  {
-    "Name": "生物基板",
-    "ZHCN": "生物基板",
     "ENUS": "焦油转化"
   },
   {
@@ -1805,18 +1680,8 @@
     "ENUS": "焦油转化"
   },
   {
-    "Name": "覆层生物基板",
-    "ZHCN": "覆层生物基板",
-    "ENUS": "焦油转化"
-  },
-  {
     "Name": "R覆层生物基板",
     "ZHCN": "这是一种新的材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "焦油转化"
-  },
-  {
-    "Name": "钨蚀刻覆层生物基板",
-    "ZHCN": "钨蚀刻覆层生物基板",
     "ENUS": "焦油转化"
   },
   {
@@ -1825,18 +1690,8 @@
     "ENUS": "焦油转化"
   },
   {
-    "Name": "超低功率IC晶片",
-    "ZHCN": "超低功率IC晶片",
-    "ENUS": "焦油转化"
-  },
-  {
     "Name": "R超低功率IC晶片",
     "ZHCN": "一片非金属晶片,世界上精度最高的人造物.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "焦油转化"
-  },
-  {
-    "Name": "低功率IC晶片",
-    "ZHCN": "低功率IC晶片",
     "ENUS": "焦油转化"
   },
   {
@@ -1845,18 +1700,8 @@
     "ENUS": "焦油转化"
   },
   {
-    "Name": "标准功率IC晶片",
-    "ZHCN": "标准功率IC晶片",
-    "ENUS": "焦油转化"
-  },
-  {
     "Name": "R标准功率IC晶片",
     "ZHCN": "一片非金属晶片,世界上精度最高的人造物.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "焦油转化"
-  },
-  {
-    "Name": "高功率IC晶片",
-    "ZHCN": "高功率IC晶片",
     "ENUS": "焦油转化"
   },
   {
@@ -1865,18 +1710,8 @@
     "ENUS": "焦油转化"
   },
   {
-    "Name": "超高功率IC晶片",
-    "ZHCN": "超高功率IC晶片",
-    "ENUS": "焦油转化"
-  },
-  {
     "Name": "R超高功率IC晶片",
     "ZHCN": "一片非金属晶片,世界上精度最高的人造物.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "焦油转化"
-  },
-  {
-    "Name": "生物IC晶片",
-    "ZHCN": "生物IC晶片",
     "ENUS": "焦油转化"
   },
   {
@@ -1885,22 +1720,22 @@
     "ENUS": "焦油转化"
   },
   {
-    "Name": "环氧树脂",
+    "Name": "高分子化合: 环氧树脂",
     "ZHCN": "高分子化合: 环氧树脂",
     "ENUS": "Polymer compounding: Epoxy resin"
   },
   {
-    "Name": "R环氧树脂",
+    "Name": "R高分子化合: 环氧树脂",
     "ZHCN": "有机大分子团聚合成环氧树脂.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "ENUS": "Synthesis of epoxy resin by organic macromolecular agglomeration.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
-    "Name": "聚苯并咪唑",
+    "Name": "高分子化合: 聚苯并咪唑",
     "ZHCN": "高分子化合: 聚苯并咪唑(PBI)",
     "ENUS": "Polymer compounding: Polybenzimidazole(PBI)"
   },
   {
-    "Name": "R聚苯并咪唑",
+    "Name": "R高分子化合: 聚苯并咪唑",
     "ZHCN": "二氨基联苯胺与间苯二甲酸二苯酯发生反应, 生成聚苯并咪唑和苯酚.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "ENUS": "Diaminobenzidine reacts with diphenyl isophthalate to produce polybenzimidazole and phenol.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
@@ -1915,18 +1750,8 @@
     "ENUS": "Separation of tungsten-bearing associated ore from titanium ore by nitric acid leaching.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
-    "Name": "钨块",
-    "ZHCN": "钨块",
-    "ENUS": "钨矿精炼"
-  },
-  {
     "Name": "R钨块",
     "ZHCN": "一种新的制造材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "钨矿精炼"
-  },
-  {
-    "Name": "钨强化玻璃",
-    "ZHCN": "钨强化玻璃",
     "ENUS": "钨矿精炼"
   },
   {
@@ -1935,18 +1760,8 @@
     "ENUS": "钨矿精炼"
   },
   {
-    "Name": "钨复合金属",
-    "ZHCN": "钨复合金属",
-    "ENUS": "钨矿精炼"
-  },
-  {
     "Name": "R钨复合金属",
     "ZHCN": "一种新的制造材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "钨矿精炼"
-  },
-  {
-    "Name": "硅晶圆",
-    "ZHCN": "硅晶圆",
     "ENUS": "钨矿精炼"
   },
   {
@@ -1955,18 +1770,8 @@
     "ENUS": "钨矿精炼"
   },
   {
-    "Name": "钛掺杂的硅晶圆",
-    "ZHCN": "钛掺杂的硅晶圆",
-    "ENUS": "钨矿精炼"
-  },
-  {
     "Name": "R钛掺杂的硅晶圆",
     "ZHCN": "电子工业的基础.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "钨矿精炼"
-  },
-  {
-    "Name": "钨掺杂的硅晶圆",
-    "ZHCN": "钨掺杂的硅晶圆",
     "ENUS": "钨矿精炼"
   },
   {
@@ -1975,28 +1780,13 @@
     "ENUS": "钨矿精炼"
   },
   {
-    "Name": "活性生物纤维",
-    "ZHCN": "活性生物纤维",
-    "ENUS": "钨矿精炼"
-  },
-  {
     "Name": "R活性生物纤维",
     "ZHCN": "一种新的制造材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "ENUS": "钨矿精炼"
   },
   {
-    "Name": "钛齿轮",
-    "ZHCN": "钛齿轮",
-    "ENUS": "钨矿精炼"
-  },
-  {
     "Name": "R钛齿轮",
     "ZHCN": "一种新的制造材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "钨矿精炼"
-  },
-  {
-    "Name": "钨齿轮",
-    "ZHCN": "钨齿轮",
     "ENUS": "钨矿精炼"
   },
   {
@@ -2015,18 +1805,8 @@
     "ENUS": "Compression of photons into solids in a high-energy environment.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
-    "Name": "石墨线圈",
-    "ZHCN": "石墨线圈",
-    "ENUS": "钨矿精炼"
-  },
-  {
     "Name": "R石墨线圈",
     "ZHCN": "一种新的制造材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "钨矿精炼"
-  },
-  {
-    "Name": "钛线圈",
-    "ZHCN": "钛线圈",
     "ENUS": "钨矿精炼"
   },
   {
@@ -2035,18 +1815,8 @@
     "ENUS": "钨矿精炼"
   },
   {
-    "Name": "基础机械组件",
-    "ZHCN": "基础机械组件",
-    "ENUS": "钨矿精炼"
-  },
-  {
     "Name": "R基础机械组件",
     "ZHCN": "一个通用组件包,用途广泛.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "钨矿精炼"
-  },
-  {
-    "Name": "先进机械组件",
-    "ZHCN": "先进机械组件",
     "ENUS": "钨矿精炼"
   },
   {
@@ -2055,18 +1825,8 @@
     "ENUS": "钨矿精炼"
   },
   {
-    "Name": "尖端机械组件",
-    "ZHCN": "尖端机械组件",
-    "ENUS": "钨矿精炼"
-  },
-  {
     "Name": "R尖端机械组件",
     "ZHCN": "一个通用组件包,用途广泛.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "钨矿精炼"
-  },
-  {
-    "Name": "空燃料棒",
-    "ZHCN": "空燃料棒",
     "ENUS": "钨矿精炼"
   },
   {
@@ -2075,28 +1835,13 @@
     "ENUS": "钨矿精炼"
   },
   {
-    "Name": "氢燃料",
-    "ZHCN": "氢燃料",
-    "ENUS": "钨矿精炼"
-  },
-  {
     "Name": "R氢燃料",
     "ZHCN": "这玩意看上去好像也差点啥.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "ENUS": "钨矿精炼"
   },
   {
-    "Name": "氘核燃料",
-    "ZHCN": "氘核燃料",
-    "ENUS": "钨矿精炼"
-  },
-  {
     "Name": "R氘核燃料",
     "ZHCN": "这玩意看上去好像也差点啥.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "钨矿精炼"
-  },
-  {
-    "Name": "反物质燃料",
-    "ZHCN": "反物质燃料",
     "ENUS": "钨矿精炼"
   },
   {
@@ -2235,28 +1980,13 @@
     "ENUS": "Someone said it's the blood of industry ....\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
-    "Name": "一氧化碳",
-    "ZHCN": "一氧化碳",
-    "ENUS": "Carbon monoxide"
-  },
-  {
     "Name": "R一氧化碳",
     "ZHCN": "未充分燃烧的煤会形成一氧化碳.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "ENUS": "Under-burned coal can form carbon monoxide.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
-    "Name": "甲醇",
-    "ZHCN": "甲醇",
-    "ENUS": "甲醇"
-  },
-  {
     "Name": "R甲醇",
     "ZHCN": "充分燃烧的煤会形成二氧化碳.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "甲醇"
-  },
-  {
-    "Name": "乙酸",
-    "ZHCN": "乙酸",
     "ENUS": "甲醇"
   },
   {
@@ -2265,18 +1995,8 @@
     "ENUS": "甲醇"
   },
   {
-    "Name": "乙酸甲酯",
-    "ZHCN": "乙酸甲酯",
-    "ENUS": "甲醇"
-  },
-  {
     "Name": "R乙酸甲酯",
     "ZHCN": "充分燃烧的煤会形成二氧化碳.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "甲醇"
-  },
-  {
-    "Name": "次氯酸",
-    "ZHCN": "次氯酸",
     "ENUS": "甲醇"
   },
   {
@@ -2285,28 +2005,18 @@
     "ENUS": "甲醇"
   },
   {
-    "Name": "四硝基甲烷",
+    "Name": "高分子化合: 四硝基甲烷",
     "ZHCN": "高分子化合: 四硝基甲烷",
     "ENUS": "Polymerization: tetranitromethane"
   },
   {
-    "Name": "R四硝基甲烷",
+    "Name": "R高分子化合: 四硝基甲烷",
     "ZHCN": "它蕴含着巨大的能量....但好像还差些什么\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "ENUS": "It's really powerful....\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
-    "Name": "硝基柴油",
-    "ZHCN": "硝基柴油",
-    "ENUS": "四硝基甲烷"
-  },
-  {
     "Name": "R硝基柴油",
     "ZHCN": "它蕴含着巨大的能量....但好像还差一步\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "四硝基甲烷"
-  },
-  {
-    "Name": "偏二甲肼",
-    "ZHCN": "偏二甲肼",
     "ENUS": "四硝基甲烷"
   },
   {
@@ -2315,18 +2025,8 @@
     "ENUS": "四硝基甲烷"
   },
   {
-    "Name": "火箭燃料",
-    "ZHCN": "火箭燃料",
-    "ENUS": "四硝基甲烷"
-  },
-  {
     "Name": "R火箭燃料",
     "ZHCN": "它蕴含着巨大的能量....但好像还差一步\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "四硝基甲烷"
-  },
-  {
-    "Name": "硝基柴油燃料棒",
-    "ZHCN": "硝基柴油燃料棒",
     "ENUS": "四硝基甲烷"
   },
   {
@@ -2335,18 +2035,8 @@
     "ENUS": "四硝基甲烷"
   },
   {
-    "Name": "偏二甲肼燃料棒",
-    "ZHCN": "偏二甲肼燃料棒",
-    "ENUS": "四硝基甲烷"
-  },
-  {
     "Name": "R偏二甲肼燃料棒",
     "ZHCN": "它蕴含着巨大的能量....但好像还差一步\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "四硝基甲烷"
-  },
-  {
-    "Name": "火箭燃料棒",
-    "ZHCN": "火箭燃料棒",
     "ENUS": "四硝基甲烷"
   },
   {
@@ -2390,18 +2080,8 @@
     "ENUS": "This formula will allow you to produce sulfuric acid more efficiently.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
-    "Name": "量子储液罐",
-    "ZHCN": "量子储液罐",
-    "ENUS": "量子储液罐"
-  },
-  {
     "Name": "R量子储液罐",
     "ZHCN": "这个公式能让你更加高效的生产硫酸.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "量子储液罐"
-  },
-  {
-    "Name": "矿物处理厂",
-    "ZHCN": "矿物处理厂",
     "ENUS": "量子储液罐"
   },
   {
@@ -2410,28 +2090,13 @@
     "ENUS": "量子储液罐"
   },
   {
-    "Name": "铁矿粉",
-    "ZHCN": "铁矿粉",
-    "ENUS": "量子储液罐"
-  },
-  {
     "Name": "R铁矿粉",
     "ZHCN": "这个公式能让你更加高效的生产铁.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "ENUS": "量子储液罐"
   },
   {
-    "Name": "铜矿粉",
-    "ZHCN": "铜矿粉",
-    "ENUS": ""
-  },
-  {
     "Name": "R铜矿粉",
     "ZHCN": "这个公式能让你更加高效的生产硫酸.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "量子储液罐"
-  },
-  {
-    "Name": "硅矿粉",
-    "ZHCN": "硅矿粉",
     "ENUS": "量子储液罐"
   },
   {
@@ -2440,28 +2105,13 @@
     "ENUS": "量子储液罐"
   },
   {
-    "Name": "钛矿粉",
-    "ZHCN": "钛矿粉",
-    "ENUS": "量子储液罐"
-  },
-  {
     "Name": "R钛矿粉",
     "ZHCN": "这个公式能让你更加高效的生产硫酸.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "ENUS": "量子储液罐"
   },
   {
-    "Name": "石粉",
-    "ZHCN": "石粉",
-    "ENUS": "量子储液罐"
-  },
-  {
     "Name": "R石粉",
     "ZHCN": "这个公式能让你更加高效的生产硫酸.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "量子储液罐"
-  },
-  {
-    "Name": "煤矿粉",
-    "ZHCN": "煤矿粉",
     "ENUS": "量子储液罐"
   },
   {
@@ -2500,18 +2150,8 @@
     "ENUS": "铀碎块"
   },
   {
-    "Name": "铀矿",
-    "ZHCN": "铀矿",
-    "ENUS": "铀碎块"
-  },
-  {
     "Name": "R铀矿",
     "ZHCN": "利用氢氧化钠晶体作为催化剂,能够将硅石中含有的放射性物质沉降分离.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "铀碎块"
-  },
-  {
-    "Name": "钚矿",
-    "ZHCN": "钚矿",
     "ENUS": "铀碎块"
   },
   {
@@ -2520,18 +2160,8 @@
     "ENUS": "铀碎块"
   },
   {
-    "Name": "高纯铀块",
-    "ZHCN": "高纯铀块",
-    "ENUS": "铀碎块"
-  },
-  {
     "Name": "R高纯铀块",
     "ZHCN": "利用氢氧化钠晶体作为催化剂,能够将硅石中含有的放射性物质沉降分离.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "铀碎块"
-  },
-  {
-    "Name": "高纯钚块",
-    "ZHCN": "高纯钚块",
     "ENUS": "铀碎块"
   },
   {
@@ -2540,18 +2170,8 @@
     "ENUS": "铀碎块"
   },
   {
-    "Name": "铀燃料棒",
-    "ZHCN": "铀燃料棒",
-    "ENUS": "铀碎块"
-  },
-  {
     "Name": "R铀燃料棒",
     "ZHCN": "利用氢氧化钠晶体作为催化剂,能够将硅石中含有的放射性物质沉降分离.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "铀碎块"
-  },
-  {
-    "Name": "钚燃料棒",
-    "ZHCN": "钚燃料棒",
     "ENUS": "铀碎块"
   },
   {
@@ -2600,22 +2220,7 @@
     "ENUS": "The pure powder separated from the raw ore allows for more efficient production.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
-    "Name": "混凝土",
-    "ZHCN": "混凝土",
-    "ENUS": "Concrete"
-  },
-  {
     "Name": "R混凝土",
-    "ZHCN": "从原矿中分离的纯净粉可以实现效率更高的生产.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "concrete"
-  },
-  {
-    "Name": "行星级组装站",
-    "ZHCN": "行星级组装站",
-    "ENUS": "concrete"
-  },
-  {
-    "Name": "R行星级组装站",
     "ZHCN": "从原矿中分离的纯净粉可以实现效率更高的生产.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "ENUS": "concrete"
   },
@@ -2630,16 +2235,6 @@
     "ENUS": "Breaks down the matter into soil pile.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
-    "Name": "硫矿粉",
-    "ZHCN": "硫矿粉",
-    "ENUS": "硫矿粉"
-  },
-  {
-    "Name": "R硫矿粉",
-    "ZHCN": "这个公式能让你更加高效的生产硫酸.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "硫矿粉"
-  },
-  {
     "Name": "硫酸化合",
     "ZHCN": "硫酸化合",
     "ENUS": "Sulfuric acid chemistry"
@@ -2650,28 +2245,13 @@
     "ENUS": "This formula will allow you to produce sulfuric acid more efficiently.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
-    "Name": "稳定矩阵",
-    "ZHCN": "稳定矩阵",
-    "ENUS": "稳定矩阵"
-  },
-  {
     "Name": "R稳定矩阵",
     "ZHCN": "这个公式能让你更加高效的生产硫酸....好吧,我承认这不太科学.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "ENUS": "稳定矩阵"
   },
   {
-    "Name": "虚空矩阵",
-    "ZHCN": "虚空矩阵",
-    "ENUS": "稳定矩阵"
-  },
-  {
     "Name": "R虚空矩阵",
     "ZHCN": "这个公式能让你更加高效的生产硫酸....好吧,我承认这不太科学.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "稳定矩阵"
-  },
-  {
-    "Name": "宇宙矩阵粗坯",
-    "ZHCN": "宇宙矩阵粗坯",
     "ENUS": "稳定矩阵"
   },
   {

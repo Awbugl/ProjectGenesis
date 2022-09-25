@@ -220,6 +220,7 @@ namespace ProjectGenesis
         }
     }
 
+    [Serializable]
     public class StringProtoJson
     {
         public static StringProtoJson FromProto(StringProto i) => new StringProtoJson() { Name = i.Name, ZHCN = i.ZHCN, ENUS = i.ENUS };
