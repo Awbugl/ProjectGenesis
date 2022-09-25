@@ -1591,7 +1591,7 @@
   },
   {
     "Name": "R石墨烯（极效）",
-    "ZHCN": "对可燃冰结构的细致分析可以增加石墨烯的产出, 但不能有效捕获氢.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ZHCN": "针对可燃冰结构优化生产线, 弃用氢捕获回收流程以保证石墨烯的产出.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "ENUS": "Detailed analysis of combustible ice structure can increase the output of graphene, but cannot capture hydrogen.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
