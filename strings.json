@@ -1701,8 +1701,8 @@
   },
   {
     "Name": "R乙酸甲酯",
-    "ZHCN": "未充分燃烧的煤会形成一氧化碳.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Under-burned coal can form carbon monoxide.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "乙酸和甲醇化合成乙酸甲酯.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Synthesis of methyl acetate from acetic acid and methanol.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "高分子化合: 四硝基甲烷",
