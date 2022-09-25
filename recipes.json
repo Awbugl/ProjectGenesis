@@ -2876,7 +2876,7 @@
     "Type": 5,
     "GridIndex": 1211,
     "PreTech": 1143,
-    "Time": 600,
+    "Time": 360,
     "Input": [
       1126,
       1121
@@ -4952,8 +4952,8 @@
     "IconPath": "Assets/texpack/高效奇异物质",
     "Type": 5,
     "GridIndex": 1311,
-    "PreTech": 1143,
-    "Time": 60,
+    "PreTech": 1303,
+    "Time": 180,
     "Input": [
       1205,
       1126
@@ -5254,8 +5254,8 @@
   },
   {
     "ID": 504,
-    "Name": "柴油搅拌",
-    "Description": "R柴油搅拌",
+    "Name": "柴油混合",
+    "Description": "R柴油混合",
     "IconPath": "Assets/texpack/柴油",
     "Type": 2,
     "GridIndex": 4204,

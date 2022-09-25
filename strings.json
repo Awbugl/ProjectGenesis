@@ -46,8 +46,8 @@
   },
   {
     "Name": "I混凝土",
-    "ZHCN": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A new material for recipe.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "一种远古时期就存在的材料, 可以用于建造大型建筑.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "A material that has existed since ancient times and can be used to build large structures.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "钨齿轮",
@@ -76,8 +76,8 @@
   },
   {
     "Name": "I剧毒有机液体",
-    "ZHCN": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A new chemical material.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "在火山灰星球表面的由多种化合物组成的剧毒液体.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Highly toxic liquid consisting of many compounds.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "聚乙烯",
@@ -122,7 +122,7 @@
   {
     "Name": "高精度装配线",
     "ZHCN": "高精度装配线",
-    "ENUS": "Precise assemble"
+    "ENUS": "Precise assembler"
   },
   {
     "Name": "I高精度装配线",
@@ -146,8 +146,8 @@
   },
   {
     "Name": "I重燃油",
-    "ZHCN": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A new chemical material.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "这是一种新的化工材料.有人说这是工业的血液....\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "A new chemical material. Someone said it's the blood of industry ...\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "轻燃油",
@@ -156,8 +156,8 @@
   },
   {
     "Name": "I轻燃油",
-    "ZHCN": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A new chemical material.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "这是一种新的化工材料.有人说这是工业的血液....\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "A new chemical material. Someone said it's the blood of industry ...\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "含硫重燃油",
@@ -166,8 +166,8 @@
   },
   {
     "Name": "I含硫重燃油",
-    "ZHCN": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A new chemical material.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "这是一种新的化工材料.有人说这是工业的血液....\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "A new chemical material. Someone said it's the blood of industry ...\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "含硫轻燃油",
@@ -176,8 +176,8 @@
   },
   {
     "Name": "I含硫轻燃油",
-    "ZHCN": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A new chemical material.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "这是一种新的化工材料.有人说这是工业的血液....\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "A new chemical material. Someone said it's the blood of industry ...\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "一氧化碳",
@@ -236,8 +236,8 @@
   },
   {
     "Name": "I四硝基甲烷",
-    "ZHCN": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A new chemical material.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "这是一种新的化工材料, 蕴含着巨大的能量....但好像还差些什么.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "A new chemical material. It's really powerful....\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "硝基柴油",
@@ -316,8 +316,8 @@
   },
   {
     "Name": "I柴油",
-    "ZHCN": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A new chemical material.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "这是一种新的化工材料.有人说这是工业的血液....\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "A new chemical material. Someone said it's the blood of industry ...\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "放射性矿物碎块",
@@ -592,12 +592,12 @@
   {
     "Name": "精密结构组装厂",
     "ZHCN": "精密结构组装厂",
-    "ENUS": "Super Precise Assembly Factory"
+    "ENUS": "Mega Precise Assembler"
   },
   {
     "Name": "I精密结构组装厂",
     "ZHCN": "这座工厂将精密装配线进行大规模集成以提升运转效率.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Mega Precise Assemble.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ENUS": "Mega Precise Assembler.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "反物质能量炉",
@@ -672,12 +672,12 @@
   {
     "Name": "精密制造厂",
     "ZHCN": "精密制造厂",
-    "ENUS": "Super Precise Assemble"
+    "ENUS": "Accurately Manufacturing Facility"
   },
   {
     "Name": "I精密制造厂",
     "ZHCN": "这座工厂能够将蓝图以物质世界基本单位的尺度精准还原.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Super Precise Assemble.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ENUS": "This factory is capable of accurately reproducing blueprints on the scale of the basic units of the material world.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "紧凑式回旋加速器",
@@ -726,7 +726,7 @@
   },
   {
     "Name": "I宇宙矩阵粗坯",
-    "ZHCN": "用于优化宇宙矩阵生产过程的复合型超级矩阵,它还需要充能.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ZHCN": "用于优化宇宙矩阵生产过程的复合型超级矩阵, 它还需要充能.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "ENUS": "Just a matrix, not really useful, but make universe matrix easier.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
@@ -1406,8 +1406,8 @@
   },
   {
     "Name": "R石油裂化",
-    "ZHCN": "这是一个新的化学公式.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "This is a new chemical formula.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "将原油通过裂化反应转化成乙烯、甘油和氯苯.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Converting crude oil into ethylene, glycerin and chlorobenzene by cracking reactions.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "水电解",
@@ -1416,8 +1416,8 @@
   },
   {
     "Name": "R水电解",
-    "ZHCN": "这个公式可以为你提供氧气.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "This is a new chemical formula, you can use this formula to produce oxygen.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "电解水，产生氢气和氧气.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Electrolysis of water, producing hydrogen and oxygen.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "盐水分解",
@@ -1521,8 +1521,8 @@
   },
   {
     "Name": "R三氯化铁",
-    "ZHCN": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A new chemical material.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "向氢氯酸和铁的反应体系中加入氧气，使其转化为三氯化铁和水.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Add oxygen to the reaction system of hydrochloric acid and iron to convert it to ferric chloride and water.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "高分子化合: 环氧树脂",
@@ -1571,8 +1571,8 @@
   },
   {
     "Name": "R质能储存（高效）",
-    "ZHCN": "这个公式能让你更加高效的生产反物质.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "This formula will allow you to produce antimatter more efficiently.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "在只收集反物质的前提下, 可以采用更激进的磁场结构加快反物质的产出速度.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "If only collect antimatter, a more aggressive magnetic field structure to speed up the antimatter output.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "奇异物质（高效）",
@@ -1581,8 +1581,8 @@
   },
   {
     "Name": "R奇异物质（高效）",
-    "ZHCN": "这个公式能让你更加高效的生产奇异物质.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "This formula will allow you to produce strange matter more efficiently.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "利用超级磁场加速卡西米尔晶体的转化速度与效率.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Accelerating the conversion speed and efficiency of Casimir crystals using a super magnetic field.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "石墨烯（极效）",
@@ -1591,8 +1591,8 @@
   },
   {
     "Name": "R石墨烯（极效）",
-    "ZHCN": "这个公式能让你更加高效的生产石墨烯.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "This formula will allow you to produce graphene more efficiently.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "对可燃冰结构的细致分析可以增加石墨烯的产出, 但不能有效捕获氢.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Detailed analysis of combustible ice structure can increase the output of graphene, but cannot capture hydrogen.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "等离子精炼（高效）",
@@ -1601,8 +1601,8 @@
   },
   {
     "Name": "R等离子精炼（高效）",
-    "ZHCN": "这个公式能让你更加高效的生产氢.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "This formula will allow you to produce hydrogen more efficiently.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "提高等离子温度可以裂解煤焦油, 增加氢的产出.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Increasing plasma temperature can crack coal tar and increase hydrogen production.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "有机液体离心",
@@ -1611,8 +1611,8 @@
   },
   {
     "Name": "R有机液体离心",
-    "ZHCN": "这个公式能让你从有机液体中分离化合物.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "This formula allows you to separate compounds from organic liquids.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "将剧毒的有机液体进行离心分离, 可以得到数种有用的化合物.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Centrifugation of highly toxic organic liquids can yield several useful compounds.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "硅晶圆（高效）",
@@ -1621,8 +1621,8 @@
   },
   {
     "Name": "R硅晶圆（高效）",
-    "ZHCN": "这个公式能让你更加高效的生产晶圆.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "This formula will allow you to produce wafers more efficiently.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "找到了光栅石矿, 生产硅晶圆就变得容易许多.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Once the grating ore is found, it becomes much easier to produce silicon wafers.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "含钛硅晶圆（高效）",
@@ -1631,8 +1631,8 @@
   },
   {
     "Name": "R含钛硅晶圆（高效）",
-    "ZHCN": "这个公式能让你更加高效的生产晶圆.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "This formula will allow you to produce wafers more efficiently.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "找到了光栅石矿, 生产硅晶圆就变得容易许多.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Once the grating ore is found, it becomes much easier to produce silicon wafers.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "含钨硅晶圆（高效）",
@@ -1641,8 +1641,8 @@
   },
   {
     "Name": "R含钨硅晶圆（高效）",
-    "ZHCN": "这个公式能让你更加高效的生产晶圆.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "This formula will allow you to produce wafers more efficiently.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "找到了光栅石矿, 生产硅晶圆就变得容易许多.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Once the grating ore is found, it becomes much easier to produce silicon wafers.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "聚乙烯（高效）",
@@ -1651,8 +1651,8 @@
   },
   {
     "Name": "R聚乙烯（高效）",
-    "ZHCN": "这个公式能让你更高效的生产聚乙烯.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "This formula will allow you to produce polyethylene more efficiently.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "找到了有机晶体矿, 生产聚乙烯就变得容易许多.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Once the organic crystal ore is found, the production of polyethylene becomes much easier.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "燃油精炼",
@@ -1661,8 +1661,8 @@
   },
   {
     "Name": "R燃油精炼",
-    "ZHCN": "有人说这是工业的血液....\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Someone said it's the blood of industry ....\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "将原油进行精炼，分离出含硫的轻燃油和重燃油.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Crude oil is refined to separate light and heavy fuel oil but containing sulfur.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "轻燃油脱硫",
@@ -1671,8 +1671,8 @@
   },
   {
     "Name": "R轻燃油脱硫",
-    "ZHCN": "有人说这是工业的血液....\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Someone said it's the blood of industry ....\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "对轻燃油进行脱硫, 使其可用于生产柴油.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Desulfurization of light fuel oil to make it available for diesel production.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "重燃油脱硫",
@@ -1681,18 +1681,18 @@
   },
   {
     "Name": "R重燃油脱硫",
-    "ZHCN": "有人说这是工业的血液....\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Someone said it's the blood of industry ....\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "对重燃油进行脱硫, 使其可用于生产柴油.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Desulfurization of heavy fuel oil to make it available for diesel production.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
-    "Name": "柴油搅拌",
-    "ZHCN": "柴油搅拌",
+    "Name": "柴油混合",
+    "ZHCN": "柴油混合",
     "ENUS": "Diesel oil mixing"
   },
   {
-    "Name": "R柴油搅拌",
-    "ZHCN": "有人说这是工业的血液....\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Someone said it's the blood of industry ....\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "Name": "R柴油混合",
+    "ZHCN": "按照合适的配比将轻重燃油合成为柴油.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Mixing light and heavy fuel oil into diesel oil with the suitable ratio.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "R一氧化碳",
@@ -1706,18 +1706,18 @@
   },
   {
     "Name": "高分子化合: 四硝基甲烷",
-    "ZHCN": "高分子化合: 四硝基甲烷",
-    "ENUS": "Polymerization: tetranitromethane"
+    "ZHCN": "高分子化合: 四硝基甲烷(TNM)",
+    "ENUS": "Polymerization: tetranitromethane(TNM)"
   },
   {
     "Name": "R高分子化合: 四硝基甲烷",
-    "ZHCN": "它蕴含着巨大的能量....但好像还差些什么\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "It's really powerful....\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "用无水硝酸硝化乙酸酐, 生成四硝基甲烷和水, 作为副产物的碳可作为高能石墨充分利用.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Nitrification of acetic anhydride with anhydrous nitric acid produces tetranitromethane and water, and the carbon as a by-product can be fully utilized as graphite.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "R微晶元件（高效）",
-    "ZHCN": "这个公式能让你更加高效的生产微晶元件.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "This formula will allow you to produce microcrystalline components more efficiently.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "利用主机算力对生产流程大幅优化, 批量生产微晶元件变得简单.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "The production process of microcrystalline components is greatly optimized by mainframe computing power, making it easy to produce in batch.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "处理器（高效）",
@@ -1726,8 +1726,8 @@
   },
   {
     "Name": "R处理器（高效）",
-    "ZHCN": "这个公式能让你更加高效的生产处理器.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "This formula will allow you to produce processor more efficiently.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "利用主机算力对生产流程大幅优化, 批量生产处理器变得简单.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "The production process of processors is greatly optimized by mainframe computing power, making it easy to produce in batch.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "量子芯片（高效）",
@@ -1735,9 +1735,9 @@
     "ENUS": "Quantum chip (advanced)"
   },
   {
-    "Name": "R量子芯片（高效）",
-    "ZHCN": "这个公式能让你更加高效的生产量子芯片.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "This formula will allow you to produce quantum chip more efficiently.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "Name": "R量子芯片（高效）", 
+    "ZHCN": "利用主机算力对生产流程大幅优化, 批量生产量子芯片变得简单.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "The production process of quantum chip is greatly optimized by mainframe computing power, making it easy to produce in batch.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "硫酸（高效）",
@@ -1746,8 +1746,8 @@
   },
   {
     "Name": "R硫酸（高效）",
-    "ZHCN": "这个公式能让你更加高效的生产硫酸.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "This formula will allow you to produce sulfuric acid more efficiently.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "利用硫化氢作为原料, 硫酸生产变得更加高效.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Sulfuric acid production becomes more efficient by using hydrogen sulfide as a raw material.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "放射性矿物处理",
@@ -1816,8 +1816,8 @@
   },
   {
     "Name": "R硫酸化合",
-    "ZHCN": "这个公式能让你更加高效的生产硫酸....好吧,我承认这不太科学.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "This formula will allow you to produce sulfuric acid more efficiently.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "在高温下硫粉被氧气氧化生成三氧化硫, 用水雾进行吸附就能得到高品质的硫酸.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Sulfur powder is oxidized by oxygen at high temperature to form sulfur trioxide. Just adsorption with water mist, high quality sulfuric acid can be obtained.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "T地热开采",
@@ -2212,7 +2212,7 @@
   {
     "Name": "T巨型建筑:精密结构组装厂描述",
     "ZHCN": "精密装配线的未来.",
-    "ENUS": "Precise assemble's future."
+    "ENUS": "Precise assembler's future."
   },
   {
     "Name": "T巨型建筑:物质分解设施",

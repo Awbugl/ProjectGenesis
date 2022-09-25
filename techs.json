@@ -1058,8 +1058,7 @@
     ],
     "HashNeeded": 300000,
     "UnlockRecipes": [
-      104,
-      542
+      104
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -1516,7 +1515,8 @@
     "HashNeeded": 288000,
     "UnlockRecipes": [
       52,
-      522
+      522,
+      542
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
