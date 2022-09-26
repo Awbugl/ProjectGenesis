@@ -53,6 +53,7 @@ namespace ProjectGenesis
 
         public void Awake()
         {
+            Instance = this;
             logger = Logger;
             logger.Log(LogLevel.Info, "GenesisBook Awake");
 
@@ -60,19 +61,6 @@ namespace ProjectGenesis
             var resources = new ResourceData("org.LoShin.GenesisBook", "texpack", pluginfolder);
             resources.LoadAssetBundle("texpack");
             ProtoRegistry.AddResource(resources);
-
-            TableID = new int[]
-                      {
-                          TabSystem.RegisterTab("org.LoShin.GenesisBook:org.LoShin.GenesisBookTab1",
-                                                new TabData("精炼页面".TranslateFromJson(), "Assets/texpack/主机科技")),
-                          TabSystem.RegisterTab("org.LoShin.GenesisBook:org.LoShin.GenesisBookTab2",
-                                                new TabData("化工页面".TranslateFromJson(), "Assets/texpack/化工科技"))
-                      };
-
-            Instance = this;
-
-            LDBTool.PreAddDataAction += InitData;
-            LDBTool.PostAddDataAction += PostAddDataAction;
 
             NebulaModAPI.RegisterPackets(Assembly.GetExecutingAssembly());
 
@@ -86,9 +74,12 @@ namespace ProjectGenesis
             Harmony.PatchAll(typeof(MultiProductionPatches));
             Harmony.PatchAll(typeof(MutliPlayerPatches));
             Harmony.PatchAll(typeof(OceanDischargePatches));
+            
+            LDBTool.PreAddDataAction += PreAddDataAction;
+            LDBTool.PostAddDataAction += PostAddDataAction;
         }
 
-        private void InitData()
+        private void PreAddDataAction()
         {
             LDB.strings.Select(2314).Name = "剧毒液体海洋";
             LDB.veins.Select(14).Name = "钨矿";
@@ -98,7 +89,15 @@ namespace ProjectGenesis
             LDB.items.OnAfterDeserialize();
 
             AddCopiedModelProto();
-
+            
+            TableID = new int[]
+                      {
+                          TabSystem.RegisterTab("org.LoShin.GenesisBook:org.LoShin.GenesisBookTab1",
+                                                new TabData("精炼页面".TranslateFromJson(), "Assets/texpack/主机科技")),
+                          TabSystem.RegisterTab("org.LoShin.GenesisBook:org.LoShin.GenesisBookTab2",
+                                                new TabData("化工页面".TranslateFromJson(), "Assets/texpack/化工科技"))
+                      };
+            
             ImportJson(TableID);
         }
 
