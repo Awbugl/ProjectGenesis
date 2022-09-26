@@ -116,7 +116,7 @@ namespace ProjectGenesis
             @base.MiningCount = new[] { 3, 10, 20 };
             @base.MiningChance = new float[] { 1, 1, 1 };
             @base.Preload();
-
+            
             ref var locstrs = ref AccessTools.StaticFieldRefAccess<StringProtoSet>(AccessTools.Field(typeof(Localization), "_strings"))();
             locstrs = LDB.strings;
 
