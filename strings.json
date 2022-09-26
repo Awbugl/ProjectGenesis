@@ -2281,8 +2281,8 @@
   },
   {
     "Name": "T先进精炼技术描述",
-    "ZHCN": "随着对化工精炼技术的理解逐渐深入，现在可以合成更多种类的化工原料。\n[由于显示限制，解锁配方显示不完全]",
-    "ENUS": "As the understanding of chemical refining technology grows, it is now possible to synthesize a wider variety of chemical materials.\n[The unlocked recipe is not fully displayed due to display limitations]"
+    "ZHCN": "随着对化工精炼技术的理解逐渐深入，现在可以合成更多种类的化工原料。",
+    "ENUS": "As the understanding of chemical refining technology grows, it is now possible to synthesize a wider variety of chemical materials."
   },
   {
     "Name": "T核子先驱:放射原料",
@@ -2441,7 +2441,7 @@
   },
   {
     "Name": "T焦油分馏描述",
-    "ZHCN": "现在可以合成更多种类的化工原料。\n[由于显示限制，解锁配方显示不完全]",
-    "ENUS": "A wider variety of chemicals can now be synthesized.\n[The unlocked recipe is not fully displayed due to display limitations]"
+    "ZHCN": "现在可以合成更多种类的化工原料。",
+    "ENUS": "A wider variety of chemicals can now be synthesized."
   }
 ]
