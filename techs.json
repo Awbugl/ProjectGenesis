@@ -1510,7 +1510,7 @@
     "ItemPoints": [
       10,
       10,
-      10
+      2
     ],
     "HashNeeded": 288000,
     "UnlockRecipes": [
@@ -1942,13 +1942,11 @@
     ],
     "Items": [
       6001,
-      6002,
-      6003
+      6002
     ],
     "ItemPoints": [
-      20,
-      20,
-      2
+      80,
+      80
     ],
     "HashNeeded": 144000,
     "UnlockRecipes": [
