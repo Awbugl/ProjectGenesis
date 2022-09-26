@@ -114,39 +114,28 @@ namespace ProjectGenesis.Utils
 
             foreach (var recipeJson in JsonHelper.RecipeProtos())
             {
-                if (!LDB.recipes.Exist(recipeJson.ID))
-                {
-                    recipeJson.GridIndex = GetTableID(recipeJson.GridIndex);
+                recipeJson.GridIndex = GetTableID(recipeJson.GridIndex);
 
-                    var proto = ProtoRegistry.RegisterRecipe(recipeJson.ID, (ERecipeType_1)recipeJson.Type, recipeJson.Time, recipeJson.Input,
-                                                             recipeJson.InCounts, recipeJson.Output ?? Array.Empty<int>(),
-                                                             recipeJson.OutCounts ?? Array.Empty<int>(), recipeJson.Description, recipeJson.PreTech,
-                                                             recipeJson.GridIndex, recipeJson.Name, recipeJson.IconPath);
+                var proto = LDB.recipes.Exist(recipeJson.ID)
+                                ? LDB.recipes.Select(recipeJson.ID)
+                                : ProtoRegistry.RegisterRecipe(recipeJson.ID, (ERecipeType_1)recipeJson.Type, recipeJson.Time, recipeJson.Input,
+                                                               recipeJson.InCounts, recipeJson.Output ?? Array.Empty<int>(),
+                                                               recipeJson.OutCounts ?? Array.Empty<int>(), recipeJson.Description, 0,
+                                                               recipeJson.GridIndex, recipeJson.Name, recipeJson.IconPath);
 
-                    proto.Explicit = recipeJson.Explicit;
-                    proto.Name = recipeJson.Name;
-                    proto.Handcraft = recipeJson.Handcraft;
-                    proto.NonProductive = recipeJson.NonProductive;
-                }
-                else
-                {
-                    var proto = LDB.recipes.Select(recipeJson.ID);
-
-                    proto.Explicit = recipeJson.Explicit;
-                    proto.Name = recipeJson.Name;
-                    proto.Handcraft = recipeJson.Handcraft;
-                    proto.Type = (ERecipeType_1)recipeJson.Type;
-                    proto.TimeSpend = recipeJson.Time;
-                    proto.Items = recipeJson.Input;
-                    proto.ItemCounts = recipeJson.InCounts;
-                    proto.Results = recipeJson.Output ?? Array.Empty<int>();
-                    proto.ResultCounts = recipeJson.OutCounts ?? Array.Empty<int>();
-                    proto.Description = recipeJson.Description;
-                    proto.preTech = LDB.techs.Select(recipeJson.PreTech);
-                    proto.GridIndex = recipeJson.GridIndex;
-                    proto.IconPath = recipeJson.IconPath;
-                    proto.NonProductive = recipeJson.NonProductive;
-                }
+                proto.Explicit = recipeJson.Explicit;
+                proto.Name = recipeJson.Name;
+                proto.Handcraft = recipeJson.Handcraft;
+                proto.Type = (ERecipeType_1)recipeJson.Type;
+                proto.TimeSpend = recipeJson.Time;
+                proto.Items = recipeJson.Input;
+                proto.ItemCounts = recipeJson.InCounts;
+                proto.Results = recipeJson.Output ?? Array.Empty<int>();
+                proto.ResultCounts = recipeJson.OutCounts ?? Array.Empty<int>();
+                proto.Description = recipeJson.Description;
+                proto.GridIndex = recipeJson.GridIndex;
+                proto.IconPath = recipeJson.IconPath;
+                proto.NonProductive = recipeJson.NonProductive;
             }
 
             #endregion

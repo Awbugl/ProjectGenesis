@@ -601,7 +601,7 @@
   },
   {
     "Name": "I矿物处理厂",
-    "ZHCN": "介绍没想好怎么编...先欠着.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ZHCN": "用于矿物预处理的工厂.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "ENUS": "Mineral processor, used to smash ores.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
@@ -2080,14 +2080,14 @@
     "ENUS": "Precision machining technology"
   },
   {
-    "Name": "T先进冶炼",
-    "ZHCN": "先进冶炼",
-    "ENUS": "Advanced smelting"
+    "Name": "T矿物处理",
+    "ZHCN": "矿物处理",
+    "ENUS": "Mineral pretreatment"
   },
   {
-    "Name": "T先进冶炼描述",
-    "ZHCN": "利用熔炉对铁块进行进一步冶炼，可获得性能出众的钢材；进一步对矿石进行预先粉碎处理可明显提高熔炉的效率。",
-    "ENUS": "Further smelting of the iron blocks in the furnace results in steel with outstanding properties; further pre-crushing of the ore significantly improves the efficiency of the furnace."
+    "Name": "T矿物处理描述",
+    "ZHCN": "进一步对矿石进行预先粉碎处理可明显提高熔炉的效率, 并使矿物转化变得可能.",
+    "ENUS": "Further pre-crushing of the ore significantly improves the efficiency of the furnace and makes mineral transformation possible."
   },
   {
     "Name": "T裂变发电站",
@@ -2413,5 +2413,35 @@
     "Name": "T晶圆冶炼描述",
     "ZHCN": "深入了解晶体冶炼技术后，我们可以将硅冶炼成硅晶圆。",
     "ENUS": "With a deeper understanding of crystal smelting technology, we can smelt silicon into silicon wafers."
+  },
+  {
+    "Name": "T化学能燃料棒",
+    "ZHCN": "化学能燃料棒",
+    "ENUS": "Chemical energy fuel rod"
+  },
+  {
+    "Name": "T化学能燃料棒描述",
+    "ZHCN": "利用化学反应为生产线和机甲供能。\n[由于显示限制，解锁配方显示不完全]",
+    "ENUS": "Using chemical reactions to power factories and mechs.\n[The unlocked recipe is not fully displayed due to display limitations]"
+  },
+  {
+    "Name": "T先进化工",
+    "ZHCN": "先进化工",
+    "ENUS": "Advanced Chemicals"
+  },
+  {
+    "Name": "T先进化工描述",
+    "ZHCN": "现在可以合成更多种类的化工原料。\n[由于显示限制，解锁配方显示不完全]",
+    "ENUS": "A wider variety of chemicals can now be synthesized.\n[The unlocked recipe is not fully displayed due to display limitations]"
+  },
+  {
+    "Name": "T焦油分馏",
+    "ZHCN": "焦油分馏",
+    "ENUS": "Tar fractionation"
+  },
+  {
+    "Name": "T焦油分馏描述",
+    "ZHCN": "现在可以合成更多种类的化工原料。\n[由于显示限制，解锁配方显示不完全]",
+    "ENUS": "A wider variety of chemicals can now be synthesized.\n[The unlocked recipe is not fully displayed due to display limitations]"
   }
 ]

@@ -157,7 +157,8 @@
     "HashNeeded": 9000,
     "UnlockRecipes": [
       12,
-      13
+      14,
+      15
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -199,9 +200,9 @@
     ],
     "HashNeeded": 36000,
     "UnlockRecipes": [
-      14,
-      15,
-      16
+      16,
+      712,
+      701
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -476,7 +477,8 @@
     "HashNeeded": 9000,
     "UnlockRecipes": [
       114,
-      49
+      49,
+      644
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -499,7 +501,7 @@
   {
     "ID": 1121,
     "Name": "T基础化工",
-    "IconPath": "Icons/Tech/1121",
+    "IconPath": "Assets/texpack/化工科技",
     "Desc": "T基础化工描述",
     "Conclusion": "基础化工结果",
     "Position": [
@@ -522,28 +524,17 @@
     "UnlockRecipes": [
       23,
       24,
-      703,
+      702,
       801,
-      704,
-      705,
-      706,
       707,
       708,
       709,
       710,
-      771,
-      772,
       505,
       507,
       508,
       509,
-      510,
-      511,
-      711,
-      712,
-      714,
-      715,
-      716
+      510
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -562,7 +553,7 @@
   {
     "ID": 1122,
     "Name": "T高分子化工",
-    "IconPath": "Icons/Tech/1122",
+    "IconPath": "Icons/Tech/1121",
     "Desc": "T高分子化工描述",
     "Conclusion": "高分子化工结果",
     "Position": [
@@ -585,11 +576,12 @@
     "UnlockRecipes": [
       551,
       521,
-      711,
-      712,
+      706,
+      704,
+      511,
       714,
-      715,
       716,
+      771,
       538
     ],
     "UnlockFunctions": [],
@@ -702,11 +694,9 @@
       13.0,
       -31.0
     ],
-    "PreTechs": [
-      1001
-    ],
+    "PreTechs": [],
     "PreTechsImplicit": [
-      1122
+      1131
     ],
     "Items": [
       6001,
@@ -783,11 +773,11 @@
     "Desc": "应用型超导体描述",
     "Conclusion": "应用型超导体结果",
     "Position": [
-      21.0,
+      25.0,
       -23.0
     ],
     "PreTechs": [
-      1122
+      1830
     ],
     "PreTechsImplicit": [],
     "Items": [
@@ -822,7 +812,7 @@
     "Desc": "高强度材料描述",
     "Conclusion": "高强度材料结果",
     "Position": [
-      25.0,
+      29.0,
       -23.0
     ],
     "PreTechs": [
@@ -954,13 +944,13 @@
     "Desc": "波函数干扰描述",
     "Conclusion": "波函数干扰结果",
     "Position": [
-      17.0,
+      13.0,
       -35.0
     ],
-    "PreTechs": [
+    "PreTechs": [],
+    "PreTechsImplicit": [
       1125
     ],
-    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -1334,8 +1324,7 @@
     "UnlockRecipes": [
       45,
       624,
-      625,
-      644
+      625
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -1508,11 +1497,11 @@
       6004
     ],
     "ItemPoints": [
-      10,
-      10,
+      8,
+      8,
       2
     ],
-    "HashNeeded": 288000,
+    "HashNeeded": 360000,
     "UnlockRecipes": [
       52,
       522,
@@ -1792,9 +1781,9 @@
   },
   {
     "ID": 1411,
-    "Name": "T先进冶炼",
+    "Name": "T钢材冶炼",
     "IconPath": "Icons/Tech/1411",
-    "Desc": "T先进冶炼描述",
+    "Desc": "钢材冶炼描述",
     "Conclusion": "钢材冶炼结果",
     "Position": [
       17.0,
@@ -1812,19 +1801,7 @@
     ],
     "HashNeeded": 21600,
     "UnlockRecipes": [
-      63,
-      523,
-      531,
-      532,
-      533,
-      534,
-      535,
-      536,
-      411,
-      412,
-      413,
-      414,
-      537
+      63
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -1907,7 +1884,6 @@
     "HashNeeded": 36000,
     "UnlockRecipes": [
       65,
-      773,
       774
     ],
     "UnlockFunctions": [],
@@ -1931,22 +1907,20 @@
     "Desc": "高强度钛合金描述",
     "Conclusion": "高强度钛合金结果",
     "Position": [
-      17.0,
+      21.0,
       -11.0
     ],
     "PreTechs": [
-      1402
+      1829
     ],
-    "PreTechsImplicit": [
-      1413
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002
     ],
     "ItemPoints": [
-      80,
-      80
+      20,
+      20
     ],
     "HashNeeded": 144000,
     "UnlockRecipes": [
@@ -2525,7 +2499,7 @@
   {
     "ID": 1513,
     "Name": "T化工技术革新",
-    "IconPath": "Assets/texpack/化工科技",
+    "IconPath": "Assets/texpack/化工2_1",
     "Desc": "T化工技术革新描述",
     "Conclusion": "",
     "Position": [
@@ -2573,7 +2547,7 @@
     "Desc": "高强度轻质结构描述",
     "Conclusion": "高强度轻质结构结果",
     "Position": [
-      25.0,
+      29.0,
       -11.0
     ],
     "PreTechs": [
@@ -3022,12 +2996,12 @@
     ],
     "PreTechsImplicit": [],
     "Items": [
-      6001
+      1102
     ],
     "ItemPoints": [
-      4
+      30
     ],
-    "HashNeeded": 9000,
+    "HashNeeded": 2400,
     "UnlockRecipes": [
       97
     ],
@@ -8115,7 +8089,8 @@
     ],
     "HashNeeded": 1800,
     "UnlockRecipes": [
-      641
+      641,
+      13
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -8224,7 +8199,7 @@
     "Desc": "T钨强化金属描述",
     "Conclusion": "",
     "Position": [
-      21.0,
+      25.0,
       -11.0
     ],
     "PreTechs": [
@@ -8582,7 +8557,8 @@
       -39.0
     ],
     "PreTechs": [
-      1102
+      1102,
+      1815
     ],
     "PreTechsImplicit": [],
     "Items": [
@@ -8594,20 +8570,10 @@
       20
     ],
     "HashNeeded": 72000,
-    "UnlockRecipes": [
-      702,
-      713,
-      701,
-      501,
+    "UnlockRecipes": [    
       502,
       503,
-      504,
-      512,
-      513,
-      514,
-      515,
-      516,
-      517
+      504
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -9122,7 +9088,7 @@
     "PropertyItemCounts": []
   },
   {
-    "ID": 1831,
+    "ID": 1827,
     "Name": "T巨型建筑:物质分解设施",
     "IconPath": "Assets/texpack/回收科技",
     "Desc": "T巨型建筑:物质分解设施描述",
@@ -9171,9 +9137,189 @@
     "PropertyItemCounts": []
   },
   {
+    "ID": 1828,
+    "Name": "T化学能燃料棒",
+    "IconPath": "Assets/texpack/燃料棒科技",
+    "Desc": "T化学能燃料棒描述",
+    "Conclusion": "",
+    "Position": [
+      25.0,
+      -35.0
+    ],
+    "PreTechs": [
+      1812
+    ],
+    "PreTechsImplicit": [],
+    "Items": [
+      6001,
+      6002
+    ],
+    "ItemPoints": [
+      20,
+      20
+    ],
+    "HashNeeded": 72000,
+    "UnlockRecipes": [
+      515,
+      516,
+      517,
+      512,
+      513,
+      514
+    ],
+    "UnlockFunctions": [],
+    "UnlockValues": [],
+    "Published": true,
+    "Level": 0,
+    "MaxLevel": 0,
+    "LevelCoef1": 0,
+    "LevelCoef2": 0,
+    "IsLabTech": true,
+    "PreTechsMax": false,
+    "AddItems": [],
+    "AddItemCounts": [],
+    "PropertyOverrideItems": [],
+    "PropertyItemCounts": []
+  },
+  {
+    "ID": 1829,
+    "Name": "T矿物处理",
+    "IconPath": "Assets/texpack/矿物处理",
+    "Desc": "T矿物处理描述",
+    "Conclusion": "",
+    "Position": [
+      17.0,
+      -11.0
+    ],
+    "PreTechs": [
+      1402
+    ],
+    "PreTechsImplicit": [
+      1413
+    ],
+    "Items": [
+      6001,
+      6002
+    ],
+    "ItemPoints": [
+      20,
+      20
+    ],
+    "HashNeeded": 90000,
+    "UnlockRecipes": [
+      523,
+      773,
+      531,
+      532,
+      533,
+      534,
+      535,
+      536,
+      537,
+      411,
+      412,
+      413,
+      414
+    ],
+    "UnlockFunctions": [],
+    "UnlockValues": [],
+    "Published": true,
+    "Level": 0,
+    "MaxLevel": 0,
+    "LevelCoef1": 0,
+    "LevelCoef2": 0,
+    "IsLabTech": true,
+    "PreTechsMax": false,
+    "AddItems": [],
+    "AddItemCounts": [],
+    "PropertyOverrideItems": [],
+    "PropertyItemCounts": []
+  },
+  {
+    "ID": 1830,
+    "Name": "T先进化工",
+    "IconPath": "Icons/Tech/1122",
+    "Desc": "T先进化工描述",
+    "Conclusion": "高分子化工结果",
+    "Position": [
+      21.0,
+      -23.0
+    ],
+    "PreTechs": [
+      1122
+    ],
+    "PreTechsImplicit": [],
+    "Items": [
+      6001,
+      6002
+    ],
+    "ItemPoints": [
+      20,
+      20
+    ],
+    "HashNeeded": 72000,
+    "UnlockRecipes": [
+      772,
+      711,
+      715
+    ],
+    "UnlockFunctions": [],
+    "UnlockValues": [],
+    "Published": true,
+    "Level": 0,
+    "MaxLevel": 0,
+    "LevelCoef1": 0,
+    "LevelCoef2": 0,
+    "IsLabTech": true,
+    "PreTechsMax": false,
+    "AddItems": [],
+    "AddItemCounts": [],
+    "PropertyOverrideItems": [],
+    "PropertyItemCounts": []
+  },
+  {
+    "ID": 1815,
+    "Name": "T焦油分馏",
+    "IconPath": "Icons/Tech/1102",
+    "Desc": "T焦油分馏描述",
+    "Conclusion": "",
+    "Position": [
+      17.0,
+      -35.0
+    ],
+    "PreTechs": [
+      1101
+    ],
+    "PreTechsImplicit": [],
+    "Items": [
+      6001
+    ],
+    "ItemPoints": [
+      10
+    ],
+    "HashNeeded": 36000,
+    "UnlockRecipes": [
+      713,
+      501
+    ],
+    "UnlockFunctions": [],
+    "UnlockValues": [],
+    "Published": true,
+    "Level": 0,
+    "MaxLevel": 0,
+    "LevelCoef1": 0,
+    "LevelCoef2": 0,
+    "IsLabTech": true,
+    "PreTechsMax": false,
+    "AddItems": [],
+    "AddItemCounts": [],
+    "PropertyOverrideItems": [],
+    "PropertyItemCounts": []
+  },
+  {
     "ID": 1832,
     "Name": "化工厂",
-    "IconPath": "Icons/Tech/1121",
+    "IconPath": "Assets/texpack/化工科技",
     "Desc": "基础化工描述",
     "Conclusion": "I化工厂",
     "Position": [
@@ -9192,7 +9338,9 @@
     ],
     "HashNeeded": 18000,
     "UnlockRecipes": [
-      22
+      22,
+      705,
+      703
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],

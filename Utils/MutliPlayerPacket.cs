@@ -1,6 +1,8 @@
 ﻿using NebulaAPI;
 using ProjectGenesis.Patches;
 
+// ReSharper disable MemberCanBePrivate.Global
+
 namespace ProjectGenesis.Utils
 {
     public class NcModSaveRequest

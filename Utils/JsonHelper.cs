@@ -128,7 +128,6 @@ namespace ProjectGenesis.Utils
             public string IconPath { get; set; }
             public int Type { get; set; }
             public int GridIndex { get; set; }
-            public int PreTech { get; set; }
             public int Time { get; set; }
             public int[] Input { get; set; }
             public int[] InCounts { get; set; }
@@ -152,7 +151,6 @@ namespace ProjectGenesis.Utils
                        Output = i.Results ?? Array.Empty<int>(),
                        OutCounts = i.ResultCounts ?? Array.Empty<int>(),
                        Description = i.Description,
-                       PreTech = i.preTech?.ID ?? 0,
                        GridIndex = i.GridIndex,
                        IconPath = i.IconPath,
                        NonProductive = i.NonProductive

@@ -1,10 +1,16 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using UnityEngine;
 
 namespace ProjectGenesis.Utils
 {
     internal static class TranslateUtils
     {
+        static TranslateUtils()
+        {
+            Localization.language = (Language) PlayerPrefs.GetInt("language", 0);
+        }
+        
         private static Dictionary<string, StringProtoJson> _stringProtoJsons;
 
         private static Dictionary<string, StringProtoJson> StringProtoJsons

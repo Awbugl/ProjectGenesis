@@ -6,7 +6,6 @@
     "IconPath": "",
     "Type": 1,
     "GridIndex": 1101,
-    "PreTech": 0,
     "Time": 60,
     "Input": [
       1001
@@ -31,7 +30,6 @@
     "IconPath": "Assets/texpack/铜线圈",
     "Type": 4,
     "GridIndex": 1313,
-    "PreTech": 0,
     "Time": 60,
     "Input": [
       1104
@@ -56,7 +54,6 @@
     "IconPath": "",
     "Type": 1,
     "GridIndex": 1102,
-    "PreTech": 0,
     "Time": 60,
     "Input": [
       1002
@@ -81,7 +78,6 @@
     "IconPath": "",
     "Type": 1,
     "GridIndex": 1107,
-    "PreTech": 0,
     "Time": 60,
     "Input": [
       1005
@@ -106,7 +102,6 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 1301,
-    "PreTech": 0,
     "Time": 60,
     "Input": [
       1101
@@ -131,7 +126,6 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 1412,
-    "PreTech": 0,
     "Time": 60,
     "Input": [
       1101,
@@ -158,7 +152,6 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 2104,
-    "PreTech": 1001,
     "Time": 120,
     "Input": [
       1101,
@@ -185,7 +178,6 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 2101,
-    "PreTech": 1001,
     "Time": 60,
     "Input": [
       1101,
@@ -212,7 +204,6 @@
     "IconPath": "",
     "Type": 15,
     "GridIndex": 1701,
-    "PreTech": 1002,
     "Time": 180,
     "Input": [
       1102,
@@ -239,7 +230,6 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 2309,
-    "PreTech": 1002,
     "Time": 120,
     "Input": [
       6501,
@@ -270,7 +260,6 @@
     "IconPath": "Assets/texpack/紫色先驱者晶片",
     "Type": 12,
     "GridIndex": 3105,
-    "PreTech": 1123,
     "Time": 5400,
     "Input": [
       6271,
@@ -299,7 +288,6 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 1512,
-    "PreTech": 1101,
     "Time": 120,
     "Input": [
       1110,
@@ -326,7 +314,6 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 2102,
-    "PreTech": 1101,
     "Time": 180,
     "Input": [
       2201,
@@ -353,7 +340,6 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 2307,
-    "PreTech": 1102,
     "Time": 240,
     "Input": [
       6501,
@@ -384,7 +370,6 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 2308,
-    "PreTech": 1102,
     "Time": 120,
     "Input": [
       6501,
@@ -415,7 +400,6 @@
     "IconPath": "Icons/ItemRecipe/plasma-refining",
     "Type": 3,
     "GridIndex": 3203,
-    "PreTech": 1102,
     "Time": 120,
     "Input": [
       1007
@@ -442,7 +426,6 @@
     "IconPath": "",
     "Type": 1,
     "GridIndex": 1106,
-    "PreTech": 1402,
     "Time": 60,
     "Input": [
       1006
@@ -467,7 +450,6 @@
     "IconPath": "",
     "Type": 15,
     "GridIndex": 1702,
-    "PreTech": 1111,
     "Time": 180,
     "Input": [
       1109,
@@ -494,7 +476,6 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 1408,
-    "PreTech": 1112,
     "Time": 600,
     "Input": [
       6509,
@@ -521,7 +502,6 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 1209,
-    "PreTech": 1113,
     "Time": 120,
     "Input": [
       1103,
@@ -548,7 +528,6 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 1309,
-    "PreTech": 1114,
     "Time": 240,
     "Input": [
       1405,
@@ -577,7 +556,6 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 2408,
-    "PreTech": 1832,
     "Time": 240,
     "Input": [
       6501,
@@ -608,7 +586,6 @@
     "IconPath": "",
     "Type": 2,
     "GridIndex": 1109,
-    "PreTech": 1121,
     "Time": 120,
     "Input": [
       7001,
@@ -635,7 +612,6 @@
     "IconPath": "",
     "Type": 2,
     "GridIndex": 4201,
-    "PreTech": 1121,
     "Time": 60,
     "Input": [
       7103,
@@ -664,7 +640,6 @@
     "IconPath": "Assets/texpack/红制造台",
     "Type": 10,
     "GridIndex": 2404,
-    "PreTech": 1152,
     "Time": 10800,
     "Input": [
       2305,
@@ -695,7 +670,6 @@
     "IconPath": "Icons/ItemRecipe/hadron-collider",
     "Type": 10,
     "GridIndex": 2412,
-    "PreTech": 1152,
     "Time": 10800,
     "Input": [
       2310,
@@ -726,7 +700,6 @@
     "IconPath": "",
     "Type": 15,
     "GridIndex": 1703,
-    "PreTech": 1124,
     "Time": 180,
     "Input": [
       1106,
@@ -753,7 +726,6 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 1509,
-    "PreTech": 1125,
     "Time": 120,
     "Input": [
       1205,
@@ -782,7 +754,6 @@
     "IconPath": "Assets/texpack/行星熔炉",
     "Type": 10,
     "GridIndex": 2502,
-    "PreTech": 1824,
     "Time": 18000,
     "Input": [
       6502,
@@ -815,7 +786,6 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 1208,
-    "PreTech": 1126,
     "Time": 240,
     "Input": [
       1110,
@@ -842,7 +812,6 @@
     "IconPath": "",
     "Type": 2,
     "GridIndex": 1205,
-    "PreTech": 1131,
     "Time": 120,
     "Input": [
       1109,
@@ -869,7 +838,6 @@
     "IconPath": "Icons/ItemRecipe/graphene-lv2",
     "Type": 2,
     "GridIndex": 1305,
-    "PreTech": 1131,
     "Time": 120,
     "Input": [
       1011
@@ -896,7 +864,6 @@
     "IconPath": "",
     "Type": 2,
     "GridIndex": 1206,
-    "PreTech": 1132,
     "Time": 120,
     "Input": [
       1123
@@ -921,7 +888,6 @@
     "IconPath": "",
     "Type": 1,
     "GridIndex": 1511,
-    "PreTech": 1401,
     "Time": 60,
     "Input": [
       1005
@@ -946,7 +912,6 @@
     "IconPath": "Icons/ItemRecipe/nanotube-lv2",
     "Type": 2,
     "GridIndex": 1306,
-    "PreTech": 1132,
     "Time": 60,
     "Input": [
       1015
@@ -971,7 +936,6 @@
     "IconPath": "",
     "Type": 10,
     "GridIndex": 1712,
-    "PreTech": 1133,
     "Time": 240,
     "Input": [
       1124,
@@ -998,7 +962,6 @@
     "IconPath": "",
     "Type": 1,
     "GridIndex": 1207,
-    "PreTech": 1403,
     "Time": 120,
     "Input": [
       1105
@@ -1023,7 +986,6 @@
     "IconPath": "",
     "Type": 10,
     "GridIndex": 1609,
-    "PreTech": 1141,
     "Time": 360,
     "Input": [
       1126,
@@ -1050,7 +1012,6 @@
     "IconPath": "",
     "Type": 10,
     "GridIndex": 2411,
-    "PreTech": 1142,
     "Time": 3600,
     "Input": [
       6502,
@@ -1081,7 +1042,6 @@
     "IconPath": "",
     "Type": 5,
     "GridIndex": 1411,
-    "PreTech": 1142,
     "Time": 120,
     "Input": [
       1120
@@ -1106,7 +1066,6 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 1508,
-    "PreTech": 1822,
     "Time": 600,
     "Input": [
       6509,
@@ -1133,7 +1092,6 @@
     "IconPath": "",
     "Type": 12,
     "GridIndex": 3102,
-    "PreTech": 1145,
     "Time": 3600,
     "Input": [
       6271,
@@ -1162,7 +1120,6 @@
     "IconPath": "",
     "Type": 10,
     "GridIndex": 2111,
-    "PreTech": 1153,
     "Time": 18000,
     "Input": [
       6503,
@@ -1193,7 +1150,6 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 1608,
-    "PreTech": 1144,
     "Time": 600,
     "Input": [
       6509,
@@ -1220,7 +1176,6 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 2401,
-    "PreTech": 1201,
     "Time": 60,
     "Input": [
       6501,
@@ -1249,7 +1204,6 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 2402,
-    "PreTech": 1202,
     "Time": 120,
     "Input": [
       6501,
@@ -1278,7 +1232,6 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 2403,
-    "PreTech": 1203,
     "Time": 360,
     "Input": [
       6502,
@@ -1309,7 +1262,6 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 2409,
-    "PreTech": 1001,
     "Time": 120,
     "Input": [
       6501,
@@ -1338,7 +1290,6 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 2306,
-    "PreTech": 1120,
     "Time": 240,
     "Input": [
       6501,
@@ -1367,7 +1318,6 @@
     "IconPath": "",
     "Type": 1,
     "GridIndex": 1108,
-    "PreTech": 0,
     "Time": 120,
     "Input": [
       1005
@@ -1392,7 +1342,6 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 1514,
-    "PreTech": 1302,
     "Time": 240,
     "Input": [
       7502,
@@ -1421,7 +1370,6 @@
     "IconPath": "",
     "Type": 10,
     "GridIndex": 1614,
-    "PreTech": 1303,
     "Time": 360,
     "Input": [
       7503,
@@ -1450,7 +1398,6 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 1414,
-    "PreTech": 1311,
     "Time": 120,
     "Input": [
       7501,
@@ -1479,7 +1426,6 @@
     "IconPath": "Assets/texpack/行星化工厂",
     "Type": 10,
     "GridIndex": 2503,
-    "PreTech": 1825,
     "Time": 18000,
     "Input": [
       6502,
@@ -1512,7 +1458,6 @@
     "IconPath": "",
     "Type": 15,
     "GridIndex": 1704,
-    "PreTech": 1312,
     "Time": 180,
     "Input": [
       1126,
@@ -1539,7 +1484,6 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 2405,
-    "PreTech": 1401,
     "Time": 120,
     "Input": [
       6501,
@@ -1568,7 +1512,6 @@
     "IconPath": "Assets/texpack/三元精金",
     "Type": 13,
     "GridIndex": 3103,
-    "PreTech": 1134,
     "Time": 3600,
     "Input": [
       1103,
@@ -1597,7 +1540,6 @@
     "IconPath": "Icons/ItemRecipe/X-ray",
     "Type": 3,
     "GridIndex": 3201,
-    "PreTech": 1103,
     "Time": 120,
     "Input": [
       1114,
@@ -1626,7 +1568,6 @@
     "IconPath": "",
     "Type": 1,
     "GridIndex": 1103,
-    "PreTech": 1402,
     "Time": 60,
     "Input": [
       1003
@@ -1651,7 +1592,6 @@
     "IconPath": "",
     "Type": 1,
     "GridIndex": 1204,
-    "PreTech": 1403,
     "Time": 120,
     "Input": [
       1109
@@ -1676,7 +1616,6 @@
     "IconPath": "Icons/ItemRecipe/diamond-lv2",
     "Type": 1,
     "GridIndex": 1304,
-    "PreTech": 1403,
     "Time": 60,
     "Input": [
       1012
@@ -1701,7 +1640,6 @@
     "IconPath": "Icons/ItemRecipe/silicium-high-purity-lv2",
     "Type": 4,
     "GridIndex": 1307,
-    "PreTech": 1133,
     "Time": 60,
     "Input": [
       1013
@@ -1726,7 +1664,6 @@
     "IconPath": "",
     "Type": 1,
     "GridIndex": 1201,
-    "PreTech": 1411,
     "Time": 120,
     "Input": [
       1101
@@ -1751,7 +1688,6 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 2105,
-    "PreTech": 1412,
     "Time": 240,
     "Input": [
       1103,
@@ -1782,7 +1718,6 @@
     "IconPath": "",
     "Type": 1,
     "GridIndex": 1104,
-    "PreTech": 1413,
     "Time": 60,
     "Input": [
       1004
@@ -1807,7 +1742,6 @@
     "IconPath": "",
     "Type": 1,
     "GridIndex": 1202,
-    "PreTech": 1414,
     "Time": 360,
     "Input": [
       1103,
@@ -1834,7 +1768,6 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 2106,
-    "PreTech": 1501,
     "Time": 240,
     "Input": [
       1101,
@@ -1863,7 +1796,6 @@
     "IconPath": "Assets/texpack/行星精密组装厂",
     "Type": 10,
     "GridIndex": 2504,
-    "PreTech": 1826,
     "Time": 18000,
     "Input": [
       6503,
@@ -1896,7 +1828,6 @@
     "IconPath": "Assets/texpack/回收塔",
     "Type": 10,
     "GridIndex": 2505,
-    "PreTech": 1831,
     "Time": 7200,
     "Input": [
       6502,
@@ -1929,7 +1860,6 @@
     "IconPath": "",
     "Type": 10,
     "GridIndex": 1410,
-    "PreTech": 1503,
     "Time": 120,
     "Input": [
       7709,
@@ -1956,7 +1886,6 @@
     "IconPath": "",
     "Type": 10,
     "GridIndex": 2311,
-    "PreTech": 1503,
     "Time": 360,
     "Input": [
       6503,
@@ -1987,7 +1916,6 @@
     "IconPath": "",
     "Type": 10,
     "GridIndex": 2110,
-    "PreTech": 1504,
     "Time": 360,
     "Input": [
       6503,
@@ -2018,7 +1946,6 @@
     "IconPath": "",
     "Type": 12,
     "GridIndex": 2103,
-    "PreTech": 1712,
     "Time": 10800,
     "Input": [
       6271,
@@ -2049,7 +1976,6 @@
     "IconPath": "Icons/ItemRecipe/photon-formula",
     "Type": 5,
     "GridIndex": 1212,
-    "PreTech": 1506,
     "Time": 120,
     "Input": [
       1208
@@ -2076,7 +2002,6 @@
     "IconPath": "",
     "Type": 15,
     "GridIndex": 1706,
-    "PreTech": 1507,
     "Time": 180,
     "Input": [
       6280,
@@ -2103,7 +2028,6 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 2107,
-    "PreTech": 1511,
     "Time": 240,
     "Input": [
       1101,
@@ -2132,7 +2056,6 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 2310,
-    "PreTech": 1512,
     "Time": 360,
     "Input": [
       6502,
@@ -2161,7 +2084,6 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 1404,
-    "PreTech": 1704,
     "Time": 600,
     "Input": [
       1209
@@ -2186,7 +2108,6 @@
     "IconPath": "Icons/ItemRecipe/space-warper-lv2",
     "Type": 4,
     "GridIndex": 1504,
-    "PreTech": 1705,
     "Time": 600,
     "Input": [
       6005
@@ -2211,7 +2132,6 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 1510,
-    "PreTech": 1521,
     "Time": 240,
     "Input": [
       7707,
@@ -2238,7 +2158,6 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 1610,
-    "PreTech": 1521,
     "Time": 360,
     "Input": [
       1125,
@@ -2265,7 +2184,6 @@
     "IconPath": "",
     "Type": 10,
     "GridIndex": 2312,
-    "PreTech": 1522,
     "Time": 900,
     "Input": [
       6503,
@@ -2296,7 +2214,6 @@
     "IconPath": "",
     "Type": 10,
     "GridIndex": 1710,
-    "PreTech": 1522,
     "Time": 600,
     "Input": [
       1502,
@@ -2325,7 +2242,6 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 2201,
-    "PreTech": 1601,
     "Time": 60,
     "Input": [
       1101,
@@ -2352,7 +2268,6 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 2301,
-    "PreTech": 1601,
     "Time": 60,
     "Input": [
       1101,
@@ -2379,7 +2294,6 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 2304,
-    "PreTech": 1607,
     "Time": 120,
     "Input": [
       1101,
@@ -2406,7 +2320,6 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 2204,
-    "PreTech": 1601,
     "Time": 120,
     "Input": [
       1101,
@@ -2433,7 +2346,6 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 2302,
-    "PreTech": 1602,
     "Time": 60,
     "Input": [
       2011,
@@ -2460,7 +2372,6 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 2202,
-    "PreTech": 1602,
     "Time": 60,
     "Input": [
       2001,
@@ -2487,7 +2398,6 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 2303,
-    "PreTech": 1603,
     "Time": 60,
     "Input": [
       2012,
@@ -2514,7 +2424,6 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 2305,
-    "PreTech": 1607,
     "Time": 240,
     "Input": [
       1101,
@@ -2541,7 +2450,6 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 2203,
-    "PreTech": 1603,
     "Time": 60,
     "Input": [
       2002,
@@ -2568,7 +2476,6 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 2210,
-    "PreTech": 1604,
     "Time": 900,
     "Input": [
       6501,
@@ -2599,7 +2506,6 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 1210,
-    "PreTech": 1604,
     "Time": 600,
     "Input": [
       1101,
@@ -2626,7 +2532,6 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 2211,
-    "PreTech": 1605,
     "Time": 1800,
     "Input": [
       6502,
@@ -2657,7 +2562,6 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 1310,
-    "PreTech": 1605,
     "Time": 900,
     "Input": [
       1107,
@@ -2684,7 +2588,6 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 1213,
-    "PreTech": 1701,
     "Time": 120,
     "Input": [
       1101,
@@ -2711,7 +2614,6 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 1214,
-    "PreTech": 1702,
     "Time": 120,
     "Input": [
       1203,
@@ -2738,7 +2640,6 @@
     "IconPath": "Assets/texpack/氘氦三混合聚变燃料棒",
     "Type": 4,
     "GridIndex": 1607,
-    "PreTech": 1822,
     "Time": 600,
     "Input": [
       1802,
@@ -2767,7 +2668,6 @@
     "IconPath": "Assets/texpack/氦三燃料棒",
     "Type": 4,
     "GridIndex": 1505,
-    "PreTech": 1822,
     "Time": 600,
     "Input": [
       6509,
@@ -2794,7 +2694,6 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 1409,
-    "PreTech": 1704,
     "Time": 240,
     "Input": [
       1205,
@@ -2821,7 +2720,6 @@
     "IconPath": "",
     "Type": 15,
     "GridIndex": 1705,
-    "PreTech": 1705,
     "Time": 180,
     "Input": [
       1209,
@@ -2848,7 +2746,6 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 1215,
-    "PreTech": 1711,
     "Time": 120,
     "Input": [
       1204,
@@ -2875,7 +2772,6 @@
     "IconPath": "",
     "Type": 5,
     "GridIndex": 1211,
-    "PreTech": 1143,
     "Time": 360,
     "Input": [
       1126,
@@ -2902,7 +2798,6 @@
     "IconPath": "Assets/texpack/氦三",
     "Type": 2,
     "GridIndex": 4408,
-    "PreTech": 1821,
     "Time": 240,
     "Input": [
       6234
@@ -2927,7 +2822,6 @@
     "IconPath": "Assets/texpack/氦",
     "Type": 2,
     "GridIndex": 4407,
-    "PreTech": 1821,
     "Time": 240,
     "Input": [
       1014
@@ -2952,7 +2846,6 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 1117,
-    "PreTech": 1151,
     "Time": 120,
     "Input": [
       1124,
@@ -2979,7 +2872,6 @@
     "IconPath": "",
     "Type": 10,
     "GridIndex": 2209,
-    "PreTech": 1151,
     "Time": 240,
     "Input": [
       6502,
@@ -3010,7 +2902,6 @@
     "IconPath": "Assets/texpack/反物质能量炉",
     "Type": 12,
     "GridIndex": 2112,
-    "PreTech": 1144,
     "Time": 10800,
     "Input": [
       6271,
@@ -3041,7 +2932,6 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 2212,
-    "PreTech": 1606,
     "Time": 1800,
     "Input": [
       2104,
@@ -3068,7 +2958,6 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 1116,
-    "PreTech": 1415,
     "Time": 60,
     "Input": [
       1108,
@@ -3095,7 +2984,6 @@
     "IconPath": "",
     "Type": 10,
     "GridIndex": 2109,
-    "PreTech": 1416,
     "Time": 1800,
     "Input": [
       6502,
@@ -3128,7 +3016,6 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 2207,
-    "PreTech": 1120,
     "Time": 120,
     "Input": [
       1101,
@@ -3157,7 +3044,6 @@
     "IconPath": "Assets/texpack/氦闪抑制器",
     "Type": 10,
     "GridIndex": 1604,
-    "PreTech": 1153,
     "Time": 900,
     "Input": [
       7707,
@@ -3186,7 +3072,6 @@
     "IconPath": "",
     "Type": 10,
     "GridIndex": 2406,
-    "PreTech": 1417,
     "Time": 240,
     "Input": [
       6502,
@@ -3217,7 +3102,6 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 2206,
-    "PreTech": 1602,
     "Time": 120,
     "Input": [
       1101,
@@ -3244,7 +3128,6 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 2108,
-    "PreTech": 1104,
     "Time": 360,
     "Input": [
       2204,
@@ -3273,7 +3156,6 @@
     "IconPath": "",
     "Type": 10,
     "GridIndex": 2410,
-    "PreTech": 1304,
     "Time": 600,
     "Input": [
       6503,
@@ -3304,7 +3186,6 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 2205,
-    "PreTech": 1603,
     "Time": 240,
     "Input": [
       6501,
@@ -3333,7 +3214,6 @@
     "IconPath": "Assets/texpack/反物质约束单元",
     "Type": 10,
     "GridIndex": 3101,
-    "PreTech": 1145,
     "Time": 1800,
     "Input": [
       1125,
@@ -3364,7 +3244,6 @@
     "IconPath": "Assets/texpack/石油裂化",
     "Type": 3,
     "GridIndex": 3202,
-    "PreTech": 1812,
     "Time": 120,
     "Input": [
       1007
@@ -3393,7 +3272,6 @@
     "IconPath": "Assets/texpack/电解水",
     "Type": 2,
     "GridIndex": 1114,
-    "PreTech": 1812,
     "Time": 120,
     "Input": [
       1000
@@ -3420,7 +3298,6 @@
     "IconPath": "Assets/texpack/氢氧化钠",
     "Type": 2,
     "GridIndex": 4211,
-    "PreTech": 1121,
     "Time": 120,
     "Input": [
       7018
@@ -3447,7 +3324,6 @@
     "IconPath": "Assets/texpack/氯化钠",
     "Type": 4,
     "GridIndex": 1115,
-    "PreTech": 1121,
     "Time": 180,
     "Input": [
       1005
@@ -3476,7 +3352,6 @@
     "IconPath": "Assets/texpack/环氧氯丙烷",
     "Type": 2,
     "GridIndex": 4110,
-    "PreTech": 1121,
     "Time": 120,
     "Input": [
       7009,
@@ -3505,7 +3380,6 @@
     "IconPath": "Assets/texpack/盐水",
     "Type": 2,
     "GridIndex": 4106,
-    "PreTech": 1121,
     "Time": 60,
     "Input": [
       1000,
@@ -3532,7 +3406,6 @@
     "IconPath": "Assets/texpack/双酚A",
     "Type": 2,
     "GridIndex": 4103,
-    "PreTech": 1121,
     "Time": 120,
     "Input": [
       7014,
@@ -3563,7 +3436,6 @@
     "IconPath": "Assets/texpack/硝酸",
     "Type": 2,
     "GridIndex": 4104,
-    "PreTech": 1121,
     "Time": 120,
     "Input": [
       7102,
@@ -3592,7 +3464,6 @@
     "IconPath": "Assets/texpack/二硝基氯苯",
     "Type": 2,
     "GridIndex": 4108,
-    "PreTech": 1121,
     "Time": 60,
     "Input": [
       7017,
@@ -3619,7 +3490,6 @@
     "IconPath": "Assets/texpack/二氯联苯胺",
     "Type": 2,
     "GridIndex": 4107,
-    "PreTech": 1121,
     "Time": 60,
     "Input": [
       7008,
@@ -3646,7 +3516,6 @@
     "IconPath": "Assets/texpack/氨",
     "Type": 2,
     "GridIndex": 4102,
-    "PreTech": 1121,
     "Time": 60,
     "Input": [
       7102,
@@ -3677,7 +3546,6 @@
     "IconPath": "Assets/texpack/二氨基联苯胺",
     "Type": 2,
     "GridIndex": 4105,
-    "PreTech": 1121,
     "Time": 120,
     "Input": [
       7007,
@@ -3706,7 +3574,6 @@
     "IconPath": "Assets/texpack/煤焦油生产",
     "Type": 3,
     "GridIndex": 3206,
-    "PreTech": 1121,
     "Time": 60,
     "Input": [
       1006
@@ -3731,7 +3598,6 @@
     "IconPath": "Assets/texpack/煤焦油",
     "Type": 3,
     "GridIndex": 3207,
-    "PreTech": 1812,
     "Time": 60,
     "Input": [
       1114
@@ -3760,7 +3626,6 @@
     "IconPath": "Assets/texpack/邻苯二甲酸",
     "Type": 2,
     "GridIndex": 4109,
-    "PreTech": 1121,
     "Time": 120,
     "Input": [
       7019,
@@ -3789,7 +3654,6 @@
     "IconPath": "Assets/texpack/间苯二甲酸二苯酯",
     "Type": 2,
     "GridIndex": 4111,
-    "PreTech": 1121,
     "Time": 60,
     "Input": [
       7003,
@@ -3816,7 +3680,6 @@
     "IconPath": "Assets/texpack/三氯化铁",
     "Type": 2,
     "GridIndex": 4101,
-    "PreTech": 1121,
     "Time": 360,
     "Input": [
       7014,
@@ -3847,7 +3710,6 @@
     "IconPath": "Assets/texpack/生物微晶元件",
     "Type": 10,
     "GridIndex": 1415,
-    "PreTech": 1807,
     "Time": 120,
     "Input": [
       7504,
@@ -3876,7 +3738,6 @@
     "IconPath": "Assets/texpack/先进生物电路",
     "Type": 10,
     "GridIndex": 1515,
-    "PreTech": 1807,
     "Time": 240,
     "Input": [
       7505,
@@ -3905,7 +3766,6 @@
     "IconPath": "Assets/texpack/超生物计算集群",
     "Type": 10,
     "GridIndex": 1615,
-    "PreTech": 1807,
     "Time": 360,
     "Input": [
       7506,
@@ -3934,7 +3794,6 @@
     "IconPath": "Assets/texpack/生物神经纤维",
     "Type": 10,
     "GridIndex": 1713,
-    "PreTech": 1808,
     "Time": 240,
     "Input": [
       1402,
@@ -3963,7 +3822,6 @@
     "IconPath": "Assets/texpack/超级纳米电脑",
     "Type": 10,
     "GridIndex": 1714,
-    "PreTech": 1809,
     "Time": 3600,
     "Input": [
       1107,
@@ -3992,7 +3850,6 @@
     "IconPath": "Assets/texpack/湿件主机",
     "Type": 10,
     "GridIndex": 1715,
-    "PreTech": 1810,
     "Time": 5400,
     "Input": [
       7707,
@@ -4021,7 +3878,6 @@
     "IconPath": "Assets/texpack/塑料基板",
     "Type": 9,
     "GridIndex": 1216,
-    "PreTech": 1805,
     "Time": 120,
     "Input": [
       1115,
@@ -4048,7 +3904,6 @@
     "IconPath": "Assets/texpack/覆层塑料基板",
     "Type": 9,
     "GridIndex": 1316,
-    "PreTech": 1805,
     "Time": 120,
     "Input": [
       7501,
@@ -4077,7 +3932,6 @@
     "IconPath": "Assets/texpack/钛蚀刻覆层塑料基板",
     "Type": 9,
     "GridIndex": 1416,
-    "PreTech": 1805,
     "Time": 120,
     "Input": [
       7502,
@@ -4106,7 +3960,6 @@
     "IconPath": "Assets/texpack/生物基板",
     "Type": 9,
     "GridIndex": 1516,
-    "PreTech": 1805,
     "Time": 240,
     "Input": [
       7709,
@@ -4133,7 +3986,6 @@
     "IconPath": "Assets/texpack/覆层生物基板",
     "Type": 9,
     "GridIndex": 1616,
-    "PreTech": 1805,
     "Time": 240,
     "Input": [
       7504,
@@ -4162,7 +4014,6 @@
     "IconPath": "Assets/texpack/钨蚀刻覆层生物基板",
     "Type": 9,
     "GridIndex": 1716,
-    "PreTech": 1805,
     "Time": 240,
     "Input": [
       7505,
@@ -4191,7 +4042,6 @@
     "IconPath": "Assets/texpack/超低功率IC晶片",
     "Type": 4,
     "GridIndex": 1217,
-    "PreTech": 1806,
     "Time": 120,
     "Input": [
       7701
@@ -4216,7 +4066,6 @@
     "IconPath": "Assets/texpack/低功率IC晶片",
     "Type": 4,
     "GridIndex": 1317,
-    "PreTech": 1806,
     "Time": 120,
     "Input": [
       7701
@@ -4241,7 +4090,6 @@
     "IconPath": "Assets/texpack/标准功率IC晶片",
     "Type": 10,
     "GridIndex": 1417,
-    "PreTech": 1806,
     "Time": 120,
     "Input": [
       7702
@@ -4266,7 +4114,6 @@
     "IconPath": "Assets/texpack/高功率IC晶片",
     "Type": 10,
     "GridIndex": 1517,
-    "PreTech": 1806,
     "Time": 120,
     "Input": [
       7702
@@ -4291,7 +4138,6 @@
     "IconPath": "Assets/texpack/超高功率IC晶片",
     "Type": 10,
     "GridIndex": 1617,
-    "PreTech": 1806,
     "Time": 120,
     "Input": [
       7703
@@ -4316,7 +4162,6 @@
     "IconPath": "Assets/texpack/生物IC晶片",
     "Type": 10,
     "GridIndex": 1717,
-    "PreTech": 1806,
     "Time": 120,
     "Input": [
       7703
@@ -4341,7 +4186,6 @@
     "IconPath": "Assets/texpack/环氧树脂",
     "Type": 2,
     "GridIndex": 1110,
-    "PreTech": 1121,
     "Time": 120,
     "Input": [
       7016,
@@ -4372,7 +4216,6 @@
     "IconPath": "Assets/texpack/聚苯并咪唑",
     "Type": 2,
     "GridIndex": 1111,
-    "PreTech": 1121,
     "Time": 120,
     "Input": [
       7005,
@@ -4401,7 +4244,6 @@
     "IconPath": "Assets/texpack/钨矿",
     "Type": 2,
     "GridIndex": 1611,
-    "PreTech": 1413,
     "Time": 360,
     "Input": [
       1004,
@@ -4428,7 +4270,6 @@
     "IconPath": "Assets/texpack/钨块",
     "Type": 1,
     "GridIndex": 1105,
-    "PreTech": 1413,
     "Time": 60,
     "Input": [
       1016
@@ -4453,7 +4294,6 @@
     "IconPath": "Assets/texpack/钨强化玻璃",
     "Type": 4,
     "GridIndex": 1308,
-    "PreTech": 1811,
     "Time": 120,
     "Input": [
       1110,
@@ -4480,7 +4320,6 @@
     "IconPath": "Assets/texpack/钨复合金属",
     "Type": 1,
     "GridIndex": 1203,
-    "PreTech": 1804,
     "Time": 720,
     "Input": [
       1103,
@@ -4509,7 +4348,6 @@
     "IconPath": "Assets/texpack/硅晶圆",
     "Type": 1,
     "GridIndex": 1501,
-    "PreTech": 1833,
     "Time": 480,
     "Input": [
       1105
@@ -4534,7 +4372,6 @@
     "IconPath": "Assets/texpack/钛掺杂的硅晶圆",
     "Type": 1,
     "GridIndex": 1502,
-    "PreTech": 1833,
     "Time": 480,
     "Input": [
       1105,
@@ -4561,7 +4398,6 @@
     "IconPath": "Assets/texpack/钨掺杂的硅晶圆",
     "Type": 1,
     "GridIndex": 1503,
-    "PreTech": 1833,
     "Time": 480,
     "Input": [
       1105,
@@ -4588,7 +4424,6 @@
     "IconPath": "Assets/texpack/活性生物纤维",
     "Type": 2,
     "GridIndex": 1112,
-    "PreTech": 1808,
     "Time": 120,
     "Input": [
       1117
@@ -4613,7 +4448,6 @@
     "IconPath": "Assets/texpack/钛齿轮",
     "Type": 4,
     "GridIndex": 1302,
-    "PreTech": 1802,
     "Time": 60,
     "Input": [
       1106
@@ -4638,7 +4472,6 @@
     "IconPath": "Assets/texpack/钨齿轮",
     "Type": 4,
     "GridIndex": 1303,
-    "PreTech": 1803,
     "Time": 60,
     "Input": [
       7705
@@ -4663,7 +4496,6 @@
     "IconPath": "Assets/texpack/光子结晶",
     "Type": 13,
     "GridIndex": 3104,
-    "PreTech": 1134,
     "Time": 3600,
     "Input": [
       1208
@@ -4688,7 +4520,6 @@
     "IconPath": "Assets/texpack/石墨线圈",
     "Type": 4,
     "GridIndex": 1314,
-    "PreTech": 1201,
     "Time": 60,
     "Input": [
       1109
@@ -4713,7 +4544,6 @@
     "IconPath": "Assets/texpack/钛线圈",
     "Type": 4,
     "GridIndex": 1315,
-    "PreTech": 1201,
     "Time": 60,
     "Input": [
       1106
@@ -4738,7 +4568,6 @@
     "IconPath": "Assets/texpack/基础机械组件",
     "Type": 4,
     "GridIndex": 1401,
-    "PreTech": 1801,
     "Time": 120,
     "Input": [
       1101,
@@ -4767,7 +4596,6 @@
     "IconPath": "Assets/texpack/先进机械组件",
     "Type": 4,
     "GridIndex": 1402,
-    "PreTech": 1802,
     "Time": 240,
     "Input": [
       6501,
@@ -4796,7 +4624,6 @@
     "IconPath": "Assets/texpack/尖端机械组件",
     "Type": 10,
     "GridIndex": 1403,
-    "PreTech": 1803,
     "Time": 360,
     "Input": [
       6502,
@@ -4825,7 +4652,6 @@
     "IconPath": "Assets/texpack/空燃料棒",
     "Type": 4,
     "GridIndex": 1605,
-    "PreTech": 1201,
     "Time": 120,
     "Input": [
       1101,
@@ -4852,7 +4678,6 @@
     "IconPath": "Assets/texpack/氢燃料",
     "Type": 2,
     "GridIndex": 4401,
-    "PreTech": 1112,
     "Time": 120,
     "Input": [
       1120
@@ -4877,7 +4702,6 @@
     "IconPath": "Assets/texpack/氘核燃料",
     "Type": 2,
     "GridIndex": 4402,
-    "PreTech": 1821,
     "Time": 240,
     "Input": [
       1121
@@ -4902,7 +4726,6 @@
     "IconPath": "Assets/texpack/反物质燃料",
     "Type": 2,
     "GridIndex": 4403,
-    "PreTech": 1144,
     "Time": 360,
     "Input": [
       1122
@@ -4927,7 +4750,6 @@
     "IconPath": "Assets/texpack/高效反物质",
     "Type": 5,
     "GridIndex": 1312,
-    "PreTech": 1506,
     "Time": 60,
     "Input": [
       1208
@@ -4952,7 +4774,6 @@
     "IconPath": "Assets/texpack/高效奇异物质",
     "Type": 5,
     "GridIndex": 1311,
-    "PreTech": 1303,
     "Time": 180,
     "Input": [
       1205,
@@ -4979,7 +4800,6 @@
     "IconPath": "Assets/texpack/极效石墨烯",
     "Type": 2,
     "GridIndex": 1405,
-    "PreTech": 1132,
     "Time": 120,
     "Input": [
       1011
@@ -5004,7 +4824,6 @@
     "IconPath": "Assets/texpack/精炼氢",
     "Type": 3,
     "GridIndex": 3204,
-    "PreTech": 1103,
     "Time": 120,
     "Input": [
       1007
@@ -5029,7 +4848,6 @@
     "IconPath": "Assets/texpack/有机液体离心",
     "Type": 2,
     "GridIndex": 4212,
-    "PreTech": 1103,
     "Time": 120,
     "Input": [
       1116
@@ -5060,7 +4878,6 @@
     "IconPath": "Assets/texpack/高效硅晶圆",
     "Type": 1,
     "GridIndex": 1601,
-    "PreTech": 1833,
     "Time": 240,
     "Input": [
       1105,
@@ -5087,7 +4904,6 @@
     "IconPath": "Assets/texpack/高效钛晶圆",
     "Type": 1,
     "GridIndex": 1602,
-    "PreTech": 1833,
     "Time": 240,
     "Input": [
       1105,
@@ -5116,7 +4932,6 @@
     "IconPath": "Assets/texpack/高效钨晶圆",
     "Type": 1,
     "GridIndex": 1603,
-    "PreTech": 1833,
     "Time": 240,
     "Input": [
       1105,
@@ -5145,7 +4960,6 @@
     "IconPath": "Assets/texpack/高效塑料",
     "Type": 2,
     "GridIndex": 1113,
-    "PreTech": 1122,
     "Time": 60,
     "Input": [
       1117,
@@ -5174,7 +4988,6 @@
     "IconPath": "Assets/texpack/燃油精炼",
     "Type": 3,
     "GridIndex": 3205,
-    "PreTech": 1812,
     "Time": 240,
     "Input": [
       1007
@@ -5201,7 +5014,6 @@
     "IconPath": "Assets/texpack/轻燃油",
     "Type": 2,
     "GridIndex": 4202,
-    "PreTech": 1812,
     "Time": 180,
     "Input": [
       6204,
@@ -5230,7 +5042,6 @@
     "IconPath": "Assets/texpack/重燃油",
     "Type": 2,
     "GridIndex": 4203,
-    "PreTech": 1812,
     "Time": 60,
     "Input": [
       6203,
@@ -5259,7 +5070,6 @@
     "IconPath": "Assets/texpack/柴油",
     "Type": 2,
     "GridIndex": 4204,
-    "PreTech": 1812,
     "Time": 180,
     "Input": [
       6202,
@@ -5286,7 +5096,6 @@
     "IconPath": "Assets/texpack/一氧化碳",
     "Type": 2,
     "GridIndex": 4205,
-    "PreTech": 1121,
     "Time": 240,
     "Input": [
       1006,
@@ -5313,7 +5122,6 @@
     "IconPath": "Assets/texpack/甲醇",
     "Type": 2,
     "GridIndex": 4206,
-    "PreTech": 1121,
     "Time": 240,
     "Input": [
       6205,
@@ -5340,7 +5148,6 @@
     "IconPath": "Assets/texpack/乙酸",
     "Type": 2,
     "GridIndex": 4207,
-    "PreTech": 1121,
     "Time": 240,
     "Input": [
       6205,
@@ -5367,7 +5174,6 @@
     "IconPath": "Assets/texpack/乙酸甲酯",
     "Type": 2,
     "GridIndex": 4208,
-    "PreTech": 1121,
     "Time": 240,
     "Input": [
       6208,
@@ -5396,7 +5202,6 @@
     "IconPath": "Assets/texpack/次氯酸",
     "Type": 2,
     "GridIndex": 4209,
-    "PreTech": 1121,
     "Time": 240,
     "Input": [
       7014,
@@ -5423,7 +5228,6 @@
     "IconPath": "Assets/texpack/四硝基甲烷",
     "Type": 2,
     "GridIndex": 4210,
-    "PreTech": 1121,
     "Time": 360,
     "Input": [
       7017,
@@ -5454,7 +5258,6 @@
     "IconPath": "Assets/texpack/硝基柴油",
     "Type": 2,
     "GridIndex": 4404,
-    "PreTech": 1812,
     "Time": 480,
     "Input": [
       6211,
@@ -5481,7 +5284,6 @@
     "IconPath": "Assets/texpack/偏二甲肼",
     "Type": 2,
     "GridIndex": 4405,
-    "PreTech": 1812,
     "Time": 600,
     "Input": [
       6210,
@@ -5512,7 +5314,6 @@
     "IconPath": "Assets/texpack/火箭燃料",
     "Type": 2,
     "GridIndex": 4406,
-    "PreTech": 1812,
     "Time": 900,
     "Input": [
       6213,
@@ -5539,7 +5340,6 @@
     "IconPath": "Assets/texpack/硝基柴油燃料棒",
     "Type": 4,
     "GridIndex": 1406,
-    "PreTech": 1812,
     "Time": 600,
     "Input": [
       6509,
@@ -5566,7 +5366,6 @@
     "IconPath": "Assets/texpack/偏二甲肼燃料棒",
     "Type": 4,
     "GridIndex": 1506,
-    "PreTech": 1812,
     "Time": 600,
     "Input": [
       6509,
@@ -5593,7 +5392,6 @@
     "IconPath": "Assets/texpack/火箭燃料棒",
     "Type": 4,
     "GridIndex": 1606,
-    "PreTech": 1812,
     "Time": 600,
     "Input": [
       6509,
@@ -5620,7 +5418,6 @@
     "IconPath": "Assets/texpack/高效微晶元件",
     "Type": 10,
     "GridIndex": 1413,
-    "PreTech": 1810,
     "Time": 60,
     "Input": [
       7502,
@@ -5647,7 +5444,6 @@
     "IconPath": "Assets/texpack/高效处理器",
     "Type": 10,
     "GridIndex": 1513,
-    "PreTech": 1809,
     "Time": 120,
     "Input": [
       7503,
@@ -5674,7 +5470,6 @@
     "IconPath": "Assets/texpack/高效量子芯片",
     "Type": 10,
     "GridIndex": 1613,
-    "PreTech": 1809,
     "Time": 180,
     "Input": [
       7504,
@@ -5701,7 +5496,6 @@
     "IconPath": "Assets/texpack/高效硫酸",
     "Type": 2,
     "GridIndex": 4213,
-    "PreTech": 1122,
     "Time": 60,
     "Input": [
       6215,
@@ -5728,7 +5522,6 @@
     "IconPath": "Assets/texpack/量子储液罐",
     "Type": 4,
     "GridIndex": 2208,
-    "PreTech": 1303,
     "Time": 900,
     "Input": [
       1107,
@@ -5759,7 +5552,6 @@
     "IconPath": "Assets/texpack/矿物处理厂",
     "Type": 4,
     "GridIndex": 2407,
-    "PreTech": 1411,
     "Time": 600,
     "Input": [
       6502,
@@ -5790,7 +5582,6 @@
     "IconPath": "Assets/texpack/铁矿粉",
     "Type": 11,
     "GridIndex": 3401,
-    "PreTech": 1411,
     "Time": 60,
     "Input": [
       1001
@@ -5815,7 +5606,6 @@
     "IconPath": "Assets/texpack/铜矿粉",
     "Type": 11,
     "GridIndex": 3402,
-    "PreTech": 1411,
     "Time": 60,
     "Input": [
       1002
@@ -5840,7 +5630,6 @@
     "IconPath": "Assets/texpack/硅矿粉",
     "Type": 11,
     "GridIndex": 3403,
-    "PreTech": 1411,
     "Time": 60,
     "Input": [
       1003
@@ -5865,7 +5654,6 @@
     "IconPath": "Assets/texpack/钛矿粉",
     "Type": 11,
     "GridIndex": 3404,
-    "PreTech": 1411,
     "Time": 60,
     "Input": [
       1004
@@ -5890,7 +5678,6 @@
     "IconPath": "Assets/texpack/石粉",
     "Type": 11,
     "GridIndex": 3405,
-    "PreTech": 1411,
     "Time": 60,
     "Input": [
       1005
@@ -5915,7 +5702,6 @@
     "IconPath": "Assets/texpack/煤矿粉",
     "Type": 11,
     "GridIndex": 3406,
-    "PreTech": 1411,
     "Time": 60,
     "Input": [
       1006
@@ -5940,7 +5726,6 @@
     "IconPath": "Assets/texpack/放射性矿物碎块",
     "Type": 11,
     "GridIndex": 3301,
-    "PreTech": 1816,
     "Time": 240,
     "Input": [
       1003,
@@ -5967,7 +5752,6 @@
     "IconPath": "Assets/texpack/发光铀碎块",
     "Type": 11,
     "GridIndex": 3302,
-    "PreTech": 1817,
     "Time": 240,
     "Input": [
       6222,
@@ -5994,7 +5778,6 @@
     "IconPath": "Assets/texpack/晶质钚碎块",
     "Type": 11,
     "GridIndex": 3303,
-    "PreTech": 1817,
     "Time": 240,
     "Input": [
       6222,
@@ -6021,7 +5804,6 @@
     "IconPath": "Assets/texpack/铀矿",
     "Type": 11,
     "GridIndex": 3304,
-    "PreTech": 1818,
     "Time": 240,
     "Input": [
       6223,
@@ -6048,7 +5830,6 @@
     "IconPath": "Assets/texpack/钚矿",
     "Type": 11,
     "GridIndex": 3305,
-    "PreTech": 1818,
     "Time": 240,
     "Input": [
       6224,
@@ -6075,7 +5856,6 @@
     "IconPath": "Assets/texpack/高纯铀块",
     "Type": 11,
     "GridIndex": 3306,
-    "PreTech": 1819,
     "Time": 120,
     "Input": [
       6225
@@ -6100,7 +5880,6 @@
     "IconPath": "Assets/texpack/高纯钚块",
     "Type": 11,
     "GridIndex": 3307,
-    "PreTech": 1819,
     "Time": 120,
     "Input": [
       6226
@@ -6125,7 +5904,6 @@
     "IconPath": "Assets/texpack/铀235燃料棒",
     "Type": 4,
     "GridIndex": 1507,
-    "PreTech": 1820,
     "Time": 600,
     "Input": [
       6509,
@@ -6152,7 +5930,6 @@
     "IconPath": "Assets/texpack/钚燃料棒",
     "Type": 4,
     "GridIndex": 1407,
-    "PreTech": 1820,
     "Time": 600,
     "Input": [
       6509,
@@ -6179,7 +5956,6 @@
     "IconPath": "Icons/ItemRecipe/iron-plate",
     "Type": 1,
     "GridIndex": 3501,
-    "PreTech": 1411,
     "Time": 60,
     "Input": [
       6252
@@ -6204,7 +5980,6 @@
     "IconPath": "Icons/ItemRecipe/copper-plate",
     "Type": 1,
     "GridIndex": 3502,
-    "PreTech": 1411,
     "Time": 60,
     "Input": [
       6253
@@ -6229,7 +6004,6 @@
     "IconPath": "Icons/ItemRecipe/silicium-single-crystal",
     "Type": 1,
     "GridIndex": 3503,
-    "PreTech": 1411,
     "Time": 60,
     "Input": [
       6254
@@ -6254,7 +6028,6 @@
     "IconPath": "Icons/ItemRecipe/titanium-plate",
     "Type": 1,
     "GridIndex": 3504,
-    "PreTech": 1411,
     "Time": 60,
     "Input": [
       6255
@@ -6279,7 +6052,6 @@
     "IconPath": "Assets/texpack/混凝土",
     "Type": 4,
     "GridIndex": 1612,
-    "PreTech": 1415,
     "Time": 60,
     "Input": [
       1103,
@@ -6310,7 +6082,6 @@
     "IconPath": "Assets/texpack/行星组装站",
     "Type": 10,
     "GridIndex": 2501,
-    "PreTech": 1823,
     "Time": 18000,
     "Input": [
       6502,
@@ -6343,7 +6114,6 @@
     "IconPath": "Assets/texpack/垃圾回收",
     "Type": 14,
     "GridIndex": 1711,
-    "PreTech": 1831,
     "Time": 10800,
     "Input": [],
     "InCounts": [],
@@ -6364,7 +6134,6 @@
     "IconPath": "Assets/texpack/硫矿粉",
     "Type": 11,
     "GridIndex": 3407,
-    "PreTech": 1411,
     "Time": 60,
     "Input": [
       6256
@@ -6389,7 +6158,6 @@
     "IconPath": "Assets/texpack/硫酸化合",
     "Type": 2,
     "GridIndex": 4112,
-    "PreTech": 1122,
     "Time": 120,
     "Input": [
       6277,
@@ -6418,7 +6186,6 @@
     "IconPath": "Assets/texpack/稳定矩阵",
     "Type": 4,
     "GridIndex": 1707,
-    "PreTech": 1111,
     "Time": 180,
     "Input": [
       6001,
@@ -6445,7 +6212,6 @@
     "IconPath": "Assets/texpack/虚空矩阵",
     "Type": 4,
     "GridIndex": 1708,
-    "PreTech": 1312,
     "Time": 180,
     "Input": [
       6003,
@@ -6472,7 +6238,6 @@
     "IconPath": "Assets/texpack/生宇宙矩阵",
     "Type": 4,
     "GridIndex": 1709,
-    "PreTech": 1507,
     "Time": 180,
     "Input": [
       6278,

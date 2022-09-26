@@ -44,9 +44,10 @@ namespace ProjectGenesis
         //无限堆叠开关(私货)
         private readonly bool StackSizeButton = false;
 
-        private int[] TableID = new int[3];
+        private int[] TableID;
 
         private static ProjectGenesis Instance { get; set; }
+        
         private Harmony Harmony { get; set; }
 
         public string Version => VERSION;
@@ -57,24 +58,28 @@ namespace ProjectGenesis
             logger = Logger;
             logger.Log(LogLevel.Info, "GenesisBook Awake");
 
-            var pluginfolder = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+            var executingAssembly = Assembly.GetExecutingAssembly();
+            var pluginfolder = Path.GetDirectoryName(executingAssembly.Location);
             var resources = new ResourceData("org.LoShin.GenesisBook", "texpack", pluginfolder);
             resources.LoadAssetBundle("texpack");
             ProtoRegistry.AddResource(resources);
+            
+            TableID = new int[]
+                      {
+                          TabSystem.RegisterTab("org.LoShin.GenesisBook:org.LoShin.GenesisBookTab1", 
+                                                new TabData("精炼页面".TranslateFromJson(), "Assets/texpack/主机科技")
+                                               ),
+                          TabSystem.RegisterTab("org.LoShin.GenesisBook:org.LoShin.GenesisBookTab2", 
+                                                new TabData("化工页面".TranslateFromJson(), "Assets/texpack/化工科技")
+                                               )
+                      };
 
-            NebulaModAPI.RegisterPackets(Assembly.GetExecutingAssembly());
+            NebulaModAPI.RegisterPackets(executingAssembly);
 
             Harmony = new Harmony(MODGUID);
-            Harmony.PatchAll(typeof(UpdateLogoPatches));
-            Harmony.PatchAll(typeof(UIPatches));
-            Harmony.PatchAll(typeof(DisplayedTextPatches));
-            Harmony.PatchAll(typeof(FluidColorPatches));
-            Harmony.PatchAll(typeof(GridIndexExpandPatches));
-            Harmony.PatchAll(typeof(MegaAssemblerPatches));
-            Harmony.PatchAll(typeof(MultiProductionPatches));
-            Harmony.PatchAll(typeof(MutliPlayerPatches));
-            Harmony.PatchAll(typeof(OceanDischargePatches));
             
+            foreach (var type in executingAssembly.GetTypes()) Harmony.PatchAll(type);
+
             LDBTool.PreAddDataAction += PreAddDataAction;
             LDBTool.PostAddDataAction += PostAddDataAction;
         }
@@ -89,15 +94,6 @@ namespace ProjectGenesis
             LDB.items.OnAfterDeserialize();
 
             AddCopiedModelProto();
-            
-            TableID = new int[]
-                      {
-                          TabSystem.RegisterTab("org.LoShin.GenesisBook:org.LoShin.GenesisBookTab1",
-                                                new TabData("精炼页面".TranslateFromJson(), "Assets/texpack/主机科技")),
-                          TabSystem.RegisterTab("org.LoShin.GenesisBook:org.LoShin.GenesisBookTab2",
-                                                new TabData("化工页面".TranslateFromJson(), "Assets/texpack/化工科技"))
-                      };
-            
             ImportJson(TableID);
         }
 
