@@ -8,21 +8,21 @@ A mod that modifies most of the items, recipes and technologies of the vanilla g
 
 ## A glimpse | 一瞥
 
-![img.png](./img/1.png)
-![img.png](./img/2.png)
-![img.png](./img/3.png)
+![img.png](https://webapi.awbugl.top/dsp-genesisbook/1.jpg)
+![img.png](https://webapi.awbugl.top/dsp-genesisbook/2.jpg)
+![img.png](https://webapi.awbugl.top/dsp-genesisbook/3.jpg)
 
 ## Installation | 安装方法
 
 ### With Mod Manager | 使用Mod管理器
 
-只需要简单的打开mod管理器（如果你还没安装可以[点此安装](https://dsp.thunderstore.io/package/ebkr/r2modman/)，选择**GenesisBook | 创世之书**，下载即可）。
+只需要简单的打开mod管理器（如果你还没安装可以[点此安装](https://dsp.thunderstore.io/package/ebkr/r2modman/)，选择 **GenesisBook**，下载即可）。
 
 如果弹窗提示需要下载前置，点击确定即可。
 
 
 Simply open the mod manager (if you don't have it install it [here](https://dsp.thunderstore.io/package/ebkr/r2modman/))
-, select **GenesisBook | 创世之书**, then **Download**.
+, select **GenesisBook**, then **Download**.
 
 If prompted to download with dependencies, select `Yes`.
 
@@ -30,7 +30,7 @@ Then just click **Start modded**, and the game will run with the mod installed.
 
 ### Install manually | 手动安装
 
-在下述地址安装框架和几个前置mod，然后将本mod解压到`BepInEx/plugins/`目录（包括 `GenesisBook-Release-${version}.dll`, `Newtonsoft.Json.dll` and `texpack` 文件）。如果开始游戏后能看到新的logo，那么mod就安装成功了。
+在下述地址安装框架和几个前置mod，然后将本mod解压到`BepInEx/plugins/`目录（包括 `GenesisBook-Release-${version}.dll`, `Newtonsoft.Json.dll` 和 `texpack` 文件）。如果开始游戏后能看到新的logo，那么mod就安装成功了。
 
 
 Install BepInEx from [here](https://dsp.thunderstore.io/package/xiaoye97/BepInEx/)<br/>

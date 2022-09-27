@@ -119,9 +119,6 @@
     </ItemGroup>
     <ItemGroup>
         <Content Include="dependencies\Newtonsoft.Json.dll" />
-        <Content Include="img\1.png" />
-        <Content Include="img\2.png" />
-        <Content Include="img\3.png" />
         <Content Include="README.md" />
     </ItemGroup>
     <ItemGroup>
