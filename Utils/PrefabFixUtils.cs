@@ -1,6 +1,5 @@
 ﻿using ProjectGenesis.Patches;
 using UnityEngine;
-using xiaoye97;
 using ERecipeType_1 = ERecipeType;
 
 namespace ProjectGenesis.Utils
@@ -10,7 +9,6 @@ namespace ProjectGenesis.Utils
         internal static void ItemPostFix(ItemProtoSet itemProtos)
         {
             LDB.items.OnAfterDeserialize();
-
             itemProtos.Select(2317).prefabDesc.assemblerRecipeType = (ERecipeType_1)ERecipeType.高分子化工;
             itemProtos.Select(2317).prefabDesc.idleEnergyPerTick = itemProtos.Select(物品.化工厂).prefabDesc.idleEnergyPerTick * 2;
             itemProtos.Select(2317).prefabDesc.workEnergyPerTick = itemProtos.Select(物品.化工厂).prefabDesc.workEnergyPerTick * 2;
@@ -93,24 +91,6 @@ namespace ProjectGenesis.Utils
             itemProtos.Select(6276).prefabDesc.assemblerSpeed = 1000;
             itemProtos.Select(6276).prefabDesc.assemblerRecipeType = (ERecipeType_1)ERecipeType.聚变生产;
 
-            LDBTool.SetBuildBar(1, 10, 6261);
-            LDBTool.SetBuildBar(3, 10, 2313);
-            LDBTool.SetBuildBar(4, 4, 6229);
-            LDBTool.SetBuildBar(5, 3, 6230);
-            LDBTool.SetBuildBar(5, 4, 2303);
-            LDBTool.SetBuildBar(5, 5, 2304);
-            LDBTool.SetBuildBar(5, 6, 2305);
-            LDBTool.SetBuildBar(5, 7, 6275);
-            LDBTool.SetBuildBar(5, 8, 2308);
-            LDBTool.SetBuildBar(5, 9, 2309);
-            LDBTool.SetBuildBar(5, 10, 2310);
-            LDBTool.SetBuildBar(7, 9, 6276);
-            LDBTool.SetBuildBar(7, 3, 6257);
-            LDBTool.SetBuildBar(7, 4, 6258);
-            LDBTool.SetBuildBar(7, 5, 6259);
-            LDBTool.SetBuildBar(7, 6, 6260);
-            LDBTool.SetBuildBar(7, 7, 6264);
-
             //矿场修复
             var oreFactory = LDB.items.Select(6230);
             var oreFactoryModel = LDB.items.Select(302);
@@ -145,7 +125,7 @@ namespace ProjectGenesis.Utils
             testCraftingTableModel.prefabDesc.workEnergyPerTick = 500000;
 
             testCraftingTableModel2.prefabDesc.isAssembler = true;
-            testCraftingTableModel2.prefabDesc.assemblerRecipeType = (ERecipeType_1)ERecipeType.Smelt;
+            testCraftingTableModel2.prefabDesc.assemblerRecipeType = (ERecipeType_1)ERecipeType.所有熔炉;
             testCraftingTableModel2.prefabDesc.assemblerSpeed = MegaAssemblerPatches.MegaAssemblerSpeed;
             testCraftingTableModel2.prefabDesc.isStation = false;
             testCraftingTableModel2.prefabDesc.isStellarStation = false;
@@ -158,7 +138,7 @@ namespace ProjectGenesis.Utils
             testCraftingTableModel2.prefabDesc.workEnergyPerTick = 500000;
 
             testCraftingTableModel3.prefabDesc.isAssembler = true;
-            testCraftingTableModel3.prefabDesc.assemblerRecipeType = (ERecipeType_1)ERecipeType.Chemical;
+            testCraftingTableModel3.prefabDesc.assemblerRecipeType = (ERecipeType_1)ERecipeType.所有化工;
             testCraftingTableModel3.prefabDesc.assemblerSpeed = MegaAssemblerPatches.MegaAssemblerSpeed;
             testCraftingTableModel3.prefabDesc.isStation = false;
             testCraftingTableModel3.prefabDesc.isStellarStation = false;
@@ -171,7 +151,7 @@ namespace ProjectGenesis.Utils
             testCraftingTableModel3.prefabDesc.workEnergyPerTick = 500000;
 
             testCraftingTableModel4.prefabDesc.isAssembler = true;
-            testCraftingTableModel4.prefabDesc.assemblerRecipeType = (ERecipeType_1)ERecipeType.高精度加工;
+            testCraftingTableModel4.prefabDesc.assemblerRecipeType = (ERecipeType_1)ERecipeType.所有高精;
             testCraftingTableModel4.prefabDesc.assemblerSpeed = MegaAssemblerPatches.MegaAssemblerSpeed;
             testCraftingTableModel4.prefabDesc.isStation = false;
             testCraftingTableModel4.prefabDesc.isStellarStation = false;

@@ -6,12 +6,12 @@ namespace ProjectGenesis.Utils
 {
     internal static class TranslateUtils
     {
+        private static Dictionary<string, StringProtoJson> _stringProtoJsons;
+
         static TranslateUtils()
         {
-            Localization.language = (Language) PlayerPrefs.GetInt("language", 0);
+            Localization.language = (Language)PlayerPrefs.GetInt("language", 0);
         }
-        
-        private static Dictionary<string, StringProtoJson> _stringProtoJsons;
 
         private static Dictionary<string, StringProtoJson> StringProtoJsons
         {

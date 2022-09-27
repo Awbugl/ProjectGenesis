@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Emit;
+using CommonAPI.Systems.UI;
 using HarmonyLib;
 using UnityEngine;
 using UnityEngine.UI;
 using Object = UnityEngine.Object;
 
 // ReSharper disable InconsistentNaming
+// ReSharper disable CompareOfFloatsByEqualityOperator
 // ReSharper disable LoopCanBePartlyConvertedToQuery
 // ReSharper disable ForCanBeConvertedToForeach
 // ReSharper disable once CommentTypo
@@ -15,7 +17,7 @@ using Object = UnityEngine.Object;
 namespace ProjectGenesis.Patches
 {
     /// <summary>
-    ///     from https: //github.com/appuns/DSPMoreRecipes/blob/main/DSPMoreRecipes.cs
+    /// special thanks for https: //github.com/appuns/DSPMoreRecipes/blob/main/DSPMoreRecipes.cs
     /// </summary>
     internal static class GridIndexExpandPatches
     {
@@ -52,7 +54,7 @@ namespace ProjectGenesis.Patches
                 ref var local5 = ref FieldRefAccess<UIItemPicker, RectTransform>(UIRoot.instance.uiGame.itemPicker, "pickerTrans");
                 local5.sizeDelta = new Vector2(local5.sizeDelta.x + 230f, local5.sizeDelta.y);
                 ref var local6 = ref FieldRefAccess<UISignalPicker, RectTransform>(UIRoot.instance.uiGame.signalPicker, "pickerTrans");
-                local6.sizeDelta = new Vector2(local6.sizeDelta.x + 230f, local6.sizeDelta.y);
+                local6.sizeDelta = new Vector2(local6.sizeDelta.x + 230f, local6.sizeDelta.y - 92f);
 
                 GameObject.Find("UI Root/Overlay Canvas/In Game/Windows/Replicator Window/queue-group").GetComponentInChildren<RectTransform>()
                           .sizeDelta = new Vector2(782f, 46f);
@@ -119,7 +121,7 @@ namespace ProjectGenesis.Patches
                         {
                             transform.GetComponent<RectTransform>().sizeDelta
                                 = new Vector2(transform.GetComponent<RectTransform>().sizeDelta.x + 230f,
-                                              transform.GetComponent<RectTransform>().sizeDelta.y);
+                                              transform.GetComponent<RectTransform>().sizeDelta.y - 92f);
                             _signalresized = true;
                         }
                     }
@@ -143,13 +145,19 @@ namespace ProjectGenesis.Patches
         [HarmonyPatch(typeof(UISignalPicker), "_OnUpdate")]
         [HarmonyPatch(typeof(UISignalPicker), "RefreshIcons")]
         [HarmonyPatch(typeof(UISignalPicker), "TestMouseIndex")]
+        [HarmonyPatch(typeof(UIShowSignalTipExtension), "OnUpdate")]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
         {
             var source = new List<CodeInstruction>(instructions);
             for (var index = 0; index < source.Count; ++index)
-                if (source[index].opcode == OpCodes.Ldc_I4_S && (sbyte)source[index].operand == 12)
-                    source[index].operand = 17;
+            {
+                if (source[index].opcode == OpCodes.Ldc_I4_S && source[index].operand is sbyte operand)
+                {
+                    if (operand == 12) source[index].operand = 17;
+                    if (operand == 9) source[index].operand = 7;
+                }
+            }
 
             return source.AsEnumerable();
         }
@@ -163,9 +171,13 @@ namespace ProjectGenesis.Patches
         {
             var source = new List<CodeInstruction>(instructions);
             for (var index = 0; index < source.Count; ++index)
-                // ReSharper disable once CompareOfFloatsByEqualityOperator
-                if (source[index].opcode == OpCodes.Ldc_R4 && source[index].operand is float operand && operand == 12.0)
-                    source[index].operand = 17f;
+            {
+                if (source[index].opcode == OpCodes.Ldc_R4 && source[index].operand is float operand)
+                {
+                    if (operand == 12.0) source[index].operand = 17f;
+                    if (operand == 9.0) source[index].operand = 7f;
+                }
+            }
 
             return source.AsEnumerable();
         }

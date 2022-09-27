@@ -14,17 +14,37 @@ namespace ProjectGenesis.Patches
         public static void RecipeProto_madeFromString(ref RecipeProto __instance, ref string __result)
         {
             var type = (Utils.ERecipeType)__instance.Type;
-            if (type == Utils.ERecipeType.电路蚀刻)
-                __result = "电路蚀刻机".TranslateFromJson();
-            else if (type == Utils.ERecipeType.高精度加工)
-                __result = "高精度装配线".TranslateFromJson();
-            else if (type == Utils.ERecipeType.矿物处理)
-                __result = "矿物处理厂".TranslateFromJson();
-            else if (type == Utils.ERecipeType.精密组装)
-                __result = "精密制造厂".TranslateFromJson();
-            else if (type == Utils.ERecipeType.聚变生产)
-                __result = "紧凑式回旋加速器".TranslateFromJson();
-            else if (type == Utils.ERecipeType.垃圾回收) __result = "物质分解设施".TranslateFromJson();
+
+            switch (type)
+            {
+                case Utils.ERecipeType.电路蚀刻:
+                    __result = "电路蚀刻机".TranslateFromJson();
+                    break;
+
+                case Utils.ERecipeType.高精度加工:
+                    __result = "高精度装配线".TranslateFromJson();
+                    break;
+
+                case Utils.ERecipeType.矿物处理:
+                    __result = "矿物处理厂".TranslateFromJson();
+                    break;
+
+                case Utils.ERecipeType.精密组装:
+                    __result = "精密制造厂".TranslateFromJson();
+                    break;
+
+                case Utils.ERecipeType.聚变生产:
+                    __result = "紧凑式回旋加速器".TranslateFromJson();
+                    break;
+
+                case Utils.ERecipeType.垃圾回收:
+                    __result = "物质分解设施".TranslateFromJson();
+                    break;
+
+                case Utils.ERecipeType.高分子化工:
+                    __result = "先进化学反应釜".TranslateFromJson();
+                    break;
+            }
         }
 
         [HarmonyPostfix]

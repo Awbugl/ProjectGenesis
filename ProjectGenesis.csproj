@@ -96,6 +96,7 @@
         <Compile Include="Patches\FluidColorPatches.cs"/>
         <Compile Include="Patches\GridIndexExpandPatches.cs"/>
         <Compile Include="Patches\MutliPlayerPatches.cs"/>
+        <Compile Include="Patches\UISignalPickerPatch.cs"/>
         <Compile Include="Patches\UpdateLogoPatches.cs"/>
         <Compile Include="ProjectGenesis.cs"/>
         <Compile Include="Patches\MegaAssemblerPatches.cs"/>

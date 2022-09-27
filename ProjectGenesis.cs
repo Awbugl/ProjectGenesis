@@ -39,7 +39,7 @@ namespace ProjectGenesis
         public const string MODGUID = "org.LoShin.GenesisBook";
         private const string VERSION = "2.0.0";
 
-        private static ManualLogSource logger;
+        internal static ManualLogSource logger;
 
         //无限堆叠开关(私货)
         private readonly bool StackSizeButton = false;
@@ -47,7 +47,7 @@ namespace ProjectGenesis
         private int[] TableID;
 
         private static ProjectGenesis Instance { get; set; }
-        
+
         private Harmony Harmony { get; set; }
 
         public string Version => VERSION;
@@ -63,21 +63,17 @@ namespace ProjectGenesis
             var resources = new ResourceData("org.LoShin.GenesisBook", "texpack", pluginfolder);
             resources.LoadAssetBundle("texpack");
             ProtoRegistry.AddResource(resources);
-            
+
             TableID = new int[]
                       {
-                          TabSystem.RegisterTab("org.LoShin.GenesisBook:org.LoShin.GenesisBookTab1", 
-                                                new TabData("精炼页面".TranslateFromJson(), "Assets/texpack/主机科技")
-                                               ),
-                          TabSystem.RegisterTab("org.LoShin.GenesisBook:org.LoShin.GenesisBookTab2", 
-                                                new TabData("化工页面".TranslateFromJson(), "Assets/texpack/化工科技")
-                                               )
+                          TabSystem.RegisterTab("org.LoShin.GenesisBook:org.LoShin.GenesisBookTab1",
+                                                new TabData("精炼页面".TranslateFromJson(), "Assets/texpack/主机科技")),
+                          TabSystem.RegisterTab("org.LoShin.GenesisBook:org.LoShin.GenesisBookTab2",
+                                                new TabData("化工页面".TranslateFromJson(), "Assets/texpack/化工科技"))
                       };
-
             NebulaModAPI.RegisterPackets(executingAssembly);
-
             Harmony = new Harmony(MODGUID);
-            
+
             foreach (var type in executingAssembly.GetTypes()) Harmony.PatchAll(type);
 
             LDBTool.PreAddDataAction += PreAddDataAction;
@@ -116,7 +112,7 @@ namespace ProjectGenesis
             @base.MiningCount = new[] { 3, 10, 20 };
             @base.MiningChance = new float[] { 1, 1, 1 };
             @base.Preload();
-            
+
             ref var locstrs = ref AccessTools.StaticFieldRefAccess<StringProtoSet>(AccessTools.Field(typeof(Localization), "_strings"))();
             locstrs = LDB.strings;
 
@@ -146,6 +142,25 @@ namespace ProjectGenesis
 
             ModelPostFix(LDB.models);
             ItemPostFix(LDB.items);
+
+            LDBTool.SetBuildBar(1, 10, 6261);
+            LDBTool.SetBuildBar(3, 10, 2313);
+            LDBTool.SetBuildBar(4, 4, 6229);
+            LDBTool.SetBuildBar(5, 3, 6230);
+            LDBTool.SetBuildBar(5, 4, 2303);
+            LDBTool.SetBuildBar(5, 5, 2304);
+            LDBTool.SetBuildBar(5, 6, 2305);
+            LDBTool.SetBuildBar(5, 7, 2308);
+            LDBTool.SetBuildBar(5, 8, 2309);
+            LDBTool.SetBuildBar(5, 9, 2317);
+            LDBTool.SetBuildBar(5, 10, 2310);
+            LDBTool.SetBuildBar(7, 3, 6257);
+            LDBTool.SetBuildBar(7, 4, 6258);
+            LDBTool.SetBuildBar(7, 5, 6259);
+            LDBTool.SetBuildBar(7, 6, 6260);
+            LDBTool.SetBuildBar(7, 7, 6264);
+            LDBTool.SetBuildBar(7, 8, 6275);
+            LDBTool.SetBuildBar(7, 9, 6276);
 
             ItemProto.InitFluids();
             ItemProto.InitItemIds();
