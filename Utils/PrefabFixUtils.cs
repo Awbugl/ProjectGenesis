@@ -11,6 +11,10 @@ namespace ProjectGenesis.Utils
         {
             LDB.items.OnAfterDeserialize();
 
+            itemProtos.Select(2317).prefabDesc.assemblerRecipeType = (ERecipeType_1)ERecipeType.高分子化工;
+            itemProtos.Select(2317).prefabDesc.idleEnergyPerTick = itemProtos.Select(物品.化工厂).prefabDesc.idleEnergyPerTick * 2;
+            itemProtos.Select(2317).prefabDesc.workEnergyPerTick = itemProtos.Select(物品.化工厂).prefabDesc.workEnergyPerTick * 2;
+
             itemProtos.Select(物品.二级制造台).prefabDesc.assemblerRecipeType = (ERecipeType_1)ERecipeType.电路蚀刻;
             itemProtos.Select(物品.三级制造台).prefabDesc.assemblerRecipeType = (ERecipeType_1)ERecipeType.高精度加工;
 

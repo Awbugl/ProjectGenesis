@@ -136,8 +136,8 @@
   },
   {
     "Name": "化工技术革新文字描述",
-    "ZHCN": "化工厂生产速度翻倍.",
-    "ENUS": "Doubling production speed in chemical factories."
+    "ZHCN": "化工厂、先进化学反应釜和精炼厂的生产速度翻倍.",
+    "ENUS": "Doubling the production speed of chemical plants, advanced chemical reactors and refineries."
   },
   {
     "Name": "铁矿",
@@ -1548,6 +1548,26 @@
     "Name": "I湿件主机",
     "ZHCN": "这是一个人类未曾涉及的领域.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "ENUS": "This is a field that has never been involved by human beings.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+  },
+  {
+    "Name": "先进化学反应釜",
+    "ZHCN": "先进化学反应釜",
+    "ENUS": "Advanced Chemical Reactor"
+  },
+  {
+    "Name": "I先进化学反应釜",
+    "ZHCN": "相较于原始的化工厂，这台机器拥有更加高效的控制系统，更加稳定的压力容器，能够满足极端的化工生产条件需求.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Compared to the original chemical plant, this machine has a more efficient control system and a more stable pressure vessel to meet the demands of extreme chemical production conditions.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+  },
+  {
+    "Name": "T化学反应釜压力容器",
+    "ZHCN": "化学反应釜压力容器",
+    "ENUS": "Chemical reactor pressure vessel"
+  },
+  {
+    "Name": "T化学反应釜压力容器描述",
+    "ZHCN": "使用新的材料改良化工厂的压力容器，结合更新换代的控制系统从而满足极端的化工生产条件需求.",
+    "ENUS": "Improvement of pressure vessels in chemical plants with new materials, combined with updated control systems to meet the demands of extreme chemical production conditions.</color>"
   },
   {
     "Name": "硅石筛选",

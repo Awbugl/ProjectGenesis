@@ -501,7 +501,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 1209,
+    "GridIndex": 1210,
     "Time": 120,
     "Input": [
       1103,
@@ -527,7 +527,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 1309,
+    "GridIndex": 1310,
     "Time": 240,
     "Input": [
       1405,
@@ -585,7 +585,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 2,
-    "GridIndex": 1109,
+    "GridIndex": 1110,
     "Time": 120,
     "Input": [
       7001,
@@ -669,7 +669,7 @@
     "Description": "",
     "IconPath": "Icons/ItemRecipe/hadron-collider",
     "Type": 10,
-    "GridIndex": 2412,
+    "GridIndex": 2413,
     "Time": 10800,
     "Input": [
       2310,
@@ -1011,7 +1011,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 10,
-    "GridIndex": 2411,
+    "GridIndex": 2412,
     "Time": 3600,
     "Input": [
       6502,
@@ -1261,7 +1261,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 2409,
+    "GridIndex": 2410,
     "Time": 120,
     "Input": [
       6501,
@@ -2475,7 +2475,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 2210,
+    "GridIndex": 2211,
     "Time": 900,
     "Input": [
       6501,
@@ -2505,7 +2505,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 1210,
+    "GridIndex": 1209,
     "Time": 600,
     "Input": [
       1101,
@@ -2531,7 +2531,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 2211,
+    "GridIndex": 2212,
     "Time": 1800,
     "Input": [
       6502,
@@ -2561,7 +2561,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 1310,
+    "GridIndex": 1309,
     "Time": 900,
     "Input": [
       1107,
@@ -2796,7 +2796,7 @@
     "Name": "氦三",
     "Description": "",
     "IconPath": "Assets/texpack/氦三",
-    "Type": 2,
+    "Type": 5,
     "GridIndex": 4408,
     "Time": 240,
     "Input": [
@@ -2871,7 +2871,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 10,
-    "GridIndex": 2209,
+    "GridIndex": 2210,
     "Time": 240,
     "Input": [
       6502,
@@ -2931,7 +2931,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 2212,
+    "GridIndex": 2213,
     "Time": 1800,
     "Input": [
       2104,
@@ -3155,7 +3155,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 10,
-    "GridIndex": 2410,
+    "GridIndex": 2411,
     "Time": 600,
     "Input": [
       6503,
@@ -3238,6 +3238,92 @@
     "NonProductive": false
   },
   {
+    "ID": 122,
+    "Name": "物流配送器",
+    "Description": "",
+    "IconPath": "",
+    "Type": 4,
+    "GridIndex": 2209,
+    "Time": 480,
+    "Input": [
+      6501,
+      1103,
+      1303
+    ],
+    "InCounts": [
+      1,
+      2,
+      1
+    ],
+    "Output": [
+      2107
+    ],
+    "OutCounts": [
+      1
+    ],
+    "Explicit": false,
+    "Handcraft": true,
+    "NonProductive": false
+  },
+  {
+    "ID": 123,
+    "Name": "配送运输机",
+    "Description": "",
+    "IconPath": "",
+    "Type": 4,
+    "GridIndex": 1109,
+    "Time": 120,
+    "Input": [
+      1101,
+      1203,
+      1301
+    ],
+    "InCounts": [
+      2,
+      1,
+      1
+    ],
+    "Output": [
+      5003
+    ],
+    "OutCounts": [
+      1
+    ],
+    "Explicit": false,
+    "Handcraft": true,
+    "NonProductive": false
+  },
+  {
+    "ID": 124,
+    "Name": "先进化学反应釜",
+    "Description": "",
+    "IconPath": "",
+    "Type": 4,
+    "GridIndex": 2409,
+    "Time": 600,
+    "Input": [
+      6502,
+      1119,
+      1107,
+      1303
+    ],
+    "InCounts": [
+      2,
+      12,
+      12,
+      6
+    ],
+    "Output": [
+      2317
+    ],
+    "OutCounts": [
+      1
+    ],
+    "Explicit": false,
+    "Handcraft": true,
+    "NonProductive": false
+  },
+  {
     "ID": 701,
     "Name": "石油裂化",
     "Description": "R石油裂化",
@@ -3271,7 +3357,7 @@
     "Description": "R水电解",
     "IconPath": "Assets/texpack/电解水",
     "Type": 2,
-    "GridIndex": 1114,
+    "GridIndex": 4113,
     "Time": 120,
     "Input": [
       1000
@@ -3462,7 +3548,7 @@
     "Name": "二硝基氯苯",
     "Description": "",
     "IconPath": "Assets/texpack/二硝基氯苯",
-    "Type": 2,
+    "Type": 16,
     "GridIndex": 4108,
     "Time": 60,
     "Input": [
@@ -3488,7 +3574,7 @@
     "Name": "二氯联苯胺",
     "Description": "",
     "IconPath": "Assets/texpack/二氯联苯胺",
-    "Type": 2,
+    "Type": 16,
     "GridIndex": 4107,
     "Time": 60,
     "Input": [
@@ -3544,7 +3630,7 @@
     "Name": "高分子化合: 二氨基联苯胺",
     "Description": "R高分子化合: 二氨基联苯胺",
     "IconPath": "Assets/texpack/二氨基联苯胺",
-    "Type": 2,
+    "Type": 16,
     "GridIndex": 4105,
     "Time": 120,
     "Input": [
@@ -3652,7 +3738,7 @@
     "Name": "间苯二甲酸二苯酯",
     "Description": "",
     "IconPath": "Assets/texpack/间苯二甲酸二苯酯",
-    "Type": 2,
+    "Type": 16,
     "GridIndex": 4111,
     "Time": 60,
     "Input": [
@@ -3798,7 +3884,7 @@
     "Input": [
       1402,
       7710,
-      6004
+      7706
     ],
     "InCounts": [
       2,
@@ -4185,7 +4271,7 @@
     "Description": "R高分子化合: 环氧树脂",
     "IconPath": "Assets/texpack/环氧树脂",
     "Type": 2,
-    "GridIndex": 1110,
+    "GridIndex": 1111,
     "Time": 120,
     "Input": [
       7016,
@@ -4214,8 +4300,8 @@
     "Name": "高分子化合: 聚苯并咪唑",
     "Description": "R高分子化合: 聚苯并咪唑",
     "IconPath": "Assets/texpack/聚苯并咪唑",
-    "Type": 2,
-    "GridIndex": 1111,
+    "Type": 16,
+    "GridIndex": 1112,
     "Time": 120,
     "Input": [
       7005,
@@ -4423,7 +4509,7 @@
     "Description": "",
     "IconPath": "Assets/texpack/活性生物纤维",
     "Type": 2,
-    "GridIndex": 1112,
+    "GridIndex": 1113,
     "Time": 120,
     "Input": [
       1117
@@ -4846,7 +4932,7 @@
     "Name": "有机液体离心",
     "Description": "R有机液体离心",
     "IconPath": "Assets/texpack/有机液体离心",
-    "Type": 2,
+    "Type": 16,
     "GridIndex": 4212,
     "Time": 120,
     "Input": [
@@ -4959,7 +5045,7 @@
     "Description": "R聚乙烯（高效）",
     "IconPath": "Assets/texpack/高效塑料",
     "Type": 2,
-    "GridIndex": 1113,
+    "GridIndex": 1114,
     "Time": 60,
     "Input": [
       1117,

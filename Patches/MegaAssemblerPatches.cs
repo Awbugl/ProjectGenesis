@@ -283,10 +283,14 @@ namespace ProjectGenesis.Patches
             int[] consumeRegister)
         {
             // 化工技术革新效果
-            if (GameMain.history.TechUnlocked(1513) &&
-                __instance.recipeType == (ERecipeType_1)Utils.ERecipeType.Chemical &&
-                __instance.speed == 20000)
-                __instance.speed = 40000;
+            if (GameMain.history.TechUnlocked(1513))
+            {
+                if (__instance.recipeType == (ERecipeType_1)Utils.ERecipeType.Chemical ||
+                    __instance.recipeType == (ERecipeType_1)Utils.ERecipeType.Refine ||
+                    __instance.recipeType == (ERecipeType_1)Utils.ERecipeType.高分子化工)
+                    if (__instance.speed == 20000)
+                        __instance.speed = 40000;
+            }
 
             // 巨型建筑效果
             if (power < 0.1f) return;

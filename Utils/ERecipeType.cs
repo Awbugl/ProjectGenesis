@@ -17,6 +17,7 @@ namespace ProjectGenesis.Utils
         精密组装 = 12,
         聚变生产 = 13,
         垃圾回收 = 14,
-        Research = 15
+        Research = 15,
+        高分子化工 = 16
     }
 }
