@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using xiaoye97;
 
+#pragma warning disable CS0618
+
 namespace ProjectGenesis.Utils
 {
     internal static class CopyModelUtils

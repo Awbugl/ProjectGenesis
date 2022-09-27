@@ -60,9 +60,8 @@
         <Reference Include="netstandard">
             <HintPath>D:\SteamLibrary\steamapps\common\Dyson Sphere Program\DSPGAME_Data\Managed\netstandard.dll</HintPath>
         </Reference>
-        <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-            <SpecificVersion>False</SpecificVersion>
-            <HintPath>.\Newtonsoft.Json.dll</HintPath>
+        <Reference Include="Newtonsoft.Json">
+          <HintPath>dependencies\Newtonsoft.Json.dll</HintPath>
         </Reference>
         <Reference Include="System" />
         <Reference Include="System.Core" />
@@ -92,38 +91,37 @@
         </Reference>
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="Patches\DisplayedTextPatches.cs" />
-        <Compile Include="Patches\FluidColorPatches.cs" />
-        <Compile Include="Patches\GridIndexExpandPatches.cs" />
-        <Compile Include="Patches\MutliPlayerPatches.cs" />
-        <Compile Include="Patches\UISignalPickerPatch.cs" />
-        <Compile Include="Patches\UpdateLogoPatches.cs" />
-        <Compile Include="ProjectGenesis.cs" />
-        <Compile Include="Patches\MegaAssemblerPatches.cs" />
-        <Compile Include="Patches\MultiProductionPatches.cs" />
-        <Compile Include="Patches\OceanDischargePatches.cs" />
-        <Compile Include="Patches\UIPatches.cs" />
-        <Compile Include="Properties\AssemblyInfo.cs" />
-        <Compile Include="Utils\CopyModelUtils.cs" />
-        <Compile Include="Utils\ERecipeType.cs" />
-        <Compile Include="Utils\JsonDataUtils.cs" />
-        <Compile Include="Utils\ItemData.cs" />
-        <Compile Include="Utils\JsonHelper.cs" />
-        <Compile Include="Utils\MutliPlayerPacket.cs" />
-        <Compile Include="Utils\PrefabFixUtils.cs" />
-        <Compile Include="Utils\TranslateUtils.cs" />
+        <Compile Include="src\Patches\DisplayedTextPatches.cs" />
+        <Compile Include="src\Patches\FluidColorPatches.cs" />
+        <Compile Include="src\Patches\GridIndexExpandPatches.cs" />
+        <Compile Include="src\Patches\MegaAssemblerPatches.cs" />
+        <Compile Include="src\Patches\MultiProductionPatches.cs" />
+        <Compile Include="src\Patches\MutliPlayerPatches.cs" />
+        <Compile Include="src\Patches\OceanDischargePatches.cs" />
+        <Compile Include="src\Patches\UIPatches.cs" />
+        <Compile Include="src\Patches\UISignalPickerPatch.cs" />
+        <Compile Include="src\Patches\UpdateLogoPatches.cs" />
+        <Compile Include="src\ProjectGenesis.cs" />
+        <Compile Include="src\Utils\CopyModelUtils.cs" />
+        <Compile Include="src\Utils\ERecipeType.cs" />
+        <Compile Include="src\Utils\ItemData.cs" />
+        <Compile Include="src\Utils\JsonDataUtils.cs" />
+        <Compile Include="src\Utils\JsonHelper.cs" />
+        <Compile Include="src\Utils\MutliPlayerPacket.cs" />
+        <Compile Include="src\Utils\PrefabFixUtils.cs" />
+        <Compile Include="src\Utils\TranslateUtils.cs" />
     </ItemGroup>
     <ItemGroup>
-        <EmbeddedResource Include="items.json" />
-        <EmbeddedResource Include="recipes.json" />
-        <EmbeddedResource Include="techs.json" />
-        <EmbeddedResource Include="strings.json" />
+        <EmbeddedResource Include="dependencies\items.json" />
+        <EmbeddedResource Include="dependencies\recipes.json" />
+        <EmbeddedResource Include="dependencies\strings.json" />
+        <EmbeddedResource Include="dependencies\techs.json" />
     </ItemGroup>
     <ItemGroup>
+        <Content Include="dependencies\Newtonsoft.Json.dll" />
         <Content Include="img\1.png" />
         <Content Include="img\2.png" />
         <Content Include="img\3.png" />
-        <Content Include="Newtonsoft.Json.dll" />
         <Content Include="README.md" />
     </ItemGroup>
     <ItemGroup>

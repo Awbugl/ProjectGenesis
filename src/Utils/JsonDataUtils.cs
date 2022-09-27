@@ -4,6 +4,8 @@ using UnityEngine;
 using xiaoye97;
 using ERecipeType_1 = ERecipeType;
 
+#pragma warning disable CS0618
+
 namespace ProjectGenesis.Utils
 {
     internal static class JsonDataUtils
