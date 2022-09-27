@@ -16,8 +16,7 @@ A mod that modifies most of the items, recipes and technologies of the vanilla g
 
 ### With Mod Manager | 使用Mod管理器
 
-只需要简单的打开mod管理器（如果你还没安装可以[点此安装](https://dsp.thunderstore.io/package/ebkr/r2modman/)，选择**
-GenesisBook | 创世之书**，下载即可）。
+只需要简单的打开mod管理器（如果你还没安装可以[点此安装](https://dsp.thunderstore.io/package/ebkr/r2modman/)，选择**GenesisBook | 创世之书**，下载即可）。
 
 如果弹窗提示需要下载前置，点击确定即可。
 
@@ -31,8 +30,7 @@ Then just click **Start modded**, and the game will run with the mod installed.
 
 ### Install manually | 手动安装
 
-在下述地址安装框架和几个前置mod，然后将本mod解压到`BepInEx/plugins/`目录（包括 `GenesisBook-Release-${version}.dll`
-, `Newtonsoft.Json.dll` and `texpack` 文件）。如果开始游戏后能看到新的logo，那么mod就安装成功了。
+在下述地址安装框架和几个前置mod，然后将本mod解压到`BepInEx/plugins/`目录（包括 `GenesisBook-Release-${version}.dll`, `Newtonsoft.Json.dll` and `texpack` 文件）。如果开始游戏后能看到新的logo，那么mod就安装成功了。
 
 
 Install BepInEx from [here](https://dsp.thunderstore.io/package/xiaoye97/BepInEx/)<br/>
@@ -41,8 +39,7 @@ Install DSPModSave from [here](https://dsp.thunderstore.io/package/CommonAPI/DSP
 Install CommonAPI from [here](https://dsp.thunderstore.io/package/CommonAPI/CommonAPI/)<br/>
 Install NebulaMultiplayerModApi from [here](https://dsp.thunderstore.io/package/nebula/NebulaMultiplayerModApi/)<br/>
 
-Then download the mod manully and unzip into `BepInEx/plugins/` (including the `GenesisBook-Release-${version}.dll`
-, `Newtonsoft.Json.dll` and `texpack` file).
+Then download the mod manully and unzip into `BepInEx/plugins/` (including the `GenesisBook-Release-${version}.dll`, `Newtonsoft.Json.dll` and `texpack` file).
 
 If you can see the new **GenesisBook** logo, then the mod is installed successfully.
 
@@ -50,8 +47,7 @@ If you can see the new **GenesisBook** logo, then the mod is installed successfu
 
 如果您对本Mod有宝贵的意见或建议，请在[github](https://github.com/Awbugl/ProjectGenesis)发issue，或者加QQ群`991895539`向管理员反馈。
 
-If you have any feedback or suggestions, please open a issue via [github](https://github.com/Awbugl/ProjectGenesis), or
-contact me in Discord `HiddenCirno#4535`.
+If you have any feedback or suggestions, please open a issue via [github](https://github.com/Awbugl/ProjectGenesis), or contact me in Discord `HiddenCirno#4535`.
 
 # Intro | 介绍
 
@@ -112,8 +108,7 @@ contact me in Discord `HiddenCirno#4535`.
     + Extensive modifications to the original items, adding a large number of new items and corresponding recipes.
     + Tungsten - raw material for advanced machines
     + Gear and coil upgrades - various items
-    + Basic mechanical components, advanced mechanical components, cutting-edge mechanical components -- various types
-      of buildings
+    + Basic mechanical components, advanced mechanical components, cutting-edge mechanical components -- various types of buildings
     + Circuit substrates, silicon wafers, IC wafers -- processors
     + Polyethylene, epoxy resins, polybenzimidazole - chemical products
     + Coal tar, diesel fuel, methyldimethylhydrazine -- petrochemical energy
