@@ -3330,21 +3330,21 @@
     "IconPath": "Assets/texpack/石油裂化",
     "Type": 3,
     "GridIndex": 3202,
-    "Time": 120,
+    "Time": 360,
     "Input": [
       1007
     ],
     "InCounts": [
-      1
+      3
     ],
     "Output": [
       7001,
-      7009,
-      7013
+      7013,
+      7009
     ],
     "OutCounts": [
-      1,
-      1,
+      3,
+      3,
       1
     ],
     "Explicit": true,
