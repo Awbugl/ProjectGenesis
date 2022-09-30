@@ -1,4 +1,6 @@
-﻿using ProjectGenesis.Patches;
+﻿using System.Collections.Generic;
+using System.Linq;
+using ProjectGenesis.Patches;
 using UnityEngine;
 using ERecipeType_1 = ERecipeType;
 
@@ -35,6 +37,11 @@ namespace ProjectGenesis.Utils
             itemProtos.Select(物品.大型采矿机).prefabDesc.minerPeriod = 300000;
             itemProtos.Select(物品.原油采集站).prefabDesc.minerPeriod = 300000;
             itemProtos.Select(物品.水泵).prefabDesc.minerPeriod = 360000;
+
+            List<int> waterTypes = itemProtos.Select(物品.水泵).prefabDesc.waterTypes.ToList();
+            waterTypes.Add(7017);
+            waterTypes.Add(7018);
+            itemProtos.Select(物品.水泵).prefabDesc.waterTypes = waterTypes.ToArray();
 
             itemProtos.Select(物品.电磁轨道弹射器).prefabDesc.ejectorChargeFrame = 20;
             itemProtos.Select(物品.电磁轨道弹射器).prefabDesc.ejectorColdFrame = 10;

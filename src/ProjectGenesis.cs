@@ -89,6 +89,10 @@ namespace ProjectGenesis
             LDB.milestones.Select(9).defaultDesc = "你采集了钨矿,宇宙珍奇之一.它是一种用途广泛的新材料.".TranslateFromJson();
             LDB.items.OnAfterDeserialize();
 
+            LDB.themes.Select(8).WaterItemId = 7018;
+            LDB.themes.Select(12).WaterItemId = 7017;
+            LDB.themes.Select(12).WaterHeight = LDB.themes.Select(22).WaterHeight + 0.6f;
+
             AddCopiedModelProto();
             ImportJson(TableID);
         }
@@ -105,6 +109,10 @@ namespace ProjectGenesis
             GameMain.gpuiManager.Init();
 
             LDB.milestones.Select(9).Preload();
+            LDB.themes.Select(8).Preload();
+            LDB.themes.Select(12).Preload();
+            LDB.themes.Select(22).Preload();
+            LDB.themes.Select(12).oceanMat = LDB.themes.Select(22).oceanMat;
 
             //飞行舱拆除
             var @base = LDB.veges.Select(9999);
