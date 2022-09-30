@@ -935,7 +935,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 10,
-    "GridIndex": 1712,
+    "GridIndex": 1714,
     "Time": 240,
     "Input": [
       1124,
@@ -3357,7 +3357,7 @@
     "Description": "R水电解",
     "IconPath": "Assets/texpack/电解水",
     "Type": 2,
-    "GridIndex": 4113,
+    "GridIndex": 1713,
     "Time": 120,
     "Input": [
       1000
@@ -3879,7 +3879,7 @@
     "Description": "",
     "IconPath": "Assets/texpack/生物神经纤维",
     "Type": 10,
-    "GridIndex": 1713,
+    "GridIndex": 1715,
     "Time": 240,
     "Input": [
       1402,
@@ -3907,7 +3907,7 @@
     "Description": "",
     "IconPath": "Assets/texpack/超级纳米电脑",
     "Type": 10,
-    "GridIndex": 1714,
+    "GridIndex": 3106,
     "Time": 3600,
     "Input": [
       1107,
@@ -3935,7 +3935,7 @@
     "Description": "",
     "IconPath": "Assets/texpack/湿件主机",
     "Type": 10,
-    "GridIndex": 1715,
+    "GridIndex": 3107,
     "Time": 5400,
     "Input": [
       7707,
@@ -4933,7 +4933,7 @@
     "Description": "R有机液体离心",
     "IconPath": "Assets/texpack/有机液体离心",
     "Type": 16,
-    "GridIndex": 4212,
+    "GridIndex": 1712,
     "Time": 120,
     "Input": [
       1116
@@ -5581,7 +5581,7 @@
     "Description": "R硫酸（高效）",
     "IconPath": "Assets/texpack/高效硫酸",
     "Type": 2,
-    "GridIndex": 4213,
+    "GridIndex": 4212,
     "Time": 60,
     "Input": [
       6215,
