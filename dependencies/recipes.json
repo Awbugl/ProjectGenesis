@@ -4942,7 +4942,7 @@
       2
     ],
     "Output": [
-      7017,
+      6999,
       7002,
       7014,
       1114
@@ -6207,6 +6207,34 @@
       1116
     ],
     "OutCounts": [
+      1
+    ],
+    "Explicit": true,
+    "Handcraft": false,
+    "NonProductive": true
+  },
+  {
+    "ID": 430,
+    "Name": "氯苯水解",
+    "Description": "R氯苯水解",
+    "IconPath": "Assets/texpack/苯酚",
+    "Type": 2,
+    "GridIndex": 4113,
+    "Time": 120,
+    "Input": [
+      7013,
+      1000
+    ],
+    "InCounts": [
+      1,
+      1
+    ],
+    "Output": [
+      7003,
+      7014
+    ],
+    "OutCounts": [
+      1,
       1
     ],
     "Explicit": true,

@@ -2463,5 +2463,15 @@
     "Name": "T焦油分馏描述",
     "ZHCN": "现在可以合成更多种类的化工原料。",
     "ENUS": "A wider variety of chemicals can now be synthesized."
+  },
+  {
+    "Name": "氯苯水解",
+    "ZHCN": "氯苯水解",
+    "ENUS": "Chlorobenzene hydrolysis"
+  },
+  {
+    "Name": "R氯苯水解",
+    "ZHCN": "在高温、氢氧化钠环境下, 氯苯与水反应生产苯酚钠, 再经酸化处理可得到苯酚.",
+    "ENUS": "Under high temperature and sodium hydroxide environment, chlorobenzene reacts with water to produce sodium phenol, which is then acidified to obtain phenol."
   }
 ]

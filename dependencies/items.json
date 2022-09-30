@@ -8553,8 +8553,7 @@
       3,
       31,
       1,
-      0,
-      40
+      0
     ],
     "FuelType": 1,
     "HeatValue": 9000000,
@@ -8562,7 +8561,7 @@
     "IsFluid": true,
     "Productive": true,
     "SubID": 0,
-    "MiningFrom": "气态巨星轨道",
+    "MiningFrom": "",
     "ProduceFrom": null,
     "Grade": 0,
     "Upgrades": [],
