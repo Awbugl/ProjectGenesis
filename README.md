@@ -132,3 +132,13 @@ If you have any feedback or suggestions, please open a issue via [github](https:
 - Special thanks to Awbugl for his work on the optimization and reconstruction of the project and development support for version 2.0.
 - Special thanks to kremnev8 for his help during the development process. He developed tools such as CommonAPI and LDBTool which are very important.
 - Special thanks to all those who contributed to this project or made suggestions.
+
+
+# Update Log | 更新日志
+
+- v2.1.0
+  + 修复物流运输界面部分建筑、物品位置冲突的问题
+  + 添加新配方：氯苯水解：氯苯 + 水 -> 苯酚 + 氢氯酸
+  + 调整配方：石油裂化现在产出**1**氯苯(而不是**3**)
+  + 调整配方：有机液体离心现在产出1**硝酸**(而不是**硫酸**)
+  + 特性：戈壁星球添加硝酸海洋；海洋丛林海洋修改为盐水海洋

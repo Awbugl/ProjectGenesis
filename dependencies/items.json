@@ -8551,9 +8551,9 @@
     "DescFields": [
       2,
       3,
-      31,
       1,
-      0
+      31,
+      40
     ],
     "FuelType": 1,
     "HeatValue": 9000000,
