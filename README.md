@@ -136,9 +136,24 @@ If you have any feedback or suggestions, please open a issue via [github](https:
 
 # Update Log | 更新日志
 
+- v2.1.1
+  + 修复部分文本错误且翻译缺失的问题
+  + 调整了大部分星球的硅石矿含量（仅影响新存档）
+  + 
+  + Fix the problem that some texts are wrong and translations are missing
+  + Adjusted silica ore content of most planets (only affects new game)
+
+
 - v2.1.0
   + 修复物流运输界面部分建筑、物品位置冲突的问题
   + 添加新配方：氯苯水解：氯苯 + 水 -> 苯酚 + 氢氯酸
   + 调整配方：石油裂化现在产出**1**氯苯(而不是**3**)
   + 调整配方：有机液体离心现在产出1**硫酸**(而不是**硝酸**)
   + 特性：戈壁星球添加硝酸海洋；海洋丛林海洋修改为盐水海洋
+  + 
+  + Fixed the problem of conflicting locations of some buildings and items in the Station UI
+  + Added new recipe: chlorobenzene hydrolysis: chlorobenzene + water -> phenol + hydrochloric acid
+  + Adjusted recipe: oil cracking now produces **1** chlorobenzene (instead of **3**)
+  + Adjusted recipe: organic liquid centrifugation now yields 1 **sulfuric acid** (instead of **nitric acid**)
+  + Characteristics: Gobi planet added nitric acid ocean; Ocean Jungle modified to salt water ocean
+

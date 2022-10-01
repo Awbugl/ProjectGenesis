@@ -93,6 +93,17 @@ namespace ProjectGenesis
             LDB.themes.Select(12).WaterItemId = 7017;
             LDB.themes.Select(12).WaterHeight = LDB.themes.Select(22).WaterHeight + 0.6f;
 
+            // ReSharper disable once LoopCanBePartlyConvertedToQuery
+            foreach (var theme in LDB.themes.dataArray)
+            {
+                if(theme.VeinSpot.Length > 2 && theme.VeinSpot[2] > 1)
+                {
+                    theme.VeinSpot[2] = 1;
+                    theme.VeinCount[2] = 0.3f;
+                    theme.VeinOpacity[2] = 0.3f;
+                }
+            }
+
             AddCopiedModelProto();
             ImportJson(TableID);
         }
@@ -109,9 +120,9 @@ namespace ProjectGenesis
             GameMain.gpuiManager.Init();
 
             LDB.milestones.Select(9).Preload();
-            LDB.themes.Select(8).Preload();
-            LDB.themes.Select(12).Preload();
-            LDB.themes.Select(22).Preload();
+
+            foreach (var theme in LDB.themes.dataArray) theme.Preload();
+
             LDB.themes.Select(12).oceanMat = LDB.themes.Select(22).oceanMat;
 
             //飞行舱拆除
