@@ -96,6 +96,12 @@ namespace ProjectGenesis
             // ReSharper disable once LoopCanBePartlyConvertedToQuery
             foreach (var theme in LDB.themes.dataArray)
             {
+                if (theme.ID == 1)
+                {
+                    theme.RareVeins = new[] { 8 };
+                    theme.RareSettings = new float[] {  1.0f, 0.3f, 0.0f, 0.2f };
+                }
+                
                 if(theme.VeinSpot.Length > 2 && theme.VeinSpot[2] > 1)
                 {
                     theme.VeinSpot[2] = 1;

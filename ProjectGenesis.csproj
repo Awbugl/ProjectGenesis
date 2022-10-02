@@ -37,13 +37,13 @@
     </PropertyGroup>
     <ItemGroup>
         <Reference Include="0Harmony20">
-            <HintPath>D:\SteamLibrary\steamapps\common\Dyson Sphere Program\BepInEx\core\0Harmony20.dll</HintPath>
+          <HintPath>..\..\Users\littl\AppData\Roaming\Thunderstore Mod Manager\DataFolder\DysonSphereProgram\profiles\Default\BepInEx\core\0Harmony20.dll</HintPath>
         </Reference>
         <Reference Include="Assembly-CSharp">
             <HintPath>D:\SteamLibrary\steamapps\common\Dyson Sphere Program\DSPGAME_Data\Managed\Assembly-CSharp.dll</HintPath>
         </Reference>
         <Reference Include="BepInEx">
-            <HintPath>D:\SteamLibrary\steamapps\common\Dyson Sphere Program\BepInEx\core\BepInEx.dll</HintPath>
+          <HintPath>..\..\Users\littl\AppData\Roaming\Thunderstore Mod Manager\DataFolder\DysonSphereProgram\profiles\Default\BepInEx\core\BepInEx.dll</HintPath>
         </Reference>
         <Reference Include="CommonAPI">
             <HintPath>D:\SteamLibrary\steamapps\common\Dyson Sphere Program\BepInEx\plugins\Develop\CommonAPI\CommonAPI.dll</HintPath>

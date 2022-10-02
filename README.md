@@ -136,6 +136,13 @@ If you have any feedback or suggestions, please open a issue via [github](https:
 
 # Update Log | 更新日志
 
+
+- v2.1.2
+  + 为母星添加了少量可燃冰矿（仅影响新存档）
+  +
+  + Added a small amount of NGH ore to the birth planet (only affects new game)
+
+
 - v2.1.1
   + 修复部分文本错误且翻译缺失的问题
   + 调整了大部分星球的硅石矿含量（仅影响新存档）
