@@ -47,7 +47,11 @@ If you can see the new **GenesisBook** logo, then the mod is installed successfu
 
 如果您对本Mod有宝贵的意见或建议，请在[github](https://github.com/Awbugl/ProjectGenesis)发issue，或者加QQ群`991895539`向管理员反馈。
 
+我们欢迎任何想为本Mod优化模型、贴图、数值平衡、翻译等的朋友，欢迎加群交流。
+
 If you have any feedback or suggestions, please open a issue via [github](https://github.com/Awbugl/ProjectGenesis), or contact me in Discord `HiddenCirno#4535`.
+
+We welcome any friends who want to optimize the model, mapping, numerical balance, translation, etc. for this Mod, feel free to communicate with us.
 
 # Intro | 介绍
 
@@ -85,7 +89,6 @@ If you have any feedback or suggestions, please open a issue via [github](https:
 - 机器修改：
   + 大部分机器的制造速度修改为2x。
   + 巨型建筑 —— 使用行星运输站模型, 使用传送带运输物料, 以及40x的生产效率
-
 
 
 - Technology tree rework.
@@ -139,8 +142,26 @@ If you have any feedback or suggestions, please open a issue via [github](https:
 
 - v2.1.2
   + 为母星添加了少量可燃冰矿（仅影响新存档）
+  + 配方调整：
+    + 微型粒子对撞机的原料需求调整为10先进机械组件，20钛合金，20超级磁场环，5量子芯片, 时间调整为10s
+    + 卡西米尔晶体的原料需求减半并减少了石墨烯的需求
+    + 粒子宽带配方的原料需求减半
+    + 位面过滤器配方的卡西米尔晶体需求量由2个调整为1个
+    + 奇异物质的配方类型由对撞机调整为制造台
+    + 奇异物质的原料需求由2卡西米尔晶体、4重氢调整为1卡西米尔晶体、8重氢
+    + 奇异物质（高效）的原料需求由1卡西米尔晶体、1超级磁场环调整为1金刚石、4重氢
+    + 石油裂化产物调整为3乙烯、2氯苯、1甘油
   +
   + Added a small amount of NGH ore to the birth planet (only affects new game)
+  + Recipe adjustment:
+    + Miniature Particle Collider raw material requirements adjusted to 10 advanced mechanical components, 20 titanium alloys, 20 super-magnetic rings, 5 quantum chips, time adjusted to 10s
+    + Halved raw material requirements for Casimir crystals and reduced graphene requirements
+    + Halved raw material requirements for Particle Broadband recipe
+    + The requirement for Casimir crystals in the Plane Filter recipe has been adjusted from 2 to 1.
+    + Recipe type of Strange Matter adjusted from Collider to Fabrication Table
+    + Adjusted raw material requirement for Strange Matter from 2 Casimir crystals and 4 Deuterium to 1 Casimir crystal and 8 Deuterium
+    + Raw material requirement for Strange Matter (advanced) adjusted from 1 Casimir crystal and 1 Super Magnetic Ring to 1 Diamond and 4 Deuterium
+    + Oil Cracking products adjusted to 3 ethylene, 2 chlorobenzene, 1 glycerin
 
 
 - v2.1.1
