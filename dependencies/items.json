@@ -1218,7 +1218,6 @@
       2,
       3,
       31,
-      1,
       0,
       40
     ],
@@ -1242,7 +1241,7 @@
     "Potential": 0,
     "BuildIndex": 0,
     "BuildMode": 0,
-    "UnlockKey": 0,
+    "UnlockKey": -1,
     "MechaMaterialID": 17
   },
   {
