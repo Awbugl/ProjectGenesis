@@ -1,4 +1,5 @@
-﻿using System;
+using System;
+using System.Collections.Generic;
 using CommonAPI.Systems;
 using UnityEngine;
 using xiaoye97;
@@ -10,6 +11,55 @@ namespace ProjectGenesis.Utils
 {
     internal static class JsonDataUtils
     {
+        private static readonly Dictionary<int, IconToolNew.IconDesc> IconDescs = new Dictionary<int, IconToolNew.IconDesc>()
+                                                                                  {
+                                                                                      {
+                                                                                          6278,
+                                                                                          new IconToolNew.IconDesc()
+                                                                                          {
+                                                                                              faceColor = new Color(255/255f, 105/255f, 80/255f, 50/255f),
+                                                                                              sideColor = new Color(255/255f, 105/255f, 80/255f, 50/255f),
+                                                                                              faceEmission = new Color(255/255f, 69/255f, 0/255f, 0/255f),
+                                                                                              sideEmission = new Color(255/255f, 69/255f, 0/255f, 0/255f),
+                                                                                              iconEmission = new Color(0.0f, 0.0f, 0.0f, 0.0f),
+                                                                                              metallic = 0f,
+                                                                                              smoothness = 0f,
+                                                                                              solidAlpha = 0.5f,
+                                                                                              iconAlpha = 0.0f
+                                                                                          }
+                                                                                      },
+                                                                                      {
+                                                                                          6279,
+                                                                                          new IconToolNew.IconDesc()
+                                                                                          {
+                                                                                              faceColor = new Color(255/255f, 192/255f, 203/255f, 50/255f),
+                                                                                              sideColor = new Color(255/255f, 192/255f, 203/255f, 50/255f),
+                                                                                              faceEmission = new Color(199/255f, 21/255f, 133/255f, 0/255f),
+                                                                                              sideEmission = new Color(199/255f, 21/255f, 133/255f, 0/255f),
+                                                                                              iconEmission = new Color(0.0f, 0.0f, 0.0f, 0.0f),
+                                                                                              metallic = 0f,
+                                                                                              smoothness = 0f,
+                                                                                              solidAlpha = 0.5f,
+                                                                                              iconAlpha = 0.0f
+                                                                                          }
+                                                                                      },
+                                                                                      {
+                                                                                          6280,
+                                                                                          new IconToolNew.IconDesc()
+                                                                                          {
+                                                                                              faceColor = new Color(128/255f, 128/255f, 128/255f, 50/255f),
+                                                                                              sideColor = new Color(128/255f, 128/255f, 128/255f, 50/255f),
+                                                                                              faceEmission = new Color(0/255f, 0/255f, 0/255f, 0/255f),
+                                                                                              sideEmission = new Color(0/255f, 0/255f, 0/255f, 0/255f),
+                                                                                              iconEmission = new Color(0.2f, 0.2f, 0.2f, 1.0f),
+                                                                                              metallic = 0.8f,
+                                                                                              smoothness = 0.5f,
+                                                                                              solidAlpha = 1.0f,
+                                                                                              iconAlpha = 1.0f
+                                                                                          }
+                                                                                      }
+                                                                                  };
+
         internal static void ImportJson(int[] tableID)
         {
             #region StringProto
@@ -75,7 +125,10 @@ namespace ProjectGenesis.Utils
                 var proto = LDB.items.Exist(itemjson.ID)
                                 ? LDB.items.Select(itemjson.ID)
                                 : ProtoRegistry.RegisterItem(itemjson.ID, itemjson.Name, itemjson.Description, itemjson.IconPath, itemjson.GridIndex,
-                                                             itemjson.StackSize, (EItemType)itemjson.Type);
+                                                             itemjson.StackSize, (EItemType)itemjson.Type,
+                                                             IconDescs.TryGetValue(itemjson.ID, out var iconDesc)
+                                                                 ? iconDesc
+                                                                 : null);
 
                 proto.ID = itemjson.ID;
                 proto.Name = itemjson.Name.TranslateFromJson();
