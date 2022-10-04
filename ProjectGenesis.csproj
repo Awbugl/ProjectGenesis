@@ -91,6 +91,7 @@
         </Reference>
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="src\Patches\BeltFixPatches.cs" />
         <Compile Include="src\Patches\DisplayedTextPatches.cs" />
         <Compile Include="src\Patches\FluidColorPatches.cs" />
         <Compile Include="src\Patches\GridIndexExpandPatches.cs" />
@@ -104,6 +105,7 @@
         <Compile Include="src\ProjectGenesis.cs" />
         <Compile Include="src\Utils\CopyModelUtils.cs" />
         <Compile Include="src\Utils\ERecipeType.cs" />
+        <Compile Include="src\Utils\IconDescUtils.cs" />
         <Compile Include="src\Utils\ItemData.cs" />
         <Compile Include="src\Utils\JsonDataUtils.cs" />
         <Compile Include="src\Utils\JsonHelper.cs" />

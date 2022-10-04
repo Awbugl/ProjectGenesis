@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using CommonAPI.Systems;
-using ProjectGenesis.Patches;
+using HarmonyLib;
 using UnityEngine;
 using xiaoye97;
 using ERecipeType_1 = ERecipeType;
@@ -12,36 +12,6 @@ namespace ProjectGenesis.Utils
 {
     internal static class JsonDataUtils
     {
-        private static readonly Color Color6278 = new Color(1f, 0.4117f, 0.3137f, 0.1961f),
-                                      Emission6278 = new Color(1f, 0.2706f, 0f, 0f),
-                                      Color6279 = new Color(1f, 0.7530f, 0.7961f, 0.1961f),
-                                      Emission6279 = new Color(0.7804f, 0.0824f, 0.5216f, 0f),
-                                      Color6280 = new Color(0.5020f, 0.5020f, 0.5020f, 0.1961f);
-
-        private static readonly Dictionary<int, IconToolNew.IconDesc> IconDescs = new Dictionary<int, IconToolNew.IconDesc>()
-                                                                                  {
-                                                                                      { 6278, GetIconDesc(Color6278, Emission6278) },
-                                                                                      { 6279, GetIconDesc(Color6279, Emission6279) },
-                                                                                      { 6280, GetDefaultIconDesc(Color6280, Color.clear) }
-                                                                                  };
-        
-        private static IconToolNew.IconDesc GetIconDesc(Color color, Color emission)
-            => new IconToolNew.IconDesc()
-               {
-                   faceColor = color,
-                   sideColor = color,
-                   faceEmission = emission,
-                   sideEmission = emission,
-                   iconEmission = Color.clear,
-                   metallic = 0f,
-                   smoothness = 0f,
-                   solidAlpha = 0.5f,
-                   iconAlpha = 0.0f
-               };
-
-        private static IconToolNew.IconDesc GetDefaultIconDesc(Color color, Color emission)
-            => ProtoRegistry.GetDefaultIconDesc(color, color, emission, emission);
-
         internal static void ImportJson(int[] tableID)
         {
             #region StringProto
@@ -100,15 +70,24 @@ namespace ProjectGenesis.Utils
 
             #region ItemProto
 
+            ref Dictionary<int, IconToolNew.IconDesc> itemIconDescs
+                = ref AccessTools.StaticFieldRefAccess<Dictionary<int, IconToolNew.IconDesc>>(typeof(ProtoRegistry), "itemIconDescs");
+
             foreach (var itemjson in JsonHelper.ItemProtos())
             {
                 itemjson.GridIndex = GetTableID(itemjson.GridIndex);
 
-                var proto = LDB.items.Exist(itemjson.ID)
+                var exist = LDB.items.Exist(itemjson.ID);
+
+                var proto = exist
                                 ? LDB.items.Select(itemjson.ID)
                                 : ProtoRegistry.RegisterItem(itemjson.ID, itemjson.Name, itemjson.Description, itemjson.IconPath, itemjson.GridIndex,
-                                                             itemjson.StackSize, (EItemType)itemjson.Type,
-                                                             IconDescs.TryGetValue(itemjson.ID, out var iconDesc) ? iconDesc : FluidColorPatches.GetFluidDesc(itemjson.ID));
+                                                             itemjson.StackSize, (EItemType)itemjson.Type, IconDescUtils.GetIconDesc(itemjson.ID));
+
+                if (exist && proto.IconPath != itemjson.IconPath)
+                {
+                    itemIconDescs.Add(itemjson.ID, IconDescUtils.GetIconDesc(itemjson.ID));
+                }
 
                 proto.ID = itemjson.ID;
                 proto.Name = itemjson.Name.TranslateFromJson();

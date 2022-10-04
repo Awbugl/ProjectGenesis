@@ -896,8 +896,8 @@
   },
   {
     "Name": "稳定矩阵",
-    "ZHCN": "稳定矩阵",
-    "ENUS": "Stable matrix"
+    "ZHCN": "通量矩阵",
+    "ENUS": "Tensor matrix"
   },
   {
     "Name": "I稳定矩阵",
@@ -906,8 +906,8 @@
   },
   {
     "Name": "虚空矩阵",
-    "ZHCN": "虚空矩阵",
-    "ENUS": "Void matrix"
+    "ZHCN": "空间矩阵",
+    "ENUS": "Space matrix"
   },
   {
     "Name": "I虚空矩阵",
