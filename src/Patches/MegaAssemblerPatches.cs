@@ -23,37 +23,17 @@ namespace ProjectGenesis.Patches
 
         #region Internal Fields & Functions
 
-        private static ConcurrentDictionary<int, SlotData[]> _slotdata = new ConcurrentDictionary<int, SlotData[]>();
-        private static ConcurrentDictionary<int, int> _entityId2planetId = new ConcurrentDictionary<int, int>();
-        private static ConcurrentDictionary<int, PlanetFactory> _planetId2planetFactories = new ConcurrentDictionary<int, PlanetFactory>();
+        private static ConcurrentDictionary<(int, int), SlotData[]> _slotdata = new ConcurrentDictionary<(int, int), SlotData[]>();
 
-        internal static void SyncSlots(int entityId, SlotData[] slotDatas) => _slotdata[entityId] = slotDatas;
+        internal static void SyncSlots((int, int) id, SlotData[] slotDatas) => _slotdata[id] = slotDatas;
 
-        internal static void SyncEntityId(int entityId, int planetId) => _entityId2planetId[entityId] = planetId;
-
-        private static SlotData[] GetSlots(int entityId)
+        private static SlotData[] GetSlots(int planetId, int entityId)
         {
-            if (!_slotdata.ContainsKey(entityId) || _slotdata[entityId] == null) _slotdata[entityId] = new SlotData[12];
+            var id = (planetId, entityId);
 
-            return _slotdata[entityId];
-        }
+            if (!_slotdata.ContainsKey(id) || _slotdata[id] == null) _slotdata[id] = new SlotData[12];
 
-        private static PlanetFactory GetPlanetFactory(int entityId)
-        {
-            if (_entityId2planetId.ContainsKey(entityId))
-            {
-                var planetId = _entityId2planetId[entityId];
-                if (!_planetId2planetFactories.ContainsKey(planetId))
-                {
-                    var planetFactory = GameMain.galaxy.PlanetById(planetId).factory;
-                    _planetId2planetFactories[planetId] = planetFactory;
-                    return planetFactory;
-                }
-
-                return _planetId2planetFactories[planetId];
-            }
-
-            return null;
+            return _slotdata[id];
         }
 
         #endregion
@@ -68,12 +48,7 @@ namespace ProjectGenesis.Patches
             int entityId,
             int speed)
         {
-            if (speed >= TrashSpeed)
-            {
-                _entityId2planetId[entityId] = __instance.planet.id;
-                EntityId2PlanetIdData.Sync(entityId, __instance.planet.id);
-                __instance.factory.entityPool[entityId].stationId = 0;
-            }
+            if (speed >= TrashSpeed) __instance.factory.entityPool[entityId].stationId = 0;
         }
 
         [HarmonyPostfix]
@@ -95,7 +70,8 @@ namespace ProjectGenesis.Patches
                 if (assembler.id == assemblerId && assembler.speed >= TrashSpeed)
                     if (parameters != null && parameters.Length >= 2048)
                     {
-                        SlotData[] slots = GetSlots(entityId);
+                        assembler.SetRecipe(recipeId, factory.entitySignPool);
+                        SlotData[] slots = GetSlots(factory.planetId, entityId);
 
                         for (var index = 0; index < slots.Length; ++index)
                         {
@@ -103,7 +79,7 @@ namespace ProjectGenesis.Patches
                             slots[index].storageIdx = parameters[num4 + index * 4 + 1];
                         }
 
-                        SyncSlotsData.Sync(entityId, slots);
+                        SyncSlotsData.Sync(factory.planetId, entityId, slots);
                     }
             }
         }
@@ -148,31 +124,45 @@ namespace ProjectGenesis.Patches
             PlanetFactory factory,
             bool copyInserters)
         {
-            if (objectId > 0 &&
-                factory.entityPool.Length > objectId &&
-                factory.entityPool[objectId].id == objectId &&
-                __instance.type == BuildingType.Assembler)
+            if (objectId > 0)
             {
-                var assemblerId = factory.entityPool[objectId].assemblerId;
-                if (assemblerId > 0 && factory.factorySystem.assemblerPool.Length > assemblerId)
+                if (factory.entityPool.Length > objectId && factory.entityPool[objectId].id == objectId && __instance.type == BuildingType.Assembler)
                 {
-                    var assembler = factory.factorySystem.assemblerPool[assemblerId];
-                    if (assembler.id == assemblerId && assembler.speed >= TrashSpeed)
+                    var assemblerId = factory.entityPool[objectId].assemblerId;
+                    if (assemblerId > 0 && factory.factorySystem.assemblerPool.Length > assemblerId)
                     {
-                        __instance.parameters = new int[2048];
-                        __instance.parameters[0] = assembler.forceAccMode ? 1 : 0;
-
-                        var num2 = 192;
-
-                        SlotData[] slots = GetSlots(objectId);
-
-                        for (var index = 0; index < slots.Length; ++index)
+                        var assembler = factory.factorySystem.assemblerPool[assemblerId];
+                        if (assembler.id == assemblerId && assembler.speed >= TrashSpeed)
                         {
-                            __instance.parameters[num2 + index * 4] = (int)slots[index].dir;
-                            __instance.parameters[num2 + index * 4 + 1] = slots[index].storageIdx;
-                        }
+                            __instance.parameters = new int[2048];
+                            __instance.parameters[0] = assembler.forceAccMode ? 1 : 0;
 
-                        SyncSlotsData.Sync(objectId, slots);
+                            var num2 = 192;
+
+                            SlotData[] slots = GetSlots(factory.planetId, objectId);
+
+                            for (var index = 0; index < slots.Length; ++index)
+                            {
+                                __instance.parameters[num2 + index * 4] = (int)slots[index].dir;
+                                __instance.parameters[num2 + index * 4 + 1] = slots[index].storageIdx;
+                            }
+
+                            SyncSlotsData.Sync(factory.planetId, objectId, slots);
+                        }
+                    }
+                }
+            }
+            else
+            {
+                var index2 = -objectId;
+                PrebuildData[] prebuildPool = factory.prebuildPool;
+                if (index2 > 0 && prebuildPool[index2].id == index2)
+                {
+                    var recipeProto = LDB.recipes.Select(prebuildPool[index2].recipeId);
+                    if (recipeProto != null)
+                    {
+                        __instance.recipeId = recipeProto.ID;
+                        __instance.recipeType = recipeProto.Type;
                     }
                 }
             }
@@ -196,11 +186,11 @@ namespace ProjectGenesis.Patches
                 {
                     var beltId = __instance.entityPool[insertTarget].beltId;
                     if (beltId <= 0) return;
-                    SlotData[] slotdata = GetSlots(entityId);
+                    SlotData[] slotdata = GetSlots(__instance.planetId, entityId);
                     slotdata[slotId].dir = IODir.Output;
                     slotdata[slotId].beltId = beltId;
                     slotdata[slotId].counter = 0;
-                    SyncSlotsData.Sync(entityId, slotdata);
+                    SyncSlotsData.Sync(__instance.planetId, entityId, slotdata);
                 }
             }
         }
@@ -223,12 +213,12 @@ namespace ProjectGenesis.Patches
                 {
                     var beltId = __instance.entityPool[pickTarget].beltId;
                     if (beltId <= 0) return;
-                    SlotData[] slotdata = GetSlots(entityId);
+                    SlotData[] slotdata = GetSlots(__instance.planetId, entityId);
                     slotdata[slotId].dir = IODir.Input;
                     slotdata[slotId].beltId = beltId;
                     slotdata[slotId].storageIdx = 0;
                     slotdata[slotId].counter = 0;
-                    SyncSlotsData.Sync(entityId, slotdata);
+                    SyncSlotsData.Sync(__instance.planetId, entityId, slotdata);
                 }
             }
         }
@@ -251,27 +241,84 @@ namespace ProjectGenesis.Patches
                 {
                     var beltId = __instance.entityPool[removingEntityId].beltId;
                     if (beltId <= 0) return;
-                    SlotData[] slotdata = GetSlots(otherEntityId);
+                    SlotData[] slotdata = GetSlots(__instance.planetId, otherEntityId);
 
                     slotdata[otherSlotId].dir = IODir.None;
                     slotdata[otherSlotId].beltId = 0;
                     slotdata[otherSlotId].storageIdx = 0;
                     slotdata[otherSlotId].counter = 0;
 
-                    SyncSlotsData.Sync(otherEntityId, slotdata);
+                    SyncSlotsData.Sync(__instance.planetId, otherEntityId, slotdata);
                 }
             }
         }
 
-        [HarmonyPrefix]
-        [HarmonyPatch(typeof(AssemblerComponent), "UpdateNeeds")]
-        public static bool AssemblerComponent_UpdateNeeds(ref AssemblerComponent __instance)
+        [HarmonyPatch(typeof(FactorySystem), "GameTick", typeof(long), typeof(bool))]
+        [HarmonyPatch(typeof(FactorySystem), "GameTick", typeof(long), typeof(bool), typeof(int), typeof(int), typeof(int))]
+        [HarmonyTranspiler]
+        public static IEnumerable<CodeInstruction> FactorySystem_GameTick_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
-            var length = __instance.requires.Length;
-            var cache = __instance.speed >= TrashSpeed ? 10 : 3;
-            for (var i = 0; i < length; ++i)
-                __instance.needs[i] = __instance.served[i] < __instance.requireCounts[i] * cache ? __instance.requires[i] : 0;
-            return false;
+            var matcher = new CodeMatcher(instructions).MatchForward(true, new CodeMatch(OpCodes.Ldloc_1), new CodeMatch(OpCodes.Ldloc_2),
+                                                                     new CodeMatch(OpCodes.Call,
+                                                                                   AccessTools.Method(typeof(AssemblerComponent), "InternalUpdate")));
+
+            var matcher2 = matcher.Clone();
+            matcher2.MatchBack(true, new CodeMatch(OpCodes.Ldarg_0),
+                               new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(FactorySystem), "assemblerPool")),
+                               new CodeMatch(OpCodes.Ldloc_S));
+
+            var index1 = matcher2.Operand;
+            var power1 = matcher2.Advance(2).Operand;
+
+            matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0),
+                                                new CodeInstruction(OpCodes.Ldfld, AccessTools.Field(typeof(FactorySystem), "assemblerPool")),
+                                                new CodeInstruction(OpCodes.Ldloc_S, index1), new CodeInstruction(OpCodes.Ldelema),
+                                                new CodeInstruction(OpCodes.Ldarg_0), new CodeInstruction(OpCodes.Ldloc_S, power1),
+                                                new CodeInstruction(OpCodes.Call,
+                                                                    AccessTools.Method(typeof(MegaAssemblerPatches),
+                                                                                       "AssemblerComponent_InternalUpdate_T")));
+
+            matcher.MatchForward(true, new CodeMatch(OpCodes.Ldloc_1), new CodeMatch(OpCodes.Ldloc_2),
+                                 new CodeMatch(OpCodes.Call, AccessTools.Method(typeof(AssemblerComponent), "InternalUpdate")));
+
+            var matcher3 = matcher.Clone();
+            matcher3.MatchBack(true, new CodeMatch(OpCodes.Ldarg_0),
+                               new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(FactorySystem), "assemblerPool")),
+                               new CodeMatch(OpCodes.Ldloc_S));
+
+            var index2 = matcher3.Operand;
+            var power2 = matcher3.Advance(2).Operand;
+
+            matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0),
+                                                new CodeInstruction(OpCodes.Ldfld, AccessTools.Field(typeof(FactorySystem), "assemblerPool")),
+                                                new CodeInstruction(OpCodes.Ldloc_S, index2), new CodeInstruction(OpCodes.Ldelema),
+                                                new CodeInstruction(OpCodes.Ldarg_0), new CodeInstruction(OpCodes.Ldloc_S, power2),
+                                                new CodeInstruction(OpCodes.Call,
+                                                                    AccessTools.Method(typeof(MegaAssemblerPatches),
+                                                                                       "AssemblerComponent_InternalUpdate_T")));
+
+
+            return matcher.InstructionEnumeration();
+        }
+
+        public static void AssemblerComponent_InternalUpdate_T(ref AssemblerComponent __instance, FactorySystem factorySystem, float power)
+        {
+            // 巨型建筑效果
+            if (power < 0.1f) return;
+
+            if (__instance.speed >= TrashSpeed)
+            {
+                var factory = factorySystem.factory;
+                SlotData[] slotdata = GetSlots(factory.planetId, __instance.entityId);
+
+                var cargoTraffic = factory.cargoTraffic;
+                SignData[] entitySignPool = factory.entitySignPool;
+
+                var stationPilerLevel = GameMain.history.stationPilerLevel;
+
+                UpdateInputSlots(ref __instance, factory, cargoTraffic, slotdata, entitySignPool);
+                UpdateOutputSlots(ref __instance, cargoTraffic, slotdata, entitySignPool, stationPilerLevel);
+            }
         }
 
         [HarmonyPrefix]
@@ -289,23 +336,6 @@ namespace ProjectGenesis.Patches
                     __instance.recipeType == (ERecipeType_1)Utils.ERecipeType.高分子化工)
                     if (__instance.speed == 20000)
                         __instance.speed = 40000;
-
-            // 巨型建筑效果
-            if (power < 0.1f) return;
-
-            if (__instance.speed >= TrashSpeed)
-            {
-                var factory = GetPlanetFactory(__instance.entityId);
-                SlotData[] slotdata = GetSlots(__instance.entityId);
-
-                var cargoTraffic = factory.cargoTraffic;
-                SignData[] entitySignPool = factory.entitySignPool;
-
-                var stationPilerLevel = GameMain.history.stationPilerLevel;
-
-                UpdateInputSlots(ref __instance, factory, cargoTraffic, slotdata, entitySignPool);
-                UpdateOutputSlots(ref __instance, cargoTraffic, slotdata, entitySignPool, stationPilerLevel);
-            }
         }
 
         private static void UpdateOutputSlots(
@@ -574,7 +604,7 @@ namespace ProjectGenesis.Patches
 
                             __instance.selectedIndex = 0;
                             if (slot >= 0 && slot < 12)
-                                __instance.selectedIndex = GetSlots(entityId)[slot].storageIdx;
+                                __instance.selectedIndex = GetSlots(factory.planetId, entityId)[slot].storageIdx;
                             else
                                 Assert.CannotBeReached();
 
@@ -662,9 +692,9 @@ namespace ProjectGenesis.Patches
 
                     if (assemblerComponent.speed >= TrashSpeed)
                     {
-                        SlotData[] slotDatas = GetSlots(__instance.outputEntityId);
+                        SlotData[] slotDatas = GetSlots(factory.planetId, __instance.outputEntityId);
                         slotDatas[__instance.outputSlotId].storageIdx = __instance.selectedIndex;
-                        SyncSlotsData.Sync(__instance.outputEntityId, slotDatas);
+                        SyncSlotsData.Sync(factory.planetId, __instance.outputEntityId, slotDatas);
                         if (entityData.stationId > 0) entityData.stationId = 0;
                     }
                 }
@@ -751,7 +781,7 @@ namespace ProjectGenesis.Patches
 
                             __instance.selectedIndex = 0;
                             if (slot >= 0 && slot < 12)
-                                __instance.selectedIndex = GetSlots(entityId)[slot].storageIdx;
+                                __instance.selectedIndex = GetSlots(factory.planetId, entityId)[slot].storageIdx;
                             else
                                 Assert.CannotBeReached();
 
@@ -864,9 +894,9 @@ namespace ProjectGenesis.Patches
 
                     if (assemblerComponent.speed >= TrashSpeed)
                     {
-                        SlotData[] slotDatas = GetSlots(__instance.outputEntityId);
+                        SlotData[] slotDatas = GetSlots(factory.planetId, __instance.outputEntityId);
                         slotDatas[__instance.outputSlotId].storageIdx = __instance.selectedIndex;
-                        SyncSlotsData.Sync(__instance.outputEntityId, slotDatas);
+                        SyncSlotsData.Sync(factory.planetId, __instance.outputEntityId, slotDatas);
                         if (entityData.stationId > 0) entityData.stationId = 0;
                     }
                 }
@@ -939,7 +969,8 @@ namespace ProjectGenesis.Patches
 
             foreach (var (key, value) in _slotdata)
             {
-                w.Write(key);
+                w.Write(key.Item1);
+                w.Write(key.Item2);
                 w.Write(value.Length);
                 for (var i = 0; i < value.Length; i++)
                 {
@@ -948,14 +979,6 @@ namespace ProjectGenesis.Patches
                     w.Write(value[i].storageIdx);
                     w.Write(value[i].counter);
                 }
-            }
-
-            w.Write(_entityId2planetId.Count);
-
-            foreach (var (key, value) in _entityId2planetId)
-            {
-                w.Write(key);
-                w.Write(value);
             }
         }
 
@@ -968,6 +991,7 @@ namespace ProjectGenesis.Patches
             for (var j = 0; j < _slotdatacount; j++)
             {
                 var key = r.ReadInt32();
+                var key2 = r.ReadInt32();
                 var length = r.ReadInt32();
                 var datas = new SlotData[length];
                 for (var i = 0; i < length; i++)
@@ -978,17 +1002,7 @@ namespace ProjectGenesis.Patches
                                };
                 }
 
-                _slotdata.TryAdd(key, datas);
-            }
-
-            var _entityId2planetIdcount = r.ReadInt32();
-
-            for (var j = 0; j < _entityId2planetIdcount; j++)
-            {
-                var key = r.ReadInt32();
-                var value = r.ReadInt32();
-
-                _entityId2planetId.TryAdd(key, value);
+                _slotdata.TryAdd((key, key2), datas);
             }
         }
 
@@ -996,9 +1010,7 @@ namespace ProjectGenesis.Patches
 
         private static void ReInitAll()
         {
-            _slotdata = new ConcurrentDictionary<int, SlotData[]>();
-            _entityId2planetId = new ConcurrentDictionary<int, int>();
-            _planetId2planetFactories = new ConcurrentDictionary<int, PlanetFactory>();
+            _slotdata = new ConcurrentDictionary<(int, int), SlotData[]>();
         }
 
         #endregion
