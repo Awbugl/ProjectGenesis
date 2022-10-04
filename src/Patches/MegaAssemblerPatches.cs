@@ -107,6 +107,7 @@ namespace ProjectGenesis.Patches
                     if (_parameters == null || _parameters.Length < 2048) _parameters = new int[2048];
                     Array.Copy(__instance.parameters, _parameters, 2048);
                     _paramCount = _parameters.Length;
+                    return;
                 }
 
                 _paramCount = 1;
@@ -272,7 +273,8 @@ namespace ProjectGenesis.Patches
 
             matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0),
                                                 new CodeInstruction(OpCodes.Ldfld, AccessTools.Field(typeof(FactorySystem), "assemblerPool")),
-                                                new CodeInstruction(OpCodes.Ldloc_S, index1), new CodeInstruction(OpCodes.Ldelema),
+                                                new CodeInstruction(OpCodes.Ldloc_S, index1),
+                                                new CodeInstruction(OpCodes.Ldelema, typeof(AssemblerComponent)),
                                                 new CodeInstruction(OpCodes.Ldarg_0), new CodeInstruction(OpCodes.Ldloc_S, power1),
                                                 new CodeInstruction(OpCodes.Call,
                                                                     AccessTools.Method(typeof(MegaAssemblerPatches),
@@ -291,7 +293,8 @@ namespace ProjectGenesis.Patches
 
             matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0),
                                                 new CodeInstruction(OpCodes.Ldfld, AccessTools.Field(typeof(FactorySystem), "assemblerPool")),
-                                                new CodeInstruction(OpCodes.Ldloc_S, index2), new CodeInstruction(OpCodes.Ldelema),
+                                                new CodeInstruction(OpCodes.Ldloc_S, index2),
+                                                new CodeInstruction(OpCodes.Ldelema, typeof(AssemblerComponent)),
                                                 new CodeInstruction(OpCodes.Ldarg_0), new CodeInstruction(OpCodes.Ldloc_S, power2),
                                                 new CodeInstruction(OpCodes.Call,
                                                                     AccessTools.Method(typeof(MegaAssemblerPatches),
@@ -497,7 +500,7 @@ namespace ProjectGenesis.Patches
                 for (var index1 = 0; index1 < dataArray.Length; ++index1)
                 {
                     if (dataArray[index1].GridIndex >= 1101 && history.RecipeUnlocked(dataArray[index1].ID))
-                        if (___filter == ERecipeType_1.None || ContainsRecipeType(filter, (Utils.ERecipeType)dataArray[index1].Type))
+                        if (___filter == ERecipeType_1.None || ContainsRecipeType(___filter, dataArray[index1].Type))
                         {
                             var num1 = dataArray[index1].GridIndex / 1000;
                             var num2 = (dataArray[index1].GridIndex - num1 * 1000) / 100 - 1;
@@ -516,20 +519,20 @@ namespace ProjectGenesis.Patches
             }
         }
 
-        private static bool ContainsRecipeType(Utils.ERecipeType filter, Utils.ERecipeType recipetype)
+        private static bool ContainsRecipeType(ERecipeType filter, ERecipeType recipetype)
         {
-            switch (filter)
+            var type = (Utils.ERecipeType)recipetype;
+
+            switch ((Utils.ERecipeType)filter)
             {
                 case Utils.ERecipeType.所有化工:
-                    return recipetype == Utils.ERecipeType.Chemical ||
-                           recipetype == Utils.ERecipeType.Refine ||
-                           recipetype == Utils.ERecipeType.高分子化工;
+                    return type == Utils.ERecipeType.Chemical || type == Utils.ERecipeType.Refine || type == Utils.ERecipeType.高分子化工;
 
                 case Utils.ERecipeType.所有熔炉:
-                    return recipetype == Utils.ERecipeType.Smelt || recipetype == Utils.ERecipeType.矿物处理;
+                    return type == Utils.ERecipeType.Smelt || type == Utils.ERecipeType.矿物处理;
 
                 case Utils.ERecipeType.所有高精:
-                    return recipetype == Utils.ERecipeType.高精度加工 || recipetype == Utils.ERecipeType.电路蚀刻;
+                    return type == Utils.ERecipeType.高精度加工 || type == Utils.ERecipeType.电路蚀刻;
 
                 default:
                     return filter == recipetype;
