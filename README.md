@@ -139,6 +139,13 @@ We welcome any friends who want to optimize the model, mapping, numerical balanc
 
 # Update Log | 更新日志
 
+- v2.1.3
+  + 修复了有机晶体不会出现在物品选择器的问题
+  + 为稳定矩阵和虚空矩阵添加发光效果
+  +
+  + Fixed issue where organic crystals would not appear in the item selector
+  + Added glow effects to stable matrix and void matrix
+
 
 - v2.1.2
   + 为母星添加了少量可燃冰矿（仅影响新存档）
