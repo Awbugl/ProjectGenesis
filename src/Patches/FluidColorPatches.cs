@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using CommonAPI.Systems;
 using HarmonyLib;
 using UnityEngine;
 
@@ -61,6 +62,14 @@ namespace ProjectGenesis.Patches
             if (tankComponent.id != __instance.tankId) return;
 
             if (FluidColor.ContainsKey(tankComponent.fluidId)) __instance.exchangeAndColoring(FluidColor[tankComponent.fluidId]);
+        }
+
+        internal static IconToolNew.IconDesc GetFluidDesc(int itemid)
+        {
+            var desc = ProtoRegistry.GetDefaultIconDesc(Color.gray, Color.gray);
+            if (FluidColor.ContainsKey(itemid)) desc.reserved0 = FluidColor[itemid];
+
+            return desc;
         }
     }
 }
