@@ -140,6 +140,18 @@ We welcome any friends who want to optimize the model, mapping, numerical balanc
 # Update Log | 更新日志
 
 
+- v2.1.4
+  + 修复了储液罐液体颜色渲染不正确的问题（特别感谢kremnev8提供的帮助）
+  + 修复了传送带颜色不正确的问题（特别感谢kremnev8提供的帮助）
+  + 修改了物品在传送带上的显示效果
+  + 稳定矩阵和虚空矩阵更名为通量矩阵和空间矩阵
+  +
+  + Fixed incorrect rendering of reservoir liquid colors (special thanks to kremnev8 for the help)
+  + Fixed incorrect color of conveyor belt (special thanks to kremnev8 for the help)
+  + Modified the display of items on the conveyor belt
+  + Stable Matrix and Void Matrix renamed to Flux Matrix and Space Matrix
+
+
 - v2.1.3
   + 修复了有机晶体不会出现在物品选择器的问题
   + 为稳定矩阵和虚空矩阵添加发光效果
