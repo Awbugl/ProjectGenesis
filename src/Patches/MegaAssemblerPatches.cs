@@ -42,11 +42,7 @@ namespace ProjectGenesis.Patches
 
         [HarmonyPostfix]
         [HarmonyPatch(typeof(FactorySystem), "NewAssemblerComponent")]
-        public static void FactorySystem_NewAssemblerComponent(
-            ref FactorySystem __instance,
-            ref int __result,
-            int entityId,
-            int speed)
+        public static void FactorySystem_NewAssemblerComponent(ref FactorySystem __instance, int entityId, int speed)
         {
             if (speed >= TrashSpeed) __instance.factory.entityPool[entityId].stationId = 0;
         }
@@ -60,27 +56,38 @@ namespace ProjectGenesis.Patches
             int[] parameters,
             PlanetFactory factory)
         {
-            var num4 = 192;
-
+            if (entityId <= 0 || factory.entityPool[entityId].id != entityId) return;
             var assemblerId = factory.entityPool[entityId].assemblerId;
             if (assemblerId > 0)
             {
-                var assembler = factory.factorySystem.assemblerPool[assemblerId];
-                if (parameters != null && parameters.Length >= 1) assembler.forceAccMode = parameters[0] > 0;
-                if (assembler.id == assemblerId && assembler.speed >= TrashSpeed)
-                    if (parameters != null && parameters.Length >= 2048)
+                ref var assembler = ref factory.factorySystem.assemblerPool[assemblerId];
+                if (assembler.id == assemblerId && assembler.speed >= TrashSpeed && parameters != null && parameters.Length >= 2048)
+                {
+                    assembler.forceAccMode = parameters[0] > 0;
+
+                    if (assembler.recipeId != recipeId)
                     {
-                        assembler.SetRecipe(recipeId, factory.entitySignPool);
-                        SlotData[] slots = GetSlots(factory.planetId, entityId);
+                        var recipeType = LDB.recipes.Select(recipeId).Type;
+                        var itemProto = LDB.items.Select(factory.entityPool[entityId].protoId);
 
-                        for (var index = 0; index < slots.Length; ++index)
-                        {
-                            slots[index].dir = (IODir)parameters[num4 + index * 4];
-                            slots[index].storageIdx = parameters[num4 + index * 4 + 1];
-                        }
-
-                        SyncSlotsData.Sync(factory.planetId, entityId, slots);
+                        if (recipeId == 0)
+                            assembler.SetRecipe(0, factory.entitySignPool);
+                        else if (recipeId > 0 &&
+                                 ContainsRecipeType(itemProto.prefabDesc.assemblerRecipeType, recipeType) &&
+                                 factory.gameData.history.RecipeUnlocked(recipeId))
+                            assembler.SetRecipe(recipeId, factory.entitySignPool);
                     }
+
+                    SlotData[] slots = GetSlots(factory.planetId, entityId);
+                    const int num4 = 192;
+                    for (var index = 0; index < slots.Length; ++index)
+                    {
+                        slots[index].dir = (IODir)parameters[num4 + index * 4];
+                        slots[index].storageIdx = parameters[num4 + index * 4 + 1];
+                    }
+
+                    SyncSlotsData.Sync(factory.planetId, entityId, slots);
+                }
             }
         }
 
@@ -137,8 +144,10 @@ namespace ProjectGenesis.Patches
                         {
                             __instance.parameters = new int[2048];
                             __instance.parameters[0] = assembler.forceAccMode ? 1 : 0;
+                            __instance.recipeId = assembler.recipeId;
+                            __instance.recipeType = assembler.recipeType;
 
-                            var num2 = 192;
+                            const int num2 = 192;
 
                             SlotData[] slots = GetSlots(factory.planetId, objectId);
 
@@ -159,14 +168,140 @@ namespace ProjectGenesis.Patches
                 PrebuildData[] prebuildPool = factory.prebuildPool;
                 if (index2 > 0 && prebuildPool[index2].id == index2)
                 {
+                    __instance.recipeId = prebuildPool[index2].recipeId;
                     var recipeProto = LDB.recipes.Select(prebuildPool[index2].recipeId);
                     if (recipeProto != null)
                     {
-                        __instance.recipeId = recipeProto.ID;
                         __instance.recipeType = recipeProto.Type;
                     }
                 }
             }
+        }
+
+        [HarmonyPostfix]
+        [HarmonyPatch(typeof(BuildingParameters), "PasteToFactoryObject")]
+        public static void BuildingParameters_PasteToFactoryObject(
+            ref BuildingParameters __instance,
+            int objectId,
+            PlanetFactory factory,
+            ref bool __result)
+        {
+            if (objectId > 0)
+            {
+                if (factory.entityPool.Length > objectId && factory.entityPool[objectId].id == objectId && __instance.type == BuildingType.Assembler)
+                {
+                    var assemblerId = factory.entityPool[objectId].assemblerId;
+                    if (assemblerId > 0 && factory.factorySystem.assemblerPool.Length > assemblerId)
+                    {
+                        ref var assembler = ref factory.factorySystem.assemblerPool[assemblerId];
+                        if (assembler.id == assemblerId && assembler.speed >= TrashSpeed)
+                        {
+                            var itemProto = LDB.items.Select(factory.entityPool[objectId].protoId);
+                            if (itemProto != null && itemProto.prefabDesc != null)
+                            {
+                                if (assembler.recipeId != __instance.recipeId &&
+                                    (__instance.recipeId == 0 ||
+                                     (__instance.recipeId > 0 &&
+                                      ContainsRecipeType(itemProto.prefabDesc.assemblerRecipeType, __instance.recipeType) &&
+                                      GameMain.history.RecipeUnlocked(__instance.recipeId))))
+                                {
+                                    factory.factorySystem.TakeBackItems_Assembler(GameMain.mainPlayer, assemblerId);
+                                    {
+                                        assembler.SetRecipe(__instance.recipeId, factory.entitySignPool);
+                                        __result = true;
+                                    }
+                                }
+
+                                if (__instance.parameters != null &&
+                                    __instance.parameters.Length >= 1 &&
+                                    ContainsRecipeType(itemProto.prefabDesc.assemblerRecipeType, __instance.recipeType))
+                                    assembler.forceAccMode = __instance.parameters[0] > 0;
+                            }
+                        }
+                    }
+                }
+            }
+            else
+            {
+                var index1 = -objectId;
+                PrebuildData[] prebuildPool = factory.prebuildPool;
+
+                if (index1 > 0 && prebuildPool[index1].id == index1)
+                {
+                    var itemProto = LDB.items.Select(prebuildPool[index1].protoId);
+                    if (itemProto != null && itemProto.prefabDesc != null)
+                    {
+                        if (itemProto.prefabDesc.isAssembler &&
+                            __instance.type == BuildingType.Assembler &&
+                            ContainsRecipeType(itemProto.prefabDesc.assemblerRecipeType, __instance.recipeType))
+                        {
+                            prebuildPool[index1].recipeId = __instance.recipeId;
+                            prebuildPool[index1].filterId = __instance.filterId;
+                            __instance.ToParamsArray(ref prebuildPool[index1].parameters, ref prebuildPool[index1].paramCount);
+                        }
+                    }
+                }
+            }
+        }
+
+        [HarmonyPostfix]
+        [HarmonyPatch(typeof(BuildingParameters), "CanPasteToFactoryObject")]
+        public static void BuildingParameters_CanPasteToFactoryObject(
+            ref BuildingParameters __instance,
+            int objectId,
+            PlanetFactory factory,
+            ref bool __result)
+        {
+            if (objectId > 0)
+            {
+                if (factory.entityPool.Length > objectId && factory.entityPool[objectId].id == objectId && __instance.type == BuildingType.Assembler)
+                {
+                    var assemblerId = factory.entityPool[objectId].assemblerId;
+                    if (assemblerId > 0 && factory.factorySystem.assemblerPool.Length > assemblerId)
+                    {
+                        var assembler = factory.factorySystem.assemblerPool[assemblerId];
+                        if (assembler.id == assemblerId && assembler.speed >= TrashSpeed)
+                        {
+                            if (assembler.recipeId != __instance.recipeId)
+                            {
+                                var itemProto = LDB.items.Select(factory.entityPool[objectId].protoId);
+                                if (itemProto != null &&
+                                    itemProto.prefabDesc != null &&
+                                    (__instance.recipeId == 0 ||
+                                     __instance.recipeId > 0 &&
+                                     ContainsRecipeType(itemProto.prefabDesc.assemblerRecipeType, __instance.recipeType) &&
+                                     GameMain.history.RecipeUnlocked(__instance.recipeId)))
+                                    __result = true;
+                            }
+                        }
+                    }
+                }
+            }
+            else
+            {
+                var index2 = -objectId;
+                PrebuildData[] prebuildPool = factory.prebuildPool;
+                if (index2 > 0 && prebuildPool[index2].id == index2)
+                {
+                    var itemProto = LDB.items.Select(prebuildPool[index2].protoId);
+                    if (itemProto != null &&
+                        itemProto.prefabDesc != null &&
+                        itemProto.prefabDesc.isAssembler &&
+                        __instance.type == BuildingType.Assembler &&
+                        ContainsRecipeType(itemProto.prefabDesc.assemblerRecipeType, __instance.recipeType))
+                        __result = true;
+                }
+            }
+        }
+
+        [HarmonyPostfix]
+        [HarmonyPatch(typeof(BuildingParameters), "CopyFromBuildPreview")]
+        public static void BuildingParameters_CopyFromBuildPreview(ref BuildingParameters __instance, BuildPreview bp)
+        {
+            __instance.recipeId = bp.recipeId;
+            __instance.filterId = bp.filterId;
+            var recipeProto = LDB.recipes.Select(__instance.recipeId);
+            if (recipeProto != null) __instance.recipeType = recipeProto.Type;
         }
 
         [HarmonyPostfix]
