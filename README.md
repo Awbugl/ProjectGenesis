@@ -140,6 +140,18 @@ We welcome any friends who want to optimize the model, mapping, numerical balanc
 # Update Log | 更新日志
 
 
+- v2.1.5
+  + 修复了巨型建筑不能正确粘贴配方的问题
+  + 修复了巨型建筑的蓝图不能复制配方的问题
+  + 修复了在不同星球上的巨型建筑传送带互相干扰的问题（可能需要重新配置巨型建筑传送带后手动存档）
+  + 修改了模组保存时的数据格式（可能需要删除原有的.moddsv存档文件）
+  +
+  + Fixed the problem that the recipes of Mega Buildings cannot be pasted correctly
+  + Fixed the problem that the blueprints of Mega Buildings could not copy the recipes
+  + Fixed the problem that the conveyor belts connect to Mega Buildings on different planets interfere with each other (may need to rebuild the conveyor belts and save game manually)
+  + Modified the data format when saving game (may need to delete the original .moddsv file)
+
+
 - v2.1.4
   + 修复了储液罐液体颜色渲染不正确的问题（特别感谢kremnev8提供的帮助）
   + 修复了传送带颜色不正确的问题（特别感谢kremnev8提供的帮助）
