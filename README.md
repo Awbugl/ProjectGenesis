@@ -140,6 +140,16 @@ We welcome any friends who want to optimize the model, mapping, numerical balanc
 # Update Log | 更新日志
 
 
+- v2.1.6
+  + 修复了有物质分解设施的存档不能正常读取的问题
+  + 修改了物质分解设施返回沙土的频率
+  + 修改了煤焦油在储液罐内的渲染颜色
+  +
+  + Fixed the problem that archives with Recycling Factory could not be read properly
+  + Modified the frequency of returning sand from working Recycling Factory
+  + Modified the rendering color of coal tar in the tank
+
+
 - v2.1.5
   + 修复了巨型建筑不能正确粘贴配方的问题
   + 修复了巨型建筑的蓝图不能复制配方的问题
