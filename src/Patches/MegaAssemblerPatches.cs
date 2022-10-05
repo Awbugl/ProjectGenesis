@@ -23,6 +23,7 @@ namespace ProjectGenesis.Patches
 
         #region Internal Fields & Functions
 
+        private static int TmpSandCount;
         private static ConcurrentDictionary<(int, int), SlotData[]> _slotdata = new ConcurrentDictionary<(int, int), SlotData[]>();
 
         internal static void SyncSlots((int, int) id, SlotData[] slotDatas) => _slotdata[id] = slotDatas;
@@ -546,17 +547,24 @@ namespace ProjectGenesis.Patches
                         {
                             if (__instance.recipeId == 429)
                             {
-                                var consumeRegister = GameMain.statistics.production.factoryStatPool[factory.index].consumeRegister;
                                 var itemId = factory.cargoTraffic.TryPickItemAtRear(slotdata[index].beltId, 0, null, out var stack, out _);
 
                                 if (itemId > 0)
                                 {
+                                    var consumeRegister = GameMain.statistics.production.factoryStatPool[factory.index].consumeRegister;
+
                                     lock (consumeRegister)
                                     {
                                         consumeRegister[itemId] += stack;
                                     }
 
-                                    GameMain.mainPlayer.SetSandCount(GameMain.mainPlayer.sandCount + stack * 20);
+                                    TmpSandCount += stack;
+
+                                    if (TmpSandCount > 1000 && GameMain.mainPlayer != null)
+                                    {
+                                        GameMain.mainPlayer.SetSandCount(GameMain.mainPlayer.sandCount + TmpSandCount * 20);
+                                        TmpSandCount = 0;
+                                    }
                                 }
                             }
                             else
@@ -1149,6 +1157,7 @@ namespace ProjectGenesis.Patches
         private static void ReInitAll()
         {
             _slotdata = new ConcurrentDictionary<(int, int), SlotData[]>();
+            TmpSandCount = 0;
         }
 
         #endregion
