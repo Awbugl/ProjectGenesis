@@ -140,6 +140,14 @@ We welcome any friends who want to optimize the model, mapping, numerical balanc
 # Update Log | 更新日志
 
 
+- v2.1.7
+  + 修复了有物质分解设施的存档读取时崩溃的问题（特别感谢ckcz提供的帮助）
+  + 取消了物质分解设施返回沙土时的显示提示（防止刷屏）
+  +
+  + Fixed the problem that archives with Recycling Factory could not be read properly (special thanks to ckcz for the help)
+  + Cancel the display prompt when the Recycling Factory returns to the sand (to prevent screen flashing)
+
+
 - v2.1.6
   + 修复了有物质分解设施的存档不能正常读取的问题
   + 修改了物质分解设施返回沙土的频率
