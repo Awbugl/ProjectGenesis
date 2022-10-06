@@ -17,7 +17,7 @@ using Object = UnityEngine.Object;
 namespace ProjectGenesis.Patches
 {
     /// <summary>
-    /// special thanks for https: //github.com/appuns/DSPMoreRecipes/blob/main/DSPMoreRecipes.cs
+    ///     special thanks for https: //github.com/appuns/DSPMoreRecipes/blob/main/DSPMoreRecipes.cs
     /// </summary>
     internal static class GridIndexExpandPatches
     {

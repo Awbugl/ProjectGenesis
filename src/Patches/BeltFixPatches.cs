@@ -9,15 +9,13 @@ using HarmonyLib;
 namespace ProjectGenesis.Patches
 {
     /// <summary>
-    /// special thanks for https://github.com/kremnev8/DSP-Mods/blob/master/Mods/BetterMachines/src/BeltFixes.cs
+    ///     special thanks for https://github.com/kremnev8/DSP-Mods/blob/master/Mods/BetterMachines/src/BeltFixes.cs
     /// </summary>
 
     //Original author: xiaoye97, modified heavily.
     [HarmonyPatch]
     public static class BeltFixPatches
     {
-        private delegate void RefAction<in T1, T2>(T1 arg1, ref T2 arg2);
-
         [HarmonyPatch(typeof(CargoTraffic), "AlterBeltRenderer")]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> AddColors(IEnumerable<CodeInstruction> instructions)
@@ -94,5 +92,7 @@ namespace ProjectGenesis.Patches
 
             return matcher.InstructionEnumeration();
         }
+
+        private delegate void RefAction<in T1, T2>(T1 arg1, ref T2 arg2);
     }
 }

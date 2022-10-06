@@ -84,10 +84,7 @@ namespace ProjectGenesis.Utils
                                 : ProtoRegistry.RegisterItem(itemjson.ID, itemjson.Name, itemjson.Description, itemjson.IconPath, itemjson.GridIndex,
                                                              itemjson.StackSize, (EItemType)itemjson.Type, IconDescUtils.GetIconDesc(itemjson.ID));
 
-                if (exist && proto.IconPath != itemjson.IconPath)
-                {
-                    itemIconDescs.Add(itemjson.ID, IconDescUtils.GetIconDesc(itemjson.ID));
-                }
+                if (exist && proto.IconPath != itemjson.IconPath) itemIconDescs.Add(itemjson.ID, IconDescUtils.GetIconDesc(itemjson.ID));
 
                 proto.ID = itemjson.ID;
                 proto.Name = itemjson.Name.TranslateFromJson();

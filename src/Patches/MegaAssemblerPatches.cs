@@ -171,10 +171,7 @@ namespace ProjectGenesis.Patches
                 {
                     __instance.recipeId = prebuildPool[index2].recipeId;
                     var recipeProto = LDB.recipes.Select(prebuildPool[index2].recipeId);
-                    if (recipeProto != null)
-                    {
-                        __instance.recipeType = recipeProto.Type;
-                    }
+                    if (recipeProto != null) __instance.recipeType = recipeProto.Type;
                 }
             }
         }
@@ -231,7 +228,6 @@ namespace ProjectGenesis.Patches
                 {
                     var itemProto = LDB.items.Select(prebuildPool[index1].protoId);
                     if (itemProto != null && itemProto.prefabDesc != null)
-                    {
                         if (itemProto.prefabDesc.isAssembler &&
                             __instance.type == BuildingType.Assembler &&
                             ContainsRecipeType(itemProto.prefabDesc.assemblerRecipeType, __instance.recipeType))
@@ -240,7 +236,6 @@ namespace ProjectGenesis.Patches
                             prebuildPool[index1].filterId = __instance.filterId;
                             __instance.ToParamsArray(ref prebuildPool[index1].parameters, ref prebuildPool[index1].paramCount);
                         }
-                    }
                 }
             }
         }
@@ -262,19 +257,17 @@ namespace ProjectGenesis.Patches
                     {
                         var assembler = factory.factorySystem.assemblerPool[assemblerId];
                         if (assembler.id == assemblerId && assembler.speed >= TrashSpeed)
-                        {
                             if (assembler.recipeId != __instance.recipeId)
                             {
                                 var itemProto = LDB.items.Select(factory.entityPool[objectId].protoId);
                                 if (itemProto != null &&
                                     itemProto.prefabDesc != null &&
                                     (__instance.recipeId == 0 ||
-                                     __instance.recipeId > 0 &&
-                                     ContainsRecipeType(itemProto.prefabDesc.assemblerRecipeType, __instance.recipeType) &&
-                                     GameMain.history.RecipeUnlocked(__instance.recipeId)))
+                                     (__instance.recipeId > 0 &&
+                                      ContainsRecipeType(itemProto.prefabDesc.assemblerRecipeType, __instance.recipeType) &&
+                                      GameMain.history.RecipeUnlocked(__instance.recipeId))))
                                     __result = true;
                             }
-                        }
                     }
                 }
             }
@@ -567,7 +560,8 @@ namespace ProjectGenesis.Patches
                                         // will crash the program.
                                         // Instead, we should increase the sand count directly.
                                         AccessTools.PropertySetter(typeof(Player), "sandCount")
-                                            .Invoke(GameMain.mainPlayer, new object[] { Math.Min(1000000000, GameMain.mainPlayer.sandCount + TmpSandCount * 20) });
+                                                   .Invoke(GameMain.mainPlayer,
+                                                           new object[] { Math.Min(1000000000, GameMain.mainPlayer.sandCount + TmpSandCount * 20) });
                                         TmpSandCount = 0;
                                     }
                                 }
@@ -599,7 +593,6 @@ namespace ProjectGenesis.Patches
                 }
             }
         }
-
 
         // 绕开 CommonAPI 的 UIAssemblerWindowPatch.ChangePicker
         [HarmonyPatch(typeof(UIAssemblerWindow), "OnSelectRecipeClick")]
@@ -1119,7 +1112,7 @@ namespace ProjectGenesis.Patches
         {
             w.Write(_slotdata.Count);
 
-            foreach (var pair in _slotdata)
+            foreach (KeyValuePair<(int, int), SlotData[]> pair in _slotdata)
             {
                 w.Write(pair.Key.Item1);
                 w.Write(pair.Key.Item2);

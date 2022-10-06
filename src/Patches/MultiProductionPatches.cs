@@ -133,30 +133,22 @@ namespace ProjectGenesis.Patches
                     var index = x + 2;
 
                     icon.gameObject.GetComponent<UIButton>().button.onClick.AddListener(() =>
-                                                                                        {
-                                                                                            if (instance.assemblerId == 0 || instance.factory == null)
-                                                                                                return;
+                    {
+                        if (instance.assemblerId == 0 || instance.factory == null) return;
 
-                                                                                            var assemblerComponent
-                                                                                                = instance.factorySystem.assemblerPool
-                                                                                                    [instance.assemblerId];
-                                                                                            if (assemblerComponent.id != instance.assemblerId ||
-                                                                                                assemblerComponent.recipeId == 0 ||
-                                                                                                assemblerComponent.products.Length < index + 1 ||
-                                                                                                assemblerComponent.produced[index] <= 0)
-                                                                                                return;
+                        var assemblerComponent = instance.factorySystem.assemblerPool[instance.assemblerId];
+                        if (assemblerComponent.id != instance.assemblerId ||
+                            assemblerComponent.recipeId == 0 ||
+                            assemblerComponent.products.Length < index + 1 ||
+                            assemblerComponent.produced[index] <= 0)
+                            return;
 
-                                                                                            var num
-                                                                                                = instance.player
-                                                                                                          .TryAddItemToPackage(assemblerComponent.products[index],
-                                                                                                                               assemblerComponent
-                                                                                                                                  .produced[index], 0,
-                                                                                                                               false);
-                                                                                            assemblerComponent.produced[index] = 0;
+                        var num = instance.player.TryAddItemToPackage(assemblerComponent.products[index], assemblerComponent.produced[index], 0,
+                                                                      false);
+                        assemblerComponent.produced[index] = 0;
 
-                                                                                            if (num > 0)
-                                                                                                UIItemup.Up(assemblerComponent.products[index], num);
-                                                                                        });
+                        if (num > 0) UIItemup.Up(assemblerComponent.products[index], num);
+                    });
 
                     AssemblerProductIcon.Add(icon);
                 }

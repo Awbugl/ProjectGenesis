@@ -18,20 +18,24 @@ namespace ProjectGenesis.Utils
         private static readonly Assembly Assembly = Assembly.GetExecutingAssembly();
 
         internal static ItemProtoJson[] ItemProtos()
-            => JsonConvert.DeserializeObject<ItemProtoJson[]>(new StreamReader(Assembly.GetManifestResourceStream("ProjectGenesis.dependencies.items.json"))
-                                                                 .ReadToEnd());
+            => JsonConvert
+               .DeserializeObject<ItemProtoJson[]>(new StreamReader(Assembly.GetManifestResourceStream("ProjectGenesis.dependencies.items.json"))
+                                                      .ReadToEnd());
 
         internal static RecipeProtoJson[] RecipeProtos()
-            => JsonConvert.DeserializeObject<RecipeProtoJson[]>(new StreamReader(Assembly.GetManifestResourceStream("ProjectGenesis.dependencies.recipes.json"))
-                                                                   .ReadToEnd());
+            => JsonConvert
+               .DeserializeObject<RecipeProtoJson[]>(new StreamReader(Assembly.GetManifestResourceStream("ProjectGenesis.dependencies.recipes.json"))
+                                                        .ReadToEnd());
 
         internal static TechProtoJson[] TechProtos()
-            => JsonConvert.DeserializeObject<TechProtoJson[]>(new StreamReader(Assembly.GetManifestResourceStream("ProjectGenesis.dependencies.techs.json"))
-                                                                 .ReadToEnd());
+            => JsonConvert
+               .DeserializeObject<TechProtoJson[]>(new StreamReader(Assembly.GetManifestResourceStream("ProjectGenesis.dependencies.techs.json"))
+                                                      .ReadToEnd());
 
         internal static StringProtoJson[] StringProtos()
-            => JsonConvert.DeserializeObject<StringProtoJson[]>(new StreamReader(Assembly.GetManifestResourceStream("ProjectGenesis.dependencies.strings.json"))
-                                                                   .ReadToEnd());
+            => JsonConvert
+               .DeserializeObject<StringProtoJson[]>(new StreamReader(Assembly.GetManifestResourceStream("ProjectGenesis.dependencies.strings.json"))
+                                                        .ReadToEnd());
 
         internal static string SerializeObject(object obj)
             => JsonConvert.SerializeObject(obj, Formatting.Indented,
