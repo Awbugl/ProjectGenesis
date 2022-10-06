@@ -560,9 +560,14 @@ namespace ProjectGenesis.Patches
 
                                     TmpSandCount += stack;
 
-                                    if (TmpSandCount > 1000 && GameMain.mainPlayer != null)
+                                    if (TmpSandCount >= 1000 && GameMain.mainPlayer != null)
                                     {
-                                        GameMain.mainPlayer.SetSandCount(GameMain.mainPlayer.sandCount + TmpSandCount * 20);
+                                        // This method will be called in a worker thread (not main UI thread).
+                                        // Thus, calling `GameMain.mainPlayer.SetSandCount` which brings up sand tooltip UI
+                                        // will crash the program.
+                                        // Instead, we should increase the sand count directly.
+                                        AccessTools.PropertySetter(typeof(Player), "sandCount")
+                                            .Invoke(GameMain.mainPlayer, new object[] { Math.Min(1000000000, GameMain.mainPlayer.sandCount + TmpSandCount * 20) });
                                         TmpSandCount = 0;
                                     }
                                 }
@@ -594,6 +599,7 @@ namespace ProjectGenesis.Patches
                 }
             }
         }
+
 
         // 绕开 CommonAPI 的 UIAssemblerWindowPatch.ChangePicker
         [HarmonyPatch(typeof(UIAssemblerWindow), "OnSelectRecipeClick")]
@@ -1113,17 +1119,17 @@ namespace ProjectGenesis.Patches
         {
             w.Write(_slotdata.Count);
 
-            foreach (var (key, value) in _slotdata)
+            foreach (var pair in _slotdata)
             {
-                w.Write(key.Item1);
-                w.Write(key.Item2);
-                w.Write(value.Length);
-                for (var i = 0; i < value.Length; i++)
+                w.Write(pair.Key.Item1);
+                w.Write(pair.Key.Item2);
+                w.Write(pair.Value.Length);
+                for (var i = 0; i < pair.Value.Length; i++)
                 {
-                    w.Write((int)value[i].dir);
-                    w.Write(value[i].beltId);
-                    w.Write(value[i].storageIdx);
-                    w.Write(value[i].counter);
+                    w.Write((int)pair.Value[i].dir);
+                    w.Write(pair.Value[i].beltId);
+                    w.Write(pair.Value[i].storageIdx);
+                    w.Write(pair.Value[i].counter);
                 }
             }
         }

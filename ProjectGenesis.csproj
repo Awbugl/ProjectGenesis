@@ -1,138 +1,146 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
-    <PropertyGroup>
-        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-        <ProjectGuid>{EFF66744-FAF7-461E-B86E-7130E64E16DF}</ProjectGuid>
-        <OutputType>Library</OutputType>
-        <AppDesignerFolder>Properties</AppDesignerFolder>
-        <RootNamespace>ProjectGenesis</RootNamespace>
-        <AssemblyName>ProjectGenesis</AssemblyName>
-        <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
-        <FileAlignment>512</FileAlignment>
-        <Deterministic>true</Deterministic>
-        <TargetFrameworkProfile />
-        <LangVersion>7.3</LangVersion>
-    </PropertyGroup>
-    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-        <DebugSymbols>true</DebugSymbols>
-        <DebugType>full</DebugType>
-        <Optimize>false</Optimize>
-        <OutputPath>C:\Users\littl\Desktop\output</OutputPath>
-        <DefineConstants>DEBUG;TRACE</DefineConstants>
-        <ErrorReport>prompt</ErrorReport>
-        <WarningLevel>4</WarningLevel>
-        <Prefer32Bit>false</Prefer32Bit>
-        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    </PropertyGroup>
-    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-        <DebugType>pdbonly</DebugType>
-        <Optimize>true</Optimize>
-        <OutputPath>C:\Users\littl\Desktop\output</OutputPath>
-        <DefineConstants>TRACE</DefineConstants>
-        <ErrorReport>prompt</ErrorReport>
-        <WarningLevel>4</WarningLevel>
-        <Prefer32Bit>false</Prefer32Bit>
-    </PropertyGroup>
-    <ItemGroup>
-        <Reference Include="0Harmony20">
-          <HintPath>..\..\Users\littl\AppData\Roaming\Thunderstore Mod Manager\DataFolder\DysonSphereProgram\profiles\Default\BepInEx\core\0Harmony20.dll</HintPath>
-        </Reference>
-        <Reference Include="Assembly-CSharp">
-            <HintPath>D:\SteamLibrary\steamapps\common\Dyson Sphere Program\DSPGAME_Data\Managed\Assembly-CSharp.dll</HintPath>
-        </Reference>
-        <Reference Include="BepInEx">
-          <HintPath>..\..\Users\littl\AppData\Roaming\Thunderstore Mod Manager\DataFolder\DysonSphereProgram\profiles\Default\BepInEx\core\BepInEx.dll</HintPath>
-        </Reference>
-        <Reference Include="CommonAPI">
-            <HintPath>D:\SteamLibrary\steamapps\common\Dyson Sphere Program\BepInEx\plugins\Develop\CommonAPI\CommonAPI.dll</HintPath>
-        </Reference>
-        <Reference Include="DSPModSave">
-            <HintPath>D:\SteamLibrary\steamapps\common\Dyson Sphere Program\BepInEx\plugins\Develop\DSPModSave\DSPModSave.dll</HintPath>
-        </Reference>
-        <Reference Include="LDBTool">
-            <HintPath>D:\SteamLibrary\steamapps\common\Dyson Sphere Program\BepInEx\plugins\Develop\LDBTool\LDBTool.dll</HintPath>
-        </Reference>
-        <Reference Include="mscorlib">
-            <HintPath>D:\SteamLibrary\steamapps\common\Dyson Sphere Program\DSPGAME_Data\Managed\mscorlib.dll</HintPath>
-        </Reference>
-        <Reference Include="netstandard">
-            <HintPath>D:\SteamLibrary\steamapps\common\Dyson Sphere Program\DSPGAME_Data\Managed\netstandard.dll</HintPath>
-        </Reference>
-        <Reference Include="Newtonsoft.Json">
-          <HintPath>dependencies\Newtonsoft.Json.dll</HintPath>
-        </Reference>
-        <Reference Include="System" />
-        <Reference Include="System.Core" />
-        <Reference Include="System.Diagnostics.StackTrace">
-            <HintPath>D:\SteamLibrary\steamapps\common\Dyson Sphere Program\DSPGAME_Data\Managed\System.Diagnostics.StackTrace.dll</HintPath>
-        </Reference>
-        <Reference Include="System.Globalization.Extensions">
-            <HintPath>D:\SteamLibrary\steamapps\common\Dyson Sphere Program\DSPGAME_Data\Managed\System.Globalization.Extensions.dll</HintPath>
-        </Reference>
-        <Reference Include="System.Runtime.Serialization.Xml">
-            <HintPath>D:\SteamLibrary\steamapps\common\Dyson Sphere Program\DSPGAME_Data\Managed\System.Runtime.Serialization.Xml.dll</HintPath>
-        </Reference>
-        <Reference Include="UnityEngine">
-            <HintPath>D:\SteamLibrary\steamapps\common\Dyson Sphere Program\DSPGAME_Data\Managed\UnityEngine.dll</HintPath>
-        </Reference>
-        <Reference Include="UnityEngine.CoreModule">
-            <HintPath>D:\SteamLibrary\steamapps\common\Dyson Sphere Program\DSPGAME_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
-        </Reference>
-        <Reference Include="UnityEngine.TextRenderingModule">
-            <HintPath>D:\SteamLibrary\steamapps\common\Dyson Sphere Program\DSPGAME_Data\Managed\UnityEngine.TextRenderingModule.dll</HintPath>
-        </Reference>
-        <Reference Include="UnityEngine.UI">
-            <HintPath>D:\SteamLibrary\steamapps\common\Dyson Sphere Program\DSPGAME_Data\Managed\UnityEngine.UI.dll</HintPath>
-        </Reference>
-        <Reference Include="UnityEngine.UIModule">
-            <HintPath>D:\SteamLibrary\steamapps\common\Dyson Sphere Program\DSPGAME_Data\Managed\UnityEngine.UIModule.dll</HintPath>
-        </Reference>
-    </ItemGroup>
-    <ItemGroup>
-        <Compile Include="src\Patches\BeltFixPatches.cs" />
-        <Compile Include="src\Patches\DisplayedTextPatches.cs" />
-        <Compile Include="src\Patches\FluidColorPatches.cs" />
-        <Compile Include="src\Patches\GridIndexExpandPatches.cs" />
-        <Compile Include="src\Patches\MegaAssemblerPatches.cs" />
-        <Compile Include="src\Patches\MultiProductionPatches.cs" />
-        <Compile Include="src\Patches\MutliPlayerPatches.cs" />
-        <Compile Include="src\Patches\OceanDischargePatches.cs" />
-        <Compile Include="src\Patches\UIPatches.cs" />
-        <Compile Include="src\Patches\UISignalPickerPatch.cs" />
-        <Compile Include="src\Patches\UpdateLogoPatches.cs" />
-        <Compile Include="src\ProjectGenesis.cs" />
-        <Compile Include="src\Utils\CopyModelUtils.cs" />
-        <Compile Include="src\Utils\ERecipeType.cs" />
-        <Compile Include="src\Utils\IconDescUtils.cs" />
-        <Compile Include="src\Utils\ItemData.cs" />
-        <Compile Include="src\Utils\JsonDataUtils.cs" />
-        <Compile Include="src\Utils\JsonHelper.cs" />
-        <Compile Include="src\Utils\MutliPlayerPacket.cs" />
-        <Compile Include="src\Utils\PrefabFixUtils.cs" />
-        <Compile Include="src\Utils\TranslateUtils.cs" />
-    </ItemGroup>
-    <ItemGroup>
-        <EmbeddedResource Include="dependencies\items.json" />
-        <EmbeddedResource Include="dependencies\recipes.json" />
-        <EmbeddedResource Include="dependencies\strings.json" />
-        <EmbeddedResource Include="dependencies\techs.json" />
-    </ItemGroup>
-    <ItemGroup>
-        <Content Include="dependencies\Newtonsoft.Json.dll" />
-        <Content Include="README.md" />
-    </ItemGroup>
-    <ItemGroup>
-        <PackageReference Include="DysonSphereProgram.Modding.CommonAPI" Version="1.5.4" />
-        <PackageReference Include="DysonSphereProgram.Modding.DSPModSave" Version="1.1.3" />
-        <PackageReference Include="DysonSphereProgram.Modding.LDBTool" Version="2.0.5" />
-        <PackageReference Include="DysonSphereProgram.Modding.NebulaMultiplayerModApi" Version="1.3.0" />
-    </ItemGroup>
-    <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-    <ProjectExtensions>
-        <VisualStudio>
-            <UserProperties recipes__JsonSchema="https://appsemble.app/api.json" />
-        </VisualStudio>
-    </ProjectExtensions>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EFF66744-FAF7-461E-B86E-7130E64E16DF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ProjectGenesis</RootNamespace>
+    <AssemblyName>ProjectGenesis</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+    <LangVersion>7.3</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>C:\Users\littl\Desktop\output</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\Steam\steamapps\common\Dyson Sphere Program\BepInEx\plugins\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="0Harmony20">
+      <HintPath>..\..\Steam\steamapps\common\Dyson Sphere Program\BepInEx\core\0Harmony20.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>..\..\Steam\steamapps\common\Dyson Sphere Program\DSPGAME_Data\Managed\Assembly-CSharp.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="BepInEx">
+      <HintPath>..\..\Steam\steamapps\common\Dyson Sphere Program\BepInEx\core\BepInEx.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="CommonAPI">
+      <HintPath>..\..\Steam\steamapps\common\Dyson Sphere Program\BepInEx\plugins\CommonAPI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DSPModSave">
+      <HintPath>..\..\Steam\steamapps\common\Dyson Sphere Program\BepInEx\plugins\DSPModSave.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="LDBTool">
+      <HintPath>..\..\Steam\steamapps\common\Dyson Sphere Program\BepInEx\plugins\LDBTool.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="mscorlib">
+      <HintPath>D:\SteamLibrary\steamapps\common\Dyson Sphere Program\DSPGAME_Data\Managed\mscorlib.dll</HintPath>
+    </Reference>
+    <Reference Include="netstandard">
+      <HintPath>D:\SteamLibrary\steamapps\common\Dyson Sphere Program\DSPGAME_Data\Managed\netstandard.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>dependencies\Newtonsoft.Json.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Diagnostics.StackTrace">
+      <HintPath>D:\SteamLibrary\steamapps\common\Dyson Sphere Program\DSPGAME_Data\Managed\System.Diagnostics.StackTrace.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Globalization.Extensions">
+      <HintPath>D:\SteamLibrary\steamapps\common\Dyson Sphere Program\DSPGAME_Data\Managed\System.Globalization.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization.Xml">
+      <HintPath>D:\SteamLibrary\steamapps\common\Dyson Sphere Program\DSPGAME_Data\Managed\System.Runtime.Serialization.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>..\..\Steam\steamapps\common\Dyson Sphere Program\DSPGAME_Data\Managed\UnityEngine.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>..\..\Steam\steamapps\common\Dyson Sphere Program\DSPGAME_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule">
+      <HintPath>..\..\Steam\steamapps\common\Dyson Sphere Program\DSPGAME_Data\Managed\UnityEngine.TextRenderingModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>..\..\Steam\steamapps\common\Dyson Sphere Program\DSPGAME_Data\Managed\UnityEngine.UI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UIModule">
+      <HintPath>..\..\Steam\steamapps\common\Dyson Sphere Program\DSPGAME_Data\Managed\UnityEngine.UIModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="src\Patches\BeltFixPatches.cs" />
+    <Compile Include="src\Patches\DisplayedTextPatches.cs" />
+    <Compile Include="src\Patches\FluidColorPatches.cs" />
+    <Compile Include="src\Patches\GridIndexExpandPatches.cs" />
+    <Compile Include="src\Patches\MegaAssemblerPatches.cs" />
+    <Compile Include="src\Patches\MultiProductionPatches.cs" />
+    <Compile Include="src\Patches\MutliPlayerPatches.cs" />
+    <Compile Include="src\Patches\OceanDischargePatches.cs" />
+    <Compile Include="src\Patches\UIPatches.cs" />
+    <Compile Include="src\Patches\UISignalPickerPatch.cs" />
+    <Compile Include="src\Patches\UpdateLogoPatches.cs" />
+    <Compile Include="src\ProjectGenesis.cs" />
+    <Compile Include="src\Utils\CopyModelUtils.cs" />
+    <Compile Include="src\Utils\ERecipeType.cs" />
+    <Compile Include="src\Utils\IconDescUtils.cs" />
+    <Compile Include="src\Utils\ItemData.cs" />
+    <Compile Include="src\Utils\JsonDataUtils.cs" />
+    <Compile Include="src\Utils\JsonHelper.cs" />
+    <Compile Include="src\Utils\MutliPlayerPacket.cs" />
+    <Compile Include="src\Utils\PrefabFixUtils.cs" />
+    <Compile Include="src\Utils\TranslateUtils.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="dependencies\items.json" />
+    <EmbeddedResource Include="dependencies\recipes.json" />
+    <EmbeddedResource Include="dependencies\strings.json" />
+    <EmbeddedResource Include="dependencies\techs.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="dependencies\Newtonsoft.Json.dll" />
+    <Content Include="README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="DysonSphereProgram.Modding.CommonAPI" Version="1.5.4" />
+    <PackageReference Include="DysonSphereProgram.Modding.DSPModSave" Version="1.1.3" />
+    <PackageReference Include="DysonSphereProgram.Modding.LDBTool" Version="2.0.5" />
+    <PackageReference Include="DysonSphereProgram.Modding.NebulaMultiplayerModApi" Version="1.3.0" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <ProjectExtensions />
 </Project>

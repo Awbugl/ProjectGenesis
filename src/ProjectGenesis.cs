@@ -39,7 +39,7 @@ namespace ProjectGenesis
         public const string MODGUID = "org.LoShin.GenesisBook";
         private const string VERSION = "2.0.0";
 
-        private static ManualLogSource logger;
+        public static ManualLogSource logger;
 
         //无限堆叠开关(私货)
         private readonly bool StackSizeButton = false;
