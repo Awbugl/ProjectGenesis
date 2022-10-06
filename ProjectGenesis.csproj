@@ -134,5 +134,7 @@
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />   
     <Target Name="AfterBuild">
         <Copy SourceFiles="$(TargetPath)" DestinationFiles="$(DefaultOutputPath)$(TargetName).dll"/>
+        <Copy SourceFiles="README.md" DestinationFiles="$(DefaultOutputPath)README.md"/>
+        <Exec Command="explorer $(DefaultOutputPath)" IgnoreExitCode="true"/>
     </Target>
 </Project>
