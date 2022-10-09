@@ -23,6 +23,8 @@ namespace ProjectGenesis.Utils
             LDBTool.PreAddProto(testCraftingTableModel4);
             var testCraftingTableModel5 = CopyModelProto(49, 410, new Color(0.3216F, 0.8157F, 0.09020F));
             LDBTool.PreAddProto(testCraftingTableModel5);
+            var testCraftingTableModel6 = CopyModelProto(49, 411, new Color(0.3059F,0.2196F,0.4941F));
+            LDBTool.PreAddProto(testCraftingTableModel6);
             var antiMatterModel = CopyModelProto(118, 407, Color.HSVToRGB(0.5985f, 0.7333f, 0.2353f));
             LDBTool.PreAddProto(antiMatterModel);
             var assembleModel = CopyModelProto(67, 408, Color.HSVToRGB(0.9688f, 0.9068f, 0.9255f));

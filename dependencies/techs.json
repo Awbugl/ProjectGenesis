@@ -4129,10 +4129,12 @@
     "HashNeeded": 72000,
     "UnlockRecipes": [],
     "UnlockFunctions": [
-      5
+      5,
+      33
     ],
     "UnlockValues": [
-      1.0
+      1.0,
+      2.0
     ],
     "Published": true,
     "Level": 3,
@@ -4173,10 +4175,14 @@
     "HashNeeded": 180000,
     "UnlockRecipes": [],
     "UnlockFunctions": [
-      5
+      5,
+      32,
+      33
     ],
     "UnlockValues": [
-      1.0
+      1.0,
+      1.0,
+      2.0
     ],
     "Published": true,
     "Level": 4,
@@ -4217,9 +4223,11 @@
     "HashNeeded": 240000,
     "UnlockRecipes": [],
     "UnlockFunctions": [
-      5
+      5,
+      33
     ],
     "UnlockValues": [
+      2.0,
       2.0
     ],
     "Published": true,
@@ -4265,9 +4273,11 @@
     "HashNeeded": 600000,
     "UnlockRecipes": [],
     "UnlockFunctions": [
-      5
+      5,
+      33
     ],
     "UnlockValues": [
+      2.0,
       2.0
     ],
     "Published": true,
@@ -6671,10 +6681,12 @@
     "HashNeeded": 36000,
     "UnlockRecipes": [],
     "UnlockFunctions": [
-      15
+      15,
+      34
     ],
     "UnlockValues": [
-      0.2
+      0.2,
+      0.1
     ],
     "Published": true,
     "Level": 1,
@@ -6715,10 +6727,12 @@
     "HashNeeded": 108000,
     "UnlockRecipes": [],
     "UnlockFunctions": [
-      15
+      15,
+      34
     ],
     "UnlockValues": [
-      0.2
+      0.2,
+      0.1
     ],
     "Published": true,
     "Level": 2,
@@ -6760,10 +6774,12 @@
     "UnlockRecipes": [],
     "UnlockFunctions": [
       15,
+      34,
       16
     ],
     "UnlockValues": [
       0.3,
+      0.15,
       0.5
     ],
     "Published": true,
@@ -6808,11 +6824,13 @@
     "UnlockRecipes": [],
     "UnlockFunctions": [
       15,
+      34,
       16,
       17
     ],
     "UnlockValues": [
       0.3,
+      0.15,
       0.5,
       1.0
     ],
@@ -6860,10 +6878,12 @@
     "UnlockRecipes": [],
     "UnlockFunctions": [
       15,
+      34,
       16
     ],
     "UnlockValues": [
       0.4,
+      0.15,
       0.5
     ],
     "Published": true,
@@ -6910,10 +6930,12 @@
     "UnlockRecipes": [],
     "UnlockFunctions": [
       15,
+      34,
       16
     ],
     "UnlockValues": [
       0.4,
+      0.15,
       0.5
     ],
     "Published": true,
@@ -6952,10 +6974,12 @@
     "UnlockRecipes": [],
     "UnlockFunctions": [
       15,
+      34,
       16
     ],
     "UnlockValues": [
       0.5,
+      0.2,
       0.5
     ],
     "Published": true,
@@ -6995,9 +7019,11 @@
     "HashNeeded": 36000,
     "UnlockRecipes": [],
     "UnlockFunctions": [
+      35,
       18
     ],
     "UnlockValues": [
+      1.0,
       5.0
     ],
     "Published": true,
@@ -7039,9 +7065,11 @@
     "HashNeeded": 108000,
     "UnlockRecipes": [],
     "UnlockFunctions": [
+      35,
       18
     ],
     "UnlockValues": [
+      1.0,
       5.0
     ],
     "Published": true,
@@ -7083,10 +7111,12 @@
     "HashNeeded": 144000,
     "UnlockRecipes": [],
     "UnlockFunctions": [
+      35,
       18,
       19
     ],
     "UnlockValues": [
+      2.0,
       5.0,
       100.0
     ],
@@ -7129,10 +7159,12 @@
     "HashNeeded": 300000,
     "UnlockRecipes": [],
     "UnlockFunctions": [
+      35,
       18,
       19
     ],
     "UnlockValues": [
+      2.0,
       10.0,
       100.0
     ],
@@ -7177,10 +7209,12 @@
     "HashNeeded": 720000,
     "UnlockRecipes": [],
     "UnlockFunctions": [
+      35,
       18,
       19
     ],
     "UnlockValues": [
+      2.0,
       10.0,
       100.0
     ],
@@ -7225,10 +7259,12 @@
     "HashNeeded": 960000,
     "UnlockRecipes": [],
     "UnlockFunctions": [
+      35,
       18,
       19
     ],
     "UnlockValues": [
+      2.0,
       10.0,
       100.0
     ],
@@ -7275,10 +7311,12 @@
     "HashNeeded": 2400000,
     "UnlockRecipes": [],
     "UnlockFunctions": [
+      35,
       18,
       19
     ],
     "UnlockValues": [
+      2.0,
       10.0,
       200.0
     ],
@@ -9421,6 +9459,53 @@
     "HashNeeded": 288000,
     "UnlockRecipes": [
       68
+    ],
+    "UnlockFunctions": [],
+    "UnlockValues": [],
+    "Published": true,
+    "Level": 0,
+    "MaxLevel": 0,
+    "LevelCoef1": 0,
+    "LevelCoef2": 0,
+    "IsLabTech": true,
+    "PreTechsMax": false,
+    "AddItems": [],
+    "AddItemCounts": [],
+    "PropertyOverrideItems": [],
+    "PropertyItemCounts": []
+  },
+  {
+    "ID": 1827,
+    "Name": "T巨型建筑:巨型粒子对撞机",
+    "IconPath": "Icons/Tech/1604",
+    "Desc": "T巨型建筑:巨型粒子对撞机描述",
+    "Conclusion": "",
+    "Position": [
+      41.0,
+      -11.0
+    ],
+    "PreTechs": [
+      1142
+    ],
+    "PreTechsImplicit": [
+      1803,
+      1604
+    ],
+    "Items": [
+      6001,
+      6002,
+      6003,
+      6004
+    ],
+    "ItemPoints": [
+      20,
+      20,
+      20,
+      5
+    ],
+    "HashNeeded": 288000,
+    "UnlockRecipes": [
+      417
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],

@@ -140,6 +140,13 @@ We welcome any friends who want to optimize the model, mapping, numerical balanc
 # Update Log | 更新日志
 
 
+- v2.1.8
+  + 修复了配送运输机相关科技未及时更新的问题
+  + 添加新巨型建筑：巨型粒子对撞机
+  +
+  + Fixed the issue that the technology related to delivery transporters was not updated in time
+  + Added a new giant building: M Particle Collider
+
 - v2.1.7
   + 修复了有物质分解设施的存档读取时崩溃的问题（特别感谢ckcz提供的帮助）
   + 取消了物质分解设施返回沙土时的显示提示（防止刷屏）

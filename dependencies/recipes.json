@@ -6194,6 +6194,38 @@
     "NonProductive": false
   },
   {
+    "ID": 417,
+    "Name": "巨型粒子对撞机",
+    "Description": "",
+    "IconPath": "Assets/texpack/大型强子对撞机",
+    "Type": 10,
+    "GridIndex": 2506,
+    "Time": 18000,
+    "Input": [
+      6503,
+      7707,
+      1206,
+      2310,
+      1305
+    ],
+    "InCounts": [
+      30,
+      60,
+      360,
+      10,
+      120
+    ],
+    "Output": [
+      6265
+    ],
+    "OutCounts": [
+      1
+    ],
+    "Explicit": false,
+    "Handcraft": false,
+    "NonProductive": false
+  },
+  {
     "ID": 429,
     "Name": "物质回收",
     "Description": "R物质回收",

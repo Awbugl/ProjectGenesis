@@ -795,6 +795,16 @@
     "ENUS": "Mega Precise Assembler.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
+    "Name": "巨型粒子对撞机",
+    "ZHCN": "巨型粒子对撞机",
+    "ENUS": "Mega Particle Collider"
+  },
+  {
+    "Name": "I巨型粒子对撞机",
+    "ZHCN": "大量并行运行的加速器将生产力提升到一个崭新的高度.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "The large number of parallel running accelerators takes productivity to a whole new level.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+  },
+  {
     "Name": "反物质能量炉",
     "ZHCN": "反物质能量炉",
     "ENUS": "Antimatter Energy Reactor"
@@ -2423,6 +2433,16 @@
     "Name": "T巨型建筑:物质分解设施描述",
     "ZHCN": "利用光子聚束技术将物质分解成粒子态并将其重组为沙土,一举两得.",
     "ENUS": "By using photon beam technology, the material is broken down into particle states and reconstituted into soil pile."
+  },
+  {
+    "Name": "T巨型建筑:巨型粒子对撞机",
+    "ZHCN": "巨型建筑: 巨型粒子对撞机",
+    "ENUS": "Mega Buildings: Mega Particle Collider"
+  },
+  {
+    "Name": "T巨型建筑:巨型粒子对撞机描述",
+    "ZHCN": "大量并行运行的加速器将生产力提升到一个崭新的高度.",
+    "ENUS": "The large number of parallel running accelerators takes productivity to a whole new level."
   },
   {
     "Name": "T晶圆冶炼",

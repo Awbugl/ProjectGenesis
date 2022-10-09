@@ -95,7 +95,6 @@ namespace ProjectGenesis.Utils
             itemProtos.Select(6276).prefabDesc.assemblerSpeed = 1000;
             itemProtos.Select(6276).prefabDesc.workEnergyPerTick = 8000000;
             itemProtos.Select(6276).prefabDesc.idleEnergyPerTick = 200000;
-            itemProtos.Select(6276).prefabDesc.assemblerSpeed = 1000;
             itemProtos.Select(6276).prefabDesc.assemblerRecipeType = (ERecipeType_1)ERecipeType.聚变生产;
 
             //矿场修复
@@ -115,6 +114,7 @@ namespace ProjectGenesis.Utils
             var testCraftingTableModel3 = models.Select(405);
             var testCraftingTableModel4 = models.Select(406);
             var testCraftingTableModel5 = models.Select(410);
+            var testCraftingTableModel6 = models.Select(411);
 
             var antiMatterModel = models.Select(407);
 
@@ -182,6 +182,19 @@ namespace ProjectGenesis.Utils
             testCraftingTableModel5.prefabDesc.stationMaxShipCount = 0;
             testCraftingTableModel5.prefabDesc.idleEnergyPerTick = 200000;
             testCraftingTableModel5.prefabDesc.workEnergyPerTick = 1000000;
+            
+            testCraftingTableModel6.prefabDesc.isAssembler = true;
+            testCraftingTableModel6.prefabDesc.assemblerRecipeType = (ERecipeType_1)ERecipeType.Particle;
+            testCraftingTableModel6.prefabDesc.assemblerSpeed = MegaAssemblerPatches.MegaAssemblerSpeed;
+            testCraftingTableModel6.prefabDesc.isStation = false;
+            testCraftingTableModel6.prefabDesc.isStellarStation = false;
+            testCraftingTableModel6.prefabDesc.stationMaxDroneCount = 0;
+            testCraftingTableModel6.prefabDesc.stationMaxEnergyAcc = 0;
+            testCraftingTableModel6.prefabDesc.stationMaxItemCount = 0;
+            testCraftingTableModel6.prefabDesc.stationMaxItemKinds = 0;
+            testCraftingTableModel6.prefabDesc.stationMaxShipCount = 0;
+            testCraftingTableModel6.prefabDesc.idleEnergyPerTick = 200000;
+            testCraftingTableModel6.prefabDesc.workEnergyPerTick = 1000000;
 
             LDB.items.Select(2211).prefabDesc.fuelMask = 5;
             LDB.items.Select(2210).prefabDesc.fuelMask = 6;
