@@ -41,6 +41,14 @@ namespace ProjectGenesis.Patches
 
         #region MegaAssemblerPatches
 
+        private static readonly FieldInfo StationIdField = AccessTools.Field(typeof(EntityData), nameof(EntityData.stationId)),
+                                          AssemblerIdField = AccessTools.Field(typeof(EntityData), nameof(EntityData.assemblerId)),
+                                          AssemblerPoolField = AccessTools.Field(typeof(FactorySystem), "assemblerPool");
+
+        private static readonly MethodInfo AssemblerComponentInternalUpdateMethod = AccessTools.Method(typeof(AssemblerComponent), "InternalUpdate"),
+                                           PatchMethod = AccessTools.Method(typeof(MegaAssemblerPatches),
+                                                                            "GameTick_AssemblerComponent_InternalUpdate");
+
         [HarmonyPostfix]
         [HarmonyPatch(typeof(FactorySystem), "NewAssemblerComponent")]
         public static void FactorySystem_NewAssemblerComponent(ref FactorySystem __instance, int entityId, int speed)
@@ -388,52 +396,54 @@ namespace ProjectGenesis.Patches
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> FactorySystem_GameTick_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
-            var matcher = new CodeMatcher(instructions).MatchForward(true, new CodeMatch(OpCodes.Ldloc_1), new CodeMatch(OpCodes.Ldloc_2),
-                                                                     new CodeMatch(OpCodes.Call,
-                                                                                   AccessTools.Method(typeof(AssemblerComponent), "InternalUpdate")));
+            var matcher = new CodeMatcher(instructions).MatchForward(false, new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldloc_S),
+                                                                     new CodeMatch(OpCodes.Ldloc_1), new CodeMatch(OpCodes.Ldloc_2),
+                                                                     new CodeMatch(OpCodes.Call, AssemblerComponentInternalUpdateMethod));
 
-            var matcher2 = matcher.Clone();
-            matcher2.MatchBack(true, new CodeMatch(OpCodes.Ldarg_0),
-                               new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(FactorySystem), "assemblerPool")),
-                               new CodeMatch(OpCodes.Ldloc_S));
+            var local1 = matcher.Operand;
+            var power1 = matcher.Advance(1).Operand;
 
-            var index1 = matcher2.Operand;
-            var power1 = matcher2.Advance(2).Operand;
+            matcher.Advance(4).InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_S, local1), new CodeInstruction(OpCodes.Ldarg_0),
+                                                new CodeInstruction(OpCodes.Ldloc_S, power1), new CodeInstruction(OpCodes.Call, PatchMethod));
 
-            matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0),
-                                                new CodeInstruction(OpCodes.Ldfld, AccessTools.Field(typeof(FactorySystem), "assemblerPool")),
-                                                new CodeInstruction(OpCodes.Ldloc_S, index1),
-                                                new CodeInstruction(OpCodes.Ldelema, typeof(AssemblerComponent)),
-                                                new CodeInstruction(OpCodes.Ldarg_0), new CodeInstruction(OpCodes.Ldloc_S, power1),
-                                                new CodeInstruction(OpCodes.Call,
-                                                                    AccessTools.Method(typeof(MegaAssemblerPatches),
-                                                                                       "AssemblerComponent_InternalUpdate_T")));
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldloc_1),
+                                 new CodeMatch(OpCodes.Ldloc_2), new CodeMatch(OpCodes.Call, AssemblerComponentInternalUpdateMethod));
+            
+            if (matcher.IsValid)
+            {
+                var local2 = matcher.Operand;
+                var power2 = matcher.Advance(1).Operand;
 
-            matcher.MatchForward(true, new CodeMatch(OpCodes.Ldloc_1), new CodeMatch(OpCodes.Ldloc_2),
-                                 new CodeMatch(OpCodes.Call, AccessTools.Method(typeof(AssemblerComponent), "InternalUpdate")));
-
-            var matcher3 = matcher.Clone();
-            matcher3.MatchBack(true, new CodeMatch(OpCodes.Ldarg_0),
-                               new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(FactorySystem), "assemblerPool")),
-                               new CodeMatch(OpCodes.Ldloc_S));
-
-            var index2 = matcher3.Operand;
-            var power2 = matcher3.Advance(2).Operand;
-
-            matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0),
-                                                new CodeInstruction(OpCodes.Ldfld, AccessTools.Field(typeof(FactorySystem), "assemblerPool")),
-                                                new CodeInstruction(OpCodes.Ldloc_S, index2),
-                                                new CodeInstruction(OpCodes.Ldelema, typeof(AssemblerComponent)),
-                                                new CodeInstruction(OpCodes.Ldarg_0), new CodeInstruction(OpCodes.Ldloc_S, power2),
-                                                new CodeInstruction(OpCodes.Call,
-                                                                    AccessTools.Method(typeof(MegaAssemblerPatches),
-                                                                                       "AssemblerComponent_InternalUpdate_T")));
-
+                matcher.Advance(4).InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_S, local2), new CodeInstruction(OpCodes.Ldarg_0),
+                                                    new CodeInstruction(OpCodes.Ldloc_S, power2), new CodeInstruction(OpCodes.Call, PatchMethod));
+            }
 
             return matcher.InstructionEnumeration();
         }
 
-        public static void AssemblerComponent_InternalUpdate_T(ref AssemblerComponent __instance, FactorySystem factorySystem, float power)
+        [HarmonyPatch(typeof(FactorySystem), "GameTick", typeof(long), typeof(bool), typeof(int), typeof(int), typeof(int))]
+        [HarmonyTranspiler]
+        public static IEnumerable<CodeInstruction> FactorySystem_GameTick_Transpiler_2(IEnumerable<CodeInstruction> instructions)
+        {
+            var matcher = new CodeMatcher(instructions).MatchForward(false, new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldelema),
+                                                                     new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldloc_1),
+                                                                     new CodeMatch(OpCodes.Ldloc_2),
+                                                                     new CodeMatch(OpCodes.Call, AssemblerComponentInternalUpdateMethod));
+
+
+            var index = matcher.Operand;
+            var power = matcher.Advance(2).Operand;
+
+            matcher.Advance(4).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0), new CodeInstruction(OpCodes.Ldfld, AssemblerPoolField),
+                                                new CodeInstruction(OpCodes.Ldloc_S, index),
+                                                new CodeInstruction(OpCodes.Ldelema, typeof(AssemblerComponent)),
+                                                new CodeInstruction(OpCodes.Ldarg_0), new CodeInstruction(OpCodes.Ldloc_S, power),
+                                                new CodeInstruction(OpCodes.Call, PatchMethod));
+
+            return matcher.InstructionEnumeration();
+        }
+
+        public static void GameTick_AssemblerComponent_InternalUpdate(ref AssemblerComponent __instance, FactorySystem factorySystem, float power)
         {
             // 巨型建筑效果
             if (power < 0.1f) return;
@@ -1077,9 +1087,6 @@ namespace ProjectGenesis.Patches
             return codes.Take(index + 1).Append(new CodeInstruction(codes[index - 1])).Append(new CodeInstruction(OpCodes.Ldfld, isAssemblerField))
                         .Append(new CodeInstruction(OpCodes.Or)).Concat(codes.Skip(index + 1));
         }
-
-        private static readonly FieldInfo StationIdField = AccessTools.Field(typeof(EntityData), nameof(EntityData.stationId));
-        private static readonly FieldInfo AssemblerIdField = AccessTools.Field(typeof(EntityData), nameof(EntityData.assemblerId));
 
         [HarmonyPatch(typeof(UISlotPicker), "Determine")]
         [HarmonyTranspiler]

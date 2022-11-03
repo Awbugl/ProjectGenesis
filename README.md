@@ -140,12 +140,22 @@ We welcome any friends who want to optimize the model, mapping, numerical balanc
 # Update Log | 更新日志
 
 
+- v2.1.9
+  + 适配新版本
+  + 调整巨型建筑的堆叠限制为30
+  + 通量矩阵、空间矩阵和宇宙矩阵粗坯的配方不再可增产
+  +
+  + Updated to the new version of DSP
+  + Adjusted stack size for Mega Buildings to 30
+  + Flux Matrix, Space Matrix and Universe matrix roughcast recipes are no longer allowed to be affected by Extra Products effect
+
+
 - v2.1.8
   + 修复了配送运输机相关科技未及时更新的问题
   + 添加新巨型建筑：巨型粒子对撞机
   +
   + Fixed the issue that the technology related to delivery transporters was not updated in time
-  + Added a new giant building: M Particle Collider
+  + Add Mega Building: Mega Particle Collider
 
 - v2.1.7
   + 修复了有物质分解设施的存档读取时崩溃的问题（特别感谢ckcz提供的帮助）
