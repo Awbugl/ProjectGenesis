@@ -6132,6 +6132,54 @@
     "NonProductive": false
   },
   {
+    "ID": 1000,
+    "Name": "石矿精炼",
+    "Description": "R石矿精炼",
+    "IconPath": "Icons/ItemRecipe/glass",
+    "Type": 1,
+    "GridIndex": 3505,
+    "Time": 60,
+    "Input": [
+      6251
+    ],
+    "InCounts": [
+      1
+    ],
+    "Output": [
+      1110
+    ],
+    "OutCounts": [
+      1
+    ],
+    "Explicit": true,
+    "Handcraft": false,
+    "NonProductive": false
+  },
+  {
+    "ID": 1001,
+    "Name": "煤矿精炼",
+    "Description": "R煤矿精炼",
+    "IconPath": "Icons/ItemRecipe/graphite",
+    "Type": 1,
+    "GridIndex": 3506,
+    "Time": 60,
+    "Input": [
+      6256
+    ],
+    "InCounts": [
+      1
+    ],
+    "Output": [
+      1109
+    ],
+    "OutCounts": [
+      1
+    ],
+    "Explicit": true,
+    "Handcraft": false,
+    "NonProductive": false
+  },
+  {
     "ID": 415,
     "Name": "混凝土",
     "Description": "",
