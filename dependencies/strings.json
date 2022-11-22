@@ -2010,6 +2010,26 @@
     "ENUS": "The pure powder separated from the raw ore allows for more efficient production.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
+    "Name": "石矿精炼",
+    "ZHCN": "石矿精炼",
+    "ENUS": "Stone refining"
+  },
+  {
+    "Name": "R石矿精炼",
+    "ZHCN": "从原矿中分离的纯净粉可以实现效率更高的生产.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "The pure powder separated from the raw ore allows for more efficient production.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+  },
+  {
+    "Name": "煤矿精炼",
+    "ZHCN": "煤矿精炼",
+    "ENUS": "Coal ore refining"
+  },
+  {
+    "Name": "R煤矿精炼",
+    "ZHCN": "从原矿中分离的纯净粉可以实现效率更高的生产.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "The pure powder separated from the raw ore allows for more efficient production.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+  },
+  {
     "Name": "物质回收",
     "ZHCN": "物质回收",
     "ENUS": "Matter recovery"

@@ -6132,7 +6132,7 @@
     "NonProductive": false
   },
   {
-    "ID": 1000,
+    "ID": 420,
     "Name": "石矿精炼",
     "Description": "R石矿精炼",
     "IconPath": "Icons/ItemRecipe/glass",
@@ -6156,7 +6156,7 @@
     "NonProductive": false
   },
   {
-    "ID": 1001,
+    "ID": 421,
     "Name": "煤矿精炼",
     "Description": "R煤矿精炼",
     "IconPath": "Icons/ItemRecipe/graphite",
