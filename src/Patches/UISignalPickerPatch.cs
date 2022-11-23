@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.Reflection;
+using System.Reflection.Emit;
 using CommonAPI.Systems;
 using CommonAPI.Systems.UI;
 using HarmonyLib;
@@ -48,6 +50,23 @@ namespace ProjectGenesis.Patches
             var hoveredIndex = AccessTools.FieldRefAccess<UISignalPicker, int>(picker, "hoveredIndex");
             var signalArray = AccessTools.FieldRefAccess<UISignalPicker, int[]>(picker, "signalArray");
             return hoveredIndex >= 0 && hoveredIndex < signalArray.Length;
+        }
+
+        private static readonly FieldInfo currentTypeField = AccessTools.Field(typeof(UISignalPicker), "currentType");
+
+        [HarmonyPatch(typeof(UISignalPicker), "_OnUpdate")]
+        [HarmonyTranspiler]
+        public static IEnumerable<CodeInstruction> UISignalPicker_OnUpdate_Transpiler(IEnumerable<CodeInstruction> instructions)
+        {
+            var matcher = new CodeMatcher(instructions).MatchForward(true, new CodeMatch(OpCodes.Ldarg_0),
+                                                                     new CodeMatch(OpCodes.Ldfld, currentTypeField), new CodeMatch(OpCodes.Ldc_I4_2));
+
+            var labal = matcher.Advance(1).Operand;
+
+            matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0), new CodeInstruction(OpCodes.Ldfld, currentTypeField),
+                                                new CodeInstruction(OpCodes.Ldc_I4_7), new CodeInstruction(OpCodes.Bge, labal));
+
+            return matcher.InstructionEnumeration();
         }
 
         [HarmonyPatch(typeof(UISignalPicker), "RefreshIcons")]
