@@ -37,9 +37,9 @@ namespace ProjectGenesis
     public class ProjectGenesis : BaseUnityPlugin, IModCanSave, IMultiplayerMod
     {
         public const string MODGUID = "org.LoShin.GenesisBook";
-        private const string VERSION = "2.0.0";
+        private const string VERSION = "2.2.0";
 
-        public static ManualLogSource logger;
+        private static ManualLogSource logger;
 
         //无限堆叠开关(私货)
         private readonly bool StackSizeButton = false;
