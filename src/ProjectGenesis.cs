@@ -25,7 +25,7 @@ using static ProjectGenesis.Utils.CopyModelUtils;
 
 namespace ProjectGenesis
 {
-    [BepInPlugin(MODGUID, "GenesisBook", "2.0.0")]
+    [BepInPlugin(MODGUID, "GenesisBook", "2.2.0")]
     [BepInDependency(DSPModSavePlugin.MODGUID)]
     [BepInDependency(CommonAPIPlugin.GUID)]
     [BepInDependency(LDBToolPlugin.MODGUID)]
