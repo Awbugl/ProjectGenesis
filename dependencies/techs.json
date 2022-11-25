@@ -1070,8 +1070,8 @@
     "ID": 1144,
     "Name": "T终极目标:反物质能量炉",
     "IconPath": "Icons/Tech/1144",
-    "Desc": "人造恒星描述",
-    "Conclusion": "人造恒星结果",
+    "Desc": "T反物质能量炉描述",
+    "Conclusion": "T反物质能量炉结果",
     "Position": [
       45.0,
       -35.0
@@ -1258,7 +1258,7 @@
     "Name": "人造恒星",
     "IconPath": "Icons/Tech/1144",
     "Desc": "人造恒星描述",
-    "Conclusion": "",
+    "Conclusion": "人造恒星结果",
     "Position": [
       29.0,
       -15.0
@@ -3020,8 +3020,8 @@
     "ID": 1607,
     "Name": "T物品仓储",
     "IconPath": "Icons/Tech/1607",
-    "Desc": "集装物流系统描述",
-    "Conclusion": "集装物流系统结果",
+    "Desc": "T物品仓储描述",
+    "Conclusion": "T物品仓储结果",
     "Position": [
       13.0,
       33.0
@@ -9676,7 +9676,7 @@
     "Name": "T先进化工",
     "IconPath": "Icons/Tech/1122",
     "Desc": "T先进化工描述",
-    "Conclusion": "高分子化工结果",
+    "Conclusion": "先进化工结果",
     "Position": [
       21.0,
       -23.0

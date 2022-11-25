@@ -15,16 +15,6 @@
     "ENUS": "Toxic organic liquid ocean"
   },
   {
-    "Name": "钨",
-    "ZHCN": "钨",
-    "ENUS": "Tungsten"
-  },
-  {
-    "Name": "你采集了钨矿,宇宙珍奇之一.它是一种用途广泛的新材料.",
-    "ZHCN": "你采集了钨矿,宇宙珍奇之一.它是一种用途广泛的新材料.",
-    "ENUS": "You have harvested tungsten, one of the wonders of the universe. It is a new and versatile material."
-  },
-  {
     "Name": "铁矿脉",
     "ZHCN": "铁矿脉",
     "ENUS": "Iron veins"
@@ -112,7 +102,7 @@
   {
     "Name": "里程碑已达成描述9",
     "ZHCN": "你在 <color=#8DB1FFb0>{0}</color> 附近采集了钨矿。它可以用于建造更好的建筑与组件。",
-    "ENUS": "You discovered and mined a Tungsten ore near <color=#8DB1FFb0>{0}</color>. It can be used to build better buildings or components." 
+    "ENUS": "You discovered and mined a Tungsten ore near <color=#8DB1FFb0>{0}</color>. It can be used to build better buildings or components."
   },
   {
     "Name": "钨矿脉",
@@ -225,19 +215,9 @@
     "ENUS": "Tungsten ore"
   },
   {
-    "Name": "I钨矿",
-    "ZHCN": "一种新的制造材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A new material for recipe.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
     "Name": "钛齿轮",
     "ZHCN": "钛齿轮",
     "ENUS": "Titanium gear"
-  },
-  {
-    "Name": "I钛齿轮",
-    "ZHCN": "一种新的制造材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A new material for recipe.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "铜线圈",
@@ -245,19 +225,9 @@
     "ENUS": "Copper coil"
   },
   {
-    "Name": "I铜线圈",
-    "ZHCN": "一种新的制造材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A new material for recipe.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
     "Name": "石墨线圈",
     "ZHCN": "石墨线圈",
     "ENUS": "Grapgite coil"
-  },
-  {
-    "Name": "I石墨线圈",
-    "ZHCN": "一种新的制造材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A new material for recipe.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "混凝土",
@@ -275,19 +245,9 @@
     "ENUS": "Tungsten gear"
   },
   {
-    "Name": "I钨齿轮",
-    "ZHCN": "一种新的制造材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A new material for recipe.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
     "Name": "煤焦油",
     "ZHCN": "煤焦油",
     "ENUS": "Coal tar"
-  },
-  {
-    "Name": "I煤焦油",
-    "ZHCN": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A new chemical material.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "剧毒有机液体",
@@ -313,11 +273,6 @@
     "Name": "钛线圈",
     "ZHCN": "钛线圈",
     "ENUS": "Titanium coil"
-  },
-  {
-    "Name": "I钛线圈",
-    "ZHCN": "一种新的制造材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A new material for recipe.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "增产剂",
@@ -545,19 +500,9 @@
     "ENUS": "Radioactive mineral"
   },
   {
-    "Name": "I放射性矿物碎块",
-    "ZHCN": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A new chemical material.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
     "Name": "发光铀碎块",
     "ZHCN": "发光铀碎块",
     "ENUS": "Luminous uranium fragments"
-  },
-  {
-    "Name": "I发光铀碎块",
-    "ZHCN": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A new chemical material.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "晶质钚碎块",
@@ -565,19 +510,9 @@
     "ENUS": "Crystalline plutonium fragments"
   },
   {
-    "Name": "I晶质钚碎块",
-    "ZHCN": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A new chemical material.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
     "Name": "铀矿",
     "ZHCN": "铀矿",
     "ENUS": "Uranium ore"
-  },
-  {
-    "Name": "I铀矿",
-    "ZHCN": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A new chemical material.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "钚矿",
@@ -585,29 +520,14 @@
     "ENUS": "Plutonium ore"
   },
   {
-    "Name": "I钚矿",
-    "ZHCN": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A new chemical material.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
     "Name": "高纯铀块",
     "ZHCN": "高纯铀块",
     "ENUS": "High-purity uranium"
   },
   {
-    "Name": "I高纯铀块",
-    "ZHCN": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A new chemical material.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
     "Name": "高纯钚块",
     "ZHCN": "高纯钚块",
     "ENUS": "High-purity plutonium"
-  },
-  {
-    "Name": "I高纯钚块",
-    "ZHCN": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A new chemical material.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "量子储液罐",
@@ -665,19 +585,9 @@
     "ENUS": "Helium"
   },
   {
-    "Name": "I氦",
-    "ZHCN": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A new chemical material.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
     "Name": "氦三",
     "ZHCN": "氦三",
     "ENUS": "Helium-3"
-  },
-  {
-    "Name": "I氦三",
-    "ZHCN": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A new chemical material.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "钚燃料棒",
@@ -845,19 +755,9 @@
     "ENUS": "Antimatter Restraint Unit"
   },
   {
-    "Name": "I反物质约束单元",
-    "ZHCN": "懒得写介绍....\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "I really don't know what should be here....so this is a easter eggs.:)\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
     "Name": "氦闪约束器",
     "ZHCN": "氦闪约束器",
     "ENUS": "Helium Flash Restrainer"
-  },
-  {
-    "Name": "I氦闪约束器",
-    "ZHCN": "懒得写介绍....\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "I really don't know what should be here....so this is a easter eggs.:)\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "物质分解设施",
@@ -875,19 +775,9 @@
     "ENUS": "Ternary Adamantium"
   },
   {
-    "Name": "I三元精金",
-    "ZHCN": "你创造了新元素.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "You created a new element.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
     "Name": "光子结晶",
     "ZHCN": "光子结晶",
     "ENUS": "Photon Crystal"
-  },
-  {
-    "Name": "I光子结晶",
-    "ZHCN": "你创造了新元素.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "You created a new element.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "先驱者晶片",
@@ -1078,11 +968,6 @@
     "Name": "I反物质燃料",
     "ZHCN": "这玩意看上去好像也差点啥.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "ENUS": "It's not complete too....\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
-    "Name": "I硫酸",
-    "ZHCN": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A new chemical material.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "乙烯",
@@ -1470,29 +1355,14 @@
     "ENUS": "Tungsten ingot"
   },
   {
-    "Name": "I钨块",
-    "ZHCN": "一种新的制造材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A new material for recipe.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
     "Name": "钨强化玻璃",
     "ZHCN": "钨强化玻璃",
     "ENUS": "Tungsten glass"
   },
   {
-    "Name": "I钨强化玻璃",
-    "ZHCN": "一种新的制造材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A new material for recipe.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
     "Name": "钨复合金属",
     "ZHCN": "钨复合金属",
     "ENUS": "Tungsten alloy"
-  },
-  {
-    "Name": "I钨复合金属",
-    "ZHCN": "一种新的制造材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A new material for recipe.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "环氧树脂",
@@ -1828,6 +1698,11 @@
     "Name": "R石墨烯（极效）",
     "ZHCN": "针对可燃冰结构优化生产线, 弃用氢捕获回收流程以保证石墨烯的产出.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "ENUS": "Detailed analysis of combustible ice structure can increase the output of graphene, but cannot capture hydrogen.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+  },
+  {
+    "Name": "R等离子精炼",
+    "ZHCN": "利用等离子体精炼原油，可以获得氢气和煤焦油。",
+    "ENUS": "Hydrogen and coal tar can be obtained by refining crude oil with plasma."
   },
   {
     "Name": "等离子精炼（高效）",
@@ -2528,6 +2403,251 @@
     "Name": "T焦油分馏描述",
     "ZHCN": "现在可以合成更多种类的化工原料。",
     "ENUS": "A wider variety of chemicals can now be synthesized."
+  },
+  {
+    "Name": "T反物质能量炉描述",
+    "ZHCN": "掌控质能.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Mass-energy is in your control now.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+  },
+  {
+    "Name": "T反物质能量炉结果",
+    "ZHCN": "掌控质能.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "You unlocked Antimatter Energy Reactor. Mass-energy is in your control now.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+  },
+  {
+    "Name": "T物品仓储描述",
+    "ZHCN": "小型储物仓可以搭建在四向分流器上，而大型储物仓具有更大的储量。",
+    "ENUS": "Storage Mk.I can be built on Splitter.\nStorage Mk.II has twice the capacity."
+  },
+  {
+    "Name": "T物品仓储结果",
+    "ZHCN": "你解锁了储物仓，可以将采集到的矿物与生产中的中间产物存入其中。",
+    "ENUS": "Storage Mk.I can be built on Splitter.\nStorage Mk.II has twice the capacity."
+  },
+  {
+    "Name": "X射线裂解描述",
+    "ZHCN": "在氢气的催化作用下，利用高能的X射线将煤焦油裂解成更多的氢，同时将生产过程中的副产品加工成高能石墨。",
+    "ENUS": "High-energy X-ray photocatalysis can crack coal tar into more hydrogen and process the byproducts into energetic graphite."
+  },
+  {
+    "Name": "RX射线裂解",
+    "ZHCN": "在氢气的催化作用下，利用高能的X射线将煤焦油裂解，从而获得更多的氢以及副产品高能石墨。",
+    "ENUS": "Under the catalysis of hydrogen, X-rays can crack the coal tar into more hydrogen and a by-product, energetic graphite."
+  },
+  {
+    "Name": "高强度玻璃描述",
+    "ZHCN": "在熔融态的玻璃中掺入一定比例的钛，制成的高强度玻璃，对更复杂、更激烈的工业生产十分实用。",
+    "ENUS": "Incorporating a specific proportion of titanium into molten glass can create high-strength Titanium Glass which is suitable for more complex industrial production."
+  },
+  {
+    "Name": "奇异物质描述",
+    "ZHCN": "在氘聚变的强大能量作用下，将物质压缩到非常小的点，从而使原子核夸克发生改变，瞬间变成简并态的奇异物质。当前工艺水平需要使用卡西米尔晶体来制造它。",
+    "ENUS": "Under the powerful energy of deuterium fusion, vapor is compressed to an extremely small size which causes the quark's of atomic nucleus to change and instantly degenerate into strange matter."
+  },
+  {
+    "Name": "基础物流系统描述",
+    "ZHCN": "利用<color=\"#FD965ECC\">传送带</color>及<color=\"#FD965ECC\">分拣器</color>将货物从一个地方运输到另一个地方，实现自动化生产。\n<color=\"#FD965ECC\">四向分流器</color>可以对货物进行分流或者均衡多条传送带，可使用TAB键切换它的三种样式。",
+    "ENUS": "Use the <color=\"#FD965ECC\">Conveyor belt</color> and <color=\"#FD965ECC\">Sorter</color> to transport cargo from one place to another to achieve automated production.\n<color=\"#FD965ECC\">Splitter</color> can diverge cargo or balance multiple conveyor belts, making the automated production lines more diverse.\nUse TAB key to switch styles."
+  },
+  {
+    "Name": "改良物流系统描述",
+    "ZHCN": "将<color=\"#FD965ECC\">流速监测器</color>搭建在传送带上，可以监控传送带上相应位置的实时流速，并且可以设置条件来触发警报。有人用来演奏音乐。",
+    "ENUS": "The <color=\"#FD965ECC\">Traffic Monitor</color> is built on the conveyor belt to monitor the real-time cargo flow rate at the corresponding location. Conditions can be set to trigger an alarm. Some people use it to play music."
+  },
+  {
+    "Name": "高效物流系统描述",
+    "ZHCN": "将<color=\"#FD965ECC\">自动集装机</color>搭建在传送带上，可以自动将传送带上两个货物集装成一个货物，极大程度上提高了传送带的运载能力。",
+    "ENUS": "After setting up the <color=\"#FD965ECC\">Automatic Piler</color> on the conveyor belt, it can automatically integrate two consecutive cargos into one, which greatly improves the carrying capacity of the conveyor belt."
+  },
+  {
+    "Name": "高分子化工结果",
+    "ZHCN": "你解锁了高分子化工技术，现在可以合成更多种类的化工原料。",
+    "ENUS": "You have unlocked Polymer Chemical Technology. A wider variety of chemicals can now be synthesized."
+  },
+  {
+    "Name": "先进化工结果",
+    "ZHCN": "你解锁了先进化工技术，现在可以合成更多种类的化工原料。",
+    "ENUS": "You have unlocked Advanced Chemical Technology. A wider variety of chemicals can now be synthesized."
+  },
+  {
+    "Name": "卡西米尔晶体结果",
+    "ZHCN": "你解锁了卡西米尔晶体，它标志着我们正将尖端物理学应用于生产。",
+    "ENUS": "You have unlocked the Casimir Crystal. It signifies that we are applying cutting-edge physics to production."
+  },
+  {
+    "Name": "人造恒星结果",
+    "ZHCN": "你解锁了发电设施：人造恒星。我们在地上，重现恒星的权能。",
+    "ENUS": "You have unlocked the power generation facility, the Mini-sun. We are on earth, reproducing the power of the stars."
+  },
+  {
+    "Name": "基础制造工艺结果",
+    "ZHCN": "你解锁了制造台，可以将铁块、铜块等原材料制造成更高级的产物。",
+    "ENUS": "You have unlocked the Assember. It can make iron and copper ingots into more advanced products."
+  },
+  {
+    "Name": "基础物流系统结果",
+    "ZHCN": "你解锁了自动化物流的基础设施━━传送带、分拣器和四向分流器，你可以用它们来将货物自动运送到你想要的地方。",
+    "ENUS": "You have unlocked automated logistics, the Conveyor Belt, Sorter and Splitter. You can use them to automatically transport the ores gathered in the mining machine for smelting."
+  },
+  {
+    "Name": "改良物流系统结果",
+    "ZHCN": "你解锁了速度更快的传送带与分拣器，以及监测物流系统工作状态的流速监测器。",
+    "ENUS": "You have unlocked a conveyor belt with a larger carrying capacity, a sorter with faster speed. Traffic Monitor is built on the conveyor belt to monitor the real-time cargo flow rate at the corresponding location. Conditions can be set to trigger an alarm."
+  },
+  {
+    "Name": "高效物流系统结果",
+    "ZHCN": "你解锁了速度最快的的传送带、分拣器，和提高物流系统效率的自动集装机。",
+    "ENUS": "You have unlocked a conveyor belt with a largest carrying capacity, a sorter with fastest sorting speed, and the Automatic Piler. it could be built on the conveyor belt. When the power supply is sufficient, it can automatically integrate two consecutive cargos into one, which greatly improves the carrying capacity of the conveyor belt."
+  },
+  {
+    "Name": "I铁矿",
+    "ZHCN": "采集铁矿脉获得，可以直接冶炼成铁块，是重要的原料。",
+    "ENUS": "Used to smelt iron ingots. Obtained by gathering iron vein.\n"
+  },
+  {
+    "Name": "I硫酸",
+    "ZHCN": "初级化工产品，在生产中应用广泛。也可以通过分解火山灰星球的剧毒有机液体来获得。",
+    "ENUS": "Primary chemical product with a wide range of applications in production. It can also be obtained by decomposing the highly toxic organic liquid of the volcanic ash planet.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+  },
+  {
+    "Name": "I有机晶体",
+    "ZHCN": "稀有矿物。如此多的有机物以非生命的晶体形式存在，这种奇特的矿物或许在尖端工业生产中可以发挥特殊作用。",
+    "ENUS": "Rare minerals. With so much organic matter in non-living crystalline form, this peculiar mineral may have a special role to play in cutting-edge industrial production."
+  },
+  {
+    "Name": "I大型储物仓",
+    "ZHCN": "是小型储物仓容量的两倍，但制作需要的材料也是两倍。",
+    "ENUS": "Has twice the capacity of a Storage Mk.I. Materials requires twice too."
+  },
+  {
+    "Name": "I人造恒星",
+    "ZHCN": "“你只需要把聚变燃料棒送进去就可以了，轻松愉快！” 它简单的外形归功于理论的优雅，被人们称为“人造小太阳”。",
+    "ENUS": "\"All you have to do is let fusion fuel rod in, nice'n easy!\" This scaled-down version of the system is known as the Mini-sun.\n"
+  },
+  {
+    "Name": "I抽水站",
+    "ZHCN": "用于直接抽取液体资源的设施，可以从宇宙中的各种海洋中采集化工原料。",
+    "ENUS": "Facility used to collect liquid resources from an ocean."
+  },
+  {
+    "Name": "I原油精炼厂",
+    "ZHCN": "将萃取到的原油进行精炼，可以获得多种化工原料。",
+    "ENUS": "The extracted crude oil is further refined to obtain a wide range of chemical materials."
+  },
+  {
+    "Name": "I钨矿",
+    "ZHCN": "稀有矿物。也可以通过精炼钛石来少量获取。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "A rare mineral. It also can be obtained in small quantities by acid beneficiation of titanium ore. \n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+  },
+  {
+    "Name": "I钛齿轮",
+    "ZHCN": "比起铁齿轮，具有更高的机械性能。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "It has higher mechanical properties than iron gears.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+  },
+  {
+    "Name": "I铜线圈",
+    "ZHCN": "最基本的电磁元件，非常实用。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "The most basic electromagnetic components, very practical.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+  },
+  {
+    "Name": "I石墨线圈",
+    "ZHCN": "在某些方面具有更优异的电磁学性能，是铜线圈的良好补充。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "It has superior electromagnetic properties in some aspects and is a good complement to copper coils.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+  },
+  {
+    "Name": "I钨齿轮",
+    "ZHCN": "具有不可思议的机械性能，只是成本略高。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Has incredible mechanical properties, only slightly more costly.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+  },
+  {
+    "Name": "I煤焦油",
+    "ZHCN": "重要的化工原料，可以通过多种方式获得。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "An important chemical raw material that can be obtained in a variety of ways.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+  },
+  {
+    "Name": "I钛线圈",
+    "ZHCN": "具有不可思议的电磁学性能，只是成本略高。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Has incredible electromagnetic properties, only slightly higher cost.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+  },
+  {
+    "Name": "I放射性矿物碎块",
+    "ZHCN": "由硅石提炼，具有微弱放射性的碎块。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Refined from silica, faintly radioactive fractions.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+  },
+  {
+    "Name": "I发光铀碎块",
+    "ZHCN": "再次提炼后，矿石中的放射性已经高到向外放出肉眼可见的荧光。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "After refining again, the radioactivity in the ore has been so high that it emits a fluorescence visible to the naked eye outward. \n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+  },
+  {
+    "Name": "I晶质钚碎块",
+    "ZHCN": "再次提炼后，呈水晶质地的碎块。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "After refining again, it has a crystal texture.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+  },
+  {
+    "Name": "I铀矿",
+    "ZHCN": "经三次提炼后，矿石中的铀-235浓度已经已经相当可观。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "After three refinements, the concentration of uranium-235 in the ore is already considerable.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+  },
+  {
+    "Name": "I钚矿",
+    "ZHCN": "经三次提炼后，矿石中的钚-239浓度已经相当可观。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "After three refinements, the concentration of plutonium-239 in the ore is already considerable.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+  },
+  {
+    "Name": "I高纯铀块",
+    "ZHCN": "最后一次提炼后，成品中的铀-235纯度已经可以支撑链式反应。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "A new chemical material.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+  },
+  {
+    "Name": "I高纯钚块",
+    "ZHCN": "最后一次提炼后，成品中的钚-239纯度已经可以支撑链式反应。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "After the last refining, the purity of uranium-235 in the finished product was ready to support the chain reaction.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+  },
+  {
+    "Name": "I氦",
+    "ZHCN": "宇宙中丰度第二高的元素，“太阳的元素”。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "The second most abundant element in the universe, \"the element of the sun\".\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+  },
+  {
+    "Name": "I氦三",
+    "ZHCN": "一种稳定的氦同位素，它与重氢发生的聚变反应即是恒星的秘密。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "A stable isotope of helium, whose fusion reaction with heavy hydrogen is the secret of the star.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+  },
+  {
+    "Name": "I反物质约束单元",
+    "ZHCN": "可以约束一单位反物质的磁阱。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "The magnetic trap that can confine one unit of antimatter.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+  },
+  {
+    "Name": "I氦闪约束器",
+    "ZHCN": "以强大的磁场约束等离子体在其中环绕，坚固的材料甚至可以承受氦闪的冲击.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "With a strong magnetic field to bind the plasma around it, the robust material can even withstand the impact of a helium flash.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+  },
+  {
+    "Name": "I光子结晶",
+    "ZHCN": "利用庞大的能量将大量临界光子约束在一小块区域，使其具有部分晶体性质。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "The massive energy is used to confine a large number of critical photons to a small region, giving them partially crystalline properties.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+  },
+  {
+    "Name": "I三元精金",
+    "ZHCN": "我们使强相互作用力溢出至宏观尺度，将“坚固”这一概念具象化。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "We make the strong interaction force spill over to the macroscopic scale and visualize the concept of \"solidity\".\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+  },
+  {
+    "Name": "I钨块",
+    "ZHCN": "冶炼钨矿获得。这种元素具有划时代的潜力。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Obtained by smelting tungsten ore. This element has epoch-making potential.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+  },
+  {
+    "Name": "I钨强化玻璃",
+    "ZHCN": "当反应剧烈到钛强化玻璃也很难承受时，就轮到它登场了。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "When the reaction is so violent that even titanium-reinforced glass is difficult to withstand, it is its turn to make an appearance.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+  },
+  {
+    "Name": "I钨复合金属",
+    "ZHCN": "加入钨的合金。在电磁力的领域中，它就是王者。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "An alloy with tungsten added. In the field of electromagnetic force, it is the king.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "氯苯水解",

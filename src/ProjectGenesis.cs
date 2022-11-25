@@ -83,11 +83,10 @@ namespace ProjectGenesis
 
         private void PreAddDataAction()
         {
-            LDB.strings.Select(2314).Name = "剧毒液体海洋";
-            LDB.veins.Select(14).Name = "钨矿";
-            LDB.milestones.Select(9).Name = "钨";
-            LDB.milestones.Select(9).DefaultDesc = "你采集了钨矿,宇宙珍奇之一.它是一种用途广泛的新材料.";
-            LDB.milestones.Select(9).defaultDesc = "你采集了钨矿,宇宙珍奇之一.它是一种用途广泛的新材料.".TranslateFromJson();
+            LDB.strings.Select(2314).name = "剧毒液体海洋";
+            LDB.strings.Select(2314).Name = "剧毒液体海洋".TranslateFromJson();
+            LDB.veins.Select(14).name = "钨矿";
+            LDB.veins.Select(14).Name = "钨矿".TranslateFromJson();
             LDB.items.OnAfterDeserialize();
 
             LDB.themes.Select(8).WaterItemId = 7018;

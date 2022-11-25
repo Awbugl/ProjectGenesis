@@ -1,37 +1,31 @@
-<div align=center style="font-size: large">
-  <img src="https://webapi.awbugl.top/dsp-genesisbook/profile.png" alt="icon">
 
-一个修改了大部分物品、配方和科技的mod.
+![img.png](https://webapi.awbugl.top/dsp-genesisbook/profile.png)
 
-A mod that modifies most of the items, recipes and technologies of the vanilla game.
+重构“真实宇宙”，撰写“创世之书”。
 
-</div>
+Reconstruct "Real Universe". Then leave a "GenesisBook".
 
 -----
 
-### A glimpse | 一瞥
+### MOD内容速览 | A glimpse
 
-<div align=center>
 
 ![img.png](https://webapi.awbugl.top/dsp-genesisbook/1.jpg)
 ![img.png](https://webapi.awbugl.top/dsp-genesisbook/2.jpg)
 ![img.png](https://webapi.awbugl.top/dsp-genesisbook/3.jpg)
-
-</div>
+![img.png](https://webapi.awbugl.top/dsp-genesisbook/4.jpg)
 
 ----
 
 <details>
-  <summary><font size=5>中文文档</font></summary>
+  <summary>中文文档</summary>
 
 ## 安装方法
 
 ### 使用Mod管理器
 
-只需要简单的打开mod管理器（如果你还没安装可以[**点此安装**](https://dsp.thunderstore.io/package/ebkr/r2modman/)），选择 **
-GenesisBook**，下载即可。
-
-如果弹窗提示需要下载前置，点击确定即可。
+只需要打开mod管理器（如果你还没安装可以[**点此安装**](https://dsp.thunderstore.io/package/ebkr/r2modman/)），
+选择**GenesisBook**，下载即可。
 
 ### 手动安装
 
@@ -95,6 +89,12 @@ GenesisBook**，下载即可。
 
 <details>
   <summary>展开查看</summary>
+
+
+- v2.2.1
+  + 修复了图标选择界面不显示详细信息的Bug
+  + 修改了部分与实际不匹配的物品介绍、科技描述
+
 
 - v2.2.0
     + `矿物处理厂`的原料需求调整为4`先进机械组件`，6`钛合金`
@@ -170,10 +170,8 @@ GenesisBook**，下载即可。
 </details>
 </details>
 
-----
-
 <details>
-  <summary><font size=5>English Docs</font></summary>
+  <summary>English Docs</summary>
 
 ## Installation
 
@@ -259,6 +257,12 @@ free to communicate with us.
 
 <details>
   <summary>Details</summary>
+
+
+- v2.2.1
+  + Fixed the bug that the icon selection interface does not show detailed information
+  + Modified some item descriptions and technology descriptions that do not match the actual ones
+
 
 - v2.2.0
     + Mineral processor raw material requirements adjusted to 4 advanced mechanical components, 6 titanium alloys
