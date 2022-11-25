@@ -90,6 +90,31 @@
     "ENUS": "Spiniform stalagmite crystal vein"
   },
   {
+    "Name": "单极磁矿（珍奇）",
+    "ZHCN": "钨矿",
+    "ENUS": "Tungsten vein"
+  },
+  {
+    "Name": "里程碑名称9",
+    "ZHCN": "里程碑：钨矿",
+    "ENUS": "Milestone: Tungsten ore"
+  },
+  {
+    "Name": "里程碑未达成描述9",
+    "ZHCN": "你采集了钨矿。它可以用于建造更好的建筑与组件。",
+    "ENUS": "You collected a Tungsten ore. It can be used to build better buildings or components."
+  },
+  {
+    "Name": "里程碑达成条件9",
+    "ZHCN": "达成条件：找到钨矿脉并采集",
+    "ENUS": "Achieved conditions: Find Tungsten vein and collect one unit"
+  },
+  {
+    "Name": "里程碑已达成描述9",
+    "ZHCN": "你在 <color=#8DB1FFb0>{0}</color> 附近采集了钨矿。它可以用于建造更好的建筑与组件。",
+    "ENUS": "You discovered and mined a Unipolar Magnet near <color=#8DB1FFb0>{0}</color>. It can be used to build better buildings or components." 
+  },
+  {
     "Name": "钨矿脉",
     "ZHCN": "钨矿脉",
     "ENUS": "Tungsten vein"
