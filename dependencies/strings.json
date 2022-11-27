@@ -2351,8 +2351,8 @@
   },
   {
     "Name": "T巨型建筑:物质分解设施描述",
-    "ZHCN": "利用光子聚束技术将物质分解成粒子态并将其重组为沙土,一举两得.",
-    "ENUS": "By using photon beam technology, the material is broken down into particle states and reconstituted into soil pile."
+    "ZHCN": "利用光子聚束技术将物质分解成粒子态并将其重组为<color=\"#FD965ECC\">沙土</color>,一举两得.\n[由于显示限制，产出的沙土会直接加入背包中]",
+    "ENUS": "By using photon beam technology, the material is broken down into particle states and reconstituted into <color=\"#FD965ECC\">sand</color>."
   },
   {
     "Name": "T巨型建筑:巨型粒子对撞机",
@@ -2526,8 +2526,8 @@
   },
   {
     "Name": "I抽水站",
-    "ZHCN": "用于直接抽取液体资源的设施，可以从宇宙中的各种海洋中采集化工原料。",
-    "ENUS": "Facility used to collect liquid resources from an ocean."
+    "ZHCN": "用于直接抽取液体资源的设施，可以从宇宙中的各种海洋中采集化工原料。解锁海洋排污科技后，可以用于排放工业废弃物。",
+    "ENUS": "Facility used to collect liquid resources from an ocean. After unlocking the ocean outfall technology, it can be used to discharge industrial waste."
   },
   {
     "Name": "I原油精炼厂",
