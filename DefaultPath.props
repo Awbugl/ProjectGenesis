@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup Label="DefaultPath">
-        <BepInExPath>C:\Users\littl\AppData\Roaming\Thunderstore Mod Manager\DataFolder\DysonSphereProgram\profiles\Default\BepInEx</BepInExPath>
+        <BepInExPath>C:\Users\littl\AppData\Roaming\r2modmanPlus-local\DysonSphereProgram\profiles\Default\BepInEx</BepInExPath>
         <DefaultOutputPath>$(BepInExPath)\plugins\HiddenCirno-GenesisBook\</DefaultOutputPath>
         <DSPAssemblyPath>D:\SteamLibrary\steamapps\common\Dyson Sphere Program\DSPGAME_Data\Managed</DSPAssemblyPath>
         <CommonAPIPath>$(BepInExPath)\plugins\CommonAPI-CommonAPI\CommonAPI.dll</CommonAPIPath>

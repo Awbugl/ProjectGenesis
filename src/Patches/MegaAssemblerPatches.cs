@@ -8,9 +8,7 @@ using System.Reflection.Emit;
 using HarmonyLib;
 using ProjectGenesis.Utils;
 using UnityEngine;
-using UnityEngine.UI;
 using ERecipeType_1 = ERecipeType;
-using Object = UnityEngine.Object;
 
 // ReSharper disable InconsistentNaming
 
@@ -28,6 +26,23 @@ namespace ProjectGenesis.Patches
 
         internal static void SyncSlots((int, int) id, SlotData[] slotDatas) => _slotdata[id] = slotDatas;
 
+        internal static void SyncSlot((int, int) id, int slotId, SlotData slotData)
+        {
+            lock (_slotdata)
+            {
+                if (_slotdata.TryGetValue(id, out SlotData[] slotDatas))
+                {
+                    slotDatas[slotId] = slotData;
+                }
+                else
+                {
+                    slotDatas = new SlotData[12];
+                    slotDatas[slotId] = slotData;
+                    _slotdata[id] = slotDatas;
+                }
+            }
+        }
+
         private static SlotData[] GetSlots(int planetId, int entityId)
         {
             var id = (planetId, entityId);
@@ -41,13 +56,17 @@ namespace ProjectGenesis.Patches
 
         #region MegaAssemblerPatches
 
-        private static readonly FieldInfo StationIdField = AccessTools.Field(typeof(EntityData), nameof(EntityData.stationId)),
-                                          AssemblerIdField = AccessTools.Field(typeof(EntityData), nameof(EntityData.assemblerId)),
-                                          AssemblerPoolField = AccessTools.Field(typeof(FactorySystem), "assemblerPool");
+        private static readonly FieldInfo EntityData_StationId_Field = AccessTools.Field(typeof(EntityData), nameof(EntityData.stationId)),
+                                          EntityData_AssemblerId_Field = AccessTools.Field(typeof(EntityData), nameof(EntityData.assemblerId)),
+                                          PlanetFactory_EntityPool_Field = AccessTools.Field(typeof(PlanetFactory), nameof(PlanetFactory.entityPool)),
+                                          FactorySystem_AssemblerPool_Field
+                                              = AccessTools.Field(typeof(FactorySystem), nameof(FactorySystem.assemblerPool));
 
-        private static readonly MethodInfo AssemblerComponentInternalUpdateMethod = AccessTools.Method(typeof(AssemblerComponent), "InternalUpdate"),
-                                           PatchMethod = AccessTools.Method(typeof(MegaAssemblerPatches),
-                                                                            "GameTick_AssemblerComponent_InternalUpdate");
+        private static readonly MethodInfo AssemblerComponent_InternalUpdate_Method
+            = AccessTools.Method(typeof(AssemblerComponent), "InternalUpdate");
+
+        private static readonly MethodInfo MegaAssembler_AssemblerComponent_InternalUpdate_Patch_Method
+            = AccessTools.Method(typeof(MegaAssemblerPatches), "GameTick_AssemblerComponent_InternalUpdate_Patch");
 
         [HarmonyPostfix]
         [HarmonyPatch(typeof(FactorySystem), "NewAssemblerComponent")]
@@ -76,15 +95,20 @@ namespace ProjectGenesis.Patches
 
                     if (assembler.recipeId != recipeId)
                     {
-                        var recipeType = LDB.recipes.Select(recipeId).Type;
-                        var itemProto = LDB.items.Select(factory.entityPool[entityId].protoId);
-
                         if (recipeId == 0)
+                        {
                             assembler.SetRecipe(0, factory.entitySignPool);
-                        else if (recipeId > 0 &&
-                                 ContainsRecipeType(itemProto.prefabDesc.assemblerRecipeType, recipeType) &&
-                                 factory.gameData.history.RecipeUnlocked(recipeId))
-                            assembler.SetRecipe(recipeId, factory.entitySignPool);
+                        }
+                        else
+                        {
+                            var recipe = LDB.recipes.Select(recipeId);
+                            var itemProto = LDB.items.Select(factory.entityPool[entityId].protoId);
+
+                            if (recipeId > 0 &&
+                                ContainsRecipeType(itemProto.prefabDesc.assemblerRecipeType, recipe.Type) &&
+                                factory.gameData.history.RecipeUnlocked(recipeId))
+                                assembler.SetRecipe(recipeId, factory.entitySignPool);
+                        }
                     }
 
                     SlotData[] slots = GetSlots(factory.planetId, entityId);
@@ -328,7 +352,7 @@ namespace ProjectGenesis.Patches
                     slotdata[slotId].dir = IODir.Output;
                     slotdata[slotId].beltId = beltId;
                     slotdata[slotId].counter = 0;
-                    SyncSlotsData.Sync(__instance.planetId, entityId, slotdata);
+                    SyncSlotData.Sync(__instance.planetId, slotId, entityId, slotdata[slotId]);
                 }
             }
         }
@@ -356,7 +380,7 @@ namespace ProjectGenesis.Patches
                     slotdata[slotId].beltId = beltId;
                     slotdata[slotId].storageIdx = 0;
                     slotdata[slotId].counter = 0;
-                    SyncSlotsData.Sync(__instance.planetId, entityId, slotdata);
+                    SyncSlotData.Sync(__instance.planetId, slotId, entityId, slotdata[slotId]);
                 }
             }
         }
@@ -386,7 +410,7 @@ namespace ProjectGenesis.Patches
                     slotdata[otherSlotId].storageIdx = 0;
                     slotdata[otherSlotId].counter = 0;
 
-                    SyncSlotsData.Sync(__instance.planetId, otherEntityId, slotdata);
+                    SyncSlotData.Sync(__instance.planetId, otherSlotId, otherEntityId, slotdata[otherSlotId]);
                 }
             }
         }
@@ -398,24 +422,26 @@ namespace ProjectGenesis.Patches
         {
             var matcher = new CodeMatcher(instructions).MatchForward(false, new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldloc_S),
                                                                      new CodeMatch(OpCodes.Ldloc_1), new CodeMatch(OpCodes.Ldloc_2),
-                                                                     new CodeMatch(OpCodes.Call, AssemblerComponentInternalUpdateMethod));
+                                                                     new CodeMatch(OpCodes.Call, AssemblerComponent_InternalUpdate_Method));
 
             var local1 = matcher.Operand;
             var power1 = matcher.Advance(1).Operand;
 
             matcher.Advance(4).InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_S, local1), new CodeInstruction(OpCodes.Ldarg_0),
-                                                new CodeInstruction(OpCodes.Ldloc_S, power1), new CodeInstruction(OpCodes.Call, PatchMethod));
+                                                new CodeInstruction(OpCodes.Ldloc_S, power1),
+                                                new CodeInstruction(OpCodes.Call, MegaAssembler_AssemblerComponent_InternalUpdate_Patch_Method));
 
             matcher.MatchForward(false, new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldloc_1),
-                                 new CodeMatch(OpCodes.Ldloc_2), new CodeMatch(OpCodes.Call, AssemblerComponentInternalUpdateMethod));
-            
+                                 new CodeMatch(OpCodes.Ldloc_2), new CodeMatch(OpCodes.Call, AssemblerComponent_InternalUpdate_Method));
+
             if (matcher.IsValid)
             {
                 var local2 = matcher.Operand;
                 var power2 = matcher.Advance(1).Operand;
 
                 matcher.Advance(4).InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_S, local2), new CodeInstruction(OpCodes.Ldarg_0),
-                                                    new CodeInstruction(OpCodes.Ldloc_S, power2), new CodeInstruction(OpCodes.Call, PatchMethod));
+                                                    new CodeInstruction(OpCodes.Ldloc_S, power2),
+                                                    new CodeInstruction(OpCodes.Call, MegaAssembler_AssemblerComponent_InternalUpdate_Patch_Method));
             }
 
             return matcher.InstructionEnumeration();
@@ -428,26 +454,38 @@ namespace ProjectGenesis.Patches
             var matcher = new CodeMatcher(instructions).MatchForward(false, new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldelema),
                                                                      new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldloc_1),
                                                                      new CodeMatch(OpCodes.Ldloc_2),
-                                                                     new CodeMatch(OpCodes.Call, AssemblerComponentInternalUpdateMethod));
+                                                                     new CodeMatch(OpCodes.Call, AssemblerComponent_InternalUpdate_Method));
 
 
             var index = matcher.Operand;
             var power = matcher.Advance(2).Operand;
 
-            matcher.Advance(4).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0), new CodeInstruction(OpCodes.Ldfld, AssemblerPoolField),
+            matcher.Advance(4).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0),
+                                                new CodeInstruction(OpCodes.Ldfld, FactorySystem_AssemblerPool_Field),
                                                 new CodeInstruction(OpCodes.Ldloc_S, index),
                                                 new CodeInstruction(OpCodes.Ldelema, typeof(AssemblerComponent)),
                                                 new CodeInstruction(OpCodes.Ldarg_0), new CodeInstruction(OpCodes.Ldloc_S, power),
-                                                new CodeInstruction(OpCodes.Call, PatchMethod));
+                                                new CodeInstruction(OpCodes.Call, MegaAssembler_AssemblerComponent_InternalUpdate_Patch_Method));
 
             return matcher.InstructionEnumeration();
         }
 
-        public static void GameTick_AssemblerComponent_InternalUpdate(ref AssemblerComponent __instance, FactorySystem factorySystem, float power)
+        public static void GameTick_AssemblerComponent_InternalUpdate_Patch(
+            ref AssemblerComponent __instance,
+            FactorySystem factorySystem,
+            float power)
         {
-            // 巨型建筑效果
             if (power < 0.1f) return;
 
+            // 化工技术革新效果
+            if (GameMain.history.TechUnlocked(1513))
+                if (__instance.recipeType == (ERecipeType_1)Utils.ERecipeType.Chemical ||
+                    __instance.recipeType == (ERecipeType_1)Utils.ERecipeType.Refine ||
+                    __instance.recipeType == (ERecipeType_1)Utils.ERecipeType.高分子化工)
+                    if (__instance.speed == 20000)
+                        __instance.speed = 40000;
+
+            // 巨型建筑效果
             if (__instance.speed >= TrashSpeed)
             {
                 var factory = factorySystem.factory;
@@ -461,23 +499,6 @@ namespace ProjectGenesis.Patches
                 UpdateInputSlots(ref __instance, factory, cargoTraffic, slotdata, entitySignPool);
                 UpdateOutputSlots(ref __instance, cargoTraffic, slotdata, entitySignPool, stationPilerLevel);
             }
-        }
-
-        [HarmonyPrefix]
-        [HarmonyPatch(typeof(AssemblerComponent), "InternalUpdate")]
-        public static void AssemblerComponent_InternalUpdate(
-            ref AssemblerComponent __instance,
-            float power,
-            int[] productRegister,
-            int[] consumeRegister)
-        {
-            // 化工技术革新效果
-            if (GameMain.history.TechUnlocked(1513))
-                if (__instance.recipeType == (ERecipeType_1)Utils.ERecipeType.Chemical ||
-                    __instance.recipeType == (ERecipeType_1)Utils.ERecipeType.Refine ||
-                    __instance.recipeType == (ERecipeType_1)Utils.ERecipeType.高分子化工)
-                    if (__instance.speed == 20000)
-                        __instance.speed = 40000;
         }
 
         private static void UpdateOutputSlots(
@@ -695,378 +716,171 @@ namespace ProjectGenesis.Patches
 
         #region BeltBuildTip & SlotPicker Patch
 
+        private static readonly FieldInfo UIBeltBuildTip_FilterItems_Field = AccessTools.Field(typeof(UIBeltBuildTip), "filterItems"),
+                                          UISlotPicker_FilterItems_Field = AccessTools.Field(typeof(UISlotPicker), "filterItems"),
+                                          UIBeltBuildTip_SelectedIndex_Field
+                                              = AccessTools.Field(typeof(UIBeltBuildTip), nameof(UIBeltBuildTip.selectedIndex)),
+                                          UISlotPicker_SelectedIndex_Field
+                                              = AccessTools.Field(typeof(UISlotPicker), nameof(UISlotPicker.selectedIndex)),
+                                          UIBeltBuildTip_OutputEntityId_Field
+                                              = AccessTools.Field(typeof(UIBeltBuildTip), nameof(UIBeltBuildTip.outputEntityId)),
+                                          UISlotPicker_OutputEntityId_Field
+                                              = AccessTools.Field(typeof(UISlotPicker), nameof(UISlotPicker.outputEntityId)),
+                                          UIBeltBuildTip_OutputSlotId_Field
+                                              = AccessTools.Field(typeof(UIBeltBuildTip), nameof(UIBeltBuildTip.outputSlotId)),
+                                          UISlotPicker_OutputSlotId_Field
+                                              = AccessTools.Field(typeof(UISlotPicker), nameof(UISlotPicker.outputSlotId));
+
+        private static readonly MethodInfo MegaAssembler_SetOutputEntity_Patch_Method
+                                               = AccessTools.Method(typeof(MegaAssemblerPatches), "SetOutputEntity_Patch"),
+                                           MegaAssembler_SetFilterToEntity_Patch_Method
+                                               = AccessTools.Method(typeof(MegaAssemblerPatches), "SetFilterToEntity_Patch");
+
         [HarmonyPatch(typeof(UIBeltBuildTip), "SetOutputEntity")]
-        [HarmonyPrefix]
-        public static bool UIBeltBuildTip_SetOutputEntity(
-            ref UIBeltBuildTip __instance,
-            ref List<int> ___filterItems,
-            ref List<Image> ___iconImages,
-            ref List<Text> ___iconNumbers,
-            ref GameHistoryData ___history,
-            int entityId,
-            int slot)
+        [HarmonyTranspiler]
+        public static IEnumerable<CodeInstruction> UIBeltBuildTip_SetOutputEntity_Transpiler(
+            IEnumerable<CodeInstruction> instructions,
+            ILGenerator generator)
         {
-            if (__instance.outputEntityId == entityId && slot == __instance.outputSlotId) return false;
+            var matcher = new CodeMatcher(instructions, generator).MatchForward(true, new CodeMatch(OpCodes.Ldloc_0),
+                                                                                new CodeMatch(OpCodes.Ldfld, PlanetFactory_EntityPool_Field),
+                                                                                new CodeMatch(OpCodes.Ldarg_1), new CodeMatch(OpCodes.Ldelem),
+                                                                                new CodeMatch(OpCodes.Stloc_3));
 
-            __instance.outputEntityId = entityId;
-            __instance.outputSlotId = slot;
 
-            if (___filterItems == null)
-            {
-                ___filterItems = new List<int>();
-                ___iconImages = new List<Image>();
-                ___iconNumbers = new List<Text>();
-            }
+            matcher.Advance(1).CreateLabelAt(matcher.Pos, out var label);
 
-            ___filterItems.Clear();
-            ___filterItems.Add(0);
+            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_3), new CodeInstruction(OpCodes.Ldfld, EntityData_AssemblerId_Field),
+                                     new CodeInstruction(OpCodes.Ldc_I4_0), new CodeInstruction(OpCodes.Ble, label),
+                                     new CodeInstruction(OpCodes.Ldarg_0), new CodeInstruction(OpCodes.Ldloc_0), new CodeInstruction(OpCodes.Ldloc_3),
+                                     new CodeInstruction(OpCodes.Ldarg_0), new CodeInstruction(OpCodes.Ldfld, UIBeltBuildTip_FilterItems_Field),
+                                     new CodeInstruction(OpCodes.Ldarg_1), new CodeInstruction(OpCodes.Ldarg_2),
+                                     new CodeInstruction(OpCodes.Call, MegaAssembler_SetOutputEntity_Patch_Method),
+                                     new CodeInstruction(OpCodes.Stfld, UIBeltBuildTip_SelectedIndex_Field));
 
-            if (entityId <= 0)
-            {
-                __instance.outputSlotId = -1;
-                __instance.filterGroup.SetActive(false);
-            }
-            else if (__instance.outputSlotId < 0)
-            {
-                __instance.outputSlotId = -1;
-                __instance.filterGroup.SetActive(false);
-            }
-            else
-            {
-                var factory = GameMain.mainPlayer.factory;
-                if (factory != null)
-                {
-                    var entityData = factory.entityPool[entityId];
-
-                    if (entityData.assemblerId > 0)
-                    {
-                        var assemblerComponent = factory.factorySystem.assemblerPool[entityData.assemblerId];
-
-                        if (assemblerComponent.speed >= TrashSpeed)
-                        {
-                            var assemblerComponentProducts = assemblerComponent.products;
-                            if (assemblerComponentProducts != null && assemblerComponentProducts.Length > 0)
-                            {
-                                ___filterItems.AddRange(assemblerComponentProducts);
-                            }
-                            else
-                            {
-                                ___filterItems.Add(0);
-                                ___filterItems.Add(0);
-                                ___filterItems.Add(0);
-                                ___filterItems.Add(0);
-                            }
-
-                            __instance.selectedIndex = 0;
-                            if (slot >= 0 && slot < 12)
-                                __instance.selectedIndex = GetSlots(factory.planetId, entityId)[slot].storageIdx;
-                            else
-                                Assert.CannotBeReached();
-
-                            if (entityData.stationId > 0) entityData.stationId = 0;
-                        }
-                    }
-
-                    if (entityData.stationId > 0)
-                    {
-                        var stationComponent = factory.transport.stationPool[entityData.stationId];
-                        Assert.NotNull(stationComponent);
-                        if (stationComponent != null && !stationComponent.isVeinCollector)
-                        {
-                            // ReSharper disable once LoopCanBeConvertedToQuery
-                            foreach (var stationStore in stationComponent.storage) ___filterItems.Add(stationStore.itemId);
-
-                            if (stationComponent.isStellar && ___history.logisticShipWarpDrive) ___filterItems.Add(1210);
-                            __instance.selectedIndex = 0;
-                            if (slot >= 0 && slot < stationComponent.slots.Length)
-                                __instance.selectedIndex = stationComponent.slots[slot].storageIdx;
-                            else
-                                Assert.CannotBeReached();
-                        }
-                    }
-                }
-
-                if (__instance.selectedIndex < 0)
-                    __instance.selectedIndex = 0;
-                else if (__instance.selectedIndex >= ___filterItems.Count) __instance.selectedIndex = ___filterItems.Count - 1;
-                for (var index = 0; index < ___filterItems.Count; ++index)
-                {
-                    var itemProto = LDB.items.Select(___filterItems[index]);
-                    var sprite = itemProto?.iconSprite;
-                    Image image;
-                    Text text;
-                    if (index < ___iconImages.Count)
-                    {
-                        image = ___iconImages[index];
-                        text = ___iconNumbers[index];
-                    }
-                    else
-                    {
-                        image = Object.Instantiate(__instance.iconImageProto, __instance.iconImageProto.transform.parent);
-                        ___iconImages.Add(image);
-                        text = Object.Instantiate(__instance.iconNumberProto, __instance.iconNumberProto.transform.parent);
-                        ___iconNumbers.Add(text);
-                    }
-
-                    image.gameObject.SetActive(true);
-                    image.enabled = itemProto != null;
-                    image.sprite = sprite;
-                    image.rectTransform.anchoredPosition = new Vector2(index % 3 * 50 + 13, index / 3 * -50 - 37);
-                    text.gameObject.SetActive(true);
-                    text.enabled = index > 0;
-                    text.alignment = itemProto != null ? TextAnchor.UpperRight : TextAnchor.MiddleCenter;
-                    text.fontSize = itemProto != null ? 12 : 25;
-                    text.text = "#" + index;
-                    text.rectTransform.anchoredPosition = new Vector2(index % 3 * 50 + 13, index / 3 * -50 - 37);
-                }
-
-                for (var count = ___filterItems.Count; count < ___iconImages.Count; ++count) ___iconImages[count].gameObject.SetActive(false);
-                for (var count = ___filterItems.Count; count < ___iconNumbers.Count; ++count) ___iconNumbers[count].gameObject.SetActive(false);
-                __instance.filterGroup.SetActive(___filterItems.Count > 1);
-                __instance.filterTrans.sizeDelta = new Vector2(50 * (___filterItems.Count > 3 ? 3 : ___filterItems.Count) + 16,
-                                                               50 * ((___filterItems.Count - 1) / 3 + 1) + 64);
-            }
-
-            return false;
-        }
-
-        [HarmonyPatch(typeof(UIBeltBuildTip), "SetFilterToEntity")]
-        [HarmonyPrefix]
-        public static bool UIBeltBuildTip_SetFilterToEntity(ref UIBeltBuildTip __instance, ref List<int> ___filterItems)
-        {
-            if (__instance.outputEntityId <= 0 || __instance.outputSlotId < 0) return false;
-
-            var factory = GameMain.mainPlayer.factory;
-            if (factory == null) return false;
-            var entityData = factory.entityPool[__instance.outputEntityId];
-
-            if (entityData.assemblerId > 0)
-                if (__instance.outputSlotId < 12)
-                {
-                    var assemblerComponent = factory.factorySystem.assemblerPool[entityData.assemblerId];
-
-                    if (assemblerComponent.speed >= TrashSpeed)
-                    {
-                        SlotData[] slotDatas = GetSlots(factory.planetId, __instance.outputEntityId);
-                        slotDatas[__instance.outputSlotId].storageIdx = __instance.selectedIndex;
-                        SyncSlotsData.Sync(factory.planetId, __instance.outputEntityId, slotDatas);
-                        if (entityData.stationId > 0) entityData.stationId = 0;
-                    }
-                }
-
-            if (entityData.stationId > 0)
-            {
-                var stationComponent = factory.transport.stationPool[entityData.stationId];
-                Assert.NotNull(stationComponent);
-                if (stationComponent == null || __instance.outputSlotId >= stationComponent.slots.Length) return false;
-                if (stationComponent.isVeinCollector)
-                    stationComponent.slots[__instance.outputSlotId].storageIdx = 1;
-                else
-                    stationComponent.slots[__instance.outputSlotId].storageIdx = __instance.selectedIndex;
-            }
-
-            return false;
+            return matcher.InstructionEnumeration();
         }
 
         [HarmonyPatch(typeof(UISlotPicker), "SetOutputEntity")]
-        [HarmonyPrefix]
-        public static bool UISlotPicker_SetOutputEntity(
-            ref UISlotPicker __instance,
-            int entityId,
-            int slot,
-            ref List<int> ___filterItems,
-            ref List<UIButton> ___iconButtons,
-            ref List<Image> ___iconImages,
-            ref List<Text> ___iconNumbers,
-            ref GameData ___gameData,
-            ref GameHistoryData ___history)
+        [HarmonyTranspiler]
+        public static IEnumerable<CodeInstruction> UISlotPicker_SetOutputEntity_Transpiler(
+            IEnumerable<CodeInstruction> instructions,
+            ILGenerator generator)
         {
-            if (___filterItems == null || ___filterItems.Count == 0)
-            {
-                ___filterItems = new List<int>();
-                ___iconButtons = new List<UIButton>();
-                ___iconImages = new List<Image>();
-                ___iconNumbers = new List<Text>();
-            }
+            var matcher = new CodeMatcher(instructions, generator).MatchForward(true, new CodeMatch(OpCodes.Ldloc_0),
+                                                                                new CodeMatch(OpCodes.Ldfld, PlanetFactory_EntityPool_Field),
+                                                                                new CodeMatch(OpCodes.Ldarg_1), new CodeMatch(OpCodes.Ldelem),
+                                                                                new CodeMatch(OpCodes.Stloc_1));
 
-            if (___gameData.localPlanet == null || ___gameData.localPlanet.factory == null)
+            matcher.Advance(1).CreateLabelAt(matcher.Pos, out var label);
+
+            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_1), new CodeInstruction(OpCodes.Ldfld, EntityData_AssemblerId_Field),
+                                     new CodeInstruction(OpCodes.Ldc_I4_0), new CodeInstruction(OpCodes.Ble, label),
+                                     new CodeInstruction(OpCodes.Ldarg_0), new CodeInstruction(OpCodes.Ldloc_0), new CodeInstruction(OpCodes.Ldloc_1),
+                                     new CodeInstruction(OpCodes.Ldarg_0), new CodeInstruction(OpCodes.Ldfld, UISlotPicker_FilterItems_Field),
+                                     new CodeInstruction(OpCodes.Ldarg_1), new CodeInstruction(OpCodes.Ldarg_2),
+                                     new CodeInstruction(OpCodes.Call, MegaAssembler_SetOutputEntity_Patch_Method),
+                                     new CodeInstruction(OpCodes.Stfld, UISlotPicker_SelectedIndex_Field));
+
+            return matcher.InstructionEnumeration();
+        }
+
+        public static int SetOutputEntity_Patch(
+            PlanetFactory factory,
+            EntityData entityData,
+            List<int> filterItems,
+            int entityId,
+            int slot)
+        {
+            var assemblerComponent = factory.factorySystem.assemblerPool[entityData.assemblerId];
+
+            if (assemblerComponent.speed >= TrashSpeed)
             {
-                entityId = 0;
-                slot = -1;
-                __instance.outputEntityId = entityId;
-                __instance.outputSlotId = slot;
-                ___filterItems.Clear();
-                ___filterItems.Add(0);
-                __instance._Close();
-            }
-            else
-            {
-                if (__instance.outputEntityId == entityId && slot == __instance.outputSlotId) return false;
-                var factory = GameMain.mainPlayer.factory;
-                if (factory == null) return false;
-                __instance.outputEntityId = entityId;
-                __instance.outputSlotId = slot;
-                ___filterItems.Clear();
-                ___filterItems.Add(0);
-                if (entityId <= 0)
-                {
-                    __instance.outputSlotId = -1;
-                    __instance._Close();
-                }
-                else if (__instance.outputSlotId < 0)
-                {
-                    __instance.outputSlotId = -1;
-                    __instance._Close();
-                }
+                var assemblerComponentProducts = assemblerComponent.products;
+                if (assemblerComponentProducts != null && assemblerComponentProducts.Length > 0)
+                    filterItems.AddRange(assemblerComponentProducts);
                 else
-                {
-                    var entityData = factory.entityPool[__instance.outputEntityId];
+                    filterItems.AddRange(Enumerable.Repeat(0, 4));
 
-                    if (entityData.assemblerId > 0)
-                    {
-                        var assemblerComponent = factory.factorySystem.assemblerPool[entityData.assemblerId];
+                entityData.stationId = 0;
 
-                        if (assemblerComponent.speed >= TrashSpeed)
-                        {
-                            var assemblerComponentProducts = assemblerComponent.products;
-                            if (assemblerComponentProducts != null && assemblerComponentProducts.Length > 0)
-                                ___filterItems.AddRange(assemblerComponentProducts);
-                            else
-                                ___filterItems.AddRange(Enumerable.Repeat(0, 4));
+                if (slot >= 0 && slot < 12)
+                    return GetSlots(factory.planetId, entityId)[slot].storageIdx;
+                else
+                    Assert.CannotBeReached();
 
-                            __instance.selectedIndex = 0;
-                            if (slot >= 0 && slot < 12)
-                                __instance.selectedIndex = GetSlots(factory.planetId, entityId)[slot].storageIdx;
-                            else
-                                Assert.CannotBeReached();
-
-                            entityData.stationId = 0;
-                        }
-                    }
-
-                    if (entityData.stationId > 0)
-                    {
-                        var stationComponent = factory.transport.stationPool[entityData.stationId];
-                        Assert.NotNull(stationComponent);
-                        if (stationComponent != null)
-                        {
-                            // ReSharper disable once LoopCanBeConvertedToQuery
-                            foreach (var stationStore in stationComponent.storage) ___filterItems.Add(stationStore.itemId);
-                            if (stationComponent.isStellar && ___history.logisticShipWarpDrive) ___filterItems.Add(1210);
-
-                            __instance.selectedIndex = 0;
-                            if (slot >= 0 && slot < stationComponent.slots.Length)
-                                __instance.selectedIndex = stationComponent.slots[slot].storageIdx;
-                            else
-                                Assert.CannotBeReached();
-                        }
-                    }
-
-
-                    if (__instance.selectedIndex < 0)
-                        __instance.selectedIndex = 0;
-
-                    else if (__instance.selectedIndex >= ___filterItems.Count) __instance.selectedIndex = ___filterItems.Count - 1;
-                    for (var index = 0; index < ___filterItems.Count; ++index)
-                    {
-                        var itemProto = LDB.items.Select(___filterItems[index]);
-                        var sprite = itemProto?.iconSprite;
-                        UIButton uiButton;
-                        Image image;
-                        Text text;
-                        if (index < ___iconImages.Count)
-                        {
-                            uiButton = ___iconButtons[index];
-                            image = ___iconImages[index];
-                            text = ___iconNumbers[index];
-                        }
-                        else
-                        {
-                            uiButton = Object.Instantiate(__instance.iconButtonProto, __instance.iconButtonProto.transform.parent);
-                            uiButton.onClick += __instance.OnIconButtonClick;
-                            ___iconButtons.Add(uiButton);
-                            image = Object.Instantiate(__instance.iconImageProto, __instance.iconImageProto.transform.parent);
-                            ___iconImages.Add(image);
-                            text = Object.Instantiate(__instance.iconNumberProto, __instance.iconNumberProto.transform.parent);
-                            ___iconNumbers.Add(text);
-                        }
-
-                        var idx = index;
-                        Vector2 itemPos;
-                        if (idx == 0)
-                        {
-                            itemPos = ___filterItems.Count > 3 ? new Vector2(55f, -5f) : new Vector2(55f, 45f);
-                        }
-                        else
-                        {
-                            --idx;
-                            itemPos = ___filterItems.Count > 4 ? new Vector2(idx % 3 * 50 - 45, idx / 3 * -50 + 95) : new Vector2(idx * 50 - 45, 45f);
-                        }
-
-                        uiButton.gameObject.SetActive(true);
-                        uiButton.data = index;
-                        ((RectTransform)uiButton.transform).anchoredPosition = itemPos;
-                        image.gameObject.SetActive(true);
-                        image.enabled = itemProto != null;
-                        image.sprite = sprite;
-                        image.rectTransform.anchoredPosition = itemPos;
-                        text.gameObject.SetActive(true);
-                        text.enabled = index > 0;
-                        text.alignment = itemProto != null ? TextAnchor.UpperRight : TextAnchor.MiddleCenter;
-                        text.fontSize = itemProto != null ? 12 : 25;
-                        text.text = "#" + index;
-                        text.rectTransform.anchoredPosition = itemPos;
-                        if (index == 0) __instance.noneText.rectTransform.anchoredPosition = itemPos;
-                    }
-
-                    for (var count = ___filterItems.Count; count < ___iconButtons.Count; ++count) ___iconButtons[count].gameObject.SetActive(false);
-                    for (var count = ___filterItems.Count; count < ___iconImages.Count; ++count) ___iconImages[count].gameObject.SetActive(false);
-                    for (var count = ___filterItems.Count; count < ___iconNumbers.Count; ++count) ___iconNumbers[count].gameObject.SetActive(false);
-                    __instance.expand = false;
-                    __instance.itemGroup.SetActive(false);
-                    __instance.bgTrans.sizeDelta
-                        = __instance.expand ? new Vector2(158f, ___filterItems.Count > 4 ? 158f : 108f) : new Vector2(50f, 50f);
-                }
+                return -1;
             }
 
-            return false;
+            return -1;
+        }
+
+        [HarmonyPatch(typeof(UIBeltBuildTip), "SetFilterToEntity")]
+        [HarmonyTranspiler]
+        public static IEnumerable<CodeInstruction> UIBeltBuildTip_SetFilterToEntity_Transpiler(
+            IEnumerable<CodeInstruction> instructions,
+            ILGenerator generator)
+        {
+            var matcher = new CodeMatcher(instructions, generator).MatchForward(true, new CodeMatch(OpCodes.Ldloc_0),
+                                                                                new CodeMatch(OpCodes.Ldfld, PlanetFactory_EntityPool_Field),
+                                                                                new CodeMatch(OpCodes.Ldarg_0),
+                                                                                new CodeMatch(OpCodes.Ldfld, UIBeltBuildTip_OutputEntityId_Field),
+                                                                                new CodeMatch(OpCodes.Ldelem), new CodeMatch(OpCodes.Stloc_1));
+
+            matcher.Advance(1).CreateLabelAt(matcher.Pos, out var label);
+
+            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_1), new CodeInstruction(OpCodes.Ldfld, EntityData_AssemblerId_Field),
+                                     new CodeInstruction(OpCodes.Ldc_I4_0), new CodeInstruction(OpCodes.Ble, label),
+                                     new CodeInstruction(OpCodes.Ldloc_0), new CodeInstruction(OpCodes.Ldloc_1), new CodeInstruction(OpCodes.Ldarg_0),
+                                     new CodeInstruction(OpCodes.Ldfld, UIBeltBuildTip_OutputEntityId_Field), new CodeInstruction(OpCodes.Ldarg_0),
+                                     new CodeInstruction(OpCodes.Ldfld, UIBeltBuildTip_OutputSlotId_Field), new CodeInstruction(OpCodes.Ldarg_0),
+                                     new CodeInstruction(OpCodes.Ldfld, UIBeltBuildTip_SelectedIndex_Field),
+                                     new CodeInstruction(OpCodes.Call, MegaAssembler_SetFilterToEntity_Patch_Method));
+
+            return matcher.InstructionEnumeration();
         }
 
         [HarmonyPatch(typeof(UISlotPicker), "SetFilterToEntity")]
-        [HarmonyPrefix]
-        public static bool UISlotPicker_SetFilterToEntity(ref UISlotPicker __instance)
+        [HarmonyTranspiler]
+        public static IEnumerable<CodeInstruction> UISlotPicker_SetFilterToEntity_Transpiler(
+            IEnumerable<CodeInstruction> instructions,
+            ILGenerator generator)
         {
-            if (__instance.outputEntityId <= 0 || __instance.outputSlotId < 0) return false;
-            var factory = GameMain.mainPlayer.factory;
-            if (factory == null) return false;
-            var entityData = factory.entityPool[__instance.outputEntityId];
+            var matcher = new CodeMatcher(instructions, generator).MatchForward(true, new CodeMatch(OpCodes.Ldloc_0),
+                                                                                new CodeMatch(OpCodes.Ldfld, PlanetFactory_EntityPool_Field),
+                                                                                new CodeMatch(OpCodes.Ldarg_0),
+                                                                                new CodeMatch(OpCodes.Ldfld, UISlotPicker_OutputEntityId_Field),
+                                                                                new CodeMatch(OpCodes.Ldelem), new CodeMatch(OpCodes.Stloc_1));
 
+            matcher.Advance(1).CreateLabelAt(matcher.Pos, out var label);
 
-            if (entityData.assemblerId > 0)
-                if (__instance.outputSlotId < 12)
-                {
-                    var assemblerComponent = factory.factorySystem.assemblerPool[entityData.assemblerId];
+            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_1), new CodeInstruction(OpCodes.Ldfld, EntityData_AssemblerId_Field),
+                                     new CodeInstruction(OpCodes.Ldc_I4_0), new CodeInstruction(OpCodes.Ble, label),
+                                     new CodeInstruction(OpCodes.Ldloc_0), new CodeInstruction(OpCodes.Ldloc_1), new CodeInstruction(OpCodes.Ldarg_0),
+                                     new CodeInstruction(OpCodes.Ldfld, UISlotPicker_OutputEntityId_Field), new CodeInstruction(OpCodes.Ldarg_0),
+                                     new CodeInstruction(OpCodes.Ldfld, UISlotPicker_OutputSlotId_Field), new CodeInstruction(OpCodes.Ldarg_0),
+                                     new CodeInstruction(OpCodes.Ldfld, UISlotPicker_SelectedIndex_Field),
+                                     new CodeInstruction(OpCodes.Call, MegaAssembler_SetFilterToEntity_Patch_Method));
 
-                    if (assemblerComponent.speed >= TrashSpeed)
-                    {
-                        SlotData[] slotDatas = GetSlots(factory.planetId, __instance.outputEntityId);
-                        slotDatas[__instance.outputSlotId].storageIdx = __instance.selectedIndex;
-                        SyncSlotsData.Sync(factory.planetId, __instance.outputEntityId, slotDatas);
-                        if (entityData.stationId > 0) entityData.stationId = 0;
-                    }
-                }
+            return matcher.InstructionEnumeration();
+        }
 
-            if (entityData.stationId > 0)
+        public static void SetFilterToEntity_Patch(
+            PlanetFactory factory,
+            EntityData entityData,
+            int outputEntityId,
+            int outputSlotId,
+            int selectedIndex)
+        {
+            var assemblerComponent = factory.factorySystem.assemblerPool[entityData.assemblerId];
+
+            if (assemblerComponent.speed >= TrashSpeed)
             {
-                var stationComponent = factory.transport.stationPool[entityData.stationId];
-                Assert.NotNull(stationComponent);
-
-
-                if (stationComponent != null && __instance.outputSlotId < stationComponent.slots.Length)
-                    stationComponent.slots[__instance.outputSlotId].storageIdx = __instance.selectedIndex;
+                SlotData[] slotDatas = GetSlots(factory.planetId, outputEntityId);
+                slotDatas[outputSlotId].storageIdx = selectedIndex;
+                SyncSlotData.Sync(factory.planetId, outputSlotId, outputEntityId, slotDatas[outputSlotId]);
+                entityData.stationId = 0;
             }
-
-            return false;
         }
 
         #endregion
@@ -1080,35 +894,29 @@ namespace ProjectGenesis.Patches
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> BuildTool_Path_DeterminePreviews_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
-            List<CodeInstruction> codes = instructions.ToList();
+            var matcher = new CodeMatcher(instructions).MatchForward(false, new CodeMatch(OpCodes.Ldloc_S),
+                                                                     new CodeMatch(OpCodes.Ldfld, isStationField));
 
-            var index = codes.FindIndex(code => code.LoadsField(isStationField));
+            var instruction = matcher.Instruction;
 
-            return codes.Take(index + 1).Append(new CodeInstruction(codes[index - 1])).Append(new CodeInstruction(OpCodes.Ldfld, isAssemblerField))
-                        .Append(new CodeInstruction(OpCodes.Or)).Concat(codes.Skip(index + 1));
+            matcher.Advance(2).InsertAndAdvance(new CodeInstruction(instruction), new CodeInstruction(OpCodes.Ldfld, isAssemblerField),
+                                                new CodeInstruction(OpCodes.Or));
+
+            return matcher.InstructionEnumeration();
         }
 
         [HarmonyPatch(typeof(UISlotPicker), "Determine")]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> UISlotPicker_Determine_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
-            List<CodeInstruction> codes = instructions.ToList();
+            var matcher = new CodeMatcher(instructions).MatchForward(false, new CodeMatch(OpCodes.Ldfld, EntityData_StationId_Field),
+                                                                     new CodeMatch(OpCodes.Stloc_S), new CodeMatch(OpCodes.Ldloc_S),
+                                                                     new CodeMatch(OpCodes.Ldc_I4_0), new CodeMatch(OpCodes.Ble));
 
-            var index = codes.FindIndex(code => code.LoadsField(StationIdField));
-
-            if (codes[index + 1].opcode == OpCodes.Stloc_S &&
-                codes[index + 2].opcode == OpCodes.Ldloc_S &&
-                codes[index + 1].operand == codes[index + 2].operand)
-            {
-                CodeInstruction[] result = codes.Take(index + 1).Concat(codes.Skip(index - 5).Take(5))
-                                                .Append(new CodeInstruction(OpCodes.Ldfld, AssemblerIdField)).Append(new CodeInstruction(OpCodes.Or))
-                                                .Concat(codes.Skip(index + 1)).ToArray();
-
-
-                return result;
-            }
-
-            return codes;
+            var pos = matcher.Pos;
+            matcher.Advance(3).InsertAndAdvance(matcher.InstructionsInRange(pos - 5, pos - 1));
+            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldfld, EntityData_AssemblerId_Field), new CodeInstruction(OpCodes.Or));
+            return matcher.InstructionEnumeration();
         }
 
         #endregion

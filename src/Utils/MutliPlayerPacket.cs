@@ -1,6 +1,7 @@
 ﻿using NebulaAPI;
 using ProjectGenesis.Patches;
 
+// ReSharper disable UnusedType.Global
 // ReSharper disable MemberCanBePrivate.Global
 
 namespace ProjectGenesis.Utils
@@ -111,6 +112,66 @@ namespace ProjectGenesis.Utils
                 NebulaModAPI.MultiplayerSession.Network.SendPacketExclude(packet, conn);
 
             SyncSlotsData.OnReceive(packet.Guid, packet.PlanetId, packet.EntityId, packet.SlotsData);
+        }
+    }
+
+    public class SyncSlotData
+    {
+        public SyncSlotData() { }
+
+        public SyncSlotData(
+            string guid,
+            int planetId,
+            int slotId,
+            int entityId,
+            SlotData slotData)
+        {
+            Guid = guid;
+            PlanetId = planetId;
+            SlotId = slotId;
+            EntityId = entityId;
+            SlotData = slotData;
+        }
+
+        internal string Guid { get; set; }
+        internal int PlanetId { get; set; }
+        internal int SlotId { get; set; }
+        internal int EntityId { get; set; }
+
+        internal SlotData SlotData { get; set; }
+
+        internal static void Sync(
+            int planetId,
+            int slotId,
+            int entityId,
+            SlotData slotData)
+        {
+            if (NebulaModAPI.IsMultiplayerActive)
+                NebulaModAPI.MultiplayerSession.Network.SendPacket(new SyncSlotData(ProjectGenesis.MODGUID, planetId, slotId, entityId, slotData));
+        }
+
+        internal static void OnReceive(
+            string guid,
+            int planetId,
+            int slotId,
+            int entityId,
+            SlotData slotData)
+        {
+            if (guid != ProjectGenesis.MODGUID) return;
+            MegaAssemblerPatches.SyncSlot((planetId, entityId), slotId, slotData);
+        }
+    }
+
+    [RegisterPacketProcessor]
+    public class SyncSlotDataProcessor : BasePacketProcessor<SyncSlotData>
+    {
+        public override void ProcessPacket(SyncSlotData packet, INebulaConnection conn)
+        {
+            if (IsHost)
+                // Broadcast changes to other users
+                NebulaModAPI.MultiplayerSession.Network.SendPacketExclude(packet, conn);
+
+            SyncSlotData.OnReceive(packet.Guid, packet.PlanetId, packet.SlotId, packet.EntityId, packet.SlotData);
         }
     }
 }
