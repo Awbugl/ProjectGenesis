@@ -5,15 +5,33 @@
 
 Reconstruct "Real Universe". Then leave a "GenesisBook".
 
------
-
 ### MOD内容速览 | A glimpse
-
 
 ![img.png](https://webapi.awbugl.top/dsp-genesisbook/1.jpg)
 ![img.png](https://webapi.awbugl.top/dsp-genesisbook/2.jpg)
 ![img.png](https://webapi.awbugl.top/dsp-genesisbook/3.jpg)
 ![img.png](https://webapi.awbugl.top/dsp-genesisbook/4.jpg)
+
+### 最近更新介绍 | Recent update
+
+- v2.2.2
+  + 修复了巨型建筑与联机MOD的兼容问题
+  + 修改了部分与实际不匹配的物品介绍、科技描述
+
+
+- v2.2.1
+  + 修复了图标选择界面不显示详细信息的Bug
+  + 修改了部分与实际不匹配的物品介绍、科技描述
+
+
+- v2.2.2
+  + Fixed the compatibility issues of the giant building with the online mod.
+  + Modified some item descriptions and technology descriptions that do not match the actual ones
+
+
+- v2.2.1
+  + Fixed the bug that the icon selection interface does not show detailed information
+  + Modified some item descriptions and technology descriptions that do not match the actual ones
 
 ----
 
@@ -24,12 +42,16 @@ Reconstruct "Real Universe". Then leave a "GenesisBook".
 
 ### 使用Mod管理器
 
-只需要打开mod管理器（如果你还没安装可以[**点此安装**](https://dsp.thunderstore.io/package/ebkr/r2modman/)），
+打开mod管理器（如果你还没安装可以[**点此安装**](https://dsp.thunderstore.io/package/ebkr/r2modman/)），
 选择**GenesisBook**，下载即可。
 
 ### 手动安装
 
-手动安装请参考交流群的群文件的教程：
+请加入交流群，群文件有打包好的版本
+
+视频教程（基于打包版，后半部分）：[**点此观看**](https://www.bilibili.com/video/BV13Y411d7ps/)
+
+文字教程：请加入交流群，参考群文件
 
 - 创世之书MOD一号节点 991895539
 - 创世之书MOD二号节点 632432246
@@ -39,7 +61,7 @@ Reconstruct "Real Universe". Then leave a "GenesisBook".
 
 如果您对本Mod有宝贵的意见或建议，
 请加QQ群（如上）向管理员反馈，
-或者在[github](https://github.com/Awbugl/ProjectGenesis)发issue。
+或者在 [github](https://github.com/Awbugl/ProjectGenesis) 发 issue。
 
 我们欢迎任何想为本Mod优化模型、贴图、数值平衡、翻译等的朋友，欢迎加群交流。
 
@@ -85,11 +107,15 @@ Reconstruct "Real Universe". Then leave a "GenesisBook".
 - 特别感谢kremnev8在开发过程中提供的帮助.
 - 特别感谢所有为本项目做出贡献和提出建议的人.
 
-## 更新日志
+## 完整更新日志
 
 <details>
   <summary>展开查看</summary>
 
+
+- v2.2.2
+  + 修复了巨型建筑与联机MOD的兼容问题，目前已知的联机兼容问题已经全部修复。
+  + 修改了部分物品介绍、科技描述
 
 - v2.2.1
   + 修复了图标选择界面不显示详细信息的Bug
@@ -253,10 +279,15 @@ free to communicate with us.
   LDBTool which are very important.
 - Special thanks to all those who contributed to this project or made suggestions.
 
-## Update Log
+## All Update Log
 
 <details>
   <summary>Details</summary>
+
+
+- v2.2.2
+  + Fixed the compatibility issues of the giant building with the online mod.
+  + Modified some item descriptions and technology descriptions that do not match the actual ones
 
 
 - v2.2.1
