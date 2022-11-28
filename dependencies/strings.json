@@ -792,7 +792,7 @@
   {
     "Name": "精密制造厂",
     "ZHCN": "精密制造厂",
-    "ENUS": "Accurately Manufacturing Facility"
+    "ENUS": "Accurate Manufacturing Facility"
   },
   {
     "Name": "I精密制造厂",
@@ -818,6 +818,11 @@
     "Name": "I硫粉",
     "ZHCN": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "ENUS": "A new chemical material.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+  },
+  {
+    "Name": "引力矩阵",
+    "ZHCN": "引力矩阵",
+    "ENUS": "Gravity matrix"
   },
   {
     "Name": "稳定矩阵",
@@ -2012,7 +2017,7 @@
   {
     "Name": "T不再是菜鸟的证明描述",
     "ZHCN": "欢迎来到地狱....",
-    "ENUS": "Welcome to THE HELL...."
+    "ENUS": "Welcome TO HELL."
   },
   {
     "Name": "人造恒星描述",
