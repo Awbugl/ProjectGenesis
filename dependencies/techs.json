@@ -1356,8 +1356,8 @@
     "ID": 1202,
     "Name": "T电路蚀刻技术",
     "IconPath": "Icons/Tech/1202",
-    "Desc": "高速制造工艺描述",
-    "Conclusion": "高速制造工艺结果",
+    "Desc": "T电路蚀刻技术描述",
+    "Conclusion": "T电路蚀刻技术结果",
     "Position": [
       17.0,
       9.0

@@ -1376,8 +1376,8 @@
   },
   {
     "Name": "I环氧树脂",
-    "ZHCN": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A new chemical material.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "这是一种新的化工材料，用于生产覆层塑料基板。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "A new chemical material, one of the raw materials for Cladding plastic substrate.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "聚苯并咪唑",
@@ -1386,7 +1386,7 @@
   },
   {
     "Name": "I聚苯并咪唑",
-    "ZHCN": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ZHCN": "一种高性能的复合材料，广泛用于航天工业.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "ENUS": "A new chemical material.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
@@ -2478,6 +2478,36 @@
     "Name": "T裂变发电站结果",
     "ZHCN": "金属铀钚燃料、液态钠冷却池、废料电解精炼处理以及高度自动化技术的综合应用，使一体化快中子反应堆产生大量的电力的同时不需要考虑废料的处理。",
     "ENUS": "The new generation of integrated fast reactors uses uranium-plutonium metal fuel, liquid sodium cooling pools, electrolytic refining of waste, and highly automated technology to generate large amounts of power without regard to waste disposal."
+  },
+  {
+    "Name": "T电路蚀刻技术描述",
+    "ZHCN": "在制造台的基础上进行了升级，制造精度有了进一步的提升，可以用于电路蚀刻。",
+    "ENUS": "Upgraded from the manufacturing table, the manufacturing accuracy has been further improved for circuit etching."
+  },
+  {
+    "Name": "T电路蚀刻技术结果",
+    "ZHCN": "在制造台的基础上进行了升级，制造精度有了进一步的提升，可以用于电路蚀刻。",
+    "ENUS": "Upgraded from the manufacturing table, the manufacturing accuracy has been further improved for circuit etching."
+  },
+  {
+    "Name": "T高精度加工技术描述",
+    "ZHCN": "利用先进机械组件和处理器的算力，提升制造精度。",
+    "ENUS": "Leverage the arithmetic power of advanced mechanical components and processors to improve manufacturing accuracy."
+  },
+  {
+    "Name": "T高精度加工技术结果",
+    "ZHCN": "利用先进机械组件和处理器的算力，提升制造精度。",
+    "ENUS": "Leverage the arithmetic power of advanced mechanical components and processors to improve manufacturing accuracy."
+  },
+  {
+    "Name": "钛矿冶炼描述",
+    "ZHCN": "采矿和冶炼技术的进步，使得矿物控制更加容易，现在可以开采利用钛矿和钨矿了。",
+    "ENUS": "The Advancements in mining and smelting technology have made ore control easier. Titanium and Tungsten can now be mined and utilized."
+  },
+  {
+    "Name": "钛矿冶炼结果",
+    "ZHCN": "你掌握了钛矿冶炼技术，现在可以将开采利用钛矿和钨矿了。",
+    "ENUS": "You have mastered the Titanium Ore Smelting Techniques, Titanium and Tungsten can now be mined and utilized."
   },
   {
     "Name": "高分子化工结果",
