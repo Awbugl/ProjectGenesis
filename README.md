@@ -17,6 +17,7 @@ Reconstruct "Real Universe". Then leave a "GenesisBook".
 - v2.2.2
   + 修复了巨型建筑与联机MOD的兼容问题
   + 修改了部分与实际不匹配的物品介绍、科技描述
+  + 调整了部分科技的需求
 
 
 - v2.2.1
@@ -27,7 +28,7 @@ Reconstruct "Real Universe". Then leave a "GenesisBook".
 - v2.2.2
   + Fixed the compatibility issues of the giant building with the online mod.
   + Modified some item descriptions and technology descriptions that do not match the actual ones
-
+  + Adjusted the requirements of some technologies
 
 - v2.2.1
   + Fixed the bug that the icon selection interface does not show detailed information
@@ -114,8 +115,10 @@ Reconstruct "Real Universe". Then leave a "GenesisBook".
 
 
 - v2.2.2
-  + 修复了巨型建筑与联机MOD的兼容问题，目前已知的联机兼容问题已经全部修复。
-  + 修改了部分物品介绍、科技描述
+  + 修复了巨型建筑与联机MOD的兼容问题
+  + 修改了部分与实际不匹配的物品介绍、科技描述
+  + 调整了部分科技的需求
+
 
 - v2.2.1
   + 修复了图标选择界面不显示详细信息的Bug
@@ -288,6 +291,7 @@ free to communicate with us.
 - v2.2.2
   + Fixed the compatibility issues of the giant building with the online mod.
   + Modified some item descriptions and technology descriptions that do not match the actual ones
+  + Adjusted the requirements of some technologies
 
 
 - v2.2.1

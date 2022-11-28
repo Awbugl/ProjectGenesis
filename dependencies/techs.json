@@ -2577,17 +2577,15 @@
       6001,
       6002,
       6003,
-      6004,
-      6005
+      6004
     ],
     "ItemPoints": [
       20,
       20,
       20,
-      20,
-      20
+      5
     ],
-    "HashNeeded": 576000,
+    "HashNeeded": 288000,
     "UnlockRecipes": [],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -2857,9 +2855,9 @@
     ],
     "ItemPoints": [
       20,
-      5
+      10
     ],
-    "HashNeeded": 72000,
+    "HashNeeded": 108000,
     "UnlockRecipes": [
       92,
       90,
@@ -3068,18 +3066,16 @@
     "PreTechs": [
       1602
     ],
-    "PreTechsImplicit": [
-      1702
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002
     ],
     "ItemPoints": [
       20,
-      10
+      5
     ],
-    "HashNeeded": 108000,
+    "HashNeeded": 72000,
     "UnlockRecipes": [
       122,
       123
@@ -3204,7 +3200,7 @@
       20,
       20,
       20,
-      20
+      5
     ],
     "HashNeeded": 288000,
     "UnlockRecipes": [],
@@ -8826,7 +8822,7 @@
       20,
       20
     ],
-    "HashNeeded": 144000,
+    "HashNeeded": 288000,
     "UnlockRecipes": [
       795,
       519,
@@ -8872,7 +8868,7 @@
       20,
       20
     ],
-    "HashNeeded": 288000,
+    "HashNeeded": 144000,
     "UnlockRecipes": [
       569,
       518
@@ -9313,7 +9309,7 @@
       20,
       20,
       20,
-      5
+      20
     ],
     "HashNeeded": 288000,
     "UnlockRecipes": [
@@ -9360,7 +9356,7 @@
       20,
       20,
       20,
-      5
+      20
     ],
     "HashNeeded": 288000,
     "UnlockRecipes": [
@@ -9407,7 +9403,7 @@
       20,
       20,
       20,
-      5
+      20
     ],
     "HashNeeded": 288000,
     "UnlockRecipes": [
@@ -9454,7 +9450,7 @@
       20,
       20,
       20,
-      5
+      20
     ],
     "HashNeeded": 288000,
     "UnlockRecipes": [
@@ -9501,7 +9497,7 @@
       20,
       20,
       20,
-      5
+      20
     ],
     "HashNeeded": 288000,
     "UnlockRecipes": [
@@ -9549,7 +9545,7 @@
       20,
       20,
       20,
-      5
+      20
     ],
     "HashNeeded": 288000,
     "UnlockRecipes": [

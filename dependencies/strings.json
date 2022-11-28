@@ -2361,7 +2361,7 @@
   },
   {
     "Name": "T巨型建筑:物质分解设施描述",
-    "ZHCN": "利用光子聚束技术将物质分解成粒子态并将其重组为<color=\"#FD965ECC\">沙土</color>,一举两得.\n[由于显示限制，产出的沙土会直接加入背包中]",
+    "ZHCN": "利用光子聚束技术将物质分解成粒子态并将其重组为<color=\"#FD965ECC\">沙土</color>,一举两得.\n[产出的沙土会直接加入背包中]",
     "ENUS": "By using photon beam technology, the material is broken down into particle states and reconstituted into <color=\"#FD965ECC\">sand</color>."
   },
   {
