@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using System.Reflection.Emit;
 using HarmonyLib;
+using ProjectGenesis.Utils;
 
 namespace ProjectGenesis.Patches
 {
@@ -30,7 +31,7 @@ namespace ProjectGenesis.Patches
 
             return codeMatcher.Advance(1)
                               .InsertAndAdvance(Transpilers.EmitDelegate<Func<string, string>>(text
-                                                                                                   => $"{ProjectGenesis.MODNAME} {ProjectGenesis.VERSION}\r\n{text}"))
+                                                                                                   => $"{ProjectGenesis.MODNAME.TranslateFromJson()} {ProjectGenesis.VERSION}\r\n{text}"))
                               .InstructionEnumeration();
         }
     }

@@ -1,5 +1,10 @@
 [
   {
+    "Name": "GenesisBook",
+    "ZHCN": "创世之书",
+    "ENUS": "GenesisBook"
+  },
+  {
     "Name": "精炼页面",
     "ZHCN": "精炼",
     "ENUS": "Refining"
