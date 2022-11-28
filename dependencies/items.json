@@ -3812,7 +3812,7 @@
   {
     "ID": 2211,
     "Name": "裂变能源发电站",
-    "Description": "I微型聚变发电站",
+    "Description": "I裂变能源发电站",
     "IconPath": "Icons/ItemRecipe/fusion-power-station",
     "GridIndex": 2109,
     "StackSize": 50,

@@ -2465,6 +2465,21 @@
     "ENUS": "After setting up the <color=\"#FD965ECC\">Automatic Piler</color> on the conveyor belt, it can automatically integrate two consecutive cargos into one, which greatly improves the carrying capacity of the conveyor belt."
   },
   {
+    "Name": "I裂变能源发电站",
+    "ZHCN": "新一代的一体化快中子反应堆使用金属铀钚燃料、液态钠冷却池、废料电解精炼处理以及高度自动化技术，产生大量的电力的同时不需要考虑废料的处理。",
+    "ENUS": "The new generation of integrated fast reactors uses uranium-plutonium metal fuel, liquid sodium cooling pools, electrolytic refining of waste, and highly automated technology to generate large amounts of power without regard to waste disposal."
+  },
+  {
+    "Name": "T裂变发电站描述",
+    "ZHCN": "金属铀钚燃料、液态钠冷却池、废料电解精炼处理以及高度自动化技术的综合应用，使一体化快中子反应堆产生大量的电力的同时不需要考虑废料的处理。",
+    "ENUS": "The new generation of integrated fast reactors uses uranium-plutonium metal fuel, liquid sodium cooling pools, electrolytic refining of waste, and highly automated technology to generate large amounts of power without regard to waste disposal."
+  },
+  {
+    "Name": "T裂变发电站结果",
+    "ZHCN": "金属铀钚燃料、液态钠冷却池、废料电解精炼处理以及高度自动化技术的综合应用，使一体化快中子反应堆产生大量的电力的同时不需要考虑废料的处理。",
+    "ENUS": "The new generation of integrated fast reactors uses uranium-plutonium metal fuel, liquid sodium cooling pools, electrolytic refining of waste, and highly automated technology to generate large amounts of power without regard to waste disposal."
+  },
+  {
     "Name": "高分子化工结果",
     "ZHCN": "你解锁了高分子化工技术，现在可以合成更多种类的化工原料。",
     "ENUS": "You have unlocked Polymer Chemical Technology. A wider variety of chemicals can now be synthesized."

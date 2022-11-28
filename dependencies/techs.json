@@ -2041,8 +2041,8 @@
     "ID": 1416,
     "Name": "T裂变发电站",
     "IconPath": "Icons/Tech/1416",
-    "Desc": "微型核聚变发电描述",
-    "Conclusion": "微型核聚变发电结果",
+    "Desc": "T裂变发电站描述",
+    "Conclusion": "T裂变发电站结果",
     "Position": [
       25.0,
       -15.0
