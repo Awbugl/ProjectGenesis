@@ -24,7 +24,7 @@ using static ProjectGenesis.Utils.CopyModelUtils;
 
 namespace ProjectGenesis
 {
-    [BepInPlugin(MODGUID, "GenesisBook", "2.2.0")]
+    [BepInPlugin(MODGUID, MODNAME, VERSION)]
     [BepInDependency(DSPModSavePlugin.MODGUID)]
     [BepInDependency(CommonAPIPlugin.GUID)]
     [BepInDependency(LDBToolPlugin.MODGUID)]
@@ -36,7 +36,8 @@ namespace ProjectGenesis
     public class ProjectGenesis : BaseUnityPlugin, IModCanSave, IMultiplayerModWithSettings
     {
         public const string MODGUID = "org.LoShin.GenesisBook";
-        private const string VERSION = "2.2.0";
+        internal const string MODNAME = "GenesisBook";
+        internal const string VERSION = "2.2.2";
 
         // ReSharper disable once MemberCanBePrivate.Global
         internal static ManualLogSource logger;
@@ -70,6 +71,14 @@ namespace ProjectGenesis
                       };
 
             NebulaModAPI.RegisterPackets(executingAssembly);
+
+            NebulaModAPI.OnPlanetLoadRequest += planetId =>
+            {
+                NebulaModAPI.MultiplayerSession.Network.SendPacket(new MegaBuildingLoadRequest(planetId));
+            };
+
+            NebulaModAPI.OnPlanetLoadFinished += MegaBuildingDataProcessor.ProcessBytesLater;
+
             Harmony = new Harmony(MODGUID);
 
             foreach (var type in executingAssembly.GetTypes()) Harmony.PatchAll(type);

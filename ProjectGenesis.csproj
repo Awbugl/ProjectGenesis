@@ -93,6 +93,7 @@
     </ItemGroup>
     <ItemGroup>
         <Compile Include="src\Patches\BeltFixPatches.cs" />
+        <Compile Include="src\Patches\DispalyedNamePatch.cs" />
         <Compile Include="src\Patches\DisplayedTextPatches.cs" />
         <Compile Include="src\Patches\FluidColorPatches.cs" />
         <Compile Include="src\Patches\GridIndexExpandPatches.cs" />

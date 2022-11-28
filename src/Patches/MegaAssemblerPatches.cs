@@ -33,15 +33,12 @@ namespace ProjectGenesis.Patches
                 if (_slotdata.TryGetValue(id, out SlotData[] slotDatas))
                 {
                     slotDatas[slotId] = slotData;
-                    ProjectGenesis.logger.LogInfo($"Synced slot {slotId} for {id}");
                 }
                 else
                 {
-                    ProjectGenesis.logger.LogInfo($"{id} not found, creating new");
                     slotDatas = new SlotData[12];
                     slotDatas[slotId] = slotData;
                     _slotdata[id] = slotDatas;
-                    ProjectGenesis.logger.LogInfo($"Synced slot {slotId} for {id}");
                 }
             }
         }
@@ -998,6 +995,48 @@ namespace ProjectGenesis.Patches
         {
             _slotdata = new ConcurrentDictionary<(int, int), SlotData[]>();
             TmpSandCount = 0;
+        }
+
+        public static void ExportPlanetData(int planetId, BinaryWriter w)
+        {
+            KeyValuePair<(int, int), SlotData[]>[] datas = _slotdata.Where(pair => pair.Key.Item1 == planetId).ToArray();
+
+            w.Write(datas.Length);
+            w.Write(planetId);
+            foreach (KeyValuePair<(int, int), SlotData[]> pair in datas)
+            {
+                w.Write(pair.Key.Item2);
+                w.Write(pair.Value.Length);
+                for (var i = 0; i < pair.Value.Length; i++)
+                {
+                    w.Write((int)pair.Value[i].dir);
+                    w.Write(pair.Value[i].beltId);
+                    w.Write(pair.Value[i].storageIdx);
+                    w.Write(pair.Value[i].counter);
+                }
+            }
+        }
+
+        public static void ImportPlanetData(BinaryReader r)
+        {
+            var count = r.ReadInt32();
+            var planetId = r.ReadInt32();
+
+            for (var j = 0; j < count; j++)
+            {
+                var entityId = r.ReadInt32();
+                var length = r.ReadInt32();
+                var datas = new SlotData[length];
+                for (var i = 0; i < length; i++)
+                {
+                    datas[i] = new SlotData
+                               {
+                                   dir = (IODir)r.ReadInt32(), beltId = r.ReadInt32(), storageIdx = r.ReadInt32(), counter = r.ReadInt32()
+                               };
+                }
+
+                _slotdata[(planetId, entityId)] = datas;
+            }
         }
 
         #endregion
