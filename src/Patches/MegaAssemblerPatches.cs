@@ -33,12 +33,15 @@ namespace ProjectGenesis.Patches
                 if (_slotdata.TryGetValue(id, out SlotData[] slotDatas))
                 {
                     slotDatas[slotId] = slotData;
+                    ProjectGenesis.logger.LogInfo($"Synced slot {slotId} for {id}");
                 }
                 else
                 {
+                    ProjectGenesis.logger.LogInfo($"{id} not found, creating new");
                     slotDatas = new SlotData[12];
                     slotDatas[slotId] = slotData;
                     _slotdata[id] = slotDatas;
+                    ProjectGenesis.logger.LogInfo($"Synced slot {slotId} for {id}");
                 }
             }
         }
@@ -865,6 +868,13 @@ namespace ProjectGenesis.Patches
             return matcher.InstructionEnumeration();
         }
 
+        // prevent a packet flood when the filter on a belt connecting.
+        // special thanks for https://github.com/hubastard/nebula/tree/master/NebulaPatcher/Patches/Transpilers/UIBeltBuildTip_Transpiler.cs
+
+        private static (int, int) LastSetId;
+        private static int LastSlotId;
+        private static int LastSelectedIndex;
+
         public static void SetFilterToEntity_Patch(
             PlanetFactory factory,
             EntityData entityData,
@@ -878,9 +888,25 @@ namespace ProjectGenesis.Patches
             {
                 SlotData[] slotDatas = GetSlots(factory.planetId, outputEntityId);
                 slotDatas[outputSlotId].storageIdx = selectedIndex;
-                SyncSlotData.Sync(factory.planetId, outputSlotId, outputEntityId, slotDatas[outputSlotId]);
+
                 entityData.stationId = 0;
+
+                if (!IsChangeCached((factory.planetId, outputEntityId), outputSlotId, selectedIndex))
+                {
+                    SyncSlotData.Sync(factory.planetId, outputSlotId, outputEntityId, slotDatas[outputSlotId]);
+                    CacheChange((factory.planetId, outputEntityId), outputSlotId, selectedIndex);
+                }
             }
+        }
+
+        private static bool IsChangeCached((int, int) id, int slotId, int selectedIndex)
+            => LastSetId == id && LastSlotId == slotId && LastSelectedIndex == selectedIndex;
+
+        private static void CacheChange((int, int) id, int slotId, int selectedIndex)
+        {
+            LastSetId = id;
+            LastSlotId = slotId;
+            LastSelectedIndex = selectedIndex;
         }
 
         #endregion

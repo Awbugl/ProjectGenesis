@@ -1,4 +1,3 @@
-using System;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -34,19 +33,18 @@ namespace ProjectGenesis
 
     // ReSharper disable ClassNeverInstantiated.Global
     // ReSharper disable MemberCanBeInternal
-    public class ProjectGenesis : BaseUnityPlugin, IModCanSave, IMultiplayerMod
+    public class ProjectGenesis : BaseUnityPlugin, IModCanSave, IMultiplayerModWithSettings
     {
         public const string MODGUID = "org.LoShin.GenesisBook";
         private const string VERSION = "2.2.0";
 
-        private static ManualLogSource logger;
+        // ReSharper disable once MemberCanBePrivate.Global
+        internal static ManualLogSource logger;
 
         //无限堆叠开关(私货)
         private readonly bool StackSizeButton = false;
 
         private int[] TableID;
-
-        private static ProjectGenesis Instance { get; set; }
 
         private Harmony Harmony { get; set; }
 
@@ -54,7 +52,6 @@ namespace ProjectGenesis
 
         public void Awake()
         {
-            Instance = this;
             logger = Logger;
             logger.Log(LogLevel.Info, "GenesisBook Awake");
 
@@ -71,7 +68,7 @@ namespace ProjectGenesis
                           TabSystem.RegisterTab("org.LoShin.GenesisBook:org.LoShin.GenesisBookTab2",
                                                 new TabData("化工页面".TranslateFromJson(), "Assets/texpack/化工科技"))
                       };
-            
+
             NebulaModAPI.RegisterPackets(executingAssembly);
             Harmony = new Harmony(MODGUID);
 
@@ -218,25 +215,6 @@ namespace ProjectGenesis
         #endregion
 
         #region IMultiplayerMod
-
-        internal static byte[] Export()
-        {
-            if (Instance != null)
-                using (var p = NebulaModAPI.GetBinaryWriter())
-                {
-                    Instance.Export(p.BinaryWriter);
-                    return p.CloseAndGetBytes();
-                }
-
-            return Array.Empty<byte>();
-        }
-
-        internal static void Import(byte[] bytes)
-        {
-            if (Instance != null)
-                using (var p = NebulaModAPI.GetBinaryReader(bytes))
-                    Instance.Import(p.BinaryReader);
-        }
 
         public bool CheckVersion(string hostVersion, string clientVersion) => hostVersion.Equals(clientVersion);
 
