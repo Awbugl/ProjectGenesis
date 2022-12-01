@@ -93,7 +93,7 @@ namespace ProjectGenesis.Patches
                     break;
 
                 case 1508: // (int)科技.任务完成
-                    if (Localization.isCJK) __result = "欢迎加入创世之书讨论群:991895539";
+                    if (Localization.isCJK) __result = "欢迎加入创世之书讨论群991895539";
                     break;
 
                 case 1513:
