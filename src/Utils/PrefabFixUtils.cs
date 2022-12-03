@@ -38,10 +38,7 @@ namespace ProjectGenesis.Utils
             itemProtos.Select(物品.原油采集站).prefabDesc.minerPeriod = 300000;
             itemProtos.Select(物品.水泵).prefabDesc.minerPeriod = 360000;
 
-            List<int> waterTypes = itemProtos.Select(物品.水泵).prefabDesc.waterTypes.ToList();
-            waterTypes.Add(7017);
-            waterTypes.Add(7018);
-            itemProtos.Select(物品.水泵).prefabDesc.waterTypes = waterTypes.ToArray();
+            itemProtos.Select(物品.水泵).prefabDesc.waterTypes = new[] { 1000, 1116, 7017, 7018 };
 
             itemProtos.Select(物品.电磁轨道弹射器).prefabDesc.ejectorChargeFrame = 20;
             itemProtos.Select(物品.电磁轨道弹射器).prefabDesc.ejectorColdFrame = 10;
@@ -117,6 +114,7 @@ namespace ProjectGenesis.Utils
             var testCraftingTableModel6 = models.Select(411);
 
             var antiMatterModel = models.Select(407);
+            var megapumper = models.Select(412);
 
             testCraftingTableModel.prefabDesc.isAssembler = true;
             testCraftingTableModel.prefabDesc.assemblerRecipeType = (ERecipeType_1)ERecipeType.Assemble;
@@ -182,7 +180,7 @@ namespace ProjectGenesis.Utils
             testCraftingTableModel5.prefabDesc.stationMaxShipCount = 0;
             testCraftingTableModel5.prefabDesc.idleEnergyPerTick = 200000;
             testCraftingTableModel5.prefabDesc.workEnergyPerTick = 1000000;
-            
+
             testCraftingTableModel6.prefabDesc.isAssembler = true;
             testCraftingTableModel6.prefabDesc.assemblerRecipeType = (ERecipeType_1)ERecipeType.Particle;
             testCraftingTableModel6.prefabDesc.assemblerSpeed = MegaAssemblerPatches.MegaAssemblerSpeed;
@@ -202,6 +200,20 @@ namespace ProjectGenesis.Utils
             antiMatterModel.prefabDesc.fuelMask = 4;
             antiMatterModel.prefabDesc.genEnergyPerTick = 1200000000;
             antiMatterModel.prefabDesc.useFuelPerTick = 1200000000;
+
+            megapumper.prefabDesc.isFractionator = false;
+            megapumper.prefabDesc.assemblerRecipeType = ERecipeType_1.None;
+            megapumper.prefabDesc.assemblerSpeed = 0;
+            megapumper.prefabDesc.minerPeriod = 72000;
+            megapumper.prefabDesc.minerType = EMinerType.Water;
+            megapumper.prefabDesc.minimapType = 2;
+
+            megapumper.prefabDesc.waterPoints = new[] { Vector3.zero };
+            megapumper.prefabDesc.waterTypes = new[] { 1000, 1116, 7017, 7018 };
+
+            List<Pose> poses = megapumper.prefabDesc.portPoses.ToList();
+            poses.Add(new Pose(new Vector3(0, 0, -1.4f), Quaternion.Euler(0, 180, 0)));
+            megapumper.prefabDesc.portPoses = poses.ToArray();
         }
     }
 }

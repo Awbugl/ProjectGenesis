@@ -1560,7 +1560,8 @@
     ],
     "HashNeeded": 360000,
     "UnlockRecipes": [
-      119
+      119,
+      418
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],

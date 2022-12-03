@@ -193,6 +193,7 @@ namespace ProjectGenesis
             LDBTool.SetBuildBar(7, 8, 6265);
             LDBTool.SetBuildBar(7, 9, 6275);
             LDBTool.SetBuildBar(7, 10, 6276);
+            LDBTool.SetBuildBar(2, 5, 6266);
 
             ItemProto.InitFluids();
             ItemProto.InitItemIds();

@@ -13,7 +13,6 @@ namespace ProjectGenesis.Patches
     /// </summary>
 
     //Original author: xiaoye97, modified heavily.
-    [HarmonyPatch]
     public static class BeltFixPatches
     {
         [HarmonyPatch(typeof(CargoTraffic), "AlterBeltRenderer")]

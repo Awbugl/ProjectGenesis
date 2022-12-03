@@ -23,7 +23,7 @@ namespace ProjectGenesis.Utils
             LDBTool.PreAddProto(testCraftingTableModel4);
             var testCraftingTableModel5 = CopyModelProto(49, 410, new Color(0.3216F, 0.8157F, 0.09020F));
             LDBTool.PreAddProto(testCraftingTableModel5);
-            var testCraftingTableModel6 = CopyModelProto(49, 411, new Color(0.3059F,0.2196F,0.4941F));
+            var testCraftingTableModel6 = CopyModelProto(49, 411, new Color(0.3059F, 0.2196F, 0.4941F));
             LDBTool.PreAddProto(testCraftingTableModel6);
             var antiMatterModel = CopyModelProto(118, 407, Color.HSVToRGB(0.5985f, 0.7333f, 0.2353f));
             LDBTool.PreAddProto(antiMatterModel);
@@ -31,6 +31,8 @@ namespace ProjectGenesis.Utils
             LDBTool.PreAddProto(assembleModel);
             var circleModel = CopyModelProto(69, 409, Color.grey);
             LDBTool.PreAddProto(circleModel);
+            var megapumper = CopyModelProto(119, 412, Color.HSVToRGB(0.6174f, 0.6842f, 0.9686f));
+            LDBTool.PreAddProto(megapumper);
         }
 
         private static ModelProto CopyModelProto(int oriId, int id, Color color)

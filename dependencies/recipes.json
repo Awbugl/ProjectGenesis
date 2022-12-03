@@ -3006,7 +3006,7 @@
       1
     ],
     "Explicit": false,
-    "Handcraft": false,
+    "Handcraft": true,
     "NonProductive": false
   },
   {
@@ -3092,7 +3092,7 @@
       1
     ],
     "Explicit": false,
-    "Handcraft": false,
+    "Handcraft": true,
     "NonProductive": false
   },
   {
@@ -5654,7 +5654,7 @@
       1
     ],
     "Explicit": false,
-    "Handcraft": false,
+    "Handcraft": true,
     "NonProductive": false
   },
   {
@@ -6261,6 +6261,36 @@
     ],
     "Output": [
       6265
+    ],
+    "OutCounts": [
+      1
+    ],
+    "Explicit": false,
+    "Handcraft": false,
+    "NonProductive": false
+  },
+  {
+    "ID": 418,
+    "Name": "大抽水机",
+    "Description": "",
+    "IconPath": "Icons/ItemRecipe/fractionator",
+    "Type": 4,
+    "GridIndex": 2313,
+    "Time": 1200,
+    "Input": [
+      6503,
+      1107,
+      7706,
+      7802
+    ],
+    "InCounts": [
+      10,
+      30,
+      10,
+      10
+    ],
+    "Output": [
+      6266
     ],
     "OutCounts": [
       1

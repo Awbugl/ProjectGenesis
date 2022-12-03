@@ -2705,6 +2705,16 @@
     "ENUS": "An alloy with tungsten added. In the field of electromagnetic force, it is the king.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
+    "Name": "大抽水机",
+    "ZHCN": "聚束液体汲取设施",
+    "ENUS": "Photon beam liquid extraction facility"
+  },
+  {
+    "Name": "I大抽水机",
+    "ZHCN": "利用光子聚束技术，快速汲取大量液体。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Using photon beam technology, quickly extract large amounts of liquid.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+  },
+  {
     "Name": "氯苯水解",
     "ZHCN": "氯苯水解",
     "ENUS": "Chlorobenzene hydrolysis"

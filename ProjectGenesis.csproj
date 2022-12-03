@@ -98,6 +98,7 @@
         <Compile Include="src\Patches\FluidColorPatches.cs" />
         <Compile Include="src\Patches\GridIndexExpandPatches.cs" />
         <Compile Include="src\Patches\MegaAssemblerPatches.cs" />
+        <Compile Include="src\Patches\MegaPumpPatches.cs" />
         <Compile Include="src\Patches\MultiProductionPatches.cs" />
         <Compile Include="src\Patches\OceanDischargePatches.cs" />
         <Compile Include="src\Patches\UIPatches.cs" />
