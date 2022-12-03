@@ -37,7 +37,7 @@ namespace ProjectGenesis
     {
         public const string MODGUID = "org.LoShin.GenesisBook";
         internal const string MODNAME = "GenesisBook";
-        internal const string VERSION = "2.2.2";
+        internal const string VERSION = "2.2.3";
 
         // ReSharper disable once MemberCanBePrivate.Global
         internal static ManualLogSource logger;

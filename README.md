@@ -14,6 +14,12 @@ Reconstruct "Real Universe". Then leave a "GenesisBook".
 
 ### 最近更新介绍 | Recent update
 
+- v2.2.3
+  + 添加巨型抽水站
+  + 调整允许了手动制造部分建筑
+  + 修复了一部分翻译错误
+
+
 - v2.2.2
   + 修复了巨型建筑与联机MOD的兼容问题
   + 修改了部分与实际不匹配的物品介绍、科技描述
@@ -23,6 +29,12 @@ Reconstruct "Real Universe". Then leave a "GenesisBook".
 - v2.2.1
   + 修复了图标选择界面不显示详细信息的Bug
   + 修改了部分与实际不匹配的物品介绍、科技描述
+
+
+- v2.2.3
+  + Add Mega Pump
+  + Adjust some buildings to allow product manually
+  + Fix some translation errors
 
 
 - v2.2.2
@@ -112,6 +124,12 @@ Reconstruct "Real Universe". Then leave a "GenesisBook".
 
 <details>
   <summary>展开查看</summary>
+
+
+- v2.2.3
+  + 添加巨型抽水站
+  + 调整允许了手动制造部分建筑
+  + 修复了一部分翻译错误
 
 
 - v2.2.2
@@ -286,6 +304,12 @@ free to communicate with us.
 
 <details>
   <summary>Details</summary>
+
+
+- v2.2.3
+  + Add Mega Pump
+  + Adjust some buildings to allow product manually
+  + Fix some translation errors
 
 
 - v2.2.2
