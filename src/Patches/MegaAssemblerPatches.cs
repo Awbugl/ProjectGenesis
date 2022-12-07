@@ -479,11 +479,14 @@ namespace ProjectGenesis.Patches
 
             // 化工技术革新效果
             if (GameMain.history.TechUnlocked(1513))
-                if (__instance.recipeType == (ERecipeType_1)Utils.ERecipeType.Chemical ||
-                    __instance.recipeType == (ERecipeType_1)Utils.ERecipeType.Refine ||
-                    __instance.recipeType == (ERecipeType_1)Utils.ERecipeType.高分子化工)
+            {
+                var instanceRecipeType = __instance.recipeType;
+                if (instanceRecipeType == (ERecipeType_1)Utils.ERecipeType.Chemical ||
+                    instanceRecipeType == (ERecipeType_1)Utils.ERecipeType.Refine ||
+                    instanceRecipeType == (ERecipeType_1)Utils.ERecipeType.高分子化工)
                     if (__instance.speed == 20000)
                         __instance.speed = 40000;
+            }
 
             // 巨型建筑效果
             if (__instance.speed >= TrashSpeed)
@@ -525,6 +528,7 @@ namespace ProjectGenesis.Patches
                             var index2 = slotdata[index1].storageIdx - 1;
                             var itemId = 0;
                             if (index2 >= 0)
+                            {
                                 if (index2 < __instance.products.Length)
                                 {
                                     itemId = __instance.products[index2];
@@ -534,9 +538,26 @@ namespace ProjectGenesis.Patches
                                         if (cargoPath.TryInsertItemAtHeadAndFillBlank(itemId, (byte)num2, 0)) __instance.produced[index2] -= num2;
                                     }
                                 }
+                                else
+                                {
+                                    var index3 = index2 - __instance.products.Length;
+                                    if (index3 < __instance.needs.Length)
+                                    {
+                                        itemId = __instance.needs[index3];
+                                        if (itemId > 0 && __instance.served[index3] > 0)
+                                        {
+                                            var num2 = __instance.served[index3] < maxPilerCount ? __instance.served[index3] : maxPilerCount;
+                                            if (cargoPath.TryInsertItemAtHeadAndFillBlank(itemId, (byte)num2, 0)) __instance.served[index3] -= num2;
+                                        }
+                                    }
+                                }
+                            }
 
-                            signPool[entityId].iconType = 1U;
-                            signPool[entityId].iconId0 = (uint)itemId;
+                            if (itemId > 0)
+                            {
+                                signPool[entityId].iconType = 1U;
+                                signPool[entityId].iconId0 = (uint)itemId;
+                            }
                         }
                     }
                 }
@@ -600,15 +621,25 @@ namespace ProjectGenesis.Patches
                             else
                             {
                                 var itemId = cargoPath.TryPickItemAtRear(__instance.needs, out var needIdx, out var stack, out var inc);
-                                if (needIdx >= 0)
+
+                                if (needIdx >= 0 && itemId > 0 && __instance.needs[needIdx] == itemId)
                                 {
-                                    if (itemId > 0 && __instance.needs[needIdx] == itemId)
+                                    __instance.served[needIdx] += stack;
+                                    __instance.incServed[needIdx] += inc;
+                                }
+                                
+                                itemId = factory.cargoTraffic.TryPickItemAtRear(slotdata[index].beltId, 0, __instance.products, out stack, out _);
+
+                                for (var i = 0; i < __instance.products.Length; i++)
+                                {
+                                    if(itemId > 0 && __instance.products[i] == itemId && __instance.produced[i] < 50)
                                     {
-                                        __instance.served[needIdx] += stack;
-                                        __instance.incServed[needIdx] += inc;
+                                        __instance.produced[i] += stack;
+                                        break;
                                     }
                                 }
-                                else if (itemId > 0)
+                                
+                                if (itemId > 0)
                                 {
                                     signPool[entityId].iconType = 1U;
                                     signPool[entityId].iconId0 = (uint)itemId;
@@ -753,7 +784,7 @@ namespace ProjectGenesis.Patches
             matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_3), new CodeInstruction(OpCodes.Ldfld, EntityData_AssemblerId_Field),
                                      new CodeInstruction(OpCodes.Ldc_I4_0), new CodeInstruction(OpCodes.Ble, label),
                                      new CodeInstruction(OpCodes.Ldarg_0), new CodeInstruction(OpCodes.Ldloc_0), new CodeInstruction(OpCodes.Ldloc_3),
-                                     new CodeInstruction(OpCodes.Ldarg_0), new CodeInstruction(OpCodes.Ldfld, UIBeltBuildTip_FilterItems_Field),
+                                     new CodeInstruction(OpCodes.Ldarg_0), new CodeInstruction(OpCodes.Ldflda, UIBeltBuildTip_FilterItems_Field),
                                      new CodeInstruction(OpCodes.Ldarg_1), new CodeInstruction(OpCodes.Ldarg_2),
                                      new CodeInstruction(OpCodes.Call, MegaAssembler_SetOutputEntity_Patch_Method),
                                      new CodeInstruction(OpCodes.Stfld, UIBeltBuildTip_SelectedIndex_Field));
@@ -777,7 +808,7 @@ namespace ProjectGenesis.Patches
             matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_1), new CodeInstruction(OpCodes.Ldfld, EntityData_AssemblerId_Field),
                                      new CodeInstruction(OpCodes.Ldc_I4_0), new CodeInstruction(OpCodes.Ble, label),
                                      new CodeInstruction(OpCodes.Ldarg_0), new CodeInstruction(OpCodes.Ldloc_0), new CodeInstruction(OpCodes.Ldloc_1),
-                                     new CodeInstruction(OpCodes.Ldarg_0), new CodeInstruction(OpCodes.Ldfld, UISlotPicker_FilterItems_Field),
+                                     new CodeInstruction(OpCodes.Ldarg_0), new CodeInstruction(OpCodes.Ldflda, UISlotPicker_FilterItems_Field),
                                      new CodeInstruction(OpCodes.Ldarg_1), new CodeInstruction(OpCodes.Ldarg_2),
                                      new CodeInstruction(OpCodes.Call, MegaAssembler_SetOutputEntity_Patch_Method),
                                      new CodeInstruction(OpCodes.Stfld, UISlotPicker_SelectedIndex_Field));
@@ -788,7 +819,7 @@ namespace ProjectGenesis.Patches
         public static int SetOutputEntity_Patch(
             PlanetFactory factory,
             EntityData entityData,
-            List<int> filterItems,
+            ref List<int> filterItems,
             int entityId,
             int slot)
         {
@@ -796,18 +827,23 @@ namespace ProjectGenesis.Patches
 
             if (assemblerComponent.speed >= TrashSpeed)
             {
-                var assemblerComponentProducts = assemblerComponent.products;
-                if (assemblerComponentProducts != null && assemblerComponentProducts.Length > 0)
-                    filterItems.AddRange(assemblerComponentProducts);
+                var recipe = LDB.recipes.Select(assemblerComponent.recipeId);
+
+                if (recipe == null)
+                {
+                    filterItems.AddRange(Enumerable.Repeat(0, 6));
+                }
                 else
-                    filterItems.AddRange(Enumerable.Repeat(0, 4));
+                {
+                    filterItems.AddRange(recipe.Results);
+                    filterItems.AddRange(recipe.Items);
+                    filterItems = filterItems.Distinct().ToList();
+                }
 
                 entityData.stationId = 0;
 
-                if (slot >= 0 && slot < 12)
-                    return GetSlots(factory.planetId, entityId)[slot].storageIdx;
-                else
-                    Assert.CannotBeReached();
+                if (slot >= 0 && slot < 12) return GetSlots(factory.planetId, entityId)[slot].storageIdx;
+                Assert.CannotBeReached();
 
                 return -1;
             }

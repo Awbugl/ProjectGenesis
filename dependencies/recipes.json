@@ -6274,7 +6274,7 @@
     "Name": "大抽水机",
     "Description": "",
     "IconPath": "Icons/ItemRecipe/fractionator",
-    "Type": 4,
+    "Type": 10,
     "GridIndex": 2313,
     "Time": 1200,
     "Input": [

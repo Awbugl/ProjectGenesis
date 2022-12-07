@@ -207,7 +207,8 @@ namespace ProjectGenesis.Utils
             megapumper.prefabDesc.minerPeriod = 72000;
             megapumper.prefabDesc.minerType = EMinerType.Water;
             megapumper.prefabDesc.minimapType = 2;
-
+            megapumper.prefabDesc.idleEnergyPerTick = 10000;
+            megapumper.prefabDesc.workEnergyPerTick = 25000;
             megapumper.prefabDesc.waterPoints = new[] { Vector3.zero };
             megapumper.prefabDesc.waterTypes = new[] { 1000, 1116, 7017, 7018 };
 
