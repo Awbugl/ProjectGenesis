@@ -1,4 +1,3 @@
-
 ![img.png](https://webapi.awbugl.top/dsp-genesisbook/profile.png)
 
 重构“真实宇宙”，撰写“创世之书”。
@@ -14,37 +13,25 @@ Reconstruct "Real Universe". Then leave a "GenesisBook".
 
 ### 最近更新介绍 | Recent update
 
-- v2.2.3
-  + 添加巨型抽水站
-  + 调整允许了手动制造部分建筑
-  + 修复了一部分翻译错误
-
-
-- v2.2.2
-  + 修复了巨型建筑与联机MOD的兼容问题
-  + 修改了部分与实际不匹配的物品介绍、科技描述
-  + 调整了部分科技的需求
-
-
-- v2.2.1
-  + 修复了图标选择界面不显示详细信息的Bug
-  + 修改了部分与实际不匹配的物品介绍、科技描述
-
+- v2.2.4
+    + 调整了巨型抽水站的耗电与制作类型
+    + 调整了氧的热值为900KJ
+    + 允许巨型建筑输出原料
 
 - v2.2.3
-  + Add Mega Pump
-  + Adjust some buildings to allow product manually
-  + Fix some translation errors
+    + 添加巨型抽水站
+    + 调整部分建筑的手动制造权限
+    + 修复了一部分翻译错误
 
+- v2.2.4
+    + Adjust the power consumption and production type of the Mega Pump
+    + Adjust the heat value of oxygen to 900KJ
+    + Allow Mega Buildings to output raw materials
 
-- v2.2.2
-  + Fixed the compatibility issues of the giant building with the online mod.
-  + Modified some item descriptions and technology descriptions that do not match the actual ones
-  + Adjusted the requirements of some technologies
-
-- v2.2.1
-  + Fixed the bug that the icon selection interface does not show detailed information
-  + Modified some item descriptions and technology descriptions that do not match the actual ones
+- v2.2.3
+    + Add Mega Pump
+    + Adjust some buildings to allow product manually
+    + Fix some translation errors
 
 ----
 
@@ -125,22 +112,27 @@ Reconstruct "Real Universe". Then leave a "GenesisBook".
 <details>
   <summary>展开查看</summary>
 
+- v2.2.4
+    + 调整了巨型抽水站的耗电与制作类型
+    + 调整了氧的热值为900KJ
+    + 允许巨型建筑输出原料
+
 
 - v2.2.3
-  + 添加巨型抽水站
-  + 调整允许了手动制造部分建筑
-  + 修复了一部分翻译错误
+    + 添加巨型抽水站
+    + 调整部分建筑的手动制造权限
+    + 修复了一部分翻译错误
 
 
 - v2.2.2
-  + 修复了巨型建筑与联机MOD的兼容问题
-  + 修改了部分与实际不匹配的物品介绍、科技描述
-  + 调整了部分科技的需求
+    + 修复了巨型建筑与联机MOD的兼容问题
+    + 修改了部分与实际不匹配的物品介绍、科技描述
+    + 调整了部分科技的需求
 
 
 - v2.2.1
-  + 修复了图标选择界面不显示详细信息的Bug
-  + 修改了部分与实际不匹配的物品介绍、科技描述
+    + 修复了图标选择界面不显示详细信息的Bug
+    + 修改了部分与实际不匹配的物品介绍、科技描述
 
 
 - v2.2.0
@@ -305,22 +297,27 @@ free to communicate with us.
 <details>
   <summary>Details</summary>
 
+- v2.2.4
+    + Adjust the power consumption and production type of the Mega Pump
+    + Adjust the heat value of oxygen to 900KJ
+    + Allow Mega Buildings to output raw materials
+
 
 - v2.2.3
-  + Add Mega Pump
-  + Adjust some buildings to allow product manually
-  + Fix some translation errors
+    + Add Mega Pump
+    + Adjust some buildings to allow product manually
+    + Fix some translation errors
 
 
 - v2.2.2
-  + Fixed the compatibility issues of the giant building with the online mod.
-  + Modified some item descriptions and technology descriptions that do not match the actual ones
-  + Adjusted the requirements of some technologies
+    + Fixed the compatibility issues of the giant building with the online mod.
+    + Modified some item descriptions and technology descriptions that do not match the actual ones
+    + Adjusted the requirements of some technologies
 
 
 - v2.2.1
-  + Fixed the bug that the icon selection interface does not show detailed information
-  + Modified some item descriptions and technology descriptions that do not match the actual ones
+    + Fixed the bug that the icon selection interface does not show detailed information
+    + Modified some item descriptions and technology descriptions that do not match the actual ones
 
 
 - v2.2.0
