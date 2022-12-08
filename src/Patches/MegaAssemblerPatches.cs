@@ -521,8 +521,8 @@ namespace ProjectGenesis.Patches
                     }
                     else
                     {
-                        var entityId = traffic.beltPool[slotdata[index1].beltId].entityId;
-                        var cargoPath = traffic.GetCargoPath(traffic.beltPool[slotdata[index1].beltId].segPathId);
+                        var beltComponent = traffic.beltPool[slotdata[index1].beltId];
+                        var cargoPath = traffic.GetCargoPath(beltComponent.segPathId);
                         if (cargoPath != null)
                         {
                             var index2 = slotdata[index1].storageIdx - 1;
@@ -547,7 +547,7 @@ namespace ProjectGenesis.Patches
                                         if (itemId > 0 && __instance.served[index3] > 0)
                                         {
                                             var num2 = __instance.served[index3] < maxPilerCount ? __instance.served[index3] : maxPilerCount;
-                                            if (cargoPath.TryInsertItemAtHeadAndFillBlank(itemId, (byte)num2, 0)) __instance.served[index3] -= num2;
+                                            if (cargoPath.TryInsertItemAtHeadAndFillBlank(itemId, (byte)num2, (byte)__instance.incServed[index3])) __instance.served[index3] -= num2;
                                         }
                                     }
                                 }
@@ -555,6 +555,7 @@ namespace ProjectGenesis.Patches
 
                             if (itemId > 0)
                             {
+                                var entityId = beltComponent.entityId;
                                 signPool[entityId].iconType = 1U;
                                 signPool[entityId].iconId0 = (uint)itemId;
                             }
@@ -703,12 +704,13 @@ namespace ProjectGenesis.Patches
                 // ReSharper disable once ForCanBeConvertedToForeach
                 for (var index1 = 0; index1 < dataArray.Length; ++index1)
                 {
-                    if (dataArray[index1].GridIndex >= 1101 && history.RecipeUnlocked(dataArray[index1].ID))
+                    var gridIndex = dataArray[index1].GridIndex;
+                    if (gridIndex >= 1101 && history.RecipeUnlocked(dataArray[index1].ID))
                         if (___filter == ERecipeType_1.None || ContainsRecipeType(___filter, dataArray[index1].Type))
                         {
-                            var num1 = dataArray[index1].GridIndex / 1000;
-                            var num2 = (dataArray[index1].GridIndex - num1 * 1000) / 100 - 1;
-                            var num3 = dataArray[index1].GridIndex % 100 - 1;
+                            var num1 = gridIndex / 1000;
+                            var num2 = (gridIndex - num1 * 1000) / 100 - 1;
+                            var num3 = gridIndex % 100 - 1;
                             if (num2 >= 0 && num3 >= 0 && num2 < 7 && num3 < 17)
                             {
                                 var index2 = num2 * 17 + num3;

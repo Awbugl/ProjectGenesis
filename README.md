@@ -13,25 +13,24 @@ Reconstruct "Real Universe". Then leave a "GenesisBook".
 
 ### 最近更新介绍 | Recent update
 
+- v2.2.5
+    + 修复巨型建筑输出的原料增产点数消失的Bug
+
+
 - v2.2.4
     + 调整了巨型抽水站的耗电与制作类型
     + 调整了氧的热值为900KJ
     + 允许巨型建筑输出原料
 
-- v2.2.3
-    + 添加巨型抽水站
-    + 调整部分建筑的手动制造权限
-    + 修复了一部分翻译错误
+
+- v2.2.5
+    + Fix a bug that causes the Mega Buildings raw material output point disappear
+
 
 - v2.2.4
     + Adjust the power consumption and production type of the Mega Pump
     + Adjust the heat value of oxygen to 900KJ
     + Allow Mega Buildings to output raw materials
-
-- v2.2.3
-    + Add Mega Pump
-    + Adjust some buildings to allow product manually
-    + Fix some translation errors
 
 ----
 
@@ -111,6 +110,10 @@ Reconstruct "Real Universe". Then leave a "GenesisBook".
 
 <details>
   <summary>展开查看</summary>
+
+- v2.2.5
+    + 修复巨型建筑输出的原料增产点数消失的Bug
+
 
 - v2.2.4
     + 调整了巨型抽水站的耗电与制作类型
@@ -296,6 +299,10 @@ free to communicate with us.
 
 <details>
   <summary>Details</summary>
+
+- v2.2.5
+    + Fix a bug that causes the Mega Buildings raw material output point disappear
+
 
 - v2.2.4
     + Adjust the power consumption and production type of the Mega Pump
