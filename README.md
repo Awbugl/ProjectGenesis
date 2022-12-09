@@ -13,24 +13,26 @@ Reconstruct "Real Universe". Then leave a "GenesisBook".
 
 ### 最近更新介绍 | Recent update
 
+
+- v2.2.6
+  + 修复巨型建筑在停止工作时接受的产物消失的Bug
+  + 修改巨型建筑的原料传送带优先级为优先输出
+  + 允许巨型建筑在停止工作时接受/输出物品
+
+
 - v2.2.5
     + 修复巨型建筑输出的原料增产点数消失的Bug
 
 
-- v2.2.4
-    + 调整了巨型抽水站的耗电与制作类型
-    + 调整了氧的热值为900KJ
-    + 允许巨型建筑输出原料
+- v2.2.6
+  + Fix the bug causes the items received disappears when Mega Buildings stops working 
+  + Modify the Mega Building's material conveyor belt priority to output first
+  + Allow Mega Buildings to receive / output items when they stop working
 
 
 - v2.2.5
     + Fix a bug that causes the Mega Buildings raw material output point disappear
 
-
-- v2.2.4
-    + Adjust the power consumption and production type of the Mega Pump
-    + Adjust the heat value of oxygen to 900KJ
-    + Allow Mega Buildings to output raw materials
 
 ----
 
@@ -110,6 +112,13 @@ Reconstruct "Real Universe". Then leave a "GenesisBook".
 
 <details>
   <summary>展开查看</summary>
+
+
+- v2.2.6
+  + 修复巨型建筑在停止工作时接受的产物消失的Bug
+  + 修改巨型建筑的原料传送带优先级为优先输出
+  + 允许巨型建筑在停止工作时接受/输出物品
+
 
 - v2.2.5
     + 修复巨型建筑输出的原料增产点数消失的Bug
@@ -299,6 +308,13 @@ free to communicate with us.
 
 <details>
   <summary>Details</summary>
+
+
+- v2.2.6
+  + Fix the bug causes the items received disappears when Mega Buildings stops working
+  + Modify the Mega Building's material conveyor belt priority to output first
+  + Allow Mega Buildings to receive / output items when they stop working
+
 
 - v2.2.5
     + Fix a bug that causes the Mega Buildings raw material output point disappear
