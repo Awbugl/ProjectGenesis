@@ -475,19 +475,6 @@ namespace ProjectGenesis.Patches
             FactorySystem factorySystem,
             float power)
         {
-            if (power < 0.1f) return;
-
-            // 化工技术革新效果
-            if (GameMain.history.TechUnlocked(1513))
-            {
-                var instanceRecipeType = __instance.recipeType;
-                if (instanceRecipeType == (ERecipeType_1)Utils.ERecipeType.Chemical ||
-                    instanceRecipeType == (ERecipeType_1)Utils.ERecipeType.Refine ||
-                    instanceRecipeType == (ERecipeType_1)Utils.ERecipeType.高分子化工)
-                    if (__instance.speed == 20000)
-                        __instance.speed = 40000;
-            }
-
             // 巨型建筑效果
             if (__instance.speed >= TrashSpeed)
             {
@@ -499,8 +486,21 @@ namespace ProjectGenesis.Patches
 
                 var stationPilerLevel = GameMain.history.stationPilerLevel;
 
-                UpdateInputSlots(ref __instance, factory, cargoTraffic, slotdata, entitySignPool);
                 UpdateOutputSlots(ref __instance, cargoTraffic, slotdata, entitySignPool, stationPilerLevel);
+                UpdateInputSlots(ref __instance, factory, cargoTraffic, slotdata, entitySignPool);
+            }
+
+            if (power < 0.1f) return;
+
+            // 化工技术革新效果
+            if (GameMain.history.TechUnlocked(1513))
+            {
+                var instanceRecipeType = __instance.recipeType;
+                if (instanceRecipeType == (ERecipeType_1)Utils.ERecipeType.Chemical ||
+                    instanceRecipeType == (ERecipeType_1)Utils.ERecipeType.Refine ||
+                    instanceRecipeType == (ERecipeType_1)Utils.ERecipeType.高分子化工)
+                    if (__instance.speed == 20000)
+                        __instance.speed = 40000;
             }
         }
 
@@ -532,22 +532,25 @@ namespace ProjectGenesis.Patches
                                 if (index2 < __instance.products.Length)
                                 {
                                     itemId = __instance.products[index2];
-                                    if (itemId > 0 && __instance.produced[index2] > 0)
+                                    var produced = __instance.produced[index2];
+                                    if (itemId > 0 && produced > 0)
                                     {
-                                        var num2 = __instance.produced[index2] < maxPilerCount ? __instance.produced[index2] : maxPilerCount;
+                                        var num2 = produced < maxPilerCount ? produced : maxPilerCount;
                                         if (cargoPath.TryInsertItemAtHeadAndFillBlank(itemId, (byte)num2, 0)) __instance.produced[index2] -= num2;
                                     }
                                 }
                                 else
                                 {
                                     var index3 = index2 - __instance.products.Length;
-                                    if (index3 < __instance.needs.Length)
+                                    if (index3 < __instance.requires.Length)
                                     {
-                                        itemId = __instance.needs[index3];
-                                        if (itemId > 0 && __instance.served[index3] > 0)
+                                        itemId = __instance.requires[index3];
+                                        var served = __instance.served[index3];
+                                        if (itemId > 0 && served > 0)
                                         {
-                                            var num2 = __instance.served[index3] < maxPilerCount ? __instance.served[index3] : maxPilerCount;
-                                            if (cargoPath.TryInsertItemAtHeadAndFillBlank(itemId, (byte)num2, (byte)__instance.incServed[index3])) __instance.served[index3] -= num2;
+                                            var num2 = served < maxPilerCount ? served : maxPilerCount;
+                                            if (cargoPath.TryInsertItemAtHeadAndFillBlank(itemId, (byte)num2, (byte)__instance.incServed[index3]))
+                                                __instance.served[index3] -= num2;
                                         }
                                     }
                                 }
@@ -593,7 +596,7 @@ namespace ProjectGenesis.Patches
                         {
                             if (__instance.recipeId == 429)
                             {
-                                var itemId = factory.cargoTraffic.TryPickItemAtRear(slotdata[index].beltId, 0, null, out var stack, out _);
+                                var itemId = traffic.TryPickItemAtRear(slotdata[index].beltId, 0, null, out var stack, out _);
 
                                 if (itemId > 0)
                                 {
@@ -628,18 +631,21 @@ namespace ProjectGenesis.Patches
                                     __instance.served[needIdx] += stack;
                                     __instance.incServed[needIdx] += inc;
                                 }
-                                
-                                itemId = factory.cargoTraffic.TryPickItemAtRear(slotdata[index].beltId, 0, __instance.products, out stack, out _);
 
                                 for (var i = 0; i < __instance.products.Length; i++)
                                 {
-                                    if(itemId > 0 && __instance.products[i] == itemId && __instance.produced[i] < 50)
+                                    if (__instance.produced[i] < 50)
                                     {
-                                        __instance.produced[i] += stack;
-                                        break;
+                                        itemId = traffic.TryPickItemAtRear(slotdata[index].beltId, __instance.products[i], null, out stack, out _);
+
+                                        if (__instance.products[i] == itemId)
+                                        {
+                                            __instance.produced[i] += stack;
+                                            break;
+                                        }
                                     }
                                 }
-                                
+
                                 if (itemId > 0)
                                 {
                                     signPool[entityId].iconType = 1U;
@@ -829,17 +835,14 @@ namespace ProjectGenesis.Patches
 
             if (assemblerComponent.speed >= TrashSpeed)
             {
-                var recipe = LDB.recipes.Select(assemblerComponent.recipeId);
-
-                if (recipe == null)
+                if (assemblerComponent.recipeId > 0)
                 {
-                    filterItems.AddRange(Enumerable.Repeat(0, 6));
+                    filterItems.AddRange(assemblerComponent.products);
+                    filterItems.AddRange(assemblerComponent.requires);
                 }
                 else
                 {
-                    filterItems.AddRange(recipe.Results);
-                    filterItems.AddRange(recipe.Items);
-                    filterItems = filterItems.Distinct().ToList();
+                    filterItems.AddRange(Enumerable.Repeat(0, 6));
                 }
 
                 entityData.stationId = 0;
