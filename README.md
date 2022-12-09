@@ -13,11 +13,10 @@ Reconstruct "Real Universe". Then leave a "GenesisBook".
 
 ### 最近更新介绍 | Recent update
 
-
 - v2.2.6
-  + 修复巨型建筑在停止工作时接受的产物消失的Bug
-  + 修改巨型建筑的原料传送带优先级为优先输出
-  + 允许巨型建筑在停止工作时接受/输出物品
+    + 修复巨型建筑在停止工作时接受的产物消失的Bug
+    + 修改巨型建筑的原料传送带优先级为优先输出
+    + 允许巨型建筑在停止工作时接受/输出物品
 
 
 - v2.2.5
@@ -25,14 +24,13 @@ Reconstruct "Real Universe". Then leave a "GenesisBook".
 
 
 - v2.2.6
-  + Fix the bug causes the items received disappears when Mega Buildings stops working 
-  + Modify the Mega Building's material conveyor belt priority to output first
-  + Allow Mega Buildings to receive / output items when they stop working
+    + Fix the bug causes the items received disappears when Mega Buildings stops working
+    + Modify the Mega Building's material conveyor belt priority to output first
+    + Allow Mega Buildings to receive / output items when they stop working
 
 
 - v2.2.5
     + Fix a bug that causes the Mega Buildings raw material output point disappear
-
 
 ----
 
@@ -113,11 +111,10 @@ Reconstruct "Real Universe". Then leave a "GenesisBook".
 <details>
   <summary>展开查看</summary>
 
-
 - v2.2.6
-  + 修复巨型建筑在停止工作时接受的产物消失的Bug
-  + 修改巨型建筑的原料传送带优先级为优先输出
-  + 允许巨型建筑在停止工作时接受/输出物品
+    + 修复巨型建筑在停止工作时接受的产物消失的Bug
+    + 修改巨型建筑的原料传送带优先级为优先输出
+    + 允许巨型建筑在停止工作时接受/输出物品
 
 
 - v2.2.5
@@ -309,11 +306,10 @@ free to communicate with us.
 <details>
   <summary>Details</summary>
 
-
 - v2.2.6
-  + Fix the bug causes the items received disappears when Mega Buildings stops working
-  + Modify the Mega Building's material conveyor belt priority to output first
-  + Allow Mega Buildings to receive / output items when they stop working
+    + Fix the bug causes the items received disappears when Mega Buildings stops working
+    + Modify the Mega Building's material conveyor belt priority to output first
+    + Allow Mega Buildings to receive / output items when they stop working
 
 
 - v2.2.5
