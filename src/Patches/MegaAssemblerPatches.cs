@@ -60,13 +60,17 @@ namespace ProjectGenesis.Patches
                                           EntityData_AssemblerId_Field = AccessTools.Field(typeof(EntityData), nameof(EntityData.assemblerId)),
                                           PlanetFactory_EntityPool_Field = AccessTools.Field(typeof(PlanetFactory), nameof(PlanetFactory.entityPool)),
                                           FactorySystem_AssemblerPool_Field
-                                              = AccessTools.Field(typeof(FactorySystem), nameof(FactorySystem.assemblerPool));
+                                              = AccessTools.Field(typeof(FactorySystem), nameof(FactorySystem.assemblerPool)),
+                                          AssemblerComponent_Speed_Field
+                                              = AccessTools.Field(typeof(AssemblerComponent), nameof(AssemblerComponent.speed));
 
         private static readonly MethodInfo AssemblerComponent_InternalUpdate_Method
-            = AccessTools.Method(typeof(AssemblerComponent), "InternalUpdate");
-
-        private static readonly MethodInfo MegaAssembler_AssemblerComponent_InternalUpdate_Patch_Method
-            = AccessTools.Method(typeof(MegaAssemblerPatches), "GameTick_AssemblerComponent_InternalUpdate_Patch");
+                                               = AccessTools.Method(typeof(AssemblerComponent), nameof(AssemblerComponent.InternalUpdate)),
+                                           MegaAssembler_AssemblerComponent_InternalUpdate_Patch_Method
+                                               = AccessTools.Method(typeof(MegaAssemblerPatches),
+                                                                    nameof(GameTick_AssemblerComponent_InternalUpdate_Patch)),
+                                           MegaAssembler_AssemblerComponent_UpdateNeeds_Patch_Method
+                                               = AccessTools.Method(typeof(MegaAssemblerPatches), nameof(AssemblerComponent_UpdateNeeds_Patch));
 
         [HarmonyPostfix]
         [HarmonyPatch(typeof(FactorySystem), "NewAssemblerComponent")]
@@ -549,8 +553,12 @@ namespace ProjectGenesis.Patches
                                         if (itemId > 0 && served > 0)
                                         {
                                             var num2 = served < maxPilerCount ? served : maxPilerCount;
-                                            if (cargoPath.TryInsertItemAtHeadAndFillBlank(itemId, (byte)num2, (byte)__instance.incServed[index3]))
+                                            var inc = (int)((double)__instance.incServed[index3] * num2 / __instance.served[index3]);
+                                            if (cargoPath.TryInsertItemAtHeadAndFillBlank(itemId, (byte)num2, (byte)inc))
+                                            {
+                                                __instance.incServed[index3] -= inc;
                                                 __instance.served[index3] -= num2;
+                                            }
                                         }
                                     }
                                 }
@@ -663,6 +671,28 @@ namespace ProjectGenesis.Patches
             }
         }
 
+        [HarmonyPatch(typeof(AssemblerComponent), "UpdateNeeds")]
+        [HarmonyTranspiler]
+        public static IEnumerable<CodeInstruction> AssemblerComponent_UpdateNeeds_Transpiler(IEnumerable<CodeInstruction> instructions)
+        {
+            var matcher = new CodeMatcher(instructions);
+
+            while (true)
+            {
+                matcher.MatchForward(false, new CodeMatch(OpCodes.Ldc_I4_3), new CodeMatch(OpCodes.Mul));
+
+                if (matcher.IsInvalid) break;
+
+                matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0));
+                matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldfld, AssemblerComponent_Speed_Field));
+                matcher.SetInstruction(new CodeInstruction(OpCodes.Call, MegaAssembler_AssemblerComponent_UpdateNeeds_Patch_Method));
+            }
+
+            return matcher.InstructionEnumeration();
+        }
+
+        public static sbyte AssemblerComponent_UpdateNeeds_Patch(int speed) => speed > TrashSpeed ? (sbyte)10 : (sbyte)3;
+
         // 绕开 CommonAPI 的 UIAssemblerWindowPatch.ChangePicker
         [HarmonyPatch(typeof(UIAssemblerWindow), "OnSelectRecipeClick")]
         [HarmonyPriority(1)]
@@ -771,9 +801,9 @@ namespace ProjectGenesis.Patches
                                               = AccessTools.Field(typeof(UISlotPicker), nameof(UISlotPicker.outputSlotId));
 
         private static readonly MethodInfo MegaAssembler_SetOutputEntity_Patch_Method
-                                               = AccessTools.Method(typeof(MegaAssemblerPatches), "SetOutputEntity_Patch"),
+                                               = AccessTools.Method(typeof(MegaAssemblerPatches), nameof(SetOutputEntity_Patch)),
                                            MegaAssembler_SetFilterToEntity_Patch_Method
-                                               = AccessTools.Method(typeof(MegaAssemblerPatches), "SetFilterToEntity_Patch");
+                                               = AccessTools.Method(typeof(MegaAssemblerPatches), nameof(SetFilterToEntity_Patch));
 
         [HarmonyPatch(typeof(UIBeltBuildTip), "SetOutputEntity")]
         [HarmonyTranspiler]
