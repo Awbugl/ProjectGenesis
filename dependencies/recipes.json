@@ -6,18 +6,18 @@
     "IconPath": "",
     "Type": 1,
     "GridIndex": 1101,
-    "Time": 60,
+    "Time": 120,
     "Input": [
       1001
     ],
     "InCounts": [
-      1
+      2
     ],
     "Output": [
       1101
     ],
     "OutCounts": [
-      1
+      2
     ],
     "Explicit": false,
     "Handcraft": true,
@@ -30,18 +30,18 @@
     "IconPath": "Assets/texpack/铜线圈",
     "Type": 4,
     "GridIndex": 1313,
-    "Time": 60,
+    "Time": 120,
     "Input": [
       1104
     ],
     "InCounts": [
-      2
+      4
     ],
     "Output": [
       1102
     ],
     "OutCounts": [
-      1
+      2
     ],
     "Explicit": false,
     "Handcraft": true,
@@ -54,18 +54,18 @@
     "IconPath": "",
     "Type": 1,
     "GridIndex": 1102,
-    "Time": 60,
+    "Time": 120,
     "Input": [
       1002
     ],
     "InCounts": [
-      1
+      2
     ],
     "Output": [
       1104
     ],
     "OutCounts": [
-      1
+      2
     ],
     "Explicit": false,
     "Handcraft": true,
@@ -78,18 +78,18 @@
     "IconPath": "",
     "Type": 1,
     "GridIndex": 1107,
-    "Time": 60,
+    "Time": 120,
     "Input": [
       1005
     ],
     "InCounts": [
-      1
+      2
     ],
     "Output": [
       1108
     ],
     "OutCounts": [
-      1
+      2
     ],
     "Explicit": false,
     "Handcraft": true,
@@ -102,18 +102,18 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 1301,
-    "Time": 60,
+    "Time": 120,
     "Input": [
       1101
     ],
     "InCounts": [
-      1
+      2
     ],
     "Output": [
       1201
     ],
     "OutCounts": [
-      1
+      2
     ],
     "Explicit": false,
     "Handcraft": true,
@@ -126,20 +126,20 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 1412,
-    "Time": 60,
+    "Time": 120,
     "Input": [
       1101,
       1104
     ],
     "InCounts": [
-      1,
-      1
+      2,
+      2
     ],
     "Output": [
       1301
     ],
     "OutCounts": [
-      2
+      4
     ],
     "Explicit": false,
     "Handcraft": true,
@@ -178,20 +178,20 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 2101,
-    "Time": 60,
+    "Time": 120,
     "Input": [
       1101,
       1102
     ],
     "InCounts": [
-      1,
-      1
+      2,
+      2
     ],
     "Output": [
       2201
     ],
     "OutCounts": [
-      1
+      2
     ],
     "Explicit": false,
     "Handcraft": true,
@@ -426,18 +426,18 @@
     "IconPath": "",
     "Type": 1,
     "GridIndex": 1106,
-    "Time": 60,
+    "Time": 120,
     "Input": [
       1006
     ],
     "InCounts": [
-      1
+      2
     ],
     "Output": [
       1109
     ],
     "OutCounts": [
-      1
+      2
     ],
     "Explicit": false,
     "Handcraft": true,
@@ -612,22 +612,22 @@
     "IconPath": "",
     "Type": 2,
     "GridIndex": 4201,
-    "Time": 60,
+    "Time": 120,
     "Input": [
       7103,
       1000
     ],
     "InCounts": [
-      1,
-      2
+      2,
+      4
     ],
     "Output": [
       6999,
       7020
     ],
     "OutCounts": [
-      1,
-      2
+      2,
+      4
     ],
     "Explicit": false,
     "Handcraft": false,
@@ -888,18 +888,18 @@
     "IconPath": "",
     "Type": 1,
     "GridIndex": 1511,
-    "Time": 60,
+    "Time": 120,
     "Input": [
       1005
     ],
     "InCounts": [
-      2
+      4
     ],
     "Output": [
       1003
     ],
     "OutCounts": [
-      1
+      2
     ],
     "Explicit": true,
     "Handcraft": false,
@@ -912,18 +912,18 @@
     "IconPath": "Icons/ItemRecipe/nanotube-lv2",
     "Type": 2,
     "GridIndex": 1306,
-    "Time": 60,
+    "Time": 120,
     "Input": [
       1015
     ],
     "InCounts": [
-      1
+      2
     ],
     "Output": [
       1124
     ],
     "OutCounts": [
-      2
+      4
     ],
     "Explicit": true,
     "Handcraft": false,
@@ -1176,22 +1176,22 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 2401,
-    "Time": 60,
+    "Time": 120,
     "Input": [
       6501,
       2011,
       1301
     ],
     "InCounts": [
-      1,
-      1,
-      1
+      2,
+      2,
+      2
     ],
     "Output": [
       2303
     ],
     "OutCounts": [
-      1
+      2
     ],
     "Explicit": false,
     "Handcraft": true,
@@ -1568,18 +1568,18 @@
     "IconPath": "",
     "Type": 1,
     "GridIndex": 1103,
-    "Time": 60,
+    "Time": 120,
     "Input": [
       1003
     ],
     "InCounts": [
-      1
+      2
     ],
     "Output": [
       1105
     ],
     "OutCounts": [
-      1
+      2
     ],
     "Explicit": false,
     "Handcraft": true,
@@ -1616,18 +1616,18 @@
     "IconPath": "Icons/ItemRecipe/diamond-lv2",
     "Type": 1,
     "GridIndex": 1304,
-    "Time": 60,
+    "Time": 120,
     "Input": [
       1012
     ],
     "InCounts": [
-      1
+      2
     ],
     "Output": [
       1112
     ],
     "OutCounts": [
-      2
+      4
     ],
     "Explicit": true,
     "Handcraft": false,
@@ -1640,18 +1640,18 @@
     "IconPath": "Icons/ItemRecipe/silicium-high-purity-lv2",
     "Type": 4,
     "GridIndex": 1307,
-    "Time": 60,
+    "Time": 120,
     "Input": [
       1013
     ],
     "InCounts": [
-      1
+      2
     ],
     "Output": [
       1113
     ],
     "OutCounts": [
-      2
+      4
     ],
     "Explicit": true,
     "Handcraft": false,
@@ -1718,18 +1718,18 @@
     "IconPath": "",
     "Type": 1,
     "GridIndex": 1104,
-    "Time": 60,
+    "Time": 120,
     "Input": [
       1004
     ],
     "InCounts": [
-      1
+      2
     ],
     "Output": [
       1106
     ],
     "OutCounts": [
-      1
+      2
     ],
     "Explicit": false,
     "Handcraft": true,
@@ -2242,20 +2242,20 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 2201,
-    "Time": 60,
+    "Time": 120,
     "Input": [
       1101,
       1203
     ],
     "InCounts": [
-      1,
-      1
+      2,
+      2
     ],
     "Output": [
       2001
     ],
     "OutCounts": [
-      3
+      6
     ],
     "Explicit": false,
     "Handcraft": true,
@@ -2268,20 +2268,20 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 2301,
-    "Time": 60,
+    "Time": 120,
     "Input": [
       1101,
       1203
     ],
     "InCounts": [
-      1,
-      1
+      2,
+      2
     ],
     "Output": [
       2011
     ],
     "OutCounts": [
-      1
+      2
     ],
     "Explicit": false,
     "Handcraft": true,
@@ -2346,20 +2346,20 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 2302,
-    "Time": 60,
+    "Time": 120,
     "Input": [
       2011,
       1204
     ],
     "InCounts": [
-      2,
-      1
+      4,
+      2
     ],
     "Output": [
       2012
     ],
     "OutCounts": [
-      2
+      4
     ],
     "Explicit": false,
     "Handcraft": true,
@@ -2372,20 +2372,20 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 2202,
-    "Time": 60,
+    "Time": 120,
     "Input": [
       2001,
       1204
     ],
     "InCounts": [
-      3,
-      1
+      6,
+      2
     ],
     "Output": [
       2002
     ],
     "OutCounts": [
-      3
+      6
     ],
     "Explicit": false,
     "Handcraft": true,
@@ -2398,20 +2398,20 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 2303,
-    "Time": 60,
+    "Time": 120,
     "Input": [
       2012,
       1205
     ],
     "InCounts": [
-      2,
-      1
+      4,
+      2
     ],
     "Output": [
       2013
     ],
     "OutCounts": [
-      2
+      4
     ],
     "Explicit": false,
     "Handcraft": true,
@@ -2450,20 +2450,20 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 2203,
-    "Time": 60,
+    "Time": 120,
     "Input": [
       2002,
       1205
     ],
     "InCounts": [
-      3,
-      1
+      6,
+      2
     ],
     "Output": [
       2003
     ],
     "OutCounts": [
-      3
+      6
     ],
     "Explicit": false,
     "Handcraft": true,
@@ -2958,20 +2958,20 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 1116,
-    "Time": 60,
+    "Time": 120,
     "Input": [
       1108,
       1103
     ],
     "InCounts": [
-      1,
-      1
+      2,
+      2
     ],
     "Output": [
       1131
     ],
     "OutCounts": [
-      1
+      2
     ],
     "Explicit": false,
     "Handcraft": true,
@@ -3466,20 +3466,20 @@
     "IconPath": "Assets/texpack/盐水",
     "Type": 2,
     "GridIndex": 4106,
-    "Time": 60,
+    "Time": 120,
     "Input": [
       1000,
       7101
     ],
     "InCounts": [
-      1,
-      1
+      2,
+      2
     ],
     "Output": [
       7018
     ],
     "OutCounts": [
-      1
+      2
     ],
     "Explicit": false,
     "Handcraft": true,
@@ -3550,20 +3550,20 @@
     "IconPath": "Assets/texpack/二硝基氯苯",
     "Type": 16,
     "GridIndex": 4108,
-    "Time": 60,
+    "Time": 120,
     "Input": [
       7017,
       7013
     ],
     "InCounts": [
-      1,
-      1
+      2,
+      2
     ],
     "Output": [
       7008
     ],
     "OutCounts": [
-      1
+      2
     ],
     "Explicit": false,
     "Handcraft": false,
@@ -3576,20 +3576,20 @@
     "IconPath": "Assets/texpack/二氯联苯胺",
     "Type": 16,
     "GridIndex": 4107,
-    "Time": 60,
+    "Time": 120,
     "Input": [
       7008,
       1104
     ],
     "InCounts": [
-      1,
-      1
+      2,
+      2
     ],
     "Output": [
       7007
     ],
     "OutCounts": [
-      1
+      2
     ],
     "Explicit": false,
     "Handcraft": false,
@@ -3602,14 +3602,14 @@
     "IconPath": "Assets/texpack/氨",
     "Type": 2,
     "GridIndex": 4102,
-    "Time": 60,
+    "Time": 120,
     "Input": [
       7102,
       1000
     ],
     "InCounts": [
-      2,
-      8
+      4,
+      16
     ],
     "Output": [
       7002,
@@ -3617,9 +3617,9 @@
       7019
     ],
     "OutCounts": [
-      2,
-      2,
-      12
+      4,
+      4,
+      24
     ],
     "Explicit": true,
     "Handcraft": false,
@@ -3660,18 +3660,18 @@
     "IconPath": "Assets/texpack/煤焦油生产",
     "Type": 3,
     "GridIndex": 3206,
-    "Time": 60,
+    "Time": 120,
     "Input": [
       1006
     ],
     "InCounts": [
-      1
+      2
     ],
     "Output": [
       1114
     ],
     "OutCounts": [
-      1
+      2
     ],
     "Explicit": true,
     "Handcraft": false,
@@ -3684,12 +3684,12 @@
     "IconPath": "Assets/texpack/煤焦油",
     "Type": 3,
     "GridIndex": 3207,
-    "Time": 60,
+    "Time": 120,
     "Input": [
       1114
     ],
     "InCounts": [
-      1
+      2
     ],
     "Output": [
       7003,
@@ -3697,9 +3697,9 @@
       7004
     ],
     "OutCounts": [
+      4,
       2,
-      1,
-      1
+      2
     ],
     "Explicit": true,
     "Handcraft": false,
@@ -3740,20 +3740,20 @@
     "IconPath": "Assets/texpack/间苯二甲酸二苯酯",
     "Type": 16,
     "GridIndex": 4111,
-    "Time": 60,
+    "Time": 120,
     "Input": [
       7003,
       7012
     ],
     "InCounts": [
-      2,
-      1
+      4,
+      2
     ],
     "Output": [
       7011
     ],
     "OutCounts": [
-      1
+      2
     ],
     "Explicit": false,
     "Handcraft": false,
@@ -4356,18 +4356,18 @@
     "IconPath": "Assets/texpack/钨块",
     "Type": 1,
     "GridIndex": 1105,
-    "Time": 60,
+    "Time": 120,
     "Input": [
       1016
     ],
     "InCounts": [
-      1
+      2
     ],
     "Output": [
       7705
     ],
     "OutCounts": [
-      1
+      2
     ],
     "Explicit": false,
     "Handcraft": true,
@@ -4534,18 +4534,18 @@
     "IconPath": "Assets/texpack/钛齿轮",
     "Type": 4,
     "GridIndex": 1302,
-    "Time": 60,
+    "Time": 120,
     "Input": [
       1106
     ],
     "InCounts": [
-      1
+      2
     ],
     "Output": [
       1111
     ],
     "OutCounts": [
-      1
+      2
     ],
     "Explicit": false,
     "Handcraft": true,
@@ -4558,18 +4558,18 @@
     "IconPath": "Assets/texpack/钨齿轮",
     "Type": 4,
     "GridIndex": 1303,
-    "Time": 60,
+    "Time": 120,
     "Input": [
       7705
     ],
     "InCounts": [
-      1
+      2
     ],
     "Output": [
       1404
     ],
     "OutCounts": [
-      1
+      2
     ],
     "Explicit": false,
     "Handcraft": true,
@@ -4606,18 +4606,18 @@
     "IconPath": "Assets/texpack/石墨线圈",
     "Type": 4,
     "GridIndex": 1314,
-    "Time": 60,
+    "Time": 120,
     "Input": [
       1109
     ],
     "InCounts": [
-      2
+      4
     ],
     "Output": [
       1202
     ],
     "OutCounts": [
-      1
+      2
     ],
     "Explicit": false,
     "Handcraft": true,
@@ -4630,18 +4630,18 @@
     "IconPath": "Assets/texpack/钛线圈",
     "Type": 4,
     "GridIndex": 1315,
-    "Time": 60,
+    "Time": 120,
     "Input": [
       1106
     ],
     "InCounts": [
-      2
+      4
     ],
     "Output": [
       1118
     ],
     "OutCounts": [
-      1
+      2
     ],
     "Explicit": false,
     "Handcraft": true,
@@ -4836,18 +4836,18 @@
     "IconPath": "Assets/texpack/高效反物质",
     "Type": 5,
     "GridIndex": 1312,
-    "Time": 60,
+    "Time": 120,
     "Input": [
       1208
     ],
     "InCounts": [
-      2
+      4
     ],
     "Output": [
       1122
     ],
     "OutCounts": [
-      2
+      4
     ],
     "Explicit": true,
     "Handcraft": false,
@@ -5046,22 +5046,22 @@
     "IconPath": "Assets/texpack/高效塑料",
     "Type": 2,
     "GridIndex": 1114,
-    "Time": 60,
+    "Time": 120,
     "Input": [
       1117,
       7001,
       7019
     ],
     "InCounts": [
-      3,
-      1,
-      1
+      6,
+      2,
+      2
     ],
     "Output": [
       1115
     ],
     "OutCounts": [
-      2
+      4
     ],
     "Explicit": true,
     "Handcraft": false,
@@ -5128,22 +5128,22 @@
     "IconPath": "Assets/texpack/重燃油",
     "Type": 2,
     "GridIndex": 4203,
-    "Time": 60,
+    "Time": 120,
     "Input": [
       6203,
       1120
     ],
     "InCounts": [
-      2,
-      2
+      4,
+      4
     ],
     "Output": [
       6201,
       6215
     ],
     "OutCounts": [
-      2,
-      1
+      4,
+      2
     ],
     "Explicit": true,
     "Handcraft": false,
@@ -5504,20 +5504,20 @@
     "IconPath": "Assets/texpack/高效微晶元件",
     "Type": 10,
     "GridIndex": 1413,
-    "Time": 60,
+    "Time": 120,
     "Input": [
       7502,
       7602
     ],
     "InCounts": [
-      1,
-      2
+      2,
+      4
     ],
     "Output": [
       1302
     ],
     "OutCounts": [
-      2
+      4
     ],
     "Explicit": true,
     "Handcraft": false,
@@ -5582,20 +5582,20 @@
     "IconPath": "Assets/texpack/高效硫酸",
     "Type": 2,
     "GridIndex": 4212,
-    "Time": 60,
+    "Time": 120,
     "Input": [
       6215,
       7019
     ],
     "InCounts": [
-      1,
-      4
+      2,
+      8
     ],
     "Output": [
       6999
     ],
     "OutCounts": [
-      1
+      2
     ],
     "Explicit": true,
     "Handcraft": false,
@@ -5664,18 +5664,18 @@
     "IconPath": "Assets/texpack/铁矿粉",
     "Type": 11,
     "GridIndex": 3401,
-    "Time": 60,
+    "Time": 120,
     "Input": [
       1001
     ],
     "InCounts": [
-      1
+      2
     ],
     "Output": [
       6252
     ],
     "OutCounts": [
-      2
+      4
     ],
     "Explicit": false,
     "Handcraft": false,
@@ -5688,18 +5688,18 @@
     "IconPath": "Assets/texpack/铜矿粉",
     "Type": 11,
     "GridIndex": 3402,
-    "Time": 60,
+    "Time": 120,
     "Input": [
       1002
     ],
     "InCounts": [
-      1
+      2
     ],
     "Output": [
       6253
     ],
     "OutCounts": [
-      2
+      4
     ],
     "Explicit": false,
     "Handcraft": false,
@@ -5712,18 +5712,18 @@
     "IconPath": "Assets/texpack/硅矿粉",
     "Type": 11,
     "GridIndex": 3403,
-    "Time": 60,
+    "Time": 120,
     "Input": [
       1003
     ],
     "InCounts": [
-      1
+      2
     ],
     "Output": [
       6254
     ],
     "OutCounts": [
-      2
+      4
     ],
     "Explicit": false,
     "Handcraft": false,
@@ -5736,18 +5736,18 @@
     "IconPath": "Assets/texpack/钛矿粉",
     "Type": 11,
     "GridIndex": 3404,
-    "Time": 60,
+    "Time": 120,
     "Input": [
       1004
     ],
     "InCounts": [
-      1
+      2
     ],
     "Output": [
       6255
     ],
     "OutCounts": [
-      2
+      4
     ],
     "Explicit": false,
     "Handcraft": false,
@@ -5760,18 +5760,18 @@
     "IconPath": "Assets/texpack/石粉",
     "Type": 11,
     "GridIndex": 3405,
-    "Time": 60,
+    "Time": 120,
     "Input": [
       1005
     ],
     "InCounts": [
-      1
+      2
     ],
     "Output": [
       6251
     ],
     "OutCounts": [
-      2
+      4
     ],
     "Explicit": false,
     "Handcraft": false,
@@ -5784,18 +5784,18 @@
     "IconPath": "Assets/texpack/煤矿粉",
     "Type": 11,
     "GridIndex": 3406,
-    "Time": 60,
+    "Time": 120,
     "Input": [
       1006
     ],
     "InCounts": [
-      1
+      2
     ],
     "Output": [
       6256
     ],
     "OutCounts": [
-      2
+      4
     ],
     "Explicit": false,
     "Handcraft": false,
@@ -6038,18 +6038,18 @@
     "IconPath": "Icons/ItemRecipe/iron-plate",
     "Type": 1,
     "GridIndex": 3501,
-    "Time": 60,
+    "Time": 120,
     "Input": [
       6252
     ],
     "InCounts": [
-      1
+      2
     ],
     "Output": [
       1101
     ],
     "OutCounts": [
-      1
+      2
     ],
     "Explicit": true,
     "Handcraft": false,
@@ -6062,18 +6062,18 @@
     "IconPath": "Icons/ItemRecipe/copper-plate",
     "Type": 1,
     "GridIndex": 3502,
-    "Time": 60,
+    "Time": 120,
     "Input": [
       6253
     ],
     "InCounts": [
-      1
+      2
     ],
     "Output": [
       1104
     ],
     "OutCounts": [
-      1
+      2
     ],
     "Explicit": true,
     "Handcraft": false,
@@ -6086,18 +6086,18 @@
     "IconPath": "Icons/ItemRecipe/silicium-single-crystal",
     "Type": 1,
     "GridIndex": 3503,
-    "Time": 60,
+    "Time": 120,
     "Input": [
       6254
     ],
     "InCounts": [
-      1
+      2
     ],
     "Output": [
       1105
     ],
     "OutCounts": [
-      1
+      2
     ],
     "Explicit": true,
     "Handcraft": false,
@@ -6110,18 +6110,18 @@
     "IconPath": "Icons/ItemRecipe/titanium-plate",
     "Type": 1,
     "GridIndex": 3504,
-    "Time": 60,
+    "Time": 120,
     "Input": [
       6255
     ],
     "InCounts": [
-      1
+      2
     ],
     "Output": [
       1106
     ],
     "OutCounts": [
-      1
+      2
     ],
     "Explicit": true,
     "Handcraft": false,
@@ -6134,18 +6134,18 @@
     "IconPath": "Icons/ItemRecipe/glass",
     "Type": 1,
     "GridIndex": 3505,
-    "Time": 60,
+    "Time": 120,
     "Input": [
       6251
     ],
     "InCounts": [
-      1
+      2
     ],
     "Output": [
       1110
     ],
     "OutCounts": [
-      1
+      2
     ],
     "Explicit": true,
     "Handcraft": false,
@@ -6158,18 +6158,18 @@
     "IconPath": "Icons/ItemRecipe/graphite",
     "Type": 1,
     "GridIndex": 3506,
-    "Time": 60,
+    "Time": 120,
     "Input": [
       6256
     ],
     "InCounts": [
-      1
+      2
     ],
     "Output": [
       1109
     ],
     "OutCounts": [
-      1
+      2
     ],
     "Explicit": true,
     "Handcraft": false,
@@ -6182,7 +6182,7 @@
     "IconPath": "Assets/texpack/混凝土",
     "Type": 4,
     "GridIndex": 1612,
-    "Time": 60,
+    "Time": 120,
     "Input": [
       1103,
       6251,
@@ -6190,16 +6190,16 @@
       1000
     ],
     "InCounts": [
-      4,
       8,
-      2,
-      4
+      16,
+      4,
+      8
     ],
     "Output": [
       1206
     ],
     "OutCounts": [
-      2
+      4
     ],
     "Explicit": false,
     "Handcraft": false,
@@ -6354,18 +6354,18 @@
     "IconPath": "Assets/texpack/硫矿粉",
     "Type": 11,
     "GridIndex": 3407,
-    "Time": 60,
+    "Time": 120,
     "Input": [
       6256
     ],
     "InCounts": [
-      2
+      4
     ],
     "Output": [
       6277
     ],
     "OutCounts": [
-      1
+      2
     ],
     "Explicit": false,
     "Handcraft": false,

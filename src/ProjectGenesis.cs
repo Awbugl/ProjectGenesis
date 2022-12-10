@@ -37,7 +37,7 @@ namespace ProjectGenesis
     {
         public const string MODGUID = "org.LoShin.GenesisBook";
         internal const string MODNAME = "GenesisBook";
-        internal const string VERSION = "2.2.7";
+        internal const string VERSION = "2.2.8";
 
         // ReSharper disable once MemberCanBePrivate.Global
         internal static ManualLogSource logger;
@@ -211,7 +211,7 @@ namespace ProjectGenesis
                 StorageComponent.itemStackCount[proto.ID] = proto.StackSize;
             }
 
-            // JsonHelper.ExportAsJson(@"C:\Git\ProjectGenesis");
+            // JsonHelper.ExportAsJson(@"D:\Git\ProjectGenesis\dependencies");
         }
 
         #region IModCanSave

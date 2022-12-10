@@ -13,22 +13,18 @@ Reconstruct "Real Universe". Then leave a "GenesisBook".
 
 ### 最近更新介绍 | Recent update
 
+- v2.2.8
+    + 修改了部分配方的时间和产出(总产出不变)
+
+    + Changed the time and output of some recipes (No change in total output)
+
+
 - v2.2.7
     + 修复巨型建筑输出原料的传送带速度达不到上限的问题
     + 修复巨型建筑输出的原料增产点数异常的问题
 
     + Fix the problem that the belt out from Mega Buildings cannot reach the speed limit
     + Fix the problem that the production point of raw materials output from Mega Buildings is abnormal
-
-
-- v2.2.6
-    + 修复巨型建筑在停止工作时接受的产物消失的Bug
-    + 修改巨型建筑的原料传送带优先级为优先输出
-    + 允许巨型建筑在停止工作时接受/输出物品
-
-    + Fix the bug causes the items received disappears when Mega Buildings stops working
-    + Modify the Mega Building's material conveyor belt priority to output first
-    + Allow Mega Buildings to receive / output items when they stop working
 
 ----
 
@@ -108,6 +104,10 @@ Reconstruct "Real Universe". Then leave a "GenesisBook".
 
 <details>
   <summary>展开查看</summary>
+
+- v2.2.8
+    + 修改了部分配方的时间和产出(总产出不变)
+
 
 - v2.2.7
     + 修复巨型建筑输出原料的传送带速度达不到上限的问题
@@ -308,6 +308,10 @@ free to communicate with us.
 
 <details>
   <summary>Details</summary>
+
+- v2.2.8
+    + Changed the time and output of some recipes (No change in total output)
+
 
 - v2.2.7
     + Fix the problem that the belt out from Mega Buildings cannot reach the speed limit
