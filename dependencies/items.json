@@ -3669,7 +3669,7 @@
       40
     ],
     "FuelType": 8,
-    "HeatValue": 270000000,
+    "HeatValue": 2700000000,
     "ReactorInc": 1.0,
     "IsFluid": false,
     "Productive": true,

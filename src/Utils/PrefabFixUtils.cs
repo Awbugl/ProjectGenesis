@@ -105,116 +105,139 @@ namespace ProjectGenesis.Utils
 
         internal static void ModelPostFix(ModelProtoSet models)
         {
-            //行星装配站调试部分
+            // 天穹装配厂
             var testCraftingTableModel = models.Select(403);
+            ref var prefabDesc1 = ref testCraftingTableModel.prefabDesc;
+            prefabDesc1.isAssembler = true;
+            prefabDesc1.assemblerRecipeType = (ERecipeType_1)ERecipeType.Assemble;
+            prefabDesc1.assemblerSpeed = MegaAssemblerPatches.MegaAssemblerSpeed;
+            prefabDesc1.isStation = false;
+            prefabDesc1.isStellarStation = false;
+            prefabDesc1.stationMaxDroneCount = 0;
+            prefabDesc1.stationMaxEnergyAcc = 0;
+            prefabDesc1.stationMaxItemCount = 0;
+            prefabDesc1.stationMaxItemKinds = 0;
+            prefabDesc1.stationMaxShipCount = 0;
+            prefabDesc1.idleEnergyPerTick = 100000;
+            prefabDesc1.workEnergyPerTick = 500000;
+
+            // 物质裂解塔
             var testCraftingTableModel2 = models.Select(404);
+            ref var prefabDesc2 = ref testCraftingTableModel2.prefabDesc;
+            prefabDesc2.isAssembler = true;
+            prefabDesc2.assemblerRecipeType = (ERecipeType_1)ERecipeType.所有熔炉;
+            prefabDesc2.assemblerSpeed = MegaAssemblerPatches.MegaAssemblerSpeed;
+            prefabDesc2.isStation = false;
+            prefabDesc2.isStellarStation = false;
+            prefabDesc2.stationMaxDroneCount = 0;
+            prefabDesc2.stationMaxEnergyAcc = 0;
+            prefabDesc2.stationMaxItemCount = 0;
+            prefabDesc2.stationMaxItemKinds = 0;
+            prefabDesc2.stationMaxShipCount = 0;
+            prefabDesc2.idleEnergyPerTick = 100000;
+            prefabDesc2.workEnergyPerTick = 500000;
+
+            // 巨型化学反应釜
             var testCraftingTableModel3 = models.Select(405);
+            ref var prefabDesc3 = ref testCraftingTableModel3.prefabDesc;
+            prefabDesc3.isAssembler = true;
+            prefabDesc3.assemblerRecipeType = (ERecipeType_1)ERecipeType.所有化工;
+            prefabDesc3.assemblerSpeed = MegaAssemblerPatches.MegaAssemblerSpeed;
+            prefabDesc3.isStation = false;
+            prefabDesc3.isStellarStation = false;
+            prefabDesc3.stationMaxDroneCount = 0;
+            prefabDesc3.stationMaxEnergyAcc = 0;
+            prefabDesc3.stationMaxItemCount = 0;
+            prefabDesc3.stationMaxItemKinds = 0;
+            prefabDesc3.stationMaxShipCount = 0;
+            prefabDesc3.idleEnergyPerTick = 100000;
+            prefabDesc3.workEnergyPerTick = 500000;
+
+            // 精密结构组装厂
             var testCraftingTableModel4 = models.Select(406);
+            ref var prefabDesc4 = ref testCraftingTableModel4.prefabDesc;
+            prefabDesc4.isAssembler = true;
+            prefabDesc4.assemblerRecipeType = (ERecipeType_1)ERecipeType.所有高精;
+            prefabDesc4.assemblerSpeed = MegaAssemblerPatches.MegaAssemblerSpeed;
+            prefabDesc4.isStation = false;
+            prefabDesc4.isStellarStation = false;
+            prefabDesc4.stationMaxDroneCount = 0;
+            prefabDesc4.stationMaxEnergyAcc = 0;
+            prefabDesc4.stationMaxItemCount = 0;
+            prefabDesc4.stationMaxItemKinds = 0;
+            prefabDesc4.stationMaxShipCount = 0;
+            prefabDesc4.idleEnergyPerTick = 100000;
+            prefabDesc4.workEnergyPerTick = 500000;
+
+            // 物质分解设施
             var testCraftingTableModel5 = models.Select(410);
+            ref var prefabDesc5 = ref testCraftingTableModel5.prefabDesc;
+            prefabDesc5.isAssembler = true;
+            prefabDesc5.assemblerRecipeType = (ERecipeType_1)ERecipeType.垃圾回收;
+            prefabDesc5.assemblerSpeed = MegaAssemblerPatches.TrashSpeed;
+            prefabDesc5.isStation = false;
+            prefabDesc5.isStellarStation = false;
+            prefabDesc5.stationMaxDroneCount = 0;
+            prefabDesc5.stationMaxEnergyAcc = 0;
+            prefabDesc5.stationMaxItemCount = 0;
+            prefabDesc5.stationMaxItemKinds = 0;
+            prefabDesc5.stationMaxShipCount = 0;
+            prefabDesc5.idleEnergyPerTick = 200000;
+            prefabDesc5.workEnergyPerTick = 1000000;
+
+            // 巨型粒子对撞机
             var testCraftingTableModel6 = models.Select(411);
-
-            var antiMatterModel = models.Select(407);
-            var megapumper = models.Select(412);
-
-            testCraftingTableModel.prefabDesc.isAssembler = true;
-            testCraftingTableModel.prefabDesc.assemblerRecipeType = (ERecipeType_1)ERecipeType.Assemble;
-            testCraftingTableModel.prefabDesc.assemblerSpeed = MegaAssemblerPatches.MegaAssemblerSpeed;
-            testCraftingTableModel.prefabDesc.isStation = false;
-            testCraftingTableModel.prefabDesc.isStellarStation = false;
-            testCraftingTableModel.prefabDesc.stationMaxDroneCount = 0;
-            testCraftingTableModel.prefabDesc.stationMaxEnergyAcc = 0;
-            testCraftingTableModel.prefabDesc.stationMaxItemCount = 0;
-            testCraftingTableModel.prefabDesc.stationMaxItemKinds = 0;
-            testCraftingTableModel.prefabDesc.stationMaxShipCount = 0;
-            testCraftingTableModel.prefabDesc.idleEnergyPerTick = 100000;
-            testCraftingTableModel.prefabDesc.workEnergyPerTick = 500000;
-
-            testCraftingTableModel2.prefabDesc.isAssembler = true;
-            testCraftingTableModel2.prefabDesc.assemblerRecipeType = (ERecipeType_1)ERecipeType.所有熔炉;
-            testCraftingTableModel2.prefabDesc.assemblerSpeed = MegaAssemblerPatches.MegaAssemblerSpeed;
-            testCraftingTableModel2.prefabDesc.isStation = false;
-            testCraftingTableModel2.prefabDesc.isStellarStation = false;
-            testCraftingTableModel2.prefabDesc.stationMaxDroneCount = 0;
-            testCraftingTableModel2.prefabDesc.stationMaxEnergyAcc = 0;
-            testCraftingTableModel2.prefabDesc.stationMaxItemCount = 0;
-            testCraftingTableModel2.prefabDesc.stationMaxItemKinds = 0;
-            testCraftingTableModel2.prefabDesc.stationMaxShipCount = 0;
-            testCraftingTableModel2.prefabDesc.idleEnergyPerTick = 100000;
-            testCraftingTableModel2.prefabDesc.workEnergyPerTick = 500000;
-
-            testCraftingTableModel3.prefabDesc.isAssembler = true;
-            testCraftingTableModel3.prefabDesc.assemblerRecipeType = (ERecipeType_1)ERecipeType.所有化工;
-            testCraftingTableModel3.prefabDesc.assemblerSpeed = MegaAssemblerPatches.MegaAssemblerSpeed;
-            testCraftingTableModel3.prefabDesc.isStation = false;
-            testCraftingTableModel3.prefabDesc.isStellarStation = false;
-            testCraftingTableModel3.prefabDesc.stationMaxDroneCount = 0;
-            testCraftingTableModel3.prefabDesc.stationMaxEnergyAcc = 0;
-            testCraftingTableModel3.prefabDesc.stationMaxItemCount = 0;
-            testCraftingTableModel3.prefabDesc.stationMaxItemKinds = 0;
-            testCraftingTableModel3.prefabDesc.stationMaxShipCount = 0;
-            testCraftingTableModel3.prefabDesc.idleEnergyPerTick = 100000;
-            testCraftingTableModel3.prefabDesc.workEnergyPerTick = 500000;
-
-            testCraftingTableModel4.prefabDesc.isAssembler = true;
-            testCraftingTableModel4.prefabDesc.assemblerRecipeType = (ERecipeType_1)ERecipeType.所有高精;
-            testCraftingTableModel4.prefabDesc.assemblerSpeed = MegaAssemblerPatches.MegaAssemblerSpeed;
-            testCraftingTableModel4.prefabDesc.isStation = false;
-            testCraftingTableModel4.prefabDesc.isStellarStation = false;
-            testCraftingTableModel4.prefabDesc.stationMaxDroneCount = 0;
-            testCraftingTableModel4.prefabDesc.stationMaxEnergyAcc = 0;
-            testCraftingTableModel4.prefabDesc.stationMaxItemCount = 0;
-            testCraftingTableModel4.prefabDesc.stationMaxItemKinds = 0;
-            testCraftingTableModel4.prefabDesc.stationMaxShipCount = 0;
-            testCraftingTableModel4.prefabDesc.idleEnergyPerTick = 100000;
-            testCraftingTableModel4.prefabDesc.workEnergyPerTick = 500000;
-
-            testCraftingTableModel5.prefabDesc.isAssembler = true;
-            testCraftingTableModel5.prefabDesc.assemblerRecipeType = (ERecipeType_1)ERecipeType.垃圾回收;
-            testCraftingTableModel5.prefabDesc.assemblerSpeed = MegaAssemblerPatches.TrashSpeed;
-            testCraftingTableModel5.prefabDesc.isStation = false;
-            testCraftingTableModel5.prefabDesc.isStellarStation = false;
-            testCraftingTableModel5.prefabDesc.stationMaxDroneCount = 0;
-            testCraftingTableModel5.prefabDesc.stationMaxEnergyAcc = 0;
-            testCraftingTableModel5.prefabDesc.stationMaxItemCount = 0;
-            testCraftingTableModel5.prefabDesc.stationMaxItemKinds = 0;
-            testCraftingTableModel5.prefabDesc.stationMaxShipCount = 0;
-            testCraftingTableModel5.prefabDesc.idleEnergyPerTick = 200000;
-            testCraftingTableModel5.prefabDesc.workEnergyPerTick = 1000000;
-
-            testCraftingTableModel6.prefabDesc.isAssembler = true;
-            testCraftingTableModel6.prefabDesc.assemblerRecipeType = (ERecipeType_1)ERecipeType.Particle;
-            testCraftingTableModel6.prefabDesc.assemblerSpeed = MegaAssemblerPatches.MegaAssemblerSpeed;
-            testCraftingTableModel6.prefabDesc.isStation = false;
-            testCraftingTableModel6.prefabDesc.isStellarStation = false;
-            testCraftingTableModel6.prefabDesc.stationMaxDroneCount = 0;
-            testCraftingTableModel6.prefabDesc.stationMaxEnergyAcc = 0;
-            testCraftingTableModel6.prefabDesc.stationMaxItemCount = 0;
-            testCraftingTableModel6.prefabDesc.stationMaxItemKinds = 0;
-            testCraftingTableModel6.prefabDesc.stationMaxShipCount = 0;
-            testCraftingTableModel6.prefabDesc.idleEnergyPerTick = 200000;
-            testCraftingTableModel6.prefabDesc.workEnergyPerTick = 1000000;
+            ref var prefabDesc6 = ref testCraftingTableModel6.prefabDesc;
+            prefabDesc6.isAssembler = true;
+            prefabDesc6.assemblerRecipeType = (ERecipeType_1)ERecipeType.Particle;
+            prefabDesc6.assemblerSpeed = MegaAssemblerPatches.MegaAssemblerSpeed;
+            prefabDesc6.isStation = false;
+            prefabDesc6.isStellarStation = false;
+            prefabDesc6.stationMaxDroneCount = 0;
+            prefabDesc6.stationMaxEnergyAcc = 0;
+            prefabDesc6.stationMaxItemCount = 0;
+            prefabDesc6.stationMaxItemKinds = 0;
+            prefabDesc6.stationMaxShipCount = 0;
+            prefabDesc6.idleEnergyPerTick = 200000;
+            prefabDesc6.workEnergyPerTick = 1000000;
 
             LDB.items.Select(2211).prefabDesc.fuelMask = 5;
             LDB.items.Select(2210).prefabDesc.fuelMask = 6;
 
-            antiMatterModel.prefabDesc.fuelMask = 4;
-            antiMatterModel.prefabDesc.genEnergyPerTick = 1200000000;
-            antiMatterModel.prefabDesc.useFuelPerTick = 1200000000;
+            var antiMatterModel = models.Select(407);
+            ref var antiMatterModelprefabDesc = ref antiMatterModel.prefabDesc;
+            antiMatterModelprefabDesc.fuelMask = 4;
+            antiMatterModelprefabDesc.genEnergyPerTick = 1200000000;
+            antiMatterModelprefabDesc.useFuelPerTick = 1200000000;
 
-            megapumper.prefabDesc.isFractionator = false;
-            megapumper.prefabDesc.assemblerRecipeType = ERecipeType_1.None;
-            megapumper.prefabDesc.assemblerSpeed = 0;
-            megapumper.prefabDesc.minerPeriod = 72000;
-            megapumper.prefabDesc.minerType = EMinerType.Water;
-            megapumper.prefabDesc.minimapType = 2;
-            megapumper.prefabDesc.idleEnergyPerTick = 10000;
-            megapumper.prefabDesc.workEnergyPerTick = 25000;
-            megapumper.prefabDesc.waterPoints = new[] { Vector3.zero };
-            megapumper.prefabDesc.waterTypes = new[] { 1000, 1116, 7017, 7018 };
+            var megapumper = models.Select(412);
+            ref var megapumperprefabDesc = ref megapumper.prefabDesc;
+            megapumperprefabDesc.isFractionator = false;
+            megapumperprefabDesc.assemblerRecipeType = ERecipeType_1.None;
+            megapumperprefabDesc.assemblerSpeed = 0;
+            megapumperprefabDesc.minerPeriod = 72000;
+            megapumperprefabDesc.minerType = EMinerType.Water;
+            megapumperprefabDesc.minimapType = 2;
+            megapumperprefabDesc.idleEnergyPerTick = 10000;
+            megapumperprefabDesc.workEnergyPerTick = 25000;
+            megapumperprefabDesc.waterPoints = new[] { Vector3.zero };
+            megapumperprefabDesc.waterTypes = new[] { 1000, 1116, 7017, 7018 };
 
-            List<Pose> poses = megapumper.prefabDesc.portPoses.ToList();
+            List<Pose> poses = megapumperprefabDesc.portPoses.ToList();
             poses.Add(new Pose(new Vector3(0, 0, -1.4f), Quaternion.Euler(0, 180, 0)));
-            megapumper.prefabDesc.portPoses = poses.ToArray();
+            megapumperprefabDesc.portPoses = poses.ToArray();
+
+            var accumulator = models.Select(46);
+            ref var accumulatorprefabDesc = ref accumulator.prefabDesc;
+            accumulatorprefabDesc.maxAcuEnergy = 2700000000;
+            accumulatorprefabDesc.inputEnergyPerTick = 150000;
+            accumulatorprefabDesc.outputEnergyPerTick = 150000;
+
+            var energyexchanger = models.Select(45);
+            ref var energyexchangerprefabDesc = ref energyexchanger.prefabDesc;
+            energyexchangerprefabDesc.maxAcuEnergy = 2700000000;
+            energyexchangerprefabDesc.maxExcEnergy = 2700000000;
+            energyexchangerprefabDesc.exchangeEnergyPerTick = 100000000;
         }
     }
 }

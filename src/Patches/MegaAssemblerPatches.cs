@@ -93,38 +93,37 @@ namespace ProjectGenesis.Patches
             if (assemblerId > 0)
             {
                 ref var assembler = ref factory.factorySystem.assemblerPool[assemblerId];
-                if (assembler.id == assemblerId && assembler.speed >= TrashSpeed && parameters != null && parameters.Length >= 2048)
+                if (assembler.id != assemblerId || assembler.speed < TrashSpeed || parameters == null || parameters.Length < 2048) return;
+
+                if (assembler.recipeId != recipeId)
                 {
-                    assembler.forceAccMode = parameters[0] > 0;
-
-                    if (assembler.recipeId != recipeId)
+                    if (recipeId == 0)
                     {
-                        if (recipeId == 0)
-                        {
-                            assembler.SetRecipe(0, factory.entitySignPool);
-                        }
-                        else
-                        {
-                            var recipe = LDB.recipes.Select(recipeId);
-                            var itemProto = LDB.items.Select(factory.entityPool[entityId].protoId);
-
-                            if (recipeId > 0 &&
-                                ContainsRecipeType(itemProto.prefabDesc.assemblerRecipeType, recipe.Type) &&
-                                factory.gameData.history.RecipeUnlocked(recipeId))
-                                assembler.SetRecipe(recipeId, factory.entitySignPool);
-                        }
+                        assembler.SetRecipe(0, factory.entitySignPool);
                     }
-
-                    SlotData[] slots = GetSlots(factory.planetId, entityId);
-                    const int num4 = 192;
-                    for (var index = 0; index < slots.Length; ++index)
+                    else
                     {
-                        slots[index].dir = (IODir)parameters[num4 + index * 4];
-                        slots[index].storageIdx = parameters[num4 + index * 4 + 1];
-                    }
+                        var recipe = LDB.recipes.Select(recipeId);
+                        var itemProto = LDB.items.Select(factory.entityPool[entityId].protoId);
 
-                    SyncSlotsData.Sync(factory.planetId, entityId, slots);
+                        if (recipeId > 0 &&
+                            ContainsRecipeType(itemProto.prefabDesc.assemblerRecipeType, recipe.Type) &&
+                            factory.gameData.history.RecipeUnlocked(recipeId))
+                            assembler.SetRecipe(recipeId, factory.entitySignPool);
+                    }
                 }
+
+                assembler.forceAccMode = parameters[0] > 0;
+
+                SlotData[] slots = GetSlots(factory.planetId, entityId);
+                const int num4 = 192;
+                for (var index = 0; index < slots.Length; ++index)
+                {
+                    slots[index].dir = (IODir)parameters[num4 + index * 4];
+                    slots[index].storageIdx = parameters[num4 + index * 4 + 1];
+                }
+
+                SyncSlotsData.Sync(factory.planetId, entityId, slots);
             }
         }
 
@@ -132,32 +131,29 @@ namespace ProjectGenesis.Patches
         [HarmonyPatch(typeof(BuildingParameters), "FromParamsArray")]
         public static void BuildingParameters_FromParamsArray(ref BuildingParameters __instance, int[] _parameters)
         {
-            if (_parameters != null && _parameters.Length >= 2048)
-            {
-                if (__instance.parameters.Length < 2048) Array.Resize(ref __instance.parameters, 2048);
+            if (_parameters == null || _parameters.Length < 2048) return;
 
-                Array.Copy(_parameters, 192, __instance.parameters, 192, 1856);
-            }
+            if (__instance.parameters.Length < 2048) Array.Resize(ref __instance.parameters, 2048);
+
+            Array.Copy(_parameters, __instance.parameters, 2048);
         }
 
         [HarmonyPostfix]
         [HarmonyPatch(typeof(BuildingParameters), "ToParamsArray")]
         public static void BuildingParameters_ToParamsArray(ref BuildingParameters __instance, ref int[] _parameters, ref int _paramCount)
         {
-            if (__instance.type == BuildingType.Assembler)
+            if (__instance.type != BuildingType.Assembler) return;
+
+            if (__instance.parameters.Length >= 2048)
             {
-                if (__instance.parameters.Length >= 2048)
-                {
-                    if (_parameters == null || _parameters.Length < 2048) _parameters = new int[2048];
-                    Array.Copy(__instance.parameters, _parameters, 2048);
-                    _paramCount = _parameters.Length;
-                    return;
-                }
-
-                _paramCount = 1;
-
-                if (_parameters == null || _parameters.Length < _paramCount) _parameters = new int[_paramCount];
-                _parameters[0] = __instance.parameters[0];
+                if (_parameters == null || _parameters.Length < 2048) Array.Resize(ref _parameters, 2048);
+                Array.Copy(__instance.parameters, _parameters, 2048);
+                _paramCount = _parameters.Length;
+            }
+            else
+            {
+                _paramCount = __instance.parameters.Length;
+                if (_parameters == null || _parameters.Length < _paramCount) Array.Resize(ref _parameters, _paramCount);
             }
         }
 
@@ -171,44 +167,45 @@ namespace ProjectGenesis.Patches
         {
             if (objectId > 0)
             {
-                if (factory.entityPool.Length > objectId && factory.entityPool[objectId].id == objectId && __instance.type == BuildingType.Assembler)
+                if (factory.entityPool.Length <= objectId || factory.entityPool[objectId].id != objectId || __instance.type != BuildingType.Assembler)
+                    return;
+
+                var assemblerId = factory.entityPool[objectId].assemblerId;
+                if (assemblerId <= 0 || factory.factorySystem.assemblerPool.Length <= assemblerId) return;
+
+                var assembler = factory.factorySystem.assemblerPool[assemblerId];
+                if (assembler.id != assemblerId || assembler.speed < TrashSpeed) return;
+
+                if (__instance.parameters.Length < 2048) Array.Resize(ref __instance.parameters, 2048);
+                __instance.parameters[0] = assembler.forceAccMode ? 1 : 0;
+                __instance.recipeId = assembler.recipeId;
+                __instance.recipeType = assembler.recipeType;
+
+                const int num2 = 192;
+
+                SlotData[] slots = GetSlots(factory.planetId, objectId);
+
+                for (var index = 0; index < slots.Length; ++index)
                 {
-                    var assemblerId = factory.entityPool[objectId].assemblerId;
-                    if (assemblerId > 0 && factory.factorySystem.assemblerPool.Length > assemblerId)
-                    {
-                        var assembler = factory.factorySystem.assemblerPool[assemblerId];
-                        if (assembler.id == assemblerId && assembler.speed >= TrashSpeed)
-                        {
-                            __instance.parameters = new int[2048];
-                            __instance.parameters[0] = assembler.forceAccMode ? 1 : 0;
-                            __instance.recipeId = assembler.recipeId;
-                            __instance.recipeType = assembler.recipeType;
-
-                            const int num2 = 192;
-
-                            SlotData[] slots = GetSlots(factory.planetId, objectId);
-
-                            for (var index = 0; index < slots.Length; ++index)
-                            {
-                                __instance.parameters[num2 + index * 4] = (int)slots[index].dir;
-                                __instance.parameters[num2 + index * 4 + 1] = slots[index].storageIdx;
-                            }
-
-                            SyncSlotsData.Sync(factory.planetId, objectId, slots);
-                        }
-                    }
+                    __instance.parameters[num2 + index * 4] = (int)slots[index].dir;
+                    __instance.parameters[num2 + index * 4 + 1] = slots[index].storageIdx;
                 }
+
+                SyncSlotsData.Sync(factory.planetId, objectId, slots);
             }
             else
             {
                 var index2 = -objectId;
                 PrebuildData[] prebuildPool = factory.prebuildPool;
-                if (index2 > 0 && prebuildPool[index2].id == index2)
-                {
-                    __instance.recipeId = prebuildPool[index2].recipeId;
-                    var recipeProto = LDB.recipes.Select(prebuildPool[index2].recipeId);
-                    if (recipeProto != null) __instance.recipeType = recipeProto.Type;
-                }
+                ref var prebuildData = ref prebuildPool[index2];
+                if (index2 <= 0 || prebuildData.id != index2) return;
+
+                var length = prebuildData.parameters.Length;
+                if (__instance.parameters.Length < length) Array.Resize(ref __instance.parameters, length);
+                Array.Copy(prebuildData.parameters, __instance.parameters, length);
+                __instance.recipeId = prebuildData.recipeId;
+                var recipeProto = LDB.recipes.Select(prebuildData.recipeId);
+                if (recipeProto != null) __instance.recipeType = recipeProto.Type;
             }
         }
 
@@ -222,57 +219,54 @@ namespace ProjectGenesis.Patches
         {
             if (objectId > 0)
             {
-                if (factory.entityPool.Length > objectId && factory.entityPool[objectId].id == objectId && __instance.type == BuildingType.Assembler)
-                {
-                    var assemblerId = factory.entityPool[objectId].assemblerId;
-                    if (assemblerId > 0 && factory.factorySystem.assemblerPool.Length > assemblerId)
-                    {
-                        ref var assembler = ref factory.factorySystem.assemblerPool[assemblerId];
-                        if (assembler.id == assemblerId && assembler.speed >= TrashSpeed)
-                        {
-                            var itemProto = LDB.items.Select(factory.entityPool[objectId].protoId);
-                            if (itemProto != null && itemProto.prefabDesc != null)
-                            {
-                                if (assembler.recipeId != __instance.recipeId &&
-                                    (__instance.recipeId == 0 ||
-                                     (__instance.recipeId > 0 &&
-                                      ContainsRecipeType(itemProto.prefabDesc.assemblerRecipeType, __instance.recipeType) &&
-                                      GameMain.history.RecipeUnlocked(__instance.recipeId))))
-                                {
-                                    factory.factorySystem.TakeBackItems_Assembler(GameMain.mainPlayer, assemblerId);
-                                    {
-                                        assembler.SetRecipe(__instance.recipeId, factory.entitySignPool);
-                                        __result = true;
-                                    }
-                                }
+                if (factory.entityPool.Length <= objectId || factory.entityPool[objectId].id != objectId || __instance.type != BuildingType.Assembler)
+                    return;
 
-                                if (__instance.parameters != null &&
-                                    __instance.parameters.Length >= 1 &&
-                                    ContainsRecipeType(itemProto.prefabDesc.assemblerRecipeType, __instance.recipeType))
-                                    assembler.forceAccMode = __instance.parameters[0] > 0;
-                            }
-                        }
-                    }
+                var assemblerId = factory.entityPool[objectId].assemblerId;
+                if (assemblerId <= 0 || factory.factorySystem.assemblerPool.Length <= assemblerId) return;
+
+                ref var assembler = ref factory.factorySystem.assemblerPool[assemblerId];
+                if (assembler.id != assemblerId || assembler.speed < TrashSpeed) return;
+
+                var itemProto = LDB.items.Select(factory.entityPool[objectId].protoId);
+                if (itemProto == null || itemProto.prefabDesc == null) return;
+
+                var containsRecipeType = ContainsRecipeType(itemProto.prefabDesc.assemblerRecipeType, __instance.recipeType);
+
+                if (assembler.recipeId != __instance.recipeId &&
+                    (__instance.recipeId == 0 ||
+                     (__instance.recipeId > 0 && containsRecipeType && GameMain.history.RecipeUnlocked(__instance.recipeId))))
+                {
+                    factory.factorySystem.TakeBackItems_Assembler(GameMain.mainPlayer, assemblerId);
+                    assembler.SetRecipe(__instance.recipeId, factory.entitySignPool);
+                    __result = true;
                 }
+
+                if (__instance.parameters != null && __instance.parameters.Length >= 1 && containsRecipeType)
+                    assembler.forceAccMode = __instance.parameters[0] > 0;
             }
             else
             {
                 var index1 = -objectId;
                 PrebuildData[] prebuildPool = factory.prebuildPool;
 
-                if (index1 > 0 && prebuildPool[index1].id == index1)
-                {
-                    var itemProto = LDB.items.Select(prebuildPool[index1].protoId);
-                    if (itemProto != null && itemProto.prefabDesc != null)
-                        if (itemProto.prefabDesc.isAssembler &&
-                            __instance.type == BuildingType.Assembler &&
-                            ContainsRecipeType(itemProto.prefabDesc.assemblerRecipeType, __instance.recipeType))
-                        {
-                            prebuildPool[index1].recipeId = __instance.recipeId;
-                            prebuildPool[index1].filterId = __instance.filterId;
-                            __instance.ToParamsArray(ref prebuildPool[index1].parameters, ref prebuildPool[index1].paramCount);
-                        }
-                }
+                ref var prebuildData = ref prebuildPool[index1];
+                if (index1 <= 0 || prebuildData.id != index1) return;
+
+                var itemProto = LDB.items.Select(prebuildData.protoId);
+                if (itemProto == null || itemProto.prefabDesc == null) return;
+
+                if (!itemProto.prefabDesc.isAssembler ||
+                    __instance.type != BuildingType.Assembler ||
+                    !ContainsRecipeType(itemProto.prefabDesc.assemblerRecipeType, __instance.recipeType))
+                    return;
+
+                if (prebuildData.parameters == null || prebuildData.parameters.Length < 2048) Array.Resize(ref prebuildData.parameters, 2048);
+
+                Array.Copy(__instance.parameters, prebuildData.parameters, 2048);
+                prebuildData.recipeId = __instance.recipeId;
+                prebuildData.filterId = __instance.filterId;
+                __instance.ToParamsArray(ref prebuildData.parameters, ref prebuildData.paramCount);
             }
         }
 
@@ -286,41 +280,37 @@ namespace ProjectGenesis.Patches
         {
             if (objectId > 0)
             {
-                if (factory.entityPool.Length > objectId && factory.entityPool[objectId].id == objectId && __instance.type == BuildingType.Assembler)
-                {
-                    var assemblerId = factory.entityPool[objectId].assemblerId;
-                    if (assemblerId > 0 && factory.factorySystem.assemblerPool.Length > assemblerId)
-                    {
-                        var assembler = factory.factorySystem.assemblerPool[assemblerId];
-                        if (assembler.id == assemblerId && assembler.speed >= TrashSpeed)
-                            if (assembler.recipeId != __instance.recipeId)
-                            {
-                                var itemProto = LDB.items.Select(factory.entityPool[objectId].protoId);
-                                if (itemProto != null &&
-                                    itemProto.prefabDesc != null &&
-                                    (__instance.recipeId == 0 ||
-                                     (__instance.recipeId > 0 &&
-                                      ContainsRecipeType(itemProto.prefabDesc.assemblerRecipeType, __instance.recipeType) &&
-                                      GameMain.history.RecipeUnlocked(__instance.recipeId))))
-                                    __result = true;
-                            }
-                    }
-                }
+                if (factory.entityPool.Length <= objectId || factory.entityPool[objectId].id != objectId || __instance.type != BuildingType.Assembler)
+                    return;
+
+                var assemblerId = factory.entityPool[objectId].assemblerId;
+                if (assemblerId <= 0 || factory.factorySystem.assemblerPool.Length <= assemblerId) return;
+
+                var assembler = factory.factorySystem.assemblerPool[assemblerId];
+                if (assembler.id != assemblerId || assembler.speed < TrashSpeed || assembler.recipeId == __instance.recipeId) return;
+
+                var itemProto = LDB.items.Select(factory.entityPool[objectId].protoId);
+                if (itemProto != null &&
+                    itemProto.prefabDesc != null &&
+                    (__instance.recipeId == 0 ||
+                     (__instance.recipeId > 0 &&
+                      ContainsRecipeType(itemProto.prefabDesc.assemblerRecipeType, __instance.recipeType) &&
+                      GameMain.history.RecipeUnlocked(__instance.recipeId))))
+                    __result = true;
             }
             else
             {
                 var index2 = -objectId;
                 PrebuildData[] prebuildPool = factory.prebuildPool;
-                if (index2 > 0 && prebuildPool[index2].id == index2)
-                {
-                    var itemProto = LDB.items.Select(prebuildPool[index2].protoId);
-                    if (itemProto != null &&
-                        itemProto.prefabDesc != null &&
-                        itemProto.prefabDesc.isAssembler &&
-                        __instance.type == BuildingType.Assembler &&
-                        ContainsRecipeType(itemProto.prefabDesc.assemblerRecipeType, __instance.recipeType))
-                        __result = true;
-                }
+                if (index2 <= 0 || prebuildPool[index2].id != index2) return;
+
+                var itemProto = LDB.items.Select(prebuildPool[index2].protoId);
+                if (itemProto != null &&
+                    itemProto.prefabDesc != null &&
+                    itemProto.prefabDesc.isAssembler &&
+                    __instance.type == BuildingType.Assembler &&
+                    ContainsRecipeType(itemProto.prefabDesc.assemblerRecipeType, __instance.recipeType))
+                    __result = true;
             }
         }
 
@@ -345,20 +335,18 @@ namespace ProjectGenesis.Patches
         {
             if (entityId == 0) return;
             var assemblerId = __instance.entityPool[entityId].assemblerId;
-            if (assemblerId > 0)
-            {
-                var assembler = __instance.factorySystem.assemblerPool[assemblerId];
-                if (assembler.id == assemblerId && assembler.speed >= TrashSpeed)
-                {
-                    var beltId = __instance.entityPool[insertTarget].beltId;
-                    if (beltId <= 0) return;
-                    SlotData[] slotdata = GetSlots(__instance.planetId, entityId);
-                    slotdata[slotId].dir = IODir.Output;
-                    slotdata[slotId].beltId = beltId;
-                    slotdata[slotId].counter = 0;
-                    SyncSlotData.Sync(__instance.planetId, slotId, entityId, slotdata[slotId]);
-                }
-            }
+            if (assemblerId <= 0) return;
+
+            var assembler = __instance.factorySystem.assemblerPool[assemblerId];
+            if (assembler.id != assemblerId || assembler.speed < TrashSpeed) return;
+
+            var beltId = __instance.entityPool[insertTarget].beltId;
+            if (beltId <= 0) return;
+            SlotData[] slotdata = GetSlots(__instance.planetId, entityId);
+            slotdata[slotId].dir = IODir.Output;
+            slotdata[slotId].beltId = beltId;
+            slotdata[slotId].counter = 0;
+            SyncSlotData.Sync(__instance.planetId, slotId, entityId, slotdata[slotId]);
         }
 
         [HarmonyPostfix]
@@ -372,21 +360,19 @@ namespace ProjectGenesis.Patches
         {
             if (entityId == 0) return;
             var assemblerId = __instance.entityPool[entityId].assemblerId;
-            if (assemblerId > 0)
-            {
-                var assembler = __instance.factorySystem.assemblerPool[assemblerId];
-                if (assembler.id == assemblerId && assembler.speed >= TrashSpeed)
-                {
-                    var beltId = __instance.entityPool[pickTarget].beltId;
-                    if (beltId <= 0) return;
-                    SlotData[] slotdata = GetSlots(__instance.planetId, entityId);
-                    slotdata[slotId].dir = IODir.Input;
-                    slotdata[slotId].beltId = beltId;
-                    slotdata[slotId].storageIdx = 0;
-                    slotdata[slotId].counter = 0;
-                    SyncSlotData.Sync(__instance.planetId, slotId, entityId, slotdata[slotId]);
-                }
-            }
+            if (assemblerId <= 0) return;
+
+            var assembler = __instance.factorySystem.assemblerPool[assemblerId];
+            if (assembler.id != assemblerId || assembler.speed < TrashSpeed) return;
+
+            var beltId = __instance.entityPool[pickTarget].beltId;
+            if (beltId <= 0) return;
+            SlotData[] slotdata = GetSlots(__instance.planetId, entityId);
+            slotdata[slotId].dir = IODir.Input;
+            slotdata[slotId].beltId = beltId;
+            slotdata[slotId].storageIdx = 0;
+            slotdata[slotId].counter = 0;
+            SyncSlotData.Sync(__instance.planetId, slotId, entityId, slotdata[slotId]);
         }
 
         [HarmonyPostfix]
@@ -400,23 +386,22 @@ namespace ProjectGenesis.Patches
         {
             if (otherEntityId == 0) return;
             var assemblerId = __instance.entityPool[otherEntityId].assemblerId;
-            if (assemblerId > 0)
-            {
-                var assembler = __instance.factorySystem.assemblerPool[assemblerId];
-                if (assembler.id == assemblerId && assembler.speed >= TrashSpeed)
-                {
-                    var beltId = __instance.entityPool[removingEntityId].beltId;
-                    if (beltId <= 0) return;
-                    SlotData[] slotdata = GetSlots(__instance.planetId, otherEntityId);
+            if (assemblerId <= 0) return;
 
-                    slotdata[otherSlotId].dir = IODir.None;
-                    slotdata[otherSlotId].beltId = 0;
-                    slotdata[otherSlotId].storageIdx = 0;
-                    slotdata[otherSlotId].counter = 0;
+            var assembler = __instance.factorySystem.assemblerPool[assemblerId];
+            if (assembler.id != assemblerId || assembler.speed < TrashSpeed) return;
 
-                    SyncSlotData.Sync(__instance.planetId, otherSlotId, otherEntityId, slotdata[otherSlotId]);
-                }
-            }
+            var beltId = __instance.entityPool[removingEntityId].beltId;
+            if (beltId <= 0) return;
+
+            SlotData[] slotdata = GetSlots(__instance.planetId, otherEntityId);
+
+            slotdata[otherSlotId].dir = IODir.None;
+            slotdata[otherSlotId].beltId = 0;
+            slotdata[otherSlotId].storageIdx = 0;
+            slotdata[otherSlotId].counter = 0;
+
+            SyncSlotData.Sync(__instance.planetId, otherSlotId, otherEntityId, slotdata[otherSlotId]);
         }
 
         [HarmonyPatch(typeof(FactorySystem), "GameTick", typeof(long), typeof(bool))]
@@ -527,49 +512,49 @@ namespace ProjectGenesis.Patches
                     {
                         var beltComponent = traffic.beltPool[slotdata[index1].beltId];
                         var cargoPath = traffic.GetCargoPath(beltComponent.segPathId);
-                        if (cargoPath != null)
+                        if (cargoPath == null) continue;
+
+                        var index2 = slotdata[index1].storageIdx - 1;
+                        var itemId = 0;
+
+                        if (index2 >= 0)
                         {
-                            var index2 = slotdata[index1].storageIdx - 1;
-                            var itemId = 0;
-                            if (index2 >= 0)
+                            if (index2 < __instance.products.Length)
                             {
-                                if (index2 < __instance.products.Length)
+                                itemId = __instance.products[index2];
+                                var produced = __instance.produced[index2];
+                                if (itemId > 0 && produced > 0)
                                 {
-                                    itemId = __instance.products[index2];
-                                    var produced = __instance.produced[index2];
-                                    if (itemId > 0 && produced > 0)
-                                    {
-                                        var num2 = produced < maxPilerCount ? produced : maxPilerCount;
-                                        if (cargoPath.TryInsertItemAtHeadAndFillBlank(itemId, (byte)num2, 0)) __instance.produced[index2] -= num2;
-                                    }
+                                    var num2 = produced < maxPilerCount ? produced : maxPilerCount;
+                                    if (cargoPath.TryInsertItemAtHeadAndFillBlank(itemId, (byte)num2, 0)) __instance.produced[index2] -= num2;
                                 }
-                                else
+                            }
+                            else
+                            {
+                                var index3 = index2 - __instance.products.Length;
+                                if (index3 < __instance.requires.Length)
                                 {
-                                    var index3 = index2 - __instance.products.Length;
-                                    if (index3 < __instance.requires.Length)
+                                    itemId = __instance.requires[index3];
+                                    var served = __instance.served[index3];
+                                    if (itemId > 0 && served > 0)
                                     {
-                                        itemId = __instance.requires[index3];
-                                        var served = __instance.served[index3];
-                                        if (itemId > 0 && served > 0)
+                                        var num2 = served < maxPilerCount ? served : maxPilerCount;
+                                        var inc = (int)((double)__instance.incServed[index3] * num2 / __instance.served[index3]);
+                                        if (cargoPath.TryInsertItemAtHeadAndFillBlank(itemId, (byte)num2, (byte)inc))
                                         {
-                                            var num2 = served < maxPilerCount ? served : maxPilerCount;
-                                            var inc = (int)((double)__instance.incServed[index3] * num2 / __instance.served[index3]);
-                                            if (cargoPath.TryInsertItemAtHeadAndFillBlank(itemId, (byte)num2, (byte)inc))
-                                            {
-                                                __instance.incServed[index3] -= inc;
-                                                __instance.served[index3] -= num2;
-                                            }
+                                            __instance.incServed[index3] -= inc;
+                                            __instance.served[index3] -= num2;
                                         }
                                     }
                                 }
                             }
+                        }
 
-                            if (itemId > 0)
-                            {
-                                var entityId = beltComponent.entityId;
-                                signPool[entityId].iconType = 1U;
-                                signPool[entityId].iconId0 = (uint)itemId;
-                            }
+                        if (itemId > 0)
+                        {
+                            var entityId = beltComponent.entityId;
+                            signPool[entityId].iconType = 1U;
+                            signPool[entityId].iconId0 = (uint)itemId;
                         }
                     }
                 }
@@ -600,65 +585,65 @@ namespace ProjectGenesis.Patches
                     {
                         var entityId = traffic.beltPool[slotdata[index].beltId].entityId;
                         var cargoPath = traffic.GetCargoPath(traffic.beltPool[slotdata[index].beltId].segPathId);
-                        if (cargoPath != null)
+                        if (cargoPath == null) continue;
+
+                        if (__instance.recipeId == 429)
                         {
-                            if (__instance.recipeId == 429)
+                            var itemId = traffic.TryPickItemAtRear(slotdata[index].beltId, 0, null, out var stack, out _);
+
+                            if (itemId <= 0) continue;
+
+                            var consumeRegister = GameMain.statistics.production.factoryStatPool[factory.index].consumeRegister;
+
+                            lock (consumeRegister)
                             {
-                                var itemId = traffic.TryPickItemAtRear(slotdata[index].beltId, 0, null, out var stack, out _);
+                                consumeRegister[itemId] += stack;
+                            }
 
-                                if (itemId > 0)
+                            TmpSandCount += stack;
+
+                            if (TmpSandCount < 1000 || GameMain.mainPlayer == null) continue;
+
+                            // This method will be called in a worker thread (not main UI thread).
+                            // Thus, calling `GameMain.mainPlayer.SetSandCount` which brings up sand tooltip UI
+                            // will crash the program.
+                            // Instead, we should increase the sand count directly.
+                            AccessTools.PropertySetter(typeof(Player), "sandCount").Invoke(GameMain.mainPlayer,
+                                                                                           new object[]
+                                                                                           {
+                                                                                               Math.Min(1000000000,
+                                                                                                        GameMain.mainPlayer.sandCount +
+                                                                                                        TmpSandCount * 20)
+                                                                                           });
+                            TmpSandCount = 0;
+                        }
+                        else
+                        {
+                            var itemId = cargoPath.TryPickItemAtRear(__instance.needs, out var needIdx, out var stack, out var inc);
+
+                            if (needIdx >= 0 && itemId > 0 && __instance.needs[needIdx] == itemId)
+                            {
+                                __instance.served[needIdx] += stack;
+                                __instance.incServed[needIdx] += inc;
+                            }
+
+                            for (var i = 0; i < __instance.products.Length; i++)
+                            {
+                                if (__instance.produced[i] >= 50) continue;
+
+                                itemId = traffic.TryPickItemAtRear(slotdata[index].beltId, __instance.products[i], null, out stack, out _);
+
+                                if (__instance.products[i] == itemId)
                                 {
-                                    var consumeRegister = GameMain.statistics.production.factoryStatPool[factory.index].consumeRegister;
-
-                                    lock (consumeRegister)
-                                    {
-                                        consumeRegister[itemId] += stack;
-                                    }
-
-                                    TmpSandCount += stack;
-
-                                    if (TmpSandCount >= 1000 && GameMain.mainPlayer != null)
-                                    {
-                                        // This method will be called in a worker thread (not main UI thread).
-                                        // Thus, calling `GameMain.mainPlayer.SetSandCount` which brings up sand tooltip UI
-                                        // will crash the program.
-                                        // Instead, we should increase the sand count directly.
-                                        AccessTools.PropertySetter(typeof(Player), "sandCount")
-                                                   .Invoke(GameMain.mainPlayer,
-                                                           new object[] { Math.Min(1000000000, GameMain.mainPlayer.sandCount + TmpSandCount * 20) });
-                                        TmpSandCount = 0;
-                                    }
+                                    __instance.produced[i] += stack;
+                                    break;
                                 }
                             }
-                            else
+
+                            if (itemId > 0)
                             {
-                                var itemId = cargoPath.TryPickItemAtRear(__instance.needs, out var needIdx, out var stack, out var inc);
-
-                                if (needIdx >= 0 && itemId > 0 && __instance.needs[needIdx] == itemId)
-                                {
-                                    __instance.served[needIdx] += stack;
-                                    __instance.incServed[needIdx] += inc;
-                                }
-
-                                for (var i = 0; i < __instance.products.Length; i++)
-                                {
-                                    if (__instance.produced[i] < 50)
-                                    {
-                                        itemId = traffic.TryPickItemAtRear(slotdata[index].beltId, __instance.products[i], null, out stack, out _);
-
-                                        if (__instance.products[i] == itemId)
-                                        {
-                                            __instance.produced[i] += stack;
-                                            break;
-                                        }
-                                    }
-                                }
-
-                                if (itemId > 0)
-                                {
-                                    signPool[entityId].iconType = 1U;
-                                    signPool[entityId].iconId0 = (uint)itemId;
-                                }
+                                signPool[entityId].iconType = 1U;
+                                signPool[entityId].iconId0 = (uint)itemId;
                             }
                         }
                     }
@@ -703,8 +688,10 @@ namespace ProjectGenesis.Patches
                 __instance.factory == null ||
                 __instance.factorySystem.assemblerPool[__instance.assemblerId].id != __instance.assemblerId)
                 return false;
+
             var entityId = __instance.factorySystem.assemblerPool[__instance.assemblerId].entityId;
             if (entityId == 0) return false;
+
             var itemProto = LDB.items.Select(__instance.factory.entityPool[entityId].protoId);
             if (itemProto == null) return false;
 
@@ -730,34 +717,31 @@ namespace ProjectGenesis.Patches
             ref RecipeProto[] ___protoArray)
         {
             var filter = (Utils.ERecipeType)___filter;
-            if (filter == Utils.ERecipeType.所有化工 || filter == Utils.ERecipeType.所有熔炉 || filter == Utils.ERecipeType.所有高精)
+            if (filter != Utils.ERecipeType.所有化工 && filter != Utils.ERecipeType.所有熔炉 && filter != Utils.ERecipeType.所有高精) return;
+
+            Array.Clear(___indexArray, 0, ___indexArray.Length);
+            Array.Clear(___protoArray, 0, ___protoArray.Length);
+            var history = GameMain.history;
+            RecipeProto[] dataArray = LDB.recipes.dataArray;
+            var iconSet = GameMain.iconSet;
+            // ReSharper disable once ForCanBeConvertedToForeach
+            for (var index1 = 0; index1 < dataArray.Length; ++index1)
             {
-                Array.Clear(___indexArray, 0, ___indexArray.Length);
-                Array.Clear(___protoArray, 0, ___protoArray.Length);
-                var history = GameMain.history;
-                RecipeProto[] dataArray = LDB.recipes.dataArray;
-                var iconSet = GameMain.iconSet;
-                // ReSharper disable once ForCanBeConvertedToForeach
-                for (var index1 = 0; index1 < dataArray.Length; ++index1)
-                {
-                    var gridIndex = dataArray[index1].GridIndex;
-                    if (gridIndex >= 1101 && history.RecipeUnlocked(dataArray[index1].ID))
-                        if (___filter == ERecipeType_1.None || ContainsRecipeType(___filter, dataArray[index1].Type))
-                        {
-                            var num1 = gridIndex / 1000;
-                            var num2 = (gridIndex - num1 * 1000) / 100 - 1;
-                            var num3 = gridIndex % 100 - 1;
-                            if (num2 >= 0 && num3 >= 0 && num2 < 7 && num3 < 17)
-                            {
-                                var index2 = num2 * 17 + num3;
-                                if (index2 >= 0 && index2 < ___indexArray.Length && num1 == ___currentType)
-                                {
-                                    ___indexArray[index2] = iconSet.recipeIconIndex[dataArray[index1].ID];
-                                    ___protoArray[index2] = dataArray[index1];
-                                }
-                            }
-                        }
-                }
+                var gridIndex = dataArray[index1].GridIndex;
+                if (gridIndex < 1101 || !history.RecipeUnlocked(dataArray[index1].ID)) continue;
+
+                if (___filter != ERecipeType_1.None && !ContainsRecipeType(___filter, dataArray[index1].Type)) continue;
+
+                var num1 = gridIndex / 1000;
+                var num2 = (gridIndex - num1 * 1000) / 100 - 1;
+                var num3 = gridIndex % 100 - 1;
+                if (num2 < 0 || num3 < 0 || num2 >= 7 || num3 >= 17) continue;
+
+                var index2 = num2 * 17 + num3;
+                if (index2 < 0 || index2 >= ___indexArray.Length || num1 != ___currentType) continue;
+
+                ___indexArray[index2] = iconSet.recipeIconIndex[dataArray[index1].ID];
+                ___protoArray[index2] = dataArray[index1];
             }
         }
 
@@ -952,19 +936,17 @@ namespace ProjectGenesis.Patches
         {
             var assemblerComponent = factory.factorySystem.assemblerPool[entityData.assemblerId];
 
-            if (assemblerComponent.speed >= TrashSpeed)
-            {
-                SlotData[] slotDatas = GetSlots(factory.planetId, outputEntityId);
-                slotDatas[outputSlotId].storageIdx = selectedIndex;
+            if (assemblerComponent.speed < TrashSpeed) return;
 
-                entityData.stationId = 0;
+            SlotData[] slotDatas = GetSlots(factory.planetId, outputEntityId);
+            slotDatas[outputSlotId].storageIdx = selectedIndex;
 
-                if (!IsChangeCached((factory.planetId, outputEntityId), outputSlotId, selectedIndex))
-                {
-                    SyncSlotData.Sync(factory.planetId, outputSlotId, outputEntityId, slotDatas[outputSlotId]);
-                    CacheChange((factory.planetId, outputEntityId), outputSlotId, selectedIndex);
-                }
-            }
+            entityData.stationId = 0;
+
+            if (IsChangeCached((factory.planetId, outputEntityId), outputSlotId, selectedIndex)) return;
+
+            SyncSlotData.Sync(factory.planetId, outputSlotId, outputEntityId, slotDatas[outputSlotId]);
+            CacheChange((factory.planetId, outputEntityId), outputSlotId, selectedIndex);
         }
 
         private static bool IsChangeCached((int, int) id, int slotId, int selectedIndex)

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Reflection;
 using System.Reflection.Emit;
 using HarmonyLib;
 
@@ -15,14 +16,14 @@ namespace ProjectGenesis.Patches
     //Original author: xiaoye97, modified heavily.
     public static class BeltFixPatches
     {
+        private static readonly FieldInfo BeltComponent_Speed_Field = AccessTools.Field(typeof(BeltComponent), nameof(BeltComponent.speed));
+
         [HarmonyPatch(typeof(CargoTraffic), "AlterBeltRenderer")]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> AddColors(IEnumerable<CodeInstruction> instructions)
         {
             var matcher = new CodeMatcher(instructions).MatchForward(false, new CodeMatch(OpCodes.Ldloc_1),
-                                                                     new CodeMatch(OpCodes.Ldfld,
-                                                                                   AccessTools.Field(typeof(BeltComponent),
-                                                                                                     nameof(BeltComponent.speed))),
+                                                                     new CodeMatch(OpCodes.Ldfld, BeltComponent_Speed_Field),
                                                                      new CodeMatch(OpCodes.Ldc_I4_1));
 
             var matcher2 = matcher.Clone();
@@ -44,6 +45,35 @@ namespace ProjectGenesis.Patches
             return matcher.InstructionEnumeration();
         }
 
+        [HarmonyPatch(typeof(CargoTraffic), "SetBeltSelected")]
+        [HarmonyTranspiler]
+        public static IEnumerable<CodeInstruction> CargoTraffic_SetBeltSelected_Transpiler(IEnumerable<CodeInstruction> instructions)
+        {
+            var matcher = new CodeMatcher(instructions).MatchForward(false, new CodeMatch(OpCodes.Ldelema),
+                                                                     new CodeMatch(OpCodes.Ldfld, BeltComponent_Speed_Field),
+                                                                     new CodeMatch(OpCodes.Call));
+
+            matcher.Advance(2).InsertAndAdvance(Transpilers.EmitDelegate<Func<int, int>>((speed) =>
+            {
+                switch (speed)
+                {
+                    case 10:
+                        return 5;
+
+                    case 5:
+                        return 2;
+
+                    case 3:
+                        return 1;
+
+                    default:
+                        return speed;
+                }
+            }));
+
+            return matcher.InstructionEnumeration();
+        }
+
         [HarmonyPatch(typeof(ConnGizmoRenderer), "AddBlueprintBeltMajorPoint")]
         [HarmonyPatch(typeof(ConnGizmoRenderer), "AddBlueprintBeltPoint")]
         [HarmonyPatch(typeof(ConnGizmoRenderer), "AddBlueprintBeltConn")]
@@ -53,7 +83,7 @@ namespace ProjectGenesis.Patches
             switch (color)
             {
                 case 10:
-                    color = 3;
+                    color = 5;
                     break;
 
                 case 5:

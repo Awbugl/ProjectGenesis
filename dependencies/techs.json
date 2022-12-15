@@ -1503,12 +1503,12 @@
     "Items": [
       6001,
       6002,
-      6004
+      6003      
     ],
     "ItemPoints": [
       8,
       8,
-      2
+      8
     ],
     "HashNeeded": 360000,
     "UnlockRecipes": [
