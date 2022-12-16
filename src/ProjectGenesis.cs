@@ -105,14 +105,19 @@ namespace ProjectGenesis
                 if (theme.ID == 1)
                 {
                     theme.RareVeins = new[] { 8 };
-                    theme.RareSettings = new float[] { 1.0f, 0.3f, 0.0f, 0.2f };
+                    theme.RareSettings = new float[] { 1.0f, 0.5f, 0.0f, 0.4f };
                 }
 
-                if (theme.VeinSpot.Length > 2 && theme.VeinSpot[2] > 1)
+                if (theme.VeinSpot.Length > 2)
                 {
-                    theme.VeinSpot[2] = 1;
-                    theme.VeinCount[2] = 0.3f;
-                    theme.VeinOpacity[2] = 0.3f;
+                    ref var silicon = ref theme.VeinSpot[2];
+
+                    if (silicon > 0)
+                    {
+                        silicon = 1 + silicon / 4;
+                        theme.VeinCount[2] = 0.5f;
+                        theme.VeinOpacity[2] = 0.5f;
+                    }
                 }
             }
 
