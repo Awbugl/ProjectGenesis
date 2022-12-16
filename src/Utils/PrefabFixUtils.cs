@@ -237,7 +237,7 @@ namespace ProjectGenesis.Utils
             ref var energyexchangerprefabDesc = ref energyexchanger.prefabDesc;
             energyexchangerprefabDesc.maxAcuEnergy = 2700000000;
             energyexchangerprefabDesc.maxExcEnergy = 2700000000;
-            energyexchangerprefabDesc.exchangeEnergyPerTick = 100000000;
+            energyexchangerprefabDesc.exchangeEnergyPerTick = 10000000;
         }
     }
 }

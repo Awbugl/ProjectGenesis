@@ -13,18 +13,27 @@ Reconstruct "Real Universe". Then leave a "GenesisBook".
 
 ### 最近更新介绍 | Recent update
 
+- v2.2.9
+    + 下调了量子芯片的科技需求
+    + 调整了蓄电器和能量枢纽的输出功率与蓄电量
+    + 调整了大多数星球的硅矿数量（仅在新存档生效）
+    + 提高了母星的可燃冰矿物数量（仅在新存档生效）
+    + 修复了蓝图中巨型建筑的增产剂效果无法正确复制的问题
+    + 修复了选择传送带时显示高亮颜色不正确的问题
+
+    + Adjusted the technology requirements of quantum chips
+    + Adjusted the output power and storage capacity of capacitors and energy hubs
+    + Adjusted the amount of silicon ore on most planets (only affects new game)
+    + Increase the amount of NGH ore on the birth planet (only affects new game)
+    + Fixed the problem that the production multiplier effect of the giant building in the blueprint could not be copied
+      correctly
+    + Fixed the problem that the highlight color was displayed incorrectly when selecting the conveyor belt
+
+
 - v2.2.8
     + 修改了部分配方的时间和产出(总产出不变)
 
     + Changed the time and output of some recipes (No change in total output)
-
-
-- v2.2.7
-    + 修复巨型建筑输出原料的传送带速度达不到上限的问题
-    + 修复巨型建筑输出的原料增产点数异常的问题
-
-    + Fix the problem that the belt out from Mega Buildings cannot reach the speed limit
-    + Fix the problem that the production point of raw materials output from Mega Buildings is abnormal
 
 ----
 
@@ -104,6 +113,15 @@ Reconstruct "Real Universe". Then leave a "GenesisBook".
 
 <details>
   <summary>展开查看</summary>
+
+- v2.2.9
+    + 下调了量子芯片的科技需求
+    + 调整了蓄电器和能量枢纽的输出功率与蓄电量
+    + 调整了大多数星球的硅矿数量（仅在新存档生效）
+    + 提高了母星的可燃冰矿物数量（仅在新存档生效）
+    + 修复了蓝图中巨型建筑的增产剂效果无法正确复制的问题
+    + 修复了选择传送带时显示高亮颜色不正确的问题
+
 
 - v2.2.8
     + 修改了部分配方的时间和产出(总产出不变)
@@ -308,6 +326,16 @@ free to communicate with us.
 
 <details>
   <summary>Details</summary>
+
+- v2.2.9
+    + Adjusted the technology requirements of quantum chips
+    + Adjusted the output power and storage capacity of capacitors and energy hubs
+    + Adjusted the amount of silicon ore on most planets (only affects new game)
+    + Increase the amount of NGH ore on the birth planet (only affects new game)
+    + Fixed the problem that the production multiplier effect of the giant building in the blueprint could not be copied
+      correctly
+    + Fixed the problem that the highlight color was displayed incorrectly when selecting the conveyor belt
+
 
 - v2.2.8
     + Changed the time and output of some recipes (No change in total output)
