@@ -1,4 +1,4 @@
-![img.png](https://webapi.awbugl.top/dsp-genesisbook/profile.png)
+![img.png](https://assets.awbugl.top/dsp-genesisbook/profile.png)
 
 重构“真实宇宙”，撰写“创世之书”。
 
@@ -6,10 +6,10 @@ Reconstruct "Real Universe". Then leave a "GenesisBook".
 
 ### MOD内容速览 | A glimpse
 
-![img.png](https://server.awbugl.top/dsp-genesisbook/1.jpg)
-![img.png](https://server.awbugl.top/dsp-genesisbook/2.jpg)
-![img.png](https://server.awbugl.top/dsp-genesisbook/3.jpg)
-![img.png](https://server.awbugl.top/dsp-genesisbook/4.jpg)
+![img.png](https://assets.awbugl.top/dsp-genesisbook/1.jpg)
+![img.png](https://assets.awbugl.top/dsp-genesisbook/2.jpg)
+![img.png](https://assets.awbugl.top/dsp-genesisbook/3.jpg)
+![img.png](https://assets.awbugl.top/dsp-genesisbook/4.jpg)
 
 ### 最近更新介绍 | Recent update
 
