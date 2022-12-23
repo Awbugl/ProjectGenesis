@@ -6,6 +6,6 @@
         <DSPAssemblyPath>D:\SteamLibrary\steamapps\common\Dyson Sphere Program\DSPGAME_Data\Managed</DSPAssemblyPath>
         <CommonAPIPath>$(BepInExPath)\plugins\CommonAPI-CommonAPI\CommonAPI.dll</CommonAPIPath>
         <DSPModSavePath>$(BepInExPath)\plugins\CommonAPI-DSPModSave\DSPModSave.dll</DSPModSavePath>
-        <LDBToolPath>$(BepInExPath)plugins\xiaoye97-LDBTool\LDBTool.dll</LDBToolPath>
+        <LDBToolPath>$(BepInExPath)\plugins\xiaoye97-LDBTool\LDBTool.dll</LDBToolPath>
     </PropertyGroup>
 </Project>
