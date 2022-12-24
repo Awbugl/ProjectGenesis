@@ -52,8 +52,17 @@ namespace ProjectGenesis.Patches
         public static void ItemProto_fuelTypeString(ref ItemProto __instance, ref string __result)
         {
             var type = __instance.FuelType;
-            if (type == 5) __result = "裂变能".TranslateFromJson();
-            if (type == 6) __result = "聚变能".TranslateFromJson();
+            
+            switch (type)
+            {
+                case 5:
+                    __result = "裂变能".TranslateFromJson();
+                    break;
+
+                case 6:
+                    __result = "聚变能".TranslateFromJson();
+                    break;
+            }
         }
 
         //发电类型
@@ -71,11 +80,21 @@ namespace ProjectGenesis.Patches
             switch (__instance.DescFields[index])
             {
                 case 4:
-                    if (__instance.prefabDesc.isPowerGen)
+                    if (!__instance.prefabDesc.isPowerGen) return;
+                    
+                    switch (__instance.prefabDesc.fuelMask)
                     {
-                        if (__instance.prefabDesc.fuelMask == 4) __result = "质能转换".TranslateFromJson();
-                        if (__instance.prefabDesc.fuelMask == 5) __result = "裂变能".TranslateFromJson();
-                        if (__instance.prefabDesc.fuelMask == 6) __result = "仿星器".TranslateFromJson();
+                        case 4:
+                            __result = "质能转换".TranslateFromJson();
+                            break;
+
+                        case 5:
+                            __result = "裂变能".TranslateFromJson();
+                            break;
+
+                        case 6:
+                            __result = "仿星器".TranslateFromJson();
+                            break;
                     }
 
                     return;
