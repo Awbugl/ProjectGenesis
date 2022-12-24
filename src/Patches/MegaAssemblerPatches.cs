@@ -176,7 +176,8 @@ namespace ProjectGenesis.Patches
                 var assembler = factory.factorySystem.assemblerPool[assemblerId];
                 if (assembler.id != assemblerId || assembler.speed < TrashSpeed) return;
 
-                if (__instance.parameters.Length < 2048) Array.Resize(ref __instance.parameters, 2048);
+                if (__instance.parameters == null || __instance.parameters.Length < 2048) Array.Resize(ref __instance.parameters, 2048);
+
                 __instance.parameters[0] = assembler.forceAccMode ? 1 : 0;
                 __instance.recipeId = assembler.recipeId;
                 __instance.recipeType = assembler.recipeType;
@@ -200,9 +201,13 @@ namespace ProjectGenesis.Patches
                 ref var prebuildData = ref prebuildPool[index2];
                 if (index2 <= 0 || prebuildData.id != index2) return;
 
-                var length = prebuildData.parameters.Length;
-                if (__instance.parameters.Length < length) Array.Resize(ref __instance.parameters, length);
-                Array.Copy(prebuildData.parameters, __instance.parameters, length);
+                if (prebuildData.parameters != null)
+                {
+                    var length = prebuildData.parameters.Length;
+                    if (__instance.parameters == null || __instance.parameters.Length < length) Array.Resize(ref __instance.parameters, length);
+                    Array.Copy(prebuildData.parameters, __instance.parameters, length);
+                }
+
                 __instance.recipeId = prebuildData.recipeId;
                 var recipeProto = LDB.recipes.Select(prebuildData.recipeId);
                 if (recipeProto != null) __instance.recipeType = recipeProto.Type;
