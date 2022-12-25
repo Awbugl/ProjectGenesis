@@ -6,7 +6,7 @@
     "Desc": "戴森球计划描述",
     "Conclusion": "",
     "Position": [
-      5.0,
+      37.0,
       1.0
     ],
     "PreTechs": [],
@@ -42,7 +42,7 @@
       -19.0
     ],
     "PreTechs": [
-      1
+      1901
     ],
     "PreTechsImplicit": [],
     "Items": [
@@ -93,10 +93,10 @@
     "Conclusion": "电磁矩阵结果",
     "Position": [
       13.0,
-      -47.0
+      1.0
     ],
     "PreTechs": [
-      1902
+      1901
     ],
     "PreTechsImplicit": [],
     "Items": [
@@ -142,9 +142,11 @@
     "Conclusion": "高效电浆控制结果",
     "Position": [
       13.0,
-      -39.0
+      -35.0
     ],
-    "PreTechs": [],
+    "PreTechs": [
+      1903
+    ],
     "PreTechsImplicit": [],
     "Items": [
       6001
@@ -184,7 +186,7 @@
     "Conclusion": "等离子萃取精炼结果",
     "Position": [
       17.0,
-      -39.0
+      -35.0
     ],
     "PreTechs": [
       1101
@@ -224,11 +226,11 @@
     "Conclusion": "X射线裂解结果",
     "Position": [
       21.0,
-      -35.0
+      -39.0
     ],
     "PreTechs": [
-      1815,
-      1102
+      1102,
+      1815
     ],
     "PreTechsImplicit": [],
     "Items": [
@@ -265,8 +267,8 @@
     "Desc": "地热开采描述",
     "Conclusion": "地热开采结果",
     "Position": [
-      21.0,
-      -15.0
+      25.0,
+      -19.0
     ],
     "PreTechs": [
       1112
@@ -306,7 +308,7 @@
     "Conclusion": "能量矩阵结果",
     "Position": [
       17.0,
-      -47.0
+      1.0
     ],
     "PreTechs": [
       1002
@@ -344,11 +346,11 @@
     "Desc": "氢燃料棒描述",
     "Conclusion": "氢燃料棒结果",
     "Position": [
-      17.0,
-      -15.0
+      21.0,
+      -19.0
     ],
     "PreTechs": [
-      1412
+      1501
     ],
     "PreTechsImplicit": [],
     "Items": [
@@ -384,7 +386,7 @@
     "Conclusion": "推进器结果",
     "Position": [
       21.0,
-      -19.0
+      -23.0
     ],
     "PreTechs": [
       1702
@@ -422,7 +424,7 @@
     "Conclusion": "加力推进器结果",
     "Position": [
       29.0,
-      -19.0
+      -23.0
     ],
     "PreTechs": [
       1711
@@ -460,9 +462,11 @@
     "Conclusion": "流体储存封装结果",
     "Position": [
       13.0,
-      -27.0
+      -31.0
     ],
-    "PreTechs": [],
+    "PreTechs": [
+      1903
+    ],
     "PreTechsImplicit": [],
     "Items": [
       6001
@@ -502,11 +506,12 @@
     "Conclusion": "基础化工结果",
     "Position": [
       13.0,
-      -23.0
+      -27.0
     ],
-    "PreTechs": [],
+    "PreTechs": [
+      1903
+    ],
     "PreTechsImplicit": [
-      1120,
       1832
     ],
     "Items": [
@@ -552,7 +557,7 @@
     "Conclusion": "高分子化工结果",
     "Position": [
       17.0,
-      -23.0
+      -27.0
     ],
     "PreTechs": [
       1121
@@ -598,7 +603,7 @@
     "Conclusion": "",
     "Position": [
       45.0,
-      -27.0
+      -15.0
     ],
     "PreTechs": [
       1152
@@ -644,7 +649,7 @@
     "Conclusion": "结构矩阵结果",
     "Position": [
       21.0,
-      -47.0
+      1.0
     ],
     "PreTechs": [
       1111
@@ -683,13 +688,13 @@
     "Desc": "卡西米尔晶体描述",
     "Conclusion": "卡西米尔晶体结果",
     "Position": [
-      13.0,
+      29.0,
       -31.0
     ],
-    "PreTechs": [],
-    "PreTechsImplicit": [
+    "PreTechs": [
       1131
     ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -725,7 +730,7 @@
     "Desc": "高强度玻璃描述",
     "Conclusion": "高强度玻璃结果",
     "Position": [
-      25.0,
+      21.0,
       -7.0
     ],
     "PreTechs": [
@@ -766,7 +771,7 @@
     "Conclusion": "应用型超导体结果",
     "Position": [
       25.0,
-      -23.0
+      -27.0
     ],
     "PreTechs": [
       1830
@@ -807,7 +812,7 @@
     "Conclusion": "高强度材料结果",
     "Position": [
       29.0,
-      -23.0
+      -27.0
     ],
     "PreTechs": [
       1131
@@ -848,7 +853,7 @@
     "Desc": "粒子可控技术描述",
     "Conclusion": "粒子可控技术结果",
     "Position": [
-      25.0,
+      21.0,
       5.0
     ],
     "PreTechs": [
@@ -892,7 +897,7 @@
     "Conclusion": "",
     "Position": [
       45.0,
-      -19.0
+      -11.0
     ],
     "PreTechs": [
       1152
@@ -938,13 +943,13 @@
     "Desc": "波函数干扰描述",
     "Conclusion": "波函数干扰结果",
     "Position": [
-      13.0,
-      -35.0
+      33.0,
+      -31.0
     ],
-    "PreTechs": [],
-    "PreTechsImplicit": [
+    "PreTechs": [
       1125
     ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -975,18 +980,20 @@
   },
   {
     "ID": 1142,
-    "Name": "T戴森球计划:粒子对撞机",
+    "Name": "T粒子对撞机",
     "IconPath": "Icons/Tech/1142",
     "Desc": "微型粒子对撞机描述",
     "Conclusion": "微型粒子对撞机结果",
     "Position": [
-      37.0,
-      -11.0
+      17.0,
+      25.0
     ],
     "PreTechs": [
-      1503
+      1801
     ],
-    "PreTechsImplicit": [],
+    "PreTechsImplicit": [
+      1802
+    ],
     "Items": [
       6001,
       6002,
@@ -1023,15 +1030,13 @@
     "Desc": "奇异物质描述",
     "Conclusion": "奇异物质结果",
     "Position": [
-      17.0,
-      -31.0
+      21.0,
+      25.0
     ],
     "PreTechs": [
-      1125
-    ],
-    "PreTechsImplicit": [
       1142
     ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -1067,11 +1072,13 @@
     "Desc": "T反物质能量炉描述",
     "Conclusion": "T反物质能量炉结果",
     "Position": [
-      45.0,
-      -35.0
+      49.0,
+      -19.0
     ],
     "PreTechs": [
-      1152
+      1134,
+      1123,
+      1145
     ],
     "PreTechsImplicit": [],
     "Items": [
@@ -1116,7 +1123,7 @@
     "Conclusion": "可控湮灭反应结果",
     "Position": [
       45.0,
-      -23.0
+      -19.0
     ],
     "PreTechs": [
       1152
@@ -1163,10 +1170,10 @@
     "Conclusion": "增产剂 Mk.I结果",
     "Position": [
       25.0,
-      29.0
+      33.0
     ],
     "PreTechs": [
-      1803
+      1802
     ],
     "PreTechsImplicit": [],
     "Items": [
@@ -1208,9 +1215,11 @@
     "Conclusion": "",
     "Position": [
       41.0,
-      -27.0
+      -15.0
     ],
-    "PreTechs": [],
+    "PreTechs": [
+      1
+    ],
     "PreTechsImplicit": [
       1507
     ],
@@ -1254,8 +1263,8 @@
     "Desc": "人造恒星描述",
     "Conclusion": "人造恒星结果",
     "Position": [
-      29.0,
-      -15.0
+      33.0,
+      -19.0
     ],
     "PreTechs": [
       1416
@@ -1353,11 +1362,11 @@
     "Desc": "T电路蚀刻技术描述",
     "Conclusion": "T电路蚀刻技术结果",
     "Position": [
-      17.0,
-      9.0
+      21.0,
+      17.0
     ],
     "PreTechs": [
-      1801
+      1201
     ],
     "PreTechsImplicit": [],
     "Items": [
@@ -1395,11 +1404,11 @@
     "Desc": "T高精度加工技术描述",
     "Conclusion": "T高精度加工技术结果",
     "Position": [
-      21.0,
+      25.0,
       17.0
     ],
     "PreTechs": [
-      1201
+      1202
     ],
     "PreTechsImplicit": [
       1802,
@@ -1446,11 +1455,11 @@
     "Desc": "处理器描述",
     "Conclusion": "处理器结果",
     "Position": [
-      21.0,
+      17.0,
       5.0
     ],
     "PreTechs": [
-      1202,
+      1805,
       1806
     ],
     "PreTechsImplicit": [
@@ -1487,7 +1496,7 @@
     "Desc": "量子芯片描述",
     "Conclusion": "量子芯片结果",
     "Position": [
-      25.0,
+      21.0,
       9.0
     ],
     "PreTechs": [
@@ -1531,11 +1540,11 @@
     "Desc": "大型采矿机描述",
     "Conclusion": "大型采矿机结果",
     "Position": [
-      25.0,
-      -31.0
+      29.0,
+      29.0
     ],
     "PreTechs": [
-      1704
+      1606
     ],
     "PreTechsImplicit": [],
     "Items": [
@@ -1627,11 +1636,11 @@
     "Desc": "半导体材料描述",
     "Conclusion": "半导体材料结果",
     "Position": [
-      21.0,
+      17.0,
       9.0
     ],
     "PreTechs": [
-      1202,
+      1805,
       1806
     ],
     "PreTechsImplicit": [],
@@ -1667,7 +1676,7 @@
     "Conclusion": "信息矩阵结果",
     "Position": [
       25.0,
-      -47.0
+      1.0
     ],
     "PreTechs": [
       1124
@@ -1756,13 +1765,13 @@
     "Desc": "冶炼提纯描述",
     "Conclusion": "冶炼提纯结果",
     "Position": [
-      13.0,
+      9.0,
       -7.0
     ],
-    "PreTechs": [],
-    "PreTechsImplicit": [
-      1401
+    "PreTechs": [
+      1901
     ],
+    "PreTechsImplicit": [],
     "Items": [
       6001
     ],
@@ -1795,7 +1804,7 @@
     "Desc": "晶体冶炼描述",
     "Conclusion": "晶体冶炼结果",
     "Position": [
-      17.0,
+      13.0,
       -3.0
     ],
     "PreTechs": [
@@ -1837,7 +1846,7 @@
     "Desc": "钢材冶炼描述",
     "Conclusion": "钢材冶炼结果",
     "Position": [
-      17.0,
+      13.0,
       -7.0
     ],
     "PreTechs": [
@@ -1876,7 +1885,7 @@
     "Conclusion": "火力发电结果",
     "Position": [
       13.0,
-      -15.0
+      -19.0
     ],
     "PreTechs": [
       1001
@@ -1917,7 +1926,7 @@
     "Desc": "钛矿冶炼描述",
     "Conclusion": "钛矿冶炼结果",
     "Position": [
-      21.0,
+      17.0,
       -7.0
     ],
     "PreTechs": [
@@ -1958,7 +1967,7 @@
     "Desc": "高强度钛合金描述",
     "Conclusion": "高强度钛合金结果",
     "Position": [
-      21.0,
+      17.0,
       -11.0
     ],
     "PreTechs": [
@@ -1993,16 +2002,16 @@
   },
   {
     "ID": 1415,
-    "Name": "T移山填海工程",
+    "Name": "T工业化生产",
     "IconPath": "Icons/Tech/1415",
     "Desc": "移山填海工程描述",
     "Conclusion": "移山填海工程结果",
     "Position": [
-      13.0,
-      13.0
+      9.0,
+      29.0
     ],
     "PreTechs": [
-      1903
+      1901
     ],
     "PreTechsImplicit": [],
     "Items": [
@@ -2013,8 +2022,7 @@
     ],
     "HashNeeded": 72000,
     "UnlockRecipes": [
-      112,
-      415
+      112
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -2037,8 +2045,8 @@
     "Desc": "T裂变发电站描述",
     "Conclusion": "T裂变发电站结果",
     "Position": [
-      25.0,
-      -15.0
+      29.0,
+      -19.0
     ],
     "PreTechs": [
       1104
@@ -2086,9 +2094,6 @@
       1401
     ],
     "PreTechsImplicit": [
-      1802,
-      1303,
-      1414,
       1141
     ],
     "Items": [
@@ -2129,9 +2134,11 @@
     "Conclusion": "太阳能收集结果",
     "Position": [
       17.0,
-      1.0
+      -19.0
     ],
-    "PreTechs": [],
+    "PreTechs": [
+      1412
+    ],
     "PreTechsImplicit": [],
     "Items": [
       6001
@@ -2169,7 +2176,7 @@
     "Conclusion": "",
     "Position": [
       17.0,
-      -27.0
+      -31.0
     ],
     "PreTechs": [
       1120
@@ -2208,22 +2215,26 @@
     "Desc": "太阳帆轨道系统描述",
     "Conclusion": "太阳帆轨道系统结果",
     "Position": [
-      33.0,
+      41.0,
       1.0
     ],
     "PreTechs": [
-      1501
+      1
     ],
     "PreTechsImplicit": [],
     "Items": [
       6001,
-      6002
+      6002,
+      6003,
+      6004
     ],
     "ItemPoints": [
-      20,
-      20
+      10,
+      10,
+      10,
+      10
     ],
-    "HashNeeded": 54000,
+    "HashNeeded": 576000,
     "UnlockRecipes": [
       70,
       71
@@ -2249,7 +2260,7 @@
     "Desc": "射线接收站描述",
     "Conclusion": "射线接收站结果",
     "Position": [
-      37.0,
+      45.0,
       -3.0
     ],
     "PreTechs": [
@@ -2258,13 +2269,17 @@
     "PreTechsImplicit": [],
     "Items": [
       6001,
-      6002
+      6002,
+      6003,
+      6004
     ],
     "ItemPoints": [
-      20,
-      20
+      10,
+      10,
+      10,
+      10
     ],
-    "HashNeeded": 108000,
+    "HashNeeded": 576000,
     "UnlockRecipes": [
       72
     ],
@@ -2289,7 +2304,7 @@
     "Desc": "行星电离层利用描述",
     "Conclusion": "行星电离层利用结果",
     "Position": [
-      41.0,
+      49.0,
       -3.0
     ],
     "PreTechs": [
@@ -2335,11 +2350,11 @@
     "Desc": "狄拉克逆变机制描述",
     "Conclusion": "狄拉克逆变机制结果",
     "Position": [
-      37.0,
-      -7.0
+      49.0,
+      1.0
     ],
     "PreTechs": [
-      1503
+      1522
     ],
     "PreTechsImplicit": [],
     "Items": [
@@ -2383,7 +2398,7 @@
     "Conclusion": "宇宙矩阵结果",
     "Position": [
       33.0,
-      -47.0
+      1.0
     ],
     "PreTechs": [
       1705
@@ -2429,11 +2444,11 @@
     "Desc": "任务完成描述",
     "Conclusion": "任务完成结果",
     "Position": [
-      45.0,
+      53.0,
       1.0
     ],
     "PreTechs": [
-      1522
+      1506
     ],
     "PreTechsImplicit": [],
     "Items": [
@@ -2475,11 +2490,11 @@
     "Desc": "能量储存描述",
     "Conclusion": "能量储存结果",
     "Position": [
-      25.0,
+      21.0,
       -3.0
     ],
     "PreTechs": [
-      1833
+      1403
     ],
     "PreTechsImplicit": [],
     "Items": [
@@ -2515,7 +2530,7 @@
     "Desc": "星际电力运输描述",
     "Conclusion": "星际电力运输结果",
     "Position": [
-      29.0,
+      25.0,
       -3.0
     ],
     "PreTechs": [
@@ -2599,7 +2614,7 @@
     "Desc": "高强度轻质结构描述",
     "Conclusion": "高强度轻质结构结果",
     "Position": [
-      29.0,
+      25.0,
       -11.0
     ],
     "PreTechs": [
@@ -2640,7 +2655,7 @@
     "Desc": "垂直发射井描述",
     "Conclusion": "垂直发射井结果",
     "Position": [
-      37.0,
+      45.0,
       1.0
     ],
     "PreTechs": [
@@ -2685,7 +2700,7 @@
     "Desc": "戴森球应力系统描述",
     "Conclusion": "戴森球应力系统结果",
     "Position": [
-      37.0,
+      45.0,
       5.0
     ],
     "PreTechs": [
@@ -2734,7 +2749,7 @@
     "Conclusion": "基础物流系统结果",
     "Position": [
       17.0,
-      33.0
+      37.0
     ],
     "PreTechs": [
       1607
@@ -2786,7 +2801,7 @@
     "Conclusion": "改良物流系统结果",
     "Position": [
       21.0,
-      33.0
+      37.0
     ],
     "PreTechs": [
       1601
@@ -2834,10 +2849,10 @@
     "Conclusion": "高效物流系统结果",
     "Position": [
       29.0,
-      33.0
+      37.0
     ],
     "PreTechs": [
-      1608
+      1602
     ],
     "PreTechsImplicit": [],
     "Items": [
@@ -2876,17 +2891,12 @@
     "Conclusion": "行星物流系统结果",
     "Position": [
       17.0,
-      25.0
+      29.0
     ],
     "PreTechs": [
       1801
     ],
-    "PreTechsImplicit": [
-      1411,
-      1302,
-      1113,
-      1415
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002
@@ -2922,18 +2932,12 @@
     "Conclusion": "星际物流系统结果",
     "Position": [
       21.0,
-      25.0
+      29.0
     ],
     "PreTechs": [
       1604
     ],
-    "PreTechsImplicit": [
-      1802,
-      1303,
-      1414,
-      1114,
-      1415
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -2971,7 +2975,7 @@
     "Conclusion": "气态行星开采结果",
     "Position": [
       25.0,
-      25.0
+      29.0
     ],
     "PreTechs": [
       1605
@@ -3013,10 +3017,10 @@
     "Conclusion": "T物品仓储结果",
     "Position": [
       13.0,
-      33.0
+      37.0
     ],
     "PreTechs": [
-      1901
+      1415
     ],
     "PreTechsImplicit": [],
     "Items": [
@@ -3052,7 +3056,7 @@
     "Conclusion": "配送物流系统结果",
     "Position": [
       25.0,
-      33.0
+      37.0
     ],
     "PreTechs": [
       1602
@@ -3097,7 +3101,7 @@
     "Conclusion": "电磁驱动结果",
     "Position": [
       13.0,
-      -19.0
+      -23.0
     ],
     "PreTechs": [
       1001
@@ -3135,7 +3139,7 @@
     "Conclusion": "磁悬浮技术结果",
     "Position": [
       17.0,
-      -19.0
+      -23.0
     ],
     "PreTechs": [
       1701
@@ -3175,7 +3179,7 @@
     "Conclusion": "",
     "Position": [
       21.0,
-      -27.0
+      -31.0
     ],
     "PreTechs": [
       1502
@@ -3216,8 +3220,8 @@
     "Desc": "引力波折射描述",
     "Conclusion": "引力波折射结果",
     "Position": [
-      21.0,
-      -31.0
+      25.0,
+      25.0
     ],
     "PreTechs": [
       1143
@@ -3260,7 +3264,7 @@
     "Conclusion": "引力矩阵结果",
     "Position": [
       29.0,
-      -47.0
+      1.0
     ],
     "PreTechs": [
       1312
@@ -3307,7 +3311,7 @@
     "Conclusion": "超级磁场发生器结果",
     "Position": [
       25.0,
-      -19.0
+      -23.0
     ],
     "PreTechs": [
       1113
@@ -3346,11 +3350,12 @@
     "Desc": "卫星配电系统描述",
     "Conclusion": "卫星配电系统结果",
     "Position": [
-      45.0,
-      -31.0
+      49.0,
+      -11.0
     ],
     "PreTechs": [
-      1152
+      1134,
+      1123
     ],
     "PreTechsImplicit": [],
     "Items": [
@@ -8445,10 +8450,10 @@
     "Conclusion": "",
     "Position": [
       13.0,
-      29.0
+      21.0
     ],
     "PreTechs": [
-      1903
+      1415
     ],
     "PreTechsImplicit": [],
     "Items": [
@@ -8484,7 +8489,7 @@
     "Conclusion": "",
     "Position": [
       17.0,
-      29.0
+      33.0
     ],
     "PreTechs": [
       1801
@@ -8527,7 +8532,7 @@
     "Conclusion": "",
     "Position": [
       21.0,
-      29.0
+      33.0
     ],
     "PreTechs": [
       1802
@@ -8569,7 +8574,7 @@
     "Desc": "T钨强化金属描述",
     "Conclusion": "",
     "Position": [
-      25.0,
+      21.0,
       -11.0
     ],
     "PreTechs": [
@@ -8612,9 +8617,11 @@
     "Conclusion": "",
     "Position": [
       13.0,
-      5.0
+      9.0
     ],
-    "PreTechs": [],
+    "PreTechs": [
+      1902
+    ],
     "PreTechsImplicit": [
       1121
     ],
@@ -8654,11 +8661,11 @@
     "Desc": "TIC晶片描述",
     "Conclusion": "",
     "Position": [
-      17.0,
+      13.0,
       5.0
     ],
     "PreTechs": [
-      1805
+      1902
     ],
     "PreTechsImplicit": [
       1833
@@ -8701,7 +8708,7 @@
     "Desc": "T虚拟技术革新描述",
     "Conclusion": "",
     "Position": [
-      29.0,
+      25.0,
       9.0
     ],
     "PreTechs": [
@@ -8747,7 +8754,7 @@
     "Desc": "T生物神经技术描述",
     "Conclusion": "",
     "Position": [
-      29.0,
+      25.0,
       5.0
     ],
     "PreTechs": [
@@ -8792,7 +8799,7 @@
     "Desc": "T超级纳米计算机描述",
     "Conclusion": "",
     "Position": [
-      33.0,
+      29.0,
       9.0
     ],
     "PreTechs": [
@@ -8838,7 +8845,7 @@
     "Desc": "T生物活性计算机描述",
     "Conclusion": "",
     "Position": [
-      33.0,
+      29.0,
       5.0
     ],
     "PreTechs": [
@@ -8883,7 +8890,7 @@
     "Desc": "T钨强化玻璃描述",
     "Conclusion": "",
     "Position": [
-      29.0,
+      25.0,
       -7.0
     ],
     "PreTechs": [
@@ -8926,11 +8933,11 @@
     "Conclusion": "",
     "Position": [
       21.0,
-      -39.0
+      -35.0
     ],
     "PreTechs": [
-      1815,
-      1102
+      1102,
+      1815
     ],
     "PreTechsImplicit": [],
     "Items": [
@@ -8969,12 +8976,12 @@
     "Conclusion": "",
     "Position": [
       13.0,
-      -43.0
+      -15.0
     ],
-    "PreTechs": [],
-    "PreTechsImplicit": [
+    "PreTechs": [
       1402
     ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002
@@ -9009,7 +9016,7 @@
     "Conclusion": "",
     "Position": [
       17.0,
-      -43.0
+      -15.0
     ],
     "PreTechs": [
       1816
@@ -9050,7 +9057,7 @@
     "Conclusion": "",
     "Position": [
       21.0,
-      -43.0
+      -15.0
     ],
     "PreTechs": [
       1817
@@ -9093,7 +9100,7 @@
     "Conclusion": "",
     "Position": [
       25.0,
-      -43.0
+      -15.0
     ],
     "PreTechs": [
       1818
@@ -9136,7 +9143,7 @@
     "Conclusion": "",
     "Position": [
       29.0,
-      -43.0
+      -15.0
     ],
     "PreTechs": [
       1819
@@ -9179,7 +9186,7 @@
     "Conclusion": "",
     "Position": [
       25.0,
-      -39.0
+      -35.0
     ],
     "PreTechs": [
       1812
@@ -9229,7 +9236,7 @@
     "Conclusion": "",
     "Position": [
       29.0,
-      -39.0
+      -35.0
     ],
     "PreTechs": [
       1821
@@ -9276,15 +9283,14 @@
     "Desc": "T巨型建筑:天穹装配厂描述",
     "Conclusion": "",
     "Position": [
-      25.0,
-      17.0
+      49.0,
+      21.0
     ],
     "PreTechs": [
-      1203
+      1824
     ],
     "PreTechsImplicit": [
-      1802,
-      1604
+      1201
     ],
     "Items": [
       6001,
@@ -9323,15 +9329,14 @@
     "Desc": "T巨型建筑:物质裂解塔描述",
     "Conclusion": "",
     "Position": [
-      25.0,
+      45.0,
       21.0
     ],
     "PreTechs": [
-      1417
+      1834
     ],
     "PreTechsImplicit": [
-      1802,
-      1604
+      1401
     ],
     "Items": [
       6001,
@@ -9370,15 +9375,14 @@
     "Desc": "T巨型建筑:行星级化学反应釜描述",
     "Conclusion": "",
     "Position": [
-      29.0,
-      13.0
+      45.0,
+      17.0
     ],
     "PreTechs": [
-      1513
+      1834
     ],
     "PreTechsImplicit": [
-      1802,
-      1604
+      1305
     ],
     "Items": [
       6001,
@@ -9417,15 +9421,14 @@
     "Desc": "T巨型建筑:精密结构组装厂描述",
     "Conclusion": "",
     "Position": [
-      29.0,
-      17.0
+      45.0,
+      13.0
     ],
     "PreTechs": [
-      1823
+      1834
     ],
     "PreTechsImplicit": [
-      1803,
-      1604
+      1203
     ],
     "Items": [
       6001,
@@ -9464,15 +9467,14 @@
     "Desc": "T巨型建筑:巨型粒子对撞机描述",
     "Conclusion": "",
     "Position": [
-      41.0,
-      -11.0
+      49.0,
+      13.0
     ],
     "PreTechs": [
-      1142
+      1826
     ],
     "PreTechsImplicit": [
-      1803,
-      1604
+      1142
     ],
     "Items": [
       6001,
@@ -9511,17 +9513,13 @@
     "Desc": "T巨型建筑:物质分解设施描述",
     "Conclusion": "",
     "Position": [
-      25.0,
-      -27.0
+      49.0,
+      17.0
     ],
     "PreTechs": [
-      1703
+      1825
     ],
-    "PreTechsImplicit": [
-      1802,
-      1604,
-      1304
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -9561,7 +9559,7 @@
     "Conclusion": "",
     "Position": [
       25.0,
-      -35.0
+      -39.0
     ],
     "PreTechs": [
       1812
@@ -9605,15 +9603,13 @@
     "Desc": "T矿物处理描述",
     "Conclusion": "",
     "Position": [
-      17.0,
+      13.0,
       -11.0
     ],
     "PreTechs": [
       1402
     ],
-    "PreTechsImplicit": [
-      1413
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002
@@ -9662,7 +9658,7 @@
     "Conclusion": "先进化工结果",
     "Position": [
       21.0,
-      -23.0
+      -27.0
     ],
     "PreTechs": [
       1122
@@ -9705,7 +9701,7 @@
     "Conclusion": "",
     "Position": [
       17.0,
-      -35.0
+      -39.0
     ],
     "PreTechs": [
       1101
@@ -9784,7 +9780,7 @@
     "Desc": "T晶圆冶炼描述",
     "Conclusion": "",
     "Position": [
-      21.0,
+      17.0,
       -3.0
     ],
     "PreTechs": [
@@ -9824,13 +9820,13 @@
   },
   {
     "ID": 1901,
-    "Name": "T物流学",
-    "IconPath": "Icons/Tech/1601",
+    "Name": "T科学理论",
+    "IconPath": "Icons/Tech/1507",
     "Desc": "",
     "Conclusion": "",
     "Position": [
-      9.0,
-      33.0
+      5.0,
+      1.0
     ],
     "PreTechs": [],
     "PreTechsImplicit": [],
@@ -9854,15 +9850,17 @@
   },
   {
     "ID": 1902,
-    "Name": "T科学理论",
-    "IconPath": "Icons/Tech/1507",
+    "Name": "T集成电路",
+    "IconPath": "Icons/Tech/1311",
     "Desc": "",
     "Conclusion": "",
     "Position": [
       9.0,
-      -47.0
+      9.0
     ],
-    "PreTechs": [],
+    "PreTechs": [
+      1901
+    ],
     "PreTechsImplicit": [],
     "Items": [],
     "ItemPoints": [],
@@ -9884,20 +9882,66 @@
   },
   {
     "ID": 1903,
-    "Name": "T建筑学",
-    "IconPath": "Icons/Tech/1601",
+    "Name": "T化学",
+    "IconPath": "Assets/texpack/化工科技",
     "Desc": "",
     "Conclusion": "",
     "Position": [
       9.0,
-      21.0
+      -31.0
     ],
-    "PreTechs": [],
+    "PreTechs": [
+      1901
+    ],
     "PreTechsImplicit": [],
     "Items": [],
     "ItemPoints": [],
     "HashNeeded": 1000,
     "UnlockRecipes": [],
+    "UnlockFunctions": [],
+    "UnlockValues": [],
+    "Published": true,
+    "Level": 0,
+    "MaxLevel": 0,
+    "LevelCoef1": 0,
+    "LevelCoef2": 0,
+    "IsLabTech": false,
+    "PreTechsMax": false,
+    "AddItems": [],
+    "AddItemCounts": [],
+    "PropertyOverrideItems": [],
+    "PropertyItemCounts": []
+  },
+  {
+    "ID": 1834,
+    "Name": "T巨型建筑工程学",
+    "IconPath": "Icons/Tech/1604",
+    "Desc": "T巨型建筑工程学描述",
+    "Conclusion": "",
+    "Position": [
+      41.0,
+      17.0
+    ],
+    "PreTechs": [
+      1
+    ],
+    "PreTechsImplicit": [],
+    "Items": [
+      6001,
+      6002,
+      6003,
+      6004
+    ],
+    "ItemPoints": [
+      20,
+      20,
+      20,
+      20
+    ],
+    "HashNeeded": 288000,
+    "UnlockRecipes": [
+      415
+    ],
     "UnlockFunctions": [],
     "UnlockValues": [],
     "Published": true,

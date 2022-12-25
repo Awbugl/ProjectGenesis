@@ -16,8 +16,8 @@ namespace ProjectGenesis.Patches
                                                              1901,
                                                              1902,
                                                              1903,
-                                                             1904,
-                                                             1905
+                                                             1415,
+                                                             1402
                                                          };
 
         [HarmonyPatch(typeof(GameData), "SetForNewGame")]

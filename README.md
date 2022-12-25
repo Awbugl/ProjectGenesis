@@ -7,17 +7,18 @@ Reconstruct "Real Universe". Then leave a "GenesisBook".
 ### MOD内容速览 | A glimpse
 
 ![img.png](https://assets.awbugl.top/dsp-genesisbook/1.jpg)
-![img.png](https://assets.awbugl.top/dsp-genesisbook/2.jpg)
+![img.png](https://assets.awbugl.top/dsp-genesisbook/5.jpg)
 ![img.png](https://assets.awbugl.top/dsp-genesisbook/3.jpg)
 ![img.png](https://assets.awbugl.top/dsp-genesisbook/4.jpg)
 
 ### 最近更新介绍 | Recent update
 
-- v2.2.10
+- v2.3.0
     + 修复了复制未建成建筑时偶尔出现的报错
+    + 调整了部分科技
 
     + Fixed the error that occasionally occurred when copying the uncompleted building
-
+    + Adjust some techs
 
 - v2.2.9
     + 下调了量子芯片的科技需求
@@ -114,8 +115,9 @@ Reconstruct "Real Universe". Then leave a "GenesisBook".
 <details>
   <summary>展开查看</summary>
 
-- v2.2.10
+- v2.3.0
     + 修复了复制未建成建筑时偶尔出现的报错
+    + 调整了部分科技
 
 
 - v2.2.9
@@ -331,9 +333,9 @@ free to communicate with us.
 <details>
   <summary>Details</summary>
 
-- v2.2.10
+- v2.3.0
     + Fixed the error that occasionally occurred when copying the uncompleted building
-
+    + Adjust some techs
 
 - v2.2.9
     + Adjusted the technology requirements of quantum chips

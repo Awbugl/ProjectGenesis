@@ -112,7 +112,6 @@
         <Compile Include="src\Utils\ItemData.cs" />
         <Compile Include="src\Utils\JsonDataUtils.cs" />
         <Compile Include="src\Utils\JsonHelper.cs" />
-        <Compile Include="src\Utils\LDBToolCacheUtils.cs" />
         <Compile Include="src\Utils\MutliPlayerPacket.cs" />
         <Compile Include="src\Utils\PrefabFixUtils.cs" />
         <Compile Include="src\Utils\TranslateUtils.cs" />

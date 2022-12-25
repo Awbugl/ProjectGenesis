@@ -1995,9 +1995,9 @@
     "ENUS": "Traditional materials can no longer meet the demand...."
   },
   {
-    "Name": "T戴森球计划:粒子对撞机",
-    "ZHCN": "戴森球计划: 粒子对撞机",
-    "ENUS": "Dyson Sphere Program: Particle Collider"
+    "Name": "T粒子对撞机",
+    "ZHCN": "粒子对撞机",
+    "ENUS": "Particle Collider"
   },
   {
     "Name": "T终极目标:反物质能量炉",
@@ -2373,6 +2373,36 @@
     "Name": "T巨型建筑:巨型粒子对撞机描述",
     "ZHCN": "大量并行运行的加速器将生产力提升到一个崭新的高度.",
     "ENUS": "The large number of parallel running accelerators takes productivity to a whole new level."
+  },
+  {
+    "Name": "T集成电路",
+    "ZHCN": "集成电路",
+    "ENUS": "Integrated Circuit"
+  },
+  {
+    "Name": "T化学",
+    "ZHCN": "化学",
+    "ENUS": "Chemistry"
+  },
+  {
+    "Name": "T工业化生产",
+    "ZHCN": "工业生产",
+    "ENUS": "Industrial"
+  },
+  {
+    "Name": "T科学理论",
+    "ZHCN": "科学理论",
+    "ENUS": "Scientific Theory"
+  },
+  {
+    "Name": "T巨型建筑工程学",
+    "ZHCN": "巨型建筑工程学",
+    "ENUS": "Mega Buildings Engineering"
+  },
+  {
+    "Name": "T巨型建筑工程学描述",
+    "ZHCN": "随着生产线的不断扩张，对更高集成度的生产设施的需求愈发迫切.",
+    "ENUS": "As production lines continue to expand, the need for more integrated production facilities becomes increasingly urgent."
   },
   {
     "Name": "T晶圆冶炼",
