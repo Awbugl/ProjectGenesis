@@ -97,6 +97,7 @@
         <Compile Include="src\Patches\DisplayedTextPatches.cs" />
         <Compile Include="src\Patches\FluidColorPatches.cs" />
         <Compile Include="src\Patches\GridIndexExpandPatches.cs" />
+        <Compile Include="src\Patches\InitnalTechPatches.cs" />
         <Compile Include="src\Patches\MegaAssemblerPatches.cs" />
         <Compile Include="src\Patches\MegaPumpPatches.cs" />
         <Compile Include="src\Patches\MultiProductionPatches.cs" />
@@ -111,6 +112,7 @@
         <Compile Include="src\Utils\ItemData.cs" />
         <Compile Include="src\Utils\JsonDataUtils.cs" />
         <Compile Include="src\Utils\JsonHelper.cs" />
+        <Compile Include="src\Utils\LDBToolCacheUtils.cs" />
         <Compile Include="src\Utils\MutliPlayerPacket.cs" />
         <Compile Include="src\Utils\PrefabFixUtils.cs" />
         <Compile Include="src\Utils\TranslateUtils.cs" />

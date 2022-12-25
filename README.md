@@ -13,6 +13,12 @@ Reconstruct "Real Universe". Then leave a "GenesisBook".
 
 ### 最近更新介绍 | Recent update
 
+- v2.2.10
+    + 修复了复制未建成建筑时偶尔出现的报错
+
+    + Fixed the error that occasionally occurred when copying the uncompleted building
+
+
 - v2.2.9
     + 下调了量子芯片的科技需求
     + 调整了蓄电器和能量枢纽的输出功率与蓄电量
@@ -28,12 +34,6 @@ Reconstruct "Real Universe". Then leave a "GenesisBook".
     + Fixed the problem that the production multiplier effect of the giant building in the blueprint could not be copied
       correctly
     + Fixed the problem that the highlight color was displayed incorrectly when selecting the conveyor belt
-
-
-- v2.2.8
-    + 修改了部分配方的时间和产出(总产出不变)
-
-    + Changed the time and output of some recipes (No change in total output)
 
 ----
 
@@ -113,6 +113,10 @@ Reconstruct "Real Universe". Then leave a "GenesisBook".
 
 <details>
   <summary>展开查看</summary>
+
+- v2.2.10
+    + 修复了复制未建成建筑时偶尔出现的报错
+
 
 - v2.2.9
     + 下调了量子芯片的科技需求
@@ -326,6 +330,10 @@ free to communicate with us.
 
 <details>
   <summary>Details</summary>
+
+- v2.2.10
+    + Fixed the error that occasionally occurred when copying the uncompleted building
+
 
 - v2.2.9
     + Adjusted the technology requirements of quantum chips

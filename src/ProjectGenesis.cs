@@ -37,13 +37,16 @@ namespace ProjectGenesis
     {
         public const string MODGUID = "org.LoShin.GenesisBook";
         internal const string MODNAME = "GenesisBook";
-        internal const string VERSION = "2.2.9";
+        internal const string VERSION = "2.2.10";
 
         // ReSharper disable once MemberCanBePrivate.Global
         internal static ManualLogSource logger;
 
         //无限堆叠开关(私货)
         private readonly bool StackSizeButton = false;
+        
+        //清除LDB缓存
+        private readonly bool DebugMode = true;
 
         private int[] TableID;
 
@@ -83,6 +86,8 @@ namespace ProjectGenesis
 
             foreach (var type in executingAssembly.GetTypes()) Harmony.PatchAll(type);
 
+            if (DebugMode) LDBToolCacheUtils.Clear();
+            
             LDBTool.PreAddDataAction += PreAddDataAction;
             LDBTool.PostAddDataAction += PostAddDataAction;
         }
