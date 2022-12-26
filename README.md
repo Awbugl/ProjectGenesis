@@ -13,28 +13,20 @@ Reconstruct "Real Universe". Then leave a "GenesisBook".
 
 ### 最近更新介绍 | Recent update
 
+- v2.3.1
+    + 修复了巨型建筑工程学不能被研究站研究的问题
+    + 修复了载入v2.2.x存档时初始科技未解锁的问题
+
+    + Fixed the problem that the Mega Building Engineering technology cannot be researched by station
+    + Fixed the problem that the initial technology is not unlocked when loading the v2.2.x archive
+
+
 - v2.3.0
     + 修复了复制未建成建筑时偶尔出现的报错
-    + 调整了部分科技
+    + 调整了部分科技树
 
     + Fixed the error that occasionally occurred when copying the uncompleted building
     + Adjust some techs
-
-- v2.2.9
-    + 下调了量子芯片的科技需求
-    + 调整了蓄电器和能量枢纽的输出功率与蓄电量
-    + 调整了大多数星球的硅矿数量（仅在新存档生效）
-    + 提高了母星的可燃冰矿物数量（仅在新存档生效）
-    + 修复了蓝图中巨型建筑的增产剂效果无法正确复制的问题
-    + 修复了选择传送带时显示高亮颜色不正确的问题
-
-    + Adjusted the technology requirements of quantum chips
-    + Adjusted the output power and storage capacity of capacitors and energy hubs
-    + Adjusted the amount of silicon ore on most planets (only affects new game)
-    + Increase the amount of NGH ore on the birth planet (only affects new game)
-    + Fixed the problem that the production multiplier effect of the giant building in the blueprint could not be copied
-      correctly
-    + Fixed the problem that the highlight color was displayed incorrectly when selecting the conveyor belt
 
 ----
 
@@ -115,9 +107,14 @@ Reconstruct "Real Universe". Then leave a "GenesisBook".
 <details>
   <summary>展开查看</summary>
 
+- v2.3.1
+    + 修复了巨型建筑工程学不能被研究站研究的问题
+    + 修复了载入v2.2.x存档时初始科技未解锁的问题
+
+
 - v2.3.0
     + 修复了复制未建成建筑时偶尔出现的报错
-    + 调整了部分科技
+    + 调整了部分科技树
 
 
 - v2.2.9
@@ -332,6 +329,11 @@ free to communicate with us.
 
 <details>
   <summary>Details</summary>
+
+- v2.3.1
+    + Fixed the problem that the Mega Building Engineering technology cannot be researched by station
+    + Fixed the problem that the initial technology is not unlocked when loading the v2.2.x archive
+
 
 - v2.3.0
     + Fixed the error that occasionally occurred when copying the uncompleted building

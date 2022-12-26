@@ -9949,7 +9949,7 @@
     "MaxLevel": 0,
     "LevelCoef1": 0,
     "LevelCoef2": 0,
-    "IsLabTech": false,
+    "IsLabTech": true,
     "PreTechsMax": false,
     "AddItems": [],
     "AddItemCounts": [],

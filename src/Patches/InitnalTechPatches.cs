@@ -27,6 +27,16 @@ namespace ProjectGenesis.Patches
             foreach (var tech in InitnalTechs) __instance.history.UnlockTech(tech);
         }
 
+        [HarmonyPatch(typeof(GameData), "Import")]
+        [HarmonyPostfix]
+        public static void Import(GameData __instance)
+        {
+            // ReSharper disable once ForeachCanBePartlyConvertedToQueryUsingAnotherGetEnumerator
+            foreach (var tech in InitnalTechs)
+                if (!__instance.history.TechUnlocked(tech))
+                    __instance.history.UnlockTech(tech);
+        }
+
         [HarmonyPatch(typeof(UITechNode), "DoBuyoutTech")]
         [HarmonyPatch(typeof(UITechNode), "DoStartTech")]
         [HarmonyPatch(typeof(UITechNode), "OnPointerEnter")]
