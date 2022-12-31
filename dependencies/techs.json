@@ -2907,6 +2907,7 @@
     ],
     "HashNeeded": 144000,
     "UnlockRecipes": [
+      415,
       93,
       94
     ],
@@ -9939,9 +9940,7 @@
       20
     ],
     "HashNeeded": 288000,
-    "UnlockRecipes": [
-      415
-    ],
+    "UnlockRecipes": [],
     "UnlockFunctions": [],
     "UnlockValues": [],
     "Published": true,

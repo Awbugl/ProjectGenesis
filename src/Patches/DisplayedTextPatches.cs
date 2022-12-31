@@ -122,6 +122,11 @@ namespace ProjectGenesis.Patches
                 case 1703:
                     __result = "海洋排污2文字描述".TranslateFromJson();
                     break;
+                
+                case 1834:
+                    __result = "巨型建筑工程学文字描述".TranslateFromJson();
+                    break;
+                
             }
         }
     }

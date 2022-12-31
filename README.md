@@ -13,6 +13,11 @@ Reconstruct "Real Universe". Then leave a "GenesisBook".
 
 ### 最近更新介绍 | Recent update
 
+- v2.3.2
+    + 调整了混凝土的解锁科技
+
+    + Adjusted the unlock technology of concrete
+
 - v2.3.1
     + 修复了巨型建筑工程学不能被研究站研究的问题
     + 修复了载入v2.2.x存档时初始科技未解锁的问题
@@ -106,6 +111,10 @@ Reconstruct "Real Universe". Then leave a "GenesisBook".
 
 <details>
   <summary>展开查看</summary>
+
+- v2.3.2
+    + 调整了混凝土的解锁科技
+
 
 - v2.3.1
     + 修复了巨型建筑工程学不能被研究站研究的问题
@@ -329,6 +338,10 @@ free to communicate with us.
 
 <details>
   <summary>Details</summary>
+
+- v2.3.2
+    + Adjusted the unlock technology of concrete
+
 
 - v2.3.1
     + Fixed the problem that the Mega Building Engineering technology cannot be researched by station
