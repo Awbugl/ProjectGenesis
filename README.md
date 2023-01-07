@@ -13,23 +13,18 @@ Reconstruct "Real Universe". Then leave a "GenesisBook".
 
 ### 最近更新介绍 | Recent update
 
+- v2.3.5
+    + 修复了旧版本巨型建筑蓝图加载出错的问题
+    + 修复了巨型抽水机工作异常的问题
+
+    + Fixed the problem of loading error of old version of Mega Building blueprint
+    + Fixed the problem of abnormal operation of Mega Pump
+
+
 - v2.3.4
     + 修复了巨型建筑加载出错的问题
 
     + Fixed the problem of loading Mega Buildings
-
-- v2.3.3
-    + 修复了新版本模型冲突的问题
-    + 修复了合成器物品详情位置不正确的问题
-    + 调整了部分科技的介绍文案
-    + 调整了物流塔物品选择界面的位置
-    + 添加系列物品：开发者日志01~11
-
-    + Fixed the conflict with the new version model
-    + Fixed the problem that the synthesis item details position is incorrect
-    + Adjusted the introduction of some technologies
-    + Adjusted the position of the logistics item selection UI
-    + Added a series of items: Developer Log 01~11
 
 ----
 
@@ -109,6 +104,11 @@ Reconstruct "Real Universe". Then leave a "GenesisBook".
 
 <details>
   <summary>展开查看</summary>
+
+- v2.3.5
+    + 修复了旧版本巨型建筑蓝图加载出错的问题
+    + 修复了巨型抽水机工作异常的问题
+
 
 - v2.3.4
     + 修复了巨型建筑加载出错的问题
@@ -348,6 +348,11 @@ free to communicate with us.
 
 <details>
   <summary>Details</summary>
+
+- v2.3.5
+    + Fixed the problem of loading error of old version of Mega Building blueprint
+    + Fixed the problem of abnormal operation of Mega Pump
+
 
 - v2.3.4
     + Fixed the problem of loading Mega Buildings

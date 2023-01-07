@@ -26,7 +26,7 @@ namespace ProjectGenesis.Patches
 
             return matcher.InstructionEnumeration();
         }
-       
+
         [HarmonyPatch(typeof(BuildTool_Addon), "CheckBuildConditions")]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> BuildTool_Addon_CheckBuildConditions_Transpiler(IEnumerable<CodeInstruction> instructions)
@@ -34,7 +34,7 @@ namespace ProjectGenesis.Patches
             var matcher = new CodeMatcher(instructions);
             while (true)
             {
-                matcher.MatchForward(false, new CodeMatch(OpCodes.Ldarg_0), 
+                matcher.MatchForward(false, new CodeMatch(OpCodes.Ldarg_0),
                                      new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(BuildTool_Addon), nameof(BuildTool_Addon.handbp))),
                                      new CodeMatch(OpCodes.Ldc_I4_S, (sbyte)21),
                                      new CodeMatch(OpCodes.Stfld, AccessTools.Field(typeof(BuildPreview), nameof(BuildPreview.condition))));
@@ -50,7 +50,7 @@ namespace ProjectGenesis.Patches
 
             return matcher.InstructionEnumeration();
         }
-            
-        public static int CheckBuildConditions(BuildPreview preview) => preview.item.ModelIndex == 412 ? 0 : 21;
+
+        public static int CheckBuildConditions(BuildPreview preview) => preview.item.ModelIndex == 462 ? 0 : 21;
     }
 }
