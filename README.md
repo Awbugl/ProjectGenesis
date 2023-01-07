@@ -13,6 +13,11 @@ Reconstruct "Real Universe". Then leave a "GenesisBook".
 
 ### 最近更新介绍 | Recent update
 
+- v2.3.4
+    + 修复了巨型建筑加载出错的问题
+
+    + Fixed the problem of loading Mega Buildings
+
 - v2.3.3
     + 修复了新版本模型冲突的问题
     + 修复了合成器物品详情位置不正确的问题
@@ -25,12 +30,6 @@ Reconstruct "Real Universe". Then leave a "GenesisBook".
     + Adjusted the introduction of some technologies
     + Adjusted the position of the logistics item selection UI
     + Added a series of items: Developer Log 01~11
-
-
-- v2.3.2
-    + 调整了混凝土的解锁科技
-
-    + Adjusted the unlock technology of concrete
 
 ----
 
@@ -110,6 +109,10 @@ Reconstruct "Real Universe". Then leave a "GenesisBook".
 
 <details>
   <summary>展开查看</summary>
+
+- v2.3.4
+    + 修复了巨型建筑加载出错的问题
+
 
 - v2.3.3
     + 修复了新版本模型冲突的问题
@@ -345,6 +348,10 @@ free to communicate with us.
 
 <details>
   <summary>Details</summary>
+
+- v2.3.4
+    + Fixed the problem of loading Mega Buildings
+
 
 - v2.3.3
     + Fixed the conflict with the new version model

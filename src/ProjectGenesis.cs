@@ -38,7 +38,7 @@ namespace ProjectGenesis
     {
         public const string MODGUID = "org.LoShin.GenesisBook";
         internal const string MODNAME = "GenesisBook";
-        internal const string VERSION = "2.3.3";
+        internal const string VERSION = "2.3.4";
         internal static ManualLogSource logger;
 
         //无限堆叠开关(私货)

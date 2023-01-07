@@ -106,7 +106,7 @@ namespace ProjectGenesis.Utils
         internal static void ModelPostFix(ModelProtoSet models)
         {
             // 天穹装配厂
-            var testCraftingTableModel = models.Select(403);
+            var testCraftingTableModel = models.Select(453);
             ref var prefabDesc1 = ref testCraftingTableModel.prefabDesc;
             prefabDesc1.isAssembler = true;
             prefabDesc1.assemblerRecipeType = (ERecipeType_1)ERecipeType.Assemble;
@@ -122,7 +122,7 @@ namespace ProjectGenesis.Utils
             prefabDesc1.workEnergyPerTick = 500000;
 
             // 物质裂解塔
-            var testCraftingTableModel2 = models.Select(404);
+            var testCraftingTableModel2 = models.Select(454);
             ref var prefabDesc2 = ref testCraftingTableModel2.prefabDesc;
             prefabDesc2.isAssembler = true;
             prefabDesc2.assemblerRecipeType = (ERecipeType_1)ERecipeType.所有熔炉;
@@ -138,7 +138,7 @@ namespace ProjectGenesis.Utils
             prefabDesc2.workEnergyPerTick = 500000;
 
             // 巨型化学反应釜
-            var testCraftingTableModel3 = models.Select(405);
+            var testCraftingTableModel3 = models.Select(455);
             ref var prefabDesc3 = ref testCraftingTableModel3.prefabDesc;
             prefabDesc3.isAssembler = true;
             prefabDesc3.assemblerRecipeType = (ERecipeType_1)ERecipeType.所有化工;
@@ -154,7 +154,7 @@ namespace ProjectGenesis.Utils
             prefabDesc3.workEnergyPerTick = 500000;
 
             // 精密结构组装厂
-            var testCraftingTableModel4 = models.Select(406);
+            var testCraftingTableModel4 = models.Select(456);
             ref var prefabDesc4 = ref testCraftingTableModel4.prefabDesc;
             prefabDesc4.isAssembler = true;
             prefabDesc4.assemblerRecipeType = (ERecipeType_1)ERecipeType.所有高精;
@@ -170,7 +170,7 @@ namespace ProjectGenesis.Utils
             prefabDesc4.workEnergyPerTick = 500000;
 
             // 物质分解设施
-            var testCraftingTableModel5 = models.Select(410);
+            var testCraftingTableModel5 = models.Select(460);
             ref var prefabDesc5 = ref testCraftingTableModel5.prefabDesc;
             prefabDesc5.isAssembler = true;
             prefabDesc5.assemblerRecipeType = (ERecipeType_1)ERecipeType.垃圾回收;
@@ -186,7 +186,7 @@ namespace ProjectGenesis.Utils
             prefabDesc5.workEnergyPerTick = 1000000;
 
             // 巨型粒子对撞机
-            var testCraftingTableModel6 = models.Select(411);
+            var testCraftingTableModel6 = models.Select(461);
             ref var prefabDesc6 = ref testCraftingTableModel6.prefabDesc;
             prefabDesc6.isAssembler = true;
             prefabDesc6.assemblerRecipeType = (ERecipeType_1)ERecipeType.Particle;
@@ -204,13 +204,13 @@ namespace ProjectGenesis.Utils
             LDB.items.Select(2211).prefabDesc.fuelMask = 5;
             LDB.items.Select(2210).prefabDesc.fuelMask = 6;
 
-            var antiMatterModel = models.Select(407);
+            var antiMatterModel = models.Select(457);
             ref var antiMatterModelprefabDesc = ref antiMatterModel.prefabDesc;
             antiMatterModelprefabDesc.fuelMask = 4;
             antiMatterModelprefabDesc.genEnergyPerTick = 1200000000;
             antiMatterModelprefabDesc.useFuelPerTick = 1200000000;
 
-            var megapumper = models.Select(412);
+            var megapumper = models.Select(462);
             ref var megapumperprefabDesc = ref megapumper.prefabDesc;
             megapumperprefabDesc.isFractionator = false;
             megapumperprefabDesc.assemblerRecipeType = ERecipeType_1.None;
