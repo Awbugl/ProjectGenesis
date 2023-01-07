@@ -133,6 +133,7 @@ namespace ProjectGenesis.Patches
         [HarmonyPatch(typeof(UIReplicatorWindow), "SetSelectedRecipeIndex")]
         [HarmonyPatch(typeof(UIReplicatorWindow), "SetSelectedRecipe")]
         [HarmonyPatch(typeof(UIReplicatorWindow), "_OnInit")]
+        [HarmonyPatch(typeof(UIReplicatorWindow), "_OnUpdate")]
         [HarmonyPatch(typeof(UIReplicatorWindow), "RepositionQueueText")]
         [HarmonyPatch(typeof(UIReplicatorWindow), "RefreshQueueIcons")]
         [HarmonyPatch(typeof(UIReplicatorWindow), "TestMouseQueueIndex")]
@@ -154,8 +155,8 @@ namespace ProjectGenesis.Patches
             {
                 if (source[index].opcode == OpCodes.Ldc_I4_S && source[index].operand is sbyte operand)
                 {
-                    if (operand == 12) source[index].operand = 17;
-                    if (operand == 9) source[index].operand = 7;
+                    if (operand == 12) source[index].operand = (sbyte)17;
+                    if (operand == 9) source[index].operand = (sbyte)7;
                 }
             }
 
@@ -174,12 +175,22 @@ namespace ProjectGenesis.Patches
             {
                 if (source[index].opcode == OpCodes.Ldc_R4 && source[index].operand is float operand)
                 {
-                    if (operand == 12.0) source[index].operand = 17f;
-                    if (operand == 9.0) source[index].operand = 7f;
+                    if (operand is 12f) source[index].operand = 17f;
+                    if (operand is 9f) source[index].operand = 7f;
                 }
             }
 
             return source.AsEnumerable();
+        }
+
+        [HarmonyPatch(typeof(UIStationStorage), "OnSelectItemButtonClick")]
+        [HarmonyTranspiler]
+        public static IEnumerable<CodeInstruction> UIStationStorage_OnSelectItemButtonClick_Transpiler(IEnumerable<CodeInstruction> instructions)
+        {
+            var matcher = new CodeMatcher(instructions);
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldc_R4, -300f));
+            matcher.SetOperandAndAdvance(-600f);
+            return matcher.InstructionEnumeration();
         }
     }
 }

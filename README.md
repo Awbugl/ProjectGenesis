@@ -13,30 +13,29 @@ Reconstruct "Real Universe". Then leave a "GenesisBook".
 
 ### 最近更新介绍 | Recent update
 
+- v2.3.3
+    + 修复了新版本模型冲突的问题
+    + 修复了合成器物品详情位置不正确的问题
+    + 调整了部分科技的介绍文案
+    + 调整了物流塔物品选择界面的位置
+    + 添加系列物品：开发者日志01~11
+
+    + Fixed the conflict with the new version model
+    + Fixed the problem that the synthesis item details position is incorrect
+    + Adjusted the introduction of some technologies
+    + Adjusted the position of the logistics item selection UI
+    + Added a series of items: Developer Log 01~11
+
+
 - v2.3.2
     + 调整了混凝土的解锁科技
 
     + Adjusted the unlock technology of concrete
 
-- v2.3.1
-    + 修复了巨型建筑工程学不能被研究站研究的问题
-    + 修复了载入v2.2.x存档时初始科技未解锁的问题
-
-    + Fixed the problem that the Mega Building Engineering technology cannot be researched by station
-    + Fixed the problem that the initial technology is not unlocked when loading the v2.2.x archive
-
-
-- v2.3.0
-    + 修复了复制未建成建筑时偶尔出现的报错
-    + 调整了部分科技树
-
-    + Fixed the error that occasionally occurred when copying the uncompleted building
-    + Adjust some techs
-
 ----
 
 <details>
-  <summary>中文文档</summary>
+  <summary>点击展开中文文档</summary>
 
 ## 安装方法
 
@@ -111,6 +110,14 @@ Reconstruct "Real Universe". Then leave a "GenesisBook".
 
 <details>
   <summary>展开查看</summary>
+
+- v2.3.3
+    + 修复了新版本模型冲突的问题
+    + 修复了合成器物品详情位置不正确的问题
+    + 调整了部分科技的介绍文案
+    + 调整了物流塔物品选择界面的位置
+    + 添加系列物品：开发者日志01~11
+
 
 - v2.3.2
     + 调整了混凝土的解锁科技
@@ -252,7 +259,7 @@ Reconstruct "Real Universe". Then leave a "GenesisBook".
 </details>
 
 <details>
-  <summary>English Docs</summary>
+  <summary>Click to view the English intro</summary>
 
 ## Installation
 
@@ -338,6 +345,13 @@ free to communicate with us.
 
 <details>
   <summary>Details</summary>
+
+- v2.3.3
+    + Fixed the conflict with the new version model
+    + Fixed the problem that the synthesis item details position is incorrect
+    + Adjusted the introduction of some technologies
+    + Adjusted the position of the logistics item selection UI
+    + Added a series of items: Developer Log 01~11
 
 - v2.3.2
     + Adjusted the unlock technology of concrete

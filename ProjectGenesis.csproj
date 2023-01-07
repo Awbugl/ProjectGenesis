@@ -93,13 +93,15 @@
     </ItemGroup>
     <ItemGroup>
         <Compile Include="src\Patches\BeltFixPatches.cs" />
-        <Compile Include="src\Patches\DispalyedNamePatch.cs" />
+        <Compile Include="src\Patches\DeleteLDBConfigPatches.cs" />
+        <Compile Include="src\Patches\DisplayedNamePatch.cs" />
         <Compile Include="src\Patches\DisplayedTextPatches.cs" />
         <Compile Include="src\Patches\FluidColorPatches.cs" />
         <Compile Include="src\Patches\GridIndexExpandPatches.cs" />
         <Compile Include="src\Patches\InitnalTechPatches.cs" />
         <Compile Include="src\Patches\MegaAssemblerPatches.cs" />
         <Compile Include="src\Patches\MegaPumpPatches.cs" />
+        <Compile Include="src\Patches\ModelLoadingPatches.cs" />
         <Compile Include="src\Patches\MultiProductionPatches.cs" />
         <Compile Include="src\Patches\OceanDischargePatches.cs" />
         <Compile Include="src\Patches\UIPatches.cs" />

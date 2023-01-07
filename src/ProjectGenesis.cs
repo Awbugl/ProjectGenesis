@@ -33,13 +33,12 @@ namespace ProjectGenesis
 
     // ReSharper disable ClassNeverInstantiated.Global
     // ReSharper disable MemberCanBeInternal
+    // ReSharper disable MemberCanBePrivate.Global
     public class ProjectGenesis : BaseUnityPlugin, IModCanSave, IMultiplayerModWithSettings
     {
         public const string MODGUID = "org.LoShin.GenesisBook";
         internal const string MODNAME = "GenesisBook";
-        internal const string VERSION = "2.3.2";
-
-        // ReSharper disable once MemberCanBePrivate.Global
+        internal const string VERSION = "2.3.3";
         internal static ManualLogSource logger;
 
         //无限堆叠开关(私货)
@@ -179,6 +178,29 @@ namespace ProjectGenesis
             ModelPostFix(LDB.models);
             ItemPostFix(LDB.items);
 
+            SetBuildBar();
+
+            ItemProto.InitFluids();
+            ItemProto.InitItemIds();
+            ItemProto.InitFuelNeeds();
+            ItemProto.InitItemIndices();
+            ItemProto.InitMechaMaterials();
+            ItemProto.fuelNeeds[4] = new int[] { 6533, 1803 };
+            ItemProto.fuelNeeds[5] = new int[] { 6241, 6242, 6243 };
+            ItemProto.fuelNeeds[6] = new int[] { 1121, 6532, 1802, 6244, 6245 };
+
+            foreach (var proto in LDB.items.dataArray)
+            {
+                StorageComponent.itemIsFuel[proto.ID] = proto.HeatValue > 0L;
+                if (StackSizeButton) proto.StackSize = 10000000;
+                StorageComponent.itemStackCount[proto.ID] = proto.StackSize;
+            }
+
+            // JsonHelper.ExportAsJson(@"D:\Git\ProjectGenesis\dependencies");
+        }
+
+        private static void SetBuildBar()
+        {
             LDBTool.SetBuildBar(1, 10, 6261);
             LDBTool.SetBuildBar(3, 10, 2313);
             LDBTool.SetBuildBar(4, 4, 6229);
@@ -199,24 +221,6 @@ namespace ProjectGenesis
             LDBTool.SetBuildBar(7, 9, 6275);
             LDBTool.SetBuildBar(7, 10, 6276);
             LDBTool.SetBuildBar(2, 5, 6266);
-
-            ItemProto.InitFluids();
-            ItemProto.InitItemIds();
-            ItemProto.InitFuelNeeds();
-            ItemProto.InitItemIndices();
-            ItemProto.InitMechaMaterials();
-            ItemProto.fuelNeeds[4] = new int[] { 6533, 1803 };
-            ItemProto.fuelNeeds[5] = new int[] { 6241, 6242, 6243 };
-            ItemProto.fuelNeeds[6] = new int[] { 1121, 6532, 1802, 6244, 6245 };
-
-            foreach (var proto in LDB.items.dataArray)
-            {
-                StorageComponent.itemIsFuel[proto.ID] = proto.HeatValue > 0L;
-                if (StackSizeButton) proto.StackSize = 10000000;
-                StorageComponent.itemStackCount[proto.ID] = proto.StackSize;
-            }
-
-            // JsonHelper.ExportAsJson(@"D:\Git\ProjectGenesis\dependencies");
         }
 
         #region IModCanSave
