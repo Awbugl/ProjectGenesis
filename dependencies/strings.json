@@ -2136,8 +2136,8 @@
   },
   {
     "Name": "T基础机械组件描述",
-    "ZHCN": "通过将简单的零件打包成机械组件，我们可以更高效的制造基础生产设备。毫无疑问，工业生产之所以能够如此高效，无不依赖于这种追求方便快捷的思路。",
-    "ENUS": "Basic mechanical components."
+    "ZHCN": "将简单的零件打包成机械组件，可以更高效的制造基础生产设备。毫无疑问，工业生产能够如此高效，无不依赖于模块化集成化的思路。",
+    "ENUS": "The packaging of simple parts into mechanical assemblies allows for more efficient manufacturing of basic production equipment."
   },
   {
     "Name": "T先进机械组件",
@@ -2146,8 +2146,8 @@
   },
   {
     "Name": "T先进机械组件描述",
-    "ZHCN": "集成处理器和金属钛的应用，使得我们能够制造更坚固而且更精密的生产设备。将它们加入到基础机械组件中，以便日后使用。",
-    "ENUS": "Advanced mechanical components."
+    "ZHCN": "集成处理器和金属钛的应用，使得我们能够制造更坚固而且更精密的生产设备。",
+    "ENUS": "The use of integrated processors and metallic titanium has allowed us to build stronger and more sophisticated production equipment."
   },
   {
     "Name": "T尖端机械组件",
@@ -2156,8 +2156,8 @@
   },
   {
     "Name": "T尖端机械组件描述",
-    "ZHCN": "通过大规模应用量子芯片和金属钨，太空发射有关设备的可靠性被大大提高，或许我们可以用这玩意造一台巨型粒子对撞机？",
-    "ENUS": "Sophisticated mechanical components."
+    "ZHCN": "通过大规模应用量子芯片和金属钨，太空发射有关设备的可靠性被大大提高。或许我们可以用这玩意造一台巨型粒子对撞机？",
+    "ENUS": "Through the large-scale application of quantum chips and metal tungsten, the reliability of space launch-related equipment is greatly improved, so perhaps we can use this stuff to build a giant particle collider?"
   },
   {
     "Name": "T钨强化金属",
@@ -2167,7 +2167,7 @@
   {
     "Name": "T钨强化金属描述",
     "ZHCN": "使用纳米尺度的金属钨生产的钨基金属复合材料，具有极高的强度和韧性。或许可以用来生产对于材料强度需求较高的设备。",
-    "ENUS": "Tungsten-enhanced metals."
+    "ENUS": "Tungsten-based metal composites produced using nanoscale tungsten metal have extremely high strength and toughness. Perhaps they can be used to produce devices that require high material strength."
   },
   {
     "Name": "T电路基板",
@@ -2177,7 +2177,7 @@
   {
     "Name": "T电路基板描述",
     "ZHCN": "基板是制造印刷电路板的基本材料，印刷电路板的性能、质量很大程度上取决于基板材料。高分子材料的使用，可以极大的降低印刷电路板的成本并提高其质量。\n[由于显示限制，解锁配方显示不完全]",
-    "ENUS": "Circuit substrates."
+    "ENUS": "Substrate is the basic material for manufacturing printed circuit boards, and the performance and quality of printed circuit boards depend largely on the substrate material.\n[The unlocked recipe is not fully displayed due to display limitations]"
   },
   {
     "Name": "TIC晶片",
@@ -2187,7 +2187,7 @@
   {
     "Name": "TIC晶片描述",
     "ZHCN": "晶圆通过扩散湿洗和多次的光刻、湿刻蚀、离子注入、干蚀刻、气相积淀最后抛光切片获得的高精密工业中间产品，集成有大量的微电子元器件，是制作处理器的核心原料。\n[由于显示限制，解锁配方显示不完全]",
-    "ENUS": "IC chips."
+    "ENUS": "Wafers are obtained through diffusion wet washing and multiple lithography, wet etching, ion implantation, dry etching, vapor phase deposition and finally polishing and slicing of high precision industrial intermediate products, integrated with a large number of microelectronic components, which are the core raw materials for making processors.\n[The unlocked recipe is not fully displayed due to display limitations]"
   },
   {
     "Name": "T虚拟技术革新",
@@ -2197,7 +2197,7 @@
   {
     "Name": "T虚拟技术革新描述",
     "ZHCN": "高精度、可自生的生物电路一经应用就极大的提高了设备的计算能力和稳定性，我们的生产设施迎来了新一轮的技术革新。由于使用的材料具有活性，这种电路技术与碳基生物有着天然的融洽性。据悉，主脑所维持的家园世界就大量的使用了这种技术。",
-    "ENUS": "Virtual technology innovation."
+    "ENUS": "The application of highly accurate, self-generating biological circuits has greatly improved the computational power and stability of our devices, ushering in a new wave of technological innovation in our production facilities."
   },
   {
     "Name": "T生物神经技术",
@@ -2206,8 +2206,8 @@
   },
   {
     "Name": "T生物神经技术描述",
-    "ZHCN": "使用活性生物纤维仿制的人造生物神经，能够用来在活性生物组织之间传递信息，是脑机接口技术的核心之一，绝大多数人类通过这种材料链接家园世界——或许可以用来构筑生物活性计算机？",
-    "ENUS": "Bio-neurotechnology."
+    "ZHCN": "使用活性生物纤维仿制的人造生物神经，能够用来在活性生物组织之间传递信息，是脑机接口技术的核心之一，绝大多数人类通过这种材料链接家园世界。",
+    "ENUS": "Artificial biological nerves, imitated using active biological fibers, can be used to transmit information between active biological tissues and are one of the cores of brain-computer interface technology, through which the vast majority of humans are linked to the home world."
   },
   {
     "Name": "T超级纳米计算机",
@@ -2216,8 +2216,8 @@
   },
   {
     "Name": "T超级纳米计算机描述",
-    "ZHCN": "上千万的量子芯片在无数粒子宽带的链接下无声工作着，对于人类的任何一个个体来说，这台超级计算机都是非常巨大的，像一座堡垒、一座方尖碑一样矗立在那里，提供着难以想象的巨大算力。有了超级计算机的算力帮助，处理器和量子芯片的生产流程也得到了大幅的优化。",
-    "ENUS": "Super nano computers."
+    "ZHCN": "上千万的量子芯片在无数粒子宽带的链接下无声工作着，对于人类的任何一个个体来说，这台超级计算机都是非常巨大的，像一座堡垒、一座方尖碑一样矗立在那里，提供着难以想象的巨大算力。",
+    "ENUS": "Tens of millions of quantum chips work silently under the link of countless particle broadband. For any individual human being, this supercomputer is very huge, standing like a fortress, an obelisk, providing unimaginably huge arithmetic power."
   },
   {
     "Name": "T生物活性计算机",
@@ -2226,8 +2226,8 @@
   },
   {
     "Name": "T生物活性计算机描述",
-    "ZHCN": "将无数的生物芯片连接起来，爆发出了巨大的算力。伦理不是你现在该考虑的事情，或许利用它优化一下微晶元件的生产流程才是当务之急。",
-    "ENUS": "Bioactive computers."
+    "ZHCN": "将无数的生物芯片连接起来，爆发出了巨大的算力。伦理不是现在该考虑的事情。",
+    "ENUS": "Connecting countless biochips explodes with enormous arithmetic power. Ethics is not something to consider right now."
   },
   {
     "Name": "T钨强化玻璃",
@@ -2237,7 +2237,7 @@
   {
     "Name": "T钨强化玻璃描述",
     "ZHCN": "这种掺杂了大量纳米钨颗粒的玻璃通体黝黑，但是有着极高的硬度，在极端环境下或许可以大展拳脚。",
-    "ENUS": "Tungsten tempered glass."
+    "ENUS": "This glass, doped with a large number of tungsten nanoparticles, is dark, but has a very high hardness, and may be able to perform well in extreme environments."
   },
   {
     "Name": "T先进精炼技术",
