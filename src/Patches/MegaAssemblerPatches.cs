@@ -266,9 +266,13 @@ namespace ProjectGenesis.Patches
                     !ContainsRecipeType(itemProto.prefabDesc.assemblerRecipeType, __instance.recipeType))
                     return;
 
-                if (prebuildData.parameters == null || prebuildData.parameters.Length < 2048) Array.Resize(ref prebuildData.parameters, 2048);
+                if (__instance.parameters != null)
+                {
+                    var length = __instance.parameters.Length;
+                    if (prebuildData.parameters == null || prebuildData.parameters.Length < length) Array.Resize(ref prebuildData.parameters, length);
+                    Array.Copy(__instance.parameters, prebuildData.parameters, length);
+                }
 
-                Array.Copy(__instance.parameters, prebuildData.parameters, 2048);
                 prebuildData.recipeId = __instance.recipeId;
                 prebuildData.filterId = __instance.filterId;
                 __instance.ToParamsArray(ref prebuildData.parameters, ref prebuildData.paramCount);
