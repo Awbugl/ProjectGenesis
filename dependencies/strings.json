@@ -2750,6 +2750,16 @@
     "ENUS": "Using photon beam technology, quickly extract large amounts of liquid.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
+    "Name": "大气收集设施",
+    "ZHCN": "大气采集站",
+    "ENUS": "Atmospheric Collect Station"
+  },
+  {
+    "Name": "I大气收集设施",
+    "ZHCN": "可以富集并收集大气成分的大型设施。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Large facilities that can enrich and collect atmospheric components.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+  },
+  {
     "Name": "氯苯水解",
     "ZHCN": "氯苯水解",
     "ENUS": "Chlorobenzene hydrolysis"

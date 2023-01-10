@@ -33,6 +33,8 @@ namespace ProjectGenesis.Utils
             LDBTool.PreAddProto(circleModel);
             var megapumper = CopyModelProto(119, 462, Color.HSVToRGB(0.6174f, 0.6842f, 0.9686f));
             LDBTool.PreAddProto(megapumper);
+            var gaspumper = CopyModelProto(50, 463, Color.HSVToRGB(0.6174f, 0.6842f, 0.9686f));
+            LDBTool.PreAddProto(gaspumper);
         }
 
         private static ModelProto CopyModelProto(int oriId, int id, Color color)

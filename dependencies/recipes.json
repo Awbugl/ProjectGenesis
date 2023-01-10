@@ -6300,6 +6300,32 @@
     "NonProductive": false
   },
   {
+    "ID": 419,
+    "Name": "大气收集设施",
+    "Description": "",
+    "IconPath": "",
+    "Type": 4,
+    "GridIndex": 2214,
+    "Time": 900,
+    "Input": [
+      2104,
+      1205
+    ],
+    "InCounts": [
+      1,
+      10
+    ],
+    "Output": [
+      6267
+    ],
+    "OutCounts": [
+      1
+    ],
+    "Explicit": false,
+    "Handcraft": true,
+    "NonProductive": false
+  },
+  {
     "ID": 429,
     "Name": "物质回收",
     "Description": "R物质回收",

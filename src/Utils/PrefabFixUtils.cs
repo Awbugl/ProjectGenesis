@@ -11,6 +11,7 @@ namespace ProjectGenesis.Utils
         internal static void ItemPostFix(ItemProtoSet itemProtos)
         {
             LDB.items.OnAfterDeserialize();
+            
             itemProtos.Select(2317).prefabDesc.assemblerRecipeType = (ERecipeType_1)ERecipeType.高分子化工;
             itemProtos.Select(2317).prefabDesc.idleEnergyPerTick = itemProtos.Select(物品.化工厂).prefabDesc.idleEnergyPerTick * 2;
             itemProtos.Select(2317).prefabDesc.workEnergyPerTick = itemProtos.Select(物品.化工厂).prefabDesc.workEnergyPerTick * 2;
@@ -19,14 +20,16 @@ namespace ProjectGenesis.Utils
             itemProtos.Select(物品.三级制造台).prefabDesc.assemblerRecipeType = (ERecipeType_1)ERecipeType.高精度加工;
 
             itemProtos.Select(物品.一级制造台).prefabDesc.assemblerSpeed = 20000;
-            itemProtos.Select(物品.一级制造台).prefabDesc.idleEnergyPerTick = itemProtos.Select(物品.一级制造台).prefabDesc.idleEnergyPerTick * 2;
-            itemProtos.Select(物品.一级制造台).prefabDesc.workEnergyPerTick = itemProtos.Select(物品.一级制造台).prefabDesc.workEnergyPerTick * 2;
+            itemProtos.Select(物品.一级制造台).prefabDesc.idleEnergyPerTick *= 2;
+            itemProtos.Select(物品.一级制造台).prefabDesc.workEnergyPerTick *= 2;
+            
             itemProtos.Select(物品.二级制造台).prefabDesc.assemblerSpeed = 20000;
-            itemProtos.Select(物品.二级制造台).prefabDesc.idleEnergyPerTick = itemProtos.Select(物品.二级制造台).prefabDesc.idleEnergyPerTick * 2;
-            itemProtos.Select(物品.二级制造台).prefabDesc.workEnergyPerTick = itemProtos.Select(物品.二级制造台).prefabDesc.workEnergyPerTick * 2;
+            itemProtos.Select(物品.二级制造台).prefabDesc.idleEnergyPerTick *= 2;
+            itemProtos.Select(物品.二级制造台).prefabDesc.workEnergyPerTick *= 2;
+            
             itemProtos.Select(物品.三级制造台).prefabDesc.assemblerSpeed = 20000;
-            itemProtos.Select(物品.三级制造台).prefabDesc.idleEnergyPerTick = itemProtos.Select(物品.三级制造台).prefabDesc.idleEnergyPerTick * 2;
-            itemProtos.Select(物品.三级制造台).prefabDesc.workEnergyPerTick = itemProtos.Select(物品.三级制造台).prefabDesc.workEnergyPerTick * 2;
+            itemProtos.Select(物品.三级制造台).prefabDesc.idleEnergyPerTick *= 2;
+            itemProtos.Select(物品.三级制造台).prefabDesc.workEnergyPerTick *= 2;
 
             itemProtos.Select(物品.位面熔炉).prefabDesc.assemblerSpeed = 40000;
             itemProtos.Select(物品.化工厂).prefabDesc.assemblerSpeed = 20000;
@@ -85,10 +88,12 @@ namespace ProjectGenesis.Utils
             itemProtos.Select(6230).prefabDesc.workEnergyPerTick = 12000;
 
             itemProtos.Select(6229).prefabDesc.fluidStorageCount = 1000000;
+            
             itemProtos.Select(6275).prefabDesc.assemblerSpeed = 500;
             itemProtos.Select(6275).prefabDesc.workEnergyPerTick = 2000000;
             itemProtos.Select(6275).prefabDesc.idleEnergyPerTick = 100000;
             itemProtos.Select(6275).prefabDesc.assemblerRecipeType = (ERecipeType_1)ERecipeType.精密组装;
+
             itemProtos.Select(6276).prefabDesc.assemblerSpeed = 1000;
             itemProtos.Select(6276).prefabDesc.workEnergyPerTick = 8000000;
             itemProtos.Select(6276).prefabDesc.idleEnergyPerTick = 200000;
@@ -107,99 +112,27 @@ namespace ProjectGenesis.Utils
         {
             // 天穹装配厂
             var testCraftingTableModel = models.Select(453);
-            ref var prefabDesc1 = ref testCraftingTableModel.prefabDesc;
-            prefabDesc1.isAssembler = true;
-            prefabDesc1.assemblerRecipeType = (ERecipeType_1)ERecipeType.Assemble;
-            prefabDesc1.assemblerSpeed = MegaAssemblerPatches.MegaAssemblerSpeed;
-            prefabDesc1.isStation = false;
-            prefabDesc1.isStellarStation = false;
-            prefabDesc1.stationMaxDroneCount = 0;
-            prefabDesc1.stationMaxEnergyAcc = 0;
-            prefabDesc1.stationMaxItemCount = 0;
-            prefabDesc1.stationMaxItemKinds = 0;
-            prefabDesc1.stationMaxShipCount = 0;
-            prefabDesc1.idleEnergyPerTick = 100000;
-            prefabDesc1.workEnergyPerTick = 500000;
+            SetMegaAssemberPrefebDesc(ref testCraftingTableModel.prefabDesc, ERecipeType.Assemble);
 
             // 物质裂解塔
             var testCraftingTableModel2 = models.Select(454);
-            ref var prefabDesc2 = ref testCraftingTableModel2.prefabDesc;
-            prefabDesc2.isAssembler = true;
-            prefabDesc2.assemblerRecipeType = (ERecipeType_1)ERecipeType.所有熔炉;
-            prefabDesc2.assemblerSpeed = MegaAssemblerPatches.MegaAssemblerSpeed;
-            prefabDesc2.isStation = false;
-            prefabDesc2.isStellarStation = false;
-            prefabDesc2.stationMaxDroneCount = 0;
-            prefabDesc2.stationMaxEnergyAcc = 0;
-            prefabDesc2.stationMaxItemCount = 0;
-            prefabDesc2.stationMaxItemKinds = 0;
-            prefabDesc2.stationMaxShipCount = 0;
-            prefabDesc2.idleEnergyPerTick = 100000;
-            prefabDesc2.workEnergyPerTick = 500000;
+            SetMegaAssemberPrefebDesc(ref testCraftingTableModel2.prefabDesc, ERecipeType.所有熔炉);
 
             // 巨型化学反应釜
             var testCraftingTableModel3 = models.Select(455);
-            ref var prefabDesc3 = ref testCraftingTableModel3.prefabDesc;
-            prefabDesc3.isAssembler = true;
-            prefabDesc3.assemblerRecipeType = (ERecipeType_1)ERecipeType.所有化工;
-            prefabDesc3.assemblerSpeed = MegaAssemblerPatches.MegaAssemblerSpeed;
-            prefabDesc3.isStation = false;
-            prefabDesc3.isStellarStation = false;
-            prefabDesc3.stationMaxDroneCount = 0;
-            prefabDesc3.stationMaxEnergyAcc = 0;
-            prefabDesc3.stationMaxItemCount = 0;
-            prefabDesc3.stationMaxItemKinds = 0;
-            prefabDesc3.stationMaxShipCount = 0;
-            prefabDesc3.idleEnergyPerTick = 100000;
-            prefabDesc3.workEnergyPerTick = 500000;
+            SetMegaAssemberPrefebDesc(ref testCraftingTableModel3.prefabDesc, ERecipeType.所有化工);
 
             // 精密结构组装厂
             var testCraftingTableModel4 = models.Select(456);
-            ref var prefabDesc4 = ref testCraftingTableModel4.prefabDesc;
-            prefabDesc4.isAssembler = true;
-            prefabDesc4.assemblerRecipeType = (ERecipeType_1)ERecipeType.所有高精;
-            prefabDesc4.assemblerSpeed = MegaAssemblerPatches.MegaAssemblerSpeed;
-            prefabDesc4.isStation = false;
-            prefabDesc4.isStellarStation = false;
-            prefabDesc4.stationMaxDroneCount = 0;
-            prefabDesc4.stationMaxEnergyAcc = 0;
-            prefabDesc4.stationMaxItemCount = 0;
-            prefabDesc4.stationMaxItemKinds = 0;
-            prefabDesc4.stationMaxShipCount = 0;
-            prefabDesc4.idleEnergyPerTick = 100000;
-            prefabDesc4.workEnergyPerTick = 500000;
+            SetMegaAssemberPrefebDesc(ref testCraftingTableModel4.prefabDesc, ERecipeType.所有高精);
 
             // 物质分解设施
             var testCraftingTableModel5 = models.Select(460);
-            ref var prefabDesc5 = ref testCraftingTableModel5.prefabDesc;
-            prefabDesc5.isAssembler = true;
-            prefabDesc5.assemblerRecipeType = (ERecipeType_1)ERecipeType.垃圾回收;
-            prefabDesc5.assemblerSpeed = MegaAssemblerPatches.TrashSpeed;
-            prefabDesc5.isStation = false;
-            prefabDesc5.isStellarStation = false;
-            prefabDesc5.stationMaxDroneCount = 0;
-            prefabDesc5.stationMaxEnergyAcc = 0;
-            prefabDesc5.stationMaxItemCount = 0;
-            prefabDesc5.stationMaxItemKinds = 0;
-            prefabDesc5.stationMaxShipCount = 0;
-            prefabDesc5.idleEnergyPerTick = 200000;
-            prefabDesc5.workEnergyPerTick = 1000000;
+            SetMegaAssemberPrefebDesc(ref testCraftingTableModel5.prefabDesc, ERecipeType.垃圾回收, 200000, 1000000, MegaAssemblerPatches.TrashSpeed);
 
             // 巨型粒子对撞机
             var testCraftingTableModel6 = models.Select(461);
-            ref var prefabDesc6 = ref testCraftingTableModel6.prefabDesc;
-            prefabDesc6.isAssembler = true;
-            prefabDesc6.assemblerRecipeType = (ERecipeType_1)ERecipeType.Particle;
-            prefabDesc6.assemblerSpeed = MegaAssemblerPatches.MegaAssemblerSpeed;
-            prefabDesc6.isStation = false;
-            prefabDesc6.isStellarStation = false;
-            prefabDesc6.stationMaxDroneCount = 0;
-            prefabDesc6.stationMaxEnergyAcc = 0;
-            prefabDesc6.stationMaxItemCount = 0;
-            prefabDesc6.stationMaxItemKinds = 0;
-            prefabDesc6.stationMaxShipCount = 0;
-            prefabDesc6.idleEnergyPerTick = 200000;
-            prefabDesc6.workEnergyPerTick = 1000000;
+            SetMegaAssemberPrefebDesc(ref testCraftingTableModel6.prefabDesc, ERecipeType.Particle, 200000, 1000000);
 
             LDB.items.Select(2211).prefabDesc.fuelMask = 5;
             LDB.items.Select(2210).prefabDesc.fuelMask = 6;
@@ -227,6 +160,14 @@ namespace ProjectGenesis.Utils
             poses.Add(new Pose(new Vector3(0, 0, -1.4f), Quaternion.Euler(0, 180, 0)));
             megapumperprefabDesc.portPoses = poses.ToArray();
 
+            var gaspumper = models.Select(463);
+            ref var gaspumperprefabDesc = ref gaspumper.prefabDesc;
+            gaspumperprefabDesc.workEnergyPerTick = 50000;
+            gaspumperprefabDesc.isCollectStation = true;
+            gaspumperprefabDesc.isStellarStation = false;
+            gaspumperprefabDesc.isPowerConsumer = false;
+            gaspumperprefabDesc.stationCollectSpeed = 6;
+
             var accumulator = models.Select(46);
             ref var accumulatorprefabDesc = ref accumulator.prefabDesc;
             accumulatorprefabDesc.maxAcuEnergy = 2700000000;
@@ -238,6 +179,27 @@ namespace ProjectGenesis.Utils
             energyexchangerprefabDesc.maxAcuEnergy = 2700000000;
             energyexchangerprefabDesc.maxExcEnergy = 2700000000;
             energyexchangerprefabDesc.exchangeEnergyPerTick = 10000000;
+        }
+
+        private static void SetMegaAssemberPrefebDesc(
+            ref PrefabDesc prefabDesc,
+            ERecipeType type,
+            int idleEnergy = 100000,
+            int workEnergy = 500000,
+            int speed = MegaAssemblerPatches.MegaAssemblerSpeed)
+        {
+            prefabDesc.isAssembler = true;
+            prefabDesc.assemblerRecipeType = (ERecipeType_1)type;
+            prefabDesc.assemblerSpeed = speed;
+            prefabDesc.isStation = false;
+            prefabDesc.isStellarStation = false;
+            prefabDesc.stationMaxDroneCount = 0;
+            prefabDesc.stationMaxEnergyAcc = 0;
+            prefabDesc.stationMaxItemCount = 0;
+            prefabDesc.stationMaxItemKinds = 0;
+            prefabDesc.stationMaxShipCount = 0;
+            prefabDesc.idleEnergyPerTick = idleEnergy;
+            prefabDesc.workEnergyPerTick = workEnergy;
         }
     }
 }
