@@ -172,6 +172,8 @@ namespace ProjectGenesis.Utils
             LDBTool.SetBuildBar(5, 8, 2309);
             LDBTool.SetBuildBar(5, 9, 2317);
             LDBTool.SetBuildBar(5, 10, 2310);
+            LDBTool.SetBuildBar(6, 5, 6267);
+            LDBTool.SetBuildBar(6, 6, 2209);
             LDBTool.SetBuildBar(7, 3, 6257);
             LDBTool.SetBuildBar(7, 4, 6258);
             LDBTool.SetBuildBar(7, 5, 6259);

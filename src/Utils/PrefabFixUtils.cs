@@ -11,7 +11,7 @@ namespace ProjectGenesis.Utils
         internal static void ItemPostFix(ItemProtoSet itemProtos)
         {
             LDB.items.OnAfterDeserialize();
-            
+
             itemProtos.Select(2317).prefabDesc.assemblerRecipeType = (ERecipeType_1)ERecipeType.高分子化工;
             itemProtos.Select(2317).prefabDesc.idleEnergyPerTick = itemProtos.Select(物品.化工厂).prefabDesc.idleEnergyPerTick * 2;
             itemProtos.Select(2317).prefabDesc.workEnergyPerTick = itemProtos.Select(物品.化工厂).prefabDesc.workEnergyPerTick * 2;
@@ -22,11 +22,11 @@ namespace ProjectGenesis.Utils
             itemProtos.Select(物品.一级制造台).prefabDesc.assemblerSpeed = 20000;
             itemProtos.Select(物品.一级制造台).prefabDesc.idleEnergyPerTick *= 2;
             itemProtos.Select(物品.一级制造台).prefabDesc.workEnergyPerTick *= 2;
-            
+
             itemProtos.Select(物品.二级制造台).prefabDesc.assemblerSpeed = 20000;
             itemProtos.Select(物品.二级制造台).prefabDesc.idleEnergyPerTick *= 2;
             itemProtos.Select(物品.二级制造台).prefabDesc.workEnergyPerTick *= 2;
-            
+
             itemProtos.Select(物品.三级制造台).prefabDesc.assemblerSpeed = 20000;
             itemProtos.Select(物品.三级制造台).prefabDesc.idleEnergyPerTick *= 2;
             itemProtos.Select(物品.三级制造台).prefabDesc.workEnergyPerTick *= 2;
@@ -41,7 +41,7 @@ namespace ProjectGenesis.Utils
             itemProtos.Select(物品.原油采集站).prefabDesc.minerPeriod = 300000;
             itemProtos.Select(物品.水泵).prefabDesc.minerPeriod = 360000;
 
-            itemProtos.Select(物品.水泵).prefabDesc.waterTypes = new[] { 1000, 1116, 7017, 7018 };
+            itemProtos.Select(物品.水泵).prefabDesc.waterTypes = new[] { 1000, 1116, 7018 };
 
             itemProtos.Select(物品.电磁轨道弹射器).prefabDesc.ejectorChargeFrame = 20;
             itemProtos.Select(物品.电磁轨道弹射器).prefabDesc.ejectorColdFrame = 10;
@@ -88,7 +88,7 @@ namespace ProjectGenesis.Utils
             itemProtos.Select(6230).prefabDesc.workEnergyPerTick = 12000;
 
             itemProtos.Select(6229).prefabDesc.fluidStorageCount = 1000000;
-            
+
             itemProtos.Select(6275).prefabDesc.assemblerSpeed = 500;
             itemProtos.Select(6275).prefabDesc.workEnergyPerTick = 2000000;
             itemProtos.Select(6275).prefabDesc.idleEnergyPerTick = 100000;
@@ -154,7 +154,7 @@ namespace ProjectGenesis.Utils
             megapumperprefabDesc.idleEnergyPerTick = 10000;
             megapumperprefabDesc.workEnergyPerTick = 25000;
             megapumperprefabDesc.waterPoints = new[] { Vector3.zero };
-            megapumperprefabDesc.waterTypes = new[] { 1000, 1116, 7017, 7018 };
+            megapumperprefabDesc.waterTypes = new[] { 1000, 1116, 7018 };
 
             List<Pose> poses = megapumperprefabDesc.portPoses.ToList();
             poses.Add(new Pose(new Vector3(0, 0, -1.4f), Quaternion.Euler(0, 180, 0)));
@@ -162,9 +162,8 @@ namespace ProjectGenesis.Utils
 
             var gaspumper = models.Select(463);
             ref var gaspumperprefabDesc = ref gaspumper.prefabDesc;
-            gaspumperprefabDesc.workEnergyPerTick = 50000;
+            gaspumperprefabDesc.workEnergyPerTick = 0;
             gaspumperprefabDesc.isCollectStation = true;
-            gaspumperprefabDesc.isStellarStation = false;
             gaspumperprefabDesc.isPowerConsumer = false;
             gaspumperprefabDesc.stationCollectSpeed = 6;
 

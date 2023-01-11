@@ -33,7 +33,7 @@ namespace ProjectGenesis.Utils
             LDBTool.PreAddProto(circleModel);
             var megapumper = CopyModelProto(119, 462, Color.HSVToRGB(0.6174f, 0.6842f, 0.9686f));
             LDBTool.PreAddProto(megapumper);
-            var gaspumper = CopyModelProto(50, 463, Color.HSVToRGB(0.6174f, 0.6842f, 0.9686f));
+            var gaspumper = CopyModelProto(50, 463, new Color32(60, 179, 113, 255));
             LDBTool.PreAddProto(gaspumper);
         }
 
@@ -41,7 +41,7 @@ namespace ProjectGenesis.Utils
         {
             var oriModel = LDB.models.Select(oriId);
             var model = oriModel.Copy();
-            model.Name = id.ToString(); //这俩至少有一个必须加，否则LDBTool报冲突导致后面null
+            model.Name = id.ToString();
             model.ID = id;
             var desc = oriModel.prefabDesc;
             model.prefabDesc = new PrefabDesc(id, desc.prefab, desc.colliderPrefab);

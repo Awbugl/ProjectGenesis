@@ -1,28 +1,57 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace ProjectGenesis.Utils
 {
     internal static class PlanetThemeUtils
     {
+        private static readonly Dictionary<int, int[]> PlanetGasData = new Dictionary<int, int[]>()
+                                                                       {
+                                                                           { 1, new[] { 6220, 7019 } },
+                                                                           { 6, new[] { 6206 } },
+                                                                           { 7, new[] { 6220 } },
+                                                                           { 8, new[] { 6220, 7019 } },
+                                                                           { 9, new[] { 6206, 6220 } },
+                                                                           { 10, new[] { 6220, 7019 } },
+                                                                           { 12, new[] { 6206 } },
+                                                                           { 13, new[] { 6206, 6220 } },
+                                                                           { 14, new[] { 6220, 7019 } },
+                                                                           { 15, new[] { 6220, 7019 } },
+                                                                           { 16, new[] { 6220, 7019 } },
+                                                                           { 17, new[] { 6220 } },
+                                                                           { 18, new[] { 6220, 7019 } },
+                                                                           { 19, new[] { 6220 } },
+                                                                           { 20, new[] { 6220, 7002 } },
+                                                                           { 22, new[] { 6220, 7019 } },
+                                                                           { 23, new[] { 6206 } },
+                                                                           { 24, new[] { 6220, 6205 } },
+                                                                           { 25, new[] { 6220, 7019 } },
+                                                                       };
+
         internal static void AdjustPlanetThemeData()
         {
             LDB.themes.Select(8).WaterItemId = 7018;
-            LDB.themes.Select(12).WaterItemId = 7017;
-            LDB.themes.Select(12).WaterHeight = LDB.themes.Select(22).WaterHeight + 0.6f;
 
-            // ReSharper disable once LoopCanBePartlyConvertedToQuery
             foreach (var theme in LDB.themes.dataArray)
             {
                 if (theme.ID == 1)
                 {
                     theme.RareVeins = new[] { 8 };
                     theme.RareSettings = new float[] { 1.0f, 0.5f, 0.0f, 0.4f };
-                    theme.GasItems = new[] { 7019 };
-                    theme.GasSpeeds = new[] { 1f };
                 }
-                
-                if (theme.GasItems == null) theme.GasItems = Array.Empty<int>();
-                if (theme.GasSpeeds == null) theme.GasSpeeds = Array.Empty<float>();
+
+                if (theme.PlanetType != EPlanetType.Gas && theme.Wind == 0f)
+                {
+                    theme.GasItems = Array.Empty<int>();
+                    theme.GasSpeeds = Array.Empty<float>();
+                }
+                else if (PlanetGasData.ContainsKey(theme.ID))
+                {
+                    theme.GasItems = PlanetGasData[theme.ID];
+                    theme.GasSpeeds = theme.GasItems.Length == 1
+                                          ? new float[] { theme.Wind * 0.7f }
+                                          : new float[] { theme.Wind * 0.7f, theme.Wind * 0.18f };
+                }
 
                 if (theme.VeinSpot.Length > 2)
                 {

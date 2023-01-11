@@ -98,6 +98,12 @@ namespace ProjectGenesis.Patches
                     }
 
                     return;
+                
+                case 18:
+                    if(__instance.prefabDesc.isCollectStation && __instance.ID == 6267)
+                        __result = "行星大气".TranslateFromJson();
+                    
+                    return;
             }
         }
 

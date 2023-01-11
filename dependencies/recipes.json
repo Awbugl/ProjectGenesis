@@ -3815,8 +3815,8 @@
   },
   {
     "ID": 718,
-    "Name": "一氧化碳",
-    "Description": "",
+    "Name": "二氧化碳还原",
+    "Description": "R二氧化碳还原",
     "IconPath": "Assets/texpack/一氧化碳",
     "Type": 2,
     "GridIndex": 4302,
@@ -3835,7 +3835,7 @@
     "OutCounts": [
       2
     ],
-    "Explicit": false,
+    "Explicit": true,
     "Handcraft": false,
     "NonProductive": false
   },
@@ -5283,7 +5283,7 @@
     "Description": "R二氧化碳",
     "IconPath": "Assets/texpack/二氧化碳",
     "Type": 2,
-    "GridIndex": 4214,
+    "GridIndex": 4114,
     "Time": 120,
     "Input": [
       1109,

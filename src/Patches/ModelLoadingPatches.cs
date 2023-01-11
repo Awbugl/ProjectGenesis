@@ -7,6 +7,7 @@ namespace ProjectGenesis.Patches
 {
     public static class ModelLoadingPatches
     {
+        // 调整巨型建筑模型id（和战斗模型冲突）
         private static readonly Func<int, int> Action = modelIndex =>
         {
             if (modelIndex >= 401 && modelIndex <= 412) modelIndex += 50;

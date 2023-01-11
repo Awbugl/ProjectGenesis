@@ -145,6 +145,11 @@
     "ENUS": "Stellarator"
   },
   {
+    "Name": "行星大气",
+    "ZHCN": "行星大气",
+    "ENUS": "Planet Atmosphere"
+  },
+  {
     "Name": "海洋排污文字描述",
     "ZHCN": "允许将传送带反向连入抽水站, 将不需要的液体排入大海.(抽水站蓄满时才会排放)",
     "ENUS": "Allow allowed to connect the conveyor belt to the pumping station in the opposite direction and discharge the unwanted liquid into the sea. (The liquid will only be discharged when the station is full)"
@@ -246,7 +251,7 @@
   },
   {
     "Name": "I混凝土",
-    "ZHCN": "一种远古时期就存在的材料, 可以用于建造大型建筑.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ZHCN": "远古时期就存在的建筑材料, 可以用于建造大型建筑.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "ENUS": "A material that has existed since ancient times and can be used to build large structures.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
@@ -276,7 +281,7 @@
   },
   {
     "Name": "I聚乙烯",
-    "ZHCN": "一种初级化工产品,广泛应用于各种行业.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ZHCN": "初级化工产品,广泛应用于各种行业.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "ENUS": "Basic chemical material, widely used.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
@@ -331,8 +336,8 @@
   },
   {
     "Name": "I重燃油",
-    "ZHCN": "这是一种新的化工材料.有人说这是工业的血液....\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A new chemical material. Someone said it's the blood of industry ...\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "褐色黏稠状可燃性液体。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "A brown viscous flammable liquid.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "轻燃油",
@@ -341,8 +346,8 @@
   },
   {
     "Name": "I轻燃油",
-    "ZHCN": "这是一种新的化工材料.有人说这是工业的血液....\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A new chemical material. Someone said it's the blood of industry ...\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "褐色可燃性液体。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "A brown flammable liquid.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "含硫重燃油",
@@ -351,8 +356,8 @@
   },
   {
     "Name": "I含硫重燃油",
-    "ZHCN": "这是一种新的化工材料.有人说这是工业的血液....\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A new chemical material. Someone said it's the blood of industry ...\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "褐色黏稠状可燃性液体，含有少量硫。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "A brown viscous flammable liquid, with a small amount of sulfur.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "含硫轻燃油",
@@ -361,8 +366,8 @@
   },
   {
     "Name": "I含硫轻燃油",
-    "ZHCN": "这是一种新的化工材料.有人说这是工业的血液....\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A new chemical material. Someone said it's the blood of industry ...\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "褐色可燃性液体，含有少量硫。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "A brown flammable liquid, with a small amount of sulfur.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "一氧化碳",
@@ -371,8 +376,8 @@
   },
   {
     "Name": "I一氧化碳",
-    "ZHCN": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A new chemical material.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "无色无味的气体，有毒，可作为有机合成的原料。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "A colorless odorless gas, toxic, can be used as raw materials for organic synthesis.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "甲醇",
@@ -381,8 +386,8 @@
   },
   {
     "Name": "I甲醇",
-    "ZHCN": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A new chemical material.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "结构最为简单的饱和一元醇，可作为有机合成的原料。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "The simplest saturated monohydric alcohol, can be used as raw materials for organic synthesis.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "乙酸",
@@ -391,8 +396,8 @@
   },
   {
     "Name": "I乙酸",
-    "ZHCN": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A new chemical material.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "有机一元酸，可作为有机合成的原料。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "An organic monobasic acid, can be used as raw materials for organic synthesis.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "乙酸甲酯",
@@ -401,8 +406,8 @@
   },
   {
     "Name": "I乙酸甲酯",
-    "ZHCN": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A new chemical material.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "有机化合物，可作为有机合成的原料。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "This is an organic compound, can be used as raw materials for organic synthesis.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "次氯酸",
@@ -411,8 +416,8 @@
   },
   {
     "Name": "I次氯酸",
-    "ZHCN": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A new chemical material.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "一元弱酸，具有氧化性，可用于合成偏二甲肼。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "A weak acid, with oxidizing properties, can be used to synthesize 2-methyl-1,3-propanediol.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "四硝基甲烷",
@@ -421,8 +426,8 @@
   },
   {
     "Name": "I四硝基甲烷",
-    "ZHCN": "这是一种新的化工材料, 蕴含着巨大的能量....但好像还差些什么.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A new chemical material. It's really powerful....\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "有机化合物，有爆炸敏感性, 蕴含着巨大的能量，但好像还差些什么.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "An organic compound, explosive sensitivity, contains a huge amount of energy, but it seems to be missing something.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "硝基柴油",
@@ -431,8 +436,8 @@
   },
   {
     "Name": "I硝基柴油",
-    "ZHCN": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A new material for recipe.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "四硝基甲烷与柴油的混合物, 蕴含着巨大的能量，但好像还差些什么.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "A mixture of tetranitromethane and diesel oil, contains a huge amount of energy, but it seems to be missing something.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "偏二甲肼",
@@ -441,8 +446,8 @@
   },
   {
     "Name": "I偏二甲肼",
-    "ZHCN": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A new chemical material.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "高比冲液体燃料。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "A high ratio of liquid fuel.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "火箭燃料",
@@ -451,8 +456,8 @@
   },
   {
     "Name": "I火箭燃料",
-    "ZHCN": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A new chemical material.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "偏二甲肼和氧的封装产物，蕴含着巨大的能量.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "A high ratio of liquid fuel.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "硫化氢",
@@ -461,7 +466,7 @@
   },
   {
     "Name": "I硫化氢",
-    "ZHCN": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ZHCN": "无机化合物，易燃，无色，低浓度时具有令人不悦的气味。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "ENUS": "hydrogen sulfide"
   },
   {
@@ -471,8 +476,8 @@
   },
   {
     "Name": "I硝基柴油燃料棒",
-    "ZHCN": "它蕴含着巨大的能量....\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "It's really powerful....\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "将硝基柴油封装在燃料棒中，提高利用率和燃烧效率。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Encapsulation of nitro-diesel in fuel rods, to improve utilization and combustion efficiency.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "偏二甲肼燃料棒",
@@ -481,8 +486,8 @@
   },
   {
     "Name": "I偏二甲肼燃料棒",
-    "ZHCN": "它蕴含着巨大的能量....\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "It's really powerful....\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "将偏二甲肼封装在燃料棒中，提高利用率和燃烧效率。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Encapsulation of unsymmetrical dimethylhydrazine in fuel rods, to improve utilization and combustion efficiency.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "火箭燃料棒",
@@ -491,8 +496,8 @@
   },
   {
     "Name": "I火箭燃料棒",
-    "ZHCN": "它蕴含着巨大的能量....\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "It's really powerful....\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "将火箭燃料封装在燃料棒中，提高利用率和燃烧效率。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Encapsulation of rocket fuel in fuel rods, to improve utilization and combustion efficiency.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "柴油",
@@ -501,8 +506,8 @@
   },
   {
     "Name": "I柴油",
-    "ZHCN": "这是一种新的化工材料.有人说这是工业的血液....\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A new chemical material. Someone said it's the blood of industry ...\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "提炼后的油质产物，可用于燃料。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "A refined oil product, can be used as fuel.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "放射性矿物碎块",
@@ -566,8 +571,8 @@
   },
   {
     "Name": "I钚燃料",
-    "ZHCN": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A new chemical material.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "高能能源，可用于裂变反应。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "A high-energy energy source, can be used for fission reactions.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "铀燃料",
@@ -576,8 +581,8 @@
   },
   {
     "Name": "I铀燃料",
-    "ZHCN": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A new chemical material.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "高能能源，可用于裂变反应。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "A high-energy energy source, can be used for fission reactions.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "MOX燃料",
@@ -586,8 +591,8 @@
   },
   {
     "Name": "IMOX燃料",
-    "ZHCN": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A new chemical material.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "高能能源，可用于裂变反应。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "A high-energy energy source, can be used for fission reactions.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "氦",
@@ -606,8 +611,9 @@
   },
   {
     "Name": "I钚燃料棒",
-    "ZHCN": "它蕴含着巨大的能量....\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "It's really powerful....\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "将钚燃料封装在燃料棒中，提高利用率和输出功率。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Encapsulation of plutonium fuel in fuel rods to improve utilization and output power.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+
   },
   {
     "Name": "铀燃料棒",
@@ -616,8 +622,8 @@
   },
   {
     "Name": "I铀燃料棒",
-    "ZHCN": "它蕴含着巨大的能量....\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "It's really powerful....\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "将铀燃料封装在燃料棒中，提高利用率和输出功率。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Encapsulation of uranium fuel in fuel rods to improve utilization and output power.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "氦三燃料棒",
@@ -626,8 +632,8 @@
   },
   {
     "Name": "I氦三燃料棒",
-    "ZHCN": "它蕴含着巨大的能量....\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "It's really powerful....\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "将氦三燃料封装在燃料棒中，提高利用率和输出功率。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Encapsulation of helium-3 fuel in fuel rods to improve utilization and output power.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "氘氦混合聚变燃料棒",
@@ -637,7 +643,7 @@
   {
     "Name": "I氘氦混合聚变燃料棒",
     "ZHCN": "你掌握着恒星的能量.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "It's really powerful....like a star.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ENUS": "You hold the energy of the stars.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "石粉",
@@ -646,8 +652,8 @@
   },
   {
     "Name": "I石粉",
-    "ZHCN": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A new chemical material.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "对石矿进行预先粉碎处理的产物，可明显提高熔炉的效率.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "The product of pre-crushing of stone ore, which can significantly improve the efficiency of the furnace.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "铁矿粉",
@@ -656,8 +662,8 @@
   },
   {
     "Name": "I铁矿粉",
-    "ZHCN": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A new chemical material.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "对铁矿进行预先粉碎处理的产物，可明显提高熔炉的效率.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "The product of pre-crushing of iron ore, which can significantly improve the efficiency of the furnace.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "铜矿粉",
@@ -666,8 +672,8 @@
   },
   {
     "Name": "I铜矿粉",
-    "ZHCN": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A new chemical material.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "对铜矿进行预先粉碎处理的产物，可明显提高熔炉的效率.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "The product of pre-crushing of copper ore, which can significantly improve the efficiency of the furnace.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "硅矿粉",
@@ -676,8 +682,8 @@
   },
   {
     "Name": "I硅矿粉",
-    "ZHCN": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A new chemical material.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "对硅矿进行预先粉碎处理的产物，可明显提高熔炉的效率.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "The product of pre-crushing of silicon ore, which can significantly improve the efficiency of the furnace.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "钛矿粉",
@@ -686,8 +692,8 @@
   },
   {
     "Name": "I钛矿粉",
-    "ZHCN": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A new chemical material.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "对钛矿进行预先粉碎处理的产物，可明显提高熔炉的效率.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "The product of pre-crushing of titanium ore, which can significantly improve the efficiency of the furnace.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "煤矿粉",
@@ -696,8 +702,8 @@
   },
   {
     "Name": "I煤矿粉",
-    "ZHCN": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A new chemical material.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "对煤矿进行预先粉碎处理的产物，可明显提高熔炉的效率.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "The product of pre-crushing of coal ore, which can significantly improve the efficiency of the furnace.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "天穹装配厂",
@@ -826,8 +832,8 @@
   },
   {
     "Name": "I硫粉",
-    "ZHCN": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A new chemical material.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "从煤矿粉中提取还原得到的粉末状硫单质.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Powdered sulfur monomer extracted from coal dust.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "引力矩阵",
@@ -901,8 +907,8 @@
   },
   {
     "Name": "I超级机械组件",
-    "ZHCN": "这是......什么?\n(To be announced)\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "What the hell....\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "这是...什么?\n(To be announced)\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "What the hell...\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "终极机械组件",
@@ -951,8 +957,8 @@
   },
   {
     "Name": "I空燃料棒",
-    "ZHCN": "呃,也许它还差点什么?\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "It's not complete I guess....\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "一个空的燃料棒,可以用来装载多种燃料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "An empty fuel rod, can be filled with various fuels.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "氢燃料",
@@ -961,8 +967,8 @@
   },
   {
     "Name": "I氢燃料",
-    "ZHCN": "这玩意看上去好像也差点啥.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "It's not complete too....\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "将氢气压缩液化得到的氢燃料。稳定度较差，需要封装使用。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Hydrogen fuel compressed from hydrogen gas. Poor stability, need to be encapsulated.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "氘核燃料",
@@ -971,8 +977,8 @@
   },
   {
     "Name": "I氘核燃料",
-    "ZHCN": "这玩意看上去好像也差点啥.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "It's not complete too....\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "将重氢压缩液化得到的氘核燃料。稳定度较差，需要封装使用。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Deuteron fuel compressed from heavy hydrogen. Poor stability, need to be encapsulated.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "反物质燃料",
@@ -981,8 +987,8 @@
   },
   {
     "Name": "I反物质燃料",
-    "ZHCN": "这玩意看上去好像也差点啥.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "It's not complete too....\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "约束反物质得到的反物质燃料。稳定度较差，需要封装使用。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Antimatter fuel obtained by constraining antimatter. Poor stability, need to be encapsulated.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "乙烯",
@@ -991,8 +997,8 @@
   },
   {
     "Name": "I乙烯",
-    "ZHCN": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A new chemical material.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "由两个碳原子和四个氢原子组成的有机化合物.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "An organic compound consisting of two carbon atoms and four hydrogen atoms.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "氨",
@@ -1001,8 +1007,8 @@
   },
   {
     "Name": "I氨",
-    "ZHCN": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A new chemical material.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "无色、有强烈的刺激气味的气体。常以液态形式储存.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "A colorless gas with a strong irritating odor. It is usually stored as a liquid.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "苯酚",
@@ -1011,8 +1017,8 @@
   },
   {
     "Name": "I苯酚",
-    "ZHCN": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A new chemical material.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "具有特殊气味的无色针状晶体，是重要的有机化工原料。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "A colorless needle-shaped crystal with a special odor, an important organic chemical raw material.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "丙酮",
@@ -1021,8 +1027,8 @@
   },
   {
     "Name": "I丙酮",
-    "ZHCN": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A new chemical material.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "无色透明液体，有微香气味，是重要的有机化工原料。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "A colorless transparent liquid with a faint odor, an important organic chemical raw material.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "二氨基联苯胺",
@@ -1031,8 +1037,8 @@
   },
   {
     "Name": "I二氨基联苯胺",
-    "ZHCN": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A new chemical material.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "常温下呈类白色至棕红色结晶的有机化合物，是合成聚苯并咪唑的原料之一。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "A kind of white to brownish red crystalline organic compound, one of the raw materials for the synthesis of PBI.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "二甲苯",
@@ -1041,8 +1047,8 @@
   },
   {
     "Name": "I二甲苯",
-    "ZHCN": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A new chemical material.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "苯环上两个氢被甲基取代的产物。是重要的有机化工原料。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "The product of replacing two hydrogen atoms on the benzene ring with methyl groups. It is an important organic chemical raw material.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "二氯联苯胺",
@@ -1051,8 +1057,8 @@
   },
   {
     "Name": "I二氯联苯胺",
-    "ZHCN": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A new chemical material.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "有机化合物，常温下为白色结晶性粉末。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "An organic compound, which is white crystalline powder at room temperature.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "二硝基氯苯",
@@ -1061,8 +1067,8 @@
   },
   {
     "Name": "I二硝基氯苯",
-    "ZHCN": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A new chemical material.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "有机化合物，一般为白色至浅黄色结晶性粉末。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "An organic compound, usually white to light yellow crystalline powder.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "甘油",
@@ -1071,8 +1077,8 @@
   },
   {
     "Name": "I甘油",
-    "ZHCN": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A new chemical material.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "无色无臭透明黏稠液体，是重要的有机化工原料。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "A colorless odorless transparent viscous liquid, an important organic chemical raw material.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "环氧氯丙烷",
@@ -1081,8 +1087,8 @@
   },
   {
     "Name": "I环氧氯丙烷",
-    "ZHCN": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A new chemical material.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "无色液体，有类似氯仿的气味，常作为有机化工原料。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Colorless liquid with a similar odor to chloroform, usually used as an organic chemical raw material.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "间苯二甲酸二苯酯",
@@ -1091,8 +1097,8 @@
   },
   {
     "Name": "I间苯二甲酸二苯酯",
-    "ZHCN": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A new chemical material.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "耐热性能良好的有机化合物，是合成聚苯并咪唑的原料之一。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "A kind of organic compound with good heat resistance, one of the raw materials for the synthesis of PBI.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "邻苯二甲酸",
@@ -1101,8 +1107,8 @@
   },
   {
     "Name": "I邻苯二甲酸",
-    "ZHCN": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A new chemical material.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "有机化合物，常呈无色结晶或结晶性粉末。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "An organic compound, usually colorless crystals or crystalline powder.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "氯苯",
@@ -1111,8 +1117,8 @@
   },
   {
     "Name": "I氯苯",
-    "ZHCN": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A new chemical material.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "无色透明液体，有苦杏仁味，常作为有机化工原料。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Colorless transparent liquid with a bitter almond odor, usually used as an organic chemical raw material.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "氢氯酸",
@@ -1121,8 +1127,8 @@
   },
   {
     "Name": "I氢氯酸",
-    "ZHCN": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A new chemical material.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "无色透明的液体，有强烈的刺激性气味，俗称盐酸，工业用途广泛。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Colorless transparent liquid with a strong irritating odor, widely used in industry.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "三氯化铁",
@@ -1131,8 +1137,8 @@
   },
   {
     "Name": "I三氯化铁",
-    "ZHCN": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Ferric trichloride"
+    "ZHCN": "常见的共价化合物，工业用途广泛。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "A common covalent compound, widely used in industry.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "双酚A",
@@ -1141,8 +1147,8 @@
   },
   {
     "Name": "I双酚A",
-    "ZHCN": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A new chemical material.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "白色针晶或片状粉末。微带苯酚气味，是高分子合成材料的重要原料。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "White needle crystals or plate-shaped powder. Slightly phenol odor, is an important raw material for high polymer synthesis materials.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "硝酸",
@@ -1151,8 +1157,8 @@
   },
   {
     "Name": "I硝酸",
-    "ZHCN": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A new chemical material.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "无色液体。由于光解而一般带有微黄色，有刺激性气味，强酸，常用于制造硝基化合物。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Colorless liquid. Generally with a slight yellow, with a strong irritating odor, is a strong acid, often used to make nitro compounds.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "盐水",
@@ -1161,8 +1167,8 @@
   },
   {
     "Name": "I盐水",
-    "ZHCN": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A new chemical material.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "氯化钠的水溶液，是氯碱工业的重要原料。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "A solution of sodium chloride, is an important raw material for chlorine and sodium hydroxide.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "氧",
@@ -1171,8 +1177,8 @@
   },
   {
     "Name": "I氧",
-    "ZHCN": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A new chemical material.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "生命的必需品，同时也是强氧化剂。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "The essential of life, but also a strong oxidant.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "氢氧化钠",
@@ -1181,8 +1187,8 @@
   },
   {
     "Name": "I氢氧化钠",
-    "ZHCN": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A new chemical material.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "具有强腐蚀性的强碱，工业用途广泛。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "A strong alkali with strong corrosive, widely used in industry.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "氯化钠",
@@ -1191,8 +1197,8 @@
   },
   {
     "Name": "I氯化钠",
-    "ZHCN": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A new chemical material.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "无色立方结晶或细小结晶粉末，味咸。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Colorless cubic crystals or fine crystalline powder, salty taste.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "硝酸钠",
@@ -1201,8 +1207,8 @@
   },
   {
     "Name": "I硝酸钠",
-    "ZHCN": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A new chemical material.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "吸湿性无色透明三角系晶体，用于制造硝酸。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Hygroscopic colorless transparent trigonal crystal, used to make nitric acid.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "硫酸钠",
@@ -1211,8 +1217,8 @@
   },
   {
     "Name": "I硫酸钠",
-    "ZHCN": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A new chemical material.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "白色、无臭、有苦味的结晶或粉末，用于制造硫酸。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "White, odorless, bitter taste of crystals or powder, used to make sulphuric acid.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "塑料基板",
@@ -1221,8 +1227,8 @@
   },
   {
     "Name": "I塑料基板",
-    "ZHCN": "这是一种新的材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A new material for recipe.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "使用聚乙烯制造的基板，用于制造基础电路板。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "The substrate made of polyethylene, used to make the basic circuit board.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "覆层塑料基板",
@@ -1231,8 +1237,8 @@
   },
   {
     "Name": "I覆层塑料基板",
-    "ZHCN": "这是一种新的材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A new material for recipe.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "环氧树脂覆盖的塑料基板，具有更好的稳定性和耐用性。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "The plastic substrate covered with epoxy resin. It has better stability and durability.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "钛蚀刻覆层塑料基板",
@@ -1241,8 +1247,8 @@
   },
   {
     "Name": "I钛蚀刻覆层塑料基板",
-    "ZHCN": "这是一种新的材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A new material for recipe.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "钛蚀刻覆盖的塑料基板，具有更好的稳定性和耐用性。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "The plastic substrate covered with titanium etching, which has better stability and durability.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "生物基板",
@@ -1251,8 +1257,8 @@
   },
   {
     "Name": "I生物基板",
-    "ZHCN": "这是一种新的材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A new material for recipe.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "使用聚苯并咪唑制造的基板，具有更好的生物相容性、稳定性和耐用性。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>", 
+    "ENUS": "The substrate made of polybenzimidazole, which has better biocompatibility, stability and durability.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "覆层生物基板",
@@ -1261,8 +1267,8 @@
   },
   {
     "Name": "I覆层生物基板",
-    "ZHCN": "这是一种新的材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A new material for recipe.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "利用活性生物纤维制造的生物基板，具有更好的生物相容性、稳定性和耐用性。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "The biological substrate made of active biological fibers, which has better biocompatibility, stability and durability.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "钨蚀刻覆层生物基板",
@@ -1271,8 +1277,8 @@
   },
   {
     "Name": "I钨蚀刻覆层生物基板",
-    "ZHCN": "这是一种新的材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A new material for recipe.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "钛蚀刻覆盖的生物基板，具有更好的生物相容性、稳定性和耐用性。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "The biological substrate covered with titanium etching, which has better biocompatibility, stability and durability.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "超低功率IC晶片",
@@ -1341,8 +1347,8 @@
   },
   {
     "Name": "I硅晶圆",
-    "ZHCN": "电子工业的基础.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Cornerstone of electronic industry.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "由单晶硅制成的圆片,电子工业的基础.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "A circular piece made of single crystal silicon, the basis of the electronics industry.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "钛掺杂的硅晶圆",
@@ -1351,8 +1357,8 @@
   },
   {
     "Name": "I钛掺杂的硅晶圆",
-    "ZHCN": "电子工业的基础.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Cornerstone of electronic industry.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "使用钛掺杂的硅晶圆制成的圆片,电子工业的基础.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "A circular piece made of titanium doped silicon wafer, the basis of the electronics industry.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "钨掺杂的硅晶圆",
@@ -1361,8 +1367,8 @@
   },
   {
     "Name": "I钨掺杂的硅晶圆",
-    "ZHCN": "电子工业的基础.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Cornerstone of electronic industry.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "使用钨掺杂的硅晶圆制成的圆片,电子工业的基础.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "A circular piece made of tungsten doped silicon wafer, the basis of the electronics industry.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "钨块",
@@ -1386,8 +1392,8 @@
   },
   {
     "Name": "I环氧树脂",
-    "ZHCN": "这是一种新的化工材料，用于生产覆层塑料基板。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A new chemical material, one of the raw materials for Cladding plastic substrate.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "有机高分子化合物，用于生产覆层塑料基板。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Organic polymer used to produce coated plastic substrate.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "聚苯并咪唑",
@@ -1396,8 +1402,8 @@
   },
   {
     "Name": "I聚苯并咪唑",
-    "ZHCN": "一种高性能的复合材料，广泛用于航天工业.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A new chemical material.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "高性能复合材料，广泛用于航天工业.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "High performance composite material, widely used in aerospace industry.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "活性生物纤维",
@@ -1406,8 +1412,8 @@
   },
   {
     "Name": "I活性生物纤维",
-    "ZHCN": "一种新的制造材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A new material for recipe.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "由有机晶体制作成的复合材料，具有高强度、高韧性，以及良好的生物相容性.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Made of organic crystal, it has high strength, high toughness, and good biocompatibility.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "生物微晶元件",
@@ -1416,8 +1422,8 @@
   },
   {
     "Name": "I生物微晶元件",
-    "ZHCN": "这是一个人类未曾涉及的领域.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "This is a field that has never been involved by human beings.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "具有良好生物相容性的微晶元件.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Microcrystalline element with good biocompatibility.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "先进生物电路",
@@ -1426,8 +1432,8 @@
   },
   {
     "Name": "I先进生物电路",
-    "ZHCN": "这是一个人类未曾涉及的领域.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "This is a field that has never been involved by human beings.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "具有良好生物相容性的先进计算单元.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Advanced computing unit with good biocompatibility.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "超生物计算集群",
@@ -1436,8 +1442,8 @@
   },
   {
     "Name": "I超生物计算集群",
-    "ZHCN": "这是一个人类未曾涉及的领域.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "This is a field that has never been involved by human beings.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "具有良好生物相容性的计算集群.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Computing cluster with good biocompatibility.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "生物神经纤维",
@@ -1446,8 +1452,8 @@
   },
   {
     "Name": "I生物神经纤维",
-    "ZHCN": "这是一个人类未曾涉及的领域.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "This is a field that has never been involved by human beings.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "使用活性生物纤维仿制的人造生物神经，能够用来在活性生物组织之间传递信息.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Artificial biological nerve made of active biological fiber, which can be used to transmit information between active biological tissues.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "超级纳米电脑",
@@ -1456,8 +1462,8 @@
   },
   {
     "Name": "I超级纳米电脑",
-    "ZHCN": "这是一个人类未曾涉及的领域.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "This is a field that has never been involved by human beings.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "量子芯片与粒子宽带结合制造出的纳米级精度的庞然大物，能够实现超高速的计算.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "A huge thing made of quantum chips and particle broadband, which can achieve super high speed computing.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "湿件主机",
@@ -1466,8 +1472,8 @@
   },
   {
     "Name": "I湿件主机",
-    "ZHCN": "这是一个人类未曾涉及的领域.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "This is a field that has never been involved by human beings.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "无数的生物芯片用生物神经纤维连接而成。算力与超级纳米电脑相当，能够与生物组织接驳.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "A huge thing made of quantum chips and particle broadband, which can achieve super high speed computing.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "先进化学反应釜",
@@ -1541,13 +1547,13 @@
   },
   {
     "Name": "盐水分解",
-    "ZHCN": "盐水分解",
-    "ENUS": "Salt water decomposition"
+    "ZHCN": "盐水电解",
+    "ENUS": "Salt water electrolysis"
   },
   {
     "Name": "R盐水分解",
-    "ZHCN": "从盐水中提取氢氧化钠,留下氢氯酸.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Extraction of sodium hydroxide from salt water, leaving hydrochloric acid.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "使用离子交换膜电解盐水，生产氢氯酸和氢氧化钠.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Electrolysis of salt water using ion exchange membranes, producing hydrochloric acid and sodium hydroxide.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "金属盐分解",
@@ -2692,7 +2698,7 @@
   {
     "Name": "I高纯铀块",
     "ZHCN": "最后一次提炼后，成品中的铀-235纯度已经可以支撑链式反应。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A new chemical material.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ENUS": "After the last refining, the purity of uranium-235 in the finished product can support chain reactions.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "I高纯钚块",
@@ -2706,7 +2712,7 @@
   },
   {
     "Name": "I氦三",
-    "ZHCN": "一种稳定的氦同位素，它与重氢发生的聚变反应即是恒星的秘密。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ZHCN": "稳定的氦同位素，它与重氢发生的聚变反应即是恒星的秘密。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "ENUS": "A stable isotope of helium, whose fusion reaction with heavy hydrogen is the secret of the star.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
@@ -2761,8 +2767,8 @@
   },
   {
     "Name": "I大气收集设施",
-    "ZHCN": "可以富集并收集大气成分的大型设施。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Large facilities that can enrich and collect atmospheric components.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "可以富集并收集大气成分的自维持大型设施。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "A large self-sustaining facility that can enrich and collect atmospheric components.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "二氧化碳",
@@ -2771,8 +2777,8 @@
   },
   {
     "Name": "I二氧化碳",
-    "ZHCN": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A new chemical material.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "无色无味的气体，分布广泛。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Colorless and odorless gas, widely distributed.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "氮",
@@ -2781,8 +2787,8 @@
   },
   {
     "Name": "I氮",
-    "ZHCN": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A new chemical material.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "无色无味的气体，分布广泛。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Colorless and odorless gas, widely distributed.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "原油再生",
@@ -2793,6 +2799,16 @@
     "Name": "R原油再生",
     "ZHCN": "使用二氧化碳和氢作为原料合成人造原油。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "ENUS": "Synthesize artificial oil using carbon dioxide and hydrogen as raw materials.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+  },
+  {
+    "Name": "二氧化碳还原",
+    "ZHCN": "二氧化碳还原",
+    "ENUS": "Carbon Dioxide Reduction"
+  },
+  {
+    "Name": "R二氧化碳还原",
+    "ZHCN": "将二氧化碳还原为一氧化碳，作为化工原料。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Reduce carbon dioxide to carbon monoxide for chemical raw materials.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "氯苯水解",

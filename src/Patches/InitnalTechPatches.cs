@@ -31,28 +31,11 @@ namespace ProjectGenesis.Patches
         [HarmonyPostfix]
         public static void Import(GameData __instance)
         {
-            // ReSharper disable once ForeachCanBePartlyConvertedToQueryUsingAnotherGetEnumerator
+            // ReSharper disable ForeachCanBePartlyConvertedToQueryUsingAnotherGetEnumerator
+            
             foreach (var tech in InitnalTechs)
             {
                 if (!__instance.history.TechUnlocked(tech)) __instance.history.UnlockTech(tech);
-            }
-
-            foreach (KeyValuePair<int, TechState> tech in __instance.history.techStates)
-            {
-                if (tech.Value.unlocked)
-                {
-                    var techProto = LDB.techs.Select(tech.Key);
-                    if (techProto != null)
-                    {
-                        foreach (var t in techProto.UnlockRecipes) __instance.history.UnlockRecipe(t);
-
-                        for (var index = 0; index < techProto.UnlockFunctions.Length; ++index)
-                        {
-                            __instance.history.UnlockTechFunction(techProto.UnlockFunctions[index], techProto.UnlockValues[index],
-                                                                  tech.Value.maxLevel);
-                        }
-                    }
-                }
             }
         }
 

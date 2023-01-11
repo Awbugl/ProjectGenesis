@@ -7,8 +7,8 @@ namespace ProjectGenesis.Patches
     public static class DeleteLDBConfigPatches
     {
         [HarmonyPostfix]
-        [HarmonyPatch(typeof(GameMain), "OnDestroy")]
-        public static void GameMain_onDestroy()
+        [HarmonyPatch(typeof(DSPGame), "Awake")]
+        public static void DSPGame_Awake()
         {
             try
             {

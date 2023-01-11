@@ -105,6 +105,7 @@
         <Compile Include="src\Patches\MultiProductionPatches.cs" />
         <Compile Include="src\Patches\OceanDischargePatches.cs" />
         <Compile Include="src\Patches\PlanetGasPatches.cs" />
+        <Compile Include="src\Patches\ProductionPatches.cs" />
         <Compile Include="src\Patches\UIPatches.cs" />
         <Compile Include="src\Patches\UISignalPickerPatch.cs" />
         <Compile Include="src\Patches\UpdateLogoPatches.cs" />
