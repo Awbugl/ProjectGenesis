@@ -1590,14 +1590,14 @@
     "ENUS": "Sodium nitrate and sulfuric acid react to produce sodium sulfate and nitric acid.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
-    "Name": "氨提取",
-    "ZHCN": "氨提取",
-    "ENUS": "Ammonia extraction"
+    "Name": "合成氨",
+    "ZHCN": "合成氨",
+    "ENUS": "Ammonia synthesis"
   },
   {
-    "Name": "R氨提取",
-    "ZHCN": "利用硝酸钠和水发生化学反应提取氨.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Extraction of ammonia by chemical reaction between sodium nitrate and water.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "Name": "R合成氨",
+    "ZHCN": "使用氮气和氢气作为原料, 合成氨.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Using nitrogen and hydrogen as raw materials to synthesize ammonia.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "高分子化合: 二氨基联苯胺",
@@ -1821,8 +1821,13 @@
   },
   {
     "Name": "R一氧化碳",
-    "ZHCN": "未充分燃烧的煤会形成一氧化碳.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Under-burned coal can form carbon monoxide.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "未充分燃烧的碳会形成一氧化碳.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Under-burned carbon will form carbon monoxide.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+  },
+  {
+    "Name": "R二氧化碳",
+    "ZHCN": "充分燃烧的碳会形成二氧化碳.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Fully burned carbon will form carbon dioxide.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "R乙酸甲酯",
@@ -2758,6 +2763,36 @@
     "Name": "I大气收集设施",
     "ZHCN": "可以富集并收集大气成分的大型设施。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "ENUS": "Large facilities that can enrich and collect atmospheric components.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+  },
+  {
+    "Name": "二氧化碳",
+    "ZHCN": "二氧化碳",
+    "ENUS": "Carbon Dioxide"
+  },
+  {
+    "Name": "I二氧化碳",
+    "ZHCN": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "A new chemical material.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+  },
+  {
+    "Name": "氮",
+    "ZHCN": "氮",
+    "ENUS": "Nitrogen"
+  },
+  {
+    "Name": "I氮",
+    "ZHCN": "这是一种新的化工材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "A new chemical material.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+  },
+  {
+    "Name": "原油再生",
+    "ZHCN": "原油再生",
+    "ENUS": "Oil Regeneration"
+  },
+  {
+    "Name": "R原油再生",
+    "ZHCN": "使用二氧化碳和氢作为原料合成人造原油。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Synthesize artificial oil using carbon dioxide and hydrogen as raw materials.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "氯苯水解",

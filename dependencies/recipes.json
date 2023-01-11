@@ -3597,29 +3597,25 @@
   },
   {
     "ID": 710,
-    "Name": "氨提取",
-    "Description": "R氨提取",
+    "Name": "合成氨",
+    "Description": "R合成氨",
     "IconPath": "Assets/texpack/氨",
     "Type": 2,
     "GridIndex": 4102,
     "Time": 120,
     "Input": [
-      7102,
-      1000
+      6220,
+      1120
     ],
     "InCounts": [
-      4,
-      16
+      1,
+      3
     ],
     "Output": [
-      7002,
-      7020,
-      7019
+      7002
     ],
     "OutCounts": [
-      4,
-      4,
-      24
+      1
     ],
     "Explicit": true,
     "Handcraft": false,
@@ -3784,6 +3780,86 @@
     "OutCounts": [
       4,
       6
+    ],
+    "Explicit": true,
+    "Handcraft": false,
+    "NonProductive": false
+  },
+  {
+    "ID": 717,
+    "Name": "硝酸",
+    "Description": "",
+    "IconPath": "Assets/texpack/硝酸",
+    "Type": 2,
+    "GridIndex": 4301,
+    "Time": 360,
+    "Input": [
+      7002,
+      7019
+    ],
+    "InCounts": [
+      1,
+      4
+    ],
+    "Output": [
+      7017,
+      1000
+    ],
+    "OutCounts": [
+      1,
+      1
+    ],
+    "Explicit": false,
+    "Handcraft": false,
+    "NonProductive": false
+  },
+  {
+    "ID": 718,
+    "Name": "一氧化碳",
+    "Description": "",
+    "IconPath": "Assets/texpack/一氧化碳",
+    "Type": 2,
+    "GridIndex": 4302,
+    "Time": 120,
+    "Input": [
+      6206,
+      7019
+    ],
+    "InCounts": [
+      1,
+      1
+    ],
+    "Output": [
+      6205
+    ],
+    "OutCounts": [
+      2
+    ],
+    "Explicit": false,
+    "Handcraft": false,
+    "NonProductive": false
+  },
+  {
+    "ID": 719,
+    "Name": "原油再生",
+    "Description": "R原油再生",
+    "IconPath": "Icons/ItemRecipe/oil",
+    "Type": 2,
+    "GridIndex": 4303,
+    "Time": 360,
+    "Input": [
+      6206,
+      1120
+    ],
+    "InCounts": [
+      3,
+      12
+    ],
+    "Output": [
+      1007
+    ],
+    "OutCounts": [
+      1
     ],
     "Explicit": true,
     "Handcraft": false,
@@ -5184,7 +5260,7 @@
     "GridIndex": 4205,
     "Time": 240,
     "Input": [
-      1006,
+      1109,
       7019
     ],
     "InCounts": [
@@ -5193,6 +5269,32 @@
     ],
     "Output": [
       6205
+    ],
+    "OutCounts": [
+      2
+    ],
+    "Explicit": true,
+    "Handcraft": false,
+    "NonProductive": false
+  },
+  {
+    "ID": 506,
+    "Name": "二氧化碳",
+    "Description": "R二氧化碳",
+    "IconPath": "Assets/texpack/二氧化碳",
+    "Type": 2,
+    "GridIndex": 4214,
+    "Time": 120,
+    "Input": [
+      1109,
+      7019
+    ],
+    "InCounts": [
+      2,
+      4
+    ],
+    "Output": [
+      6206
     ],
     "OutCounts": [
       2
@@ -6308,11 +6410,15 @@
     "GridIndex": 2214,
     "Time": 900,
     "Input": [
-      2104,
+      6501,
+      1103,
+      1206,
       1205
     ],
     "InCounts": [
-      1,
+      10,
+      30,
+      20,
       10
     ],
     "Output": [

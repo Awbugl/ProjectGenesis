@@ -529,7 +529,11 @@
       708,
       709,
       710,
+      717,
+      718,
+      719,
       505,
+      506,
       507,
       508,
       509,
@@ -2951,8 +2955,9 @@
     ],
     "HashNeeded": 216000,
     "UnlockRecipes": [
+      96,
       95,
-      96
+      419
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -2994,8 +2999,7 @@
     ],
     "HashNeeded": 432000,
     "UnlockRecipes": [
-      111,
-      419
+      111
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
