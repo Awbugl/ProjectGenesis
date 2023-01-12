@@ -107,6 +107,7 @@
         <Compile Include="src\Patches\PlanetGasPatches.cs" />
         <Compile Include="src\Patches\ProductionPatches.cs" />
         <Compile Include="src\Patches\ProtoIDUsedByPatches.cs" />
+        <Compile Include="src\Patches\ThermalPowerGenPatches.cs" />
         <Compile Include="src\Patches\UIPatches.cs" />
         <Compile Include="src\Patches\UISignalPickerPatches.cs" />
         <Compile Include="src\Patches\UpdateLogoPatches.cs" />

@@ -5284,11 +5284,14 @@
     "PreTechOverride": 0,
     "DescFields": [
       0,
+      2,
+      3,
+      31,
       1
     ],
-    "FuelType": 0,
-    "HeatValue": 0,
-    "ReactorInc": 0.0,
+    "FuelType": 1,
+    "HeatValue": 3000000,
+    "ReactorInc": 0.3,
     "IsFluid": true,
     "Productive": true,
     "SubID": 0,
@@ -5365,7 +5368,7 @@
     ],
     "FuelType": 1,
     "HeatValue": 36000000,
-    "ReactorInc": 0.0,
+    "ReactorInc": 0.4,
     "IsFluid": true,
     "Productive": true,
     "SubID": 0,
@@ -5396,7 +5399,7 @@
     "Type": 2,
     "PreTech": 1121,
     "PreTechOverride": 0,
-    "DescFields": [     
+    "DescFields": [
       1
     ],
     "FuelType": 0,
@@ -5441,7 +5444,7 @@
     ],
     "FuelType": 1,
     "HeatValue": 36000000,
-    "ReactorInc": 0.0,
+    "ReactorInc": 0.4,
     "IsFluid": true,
     "Productive": true,
     "SubID": 0,
@@ -7901,7 +7904,7 @@
     "Type": 2,
     "PreTech": 1121,
     "PreTechOverride": 0,
-    "DescFields": [     
+    "DescFields": [
       1
     ],
     "FuelType": 0,
@@ -7979,11 +7982,13 @@
     "PreTechOverride": 0,
     "DescFields": [
       0,
+      2,
+      3,
+      31,
       1
     ],
-    "FuelType": 0,
-    "HeatValue": 0,
-    "ReactorInc": 0.0,
+    "FuelType": 1,
+    "HeatValue": 6000000,
     "IsFluid": true,
     "Productive": true,
     "SubID": 0,

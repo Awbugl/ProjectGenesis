@@ -146,6 +146,17 @@ namespace ProjectGenesis.Patches
                     __result.storage[index].localLogic = ELogisticStorage.Supply;
         }
 
+        [HarmonyPatch(typeof(PlanetGen), "SetPlanetTheme")]
+        [HarmonyPostfix]
+        public static void PlanetGen_SetPlanetTheme_Postfix(PlanetData planet)
+        {
+            if (planet.type != EPlanetType.Gas)
+            {
+                planet.gasHeatValues = new float[planet.gasItems.Length];
+                planet.gasTotalHeat = 0;
+            }
+        }
+
         [HarmonyPatch(typeof(PlanetTransport), "GameTick")]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> PlanetTransport_GameTick_Transpiler(IEnumerable<CodeInstruction> instructions)

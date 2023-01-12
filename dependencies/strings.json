@@ -150,6 +150,11 @@
     "ENUS": "Planet Atmosphere"
   },
   {
+    "Name": "需要氧气",
+    "ZHCN": "此燃料需要含氧大气",
+    "ENUS": "This fuel requires oxygen atmosphere"
+  },  
+  {
     "Name": "海洋排污文字描述",
     "ZHCN": "允许将传送带反向连入抽水站, 将不需要的液体排入大海.(抽水站蓄满时才会排放)",
     "ENUS": "Allow allowed to connect the conveyor belt to the pumping station in the opposite direction and discharge the unwanted liquid into the sea. (The liquid will only be discharged when the station is full)"
@@ -456,8 +461,8 @@
   },
   {
     "Name": "I火箭燃料",
-    "ZHCN": "偏二甲肼和氧的封装产物，蕴含着巨大的能量.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A high ratio of liquid fuel.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "偏二甲肼和发烟硝酸的封装产物，蕴含着巨大的能量.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Encapsulated products of unsymmetrical dimethylhydrazine and smoke nitric acid, containing a huge amount of energy.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "硫化氢",
@@ -957,8 +962,8 @@
   },
   {
     "Name": "I空燃料棒",
-    "ZHCN": "一个空的燃料棒,可以用来装载多种燃料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "An empty fuel rod, can be filled with various fuels.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "一个空的燃料棒,可以用来装载多种燃料。需要时可加装额外的氧化剂存储仓。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "An empty fuel rod, can be filled with various fuels. Extra oxidizer storage can be added when needed.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "氢燃料",
@@ -1826,14 +1831,19 @@
     "ENUS": "Mixing light and heavy fuel oil into diesel oil with the suitable ratio.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
-    "Name": "R一氧化碳",
-    "ZHCN": "未充分燃烧的碳会形成一氧化碳.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Under-burned carbon will form carbon monoxide.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "Name": "水煤气制取",
+    "ZHCN": "水煤气制取",
+    "ENUS": "Syngas production"
+  },
+  {
+    "Name": "R水煤气制取",
+    "ZHCN": "将水蒸气通过炽热的石墨, 产生水煤气.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Steam is passed through a hot graphite to produce syngas.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "R二氧化碳",
-    "ZHCN": "充分燃烧的碳会形成二氧化碳.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Fully burned carbon will form carbon dioxide.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "充分燃烧的石墨会形成二氧化碳.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Fully burned graphite will form carbon dioxide.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "R乙酸甲酯",

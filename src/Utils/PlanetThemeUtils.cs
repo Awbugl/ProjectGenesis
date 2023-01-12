@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ProjectGenesis.Utils
 {
@@ -62,6 +63,24 @@ namespace ProjectGenesis.Utils
                         silicon = 1 + silicon / 4;
                         theme.VeinCount[2] = 0.5f;
                         theme.VeinOpacity[2] = 0.5f;
+                    }
+                }
+
+                if (theme.VeinSpot.Length > 5)
+                {
+                    ref var coal = ref theme.VeinSpot[5];
+
+                    if (!theme.GasItems.Contains(7019))
+                    {
+                        coal = 0;
+                        theme.VeinCount[5] = 0f;
+                        theme.VeinOpacity[5] = 0f;
+                    }
+                    else
+                    {
+                        coal += 1;
+                        theme.VeinCount[5] *= 1.2f;
+                        theme.VeinOpacity[5] *= 1.2f;
                     }
                 }
             }
