@@ -2077,8 +2077,8 @@
   },
   {
     "Name": "T海洋排污描述",
-    "ZHCN": "这听起来好像不太环保....",
-    "ENUS": "This doesn't sound very environmentally friendly...."
+    "ZHCN": "逆转抽水站的水泵方向, 可将液体废弃物排入海洋.",
+    "ENUS": "Reverse the direction of the water pump of the pumping station to discharge liquid waste into the ocean."
   },
   {
     "Name": "T戴森球计划:太阳帆轨道系统",
@@ -2132,8 +2132,8 @@
   },
   {
     "Name": "T海洋排污2描述",
-    "ZHCN": "这听起来更不环保了....",
-    "ENUS": "This sounds even less environmentally friendly...."
+    "ZHCN": "修改抽水站的工作模式，为固体废弃物提供直接进入海洋的途径。",
+    "ENUS": "Modify the operation mode of the pumping station to provide a direct way for solid waste to enter the ocean."
   },
   {
     "Name": "T终极目标:广播式能源",
@@ -2462,13 +2462,13 @@
   },
   {
     "Name": "T反物质能量炉描述",
-    "ZHCN": "掌控质能.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Mass-energy is in your control now.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "掌控质能.",
+    "ENUS": "Mass-energy is in your control now."
   },
   {
     "Name": "T反物质能量炉结果",
-    "ZHCN": "掌控质能.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "You unlocked Antimatter Energy Reactor. Mass-energy is in your control now.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "掌控质能.",
+    "ENUS": "You unlocked Antimatter Energy Reactor. Mass-energy is in your control now."
   },
   {
     "Name": "T物品仓储描述",
@@ -2820,6 +2820,26 @@
     "ZHCN": "在高温、氢氧化钠环境下, 氯苯与水反应生产苯酚钠, 再经酸化处理可得到苯酚.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "ENUS": "Under high temperature and sodium hydroxide environment, chlorobenzene reacts with water to produce sodium phenol, which is then acidified to obtain phenol.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
+  {
+    "Name": "T大气排放",
+    "ZHCN": "大气排污",
+    "ENUS": "Atmospheric Emission"
+  },
+  {
+    "Name": "T大气排放描述",
+    "ZHCN": "重构部分配方的生产流程，将不需要的产物加热或粉碎，排放到大气中。可以肯定这将会在未来对环境造成负面影响.\n<color=\"#FD965ECC\">受影响配方：焦油分馏、原油裂化、有机液体离心、金属盐分解</color>",
+    "ENUS": "Reconstruct production equipment to heat or crush unnecessary products and discharge them into the atmosphere. It can be said that this will have a negative impact on the environment in the future.\n<color=\"#FD965ECC\">Affected recipes: Tar fractionation, Oil Cracking, Organic liquid centrifugation, Decomposition of metal salts</color>"
+  },
+  {
+    "Name": "T大气排放结果",
+    "ZHCN": "重构生产设备，将部分产物排放到大气中。",
+    "ENUS": "Reconstruct production equipment to discharge part of the products into the atmosphere."
+  },
+  {
+    "Name": "大气排污文字描述",
+    "ZHCN": "允许设备将堆积产物直接排放到大气中（低资源倍率模式请谨慎解锁此科技）",
+    "ENUS": "Reconstruct production equipment to discharge part of the products into the atmosphere."
+  },  
   {
     "Name": "开发者日志01",
     "ZHCN": "开发者日志01",

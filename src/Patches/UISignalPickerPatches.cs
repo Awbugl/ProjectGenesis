@@ -11,7 +11,7 @@ using UnityEngine;
 
 namespace ProjectGenesis.Patches
 {
-    public static class UISignalPickerPatch
+    public static class UISignalPickerPatches
     {
         private static List<UITabButton> _tabs;
 

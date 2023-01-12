@@ -491,7 +491,7 @@ namespace ProjectGenesis.Patches
             if (power < 0.1f) return;
 
             // 化工技术革新效果
-            if (GameMain.history.TechUnlocked(1513))
+            if (GameMain.history.TechUnlocked(ProtoIDUsedByPatches.T化工技术革新))
             {
                 var instanceRecipeType = __instance.recipeType;
                 if (instanceRecipeType == (ERecipeType_1)Utils.ERecipeType.Chemical ||
@@ -596,7 +596,7 @@ namespace ProjectGenesis.Patches
                         var cargoPath = traffic.GetCargoPath(traffic.beltPool[slotdata[index].beltId].segPathId);
                         if (cargoPath == null) continue;
 
-                        if (__instance.recipeId == 429)
+                        if (__instance.recipeId == ProtoIDUsedByPatches.R物质分解)
                         {
                             var itemId = traffic.TryPickItemAtRear(slotdata[index].beltId, 0, null, out var stack, out _);
 

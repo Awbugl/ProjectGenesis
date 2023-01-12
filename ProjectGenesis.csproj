@@ -94,7 +94,7 @@
     <ItemGroup>
         <Compile Include="src\Patches\BeltFixPatches.cs" />
         <Compile Include="src\Patches\DeleteLDBConfigPatches.cs" />
-        <Compile Include="src\Patches\DisplayedNamePatch.cs" />
+        <Compile Include="src\Patches\DisplayedNamePatches.cs" />
         <Compile Include="src\Patches\DisplayedTextPatches.cs" />
         <Compile Include="src\Patches\FluidColorPatches.cs" />
         <Compile Include="src\Patches\GridIndexExpandPatches.cs" />
@@ -106,8 +106,9 @@
         <Compile Include="src\Patches\OceanDischargePatches.cs" />
         <Compile Include="src\Patches\PlanetGasPatches.cs" />
         <Compile Include="src\Patches\ProductionPatches.cs" />
+        <Compile Include="src\Patches\ProtoIDUsedByPatches.cs" />
         <Compile Include="src\Patches\UIPatches.cs" />
-        <Compile Include="src\Patches\UISignalPickerPatch.cs" />
+        <Compile Include="src\Patches\UISignalPickerPatches.cs" />
         <Compile Include="src\Patches\UpdateLogoPatches.cs" />
         <Compile Include="src\ProjectGenesis.cs" />
         <Compile Include="src\Utils\CopyModelUtils.cs" />

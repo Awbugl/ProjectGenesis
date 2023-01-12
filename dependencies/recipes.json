@@ -5008,7 +5008,7 @@
     "Name": "有机液体离心",
     "Description": "R有机液体离心",
     "IconPath": "Assets/texpack/有机液体离心",
-    "Type": 16,
+    "Type": 3,
     "GridIndex": 1712,
     "Time": 120,
     "Input": [

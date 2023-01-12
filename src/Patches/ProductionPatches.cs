@@ -16,33 +16,107 @@ namespace ProjectGenesis.Patches
         {
             var matcher = new CodeMatcher(instructions, generator);
 
-            matcher.MatchForward(true, new CodeMatch(OpCodes.Ldarg_0),
+            // assemble
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldarg_0),
                                  new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(AssemblerComponent), nameof(AssemblerComponent.recipeType))),
                                  new CodeMatch(OpCodes.Ldc_I4_4));
 
-            var label = matcher.Advance(15).Operand;
-            var index = matcher.Advance(-4).Operand;
+            var label = matcher.Advance(-1).Operand;
 
-            matcher.Advance(5).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0),new CodeInstruction(OpCodes.Ldarg_2), new CodeInstruction(OpCodes.Ldloc_S, index),
+            matcher.Advance(5).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0), new CodeInstruction(OpCodes.Ldarg_2),
                                                 new CodeInstruction(OpCodes.Call,
                                                                     AccessTools.Method(typeof(ProductionPatches),
-                                                                                       nameof(AssemblerComponent_InsertMethod))),
-                                                new CodeInstruction(OpCodes.Brtrue, label));
+                                                                                       nameof(AssemblerComponent_InsertMethod_Assemble))),
+                                                new CodeInstruction(OpCodes.Brtrue_S, label));
+
+            // refine
+            matcher.Start().MatchForward(false, new CodeMatch(OpCodes.Ldarg_0),
+                                         new CodeMatch(OpCodes.Ldfld,
+                                                       AccessTools.Field(typeof(AssemblerComponent), nameof(AssemblerComponent.recipeType))),
+                                         new CodeMatch(OpCodes.Ldc_I4_3));
+
+            matcher.Advance(4).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0), new CodeInstruction(OpCodes.Ldarg_2),
+                                                new CodeInstruction(OpCodes.Call,
+                                                                    AccessTools.Method(typeof(ProductionPatches),
+                                                                                       nameof(AssemblerComponent_InsertMethod_Refine))),
+                                                new CodeInstruction(OpCodes.Brtrue_S, label));
 
             return matcher.InstructionEnumeration();
         }
 
-        public static bool AssemblerComponent_InsertMethod(ref AssemblerComponent component, int[] productRegister, int index)
+        public static bool AssemblerComponent_InsertMethod_Refine(ref AssemblerComponent component, int[] productRegister)
         {
-            var b = component.recipeId == 801;
-            if (b) component.produced[index] = component.productCounts[index] * 9;
-            
-            lock (productRegister)
+            var b = GameMain.history.TechUnlocked(ProtoIDUsedByPatches.T大气排污) &&
+                    (component.recipeId == ProtoIDUsedByPatches.R焦油分馏 ||
+                     component.recipeId == ProtoIDUsedByPatches.R原油裂化 ||
+                     component.recipeId == ProtoIDUsedByPatches.R有机液体离心);
+
+            if (b)
             {
-                productRegister[component.products[index]] -= component.productCounts[index];
+                var counter = 0;
+
+                var productsLength = component.products.Length;
+
+                for (var index = 0; index < productsLength; ++index)
+                {
+                    if (component.produced[index] > component.productCounts[index] * 19) ++counter;
+                }
+
+                if (counter == productsLength) return false;
+
+                for (var index = 0; index < productsLength; ++index)
+                {
+                    if (component.produced[index] > component.productCounts[index] * 19)
+                    {
+                        component.produced[index] = component.productCounts[index] * 19;
+
+                        lock (productRegister)
+                        {
+                            productRegister[component.products[index]] -= component.productCounts[index];
+                        }
+                    }
+                }
+
+                return true;
             }
 
-            return b;
+            return false;
+        }
+
+        public static bool AssemblerComponent_InsertMethod_Assemble(ref AssemblerComponent component, int[] productRegister)
+        {
+            var b = GameMain.history.TechUnlocked(ProtoIDUsedByPatches.T大气排污) && component.recipeId == ProtoIDUsedByPatches.R金属盐分解;
+
+            if (b)
+            {
+                var counter = 0;
+
+                var productsLength = component.products.Length;
+
+                for (var index = 0; index < productsLength; ++index)
+                {
+                    if (component.produced[index] > component.productCounts[index] * 9) ++counter;
+                }
+
+                if (counter == productsLength) return false;
+
+                for (var index = 0; index < productsLength; ++index)
+                {
+                    if (component.produced[index] > component.productCounts[index] * 9)
+                    {
+                        component.produced[index] = component.productCounts[index] * 9;
+
+                        lock (productRegister)
+                        {
+                            productRegister[component.products[index]] -= component.productCounts[index];
+                        }
+                    }
+                }
+
+                return true;
+            }
+
+            return false;
         }
     }
 }

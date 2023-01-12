@@ -56,7 +56,7 @@ namespace ProjectGenesis.Patches
         {
             if (__instance.type == EMinerType.Water &&
                 __instance.insertTarget < 0 &&
-                GameMain.history.TechUnlocked(1502) &&
+                GameMain.history.TechUnlocked(ProtoIDUsedByPatches.T海洋排污1) &&
                 factory.entityPool[-__instance.insertTarget].beltId > 0)
                 __instance.speedDamper = 1;
         }
@@ -73,7 +73,7 @@ namespace ProjectGenesis.Patches
             int[] productRegister)
         {
             if (power < 0.1f) return;
-            if (__instance.type == EMinerType.Water && __instance.insertTarget < 0 && GameMain.history.TechUnlocked(1502))
+            if (__instance.type == EMinerType.Water && __instance.insertTarget < 0 && GameMain.history.TechUnlocked(ProtoIDUsedByPatches.T海洋排污1))
             {
                 var beltId = factory.entityPool[-__instance.insertTarget].beltId;
                 if (beltId > 0)
@@ -83,8 +83,10 @@ namespace ProjectGenesis.Patches
                         var factoryProductionStat = GameMain.statistics.production.factoryStatPool[factory.index];
                         var consumeRegister = factoryProductionStat.consumeRegister;
 
-                        var itemId = factory.cargoTraffic.TryPickItemAtRear(beltId, 0, GameMain.history.TechUnlocked(1703) ? null : ItemProto.fluids,
-                                                                            out var stack, out _);
+                        var itemId = factory.cargoTraffic.TryPickItemAtRear(beltId, 0,
+                                                                            GameMain.history.TechUnlocked(ProtoIDUsedByPatches.T海洋排污2)
+                                                                                ? null
+                                                                                : ItemProto.fluids, out var stack, out _);
 
                         if (itemId > 0)
                             lock (consumeRegister)

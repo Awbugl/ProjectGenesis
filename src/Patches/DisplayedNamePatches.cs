@@ -10,7 +10,7 @@ namespace ProjectGenesis.Patches
     /// <summary>
     ///     special thanks for https://github.com/hubastard/nebula/tree/master/NebulaPatcher/Patches/Transpilers/UIVersionText_Transpiler.cs
     /// </summary>
-    public static class DisplayedNamePatch
+    public static class DisplayedNamePatches
     {
         [HarmonyTranspiler]
         [HarmonyPatch(typeof(UIVersionText), "Refresh")]

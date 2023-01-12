@@ -9983,5 +9983,47 @@
     "AddItemCounts": [],
     "PropertyOverrideItems": [],
     "PropertyItemCounts": []
+  },
+  {
+    "ID": 1835,
+    "Name": "T大气排放",
+    "IconPath": "Icons/Tech/1120",
+    "Desc": "T大气排放描述",
+    "Conclusion": "T大气排放结果",
+    "Position": [
+      25.0,
+      -31.0
+    ],
+    "PreTechs": [
+      1703
+    ],
+    "PreTechsImplicit": [],
+    "Items": [
+      6001,
+      6002,
+      6003,
+      6004
+    ],
+    "ItemPoints": [
+      20,
+      20,
+      20,
+      10
+    ],
+    "HashNeeded": 288000,
+    "UnlockRecipes": [],
+    "UnlockFunctions": [],
+    "UnlockValues": [],
+    "Published": true,
+    "Level": 0,
+    "MaxLevel": 0,
+    "LevelCoef1": 0,
+    "LevelCoef2": 0,
+    "IsLabTech": true,
+    "PreTechsMax": false,
+    "AddItems": [],
+    "AddItemCounts": [],
+    "PropertyOverrideItems": [],
+    "PropertyItemCounts": []
   }
 ]

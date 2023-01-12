@@ -100,7 +100,7 @@ namespace ProjectGenesis.Patches
                     return;
                 
                 case 18:
-                    if(__instance.prefabDesc.isCollectStation && __instance.ID == 6267)
+                    if(__instance.prefabDesc.isCollectStation && __instance.ID == ProtoIDUsedByPatches.I大气采集器)
                         __result = "行星大气".TranslateFromJson();
                     
                     return;
@@ -113,23 +113,27 @@ namespace ProjectGenesis.Patches
         {
             switch (__instance.ID)
             {
-                case 1502:
+                case ProtoIDUsedByPatches.T海洋排污1:
                     __result = "海洋排污文字描述".TranslateFromJson();
                     break;
 
-                case 1508: // (int)科技.任务完成
+                case ProtoIDUsedByPatches.T任务完成:
                     if (Localization.isCJK) __result = "欢迎加入创世之书讨论群991895539";
                     break;
 
-                case 1513:
+                case ProtoIDUsedByPatches.T化工技术革新:
                     __result = "化工技术革新文字描述".TranslateFromJson();
                     break;
 
-                case 1703:
+                case ProtoIDUsedByPatches.T海洋排污2:
                     __result = "海洋排污2文字描述".TranslateFromJson();
                     break;
                 
-                case 1834:
+                case ProtoIDUsedByPatches.T大气排污:
+                    __result = "大气排污文字描述".TranslateFromJson();
+                    break;
+                
+                case ProtoIDUsedByPatches.T巨型建筑工程学:
                     __result = "巨型建筑工程学文字描述".TranslateFromJson();
                     break;
                 

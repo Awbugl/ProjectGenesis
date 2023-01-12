@@ -19,7 +19,7 @@ namespace ProjectGenesis.Patches
             StringBuilder sb,
             int incLevel)
         {
-            if (GameMain.history.TechUnlocked(1814) &&
+            if (GameMain.history.TechUnlocked(ProtoIDUsedByPatches.T化工技术革新) &&
                 __instance.Type == EItemType.Production &&
                 __instance.prefabDesc.assemblerRecipeType == (ERecipeType_1)Utils.ERecipeType.Chemical &&
                 index == 22)

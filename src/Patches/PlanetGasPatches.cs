@@ -134,8 +134,9 @@ namespace ProjectGenesis.Patches
             return matcher.InstructionEnumeration();
         }
 
-        public static bool IsSuit(PlanetData planet, BuildPreview preview) => preview.item.ID == (planet.type == EPlanetType.Gas ? 2105 : 6267);
-      
+        public static bool IsSuit(PlanetData planet, BuildPreview preview)
+            => preview.item.ID == (planet.type == EPlanetType.Gas ? ProtoIDUsedByPatches.I轨道采集器 : ProtoIDUsedByPatches.I大气采集器);
+
         [HarmonyPatch(typeof(PlanetTransport), "NewStationComponent")]
         [HarmonyPostfix]
         public static void PlanetTransport_NewStationComponent_Postfix(PlanetTransport __instance, PrefabDesc _desc, StationComponent __result)
@@ -144,5 +145,25 @@ namespace ProjectGenesis.Patches
                 for (var index = 0; index < Math.Min(__result.collectionIds.Length, _desc.stationMaxItemKinds); ++index)
                     __result.storage[index].localLogic = ELogisticStorage.Supply;
         }
+
+        [HarmonyPatch(typeof(PlanetTransport), "GameTick")]
+        [HarmonyTranspiler]
+        public static IEnumerable<CodeInstruction> PlanetTransport_GameTick_Transpiler(IEnumerable<CodeInstruction> instructions)
+        {
+            var matcher = new CodeMatcher(instructions);
+
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(StationComponent), "isCollector")));
+
+            var label = matcher.Advance(1).Operand;
+
+            matcher.Advance(7).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0),
+                                                new CodeInstruction(OpCodes.Ldfld, AccessTools.Field(typeof(PlanetTransport), "planet")),
+                                                new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(PlanetGasPatches), nameof(IsGas))),
+                                                new CodeInstruction(OpCodes.Brfalse, label));
+
+            return matcher.InstructionEnumeration();
+        }
+
+        public static bool IsGas(PlanetData planet) => planet.type == EPlanetType.Gas;
     }
 }

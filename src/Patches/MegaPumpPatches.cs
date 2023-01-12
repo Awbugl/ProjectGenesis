@@ -51,6 +51,6 @@ namespace ProjectGenesis.Patches
             return matcher.InstructionEnumeration();
         }
 
-        public static int CheckBuildConditions(BuildPreview preview) => preview.item.ModelIndex == 462 ? 0 : 21;
+        public static int CheckBuildConditions(BuildPreview preview) => preview.item.ModelIndex == ProtoIDUsedByPatches.M大抽水机 ? 0 : 21;
     }
 }
