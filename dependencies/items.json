@@ -5396,15 +5396,11 @@
     "Type": 2,
     "PreTech": 1121,
     "PreTechOverride": 0,
-    "DescFields": [
-      2,
-      3,
-      1,
-      31,
-      40
+    "DescFields": [     
+      1
     ],
-    "FuelType": 1,
-    "HeatValue": 900000,
+    "FuelType": 0,
+    "HeatValue": 0,
     "ReactorInc": 0.0,
     "IsFluid": true,
     "Productive": true,
@@ -5477,14 +5473,10 @@
     "PreTech": 1121,
     "PreTechOverride": 0,
     "DescFields": [
-      2,
-      3,
-      1,
-      31,
-      40
+      1
     ],
-    "FuelType": 1,
-    "HeatValue": 900000,
+    "FuelType": 0,
+    "HeatValue": 0,
     "ReactorInc": 0.0,
     "IsFluid": true,
     "Productive": true,
@@ -7909,15 +7901,11 @@
     "Type": 2,
     "PreTech": 1121,
     "PreTechOverride": 0,
-    "DescFields": [
-      2,
-      3,
-      1,
-      31,
-      40
+    "DescFields": [     
+      1
     ],
-    "FuelType": 1,
-    "HeatValue": 900000,
+    "FuelType": 0,
+    "HeatValue": 0,
     "ReactorInc": 0.0,
     "IsFluid": true,
     "Productive": true,
@@ -7993,7 +7981,7 @@
       0,
       1
     ],
-    "FuelType": 1,
+    "FuelType": 0,
     "HeatValue": 0,
     "ReactorInc": 0.0,
     "IsFluid": true,
@@ -8551,14 +8539,10 @@
     "PreTech": 1121,
     "PreTechOverride": 0,
     "DescFields": [
-      2,
-      3,
-      1,
-      31,
-      40
+      1
     ],
-    "FuelType": 1,
-    "HeatValue": 900000,
+    "FuelType": 0,
+    "HeatValue": 0,
     "ReactorInc": 0.0,
     "IsFluid": true,
     "Productive": true,
@@ -8591,6 +8575,7 @@
     "PreTech": 1832,
     "PreTechOverride": 0,
     "DescFields": [
+      0,
       1
     ],
     "FuelType": 0,
@@ -8599,7 +8584,7 @@
     "IsFluid": true,
     "Productive": true,
     "SubID": 0,
-    "MiningFrom": null,
+    "MiningFrom": "盐水海洋",
     "ProduceFrom": null,
     "Grade": 0,
     "Upgrades": [],
@@ -8630,7 +8615,7 @@
       0,
       1
     ],
-    "FuelType": 1,
+    "FuelType": 0,
     "HeatValue": 0,
     "ReactorInc": 0.0,
     "IsFluid": true,

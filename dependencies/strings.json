@@ -266,8 +266,8 @@
   },
   {
     "Name": "剧毒有机液体",
-    "ZHCN": "剧毒有机液体",
-    "ENUS": "Toxic organic liquid"
+    "ZHCN": "剧毒液体",
+    "ENUS": "Toxic liquid"
   },
   {
     "Name": "I剧毒有机液体",
@@ -1737,12 +1737,12 @@
   },
   {
     "Name": "有机液体离心",
-    "ZHCN": "有机液体离心",
-    "ENUS": "Organic liquid centrifugation"
+    "ZHCN": "剧毒液体离心",
+    "ENUS": "Toxic liquid centrifugation"
   },
   {
     "Name": "R有机液体离心",
-    "ZHCN": "将剧毒的有机液体进行离心分离, 可以得到数种有用的化合物.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ZHCN": "将采集到的剧毒液体进行离心、分离和精炼, 可以得到数种有用的化合物.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "ENUS": "Centrifugation of highly toxic organic liquids can yield several useful compounds.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
@@ -2607,8 +2607,8 @@
   },
   {
     "Name": "I硫酸",
-    "ZHCN": "初级化工产品，在生产中应用广泛。也可以通过分解火山灰星球的剧毒有机液体来获得。",
-    "ENUS": "Primary chemical product with a wide range of applications in production. It can also be obtained by decomposing the highly toxic organic liquid of the volcanic ash planet.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "初级化工产品，在生产中应用广泛。也可以通过分解火山灰星球的剧毒液体来获得。",
+    "ENUS": "Primary chemical product with a wide range of applications in production. It can also be obtained by decomposing the highly toxic liquid of the volcanic ash planet.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "I有机晶体",
@@ -2827,8 +2827,8 @@
   },
   {
     "Name": "T大气排放描述",
-    "ZHCN": "重构部分配方的生产流程，将不需要的产物加热或粉碎，排放到大气中。可以肯定这将会在未来对环境造成负面影响.\n<color=\"#FD965ECC\">受影响配方：焦油分馏、原油裂化、有机液体离心、金属盐分解</color>",
-    "ENUS": "Reconstruct production equipment to heat or crush unnecessary products and discharge them into the atmosphere. It can be said that this will have a negative impact on the environment in the future.\n<color=\"#FD965ECC\">Affected recipes: Tar fractionation, Oil Cracking, Organic liquid centrifugation, Decomposition of metal salts</color>"
+    "ZHCN": "重构部分配方的生产流程，将不需要的产物加热或粉碎，排放到大气中。可以肯定这将会在未来对环境造成负面影响.\n<color=\"#FD965ECC\">受影响配方：焦油分馏、原油裂化、剧毒液体离心、金属盐分解</color>",
+    "ENUS": "Reconstruct production equipment to heat or crush unnecessary products and discharge them into the atmosphere. It can be said that this will have a negative impact on the environment in the future.\n<color=\"#FD965ECC\">Affected recipes: Tar fractionation, Oil Cracking, Toxic liquid centrifugation, Decomposition of metal salts</color>"
   },
   {
     "Name": "T大气排放结果",

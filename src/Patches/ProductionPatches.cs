@@ -46,10 +46,10 @@ namespace ProjectGenesis.Patches
 
         public static bool AssemblerComponent_InsertMethod_Refine(ref AssemblerComponent component, int[] productRegister)
         {
-            var b = GameMain.history.TechUnlocked(ProtoIDUsedByPatches.T大气排污) &&
-                    (component.recipeId == ProtoIDUsedByPatches.R焦油分馏 ||
+            var b = (component.recipeId == ProtoIDUsedByPatches.R焦油分馏 ||
                      component.recipeId == ProtoIDUsedByPatches.R原油裂化 ||
-                     component.recipeId == ProtoIDUsedByPatches.R有机液体离心);
+                     component.recipeId == ProtoIDUsedByPatches.R有机液体离心) &&
+                    GameMain.history.TechUnlocked(ProtoIDUsedByPatches.T大气排污);
 
             if (b)
             {
@@ -85,7 +85,7 @@ namespace ProjectGenesis.Patches
 
         public static bool AssemblerComponent_InsertMethod_Assemble(ref AssemblerComponent component, int[] productRegister)
         {
-            var b = GameMain.history.TechUnlocked(ProtoIDUsedByPatches.T大气排污) && component.recipeId == ProtoIDUsedByPatches.R金属盐分解;
+            var b = component.recipeId == ProtoIDUsedByPatches.R金属盐分解 && GameMain.history.TechUnlocked(ProtoIDUsedByPatches.T大气排污);
 
             if (b)
             {
