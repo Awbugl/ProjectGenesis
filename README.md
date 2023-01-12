@@ -1,8 +1,8 @@
 ![img.png](https://assets.awbugl.top/dsp-genesisbook/profile.png)
 
-重构“真实宇宙”，撰写“创世之书”。
+构建真实宇宙，撰写创世之书。 
 
-Reconstruct "Real Universe". Then leave a "GenesisBook".
+Construct Real Universe. Then leave a GenesisBook.
 
 ### MOD内容速览 | A glimpse
 
@@ -13,18 +13,37 @@ Reconstruct "Real Universe". Then leave a "GenesisBook".
 
 ### 最近更新介绍 | Recent update
 
+- v2.4.0 风起天阑更新 | Windy update
+    + 为类地星体添加星球大气类型和采集产出
+    + 新建筑：大气采集站
+    + 新科技：大气排污
+    + 调整了部分配方（影响存档）
+    + 新增了部分配方
+    + 调整了部分物品的介绍文案
+    + 调整了部分物品的热值
+    + 调整了煤矿的数量和生成逻辑，现在大多数星球不会生成煤矿（仅在新存档生效）
+    + 调整火力发电厂逻辑：除燃料棒以外的燃料需要含氧大气层
+    + 修复了火力发电厂不正常的转化率
+
+    + Add atmosphere type and output for terrestrial planets
+    + New building: Atmosphere Collector
+    + Add atmosphere pollution technology
+    + Adjust some recipes (affect save)
+    + Add some recipes
+    + Adjust some item descriptions
+    + Adjust some item heat value
+    + Adjust the number and generation logic of coal mines. Most planets will not generate coal mines (only effective in
+      new saves)
+    + Adjust the logic of the power plant: the fuel other than the fuel rod needs the oxygen atmosphere layer
+    + Fix the abnormal conversion rate of the power plant
+
+
 - v2.3.5
     + 修复了旧版本巨型建筑蓝图加载出错的问题
     + 修复了巨型抽水机工作异常的问题
 
     + Fixed the problem of loading error of old version of Mega Building blueprint
     + Fixed the problem of abnormal operation of Mega Pump
-
-
-- v2.3.4
-    + 修复了巨型建筑加载出错的问题
-
-    + Fixed the problem of loading Mega Buildings
 
 ----
 
@@ -104,6 +123,19 @@ Reconstruct "Real Universe". Then leave a "GenesisBook".
 
 <details>
   <summary>展开查看</summary>
+
+- v2.4.0 风起天阑更新
+    + 为类地星体添加星球大气类型和采集产出
+    + 新建筑：大气采集站
+    + 新科技：大气排污
+    + 调整了部分配方（影响存档）
+    + 新增了部分配方
+    + 调整了部分物品的介绍文案
+    + 调整了部分物品的热值
+    + 调整了煤矿的数量和生成逻辑，现在大多数星球不会生成煤矿（仅在新存档生效）
+    + 调整火力发电厂逻辑：除燃料棒以外的燃料需要含氧大气层
+    + 修复了火力发电厂不正常的转化率
+
 
 - v2.3.5
     + 修复了旧版本巨型建筑蓝图加载出错的问题
@@ -348,6 +380,20 @@ free to communicate with us.
 
 <details>
   <summary>Details</summary>
+
+- v2.4.0 Windy update
+    + Add atmosphere type and output for terrestrial planets
+    + New building: Atmosphere Collector
+    + Add atmosphere pollution technology
+    + Adjust some recipes (affect save)
+    + Add some recipes
+    + Adjust some item descriptions
+    + Adjust some item heat value
+    + Adjust the number and generation logic of coal mines. Most planets will not generate coal mines (only effective in
+      new saves)
+    + Adjust the logic of the power plant: the fuel other than the fuel rod needs the oxygen atmosphere layer
+    + Fix the abnormal conversion rate of the power plant
+
 
 - v2.3.5
     + Fixed the problem of loading error of old version of Mega Building blueprint

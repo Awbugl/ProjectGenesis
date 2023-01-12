@@ -79,8 +79,8 @@ namespace ProjectGenesis.Utils
                     else
                     {
                         coal += 1;
-                        theme.VeinCount[5] *= 1.2f;
-                        theme.VeinOpacity[5] *= 1.2f;
+                        theme.VeinCount[5] *= 1.25f;
+                        theme.VeinOpacity[5] *= 1.25f;
                     }
                 }
             }
