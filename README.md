@@ -1,6 +1,6 @@
 ![img.png](https://assets.awbugl.top/dsp-genesisbook/profile.png)
 
-构建真实宇宙，撰写创世之书。 
+构建真实宇宙，撰写创世之书。
 
 Construct Real Universe. Then leave a GenesisBook.
 
@@ -12,6 +12,14 @@ Construct Real Universe. Then leave a GenesisBook.
 ![img.png](https://assets.awbugl.top/dsp-genesisbook/4.jpg)
 
 ### 最近更新介绍 | Recent update
+
+- v2.4.1
+    + 修复了二氧化碳还原配方需求错误的问题
+    + 移除了戈壁星球的硝酸海洋（仅在新存档生效）
+
+    + Fixed the problem that the carbon dioxide reduction formula requirement was wrong
+    + Removed the nitric acid ocean of Gobi planet (only effective in new archives)
+
 
 - v2.4.0 风起天阑更新 | Windy update
     + 为类地星体添加星球大气类型和采集产出
@@ -36,14 +44,6 @@ Construct Real Universe. Then leave a GenesisBook.
       new saves)
     + Adjust the logic of the power plant: the fuel other than the fuel rod needs the oxygen atmosphere layer
     + Fix the abnormal conversion rate of the power plant
-
-
-- v2.3.5
-    + 修复了旧版本巨型建筑蓝图加载出错的问题
-    + 修复了巨型抽水机工作异常的问题
-
-    + Fixed the problem of loading error of old version of Mega Building blueprint
-    + Fixed the problem of abnormal operation of Mega Pump
 
 ----
 
@@ -123,6 +123,11 @@ Construct Real Universe. Then leave a GenesisBook.
 
 <details>
   <summary>展开查看</summary>
+
+- v2.4.1
+    + 修复了二氧化碳还原配方需求错误的问题
+    + 移除了戈壁星球的硝酸海洋（仅在新存档生效）
+
 
 - v2.4.0 风起天阑更新
     + 为类地星体添加星球大气类型和采集产出
@@ -380,6 +385,11 @@ free to communicate with us.
 
 <details>
   <summary>Details</summary>
+
+- v2.4.1
+    + Fixed the problem that the carbon dioxide reduction formula requirement was wrong
+    + Removed the nitric acid ocean of Gobi planet (only effective in new archives)
+
 
 - v2.4.0 Windy update
     + Add atmosphere type and output for terrestrial planets
