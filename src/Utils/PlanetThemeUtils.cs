@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 
+// ReSharper disable LoopCanBePartlyConvertedToQuery
+
 namespace ProjectGenesis.Utils
 {
     internal static class PlanetThemeUtils
@@ -35,7 +37,9 @@ namespace ProjectGenesis.Utils
 
             foreach (var theme in LDB.themes.dataArray)
             {
-                if (theme.ID == 1)
+                if (theme.PlanetType == EPlanetType.Gas) continue;
+
+                if (theme.Distribute == EThemeDistribute.Birth)
                 {
                     theme.RareVeins = new[] { 8 };
                     theme.RareSettings = new float[] { 1.0f, 0.5f, 0.0f, 0.4f };
@@ -48,40 +52,45 @@ namespace ProjectGenesis.Utils
                                           ? new float[] { theme.Wind * 0.7f }
                                           : new float[] { theme.Wind * 0.7f, theme.Wind * 0.18f };
                 }
-                else if (theme.PlanetType != EPlanetType.Gas && theme.GasItems == null)
+                else if (theme.Wind == 0 || theme.GasItems == null)
                 {
                     theme.GasItems = Array.Empty<int>();
                     theme.GasSpeeds = Array.Empty<float>();
                 }
 
-                if (theme.VeinSpot.Length > 2)
-                {
-                    ref var silicon = ref theme.VeinSpot[2];
+                AdjustVeins(theme);
+            }
+        }
 
-                    if (silicon > 0)
-                    {
-                        silicon = 1 + silicon / 4;
-                        theme.VeinCount[2] = 0.5f;
-                        theme.VeinOpacity[2] = 0.5f;
-                    }
+        private static void AdjustVeins(ThemeProto theme)
+        {
+            if (theme.VeinSpot.Length > 2)
+            {
+                ref var silicon = ref theme.VeinSpot[2];
+
+                if (silicon > 0)
+                {
+                    silicon = 1 + silicon / 4;
+                    theme.VeinCount[2] = 0.5f;
+                    theme.VeinOpacity[2] = 0.5f;
                 }
+            }
 
-                if (theme.VeinSpot.Length > 5)
+            if (theme.VeinSpot.Length > 5)
+            {
+                ref var coal = ref theme.VeinSpot[5];
+
+                if (!theme.GasItems.Contains(7019))
                 {
-                    ref var coal = ref theme.VeinSpot[5];
-
-                    if (!theme.GasItems.Contains(7019))
-                    {
-                        coal = 0;
-                        theme.VeinCount[5] = 0f;
-                        theme.VeinOpacity[5] = 0f;
-                    }
-                    else
-                    {
-                        coal += 1;
-                        theme.VeinCount[5] *= 1.25f;
-                        theme.VeinOpacity[5] *= 1.25f;
-                    }
+                    coal = 0;
+                    theme.VeinCount[5] = 0f;
+                    theme.VeinOpacity[5] = 0f;
+                }
+                else
+                {
+                    coal += 1;
+                    theme.VeinCount[5] *= 1.25f;
+                    theme.VeinOpacity[5] *= 1.25f;
                 }
             }
         }

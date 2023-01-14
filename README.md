@@ -11,7 +11,24 @@ Construct Real Universe. Then leave a GenesisBook.
 ![img.png](https://assets.awbugl.top/dsp-genesisbook/3.jpg)
 ![img.png](https://assets.awbugl.top/dsp-genesisbook/4.jpg)
 
+### 不兼容的MOD | Incompatible MODs
+
+  + [TheyComeFromVoid](https://dsp.thunderstore.io/package/ckcz123/TheyComeFromVoid/)
+  + [GalacticScale](https://dsp.thunderstore.io/package/Galactic_Scale/GalacticScale)
+
+
+  - 加载以上MOD时，不会加载本MOD。
+  - When loading the above MOD, this MOD will not be loaded.
+
 ### 最近更新介绍 | Recent update
+
+- v2.4.2
+  + 修复了与`BlueprintTweaks` mod的兼容性问题
+  + 确定与`TheyComeFromVoid`、`GalacticScale`不兼容且无法修复，在加载上述mod时不会加载本mod
+
+  + Fixed compatibility with `BlueprintTweaks` mod
+  + Explicitly incompatible with `TheyComeFromVoid` and `GalacticScale`, will not load when loading the above mods
+
 
 - v2.4.1
   + 修复了二氧化碳还原配方需求错误的问题
@@ -125,6 +142,11 @@ Construct Real Universe. Then leave a GenesisBook.
 
 <details>
   <summary>展开查看</summary>
+
+- v2.4.2
+  + 修复了与`BlueprintTweaks` mod的兼容性问题
+  + 确定与`TheyComeFromVoid`、`GalacticScale`不兼容且无法修复，在加载上述mod时不会加载本mod
+
 
 - v2.4.1
   + 修复了二氧化碳还原配方需求错误的问题
@@ -388,6 +410,11 @@ free to communicate with us.
 
 <details>
   <summary>Details</summary>
+
+- v2.4.2
+  + Fixed compatibility with `BlueprintTweaks` mod
+  + Explicitly incompatible with `TheyComeFromVoid` and `GalacticScale`, will not load when loading the above mods
+
 
 - v2.4.1
   + Fixed the problem that the carbon dioxide reduction formula requirement was wrong
