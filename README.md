@@ -27,7 +27,7 @@ Construct Real Universe. Then leave a GenesisBook.
   + 确定与`TheyComeFromVoid`、`GalacticScale`不兼容且无法修复，在加载上述mod时不会加载本mod
 
   + Fixed compatibility with `BlueprintTweaks` mod
-  + Explicitly incompatible with `TheyComeFromVoid` and `GalacticScale`, will not load when loading the above mods
+  + Explicitly incompatible with `TheyComeFromVoid` and `GalacticScale`, will not load this when loading the above mods
 
 
 - v2.4.1
@@ -413,7 +413,7 @@ free to communicate with us.
 
 - v2.4.2
   + Fixed compatibility with `BlueprintTweaks` mod
-  + Explicitly incompatible with `TheyComeFromVoid` and `GalacticScale`, will not load when loading the above mods
+  + Explicitly incompatible with `TheyComeFromVoid` and `GalacticScale`, will not load this when loading the above mods
 
 
 - v2.4.1
