@@ -19,11 +19,15 @@ namespace ProjectGenesis.Patches
             StringBuilder sb,
             int incLevel)
         {
-            if (GameMain.history.TechUnlocked(ProtoIDUsedByPatches.T化工技术革新) &&
-                __instance.Type == EItemType.Production &&
-                __instance.prefabDesc.assemblerRecipeType == (ERecipeType_1)Utils.ERecipeType.Chemical &&
-                index == 22)
-                __result = "4x";
+            if (GameMain.history.TechUnlocked(ProtoIDUsedByPatches.T化工技术革新) && __instance.Type == EItemType.Production)
+            {
+                var instanceRecipeType = __instance.prefabDesc.assemblerRecipeType;
+                if ((instanceRecipeType == (ERecipeType_1)Utils.ERecipeType.Chemical ||
+                     instanceRecipeType == (ERecipeType_1)Utils.ERecipeType.Refine ||
+                     instanceRecipeType == (ERecipeType_1)Utils.ERecipeType.高分子化工) &&
+                    index == 22)
+                    __result = "4x";
+            }
         }
 
         [HarmonyPrefix]

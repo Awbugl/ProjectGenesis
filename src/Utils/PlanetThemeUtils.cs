@@ -41,17 +41,17 @@ namespace ProjectGenesis.Utils
                     theme.RareSettings = new float[] { 1.0f, 0.5f, 0.0f, 0.4f };
                 }
 
-                if (theme.PlanetType != EPlanetType.Gas && theme.Wind == 0f)
-                {
-                    theme.GasItems = Array.Empty<int>();
-                    theme.GasSpeeds = Array.Empty<float>();
-                }
-                else if (PlanetGasData.ContainsKey(theme.ID))
+                if (PlanetGasData.ContainsKey(theme.ID))
                 {
                     theme.GasItems = PlanetGasData[theme.ID];
                     theme.GasSpeeds = theme.GasItems.Length == 1
                                           ? new float[] { theme.Wind * 0.7f }
                                           : new float[] { theme.Wind * 0.7f, theme.Wind * 0.18f };
+                }
+                else if (theme.PlanetType != EPlanetType.Gas && theme.GasItems == null)
+                {
+                    theme.GasItems = Array.Empty<int>();
+                    theme.GasSpeeds = Array.Empty<float>();
                 }
 
                 if (theme.VeinSpot.Length > 2)
