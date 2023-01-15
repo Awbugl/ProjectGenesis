@@ -8,6 +8,7 @@ namespace ProjectGenesis.Patches
     {
         [HarmonyPostfix]
         [HarmonyPatch(typeof(DSPGame), "Awake")]
+        [HarmonyPatch(typeof(GameMain), "OnDestroy")]
         public static void DSPGame_Awake()
         {
             try

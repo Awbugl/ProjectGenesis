@@ -47,6 +47,46 @@ namespace ProjectGenesis.Patches
             return matcher.InstructionEnumeration();
         }
 
+        [HarmonyPatch(typeof(UIPlanetDetail), "OnPlanetDataSet")]
+        [HarmonyTranspiler]
+        public static IEnumerable<CodeInstruction> OnPlanetDataSet_Transpiler(IEnumerable<CodeInstruction> instructions)
+        {
+            var matcher = new CodeMatcher(instructions).MatchForward(false,
+                                                                     new CodeMatch(OpCodes.Ldfld,
+                                                                                   AccessTools.Field(typeof(StationComponent), "collectionPerTick")));
+
+            var stationComponent = matcher.Advance(-1).Instruction;
+
+            matcher.Advance(-1).InsertAndAdvance(new CodeInstruction(stationComponent), new CodeInstruction(OpCodes.Ldarg_0),
+                                                 new CodeInstruction(OpCodes.Ldfld, AccessTools.Field(typeof(UIPlanetDetail), "_planet")),
+                                                 new CodeInstruction(OpCodes.Call,
+                                                                     AccessTools.Method(typeof(PlanetGasPatches), nameof(GetGasCollectionPerTick))));
+
+            return matcher.InstructionEnumeration();
+        }
+
+        [HarmonyPatch(typeof(UIStarDetail), "OnStarDataSet")]
+        [HarmonyTranspiler]
+        public static IEnumerable<CodeInstruction> OnStarDataSet_Transpiler(IEnumerable<CodeInstruction> instructions)
+        {
+            var matcher = new CodeMatcher(instructions);
+
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(PlanetData), "gasTotalHeat")));
+            var planet = matcher.Advance(-1).Instruction;
+
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(StationComponent), "collectionPerTick")));
+            var stationComponent = matcher.Advance(-1).Instruction;
+
+            matcher.Advance(-1).InsertAndAdvance(new CodeInstruction(stationComponent), new CodeInstruction(planet),
+                                                 new CodeInstruction(OpCodes.Call,
+                                                                     AccessTools.Method(typeof(PlanetGasPatches), nameof(GetGasCollectionPerTick))));
+
+            return matcher.InstructionEnumeration();
+        }
+
+        public static double GetGasCollectionPerTick(double original, StationComponent stationComponent, PlanetData planet)
+            => planet.type == EPlanetType.Gas ? original : GameMain.history.miningSpeedScale * stationComponent.collectSpeed;
+
         [HarmonyPatch(typeof(BuildTool_BlueprintCopy), "DetermineActive")]
         [HarmonyPatch(typeof(BuildTool_BlueprintPaste), "DetermineActive")]
         [HarmonyPatch(typeof(BuildTool_BlueprintPaste), "CheckBuildConditionsPrestage")]
@@ -139,11 +179,24 @@ namespace ProjectGenesis.Patches
             matcher.SetAndAdvance(OpCodes.Nop, null);
             matcher.SetAndAdvance(OpCodes.Nop, null);
 
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldc_R4, 14297f));
+
+            matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Pop),
+                                                new CodeInstruction(OpCodes.Ldarg_0),
+                                                new CodeInstruction(OpCodes.Ldfld, AccessTools.Field(typeof(BuildTool), "planet")),
+                                                new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(PlanetGasPatches), nameof(GetDistance))));
+
             return matcher.InstructionEnumeration();
         }
 
         public static bool IsSuit(PlanetData planet, BuildPreview preview)
             => preview.item.ID == (planet.type == EPlanetType.Gas ? ProtoIDUsedByPatches.I轨道采集器 : ProtoIDUsedByPatches.I大气采集器);
+
+        public static float GetDistance(PlanetData planet)
+        {
+            if (planet.type == EPlanetType.Gas) return 14297f;
+            return 3845f;
+        }
 
         [HarmonyPatch(typeof(PlanetTransport), "NewStationComponent")]
         [HarmonyPostfix]
@@ -209,6 +262,29 @@ namespace ProjectGenesis.Patches
         public static void StationComponent_Init_Postfix(StationComponent __instance)
         {
             if (__instance.isCollector) __instance.warperMaxCount = 0;
+        }
+
+        [HarmonyPatch(typeof(StationComponent), "UpdateCollection")]
+        [HarmonyPrefix]
+        public static void StationComponent_UpdateCollection_Prefix(
+            StationComponent __instance,
+            PlanetFactory factory,
+            ref float collectSpeedRate,
+            int[] productRegister)
+        {
+            if (factory.planet.type != EPlanetType.Gas) collectSpeedRate = GameMain.history.miningSpeedScale * __instance.collectSpeed;
+        }
+
+        [HarmonyPatch(typeof(UIStationStorage), "RefreshValues")]
+        [HarmonyPostfix]
+        public static void UIStationStorage_RefreshValues_Postfix(UIStationStorage __instance)
+        {
+            if (__instance.station.isCollector && GameMain.localPlanet.type != EPlanetType.Gas)
+            {
+                var collectSpeedRate = GameMain.history.miningSpeedScale * __instance.station.collectSpeed;
+                __instance.speedText.text
+                    = $"{3600.0 * ((double)__instance.station.collectionPerTick[__instance.index] * collectSpeedRate):0.00}/min";
+            }
         }
     }
 }

@@ -58,14 +58,14 @@ namespace ProjectGenesis.Utils
 
             itemProtos.Select(物品.火力发电机).prefabDesc.genEnergyPerTick = 200000;
             itemProtos.Select(物品.火力发电机).prefabDesc.useFuelPerTick = 250000;
-            
+
             itemProtos.Select(物品.风力涡轮机).prefabDesc.genEnergyPerTick = 25000;
             itemProtos.Select(物品.太阳能板).prefabDesc.genEnergyPerTick = 30000;
             itemProtos.Select(物品.地热发电机).prefabDesc.genEnergyPerTick = 400000;
-            
+
             itemProtos.Select(物品.聚变发电机).prefabDesc.genEnergyPerTick = 2500000;
             itemProtos.Select(物品.聚变发电机).prefabDesc.useFuelPerTick = 2500000;
-            
+
             itemProtos.Select(物品.人造恒星).prefabDesc.genEnergyPerTick = 10000000;
             itemProtos.Select(物品.人造恒星).prefabDesc.useFuelPerTick = 10000000;
 
@@ -168,7 +168,7 @@ namespace ProjectGenesis.Utils
             gaspumperprefabDesc.workEnergyPerTick = 0;
             gaspumperprefabDesc.isCollectStation = true;
             gaspumperprefabDesc.isPowerConsumer = false;
-            gaspumperprefabDesc.stationCollectSpeed = 6;
+            gaspumperprefabDesc.stationCollectSpeed = 2;
 
             var accumulator = models.Select(46);
             ref var accumulatorprefabDesc = ref accumulator.prefabDesc;

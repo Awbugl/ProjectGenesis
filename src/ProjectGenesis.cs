@@ -37,13 +37,16 @@ namespace ProjectGenesis
     [BepInDependency(BlueprintTweaks_GUID, BepInDependency.DependencyFlags.SoftDependency)]
     [BepInIncompatibility(GalacticScale_GUID)]
     [BepInIncompatibility(DSPBattle_GUID)]
-    
     [CommonAPISubmoduleDependency(nameof(ProtoRegistry), nameof(CustomDescSystem), nameof(TabSystem), nameof(AssemblerRecipeSystem))]
     public class ProjectGenesis : BaseUnityPlugin, IModCanSave, IMultiplayerModWithSettings
     {
         public const string MODGUID = "org.LoShin.GenesisBook";
         public const string MODNAME = "GenesisBook";
-        public const string VERSION = "2.4.2";
+        public const string VERSION = "2.4.3";
+
+        private const string BlueprintTweaks_GUID = "org.kremnev8.plugin.BlueprintTweaks",
+                             GalacticScale_GUID = "dsp.galactic-scale.2",
+                             DSPBattle_GUID = "com.ckcz123.DSP_Battle";
 
         public string Version => VERSION;
 
@@ -56,9 +59,6 @@ namespace ProjectGenesis
         private Harmony Harmony;
 
         internal static bool BlueprintTweaksInstalled;
-        private const string BlueprintTweaks_GUID = "org.kremnev8.plugin.BlueprintTweaks",
-                             GalacticScale_GUID = "dsp.galactic-scale.2",
-                             DSPBattle_GUID = "com.ckcz123.DSP_Battle";
 
         public void Awake()
         {
