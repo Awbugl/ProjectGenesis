@@ -145,7 +145,7 @@
     <Target Name="AfterBuild">
         <Copy SourceFiles="$(TargetPath)" DestinationFiles="$(DefaultOutputPath)$(TargetName).dll" />
         <Copy SourceFiles="README.md" DestinationFiles="$(DefaultOutputPath)README.md" />
-        <Copy SourceFiles="README.md" DestinationFiles="$(DefaultOutputPath)CHANGELOG.md" />        
+        <Copy SourceFiles="CHANGELOG.md" DestinationFiles="$(DefaultOutputPath)CHANGELOG.md" />        
         <Exec Command="explorer $(DefaultOutputPath)" IgnoreExitCode="true" />
     </Target>
 </Project>
