@@ -1,4 +1,12 @@
-﻿- v2.4.3
+﻿- v2.4.4
+  + 修复文本错误
+
+  + Fix text error
+
+<details>
+  <summary>点击展开日志 | Click to view all </summary>
+
+- v2.4.3
   + 修复了`大气采集站`不受`矿物利用`科技影响的Bug
   + 修复了部分情况下可能在物品选择界面无法选择`氮`的问题
   + 调整了`大气采集站`的基础工作速度与建造间隔
@@ -9,8 +17,6 @@
   + Adjusted the base work speed and build interval of `Atmospheric Collecting Station`.
   + Adjusted the technology requirements of the rocket
 
-<details>
-  <summary>点击展开日志 | Click to view all </summary>
 
 - v2.4.2
   + 修复了与`BlueprintTweaks` mod的兼容性问题

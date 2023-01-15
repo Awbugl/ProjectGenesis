@@ -42,7 +42,7 @@ namespace ProjectGenesis
     {
         public const string MODGUID = "org.LoShin.GenesisBook";
         public const string MODNAME = "GenesisBook";
-        public const string VERSION = "2.4.3";
+        public const string VERSION = "2.4.4";
 
         private const string BlueprintTweaks_GUID = "org.kremnev8.plugin.BlueprintTweaks",
                              GalacticScale_GUID = "dsp.galactic-scale.2",
