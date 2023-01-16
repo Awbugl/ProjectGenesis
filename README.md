@@ -11,6 +11,20 @@ Construct Real Universe. Then leave a GenesisBook.
 ![img.png](https://assets.awbugl.top/dsp-genesisbook/3.jpg)
 ![img.png](https://assets.awbugl.top/dsp-genesisbook/4.jpg)
 
+
+## 意见和反馈 | Feedback and suggestions
+
+如果您对本Mod有宝贵的意见或建议，
+请加QQ群（如下）向管理员反馈，欢迎加群交流。
+
+- 创世之书MOD一号节点 991895539
+- 创世之书MOD二号节点 632432246
+- 群问题答案：戴森球计划
+
+
+If you have any problems, please contact us in [our Discord server](https://discord.gg/QwMEeaRZZR),
+or open a issue via [github](https://github.com/Awbugl/ProjectGenesis).
+
 ### 不兼容的MOD | Incompatible MODs
 
 + [TheyComeFromVoid](https://dsp.thunderstore.io/package/ckcz123/TheyComeFromVoid/)
@@ -19,6 +33,7 @@ Construct Real Universe. Then leave a GenesisBook.
 
 - 加载以上MOD时，不会加载本MOD。
 - When loading the above MOD, this MOD will not be loaded.
+
 
 ## 安装方法
 
@@ -34,18 +49,6 @@ Construct Real Universe. Then leave a GenesisBook.
 视频教程（基于打包版，后半部分）：[**点此观看**](https://www.bilibili.com/video/BV13Y411d7ps/)
 
 文字教程：请加入交流群，参考群文件
-
-- 创世之书MOD一号节点 991895539
-- 创世之书MOD二号节点 632432246
-- 群问题答案：戴森球计划
-
-欢迎加群交流。
-
-## 意见和反馈
-
-如果您对本Mod有宝贵的意见或建议，
-请加QQ群（如上）向管理员反馈，
-或者在 [github](https://github.com/Awbugl/ProjectGenesis) 发 issue。
 
 ## 介绍
 
@@ -81,6 +84,7 @@ Construct Real Universe. Then leave a GenesisBook.
 - 特别感谢所有在开发过程中提供技术支持的MOD作者.
 - 特别感谢所有为本项目做出贡献和提出建议的玩家.
 
+
 ## Installation
 
 ### With Mod Manager
@@ -107,12 +111,6 @@ and `texpack` file).
 
 If you can see the new **GenesisBook** logo, then the mod is installed successfully.
 
-## Feedback and suggestions
-
-If you have any feedback or suggestions, please open a issue via [github](https://github.com/Awbugl/ProjectGenesis), or
-contact us in Discord `Awbugl#4426`, `HiddenCirno#4535`, or via the `modding` channel of DSP's official discord server.
-
-welcome to contact us.
 
 ## Intro
 
