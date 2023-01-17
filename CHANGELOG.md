@@ -1,7 +1,7 @@
 - v2.4.7
-  + 修复了启动红字问题
+  + 修复了未安装巨构MOD时的启动红字问题
 
-  + Fix the problem when starting
+  + Fix the problem when starting without MoreMegaStructure mod
 
 <details>
   <summary>点击展开日志 | Click to view all </summary>
