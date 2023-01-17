@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Reflection.Emit;
 using HarmonyLib;
+using ProjectGenesis.Utils;
 
 // ReSharper disable InconsistentNaming
 
@@ -8,6 +9,19 @@ namespace ProjectGenesis.Patches
 {
     public static class ProductionPatches
     {
+        private static readonly long workEnergyPerTick_Original = 12000, workEnergyPerTick_MegaOriginal = 500000;
+
+        [HarmonyPatch(typeof(AssemblerComponent), "SetPCState")]
+        [HarmonyPrefix]
+        public static void AssemblerComponent_SetPCState_Prefix(AssemblerComponent __instance, PowerConsumerComponent[] pcPool)
+        {
+            var workEnergyPerTick = __instance.speed < MegaAssemblerPatches.MegaAssemblerSpeed
+                                        ? workEnergyPerTick_Original
+                                        : workEnergyPerTick_MegaOriginal;
+
+            pcPool[__instance.pcId].workEnergyPerTick = __instance.recipeId == ProtoIDUsedByPatches.R水电解 ? workEnergyPerTick * 10 : workEnergyPerTick;
+        }
+
         [HarmonyPatch(typeof(AssemblerComponent), "InternalUpdate")]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> AssemblerComponent_InternalUpdate_Transpiler(

@@ -4,6 +4,7 @@ using System.Reflection;
 using System.Reflection.Emit;
 using HarmonyLib;
 using ProjectGenesis.Compatibility;
+using ProjectGenesis.Utils;
 
 // ReSharper disable InconsistentNaming
 

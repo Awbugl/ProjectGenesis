@@ -1,4 +1,4 @@
-﻿namespace ProjectGenesis.Patches
+﻿namespace ProjectGenesis.Utils
 {
     internal static class ProtoIDUsedByPatches
     {
@@ -17,7 +17,11 @@
 
         internal const int I大气采集器 = 6267,
                            I轨道采集器 = 2105,
+                           I人造恒星 = 2210,
+                           I巨型精密组装厂 = 6260,
+                           I巨型对撞机 = 6265,
                            I氧 = 7019,
+                           R水电解 = 702,
                            R物质分解 = 429,
                            R原油裂化 = 701,
                            R焦油分馏 = 713,

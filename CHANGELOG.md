@@ -1,3 +1,14 @@
+- v2.4.6
+  + 大幅提高了电解水配方的耗电量
+  + 完成与巨构MOD的互相兼容，且加入了部分新配方
+
+  + Hugely improved the power consumption when electrolyze water
+  + Completed the compatibility with the MoreMegaStructure MOD and added some new recipes
+
+
+<details>
+  <summary>点击展开日志 | Click to view all </summary>
+
 - v2.4.5
   + 添加了MOD冲突提示与加载提示
   + 小幅提高了MOD兼容性
@@ -5,8 +16,6 @@
   + Added conflict tips and loading tips
   + Slightly improved compatibility
 
-<details>
-  <summary>点击展开日志 | Click to view all </summary>
 
 - v2.4.4
   + 修复文本错误

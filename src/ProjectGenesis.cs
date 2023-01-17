@@ -41,7 +41,7 @@ namespace ProjectGenesis
     {
         public const string MODGUID = "org.LoShin.GenesisBook";
         public const string MODNAME = "GenesisBook";
-        public const string VERSION = "2.4.5";
+        public const string VERSION = "2.4.6";
 
         public string Version => VERSION;
 
@@ -58,13 +58,13 @@ namespace ProjectGenesis
             logger = Logger;
             logger.Log(LogLevel.Info, "GenesisBook Awake");
 
-            if(IncompatibleCheckPatch.GalacticScaleInstalled)
+            if (IncompatibleCheckPatch.GalacticScaleInstalled)
             {
                 logger.Log(LogLevel.Error, "Galactic Scale is installed, which is incompatible with GenesisBook. Load Cancelled.");
                 return;
             }
 
-            if(IncompatibleCheckPatch.DSPBattleInstalled)
+            if (IncompatibleCheckPatch.DSPBattleInstalled)
             {
                 logger.Log(LogLevel.Error, "They Come From Void is installed, which is incompatible with GenesisBook. Load Cancelled.");
                 return;
