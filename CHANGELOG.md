@@ -1,3 +1,11 @@
+- v2.4.7
+  + 修复了启动红字问题
+
+  + Fix the problem when starting
+
+<details>
+  <summary>点击展开日志 | Click to view all </summary>
+
 - v2.4.6
   + 大幅提高了电解水配方的耗电量
   + 完成与巨构MOD的互相兼容，且加入了部分新配方
@@ -5,9 +13,6 @@
   + Hugely improved the power consumption when electrolyze water
   + Completed the compatibility with the MoreMegaStructure MOD and added some new recipes
 
-
-<details>
-  <summary>点击展开日志 | Click to view all </summary>
 
 - v2.4.5
   + 添加了MOD冲突提示与加载提示

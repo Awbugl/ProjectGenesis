@@ -1,9 +1,6 @@
 ﻿using System.Collections.Generic;
-using System.Text;
 using BepInEx;
 using HarmonyLib;
-using ProjectGenesis.Patches;
-using ProjectGenesis.Utils;
 
 namespace ProjectGenesis.Patches
 {
@@ -33,32 +30,7 @@ namespace ProjectGenesis.Patches
             Dictionary<string, PluginInfo> pluginInfos = BepInEx.Bootstrap.Chainloader.PluginInfos;
             GalacticScaleInstalled = pluginInfos.ContainsKey(GalacticScaleGUID);
             DSPBattleInstalled = pluginInfos.ContainsKey(DSPBattleGUID);
-
-            Harmony.CreateAndPatchAll(typeof(UIMainMenuPatch));
+            Harmony.CreateAndPatchAll(typeof(UIMainMenuPatches));
         }
-    }
-}
-
-public static class UIMainMenuPatch
-{
-    private static bool _shown;
-    
-    [HarmonyPatch(typeof(VFPreload), "InvokeOnLoadWorkEnded")]
-    [HarmonyPostfix]
-    public static void OnMainMenuOpen()
-    {
-        if(_shown) return;
-        
-        var sb = new StringBuilder();
-
-        if (IncompatibleCheckPatch.GalacticScaleInstalled) sb.AppendLine("GalacticScaleInstalled".TranslateFromJson());
-
-        if (IncompatibleCheckPatch.DSPBattleInstalled) sb.AppendLine("DSPBattleInstalled".TranslateFromJson());
-
-        sb.AppendLine("GenesisBookLoadMessage".TranslateFromJson());
-
-        UIMessageBox.Show("GenesisBookLoadTitle".TranslateFromJson(), sb.ToString(), "Ok".TranslateFromJson(), UIMessageBox.INFO);
-        
-        _shown = true;
     }
 }

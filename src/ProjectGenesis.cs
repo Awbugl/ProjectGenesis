@@ -41,7 +41,7 @@ namespace ProjectGenesis
     {
         public const string MODGUID = "org.LoShin.GenesisBook";
         public const string MODNAME = "GenesisBook";
-        public const string VERSION = "2.4.6";
+        public const string VERSION = "2.4.7";
 
         public string Version => VERSION;
 
@@ -95,7 +95,11 @@ namespace ProjectGenesis
 
             Harmony = new Harmony(MODGUID);
 
-            foreach (var type in executingAssembly.GetTypes()) Harmony.PatchAll(type);
+            foreach (var type in executingAssembly.GetTypes())
+            {
+                if (type == typeof(MoreMegaStructureEditDataPatches) || type == typeof(UIMainMenuPatches)) continue;
+                Harmony.PatchAll(type);
+            }
 
             LDBTool.PreAddDataAction += PreAddDataAction;
             LDBTool.PostAddDataAction += PostAddDataAction;

@@ -105,11 +105,13 @@
         <Compile Include="src\Patches\MegaAssemblerPatches.cs" />
         <Compile Include="src\Patches\MegaPumpPatches.cs" />
         <Compile Include="src\Patches\ModelLoadingPatches.cs" />
+        <Compile Include="src\Patches\MoreMegaStructureEditDataPatches.cs" />
         <Compile Include="src\Patches\MultiProductionPatches.cs" />
         <Compile Include="src\Patches\OceanDischargePatches.cs" />
         <Compile Include="src\Patches\PlanetGasPatches.cs" />
         <Compile Include="src\Patches\ProductionPatches.cs" />
         <Compile Include="src\Patches\ThermalPowerGenPatches.cs" />
+        <Compile Include="src\Patches\UIMainMenuPatches.cs" />
         <Compile Include="src\Patches\UIPatches.cs" />
         <Compile Include="src\Patches\UISignalPickerPatches.cs" />
         <Compile Include="src\Patches\UpdateLogoPatches.cs" />
