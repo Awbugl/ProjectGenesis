@@ -5,6 +5,31 @@
     "ENUS": "GenesisBook"
   },
   {
+    "Name": "GenesisBookLoadTitle",
+    "ZHCN": "创世之书提示",
+    "ENUS": "Message from GenesisBook"
+  },
+  {
+    "Name": "GalacticScaleInstalled",
+    "ZHCN": "检测到您已安装Galactic Scale mod，与创世之书存在冲突。已取消加载创世之书mod。",
+    "ENUS": "Galactic Scale is installed, GenesisBook is incompatible with it. GenesisBook mod is disabled."
+  },
+  {
+    "Name": "DSPBattleInstalled",
+    "ZHCN": "检测到您已安装深空来敌mod，与创世之书存在冲突。已取消加载创世之书mod。",
+    "ENUS": "They Come From Void is installed, GenesisBook is incompatible with it. GenesisBook mod is disabled."
+  },
+  {
+    "Name": "GenesisBookLoadMessage",
+    "ZHCN": "若您在主界面中看到了创世之书的图标，说明创世之书已成功加载。\n如果您在游玩创世之书MOD时遇到了任何问题，或者对MOD有宝贵的意见或建议，欢迎加入我们的QQ群：991895539（可在README.md文件中复制）",
+    "ENUS": "If you see the GenesisBook icon in the main menu, it means GenesisBook is successfully loaded.\nIf you have any problems or suggestions about the mod, please join our discord server: https://discord.gg/QwMEeaRZZR (You can copy the link in README.md)"
+  },
+  {
+    "Name": "Ok",
+    "ZHCN": "确定",
+    "ENUS": "OK"
+  },
+  {
     "Name": "精炼页面",
     "ZHCN": "精炼",
     "ENUS": "Refining"
@@ -153,7 +178,7 @@
     "Name": "需要氧气",
     "ZHCN": "此燃料需要含氧大气",
     "ENUS": "This fuel requires oxygen atmosphere"
-  },  
+  },
   {
     "Name": "海洋排污文字描述",
     "ZHCN": "允许将传送带反向连入抽水站, 将不需要的液体排入大海.(抽水站蓄满时才会排放)",
@@ -618,7 +643,6 @@
     "Name": "I钚燃料棒",
     "ZHCN": "将钚燃料封装在燃料棒中，提高利用率和输出功率。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "ENUS": "Encapsulation of plutonium fuel in fuel rods to improve utilization and output power.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-
   },
   {
     "Name": "铀燃料棒",
@@ -1262,7 +1286,7 @@
   },
   {
     "Name": "I生物基板",
-    "ZHCN": "使用聚苯并咪唑制造的基板，具有更好的生物相容性、稳定性和耐用性。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>", 
+    "ZHCN": "使用聚苯并咪唑制造的基板，具有更好的生物相容性、稳定性和耐用性。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "ENUS": "The substrate made of polybenzimidazole, which has better biocompatibility, stability and durability.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
@@ -2849,7 +2873,7 @@
     "Name": "大气排污文字描述",
     "ZHCN": "允许设备将堆积产物直接排放到大气中（低资源倍率模式请谨慎解锁此科技）",
     "ENUS": "Reconstruct production equipment to discharge part of the products into the atmosphere."
-  },  
+  },
   {
     "Name": "开发者日志01",
     "ZHCN": "开发者日志01",

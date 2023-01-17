@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -9,6 +8,7 @@ using CommonAPI.Systems;
 using crecheng.DSPModSave;
 using HarmonyLib;
 using NebulaAPI;
+using ProjectGenesis.Compatibility;
 using ProjectGenesis.Patches;
 using ProjectGenesis.Utils;
 using xiaoye97;
@@ -34,19 +34,14 @@ namespace ProjectGenesis
     [BepInDependency(CommonAPIPlugin.GUID)]
     [BepInDependency(LDBToolPlugin.MODGUID)]
     [BepInDependency(NebulaModAPI.API_GUID)]
-    [BepInDependency(BlueprintTweaks_GUID, BepInDependency.DependencyFlags.SoftDependency)]
-    [BepInIncompatibility(GalacticScale_GUID)]
-    [BepInIncompatibility(DSPBattle_GUID)]
+    [BepInDependency(IncompatibleCheckPatch.MODGUID, BepInDependency.DependencyFlags.SoftDependency)]
+    [BepInDependency(BlueprintTweaksCompatibilityPatch.MODGUID, BepInDependency.DependencyFlags.SoftDependency)]
     [CommonAPISubmoduleDependency(nameof(ProtoRegistry), nameof(CustomDescSystem), nameof(TabSystem), nameof(AssemblerRecipeSystem))]
     public class ProjectGenesis : BaseUnityPlugin, IModCanSave, IMultiplayerModWithSettings
     {
         public const string MODGUID = "org.LoShin.GenesisBook";
         public const string MODNAME = "GenesisBook";
-        public const string VERSION = "2.4.4";
-
-        private const string BlueprintTweaks_GUID = "org.kremnev8.plugin.BlueprintTweaks",
-                             GalacticScale_GUID = "dsp.galactic-scale.2",
-                             DSPBattle_GUID = "com.ckcz123.DSP_Battle";
+        public const string VERSION = "2.4.5";
 
         public string Version => VERSION;
 
@@ -58,22 +53,28 @@ namespace ProjectGenesis
         private int[] TableID;
         private Harmony Harmony;
 
-        internal static bool BlueprintTweaksInstalled;
-
         public void Awake()
         {
             logger = Logger;
             logger.Log(LogLevel.Info, "GenesisBook Awake");
+
+            if(IncompatibleCheckPatch.GalacticScaleInstalled)
+            {
+                logger.Log(LogLevel.Error, "Galactic Scale is installed, which is incompatible with GenesisBook. Load Cancelled.");
+                return;
+            }
+
+            if(IncompatibleCheckPatch.DSPBattleInstalled)
+            {
+                logger.Log(LogLevel.Error, "They Come From Void is installed, which is incompatible with GenesisBook. Load Cancelled.");
+                return;
+            }
 
             var executingAssembly = Assembly.GetExecutingAssembly();
 
             var resources = new ResourceData("org.LoShin.GenesisBook", "texpack", Path.GetDirectoryName(executingAssembly.Location));
             resources.LoadAssetBundle("texpack");
             ProtoRegistry.AddResource(resources);
-
-            Dictionary<string, PluginInfo> pluginInfos = BepInEx.Bootstrap.Chainloader.PluginInfos;
-
-            BlueprintTweaksInstalled = pluginInfos.ContainsKey(BlueprintTweaks_GUID);
 
             TableID = new int[]
                       {
@@ -109,7 +110,7 @@ namespace ProjectGenesis
 
             LDB.items.OnAfterDeserialize();
 
-            AdjustPlanetThemeData();
+            AdjustPlanetThemeDataVanilla();
             AddCopiedModelProto();
             ImportJson(TableID);
         }

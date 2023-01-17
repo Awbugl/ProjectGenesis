@@ -92,6 +92,8 @@
         </Reference>
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="src\Compatibility\BlueprintTweaksCompatibilityPatch.cs" />
+        <Compile Include="src\Compatibility\IncompatibleCheckPatch.cs" />
         <Compile Include="src\Patches\BeltFixPatches.cs" />
         <Compile Include="src\Patches\DeleteLDBConfigPatches.cs" />
         <Compile Include="src\Patches\DisplayedNamePatches.cs" />

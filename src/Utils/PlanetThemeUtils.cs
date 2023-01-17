@@ -31,35 +31,37 @@ namespace ProjectGenesis.Utils
                                                                            { 25, new[] { 6220, 7019 } },
                                                                        };
 
-        internal static void AdjustPlanetThemeData()
+        internal static void AdjustPlanetThemeDataVanilla()
         {
             LDB.themes.Select(8).WaterItemId = 7018;
 
-            foreach (var theme in LDB.themes.dataArray)
+            foreach (var theme in LDB.themes.dataArray) AdjustThemeVanilla(theme);
+        }
+
+        private static void AdjustThemeVanilla(ThemeProto theme)
+        {
+            if (theme.PlanetType == EPlanetType.Gas) return;
+
+            if (theme.Distribute == EThemeDistribute.Birth)
             {
-                if (theme.PlanetType == EPlanetType.Gas) continue;
-
-                if (theme.Distribute == EThemeDistribute.Birth)
-                {
-                    theme.RareVeins = new[] { 8 };
-                    theme.RareSettings = new float[] { 1.0f, 0.5f, 0.0f, 0.4f };
-                }
-
-                if (PlanetGasData.ContainsKey(theme.ID))
-                {
-                    theme.GasItems = PlanetGasData[theme.ID];
-                    theme.GasSpeeds = theme.GasItems.Length == 1
-                                          ? new float[] { theme.Wind * 0.7f }
-                                          : new float[] { theme.Wind * 0.7f, theme.Wind * 0.18f };
-                }
-                else if (theme.Wind == 0 || theme.GasItems == null)
-                {
-                    theme.GasItems = Array.Empty<int>();
-                    theme.GasSpeeds = Array.Empty<float>();
-                }
-
-                AdjustVeins(theme);
+                theme.RareVeins = new[] { 8 };
+                theme.RareSettings = new float[] { 1.0f, 0.5f, 0.0f, 0.4f };
             }
+
+            if (PlanetGasData.ContainsKey(theme.ID))
+            {
+                theme.GasItems = PlanetGasData[theme.ID];
+                theme.GasSpeeds = theme.GasItems.Length == 1
+                                      ? new float[] { theme.Wind * 0.7f }
+                                      : new float[] { theme.Wind * 0.7f, theme.Wind * 0.18f };
+            }
+            else if (theme.Wind == 0 || theme.GasItems == null)
+            {
+                theme.GasItems = Array.Empty<int>();
+                theme.GasSpeeds = Array.Empty<float>();
+            }
+
+            AdjustVeins(theme);
         }
 
         private static void AdjustVeins(ThemeProto theme)

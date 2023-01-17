@@ -77,7 +77,7 @@ namespace ProjectGenesis.Patches
             ref uint[] ___indexArray,
             ref int[] ___signalArray)
         {
-            if (___currentType == 7 || ___currentType == 8)
+            if (___currentType > 6)
             {
                 var iconSet = GameMain.iconSet;
                 ItemProto[] dataArray = LDB.items.dataArray;

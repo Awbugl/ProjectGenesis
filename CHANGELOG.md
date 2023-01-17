@@ -1,10 +1,18 @@
+- v2.4.5
+  + 添加了MOD冲突提示与加载提示
+  + 小幅提高了MOD兼容性
+
+  + Added conflict tips and loading tips
+  + Slightly improved compatibility
+
+<details>
+  <summary>点击展开日志 | Click to view all </summary>
+
 - v2.4.4
   + 修复文本错误
 
   + Fix text error
 
-<details>
-  <summary>点击展开日志 | Click to view all </summary>
 
 - v2.4.3
   + 修复了`大气采集站`不受`矿物利用`科技影响的Bug
