@@ -7,7 +7,7 @@ using HarmonyLib;
 // ReSharper disable once CommentTypo
 // ReSharper disable InconsistentNaming
 
-namespace ProjectGenesis.Patches
+namespace ProjectGenesis.Patches.UI.BeltColorFix
 {
     /// <summary>
     ///     special thanks for https://github.com/kremnev8/DSP-Mods/blob/master/Mods/BetterMachines/src/BeltFixes.cs

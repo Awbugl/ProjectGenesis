@@ -2,9 +2,9 @@
 using BepInEx;
 using HarmonyLib;
 
-namespace ProjectGenesis.Patches
+namespace ProjectGenesis.Patches.Logic
 {
-    public static class DeleteLDBConfigPatches
+    public static class DeleteLDBConfig
     {
         [HarmonyPostfix]
         [HarmonyPatch(typeof(DSPGame), "Awake")]

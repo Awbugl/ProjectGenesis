@@ -5,12 +5,12 @@ using System.Reflection.Emit;
 using HarmonyLib;
 using ProjectGenesis.Utils;
 
-namespace ProjectGenesis.Patches
+namespace ProjectGenesis.Patches.UI.DisplayTextPatches
 {
     /// <summary>
     ///     special thanks for https://github.com/hubastard/nebula/tree/master/NebulaPatcher/Patches/Transpilers/UIVersionText_Transpiler.cs
     /// </summary>
-    public static class DisplayedNamePatches
+    public static class DisplayNamePatches
     {
         [HarmonyTranspiler]
         [HarmonyPatch(typeof(UIVersionText), "Refresh")]

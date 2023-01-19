@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Reflection;
 using System.Reflection.Emit;
 using HarmonyLib;
-using ProjectGenesis.Compatibility;
+using ProjectGenesis.Compatibility.BlueprintTweaks;
 using ProjectGenesis.Utils;
 
 // ReSharper disable InconsistentNaming
 
-namespace ProjectGenesis.Patches
+namespace ProjectGenesis.Patches.Logic
 {
     public static class PlanetGasPatches
     {
@@ -95,7 +95,7 @@ namespace ProjectGenesis.Patches
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> BuildTool_Blueprint_DetermineActive_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
-            if (BlueprintTweaksCompatibilityPatch.BlueprintTweaksInstalled) return instructions;
+            if (BlueprintTweaksCompatibilityPlugin.BlueprintTweaksInstalled) return instructions;
 
             var matcher = new CodeMatcher(instructions).MatchForward(true, new CodeMatch(OpCodes.Ldarg_0),
                                                                      new CodeMatch(OpCodes.Ldfld,
@@ -120,7 +120,7 @@ namespace ProjectGenesis.Patches
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> PlayerController_OpenBlueprintMode_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
-            if (BlueprintTweaksCompatibilityPatch.BlueprintTweaksInstalled) return instructions;
+            if (BlueprintTweaksCompatibilityPlugin.BlueprintTweaksInstalled) return instructions;
 
             var matcher = new CodeMatcher(instructions).MatchForward(true, new CodeMatch(OpCodes.Ldarg_0),
                                                                      new CodeMatch(OpCodes.Ldfld,

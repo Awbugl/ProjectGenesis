@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 // ReSharper disable InconsistentNaming
 
-namespace ProjectGenesis.Patches
+namespace ProjectGenesis.Patches.UI
 {
     public static class UpdateLogoPatches
     {

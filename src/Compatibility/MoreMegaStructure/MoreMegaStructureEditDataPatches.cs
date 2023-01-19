@@ -1,11 +1,10 @@
 ﻿using HarmonyLib;
-using ProjectGenesis.Compatibility;
 using ProjectGenesis.Utils;
 using xiaoye97;
 
 // ReSharper disable LoopCanBePartlyConvertedToQuery
 
-namespace ProjectGenesis.Patches
+namespace ProjectGenesis.Compatibility.MoreMegaStructure
 {
     internal static class MoreMegaStructureEditDataPatches
     {

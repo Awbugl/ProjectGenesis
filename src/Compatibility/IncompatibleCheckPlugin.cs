@@ -1,8 +1,12 @@
 ﻿using System.Collections.Generic;
 using BepInEx;
 using HarmonyLib;
+using ProjectGenesis.Compatibility.BlueprintTweaks;
+using ProjectGenesis.Compatibility.Bottleneck;
+using ProjectGenesis.Compatibility.MoreMegaStructure;
+using ProjectGenesis.Patches.UI;
 
-namespace ProjectGenesis.Patches
+namespace ProjectGenesis.Compatibility
 {
     /// <summary>
     ///     special thanks for https://github.com/kremnev8/DSP-Mods/blob/master/Mods/BlueprintTweaks/InstallationChecker.cs
@@ -15,7 +19,10 @@ namespace ProjectGenesis.Patches
     [BepInPlugin(MODGUID, MODNAME, VERSION)]
     [BepInDependency(GalacticScaleGUID, BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency(DSPBattleGUID, BepInDependency.DependencyFlags.SoftDependency)]
-    public class IncompatibleCheckPatch : BaseUnityPlugin
+    [BepInDependency(BlueprintTweaksCompatibilityPlugin.MODGUID, BepInDependency.DependencyFlags.SoftDependency)]
+    [BepInDependency(BottleneckCompatibilityPlugin.MODGUID, BepInDependency.DependencyFlags.SoftDependency)]
+    [BepInDependency(MoreMegaStructureCompatibilityPlugin.MODGUID, BepInDependency.DependencyFlags.SoftDependency)]
+    public class IncompatibleCheckPlugin : BaseUnityPlugin
     {
         public const string MODGUID = "org.LoShin.GenesisBook.IncompatibleCheckPatch";
         public const string MODNAME = "GenesisBook.IncompatibleCheckPatch";

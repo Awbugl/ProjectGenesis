@@ -9,7 +9,7 @@ using UnityEngine;
 // ReSharper disable RedundantAssignment
 // ReSharper disable InconsistentNaming
 
-namespace ProjectGenesis.Patches
+namespace ProjectGenesis.Patches.UI
 {
     public static class UISignalPickerPatches
     {

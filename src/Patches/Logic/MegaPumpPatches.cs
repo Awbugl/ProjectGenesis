@@ -3,7 +3,7 @@ using System.Reflection.Emit;
 using HarmonyLib;
 using ProjectGenesis.Utils;
 
-namespace ProjectGenesis.Patches
+namespace ProjectGenesis.Patches.Logic
 {
     public static class MegaPumpPatches
     {

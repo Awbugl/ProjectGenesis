@@ -5,9 +5,9 @@ using UnityEngine;
 
 // ReSharper disable InconsistentNaming
 
-namespace ProjectGenesis.Patches
+namespace ProjectGenesis.Patches.UI.DisplayTextPatches
 {
-    internal static class DisplayedTextPatches
+    internal static class DisplayTextPatches
     {
         [HarmonyPostfix]
         [HarmonyPatch(typeof(RecipeProto), "madeFromString", MethodType.Getter)]

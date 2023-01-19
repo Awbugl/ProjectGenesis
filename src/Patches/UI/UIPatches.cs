@@ -1,5 +1,4 @@
 using System;
-using System.Text;
 using HarmonyLib;
 using ProjectGenesis.Utils;
 using UnityEngine;
@@ -7,7 +6,7 @@ using ERecipeType_1 = ERecipeType;
 
 // ReSharper disable InconsistentNaming
 
-namespace ProjectGenesis.Patches
+namespace ProjectGenesis.Patches.UI
 {
     internal static class UIPatches
     {
@@ -16,9 +15,7 @@ namespace ProjectGenesis.Patches
         public static void ItemProto_GetPropValue(
             ref ItemProto __instance,
             ref string __result,
-            int index,
-            StringBuilder sb,
-            int incLevel)
+            int index)
         {
             if (GameMain.history.TechUnlocked(ProtoIDUsedByPatches.T化工技术革新) && __instance.Type == EItemType.Production)
             {

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using ProjectGenesis.Patches;
+using ProjectGenesis.Patches.Logic.MegaAssembler;
 using UnityEngine;
 using ERecipeType_1 = ERecipeType;
 

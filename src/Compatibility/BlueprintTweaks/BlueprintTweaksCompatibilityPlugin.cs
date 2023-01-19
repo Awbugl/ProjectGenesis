@@ -5,11 +5,11 @@
 // ReSharper disable MemberCanBePrivate.Global
 // ReSharper disable ClassNeverInstantiated.Global
 
-namespace ProjectGenesis.Compatibility
+namespace ProjectGenesis.Compatibility.BlueprintTweaks
 {
     [BepInPlugin(MODGUID, MODNAME, VERSION)]
     [BepInDependency(BlueprintTweaksGUID)]
-    public class BlueprintTweaksCompatibilityPatch : BaseUnityPlugin
+    public class BlueprintTweaksCompatibilityPlugin : BaseUnityPlugin
     {
         public const string MODGUID = "org.LoShin.GenesisBook.BlueprintTweaksCompatibilityPatch";
         public const string MODNAME = "GenesisBook.BlueprintTweaksCompatibilityPatch";

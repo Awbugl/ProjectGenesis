@@ -1,11 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.Reflection.Emit;
 using HarmonyLib;
+using ProjectGenesis.Patches.Logic.MegaAssembler;
 using ProjectGenesis.Utils;
 
 // ReSharper disable InconsistentNaming
 
-namespace ProjectGenesis.Patches
+namespace ProjectGenesis.Patches.Logic
 {
     public static class ProductionPatches
     {

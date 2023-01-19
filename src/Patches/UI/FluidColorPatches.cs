@@ -3,7 +3,7 @@ using static ProjectGenesis.Utils.IconDescUtils;
 
 // ReSharper disable InconsistentNaming
 
-namespace ProjectGenesis.Patches
+namespace ProjectGenesis.Patches.UI
 {
     internal static class FluidColorPatches
     {

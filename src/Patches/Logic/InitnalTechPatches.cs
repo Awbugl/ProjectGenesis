@@ -5,7 +5,7 @@ using HarmonyLib;
 
 // ReSharper disable InconsistentNaming
 
-namespace ProjectGenesis.Patches
+namespace ProjectGenesis.Patches.Logic
 {
     public static class InitnalTechPatches
     {

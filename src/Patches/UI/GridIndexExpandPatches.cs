@@ -14,7 +14,7 @@ using Object = UnityEngine.Object;
 // ReSharper disable ForCanBeConvertedToForeach
 // ReSharper disable once CommentTypo
 
-namespace ProjectGenesis.Patches
+namespace ProjectGenesis.Patches.UI
 {
     /// <summary>
     ///     special thanks for https://github.com/appuns/DSPMoreRecipes/blob/main/DSPMoreRecipes.cs

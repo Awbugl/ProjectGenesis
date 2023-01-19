@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using NebulaAPI;
-using ProjectGenesis.Patches;
+using ProjectGenesis.Patches.Logic.MegaAssembler;
 
 // ReSharper disable MemberCanBeInternal
 // ReSharper disable MemberCanBePrivate.Global

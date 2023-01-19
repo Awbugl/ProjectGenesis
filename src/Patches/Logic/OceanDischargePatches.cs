@@ -3,7 +3,7 @@ using ProjectGenesis.Utils;
 
 // ReSharper disable InconsistentNaming
 
-namespace ProjectGenesis.Patches
+namespace ProjectGenesis.Patches.Logic
 {
     internal static class OceanDischargePatches
     {
