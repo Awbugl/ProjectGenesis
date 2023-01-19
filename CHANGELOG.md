@@ -1,10 +1,21 @@
+- v2.4.8
+  + 添加 `Bottleneck` mod 兼容补丁
+  + 添加配置文件，允许设置`大气排污`科技是否出现在科技树中
+  + 修复了部分文案问题
+
+  + Compatible with `Bottleneck` mod
+  + Add config file, allow to set whether Add `AtmosphericEmission` tech in tech tree
+  + Fix a typo
+
+
+<details>
+  <summary>点击展开日志 | Click to view all </summary>
+
 - v2.4.7
   + 修复了未安装巨构MOD时的启动红字问题
 
   + Fix the problem when starting without MoreMegaStructure mod
 
-<details>
-  <summary>点击展开日志 | Click to view all </summary>
 
 - v2.4.6
   + 大幅提高了电解水配方的耗电量
