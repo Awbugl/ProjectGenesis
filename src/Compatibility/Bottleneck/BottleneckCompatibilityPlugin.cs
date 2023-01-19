@@ -29,11 +29,7 @@ namespace ProjectGenesis.Compatibility.Bottleneck
             if (pluginInfo == null) return;
 
             var assembly = pluginInfo.Instance.GetType().Assembly;
-
             var harmony = new Harmony(MODGUID);
-
-            harmony.PatchAll(Assembly.GetExecutingAssembly());
-
             harmony.Patch(AccessTools.Method(assembly.GetType("Bottleneck.Stats.ResearchTechHelper"), "GetMaxIncIndex"),
                           new HarmonyMethod(typeof(BottleneckCompatibilityPlugin), nameof(GetMaxIncIndex_Prefix)));
         }

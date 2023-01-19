@@ -107,7 +107,8 @@ namespace ProjectGenesis
 
             foreach (var type in executingAssembly.GetTypes())
             {
-                if (type == typeof(MoreMegaStructureEditDataPatches) || type == typeof(UIMainMenuPatches)) continue;
+                if (type == typeof(MoreMegaStructureEditDataPatches)) continue;
+                if (type == typeof(UIMainMenuPatches)) continue;
                 Harmony.PatchAll(type);
             }
 
