@@ -59,15 +59,15 @@ namespace ProjectGenesis.Patches.Logic
 
             if (fuelNeeds[0] == _fuelNeed && !window.factory.planet.gasItems.Contains(ProtoIDUsedByPatches.I氧))
             {
-                if (window.player.inhandItemId > 0 && window.player.inhandItemCount > 0)
-                {
-                    if (window.player.inhandItemId == 1000) return null;
+                var playerInhandItemId = window.player.inhandItemId;
 
-                    if (FuelRods.Contains(window.player.inhandItemId))
-                    {
-                        return FuelRods;
-                    }
-                    else
+                if (playerInhandItemId > 0 && window.player.inhandItemCount > 0)
+                {
+                    if (playerInhandItemId == 1000) return null;
+
+                    if (FuelRods.Contains(playerInhandItemId)) return FuelRods;
+
+                    if (fuelNeeds.Contains(playerInhandItemId))
                     {
                         UIRealtimeTip.Popup("需要氧气".TranslateFromJson());
                         return null;
@@ -82,12 +82,7 @@ namespace ProjectGenesis.Patches.Logic
         {
             if (_fuelNeed == 0) _fuelNeed = ItemProto.fuelNeeds[1][0];
 
-            if (fuelNeeds[0] == _fuelNeed && !factory.planet.gasItems.Contains(ProtoIDUsedByPatches.I氧))
-            {
-                return FuelRods;
-            }
-
-            return fuelNeeds;
+            return fuelNeeds[0] == _fuelNeed && !factory.planet.gasItems.Contains(ProtoIDUsedByPatches.I氧) ? FuelRods : fuelNeeds;
         }
     }
 }

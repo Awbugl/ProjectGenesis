@@ -12,7 +12,7 @@ namespace ProjectGenesis.Utils
 {
     internal static class JsonDataUtils
     {
-        internal static void ImportJson(int[] tableID)
+        internal static void ImportJson(int[] tableID, bool enableAtmosphericEmission)
         {
             #region StringProto
 
@@ -36,6 +36,8 @@ namespace ProjectGenesis.Utils
 
             foreach (var techjson in JsonHelper.TechProtos())
             {
+                if (!enableAtmosphericEmission && techjson.ID == ProtoIDUsedByPatches.T大气排污) continue;
+
                 var proto = LDB.techs.Exist(techjson.ID) ? LDB.techs.Select(techjson.ID) : templateTech.Copy();
                 proto.ID = techjson.ID;
                 proto.Name = techjson.Name;

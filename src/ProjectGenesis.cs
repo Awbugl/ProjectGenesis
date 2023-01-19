@@ -2,6 +2,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using BepInEx;
+using BepInEx.Configuration;
 using BepInEx.Logging;
 using CommonAPI;
 using CommonAPI.Systems;
@@ -9,7 +10,9 @@ using crecheng.DSPModSave;
 using HarmonyLib;
 using NebulaAPI;
 using ProjectGenesis.Compatibility;
-using ProjectGenesis.Patches;
+using ProjectGenesis.Compatibility.MoreMegaStructure;
+using ProjectGenesis.Patches.Logic.MegaAssembler;
+using ProjectGenesis.Patches.UI;
 using ProjectGenesis.Utils;
 using xiaoye97;
 using ERecipeType_1 = ERecipeType;
@@ -23,9 +26,10 @@ using static ProjectGenesis.Utils.PlanetThemeUtils;
 // ReSharper disable UnusedVariable
 // ReSharper disable UnusedMember.Local
 // ReSharper disable InconsistentNaming
-// ReSharper disable ClassNeverInstantiated.Global
 // ReSharper disable MemberCanBeInternal
 // ReSharper disable MemberCanBePrivate.Global
+// ReSharper disable ClassNeverInstantiated.Global
+// ReSharper disable LoopCanBePartlyConvertedToQuery
 
 namespace ProjectGenesis
 {
@@ -34,8 +38,7 @@ namespace ProjectGenesis
     [BepInDependency(CommonAPIPlugin.GUID)]
     [BepInDependency(LDBToolPlugin.MODGUID)]
     [BepInDependency(NebulaModAPI.API_GUID)]
-    [BepInDependency(IncompatibleCheckPatch.MODGUID, BepInDependency.DependencyFlags.SoftDependency)]
-    [BepInDependency(BlueprintTweaksCompatibilityPatch.MODGUID, BepInDependency.DependencyFlags.SoftDependency)]
+    [BepInDependency(IncompatibleCheckPlugin.MODGUID, BepInDependency.DependencyFlags.SoftDependency)]
     [CommonAPISubmoduleDependency(nameof(ProtoRegistry), nameof(CustomDescSystem), nameof(TabSystem), nameof(AssemblerRecipeSystem))]
     public class ProjectGenesis : BaseUnityPlugin, IModCanSave, IMultiplayerModWithSettings
     {
@@ -53,22 +56,29 @@ namespace ProjectGenesis
         private int[] TableID;
         private Harmony Harmony;
 
+        internal static ConfigEntry<bool> EnableAtmosphericEmission;
+
         public void Awake()
         {
             logger = Logger;
             logger.Log(LogLevel.Info, "GenesisBook Awake");
 
-            if (IncompatibleCheckPatch.GalacticScaleInstalled)
+            if (IncompatibleCheckPlugin.GalacticScaleInstalled)
             {
                 logger.Log(LogLevel.Error, "Galactic Scale is installed, which is incompatible with GenesisBook. Load Cancelled.");
                 return;
             }
 
-            if (IncompatibleCheckPatch.DSPBattleInstalled)
+            if (IncompatibleCheckPlugin.DSPBattleInstalled)
             {
                 logger.Log(LogLevel.Error, "They Come From Void is installed, which is incompatible with GenesisBook. Load Cancelled.");
                 return;
             }
+
+            var configdesc = "Add Atmospheric Emission tech in game\n是否添加大气排污科技，将其修改为 false 则游戏内不会出现此科技";
+
+            EnableAtmosphericEmission = Config.Bind("config", "EnableAtmosphericEmission", true, configdesc);
+            Config.Save();
 
             var executingAssembly = Assembly.GetExecutingAssembly();
 
@@ -116,7 +126,7 @@ namespace ProjectGenesis
 
             AdjustPlanetThemeDataVanilla();
             AddCopiedModelProto();
-            ImportJson(TableID);
+            ImportJson(TableID, EnableAtmosphericEmission.Value);
         }
 
         private void PostAddDataAction()
