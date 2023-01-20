@@ -1,6 +1,6 @@
 - v2.4.9
   + 添加 `GalacticScale` mod 部分兼容补丁
-  + 修复了 `v2.4.6`版本导致的建筑工作时耗电量不正确的问题
+  + 修复了`v2.4.6`版本导致的建筑工作时耗电量不正确的问题
 
   + Add compatibility patch for `GalacticScale` mod
   + Fix the problem that the power consumption of working assemblers since `v2.4.6`
