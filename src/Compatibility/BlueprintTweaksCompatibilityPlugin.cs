@@ -5,7 +5,7 @@
 // ReSharper disable MemberCanBePrivate.Global
 // ReSharper disable ClassNeverInstantiated.Global
 
-namespace ProjectGenesis.Compatibility.BlueprintTweaks
+namespace ProjectGenesis.Compatibility
 {
     [BepInPlugin(MODGUID, MODNAME, VERSION)]
     [BepInDependency(BlueprintTweaksGUID)]

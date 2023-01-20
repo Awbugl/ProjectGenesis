@@ -10,11 +10,6 @@
     "ENUS": "Message from GenesisBook"
   },
   {
-    "Name": "GalacticScaleInstalled",
-    "ZHCN": "检测到您已安装Galactic Scale mod，与创世之书存在冲突。已取消加载创世之书mod。",
-    "ENUS": "Galactic Scale is installed, GenesisBook is incompatible with it. GenesisBook mod is disabled."
-  },
-  {
     "Name": "DSPBattleInstalled",
     "ZHCN": "检测到您已安装深空来敌mod，与创世之书存在冲突。已取消加载创世之书mod。",
     "ENUS": "They Come From Void is installed, GenesisBook is incompatible with it. GenesisBook mod is disabled."

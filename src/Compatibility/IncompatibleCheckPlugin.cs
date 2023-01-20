@@ -1,10 +1,9 @@
 ﻿using System.Collections.Generic;
+using System.Text;
 using BepInEx;
+using BepInEx.Bootstrap;
 using HarmonyLib;
-using ProjectGenesis.Compatibility.BlueprintTweaks;
-using ProjectGenesis.Compatibility.Bottleneck;
-using ProjectGenesis.Compatibility.MoreMegaStructure;
-using ProjectGenesis.Patches.UI;
+using ProjectGenesis.Utils;
 
 namespace ProjectGenesis.Compatibility
 {
@@ -17,27 +16,45 @@ namespace ProjectGenesis.Compatibility
     // ReSharper disable MemberCanBePrivate.Global
     // ReSharper disable ClassNeverInstantiated.Global
     [BepInPlugin(MODGUID, MODNAME, VERSION)]
-    [BepInDependency(GalacticScaleGUID, BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency(DSPBattleGUID, BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency(BlueprintTweaksCompatibilityPlugin.MODGUID, BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency(BottleneckCompatibilityPlugin.MODGUID, BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency(MoreMegaStructureCompatibilityPlugin.MODGUID, BepInDependency.DependencyFlags.SoftDependency)]
+    [BepInDependency(GalacticScaleCompatibilityPlugin.MODGUID, BepInDependency.DependencyFlags.SoftDependency)]
     public class IncompatibleCheckPlugin : BaseUnityPlugin
     {
         public const string MODGUID = "org.LoShin.GenesisBook.IncompatibleCheckPatch";
         public const string MODNAME = "GenesisBook.IncompatibleCheckPatch";
         public const string VERSION = "1.0.0";
 
-        private const string GalacticScaleGUID = "dsp.galactic-scale.2", DSPBattleGUID = "com.ckcz123.DSP_Battle";
+        private const string DSPBattleGUID = "com.ckcz123.DSP_Battle";
 
-        internal static bool GalacticScaleInstalled, DSPBattleInstalled;
+        internal static bool DSPBattleInstalled;
 
         public void Awake()
         {
-            Dictionary<string, PluginInfo> pluginInfos = BepInEx.Bootstrap.Chainloader.PluginInfos;
-            GalacticScaleInstalled = pluginInfos.ContainsKey(GalacticScaleGUID);
+            Dictionary<string, PluginInfo> pluginInfos = Chainloader.PluginInfos;
             DSPBattleInstalled = pluginInfos.ContainsKey(DSPBattleGUID);
-            Harmony.CreateAndPatchAll(typeof(UIMainMenuPatches));
+
+            new Harmony(MODGUID).Patch(AccessTools.Method(typeof(VFPreload), "InvokeOnLoadWorkEnded"), null,
+                                       new HarmonyMethod(typeof(IncompatibleCheckPlugin), nameof(OnMainMenuOpen)));
+        }
+
+        private static bool _shown;
+
+        public static void OnMainMenuOpen()
+        {
+            if (_shown) return;
+
+            var sb = new StringBuilder();
+
+            if (DSPBattleInstalled) sb.AppendLine("DSPBattleInstalled".TranslateFromJson());
+
+            sb.AppendLine("GenesisBookLoadMessage".TranslateFromJson());
+
+            UIMessageBox.Show("GenesisBookLoadTitle".TranslateFromJson(), sb.ToString(), "Ok".TranslateFromJson(), UIMessageBox.INFO);
+
+            _shown = true;
         }
     }
 }

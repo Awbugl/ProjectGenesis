@@ -1,3 +1,13 @@
+- v2.4.9
+  + 添加 `GalacticScale` mod 部分兼容补丁
+  + 修复了 `v2.4.6`版本导致的建筑工作时耗电量不正确的问题
+
+  + Add compatibility patch for `GalacticScale` mod
+  + Fix the problem that the power consumption of working assemblers since `v2.4.6`
+
+<details>
+  <summary>点击展开日志 | Click to view all </summary>
+
 - v2.4.8
   + 添加 `Bottleneck` mod 兼容补丁
   + 添加配置文件，允许设置`大气排污`科技是否出现在科技树中
@@ -7,9 +17,6 @@
   + Add config file, allow to set whether Add `AtmosphericEmission` tech in tech tree
   + Fix a typo
 
-
-<details>
-  <summary>点击展开日志 | Click to view all </summary>
 
 - v2.4.7
   + 修复了未安装巨构MOD时的启动红字问题

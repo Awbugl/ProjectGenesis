@@ -10,9 +10,7 @@ using crecheng.DSPModSave;
 using HarmonyLib;
 using NebulaAPI;
 using ProjectGenesis.Compatibility;
-using ProjectGenesis.Compatibility.MoreMegaStructure;
 using ProjectGenesis.Patches.Logic.MegaAssembler;
-using ProjectGenesis.Patches.UI;
 using ProjectGenesis.Utils;
 using xiaoye97;
 using ERecipeType_1 = ERecipeType;
@@ -44,7 +42,7 @@ namespace ProjectGenesis
     {
         public const string MODGUID = "org.LoShin.GenesisBook";
         public const string MODNAME = "GenesisBook";
-        public const string VERSION = "2.4.8";
+        public const string VERSION = "2.4.9";
 
         public string Version => VERSION;
 
@@ -62,12 +60,6 @@ namespace ProjectGenesis
         {
             logger = Logger;
             logger.Log(LogLevel.Info, "GenesisBook Awake");
-
-            if (IncompatibleCheckPlugin.GalacticScaleInstalled)
-            {
-                logger.Log(LogLevel.Error, "Galactic Scale is installed, which is incompatible with GenesisBook. Load Cancelled.");
-                return;
-            }
 
             if (IncompatibleCheckPlugin.DSPBattleInstalled)
             {
@@ -105,12 +97,7 @@ namespace ProjectGenesis
 
             Harmony = new Harmony(MODGUID);
 
-            foreach (var type in executingAssembly.GetTypes())
-            {
-                if (type == typeof(MoreMegaStructureEditDataPatches)) continue;
-                if (type == typeof(UIMainMenuPatches)) continue;
-                Harmony.PatchAll(type);
-            }
+            foreach (var type in executingAssembly.GetTypes()) Harmony.PatchAll(type);
 
             LDBTool.PreAddDataAction += PreAddDataAction;
             LDBTool.PostAddDataAction += PostAddDataAction;

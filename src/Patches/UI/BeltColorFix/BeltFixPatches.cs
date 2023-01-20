@@ -41,7 +41,6 @@ namespace ProjectGenesis.Patches.UI.BeltColorFix
                         return other;
                     })).Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Stloc_S, arg)).SetInstruction(new CodeInstruction(OpCodes.Br, label));
 
-
             return matcher.InstructionEnumeration();
         }
 
@@ -53,7 +52,7 @@ namespace ProjectGenesis.Patches.UI.BeltColorFix
                                                                      new CodeMatch(OpCodes.Ldfld, BeltComponent_Speed_Field),
                                                                      new CodeMatch(OpCodes.Call));
 
-            matcher.Advance(2).InsertAndAdvance(Transpilers.EmitDelegate<Func<int, int>>((speed) =>
+            matcher.Advance(2).InsertAndAdvance(Transpilers.EmitDelegate<Func<int, int>>(speed =>
             {
                 switch (speed)
                 {

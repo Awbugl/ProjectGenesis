@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Reflection.Emit;
 using HarmonyLib;
-using ProjectGenesis.Patches.Logic.MegaAssembler;
 using ProjectGenesis.Utils;
 
 // ReSharper disable InconsistentNaming
@@ -10,17 +9,25 @@ namespace ProjectGenesis.Patches.Logic
 {
     public static class ProductionPatches
     {
-        private static readonly long workEnergyPerTick_Original = 12000, workEnergyPerTick_MegaOriginal = 500000;
-
-        [HarmonyPatch(typeof(AssemblerComponent), "SetPCState")]
-        [HarmonyPrefix]
-        public static void AssemblerComponent_SetPCState_Prefix(AssemblerComponent __instance, PowerConsumerComponent[] pcPool)
+        [HarmonyPatch(typeof(FactorySystem), "GameTickBeforePower")]
+        [HarmonyPatch(typeof(FactorySystem), "ParallelGameTickBeforePower")]
+        [HarmonyTranspiler]
+        public static IEnumerable<CodeInstruction> FactorySystem_GameTickBeforePower_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
-            var workEnergyPerTick = __instance.speed < MegaAssemblerPatches.MegaAssemblerSpeed
-                                        ? workEnergyPerTick_Original
-                                        : workEnergyPerTick_MegaOriginal;
+            var matcher = new CodeMatcher(instructions);
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Call, AccessTools.Method(typeof(AssemblerComponent), "SetPCState")));
+            matcher.MatchBack(false, new CodeMatch(OpCodes.Ldarg_0), new CodeMatch(OpCodes.Ldfld));
+            matcher.InsertAndAdvance(matcher.InstructionsWithOffsets(0, 4));
+            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0));
+            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(ProductionPatches), nameof(GetWorkEnergyPerTick))));
+            return matcher.InstructionEnumeration();
+        }
 
-            pcPool[__instance.pcId].workEnergyPerTick = __instance.recipeId == ProtoIDUsedByPatches.R水电解 ? workEnergyPerTick * 10 : workEnergyPerTick;
+        public static void GetWorkEnergyPerTick(ref AssemblerComponent assembler, PowerConsumerComponent[] pcPool, FactorySystem system)
+        {
+            var modelIndex = system.factory.entityPool[assembler.entityId].modelIndex;
+            var workEnergyPerTick = LDB.models.Select(modelIndex).prefabDesc.workEnergyPerTick;
+            pcPool[assembler.pcId].workEnergyPerTick = assembler.recipeId == ProtoIDUsedByPatches.R水电解 ? workEnergyPerTick * 10 : workEnergyPerTick;
         }
 
         [HarmonyPatch(typeof(AssemblerComponent), "InternalUpdate")]

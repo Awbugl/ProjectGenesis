@@ -9,7 +9,7 @@ using ProjectGenesis.Utils;
 // ReSharper disable MemberCanBePrivate.Global
 // ReSharper disable ClassNeverInstantiated.Global
 
-namespace ProjectGenesis.Compatibility.Bottleneck
+namespace ProjectGenesis.Compatibility
 {
     [BepInPlugin(MODGUID, MODNAME, VERSION)]
     [BepInDependency(BottleneckGUID)]
@@ -28,11 +28,10 @@ namespace ProjectGenesis.Compatibility.Bottleneck
             if (pluginInfo == null) return;
 
             var assembly = pluginInfo.Instance.GetType().Assembly;
-            var harmony = new Harmony(MODGUID);
-            harmony.Patch(AccessTools.Method(assembly.GetType("Bottleneck.Stats.ResearchTechHelper"), "GetMaxIncIndex"),
-                          new HarmonyMethod(typeof(BottleneckCompatibilityPlugin), nameof(GetMaxIncIndex_Prefix)));
+            new Harmony(MODGUID).Patch(AccessTools.Method(assembly.GetType("Bottleneck.Stats.ResearchTechHelper"), "GetMaxIncIndex"),
+                                       new HarmonyMethod(typeof(BottleneckCompatibilityPlugin), nameof(GetMaxIncIndex_Prefix)));
         }
-        
+
         public static bool GetMaxIncIndex_Prefix(ref int __result)
         {
             __result = GameMain.history.techStates[ProtoIDUsedByPatches.T物品增产].unlocked ? 4 : 0;

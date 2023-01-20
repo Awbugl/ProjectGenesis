@@ -9,7 +9,7 @@ namespace ProjectGenesis.Patches.Logic
 {
     public static class InitnalTechPatches
     {
-        private static readonly List<int> InitnalTechs = new List<int>()
+        private static readonly List<int> InitnalTechs = new List<int>
                                                          {
                                                              1,
                                                              1001,
@@ -32,7 +32,7 @@ namespace ProjectGenesis.Patches.Logic
         public static void Import(GameData __instance)
         {
             // ReSharper disable ForeachCanBePartlyConvertedToQueryUsingAnotherGetEnumerator
-            
+
             foreach (var tech in InitnalTechs)
             {
                 if (!__instance.history.TechUnlocked(tech)) __instance.history.UnlockTech(tech);

@@ -28,8 +28,6 @@ or open a issue via [github](https://github.com/Awbugl/ProjectGenesis).
 ### 不兼容的MOD | Incompatible MODs
 
 + [TheyComeFromVoid](https://dsp.thunderstore.io/package/ckcz123/TheyComeFromVoid/)
-+ [GalacticScale](https://dsp.thunderstore.io/package/Galactic_Scale/GalacticScale)
-
 
 - 加载以上MOD时，不会加载本MOD。
 - When loading the above MOD, this MOD will not be loaded.

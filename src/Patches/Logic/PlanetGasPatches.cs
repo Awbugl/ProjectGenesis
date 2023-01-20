@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using System.Reflection.Emit;
 using HarmonyLib;
-using ProjectGenesis.Compatibility.BlueprintTweaks;
+using ProjectGenesis.Compatibility;
 using ProjectGenesis.Utils;
 
 // ReSharper disable InconsistentNaming

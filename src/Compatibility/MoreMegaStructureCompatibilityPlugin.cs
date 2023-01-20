@@ -1,29 +1,49 @@
-﻿using HarmonyLib;
+﻿using BepInEx;
+using HarmonyLib;
 using ProjectGenesis.Utils;
 using xiaoye97;
 
+// ReSharper disable InconsistentNaming
+// ReSharper disable MemberCanBeInternal
+// ReSharper disable MemberCanBePrivate.Global
+// ReSharper disable ClassNeverInstantiated.Global
 // ReSharper disable LoopCanBePartlyConvertedToQuery
 
-namespace ProjectGenesis.Compatibility.MoreMegaStructure
+namespace ProjectGenesis.Compatibility
 {
-    internal static class MoreMegaStructureEditDataPatches
+    [BepInPlugin(MODGUID, MODNAME, VERSION)]
+    [BepInDependency(MoreMegaStructureGUID)]
+    public class MoreMegaStructureCompatibilityPlugin : BaseUnityPlugin
     {
-        private static readonly int[] AddedRecipes = new[]
-                                                     {
-                                                         330, 331, 332, 333, 334, 335, 336, 337, 350, 338, 339, 340, 341, 342, 554, 351, 556, 558,
-                                                         562, 559, 561, 553, 560, 557, 555, 552, 376, 377, 378, 379, 380, 381, 343, 344, 345, 346,
-                                                         347, 348, 349, 363, 364, 375
-                                                     };
+        public const string MODGUID = "org.LoShin.GenesisBook.MoreMegaStructureCompatibilityPatch";
+        public const string MODNAME = "GenesisBook.MoreMegaStructureCompatibilityPatch";
+        public const string VERSION = "1.0.0";
 
-        private static readonly int[] AddedItems = new[]
-                                                   {
-                                                       9480, 9481, 9482, 9483, 9484, 9485, 9486, 9487, 9488, 9489, 9490, 9491, 9492, 9500, 9493, 9494,
-                                                       9495, 9496, 9497, 9498, 9499, 9501, 9502, 9512
-                                                   };
+        private const string MoreMegaStructureGUID = "Gnimaerd.DSP.plugin.MoreMegaStructure";
 
-        [HarmonyPostfix]
-        [HarmonyAfter(LDBToolPlugin.MODGUID)]
-        [HarmonyPatch(typeof(VFPreload), "InvokeOnLoadWorkEnded")]
+        public void Awake()
+        {
+            var harmonyMethod
+                = new HarmonyMethod(typeof(MoreMegaStructureCompatibilityPlugin), nameof(LDBToolOnPostAddDataAction))
+                  {
+                      after = new[] { LDBToolPlugin.MODGUID }
+                  };
+
+            new Harmony(MODGUID).Patch(AccessTools.Method(typeof(VFPreload), "InvokeOnLoadWorkEnded"), null, harmonyMethod);
+        }
+
+        private static readonly int[] AddedRecipes =
+        {
+            330, 331, 332, 333, 334, 335, 336, 337, 350, 338, 339, 340, 341, 342, 554, 351, 556, 558, 562, 559, 561, 553, 560, 557, 555, 552, 376,
+            377, 378, 379, 380, 381, 343, 344, 345, 346, 347, 348, 349, 363, 364, 375
+        };
+
+        private static readonly int[] AddedItems =
+        {
+            9480, 9481, 9482, 9483, 9484, 9485, 9486, 9487, 9488, 9489, 9490, 9491, 9492, 9500, 9493, 9494, 9495, 9496, 9497, 9498, 9499, 9501,
+            9502, 9512
+        };
+
         public static void LDBToolOnPostAddDataAction()
         {
             foreach (var strings in LDB.strings.dataArray)
@@ -50,6 +70,7 @@ namespace ProjectGenesis.Compatibility.MoreMegaStructure
             foreach (var recipeID in AddedRecipes)
             {
                 var recipeProto = LDB.recipes.Select(recipeID);
+                if (recipeProto == null) continue;
                 recipeProto.Type = (ERecipeType)10;
                 recipeProto.name = recipeProto.Name.Translate();
                 recipeProto.description = recipeProto.Description.Translate();
@@ -75,6 +96,7 @@ namespace ProjectGenesis.Compatibility.MoreMegaStructure
             foreach (var itemID in AddedItems)
             {
                 var itemProto = LDB.items.Select(itemID);
+                if (itemProto == null) continue;
                 itemProto.name = itemProto.Name.Translate();
                 itemProto.description = itemProto.Description.Translate();
             }

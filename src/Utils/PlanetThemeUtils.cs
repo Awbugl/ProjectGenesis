@@ -8,7 +8,7 @@ namespace ProjectGenesis.Utils
 {
     internal static class PlanetThemeUtils
     {
-        private static readonly Dictionary<int, int[]> PlanetGasData = new Dictionary<int, int[]>()
+        private static readonly Dictionary<int, int[]> PlanetGasData = new Dictionary<int, int[]>
                                                                        {
                                                                            { 1, new[] { 6220, 7019 } },
                                                                            { 6, new[] { 6206 } },
@@ -35,12 +35,15 @@ namespace ProjectGenesis.Utils
         {
             LDB.themes.Select(8).WaterItemId = 7018;
 
-            foreach (var theme in LDB.themes.dataArray) AdjustThemeVanilla(theme);
+            foreach (var theme in LDB.themes.dataArray) AdjustTheme(theme);
         }
 
-        private static void AdjustThemeVanilla(ThemeProto theme)
+        internal static void AdjustTheme(ThemeProto theme)
         {
             if (theme.PlanetType == EPlanetType.Gas) return;
+
+            // for GalacticScale mod
+            if (theme.name == "Beach") theme.WaterItemId = 7018;
 
             if (theme.Distribute == EThemeDistribute.Birth)
             {
@@ -48,17 +51,32 @@ namespace ProjectGenesis.Utils
                 theme.RareSettings = new float[] { 1.0f, 0.5f, 0.0f, 0.4f };
             }
 
-            if (PlanetGasData.ContainsKey(theme.ID))
+            if (theme.Wind == 0)
+            {
+                theme.GasItems = Array.Empty<int>();
+                theme.GasSpeeds = Array.Empty<float>();
+            }
+            else if (PlanetGasData.ContainsKey(theme.ID))
             {
                 theme.GasItems = PlanetGasData[theme.ID];
                 theme.GasSpeeds = theme.GasItems.Length == 1
                                       ? new float[] { theme.Wind * 0.7f }
                                       : new float[] { theme.Wind * 0.7f, theme.Wind * 0.18f };
             }
-            else if (theme.Wind == 0 || theme.GasItems == null)
+            else if (theme.GasItems == null || theme.GasItems.Length == 0)
             {
-                theme.GasItems = Array.Empty<int>();
-                theme.GasSpeeds = Array.Empty<float>();
+                switch (theme.PlanetType)
+                {
+                    case EPlanetType.Ocean:
+                        theme.GasItems = new[] { 6220, 7019 };
+                        theme.GasSpeeds = new float[] { theme.Wind * 0.7f, theme.Wind * 0.18f };
+                        break;
+
+                    default:
+                        theme.GasItems = new[] { 6206 };
+                        theme.GasSpeeds = new float[] { theme.Wind * 0.7f };
+                        break;
+                }
             }
 
             AdjustVeins(theme);
@@ -92,7 +110,6 @@ namespace ProjectGenesis.Utils
                 {
                     coal += 1;
                     theme.VeinCount[5] *= 1.25f;
-                    theme.VeinOpacity[5] *= 1.25f;
                 }
             }
         }
