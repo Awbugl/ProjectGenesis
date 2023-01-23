@@ -21,16 +21,16 @@ namespace ProjectGenesis.Patches.Logic
                                                AccessTools.Field(typeof(PowerGeneratorComponent), nameof(PowerGeneratorComponent.fuelMask))),
                                  new CodeMatch(OpCodes.Ldelem_Ref));
 
-            matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Pop));
+            matcher.SetAndAdvance(OpCodes.Nop, null);
 
-            matcher.Advance(4).SetAndAdvance(OpCodes.Ldarg_0, null);
+            matcher.Advance(3).SetAndAdvance(OpCodes.Ldarg_0, null);
 
             matcher.SetAndAdvance(OpCodes.Call, AccessTools.Method(typeof(ThermalPowerGenPatches), nameof(ThermalPowerGen_InsertMethod)));
 
             return matcher.InstructionEnumeration();
         }
 
-        public static int[] ThermalPowerGen_InsertMethod(PowerGeneratorComponent component, PlanetFactory factory)
+        public static int[] ThermalPowerGen_InsertMethod(ref PowerGeneratorComponent component, PlanetFactory factory)
         {
             var componentFuelMask = component.fuelMask;
 
@@ -63,10 +63,9 @@ namespace ProjectGenesis.Patches.Logic
                                                AccessTools.Field(typeof(PowerGeneratorComponent), nameof(PowerGeneratorComponent.fuelMask))),
                                  new CodeMatch(OpCodes.Ldelem_Ref));
 
-            matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Pop));
-
-            matcher.Advance(2).SetAndAdvance(OpCodes.Ldarg_0, null);
-
+            matcher.SetAndAdvance(OpCodes.Nop, null);
+            matcher.SetAndAdvance(OpCodes.Nop, null);
+            matcher.SetAndAdvance(OpCodes.Ldarg_0, null);
             matcher.SetAndAdvance(OpCodes.Call, AccessTools.Method(typeof(ThermalPowerGenPatches), nameof(UIPowerGenerator_InsertMethod)));
 
             return matcher.InstructionEnumeration();
@@ -74,8 +73,10 @@ namespace ProjectGenesis.Patches.Logic
 
         private static readonly int[] FuelRods = { 1801, 6216, 6217, 6218 };
 
-        public static int[] UIPowerGenerator_InsertMethod(PowerGeneratorComponent component, UIPowerGeneratorWindow window)
+        public static int[] UIPowerGenerator_InsertMethod(UIPowerGeneratorWindow window)
         {
+            var component = window.powerSystem.genPool[window.generatorId];
+
             var componentFuelMask = component.fuelMask;
 
             if (componentFuelMask == 5)
