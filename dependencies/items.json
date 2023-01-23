@@ -1376,7 +1376,7 @@
       31,
       40
     ],
-    "FuelType": 6,
+    "FuelType": 16,
     "HeatValue": 400000000,
     "ReactorInc": 1.0,
     "IsFluid": true,
@@ -2694,7 +2694,7 @@
       1,
       40
     ],
-    "FuelType": 6,
+    "FuelType": 16,
     "HeatValue": 2880000000,
     "ReactorInc": 3.0,
     "IsFluid": false,
@@ -6321,7 +6321,7 @@
       1,
       40
     ],
-    "FuelType": 5,
+    "FuelType": 2,
     "HeatValue": 1200000000,
     "ReactorInc": 3.0,
     "IsFluid": false,
@@ -6361,7 +6361,7 @@
       1,
       40
     ],
-    "FuelType": 5,
+    "FuelType": 2,
     "HeatValue": 1200000000,
     "ReactorInc": 3.0,
     "IsFluid": false,
@@ -6401,7 +6401,7 @@
       1,
       40
     ],
-    "FuelType": 6,
+    "FuelType": 16,
     "HeatValue": 3600000000,
     "ReactorInc": 5.0,
     "IsFluid": false,
@@ -6441,7 +6441,7 @@
       1,
       40
     ],
-    "FuelType": 6,
+    "FuelType": 16,
     "HeatValue": 9000000000,
     "ReactorInc": 6.5,
     "IsFluid": false,
@@ -7831,7 +7831,7 @@
       31,
       40
     ],
-    "FuelType": 6,
+    "FuelType": 16,
     "HeatValue": 2400000000,
     "ReactorInc": 1.5,
     "IsFluid": true,

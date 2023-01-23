@@ -52,14 +52,14 @@ namespace ProjectGenesis.Patches.UI.DisplayTextPatches
         public static void ItemProto_fuelTypeString(ref ItemProto __instance, ref string __result)
         {
             var type = __instance.FuelType;
-            
+
             switch (type)
             {
-                case 5:
+                case 2:
                     __result = "裂变能".TranslateFromJson();
                     break;
 
-                case 6:
+                case 16:
                     __result = "聚变能".TranslateFromJson();
                     break;
             }
@@ -81,28 +81,27 @@ namespace ProjectGenesis.Patches.UI.DisplayTextPatches
             {
                 case 4:
                     if (!__instance.prefabDesc.isPowerGen) return;
-                    
+
                     switch (__instance.prefabDesc.fuelMask)
                     {
+                        case 2:
+                            __result = "裂变能".TranslateFromJson();
+                            break;
+
                         case 4:
                             __result = "质能转换".TranslateFromJson();
                             break;
 
-                        case 5:
-                            __result = "裂变能".TranslateFromJson();
-                            break;
-
-                        case 6:
+                        case 16:
                             __result = "仿星器".TranslateFromJson();
                             break;
                     }
 
                     return;
-                
+
                 case 18:
-                    if(__instance.prefabDesc.isCollectStation && __instance.ID == ProtoIDUsedByPatches.I大气采集器)
-                        __result = "行星大气".TranslateFromJson();
-                    
+                    if (__instance.prefabDesc.isCollectStation && __instance.ID == ProtoIDUsedByPatches.I大气采集器) __result = "行星大气".TranslateFromJson();
+
                     return;
             }
         }
@@ -117,10 +116,6 @@ namespace ProjectGenesis.Patches.UI.DisplayTextPatches
                     __result = "海洋排污文字描述".TranslateFromJson();
                     break;
 
-                case ProtoIDUsedByPatches.T任务完成:
-                    if (Localization.isCJK) __result = "欢迎加入创世之书讨论群991895539";
-                    break;
-
                 case ProtoIDUsedByPatches.T化工技术革新:
                     __result = "化工技术革新文字描述".TranslateFromJson();
                     break;
@@ -128,15 +123,14 @@ namespace ProjectGenesis.Patches.UI.DisplayTextPatches
                 case ProtoIDUsedByPatches.T海洋排污2:
                     __result = "海洋排污2文字描述".TranslateFromJson();
                     break;
-                
+
                 case ProtoIDUsedByPatches.T大气排污:
                     __result = "大气排污文字描述".TranslateFromJson();
                     break;
-                
+
                 case ProtoIDUsedByPatches.T巨型建筑工程学:
                     __result = "巨型建筑工程学文字描述".TranslateFromJson();
                     break;
-                
             }
         }
     }
