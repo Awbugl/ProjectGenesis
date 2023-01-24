@@ -13,6 +13,7 @@ using Object = UnityEngine.Object;
 // ReSharper disable LoopCanBePartlyConvertedToQuery
 // ReSharper disable ForCanBeConvertedToForeach
 // ReSharper disable once CommentTypo
+// ReSharper disable PossibleInvalidCastExceptionInForeachLoop
 
 namespace ProjectGenesis.Patches.UI
 {
@@ -38,23 +39,23 @@ namespace ProjectGenesis.Patches.UI
 
         [HarmonyPatch(typeof(VFPreload), "InvokeOnLoadWorkEnded")]
         [HarmonyPostfix]
-        [HarmonyPriority(1)]
+        [HarmonyPriority(Priority.Last)]
         public static void VFPreload_InvokeOnLoadWorkEnded_Postfix()
         {
             if (!_resized2)
             {
                 ref var local1 = ref FieldRefAccess<UIReplicatorWindow, RectTransform>(UIRoot.instance.uiGame.replicator, "windowRect");
-                local1.sizeDelta = new Vector2(local1.sizeDelta.x + 230f, local1.sizeDelta.y);
+                local1.sizeDelta = new Vector2(900, 811);
                 ref var local2 = ref FieldRefAccess<UIReplicatorWindow, RectTransform>(UIRoot.instance.uiGame.replicator, "recipeGroup");
-                local2.sizeDelta = new Vector2(local2.sizeDelta.x + 230f, local2.sizeDelta.y);
+                local2.sizeDelta = new Vector2(782, 322);
                 ref var local3 = ref FieldRefAccess<UIAssemblerWindow, RectTransform>(UIRoot.instance.uiGame.assemblerWindow, "recipeGroup");
-                local3.sizeDelta = new Vector2(local3.sizeDelta.x + 230f, local3.sizeDelta.y);
+                local3.sizeDelta = new Vector2(190, 100);
                 ref var local4 = ref FieldRefAccess<UIRecipePicker, RectTransform>(UIRoot.instance.uiGame.recipePicker, "pickerTrans");
-                local4.sizeDelta = new Vector2(local4.sizeDelta.x + 230f, local4.sizeDelta.y);
+                local4.sizeDelta = new Vector2(830, 476);
                 ref var local5 = ref FieldRefAccess<UIItemPicker, RectTransform>(UIRoot.instance.uiGame.itemPicker, "pickerTrans");
-                local5.sizeDelta = new Vector2(local5.sizeDelta.x + 230f, local5.sizeDelta.y);
+                local5.sizeDelta = new Vector2(830, 476);
                 ref var local6 = ref FieldRefAccess<UISignalPicker, RectTransform>(UIRoot.instance.uiGame.signalPicker, "pickerTrans");
-                local6.sizeDelta = new Vector2(local6.sizeDelta.x + 230f, local6.sizeDelta.y - 92f);
+                local6.sizeDelta = new Vector2(830, 476);
 
                 GameObject.Find("UI Root/Overlay Canvas/In Game/Windows/Replicator Window/queue-group").GetComponentInChildren<RectTransform>()
                           .sizeDelta = new Vector2(782f, 46f);
@@ -64,67 +65,64 @@ namespace ProjectGenesis.Patches.UI
 
         [HarmonyPatch(typeof(UIRecipePicker), "_OnOpen")]
         [HarmonyPostfix]
+        [HarmonyPriority(Priority.Last)]
         public static void UIRecipePicker_OnOpen_Postfix()
         {
             if (_reciperesized) return;
-            // ReSharper disable once PossibleInvalidCastExceptionInForeachLoop
+
             foreach (GameObject gameObject in Object.FindObjectsOfType(typeof(GameObject)))
             {
-                if (gameObject.name.Contains("Recipe"))
-                    foreach (Transform transform in gameObject.transform)
-                    {
-                        if (transform.name.Contains("content"))
-                        {
-                            transform.GetComponent<RectTransform>().sizeDelta
-                                = new Vector2(transform.GetComponent<RectTransform>().sizeDelta.x + 230f,
-                                              transform.GetComponent<RectTransform>().sizeDelta.y);
-                            _reciperesized = true;
-                        }
-                    }
+                if (!gameObject.name.Contains("Recipe")) continue;
+
+                foreach (Transform transform in gameObject.transform)
+                {
+                    if (!transform.name.Contains("content")) continue;
+
+                    transform.GetComponent<RectTransform>().sizeDelta = new Vector2(782, 322);
+                    _reciperesized = true;
+                }
             }
         }
 
         [HarmonyPatch(typeof(UIItemPicker), "_OnOpen")]
         [HarmonyPostfix]
+        [HarmonyPriority(Priority.Last)]
         public static void UIItemPicker_OnOpen_Postfix()
         {
             if (_itemresized) return;
-            // ReSharper disable once PossibleInvalidCastExceptionInForeachLoop
+
             foreach (GameObject gameObject in Object.FindObjectsOfType(typeof(GameObject)))
             {
-                if (gameObject.name.Contains("Item"))
-                    foreach (Transform transform in gameObject.transform)
-                    {
-                        if (transform.name.Contains("content"))
-                        {
-                            transform.GetComponent<RectTransform>().sizeDelta
-                                = new Vector2(transform.GetComponent<RectTransform>().sizeDelta.x + 230f,
-                                              transform.GetComponent<RectTransform>().sizeDelta.y);
-                            _itemresized = true;
-                        }
-                    }
+                if (!gameObject.name.Contains("Item")) continue;
+
+                foreach (Transform transform in gameObject.transform)
+                {
+                    if (!transform.name.Contains("content")) continue;
+
+                    transform.GetComponent<RectTransform>().sizeDelta = new Vector2(782, 322);
+                    _itemresized = true;
+                }
             }
         }
 
         [HarmonyPatch(typeof(UISignalPicker), "_OnOpen")]
         [HarmonyPostfix]
+        [HarmonyPriority(Priority.Last)]
         public static void UISignalPicker_OnOpen_Postfix()
         {
             if (_signalresized) return;
-            // ReSharper disable once PossibleInvalidCastExceptionInForeachLoop
+
             foreach (GameObject gameObject in Object.FindObjectsOfType(typeof(GameObject)))
             {
-                if (gameObject.name.Contains("Signal"))
-                    foreach (Transform transform in gameObject.transform)
-                    {
-                        if (transform.name.Contains("content"))
-                        {
-                            transform.GetComponent<RectTransform>().sizeDelta
-                                = new Vector2(transform.GetComponent<RectTransform>().sizeDelta.x + 230f,
-                                              transform.GetComponent<RectTransform>().sizeDelta.y - 92f);
-                            _signalresized = true;
-                        }
-                    }
+                if (!gameObject.name.Contains("Signal")) continue;
+
+                foreach (Transform transform in gameObject.transform)
+                {
+                    if (!transform.name.Contains("content")) continue;
+
+                    transform.GetComponent<RectTransform>().sizeDelta = new Vector2(782, 322);
+                    _signalresized = true;
+                }
             }
         }
 
@@ -148,6 +146,7 @@ namespace ProjectGenesis.Patches.UI
         [HarmonyPatch(typeof(UISignalPicker), "TestMouseIndex")]
         [HarmonyPatch(typeof(UIShowSignalTipExtension), "OnUpdate")]
         [HarmonyTranspiler]
+        [HarmonyPriority(Priority.Last)]
         public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
         {
             var source = new List<CodeInstruction>(instructions);
@@ -168,6 +167,7 @@ namespace ProjectGenesis.Patches.UI
         [HarmonyPatch(typeof(UIItemPicker), "SetMaterialProps")]
         [HarmonyPatch(typeof(UISignalPicker), "SetMaterialProps")]
         [HarmonyTranspiler]
+        [HarmonyPriority(Priority.Last)]
         public static IEnumerable<CodeInstruction> SetMaterialProps_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
             var source = new List<CodeInstruction>(instructions);
@@ -185,6 +185,7 @@ namespace ProjectGenesis.Patches.UI
 
         [HarmonyPatch(typeof(UIStationStorage), "OnSelectItemButtonClick")]
         [HarmonyTranspiler]
+        [HarmonyPriority(Priority.Last)]
         public static IEnumerable<CodeInstruction> UIStationStorage_OnSelectItemButtonClick_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
             var matcher = new CodeMatcher(instructions);
