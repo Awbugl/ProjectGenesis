@@ -110,6 +110,7 @@
         <Compile Include="src\Patches\Logic\ModelLoadingPatches.cs" />
         <Compile Include="src\Patches\Logic\MultiProductionPatches.cs" />
         <Compile Include="src\Patches\Logic\OceanDischargePatches.cs" />
+        <Compile Include="src\Patches\Logic\PlanetBase\PlanetBasePatches.cs" />
         <Compile Include="src\Patches\Logic\PlanetGasPatches.cs" />
         <Compile Include="src\Patches\Logic\ProductionPatches.cs" />
         <Compile Include="src\Patches\Logic\ThermalPowerGenPatches.cs" />
@@ -119,6 +120,10 @@
         <Compile Include="src\Patches\UI\FluidColorPatches.cs" />
         <Compile Include="src\Patches\UI\GridIndexExpandPatches.cs" />
         <Compile Include="src\Patches\UI\UIPatches.cs" />
+        <Compile Include="src\Patches\UI\UIPlanetBase\MyWindowCtl.cs" />
+        <Compile Include="src\Patches\UI\UIPlanetBase\UIPlanetBaseWindow.cs" />
+        <Compile Include="src\Patches\UI\UIPlanetBase\UIPlanetDetailExpand.cs" />
+        <Compile Include="src\Patches\UI\UIPlanetBase\Util.cs" />
         <Compile Include="src\Patches\UI\UISignalPickerPatches.cs" />
         <Compile Include="src\Patches\UI\UpdateLogoPatches.cs" />
         <Compile Include="src\ProjectGenesis.cs" />

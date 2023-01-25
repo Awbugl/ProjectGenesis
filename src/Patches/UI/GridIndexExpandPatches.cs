@@ -6,7 +6,6 @@ using CommonAPI.Systems.UI;
 using HarmonyLib;
 using UnityEngine;
 using UnityEngine.UI;
-using Object = UnityEngine.Object;
 
 // ReSharper disable InconsistentNaming
 // ReSharper disable CompareOfFloatsByEqualityOperator
@@ -22,8 +21,6 @@ namespace ProjectGenesis.Patches.UI
     /// </summary>
     internal static class GridIndexExpandPatches
     {
-        private static bool _itemresized, _reciperesized, _signalresized, _resized2;
-
         private static ref TU FieldRefAccess<T, TU>(T instance, string fieldName) => ref FieldRefAccess<T, TU>(fieldName)(instance);
 
         private static AccessTools.FieldRef<T, TU> FieldRefAccess<T, TU>(string fieldName)
@@ -42,89 +39,30 @@ namespace ProjectGenesis.Patches.UI
         [HarmonyPriority(Priority.Last)]
         public static void VFPreload_InvokeOnLoadWorkEnded_Postfix()
         {
-            if (!_resized2)
-            {
-                ref var local1 = ref FieldRefAccess<UIReplicatorWindow, RectTransform>(UIRoot.instance.uiGame.replicator, "windowRect");
-                local1.sizeDelta = new Vector2(900, 811);
-                ref var local2 = ref FieldRefAccess<UIReplicatorWindow, RectTransform>(UIRoot.instance.uiGame.replicator, "recipeGroup");
-                local2.sizeDelta = new Vector2(782, 322);
-                ref var local3 = ref FieldRefAccess<UIAssemblerWindow, RectTransform>(UIRoot.instance.uiGame.assemblerWindow, "recipeGroup");
-                local3.sizeDelta = new Vector2(190, 100);
-                ref var local4 = ref FieldRefAccess<UIRecipePicker, RectTransform>(UIRoot.instance.uiGame.recipePicker, "pickerTrans");
-                local4.sizeDelta = new Vector2(830, 476);
-                ref var local5 = ref FieldRefAccess<UIItemPicker, RectTransform>(UIRoot.instance.uiGame.itemPicker, "pickerTrans");
-                local5.sizeDelta = new Vector2(830, 476);
-                ref var local6 = ref FieldRefAccess<UISignalPicker, RectTransform>(UIRoot.instance.uiGame.signalPicker, "pickerTrans");
-                local6.sizeDelta = new Vector2(830, 476);
+            ref var local1 = ref FieldRefAccess<UIReplicatorWindow, RectTransform>(UIRoot.instance.uiGame.replicator, "windowRect");
+            local1.sizeDelta = new Vector2(900, 811);
+            ref var local2 = ref FieldRefAccess<UIReplicatorWindow, RectTransform>(UIRoot.instance.uiGame.replicator, "recipeGroup");
+            local2.sizeDelta = new Vector2(782, 322);
+            ref var local3 = ref FieldRefAccess<UIAssemblerWindow, RectTransform>(UIRoot.instance.uiGame.assemblerWindow, "recipeGroup");
+            local3.sizeDelta = new Vector2(190, 100);
+            ref var local4 = ref FieldRefAccess<UIRecipePicker, RectTransform>(UIRoot.instance.uiGame.recipePicker, "pickerTrans");
+            local4.sizeDelta = new Vector2(830, 476);
+            ref var local5 = ref FieldRefAccess<UIItemPicker, RectTransform>(UIRoot.instance.uiGame.itemPicker, "pickerTrans");
+            local5.sizeDelta = new Vector2(830, 476);
+            ref var local6 = ref FieldRefAccess<UISignalPicker, RectTransform>(UIRoot.instance.uiGame.signalPicker, "pickerTrans");
+            local6.sizeDelta = new Vector2(830, 476);
 
-                GameObject.Find("UI Root/Overlay Canvas/In Game/Windows/Replicator Window/queue-group").GetComponentInChildren<RectTransform>()
-                          .sizeDelta = new Vector2(782f, 46f);
-                _resized2 = true;
-            }
+            GameObject.Find("UI Root/Overlay Canvas/In Game/Windows/Replicator Window/queue-group").GetComponentInChildren<RectTransform>().sizeDelta
+                = new Vector2(782f, 46f);
         }
 
-        [HarmonyPatch(typeof(UIRecipePicker), "_OnOpen")]
+        [HarmonyPatch(typeof(UIRecipePicker), "_OnCreate")]
+        [HarmonyPatch(typeof(UISignalPicker), "_OnCreate")]
+        [HarmonyPatch(typeof(UIItemPicker), "_OnCreate")]
         [HarmonyPostfix]
         [HarmonyPriority(Priority.Last)]
-        public static void UIRecipePicker_OnOpen_Postfix()
-        {
-            if (_reciperesized) return;
-
-            foreach (GameObject gameObject in Object.FindObjectsOfType(typeof(GameObject)))
-            {
-                if (!gameObject.name.Contains("Recipe")) continue;
-
-                foreach (Transform transform in gameObject.transform)
-                {
-                    if (!transform.name.Contains("content")) continue;
-
-                    transform.GetComponent<RectTransform>().sizeDelta = new Vector2(782, 322);
-                    _reciperesized = true;
-                }
-            }
-        }
-
-        [HarmonyPatch(typeof(UIItemPicker), "_OnOpen")]
-        [HarmonyPostfix]
-        [HarmonyPriority(Priority.Last)]
-        public static void UIItemPicker_OnOpen_Postfix()
-        {
-            if (_itemresized) return;
-
-            foreach (GameObject gameObject in Object.FindObjectsOfType(typeof(GameObject)))
-            {
-                if (!gameObject.name.Contains("Item")) continue;
-
-                foreach (Transform transform in gameObject.transform)
-                {
-                    if (!transform.name.Contains("content")) continue;
-
-                    transform.GetComponent<RectTransform>().sizeDelta = new Vector2(782, 322);
-                    _itemresized = true;
-                }
-            }
-        }
-
-        [HarmonyPatch(typeof(UISignalPicker), "_OnOpen")]
-        [HarmonyPostfix]
-        [HarmonyPriority(Priority.Last)]
-        public static void UISignalPicker_OnOpen_Postfix()
-        {
-            if (_signalresized) return;
-
-            foreach (GameObject gameObject in Object.FindObjectsOfType(typeof(GameObject)))
-            {
-                if (!gameObject.name.Contains("Signal")) continue;
-
-                foreach (Transform transform in gameObject.transform)
-                {
-                    if (!transform.name.Contains("content")) continue;
-
-                    transform.GetComponent<RectTransform>().sizeDelta = new Vector2(782, 322);
-                    _signalresized = true;
-                }
-            }
-        }
+        public static void UIRecipePicker_OnOpen_Postfix(ManualBehaviour __instance)
+            => __instance.transform.Find("content").GetComponent<RectTransform>().sizeDelta = new Vector2(782, 322);
 
         [HarmonyPatch(typeof(UIReplicatorWindow), "RefreshRecipeIcons")]
         [HarmonyPatch(typeof(UIReplicatorWindow), "TestMouseRecipeIndex")]

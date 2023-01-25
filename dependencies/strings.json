@@ -25,6 +25,96 @@
     "ENUS": "OK"
   },
   {
+    "Name": "星球基地",
+    "ZHCN": "行星协调中心",
+    "ENUS": "Coordination Center"
+  },
+  {
+    "Name": "星球倾向",
+    "ZHCN": "行星重点",
+    "ENUS": "Planet Focus"
+  },
+  {
+    "Name": "选择星球倾向",
+    "ZHCN": "选择星球重点",
+    "ENUS": "Select Planet Focus"    
+  },  
+  {
+    "Name": "选择星球倾向描述",
+    "ZHCN": "选择此星球的规划重点，不同的重点会影响星球的发展方向。",
+    "ENUS": "Select the focus of this planet, different focuses will affect the development of the planet."
+  },
+  {
+    "Name": "生产加速",
+    "ZHCN": "生产加速",
+    "ENUS": "Production Acceleration"
+  },
+  {
+    "Name": "I生产加速",
+    "ZHCN": "生产加速",
+    "ENUS": "Production Acceleration"
+  },
+  {
+    "Name": "科学枢纽",
+    "ZHCN": "科学枢纽",
+    "ENUS": "Science Nexus"
+  },
+  {
+    "Name": "I科学枢纽",
+    "ZHCN": "科学枢纽",
+    "ENUS": "Science Nexus"
+  },
+  {
+    "Name": "火力增产",
+    "ZHCN": "火力增产",
+    "ENUS": "Firepower Increase"
+  },
+  {
+    "Name": "I火力增产",
+    "ZHCN": "火力增产",
+    "ENUS": "Firepower Increase"
+  },
+  {
+    "Name": "风力增产",
+    "ZHCN": "风力增产",
+    "ENUS": "Wind Power Increase"
+  },
+  {
+    "Name": "I风力增产",
+    "ZHCN": "风力增产",
+    "ENUS": "Wind Power Increase"
+  },
+  {
+    "Name": "光伏增产",
+    "ZHCN": "光伏增产",
+    "ENUS": "Photovoltaic Power Increase"
+  },
+  {
+    "Name": "I光伏增产",
+    "ZHCN": "光伏增产",
+    "ENUS": "Photovoltaic Power Increase"
+  },
+  {
+    "Name": "聚变增产",
+    "ZHCN": "聚变增产",
+    "ENUS": "Fusion Power Increase"
+  },
+  {
+    "Name": "I聚变增产",
+    "ZHCN": "聚变增产",
+    "ENUS": "Fusion Power Increase"
+  },
+  {
+    "Name": "采矿增产",
+    "ZHCN": "采矿增产",
+    "ENUS": "Mining Increase"
+  },
+  {
+    "Name": "I采矿增产",
+    "ZHCN": "采矿增产",
+    "ENUS": "Mining Increase"
+  },
+  {
     "Name": "精炼页面",
     "ZHCN": "精炼",
     "ENUS": "Refining"

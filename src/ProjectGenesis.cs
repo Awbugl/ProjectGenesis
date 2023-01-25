@@ -11,6 +11,7 @@ using HarmonyLib;
 using NebulaAPI;
 using ProjectGenesis.Compatibility;
 using ProjectGenesis.Patches.Logic.MegaAssembler;
+using ProjectGenesis.Patches.UI.UIPlanetBase;
 using ProjectGenesis.Utils;
 using xiaoye97;
 using ERecipeType_1 = ERecipeType;
@@ -42,16 +43,18 @@ namespace ProjectGenesis
     {
         public const string MODGUID = "org.LoShin.GenesisBook";
         public const string MODNAME = "GenesisBook";
-        public const string VERSION = "2.4.10";
+        public const string VERSION = "2.5.0";
 
         public string Version => VERSION;
 
         internal static ManualLogSource logger;
 
+        internal static UIPlanetBaseWindow planetBaseWindow;
+
         //无限堆叠开关(私货)
         private readonly bool StackSizeButton = false;
 
-        private int[] TableID;
+        internal static int[] TableID;
         private Harmony Harmony;
 
         internal static ConfigEntry<bool> EnableAtmosphericEmission;
@@ -177,7 +180,7 @@ namespace ProjectGenesis
             ItemProto.InitFuelNeeds();
             ItemProto.InitItemIndices();
             ItemProto.InitMechaMaterials();
-            
+
             foreach (var proto in LDB.items.dataArray)
             {
                 StorageComponent.itemIsFuel[proto.ID] = proto.HeatValue > 0L;
