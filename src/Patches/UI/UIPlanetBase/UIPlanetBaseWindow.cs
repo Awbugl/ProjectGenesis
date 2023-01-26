@@ -1,5 +1,4 @@
-﻿using System;
-using CommonAPI.Systems;
+﻿using CommonAPI.Systems;
 using HarmonyLib;
 using ProjectGenesis.Utils;
 using UnityEngine;
@@ -115,7 +114,7 @@ namespace ProjectGenesis.Patches.UI.UIPlanetBase
         private void OnIconBtnRightClick(int id)
         {
             _currentFocusIds[id] = 0;
-            SetPlanetFocus(CurPlanetId, id,0);
+            SetPlanetFocus(CurPlanetId, id, 0);
             _iconImgs[id].sprite = _tagNotSelectedSprite;
             _iconTexts[id].text = "";
         }
@@ -126,14 +125,18 @@ namespace ProjectGenesis.Patches.UI.UIPlanetBase
 
             var currentFocusId = proto.ID;
 
-            if (Array.Exists(_currentFocusIds, i => i == currentFocusId))
+            // ReSharper disable once LoopCanBeConvertedToQuery
+            foreach (var t in _currentFocusIds)
             {
-                UIRealtimeTip.Popup("不能重复选择".TranslateFromJson());
-                return;
+                if (t == currentFocusId)
+                {
+                    UIRealtimeTip.Popup("不能重复选择".TranslateFromJson());
+                    return;
+                }
             }
-
+            
             _currentFocusIds[id] = currentFocusId;
-            SetPlanetFocus(CurPlanetId, id,currentFocusId);
+            SetPlanetFocus(CurPlanetId, id, currentFocusId);
             _iconTexts[id].text = FilterIds[currentFocusId].TranslateFromJson();
             var sprite = proto.iconSprite;
             if (sprite != null) _iconImgs[id].sprite = sprite;

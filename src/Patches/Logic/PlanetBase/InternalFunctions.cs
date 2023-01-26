@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Concurrent;
+﻿using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.IO;
 
@@ -46,11 +45,17 @@ namespace ProjectGenesis.Patches.Logic.PlanetBase
         internal static void IntoOtherSave() => ReInitAll();
 
         private static void ReInitAll() => _planetBases = new ConcurrentDictionary<int, int[]>();
-        
+
         private static bool ContainsFocus(int planetId, int focusid)
         {
-            if (!_planetBases.ContainsKey(planetId)) return false;
-            return Array.Exists(_planetBases[planetId], i => i == focusid);
+            if (_planetBases.TryGetValue(planetId, out var planetBase))
+                // ReSharper disable once LoopCanBeConvertedToQuery
+                foreach (var t in planetBase)
+                {
+                    if (t == focusid) return true;
+                }
+
+            return false;
         }
     }
 }

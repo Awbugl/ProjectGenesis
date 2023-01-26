@@ -1,3 +1,12 @@
+- v2.5.1
+  + 修复了`v2.5.0`版本导致的性能问题
+
+  + Fix the performance problem caused by `v2.5.0` version
+
+
+<details>
+  <summary>点击展开日志 | Click to view all </summary>
+
 - v2.5.0 升格凝想 | Elevational Contemplations
   + 添加 `行星协调中心` ：可为星球添加数种增益效果
   + 添加 `DSPMoreRecipes` mod 兼容补丁
@@ -11,9 +20,6 @@
   + Fix the problem that the Recycling Factory will not stop working when power off
   + Fix the problem that the item is missing in the custom mecha UI
 
-
-<details>
-  <summary>点击展开日志 | Click to view all </summary>
 
 - v2.4.10
   + 修复了火力发电站燃料需求不正确的问题
