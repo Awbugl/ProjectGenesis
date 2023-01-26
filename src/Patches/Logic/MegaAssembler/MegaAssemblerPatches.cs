@@ -32,7 +32,7 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
                                                                     nameof(GameTick_AssemblerComponent_InternalUpdate_Patch)),
                                            MegaAssembler_AssemblerComponent_UpdateNeeds_Patch_Method
                                                = AccessTools.Method(typeof(MegaAssemblerPatches), nameof(AssemblerComponent_UpdateNeeds_Patch));
-        
+
         [HarmonyPatch(typeof(FactorySystem), "GameTick", typeof(long), typeof(bool))]
         [HarmonyPatch(typeof(FactorySystem), "GameTick", typeof(long), typeof(bool), typeof(int), typeof(int), typeof(int))]
         [HarmonyTranspiler]
@@ -105,7 +105,7 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
                 var stationPilerLevel = GameMain.history.stationPilerLevel;
 
                 UpdateOutputSlots(ref __instance, cargoTraffic, slotdata, entitySignPool, stationPilerLevel);
-                UpdateInputSlots(ref __instance, factory, cargoTraffic, slotdata, entitySignPool);
+                UpdateInputSlots(ref __instance, power, factory, cargoTraffic, slotdata, entitySignPool);
             }
 
             if (power < 0.1f) return;
@@ -197,6 +197,7 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
 
         private static void UpdateInputSlots(
             ref AssemblerComponent __instance,
+            float power,
             PlanetFactory factory,
             CargoTraffic traffic,
             SlotData[] slotdata,
@@ -218,6 +219,8 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
 
                         if (__instance.recipeId == ProtoIDUsedByPatches.R物质分解)
                         {
+                            if (power < 0.1f) return;
+
                             var itemId = traffic.TryPickItemAtRear(slotdata[index].beltId, 0, null, out var stack, out _);
 
                             if (itemId <= 0) continue;

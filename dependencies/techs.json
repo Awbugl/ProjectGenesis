@@ -604,7 +604,7 @@
     "Name": "T终极目标:先驱者遗物",
     "IconPath": "Icons/Tech/1303",
     "Desc": "T终极目标:先驱者遗物描述",
-    "Conclusion": "",
+    "Conclusion": "T终极目标:先驱者遗物描述",
     "Position": [
       45.0,
       -15.0
@@ -898,7 +898,7 @@
     "Name": "T终极目标:无尽材料学",
     "IconPath": "Icons/Tech/1414",
     "Desc": "T终极目标:无尽材料学描述",
-    "Conclusion": "",
+    "Conclusion": "T终极目标:无尽材料学描述",
     "Position": [
       45.0,
       -11.0
@@ -1216,7 +1216,7 @@
     "Name": "T不再是菜鸟的证明",
     "IconPath": "Assets/texpack/终极科技修复版",
     "Desc": "T不再是菜鸟的证明描述",
-    "Conclusion": "",
+    "Conclusion": "T不再是菜鸟的证明描述",
     "Position": [
       41.0,
       -15.0
@@ -2177,7 +2177,7 @@
     "Name": "T海洋排污",
     "IconPath": "Icons/Tech/1120",
     "Desc": "T海洋排污描述",
-    "Conclusion": "",
+    "Conclusion": "T海洋排污描述",
     "Position": [
       17.0,
       -31.0
@@ -2574,7 +2574,7 @@
     "Name": "T化工技术革新",
     "IconPath": "Assets/texpack/化工2_1",
     "Desc": "T化工技术革新描述",
-    "Conclusion": "",
+    "Conclusion": "T化工技术革新描述",
     "Position": [
       25.0,
       13.0
@@ -3184,7 +3184,7 @@
     "Name": "T海洋排污2",
     "IconPath": "Icons/Tech/1120",
     "Desc": "T海洋排污2描述",
-    "Conclusion": "",
+    "Conclusion": "T海洋排污2描述",
     "Position": [
       21.0,
       -31.0
@@ -8455,7 +8455,7 @@
     "Name": "T基础机械组件",
     "IconPath": "Assets/texpack/基础组件",
     "Desc": "T基础机械组件描述",
-    "Conclusion": "",
+    "Conclusion": "T基础机械组件描述",
     "Position": [
       13.0,
       21.0
@@ -8494,7 +8494,7 @@
     "Name": "T先进机械组件",
     "IconPath": "Assets/texpack/先进组件",
     "Desc": "T先进机械组件描述",
-    "Conclusion": "",
+    "Conclusion": "T先进机械组件描述",
     "Position": [
       17.0,
       33.0
@@ -8537,7 +8537,7 @@
     "Name": "T尖端机械组件",
     "IconPath": "Assets/texpack/尖端组件",
     "Desc": "T尖端机械组件描述",
-    "Conclusion": "",
+    "Conclusion": "T尖端机械组件描述",
     "Position": [
       21.0,
       33.0
@@ -8580,7 +8580,7 @@
     "Name": "T钨强化金属",
     "IconPath": "Assets/texpack/钨钢",
     "Desc": "T钨强化金属描述",
-    "Conclusion": "",
+    "Conclusion": "T钨强化金属描述",
     "Position": [
       21.0,
       -11.0
@@ -8622,7 +8622,7 @@
     "Name": "T电路基板",
     "IconPath": "Assets/texpack/电路基板",
     "Desc": "T电路基板描述",
-    "Conclusion": "",
+    "Conclusion": "T电路基板描述",
     "Position": [
       13.0,
       9.0
@@ -8667,7 +8667,7 @@
     "Name": "TIC晶片",
     "IconPath": "Assets/texpack/电路板",
     "Desc": "TIC晶片描述",
-    "Conclusion": "",
+    "Conclusion": "TIC晶片描述",
     "Position": [
       13.0,
       5.0
@@ -8714,7 +8714,7 @@
     "Name": "T虚拟技术革新",
     "IconPath": "Assets/texpack/虚拟技术革新",
     "Desc": "T虚拟技术革新描述",
-    "Conclusion": "",
+    "Conclusion": "T虚拟技术革新描述",
     "Position": [
       25.0,
       9.0
@@ -8760,7 +8760,7 @@
     "Name": "T生物神经技术",
     "IconPath": "Assets/texpack/生物神经",
     "Desc": "T生物神经技术描述",
-    "Conclusion": "",
+    "Conclusion": "T生物神经技术描述",
     "Position": [
       25.0,
       5.0
@@ -8805,7 +8805,7 @@
     "Name": "T超级纳米计算机",
     "IconPath": "Assets/texpack/主机科技",
     "Desc": "T超级纳米计算机描述",
-    "Conclusion": "",
+    "Conclusion": "T超级纳米计算机描述",
     "Position": [
       29.0,
       9.0
@@ -8851,7 +8851,7 @@
     "Name": "T生物活性计算机",
     "IconPath": "Assets/texpack/主机科技",
     "Desc": "T生物活性计算机描述",
-    "Conclusion": "",
+    "Conclusion": "T生物活性计算机描述",
     "Position": [
       29.0,
       5.0
@@ -8896,7 +8896,7 @@
     "Name": "T钨强化玻璃",
     "IconPath": "Assets/texpack/玻璃科技",
     "Desc": "T钨强化玻璃描述",
-    "Conclusion": "",
+    "Conclusion": "T钨强化玻璃描述",
     "Position": [
       25.0,
       -7.0
@@ -8938,7 +8938,7 @@
     "Name": "T先进精炼技术",
     "IconPath": "Assets/texpack/精炼科技",
     "Desc": "T先进精炼技术描述",
-    "Conclusion": "",
+    "Conclusion": "T先进精炼技术描述",
     "Position": [
       21.0,
       -35.0
@@ -8981,7 +8981,7 @@
     "Name": "T核子先驱:放射原料",
     "IconPath": "Icons/Tech/1416",
     "Desc": "T核子先驱:放射原料描述",
-    "Conclusion": "",
+    "Conclusion": "T核子先驱:放射原料描述",
     "Position": [
       13.0,
       -15.0
@@ -9021,7 +9021,7 @@
     "Name": "T核子先驱:进一步分离",
     "IconPath": "Icons/Tech/1416",
     "Desc": "T核子先驱:进一步分离描述",
-    "Conclusion": "",
+    "Conclusion": "T核子先驱:进一步分离描述",
     "Position": [
       17.0,
       -15.0
@@ -9062,7 +9062,7 @@
     "Name": "T核子先驱:原矿精炼",
     "IconPath": "Icons/Tech/1416",
     "Desc": "T核子先驱:原矿精炼描述",
-    "Conclusion": "",
+    "Conclusion": "T核子先驱:原矿精炼描述",
     "Position": [
       21.0,
       -15.0
@@ -9105,7 +9105,7 @@
     "Name": "T核子先驱:放射性物质萃取",
     "IconPath": "Icons/Tech/1416",
     "Desc": "T核子先驱:放射性物质萃取描述",
-    "Conclusion": "",
+    "Conclusion": "T核子先驱:放射性物质萃取描述",
     "Position": [
       25.0,
       -15.0
@@ -9148,7 +9148,7 @@
     "Name": "T核子先驱:裂变能源",
     "IconPath": "Icons/Tech/1416",
     "Desc": "T核子先驱:裂变能源描述",
-    "Conclusion": "",
+    "Conclusion": "T核子先驱:裂变能源描述",
     "Position": [
       29.0,
       -15.0
@@ -9191,7 +9191,7 @@
     "Name": "T核子先驱:同位素提取",
     "IconPath": "Icons/Tech/1416",
     "Desc": "T核子先驱:同位素提取描述",
-    "Conclusion": "",
+    "Conclusion": "T核子先驱:同位素提取描述",
     "Position": [
       25.0,
       -35.0
@@ -9241,7 +9241,7 @@
     "Name": "T核子先驱:聚变能源",
     "IconPath": "Icons/Tech/1416",
     "Desc": "T核子先驱:聚变能源描述",
-    "Conclusion": "",
+    "Conclusion": "T核子先驱:聚变能源描述",
     "Position": [
       29.0,
       -35.0
@@ -9289,7 +9289,7 @@
     "Name": "T巨型建筑:天穹装配厂",
     "IconPath": "Icons/Tech/1604",
     "Desc": "T巨型建筑:天穹装配厂描述",
-    "Conclusion": "",
+    "Conclusion": "T巨型建筑:天穹装配厂描述",
     "Position": [
       49.0,
       21.0
@@ -9335,7 +9335,7 @@
     "Name": "T巨型建筑:物质裂解塔",
     "IconPath": "Icons/Tech/1604",
     "Desc": "T巨型建筑:物质裂解塔描述",
-    "Conclusion": "",
+    "Conclusion": "T巨型建筑:物质裂解塔描述",
     "Position": [
       45.0,
       21.0
@@ -9381,7 +9381,7 @@
     "Name": "T巨型建筑:行星级化学反应釜",
     "IconPath": "Icons/Tech/1604",
     "Desc": "T巨型建筑:行星级化学反应釜描述",
-    "Conclusion": "",
+    "Conclusion": "T巨型建筑:行星级化学反应釜描述",
     "Position": [
       45.0,
       17.0
@@ -9427,7 +9427,7 @@
     "Name": "T巨型建筑:精密结构组装厂",
     "IconPath": "Icons/Tech/1604",
     "Desc": "T巨型建筑:精密结构组装厂描述",
-    "Conclusion": "",
+    "Conclusion": "T巨型建筑:精密结构组装厂描述",
     "Position": [
       45.0,
       13.0
@@ -9473,7 +9473,7 @@
     "Name": "T巨型建筑:巨型粒子对撞机",
     "IconPath": "Icons/Tech/1604",
     "Desc": "T巨型建筑:巨型粒子对撞机描述",
-    "Conclusion": "",
+    "Conclusion": "T巨型建筑:巨型粒子对撞机描述",
     "Position": [
       49.0,
       13.0
@@ -9519,7 +9519,7 @@
     "Name": "T巨型建筑:物质分解设施",
     "IconPath": "Assets/texpack/回收科技",
     "Desc": "T巨型建筑:物质分解设施描述",
-    "Conclusion": "",
+    "Conclusion": "T巨型建筑:物质分解设施描述",
     "Position": [
       49.0,
       17.0
@@ -9564,7 +9564,7 @@
     "Name": "T化学能燃料棒",
     "IconPath": "Assets/texpack/燃料棒科技",
     "Desc": "T化学能燃料棒描述",
-    "Conclusion": "",
+    "Conclusion": "T化学能燃料棒描述",
     "Position": [
       25.0,
       -39.0
@@ -9609,7 +9609,7 @@
     "Name": "T矿物处理",
     "IconPath": "Assets/texpack/矿物处理",
     "Desc": "T矿物处理描述",
-    "Conclusion": "",
+    "Conclusion": "T矿物处理描述",
     "Position": [
       13.0,
       -11.0
@@ -9706,7 +9706,7 @@
     "Name": "T焦油分馏",
     "IconPath": "Icons/Tech/1102",
     "Desc": "T焦油分馏描述",
-    "Conclusion": "",
+    "Conclusion": "T焦油分馏描述",
     "Position": [
       17.0,
       -39.0
@@ -9786,7 +9786,7 @@
     "Name": "T晶圆冶炼",
     "IconPath": "Icons/Tech/1403",
     "Desc": "T晶圆冶炼描述",
-    "Conclusion": "",
+    "Conclusion": "T晶圆冶炼描述",
     "Position": [
       17.0,
       -3.0
@@ -9949,7 +9949,7 @@
     "Name": "T巨型建筑工程学",
     "IconPath": "Icons/Tech/1604",
     "Desc": "T巨型建筑工程学描述",
-    "Conclusion": "",
+    "Conclusion": "巨型建筑工程学文字描述",
     "Position": [
       41.0,
       17.0

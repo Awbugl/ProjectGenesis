@@ -9,12 +9,7 @@ namespace ProjectGenesis.Patches.Logic
     {
         [HarmonyPostfix]
         [HarmonyPatch(typeof(PlanetFactory), "ApplyPickTarget")]
-        public static void PlanetFactory_ApplyPickTarget(
-            ref PlanetFactory __instance,
-            int entityId,
-            int pickTarget,
-            int slotId,
-            int offset)
+        public static void PlanetFactory_ApplyPickTarget(ref PlanetFactory __instance, int entityId, int pickTarget)
         {
             var minerId = __instance.entityPool[entityId].minerId;
             if (minerId > 0 &&
@@ -27,12 +22,7 @@ namespace ProjectGenesis.Patches.Logic
 
         [HarmonyPostfix]
         [HarmonyPatch(typeof(PlanetFactory), "ApplyEntityDisconnection")]
-        public static void PlanetFactory_ApplyEntityDisconnection(
-            ref PlanetFactory __instance,
-            int otherEntityId,
-            int removingEntityId,
-            int otherSlotId,
-            int removingSlotId)
+        public static void PlanetFactory_ApplyEntityDisconnection(ref PlanetFactory __instance, int otherEntityId, int removingEntityId)
         {
             if (otherEntityId == 0) return;
             var minerId = __instance.entityPool[otherEntityId].minerId;
@@ -46,14 +36,7 @@ namespace ProjectGenesis.Patches.Logic
 
         [HarmonyPrefix]
         [HarmonyPatch(typeof(MinerComponent), "InternalUpdate")]
-        public static void MinerComponent_InternalUpdate_PreFix(
-            ref MinerComponent __instance,
-            PlanetFactory factory,
-            VeinData[] veinPool,
-            float power,
-            float miningRate,
-            float miningSpeed,
-            int[] productRegister)
+        public static void MinerComponent_InternalUpdate_PreFix(ref MinerComponent __instance, PlanetFactory factory)
         {
             if (__instance.type == EMinerType.Water &&
                 __instance.insertTarget < 0 &&
@@ -64,14 +47,7 @@ namespace ProjectGenesis.Patches.Logic
 
         [HarmonyPostfix]
         [HarmonyPatch(typeof(MinerComponent), "InternalUpdate")]
-        public static void MinerComponent_InternalUpdate(
-            ref MinerComponent __instance,
-            PlanetFactory factory,
-            VeinData[] veinPool,
-            float power,
-            float miningRate,
-            float miningSpeed,
-            int[] productRegister)
+        public static void MinerComponent_InternalUpdate(ref MinerComponent __instance, PlanetFactory factory, float power)
         {
             if (power < 0.1f) return;
             if (__instance.type == EMinerType.Water && __instance.insertTarget < 0 && GameMain.history.TechUnlocked(ProtoIDUsedByPatches.T海洋排污1))

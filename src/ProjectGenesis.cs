@@ -11,6 +11,7 @@ using HarmonyLib;
 using NebulaAPI;
 using ProjectGenesis.Compatibility;
 using ProjectGenesis.Patches.Logic.MegaAssembler;
+using ProjectGenesis.Patches.Logic.PlanetBase;
 using ProjectGenesis.Patches.UI.UIPlanetBase;
 using ProjectGenesis.Utils;
 using xiaoye97;
@@ -93,10 +94,10 @@ namespace ProjectGenesis
 
             NebulaModAPI.OnPlanetLoadRequest += planetId =>
             {
-                NebulaModAPI.MultiplayerSession.Network.SendPacket(new MegaBuildingLoadRequest(planetId));
+                NebulaModAPI.MultiplayerSession.Network.SendPacket(new GenesisBookPlanetLoadRequest(planetId));
             };
 
-            NebulaModAPI.OnPlanetLoadFinished += MegaBuildingDataProcessor.ProcessBytesLater;
+            NebulaModAPI.OnPlanetLoadFinished += GenesisBookPlanetDataProcessor.ProcessBytesLater;
 
             Harmony = new Harmony(MODGUID);
 
@@ -191,11 +192,23 @@ namespace ProjectGenesis
             // JsonHelper.ExportAsJson(@"D:\Git\ProjectGenesis\dependencies");
         }
 
-        public void Export(BinaryWriter w) => MegaAssemblerPatches.Export(w);
+        public void Export(BinaryWriter w)
+        {
+            MegaAssemblerPatches.Export(w);
+            PlanetBasePatches.Export(w);
+        }
 
-        public void Import(BinaryReader r) => MegaAssemblerPatches.Import(r);
+        public void Import(BinaryReader r)
+        {
+            MegaAssemblerPatches.Import(r);
+            PlanetBasePatches.Import(r);
+        }
 
-        public void IntoOtherSave() => MegaAssemblerPatches.IntoOtherSave();
+        public void IntoOtherSave()
+        {
+            MegaAssemblerPatches.IntoOtherSave();
+            PlanetBasePatches.IntoOtherSave();
+        }
 
         public bool CheckVersion(string hostVersion, string clientVersion) => hostVersion.Equals(clientVersion);
     }

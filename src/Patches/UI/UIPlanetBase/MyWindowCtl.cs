@@ -2,7 +2,7 @@
 using UnityEngine.UI;
 
 namespace ProjectGenesis.Patches.UI.UIPlanetBase
-{ 
+{
     /// <summary>
     ///   special thanks to https://github.com/hetima/DSP_PlanetFinder/tree/main/PlanetFinder
     /// </summary>

@@ -37,82 +37,122 @@
   {
     "Name": "选择星球倾向",
     "ZHCN": "选择星球重点",
-    "ENUS": "Select Planet Focus"    
-  },  
+    "ENUS": "Select Planet Focus"
+  },
   {
     "Name": "选择星球倾向描述",
     "ZHCN": "选择此星球的规划重点，不同的重点会影响星球的发展方向。",
     "ENUS": "Select the focus of this planet, different focuses will affect the development of the planet."
   },
   {
-    "Name": "生产加速",
-    "ZHCN": "生产加速",
-    "ENUS": "Production Acceleration"
+    "Name": "不能重复选择",
+    "ZHCN": "不能重复选择！",
+    "ENUS": "Already selected!"
   },
   {
-    "Name": "I生产加速",
-    "ZHCN": "生产加速",
-    "ENUS": "Production Acceleration"
+    "Name": "电力节约",
+    "ZHCN": "电力节约",
+    "ENUS": "Energy Saving"
   },
   {
-    "Name": "科学枢纽",
-    "ZHCN": "科学枢纽",
-    "ENUS": "Science Nexus"
+    "Name": "I电力节约",
+    "ZHCN": "协调中心将倾向于控制电力传输损耗。",
+    "ENUS": "Coordination Center will tend to control power transmission loss."
   },
   {
-    "Name": "I科学枢纽",
-    "ZHCN": "科学枢纽",
-    "ENUS": "Science Nexus"
+    "Name": "上传扩容",
+    "ZHCN": "上传扩容",
+    "ENUS": "Upload Bandwidth Expansion"
   },
   {
-    "Name": "火力增产",
-    "ZHCN": "火力增产",
-    "ENUS": "Firepower Increase"
+    "Name": "I上传扩容",
+    "ZHCN": "协调中心将倾向于提高主脑连接的带宽与稳定性。",
+    "ENUS": "Coordination Center will tend to increase the bandwidth and stability of the connection to the home."
   },
   {
-    "Name": "I火力增产",
-    "ZHCN": "火力增产",
-    "ENUS": "Firepower Increase"
+    "Name": "燃料回收",
+    "ZHCN": "燃料回收",
+    "ENUS": "Thermal Fuel Recycling"
   },
   {
-    "Name": "风力增产",
-    "ZHCN": "风力增产",
-    "ENUS": "Wind Power Increase"
+    "Name": "I燃料回收",
+    "ZHCN": "协调中心将倾向于提高火力发电厂的燃料效率。",
+    "ENUS": "Coordination Center will tend to increase the fuel efficiency of thermal power plants."
   },
   {
-    "Name": "I风力增产",
-    "ZHCN": "风力增产",
-    "ENUS": "Wind Power Increase"
+    "Name": "风力扩容",
+    "ZHCN": "风力扩容",
+    "ENUS": "Wind Turbine Capacity Expansion"
   },
   {
-    "Name": "光伏增产",
-    "ZHCN": "光伏增产",
-    "ENUS": "Photovoltaic Power Increase"
+    "Name": "I风力扩容",
+    "ZHCN": "协调中心将倾向于提高风力涡轮机的发电量。",
+    "ENUS": "Coordination Center will tend to increase the power generation of Wind Turbine."
   },
   {
-    "Name": "I光伏增产",
-    "ZHCN": "光伏增产",
-    "ENUS": "Photovoltaic Power Increase"
+    "Name": "光伏扩容",
+    "ZHCN": "光伏扩容",
+    "ENUS": "Solar Panel Capacity Expansion"
   },
   {
-    "Name": "聚变增产",
-    "ZHCN": "聚变增产",
-    "ENUS": "Fusion Power Increase"
+    "Name": "I光伏扩容",
+    "ZHCN": "协调中心将倾向于提高太阳能板的发电量。",
+    "ENUS": "Coordination Center will tend to increase the power generation of Solar Panel."
   },
   {
-    "Name": "I聚变增产",
-    "ZHCN": "聚变增产",
-    "ENUS": "Fusion Power Increase"
+    "Name": "热聚增效",
+    "ZHCN": "热聚增效",
+    "ENUS": "Artificial Star Efficiency"
   },
   {
-    "Name": "采矿增产",
-    "ZHCN": "采矿增产",
-    "ENUS": "Mining Increase"
+    "Name": "I热聚增效",
+    "ZHCN": "协调中心将倾向于提高人造恒星的发电效率。",
+    "ENUS": "Coordination Center will tend to increase the power generation of Artificial Star."
   },
   {
-    "Name": "I采矿增产",
-    "ZHCN": "采矿增产",
-    "ENUS": "Mining Increase"
+    "Name": "资源采掘",
+    "ZHCN": "资源采掘",
+    "ENUS": "Unlimited Resource Mining"
+  },
+  {
+    "Name": "I资源采掘",
+    "ZHCN": "协调中心将倾向于提高矿物产出。",
+    "ENUS": "Coordination Center will tend to increase the output of miners."
+  },
+  {
+    "Name": "工厂电力需求 -10%",
+    "ZHCN": "工厂电力需求 -10%",
+    "ENUS": "Assember Power Consumption -10%"
+  },
+  {
+    "Name": "研究上传速度 +10%",
+    "ZHCN": "研究上传速度 +10%",
+    "ENUS": "Research Speed +10%"
+  },
+  {
+    "Name": "火力发电效率 +20%",
+    "ZHCN": "火力发电效率 +20%",
+    "ENUS": "Thermal Power Plant Efficiency +20%"
+  },
+  {
+    "Name": "风力发电效率 +20%",
+    "ZHCN": "风力发电效率 +20%",
+    "ENUS": "Wind Turbine Efficiency +20%"
+  },
+  {
+    "Name": "光伏发电效率 +20%",
+    "ZHCN": "光伏发电效率 +20%",
+    "ENUS": "Solar Panel Efficiency +20%"
+  },
+  {
+    "Name": "聚变发电效率 +10%",
+    "ZHCN": "聚变发电效率 +10%",
+    "ENUS": "Artificial Star Efficiency +10%"
+  },
+  {
+    "Name": "矿物采集速度 +25%",
+    "ZHCN": "矿物采集速度 +25%",
+    "ENUS": "Mining Speed +25%"
   },
   {
     "Name": "精炼页面",
@@ -948,6 +988,11 @@
     "Name": "I硫粉",
     "ZHCN": "从煤矿粉中提取还原得到的粉末状硫单质.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "ENUS": "Powdered sulfur monomer extracted from coal dust.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+  },
+  {
+    "Name": "结构矩阵",
+    "ZHCN": "结构矩阵",
+    "ENUS": "Structure matrix"
   },
   {
     "Name": "引力矩阵",
@@ -2226,8 +2271,8 @@
   },
   {
     "Name": "T化工技术革新描述",
-    "ZHCN": "\"说真的,我一直很好奇为什么这样就能提升机器效率....\"",
-    "ENUS": "\"Seriously, I've always wondered how this could improve the efficiency of the machine .... \""
+    "ZHCN": "使用量子芯片模拟化学反应, 可以构建更高效的反应体系与流程.",
+    "ENUS": "Using quantum chips to simulate chemical reactions, you can build more efficient reaction systems and processes."
   },
   {
     "Name": "T戴森球计划:戴森球组件运输系统",

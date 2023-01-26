@@ -11,27 +11,24 @@ namespace ProjectGenesis.Patches.UI.UIPlanetBase
     {
         private static readonly UIButton Src = UIRoot.instance.uiGame.dysonEditor.controlPanel.hierarchy.swarmPanel.orbitAddButton;
         private static readonly GameObject TransformGameObject = UIRoot.instance.uiGame.beltWindow.iconTagButton.transform.gameObject;
+        private static readonly UIAssemblerWindow UIGameAssemblerWindow = UIRoot.instance.uiGame.assemblerWindow;
 
-        internal static RectTransform NormalizeRectWithTopLeft(
+        internal static void NormalizeRectWithTopLeft(
             Component cmp,
             float left,
             float top,
             Transform parent = null)
         {
-            var rect = cmp.transform as RectTransform;
-            if (parent != null)
-            {
-                rect.SetParent(parent, false);
-            }
+            var rect = (RectTransform)cmp.transform;
+            if (parent != null) rect.SetParent(parent, false);
 
             rect.anchorMax = new Vector2(0f, 1f);
             rect.anchorMin = new Vector2(0f, 1f);
             rect.pivot = new Vector2(0f, 1f);
             rect.anchoredPosition3D = new Vector3(left, -top, 0f);
-            return rect;
         }
 
-        public static RectTransform NormalizeRectWithMargin(
+        public static void NormalizeRectWithMargin(
             Component cmp,
             float top,
             float left,
@@ -39,11 +36,8 @@ namespace ProjectGenesis.Patches.UI.UIPlanetBase
             float right,
             Transform parent = null)
         {
-            var rect = cmp.transform as RectTransform;
-            if (parent != null)
-            {
-                rect.SetParent(parent, false);
-            }
+            var rect = (RectTransform)cmp.transform;
+            if (parent != null) rect.SetParent(parent, false);
 
             rect.anchoredPosition3D = Vector3.zero;
             rect.localScale = Vector3.one;
@@ -52,12 +46,11 @@ namespace ProjectGenesis.Patches.UI.UIPlanetBase
             rect.pivot = new Vector2(0.5f, 0.5f);
             rect.offsetMax = new Vector2(-right, -top);
             rect.offsetMin = new Vector2(left, bottom);
-            return rect;
         }
 
         public static Text CreateText(string label, int fontSize = 14, TextAnchor anchor = TextAnchor.MiddleLeft)
         {
-            var stateText = UIRoot.instance.uiGame.assemblerWindow.stateText;
+            var stateText = UIGameAssemblerWindow.stateText;
             var txt = Object.Instantiate(stateText);
             txt.gameObject.name = "txt_" + label;
             txt.text = label;
@@ -68,28 +61,32 @@ namespace ProjectGenesis.Patches.UI.UIPlanetBase
             return txt;
         }
 
+        public static Text CreateTitleText(string label)
+        {
+            var src = MyWindowCtl.GetTitleText(UIGameAssemblerWindow);
+            var txt = Object.Instantiate(src);
+            txt.gameObject.name = "label";
+            txt.text = label;
+            txt.color = new Color(1f, 1f, 1f, 0.5f);
+            ((RectTransform)txt.transform).sizeDelta = new Vector2(txt.preferredWidth + 40f, 30f);
+            return txt;
+        }
+
         internal static UIButton CreateButton(string label, float width = 0f, float height = 0f)
         {
             var btn = Object.Instantiate(Src);
             btn.gameObject.name = "btn_" + label;
-            if (btn.transitions.Length >= 1)
-            {
-                btn.transitions[0].target.color = new Color(0.2392f, 0.6f, 0.9f, 0.078f);
-            }
+            if (btn.transitions.Length >= 1) btn.transitions[0].target.color = new Color(0.2392f, 0.6f, 0.9f, 0.078f);
 
             var btnText = btn.transform.Find("Text").GetComponent<Text>();
             btnText.text = label;
             btnText.fontSize = 17;
             Object.Destroy(btn.transform.Find("Text").GetComponent<Localizer>());
-            var btnRect = btn.transform as RectTransform;
+            var btnRect = (RectTransform)btn.transform;
             if (width == 0f || height == 0f)
-            {
                 btnRect.sizeDelta = new Vector2(btnText.preferredWidth + 14f, 24f); //22
-            }
             else
-            {
                 btnRect.sizeDelta = new Vector2(width, height);
-            }
 
             return btn;
         }

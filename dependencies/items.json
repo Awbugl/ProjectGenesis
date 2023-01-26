@@ -452,7 +452,7 @@
     "BuildIndex": 0,
     "BuildMode": 0,
     "UnlockKey": 6002,
-    "MechaMaterialID": 0
+    "MechaMaterialID": 19
   },
   {
     "ID": 1015,
@@ -489,7 +489,7 @@
     "BuildIndex": 0,
     "BuildMode": 0,
     "UnlockKey": 6002,
-    "MechaMaterialID": 0
+    "MechaMaterialID": 20
   },
   {
     "ID": 1016,
@@ -525,7 +525,7 @@
     "BuildIndex": 0,
     "BuildMode": 0,
     "UnlockKey": 0,
-    "MechaMaterialID": 0
+    "MechaMaterialID": 23
   },
   {
     "ID": 1030,
@@ -678,7 +678,7 @@
     "BuildIndex": 0,
     "BuildMode": 0,
     "UnlockKey": 0,
-    "MechaMaterialID": 0
+    "MechaMaterialID": 22
   },
   {
     "ID": 1103,
@@ -7382,7 +7382,7 @@
     "BuildIndex": 0,
     "BuildMode": 0,
     "UnlockKey": 0,
-    "MechaMaterialID": 25
+    "MechaMaterialID": 0
   },
   {
     "ID": 6279,
@@ -7419,7 +7419,7 @@
     "BuildIndex": 0,
     "BuildMode": 0,
     "UnlockKey": 0,
-    "MechaMaterialID": 25
+    "MechaMaterialID": 0
   },
   {
     "ID": 6280,
@@ -7456,7 +7456,7 @@
     "BuildIndex": 0,
     "BuildMode": 0,
     "UnlockKey": 0,
-    "MechaMaterialID": 25
+    "MechaMaterialID": 0
   },
   {
     "ID": 6501,
@@ -10137,12 +10137,12 @@
   },
   {
     "ID": 6522,
-    "Name": "生产加速",
-    "Description": "I生产加速",
+    "Name": "电力节约",
+    "Description": "I电力节约",
     "IconPath": "Assets/texpack/星球飞升-天穹巨构",
     "GridIndex": 3601,
     "StackSize": 1,
-    "Type": 2,
+    "Type": 1,
     "PreTech": 0,
     "PreTechOverride": 0,
     "DescFields": [],
@@ -10171,12 +10171,12 @@
   },
   {
     "ID": 6523,
-    "Name": "科学枢纽",
-    "Description": "I科学枢纽",
+    "Name": "上传扩容",
+    "Description": "I上传扩容",
     "IconPath": "Assets/texpack/星球飞升-科学枢纽",
     "GridIndex": 3602,
     "StackSize": 1,
-    "Type": 2,
+    "Type": 1,
     "PreTech": 0,
     "PreTechOverride": 0,
     "DescFields": [],
@@ -10205,12 +10205,12 @@
   },
   {
     "ID": 6524,
-    "Name": "火力增产",
-    "Description": "I火力增产",
+    "Name": "燃料回收",
+    "Description": "I燃料回收",
     "IconPath": "Assets/texpack/星球飞升-火力发电",
     "GridIndex": 3603,
     "StackSize": 1,
-    "Type": 2,
+    "Type": 1,
     "PreTech": 0,
     "PreTechOverride": 0,
     "DescFields": [],
@@ -10239,12 +10239,12 @@
   },
   {
     "ID": 6525,
-    "Name": "风力增产",
-    "Description": "I风力增产",
+    "Name": "风力扩容",
+    "Description": "I风力扩容",
     "IconPath": "Assets/texpack/星球飞升-风力发电",
     "GridIndex": 3604,
     "StackSize": 1,
-    "Type": 2,
+    "Type": 1,
     "PreTech": 0,
     "PreTechOverride": 0,
     "DescFields": [],
@@ -10273,12 +10273,12 @@
   },
   {
     "ID": 6526,
-    "Name": "光伏增产",
-    "Description": "I光伏增产",
+    "Name": "光伏扩容",
+    "Description": "I光伏扩容",
     "IconPath": "Assets/texpack/星球飞升-光伏发电",
     "GridIndex": 3605,
     "StackSize": 1,
-    "Type": 2,
+    "Type": 1,
     "PreTech": 0,
     "PreTechOverride": 0,
     "DescFields": [],
@@ -10307,12 +10307,12 @@
   },
   {
     "ID": 6527,
-    "Name": "聚变增产",
-    "Description": "I聚变增产",
+    "Name": "热聚增效",
+    "Description": "I热聚增效",
     "IconPath": "Assets/texpack/星球飞升-聚变驱动",
     "GridIndex": 3606,
     "StackSize": 1,
-    "Type": 2,
+    "Type": 1,
     "PreTech": 0,
     "PreTechOverride": 0,
     "DescFields": [],
@@ -10341,12 +10341,12 @@
   },
   {
     "ID": 6528,
-    "Name": "采矿增产",
-    "Description": "I采矿增产",
+    "Name": "资源采掘",
+    "Description": "I资源采掘",
     "IconPath": "Assets/texpack/星球飞升-吞食帝国",
     "GridIndex": 3607,
     "StackSize": 1,
-    "Type": 2,
+    "Type": 1,
     "PreTech": 0,
     "PreTechOverride": 0,
     "DescFields": [],

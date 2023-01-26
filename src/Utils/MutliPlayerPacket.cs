@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using NebulaAPI;
 using ProjectGenesis.Patches.Logic.MegaAssembler;
+using ProjectGenesis.Patches.Logic.PlanetBase;
 
 // ReSharper disable MemberCanBeInternal
 // ReSharper disable MemberCanBePrivate.Global
@@ -166,23 +167,71 @@ namespace ProjectGenesis.Utils
         public override void ProcessPacket(SyncSlotData packet, INebulaConnection conn)
             => SyncSlotData.OnReceive(packet.Guid, packet.PlanetId, packet.SlotId, packet.EntityId, packet.SlotData);
     }
+    
+ public class SyncPlanetFocusData
+    {
+        public SyncPlanetFocusData() { }
 
-    public class MegaBuildingLoadRequest
+        public SyncPlanetFocusData(
+            string guid,
+            int planetId,
+            int index,
+            int focusId)
+        {
+            Guid = guid;
+            PlanetId = planetId;
+            Index = index;
+            FocusId = focusId;
+        }
+
+        public string Guid { get; set; }
+        public int PlanetId { get; set; }
+        public int Index { get; set; }
+        public int FocusId { get; set; }
+
+        internal static void Sync(
+            int planetId,
+            int index,
+            int focusId)
+        {
+            if (NebulaModAPI.IsMultiplayerActive)
+                NebulaModAPI.MultiplayerSession.Network.SendPacket(new SyncPlanetFocusData(ProjectGenesis.MODGUID, planetId, index, focusId));
+        }
+
+        internal static void OnReceive(
+            string guid,
+            int planetId,
+            int index,
+            int focusId)
+        {
+            if (guid != ProjectGenesis.MODGUID) return;
+            PlanetBasePatches.SyncPlanetFocus(planetId, index, focusId);
+        }
+    }
+
+    [RegisterPacketProcessor]
+    public class SyncPlanetFocusDataProcessor : BasePacketProcessor<SyncPlanetFocusData>
+    {
+        public override void ProcessPacket(SyncPlanetFocusData packet, INebulaConnection conn)
+            => SyncPlanetFocusData.OnReceive(packet.Guid, packet.PlanetId, packet.Index, packet.FocusId);
+    }
+   
+    public class GenesisBookPlanetLoadRequest
     {
         public int PlanetId { get; set; }
+        
+        public GenesisBookPlanetLoadRequest() { }
 
-        public MegaBuildingLoadRequest() { }
-
-        public MegaBuildingLoadRequest(int planetId)
+        public GenesisBookPlanetLoadRequest(int planetId)
         {
             PlanetId = planetId;
         }
     }
 
     [RegisterPacketProcessor]
-    public class MegaBuildingLoadRequestProcessor : BasePacketProcessor<MegaBuildingLoadRequest>
+    public class GenesisBookPlanetLoadRequestProcessor : BasePacketProcessor<GenesisBookPlanetLoadRequest>
     {
-        public override void ProcessPacket(MegaBuildingLoadRequest packet, INebulaConnection conn)
+        public override void ProcessPacket(GenesisBookPlanetLoadRequest packet, INebulaConnection conn)
         {
             if (IsClient) return;
 
@@ -191,21 +240,22 @@ namespace ProjectGenesis.Utils
             using (var p = NebulaModAPI.GetBinaryWriter())
             {
                 MegaAssemblerPatches.ExportPlanetData(packet.PlanetId, p.BinaryWriter);
+                PlanetBasePatches.ExportPlanetFocus(packet.PlanetId, p.BinaryWriter);
                 data = p.CloseAndGetBytes();
             }
 
-            conn.SendPacket(new MegaBuildingData(packet.PlanetId, data));
+            conn.SendPacket(new GenesisBookPlanetData(packet.PlanetId, data));
         }
     }
 
-    public class MegaBuildingData
+    public class GenesisBookPlanetData
     {
         public int PlanetId { get; set; }
         public byte[] BinaryData { get; set; }
 
-        public MegaBuildingData() { }
+        public GenesisBookPlanetData() { }
 
-        public MegaBuildingData(int id, byte[] data)
+        public GenesisBookPlanetData(int id, byte[] data)
         {
             PlanetId = id;
             BinaryData = data;
@@ -213,11 +263,11 @@ namespace ProjectGenesis.Utils
     }
 
     [RegisterPacketProcessor]
-    public class MegaBuildingDataProcessor : BasePacketProcessor<MegaBuildingData>
+    public class GenesisBookPlanetDataProcessor : BasePacketProcessor<GenesisBookPlanetData>
     {
         internal static readonly Dictionary<int, byte[]> PendingData = new Dictionary<int, byte[]>();
 
-        public override void ProcessPacket(MegaBuildingData packet, INebulaConnection conn)
+        public override void ProcessPacket(GenesisBookPlanetData packet, INebulaConnection conn)
         {
             if (IsHost) return;
 
@@ -230,7 +280,11 @@ namespace ProjectGenesis.Utils
             if (!PendingData.TryGetValue(planetId, out byte[] bytes)) return;
             PendingData.Remove(planetId);
 
-            using (var p = NebulaModAPI.GetBinaryReader(bytes)) MegaAssemblerPatches.ImportPlanetData(p.BinaryReader);
+            using (var p = NebulaModAPI.GetBinaryReader(bytes))
+            {
+                MegaAssemblerPatches.ImportPlanetData(p.BinaryReader);
+                PlanetBasePatches.ImportPlanetFocus(p.BinaryReader);
+            }
         }
     }
 }

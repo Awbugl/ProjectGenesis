@@ -18,7 +18,7 @@ namespace ProjectGenesis.Patches.Logic
 
         [HarmonyPostfix]
         [HarmonyPatch(typeof(UIReplicatorWindow), "OnSelectedRecipeChange")]
-        public static void UIReplicatorWindow_OnSelectedRecipeChange(ref UIReplicatorWindow __instance, bool changed)
+        public static void UIReplicatorWindow_OnSelectedRecipeChange(ref UIReplicatorWindow __instance)
         {
             ref var selectedRecipe
                 = ref AccessTools.FieldRefAccess<UIReplicatorWindow, RecipeProto>(UIRoot.instance.uiGame.replicator, "selectedRecipe");

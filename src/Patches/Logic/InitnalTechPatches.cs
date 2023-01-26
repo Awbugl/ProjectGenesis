@@ -37,6 +37,17 @@ namespace ProjectGenesis.Patches.Logic
             {
                 if (!__instance.history.TechUnlocked(tech)) __instance.history.UnlockTech(tech);
             }
+
+            foreach (var (key, value) in __instance.history.techStates)
+            {
+                if (value.unlocked)
+                {
+                    var techProto = LDB.techs.Select(key);
+                    if (techProto != null)
+                        foreach (var t in techProto.UnlockRecipes)
+                            __instance.history.UnlockRecipe(t);
+                }
+            }
         }
 
         [HarmonyPatch(typeof(UITechNode), "DoBuyoutTech")]

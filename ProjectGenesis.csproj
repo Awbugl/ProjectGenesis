@@ -110,7 +110,12 @@
         <Compile Include="src\Patches\Logic\ModelLoadingPatches.cs" />
         <Compile Include="src\Patches\Logic\MultiProductionPatches.cs" />
         <Compile Include="src\Patches\Logic\OceanDischargePatches.cs" />
+        <Compile Include="src\Patches\Logic\PlanetBase\FactoryPowerPatches.cs" />
+        <Compile Include="src\Patches\Logic\PlanetBase\InternalFunctions.cs" />
+        <Compile Include="src\Patches\Logic\PlanetBase\LabPatches.cs" />
+        <Compile Include="src\Patches\Logic\PlanetBase\MinerComponentPatches.cs" />
         <Compile Include="src\Patches\Logic\PlanetBase\PlanetBasePatches.cs" />
+        <Compile Include="src\Patches\Logic\PlanetBase\PowerSystemPatches.cs" />
         <Compile Include="src\Patches\Logic\PlanetGasPatches.cs" />
         <Compile Include="src\Patches\Logic\ProductionPatches.cs" />
         <Compile Include="src\Patches\Logic\ThermalPowerGenPatches.cs" />

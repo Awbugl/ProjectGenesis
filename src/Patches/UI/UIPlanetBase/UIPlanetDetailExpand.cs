@@ -30,8 +30,20 @@ namespace ProjectGenesis.Patches.UI.UIPlanetBase
                 return;
             }
 
-            _planetBaseBtn.gameObject.SetActive(__instance.planet.type != EPlanetType.Gas);
-            ProjectGenesis.planetBaseWindow.nameText.text = __instance.planet.displayName;
+            var notgas = __instance.planet.type != EPlanetType.Gas;
+
+            _planetBaseBtn.gameObject.SetActive(notgas);
+
+            if (notgas)
+            {
+                ProjectGenesis.planetBaseWindow.nameText.text = __instance.planet.displayName + " - " + "星球倾向".TranslateFromJson();
+
+                if (UIPlanetBaseWindow.CurPlanetId != __instance.planet.id)
+                {
+                    UIPlanetBaseWindow.CurPlanetId = __instance.planet.id;
+                    ProjectGenesis.planetBaseWindow.OnPlanetChanged(UIPlanetBaseWindow.CurPlanetId);
+                }
+            }
         }
     }
 }
