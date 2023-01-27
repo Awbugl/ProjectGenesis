@@ -50,9 +50,10 @@ namespace ProjectGenesis.Patches.Logic.PlanetBase
         {
             if (_planetBases.TryGetValue(planetId, out var planetBase))
                 // ReSharper disable once LoopCanBeConvertedToQuery
-                foreach (var t in planetBase)
+                // ReSharper disable once ForCanBeConvertedToForeach
+                for (var index = 0; index < planetBase.Length; ++index)
                 {
-                    if (t == focusid) return true;
+                    if (planetBase[index] == focusid) return true;
                 }
 
             return false;

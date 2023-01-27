@@ -230,15 +230,19 @@
   + 调整了氧的热值为900KJ
   + 允许巨型建筑输出原料
 
+  + Adjust the power consumption and production type of the Mega Pump
+  + Adjust the heat value of oxygen to 900KJ
+  + Allow Mega Buildings to output raw materials
+
 
 - v2.2.3
   + 添加巨型抽水站
   + 调整部分建筑的手动制造权限
   + 修复了一部分翻译错误
 
-  + Adjust the power consumption and production type of the Mega Pump
-  + Adjust the heat value of oxygen to 900KJ
-  + Allow Mega Buildings to output raw materials
+  + Add Mega Pump
+  + Adjust some buildings to allow product manually
+  + Fix some translation errors
 
 
 - v2.2.2
@@ -246,9 +250,9 @@
   + 修改了部分与实际不匹配的物品介绍、科技描述
   + 调整了部分科技的需求
 
-  + Add Mega Pump
-  + Adjust some buildings to allow product manually
-  + Fix some translation errors
+  + Fixed the compatibility issues of the giant building with the online mod.
+  + Modified some item descriptions and technology descriptions that do not match the actual ones
+  + Adjusted the requirements of some technologies
 
 
 - v2.2.1
