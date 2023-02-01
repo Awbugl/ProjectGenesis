@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 
-namespace ProjectGenesis.Patches.Logic.PlanetBase
+namespace ProjectGenesis.Patches.Logic.PlanetFocus
 {
     public static partial class PlanetFocusPatches
     {
@@ -48,12 +48,12 @@ namespace ProjectGenesis.Patches.Logic.PlanetBase
 
         private static bool ContainsFocus(int planetId, int focusid)
         {
-            if (_planetFocuses.TryGetValue(planetId, out var planetBase))
+            if (_planetFocuses.TryGetValue(planetId, out var focuses))
                 // ReSharper disable once LoopCanBeConvertedToQuery
                 // ReSharper disable once ForCanBeConvertedToForeach
-                for (var index = 0; index < planetBase.Length; ++index)
+                for (var index = 0; index < focuses.Length; ++index)
                 {
-                    if (planetBase[index] == focusid) return true;
+                    if (focuses[index] == focusid) return true;
                 }
 
             return false;

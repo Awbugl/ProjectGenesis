@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using NebulaAPI;
 using ProjectGenesis.Patches.Logic.MegaAssembler;
-using ProjectGenesis.Patches.Logic.PlanetBase;
+using ProjectGenesis.Patches.Logic.PlanetFocus;
 
 // ReSharper disable MemberCanBeInternal
 // ReSharper disable MemberCanBePrivate.Global

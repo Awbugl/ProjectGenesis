@@ -3,9 +3,9 @@ using HarmonyLib;
 using ProjectGenesis.Utils;
 using UnityEngine;
 using UnityEngine.UI;
-using static ProjectGenesis.Patches.Logic.PlanetBase.PlanetFocusPatches;
+using static ProjectGenesis.Patches.Logic.PlanetFocus.PlanetFocusPatches;
 
-namespace ProjectGenesis.Patches.UI.UIPlanetBase
+namespace ProjectGenesis.Patches.UI.UIPlanetFocus
 {
     /// <summary>
     ///   special thanks to https://github.com/hetima/DSP_PlanetFinder/tree/main/PlanetFinder

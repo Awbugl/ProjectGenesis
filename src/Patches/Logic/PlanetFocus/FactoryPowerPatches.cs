@@ -4,7 +4,7 @@ using System.Reflection.Emit;
 using HarmonyLib;
 using ProjectGenesis.Utils;
 
-namespace ProjectGenesis.Patches.Logic.PlanetBase
+namespace ProjectGenesis.Patches.Logic.PlanetFocus
 {
     public static partial class PlanetFocusPatches
     {

@@ -3,11 +3,11 @@ using ProjectGenesis.Utils;
 
 // ReSharper disable InconsistentNaming
 
-namespace ProjectGenesis.Patches.UI.UIPlanetBase
+namespace ProjectGenesis.Patches.UI.UIPlanetFocus
 {
     public static class UIPlanetDetailExpand
     {
-        private static UIButton _planetBaseBtn;
+        private static UIButton _planetFocusBtn;
 
         [HarmonyPostfix]
         [HarmonyPatch(typeof(UIGame), "_OnCreate")]
@@ -15,9 +15,9 @@ namespace ProjectGenesis.Patches.UI.UIPlanetBase
         {
             ProjectGenesis.PlanetFocusWindow = UIPlanetFocusWindow.CreateWindow();
 
-            _planetBaseBtn = Util.CreateButton("星球基地".TranslateFromJson());
-            Util.NormalizeRectWithTopLeft(_planetBaseBtn, 5, -40, __instance.planetDetail.rectTrans);
-            _planetBaseBtn.onClick += obj => ProjectGenesis.PlanetFocusWindow.OpenWindow();
+            _planetFocusBtn = Util.CreateButton("协调".TranslateFromJson());
+            Util.NormalizeRectWithTopLeft(_planetFocusBtn, 5, -40, __instance.planetDetail.rectTrans);
+            _planetFocusBtn.onClick += obj => ProjectGenesis.PlanetFocusWindow.OpenWindow();
         }
 
         [HarmonyPostfix]
@@ -32,7 +32,7 @@ namespace ProjectGenesis.Patches.UI.UIPlanetBase
 
             var notgas = __instance.planet.type != EPlanetType.Gas;
 
-            _planetBaseBtn.gameObject.SetActive(notgas);
+            _planetFocusBtn.gameObject.SetActive(notgas);
 
             if (notgas)
             {

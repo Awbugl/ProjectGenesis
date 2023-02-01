@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.IO;
 using ProjectGenesis.Utils;
 
-namespace ProjectGenesis.Patches.Logic.PlanetBase
+// ReSharper disable MemberCanBeInternal
+
+namespace ProjectGenesis.Patches.Logic.PlanetFocus
 {
     public static partial class PlanetFocusPatches
     {
