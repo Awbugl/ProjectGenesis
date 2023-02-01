@@ -15,9 +15,9 @@ namespace ProjectGenesis.Patches.UI.UIPlanetFocus
         {
             ProjectGenesis.PlanetFocusWindow = UIPlanetFocusWindow.CreateWindow();
 
-            _planetFocusBtn = Util.CreateButton("协调".TranslateFromJson());
+            _planetFocusBtn = Util.CreateButton("星球基地".TranslateFromJson());
             Util.NormalizeRectWithTopLeft(_planetFocusBtn, 5, -40, __instance.planetDetail.rectTrans);
-            _planetFocusBtn.onClick += obj => ProjectGenesis.PlanetFocusWindow.OpenWindow();
+            _planetFocusBtn.onClick += _ => ProjectGenesis.PlanetFocusWindow.OpenWindow();
         }
 
         [HarmonyPostfix]
