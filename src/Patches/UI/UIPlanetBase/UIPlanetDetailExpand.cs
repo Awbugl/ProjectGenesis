@@ -13,11 +13,11 @@ namespace ProjectGenesis.Patches.UI.UIPlanetBase
         [HarmonyPatch(typeof(UIGame), "_OnCreate")]
         public static void Init(UIGame __instance)
         {
-            ProjectGenesis.planetBaseWindow = UIPlanetBaseWindow.CreateWindow();
+            ProjectGenesis.PlanetFocusWindow = UIPlanetFocusWindow.CreateWindow();
 
             _planetBaseBtn = Util.CreateButton("星球基地".TranslateFromJson());
             Util.NormalizeRectWithTopLeft(_planetBaseBtn, 5, -40, __instance.planetDetail.rectTrans);
-            _planetBaseBtn.onClick += obj => ProjectGenesis.planetBaseWindow.OpenWindow();
+            _planetBaseBtn.onClick += obj => ProjectGenesis.PlanetFocusWindow.OpenWindow();
         }
 
         [HarmonyPostfix]
@@ -26,7 +26,7 @@ namespace ProjectGenesis.Patches.UI.UIPlanetBase
         {
             if (__instance.planet == null)
             {
-                ProjectGenesis.planetBaseWindow._Close();
+                ProjectGenesis.PlanetFocusWindow._Close();
                 return;
             }
 
@@ -36,12 +36,12 @@ namespace ProjectGenesis.Patches.UI.UIPlanetBase
 
             if (notgas)
             {
-                ProjectGenesis.planetBaseWindow.nameText.text = __instance.planet.displayName + " - " + "星球倾向".TranslateFromJson();
+                ProjectGenesis.PlanetFocusWindow.nameText.text = __instance.planet.displayName + " - " + "星球倾向".TranslateFromJson();
 
-                if (UIPlanetBaseWindow.CurPlanetId != __instance.planet.id)
+                if (UIPlanetFocusWindow.CurPlanetId != __instance.planet.id)
                 {
-                    UIPlanetBaseWindow.CurPlanetId = __instance.planet.id;
-                    ProjectGenesis.planetBaseWindow.OnPlanetChanged(UIPlanetBaseWindow.CurPlanetId);
+                    UIPlanetFocusWindow.CurPlanetId = __instance.planet.id;
+                    ProjectGenesis.PlanetFocusWindow.OnPlanetChanged(UIPlanetFocusWindow.CurPlanetId);
                 }
             }
         }

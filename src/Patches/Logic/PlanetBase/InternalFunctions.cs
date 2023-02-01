@@ -4,13 +4,13 @@ using System.IO;
 
 namespace ProjectGenesis.Patches.Logic.PlanetBase
 {
-    public static partial class PlanetBasePatches
+    public static partial class PlanetFocusPatches
     {
         internal static void Export(BinaryWriter w)
         {
-            w.Write(_planetBases.Count);
+            w.Write(_planetFocuses.Count);
 
-            foreach (KeyValuePair<int, int[]> pair in _planetBases)
+            foreach (KeyValuePair<int, int[]> pair in _planetFocuses)
             {
                 w.Write(pair.Key);
                 w.Write(pair.Value.Length);
@@ -33,7 +33,7 @@ namespace ProjectGenesis.Patches.Logic.PlanetBase
                     var datas = new int[length];
                     for (var i = 0; i < length; i++) datas[i] = r.ReadInt32();
 
-                    _planetBases.TryAdd(key, datas);
+                    _planetFocuses.TryAdd(key, datas);
                 }
             }
             catch (EndOfStreamException)
@@ -44,11 +44,11 @@ namespace ProjectGenesis.Patches.Logic.PlanetBase
 
         internal static void IntoOtherSave() => ReInitAll();
 
-        private static void ReInitAll() => _planetBases = new ConcurrentDictionary<int, int[]>();
+        private static void ReInitAll() => _planetFocuses = new ConcurrentDictionary<int, int[]>();
 
         private static bool ContainsFocus(int planetId, int focusid)
         {
-            if (_planetBases.TryGetValue(planetId, out var planetBase))
+            if (_planetFocuses.TryGetValue(planetId, out var planetBase))
                 // ReSharper disable once LoopCanBeConvertedToQuery
                 // ReSharper disable once ForCanBeConvertedToForeach
                 for (var index = 0; index < planetBase.Length; ++index)

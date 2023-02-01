@@ -6,7 +6,7 @@ using ProjectGenesis.Utils;
 
 namespace ProjectGenesis.Patches.Logic.PlanetBase
 {
-    public static partial class PlanetBasePatches
+    public static partial class PlanetFocusPatches
     {
         private static readonly ConcurrentDictionary<short, long> ModelPowerCosts = new ConcurrentDictionary<short, long>();
 
@@ -21,7 +21,7 @@ namespace ProjectGenesis.Patches.Logic.PlanetBase
             matcher.InsertAndAdvance(matcher.InstructionsWithOffsets(0, 4));
             matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0));
             matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldfld, AccessTools.Field(typeof(FactorySystem), nameof(FactorySystem.factory))));
-            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(PlanetBasePatches), nameof(GetWorkEnergyPerTick))));
+            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(PlanetFocusPatches), nameof(GetWorkEnergyPerTick))));
             return matcher.InstructionEnumeration();
         }
 

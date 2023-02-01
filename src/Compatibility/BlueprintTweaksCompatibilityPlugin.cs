@@ -11,8 +11,8 @@ namespace ProjectGenesis.Compatibility
     [BepInDependency(BlueprintTweaksGUID)]
     public class BlueprintTweaksCompatibilityPlugin : BaseUnityPlugin
     {
-        public const string MODGUID = "org.LoShin.GenesisBook.BlueprintTweaksCompatibilityPatch";
-        public const string MODNAME = "GenesisBook.BlueprintTweaksCompatibilityPatch";
+        public const string MODGUID = "org.LoShin.GenesisBook.Compatibility.BlueprintTweaks";
+        public const string MODNAME = "GenesisBook.Compatibility.BlueprintTweaks";
         public const string VERSION = "1.0.0";
 
         private const string BlueprintTweaksGUID = "org.kremnev8.plugin.BlueprintTweaks";

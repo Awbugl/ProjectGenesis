@@ -1,15 +1,20 @@
 ﻿using System.IO;
 using BepInEx;
 using HarmonyLib;
+using xiaoye97;
 
 namespace ProjectGenesis.Patches.Logic
 {
-    public static class DeleteLDBConfig
+    public static class DisableLDBToolCachePatches
     {
+        [HarmonyPrefix]
+        [HarmonyPatch(typeof(LDBTool), "Bind")]
+        public static bool LDBTool_Bind() => false;
+
         [HarmonyPostfix]
-        [HarmonyPatch(typeof(DSPGame), "Awake")]
-        [HarmonyPatch(typeof(GameMain), "OnDestroy")]
-        public static void DSPGame_Awake()
+        [HarmonyAfter(LDBToolPlugin.MODGUID)]
+        [HarmonyPatch(typeof(VFPreload), "InvokeOnLoadWorkEnded")]
+        public static void DeleteFiles()
         {
             try
             {

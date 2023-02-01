@@ -23,8 +23,8 @@ namespace ProjectGenesis.Compatibility
     [BepInDependency(GalacticScaleCompatibilityPlugin.MODGUID, BepInDependency.DependencyFlags.SoftDependency)]
     public class IncompatibleCheckPlugin : BaseUnityPlugin
     {
-        public const string MODGUID = "org.LoShin.GenesisBook.IncompatibleCheckPatch";
-        public const string MODNAME = "GenesisBook.IncompatibleCheckPatch";
+        public const string MODGUID = "org.LoShin.GenesisBook.Compatibility.Check";
+        public const string MODNAME = "GenesisBook.Compatibility.Check";
         public const string VERSION = "1.0.0";
 
         private const string DSPBattleGUID = "com.ckcz123.DSP_Battle";

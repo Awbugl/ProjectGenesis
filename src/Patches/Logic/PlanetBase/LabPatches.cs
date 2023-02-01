@@ -4,7 +4,7 @@ using HarmonyLib;
 
 namespace ProjectGenesis.Patches.Logic.PlanetBase
 {
-    public static partial class PlanetBasePatches
+    public static partial class PlanetFocusPatches
     {
         [HarmonyPatch(typeof(FactorySystem), "GameTickLabResearchMode")]
         [HarmonyTranspiler]
@@ -16,7 +16,7 @@ namespace ProjectGenesis.Patches.Logic.PlanetBase
                                  new CodeMatch(OpCodes.Conv_R4));
 
             matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0));
-            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(PlanetBasePatches), nameof(LabResearchMode))));
+            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(PlanetFocusPatches), nameof(LabResearchMode))));
 
             return matcher.InstructionEnumeration();
         }
@@ -46,7 +46,7 @@ namespace ProjectGenesis.Patches.Logic.PlanetBase
                                                     new CodeInstruction(OpCodes.Ldfld,
                                                                         AccessTools.Field(typeof(UILabWindow), "factory")));
 
-                matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(PlanetBasePatches), nameof(LabTechSpeed))));
+                matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(PlanetFocusPatches), nameof(LabTechSpeed))));
           
 
             return matcher.InstructionEnumeration();

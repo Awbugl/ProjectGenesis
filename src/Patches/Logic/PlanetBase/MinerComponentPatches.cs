@@ -4,7 +4,7 @@ using HarmonyLib;
 
 namespace ProjectGenesis.Patches.Logic.PlanetBase
 {
-    public static partial class PlanetBasePatches
+    public static partial class PlanetFocusPatches
     {
         [HarmonyPatch(typeof(MinerComponent), "InternalUpdate")]
         [HarmonyPrefix]
@@ -31,7 +31,7 @@ namespace ProjectGenesis.Patches.Logic.PlanetBase
                                                     new CodeInstruction(OpCodes.Ldfld,
                                                                         AccessTools.Field(typeof(UIMinerWindow), nameof(UIMinerWindow.factory))));
 
-                matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(PlanetBasePatches), nameof(MiningSpeedScale))));
+                matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(PlanetFocusPatches), nameof(MiningSpeedScale))));
             }
 
             return matcher.InstructionEnumeration();

@@ -4,7 +4,7 @@ using HarmonyLib;
 
 namespace ProjectGenesis.Patches.Logic.PlanetBase
 {
-    public static partial class PlanetBasePatches
+    public static partial class PlanetFocusPatches
     {
         [HarmonyPatch(typeof(PowerSystem), "GameTick")]
         [HarmonyTranspiler]
@@ -17,14 +17,14 @@ namespace ProjectGenesis.Patches.Logic.PlanetBase
                                  new CodeMatch(OpCodes.Call,
                                                AccessTools.Method(typeof(PowerGeneratorComponent), nameof(PowerGeneratorComponent.EnergyCap_Wind))));
             matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0));
-            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(PlanetBasePatches), nameof(EnergyCap_Wind))));
+            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(PlanetFocusPatches), nameof(EnergyCap_Wind))));
 
             //pv
             matcher.MatchForward(false,
                                  new CodeMatch(OpCodes.Call,
                                                AccessTools.Method(typeof(PowerGeneratorComponent), nameof(PowerGeneratorComponent.EnergyCap_PV))));
             matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0));
-            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(PlanetBasePatches), nameof(EnergyCap_PV))));
+            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(PlanetFocusPatches), nameof(EnergyCap_PV))));
 
             //fuel
             matcher.MatchForward(false, new CodeMatch(OpCodes.Ldarg_0), new CodeMatch(OpCodes.Ldfld), new CodeMatch(OpCodes.Ldloc_S),
@@ -36,7 +36,7 @@ namespace ProjectGenesis.Patches.Logic.PlanetBase
 
             matcher.Advance(5).InsertAndAdvance(ins);
             matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0));
-            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(PlanetBasePatches), nameof(EnergyCap_Fuel))));
+            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(PlanetFocusPatches), nameof(EnergyCap_Fuel))));
 
             return matcher.InstructionEnumeration();
         }
@@ -98,7 +98,7 @@ namespace ProjectGenesis.Patches.Logic.PlanetBase
                                                          AccessTools.Field(typeof(UIPowerGeneratorWindow), nameof(UIPowerGeneratorWindow.factory))));
 
             matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Call,
-                                                         AccessTools.Method(typeof(PlanetBasePatches), nameof(UIPowerGeneratorWindow_OnUpdate))));
+                                                         AccessTools.Method(typeof(PlanetFocusPatches), nameof(UIPowerGeneratorWindow_OnUpdate))));
             
             return matcher.InstructionEnumeration();
         }

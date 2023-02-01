@@ -3,7 +3,7 @@ using HarmonyLib;
 using ProjectGenesis.Utils;
 using UnityEngine;
 using UnityEngine.UI;
-using static ProjectGenesis.Patches.Logic.PlanetBase.PlanetBasePatches;
+using static ProjectGenesis.Patches.Logic.PlanetBase.PlanetFocusPatches;
 
 namespace ProjectGenesis.Patches.UI.UIPlanetBase
 {
@@ -11,7 +11,7 @@ namespace ProjectGenesis.Patches.UI.UIPlanetBase
     ///   special thanks to https://github.com/hetima/DSP_PlanetFinder/tree/main/PlanetFinder
     ///   special thanks to https://github.com/starfi5h/DSP_Mod_Support/tree/main/FactoryLocator/src/UI
     /// </summary>
-    public class UIPlanetBaseWindow : ManualBehaviour
+    public class UIPlanetFocusWindow : ManualBehaviour
     {
         public RectTransform windowTrans;
         public Text nameText;
@@ -27,9 +27,9 @@ namespace ProjectGenesis.Patches.UI.UIPlanetBase
         internal static int CurPlanetId;
         private static Sprite _tagNotSelectedSprite;
 
-        internal static UIPlanetBaseWindow CreateWindow()
+        internal static UIPlanetFocusWindow CreateWindow()
         {
-            var win = MyWindowCtl.CreateWindow<UIPlanetBaseWindow>("UIPlanetBaseWindow", "星球基地".TranslateFromJson());
+            var win = MyWindowCtl.CreateWindow<UIPlanetFocusWindow>("UIPlanetFocusWindow", "星球基地".TranslateFromJson());
             return win;
         }
 
@@ -86,7 +86,7 @@ namespace ProjectGenesis.Patches.UI.UIPlanetBase
 
         internal void OnPlanetChanged(int planetId)
         {
-            _currentFocusIds = GetPlanetBase(planetId);
+            _currentFocusIds = GetPlanetFocus(planetId);
 
             for (var i = 0; i < FocusMaxCount; ++i)
             {
@@ -99,7 +99,7 @@ namespace ProjectGenesis.Patches.UI.UIPlanetBase
                 }
 
                 var proto = LDB.items.Select(currentFocusId);
-                _iconTexts[i].text = FilterIds[currentFocusId];
+                _iconTexts[i].text = FocusIds[currentFocusId];
                 var sprite = proto.iconSprite;
                 if (sprite != null) _iconImgs[i].sprite = sprite;
             }
@@ -108,7 +108,7 @@ namespace ProjectGenesis.Patches.UI.UIPlanetBase
         private void OnIconBtnClick(int id)
         {
             AccessTools.FieldRefAccess<int>(typeof(UIItemPicker), "currentType")(UIRoot.instance.uiGame.itemPicker) = ProjectGenesis.TableID[0];
-            UIItemPickerExtension.Popup(new Vector2(-300f, 250f), j => OnPickReturn(j, id), true, itemProto => FilterIds.ContainsKey(itemProto.ID));
+            UIItemPickerExtension.Popup(new Vector2(-300f, 250f), j => OnPickReturn(j, id), true, itemProto => FocusIds.ContainsKey(itemProto.ID));
         }
 
         private void OnIconBtnRightClick(int id)
@@ -137,7 +137,7 @@ namespace ProjectGenesis.Patches.UI.UIPlanetBase
             
             _currentFocusIds[id] = currentFocusId;
             SetPlanetFocus(CurPlanetId, id, currentFocusId);
-            _iconTexts[id].text = FilterIds[currentFocusId].TranslateFromJson();
+            _iconTexts[id].text = FocusIds[currentFocusId].TranslateFromJson();
             var sprite = proto.iconSprite;
             if (sprite != null) _iconImgs[id].sprite = sprite;
         }

@@ -205,7 +205,7 @@ namespace ProjectGenesis.Utils
             int focusId)
         {
             if (guid != ProjectGenesis.MODGUID) return;
-            PlanetBasePatches.SyncPlanetFocus(planetId, index, focusId);
+            PlanetFocusPatches.SyncPlanetFocus(planetId, index, focusId);
         }
     }
 
@@ -240,7 +240,7 @@ namespace ProjectGenesis.Utils
             using (var p = NebulaModAPI.GetBinaryWriter())
             {
                 MegaAssemblerPatches.ExportPlanetData(packet.PlanetId, p.BinaryWriter);
-                PlanetBasePatches.ExportPlanetFocus(packet.PlanetId, p.BinaryWriter);
+                PlanetFocusPatches.ExportPlanetFocus(packet.PlanetId, p.BinaryWriter);
                 data = p.CloseAndGetBytes();
             }
 
@@ -283,7 +283,7 @@ namespace ProjectGenesis.Utils
             using (var p = NebulaModAPI.GetBinaryReader(bytes))
             {
                 MegaAssemblerPatches.ImportPlanetData(p.BinaryReader);
-                PlanetBasePatches.ImportPlanetFocus(p.BinaryReader);
+                PlanetFocusPatches.ImportPlanetFocus(p.BinaryReader);
             }
         }
     }

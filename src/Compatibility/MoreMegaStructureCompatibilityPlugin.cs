@@ -15,8 +15,8 @@ namespace ProjectGenesis.Compatibility
     [BepInDependency(MoreMegaStructureGUID)]
     public class MoreMegaStructureCompatibilityPlugin : BaseUnityPlugin
     {
-        public const string MODGUID = "org.LoShin.GenesisBook.MoreMegaStructureCompatibilityPatch";
-        public const string MODNAME = "GenesisBook.MoreMegaStructureCompatibilityPatch";
+        public const string MODGUID = "org.LoShin.GenesisBook.Compatibility.MoreMegaStructure";
+        public const string MODNAME = "GenesisBook.Compatibility.MoreMegaStructure";
         public const string VERSION = "1.0.0";
 
         private const string MoreMegaStructureGUID = "Gnimaerd.DSP.plugin.MoreMegaStructure";

@@ -2,7 +2,6 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using BepInEx;
-using BepInEx.Configuration;
 using BepInEx.Logging;
 using CommonAPI;
 using CommonAPI.Systems;
@@ -44,13 +43,13 @@ namespace ProjectGenesis
     {
         public const string MODGUID = "org.LoShin.GenesisBook";
         public const string MODNAME = "GenesisBook";
-        public const string VERSION = "2.5.1";
+        public const string VERSION = "2.5.2";
 
         public string Version => VERSION;
 
         internal static ManualLogSource logger;
 
-        internal static UIPlanetBaseWindow planetBaseWindow;
+        internal static UIPlanetFocusWindow PlanetFocusWindow;
 
         //无限堆叠开关(私货)
         private readonly bool StackSizeButton = false;
@@ -58,7 +57,7 @@ namespace ProjectGenesis
         internal static int[] TableID;
         private Harmony Harmony;
 
-        internal static ConfigEntry<bool> EnableAtmosphericEmission;
+        internal static bool EnableAtmosphericEmission;
 
         public void Awake()
         {
@@ -71,9 +70,10 @@ namespace ProjectGenesis
                 return;
             }
 
-            var configdesc = "Add Atmospheric Emission tech in game\n是否添加大气排污科技，将其修改为 false 则游戏内不会出现此科技";
+            EnableAtmosphericEmission = Config.Bind("config", "EnableAtmosphericEmission", true,
+                                                    "Add Atmospheric Emission tech in game, which may casue resource waste in low resource rate game.\n是否添加大气排污科技；注：大气排污科技在低资源倍率下可能导致资源浪费")
+                                              .Value;
 
-            EnableAtmosphericEmission = Config.Bind("config", "EnableAtmosphericEmission", true, configdesc);
             Config.Save();
 
             var executingAssembly = Assembly.GetExecutingAssembly();
@@ -118,7 +118,7 @@ namespace ProjectGenesis
 
             AdjustPlanetThemeDataVanilla();
             AddCopiedModelProto();
-            ImportJson(TableID, EnableAtmosphericEmission.Value);
+            ImportJson(TableID, EnableAtmosphericEmission);
         }
 
         private void PostAddDataAction()
@@ -195,19 +195,19 @@ namespace ProjectGenesis
         public void Export(BinaryWriter w)
         {
             MegaAssemblerPatches.Export(w);
-            PlanetBasePatches.Export(w);
+            PlanetFocusPatches.Export(w);
         }
 
         public void Import(BinaryReader r)
         {
             MegaAssemblerPatches.Import(r);
-            PlanetBasePatches.Import(r);
+            PlanetFocusPatches.Import(r);
         }
 
         public void IntoOtherSave()
         {
             MegaAssemblerPatches.IntoOtherSave();
-            PlanetBasePatches.IntoOtherSave();
+            PlanetFocusPatches.IntoOtherSave();
         }
 
         public bool CheckVersion(string hostVersion, string clientVersion) => hostVersion.Equals(clientVersion);

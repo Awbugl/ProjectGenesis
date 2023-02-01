@@ -16,8 +16,8 @@ namespace ProjectGenesis.Compatibility
     [BepInDependency(GalacticScaleGUID)]
     public class GalacticScaleCompatibilityPlugin : BaseUnityPlugin
     {
-        public const string MODGUID = "org.LoShin.GenesisBook.GalacticScaleCompatibilityPatch";
-        public const string MODNAME = "GenesisBook.GalacticScaleCompatibilityPatch";
+        public const string MODGUID = "org.LoShin.GenesisBook.Compatibility.GalacticScale";
+        public const string MODNAME = "GenesisBook.Compatibility.GalacticScale";
         public const string VERSION = "1.0.0";
 
         private const string GalacticScaleGUID = "dsp.galactic-scale.2";

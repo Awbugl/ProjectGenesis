@@ -15,8 +15,8 @@ namespace ProjectGenesis.Compatibility
     [BepInDependency(BottleneckGUID)]
     public class BottleneckCompatibilityPlugin : BaseUnityPlugin
     {
-        public const string MODGUID = "org.LoShin.GenesisBook.BottleneckCompatibilityPatch";
-        public const string MODNAME = "GenesisBook.BottleneckCompatibilityPatch";
+        public const string MODGUID = "org.LoShin.GenesisBook.Compatibility.Bottleneck";
+        public const string MODNAME = "GenesisBook.Compatibility.Bottleneck";
         public const string VERSION = "1.0.0";
 
         private const string BottleneckGUID = "Bottleneck";
