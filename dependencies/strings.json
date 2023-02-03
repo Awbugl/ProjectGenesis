@@ -7,7 +7,7 @@
   {
     "Name": "GenesisBookLoadTitle",
     "ZHCN": "创世之书提示",
-    "ENUS": "Message from GenesisBook"
+    "ENUS": "From GenesisBook mod"
   },
   {
     "Name": "DSPBattleInstalled",
@@ -16,13 +16,23 @@
   },
   {
     "Name": "GenesisBookLoadMessage",
-    "ZHCN": "若您在主界面中看到了创世之书的图标，说明创世之书已成功加载。\n如果您在游玩创世之书MOD时遇到了任何问题，或者对MOD有宝贵的意见或建议，\n欢迎加入我们的QQ群：991895539（可在README.md文件中复制）",
-    "ENUS": "If the GenesisBook icon appears in the main menu, it means GenesisBook is successfully loaded.\nIf have any problems or suggestions about the mod, \nplease join our discord server: https://discord.gg/QwMEeaRZZR (You can copy the link in README.md)"
+    "ZHCN": "若您在主界面中看到了创世之书的图标，说明创世之书已成功加载。\n如果您在游玩MOD时遇到了任何问题，或者有宝贵的意见或建议，欢迎加入MOD交流群",
+    "ENUS": "If the GenesisBook icon appears in the main menu, it means GenesisBook is successfully loaded. \nIf have any issues or ideas about the mod, please join our community on Discord."
   },
   {
-    "Name": "Ok",
+    "Name": "确定",
     "ZHCN": "确定",
     "ENUS": "OK"
+  },
+  {
+    "Name": "跳转",
+    "ZHCN": "加入交流群",
+    "ENUS": "Join Discord Server"
+  },
+  {
+    "Name": "创世之书链接",
+    "ZHCN": "https://jq.qq.com/?_wv=1027&k=5bnaDEp3",
+    "ENUS": "https://discord.gg/QwMEeaRZZR"
   },
   {
     "Name": "星球基地",
@@ -76,8 +86,8 @@
   },
   {
     "Name": "I燃料回收",
-    "ZHCN": "协调中心将倾向于提高火力发电厂的燃料效率。",
-    "ENUS": "Coordination Center will tend to increase the fuel efficiency of thermal power plants."
+    "ZHCN": "协调中心将倾向于优化火力发电厂的热回收流程。",
+    "ENUS": "Coordination Center will tend to optimize the thermal recovery process of the power plant."
   },
   {
     "Name": "风力扩容",
@@ -86,8 +96,8 @@
   },
   {
     "Name": "I风力扩容",
-    "ZHCN": "协调中心将倾向于提高风力涡轮机的发电量。",
-    "ENUS": "Coordination Center will tend to increase the power generation of Wind Turbine."
+    "ZHCN": "协调中心将倾向于优化风力涡轮机的气动力学设计。",
+    "ENUS": "Coordination Center will tend to optimize the aerodynamic design of the wind turbine."
   },
   {
     "Name": "光伏扩容",
@@ -96,8 +106,8 @@
   },
   {
     "Name": "I光伏扩容",
-    "ZHCN": "协调中心将倾向于提高太阳能板的发电量。",
-    "ENUS": "Coordination Center will tend to increase the power generation of Solar Panel."
+    "ZHCN": "协调中心将倾向于提高太阳能板的光子利用率。",
+    "ENUS": "Coordination Center will tend to increase the photon utilization rate of the solar panel."
   },
   {
     "Name": "热聚增效",
@@ -106,8 +116,8 @@
   },
   {
     "Name": "I热聚增效",
-    "ZHCN": "协调中心将倾向于提高人造恒星的发电效率。",
-    "ENUS": "Coordination Center will tend to increase the power generation of Artificial Star."
+    "ZHCN": "协调中心将倾向于缩小人造恒星的聚变约束立场范围。",
+    "ENUS": "Coordination Center will tend to reduce the fusion confinement range of the artificial star."
   },
   {
     "Name": "资源采掘",
@@ -116,8 +126,8 @@
   },
   {
     "Name": "I资源采掘",
-    "ZHCN": "协调中心将倾向于提高矿物产出。",
-    "ENUS": "Coordination Center will tend to increase the output of miners."
+    "ZHCN": "协调中心将倾向于回收再利用低品质矿物。",
+    "ENUS": "Coordination Center will tend to recycle low-quality minerals."
   },
   {
     "Name": "工厂电力需求 -10%",
@@ -1995,9 +2005,19 @@
     "ENUS": "Steam is passed through a hot graphite to produce syngas.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
-    "Name": "R二氧化碳",
-    "ZHCN": "充分燃烧的石墨会形成二氧化碳.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Fully burned graphite will form carbon dioxide.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "Name": "氨氧化",
+    "ZHCN": "氨氧化",
+    "ENUS": "Ammonia oxidation"
+  },
+  {
+    "Name": "R氨氧化",
+    "ZHCN": "氨气与氧气进行反应, 经过一系列反应合成硝酸.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Ammonia reacts with oxygen to produce nitric acid.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+  },  
+  {
+    "Name": "R硫酸",
+    "ZHCN": "使用离子交换膜电解硫酸钠溶液, 产生硫酸.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Sulfuric acid is produced by electrolysis of sodium sulfate solution using ion exchange membrane.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "R乙酸甲酯",

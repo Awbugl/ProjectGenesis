@@ -181,6 +181,7 @@ namespace ProjectGenesis
             ItemProto.InitFuelNeeds();
             ItemProto.InitItemIndices();
             ItemProto.InitMechaMaterials();
+            ItemProto.stationCollectorId = 2105;
 
             foreach (var proto in LDB.items.dataArray)
             {

@@ -12,8 +12,10 @@ namespace ProjectGenesis.Patches.Logic
 {
     public static class PlanetGasPatches
     {
-        private static readonly FieldInfo StationComponent_IsCollector_Field = AccessTools.Field(typeof(StationComponent), "isCollector");
-        private static readonly FieldInfo PlanetData_GasItems_Field = AccessTools.Field(typeof(PlanetData), "gasItems");
+        private static readonly FieldInfo StationComponent_IsCollector_Field = AccessTools.Field(typeof(StationComponent), "isCollector"),
+                                          PlanetData_GasItems_Field = AccessTools.Field(typeof(PlanetData), "gasItems"),
+                                          StationComponent_isStellar_Field = AccessTools.Field(typeof(StationComponent), "isStellar"),
+                                          PrefabDesc_isStellarStation_Field = AccessTools.Field(typeof(PrefabDesc), "isStellarStation");
 
         [HarmonyPatch(typeof(UIPlanetDetail), "OnPlanetDataSet")]
         [HarmonyTranspiler]
@@ -29,7 +31,6 @@ namespace ProjectGenesis.Patches.Logic
 
             matcher.Advance(-10).SetOperandAndAdvance(label);
             matcher.Advance(28).SetOperandAndAdvance(label);
-
             return matcher.InstructionEnumeration();
         }
 
@@ -40,7 +41,7 @@ namespace ProjectGenesis.Patches.Logic
         {
             var matcher = new CodeMatcher(instructions).MatchForward(false,
                                                                      new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(PlanetData), "type")),
-                                                                     new CodeMatch(OpCodes.Ldc_I4_5), new CodeMatch(OpCodes.Bne_Un));
+                                                                     new CodeMatch(OpCodes.Ldc_I4_5));
             matcher.Advance(-1);
             matcher.SetAndAdvance(OpCodes.Nop, null);
             matcher.SetAndAdvance(OpCodes.Nop, null);
@@ -183,10 +184,43 @@ namespace ProjectGenesis.Patches.Logic
 
             matcher.MatchForward(false, new CodeMatch(OpCodes.Ldc_R4, 14297f));
 
-            matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Pop),
-                                                new CodeInstruction(OpCodes.Ldarg_0),
+            matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Pop), new CodeInstruction(OpCodes.Ldarg_0),
                                                 new CodeInstruction(OpCodes.Ldfld, AccessTools.Field(typeof(BuildTool), "planet")),
                                                 new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(PlanetGasPatches), nameof(GetDistance))));
+
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldelem_Ref),
+                                 new CodeMatch(OpCodes.Ldfld, StationComponent_isStellar_Field));
+
+            // StationComponent comp = stationPool[i];
+            List<CodeInstruction> ins = matcher.InstructionsWithOffsets(0, 2);
+
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldfld, PrefabDesc_isStellarStation_Field));
+
+            // PrefabDesc desc = buildPreview1.desc;
+            List<CodeInstruction> ins2 = matcher.InstructionsWithOffsets(-2, -1);
+
+            // set actual distance
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Stloc_S));
+
+            matcher.InsertAndAdvance(ins).InsertAndAdvance(ins2)
+                   .InsertAndAdvance(new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(PlanetGasPatches), nameof(SetDistance))));
+
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldfld, PrefabDesc_isStellarStation_Field));
+
+            // PrefabDesc desc = itemProto.desc;
+            List<CodeInstruction> ins3 = matcher.InstructionsWithOffsets(-2, -1);
+
+            matcher.Advance(1).MatchForward(false, new CodeMatch(OpCodes.Ldfld, PrefabDesc_isStellarStation_Field));
+
+            // PrefabDesc desc = buildPreview1.desc;
+            List<CodeInstruction> ins4 = matcher.InstructionsWithOffsets(-2, -1);
+
+            // set actual distance
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Stloc_S));
+
+            matcher.InsertAndAdvance(ins3).InsertAndAdvance(ins4)
+                   .InsertAndAdvance(new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(PlanetGasPatches), nameof(SetPreBuildDistance))));
+
 
             return matcher.InstructionEnumeration();
         }
@@ -194,11 +228,13 @@ namespace ProjectGenesis.Patches.Logic
         public static bool IsSuit(PlanetData planet, BuildPreview preview)
             => preview.item.ID == (planet.type == EPlanetType.Gas ? ProtoIDUsedByPatches.I轨道采集器 : ProtoIDUsedByPatches.I大气采集器);
 
-        public static float GetDistance(PlanetData planet)
-        {
-            if (planet.type == EPlanetType.Gas) return 14297f;
-            return 3845f;
-        }
+        public static float GetDistance(PlanetData planet) => planet.type == EPlanetType.Gas ? 14297f : 3845f;
+
+        public static float SetDistance(float origin, StationComponent stationComponent, PrefabDesc prebuildDesc)
+            => stationComponent.isCollector ^ prebuildDesc.isCollectStation ? 0 : origin;
+
+        public static float SetPreBuildDistance(float origin, PrefabDesc prebuildDesc, PrefabDesc prebuildDesc2)
+            => prebuildDesc.isCollectStation ^ prebuildDesc2.isCollectStation ? 0 : origin;
 
         [HarmonyPatch(typeof(PlanetTransport), "NewStationComponent")]
         [HarmonyPostfix]

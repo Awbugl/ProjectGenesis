@@ -99,6 +99,7 @@
         <Compile Include="src\Compatibility\MoreMegaStructureCompatibilityPlugin.cs" />
         <Compile Include="src\Patches\Logic\DisableLDBToolCachePatches.cs" />
         <Compile Include="src\Patches\Logic\InitnalTechPatches.cs" />
+        <Compile Include="src\Patches\Logic\MartixComplexPatches.cs" />
         <Compile Include="src\Patches\Logic\MegaAssembler\InternalFunctions.cs" />
         <Compile Include="src\Patches\Logic\MegaAssembler\MegaAssemblerPatches.cs" />
         <Compile Include="src\Patches\Logic\MegaAssembler\NebulaCompat.cs" />
@@ -108,7 +109,6 @@
         <Compile Include="src\Patches\Logic\MegaAssembler\UISlotPickerPatches.cs" />
         <Compile Include="src\Patches\Logic\MegaPumpPatches.cs" />
         <Compile Include="src\Patches\Logic\ModelLoadingPatches.cs" />
-        <Compile Include="src\Patches\Logic\MultiProductionPatches.cs" />
         <Compile Include="src\Patches\Logic\OceanDischargePatches.cs" />
         <Compile Include="src\Patches\Logic\PlanetFocus\FactoryPowerPatches.cs" />
         <Compile Include="src\Patches\Logic\PlanetFocus\InternalFunctions.cs" />
@@ -124,6 +124,8 @@
         <Compile Include="src\Patches\UI\DisplayTextPatches\DisplayTextPatches.cs" />
         <Compile Include="src\Patches\UI\FluidColorPatches.cs" />
         <Compile Include="src\Patches\UI\GridIndexExpandPatches.cs" />
+        <Compile Include="src\Patches\UI\MultiProductionPatches.cs" />
+        <Compile Include="src\Patches\UI\UIAbnormalityTipPatches.cs" />
         <Compile Include="src\Patches\UI\UIPatches.cs" />
         <Compile Include="src\Patches\UI\UIPlanetFocus\MyWindowCtl.cs" />
         <Compile Include="src\Patches\UI\UIPlanetFocus\UIPlanetFocusWindow.cs" />

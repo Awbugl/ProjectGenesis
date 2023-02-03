@@ -4,6 +4,7 @@ using BepInEx;
 using BepInEx.Bootstrap;
 using HarmonyLib;
 using ProjectGenesis.Utils;
+using UnityEngine;
 
 namespace ProjectGenesis.Compatibility
 {
@@ -52,9 +53,12 @@ namespace ProjectGenesis.Compatibility
 
             sb.AppendLine("GenesisBookLoadMessage".TranslateFromJson());
 
-            UIMessageBox.Show("GenesisBookLoadTitle".TranslateFromJson(), sb.ToString(), "Ok".TranslateFromJson(), UIMessageBox.INFO);
+            UIMessageBox.Show("GenesisBookLoadTitle".TranslateFromJson(), sb.ToString(), "跳转".TranslateFromJson(), "确定".TranslateFromJson(),
+                              UIMessageBox.INFO, OpenBrowser, null);
 
             _shown = true;
         }
+
+        public static void OpenBrowser() => Application.OpenURL("创世之书链接".TranslateFromJson());
     }
 }

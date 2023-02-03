@@ -64,6 +64,25 @@ namespace ProjectGenesis.Patches.UI.DisplayTextPatches
                     break;
             }
         }
+        
+        [HarmonyPostfix]
+        [HarmonyPatch(typeof(ItemProto), "GetPropValue")]
+        public static void ItemProto_GetPropValue(
+            ref ItemProto __instance,
+            ref string __result,
+            int index)
+        {
+            if (GameMain.history.TechUnlocked(ProtoIDUsedByPatches.T化工技术革新) && __instance.Type == EItemType.Production)
+            {
+                var instanceRecipeType = __instance.prefabDesc.assemblerRecipeType;
+                if ((instanceRecipeType == (ERecipeType)Utils.ERecipeType.Chemical ||
+                     instanceRecipeType == (ERecipeType)Utils.ERecipeType.Refine ||
+                     instanceRecipeType == (ERecipeType)Utils.ERecipeType.高分子化工) &&
+                    index == 22)
+                    __result = "4x";
+            }
+        }
+
 
         //发电类型
         [HarmonyPostfix]

@@ -610,7 +610,7 @@
   {
     "ID": 24,
     "Name": "硫酸",
-    "Description": "",
+    "Description": "R硫酸",
     "IconPath": "",
     "Type": 2,
     "GridIndex": 4201,
@@ -631,7 +631,7 @@
       2,
       4
     ],
-    "Explicit": false,
+    "Explicit": true,
     "Handcraft": false,
     "NonProductive": false
   },
@@ -3383,7 +3383,7 @@
     "ID": 703,
     "Name": "盐水分解",
     "Description": "R盐水分解",
-    "IconPath": "Assets/texpack/氢氧化钠",
+    "IconPath": "Assets/texpack/氢氯酸",
     "Type": 2,
     "GridIndex": 4211,
     "Time": 120,
@@ -3789,8 +3789,8 @@
   },
   {
     "ID": 717,
-    "Name": "硝酸",
-    "Description": "",
+    "Name": "氨氧化",
+    "Description": "R氨氧化",
     "IconPath": "Assets/texpack/硝酸",
     "Type": 2,
     "GridIndex": 4301,
@@ -3811,7 +3811,7 @@
       1,
       1
     ],
-    "Explicit": false,
+    "Explicit": true,
     "Handcraft": false,
     "NonProductive": false
   },
@@ -5284,7 +5284,7 @@
   {
     "ID": 506,
     "Name": "二氧化碳",
-    "Description": "R二氧化碳",
+    "Description": "",
     "IconPath": "Assets/texpack/二氧化碳",
     "Type": 2,
     "GridIndex": 4114,
@@ -5303,7 +5303,7 @@
     "OutCounts": [
       2
     ],
-    "Explicit": true,
+    "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },

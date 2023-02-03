@@ -1,11 +1,32 @@
+- v2.5.2
+  + 调整 `LDBTool` mod 缓存文件的生成逻辑，大幅提高mod加载速度（约减少50% MOD加载时间）
+  + 提高与 `GalacticScale` mod的兼容性
+  + `大气采集站`的建造间距与物流塔不再互相影响
+  + `矩阵研究站`研究科技时分拣器可输入`通量矩阵`（不需要`信息矩阵`时）、`空间矩阵`（不需要`引力矩阵`时）和`宇宙矩阵粗坯`
+    （不需要`宇宙矩阵`时）
+  + 优化部分文案
+  + 调整终极科技的哈希需求
+  + 屏蔽异常提示（仍无法上传至银河系）
+
+  + Adjust `LDBTool` mod cache file generation logic, greatly improve the mod loading performance (about -50% MOD
+    loading time)
+  + Improve compatibility with `GalacticScale` mod
+  + The construction interval of `Atmospheric Collect Station` and the logistics no longer affect each other
+  + Research Station can input `Flux Matrix` (when no `Information Matrix` is required), `Space Matrix` (when
+    no `Gravity Matrix` is required) and `Universe Matrix roughcast` (when no `Universe Matrix` is required) when
+    researching technology
+  + Optimize some text
+  + Adjust the hash requirement of the ultimate technologies
+  + Block abnormal prompts (still cannot be uploaded to the galaxy)
+
+<details>
+  <summary>点击展开日志 | Click to view all </summary>
+
 - v2.5.1
   + 修复了`v2.5.0`版本导致的性能问题
 
   + Fix the performance problem caused by `v2.5.0` version
 
-
-<details>
-  <summary>点击展开日志 | Click to view all </summary>
 
 - v2.5.0 升格凝想 | Elevational Contemplations
   + 添加 `行星协调中心` ：可为星球添加数种增益效果
@@ -41,7 +62,7 @@
   + 修复了部分文案问题
 
   + Compatible with `Bottleneck` mod
-  + Add config file, allow to set whether Add `AtmosphericEmission` tech in tech tree
+  + Add config file, allow to set whether Add `Atmospheric Emission` tech in tech tree
   + Fix a typo
 
 
