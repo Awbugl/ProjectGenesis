@@ -1,3 +1,16 @@
+- v2.5.3
+  + 调整部分文案
+  + 修复部分流体在储液罐中渲染不正确的问题
+  + 为部分科技添加解锁奖励物品（高精度加工技术、星际物流系统、人造恒星、戴森球计划系列科技、巨型建筑系列科技、终极目标系列科技）
+
+  + Adjust some text
+  + Fix the problem of incorrect rendering of some fluids in tank
+  + Add bonus items for some technologies (High Precision Processing Technology, Interstellar Logistics
+    Technology, Artificial Star, Dyson Sphere Project series, Mega Building series, Ultimate Goal series)
+
+<details>
+  <summary>点击展开日志 | Click to view all </summary>
+
 - v2.5.2
   + 调整 `LDBTool` mod 缓存文件的生成逻辑，大幅提高mod加载速度（约减少50% MOD加载时间）
   + 提高与 `GalacticScale` mod的兼容性
@@ -19,8 +32,6 @@
   + Adjust the hash requirement of the ultimate technologies
   + Block abnormal prompts (still cannot be uploaded to the galaxy)
 
-<details>
-  <summary>点击展开日志 | Click to view all </summary>
 
 - v2.5.1
   + 修复了`v2.5.0`版本导致的性能问题

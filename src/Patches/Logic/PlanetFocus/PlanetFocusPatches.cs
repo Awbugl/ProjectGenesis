@@ -14,18 +14,19 @@ namespace ProjectGenesis.Patches.Logic.PlanetFocus
         private static ConcurrentDictionary<int, int[]> _planetFocuses = new ConcurrentDictionary<int, int[]>();
 
         internal static readonly Dictionary<int, string> FocusIds = new Dictionary<int, string>()
-                                                                     {
-                                                                         { 6522, "工厂电力需求 -10%".TranslateFromJson() },
-                                                                         { 6523, "研究上传速度 +10%".TranslateFromJson() },
-                                                                         { 6524, "火力发电效率 +20%".TranslateFromJson() },
-                                                                         { 6525, "风力发电效率 +20%".TranslateFromJson() },
-                                                                         { 6526, "光伏发电效率 +20%".TranslateFromJson() },
-                                                                         { 6527, "聚变发电效率 +10%".TranslateFromJson() },
-                                                                         { 6528, "矿物采集速度 +25%".TranslateFromJson() }
-                                                                     };
+                                                                    {
+                                                                        { 6522, "工厂电力需求 -10%".TranslateFromJson() },
+                                                                        { 6523, "研究上传速度 +10%".TranslateFromJson() },
+                                                                        { 6524, "火力发电效率 +20%".TranslateFromJson() },
+                                                                        { 6525, "风力发电效率 +20%".TranslateFromJson() },
+                                                                        { 6526, "光伏发电效率 +20%".TranslateFromJson() },
+                                                                        { 6527, "聚变发电效率 +10%".TranslateFromJson() },
+                                                                        { 6528, "矿物采集速度 +25%".TranslateFromJson() }
+                                                                    };
 
         internal static void SetPlanetFocus(int planetId, int index, int focusid)
         {
+            if (!_planetFocuses.ContainsKey(planetId)) _planetFocuses[planetId] = new int[FocusMaxCount];
             _planetFocuses[planetId][index] = focusid;
             SyncPlanetFocusData.Sync(planetId, index, focusid);
         }

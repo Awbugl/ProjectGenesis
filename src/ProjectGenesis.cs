@@ -43,7 +43,7 @@ namespace ProjectGenesis
     {
         public const string MODGUID = "org.LoShin.GenesisBook";
         public const string MODNAME = "GenesisBook";
-        public const string VERSION = "2.5.2";
+        public const string VERSION = "2.5.3";
 
         public string Version => VERSION;
 
@@ -109,8 +109,6 @@ namespace ProjectGenesis
 
         private void PreAddDataAction()
         {
-            LDB.strings.Select(2314).name = "剧毒液体海洋";
-            LDB.strings.Select(2314).Name = "剧毒液体海洋".TranslateFromJson();
             LDB.veins.Select(14).name = "钨矿";
             LDB.veins.Select(14).Name = "钨矿".TranslateFromJson();
 

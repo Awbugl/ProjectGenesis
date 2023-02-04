@@ -1114,8 +1114,12 @@
     "LevelCoef2": 0,
     "IsLabTech": true,
     "PreTechsMax": false,
-    "AddItems": [],
-    "AddItemCounts": [],
+    "AddItems": [
+      6261
+    ],
+    "AddItemCounts": [
+      1
+    ],
     "PropertyOverrideItems": [],
     "PropertyItemCounts": []
   },
@@ -1302,8 +1306,12 @@
     "LevelCoef2": 0,
     "IsLabTech": true,
     "PreTechsMax": false,
-    "AddItems": [],
-    "AddItemCounts": [],
+    "AddItems": [
+      2210
+    ],
+    "AddItemCounts": [
+      1
+    ],
     "PropertyOverrideItems": [],
     "PropertyItemCounts": []
   },
@@ -1447,8 +1455,12 @@
     "LevelCoef2": 0,
     "IsLabTech": true,
     "PreTechsMax": false,
-    "AddItems": [],
-    "AddItemCounts": [],
+    "AddItems": [
+      2305
+    ],
+    "AddItemCounts": [
+      4
+    ],
     "PropertyOverrideItems": [],
     "PropertyItemCounts": []
   },
@@ -2252,8 +2264,12 @@
     "LevelCoef2": 0,
     "IsLabTech": true,
     "PreTechsMax": false,
-    "AddItems": [],
-    "AddItemCounts": [],
+    "AddItems": [
+      2311
+    ],
+    "AddItemCounts": [
+      2
+    ],
     "PropertyOverrideItems": [],
     "PropertyItemCounts": []
   },
@@ -2296,8 +2312,12 @@
     "LevelCoef2": 0,
     "IsLabTech": true,
     "PreTechsMax": false,
-    "AddItems": [],
-    "AddItemCounts": [],
+    "AddItems": [
+      2208
+    ],
+    "AddItemCounts": [
+      1
+    ],
     "PropertyOverrideItems": [],
     "PropertyItemCounts": []
   },
@@ -2694,8 +2714,12 @@
     "LevelCoef2": 0,
     "IsLabTech": true,
     "PreTechsMax": false,
-    "AddItems": [],
-    "AddItemCounts": [],
+    "AddItems": [
+      2312
+    ],
+    "AddItemCounts": [
+      1
+    ],
     "PropertyOverrideItems": [],
     "PropertyItemCounts": []
   },
@@ -2953,7 +2977,7 @@
     "ItemPoints": [
       20,
       20,
-      2
+      5
     ],
     "HashNeeded": 216000,
     "UnlockRecipes": [
@@ -2970,8 +2994,14 @@
     "LevelCoef2": 0,
     "IsLabTech": true,
     "PreTechsMax": false,
-    "AddItems": [],
-    "AddItemCounts": [],
+    "AddItems": [
+      2104,
+      5002
+    ],
+    "AddItemCounts": [
+      2,
+      2
+    ],
     "PropertyOverrideItems": [],
     "PropertyItemCounts": []
   },
@@ -3393,8 +3423,12 @@
     "LevelCoef2": 0,
     "IsLabTech": true,
     "PreTechsMax": false,
-    "AddItems": [],
-    "AddItemCounts": [],
+    "AddItems": [
+      2212
+    ],
+    "AddItemCounts": [
+      1
+    ],
     "PropertyOverrideItems": [],
     "PropertyItemCounts": []
   },
@@ -9325,8 +9359,12 @@
     "LevelCoef2": 0,
     "IsLabTech": true,
     "PreTechsMax": false,
-    "AddItems": [],
-    "AddItemCounts": [],
+    "AddItems": [
+      6257
+    ],
+    "AddItemCounts": [
+      1
+    ],
     "PropertyOverrideItems": [],
     "PropertyItemCounts": []
   },
@@ -9371,8 +9409,12 @@
     "LevelCoef2": 0,
     "IsLabTech": true,
     "PreTechsMax": false,
-    "AddItems": [],
-    "AddItemCounts": [],
+    "AddItems": [
+      6258
+    ],
+    "AddItemCounts": [
+      1
+    ],
     "PropertyOverrideItems": [],
     "PropertyItemCounts": []
   },
@@ -9417,8 +9459,12 @@
     "LevelCoef2": 0,
     "IsLabTech": true,
     "PreTechsMax": false,
-    "AddItems": [],
-    "AddItemCounts": [],
+    "AddItems": [
+      6259
+    ],
+    "AddItemCounts": [
+      1
+    ],
     "PropertyOverrideItems": [],
     "PropertyItemCounts": []
   },
@@ -9463,8 +9509,12 @@
     "LevelCoef2": 0,
     "IsLabTech": true,
     "PreTechsMax": false,
-    "AddItems": [],
-    "AddItemCounts": [],
+    "AddItems": [
+      6260
+    ],
+    "AddItemCounts": [
+      1
+    ],
     "PropertyOverrideItems": [],
     "PropertyItemCounts": []
   },
@@ -9509,8 +9559,12 @@
     "LevelCoef2": 0,
     "IsLabTech": true,
     "PreTechsMax": false,
-    "AddItems": [],
-    "AddItemCounts": [],
+    "AddItems": [
+      6265
+    ],
+    "AddItemCounts": [
+      1
+    ],
     "PropertyOverrideItems": [],
     "PropertyItemCounts": []
   },
@@ -9554,8 +9608,12 @@
     "LevelCoef2": 0,
     "IsLabTech": true,
     "PreTechsMax": false,
-    "AddItems": [],
-    "AddItemCounts": [],
+    "AddItems": [
+      6264
+    ],
+    "AddItemCounts": [
+      1
+    ],
     "PropertyOverrideItems": [],
     "PropertyItemCounts": []
   },

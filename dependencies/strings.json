@@ -1016,8 +1016,8 @@
   },
   {
     "Name": "I稳定矩阵",
-    "ZHCN": "用于优化宇宙矩阵生产过程的复合型超级矩阵.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Just a matrix, not really useful, but make universe matrix easier.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "由两种矩阵组成的复合矩阵。可供给科研模式下的矩阵研究站用作科研，也可作为合成宇宙矩阵的原料之一.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "It is a composite matrix composed of two matrixes. It can be supplied to lab for research, and can also be used as one of the raw materials for synthesizing the universe matrix roughcast.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "虚空矩阵",
@@ -1026,8 +1026,8 @@
   },
   {
     "Name": "I虚空矩阵",
-    "ZHCN": "用于优化宇宙矩阵生产过程的复合型超级矩阵.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Just a matrix, not really useful, but make universe matrix easier.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "由两种矩阵组成的复合矩阵。可供给科研模式下的矩阵研究站用作科研，也可作为合成宇宙矩阵的原料之一.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "It is a composite matrix composed of two matrixes. It can be supplied to lab for research, and can also be used as one of the raw materials for synthesizing the universe matrix roughcast.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "宇宙矩阵粗坯",
@@ -1036,9 +1036,14 @@
   },
   {
     "Name": "I宇宙矩阵粗坯",
-    "ZHCN": "用于优化宇宙矩阵生产过程的复合型超级矩阵, 它还需要充能.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Just a matrix, not really useful, but make universe matrix easier.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "由五种矩阵组成的复合矩阵。使用反物质充能后可转换为宇宙矩阵，也可供给科研模式下的矩阵研究站用作科研.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "It is a composite matrix, It can be supplied to lab for research, and can be converted to universe matrix after charging with antimatter.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
+  {
+    "Name": "I湮灭约束球",
+    "ZHCN": "将湮灭反应约束在球内，从而获得稳定可控的能量输出，是反物质能量炉的关键部件。",
+    "ENUS": "It is a crucial component of antimatter energy reactor to confine the annihilation reaction within the sphere to obtain stable and controllable energy output."
+  },  
   {
     "Name": "基础机械组件",
     "ZHCN": "基础机械组件",
