@@ -8,7 +8,7 @@
   + Adjust some text
   + Adjust the requirements of `Mineral Processing Plant`
   + Adjust the manufacturing time of `Mineral processor`, `Artificial Star`, `Fusion Power Station`
-  + Adjust the icon of `Helium Flash Confiner`, `Advanced Mechanical Component`
+  + Adjust the icon of `Helium Flash Restrainer`, `Advanced Mechanical Components`
   + Add `Coordination Center` technology
 
 <details>
