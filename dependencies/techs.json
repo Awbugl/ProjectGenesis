@@ -2924,6 +2924,7 @@
       29.0
     ],
     "PreTechs": [
+      1836,
       1801
     ],
     "PreTechsImplicit": [],
@@ -10071,6 +10072,44 @@
       10
     ],
     "HashNeeded": 288000,
+    "UnlockRecipes": [],
+    "UnlockFunctions": [],
+    "UnlockValues": [],
+    "Published": true,
+    "Level": 0,
+    "MaxLevel": 0,
+    "LevelCoef1": 0,
+    "LevelCoef2": 0,
+    "IsLabTech": true,
+    "PreTechsMax": false,
+    "AddItems": [],
+    "AddItemCounts": [],
+    "PropertyOverrideItems": [],
+    "PropertyItemCounts": []
+  },
+  {
+    "ID": 1836,
+    "Name": "T行星协调中心",
+    "IconPath": "Icons/Tech/2902",
+    "Desc": "T行星协调中心描述",
+    "Conclusion": "T行星协调中心描述",
+    "Position": [
+      13.0,
+      29.0
+    ],
+    "PreTechs": [
+      1415
+    ],
+    "PreTechsImplicit": [],
+    "Items": [
+      6001,
+      6002
+    ],
+    "ItemPoints": [
+      20,
+      10
+    ],
+    "HashNeeded": 72000,
     "UnlockRecipes": [],
     "UnlockFunctions": [],
     "UnlockValues": [],

@@ -43,7 +43,7 @@ namespace ProjectGenesis
     {
         public const string MODGUID = "org.LoShin.GenesisBook";
         public const string MODNAME = "GenesisBook";
-        public const string VERSION = "2.5.3";
+        public const string VERSION = "2.5.4";
 
         public string Version => VERSION;
 
@@ -58,6 +58,7 @@ namespace ProjectGenesis
         private Harmony Harmony;
 
         internal static bool EnableAtmosphericEmission;
+        internal static string ModPath;
 
         public void Awake()
         {
@@ -78,7 +79,8 @@ namespace ProjectGenesis
 
             var executingAssembly = Assembly.GetExecutingAssembly();
 
-            var resources = new ResourceData("org.LoShin.GenesisBook", "texpack", Path.GetDirectoryName(executingAssembly.Location));
+            ModPath = Path.GetDirectoryName(executingAssembly.Location);
+            var resources = new ResourceData("org.LoShin.GenesisBook", "texpack", ModPath);
             resources.LoadAssetBundle("texpack");
             ProtoRegistry.AddResource(resources);
 

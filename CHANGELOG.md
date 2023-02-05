@@ -1,3 +1,19 @@
+- v2.5.4
+  + 调整部分文案
+  + 调整`矿物处理厂`的制造需求
+  + 调整`矿物处理厂`、`人造恒星`、`裂变能源发电站`的制造时间
+  + 调整`氦闪约束器`、`尖端机械组件`的图标
+  + 添加`行星协调中心`科技
+
+  + Adjust some text
+  + Adjust the requirements of `Mineral Processing Plant`
+  + Adjust the manufacturing time of `Mineral processor`, `Artificial Star`, `Fusion Power Station`
+  + Adjust the icon of `Helium Flash Confiner`, `Advanced Mechanical Component`
+  + Add `Coordination Center` technology
+
+<details>
+  <summary>点击展开日志 | Click to view all </summary>
+
 - v2.5.3
   + 调整部分文案
   + 修复部分流体在储液罐中渲染不正确的问题
@@ -8,8 +24,6 @@
   + Add bonus items for some technologies (High Precision Processing Technology, Interstellar Logistics
     Technology, Artificial Star, Dyson Sphere Project series, Mega Building series, Ultimate Goal series)
 
-<details>
-  <summary>点击展开日志 | Click to view all </summary>
 
 - v2.5.2
   + 调整 `LDBTool` mod 缓存文件的生成逻辑，大幅提高mod加载速度（约减少50% MOD加载时间）

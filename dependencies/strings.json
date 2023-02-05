@@ -25,9 +25,14 @@
     "ENUS": "OK"
   },
   {
-    "Name": "跳转",
+    "Name": "跳转交流群",
     "ZHCN": "加入交流群",
-    "ENUS": "Join Discord Server"
+    "ENUS": "Join Discord"
+  },
+  {
+    "Name": "跳转日志",
+    "ZHCN": "更新日志",
+    "ENUS": "Update Log"
   },
   {
     "Name": "创世之书链接",
@@ -437,7 +442,7 @@
   {
     "Name": "I剧毒有机液体",
     "ZHCN": "在火山灰星球表面的由多种化合物组成的剧毒液体.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Highly toxic liquid consisting of many compounds.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ENUS": "Toxic liquid consisting of many compounds.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "聚乙烯",
@@ -1043,7 +1048,7 @@
     "Name": "I湮灭约束球",
     "ZHCN": "将湮灭反应约束在球内，从而获得稳定可控的能量输出，是反物质能量炉的关键部件。",
     "ENUS": "It is a crucial component of antimatter energy reactor to confine the annihilation reaction within the sphere to obtain stable and controllable energy output."
-  },  
+  },
   {
     "Name": "基础机械组件",
     "ZHCN": "基础机械组件",
@@ -1917,7 +1922,7 @@
   {
     "Name": "R有机液体离心",
     "ZHCN": "将采集到的剧毒液体进行离心、分离和精炼, 可以得到数种有用的化合物.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Centrifugation of highly toxic organic liquids can yield several useful compounds.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ENUS": "Centrifugation of toxic liquid can yield several useful compounds.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "硅晶圆（高效）",
@@ -2018,7 +2023,7 @@
     "Name": "R氨氧化",
     "ZHCN": "氨气与氧气进行反应, 经过一系列反应合成硝酸.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "ENUS": "Ammonia reacts with oxygen to produce nitric acid.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },  
+  },
   {
     "Name": "R硫酸",
     "ZHCN": "使用离子交换膜电解硫酸钠溶液, 产生硫酸.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
@@ -2660,6 +2665,21 @@
     "ENUS": "You unlocked Antimatter Energy Reactor. Mass-energy is in your control now."
   },
   {
+    "Name": "T行星协调中心",
+    "ZHCN": "行星协调中心",
+    "ENUS": "Coordination Center"
+  },
+  {
+    "Name": "T行星协调中心描述",
+    "ZHCN": "随着星球生产线的不断扩大和算力的发展，部署一个协调中心可以更精确地控制星球工厂.",
+    "ENUS": "As the production lines on the planet are constantly expanding and the computing power is developing, deploying a coordination center can more accurately control the planet's factories."
+  },
+  {
+    "Name": "行星协调中心文字描述",
+    "ZHCN": "打开行星视图可以对本星球的协调中心进行调整",
+    "ENUS": "Can open the planet view to adjust the coordination center"
+  },  
+  {
     "Name": "T物品仓储描述",
     "ZHCN": "小型储物仓可以搭建在四向分流器上，而大型储物仓具有更大的储量。",
     "ENUS": "Storage Mk.I can be built on Splitter.\nStorage Mk.II has twice the capacity."
@@ -2797,7 +2817,7 @@
   {
     "Name": "I硫酸",
     "ZHCN": "初级化工产品，在生产中应用广泛。也可以通过分解火山灰星球的剧毒液体来获得。",
-    "ENUS": "Primary chemical product with a wide range of applications in production. It can also be obtained by decomposing the highly toxic liquid of the volcanic ash planet.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ENUS": "Primary chemical product with a wide range of applications in production. It can also be obtained by decomposing the toxic liquid of the volcanic ash planet.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "I有机晶体",
@@ -2820,9 +2840,14 @@
     "ENUS": "Facility used to collect liquid resources from an ocean. After unlocking the ocean outfall technology, it can be used to discharge industrial waste."
   },
   {
+    "Name": "原油精炼厂",
+    "ZHCN": "精炼厂",
+    "ENUS": "Refinery"
+  },
+  {
     "Name": "I原油精炼厂",
-    "ZHCN": "将萃取到的原油进行精炼，可以获得多种化工原料。",
-    "ENUS": "The extracted crude oil is further refined to obtain a wide range of chemical materials."
+    "ZHCN": "将原油或剧毒液体进行精炼，可以获得多种化工原料。",
+    "ENUS": "Refine crude oil or toxic liquid to obtain a variety of chemical raw materials."
   },
   {
     "Name": "I钨矿",
@@ -3016,18 +3041,18 @@
   },
   {
     "Name": "T大气排放描述",
-    "ZHCN": "重构部分配方的生产流程，将不需要的产物加热或粉碎，排放到大气中。可以肯定这将会在未来对环境造成负面影响.\n<color=\"#FD965ECC\">受影响配方：焦油分馏、原油裂化、剧毒液体离心、金属盐分解</color>",
-    "ENUS": "Reconstruct production equipment to heat or crush unnecessary products and discharge them into the atmosphere. It can be said that this will have a negative impact on the environment in the future.\n<color=\"#FD965ECC\">Affected recipes: Tar fractionation, Oil Cracking, Toxic liquid centrifugation, Decomposition of metal salts</color>"
+    "ZHCN": "重构部分配方的生产流程，将堆积产物加热或粉碎，排放到大气中。可以肯定这将会在未来对环境造成负面影响.\n<color=\"#FD965ECC\">受影响配方：焦油分馏、原油裂化、剧毒液体离心、金属盐分解</color>",
+    "ENUS": "Reconstruct production equipment to heat or crush accumulated products and discharge them into the atmosphere. It can be said that this will have a negative impact on the environment in the future.\n<color=\"#FD965ECC\">Affected recipes: Tar fractionation, Oil Cracking, Toxic liquid centrifugation, Decomposition of metal salts</color>"
   },
   {
     "Name": "T大气排放结果",
-    "ZHCN": "重构生产设备，将部分产物排放到大气中。",
-    "ENUS": "Reconstruct production equipment to discharge part of the products into the atmosphere."
+    "ZHCN": "重构部分配方的生产流程，将堆积产物排放到大气中。受影响配方：焦油分馏、原油裂化、剧毒液体离心、金属盐分解",
+    "ENUS": "Reconstruct production equipment to discharge accumulated products into the atmosphere."
   },
   {
     "Name": "大气排污文字描述",
-    "ZHCN": "允许设备将堆积产物直接排放到大气中（低资源倍率模式请谨慎解锁此科技）",
-    "ENUS": "Reconstruct production equipment to discharge part of the products into the atmosphere."
+    "ZHCN": "允许部分配方将堆积产物直接排放到大气中（低资源倍率模式请谨慎解锁此科技）",
+    "ENUS": "Allow some recipes to discharge accumulated products directly into the atmosphere (low resource multiplier mode, please unlock this technology carefully)"
   },
   {
     "Name": "开发者日志01",

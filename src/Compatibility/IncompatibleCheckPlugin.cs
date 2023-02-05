@@ -53,12 +53,14 @@ namespace ProjectGenesis.Compatibility
 
             sb.AppendLine("GenesisBookLoadMessage".TranslateFromJson());
 
-            UIMessageBox.Show("GenesisBookLoadTitle".TranslateFromJson(), sb.ToString(), "跳转".TranslateFromJson(), "确定".TranslateFromJson(),
-                              UIMessageBox.INFO, OpenBrowser, null);
+            UIMessageBox.Show("GenesisBookLoadTitle".TranslateFromJson(), sb.ToString(), "确定".TranslateFromJson(), "跳转交流群".TranslateFromJson(),
+                              "跳转日志".TranslateFromJson(), UIMessageBox.INFO, null, OpenBrowser, OpenLog);
 
             _shown = true;
         }
 
         public static void OpenBrowser() => Application.OpenURL("创世之书链接".TranslateFromJson());
+
+        public static void OpenLog() => Application.OpenURL(System.IO.Path.Combine(ProjectGenesis.ModPath, "CHANGELOG.md"));
     }
 }

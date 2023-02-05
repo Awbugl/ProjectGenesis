@@ -64,29 +64,9 @@ namespace ProjectGenesis.Patches.UI.DisplayTextPatches
                     break;
             }
         }
-        
-        [HarmonyPostfix]
-        [HarmonyPatch(typeof(ItemProto), "GetPropValue")]
-        public static void ItemProto_GetPropValue(
-            ref ItemProto __instance,
-            ref string __result,
-            int index)
-        {
-            if (GameMain.history.TechUnlocked(ProtoIDUsedByPatches.T化工技术革新) && __instance.Type == EItemType.Production)
-            {
-                var instanceRecipeType = __instance.prefabDesc.assemblerRecipeType;
-                if ((instanceRecipeType == (ERecipeType)Utils.ERecipeType.Chemical ||
-                     instanceRecipeType == (ERecipeType)Utils.ERecipeType.Refine ||
-                     instanceRecipeType == (ERecipeType)Utils.ERecipeType.高分子化工) &&
-                    index == 22)
-                    __result = "4x";
-            }
-        }
 
-
-        //发电类型
-        [HarmonyPostfix]
         [HarmonyPatch(typeof(ItemProto), "GetPropValue")]
+        [HarmonyPostfix]
         public static void GetPropValuePatch(ref ItemProto __instance, int index, ref string __result)
         {
             if ((ulong)index >= (ulong)__instance.DescFields.Length)
@@ -122,6 +102,19 @@ namespace ProjectGenesis.Patches.UI.DisplayTextPatches
                     if (__instance.prefabDesc.isCollectStation && __instance.ID == ProtoIDUsedByPatches.I大气采集器) __result = "行星大气".TranslateFromJson();
 
                     return;
+                
+                case 22:
+                    if (GameMain.history.TechUnlocked(ProtoIDUsedByPatches.T化工技术革新) && __instance.prefabDesc.isAssembler)
+                        switch (__instance.prefabDesc.modelIndex)
+                        {
+                            case ProtoIDUsedByPatches.M化工厂:
+                            case ProtoIDUsedByPatches.M精炼厂:
+                            case ProtoIDUsedByPatches.M先进化工厂:
+                                __result = "4x";
+                                return;
+                        }
+
+                    return;
             }
         }
 
@@ -131,12 +124,12 @@ namespace ProjectGenesis.Patches.UI.DisplayTextPatches
         {
             switch (__instance.ID)
             {
-                case ProtoIDUsedByPatches.T海洋排污1:
-                    __result = "海洋排污文字描述".TranslateFromJson();
-                    break;
-
                 case ProtoIDUsedByPatches.T化工技术革新:
                     __result = "化工技术革新文字描述".TranslateFromJson();
+                    break;
+
+                case ProtoIDUsedByPatches.T海洋排污1:
+                    __result = "海洋排污文字描述".TranslateFromJson();
                     break;
 
                 case ProtoIDUsedByPatches.T海洋排污2:
@@ -149,6 +142,10 @@ namespace ProjectGenesis.Patches.UI.DisplayTextPatches
 
                 case ProtoIDUsedByPatches.T巨型建筑工程学:
                     __result = "巨型建筑工程学文字描述".TranslateFromJson();
+                    break;
+
+                case ProtoIDUsedByPatches.T行星协调中心:
+                    __result = "行星协调中心文字描述".TranslateFromJson();
                     break;
             }
         }

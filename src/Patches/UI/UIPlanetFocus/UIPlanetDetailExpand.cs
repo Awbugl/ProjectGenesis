@@ -30,7 +30,7 @@ namespace ProjectGenesis.Patches.UI.UIPlanetFocus
                 return;
             }
 
-            var notgas = __instance.planet.type != EPlanetType.Gas;
+            var notgas = __instance.planet.type != EPlanetType.Gas && GameMain.history.TechUnlocked(ProtoIDUsedByPatches.T行星协调中心);
 
             _planetFocusBtn.gameObject.SetActive(notgas);
 

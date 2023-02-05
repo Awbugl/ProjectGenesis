@@ -137,8 +137,8 @@ namespace ProjectGenesis.Utils
             var testCraftingTableModel6 = models.Select(461);
             SetMegaAssemberPrefebDesc(ref testCraftingTableModel6.prefabDesc, ERecipeType.Particle, 200000, 1000000);
 
-            LDB.items.Select(2211).prefabDesc.fuelMask = 5;
-            LDB.items.Select(2210).prefabDesc.fuelMask = 6;
+            LDB.items.Select(2211).prefabDesc.fuelMask = 2;
+            LDB.items.Select(2210).prefabDesc.fuelMask = 16;
 
             var antiMatterModel = models.Select(457);
             ref var antiMatterModelprefabDesc = ref antiMatterModel.prefabDesc;

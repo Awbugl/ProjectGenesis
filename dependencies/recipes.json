@@ -1122,7 +1122,7 @@
     "IconPath": "",
     "Type": 10,
     "GridIndex": 2111,
-    "Time": 18000,
+    "Time": 1800,
     "Input": [
       6503,
       7707,
@@ -2986,7 +2986,7 @@
     "IconPath": "",
     "Type": 10,
     "GridIndex": 2109,
-    "Time": 1800,
+    "Time": 600,
     "Input": [
       6502,
       1107,
@@ -3043,7 +3043,7 @@
     "ID": 115,
     "Name": "氦闪约束器",
     "Description": "",
-    "IconPath": "Assets/texpack/氦闪抑制器",
+    "IconPath": "Assets/texpack/金属氢单元",
     "Type": 10,
     "GridIndex": 1604,
     "Time": 900,
@@ -4785,7 +4785,7 @@
     "ID": 643,
     "Name": "尖端机械组件",
     "Description": "",
-    "IconPath": "Assets/texpack/尖端机械组件",
+    "IconPath": "Assets/texpack/cmingsoon/机械组件mk4",
     "Type": 10,
     "GridIndex": 1403,
     "Time": 360,
@@ -5750,13 +5750,13 @@
     "IconPath": "Assets/texpack/矿物处理厂",
     "Type": 4,
     "GridIndex": 2407,
-    "Time": 600,
+    "Time": 180,
     "Input": [
-      6502,
-      1107
+      6501,
+      1103
     ],
     "InCounts": [
-      4,
+      3,
       6
     ],
     "Output": [
