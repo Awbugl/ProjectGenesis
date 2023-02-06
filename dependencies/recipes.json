@@ -475,7 +475,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 1408,
+    "GridIndex": 4701,
     "Time": 600,
     "Input": [
       6509,
@@ -611,7 +611,7 @@
     "ID": 24,
     "Name": "硫酸",
     "Description": "R硫酸",
-    "IconPath": "",
+    "IconPath": "Assets/texpack/硫酸_新",
     "Type": 2,
     "GridIndex": 4201,
     "Time": 120,
@@ -1067,7 +1067,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 1508,
+    "GridIndex": 4702,
     "Time": 600,
     "Input": [
       6509,
@@ -1151,7 +1151,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 1608,
+    "GridIndex": 4703,
     "Time": 600,
     "Input": [
       6509,
@@ -2191,13 +2191,13 @@
       6503,
       7707,
       7706,
-      7806
+      7805
     ],
     "InCounts": [
       20,
       40,
       20,
-      2
+      8
     ],
     "Output": [
       2312
@@ -2641,7 +2641,7 @@
     "Description": "",
     "IconPath": "Assets/texpack/氘氦三混合聚变燃料棒",
     "Type": 4,
-    "GridIndex": 1607,
+    "GridIndex": 4710,
     "Time": 600,
     "Input": [
       1802,
@@ -2669,7 +2669,7 @@
     "Description": "",
     "IconPath": "Assets/texpack/氦三燃料棒",
     "Type": 4,
-    "GridIndex": 1505,
+    "GridIndex": 4709,
     "Time": 600,
     "Input": [
       6509,
@@ -2799,7 +2799,7 @@
     "Description": "",
     "IconPath": "Assets/texpack/氦三",
     "Type": 5,
-    "GridIndex": 4408,
+    "GridIndex": 3608,
     "Time": 240,
     "Input": [
       6234
@@ -2823,7 +2823,7 @@
     "Description": "R氦元素离心",
     "IconPath": "Assets/texpack/氦",
     "Type": 2,
-    "GridIndex": 4407,
+    "GridIndex": 3607,
     "Time": 240,
     "Input": [
       1014
@@ -3383,7 +3383,7 @@
     "ID": 703,
     "Name": "盐水分解",
     "Description": "R盐水分解",
-    "IconPath": "Assets/texpack/氢氯酸",
+    "IconPath": "Assets/texpack/盐酸_新",
     "Type": 2,
     "GridIndex": 4211,
     "Time": 120,
@@ -3491,7 +3491,7 @@
     "ID": 706,
     "Name": "高分子化合: 双酚A",
     "Description": "R高分子化合: 双酚A",
-    "IconPath": "Assets/texpack/双酚A",
+    "IconPath": "Assets/texpack/双酚A_新",
     "Type": 2,
     "GridIndex": 4103,
     "Time": 120,
@@ -3521,7 +3521,7 @@
     "ID": 707,
     "Name": "硝酸化合",
     "Description": "R硝酸化合",
-    "IconPath": "Assets/texpack/硝酸",
+    "IconPath": "Assets/texpack/硝酸_新",
     "Type": 2,
     "GridIndex": 4104,
     "Time": 120,
@@ -3575,7 +3575,7 @@
     "ID": 709,
     "Name": "二氯联苯胺",
     "Description": "",
-    "IconPath": "Assets/texpack/二氯联苯胺",
+    "IconPath": "Assets/texpack/二氯联苯胺_新",
     "Type": 16,
     "GridIndex": 4107,
     "Time": 120,
@@ -3601,7 +3601,7 @@
     "ID": 710,
     "Name": "合成氨",
     "Description": "R合成氨",
-    "IconPath": "Assets/texpack/氨",
+    "IconPath": "Assets/texpack/氨_新",
     "Type": 2,
     "GridIndex": 4102,
     "Time": 120,
@@ -3627,7 +3627,7 @@
     "ID": 711,
     "Name": "高分子化合: 二氨基联苯胺",
     "Description": "R高分子化合: 二氨基联苯胺",
-    "IconPath": "Assets/texpack/二氨基联苯胺",
+    "IconPath": "Assets/texpack/二氨基联苯胺_新",
     "Type": 16,
     "GridIndex": 4105,
     "Time": 120,
@@ -3707,7 +3707,7 @@
     "ID": 714,
     "Name": "高分子化合: 邻苯二甲酸",
     "Description": "R高分子化合: 邻苯二甲酸",
-    "IconPath": "Assets/texpack/邻苯二甲酸",
+    "IconPath": "Assets/texpack/邻苯二甲酸_新",
     "Type": 2,
     "GridIndex": 4109,
     "Time": 120,
@@ -3735,7 +3735,7 @@
     "ID": 715,
     "Name": "间苯二甲酸二苯酯",
     "Description": "",
-    "IconPath": "Assets/texpack/间苯二甲酸二苯酯",
+    "IconPath": "Assets/texpack/间苯二甲酸二苯酯_新",
     "Type": 16,
     "GridIndex": 4111,
     "Time": 120,
@@ -3791,7 +3791,7 @@
     "ID": 717,
     "Name": "氨氧化",
     "Description": "R氨氧化",
-    "IconPath": "Assets/texpack/硝酸",
+    "IconPath": "Assets/texpack/硝酸_新",
     "Type": 2,
     "GridIndex": 4301,
     "Time": 360,
@@ -4511,7 +4511,7 @@
     "Description": "",
     "IconPath": "Assets/texpack/硅晶圆",
     "Type": 1,
-    "GridIndex": 1501,
+    "GridIndex": 5101,
     "Time": 480,
     "Input": [
       1105
@@ -4535,7 +4535,7 @@
     "Description": "",
     "IconPath": "Assets/texpack/钛掺杂的硅晶圆",
     "Type": 1,
-    "GridIndex": 1502,
+    "GridIndex": 5102,
     "Time": 480,
     "Input": [
       1105,
@@ -4561,7 +4561,7 @@
     "Description": "",
     "IconPath": "Assets/texpack/钨掺杂的硅晶圆",
     "Type": 1,
-    "GridIndex": 1503,
+    "GridIndex": 5103,
     "Time": 480,
     "Input": [
       1105,
@@ -4841,7 +4841,7 @@
     "Description": "",
     "IconPath": "Assets/texpack/氢燃料",
     "Type": 2,
-    "GridIndex": 4401,
+    "GridIndex": 3601,
     "Time": 120,
     "Input": [
       1120
@@ -4865,7 +4865,7 @@
     "Description": "",
     "IconPath": "Assets/texpack/氘核燃料",
     "Type": 2,
-    "GridIndex": 4402,
+    "GridIndex": 3602,
     "Time": 240,
     "Input": [
       1121
@@ -4889,7 +4889,7 @@
     "Description": "",
     "IconPath": "Assets/texpack/反物质燃料",
     "Type": 2,
-    "GridIndex": 4403,
+    "GridIndex": 3603,
     "Time": 360,
     "Input": [
       1122
@@ -5041,7 +5041,7 @@
     "Description": "R硅晶圆（高效）",
     "IconPath": "Assets/texpack/高效硅晶圆",
     "Type": 1,
-    "GridIndex": 1601,
+    "GridIndex": 5201,
     "Time": 240,
     "Input": [
       1105,
@@ -5067,7 +5067,7 @@
     "Description": "R含钛硅晶圆（高效）",
     "IconPath": "Assets/texpack/高效钛晶圆",
     "Type": 1,
-    "GridIndex": 1602,
+    "GridIndex": 5202,
     "Time": 240,
     "Input": [
       1105,
@@ -5095,7 +5095,7 @@
     "Description": "R含钨硅晶圆（高效）",
     "IconPath": "Assets/texpack/高效钨晶圆",
     "Type": 1,
-    "GridIndex": 1603,
+    "GridIndex": 5203,
     "Time": 240,
     "Input": [
       1105,
@@ -5391,7 +5391,7 @@
     "ID": 510,
     "Name": "次氯酸",
     "Description": "",
-    "IconPath": "Assets/texpack/次氯酸",
+    "IconPath": "Assets/texpack/次氯酸_新",
     "Type": 2,
     "GridIndex": 4209,
     "Time": 240,
@@ -5449,7 +5449,7 @@
     "Description": "",
     "IconPath": "Assets/texpack/硝基柴油",
     "Type": 2,
-    "GridIndex": 4404,
+    "GridIndex": 3604,
     "Time": 480,
     "Input": [
       6211,
@@ -5475,7 +5475,7 @@
     "Description": "",
     "IconPath": "Assets/texpack/偏二甲肼",
     "Type": 2,
-    "GridIndex": 4405,
+    "GridIndex": 3605,
     "Time": 600,
     "Input": [
       6210,
@@ -5505,7 +5505,7 @@
     "Description": "",
     "IconPath": "Assets/texpack/火箭燃料",
     "Type": 2,
-    "GridIndex": 4406,
+    "GridIndex": 3606,
     "Time": 900,
     "Input": [
       6213,
@@ -5531,7 +5531,7 @@
     "Description": "",
     "IconPath": "Assets/texpack/硝基柴油燃料棒",
     "Type": 4,
-    "GridIndex": 1406,
+    "GridIndex": 4704,
     "Time": 600,
     "Input": [
       6509,
@@ -5559,7 +5559,7 @@
     "Description": "",
     "IconPath": "Assets/texpack/偏二甲肼燃料棒",
     "Type": 4,
-    "GridIndex": 1506,
+    "GridIndex": 4705,
     "Time": 600,
     "Input": [
       6509,
@@ -5587,7 +5587,7 @@
     "Description": "",
     "IconPath": "Assets/texpack/火箭燃料棒",
     "Type": 4,
-    "GridIndex": 1606,
+    "GridIndex": 4706,
     "Time": 600,
     "Input": [
       6509,
@@ -6097,7 +6097,7 @@
     "Description": "",
     "IconPath": "Assets/texpack/铀235燃料棒",
     "Type": 4,
-    "GridIndex": 1507,
+    "GridIndex": 4707,
     "Time": 600,
     "Input": [
       6509,
@@ -6123,7 +6123,7 @@
     "Description": "",
     "IconPath": "Assets/texpack/钚燃料棒",
     "Type": 4,
-    "GridIndex": 1407,
+    "GridIndex": 4708,
     "Time": 600,
     "Input": [
       6509,
@@ -6465,7 +6465,7 @@
     "ID": 430,
     "Name": "氯苯水解",
     "Description": "R氯苯水解",
-    "IconPath": "Assets/texpack/苯酚",
+    "IconPath": "Assets/texpack/苯酚_新",
     "Type": 2,
     "GridIndex": 4113,
     "Time": 120,

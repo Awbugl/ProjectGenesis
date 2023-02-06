@@ -87,9 +87,11 @@ namespace ProjectGenesis
             TableID = new int[]
                       {
                           TabSystem.RegisterTab("org.LoShin.GenesisBook:org.LoShin.GenesisBookTab1",
-                                                new TabData("精炼页面".TranslateFromJson(), "Assets/texpack/主机科技")),
+                                                new TabData("精炼页面".TranslateFromJson(), "Icons/Tech/1101")),
                           TabSystem.RegisterTab("org.LoShin.GenesisBook:org.LoShin.GenesisBookTab2",
-                                                new TabData("化工页面".TranslateFromJson(), "Assets/texpack/化工科技"))
+                                                new TabData("化工页面".TranslateFromJson(), "Assets/texpack/化工科技")),
+                          TabSystem.RegisterTab("org.LoShin.GenesisBook:org.LoShin.GenesisBookTab3",
+                                                new TabData("信息页面".TranslateFromJson(), "Assets/texpack/主机科技")),
                       };
 
             NebulaModAPI.RegisterPackets(executingAssembly);

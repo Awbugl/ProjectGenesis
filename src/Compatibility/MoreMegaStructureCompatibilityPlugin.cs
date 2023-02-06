@@ -89,6 +89,12 @@ namespace ProjectGenesis.Compatibility
                         case ProtoIDUsedByPatches.I人造恒星:
                             recipeProto.ItemCounts[0] = 30;
                             continue;
+                        
+                        case 9487:
+                            recipeProto.ItemCounts[0] = 2;
+                            recipeProto.ItemCounts[1] = 1;
+                            recipeProto.Items[1] = 6503;
+                            continue;
                     }
                 }
             }

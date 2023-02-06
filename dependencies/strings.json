@@ -180,6 +180,11 @@
     "ENUS": "Chemical"
   },
   {
+    "Name": "信息页面",
+    "ZHCN": "主机",
+    "ENUS": "Informatization"
+  },  
+  {
     "Name": "剧毒液体海洋",
     "ZHCN": "剧毒液体海洋",
     "ENUS": "Toxic organic liquid ocean"
