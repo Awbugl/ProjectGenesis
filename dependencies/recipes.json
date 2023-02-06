@@ -475,7 +475,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 4701,
+    "GridIndex": 3701,
     "Time": 600,
     "Input": [
       6509,
@@ -1067,7 +1067,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 4702,
+    "GridIndex": 3702,
     "Time": 600,
     "Input": [
       6509,
@@ -1151,7 +1151,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 4703,
+    "GridIndex": 3703,
     "Time": 600,
     "Input": [
       6509,
@@ -2641,7 +2641,7 @@
     "Description": "",
     "IconPath": "Assets/texpack/氘氦三混合聚变燃料棒",
     "Type": 4,
-    "GridIndex": 4710,
+    "GridIndex": 3710,
     "Time": 600,
     "Input": [
       1802,
@@ -2669,7 +2669,7 @@
     "Description": "",
     "IconPath": "Assets/texpack/氦三燃料棒",
     "Type": 4,
-    "GridIndex": 4709,
+    "GridIndex": 3709,
     "Time": 600,
     "Input": [
       6509,
@@ -4041,7 +4041,7 @@
     "Description": "",
     "IconPath": "Assets/texpack/塑料基板",
     "Type": 9,
-    "GridIndex": 1216,
+    "GridIndex": 5105,
     "Time": 120,
     "Input": [
       1115,
@@ -4067,7 +4067,7 @@
     "Description": "",
     "IconPath": "Assets/texpack/覆层塑料基板",
     "Type": 9,
-    "GridIndex": 1316,
+    "GridIndex": 5205,
     "Time": 120,
     "Input": [
       7501,
@@ -4095,7 +4095,7 @@
     "Description": "",
     "IconPath": "Assets/texpack/钛蚀刻覆层塑料基板",
     "Type": 9,
-    "GridIndex": 1416,
+    "GridIndex": 5305,
     "Time": 120,
     "Input": [
       7502,
@@ -4123,7 +4123,7 @@
     "Description": "",
     "IconPath": "Assets/texpack/生物基板",
     "Type": 9,
-    "GridIndex": 1516,
+    "GridIndex": 5405,
     "Time": 240,
     "Input": [
       7709,
@@ -4149,7 +4149,7 @@
     "Description": "",
     "IconPath": "Assets/texpack/覆层生物基板",
     "Type": 9,
-    "GridIndex": 1616,
+    "GridIndex": 5505,
     "Time": 240,
     "Input": [
       7504,
@@ -4177,7 +4177,7 @@
     "Description": "",
     "IconPath": "Assets/texpack/钨蚀刻覆层生物基板",
     "Type": 9,
-    "GridIndex": 1716,
+    "GridIndex": 5605,
     "Time": 240,
     "Input": [
       7505,
@@ -4205,7 +4205,7 @@
     "Description": "",
     "IconPath": "Assets/texpack/超低功率IC晶片",
     "Type": 4,
-    "GridIndex": 1217,
+    "GridIndex": 5106,
     "Time": 120,
     "Input": [
       7701
@@ -4229,7 +4229,7 @@
     "Description": "",
     "IconPath": "Assets/texpack/低功率IC晶片",
     "Type": 4,
-    "GridIndex": 1317,
+    "GridIndex": 5206,
     "Time": 120,
     "Input": [
       7701
@@ -4253,7 +4253,7 @@
     "Description": "",
     "IconPath": "Assets/texpack/标准功率IC晶片",
     "Type": 10,
-    "GridIndex": 1417,
+    "GridIndex": 5306,
     "Time": 120,
     "Input": [
       7702
@@ -4277,7 +4277,7 @@
     "Description": "",
     "IconPath": "Assets/texpack/高功率IC晶片",
     "Type": 10,
-    "GridIndex": 1517,
+    "GridIndex": 5406,
     "Time": 120,
     "Input": [
       7702
@@ -4301,7 +4301,7 @@
     "Description": "",
     "IconPath": "Assets/texpack/超高功率IC晶片",
     "Type": 10,
-    "GridIndex": 1617,
+    "GridIndex": 5506,
     "Time": 120,
     "Input": [
       7703
@@ -4325,7 +4325,7 @@
     "Description": "",
     "IconPath": "Assets/texpack/生物IC晶片",
     "Type": 10,
-    "GridIndex": 1717,
+    "GridIndex": 5606,
     "Time": 120,
     "Input": [
       7703
@@ -5531,7 +5531,7 @@
     "Description": "",
     "IconPath": "Assets/texpack/硝基柴油燃料棒",
     "Type": 4,
-    "GridIndex": 4704,
+    "GridIndex": 3704,
     "Time": 600,
     "Input": [
       6509,
@@ -5559,7 +5559,7 @@
     "Description": "",
     "IconPath": "Assets/texpack/偏二甲肼燃料棒",
     "Type": 4,
-    "GridIndex": 4705,
+    "GridIndex": 3705,
     "Time": 600,
     "Input": [
       6509,
@@ -5587,7 +5587,7 @@
     "Description": "",
     "IconPath": "Assets/texpack/火箭燃料棒",
     "Type": 4,
-    "GridIndex": 4706,
+    "GridIndex": 3706,
     "Time": 600,
     "Input": [
       6509,
@@ -6097,7 +6097,7 @@
     "Description": "",
     "IconPath": "Assets/texpack/铀235燃料棒",
     "Type": 4,
-    "GridIndex": 4707,
+    "GridIndex": 3707,
     "Time": 600,
     "Input": [
       6509,
@@ -6123,7 +6123,7 @@
     "Description": "",
     "IconPath": "Assets/texpack/钚燃料棒",
     "Type": 4,
-    "GridIndex": 4708,
+    "GridIndex": 3708,
     "Time": 600,
     "Input": [
       6509,
