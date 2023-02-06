@@ -1,3 +1,19 @@
+- v2.5.5
+  + 调整部分图标
+  + 调整物品、配方选择界面的排列顺序
+  + （更多巨构）调整`星际组装厂火箭`的制造需求
+  + 调整大抽水机的制造时间
+  + 调整`垂直发射井`的制造需求
+
+  + Adjust some icons
+  + Adjust the arrangement order of items and recipes
+  + (MoreMegaStructures) Adjust the requirements of `Interstellar Assembly Plant Rocket`
+  + Adjust the manufacturing time of the mega pump
+  + Adjust the requirements of `Vertical Launching Silo`
+
+<details>
+  <summary>点击展开日志 | Click to view all </summary>
+
 - v2.5.4
   + 调整部分文案
   + 调整`矿物处理厂`的制造需求
@@ -11,8 +27,6 @@
   + Adjust the icon of `Helium Flash Restrainer`, `Advanced Mechanical Components`
   + Add `Coordination Center` technology
 
-<details>
-  <summary>点击展开日志 | Click to view all </summary>
 
 - v2.5.3
   + 调整部分文案
