@@ -137,7 +137,6 @@
         <Compile Include="src\Utils\CopyModelUtils.cs" />
         <Compile Include="src\Utils\ERecipeType.cs" />
         <Compile Include="src\Utils\IconDescUtils.cs" />
-        <Compile Include="src\Utils\ItemData.cs" />
         <Compile Include="src\Utils\JsonDataUtils.cs" />
         <Compile Include="src\Utils\JsonHelper.cs" />
         <Compile Include="src\Utils\MutliPlayerPacket.cs" />

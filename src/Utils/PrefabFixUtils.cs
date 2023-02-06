@@ -3,6 +3,7 @@ using System.Linq;
 using ProjectGenesis.Patches.Logic.MegaAssembler;
 using UnityEngine;
 using ERecipeType_1 = ERecipeType;
+using static ProjectGenesis.Utils.ProtoIDUsedByPatches;
 
 namespace ProjectGenesis.Utils
 {
@@ -12,103 +13,116 @@ namespace ProjectGenesis.Utils
         {
             LDB.items.OnAfterDeserialize();
 
-            itemProtos.Select(2317).prefabDesc.assemblerRecipeType = (ERecipeType_1)ERecipeType.高分子化工;
-            itemProtos.Select(2317).prefabDesc.idleEnergyPerTick = 800;
-            itemProtos.Select(2317).prefabDesc.workEnergyPerTick = 24000;
+            ref var prefabDesc = ref itemProtos.Select(2317).prefabDesc;
+            prefabDesc.assemblerRecipeType = (ERecipeType_1)ERecipeType.高分子化工;
+            prefabDesc.idleEnergyPerTick = 800;
+            prefabDesc.workEnergyPerTick = 24000;
 
-            itemProtos.Select(物品.二级制造台).prefabDesc.assemblerRecipeType = (ERecipeType_1)ERecipeType.电路蚀刻;
-            itemProtos.Select(物品.三级制造台).prefabDesc.assemblerRecipeType = (ERecipeType_1)ERecipeType.高精度加工;
+            ref var prefabDesc1 = ref itemProtos.Select(I一级制造台).prefabDesc;
+            prefabDesc1.assemblerSpeed = 20000;
+            prefabDesc1.idleEnergyPerTick *= 2;
+            prefabDesc1.workEnergyPerTick *= 2;
 
-            itemProtos.Select(物品.一级制造台).prefabDesc.assemblerSpeed = 20000;
-            itemProtos.Select(物品.一级制造台).prefabDesc.idleEnergyPerTick *= 2;
-            itemProtos.Select(物品.一级制造台).prefabDesc.workEnergyPerTick *= 2;
+            ref var prefabDesc2 = ref itemProtos.Select(I二级制造台).prefabDesc;
+            prefabDesc2.assemblerSpeed = 20000;
+            prefabDesc2.idleEnergyPerTick *= 2;
+            prefabDesc2.workEnergyPerTick *= 2;
+            prefabDesc2.assemblerRecipeType = (ERecipeType_1)ERecipeType.电路蚀刻;
 
-            itemProtos.Select(物品.二级制造台).prefabDesc.assemblerSpeed = 20000;
-            itemProtos.Select(物品.二级制造台).prefabDesc.idleEnergyPerTick *= 2;
-            itemProtos.Select(物品.二级制造台).prefabDesc.workEnergyPerTick *= 2;
+            ref var prefabDesc3 = ref itemProtos.Select(I三级制造台).prefabDesc;
+            prefabDesc3.assemblerSpeed = 20000;
+            prefabDesc3.idleEnergyPerTick *= 2;
+            prefabDesc3.workEnergyPerTick *= 2;
+            prefabDesc3.assemblerRecipeType = (ERecipeType_1)ERecipeType.高精度加工;
 
-            itemProtos.Select(物品.三级制造台).prefabDesc.assemblerSpeed = 20000;
-            itemProtos.Select(物品.三级制造台).prefabDesc.idleEnergyPerTick *= 2;
-            itemProtos.Select(物品.三级制造台).prefabDesc.workEnergyPerTick *= 2;
+            ref var prefabDesc4 = ref itemProtos.Select(I电弧熔炉).prefabDesc;
+            prefabDesc4.assemblerSpeed = 20000;
+            prefabDesc4.idleEnergyPerTick *= 2;
+            prefabDesc4.workEnergyPerTick *= 2;
 
-            itemProtos.Select(物品.位面熔炉).prefabDesc.assemblerSpeed = 40000;
-            itemProtos.Select(物品.化工厂).prefabDesc.assemblerSpeed = 20000;
-            itemProtos.Select(物品.原油精炼厂).prefabDesc.assemblerSpeed = 20000;
-            itemProtos.Select(物品.粒子对撞机).prefabDesc.assemblerSpeed = 40000;
+            ref var desc7 = ref itemProtos.Select(6230).prefabDesc;
+            desc7.assemblerRecipeType = (ERecipeType_1)ERecipeType.矿物处理;
+            desc7.idleEnergyPerTick = 400;
+            desc7.workEnergyPerTick = 12000;
+            desc7.dragBuild = true;
+            desc7.dragBuildDist = new Vector2(2.9f, 2.9f);
 
-            itemProtos.Select(物品.采矿机).prefabDesc.minerPeriod = 600000;
-            itemProtos.Select(物品.大型采矿机).prefabDesc.minerPeriod = 300000;
-            itemProtos.Select(物品.原油采集站).prefabDesc.minerPeriod = 300000;
-            itemProtos.Select(物品.水泵).prefabDesc.minerPeriod = 360000;
+            ref var prefabDesc8 = ref itemProtos.Select(6275).prefabDesc;
+            prefabDesc8.assemblerSpeed = 500;
+            prefabDesc8.workEnergyPerTick = 2000000;
+            prefabDesc8.idleEnergyPerTick = 100000;
+            prefabDesc8.assemblerRecipeType = (ERecipeType_1)ERecipeType.精密组装;
 
-            itemProtos.Select(物品.水泵).prefabDesc.waterTypes = new[] { 1000, 1116, 7018 };
+            ref var desc8 = ref itemProtos.Select(6276).prefabDesc;
+            desc8.assemblerSpeed = 1000;
+            desc8.workEnergyPerTick = 8000000;
+            desc8.idleEnergyPerTick = 200000;
+            desc8.assemblerRecipeType = (ERecipeType_1)ERecipeType.聚变生产;
 
-            itemProtos.Select(物品.电磁轨道弹射器).prefabDesc.ejectorChargeFrame = 20;
-            itemProtos.Select(物品.电磁轨道弹射器).prefabDesc.ejectorColdFrame = 10;
+            ref var desc1 = ref itemProtos.Select(I水泵).prefabDesc;
+            desc1.minerPeriod = 360000;
+            desc1.waterTypes = new[] { 1000, 1116, 7018 };
 
-            itemProtos.Select(物品.垂直发射井).prefabDesc.siloChargeFrame = 24;
-            itemProtos.Select(物品.垂直发射井).prefabDesc.siloColdFrame = 6;
+            ref var desc2 = ref itemProtos.Select(I电磁轨道弹射器).prefabDesc;
+            desc2.ejectorChargeFrame = 20;
+            desc2.ejectorColdFrame = 10;
 
-            itemProtos.Select(物品.卫星配电站).prefabDesc.powerConnectDistance = 5300.5f;
-            itemProtos.Select(物品.卫星配电站).prefabDesc.powerCoverRadius = 2600.5f;
-            itemProtos.Select(物品.电力感应塔).prefabDesc.powerConnectDistance = 44.5f;
-            itemProtos.Select(物品.电力感应塔).prefabDesc.powerCoverRadius = 20.5f;
-            itemProtos.Select(物品.风力涡轮机).prefabDesc.powerConnectDistance = 32.5f;
-            itemProtos.Select(物品.风力涡轮机).prefabDesc.powerCoverRadius = 14.9f;
+            ref var desc3 = ref itemProtos.Select(I垂直发射井).prefabDesc;
+            desc3.siloChargeFrame = 24;
+            desc3.siloColdFrame = 6;
 
-            itemProtos.Select(物品.火力发电机).prefabDesc.genEnergyPerTick = 200000;
-            itemProtos.Select(物品.火力发电机).prefabDesc.useFuelPerTick = 250000;
+            ref var desc4 = ref itemProtos.Select(I卫星配电站).prefabDesc;
+            desc4.powerConnectDistance = 5300.5f;
+            desc4.powerCoverRadius = 2600.5f;
+            desc4.idleEnergyPerTick = 12000000;
+            desc4.workEnergyPerTick = 48000000;
 
-            itemProtos.Select(物品.风力涡轮机).prefabDesc.genEnergyPerTick = 25000;
-            itemProtos.Select(物品.太阳能板).prefabDesc.genEnergyPerTick = 30000;
-            itemProtos.Select(物品.地热发电机).prefabDesc.genEnergyPerTick = 400000;
+            ref var prefabDesc5 = ref itemProtos.Select(I电力感应塔).prefabDesc;
+            prefabDesc5.powerConnectDistance = 44.5f;
+            prefabDesc5.powerCoverRadius = 20.5f;
 
-            itemProtos.Select(物品.聚变发电机).prefabDesc.genEnergyPerTick = 2500000;
-            itemProtos.Select(物品.聚变发电机).prefabDesc.useFuelPerTick = 2500000;
+            ref var desc5 = ref itemProtos.Select(I风力涡轮机).prefabDesc;
+            desc5.powerConnectDistance = 32.5f;
+            desc5.powerCoverRadius = 14.9f;
+            desc5.genEnergyPerTick = 25000;
 
-            itemProtos.Select(物品.人造恒星).prefabDesc.genEnergyPerTick = 10000000;
-            itemProtos.Select(物品.人造恒星).prefabDesc.useFuelPerTick = 10000000;
+            ref var prefabDesc6 = ref itemProtos.Select(I火力发电机).prefabDesc;
+            prefabDesc6.genEnergyPerTick = 200000;
+            prefabDesc6.useFuelPerTick = 250000;
+
+            ref var desc6 = ref itemProtos.Select(I聚变发电机).prefabDesc;
+            desc6.genEnergyPerTick = 2500000;
+            desc6.useFuelPerTick = 2500000;
+
+            ref var prefabDesc7 = ref itemProtos.Select(I人造恒星).prefabDesc;
+            prefabDesc7.genEnergyPerTick = 10000000;
+            prefabDesc7.useFuelPerTick = 10000000;
 
 
-            itemProtos.Select(物品.低速传送带).prefabDesc.beltSpeed = 3;
-            itemProtos.Select(物品.高速传送带).prefabDesc.beltSpeed = 5;
-            itemProtos.Select(物品.极速传送带).prefabDesc.beltSpeed = 10;
+            itemProtos.Select(I位面熔炉).prefabDesc.assemblerSpeed = 40000;
+            itemProtos.Select(I化工厂).prefabDesc.assemblerSpeed = 20000;
+            itemProtos.Select(I精炼厂).prefabDesc.assemblerSpeed = 20000;
+            itemProtos.Select(I粒子对撞机).prefabDesc.assemblerSpeed = 40000;
 
-            itemProtos.Select(物品.低速分拣器).prefabDesc.inserterSTT = 100000;
-            itemProtos.Select(物品.高速分拣器).prefabDesc.inserterSTT = 50000;
-            itemProtos.Select(物品.极速分拣器).prefabDesc.inserterSTT = 25000;
+            itemProtos.Select(I采矿机).prefabDesc.minerPeriod = 600000;
+            itemProtos.Select(I大型采矿机).prefabDesc.minerPeriod = 300000;
+            itemProtos.Select(I原油采集站).prefabDesc.minerPeriod = 300000;
 
-            itemProtos.Select(物品.卫星配电站).prefabDesc.idleEnergyPerTick = 12000000;
-            itemProtos.Select(物品.卫星配电站).prefabDesc.workEnergyPerTick = 48000000;
+            itemProtos.Select(I太阳能板).prefabDesc.genEnergyPerTick = 30000;
+            itemProtos.Select(I地热发电机).prefabDesc.genEnergyPerTick = 400000;
 
-            itemProtos.Select(物品.电弧熔炉).prefabDesc.assemblerSpeed = 20000;
-            itemProtos.Select(物品.电弧熔炉).prefabDesc.idleEnergyPerTick = itemProtos.Select(物品.电弧熔炉).prefabDesc.idleEnergyPerTick * 2;
-            itemProtos.Select(物品.电弧熔炉).prefabDesc.workEnergyPerTick = itemProtos.Select(物品.电弧熔炉).prefabDesc.workEnergyPerTick * 2;
-            itemProtos.Select(物品.无线输电塔).prefabDesc.powerConnectDistance = 90.5f;
+            itemProtos.Select(I低速传送带).prefabDesc.beltSpeed = 3;
+            itemProtos.Select(I低速分拣器).prefabDesc.inserterSTT = 100000;
 
-            itemProtos.Select(6230).prefabDesc.assemblerRecipeType = (ERecipeType_1)ERecipeType.矿物处理;
-            itemProtos.Select(6230).prefabDesc.idleEnergyPerTick = 400;
-            itemProtos.Select(6230).prefabDesc.workEnergyPerTick = 12000;
+            itemProtos.Select(I高速传送带).prefabDesc.beltSpeed = 5;
+            itemProtos.Select(I高速分拣器).prefabDesc.inserterSTT = 50000;
+
+            itemProtos.Select(I极速传送带).prefabDesc.beltSpeed = 10;
+            itemProtos.Select(I极速分拣器).prefabDesc.inserterSTT = 25000;
+
+            itemProtos.Select(I无线输电塔).prefabDesc.powerConnectDistance = 90.5f;
 
             itemProtos.Select(6229).prefabDesc.fluidStorageCount = 1000000;
-
-            itemProtos.Select(6275).prefabDesc.assemblerSpeed = 500;
-            itemProtos.Select(6275).prefabDesc.workEnergyPerTick = 2000000;
-            itemProtos.Select(6275).prefabDesc.idleEnergyPerTick = 100000;
-            itemProtos.Select(6275).prefabDesc.assemblerRecipeType = (ERecipeType_1)ERecipeType.精密组装;
-
-            itemProtos.Select(6276).prefabDesc.assemblerSpeed = 1000;
-            itemProtos.Select(6276).prefabDesc.workEnergyPerTick = 8000000;
-            itemProtos.Select(6276).prefabDesc.idleEnergyPerTick = 200000;
-            itemProtos.Select(6276).prefabDesc.assemblerRecipeType = (ERecipeType_1)ERecipeType.聚变生产;
-
-            //矿场修复
-            var oreFactory = LDB.items.Select(6230);
-            var oreFactoryModel = LDB.items.Select(302);
-            oreFactoryModel.prefabDesc.dragBuild = true;
-            oreFactoryModel.prefabDesc.dragBuildDist = new Vector2(2.9f, 2.9f);
-            oreFactory.prefabDesc.dragBuild = true;
-            oreFactory.prefabDesc.dragBuildDist = new Vector2(2.9f, 2.9f);
         }
 
         internal static void ModelPostFix(ModelProtoSet models)
@@ -181,6 +195,18 @@ namespace ProjectGenesis.Utils
             energyexchangerprefabDesc.maxAcuEnergy = 2700000000;
             energyexchangerprefabDesc.maxExcEnergy = 2700000000;
             energyexchangerprefabDesc.exchangeEnergyPerTick = 10000000;
+
+            var ils = models.Select(50);
+            ref var ilsprefabDesc = ref ils.prefabDesc;
+            ilsprefabDesc.workEnergyPerTick *= 2;
+            ilsprefabDesc.stationMaxEnergyAcc *= 2;
+            ilsprefabDesc.stationMaxItemCount = 20000;
+
+            var pls = models.Select(49);
+            ref var plsprefabDesc = ref pls.prefabDesc;
+            plsprefabDesc.workEnergyPerTick *= 2;
+            plsprefabDesc.stationMaxEnergyAcc *= 2;
+            plsprefabDesc.stationMaxItemCount = 10000;
         }
 
         private static void SetMegaAssemberPrefebDesc(

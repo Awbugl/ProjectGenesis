@@ -1,3 +1,15 @@
+- v2.5.6
+  + 调整`物流配送器`、`行星内物流运输站`的建造材料需求
+  + 调整部分科技需求
+  + 调整物流塔的仓储上限和充能功率
+
+  + Adjust the requirements of  `Logistics Distributor` and `Planetary Logistics Station`
+  + Adjust the requirements of some technologies
+  + Adjust the storage capacity and charging power of Logistics Station
+
+<details>
+  <summary>点击展开日志 | Click to view all </summary>
+
 - v2.5.5
   + 调整部分图标
   + 调整物品、配方选择界面的排列顺序
@@ -11,8 +23,6 @@
   + Adjust the manufacturing time of the mega pump
   + Adjust the requirements of `Vertical Launching Silo`
 
-<details>
-  <summary>点击展开日志 | Click to view all </summary>
 
 - v2.5.4
   + 调整部分文案
