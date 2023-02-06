@@ -29,7 +29,7 @@
     "Description": "",
     "IconPath": "Assets/texpack/铜线圈",
     "Type": 4,
-    "GridIndex": 1313,
+    "GridIndex": 1501,
     "Time": 120,
     "Input": [
       1104
@@ -77,7 +77,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 1,
-    "GridIndex": 1107,
+    "GridIndex": 1410,
     "Time": 120,
     "Input": [
       1005
@@ -125,7 +125,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 1412,
+    "GridIndex": 1306,
     "Time": 120,
     "Input": [
       1101,
@@ -287,7 +287,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 1512,
+    "GridIndex": 1307,
     "Time": 120,
     "Input": [
       1110,
@@ -503,7 +503,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 1210,
+    "GridIndex": 1211,
     "Time": 120,
     "Input": [
       1103,
@@ -529,7 +529,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 1310,
+    "GridIndex": 1212,
     "Time": 240,
     "Input": [
       1405,
@@ -587,7 +587,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 2,
-    "GridIndex": 1110,
+    "GridIndex": 4501,
     "Time": 120,
     "Input": [
       7001,
@@ -613,7 +613,7 @@
     "Description": "R硫酸",
     "IconPath": "Assets/texpack/硫酸_新",
     "Type": 2,
-    "GridIndex": 4201,
+    "GridIndex": 4215,
     "Time": 120,
     "Input": [
       7103,
@@ -727,7 +727,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 1509,
+    "GridIndex": 1607,
     "Time": 120,
     "Input": [
       1205,
@@ -787,7 +787,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 1208,
+    "GridIndex": 1207,
     "Time": 240,
     "Input": [
       1110,
@@ -813,7 +813,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 2,
-    "GridIndex": 1205,
+    "GridIndex": 1404,
     "Time": 120,
     "Input": [
       1109,
@@ -839,7 +839,7 @@
     "Description": "R石墨烯（高效）",
     "IconPath": "Icons/ItemRecipe/graphene-lv2",
     "Type": 2,
-    "GridIndex": 1305,
+    "GridIndex": 1504,
     "Time": 120,
     "Input": [
       1011
@@ -865,7 +865,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 2,
-    "GridIndex": 1206,
+    "GridIndex": 1405,
     "Time": 120,
     "Input": [
       1123
@@ -889,7 +889,7 @@
     "Description": "R硅石筛选",
     "IconPath": "",
     "Type": 1,
-    "GridIndex": 1511,
+    "GridIndex": 1616,
     "Time": 120,
     "Input": [
       1005
@@ -913,7 +913,7 @@
     "Description": "R碳纳米管（高效）",
     "IconPath": "Icons/ItemRecipe/nanotube-lv2",
     "Type": 2,
-    "GridIndex": 1306,
+    "GridIndex": 1505,
     "Time": 120,
     "Input": [
       1015
@@ -937,7 +937,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 10,
-    "GridIndex": 1714,
+    "GridIndex": 5108,
     "Time": 240,
     "Input": [
       1124,
@@ -963,7 +963,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 1,
-    "GridIndex": 1207,
+    "GridIndex": 1205,
     "Time": 120,
     "Input": [
       1105
@@ -987,7 +987,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 10,
-    "GridIndex": 1609,
+    "GridIndex": 1608,
     "Time": 360,
     "Input": [
       1126,
@@ -1043,7 +1043,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 5,
-    "GridIndex": 1411,
+    "GridIndex": 1114,
     "Time": 120,
     "Input": [
       1120
@@ -1319,7 +1319,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 1,
-    "GridIndex": 1108,
+    "GridIndex": 1206,
     "Time": 120,
     "Input": [
       1005
@@ -1343,7 +1343,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 1514,
+    "GridIndex": 5402,
     "Time": 240,
     "Input": [
       7502,
@@ -1371,7 +1371,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 10,
-    "GridIndex": 1614,
+    "GridIndex": 5403,
     "Time": 360,
     "Input": [
       7503,
@@ -1399,7 +1399,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 1414,
+    "GridIndex": 5401,
     "Time": 120,
     "Input": [
       7501,
@@ -1641,7 +1641,7 @@
     "Description": "R晶格硅（高效）",
     "IconPath": "Icons/ItemRecipe/silicium-high-purity-lv2",
     "Type": 4,
-    "GridIndex": 1307,
+    "GridIndex": 1305,
     "Time": 120,
     "Input": [
       1013
@@ -1861,7 +1861,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 10,
-    "GridIndex": 1410,
+    "GridIndex": 1710,
     "Time": 120,
     "Input": [
       7709,
@@ -1977,7 +1977,7 @@
     "Description": "R光子物质化",
     "IconPath": "Icons/ItemRecipe/photon-formula",
     "Type": 5,
-    "GridIndex": 1212,
+    "GridIndex": 1408,
     "Time": 120,
     "Input": [
       1208
@@ -2085,7 +2085,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 1404,
+    "GridIndex": 1407,
     "Time": 600,
     "Input": [
       1209
@@ -2109,7 +2109,7 @@
     "Description": "R空间翘曲器（高级）",
     "IconPath": "Icons/ItemRecipe/space-warper-lv2",
     "Type": 4,
-    "GridIndex": 1504,
+    "GridIndex": 1507,
     "Time": 600,
     "Input": [
       6005
@@ -2133,7 +2133,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 1510,
+    "GridIndex": 1711,
     "Time": 240,
     "Input": [
       7707,
@@ -2159,7 +2159,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 1610,
+    "GridIndex": 1712,
     "Time": 360,
     "Input": [
       1125,
@@ -2215,7 +2215,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 10,
-    "GridIndex": 1710,
+    "GridIndex": 1713,
     "Time": 600,
     "Input": [
       1502,
@@ -2507,7 +2507,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 1209,
+    "GridIndex": 1311,
     "Time": 600,
     "Input": [
       1101,
@@ -2563,7 +2563,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 1309,
+    "GridIndex": 1312,
     "Time": 900,
     "Input": [
       1107,
@@ -2589,7 +2589,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 1213,
+    "GridIndex": 1601,
     "Time": 120,
     "Input": [
       1101,
@@ -2615,7 +2615,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 1214,
+    "GridIndex": 1602,
     "Time": 120,
     "Input": [
       1203,
@@ -2695,7 +2695,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 1409,
+    "GridIndex": 1606,
     "Time": 240,
     "Input": [
       1205,
@@ -2747,7 +2747,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 1215,
+    "GridIndex": 1603,
     "Time": 120,
     "Input": [
       1204,
@@ -2773,7 +2773,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 1211,
+    "GridIndex": 1406,
     "Time": 360,
     "Input": [
       1126,
@@ -2847,7 +2847,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 1117,
+    "GridIndex": 1511,
     "Time": 120,
     "Input": [
       1124,
@@ -2959,7 +2959,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 1116,
+    "GridIndex": 1411,
     "Time": 120,
     "Input": [
       1108,
@@ -3045,7 +3045,7 @@
     "Description": "",
     "IconPath": "Assets/texpack/金属氢单元",
     "Type": 10,
-    "GridIndex": 1604,
+    "GridIndex": 1605,
     "Time": 900,
     "Input": [
       7707,
@@ -3273,7 +3273,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 1109,
+    "GridIndex": 1310,
     "Time": 120,
     "Input": [
       1101,
@@ -3359,7 +3359,7 @@
     "Description": "R水电解",
     "IconPath": "Assets/texpack/电解水",
     "Type": 2,
-    "GridIndex": 1713,
+    "GridIndex": 4117,
     "Time": 120,
     "Input": [
       1000
@@ -3411,7 +3411,7 @@
     "Description": "R金属盐分解",
     "IconPath": "Assets/texpack/氯化钠",
     "Type": 4,
-    "GridIndex": 1115,
+    "GridIndex": 1215,
     "Time": 180,
     "Input": [
       1005
@@ -3439,7 +3439,7 @@
     "Description": "R高分子化合: 环氧氯丙烷",
     "IconPath": "Assets/texpack/环氧氯丙烷",
     "Type": 2,
-    "GridIndex": 4110,
+    "GridIndex": 4201,
     "Time": 120,
     "Input": [
       7009,
@@ -3467,7 +3467,7 @@
     "Description": "",
     "IconPath": "Assets/texpack/盐水",
     "Type": 2,
-    "GridIndex": 4106,
+    "GridIndex": 4111,
     "Time": 120,
     "Input": [
       1000,
@@ -3493,7 +3493,7 @@
     "Description": "R高分子化合: 双酚A",
     "IconPath": "Assets/texpack/双酚A_新",
     "Type": 2,
-    "GridIndex": 4103,
+    "GridIndex": 4101,
     "Time": 120,
     "Input": [
       7014,
@@ -3523,7 +3523,7 @@
     "Description": "R硝酸化合",
     "IconPath": "Assets/texpack/硝酸_新",
     "Type": 2,
-    "GridIndex": 4104,
+    "GridIndex": 4115,
     "Time": 120,
     "Input": [
       7102,
@@ -3551,7 +3551,7 @@
     "Description": "",
     "IconPath": "Assets/texpack/二硝基氯苯",
     "Type": 16,
-    "GridIndex": 4108,
+    "GridIndex": 4103,
     "Time": 120,
     "Input": [
       7017,
@@ -3577,7 +3577,7 @@
     "Description": "",
     "IconPath": "Assets/texpack/二氯联苯胺_新",
     "Type": 16,
-    "GridIndex": 4107,
+    "GridIndex": 4203,
     "Time": 120,
     "Input": [
       7008,
@@ -3603,7 +3603,7 @@
     "Description": "R合成氨",
     "IconPath": "Assets/texpack/氨_新",
     "Type": 2,
-    "GridIndex": 4102,
+    "GridIndex": 4113,
     "Time": 120,
     "Input": [
       6220,
@@ -3629,7 +3629,7 @@
     "Description": "R高分子化合: 二氨基联苯胺",
     "IconPath": "Assets/texpack/二氨基联苯胺_新",
     "Type": 16,
-    "GridIndex": 4105,
+    "GridIndex": 4303,
     "Time": 120,
     "Input": [
       7007,
@@ -3657,7 +3657,7 @@
     "Description": "R焦油转化",
     "IconPath": "Assets/texpack/煤焦油生产",
     "Type": 3,
-    "GridIndex": 3206,
+    "GridIndex": 3207,
     "Time": 120,
     "Input": [
       1006
@@ -3681,7 +3681,7 @@
     "Description": "R焦油分馏",
     "IconPath": "Assets/texpack/煤焦油",
     "Type": 3,
-    "GridIndex": 3207,
+    "GridIndex": 3208,
     "Time": 120,
     "Input": [
       1114
@@ -3709,7 +3709,7 @@
     "Description": "R高分子化合: 邻苯二甲酸",
     "IconPath": "Assets/texpack/邻苯二甲酸_新",
     "Type": 2,
-    "GridIndex": 4109,
+    "GridIndex": 4204,
     "Time": 120,
     "Input": [
       7019,
@@ -3737,7 +3737,7 @@
     "Description": "",
     "IconPath": "Assets/texpack/间苯二甲酸二苯酯_新",
     "Type": 16,
-    "GridIndex": 4111,
+    "GridIndex": 4304,
     "Time": 120,
     "Input": [
       7003,
@@ -3763,7 +3763,7 @@
     "Description": "R三氯化铁",
     "IconPath": "Assets/texpack/三氯化铁",
     "Type": 2,
-    "GridIndex": 4101,
+    "GridIndex": 4311,
     "Time": 360,
     "Input": [
       7014,
@@ -3793,7 +3793,7 @@
     "Description": "R氨氧化",
     "IconPath": "Assets/texpack/硝酸_新",
     "Type": 2,
-    "GridIndex": 4301,
+    "GridIndex": 4213,
     "Time": 360,
     "Input": [
       7002,
@@ -3821,7 +3821,7 @@
     "Description": "R二氧化碳还原",
     "IconPath": "Assets/texpack/一氧化碳",
     "Type": 2,
-    "GridIndex": 4302,
+    "GridIndex": 4309,
     "Time": 120,
     "Input": [
       6206,
@@ -3847,7 +3847,7 @@
     "Description": "R原油再生",
     "IconPath": "Icons/ItemRecipe/oil",
     "Type": 2,
-    "GridIndex": 4303,
+    "GridIndex": 4409,
     "Time": 360,
     "Input": [
       6206,
@@ -3873,7 +3873,7 @@
     "Description": "",
     "IconPath": "Assets/texpack/生物微晶元件",
     "Type": 10,
-    "GridIndex": 1415,
+    "GridIndex": 5601,
     "Time": 120,
     "Input": [
       7504,
@@ -3901,7 +3901,7 @@
     "Description": "",
     "IconPath": "Assets/texpack/先进生物电路",
     "Type": 10,
-    "GridIndex": 1515,
+    "GridIndex": 5602,
     "Time": 240,
     "Input": [
       7505,
@@ -3929,7 +3929,7 @@
     "Description": "",
     "IconPath": "Assets/texpack/超生物计算集群",
     "Type": 10,
-    "GridIndex": 1615,
+    "GridIndex": 5603,
     "Time": 360,
     "Input": [
       7506,
@@ -3957,7 +3957,7 @@
     "Description": "",
     "IconPath": "Assets/texpack/生物神经纤维",
     "Type": 10,
-    "GridIndex": 1715,
+    "GridIndex": 5109,
     "Time": 240,
     "Input": [
       1402,
@@ -3985,7 +3985,7 @@
     "Description": "",
     "IconPath": "Assets/texpack/超级纳米电脑",
     "Type": 10,
-    "GridIndex": 3106,
+    "GridIndex": 5208,
     "Time": 3600,
     "Input": [
       1107,
@@ -4013,7 +4013,7 @@
     "Description": "",
     "IconPath": "Assets/texpack/湿件主机",
     "Type": 10,
-    "GridIndex": 3107,
+    "GridIndex": 5209,
     "Time": 5400,
     "Input": [
       7707,
@@ -4349,7 +4349,7 @@
     "Description": "R高分子化合: 环氧树脂",
     "IconPath": "Assets/texpack/环氧树脂",
     "Type": 2,
-    "GridIndex": 1111,
+    "GridIndex": 4301,
     "Time": 120,
     "Input": [
       7016,
@@ -4379,7 +4379,7 @@
     "Description": "R高分子化合: 聚苯并咪唑",
     "IconPath": "Assets/texpack/聚苯并咪唑",
     "Type": 16,
-    "GridIndex": 1112,
+    "GridIndex": 4403,
     "Time": 120,
     "Input": [
       7005,
@@ -4407,7 +4407,7 @@
     "Description": "R钨矿精炼",
     "IconPath": "Assets/texpack/钨矿",
     "Type": 2,
-    "GridIndex": 1611,
+    "GridIndex": 1717,
     "Time": 360,
     "Input": [
       1004,
@@ -4457,7 +4457,7 @@
     "Description": "",
     "IconPath": "Assets/texpack/钨强化玻璃",
     "Type": 4,
-    "GridIndex": 1308,
+    "GridIndex": 1208,
     "Time": 120,
     "Input": [
       1110,
@@ -4587,7 +4587,7 @@
     "Description": "",
     "IconPath": "Assets/texpack/活性生物纤维",
     "Type": 2,
-    "GridIndex": 1113,
+    "GridIndex": 4701,
     "Time": 120,
     "Input": [
       1117
@@ -4683,7 +4683,7 @@
     "Description": "",
     "IconPath": "Assets/texpack/石墨线圈",
     "Type": 4,
-    "GridIndex": 1314,
+    "GridIndex": 1502,
     "Time": 120,
     "Input": [
       1109
@@ -4707,7 +4707,7 @@
     "Description": "",
     "IconPath": "Assets/texpack/钛线圈",
     "Type": 4,
-    "GridIndex": 1315,
+    "GridIndex": 1503,
     "Time": 120,
     "Input": [
       1106
@@ -4815,7 +4815,7 @@
     "Description": "",
     "IconPath": "Assets/texpack/空燃料棒",
     "Type": 4,
-    "GridIndex": 1605,
+    "GridIndex": 1308,
     "Time": 120,
     "Input": [
       1101,
@@ -4913,7 +4913,7 @@
     "Description": "R质能储存（高效）",
     "IconPath": "Assets/texpack/高效反物质",
     "Type": 5,
-    "GridIndex": 1312,
+    "GridIndex": 1508,
     "Time": 120,
     "Input": [
       1208
@@ -4937,7 +4937,7 @@
     "Description": "R奇异物质（高效）",
     "IconPath": "Assets/texpack/高效奇异物质",
     "Type": 5,
-    "GridIndex": 1311,
+    "GridIndex": 1506,
     "Time": 180,
     "Input": [
       1112,
@@ -4963,7 +4963,7 @@
     "Description": "R石墨烯（极效）",
     "IconPath": "Assets/texpack/极效石墨烯",
     "Type": 2,
-    "GridIndex": 1405,
+    "GridIndex": 1604,
     "Time": 120,
     "Input": [
       1011
@@ -5011,7 +5011,7 @@
     "Description": "R有机液体离心",
     "IconPath": "Assets/texpack/有机液体离心",
     "Type": 3,
-    "GridIndex": 1712,
+    "GridIndex": 3210,
     "Time": 120,
     "Input": [
       1116
@@ -5123,7 +5123,7 @@
     "Description": "R聚乙烯（高效）",
     "IconPath": "Assets/texpack/高效塑料",
     "Type": 2,
-    "GridIndex": 1114,
+    "GridIndex": 4601,
     "Time": 120,
     "Input": [
       1117,
@@ -5177,7 +5177,7 @@
     "Description": "R轻燃油脱硫",
     "IconPath": "Assets/texpack/轻燃油",
     "Type": 2,
-    "GridIndex": 4202,
+    "GridIndex": 4106,
     "Time": 180,
     "Input": [
       6204,
@@ -5205,7 +5205,7 @@
     "Description": "R重燃油脱硫",
     "IconPath": "Assets/texpack/重燃油",
     "Type": 2,
-    "GridIndex": 4203,
+    "GridIndex": 4206,
     "Time": 120,
     "Input": [
       6203,
@@ -5233,7 +5233,7 @@
     "Description": "R柴油混合",
     "IconPath": "Assets/texpack/柴油",
     "Type": 2,
-    "GridIndex": 4204,
+    "GridIndex": 4306,
     "Time": 180,
     "Input": [
       6202,
@@ -5259,7 +5259,7 @@
     "Description": "R水煤气制取",
     "IconPath": "Assets/texpack/一氧化碳",
     "Type": 2,
-    "GridIndex": 4205,
+    "GridIndex": 4109,
     "Time": 240,
     "Input": [
       1109,
@@ -5287,7 +5287,7 @@
     "Description": "",
     "IconPath": "Assets/texpack/二氧化碳",
     "Type": 2,
-    "GridIndex": 4114,
+    "GridIndex": 4209,
     "Time": 120,
     "Input": [
       1109,
@@ -5313,7 +5313,7 @@
     "Description": "",
     "IconPath": "Assets/texpack/甲醇",
     "Type": 2,
-    "GridIndex": 4206,
+    "GridIndex": 4108,
     "Time": 240,
     "Input": [
       6205,
@@ -5339,7 +5339,7 @@
     "Description": "",
     "IconPath": "Assets/texpack/乙酸",
     "Type": 2,
-    "GridIndex": 4207,
+    "GridIndex": 4208,
     "Time": 240,
     "Input": [
       6205,
@@ -5365,7 +5365,7 @@
     "Description": "R乙酸甲酯",
     "IconPath": "Assets/texpack/乙酸甲酯",
     "Type": 2,
-    "GridIndex": 4208,
+    "GridIndex": 4308,
     "Time": 240,
     "Input": [
       6208,
@@ -5393,7 +5393,7 @@
     "Description": "",
     "IconPath": "Assets/texpack/次氯酸_新",
     "Type": 2,
-    "GridIndex": 4209,
+    "GridIndex": 4411,
     "Time": 240,
     "Input": [
       7014,
@@ -5419,7 +5419,7 @@
     "Description": "R高分子化合: 四硝基甲烷",
     "IconPath": "Assets/texpack/四硝基甲烷",
     "Type": 2,
-    "GridIndex": 4210,
+    "GridIndex": 4408,
     "Time": 360,
     "Input": [
       7017,
@@ -5615,7 +5615,7 @@
     "Description": "R微晶元件（高效）",
     "IconPath": "Assets/texpack/高效微晶元件",
     "Type": 10,
-    "GridIndex": 1413,
+    "GridIndex": 5501,
     "Time": 120,
     "Input": [
       7502,
@@ -5641,7 +5641,7 @@
     "Description": "R处理器（高效）",
     "IconPath": "Assets/texpack/高效处理器",
     "Type": 10,
-    "GridIndex": 1513,
+    "GridIndex": 5502,
     "Time": 120,
     "Input": [
       7503,
@@ -5667,7 +5667,7 @@
     "Description": "R量子芯片（高效）",
     "IconPath": "Assets/texpack/高效量子芯片",
     "Type": 10,
-    "GridIndex": 1613,
+    "GridIndex": 5503,
     "Time": 180,
     "Input": [
       7504,
@@ -5693,7 +5693,7 @@
     "Description": "R硫酸（高效）",
     "IconPath": "Assets/texpack/高效硫酸",
     "Type": 2,
-    "GridIndex": 4212,
+    "GridIndex": 4315,
     "Time": 120,
     "Input": [
       6215,
@@ -6293,7 +6293,7 @@
     "Description": "",
     "IconPath": "Assets/texpack/混凝土",
     "Type": 4,
-    "GridIndex": 1612,
+    "GridIndex": 1510,
     "Time": 120,
     "Input": [
       1103,
@@ -6447,7 +6447,7 @@
     "Description": "R物质回收",
     "IconPath": "Assets/texpack/垃圾回收",
     "Type": 14,
-    "GridIndex": 1711,
+    "GridIndex": 1210,
     "Time": 10800,
     "Input": [],
     "InCounts": [],
@@ -6467,7 +6467,7 @@
     "Description": "R氯苯水解",
     "IconPath": "Assets/texpack/苯酚_新",
     "Type": 2,
-    "GridIndex": 4113,
+    "GridIndex": 4217,
     "Time": 120,
     "Input": [
       7013,
@@ -6519,7 +6519,7 @@
     "Description": "R硫酸化合",
     "IconPath": "Assets/texpack/硫酸化合",
     "Type": 2,
-    "GridIndex": 4112,
+    "GridIndex": 4415,
     "Time": 120,
     "Input": [
       6277,
