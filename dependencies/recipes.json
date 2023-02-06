@@ -6388,7 +6388,7 @@
     "IconPath": "Icons/ItemRecipe/fractionator",
     "Type": 10,
     "GridIndex": 2313,
-    "Time": 1200,
+    "Time": 600,
     "Input": [
       6503,
       1107,
