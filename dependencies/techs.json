@@ -531,7 +531,6 @@
       710,
       717,
       718,
-      719,
       505,
       506,
       507,
@@ -583,7 +582,9 @@
       511,
       714,
       716,
-      538
+      538,
+      719,
+      720
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -1229,7 +1230,7 @@
       1
     ],
     "PreTechsImplicit": [
-      1507
+      1810
     ],
     "Items": [
       6001,
@@ -1535,7 +1536,7 @@
     "UnlockRecipes": [
       52,
       522,
-      542
+      518
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -3276,14 +3277,15 @@
       6003
     ],
     "ItemPoints": [
-      12,
-      12,
-      12
+      16,
+      16,
+      16
     ],
     "HashNeeded": 360000,
     "UnlockRecipes": [
       101,
-      78
+      78,
+      542
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -8684,10 +8686,7 @@
     "UnlockRecipes": [
       751,
       752,
-      753,
-      754,
-      755,
-      756
+      753    
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -8731,10 +8730,7 @@
     "UnlockRecipes": [
       761,
       762,
-      763,
-      764,
-      765,
-      766
+      763     
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -8757,30 +8753,35 @@
     "Desc": "T虚拟技术革新描述",
     "Conclusion": "T虚拟技术革新描述",
     "Position": [
-      25.0,
+      29.0,
       9.0
     ],
     "PreTechs": [
-      1303
+      1809
     ],
     "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
       6003,
-      6004
+      6004,
+      6005
     ],
     "ItemPoints": [
       20,
       20,
       20,
+      20,
       20
     ],
-    "HashNeeded": 144000,
+    "HashNeeded": 288000,
     "UnlockRecipes": [
       791,
       792,
-      793
+      765,
+      755,
+      766,
+      756
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -8803,7 +8804,7 @@
     "Desc": "T生物神经技术描述",
     "Conclusion": "T生物神经技术描述",
     "Position": [
-      25.0,
+      29.0,
       5.0
     ],
     "PreTechs": [
@@ -8814,18 +8815,20 @@
       6001,
       6002,
       6003,
-      6004
+      6004,
+      6005
     ],
     "ItemPoints": [
       20,
       20,
       20,
+      20,
       20
     ],
-    "HashNeeded": 144000,
+    "HashNeeded": 288000,
     "UnlockRecipes": [
-      794,
-      780
+      780,
+      794
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -8848,11 +8851,12 @@
     "Desc": "T超级纳米计算机描述",
     "Conclusion": "T超级纳米计算机描述",
     "Position": [
-      29.0,
+      25.0,
       9.0
     ],
     "PreTechs": [
-      1807
+      1303,
+      1133
     ],
     "PreTechsImplicit": [],
     "Items": [
@@ -8871,7 +8875,9 @@
     "UnlockRecipes": [
       795,
       519,
-      520
+      520,
+      754,
+      764
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -8894,10 +8900,11 @@
     "Desc": "T生物活性计算机描述",
     "Conclusion": "T生物活性计算机描述",
     "Position": [
-      29.0,
-      5.0
+      33.0,
+      9.0
     ],
     "PreTechs": [
+      1807,
       1808
     ],
     "PreTechsImplicit": [],
@@ -8905,18 +8912,20 @@
       6001,
       6002,
       6003,
-      6004
+      6004,
+      6005
     ],
     "ItemPoints": [
       20,
       20,
       20,
+      20,
       20
     ],
-    "HashNeeded": 144000,
+    "HashNeeded": 576000,
     "UnlockRecipes": [
-      569,
-      518
+      793,
+      569
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],

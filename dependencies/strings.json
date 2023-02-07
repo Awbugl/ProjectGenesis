@@ -1901,8 +1901,8 @@
   },
   {
     "Name": "R奇异物质（高效）",
-    "ZHCN": "将量子芯片的算力聚焦于微观结构, 可以使用金刚石生产奇异物质.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "By focusing the arithmetic power of quantum chips on microscopic structures, it is possible to produce strange matter using diamond.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "有了引力波折射技术, 我们可以使用金刚石生产奇异物质.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "With the technology of gravitational wave refraction, we can use diamond to produce strange matter.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "石墨烯（极效）",
@@ -2242,7 +2242,7 @@
   {
     "Name": "T不再是菜鸟的证明",
     "ZHCN": "不再是菜鸟的证明",
-    "ENUS": "Certificate of not being a noob any more"
+    "ENUS": "Certificate of Not Being a Noob Anymore"
   },
   {
     "Name": "T不再是菜鸟的证明描述",
@@ -2396,8 +2396,8 @@
   },
   {
     "Name": "T电路基板描述",
-    "ZHCN": "基板是制造印刷电路板的基本材料，印刷电路板的性能、质量很大程度上取决于基板材料。高分子材料的使用，可以极大的降低印刷电路板的成本并提高其质量。\n[由于显示限制，解锁配方显示不完全]",
-    "ENUS": "Substrate is the basic material for manufacturing printed circuit boards, and the performance and quality of printed circuit boards depend largely on the substrate material.\n[The unlocked recipe is not fully displayed due to display limitations]"
+    "ZHCN": "基板是制造印刷电路板的基本材料，印刷电路板的性能、质量很大程度上取决于基板材料。高分子材料的使用，可以极大的降低印刷电路板的成本并提高其质量。",
+    "ENUS": "Substrate is the basic material for manufacturing printed circuit boards, and the performance and quality of printed circuit boards depend largely on the substrate material."
   },
   {
     "Name": "TIC晶片",
@@ -2406,13 +2406,13 @@
   },
   {
     "Name": "TIC晶片描述",
-    "ZHCN": "晶圆通过扩散湿洗和多次的光刻、湿刻蚀、离子注入、干蚀刻、气相积淀最后抛光切片获得的高精密工业中间产品，集成有大量的微电子元器件，是制作处理器的核心原料。\n[由于显示限制，解锁配方显示不完全]",
-    "ENUS": "Wafers are obtained through diffusion wet washing and multiple lithography, wet etching, ion implantation, dry etching, vapor phase deposition and finally polishing and slicing of high precision industrial intermediate products, integrated with a large number of microelectronic components, which are the core raw materials for making processors.\n[The unlocked recipe is not fully displayed due to display limitations]"
+    "ZHCN": "晶圆通过扩散湿洗和多次的光刻、湿刻蚀、离子注入、干蚀刻、气相积淀最后抛光切片获得的高精密工业中间产品，集成有大量的微电子元器件，是制作处理器的核心原料。",
+    "ENUS": "Wafers are obtained through diffusion wet washing and multiple lithography, wet etching, ion implantation, dry etching, vapor phase deposition and finally polishing and slicing of high precision industrial intermediate products, integrated with a large number of microelectronic components, which are the core raw materials for making processors."
   },
   {
     "Name": "T虚拟技术革新",
-    "ZHCN": "虚拟技术革新",
-    "ENUS": "Virtual technology innovation"
+    "ZHCN": "家园世界: 虚拟技术革新",
+    "ENUS": "Homeworld: Virtual Technology Innovation"
   },
   {
     "Name": "T虚拟技术革新描述",
@@ -2421,8 +2421,8 @@
   },
   {
     "Name": "T生物神经技术",
-    "ZHCN": "生物神经技术",
-    "ENUS": "Bio-neurotechnology"
+    "ZHCN": "家园世界: 生物神经技术",
+    "ENUS": "Homeworld: Bio-neurotechnology"
   },
   {
     "Name": "T生物神经技术描述",
@@ -2441,8 +2441,8 @@
   },
   {
     "Name": "T生物活性计算机",
-    "ZHCN": "生物活性计算机",
-    "ENUS": "Bioactive computer"
+    "ZHCN": "家园世界: 生物活性计算机",
+    "ENUS": "Homeworld: Bioactive computer"
   },
   {
     "Name": "T生物活性计算机描述",

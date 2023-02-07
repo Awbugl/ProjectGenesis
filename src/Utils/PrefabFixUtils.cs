@@ -207,6 +207,7 @@ namespace ProjectGenesis.Utils
             plsprefabDesc.workEnergyPerTick *= 2;
             plsprefabDesc.stationMaxEnergyAcc *= 2;
             plsprefabDesc.stationMaxItemCount = 10000;
+            plsprefabDesc.stationMaxItemKinds = 5;
         }
 
         private static void SetMegaAssemberPrefebDesc(
