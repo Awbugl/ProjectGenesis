@@ -183,7 +183,7 @@
     "Name": "信息页面",
     "ZHCN": "主机",
     "ENUS": "Informatization"
-  },  
+  },
   {
     "Name": "剧毒液体海洋",
     "ZHCN": "剧毒液体海洋",
@@ -1102,7 +1102,7 @@
   {
     "Name": "I终极机械组件",
     "ZHCN": "一个通用组件包,用途广泛.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "You know, you shoulden't get this, right?\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ENUS": "You know, you shouldn't get this, right?\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "创世之书",
@@ -1110,7 +1110,7 @@
     "ENUS": "Genesis Book"
   },
   {
-    "Name": "I创世之书",
+    "Name": "I起源之书",
     "ZHCN": "如果你拿到这本书,那我想,你应该已经试着接受这个MOD了.欢迎来到第一阶段,开拓者.\n在这个阶段,你需要做的并不是很多,也不会很难,\n我没有什么能留给你的指点,希望我能在下一个阶段见到你.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "ENUS": "Just a souvenir...."
   },
@@ -1130,7 +1130,7 @@
     "ENUS": "Origin Book"
   },
   {
-    "Name": "I起源之书",
+    "Name": "I创世之书",
     "ZHCN": "我很高兴你能走到这一步,开拓者.\n欢迎来到最终阶段,宇宙的终点对你来说已经触手可及.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "ENUS": "Just a souvenir...."
   },
@@ -1461,8 +1461,8 @@
   },
   {
     "Name": "I钨蚀刻覆层生物基板",
-    "ZHCN": "钛蚀刻覆盖的生物基板，具有更好的生物相容性、稳定性和耐用性。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "The biological substrate covered with titanium etching, which has better biocompatibility, stability and durability.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "钨蚀刻覆盖的生物基板，具有更好的生物相容性、稳定性和耐用性。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "The biological substrate covered with tungsten, which has better biocompatibility, stability and durability.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "超低功率IC晶片",
@@ -1746,8 +1746,18 @@
   },
   {
     "Name": "R金属盐分解",
-    "ZHCN": "利用差速法从矿物质中沉降不同的金属阳离子.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Precipitation of different metal cations from minerals using differential velocity method.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "通过复杂的工序，从矿物质中分离富集纯化不同的金属离子.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Separation of different metal ions from minerals by complex processes.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+  },
+  {
+    "Name": "甘油合成",
+    "ZHCN": "甘油合成",
+    "ENUS": "Glycerol synthesis"
+  },
+  {
+    "Name": "R甘油合成",
+    "ZHCN": "使用一氧化碳和氢合成甘油.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Synthesis of glycerol using carbon monoxide and hydrogen.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "高分子化合: 环氧氯丙烷",
@@ -2683,7 +2693,7 @@
     "Name": "行星协调中心文字描述",
     "ZHCN": "打开行星视图可以对本星球的协调中心进行调整",
     "ENUS": "Can open the planet view to adjust the coordination center"
-  },  
+  },
   {
     "Name": "T物品仓储描述",
     "ZHCN": "小型储物仓可以搭建在四向分流器上，而大型储物仓具有更大的储量。",

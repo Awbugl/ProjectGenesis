@@ -1,11 +1,18 @@
 - v2.5.6
-  + 调整`物流配送器`、`行星内物流运输站`的建造材料需求
+  + 调整部分图标
+  + 调整部分文案
+  + 调整`物流配送器`、`行星内物流运输站`、`星际物流运输站`、`射线接收站`的建造材料需求
   + 调整部分科技需求
   + 调整物流塔的仓储上限和充能功率
+  + 新增配方：甘油合成
 
-  + Adjust the requirements of  `Logistics Distributor` and `Planetary Logistics Station`
+  + Adjust some icons
+  + Adjust some text
+  + Adjust the requirements of  `Logistics Distributor`, `Planetary Logistics Station`, `Interstellar Logistics
+    Station`, `Ray Receiver`
   + Adjust the requirements of some technologies
   + Adjust the storage capacity and charging power of Logistics Station
+  + Add recipe: Glycerol Synthesis
 
 <details>
   <summary>点击展开日志 | Click to view all </summary>
