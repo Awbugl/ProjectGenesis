@@ -213,8 +213,8 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
                     }
                     else
                     {
-                        var entityId = traffic.beltPool[slotdata[index].beltId].entityId;
-                        var cargoPath = traffic.GetCargoPath(traffic.beltPool[slotdata[index].beltId].segPathId);
+                        var beltComponent = traffic.beltPool[slotdata[index].beltId];
+                        var cargoPath = traffic.GetCargoPath(beltComponent.segPathId);
                         if (cargoPath == null) continue;
 
                         if (__instance.recipeId == ProtoIDUsedByPatches.R物质分解)
@@ -274,6 +274,7 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
 
                             if (itemId > 0)
                             {
+                                var entityId = beltComponent.entityId;
                                 signPool[entityId].iconType = 1U;
                                 signPool[entityId].iconId0 = (uint)itemId;
                             }
