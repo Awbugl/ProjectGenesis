@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace ProjectGenesis.Patches.UI.UIPlanetFocus
+namespace ProjectGenesis.Patches.UI.Utils
 {
     /// <summary>
     ///   special thanks to https://github.com/hetima/DSP_PlanetFinder/tree/main/PlanetFinder

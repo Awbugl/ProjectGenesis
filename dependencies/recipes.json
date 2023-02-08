@@ -3601,7 +3601,7 @@
     "ID": 710,
     "Name": "合成氨",
     "Description": "R合成氨",
-    "IconPath": "Assets/texpack/氨_新",
+    "IconPath": "Assets/texpack/氨",
     "Type": 2,
     "GridIndex": 4113,
     "Time": 120,

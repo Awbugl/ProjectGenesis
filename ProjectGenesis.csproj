@@ -127,12 +127,12 @@
         <Compile Include="src\Patches\UI\MultiProductionPatches.cs" />
         <Compile Include="src\Patches\UI\UIAbnormalityTipPatches.cs" />
         <Compile Include="src\Patches\UI\UIPatches.cs" />
-        <Compile Include="src\Patches\UI\UIPlanetFocus\MyWindowCtl.cs" />
         <Compile Include="src\Patches\UI\UIPlanetFocus\UIPlanetFocusWindow.cs" />
         <Compile Include="src\Patches\UI\UIPlanetFocus\UIPlanetDetailExpand.cs" />
-        <Compile Include="src\Patches\UI\UIPlanetFocus\Util.cs" />
         <Compile Include="src\Patches\UI\UISignalPickerPatches.cs" />
         <Compile Include="src\Patches\UI\UpdateLogoPatches.cs" />
+        <Compile Include="src\Patches\UI\Utils\MyWindowCtl.cs" />
+        <Compile Include="src\Patches\UI\Utils\Util.cs" />
         <Compile Include="src\ProjectGenesis.cs" />
         <Compile Include="src\Utils\CopyModelUtils.cs" />
         <Compile Include="src\Utils\ERecipeType.cs" />

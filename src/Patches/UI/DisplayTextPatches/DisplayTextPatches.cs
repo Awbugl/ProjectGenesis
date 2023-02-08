@@ -2,6 +2,7 @@
 using HarmonyLib;
 using ProjectGenesis.Utils;
 using UnityEngine;
+using Utils_ERecipeType = ProjectGenesis.Utils.ERecipeType;
 
 // ReSharper disable InconsistentNaming
 
@@ -13,35 +14,35 @@ namespace ProjectGenesis.Patches.UI.DisplayTextPatches
         [HarmonyPatch(typeof(RecipeProto), "madeFromString", MethodType.Getter)]
         public static void RecipeProto_madeFromString(ref RecipeProto __instance, ref string __result)
         {
-            var type = (Utils.ERecipeType)__instance.Type;
+            var type = (Utils_ERecipeType)__instance.Type;
 
             switch (type)
             {
-                case Utils.ERecipeType.电路蚀刻:
+                case Utils_ERecipeType.电路蚀刻:
                     __result = "电路蚀刻机".TranslateFromJson();
                     break;
 
-                case Utils.ERecipeType.高精度加工:
+                case Utils_ERecipeType.高精度加工:
                     __result = "高精度装配线".TranslateFromJson();
                     break;
 
-                case Utils.ERecipeType.矿物处理:
+                case Utils_ERecipeType.矿物处理:
                     __result = "矿物处理厂".TranslateFromJson();
                     break;
 
-                case Utils.ERecipeType.精密组装:
+                case Utils_ERecipeType.精密组装:
                     __result = "精密制造厂".TranslateFromJson();
                     break;
 
-                case Utils.ERecipeType.聚变生产:
+                case Utils_ERecipeType.聚变生产:
                     __result = "紧凑式回旋加速器".TranslateFromJson();
                     break;
 
-                case Utils.ERecipeType.垃圾回收:
+                case Utils_ERecipeType.垃圾回收:
                     __result = "物质分解设施".TranslateFromJson();
                     break;
 
-                case Utils.ERecipeType.高分子化工:
+                case Utils_ERecipeType.高分子化工:
                     __result = "先进化学反应釜".TranslateFromJson();
                     break;
             }
@@ -102,7 +103,7 @@ namespace ProjectGenesis.Patches.UI.DisplayTextPatches
                     if (__instance.prefabDesc.isCollectStation && __instance.ID == ProtoIDUsedByPatches.I大气采集器) __result = "行星大气".TranslateFromJson();
 
                     return;
-                
+
                 case 22:
                     if (GameMain.history.TechUnlocked(ProtoIDUsedByPatches.T化工技术革新) && __instance.prefabDesc.isAssembler)
                         switch (__instance.prefabDesc.modelIndex)

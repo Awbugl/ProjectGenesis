@@ -7976,7 +7976,7 @@
     "ID": 7002,
     "Name": "氨",
     "Description": "I氨",
-    "IconPath": "Assets/texpack/氨_新",
+    "IconPath": "Assets/texpack/氨",
     "GridIndex": 4113,
     "StackSize": 20,
     "Type": 2,

@@ -1,9 +1,12 @@
 ﻿using CommonAPI.Systems;
 using HarmonyLib;
+using ProjectGenesis.Patches.UI.Utils;
 using ProjectGenesis.Utils;
 using UnityEngine;
 using UnityEngine.UI;
 using static ProjectGenesis.Patches.Logic.PlanetFocus.PlanetFocusPatches;
+using static ProjectGenesis.Patches.UI.Utils.Util;
+using static ProjectGenesis.Patches.UI.Utils.MyWindowCtl;
 
 namespace ProjectGenesis.Patches.UI.UIPlanetFocus
 {
@@ -29,7 +32,7 @@ namespace ProjectGenesis.Patches.UI.UIPlanetFocus
 
         internal static UIPlanetFocusWindow CreateWindow()
         {
-            var win = MyWindowCtl.CreateWindow<UIPlanetFocusWindow>("UIPlanetFocusWindow", "星球基地".TranslateFromJson());
+            var win = CreateWindow<UIPlanetFocusWindow>("UIPlanetFocusWindow", "星球基地".TranslateFromJson());
             return win;
         }
 
@@ -37,7 +40,7 @@ namespace ProjectGenesis.Patches.UI.UIPlanetFocus
 
         protected override void _OnCreate()
         {
-            windowTrans = MyWindowCtl.GetRectTransform(this);
+            windowTrans = GetRectTransform(this);
             windowTrans.sizeDelta = new Vector2(380f, 250f);
 
             CreateUI();
@@ -47,25 +50,25 @@ namespace ProjectGenesis.Patches.UI.UIPlanetFocus
         {
             var tab = new GameObject();
             _tab1 = tab.AddComponent<RectTransform>();
-            Util.NormalizeRectWithMargin(_tab1, 40, 40, 40, 40, windowTrans);
+            NormalizeRectWithMargin(_tab1, 40, 40, 40, 40, windowTrans);
             tab.name = "tab-1";
 
-            nameText = Util.CreateText("星球倾向", 16);
-            Util.NormalizeRectWithTopLeft(nameText.transform, 0f, 20f, _tab1);
+            nameText = CreateText("星球倾向", 16);
+            NormalizeRectWithTopLeft(nameText.transform, 0f, 20f, _tab1);
 
             for (var i = 0; i < FocusMaxCount; ++i)
             {
-                Util.CreateSignalIcon(out var iconBtn, out var iconImage);
+                CreateSignalIcon(out var iconBtn, out var iconImage);
                 _iconBtns[i] = iconBtn;
                 _iconImgs[i] = iconImage;
-                _iconTexts[i] = Util.CreateText("", 16);
+                _iconTexts[i] = CreateText("", 16);
 
                 // works for 2x2
                 // Util.NormalizeRectWithTopLeft(iconBtn.transform, (i & 1) * 60, 60 + (i >> 1) * 60, _tab1);
                 // Util.NormalizeRectWithTopLeft(_iconTexts[i].transform, 150, 60 + i * 30, _tab1);
 
-                Util.NormalizeRectWithTopLeft(iconBtn.transform, 0, 60 + i * 60, _tab1);
-                Util.NormalizeRectWithTopLeft(_iconTexts[i].transform, 55, 72 + i * 60, _tab1);
+                NormalizeRectWithTopLeft(iconBtn.transform, 0, 60 + i * 60, _tab1);
+                NormalizeRectWithTopLeft(_iconTexts[i].transform, 55, 72 + i * 60, _tab1);
 
                 var id = i;
                 iconBtn.onClick += _ => OnIconBtnClick(id);

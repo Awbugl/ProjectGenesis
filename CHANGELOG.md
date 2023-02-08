@@ -1,3 +1,11 @@
+- v2.5.7
+  + 修复部分图标缺失的问题
+
+  + Fix the problem of missing icons
+
+<details>
+  <summary>点击展开日志 | Click to view all </summary>
+
 - v2.5.6
   + 调整部分图标
   + 调整部分文案
@@ -13,8 +21,6 @@
   + Adjust the storage capacity and charging power of Logistics Station
   + Add recipe: Glycerol Synthesis
 
-<details>
-  <summary>点击展开日志 | Click to view all </summary>
 
 - v2.5.5
   + 调整部分图标
