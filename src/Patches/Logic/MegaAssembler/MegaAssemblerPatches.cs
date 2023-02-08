@@ -139,7 +139,9 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
                     }
                     else
                     {
-                        var beltComponent = traffic.beltPool[slotdata[index1].beltId];
+                        var beltId = slotdata[index1].beltId;
+                        if (beltId <= 0) continue;
+                        var beltComponent = traffic.beltPool[beltId];
                         var cargoPath = traffic.GetCargoPath(beltComponent.segPathId);
                         if (cargoPath == null) continue;
 
@@ -213,7 +215,9 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
                     }
                     else
                     {
-                        var beltComponent = traffic.beltPool[slotdata[index].beltId];
+                        var beltId = slotdata[index].beltId;
+                        if (beltId <= 0) continue;
+                        var beltComponent = traffic.beltPool[beltId];
                         var cargoPath = traffic.GetCargoPath(beltComponent.segPathId);
                         if (cargoPath == null) continue;
 
@@ -221,7 +225,7 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
                         {
                             if (power < 0.1f) return;
 
-                            var itemId = traffic.TryPickItemAtRear(slotdata[index].beltId, 0, null, out var stack, out _);
+                            var itemId = traffic.TryPickItemAtRear(beltId, 0, null, out var stack, out _);
 
                             if (itemId <= 0) continue;
 
@@ -257,17 +261,19 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
                             {
                                 __instance.served[needIdx] += stack;
                                 __instance.incServed[needIdx] += inc;
+                                slotdata[index].storageIdx = __instance.products.Length + needIdx + 1;
                             }
 
                             for (var i = 0; i < __instance.products.Length; i++)
                             {
                                 if (__instance.produced[i] >= 50) continue;
 
-                                itemId = traffic.TryPickItemAtRear(slotdata[index].beltId, __instance.products[i], null, out stack, out _);
+                                itemId = traffic.TryPickItemAtRear(beltId, __instance.products[i], null, out stack, out _);
 
                                 if (__instance.products[i] == itemId)
                                 {
                                     __instance.produced[i] += stack;
+                                    slotdata[index].storageIdx = i + 1;
                                     break;
                                 }
                             }
