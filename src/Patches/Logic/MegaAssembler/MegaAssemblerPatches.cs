@@ -369,10 +369,21 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
 
             slotdata[otherSlotId].dir = IODir.None;
             slotdata[otherSlotId].beltId = 0;
-            slotdata[otherSlotId].storageIdx = 0;
             slotdata[otherSlotId].counter = 0;
 
             SyncSlotData.Sync(__instance.planetId, otherSlotId, otherEntityId, slotdata[otherSlotId]);
+        }
+
+        [HarmonyPostfix]
+        [HarmonyPatch(typeof(PlanetFactory), "RemoveEntityWithComponents")]
+        public static void PlanetFactory_RemoveEntityWithComponents(ref PlanetFactory __instance, int id)
+        {
+            if (id != 0)
+            {
+                var entityData = __instance.entityPool[id];
+
+                if (entityData.id != 0 && entityData.assemblerId != 0) SetEmpty(__instance.planetId, id);
+            }
         }
 
         [HarmonyPatch(typeof(AssemblerComponent), "UpdateNeeds")]

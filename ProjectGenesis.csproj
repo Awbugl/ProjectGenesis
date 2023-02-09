@@ -129,6 +129,7 @@
         <Compile Include="src\Patches\UI\UIPatches.cs" />
         <Compile Include="src\Patches\UI\UIPlanetFocus\UIPlanetFocusWindow.cs" />
         <Compile Include="src\Patches\UI\UIPlanetFocus\UIPlanetDetailExpand.cs" />
+        <Compile Include="src\Patches\UI\UISettingPatches.cs" />
         <Compile Include="src\Patches\UI\UISignalPickerPatches.cs" />
         <Compile Include="src\Patches\UI\UpdateLogoPatches.cs" />
         <Compile Include="src\Patches\UI\Utils\MyWindowCtl.cs" />

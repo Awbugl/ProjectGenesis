@@ -1,10 +1,22 @@
+- v2.5.8
+  + 调整部分图标
+  + 调整部分文案
+  + 修复已拆除的巨构传送带缓存未及时更新的问题
+  + 在`设置-杂项`中添加了一个选项，用于控制是否启用`大气排污`科技效果
+
+  + Adjust some icons
+  + Adjust some text
+  + Fix the problem of not updating the cache of dismantled mega buildings conveyor belts in time
+  + Add an option in the `Settings - Miscellaneous` to control whether to enable the `Atmospheric Emission` technology effect
+
+<details>
+  <summary>点击展开日志 | Click to view all </summary>
+
 - v2.5.7
   + 修复部分图标缺失的问题
 
   + Fix the problem of missing icons
 
-<details>
-  <summary>点击展开日志 | Click to view all </summary>
 
 - v2.5.6
   + 调整部分图标

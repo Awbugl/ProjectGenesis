@@ -40,6 +40,11 @@
     "ENUS": "https://discord.gg/QwMEeaRZZR"
   },
   {
+    "Name": "EnableAtmosphericEmission",
+    "ZHCN": "启用大气排污科技效果",
+    "ENUS": "Enable Atmospheric Emission Tech Effect"
+  },  
+  {
     "Name": "星球基地",
     "ZHCN": "行星协调中心",
     "ENUS": "Coordination Center"
@@ -1111,8 +1116,8 @@
   },
   {
     "Name": "I起源之书",
-    "ZHCN": "如果你拿到这本书，那我猜你应该已经试着接受这个MOD了。欢迎来到第一阶段，开拓者。\n第一阶段需要做的并不是很多，也不会很难。\n信息化之路道阻且长，在高效配方解锁前请不要盲目扩大处理器产线，每分钟十个也不错，不是么？\n之前的开拓者们在交流群里留下了一份小型蓝图，我想你可能会需要它的。希望我能在下一个阶段见到你。<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "If you get this book, I guess you should have tried to accept this MOD. Welcome to the first stage, pioneer.\nThere is not much to do in the first stage, and it is not difficult.\nThe road of informatization is long and difficult. Please do not blindly expand the processor production line before the efficient formula is unlocked.\nThe previous pioneers left a small blueprint in the communication group, and I think you may need it. I hope to see you at the next stage.<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "如果你拿到这本书，那我猜你应该已经试着接受这个MOD了。欢迎来到第一阶段，开拓者。\n第一阶段需要做的并不是很多，也不会很难。\n之前的开拓者们在交流群里留下了一份小型处理器蓝图，我想你可能会需要它的。希望我能在下一个阶段见到你。<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "If you get this book, I guess you should have tried to accept this MOD. Welcome to the first stage, pioneer.\nThere is not much to do in the first stage, and it will not be difficult.\nI hope to see you in the next stage.<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "虚空之书",
@@ -1121,8 +1126,8 @@
   },
   {
     "Name": "I虚空之书",
-    "ZHCN": "我曾经无数次仰望星空，幻想银河彼端是否存在另一个文明。\n而现在，你已经踏出了远航星海的第一步。欢迎来到第二阶段，开拓者。\n在这个阶段，你需要稳定的物流产线、材料技术的不断进步的和信息技术的逐步发展。善用巨型建筑，它们将为你节省很大一部分算力。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "I have looked up at the stars countless times, and I have imagined whether there is another civilization at the other end of the Milky Way.\nAnd now, you have taken the first step of the voyage. Welcome to the second stage, pioneer.\nIn this stage, you need a stable logistics line, the continuous improvement of material technology and the gradual development of information technology. Make good use of the giant buildings, which will save you a lot of computing power.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "我曾经无数次仰望星空，幻想银河彼端是否存在另一个文明。\n而现在，你已经踏出了远航星海的第一步。欢迎来到第二阶段，开拓者。\n在这个阶段，你需要铺设稳定的物流网络、推动材料技术不断进步，以及逐步发展信息技术。善用巨型建筑，它们将为你节省很大一部分算力。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "I have looked up at the stars countless times, and have imagined whether there is another civilization at the other end of the Milky Way.\nAnd now, you have taken the first step of the voyage. Welcome to the second stage, pioneer.\nIn this stage, you need to lay a stable logistics network, promote material technology to continue to improve, and gradually develop information technology. Make good use of the giant buildings, they will save you a lot of computing power.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "起源之书",
@@ -3066,8 +3071,8 @@
   },
   {
     "Name": "大气排污文字描述",
-    "ZHCN": "允许部分配方将堆积产物直接排放到大气中（低资源倍率模式请谨慎解锁此科技）",
-    "ENUS": "Allow some recipes to discharge accumulated products directly into the atmosphere (low resource multiplier mode, please unlock this technology carefully)"
+    "ZHCN": "允许部分配方将堆积产物直接排放到大气中\n<color=\"#FD965ECC\">[低资源倍率模式请谨慎解锁此科技，可在设置-杂项中禁用此科技效果]</color>",
+    "ENUS": "Allow some recipes to discharge accumulated products directly into the atmosphere\n<color=\"#FD965ECC\">[please unlock this technology carefully in low resource mode, you can disable this technology effect in Settings - Miscellaneous]</color>"
   },
   {
     "Name": "开发者日志01",

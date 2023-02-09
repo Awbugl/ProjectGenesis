@@ -2,6 +2,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using BepInEx;
+using BepInEx.Configuration;
 using BepInEx.Logging;
 using CommonAPI;
 using CommonAPI.Systems;
@@ -43,12 +44,12 @@ namespace ProjectGenesis
     {
         public const string MODGUID = "org.LoShin.GenesisBook";
         public const string MODNAME = "GenesisBook";
-        public const string VERSION = "2.5.7";
+        public const string VERSION = "2.5.8";
 
         public string Version => VERSION;
 
         internal static ManualLogSource logger;
-
+        internal static ConfigFile configFile;
         internal static UIPlanetFocusWindow PlanetFocusWindow;
 
         //无限堆叠开关(私货)
@@ -57,13 +58,18 @@ namespace ProjectGenesis
         internal static int[] TableID;
         private Harmony Harmony;
 
-        internal static bool EnableAtmosphericEmission;
+        internal static bool AtmosphericEmissionValue;
+
         internal static string ModPath;
+
+        private static ConfigEntry<bool> EnableAtmosphericEmissionEntry;
 
         public void Awake()
         {
             logger = Logger;
             logger.Log(LogLevel.Info, "GenesisBook Awake");
+            
+            configFile = Config;
 
             if (IncompatibleCheckPlugin.DSPBattleInstalled)
             {
@@ -71,10 +77,9 @@ namespace ProjectGenesis
                 return;
             }
 
-            EnableAtmosphericEmission = Config.Bind("config", "EnableAtmosphericEmission", true,
-                                                    "Add Atmospheric Emission tech in game, which may casue resource waste in low resource rate game.\n是否添加大气排污科技；注：大气排污科技在低资源倍率下可能导致资源浪费")
-                                              .Value;
-
+            EnableAtmosphericEmissionEntry = Config.Bind("config", "EnableAtmosphericEmission", true,
+                                                         "Enable Atmospheric Emission tech effect in game, which may casue resource waste in low resource rate game.\n是否启用大气排污科技效果；注：大气排污科技在低资源倍率下可能导致资源浪费");
+            AtmosphericEmissionValue = EnableAtmosphericEmissionEntry.Value;
             Config.Save();
 
             var executingAssembly = Assembly.GetExecutingAssembly();
@@ -120,7 +125,7 @@ namespace ProjectGenesis
 
             AdjustPlanetThemeDataVanilla();
             AddCopiedModelProto();
-            ImportJson(TableID, EnableAtmosphericEmission);
+            ImportJson(TableID);
         }
 
         private void PostAddDataAction()
@@ -193,6 +198,14 @@ namespace ProjectGenesis
             }
 
             // JsonHelper.ExportAsJson(@"D:\Git\ProjectGenesis\dependencies");
+        }
+
+        internal static void SetAtmosphericEmission(bool value)
+        {
+            AtmosphericEmissionValue = value;
+            EnableAtmosphericEmissionEntry.Value = value;
+            logger.LogInfo("AtmosphericEmissionSettingChanged");
+            configFile.Save();
         }
 
         public void Export(BinaryWriter w)

@@ -50,7 +50,8 @@ namespace ProjectGenesis.Patches.Logic
             var b = (component.recipeId == ProtoIDUsedByPatches.R焦油分馏 ||
                      component.recipeId == ProtoIDUsedByPatches.R原油裂化 ||
                      component.recipeId == ProtoIDUsedByPatches.R有机液体离心) &&
-                    GameMain.history.TechUnlocked(ProtoIDUsedByPatches.T大气排污);
+                    GameMain.history.TechUnlocked(ProtoIDUsedByPatches.T大气排污) &&
+                    ProjectGenesis.AtmosphericEmissionValue;
 
             if (b)
             {
@@ -86,7 +87,9 @@ namespace ProjectGenesis.Patches.Logic
 
         public static bool AssemblerComponent_InsertMethod_Assemble(ref AssemblerComponent component, int[] productRegister)
         {
-            var b = component.recipeId == ProtoIDUsedByPatches.R金属盐分解 && GameMain.history.TechUnlocked(ProtoIDUsedByPatches.T大气排污);
+            var b = component.recipeId == ProtoIDUsedByPatches.R金属盐分解 &&
+                    GameMain.history.TechUnlocked(ProtoIDUsedByPatches.T大气排污) &&
+                    ProjectGenesis.AtmosphericEmissionValue;
 
             if (b)
             {

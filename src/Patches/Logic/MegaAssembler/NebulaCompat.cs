@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using ProjectGenesis.Utils;
 
 namespace ProjectGenesis.Patches.Logic.MegaAssembler
 {
@@ -35,6 +36,14 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
             if (!_slotdata.ContainsKey(id) || _slotdata[id] == null) _slotdata[id] = new SlotData[12];
 
             return _slotdata[id];
+        }
+
+        private static void SetEmpty(int planetId, int entityId)
+        {
+            var id = (planetId, entityId);
+            if (!_slotdata.ContainsKey(id)) return;
+            _slotdata[id] = new SlotData[12];
+            SyncSlotsData.Sync(planetId, entityId, _slotdata[id]);
         }
 
         public static void ExportPlanetData(int planetId, BinaryWriter w)
