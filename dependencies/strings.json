@@ -3071,8 +3071,8 @@
   },
   {
     "Name": "大气排污文字描述",
-    "ZHCN": "允许部分配方将堆积产物直接排放到大气中\n<color=\"#FD965ECC\">[低资源倍率模式请谨慎解锁此科技，可在设置-杂项中禁用此科技效果]</color>",
-    "ENUS": "Allow some recipes to discharge accumulated products directly into the atmosphere\n<color=\"#FD965ECC\">[please unlock this technology carefully in low resource mode, you can disable this technology effect in Settings - Miscellaneous]</color>"
+    "ZHCN": "允许部分配方将堆积产物直接排放到大气中\n低资源倍率模式请谨慎解锁此科技，可在设置-杂项中禁用此科技效果",
+    "ENUS": "Allow some recipes to discharge accumulated products directly into the atmosphere\nPlease unlock this technology carefully in low resource mode, you can disable this technology effect in Settings - Miscellaneous"
   },
   {
     "Name": "开发者日志01",
