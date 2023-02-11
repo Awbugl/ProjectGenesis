@@ -290,6 +290,16 @@
     "ENUS": "You discovered and mined a Tungsten ore near <color=#8DB1FFb0>{0}</color>. It can be used to build better buildings or components."
   },
   {
+    "Name": "里程碑未达成描述32",
+    "ZHCN": "你激活了第一座人造恒星，它优雅地转动着，犹如太阳般炽烈地燃烧着，稳定地将聚变原料所蕴藏的巨大能量输出到电网。",
+    "ENUS": "You activated your first Artificial Star. It rotates so gracefully yet burns so intensely, this spectacle surely means that you've truly harnessed the stars and can stably transport this energy to all corners of the universe."
+  },
+  {
+    "Name": "里程碑已达成描述32",
+    "ZHCN": "你激活了第一座人造恒星。它优雅地转动着，犹如太阳般炽烈地燃烧着，稳定地将聚变原料所蕴藏的巨大能量输出到电网。",
+    "ENUS": "You activated your first Artificial Star. It rotates so gracefully yet burns so intensely, this spectacle surely means that you've truly harnessed the stars and can stably transport this energy to all corners of the universe."
+  },
+  {
     "Name": "钨矿脉",
     "ZHCN": "钨矿脉",
     "ENUS": "Tungsten vein"

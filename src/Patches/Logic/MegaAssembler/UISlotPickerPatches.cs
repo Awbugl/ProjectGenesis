@@ -33,10 +33,13 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
                                                                      new CodeMatch(OpCodes.Stloc_S), new CodeMatch(OpCodes.Ldloc_S),
                                                                      new CodeMatch(OpCodes.Ldc_I4_0), new CodeMatch(OpCodes.Ble));
 
-            var pos = matcher.Pos;
-            matcher.Advance(3).InsertAndAdvance(matcher.InstructionsInRange(pos - 5, pos - 1));
-            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldfld, EntityData_AssemblerId_Field), new CodeInstruction(OpCodes.Or));
+            List<CodeInstruction> ins = matcher.InstructionsWithOffsets(-5, -1);
+
+            matcher.Advance(1).InsertAndAdvance(ins).InsertAndAdvance(new CodeInstruction(OpCodes.Ldfld, EntityData_AssemblerId_Field))
+                   .InsertAndAdvance(new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(MegaAssemblerPatches), nameof(Merge))));
             return matcher.InstructionEnumeration();
         }
+
+        public static int Merge(int a, int b) => a > 0 || b > 0 ? 1 : 0;
     }
 }

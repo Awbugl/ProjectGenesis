@@ -1,3 +1,13 @@
+- v2.5.10
+  + 调整部分文案
+  + 调整流速计的最大检测速度
+
+  + Adjust some text
+  + Adjust the maximum speed of the Flow Monitor
+
+<details>
+  <summary>点击展开日志 | Click to view all </summary>
+
 - v2.5.9
   + 调整部分文案
   + 为`大气采集站`添加粒子效果
@@ -9,8 +19,6 @@
   + Fix the problem that raise errors when building `Broadcast energy Tower`
   + No longer render the power range on the planet with `Broadcast energy Tower`
 
-<details>
-  <summary>点击展开日志 | Click to view all </summary>
 
 - v2.5.8
   + 调整部分图标

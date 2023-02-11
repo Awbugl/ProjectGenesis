@@ -44,7 +44,7 @@ namespace ProjectGenesis
     {
         public const string MODGUID = "org.LoShin.GenesisBook";
         public const string MODNAME = "GenesisBook";
-        public const string VERSION = "2.5.9";
+        public const string VERSION = "2.5.10";
 
         public string Version => VERSION;
 
@@ -145,15 +145,16 @@ namespace ProjectGenesis
             GameMain.gpuiManager.Init();
 
             LDB.milestones.Select(9).Preload();
+            LDB.milestones.Select(32).Preload();
+            LDB.journalPatterns.Select(9).Preload();
+            LDB.journalPatterns.Select(32).Preload();
 
             foreach (var theme in LDB.themes.dataArray) theme.Preload();
-
-            LDB.themes.Select(12).oceanMat = LDB.themes.Select(22).oceanMat;
 
             //飞行舱拆除
             var @base = LDB.veges.Select(9999);
             @base.MiningItem = new[] { 1801, 1101, 1104 };
-            @base.MiningCount = new[] { 3, 10, 20 };
+            @base.MiningCount = new[] { 6, 50, 50 };
             @base.MiningChance = new float[] { 1, 1, 1 };
             @base.Preload();
 
