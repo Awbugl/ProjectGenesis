@@ -68,7 +68,7 @@ namespace ProjectGenesis
         {
             logger = Logger;
             logger.Log(LogLevel.Info, "GenesisBook Awake");
-            
+
             configFile = Config;
 
             if (IncompatibleCheckPlugin.DSPBattleInstalled)
@@ -85,11 +85,13 @@ namespace ProjectGenesis
             var executingAssembly = Assembly.GetExecutingAssembly();
 
             ModPath = Path.GetDirectoryName(executingAssembly.Location);
+
             var resources = new ResourceData("org.LoShin.GenesisBook", "texpack", ModPath);
             resources.LoadAssetBundle("texpack");
+            ProtoRegistry.AddResource(resources);
+
             var resources_models = new ResourceData("org.LoShin.GenesisBook", "genesis-models", ModPath);
             resources_models.LoadAssetBundle("genesis-models");
-            ProtoRegistry.AddResource(resources);
             ProtoRegistry.AddResource(resources_models);
 
             TableID = new int[]
