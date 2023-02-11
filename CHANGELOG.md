@@ -1,9 +1,13 @@
 - v2.5.10
   + 调整部分文案
   + 调整流速计的最大检测速度
+  + 提高了飞行舱的拆除奖励
+  + 修复了巨型建筑无法触发传送带物品选择界面的问题
 
   + Adjust some text
   + Adjust the maximum speed of the Flow Monitor
+  + Increase the dismantling reward of the Flyer
+  + Fix the problem that the Mega Buildings cannot trigger the conveyor belt item selection UI
 
 <details>
   <summary>点击展开日志 | Click to view all </summary>
