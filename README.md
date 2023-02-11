@@ -18,7 +18,6 @@ Construct Real Universe. Then leave a GenesisBook.
 请加QQ群（如下）向管理员反馈，欢迎加群交流。
 
 - 创世之书MOD一号节点 991895539
-- 创世之书MOD二号节点 632432246
 - 群问题答案：戴森球计划
 
 
