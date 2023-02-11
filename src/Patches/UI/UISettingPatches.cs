@@ -7,7 +7,7 @@ namespace ProjectGenesis.Patches.UI
 {
     public static class UISettingPatches
     {
-        internal static bool CurrentAtmosphericEmission;
+        private static bool _currentAtmosphericEmission;
 
         [HarmonyPatch(typeof(VFPreload), "InvokeOnLoadWorkEnded")]
         [HarmonyPostfix]
@@ -24,24 +24,24 @@ namespace ProjectGenesis.Patches.UI
             var settingObjTransform = (RectTransform)settingObj.transform;
             settingObjTransform.anchoredPosition = new Vector2(30, -180);
 
-            CurrentAtmosphericEmission = ProjectGenesis.AtmosphericEmissionValue;
+            _currentAtmosphericEmission = ProjectGenesis.AtmosphericEmissionValue;
 
             var toggle = settingObj.GetComponentInChildren<UIToggle>();
-            toggle.isOn = CurrentAtmosphericEmission;
+            toggle.isOn = _currentAtmosphericEmission;
             toggle.toggle.onValueChanged.RemoveAllListeners();
-            toggle.toggle.onValueChanged.AddListener((isOn) => { CurrentAtmosphericEmission = isOn; });
+            toggle.toggle.onValueChanged.AddListener((isOn) => { _currentAtmosphericEmission = isOn; });
         }
 
         [HarmonyPatch(typeof(UIOptionWindow), "OnCancelClick")]
         [HarmonyPostfix]
-        public static void UIOptionWindow_OnCancelClick_Postfix() => CurrentAtmosphericEmission = ProjectGenesis.AtmosphericEmissionValue;
+        public static void UIOptionWindow_OnCancelClick_Postfix() => _currentAtmosphericEmission = ProjectGenesis.AtmosphericEmissionValue;
 
         [HarmonyPatch(typeof(UIOptionWindow), "OnApplyClick")]
         [HarmonyPostfix]
         public static void UIOptionWindow_OnApplyClick_Postfix()
         {
-            if (CurrentAtmosphericEmission != ProjectGenesis.AtmosphericEmissionValue)
-                ProjectGenesis.SetAtmosphericEmission(CurrentAtmosphericEmission);
+            if (_currentAtmosphericEmission != ProjectGenesis.AtmosphericEmissionValue)
+                ProjectGenesis.SetAtmosphericEmission(_currentAtmosphericEmission);
         }
     }
 }

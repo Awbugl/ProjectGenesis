@@ -305,7 +305,7 @@ namespace ProjectGenesis.Patches.Logic
         [HarmonyPatch(typeof(StationComponent), "UpdateCollection")]
         [HarmonyPrefix]
         public static void StationComponent_UpdateCollection_Prefix(
-            ref StationComponent __instance,
+            StationComponent __instance,
             PlanetFactory factory,
             ref float collectSpeedRate,
             int[] productRegister)

@@ -45,6 +45,10 @@ namespace ProjectGenesis.Patches.UI.DisplayTextPatches
                 case Utils_ERecipeType.高分子化工:
                     __result = "先进化学反应釜".TranslateFromJson();
                     break;
+                
+                case (Utils_ERecipeType)21:
+                    __result = "星际组装厂（巨构）".TranslateFromJson();
+                    break;
             }
         }
 

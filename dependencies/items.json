@@ -3852,7 +3852,7 @@
   {
     "ID": 2212,
     "Name": "广播式能源塔",
-    "Description": "I卫星配电站",
+    "Description": "I广播式能源塔",
     "IconPath": "Icons/ItemRecipe/orbital-substation",
     "GridIndex": 2103,
     "StackSize": 30,

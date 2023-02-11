@@ -1,3 +1,17 @@
+- v2.5.9
+  + 调整部分文案
+  + 为`大气采集站`添加粒子效果
+  + 修复了导致建造`广播式能源塔`时游戏报错的问题
+  + 在建有`广播式能源塔`的星球上不再渲染电力范围
+
+  + Adjust some text
+  + Add particle effect to `Atmospheric Collect Station`
+  + Fix the problem that raise errors when building `Broadcast energy Tower`
+  + No longer render the power range on the planet with `Broadcast energy Tower`
+
+<details>
+  <summary>点击展开日志 | Click to view all </summary>
+
 - v2.5.8
   + 调整部分图标
   + 调整部分文案
@@ -7,10 +21,9 @@
   + Adjust some icons
   + Adjust some text
   + Fix the problem of not updating the cache of dismantled mega buildings conveyor belts in time
-  + Add an option in the `Settings - Miscellaneous` to control whether to enable the `Atmospheric Emission` technology effect
+  + Add an option in the `Settings - Miscellaneous` to control whether to enable the `Atmospheric Emission` technology
+    effect
 
-<details>
-  <summary>点击展开日志 | Click to view all </summary>
 
 - v2.5.7
   + 修复部分图标缺失的问题

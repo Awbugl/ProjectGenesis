@@ -1,4 +1,5 @@
-﻿using BepInEx;
+﻿using System;
+using BepInEx;
 using HarmonyLib;
 using ProjectGenesis.Utils;
 using xiaoye97;
@@ -75,6 +76,14 @@ namespace ProjectGenesis.Compatibility
                 recipeProto.name = recipeProto.Name.Translate();
                 recipeProto.description = recipeProto.Description.Translate();
 
+                if (recipeProto.ID == 350)
+                {
+                    recipeProto.Type = (ERecipeType)21;
+                    recipeProto.Items = Array.Empty<int>();
+                    recipeProto.ItemCounts = Array.Empty<int>();
+                    recipeProto.Handcraft = false;
+                }
+
                 if (recipeProto.Results.Length > 0)
                 {
                     var recipeProtoResult = recipeProto.Results[0];
@@ -89,7 +98,7 @@ namespace ProjectGenesis.Compatibility
                         case ProtoIDUsedByPatches.I人造恒星:
                             recipeProto.ItemCounts[0] = 30;
                             continue;
-                        
+
                         case 9487:
                             recipeProto.ItemCounts[0] = 2;
                             recipeProto.ItemCounts[1] = 1;
@@ -105,6 +114,8 @@ namespace ProjectGenesis.Compatibility
                 if (itemProto == null) continue;
                 itemProto.name = itemProto.Name.Translate();
                 itemProto.description = itemProto.Description.Translate();
+
+                if (itemProto.ID == 9500) AccessTools.Method(typeof(ItemProto), "FindRecipes").Invoke(itemProto, null);
             }
         }
     }

@@ -7,15 +7,8 @@ using ERecipeType_1 = ERecipeType;
 
 namespace ProjectGenesis.Patches.UI
 {
-    internal static class UIPatches
+    internal static class UITechNodePatches
     {
-        [HarmonyPrefix]
-        [HarmonyPatch(typeof(UIPowerGizmo), "DrawArea")]
-        [HarmonyPatch(typeof(UIPowerGizmo), "DrawCover")]
-        public static bool UIPowerGizmo_Draw(ref UIPowerGizmo __instance, Vector3 center, float radius) => radius < 2000;
-
-        #region UITechNode
-
         [HarmonyPostfix]
         [HarmonyPatch(typeof(UITechNode), "UpdateLayoutDynamic")]
         public static void UITechNode_UpdateLayoutDynamic(ref UITechNode __instance, bool forceUpdate = false, bool forceReset = false)
@@ -37,7 +30,5 @@ namespace ProjectGenesis.Patches.UI
             __instance.titleText.rectTransform.sizeDelta
                 = new Vector2(__instance.panelRect.sizeDelta.x - (GameMain.history.TechState(__instance.techProto.ID).curLevel > 0 ? 65 : 25), 24f);
         }
-
-        #endregion
     }
 }

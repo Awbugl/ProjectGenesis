@@ -16,8 +16,8 @@
   },
   {
     "Name": "GenesisBookLoadMessage",
-    "ZHCN": "若您在主界面中看到了创世之书的图标，说明创世之书已成功加载。\n如果您在游玩MOD时遇到了任何问题，或者有宝贵的意见或建议，欢迎加入MOD交流群",
-    "ENUS": "If the GenesisBook icon appears in the main menu, it means GenesisBook is successfully loaded. \nIf have any issues or ideas about the mod, please join our community on Discord."
+    "ZHCN": "若您在主界面中看到了创世之书的图标，说明创世之书已成功加载。\n请注意，本MOD修改了大量原版内容，游玩本MOD时无法获得元数据、上传银河系。\n如果您在游玩MOD时遇到了任何问题，或者有宝贵的意见或建议，欢迎加入MOD交流群",
+    "ENUS": "If the GenesisBook icon appears in the main menu, it means GenesisBook is successfully loaded. \nPlease note that this MOD modifies a lot of original content, and you cannot get metadata and upload the galaxy when playing this MOD. \nIf have any issues or ideas about the mod, please join our community on Discord."
   },
   {
     "Name": "确定",
@@ -43,7 +43,7 @@
     "Name": "EnableAtmosphericEmission",
     "ZHCN": "启用大气排污科技效果",
     "ENUS": "Enable Atmospheric Emission Tech Effect"
-  },  
+  },
   {
     "Name": "星球基地",
     "ZHCN": "行星协调中心",
@@ -173,6 +173,11 @@
     "Name": "矿物采集速度 +25%",
     "ZHCN": "矿物采集速度 +25%",
     "ENUS": "Mining Speed +25%"
+  },
+  {
+    "Name": "星际组装厂（巨构）",
+    "ZHCN": "星际组装厂（巨构）",
+    "ENUS": "Interstellar Assembler (Mega Structure)"
   },
   {
     "Name": "精炼页面",
@@ -2605,6 +2610,16 @@
     "ENUS": "The large number of parallel running accelerators takes productivity to a whole new level."
   },
   {
+    "Name": "T终极目标:广播式能源描述",
+    "ZHCN": "一种能够在整个星球中传播的能源,它的能量可以被任何接收到它的设备所利用.",
+    "ENUS": "A form of energy that can be broadcast throughout the planet, and its energy can be used by any device that receives it."
+  },
+  {
+    "Name": "I广播式能源塔",
+    "ZHCN": "将能量从塔顶发射到行星电离层，使得星球上的所有设备都能够获得能量。",
+    "ENUS": "The energy is emitted from the top of the tower to the ionosphere of the planet, so that all devices on the planet can get energy."
+  },
+  {
     "Name": "T集成电路",
     "ZHCN": "集成电路",
     "ENUS": "Integrated Circuit"
@@ -2676,13 +2691,13 @@
   },
   {
     "Name": "T反物质能量炉描述",
-    "ZHCN": "掌控质能.",
-    "ENUS": "Mass-energy is in your control now."
+    "ZHCN": "掌控质能转换技术，可以将反物质转化为能量。",
+    "ENUS": "Technology of mass-energy conversion can now convert antimatter into energy."
   },
   {
     "Name": "T反物质能量炉结果",
     "ZHCN": "掌控质能.",
-    "ENUS": "You unlocked Antimatter Energy Reactor. Mass-energy is in your control now."
+    "ENUS": "You have mastered the technology of mass-energy conversion, and can now convert antimatter into energy."
   },
   {
     "Name": "T行星协调中心",
