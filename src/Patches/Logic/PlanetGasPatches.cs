@@ -324,5 +324,24 @@ namespace ProjectGenesis.Patches.Logic
                     = $"{3600.0 * ((double)__instance.station.collectionPerTick[__instance.index] * collectSpeedRate):0.00}/min";
             }
         }
+
+        [HarmonyPatch(typeof(StationComponent), "InternalTickRemote")]
+        [HarmonyPostfix]
+        public static void StationComponent_InternalTickRemote_Postfix(StationComponent __instance)
+        {
+            if (!__instance.isCollector || __instance.energy > 0) return;
+            for (var i = 0; i < __instance.collectionIds.Length; i++)
+            {
+                lock (__instance.storage)
+                {
+                    if (__instance.storage[i].count >= __instance.storage[i].max)
+                    {
+                        return;
+                    }
+                }
+
+                __instance.energy = 1;
+            }
+        }
     }
 }
