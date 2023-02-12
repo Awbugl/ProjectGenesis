@@ -63,7 +63,7 @@ namespace ProjectGenesis.Patches.UI
         [HarmonyPatch(typeof(PowerSystem), "line_arragement_for_add_node")]
         [HarmonyPatch(typeof(PowerSystem), "line_arragement_for_remove_node")]
         [HarmonyPrefix]
-        public static bool line_arragement_for_add_node_Prefix(PowerSystem __instance, Node node)
+        public static bool line_arragement_for_node_Prefix(PowerSystem __instance, Node node)
             => __instance.planet.factory.powerSystem.nodePool[node.id].coverRadius < 2000;
     }
 }

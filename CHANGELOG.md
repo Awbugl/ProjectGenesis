@@ -1,3 +1,13 @@
+- v2.5.11
+  + 调整`大气采集站`的基础速度
+  + 优化建造/拆除`广播式能源塔`时的性能
+
+  + Adjust base speed of `Atmospheric Collect Station`
+  + Optimize the performance when building / dismantling `Broadcast energy Tower`
+
+<details>
+  <summary>点击展开日志 | Click to view all </summary>
+
 - v2.5.10
   + 调整部分文案
   + 调整流速计的最大检测速度
@@ -15,8 +25,6 @@
   + Fix the problem that the Mega Buildings cannot trigger the conveyor belt item selection UI
   + (MoreMegaStructures) Fix the problem that the Multi-functional Integrated Component can be manually manufactured
 
-<details>
-  <summary>点击展开日志 | Click to view all </summary>
 
 - v2.5.9
   + 调整部分文案
