@@ -1806,8 +1806,8 @@
   },
   {
     "Name": "R硝酸化合",
-    "ZHCN": "硝酸钠和硫酸反应, 产生硫酸钠和硝酸.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Sodium nitrate and sulfuric acid react to produce sodium sulfate and nitric acid.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "利用物理性质，从硝酸钠和硫酸的混合体系中分离出硝酸.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Separation of nitric acid from a mixture of sodium nitrate and sulfuric acid by physical properties.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "合成氨",
@@ -3086,18 +3086,18 @@
   },
   {
     "Name": "T大气排放描述",
-    "ZHCN": "重构部分配方的生产流程，将堆积产物加热或粉碎，排放到大气中。可以肯定这将会在未来对环境造成负面影响.\n<color=\"#FD965ECC\">受影响配方：焦油分馏、原油裂化、剧毒液体离心、金属盐分解</color>",
-    "ENUS": "Reconstruct production equipment to heat or crush accumulated products and discharge them into the atmosphere. It can be said that this will have a negative impact on the environment in the future.\n<color=\"#FD965ECC\">Affected recipes: Tar fractionation, Oil Cracking, Toxic liquid centrifugation, Decomposition of metal salts</color>"
+    "ZHCN": "重构部分配方的生产流程，将堆积产物加热或粉碎，直接排放到大气中.\n<color=\"#FD965ECC\">配方列表：焦油分馏、原油裂化、剧毒液体离心、金属盐分解、水电解</color>",
+    "ENUS": "Reconstruct production flow for several recipes, so could heat or crush accumulated products and discharge them into the atmosphere.\n<color=\"#FD965ECC\">Affected Recipes: Tar fractionation, Oil Cracking, Toxic liquid centrifugation, Decomposition of metal salts, Water electrolysis</color>"
   },
   {
     "Name": "T大气排放结果",
-    "ZHCN": "重构部分配方的生产流程，将堆积产物排放到大气中。受影响配方：焦油分馏、原油裂化、剧毒液体离心、金属盐分解",
-    "ENUS": "Reconstruct production equipment to discharge accumulated products into the atmosphere."
+    "ZHCN": "重构部分配方的生产流程，将堆积产物排放到大气中。配方列表：焦油分馏、原油裂化、剧毒液体离心、金属盐分解、水电解",
+    "ENUS": "Reconstruct production flow for several recipes to discharge accumulated products into the atmosphere."
   },
   {
     "Name": "大气排污文字描述",
-    "ZHCN": "允许部分配方将堆积产物直接排放到大气中\n低资源倍率模式请谨慎解锁此科技，可在设置-杂项中禁用此科技效果",
-    "ENUS": "Allow some recipes to discharge accumulated products directly into the atmosphere\nPlease unlock this technology carefully in low resource mode, you can disable this technology effect in Settings - Miscellaneous"
+    "ZHCN": "允许部分配方将堆积产物直接排放到大气中\n可在设置-杂项中禁用此科技效果",
+    "ENUS": "Allow some recipes to discharge accumulated products directly into the atmosphere\nCan disable this technology effect in Settings - Miscellaneous"
   },
   {
     "Name": "开发者日志01",

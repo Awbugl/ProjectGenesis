@@ -2,12 +2,18 @@
   + 调整部分文案
   + 调整流速计的最大检测速度
   + 提高了飞行舱的拆除奖励
+  + 大气排污效果加入`水电解`配方
+  + 调整了TNM的配方
   + 修复了巨型建筑无法触发传送带物品选择界面的问题
+  + （更多巨构）修复了多功能集成组件可被手动制造的问题
 
   + Adjust some text
   + Adjust the maximum speed of the Flow Monitor
   + Increase the dismantling reward of the Flyer
+  + Atmospheric Emission effect includes the `Water Electrolysis` recipe
+  + Adjust the recipe of TNM
   + Fix the problem that the Mega Buildings cannot trigger the conveyor belt item selection UI
+  + (MoreMegaStructures) Fix the problem that the Multi-functional Integrated Component can be manually manufactured
 
 <details>
   <summary>点击展开日志 | Click to view all </summary>

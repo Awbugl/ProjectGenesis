@@ -115,7 +115,11 @@ namespace ProjectGenesis.Compatibility
                 itemProto.name = itemProto.Name.Translate();
                 itemProto.description = itemProto.Description.Translate();
 
-                if (itemProto.ID == 9500) AccessTools.Method(typeof(ItemProto), "FindRecipes").Invoke(itemProto, null);
+                if (itemProto.ID == 9500)
+                {
+                    itemProto.recipes = null;
+                    AccessTools.Method(typeof(ItemProto), "FindRecipes").Invoke(itemProto, null);
+                }
             }
         }
     }

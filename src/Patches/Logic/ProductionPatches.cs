@@ -47,9 +47,12 @@ namespace ProjectGenesis.Patches.Logic
 
         public static bool AssemblerComponent_InsertMethod_Refine(ref AssemblerComponent component, int[] productRegister)
         {
-            var b = (component.recipeId == ProtoIDUsedByPatches.R焦油分馏 ||
-                     component.recipeId == ProtoIDUsedByPatches.R原油裂化 ||
-                     component.recipeId == ProtoIDUsedByPatches.R有机液体离心) &&
+            var componentRecipeId = component.recipeId;
+            
+            var b = (componentRecipeId == ProtoIDUsedByPatches.R焦油分馏 ||
+                     componentRecipeId == ProtoIDUsedByPatches.R原油裂化 ||
+                     componentRecipeId == ProtoIDUsedByPatches.R水电解 ||
+                     componentRecipeId == ProtoIDUsedByPatches.R有机液体离心) &&
                     GameMain.history.TechUnlocked(ProtoIDUsedByPatches.T大气排污) &&
                     ProjectGenesis.AtmosphericEmissionValue;
 

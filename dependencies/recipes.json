@@ -5446,14 +5446,14 @@
     "IconPath": "Assets/texpack/四硝基甲烷",
     "Type": 2,
     "GridIndex": 4408,
-    "Time": 360,
+    "Time": 180,
     "Input": [
       7017,
       6209
     ],
     "InCounts": [
       4,
-      4
+      2
     ],
     "Output": [
       6211,
@@ -5461,9 +5461,9 @@
       1000
     ],
     "OutCounts": [
-      2,
-      10,
-      16
+      1,
+      5,
+      8
     ],
     "Explicit": true,
     "Handcraft": false,
