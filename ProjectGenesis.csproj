@@ -117,7 +117,7 @@
         <Compile Include="src\Patches\Logic\PlanetFocus\PlanetFocusPatches.cs" />
         <Compile Include="src\Patches\Logic\PlanetFocus\PowerSystemPatches.cs" />
         <Compile Include="src\Patches\Logic\PlanetGasPatches.cs" />
-        <Compile Include="src\Patches\Logic\ProductionPatches.cs" />
+        <Compile Include="src\Patches\Logic\AtmosphericEmissionPatches.cs" />
         <Compile Include="src\Patches\Logic\ThermalPowerGenPatches.cs" />
         <Compile Include="src\Patches\UI\BeltColorFix\BeltFixPatches.cs" />
         <Compile Include="src\Patches\UI\DisplayTextPatches\DisplayNamePatches.cs" />
@@ -125,6 +125,7 @@
         <Compile Include="src\Patches\UI\FactoryModelPatches.cs" />
         <Compile Include="src\Patches\UI\FluidColorPatches.cs" />
         <Compile Include="src\Patches\UI\GridIndexExpandPatches.cs" />
+        <Compile Include="src\Patches\UI\HarmonyLogPatches.cs" />
         <Compile Include="src\Patches\UI\MultiProductionPatches.cs" />
         <Compile Include="src\Patches\UI\UIAbnormalityTipPatches.cs" />
         <Compile Include="src\Patches\UI\UIMonitorPatches.cs" />

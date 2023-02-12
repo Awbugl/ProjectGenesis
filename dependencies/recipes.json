@@ -5531,7 +5531,7 @@
     "Description": "",
     "IconPath": "Assets/texpack/火箭燃料",
     "Type": 2,
-    "GridIndex": 3606,
+    "GridIndex": 3620,
     "Time": 900,
     "Input": [
       6213,
@@ -5590,12 +5590,12 @@
     "Input": [
       6509,
       6213,
-      7019
+      7017
     ],
     "InCounts": [
       1,
       1,
-      10
+      1
     ],
     "Output": [
       6217
@@ -5613,7 +5613,7 @@
     "Description": "",
     "IconPath": "Assets/texpack/火箭燃料棒",
     "Type": 4,
-    "GridIndex": 3706,
+    "GridIndex": 3720,
     "Time": 600,
     "Input": [
       6509,

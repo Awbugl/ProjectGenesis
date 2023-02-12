@@ -3,6 +3,7 @@ using System.Text;
 using BepInEx;
 using BepInEx.Bootstrap;
 using HarmonyLib;
+using ProjectGenesis.Patches.UI;
 using ProjectGenesis.Utils;
 using UnityEngine;
 
@@ -34,6 +35,8 @@ namespace ProjectGenesis.Compatibility
 
         public void Awake()
         {
+            BepInEx.Logging.Logger.Listeners.Add(new HarmonyLogListener());
+
             Dictionary<string, PluginInfo> pluginInfos = Chainloader.PluginInfos;
             DSPBattleInstalled = pluginInfos.ContainsKey(DSPBattleGUID);
 

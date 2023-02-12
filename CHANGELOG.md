@@ -1,9 +1,17 @@
 - v2.5.11
   + 调整`大气采集站`的基础速度
   + 优化建造/拆除`广播式能源塔`时的性能
+  + 修复`水电解`配方大气排污效果未生效的问题
+  + 调整`偏二甲肼燃料棒`的制造需求
+  + 移除`火箭燃料`及其相关配方（仅影响新存档）
+  + 在mod冲突时加入红字报错
 
   + Adjust base speed of `Atmospheric Collect Station`
   + Optimize the performance when building / dismantling `Broadcast energy Tower`
+  + Fix the problem that the atmospheric emission effect of the `Water Electrolysis` recipe is not effective
+  + Adjust the manufacturing requirements of `Methylamine Fuel Rod`
+  + Remove `Rocket Fuel` and its related recipes (only affect new save)
+  + Add red text error when mod conflict
 
 <details>
   <summary>点击展开日志 | Click to view all </summary>

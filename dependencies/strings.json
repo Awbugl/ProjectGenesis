@@ -16,8 +16,8 @@
   },
   {
     "Name": "GenesisBookLoadMessage",
-    "ZHCN": "若您在主界面中看到了创世之书的图标，说明创世之书已成功加载。\n请注意，本MOD修改了大量原版内容，游玩本MOD时无法获得元数据、上传银河系。\n如果您在游玩MOD时遇到了任何问题，或者有宝贵的意见或建议，欢迎加入MOD交流群",
-    "ENUS": "If the GenesisBook icon appears in the main menu, it means GenesisBook is successfully loaded. \nPlease note that this MOD modifies a lot of original content, and you cannot get metadata and upload the galaxy when playing this MOD. \nIf have any issues or ideas about the mod, please join our community on Discord."
+    "ZHCN": "若您在主界面中看到了创世之书的图标、看到了修改后的科技树且无红字报错，说明创世之书已成功加载。\n请注意，本MOD修改了大量原版内容，游玩本MOD时无法获得元数据、上传银河系。\n如果您在游玩MOD时遇到了任何问题，或者有宝贵的意见或建议，欢迎加入MOD交流群",
+    "ENUS": "If the GenesisBook icon appears in the main menu, the modified technology tree appears and there is no error message, it means GenesisBook is successfully loaded. \nPlease note that this MOD modifies a lot of original content, and you cannot get metadata and upload the galaxy when playing this MOD. \nIf have any issues or ideas about the mod, please join our community on Discord."
   },
   {
     "Name": "确定",
@@ -2496,8 +2496,8 @@
   },
   {
     "Name": "T核子先驱:放射原料描述",
-    "ZHCN": "硅石中蕴含放射性物质,在氢氧化钠的作用下,硅石中蕴含的放射原料将被沉降并分离成稳定化合物(我瞎编的,别信).",
-    "ENUS": "The radioactive materials contained in the silicon ore are separated into stable compounds by the action of sodium hydroxide."
+    "ZHCN": "使用大量氢氧化钠可以将硅石矿中的极少量的放射性材料分离出来，作为后续提纯的原料。",
+    "ENUS": "Using a large amount of sodium hydroxide can separate a small amount of radioactive materials in silicon ore as raw materials for further separation."
   },
   {
     "Name": "T核子先驱:进一步分离",
