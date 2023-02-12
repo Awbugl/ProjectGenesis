@@ -1,5 +1,4 @@
-﻿using System;
-using HarmonyLib;
+﻿using HarmonyLib;
 using PowerNetworkStructures;
 using ProjectGenesis.Utils;
 using UnityEngine;
@@ -62,18 +61,9 @@ namespace ProjectGenesis.Patches.UI
         }
 
         [HarmonyPatch(typeof(PowerSystem), "line_arragement_for_add_node")]
+        [HarmonyPatch(typeof(PowerSystem), "line_arragement_for_remove_node")]
         [HarmonyPrefix]
-        public static void line_arragement_for_add_node_Prefix(PowerSystem __instance, Node node, ref int[] ___tmp_state)
-        {
-            var connsCount = node.conns.Count * 2;
-            if (___tmp_state == null || ___tmp_state.Length < connsCount) Array.Resize(ref ___tmp_state, connsCount);
-        }
-
-        [HarmonyPatch(typeof(PowerSystem), "line_arragement_for_add_node")]
-        [HarmonyPostfix]
-        public static void line_arragement_for_add_node_Postfix(PowerSystem __instance, ref int[] ___tmp_state)
-        {
-            if (___tmp_state.Length != 1024) Array.Resize(ref ___tmp_state, 1024);
-        }
+        public static bool line_arragement_for_add_node_Prefix(PowerSystem __instance, Node node)
+            => __instance.planet.factory.powerSystem.nodePool[node.id].coverRadius < 2000;
     }
 }

@@ -182,7 +182,7 @@ namespace ProjectGenesis.Utils
             gaspumperprefabDesc.workEnergyPerTick = 0;
             gaspumperprefabDesc.isCollectStation = true;
             gaspumperprefabDesc.isPowerConsumer = false;
-            gaspumperprefabDesc.stationCollectSpeed = 2;
+            gaspumperprefabDesc.stationCollectSpeed = 3;
 
             var accumulator = models.Select(46);
             ref var accumulatorprefabDesc = ref accumulator.prefabDesc;
