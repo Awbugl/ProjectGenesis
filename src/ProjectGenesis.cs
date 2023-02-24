@@ -44,7 +44,7 @@ namespace ProjectGenesis
     {
         public const string MODGUID = "org.LoShin.GenesisBook";
         public const string MODNAME = "GenesisBook";
-        public const string VERSION = "2.5.11";
+        public const string VERSION = "2.5.12";
 
         public string Version => VERSION;
 
@@ -140,16 +140,15 @@ namespace ProjectGenesis
             LDB.recipes.OnAfterDeserialize();
             LDB.techs.OnAfterDeserialize();
             LDB.models.OnAfterDeserialize();
+            LDB.milestones.OnAfterDeserialize();
+            LDB.journalPatterns.OnAfterDeserialize();
+            LDB.themes.OnAfterDeserialize();
             LDB.veins.OnAfterDeserialize();
 
             GameMain.gpuiManager.Init();
 
-            LDB.milestones.Select(9).Preload();
-            LDB.milestones.Select(32).Preload();
-            LDB.journalPatterns.Select(9).Preload();
-            LDB.journalPatterns.Select(32).Preload();
-
-            foreach (var theme in LDB.themes.dataArray) theme.Preload();
+            foreach (var milestone in LDB.milestones.dataArray) milestone.Preload();
+            foreach (var journalPattern in LDB.journalPatterns.dataArray) journalPattern.Preload();
 
             //飞行舱拆除
             var @base = LDB.veges.Select(9999);

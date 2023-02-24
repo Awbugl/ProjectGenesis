@@ -23,6 +23,7 @@ namespace ProjectGenesis.Compatibility
     [BepInDependency(BottleneckCompatibilityPlugin.MODGUID, BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency(MoreMegaStructureCompatibilityPlugin.MODGUID, BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency(GalacticScaleCompatibilityPlugin.MODGUID, BepInDependency.DependencyFlags.SoftDependency)]
+    [BepInDependency(PlanetwideMiningCompatibilityPlugin.MODGUID, BepInDependency.DependencyFlags.SoftDependency)]
     public class IncompatibleCheckPlugin : BaseUnityPlugin
     {
         public const string MODGUID = "org.LoShin.GenesisBook.Compatibility.Check";

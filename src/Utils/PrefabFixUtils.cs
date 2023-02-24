@@ -61,15 +61,15 @@ namespace ProjectGenesis.Utils
 
             ref var desc1 = ref itemProtos.Select(I水泵).prefabDesc;
             desc1.minerPeriod = 360000;
-            desc1.waterTypes = new[] { 1000, 1116, 7018 };
+            desc1.waterTypes = new[] { 1000, 1116, 7017, 7018 };
 
             ref var desc2 = ref itemProtos.Select(I电磁轨道弹射器).prefabDesc;
-            desc2.ejectorChargeFrame = 20;
-            desc2.ejectorColdFrame = 10;
+            desc2.ejectorChargeFrame = 40;
+            desc2.ejectorColdFrame = 20;
 
             ref var desc3 = ref itemProtos.Select(I垂直发射井).prefabDesc;
-            desc3.siloChargeFrame = 24;
-            desc3.siloColdFrame = 6;
+            desc3.siloChargeFrame = 48;
+            desc3.siloColdFrame = 12;
 
             ref var desc4 = ref itemProtos.Select(I卫星配电站).prefabDesc;
             desc4.powerConnectDistance = 5300.5f;
@@ -171,7 +171,7 @@ namespace ProjectGenesis.Utils
             megapumperprefabDesc.idleEnergyPerTick = 10000;
             megapumperprefabDesc.workEnergyPerTick = 25000;
             megapumperprefabDesc.waterPoints = new[] { Vector3.zero };
-            megapumperprefabDesc.waterTypes = new[] { 1000, 1116, 7018 };
+            megapumperprefabDesc.waterTypes = new[] { 1000, 1116, 7017, 7018 };
 
             List<Pose> poses = megapumperprefabDesc.portPoses.ToList();
             poses.Add(new Pose(new Vector3(0, 0, -1.4f), Quaternion.Euler(0, 180, 0)));
@@ -208,6 +208,7 @@ namespace ProjectGenesis.Utils
             plsprefabDesc.stationMaxEnergyAcc *= 2;
             plsprefabDesc.stationMaxItemCount = 10000;
             plsprefabDesc.stationMaxItemKinds = 5;
+            plsprefabDesc.stationMaxDroneCount = 80;
         }
 
         private static void SetMegaAssemberPrefebDesc(

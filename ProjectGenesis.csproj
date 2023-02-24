@@ -97,6 +97,7 @@
         <Compile Include="src\Compatibility\GalacticScaleCompatibilityPlugin.cs" />
         <Compile Include="src\Compatibility\IncompatibleCheckPlugin.cs" />
         <Compile Include="src\Compatibility\MoreMegaStructureCompatibilityPlugin.cs" />
+        <Compile Include="src\Compatibility\PlanetwideMiningCompatibilityPlugin.cs" />
         <Compile Include="src\Patches\Logic\DisableLDBToolCachePatches.cs" />
         <Compile Include="src\Patches\Logic\InitnalTechPatches.cs" />
         <Compile Include="src\Patches\Logic\MartixComplexPatches.cs" />

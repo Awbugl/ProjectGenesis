@@ -290,6 +290,36 @@
     "ENUS": "You discovered and mined a Tungsten ore near <color=#8DB1FFb0>{0}</color>. It can be used to build better buildings or components."
   },
   {
+    "Name": "里程碑未达成描述7",
+    "ZHCN": "你采集了光栅石，宇宙珍奇之一，是制造硅晶圆和氦三不可多得的原材料。",
+    "ENUS": "You collected an Optical Grating Crystal, one of the rarer things in the universe. It is a key material for making silicon wafers and helium-3."
+  },
+  {
+    "Name": "里程碑已达成描述7",
+    "ZHCN": "你在 <color=#8DB1FFb0>{0}</color> 上发现并开采了光栅石，宇宙珍奇之一，是制造硅晶圆和氦三不可多得的原材料。",
+    "ENUS": "You discovered and mined an Optical Grating Crystal on <color=#8DB1FFb0>{0}</color>, one of the rarer things in the universe. It is a key material for making silicon wafers and helium-3."
+  },
+  {
+    "Name": "里程碑未达成描述10",
+    "ZHCN": "你采集了有机晶体，宇宙珍奇之一。它分布在宇宙各处，可以用来制造活性生物纤维。",
+    "ENUS": "You collected an Organic Crystal, one of the rarer things in the universe. They're distributed across the universe and can be used to make active biological fibers."
+  },
+  {
+    "Name": "里程碑已达成描述10",
+    "ZHCN": "你在 <color=#8DB1FFb0>{0}</color> 上发现了有机晶体原始矿脉，宇宙珍奇之一。它分布在宇宙各处，可以用来制造活性生物纤维。",
+    "ENUS": "You discovered a mineral vein of Organic Crystal on <color=#8DB1FFb0>{0}</color>, one of the rarer things in the universe. They're distributed across the universe and can be used to make active biological fibers."
+  },
+  {
+    "Name": "里程碑未达成描述29",
+    "ZHCN": "你激活了第一座裂变能源发电站。多种技术的综合应用，使一体化快中子反应堆产生大量的清洁电力。",
+    "ENUS": "You activated your first Fission Power Station. The new generation of integrated fast reactors uses multiple technologies to generate large amounts of clean electricity."
+  },
+  {
+    "Name": "里程碑已达成描述29",
+    "ZHCN": "你激活了第一座裂变能源发电站。多种技术的综合应用，使一体化快中子反应堆产生大量的清洁电力。",
+    "ENUS": "You activated your first Fission Power Station. The new generation of integrated fast reactors uses multiple technologies to generate large amounts of clean electricity."
+  },
+  {
     "Name": "里程碑未达成描述32",
     "ZHCN": "你激活了第一座人造恒星，它优雅地转动着，犹如太阳般炽烈地燃烧着，稳定地将聚变原料所蕴藏的巨大能量输出到电网。",
     "ENUS": "You activated your first Artificial Star. It rotates so gracefully yet burns so intensely, this spectacle surely means that you've truly harnessed the stars and can stably transport this energy to all corners of the universe."
@@ -1820,6 +1850,16 @@
     "ENUS": "Using nitrogen and hydrogen as raw materials to synthesize ammonia.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
+    "Name": "活性纤维分离",
+    "ZHCN": "活性纤维重组",
+    "ENUS": "Active biological fiber reassemble"
+  },
+  {
+    "Name": "R活性纤维分离",
+    "ZHCN": "使用亚原子操控技术，可以有效地将活性纤维的组分分解并将组装成聚苯并咪唑.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Using subatomic manipulation technology, it can effectively decompose the components of active fibers and assemble them into polybenzimidazole.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+  },
+  {
     "Name": "高分子化合: 二氨基联苯胺",
     "ZHCN": "高分子化合: 二氨基联苯胺",
     "ENUS": "Polymer compound: Diaminobenzidine"
@@ -2104,6 +2144,16 @@
     "ZHCN": "利用主机算力对生产流程大幅优化, 批量生产量子芯片变得简单.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "ENUS": "The production process of quantum chip is greatly optimized by mainframe computing power, making it easy to produce in batch.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
+  {
+    "Name": "处理器（极效）",
+    "ZHCN": "处理器（极效）",
+    "ENUS": "Processor (advanced-2)"
+  },
+  {
+    "Name": "R处理器（极效）",
+    "ZHCN": "利用主机算力对生产流程大幅优化, 批量生产处理器变得简单.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "The production process of processors is greatly optimized by mainframe computing power, making it easy to produce in batch.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+  },  
   {
     "Name": "硫酸（高效）",
     "ZHCN": "硫酸（高效）",
@@ -2870,6 +2920,11 @@
     "ENUS": "Rare minerals. With so much organic matter in non-living crystalline form, this peculiar mineral may have a special role to play in cutting-edge industrial production."
   },
   {
+    "Name": "I光栅石",
+    "ZHCN": "稀有矿物。可以用来高效制造硅晶圆，也可以用来提取聚变原料。",
+    "ENUS": "Rare ore. It can be used to produce silicon wafers efficiently, and can also be used to extract fusion fuel rods."
+  },
+  {
     "Name": "I大型储物仓",
     "ZHCN": "是小型储物仓容量的两倍，但制作需要的材料也是两倍。",
     "ENUS": "Has twice the capacity of a Storage Mk.I. Materials requires twice too."
@@ -3091,7 +3146,7 @@
   },
   {
     "Name": "T大气排放结果",
-    "ZHCN": "重构部分配方的生产流程，将堆积产物排放到大气中。配方列表：焦油分馏、原油裂化、剧毒液体离心、金属盐分解、水电解",
+    "ZHCN": "重构部分配方的生产流程，将堆积产物排放到大气中。",
     "ENUS": "Reconstruct production flow for several recipes to discharge accumulated products into the atmosphere."
   },
   {

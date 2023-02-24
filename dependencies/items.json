@@ -502,7 +502,9 @@
     "PreTech": 1829,
     "PreTechOverride": 0,
     "DescFields": [
-      1
+      0,
+      1,
+      40
     ],
     "FuelType": 0,
     "HeatValue": 0,
@@ -1370,6 +1372,7 @@
     "PreTech": 1142,
     "PreTechOverride": 0,
     "DescFields": [
+      0,
       1,
       2,
       3,
@@ -6236,11 +6239,12 @@
     "Description": "I氦",
     "IconPath": "Assets/texpack/氦",
     "GridIndex": 3607,
-    "StackSize": 100,
+    "StackSize": 20,
     "Type": 2,
-    "PreTech": 1821,
+    "PreTech": 0,
     "PreTechOverride": 0,
     "DescFields": [
+      0,
       1,
       40
     ],
@@ -6250,7 +6254,7 @@
     "IsFluid": true,
     "Productive": true,
     "SubID": 0,
-    "MiningFrom": null,
+    "MiningFrom": "气态巨星轨道",
     "ProduceFrom": null,
     "Grade": 0,
     "Upgrades": [],
@@ -7995,7 +7999,7 @@
     "IsFluid": true,
     "Productive": true,
     "SubID": 0,
-    "MiningFrom": "行星大气",
+    "MiningFrom": "气态巨星轨道",
     "ProduceFrom": null,
     "Grade": 0,
     "Upgrades": [],

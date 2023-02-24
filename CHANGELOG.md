@@ -1,3 +1,25 @@
+- v2.5.12
+  + 调整部分文案
+  + `电磁轨道弹射器`和`垂直发射井`的速度减半
+  + 新增配方：`活性纤维重组`、`处理器（极效）`
+  + 调整`行星物流塔`的物流运输机的最大数量
+  + 调整`聚乙烯（高效）`、`钨矿精炼`的原料需求数量
+  + 重新加入硝酸海洋（仅影响新存档）
+  + 调整气态巨星、冰巨星的大气成分（仅影响新存档）
+  + 添加 `PlanetwideMining` mod 兼容补丁
+
+  + Adjust some text
+  + The speed of `Electromagnetic Orbit Launcher` and `Vertical Launching Silo` is halved
+  + Add recipe: `Active biological fiber reassemble` and `Processor (advanced-2)`
+  + Adjust the max drone number of `Planetary Logistics Station`
+  + Adjust the material requirements of `Polyethylene (advanced)` and `Tungsten ore refining`
+  + Re-add nitric acid ocean (only affect new save)
+  + Adjust the atmospheric composition of the gas giant and ice giant (only affect new save)
+  + Add `PlanetwideMining` mod compatibility patch
+
+<details>
+  <summary>点击展开日志 | Click to view all </summary>
+
 - v2.5.11
   + 调整`大气采集站`的基础速度
   + 优化建造/拆除`广播式能源塔`时的性能
@@ -13,8 +35,6 @@
   + Remove `Rocket Fuel` and its related recipes (only affect new save)
   + Add red text error when mod conflict
 
-<details>
-  <summary>点击展开日志 | Click to view all </summary>
 
 - v2.5.10
   + 调整部分文案

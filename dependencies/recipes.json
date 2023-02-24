@@ -3679,7 +3679,7 @@
     "ID": 713,
     "Name": "焦油分馏",
     "Description": "R焦油分馏",
-    "IconPath": "Assets/texpack/煤焦油",
+    "IconPath": "Assets/texpack/焦油循环",
     "Type": 3,
     "GridIndex": 3208,
     "Time": 120,
@@ -4434,14 +4434,14 @@
     "IconPath": "Assets/texpack/钨矿",
     "Type": 2,
     "GridIndex": 1717,
-    "Time": 360,
+    "Time": 180,
     "Input": [
       1004,
       7017
     ],
     "InCounts": [
-      10,
-      4
+      6,
+      2
     ],
     "Output": [
       1016
@@ -5144,6 +5144,30 @@
     "NonProductive": false
   },
   {
+    "ID": 550,
+    "Name": "活性纤维分离",
+    "Description": "R活性纤维分离",
+    "IconPath": "Assets/texpack/活性纤维分解",
+    "Type": 3,
+    "GridIndex": 3211,
+    "Time": 720,
+    "Input": [
+      7710
+    ],
+    "InCounts": [
+      12
+    ],
+    "Output": [
+      7709
+    ],
+    "OutCounts": [
+      1
+    ],
+    "Explicit": true,
+    "Handcraft": false,
+    "NonProductive": false
+  },
+  {
     "ID": 551,
     "Name": "聚乙烯（高效）",
     "Description": "R聚乙烯（高效）",
@@ -5157,12 +5181,38 @@
       7019
     ],
     "InCounts": [
-      6,
+      1,
       2,
       2
     ],
     "Output": [
       1115
+    ],
+    "OutCounts": [
+      4
+    ],
+    "Explicit": true,
+    "Handcraft": false,
+    "NonProductive": false
+  },
+  {
+    "ID": 530,
+    "Name": "处理器（极效）",
+    "Description": "R处理器（极效）",
+    "IconPath": "Assets/texpack/极效处理器",
+    "Type": 10,
+    "GridIndex": 5408,
+    "Time": 180,
+    "Input": [
+      7504,
+      7604
+    ],
+    "InCounts": [
+      1,
+      2
+    ],
+    "Output": [
+      1303
     ],
     "OutCounts": [
       4
