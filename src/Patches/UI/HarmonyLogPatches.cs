@@ -6,15 +6,11 @@ namespace ProjectGenesis.Patches.UI
 {
     internal class HarmonyLogListener : ILogListener
     {
-        internal static object LogData;
+        internal static readonly Queue<object> LogData = new Queue<object>();
 
         public void LogEvent(object sender, LogEventArgs eventArgs)
         {
-            if (eventArgs.Source.SourceName == "HarmonyX" && eventArgs.Level == LogLevel.Error)
-            {
-                ProjectGenesis.logger.LogInfo("Harmony throws an error when patching!");
-                LogData = eventArgs.Data;
-            }
+            if (eventArgs.Source.SourceName == "HarmonyX" && eventArgs.Level == LogLevel.Error) LogData.Enqueue(eventArgs.Data);
         }
 
         public void Dispose() { }
@@ -27,8 +23,8 @@ namespace ProjectGenesis.Patches.UI
         [HarmonyPriority(Priority.Low)]
         public static void InvokeOnLoadWorkEnded()
         {
-            if (HarmonyLogListener.LogData != null)
-                UIFatalErrorTip.instance.ShowError("Harmony throws an error when patching!", HarmonyLogListener.LogData.ToString());
+            while (HarmonyLogListener.LogData.Count > 0)
+                UIFatalErrorTip.instance.ShowError("Harmony throws an error when patching!", HarmonyLogListener.LogData.Dequeue().ToString());
         }
     }
 }

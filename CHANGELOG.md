@@ -1,10 +1,16 @@
+- v2.5.14
+  + 修复已拆除的巨构传送带缓存未及时更新的问题
+
+  + Fix the problem of not updating the cache of dismantled mega buildings conveyor belts in time
+
+<details>
+  <summary>点击展开日志 | Click to view all </summary>
+
 - v2.5.13
   + 修复`活性纤维重组`配方无法解锁的问题
 
   + Fix the problem that the `Active biological fiber reassemble` recipe cannot be unlocked
 
-<details>
-  <summary>点击展开日志 | Click to view all </summary>
 
 - v2.5.12
   + 调整部分文案
