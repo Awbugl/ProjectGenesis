@@ -8836,7 +8836,7 @@
     "HashNeeded": 288000,
     "UnlockRecipes": [
       780,
-      530,
+      550,
       794
     ],
     "UnlockFunctions": [],
@@ -8895,7 +8895,6 @@
       795,
       519,
       520,
-      552,
       754,
       764
     ],
@@ -8945,7 +8944,8 @@
     "HashNeeded": 576000,
     "UnlockRecipes": [
       793,
-      569
+      569,
+      530
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],

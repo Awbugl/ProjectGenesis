@@ -1,3 +1,11 @@
+- v2.5.13
+  + 修复`活性纤维重组`配方无法解锁的问题
+
+  + Fix the problem that the `Active biological fiber reassemble` recipe cannot be unlocked
+
+<details>
+  <summary>点击展开日志 | Click to view all </summary>
+
 - v2.5.12
   + 调整部分文案
   + `电磁轨道弹射器`和`垂直发射井`的速度减半
@@ -17,8 +25,6 @@
   + Adjust the atmospheric composition of the gas giant and ice giant (only affect new save)
   + Add `PlanetwideMining` mod compatibility patch
 
-<details>
-  <summary>点击展开日志 | Click to view all </summary>
 
 - v2.5.11
   + 调整`大气采集站`的基础速度
