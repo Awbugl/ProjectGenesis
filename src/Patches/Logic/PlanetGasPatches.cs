@@ -303,17 +303,6 @@ namespace ProjectGenesis.Patches.Logic
         }
 
         [HarmonyPatch(typeof(StationComponent), "UpdateCollection")]
-        [HarmonyPrefix]
-        public static void StationComponent_UpdateCollection_Prefix(
-            StationComponent __instance,
-            PlanetFactory factory,
-            ref float collectSpeedRate,
-            int[] productRegister)
-        {
-            if (factory.planet.type != EPlanetType.Gas) collectSpeedRate = GameMain.history.miningSpeedScale * __instance.collectSpeed;
-        }
-
-        [HarmonyPatch(typeof(StationComponent), "UpdateCollection")]
         [HarmonyPostfix]
         public static void StationComponent_UpdateCollection_Postfix(StationComponent __instance)
         {
@@ -329,18 +318,6 @@ namespace ProjectGenesis.Patches.Logic
                 }
 
                 __instance.energy = 0;
-            }
-        }
-
-        [HarmonyPatch(typeof(UIStationStorage), "RefreshValues")]
-        [HarmonyPostfix]
-        public static void UIStationStorage_RefreshValues_Postfix(UIStationStorage __instance)
-        {
-            if (__instance.station.isCollector && GameMain.localPlanet.type != EPlanetType.Gas)
-            {
-                var collectSpeedRate = GameMain.history.miningSpeedScale * __instance.station.collectSpeed;
-                __instance.speedText.text
-                    = $"{3600.0 * ((double)__instance.station.collectionPerTick[__instance.index] * collectSpeedRate):0.00}/min";
             }
         }
     }

@@ -1,7 +1,11 @@
 - v2.5.14
-  + 修复已拆除的巨构传送带缓存未及时更新的问题
+  + 修复已拆除的巨构传送带缓存未及时更新导致物品远程传送的问题
+  + 修复`资源采掘`协调效果对`大气采集站`无效的问题
+  + 修复`资源采掘`协调效果未在大矿机UI中显示的问题
 
-  + Fix the problem of not updating the cache of dismantled mega buildings conveyor belts in time
+  + Fix the problem of not updating the cache of dismantled mega buildings conveyor belts in time, causing material transfer unexpectedly
+  + Fix the problem that the `Unlimited Resource Mining` coordination effect is invalid for `Atmospheric Collect Station`
+  + Fix the problem that the `Unlimited Resource Mining` coordination effect is not displayed in the Mega Miner UI
 
 <details>
   <summary>点击展开日志 | Click to view all </summary>

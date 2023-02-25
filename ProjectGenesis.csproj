@@ -114,7 +114,7 @@
         <Compile Include="src\Patches\Logic\PlanetFocus\FactoryPowerPatches.cs" />
         <Compile Include="src\Patches\Logic\PlanetFocus\InternalFunctions.cs" />
         <Compile Include="src\Patches\Logic\PlanetFocus\LabPatches.cs" />
-        <Compile Include="src\Patches\Logic\PlanetFocus\MinerComponentPatches.cs" />
+        <Compile Include="src\Patches\Logic\PlanetFocus\MinerPatches.cs" />
         <Compile Include="src\Patches\Logic\PlanetFocus\PlanetFocusPatches.cs" />
         <Compile Include="src\Patches\Logic\PlanetFocus\PowerSystemPatches.cs" />
         <Compile Include="src\Patches\Logic\PlanetGasPatches.cs" />
