@@ -37,7 +37,7 @@ namespace ProjectGenesis.Compatibility
                           new HarmonyMethod(typeof(PlanetwideMiningCompatibilityPlugin), nameof(BuildTool_Click_CheckBuildConditions_Transpiler)));
 
             harmony.Patch(AccessTools.Method(assembly.GetType("PlanetwideMining.PatchMiners"), "CheckBuildConditions"), null, null,
-                          new HarmonyMethod(typeof(MegaPumpPatches), nameof(BuildTool_Click_CheckBuildConditions_Transpiler)));
+                          new HarmonyMethod(typeof(MegaPumpPatches), nameof(MegaPumpPatches.BuildTool_Click_CheckBuildConditions_Transpiler)));
         }
 
         private static readonly FieldInfo PrefabDesc_isStellarStation_Field = AccessTools.Field(typeof(PrefabDesc), "isStellarStation");
