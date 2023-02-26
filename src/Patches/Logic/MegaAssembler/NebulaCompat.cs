@@ -70,6 +70,7 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
         {
             var count = r.ReadInt32();
             var planetId = r.ReadInt32();
+            var factory = GameMain.galaxy.PlanetById(planetId)?.factory;
 
             for (var j = 0; j < count; j++)
             {
@@ -82,6 +83,20 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
                                {
                                    dir = (IODir)r.ReadInt32(), beltId = r.ReadInt32(), storageIdx = r.ReadInt32(), counter = r.ReadInt32()
                                };
+                    
+                    if (factory == null) continue;
+
+                    factory.ReadObjectConn(entityId, i, out _, out var otherObjId, out _);
+
+                    if (otherObjId <= 0 || factory.entityPool[otherObjId].beltId != datas[i].beltId)
+                    {
+                        var beltComponent = factory.cargoTraffic.beltPool[datas[i].beltId];
+                        ref var signData = ref factory.entitySignPool[beltComponent.entityId];
+                        signData.iconType = 0U;
+                        signData.iconId0 = 0U;
+
+                        datas[i] = new SlotData();
+                    }
                 }
 
                 _slotdata[(planetId, entityId)] = datas;
