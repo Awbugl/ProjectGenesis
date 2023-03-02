@@ -305,6 +305,11 @@
     "ENUS": "Milestone: Tungsten ore"
   },
   {
+    "Name": "里程碑名称29",
+    "ZHCN": "里程碑：裂变发电",
+    "ENUS": "Milestone: Fission Energy"
+  },
+  {
     "Name": "里程碑未达成描述9",
     "ZHCN": "你采集了钨矿。它可以用于建造更好的建筑与组件。",
     "ENUS": "You collected a Tungsten ore. It can be used to build better buildings or components."
