@@ -1,3 +1,24 @@
+- v2.6.0 原子之心 | Atomic Heart
+  + 修复与联机MOD的兼容性问题
+  + 调整图标选择界面公式部分的显示
+  + 裂变能源重做，缩短科技树，添加MOX燃料棒（影响存档）
+  + 提高化学能燃料棒的热值
+  + 提高巨型建筑的原料与科技需求（影响存档）
+  + 调整部分配方的原料需求（影响存档）
+  + 添加`裂变增效`、`先进推进`协调效果
+
+  + Fix the compatibility problem with the multiplayer mod
+  + Adjust the display of the formula part of the icon selection interface
+  + Redo the fusion energy, shorten the technology tree, and add MOX fuel rod (affect the save)
+  + Increase the heat value of the chemical energy fuel rod
+  + Increase the material and technology requirements of the mega buildings (affect the save)
+  + Adjust the material requirements of some recipes (affect the save)
+  + Add `Fusion Enhancement` and `Advanced Propulsion` coordination effects
+
+
+<details>
+  <summary>点击展开日志 | Click to view all </summary>
+
 - v2.5.14
   + 修复已拆除的巨构传送带缓存未及时更新导致物品远程传送的问题
   + 修复`资源采掘`协调效果对`大气采集站`无效的问题
@@ -7,8 +28,6 @@
   + Fix the problem that the `Unlimited Resource Mining` coordination effect is invalid for `Atmospheric Collect Station`
   + Fix the problem that the `Unlimited Resource Mining` coordination effect is not displayed in the Mega Miner UI
 
-<details>
-  <summary>点击展开日志 | Click to view all </summary>
 
 - v2.5.13
   + 修复`活性纤维重组`配方无法解锁的问题

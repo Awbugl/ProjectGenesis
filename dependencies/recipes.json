@@ -761,14 +761,14 @@
       6502,
       1107,
       1206,
-      2302,
+      2315,
       1305
     ],
     "InCounts": [
       60,
       180,
       240,
-      20,
+      10,
       60
     ],
     "Output": [
@@ -1067,7 +1067,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 3702,
+    "GridIndex": 3707,
     "Time": 600,
     "Input": [
       6509,
@@ -1151,7 +1151,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 3703,
+    "GridIndex": 3710,
     "Time": 600,
     "Input": [
       6509,
@@ -1433,14 +1433,14 @@
       6502,
       1107,
       1206,
-      2309,
+      2317,
       1305
     ],
     "InCounts": [
       60,
       180,
       240,
-      20,
+      10,
       60
     ],
     "Output": [
@@ -1835,7 +1835,7 @@
       6502,
       1107,
       1206,
-      2013,
+      6230,
       1305
     ],
     "InCounts": [
@@ -2641,7 +2641,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 3710,
+    "GridIndex": 3709,
     "Time": 600,
     "Input": [
       1802,
@@ -2669,7 +2669,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 3709,
+    "GridIndex": 3708,
     "Time": 600,
     "Input": [
       6509,
@@ -2799,7 +2799,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 5,
-    "GridIndex": 3608,
+    "GridIndex": 1214,
     "Time": 240,
     "Input": [
       6234
@@ -2823,7 +2823,7 @@
     "Description": "R氦元素离心",
     "IconPath": "",
     "Type": 2,
-    "GridIndex": 3607,
+    "GridIndex": 1213,
     "Time": 240,
     "Input": [
       1014
@@ -3078,13 +3078,11 @@
     "Input": [
       6502,
       1107,
-      1304,
-      1305
+      1304
     ],
     "InCounts": [
       4,
-      12,
-      4,
+      8,
       4
     ],
     "Output": [
@@ -3848,14 +3846,14 @@
     "IconPath": "Assets/texpack/石油循环",
     "Type": 2,
     "GridIndex": 4409,
-    "Time": 360,
+    "Time": 720,
     "Input": [
       6206,
       1120
     ],
     "InCounts": [
-      3,
-      12
+      12,
+      36
     ],
     "Output": [
       1007
@@ -4891,7 +4889,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 2,
-    "GridIndex": 3602,
+    "GridIndex": 3607,
     "Time": 240,
     "Input": [
       1121
@@ -4915,7 +4913,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 2,
-    "GridIndex": 3603,
+    "GridIndex": 3610,
     "Time": 360,
     "Input": [
       1122
@@ -5525,7 +5523,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 2,
-    "GridIndex": 3604,
+    "GridIndex": 3603,
     "Time": 480,
     "Input": [
       6211,
@@ -5551,7 +5549,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 2,
-    "GridIndex": 3605,
+    "GridIndex": 3602,
     "Time": 600,
     "Input": [
       6210,
@@ -5607,7 +5605,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 3704,
+    "GridIndex": 3703,
     "Time": 600,
     "Input": [
       6509,
@@ -5635,7 +5633,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 3705,
+    "GridIndex": 3702,
     "Time": 600,
     "Input": [
       6509,
@@ -6016,8 +6014,8 @@
     "NonProductive": false
   },
   {
-    "ID": 402,
-    "Name": "发光铀碎块",
+    "ID": 404,
+    "Name": "铀矿",
     "Description": "",
     "IconPath": "",
     "Type": 11,
@@ -6028,66 +6026,14 @@
       7020
     ],
     "InCounts": [
-      2,
-      1
-    ],
-    "Output": [
-      6223
-    ],
-    "OutCounts": [
-      1
-    ],
-    "Explicit": false,
-    "Handcraft": false,
-    "NonProductive": false
-  },
-  {
-    "ID": 403,
-    "Name": "晶质钚碎块",
-    "Description": "",
-    "IconPath": "",
-    "Type": 11,
-    "GridIndex": 3303,
-    "Time": 240,
-    "Input": [
-      6222,
-      7020
-    ],
-    "InCounts": [
-      2,
-      1
-    ],
-    "Output": [
-      6224
-    ],
-    "OutCounts": [
-      1
-    ],
-    "Explicit": false,
-    "Handcraft": false,
-    "NonProductive": false
-  },
-  {
-    "ID": 404,
-    "Name": "铀矿",
-    "Description": "",
-    "IconPath": "",
-    "Type": 11,
-    "GridIndex": 3304,
-    "Time": 240,
-    "Input": [
-      6223,
-      7020
-    ],
-    "InCounts": [
-      2,
+      1,
       1
     ],
     "Output": [
       6225
     ],
     "OutCounts": [
-      2
+      1
     ],
     "Explicit": false,
     "Handcraft": false,
@@ -6099,21 +6045,21 @@
     "Description": "",
     "IconPath": "",
     "Type": 11,
-    "GridIndex": 3305,
+    "GridIndex": 3303,
     "Time": 240,
     "Input": [
-      6224,
+      6222,
       7020
     ],
     "InCounts": [
-      2,
+      1,
       1
     ],
     "Output": [
       6226
     ],
     "OutCounts": [
-      2
+      1
     ],
     "Explicit": false,
     "Handcraft": false,
@@ -6125,7 +6071,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 11,
-    "GridIndex": 3306,
+    "GridIndex": 3304,
     "Time": 120,
     "Input": [
       6225
@@ -6149,7 +6095,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 11,
-    "GridIndex": 3307,
+    "GridIndex": 3305,
     "Time": 120,
     "Input": [
       6226
@@ -6173,7 +6119,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 3707,
+    "GridIndex": 3704,
     "Time": 600,
     "Input": [
       6509,
@@ -6199,7 +6145,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 3708,
+    "GridIndex": 3705,
     "Time": 600,
     "Input": [
       6509,
@@ -6211,6 +6157,32 @@
     ],
     "Output": [
       6241
+    ],
+    "OutCounts": [
+      1
+    ],
+    "Explicit": false,
+    "Handcraft": false,
+    "NonProductive": false
+  },
+  {
+    "ID": 410,
+    "Name": "MOX燃料棒",
+    "Description": "",
+    "IconPath": "",
+    "Type": 4,
+    "GridIndex": 3706,
+    "Time": 600,
+    "Input": [
+      6241,
+      6242
+    ],
+    "InCounts": [
+      1,
+      2
+    ],
+    "Output": [
+      6243
     ],
     "OutCounts": [
       1
@@ -6405,7 +6377,7 @@
       6502,
       1107,
       1206,
-      2013,
+      2303,
       1305
     ],
     "InCounts": [

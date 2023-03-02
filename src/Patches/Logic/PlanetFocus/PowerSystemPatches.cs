@@ -64,6 +64,11 @@ namespace ProjectGenesis.Patches.Logic.PlanetFocus
                     focusid = 6524;
                     extra = 1.2;
                     break;
+                
+                case 2:
+                    focusid = 6529;
+                    extra = 1.2;
+                    break;
 
                 case 16:
                     focusid = 6527;
@@ -124,6 +129,11 @@ namespace ProjectGenesis.Patches.Logic.PlanetFocus
                 {
                     case 1:
                         focusid = 6524;
+                        extra = 1.2;
+                        break;
+                    
+                    case 2:
+                        focusid = 6529;
                         extra = 1.2;
                         break;
 

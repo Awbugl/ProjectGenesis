@@ -140,6 +140,26 @@
     "ENUS": "Coordination Center will tend to recycle low-quality minerals."
   },
   {
+    "Name": "裂变增效",
+    "ZHCN": "裂变增效",
+    "ENUS": "Fission Efficiency"
+  },
+  {
+    "Name": "I裂变增效",
+    "ZHCN": "协调中心将倾向于提高裂变发电站的燃料回收效率。",
+    "ENUS": "Coordination Center will tend to increase the fuel recycling efficiency of the Fission Power Station."
+  },
+  {
+    "Name": "先进推进",
+    "ZHCN": "先进推进",
+    "ENUS": "Advanced Propulsion"
+  },
+  {
+    "Name": "I先进推进",
+    "ZHCN": "协调中心将倾向于提高运输机的速度。",
+    "ENUS": "Coordination Center will tend to increase the speed of drones."
+  },
+  {
     "Name": "工厂电力需求 -10%",
     "ZHCN": "工厂电力需求 -10%",
     "ENUS": "Assember Power Consumption -10%"
@@ -173,6 +193,16 @@
     "Name": "矿物采集速度 +25%",
     "ZHCN": "矿物采集速度 +25%",
     "ENUS": "Mining Speed +25%"
+  },
+  {
+    "Name": "裂变发电效率 +20%",
+    "ZHCN": "裂变发电效率 +20%",
+    "ENUS": "Fission Efficiency +20%"
+  },
+  {
+    "Name": "配送物流速度 +25%",
+    "ZHCN": "配送物流速度 +25%",
+    "ENUS": "Drone Speed +25%"
   },
   {
     "Name": "星际组装厂（巨构）",
@@ -358,11 +388,6 @@
     "Name": "质能转换",
     "ZHCN": "质能转换",
     "ENUS": "Mass-Energy Conversion"
-  },
-  {
-    "Name": "仿星器",
-    "ZHCN": "仿星器",
-    "ENUS": "Stellarator"
   },
   {
     "Name": "行星大气",
@@ -790,36 +815,6 @@
     "ENUS": "Mineral processor, used to smash ores.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
-    "Name": "钚燃料",
-    "ZHCN": "钚燃料",
-    "ENUS": "Plutonium fuel"
-  },
-  {
-    "Name": "I钚燃料",
-    "ZHCN": "高能能源，可用于裂变反应。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A high-energy energy source, can be used for fission reactions.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
-    "Name": "铀燃料",
-    "ZHCN": "铀燃料",
-    "ENUS": "Uranium fuel"
-  },
-  {
-    "Name": "I铀燃料",
-    "ZHCN": "高能能源，可用于裂变反应。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A high-energy energy source, can be used for fission reactions.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
-    "Name": "MOX燃料",
-    "ZHCN": "MOX燃料",
-    "ENUS": "MOX fuel"
-  },
-  {
-    "Name": "IMOX燃料",
-    "ZHCN": "高能能源，可用于裂变反应。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A high-energy energy source, can be used for fission reactions.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
     "Name": "氦",
     "ZHCN": "氦",
     "ENUS": "Helium"
@@ -848,6 +843,31 @@
     "Name": "I铀燃料棒",
     "ZHCN": "将铀燃料封装在燃料棒中，提高利用率和输出功率。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "ENUS": "Encapsulation of uranium fuel in fuel rods to improve utilization and output power.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+  },
+  {
+    "Name": "MOX燃料棒",
+    "ZHCN": "MOX燃料棒",
+    "ENUS": "MOX fuel rod"
+  },
+  {
+    "Name": "IMOX燃料棒",
+    "ZHCN": "一种铀和钚的混合燃料，可以最大化利用铀和钚的能量。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "A mixed fuel of uranium and plutonium, which can maximize the energy of them.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+  },
+  {
+    "Name": "I氢燃料棒",
+    "ZHCN": "将气态氢冷凝为液态从而制成液氢燃料棒，获得更高的燃烧效率。使用液氢燃料棒作为机甲的燃料，可以明显提升机甲的燃烧室功率。",
+    "ENUS": "Hydrogen can be liquefied to make fuel rods for higher combustion efficiency. These higher energy Fuel Rods can greatly increase the mecha's fuel power generation."
+  },
+  {
+    "Name": "I氘核燃料棒",
+    "ZHCN": "将重氢制成氘核燃料棒，获得更强大的能量，是小型聚变系统的燃料来源。",
+    "ENUS": "Make deuterium into deuteron fuel rods as a better source of energy. These fuel rods are often used in fusion systems."
+  },
+  {
+    "Name": "I反物质燃料棒",
+    "ZHCN": "将反物质制成更稳定的燃料棒，就可以更安全地利用其强大的能量。",
+    "ENUS": "Stabilize antimatter into fuel rods, so that it can be used safely and effectively."
   },
   {
     "Name": "氦三燃料棒",
@@ -2153,7 +2173,7 @@
     "Name": "R处理器（极效）",
     "ZHCN": "利用主机算力对生产流程大幅优化, 批量生产处理器变得简单.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "ENUS": "The production process of processors is greatly optimized by mainframe computing power, making it easy to produce in batch.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },  
+  },
   {
     "Name": "硫酸（高效）",
     "ZHCN": "硫酸（高效）",
@@ -2945,6 +2965,11 @@
     "ENUS": "Refinery"
   },
   {
+    "Name": "I位面熔炉",
+    "ZHCN": "利用位面过滤器的自组织量子效应能产生热力学负温度流，能够极大地加速矿石熔炼或提纯的过程。",
+    "ENUS": "Using the Plane Filter produce a quantum effect of self-organizing and can generate a thermodynamic negative temperature flow, the process of ores smelting or purification can be greatly accelerated."
+  },
+  {
     "Name": "I原油精炼厂",
     "ZHCN": "将原油或剧毒液体进行精炼，可以获得多种化工原料。",
     "ENUS": "Refine crude oil or toxic liquid to obtain a variety of chemical raw materials."
@@ -3001,23 +3026,23 @@
   },
   {
     "Name": "I铀矿",
-    "ZHCN": "经三次提炼后，矿石中的铀-235浓度已经已经相当可观。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "After three refinements, the concentration of uranium-235 in the ore is already considerable.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "经提炼后，矿石中的铀浓度已经已经相当可观。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "After refinements, the concentration of uranium in the ore is already considerable.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "I钚矿",
-    "ZHCN": "经三次提炼后，矿石中的钚-239浓度已经相当可观。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "After three refinements, the concentration of plutonium-239 in the ore is already considerable.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "经提炼后，矿石中的钚浓度已经相当可观。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "After refinements, the concentration of plutonium in the ore is already considerable.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "I高纯铀块",
-    "ZHCN": "最后一次提炼后，成品中的铀-235纯度已经可以支撑链式反应。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "After the last refining, the purity of uranium-235 in the finished product can support chain reactions.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "铀矿提炼产物，已经可以支撑链式反应。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "The product of refining uranium ore, which can support the chain reaction.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "I高纯钚块",
-    "ZHCN": "最后一次提炼后，成品中的钚-239纯度已经可以支撑链式反应。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "After the last refining, the purity of uranium-235 in the finished product was ready to support the chain reaction.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "钚矿提炼产物，已经可以支撑链式反应。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "The product of refining plutonium ore, which can support the chain reaction.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "I氦",

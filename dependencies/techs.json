@@ -2124,16 +2124,14 @@
     "Items": [
       6001,
       6002,
-      6003,
-      6004
+      6003
     ],
     "ItemPoints": [
       10,
       10,
-      10,
       10
     ],
-    "HashNeeded": 360000,
+    "HashNeeded": 180000,
     "UnlockRecipes": [
       116
     ],
@@ -9080,89 +9078,7 @@
     ],
     "HashNeeded": 36000,
     "UnlockRecipes": [
-      401
-    ],
-    "UnlockFunctions": [],
-    "UnlockValues": [],
-    "Published": true,
-    "Level": 0,
-    "MaxLevel": 0,
-    "LevelCoef1": 0,
-    "LevelCoef2": 0,
-    "IsLabTech": true,
-    "PreTechsMax": false,
-    "AddItems": [],
-    "AddItemCounts": [],
-    "PropertyOverrideItems": [],
-    "PropertyItemCounts": []
-  },
-  {
-    "ID": 1817,
-    "Name": "T核子先驱:进一步分离",
-    "IconPath": "Icons/Tech/1416",
-    "Desc": "T核子先驱:进一步分离描述",
-    "Conclusion": "T核子先驱:进一步分离描述",
-    "Position": [
-      17.0,
-      -15.0
-    ],
-    "PreTechs": [
-      1816
-    ],
-    "PreTechsImplicit": [],
-    "Items": [
-      6001,
-      6002
-    ],
-    "ItemPoints": [
-      20,
-      20
-    ],
-    "HashNeeded": 72000,
-    "UnlockRecipes": [
-      402,
-      403
-    ],
-    "UnlockFunctions": [],
-    "UnlockValues": [],
-    "Published": true,
-    "Level": 0,
-    "MaxLevel": 0,
-    "LevelCoef1": 0,
-    "LevelCoef2": 0,
-    "IsLabTech": true,
-    "PreTechsMax": false,
-    "AddItems": [],
-    "AddItemCounts": [],
-    "PropertyOverrideItems": [],
-    "PropertyItemCounts": []
-  },
-  {
-    "ID": 1818,
-    "Name": "T核子先驱:原矿精炼",
-    "IconPath": "Icons/Tech/1416",
-    "Desc": "T核子先驱:原矿精炼描述",
-    "Conclusion": "T核子先驱:原矿精炼描述",
-    "Position": [
-      21.0,
-      -15.0
-    ],
-    "PreTechs": [
-      1817
-    ],
-    "PreTechsImplicit": [],
-    "Items": [
-      6001,
-      6002,
-      6003
-    ],
-    "ItemPoints": [
-      20,
-      20,
-      20
-    ],
-    "HashNeeded": 72000,
-    "UnlockRecipes": [
+      401,
       404,
       405
     ],
@@ -9187,24 +9103,22 @@
     "Desc": "T核子先驱:放射性物质萃取描述",
     "Conclusion": "T核子先驱:放射性物质萃取描述",
     "Position": [
-      25.0,
+      17.0,
       -15.0
     ],
     "PreTechs": [
-      1818
+      1816
     ],
     "PreTechsImplicit": [],
     "Items": [
       6001,
-      6002,
-      6003
+      6002
     ],
     "ItemPoints": [
       20,
-      20,
       20
     ],
-    "HashNeeded": 108000,
+    "HashNeeded": 72000,
     "UnlockRecipes": [
       406,
       407
@@ -9230,7 +9144,7 @@
     "Desc": "T核子先驱:裂变能源描述",
     "Conclusion": "T核子先驱:裂变能源描述",
     "Position": [
-      29.0,
+      21.0,
       -15.0
     ],
     "PreTechs": [
@@ -9247,10 +9161,11 @@
       20,
       20
     ],
-    "HashNeeded": 144000,
+    "HashNeeded": 72000,
     "UnlockRecipes": [
       408,
-      409
+      409,
+      410
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -9274,13 +9189,13 @@
     "Conclusion": "T核子先驱:同位素提取描述",
     "Position": [
       25.0,
-      -35.0
+      -15.0
     ],
     "PreTechs": [
-      1812
+      1820
     ],
     "PreTechsImplicit": [
-      1820
+      1812
     ],
     "Items": [
       6001,
@@ -9290,11 +9205,11 @@
       6005
     ],
     "ItemPoints": [
-      40,
-      40,
-      40,
-      40,
-      40
+      10,
+      10,
+      10,
+      10,
+      10
     ],
     "HashNeeded": 180000,
     "UnlockRecipes": [
@@ -9324,7 +9239,7 @@
     "Conclusion": "T核子先驱:聚变能源描述",
     "Position": [
       29.0,
-      -35.0
+      -15.0
     ],
     "PreTechs": [
       1821
@@ -9338,17 +9253,17 @@
       6005
     ],
     "ItemPoints": [
-      40,
-      40,
-      40,
-      40,
-      40
+      10,
+      10,
+      10,
+      10,
+      10
     ],
     "HashNeeded": 288000,
     "UnlockRecipes": [
       41,
-      99,
-      100
+      100,
+      99
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -9384,15 +9299,17 @@
       6001,
       6002,
       6003,
-      6004
+      6004,
+      6005
     ],
     "ItemPoints": [
-      20,
-      20,
-      20,
-      20
+      10,
+      10,
+      10,
+      10,
+      5
     ],
-    "HashNeeded": 288000,
+    "HashNeeded": 576000,
     "UnlockRecipes": [
       416
     ],
@@ -9434,15 +9351,17 @@
       6001,
       6002,
       6003,
-      6004
+      6004,
+      6005
     ],
     "ItemPoints": [
-      20,
-      20,
-      20,
-      20
+      10,
+      10,
+      10,
+      10,
+      5
     ],
-    "HashNeeded": 288000,
+    "HashNeeded": 576000,
     "UnlockRecipes": [
       29
     ],
@@ -9484,15 +9403,17 @@
       6001,
       6002,
       6003,
-      6004
+      6004,
+      6005
     ],
     "ItemPoints": [
-      20,
-      20,
-      20,
-      20
+      10,
+      10,
+      10,
+      10,
+      5
     ],
-    "HashNeeded": 288000,
+    "HashNeeded": 576000,
     "UnlockRecipes": [
       54
     ],
@@ -9534,15 +9455,17 @@
       6001,
       6002,
       6003,
-      6004
+      6004,
+      6005
     ],
     "ItemPoints": [
-      20,
-      20,
-      20,
-      20
+      10,
+      10,
+      10,
+      10,
+      5
     ],
-    "HashNeeded": 288000,
+    "HashNeeded": 576000,
     "UnlockRecipes": [
       68
     ],
@@ -9584,15 +9507,17 @@
       6001,
       6002,
       6003,
-      6004
+      6004,
+      6005
     ],
     "ItemPoints": [
-      20,
-      20,
-      20,
-      20
+      10,
+      10,
+      10,
+      10,
+      5
     ],
-    "HashNeeded": 288000,
+    "HashNeeded": 576000,
     "UnlockRecipes": [
       417
     ],
@@ -9632,15 +9557,17 @@
       6001,
       6002,
       6003,
-      6004
+      6004,
+      6005
     ],
     "ItemPoints": [
-      20,
-      20,
-      20,
-      20
+      10,
+      10,
+      10,
+      10,
+      5
     ],
-    "HashNeeded": 288000,
+    "HashNeeded": 576000,
     "UnlockRecipes": [
       429,
       69
@@ -9671,7 +9598,7 @@
     "Conclusion": "T化学能燃料棒描述",
     "Position": [
       25.0,
-      -39.0
+      -35.0
     ],
     "PreTechs": [
       1812
@@ -10040,15 +9967,17 @@
       6001,
       6002,
       6003,
-      6004
+      6004,
+      6005
     ],
     "ItemPoints": [
-      20,
-      20,
-      20,
-      20
+      10,
+      10,
+      10,
+      10,
+      5
     ],
-    "HashNeeded": 288000,
+    "HashNeeded": 576000,
     "UnlockRecipes": [],
     "UnlockFunctions": [],
     "UnlockValues": [],

@@ -97,7 +97,7 @@ namespace ProjectGenesis.Patches.UI.DisplayTextPatches
                             break;
 
                         case 16:
-                            __result = "仿星器".TranslateFromJson();
+                            __result = "聚变能".TranslateFromJson();
                             break;
                     }
 
