@@ -1137,7 +1137,7 @@
   {
     "Name": "I基础机械组件",
     "ZHCN": "一个通用组件包,用途广泛.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A common component, wild used.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ENUS": "A common component, wildly used.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "先进机械组件",
@@ -1147,7 +1147,7 @@
   {
     "Name": "I先进机械组件",
     "ZHCN": "一个通用组件包,用途广泛.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A common component, wild used.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ENUS": "A common component, wildly used.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "尖端机械组件",
@@ -1157,7 +1157,7 @@
   {
     "Name": "I尖端机械组件",
     "ZHCN": "一个通用组件包,用途广泛.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A common component, wild used.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ENUS": "A common component, wildly used.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "超级机械组件",
@@ -1492,7 +1492,7 @@
   {
     "Name": "覆层塑料基板",
     "ZHCN": "覆层塑料基板",
-    "ENUS": "Cladding plastic substrate"
+    "ENUS": "Resin substrate"
   },
   {
     "Name": "I覆层塑料基板",
@@ -1502,7 +1502,7 @@
   {
     "Name": "钛蚀刻覆层塑料基板",
     "ZHCN": "钛蚀刻覆层塑料基板",
-    "ENUS": "Titanium etching cladding plastic substrate"
+    "ENUS": "Titanium substrate"
   },
   {
     "Name": "I钛蚀刻覆层塑料基板",
@@ -1522,7 +1522,7 @@
   {
     "Name": "覆层生物基板",
     "ZHCN": "覆层生物基板",
-    "ENUS": "Cladding biological substrate"
+    "ENUS": "Biofiber substrate"
   },
   {
     "Name": "I覆层生物基板",
@@ -1532,7 +1532,7 @@
   {
     "Name": "钨蚀刻覆层生物基板",
     "ZHCN": "钨蚀刻覆层生物基板",
-    "ENUS": "Tungsten etching cladding biological substrate"
+    "ENUS": "Tungsten substrate"
   },
   {
     "Name": "I钨蚀刻覆层生物基板",
