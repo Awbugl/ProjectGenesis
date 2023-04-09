@@ -4600,7 +4600,7 @@
     "HeatValue": 0,
     "ReactorInc": 0.0,
     "IsFluid": false,
-    "Productive": false,
+    "Productive": true,
     "SubID": 0,
     "MiningFrom": "",
     "ProduceFrom": "",
