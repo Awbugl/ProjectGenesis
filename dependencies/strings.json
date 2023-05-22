@@ -400,6 +400,11 @@
     "ENUS": "Planet Atmosphere"
   },
   {
+    "Name": "盐水海洋",
+    "ZHCN": "盐水海洋",
+    "ENUS": "Salt water Ocean"
+  },  
+  {
     "Name": "需要氧气",
     "ZHCN": "此燃料需要含氧大气",
     "ENUS": "This fuel requires oxygen atmosphere"
@@ -1137,7 +1142,7 @@
   {
     "Name": "I基础机械组件",
     "ZHCN": "一个通用组件包,用途广泛.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A common component, wildly used.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ENUS": "A common component, widely used.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "先进机械组件",
@@ -1147,7 +1152,7 @@
   {
     "Name": "I先进机械组件",
     "ZHCN": "一个通用组件包,用途广泛.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A common component, wildly used.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ENUS": "A common component, widely used.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "尖端机械组件",
@@ -1157,7 +1162,7 @@
   {
     "Name": "I尖端机械组件",
     "ZHCN": "一个通用组件包,用途广泛.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A common component, wildly used.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ENUS": "A common component, widely used.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "超级机械组件",
