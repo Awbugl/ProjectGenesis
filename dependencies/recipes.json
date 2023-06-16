@@ -5169,7 +5169,7 @@
     "NonProductive": false
   },
   {
-    "ID": 512,
+    "ID": 507,
     "Name": "乙烯",
     "Description": "",
     "IconPath": "",
@@ -5193,7 +5193,7 @@
     "NonProductive": false
   },
   {
-    "ID": 513,
+    "ID": 508,
     "Name": "丙烯",
     "Description": "",
     "IconPath": "",
@@ -5217,7 +5217,7 @@
     "NonProductive": false
   },
   {
-    "ID": 514,
+    "ID": 509,
     "Name": "苯",
     "Description": "",
     "IconPath": "",
@@ -5241,7 +5241,7 @@
     "NonProductive": false
   },
   {
-    "ID": 515,
+    "ID": 510,
     "Name": "乙烯+水",
     "Description": "",
     "IconPath": "",
@@ -5263,6 +5263,122 @@
     "OutCounts": [
       1,
       2
+    ],
+    "Explicit": false,
+    "Handcraft": true,
+    "NonProductive": false
+  },
+  {
+    "ID": 512,
+    "Name": "硝基柴油",
+    "Description": "",
+    "IconPath": "",
+    "Type": 2,
+    "GridIndex": 3603,
+    "Time": 480,
+    "Input": [
+      7017,
+      6205,
+      1120,
+      1114
+    ],
+    "InCounts": [
+      2,
+      1,
+      6,
+      4
+    ],
+    "Output": [
+      6212,
+      1000
+    ],
+    "OutCounts": [
+      2,
+      3
+    ],
+    "Explicit": false,
+    "Handcraft": false,
+    "NonProductive": false
+  },
+  {
+    "ID": 513,
+    "Name": "偏二甲肼",
+    "Description": "",
+    "IconPath": "",
+    "Type": 2,
+    "GridIndex": 3602,
+    "Time": 600,
+    "Input": [
+      7002,
+      6205,
+      1120
+    ],
+    "InCounts": [
+      2,
+      2,
+      6
+    ],
+    "Output": [
+      6213,
+      1000
+    ],
+    "OutCounts": [
+      1,
+      2
+    ],
+    "Explicit": false,
+    "Handcraft": false,
+    "NonProductive": false
+  },
+  {
+    "ID": 514,
+    "Name": "火箭燃料",
+    "Description": "",
+    "IconPath": "",
+    "Type": 2,
+    "GridIndex": 3620,
+    "Time": 900,
+    "Input": [
+      6213,
+      7017
+    ],
+    "InCounts": [
+      4,
+      4
+    ],
+    "Output": [
+      6214
+    ],
+    "OutCounts": [
+      1
+    ],
+    "Explicit": false,
+    "Handcraft": false,
+    "NonProductive": false
+  },
+  {
+    "ID": 515,
+    "Name": "硝基柴油燃料棒",
+    "Description": "",
+    "IconPath": "",
+    "Type": 4,
+    "GridIndex": 3703,
+    "Time": 600,
+    "Input": [
+      6509,
+      6212,
+      7019
+    ],
+    "InCounts": [
+      1,
+      1,
+      10
+    ],
+    "Output": [
+      6216
+    ],
+    "OutCounts": [
+      1
     ],
     "Explicit": false,
     "Handcraft": true,
