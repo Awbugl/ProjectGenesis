@@ -82,9 +82,9 @@ namespace ProjectGenesis.Utils
             prefabDesc5.powerCoverRadius = 20.5f;
 
             ref var desc5 = ref itemProtos.Select(I风力涡轮机).prefabDesc;
-            desc5.powerConnectDistance = 32.5f;
+            desc5.powerConnectDistance = 24f;
             desc5.powerCoverRadius = 14.9f;
-            desc5.genEnergyPerTick = 25000;
+            desc5.genEnergyPerTick = 12500;
 
             ref var prefabDesc6 = ref itemProtos.Select(I火力发电机).prefabDesc;
             prefabDesc6.genEnergyPerTick = 200000;
@@ -108,7 +108,7 @@ namespace ProjectGenesis.Utils
             itemProtos.Select(I大型采矿机).prefabDesc.minerPeriod = 300000;
             itemProtos.Select(I原油采集站).prefabDesc.minerPeriod = 300000;
 
-            itemProtos.Select(I太阳能板).prefabDesc.genEnergyPerTick = 30000;
+            itemProtos.Select(I太阳能板).prefabDesc.genEnergyPerTick = 15000;
             itemProtos.Select(I地热发电机).prefabDesc.genEnergyPerTick = 400000;
 
             itemProtos.Select(I低速传送带).prefabDesc.beltSpeed = 3;

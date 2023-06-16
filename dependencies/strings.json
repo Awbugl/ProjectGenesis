@@ -1795,14 +1795,14 @@
     "ENUS": "Separation of helium from optical grating crystal.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
-    "Name": "石油裂化",
-    "ZHCN": "原油裂化",
-    "ENUS": "Oil Cracking"
+    "Name": "光子自增殖",
+    "ZHCN": "光子自增殖",
+    "ENUS": "Photon self-replication"
   },
   {
-    "Name": "R石油裂化",
-    "ZHCN": "将原油通过裂化反应转化成乙烯、甘油和氯苯.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Converting crude oil into ethylene, glycerin and chlorobenzene by cracking reactions.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "Name": "R光子自增殖",
+    "ZHCN": "利用光子结晶奇妙的特性，我们可以提供能量将光子激发为临界光子.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "With the wonderful properties of photon crystallization, we can provide energy to excite photons to critical photons.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "水电解",
