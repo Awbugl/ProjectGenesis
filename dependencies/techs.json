@@ -526,17 +526,13 @@
       24,
       702,
       707,
-      708,
-      709,
       710,
       717,
       718,
       505,
       506,
-      507,
       508,
-      509,
-      510
+      509
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -576,14 +572,9 @@
     ],
     "HashNeeded": 72000,
     "UnlockRecipes": [
-      551,
-      521,
       706,
-      511,
-      714,
       716,
       538,
-      719,
       720
     ],
     "UnlockFunctions": [],
@@ -9035,11 +9026,7 @@
       20
     ],
     "HashNeeded": 72000,
-    "UnlockRecipes": [
-      502,
-      503,
-      504
-    ],
+    "UnlockRecipes": [],
     "UnlockFunctions": [],
     "UnlockValues": [],
     "Published": true,
@@ -9753,8 +9740,7 @@
     "HashNeeded": 36000,
     "UnlockRecipes": [
       713,
-      501,
-      430
+      501
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
