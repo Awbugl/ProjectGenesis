@@ -51,6 +51,21 @@ namespace ProjectGenesis.Patches.Logic
         }
 
         [HarmonyPatch(typeof(UIPlanetDetail), "OnPlanetDataSet")]
+        [HarmonyPatch(typeof(UIStarDetail), "OnStarDataSet")]
+        [HarmonyTranspiler]
+        public static IEnumerable<CodeInstruction> OnDataSet_Transpiler(IEnumerable<CodeInstruction> instructions)
+        {
+            var matcher = new CodeMatcher(instructions);
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldc_I4, 1000));
+            matcher.SetOperandAndAdvance(7018);
+
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldc_I4, 1000));
+            matcher.SetOperandAndAdvance(7018);
+
+            return matcher.InstructionEnumeration();
+        }
+
+        [HarmonyPatch(typeof(UIPlanetDetail), "OnPlanetDataSet")]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> OnPlanetDataSet_Transpiler(IEnumerable<CodeInstruction> instructions)
         {

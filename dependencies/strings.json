@@ -645,64 +645,14 @@
     "ENUS": "A colorless odorless gas, toxic, can be used as raw materials for organic synthesis.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
-    "Name": "甲醇",
-    "ZHCN": "甲醇",
-    "ENUS": "Methanol"
-  },
-  {
-    "Name": "I甲醇",
-    "ZHCN": "结构最为简单的饱和一元醇，可作为有机合成的原料。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "The simplest saturated monohydric alcohol, can be used as raw materials for organic synthesis.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
-    "Name": "乙酸",
-    "ZHCN": "乙酸",
-    "ENUS": "Acetic acid"
-  },
-  {
-    "Name": "I乙酸",
-    "ZHCN": "有机一元酸，可作为有机合成的原料。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "An organic monobasic acid, can be used as raw materials for organic synthesis.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
-    "Name": "乙酸甲酯",
-    "ZHCN": "乙酸甲酯",
-    "ENUS": "Methyl acetate"
-  },
-  {
-    "Name": "I乙酸甲酯",
-    "ZHCN": "有机化合物，可作为有机合成的原料。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "This is an organic compound, can be used as raw materials for organic synthesis.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
-    "Name": "次氯酸",
-    "ZHCN": "次氯酸",
-    "ENUS": "Hypochloric acid"
-  },
-  {
-    "Name": "I次氯酸",
-    "ZHCN": "一元弱酸，具有氧化性，可用于合成偏二甲肼。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A weak acid, with oxidizing properties, can be used to synthesize 2-methyl-1,3-propanediol.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
-    "Name": "四硝基甲烷",
-    "ZHCN": "四硝基甲烷",
-    "ENUS": "Tetranitromethane"
-  },
-  {
-    "Name": "I四硝基甲烷",
-    "ZHCN": "有机化合物，有爆炸敏感性, 蕴含着巨大的能量，但好像还差些什么.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "An organic compound, explosive sensitivity, contains a huge amount of energy, but it seems to be missing something.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
     "Name": "硝基柴油",
     "ZHCN": "硝基柴油",
     "ENUS": "Nitro diesel oil"
   },
   {
     "Name": "I硝基柴油",
-    "ZHCN": "四硝基甲烷与柴油的混合物, 蕴含着巨大的能量，但好像还差些什么.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A mixture of tetranitromethane and diesel oil, contains a huge amount of energy, but it seems to be missing something.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "经过硝化反应的柴油，具有更高的能量密度。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Diesel oil after nitration reaction, with higher energy density.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "偏二甲肼",
@@ -1301,8 +1251,8 @@
   },
   {
     "Name": "二氨基联苯胺",
-    "ZHCN": "二氨基联苯胺",
-    "ENUS": "Diaminobenzidine"
+    "ZHCN": "对二氨基联苯",
+    "ENUS": "Diaminodiphenylamine"
   },
   {
     "Name": "I二氨基联苯胺",
@@ -1430,14 +1380,14 @@
     "ENUS": "Colorless liquid. Generally with a slight yellow, with a strong irritating odor, is a strong acid, often used to make nitro compounds.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
-    "Name": "盐水",
-    "ZHCN": "盐水",
-    "ENUS": "Salt water"
+    "Name": "海水",
+    "ZHCN": "海水",
+    "ENUS": "Seawater"
   },
   {
-    "Name": "I盐水",
-    "ZHCN": "氯化钠的水溶液，是氯碱工业的重要原料。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A solution of sodium chloride, is an important raw material for chlorine and sodium hydroxide.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "Name": "I海水",
+    "ZHCN": "大部分生态星球表面的水体，含有大量的钠盐，是一种无色透明的液体。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Most of the water on the surface of the ecological planet, containing a large number of sodium salts, is a colorless transparent liquid.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "氧",
@@ -1825,24 +1775,24 @@
     "ENUS": "Electrolysis of salt water using ion exchange membranes, producing hydrochloric acid and sodium hydroxide.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
-    "Name": "金属盐分解",
-    "ZHCN": "金属盐分解",
-    "ENUS": "Decomposition of metal salts"
+    "Name": "海水淡化",
+    "ZHCN": "海水淡化",
+    "ENUS": "Sea water desalination"
   },
   {
-    "Name": "R金属盐分解",
-    "ZHCN": "通过复杂的工序，从矿物质中分离富集纯化不同的金属离子.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Separation of different metal ions from minerals by complex processes.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "Name": "R海水淡化",
+    "ZHCN": "利用反渗透膜将海水中的盐分去除（多余的盐分将自动排放）.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Remove salt from seawater using reverse osmosis membranes (excess salt will be discharged automatically).\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
-    "Name": "甘油合成",
-    "ZHCN": "甘油合成",
-    "ENUS": "Glycerol synthesis"
+    "Name": "丙烯合成",
+    "ZHCN": "丙烯合成",
+    "ENUS": "Propylene synthesis"
   },
   {
-    "Name": "R甘油合成",
-    "ZHCN": "使用一氧化碳和氢合成甘油.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Synthesis of glycerol using carbon monoxide and hydrogen.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "Name": "R丙烯合成",
+    "ZHCN": "使用一氧化碳和氢合成丙烯.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Synthesis of propylene using carbon monoxide and hydrogen.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "高分子化合: 环氧氯丙烷",
@@ -1861,7 +1811,7 @@
   },
   {
     "Name": "R高分子化合: 双酚A",
-    "ZHCN": "使用氢氯酸, 苯酚和丙酮合成双酚A分子团.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ZHCN": "使用氢氯酸, 苯和丙烯合成双酚A分子团.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "ENUS": "Synthesis of bisphenol A molecular groups using hydrochloric acid, phenol and acetone.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
@@ -1966,8 +1916,8 @@
   },
   {
     "Name": "R高分子化合: 聚苯并咪唑",
-    "ZHCN": "二氨基联苯胺与间苯二甲酸二苯酯发生反应, 生成聚苯并咪唑和苯酚.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Diaminobenzidine reacts with diphenyl isophthalate to produce polybenzimidazole and phenol.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "对二氨基联苯与间苯二甲酸二苯酯发生反应, 生成聚苯并咪唑和苯.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Diaminobenzidine reacts with diphenyl ester of isophthalic acid to produce polybenzimidazole and benzene.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "钨矿精炼",
@@ -2771,8 +2721,8 @@
   },
   {
     "Name": "T化学能燃料棒描述",
-    "ZHCN": "利用化学反应为生产线和机甲供能。\n[由于显示限制，解锁配方显示不完全]",
-    "ENUS": "Using chemical reactions to power factories and mechs.\n[The unlocked recipe is not fully displayed due to display limitations]"
+    "ZHCN": "利用化学反应为生产线和机甲供能。",
+    "ENUS": "Using chemical reactions to power factories and mechs."
   },
   {
     "Name": "T先进化工",
@@ -3191,8 +3141,8 @@
   },
   {
     "Name": "T大气排放描述",
-    "ZHCN": "重构部分配方的生产流程，将堆积产物加热或粉碎，直接排放到大气中.\n<color=\"#FD965ECC\">配方列表：焦油分馏、原油裂化、剧毒液体离心、金属盐分解、水电解</color>",
-    "ENUS": "Reconstruct production flow for several recipes, so could heat or crush accumulated products and discharge them into the atmosphere.\n<color=\"#FD965ECC\">Affected Recipes: Tar fractionation, Oil Cracking, Toxic liquid centrifugation, Decomposition of metal salts, Water electrolysis</color>"
+    "ZHCN": "重构部分配方的生产流程，将堆积产物加热或粉碎，直接排放到大气中.\n<color=\"#FD965ECC\">配方列表：剧毒液体离心、水电解</color>",
+    "ENUS": "Reconstruct production flow for several recipes, so could heat or crush accumulated products and discharge them into the atmosphere.\n<color=\"#FD965ECC\">Affected Recipes: Toxic liquid centrifugation, Water electrolysis</color>"
   },
   {
     "Name": "T大气排放结果",

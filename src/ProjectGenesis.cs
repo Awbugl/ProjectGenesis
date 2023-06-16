@@ -53,9 +53,6 @@ namespace ProjectGenesis
         internal static ConfigFile configFile;
         internal static UIPlanetFocusWindow PlanetFocusWindow;
 
-        //无限堆叠开关(私货)
-        private readonly bool StackSizeButton = false;
-
         internal static int[] TableID;
         private Harmony Harmony;
 
@@ -199,7 +196,6 @@ namespace ProjectGenesis
             foreach (var proto in LDB.items.dataArray)
             {
                 StorageComponent.itemIsFuel[proto.ID] = proto.HeatValue > 0L;
-                if (StackSizeButton) proto.StackSize = 10000000;
                 StorageComponent.itemStackCount[proto.ID] = proto.StackSize;
             }
 

@@ -33,15 +33,15 @@ namespace ProjectGenesis.Utils
 
         internal static void AdjustPlanetThemeDataVanilla()
         {
-            var oceanicJungle = LDB.themes.Select(8);
-            oceanicJungle.WaterItemId = 7018;
-
             var gobi = LDB.themes.Select(12);
             gobi.WaterItemId = 7017;
             gobi.WaterHeight = -0.1f;
             gobi.oceanMat = LDB.themes.Select(22).oceanMat;
 
             foreach (var theme in LDB.themes.dataArray) AdjustTheme(theme);
+
+            var oceanicJungle = LDB.themes.Select(8);
+            oceanicJungle.WaterItemId = 1000;
         }
 
         internal static void AdjustTheme(ThemeProto theme)
@@ -49,7 +49,8 @@ namespace ProjectGenesis.Utils
             void TerrestrialAdjust()
             {
                 // for GalacticScale mod
-                if (theme.name == "OceanicJungle") theme.WaterItemId = 7018;
+                if (theme.name != "OceanicJungle" && theme.WaterItemId == 1000) theme.WaterItemId = 7018;
+
                 if (theme.name == "Gobi")
                 {
                     theme.WaterItemId = 7017;
@@ -68,9 +69,9 @@ namespace ProjectGenesis.Utils
                     theme.GasItems = Array.Empty<int>();
                     theme.GasSpeeds = Array.Empty<float>();
                 }
-                else if (PlanetGasData.ContainsKey(theme.ID))
+                else if (PlanetGasData.TryGetValue(theme.ID, out var value))
                 {
-                    theme.GasItems = PlanetGasData[theme.ID];
+                    theme.GasItems = value;
                     theme.GasSpeeds = theme.GasItems.Length == 1
                                           ? new float[] { theme.Wind * 0.7f }
                                           : new float[] { theme.Wind * 0.7f, theme.Wind * 0.18f };
