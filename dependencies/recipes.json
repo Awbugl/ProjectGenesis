@@ -5094,8 +5094,8 @@
   },
   {
     "ID": 501,
-    "Name": "燃油精炼",
-    "Description": "R燃油精炼",
+    "Name": "焦油裂化",
+    "Description": "R焦油裂化",
     "IconPath": "Assets/texpack/焦油循环",
     "Type": 3,
     "GridIndex": 3207,

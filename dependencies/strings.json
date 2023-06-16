@@ -1310,14 +1310,14 @@
     "ENUS": "A kind of white to brownish red crystalline organic compound, one of the raw materials for the synthesis of PBI.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
-    "Name": "二甲苯",
-    "ZHCN": "二甲苯",
-    "ENUS": "Xylene"
+    "Name": "苯",
+    "ZHCN": "苯",
+    "ENUS": "Benzene"
   },
   {
-    "Name": "I二甲苯",
-    "ZHCN": "苯环上两个氢被甲基取代的产物。是重要的有机化工原料。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "The product of replacing two hydrogen atoms on the benzene ring with methyl groups. It is an important organic chemical raw material.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "Name": "I苯",
+    "ZHCN": "由六个碳原子和六个氢原子组成的有机化合物，是重要的有机化工原料。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "An organic compound consisting of six carbon atoms and six hydrogen atoms, an important organic chemical raw material.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "二氯联苯胺",
@@ -1340,14 +1340,14 @@
     "ENUS": "An organic compound, usually white to light yellow crystalline powder.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
-    "Name": "甘油",
-    "ZHCN": "甘油",
-    "ENUS": "Glycerol"
+    "Name": "丙烯",
+    "ZHCN": "丙烯",
+    "ENUS": "Propylene"
   },
   {
-    "Name": "I甘油",
-    "ZHCN": "无色无臭透明黏稠液体，是重要的有机化工原料。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A colorless odorless transparent viscous liquid, an important organic chemical raw material.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "Name": "I丙烯",
+    "ZHCN": "无色气体，有类似石油气的气味，是重要的有机化工原料。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Colorless gas with a similar odor to petroleum gas, an important organic chemical raw material.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "环氧氯丙烷",
@@ -1921,8 +1921,18 @@
   },
   {
     "Name": "R焦油分馏",
-    "ZHCN": "从煤焦油中提取化合物.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Extraction of compounds from coal tar.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "从煤焦油中分馏出苯.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Extract benzene from coal tar.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+  },
+  {
+    "Name": "焦油裂化",
+    "ZHCN": "焦油裂化",
+    "ENUS": "Coal tar cracking"
+  },
+  {
+    "Name": "R焦油裂化",
+    "ZHCN": "将煤焦油裂化为丙烯.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Cracking coal tar into propylene.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "高分子化合: 邻苯二甲酸",
