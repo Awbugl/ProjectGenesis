@@ -8174,7 +8174,7 @@
   },
   {
     "ID": 7006,
-    "Name": "苯",
+    "Name": "二甲苯",
     "Description": "I二甲苯",
     "IconPath": "Assets/texpack/二甲苯",
     "GridIndex": 3208,
@@ -8286,7 +8286,7 @@
   },
   {
     "ID": 7009,
-    "Name": "丙烯",
+    "Name": "甘油",
     "Description": "I甘油",
     "IconPath": "Assets/texpack/甘油",
     "GridIndex": 3202,

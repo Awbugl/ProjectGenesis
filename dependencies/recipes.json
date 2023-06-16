@@ -590,10 +590,12 @@
     "GridIndex": 4501,
     "Time": 120,
     "Input": [
-      7001
+      7001,
+      7019
     ],
     "InCounts": [
-      3
+      2,
+      2
     ],
     "Output": [
       1115
@@ -3322,6 +3324,34 @@
     "NonProductive": false
   },
   {
+    "ID": 701,
+    "Name": "石油裂化",
+    "Description": "R石油裂化",
+    "IconPath": "Assets/texpack/石油裂化",
+    "Type": 3,
+    "GridIndex": 3202,
+    "Time": 360,
+    "Input": [
+      1007
+    ],
+    "InCounts": [
+      3
+    ],
+    "Output": [
+      7001,
+      7013,
+      7009
+    ],
+    "OutCounts": [
+      3,
+      2,
+      1
+    ],
+    "Explicit": true,
+    "Handcraft": false,
+    "NonProductive": false
+  },
+  {
     "ID": 702,
     "Name": "水电解",
     "Description": "R水电解",
@@ -3411,13 +3441,11 @@
     "Time": 120,
     "Input": [
       7009,
-      7014,
-      7019
+      7014
     ],
     "InCounts": [
       1,
-      1,
-      2
+      1
     ],
     "Output": [
       7010,
@@ -3425,7 +3453,7 @@
     ],
     "OutCounts": [
       1,
-      1
+      2
     ],
     "Explicit": true,
     "Handcraft": false,
@@ -3466,14 +3494,14 @@
     "GridIndex": 4101,
     "Time": 120,
     "Input": [
-      7009,
-      7006,
-      7019
+      7014,
+      7003,
+      7004
     ],
     "InCounts": [
       1,
       2,
-      3
+      1
     ],
     "Output": [
       7016,
@@ -3516,6 +3544,58 @@
     "NonProductive": false
   },
   {
+    "ID": 708,
+    "Name": "二硝基氯苯",
+    "Description": "",
+    "IconPath": "",
+    "Type": 16,
+    "GridIndex": 4103,
+    "Time": 120,
+    "Input": [
+      7017,
+      7013
+    ],
+    "InCounts": [
+      2,
+      2
+    ],
+    "Output": [
+      7008
+    ],
+    "OutCounts": [
+      2
+    ],
+    "Explicit": false,
+    "Handcraft": false,
+    "NonProductive": false
+  },
+  {
+    "ID": 709,
+    "Name": "二氯联苯胺",
+    "Description": "",
+    "IconPath": "",
+    "Type": 16,
+    "GridIndex": 4203,
+    "Time": 120,
+    "Input": [
+      7008,
+      1104
+    ],
+    "InCounts": [
+      2,
+      2
+    ],
+    "Output": [
+      7007
+    ],
+    "OutCounts": [
+      2
+    ],
+    "Explicit": false,
+    "Handcraft": false,
+    "NonProductive": false
+  },
+  {
     "ID": 710,
     "Name": "合成氨",
     "Description": "R合成氨",
@@ -3543,29 +3623,27 @@
   },
   {
     "ID": 711,
-    "Name": "高分子化合: 对二氨基联苯",
+    "Name": "高分子化合: 二氨基联苯胺",
     "Description": "R高分子化合: 二氨基联苯胺",
     "IconPath": "",
     "Type": 16,
     "GridIndex": 4303,
     "Time": 120,
     "Input": [
-      7006,
-      7017,
-      1120
+      7007,
+      7002
     ],
     "InCounts": [
       1,
-      2,
-      10
+      2
     ],
     "Output": [
       7005,
-      1000
+      7014
     ],
     "OutCounts": [
       1,
-      6
+      2
     ],
     "Explicit": true,
     "Handcraft": false,
@@ -3607,13 +3685,17 @@
       1114
     ],
     "InCounts": [
-      1
+      2
     ],
     "Output": [
-      7006
+      7003,
+      7006,
+      7004
     ],
     "OutCounts": [
-      3
+      4,
+      2,
+      2
     ],
     "Explicit": true,
     "Handcraft": false,
@@ -3656,22 +3738,18 @@
     "GridIndex": 4304,
     "Time": 120,
     "Input": [
-      7006,
-      7001,
-      7019
+      7003,
+      7012
     ],
     "InCounts": [
-      3,
-      1,
-      8
+      4,
+      2
     ],
     "Output": [
-      7011,
-      1000
+      7011
     ],
     "OutCounts": [
-      2,
-      6
+      2
     ],
     "Explicit": false,
     "Handcraft": false,
@@ -3779,6 +3857,32 @@
     ],
     "Output": [
       1007
+    ],
+    "OutCounts": [
+      1
+    ],
+    "Explicit": true,
+    "Handcraft": false,
+    "NonProductive": false
+  },
+  {
+    "ID": 720,
+    "Name": "甘油合成",
+    "Description": "R甘油合成",
+    "IconPath": "Assets/texpack/甘油制取",
+    "Type": 2,
+    "GridIndex": 4509,
+    "Time": 120,
+    "Input": [
+      6205,
+      1120
+    ],
+    "InCounts": [
+      3,
+      8
+    ],
+    "Output": [
+      7009
     ],
     "OutCounts": [
       1
@@ -4279,7 +4383,7 @@
     "InCounts": [
       1,
       1,
-      1
+      3
     ],
     "Output": [
       7708,
@@ -4311,11 +4415,9 @@
     ],
     "Output": [
       7709,
-      7006,
-      7019
+      7003
     ],
     "OutCounts": [
-      1,
       1,
       1
     ],
@@ -5064,6 +5166,34 @@
     "NonProductive": false
   },
   {
+    "ID": 551,
+    "Name": "聚乙烯（高效）",
+    "Description": "R聚乙烯（高效）",
+    "IconPath": "Assets/texpack/高效塑料",
+    "Type": 2,
+    "GridIndex": 4601,
+    "Time": 120,
+    "Input": [
+      1117,
+      7001,
+      7019
+    ],
+    "InCounts": [
+      1,
+      2,
+      2
+    ],
+    "Output": [
+      1115
+    ],
+    "OutCounts": [
+      4
+    ],
+    "Explicit": true,
+    "Handcraft": false,
+    "NonProductive": false
+  },
+  {
     "ID": 530,
     "Name": "处理器（极效）",
     "Description": "R处理器（极效）",
@@ -5110,6 +5240,88 @@
     "OutCounts": [
       1,
       3
+    ],
+    "Explicit": true,
+    "Handcraft": false,
+    "NonProductive": false
+  },
+  {
+    "ID": 502,
+    "Name": "轻燃油脱硫",
+    "Description": "R轻燃油脱硫",
+    "IconPath": "",
+    "Type": 2,
+    "GridIndex": 4106,
+    "Time": 180,
+    "Input": [
+      6204,
+      1120
+    ],
+    "InCounts": [
+      2,
+      2
+    ],
+    "Output": [
+      6202,
+      6215
+    ],
+    "OutCounts": [
+      2,
+      1
+    ],
+    "Explicit": true,
+    "Handcraft": false,
+    "NonProductive": false
+  },
+  {
+    "ID": 503,
+    "Name": "重燃油脱硫",
+    "Description": "R重燃油脱硫",
+    "IconPath": "",
+    "Type": 2,
+    "GridIndex": 4206,
+    "Time": 120,
+    "Input": [
+      6203,
+      1120
+    ],
+    "InCounts": [
+      4,
+      4
+    ],
+    "Output": [
+      6201,
+      6215
+    ],
+    "OutCounts": [
+      4,
+      2
+    ],
+    "Explicit": true,
+    "Handcraft": false,
+    "NonProductive": false
+  },
+  {
+    "ID": 504,
+    "Name": "柴油混合",
+    "Description": "R柴油混合",
+    "IconPath": "",
+    "Type": 2,
+    "GridIndex": 4306,
+    "Time": 180,
+    "Input": [
+      6202,
+      6201
+    ],
+    "InCounts": [
+      1,
+      3
+    ],
+    "Output": [
+      6219
+    ],
+    "OutCounts": [
+      4
     ],
     "Explicit": true,
     "Handcraft": false,
@@ -5170,24 +5382,162 @@
     "NonProductive": false
   },
   {
+    "ID": 507,
+    "Name": "甲醇",
+    "Description": "",
+    "IconPath": "",
+    "Type": 2,
+    "GridIndex": 4108,
+    "Time": 240,
+    "Input": [
+      6205,
+      1120
+    ],
+    "InCounts": [
+      1,
+      4
+    ],
+    "Output": [
+      6207
+    ],
+    "OutCounts": [
+      1
+    ],
+    "Explicit": false,
+    "Handcraft": false,
+    "NonProductive": false
+  },
+  {
+    "ID": 508,
+    "Name": "乙酸",
+    "Description": "",
+    "IconPath": "",
+    "Type": 2,
+    "GridIndex": 4208,
+    "Time": 240,
+    "Input": [
+      6205,
+      1120
+    ],
+    "InCounts": [
+      2,
+      4
+    ],
+    "Output": [
+      6208
+    ],
+    "OutCounts": [
+      1
+    ],
+    "Explicit": false,
+    "Handcraft": false,
+    "NonProductive": false
+  },
+  {
+    "ID": 509,
+    "Name": "乙酸甲酯",
+    "Description": "R乙酸甲酯",
+    "IconPath": "",
+    "Type": 2,
+    "GridIndex": 4308,
+    "Time": 240,
+    "Input": [
+      6208,
+      6207
+    ],
+    "InCounts": [
+      1,
+      1
+    ],
+    "Output": [
+      6209,
+      1000
+    ],
+    "OutCounts": [
+      1,
+      1
+    ],
+    "Explicit": true,
+    "Handcraft": false,
+    "NonProductive": false
+  },
+  {
+    "ID": 510,
+    "Name": "次氯酸",
+    "Description": "",
+    "IconPath": "",
+    "Type": 2,
+    "GridIndex": 4411,
+    "Time": 240,
+    "Input": [
+      7014,
+      7019
+    ],
+    "InCounts": [
+      2,
+      2
+    ],
+    "Output": [
+      6210
+    ],
+    "OutCounts": [
+      2
+    ],
+    "Explicit": false,
+    "Handcraft": false,
+    "NonProductive": false
+  },
+  {
+    "ID": 511,
+    "Name": "高分子化合: 四硝基甲烷",
+    "Description": "R高分子化合: 四硝基甲烷",
+    "IconPath": "",
+    "Type": 2,
+    "GridIndex": 4408,
+    "Time": 180,
+    "Input": [
+      7017,
+      6209
+    ],
+    "InCounts": [
+      4,
+      2
+    ],
+    "Output": [
+      6211,
+      1109,
+      1000
+    ],
+    "OutCounts": [
+      1,
+      5,
+      8
+    ],
+    "Explicit": true,
+    "Handcraft": false,
+    "NonProductive": false
+  },
+  {
     "ID": 512,
-    "Name": "乙烯",
+    "Name": "硝基柴油",
     "Description": "",
     "IconPath": "",
     "Type": 2,
     "GridIndex": 3603,
-    "Time": 120,
+    "Time": 480,
     "Input": [
-      1114
+      6211,
+      6219
     ],
     "InCounts": [
-      1
+      2,
+      2
     ],
     "Output": [
-      7001
+      6212
     ],
     "OutCounts": [
-      6
+      1
     ],
     "Explicit": false,
     "Handcraft": false,
@@ -5195,22 +5545,28 @@
   },
   {
     "ID": 513,
-    "Name": "丙烯",
+    "Name": "偏二甲肼",
     "Description": "",
     "IconPath": "",
     "Type": 2,
     "GridIndex": 3602,
-    "Time": 120,
+    "Time": 600,
     "Input": [
-      7001
+      6210,
+      7002,
+      6207
     ],
     "InCounts": [
-      3
+      1,
+      2,
+      2
     ],
     "Output": [
-      7009
+      6213,
+      7014
     ],
     "OutCounts": [
+      1,
       2
     ],
     "Explicit": false,
@@ -5219,20 +5575,22 @@
   },
   {
     "ID": 514,
-    "Name": "苯",
+    "Name": "火箭燃料",
     "Description": "",
     "IconPath": "",
     "Type": 2,
     "GridIndex": 3620,
-    "Time": 120,
+    "Time": 900,
     "Input": [
-      7009
+      6213,
+      7017
     ],
     "InCounts": [
-      2
+      4,
+      4
     ],
     "Output": [
-      7006
+      6214
     ],
     "OutCounts": [
       1
@@ -5243,27 +5601,27 @@
   },
   {
     "ID": 515,
-    "Name": "乙烯+水",
+    "Name": "硝基柴油燃料棒",
     "Description": "",
     "IconPath": "",
     "Type": 4,
     "GridIndex": 3703,
-    "Time": 120,
+    "Time": 600,
     "Input": [
-      6205,
-      1120
+      6509,
+      6212,
+      7019
     ],
     "InCounts": [
-      2,
-      8
+      1,
+      1,
+      10
     ],
     "Output": [
-      7001,
-      1000
+      6216
     ],
     "OutCounts": [
-      1,
-      2
+      1
     ],
     "Explicit": false,
     "Handcraft": true,
@@ -5395,6 +5753,32 @@
     ],
     "Output": [
       1305
+    ],
+    "OutCounts": [
+      2
+    ],
+    "Explicit": true,
+    "Handcraft": false,
+    "NonProductive": false
+  },
+  {
+    "ID": 521,
+    "Name": "硫酸（高效）",
+    "Description": "R硫酸（高效）",
+    "IconPath": "Assets/texpack/高效硫酸_新",
+    "Type": 2,
+    "GridIndex": 4315,
+    "Time": 120,
+    "Input": [
+      6215,
+      7019
+    ],
+    "InCounts": [
+      2,
+      8
+    ],
+    "Output": [
+      6999
     ],
     "OutCounts": [
       2
@@ -6119,6 +6503,34 @@
       1116
     ],
     "OutCounts": [
+      1
+    ],
+    "Explicit": true,
+    "Handcraft": false,
+    "NonProductive": true
+  },
+  {
+    "ID": 430,
+    "Name": "氯苯水解",
+    "Description": "R氯苯水解",
+    "IconPath": "",
+    "Type": 2,
+    "GridIndex": 4217,
+    "Time": 120,
+    "Input": [
+      7013,
+      1000
+    ],
+    "InCounts": [
+      1,
+      1
+    ],
+    "Output": [
+      7003,
+      7014
+    ],
+    "OutCounts": [
+      1,
       1
     ],
     "Explicit": true,
