@@ -5281,32 +5281,6 @@
     "NonProductive": false
   },
   {
-    "ID": 514,
-    "Name": "火箭燃料",
-    "Description": "",
-    "IconPath": "",
-    "Type": 2,
-    "GridIndex": 3620,
-    "Time": 900,
-    "Input": [
-      6213,
-      7017
-    ],
-    "InCounts": [
-      4,
-      4
-    ],
-    "Output": [
-      6214
-    ],
-    "OutCounts": [
-      1
-    ],
-    "Explicit": false,
-    "Handcraft": false,
-    "NonProductive": false
-  },
-  {
     "ID": 515,
     "Name": "硝基柴油燃料棒",
     "Description": "",
@@ -5354,34 +5328,6 @@
     ],
     "Output": [
       6217
-    ],
-    "OutCounts": [
-      1
-    ],
-    "Explicit": false,
-    "Handcraft": true,
-    "NonProductive": false
-  },
-  {
-    "ID": 517,
-    "Name": "火箭燃料棒",
-    "Description": "",
-    "IconPath": "",
-    "Type": 4,
-    "GridIndex": 3720,
-    "Time": 600,
-    "Input": [
-      6509,
-      6214,
-      7019
-    ],
-    "InCounts": [
-      1,
-      1,
-      6
-    ],
-    "Output": [
-      6218
     ],
     "OutCounts": [
       1
