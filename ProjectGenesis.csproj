@@ -100,6 +100,10 @@
         <Compile Include="src\Compatibility\PlanetwideMiningCompatibilityPlugin.cs" />
         <Compile Include="src\Patches\Logic\DisableLDBToolCachePatches.cs" />
         <Compile Include="src\Patches\Logic\InitnalTechPatches.cs" />
+        <Compile Include="src\Patches\Logic\LithographyAssembler\InternalFunctions.cs" />
+        <Compile Include="src\Patches\Logic\LithographyAssembler\LithographyAssemblerPatches.cs" />
+        <Compile Include="src\Patches\Logic\LithographyAssembler\LithographyData.cs" />
+        <Compile Include="src\Patches\Logic\LithographyAssembler\NebulaCompat.cs" />
         <Compile Include="src\Patches\Logic\MartixComplexPatches.cs" />
         <Compile Include="src\Patches\Logic\MegaAssembler\InternalFunctions.cs" />
         <Compile Include="src\Patches\Logic\MegaAssembler\MegaAssemblerPatches.cs" />
@@ -128,6 +132,7 @@
         <Compile Include="src\Patches\UI\FluidColorPatches.cs" />
         <Compile Include="src\Patches\UI\GridIndexExpandPatches.cs" />
         <Compile Include="src\Patches\UI\HarmonyLogPatches.cs" />
+        <Compile Include="src\Patches\UI\LithographyPatches.cs" />
         <Compile Include="src\Patches\UI\MultiProductionPatches.cs" />
         <Compile Include="src\Patches\UI\UIAbnormalityTipPatches.cs" />
         <Compile Include="src\Patches\UI\UIMonitorPatches.cs" />

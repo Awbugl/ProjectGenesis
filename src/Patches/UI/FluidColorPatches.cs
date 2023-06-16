@@ -14,7 +14,7 @@ namespace ProjectGenesis.Patches.UI
             var tankComponent = __instance.storage.tankPool[__instance.tankId];
             if (tankComponent.id != __instance.tankId) return;
 
-            if (FluidColor.ContainsKey(tankComponent.fluidId)) __instance.exchangeAndColoring(FluidColor[tankComponent.fluidId]);
+            if (FluidColor.TryGetValue(tankComponent.fluidId, out var value)) __instance.exchangeAndColoring(value);
         }
     }
 }

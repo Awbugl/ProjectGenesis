@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using NebulaAPI;
+using ProjectGenesis.Patches.Logic.LithographyAssembler;
 using ProjectGenesis.Patches.Logic.MegaAssembler;
 using ProjectGenesis.Patches.Logic.PlanetFocus;
 
@@ -148,10 +149,7 @@ namespace ProjectGenesis.Utils
             using (var p = NebulaModAPI.GetBinaryReader(data))
             using (var r = p.BinaryReader)
             {
-                slotData = new SlotData
-                           {
-                               dir = (IODir)r.ReadInt32(), beltId = r.ReadInt32(), storageIdx = r.ReadInt32(), counter = r.ReadInt32()
-                           };
+                slotData = new SlotData { dir = (IODir)r.ReadInt32(), beltId = r.ReadInt32(), storageIdx = r.ReadInt32(), counter = r.ReadInt32() };
 
 
                 p.BinaryReader.Close();
@@ -167,8 +165,8 @@ namespace ProjectGenesis.Utils
         public override void ProcessPacket(SyncSlotData packet, INebulaConnection conn)
             => SyncSlotData.OnReceive(packet.Guid, packet.PlanetId, packet.SlotId, packet.EntityId, packet.SlotData);
     }
-    
- public class SyncPlanetFocusData
+
+    public class SyncPlanetFocusData
     {
         public SyncPlanetFocusData() { }
 
@@ -189,10 +187,7 @@ namespace ProjectGenesis.Utils
         public int Index { get; set; }
         public int FocusId { get; set; }
 
-        internal static void Sync(
-            int planetId,
-            int index,
-            int focusId)
+        internal static void Sync(int planetId, int index, int focusId)
         {
             if (NebulaModAPI.IsMultiplayerActive)
                 NebulaModAPI.MultiplayerSession.Network.SendPacket(new SyncPlanetFocusData(ProjectGenesis.MODGUID, planetId, index, focusId));
@@ -215,11 +210,67 @@ namespace ProjectGenesis.Utils
         public override void ProcessPacket(SyncPlanetFocusData packet, INebulaConnection conn)
             => SyncPlanetFocusData.OnReceive(packet.Guid, packet.PlanetId, packet.Index, packet.FocusId);
     }
-   
+
+    public class SyncLithographyData
+    {
+        public SyncLithographyData() { }
+
+        public SyncLithographyData(
+            string guid,
+            int planetId,
+            int assemblerId,
+            int itemId,
+            int itemCount,
+            int itemInc)
+        {
+            Guid = guid;
+            PlanetId = planetId;
+            AssemblerId = assemblerId;
+            ItemId = itemId;
+            ItemCount = itemCount;
+            ItemInc = itemInc;
+        }
+
+        public string Guid { get; set; }
+        public int PlanetId { get; set; }
+        public int AssemblerId { get; set; }
+        public int ItemId { get; set; }
+        public int ItemCount { get; set; }
+        public int ItemInc { get; set; }
+
+        internal static void Sync(int planetId, int assemblerId, LithographyData data)
+        {
+            if (NebulaModAPI.IsMultiplayerActive)
+                NebulaModAPI.MultiplayerSession.Network.SendPacket(new SyncLithographyData(ProjectGenesis.MODGUID, planetId, assemblerId, data.ItemId,
+                                                                                           data.ItemCount, data.ItemInc));
+        }
+
+        internal static void OnReceive(
+            string guid,
+            int planetId,
+            int assemblerId,
+            int itemId,
+            int itemCount,
+            int itemInc)
+
+        {
+            if (guid != ProjectGenesis.MODGUID) return;
+            LithographyAssemblerPatches.SyncLithography((planetId, assemblerId),
+                                                        new LithographyData { ItemId = itemId, ItemCount = itemCount, ItemInc = itemInc });
+        }
+    }
+
+    [RegisterPacketProcessor]
+    public class SyncLithographyDataProcessor : BasePacketProcessor<SyncLithographyData>
+    {
+        public override void ProcessPacket(SyncLithographyData packet, INebulaConnection conn)
+            => SyncLithographyData.OnReceive(packet.Guid, packet.PlanetId, packet.AssemblerId, packet.ItemId, packet.ItemCount, packet.ItemInc);
+    }
+
     public class GenesisBookPlanetLoadRequest
     {
         public int PlanetId { get; set; }
-        
+
         public GenesisBookPlanetLoadRequest() { }
 
         public GenesisBookPlanetLoadRequest(int planetId)
@@ -241,6 +292,7 @@ namespace ProjectGenesis.Utils
             {
                 MegaAssemblerPatches.ExportPlanetData(packet.PlanetId, p.BinaryWriter);
                 PlanetFocusPatches.ExportPlanetFocus(packet.PlanetId, p.BinaryWriter);
+                LithographyAssemblerPatches.ExportPlanetData(packet.PlanetId, p.BinaryWriter);
                 data = p.CloseAndGetBytes();
             }
 
@@ -277,13 +329,14 @@ namespace ProjectGenesis.Utils
         public static void ProcessBytesLater(int planetId)
         {
             if (!NebulaModAPI.IsMultiplayerActive || NebulaModAPI.MultiplayerSession.LocalPlayer.IsHost) return;
-            if (!PendingData.TryGetValue(planetId, out byte[] bytes)) return;
+            if (!PendingData.TryGetValue(planetId, out var bytes)) return;
             PendingData.Remove(planetId);
 
             using (var p = NebulaModAPI.GetBinaryReader(bytes))
             {
                 MegaAssemblerPatches.ImportPlanetData(p.BinaryReader);
                 PlanetFocusPatches.ImportPlanetFocus(p.BinaryReader);
+                LithographyAssemblerPatches.ImportPlanetData(p.BinaryReader);
             }
         }
     }
