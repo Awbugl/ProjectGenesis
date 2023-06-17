@@ -12,7 +12,7 @@ namespace ProjectGenesis.Patches.Logic.LithographyAssembler
         [HarmonyPatch(typeof(FactorySystem), "TakeBackItems_Assembler")]
         public static void FactorySystem_TakeBackItems_Assembler(ref FactorySystem __instance, Player player, int asmId)
             => SetEmpty(__instance.planet.id, asmId);
-        
+
         [HarmonyPostfix]
         [HarmonyPatch(typeof(PlanetFactory), "EntityFastFillIn")]
         public static void PlanetFactory_EntityFastFillIn_Postfix(

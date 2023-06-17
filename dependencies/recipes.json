@@ -702,8 +702,8 @@
     "GridIndex": 1703,
     "Time": 180,
     "Input": [
-      1106,
-      1113
+      1107,
+      1112
     ],
     "InCounts": [
       1,
@@ -939,10 +939,12 @@
     "Time": 240,
     "Input": [
       1124,
-      1119
+      1113,      
+      7708
     ],
     "InCounts": [
-      1,
+      2,
+      2,
       1
     ],
     "Output": [
@@ -1464,7 +1466,7 @@
     "GridIndex": 1704,
     "Time": 180,
     "Input": [
-      1126,
+      1303,
       1402
     ],
     "InCounts": [
@@ -2700,7 +2702,7 @@
     "GridIndex": 1606,
     "Time": 240,
     "Input": [
-      1205,
+      1304,
       1127
     ],
     "InCounts": [
@@ -2727,7 +2729,7 @@
     "Time": 180,
     "Input": [
       1209,
-      1304
+      1305
     ],
     "InCounts": [
       1,
@@ -3349,7 +3351,7 @@
     ],
     "Explicit": true,
     "Handcraft": false,
-    "NonProductive": false
+    "NonProductive": true
   },
   {
     "ID": 702,
@@ -4767,14 +4769,14 @@
     "IconPath": "Assets/texpack/高效奇异物质",
     "Type": 5,
     "GridIndex": 1506,
-    "Time": 180,
+    "Time": 240,
     "Input": [
-      1112,
+      1012,
       1121
     ],
     "InCounts": [
-      1,
-      4
+      2,
+      8
     ],
     "Output": [
       1127
@@ -4958,7 +4960,7 @@
       7710
     ],
     "InCounts": [
-      12
+      6
     ],
     "Output": [
       7709
@@ -5017,6 +5019,78 @@
       4
     ],
     "Explicit": true,
+    "Handcraft": false,
+    "NonProductive": false
+  },
+  {
+    "ID": 502,
+    "Name": "玻璃透镜",
+    "Description": "",
+    "IconPath": "",
+    "Type": 4,
+    "GridIndex": 1309,
+    "Time": 180,
+    "Input": [
+      1110
+    ],
+    "InCounts": [      
+      2
+    ],
+    "Output": [
+      6201     
+    ],
+    "OutCounts": [     
+      1
+    ],
+    "Explicit": false,
+    "Handcraft": false,
+    "NonProductive": false
+  },
+  {
+    "ID": 503,
+    "Name": "金刚石透镜",
+    "Description": "",
+    "IconPath": "",
+    "Type": 4,
+    "GridIndex": 1409,
+    "Time": 180,
+    "Input": [
+      1112
+    ],
+    "InCounts": [
+      2
+    ],
+    "Output": [
+      6202
+    ],
+    "OutCounts": [
+      1
+    ],
+    "Explicit": false,
+    "Handcraft": false,
+    "NonProductive": false
+  },
+  {
+    "ID": 504,
+    "Name": "卡西米尔透镜",
+    "Description": "",
+    "IconPath": "",
+    "Type": 4,
+    "GridIndex": 1509,
+    "Time": 180,
+    "Input": [
+      1126
+    ],
+    "InCounts": [
+      2
+    ],
+    "Output": [
+      6203
+    ],
+    "OutCounts": [
+      1
+    ],
+    "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },

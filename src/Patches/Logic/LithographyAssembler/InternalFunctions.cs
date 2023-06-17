@@ -12,11 +12,13 @@ namespace ProjectGenesis.Patches.Logic.LithographyAssembler
             {
                 case 751:
                 case 752:
+                    return 6201;
                 case 753:
                 case 754:
+                    return 6202;
                 case 755:
                 case 756:
-                    return 1209;
+                    return 6203;
 
                 default:
                     return 0;

@@ -15,6 +15,7 @@ namespace ProjectGenesis.Patches.UI
         private static GameObject _obj;
         private static GameObject _iconObj;
         private static Text _text;
+        private static Text _count;
         private static Image _icon;
         private static UIButton _uiButton;
         private static Button _button;
@@ -48,18 +49,26 @@ namespace ProjectGenesis.Patches.UI
                 _textobj.transform.localScale = Vector3.one;
                 _textobj.transform.localPosition = new Vector3(0, -42, 0);
                 _text = _textobj.transform.GetComponent<Text>();
+                Object.DestroyImmediate(_textobj.GetComponent<Localizer>());
+                _text.text = "透镜".TranslateFromJson();
                 _text.fontSize = 16;
 
                 oriIconObj = GameObject.Find("UI Root/Overlay Canvas/In Game/Windows/Power Generator Window/produce-2/fuel/fuel-icon");
                 _iconObj = Object.Instantiate(oriIconObj, parent);
                 _iconObj.transform.localScale = Vector3.one;
                 _icon = _iconObj.GetComponent<Image>();
-                _iconObj.transform.Find("cnt-text").GetComponent<Text>().text = "";
+                _count = _iconObj.transform.Find("cnt-text").GetComponent<Text>();
+                _count.text = "0";
+                _count.fontSize = 16;
 
                 var oriButtonObj = GameObject.Find("UI Root/Overlay Canvas/In Game/Windows/Power Generator Window/produce-2/fuel/button");
                 var emptyRodButtonObj = Object.Instantiate(oriButtonObj, parent);
                 emptyRodButtonObj.transform.localScale = Vector3.one;
                 _uiButton = emptyRodButtonObj.GetComponent<UIButton>();
+                _uiButton.tips.itemCount = 0;
+                _uiButton.tips.itemInc = 0;
+                _uiButton.tips.type = UIButton.ItemTipType.IgnoreIncPoint;
+
                 _button = emptyRodButtonObj.GetComponent<Button>();
                 _button.onClick.RemoveAllListeners();
                 _button.onClick.AddListener(OnEmptyRodIconClick);
@@ -83,9 +92,53 @@ namespace ProjectGenesis.Patches.UI
                 return;
             }
 
-            _obj.SetActive(assemblerComponent.recipeType == (ERecipeType_1)Utils_ERecipeType.电路蚀刻);
+            var value = assemblerComponent.recipeType == (ERecipeType_1)Utils_ERecipeType.电路蚀刻;
+
+            if (value)
+                ChangeLithographyData(__instance, assemblerComponent);
+            else
+                _uiButton.tips.itemId = 0;
+
+            _iconObj.SetActive(value);
+            _obj.SetActive(value);
         }
 
+        private static void ChangeLithographyData(UIAssemblerWindow __instance, AssemblerComponent assemblerComponent)
+        {
+            var data = LithographyAssemblerPatches.GetLithographyData(__instance.factorySystem.planet.id, __instance.assemblerId);
+            var lithographyLensId = LithographyAssemblerPatches.GetLithographyLenId(assemblerComponent.recipeId);
+
+            if (lithographyLensId != 0 && lithographyLensId != data.ItemId)
+            {
+                var itemProto = LDB.items.Select(lithographyLensId);
+                _icon.sprite = itemProto.iconSprite;
+                _uiButton.tips.itemId = lithographyLensId;
+                _text.text = itemProto.name;
+                _count.text = "0";
+
+                LithographyAssemblerPatches.SetEmpty(__instance.factorySystem.planet.id, __instance.assemblerId);
+
+                data.ItemId = lithographyLensId;
+                data.ItemCount = 0;
+                data.ItemInc = 0;
+
+                LithographyAssemblerPatches.SetLithographyData(__instance.factorySystem.planet.id, __instance.assemblerId, data);
+            }
+        }
+
+        [HarmonyPostfix]
+        [HarmonyPatch(typeof(UIAssemblerWindow), "OnAssemblerIdChange")]
+        public static void UIAssemblerWindow_OnAssemblerIdChange_Postfix(ref UIAssemblerWindow __instance)
+        {
+            if (_obj.activeSelf)
+            {
+                if (__instance.assemblerId == 0 || __instance.factorySystem == null) return;
+                ref var assemblerComponent = ref __instance.factorySystem.assemblerPool[__instance.assemblerId];
+                if (assemblerComponent.id != __instance.assemblerId) return;
+                ChangeLithographyData(__instance, assemblerComponent);
+            }
+        }
+        
         [HarmonyPostfix]
         [HarmonyPatch(typeof(UIAssemblerWindow), "_OnUpdate")]
         public static void UIAssemblerWindow_OnUpdate_Postfix(ref UIAssemblerWindow __instance)
@@ -95,26 +148,13 @@ namespace ProjectGenesis.Patches.UI
                 if (__instance.assemblerId == 0 || __instance.factorySystem == null) return;
                 ref var assemblerComponent = ref __instance.factorySystem.assemblerPool[__instance.assemblerId];
                 if (assemblerComponent.id != __instance.assemblerId) return;
-
                 var data = LithographyAssemblerPatches.GetLithographyData(__instance.factorySystem.planet.id, __instance.assemblerId);
 
-                if (data.ItemId != 0)
+                if (data.ItemCount == 0)
                 {
-                    _iconObj.SetActive(true);
-                    var itemProto = LDB.items.Select(data.ItemId);
-                    _icon.sprite = itemProto.iconSprite;
-                    _uiButton.tips.itemId = itemProto.ID;
-                    _uiButton.tips.itemCount = data.ItemCount;
+                    __instance.stateText.text = "缺少透镜".TranslateFromJson();
+                    __instance.stateText.color = __instance.workStoppedColor;
                 }
-                else
-                {
-                    _iconObj.SetActive(false);
-                    _uiButton.tips.itemId = 0;
-                    _uiButton.tips.itemCount = 0;
-                }
-
-                _uiButton.tips.itemInc = 0;
-                _uiButton.tips.type = UIButton.ItemTipType.IgnoreIncPoint;
             }
         }
 
@@ -166,6 +206,7 @@ namespace ProjectGenesis.Patches.UI
                     data.ItemCount = 1;
                     data.ItemInc = itemInc;
 
+                    _count.text = "1";
                     LithographyAssemblerPatches.SetLithographyData(assemblerWindow.factorySystem.planet.id, assemblerWindow.assemblerId, data);
 
                     player.AddHandItemCount_Unsafe(-1);
@@ -193,10 +234,12 @@ namespace ProjectGenesis.Patches.UI
 
                     if (VFInput.shift || VFInput.control)
                     {
+                        _count.text = "0";
                         LithographyAssemblerPatches.SetEmpty(assemblerWindow.factorySystem.planet.id, assemblerWindow.assemblerId);
                         return;
                     }
 
+                    _count.text = "0";
                     LithographyAssemblerPatches.SetEmpty(assemblerWindow.factorySystem.planet.id, assemblerWindow.assemblerId, false);
                     return;
                 }
@@ -207,10 +250,12 @@ namespace ProjectGenesis.Patches.UI
 
                 if (VFInput.shift || VFInput.control)
                 {
+                    _count.text = "0";
                     LithographyAssemblerPatches.SetEmpty(assemblerWindow.factorySystem.planet.id, assemblerWindow.assemblerId);
                     return;
                 }
 
+                _count.text = "0";
                 LithographyAssemblerPatches.SetEmpty(assemblerWindow.factorySystem.planet.id, assemblerWindow.assemblerId, false);
                 return;
             }

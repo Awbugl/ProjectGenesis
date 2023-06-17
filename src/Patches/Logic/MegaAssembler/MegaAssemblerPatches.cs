@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using System.Reflection.Emit;
 using HarmonyLib;
+using ProjectGenesis.Patches.Logic.LithographyAssembler;
 using ProjectGenesis.Utils;
 using ERecipeType_1 = ERecipeType;
 
@@ -36,18 +37,22 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
         [HarmonyPatch(typeof(FactorySystem), "GameTick", typeof(long), typeof(bool))]
         [HarmonyPatch(typeof(FactorySystem), "GameTick", typeof(long), typeof(bool), typeof(int), typeof(int), typeof(int))]
         [HarmonyTranspiler]
-        public static IEnumerable<CodeInstruction> FactorySystem_GameTick_Transpiler(IEnumerable<CodeInstruction> instructions)
+        public static IEnumerable<CodeInstruction> FactorySystem_GameTick_Transpiler(IEnumerable<CodeInstruction> instructions, ILGenerator generator)
         {
-            var matcher = new CodeMatcher(instructions).MatchForward(false, new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldloc_S),
-                                                                     new CodeMatch(OpCodes.Ldloc_1), new CodeMatch(OpCodes.Ldloc_2),
-                                                                     new CodeMatch(OpCodes.Call, AssemblerComponent_InternalUpdate_Method));
+            var matcher = new CodeMatcher(instructions, generator).MatchForward(false, new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldloc_S),
+                                                                                new CodeMatch(OpCodes.Ldloc_1), new CodeMatch(OpCodes.Ldloc_2),
+                                                                                new CodeMatch(OpCodes.Call,
+                                                                                              AssemblerComponent_InternalUpdate_Method));
 
             var local1 = matcher.Operand;
             var power1 = matcher.Advance(1).Operand;
 
-            matcher.Advance(4).InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_S, local1), new CodeInstruction(OpCodes.Ldarg_0),
-                                                new CodeInstruction(OpCodes.Ldloc_S, power1),
-                                                new CodeInstruction(OpCodes.Call, MegaAssembler_AssemblerComponent_InternalUpdate_Patch_Method));
+            matcher.CreateLabelAt(matcher.Pos + 4, out var label1);
+
+            matcher.Advance(-1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldc_I4_0), new CodeInstruction(OpCodes.Ldloc_S, local1),
+                                                 new CodeInstruction(OpCodes.Ldarg_0), new CodeInstruction(OpCodes.Ldloc_S, power1),
+                                                 new CodeInstruction(OpCodes.Call, MegaAssembler_AssemblerComponent_InternalUpdate_Patch_Method),
+                                                 new CodeInstruction(OpCodes.Brfalse_S, label1), new CodeInstruction(OpCodes.Pop));
 
             matcher.MatchForward(false, new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldloc_1),
                                  new CodeMatch(OpCodes.Ldloc_2), new CodeMatch(OpCodes.Call, AssemblerComponent_InternalUpdate_Method));
@@ -57,9 +62,12 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
                 var local2 = matcher.Operand;
                 var power2 = matcher.Advance(1).Operand;
 
-                matcher.Advance(4).InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_S, local2), new CodeInstruction(OpCodes.Ldarg_0),
-                                                    new CodeInstruction(OpCodes.Ldloc_S, power2),
-                                                    new CodeInstruction(OpCodes.Call, MegaAssembler_AssemblerComponent_InternalUpdate_Patch_Method));
+                matcher.CreateLabelAt(matcher.Pos + 4, out var label2);
+
+                matcher.Advance(-1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldc_I4_0), new CodeInstruction(OpCodes.Ldloc_S, local2),
+                                                     new CodeInstruction(OpCodes.Ldarg_0), new CodeInstruction(OpCodes.Ldloc_S, power2),
+                                                     new CodeInstruction(OpCodes.Call, MegaAssembler_AssemblerComponent_InternalUpdate_Patch_Method),
+                                                     new CodeInstruction(OpCodes.Brfalse_S, label2), new CodeInstruction(OpCodes.Pop));
             }
 
             return matcher.InstructionEnumeration();
@@ -67,28 +75,34 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
 
         [HarmonyPatch(typeof(FactorySystem), "GameTick", typeof(long), typeof(bool), typeof(int), typeof(int), typeof(int))]
         [HarmonyTranspiler]
-        public static IEnumerable<CodeInstruction> FactorySystem_GameTick_Transpiler_2(IEnumerable<CodeInstruction> instructions)
+        public static IEnumerable<CodeInstruction> FactorySystem_GameTick_Transpiler_2(
+            IEnumerable<CodeInstruction> instructions,
+            ILGenerator generator)
         {
-            var matcher = new CodeMatcher(instructions).MatchForward(false, new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldelema),
-                                                                     new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldloc_1),
-                                                                     new CodeMatch(OpCodes.Ldloc_2),
-                                                                     new CodeMatch(OpCodes.Call, AssemblerComponent_InternalUpdate_Method));
+            var matcher = new CodeMatcher(instructions, generator).MatchForward(false, new CodeMatch(OpCodes.Ldarg_0), new CodeMatch(OpCodes.Ldfld),
+                                                                                new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldelema),
+                                                                                new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldloc_1),
+                                                                                new CodeMatch(OpCodes.Ldloc_2),
+                                                                                new CodeMatch(OpCodes.Call,
+                                                                                              AssemblerComponent_InternalUpdate_Method));
 
-
-            var index = matcher.Operand;
+            var index = matcher.Advance(2).Operand;
             var power = matcher.Advance(2).Operand;
 
-            matcher.Advance(4).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0),
-                                                new CodeInstruction(OpCodes.Ldfld, FactorySystem_AssemblerPool_Field),
-                                                new CodeInstruction(OpCodes.Ldloc_S, index),
-                                                new CodeInstruction(OpCodes.Ldelema, typeof(AssemblerComponent)),
-                                                new CodeInstruction(OpCodes.Ldarg_0), new CodeInstruction(OpCodes.Ldloc_S, power),
-                                                new CodeInstruction(OpCodes.Call, MegaAssembler_AssemblerComponent_InternalUpdate_Patch_Method));
+            matcher.CreateLabelAt(matcher.Pos + 4, out var label);
+
+            matcher.Advance(-4).InsertAndAdvance(new CodeInstruction(OpCodes.Ldc_I4_0), new CodeInstruction(OpCodes.Ldarg_0),
+                                                 new CodeInstruction(OpCodes.Ldfld, FactorySystem_AssemblerPool_Field),
+                                                 new CodeInstruction(OpCodes.Ldloc_S, index),
+                                                 new CodeInstruction(OpCodes.Ldelema, typeof(AssemblerComponent)),
+                                                 new CodeInstruction(OpCodes.Ldarg_0), new CodeInstruction(OpCodes.Ldloc_S, power),
+                                                 new CodeInstruction(OpCodes.Call, MegaAssembler_AssemblerComponent_InternalUpdate_Patch_Method),
+                                                 new CodeInstruction(OpCodes.Brfalse_S, label), new CodeInstruction(OpCodes.Pop));
 
             return matcher.InstructionEnumeration();
         }
 
-        public static void GameTick_AssemblerComponent_InternalUpdate_Patch(
+        public static bool GameTick_AssemblerComponent_InternalUpdate_Patch(
             ref AssemblerComponent __instance,
             FactorySystem factorySystem,
             float power)
@@ -108,7 +122,7 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
                 UpdateInputSlots(ref __instance, power, factory, cargoTraffic, slotdata, entitySignPool);
             }
 
-            if (power < 0.1f) return;
+            if (power < 0.1f) return false;
 
             // 化工技术革新效果
             if (GameMain.history.TechUnlocked(ProtoIDUsedByPatches.T化工技术革新))
@@ -120,6 +134,11 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
                     if (__instance.speed == 20000)
                         __instance.speed = 40000;
             }
+
+            if (__instance.recipeType != (ERecipeType_1)Utils.ERecipeType.电路蚀刻) return true;
+
+            var data = LithographyAssemblerPatches.GetLithographyData(factorySystem.planet.id, __instance.id);
+            return data.ItemCount > 0;
         }
 
         private static void UpdateOutputSlots(
