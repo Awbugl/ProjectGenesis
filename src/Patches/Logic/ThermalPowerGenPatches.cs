@@ -71,7 +71,7 @@ namespace ProjectGenesis.Patches.Logic
             return matcher.InstructionEnumeration();
         }
 
-        private static readonly int[] FuelRods = { 1801, 6216, 6217, 6218 };
+        private static readonly int[] FuelRods = { 1801, 6216, 6217 };
 
         public static int[] UIPowerGenerator_InsertMethod(UIPowerGeneratorWindow window)
         {

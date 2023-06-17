@@ -1338,7 +1338,7 @@
       40
     ],
     "FuelType": 1,
-    "HeatValue": 9000000,
+    "HeatValue": 3000000,
     "ReactorInc": 1.0,
     "IsFluid": true,
     "Productive": true,
@@ -1379,7 +1379,7 @@
       40
     ],
     "FuelType": 1,
-    "HeatValue": 9000000,
+    "HeatValue": 3000000,
     "ReactorInc": 1.0,
     "IsFluid": true,
     "Productive": true,
@@ -2657,7 +2657,7 @@
       40
     ],
     "FuelType": 1,
-    "HeatValue": 64800000,
+    "HeatValue": 60000000,
     "ReactorInc": 2.0,
     "IsFluid": false,
     "Productive": true,
@@ -7558,8 +7558,8 @@
       40
     ],
     "FuelType": 1,
-    "HeatValue": 9000000,
-    "ReactorInc": 0.5,
+    "HeatValue": 900000,
+    "ReactorInc": 0,
     "IsFluid": true,
     "Productive": true,
     "SubID": 0,
