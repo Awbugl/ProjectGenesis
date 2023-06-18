@@ -133,13 +133,13 @@
     ],
     "InCounts": [
       2,
-      2
+      1
     ],
     "Output": [
       1301
     ],
     "OutCounts": [
-      4
+      2
     ],
     "Explicit": false,
     "Handcraft": true,
@@ -1981,7 +1981,7 @@
     "Description": "R光子物质化",
     "IconPath": "Icons/ItemRecipe/photon-formula",
     "Type": 5,
-    "GridIndex": 1408,
+    "GridIndex": 1409,
     "Time": 120,
     "Input": [
       1208
@@ -2089,7 +2089,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 1407,
+    "GridIndex": 1408,
     "Time": 600,
     "Input": [
       1209
@@ -2113,7 +2113,7 @@
     "Description": "R空间翘曲器（高级）",
     "IconPath": "Icons/ItemRecipe/space-warper-lv2",
     "Type": 4,
-    "GridIndex": 1507,
+    "GridIndex": 1508,
     "Time": 600,
     "Input": [
       6005
@@ -2779,7 +2779,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 1406,
+    "GridIndex": 1407,
     "Time": 360,
     "Input": [
       1126,
@@ -3528,6 +3528,32 @@
     "NonProductive": false
   },
   {
+    "ID": 709,
+    "Name": "钛晶石（高效）",
+    "Description": "R钛晶石（高效）",
+    "IconPath": "Assets/texpack/高效钛晶石",
+    "Type": 4,
+    "GridIndex": 1506,
+    "Time": 180,
+    "Input": [
+      1107,
+      1117
+    ],
+    "InCounts": [
+      2,
+      1
+    ],
+    "Output": [
+      6204
+    ],
+    "OutCounts": [
+      2
+    ],
+    "Explicit": true,
+    "Handcraft": false,
+    "NonProductive": false
+  },
+  {
     "ID": 710,
     "Name": "合成氨",
     "Description": "R合成氨",
@@ -3637,7 +3663,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 1209,
+    "GridIndex": 1406,
     "Time": 180,
     "Input": [
       1107,
@@ -4771,7 +4797,7 @@
     "Description": "R质能储存（高效）",
     "IconPath": "Assets/texpack/高效反物质",
     "Type": 5,
-    "GridIndex": 1508,
+    "GridIndex": 1509,
     "Time": 120,
     "Input": [
       1208
@@ -4795,7 +4821,7 @@
     "Description": "R奇异物质（高效）",
     "IconPath": "Assets/texpack/高效奇异物质",
     "Type": 5,
-    "GridIndex": 1506,
+    "GridIndex": 1507,
     "Time": 240,
     "Input": [
       1012,
@@ -5055,7 +5081,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 1309,
+    "GridIndex": 1609,
     "Time": 180,
     "Input": [
       1110
@@ -5079,7 +5105,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 1409,
+    "GridIndex": 1610,
     "Time": 180,
     "Input": [
       1112
@@ -5103,7 +5129,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 1509,
+    "GridIndex": 1611,
     "Time": 180,
     "Input": [
       1126

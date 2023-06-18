@@ -1978,6 +1978,16 @@
     "Name": "R光子结晶化",
     "ZHCN": "在高能环境下将光子压缩成固体.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "ENUS": "Compression of photons into solids in a high-energy environment.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+  },  
+  {
+    "Name": "钛晶石（高效）",
+    "ZHCN": "钛晶石（高效）",
+    "ENUS": "Titanium crystal (advanced)"
+  },
+  {
+    "Name": "R钛晶石（高效）",
+    "ZHCN": "找到了有机晶体矿, 生产钛晶石就变得容易许多.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Once the organic crystal ore is found, the production of titanium crystal becomes much easier.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "质能储存（高效）",

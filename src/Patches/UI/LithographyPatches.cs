@@ -108,15 +108,9 @@ namespace ProjectGenesis.Patches.UI
             var data = LithographyAssemblerPatches.GetLithographyData(__instance.factorySystem.planet.id, __instance.assemblerId);
             var lithographyLensId = LithographyAssemblerPatches.GetLithographyLenId(assemblerComponent.recipeId);
 
-            if (lithographyLensId != 0 && lithographyLensId != data.ItemId)
+            if (data.ItemId != lithographyLensId)
             {
-                var itemProto = LDB.items.Select(lithographyLensId);
-                _icon.sprite = itemProto.iconSprite;
-                _uiButton.tips.itemId = lithographyLensId;
-                _text.text = itemProto.name;
-                _count.text = "0";
-
-                LithographyAssemblerPatches.SetEmpty(__instance.factorySystem.planet.id, __instance.assemblerId);
+                if (data.ItemCount != 0) LithographyAssemblerPatches.SetEmpty(__instance.factorySystem.planet.id, __instance.assemblerId);
 
                 data.ItemId = lithographyLensId;
                 data.ItemCount = 0;
@@ -124,21 +118,14 @@ namespace ProjectGenesis.Patches.UI
 
                 LithographyAssemblerPatches.SetLithographyData(__instance.factorySystem.planet.id, __instance.assemblerId, data);
             }
+
+            var itemProto = LDB.items.Select(lithographyLensId);
+            _icon.sprite = itemProto.iconSprite;
+            _text.text = itemProto.name;
+            _uiButton.tips.itemId = lithographyLensId;
+            _count.text = "0";
         }
 
-        [HarmonyPostfix]
-        [HarmonyPatch(typeof(UIAssemblerWindow), "OnAssemblerIdChange")]
-        public static void UIAssemblerWindow_OnAssemblerIdChange_Postfix(ref UIAssemblerWindow __instance)
-        {
-            if (_obj.activeSelf)
-            {
-                if (__instance.assemblerId == 0 || __instance.factorySystem == null) return;
-                ref var assemblerComponent = ref __instance.factorySystem.assemblerPool[__instance.assemblerId];
-                if (assemblerComponent.id != __instance.assemblerId) return;
-                ChangeLithographyData(__instance, assemblerComponent);
-            }
-        }
-        
         [HarmonyPostfix]
         [HarmonyPatch(typeof(UIAssemblerWindow), "_OnUpdate")]
         public static void UIAssemblerWindow_OnUpdate_Postfix(ref UIAssemblerWindow __instance)

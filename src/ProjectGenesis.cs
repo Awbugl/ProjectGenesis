@@ -151,7 +151,7 @@ namespace ProjectGenesis
             //飞行舱拆除
             var @base = LDB.veges.Select(9999);
             @base.MiningItem = new[] { 1801, 1101, 1104 };
-            @base.MiningCount = new[] { 6, 50, 50 };
+            @base.MiningCount = new[] { 6, 60, 60 };
             @base.MiningChance = new float[] { 1, 1, 1 };
             @base.Preload();
 
