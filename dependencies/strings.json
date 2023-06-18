@@ -2566,13 +2566,13 @@
   },
   {
     "Name": "T先进精炼技术",
-    "ZHCN": "先进精炼技术",
-    "ENUS": "Advanced refining technology"
+    "ZHCN": "先进有机合成技术",
+    "ENUS": "Advanced organic synthesis technology"
   },
   {
     "Name": "T先进精炼技术描述",
-    "ZHCN": "随着对化工精炼技术的理解逐渐深入，现在可以合成更多种类的化工原料。",
-    "ENUS": "As the understanding of chemical refining technology grows, it is now possible to synthesize a wider variety of chemical materials."
+    "ZHCN": "使用先进的合成技术，可以制造数种化学能燃料。",
+    "ENUS": "Using advanced organic synthesis technology, several chemical energy fuels can be manufactured."
   },
   {
     "Name": "T核子先驱:放射原料",
@@ -2776,13 +2776,13 @@
   },
   {
     "Name": "T焦油分馏",
-    "ZHCN": "焦油分馏",
-    "ENUS": "Tar fractionation"
+    "ZHCN": "焦油精炼",
+    "ENUS": "Tar Refining"
   },
   {
     "Name": "T焦油分馏描述",
-    "ZHCN": "现在可以合成更多种类的化工原料。",
-    "ENUS": "A wider variety of chemicals can now be synthesized."
+    "ZHCN": "精炼煤焦油可以得到数种重要的化工原料。",
+    "ENUS": "Refining coal tar can yield several important chemicals."
   },
   {
     "Name": "T反物质能量炉描述",

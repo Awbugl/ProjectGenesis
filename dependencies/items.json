@@ -5226,6 +5226,45 @@
     "MechaMaterialID": 0
   },
   {
+    "ID": 6204,
+    "Name": "钛晶石",
+    "Description": "I钛晶石",
+    "IconPath": "Icons/ItemRecipe/titan-crystal",
+    "GridIndex": 1209,
+    "StackSize": 100,
+    "PreTech": 1413,
+    "FuelType": 0,
+    "HeatValue": 0,
+    "ReactorInc": 0.0,
+    "DescFields": [
+      1,
+      40
+    ],
+    "IsFluid": false,
+    "Type": 2,
+    "SubID": 0,
+    "MiningFrom": "",
+    "ProduceFrom": "",
+    "Grade": 0,
+    "Upgrades": [
+
+    ],
+    "IsEntity": false,
+    "CanBuild": false,
+    "BuildInGas": false,
+    "ModelIndex": 0,
+    "ModelCount": 0,
+    "HpMax": 1,
+    "Ability": 0,
+    "Potential": 0,
+    "BuildIndex": 0,
+    "BuildMode": 0,
+    "UnlockKey": 0,
+    "PreTechOverride": 0,
+    "Productive": true,
+    "MechaMaterialID": 20
+  },
+  {
     "ID": 6205,
     "Name": "一氧化碳",
     "Description": "I一氧化碳",

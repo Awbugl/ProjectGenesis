@@ -702,7 +702,7 @@
     "GridIndex": 1703,
     "Time": 180,
     "Input": [
-      1107,
+      6204,
       1112
     ],
     "InCounts": [
@@ -939,13 +939,11 @@
     "Time": 240,
     "Input": [
       1124,
-      1113,
-      7708
+      1113
     ],
     "InCounts": [
       2,
-      2,
-      1
+      2
     ],
     "Output": [
       1402
@@ -3630,6 +3628,32 @@
       3
     ],
     "Explicit": true,
+    "Handcraft": false,
+    "NonProductive": false
+  },
+  {
+    "ID": 714,
+    "Name": "钛晶石",
+    "Description": "",
+    "IconPath": "",
+    "Type": 4,
+    "GridIndex": 1209,
+    "Time": 180,
+    "Input": [
+      1107,
+      7708
+    ],
+    "InCounts": [
+      1,
+      1
+    ],
+    "Output": [
+      6204
+    ],
+    "OutCounts": [
+      1
+    ],
+    "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
