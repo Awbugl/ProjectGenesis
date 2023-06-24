@@ -1141,7 +1141,7 @@
     "GridIndex": 4105,
     "StackSize": 100,
     "Type": 2,
-    "PreTech": 1121,
+    "PreTech": 1122,
     "PreTechOverride": 0,
     "DescFields": [
       1,
@@ -1203,7 +1203,7 @@
     "Potential": 0,
     "BuildIndex": 0,
     "BuildMode": 0,
-    "UnlockKey": -1,
+    "UnlockKey": 2306,
     "MechaMaterialID": 0
   },
   {
@@ -1406,7 +1406,7 @@
     "Name": "反物质",
     "Description": "I反物质",
     "IconPath": "Icons/ItemRecipe/anti-matter",
-    "GridIndex": 1109,
+    "GridIndex": 1108,
     "StackSize": 20,
     "Type": 2,
     "PreTech": 1506,
@@ -1981,7 +1981,7 @@
     "GridIndex": 1510,
     "StackSize": 100,
     "Type": 2,
-    "PreTech": 1415,
+    "PreTech": 1604,
     "PreTechOverride": 0,
     "DescFields": [
       1,
@@ -2015,7 +2015,7 @@
     "Name": "临界光子",
     "Description": "I临界光子",
     "IconPath": "Icons/ItemRecipe/photon-capacitor-full",
-    "GridIndex": 1108,
+    "GridIndex": 1107,
     "StackSize": 100,
     "Type": 2,
     "PreTech": 1506,
@@ -5232,7 +5232,7 @@
     "IconPath": "Icons/ItemRecipe/titan-crystal",
     "GridIndex": 1406,
     "StackSize": 100,
-    "PreTech": 1413,
+    "PreTech": 1414,
     "FuelType": 0,
     "HeatValue": 0,
     "ReactorInc": 0.0,
@@ -5582,7 +5582,7 @@
     "GridIndex": 3302,
     "StackSize": 100,
     "Type": 2,
-    "PreTech": 1818,
+    "PreTech": 1816,
     "PreTechOverride": 0,
     "DescFields": [
       1,
@@ -5619,7 +5619,7 @@
     "GridIndex": 3303,
     "StackSize": 100,
     "Type": 2,
-    "PreTech": 1818,
+    "PreTech": 1816,
     "PreTechOverride": 0,
     "DescFields": [
       1,
@@ -6658,7 +6658,7 @@
     "GridIndex": 2313,
     "StackSize": 30,
     "Type": 6,
-    "PreTech": 0,
+    "PreTech": 1304,
     "PreTechOverride": 0,
     "DescFields": [
       18,
@@ -6699,7 +6699,7 @@
     "GridIndex": 2214,
     "StackSize": 10,
     "Type": 5,
-    "PreTech": 1606,
+    "PreTech": 1605,
     "PreTechOverride": 0,
     "DescFields": [
       18,
@@ -7470,7 +7470,7 @@
     "IconPath": "Assets/texpack/氨",
     "GridIndex": 4113,
     "StackSize": 20,
-    "Type": 2,
+    "Type": 2, 
     "PreTech": 1121,
     "PreTechOverride": 0,
     "DescFields": [
@@ -7587,7 +7587,7 @@
     "GridIndex": 3203,
     "StackSize": 20,
     "Type": 2,
-    "PreTech": 1102,
+    "PreTech": 1815,
     "PreTechOverride": 0,
     "DescFields": [
       2,
@@ -7627,7 +7627,7 @@
     "GridIndex": 4201,
     "StackSize": 20,
     "Type": 2,
-    "PreTech": 1830,
+    "PreTech": 1122,
     "PreTechOverride": 0,
     "DescFields": [
       1
@@ -7696,7 +7696,7 @@
     "Name": "氢氯酸",
     "Description": "I氢氯酸",
     "IconPath": "Assets/texpack/盐酸_新",
-    "GridIndex": 4211,
+    "GridIndex": 4111,
     "StackSize": 20,
     "Type": 2,
     "PreTech": 1832,
@@ -7735,7 +7735,7 @@
     "GridIndex": 4311,
     "StackSize": 20,
     "Type": 2,
-    "PreTech": 1122,
+    "PreTech": 1121,
     "PreTechOverride": 0,
     "DescFields": [
       1
@@ -7840,7 +7840,7 @@
     "Name": "海水",
     "Description": "I海水",
     "IconPath": "Assets/texpack/盐水",
-    "GridIndex": 4111,
+    "GridIndex": 1109,
     "StackSize": 20,
     "Type": 1,
     "PreTech": 0,
@@ -7868,7 +7868,7 @@
     "Potential": 0,
     "BuildIndex": 0,
     "BuildMode": 0,
-    "UnlockKey": 0,
+    "UnlockKey": 2306,
     "MechaMaterialID": 0
   },
   {
@@ -7913,10 +7913,10 @@
     "Name": "氢氧化钠",
     "Description": "I氢氧化钠",
     "IconPath": "Assets/texpack/氢氧化钠",
-    "GridIndex": 4212,
+    "GridIndex": 4211,
     "StackSize": 100,
     "Type": 2,
-    "PreTech": 1832,
+    "PreTech": 1121,
     "PreTechOverride": 0,
     "DescFields": [
       1
@@ -7952,7 +7952,7 @@
     "GridIndex": 1215,
     "StackSize": 100,
     "Type": 2,
-    "PreTech": 1,
+    "PreTech": 1832,
     "PreTechOverride": 0,
     "DescFields": [
       1
@@ -7988,7 +7988,7 @@
     "GridIndex": 1315,
     "StackSize": 100,
     "Type": 2,
-    "PreTech": 1,
+    "PreTech": 1832,
     "PreTechOverride": 0,
     "DescFields": [
       1
@@ -8024,7 +8024,7 @@
     "GridIndex": 1415,
     "StackSize": 100,
     "Type": 2,
-    "PreTech": 1121,
+    "PreTech": 1832,
     "PreTechOverride": 0,
     "DescFields": [
       1
@@ -8204,7 +8204,7 @@
     "GridIndex": 5505,
     "StackSize": 200,
     "Type": 2,
-    "PreTech": 1805,
+    "PreTech": 1807,
     "PreTechOverride": 0,
     "DescFields": [
       1
@@ -8240,7 +8240,7 @@
     "GridIndex": 5605,
     "StackSize": 200,
     "Type": 2,
-    "PreTech": 1805,
+    "PreTech": 1807,
     "PreTechOverride": 0,
     "DescFields": [
       1
@@ -8420,7 +8420,7 @@
     "GridIndex": 5506,
     "StackSize": 200,
     "Type": 2,
-    "PreTech": 1806,
+    "PreTech": 1807,
     "PreTechOverride": 0,
     "DescFields": [
       1
@@ -8456,7 +8456,7 @@
     "GridIndex": 5606,
     "StackSize": 200,
     "Type": 2,
-    "PreTech": 1806,
+    "PreTech": 1807,
     "PreTechOverride": 0,
     "DescFields": [
       1
@@ -8744,7 +8744,7 @@
     "GridIndex": 4303,
     "StackSize": 100,
     "Type": 2,
-    "PreTech": 1830,
+    "PreTech": 1305,
     "PreTechOverride": 0,
     "DescFields": [
       1

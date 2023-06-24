@@ -184,6 +184,10 @@ namespace ProjectGenesis.Utils
             gaspumperprefabDesc.isPowerConsumer = false;
             gaspumperprefabDesc.stationCollectSpeed = 3;
 
+            var orbitalcollector = models.Select(117);
+            ref var orbitalcollectorprefabDesc = ref orbitalcollector.prefabDesc;
+            orbitalcollectorprefabDesc.stationCollectSpeed = 15;
+
             var accumulator = models.Select(46);
             ref var accumulatorprefabDesc = ref accumulator.prefabDesc;
             accumulatorprefabDesc.maxAcuEnergy = 2700000000;

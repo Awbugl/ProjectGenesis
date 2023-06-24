@@ -3387,7 +3387,7 @@
     "Description": "R盐水分解",
     "IconPath": "Assets/texpack/盐水电解_新",
     "Type": 2,
-    "GridIndex": 4211,
+    "GridIndex": 4111,
     "Time": 120,
     "Input": [
       1000,
@@ -3415,13 +3415,13 @@
     "Description": "R海水淡化",
     "IconPath": "",
     "Type": 2,
-    "GridIndex": 4111,
-    "Time": 120,
+    "GridIndex": 1109,
+    "Time": 480,
     "Input": [
       7018
     ],
     "InCounts": [
-      2
+      8
     ],
     "Output": [
       1000,
@@ -3430,7 +3430,7 @@
       7103
     ],
     "OutCounts": [
-      2,
+      8,
       1,
       1,
       1
