@@ -7543,7 +7543,7 @@
     "ID": 7006,
     "Name": "苯",
     "Description": "I苯",
-    "IconPath": "Assets/texpack/二甲苯",
+    "IconPath": "Assets/texpack/氯苯",
     "GridIndex": 3202,
     "StackSize": 20,
     "Type": 2,

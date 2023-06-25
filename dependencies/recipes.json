@@ -3344,8 +3344,8 @@
       1
     ],
     "Output": [
-      6272,
-      1208
+      1208,
+      6272
     ],
     "OutCounts": [
       1,
@@ -3637,7 +3637,7 @@
     "ID": 713,
     "Name": "焦油分馏",
     "Description": "R焦油分馏",
-    "IconPath": "Assets/texpack/燃油精炼",
+    "IconPath": "Assets/texpack/焦油循环",
     "Type": 3,
     "GridIndex": 3206,
     "Time": 120,
@@ -5055,7 +5055,7 @@
     "ID": 501,
     "Name": "焦油裂化",
     "Description": "R焦油裂化",
-    "IconPath": "Assets/texpack/焦油循环",
+    "IconPath": "Assets/texpack/甘油",
     "Type": 3,
     "GridIndex": 3207,
     "Time": 120,
