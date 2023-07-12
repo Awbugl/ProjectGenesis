@@ -28,6 +28,7 @@ namespace ProjectGenesis.Patches.Logic.LithographyAssembler
             if (assemblerComponent.id != entityData.assemblerId) return;
             if (assemblerComponent.recipeType != (ERecipeType_1)Utils_ERecipeType.电路蚀刻) return;
             var data = GetLithographyData(__instance.factorySystem.planet.id, entityData.assemblerId);
+            data.NeedCount = assemblerComponent.speed > 60000 ? 20 : 1;
 
             var itemId = GetLithographyLenId(assemblerComponent.recipeId);
 
@@ -42,13 +43,13 @@ namespace ProjectGenesis.Patches.Logic.LithographyAssembler
                 UIItemup.Up(data.ItemId, upCount);
             }
 
-            var itemCount = 1 - data.ItemCount;
+            var itemCount = data.NeedCount - data.ItemCount;
             var itemInc = 0;
             if (itemCount > 0) mainPlayer.TakeItemFromPlayer(ref itemId, ref itemCount, out itemInc, fromPackage, itemBundle);
             if (itemCount > 0)
             {
                 data.ItemId = itemId;
-                data.ItemCount = itemCount;
+                data.ItemCount += itemCount;
                 data.ItemInc = itemInc;
                 SetLithographyData(__instance.factorySystem.planet.id, entityData.assemblerId, data);
             }

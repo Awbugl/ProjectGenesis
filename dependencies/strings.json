@@ -365,6 +365,11 @@
     "ENUS": "You activated your first Fission Power Station. The new generation of integrated fast reactors uses multiple technologies to generate large amounts of clean electricity."
   },
   {
+    "Name": "里程碑达成条件29",
+    "ZHCN": "达成条件：激活一座裂变能源发电站",
+    "ENUS": "Achieved conditions: Activate a Fission Power Station"
+  },
+  {
     "Name": "里程碑未达成描述32",
     "ZHCN": "你激活了第一座人造恒星，它优雅地转动着，犹如太阳般炽烈地燃烧着，稳定地将聚变原料所蕴藏的巨大能量输出到电网。",
     "ENUS": "You activated your first Artificial Star. It rotates so gracefully yet burns so intensely, this spectacle surely means that you've truly harnessed the stars and can stably transport this energy to all corners of the universe."

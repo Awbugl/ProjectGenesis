@@ -71,7 +71,7 @@ namespace ProjectGenesis.Patches.UI
 
                 _button = emptyRodButtonObj.GetComponent<Button>();
                 _button.onClick.RemoveAllListeners();
-                _button.onClick.AddListener(OnEmptyRodIconClick);
+                _button.onClick.AddListener(OnLithographyIconClick);
             }
         }
 
@@ -115,6 +115,7 @@ namespace ProjectGenesis.Patches.UI
                 data.ItemId = lithographyLensId;
                 data.ItemCount = 0;
                 data.ItemInc = 0;
+                data.NeedCount = __instance.factorySystem.assemblerPool[__instance.assemblerId].speed > 60000 ? 20 : 1;
 
                 LithographyAssemblerPatches.SetLithographyData(__instance.factorySystem.planet.id, __instance.assemblerId, data);
             }
@@ -123,7 +124,8 @@ namespace ProjectGenesis.Patches.UI
             _icon.sprite = itemProto.iconSprite;
             _text.text = itemProto.name;
             _uiButton.tips.itemId = lithographyLensId;
-            _count.text = "0";
+            _count.text = data.ItemCount.ToString();
+            _count.color = data.NeedCount == data.ItemCount ? __instance.workNormalColor : __instance.workStoppedColor;
         }
 
         [HarmonyPostfix]
@@ -137,7 +139,7 @@ namespace ProjectGenesis.Patches.UI
                 if (assemblerComponent.id != __instance.assemblerId) return;
                 var data = LithographyAssemblerPatches.GetLithographyData(__instance.factorySystem.planet.id, __instance.assemblerId);
 
-                if (data.ItemCount == 0)
+                if (data.ItemCount < data.NeedCount)
                 {
                     __instance.stateText.text = "缺少透镜".TranslateFromJson();
                     __instance.stateText.color = __instance.workStoppedColor;
@@ -145,7 +147,7 @@ namespace ProjectGenesis.Patches.UI
             }
         }
 
-        private static void OnEmptyRodIconClick()
+        private static void OnLithographyIconClick()
         {
             var assemblerWindow = UIRoot.instance.uiGame.assemblerWindow;
             var player = assemblerWindow.player;
@@ -163,87 +165,48 @@ namespace ProjectGenesis.Patches.UI
 
             var data = LithographyAssemblerPatches.GetLithographyData(assemblerWindow.factorySystem.planet.id, assemblerWindow.assemblerId);
 
-            if (player.inhandItemId > 0 && player.inhandItemCount > 0)
+            if (player.inhandItemId == 0 || player.inhandItemCount <= 0 || player.inhandItemId == 1000) return;
+
+            var lithographyLensId = LithographyAssemblerPatches.GetLithographyLenId(assemblerComponent.recipeId);
+            var flag = lithographyLensId != 0 && lithographyLensId == player.inhandItemId;
+
+            if (!flag)
             {
-                if (player.inhandItemId == 1000) return;
-
-                var lithographyLensId = LithographyAssemblerPatches.GetLithographyLenId(assemblerComponent.recipeId);
-                var flag = lithographyLensId != 0 && lithographyLensId == player.inhandItemId;
-
-                if (!flag)
-                {
-                    UIRealtimeTip.Popup("不相符的物品".TranslateFromJson());
-                    return;
-                }
-
-                if (player.inhandItemId == data.ItemId || data.ItemId == 0)
-                {
-                    if (data.ItemCount >= 1)
-                    {
-                        UIRealtimeTip.Popup("栏位已满".Translate());
-                        return;
-                    }
-
-                    var inhandItemCount = player.inhandItemCount;
-
-                    var inhandItemInc = player.inhandItemInc;
-                    var itemInc = inhandItemCount == 0 ? 0 : inhandItemInc / inhandItemCount;
-
-                    data.ItemId = player.inhandItemId;
-                    data.ItemCount = 1;
-                    data.ItemInc = itemInc;
-
-                    _count.text = "1";
-                    LithographyAssemblerPatches.SetLithographyData(assemblerWindow.factorySystem.planet.id, assemblerWindow.assemblerId, data);
-
-                    player.AddHandItemCount_Unsafe(-1);
-                    player.SetHandItemInc_Unsafe(player.inhandItemInc - itemInc);
-
-                    if (player.inhandItemCount <= 0)
-                    {
-                        player.SetHandItemId_Unsafe(0);
-                        player.SetHandItemCount_Unsafe(0);
-                        player.SetHandItemInc_Unsafe(0);
-                        return;
-                    }
-                }
-                else
-                {
-                    if (player.inhandItemCount > 100)
-                    {
-                        UIRealtimeTip.Popup("不相符的物品".TranslateFromJson());
-                        return;
-                    }
-
-                    player.SetHandItemId_Unsafe(0);
-                    player.SetHandItemCount_Unsafe(0);
-                    player.SetHandItemInc_Unsafe(0);
-
-                    if (VFInput.shift || VFInput.control)
-                    {
-                        _count.text = "0";
-                        LithographyAssemblerPatches.SetEmpty(assemblerWindow.factorySystem.planet.id, assemblerWindow.assemblerId);
-                        return;
-                    }
-
-                    _count.text = "0";
-                    LithographyAssemblerPatches.SetEmpty(assemblerWindow.factorySystem.planet.id, assemblerWindow.assemblerId, false);
-                    return;
-                }
+                UIRealtimeTip.Popup("不相符的物品".TranslateFromJson());
+                return;
             }
-            else if (player.inhandItemId == 0 && player.inhandItemCount == 0)
+
+            if (data.NeedCount == 0) data.NeedCount = assemblerComponent.speed > 60000 ? 20 : 1;
+
+            if (data.ItemCount >= data.NeedCount)
             {
-                if (data.ItemId == 0) return;
+                UIRealtimeTip.Popup("栏位已满".Translate());
+                return;
+            }
 
-                if (VFInput.shift || VFInput.control)
-                {
-                    _count.text = "0";
-                    LithographyAssemblerPatches.SetEmpty(assemblerWindow.factorySystem.planet.id, assemblerWindow.assemblerId);
-                    return;
-                }
+            var inhandItemCount = player.inhandItemCount;
+            var useCount = data.NeedCount - data.ItemCount;
+            useCount = useCount > inhandItemCount ? inhandItemCount : useCount;
 
-                _count.text = "0";
-                LithographyAssemblerPatches.SetEmpty(assemblerWindow.factorySystem.planet.id, assemblerWindow.assemblerId, false);
+            var inhandItemInc = player.inhandItemInc;
+            var itemInc = inhandItemCount == 0 ? 0 : inhandItemInc * useCount / inhandItemCount;
+
+            data.ItemId = player.inhandItemId;
+            data.ItemCount += useCount;
+            data.ItemInc = itemInc;
+
+            _count.text = data.ItemCount.ToString();
+            _count.color = data.NeedCount == data.ItemCount ? assemblerWindow.workNormalColor : assemblerWindow.workStoppedColor;
+            LithographyAssemblerPatches.SetLithographyData(assemblerWindow.factorySystem.planet.id, assemblerWindow.assemblerId, data);
+
+            player.AddHandItemCount_Unsafe(-useCount);
+            player.SetHandItemInc_Unsafe(player.inhandItemInc - itemInc);
+
+            if (player.inhandItemCount <= 0)
+            {
+                player.SetHandItemId_Unsafe(0);
+                player.SetHandItemCount_Unsafe(0);
+                player.SetHandItemInc_Unsafe(0);
                 return;
             }
         }

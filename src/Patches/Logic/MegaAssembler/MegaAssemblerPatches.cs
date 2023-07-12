@@ -138,7 +138,8 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
             if (__instance.recipeType != (ERecipeType_1)Utils.ERecipeType.电路蚀刻) return true;
 
             var data = LithographyAssemblerPatches.GetLithographyData(factorySystem.planet.id, __instance.id);
-            return data.ItemCount > 0;
+
+            return data.ItemCount > 0 && data.ItemCount == data.NeedCount;
         }
 
         private static void UpdateOutputSlots(

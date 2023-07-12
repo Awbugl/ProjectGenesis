@@ -13,9 +13,11 @@ namespace ProjectGenesis.Patches.Logic.LithographyAssembler
                 case 751:
                 case 752:
                     return 6201;
+
                 case 753:
                 case 754:
                     return 6202;
+
                 case 755:
                 case 756:
                     return 6203;
@@ -36,6 +38,7 @@ namespace ProjectGenesis.Patches.Logic.LithographyAssembler
                 w.Write(pair.Value.ItemId);
                 w.Write(pair.Value.ItemCount);
                 w.Write(pair.Value.ItemInc);
+                w.Write(pair.Value.NeedCount);
             }
         }
 
@@ -53,7 +56,10 @@ namespace ProjectGenesis.Patches.Logic.LithographyAssembler
                     var assemblerId = r.ReadInt32();
 
                     _lithographydata.TryAdd((planetId, assemblerId),
-                                            new LithographyData { ItemId = r.ReadInt32(), ItemCount = r.ReadInt32(), ItemInc = r.ReadInt32() });
+                                            new LithographyData
+                                            {
+                                                ItemId = r.ReadInt32(), ItemCount = r.ReadInt32(), ItemInc = r.ReadInt32(), NeedCount = r.ReadInt32()
+                                            });
                 }
             }
             catch (EndOfStreamException)

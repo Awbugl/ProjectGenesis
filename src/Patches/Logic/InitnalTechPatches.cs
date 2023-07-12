@@ -16,15 +16,17 @@ namespace ProjectGenesis.Patches.Logic
                                                              1901,
                                                              1902,
                                                              1903,
-                                                             1415,
-                                                             1402
-                                                         };
+                                                             1415
+                                                         },
+                                          BonusTechs = new List<int> { 1801 },
+                                          SandBoxNotUnlockTechs = new List<int> { 1835, 1513 };
 
         [HarmonyPatch(typeof(GameData), "SetForNewGame")]
         [HarmonyPostfix]
         public static void SetForNewGame(GameData __instance)
         {
             foreach (var tech in InitnalTechs) __instance.history.UnlockTech(tech);
+            foreach (var tech in BonusTechs) __instance.history.UnlockTech(tech);
         }
 
         [HarmonyPatch(typeof(GameData), "Import")]
@@ -34,6 +36,11 @@ namespace ProjectGenesis.Patches.Logic
             // ReSharper disable ForeachCanBePartlyConvertedToQueryUsingAnotherGetEnumerator
 
             foreach (var tech in InitnalTechs)
+            {
+                if (!__instance.history.TechUnlocked(tech)) __instance.history.UnlockTech(tech);
+            }
+
+            foreach (var tech in BonusTechs)
             {
                 if (!__instance.history.TechUnlocked(tech)) __instance.history.UnlockTech(tech);
             }
@@ -66,6 +73,26 @@ namespace ProjectGenesis.Patches.Logic
 
             matcher.SetInstructionAndAdvance(Transpilers.EmitDelegate<Func<int, bool>>(id => InitnalTechs.Contains(id)));
             matcher.SetOpcodeAndAdvance(OpCodes.Brfalse_S);
+            return matcher.InstructionEnumeration();
+        }
+
+        [HarmonyPatch(typeof(UITechTree), "Do1KeyUnlock")]
+        [HarmonyTranspiler]
+        public static IEnumerable<CodeInstruction> UITechTree_Do1KeyUnlock_Transpiler(IEnumerable<CodeInstruction> instructions)
+        {
+            var matcher = new CodeMatcher(instructions);
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldc_I4, 1508));
+
+            List<CodeInstruction> insts = matcher.InstructionsInRange(matcher.Pos - 2, matcher.Pos + 1);
+            matcher.Advance(2);
+
+            foreach (var tech in SandBoxNotUnlockTechs)
+            {
+                CodeInstruction[] codeInstructions = insts.ToArray();
+                codeInstructions[2] = new CodeInstruction(codeInstructions[2].opcode, tech);
+                matcher.InsertAndAdvance(codeInstructions);
+            }
+
             return matcher.InstructionEnumeration();
         }
     }

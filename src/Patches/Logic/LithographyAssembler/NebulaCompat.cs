@@ -51,7 +51,8 @@ namespace ProjectGenesis.Patches.Logic.LithographyAssembler
                 mainPlayer.SetHandItemInc_Unsafe(data.ItemInc);
             }
 
-            _lithographydata[id] = new LithographyData();
+            _lithographydata[id] = new LithographyData() { NeedCount = data.NeedCount };
+
             SyncLithographyData.Sync(planetId, assemblerId, data);
         }
 
@@ -68,6 +69,7 @@ namespace ProjectGenesis.Patches.Logic.LithographyAssembler
                 w.Write(pair.Value.ItemId);
                 w.Write(pair.Value.ItemCount);
                 w.Write(pair.Value.ItemInc);
+                w.Write(pair.Value.NeedCount);
             }
         }
 
@@ -79,8 +81,13 @@ namespace ProjectGenesis.Patches.Logic.LithographyAssembler
             for (var j = 0; j < count; j++)
             {
                 var assemblerId = r.ReadInt32();
-                _lithographydata[(planetId, assemblerId)]
-                    = new LithographyData { ItemId = r.ReadInt32(), ItemCount = r.ReadInt32(), ItemInc = r.ReadInt32() };
+                _lithographydata[(planetId, assemblerId)] = new LithographyData
+                                                            {
+                                                                ItemId = r.ReadInt32(),
+                                                                ItemCount = r.ReadInt32(),
+                                                                ItemInc = r.ReadInt32(),
+                                                                NeedCount = r.ReadInt32()
+                                                            };
             }
         }
     }

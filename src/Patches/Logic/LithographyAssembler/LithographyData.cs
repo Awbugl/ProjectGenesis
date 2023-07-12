@@ -5,5 +5,6 @@
         public int ItemId { get; set; }
         public int ItemCount { get; set; }
         public int ItemInc { get; set; }
+        public int NeedCount { get; set; }
     }
 }

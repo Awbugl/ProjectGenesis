@@ -221,7 +221,8 @@ namespace ProjectGenesis.Utils
             int assemblerId,
             int itemId,
             int itemCount,
-            int itemInc)
+            int itemInc,
+            int needCount)
         {
             Guid = guid;
             PlanetId = planetId;
@@ -229,6 +230,7 @@ namespace ProjectGenesis.Utils
             ItemId = itemId;
             ItemCount = itemCount;
             ItemInc = itemInc;
+            NeedCount = needCount;
         }
 
         public string Guid { get; set; }
@@ -237,12 +239,13 @@ namespace ProjectGenesis.Utils
         public int ItemId { get; set; }
         public int ItemCount { get; set; }
         public int ItemInc { get; set; }
+        public int NeedCount { get; set; }
 
         internal static void Sync(int planetId, int assemblerId, LithographyData data)
         {
             if (NebulaModAPI.IsMultiplayerActive)
                 NebulaModAPI.MultiplayerSession.Network.SendPacket(new SyncLithographyData(ProjectGenesis.MODGUID, planetId, assemblerId, data.ItemId,
-                                                                                           data.ItemCount, data.ItemInc));
+                                                                                           data.ItemCount, data.ItemInc, data.NeedCount));
         }
 
         internal static void OnReceive(
@@ -251,12 +254,16 @@ namespace ProjectGenesis.Utils
             int assemblerId,
             int itemId,
             int itemCount,
-            int itemInc)
+            int itemInc,
+            int needCount)
 
         {
             if (guid != ProjectGenesis.MODGUID) return;
             LithographyAssemblerPatches.SyncLithography((planetId, assemblerId),
-                                                        new LithographyData { ItemId = itemId, ItemCount = itemCount, ItemInc = itemInc });
+                                                        new LithographyData
+                                                        {
+                                                            ItemId = itemId, ItemCount = itemCount, ItemInc = itemInc, NeedCount = needCount
+                                                        });
         }
     }
 
@@ -264,7 +271,8 @@ namespace ProjectGenesis.Utils
     public class SyncLithographyDataProcessor : BasePacketProcessor<SyncLithographyData>
     {
         public override void ProcessPacket(SyncLithographyData packet, INebulaConnection conn)
-            => SyncLithographyData.OnReceive(packet.Guid, packet.PlanetId, packet.AssemblerId, packet.ItemId, packet.ItemCount, packet.ItemInc);
+            => SyncLithographyData.OnReceive(packet.Guid, packet.PlanetId, packet.AssemblerId, packet.ItemId, packet.ItemCount, packet.ItemInc,
+                                             packet.NeedCount);
     }
 
     public class GenesisBookPlanetLoadRequest
