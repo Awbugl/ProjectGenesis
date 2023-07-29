@@ -1946,7 +1946,7 @@
     "Name": "粒子容器",
     "Description": "I粒子容器",
     "IconPath": "Icons/ItemRecipe/partical-capacitor",
-    "GridIndex": 1410,
+    "GridIndex": 1409,
     "StackSize": 100,
     "PreTech": 1703,
     "FuelType": 0,

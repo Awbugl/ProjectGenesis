@@ -335,16 +335,6 @@
     "ENUS": "You discovered and mined a Tungsten ore near <color=#8DB1FFb0>{0}</color>. It can be used to build better buildings or components."
   },
   {
-    "Name": "里程碑未达成描述7",
-    "ZHCN": "你采集了光栅石，宇宙珍奇之一，是制造硅晶圆和氦三不可多得的原材料。",
-    "ENUS": "You collected an Optical Grating Crystal, one of the rarer things in the universe. It is a key material for making silicon wafers and helium-3."
-  },
-  {
-    "Name": "里程碑已达成描述7",
-    "ZHCN": "你在 <color=#8DB1FFb0>{0}</color> 上发现并开采了光栅石，宇宙珍奇之一，是制造硅晶圆和氦三不可多得的原材料。",
-    "ENUS": "You discovered and mined an Optical Grating Crystal on <color=#8DB1FFb0>{0}</color>, one of the rarer things in the universe. It is a key material for making silicon wafers and helium-3."
-  },
-  {
     "Name": "里程碑未达成描述10",
     "ZHCN": "你采集了有机晶体，宇宙珍奇之一。它分布在宇宙各处，可以用来制造活性生物纤维。",
     "ENUS": "You collected an Organic Crystal, one of the rarer things in the universe. They're distributed across the universe and can be used to make active biological fibers."
@@ -1781,13 +1771,13 @@
   },
   {
     "Name": "氦元素离心",
-    "ZHCN": "氦元素离心",
-    "ENUS": "Helium centrifugation"
+    "ZHCN": "氦原子提取",
+    "ENUS": "Helium element centrifuge"
   },
   {
     "Name": "R氦元素离心",
-    "ZHCN": "从光栅石中分离氦.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Separation of helium from optical grating crystal.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "从光栅石的晶格中提取出富集的氦.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Extract enriched helium from the lattice of grating stone.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "光子自增殖",
@@ -2938,11 +2928,6 @@
     "Name": "I有机晶体",
     "ZHCN": "稀有矿物。如此多的有机物以非生命的晶体形式存在，这种奇特的矿物或许在尖端工业生产中可以发挥特殊作用。",
     "ENUS": "Rare minerals. With so much organic matter in non-living crystalline form, this peculiar mineral may have a special role to play in cutting-edge industrial production."
-  },
-  {
-    "Name": "I光栅石",
-    "ZHCN": "稀有矿物。可以用来高效制造硅晶圆，也可以用来提取聚变原料。",
-    "ENUS": "Rare ore. It can be used to produce silicon wafers efficiently, and can also be used to extract fusion fuel rods."
   },
   {
     "Name": "I大型储物仓",

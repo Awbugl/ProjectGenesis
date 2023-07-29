@@ -266,11 +266,11 @@
     "Desc": "地热开采描述",
     "Conclusion": "地热开采结果",
     "Position": [
-      25.0,
+      21.0,
       -19.0
     ],
     "PreTechs": [
-      1112
+      1501
     ],
     "PreTechsImplicit": [],
     "Items": [
@@ -345,11 +345,11 @@
     "Desc": "氢燃料棒描述",
     "Conclusion": "氢燃料棒结果",
     "Position": [
-      21.0,
-      -19.0
+      13.0,
+      -27.0
     ],
     "PreTechs": [
-      1501
+      1120
     ],
     "PreTechsImplicit": [],
     "Items": [
@@ -509,9 +509,7 @@
     "PreTechs": [
       1120
     ],
-    "PreTechsImplicit": [
-      1832
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001
     ],
@@ -686,7 +684,7 @@
       -27.0
     ],
     "PreTechs": [
-      1131
+      1703
     ],
     "PreTechsImplicit": [],
     "Items": [
@@ -811,7 +809,7 @@
       -31.0
     ],
     "PreTechs": [
-      1131
+      1703
     ],
     "PreTechsImplicit": [],
     "Items": [
@@ -1267,7 +1265,7 @@
     "Desc": "人造恒星描述",
     "Conclusion": "人造恒星结果",
     "Position": [
-      33.0,
+      29.0,
       -19.0
     ],
     "PreTechs": [
@@ -2059,7 +2057,7 @@
     "Desc": "T裂变发电站描述",
     "Conclusion": "T裂变发电站结果",
     "Position": [
-      29.0,
+      25.0,
       -19.0
     ],
     "PreTechs": [
@@ -9755,7 +9753,9 @@
     "PreTechs": [
       1801
     ],
-    "PreTechsImplicit": [],
+    "PreTechsImplicit": [
+      1120
+    ],
     "Items": [
       6001
     ],

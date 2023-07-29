@@ -2743,7 +2743,7 @@
     ],
     "Description": "",
     "PreTech": 1703,
-    "GridIndex": 1410,
+    "GridIndex": 1409,
     "Name": "粒子容器",
     "IconPath": "",
     "Explicit": false,
@@ -2770,7 +2770,7 @@
     ],
     "Description": "R粒子容器（高效）",
     "PreTech": 1703,
-    "GridIndex": 1510,
+    "GridIndex": 1509,
     "Name": "粒子容器（高效）",
     "IconPath": "Icons/ItemRecipe/partical-capacitor-lv2",
     "Explicit": true,
@@ -3363,15 +3363,13 @@
     "Time": 1800,
     "Input": [
       1125,
-      1304,
       1205,
       1305
     ],
     "InCounts": [
       8,
       4,
-      4,
-      2
+      4
     ],
     "Output": [
       6262
