@@ -45,7 +45,7 @@ namespace ProjectGenesis.Patches.UI.DisplayTextPatches
                 case Utils_ERecipeType.高分子化工:
                     __result = "先进化学反应釜".TranslateFromJson();
                     break;
-                
+
                 case (Utils_ERecipeType)21:
                     __result = "星际组装厂（巨构）".TranslateFromJson();
                     break;
@@ -107,19 +107,6 @@ namespace ProjectGenesis.Patches.UI.DisplayTextPatches
                     if (__instance.prefabDesc.isCollectStation && __instance.ID == ProtoIDUsedByPatches.I大气采集器) __result = "行星大气".TranslateFromJson();
 
                     return;
-
-                case 22:
-                    if (GameMain.history.TechUnlocked(ProtoIDUsedByPatches.T化工技术革新) && __instance.prefabDesc.isAssembler)
-                        switch (__instance.prefabDesc.modelIndex)
-                        {
-                            case ProtoIDUsedByPatches.M化工厂:
-                            case ProtoIDUsedByPatches.M精炼厂:
-                            case ProtoIDUsedByPatches.M先进化工厂:
-                                __result = "4x";
-                                return;
-                        }
-
-                    return;
             }
         }
 
@@ -129,22 +116,6 @@ namespace ProjectGenesis.Patches.UI.DisplayTextPatches
         {
             switch (__instance.ID)
             {
-                case ProtoIDUsedByPatches.T化工技术革新:
-                    __result = "化工技术革新文字描述".TranslateFromJson();
-                    break;
-
-                case ProtoIDUsedByPatches.T海洋排污1:
-                    __result = "海洋排污文字描述".TranslateFromJson();
-                    break;
-
-                case ProtoIDUsedByPatches.T海洋排污2:
-                    __result = "海洋排污2文字描述".TranslateFromJson();
-                    break;
-
-                case ProtoIDUsedByPatches.T大气排污:
-                    __result = "大气排污文字描述".TranslateFromJson();
-                    break;
-
                 case ProtoIDUsedByPatches.T巨型建筑工程学:
                     __result = "巨型建筑工程学文字描述".TranslateFromJson();
                     break;

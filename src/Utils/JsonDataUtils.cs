@@ -14,6 +14,9 @@ namespace ProjectGenesis.Utils
     {
         internal static void ImportJson(int[] tableID)
         {
+            ref Dictionary<int, IconToolNew.IconDesc> itemIconDescs
+                = ref AccessTools.StaticFieldRefAccess<Dictionary<int, IconToolNew.IconDesc>>(typeof(ProtoRegistry), "itemIconDescs");
+
             #region StringProto
 
             StringProtoJson[] stringProtoJsons = JsonHelper.StringProtos();
@@ -69,9 +72,6 @@ namespace ProjectGenesis.Utils
             #endregion
 
             #region ItemProto
-
-            ref Dictionary<int, IconToolNew.IconDesc> itemIconDescs
-                = ref AccessTools.StaticFieldRefAccess<Dictionary<int, IconToolNew.IconDesc>>(typeof(ProtoRegistry), "itemIconDescs");
 
             foreach (var itemjson in JsonHelper.ItemProtos())
             {

@@ -1,3 +1,23 @@
+- v2.7.0 森海之灵 | Forest Spirit
+  + 重新设计塑料、科研矩阵、化学能燃料、石油化工的配方，调整科研难度（影响存档）
+  + 为电路蚀刻配方加入新的触媒（3种）
+  + 调整了部分科技的前置科技需求
+  + 下调了终极目标科技的哈希需求
+  + 下调了部分建筑的原料需求
+  + 修复了部分文本翻译不正确的问题
+  + 修复了部分文本未被正确替换的问题
+
+  + Redesign the recipes of plastic, chemical fuel, and petrochemicals, and adjust the research difficulty (affect the save)
+  + Add new catalysts (3) to the circuit etching recipe
+  + Adjust the pre-research requirements of some technologies
+  + Reduce the hash requirements of the ultimate goal technology
+  + Reduce the material requirements of some buildings
+  + Fix the problem that some text translations are incorrect
+  + Fix the problem that some texts are not replaced correctly
+
+<details>
+  <summary>点击展开日志 | Click to view all </summary>
+
 - v2.6.0 原子之心 | Atomic Heart
   + 修复与联机MOD的兼容性问题
   + 调整图标选择界面公式部分的显示
@@ -15,9 +35,6 @@
   + Adjust the material requirements of some recipes (affect the save)
   + Add `Fusion Enhancement` and `Advanced Propulsion` coordination effects
 
-
-<details>
-  <summary>点击展开日志 | Click to view all </summary>
 
 - v2.5.14
   + 修复已拆除的巨构传送带缓存未及时更新导致物品远程传送的问题

@@ -29,7 +29,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 1501,
+    "GridIndex": 1302,
     "Time": 120,
     "Input": [
       1104
@@ -77,7 +77,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 1,
-    "GridIndex": 1410,
+    "GridIndex": 1609,
     "Time": 120,
     "Input": [
       1005
@@ -125,7 +125,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 1306,
+    "GridIndex": 1303,
     "Time": 120,
     "Input": [
       1101,
@@ -255,6 +255,31 @@
   },
   {
     "ID": 11,
+    "Name": "棱镜",
+    "Description": "",
+    "IconPath": "",
+    "Type": 4,
+    "Time": 120,
+    "Input": [
+      1110
+    ],
+    "InCounts": [
+      3
+    ],
+    "Output": [
+      1111
+    ],
+    "OutCounts": [
+      2
+    ],
+    "PreTech": 1101,
+    "GridIndex": 1306,
+    "Explicit": false,
+    "Handcraft": true,
+    "NonProductive": false
+  },
+  {
+    "ID": 424,
     "Name": "先驱者晶片",
     "Description": "",
     "IconPath": "",
@@ -290,11 +315,11 @@
     "GridIndex": 1307,
     "Time": 120,
     "Input": [
-      1110,
+      1111,
       1102
     ],
     "InCounts": [
-      1,
+      2,
       2
     ],
     "Output": [
@@ -702,7 +727,7 @@
     "GridIndex": 1703,
     "Time": 180,
     "Input": [
-      6204,
+      1118,
       1112
     ],
     "InCounts": [
@@ -725,17 +750,17 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 1607,
-    "Time": 120,
+    "GridIndex": 1407,
+    "Time": 240,
     "Input": [
-      1205,
+      1118,
       1123,
       1120
     ],
     "InCounts": [
       1,
-      1,
-      2
+      2,
+      12
     ],
     "Output": [
       1126
@@ -749,33 +774,30 @@
   },
   {
     "ID": 29,
-    "Name": "物质裂解塔",
-    "Description": "",
-    "IconPath": "",
-    "Type": 10,
-    "GridIndex": 2502,
-    "Time": 18000,
+    "Name": "卡西米尔晶体（高效）",
+    "Description": "R卡西米尔晶体（高效）",
+    "IconPath": "Icons/ItemRecipe/casimir-crystal-lv2",
+    "Type": 4,
+    "GridIndex": 1507,
+    "PreTech": 1125,
+    "Time": 240,
     "Input": [
-      6502,
-      1107,
-      1206,
-      2315,
-      1305
+      1014,
+      1123,
+      1120
     ],
     "InCounts": [
-      60,
-      180,
-      240,
-      10,
-      60
+      4,
+      2,
+      12
     ],
     "Output": [
-      6258
+      1126
     ],
     "OutCounts": [
       1
     ],
-    "Explicit": false,
+    "Explicit": true,
     "Handcraft": false,
     "NonProductive": false
   },
@@ -1348,16 +1370,16 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 5402,
-    "Time": 240,
+    "Time": 120,
     "Input": [
       7502,
       1302,
       7602
     ],
     "InCounts": [
-      2,
-      2,
-      2
+      1,
+      1,
+      1
     ],
     "Output": [
       1303
@@ -1376,16 +1398,18 @@
     "IconPath": "",
     "Type": 10,
     "GridIndex": 5403,
-    "Time": 360,
+    "Time": 180,
     "Input": [
       7503,
       1303,
-      7603
+      7603,
+      1304
     ],
     "InCounts": [
-      2,
-      2,
-      2
+      1,
+      1,
+      1,
+      1
     ],
     "Output": [
       1305
@@ -1419,7 +1443,7 @@
       1302
     ],
     "OutCounts": [
-      1
+      2
     ],
     "Explicit": false,
     "Handcraft": true,
@@ -1436,7 +1460,7 @@
     "Input": [
       6502,
       1107,
-      1206,
+      1202,
       2317,
       1305
     ],
@@ -1748,20 +1772,20 @@
     "IconPath": "",
     "Type": 1,
     "GridIndex": 1202,
-    "Time": 360,
+    "Time": 180,
     "Input": [
       1103,
       1106
     ],
     "InCounts": [
-      4,
-      4
+      2,
+      2
     ],
     "Output": [
       1107
     ],
     "OutCounts": [
-      4
+      2
     ],
     "Explicit": false,
     "Handcraft": false,
@@ -1797,6 +1821,60 @@
   },
   {
     "ID": 68,
+    "Type": 4,
+    "Time": 180,
+    "Input": [
+      1111,
+      1301
+    ],
+    "InCounts": [
+      2,
+      1
+    ],
+    "Output": [
+      1404
+    ],
+    "OutCounts": [
+      1
+    ],
+    "Description": "",
+    "PreTech": 1502,
+    "GridIndex": 1408,
+    "Name": "光子合并器",
+    "IconPath": "",
+    "Explicit": false,
+    "Handcraft": true,
+    "NonProductive": false
+  },
+  {
+    "ID": 69,
+    "Type": 4,
+    "Time": 180,
+    "Input": [
+      1014,
+      1301
+    ],
+    "InCounts": [
+      1,
+      1
+    ],
+    "Output": [
+      1404
+    ],
+    "OutCounts": [
+      1
+    ],
+    "Description": "R光子合并器（高效）",
+    "PreTech": 1502,
+    "GridIndex": 1508,
+    "Name": "光子合并器（高效）",
+    "IconPath": "Icons/ItemRecipe/photo-shifter-lv2",
+    "Explicit": true,
+    "Handcraft": false,
+    "NonProductive": false
+  },
+  {
+    "ID": 422,
     "Name": "精密结构组装厂",
     "Description": "",
     "IconPath": "",
@@ -1806,7 +1884,7 @@
     "Input": [
       6503,
       7707,
-      1206,
+      1202,
       2305,
       1305
     ],
@@ -1828,7 +1906,7 @@
     "NonProductive": false
   },
   {
-    "ID": 69,
+    "ID": 423,
     "Name": "物质分解设施",
     "Description": "",
     "IconPath": "",
@@ -1838,7 +1916,7 @@
     "Input": [
       6502,
       1107,
-      1206,
+      1202,
       6230,
       1305
     ],
@@ -1869,17 +1947,19 @@
     "Time": 120,
     "Input": [
       7709,
-      1303
+      1303,
+      1404
     ],
     "InCounts": [
       1,
-      1
+      1,
+      4
     ],
     "Output": [
       1501
     ],
     "OutCounts": [
-      6
+      12
     ],
     "Explicit": false,
     "Handcraft": false,
@@ -1926,13 +2006,13 @@
     "Input": [
       6503,
       7707,
-      1501,
+      1404,
       1305
     ],
     "InCounts": [
       2,
       10,
-      6,
+      8,
       2
     ],
     "Output": [
@@ -1981,7 +2061,7 @@
     "Description": "R光子物质化",
     "IconPath": "Icons/ItemRecipe/photon-formula",
     "Type": 5,
-    "GridIndex": 1409,
+    "GridIndex": 1411,
     "Time": 120,
     "Input": [
       1208
@@ -2065,7 +2145,7 @@
     "Time": 360,
     "Input": [
       6502,
-      1206,
+      1202,
       1303
     ],
     "InCounts": [
@@ -2089,7 +2169,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 1408,
+    "GridIndex": 1410,
     "Time": 600,
     "Input": [
       1209
@@ -2113,7 +2193,7 @@
     "Description": "R空间翘曲器（高级）",
     "IconPath": "Icons/ItemRecipe/space-warper-lv2",
     "Type": 4,
-    "GridIndex": 1508,
+    "GridIndex": 1510,
     "Time": 600,
     "Input": [
       6005
@@ -2141,11 +2221,13 @@
     "Time": 240,
     "Input": [
       7707,
-      7709
+      7709,
+      1124
     ],
     "InCounts": [
       1,
-      1
+      1,
+      2
     ],
     "Output": [
       1125
@@ -2486,7 +2568,7 @@
     "Input": [
       6501,
       1103,
-      1206,
+      1202,
       1302
     ],
     "InCounts": [
@@ -2542,7 +2624,7 @@
     "Input": [
       6502,
       1107,
-      1206,
+      1202,
       1303
     ],
     "InCounts": [
@@ -2623,7 +2705,7 @@
     "Time": 120,
     "Input": [
       1203,
-      1202
+      1109
     ],
     "InCounts": [
       1,
@@ -2641,6 +2723,62 @@
   },
   {
     "ID": 99,
+    "Type": 4,
+    "Time": 240,
+    "Input": [
+      1204,
+      1104,
+      1123
+    ],
+    "InCounts": [
+      2,
+      2,
+      2
+    ],
+    "Output": [
+      1206
+    ],
+    "OutCounts": [
+      1
+    ],
+    "Description": "",
+    "PreTech": 1703,
+    "GridIndex": 1410,
+    "Name": "粒子容器",
+    "IconPath": "",
+    "Explicit": false,
+    "Handcraft": true,
+    "NonProductive": false
+  },
+  {
+    "ID": 100,
+    "Type": 4,
+    "Time": 240,
+    "Input": [
+      1016,
+      1104
+    ],
+    "InCounts": [
+      10,
+      2
+    ],
+    "Output": [
+      1206
+    ],
+    "OutCounts": [
+      1
+    ],
+    "Description": "R粒子容器（高效）",
+    "PreTech": 1703,
+    "GridIndex": 1510,
+    "Name": "粒子容器（高效）",
+    "IconPath": "Icons/ItemRecipe/partical-capacitor-lv2",
+    "Explicit": true,
+    "Handcraft": false,
+    "NonProductive": false
+  },
+  {
+    "ID": 624,
     "Name": "氘氦混合聚变燃料棒",
     "Description": "",
     "IconPath": "",
@@ -2668,7 +2806,7 @@
     "NonProductive": false
   },
   {
-    "ID": 100,
+    "ID": 625,
     "Name": "氦三燃料棒",
     "Description": "",
     "IconPath": "",
@@ -2704,11 +2842,11 @@
     "GridIndex": 1606,
     "Time": 240,
     "Input": [
-      1304,
+      1112,
       1127
     ],
     "InCounts": [
-      1,
+      4,
       1
     ],
     "Output": [
@@ -2757,7 +2895,7 @@
     "Time": 120,
     "Input": [
       1204,
-      1118
+      1106
     ],
     "InCounts": [
       1,
@@ -2778,16 +2916,16 @@
     "Name": "奇异物质",
     "Description": "",
     "IconPath": "",
-    "Type": 4,
-    "GridIndex": 1407,
+    "Type": 5,
+    "GridIndex": 1607,
     "Time": 360,
     "Input": [
-      1126,
+      1206,
       1121
     ],
     "InCounts": [
-      1,
-      8
+      2,
+      10
     ],
     "Output": [
       1127
@@ -2830,18 +2968,18 @@
     "IconPath": "",
     "Type": 2,
     "GridIndex": 1213,
-    "Time": 240,
+    "Time": 120,
     "Input": [
       1014
     ],
     "InCounts": [
-      2
+      1
     ],
     "Output": [
       6234
     ],
     "OutCounts": [
-      4
+      2
     ],
     "Explicit": true,
     "Handcraft": false,
@@ -2853,7 +2991,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 1511,
+    "GridIndex": 1612,
     "Time": 120,
     "Input": [
       1124,
@@ -2883,7 +3021,7 @@
     "Time": 240,
     "Input": [
       6502,
-      1206,
+      1202,
       1119,
       1305
     ],
@@ -2965,7 +3103,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 1411,
+    "GridIndex": 1611,
     "Time": 120,
     "Input": [
       1108,
@@ -2996,7 +3134,7 @@
     "Input": [
       6502,
       1107,
-      1206,
+      1202,
       1205,
       1305
     ],
@@ -3136,14 +3274,16 @@
     "GridIndex": 2108,
     "Time": 360,
     "Input": [
-      2204,
+      1103,
       1107,
-      1303
+      1404,
+      1205
     ],
     "InCounts": [
-      2,
-      16,
-      4
+      8,
+      8,
+      4,
+      2
     ],
     "Output": [
       2213
@@ -3385,7 +3525,7 @@
     "ID": 703,
     "Name": "盐水分解",
     "Description": "R盐水分解",
-    "IconPath": "Assets/texpack/盐水电解_新",
+    "IconPath": "Assets/texpack/盐酸_新",
     "Type": 2,
     "GridIndex": 4111,
     "Time": 120,
@@ -3416,7 +3556,7 @@
     "IconPath": "",
     "Type": 2,
     "GridIndex": 1109,
-    "Time": 480,
+    "Time": 180,
     "Input": [
       7018
     ],
@@ -3544,7 +3684,7 @@
       1
     ],
     "Output": [
-      6204
+      1118
     ],
     "OutCounts": [
       2
@@ -3674,7 +3814,7 @@
       1
     ],
     "Output": [
-      6204
+      1118
     ],
     "OutCounts": [
       1
@@ -3720,24 +3860,24 @@
     "IconPath": "",
     "Type": 2,
     "GridIndex": 4311,
-    "Time": 360,
+    "Time": 180,
     "Input": [
       7014,
       1101,
       7019
     ],
     "InCounts": [
-      12,
-      4,
-      6
+      6,
+      2,
+      3
     ],
     "Output": [
       7015,
       1000
     ],
     "OutCounts": [
-      4,
-      6
+      2,
+      3
     ],
     "Explicit": true,
     "Handcraft": false,
@@ -4440,22 +4580,22 @@
     "IconPath": "",
     "Type": 1,
     "GridIndex": 1203,
-    "Time": 720,
+    "Time": 360,
     "Input": [
       1103,
       1107,
       7705
     ],
     "InCounts": [
+      1,
       2,
-      4,
-      8
+      4
     ],
     "Output": [
       7707
     ],
     "OutCounts": [
-      4
+      2
     ],
     "Explicit": false,
     "Handcraft": false,
@@ -4492,20 +4632,20 @@
     "IconPath": "",
     "Type": 1,
     "GridIndex": 5102,
-    "Time": 480,
+    "Time": 240,
     "Input": [
       1105,
       1106
     ],
     "InCounts": [
-      64,
-      16
+      32,
+      8
     ],
     "Output": [
       7702
     ],
     "OutCounts": [
-      2
+      1
     ],
     "Explicit": false,
     "Handcraft": true,
@@ -4518,20 +4658,20 @@
     "IconPath": "",
     "Type": 1,
     "GridIndex": 5103,
-    "Time": 480,
+    "Time": 120,
     "Input": [
       1105,
       7705
     ],
     "InCounts": [
-      128,
-      32
+      32,
+      8
     ],
     "Output": [
       7703
     ],
     "OutCounts": [
-      4
+      1
     ],
     "Explicit": false,
     "Handcraft": true,
@@ -4562,54 +4702,6 @@
     "NonProductive": false
   },
   {
-    "ID": 821,
-    "Name": "钛齿轮",
-    "Description": "",
-    "IconPath": "",
-    "Type": 4,
-    "GridIndex": 1302,
-    "Time": 120,
-    "Input": [
-      1106
-    ],
-    "InCounts": [
-      2
-    ],
-    "Output": [
-      1111
-    ],
-    "OutCounts": [
-      2
-    ],
-    "Explicit": false,
-    "Handcraft": true,
-    "NonProductive": false
-  },
-  {
-    "ID": 822,
-    "Name": "钨齿轮",
-    "Description": "",
-    "IconPath": "",
-    "Type": 4,
-    "GridIndex": 1303,
-    "Time": 120,
-    "Input": [
-      7705
-    ],
-    "InCounts": [
-      2
-    ],
-    "Output": [
-      1404
-    ],
-    "OutCounts": [
-      2
-    ],
-    "Explicit": false,
-    "Handcraft": true,
-    "NonProductive": false
-  },
-  {
     "ID": 425,
     "Name": "光子结晶化",
     "Description": "R光子结晶化",
@@ -4631,54 +4723,6 @@
     ],
     "Explicit": true,
     "Handcraft": false,
-    "NonProductive": false
-  },
-  {
-    "ID": 624,
-    "Name": "石墨线圈",
-    "Description": "",
-    "IconPath": "",
-    "Type": 4,
-    "GridIndex": 1502,
-    "Time": 120,
-    "Input": [
-      1109
-    ],
-    "InCounts": [
-      4
-    ],
-    "Output": [
-      1202
-    ],
-    "OutCounts": [
-      2
-    ],
-    "Explicit": false,
-    "Handcraft": true,
-    "NonProductive": false
-  },
-  {
-    "ID": 625,
-    "Name": "钛线圈",
-    "Description": "",
-    "IconPath": "",
-    "Type": 4,
-    "GridIndex": 1503,
-    "Time": 120,
-    "Input": [
-      1106
-    ],
-    "InCounts": [
-      4
-    ],
-    "Output": [
-      1118
-    ],
-    "OutCounts": [
-      2
-    ],
-    "Explicit": false,
-    "Handcraft": true,
     "NonProductive": false
   },
   {
@@ -4719,7 +4763,7 @@
     "Time": 240,
     "Input": [
       6501,
-      1111,
+      1106,
       1303
     ],
     "InCounts": [
@@ -4747,7 +4791,7 @@
     "Time": 360,
     "Input": [
       6502,
-      1404,
+      7705,
       1305
     ],
     "InCounts": [
@@ -4797,7 +4841,7 @@
     "Description": "R质能储存（高效）",
     "IconPath": "Assets/texpack/高效反物质",
     "Type": 5,
-    "GridIndex": 1509,
+    "GridIndex": 1511,
     "Time": 120,
     "Input": [
       1208
@@ -4817,27 +4861,33 @@
   },
   {
     "ID": 542,
-    "Name": "奇异物质（高效）",
-    "Description": "R奇异物质（高效）",
-    "IconPath": "Assets/texpack/高效奇异物质",
-    "Type": 5,
-    "GridIndex": 1507,
-    "Time": 240,
+    "Name": "物质裂解塔",
+    "Description": "",
+    "IconPath": "",
+    "Type": 10,
+    "GridIndex": 2502,
+    "Time": 18000,
     "Input": [
-      1012,
-      1121
+      6502,
+      1107,
+      1202,
+      2315,
+      1305
     ],
     "InCounts": [
-      2,
-      8
+      60,
+      180,
+      240,
+      10,
+      60
     ],
     "Output": [
-      1127
+      6258
     ],
     "OutCounts": [
       1
     ],
-    "Explicit": true,
+    "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
@@ -4952,22 +5002,22 @@
     "IconPath": "Assets/texpack/高效钛晶圆",
     "Type": 1,
     "GridIndex": 5202,
-    "Time": 240,
+    "Time": 120,
     "Input": [
       1105,
       1106,
       1014
     ],
     "InCounts": [
-      32,
-      8,
-      8
+      16,
+      4,
+      4
     ],
     "Output": [
       7702
     ],
     "OutCounts": [
-      2
+      1
     ],
     "Explicit": true,
     "Handcraft": false,
@@ -4980,22 +5030,22 @@
     "IconPath": "Assets/texpack/高效钨晶圆",
     "Type": 1,
     "GridIndex": 5203,
-    "Time": 240,
+    "Time": 120,
     "Input": [
       1105,
       7705,
       1014
     ],
     "InCounts": [
-      64,
-      16,
-      16
+      32,
+      8,
+      8
     ],
     "Output": [
       7703
     ],
     "OutCounts": [
-      4
+      2
     ],
     "Explicit": true,
     "Handcraft": false,
@@ -5045,7 +5095,7 @@
       1303
     ],
     "OutCounts": [
-      4
+      8
     ],
     "Explicit": true,
     "Handcraft": false,
@@ -5081,7 +5131,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 1609,
+    "GridIndex": 1501,
     "Time": 180,
     "Input": [
       1110
@@ -5105,7 +5155,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 1610,
+    "GridIndex": 1502,
     "Time": 180,
     "Input": [
       1112
@@ -5129,7 +5179,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 1611,
+    "GridIndex": 1503,
     "Time": 180,
     "Input": [
       1126
@@ -5154,22 +5204,22 @@
     "IconPath": "Assets/texpack/水煤气燃烧",
     "Type": 2,
     "GridIndex": 4109,
-    "Time": 240,
+    "Time": 120,
     "Input": [
       1109,
       1000
     ],
     "InCounts": [
-      2,
-      2
+      1,
+      1
     ],
     "Output": [
       6205,
       1120
     ],
     "OutCounts": [
-      2,
-      4
+      1,
+      2
     ],
     "Explicit": true,
     "Handcraft": false,
@@ -5387,7 +5437,7 @@
       1302
     ],
     "OutCounts": [
-      4
+      8
     ],
     "Explicit": true,
     "Handcraft": false,
@@ -5413,7 +5463,7 @@
       1303
     ],
     "OutCounts": [
-      2
+      4
     ],
     "Explicit": true,
     "Handcraft": false,
@@ -5429,17 +5479,19 @@
     "Time": 180,
     "Input": [
       7504,
-      7604
+      7604,
+      1304
     ],
     "InCounts": [
       1,
-      2
+      2,
+      4
     ],
     "Output": [
       1305
     ],
     "OutCounts": [
-      2
+      4
     ],
     "Explicit": true,
     "Handcraft": false,
@@ -5652,20 +5704,20 @@
     "IconPath": "",
     "Type": 11,
     "GridIndex": 3301,
-    "Time": 240,
+    "Time": 120,
     "Input": [
       1003,
       7020
     ],
     "InCounts": [
-      8,
-      16
+      4,
+      8
     ],
     "Output": [
       6222
     ],
     "OutCounts": [
-      4
+      2
     ],
     "Explicit": true,
     "Handcraft": false,
@@ -6005,25 +6057,25 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 1510,
+    "GridIndex": 1610,
     "Time": 120,
     "Input": [
       1103,
       6251,
-      1112,
+      6256,
       1000
     ],
     "InCounts": [
-      8,
-      16,
+      2,
       4,
-      8
+      1,
+      2
     ],
     "Output": [
-      1206
+      1202
     ],
     "OutCounts": [
-      4
+      2
     ],
     "Explicit": false,
     "Handcraft": false,
@@ -6040,7 +6092,7 @@
     "Input": [
       6502,
       1107,
-      1206,
+      1202,
       2303,
       1305
     ],
@@ -6072,7 +6124,7 @@
     "Input": [
       6503,
       7707,
-      1206,
+      1202,
       2310,
       1305
     ],
@@ -6134,7 +6186,7 @@
     "Input": [
       6501,
       1103,
-      1206,
+      1202,
       1205
     ],
     "InCounts": [

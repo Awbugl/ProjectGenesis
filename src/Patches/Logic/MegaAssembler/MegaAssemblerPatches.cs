@@ -124,17 +124,6 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
 
             if (power < 0.1f) return false;
 
-            // 化工技术革新效果
-            if (GameMain.history.TechUnlocked(ProtoIDUsedByPatches.T化工技术革新))
-            {
-                var instanceRecipeType = __instance.recipeType;
-                if (instanceRecipeType == (ERecipeType_1)Utils.ERecipeType.Chemical ||
-                    instanceRecipeType == (ERecipeType_1)Utils.ERecipeType.Refine ||
-                    instanceRecipeType == (ERecipeType_1)Utils.ERecipeType.高分子化工)
-                    if (__instance.speed == 20000)
-                        __instance.speed = 40000;
-            }
-
             if (__instance.recipeType != (ERecipeType_1)Utils.ERecipeType.电路蚀刻) return true;
 
             var data = LithographyAssemblerPatches.GetLithographyData(factorySystem.planet.id, __instance.id);

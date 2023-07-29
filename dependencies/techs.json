@@ -143,7 +143,7 @@
       -35.0
     ],
     "PreTechs": [
-      1903
+      1120
     ],
     "PreTechsImplicit": [],
     "Items": [
@@ -154,6 +154,7 @@
     ],
     "HashNeeded": 9000,
     "UnlockRecipes": [
+      11,
       12,
       13,
       14
@@ -259,7 +260,7 @@
     "PropertyItemCounts": []
   },
   {
-    "ID": 1104,
+    "ID": 1513,
     "Name": "T地热开采",
     "IconPath": "Icons/Tech/1513",
     "Desc": "地热开采描述",
@@ -458,11 +459,11 @@
     "Desc": "流体储存封装描述",
     "Conclusion": "流体储存封装结果",
     "Position": [
-      13.0,
-      -27.0
+      9.0,
+      -31.0
     ],
     "PreTechs": [
-      1903
+      1901
     ],
     "PreTechsImplicit": [],
     "Items": [
@@ -506,7 +507,7 @@
       -31.0
     ],
     "PreTechs": [
-      1903
+      1120
     ],
     "PreTechsImplicit": [
       1832
@@ -586,10 +587,10 @@
   },
   {
     "ID": 1123,
-    "Name": "T终极目标:先驱者遗物",
+    "Name": "T先驱者遗物",
     "IconPath": "Icons/Tech/1303",
-    "Desc": "T终极目标:先驱者遗物描述",
-    "Conclusion": "T终极目标:先驱者遗物描述",
+    "Desc": "T先驱者遗物描述",
+    "Conclusion": "T先驱者遗物描述",
     "Position": [
       45.0,
       -15.0
@@ -614,7 +615,7 @@
     ],
     "HashNeeded": 72000000,
     "UnlockRecipes": [
-      11
+      424
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -681,7 +682,7 @@
     "Desc": "卡西米尔晶体描述",
     "Conclusion": "卡西米尔晶体结果",
     "Position": [
-      29.0,
+      25.0,
       -27.0
     ],
     "PreTechs": [
@@ -701,6 +702,7 @@
     "HashNeeded": 240000,
     "UnlockRecipes": [
       28,
+      29,
       504
     ],
     "UnlockFunctions": [],
@@ -764,11 +766,11 @@
     "Desc": "应用型超导体描述",
     "Conclusion": "应用型超导体结果",
     "Position": [
-      25.0,
-      -31.0
+      19.0,
+      -27.0
     ],
     "PreTechs": [
-      1830
+      1121
     ],
     "PreTechsImplicit": [],
     "Items": [
@@ -805,7 +807,7 @@
     "Desc": "高强度材料描述",
     "Conclusion": "高强度材料结果",
     "Position": [
-      29.0,
+      25.0,
       -31.0
     ],
     "PreTechs": [
@@ -887,10 +889,10 @@
   },
   {
     "ID": 1134,
-    "Name": "T终极目标:无尽材料学",
+    "Name": "T无尽材料学",
     "IconPath": "Icons/Tech/1414",
-    "Desc": "T终极目标:无尽材料学描述",
-    "Conclusion": "T终极目标:无尽材料学描述",
+    "Desc": "T无尽材料学描述",
+    "Conclusion": "T无尽材料学描述",
     "Position": [
       45.0,
       -11.0
@@ -940,7 +942,7 @@
     "Desc": "波函数干扰描述",
     "Conclusion": "波函数干扰结果",
     "Position": [
-      33.0,
+      29.0,
       -27.0
     ],
     "PreTechs": [
@@ -1066,7 +1068,7 @@
   },
   {
     "ID": 1144,
-    "Name": "T终极目标:反物质能量炉",
+    "Name": "T反物质能量炉",
     "IconPath": "Icons/Tech/1144",
     "Desc": "T反物质能量炉描述",
     "Conclusion": "T反物质能量炉结果",
@@ -1119,7 +1121,7 @@
   },
   {
     "ID": 1145,
-    "Name": "T终极目标:可控湮灭反应",
+    "Name": "T可控湮灭反应",
     "IconPath": "Icons/Tech/1145",
     "Desc": "可控湮灭反应描述",
     "Conclusion": "可控湮灭反应结果",
@@ -1512,14 +1514,14 @@
     "Items": [
       6001,
       6002,
-      6003
+      6004
     ],
     "ItemPoints": [
-      8,
-      8,
-      8
+      10,
+      10,
+      10
     ],
-    "HashNeeded": 360000,
+    "HashNeeded": 288000,
     "UnlockRecipes": [
       52,
       522,
@@ -1954,8 +1956,7 @@
     "HashNeeded": 36000,
     "UnlockRecipes": [
       65,
-      774,
-      625
+      774
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -2062,7 +2063,7 @@
       -19.0
     ],
     "PreTechs": [
-      1104
+      1513
     ],
     "PreTechsImplicit": [],
     "Items": [
@@ -2183,18 +2184,20 @@
   },
   {
     "ID": 1502,
-    "Name": "T海洋排污",
-    "IconPath": "Icons/Tech/1120",
-    "Desc": "T海洋排污描述",
-    "Conclusion": "T海洋排污描述",
+    "Name": "T光子变频",
+    "IconPath": "Icons/Tech/1502",
+    "Desc": "光子变频描述",
+    "Conclusion": "光子变频结果",
     "Position": [
-      17.0,
-      -27.0
+      41.0,
+      1.0
     ],
     "PreTechs": [
-      1120
+      1
     ],
-    "PreTechsImplicit": [],
+    "PreTechsImplicit": [
+      1501
+    ],
     "Items": [
       6001,
       6002
@@ -2203,8 +2206,11 @@
       20,
       20
     ],
-    "HashNeeded": 72000,
-    "UnlockRecipes": [],
+    "HashNeeded": 36000,
+    "UnlockRecipes": [
+      68,
+      69
+    ],
     "UnlockFunctions": [],
     "UnlockValues": [],
     "Published": true,
@@ -2221,16 +2227,16 @@
   },
   {
     "ID": 1503,
-    "Name": "T戴森球计划:太阳帆轨道系统",
+    "Name": "T太阳帆轨道系统",
     "IconPath": "Icons/Tech/1503",
     "Desc": "太阳帆轨道系统描述",
     "Conclusion": "太阳帆轨道系统结果",
     "Position": [
-      41.0,
+      45.0,
       1.0
     ],
     "PreTechs": [
-      1
+      1502
     ],
     "PreTechsImplicit": [],
     "Items": [
@@ -2268,7 +2274,7 @@
   },
   {
     "ID": 1504,
-    "Name": "T戴森球计划:戴森球能源传输系统",
+    "Name": "T射线接收站",
     "IconPath": "Icons/Tech/1504",
     "Desc": "射线接收站描述",
     "Conclusion": "射线接收站结果",
@@ -2277,7 +2283,7 @@
       -3.0
     ],
     "PreTechs": [
-      1503
+      1502
     ],
     "PreTechsImplicit": [],
     "Items": [
@@ -2316,7 +2322,7 @@
   },
   {
     "ID": 1505,
-    "Name": "T戴森球计划:行星电离层利用",
+    "Name": "T行星电离层利用",
     "IconPath": "Icons/Tech/1505",
     "Desc": "行星电离层利用描述",
     "Conclusion": "行星电离层利用结果",
@@ -2362,7 +2368,7 @@
   },
   {
     "ID": 1506,
-    "Name": "T戴森球计划:光子逆变技术",
+    "Name": "T狄拉克逆变机制",
     "IconPath": "Icons/Tech/1506",
     "Desc": "狄拉克逆变机制描述",
     "Conclusion": "狄拉克逆变机制结果",
@@ -2371,7 +2377,7 @@
       1.0
     ],
     "PreTechs": [
-      1522
+      1503
     ],
     "PreTechsImplicit": [],
     "Items": [
@@ -2581,48 +2587,6 @@
     "PropertyItemCounts": []
   },
   {
-    "ID": 1513,
-    "Name": "T化工技术革新",
-    "IconPath": "Assets/texpack/化工2_1",
-    "Desc": "T化工技术革新描述",
-    "Conclusion": "T化工技术革新描述",
-    "Position": [
-      25.0,
-      13.0
-    ],
-    "PreTechs": [
-      1305
-    ],
-    "PreTechsImplicit": [],
-    "Items": [
-      6001,
-      6002,
-      6003,
-      6004
-    ],
-    "ItemPoints": [
-      20,
-      20,
-      20,
-      5
-    ],
-    "HashNeeded": 288000,
-    "UnlockRecipes": [],
-    "UnlockFunctions": [],
-    "UnlockValues": [],
-    "Published": true,
-    "Level": 0,
-    "MaxLevel": 0,
-    "LevelCoef1": 0,
-    "LevelCoef2": 0,
-    "IsLabTech": true,
-    "PreTechsMax": false,
-    "AddItems": [],
-    "AddItemCounts": [],
-    "PropertyOverrideItems": [],
-    "PropertyItemCounts": []
-  },
-  {
     "ID": 1521,
     "Name": "T高强度轻质结构",
     "IconPath": "Icons/Tech/1521",
@@ -2665,16 +2629,16 @@
   },
   {
     "ID": 1522,
-    "Name": "T戴森球计划:戴森球组件运输系统",
+    "Name": "T垂直发射井",
     "IconPath": "Icons/Tech/1522",
     "Desc": "垂直发射井描述",
     "Conclusion": "垂直发射井结果",
     "Position": [
       45.0,
-      1.0
+      5.0
     ],
     "PreTechs": [
-      1503
+      1502
     ],
     "PreTechsImplicit": [],
     "Items": [
@@ -2716,16 +2680,16 @@
   },
   {
     "ID": 1523,
-    "Name": "T戴森球计划:戴森球应力系统",
+    "Name": "T戴森球应力系统",
     "IconPath": "Icons/Tech/1523",
     "Desc": "戴森球应力系统描述",
     "Conclusion": "戴森球应力系统结果",
     "Position": [
-      45.0,
+      49.0,
       5.0
     ],
     "PreTechs": [
-      1503
+      1522
     ],
     "PreTechsImplicit": [],
     "Items": [
@@ -2879,9 +2843,7 @@
     "PreTechs": [
       1602
     ],
-    "PreTechsImplicit": [
-      1703
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002
@@ -2938,7 +2900,7 @@
       15
     ],
     "HashNeeded": 144000,
-    "UnlockRecipes": [     
+    "UnlockRecipes": [
       93,
       94
     ],
@@ -3197,8 +3159,7 @@
     ],
     "HashNeeded": 72000,
     "UnlockRecipes": [
-      98,
-      624
+      98
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -3216,30 +3177,32 @@
   },
   {
     "ID": 1703,
-    "Name": "T海洋排污2",
-    "IconPath": "Icons/Tech/1120",
-    "Desc": "T海洋排污2描述",
-    "Conclusion": "T海洋排污2描述",
+    "Name": "T粒子磁力阱",
+    "IconPath": "Icons/Tech/1703",
+    "Desc": "粒子磁力阱描述",
+    "Conclusion": "粒子磁力阱结果",
     "Position": [
       21.0,
       -27.0
     ],
     "PreTechs": [
-      1502
+      1702,
+      1131
     ],
     "PreTechsImplicit": [],
     "Items": [
       6001,
-      6002,
-      6003
+      6002
     ],
     "ItemPoints": [
       20,
-      20,
-      20
+      10
     ],
-    "HashNeeded": 144000,
-    "UnlockRecipes": [],
+    "HashNeeded": 288000,
+    "UnlockRecipes": [
+      99,
+      100
+    ],
     "UnlockFunctions": [],
     "UnlockValues": [],
     "Published": true,
@@ -3283,8 +3246,7 @@
     "HashNeeded": 360000,
     "UnlockRecipes": [
       101,
-      78,
-      542
+      78
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -3385,10 +3347,10 @@
   },
   {
     "ID": 1712,
-    "Name": "T终极目标:广播式能源",
+    "Name": "T广播式能源",
     "IconPath": "Icons/Tech/1712",
-    "Desc": "T终极目标:广播式能源描述",
-    "Conclusion": "T终极目标:广播式能源描述",
+    "Desc": "T广播式能源描述",
+    "Conclusion": "T广播式能源描述",
     "Position": [
       49.0,
       -11.0
@@ -8539,7 +8501,7 @@
     ],
     "PreTechsImplicit": [
       1302,
-      1413      
+      1413
     ],
     "Items": [
       6001,
@@ -8553,8 +8515,7 @@
     ],
     "HashNeeded": 36000,
     "UnlockRecipes": [
-      642,
-      821
+      642
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -8598,8 +8559,7 @@
     ],
     "HashNeeded": 72000,
     "UnlockRecipes": [
-      643,
-      822
+      643
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -9019,7 +8979,7 @@
     "PropertyItemCounts": []
   },
   {
-    "ID": 1812,
+    "ID": 1104,
     "Name": "T先进精炼技术",
     "IconPath": "Assets/texpack/精炼科技",
     "Desc": "T先进精炼技术描述",
@@ -9063,10 +9023,10 @@
   },
   {
     "ID": 1816,
-    "Name": "T核子先驱:放射原料",
+    "Name": "放射性原料提纯",
     "IconPath": "Icons/Tech/1416",
-    "Desc": "T核子先驱:放射原料描述",
-    "Conclusion": "T核子先驱:放射原料描述",
+    "Desc": "T放射性原料提纯描述",
+    "Conclusion": "T放射性原料提纯描述",
     "Position": [
       13.0,
       -15.0
@@ -9107,10 +9067,10 @@
   },
   {
     "ID": 1819,
-    "Name": "T核子先驱:放射性物质萃取",
+    "Name": "T放射性物质萃取",
     "IconPath": "Icons/Tech/1416",
-    "Desc": "T核子先驱:放射性物质萃取描述",
-    "Conclusion": "T核子先驱:放射性物质萃取描述",
+    "Desc": "T放射性物质萃取描述",
+    "Conclusion": "T放射性物质萃取描述",
     "Position": [
       17.0,
       -15.0
@@ -9148,10 +9108,10 @@
   },
   {
     "ID": 1820,
-    "Name": "T核子先驱:裂变能源",
+    "Name": "T裂变能源燃料棒",
     "IconPath": "Icons/Tech/1416",
-    "Desc": "T核子先驱:裂变能源描述",
-    "Conclusion": "T核子先驱:裂变能源描述",
+    "Desc": "T裂变能源燃料棒描述",
+    "Conclusion": "T裂变能源燃料棒描述",
     "Position": [
       21.0,
       -15.0
@@ -9192,10 +9152,10 @@
   },
   {
     "ID": 1821,
-    "Name": "T核子先驱:同位素提取",
+    "Name": "T聚变同位素提取",
     "IconPath": "Icons/Tech/1416",
-    "Desc": "T核子先驱:同位素提取描述",
-    "Conclusion": "T核子先驱:同位素提取描述",
+    "Desc": "T聚变同位素提取描述",
+    "Conclusion": "T聚变同位素提取描述",
     "Position": [
       25.0,
       -15.0
@@ -9204,7 +9164,7 @@
       1820
     ],
     "PreTechsImplicit": [
-      1812
+      1104
     ],
     "Items": [
       6001,
@@ -9241,10 +9201,10 @@
   },
   {
     "ID": 1822,
-    "Name": "T核子先驱:聚变能源",
+    "Name": "T聚变能源燃料棒",
     "IconPath": "Icons/Tech/1416",
-    "Desc": "T核子先驱:聚变能源描述",
-    "Conclusion": "T核子先驱:聚变能源描述",
+    "Desc": "T聚变能源燃料棒描述",
+    "Conclusion": "T聚变能源燃料棒描述",
     "Position": [
       29.0,
       -15.0
@@ -9270,8 +9230,8 @@
     "HashNeeded": 288000,
     "UnlockRecipes": [
       41,
-      100,
-      99
+      625,
+      624
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -9289,10 +9249,10 @@
   },
   {
     "ID": 1823,
-    "Name": "T巨型建筑:天穹装配厂",
+    "Name": "T天穹装配厂",
     "IconPath": "Icons/Tech/1604",
-    "Desc": "T巨型建筑:天穹装配厂描述",
-    "Conclusion": "T巨型建筑:天穹装配厂描述",
+    "Desc": "T天穹装配厂描述",
+    "Conclusion": "T天穹装配厂描述",
     "Position": [
       49.0,
       21.0
@@ -9341,10 +9301,10 @@
   },
   {
     "ID": 1824,
-    "Name": "T巨型建筑:物质裂解塔",
+    "Name": "T物质裂解塔",
     "IconPath": "Icons/Tech/1604",
-    "Desc": "T巨型建筑:物质裂解塔描述",
-    "Conclusion": "T巨型建筑:物质裂解塔描述",
+    "Desc": "T物质裂解塔描述",
+    "Conclusion": "T物质裂解塔描述",
     "Position": [
       45.0,
       21.0
@@ -9371,7 +9331,7 @@
     ],
     "HashNeeded": 576000,
     "UnlockRecipes": [
-      29
+      542
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -9393,10 +9353,10 @@
   },
   {
     "ID": 1825,
-    "Name": "T巨型建筑:行星级化学反应釜",
+    "Name": "T行星级化学反应釜",
     "IconPath": "Icons/Tech/1604",
-    "Desc": "T巨型建筑:行星级化学反应釜描述",
-    "Conclusion": "T巨型建筑:行星级化学反应釜描述",
+    "Desc": "T行星级化学反应釜描述",
+    "Conclusion": "T行星级化学反应釜描述",
     "Position": [
       45.0,
       17.0
@@ -9445,10 +9405,10 @@
   },
   {
     "ID": 1826,
-    "Name": "T巨型建筑:精密结构组装厂",
+    "Name": "T精密结构组装厂",
     "IconPath": "Icons/Tech/1604",
-    "Desc": "T巨型建筑:精密结构组装厂描述",
-    "Conclusion": "T巨型建筑:精密结构组装厂描述",
+    "Desc": "T精密结构组装厂描述",
+    "Conclusion": "T精密结构组装厂描述",
     "Position": [
       45.0,
       13.0
@@ -9475,7 +9435,7 @@
     ],
     "HashNeeded": 576000,
     "UnlockRecipes": [
-      68
+      422
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -9497,10 +9457,10 @@
   },
   {
     "ID": 1827,
-    "Name": "T巨型建筑:巨型粒子对撞机",
+    "Name": "T巨型粒子对撞机",
     "IconPath": "Icons/Tech/1604",
-    "Desc": "T巨型建筑:巨型粒子对撞机描述",
-    "Conclusion": "T巨型建筑:巨型粒子对撞机描述",
+    "Desc": "T巨型粒子对撞机描述",
+    "Conclusion": "T巨型粒子对撞机描述",
     "Position": [
       49.0,
       13.0
@@ -9549,10 +9509,10 @@
   },
   {
     "ID": 1831,
-    "Name": "T巨型建筑:物质分解设施",
+    "Name": "T物质分解设施",
     "IconPath": "Assets/texpack/回收科技",
-    "Desc": "T巨型建筑:物质分解设施描述",
-    "Conclusion": "T巨型建筑:物质分解设施描述",
+    "Desc": "T物质分解设施描述",
+    "Conclusion": "T物质分解设施描述",
     "Position": [
       49.0,
       17.0
@@ -9578,7 +9538,7 @@
     "HashNeeded": 576000,
     "UnlockRecipes": [
       429,
-      69
+      423
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -9609,7 +9569,7 @@
       -35.0
     ],
     "PreTechs": [
-      1812
+      1104
     ],
     "PreTechsImplicit": [],
     "Items": [
@@ -9795,9 +9755,7 @@
     "PreTechs": [
       1801
     ],
-    "PreTechsImplicit": [
-      1120
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001
     ],
@@ -9934,38 +9892,6 @@
     "PropertyItemCounts": []
   },
   {
-    "ID": 1903,
-    "Name": "T化学",
-    "IconPath": "Assets/texpack/化工科技",
-    "Desc": "",
-    "Conclusion": "",
-    "Position": [
-      9.0,
-      -31.0
-    ],
-    "PreTechs": [
-      1901
-    ],
-    "PreTechsImplicit": [],
-    "Items": [],
-    "ItemPoints": [],
-    "HashNeeded": 1000,
-    "UnlockRecipes": [],
-    "UnlockFunctions": [],
-    "UnlockValues": [],
-    "Published": true,
-    "Level": 0,
-    "MaxLevel": 0,
-    "LevelCoef1": 0,
-    "LevelCoef2": 0,
-    "IsLabTech": false,
-    "PreTechsMax": false,
-    "AddItems": [],
-    "AddItemCounts": [],
-    "PropertyOverrideItems": [],
-    "PropertyItemCounts": []
-  },
-  {
     "ID": 1834,
     "Name": "T巨型建筑工程学",
     "IconPath": "Icons/Tech/1604",
@@ -9994,48 +9920,6 @@
       5
     ],
     "HashNeeded": 576000,
-    "UnlockRecipes": [],
-    "UnlockFunctions": [],
-    "UnlockValues": [],
-    "Published": true,
-    "Level": 0,
-    "MaxLevel": 0,
-    "LevelCoef1": 0,
-    "LevelCoef2": 0,
-    "IsLabTech": true,
-    "PreTechsMax": false,
-    "AddItems": [],
-    "AddItemCounts": [],
-    "PropertyOverrideItems": [],
-    "PropertyItemCounts": []
-  },
-  {
-    "ID": 1835,
-    "Name": "T大气排放",
-    "IconPath": "Icons/Tech/1120",
-    "Desc": "T大气排放描述",
-    "Conclusion": "T大气排放结果",
-    "Position": [
-      25.0,
-      -27.0
-    ],
-    "PreTechs": [
-      1703
-    ],
-    "PreTechsImplicit": [],
-    "Items": [
-      6001,
-      6002,
-      6003,
-      6004
-    ],
-    "ItemPoints": [
-      20,
-      20,
-      20,
-      10
-    ],
-    "HashNeeded": 288000,
     "UnlockRecipes": [],
     "UnlockFunctions": [],
     "UnlockValues": [],

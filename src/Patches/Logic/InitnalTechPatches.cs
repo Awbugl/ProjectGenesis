@@ -12,14 +12,11 @@ namespace ProjectGenesis.Patches.Logic
         private static readonly List<int> InitnalTechs = new List<int>
                                                          {
                                                              1,
-                                                             1001,
                                                              1901,
                                                              1902,
-                                                             1903,
                                                              1415
                                                          },
-                                          BonusTechs = new List<int> { 1801 },
-                                          SandBoxNotUnlockTechs = new List<int> { 1835, 1513 };
+                                          BonusTechs = new List<int> { 1801 };
 
         [HarmonyPatch(typeof(GameData), "SetForNewGame")]
         [HarmonyPostfix]
@@ -73,26 +70,6 @@ namespace ProjectGenesis.Patches.Logic
 
             matcher.SetInstructionAndAdvance(Transpilers.EmitDelegate<Func<int, bool>>(id => InitnalTechs.Contains(id)));
             matcher.SetOpcodeAndAdvance(OpCodes.Brfalse_S);
-            return matcher.InstructionEnumeration();
-        }
-
-        [HarmonyPatch(typeof(UITechTree), "Do1KeyUnlock")]
-        [HarmonyTranspiler]
-        public static IEnumerable<CodeInstruction> UITechTree_Do1KeyUnlock_Transpiler(IEnumerable<CodeInstruction> instructions)
-        {
-            var matcher = new CodeMatcher(instructions);
-            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldc_I4, 1508));
-
-            List<CodeInstruction> insts = matcher.InstructionsInRange(matcher.Pos - 2, matcher.Pos + 1);
-            matcher.Advance(2);
-
-            foreach (var tech in SandBoxNotUnlockTechs)
-            {
-                CodeInstruction[] codeInstructions = insts.ToArray();
-                codeInstructions[2] = new CodeInstruction(codeInstructions[2].opcode, tech);
-                matcher.InsertAndAdvance(codeInstructions);
-            }
-
             return matcher.InstructionEnumeration();
         }
     }

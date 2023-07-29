@@ -98,10 +98,10 @@ namespace ProjectGenesis.Utils
             prefabDesc7.genEnergyPerTick = 10000000;
             prefabDesc7.useFuelPerTick = 10000000;
 
-
             itemProtos.Select(I位面熔炉).prefabDesc.assemblerSpeed = 40000;
-            itemProtos.Select(I化工厂).prefabDesc.assemblerSpeed = 20000;
-            itemProtos.Select(I精炼厂).prefabDesc.assemblerSpeed = 20000;
+            itemProtos.Select(I化工厂).prefabDesc.assemblerSpeed = 40000;
+            itemProtos.Select(I精炼厂).prefabDesc.assemblerSpeed = 40000;
+            itemProtos.Select(I量子化工厂).prefabDesc.assemblerSpeed = 40000;
             itemProtos.Select(I粒子对撞机).prefabDesc.assemblerSpeed = 40000;
 
             itemProtos.Select(I采矿机).prefabDesc.minerPeriod = 600000;

@@ -1071,8 +1071,8 @@
   },
   {
     "Name": "I稳定矩阵",
-    "ZHCN": "由两种矩阵组成的复合矩阵。可供给科研模式下的矩阵研究站用作科研，也可作为合成宇宙矩阵的原料之一.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "It is a composite matrix composed of two matrixes. It can be supplied to lab for research, and can also be used as one of the raw materials for synthesizing the universe matrix roughcast.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "由两种矩阵组成的复合矩阵。可被分拣器解离成等量的两种矩阵用于科研，也可作为合成宇宙矩阵的原料之一.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "It is a composite matrix composed of two matrixes, which can be disassembled into two matrixes for research lab by sorter, and can also be used as one of the raw materials for synthesizing the universe matrix roughcast.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "虚空矩阵",
@@ -1081,8 +1081,8 @@
   },
   {
     "Name": "I虚空矩阵",
-    "ZHCN": "由两种矩阵组成的复合矩阵。可供给科研模式下的矩阵研究站用作科研，也可作为合成宇宙矩阵的原料之一.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "It is a composite matrix composed of two matrixes. It can be supplied to lab for research, and can also be used as one of the raw materials for synthesizing the universe matrix roughcast.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "由两种矩阵组成的复合矩阵。可被分拣器解离成等量的两种矩阵用于科研，也可作为合成宇宙矩阵的原料之一.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "It is a composite matrix composed of two matrixes, which can be disassembled into two matrixes for research lab by sorter, and can also be used as one of the raw materials for synthesizing the universe matrix roughcast.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "宇宙矩阵粗坯",
@@ -1091,8 +1091,8 @@
   },
   {
     "Name": "I宇宙矩阵粗坯",
-    "ZHCN": "由五种矩阵组成的复合矩阵。使用反物质充能后可转换为宇宙矩阵，也可供给科研模式下的矩阵研究站用作科研.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "It is a composite matrix, It can be supplied to lab for research, and can be converted to universe matrix after charging with antimatter.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "由五种矩阵组成的复合矩阵。使用反物质充能后可转换为宇宙矩阵，也可被分拣器解离成等量的五种矩阵用于科研.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "It is a composite matrix, which can be disassembled into five matrixes for research lab by sorter, and can be converted to universe matrix after charging with antimatter.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "I湮灭约束球",
@@ -1806,8 +1806,8 @@
   },
   {
     "Name": "R水电解",
-    "ZHCN": "电解水，产生氢气和氧气.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Electrolysis of water, producing hydrogen and oxygen.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "电解水，产生氢气和氧气.\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作.</color>\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Electrolysis of water, producing hydrogen and oxygen.\n<color=\"#FD965ECC\">Will not stop working until all products are accumulated.</color>\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "盐水分解",
@@ -1816,8 +1816,8 @@
   },
   {
     "Name": "R盐水分解",
-    "ZHCN": "使用离子交换膜电解氯化钠溶液，生产氢氯酸和氢氧化钠.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Electrolysis of salt water using ion exchange membranes, producing hydrochloric acid and sodium hydroxide.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "使用离子交换膜电解氯化钠溶液，生产氢氯酸和氢氧化钠.\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作.</color>\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Electrolysis of salt water using ion exchange membranes, producing hydrochloric acid and sodium hydroxide.\n<color=\"#FD965ECC\">Will not stop working until all products are accumulated.</color>\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "海水淡化",
@@ -1826,8 +1826,8 @@
   },
   {
     "Name": "R海水淡化",
-    "ZHCN": "利用反渗透膜将海水中的盐分去除（多余的盐分将自动排放）.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Remove salt from seawater using reverse osmosis membranes (excess salt will be discharged automatically).\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "利用反渗透膜将海水中的盐分去除.\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作.</color>\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Remove salt from seawater using reverse osmosis membranes (will not stop working until all products are accumulated).\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "丙烯合成",
@@ -2005,16 +2005,6 @@
     "ENUS": "If only collect antimatter, a more aggressive magnetic field structure to speed up the antimatter output.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
-    "Name": "奇异物质（高效）",
-    "ZHCN": "奇异物质（高效）",
-    "ENUS": "Strange matter (advanced)"
-  },
-  {
-    "Name": "R奇异物质（高效）",
-    "ZHCN": "有了引力波折射技术, 我们可以使用金伯利矿石生产奇异物质.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "With the technology of gravitational wave refraction, we can use Kimberlite ore to produce strange matter.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
     "Name": "石墨烯（极效）",
     "ZHCN": "石墨烯（先进）",
     "ENUS": "Graphene (advanced-2)"
@@ -2046,8 +2036,8 @@
   },
   {
     "Name": "R有机液体离心",
-    "ZHCN": "将采集到的剧毒液体进行离心、分离和精炼, 可以得到数种有用的化合物.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Centrifugation of toxic liquid can yield several useful compounds.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "将采集到的剧毒液体进行离心、分离和精炼, 可以得到数种有用的化合物.\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作.</color>\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Centrifugation of toxic liquid can yield several useful compounds.\n<color=\"#FD965ECC\">Will not stop working until all products are accumulated.</color>\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "硅晶圆（高效）",
@@ -2151,8 +2141,8 @@
   },
   {
     "Name": "R硫酸",
-    "ZHCN": "使用离子交换膜电解硫酸钠溶液, 产生硫酸.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Sulfuric acid is produced by electrolysis of sodium sulfate solution using ion exchange membrane.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "使用离子交换膜电解硫酸钠溶液, 产生硫酸.\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作.</color>\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Sulfuric acid is produced by electrolysis of sodium sulfate solution using ion exchange membrane.\n<color=\"#FD965ECC\">Will not stop working until all products are accumulated.</color>\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "R乙酸甲酯",
@@ -2320,22 +2310,22 @@
     "ENUS": "A wider variety of chemicals can now be synthesized.\n[The unlocked recipe is not fully displayed due to display limitations]"
   },
   {
-    "Name": "T终极目标:先驱者遗物",
+    "Name": "T先驱者遗物",
     "ZHCN": "终极目标: 先驱者遗物",
     "ENUS": "Ultimate Goal: Ancient Alien relics"
   },
   {
-    "Name": "T终极目标:先驱者遗物描述",
+    "Name": "T先驱者遗物描述",
     "ZHCN": "先驱者文明的遗产.",
     "ENUS": "Heritage of unknown civilization."
   },
   {
-    "Name": "T终极目标:无尽材料学",
+    "Name": "T无尽材料学",
     "ZHCN": "终极目标: 无尽材料学",
     "ENUS": "Ultimate Goal: Infinity Material Science"
   },
   {
-    "Name": "T终极目标:无尽材料学描述",
+    "Name": "T无尽材料学描述",
     "ZHCN": "传统材料已经无法满足需求...",
     "ENUS": "Traditional materials can no longer meet the demand...."
   },
@@ -2345,13 +2335,13 @@
     "ENUS": "Particle Collider"
   },
   {
-    "Name": "T终极目标:反物质能量炉",
+    "Name": "T反物质能量炉",
     "ZHCN": "终极目标: 反物质能量炉",
     "ENUS": "Ultimate Goal: Antimatter Energy Reactor"
   },
   {
-    "Name": "T终极目标:可控湮灭反应",
-    "ZHCN": "终极目标:可控湮灭反应",
+    "Name": "T可控湮灭反应",
+    "ZHCN": "终极目标: 可控湮灭反应",
     "ENUS": "Ultimate Goal: Controlled annihilation reactions"
   },
   {
@@ -2465,7 +2455,7 @@
     "ENUS": "Modify the operation mode of the pumping station to provide a direct way for solid waste to enter the ocean."
   },
   {
-    "Name": "T终极目标:广播式能源",
+    "Name": "T广播式能源",
     "ZHCN": "终极目标: 广播式能源",
     "ENUS": "Ultimate Goal: Broadcast Energy"
   },
@@ -2590,137 +2580,117 @@
     "ENUS": "Using advanced organic synthesis technology, several chemical energy fuels can be manufactured."
   },
   {
-    "Name": "T核子先驱:放射原料",
-    "ZHCN": "核子先驱: 放射原料",
-    "ENUS": "Nuclear pioneers: radioactive materials"
+    "Name": "T放射性原料提纯",
+    "ZHCN": "放射性原料提纯",
+    "ENUS": "Radioactive raw material purification"
   },
   {
-    "Name": "T核子先驱:放射原料描述",
+    "Name": "放射性原料提纯描述",
     "ZHCN": "使用大量氢氧化钠可以将硅石矿中的极少量的放射性材料分离出来，作为后续提纯的原料。",
     "ENUS": "Using a large amount of sodium hydroxide can separate a small amount of radioactive materials in silicon ore as raw materials for further separation."
   },
   {
-    "Name": "T核子先驱:进一步分离",
-    "ZHCN": "核子先驱: 进一步分离",
-    "ENUS": "Nuclear pioneers: further separation"
+    "Name": "T放射性物质萃取",
+    "ZHCN": "放射性物质萃取",
+    "ENUS": "Radioactive material extraction"
   },
   {
-    "Name": "T核子先驱:进一步分离描述",
-    "ZHCN": "钚和铀的化学性质不同,利用这一点,可以从初步提取的放射原料中分离出钚和铀.",
-    "ENUS": "The chemical properties of plutonium and uranium are different, and this can be used to separate plutonium and uranium from the initially extracted radioactive material."
-  },
-  {
-    "Name": "T核子先驱:原矿精炼",
-    "ZHCN": "核子先驱: 原矿精炼",
-    "ENUS": "Nuclear pioneers: raw ore refining"
-  },
-  {
-    "Name": "T核子先驱:原矿精炼描述",
-    "ZHCN": "将得到的原料进一步提纯,得到纯净的钚和铀.",
-    "ENUS": "The obtained material is further purified to obtain pure plutonium and uranium."
-  },
-  {
-    "Name": "T核子先驱:放射性物质萃取",
-    "ZHCN": "核子先驱: 放射性物质萃取",
-    "ENUS": "Nuclear pioneers: radioactive material extraction"
-  },
-  {
-    "Name": "T核子先驱:放射性物质萃取描述",
+    "Name": "T放射性物质萃取描述",
     "ZHCN": "将得到的钚矿石和铀矿石提炼成可供进一步加工的工业原料.",
     "ENUS": "Refining the obtained plutonium ore and uranium ore into industrial raw materials for further processing."
   },
   {
-    "Name": "T核子先驱:裂变能源",
-    "ZHCN": "核子先驱: 裂变能源",
-    "ENUS": "Nuclear pioneers: fission energy"
+    "Name": "T裂变能源燃料棒",
+    "ZHCN": "裂变能源燃料棒",
+    "ENUS": "Fission energy fuel rod"
   },
   {
-    "Name": "T核子先驱:裂变能源描述",
-    "ZHCN": "经历了漫长的工序,你得到了稳定可控的裂变燃料.",
-    "ENUS": "After a long process, you have a stable and controlled fission fuel."
+    "Name": "T裂变能源燃料棒描述",
+    "ZHCN": "使用放射性同位素制作的裂变燃料.",
+    "ENUS": "Fission fuel made with radioisotopes."
   },
   {
-    "Name": "T核子先驱:同位素提取",
-    "ZHCN": "核子先驱: 同位素提取",
-    "ENUS": "Nuclear pioneers: Isotope extraction"
+    "Name": "T聚变同位素提取",
+    "ZHCN": "聚变同位素提取",
+    "ENUS": "Fusion isotope extraction"
   },
   {
-    "Name": "T核子先驱:同位素提取描述",
-    "ZHCN": "随着开拓者的工业水平进一步发展,裂变能已经无法满足需求.",
-    "ENUS": "With the further development of the pioneer's industry, fission energy is no longer sufficient to meet the demand."
+    "Name": "T聚变同位素提取描述",
+    "ZHCN": "光栅石的特殊晶格结构使其可作为富集氦原子的理想载体, 利用其富集的氦原子可以为制作聚变燃料找到一条捷径.",
+    "ENUS": "The special lattice structure of the grating stone makes it an ideal carrier for enriching helium atoms. The enriched helium atoms can be used to find a shortcut for making fusion fuel."
   },
   {
-    "Name": "T核子先驱:聚变能源",
-    "ZHCN": "核子先驱: 聚变能源",
-    "ENUS": "Nuclear pioneers: fusion energy"
+    "Name": "T聚变能源燃料棒",
+    "ZHCN": "聚变能源燃料棒",
+    "ENUS": "Fusion energy fuel rod"
   },
   {
-    "Name": "T核子先驱:聚变能源描述",
-    "ZHCN": "使用放射性同位素制作的聚变燃料.",
-    "ENUS": "Fusion fuel made with radioisotopes. "
+    "Name": "T聚变能源燃料棒描述",
+    "ZHCN": "使用聚变同位素制作的聚变燃料.",
+    "ENUS": "Fusion fuel made with fusion isotopes."
   },
   {
-    "Name": "T巨型建筑:天穹装配厂",
+    "Name": "T天穹装配厂",
     "ZHCN": "巨型建筑: 天穹装配厂",
     "ENUS": "Mega Buildings: The Cosmic Assembler"
   },
   {
-    "Name": "T巨型建筑:天穹装配厂描述",
+    "Name": "T天穹装配厂描述",
     "ZHCN": "高度智能化的大型工厂,有着远超制造台的效率.",
     "ENUS": "A highly intelligent large-scale factory with efficiency far exceeding that of a manufacturing plant."
   },
   {
-    "Name": "T巨型建筑:物质裂解塔",
+    "Name": "T物质裂解塔",
     "ZHCN": "巨型建筑: 物质裂解塔",
     "ENUS": "Mega Buildings: The Cosmic Splitting Factory"
   },
   {
-    "Name": "T巨型建筑:物质裂解塔描述",
+    "Name": "T物质裂解塔描述",
     "ZHCN": "使用聚变能源驱动的裂解炉,能够对矿物进行最高效率的利用.",
     "ENUS": "Splitting furnaces powered by fusion energy enable the most efficient use of minerals."
   },
   {
-    "Name": "T巨型建筑:行星级化学反应釜",
+    "Name": "T行星级化学反应釜",
     "ZHCN": "巨型建筑: 行星级化学反应釜",
     "ENUS": "Mega Buildings: Planetary Chemical Reaction Kettle"
   },
   {
-    "Name": "T巨型建筑:行星级化学反应釜描述",
+    "Name": "T行星级化学反应釜描述",
     "ZHCN": "一座史无前例的巨型化工厂.",
     "ENUS": "An unprecedented mega chemical plant."
   },
   {
-    "Name": "T巨型建筑:精密结构组装厂",
+    "Name": "T精密结构组装厂",
     "ZHCN": "巨型建筑: 精密结构组装厂",
     "ENUS": "Mega Buildings: Super Precise Assembly Factory"
   },
   {
-    "Name": "T巨型建筑:精密结构组装厂描述",
+    "Name": "T精密结构组装厂描述",
     "ZHCN": "精密装配线的未来.",
     "ENUS": "Precise assembler's future."
   },
   {
-    "Name": "T巨型建筑:物质分解设施",
+    "Name": "T物质分解设施",
     "ZHCN": "巨型建筑: 物质分解设施",
     "ENUS": "Mega Buildings: Recycling Factory"
   },
   {
-    "Name": "T巨型建筑:物质分解设施描述",
+    "Name": "T物质分解设施描述",
     "ZHCN": "利用光子聚束技术将物质分解成粒子态并将其重组为<color=\"#FD965ECC\">沙土</color>,一举两得.\n[产出的沙土会直接加入背包中]",
     "ENUS": "By using photon beam technology, the material is broken down into particle states and reconstituted into <color=\"#FD965ECC\">sand</color>."
   },
   {
-    "Name": "T巨型建筑:巨型粒子对撞机",
+    "Name": "T巨型粒子对撞机",
     "ZHCN": "巨型建筑: 巨型粒子对撞机",
     "ENUS": "Mega Buildings: Mega Particle Collider"
   },
   {
-    "Name": "T巨型建筑:巨型粒子对撞机描述",
+    "Name": "T巨型粒子对撞机描述",
     "ZHCN": "大量并行运行的加速器将生产力提升到一个崭新的高度.",
     "ENUS": "The large number of parallel running accelerators takes productivity to a whole new level."
   },
   {
-    "Name": "T终极目标:广播式能源描述",
+    "Name": "T广播式能源描述",
     "ZHCN": "一种能够在整个星球中传播的能源,它的能量可以被任何接收到它的设备所利用.",
     "ENUS": "A form of energy that can be broadcast throughout the planet, and its energy can be used by any device that receives it."
   },
@@ -2851,7 +2821,7 @@
   },
   {
     "Name": "奇异物质描述",
-    "ZHCN": "在氘聚变的强大能量作用下，将物质压缩到非常小的点，从而使原子核夸克发生改变，瞬间变成简并态的奇异物质。当前工艺水平需要使用卡西米尔晶体来制造它。",
+    "ZHCN": "在氘聚变的强大能量作用下，将物质压缩到非常小的点，从而使原子核夸克发生改变，瞬间变成简并态的奇异物质。",
     "ENUS": "Under the powerful energy of deuterium fusion, vapor is compressed to an extremely small size which causes the quark's of atomic nucleus to change and instantly degenerate into strange matter."
   },
   {
@@ -3188,26 +3158,6 @@
     "Name": "R氯苯水解",
     "ZHCN": "在高温、氢氧化钠环境下, 氯苯与水反应生产苯酚钠, 再经酸化处理可得到苯酚.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "ENUS": "Under high temperature and sodium hydroxide environment, chlorobenzene reacts with water to produce sodium phenol, which is then acidified to obtain phenol.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
-    "Name": "T大气排放",
-    "ZHCN": "大气排污",
-    "ENUS": "Atmospheric Emission"
-  },
-  {
-    "Name": "T大气排放描述",
-    "ZHCN": "重构部分配方的生产流程，将堆积产物加热或粉碎，直接排放到大气中.\n<color=\"#FD965ECC\">配方列表：剧毒液体离心、水电解</color>",
-    "ENUS": "Reconstruct production flow for several recipes, so could heat or crush accumulated products and discharge them into the atmosphere.\n<color=\"#FD965ECC\">Affected Recipes: Toxic liquid centrifugation, Water electrolysis</color>"
-  },
-  {
-    "Name": "T大气排放结果",
-    "ZHCN": "重构部分配方的生产流程，将堆积产物排放到大气中。",
-    "ENUS": "Reconstruct production flow for several recipes to discharge accumulated products into the atmosphere."
-  },
-  {
-    "Name": "大气排污文字描述",
-    "ZHCN": "允许部分配方将堆积产物直接排放到大气中\n可在设置-杂项中禁用此科技效果",
-    "ENUS": "Allow some recipes to discharge accumulated products directly into the atmosphere\nCan disable this technology effect in Settings - Miscellaneous"
   },
   {
     "Name": "开发者日志01",
