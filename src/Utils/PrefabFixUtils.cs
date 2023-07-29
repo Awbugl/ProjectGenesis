@@ -186,7 +186,7 @@ namespace ProjectGenesis.Utils
 
             var orbitalcollector = models.Select(117);
             ref var orbitalcollectorprefabDesc = ref orbitalcollector.prefabDesc;
-            orbitalcollectorprefabDesc.stationCollectSpeed = 15;
+            orbitalcollectorprefabDesc.stationCollectSpeed = 18;
 
             var accumulator = models.Select(46);
             ref var accumulatorprefabDesc = ref accumulator.prefabDesc;

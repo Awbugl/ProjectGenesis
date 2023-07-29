@@ -41,8 +41,8 @@
   },
   {
     "Name": "EnableAtmosphericEmission",
-    "ZHCN": "启用大气排污科技效果",
-    "ENUS": "Enable Atmospheric Emission Tech Effect"
+    "ZHCN": "启用部分配方的特殊堆积逻辑",
+    "ENUS": "Enable special stacking logic for some recipes"
   },
   {
     "Name": "星球基地",

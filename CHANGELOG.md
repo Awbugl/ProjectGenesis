@@ -1,19 +1,45 @@
-- v2.7.0 森海之灵 | Forest Spirit
-  + 重新设计塑料、科研矩阵、化学能燃料、石油化工的配方，调整科研难度（影响存档）
-  + 为电路蚀刻配方加入新的触媒（3种）
+- v2.7.0-beta4 森海之灵 | Forest Spirit
+  + 重新设计塑料、科研矩阵、化学能燃料、石油化工的配方及对应科技、物品（影响存档）
+    + 重新添加了`光子合并器`、`钛晶石`、`粒子容器`物品
+    + 删除了`苯酚`、`二甲苯`、`氯苯`物品，转为新物品`苯`
+    + 删除了`丙酮`、`甘油`物品，转为新物品`丙烯`
+    + 简化了化学能燃料的配方
+    + 简化了`先进机械组件`、`尖端机械组件`、`电磁涡轮`、`超级磁场环`的配方
+    + 为`量子芯片`配方添加了`位面过滤器`需求
+    + 芯片类配方的产物数量翻倍
+    + 为电路蚀刻配方加入三种新的触媒
+    + 删除了`海洋排污`、`大气排污`、`化工技术革新`科技
+    + 调整了`结构矩阵`、`信息矩阵`、`引力矩阵`的配方
+    + 调整了`引力透镜`、`奇异物质`、`混凝土`的配方
+    + 调整了`射线接收站`、`太阳帆`、`地热发电站`的配方
+  + 为部分配方调整了特殊堆积逻辑
   + 调整了部分科技的前置科技需求
   + 下调了终极目标科技的哈希需求
   + 下调了部分建筑的原料需求
   + 修复了部分文本翻译不正确的问题
   + 修复了部分文本未被正确替换的问题
 
-  + Redesign the recipes of plastic, chemical fuel, and petrochemicals, and adjust the research difficulty (affect the save)
-  + Add new catalysts (3) to the circuit etching recipe
-  + Adjust the pre-research requirements of some technologies
-  + Reduce the hash requirements of the ultimate goal technology
-  + Reduce the material requirements of some buildings
-  + Fix the problem that some text translations are incorrect
-  + Fix the problem that some texts are not replaced correctly
+  + Redesigned the recipes and corresponding technologies and items of plastic, research matrix, chemical energy fuel,
+    and petrochemical (affect save)
+    + Re-added `Photon Combiner`, `Titanium Crystal`, `Particle Container` items
+    + Removed `Phenol`, `Xylene`, `Chlorobenzene` items, converted to new item `Benzene`
+    + Removed `Acetone`, `Glycerol` items, converted to new item `Propylene`
+    + Simplified the recipe of chemical energy fuel
+    + Simplified the recipe of `Advanced Mechanical Components`, `Advanced Mechanical Components`, `Electromagnetic
+      Turbine`, `Super Magnetic Ring`
+    + Added `Dimensional Filter` requirement to the recipe of `Quantum Chip`
+    + Doubled the output of chip recipes
+    + Added three new catalysts to the circuit etching recipe
+    + Removed `Ocean Emission`, `Atmospheric Emission`, `Chemical Technology Innovation` technologies
+    + Adjusted the recipe of `Structure Matrix`, `Information Matrix`, `Gravity Matrix`
+    + Adjusted the recipe of `Graviton Lens`, `Strange Matter`, `Concrete`
+    + Adjusted the recipe of `Ray Receiver`, `Solar Sail`, `Geothermal Power Plant`
+  + Adjusted the special stacking logic of some recipes
+  + Adjusted the prerequisite technology requirements of some technologies
+  + Lowered the hash requirements of the ultimate goal technologies
+  + Lowered the material requirements of some buildings
+  + Fixed some translation errors
+  + Fixed the problem that some texts were not replaced correctly
 
 <details>
   <summary>点击展开日志 | Click to view all </summary>
