@@ -52,9 +52,16 @@ namespace ProjectGenesis.Patches.Logic
 
         public static bool AssemblerComponent_InsertMethod_Refine(ref AssemblerComponent component, int[] productRegister)
         {
-            var componentRecipeId = component.recipeId;
+            var b = false;
 
-            var b = componentRecipeId == ProtoIDUsedByPatches.R有机液体离心 && ProjectGenesis.AtmosphericEmissionValue;
+            switch (component.recipeId)
+            {
+                case ProtoIDUsedByPatches.R有机液体离心:
+                case ProtoIDUsedByPatches.R等离子精炼:
+                    b = true;
+                    break;
+            }
+
 
             return b && CalcMaxProduct(ref component, productRegister, 19);
         }
@@ -102,7 +109,7 @@ namespace ProjectGenesis.Patches.Logic
 
                     lock (productRegister)
                     {
-                        productRegister[intPtr] -= productCount;
+                        productRegister[component.products[index]] -= productCount;
                     }
                 }
             }

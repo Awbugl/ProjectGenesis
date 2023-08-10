@@ -2006,8 +2006,8 @@
   },
   {
     "Name": "R等离子精炼",
-    "ZHCN": "利用等离子体精炼原油，可以获得氢气和煤焦油。",
-    "ENUS": "Hydrogen and coal tar can be obtained by refining crude oil with plasma."
+    "ZHCN": "利用等离子体精炼原油，可以获得氢气和煤焦油.\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作.</color>\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Hydrogen and coal tar can be obtained by refining crude oil with plasma.\n<color=\"#FD965ECC\">It will not stop working until all products are stacked.</color>\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "等离子精炼（高效）",
@@ -2575,7 +2575,7 @@
     "ENUS": "Radioactive raw material purification"
   },
   {
-    "Name": "放射性原料提纯描述",
+    "Name": "T放射性原料提纯描述",
     "ZHCN": "使用大量氢氧化钠可以将硅石矿中的极少量的放射性材料分离出来，作为后续提纯的原料。",
     "ENUS": "Using a large amount of sodium hydroxide can separate a small amount of radioactive materials in silicon ore as raw materials for further separation."
   },
