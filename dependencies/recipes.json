@@ -5117,7 +5117,7 @@
       1
     ],
     "Explicit": false,
-    "Handcraft": false,
+    "Handcraft": true,
     "NonProductive": false
   },
   {
@@ -5141,7 +5141,7 @@
       1
     ],
     "Explicit": false,
-    "Handcraft": false,
+    "Handcraft": true,
     "NonProductive": false
   },
   {
@@ -5165,7 +5165,7 @@
       1
     ],
     "Explicit": false,
-    "Handcraft": false,
+    "Handcraft": true,
     "NonProductive": false
   },
   {

@@ -94,11 +94,19 @@ namespace ProjectGenesis.Patches.Logic
             var history = GameMain.history;
             foreach (var (tech, node) in __instance.nodes)
             {
-                if (node != null)
+                if (node != null && tech < 2000)
                 {
-                    if (!HideTechNode(history, tech, node.techProto)) node.gameObject.SetActive(true);
-                    if (node.techProto.postTechArray.Length > 0)
-                        node.connGroup.gameObject.SetActive(history.TechInQueue(tech) || history.TechUnlocked(tech));
+                    var techSought = TechSought(history, tech);
+                    if (techSought || PreTechSought(history, node.techProto))
+                    {
+                        node.gameObject.SetActive(true);
+                        if (node.techProto.postTechArray.Length > 0) node.connGroup.gameObject.SetActive(techSought);
+                    }
+                    else
+                    {
+                        node.gameObject.SetActive(false);
+                        node.connGroup.gameObject.SetActive(false);
+                    }
                 }
             }
         }
@@ -111,17 +119,19 @@ namespace ProjectGenesis.Patches.Logic
 
             if (__instance.page != 0) return;
             var history = GameMain.history;
+            
             // ReSharper disable once EnforceForeachStatementBraces
-
             foreach (var (tech, node) in __instance.nodes)
-                if (node != null)
+                if (node != null && tech < 2000)
                 {
-                    node.gameObject.SetActive(!HideTechNode(history, tech, node.techProto));
-                    node.connGroup.gameObject.SetActive(history.TechInQueue(tech) || history.TechUnlocked(tech));
+                    var techSought = TechSought(history, tech);
+                    node.gameObject.SetActive(techSought || PreTechSought(history, node.techProto));
+                    if (node.techProto.postTechArray.Length > 0) node.connGroup.gameObject.SetActive(techSought);
                 }
         }
 
-        private static bool HideTechNode(GameHistoryData history, int tech, TechProto proto)
-            => tech < 2000 && !history.TechUnlocked(tech) && proto.PreTechs.Any(i => history.TechInQueue(i) || history.TechUnlocked(i));
+        private static bool TechSought(GameHistoryData history, int tech) => history.TechInQueue(tech) || history.TechUnlocked(tech);
+
+        private static bool PreTechSought(GameHistoryData history, TechProto proto) => proto.PreTechs.Any(i => TechSought(history, i));
     }
 }
