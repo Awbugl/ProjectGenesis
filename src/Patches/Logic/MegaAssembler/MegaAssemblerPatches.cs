@@ -124,6 +124,7 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
 
             if (power < 0.1f) return false;
 
+            // 电路蚀刻配方效果
             if (__instance.recipeType != (ERecipeType_1)Utils.ERecipeType.电路蚀刻) return true;
 
             var data = LithographyAssemblerPatches.GetLithographyData(factorySystem.planet.id, __instance.id);

@@ -99,7 +99,8 @@
         <Compile Include="src\Compatibility\MoreMegaStructureCompatibilityPlugin.cs" />
         <Compile Include="src\Compatibility\PlanetwideMiningCompatibilityPlugin.cs" />
         <Compile Include="src\Patches\Logic\DisableLDBToolCachePatches.cs" />
-        <Compile Include="src\Patches\Logic\InitnalTechPatches.cs" />
+        <Compile Include="src\Patches\Logic\FastTravelPatches.cs" />
+        <Compile Include="src\Patches\Logic\InitialTechPatches.cs" />
         <Compile Include="src\Patches\Logic\LithographyAssembler\InternalFunctions.cs" />
         <Compile Include="src\Patches\Logic\LithographyAssembler\LithographyAssemblerPatches.cs" />
         <Compile Include="src\Patches\Logic\LithographyAssembler\LithographyData.cs" />

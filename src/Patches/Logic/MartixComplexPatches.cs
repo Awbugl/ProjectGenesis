@@ -107,9 +107,9 @@ namespace ProjectGenesis.Patches.Logic
                 factoryStatPool.productRegister[ProtoIDUsedByPatches.I能量矩阵] += itemCount;
 
                 component.matrixServed[0] += itemCount * 3600;
-                component.matrixIncServed[0] += itemInc * 3600;
+                component.matrixIncServed[0] += itemInc * 1800;
                 component.matrixServed[1] += itemCount * 3600;
-                component.matrixIncServed[1] += itemInc * 3600;
+                component.matrixIncServed[1] += itemInc * 1800;
             }
 
             itemId = ProtoIDUsedByPatches.I虚空矩阵;
@@ -124,9 +124,9 @@ namespace ProjectGenesis.Patches.Logic
                 factoryStatPool.productRegister[ProtoIDUsedByPatches.I信息矩阵] += itemCount;
 
                 component.matrixServed[2] += itemCount * 3600;
-                component.matrixIncServed[2] += itemInc * 3600;
+                component.matrixIncServed[2] += itemInc * 1800;
                 component.matrixServed[3] += itemCount * 3600;
-                component.matrixIncServed[3] += itemInc * 3600;
+                component.matrixIncServed[3] += itemInc * 1800;
             }
 
             var max = 0;
@@ -147,7 +147,7 @@ namespace ProjectGenesis.Patches.Logic
                     factoryStatPool.productRegister[ProtoIDUsedByPatches.I电磁矩阵 + index] += itemCount;
 
                     component.matrixServed[index] += itemCount * 3600;
-                    component.matrixIncServed[index] += itemInc * 3600;
+                    component.matrixIncServed[index] += itemInc * 720;
                 }
             }
         }

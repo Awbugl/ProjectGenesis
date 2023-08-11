@@ -48,15 +48,15 @@ namespace ProjectGenesis.Utils
             desc7.dragBuildDist = new Vector2(2.9f, 2.9f);
 
             ref var prefabDesc8 = ref itemProtos.Select(6275).prefabDesc;
-            prefabDesc8.assemblerSpeed = 500;
-            prefabDesc8.workEnergyPerTick = 2000000;
-            prefabDesc8.idleEnergyPerTick = 100000;
+            prefabDesc8.assemblerSpeed = 10000;
+            prefabDesc8.workEnergyPerTick = 40000000;
+            prefabDesc8.idleEnergyPerTick = 4000000;
             prefabDesc8.assemblerRecipeType = (ERecipeType_1)ERecipeType.精密组装;
 
             ref var desc8 = ref itemProtos.Select(6276).prefabDesc;
-            desc8.assemblerSpeed = 1000;
-            desc8.workEnergyPerTick = 8000000;
-            desc8.idleEnergyPerTick = 200000;
+            desc8.assemblerSpeed = 10000;
+            desc8.workEnergyPerTick = 80000000;
+            desc8.idleEnergyPerTick = 8000000;
             desc8.assemblerRecipeType = (ERecipeType_1)ERecipeType.聚变生产;
 
             ref var desc1 = ref itemProtos.Select(I水泵).prefabDesc;
@@ -129,27 +129,27 @@ namespace ProjectGenesis.Utils
         {
             // 天穹装配厂
             var testCraftingTableModel = models.Select(453);
-            SetMegaAssemberPrefebDesc(ref testCraftingTableModel.prefabDesc, ERecipeType.Assemble);
+            SetMegaAssemblerPrefebDesc(ref testCraftingTableModel.prefabDesc, ERecipeType.Assemble);
 
             // 物质裂解塔
             var testCraftingTableModel2 = models.Select(454);
-            SetMegaAssemberPrefebDesc(ref testCraftingTableModel2.prefabDesc, ERecipeType.所有熔炉);
+            SetMegaAssemblerPrefebDesc(ref testCraftingTableModel2.prefabDesc, ERecipeType.所有熔炉);
 
             // 巨型化学反应釜
             var testCraftingTableModel3 = models.Select(455);
-            SetMegaAssemberPrefebDesc(ref testCraftingTableModel3.prefabDesc, ERecipeType.所有化工);
+            SetMegaAssemblerPrefebDesc(ref testCraftingTableModel3.prefabDesc, ERecipeType.所有化工);
 
             // 精密结构组装厂
             var testCraftingTableModel4 = models.Select(456);
-            SetMegaAssemberPrefebDesc(ref testCraftingTableModel4.prefabDesc, ERecipeType.所有高精);
+            SetMegaAssemblerPrefebDesc(ref testCraftingTableModel4.prefabDesc, ERecipeType.所有高精);
 
             // 物质分解设施
             var testCraftingTableModel5 = models.Select(460);
-            SetMegaAssemberPrefebDesc(ref testCraftingTableModel5.prefabDesc, ERecipeType.垃圾回收, 200000, 1000000, MegaAssemblerPatches.TrashSpeed);
+            SetMegaAssemblerPrefebDesc(ref testCraftingTableModel5.prefabDesc, ERecipeType.垃圾回收, 200000, 1000000, MegaAssemblerPatches.TrashSpeed);
 
             // 巨型粒子对撞机
             var testCraftingTableModel6 = models.Select(461);
-            SetMegaAssemberPrefebDesc(ref testCraftingTableModel6.prefabDesc, ERecipeType.Particle, 200000, 1000000);
+            SetMegaAssemblerPrefebDesc(ref testCraftingTableModel6.prefabDesc, ERecipeType.Particle, 200000, 1000000);
 
             LDB.items.Select(2211).prefabDesc.fuelMask = 2;
             LDB.items.Select(2210).prefabDesc.fuelMask = 16;
@@ -215,7 +215,7 @@ namespace ProjectGenesis.Utils
             plsprefabDesc.stationMaxDroneCount = 80;
         }
 
-        private static void SetMegaAssemberPrefebDesc(
+        private static void SetMegaAssemblerPrefebDesc(
             ref PrefabDesc prefabDesc,
             ERecipeType type,
             int idleEnergy = 100000,

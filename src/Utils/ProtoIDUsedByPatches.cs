@@ -3,7 +3,7 @@
     internal static class ProtoIDUsedByPatches
     {
         // Tech
-        //   InitnalTechPatches.InitnalTechs
+        //   InitialTechPatches.InitialTechs
 
         // Item
         //   IconDescUtils.FluidColor
@@ -69,6 +69,7 @@
                            M大气采集器 = 463,
                            T物品增产 = 1151,
                            T行星协调中心 = 1836,
+                           T虫洞航行 = 1835,
                            T巨型建筑工程学 = 1834;
     }
 }

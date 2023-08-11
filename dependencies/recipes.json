@@ -3109,7 +3109,7 @@
       1107,
       1202,
       1205,
-      1305
+      1303
     ],
     "InCounts": [
       10,
@@ -3861,7 +3861,7 @@
     "IconPath": "Assets/texpack/氨氧制硝酸",
     "Type": 2,
     "GridIndex": 4213,
-    "Time": 360,
+    "Time": 120,
     "Input": [
       7002,
       7019

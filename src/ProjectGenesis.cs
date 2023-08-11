@@ -56,11 +56,11 @@ namespace ProjectGenesis
         internal static int[] TableID;
         private Harmony Harmony;
 
-        internal static bool AtmosphericEmissionValue;
+        internal static bool AtmosphericEmissionValue, LDBToolCacheValue, HideTechModeValue;
 
         internal static string ModPath;
 
-        private static ConfigEntry<bool> EnableAtmosphericEmissionEntry;
+        private static ConfigEntry<bool> EnableAtmosphericEmissionEntry, EnableLDBToolCacheEntry, EnableHideTechModeEntry;
 
         public void Awake()
         {
@@ -76,8 +76,19 @@ namespace ProjectGenesis
             }
 
             EnableAtmosphericEmissionEntry = Config.Bind("config", "EnableAtmosphericEmission", true,
-                                                         "Enable Atmospheric Emission tech effect in game, which may casue resource waste in low resource rate game.\n是否启用大气排污科技效果；注：大气排污科技在低资源倍率下可能导致资源浪费");
+                                                         "Enable Atmospheric Emission tech effect in game, which may casue resource waste in low resource rate game.\n是否启用部分配方的特殊堆积逻辑，可能会导致低资源倍率游戏的资源浪费");
             AtmosphericEmissionValue = EnableAtmosphericEmissionEntry.Value;
+
+            EnableLDBToolCacheEntry = Config.Bind("config", "EnableLDBToolCache", false,
+                                                  "Enable LDBTool Cache, which allows you use config to fix some compatibility issues.\n是否启用LDBTool缓存，允许使用配置文件修复部分兼容性问题");
+
+            LDBToolCacheValue = EnableLDBToolCacheEntry.Value;
+
+            EnableHideTechModeEntry = Config.Bind("config", "HideTechMode", false,
+                                                  "Enable Tech Exploration Mode, which will hide locked techs in tech tree.\n是否启用科技探索模式，启用后将隐藏未解锁的科技");
+
+            HideTechModeValue = EnableHideTechModeEntry.Value;
+
             Config.Save();
 
             var executingAssembly = Assembly.GetExecutingAssembly();
@@ -202,11 +213,15 @@ namespace ProjectGenesis
             // JsonHelper.ExportAsJson(@"D:\Git\ProjectGenesis\dependencies");
         }
 
-        internal static void SetAtmosphericEmission(bool value)
+        internal static void SetConfig(bool currentAtmosphericEmission, bool currentLDBToolCache, bool currentHideTechMode)
         {
-            AtmosphericEmissionValue = value;
-            EnableAtmosphericEmissionEntry.Value = value;
-            logger.LogInfo("AtmosphericEmissionSettingChanged");
+            AtmosphericEmissionValue = currentAtmosphericEmission;
+            EnableAtmosphericEmissionEntry.Value = currentAtmosphericEmission;
+            LDBToolCacheValue = currentLDBToolCache;
+            EnableLDBToolCacheEntry.Value = currentLDBToolCache;
+            HideTechModeValue = currentHideTechMode;
+            EnableHideTechModeEntry.Value = currentHideTechMode;
+            logger.LogInfo("SettingChanged");
             configFile.Save();
         }
 

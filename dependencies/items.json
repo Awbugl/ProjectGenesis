@@ -2710,8 +2710,8 @@
       40
     ],
     "FuelType": 4,
-    "HeatValue": 288000000000,
-    "ReactorInc": 50.0,
+    "HeatValue": 144000000000,
+    "ReactorInc": 20.0,
     "IsFluid": false,
     "Productive": false,
     "SubID": 0,

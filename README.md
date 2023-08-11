@@ -142,7 +142,7 @@ If you can see the new **GenesisBook** logo, then the mod is installed successfu
   + Coal tar, diesel fuel, methyldimethylhydrazine -- petrochemical energy
 
 
-- Mega Assembers:
+- Mega Assemblers:
   + Use conveyor belts to transport materials, and 40x speed
 
 
@@ -154,7 +154,7 @@ If you can see the new **GenesisBook** logo, then the mod is installed successfu
 
 - Building property modification:
   + Increase the power generation of power equipment.
-  + Modify the speed of most assember buildings to 2x.
+  + Modify the speed of most assembler buildings to 2x.
   + Increase the speed of rockets.
   + Broadcast power towers that cover the globe.
 

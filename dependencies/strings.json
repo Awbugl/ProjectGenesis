@@ -45,6 +45,31 @@
     "ENUS": "Enable special stacking logic for some recipes"
   },
   {
+    "Name": "EnableLDBToolCache",
+    "ZHCN": "启用LDB工具缓存",
+    "ENUS": "Enable LDB tool cache"
+  },
+  {
+    "Name": "EnableHideTechMode",
+    "ZHCN": "启用科技探索模式",
+    "ENUS": "Enable tech exploration mode"
+  },
+  {
+    "Name": "EnableAtmosphericEmissionAdditionalText",
+    "ZHCN": "（将工厂停止生产的判定由单产物堆积改为所有产物均堆积）",
+    "ENUS": "(Change the judgment of the factory to stop production from single product stacking to all products stacking)"
+  },
+  {
+    "Name": "EnableLDBToolCacheAdditionalText",
+    "ZHCN": "（可在配置文件中手动修改冲突的MOD物品ID，但启动速度减慢，需要重启游戏才可生效）",
+    "ENUS": "(You can manually modify the conflicting MOD item ID in the configuration file, but the startup speed is slowed down, need to restart the game to take effect)"
+  },
+  {
+    "Name": "EnableHideTechModeAdditionalText",
+    "ZHCN": "（隐藏未解锁的科技，需要重启游戏才可生效）",
+    "ENUS": "(Hide the unlocked technology, need to restart the game to take effect)"
+  },
+  {
     "Name": "星球基地",
     "ZHCN": "行星协调中心",
     "ENUS": "Coordination Center"
@@ -162,7 +187,7 @@
   {
     "Name": "工厂电力需求 -10%",
     "ZHCN": "工厂电力需求 -10%",
-    "ENUS": "Assember Power Consumption -10%"
+    "ENUS": "Assembler Power Consumption -10%"
   },
   {
     "Name": "研究上传速度 +10%",
@@ -385,6 +410,16 @@
     "ENUS": "Fission Power Station"
   },
   {
+    "Name": "未解锁虫洞航行",
+    "ZHCN": "你还没有解锁虫洞航行技术",
+    "ENUS": "You have not unlocked wormhole navigation technology"
+  },
+  {
+    "Name": "虫洞能量不足",
+    "ZHCN": "机甲能量不足, 无法开启虫洞",
+    "ENUS": "The mecha does not have enough energy to open the wormhole"
+  },
+  {
     "Name": "制造台",
     "ZHCN": "制造台",
     "ENUS": "Assembler"
@@ -405,29 +440,14 @@
     "ENUS": "Planet Atmosphere"
   },
   {
-    "Name": "盐水海洋",
-    "ZHCN": "盐水海洋",
-    "ENUS": "Salt water Ocean"
-  },  
-  {
     "Name": "需要氧气",
     "ZHCN": "此燃料需要含氧大气",
     "ENUS": "This fuel requires oxygen atmosphere"
   },
   {
-    "Name": "海洋排污文字描述",
-    "ZHCN": "允许将传送带反向连入抽水站, 将不需要的液体排入大海.(抽水站蓄满时才会排放)",
-    "ENUS": "Allow allowed to connect the conveyor belt to the pumping station in the opposite direction and discharge the unwanted liquid into the sea. (The liquid will only be discharged when the station is full)"
-  },
-  {
-    "Name": "海洋排污2文字描述",
-    "ZHCN": "允许海洋排污排放所有物品.",
-    "ENUS": "Allow Ocean Outfall discharge of all items."
-  },
-  {
-    "Name": "化工技术革新文字描述",
-    "ZHCN": "化工厂、先进化学反应釜和精炼厂的生产速度翻倍.",
-    "ENUS": "Doubling the production speed of chemical plants, advanced chemical reactors and refineries."
+    "Name": "虫洞航行文字描述",
+    "ZHCN": "在空间曲面上开辟一个一次性虫洞，实现超远程折跃。",
+    "ENUS": "Open a one-time wormhole on the space surface to achieve ultra-long-range leap."
   },
   {
     "Name": "巨型建筑工程学文字描述",
@@ -2350,6 +2370,16 @@
     "ENUS": "Welcome TO HELL."
   },
   {
+    "Name": "T虫洞航行",
+    "ZHCN": "终极目标: 虫洞航行",
+    "ENUS": "Ultimate Goal: Wormhole navigation"
+  },
+  {
+    "Name": "T虫洞航行描述",
+    "ZHCN": "消耗1个<color=\"#FD965ECC\">空间翘曲器</color>和 12GJ 能量制造一个一次性虫洞, 可将机甲传送至<color=\"#FD965ECC\">星图模式</color>下选择的任意星球，但请小心星轨间的干扰.",
+    "ENUS": "Consumes 1 <color=\"#FD965ECC\">Space Warper</color> and 12GJ mecha energy to create a one-time wormhole that can teleport the mecha to any planet selected in <color=\"#FD965ECC\">Star Map Mode</color>, but be careful of the interference between the orbits."
+  },
+  {
     "Name": "人造恒星描述",
     "ZHCN": "使用约束技术将聚变反应稳定掌控,并将其作为能源利用.",
     "ENUS": "Using confinement technology to stabilize and control fusion reactions and use them as an energy source."
@@ -2897,7 +2927,7 @@
   {
     "Name": "基础制造工艺结果",
     "ZHCN": "你解锁了制造台，可以将铁块、铜块等原材料制造成更高级的产物。",
-    "ENUS": "You have unlocked the Assember. It can make iron and copper ingots into more advanced products."
+    "ENUS": "You have unlocked the Assembler. It can make iron and copper ingots into more advanced products."
   },
   {
     "Name": "基础物流系统结果",

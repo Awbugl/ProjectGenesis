@@ -9,13 +9,15 @@ namespace ProjectGenesis.Patches.Logic
     {
         [HarmonyPrefix]
         [HarmonyPatch(typeof(LDBTool), "Bind")]
-        public static bool LDBTool_Bind() => false;
+        public static bool LDBTool_Bind() => ProjectGenesis.LDBToolCacheValue;
 
         [HarmonyPostfix]
         [HarmonyAfter(LDBToolPlugin.MODGUID)]
         [HarmonyPatch(typeof(VFPreload), "InvokeOnLoadWorkEnded")]
         public static void DeleteFiles()
         {
+            if (!ProjectGenesis.LDBToolCacheValue) return;
+
             try
             {
                 var path = Path.Combine(Paths.ConfigPath, "LDBTool");

@@ -251,7 +251,7 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
                     __result = true;
             }
         }
-        
+
         [HarmonyPostfix]
         [HarmonyPatch(typeof(BuildingParameters), "CopyFromBuildPreview")]
         public static void BuildingParameters_CopyFromBuildPreview(ref BuildingParameters __instance, BuildPreview bp)

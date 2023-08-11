@@ -123,6 +123,10 @@ namespace ProjectGenesis.Patches.UI.DisplayTextPatches
                 case ProtoIDUsedByPatches.T行星协调中心:
                     __result = "行星协调中心文字描述".TranslateFromJson();
                     break;
+                
+                case ProtoIDUsedByPatches.T虫洞航行:
+                    __result = "虫洞航行文字描述".TranslateFromJson();
+                    break;
             }
         }
     }

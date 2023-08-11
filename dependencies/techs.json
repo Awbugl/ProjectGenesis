@@ -345,7 +345,7 @@
     "Conclusion": "氢燃料棒结果",
     "Position": [
       13.0,
-      -27.0
+      -39.0
     ],
     "PreTechs": [
       1120
@@ -763,13 +763,15 @@
     "Desc": "应用型超导体描述",
     "Conclusion": "应用型超导体结果",
     "Position": [
-      17.0,
+      13.0,
       -27.0
     ],
     "PreTechs": [
+      1120
+    ],
+    "PreTechsImplicit": [
       1121
     ],
-    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002
@@ -804,11 +806,11 @@
     "Desc": "高强度材料描述",
     "Conclusion": "高强度材料结果",
     "Position": [
-      25.0,
-      -31.0
+      17.0,
+      -27.0
     ],
     "PreTechs": [
-      1703
+      1131
     ],
     "PreTechsImplicit": [],
     "Items": [
@@ -981,15 +983,13 @@
     "Desc": "微型粒子对撞机描述",
     "Conclusion": "微型粒子对撞机结果",
     "Position": [
-      17.0,
-      25.0
+      29.0,
+      17.0
     ],
     "PreTechs": [
-      1801
+      1203
     ],
-    "PreTechsImplicit": [
-      1802
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -1026,14 +1026,14 @@
     "Desc": "奇异物质描述",
     "Conclusion": "奇异物质结果",
     "Position": [
-      21.0,
-      25.0
+      25.0,
+      -31.0
     ],
     "PreTechs": [
-      1142
+      1703
     ],
     "PreTechsImplicit": [
-      1125
+      1142
     ],
     "Items": [
       6001,
@@ -1071,7 +1071,7 @@
     "Conclusion": "T反物质能量炉结果",
     "Position": [
       49.0,
-      -19.0
+      -15.0
     ],
     "PreTechs": [
       1134,
@@ -1171,7 +1171,7 @@
     "Conclusion": "增产剂 Mk.I结果",
     "Position": [
       25.0,
-      33.0
+      29.0
     ],
     "PreTechs": [
       1802
@@ -1369,16 +1369,19 @@
       17.0
     ],
     "PreTechs": [
-      1201
+      1201,
+      1832
     ],
     "PreTechsImplicit": [],
     "Items": [
-      6001
+      6001,
+      6002
     ],
     "ItemPoints": [
+      20,
       20
     ],
-    "HashNeeded": 18000,
+    "HashNeeded": 72000,
     "UnlockRecipes": [
       46
     ],
@@ -1478,7 +1481,8 @@
     ],
     "HashNeeded": 144000,
     "UnlockRecipes": [
-      51
+      51,
+      518
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -1511,7 +1515,7 @@
     "Items": [
       6001,
       6002,
-      6003
+      6004
     ],
     "ItemPoints": [
       10,
@@ -1522,7 +1526,7 @@
     "UnlockRecipes": [
       52,
       522,
-      518
+      519
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -1546,7 +1550,7 @@
     "Conclusion": "大型采矿机结果",
     "Position": [
       29.0,
-      29.0
+      25.0
     ],
     "PreTechs": [
       1606
@@ -2019,7 +2023,7 @@
     "Conclusion": "移山填海工程结果",
     "Position": [
       9.0,
-      29.0
+      25.0
     ],
     "PreTechs": [
       1901
@@ -2731,7 +2735,7 @@
     "Conclusion": "基础物流系统结果",
     "Position": [
       17.0,
-      37.0
+      33.0
     ],
     "PreTechs": [
       1607
@@ -2785,7 +2789,7 @@
     "Conclusion": "改良物流系统结果",
     "Position": [
       21.0,
-      37.0
+      33.0
     ],
     "PreTechs": [
       1601
@@ -2835,7 +2839,7 @@
     "Conclusion": "高效物流系统结果",
     "Position": [
       29.0,
-      37.0
+      33.0
     ],
     "PreTechs": [
       1602
@@ -2877,7 +2881,7 @@
     "Conclusion": "行星物流系统结果",
     "Position": [
       17.0,
-      29.0
+      25.0
     ],
     "PreTechs": [
       1836,
@@ -2923,7 +2927,7 @@
     "Conclusion": "星际物流系统结果",
     "Position": [
       21.0,
-      29.0
+      25.0
     ],
     "PreTechs": [
       1802,
@@ -2976,7 +2980,7 @@
     "Conclusion": "气态行星开采结果",
     "Position": [
       25.0,
-      29.0
+      25.0
     ],
     "PreTechs": [
       1605
@@ -3018,7 +3022,7 @@
     "Conclusion": "T物品仓储结果",
     "Position": [
       13.0,
-      37.0
+      33.0
     ],
     "PreTechs": [
       1415
@@ -3057,7 +3061,7 @@
     "Conclusion": "配送物流系统结果",
     "Position": [
       25.0,
-      37.0
+      33.0
     ],
     "PreTechs": [
       1602
@@ -3184,10 +3188,11 @@
       -27.0
     ],
     "PreTechs": [
-      1702,
       1131
     ],
-    "PreTechsImplicit": [],
+    "PreTechsImplicit": [
+      1702
+    ],
     "Items": [
       6001,
       6002
@@ -3221,15 +3226,13 @@
     "Desc": "引力波折射描述",
     "Conclusion": "引力波折射结果",
     "Position": [
-      25.0,
-      25.0
+      29.0,
+      -31.0
     ],
     "PreTechs": [
       1143
     ],
-    "PreTechsImplicit": [
-      1141
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -8453,7 +8456,7 @@
     "Conclusion": "T基础机械组件描述",
     "Position": [
       13.0,
-      21.0
+      17.0
     ],
     "PreTechs": [
       1415
@@ -8491,7 +8494,7 @@
     "Conclusion": "T先进机械组件描述",
     "Position": [
       17.0,
-      33.0
+      29.0
     ],
     "PreTechs": [
       1801
@@ -8536,7 +8539,7 @@
     "Conclusion": "T尖端机械组件描述",
     "Position": [
       21.0,
-      33.0
+      29.0
     ],
     "PreTechs": [
       1802
@@ -8851,8 +8854,8 @@
     "HashNeeded": 288000,
     "UnlockRecipes": [
       795,
-      519,
       520,
+      530,
       754,
       764
     ],
@@ -8906,8 +8909,7 @@
     "HashNeeded": 576000,
     "UnlockRecipes": [
       793,
-      569,
-      530
+      569
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -9935,6 +9937,50 @@
     "PropertyItemCounts": []
   },
   {
+    "ID": 1835,
+    "Name": "T虫洞航行",
+    "IconPath": "Icons/Tech/1143",
+    "Desc": "T虫洞航行描述",
+    "Conclusion": "T虫洞航行描述",
+    "Position": [
+      49.0,
+      -19.0
+    ],
+    "PreTechs": [
+      1145
+    ],
+    "PreTechsImplicit": [],
+    "Items": [
+      6001,
+      6002,
+      6003,
+      6004,
+      6005
+    ],
+    "ItemPoints": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "HashNeeded": 72000000,
+    "UnlockRecipes": [],
+    "UnlockFunctions": [],
+    "UnlockValues": [],
+    "Published": true,
+    "Level": 0,
+    "MaxLevel": 0,
+    "LevelCoef1": 0,
+    "LevelCoef2": 0,
+    "IsLabTech": true,
+    "PreTechsMax": false,
+    "AddItems": [],
+    "AddItemCounts": [],
+    "PropertyOverrideItems": [],
+    "PropertyItemCounts": []
+  },
+  {
     "ID": 1836,
     "Name": "T行星协调中心",
     "IconPath": "Icons/Tech/2902",
@@ -9942,7 +9988,7 @@
     "Conclusion": "T行星协调中心描述",
     "Position": [
       13.0,
-      29.0
+      25.0
     ],
     "PreTechs": [
       1415
