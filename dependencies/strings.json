@@ -1271,13 +1271,13 @@
   },
   {
     "Name": "二氨基联苯胺",
-    "ZHCN": "对二氨基联苯",
-    "ENUS": "Diaminodiphenylamine"
+    "ZHCN": "二氨基联苯胺（DAB）",
+    "ENUS": "Diaminobenzidine (DAB)"
   },
   {
     "Name": "I二氨基联苯胺",
-    "ZHCN": "常温下呈类白色至棕红色结晶的有机化合物，是合成聚苯并咪唑的原料之一。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A kind of white to brownish red crystalline organic compound, one of the raw materials for the synthesis of PBI.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "二氨基联苯胺是合成聚苯并咪唑的原料之一，有显著的生化和毒理特性。但其宜人的香气可能使人忽略其本身对健康的危害.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Diamiobenzidine is one of the raw materials for the synthesis of PBI, which has significant biochemical and toxicological characteristics. But its pleasant aroma may make people ignore its own harm to health.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "苯",
@@ -1288,26 +1288,6 @@
     "Name": "I苯",
     "ZHCN": "由六个碳原子和六个氢原子组成的有机化合物，是重要的有机化工原料。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "ENUS": "An organic compound consisting of six carbon atoms and six hydrogen atoms, an important organic chemical raw material.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
-    "Name": "二氯联苯胺",
-    "ZHCN": "二氯联苯胺",
-    "ENUS": "Dichlorobenzidine"
-  },
-  {
-    "Name": "I二氯联苯胺",
-    "ZHCN": "有机化合物，常温下为白色结晶性粉末。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "An organic compound, which is white crystalline powder at room temperature.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
-    "Name": "二硝基氯苯",
-    "ZHCN": "二硝基氯苯",
-    "ENUS": "Dinitrochlorobenzene"
-  },
-  {
-    "Name": "I二硝基氯苯",
-    "ZHCN": "有机化合物，一般为白色至浅黄色结晶性粉末。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "An organic compound, usually white to light yellow crystalline powder.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "丙烯",
@@ -1340,19 +1320,14 @@
     "ENUS": "A kind of organic compound with good heat resistance, one of the raw materials for the synthesis of PBI.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
-    "Name": "邻苯二甲酸",
-    "ZHCN": "邻苯二甲酸",
-    "ENUS": "Phthalate"
+    "Name": "R二氨基联苯胺",
+    "ZHCN": "二氨基联苯胺是合成聚苯并咪唑的原料之一，有显著的生化和毒理特性。但其宜人的香气可能使人忽略其本身对健康的危害.\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作.</color>\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Diamiobenzidine is one of the raw materials for the synthesis of PBI, which has significant biochemical and toxicological characteristics. But its pleasant aroma may make people ignore its own harm to health.\n<color=\"#FD965ECC\">It will not stop working until all products are stacked.</color>\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
-    "Name": "I邻苯二甲酸",
-    "ZHCN": "有机化合物，常呈无色结晶或结晶性粉末。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "An organic compound, usually colorless crystals or crystalline powder.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
-    "Name": "氯苯",
-    "ZHCN": "氯苯",
-    "ENUS": "Chlorobenzene"
+    "Name": "R间苯二甲酸二苯酯",
+    "ZHCN": "耐热性能良好的有机化合物，是合成聚苯并咪唑的原料之一.\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作.</color>\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "A kind of organic compound with good heat resistance, one of the raw materials for the synthesis of PBI.\n<color=\"#FD965ECC\">It will not stop working until all products are stacked.</color>\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "I氯苯",
@@ -1676,8 +1651,8 @@
   },
   {
     "Name": "I聚苯并咪唑",
-    "ZHCN": "高性能复合材料，广泛用于航天工业.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "High performance composite material, widely used in aerospace industry.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "高性能复合材料，具有优异的热稳定性、化学稳定性和力学性能，在航天工业具有很好的应用前景.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "High performance composite material with excellent thermal stability, chemical stability and mechanical properties, which has a good application prospect in aerospace industry.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "活性生物纤维",
@@ -1850,26 +1825,6 @@
     "ENUS": "Synthesis of propylene using carbon monoxide and hydrogen.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
-    "Name": "高分子化合: 环氧氯丙烷",
-    "ZHCN": "高分子化合: 环氧氯丙烷",
-    "ENUS": "Polymer compounding: Epichlorohydrin"
-  },
-  {
-    "Name": "R高分子化合: 环氧氯丙烷",
-    "ZHCN": "使用甘油和氢氯酸合成环氧氯丙烷分子团.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Synthesis of epichlorohydrin molecular groups using glycerol and hydrochloric acid.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
-    "Name": "高分子化合: 双酚A",
-    "ZHCN": "高分子化合: 双酚A",
-    "ENUS": "Polymer compounding: Bisphenol A"
-  },
-  {
-    "Name": "R高分子化合: 双酚A",
-    "ZHCN": "使用氢氯酸, 苯和丙烯合成双酚A分子团.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Synthesis of bisphenol A molecular groups using hydrochloric acid, phenol and acetone.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
     "Name": "硝酸化合",
     "ZHCN": "硝酸化合",
     "ENUS": "Nitric acid chemistry"
@@ -1898,16 +1853,6 @@
     "Name": "R活性纤维分离",
     "ZHCN": "使用亚原子操控技术，可以有效地将活性纤维的组分分解并将组装成聚苯并咪唑.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "ENUS": "Using subatomic manipulation technology, it can effectively decompose the components of active fibers and assemble them into polybenzimidazole.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
-    "Name": "高分子化合: 二氨基联苯胺",
-    "ZHCN": "高分子化合: 二氨基联苯胺",
-    "ENUS": "Polymer compound: Diaminobenzidine"
-  },
-  {
-    "Name": "R高分子化合: 二氨基联苯胺",
-    "ZHCN": "二氯联苯胺和氨反应, 生成二氨基联苯胺.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Dichlorobenzidine reacts with ammonia to form diaminobenzidine.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "焦油转化",
@@ -1940,39 +1885,9 @@
     "ENUS": "Cracking coal tar into propylene.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
-    "Name": "高分子化合: 邻苯二甲酸",
-    "ZHCN": "高分子化合: 邻苯二甲酸",
-    "ENUS": "Polymer compounding: Phthalic acid"
-  },
-  {
-    "Name": "R高分子化合: 邻苯二甲酸",
-    "ZHCN": "氧气和二甲苯发生反应, 产生邻苯二甲酸.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Oxygen reacts with xylene to produce phthalic acid.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
     "Name": "R三氯化铁",
     "ZHCN": "向氢氯酸和铁的反应体系中加入氧气，使其转化为三氯化铁和水.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "ENUS": "Add oxygen to the reaction system of hydrochloric acid and iron to convert it to ferric chloride and water.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
-    "Name": "高分子化合: 环氧树脂",
-    "ZHCN": "高分子化合: 环氧树脂",
-    "ENUS": "Polymer compounding: Epoxy resin"
-  },
-  {
-    "Name": "R高分子化合: 环氧树脂",
-    "ZHCN": "有机大分子团聚合成环氧树脂.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Synthesis of epoxy resin by organic macromolecular agglomeration.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
-    "Name": "高分子化合: 聚苯并咪唑",
-    "ZHCN": "高分子化合: 聚苯并咪唑(PBI)",
-    "ENUS": "Polymer compounding: Polybenzimidazole(PBI)"
-  },
-  {
-    "Name": "R高分子化合: 聚苯并咪唑",
-    "ZHCN": "对二氨基联苯与间苯二甲酸二苯酯发生反应, 生成聚苯并咪唑和苯.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Diaminobenzidine reacts with diphenyl ester of isophthalic acid to produce polybenzimidazole and benzene.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "钨矿精炼",
@@ -2158,16 +2073,6 @@
     "Name": "R乙酸甲酯",
     "ZHCN": "乙酸和甲醇化合成乙酸甲酯.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "ENUS": "Synthesis of methyl acetate from acetic acid and methanol.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
-    "Name": "高分子化合: 四硝基甲烷",
-    "ZHCN": "高分子化合: 四硝基甲烷(TNM)",
-    "ENUS": "Polymerization: tetranitromethane(TNM)"
-  },
-  {
-    "Name": "R高分子化合: 四硝基甲烷",
-    "ZHCN": "用无水硝酸硝化乙酸酐, 生成四硝基甲烷和水, 作为副产物的碳可作为高能石墨充分利用.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Nitrification of acetic anhydride with anhydrous nitric acid produces tetranitromethane and water, and the carbon as a by-product can be fully utilized as graphite.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "R微晶元件（高效）",

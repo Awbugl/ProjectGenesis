@@ -145,7 +145,7 @@ namespace ProjectGenesis.Utils
 
             // 物质分解设施
             var testCraftingTableModel5 = models.Select(460);
-            SetMegaAssemblerPrefebDesc(ref testCraftingTableModel5.prefabDesc, ERecipeType.垃圾回收, 200000, 1000000, MegaAssemblerPatches.TrashSpeed);
+            SetMegaAssemblerPrefebDesc(ref testCraftingTableModel5.prefabDesc, ERecipeType.垃圾回收, 1000000, 1000000, MegaAssemblerPatches.TrashSpeed);
 
             // 巨型粒子对撞机
             var testCraftingTableModel6 = models.Select(461);
@@ -165,11 +165,11 @@ namespace ProjectGenesis.Utils
             megapumperprefabDesc.isFractionator = false;
             megapumperprefabDesc.assemblerRecipeType = ERecipeType_1.None;
             megapumperprefabDesc.assemblerSpeed = 0;
-            megapumperprefabDesc.minerPeriod = 72000;
+            megapumperprefabDesc.minerPeriod = 36000;
             megapumperprefabDesc.minerType = EMinerType.Water;
             megapumperprefabDesc.minimapType = 2;
-            megapumperprefabDesc.idleEnergyPerTick = 10000;
-            megapumperprefabDesc.workEnergyPerTick = 25000;
+            megapumperprefabDesc.idleEnergyPerTick = 50000;
+            megapumperprefabDesc.workEnergyPerTick = 2000000;
             megapumperprefabDesc.waterPoints = new[] { Vector3.zero };
             megapumperprefabDesc.waterTypes = new[] { 1000, 1116, 7017, 7018 };
 

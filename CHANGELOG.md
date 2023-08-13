@@ -1,4 +1,4 @@
-- v2.7.0-beta4 森海之灵 | Forest Spirit
+- v2.7.0-beta6 森海之灵 | Forest Spirit
   + 重新设计塑料、科研矩阵、化学能燃料、石油化工的配方及对应科技、物品（影响存档）
     + 重新添加了`光子合并器`、`钛晶石`、`粒子容器`物品
     + 删除了`苯酚`、`二甲苯`、`氯苯`物品，转为新物品`苯`
@@ -11,13 +11,16 @@
     + 删除了`海洋排污`、`大气排污`、`化工技术革新`科技
     + 调整了`结构矩阵`、`信息矩阵`、`引力矩阵`的配方
     + 调整了`引力透镜`、`奇异物质`、`混凝土`的配方
-    + 调整了`射线接收站`、`太阳帆`、`地热发电站`的配方
+    + 调整了`太阳帆`的配方
   + 为部分配方调整了特殊堆积逻辑
   + 调整了部分科技的前置科技需求
   + 下调了终极目标科技的哈希需求
-  + 下调了部分建筑的原料需求
+  + 下调了部分建筑的配方原料需求
+  + 调整了部分建筑的耗电量和制造速度
+  + 修复了复合矩阵增产点数复制的问题
   + 修复了部分文本翻译不正确的问题
   + 修复了部分文本未被正确替换的问题
+  + 在设置里添加了部分MOD设置的说明
 
   + Redesigned the recipes and corresponding technologies and items of plastic, research matrix, chemical energy fuel,
     and petrochemical (affect save)
@@ -38,8 +41,11 @@
   + Adjusted the prerequisite technology requirements of some technologies
   + Lowered the hash requirements of the ultimate goal technologies
   + Lowered the material requirements of some buildings
-  + Fixed some translation errors
+  + Adjusted the power consumption and manufacturing speed of some buildings
+  + Fixed the problem of copying the production point of the composite matrix
+  + Fixed the problem of incorrect translation of some texts
   + Fixed the problem that some texts were not replaced correctly
+  + Added some MOD settings instructions in the settings
 
 <details>
   <summary>点击展开日志 | Click to view all </summary>

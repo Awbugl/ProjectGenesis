@@ -1624,7 +1624,8 @@
     "UnlockRecipes": [
       124,
       772,
-      546
+      546,
+      710
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -2949,7 +2950,6 @@
       96,
       95,
       419,
-      710,
       717
     ],
     "UnlockFunctions": [],

@@ -3669,7 +3669,7 @@
     "Name": "合成氨",
     "Description": "R合成氨",
     "IconPath": "",
-    "Type": 2,
+    "Type": 16,
     "GridIndex": 4113,
     "Time": 120,
     "Input": [
@@ -3677,14 +3677,14 @@
       1120
     ],
     "InCounts": [
-      1,
-      3
+      3,
+      9
     ],
     "Output": [
       7002
     ],
     "OutCounts": [
-      1
+      3
     ],
     "Explicit": true,
     "Handcraft": false,
@@ -3692,31 +3692,29 @@
   },
   {
     "ID": 711,
-    "Name": "对二氨基联苯",
-    "Description": "",
+    "Name": "二氨基联苯胺",
+    "Description": "R二氨基联苯胺",
     "IconPath": "",
     "Type": 16,
     "GridIndex": 4103,
     "Time": 120,
     "Input": [
       7006,
-      7017,
-      1120
+      7002
     ],
     "InCounts": [
       2,
-      2,
-      10
+      4
     ],
     "Output": [
       7005,
-      1000
+      1120
     ],
     "OutCounts": [
       1,
-      6
+      10
     ],
-    "Explicit": false,
+    "Explicit": true,
     "Handcraft": false,
     "NonProductive": false
   },
@@ -3797,30 +3795,28 @@
   {
     "ID": 715,
     "Name": "间苯二甲酸二苯酯",
-    "Description": "",
+    "Description": "R间苯二甲酸二苯酯",
     "IconPath": "",
     "Type": 16,
     "GridIndex": 4203,
     "Time": 120,
     "Input": [
       7006,
-      7001,
-      7019
+      6206
     ],
     "InCounts": [
       3,
-      1,
-      8
+      2
     ],
     "Output": [
       7011,
-      1000
+      1120
     ],
     "OutCounts": [
-      2,
-      6
+      1,
+      4
     ],
-    "Explicit": false,
+    "Explicit": true,
     "Handcraft": false,
     "NonProductive": false
   },
@@ -4440,8 +4436,8 @@
   },
   {
     "ID": 772,
-    "Name": "高分子化合: 聚苯并咪唑",
-    "Description": "R高分子化合: 聚苯并咪唑",
+    "Name": "聚苯并咪唑",
+    "Description": "",
     "IconPath": "",
     "Type": 16,
     "GridIndex": 4303,
@@ -4456,15 +4452,13 @@
     ],
     "Output": [
       7709,
-      7006,
-      7019
+      7006
     ],
     "OutCounts": [
       1,
-      1,
       1
     ],
-    "Explicit": true,
+    "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
