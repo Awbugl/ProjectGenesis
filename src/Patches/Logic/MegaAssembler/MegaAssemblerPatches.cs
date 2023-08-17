@@ -121,7 +121,7 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
                 UpdateInputSlots(ref __instance, power, factory, cargoTraffic, slotdata, entitySignPool);
             }
 
-            return power < 0.1f;
+            return power >= 0.1f;
         }
 
         private static void UpdateOutputSlots(
