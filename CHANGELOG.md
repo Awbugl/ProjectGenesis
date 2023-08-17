@@ -31,7 +31,6 @@
       Turbine`, `Super Magnetic Ring`
     + Added `Dimensional Filter` requirement to the recipe of `Quantum Chip`
     + Doubled the output of chip recipes
-    + Added three new catalysts to the circuit etching recipe
     + Removed `Ocean Emission`, `Atmospheric Emission`, `Chemical Technology Innovation` technologies
     + Adjusted the recipe of `Structure Matrix`, `Information Matrix`, `Gravity Matrix`
     + Adjusted the recipe of `Graviton Lens`, `Strange Matter`, `Concrete`
