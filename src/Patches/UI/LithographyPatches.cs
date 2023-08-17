@@ -1,9 +1,12 @@
-﻿using HarmonyLib;
+﻿using System.Collections.Generic;
+using System.Reflection.Emit;
+using HarmonyLib;
 using ProjectGenesis.Patches.Logic.LithographyAssembler;
 using ProjectGenesis.Utils;
 using UnityEngine;
 using UnityEngine.UI;
 using ERecipeType_1 = ERecipeType;
+using Object = UnityEngine.Object;
 using Utils_ERecipeType = ProjectGenesis.Utils.ERecipeType;
 
 // ReSharper disable InconsistentNaming
@@ -72,6 +75,81 @@ namespace ProjectGenesis.Patches.UI
                 _button = emptyRodButtonObj.GetComponent<Button>();
                 _button.onClick.RemoveAllListeners();
                 _button.onClick.AddListener(OnLithographyIconClick);
+            }
+        }
+
+        [HarmonyPatch(typeof(UIAssemblerWindow), "OnServingBoxChange")]
+        [HarmonyTranspiler]
+        public static IEnumerable<CodeInstruction> UIAssemblerWindow_OnServingBoxChange_Transpiler(IEnumerable<CodeInstruction> instructions)
+        {
+            var matcher = new CodeMatcher(instructions).MatchForward(false, new CodeMatch(OpCodes.Ldarg_0), new CodeMatch(OpCodes.Ldloc_1),
+                                                                     new CodeMatch(OpCodes.Newobj,
+                                                                                   AccessTools.Constructor(typeof(StorageComponent),
+                                                                                                           new[] { typeof(int) })));
+
+
+            matcher.Advance(2).InsertAndAdvance(new CodeInstruction(OpCodes.Ldc_I4_1), new CodeInstruction(OpCodes.Add));
+
+            return matcher.InstructionEnumeration();
+        }
+
+        [HarmonyPatch(typeof(UIAssemblerWindow), "SyncServingStorage", new[] { typeof(AssemblerComponent) }, new ArgumentType[] { ArgumentType.Ref })]
+        [HarmonyPostfix]
+        public static void UIAssemblerWindow_SyncServingStorage_Postfix(
+            UIAssemblerWindow __instance,
+            ref AssemblerComponent assembler,
+            ref StorageComponent ___servingStorage)
+        {
+            if (assembler.recipeType != (ERecipeType_1)Utils_ERecipeType.电路蚀刻) return;
+
+            var data = LithographyAssemblerPatches.GetLithographyData(__instance.factorySystem.planet.id, __instance.assemblerId);
+
+            ref var grid = ref ___servingStorage.grids[___servingStorage.grids.Length - 1];
+
+            grid.filter = data.ItemId;
+            grid.itemId = data.ItemId;
+            grid.stackSize = data.NeedCount;
+            grid.count = data.ItemCount;
+            grid.inc = data.ItemInc;
+        }
+
+        [HarmonyPatch(typeof(UIAssemblerWindow), "OnManualServingContentChange")]
+        [HarmonyTranspiler]
+        public static IEnumerable<CodeInstruction> UIAssemblerWindow_OnManualServingContentChange_Transpiler(
+            IEnumerable<CodeInstruction> instructions)
+        {
+            var matcher = new CodeMatcher(instructions).End().Advance(-1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0),
+                                                                                           new CodeInstruction(OpCodes.Ldarg_0),
+                                                                                           new CodeInstruction(OpCodes.Ldfld,
+                                                                                                               AccessTools
+                                                                                                                  .Field(typeof(UIAssemblerWindow),
+                                                                                                                         "servingStorage")),
+                                                                                           new CodeInstruction(OpCodes.Ldloc_0),
+                                                                                           new CodeInstruction(OpCodes.Call,
+                                                                                                               AccessTools
+                                                                                                                  .Method(typeof(LithographyPatches),
+                                                                                                                          nameof(
+                                                                                                                              OnManualServingContentChange_Patch_Method))));
+
+            return matcher.InstructionEnumeration();
+        }
+
+        public static void OnManualServingContentChange_Patch_Method(
+            UIAssemblerWindow window,
+            StorageComponent servingStorage,
+            AssemblerComponent assembler)
+        {
+            if (assembler.recipeType != (ERecipeType_1)Utils_ERecipeType.电路蚀刻) return;
+
+            var data = LithographyAssemblerPatches.GetLithographyData(window.factorySystem.planet.id, window.assemblerId);
+
+            ref var grid = ref servingStorage.grids[servingStorage.grids.Length - 1];
+
+            if (data.ItemId == grid.itemId)
+            {
+                data.ItemCount = grid.count;
+                data.ItemInc = grid.inc;
+                data.NeedCount = grid.stackSize;
             }
         }
 

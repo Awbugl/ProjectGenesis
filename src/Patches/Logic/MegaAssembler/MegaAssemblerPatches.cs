@@ -129,7 +129,10 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
 
             var data = LithographyAssemblerPatches.GetLithographyData(factorySystem.planet.id, __instance.id);
 
-            return data.ItemCount > 0 && data.ItemCount == data.NeedCount;
+            var b = data.ItemCount == data.NeedCount;
+            
+            __instance.needs[5] = b ? data.ItemId : 0;
+            return b && data.ItemCount > 0;
         }
 
         private static void UpdateOutputSlots(

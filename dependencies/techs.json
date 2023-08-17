@@ -951,12 +951,12 @@
     "Items": [
       6001,
       6002,
-      6004
+      6003
     ],
     "ItemPoints": [
       12,
       12,
-      2
+      6
     ],
     "HashNeeded": 360000,
     "UnlockRecipes": [
@@ -2115,16 +2115,14 @@
     "Items": [
       6001,
       6002,
-      6003,
-      6004
+      6003
     ],
     "ItemPoints": [
       10,
       10,
-      10,
       10
     ],
-    "HashNeeded": 180000,
+    "HashNeeded": 360000,
     "UnlockRecipes": [
       116
     ],
@@ -3203,7 +3201,8 @@
     ],
     "HashNeeded": 288000,
     "UnlockRecipes": [
-      99
+      99,
+      100
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -9230,7 +9229,7 @@
     "UnlockRecipes": [
       41,
       625,
-      100
+      624
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],

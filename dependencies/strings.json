@@ -3050,16 +3050,6 @@
     "ENUS": "Colorless and odorless gas, widely distributed.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
-    "Name": "原油再生",
-    "ZHCN": "原油再生",
-    "ENUS": "Oil Regeneration"
-  },
-  {
-    "Name": "R原油再生",
-    "ZHCN": "使用二氧化碳和氢作为原料合成人造原油。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Synthesize artificial oil using carbon dioxide and hydrogen as raw materials.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
     "Name": "二氧化碳还原",
     "ZHCN": "二氧化碳还原",
     "ENUS": "Carbon Dioxide Reduction"
@@ -3070,14 +3060,9 @@
     "ENUS": "Reduce carbon dioxide to carbon monoxide for chemical raw materials.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
-    "Name": "氯苯水解",
-    "ZHCN": "氯苯水解",
-    "ENUS": "Chlorobenzene hydrolysis"
-  },
-  {
-    "Name": "R氯苯水解",
-    "ZHCN": "在高温、氢氧化钠环境下, 氯苯与水反应生产苯酚钠, 再经酸化处理可得到苯酚.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Under high temperature and sodium hydroxide environment, chlorobenzene reacts with water to produce sodium phenol, which is then acidified to obtain phenol.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "Name": "R粒子容器（高效）",
+    "ZHCN": "利用碳纳米管独特的管腔结构，可以高效制造粒子容器.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "The unique tubular structure of carbon nanotubes can be used to efficiently manufacture particle capacitor.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "开发者日志01",

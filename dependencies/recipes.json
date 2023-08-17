@@ -2752,6 +2752,33 @@
   },
   {
     "ID": 100,
+    "Type": 4,
+    "Time": 180,
+    "Input": [
+      7706,
+      1124
+    ],
+    "InCounts": [
+      2,
+      4
+    ],
+    "Output": [
+      1206
+    ],
+    "OutCounts": [
+      1
+    ],
+    "Description": "R粒子容器（高效）",
+    "PreTech": 1703,
+    "GridIndex": 1510,
+    "Name": "粒子容器（高效）",
+    "IconPath": "Icons/ItemRecipe/partical-capacitor-lv2",
+    "Explicit": true,
+    "Handcraft": false,
+    "NonProductive": false
+  },
+  {
+    "ID": 624,
     "Name": "氘氦混合聚变燃料棒",
     "Description": "",
     "IconPath": "",
