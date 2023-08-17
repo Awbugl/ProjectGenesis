@@ -330,11 +330,6 @@
     "ENUS": "Mismatched item"
   },
   {
-    "Name": "缺少透镜",
-    "ZHCN": "缺少透镜",
-    "ENUS": "Missing lens"
-  },
-  {
     "Name": "里程碑名称9",
     "ZHCN": "里程碑：钨矿",
     "ENUS": "Milestone: Tungsten ore"
@@ -1433,41 +1428,6 @@
     "Name": "I硫酸钠",
     "ZHCN": "白色、无臭、有苦味的结晶或粉末，用于制造硫酸。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "ENUS": "White, odorless, bitter taste of crystals or powder, used to make sulphuric acid.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },  
-  {
-    "Name": "透镜",
-    "ZHCN": "透镜",
-    "ENUS": "Lens"
-  },
-  {
-    "Name": "玻璃透镜",
-    "ZHCN": "玻璃透镜",
-    "ENUS": "Glass lens"
-  },
-  {
-    "Name": "I玻璃透镜",
-    "ZHCN": "用于制造光学仪器的普通透镜。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Used to make optical instruments lens.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
-    "Name": "金刚石透镜",
-    "ZHCN": "金刚石透镜",
-    "ENUS": "Diamond lens"
-  },
-  {
-    "Name": "I金刚石透镜",
-    "ZHCN": "用于制造光学仪器的较高级透镜。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Used to make advanced optical instruments lens.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
-    "Name": "卡西米尔透镜",
-    "ZHCN": "卡西米尔透镜",
-    "ENUS": "Casimir lens"
-  },
-  {
-    "Name": "I卡西米尔透镜",
-    "ZHCN": "用于制造光学仪器的高级透镜。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Used to make advanced optical instruments lens.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "塑料基板",
@@ -1908,7 +1868,7 @@
     "Name": "R光子结晶化",
     "ZHCN": "在高能环境下将光子压缩成固体.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "ENUS": "Compression of photons into solids in a high-energy environment.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },  
+  },
   {
     "Name": "钛晶石（高效）",
     "ZHCN": "钛晶石（高效）",
