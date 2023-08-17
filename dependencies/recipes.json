@@ -1086,7 +1086,7 @@
     "Name": "氘核燃料棒",
     "Description": "",
     "IconPath": "",
-    "Type": 4,
+    "Type": 10,
     "GridIndex": 3707,
     "Time": 600,
     "Input": [
@@ -1172,7 +1172,7 @@
     "Name": "反物质燃料棒",
     "Description": "",
     "IconPath": "",
-    "Type": 4,
+    "Type": 10,
     "GridIndex": 3710,
     "Time": 600,
     "Input": [
@@ -1668,7 +1668,7 @@
     "Name": "晶格硅（高效）",
     "Description": "R晶格硅（高效）",
     "IconPath": "Icons/ItemRecipe/silicium-high-purity-lv2",
-    "Type": 4,
+    "Type": 1,
     "GridIndex": 1305,
     "Time": 120,
     "Input": [
@@ -2782,7 +2782,7 @@
     "Name": "氘氦混合聚变燃料棒",
     "Description": "",
     "IconPath": "",
-    "Type": 4,
+    "Type": 10,
     "GridIndex": 3709,
     "Time": 600,
     "Input": [
@@ -2810,7 +2810,7 @@
     "Name": "氦三燃料棒",
     "Description": "",
     "IconPath": "",
-    "Type": 4,
+    "Type": 10,
     "GridIndex": 3708,
     "Time": 600,
     "Input": [
@@ -2838,7 +2838,7 @@
     "Name": "引力透镜",
     "Description": "",
     "IconPath": "",
-    "Type": 4,
+    "Type": 10,
     "GridIndex": 1606,
     "Time": 240,
     "Input": [
