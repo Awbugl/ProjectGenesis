@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Reflection;
 using System.Reflection.Emit;
 using HarmonyLib;
-using ProjectGenesis.Patches.Logic.LithographyAssembler;
 using ProjectGenesis.Utils;
 using ERecipeType_1 = ERecipeType;
 
@@ -122,17 +121,7 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
                 UpdateInputSlots(ref __instance, power, factory, cargoTraffic, slotdata, entitySignPool);
             }
 
-            if (power < 0.1f) return false;
-
-            // 电路蚀刻配方效果
-            if (__instance.recipeType != (ERecipeType_1)Utils.ERecipeType.电路蚀刻) return true;
-
-            var data = LithographyAssemblerPatches.GetLithographyData(factorySystem.planet.id, __instance.id);
-
-            var b = data.ItemCount == data.NeedCount;
-            
-            __instance.needs[5] = b ? data.ItemId : 0;
-            return b && data.ItemCount > 0;
+            return power < 0.1f;
         }
 
         private static void UpdateOutputSlots(

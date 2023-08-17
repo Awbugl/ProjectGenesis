@@ -807,7 +807,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 1207,
+    "GridIndex": 1502,
     "Time": 240,
     "Input": [
       1110,
@@ -1345,7 +1345,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 1,
-    "GridIndex": 1206,
+    "GridIndex": 1501,
     "Time": 120,
     "Input": [
       1005
@@ -2770,7 +2770,7 @@
     ],
     "Description": "R粒子容器（高效）",
     "PreTech": 1703,
-    "GridIndex": 1510,
+    "GridIndex": 1509,
     "Name": "粒子容器（高效）",
     "IconPath": "Icons/ItemRecipe/partical-capacitor-lv2",
     "Explicit": true,
@@ -4545,7 +4545,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 1208,
+    "GridIndex": 1503,
     "Time": 120,
     "Input": [
       1110,
@@ -5115,78 +5115,6 @@
     ],
     "Explicit": true,
     "Handcraft": false,
-    "NonProductive": false
-  },
-  {
-    "ID": 502,
-    "Name": "玻璃透镜",
-    "Description": "",
-    "IconPath": "",
-    "Type": 4,
-    "GridIndex": 1501,
-    "Time": 180,
-    "Input": [
-      1110
-    ],
-    "InCounts": [
-      2
-    ],
-    "Output": [
-      6201
-    ],
-    "OutCounts": [
-      1
-    ],
-    "Explicit": false,
-    "Handcraft": true,
-    "NonProductive": false
-  },
-  {
-    "ID": 503,
-    "Name": "金刚石透镜",
-    "Description": "",
-    "IconPath": "",
-    "Type": 4,
-    "GridIndex": 1502,
-    "Time": 180,
-    "Input": [
-      1112
-    ],
-    "InCounts": [
-      2
-    ],
-    "Output": [
-      6202
-    ],
-    "OutCounts": [
-      1
-    ],
-    "Explicit": false,
-    "Handcraft": true,
-    "NonProductive": false
-  },
-  {
-    "ID": 504,
-    "Name": "卡西米尔透镜",
-    "Description": "",
-    "IconPath": "",
-    "Type": 4,
-    "GridIndex": 1503,
-    "Time": 180,
-    "Input": [
-      1126
-    ],
-    "InCounts": [
-      2
-    ],
-    "Output": [
-      6203
-    ],
-    "OutCounts": [
-      1
-    ],
-    "Explicit": false,
-    "Handcraft": true,
     "NonProductive": false
   },
   {
