@@ -34,18 +34,6 @@ namespace ProjectGenesis.Patches.Logic
         {
             var componentFuelMask = component.fuelMask;
 
-            if (componentFuelMask == 5)
-            {
-                component.fuelMask = 2;
-                return ItemProto.fuelNeeds[2];
-            }
-
-            if (componentFuelMask == 6)
-            {
-                component.fuelMask = 16;
-                return ItemProto.fuelNeeds[16];
-            }
-
             if (componentFuelMask != 1) return ItemProto.fuelNeeds[componentFuelMask];
 
             return factory.planet.gasItems.Contains(ProtoIDUsedByPatches.I氧) ? ItemProto.fuelNeeds[1] : FuelRods;
@@ -78,18 +66,6 @@ namespace ProjectGenesis.Patches.Logic
             var component = window.powerSystem.genPool[window.generatorId];
 
             var componentFuelMask = component.fuelMask;
-
-            if (componentFuelMask == 5)
-            {
-                component.fuelMask = 2;
-                return ItemProto.fuelNeeds[2];
-            }
-
-            if (componentFuelMask == 6)
-            {
-                component.fuelMask = 16;
-                return ItemProto.fuelNeeds[16];
-            }
 
             if (componentFuelMask != 1) return ItemProto.fuelNeeds[componentFuelMask];
 

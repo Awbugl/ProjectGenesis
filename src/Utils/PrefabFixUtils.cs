@@ -98,10 +98,7 @@ namespace ProjectGenesis.Utils
             prefabDesc7.genEnergyPerTick = 10000000;
             prefabDesc7.useFuelPerTick = 10000000;
 
-            ref var prefabDesc9 = ref itemProtos.Select(I位面熔炉).prefabDesc;
-            prefabDesc9.assemblerSpeed = 40000;
-            prefabDesc9.assemblerRecipeType = (ERecipeType_1)ERecipeType.所有熔炉;
-
+            itemProtos.Select(I位面熔炉).prefabDesc.assemblerSpeed = 40000;
             itemProtos.Select(I化工厂).prefabDesc.assemblerSpeed = 40000;
             itemProtos.Select(I精炼厂).prefabDesc.assemblerSpeed = 40000;
             itemProtos.Select(I量子化工厂).prefabDesc.assemblerSpeed = 40000;

@@ -49,7 +49,9 @@ namespace ProjectGenesis.Utils
             void TerrestrialAdjust()
             {
                 // for GalacticScale mod
-                if (theme.name != "OceanicJungle" && theme.WaterItemId == 1000) theme.WaterItemId = 7018;
+                if (theme.WaterItemId == 1000) theme.WaterItemId = 7018;
+                
+                if (theme.name == "OceanicJungle") theme.WaterItemId = 1000;
 
                 if (theme.name == "Gobi")
                 {
