@@ -43,6 +43,12 @@ namespace ProjectGenesis.Compatibility
             harmony.Patch(AccessTools.Method(assembly.GetType("GalacticScale.PatchOnUIPlanetDetail"), "OnPlanetDataSet7Prefix"), null, null,
                           new HarmonyMethod(typeof(GalacticScaleCompatibilityPlugin), nameof(OnPlanetDataSet_Transpiler)));
 
+            harmony.Patch(AccessTools.Method(assembly.GetType("GalacticScale.PatchOnUIPlanetDetail"), "OnPlanetDataSet7Prefix"), null, null,
+                          new HarmonyMethod(typeof(PlanetGasPatches), nameof(PlanetGasPatches.OnDataSet_Transpiler)));
+
+            harmony.Patch(AccessTools.Method(assembly.GetType("GalacticScale.PatchOnUIStarDetail"), "OnStarDataSet2"), null, null,
+                          new HarmonyMethod(typeof(PlanetGasPatches), nameof(PlanetGasPatches.OnDataSet_Transpiler)));
+
             harmony.Patch(AccessTools.Method(assembly.GetType("GalacticScale.PatchOnUIStarDetail"), "OnStarDataSet2"), null, null,
                           new HarmonyMethod(typeof(PlanetGasPatches), nameof(PlanetGasPatches.PlanetGen_SetPlanetTheme_Transpiler)));
 
@@ -52,29 +58,40 @@ namespace ProjectGenesis.Compatibility
 
         public static void SetPlanetTheme_Postfix(PlanetData planet)
         {
+            var gsTheme = LDB.themes.Select(planet.theme);
+
+            var length1 = gsTheme.GasItems.Length;
+            var length2 = gsTheme.GasSpeeds.Length;
+
+            var numArray1 = new int[length1];
+            var numArray2 = new float[length2];
+            var numArray3 = new float[length1];
+
+            for (var index = 0; index < length1; ++index) numArray1[index] = gsTheme.GasItems[index];
+
+            var num1 = Random.Range(0f, 1f);
+
+            var sum = 0.0;
+
+            for (var index = 0; index < length2; ++index)
+            {
+                var num5 = gsTheme.GasSpeeds[index] * (float)(num1 * 0.190909147262573 + 0.909090876579285);
+                numArray2[index] = num5 * Mathf.Pow(planet.star.resourceCoef, 0.3f);
+                var itemProto = LDB.items.Select(numArray1[index]);
+                numArray3[index] = itemProto.HeatValue;
+                sum += numArray3[index] * (double)numArray2[index];
+            }
+
+            planet.gasItems = numArray1;
+            planet.gasSpeeds = numArray2;
+            planet.gasHeatValues = numArray3;
+            planet.gasTotalHeat = sum;
+
             if (planet.type != EPlanetType.Gas)
             {
-                var gsTheme = LDB.themes.Select(planet.theme);
-
-                var length1 = gsTheme.GasItems.Length;
-                var length2 = gsTheme.GasSpeeds.Length;
-
-                var numArray1 = new int[length1];
-                var numArray2 = new float[length2];
-
-                for (var index = 0; index < length1; ++index) numArray1[index] = gsTheme.GasItems[index];
-
-                var num1 = new DotNet35Random().NextDouble();
-
-                for (var index = 0; index < length2; ++index)
-                {
-                    var num5 = gsTheme.GasSpeeds[index] * (float)(num1 * 0.190909147262573 + 0.909090876579285);
-                    numArray2[index] = num5 * Mathf.Pow(planet.star.resourceCoef, 0.3f);
-                }
-
-                planet.gasItems = numArray1;
-                planet.gasSpeeds = numArray2;
-                planet.gasHeatValues = new float[planet.gasItems.Length];
+                planet.waterItemId = gsTheme.WaterItemId;
+                planet.waterHeight = gsTheme.WaterHeight;
+                planet.gasHeatValues = new float[length1];
                 planet.gasTotalHeat = 0;
             }
         }
