@@ -9,7 +9,7 @@ namespace ProjectGenesis.Patches.UI
 {
     public static class UISettingPatches
     {
-        private static bool _currentAtmosphericEmission, _currentLDBToolCache, _currentHideTechMode;
+        private static bool _currentChangeStackingLogic, _currentLDBToolCache, _currentHideTechMode;
 
         [HarmonyPatch(typeof(VFPreload), "InvokeOnLoadWorkEnded")]
         [HarmonyPostfix]
@@ -21,12 +21,12 @@ namespace ProjectGenesis.Patches.UI
 
             var pageParent = GameObject.Find("UI Root/Overlay Canvas/Top Windows/Option Window/details/content-5/advisor-tips").transform.parent;
 
-            CreateSettingObject(queryObj, pageParent, "gb-ae-setting", "EnableAtmosphericEmission".TranslateFromJson(),
-                                "EnableAtmosphericEmissionAdditionalText".TranslateFromJson(), new Vector2(30, -180), AtmosphericEmissionValue,
-                                SetAtmosphericEmissionValue);
+            CreateSettingObject(queryObj, pageParent, "gb-ae-setting", "ChangeStackingLogic".TranslateFromJson(),
+                                "ChangeStackingLogicAdditionalText".TranslateFromJson(), new Vector2(30, -180), ChangeStackingLogicValue,
+                                SetChangeStackingLogicValue);
 
-            CreateSettingObject(queryObj, pageParent, "gb-ldbtc-setting", "EnableLDBToolCache".TranslateFromJson(),
-                                "EnableLDBToolCacheAdditionalText".TranslateFromJson(), new Vector2(30, -220), LDBToolCacheValue,
+            CreateSettingObject(queryObj, pageParent, "gb-ldbtc-setting", "UseLDBToolCache".TranslateFromJson(),
+                                "UseLDBToolCacheAdditionalText".TranslateFromJson(), new Vector2(30, -220), LDBToolCacheValue,
                                 SetLDBToolCacheValue);
 
             CreateSettingObject(queryObj, pageParent, "gb-htc-setting", "EnableHideTechMode".TranslateFromJson(),
@@ -34,7 +34,7 @@ namespace ProjectGenesis.Patches.UI
                                 SetHideTechModeValue);
         }
 
-        private static void SetAtmosphericEmissionValue(bool value) => _currentAtmosphericEmission = value;
+        private static void SetChangeStackingLogicValue(bool value) => _currentChangeStackingLogic = value;
 
         private static void SetLDBToolCacheValue(bool value) => _currentLDBToolCache = value;
 
@@ -73,7 +73,7 @@ namespace ProjectGenesis.Patches.UI
         [HarmonyPostfix]
         public static void UIOptionWindow_OnCancelClick_Postfix()
         {
-            _currentAtmosphericEmission = AtmosphericEmissionValue;
+            _currentChangeStackingLogic = ChangeStackingLogicValue;
             _currentLDBToolCache = LDBToolCacheValue;
             _currentHideTechMode = HideTechModeValue;
         }
@@ -81,6 +81,6 @@ namespace ProjectGenesis.Patches.UI
         [HarmonyPatch(typeof(UIOptionWindow), "OnApplyClick")]
         [HarmonyPostfix]
         public static void UIOptionWindow_OnApplyClick_Postfix()
-            => SetConfig(_currentAtmosphericEmission, _currentLDBToolCache, _currentHideTechMode);
+            => SetConfig(_currentChangeStackingLogic, _currentLDBToolCache, _currentHideTechMode);
     }
 }

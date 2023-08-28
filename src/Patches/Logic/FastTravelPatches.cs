@@ -14,13 +14,10 @@ namespace ProjectGenesis.Patches.Logic
         {
             var matcher = new CodeMatcher(instructions);
 
-            matcher.MatchForward(false, new CodeMatch(OpCodes.Call, AccessTools.PropertyGetter(typeof(GameMain), "sandboxToolsEnabled")));
-
-            var inst = matcher.Advance(1).Instruction;
-
+            matcher.MatchForward(true, new CodeMatch(OpCodes.Call, AccessTools.PropertyGetter(typeof(GameMain), "sandboxToolsEnabled")));
             matcher.Advance(1)
-                   .InsertAndAdvance(new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(FastTravelPatches), nameof(IsFastTravelTechUnlocked))),
-                                     new CodeInstruction(inst));
+                   .InsertAndAdvance(new CodeInstruction(OpCodes.Call,
+                                                         AccessTools.Method(typeof(FastTravelPatches), nameof(IsFastTravelTechUnlocked))));
 
             return matcher.InstructionEnumeration();
         }
@@ -33,18 +30,19 @@ namespace ProjectGenesis.Patches.Logic
 
             matcher.MatchForward(false, new CodeMatch(OpCodes.Call, AccessTools.PropertyGetter(typeof(GameMain), "sandboxToolsEnabled")));
 
-            var inst = matcher.Advance(1).Instruction;
             matcher.Advance(1)
-                   .InsertAndAdvance(new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(FastTravelPatches), nameof(IsFastTravelEnabled))),
-                                     new CodeInstruction(inst));
+                   .InsertAndAdvance(new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(FastTravelPatches), nameof(IsFastTravelEnabled))));
 
             return matcher.InstructionEnumeration();
         }
 
-        public static bool IsFastTravelTechUnlocked() => GameMain.history.TechUnlocked(ProtoIDUsedByPatches.T虫洞航行);
+        public static bool IsFastTravelTechUnlocked(bool sandboxToolsEnabled)
+            => sandboxToolsEnabled || GameMain.history.TechUnlocked(ProtoIDUsedByPatches.T虫洞航行);
 
-        public static bool IsFastTravelEnabled()
+        public static bool IsFastTravelEnabled(bool sandboxToolsEnabled)
         {
+            if (sandboxToolsEnabled) return true;
+
             if (!GameMain.history.TechUnlocked(ProtoIDUsedByPatches.T虫洞航行))
             {
                 UIRealtimeTip.Popup("未解锁虫洞航行".TranslateFromJson());

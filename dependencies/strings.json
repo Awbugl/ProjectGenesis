@@ -40,14 +40,14 @@
     "ENUS": "https://discord.gg/QwMEeaRZZR"
   },
   {
-    "Name": "EnableAtmosphericEmission",
-    "ZHCN": "启用部分配方的特殊堆积逻辑",
-    "ENUS": "Enable special stacking logic for some recipes"
+    "Name": "ChangeStackingLogic",
+    "ZHCN": "修改配方的堆积逻辑",
+    "ENUS": "Enable special stacking logic for recipes"
   },
   {
-    "Name": "EnableLDBToolCache",
-    "ZHCN": "启用LDB工具缓存",
-    "ENUS": "Enable LDB tool cache"
+    "Name": "UseLDBToolCache",
+    "ZHCN": "使用LDB工具缓存",
+    "ENUS": "Use LDBTool cache"
   },
   {
     "Name": "EnableHideTechMode",
@@ -55,12 +55,12 @@
     "ENUS": "Enable tech exploration mode"
   },
   {
-    "Name": "EnableAtmosphericEmissionAdditionalText",
-    "ZHCN": "（将工厂停止生产的判定由单产物堆积改为所有产物均堆积）",
+    "Name": "ChangeStackingLogicAdditionalText",
+    "ZHCN": "（将停止生产的判定由单产物堆积改为所有产物均堆积）",
     "ENUS": "(Change the judgment of the factory to stop production from single product stacking to all products stacking)"
   },
   {
-    "Name": "EnableLDBToolCacheAdditionalText",
+    "Name": "UseLDBToolCacheAdditionalText",
     "ZHCN": "（可在配置文件中手动修改冲突的MOD物品ID，但启动速度减慢，需要重启游戏才可生效）",
     "ENUS": "(You can manually modify the conflicting MOD item ID in the configuration file, but the startup speed is slowed down, need to restart the game to take effect)"
   },
