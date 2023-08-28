@@ -51,8 +51,7 @@
     ],
     "HashNeeded": 1200,
     "UnlockRecipes": [
-      8,
-      48
+      8
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -64,14 +63,10 @@
     "IsLabTech": false,
     "PreTechsMax": false,
     "AddItems": [
-      2203,
       2201,
-      2301,
       6508
     ],
     "AddItemCounts": [
-      2,
-      2,
       2,
       1
     ],
@@ -1872,7 +1867,8 @@
     ],
     "HashNeeded": 21600,
     "UnlockRecipes": [
-      63
+      63,
+      112
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -2036,9 +2032,7 @@
       20
     ],
     "HashNeeded": 72000,
-    "UnlockRecipes": [
-      112
-    ],
+    "UnlockRecipes": [],
     "UnlockFunctions": [],
     "UnlockValues": [],
     "Published": true,
@@ -3129,8 +3123,12 @@
     "LevelCoef2": 0,
     "IsLabTech": false,
     "PreTechsMax": false,
-    "AddItems": [],
-    "AddItemCounts": [],
+    "AddItems": [
+      2203
+    ],
+    "AddItemCounts": [
+      2
+    ],
     "PropertyOverrideItems": [],
     "PropertyItemCounts": []
   },
@@ -8467,7 +8465,8 @@
     ],
     "HashNeeded": 1800,
     "UnlockRecipes": [
-      641
+      641,
+      48
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -8478,8 +8477,12 @@
     "LevelCoef2": 0,
     "IsLabTech": false,
     "PreTechsMax": false,
-    "AddItems": [],
-    "AddItemCounts": [],
+    "AddItems": [
+      2301
+    ],
+    "AddItemCounts": [
+      2
+    ],
     "PropertyOverrideItems": [],
     "PropertyItemCounts": []
   },

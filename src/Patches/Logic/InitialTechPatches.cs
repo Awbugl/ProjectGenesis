@@ -10,7 +10,7 @@ namespace ProjectGenesis.Patches.Logic
 {
     public static class InitialTechPatches
     {
-        private static readonly List<int> InitialTechs = new List<int> { 1, 1901, 1902, 1415 }, BonusTechs = new List<int> { 1801 };
+        private static readonly List<int> InitialTechs = new List<int> { 1, 1901, 1902, 1415 }, BonusTechs = new List<int> { 1001, 1801 };
 
         [HarmonyPatch(typeof(GameData), "SetForNewGame")]
         [HarmonyPostfix]
@@ -119,7 +119,7 @@ namespace ProjectGenesis.Patches.Logic
 
             if (__instance.page != 0) return;
             var history = GameMain.history;
-            
+
             // ReSharper disable once EnforceForeachStatementBraces
             foreach (var (tech, node) in __instance.nodes)
                 if (node != null && tech < 2000)
