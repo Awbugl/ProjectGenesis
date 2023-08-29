@@ -27,14 +27,10 @@ namespace ProjectGenesis.Patches.Logic
             // ReSharper disable ForeachCanBePartlyConvertedToQueryUsingAnotherGetEnumerator
 
             foreach (var tech in InitialTechs)
-            {
                 if (!__instance.history.TechUnlocked(tech)) __instance.history.UnlockTech(tech);
-            }
 
             foreach (var tech in BonusTechs)
-            {
                 if (!__instance.history.TechUnlocked(tech)) __instance.history.UnlockTech(tech);
-            }
 
             foreach (var (key, value) in __instance.history.techStates)
             {
@@ -122,12 +118,14 @@ namespace ProjectGenesis.Patches.Logic
 
             // ReSharper disable once EnforceForeachStatementBraces
             foreach (var (tech, node) in __instance.nodes)
+            {
                 if (node != null && tech < 2000)
                 {
                     var techSought = TechSought(history, tech);
                     node.gameObject.SetActive(techSought || PreTechSought(history, node.techProto));
                     if (node.techProto.postTechArray.Length > 0) node.connGroup.gameObject.SetActive(techSought);
                 }
+            }
         }
 
         private static bool TechSought(GameHistoryData history, int tech) => history.TechInQueue(tech) || history.TechUnlocked(tech);

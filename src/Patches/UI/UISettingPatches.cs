@@ -9,7 +9,7 @@ namespace ProjectGenesis.Patches.UI
 {
     public static class UISettingPatches
     {
-        private static bool _currentChangeStackingLogic, _currentLDBToolCache, _currentHideTechMode;
+        private static bool _currentChangeStackingLogic, _currentLDBToolCache, _currentHideTechMode, _currentShowMessageBoxValue;
 
         [HarmonyPatch(typeof(VFPreload), "InvokeOnLoadWorkEnded")]
         [HarmonyPostfix]
@@ -19,19 +19,23 @@ namespace ProjectGenesis.Patches.UI
             GameObject queryObj
                 = GameObject.Find("UI Root/Overlay Canvas/Top Windows/Option Window/details/content-3/list/scroll-view/viewport/content/demolish-query");
 
-            Transform pageParent = GameObject.Find("UI Root/Overlay Canvas/Top Windows/Option Window/details/content-5/advisor-tips").transform.parent;
+            Transform pageParent = GameObject.Find("UI Root/Overlay Canvas/Top Windows/Option Window/details/content-5/advisor-tips").transform
+                                             .parent;
 
             CreateSettingObject(queryObj, pageParent, "gb-ae-setting", "ChangeStackingLogic".TranslateFromJson(),
                                 "ChangeStackingLogicAdditionalText".TranslateFromJson(), new Vector2(30, -180), ChangeStackingLogicValue,
                                 SetChangeStackingLogicValue);
 
             CreateSettingObject(queryObj, pageParent, "gb-ldbtc-setting", "UseLDBToolCache".TranslateFromJson(),
-                                "UseLDBToolCacheAdditionalText".TranslateFromJson(), new Vector2(30, -220), LDBToolCacheValue,
-                                SetLDBToolCacheValue);
+                                "UseLDBToolCacheAdditionalText".TranslateFromJson(), new Vector2(30, -220), LDBToolCacheValue, SetLDBToolCacheValue);
 
             CreateSettingObject(queryObj, pageParent, "gb-htc-setting", "EnableHideTechMode".TranslateFromJson(),
                                 "EnableHideTechModeAdditionalText".TranslateFromJson(), new Vector2(30, -260), HideTechModeValue,
                                 SetHideTechModeValue);
+
+            CreateSettingObject(queryObj, pageParent, "gb-smb-setting", "ShowMessageBox".TranslateFromJson(),
+                                "ShowMessageBoxAdditionalText".TranslateFromJson(), new Vector2(30, -300), ShowMessageBoxValue,
+                                SetShowMessageBoxValue);
         }
 
         private static void SetChangeStackingLogicValue(bool value) => _currentChangeStackingLogic = value;
@@ -39,6 +43,8 @@ namespace ProjectGenesis.Patches.UI
         private static void SetLDBToolCacheValue(bool value) => _currentLDBToolCache = value;
 
         private static void SetHideTechModeValue(bool value) => _currentHideTechMode = value;
+
+        private static void SetShowMessageBoxValue(bool value) => _currentShowMessageBoxValue = value;
 
         private static void CreateSettingObject(
             GameObject oriObj,
@@ -76,11 +82,12 @@ namespace ProjectGenesis.Patches.UI
             _currentChangeStackingLogic = ChangeStackingLogicValue;
             _currentLDBToolCache = LDBToolCacheValue;
             _currentHideTechMode = HideTechModeValue;
+            _currentShowMessageBoxValue = ShowMessageBoxValue;
         }
 
         [HarmonyPatch(typeof(UIOptionWindow), "OnApplyClick")]
         [HarmonyPostfix]
         public static void UIOptionWindow_OnApplyClick_Postfix()
-            => SetConfig(_currentChangeStackingLogic, _currentLDBToolCache, _currentHideTechMode);
+            => SetConfig(_currentChangeStackingLogic, _currentLDBToolCache, _currentHideTechMode, _currentShowMessageBoxValue);
     }
 }

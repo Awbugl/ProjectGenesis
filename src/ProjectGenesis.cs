@@ -1,3 +1,4 @@
+using System;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -55,11 +56,11 @@ namespace ProjectGenesis
         internal static int[] TableID;
         private Harmony Harmony;
 
-        internal static bool ChangeStackingLogicValue, LDBToolCacheValue, HideTechModeValue;
+        internal static bool ChangeStackingLogicValue, LDBToolCacheValue, HideTechModeValue, ShowMessageBoxValue;
 
         internal static string ModPath;
 
-        private static ConfigEntry<bool> ChangeStackingLogicEntry, EnableLDBToolCacheEntry, EnableHideTechModeEntry;
+        private static ConfigEntry<bool> ChangeStackingLogicEntry, EnableLDBToolCacheEntry, EnableHideTechModeEntry, ShowMessageBoxEntry;
 
         public void Awake()
         {
@@ -75,7 +76,7 @@ namespace ProjectGenesis
             }
 
             ChangeStackingLogicEntry = Config.Bind("config", "ChangeStackingLogic", false,
-                                                         "Change the judgment of Chemical-related factories to stop production from single product stacking to all products stacking, which may casue resource waste in low resource rate game.\n修改所有化工相关配方的堆积逻辑，可能会导致低资源倍率游戏的资源浪费");
+                                                   "Change the judgment of chemical-related factories to stop production from single product stacking to all products stacking, which may casue resource waste in low resource rate game.\n修改所有化工相关配方的堆积逻辑，可能会导致低资源倍率游戏的资源浪费");
             ChangeStackingLogicValue = ChangeStackingLogicEntry.Value;
 
             EnableLDBToolCacheEntry = Config.Bind("config", "UseLDBToolCache", false,
@@ -87,6 +88,10 @@ namespace ProjectGenesis
                                                   "Enable Tech Exploration Mode, which will hide locked techs in tech tree.\n启用科技探索模式，启用后将隐藏未解锁的科技");
 
             HideTechModeValue = EnableHideTechModeEntry.Value;
+
+            ShowMessageBoxEntry = Config.Bind("config", "ShowMessageBox", true, "Show message when GenesisBook is loaded.\n启用首次加载时的提示信息");
+
+            ShowMessageBoxValue = ShowMessageBoxEntry.Value;
 
             Config.Save();
 
@@ -123,7 +128,7 @@ namespace ProjectGenesis
 
             Harmony = new Harmony(MODGUID);
 
-            foreach (var type in executingAssembly.GetTypes()) Harmony.PatchAll(type);
+            foreach (Type type in executingAssembly.GetTypes()) Harmony.PatchAll(type);
 
             LDBTool.PreAddDataAction += PreAddDataAction;
             LDBTool.PostAddDataAction += PostAddDataAction;
@@ -155,26 +160,26 @@ namespace ProjectGenesis
 
             GameMain.gpuiManager.Init();
 
-            foreach (var milestone in LDB.milestones.dataArray) milestone.Preload();
-            foreach (var journalPattern in LDB.journalPatterns.dataArray) journalPattern.Preload();
+            foreach (MilestoneProto milestone in LDB.milestones.dataArray) milestone.Preload();
+            foreach (JournalPatternProto journalPattern in LDB.journalPatterns.dataArray) journalPattern.Preload();
 
             //飞行舱拆除
-            var @base = LDB.veges.Select(9999);
+            VegeProto @base = LDB.veges.Select(9999);
             @base.MiningItem = new[] { 1801, 1101, 1104 };
             @base.MiningCount = new[] { 6, 60, 60 };
             @base.MiningChance = new float[] { 1, 1, 1 };
             @base.Preload();
 
-            ref var locstrs = ref AccessTools.StaticFieldRefAccess<StringProtoSet>(AccessTools.Field(typeof(Localization), "_strings"))();
+            ref StringProtoSet locstrs = ref AccessTools.StaticFieldRefAccess<StringProtoSet>(AccessTools.Field(typeof(Localization), "_strings"))();
             locstrs = LDB.strings;
 
-            foreach (var proto in LDB.veins.dataArray)
+            foreach (VeinProto proto in LDB.veins.dataArray)
             {
                 proto.Preload();
                 proto.name = proto.Name.TranslateFromJson();
             }
 
-            foreach (var proto in LDB.techs.dataArray) proto.Preload();
+            foreach (TechProto proto in LDB.techs.dataArray) proto.Preload();
 
             for (var i = 0; i < LDB.items.dataArray.Length; ++i)
             {
@@ -183,9 +188,12 @@ namespace ProjectGenesis
                 LDB.items.dataArray[i].Preload(i);
             }
 
-            for (var i = 0; i < LDB.recipes.dataArray.Length; ++i) LDB.recipes.dataArray[i].Preload(i);
+            for (var i = 0; i < LDB.recipes.dataArray.Length; ++i)
+            {
+                LDB.recipes.dataArray[i].Preload(i);
+            }
 
-            foreach (var proto in LDB.techs.dataArray)
+            foreach (TechProto proto in LDB.techs.dataArray)
             {
                 proto.PreTechsImplicit = proto.PreTechsImplicit.Except(proto.PreTechs).ToArray();
                 proto.UnlockRecipes = proto.UnlockRecipes.Distinct().ToArray();
@@ -203,7 +211,7 @@ namespace ProjectGenesis
             ItemProto.InitMechaMaterials();
             ItemProto.stationCollectorId = 2105;
 
-            foreach (var proto in LDB.items.dataArray)
+            foreach (ItemProto proto in LDB.items.dataArray)
             {
                 StorageComponent.itemIsFuel[proto.ID] = proto.HeatValue > 0L;
                 StorageComponent.itemStackCount[proto.ID] = proto.StackSize;
@@ -212,7 +220,11 @@ namespace ProjectGenesis
             // JsonHelper.ExportAsJson(@"D:\Git\ProjectGenesis\dependencies");
         }
 
-        internal static void SetConfig(bool currentChangeStackingLogic, bool currentLDBToolCache, bool currentHideTechMode)
+        internal static void SetConfig(
+            bool currentChangeStackingLogic,
+            bool currentLDBToolCache,
+            bool currentHideTechMode,
+            bool currentShowMessageBox)
         {
             ChangeStackingLogicValue = currentChangeStackingLogic;
             ChangeStackingLogicEntry.Value = currentChangeStackingLogic;
@@ -220,6 +232,8 @@ namespace ProjectGenesis
             EnableLDBToolCacheEntry.Value = currentLDBToolCache;
             HideTechModeValue = currentHideTechMode;
             EnableHideTechModeEntry.Value = currentHideTechMode;
+            ShowMessageBoxValue = currentShowMessageBox;
+            ShowMessageBoxEntry.Value = currentShowMessageBox;
             logger.LogInfo("SettingChanged");
             configFile.Save();
         }

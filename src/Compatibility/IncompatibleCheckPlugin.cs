@@ -42,7 +42,7 @@ namespace ProjectGenesis.Compatibility
             DSPBattleInstalled = pluginInfos.ContainsKey(DSPBattleGUID);
 
             new Harmony(MODGUID).Patch(AccessTools.Method(typeof(VFPreload), "InvokeOnLoadWorkEnded"), null,
-                                       new HarmonyMethod(typeof(IncompatibleCheckPlugin), nameof(OnMainMenuOpen)));
+                                       new HarmonyMethod(typeof(IncompatibleCheckPlugin), nameof(OnMainMenuOpen)) { priority = Priority.Last });
         }
 
         private static bool _shown;
@@ -50,6 +50,9 @@ namespace ProjectGenesis.Compatibility
         public static void OnMainMenuOpen()
         {
             if (_shown) return;
+            _shown = true;
+
+            if (!ProjectGenesis.ShowMessageBoxValue) return;
 
             var sb = new StringBuilder();
 
@@ -59,8 +62,6 @@ namespace ProjectGenesis.Compatibility
 
             UIMessageBox.Show("GenesisBookLoadTitle".TranslateFromJson(), sb.ToString(), "确定".TranslateFromJson(), "跳转交流群".TranslateFromJson(),
                               "跳转日志".TranslateFromJson(), UIMessageBox.INFO, null, OpenBrowser, OpenLog);
-
-            _shown = true;
         }
 
         public static void OpenBrowser() => Application.OpenURL("创世之书链接".TranslateFromJson());

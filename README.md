@@ -4,7 +4,7 @@
 
 Construct Real Universe. Then leave a GenesisBook.
 
-### MOD内容速览 | A glimpse
+## MOD内容速览 | A glimpse
 
 ![img.png](https://assets.awbugl.top/dsp-genesisbook/1.jpg)
 ![img.png](https://assets.awbugl.top/dsp-genesisbook/5.jpg)
@@ -24,13 +24,15 @@ Construct Real Universe. Then leave a GenesisBook.
 If you have any problems, please contact us in [our Discord server](https://discord.gg/QwMEeaRZZR),
 or open a issue via [github](https://github.com/Awbugl/ProjectGenesis).
 
-### 不兼容的MOD | Incompatible MODs
+## 已知不兼容的MOD | Incompatible mods (Known)
 
 + [TheyComeFromVoid](https://dsp.thunderstore.io/package/ckcz123/TheyComeFromVoid/)
-
-- 加载以上MOD时，不会加载本MOD。
-- When loading the above MOD, this MOD will not be loaded.
-
++ [RecycleableFuelRods](https://dsp.thunderstore.io/package/jinxOAO/RecycleableFuelRods/)
++ [Blackbox](https://dsp.thunderstore.io/package/Raptor/Blackbox/)
++ [BetterMachines](https://dsp.thunderstore.io/package/kremnev8/BetterMachines/)
++ [BeltSpeedEnhancement](https://dsp.thunderstore.io/package/Awbugl/BeltSpeedEnhancement/)
++ [WaterElectrolysis](https://dsp.thunderstore.io/package/jinxOAO/WaterElectrolysis/)
++ [GigaStationsUpdated](https://dsp.thunderstore.io/package/kremnev8/GigaStationsUpdated/)
 
 ## 安装方法
 
@@ -51,28 +53,17 @@ or open a issue via [github](https://github.com/Awbugl/ProjectGenesis).
 
 > 如果你玩过 Minecraft 的 GregTech mod, 可能会看到一些熟悉的东西.
 
-### 修改
+### 特色
 
-- 科技树重做：
-  + 对原版科技树进行了大量修改，添加了大量新科技。
-
-
-- 配方类型细化：
-  + 添加 电路蚀刻、高精度加工、矿物处理、精密组装、高分子化工 等配方类型以及对应的机器。
-
-
-- 星球大气：
-  + 为所有星球添加可采集的大气层及对应科技。
-  + 火力发电厂只能在含氧大气的星球上使用。
+  + 对科技树进行了大幅度修改。
+  + 重新制作了化工配方和芯片配方。
+  + 添加 电路蚀刻、高精度加工、矿物处理、精密组装、高分子化工 等配方类型以及对应的建筑。
+  + 为大多数星球添加可采集大气及对应采集建筑。
+  + 火力发电厂只能在具有含氧大气层的星球上使用。
   + 调整了矿物在不同星球的生成量。
-
-
-- 建筑属性修改：
-  + 发电设备的发电量提高。
-  + 大部分机器的制造速度修改为2x。
-  + 轨道弹射器、垂直发射井的速度提高。
-  + 覆盖全球的广播式能源塔。
-
+  + 调整了大量数值。
+  + 行星协调中心，可以在全球范围内提供增益。
+  + 巨型生产建筑，使用传送带运输原料和物品，40倍速度。
 
 ## 致谢
 
@@ -115,48 +106,15 @@ If you can see the new **GenesisBook** logo, then the mod is installed successfu
 
 ### Modified
 
-- Technology tree rework:
-  + Extensive changes to the original tech tree, adding a large number of new technologies.
-  + Chemical energy line
-  + Rich chemical line
-  + Nuclear energy line
-  + Oil refining line
-  + Mineral processing line
-  + Information Technology Line
-  + Ultimate Goal Line (*Not required)
-
-
-- Recipe type refinement:
-  + Add recipe types such as Circuit Etching, High Precision Processing, Mineral Processing, Precision Assembly,
-    Polymer Chemical, etc. and corresponding machines.
-
-
-- Item and recipe modifications:
-  + Extensive modifications to the original items, adding a large number of new items and corresponding recipes.
-  + Tungsten - raw material for advanced machines
-  + Gear and coil upgrades - various items
-  + Basic mechanical components, advanced mechanical components, cutting-edge mechanical components -- various types
-    of buildings
-  + Circuit substrates, silicon wafers, IC wafers -- processors
-  + Polyethylene, epoxy resins, polybenzimidazole - chemical products
-  + Coal tar, diesel fuel, methyldimethylhydrazine -- petrochemical energy
-
-
-- Mega Assemblers:
-  + Use conveyor belts to transport materials, and 40x speed
-
-
-- Planet atmosphere:
-  + Add atmospheric layers that can be collected on all planets and corresponding technologies.
-  + The power plant can only be used on planets with oxygen.
-  + Adjust the generation of minerals on different planets.
-
-
-- Building property modification:
-  + Increase the power generation of power equipment.
-  + Modify the speed of most assembler buildings to 2x.
-  + Increase the speed of rockets.
-  + Broadcast power towers that cover the globe.
++ Modified the tech tree.
++ Remade the chemical and chip recipes.
++ Added new recipe types and buildings.
++ Added atmosphere collection buildings to most planets.
++ Thermal power plants can only be used on planets with oxygen atmospheres.
++ Adjusted the amount of minerals generated on different planets.
++ Adjusted a large number of values.
++ Planetary Coordination Center, which can provide bonuses globally.
++ Giant production buildings, which use conveyor belts to transport raw materials and items at 40 times the speed.
 
 
 ## Credits

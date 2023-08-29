@@ -31,7 +31,10 @@ namespace ProjectGenesis.Patches.Logic.PlanetFocus
                     var key = r.ReadInt32();
                     var length = r.ReadInt32();
                     var datas = new int[length];
-                    for (var i = 0; i < length; i++) datas[i] = r.ReadInt32();
+                    for (var i = 0; i < length; i++)
+                    {
+                        datas[i] = r.ReadInt32();
+                    }
 
                     _planetFocuses.TryAdd(key, datas);
                 }

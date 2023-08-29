@@ -27,7 +27,7 @@
     + Removed `Phenol`, `Xylene`, `Chlorobenzene` items, converted to new item `Benzene`
     + Removed `Acetone`, `Glycerol` items, converted to new item `Propylene`
     + Simplified the recipe of chemical energy fuel
-    + Simplified the recipe of `Advanced Mechanical Components`, `Advanced Mechanical Components`, `Electromagnetic
+    + Simplified the recipe of `Advanced Mechanical Components`, `Sophisticated Mechanical Components`, `Electromagnetic
       Turbine`, `Super Magnetic Ring`
     + Added `Dimensional Filter` requirement to the recipe of `Quantum Chip`
     + Doubled the output of chip recipes

@@ -41,8 +41,8 @@
   },
   {
     "Name": "ChangeStackingLogic",
-    "ZHCN": "修改配方的堆积逻辑",
-    "ENUS": "Enable special stacking logic for recipes"
+    "ZHCN": "修改化工配方的堆积逻辑",
+    "ENUS": "Change chemical stacking logic"
   },
   {
     "Name": "UseLDBToolCache",
@@ -55,9 +55,14 @@
     "ENUS": "Enable tech exploration mode"
   },
   {
+    "Name": "ShowMessageBox",
+    "ZHCN": "显示创世之书加载弹窗",
+    "ENUS": "Show messagebox when loaded"
+  },
+  {
     "Name": "ChangeStackingLogicAdditionalText",
-    "ZHCN": "（将停止生产的判定由单产物堆积改为所有产物均堆积）",
-    "ENUS": "(Change the judgment of the factory to stop production from single product stacking to all products stacking)"
+    "ZHCN": "（将化工相关的配方停止生产的判定由单产物堆积改为所有产物均堆积）",
+    "ENUS": "(Change the judgment of the chemical-related factories to stop production from single product stacking to all products stacking)"
   },
   {
     "Name": "UseLDBToolCacheAdditionalText",
@@ -68,6 +73,11 @@
     "Name": "EnableHideTechModeAdditionalText",
     "ZHCN": "（隐藏未解锁的科技，需要重启游戏才可生效）",
     "ENUS": "(Hide the unlocked technology, need to restart the game to take effect)"
+  },
+  {
+    "Name": "ShowMessageBoxAdditionalText",
+    "ZHCN": "（在MOD加载完成后弹窗显示创世之书的额外信息）",
+    "ENUS": "(Show additional information about GenesisBook in a messagebox after the mod is loaded)"
   },
   {
     "Name": "星球基地",
@@ -436,8 +446,8 @@
   },
   {
     "Name": "需要氧气",
-    "ZHCN": "此燃料需要含氧大气",
-    "ENUS": "This fuel requires oxygen atmosphere"
+    "ZHCN": "在无氧大气层中只能使用燃料棒发电",
+    "ENUS": "Can only use fuel rods to generate power in anoxic atmosphere"
   },
   {
     "Name": "虫洞航行文字描述",

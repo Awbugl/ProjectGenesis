@@ -29,7 +29,7 @@ namespace ProjectGenesis.Utils
 
             if (StringProtoJsons.ContainsKey(s))
             {
-                var stringProtoJson = StringProtoJsons[s];
+                StringProtoJson stringProtoJson = StringProtoJsons[s];
                 switch (Localization.language)
                 {
                     case Language.zhCN:
@@ -40,10 +40,10 @@ namespace ProjectGenesis.Utils
                 }
             }
 
-            var strings = LDB.strings;
+            StringProtoSet strings = LDB.strings;
             if (strings == null) return s;
 
-            var stringProto = strings[s];
+            StringProto stringProto = strings[s];
             if (stringProto == null) return s;
             switch (Localization.language)
             {

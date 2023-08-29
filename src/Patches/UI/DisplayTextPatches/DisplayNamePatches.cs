@@ -22,12 +22,10 @@ namespace ProjectGenesis.Patches.UI.DisplayTextPatches
                                                                                            ((FieldInfo)i.operand).Name == "userName"));
 
             if (codeMatcher.IsInvalid)
-            {
                 // For XGP version
                 codeMatcher.Start()
                            .MatchForward(true,
                                          new CodeMatch(i => i.opcode == OpCodes.Call && ((MethodInfo)i.operand).Name == "get_usernameAndSuffix"));
-            }
 
             return codeMatcher.Advance(1)
                               .InsertAndAdvance(Transpilers.EmitDelegate<Func<string, string>>(text
