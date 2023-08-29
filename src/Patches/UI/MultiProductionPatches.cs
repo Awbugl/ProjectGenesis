@@ -20,11 +20,11 @@ namespace ProjectGenesis.Patches.UI
         [HarmonyPatch(typeof(UIReplicatorWindow), "OnSelectedRecipeChange")]
         public static void UIReplicatorWindow_OnSelectedRecipeChange(ref UIReplicatorWindow __instance)
         {
-            ref var selectedRecipe
+            ref RecipeProto selectedRecipe
                 = ref AccessTools.FieldRefAccess<UIReplicatorWindow, RecipeProto>(UIRoot.instance.uiGame.replicator, "selectedRecipe");
             if (selectedRecipe == null) return;
 
-            var results = selectedRecipe.Results.Length;
+            int results = selectedRecipe.Results.Length;
             if (results <= 2)
             {
                 ReplicatorImages.ForEach(image => image.gameObject.SetActive(false));
@@ -38,7 +38,7 @@ namespace ProjectGenesis.Patches.UI
             }
 
             if (ReplicatorImages.Count < results - 2)
-                for (var x = ReplicatorImages.Count; x < results - 2; ++x)
+                for (int x = ReplicatorImages.Count; x < results - 2; ++x)
                 {
                     ReplicatorImages.Add(Object.Instantiate(__instance.treeMainIcon1, __instance.treeMainIcon1.transform.parent));
                     ReplicatorTexts.Add(Object.Instantiate(__instance.treeMainCountText1, __instance.treeMainCountText1.transform.parent));
@@ -46,8 +46,8 @@ namespace ProjectGenesis.Patches.UI
 
             for (var i = 0; i < ReplicatorImages.Count; ++i)
             {
-                var image = ReplicatorImages[i];
-                var text = ReplicatorTexts[i];
+                Image image = ReplicatorImages[i];
+                Text text = ReplicatorTexts[i];
 
                 if (i >= results - 2)
                 {
@@ -59,8 +59,8 @@ namespace ProjectGenesis.Patches.UI
                 image.gameObject.SetActive(true);
                 text.gameObject.SetActive(true);
 
-                var itemProto = LDB.items.Select(selectedRecipe.Results[i + 2]);
-                var num = selectedRecipe.ResultCounts[i + 2];
+                ItemProto itemProto = LDB.items.Select(selectedRecipe.Results[i + 2]);
+                int num = selectedRecipe.ResultCounts[i + 2];
 
                 var button = image.gameObject.GetComponent<UIButton>();
                 button.tips.itemId = itemProto?.ID ?? 0;
@@ -88,7 +88,7 @@ namespace ProjectGenesis.Patches.UI
             ref List<UIButton> treeUpList
                 = ref AccessTools.FieldRefAccess<UIReplicatorWindow, List<UIButton>>(UIRoot.instance.uiGame.replicator, "treeUpList");
 
-            foreach (var treeUp in treeUpList) treeUp.gameObject.SetActive(false);
+            foreach (UIButton treeUp in treeUpList) treeUp.gameObject.SetActive(false);
         }
 
         #endregion
@@ -106,11 +106,11 @@ namespace ProjectGenesis.Patches.UI
         public static void UIAssemblerWindow_OnUpdate(ref UIAssemblerWindow __instance)
         {
             if (__instance.assemblerId == 0 || __instance.factory == null) return;
-            var assembler = __instance.factorySystem.assemblerPool[__instance.assemblerId];
+            AssemblerComponent assembler = __instance.factorySystem.assemblerPool[__instance.assemblerId];
             if (assembler.id != __instance.assemblerId) return;
             if (assembler.recipeId == 0) return;
 
-            var results = assembler.products.Length;
+            int results = assembler.products.Length;
             if (results <= 2)
             {
                 AssemblerProductProgress.ForEach(image => image.gameObject.SetActive(false));
@@ -121,29 +121,29 @@ namespace ProjectGenesis.Patches.UI
             }
 
             if (AssemblerProductProgress.Count < results - 2)
-                for (var x = AssemblerProductProgress.Count; x < results - 2; ++x)
+                for (int x = AssemblerProductProgress.Count; x < results - 2; ++x)
                 {
                     AssemblerProductProgress.Add(Object.Instantiate(__instance.productProgress1, __instance.productProgress1.transform.parent));
                     AssemblerExtraProductProgress.Add(Object.Instantiate(__instance.extraProductProgress1,
                                                                          __instance.extraProductProgress1.transform.parent));
                     AssemblerProductCountText.Add(Object.Instantiate(__instance.productCountText1, __instance.productCountText1.transform.parent));
 
-                    var icon = Object.Instantiate(__instance.productIcon1, __instance.productIcon1.transform.parent);
-                    var instance = __instance;
-                    var index = x + 2;
+                    Image icon = Object.Instantiate(__instance.productIcon1, __instance.productIcon1.transform.parent);
+                    UIAssemblerWindow instance = __instance;
+                    int index = x + 2;
 
                     icon.gameObject.GetComponent<UIButton>().button.onClick.AddListener(() =>
                     {
                         if (instance.assemblerId == 0 || instance.factory == null) return;
 
-                        var assemblerComponent = instance.factorySystem.assemblerPool[instance.assemblerId];
+                        AssemblerComponent assemblerComponent = instance.factorySystem.assemblerPool[instance.assemblerId];
                         if (assemblerComponent.id != instance.assemblerId ||
                             assemblerComponent.recipeId == 0 ||
                             assemblerComponent.products.Length < index + 1 ||
                             assemblerComponent.produced[index] <= 0)
                             return;
 
-                        var num = instance.player.TryAddItemToPackage(assemblerComponent.products[index], assemblerComponent.produced[index], 0,
+                        int num = instance.player.TryAddItemToPackage(assemblerComponent.products[index], assemblerComponent.produced[index], 0,
                                                                       false);
                         assemblerComponent.produced[index] = 0;
 
@@ -155,10 +155,10 @@ namespace ProjectGenesis.Patches.UI
 
             for (var i = 0; i < AssemblerProductProgress.Count; ++i)
             {
-                var productProgress = AssemblerProductProgress[i];
-                var extraProductProgress = AssemblerExtraProductProgress[i];
-                var productIcon = AssemblerProductIcon[i];
-                var productCountText = AssemblerProductCountText[i];
+                Image productProgress = AssemblerProductProgress[i];
+                Image extraProductProgress = AssemblerExtraProductProgress[i];
+                Image productIcon = AssemblerProductIcon[i];
+                Text productCountText = AssemblerProductCountText[i];
 
                 if (i >= results - 2)
                 {
@@ -169,8 +169,8 @@ namespace ProjectGenesis.Patches.UI
                     continue;
                 }
 
-                var index = i + 2;
-                var itemProto = LDB.items.Select(assembler.products[index]);
+                int index = i + 2;
+                ItemProto itemProto = LDB.items.Select(assembler.products[index]);
 
                 productIcon.sprite = itemProto?.iconSprite;
 
@@ -187,7 +187,7 @@ namespace ProjectGenesis.Patches.UI
                 productProgress.fillAmount = __instance.productProgress1.fillAmount;
                 extraProductProgress.fillAmount = __instance.extraProductProgress1.fillAmount;
 
-                var vector = __instance.productProgress1.gameObject.GetComponent<RectTransform>().anchoredPosition;
+                Vector2 vector = __instance.productProgress1.gameObject.GetComponent<RectTransform>().anchoredPosition;
                 productProgress.gameObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(vector.x + 64 * (index - 1), vector.y);
                 vector = __instance.extraProductProgress1.gameObject.GetComponent<RectTransform>().anchoredPosition;
                 extraProductProgress.gameObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(vector.x + 64 * (index - 1), vector.y);

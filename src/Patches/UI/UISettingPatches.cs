@@ -16,10 +16,10 @@ namespace ProjectGenesis.Patches.UI
         [HarmonyPriority(Priority.Last)]
         public static void VFPreload_InvokeOnLoadWorkEnded_Postfix()
         {
-            var queryObj
+            GameObject queryObj
                 = GameObject.Find("UI Root/Overlay Canvas/Top Windows/Option Window/details/content-3/list/scroll-view/viewport/content/demolish-query");
 
-            var pageParent = GameObject.Find("UI Root/Overlay Canvas/Top Windows/Option Window/details/content-5/advisor-tips").transform.parent;
+            Transform pageParent = GameObject.Find("UI Root/Overlay Canvas/Top Windows/Option Window/details/content-5/advisor-tips").transform.parent;
 
             CreateSettingObject(queryObj, pageParent, "gb-ae-setting", "ChangeStackingLogic".TranslateFromJson(),
                                 "ChangeStackingLogicAdditionalText".TranslateFromJson(), new Vector2(30, -180), ChangeStackingLogicValue,
@@ -50,7 +50,7 @@ namespace ProjectGenesis.Patches.UI
             bool defaultValue,
             UnityAction<bool> action)
         {
-            var settingObj = Object.Instantiate(oriObj, parent);
+            GameObject settingObj = Object.Instantiate(oriObj, parent);
 
             settingObj.name = name;
             Object.DestroyImmediate(settingObj.GetComponent<Localizer>());
@@ -64,7 +64,7 @@ namespace ProjectGenesis.Patches.UI
             toggle.toggle.onValueChanged.RemoveAllListeners();
             toggle.toggle.onValueChanged.AddListener(action);
 
-            var additonalText = settingObj.transform.GetChild(1);
+            Transform additonalText = settingObj.transform.GetChild(1);
             Object.DestroyImmediate(additonalText.GetComponent<Localizer>());
             additonalText.GetComponent<Text>().text = additionalText;
         }

@@ -39,19 +39,19 @@ namespace ProjectGenesis.Patches.UI
         [HarmonyPriority(Priority.Last)]
         public static void VFPreload_InvokeOnLoadWorkEnded_Postfix()
         {
-            ref var instanceUIGame = ref UIRoot.instance.uiGame;
+            ref UIGame instanceUIGame = ref UIRoot.instance.uiGame;
 
-            ref var local1 = ref FieldRefAccess<UIReplicatorWindow, RectTransform>(instanceUIGame.replicator, "windowRect");
+            ref RectTransform local1 = ref FieldRefAccess<UIReplicatorWindow, RectTransform>(instanceUIGame.replicator, "windowRect");
             local1.sizeDelta = new Vector2(900, 811);
-            ref var local2 = ref FieldRefAccess<UIReplicatorWindow, RectTransform>(instanceUIGame.replicator, "recipeGroup");
+            ref RectTransform local2 = ref FieldRefAccess<UIReplicatorWindow, RectTransform>(instanceUIGame.replicator, "recipeGroup");
             local2.sizeDelta = new Vector2(782, 322);
-            ref var local3 = ref FieldRefAccess<UIAssemblerWindow, RectTransform>(instanceUIGame.assemblerWindow, "recipeGroup");
+            ref RectTransform local3 = ref FieldRefAccess<UIAssemblerWindow, RectTransform>(instanceUIGame.assemblerWindow, "recipeGroup");
             local3.sizeDelta = new Vector2(190, 100);
-            ref var local4 = ref FieldRefAccess<UIRecipePicker, RectTransform>(instanceUIGame.recipePicker, "pickerTrans");
+            ref RectTransform local4 = ref FieldRefAccess<UIRecipePicker, RectTransform>(instanceUIGame.recipePicker, "pickerTrans");
             local4.sizeDelta = new Vector2(830, 476);
-            ref var local5 = ref FieldRefAccess<UIItemPicker, RectTransform>(instanceUIGame.itemPicker, "pickerTrans");
+            ref RectTransform local5 = ref FieldRefAccess<UIItemPicker, RectTransform>(instanceUIGame.itemPicker, "pickerTrans");
             local5.sizeDelta = new Vector2(830, 476);
-            ref var local6 = ref FieldRefAccess<UISignalPicker, RectTransform>(instanceUIGame.signalPicker, "pickerTrans");
+            ref RectTransform local6 = ref FieldRefAccess<UISignalPicker, RectTransform>(instanceUIGame.signalPicker, "pickerTrans");
             local6.sizeDelta = new Vector2(830, 476);
 
             GameObject.Find("UI Root/Overlay Canvas/In Game/Windows/Replicator Window/queue-group").GetComponentInChildren<RectTransform>().sizeDelta
