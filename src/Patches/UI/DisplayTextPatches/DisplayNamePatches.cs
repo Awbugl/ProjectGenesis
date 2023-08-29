@@ -16,7 +16,7 @@ namespace ProjectGenesis.Patches.UI.DisplayTextPatches
         [HarmonyPatch(typeof(UIVersionText), "Refresh")]
         public static IEnumerable<CodeInstruction> Refresh_Transpiler(IEnumerable<CodeInstruction> instructions, ILGenerator generator)
         {
-            var codeMatcher
+            CodeMatcher codeMatcher
                 = new CodeMatcher(instructions, generator).MatchForward(true,
                                                                         new CodeMatch(i => i.opcode == OpCodes.Ldfld &&
                                                                                            ((FieldInfo)i.operand).Name == "userName"));

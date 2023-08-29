@@ -20,7 +20,7 @@ namespace ProjectGenesis.Patches.Logic
 
             try
             {
-                var path = Path.Combine(Paths.ConfigPath, "LDBTool");
+                string path = Path.Combine(Paths.ConfigPath, "LDBTool");
                 if (Directory.Exists(path)) Directory.Delete(path, true);
             }
             catch

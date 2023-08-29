@@ -38,15 +38,15 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> FactorySystem_GameTick_Transpiler(IEnumerable<CodeInstruction> instructions, ILGenerator generator)
         {
-            var matcher = new CodeMatcher(instructions, generator).MatchForward(false, new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldloc_S),
-                                                                                new CodeMatch(OpCodes.Ldloc_1), new CodeMatch(OpCodes.Ldloc_2),
-                                                                                new CodeMatch(OpCodes.Call,
-                                                                                              AssemblerComponent_InternalUpdate_Method));
+            CodeMatcher matcher = new CodeMatcher(instructions, generator).MatchForward(false, new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldloc_S),
+                                                                                        new CodeMatch(OpCodes.Ldloc_1), new CodeMatch(OpCodes.Ldloc_2),
+                                                                                        new CodeMatch(OpCodes.Call,
+                                                                                                      AssemblerComponent_InternalUpdate_Method));
 
-            var local1 = matcher.Operand;
-            var power1 = matcher.Advance(1).Operand;
+            object local1 = matcher.Operand;
+            object power1 = matcher.Advance(1).Operand;
 
-            matcher.CreateLabelAt(matcher.Pos + 4, out var label1);
+            matcher.CreateLabelAt(matcher.Pos + 4, out Label label1);
 
             matcher.Advance(-1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldc_I4_0), new CodeInstruction(OpCodes.Ldloc_S, local1),
                                                  new CodeInstruction(OpCodes.Ldarg_0), new CodeInstruction(OpCodes.Ldloc_S, power1),
@@ -58,10 +58,10 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
 
             if (matcher.IsValid)
             {
-                var local2 = matcher.Operand;
-                var power2 = matcher.Advance(1).Operand;
+                object local2 = matcher.Operand;
+                object power2 = matcher.Advance(1).Operand;
 
-                matcher.CreateLabelAt(matcher.Pos + 4, out var label2);
+                matcher.CreateLabelAt(matcher.Pos + 4, out Label label2);
 
                 matcher.Advance(-1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldc_I4_0), new CodeInstruction(OpCodes.Ldloc_S, local2),
                                                      new CodeInstruction(OpCodes.Ldarg_0), new CodeInstruction(OpCodes.Ldloc_S, power2),
@@ -78,17 +78,17 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
             IEnumerable<CodeInstruction> instructions,
             ILGenerator generator)
         {
-            var matcher = new CodeMatcher(instructions, generator).MatchForward(false, new CodeMatch(OpCodes.Ldarg_0), new CodeMatch(OpCodes.Ldfld),
-                                                                                new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldelema),
-                                                                                new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldloc_1),
-                                                                                new CodeMatch(OpCodes.Ldloc_2),
-                                                                                new CodeMatch(OpCodes.Call,
-                                                                                              AssemblerComponent_InternalUpdate_Method));
+            CodeMatcher matcher = new CodeMatcher(instructions, generator).MatchForward(false, new CodeMatch(OpCodes.Ldarg_0), new CodeMatch(OpCodes.Ldfld),
+                                                                                        new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldelema),
+                                                                                        new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldloc_1),
+                                                                                        new CodeMatch(OpCodes.Ldloc_2),
+                                                                                        new CodeMatch(OpCodes.Call,
+                                                                                                      AssemblerComponent_InternalUpdate_Method));
 
-            var index = matcher.Advance(2).Operand;
-            var power = matcher.Advance(2).Operand;
+            object index = matcher.Advance(2).Operand;
+            object power = matcher.Advance(2).Operand;
 
-            matcher.CreateLabelAt(matcher.Pos + 4, out var label);
+            matcher.CreateLabelAt(matcher.Pos + 4, out Label label);
 
             matcher.Advance(-4).InsertAndAdvance(new CodeInstruction(OpCodes.Ldc_I4_0), new CodeInstruction(OpCodes.Ldarg_0),
                                                  new CodeInstruction(OpCodes.Ldfld, FactorySystem_AssemblerPool_Field),
@@ -109,13 +109,13 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
             // 巨型建筑效果
             if (__instance.speed >= TrashSpeed)
             {
-                var factory = factorySystem.factory;
+                PlanetFactory factory = factorySystem.factory;
                 SlotData[] slotdata = GetSlots(factory.planetId, __instance.entityId);
 
-                var cargoTraffic = factory.cargoTraffic;
+                CargoTraffic cargoTraffic = factory.cargoTraffic;
                 SignData[] entitySignPool = factory.entitySignPool;
 
-                var stationPilerLevel = GameMain.history.stationPilerLevel;
+                int stationPilerLevel = GameMain.history.stationPilerLevel;
 
                 UpdateOutputSlots(ref __instance, cargoTraffic, slotdata, entitySignPool, stationPilerLevel);
                 UpdateInputSlots(ref __instance, power, factory, cargoTraffic, slotdata, entitySignPool);
@@ -131,7 +131,7 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
             SignData[] signPool,
             int maxPilerCount)
         {
-            for (var index1 = 0; index1 < slotdata.Length; ++index1)
+            for (int index1 = 0; index1 < slotdata.Length; ++index1)
             {
                 if (slotdata[index1].dir == IODir.Output)
                 {
@@ -141,38 +141,38 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
                     }
                     else
                     {
-                        var beltId = slotdata[index1].beltId;
+                        int beltId = slotdata[index1].beltId;
                         if (beltId <= 0) continue;
-                        var beltComponent = traffic.beltPool[beltId];
-                        var cargoPath = traffic.GetCargoPath(beltComponent.segPathId);
+                        BeltComponent beltComponent = traffic.beltPool[beltId];
+                        CargoPath cargoPath = traffic.GetCargoPath(beltComponent.segPathId);
                         if (cargoPath == null) continue;
 
-                        var index2 = slotdata[index1].storageIdx - 1;
-                        var itemId = 0;
+                        int index2 = slotdata[index1].storageIdx - 1;
+                        int itemId = 0;
 
                         if (index2 >= 0)
                         {
                             if (index2 < __instance.products.Length)
                             {
                                 itemId = __instance.products[index2];
-                                var produced = __instance.produced[index2];
+                                int produced = __instance.produced[index2];
                                 if (itemId > 0 && produced > 0)
                                 {
-                                    var num2 = produced < maxPilerCount ? produced : maxPilerCount;
+                                    int num2 = produced < maxPilerCount ? produced : maxPilerCount;
                                     if (cargoPath.TryInsertItemAtHeadAndFillBlank(itemId, (byte)num2, 0)) __instance.produced[index2] -= num2;
                                 }
                             }
                             else
                             {
-                                var index3 = index2 - __instance.products.Length;
+                                int index3 = index2 - __instance.products.Length;
                                 if (index3 < __instance.requires.Length)
                                 {
                                     itemId = __instance.requires[index3];
-                                    var served = __instance.served[index3];
+                                    int served = __instance.served[index3];
                                     if (itemId > 0 && served > 0)
                                     {
-                                        var num2 = served < maxPilerCount ? served : maxPilerCount;
-                                        var inc = (int)((double)__instance.incServed[index3] * num2 / __instance.served[index3]);
+                                        int num2 = served < maxPilerCount ? served : maxPilerCount;
+                                        int inc = (int)((double)__instance.incServed[index3] * num2 / __instance.served[index3]);
                                         if (cargoPath.TryInsertItemAtHeadAndFillBlank(itemId, (byte)num2, (byte)inc))
                                         {
                                             __instance.incServed[index3] -= inc;
@@ -185,7 +185,7 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
 
                         if (itemId > 0)
                         {
-                            var entityId = beltComponent.entityId;
+                            int entityId = beltComponent.entityId;
                             signPool[entityId].iconType = 1U;
                             signPool[entityId].iconId0 = (uint)itemId;
                         }
@@ -207,7 +207,7 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
             SlotData[] slotdata,
             SignData[] signPool)
         {
-            for (var index = 0; index < slotdata.Length; ++index)
+            for (int index = 0; index < slotdata.Length; ++index)
             {
                 if (slotdata[index].dir == IODir.Input)
                 {
@@ -217,21 +217,21 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
                     }
                     else
                     {
-                        var beltId = slotdata[index].beltId;
+                        int beltId = slotdata[index].beltId;
                         if (beltId <= 0) continue;
-                        var beltComponent = traffic.beltPool[beltId];
-                        var cargoPath = traffic.GetCargoPath(beltComponent.segPathId);
+                        BeltComponent beltComponent = traffic.beltPool[beltId];
+                        CargoPath cargoPath = traffic.GetCargoPath(beltComponent.segPathId);
                         if (cargoPath == null) continue;
 
                         if (__instance.recipeId == ProtoIDUsedByPatches.R物质分解)
                         {
                             if (power < 0.1f) return;
 
-                            var itemId = traffic.TryPickItemAtRear(beltId, 0, null, out var stack, out _);
+                            int itemId = traffic.TryPickItemAtRear(beltId, 0, null, out byte stack, out _);
 
                             if (itemId <= 0) continue;
 
-                            var consumeRegister = GameMain.statistics.production.factoryStatPool[factory.index].consumeRegister;
+                            int[] consumeRegister = GameMain.statistics.production.factoryStatPool[factory.index].consumeRegister;
 
                             lock (consumeRegister)
                             {
@@ -257,7 +257,7 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
                         }
                         else
                         {
-                            var itemId = cargoPath.TryPickItemAtRear(__instance.needs, out var needIdx, out var stack, out var inc);
+                            int itemId = cargoPath.TryPickItemAtRear(__instance.needs, out int needIdx, out byte stack, out byte inc);
 
                             if (needIdx >= 0 && itemId > 0 && __instance.needs[needIdx] == itemId)
                             {
@@ -266,7 +266,7 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
                                 slotdata[index].storageIdx = __instance.products.Length + needIdx + 1;
                             }
 
-                            for (var i = 0; i < __instance.products.Length; i++)
+                            for (int i = 0; i < __instance.products.Length; i++)
                             {
                                 if (__instance.produced[i] >= 50) continue;
 
@@ -282,7 +282,7 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
 
                             if (itemId > 0)
                             {
-                                var entityId = beltComponent.entityId;
+                                int entityId = beltComponent.entityId;
                                 signPool[entityId].iconType = 1U;
                                 signPool[entityId].iconId0 = (uint)itemId;
                             }
@@ -307,13 +307,13 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
             int offset)
         {
             if (entityId == 0) return;
-            var assemblerId = __instance.entityPool[entityId].assemblerId;
+            int assemblerId = __instance.entityPool[entityId].assemblerId;
             if (assemblerId <= 0) return;
 
-            var assembler = __instance.factorySystem.assemblerPool[assemblerId];
+            AssemblerComponent assembler = __instance.factorySystem.assemblerPool[assemblerId];
             if (assembler.id != assemblerId || assembler.speed < TrashSpeed) return;
 
-            var beltId = __instance.entityPool[insertTarget].beltId;
+            int beltId = __instance.entityPool[insertTarget].beltId;
             if (beltId <= 0) return;
             SlotData[] slotdata = GetSlots(__instance.planetId, entityId);
             slotdata[slotId].dir = IODir.Output;
@@ -332,13 +332,13 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
             int offset)
         {
             if (entityId == 0) return;
-            var assemblerId = __instance.entityPool[entityId].assemblerId;
+            int assemblerId = __instance.entityPool[entityId].assemblerId;
             if (assemblerId <= 0) return;
 
-            var assembler = __instance.factorySystem.assemblerPool[assemblerId];
+            AssemblerComponent assembler = __instance.factorySystem.assemblerPool[assemblerId];
             if (assembler.id != assemblerId || assembler.speed < TrashSpeed) return;
 
-            var beltId = __instance.entityPool[pickTarget].beltId;
+            int beltId = __instance.entityPool[pickTarget].beltId;
             if (beltId <= 0) return;
             SlotData[] slotdata = GetSlots(__instance.planetId, entityId);
             slotdata[slotId].dir = IODir.Input;
@@ -358,13 +358,13 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
             int removingSlotId)
         {
             if (otherEntityId == 0) return;
-            var assemblerId = __instance.entityPool[otherEntityId].assemblerId;
+            int assemblerId = __instance.entityPool[otherEntityId].assemblerId;
             if (assemblerId <= 0) return;
 
-            var assembler = __instance.factorySystem.assemblerPool[assemblerId];
+            AssemblerComponent assembler = __instance.factorySystem.assemblerPool[assemblerId];
             if (assembler.id != assemblerId || assembler.speed < TrashSpeed) return;
 
-            var beltId = __instance.entityPool[removingEntityId].beltId;
+            int beltId = __instance.entityPool[removingEntityId].beltId;
             if (beltId <= 0) return;
 
             SlotData[] slotdata = GetSlots(__instance.planetId, otherEntityId);
@@ -383,7 +383,7 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
         {
             if (id != 0)
             {
-                var entityData = __instance.entityPool[id];
+                EntityData entityData = __instance.entityPool[id];
 
                 if (entityData.id != 0 && entityData.assemblerId != 0) SetEmpty(__instance.planetId, id);
             }

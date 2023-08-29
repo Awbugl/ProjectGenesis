@@ -16,8 +16,8 @@ namespace ProjectGenesis.Patches.Logic
         [HarmonyPostfix]
         public static void SetForNewGame(GameData __instance)
         {
-            foreach (var tech in InitialTechs) __instance.history.UnlockTech(tech);
-            foreach (var tech in BonusTechs) __instance.history.UnlockTech(tech);
+            foreach (int tech in InitialTechs) __instance.history.UnlockTech(tech);
+            foreach (int tech in BonusTechs) __instance.history.UnlockTech(tech);
         }
 
         [HarmonyPatch(typeof(GameData), "Import")]
@@ -26,19 +26,19 @@ namespace ProjectGenesis.Patches.Logic
         {
             // ReSharper disable ForeachCanBePartlyConvertedToQueryUsingAnotherGetEnumerator
 
-            foreach (var tech in InitialTechs)
+            foreach (int tech in InitialTechs)
                 if (!__instance.history.TechUnlocked(tech)) __instance.history.UnlockTech(tech);
 
-            foreach (var tech in BonusTechs)
+            foreach (int tech in BonusTechs)
                 if (!__instance.history.TechUnlocked(tech)) __instance.history.UnlockTech(tech);
 
             foreach (var (key, value) in __instance.history.techStates)
             {
                 if (value.unlocked)
                 {
-                    var techProto = LDB.techs.Select(key);
+                    TechProto techProto = LDB.techs.Select(key);
                     if (techProto != null)
-                        foreach (var t in techProto.UnlockRecipes)
+                        foreach (int t in techProto.UnlockRecipes)
                             __instance.history.UnlockRecipe(t);
                 }
             }
@@ -69,7 +69,7 @@ namespace ProjectGenesis.Patches.Logic
         [HarmonyPostfix]
         public static void UITechNode_OnQueueUpdate_Postfix()
         {
-            var tree = UIRoot.instance.uiGame.techTree;
+            UITechTree tree = UIRoot.instance.uiGame.techTree;
             UITechTree_OnQueueUpdate_Postfix(tree);
         }
 
@@ -77,7 +77,7 @@ namespace ProjectGenesis.Patches.Logic
         [HarmonyPostfix]
         public static void GameHistoryData_RemoveTechInQueue_Postfix()
         {
-            var tree = UIRoot.instance.uiGame.techTree;
+            UITechTree tree = UIRoot.instance.uiGame.techTree;
             UITechTree_OnQueueUpdate_Postfix(tree);
         }
 
@@ -87,12 +87,12 @@ namespace ProjectGenesis.Patches.Logic
         {
             if (!ProjectGenesis.HideTechModeValue) return;
 
-            var history = GameMain.history;
+            GameHistoryData history = GameMain.history;
             foreach (var (tech, node) in __instance.nodes)
             {
                 if (node != null && tech < 2000)
                 {
-                    var techSought = TechSought(history, tech);
+                    bool techSought = TechSought(history, tech);
                     if (techSought || PreTechSought(history, node.techProto))
                     {
                         node.gameObject.SetActive(true);
@@ -114,14 +114,14 @@ namespace ProjectGenesis.Patches.Logic
             if (!ProjectGenesis.HideTechModeValue) return;
 
             if (__instance.page != 0) return;
-            var history = GameMain.history;
+            GameHistoryData history = GameMain.history;
 
             // ReSharper disable once EnforceForeachStatementBraces
             foreach (var (tech, node) in __instance.nodes)
             {
                 if (node != null && tech < 2000)
                 {
-                    var techSought = TechSought(history, tech);
+                    bool techSought = TechSought(history, tech);
                     node.gameObject.SetActive(techSought || PreTechSought(history, node.techProto));
                     if (node.techProto.postTechArray.Length > 0) node.connGroup.gameObject.SetActive(techSought);
                 }

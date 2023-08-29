@@ -14,7 +14,7 @@ namespace ProjectGenesis.Patches.Logic.PlanetFocus
             {
                 w.Write(pair.Key);
                 w.Write(pair.Value.Length);
-                foreach (var t in pair.Value) w.Write(t);
+                foreach (int t in pair.Value) w.Write(t);
             }
         }
 
@@ -24,14 +24,14 @@ namespace ProjectGenesis.Patches.Logic.PlanetFocus
 
             try
             {
-                var slotdatacount = r.ReadInt32();
+                int slotdatacount = r.ReadInt32();
 
-                for (var j = 0; j < slotdatacount; j++)
+                for (int j = 0; j < slotdatacount; j++)
                 {
-                    var key = r.ReadInt32();
-                    var length = r.ReadInt32();
-                    var datas = new int[length];
-                    for (var i = 0; i < length; i++)
+                    int key = r.ReadInt32();
+                    int length = r.ReadInt32();
+                    int[] datas = new int[length];
+                    for (int i = 0; i < length; i++)
                     {
                         datas[i] = r.ReadInt32();
                     }
@@ -51,10 +51,10 @@ namespace ProjectGenesis.Patches.Logic.PlanetFocus
 
         private static bool ContainsFocus(int planetId, int focusid)
         {
-            if (_planetFocuses.TryGetValue(planetId, out var focuses))
+            if (_planetFocuses.TryGetValue(planetId, out int[] focuses))
                 // ReSharper disable once LoopCanBeConvertedToQuery
                 // ReSharper disable once ForCanBeConvertedToForeach
-                for (var index = 0; index < focuses.Length; ++index)
+                for (int index = 0; index < focuses.Length; ++index)
                 {
                     if (focuses[index] == focusid) return true;
                 }
