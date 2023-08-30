@@ -23,7 +23,7 @@ namespace ProjectGenesis.Utils
 
             LDB.strings.OnAfterDeserialize();
 
-            foreach (var stringProto in stringProtoJsons)
+            foreach (StringProtoJson stringProto in stringProtoJsons)
             {
                 if (LDB.strings.Exist(stringProto.Name))
                     ProtoRegistry.EditString(stringProto.Name, stringProto.ENUS, stringProto.ZHCN);
@@ -35,11 +35,11 @@ namespace ProjectGenesis.Utils
 
             #region TechProto
 
-            var templateTech = LDB.techs.Select(1311);
+            TechProto templateTech = LDB.techs.Select(1311);
 
-            foreach (var techjson in JsonHelper.TechProtos())
+            foreach (JsonHelper.TechProtoJson techjson in JsonHelper.TechProtos())
             {
-                var proto = LDB.techs.Exist(techjson.ID) ? LDB.techs.Select(techjson.ID) : templateTech.Copy();
+                TechProto proto = LDB.techs.Exist(techjson.ID) ? LDB.techs.Select(techjson.ID) : templateTech.Copy();
                 proto.ID = techjson.ID;
                 proto.Name = techjson.Name;
                 proto.Desc = techjson.Desc;
@@ -73,16 +73,17 @@ namespace ProjectGenesis.Utils
 
             #region ItemProto
 
-            foreach (var itemjson in JsonHelper.ItemProtos())
+            foreach (JsonHelper.ItemProtoJson itemjson in JsonHelper.ItemProtos())
             {
                 itemjson.GridIndex = GetTableID(itemjson.GridIndex);
 
-                var exist = LDB.items.Exist(itemjson.ID);
+                bool exist = LDB.items.Exist(itemjson.ID);
 
-                var proto = exist
-                                ? LDB.items.Select(itemjson.ID)
-                                : ProtoRegistry.RegisterItem(itemjson.ID, itemjson.Name, itemjson.Description, itemjson.IconPath, itemjson.GridIndex,
-                                                             itemjson.StackSize, (EItemType)itemjson.Type, IconDescUtils.GetIconDesc(itemjson.ID));
+                ItemProto proto = exist
+                                      ? LDB.items.Select(itemjson.ID)
+                                      : ProtoRegistry.RegisterItem(itemjson.ID, itemjson.Name, itemjson.Description, itemjson.IconPath,
+                                                                   itemjson.GridIndex, itemjson.StackSize, (EItemType)itemjson.Type,
+                                                                   IconDescUtils.GetIconDesc(itemjson.ID));
 
                 if (exist && proto.IconPath != itemjson.IconPath) itemIconDescs.Add(itemjson.ID, IconDescUtils.GetIconDesc(itemjson.ID));
 
@@ -123,16 +124,16 @@ namespace ProjectGenesis.Utils
 
             #region RecipeProto
 
-            foreach (var recipeJson in JsonHelper.RecipeProtos())
+            foreach (JsonHelper.RecipeProtoJson recipeJson in JsonHelper.RecipeProtos())
             {
                 recipeJson.GridIndex = GetTableID(recipeJson.GridIndex);
 
-                var proto = LDB.recipes.Exist(recipeJson.ID)
-                                ? LDB.recipes.Select(recipeJson.ID)
-                                : ProtoRegistry.RegisterRecipe(recipeJson.ID, (ERecipeType_1)recipeJson.Type, recipeJson.Time, recipeJson.Input,
-                                                               recipeJson.InCounts, recipeJson.Output ?? Array.Empty<int>(),
-                                                               recipeJson.OutCounts ?? Array.Empty<int>(), recipeJson.Description, 0,
-                                                               recipeJson.GridIndex, recipeJson.Name, recipeJson.IconPath);
+                RecipeProto proto = LDB.recipes.Exist(recipeJson.ID)
+                                        ? LDB.recipes.Select(recipeJson.ID)
+                                        : ProtoRegistry.RegisterRecipe(recipeJson.ID, (ERecipeType_1)recipeJson.Type, recipeJson.Time,
+                                                                       recipeJson.Input, recipeJson.InCounts, recipeJson.Output ?? Array.Empty<int>(),
+                                                                       recipeJson.OutCounts ?? Array.Empty<int>(), recipeJson.Description, 0,
+                                                                       recipeJson.GridIndex, recipeJson.Name, recipeJson.IconPath);
 
                 proto.Explicit = recipeJson.Explicit;
                 proto.Name = recipeJson.Name;

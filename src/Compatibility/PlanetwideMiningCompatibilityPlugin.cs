@@ -24,13 +24,15 @@ namespace ProjectGenesis.Compatibility
 
         private const string PlanetwideMiningGUID = "930f5bae-66d2-4917-988b-162fe2456643";
 
+        private static readonly FieldInfo PrefabDesc_isStellarStation_Field = AccessTools.Field(typeof(PrefabDesc), "isStellarStation");
+
         public void Awake()
         {
-            Chainloader.PluginInfos.TryGetValue(PlanetwideMiningGUID, out var pluginInfo);
+            Chainloader.PluginInfos.TryGetValue(PlanetwideMiningGUID, out PluginInfo pluginInfo);
 
             if (pluginInfo == null) return;
 
-            var assembly = pluginInfo.Instance.GetType().Assembly;
+            Assembly assembly = pluginInfo.Instance.GetType().Assembly;
             var harmony = new Harmony(MODGUID);
 
             harmony.Patch(AccessTools.Method(assembly.GetType("PlanetwideMining.PatchMiners"), "CheckBuildConditions"), null, null,
@@ -40,17 +42,14 @@ namespace ProjectGenesis.Compatibility
                           new HarmonyMethod(typeof(MegaPumpPatches), nameof(MegaPumpPatches.BuildTool_Click_CheckBuildConditions_Transpiler)));
         }
 
-        private static readonly FieldInfo PrefabDesc_isStellarStation_Field = AccessTools.Field(typeof(PrefabDesc), "isStellarStation");
-
         public static IEnumerable<CodeInstruction> BuildTool_Click_CheckBuildConditions_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
             var matcher = new CodeMatcher(instructions);
 
-            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldloc_S),
-                                 new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(BuildPreview), "desc")),
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(BuildPreview), "desc")),
                                  new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(PrefabDesc), "isCollectStation")));
 
-            var preview = matcher.Operand;
+            object preview = matcher.Operand;
 
             matcher.Advance(12);
             matcher.SetAndAdvance(OpCodes.Ldloc_S, preview);
@@ -70,7 +69,7 @@ namespace ProjectGenesis.Compatibility
             matcher.SetAndAdvance(OpCodes.Nop, null);
 
             matcher.MatchForward(false, new CodeMatch(OpCodes.Ldc_I4_S, (sbyte)36));
-            matcher.Advance(-3).SetAndAdvance(OpCodes.Nop,null);
+            matcher.Advance(-3).SetAndAdvance(OpCodes.Nop, null);
             matcher.SetOpcodeAndAdvance(matcher.Opcode == OpCodes.Brfalse_S ? OpCodes.Br_S : OpCodes.Br);
 
             matcher.SetAndAdvance(OpCodes.Nop, null);

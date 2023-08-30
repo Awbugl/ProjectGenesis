@@ -11,7 +11,6 @@ Construct Real Universe. Then leave a GenesisBook.
 ![img.png](https://assets.awbugl.top/dsp-genesisbook/3.jpg)
 ![img.png](https://assets.awbugl.top/dsp-genesisbook/4.jpg)
 
-
 ## 意见和反馈 | Feedback and suggestions
 
 如果您对本Mod有宝贵的意见或建议，
@@ -19,7 +18,6 @@ Construct Real Universe. Then leave a GenesisBook.
 
 - 创世之书MOD一号节点 991895539
 - 群问题答案：戴森球计划
-
 
 If you have any problems, please contact us in [our Discord server](https://discord.gg/QwMEeaRZZR),
 or open a issue via [github](https://github.com/Awbugl/ProjectGenesis).
@@ -55,15 +53,15 @@ or open a issue via [github](https://github.com/Awbugl/ProjectGenesis).
 
 ### 特色
 
-  + 对科技树进行了大幅度修改。
-  + 重新制作了化工配方和芯片配方。
-  + 添加 电路蚀刻、高精度加工、矿物处理、精密组装、高分子化工 等配方类型以及对应的建筑。
-  + 为大多数星球添加可采集大气及对应采集建筑。
-  + 火力发电厂只能在具有含氧大气层的星球上使用。
-  + 调整了矿物在不同星球的生成量。
-  + 调整了大量数值。
-  + 行星协调中心，可以在全球范围内提供增益。
-  + 巨型生产建筑，使用传送带运输原料和物品，40倍速度。
+- 对科技树进行了大幅度修改。
+- 重新制作了化工配方和芯片配方。
+- 添加 电路蚀刻、高精度加工、矿物处理、精密组装、高分子化工 等配方类型以及对应的建筑。
+- 为大多数星球添加可采集大气及对应采集建筑。
+- 火力发电厂只能在具有含氧大气层的星球上使用。
+- 调整了矿物在不同星球的生成量。
+- 调整了大量数值。
+- 行星协调中心，可以在全球范围内提供增益。
+- 巨型生产建筑，使用传送带运输原料和物品，40倍速度。
 
 ## 致谢
 
@@ -71,7 +69,6 @@ or open a issue via [github](https://github.com/Awbugl/ProjectGenesis).
 - 特别感谢kremnev8在开发过程中提供的帮助.
 - 特别感谢所有在开发过程中提供技术支持的MOD作者.
 - 特别感谢所有为本项目做出贡献和提出建议的玩家.
-
 
 ## Installation
 
@@ -99,23 +96,21 @@ and `texpack` file).
 
 If you can see the new **GenesisBook** logo, then the mod is installed successfully.
 
-
 ## Intro
 
 > If you've played Minecraft's GregTech mod, you may have seen something familiar.
 
 ### Modified
 
-+ Modified the tech tree.
-+ Remade the chemical and chip recipes.
-+ Added new recipe types and buildings.
-+ Added atmosphere collection buildings to most planets.
-+ Thermal power plants can only be used on planets with oxygen atmospheres.
-+ Adjusted the amount of minerals generated on different planets.
-+ Adjusted a large number of values.
-+ Planetary Coordination Center, which can provide bonuses globally.
-+ Giant production buildings, which use conveyor belts to transport raw materials and items at 40 times the speed.
-
+- Modified the tech tree.
+- Remade the chemical and chip recipes.
+- Added new recipe types and buildings.
+- Added atmosphere collection buildings to most planets.
+- Thermal power plants can only be used on planets with oxygen atmospheres.
+- Adjusted the amount of minerals generated on different planets.
+- Adjusted a large number of values.
+- Planetary Coordination Center, which can provide bonuses globally.
+- Giant production buildings, which use conveyor belts to transport raw materials and items at 40 times the speed.
 
 ## Credits
 

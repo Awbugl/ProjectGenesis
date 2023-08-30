@@ -26,9 +26,9 @@ namespace ProjectGenesis.Patches.Logic.PlanetFocus
 
         public static void GetWorkEnergyPerTick(ref AssemblerComponent assembler, PowerConsumerComponent[] pcPool, PlanetFactory factory)
         {
-            var modelIndex = factory.entityPool[assembler.entityId].modelIndex;
+            short modelIndex = factory.entityPool[assembler.entityId].modelIndex;
 
-            if (!ModelPowerCosts.TryGetValue(modelIndex, out var workEnergyPerTick))
+            if (!ModelPowerCosts.TryGetValue(modelIndex, out long workEnergyPerTick))
             {
                 workEnergyPerTick = LDB.models.Select(modelIndex).prefabDesc.workEnergyPerTick;
                 ModelPowerCosts.TryAdd(modelIndex, workEnergyPerTick);

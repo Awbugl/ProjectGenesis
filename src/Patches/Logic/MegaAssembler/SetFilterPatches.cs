@@ -31,19 +31,26 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
                                            MegaAssembler_SetFilterToEntity_Patch_Method
                                                = AccessTools.Method(typeof(MegaAssemblerPatches), nameof(SetFilterToEntity_Patch));
 
+        // prevent a packet flood when the filter on a belt connecting.
+        // special thanks for https://github.com/hubastard/nebula/tree/master/NebulaPatcher/Patches/Transpilers/UIBeltBuildTip_Transpiler.cs
+
+        private static (int, int) LastSetId;
+        private static int LastSlotId;
+        private static int LastSelectedIndex;
+
         [HarmonyPatch(typeof(UIBeltBuildTip), "SetOutputEntity")]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> UIBeltBuildTip_SetOutputEntity_Transpiler(
             IEnumerable<CodeInstruction> instructions,
             ILGenerator generator)
         {
-            var matcher = new CodeMatcher(instructions, generator).MatchForward(true, new CodeMatch(OpCodes.Ldloc_0),
-                                                                                new CodeMatch(OpCodes.Ldfld, PlanetFactory_EntityPool_Field),
-                                                                                new CodeMatch(OpCodes.Ldarg_1), new CodeMatch(OpCodes.Ldelem),
-                                                                                new CodeMatch(OpCodes.Stloc_3));
+            CodeMatcher matcher = new CodeMatcher(instructions, generator).MatchForward(true, new CodeMatch(OpCodes.Ldloc_0),
+                                                                                        new CodeMatch(OpCodes.Ldfld, PlanetFactory_EntityPool_Field),
+                                                                                        new CodeMatch(OpCodes.Ldarg_1), new CodeMatch(OpCodes.Ldelem),
+                                                                                        new CodeMatch(OpCodes.Stloc_3));
 
 
-            matcher.Advance(1).CreateLabelAt(matcher.Pos, out var label);
+            matcher.Advance(1).CreateLabelAt(matcher.Pos, out Label label);
 
             matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_3), new CodeInstruction(OpCodes.Ldfld, EntityData_AssemblerId_Field),
                                      new CodeInstruction(OpCodes.Ldc_I4_0), new CodeInstruction(OpCodes.Ble, label),
@@ -62,12 +69,12 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
             IEnumerable<CodeInstruction> instructions,
             ILGenerator generator)
         {
-            var matcher = new CodeMatcher(instructions, generator).MatchForward(true, new CodeMatch(OpCodes.Ldloc_0),
-                                                                                new CodeMatch(OpCodes.Ldfld, PlanetFactory_EntityPool_Field),
-                                                                                new CodeMatch(OpCodes.Ldarg_1), new CodeMatch(OpCodes.Ldelem),
-                                                                                new CodeMatch(OpCodes.Stloc_1));
+            CodeMatcher matcher = new CodeMatcher(instructions, generator).MatchForward(true, new CodeMatch(OpCodes.Ldloc_0),
+                                                                                        new CodeMatch(OpCodes.Ldfld, PlanetFactory_EntityPool_Field),
+                                                                                        new CodeMatch(OpCodes.Ldarg_1), new CodeMatch(OpCodes.Ldelem),
+                                                                                        new CodeMatch(OpCodes.Stloc_1));
 
-            matcher.Advance(1).CreateLabelAt(matcher.Pos, out var label);
+            matcher.Advance(1).CreateLabelAt(matcher.Pos, out Label label);
 
             matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_1), new CodeInstruction(OpCodes.Ldfld, EntityData_AssemblerId_Field),
                                      new CodeInstruction(OpCodes.Ldc_I4_0), new CodeInstruction(OpCodes.Ble, label),
@@ -87,7 +94,7 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
             int entityId,
             int slot)
         {
-            var assemblerComponent = factory.factorySystem.assemblerPool[entityData.assemblerId];
+            AssemblerComponent assemblerComponent = factory.factorySystem.assemblerPool[entityData.assemblerId];
 
             if (assemblerComponent.speed >= TrashSpeed)
             {
@@ -118,13 +125,15 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
             IEnumerable<CodeInstruction> instructions,
             ILGenerator generator)
         {
-            var matcher = new CodeMatcher(instructions, generator).MatchForward(true, new CodeMatch(OpCodes.Ldloc_0),
-                                                                                new CodeMatch(OpCodes.Ldfld, PlanetFactory_EntityPool_Field),
-                                                                                new CodeMatch(OpCodes.Ldarg_0),
-                                                                                new CodeMatch(OpCodes.Ldfld, UIBeltBuildTip_OutputEntityId_Field),
-                                                                                new CodeMatch(OpCodes.Ldelem), new CodeMatch(OpCodes.Stloc_1));
+            CodeMatcher matcher = new CodeMatcher(instructions, generator).MatchForward(true, new CodeMatch(OpCodes.Ldloc_0),
+                                                                                        new CodeMatch(OpCodes.Ldfld, PlanetFactory_EntityPool_Field),
+                                                                                        new CodeMatch(OpCodes.Ldarg_0),
+                                                                                        new CodeMatch(OpCodes.Ldfld,
+                                                                                                      UIBeltBuildTip_OutputEntityId_Field),
+                                                                                        new CodeMatch(OpCodes.Ldelem),
+                                                                                        new CodeMatch(OpCodes.Stloc_1));
 
-            matcher.Advance(1).CreateLabelAt(matcher.Pos, out var label);
+            matcher.Advance(1).CreateLabelAt(matcher.Pos, out Label label);
 
             matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_1), new CodeInstruction(OpCodes.Ldfld, EntityData_AssemblerId_Field),
                                      new CodeInstruction(OpCodes.Ldc_I4_0), new CodeInstruction(OpCodes.Ble, label),
@@ -143,13 +152,15 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
             IEnumerable<CodeInstruction> instructions,
             ILGenerator generator)
         {
-            var matcher = new CodeMatcher(instructions, generator).MatchForward(true, new CodeMatch(OpCodes.Ldloc_0),
-                                                                                new CodeMatch(OpCodes.Ldfld, PlanetFactory_EntityPool_Field),
-                                                                                new CodeMatch(OpCodes.Ldarg_0),
-                                                                                new CodeMatch(OpCodes.Ldfld, UISlotPicker_OutputEntityId_Field),
-                                                                                new CodeMatch(OpCodes.Ldelem), new CodeMatch(OpCodes.Stloc_1));
+            CodeMatcher matcher = new CodeMatcher(instructions, generator).MatchForward(true, new CodeMatch(OpCodes.Ldloc_0),
+                                                                                        new CodeMatch(OpCodes.Ldfld, PlanetFactory_EntityPool_Field),
+                                                                                        new CodeMatch(OpCodes.Ldarg_0),
+                                                                                        new CodeMatch(OpCodes.Ldfld,
+                                                                                                      UISlotPicker_OutputEntityId_Field),
+                                                                                        new CodeMatch(OpCodes.Ldelem),
+                                                                                        new CodeMatch(OpCodes.Stloc_1));
 
-            matcher.Advance(1).CreateLabelAt(matcher.Pos, out var label);
+            matcher.Advance(1).CreateLabelAt(matcher.Pos, out Label label);
 
             matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_1), new CodeInstruction(OpCodes.Ldfld, EntityData_AssemblerId_Field),
                                      new CodeInstruction(OpCodes.Ldc_I4_0), new CodeInstruction(OpCodes.Ble, label),
@@ -162,13 +173,6 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
             return matcher.InstructionEnumeration();
         }
 
-        // prevent a packet flood when the filter on a belt connecting.
-        // special thanks for https://github.com/hubastard/nebula/tree/master/NebulaPatcher/Patches/Transpilers/UIBeltBuildTip_Transpiler.cs
-
-        private static (int, int) LastSetId;
-        private static int LastSlotId;
-        private static int LastSelectedIndex;
-
         public static void SetFilterToEntity_Patch(
             PlanetFactory factory,
             EntityData entityData,
@@ -176,7 +180,7 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
             int outputSlotId,
             int selectedIndex)
         {
-            var assemblerComponent = factory.factorySystem.assemblerPool[entityData.assemblerId];
+            AssemblerComponent assemblerComponent = factory.factorySystem.assemblerPool[entityData.assemblerId];
 
             if (assemblerComponent.speed < TrashSpeed) return;
 

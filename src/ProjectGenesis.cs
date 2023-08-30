@@ -47,20 +47,18 @@ namespace ProjectGenesis
         public const string MODNAME = "GenesisBook";
         public const string VERSION = "2.7.0";
 
-        public string Version => VERSION;
-
         internal static ManualLogSource logger;
         internal static ConfigFile configFile;
         internal static UIPlanetFocusWindow PlanetFocusWindow;
 
         internal static int[] TableID;
-        private Harmony Harmony;
 
         internal static bool ChangeStackingLogicValue, LDBToolCacheValue, HideTechModeValue, ShowMessageBoxValue;
 
         internal static string ModPath;
 
         private static ConfigEntry<bool> ChangeStackingLogicEntry, EnableLDBToolCacheEntry, EnableHideTechModeEntry, ShowMessageBoxEntry;
+        private Harmony Harmony;
 
         public void Awake()
         {
@@ -114,7 +112,7 @@ namespace ProjectGenesis
                           TabSystem.RegisterTab("org.LoShin.GenesisBook:org.LoShin.GenesisBookTab2",
                                                 new TabData("化工页面".TranslateFromJson(), "Assets/texpack/化工科技")),
                           TabSystem.RegisterTab("org.LoShin.GenesisBook:org.LoShin.GenesisBookTab3",
-                                                new TabData("信息页面".TranslateFromJson(), "Assets/texpack/主机科技")),
+                                                new TabData("信息页面".TranslateFromJson(), "Assets/texpack/主机科技"))
                       };
 
             NebulaModAPI.RegisterPackets(executingAssembly);
@@ -133,6 +131,28 @@ namespace ProjectGenesis
             LDBTool.PreAddDataAction += PreAddDataAction;
             LDBTool.PostAddDataAction += PostAddDataAction;
         }
+
+        public void Export(BinaryWriter w)
+        {
+            MegaAssemblerPatches.Export(w);
+            PlanetFocusPatches.Export(w);
+        }
+
+        public void Import(BinaryReader r)
+        {
+            MegaAssemblerPatches.Import(r);
+            PlanetFocusPatches.Import(r);
+        }
+
+        public void IntoOtherSave()
+        {
+            MegaAssemblerPatches.IntoOtherSave();
+            PlanetFocusPatches.IntoOtherSave();
+        }
+
+        public string Version => VERSION;
+
+        public bool CheckVersion(string hostVersion, string clientVersion) => hostVersion.Equals(clientVersion);
 
         private void PreAddDataAction()
         {
@@ -181,14 +201,14 @@ namespace ProjectGenesis
 
             foreach (TechProto proto in LDB.techs.dataArray) proto.Preload();
 
-            for (var i = 0; i < LDB.items.dataArray.Length; ++i)
+            for (int i = 0; i < LDB.items.dataArray.Length; ++i)
             {
                 LDB.items.dataArray[i].recipes = null;
                 LDB.items.dataArray[i].rawMats = null;
                 LDB.items.dataArray[i].Preload(i);
             }
 
-            for (var i = 0; i < LDB.recipes.dataArray.Length; ++i)
+            for (int i = 0; i < LDB.recipes.dataArray.Length; ++i)
             {
                 LDB.recipes.dataArray[i].Preload(i);
             }
@@ -237,25 +257,5 @@ namespace ProjectGenesis
             logger.LogInfo("SettingChanged");
             configFile.Save();
         }
-
-        public void Export(BinaryWriter w)
-        {
-            MegaAssemblerPatches.Export(w);
-            PlanetFocusPatches.Export(w);
-        }
-
-        public void Import(BinaryReader r)
-        {
-            MegaAssemblerPatches.Import(r);
-            PlanetFocusPatches.Import(r);
-        }
-
-        public void IntoOtherSave()
-        {
-            MegaAssemblerPatches.IntoOtherSave();
-            PlanetFocusPatches.IntoOtherSave();
-        }
-
-        public bool CheckVersion(string hostVersion, string clientVersion) => hostVersion.Equals(clientVersion);
     }
 }

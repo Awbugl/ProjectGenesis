@@ -49,11 +49,11 @@ namespace ProjectGenesis.Patches.Logic
                 return false;
             }
 
-            var mecha = GameMain.mainPlayer.mecha;
+            Mecha mecha = GameMain.mainPlayer.mecha;
 
-            var energyWant = 12000000000;
+            long energyWant = 12000000000;
 
-            mecha.QueryEnergy(energyWant, out var energyGet, out _);
+            mecha.QueryEnergy(energyWant, out double energyGet, out _);
 
             if (energyGet < energyWant)
             {

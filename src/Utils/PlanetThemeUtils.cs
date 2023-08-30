@@ -28,19 +28,19 @@ namespace ProjectGenesis.Utils
                                                                            { 22, new[] { 6220, 7019 } },
                                                                            { 23, new[] { 6206 } },
                                                                            { 24, new[] { 6220, 6205 } },
-                                                                           { 25, new[] { 6220, 7019 } },
+                                                                           { 25, new[] { 6220, 7019 } }
                                                                        };
 
         internal static void AdjustPlanetThemeDataVanilla()
         {
-            var gobi = LDB.themes.Select(12);
+            ThemeProto gobi = LDB.themes.Select(12);
             gobi.WaterItemId = 7017;
             gobi.WaterHeight = -0.1f;
             gobi.oceanMat = LDB.themes.Select(22).oceanMat;
 
-            foreach (var theme in LDB.themes.dataArray) AdjustTheme(theme);
+            foreach (ThemeProto theme in LDB.themes.dataArray) AdjustTheme(theme);
 
-            var oceanicJungle = LDB.themes.Select(8);
+            ThemeProto oceanicJungle = LDB.themes.Select(8);
             oceanicJungle.WaterItemId = 1000;
         }
 
@@ -50,7 +50,7 @@ namespace ProjectGenesis.Utils
             {
                 // for GalacticScale mod
                 if (theme.WaterItemId == 1000) theme.WaterItemId = 7018;
-                
+
                 if (theme.name == "OceanicJungle") theme.WaterItemId = 1000;
 
                 if (theme.name == "Gobi")
@@ -71,7 +71,7 @@ namespace ProjectGenesis.Utils
                     theme.GasItems = Array.Empty<int>();
                     theme.GasSpeeds = Array.Empty<float>();
                 }
-                else if (PlanetGasData.TryGetValue(theme.ID, out var value))
+                else if (PlanetGasData.TryGetValue(theme.ID, out int[] value))
                 {
                     theme.GasItems = value;
                     theme.GasSpeeds = theme.GasItems.Length == 1
@@ -123,7 +123,7 @@ namespace ProjectGenesis.Utils
         {
             if (theme.VeinSpot.Length > 2)
             {
-                ref var silicon = ref theme.VeinSpot[2];
+                ref int silicon = ref theme.VeinSpot[2];
 
                 if (silicon > 0)
                 {
@@ -135,7 +135,7 @@ namespace ProjectGenesis.Utils
 
             if (theme.VeinSpot.Length > 5)
             {
-                ref var coal = ref theme.VeinSpot[5];
+                ref int coal = ref theme.VeinSpot[5];
 
                 if (!theme.GasItems.Contains(7019))
                 {

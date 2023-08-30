@@ -25,7 +25,7 @@ namespace ProjectGenesis.Patches.Logic
             matcher.MatchForward(false, new CodeMatch(OpCodes.Ldarg_0), new CodeMatch(OpCodes.Ldfld, AssemblerComponent_RecipeType_FieldInfo),
                                  new CodeMatch(OpCodes.Ldc_I4_2));
 
-            var label = matcher.Advance(-1).Operand;
+            object label = matcher.Advance(-1).Operand;
             matcher.Advance(1);
 
             matcher.Advance(4).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0), new CodeInstruction(OpCodes.Ldarg_2),
@@ -64,7 +64,7 @@ namespace ProjectGenesis.Patches.Logic
         {
             if (component.products.Length < 2) return false;
 
-            var b = false;
+            bool b = false;
 
             switch (component.recipeId)
             {
@@ -81,7 +81,7 @@ namespace ProjectGenesis.Patches.Logic
         {
             if (component.products.Length < 2) return false;
 
-            var b = false;
+            bool b = false;
 
             switch (component.recipeId)
             {
@@ -100,7 +100,7 @@ namespace ProjectGenesis.Patches.Logic
         {
             if (component.products.Length < 2) return false;
 
-            var b = false;
+            bool b = false;
 
             switch (component.recipeId)
             {
@@ -115,23 +115,23 @@ namespace ProjectGenesis.Patches.Logic
 
         private static bool CalcMaxProduct(ref AssemblerComponent component, int[] productRegister, int maxproduct)
         {
-            var counter = 0;
+            int counter = 0;
 
-            var productsLength = component.products.Length;
+            int productsLength = component.products.Length;
 
-            for (var index = 0; index < productsLength; ++index)
+            for (int index = 0; index < productsLength; ++index)
             {
                 if (component.produced[index] > component.productCounts[index] * maxproduct) ++counter;
             }
 
             if (counter == productsLength) return false;
 
-            for (var index = 0; index < productsLength; ++index)
+            for (int index = 0; index < productsLength; ++index)
             {
-                var productCount = component.productCounts[index];
-                var componentProductCount = productCount * maxproduct;
+                int productCount = component.productCounts[index];
+                int componentProductCount = productCount * maxproduct;
 
-                ref var intPtr = ref component.produced[index];
+                ref int intPtr = ref component.produced[index];
 
                 if (intPtr > componentProductCount)
                 {

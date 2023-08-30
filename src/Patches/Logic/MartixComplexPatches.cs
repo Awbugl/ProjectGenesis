@@ -14,6 +14,8 @@ namespace ProjectGenesis.Patches.Logic
         private static readonly FieldInfo LabComponent_MatrixIncServed_FieldInfo
             = AccessTools.Field(typeof(LabComponent), nameof(LabComponent.matrixIncServed));
 
+        private static readonly int[] matrixComplexIds = { ProtoIDUsedByPatches.I稳定矩阵, ProtoIDUsedByPatches.I虚空矩阵, ProtoIDUsedByPatches.I宇宙矩阵粗坯 };
+
         [HarmonyPatch(typeof(PlanetFactory), "EntityFastFillIn")]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> PlanetFactory_EntityFastFillIn_Transpiler(IEnumerable<CodeInstruction> instructions)
@@ -47,13 +49,13 @@ namespace ProjectGenesis.Patches.Logic
 
             matcher.MatchForward(false, new CodeMatch(OpCodes.Ldarg_S), new CodeMatch(OpCodes.Ldarg_S), new CodeMatch(OpCodes.Stind_I1));
 
-            var remainInc = matcher.Operand;
-            var itemInc = matcher.Advance(1).Operand;
+            object remainInc = matcher.Operand;
+            object itemInc = matcher.Advance(1).Operand;
 
             matcher.MatchForward(true, new CodeMatch(OpCodes.Ldloc_0), new CodeMatch(OpCodes.Ldarg_2), new CodeMatch(OpCodes.Ldarg_3),
                                  new CodeMatch(OpCodes.Ldarg_S), new CodeMatch(OpCodes.Ldarg_S, itemInc));
 
-            var itemCount = matcher.Advance(-1).Operand;
+            object itemCount = matcher.Advance(-1).Operand;
 
             matcher.MatchForward(true, new CodeMatch(OpCodes.Ldarg_0),
                                  new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(PlanetFactory), "factorySystem")),
@@ -61,13 +63,13 @@ namespace ProjectGenesis.Patches.Logic
                                  new CodeMatch(OpCodes.Ldelema), new CodeMatch(OpCodes.Ldfld, LabComponent_MatrixIncServed_FieldInfo),
                                  new CodeMatch(OpCodes.Stloc_S));
 
-            var matcher2 = matcher.Clone();
+            CodeMatcher matcher2 = matcher.Clone();
             matcher2.MatchForward(true, new CodeMatch(OpCodes.Ldarg_S), new CodeMatch(OpCodes.Stloc_S), new CodeMatch(OpCodes.Leave));
-            var leavelabel = matcher2.Operand;
-            var stitemCount = matcher2.Advance(-1).Operand;
+            object leavelabel = matcher2.Operand;
+            object stitemCount = matcher2.Advance(-1).Operand;
 
             List<CodeInstruction> ins = matcher.InstructionsWithOffsets(-6, -2);
-            matcher.Advance(1).CreateLabel(out var orilabel).Insert(new CodeInstruction(OpCodes.Pop)).CreateLabel(out var label);
+            matcher.Advance(1).CreateLabel(out Label orilabel).Insert(new CodeInstruction(OpCodes.Pop)).CreateLabel(out Label label);
 
             matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_S, itemCount), new CodeInstruction(OpCodes.Ldc_I4_0),
                                      new CodeInstruction(OpCodes.Beq_S, orilabel));
@@ -92,11 +94,11 @@ namespace ProjectGenesis.Patches.Logic
             ItemBundle tmpItems,
             bool fromPackage)
         {
-            var factoryStatPool = GameMain.statistics.production.factoryStatPool[factory.index];
+            FactoryProductionStat factoryStatPool = GameMain.statistics.production.factoryStatPool[factory.index];
 
-            var itemId = ProtoIDUsedByPatches.I稳定矩阵;
-            var itemCount = 100 - Math.Max(component.matrixServed[0], component.matrixServed[1]) / 3600;
-            var itemInc = 0;
+            int itemId = ProtoIDUsedByPatches.I稳定矩阵;
+            int itemCount = 100 - Math.Max(component.matrixServed[0], component.matrixServed[1]) / 3600;
+            int itemInc = 0;
 
             if (itemCount > 0) factory.gameData.mainPlayer.TakeItemFromPlayer(ref itemId, ref itemCount, out itemInc, fromPackage, tmpItems);
 
@@ -129,9 +131,12 @@ namespace ProjectGenesis.Patches.Logic
                 component.matrixIncServed[3] += itemInc * 1800;
             }
 
-            var max = 0;
+            int max = 0;
 
-            for (var index = 0; index < 5; ++index) max = Math.Max(max, component.matrixServed[index]);
+            for (int index = 0; index < 5; ++index)
+            {
+                max = Math.Max(max, component.matrixServed[index]);
+            }
 
             itemId = ProtoIDUsedByPatches.I宇宙矩阵粗坯;
             itemCount = 100 - max / 3600;
@@ -142,7 +147,7 @@ namespace ProjectGenesis.Patches.Logic
             {
                 factoryStatPool.consumeRegister[ProtoIDUsedByPatches.I宇宙矩阵粗坯] += itemCount;
 
-                for (var index = 0; index < 5; ++index)
+                for (int index = 0; index < 5; ++index)
                 {
                     factoryStatPool.productRegister[ProtoIDUsedByPatches.I电磁矩阵 + index] += itemCount;
 
@@ -162,7 +167,7 @@ namespace ProjectGenesis.Patches.Logic
         {
             if (component.matrixServed != null)
             {
-                var factoryStatPool = GameMain.statistics.production.factoryStatPool[factory.index];
+                FactoryProductionStat factoryStatPool = GameMain.statistics.production.factoryStatPool[factory.index];
 
                 switch (itemId)
                 {
@@ -182,7 +187,7 @@ namespace ProjectGenesis.Patches.Logic
                         factoryStatPool.consumeRegister[ProtoIDUsedByPatches.I虚空矩阵] += itemCount;
                         factoryStatPool.productRegister[ProtoIDUsedByPatches.I结构矩阵] += itemCount;
                         factoryStatPool.productRegister[ProtoIDUsedByPatches.I信息矩阵] += itemCount;
-                        
+
                         component.matrixServed[2] += 3600 * itemCount;
                         component.matrixIncServed[2] += 3600 * itemInc;
                         component.matrixServed[3] += 3600 * itemCount;
@@ -194,13 +199,14 @@ namespace ProjectGenesis.Patches.Logic
                     {
                         factoryStatPool.consumeRegister[ProtoIDUsedByPatches.I宇宙矩阵粗坯] += itemCount;
 
-                        for (var index = 0; index < 5; ++index)
+                        for (int index = 0; index < 5; ++index)
                         {
                             factoryStatPool.productRegister[ProtoIDUsedByPatches.I电磁矩阵 + index] += itemCount;
 
                             component.matrixServed[index] += itemCount * 3600;
                             component.matrixIncServed[index] += itemInc * 3600;
                         }
+
                         remainInc = 0;
                         return itemCount;
                     }
@@ -210,27 +216,24 @@ namespace ProjectGenesis.Patches.Logic
             return 0;
         }
 
-        private static readonly int[] matrixComplexIds
-            = new int[] { ProtoIDUsedByPatches.I稳定矩阵, ProtoIDUsedByPatches.I虚空矩阵, ProtoIDUsedByPatches.I宇宙矩阵粗坯 };
-
         [HarmonyPatch(typeof(LabComponent), "UpdateNeedsResearch")]
         [HarmonyPostfix]
         public static void LabComponent_UpdateNeedsResearch_PostFix(ref LabComponent __instance)
         {
-            var matrixPoints = __instance.matrixPoints;
-            var matrixServed = __instance.matrixServed;
+            int[] matrixPoints = __instance.matrixPoints;
+            int[] matrixServed = __instance.matrixServed;
 
             bool CheckMatrixNeed(int i) => matrixPoints[i] != 0 && matrixServed[i] < 36000;
 
             if (CheckMatrixNeed(1) && CheckMatrixNeed(0))
             {
-                var index = 0;
+                int index = 0;
 
                 if (CheckMatrixNeed(3) && CheckMatrixNeed(2)) index = 1;
 
                 if (CheckMatrixNeed(4)) index = 2;
 
-                for (var i = 5; i >= 0; --i)
+                for (int i = 5; i >= 0; --i)
                 {
                     if (matrixPoints[i] == 0)
                     {

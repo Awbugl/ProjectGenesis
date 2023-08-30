@@ -38,8 +38,10 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> FactorySystem_GameTick_Transpiler(IEnumerable<CodeInstruction> instructions, ILGenerator generator)
         {
-            CodeMatcher matcher = new CodeMatcher(instructions, generator).MatchForward(false, new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldloc_S),
-                                                                                        new CodeMatch(OpCodes.Ldloc_1), new CodeMatch(OpCodes.Ldloc_2),
+            CodeMatcher matcher = new CodeMatcher(instructions, generator).MatchForward(false, new CodeMatch(OpCodes.Ldloc_S),
+                                                                                        new CodeMatch(OpCodes.Ldloc_S),
+                                                                                        new CodeMatch(OpCodes.Ldloc_1),
+                                                                                        new CodeMatch(OpCodes.Ldloc_2),
                                                                                         new CodeMatch(OpCodes.Call,
                                                                                                       AssemblerComponent_InternalUpdate_Method));
 
@@ -78,9 +80,11 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
             IEnumerable<CodeInstruction> instructions,
             ILGenerator generator)
         {
-            CodeMatcher matcher = new CodeMatcher(instructions, generator).MatchForward(false, new CodeMatch(OpCodes.Ldarg_0), new CodeMatch(OpCodes.Ldfld),
-                                                                                        new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldelema),
-                                                                                        new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldloc_1),
+            CodeMatcher matcher = new CodeMatcher(instructions, generator).MatchForward(false, new CodeMatch(OpCodes.Ldarg_0),
+                                                                                        new CodeMatch(OpCodes.Ldfld), new CodeMatch(OpCodes.Ldloc_S),
+                                                                                        new CodeMatch(OpCodes.Ldelema),
+                                                                                        new CodeMatch(OpCodes.Ldloc_S),
+                                                                                        new CodeMatch(OpCodes.Ldloc_1),
                                                                                         new CodeMatch(OpCodes.Ldloc_2),
                                                                                         new CodeMatch(OpCodes.Call,
                                                                                                       AssemblerComponent_InternalUpdate_Method));

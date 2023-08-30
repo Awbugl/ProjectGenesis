@@ -22,17 +22,6 @@ namespace ProjectGenesis.Compatibility
 
         private const string MoreMegaStructureGUID = "Gnimaerd.DSP.plugin.MoreMegaStructure";
 
-        public void Awake()
-        {
-            var harmonyMethod
-                = new HarmonyMethod(typeof(MoreMegaStructureCompatibilityPlugin), nameof(LDBToolOnPostAddDataAction))
-                  {
-                      after = new[] { LDBToolPlugin.MODGUID }
-                  };
-
-            new Harmony(MODGUID).Patch(AccessTools.Method(typeof(VFPreload), "InvokeOnLoadWorkEnded"), null, harmonyMethod);
-        }
-
         private static readonly int[] AddedRecipes =
         {
             330, 331, 332, 333, 334, 335, 336, 337, 338, 339, 340, 341, 342, 343, 344, 345, 346, 347, 348, 349, 350, 351, 363, 364, 375, 376, 377,
@@ -45,9 +34,20 @@ namespace ProjectGenesis.Compatibility
             9502, 9512
         };
 
+        public void Awake()
+        {
+            var harmonyMethod
+                = new HarmonyMethod(typeof(MoreMegaStructureCompatibilityPlugin), nameof(LDBToolOnPostAddDataAction))
+                  {
+                      after = new[] { LDBToolPlugin.MODGUID }
+                  };
+
+            new Harmony(MODGUID).Patch(AccessTools.Method(typeof(VFPreload), "InvokeOnLoadWorkEnded"), null, harmonyMethod);
+        }
+
         public static void LDBToolOnPostAddDataAction()
         {
-            foreach (var strings in LDB.strings.dataArray)
+            foreach (StringProto strings in LDB.strings.dataArray)
             {
                 switch (strings.Name)
                 {
@@ -68,9 +68,9 @@ namespace ProjectGenesis.Compatibility
                 }
             }
 
-            foreach (var recipeID in AddedRecipes)
+            foreach (int recipeID in AddedRecipes)
             {
-                var recipeProto = LDB.recipes.Select(recipeID);
+                RecipeProto recipeProto = LDB.recipes.Select(recipeID);
                 if (recipeProto == null) continue;
                 recipeProto.Type = (ERecipeType)10;
                 recipeProto.name = recipeProto.Name.Translate();
@@ -86,7 +86,7 @@ namespace ProjectGenesis.Compatibility
 
                 if (recipeProto.Results.Length > 0)
                 {
-                    var recipeProtoResult = recipeProto.Results[0];
+                    int recipeProtoResult = recipeProto.Results[0];
 
                     switch (recipeProtoResult)
                     {
@@ -108,9 +108,9 @@ namespace ProjectGenesis.Compatibility
                 }
             }
 
-            foreach (var itemID in AddedItems)
+            foreach (int itemID in AddedItems)
             {
-                var itemProto = LDB.items.Select(itemID);
+                ItemProto itemProto = LDB.items.Select(itemID);
                 if (itemProto == null) continue;
                 itemProto.name = itemProto.Name.Translate();
                 itemProto.description = itemProto.Description.Translate();

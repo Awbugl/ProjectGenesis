@@ -52,7 +52,7 @@ namespace ProjectGenesis.Utils
                                                                            { 6202, new Color32(223, 222, 31, 255) },
                                                                            { 6201, new Color32(241, 181, 37, 255) },
                                                                            { 1116, new Color32(125, 27, 126, 255) },
-                                                                           { 1114, new Color32(204, 102, 0, 255) },
+                                                                           { 1114, new Color32(204, 102, 0, 255) }
                                                                        };
 
         private static readonly Color DefaultSideColor = new Color32(119, 136, 153, 255),
@@ -72,9 +72,9 @@ namespace ProjectGenesis.Utils
 
         internal static IconToolNew.IconDesc GetIconDesc(int itemid)
         {
-            if (MartixsDescs.TryGetValue(itemid, out var iconDesc)) return iconDesc;
+            if (MartixsDescs.TryGetValue(itemid, out IconToolNew.IconDesc iconDesc)) return iconDesc;
 
-            var desc = ProtoRegistry.GetDefaultIconDesc(Color.white, DefaultSideColor);
+            IconToolNew.IconDesc desc = ProtoRegistry.GetDefaultIconDesc(Color.white, DefaultSideColor);
             if (FluidColor.ContainsKey(itemid))
             {
                 desc.faceColor = FluidSideColor;

@@ -1002,7 +1002,6 @@
     "ProduceFrom": "",
     "Grade": 0,
     "Upgrades": [
-
     ],
     "IsEntity": false,
     "CanBuild": false,
@@ -1963,7 +1962,6 @@
     "ProduceFrom": "",
     "Grade": 0,
     "Upgrades": [
-
     ],
     "IsEntity": false,
     "CanBuild": false,
@@ -2409,7 +2407,6 @@
     "ProduceFrom": "",
     "Grade": 0,
     "Upgrades": [
-
     ],
     "IsEntity": false,
     "CanBuild": false,
@@ -5109,7 +5106,6 @@
     "ProduceFrom": "",
     "Grade": 0,
     "Upgrades": [
-
     ],
     "IsEntity": false,
     "CanBuild": false,
@@ -7332,7 +7328,7 @@
     "IconPath": "Assets/texpack/氨",
     "GridIndex": 4113,
     "StackSize": 20,
-    "Type": 2, 
+    "Type": 2,
     "PreTech": 1121,
     "PreTechOverride": 0,
     "DescFields": [

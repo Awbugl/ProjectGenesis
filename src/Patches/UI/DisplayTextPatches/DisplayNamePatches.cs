@@ -8,7 +8,8 @@ using ProjectGenesis.Utils;
 namespace ProjectGenesis.Patches.UI.DisplayTextPatches
 {
     /// <summary>
-    ///     special thanks for https://github.com/hubastard/nebula/tree/master/NebulaPatcher/Patches/Transpilers/UIVersionText_Transpiler.cs
+    ///     special thanks for
+    ///     https://github.com/hubastard/nebula/tree/master/NebulaPatcher/Patches/Transpilers/UIVersionText_Transpiler.cs
     /// </summary>
     public static class DisplayNamePatches
     {

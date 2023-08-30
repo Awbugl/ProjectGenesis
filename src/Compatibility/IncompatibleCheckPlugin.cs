@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.IO;
 using System.Text;
 using BepInEx;
 using BepInEx.Bootstrap;
@@ -34,6 +35,8 @@ namespace ProjectGenesis.Compatibility
 
         internal static bool DSPBattleInstalled;
 
+        private static bool _shown;
+
         public void Awake()
         {
             BepInEx.Logging.Logger.Listeners.Add(new HarmonyLogListener());
@@ -44,8 +47,6 @@ namespace ProjectGenesis.Compatibility
             new Harmony(MODGUID).Patch(AccessTools.Method(typeof(VFPreload), "InvokeOnLoadWorkEnded"), null,
                                        new HarmonyMethod(typeof(IncompatibleCheckPlugin), nameof(OnMainMenuOpen)) { priority = Priority.Last });
         }
-
-        private static bool _shown;
 
         public static void OnMainMenuOpen()
         {
@@ -66,6 +67,6 @@ namespace ProjectGenesis.Compatibility
 
         public static void OpenBrowser() => Application.OpenURL("创世之书链接".TranslateFromJson());
 
-        public static void OpenLog() => Application.OpenURL(System.IO.Path.Combine(ProjectGenesis.ModPath, "CHANGELOG.md"));
+        public static void OpenLog() => Application.OpenURL(Path.Combine(ProjectGenesis.ModPath, "CHANGELOG.md"));
     }
 }

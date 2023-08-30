@@ -9,7 +9,7 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
 {
     internal static partial class MegaAssemblerPatches
     {
-          // 绕开 CommonAPI 的 UIAssemblerWindowPatch.ChangePicker
+        // 绕开 CommonAPI 的 UIAssemblerWindowPatch.ChangePicker
         [HarmonyPatch(typeof(UIAssemblerWindow), "OnSelectRecipeClick")]
         [HarmonyPriority(1)]
         [HarmonyPrefix]
@@ -20,13 +20,13 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
                 __instance.factorySystem.assemblerPool[__instance.assemblerId].id != __instance.assemblerId)
                 return false;
 
-            var entityId = __instance.factorySystem.assemblerPool[__instance.assemblerId].entityId;
+            int entityId = __instance.factorySystem.assemblerPool[__instance.assemblerId].entityId;
             if (entityId == 0) return false;
 
-            var itemProto = LDB.items.Select(__instance.factory.entityPool[entityId].protoId);
+            ItemProto itemProto = LDB.items.Select(__instance.factory.entityPool[entityId].protoId);
             if (itemProto == null) return false;
 
-            var assemblerRecipeType = itemProto.prefabDesc.assemblerRecipeType;
+            ERecipeType assemblerRecipeType = itemProto.prefabDesc.assemblerRecipeType;
             if (UIRecipePicker.isOpened)
                 UIRecipePicker.Close();
             else
@@ -52,23 +52,23 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
 
             Array.Clear(___indexArray, 0, ___indexArray.Length);
             Array.Clear(___protoArray, 0, ___protoArray.Length);
-            var history = GameMain.history;
+            GameHistoryData history = GameMain.history;
             RecipeProto[] dataArray = LDB.recipes.dataArray;
-            var iconSet = GameMain.iconSet;
+            IconSet iconSet = GameMain.iconSet;
             // ReSharper disable once ForCanBeConvertedToForeach
-            for (var index1 = 0; index1 < dataArray.Length; ++index1)
+            for (int index1 = 0; index1 < dataArray.Length; ++index1)
             {
-                var gridIndex = dataArray[index1].GridIndex;
+                int gridIndex = dataArray[index1].GridIndex;
                 if (gridIndex < 1101 || !history.RecipeUnlocked(dataArray[index1].ID)) continue;
 
                 if (___filter != ERecipeType_1.None && !ContainsRecipeType(___filter, dataArray[index1].Type)) continue;
 
-                var num1 = gridIndex / 1000;
-                var num2 = (gridIndex - num1 * 1000) / 100 - 1;
-                var num3 = gridIndex % 100 - 1;
+                int num1 = gridIndex / 1000;
+                int num2 = (gridIndex - num1 * 1000) / 100 - 1;
+                int num3 = gridIndex % 100 - 1;
                 if (num2 < 0 || num3 < 0 || num2 >= 7 || num3 >= 17) continue;
 
-                var index2 = num2 * 17 + num3;
+                int index2 = num2 * 17 + num3;
                 if (index2 < 0 || index2 >= ___indexArray.Length || num1 != ___currentType) continue;
 
                 ___indexArray[index2] = iconSet.recipeIconIndex[dataArray[index1].ID];

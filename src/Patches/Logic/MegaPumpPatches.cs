@@ -20,7 +20,7 @@ namespace ProjectGenesis.Patches.Logic
 
                 if (matcher.IsInvalid) break;
 
-                var ins = matcher.Instruction;
+                CodeInstruction ins = matcher.Instruction;
                 matcher.InsertAndAdvance(ins);
                 matcher.Advance(1).SetAndAdvance(OpCodes.Call, AccessTools.Method(typeof(MegaPumpPatches), nameof(CheckBuildConditions)));
             }
@@ -42,8 +42,8 @@ namespace ProjectGenesis.Patches.Logic
 
                 if (matcher.IsInvalid) break;
 
-                var ins = matcher.Instruction;
-                var ins2 = matcher.Advance(1).Instruction;
+                CodeInstruction ins = matcher.Instruction;
+                CodeInstruction ins2 = matcher.Advance(1).Instruction;
                 matcher.Advance(1).InsertAndAdvance(ins);
                 matcher.InsertAndAdvance(ins2);
                 matcher.SetAndAdvance(OpCodes.Call, AccessTools.Method(typeof(MegaPumpPatches), nameof(CheckBuildConditions)));

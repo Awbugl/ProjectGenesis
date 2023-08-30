@@ -13,7 +13,7 @@ namespace ProjectGenesis.Patches.Logic.PlanetFocus
 
         private static ConcurrentDictionary<int, int[]> _planetFocuses = new ConcurrentDictionary<int, int[]>();
 
-        internal static readonly Dictionary<int, string> FocusIds = new Dictionary<int, string>()
+        internal static readonly Dictionary<int, string> FocusIds = new Dictionary<int, string>
                                                                     {
                                                                         { 6522, "工厂电力需求 -10%".TranslateFromJson() },
                                                                         { 6523, "研究上传速度 +10%".TranslateFromJson() },
@@ -49,20 +49,23 @@ namespace ProjectGenesis.Patches.Logic.PlanetFocus
         {
             if (!_planetFocuses.ContainsKey(planetId)) _planetFocuses[planetId] = new int[FocusMaxCount];
 
-            var datas = _planetFocuses[planetId];
+            int[] datas = _planetFocuses[planetId];
 
             w.Write(datas.Length);
             w.Write(planetId);
-            foreach (var id in datas) w.Write(id);
+            foreach (int id in datas) w.Write(id);
         }
 
         public static void ImportPlanetFocus(BinaryReader r)
         {
-            var count = r.ReadInt32();
-            var planetId = r.ReadInt32();
+            int count = r.ReadInt32();
+            int planetId = r.ReadInt32();
 
-            var arr = new int[count];
-            for (var j = 0; j < count; j++) arr[j] = r.ReadInt32();
+            int[] arr = new int[count];
+            for (int j = 0; j < count; j++)
+            {
+                arr[j] = r.ReadInt32();
+            }
 
             _planetFocuses[planetId] = arr;
         }

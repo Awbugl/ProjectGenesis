@@ -13,9 +13,9 @@ namespace ProjectGenesis.Patches.UI
         [HarmonyPatch(typeof(UITechNode), "UpdateLayoutDynamic")]
         public static void UITechNode_UpdateLayoutDynamic(ref UITechNode __instance, bool forceUpdate = false, bool forceReset = false)
         {
-            var num4 = Mathf.Max(__instance.unlockText.preferredWidth - 40f + __instance.unlockTextTrans.anchoredPosition.x,
-                                 Math.Min(__instance.techProto.unlockRecipeArray.Length, 3) * 46) +
-                       __instance.baseWidth;
+            float num4 = Mathf.Max(__instance.unlockText.preferredWidth - 40f + __instance.unlockTextTrans.anchoredPosition.x,
+                                   Math.Min(__instance.techProto.unlockRecipeArray.Length, 3) * 46) +
+                         __instance.baseWidth;
             if (num4 < __instance.minWidth) num4 = __instance.minWidth;
 
             if (num4 > __instance.maxWidth) num4 = __instance.maxWidth;

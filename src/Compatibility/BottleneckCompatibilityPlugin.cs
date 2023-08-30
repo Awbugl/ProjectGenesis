@@ -1,4 +1,5 @@
-﻿using BepInEx;
+﻿using System.Reflection;
+using BepInEx;
 using BepInEx.Bootstrap;
 using HarmonyLib;
 using ProjectGenesis.Utils;
@@ -23,11 +24,11 @@ namespace ProjectGenesis.Compatibility
 
         public void Awake()
         {
-            Chainloader.PluginInfos.TryGetValue(BottleneckGUID, out var pluginInfo);
+            Chainloader.PluginInfos.TryGetValue(BottleneckGUID, out PluginInfo pluginInfo);
 
             if (pluginInfo == null) return;
 
-            var assembly = pluginInfo.Instance.GetType().Assembly;
+            Assembly assembly = pluginInfo.Instance.GetType().Assembly;
             new Harmony(MODGUID).Patch(AccessTools.Method(assembly.GetType("Bottleneck.Stats.ResearchTechHelper"), "GetMaxIncIndex"),
                                        new HarmonyMethod(typeof(BottleneckCompatibilityPlugin), nameof(GetMaxIncIndex_Prefix)));
         }

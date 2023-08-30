@@ -22,11 +22,11 @@ namespace ProjectGenesis.Patches.UI
 
         private static void UpdateLogo()
         {
-            var mainLogo = GameObject.Find("UI Root/Overlay Canvas/Main Menu/dsp-logo");
-            var escLogo = GameObject.Find("UI Root/Overlay Canvas/In Game/Esc Menu/logo");
+            GameObject mainLogo = GameObject.Find("UI Root/Overlay Canvas/Main Menu/dsp-logo");
+            GameObject escLogo = GameObject.Find("UI Root/Overlay Canvas/In Game/Esc Menu/logo");
 
-            var iconstr = Localization.language == Language.zhCN ? "Assets/texpack/中文图标" : "Assets/texpack/英文图标";
-            var texture = Resources.Load<Sprite>(iconstr).texture;
+            string iconstr = Localization.language == Language.zhCN ? "Assets/texpack/中文图标" : "Assets/texpack/英文图标";
+            Texture2D texture = Resources.Load<Sprite>(iconstr).texture;
             mainLogo.GetComponent<RawImage>().texture = texture;
             escLogo.GetComponent<RawImage>().texture = texture;
             mainLogo.GetComponent<RectTransform>().sizeDelta = new Vector2(texture.width, texture.height);

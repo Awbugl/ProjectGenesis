@@ -90,7 +90,7 @@ namespace ProjectGenesis.Patches.UI
         public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
         {
             var source = new List<CodeInstruction>(instructions);
-            for (var index = 0; index < source.Count; ++index)
+            for (int index = 0; index < source.Count; ++index)
             {
                 if (source[index].opcode == OpCodes.Ldc_I4_S && source[index].operand is sbyte operand)
                 {
@@ -111,7 +111,7 @@ namespace ProjectGenesis.Patches.UI
         public static IEnumerable<CodeInstruction> SetMaterialProps_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
             var source = new List<CodeInstruction>(instructions);
-            for (var index = 0; index < source.Count; ++index)
+            for (int index = 0; index < source.Count; ++index)
             {
                 if (source[index].opcode == OpCodes.Ldc_R4 && source[index].operand is float operand)
                 {

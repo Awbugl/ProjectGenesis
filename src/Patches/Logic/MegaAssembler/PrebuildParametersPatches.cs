@@ -18,10 +18,10 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
             PlanetFactory factory)
         {
             if (entityId <= 0 || factory.entityPool[entityId].id != entityId) return;
-            var assemblerId = factory.entityPool[entityId].assemblerId;
+            int assemblerId = factory.entityPool[entityId].assemblerId;
             if (assemblerId > 0)
             {
-                ref var assembler = ref factory.factorySystem.assemblerPool[assemblerId];
+                ref AssemblerComponent assembler = ref factory.factorySystem.assemblerPool[assemblerId];
                 if (assembler.id != assemblerId || assembler.speed < TrashSpeed || parameters == null || parameters.Length < 2048) return;
 
                 if (assembler.recipeId != recipeId)
@@ -32,8 +32,8 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
                     }
                     else
                     {
-                        var recipe = LDB.recipes.Select(recipeId);
-                        var itemProto = LDB.items.Select(factory.entityPool[entityId].protoId);
+                        RecipeProto recipe = LDB.recipes.Select(recipeId);
+                        ItemProto itemProto = LDB.items.Select(factory.entityPool[entityId].protoId);
 
                         if (recipeId > 0 &&
                             ContainsRecipeType(itemProto.prefabDesc.assemblerRecipeType, recipe.Type) &&
@@ -46,7 +46,7 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
 
                 SlotData[] slots = GetSlots(factory.planetId, entityId);
                 const int num4 = 192;
-                for (var index = 0; index < slots.Length; ++index)
+                for (int index = 0; index < slots.Length; ++index)
                 {
                     slots[index].dir = (IODir)parameters[num4 + index * 4];
                     slots[index].storageIdx = parameters[num4 + index * 4 + 1];
@@ -99,10 +99,10 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
                 if (factory.entityPool.Length <= objectId || factory.entityPool[objectId].id != objectId || __instance.type != BuildingType.Assembler)
                     return;
 
-                var assemblerId = factory.entityPool[objectId].assemblerId;
+                int assemblerId = factory.entityPool[objectId].assemblerId;
                 if (assemblerId <= 0 || factory.factorySystem.assemblerPool.Length <= assemblerId) return;
 
-                var assembler = factory.factorySystem.assemblerPool[assemblerId];
+                AssemblerComponent assembler = factory.factorySystem.assemblerPool[assemblerId];
                 if (assembler.id != assemblerId || assembler.speed < TrashSpeed) return;
 
                 if (__instance.parameters == null || __instance.parameters.Length < 2048) Array.Resize(ref __instance.parameters, 2048);
@@ -115,7 +115,7 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
 
                 SlotData[] slots = GetSlots(factory.planetId, objectId);
 
-                for (var index = 0; index < slots.Length; ++index)
+                for (int index = 0; index < slots.Length; ++index)
                 {
                     __instance.parameters[num2 + index * 4] = (int)slots[index].dir;
                     __instance.parameters[num2 + index * 4 + 1] = slots[index].storageIdx;
@@ -125,20 +125,20 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
             }
             else
             {
-                var index2 = -objectId;
+                int index2 = -objectId;
                 PrebuildData[] prebuildPool = factory.prebuildPool;
-                ref var prebuildData = ref prebuildPool[index2];
+                ref PrebuildData prebuildData = ref prebuildPool[index2];
                 if (index2 <= 0 || prebuildData.id != index2) return;
 
                 if (prebuildData.parameters != null)
                 {
-                    var length = prebuildData.parameters.Length;
+                    int length = prebuildData.parameters.Length;
                     if (__instance.parameters == null || __instance.parameters.Length < length) Array.Resize(ref __instance.parameters, length);
                     Array.Copy(prebuildData.parameters, __instance.parameters, length);
                 }
 
                 __instance.recipeId = prebuildData.recipeId;
-                var recipeProto = LDB.recipes.Select(prebuildData.recipeId);
+                RecipeProto recipeProto = LDB.recipes.Select(prebuildData.recipeId);
                 if (recipeProto != null) __instance.recipeType = recipeProto.Type;
             }
         }
@@ -156,16 +156,16 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
                 if (factory.entityPool.Length <= objectId || factory.entityPool[objectId].id != objectId || __instance.type != BuildingType.Assembler)
                     return;
 
-                var assemblerId = factory.entityPool[objectId].assemblerId;
+                int assemblerId = factory.entityPool[objectId].assemblerId;
                 if (assemblerId <= 0 || factory.factorySystem.assemblerPool.Length <= assemblerId) return;
 
-                ref var assembler = ref factory.factorySystem.assemblerPool[assemblerId];
+                ref AssemblerComponent assembler = ref factory.factorySystem.assemblerPool[assemblerId];
                 if (assembler.id != assemblerId || assembler.speed < TrashSpeed) return;
 
-                var itemProto = LDB.items.Select(factory.entityPool[objectId].protoId);
+                ItemProto itemProto = LDB.items.Select(factory.entityPool[objectId].protoId);
                 if (itemProto == null || itemProto.prefabDesc == null) return;
 
-                var containsRecipeType = ContainsRecipeType(itemProto.prefabDesc.assemblerRecipeType, __instance.recipeType);
+                bool containsRecipeType = ContainsRecipeType(itemProto.prefabDesc.assemblerRecipeType, __instance.recipeType);
 
                 if (assembler.recipeId != __instance.recipeId &&
                     (__instance.recipeId == 0 ||
@@ -181,13 +181,13 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
             }
             else
             {
-                var index1 = -objectId;
+                int index1 = -objectId;
                 PrebuildData[] prebuildPool = factory.prebuildPool;
 
-                ref var prebuildData = ref prebuildPool[index1];
+                ref PrebuildData prebuildData = ref prebuildPool[index1];
                 if (index1 <= 0 || prebuildData.id != index1) return;
 
-                var itemProto = LDB.items.Select(prebuildData.protoId);
+                ItemProto itemProto = LDB.items.Select(prebuildData.protoId);
                 if (itemProto == null || itemProto.prefabDesc == null) return;
 
                 if (!itemProto.prefabDesc.isAssembler ||
@@ -197,7 +197,7 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
 
                 if (__instance.parameters != null)
                 {
-                    var length = __instance.parameters.Length;
+                    int length = __instance.parameters.Length;
                     if (prebuildData.parameters == null || prebuildData.parameters.Length < length) Array.Resize(ref prebuildData.parameters, length);
                     Array.Copy(__instance.parameters, prebuildData.parameters, length);
                 }
@@ -221,13 +221,13 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
                 if (factory.entityPool.Length <= objectId || factory.entityPool[objectId].id != objectId || __instance.type != BuildingType.Assembler)
                     return;
 
-                var assemblerId = factory.entityPool[objectId].assemblerId;
+                int assemblerId = factory.entityPool[objectId].assemblerId;
                 if (assemblerId <= 0 || factory.factorySystem.assemblerPool.Length <= assemblerId) return;
 
-                var assembler = factory.factorySystem.assemblerPool[assemblerId];
+                AssemblerComponent assembler = factory.factorySystem.assemblerPool[assemblerId];
                 if (assembler.id != assemblerId || assembler.speed < TrashSpeed || assembler.recipeId == __instance.recipeId) return;
 
-                var itemProto = LDB.items.Select(factory.entityPool[objectId].protoId);
+                ItemProto itemProto = LDB.items.Select(factory.entityPool[objectId].protoId);
                 if (itemProto != null &&
                     itemProto.prefabDesc != null &&
                     (__instance.recipeId == 0 ||
@@ -238,11 +238,11 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
             }
             else
             {
-                var index2 = -objectId;
+                int index2 = -objectId;
                 PrebuildData[] prebuildPool = factory.prebuildPool;
                 if (index2 <= 0 || prebuildPool[index2].id != index2) return;
 
-                var itemProto = LDB.items.Select(prebuildPool[index2].protoId);
+                ItemProto itemProto = LDB.items.Select(prebuildPool[index2].protoId);
                 if (itemProto != null &&
                     itemProto.prefabDesc != null &&
                     itemProto.prefabDesc.isAssembler &&
@@ -258,7 +258,7 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
         {
             __instance.recipeId = bp.recipeId;
             __instance.filterId = bp.filterId;
-            var recipeProto = LDB.recipes.Select(__instance.recipeId);
+            RecipeProto recipeProto = LDB.recipes.Select(__instance.recipeId);
             if (recipeProto != null) __instance.recipeType = recipeProto.Type;
         }
     }

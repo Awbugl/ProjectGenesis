@@ -71,8 +71,10 @@
   + 修复`资源采掘`协调效果对`大气采集站`无效的问题
   + 修复`资源采掘`协调效果未在大矿机UI中显示的问题
 
-  + Fix the problem of not updating the cache of dismantled mega buildings conveyor belts in time, causing material transfer unexpectedly
-  + Fix the problem that the `Unlimited Resource Mining` coordination effect is invalid for `Atmospheric Collect Station`
+  + Fix the problem of not updating the cache of dismantled mega buildings conveyor belts in time, causing material
+    transfer unexpectedly
+  + Fix the problem that the `Unlimited Resource Mining` coordination effect is invalid
+    for `Atmospheric Collect Station`
   + Fix the problem that the `Unlimited Resource Mining` coordination effect is not displayed in the Mega Miner UI
 
 

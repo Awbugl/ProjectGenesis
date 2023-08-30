@@ -21,11 +21,11 @@ namespace ProjectGenesis.Patches.Logic
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> UIPlanetDetail_OnPlanetDataSet_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
-            var matcher = new CodeMatcher(instructions).MatchForward(true,
-                                                                     new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(PlanetData), "type")),
-                                                                     new CodeMatch(OpCodes.Ldc_I4_5), new CodeMatch(OpCodes.Beq));
+            CodeMatcher matcher
+                = new CodeMatcher(instructions).MatchForward(true, new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(PlanetData), "type")),
+                                                             new CodeMatch(OpCodes.Ldc_I4_5), new CodeMatch(OpCodes.Beq));
 
-            var label = matcher.Operand;
+            object label = matcher.Operand;
 
             matcher.MatchForward(false, new CodeMatch(OpCodes.Ldstr, "实际采集速度"));
 
@@ -39,9 +39,9 @@ namespace ProjectGenesis.Patches.Logic
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> PlanetGen_SetPlanetTheme_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
-            var matcher = new CodeMatcher(instructions).MatchForward(false,
-                                                                     new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(PlanetData), "type")),
-                                                                     new CodeMatch(OpCodes.Ldc_I4_5));
+            CodeMatcher matcher
+                = new CodeMatcher(instructions).MatchForward(false, new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(PlanetData), "type")),
+                                                             new CodeMatch(OpCodes.Ldc_I4_5));
             matcher.Advance(-1);
             matcher.SetAndAdvance(OpCodes.Nop, null);
             matcher.SetAndAdvance(OpCodes.Nop, null);
@@ -69,11 +69,12 @@ namespace ProjectGenesis.Patches.Logic
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> OnPlanetDataSet_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
-            var matcher = new CodeMatcher(instructions).MatchForward(false,
-                                                                     new CodeMatch(OpCodes.Ldfld,
-                                                                                   AccessTools.Field(typeof(StationComponent), "collectionPerTick")));
+            CodeMatcher matcher
+                = new CodeMatcher(instructions).MatchForward(false,
+                                                             new CodeMatch(OpCodes.Ldfld,
+                                                                           AccessTools.Field(typeof(StationComponent), "collectionPerTick")));
 
-            var stationComponent = matcher.Advance(-1).Instruction;
+            CodeInstruction stationComponent = matcher.Advance(-1).Instruction;
 
             matcher.Advance(-1).InsertAndAdvance(new CodeInstruction(stationComponent), new CodeInstruction(OpCodes.Ldarg_0),
                                                  new CodeInstruction(OpCodes.Ldfld, AccessTools.Field(typeof(UIPlanetDetail), "_planet")),
@@ -90,10 +91,10 @@ namespace ProjectGenesis.Patches.Logic
             var matcher = new CodeMatcher(instructions);
 
             matcher.MatchForward(false, new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(PlanetData), "gasTotalHeat")));
-            var planet = matcher.Advance(-1).Instruction;
+            CodeInstruction planet = matcher.Advance(-1).Instruction;
 
             matcher.MatchForward(false, new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(StationComponent), "collectionPerTick")));
-            var stationComponent = matcher.Advance(-1).Instruction;
+            CodeInstruction stationComponent = matcher.Advance(-1).Instruction;
 
             matcher.Advance(-1).InsertAndAdvance(new CodeInstruction(stationComponent), new CodeInstruction(planet),
                                                  new CodeInstruction(OpCodes.Call,
@@ -113,10 +114,11 @@ namespace ProjectGenesis.Patches.Logic
         {
             if (BlueprintTweaksCompatibilityPlugin.BlueprintTweaksInstalled) return instructions;
 
-            var matcher = new CodeMatcher(instructions).MatchForward(true, new CodeMatch(OpCodes.Ldarg_0),
-                                                                     new CodeMatch(OpCodes.Ldfld,
-                                                                                   AccessTools.Field(typeof(BuildTool), nameof(BuildTool.planet))),
-                                                                     new CodeMatch(OpCodes.Ldfld, PlanetData_GasItems_Field));
+            CodeMatcher matcher = new CodeMatcher(instructions).MatchForward(true, new CodeMatch(OpCodes.Ldarg_0),
+                                                                             new CodeMatch(OpCodes.Ldfld,
+                                                                                           AccessTools.Field(typeof(BuildTool),
+                                                                                                             nameof(BuildTool.planet))),
+                                                                             new CodeMatch(OpCodes.Ldfld, PlanetData_GasItems_Field));
 
             matcher.SetOperandAndAdvance(AccessTools.Field(typeof(PlanetData), "type"));
             matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldc_I4_5));
@@ -138,17 +140,18 @@ namespace ProjectGenesis.Patches.Logic
         {
             if (BlueprintTweaksCompatibilityPlugin.BlueprintTweaksInstalled) return instructions;
 
-            var matcher = new CodeMatcher(instructions).MatchForward(true, new CodeMatch(OpCodes.Ldarg_0),
-                                                                     new CodeMatch(OpCodes.Ldfld,
-                                                                                   AccessTools.Field(typeof(PlayerController), "gameData")),
-                                                                     new CodeMatch(OpCodes.Callvirt,
-                                                                                   AccessTools.PropertyGetter(typeof(GameData), "localPlanet")),
-                                                                     new CodeMatch(OpCodes.Ldfld, PlanetData_GasItems_Field));
+            CodeMatcher matcher = new CodeMatcher(instructions).MatchForward(true, new CodeMatch(OpCodes.Ldarg_0),
+                                                                             new CodeMatch(OpCodes.Ldfld,
+                                                                                           AccessTools.Field(typeof(PlayerController), "gameData")),
+                                                                             new CodeMatch(OpCodes.Callvirt,
+                                                                                           AccessTools.PropertyGetter(typeof(GameData),
+                                                                                                                      "localPlanet")),
+                                                                             new CodeMatch(OpCodes.Ldfld, PlanetData_GasItems_Field));
 
             matcher.SetOperandAndAdvance(AccessTools.Field(typeof(PlanetData), "type"));
 
-            var label = matcher.Operand;
-            var isS = matcher.Opcode == OpCodes.Brfalse_S;
+            object label = matcher.Operand;
+            bool isS = matcher.Opcode == OpCodes.Brfalse_S;
 
             matcher.SetAndAdvance(OpCodes.Ldc_I4_5, null);
             matcher.SetAndAdvance(isS ? OpCodes.Bne_Un_S : OpCodes.Bne_Un, label);
@@ -174,7 +177,7 @@ namespace ProjectGenesis.Patches.Logic
                                  new CodeMatch(OpCodes.Brfalse), new CodeMatch(OpCodes.Ldarg_0),
                                  new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(BuildTool), "planet")), new CodeMatch(OpCodes.Brfalse));
 
-            var preview = matcher.Operand;
+            object preview = matcher.Operand;
 
             matcher.Advance(9);
             matcher.SetAndAdvance(OpCodes.Ldloc_S, preview);
@@ -256,8 +259,10 @@ namespace ProjectGenesis.Patches.Logic
         public static void PlanetTransport_NewStationComponent_Postfix(PlanetTransport __instance, PrefabDesc _desc, StationComponent __result)
         {
             if (__instance.planet.type != EPlanetType.Gas && __result.isCollector)
-                for (var index = 0; index < Math.Min(__result.collectionIds.Length, _desc.stationMaxItemKinds); ++index)
+                for (int index = 0; index < Math.Min(__result.collectionIds.Length, _desc.stationMaxItemKinds); ++index)
+                {
                     __result.storage[index].localLogic = ELogisticStorage.Supply;
+                }
         }
 
         [HarmonyPatch(typeof(PlanetGen), "SetPlanetTheme")]
@@ -279,7 +284,7 @@ namespace ProjectGenesis.Patches.Logic
 
             matcher.MatchForward(false, new CodeMatch(OpCodes.Ldfld, StationComponent_IsCollector_Field));
 
-            var label = matcher.Advance(1).Operand;
+            object label = matcher.Advance(1).Operand;
 
             matcher.Advance(7).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0),
                                                 new CodeInstruction(OpCodes.Ldfld, AccessTools.Field(typeof(PlanetTransport), "planet")),
@@ -300,9 +305,9 @@ namespace ProjectGenesis.Patches.Logic
 
             matcher.MatchForward(false, new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(StationComponent), "isStellar")));
 
-            var comp = matcher.Advance(-1).Instruction;
-            var label = matcher.Advance(2).Operand;
-            var is_S = matcher.Opcode == OpCodes.Brfalse_S;
+            CodeInstruction comp = matcher.Advance(-1).Instruction;
+            object label = matcher.Advance(2).Operand;
+            bool is_S = matcher.Opcode == OpCodes.Brfalse_S;
 
             matcher.Advance(1).InsertAndAdvance(new CodeInstruction(comp), new CodeInstruction(OpCodes.Ldfld, StationComponent_IsCollector_Field),
                                                 new CodeInstruction(is_S ? OpCodes.Brtrue_S : OpCodes.Brtrue, label));
@@ -321,7 +326,7 @@ namespace ProjectGenesis.Patches.Logic
         [HarmonyPostfix]
         public static void StationComponent_UpdateCollection_Postfix(StationComponent __instance)
         {
-            for (var i = 0; i < __instance.collectionIds.Length; i++)
+            for (int i = 0; i < __instance.collectionIds.Length; i++)
             {
                 lock (__instance.storage)
                 {

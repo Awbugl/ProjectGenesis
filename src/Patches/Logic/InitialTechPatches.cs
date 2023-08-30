@@ -27,10 +27,12 @@ namespace ProjectGenesis.Patches.Logic
             // ReSharper disable ForeachCanBePartlyConvertedToQueryUsingAnotherGetEnumerator
 
             foreach (int tech in InitialTechs)
-                if (!__instance.history.TechUnlocked(tech)) __instance.history.UnlockTech(tech);
+                if (!__instance.history.TechUnlocked(tech))
+                    __instance.history.UnlockTech(tech);
 
             foreach (int tech in BonusTechs)
-                if (!__instance.history.TechUnlocked(tech)) __instance.history.UnlockTech(tech);
+                if (!__instance.history.TechUnlocked(tech))
+                    __instance.history.UnlockTech(tech);
 
             foreach (var (key, value) in __instance.history.techStates)
             {

@@ -11,18 +11,18 @@ namespace ProjectGenesis.Patches.UI
 {
     public static class FactoryModelPatches
     {
+        private static Material atmosphericCollectStationMaterial;
+
         [HarmonyPrefix]
         [HarmonyPatch(typeof(UIPowerGizmo), "DrawArea")]
         [HarmonyPatch(typeof(UIPowerGizmo), "DrawCover")]
         public static bool UIPowerGizmo_Draw(ref UIPowerGizmo __instance, Vector3 center, float radius) => radius < 2000;
 
-        private static Material atmosphericCollectStationMaterial;
-
         [HarmonyPatch(typeof(FactoryModel), "InitCollectorMaterial")]
         [HarmonyPostfix]
         public static void FactoryModel_InitCollectorMaterial(FactoryModel __instance)
         {
-            var objectRenderer = __instance.gpuiManager.GetObjectRenderer(ProtoIDUsedByPatches.M大气采集器);
+            ObjectRenderer objectRenderer = __instance.gpuiManager.GetObjectRenderer(ProtoIDUsedByPatches.M大气采集器);
             if (objectRenderer != null) atmosphericCollectStationMaterial = objectRenderer.lodBatches[0].materials[2];
         }
 
@@ -45,7 +45,7 @@ namespace ProjectGenesis.Patches.UI
                 __instance.planet != GameMain.localPlanet)
                 return false;
 
-            foreach (var powerNodeComponent in __instance.planet.factory.powerSystem.nodePool)
+            foreach (PowerNodeComponent powerNodeComponent in __instance.planet.factory.powerSystem.nodePool)
             {
                 if (powerNodeComponent.coverRadius < 2000) continue;
 

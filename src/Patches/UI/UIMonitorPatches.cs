@@ -23,10 +23,10 @@ namespace ProjectGenesis.Patches.UI
 
             matcher.MatchForward(false, new CodeMatch(OpCodes.Ldc_I4, 72000));
             matcher.SetOperandAndAdvance(144000);
-            
+
             return matcher.InstructionEnumeration();
         }
-        
+
         [HarmonyPatch(typeof(UIMonitorWindow), "OnPeriodValueChange")]
         [HarmonyPatch(typeof(UIMonitorWindow), "RefreshMonitorWindow")]
         [HarmonyPatch(typeof(UIMonitorWindow), "OnCargoFlowValueChange")]

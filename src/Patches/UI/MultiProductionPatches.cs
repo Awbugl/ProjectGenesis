@@ -44,7 +44,7 @@ namespace ProjectGenesis.Patches.UI
                     ReplicatorTexts.Add(Object.Instantiate(__instance.treeMainCountText1, __instance.treeMainCountText1.transform.parent));
                 }
 
-            for (var i = 0; i < ReplicatorImages.Count; ++i)
+            for (int i = 0; i < ReplicatorImages.Count; ++i)
             {
                 Image image = ReplicatorImages[i];
                 Text text = ReplicatorTexts[i];
@@ -153,7 +153,7 @@ namespace ProjectGenesis.Patches.UI
                     AssemblerProductIcon.Add(icon);
                 }
 
-            for (var i = 0; i < AssemblerProductProgress.Count; ++i)
+            for (int i = 0; i < AssemblerProductProgress.Count; ++i)
             {
                 Image productProgress = AssemblerProductProgress[i];
                 Image extraProductProgress = AssemblerExtraProductProgress[i];

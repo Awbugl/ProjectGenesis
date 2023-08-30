@@ -56,7 +56,7 @@ namespace ProjectGenesis.Patches.UI.DisplayTextPatches
         [HarmonyPatch(typeof(ItemProto), "fuelTypeString", MethodType.Getter)]
         public static void ItemProto_fuelTypeString(ref ItemProto __instance, ref string __result)
         {
-            var type = __instance.FuelType;
+            int type = __instance.FuelType;
 
             switch (type)
             {
@@ -123,7 +123,7 @@ namespace ProjectGenesis.Patches.UI.DisplayTextPatches
                 case ProtoIDUsedByPatches.T行星协调中心:
                     __result = "行星协调中心文字描述".TranslateFromJson();
                     break;
-                
+
                 case ProtoIDUsedByPatches.T虫洞航行:
                     __result = "虫洞航行文字描述".TranslateFromJson();
                     break;

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Reflection;
 using System.Reflection.Emit;
 using HarmonyLib;
 
@@ -19,9 +20,10 @@ namespace ProjectGenesis.Patches.Logic
         public static IEnumerable<CodeInstruction> LoadingPlanetFactoryMain_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
             // prebuild part
-            var codeMatcher = new CodeMatcher(instructions).MatchForward(true, new CodeMatch(OpCodes.Ldelema, typeof(PrebuildData)),
-                                                                         new CodeMatch(OpCodes.Ldfld,
-                                                                                       AccessTools.Field(typeof(PrebuildData), "modelIndex")));
+            CodeMatcher codeMatcher = new CodeMatcher(instructions).MatchForward(true, new CodeMatch(OpCodes.Ldelema, typeof(PrebuildData)),
+                                                                                 new CodeMatch(OpCodes.Ldfld,
+                                                                                               AccessTools.Field(typeof(PrebuildData),
+                                                                                                                 "modelIndex")));
 
             codeMatcher.Advance(1).InsertAndAdvance(Transpilers.EmitDelegate(Action));
 
@@ -32,11 +34,11 @@ namespace ProjectGenesis.Patches.Logic
                                      new CodeMatch(OpCodes.Ldloc_S),
                                      new CodeMatch(OpCodes.Callvirt, AccessTools.Method(typeof(PlanetFactory), "CreateEntityDisplayComponents")));
 
-            var entityPool = codeMatcher.Instruction;
-            var entityId = codeMatcher.Advance(1).Instruction;
-            var ldelema = codeMatcher.Advance(1).Instruction;
+            CodeInstruction entityPool = codeMatcher.Instruction;
+            CodeInstruction entityId = codeMatcher.Advance(1).Instruction;
+            CodeInstruction ldelema = codeMatcher.Advance(1).Instruction;
 
-            var modelIndexFieldInfo = AccessTools.Field(typeof(EntityData), "modelIndex");
+            FieldInfo modelIndexFieldInfo = AccessTools.Field(typeof(EntityData), "modelIndex");
             codeMatcher.Advance(3).InsertAndAdvance(new CodeInstruction(entityPool), new CodeInstruction(entityId), new CodeInstruction(ldelema),
                                                     new CodeInstruction(entityPool), new CodeInstruction(entityId), new CodeInstruction(ldelema),
                                                     new CodeInstruction(OpCodes.Ldfld, modelIndexFieldInfo), Transpilers.EmitDelegate(Action),
@@ -49,9 +51,10 @@ namespace ProjectGenesis.Patches.Logic
         [HarmonyPatch(typeof(BlueprintBuilding), "Import")]
         public static IEnumerable<CodeInstruction> BlueprintBuilding_Import_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
-            var codeMatcher = new CodeMatcher(instructions).MatchForward(false, new CodeMatch(OpCodes.Callvirt),
-                                                                         new CodeMatch(OpCodes.Stfld,
-                                                                                       AccessTools.Field(typeof(BlueprintBuilding), "modelIndex")));
+            CodeMatcher codeMatcher = new CodeMatcher(instructions).MatchForward(false, new CodeMatch(OpCodes.Callvirt),
+                                                                                 new CodeMatch(OpCodes.Stfld,
+                                                                                               AccessTools.Field(typeof(BlueprintBuilding),
+                                                                                                                 "modelIndex")));
 
             codeMatcher.Advance(1).InsertAndAdvance(Transpilers.EmitDelegate(Action));
 

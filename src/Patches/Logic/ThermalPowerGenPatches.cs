@@ -8,6 +8,8 @@ namespace ProjectGenesis.Patches.Logic
 {
     public static class ThermalPowerGenPatches
     {
+        private static readonly int[] FuelRods = { 1801, 6216, 6217 };
+
         [HarmonyPatch(typeof(PlanetFactory), "EntityFastFillIn")]
         [HarmonyPatch(typeof(PlanetFactory), "InsertInto")]
         [HarmonyTranspiler]
@@ -32,7 +34,7 @@ namespace ProjectGenesis.Patches.Logic
 
         public static int[] ThermalPowerGen_InsertMethod(ref PowerGeneratorComponent component, PlanetFactory factory)
         {
-            var componentFuelMask = component.fuelMask;
+            short componentFuelMask = component.fuelMask;
 
             if (componentFuelMask != 1) return ItemProto.fuelNeeds[componentFuelMask];
 
@@ -59,19 +61,17 @@ namespace ProjectGenesis.Patches.Logic
             return matcher.InstructionEnumeration();
         }
 
-        private static readonly int[] FuelRods = { 1801, 6216, 6217 };
-
         public static int[] UIPowerGenerator_InsertMethod(UIPowerGeneratorWindow window)
         {
-            var component = window.powerSystem.genPool[window.generatorId];
+            PowerGeneratorComponent component = window.powerSystem.genPool[window.generatorId];
 
-            var componentFuelMask = component.fuelMask;
+            short componentFuelMask = component.fuelMask;
 
             if (componentFuelMask != 1) return ItemProto.fuelNeeds[componentFuelMask];
 
             if (window.factory.planet.gasItems.Contains(ProtoIDUsedByPatches.I氧)) return ItemProto.fuelNeeds[1];
 
-            var playerInhandItemId = window.player.inhandItemId;
+            int playerInhandItemId = window.player.inhandItemId;
 
             if (playerInhandItemId > 0 && window.player.inhandItemCount > 0)
             {

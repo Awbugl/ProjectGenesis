@@ -11,24 +11,23 @@ using static ProjectGenesis.Patches.UI.Utils.MyWindowCtl;
 namespace ProjectGenesis.Patches.UI.UIPlanetFocus
 {
     /// <summary>
-    ///   special thanks to https://github.com/hetima/DSP_PlanetFinder/tree/main/PlanetFinder
-    ///   special thanks to https://github.com/starfi5h/DSP_Mod_Support/tree/main/FactoryLocator/src/UI
+    ///     special thanks to https://github.com/hetima/DSP_PlanetFinder/tree/main/PlanetFinder
+    ///     special thanks to https://github.com/starfi5h/DSP_Mod_Support/tree/main/FactoryLocator/src/UI
     /// </summary>
     public class UIPlanetFocusWindow : ManualBehaviour
     {
+        internal static int CurPlanetId;
+        private static Sprite _tagNotSelectedSprite;
         public RectTransform windowTrans;
         public Text nameText;
-
-        private RectTransform _tab1;
-
-        private int[] _currentFocusIds;
 
         private readonly UIButton[] _iconBtns = new UIButton[FocusMaxCount];
         private readonly Image[] _iconImgs = new Image[FocusMaxCount];
         private readonly Text[] _iconTexts = new Text[FocusMaxCount];
 
-        internal static int CurPlanetId;
-        private static Sprite _tagNotSelectedSprite;
+        private int[] _currentFocusIds;
+
+        private RectTransform _tab1;
 
         internal static UIPlanetFocusWindow CreateWindow()
         {
@@ -56,9 +55,9 @@ namespace ProjectGenesis.Patches.UI.UIPlanetFocus
             nameText = CreateText("星球倾向", 16);
             NormalizeRectWithTopLeft(nameText.transform, 0f, 20f, _tab1);
 
-            for (var i = 0; i < FocusMaxCount; ++i)
+            for (int i = 0; i < FocusMaxCount; ++i)
             {
-                CreateSignalIcon(out var iconBtn, out var iconImage);
+                CreateSignalIcon(out UIButton iconBtn, out Image iconImage);
                 _iconBtns[i] = iconBtn;
                 _iconImgs[i] = iconImage;
                 _iconTexts[i] = CreateText("", 16);
@@ -70,7 +69,7 @@ namespace ProjectGenesis.Patches.UI.UIPlanetFocus
                 NormalizeRectWithTopLeft(iconBtn.transform, 0, 60 + i * 60, _tab1);
                 NormalizeRectWithTopLeft(_iconTexts[i].transform, 55, 72 + i * 60, _tab1);
 
-                var id = i;
+                int id = i;
                 iconBtn.onClick += _ => OnIconBtnClick(id);
                 iconBtn.onRightClick += _ => OnIconBtnRightClick(id);
             }
@@ -91,9 +90,9 @@ namespace ProjectGenesis.Patches.UI.UIPlanetFocus
         {
             _currentFocusIds = GetPlanetFocus(planetId);
 
-            for (var i = 0; i < FocusMaxCount; ++i)
+            for (int i = 0; i < FocusMaxCount; ++i)
             {
-                var currentFocusId = _currentFocusIds[i];
+                int currentFocusId = _currentFocusIds[i];
                 if (currentFocusId == 0)
                 {
                     _iconImgs[i].sprite = _tagNotSelectedSprite;
@@ -101,9 +100,9 @@ namespace ProjectGenesis.Patches.UI.UIPlanetFocus
                     continue;
                 }
 
-                var proto = LDB.items.Select(currentFocusId);
+                ItemProto proto = LDB.items.Select(currentFocusId);
                 _iconTexts[i].text = FocusIds[currentFocusId];
-                var sprite = proto.iconSprite;
+                Sprite sprite = proto.iconSprite;
                 if (sprite != null) _iconImgs[i].sprite = sprite;
             }
         }
@@ -126,10 +125,10 @@ namespace ProjectGenesis.Patches.UI.UIPlanetFocus
         {
             if (proto == null) return;
 
-            var currentFocusId = proto.ID;
+            int currentFocusId = proto.ID;
 
             // ReSharper disable once LoopCanBeConvertedToQuery
-            foreach (var t in _currentFocusIds)
+            foreach (int t in _currentFocusIds)
             {
                 if (t == currentFocusId)
                 {
@@ -137,11 +136,11 @@ namespace ProjectGenesis.Patches.UI.UIPlanetFocus
                     return;
                 }
             }
-            
+
             _currentFocusIds[id] = currentFocusId;
             SetPlanetFocus(CurPlanetId, id, currentFocusId);
             _iconTexts[id].text = FocusIds[currentFocusId].TranslateFromJson();
-            var sprite = proto.iconSprite;
+            Sprite sprite = proto.iconSprite;
             if (sprite != null) _iconImgs[id].sprite = sprite;
         }
     }

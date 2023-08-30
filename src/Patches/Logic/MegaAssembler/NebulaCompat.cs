@@ -83,7 +83,7 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
                                {
                                    dir = (IODir)r.ReadInt32(), beltId = r.ReadInt32(), storageIdx = r.ReadInt32(), counter = r.ReadInt32()
                                };
-                    
+
                     if (factory == null) continue;
 
                     factory.ReadObjectConn(entityId, i, out _, out int otherObjId, out _);

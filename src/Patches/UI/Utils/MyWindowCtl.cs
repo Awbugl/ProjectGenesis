@@ -4,23 +4,23 @@ using UnityEngine.UI;
 namespace ProjectGenesis.Patches.UI.Utils
 {
     /// <summary>
-    ///   special thanks to https://github.com/hetima/DSP_PlanetFinder/tree/main/PlanetFinder
+    ///     special thanks to https://github.com/hetima/DSP_PlanetFinder/tree/main/PlanetFinder
     /// </summary>
     internal static class MyWindowCtl
     {
         internal static T CreateWindow<T>(string name, string title = "") where T : ManualBehaviour
         {
-            var srcWin = UIRoot.instance.uiGame.tankWindow;
-            var src = srcWin.gameObject;
-            var go = Object.Instantiate(src, srcWin.transform.parent);
+            UITankWindow srcWin = UIRoot.instance.uiGame.tankWindow;
+            GameObject src = srcWin.gameObject;
+            GameObject go = Object.Instantiate(src, srcWin.transform.parent);
             go.name = name;
             go.SetActive(false);
             Object.Destroy(go.GetComponent<UITankWindow>());
             ManualBehaviour win = go.AddComponent<T>();
             //shadow 
-            for (var i = 0; i < go.transform.childCount; i++)
+            for (int i = 0; i < go.transform.childCount; i++)
             {
-                var child = go.transform.GetChild(i).gameObject;
+                GameObject child = go.transform.GetChild(i).gameObject;
                 if (child.name == "panel-bg")
                 {
                     var btn = child.GetComponentInChildren<Button>();
@@ -42,7 +42,7 @@ namespace ProjectGenesis.Patches.UI.Utils
 
         private static void SetTitle(ManualBehaviour win, string title)
         {
-            var txt = GetTitleText(win);
+            Text txt = GetTitleText(win);
             if (txt) txt.text = title;
         }
 
