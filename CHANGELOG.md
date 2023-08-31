@@ -11,6 +11,11 @@
   + Tanks will output items using the maximum stacked layers by the tech
   + Fixed Experimental v0.1.4 update bugs
 
+
+<details>
+  <summary>点击展开日志 | Click to view all </summary>
+
+
 - Experimental 0.1.4
   + 修改设置项的修改堆积逻辑的影响范围为：除黄字标注外的化工/精炼/反应釜配方
   + 修复了虫洞科技不生效的bug
@@ -20,12 +25,14 @@
   + Fixed the bug that the wormhole technology does not work
   + Adjusted tech unlock status of the opening game
 
+
 - Experimental 0.1.3
   + 修复了位面熔炉无法复制设置的Bug
   + 提高与 `GalacticScale` mod的兼容性
 
   + Fixed a bug where dimensional smelters were unable to copy settings
   + Improve compatibility with `GalacticScale` mod
+
 
 - Experimental 0.1.2
   + 移除光刻透镜
@@ -37,6 +44,7 @@
   + Added recipe `Particle Container (High Efficiency)`.
   + Adjusted manufacturing equipment for some recipes (Fabrication Bench -> High Precision Assembly Line).
   + Downgraded tech requirements for dimensional furnaces
+
 
 - v2.7.0-beta6 (Experimental 0.1.1)
   + 简化了`PBI`的合成路线
@@ -97,8 +105,6 @@
   + Fixed the problem that some texts were not replaced correctly
   + Added some MOD settings instructions in the settings
 
-<details>
-  <summary>点击展开日志 | Click to view all </summary>
 
 - v2.6.0 原子之心 | Atomic Heart
   + 修复与联机MOD的兼容性问题
