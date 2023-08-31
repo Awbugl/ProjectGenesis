@@ -1,4 +1,51 @@
-- v2.7.0-beta6 森海之灵 | Forest Spirit
+- Experimental 0.1.5
+  + 调整了大抽水机的耗电
+  + 修复了0.1.4测试版本的更新失误
+
+  + Adjusted the power consumption of the mega pumping machine.
+  + Fixed Experimental v0.1.4 update bugs
+
+
+- Experimental 0.1.4
+  + 修改设置项的修改堆积逻辑的影响范围为：除黄字标注外的化工/精炼/反应釜配方
+  + 修复了虫洞科技不生效的bug
+  + 调整了开局科技解锁状态
+
+  + Changed the scope of setting item to modify stacking logic to chemical/refining/reactor recipes except those marked
+  + Fixed the bug that the wormhole technology does not work
+  + Adjusted tech unlock status of the opening game
+
+- Experimental 0.1.3
+  + 修复了位面熔炉无法复制设置的Bug
+  + 提高与 `GalacticScale` mod的兼容性
+
+  + Fixed a bug where dimensional smelters were unable to copy settings
+  + Improve compatibility with `GalacticScale` mod
+
+- Experimental 0.1.2
+  + 移除光刻透镜
+  + 添加配方 `粒子容器（高效）`
+  + 调整部分配方的制造设备（制造台 -> 高精度装配线）
+  + 下调位面熔炉的科技需求
+
+  + Removed Photolithography Lens
+  + Added recipe `Particle Container (High Efficiency)`.
+  + Adjusted manufacturing equipment for some recipes (Fabrication Bench -> High Precision Assembly Line).
+  + Downgraded tech requirements for dimensional furnaces
+
+- v2.7.0-beta6 (Experimental 0.1.1)
+  + 简化了`PBI`的合成路线
+  + 提高了`合成氨`的速度
+  + 提高了大抽水机的工作速度与耗电
+  + 调整了部分配方的堆积逻辑
+
+  + Simplified `PBI` synthesis route.
+  + Increased the speed of `Ammonia Synthesis`
+  + Improved the speed and power consumption of the mega pumping machine.
+  + Adjusted stacking logic for some recipes
+
+
+- v2.7.0-beta5 (Experimental 0.1.0) 森海之灵 | Forest Spirit
   + 重新设计塑料、科研矩阵、化学能燃料、石油化工的配方及对应科技、物品（影响存档）
     + 重新添加了`光子合并器`、`钛晶石`、`粒子容器`物品
     + 删除了`苯酚`、`二甲苯`、`氯苯`物品，转为新物品`苯`
