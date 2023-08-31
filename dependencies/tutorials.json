@@ -1,0 +1,71 @@
+﻿[
+  {
+    "ID": 31,
+    "Name": "堆积逻辑介绍标题",
+    "PreText": "堆积逻辑介绍前字",
+    "DeterminatorName": "TOR_GameSecond",
+    "DeterminatorParams": [
+      4
+    ]
+  },
+  {
+    "ID": 32,
+    "Name": "大气采集介绍标题",
+    "PreText": "大气采集介绍前字",
+    "DeterminatorName": "TOR_TechUnlocked",
+    "DeterminatorParams": [
+      1605,
+      7
+    ]
+  },
+  {
+    "ID": 33,
+    "Name": "火力发电介绍标题",
+    "PreText": "火力发电介绍前字",
+    "DeterminatorName": "TOR_TechUnlocked",
+    "DeterminatorParams": [
+      1412,
+      7
+    ]
+  },
+  {
+    "ID": 34,
+    "Name": "巨型建筑介绍标题",
+    "PreText": "巨型建筑介绍前字",
+    "DeterminatorName": "TOR_TechUnlocked",
+    "DeterminatorParams": [
+      1834,
+      7
+    ]
+  },
+  {
+    "ID": 35,
+    "Name": "行星协调中心介绍标题",
+    "PreText": "行星协调中心介绍前字",
+    "DeterminatorName": "TOR_TechUnlocked",
+    "DeterminatorParams": [
+      1836,
+      7
+    ]
+  },
+  {
+    "ID": 36,
+    "Name": "复合矩阵介绍标题",
+    "PreText": "复合矩阵介绍前字",
+    "DeterminatorName": "TOR_TechUnlocked",
+    "DeterminatorParams": [
+      1111,
+      7
+    ]
+  },
+  {
+    "ID": 37,
+    "Name": "物质分解设施介绍标题",
+    "PreText": "物质分解设施介绍前字",
+    "DeterminatorName": "TOR_TechUnlocked",
+    "DeterminatorParams": [
+      1831,
+      7
+    ]
+  }
+]

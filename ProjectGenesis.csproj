@@ -120,6 +120,7 @@
         <Compile Include="src\Patches\Logic\PlanetFocus\PowerSystemPatches.cs"/>
         <Compile Include="src\Patches\Logic\PlanetGasPatches.cs"/>
         <Compile Include="src\Patches\Logic\ChangeStackingLogicPatches.cs"/>
+        <Compile Include="src\Patches\Logic\TankComponentPatches.cs" />
         <Compile Include="src\Patches\Logic\ThermalPowerGenPatches.cs"/>
         <Compile Include="src\Patches\UI\BeltColorFix\BeltFixPatches.cs"/>
         <Compile Include="src\Patches\UI\DisplayTextPatches\DisplayNamePatches.cs"/>
@@ -156,6 +157,7 @@
         <EmbeddedResource Include="dependencies\recipes.json"/>
         <EmbeddedResource Include="dependencies\strings.json"/>
         <EmbeddedResource Include="dependencies\techs.json"/>
+        <EmbeddedResource Include="dependencies\tutorials.json" />
     </ItemGroup>
     <ItemGroup>
         <Content Include="CHANGELOG.md"/>

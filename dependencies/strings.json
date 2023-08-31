@@ -62,7 +62,7 @@
   {
     "Name": "ChangeStackingLogicAdditionalText",
     "ZHCN": "（将化工相关的配方停止生产的判定由单产物堆积改为所有产物均堆积）",
-    "ENUS": "(Change the judgment of the chemical-related factories to stop production from single product stacking to all products stacking)"
+    "ENUS": "(the decision to stop production has been changed from single product stacking to all products are stacked)"
   },
   {
     "Name": "UseLDBToolCacheAdditionalText",
@@ -398,6 +398,76 @@
     "Name": "里程碑已达成描述32",
     "ZHCN": "你激活了第一座人造恒星。它优雅地转动着，犹如太阳般炽烈地燃烧着，稳定地将聚变原料所蕴藏的巨大能量输出到电网。",
     "ENUS": "You activated your first Artificial Star. It rotates so gracefully yet burns so intensely, this spectacle surely means that you've truly harnessed the stars and can stably transport this energy to all corners of the universe."
+  },
+  {
+    "Name": "堆积逻辑介绍标题",
+    "ZHCN": "化工配方特殊堆积逻辑介绍",
+    "ENUS": "Introduction to special stacking logic for chemical-related recipes"
+  },
+  {
+    "Name": "堆积逻辑介绍前字",
+    "ZHCN": "创世之书MOD修改了部分配方的堆积逻辑（停止生产的判定由单产物堆积改为所有产物均堆积）。\n您可在<color=\"#FD965ECC\">设置 - 杂项</color>内将新的堆积逻辑推广到化工相关的所有配方。",
+    "ENUS": "GenesisBook MOD has modified the stacking logic of some recipes (the decision to stop production has been changed from single product stacking to all products are stacked).\nYou can extend the new stacking logic to all chemicals-related recipes within <color=\"#FD965ECC\">Settings - Miscellaneous</color>."
+  },
+  {
+    "Name": "大气采集介绍标题",
+    "ZHCN": "大气采集站",
+    "ENUS": "Atmospheric Collect Station Introduction"
+  },
+  {
+    "Name": "大气采集介绍前字",
+    "ZHCN": "大气采集站是类似于轨道采集器的采集设施，可部署在星球赤道并采集星球大气层的成分供给生产线使用。\n大气采集站与物流站之间无建造距离限制。",
+    "ENUS": "Atmospheric Collect Stations are facilities that can be deployed at a planet's equator and harvest components of the planet's atmosphere for use in production lines.\nNo distance constraints between Atmospheric Collect Station and the Logistics Station."
+  },
+  {
+    "Name": "火力发电介绍标题",
+    "ZHCN": "火力发电厂修改介绍",
+    "ENUS": "Thermal Power Plant Modification"
+  },
+  {
+    "Name": "火力发电介绍前字",
+    "ZHCN": "火力发电厂输入的原料种类现受到星球大气类型的限制。除三种化学能燃料棒外，其他燃料不能在无氧大气环境下发电。",
+    "ENUS": "The type of feedstock input to thermal power plants is now limited by the type of planetary atmosphere.\nAll but three chemical energy fuel rods cannot generate electricity in an anoxic atmosphere."
+  },
+  {
+    "Name": "巨型建筑介绍标题",
+    "ZHCN": "巨型建筑介绍",
+    "ENUS": "Mega Buildings Introduction"
+  },
+  {
+    "Name": "巨型建筑介绍前字",
+    "ZHCN": "巨型建筑是一类具有高集成度的生产设施。虽然它们看起来与物流站很相似，但并不能装载物流运输机。\n一个巨型建筑可将原料或产物通过传送带输出到下一个巨型建筑，从而高效利用占地。",
+    "ENUS": "Mega buildings are a class of production facilities with a high degree of integration. Although they look similar to a logistics station, they do not carry a logistics transporter. \nOne mega building can export raw materials or products to the next mega building via a conveyor belt, thus making efficient use of space."
+  },
+  {
+    "Name": "行星协调中心介绍标题",
+    "ZHCN": "行星协调中心",
+    "ENUS": "Coordination Center Introduction"
+  },
+  {
+    "Name": "行星协调中心介绍前字",
+    "ZHCN": "一个行星协调中心可为星球工厂提供多种增益，可在行星视图中切换增益以适应不同发展阶段的需求。",
+    "ENUS": "A Planetary Coordination Center can provide multiple gains for a planetary factory, with the ability to switch gains in the planet view to accommodate different stages of development."
+  },
+  {
+    "Name": "复合矩阵介绍标题",
+    "ZHCN": "复合矩阵介绍",
+    "ENUS": "Composite Matrix Introduction"
+  },
+  {
+    "Name": "复合矩阵介绍前字",
+    "ZHCN": "复合矩阵由两种或多种科研矩阵组合而成，可被分拣器解离成等量的两（多）种矩阵用于科研，但增产点数将会平分到两（多）个矩阵上。也作为合成宇宙矩阵的原料之一。",
+    "ENUS": "Composite Matrixes are a combination of two or more research matrixes that can be dissociated by the sorter into an equal number of two(more) matrixes for research purposes, but the incremental points will be divided equally between the two(more) matrixes. They are also used as the raw material for synthesizing the Cosmic Matrix."
+  },
+  {
+    "Name": "物质分解设施介绍标题",
+    "ZHCN": "物质分解设施",
+    "ENUS": "Recycling Factory Introduction"
+  },
+  {
+    "Name": "物质分解设施介绍前字",
+    "ZHCN": "在选择<color=\"#FD965ECC\">物质回收</color>配方后，物质分解设施可将输入到其中的所有物品按数量比例转换为沙土，并在达到一定数量后静默返还到机甲背包中。",
+    "ENUS": "After selecting <color=\"#FD965ECC\">Matter recovery</color> recipe, the Recycling Factory converts all items entered into it into Sand in proportion to their quantity, and silently returns them to package after a certain amount has been reached. "
   },
   {
     "Name": "钨矿脉",

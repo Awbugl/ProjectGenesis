@@ -1,10 +1,15 @@
 - Experimental 0.1.5
   + 调整了大抽水机的耗电
+  + 提高了大气采集站的基础速度
+  + 添加了部分教程文本
+  + 储液罐将使用科技解锁的最大堆叠层数输出物品
   + 修复了0.1.4测试版本的更新失误
 
-  + Adjusted the power consumption of the mega pumping machine.
+  + Adjusted the power consumption of the mega pumping machine
+  + Improved the base speed of the atmospheric collection station
+  + Added some tutorial text
+  + Tanks will output items using the maximum stacked layers by the tech
   + Fixed Experimental v0.1.4 update bugs
-
 
 - Experimental 0.1.4
   + 修改设置项的修改堆积逻辑的影响范围为：除黄字标注外的化工/精炼/反应釜配方

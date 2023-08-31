@@ -17,25 +17,19 @@ namespace ProjectGenesis.Utils
     {
         private static readonly Assembly Assembly = Assembly.GetExecutingAssembly();
 
-        internal static ItemProtoJson[] ItemProtos()
-            => JsonConvert
-               .DeserializeObject<ItemProtoJson[]>(new StreamReader(Assembly.GetManifestResourceStream("ProjectGenesis.dependencies.items.json"))
-                                                      .ReadToEnd());
+        internal static ItemProtoJson[] ItemProtos() => GetJsonContent<ItemProtoJson>("items");
 
-        internal static RecipeProtoJson[] RecipeProtos()
-            => JsonConvert
-               .DeserializeObject<RecipeProtoJson[]>(new StreamReader(Assembly.GetManifestResourceStream("ProjectGenesis.dependencies.recipes.json"))
-                                                        .ReadToEnd());
+        internal static RecipeProtoJson[] RecipeProtos() => GetJsonContent<RecipeProtoJson>("recipes");
 
-        internal static TechProtoJson[] TechProtos()
-            => JsonConvert
-               .DeserializeObject<TechProtoJson[]>(new StreamReader(Assembly.GetManifestResourceStream("ProjectGenesis.dependencies.techs.json"))
-                                                      .ReadToEnd());
+        internal static TechProtoJson[] TechProtos() => GetJsonContent<TechProtoJson>("techs");
 
-        internal static StringProtoJson[] StringProtos()
-            => JsonConvert
-               .DeserializeObject<StringProtoJson[]>(new StreamReader(Assembly.GetManifestResourceStream("ProjectGenesis.dependencies.strings.json"))
-                                                        .ReadToEnd());
+        internal static StringProtoJson[] StringProtos() => GetJsonContent<StringProtoJson>("strings");
+
+        internal static TutorialProtoJson[] TutorialProtos() => GetJsonContent<TutorialProtoJson>("tutorials");
+
+        internal static T[] GetJsonContent<T>(string json)
+            => JsonConvert.DeserializeObject<T[]>(new StreamReader(Assembly.GetManifestResourceStream($"ProjectGenesis.dependencies.{json}.json"))
+                                                     .ReadToEnd());
 
         internal static string SerializeObject(object obj)
             => JsonConvert.SerializeObject(obj, Formatting.Indented,
@@ -229,5 +223,15 @@ namespace ProjectGenesis.Utils
         public string ZHCN { get; set; }
         public string ENUS { get; set; }
         public static StringProtoJson FromProto(StringProto i) => new StringProtoJson { Name = i.Name, ZHCN = i.ZHCN, ENUS = i.ENUS };
+    }
+
+    [Serializable]
+    public class TutorialProtoJson
+    {
+        public int ID { get; set; }
+        public string Name { get; set; }
+        public string PreText { get; set; }
+        public string DeterminatorName { get; set; }
+        public long[] DeterminatorParams { get; set; }
     }
 }
