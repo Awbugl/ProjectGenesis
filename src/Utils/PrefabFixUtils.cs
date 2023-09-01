@@ -182,7 +182,7 @@ namespace ProjectGenesis.Utils
             gaspumperprefabDesc.workEnergyPerTick = 0;
             gaspumperprefabDesc.isCollectStation = true;
             gaspumperprefabDesc.isPowerConsumer = false;
-            gaspumperprefabDesc.stationCollectSpeed = 9;
+            gaspumperprefabDesc.stationCollectSpeed = 4;
 
             ModelProto orbitalcollector = models.Select(117);
             ref PrefabDesc orbitalcollectorprefabDesc = ref orbitalcollector.prefabDesc;
