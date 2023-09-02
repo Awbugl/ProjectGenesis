@@ -1,3 +1,17 @@
+- Experimental 0.1.6
+  + 调整了大气采集站的速度
+  + 调整了开局科技解锁状态
+  + 修复了部分文本未被正确替换的问题
+
+  + Adjusted the base speed of the atmospheric collection station
+  + Adjusted tech unlock status of the opening game
+  + Fixed the problem that some texts were not replaced correctly
+
+
+<details>
+  <summary>点击展开日志 | Click to view all </summary>
+
+
 - Experimental 0.1.5
   + 调整了大抽水机的耗电
   + 提高了大气采集站的基础速度
@@ -10,10 +24,6 @@
   + Added some tutorial text
   + Tanks will output items using the maximum stacked layers by the tech
   + Fixed Experimental v0.1.4 update bugs
-
-
-<details>
-  <summary>点击展开日志 | Click to view all </summary>
 
 
 - Experimental 0.1.4
