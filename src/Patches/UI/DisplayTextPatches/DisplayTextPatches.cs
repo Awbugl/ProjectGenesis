@@ -107,6 +107,11 @@ namespace ProjectGenesis.Patches.UI.DisplayTextPatches
                     if (__instance.prefabDesc.isCollectStation && __instance.ID == ProtoIDUsedByPatches.I大气采集器) __result = "行星大气".TranslateFromJson();
 
                     return;
+
+                case 19:
+                    if (__instance.prefabDesc.minerType == EMinerType.Oil)
+                        __result = (600000.0 / __instance.prefabDesc.minerPeriod * GameMain.history.miningSpeedScale).ToString("0.##") + "x";
+                    return;
             }
         }
 

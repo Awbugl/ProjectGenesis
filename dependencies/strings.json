@@ -2930,6 +2930,16 @@
     "ENUS": "Using the Plane Filter produce a quantum effect of self-organizing and can generate a thermodynamic negative temperature flow, the process of ores smelting or purification can be greatly accelerated."
   },
   {
+    "Name": "位面冶金描述",
+    "ZHCN": "研究发现，如果用波函数干扰技术对磁单极子的量子态进行过滤，能激发出热力学负温度流。利用这个原理，可以极大地加速矿石熔炼或提纯的过程。",
+    "ENUS": "Research shows that the Plane Filter produce a quantum effect of self-organizing and a thermodynamic negative temperature flow can be generated. Using this technology, the process of ores smelting or purification can be greatly accelerated."
+  },
+  {
+    "Name": "位面冶金结果",
+    "ZHCN": "你解锁了更高级的熔炉━━<color=\"#FD965ECC\">位面熔炉</color>，它的速度是电弧熔炉的2倍! ",
+    "ENUS": "You have unlocked the more advanced smelter ━━ <color=\"#FD965ECC\">Plane Smelter</color>, which is twice as fast as an Arc Smelter!"
+  }, 
+  {
     "Name": "I原油精炼厂",
     "ZHCN": "将原油或剧毒液体进行精炼，可以获得多种化工原料。",
     "ENUS": "Refine crude oil or toxic liquid to obtain a variety of chemical raw materials."
