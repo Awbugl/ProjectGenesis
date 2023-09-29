@@ -635,12 +635,12 @@
     "ENUS": "Toxic liquid consisting of many compounds.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
-    "Name": "聚乙烯",
-    "ZHCN": "聚乙烯",
-    "ENUS": "Polyethylene"
+    "Name": "聚丙烯",
+    "ZHCN": "聚丙烯",
+    "ENUS": "Polypropylene"
   },
   {
-    "Name": "I聚乙烯",
+    "Name": "I聚丙烯",
     "ZHCN": "初级化工产品,广泛应用于各种行业.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "ENUS": "Basic chemical material, widely used.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
@@ -1305,16 +1305,6 @@
     "ENUS": "Antimatter fuel obtained by constraining antimatter. Poor stability, need to be encapsulated.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
-    "Name": "乙烯",
-    "ZHCN": "乙烯",
-    "ENUS": "Ethylene"
-  },
-  {
-    "Name": "I乙烯",
-    "ZHCN": "由两个碳原子和四个氢原子组成的有机化合物.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "An organic compound consisting of two carbon atoms and four hydrogen atoms.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
     "Name": "氨",
     "ZHCN": "氨",
     "ENUS": "Ammonia"
@@ -1516,7 +1506,7 @@
   },
   {
     "Name": "I塑料基板",
-    "ZHCN": "使用聚乙烯制造的基板，用于制造基础电路板。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ZHCN": "使用聚丙烯制造的基板，用于制造基础电路板。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "ENUS": "The substrate made of polyethylene, used to make the basic circuit board.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
@@ -2033,16 +2023,6 @@
     "Name": "R含钨硅晶圆（高效）",
     "ZHCN": "找到了光栅石矿, 生产硅晶圆就变得容易许多.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "ENUS": "Once the grating ore is found, it becomes much easier to produce silicon wafers.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
-    "Name": "聚乙烯（高效）",
-    "ZHCN": "聚乙烯（高效）",
-    "ENUS": "Polyethylene (advanced)"
-  },
-  {
-    "Name": "R聚乙烯（高效）",
-    "ZHCN": "找到了有机晶体矿, 生产聚乙烯就变得容易许多.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Once the organic crystal ore is found, the production of polyethylene becomes much easier.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "燃油精炼",

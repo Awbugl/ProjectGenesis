@@ -608,17 +608,17 @@
   },
   {
     "ID": 23,
-    "Name": "聚乙烯",
+    "Name": "聚丙烯",
     "Description": "",
     "IconPath": "",
     "Type": 2,
     "GridIndex": 4105,
     "Time": 120,
     "Input": [
-      7001
+      7009
     ],
     "InCounts": [
-      3
+      2
     ],
     "Output": [
       1115
@@ -5166,30 +5166,6 @@
     ],
     "OutCounts": [
       2
-    ],
-    "Explicit": false,
-    "Handcraft": false,
-    "NonProductive": false
-  },
-  {
-    "ID": 508,
-    "Name": "丙烯",
-    "Description": "",
-    "IconPath": "",
-    "Type": 2,
-    "GridIndex": 3208,
-    "Time": 120,
-    "Input": [
-      7009
-    ],
-    "InCounts": [
-      2
-    ],
-    "Output": [
-      7001
-    ],
-    "OutCounts": [
-      3
     ],
     "Explicit": false,
     "Handcraft": false,
