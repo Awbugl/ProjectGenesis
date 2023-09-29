@@ -81,6 +81,9 @@
         <Reference Include="UnityEngine.CoreModule">
             <HintPath>$(DSPAssemblyPath)\UnityEngine.CoreModule.dll</HintPath>
         </Reference>
+        <Reference Include="UnityEngine.ParticleSystemModule">
+          <HintPath>..\..\SteamLibrary\steamapps\common\Dyson Sphere Program\DSPGAME_Data\Managed\UnityEngine.ParticleSystemModule.dll</HintPath>
+        </Reference>
         <Reference Include="UnityEngine.TextRenderingModule">
             <HintPath>$(DSPAssemblyPath)\UnityEngine.TextRenderingModule.dll</HintPath>
         </Reference>
