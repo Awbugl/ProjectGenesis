@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.IO;
+﻿using System.IO;
 using System.Text;
 using BepInEx;
 using BepInEx.Bootstrap;
@@ -41,8 +40,7 @@ namespace ProjectGenesis.Compatibility
         {
             BepInEx.Logging.Logger.Listeners.Add(new HarmonyLogListener());
 
-            Dictionary<string, PluginInfo> pluginInfos = Chainloader.PluginInfos;
-            DSPBattleInstalled = pluginInfos.ContainsKey(DSPBattleGUID);
+            DSPBattleInstalled = Chainloader.PluginInfos.TryGetValue(DSPBattleGUID, out _);
 
             new Harmony(MODGUID).Patch(AccessTools.Method(typeof(VFPreload), "InvokeOnLoadWorkEnded"), null,
                                        new HarmonyMethod(typeof(IncompatibleCheckPlugin), nameof(OnMainMenuOpen)) { priority = Priority.Last });

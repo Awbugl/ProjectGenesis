@@ -1174,16 +1174,17 @@
   },
   {
     "ID": 1116,
-    "Name": "剧毒有机液体",
-    "Description": "I剧毒有机液体",
-    "IconPath": "Assets/texpack/剧毒有机液体",
-    "GridIndex": 1112,
+    "Name": "硫酸",
+    "Description": "I硫酸",
+    "IconPath": "Assets/texpack/硫酸_新",
+    "GridIndex": 4215,
     "StackSize": 20,
     "Type": 2,
-    "PreTech": 1831,
+    "PreTech": 1121,
     "PreTechOverride": 0,
     "DescFields": [
-      0
+      0,
+      1
     ],
     "FuelType": 0,
     "HeatValue": 0,
@@ -1191,7 +1192,7 @@
     "IsFluid": true,
     "Productive": true,
     "SubID": 0,
-    "MiningFrom": "剧毒液体海洋",
+    "MiningFrom": "硫酸海洋",
     "ProduceFrom": null,
     "Grade": 0,
     "Upgrades": [],
@@ -1205,7 +1206,7 @@
     "Potential": 0,
     "BuildIndex": 0,
     "BuildMode": 0,
-    "UnlockKey": 2306,
+    "UnlockKey": 0,
     "MechaMaterialID": 0
   },
   {
@@ -1719,7 +1720,7 @@
     "Name": "增产剂",
     "Description": "I增产剂 Mk.I",
     "IconPath": "Icons/ItemRecipe/accelerator-3",
-    "GridIndex": 1612,
+    "GridIndex": 1604,
     "StackSize": 200,
     "Type": 2,
     "PreTech": 1151,
@@ -7247,13 +7248,13 @@
   },
   {
     "ID": 6999,
-    "Name": "硫酸",
-    "Description": "I硫酸",
-    "IconPath": "Assets/texpack/硫酸_新",
-    "GridIndex": 4215,
+    "Name": "剧毒有机液体",
+    "Description": "I剧毒有机液体",
+    "IconPath": "Assets/texpack/剧毒有机液体",
+    "GridIndex": 1112,
     "StackSize": 20,
     "Type": 2,
-    "PreTech": 1121,
+    "PreTech": 1831,
     "PreTechOverride": 0,
     "DescFields": [
       1
@@ -7278,7 +7279,7 @@
     "Potential": 0,
     "BuildIndex": 0,
     "BuildMode": 0,
-    "UnlockKey": 0,
+    "UnlockKey": 2306,
     "MechaMaterialID": 0
   },
   {
@@ -7520,6 +7521,7 @@
     "PreTech": 1832,
     "PreTechOverride": 0,
     "DescFields": [
+      0,
       1
     ],
     "FuelType": 0,
@@ -7628,6 +7630,7 @@
     "PreTech": 1121,
     "PreTechOverride": 0,
     "DescFields": [
+      0,
       1
     ],
     "FuelType": 0,

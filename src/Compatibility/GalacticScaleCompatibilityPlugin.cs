@@ -17,7 +17,7 @@ using UnityEngine;
 namespace ProjectGenesis.Compatibility
 {
     [BepInPlugin(MODGUID, MODNAME, VERSION)]
-    [BepInDependency(GalacticScaleGUID)]
+    [BepInDependency(GalacticScaleGUID, BepInDependency.DependencyFlags.SoftDependency)]
     public class GalacticScaleCompatibilityPlugin : BaseUnityPlugin
     {
         public const string MODGUID = "org.LoShin.GenesisBook.Compatibility.GalacticScale";
@@ -26,9 +26,11 @@ namespace ProjectGenesis.Compatibility
 
         private const string GalacticScaleGUID = "dsp.galactic-scale.2";
 
+        internal static bool GalacticScaleInstalled;
+
         public void Awake()
         {
-            Chainloader.PluginInfos.TryGetValue(GalacticScaleGUID, out PluginInfo pluginInfo);
+            GalacticScaleInstalled = Chainloader.PluginInfos.TryGetValue(GalacticScaleGUID, out PluginInfo pluginInfo);
 
             if (pluginInfo == null) return;
 

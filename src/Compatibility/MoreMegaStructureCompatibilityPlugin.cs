@@ -1,5 +1,6 @@
 ﻿using System;
 using BepInEx;
+using BepInEx.Bootstrap;
 using HarmonyLib;
 using ProjectGenesis.Utils;
 using xiaoye97;
@@ -13,7 +14,7 @@ using xiaoye97;
 namespace ProjectGenesis.Compatibility
 {
     [BepInPlugin(MODGUID, MODNAME, VERSION)]
-    [BepInDependency(MoreMegaStructureGUID)]
+    [BepInDependency(MoreMegaStructureGUID, BepInDependency.DependencyFlags.SoftDependency)]
     public class MoreMegaStructureCompatibilityPlugin : BaseUnityPlugin
     {
         public const string MODGUID = "org.LoShin.GenesisBook.Compatibility.MoreMegaStructure";
@@ -36,6 +37,10 @@ namespace ProjectGenesis.Compatibility
 
         public void Awake()
         {
+            Chainloader.PluginInfos.TryGetValue(MoreMegaStructureGUID, out PluginInfo pluginInfo);
+
+            if (pluginInfo == null) return;
+            
             var harmonyMethod
                 = new HarmonyMethod(typeof(MoreMegaStructureCompatibilityPlugin), nameof(LDBToolOnPostAddDataAction))
                   {

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using ProjectGenesis.Compatibility;
 
 // ReSharper disable LoopCanBePartlyConvertedToQuery
 
@@ -15,7 +16,7 @@ namespace ProjectGenesis.Utils
                                                                            { 7, new[] { 6220 } },
                                                                            { 8, new[] { 6220, 7019 } },
                                                                            { 9, new[] { 6206, 6220 } },
-                                                                           { 10, new[] { 6220, 7019 } },
+                                                                           { 10, new[] { 6220 } },
                                                                            { 12, new[] { 6206 } },
                                                                            { 13, new[] { 6206, 6220 } },
                                                                            { 14, new[] { 6220, 7019 } },
@@ -33,31 +34,57 @@ namespace ProjectGenesis.Utils
 
         internal static void AdjustPlanetThemeDataVanilla()
         {
+            foreach (ThemeProto theme in LDB.themes.dataArray) AdjustTheme(theme);
+
             ThemeProto gobi = LDB.themes.Select(12);
             gobi.WaterItemId = 7017;
             gobi.WaterHeight = -0.1f;
+            gobi.Distribute = EThemeDistribute.Interstellar;
             gobi.oceanMat = LDB.themes.Select(22).oceanMat;
-
-            foreach (ThemeProto theme in LDB.themes.dataArray) AdjustTheme(theme);
 
             ThemeProto oceanicJungle = LDB.themes.Select(8);
             oceanicJungle.WaterItemId = 1000;
+            oceanicJungle.Distribute = EThemeDistribute.Interstellar;
+
+            ThemeProto rockySalt = LDB.themes.Select(17);
+            rockySalt.WaterItemId = 7014;
+            rockySalt.WaterHeight = -0.1f;
+            rockySalt.Distribute = EThemeDistribute.Interstellar;
+            rockySalt.Algos = new[] { 3 };
+            rockySalt.oceanMat = LDB.themes.Select(8).oceanMat;
+
+            ThemeProto ice = LDB.themes.Select(10);
+            ice.WaterItemId = 7002;
+            ice.Distribute = EThemeDistribute.Interstellar;
         }
 
         internal static void AdjustTheme(ThemeProto theme)
         {
             void TerrestrialAdjust()
             {
-                // for GalacticScale mod
                 if (theme.WaterItemId == 1000) theme.WaterItemId = 7018;
 
-                if (theme.name == "OceanicJungle") theme.WaterItemId = 1000;
-
-                if (theme.name == "Gobi")
+                // for GalacticScale mod
+                if (GalacticScaleCompatibilityPlugin.GalacticScaleInstalled)
                 {
-                    theme.WaterItemId = 7017;
-                    theme.WaterHeight = -0.1f;
-                    theme.oceanMat = LDB.themes.Select(22).oceanMat;
+                    if (theme.name == "OceanicJungle") theme.WaterItemId = 1000;
+
+                    if (theme.name.StartsWith("IceGelisol")) theme.WaterItemId = 7002;
+
+                    if (theme.name == "SaltLake")
+                    {
+                        theme.WaterItemId = 7014;
+                        theme.WaterHeight = -0.1f;
+                        theme.Algos = new[] { 3 };
+                        theme.oceanMat = LDB.themes.Select(8).oceanMat;
+                    }
+
+                    if (theme.name == "Gobi")
+                    {
+                        theme.WaterItemId = 7017;
+                        theme.WaterHeight = -0.1f;
+                        theme.oceanMat = LDB.themes.Select(22).oceanMat;
+                    }
                 }
 
                 if (theme.Distribute == EThemeDistribute.Birth)

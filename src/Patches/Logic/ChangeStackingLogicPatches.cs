@@ -68,7 +68,6 @@ namespace ProjectGenesis.Patches.Logic
 
             switch (component.recipeId)
             {
-                case ProtoIDUsedByPatches.R有机液体离心:
                 case ProtoIDUsedByPatches.R等离子精炼:
                     b = true;
                     break;
@@ -88,6 +87,7 @@ namespace ProjectGenesis.Patches.Logic
                 case ProtoIDUsedByPatches.R氢氯酸:
                 case ProtoIDUsedByPatches.R硫酸:
                 case ProtoIDUsedByPatches.R海水淡化:
+                case ProtoIDUsedByPatches.R高效石墨烯:
                 case ProtoIDUsedByPatches.R水电解:
                     b = true;
                     break;

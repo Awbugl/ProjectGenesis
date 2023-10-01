@@ -1,3 +1,28 @@
+-  v2.7.1-beta1 (Experimental 0.1.7)
+  + 移除配方`石墨烯（先进）`,`等离子精炼（高效）`,`有机液体离心`（影响存档）
+  + 调整了部分星球的海洋类型（影响存档）
+  + 具有特殊海洋类型的星球不再在母星系内生成（影响存档）
+  + 移除物品`乙烯`, 调整物品`聚乙烯`为`聚丙烯`并修改相应配方（影响存档）
+  + 为`石墨烯（高效）`配方调整了特殊堆积逻辑
+  + 调整了大抽水机的出口数量
+  + 调整了裂变燃料的需求数值（影响存档）
+  + 微调了母星的矿物生成算法，现在生成在海岸的矿物不再被掩埋
+  + 修复了部分文本未被正确替换的问题
+
+  + Removed recipes `Graphene (advanced-2)`, `Plasma refining (advanced)`, `Toxic liquid centrifugation` (affect save)
+  + Adjusted ocean types of some planets (affect save)
+  + Planets with special ocean types no longer spawn in the home system (affect save)
+  + Removed item `Ethylene`, changed item `Polyethylene` to `Polypropylene` and modified recipe (affect save)
+  + Adjusted special stacking logic for `Graphene (advanced)` recipe
+  + Adjusted the pose of the mega pumping machine
+  + Adjusted fissile fuel synthesis requirements (affect save)
+  + Fine-tuned the home planet's mineral generation algorithm so that minerals generated on the coast are no longer buried
+  + Fixed some text not being replaced correctly
+
+
+<details>
+  <summary>点击展开日志 | Click to view all </summary>
+
 - Experimental 0.1.6
   + 调整了大气采集站的速度
   + 调整了开局科技解锁状态
@@ -6,10 +31,6 @@
   + Adjusted the base speed of the atmospheric collection station
   + Adjusted tech unlock status of the opening game
   + Fixed the problem that some texts were not replaced correctly
-
-
-<details>
-  <summary>点击展开日志 | Click to view all </summary>
 
 
 - Experimental 0.1.5

@@ -631,7 +631,7 @@
   },
   {
     "Name": "I剧毒有机液体",
-    "ZHCN": "在火山灰星球表面的由多种化合物组成的剧毒液体.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ZHCN": "由多种化合物组成的剧毒液体,很难有效利用.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "ENUS": "Toxic liquid consisting of many compounds.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
@@ -1846,13 +1846,13 @@
   },
   {
     "Name": "丙烯合成",
-    "ZHCN": "丙烯合成",
-    "ENUS": "Propylene synthesis"
+    "ZHCN": "羰基合成",
+    "ENUS": "Hydroformylation"
   },
   {
     "Name": "R丙烯合成",
-    "ZHCN": "使用一氧化碳和氢合成丙烯.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Synthesis of propylene using carbon monoxide and hydrogen.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "一氧化碳和氢在催化剂的作用下可高效合成丙烯，是碳中和进程的重要一步.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Carbon monoxide and hydrogen can efficiently synthesize propylene in the presence of a catalyst, an important step in the carbon-neutral process.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "硝酸化合",
@@ -1960,39 +1960,19 @@
     "ENUS": "If only collect antimatter, a more aggressive magnetic field structure to speed up the antimatter output.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
-    "Name": "石墨烯（极效）",
-    "ZHCN": "石墨烯（先进）",
-    "ENUS": "Graphene (advanced-2)"
-  },
-  {
-    "Name": "R石墨烯（极效）",
-    "ZHCN": "针对可燃冰结构优化生产线, 弃用氢捕获回收流程以保证石墨烯的产出.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Detailed analysis of combustible ice structure can increase the output of graphene, but cannot capture hydrogen.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
     "Name": "R等离子精炼",
     "ZHCN": "利用等离子体精炼原油，可以获得氢气和煤焦油.\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作.</color>\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "ENUS": "Hydrogen and coal tar can be obtained by refining crude oil with plasma.\n<color=\"#FD965ECC\">It will not stop working until all products are stacked.</color>\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
-    "Name": "等离子精炼（高效）",
-    "ZHCN": "等离子精炼（高效）",
-    "ENUS": "Plasma refining (advanced)"
+    "Name": "苯合成",
+    "ZHCN": "催化重整",
+    "ENUS": "Catalytic reforming"
   },
   {
-    "Name": "R等离子精炼（高效）",
-    "ZHCN": "提高等离子温度可以裂解煤焦油, 增加氢的产出.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Increasing plasma temperature can crack coal tar and increase hydrogen production.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
-    "Name": "有机液体离心",
-    "ZHCN": "剧毒液体离心",
-    "ENUS": "Toxic liquid centrifugation"
-  },
-  {
-    "Name": "R有机液体离心",
-    "ZHCN": "将采集到的剧毒液体进行离心、分离和精炼, 可以得到数种有用的化合物.\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作.</color>\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Centrifugation of toxic liquid can yield several useful compounds.\n<color=\"#FD965ECC\">Will not stop working until all products are accumulated.</color>\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "Name": "R苯合成",
+    "ZHCN": "经过漫长的重整工序，可以将丙烯合成为苯。效率较低，却是历史上推动化石燃料资源封存的重要技术.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "After a lengthy reforming process, propylene can be synthesized into benzene. Less efficient, but an important technology that has historically driven the sequestration of fossil fuel resources.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "硅晶圆（高效）",
@@ -2083,6 +2063,11 @@
     "Name": "R氨氧化",
     "ZHCN": "氨气与氧气进行反应, 经过一系列反应合成硝酸.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "ENUS": "Ammonia reacts with oxygen to produce nitric acid.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+  },
+  {
+    "Name": "R石墨烯（高效）",
+    "ZHCN": "找到可燃冰矿，制造石墨烯就会变得容易许多。\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作.</color>",
+    "ENUS": "It will be a lot easier to produce graphene if you can find combustible ice minerals.\n<color=\"#FD965ECC\">Will not stop working until all products are accumulated.</color>"
   },
   {
     "Name": "R硫酸",
@@ -2918,7 +2903,7 @@
     "Name": "位面冶金结果",
     "ZHCN": "你解锁了更高级的熔炉━━<color=\"#FD965ECC\">位面熔炉</color>，它的速度是电弧熔炉的2倍! ",
     "ENUS": "You have unlocked the more advanced smelter ━━ <color=\"#FD965ECC\">Plane Smelter</color>, which is twice as fast as an Arc Smelter!"
-  }, 
+  },
   {
     "Name": "I原油精炼厂",
     "ZHCN": "将原油或剧毒液体进行精炼，可以获得多种化工原料。",

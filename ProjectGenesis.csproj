@@ -114,6 +114,7 @@
         <Compile Include="src\Patches\Logic\MegaAssembler\UISlotPickerPatches.cs"/>
         <Compile Include="src\Patches\Logic\MegaPumpPatches.cs"/>
         <Compile Include="src\Patches\Logic\ModelLoadingPatches.cs"/>
+        <Compile Include="src\Patches\Logic\PlanetAlgorithmPatches.cs" />
         <Compile Include="src\Patches\Logic\PlanetFocus\DronePatches.cs"/>
         <Compile Include="src\Patches\Logic\PlanetFocus\FactoryPowerPatches.cs"/>
         <Compile Include="src\Patches\Logic\PlanetFocus\InternalFunctions.cs"/>

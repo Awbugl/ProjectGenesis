@@ -15,7 +15,7 @@ using ProjectGenesis.Patches.Logic;
 namespace ProjectGenesis.Compatibility
 {
     [BepInPlugin(MODGUID, MODNAME, VERSION)]
-    [BepInDependency(PlanetwideMiningGUID)]
+    [BepInDependency(PlanetwideMiningGUID, BepInDependency.DependencyFlags.SoftDependency)]
     public class PlanetwideMiningCompatibilityPlugin : BaseUnityPlugin
     {
         public const string MODGUID = "org.LoShin.GenesisBook.Compatibility.PlanetwideMining";

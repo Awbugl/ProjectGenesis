@@ -13,7 +13,7 @@ using ProjectGenesis.Utils;
 namespace ProjectGenesis.Compatibility
 {
     [BepInPlugin(MODGUID, MODNAME, VERSION)]
-    [BepInDependency(BottleneckGUID)]
+    [BepInDependency(BottleneckGUID, BepInDependency.DependencyFlags.SoftDependency)]
     public class BottleneckCompatibilityPlugin : BaseUnityPlugin
     {
         public const string MODGUID = "org.LoShin.GenesisBook.Compatibility.Bottleneck";

@@ -647,7 +647,7 @@
       4
     ],
     "Output": [
-      6999,
+      1116,
       7020
     ],
     "OutCounts": [
@@ -837,7 +837,7 @@
     "Time": 120,
     "Input": [
       1109,
-      6999
+      1116
     ],
     "InCounts": [
       4,
@@ -1569,7 +1569,7 @@
     "Description": "RX射线裂解",
     "IconPath": "Icons/ItemRecipe/X-ray",
     "Type": 3,
-    "GridIndex": 3203,
+    "GridIndex": 3202,
     "Time": 120,
     "Input": [
       1114,
@@ -2991,7 +2991,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 1612,
+    "GridIndex": 1604,
     "Time": 120,
     "Input": [
       1124,
@@ -3647,7 +3647,7 @@
     "Time": 120,
     "Input": [
       7102,
-      6999
+      1116
     ],
     "InCounts": [
       2,
@@ -3751,7 +3751,7 @@
     "Description": "R焦油转化",
     "IconPath": "Assets/texpack/煤焦油生产",
     "Type": 3,
-    "GridIndex": 3205,
+    "GridIndex": 3204,
     "Time": 120,
     "Input": [
       1006
@@ -4135,7 +4135,7 @@
     "Time": 120,
     "Input": [
       1115,
-      6999
+      1116
     ],
     "InCounts": [
       1,
@@ -4162,7 +4162,7 @@
     "Input": [
       7501,
       7708,
-      6999
+      1116
     ],
     "InCounts": [
       1,
@@ -4190,7 +4190,7 @@
     "Input": [
       7502,
       1106,
-      6999
+      1116
     ],
     "InCounts": [
       1,
@@ -4884,84 +4884,6 @@
     "NonProductive": false
   },
   {
-    "ID": 543,
-    "Name": "石墨烯（极效）",
-    "Description": "R石墨烯（极效）",
-    "IconPath": "Assets/texpack/极效石墨烯",
-    "Type": 2,
-    "GridIndex": 1604,
-    "Time": 120,
-    "Input": [
-      1011
-    ],
-    "InCounts": [
-      2
-    ],
-    "Output": [
-      1123
-    ],
-    "OutCounts": [
-      4
-    ],
-    "Explicit": true,
-    "Handcraft": false,
-    "NonProductive": false
-  },
-  {
-    "ID": 545,
-    "Name": "等离子精炼（高效）",
-    "Description": "R等离子精炼（高效）",
-    "IconPath": "Assets/texpack/精炼氢",
-    "Type": 3,
-    "GridIndex": 3202,
-    "Time": 120,
-    "Input": [
-      1007
-    ],
-    "InCounts": [
-      2
-    ],
-    "Output": [
-      1120
-    ],
-    "OutCounts": [
-      4
-    ],
-    "Explicit": true,
-    "Handcraft": false,
-    "NonProductive": false
-  },
-  {
-    "ID": 546,
-    "Name": "有机液体离心",
-    "Description": "R有机液体离心",
-    "IconPath": "Assets/texpack/剧毒有机液体离心_新",
-    "Type": 3,
-    "GridIndex": 4605,
-    "Time": 120,
-    "Input": [
-      1116
-    ],
-    "InCounts": [
-      2
-    ],
-    "Output": [
-      6999,
-      7002,
-      7014,
-      1114
-    ],
-    "OutCounts": [
-      1,
-      1,
-      1,
-      1
-    ],
-    "Explicit": true,
-    "Handcraft": false,
-    "NonProductive": false
-  },
-  {
     "ID": 547,
     "Name": "硅晶圆（高效）",
     "Description": "R硅晶圆（高效）",
@@ -5173,12 +5095,12 @@
   },
   {
     "ID": 509,
-    "Name": "苯",
-    "Description": "",
+    "Name": "苯合成",
+    "Description": "R苯合成",
     "IconPath": "",
     "Type": 2,
-    "GridIndex": 3209,
-    "Time": 120,
+    "GridIndex": 4509,
+    "Time": 180,
     "Input": [
       7009
     ],
@@ -5191,7 +5113,7 @@
     "OutCounts": [
       1
     ],
-    "Explicit": false,
+    "Explicit": true,
     "Handcraft": false,
     "NonProductive": false
   },
@@ -5633,7 +5555,7 @@
     ],
     "InCounts": [
       1,
-      1
+      2
     ],
     "Output": [
       6225
@@ -5659,7 +5581,7 @@
     ],
     "InCounts": [
       1,
-      1
+      2
     ],
     "Output": [
       6226
@@ -5683,7 +5605,7 @@
       6225
     ],
     "InCounts": [
-      1
+      2
     ],
     "Output": [
       6227
@@ -5707,7 +5629,7 @@
       6226
     ],
     "InCounts": [
-      1
+      2
     ],
     "Output": [
       6228
@@ -6112,7 +6034,7 @@
     "Input": [],
     "InCounts": [],
     "Output": [
-      1116
+      6999
     ],
     "OutCounts": [
       1
@@ -6164,7 +6086,7 @@
       6
     ],
     "Output": [
-      6999
+      1116
     ],
     "OutCounts": [
       2
