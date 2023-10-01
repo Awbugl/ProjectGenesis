@@ -74,11 +74,11 @@ namespace ProjectGenesis.Utils
             if (MartixsDescs.TryGetValue(itemid, out IconToolNew.IconDesc iconDesc)) return iconDesc;
 
             IconToolNew.IconDesc desc = ProtoRegistry.GetDefaultIconDesc(Color.white, DefaultSideColor);
-            if (FluidColor.ContainsKey(itemid))
+            if (FluidColor.TryGetValue(itemid, out Color32 value))
             {
                 desc.faceColor = FluidSideColor;
                 desc.sideColor = FluidSideColor;
-                desc.reserved0 = FluidColor[itemid];
+                desc.reserved0 = value;
                 desc.liquidity = 1f;
                 desc.metallic = 1f;
                 desc.solidAlpha = 0.6f;
