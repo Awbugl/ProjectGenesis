@@ -82,7 +82,7 @@
             <HintPath>$(DSPAssemblyPath)\UnityEngine.CoreModule.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.ParticleSystemModule">
-          <HintPath>..\..\SteamLibrary\steamapps\common\Dyson Sphere Program\DSPGAME_Data\Managed\UnityEngine.ParticleSystemModule.dll</HintPath>
+          <HintPath>$(DSPAssemblyPath)\UnityEngine.ParticleSystemModule.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.TextRenderingModule">
             <HintPath>$(DSPAssemblyPath)\UnityEngine.TextRenderingModule.dll</HintPath>
@@ -95,6 +95,7 @@
         </Reference>
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="src\Awards.cs" />
         <Compile Include="src\Compatibility\BlueprintTweaksCompatibilityPlugin.cs"/>
         <Compile Include="src\Compatibility\BottleneckCompatibilityPlugin.cs"/>
         <Compile Include="src\Compatibility\GalacticScaleCompatibilityPlugin.cs"/>
@@ -144,6 +145,7 @@
         <Compile Include="src\Patches\UI\UpdateLogoPatches.cs"/>
         <Compile Include="src\Patches\UI\Utils\MyWindowCtl.cs"/>
         <Compile Include="src\Patches\UI\Utils\Util.cs"/>
+        <Compile Include="src\Patches\UI\VeinColorPatches.cs" />
         <Compile Include="src\ProjectGenesis.cs"/>
         <Compile Include="src\Utils\CopyModelUtils.cs"/>
         <Compile Include="src\Utils\ERecipeType.cs"/>

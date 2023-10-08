@@ -16,6 +16,7 @@ using ProjectGenesis.Patches.Logic.PlanetFocus;
 using ProjectGenesis.Patches.UI.UIPlanetFocus;
 using ProjectGenesis.Utils;
 using xiaoye97;
+using static ProjectGenesis.Patches.UI.VeinColorPatches;
 using ERecipeType_1 = ERecipeType;
 using static ProjectGenesis.Utils.PrefabFixUtils;
 using static ProjectGenesis.Utils.JsonDataUtils;
@@ -156,11 +157,8 @@ namespace ProjectGenesis
 
         private void PreAddDataAction()
         {
-            LDB.veins.Select(14).name = "钨矿";
-            LDB.veins.Select(14).Name = "钨矿".TranslateFromJson();
-
             LDB.items.OnAfterDeserialize();
-
+            ModifyVeinData();
             AdjustPlanetThemeDataVanilla();
             AddCopiedModelProto();
             ImportJson(TableID);

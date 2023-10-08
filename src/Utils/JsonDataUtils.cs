@@ -151,11 +151,11 @@ namespace ProjectGenesis.Utils
             }
 
             #endregion
-            
-            #region  TutorialProto
+
+            #region TutorialProto
 
             TutorialProtoJson[] tutorialProtos = JsonHelper.TutorialProtos();
-            
+
             foreach (TutorialProtoJson json in tutorialProtos)
             {
                 LDBTool.PreAddProto(new TutorialProto()
@@ -167,9 +167,7 @@ namespace ProjectGenesis.Utils
                                         DeterminatorParams = json.DeterminatorParams
                                     });
             }
-            
-           
-            
+
             #endregion
 
             int GetTableID(int gridIndex)

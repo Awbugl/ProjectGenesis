@@ -2753,14 +2753,14 @@
   {
     "ID": 100,
     "Type": 4,
-    "Time": 180,
+    "Time": 120,
     "Input": [
       7706,
       1124
     ],
     "InCounts": [
-      2,
-      4
+      1,
+      2
     ],
     "Output": [
       1206
@@ -3499,7 +3499,7 @@
     "Description": "R水电解",
     "IconPath": "Assets/texpack/电解水",
     "Type": 2,
-    "GridIndex": 4117,
+    "GridIndex": 4217,
     "Time": 120,
     "Input": [
       1000
@@ -3553,7 +3553,7 @@
     "Description": "R海水淡化",
     "IconPath": "",
     "Type": 2,
-    "GridIndex": 1109,
+    "GridIndex": 4117,
     "Time": 180,
     "Input": [
       7018
@@ -4971,7 +4971,7 @@
     "Description": "R活性纤维分离",
     "IconPath": "Assets/texpack/活性纤维分解",
     "Type": 3,
-    "GridIndex": 4405,
+    "GridIndex": 3209,
     "Time": 720,
     "Input": [
       7710
