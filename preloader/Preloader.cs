@@ -12,28 +12,36 @@ namespace ProjectGenesis
         {
             ModuleDefinition module = assembly.MainModule;
             TypeDefinition veinType = module.Types.FirstOrDefault(t => t.FullName == "EVeinType");
+            if (veinType == null) return;
 
-            bool flag = veinType == null;
-            if (flag) return;
-
-
-            var aluminum = new FieldDefinition("Aluminum",
+            FieldDefinition aluminum = veinType.Fields.FirstOrDefault(i => i.HasDefault && (byte)i.Constant == 15);
+            if (aluminum == null)
+            {
+                aluminum = new FieldDefinition("Aluminum",
                                                FieldAttributes.Static | FieldAttributes.Literal | FieldAttributes.Public | FieldAttributes.HasDefault,
-                                               veinType) { Constant = 16 };
+                                               veinType) { Constant = 15 };
 
-            var tungsten = new FieldDefinition("Tungsten",
-                                               FieldAttributes.Static | FieldAttributes.Literal | FieldAttributes.Public | FieldAttributes.HasDefault,
-                                               veinType) { Constant = 17 };
+                veinType.Fields.Add(aluminum);
+            }
+            else
+            {
+                veinType.Fields.Remove(aluminum);
+                aluminum.Name = "Aluminum";
+                veinType.Fields.Add(aluminum);
+            }
 
             var radioactive = new FieldDefinition("Radioactive",
                                                   FieldAttributes.Static |
                                                   FieldAttributes.Literal |
                                                   FieldAttributes.Public |
-                                                  FieldAttributes.HasDefault, veinType) { Constant = 18 };
+                                                  FieldAttributes.HasDefault, veinType) { Constant = 16 };
 
-            veinType.Fields.Add(aluminum);
-            veinType.Fields.Add(tungsten);
+            var tungsten = new FieldDefinition("Tungsten",
+                                               FieldAttributes.Static | FieldAttributes.Literal | FieldAttributes.Public | FieldAttributes.HasDefault,
+                                               veinType) { Constant = 17 };
+
             veinType.Fields.Add(radioactive);
+            veinType.Fields.Add(tungsten);
         }
     }
 }

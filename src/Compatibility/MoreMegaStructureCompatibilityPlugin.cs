@@ -52,27 +52,6 @@ namespace ProjectGenesis.Compatibility
 
         public static void LDBToolOnPostAddDataAction()
         {
-            foreach (StringProto strings in LDB.strings.dataArray)
-            {
-                switch (strings.Name)
-                {
-                    case "引力钻头描述":
-                        strings.ZHCN = "借助黑洞本身的引力，引力钻头能够将物质从黑洞中取出。借助谐振盘，黑洞原质将能够被解压并在星系内输送。";
-                        strings.ENUS
-                            = "The graviton drill can pull matter out of the black hole using the gravity of the black hole itself. With the help of the resonant disc, the matter from the black hole will be able to be decompressed and transported within the galaxy.";
-                        break;
-
-                    case "物质解压器功能文本":
-                        strings.ZHCN = "产出一些基础资源（例如铁块），可被对应的物质重构器接收。";
-                        break;
-
-                    case "单极磁石重构装置":
-                        strings.ZHCN = "钨矿重构装置";
-                        strings.ENUS = "Tungsten receiver";
-                        break;
-                }
-            }
-
             foreach (int recipeID in AddedRecipes)
             {
                 RecipeProto recipeProto = LDB.recipes.Select(recipeID);

@@ -260,11 +260,6 @@
     "ENUS": "Informatization"
   },
   {
-    "Name": "剧毒液体海洋",
-    "ZHCN": "剧毒液体海洋",
-    "ENUS": "Toxic organic liquid ocean"
-  },
-  {
     "Name": "铁矿脉",
     "ZHCN": "铁矿脉",
     "ENUS": "Iron veins"
@@ -330,49 +325,14 @@
     "ENUS": "Spiniform stalagmite crystal vein"
   },
   {
-    "Name": "单极磁矿（珍奇）",
-    "ZHCN": "钨矿",
-    "ENUS": "Tungsten vein"
-  },
-  {
     "Name": "不相符的物品",
     "ZHCN": "不相符的物品",
     "ENUS": "Mismatched item"
   },
   {
-    "Name": "里程碑名称9",
-    "ZHCN": "里程碑：钨矿",
-    "ENUS": "Milestone: Tungsten ore"
-  },
-  {
     "Name": "里程碑名称29",
     "ZHCN": "里程碑：裂变发电",
     "ENUS": "Milestone: Fission Energy"
-  },
-  {
-    "Name": "里程碑未达成描述9",
-    "ZHCN": "你采集了钨矿。它可以用于建造更好的建筑与组件。",
-    "ENUS": "You collected a Tungsten ore. It can be used to build better buildings or components."
-  },
-  {
-    "Name": "里程碑达成条件9",
-    "ZHCN": "达成条件：找到钨矿脉并采集",
-    "ENUS": "Achieved conditions: Find Tungsten vein and collect one unit"
-  },
-  {
-    "Name": "里程碑已达成描述9",
-    "ZHCN": "你在 <color=#8DB1FFb0>{0}</color> 附近采集了钨矿。它可以用于建造更好的建筑与组件。",
-    "ENUS": "You discovered and mined a Tungsten ore near <color=#8DB1FFb0>{0}</color>. It can be used to build better buildings or components."
-  },
-  {
-    "Name": "里程碑未达成描述10",
-    "ZHCN": "你采集了有机晶体，宇宙珍奇之一。它分布在宇宙各处，可以用来制造活性生物纤维。",
-    "ENUS": "You collected an Organic Crystal, one of the rarer things in the universe. They're distributed across the universe and can be used to make active biological fibers."
-  },
-  {
-    "Name": "里程碑已达成描述10",
-    "ZHCN": "你在 <color=#8DB1FFb0>{0}</color> 上发现了有机晶体原始矿脉，宇宙珍奇之一。它分布在宇宙各处，可以用来制造活性生物纤维。",
-    "ENUS": "You discovered a mineral vein of Organic Crystal on <color=#8DB1FFb0>{0}</color>, one of the rarer things in the universe. They're distributed across the universe and can be used to make active biological fibers."
   },
   {
     "Name": "里程碑未达成描述29",
@@ -820,8 +780,8 @@
     "ENUS": "A refined oil product, can be used as fuel.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
-    "Name": "放射性矿物碎块",
-    "ZHCN": "放射性矿物碎块",
+    "Name": "放射性矿物",
+    "ZHCN": "放射性矿物",
     "ENUS": "Radioactive mineral"
   },
   {
@@ -2945,7 +2905,7 @@
     "ENUS": "Has incredible electromagnetic properties, only slightly higher cost.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
-    "Name": "I放射性矿物碎块",
+    "Name": "I放射性矿物",
     "ZHCN": "由硅石提炼，具有微弱放射性的碎块。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "ENUS": "Refined from silica, faintly radioactive fractions.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
@@ -2978,6 +2938,51 @@
     "Name": "I高纯钚块",
     "ZHCN": "钚矿提炼产物，已经可以支撑链式反应。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "ENUS": "The product of refining plutonium ore, which can support the chain reaction.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+  },
+  {
+    "Name": "铝矿脉",
+    "ZHCN": "铝矿脉",
+    "ENUS": "Aluminum vein"
+  },
+  {
+    "Name": "铝矿",
+    "ZHCN": "铝矿",
+    "ENUS": "Aluminum ore"
+  },
+  {
+    "Name": "I铝矿",
+    "ZHCN": "采集铝矿脉获得，可以直接冶炼成铝块。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Used to smelt aluminum ingots. Obtained by gathering aluminum vein.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+  },
+  {
+    "Name": "铝块",
+    "ZHCN": "铝块",
+    "ENUS": "Aluminum Ingot"
+  },
+  {
+    "Name": "I铝块",
+    "ZHCN": "基本原材料之一。用于制造各种铝质组件。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Basic raw material. Used to produce various aluminum components.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+  },
+  {
+    "Name": "铝矿粉",
+    "ZHCN": "铝矿粉",
+    "ENUS": "Aluminum ore dust"
+  },
+  {
+    "Name": "I铝矿粉",
+    "ZHCN": "对铝矿进行预先粉碎处理的产物，可明显提高熔炉的效率.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "The product of pre-crushing of aluminum ore, which can significantly improve the efficiency of the furnace.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+  },
+  {
+    "Name": "铝合金",
+    "ZHCN": "铝合金",
+    "ENUS": "Aluminum alloy"
+  },
+  {
+    "Name": "I铝合金",
+    "ZHCN": "轻金属材料之一，可作结构材料使用。由于具有较高的强度和良好的耐蚀性和可焊性，有着广泛的应用。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "One of the light metal materials, can be used as structural materials. It has a wide range of applications due to its high strength and good corrosion resistance and weldability.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "I氦",

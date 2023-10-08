@@ -89,8 +89,11 @@ namespace ProjectGenesis.Utils
 
                 if (theme.Distribute == EThemeDistribute.Birth)
                 {
-                    theme.RareVeins = new[] { 8 };
-                    theme.RareSettings = new float[] { 1.0f, 0.5f, 0.0f, 0.4f };
+                    theme.RareVeins = new[] { 8, 15, 16, 17 };
+                    theme.RareSettings = new float[]
+                                         {
+                                             1.0f, 0.5f, 0.0f, 0.4f, 1.0f, 0.5f, 0.0f, 0.4f, 1.0f, 0.5f, 0.0f, 0.4f, 1.0f, 0.5f, 0.0f, 0.4f
+                                         };
                 }
 
                 if (theme.Wind == 0)

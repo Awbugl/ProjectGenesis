@@ -53,7 +53,7 @@ namespace ProjectGenesis.Patches.Logic
         [HarmonyPatch(typeof(UIPlanetDetail), "OnPlanetDataSet")]
         [HarmonyPatch(typeof(UIStarDetail), "OnStarDataSet")]
         [HarmonyTranspiler]
-        public static IEnumerable<CodeInstruction> OnDataSet_Transpiler(IEnumerable<CodeInstruction> instructions)
+        public static IEnumerable<CodeInstruction> OnDataSet_ChangeWaterId_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
             var matcher = new CodeMatcher(instructions);
             matcher.MatchForward(false, new CodeMatch(OpCodes.Ldc_I4, 1000));
