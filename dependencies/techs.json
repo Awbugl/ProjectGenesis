@@ -15,7 +15,7 @@
     "ItemPoints": [],
     "HashNeeded": 1,
     "UnlockRecipes": [
-      
+      502
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -1787,8 +1787,7 @@
     "HashNeeded": 18000,
     "UnlockRecipes": [
       17,
-      59,
-      502
+      59
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],

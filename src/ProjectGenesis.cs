@@ -16,7 +16,7 @@ using ProjectGenesis.Patches.Logic.PlanetFocus;
 using ProjectGenesis.Patches.UI.UIPlanetFocus;
 using ProjectGenesis.Utils;
 using xiaoye97;
-using static ProjectGenesis.Patches.UI.VeinColorPatches;
+using static ProjectGenesis.Patches.UI.AddVeinPatches;
 using ERecipeType_1 = ERecipeType;
 using static ProjectGenesis.Utils.PrefabFixUtils;
 using static ProjectGenesis.Utils.JsonDataUtils;
@@ -128,6 +128,8 @@ namespace ProjectGenesis
             Harmony = new Harmony(MODGUID);
 
             foreach (Type type in executingAssembly.GetTypes()) Harmony.PatchAll(type);
+            
+            ModifyVeinData();
 
             LDBTool.PreAddDataAction += PreAddDataAction;
             LDBTool.PostAddDataAction += PostAddDataAction;
@@ -158,7 +160,6 @@ namespace ProjectGenesis
         private void PreAddDataAction()
         {
             LDB.items.OnAfterDeserialize();
-            ModifyVeinData();
             AdjustPlanetThemeDataVanilla();
             AddCopiedModelProto();
             ImportJson(TableID);
