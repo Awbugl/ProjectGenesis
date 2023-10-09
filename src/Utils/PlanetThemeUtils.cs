@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using ProjectGenesis.Compatibility;
 
+// ReSharper disable MemberCanBePrivate.Global
+
 // ReSharper disable LoopCanBePartlyConvertedToQuery
 
 namespace ProjectGenesis.Utils
@@ -32,6 +34,48 @@ namespace ProjectGenesis.Utils
                                                                            { 25, new[] { 6220, 7019 } }
                                                                        };
 
+        private static readonly Dictionary<int, AddVeinData> PlanetAddRareVeinData = new Dictionary<int, AddVeinData>
+                                                                                     {
+                                                                                         {
+                                                                                             1,
+                                                                                             new AddVeinData(new[] { 8, 16 },
+                                                                                                             new[]
+                                                                                                             {
+                                                                                                                 1.0f, 0.0f, 0.0f, 0.4f, 1.0f, 0.0f,
+                                                                                                                 0.0f, 0.4f
+                                                                                                             })
+                                                                                         },
+                                                                                         {
+                                                                                             6,
+                                                                                             new AddVeinData(new[] { 16 },
+                                                                                                             new[] { 0.2f, 0.7f, 0.2f, 0.8f })
+                                                                                         },
+                                                                                         {
+                                                                                             9,
+                                                                                             new AddVeinData(new[] { 16, 17 },
+                                                                                                             new[]
+                                                                                                             {
+                                                                                                                 0.2f, 0.5f, 0.3f, 0.7f,
+                                                                                                                 0.2f, 0.6f, 0.3f, 0.8f
+                                                                                                             })
+                                                                                         },
+                                                                                         {
+                                                                                             12,
+                                                                                             new AddVeinData(new[] { 17 },
+                                                                                                             new[] { 0.2f, 0.6f, 0.3f, 0.8f })
+                                                                                         },
+                                                                                         {
+                                                                                             17,
+                                                                                             new AddVeinData(new[] { 16 },
+                                                                                                             new[] { 0.2f, 0.6f, 0.2f, 0.8f })
+                                                                                         },
+                                                                                         {
+                                                                                             23,
+                                                                                             new AddVeinData(new[] { 17 },
+                                                                                                             new[] { 0.2f, 0.6f, 0.5f, 0.8f })
+                                                                                         },
+                                                                                     };
+
         internal static void AdjustPlanetThemeDataVanilla()
         {
             foreach (ThemeProto theme in LDB.themes.dataArray) AdjustTheme(theme);
@@ -41,6 +85,15 @@ namespace ProjectGenesis.Utils
             gobi.WaterHeight = -0.1f;
             gobi.Distribute = EThemeDistribute.Interstellar;
             gobi.oceanMat = LDB.themes.Select(22).oceanMat;
+            RemoveVein(gobi, 0);
+            RemoveVein(gobi, 1);
+            RemoveVein(gobi, 2);
+            RemoveVein(gobi, 3);
+            RemoveVein(gobi, 14);
+
+            ThemeProto volcanic = LDB.themes.Select(13);
+            RemoveVein(volcanic, 0);
+            RemoveVein(volcanic, 14);
 
             ThemeProto oceanicJungle = LDB.themes.Select(8);
             oceanicJungle.WaterItemId = 1000;
@@ -52,6 +105,9 @@ namespace ProjectGenesis.Utils
             rockySalt.Distribute = EThemeDistribute.Interstellar;
             rockySalt.Algos = new[] { 3 };
             rockySalt.oceanMat = LDB.themes.Select(8).oceanMat;
+            RemoveVein(rockySalt, 0);
+            RemoveVein(rockySalt, 3);
+            RemoveVein(rockySalt, 14);
 
             ThemeProto ice = LDB.themes.Select(10);
             ice.WaterItemId = 7002;
@@ -62,6 +118,9 @@ namespace ProjectGenesis.Utils
         {
             void TerrestrialAdjust()
             {
+                AdjustGasItems(theme);
+                AdjustVeins(theme);
+
                 if (theme.WaterItemId == 1000) theme.WaterItemId = 7018;
 
                 // for GalacticScale mod
@@ -77,6 +136,9 @@ namespace ProjectGenesis.Utils
                         theme.WaterHeight = -0.1f;
                         theme.Algos = new[] { 3 };
                         theme.oceanMat = LDB.themes.Select(8).oceanMat;
+                        RemoveVein(theme, 0);
+                        RemoveVein(theme, 3);
+                        RemoveVein(theme, 14);
                     }
 
                     if (theme.name == "Gobi")
@@ -84,47 +146,13 @@ namespace ProjectGenesis.Utils
                         theme.WaterItemId = 7017;
                         theme.WaterHeight = -0.1f;
                         theme.oceanMat = LDB.themes.Select(22).oceanMat;
+                        RemoveVein(theme, 0);
+                        RemoveVein(theme, 1);
+                        RemoveVein(theme, 2);
+                        RemoveVein(theme, 3);
+                        RemoveVein(theme, 14);
                     }
                 }
-
-                if (theme.Distribute == EThemeDistribute.Birth)
-                {
-                    theme.RareVeins = new[] { 8, 15, 16, 17 };
-                    theme.RareSettings = new float[]
-                                         {
-                                             1.0f, 0.5f, 0.0f, 0.4f, 1.0f, 0.5f, 0.0f, 0.4f, 1.0f, 0.5f, 0.0f, 0.4f, 1.0f, 0.5f, 0.0f, 0.4f
-                                         };
-                }
-
-                if (theme.Wind == 0)
-                {
-                    theme.GasItems = Array.Empty<int>();
-                    theme.GasSpeeds = Array.Empty<float>();
-                }
-                else if (PlanetGasData.TryGetValue(theme.ID, out int[] value))
-                {
-                    theme.GasItems = value;
-                    theme.GasSpeeds = theme.GasItems.Length == 1
-                                          ? new float[] { theme.Wind * 0.7f }
-                                          : new float[] { theme.Wind * 0.7f, theme.Wind * 0.18f };
-                }
-                else if (theme.GasItems == null || theme.GasItems.Length == 0)
-                {
-                    switch (theme.PlanetType)
-                    {
-                        case EPlanetType.Ocean:
-                            theme.GasItems = new[] { 6220, 7019 };
-                            theme.GasSpeeds = new float[] { theme.Wind * 0.7f, theme.Wind * 0.18f };
-                            break;
-
-                        default:
-                            theme.GasItems = new[] { 6206 };
-                            theme.GasSpeeds = new float[] { theme.Wind * 0.7f };
-                            break;
-                    }
-                }
-
-                AdjustVeins(theme);
             }
 
             void GasGiantAdjust()
@@ -151,33 +179,78 @@ namespace ProjectGenesis.Utils
 
         private static void AdjustVeins(ThemeProto theme)
         {
-            if (theme.VeinSpot.Length > 2)
-            {
-                ref int silicon = ref theme.VeinSpot[2];
+            Array.Resize(ref theme.VeinSpot, 15);
+            Array.Resize(ref theme.VeinCount, 15);
+            Array.Resize(ref theme.VeinOpacity, 15);
 
-                if (silicon > 0)
-                {
-                    silicon = 1 + silicon / 4;
-                    theme.VeinCount[2] = 0.5f;
-                    theme.VeinOpacity[2] = 0.5f;
-                }
+            theme.VeinSpot[14] = (theme.VeinSpot[0] + theme.VeinSpot[1]) / 2;
+            theme.VeinCount[14] = (theme.VeinCount[0] + theme.VeinCount[1]) / 2;
+            theme.VeinOpacity[14] = (theme.VeinOpacity[0] + theme.VeinOpacity[1]) / 2;
+
+            if (!theme.GasItems.Contains(7019))
+            {
+                RemoveVein(theme, 5);
+            }
+            else
+            {
+                theme.VeinSpot[5] += 1;
+                theme.VeinCount[5] *= 1.1f;
             }
 
-            if (theme.VeinSpot.Length > 5)
+            if (PlanetAddRareVeinData.TryGetValue(theme.ID, out AddVeinData value))
             {
-                ref int coal = ref theme.VeinSpot[5];
+                theme.RareVeins = theme.RareVeins.Concat(value.RareVeins).ToArray();
+                theme.RareSettings = theme.RareSettings.Concat(value.RareSettings).ToArray();
+            }
+        }
 
-                if (!theme.GasItems.Contains(7019))
+        private static void AdjustGasItems(ThemeProto theme)
+        {
+            if (theme.Wind == 0)
+            {
+                theme.GasItems = Array.Empty<int>();
+                theme.GasSpeeds = Array.Empty<float>();
+            }
+            else if (PlanetGasData.TryGetValue(theme.ID, out int[] value))
+            {
+                theme.GasItems = value;
+                theme.GasSpeeds = theme.GasItems.Length == 1
+                                      ? new float[] { theme.Wind * 0.7f }
+                                      : new float[] { theme.Wind * 0.7f, theme.Wind * 0.18f };
+            }
+            else if (theme.GasItems == null || theme.GasItems.Length == 0)
+            {
+                switch (theme.PlanetType)
                 {
-                    coal = 0;
-                    theme.VeinCount[5] = 0f;
-                    theme.VeinOpacity[5] = 0f;
+                    case EPlanetType.Ocean:
+                        theme.GasItems = new[] { 6220, 7019 };
+                        theme.GasSpeeds = new float[] { theme.Wind * 0.7f, theme.Wind * 0.18f };
+                        break;
+
+                    default:
+                        theme.GasItems = new[] { 6206 };
+                        theme.GasSpeeds = new float[] { theme.Wind * 0.7f };
+                        break;
                 }
-                else
-                {
-                    coal += 1;
-                    theme.VeinCount[5] *= 1.2f;
-                }
+            }
+        }
+
+        private static void RemoveVein(ThemeProto theme, int id)
+        {
+            theme.VeinSpot[id] = 0;
+            theme.VeinCount[id] = 0f;
+            theme.VeinOpacity[id] = 0f;
+        }
+
+        public struct AddVeinData
+        {
+            public int[] RareVeins;
+            public float[] RareSettings;
+
+            public AddVeinData(int[] rareVeins, float[] rareSettings)
+            {
+                RareVeins = rareVeins;
+                RareSettings = rareSettings;
             }
         }
     }

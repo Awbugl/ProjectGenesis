@@ -14,7 +14,9 @@
     "Items": [],
     "ItemPoints": [],
     "HashNeeded": 1,
-    "UnlockRecipes": [],
+    "UnlockRecipes": [
+      
+    ],
     "UnlockFunctions": [],
     "UnlockValues": [],
     "Published": true,
@@ -1785,7 +1787,8 @@
     "HashNeeded": 18000,
     "UnlockRecipes": [
       17,
-      59
+      59,
+      502
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -1866,6 +1869,7 @@
     "HashNeeded": 21600,
     "UnlockRecipes": [
       63,
+      503,
       112
     ],
     "UnlockFunctions": [],
@@ -9022,7 +9026,7 @@
   },
   {
     "ID": 1816,
-    "Name": "放射性原料提纯",
+    "Name": "T放射性原料提纯",
     "IconPath": "Icons/Tech/1416",
     "Desc": "T放射性原料提纯描述",
     "Conclusion": "T放射性原料提纯描述",
@@ -9634,6 +9638,8 @@
       535,
       536,
       537,
+      402,
+      403,
       411,
       412,
       413,

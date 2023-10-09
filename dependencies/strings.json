@@ -260,71 +260,6 @@
     "ENUS": "Informatization"
   },
   {
-    "Name": "铁矿脉",
-    "ZHCN": "铁矿脉",
-    "ENUS": "Iron veins"
-  },
-  {
-    "Name": "铜矿脉",
-    "ZHCN": "铜矿脉",
-    "ENUS": "Copper veins"
-  },
-  {
-    "Name": "硅矿脉",
-    "ZHCN": "硅矿脉",
-    "ENUS": "Silicon veins"
-  },
-  {
-    "Name": "钛矿脉",
-    "ZHCN": "钛矿脉",
-    "ENUS": "Titanium veins"
-  },
-  {
-    "Name": "石矿脉",
-    "ZHCN": "石矿脉",
-    "ENUS": "Stone veins"
-  },
-  {
-    "Name": "煤矿脉",
-    "ZHCN": "煤矿脉",
-    "ENUS": "Coal veins"
-  },
-  {
-    "Name": "原油涌泉",
-    "ZHCN": "原油涌泉",
-    "ENUS": "Crude oil seep"
-  },
-  {
-    "Name": "可燃冰矿",
-    "ZHCN": "可燃冰矿",
-    "ENUS": "Fire ice vein"
-  },
-  {
-    "Name": "金伯利矿",
-    "ZHCN": "金伯利矿",
-    "ENUS": "Kimberlite vein"
-  },
-  {
-    "Name": "分形硅矿",
-    "ZHCN": "分形硅矿",
-    "ENUS": "Fractal silicon vein"
-  },
-  {
-    "Name": "有机晶体矿",
-    "ZHCN": "有机晶体矿",
-    "ENUS": "Organic crystal vein"
-  },
-  {
-    "Name": "光栅石矿",
-    "ZHCN": "光栅石矿",
-    "ENUS": "Optical grating crystal vein"
-  },
-  {
-    "Name": "刺笋矿脉",
-    "ZHCN": "刺笋矿脉",
-    "ENUS": "Spiniform stalagmite crystal vein"
-  },
-  {
     "Name": "不相符的物品",
     "ZHCN": "不相符的物品",
     "ENUS": "Mismatched item"
@@ -432,7 +367,12 @@
   {
     "Name": "钨矿脉",
     "ZHCN": "钨矿脉",
-    "ENUS": "Tungsten vein"
+    "ENUS": "Tungsten Veins"
+  },
+  {
+    "Name": "放射性矿脉",
+    "ZHCN": "放射性矿脉",
+    "ENUS": "Radioactive Veins"
   },
   {
     "Name": "裂变能",
@@ -550,19 +490,9 @@
     "ENUS": "Tungsten ore"
   },
   {
-    "Name": "钛齿轮",
-    "ZHCN": "钛齿轮",
-    "ENUS": "Titanium gear"
-  },
-  {
     "Name": "铜线圈",
     "ZHCN": "铜线圈",
     "ENUS": "Copper coil"
-  },
-  {
-    "Name": "石墨线圈",
-    "ZHCN": "石墨线圈",
-    "ENUS": "Graphite coil"
   },
   {
     "Name": "混凝土",
@@ -573,11 +503,6 @@
     "Name": "I混凝土",
     "ZHCN": "远古时期就存在的建筑材料, 可以用于建造大型建筑.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "ENUS": "A material that has existed since ancient times and can be used to build large structures.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
-    "Name": "钨齿轮",
-    "ZHCN": "钨齿轮",
-    "ENUS": "Tungsten gear"
   },
   {
     "Name": "煤焦油",
@@ -603,11 +528,6 @@
     "Name": "I聚丙烯",
     "ZHCN": "初级化工产品,广泛应用于各种行业.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "ENUS": "Basic chemical material, widely used.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
-    "Name": "钛线圈",
-    "ZHCN": "钛线圈",
-    "ENUS": "Titanium coil"
   },
   {
     "Name": "增产剂",
@@ -650,46 +570,6 @@
     "ENUS": "Nuclear power station"
   },
   {
-    "Name": "重燃油",
-    "ZHCN": "重燃油",
-    "ENUS": "Heavy fuel"
-  },
-  {
-    "Name": "I重燃油",
-    "ZHCN": "褐色黏稠状可燃性液体。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A brown viscous flammable liquid.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
-    "Name": "轻燃油",
-    "ZHCN": "轻燃油",
-    "ENUS": "Light fuel"
-  },
-  {
-    "Name": "I轻燃油",
-    "ZHCN": "褐色可燃性液体。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A brown flammable liquid.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
-    "Name": "含硫重燃油",
-    "ZHCN": "含硫重燃油",
-    "ENUS": "Sulfur heavy fuel"
-  },
-  {
-    "Name": "I含硫重燃油",
-    "ZHCN": "褐色黏稠状可燃性液体，含有少量硫。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A brown viscous flammable liquid, with a small amount of sulfur.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
-    "Name": "含硫轻燃油",
-    "ZHCN": "含硫轻燃油",
-    "ENUS": "Sulfur light fuel"
-  },
-  {
-    "Name": "I含硫轻燃油",
-    "ZHCN": "褐色可燃性液体，含有少量硫。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A brown flammable liquid, with a small amount of sulfur.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
     "Name": "一氧化碳",
     "ZHCN": "一氧化碳",
     "ENUS": "Carbon monoxide"
@@ -720,26 +600,6 @@
     "ENUS": "A high ratio of liquid fuel.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
-    "Name": "火箭燃料",
-    "ZHCN": "火箭燃料",
-    "ENUS": "Rocket fuel"
-  },
-  {
-    "Name": "I火箭燃料",
-    "ZHCN": "偏二甲肼和发烟硝酸的封装产物，蕴含着巨大的能量.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Encapsulated products of unsymmetrical dimethylhydrazine and smoke nitric acid, containing a huge amount of energy.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
-    "Name": "硫化氢",
-    "ZHCN": "硫化氢",
-    "ENUS": "Hydrogen sulfide"
-  },
-  {
-    "Name": "I硫化氢",
-    "ZHCN": "无机化合物，易燃，无色，低浓度时具有令人不悦的气味。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "hydrogen sulfide"
-  },
-  {
     "Name": "硝基柴油燃料棒",
     "ZHCN": "硝基柴油燃料棒",
     "ENUS": "Nitro diesel oil fuel rod"
@@ -760,29 +620,9 @@
     "ENUS": "Encapsulation of unsymmetrical dimethylhydrazine in fuel rods, to improve utilization and combustion efficiency.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
-    "Name": "火箭燃料棒",
-    "ZHCN": "火箭燃料棒",
-    "ENUS": "Rocket fuel rod"
-  },
-  {
-    "Name": "I火箭燃料棒",
-    "ZHCN": "将火箭燃料封装在燃料棒中，提高利用率和燃烧效率。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Encapsulation of rocket fuel in fuel rods, to improve utilization and combustion efficiency.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
-    "Name": "柴油",
-    "ZHCN": "柴油",
-    "ENUS": "Diesel oil"
-  },
-  {
-    "Name": "I柴油",
-    "ZHCN": "提炼后的油质产物，可用于燃料。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A refined oil product, can be used as fuel.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
     "Name": "放射性矿物",
     "ZHCN": "放射性矿物",
-    "ENUS": "Radioactive mineral"
+    "ENUS": "Radioactive ore"
   },
   {
     "Name": "发光铀碎块",
@@ -857,7 +697,7 @@
   {
     "Name": "铀燃料棒",
     "ZHCN": "铀燃料棒",
-    "ENUS": "uranium fuel rod"
+    "ENUS": "Uranium fuel rod"
   },
   {
     "Name": "I铀燃料棒",
@@ -2091,8 +1931,8 @@
   },
   {
     "Name": "R放射性矿物处理",
-    "ZHCN": "利用氢氧化钠晶体作为催化剂,能够将硅石中含有的放射性物质沉降分离.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Using sodium hydroxide crystals as a catalyst, the radioactive material contained in the Silicon ore can be separated by precipitation.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "利用氢氧化钠处理放射性矿物，将含有的放射性物质沉降分离.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Treatment of radioactive minerals with sodium hydroxide to precipitate and separate the contained radioactive ore.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "铁矿精炼",
@@ -2121,6 +1961,16 @@
   },
   {
     "Name": "R硅矿精炼",
+    "ZHCN": "从原矿中分离的纯净粉可以实现效率更高的生产.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "The pure powder separated from the raw ore allows for more efficient production.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+  },
+  {
+    "Name": "铝矿精炼",
+    "ZHCN": "铝矿精炼",
+    "ENUS": "Aluminum ore refining"
+  },
+  {
+    "Name": "R铝矿精炼",
     "ZHCN": "从原矿中分离的纯净粉可以实现效率更高的生产.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "ENUS": "The pure powder separated from the raw ore allows for more efficient production.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
@@ -2865,19 +2715,9 @@
     "ENUS": "You have unlocked the more advanced smelter ━━ <color=\"#FD965ECC\">Plane Smelter</color>, which is twice as fast as an Arc Smelter!"
   },
   {
-    "Name": "I原油精炼厂",
-    "ZHCN": "将原油或剧毒液体进行精炼，可以获得多种化工原料。",
-    "ENUS": "Refine crude oil or toxic liquid to obtain a variety of chemical raw materials."
-  },
-  {
     "Name": "I钨矿",
     "ZHCN": "稀有矿物。也可以通过精炼钛石来少量获取。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "ENUS": "A rare mineral. It also can be obtained in small quantities by acid beneficiation of titanium ore. \n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
-    "Name": "I钛齿轮",
-    "ZHCN": "比起铁齿轮，具有更高的机械性能。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "It has higher mechanical properties than iron gears.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "I铜线圈",
@@ -2885,39 +2725,14 @@
     "ENUS": "The most basic electromagnetic components, very practical.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
-    "Name": "I石墨线圈",
-    "ZHCN": "在某些方面具有更优异的电磁学性能，是铜线圈的良好补充。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "It has superior electromagnetic properties in some aspects and is a good complement to copper coils.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
-    "Name": "I钨齿轮",
-    "ZHCN": "具有不可思议的机械性能，只是成本略高。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Has incredible mechanical properties, only slightly more costly.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
     "Name": "I煤焦油",
     "ZHCN": "重要的化工原料，可以通过多种方式获得。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "ENUS": "An important chemical raw material that can be obtained in a variety of ways.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
-    "Name": "I钛线圈",
-    "ZHCN": "具有不可思议的电磁学性能，只是成本略高。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Has incredible electromagnetic properties, only slightly higher cost.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
     "Name": "I放射性矿物",
-    "ZHCN": "由硅石提炼，具有微弱放射性的碎块。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Refined from silica, faintly radioactive fractions.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
-    "Name": "I发光铀碎块",
-    "ZHCN": "再次提炼后，矿石中的放射性已经高到向外放出肉眼可见的荧光。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "After refining again, the radioactivity in the ore has been so high that it emits a fluorescence visible to the naked eye outward. \n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
-    "Name": "I晶质钚碎块",
-    "ZHCN": "再次提炼后，呈水晶质地的碎块。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "After refining again, it has a crystal texture.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "具有微弱放射性的碎块。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Faintly radioactive fractions.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "I铀矿",
@@ -2942,7 +2757,7 @@
   {
     "Name": "铝矿脉",
     "ZHCN": "铝矿脉",
-    "ENUS": "Aluminum vein"
+    "ENUS": "Aluminum Veins"
   },
   {
     "Name": "铝矿",

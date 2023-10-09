@@ -24,6 +24,23 @@ namespace ProjectGenesis.Patches.UI
             return matcher.InstructionEnumeration();
         }
 
+        [HarmonyPatch(typeof(FactorySystem), "GameTick", typeof(long), typeof(bool))]
+        [HarmonyPatch(typeof(FactorySystem), "GameTick", typeof(long), typeof(bool), typeof(int), typeof(int), typeof(int))]
+        [HarmonyTranspiler]
+        public static IEnumerable<CodeInstruction> FactorySystem_GameTick_Transpiler(IEnumerable<CodeInstruction> instructions)
+        {
+            var matcher = new CodeMatcher(instructions);
+
+            matcher.MatchForward(true, new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(VeinData), nameof(VeinData.productId))),
+                                 new CodeMatch(OpCodes.Callvirt, AccessTools.Method(typeof(VeinProtoSet), nameof(VeinProtoSet.GetVeinTypeByItemId))),
+                                 new CodeMatch(OpCodes.Stloc_S));
+
+            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Call,
+                                                         AccessTools.Method(typeof(VeinColorPatches), nameof(EVeinTypeToAnimDataState))));
+
+            return matcher.InstructionEnumeration();
+        }
+
         [HarmonyPatch(typeof(UIPlanetDetail), "OnPlanetDataSet")]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> OnPlanetDataSet_ChangeVeinData_Transpiler(IEnumerable<CodeInstruction> instructions)
@@ -57,27 +74,47 @@ namespace ProjectGenesis.Patches.UI
         public static IEnumerable<CodeInstruction> OnStarDataSet_ChangeVeinData_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
             var matcher = new CodeMatcher(instructions);
-            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldc_I4_S, (sbyte)15), new CodeMatch(OpCodes.Blt));
+
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldc_I4_7), new CodeMatch(OpCodes.Bge));
 
             matcher.Advance(1)
-                //  .InsertAndAdvance(new CodeInstruction(OpCodes.Call,
-                 //                                        AccessTools.Method(typeof(VeinColorPatches),
-                 //                                                           nameof(OnStarDataSet_ChangeVeinData_IndexPatches))));
+                   .SetInstructionAndAdvance(new CodeInstruction(OpCodes.Call,
+                                                                 AccessTools.Method(typeof(VeinColorPatches),
+                                                                                    nameof(OnStarDataSet_ChangeVeinData_HighlightPatches))))
+                   .SetOpcodeAndAdvance(OpCodes.Brfalse);
 
-        //    matcher
-               .SetOperandAndAdvance(18);
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldc_I4_7), new CodeMatch(OpCodes.Clt));
 
-            
+            matcher.Advance(1)
+                   .SetInstructionAndAdvance(new CodeInstruction(OpCodes.Call,
+                                                                 AccessTools.Method(typeof(VeinColorPatches),
+                                                                                    nameof(OnStarDataSet_ChangeVeinData_HighlightPatches))))
+                   .SetOpcodeAndAdvance(OpCodes.Nop);
+
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldc_I4_S, (sbyte)15), new CodeMatch(OpCodes.Blt));
+
+            object index = matcher.Operand;
+
+            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_S, index),
+                                     new CodeInstruction(OpCodes.Call,
+                                                         AccessTools.Method(typeof(VeinColorPatches),
+                                                                            nameof(OnStarDataSet_ChangeVeinData_IndexPatches))),
+                                     new CodeInstruction(OpCodes.Stloc_S, index));
+
+            matcher.Advance(1).SetOperandAndAdvance(18);
+
             return matcher.InstructionEnumeration();
         }
+
+        public static bool OnStarDataSet_ChangeVeinData_HighlightPatches(int index) => index < 7 || index == 15;
 
         public static int OnStarDataSet_ChangeVeinData_IndexPatches(int index)
         {
             if (index == 7) return 15;
 
-            if (index == 18) return 7;
+            if (index == 16) return 7;
 
-            if (index == 15) return 18;
+            if (index == 15) return 16;
 
             return index;
         }
@@ -118,10 +155,10 @@ namespace ProjectGenesis.Patches.UI
 
         // update with preloader
 
-        public static uint EVeinTypeToAnimDataState(EVeinType type)
+        public static uint EVeinTypeToAnimDataState(byte type)
         {
-            if (type > EVeinType.Max)
-                switch ((byte)type)
+            if (type >= 15)
+                switch (type)
                 {
                     case 15:
                         return 12;
@@ -133,16 +170,16 @@ namespace ProjectGenesis.Patches.UI
                         return 6;
                 }
 
-            return (uint)type;
+            return type;
         }
 
         internal static void ModifyVeinData()
         {
-            RegisterNewVein(15, "铝矿", "I铝矿", "Assets/texpack/铝矿脉", 6202, 32);
+            RegisterNewVein(15, "铝矿脉", "I铝矿", "Assets/texpack/铝矿脉", 6202, 32);
 
-            RegisterNewVein(16, "放射性矿物", "I放射性矿物碎块", "Assets/texpack/放射晶体矿脉", 6222, 31, 4);
+            RegisterNewVein(16, "放射性矿脉", "I放射性矿物", "Assets/texpack/放射晶体矿脉", 6222, 31, 4);
 
-            RegisterNewVein(17, "钨矿", "I钨矿", "Assets/texpack/钨矿脉", 6201, 34);
+            RegisterNewVein(17, "钨矿脉", "I钨矿", "Assets/texpack/钨矿脉", 6201, 34);
 
             void RegisterNewVein(
                 int id,
