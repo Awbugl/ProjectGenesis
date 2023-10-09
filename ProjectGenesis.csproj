@@ -95,7 +95,6 @@
         </Reference>
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="src\Awards.cs" />
         <Compile Include="src\Compatibility\BlueprintTweaksCompatibilityPlugin.cs"/>
         <Compile Include="src\Compatibility\BottleneckCompatibilityPlugin.cs"/>
         <Compile Include="src\Compatibility\GalacticScaleCompatibilityPlugin.cs"/>

@@ -1,3 +1,23 @@
+- v2.8.0-alpha1 (Experimental 0.2.0)
+  + 恢复矿物`单极磁石`
+  + 添加新矿物`钨矿`、`放射性矿物`并调整了相应配方（影响存档）
+  + 添加新矿物`铝矿`并修改了大量配方以适应平衡矿物的需求（影响存档）
+  + 调整了裂变燃料的能量数值
+  + 调整了物品和配方在UI中的排序和位置
+  + 修复了部分文本未被正确替换的问题
+
+  + Restored the mineral `Unipolar Magnet`
+  + Added new mineral `Tungsten Ore`, `Radioactive ore` and adjusted recipes accordingly (affect save)
+  + Added new mineral `Aluminum Ore` and modified a number of recipes to accommodate new mineral (affect save)
+  + Adjusted energy value for fission fuel
+  + Adjusted the sorting and placement of items and recipes in selection UI.
+  + Fixed some text not being replaced correctly
+
+
+<details>
+  <summary>点击展开日志 | Click to view all </summary>
+
+
 - v2.7.1-beta1 (Experimental 0.1.7)
   + 移除配方`石墨烯（先进）`,`等离子精炼（高效）`,`有机液体离心`（影响存档）
   + 调整了部分星球的海洋类型（影响存档）
@@ -19,9 +39,6 @@
   + Fine-tuned the home planet's mineral generation algorithm so that minerals generated on the coast are no longer buried
   + Fixed some text not being replaced correctly
 
-
-<details>
-  <summary>点击展开日志 | Click to view all </summary>
 
 - Experimental 0.1.6
   + 调整了大气采集站的速度

@@ -2627,12 +2627,14 @@
       6502,
       6204,
       1202,
+      1124,
       1303
     ],
     "InCounts": [
       20,
       60,
       40,
+      20,
       2
     ],
     "Output": [
@@ -2923,9 +2925,11 @@
     "Time": 360,
     "Input": [
       1206,
+      1101,
       1121
     ],
     "InCounts": [
+      2,
       2,
       10
     ],
@@ -3501,7 +3505,7 @@
     "Description": "R水电解",
     "IconPath": "Assets/texpack/电解水",
     "Type": 2,
-    "GridIndex": 4217,
+    "GridIndex": 4317,
     "Time": 120,
     "Input": [
       1000
@@ -3885,7 +3889,7 @@
     "Description": "R氨氧化",
     "IconPath": "Assets/texpack/氨氧制硝酸",
     "Type": 2,
-    "GridIndex": 4213,
+    "GridIndex": 4313,
     "Time": 120,
     "Input": [
       7002,

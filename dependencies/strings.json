@@ -375,6 +375,26 @@
     "ENUS": "Radioactive Veins"
   },
   {
+    "Name": "氢氯酸海洋",
+    "ZHCN": "氢氯酸海洋",
+    "ENUS": "Hydrochloric acid ocean"
+  },
+  {
+    "Name": "硝酸海洋",
+    "ZHCN": "硝酸海洋",
+    "ENUS": "Nitric acid ocean"
+  },
+  {
+    "Name": "氨海洋",
+    "ZHCN": "氨海洋",
+    "ENUS": "Ammonia ocean"
+  },
+  {
+    "Name": "淡水海洋",
+    "ZHCN": "淡水海洋",
+    "ENUS": "Freshwater ocean"
+  },
+  {
     "Name": "裂变能",
     "ZHCN": "裂变能",
     "ENUS": "Fission Energy"
