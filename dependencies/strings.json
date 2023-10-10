@@ -11,8 +11,13 @@
   },
   {
     "Name": "DSPBattleInstalled",
-    "ZHCN": "检测到您已安装深空来敌mod，与创世之书存在冲突。已取消加载创世之书mod。",
-    "ENUS": "They Come From Void is installed, GenesisBook is incompatible with it. GenesisBook mod is disabled."
+    "ZHCN": "检测到您已安装深空来敌mod，与创世之书存在冲突，因此已取消加载创世之书mod。",
+    "ENUS": "We have detected that you have installed the They Come From Void mod, which is incompatible with GenesisBook, and have unloaded the GenesisBook mod."
+  },
+  {
+    "Name": "GalacticScaleInstalled",
+    "ZHCN": "检测到您已安装GalacticScale mod，与创世之书2.8.0及以上版本的矿物生成算法的存在冲突，因此已取消加载创世之书mod。",
+    "ENUS": "We have detected that you have installed the GalacticScale mod, which is in conflict with GenesisBook 2.8.0 and above, and have unloaded the GenesisBook mod."
   },
   {
     "Name": "GenesisBookLoadMessage",
@@ -600,44 +605,34 @@
     "ENUS": "A colorless odorless gas, toxic, can be used as raw materials for organic synthesis.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
-    "Name": "硝基柴油",
-    "ZHCN": "硝基柴油",
-    "ENUS": "Nitro diesel oil"
+    "Name": "四氢双环戊二烯",
+    "ZHCN": "四氢双环戊二烯(JP-10)",
+    "ENUS": "Tetrahydrocyclopentadiene(JP-10)"
   },
   {
-    "Name": "I硝基柴油",
-    "ZHCN": "经过硝化反应的柴油，具有更高的能量密度。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Diesel oil after nitration reaction, with higher energy density.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "Name": "I四氢双环戊二烯",
+    "ZHCN": "代表性饱和多环碳氢化合物，广泛应用于航空航天领域。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Representative saturated polycyclic hydrocarbons, widely used in aerospace applications.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
-    "Name": "偏二甲肼",
-    "ZHCN": "偏二甲肼",
-    "ENUS": "Unsymmetrical dimethylhydrazine"
+    "Name": "四氢双环戊二烯燃料棒",
+    "ZHCN": "四氢双环戊二烯燃料棒",
+    "ENUS": "JP-10 fuel rod"
   },
   {
-    "Name": "I偏二甲肼",
-    "ZHCN": "高比冲液体燃料。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A high ratio of liquid fuel.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "Name": "I四氢双环戊二烯燃料棒",
+    "ZHCN": "将四氢双环戊二烯封装在燃料棒中，提高利用率和燃烧效率。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Encapsulation of JP-10 in fuel rods, to improve utilization and combustion efficiency.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
-    "Name": "硝基柴油燃料棒",
-    "ZHCN": "硝基柴油燃料棒",
-    "ENUS": "Nitro diesel oil fuel rod"
+    "Name": "煤油燃料棒",
+    "ZHCN": "煤油燃料棒",
+    "ENUS": "Kerosene fuel rod"
   },
   {
-    "Name": "I硝基柴油燃料棒",
-    "ZHCN": "将硝基柴油封装在燃料棒中，提高利用率和燃烧效率。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Encapsulation of nitro-diesel in fuel rods, to improve utilization and combustion efficiency.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
-    "Name": "偏二甲肼燃料棒",
-    "ZHCN": "偏二甲肼燃料棒",
-    "ENUS": "Unsymmetrical dimethylhydrazine fuel rod"
-  },
-  {
-    "Name": "I偏二甲肼燃料棒",
-    "ZHCN": "将偏二甲肼封装在燃料棒中，提高利用率和燃烧效率。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Encapsulation of unsymmetrical dimethylhydrazine in fuel rods, to improve utilization and combustion efficiency.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "Name": "I煤油燃料棒",
+    "ZHCN": "随着精炼技术的发展，将石油分馏后得到的高品质煤油封装在燃料棒中，提高利用率和燃烧效率。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "With the development of refining technology, high-quality kerosene obtained from petroleum fractionation is encapsulated in fuel rods to improve utilization and combustion efficiency.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "放射性矿物",

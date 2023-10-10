@@ -68,9 +68,15 @@ namespace ProjectGenesis
 
             configFile = Config;
 
-            if (IncompatibleCheckPlugin.DSPBattleInstalled)
+            if (DSPBattleCompatibilityPlugin.DSPBattleInstalled)
             {
                 logger.Log(LogLevel.Error, "They Come From Void is installed, which is incompatible with GenesisBook. Load Cancelled.");
+                return;
+            }
+            
+            if (GalacticScaleCompatibilityPlugin.GalacticScaleInstalled)
+            {
+                logger.Log(LogLevel.Error, "GalacticScale is installed, which is incompatible with GenesisBook. Load Cancelled.");
                 return;
             }
 
@@ -189,7 +195,7 @@ namespace ProjectGenesis
             @base.MiningChance = new float[] { 1, 1, 1 };
             @base.Preload();
 
-            ref StringProtoSet locstrs = ref AccessTools.StaticFieldRefAccess<StringProtoSet>(AccessTools.Field(typeof(Localization), "_strings"))();
+            ref StringProtoSet locstrs = ref AccessTools.StaticFieldRefAccess<StringProtoSet>(typeof(Localization), "_strings");
             locstrs = LDB.strings;
 
             foreach (VeinProto proto in LDB.veins.dataArray)

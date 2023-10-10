@@ -97,9 +97,11 @@
     <ItemGroup>
         <Compile Include="src\Compatibility\BlueprintTweaksCompatibilityPlugin.cs"/>
         <Compile Include="src\Compatibility\BottleneckCompatibilityPlugin.cs"/>
+        <Compile Include="src\Compatibility\DSPBattleCompatibilityPlugin.cs" />
         <Compile Include="src\Compatibility\GalacticScaleCompatibilityPlugin.cs"/>
         <Compile Include="src\Compatibility\IncompatibleCheckPlugin.cs"/>
         <Compile Include="src\Compatibility\MoreMegaStructureCompatibilityPlugin.cs"/>
+        <Compile Include="src\Compatibility\PlanetVeinUtilizationCompatibilityPlugin.cs" />
         <Compile Include="src\Compatibility\PlanetwideMiningCompatibilityPlugin.cs"/>
         <Compile Include="src\Patches\Logic\DisableLDBToolCachePatches.cs"/>
         <Compile Include="src\Patches\Logic\FastTravelPatches.cs"/>

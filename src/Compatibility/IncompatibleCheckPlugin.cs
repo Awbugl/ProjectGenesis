@@ -18,29 +18,24 @@ namespace ProjectGenesis.Compatibility
     // ReSharper disable MemberCanBePrivate.Global
     // ReSharper disable ClassNeverInstantiated.Global
     [BepInPlugin(MODGUID, MODNAME, VERSION)]
-    [BepInDependency(DSPBattleGUID, BepInDependency.DependencyFlags.SoftDependency)]
+    [BepInDependency(DSPBattleCompatibilityPlugin.MODGUID, BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency(BlueprintTweaksCompatibilityPlugin.MODGUID, BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency(BottleneckCompatibilityPlugin.MODGUID, BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency(MoreMegaStructureCompatibilityPlugin.MODGUID, BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency(GalacticScaleCompatibilityPlugin.MODGUID, BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency(PlanetwideMiningCompatibilityPlugin.MODGUID, BepInDependency.DependencyFlags.SoftDependency)]
+    [BepInDependency(PlanetVeinUtilizationCompatibilityPlugin.MODGUID, BepInDependency.DependencyFlags.SoftDependency)]
     public class IncompatibleCheckPlugin : BaseUnityPlugin
     {
         public const string MODGUID = "org.LoShin.GenesisBook.Compatibility.Check";
         public const string MODNAME = "GenesisBook.Compatibility.Check";
         public const string VERSION = "1.0.0";
 
-        private const string DSPBattleGUID = "com.ckcz123.DSP_Battle";
-
-        internal static bool DSPBattleInstalled;
-
         private static bool _shown;
 
         public void Awake()
         {
             BepInEx.Logging.Logger.Listeners.Add(new HarmonyLogListener());
-
-            DSPBattleInstalled = Chainloader.PluginInfos.TryGetValue(DSPBattleGUID, out _);
 
             new Harmony(MODGUID).Patch(AccessTools.Method(typeof(VFPreload), "InvokeOnLoadWorkEnded"), null,
                                        new HarmonyMethod(typeof(IncompatibleCheckPlugin), nameof(OnMainMenuOpen)) { priority = Priority.Last });
@@ -55,8 +50,9 @@ namespace ProjectGenesis.Compatibility
 
             var sb = new StringBuilder();
 
-            if (DSPBattleInstalled) sb.AppendLine("DSPBattleInstalled".TranslateFromJson());
-
+            if (DSPBattleCompatibilityPlugin.DSPBattleInstalled) sb.AppendLine("DSPBattleInstalled".TranslateFromJson());
+            if (GalacticScaleCompatibilityPlugin.GalacticScaleInstalled) sb.AppendLine("GalacticScaleInstalled".TranslateFromJson());
+            
             sb.AppendLine("GenesisBookLoadMessage".TranslateFromJson());
 
             UIMessageBox.Show("GenesisBookLoadTitle".TranslateFromJson(), sb.ToString(), "确定".TranslateFromJson(), "跳转交流群".TranslateFromJson(),

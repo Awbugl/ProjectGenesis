@@ -237,7 +237,8 @@
     ],
     "HashNeeded": 72000,
     "UnlockRecipes": [
-      58
+      58,
+      501
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -3128,7 +3129,7 @@
       2203
     ],
     "AddItemCounts": [
-      2
+      4
     ],
     "PropertyOverrideItems": [],
     "PropertyItemCounts": []
@@ -8482,7 +8483,7 @@
       2301
     ],
     "AddItemCounts": [
-      2
+      4
     ],
     "PropertyOverrideItems": [],
     "PropertyItemCounts": []
@@ -9006,8 +9007,7 @@
     "HashNeeded": 72000,
     "UnlockRecipes": [
       509,
-      512,
-      513
+      512
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -9584,8 +9584,7 @@
     ],
     "HashNeeded": 72000,
     "UnlockRecipes": [
-      515,
-      516
+      515
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -9729,7 +9728,7 @@
     "UnlockRecipes": [
       712,
       713,
-      501
+      516
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
