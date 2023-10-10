@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using ProjectGenesis.Compatibility;
 
 // ReSharper disable MemberCanBePrivate.Global
 
@@ -122,37 +121,6 @@ namespace ProjectGenesis.Utils
                 AdjustVeins(theme);
 
                 if (theme.WaterItemId == 1000) theme.WaterItemId = 7018;
-
-                // for GalacticScale mod
-                if (GalacticScaleCompatibilityPlugin.GalacticScaleInstalled)
-                {
-                    if (theme.name == "OceanicJungle") theme.WaterItemId = 1000;
-
-                    if (theme.name.StartsWith("IceGelisol")) theme.WaterItemId = 7002;
-
-                    if (theme.name == "SaltLake")
-                    {
-                        theme.WaterItemId = 7014;
-                        theme.WaterHeight = -0.1f;
-                        theme.Algos = new[] { 3 };
-                        theme.oceanMat = LDB.themes.Select(8).oceanMat;
-                        RemoveVein(theme, 0);
-                        RemoveVein(theme, 3);
-                        RemoveVein(theme, 14);
-                    }
-
-                    if (theme.name == "Gobi")
-                    {
-                        theme.WaterItemId = 7017;
-                        theme.WaterHeight = -0.1f;
-                        theme.oceanMat = LDB.themes.Select(22).oceanMat;
-                        RemoveVein(theme, 0);
-                        RemoveVein(theme, 1);
-                        RemoveVein(theme, 2);
-                        RemoveVein(theme, 3);
-                        RemoveVein(theme, 14);
-                    }
-                }
             }
 
             void GasGiantAdjust()
