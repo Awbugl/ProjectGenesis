@@ -580,7 +580,7 @@
     "PropertyItemCounts": []
   },
   {
-    "ID": 1123,
+    "ID": 1837,
     "Name": "T先驱者遗物",
     "IconPath": "Icons/Tech/1303",
     "Desc": "T先驱者遗物描述",
@@ -1070,7 +1070,7 @@
     ],
     "PreTechs": [
       1134,
-      1123,
+      1837,
       1145
     ],
     "PreTechsImplicit": [],
@@ -1804,11 +1804,11 @@
     "Desc": "晶体冶炼描述",
     "Conclusion": "晶体冶炼结果",
     "Position": [
-      13.0,
+      17.0,
       -3.0
     ],
     "PreTechs": [
-      1402
+      1829
     ],
     "PreTechsImplicit": [],
     "Items": [
@@ -1971,13 +1971,15 @@
     "Desc": "高强度钛合金描述",
     "Conclusion": "高强度钛合金结果",
     "Position": [
-      17.0,
+      13.0,
       -11.0
     ],
     "PreTechs": [
+      1402
+    ],
+    "PreTechsImplicit": [
       1829
     ],
-    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002
@@ -1988,7 +1990,48 @@
     ],
     "HashNeeded": 144000,
     "UnlockRecipes": [
-      66,
+      66
+    ],
+    "UnlockFunctions": [],
+    "UnlockValues": [],
+    "Published": true,
+    "Level": 0,
+    "MaxLevel": 0,
+    "LevelCoef1": 0,
+    "LevelCoef2": 0,
+    "IsLabTech": true,
+    "PreTechsMax": false,
+    "AddItems": [],
+    "AddItemCounts": [],
+    "PropertyOverrideItems": [],
+    "PropertyItemCounts": []
+  },
+  {
+    "ID": 1123,
+    "Name": "T高强度晶体",
+    "IconPath": "Icons/Tech/1123",
+    "Desc": "高强度晶体描述",
+    "Conclusion": "高强度晶体结果",
+    "Position": [
+      17.0,
+      -11.0
+    ],
+    "PreTechs": [
+      1414
+    ],
+    "PreTechsImplicit": [
+      1830
+    ],
+    "Items": [
+      6001,
+      6002
+    ],
+    "ItemPoints": [
+      20,
+      20
+    ],
+    "HashNeeded": 108000,
+    "UnlockRecipes": [
       714,
       709
     ],
@@ -3348,7 +3391,7 @@
     ],
     "PreTechs": [
       1134,
-      1123
+      1837
     ],
     "PreTechsImplicit": [],
     "Items": [
@@ -9503,7 +9546,7 @@
     "Conclusion": "T矿物处理描述",
     "Position": [
       13.0,
-      -11.0
+      -3.0
     ],
     "PreTechs": [
       1402
