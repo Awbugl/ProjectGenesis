@@ -5,7 +5,7 @@ using System.Reflection.Emit;
 using HarmonyLib;
 using ProjectGenesis.Utils;
 
-namespace ProjectGenesis.Patches.UI.DisplayTextPatches
+namespace ProjectGenesis.Patches.UI.DisplayText
 {
     /// <summary>
     ///     special thanks for

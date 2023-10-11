@@ -16,7 +16,7 @@ using ProjectGenesis.Patches.Logic.PlanetFocus;
 using ProjectGenesis.Patches.UI.UIPlanetFocus;
 using ProjectGenesis.Utils;
 using xiaoye97;
-using static ProjectGenesis.Patches.UI.AddVeinPatches;
+using static ProjectGenesis.Patches.Logic.AddVein.AddVeinPatches;
 using ERecipeType_1 = ERecipeType;
 using static ProjectGenesis.Utils.PrefabFixUtils;
 using static ProjectGenesis.Utils.JsonDataUtils;

@@ -6,7 +6,7 @@ using Utils_ERecipeType = ProjectGenesis.Utils.ERecipeType;
 
 // ReSharper disable InconsistentNaming
 
-namespace ProjectGenesis.Patches.UI.DisplayTextPatches
+namespace ProjectGenesis.Patches.UI.DisplayText
 {
     internal static class DisplayTextPatches
     {
