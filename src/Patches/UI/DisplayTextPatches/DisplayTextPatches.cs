@@ -18,6 +18,18 @@ namespace ProjectGenesis.Patches.UI.DisplayTextPatches
 
             switch (type)
             {
+                case Utils_ERecipeType.Chemical:
+                    __result = "化工厂".Translate();
+                    break;
+
+                case Utils_ERecipeType.Refine:
+                    __result = "原油精炼厂".TranslateFromJson();
+                    break;
+
+                case Utils_ERecipeType.Assemble:
+                    __result = "基础制造台".TranslateFromJson();
+                    break;
+
                 case Utils_ERecipeType.标准制造:
                     __result = "标准制造单元".TranslateFromJson();
                     break;

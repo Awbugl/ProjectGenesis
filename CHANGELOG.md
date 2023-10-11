@@ -1,15 +1,24 @@
 - v2.8.0-alpha2 (Experimental 0.2.2)
-  + 重新设计了化学能燃料及对应配方
+  + 重新设计了化学能燃料及对应配方（影响存档）
+  + 重新设计了`处理器`及对应配方（影响存档）
+  + 重新设计了`湿件主机`对应配方（影响存档）
+  + 重新设计了`标准制造单元`的制造需求和可制造的配方类型（影响存档）
   + 调整了开局物资的数量
+  + 调整了部分科技
   + 调整了部分物品的图标
   + 添加与 `Planet Vein Utilization` mod的兼容补丁
   + 添加与 `GalacticScale` mod的不兼容提示
 
-  + Redesigned chemical energy fuels and their recipes
+  + Redesigned chemical energy fuels and their recipes (affect save)
+  + Redesigned `Processor` and their recipes (affect save)
+  + Redesigned `Biological computer` and their recipes (affect save)
+  + Redesigned `Standard Assembler` requirements and the types of recipes that can be made (affect save)
   + Adjusted the amount of supplies at the start of the game
+  + Adjusted some teches
   + Adjusted the icons for some items
   + Added patch for compatibility with the `Planet Vein Utilization` mod
   + Added an incompatibility tip for the `GalacticScale` mod
+
 
 <details>
   <summary>点击展开日志 | Click to view all </summary>
@@ -49,7 +58,8 @@
   + Adjusted special stacking logic for `Graphene (advanced)` recipe
   + Adjusted the pose of the mega pumping machine
   + Adjusted fissile fuel synthesis requirements (affect save)
-  + Fine-tuned the home planet's mineral generation algorithm so that minerals generated on the coast are no longer buried
+  + Fine-tuned the home planet's mineral generation algorithm so that minerals generated on the coast are no longer
+    buried
   + Fixed some text not being replaced correctly
 
 

@@ -92,7 +92,7 @@
       2
     ],
     "Explicit": false,
-    "Handcraft": true,
+    "Handcraft": false,
     "NonProductive": false
   },
   {
@@ -768,7 +768,7 @@
       1
     ],
     "Explicit": false,
-    "Handcraft": true,
+    "Handcraft": false,
     "NonProductive": false
   },
   {
@@ -822,7 +822,7 @@
       1
     ],
     "Explicit": false,
-    "Handcraft": true,
+    "Handcraft": false,
     "NonProductive": false
   },
   {
@@ -1108,7 +1108,7 @@
       1
     ],
     "Explicit": false,
-    "Handcraft": true,
+    "Handcraft": false,
     "NonProductive": false
   },
   {
@@ -1388,7 +1388,7 @@
       1
     ],
     "Explicit": false,
-    "Handcraft": true,
+    "Handcraft": false,
     "NonProductive": false
   },
   {
@@ -1836,7 +1836,7 @@
       1
     ],
     "Explicit": false,
-    "Handcraft": true,
+    "Handcraft": false,
     "NonProductive": false
   },
   {
@@ -2228,7 +2228,7 @@
       1
     ],
     "Explicit": false,
-    "Handcraft": true,
+    "Handcraft": false,
     "NonProductive": false
   },
   {
@@ -2254,7 +2254,7 @@
       1
     ],
     "Explicit": false,
-    "Handcraft": true,
+    "Handcraft": false,
     "NonProductive": false
   },
   {
@@ -2740,7 +2740,7 @@
       1
     ],
     "Explicit": false,
-    "Handcraft": true,
+    "Handcraft": false,
     "NonProductive": false
   },
   {
@@ -2848,7 +2848,7 @@
       1
     ],
     "Explicit": false,
-    "Handcraft": true,
+    "Handcraft": false,
     "NonProductive": false
   },
   {
@@ -4372,7 +4372,7 @@
       1
     ],
     "Explicit": false,
-    "Handcraft": true,
+    "Handcraft": false,
     "NonProductive": false
   },
   {
@@ -4765,7 +4765,7 @@
       1303
     ],
     "OutCounts": [
-      2
+      4
     ],
     "Explicit": true,
     "Handcraft": false,
