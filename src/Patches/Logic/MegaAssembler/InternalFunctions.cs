@@ -85,8 +85,8 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
                 case Utils.ERecipeType.所有熔炉:
                     return type == Utils.ERecipeType.Smelt || type == Utils.ERecipeType.矿物处理;
 
-                case Utils.ERecipeType.所有高精:
-                    return type == Utils.ERecipeType.高精度加工 || type == Utils.ERecipeType.电路蚀刻;
+                case Utils.ERecipeType.所有制造:
+                    return type == Utils.ERecipeType.Assemble || type == Utils.ERecipeType.标准制造;
 
                 default:
                     return filter == recipetype;

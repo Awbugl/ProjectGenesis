@@ -11,7 +11,7 @@ namespace ProjectGenesis.Utils
         Exchange = 6,
         PhotonStore = 7,
         Fractionate = 8,
-        电路蚀刻 = 9,
+        标准制造 = 9,
         高精度加工 = 10,
         矿物处理 = 11,
         精密组装 = 12,
@@ -20,7 +20,7 @@ namespace ProjectGenesis.Utils
         Research = 15,
         高分子化工 = 16,
         所有化工 = 17, // 2 + 3 + 16 
-        所有高精 = 18, // 9 + 10
+        所有制造 = 18, // 4 + 9
         所有熔炉 = 19  // 1 + 11
     }
 }

@@ -48,7 +48,7 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
             ref RecipeProto[] ___protoArray)
         {
             var filter = (Utils.ERecipeType)___filter;
-            if (filter != Utils.ERecipeType.所有化工 && filter != Utils.ERecipeType.所有熔炉 && filter != Utils.ERecipeType.所有高精) return;
+            if (filter != Utils.ERecipeType.所有化工 && filter != Utils.ERecipeType.所有熔炉 && filter != Utils.ERecipeType.所有制造) return;
 
             Array.Clear(___indexArray, 0, ___indexArray.Length);
             Array.Clear(___protoArray, 0, ___protoArray.Length);

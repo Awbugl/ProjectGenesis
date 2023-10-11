@@ -1355,10 +1355,10 @@
   },
   {
     "ID": 1202,
-    "Name": "T电路蚀刻技术",
+    "Name": "T标准制造单元",
     "IconPath": "Icons/Tech/1202",
-    "Desc": "T电路蚀刻技术描述",
-    "Conclusion": "T电路蚀刻技术结果",
+    "Desc": "T标准制造单元描述",
+    "Conclusion": "T标准制造单元描述",
     "Position": [
       21.0,
       17.0
@@ -1399,7 +1399,7 @@
     "Name": "T高精度加工技术",
     "IconPath": "Icons/Tech/1203",
     "Desc": "T高精度加工技术描述",
-    "Conclusion": "T高精度加工技术结果",
+    "Conclusion": "T高精度加工技术描述",
     "Position": [
       25.0,
       17.0
@@ -2471,8 +2471,7 @@
     "HashNeeded": 36000000,
     "UnlockRecipes": [],
     "UnlockFunctions": [
-      99,
-      100
+      99
     ],
     "UnlockValues": [
       1.0
@@ -3194,7 +3193,8 @@
     ],
     "HashNeeded": 288000,
     "UnlockRecipes": [
-      99
+      99,
+      100
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -8644,6 +8644,7 @@
     "HashNeeded": 288000,
     "UnlockRecipes": [
       754,
+      793,
       519
     ],
     "UnlockFunctions": [],
@@ -8807,8 +8808,7 @@
       20
     ],
     "HashNeeded": 576000,
-    "UnlockRecipes": [
-      793,
+    "UnlockRecipes": [     
       569
     ],
     "UnlockFunctions": [],
@@ -8946,9 +8946,7 @@
     ],
     "HashNeeded": 36000,
     "UnlockRecipes": [
-      401,
-      404,
-      405
+      401
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],

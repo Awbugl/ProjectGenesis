@@ -77,7 +77,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 1,
-    "GridIndex": 1609,
+    "GridIndex": 1205,
     "Time": 120,
     "Input": [
       1005
@@ -259,6 +259,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
+    "GridIndex": 1305,
     "Time": 120,
     "Input": [
       1110
@@ -272,8 +273,6 @@
     "OutCounts": [
       2
     ],
-    "PreTech": 1101,
-    "GridIndex": 1307,
     "Explicit": false,
     "Handcraft": true,
     "NonProductive": false
@@ -294,7 +293,7 @@
     "InCounts": [
       40,
       20,
-      10
+      2
     ],
     "Output": [
       6274
@@ -312,7 +311,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 1308,
+    "GridIndex": 1306,
     "Time": 120,
     "Input": [
       1111,
@@ -527,7 +526,7 @@
     "Name": "推进器",
     "Description": "",
     "IconPath": "",
-    "Type": 4,
+    "Type": 9,
     "GridIndex": 1211,
     "Time": 120,
     "Input": [
@@ -553,7 +552,7 @@
     "Name": "加力推进器",
     "Description": "",
     "IconPath": "",
-    "Type": 4,
+    "Type": 9,
     "GridIndex": 1212,
     "Time": 240,
     "Input": [
@@ -749,8 +748,8 @@
     "Name": "卡西米尔晶体",
     "Description": "",
     "IconPath": "",
-    "Type": 4,
-    "GridIndex": 1407,
+    "Type": 9,
+    "GridIndex": 1409,
     "Time": 240,
     "Input": [
       1118,
@@ -777,9 +776,8 @@
     "Name": "卡西米尔晶体（高效）",
     "Description": "R卡西米尔晶体（高效）",
     "IconPath": "Icons/ItemRecipe/casimir-crystal-lv2",
-    "Type": 4,
-    "GridIndex": 1507,
-    "PreTech": 1125,
+    "Type": 9,
+    "GridIndex": 1509,
     "Time": 240,
     "Input": [
       1014,
@@ -806,7 +804,7 @@
     "Name": "钛化玻璃",
     "Description": "",
     "IconPath": "",
-    "Type": 4,
+    "Type": 9,
     "GridIndex": 1502,
     "Time": 240,
     "Input": [
@@ -833,7 +831,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 2,
-    "GridIndex": 1404,
+    "GridIndex": 1406,
     "Time": 120,
     "Input": [
       1109,
@@ -859,7 +857,7 @@
     "Description": "R石墨烯（高效）",
     "IconPath": "Icons/ItemRecipe/graphene-lv2",
     "Type": 2,
-    "GridIndex": 1504,
+    "GridIndex": 1506,
     "Time": 120,
     "Input": [
       1011
@@ -885,7 +883,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 2,
-    "GridIndex": 1405,
+    "GridIndex": 1407,
     "Time": 120,
     "Input": [
       1123
@@ -935,7 +933,7 @@
     "Description": "R碳纳米管（高效）",
     "IconPath": "Icons/ItemRecipe/nanotube-lv2",
     "Type": 2,
-    "GridIndex": 1505,
+    "GridIndex": 1507,
     "Time": 120,
     "Input": [
       1015
@@ -958,8 +956,8 @@
     "Name": "粒子宽带",
     "Description": "",
     "IconPath": "",
-    "Type": 10,
-    "GridIndex": 5108,
+    "Type": 9,
+    "GridIndex": 1609,
     "Time": 240,
     "Input": [
       1124,
@@ -987,7 +985,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 1,
-    "GridIndex": 1206,
+    "GridIndex": 1405,
     "Time": 120,
     "Input": [
       1105
@@ -1203,7 +1201,7 @@
   },
   {
     "ID": 45,
-    "Name": "制造台",
+    "Name": "基础制造台",
     "Description": "",
     "IconPath": "",
     "Type": 4,
@@ -1223,7 +1221,7 @@
       2303
     ],
     "OutCounts": [
-      2
+      1
     ],
     "Explicit": false,
     "Handcraft": true,
@@ -1231,21 +1229,21 @@
   },
   {
     "ID": 46,
-    "Name": "电路蚀刻机",
+    "Name": "标准制造单元",
     "Description": "",
     "IconPath": "",
     "Type": 4,
     "GridIndex": 2402,
-    "Time": 120,
+    "Time": 240,
     "Input": [
       6501,
-      1110,
-      1301
+      2012,
+      1123
     ],
     "InCounts": [
-      1,
-      1,
-      1
+      4,
+      4,
+      4
     ],
     "Output": [
       2304
@@ -1262,7 +1260,7 @@
     "Name": "高精度装配线",
     "Description": "",
     "IconPath": "",
-    "Type": 4,
+    "Type": 9,
     "GridIndex": 2403,
     "Time": 360,
     "Input": [
@@ -1372,8 +1370,8 @@
     "Name": "处理器",
     "Description": "",
     "IconPath": "",
-    "Type": 4,
-    "GridIndex": 5402,
+    "Type": 9,
+    "GridIndex": 1412,
     "Time": 120,
     "Input": [
       1302,
@@ -1399,7 +1397,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 10,
-    "GridIndex": 5403,
+    "GridIndex": 1610,
     "Time": 240,
     "Input": [
       1303,
@@ -1425,7 +1423,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 5401,
+    "GridIndex": 1304,
     "Time": 120,
     "Input": [
       1105,
@@ -1617,7 +1615,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 1,
-    "GridIndex": 1205,
+    "GridIndex": 1404,
     "Time": 120,
     "Input": [
       1109
@@ -1641,7 +1639,7 @@
     "Description": "R金刚石（高效）",
     "IconPath": "Icons/ItemRecipe/diamond-lv2",
     "Type": 1,
-    "GridIndex": 1305,
+    "GridIndex": 1504,
     "Time": 120,
     "Input": [
       1012
@@ -1665,7 +1663,7 @@
     "Description": "R晶格硅（高效）",
     "IconPath": "Icons/ItemRecipe/silicium-high-purity-lv2",
     "Type": 1,
-    "GridIndex": 1306,
+    "GridIndex": 1505,
     "Time": 120,
     "Input": [
       1013
@@ -1817,7 +1815,11 @@
   },
   {
     "ID": 68,
+    "Name": "光子合并器",
+    "Description": "",
+    "IconPath": "",
     "Type": 4,
+    "GridIndex": 1410,
     "Time": 180,
     "Input": [
       1111,
@@ -1833,18 +1835,17 @@
     "OutCounts": [
       1
     ],
-    "Description": "",
-    "PreTech": 1502,
-    "GridIndex": 1408,
-    "Name": "光子合并器",
-    "IconPath": "",
     "Explicit": false,
     "Handcraft": true,
     "NonProductive": false
   },
   {
     "ID": 69,
+    "Name": "光子合并器（高效）",
+    "Description": "R光子合并器（高效）",
+    "IconPath": "Icons/ItemRecipe/photo-shifter-lv2",
     "Type": 4,
+    "GridIndex": 1510,
     "Time": 180,
     "Input": [
       1014,
@@ -1860,11 +1861,6 @@
     "OutCounts": [
       1
     ],
-    "Description": "R光子合并器（高效）",
-    "PreTech": 1502,
-    "GridIndex": 1508,
-    "Name": "光子合并器（高效）",
-    "IconPath": "Icons/ItemRecipe/photo-shifter-lv2",
     "Explicit": true,
     "Handcraft": false,
     "NonProductive": false
@@ -1938,7 +1934,7 @@
     "Name": "太阳帆",
     "Description": "",
     "IconPath": "",
-    "Type": 10,
+    "Type": 9,
     "GridIndex": 1710,
     "Time": 120,
     "Input": [
@@ -2057,7 +2053,7 @@
     "Description": "R光子物质化",
     "IconPath": "Icons/ItemRecipe/photon-formula",
     "Type": 5,
-    "GridIndex": 1411,
+    "GridIndex": 1414,
     "Time": 120,
     "Input": [
       1208
@@ -2136,7 +2132,7 @@
     "Name": "能量枢纽",
     "Description": "",
     "IconPath": "",
-    "Type": 4,
+    "Type": 9,
     "GridIndex": 2310,
     "Time": 360,
     "Input": [
@@ -2164,8 +2160,8 @@
     "Name": "空间翘曲器",
     "Description": "",
     "IconPath": "",
-    "Type": 4,
-    "GridIndex": 1410,
+    "Type": 9,
+    "GridIndex": 1413,
     "Time": 600,
     "Input": [
       1209
@@ -2188,8 +2184,8 @@
     "Name": "空间翘曲器（高级）",
     "Description": "R空间翘曲器（高级）",
     "IconPath": "Icons/ItemRecipe/space-warper-lv2",
-    "Type": 4,
-    "GridIndex": 1510,
+    "Type": 9,
+    "GridIndex": 1513,
     "Time": 600,
     "Input": [
       6005
@@ -2212,7 +2208,7 @@
     "Name": "框架材料",
     "Description": "",
     "IconPath": "",
-    "Type": 4,
+    "Type": 9,
     "GridIndex": 1711,
     "Time": 240,
     "Input": [
@@ -2240,7 +2236,7 @@
     "Name": "戴森球组件",
     "Description": "",
     "IconPath": "",
-    "Type": 4,
+    "Type": 9,
     "GridIndex": 1712,
     "Time": 360,
     "Input": [
@@ -2558,7 +2554,7 @@
     "Name": "物流运输站",
     "Description": "",
     "IconPath": "",
-    "Type": 4,
+    "Type": 9,
     "GridIndex": 2211,
     "Time": 900,
     "Input": [
@@ -2588,7 +2584,7 @@
     "Name": "物流运输机",
     "Description": "",
     "IconPath": "",
-    "Type": 4,
+    "Type": 9,
     "GridIndex": 1311,
     "Time": 600,
     "Input": [
@@ -2614,7 +2610,7 @@
     "Name": "星际物流运输站",
     "Description": "",
     "IconPath": "",
-    "Type": 4,
+    "Type": 9,
     "GridIndex": 2212,
     "Time": 1800,
     "Input": [
@@ -2646,7 +2642,7 @@
     "Name": "星际物流运输船",
     "Description": "",
     "IconPath": "",
-    "Type": 4,
+    "Type": 9,
     "GridIndex": 1312,
     "Time": 900,
     "Input": [
@@ -2721,7 +2717,11 @@
   },
   {
     "ID": 99,
-    "Type": 4,
+    "Name": "粒子容器",
+    "Description": "",
+    "IconPath": "",
+    "Type": 9,
+    "GridIndex": 1411,
     "Time": 240,
     "Input": [
       1204,
@@ -2739,18 +2739,17 @@
     "OutCounts": [
       1
     ],
-    "Description": "",
-    "PreTech": 1703,
-    "GridIndex": 1409,
-    "Name": "粒子容器",
-    "IconPath": "",
     "Explicit": false,
     "Handcraft": true,
     "NonProductive": false
   },
   {
     "ID": 100,
-    "Type": 4,
+    "Name": "粒子容器（高效）",
+    "Description": "R粒子容器（高效）",
+    "IconPath": "Icons/ItemRecipe/partical-capacitor-lv2",
+    "Type": 9,
+    "GridIndex": 1511,
     "Time": 240,
     "Input": [
       1016,
@@ -2766,11 +2765,6 @@
     "OutCounts": [
       1
     ],
-    "Description": "R粒子容器（高效）",
-    "PreTech": 1703,
-    "GridIndex": 1509,
-    "Name": "粒子容器（高效）",
-    "IconPath": "Icons/ItemRecipe/partical-capacitor-lv2",
     "Explicit": true,
     "Handcraft": false,
     "NonProductive": false
@@ -2915,7 +2909,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 5,
-    "GridIndex": 1607,
+    "GridIndex": 1605,
     "Time": 360,
     "Input": [
       1206,
@@ -2991,7 +2985,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 16,
-    "GridIndex": 1604,
+    "GridIndex": 4311,
     "Time": 120,
     "Input": [
       1124,
@@ -3076,7 +3070,7 @@
     "Name": "轨道采集器",
     "Description": "",
     "IconPath": "",
-    "Type": 4,
+    "Type": 9,
     "GridIndex": 2213,
     "Time": 1800,
     "Input": [
@@ -3103,7 +3097,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 1611,
+    "GridIndex": 1207,
     "Time": 120,
     "Input": [
       1108,
@@ -3128,7 +3122,7 @@
     "Name": "裂变能源发电站",
     "Description": "",
     "IconPath": "",
-    "Type": 10,
+    "Type": 9,
     "GridIndex": 2109,
     "Time": 600,
     "Input": [
@@ -3189,7 +3183,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 10,
-    "GridIndex": 1605,
+    "GridIndex": 1604,
     "Time": 900,
     "Input": [
       7707,
@@ -3216,7 +3210,7 @@
     "Name": "位面熔炉",
     "Description": "",
     "IconPath": "",
-    "Type": 10,
+    "Type": 9,
     "GridIndex": 2406,
     "Time": 240,
     "Input": [
@@ -3442,7 +3436,7 @@
     "Name": "先进化学反应釜",
     "Description": "",
     "IconPath": "",
-    "Type": 4,
+    "Type": 9,
     "GridIndex": 2409,
     "Time": 600,
     "Input": [
@@ -3671,7 +3665,7 @@
     "Description": "R钛晶石（高效）",
     "IconPath": "Assets/texpack/高效钛晶石",
     "Type": 4,
-    "GridIndex": 1506,
+    "GridIndex": 1508,
     "Time": 180,
     "Input": [
       1107,
@@ -3799,7 +3793,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 1406,
+    "GridIndex": 1408,
     "Time": 180,
     "Input": [
       1107,
@@ -3853,7 +3847,7 @@
     "Description": "R三氯化铁",
     "IconPath": "",
     "Type": 2,
-    "GridIndex": 4311,
+    "GridIndex": 4211,
     "Time": 180,
     "Input": [
       7014,
@@ -3965,7 +3959,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 10,
-    "GridIndex": 5603,
+    "GridIndex": 1613,
     "Time": 360,
     "Input": [
       7504,
@@ -3991,7 +3985,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 10,
-    "GridIndex": 5109,
+    "GridIndex": 1612,
     "Time": 240,
     "Input": [
       7710,
@@ -4017,7 +4011,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 10,
-    "GridIndex": 5208,
+    "GridIndex": 1611,
     "Time": 3600,
     "Input": [
       1107,
@@ -4045,7 +4039,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 10,
-    "GridIndex": 5209,
+    "GridIndex": 1614,
     "Time": 3600,
     "Input": [
       7707,
@@ -4073,7 +4067,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 9,
-    "GridIndex": 5105,
+    "GridIndex": 1308,
     "Time": 120,
     "Input": [
       1115,
@@ -4099,7 +4093,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 9,
-    "GridIndex": 5405,
+    "GridIndex": 1309,
     "Time": 120,
     "Input": [
       7709,
@@ -4230,7 +4224,7 @@
     "Name": "钨强化玻璃",
     "Description": "",
     "IconPath": "",
-    "Type": 4,
+    "Type": 9,
     "GridIndex": 1503,
     "Time": 120,
     "Input": [
@@ -4358,7 +4352,7 @@
     "Name": "先进机械组件",
     "Description": "",
     "IconPath": "",
-    "Type": 4,
+    "Type": 9,
     "GridIndex": 1402,
     "Time": 240,
     "Input": [
@@ -4415,7 +4409,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 1304,
+    "GridIndex": 1307,
     "Time": 120,
     "Input": [
       6203,
@@ -4441,7 +4435,7 @@
     "Description": "R质能储存（高效）",
     "IconPath": "Assets/texpack/高效反物质",
     "Type": 5,
-    "GridIndex": 1511,
+    "GridIndex": 1514,
     "Time": 120,
     "Input": [
       1208
@@ -4756,8 +4750,8 @@
     "Name": "处理器（高效）",
     "Description": "R处理器（高效）",
     "IconPath": "Assets/texpack/高效处理器",
-    "Type": 10,
-    "GridIndex": 5502,
+    "Type": 9,
+    "GridIndex": 1512,
     "Time": 120,
     "Input": [
       7504,
@@ -4782,7 +4776,7 @@
     "Name": "量子储液罐",
     "Description": "",
     "IconPath": "",
-    "Type": 4,
+    "Type": 9,
     "GridIndex": 2208,
     "Time": 900,
     "Input": [
@@ -5058,7 +5052,7 @@
     "Name": "铀燃料棒",
     "Description": "",
     "IconPath": "",
-    "Type": 4,
+    "Type": 9,
     "GridIndex": 3704,
     "Time": 600,
     "Input": [
@@ -5086,7 +5080,7 @@
     "Name": "钚燃料棒",
     "Description": "",
     "IconPath": "",
-    "Type": 4,
+    "Type": 9,
     "GridIndex": 3705,
     "Time": 600,
     "Input": [
@@ -5114,7 +5108,7 @@
     "Name": "MOX燃料棒",
     "Description": "",
     "IconPath": "",
-    "Type": 4,
+    "Type": 9,
     "GridIndex": 3706,
     "Time": 600,
     "Input": [
@@ -5335,7 +5329,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 1610,
+    "GridIndex": 1206,
     "Time": 120,
     "Input": [
       1103,
@@ -5458,7 +5452,7 @@
     "Name": "大气收集设施",
     "Description": "",
     "IconPath": "",
-    "Type": 4,
+    "Type": 9,
     "GridIndex": 2214,
     "Time": 900,
     "Input": [
@@ -5560,7 +5554,7 @@
     "Name": "稳定矩阵",
     "Description": "",
     "IconPath": "",
-    "Type": 4,
+    "Type": 9,
     "GridIndex": 1707,
     "Time": 180,
     "Input": [
@@ -5586,7 +5580,7 @@
     "Name": "虚空矩阵",
     "Description": "",
     "IconPath": "",
-    "Type": 4,
+    "Type": 9,
     "GridIndex": 1708,
     "Time": 180,
     "Input": [
@@ -5612,7 +5606,7 @@
     "Name": "宇宙矩阵粗坯",
     "Description": "",
     "IconPath": "",
-    "Type": 4,
+    "Type": 9,
     "GridIndex": 1709,
     "Time": 180,
     "Input": [

@@ -18,8 +18,8 @@ namespace ProjectGenesis.Patches.UI.DisplayTextPatches
 
             switch (type)
             {
-                case Utils_ERecipeType.电路蚀刻:
-                    __result = "电路蚀刻机".TranslateFromJson();
+                case Utils_ERecipeType.标准制造:
+                    __result = "标准制造单元".TranslateFromJson();
                     break;
 
                 case Utils_ERecipeType.高精度加工:

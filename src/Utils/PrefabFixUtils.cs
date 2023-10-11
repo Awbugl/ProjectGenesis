@@ -27,7 +27,7 @@ namespace ProjectGenesis.Utils
             prefabDesc2.assemblerSpeed = 20000;
             prefabDesc2.idleEnergyPerTick *= 2;
             prefabDesc2.workEnergyPerTick *= 2;
-            prefabDesc2.assemblerRecipeType = (ERecipeType_1)ERecipeType.电路蚀刻;
+            prefabDesc2.assemblerRecipeType = (ERecipeType_1)ERecipeType.标准制造;
 
             ref PrefabDesc prefabDesc3 = ref itemProtos.Select(I三级制造台).prefabDesc;
             prefabDesc3.assemblerSpeed = 20000;
@@ -130,7 +130,7 @@ namespace ProjectGenesis.Utils
         {
             // 天穹装配厂
             ModelProto testCraftingTableModel = models.Select(453);
-            SetMegaAssemblerPrefebDesc(ref testCraftingTableModel.prefabDesc, ERecipeType.Assemble);
+            SetMegaAssemblerPrefebDesc(ref testCraftingTableModel.prefabDesc, ERecipeType.所有制造);
 
             // 物质裂解塔
             ModelProto testCraftingTableModel2 = models.Select(454);
@@ -142,7 +142,7 @@ namespace ProjectGenesis.Utils
 
             // 精密结构组装厂
             ModelProto testCraftingTableModel4 = models.Select(456);
-            SetMegaAssemblerPrefebDesc(ref testCraftingTableModel4.prefabDesc, ERecipeType.所有高精);
+            SetMegaAssemblerPrefebDesc(ref testCraftingTableModel4.prefabDesc, ERecipeType.高精度加工);
 
             // 物质分解设施
             ModelProto testCraftingTableModel5 = models.Select(460);

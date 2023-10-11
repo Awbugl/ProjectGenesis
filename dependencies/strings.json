@@ -420,11 +420,6 @@
     "ENUS": "The mecha does not have enough energy to open the wormhole"
   },
   {
-    "Name": "制造台",
-    "ZHCN": "制造台",
-    "ENUS": "Assembler"
-  },
-  {
     "Name": "聚变能",
     "ZHCN": "聚变能",
     "ENUS": "Fusion Energy"
@@ -563,26 +558,6 @@
     "Name": "流速监测器",
     "ZHCN": "流速监测器",
     "ENUS": "Traffic monitor"
-  },
-  {
-    "Name": "电路蚀刻机",
-    "ZHCN": "电路蚀刻机",
-    "ENUS": "Circuit etcher"
-  },
-  {
-    "Name": "I电路蚀刻机",
-    "ZHCN": "一台专门用于生产电路基板的机器.\n <color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Used for the production of circuit substrate.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
-    "Name": "高精度装配线",
-    "ZHCN": "高精度装配线",
-    "ENUS": "Precise assembler"
-  },
-  {
-    "Name": "I高精度装配线",
-    "ZHCN": "一台用于生产精密仪器的机器,当然,不包括它自己.\n <color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Used to produce precision instruments, oh of course not have itself.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "广播式能源塔",
@@ -2120,14 +2095,14 @@
     "ENUS": "Using confinement technology to stabilize and control fusion reactions and use them as an energy source."
   },
   {
-    "Name": "T电路蚀刻技术",
-    "ZHCN": "电路蚀刻技术",
-    "ENUS": "Circuit etching technology"
+    "Name": "T标准制造单元",
+    "ZHCN": "标准制造单元",
+    "ENUS": "Standard Assembler"
   },
   {
     "Name": "T高精度加工技术",
-    "ZHCN": "高精度加工技术",
-    "ENUS": "Precision machining technology"
+    "ZHCN": "高精度加工",
+    "ENUS": "Precise Assembler"
   },
   {
     "Name": "T矿物处理",
@@ -2143,16 +2118,6 @@
     "Name": "T裂变发电站",
     "ZHCN": "裂变发电站",
     "ENUS": "Fission power station"
-  },
-  {
-    "Name": "T海洋排污",
-    "ZHCN": "海洋排污",
-    "ENUS": "Ocean outfall"
-  },
-  {
-    "Name": "T海洋排污描述",
-    "ZHCN": "逆转抽水站的水泵方向, 可将液体废弃物排入海洋.",
-    "ENUS": "Reverse the direction of the water pump of the pumping station to discharge liquid waste into the ocean."
   },
   {
     "Name": "T戴森球计划:太阳帆轨道系统",
@@ -2175,16 +2140,6 @@
     "ENUS": "Dyson Sphere Program: Photonic Inverter Technology"
   },
   {
-    "Name": "T化工技术革新",
-    "ZHCN": "化工技术革新",
-    "ENUS": "Chemical technology innovation"
-  },
-  {
-    "Name": "T化工技术革新描述",
-    "ZHCN": "使用量子芯片模拟化学反应, 可以构建更高效的反应体系与流程.",
-    "ENUS": "Using quantum chips to simulate chemical reactions, you can build more efficient reaction systems and processes."
-  },
-  {
     "Name": "T戴森球计划:戴森球组件运输系统",
     "ZHCN": "戴森球计划: 戴森球组件运输系统",
     "ENUS": "Dyson Sphere Program: Dyson Sphere Component Transport Systems"
@@ -2198,16 +2153,6 @@
     "Name": "T物品仓储",
     "ZHCN": "物品仓储",
     "ENUS": "Item storage"
-  },
-  {
-    "Name": "T海洋排污2",
-    "ZHCN": "海洋处置",
-    "ENUS": "Marine Disposal"
-  },
-  {
-    "Name": "T海洋排污2描述",
-    "ZHCN": "修改抽水站的工作模式，为固体废弃物提供直接进入海洋的途径。",
-    "ENUS": "Modify the operation mode of the pumping station to provide a direct way for solid waste to enter the ocean."
   },
   {
     "Name": "T广播式能源",
@@ -2253,26 +2198,6 @@
     "Name": "T钨强化金属描述",
     "ZHCN": "使用纳米尺度的金属钨生产的钨基金属复合材料，具有极高的强度和韧性。或许可以用来生产对于材料强度需求较高的设备。",
     "ENUS": "Tungsten-based metal composites produced using nanoscale tungsten metal have extremely high strength and toughness. Perhaps they can be used to produce devices that require high material strength."
-  },
-  {
-    "Name": "T电路基板",
-    "ZHCN": "电路基板",
-    "ENUS": "Circuit substrates"
-  },
-  {
-    "Name": "T电路基板描述",
-    "ZHCN": "基板是制造印刷电路板的基本材料，印刷电路板的性能、质量很大程度上取决于基板材料。高分子材料的使用，可以极大的降低印刷电路板的成本并提高其质量。",
-    "ENUS": "Substrate is the basic material for manufacturing printed circuit boards, and the performance and quality of printed circuit boards depend largely on the substrate material."
-  },
-  {
-    "Name": "TIC晶片",
-    "ZHCN": "IC晶片",
-    "ENUS": "IC chips"
-  },
-  {
-    "Name": "TIC晶片描述",
-    "ZHCN": "晶圆通过扩散湿洗和多次的光刻、湿刻蚀、离子注入、干蚀刻、气相积淀最后抛光切片获得的高精密工业中间产品，集成有大量的微电子元器件，是制作处理器的核心原料。",
-    "ENUS": "Wafers are obtained through diffusion wet washing and multiple lithography, wet etching, ion implantation, dry etching, vapor phase deposition and finally polishing and slicing of high precision industrial intermediate products, integrated with a large number of microelectronic components, which are the core raw materials for making processors."
   },
   {
     "Name": "T虚拟技术革新",
@@ -2391,8 +2316,8 @@
   },
   {
     "Name": "T天穹装配厂描述",
-    "ZHCN": "高度智能化的大型工厂,有着远超制造台的效率.",
-    "ENUS": "A highly intelligent large-scale factory with efficiency far exceeding that of a manufacturing plant."
+    "ZHCN": "高度智能化的大型工厂,有着远超标准制造单元的效率.",
+    "ENUS": "A highly intelligent large-scale factory with efficiency far exceeding that of a Standard Assembler."
   },
   {
     "Name": "T物质裂解塔",
@@ -2453,11 +2378,6 @@
     "Name": "I广播式能源塔",
     "ZHCN": "基于未知文明留下的蓝图制造的设备。将能量从塔顶发射到行星电离层，使得星球上的所有设备都能够获得能量。",
     "ENUS": "Based on blueprints left behind by an unknown civilization, the energy is emitted from the top of the tower to the ionosphere of the planet, so that all devices on the planet can get energy."
-  },
-  {
-    "Name": "T集成电路",
-    "ZHCN": "集成电路",
-    "ENUS": "Integrated Circuit"
   },
   {
     "Name": "T化学",
@@ -2600,22 +2520,37 @@
     "ENUS": "The new generation of integrated fast reactors uses uranium-plutonium metal fuel, liquid sodium cooling pools, electrolytic refining of waste, and highly automated technology to generate large amounts of power without regard to waste disposal."
   },
   {
-    "Name": "T电路蚀刻技术描述",
-    "ZHCN": "在制造台的基础上进行了升级，制造精度有了进一步的提升，可以用于电路蚀刻。",
-    "ENUS": "Upgraded from the manufacturing table, the manufacturing accuracy has been further improved for circuit etching."
+    "Name": "基础制造台",
+    "ZHCN": "基础制造台",
+    "ENUS": "Basic assembler"
   },
   {
-    "Name": "T电路蚀刻技术结果",
-    "ZHCN": "在制造台的基础上进行了升级，制造精度有了进一步的提升，可以用于电路蚀刻。",
-    "ENUS": "Upgraded from the manufacturing table, the manufacturing accuracy has been further improved for circuit etching."
+    "Name": "标准制造单元",
+    "ZHCN": "标准制造单元",
+    "ENUS": "Standard assembler"
+  },
+  {
+    "Name": "I标准制造单元",
+    "ZHCN": "具有标准精度的工业母机。可以说，我们的制造水平向前迈进了一大步。",
+    "ENUS": "Industrial masters with standardized precision. It can be said that our manufacturing level has taken a big step forward."
+  },
+  {
+    "Name": "高精度装配线",
+    "ZHCN": "高精度装配线",
+    "ENUS": "Precise assembler"
+  },
+  {
+    "Name": "I高精度装配线",
+    "ZHCN": "一台用于生产精密仪器的机器,当然,不包括它自己.\n <color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Used to produce precision instruments, oh of course not have itself.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+  },
+  {
+    "Name": "T标准制造单元描述",
+    "ZHCN": "经过工业水平的进步，可以制造具有标准精度的工业母机。",
+    "ENUS": "Through industrial advancement, it is possible to manufacture industrial master machines with standardized precision."
   },
   {
     "Name": "T高精度加工技术描述",
-    "ZHCN": "利用先进机械组件和处理器的算力，提升制造精度。",
-    "ENUS": "Leverage the arithmetic power of advanced mechanical components and processors to improve manufacturing accuracy."
-  },
-  {
-    "Name": "T高精度加工技术结果",
     "ZHCN": "利用先进机械组件和处理器的算力，提升制造精度。",
     "ENUS": "Leverage the arithmetic power of advanced mechanical components and processors to improve manufacturing accuracy."
   },
@@ -2651,8 +2586,8 @@
   },
   {
     "Name": "基础制造工艺结果",
-    "ZHCN": "你解锁了制造台，可以将铁块、铜块等原材料制造成更高级的产物。",
-    "ENUS": "You have unlocked the Assembler. It can make iron and copper ingots into more advanced products."
+    "ZHCN": "你解锁了基础制造单元，可以将铁块、铜块等原材料制造成更高级的产物。",
+    "ENUS": "You have unlocked the Basic Manufacturing Unit. It can make iron and copper ingots into more advanced products."
   },
   {
     "Name": "基础物流系统结果",
