@@ -880,11 +880,6 @@
     "ENUS": "Antimatter Energy Reactor"
   },
   {
-    "Name": "I反物质能量炉",
-    "ZHCN": "掌控质能.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Mass-energy is in your control now.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
     "Name": "反物质约束单元",
     "ZHCN": "反物质约束单元",
     "ENUS": "Antimatter Restraint Unit"
@@ -917,12 +912,12 @@
   {
     "Name": "先驱者晶片",
     "ZHCN": "先驱者晶片",
-    "ENUS": "Ancient Alien Chip"
+    "ENUS": "Pioneer Chip"
   },
   {
     "Name": "I先驱者晶片",
-    "ZHCN": "未知文明留下的蓝图.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Heritage of unknown civilization.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "基于未知文明留下的蓝图，使用精密制造厂打印出的神秘材料。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Based on blueprints left behind by an unknown civilization, using mysterious materials printed by an accurate manufacturing facility.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "精密制造厂",
@@ -931,7 +926,7 @@
   },
   {
     "Name": "I精密制造厂",
-    "ZHCN": "这座工厂能够将蓝图以物质世界基本单位的尺度精准还原.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ZHCN": "基于未知文明留下的蓝图制造的设备。能够将蓝图以物质世界基本单位的尺度精准还原。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "ENUS": "This factory is capable of accurately reproducing blueprints on the scale of the basic units of the material world.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
@@ -941,8 +936,13 @@
   },
   {
     "Name": "I紧凑式回旋加速器",
-    "ZHCN": "一座大型粒子加速器.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Mega Particle Accelerator.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "基于未知文明留下的蓝图制造的设备。可在极小的空间内将粒子加速至极限。工作原理仍在逆向过程中。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Based on blueprints left behind by an unknown civilization, particles can be accelerated to their limits in a very small space. The working principle is still in the reverse process.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+  },
+  {
+    "Name": "I反物质能量炉",
+    "ZHCN": "基于未知文明留下的蓝图制造的设备。掌控质能。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Based on blueprints left behind by an unknown civilization, Mass-energy is in your control now.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "硫粉",
@@ -1600,16 +1600,6 @@
     "ENUS": "The silica with higher silica content is selected by using different chemical properties.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
-    "Name": "无尽材料精炼",
-    "ZHCN": "无尽材料精炼",
-    "ENUS": "Infinity Material Refining"
-  },
-  {
-    "Name": "R无尽材料精炼",
-    "ZHCN": "利用粒子加速器的庞大能量创造全新的材料.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Using the massive energy of particle gas pedals to create entirely new materials.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
     "Name": "氦元素离心",
     "ZHCN": "氦原子提取",
     "ENUS": "Helium element centrifuge"
@@ -1751,8 +1741,8 @@
   },
   {
     "Name": "R光子结晶化",
-    "ZHCN": "在高能环境下将光子压缩成固体.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Compression of photons into solids in a high-energy environment.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "对未知先驱者科技进行逆向工程的部分成果。可在高能环境下将光子压缩成固体.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Partial results of reverse engineering unknown Herald technology. Compression of photons into solids in a high-energy environment.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "钛晶石（高效）",
@@ -2056,23 +2046,33 @@
   },
   {
     "Name": "T先驱者遗物",
-    "ZHCN": "终极目标: 先驱者遗物",
-    "ENUS": "Ultimate Goal: Ancient Alien relics"
+    "ZHCN": "逆向工程: 先驱者晶片",
+    "ENUS": "Reverse Engineering: Pioneer Chip"
   },
   {
     "Name": "T先驱者遗物描述",
-    "ZHCN": "先驱者文明的遗产.",
-    "ENUS": "Heritage of unknown civilization."
+    "ZHCN": "上传大量矩阵后，主脑开放了先驱者芯片蓝图。",
+    "ENUS": "After uploading a large number of matrices, the CentreBrain opened up the blueprint of Pioneer Chip."
   },
   {
     "Name": "T无尽材料学",
-    "ZHCN": "终极目标: 无尽材料学",
-    "ENUS": "Ultimate Goal: Infinity Material Science"
+    "ZHCN": "逆向工程: 先驱者材料学",
+    "ENUS": "Reverse Engineering: Pioneer Material Science"
   },
   {
     "Name": "T无尽材料学描述",
-    "ZHCN": "传统材料已经无法满足需求...",
-    "ENUS": "Traditional materials can no longer meet the demand...."
+    "ZHCN": "上传大量矩阵后，主脑开放了部分逆向成功的材料学科技。",
+    "ENUS": "After uploading a large number of matrices, the CentreBrain opened up some of the reversed successful material science technology.."
+  },
+  {
+    "Name": "T反物质能量炉描述",
+    "ZHCN": "掌控质能转换技术，可以将反物质转化为能量。",
+    "ENUS": "Technology of mass-energy conversion can now convert antimatter into energy."
+  },
+  {
+    "Name": "T反物质能量炉结果",
+    "ZHCN": "掌控质能.",
+    "ENUS": "You have mastered the technology of mass-energy conversion, and can now convert antimatter into energy."
   },
   {
     "Name": "T粒子对撞机",
@@ -2081,13 +2081,13 @@
   },
   {
     "Name": "T反物质能量炉",
-    "ZHCN": "终极目标: 反物质能量炉",
-    "ENUS": "Ultimate Goal: Antimatter Energy Reactor"
+    "ZHCN": "逆向工程: 反物质能量炉",
+    "ENUS": "Reverse Engineering: Antimatter Energy Reactor"
   },
   {
     "Name": "T可控湮灭反应",
-    "ZHCN": "终极目标: 可控湮灭反应",
-    "ENUS": "Ultimate Goal: Controlled annihilation reactions"
+    "ZHCN": "逆向工程: 可控湮灭反应",
+    "ENUS": "Reverse Engineering: Controlled annihilation reactions"
   },
   {
     "Name": "T物品增产",
@@ -2101,13 +2101,13 @@
   },
   {
     "Name": "T不再是菜鸟的证明描述",
-    "ZHCN": "欢迎来到地狱....",
-    "ENUS": "Welcome TO HELL."
+    "ZHCN": "上传的大量矩阵已经证明了戴森球计划的成功。主脑将会开放部分科研前沿领域。",
+    "ENUS": "The large number of matrices uploaded has proven the success of the Dyson Sphere program. The mastermind will open up some of the scientific frontiers."
   },
   {
     "Name": "T虫洞航行",
-    "ZHCN": "终极目标: 虫洞航行",
-    "ENUS": "Ultimate Goal: Wormhole navigation"
+    "ZHCN": "逆向工程: 虫洞航行",
+    "ENUS": "Reverse Engineering: Wormhole navigation"
   },
   {
     "Name": "T虫洞航行描述",
@@ -2211,8 +2211,8 @@
   },
   {
     "Name": "T广播式能源",
-    "ZHCN": "终极目标: 广播式能源",
-    "ENUS": "Ultimate Goal: Broadcast Energy"
+    "ZHCN": "逆向工程: 广播式能源",
+    "ENUS": "Reverse Engineering: Broadcast Energy"
   },
   {
     "Name": "T基础机械组件",
@@ -2446,13 +2446,13 @@
   },
   {
     "Name": "T广播式能源描述",
-    "ZHCN": "一种能够在整个星球中传播的能源,它的能量可以被任何接收到它的设备所利用.",
+    "ZHCN": "一种能够在整个星球中传播的能源，它的能量可以被任何接收到它的设备所利用.",
     "ENUS": "A form of energy that can be broadcast throughout the planet, and its energy can be used by any device that receives it."
   },
   {
     "Name": "I广播式能源塔",
-    "ZHCN": "将能量从塔顶发射到行星电离层，使得星球上的所有设备都能够获得能量。",
-    "ENUS": "The energy is emitted from the top of the tower to the ionosphere of the planet, so that all devices on the planet can get energy."
+    "ZHCN": "基于未知文明留下的蓝图制造的设备。将能量从塔顶发射到行星电离层，使得星球上的所有设备都能够获得能量。",
+    "ENUS": "Based on blueprints left behind by an unknown civilization, the energy is emitted from the top of the tower to the ionosphere of the planet, so that all devices on the planet can get energy."
   },
   {
     "Name": "T集成电路",
@@ -2523,16 +2523,6 @@
     "Name": "T焦油分馏描述",
     "ZHCN": "精炼煤焦油可以得到数种重要的化工原料。",
     "ENUS": "Refining coal tar can yield several important chemicals."
-  },
-  {
-    "Name": "T反物质能量炉描述",
-    "ZHCN": "掌控质能转换技术，可以将反物质转化为能量。",
-    "ENUS": "Technology of mass-energy conversion can now convert antimatter into energy."
-  },
-  {
-    "Name": "T反物质能量炉结果",
-    "ZHCN": "掌控质能.",
-    "ENUS": "You have mastered the technology of mass-energy conversion, and can now convert antimatter into energy."
   },
   {
     "Name": "T行星协调中心",
@@ -2841,8 +2831,8 @@
   },
   {
     "Name": "I三元精金",
-    "ZHCN": "我们使强相互作用力溢出至宏观尺度，将“坚固”这一概念具象化。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "We make the strong interaction force spill over to the macroscopic scale and visualize the concept of \"solidity\".\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "在特殊力场的作用下，使强相互作用力溢出至宏观尺度而形成的材料，是具象化的“坚固”概念。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "A material formed by the spillover of strong interaction forces to the macroscopic scale under the action of a special force field - a figurative concept of \"solidity\".\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "I钨块",
@@ -2908,11 +2898,6 @@
     "Name": "R二氧化碳还原",
     "ZHCN": "将二氧化碳还原为一氧化碳，作为化工原料。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "ENUS": "Reduce carbon dioxide to carbon monoxide for chemical raw materials.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
-    "Name": "R粒子容器（高效）",
-    "ZHCN": "利用碳纳米管独特的管腔结构，可以高效制造粒子容器.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "The unique tubular structure of carbon nanotubes can be used to efficiently manufacture particle capacitor.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "开发者日志01",

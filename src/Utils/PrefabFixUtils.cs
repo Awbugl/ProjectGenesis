@@ -64,12 +64,13 @@ namespace ProjectGenesis.Utils
             desc1.waterTypes = new[] { 1000, 1116, 7002, 7014, 7017, 7018 };
 
             ref PrefabDesc desc2 = ref itemProtos.Select(I电磁轨道弹射器).prefabDesc;
-            desc2.ejectorChargeFrame = 40;
-            desc2.ejectorColdFrame = 20;
+            desc2.ejectorChargeFrame = 80;
+            desc2.ejectorColdFrame = 40;
 
             ref PrefabDesc desc3 = ref itemProtos.Select(I垂直发射井).prefabDesc;
-            desc3.siloChargeFrame = 48;
-            desc3.siloColdFrame = 12;
+           
+            desc3.siloChargeFrame = 120;
+            desc3.siloColdFrame = 60;
 
             ref PrefabDesc desc4 = ref itemProtos.Select(I卫星配电站).prefabDesc;
             desc4.powerConnectDistance = 5300.5f;

@@ -1,3 +1,20 @@
+- v2.8.0-alpha2 (Experimental 0.2.2)
+  + 重新设计了化学能燃料及对应配方
+  + 调整了开局物资的数量
+  + 调整了部分物品的图标
+  + 添加与 `Planet Vein Utilization` mod的兼容补丁
+  + 添加与 `GalacticScale` mod的不兼容提示
+
+  + Redesigned chemical energy fuels and their recipes
+  + Adjusted the amount of supplies at the start of the game
+  + Adjusted the icons for some items
+  + Added patch for compatibility with the `Planet Vein Utilization` mod
+  + Added an incompatibility tip for the `GalacticScale` mod
+
+<details>
+  <summary>点击展开日志 | Click to view all </summary>
+
+
 - v2.8.0-alpha1 (Experimental 0.2.1)
   + 恢复矿物`单极磁石`
   + 添加新矿物`钨矿`、`放射性矿物`并调整了相应配方（影响存档）
@@ -12,10 +29,6 @@
   + Adjusted energy value for fission fuel
   + Adjusted the sorting and placement of items and recipes in selection UI.
   + Fixed some text not being replaced correctly
-
-
-<details>
-  <summary>点击展开日志 | Click to view all </summary>
 
 
 - v2.7.1-beta1 (Experimental 0.1.7)

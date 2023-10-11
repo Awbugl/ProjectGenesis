@@ -562,7 +562,8 @@
       23,
       706,
       720,
-      704
+      704,
+      751
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -842,7 +843,7 @@
     "Desc": "粒子可控技术描述",
     "Conclusion": "粒子可控技术结果",
     "Position": [
-      21.0,
+      17.0,
       5.0
     ],
     "PreTechs": [
@@ -1455,16 +1456,13 @@
     "Desc": "处理器描述",
     "Conclusion": "处理器结果",
     "Position": [
-      17.0,
-      5.0
+      13.0,
+      9.0
     ],
     "PreTechs": [
-      1805,
-      1806
-    ],
-    "PreTechsImplicit": [
       1311
     ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002
@@ -1475,8 +1473,7 @@
     ],
     "HashNeeded": 144000,
     "UnlockRecipes": [
-      51,
-      518
+      51
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -1499,7 +1496,7 @@
     "Desc": "量子芯片描述",
     "Conclusion": "量子芯片结果",
     "Position": [
-      21.0,
+      17.0,
       9.0
     ],
     "PreTechs": [
@@ -1519,8 +1516,7 @@
     "HashNeeded": 288000,
     "UnlockRecipes": [
       52,
-      522,
-      519
+      522
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -1641,23 +1637,20 @@
     "Desc": "半导体材料描述",
     "Conclusion": "半导体材料结果",
     "Position": [
-      17.0,
+      9.0,
       9.0
     ],
     "PreTechs": [
-      1805,
-      1806
+      1901
     ],
     "PreTechsImplicit": [],
     "Items": [
-      6001,
-      6002
+      6001
     ],
     "ItemPoints": [
-      20,
-      10
+      20
     ],
-    "HashNeeded": 144000,
+    "HashNeeded": 36000,
     "UnlockRecipes": [
       53
     ],
@@ -2478,7 +2471,8 @@
     "HashNeeded": 36000000,
     "UnlockRecipes": [],
     "UnlockFunctions": [
-      99
+      99,
+      100
     ],
     "UnlockValues": [
       1.0
@@ -8620,101 +8614,13 @@
     "PropertyItemCounts": []
   },
   {
-    "ID": 1805,
-    "Name": "T电路基板",
-    "IconPath": "Assets/texpack/电路基板",
-    "Desc": "T电路基板描述",
-    "Conclusion": "T电路基板描述",
-    "Position": [
-      13.0,
-      9.0
-    ],
-    "PreTechs": [
-      1902
-    ],
-    "PreTechsImplicit": [
-      1121
-    ],
-    "Items": [
-      6001,
-      6002
-    ],
-    "ItemPoints": [
-      20,
-      10
-    ],
-    "HashNeeded": 36000,
-    "UnlockRecipes": [
-      751,
-      752,
-      753
-    ],
-    "UnlockFunctions": [],
-    "UnlockValues": [],
-    "Published": true,
-    "Level": 0,
-    "MaxLevel": 0,
-    "LevelCoef1": 0,
-    "LevelCoef2": 0,
-    "IsLabTech": true,
-    "PreTechsMax": false,
-    "AddItems": [],
-    "AddItemCounts": [],
-    "PropertyOverrideItems": [],
-    "PropertyItemCounts": []
-  },
-  {
-    "ID": 1806,
-    "Name": "TIC晶片",
-    "IconPath": "Assets/texpack/电路板",
-    "Desc": "TIC晶片描述",
-    "Conclusion": "TIC晶片描述",
-    "Position": [
-      13.0,
-      5.0
-    ],
-    "PreTechs": [
-      1902
-    ],
-    "PreTechsImplicit": [
-      1833
-    ],
-    "Items": [
-      6001,
-      6002
-    ],
-    "ItemPoints": [
-      20,
-      10
-    ],
-    "HashNeeded": 72000,
-    "UnlockRecipes": [
-      761,
-      762,
-      763
-    ],
-    "UnlockFunctions": [],
-    "UnlockValues": [],
-    "Published": true,
-    "Level": 0,
-    "MaxLevel": 0,
-    "LevelCoef1": 0,
-    "LevelCoef2": 0,
-    "IsLabTech": true,
-    "PreTechsMax": false,
-    "AddItems": [],
-    "AddItemCounts": [],
-    "PropertyOverrideItems": [],
-    "PropertyItemCounts": []
-  },
-  {
     "ID": 1807,
     "Name": "T虚拟技术革新",
     "IconPath": "Assets/texpack/虚拟技术革新",
     "Desc": "T虚拟技术革新描述",
     "Conclusion": "T虚拟技术革新描述",
     "Position": [
-      29.0,
+      25.0,
       9.0
     ],
     "PreTechs": [
@@ -8737,12 +8643,8 @@
     ],
     "HashNeeded": 288000,
     "UnlockRecipes": [
-      791,
-      792,
-      765,
-      755,
-      766,
-      756
+      754,
+      519
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -8775,7 +8677,7 @@
     "Desc": "T生物神经技术描述",
     "Conclusion": "T生物神经技术描述",
     "Position": [
-      29.0,
+      25.0,
       5.0
     ],
     "PreTechs": [
@@ -8833,7 +8735,7 @@
     "Desc": "T超级纳米计算机描述",
     "Conclusion": "T超级纳米计算机描述",
     "Position": [
-      25.0,
+      21.0,
       9.0
     ],
     "PreTechs": [
@@ -8855,11 +8757,7 @@
     ],
     "HashNeeded": 288000,
     "UnlockRecipes": [
-      795,
-      520,
-      530,
-      754,
-      764
+      795
     ],
     "UnlockFunctions": [
       7
@@ -8886,7 +8784,7 @@
     "Desc": "T生物活性计算机描述",
     "Conclusion": "T生物活性计算机描述",
     "Position": [
-      33.0,
+      29.0,
       9.0
     ],
     "PreTechs": [
@@ -8963,8 +8861,7 @@
     ],
     "HashNeeded": 144000,
     "UnlockRecipes": [
-      775,
-      100
+      775
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -9787,51 +9684,6 @@
     "PropertyItemCounts": []
   },
   {
-    "ID": 1833,
-    "Name": "T晶圆冶炼",
-    "IconPath": "Icons/Tech/1403",
-    "Desc": "T晶圆冶炼描述",
-    "Conclusion": "T晶圆冶炼描述",
-    "Position": [
-      17.0,
-      -3.0
-    ],
-    "PreTechs": [
-      1403
-    ],
-    "PreTechsImplicit": [],
-    "Items": [
-      6001,
-      6002
-    ],
-    "ItemPoints": [
-      20,
-      20
-    ],
-    "HashNeeded": 90000,
-    "UnlockRecipes": [
-      777,
-      778,
-      779,
-      547,
-      548,
-      549
-    ],
-    "UnlockFunctions": [],
-    "UnlockValues": [],
-    "Published": true,
-    "Level": 0,
-    "MaxLevel": 0,
-    "LevelCoef1": 0,
-    "LevelCoef2": 0,
-    "IsLabTech": true,
-    "PreTechsMax": false,
-    "AddItems": [],
-    "AddItemCounts": [],
-    "PropertyOverrideItems": [],
-    "PropertyItemCounts": []
-  },
-  {
     "ID": 1901,
     "Name": "T科学理论",
     "IconPath": "Icons/Tech/1507",
@@ -9842,38 +9694,6 @@
       1.0
     ],
     "PreTechs": [],
-    "PreTechsImplicit": [],
-    "Items": [],
-    "ItemPoints": [],
-    "HashNeeded": 1000,
-    "UnlockRecipes": [],
-    "UnlockFunctions": [],
-    "UnlockValues": [],
-    "Published": true,
-    "Level": 0,
-    "MaxLevel": 0,
-    "LevelCoef1": 0,
-    "LevelCoef2": 0,
-    "IsLabTech": false,
-    "PreTechsMax": false,
-    "AddItems": [],
-    "AddItemCounts": [],
-    "PropertyOverrideItems": [],
-    "PropertyItemCounts": []
-  },
-  {
-    "ID": 1902,
-    "Name": "T集成电路",
-    "IconPath": "Icons/Tech/1311",
-    "Desc": "",
-    "Conclusion": "",
-    "Position": [
-      9.0,
-      9.0
-    ],
-    "PreTechs": [
-      1901
-    ],
     "PreTechsImplicit": [],
     "Items": [],
     "ItemPoints": [],

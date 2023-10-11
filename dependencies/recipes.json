@@ -613,10 +613,12 @@
     "GridIndex": 4105,
     "Time": 120,
     "Input": [
-      7009
+      7009,
+      1116
     ],
     "InCounts": [
-      2
+      2,
+      1
     ],
     "Output": [
       1115
@@ -1374,14 +1376,12 @@
     "GridIndex": 5402,
     "Time": 120,
     "Input": [
-      7502,
       1302,
-      7602
+      7501
     ],
     "InCounts": [
-      1,
-      1,
-      1
+      2,
+      2
     ],
     "Output": [
       1303
@@ -1400,18 +1400,14 @@
     "IconPath": "",
     "Type": 10,
     "GridIndex": 5403,
-    "Time": 180,
+    "Time": 240,
     "Input": [
-      7503,
       1303,
-      7603,
       1304
     ],
     "InCounts": [
-      1,
-      1,
-      1,
-      1
+      2,
+      2
     ],
     "Output": [
       1305
@@ -1432,20 +1428,18 @@
     "GridIndex": 5401,
     "Time": 120,
     "Input": [
-      7501,
-      1301,
-      7601
+      1105,
+      1104
     ],
     "InCounts": [
       2,
-      2,
-      2
+      1
     ],
     "Output": [
       1302
     ],
     "OutCounts": [
-      2
+      1
     ],
     "Explicit": false,
     "Handcraft": true,
@@ -1539,21 +1533,21 @@
   },
   {
     "ID": 57,
-    "Name": "无尽材料精炼",
-    "Description": "R无尽材料精炼",
+    "Name": "三元精金",
+    "Description": "",
     "IconPath": "",
     "Type": 13,
     "GridIndex": 3103,
     "Time": 3600,
     "Input": [
-      1103,
+      6204,
       1107,
       7707
     ],
     "InCounts": [
-      10,
-      10,
-      10
+      2,
+      2,
+      2
     ],
     "Output": [
       6271
@@ -1561,7 +1555,7 @@
     "OutCounts": [
       1
     ],
-    "Explicit": true,
+    "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
@@ -2571,7 +2565,7 @@
       6501,
       6204,
       1202,
-      1302
+      1303
     ],
     "InCounts": [
       10,
@@ -2628,7 +2622,7 @@
       6204,
       1202,
       1124,
-      1303
+      1304
     ],
     "InCounts": [
       20,
@@ -2996,7 +2990,7 @@
     "Name": "增产剂",
     "Description": "",
     "IconPath": "",
-    "Type": 4,
+    "Type": 16,
     "GridIndex": 1604,
     "Time": 120,
     "Input": [
@@ -3966,74 +3960,18 @@
     "NonProductive": false
   },
   {
-    "ID": 791,
-    "Name": "生物微晶元件",
-    "Description": "",
-    "IconPath": "",
-    "Type": 10,
-    "GridIndex": 5601,
-    "Time": 120,
-    "Input": [
-      7504,
-      7604
-    ],
-    "InCounts": [
-      2,
-      2
-    ],
-    "Output": [
-      7801
-    ],
-    "OutCounts": [
-      1
-    ],
-    "Explicit": false,
-    "Handcraft": false,
-    "NonProductive": false
-  },
-  {
-    "ID": 792,
-    "Name": "先进生物电路",
-    "Description": "",
-    "IconPath": "",
-    "Type": 10,
-    "GridIndex": 5602,
-    "Time": 240,
-    "Input": [
-      7505,
-      7801,
-      7605
-    ],
-    "InCounts": [
-      2,
-      2,
-      2
-    ],
-    "Output": [
-      7802
-    ],
-    "OutCounts": [
-      1
-    ],
-    "Explicit": false,
-    "Handcraft": false,
-    "NonProductive": false
-  },
-  {
     "ID": 793,
-    "Name": "超生物计算集群",
+    "Name": "先进生物电路",
     "Description": "",
     "IconPath": "",
     "Type": 10,
     "GridIndex": 5603,
     "Time": 360,
     "Input": [
-      7506,
-      7802,
-      7606
+      7504,
+      1106
     ],
     "InCounts": [
-      2,
       2,
       2
     ],
@@ -4056,12 +3994,10 @@
     "GridIndex": 5109,
     "Time": 240,
     "Input": [
-      1402,
       7710,
-      7706
+      1106
     ],
     "InCounts": [
-      2,
       2,
       2
     ],
@@ -4110,16 +4046,16 @@
     "IconPath": "",
     "Type": 10,
     "GridIndex": 5209,
-    "Time": 5400,
+    "Time": 3600,
     "Input": [
       7707,
       7804,
       7803
     ],
     "InCounts": [
-      60,
-      40,
-      40
+      50,
+      20,
+      20
     ],
     "Output": [
       7806
@@ -4144,67 +4080,11 @@
       1116
     ],
     "InCounts": [
-      1,
+      2,
       1
     ],
     "Output": [
       7501
-    ],
-    "OutCounts": [
-      1
-    ],
-    "Explicit": false,
-    "Handcraft": false,
-    "NonProductive": false
-  },
-  {
-    "ID": 752,
-    "Name": "覆层塑料基板",
-    "Description": "",
-    "IconPath": "",
-    "Type": 9,
-    "GridIndex": 5205,
-    "Time": 120,
-    "Input": [
-      7501,
-      7708,
-      1116
-    ],
-    "InCounts": [
-      1,
-      2,
-      1
-    ],
-    "Output": [
-      7502
-    ],
-    "OutCounts": [
-      1
-    ],
-    "Explicit": false,
-    "Handcraft": false,
-    "NonProductive": false
-  },
-  {
-    "ID": 753,
-    "Name": "钛蚀刻覆层塑料基板",
-    "Description": "",
-    "IconPath": "",
-    "Type": 9,
-    "GridIndex": 5305,
-    "Time": 120,
-    "Input": [
-      7502,
-      1106,
-      1116
-    ],
-    "InCounts": [
-      1,
-      2,
-      1
-    ],
-    "Output": [
-      7503
     ],
     "OutCounts": [
       1
@@ -4220,220 +4100,20 @@
     "IconPath": "",
     "Type": 9,
     "GridIndex": 5405,
-    "Time": 240,
+    "Time": 120,
     "Input": [
       7709,
       7015
     ],
     "InCounts": [
       2,
-      2
+      1
     ],
     "Output": [
       7504
     ],
     "OutCounts": [
       1
-    ],
-    "Explicit": false,
-    "Handcraft": false,
-    "NonProductive": false
-  },
-  {
-    "ID": 755,
-    "Name": "覆层生物基板",
-    "Description": "",
-    "IconPath": "",
-    "Type": 9,
-    "GridIndex": 5505,
-    "Time": 240,
-    "Input": [
-      7504,
-      7710,
-      7015
-    ],
-    "InCounts": [
-      1,
-      2,
-      2
-    ],
-    "Output": [
-      7505
-    ],
-    "OutCounts": [
-      1
-    ],
-    "Explicit": false,
-    "Handcraft": false,
-    "NonProductive": false
-  },
-  {
-    "ID": 756,
-    "Name": "钨蚀刻覆层生物基板",
-    "Description": "",
-    "IconPath": "",
-    "Type": 9,
-    "GridIndex": 5605,
-    "Time": 240,
-    "Input": [
-      7505,
-      7705,
-      7015
-    ],
-    "InCounts": [
-      1,
-      2,
-      2
-    ],
-    "Output": [
-      7506
-    ],
-    "OutCounts": [
-      1
-    ],
-    "Explicit": false,
-    "Handcraft": false,
-    "NonProductive": false
-  },
-  {
-    "ID": 761,
-    "Name": "超低功率IC晶片",
-    "Description": "",
-    "IconPath": "",
-    "Type": 4,
-    "GridIndex": 5106,
-    "Time": 120,
-    "Input": [
-      7701
-    ],
-    "InCounts": [
-      1
-    ],
-    "Output": [
-      7601
-    ],
-    "OutCounts": [
-      12
-    ],
-    "Explicit": false,
-    "Handcraft": true,
-    "NonProductive": false
-  },
-  {
-    "ID": 762,
-    "Name": "低功率IC晶片",
-    "Description": "",
-    "IconPath": "",
-    "Type": 4,
-    "GridIndex": 5206,
-    "Time": 120,
-    "Input": [
-      7701
-    ],
-    "InCounts": [
-      1
-    ],
-    "Output": [
-      7602
-    ],
-    "OutCounts": [
-      12
-    ],
-    "Explicit": false,
-    "Handcraft": true,
-    "NonProductive": false
-  },
-  {
-    "ID": 763,
-    "Name": "标准功率IC晶片",
-    "Description": "",
-    "IconPath": "",
-    "Type": 10,
-    "GridIndex": 5306,
-    "Time": 120,
-    "Input": [
-      7702
-    ],
-    "InCounts": [
-      1
-    ],
-    "Output": [
-      7603
-    ],
-    "OutCounts": [
-      12
-    ],
-    "Explicit": false,
-    "Handcraft": false,
-    "NonProductive": false
-  },
-  {
-    "ID": 764,
-    "Name": "高功率IC晶片",
-    "Description": "",
-    "IconPath": "",
-    "Type": 10,
-    "GridIndex": 5406,
-    "Time": 120,
-    "Input": [
-      7702
-    ],
-    "InCounts": [
-      1
-    ],
-    "Output": [
-      7604
-    ],
-    "OutCounts": [
-      12
-    ],
-    "Explicit": false,
-    "Handcraft": false,
-    "NonProductive": false
-  },
-  {
-    "ID": 765,
-    "Name": "超高功率IC晶片",
-    "Description": "",
-    "IconPath": "",
-    "Type": 10,
-    "GridIndex": 5506,
-    "Time": 120,
-    "Input": [
-      7703
-    ],
-    "InCounts": [
-      1
-    ],
-    "Output": [
-      7605
-    ],
-    "OutCounts": [
-      12
-    ],
-    "Explicit": false,
-    "Handcraft": false,
-    "NonProductive": false
-  },
-  {
-    "ID": 766,
-    "Name": "生物IC晶片",
-    "Description": "",
-    "IconPath": "",
-    "Type": 10,
-    "GridIndex": 5606,
-    "Time": 120,
-    "Input": [
-      7703
-    ],
-    "InCounts": [
-      1
-    ],
-    "Output": [
-      7606
-    ],
-    "OutCounts": [
-      12
     ],
     "Explicit": false,
     "Handcraft": false,
@@ -4595,82 +4275,6 @@
     ],
     "Explicit": false,
     "Handcraft": false,
-    "NonProductive": false
-  },
-  {
-    "ID": 777,
-    "Name": "硅晶圆",
-    "Description": "",
-    "IconPath": "",
-    "Type": 1,
-    "GridIndex": 5101,
-    "Time": 480,
-    "Input": [
-      1105
-    ],
-    "InCounts": [
-      16
-    ],
-    "Output": [
-      7701
-    ],
-    "OutCounts": [
-      1
-    ],
-    "Explicit": false,
-    "Handcraft": true,
-    "NonProductive": false
-  },
-  {
-    "ID": 778,
-    "Name": "钛掺杂的硅晶圆",
-    "Description": "",
-    "IconPath": "",
-    "Type": 1,
-    "GridIndex": 5102,
-    "Time": 240,
-    "Input": [
-      1105,
-      1106
-    ],
-    "InCounts": [
-      32,
-      8
-    ],
-    "Output": [
-      7702
-    ],
-    "OutCounts": [
-      1
-    ],
-    "Explicit": false,
-    "Handcraft": true,
-    "NonProductive": false
-  },
-  {
-    "ID": 779,
-    "Name": "钨掺杂的硅晶圆",
-    "Description": "",
-    "IconPath": "",
-    "Type": 1,
-    "GridIndex": 5103,
-    "Time": 120,
-    "Input": [
-      1105,
-      7705
-    ],
-    "InCounts": [
-      32,
-      8
-    ],
-    "Output": [
-      7703
-    ],
-    "OutCounts": [
-      1
-    ],
-    "Explicit": false,
-    "Handcraft": true,
     "NonProductive": false
   },
   {
@@ -4888,88 +4492,6 @@
     "NonProductive": false
   },
   {
-    "ID": 547,
-    "Name": "硅晶圆（高效）",
-    "Description": "R硅晶圆（高效）",
-    "IconPath": "Assets/texpack/高效硅晶圆",
-    "Type": 1,
-    "GridIndex": 5201,
-    "Time": 240,
-    "Input": [
-      1105,
-      1014
-    ],
-    "InCounts": [
-      8,
-      4
-    ],
-    "Output": [
-      7701
-    ],
-    "OutCounts": [
-      1
-    ],
-    "Explicit": true,
-    "Handcraft": false,
-    "NonProductive": false
-  },
-  {
-    "ID": 548,
-    "Name": "含钛硅晶圆（高效）",
-    "Description": "R含钛硅晶圆（高效）",
-    "IconPath": "Assets/texpack/高效钛晶圆",
-    "Type": 1,
-    "GridIndex": 5202,
-    "Time": 120,
-    "Input": [
-      1105,
-      1106,
-      1014
-    ],
-    "InCounts": [
-      16,
-      4,
-      4
-    ],
-    "Output": [
-      7702
-    ],
-    "OutCounts": [
-      1
-    ],
-    "Explicit": true,
-    "Handcraft": false,
-    "NonProductive": false
-  },
-  {
-    "ID": 549,
-    "Name": "含钨硅晶圆（高效）",
-    "Description": "R含钨硅晶圆（高效）",
-    "IconPath": "Assets/texpack/高效钨晶圆",
-    "Type": 1,
-    "GridIndex": 5203,
-    "Time": 120,
-    "Input": [
-      1105,
-      7705,
-      1014
-    ],
-    "InCounts": [
-      32,
-      8,
-      8
-    ],
-    "Output": [
-      7703
-    ],
-    "OutCounts": [
-      2
-    ],
-    "Explicit": true,
-    "Handcraft": false,
-    "NonProductive": false
-  },
-  {
     "ID": 550,
     "Name": "活性纤维分离",
     "Description": "R活性纤维分离",
@@ -4988,32 +4510,6 @@
     ],
     "OutCounts": [
       1
-    ],
-    "Explicit": true,
-    "Handcraft": false,
-    "NonProductive": false
-  },
-  {
-    "ID": 530,
-    "Name": "处理器（极效）",
-    "Description": "R处理器（极效）",
-    "IconPath": "Assets/texpack/极效处理器",
-    "Type": 10,
-    "GridIndex": 5408,
-    "Time": 180,
-    "Input": [
-      7504,
-      7604
-    ],
-    "InCounts": [
-      1,
-      2
-    ],
-    "Output": [
-      1303
-    ],
-    "OutCounts": [
-      8
     ],
     "Explicit": true,
     "Handcraft": false,
@@ -5184,7 +4680,7 @@
       7019
     ],
     "InCounts": [
-      10,     
+      10,
       6
     ],
     "Output": [
@@ -5214,7 +4710,7 @@
     ],
     "InCounts": [
       1,
-      3,
+      6,
       10
     ],
     "Output": [
@@ -5256,32 +4752,6 @@
     "NonProductive": false
   },
   {
-    "ID": 518,
-    "Name": "微晶元件（高效）",
-    "Description": "R微晶元件（高效）",
-    "IconPath": "Assets/texpack/高效微晶元件",
-    "Type": 10,
-    "GridIndex": 5501,
-    "Time": 120,
-    "Input": [
-      7502,
-      7602
-    ],
-    "InCounts": [
-      2,
-      4
-    ],
-    "Output": [
-      1302
-    ],
-    "OutCounts": [
-      8
-    ],
-    "Explicit": true,
-    "Handcraft": false,
-    "NonProductive": false
-  },
-  {
     "ID": 519,
     "Name": "处理器（高效）",
     "Description": "R处理器（高效）",
@@ -5290,46 +4760,18 @@
     "GridIndex": 5502,
     "Time": 120,
     "Input": [
-      7503,
-      7603
+      7504,
+      1106
     ],
     "InCounts": [
-      1,
+      2,
       2
     ],
     "Output": [
       1303
     ],
     "OutCounts": [
-      4
-    ],
-    "Explicit": true,
-    "Handcraft": false,
-    "NonProductive": false
-  },
-  {
-    "ID": 520,
-    "Name": "量子芯片（高效）",
-    "Description": "R量子芯片（高效）",
-    "IconPath": "Assets/texpack/高效量子芯片",
-    "Type": 10,
-    "GridIndex": 5503,
-    "Time": 180,
-    "Input": [
-      7504,
-      7604,
-      1304
-    ],
-    "InCounts": [
-      1,
-      2,
-      4
-    ],
-    "Output": [
-      1305
-    ],
-    "OutCounts": [
-      4
+      2
     ],
     "Explicit": true,
     "Handcraft": false,

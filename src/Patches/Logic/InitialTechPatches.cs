@@ -10,7 +10,7 @@ namespace ProjectGenesis.Patches.Logic
 {
     public static class InitialTechPatches
     {
-        private static readonly List<int> InitialTechs = new List<int> { 1, 1901, 1902, 1415 }, BonusTechs = new List<int> { 1001, 1801, 1701 };
+        private static readonly List<int> InitialTechs = new List<int> { 1, 1901, 1415 }, BonusTechs = new List<int> { 1001, 1801, 1701 };
 
         [HarmonyPatch(typeof(GameData), "SetForNewGame")]
         [HarmonyPostfix]
