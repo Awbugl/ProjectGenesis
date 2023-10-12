@@ -20,8 +20,7 @@ namespace ProjectGenesis.Patches.UI
         [HarmonyPatch(typeof(UIReplicatorWindow), "OnSelectedRecipeChange")]
         public static void UIReplicatorWindow_OnSelectedRecipeChange(ref UIReplicatorWindow __instance)
         {
-            ref RecipeProto selectedRecipe
-                = ref AccessTools.FieldRefAccess<UIReplicatorWindow, RecipeProto>(UIRoot.instance.uiGame.replicator, "selectedRecipe");
+            ref RecipeProto selectedRecipe = ref UIRoot.instance.uiGame.replicator.selectedRecipe;
             if (selectedRecipe == null) return;
 
             int results = selectedRecipe.Results.Length;
@@ -85,8 +84,7 @@ namespace ProjectGenesis.Patches.UI
                 = new Vector2(-32 * (results - 1) + 64 * 1 - 24, -11f);
 
 
-            ref List<UIButton> treeUpList
-                = ref AccessTools.FieldRefAccess<UIReplicatorWindow, List<UIButton>>(UIRoot.instance.uiGame.replicator, "treeUpList");
+            List<UIButton> treeUpList = UIRoot.instance.uiGame.replicator.treeUpList;
 
             foreach (UIButton treeUp in treeUpList) treeUp.gameObject.SetActive(false);
         }

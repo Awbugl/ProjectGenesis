@@ -5,7 +5,6 @@ using System.Reflection.Emit;
 using CommonAPI.Systems.UI;
 using HarmonyLib;
 using UnityEngine;
-using UnityEngine.UI;
 
 // ReSharper disable InconsistentNaming
 // ReSharper disable CompareOfFloatsByEqualityOperator
@@ -21,38 +20,23 @@ namespace ProjectGenesis.Patches.UI
     /// </summary>
     internal static class GridIndexExpandPatches
     {
-        private static ref TU FieldRefAccess<T, TU>(T instance, string fieldName) => ref FieldRefAccess<T, TU>(fieldName)(instance);
-
-        private static AccessTools.FieldRef<T, TU> FieldRefAccess<T, TU>(string fieldName)
-            => AccessTools.FieldRefAccess<T, TU>(AccessTools.Field(typeof(T), fieldName));
-
         [HarmonyPatch(typeof(UIReplicatorWindow), "_OnInit")]
         [HarmonyPrefix]
-        public static void UIReplicatorWindow_OnInit_Prefix()
-        {
-            ref Text[] local = ref AccessTools.FieldRefAccess<UIReplicatorWindow, Text[]>(UIRoot.instance.uiGame.replicator, "queueNumTexts");
-            Array.Resize(ref local, 17);
-        }
+        public static void UIReplicatorWindow_OnInit_Prefix() => Array.Resize(ref UIRoot.instance.uiGame.replicator.queueNumTexts, 17);
 
         [HarmonyPatch(typeof(VFPreload), "InvokeOnLoadWorkEnded")]
         [HarmonyPostfix]
         [HarmonyPriority(Priority.Last)]
         public static void VFPreload_InvokeOnLoadWorkEnded_Postfix()
         {
-            ref UIGame instanceUIGame = ref UIRoot.instance.uiGame;
+            ref UIGame uiGame = ref UIRoot.instance.uiGame;
 
-            ref RectTransform local1 = ref FieldRefAccess<UIReplicatorWindow, RectTransform>(instanceUIGame.replicator, "windowRect");
-            local1.sizeDelta = new Vector2(900, 811);
-            ref RectTransform local2 = ref FieldRefAccess<UIReplicatorWindow, RectTransform>(instanceUIGame.replicator, "recipeGroup");
-            local2.sizeDelta = new Vector2(782, 322);
-            ref RectTransform local3 = ref FieldRefAccess<UIAssemblerWindow, RectTransform>(instanceUIGame.assemblerWindow, "recipeGroup");
-            local3.sizeDelta = new Vector2(190, 100);
-            ref RectTransform local4 = ref FieldRefAccess<UIRecipePicker, RectTransform>(instanceUIGame.recipePicker, "pickerTrans");
-            local4.sizeDelta = new Vector2(830, 476);
-            ref RectTransform local5 = ref FieldRefAccess<UIItemPicker, RectTransform>(instanceUIGame.itemPicker, "pickerTrans");
-            local5.sizeDelta = new Vector2(830, 476);
-            ref RectTransform local6 = ref FieldRefAccess<UISignalPicker, RectTransform>(instanceUIGame.signalPicker, "pickerTrans");
-            local6.sizeDelta = new Vector2(830, 476);
+            uiGame.replicator.windowRect.sizeDelta = new Vector2(900, 811);
+            uiGame.replicator.recipeGroup.sizeDelta = new Vector2(782, 322);
+            uiGame.assemblerWindow.recipeGroup.sizeDelta = new Vector2(190, 100);
+            uiGame.recipePicker.pickerTrans.sizeDelta = new Vector2(830, 476);
+            uiGame.itemPicker.pickerTrans.sizeDelta = new Vector2(830, 476);
+            uiGame.signalPicker.pickerTrans.sizeDelta = new Vector2(830, 476);
 
             GameObject.Find("UI Root/Overlay Canvas/In Game/Windows/Replicator Window/queue-group").GetComponentInChildren<RectTransform>().sizeDelta
                 = new Vector2(782f, 46f);

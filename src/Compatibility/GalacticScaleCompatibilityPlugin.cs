@@ -9,6 +9,7 @@ using GalacticScale;
 using HarmonyLib;
 using ProjectGenesis.Patches.Logic;
 using ProjectGenesis.Patches.Logic.AddVein;
+using UnityEngine;
 using static ProjectGenesis.Patches.Logic.AddVein.AdjustPlanetTheme;
 using PluginInfo = BepInEx.PluginInfo;
 
@@ -21,7 +22,7 @@ using PluginInfo = BepInEx.PluginInfo;
 namespace ProjectGenesis.Compatibility
 {
     [BepInPlugin(MODGUID, MODNAME, VERSION)]
-    [BepInDependency(GalacticScaleGUID, BepInDependency.DependencyFlags.SoftDependency)]
+    [BepInDependency(GalacticScaleGUID)]
     public class GalacticScaleCompatibilityPlugin : BaseUnityPlugin
     {
         public const string MODGUID = "org.LoShin.GenesisBook.Compatibility.GalacticScale";
@@ -36,7 +37,7 @@ namespace ProjectGenesis.Compatibility
         {
             GalacticScaleInstalled = Chainloader.PluginInfos.TryGetValue(GalacticScaleGUID, out PluginInfo pluginInfo);
 
-            if (pluginInfo == null) return;
+            if (!GalacticScaleInstalled || pluginInfo == null) return;
 
             Assembly assembly = pluginInfo.Instance.GetType().Assembly;
 
@@ -61,9 +62,21 @@ namespace ProjectGenesis.Compatibility
                           new HarmonyMethod(typeof(GalacticScaleCompatibilityPlugin), nameof(SetPlanetTheme_Postfix)),
                           new HarmonyMethod(typeof(GalacticScaleCompatibilityPlugin), nameof(SetPlanetTheme_Transpiler)));
 
+            harmony.Patch(AccessTools.Method(assembly.GetType("GalacticScale.GSTheme"), "ToProto"), null,
+                          new HarmonyMethod(typeof(GalacticScaleCompatibilityPlugin), nameof(GSTheme_ToProto_Postfix)));
+
             harmony.Patch(AccessTools.Method(assembly.GetType("GalacticScale.VeinAlgorithms"), "DisableVeins"), null, null,
                           new HarmonyMethod(typeof(GalacticScaleCompatibilityPlugin), nameof(DisableVeins_Transpiler)));
-            
+
+            harmony.Patch(AccessTools.Method(assembly.GetType("GalacticScale.VeinAlgorithms"), "GenBirthPoints"), null,
+                          new HarmonyMethod(typeof(GalacticScaleCompatibilityPlugin), nameof(GenBirthPoints_Postfix)));
+
+            harmony.Patch(AccessTools.Method(assembly.GetType("GalacticScale.VeinAlgorithms"), "CalculateVectorsGS2"), null,
+                          new HarmonyMethod(typeof(GalacticScaleCompatibilityPlugin), nameof(CalculateVectorsGS2_Postfix)));
+
+            harmony.Patch(AccessTools.Method(assembly.GetType("GalacticScale.VeinAlgorithms"), "InitBirthVeinVectors"),
+                          new HarmonyMethod(typeof(GalacticScaleCompatibilityPlugin), nameof(InitBirthVeinVectors_Postfix)));
+
             harmony.Patch(AccessTools.PropertyGetter(assembly.GetType("GalacticScale.GS2MainSettings"), "VeinTips"), null, null,
                           new HarmonyMethod(typeof(GalacticScaleCompatibilityPlugin), nameof(GS2MainSettings_VeinTips_Getter_Transpiler)));
 
@@ -108,6 +121,132 @@ namespace ProjectGenesis.Compatibility
             return matcher.InstructionEnumeration();
         }
 
+        public static void CalculateVectorsGS2_Postfix(GSPlanet gsPlanet, List<GSVeinDescriptor> __result)
+        {
+            if (gsPlanet.planetData.id == GSSettings.BirthPlanetId)
+                __result.Add(new GSVeinDescriptor()
+                             {
+                                 count = 6,
+                                 position = gsPlanet.planetData.birthResourcePoint2,
+                                 rare = false,
+                                 type = (EVeinType)15,
+                                 richness = 0.5f
+                             });
+        }
+
+        public static void GenBirthPoints_Postfix(GSPlanet gsPlanet)
+        {
+            VeinAlgorithms.random = new GS2.Random(GSSettings.Seed);
+            PlanetData planetData = gsPlanet.planetData;
+            double num1 = 85.0 / planetData.orbitalPeriod + planetData.orbitPhase / 360.0;
+            int num2 = (int)(num1 + 0.1);
+            double num3 = (num1 - num2) * (2.0 * Math.PI);
+            double num4 = 85.0 / planetData.rotationPeriod + planetData.rotationPhase / 360.0;
+            int num5 = (int)(num4 + 0.1);
+            double angle = (num4 - num5) * 360.0;
+            Vector3 v = new Vector3((float)Math.Cos(num3) * planetData.orbitRadius, 0.0f, (float)Math.Sin(num3) * planetData.orbitRadius);
+            Vector3 position = Maths.QRotate(planetData.runtimeOrbitRotation, v);
+            Pose pose;
+            if (planetData.orbitAroundPlanet != null)
+            {
+                pose = planetData.orbitAroundPlanet.PredictPose(85.0);
+                position.x += pose.position.x;
+                position.y += pose.position.y;
+                position.z += pose.position.z;
+            }
+
+            pose = new Pose(position, planetData.runtimeSystemRotation * Quaternion.AngleAxis((float)angle, Vector3.down));
+            Vector3 vector3_1 = Maths.QInvRotateLF(pose.rotation, planetData.star.uPosition - (VectorLF3)pose.position * 40000.0);
+            vector3_1.Normalize();
+            Vector3 vector3_2 = Vector3.Cross(vector3_1, Vector3.up);
+            Vector3 normalized1 = vector3_2.normalized;
+            vector3_2 = Vector3.Cross(normalized1, vector3_1);
+            Vector3 normalized2 = vector3_2.normalized;
+            int num6 = 0;
+            while (num6++ < 256)
+            {
+                float num7 = (float)(VeinAlgorithms.random.NextDouble() * 2.0 - 1.0) * 0.5f;
+                float num8 = (float)(VeinAlgorithms.random.NextDouble() * 2.0 - 1.0) * 0.5f;
+                Vector3 vector3_3 = vector3_1 + num7 * normalized1 + num8 * normalized2;
+                vector3_3.Normalize();
+                planetData.birthPoint = vector3_3 * (float)(planetData.realRadius + 0.20000000298023224 + 1.5800000429153442);
+                vector3_2 = Vector3.Cross(vector3_3, Vector3.up);
+                normalized1 = vector3_2.normalized;
+                vector3_2 = Vector3.Cross(normalized1, vector3_3);
+                normalized2 = vector3_2.normalized;
+                bool flag = false;
+                for (int index = 0; index < 10; ++index)
+                {
+                    Vector2 vector2_1 = new Vector2((float)(VeinAlgorithms.random.NextDouble() * 2.0 - 1.0),
+                                                    (float)(VeinAlgorithms.random.NextDouble() * 2.0 - 1.0)).normalized *
+                                        0.1f;
+                    Vector2 vector2_2 = AddVeinPatches.Rotate(vector2_1, 120);
+                    float num9 = (float)(VeinAlgorithms.random.NextDouble() * 2.0 - 1.0) * 0.06f;
+                    float num10 = (float)(VeinAlgorithms.random.NextDouble() * 2.0 - 1.0) * 0.06f;
+                    vector2_2.x += num9;
+                    vector2_2.y += num10;
+                    Vector2 vector2_3 = AddVeinPatches.Rotate(vector2_2, 120);
+                    float num51 = (float)(VeinAlgorithms.random.NextDouble() * 2.0 - 1.0) * 0.06f;
+                    float num61 = (float)(VeinAlgorithms.random.NextDouble() * 2.0 - 1.0) * 0.06f;
+                    vector2_3.x += num51;
+                    vector2_3.y += num61;
+                    vector3_2 = vector3_3 + vector2_1.x * normalized1 + vector2_1.y * normalized2;
+                    Vector3 normalized3 = vector3_2.normalized;
+                    vector3_2 = vector3_3 + vector2_2.x * normalized1 + vector2_2.y * normalized2;
+                    Vector3 normalized4 = vector3_2.normalized;
+                    vector3_2 = vector3_3 + vector2_3.x * normalized1 + vector2_3.y * normalized2;
+                    Vector3 normalized5 = vector3_2.normalized;
+                    planetData.birthResourcePoint0 = normalized3.normalized;
+                    planetData.birthResourcePoint1 = normalized4.normalized;
+                    planetData.birthResourcePoint2 = normalized5.normalized;
+                    float num11 = planetData.realRadius + 0.2f;
+                    if (planetData.data.QueryHeight(vector3_3) > (double)num11 &&
+                        planetData.data.QueryHeight(normalized3) > (double)num11 &&
+                        planetData.data.QueryHeight(normalized4) > (double)num11)
+                    {
+                        Vector3 vpos1 = normalized3 + normalized1 * 0.03f;
+                        Vector3 vpos2 = normalized3 - normalized1 * 0.03f;
+                        Vector3 vpos3 = normalized3 + normalized2 * 0.03f;
+                        Vector3 vpos4 = normalized3 - normalized2 * 0.03f;
+                        Vector3 vpos5 = normalized4 + normalized1 * 0.03f;
+                        Vector3 vpos6 = normalized4 - normalized1 * 0.03f;
+                        Vector3 vpos7 = normalized4 + normalized2 * 0.03f;
+                        Vector3 vpos8 = normalized4 - normalized2 * 0.03f;
+                        Vector3 vpos9 = normalized5 + normalized1 * 0.03f;
+                        Vector3 vpos10 = normalized5 - normalized1 * 0.03f;
+                        Vector3 vpos11 = normalized5 + normalized2 * 0.03f;
+                        Vector3 vpos12 = normalized5 - normalized2 * 0.03f;
+                        if (planetData.data.QueryHeight(vpos1) > (double)num11 &&
+                            planetData.data.QueryHeight(vpos2) > (double)num11 &&
+                            planetData.data.QueryHeight(vpos3) > (double)num11 &&
+                            planetData.data.QueryHeight(vpos4) > (double)num11 &&
+                            planetData.data.QueryHeight(vpos5) > (double)num11 &&
+                            planetData.data.QueryHeight(vpos6) > (double)num11 &&
+                            planetData.data.QueryHeight(vpos7) > (double)num11 &&
+                            planetData.data.QueryHeight(vpos8) > (double)num11 &&
+                            planetData.data.QueryHeight(vpos9) > (double)num11 &&
+                            planetData.data.QueryHeight(vpos10) > (double)num11 &&
+                            planetData.data.QueryHeight(vpos11) > (double)num11 &&
+                            planetData.data.QueryHeight(vpos12) > (double)num11)
+                        {
+                            flag = true;
+                            break;
+                        }
+                    }
+                }
+
+                if (flag) break;
+            }
+        }
+
+        public static void InitBirthVeinVectors_Postfix(GSPlanet gsPlanet)
+        {
+            PlanetData planetData = gsPlanet.planetData;
+            gsPlanet.veinData.types[2] = (EVeinType)15;
+            gsPlanet.veinData.vectors[2] = planetData.birthResourcePoint2;
+            gsPlanet.veinData.count = 3;
+        }
+
         public static void SetPlanetTheme_Postfix(PlanetData planet)
         {
             if (planet.type != EPlanetType.Gas)
@@ -117,7 +256,21 @@ namespace ProjectGenesis.Compatibility
             }
         }
 
-        public static IEnumerable<CodeInstruction> DisableVeins_Transpiler(IEnumerable<CodeInstruction> instructions)
+        public static void GSTheme_ToProto_Postfix(ThemeProto __result)
+        {
+            switch (__result.name)
+            {
+                case "SaltLake":
+                    __result.oceanMat = LDB.themes.Select(8).oceanMat;
+                    break;
+
+                case "Gobi":
+                    __result.oceanMat = LDB.themes.Select(22).oceanMat;
+                    break;
+            }
+        }
+
+        public static IEnumerable<CodeInstruction> GS2MainSettings_VeinTips_Getter_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
             var matcher = new CodeMatcher(instructions);
 
@@ -127,8 +280,8 @@ namespace ProjectGenesis.Compatibility
 
             return matcher.InstructionEnumeration();
         }
-        
-        public static IEnumerable<CodeInstruction> GS2MainSettings_VeinTips_Getter_Transpiler(IEnumerable<CodeInstruction> instructions)
+
+        public static IEnumerable<CodeInstruction> DisableVeins_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
             var matcher = new CodeMatcher(instructions);
 
@@ -281,6 +434,7 @@ namespace ProjectGenesis.Compatibility
                         theme.WaterHeight = -0.1f;
                         theme.Distribute = EThemeDistribute.Interstellar;
                         theme.Algo = 3;
+                        Themes.OceanicJungle.InitMaterials();
                         theme.oceanMat = Themes.OceanicJungle.oceanMat;
                         RemoveVein(ref theme, 0);
                         RemoveVein(ref theme, 3);

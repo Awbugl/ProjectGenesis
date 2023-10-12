@@ -47,12 +47,7 @@ namespace ProjectGenesis.Patches.UI
 
         [HarmonyPatch(typeof(UIShowSignalTipExtension), "OnUpdate")]
         [HarmonyPrefix]
-        public static bool UIShowSignalTipExtension_OnUpdate(UISignalPicker picker)
-        {
-            int hoveredIndex = AccessTools.FieldRefAccess<UISignalPicker, int>(picker, "hoveredIndex");
-            int[] signalArray = AccessTools.FieldRefAccess<UISignalPicker, int[]>(picker, "signalArray");
-            return hoveredIndex >= 0 && hoveredIndex < signalArray.Length;
-        }
+        public static bool UIShowSignalTipExtension_OnUpdate(UISignalPicker picker) => picker.hoveredIndex >= 0 && picker.hoveredIndex < picker.signalArray.Length;
 
         [HarmonyPatch(typeof(UISignalPicker), "_OnUpdate")]
         [HarmonyTranspiler]

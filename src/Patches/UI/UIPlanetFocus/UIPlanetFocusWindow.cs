@@ -1,5 +1,4 @@
 ﻿using CommonAPI.Systems;
-using HarmonyLib;
 using ProjectGenesis.Patches.UI.Utils;
 using ProjectGenesis.Utils;
 using UnityEngine;
@@ -37,7 +36,7 @@ namespace ProjectGenesis.Patches.UI.UIPlanetFocus
 
         public void OpenWindow() => MyWindowCtl.OpenWindow(this);
 
-        protected override void _OnCreate()
+        public override void _OnCreate()
         {
             windowTrans = GetRectTransform(this);
             windowTrans.sizeDelta = new Vector2(380f, 250f);
@@ -77,7 +76,7 @@ namespace ProjectGenesis.Patches.UI.UIPlanetFocus
             _tagNotSelectedSprite = _iconImgs[0].sprite;
         }
 
-        protected override void _OnUpdate()
+        public override void _OnUpdate()
         {
             if (VFInput.escape)
             {
@@ -109,7 +108,7 @@ namespace ProjectGenesis.Patches.UI.UIPlanetFocus
 
         private void OnIconBtnClick(int id)
         {
-            AccessTools.FieldRefAccess<int>(typeof(UIItemPicker), "currentType")(UIRoot.instance.uiGame.itemPicker) = ProjectGenesis.TableID[0];
+            UIRoot.instance.uiGame.itemPicker.currentType = ProjectGenesis.TableID[0];
             UIItemPickerExtension.Popup(new Vector2(-300f, 250f), j => OnPickReturn(j, id), true, itemProto => FocusIds.ContainsKey(itemProto.ID));
         }
 

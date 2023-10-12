@@ -192,7 +192,7 @@ namespace ProjectGenesis
             @base.MiningChance = new float[] { 1, 1, 1 };
             @base.Preload();
 
-            ref StringProtoSet locstrs = ref AccessTools.StaticFieldRefAccess<StringProtoSet>(typeof(Localization), "_strings");
+            ref StringProtoSet locstrs = ref Localization._strings;
             locstrs = LDB.strings;
 
             foreach (VeinProto proto in LDB.veins.dataArray)

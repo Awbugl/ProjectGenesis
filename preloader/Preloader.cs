@@ -11,37 +11,57 @@ namespace ProjectGenesis
         public static void Patch(AssemblyDefinition assembly)
         {
             ModuleDefinition module = assembly.MainModule;
+
             TypeDefinition veinType = module.Types.FirstOrDefault(t => t.FullName == "EVeinType");
-            if (veinType == null) return;
 
-            FieldDefinition aluminum = veinType.Fields.FirstOrDefault(i => i.HasDefault && (byte)i.Constant == 15);
-            if (aluminum == null)
+            if (veinType != null)
             {
-                aluminum = new FieldDefinition("Aluminum",
-                                               FieldAttributes.Static | FieldAttributes.Literal | FieldAttributes.Public | FieldAttributes.HasDefault,
-                                               veinType) { Constant = 15 };
+                FieldDefinition aluminum = veinType.Fields.FirstOrDefault(i => i.HasDefault && (byte)i.Constant == 15);
+                if (aluminum == null)
+                {
+                    aluminum = new FieldDefinition("Aluminum",
+                                                   FieldAttributes.Static |
+                                                   FieldAttributes.Literal |
+                                                   FieldAttributes.Public |
+                                                   FieldAttributes.HasDefault, veinType) { Constant = 15 };
 
-                veinType.Fields.Add(aluminum);
+                    veinType.Fields.Add(aluminum);
+                }
+                else
+                {
+                    veinType.Fields.Remove(aluminum);
+                    aluminum.Name = "Aluminum";
+                    veinType.Fields.Add(aluminum);
+                }
+
+                var radioactive = new FieldDefinition("Radioactive",
+                                                      FieldAttributes.Static |
+                                                      FieldAttributes.Literal |
+                                                      FieldAttributes.Public |
+                                                      FieldAttributes.HasDefault, veinType) { Constant = 16 };
+
+                var tungsten = new FieldDefinition("Tungsten",
+                                                   FieldAttributes.Static |
+                                                   FieldAttributes.Literal |
+                                                   FieldAttributes.Public |
+                                                   FieldAttributes.HasDefault, veinType) { Constant = 17 };
+
+                veinType.Fields.Add(radioactive);
+                veinType.Fields.Add(tungsten);
             }
-            else
+
+            TypeDefinition planetData = module.Types.FirstOrDefault(t => t.FullName == "PlanetData");
+
+            if (planetData != null)
             {
-                veinType.Fields.Remove(aluminum);
-                aluminum.Name = "Aluminum";
-                veinType.Fields.Add(aluminum);
+                FieldDefinition birthResourcePoint0 = planetData.Fields.FirstOrDefault(i => i.Name == "birthResourcePoint0");
+
+                if (birthResourcePoint0 != null)
+                {
+                    var vector3 = new FieldDefinition("birthResourcePoint2", birthResourcePoint0.Attributes, birthResourcePoint0.FieldType);
+                    planetData.Fields.Add(vector3);
+                }
             }
-
-            var radioactive = new FieldDefinition("Radioactive",
-                                                  FieldAttributes.Static |
-                                                  FieldAttributes.Literal |
-                                                  FieldAttributes.Public |
-                                                  FieldAttributes.HasDefault, veinType) { Constant = 16 };
-
-            var tungsten = new FieldDefinition("Tungsten",
-                                               FieldAttributes.Static | FieldAttributes.Literal | FieldAttributes.Public | FieldAttributes.HasDefault,
-                                               veinType) { Constant = 17 };
-
-            veinType.Fields.Add(radioactive);
-            veinType.Fields.Add(tungsten);
         }
     }
 }

@@ -92,14 +92,14 @@ namespace ProjectGenesis.Patches.Logic.AddVein
                 AdjustVeins(theme);
 
                 if (theme.WaterItemId == 1000) theme.WaterItemId = 7018;
-                
+
                 switch (theme.ID)
                 {
                     case 8:
                         theme.WaterItemId = 1000;
                         theme.Distribute = EThemeDistribute.Interstellar;
                         break;
-                    
+
                     case 12:
                         theme.WaterItemId = 7017;
                         theme.WaterHeight = -0.1f;
@@ -111,12 +111,12 @@ namespace ProjectGenesis.Patches.Logic.AddVein
                         RemoveVein(theme, 3);
                         RemoveVein(theme, 14);
                         break;
-                        
+
                     case 13:
                         RemoveVein(theme, 0);
                         RemoveVein(theme, 14);
                         break;
-                    
+
                     case 17:
                         theme.WaterItemId = 7014;
                         theme.WaterHeight = -0.1f;
@@ -126,41 +126,6 @@ namespace ProjectGenesis.Patches.Logic.AddVein
                         RemoveVein(theme, 0);
                         RemoveVein(theme, 3);
                         RemoveVein(theme, 14);
-                        break;
-                }
-            }
-        }
-
-        internal static void AdjustThemeGalacticScale(ThemeProto theme)
-        {
-            if (theme.PlanetType == EPlanetType.Gas)
-            {
-                GasGiantAdjust(theme);
-            }
-            else
-            {
-                AdjustGasItems(theme);
-
-                if (theme.WaterItemId == 1000) theme.WaterItemId = 7018;
-
-                // for GalacticScale mod
-                switch (theme.name)
-                {
-                    case "OceanicJungle":
-                        theme.WaterItemId = 1000;
-                        break;
-
-                    case "SaltLake":
-                        theme.WaterItemId = 7014;
-                        theme.WaterHeight = -0.1f;
-                        theme.Algos = new[] { 3 };
-                        theme.oceanMat = LDB.themes.Select(8).oceanMat;
-                        break;
-
-                    case "Gobi":
-                        theme.WaterItemId = 7017;
-                        theme.WaterHeight = -0.1f;
-                        theme.oceanMat = LDB.themes.Select(22).oceanMat;
                         break;
                 }
             }

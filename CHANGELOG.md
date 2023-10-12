@@ -1,3 +1,22 @@
+- v2.8.0-alpha3 (Experimental 0.2.3)
+  + 恢复与 `GalacticScale` mod的兼容
+  + 为出生点添加了固定生成的铝矿脉
+  + 调整了部分物品的热值
+  + 移除了`氨`海洋
+
+  + Added patch for compatibility with the `GalacticScale` mod
+  + Redesigned `Processor` and their recipes (affect save)
+  + Redesigned `Biological computer` and their recipes (affect save)
+  + Redesigned `Standard Assembler` requirements and the types of recipes that can be made (affect save)
+  + Adjusted the amount of supplies at the start of the game
+  + Adjusted some teches
+  + Adjusted the icons for some items
+
+
+<details>
+  <summary>点击展开日志 | Click to view all </summary>
+
+
 - v2.8.0-alpha2 (Experimental 0.2.2)
   + 重新设计了化学能燃料及对应配方（影响存档）
   + 重新设计了`处理器`及对应配方（影响存档）
@@ -18,10 +37,6 @@
   + Adjusted the icons for some items
   + Added patch for compatibility with the `Planet Vein Utilization` mod
   + Added an incompatibility tip for the `GalacticScale` mod
-
-
-<details>
-  <summary>点击展开日志 | Click to view all </summary>
 
 
 - v2.8.0-alpha1 (Experimental 0.2.1)
