@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Reflection.Emit;
+using GalacticScale;
 using HarmonyLib;
+
+// ReSharper disable InconsistentNaming
 
 namespace ProjectGenesis.Patches.Logic.AddVein
 {
@@ -66,11 +69,19 @@ namespace ProjectGenesis.Patches.Logic.AddVein
                                  new CodeMatch(OpCodes.Call, AccessTools.PropertyGetter(typeof(LDB), nameof(LDB.veins))),
                                  new CodeMatch(OpCodes.Ldfld), new CodeMatch(OpCodes.Ldlen));
 
-            matcher.Advance(1).SetInstructionAndAdvance(new CodeInstruction(OpCodes.Ldc_I4_S, (sbyte)15))
+            matcher.Advance(1).SetInstructionAndAdvance(new CodeInstruction(OpCodes.Ldc_I4_S, (sbyte)14))
                    .SetInstructionAndAdvance(new CodeInstruction(OpCodes.Nop)).SetInstructionAndAdvance(new CodeInstruction(OpCodes.Nop))
                    .SetInstructionAndAdvance(new CodeInstruction(OpCodes.Nop));
 
             return matcher.InstructionEnumeration();
+        }
+
+        [HarmonyPatch(typeof(UISandboxMenu), "StaticLoad")]
+        [HarmonyPostfix]
+        public static void UISandboxMenu_StaticLoad_Postfix(ref VeinProto[,] ___veinProtos)
+        {
+            ___veinProtos[1, 7] = LDB.veins.Select(15);
+            ___veinProtos[1, 8] = LDB.veins.Select(16);
         }
 
         [HarmonyPatch(typeof(PlanetAlgorithm), "GenerateVeins")]

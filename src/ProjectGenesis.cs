@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -21,7 +22,7 @@ using ERecipeType_1 = ERecipeType;
 using static ProjectGenesis.Utils.PrefabFixUtils;
 using static ProjectGenesis.Utils.JsonDataUtils;
 using static ProjectGenesis.Utils.CopyModelUtils;
-using static ProjectGenesis.Utils.PlanetThemeUtils;
+using static ProjectGenesis.Patches.Logic.AddVein.AdjustPlanetTheme;
 
 #pragma warning disable CS0618
 
@@ -71,12 +72,6 @@ namespace ProjectGenesis
             if (DSPBattleCompatibilityPlugin.DSPBattleInstalled)
             {
                 logger.Log(LogLevel.Error, "They Come From Void is installed, which is incompatible with GenesisBook. Load Cancelled.");
-                return;
-            }
-            
-            if (GalacticScaleCompatibilityPlugin.GalacticScaleInstalled)
-            {
-                logger.Log(LogLevel.Error, "GalacticScale is installed, which is incompatible with GenesisBook. Load Cancelled.");
                 return;
             }
 
@@ -131,8 +126,12 @@ namespace ProjectGenesis
 
             Harmony = new Harmony(MODGUID);
 
-            foreach (Type type in executingAssembly.GetTypes()) Harmony.PatchAll(type);
-            
+            IEnumerable<Type> types = from t in executingAssembly.GetTypes()
+                                      where t.IsClass && !string.IsNullOrWhiteSpace(t.Namespace) && t.Namespace.StartsWith("ProjectGenesis.Patches")
+                                      select t;
+
+            foreach (Type type in types) Harmony.PatchAll(type);
+
             ModifyVeinData();
 
             LDBTool.PreAddDataAction += PreAddDataAction;

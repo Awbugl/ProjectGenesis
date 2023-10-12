@@ -61,7 +61,7 @@ namespace ProjectGenesis.Utils
 
             ref PrefabDesc desc1 = ref itemProtos.Select(I水泵).prefabDesc;
             desc1.minerPeriod = 360000;
-            desc1.waterTypes = new[] { 1000, 1116, 7002, 7014, 7017, 7018 };
+            desc1.waterTypes = new[] { 1000, 1116, 7014, 7017, 7018 };
 
             ref PrefabDesc desc2 = ref itemProtos.Select(I电磁轨道弹射器).prefabDesc;
             desc2.ejectorChargeFrame = 80;
@@ -172,7 +172,7 @@ namespace ProjectGenesis.Utils
             megapumperprefabDesc.idleEnergyPerTick = 50000;
             megapumperprefabDesc.workEnergyPerTick = 500000;
             megapumperprefabDesc.waterPoints = new[] { Vector3.zero };
-            megapumperprefabDesc.waterTypes = new[] { 1000, 1116, 7002, 7014, 7017, 7018 };
+            megapumperprefabDesc.waterTypes = new[] { 1000, 1116, 7014, 7017, 7018 };
             megapumperprefabDesc.portPoses = new[] { megapumperprefabDesc.portPoses[0] };
 
             ModelProto gaspumper = models.Select(463);
