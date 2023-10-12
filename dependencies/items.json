@@ -7458,7 +7458,7 @@
     "IsFluid": true,
     "Productive": true,
     "SubID": 0,
-    "MiningFrom": "氨海洋",
+    "MiningFrom": "气态巨星轨道",
     "ProduceFrom": null,
     "Grade": 0,
     "Upgrades": [],

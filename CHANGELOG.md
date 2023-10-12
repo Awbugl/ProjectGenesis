@@ -5,12 +5,9 @@
   + 移除了`氨`海洋
 
   + Added patch for compatibility with the `GalacticScale` mod
-  + Redesigned `Processor` and their recipes (affect save)
-  + Redesigned `Biological computer` and their recipes (affect save)
-  + Redesigned `Standard Assembler` requirements and the types of recipes that can be made (affect save)
-  + Adjusted the amount of supplies at the start of the game
-  + Adjusted some teches
-  + Adjusted the icons for some items
+  + Added a fixed generation of aluminum veins to the birth point
+  + Adjusted the heat value for some items
+  + Removed the `Ammonia` ocean
 
 
 <details>
