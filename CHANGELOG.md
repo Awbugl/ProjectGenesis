@@ -1,4 +1,4 @@
-- v2.8.0-beta1 (Experimental 0.2.4) 轻韧革新 | Lightweight Evolution
+- v2.8.0-beta1 (Experimental 0.2.5) 轻韧革新 | Lightweight Evolution
   + 加强与 `GalacticScale` mod的兼容，母星稀有矿物资源现在可正常生成
   + 添加了对mod未正确安装的检测和提示
   + 调整了`小型运载火箭`的制造需求
