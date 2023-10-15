@@ -84,7 +84,7 @@ namespace ProjectGenesis.Patches.Logic.AddVein
 
             return index;
         }
-        
+
         [HarmonyPatch(typeof(UIPlanetDetail), "RefreshDynamicProperties")]
         [HarmonyPatch(typeof(UIStarDetail), "RefreshDynamicProperties")]
         [HarmonyTranspiler]
@@ -93,14 +93,18 @@ namespace ProjectGenesis.Patches.Logic.AddVein
             var matcher = new CodeMatcher(instructions);
             matcher.MatchForward(false, new CodeMatch(OpCodes.Ldstr, "未知珍奇信号"));
 
-            CodeMatcher codeMatcher = matcher.Clone();
-            object jmp = codeMatcher.Advance(-2).Operand;
-            codeMatcher.Advance(-1).InsertAndAdvance(new CodeInstruction(OpCodes.Dup), new CodeInstruction(OpCodes.Ldc_I4, 15),
-                                                     new CodeInstruction(OpCodes.Beq, jmp));
+            object jmp = matcher.Advance(-2).Operand;
 
-            jmp = matcher.Advance(6).Operand;
-            codeMatcher.Advance(-1).InsertAndAdvance(new CodeInstruction(OpCodes.Dup), new CodeInstruction(OpCodes.Ldc_I4, 15),
-                                                     new CodeInstruction(OpCodes.Beq, jmp));
+            CodeInstruction refId = matcher.Advance(-2).Instruction;
+            CodeInstruction entry = matcher.Advance(-1).Instruction;
+
+            matcher.InsertAndAdvance(new CodeInstruction(entry), new CodeInstruction(refId), new CodeInstruction(OpCodes.Ldc_I4, 15),
+                                     new CodeInstruction(OpCodes.Beq, jmp));
+
+            jmp = matcher.Advance(11).Operand;
+
+            matcher.Advance(-3).InsertAndAdvance(new CodeInstruction(entry), new CodeInstruction(refId), new CodeInstruction(OpCodes.Ldc_I4, 15),
+                                                 new CodeInstruction(OpCodes.Beq, jmp));
             return matcher.InstructionEnumeration();
         }
     }

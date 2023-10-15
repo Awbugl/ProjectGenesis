@@ -1,3 +1,15 @@
+- v2.8.0-beta1 (Experimental 0.2.4) 轻韧革新 | Lightweight Evolution
+  + 加强与 `GalacticScale` mod的兼容，母星稀有矿物资源现在可正常生成
+  + 添加了对mod未正确安装的检测和提示
+  + 调整了`小型运载火箭`的制造需求
+
+  + Enhanced compatibility with the `GalacticScale` mod, rare mineral resources from the home planet are now generated properly
+  + Added detection and hints when mod installed incorrectly
+  + Adjusted `Small Launch Vehicle` requirements
+
+<details>
+  <summary>点击展开日志 | Click to view all </summary>
+
 - v2.8.0-alpha3 (Experimental 0.2.3)
   + 恢复与 `GalacticScale` mod的兼容
   + 为出生点添加了固定生成的铝矿脉
@@ -8,10 +20,6 @@
   + Added a fixed generation of aluminum veins to the birth point
   + Adjusted the heat value for some items
   + Removed the `Ammonia` ocean
-
-
-<details>
-  <summary>点击展开日志 | Click to view all </summary>
 
 
 - v2.8.0-alpha2 (Experimental 0.2.2)

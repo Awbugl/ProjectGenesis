@@ -134,7 +134,7 @@ namespace ProjectGenesis.Patches.Logic.AddVein
             algorithm.veinVectors[2] = algorithm.planet.birthResourcePoint2;
         }
 
-        public static Vector2 Rotate(Vector2 v, float angle)
+        internal static Vector2 Rotate(Vector2 v, float angle)
         {
             float delta = angle * Mathf.PI / 180;
             return new Vector2(v.x * Mathf.Cos(delta) - v.y * Mathf.Sin(delta), v.x * Mathf.Sin(delta) + v.y * Mathf.Cos(delta));

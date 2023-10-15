@@ -41,7 +41,7 @@ namespace ProjectGenesis
     [BepInDependency(CommonAPIPlugin.GUID)]
     [BepInDependency(LDBToolPlugin.MODGUID)]
     [BepInDependency(NebulaModAPI.API_GUID)]
-    [BepInDependency(IncompatibleCheckPlugin.MODGUID, BepInDependency.DependencyFlags.SoftDependency)]
+    [BepInDependency(InstallationCheckPlugin.MODGUID, BepInDependency.DependencyFlags.SoftDependency)]
     [CommonAPISubmoduleDependency(nameof(ProtoRegistry), nameof(CustomDescSystem), nameof(TabSystem), nameof(AssemblerRecipeSystem))]
     public class ProjectGenesis : BaseUnityPlugin, IModCanSave, IMultiplayerMod
     {
@@ -53,6 +53,8 @@ namespace ProjectGenesis
         internal static ConfigFile configFile;
         internal static UIPlanetFocusWindow PlanetFocusWindow;
 
+        public static bool LoadCompleted;
+        
         internal static int[] TableID;
 
         internal static bool ChangeStackingLogicValue, LDBToolCacheValue, HideTechModeValue, ShowMessageBoxValue;
@@ -136,6 +138,8 @@ namespace ProjectGenesis
 
             LDBTool.PreAddDataAction += PreAddDataAction;
             LDBTool.PostAddDataAction += PostAddDataAction;
+
+            LoadCompleted = true;
         }
 
         public void Export(BinaryWriter w)

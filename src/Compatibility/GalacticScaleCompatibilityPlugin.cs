@@ -18,6 +18,7 @@ using PluginInfo = BepInEx.PluginInfo;
 // ReSharper disable MemberCanBeInternal
 // ReSharper disable MemberCanBePrivate.Global
 // ReSharper disable ClassNeverInstantiated.Global
+// ReSharper disable ForeachCanBePartlyConvertedToQueryUsingAnotherGetEnumerator
 
 namespace ProjectGenesis.Compatibility
 {
@@ -67,6 +68,9 @@ namespace ProjectGenesis.Compatibility
 
             harmony.Patch(AccessTools.Method(assembly.GetType("GalacticScale.VeinAlgorithms"), "DisableVeins"), null, null,
                           new HarmonyMethod(typeof(GalacticScaleCompatibilityPlugin), nameof(DisableVeins_Transpiler)));
+
+            harmony.Patch(AccessTools.Method(assembly.GetType("GalacticScale.VeinAlgorithms"), "DistributeVeinTypes"),
+                          new HarmonyMethod(typeof(GalacticScaleCompatibilityPlugin), nameof(DistributeVeinTypes_Prefix)));
 
             harmony.Patch(AccessTools.Method(assembly.GetType("GalacticScale.VeinAlgorithms"), "GenBirthPoints"), null,
                           new HarmonyMethod(typeof(GalacticScaleCompatibilityPlugin), nameof(GenBirthPoints_Postfix)));
@@ -121,6 +125,36 @@ namespace ProjectGenesis.Compatibility
             return matcher.InstructionEnumeration();
         }
 
+        public static void DistributeVeinTypes_Prefix(GSPlanet gsPlanet)
+        {
+            if (GSSettings.BirthPlanet != gsPlanet) return;
+
+            var vt1 = GSVeinType.Generate((EVeinType)16, 1, 1, 0.6f, 0.6f, 6, 6, false);
+            var vt2 = GSVeinType.Generate(EVeinType.Fireice, 1, 1, 0.6f, 0.6f, 6, 6, false);
+
+            List<EVeinType> eveinTypeList = gsPlanet.veinSettings.VeinTypes.Select(veinType => veinType.type).ToList();
+
+            if (!eveinTypeList.Contains((EVeinType)16)) gsPlanet.veinSettings.VeinTypes.Add(vt1);
+
+            if (!eveinTypeList.Contains(EVeinType.Fireice)) gsPlanet.veinSettings.VeinTypes.Add(vt2);
+
+            for (int index = 0; index < gsPlanet.veinSettings.VeinTypes.Count; index++)
+            {
+                GSVeinType veinType = gsPlanet.veinSettings.VeinTypes[index];
+
+                switch (veinType.type)
+                {
+                    case (EVeinType)16:
+                        gsPlanet.veinSettings.VeinTypes[index] = vt1;
+                        break;
+
+                    case EVeinType.Fireice:
+                        gsPlanet.veinSettings.VeinTypes[index] = vt2;
+                        break;
+                }
+            }
+        }
+
         public static void CalculateVectorsGS2_Postfix(GSPlanet gsPlanet, List<GSVeinDescriptor> __result)
         {
             if (gsPlanet.planetData.id == GSSettings.BirthPlanetId)
@@ -130,7 +164,7 @@ namespace ProjectGenesis.Compatibility
                                  position = gsPlanet.planetData.birthResourcePoint2,
                                  rare = false,
                                  type = (EVeinType)15,
-                                 richness = 0.5f
+                                 richness = 0.1f
                              });
         }
 

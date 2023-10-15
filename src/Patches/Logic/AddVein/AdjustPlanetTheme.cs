@@ -40,7 +40,7 @@ namespace ProjectGenesis.Patches.Logic.AddVein
                                                                                               new AddVeinData(new[] { 8, 16 },
                                                                                                               new[]
                                                                                                               {
-                                                                                                                  1.0f, 0.0f, 0.0f, 0.4f, 1.0f, 0.0f,
+                                                                                                                  1.0f, 1.0f, 0.0f, 0.4f, 1.0f, 1.0f,
                                                                                                                   0.0f, 0.4f
                                                                                                               })
                                                                                           },

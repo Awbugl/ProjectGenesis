@@ -11,13 +11,18 @@
   },
   {
     "Name": "DSPBattleInstalled",
-    "ZHCN": "检测到您已安装深空来敌mod，与创世之书存在冲突，因此已取消加载创世之书mod。",
-    "ENUS": "We have detected that you have installed the They Come From Void mod, which is incompatible with GenesisBook, and have unloaded the GenesisBook mod."
+    "ZHCN": "⚠ 检测到您已安装深空来敌mod，与创世之书存在冲突，因此已取消加载创世之书mod。",
+    "ENUS": "⚠ We have detected that you have installed the They Come From Void mod, which is incompatible with GenesisBook, and have unloaded the GenesisBook mod."
   },
   {
-    "Name": "GalacticScaleInstalled",
-    "ZHCN": "检测到您已安装GalacticScale mod，与创世之书2.8.0及以上版本的矿物生成算法的存在冲突，因此已取消加载创世之书mod。",
-    "ENUS": "We have detected that you have installed the GalacticScale mod, which is in conflict with GenesisBook 2.8.0 and above, and have unloaded the GenesisBook mod."
+    "Name": "PreloaderNotInstalled",
+    "ZHCN": "⚠ 未检测到创世之书patch补丁！请检查您是否正确安装了创世之书mod。",
+    "ENUS": "⚠ GenesisBook Preloader patch has not been detected, please check your installation, make sure you followed installation instructions correctly."
+  },
+  {
+    "Name": "ProjectGenesisNotLoaded",
+    "ZHCN": "⚠ 创世之书mod加载失败！请检查您是否正确安装了创世之书mod。",
+    "ENUS": "⚠ GenesisBook has not been loaded, please check your installation, make sure you followed installation instructions correctly."
   },
   {
     "Name": "GenesisBookLoadMessage",

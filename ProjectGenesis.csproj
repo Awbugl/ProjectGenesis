@@ -102,7 +102,7 @@
         <Compile Include="src\Compatibility\BottleneckCompatibilityPlugin.cs"/>
         <Compile Include="src\Compatibility\DSPBattleCompatibilityPlugin.cs"/>
         <Compile Include="src\Compatibility\GalacticScaleCompatibilityPlugin.cs"/>
-        <Compile Include="src\Compatibility\IncompatibleCheckPlugin.cs"/>
+        <Compile Include="src\Compatibility\InstallationCheckPlugin.cs" />
         <Compile Include="src\Compatibility\MoreMegaStructureCompatibilityPlugin.cs"/>
         <Compile Include="src\Compatibility\PlanetVeinUtilizationCompatibilityPlugin.cs"/>
         <Compile Include="src\Compatibility\PlanetwideMiningCompatibilityPlugin.cs"/>
