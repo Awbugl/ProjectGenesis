@@ -145,6 +145,7 @@
         <Compile Include="src\Patches\UI\MultiProductionPatches.cs"/>
         <Compile Include="src\Patches\UI\UIAbnormalityTipPatches.cs"/>
         <Compile Include="src\Patches\UI\UIMonitorPatches.cs"/>
+        <Compile Include="src\Patches\UI\UIPowerGeneratorWindowPatches.cs" />
         <Compile Include="src\Patches\UI\UITechNodePatches.cs"/>
         <Compile Include="src\Patches\UI\UIPlanetFocus\UIPlanetFocusWindow.cs"/>
         <Compile Include="src\Patches\UI\UIPlanetFocus\UIPlanetDetailExpand.cs"/>
@@ -160,7 +161,6 @@
         <Compile Include="src\Utils\JsonDataUtils.cs"/>
         <Compile Include="src\Utils\JsonHelper.cs"/>
         <Compile Include="src\Utils\MutliPlayerPacket.cs"/>
-        <Compile Include="src\Utils\PrefabFixUtils.cs"/>
         <Compile Include="src\Utils\ProtoIDUsedByPatches.cs"/>
         <Compile Include="src\Utils\TranslateUtils.cs"/>
     </ItemGroup>
@@ -170,6 +170,7 @@
         <EmbeddedResource Include="dependencies\strings.json"/>
         <EmbeddedResource Include="dependencies\techs.json"/>
         <EmbeddedResource Include="dependencies\tutorials.json"/>
+        <EmbeddedResource Include="dependencies\prefabDescs.json"/>
     </ItemGroup>
     <ItemGroup>
         <Content Include="CHANGELOG.md"/>

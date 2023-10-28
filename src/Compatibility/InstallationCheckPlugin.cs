@@ -1,9 +1,6 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 using System.Reflection;
-using System.Text;
 using BepInEx;
-using BepInEx.Bootstrap;
 using HarmonyLib;
 using ProjectGenesis.Compatibility;
 using ProjectGenesis.Patches.UI;

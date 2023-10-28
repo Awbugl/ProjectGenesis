@@ -19,7 +19,6 @@ using ProjectGenesis.Utils;
 using xiaoye97;
 using static ProjectGenesis.Patches.Logic.AddVein.AddVeinPatches;
 using ERecipeType_1 = ERecipeType;
-using static ProjectGenesis.Utils.PrefabFixUtils;
 using static ProjectGenesis.Utils.JsonDataUtils;
 using static ProjectGenesis.Utils.CopyModelUtils;
 using static ProjectGenesis.Patches.Logic.AddVein.AdjustPlanetTheme;
@@ -54,7 +53,7 @@ namespace ProjectGenesis
         internal static UIPlanetFocusWindow PlanetFocusWindow;
 
         public static bool LoadCompleted;
-        
+
         internal static int[] TableID;
 
         internal static bool ChangeStackingLogicValue, LDBToolCacheValue, HideTechModeValue, ShowMessageBoxValue;
@@ -226,8 +225,7 @@ namespace ProjectGenesis
                 proto.Preload2();
             }
 
-            ModelPostFix(LDB.models);
-            ItemPostFix(LDB.items);
+            PrefabDescPostFix();
             SetBuildBar();
 
             ItemProto.InitFluids();

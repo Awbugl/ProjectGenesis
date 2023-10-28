@@ -1733,8 +1733,7 @@
     ],
     "HashNeeded": 1800,
     "UnlockRecipes": [
-      56,
-      34
+      56
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -9569,6 +9568,7 @@
       523,
       773,
       415,
+      34,
       531,
       532,
       533,

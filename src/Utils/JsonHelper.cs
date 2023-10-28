@@ -5,8 +5,8 @@ using System.Reflection;
 using Newtonsoft.Json;
 
 // ReSharper disable InconsistentNaming
-
 // ReSharper disable MemberCanBeInternal
+// ReSharper disable RedundantDefaultMemberInitializer
 // ReSharper disable UnusedAutoPropertyAccessor.Global
 // ReSharper disable AssignNullToNotNullAttribute
 // ReSharper disable MemberCanBePrivate.Global
@@ -26,6 +26,8 @@ namespace ProjectGenesis.Utils
         internal static StringProtoJson[] StringProtos() => GetJsonContent<StringProtoJson>("strings");
 
         internal static TutorialProtoJson[] TutorialProtos() => GetJsonContent<TutorialProtoJson>("tutorials");
+        
+        internal static PrefabDescJson[] PrefabDescs() => GetJsonContent<PrefabDescJson>("prefabDescs");
 
         internal static T[] GetJsonContent<T>(string json)
             => JsonConvert.DeserializeObject<T[]>(new StreamReader(Assembly.GetManifestResourceStream($"ProjectGenesis.dependencies.{json}.json"))
@@ -214,24 +216,118 @@ namespace ProjectGenesis.Utils
                        PropertyItemCounts = i.PropertyItemCounts
                    };
         }
-    }
 
-    [Serializable]
-    public class StringProtoJson
-    {
-        public string Name { get; set; }
-        public string ZHCN { get; set; }
-        public string ENUS { get; set; }
-        public static StringProtoJson FromProto(StringProto i) => new StringProtoJson { Name = i.Name, ZHCN = i.ZHCN, ENUS = i.ENUS };
-    }
+        [Serializable]
+        public class StringProtoJson
+        {
+            public string Name { get; set; }
+            public string ZHCN { get; set; }
+            public string ENUS { get; set; }
+            public static StringProtoJson FromProto(StringProto i) => new StringProtoJson { Name = i.Name, ZHCN = i.ZHCN, ENUS = i.ENUS };
+        }
 
-    [Serializable]
-    public class TutorialProtoJson
-    {
-        public int ID { get; set; }
-        public string Name { get; set; }
-        public string PreText { get; set; }
-        public string DeterminatorName { get; set; }
-        public long[] DeterminatorParams { get; set; }
+        [Serializable]
+        public class TutorialProtoJson
+        {
+            public int ID { get; set; }
+            public string Name { get; set; }
+            public string PreText { get; set; }
+            public string DeterminatorName { get; set; }
+            public long[] DeterminatorParams { get; set; }
+        }
+
+        [Serializable]
+        public class PrefabDescJson
+        {
+            public int ItemID { get; set; }
+            public int ModelID { get; set; }
+            public bool? isAccumulator { get; set; } = null;
+            public bool? isAssembler { get; set; } = null;
+            public bool? isCollectStation { get; set; } = null;
+            public bool? isFractionator { get; set; } = null;
+            public bool? isPowerGen { get; set; } = null;
+            public bool? isPowerConsumer { get; set; } = null;
+            public bool? isStation { get; set; } = null;
+            public bool? isStellarStation { get; set; } = null;
+            public int? assemblerRecipeType { get; set; } = null;
+            public long? idleEnergyPerTick { get; set; } = null;
+            public long? workEnergyPerTick { get; set; } = null;
+            public int? assemblerSpeed { get; set; } = null;
+            public bool? dragBuild { get; set; } = null;
+            public float[] dragBuildDist { get; set; } = null;
+            public int? minerPeriod { get; set; } = null;
+            public int? ejectorChargeFrame { get; set; } = null;
+            public int? ejectorColdFrame { get; set; } = null;
+            public int? siloChargeFrame { get; set; } = null;
+            public int? siloColdFrame { get; set; } = null;
+            public float? powerConnectDistance { get; set; } = null;
+            public float? powerCoverRadius { get; set; } = null;
+            public long? genEnergyPerTick { get; set; } = null;
+            public long? useFuelPerTick { get; set; } = null;
+            public int? beltSpeed { get; set; } = null;
+            public int? inserterSTT { get; set; } = null;
+            public int? fluidStorageCount { get; set; } = null;
+            public int? fuelMask { get; set; } = null;
+            public int? minerType { get; set; } = null;
+            public int? minimapType { get; set; } = null;
+            public int? stationCollectSpeed { get; set; } = null;
+            public long? maxAcuEnergy { get; set; } = null;
+            public long? inputEnergyPerTick { get; set; } = null;
+            public long? outputEnergyPerTick { get; set; } = null;
+            public long? maxExcEnergy { get; set; } = null;
+            public long? exchangeEnergyPerTick { get; set; } = null;
+            public long? stationMaxEnergyAcc { get; set; } = null;
+            public int? stationMaxItemCount { get; set; } = null;
+            public int? stationMaxItemKinds { get; set; } = null;
+            public int? stationMaxDroneCount { get; set; } = null;
+            public int? stationMaxShipCount { get; set; } = null;
+
+            public static PrefabDescJson FromPrefabDesc(PrefabDesc i, int itemID, int modelID)
+                => new PrefabDescJson
+                   {
+                       ItemID = itemID,
+                       ModelID = modelID,
+                       isAccumulator = i.isAccumulator,
+                       isAssembler = i.isAssembler,
+                       isFractionator = i.isFractionator,
+                       isPowerGen = i.isPowerGen,
+                       isStation = i.isStation,
+                       isStellarStation = i.isStellarStation,
+                       isCollectStation = i.isCollectStation,
+                       isPowerConsumer = i.isPowerConsumer,
+                       assemblerSpeed = i.assemblerSpeed,
+                       assemblerRecipeType = (int)i.assemblerRecipeType,
+                       workEnergyPerTick = i.workEnergyPerTick,
+                       idleEnergyPerTick = i.idleEnergyPerTick,
+                       dragBuild = i.dragBuild,
+                       dragBuildDist = new[] { i.dragBuildDist.x, i.dragBuildDist.y },
+                       minerPeriod = i.minerPeriod,
+                       ejectorChargeFrame = i.ejectorChargeFrame,
+                       ejectorColdFrame = i.ejectorColdFrame,
+                       siloChargeFrame = i.siloChargeFrame,
+                       siloColdFrame = i.siloColdFrame,
+                       powerConnectDistance = i.powerConnectDistance,
+                       powerCoverRadius = i.powerCoverRadius,
+                       genEnergyPerTick = i.genEnergyPerTick,
+                       useFuelPerTick = i.useFuelPerTick,
+                       beltSpeed = i.beltSpeed,
+                       inserterSTT = i.inserterSTT,
+                       fluidStorageCount = i.fluidStorageCount,
+                       fuelMask = i.fuelMask,
+                       minerType = (int)i.minerType,
+                       minimapType = i.minimapType,
+                       maxAcuEnergy = i.maxAcuEnergy,
+                       maxExcEnergy = i.maxExcEnergy,
+                       inputEnergyPerTick = i.inputEnergyPerTick,
+                       outputEnergyPerTick = i.outputEnergyPerTick,
+                       exchangeEnergyPerTick = i.exchangeEnergyPerTick,
+                       stationCollectSpeed = i.stationCollectSpeed,
+                       stationMaxEnergyAcc = i.stationMaxEnergyAcc,
+                       stationMaxItemCount = i.stationMaxItemCount,
+                       stationMaxItemKinds = i.stationMaxItemKinds,
+                       stationMaxShipCount = i.stationMaxShipCount,
+                       stationMaxDroneCount = i.stationMaxDroneCount
+                   };
+        }
     }
 }

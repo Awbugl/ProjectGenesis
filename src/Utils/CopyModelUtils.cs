@@ -33,12 +33,6 @@ namespace ProjectGenesis.Utils
             ModelProto testCraftingTableModel4 = CopyModelProto(49, 456, Color.HSVToRGB(0.9814f, 0.6620f, 0.8471f));
             LDBTool.PreAddProto(testCraftingTableModel4);
 
-            ModelProto testCraftingTableModel5 = CopyModelProto(49, 460, new Color(0.3216F, 0.8157F, 0.09020F));
-            LDBTool.PreAddProto(testCraftingTableModel5);
-
-            ModelProto testCraftingTableModel6 = CopyModelProto(49, 461, new Color(0.3059F, 0.2196F, 0.4941F));
-            LDBTool.PreAddProto(testCraftingTableModel6);
-
             ModelProto antiMatterModel = CopyModelProto(118, 457, Color.HSVToRGB(0.5985f, 0.7333f, 0.2353f));
             LDBTool.PreAddProto(antiMatterModel);
 
@@ -48,8 +42,17 @@ namespace ProjectGenesis.Utils
             ModelProto circleModel = CopyModelProto(69, 459, Color.grey);
             LDBTool.PreAddProto(circleModel);
 
+            ModelProto testCraftingTableModel5 = CopyModelProto(49, 460, new Color(0.3216F, 0.8157F, 0.09020F));
+            LDBTool.PreAddProto(testCraftingTableModel5);
+
+            ModelProto testCraftingTableModel6 = CopyModelProto(49, 461, new Color(0.3059F, 0.2196F, 0.4941F));
+            LDBTool.PreAddProto(testCraftingTableModel6);
+
             ModelProto megapumper = CopyModelProto(119, 462, Color.HSVToRGB(0.6174f, 0.6842f, 0.9686f));
             LDBTool.PreAddProto(megapumper);
+
+            ModelProto atomicBattery = CopyModelProto(46, 464, Color.HSVToRGB(0.4174f, 0.742f, 0.9686f));
+            LDBTool.PreAddProto(atomicBattery);
 
             AddAtmosphericCollectStation();
         }

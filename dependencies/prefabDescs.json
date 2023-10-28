@@ -1,0 +1,358 @@
+[
+  {
+    "ItemID": 2001,
+    "ModelID": 35,
+    "beltSpeed": 3
+  },
+  {
+    "ItemID": 2002,
+    "ModelID": 36,
+    "beltSpeed": 5
+  },
+  {
+    "ItemID": 2003,
+    "ModelID": 37,
+    "beltSpeed": 10
+  },
+  {
+    "ItemID": 2011,
+    "ModelID": 41,
+    "inserterSTT": 100000
+  },
+  {
+    "ItemID": 2012,
+    "ModelID": 42,
+    "inserterSTT": 50000
+  },
+  {
+    "ItemID": 2013,
+    "ModelID": 43,
+    "inserterSTT": 25000
+  },
+  {
+    "ItemID": 2201,
+    "ModelID": 44,
+    "powerConnectDistance": 44.5,
+    "powerCoverRadius": 20.5
+  },
+  {
+    "ItemID": 2209,
+    "ModelID": 45,
+    "maxAcuEnergy": 2700000000,
+    "maxExcEnergy": 2700000000,
+    "exchangeEnergyPerTick": 10000000
+  },
+  {
+    "ItemID": 2206,
+    "ModelID": 46,
+    "maxAcuEnergy": 2700000000,
+    "inputEnergyPerTick": 150000,
+    "outputEnergyPerTick": 150000
+  },
+  {
+    "ItemID": 2103,
+    "ModelID": 49,
+    "workEnergyPerTick": 400000,
+    "stationMaxEnergyAcc": 360000000,
+    "stationMaxItemCount": 10000,
+    "stationMaxItemKinds": 5,
+    "stationMaxDroneCount": 80
+  },
+  {
+    "ItemID": 2104,
+    "ModelID": 50,
+    "workEnergyPerTick": 2000000,
+    "stationMaxEnergyAcc": 24000000000,
+    "stationMaxItemCount": 20000
+  },
+  {
+    "ItemID": 2203,
+    "ModelID": 53,
+    "powerConnectDistance": 24.0,
+    "powerCoverRadius": 14.9,
+    "genEnergyPerTick": 12500
+  },
+  {
+    "ItemID": 2204,
+    "ModelID": 54,
+    "genEnergyPerTick": 200000,
+    "useFuelPerTick": 250000
+  },
+  {
+    "ItemID": 2205,
+    "ModelID": 55,
+    "genEnergyPerTick": 15000
+  },
+  {
+    "ItemID": 2210,
+    "ModelID": 56,
+    "genEnergyPerTick": 10000000,
+    "useFuelPerTick": 10000000,
+    "fuelMask": 16
+  },
+  {
+    "ItemID": 2301,
+    "ModelID": 57,
+    "minerPeriod": 600000
+  },
+  {
+    "ItemID": 2306,
+    "ModelID": 60,
+    "minerPeriod": 360000
+  },
+  {
+    "ItemID": 2307,
+    "ModelID": 61,
+    "minerPeriod": 300000
+  },
+  {
+    "ItemID": 2302,
+    "ModelID": 62,
+    "idleEnergyPerTick": 400,
+    "workEnergyPerTick": 12000,
+    "assemblerSpeed": 20000
+  },
+  {
+    "ItemID": 2308,
+    "ModelID": 63,
+    "assemblerSpeed": 40000
+  },
+  {
+    "ItemID": 2309,
+    "ModelID": 64,
+    "assemblerSpeed": 40000
+  },
+  {
+    "ItemID": 2303,
+    "ModelID": 65,
+    "idleEnergyPerTick": 400,
+    "workEnergyPerTick": 9000,
+    "assemblerSpeed": 20000
+  },
+  {
+    "ItemID": 2304,
+    "ModelID": 66,
+    "assemblerRecipeType": 9,
+    "idleEnergyPerTick": 600,
+    "workEnergyPerTick": 18000,
+    "assemblerSpeed": 20000
+  },
+  {
+    "ItemID": 2305,
+    "ModelID": 67,
+    "assemblerRecipeType": 10,
+    "idleEnergyPerTick": 800,
+    "workEnergyPerTick": 36000,
+    "assemblerSpeed": 20000
+  },
+  {
+    "ItemID": 2212,
+    "ModelID": 68,
+    "idleEnergyPerTick": 12000000,
+    "workEnergyPerTick": 48000000,
+    "powerConnectDistance": 5300.5,
+    "powerCoverRadius": 2600.5
+  },
+  {
+    "ItemID": 2310,
+    "ModelID": 69,
+    "assemblerSpeed": 40000
+  },
+  {
+    "ItemID": 2202,
+    "ModelID": 71,
+    "powerConnectDistance": 90.5
+  },
+  {
+    "ItemID": 2311,
+    "ModelID": 72,
+    "ejectorChargeFrame": 80,
+    "ejectorColdFrame": 40
+  },
+  {
+    "ItemID": 2312,
+    "ModelID": 74,
+    "siloChargeFrame": 120,
+    "siloColdFrame": 60
+  },
+  {
+    "ItemID": 2105,
+    "ModelID": 117,
+    "stationCollectSpeed": 18
+  },
+  {
+    "ItemID": 2211,
+    "ModelID": 118,
+    "genEnergyPerTick": 2500000,
+    "useFuelPerTick": 2500000
+  },
+  {
+    "ItemID": 2315,
+    "ModelID": 194,
+    "assemblerSpeed": 40000
+  },
+  {
+    "ItemID": 2213,
+    "ModelID": 255,
+    "genEnergyPerTick": 400000
+  },
+  {
+    "ItemID": 2316,
+    "ModelID": 256,
+    "minerPeriod": 300000
+  },
+  {
+    "ItemID": 2317,
+    "ModelID": 376,
+    "assemblerRecipeType": 16,
+    "idleEnergyPerTick": 800,
+    "workEnergyPerTick": 24000,
+    "assemblerSpeed": 40000
+  },
+  {
+    "ItemID": 6229,
+    "ModelID": 451,
+    "fluidStorageCount": 1000000
+  },
+  {
+    "ItemID": 6230,
+    "ModelID": 452,
+    "assemblerRecipeType": 11,
+    "idleEnergyPerTick": 400,
+    "workEnergyPerTick": 12000,
+    "dragBuild": true,
+    "dragBuildDist": [
+      2.9,
+      2.9
+    ]
+  },
+  {
+    "ItemID": 6257,
+    "ModelID": 453,
+    "isAssembler": true,
+    "isStation": false,
+    "assemblerRecipeType": 18,
+    "idleEnergyPerTick": 100000,
+    "workEnergyPerTick": 500000,
+    "assemblerSpeed": 400000,
+    "stationMaxEnergyAcc": 0,
+    "stationMaxItemCount": 0,
+    "stationMaxItemKinds": 0,
+    "stationMaxDroneCount": 0
+  },
+  {
+    "ItemID": 6258,
+    "ModelID": 454,
+    "isAssembler": true,
+    "isStation": false,
+    "assemblerRecipeType": 19,
+    "idleEnergyPerTick": 100000,
+    "workEnergyPerTick": 500000,
+    "assemblerSpeed": 400000,
+    "stationMaxEnergyAcc": 0,
+    "stationMaxItemCount": 0,
+    "stationMaxItemKinds": 0,
+    "stationMaxDroneCount": 0
+  },
+  {
+    "ItemID": 6259,
+    "ModelID": 455,
+    "isAssembler": true,
+    "isStation": false,
+    "assemblerRecipeType": 17,
+    "idleEnergyPerTick": 100000,
+    "workEnergyPerTick": 500000,
+    "assemblerSpeed": 400000,
+    "stationMaxEnergyAcc": 0,
+    "stationMaxItemCount": 0,
+    "stationMaxItemKinds": 0,
+    "stationMaxDroneCount": 0
+  },
+  {
+    "ItemID": 6260,
+    "ModelID": 456,
+    "isAssembler": true,
+    "isStation": false,
+    "assemblerRecipeType": 10,
+    "idleEnergyPerTick": 100000,
+    "workEnergyPerTick": 500000,
+    "assemblerSpeed": 400000,
+    "stationMaxEnergyAcc": 0,
+    "stationMaxItemCount": 0,
+    "stationMaxItemKinds": 0,
+    "stationMaxDroneCount": 0
+  },
+  {
+    "ItemID": 6261,
+    "ModelID": 457,
+    "genEnergyPerTick": 1200000000,
+    "useFuelPerTick": 1200000000,
+    "fuelMask": 4
+  },
+  {
+    "ItemID": 6275,
+    "ModelID": 458,
+    "assemblerRecipeType": 12,
+    "idleEnergyPerTick": 4000000,
+    "workEnergyPerTick": 40000000,
+    "assemblerSpeed": 10000
+  },
+  {
+    "ItemID": 6276,
+    "ModelID": 459,
+    "assemblerRecipeType": 13,
+    "idleEnergyPerTick": 8000000,
+    "workEnergyPerTick": 80000000
+  },
+  {
+    "ItemID": 6264,
+    "ModelID": 460,
+    "isAssembler": true,
+    "isStation": false,
+    "assemblerRecipeType": 14,
+    "idleEnergyPerTick": 1000000,
+    "workEnergyPerTick": 1000000,
+    "assemblerSpeed": 60000,
+    "stationMaxEnergyAcc": 0,
+    "stationMaxItemCount": 0,
+    "stationMaxItemKinds": 0,
+    "stationMaxDroneCount": 0
+  },
+  {
+    "ItemID": 6265,
+    "ModelID": 461,
+    "isAssembler": true,
+    "isStation": false,
+    "assemblerRecipeType": 5,
+    "idleEnergyPerTick": 200000,
+    "workEnergyPerTick": 1000000,
+    "assemblerSpeed": 400000,
+    "stationMaxEnergyAcc": 0,
+    "stationMaxItemCount": 0,
+    "stationMaxItemKinds": 0,
+    "stationMaxDroneCount": 0
+  },
+  {
+    "ItemID": 6266,
+    "ModelID": 462,
+    "isFractionator": false,
+    "assemblerRecipeType": 0,
+    "idleEnergyPerTick": 50000,
+    "workEnergyPerTick": 500000,
+    "minerPeriod": 36000,
+    "minerType": 1,
+    "minimapType": 2
+  },
+  {
+    "ItemID": 6267,
+    "ModelID": 463,
+    "stationCollectSpeed": 4
+  },
+  {
+    "ItemID": 6221,
+    "ModelID": 464,
+    "isAccumulator": false,
+    "isPowerGen": true,
+    "genEnergyPerTick": 150000
+  }
+]

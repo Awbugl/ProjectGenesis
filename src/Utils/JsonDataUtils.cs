@@ -4,6 +4,7 @@ using CommonAPI.Systems;
 using HarmonyLib;
 using UnityEngine;
 using xiaoye97;
+using static ProjectGenesis.Utils.JsonHelper;
 using ERecipeType_1 = ERecipeType;
 
 #pragma warning disable CS0618
@@ -19,7 +20,7 @@ namespace ProjectGenesis.Utils
 
             #region StringProto
 
-            StringProtoJson[] stringProtoJsons = JsonHelper.StringProtos();
+            StringProtoJson[] stringProtoJsons = StringProtos();
 
             LDB.strings.OnAfterDeserialize();
 
@@ -37,7 +38,7 @@ namespace ProjectGenesis.Utils
 
             TechProto templateTech = LDB.techs.Select(1311);
 
-            foreach (JsonHelper.TechProtoJson techjson in JsonHelper.TechProtos())
+            foreach (TechProtoJson techjson in TechProtos())
             {
                 TechProto proto = LDB.techs.Exist(techjson.ID) ? LDB.techs.Select(techjson.ID) : templateTech.Copy();
                 proto.ID = techjson.ID;
@@ -73,7 +74,7 @@ namespace ProjectGenesis.Utils
 
             #region ItemProto
 
-            foreach (JsonHelper.ItemProtoJson itemjson in JsonHelper.ItemProtos())
+            foreach (ItemProtoJson itemjson in ItemProtos())
             {
                 itemjson.GridIndex = GetTableID(itemjson.GridIndex);
 
@@ -124,7 +125,7 @@ namespace ProjectGenesis.Utils
 
             #region RecipeProto
 
-            foreach (JsonHelper.RecipeProtoJson recipeJson in JsonHelper.RecipeProtos())
+            foreach (RecipeProtoJson recipeJson in RecipeProtos())
             {
                 recipeJson.GridIndex = GetTableID(recipeJson.GridIndex);
 
@@ -154,7 +155,7 @@ namespace ProjectGenesis.Utils
 
             #region TutorialProto
 
-            TutorialProtoJson[] tutorialProtos = JsonHelper.TutorialProtos();
+            TutorialProtoJson[] tutorialProtos = TutorialProtos();
 
             foreach (TutorialProtoJson json in tutorialProtos)
             {
@@ -178,6 +179,69 @@ namespace ProjectGenesis.Utils
             }
         }
 
+        internal static void PrefabDescPostFix()
+        {
+            #region PrefabDesc
+
+            PrefabDescJson[] prefabDescs = PrefabDescs();
+
+            foreach (PrefabDescJson json in prefabDescs)
+            {
+                ref PrefabDesc desc = ref LDB.models.Select(json.ModelID).prefabDesc;
+
+                if (json.isAccumulator != null) desc.isAccumulator = json.isAccumulator.Value;
+                if (json.isAssembler != null) desc.isAssembler = json.isAssembler.Value;
+                if (json.isFractionator != null) desc.isFractionator = json.isFractionator.Value;
+                if (json.isPowerGen != null) desc.isPowerGen = json.isPowerGen.Value;
+                if (json.isStation != null) desc.isStation = json.isStation.Value;
+                if (json.isStellarStation != null) desc.isStellarStation = json.isStellarStation.Value;
+                if (json.isCollectStation != null) desc.isCollectStation = json.isCollectStation.Value;
+                if (json.isPowerConsumer != null) desc.isPowerConsumer = json.isPowerConsumer.Value;
+                if (json.assemblerSpeed != null) desc.assemblerSpeed = json.assemblerSpeed.Value;
+                if (json.assemblerRecipeType != null) desc.assemblerRecipeType = (ERecipeType_1)json.assemblerRecipeType.Value;
+                if (json.workEnergyPerTick != null) desc.workEnergyPerTick = json.workEnergyPerTick.Value;
+                if (json.idleEnergyPerTick != null) desc.idleEnergyPerTick = json.idleEnergyPerTick.Value;
+                if (json.dragBuild != null) desc.dragBuild = json.dragBuild.Value;
+                if (json.dragBuildDist != null) desc.dragBuildDist = new Vector2(json.dragBuildDist[0], json.dragBuildDist[1]);
+                if (json.minerPeriod != null) desc.minerPeriod = json.minerPeriod.Value;
+                if (json.ejectorChargeFrame != null) desc.ejectorChargeFrame = json.ejectorChargeFrame.Value;
+                if (json.ejectorColdFrame != null) desc.ejectorColdFrame = json.ejectorColdFrame.Value;
+                if (json.siloChargeFrame != null) desc.siloChargeFrame = json.siloChargeFrame.Value;
+                if (json.siloColdFrame != null) desc.siloColdFrame = json.siloColdFrame.Value;
+                if (json.powerConnectDistance != null) desc.powerConnectDistance = json.powerConnectDistance.Value;
+                if (json.powerCoverRadius != null) desc.powerCoverRadius = json.powerCoverRadius.Value;
+                if (json.genEnergyPerTick != null) desc.genEnergyPerTick = json.genEnergyPerTick.Value;
+                if (json.useFuelPerTick != null) desc.useFuelPerTick = json.useFuelPerTick.Value;
+                if (json.beltSpeed != null) desc.beltSpeed = json.beltSpeed.Value;
+                if (json.inserterSTT != null) desc.inserterSTT = json.inserterSTT.Value;
+                if (json.fluidStorageCount != null) desc.fluidStorageCount = json.fluidStorageCount.Value;
+                if (json.fuelMask != null) desc.fuelMask = json.fuelMask.Value;
+                if (json.minerType != null) desc.minerType = (EMinerType)json.minerType.Value;
+                if (json.minimapType != null) desc.minimapType = json.minimapType.Value;
+                if (json.maxAcuEnergy != null) desc.maxAcuEnergy = json.maxAcuEnergy.Value;
+                if (json.maxExcEnergy != null) desc.maxExcEnergy = json.maxExcEnergy.Value;
+                if (json.inputEnergyPerTick != null) desc.inputEnergyPerTick = json.inputEnergyPerTick.Value;
+                if (json.outputEnergyPerTick != null) desc.outputEnergyPerTick = json.outputEnergyPerTick.Value;
+                if (json.exchangeEnergyPerTick != null) desc.exchangeEnergyPerTick = json.exchangeEnergyPerTick.Value;
+                if (json.stationCollectSpeed != null) desc.stationCollectSpeed = json.stationCollectSpeed.Value;
+                if (json.stationMaxEnergyAcc != null) desc.stationMaxEnergyAcc = json.stationMaxEnergyAcc.Value;
+                if (json.stationMaxItemCount != null) desc.stationMaxItemCount = json.stationMaxItemCount.Value;
+                if (json.stationMaxItemKinds != null) desc.stationMaxItemKinds = json.stationMaxItemKinds.Value;
+                if (json.stationMaxShipCount != null) desc.stationMaxShipCount = json.stationMaxShipCount.Value;
+                if (json.stationMaxDroneCount != null) desc.stationMaxDroneCount = json.stationMaxDroneCount.Value;
+            }
+            
+            ref PrefabDesc pumper = ref LDB.models.Select(60).prefabDesc;
+            pumper.waterTypes = new[] { 1000, 1116, 7014, 7017, 7018 };
+
+            ref PrefabDesc megapumper = ref LDB.models.Select(462).prefabDesc;
+            megapumper.waterTypes = new[] { 1000, 1116, 7014, 7017, 7018 };
+            
+            megapumper.waterPoints = new[] { Vector3.zero };
+            megapumper.portPoses = new[] { megapumper.portPoses[0] };
+
+            #endregion
+        }
         internal static void SetBuildBar()
         {
             LDBTool.SetBuildBar(1, 10, 6261);

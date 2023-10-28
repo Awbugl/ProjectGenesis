@@ -3574,7 +3574,7 @@
   {
     "ID": 704,
     "Name": "环氧氯丙烷",
-    "Description": "",
+    "Description": "R环氧氯丙烷",
     "IconPath": "",
     "Type": 2,
     "GridIndex": 4201,
@@ -3597,14 +3597,14 @@
       1,
       1
     ],
-    "Explicit": false,
+    "Explicit": true,
     "Handcraft": false,
     "NonProductive": false
   },
   {
     "ID": 706,
     "Name": "双酚A",
-    "Description": "",
+    "Description": "R双酚A",
     "IconPath": "",
     "Type": 2,
     "GridIndex": 4101,
@@ -3627,7 +3627,7 @@
       1,
       1
     ],
-    "Explicit": false,
+    "Explicit": true,
     "Handcraft": false,
     "NonProductive": false
   },
@@ -4641,7 +4641,7 @@
     "ID": 509,
     "Name": "苯合成",
     "Description": "R苯合成",
-    "IconPath": "",
+    "IconPath": "Assets/texpack/氯苯循环",
     "Type": 2,
     "GridIndex": 4209,
     "Time": 180,
@@ -5525,7 +5525,7 @@
     "ID": 538,
     "Name": "硫酸化合",
     "Description": "R硫酸化合",
-    "IconPath": "Assets/texpack/高效硫酸_新",
+    "IconPath": "Assets/texpack/硫酸化合 1",
     "Type": 2,
     "GridIndex": 4315,
     "Time": 120,

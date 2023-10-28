@@ -1165,6 +1165,11 @@
     "ENUS": "Colorless liquid with a similar odor to chloroform, usually used as an organic chemical raw material.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
+    "Name": "R环氧氯丙烷",
+    "ZHCN": "无色液体，有类似氯仿的气味，常作为有机化工原料。\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作.</color>\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Colorless liquid with a similar odor to chloroform, usually used as an organic chemical raw material.\n<color=\"#FD965ECC\">It will not stop working until all products are stacked.</color>\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+  },
+  {
     "Name": "间苯二甲酸二苯酯",
     "ZHCN": "间苯二甲酸二苯酯",
     "ENUS": "Diphenyl isophthalate"
@@ -1218,6 +1223,11 @@
     "Name": "I双酚A",
     "ZHCN": "白色针晶或片状粉末。微带苯酚气味，是高分子合成材料的重要原料。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "ENUS": "White needle crystals or plate-shaped powder. Slightly phenol odor, is an important raw material for high polymer synthesis materials.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+  },
+  {
+    "Name": "R双酚A",
+    "ZHCN": "白色针晶或片状粉末。微带苯酚气味，是高分子合成材料的重要原料。\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作.</color>\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "White needle crystals or plate-shaped powder. Slightly phenol odor, is an important raw material for high polymer synthesis materials.\n<color=\"#FD965ECC\">It will not stop working until all products are stacked.</color>\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "硝酸",
@@ -2261,13 +2271,13 @@
   },
   {
     "Name": "T放射性原料提纯",
-    "ZHCN": "放射性原料提纯",
-    "ENUS": "Radioactive raw material purification"
+    "ZHCN": "放射性矿物提炼",
+    "ENUS": "Radioactive ore purification"
   },
   {
     "Name": "T放射性原料提纯描述",
-    "ZHCN": "使用大量氢氧化钠可以将硅石矿中的极少量的放射性材料分离出来，作为后续提纯的原料。",
-    "ENUS": "Using a large amount of sodium hydroxide can separate a small amount of radioactive materials in silicon ore as raw materials for further separation."
+    "ZHCN": "使用大量氢氧化钠可以将放射性矿物中的极少量的铀和钚提炼出来，作为后续提纯的原料。",
+    "ENUS": "Using a large amount of sodium hydroxide can separate a small amount of plutonium ore and uranium ore in radioactive ore as raw materials for further separation."
   },
   {
     "Name": "T放射性物质萃取",
