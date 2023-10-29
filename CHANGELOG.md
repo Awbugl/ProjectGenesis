@@ -1,3 +1,19 @@
+- v2.8.0-beta2 (Experimental 0.2.6)
+  + 调整了配方`环氧氯丙烷`、`双酚A`的默认堆积逻辑
+  + 调整了部分配方及物品的图标
+  + 调整了部分矿物的手动挖掘耗时
+  + 添加物品`同位素温差发电机`
+
+  + Adjusted default stacking logic for recipes `Epichlorohydrin`, `Bisphenol A`
+  + Adjusted icons for some recipes and items
+  + Adjusted manual digging time for some minerals
+  + Added item `Radioisotope thermoelectric generator`
+
+
+<details>
+  <summary>点击展开日志 | Click to view all </summary>
+
+
 - v2.8.0-beta1 (Experimental 0.2.5) 轻韧革新 | Lightweight Evolution
   + 加强与 `GalacticScale` mod的兼容，母星稀有矿物资源现在可正常生成
   + 添加了对mod未正确安装的检测和提示
@@ -6,9 +22,6 @@
   + Enhanced compatibility with the `GalacticScale` mod, rare mineral resources from the home planet are now generated properly
   + Added detection and hints when mod installed incorrectly
   + Adjusted `Small Launch Vehicle` requirements
-
-<details>
-  <summary>点击展开日志 | Click to view all </summary>
 
 - v2.8.0-alpha3 (Experimental 0.2.3)
   + 恢复与 `GalacticScale` mod的兼容

@@ -1,4 +1,6 @@
-﻿namespace ProjectGenesis.Utils
+﻿// ReSharper disable InconsistentNaming
+
+namespace ProjectGenesis.Utils
 {
     internal static class ProtoIDUsedByPatches
     {
@@ -37,6 +39,8 @@
                            R高效石墨烯 = 32,
                            R物质分解 = 429,
                            R海水淡化 = 801,
+                           R环氧氯丙烷 = 704,
+                           R双酚A = 706,
                            M大抽水机 = 462,
                            M大气采集器 = 463,
                            T物品增产 = 1151,

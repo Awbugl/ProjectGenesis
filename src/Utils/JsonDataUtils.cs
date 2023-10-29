@@ -244,7 +244,9 @@ namespace ProjectGenesis.Utils
         }
         internal static void SetBuildBar()
         {
+            LDBTool.SetBuildBar(1, 9, 6221);
             LDBTool.SetBuildBar(1, 10, 6261);
+            LDBTool.SetBuildBar(2, 5, 6266);
             LDBTool.SetBuildBar(3, 10, 2313);
             LDBTool.SetBuildBar(4, 4, 6229);
             LDBTool.SetBuildBar(5, 3, 6230);
@@ -257,6 +259,7 @@ namespace ProjectGenesis.Utils
             LDBTool.SetBuildBar(5, 10, 2310);
             LDBTool.SetBuildBar(6, 5, 6267);
             LDBTool.SetBuildBar(6, 6, 2209);
+            LDBTool.SetBuildBar(6, 7, 2206);
             LDBTool.SetBuildBar(7, 3, 6257);
             LDBTool.SetBuildBar(7, 4, 6258);
             LDBTool.SetBuildBar(7, 5, 6259);
@@ -265,7 +268,6 @@ namespace ProjectGenesis.Utils
             LDBTool.SetBuildBar(7, 8, 6265);
             LDBTool.SetBuildBar(7, 9, 6275);
             LDBTool.SetBuildBar(7, 10, 6276);
-            LDBTool.SetBuildBar(2, 5, 6266);
         }
     }
 }

@@ -76,6 +76,8 @@ namespace ProjectGenesis
                 return;
             }
 
+            #region Settings
+
             ChangeStackingLogicEntry = Config.Bind("config", "ChangeStackingLogic", false,
                                                    "Change the judgment of chemical-related factories to stop production from single product stacking to all products stacking, which may casue resource waste in low resource rate game.\n修改所有化工相关配方的堆积逻辑，可能会导致低资源倍率游戏的资源浪费");
             ChangeStackingLogicValue = ChangeStackingLogicEntry.Value;
@@ -95,6 +97,8 @@ namespace ProjectGenesis
             ShowMessageBoxValue = ShowMessageBoxEntry.Value;
 
             Config.Save();
+
+            #endregion Settings
 
             var executingAssembly = Assembly.GetExecutingAssembly();
 

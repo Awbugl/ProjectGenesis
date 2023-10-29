@@ -8988,48 +8988,9 @@
       20,
       20
     ],
-    "HashNeeded": 36000,
-    "UnlockRecipes": [
-      401
-    ],
-    "UnlockFunctions": [],
-    "UnlockValues": [],
-    "Published": true,
-    "Level": 0,
-    "MaxLevel": 0,
-    "LevelCoef1": 0,
-    "LevelCoef2": 0,
-    "IsLabTech": true,
-    "PreTechsMax": false,
-    "AddItems": [],
-    "AddItemCounts": [],
-    "PropertyOverrideItems": [],
-    "PropertyItemCounts": []
-  },
-  {
-    "ID": 1819,
-    "Name": "T放射性物质萃取",
-    "IconPath": "Icons/Tech/1416",
-    "Desc": "T放射性物质萃取描述",
-    "Conclusion": "T放射性物质萃取描述",
-    "Position": [
-      17.0,
-      -15.0
-    ],
-    "PreTechs": [
-      1816
-    ],
-    "PreTechsImplicit": [],
-    "Items": [
-      6001,
-      6002
-    ],
-    "ItemPoints": [
-      20,
-      20
-    ],
     "HashNeeded": 72000,
     "UnlockRecipes": [
+      401,
       406,
       407
     ],
@@ -9048,11 +9009,52 @@
     "PropertyItemCounts": []
   },
   {
-    "ID": 1820,
+    "ID": 1819,
     "Name": "T裂变能源燃料棒",
     "IconPath": "Icons/Tech/1416",
     "Desc": "T裂变能源燃料棒描述",
     "Conclusion": "T裂变能源燃料棒描述",
+    "Position": [
+      17.0,
+      -15.0
+    ],
+    "PreTechs": [
+      1816
+    ],
+    "PreTechsImplicit": [],
+    "Items": [
+      6001,
+      6002
+    ],
+    "ItemPoints": [
+      20,
+      20
+    ],
+    "HashNeeded": 72000,
+    "UnlockRecipes": [
+      408,
+      409
+    ],
+    "UnlockFunctions": [],
+    "UnlockValues": [],
+    "Published": true,
+    "Level": 0,
+    "MaxLevel": 0,
+    "LevelCoef1": 0,
+    "LevelCoef2": 0,
+    "IsLabTech": true,
+    "PreTechsMax": false,
+    "AddItems": [],
+    "AddItemCounts": [],
+    "PropertyOverrideItems": [],
+    "PropertyItemCounts": []
+  },
+  {
+    "ID": 1820,
+    "Name": "T同位素温差发电",
+    "IconPath": "Icons/Tech/1416",
+    "Desc": "T同位素温差发电描述",
+    "Conclusion": "T同位素温差发电描述",
     "Position": [
       21.0,
       -15.0
@@ -9073,9 +9075,8 @@
     ],
     "HashNeeded": 72000,
     "UnlockRecipes": [
-      408,
-      409,
-      410
+      410,
+      752
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -9093,10 +9094,10 @@
   },
   {
     "ID": 1821,
-    "Name": "T聚变同位素提取",
+    "Name": "T聚变燃料提取",
     "IconPath": "Icons/Tech/1416",
-    "Desc": "T聚变同位素提取描述",
-    "Conclusion": "T聚变同位素提取描述",
+    "Desc": "T聚变燃料素提取描述",
+    "Conclusion": "T聚变燃料提取描述",
     "Position": [
       25.0,
       -15.0

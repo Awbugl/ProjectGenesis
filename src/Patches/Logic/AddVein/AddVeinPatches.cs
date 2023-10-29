@@ -14,8 +14,8 @@ namespace ProjectGenesis.Patches.Logic.AddVein
         internal static void ModifyVeinData()
         {
             AddVeinProtos(NewVein(15, "铝矿脉", "I铝矿", "Assets/texpack/铝矿脉", 6202, 25),
-                          NewVein(16, "放射性矿脉", "I放射性矿物", "Assets/texpack/放射晶体矿脉", 6222, 31, 4),
-                          NewVein(17, "钨矿脉", "I钨矿", "Assets/texpack/钨矿脉", 6201, 34));
+                          NewVein(16, "放射性矿脉", "I放射性矿物", "Assets/texpack/放射晶体矿脉", 6222, 31, 4, 90),
+                          NewVein(17, "钨矿脉", "I钨矿", "Assets/texpack/钨矿脉", 6201, 34, 1, 120));
 
             VeinProto NewVein(
                 int id,

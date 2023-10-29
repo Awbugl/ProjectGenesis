@@ -610,6 +610,16 @@
     "ENUS": "With the development of refining technology, high-quality kerosene obtained from petroleum fractionation is encapsulated in fuel rods to improve utilization and combustion efficiency.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
+    "Name": "同位素温差发电机",
+    "ZHCN": "同位素温差发电机",
+    "ENUS": "Radioisotope thermoelectric generator"
+  },
+  {
+    "Name": "I同位素温差发电机",
+    "ZHCN": "将放射性同位素的衰变热利用塞贝克效应直接转换成电能的一种致密能源，抗干扰性强。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "A dense energy source that converts the decay heat of radioisotopes directly into electricity using the Seebeck effect and is highly resistant to interference.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+  },
+  {
     "Name": "放射性矿物",
     "ZHCN": "放射性矿物",
     "ENUS": "Radioactive ore"
@@ -871,8 +881,8 @@
   },
   {
     "Name": "I物质分解设施",
-    "ZHCN": "有些人管这叫做浪费.\n我们称之为高效.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Mega Recycling Factory.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "将工业废弃物转换为沙土的巨型设施。有人会称这种做法为严重的资源浪费，而我们将其称为高效。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Mega Facility for converting industrial waste into Sand.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "三元精金",
@@ -2280,14 +2290,14 @@
     "ENUS": "Using a large amount of sodium hydroxide can separate a small amount of plutonium ore and uranium ore in radioactive ore as raw materials for further separation."
   },
   {
-    "Name": "T放射性物质萃取",
-    "ZHCN": "放射性物质萃取",
-    "ENUS": "Radioactive material extraction"
+    "Name": "T同位素温差发电",
+    "ZHCN": "同位素温差发电",
+    "ENUS": "Radioisotope thermoelectric generator"
   },
   {
-    "Name": "T放射性物质萃取描述",
-    "ZHCN": "将得到的钚矿石和铀矿石提炼成可供进一步加工的工业原料.",
-    "ENUS": "Refining the obtained plutonium ore and uranium ore into industrial raw materials for further processing."
+    "Name": "T同位素温差发电描述",
+    "ZHCN": "MOX燃料棒可将裂变的能量最大程度释放，而利用塞贝克效应可将能量缓慢但持续地转换成电能。",
+    "ENUS": "MOX fuel rods maximize the release of fission energy, which can be slowly but continuously converted into electricity using the Seebeck effect."
   },
   {
     "Name": "T裂变能源燃料棒",
@@ -2300,12 +2310,12 @@
     "ENUS": "Fission fuel made with radioisotopes."
   },
   {
-    "Name": "T聚变同位素提取",
-    "ZHCN": "聚变同位素提取",
+    "Name": "T聚变燃料提取",
+    "ZHCN": "聚变燃料提取",
     "ENUS": "Fusion isotope extraction"
   },
   {
-    "Name": "T聚变同位素提取描述",
+    "Name": "T聚变燃料提取描述",
     "ZHCN": "光栅石的特殊晶格结构使其可作为富集氦原子的理想载体, 利用其富集的氦原子可以为制作聚变燃料找到一条捷径.",
     "ENUS": "The special lattice structure of the grating stone makes it an ideal carrier for enriching helium atoms. The enriched helium atoms can be used to find a shortcut for making fusion fuel."
   },
@@ -2316,8 +2326,8 @@
   },
   {
     "Name": "T聚变能源燃料棒描述",
-    "ZHCN": "使用聚变同位素制作的聚变燃料.",
-    "ENUS": "Fusion fuel made with fusion isotopes."
+    "ZHCN": "使用聚变同位素制作的聚变燃料棒.",
+    "ENUS": "Fusion fuel rod made with fusion isotopes."
   },
   {
     "Name": "T天穹装配厂",

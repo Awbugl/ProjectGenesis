@@ -39,7 +39,7 @@ namespace ProjectGenesis.Patches.UI
             window.fuelIcon0.sprite = Resources.Load<Sprite>("Assets/texpack/原子能");
             window.fuelText0.text = "裂变能".TranslateFromJson();
             window.fuelText0.color = window.powerColor0;
-            window.fuelCircle0.fillAmount = 0f;
+            window.fuelCircle0.fillAmount = 1f;
         }
     }
 }

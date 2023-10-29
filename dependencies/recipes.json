@@ -3767,7 +3767,7 @@
     "ID": 713,
     "Name": "焦油分馏",
     "Description": "R焦油分馏",
-    "IconPath": "Assets/texpack/焦油循环",
+    "IconPath": "Assets/texpack/氯苯",
     "Type": 3,
     "GridIndex": 3204,
     "Time": 120,
@@ -4079,6 +4079,34 @@
     ],
     "Output": [
       7501
+    ],
+    "OutCounts": [
+      1
+    ],
+    "Explicit": false,
+    "Handcraft": false,
+    "NonProductive": false
+  },
+  {
+    "ID": 752,
+    "Name": "同位素温差发电机",
+    "Description": "",
+    "IconPath": "",
+    "Type": 9,
+    "GridIndex": 2113,
+    "Time": 360,
+    "Input": [
+      6203,
+      1105,
+      6243
+    ],
+    "InCounts": [
+      4,
+      2,
+      1
+    ],
+    "Output": [
+      6221
     ],
     "OutCounts": [
       1

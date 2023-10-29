@@ -87,6 +87,8 @@ namespace ProjectGenesis.Patches.Logic
                 case ProtoIDUsedByPatches.R氢氯酸:
                 case ProtoIDUsedByPatches.R硫酸:
                 case ProtoIDUsedByPatches.R海水淡化:
+                case ProtoIDUsedByPatches.R环氧氯丙烷:
+                case ProtoIDUsedByPatches.R双酚A:
                 case ProtoIDUsedByPatches.R高效石墨烯:
                 case ProtoIDUsedByPatches.R水电解:
                     b = true;
