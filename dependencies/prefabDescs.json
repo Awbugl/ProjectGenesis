@@ -353,7 +353,7 @@
     "ModelID": 464,
     "isAccumulator": false,
     "isPowerGen": true,
-    "genEnergyPerTick": 100000,
+    "genEnergyPerTick": 50000,
     "dragBuild": true,
     "dragBuildDist": [
       2.8,

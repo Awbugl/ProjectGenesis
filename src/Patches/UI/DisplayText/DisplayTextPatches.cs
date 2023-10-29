@@ -102,16 +102,18 @@ namespace ProjectGenesis.Patches.UI.DisplayText
                     {
                         case 2:
                             __result = "裂变能".TranslateFromJson();
-                            break;
+                            return;
 
                         case 4:
                             __result = "质能转换".TranslateFromJson();
-                            break;
+                            return;
 
                         case 16:
                             __result = "聚变能".TranslateFromJson();
-                            break;
+                            return;
                     }
+
+                    if (__instance.ModelIndex == 464) __result = "裂变能".TranslateFromJson();
 
                     return;
 
