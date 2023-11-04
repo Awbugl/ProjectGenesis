@@ -265,11 +265,6 @@
     "ENUS": "Chemical"
   },
   {
-    "Name": "信息页面",
-    "ZHCN": "主机",
-    "ENUS": "Informatization"
-  },
-  {
     "Name": "不相符的物品",
     "ZHCN": "不相符的物品",
     "ENUS": "Mismatched item"
@@ -1075,36 +1070,6 @@
     "ENUS": "An empty fuel rod, can be filled with various fuels. Extra oxidizer storage can be added when needed.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
-    "Name": "氢燃料",
-    "ZHCN": "氢燃料",
-    "ENUS": "Hydrogen fuel"
-  },
-  {
-    "Name": "I氢燃料",
-    "ZHCN": "将氢气压缩液化得到的氢燃料。稳定度较差，需要封装使用。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Hydrogen fuel compressed from hydrogen gas. Poor stability, need to be encapsulated.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
-    "Name": "氘核燃料",
-    "ZHCN": "氘核燃料",
-    "ENUS": "Deuteron fuel"
-  },
-  {
-    "Name": "I氘核燃料",
-    "ZHCN": "将重氢压缩液化得到的氘核燃料。稳定度较差，需要封装使用。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Deuteron fuel compressed from heavy hydrogen. Poor stability, need to be encapsulated.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
-    "Name": "反物质燃料",
-    "ZHCN": "反物质燃料",
-    "ENUS": "Antimatter fuel"
-  },
-  {
-    "Name": "I反物质燃料",
-    "ZHCN": "约束反物质得到的反物质燃料。稳定度较差，需要封装使用。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Antimatter fuel obtained by constraining antimatter. Poor stability, need to be encapsulated.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
     "Name": "氨",
     "ZHCN": "氨",
     "ENUS": "Ammonia"
@@ -1113,26 +1078,6 @@
     "Name": "I氨",
     "ZHCN": "无色、有强烈的刺激气味的气体。常以液态形式储存.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "ENUS": "A colorless gas with a strong irritating odor. It is usually stored as a liquid.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
-    "Name": "苯酚",
-    "ZHCN": "苯酚",
-    "ENUS": "Phenol"
-  },
-  {
-    "Name": "I苯酚",
-    "ZHCN": "具有特殊气味的无色针状晶体，是重要的有机化工原料。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A colorless needle-shaped crystal with a special odor, an important organic chemical raw material.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
-    "Name": "丙酮",
-    "ZHCN": "丙酮",
-    "ENUS": "Acetone"
-  },
-  {
-    "Name": "I丙酮",
-    "ZHCN": "无色透明液体，有微香气味，是重要的有机化工原料。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A colorless transparent liquid with a faint odor, an important organic chemical raw material.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "二氨基联苯胺",
@@ -1198,11 +1143,6 @@
     "Name": "R间苯二甲酸二苯酯",
     "ZHCN": "耐热性能良好的有机化合物，是合成聚苯并咪唑的原料之一.\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作.</color>\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "ENUS": "A kind of organic compound with good heat resistance, one of the raw materials for the synthesis of PBI.\n<color=\"#FD965ECC\">It will not stop working until all products are stacked.</color>\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
-    "Name": "I氯苯",
-    "ZHCN": "无色透明液体，有苦杏仁味，常作为有机化工原料。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Colorless transparent liquid with a bitter almond odor, usually used as an organic chemical raw material.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "氢氯酸",
@@ -1320,26 +1260,6 @@
     "ENUS": "The substrate made of polyethylene, used to make the basic circuit board.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
-    "Name": "覆层塑料基板",
-    "ZHCN": "覆层塑料基板",
-    "ENUS": "Resin substrate"
-  },
-  {
-    "Name": "I覆层塑料基板",
-    "ZHCN": "环氧树脂覆盖的塑料基板，具有更好的稳定性和耐用性。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "The plastic substrate covered with epoxy resin. It has better stability and durability.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
-    "Name": "钛蚀刻覆层塑料基板",
-    "ZHCN": "钛蚀刻覆层塑料基板",
-    "ENUS": "Titanium substrate"
-  },
-  {
-    "Name": "I钛蚀刻覆层塑料基板",
-    "ZHCN": "钛蚀刻覆盖的塑料基板，具有更好的稳定性和耐用性。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "The plastic substrate covered with titanium etching, which has better stability and durability.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
     "Name": "生物基板",
     "ZHCN": "生物基板",
     "ENUS": "Biological substrate"
@@ -1348,116 +1268,6 @@
     "Name": "I生物基板",
     "ZHCN": "使用聚苯并咪唑制造的基板，具有更好的生物相容性、稳定性和耐用性。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "ENUS": "The substrate made of polybenzimidazole, which has better biocompatibility, stability and durability.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
-    "Name": "覆层生物基板",
-    "ZHCN": "覆层生物基板",
-    "ENUS": "Biofiber substrate"
-  },
-  {
-    "Name": "I覆层生物基板",
-    "ZHCN": "利用活性生物纤维制造的生物基板，具有更好的生物相容性、稳定性和耐用性。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "The biological substrate made of active biological fibers, which has better biocompatibility, stability and durability.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
-    "Name": "钨蚀刻覆层生物基板",
-    "ZHCN": "钨蚀刻覆层生物基板",
-    "ENUS": "Tungsten substrate"
-  },
-  {
-    "Name": "I钨蚀刻覆层生物基板",
-    "ZHCN": "钨蚀刻覆盖的生物基板，具有更好的生物相容性、稳定性和耐用性。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "The biological substrate covered with tungsten, which has better biocompatibility, stability and durability.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
-    "Name": "超低功率IC晶片",
-    "ZHCN": "超低功率IC晶片",
-    "ENUS": "Ultra low power IC chip"
-  },
-  {
-    "Name": "I超低功率IC晶片",
-    "ZHCN": "一片非金属晶片,世界上精度最高的人造物.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A piece of non-metallic chip, the highest precision artifact in the world.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
-    "Name": "低功率IC晶片",
-    "ZHCN": "低功率IC晶片",
-    "ENUS": "Low power IC chip"
-  },
-  {
-    "Name": "I低功率IC晶片",
-    "ZHCN": "一片非金属晶片,世界上精度最高的人造物.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A piece of non-metallic chip, the highest precision artifact in the world.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
-    "Name": "标准功率IC晶片",
-    "ZHCN": "标准功率IC晶片",
-    "ENUS": "Power IC chip"
-  },
-  {
-    "Name": "I标准功率IC晶片",
-    "ZHCN": "一片非金属晶片,世界上精度最高的人造物.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A piece of non-metallic chip, the highest precision artifact in the world.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
-    "Name": "高功率IC晶片",
-    "ZHCN": "高功率IC晶片",
-    "ENUS": "High power IC chip"
-  },
-  {
-    "Name": "I高功率IC晶片",
-    "ZHCN": "一片非金属晶片,世界上精度最高的人造物.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A piece of non-metallic chip, the highest precision artifact in the world.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
-    "Name": "超高功率IC晶片",
-    "ZHCN": "超高功率IC晶片",
-    "ENUS": "Ultra high power IC chip"
-  },
-  {
-    "Name": "I超高功率IC晶片",
-    "ZHCN": "一片非金属晶片,世界上精度最高的人造物.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A piece of non-metallic chip, the highest precision artifact in the world.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
-    "Name": "生物IC晶片",
-    "ZHCN": "生物IC晶片",
-    "ENUS": "Biological IC chip"
-  },
-  {
-    "Name": "I生物IC晶片",
-    "ZHCN": "一片非金属晶片,世界上精度最高的人造物.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A piece of non-metallic chip, the highest precision artifact in the world.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
-    "Name": "硅晶圆",
-    "ZHCN": "硅晶圆",
-    "ENUS": "Silicon wafer"
-  },
-  {
-    "Name": "I硅晶圆",
-    "ZHCN": "由单晶硅制成的圆片,电子工业的基础.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A circular piece made of single crystal silicon, the basis of the electronics industry.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
-    "Name": "钛掺杂的硅晶圆",
-    "ZHCN": "钛掺杂的硅晶圆",
-    "ENUS": "Titanium doped silicon wafer"
-  },
-  {
-    "Name": "I钛掺杂的硅晶圆",
-    "ZHCN": "使用钛掺杂的硅晶圆制成的圆片,电子工业的基础.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A circular piece made of titanium doped silicon wafer, the basis of the electronics industry.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
-    "Name": "钨掺杂的硅晶圆",
-    "ZHCN": "钨掺杂的硅晶圆",
-    "ENUS": "Tungsten doped silicon wafer"
-  },
-  {
-    "Name": "I钨掺杂的硅晶圆",
-    "ZHCN": "使用钨掺杂的硅晶圆制成的圆片,电子工业的基础.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A circular piece made of tungsten doped silicon wafer, the basis of the electronics industry.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "钨块",
@@ -1775,76 +1585,6 @@
     "ENUS": "After a lengthy reforming process, propylene can be synthesized into benzene. Less efficient, but an important technology that has historically driven the sequestration of fossil fuel resources.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
-    "Name": "硅晶圆（高效）",
-    "ZHCN": "硅晶圆（高效）",
-    "ENUS": "Silicon wafers (advanced)"
-  },
-  {
-    "Name": "R硅晶圆（高效）",
-    "ZHCN": "找到了光栅石矿, 生产硅晶圆就变得容易许多.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Once the grating ore is found, it becomes much easier to produce silicon wafers.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
-    "Name": "含钛硅晶圆（高效）",
-    "ZHCN": "钛掺杂的硅晶圆（高效）",
-    "ENUS": "Titanium doped silicon wafers (advanced)"
-  },
-  {
-    "Name": "R含钛硅晶圆（高效）",
-    "ZHCN": "找到了光栅石矿, 生产硅晶圆就变得容易许多.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Once the grating ore is found, it becomes much easier to produce silicon wafers.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
-    "Name": "含钨硅晶圆（高效）",
-    "ZHCN": "钨掺杂的硅晶圆（高效）",
-    "ENUS": "Tungsten doped silicon wafers (advanced)"
-  },
-  {
-    "Name": "R含钨硅晶圆（高效）",
-    "ZHCN": "找到了光栅石矿, 生产硅晶圆就变得容易许多.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Once the grating ore is found, it becomes much easier to produce silicon wafers.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
-    "Name": "燃油精炼",
-    "ZHCN": "燃油精炼",
-    "ENUS": "Fuel refining"
-  },
-  {
-    "Name": "R燃油精炼",
-    "ZHCN": "将原油进行精炼，分离出含硫的轻燃油和重燃油.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Crude oil is refined to separate light and heavy fuel oil but containing sulfur.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
-    "Name": "轻燃油脱硫",
-    "ZHCN": "轻燃油脱硫",
-    "ENUS": "Light fuel desulfurization"
-  },
-  {
-    "Name": "R轻燃油脱硫",
-    "ZHCN": "对轻燃油进行脱硫, 使其可用于生产柴油.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Desulfurization of light fuel oil to make it available for diesel production.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
-    "Name": "重燃油脱硫",
-    "ZHCN": "重燃油脱硫",
-    "ENUS": "Heavy fuel desulfurization"
-  },
-  {
-    "Name": "R重燃油脱硫",
-    "ZHCN": "对重燃油进行脱硫, 使其可用于生产柴油.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Desulfurization of heavy fuel oil to make it available for diesel production.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
-    "Name": "柴油混合",
-    "ZHCN": "柴油混合",
-    "ENUS": "Diesel oil mixing"
-  },
-  {
-    "Name": "R柴油混合",
-    "ZHCN": "按照合适的配比将轻重燃油合成为柴油.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Mixing light and heavy fuel oil into diesel oil with the suitable ratio.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
     "Name": "水煤气制取",
     "ZHCN": "水煤气制取",
     "ENUS": "Syngas production"
@@ -1875,42 +1615,12 @@
     "ENUS": "Sulfuric acid is produced by electrolysis of sodium sulfate solution using ion exchange membrane.\n<color=\"#FD965ECC\">Will not stop working until all products are accumulated.</color>\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
-    "Name": "R乙酸甲酯",
-    "ZHCN": "乙酸和甲醇化合成乙酸甲酯.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Synthesis of methyl acetate from acetic acid and methanol.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
-    "Name": "R微晶元件（高效）",
-    "ZHCN": "利用主机算力对生产流程大幅优化, 批量生产微晶元件变得简单.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "The production process of microcrystalline components is greatly optimized by mainframe computing power, making it easy to produce in batch.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
     "Name": "处理器（高效）",
     "ZHCN": "处理器（高效）",
     "ENUS": "Processor (advanced)"
   },
   {
     "Name": "R处理器（高效）",
-    "ZHCN": "利用主机算力对生产流程大幅优化, 批量生产处理器变得简单.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "The production process of processors is greatly optimized by mainframe computing power, making it easy to produce in batch.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
-    "Name": "量子芯片（高效）",
-    "ZHCN": "量子芯片（高效）",
-    "ENUS": "Quantum chip (advanced)"
-  },
-  {
-    "Name": "R量子芯片（高效）",
-    "ZHCN": "利用主机算力对生产流程大幅优化, 批量生产量子芯片变得简单.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "The production process of quantum chip is greatly optimized by mainframe computing power, making it easy to produce in batch.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
-    "Name": "处理器（极效）",
-    "ZHCN": "处理器（极效）",
-    "ENUS": "Processor (advanced-2)"
-  },
-  {
-    "Name": "R处理器（极效）",
     "ZHCN": "利用主机算力对生产流程大幅优化, 批量生产处理器变得简单.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "ENUS": "The production process of processors is greatly optimized by mainframe computing power, making it easy to produce in batch.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
