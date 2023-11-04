@@ -11,8 +11,9 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
         private static readonly FieldInfo IsAssemblerField = AccessTools.Field(typeof(PrefabDesc), nameof(PrefabDesc.isAssembler));
 
         [HarmonyPatch(typeof(BuildTool_Path), "DeterminePreviews")]
+        [HarmonyPatch(typeof(BuildTool_Path), "CheckBuildConditions")]
         [HarmonyTranspiler]
-        public static IEnumerable<CodeInstruction> BuildTool_Path_DeterminePreviews_Transpiler(IEnumerable<CodeInstruction> instructions)
+        public static IEnumerable<CodeInstruction> BuildTool_Path_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
             CodeMatcher matcher = new CodeMatcher(instructions).MatchForward(false, new CodeMatch(OpCodes.Ldloc_S),
                                                                              new CodeMatch(OpCodes.Ldfld, IsStationField));
@@ -36,10 +37,8 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
             List<CodeInstruction> ins = matcher.InstructionsWithOffsets(-5, -1);
 
             matcher.Advance(1).InsertAndAdvance(ins).InsertAndAdvance(new CodeInstruction(OpCodes.Ldfld, EntityData_AssemblerId_Field))
-                   .InsertAndAdvance(new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(MegaAssemblerPatches), nameof(Merge))));
+                   .InsertAndAdvance(new CodeInstruction(OpCodes.Or));
             return matcher.InstructionEnumeration();
         }
-
-        public static int Merge(int a, int b) => a > 0 || b > 0 ? 1 : 0;
     }
 }
