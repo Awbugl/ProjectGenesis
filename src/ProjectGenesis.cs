@@ -178,6 +178,15 @@ namespace ProjectGenesis
         private void PostAddDataAction()
         {
             LDB.strings.OnAfterDeserialize();
+            Localization._strings = LDB.strings;
+            
+            //飞行舱拆除
+            VegeProto @base = LDB.veges.Select(9999);
+            @base.MiningItem = new[] { 1801, 1101, 1104 };
+            @base.MiningCount = new[] { 6, 60, 60 };
+            @base.MiningChance = new float[] { 1, 1, 1 };
+            @base.Preload();
+            
             LDB.items.OnAfterDeserialize();
             LDB.recipes.OnAfterDeserialize();
             LDB.techs.OnAfterDeserialize();
@@ -192,20 +201,10 @@ namespace ProjectGenesis
             foreach (MilestoneProto milestone in LDB.milestones.dataArray) milestone.Preload();
             foreach (JournalPatternProto journalPattern in LDB.journalPatterns.dataArray) journalPattern.Preload();
 
-            //飞行舱拆除
-            VegeProto @base = LDB.veges.Select(9999);
-            @base.MiningItem = new[] { 1801, 1101, 1104 };
-            @base.MiningCount = new[] { 6, 60, 60 };
-            @base.MiningChance = new float[] { 1, 1, 1 };
-            @base.Preload();
-
-            ref StringProtoSet locstrs = ref Localization._strings;
-            locstrs = LDB.strings;
-
             foreach (VeinProto proto in LDB.veins.dataArray)
             {
                 proto.Preload();
-                proto.name = proto.Name.TranslateFromJson();
+                proto.name = proto.Name.Translate();
             }
 
             foreach (TechProto proto in LDB.techs.dataArray) proto.Preload();

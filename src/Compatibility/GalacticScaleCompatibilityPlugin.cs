@@ -158,7 +158,7 @@ namespace ProjectGenesis.Compatibility
         public static void CalculateVectorsGS2_Postfix(GSPlanet gsPlanet, List<GSVeinDescriptor> __result)
         {
             if (gsPlanet.planetData.id == GSSettings.BirthPlanetId)
-                __result.Add(new GSVeinDescriptor()
+                __result.Add(new GSVeinDescriptor
                              {
                                  count = 6,
                                  position = gsPlanet.planetData.birthResourcePoint2,

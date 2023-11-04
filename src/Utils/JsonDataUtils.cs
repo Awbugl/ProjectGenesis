@@ -89,7 +89,7 @@ namespace ProjectGenesis.Utils
                 if (exist && proto.IconPath != itemjson.IconPath) itemIconDescs.Add(itemjson.ID, IconDescUtils.GetIconDesc(itemjson.ID));
 
                 proto.ID = itemjson.ID;
-                proto.Name = itemjson.Name.TranslateFromJson();
+                proto.Name = itemjson.Name;
                 proto.Description = itemjson.Description;
                 proto.IconPath = itemjson.IconPath;
                 proto.StackSize = itemjson.StackSize;
@@ -159,7 +159,7 @@ namespace ProjectGenesis.Utils
 
             foreach (TutorialProtoJson json in tutorialProtos)
             {
-                LDBTool.PreAddProto(new TutorialProto()
+                LDBTool.PreAddProto(new TutorialProto
                                     {
                                         ID = json.ID,
                                         Name = json.Name,

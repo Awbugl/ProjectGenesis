@@ -1,10 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Reflection;
-using System.Reflection.Emit;
 using BepInEx;
 using BepInEx.Bootstrap;
 using HarmonyLib;
-using ProjectGenesis.Patches.Logic;
 
 // ReSharper disable InconsistentNaming
 // ReSharper disable MemberCanBeInternal
