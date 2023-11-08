@@ -65,6 +65,11 @@
     "ENUS": "Enable tech exploration mode"
   },
   {
+    "Name": "ChemOxygenCollect",
+    "ZHCN": "化工厂自动富集氧气",
+    "ENUS": "chemical plants enrich oxygen automatically"
+  },
+  {
     "Name": "ShowMessageBox",
     "ZHCN": "显示创世之书加载弹窗",
     "ENUS": "Show messagebox when loaded"
@@ -83,6 +88,11 @@
     "Name": "EnableHideTechModeAdditionalText",
     "ZHCN": "（隐藏未解锁的科技，需要重启游戏才可生效）",
     "ENUS": "(Hide the unlocked technology, need to restart the game to take effect)"
+  },
+  {
+    "Name": "ChemOxygenCollectText",
+    "ZHCN": "（在有氧大气下，化工厂可自动富集氧气并作为原料利用）",
+    "ENUS": "(In an aerobic atmosphere, chemical plants can automatically enrich oxygen and utilize it as a source)"
   },
   {
     "Name": "ShowMessageBoxAdditionalText",
@@ -310,24 +320,14 @@
     "ENUS": "GenesisBook MOD has modified the stacking logic of some recipes (the decision to stop production has been changed from single product stacking to all products are stacked).\nYou can extend the new stacking logic to all chemicals-related recipes within <color=\"#FD965ECC\">Settings - Miscellaneous</color>."
   },
   {
-    "Name": "大气采集介绍标题",
-    "ZHCN": "大气采集站",
-    "ENUS": "Atmospheric Collect Station Introduction"
+    "Name": "星球大气介绍标题",
+    "ZHCN": "星球大气类型介绍",
+    "ENUS": "Planetary Atmosphere Introduction"
   },
   {
-    "Name": "大气采集介绍前字",
-    "ZHCN": "大气采集站是类似于轨道采集器的采集设施，可部署在星球赤道并采集星球大气层的成分供给生产线使用。\n大气采集站与物流站之间无建造距离限制。",
-    "ENUS": "Atmospheric Collect Stations are facilities that can be deployed at a planet's equator and harvest components of the planet's atmosphere for use in production lines.\nNo distance constraints between Atmospheric Collect Station and the Logistics Station."
-  },
-  {
-    "Name": "火力发电介绍标题",
-    "ZHCN": "火力发电厂修改介绍",
-    "ENUS": "Thermal Power Plant Modification"
-  },
-  {
-    "Name": "火力发电介绍前字",
-    "ZHCN": "火力发电厂输入的原料种类现受到星球大气类型的限制。除三种化学能燃料棒外，其他燃料不能在无氧大气环境下发电。",
-    "ENUS": "The type of feedstock input to thermal power plants is now limited by the type of planetary atmosphere.\nAll but three chemical energy fuel rods cannot generate electricity in an anoxic atmosphere."
+    "Name": "星球大气介绍前字",
+    "ZHCN": "除部分无大气环境的星球外，现在各类星球各有其独特的大气成分。\n大气采集站是类似于轨道采集器的采集设施，可部署在星球赤道并采集星球大气层的成分供给生产线使用，大气采集站与物流站之间无建造距离限制。\n火力发电厂输入的原料种类现受到星球大气类型的限制。除三种化学能燃料棒外，其他燃料不能在无氧大气环境下发电。\n在有氧大气下，化工厂可自动富集氧气并作为原料利用（可在<color=\"#FD965ECC\">设置 - 杂项</color>中关闭此功能）。",
+    "ENUS": "Except for some planets with no atmosphere, all types of planets now have their own unique atmospheric composition.\nAtmospheric Collect Stations are facilities that can be deployed at a planet's equator and harvest components of the planet's atmosphere for use in production lines. No distance constraints between Atmospheric Collect Station and the Logistics Station.\nThe type of feedstock input to thermal power plants is now limited by the type of planetary atmosphere.\nAll but three chemical energy fuel rods cannot generate electricity in an anoxic atmosphere.\nIn an aerobic atmosphere, chemical plants can automatically enrich oxygen and utilize it as a source (it can be turned off in <color=\"#FD965ECC\">Settings - Miscellaneous</color>)."
   },
   {
     "Name": "巨型建筑介绍标题",
@@ -931,8 +931,8 @@
   },
   {
     "Name": "I硫粉",
-    "ZHCN": "从煤矿粉中提取还原得到的粉末状硫单质.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Powdered sulfur monomer extracted from coal dust.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "从硫矿中提取还原得到的粉末状硫单质.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Powdered sulfur monomer extracted from sulfur ore.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "结构矩阵",
@@ -1228,26 +1228,6 @@
     "Name": "I氯化钠",
     "ZHCN": "无色立方结晶或细小结晶粉末，味咸。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "ENUS": "Colorless cubic crystals or fine crystalline powder, salty taste.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
-    "Name": "硝酸钠",
-    "ZHCN": "硝酸钠",
-    "ENUS": "Sodium nitrate"
-  },
-  {
-    "Name": "I硝酸钠",
-    "ZHCN": "吸湿性无色透明三角系晶体，用于制造硝酸。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Hygroscopic colorless transparent trigonal crystal, used to make nitric acid.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
-    "Name": "硫酸钠",
-    "ZHCN": "硫酸钠",
-    "ENUS": "Sodium sulphate"
-  },
-  {
-    "Name": "I硫酸钠",
-    "ZHCN": "白色、无臭、有苦味的结晶或粉末，用于制造硫酸。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "White, odorless, bitter taste of crystals or powder, used to make sulphuric acid.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "塑料基板",
@@ -2438,6 +2418,21 @@
     "Name": "I铝矿",
     "ZHCN": "采集铝矿脉获得，可以直接冶炼成铝块。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "ENUS": "Used to smelt aluminum ingots. Obtained by gathering aluminum vein.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+  },
+  {
+    "Name": "硫矿脉",
+    "ZHCN": "硫矿脉",
+    "ENUS": "Sulfur Veins"
+  },
+  {
+    "Name": "硫矿",
+    "ZHCN": "硫矿",
+    "ENUS": "Sulfur ore"
+  },
+  {
+    "Name": "I硫矿",
+    "ZHCN": "采集硫矿脉获得，经处理后可用于制造硫酸。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Obtained by collecting sulphur vein, it is treated and used in making sulphuric acid.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "铝块",

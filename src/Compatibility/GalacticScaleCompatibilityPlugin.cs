@@ -310,7 +310,7 @@ namespace ProjectGenesis.Compatibility
 
             matcher.MatchForward(false, new CodeMatch(OpCodes.Ldc_I4_S, (sbyte)15));
 
-            matcher.SetOperandAndAdvance((sbyte)18);
+            matcher.SetOperandAndAdvance(AddVeinPatches.VeinTypeCount);
 
             return matcher.InstructionEnumeration();
         }
@@ -321,11 +321,13 @@ namespace ProjectGenesis.Compatibility
 
             matcher.MatchForward(false, new CodeMatch(OpCodes.Ldc_I4_S, (sbyte)16));
 
-            matcher.SetOperandAndAdvance((sbyte)20);
+            int veinTypeArrayLength = AddVeinPatches.VeinTypeCount + 1;
+
+            matcher.SetOperandAndAdvance(veinTypeArrayLength);
 
             matcher.MatchForward(false, new CodeMatch(OpCodes.Ldc_I4_S, (sbyte)16));
 
-            matcher.SetOperandAndAdvance((sbyte)20);
+            matcher.SetOperandAndAdvance(veinTypeArrayLength);
 
             return matcher.InstructionEnumeration();
         }
@@ -380,7 +382,7 @@ namespace ProjectGenesis.Compatibility
             object addLabel = matcher.Clone().MatchBack(false, new CodeMatch(OpCodes.Brfalse)).Operand;
 
             matcher.Advance(2).InsertAndAdvance(new CodeInstruction(OpCodes.Beq, addLabel), new CodeInstruction(OpCodes.Ldloc_S, index),
-                                                new CodeInstruction(OpCodes.Ldc_I4, 18));
+                                                new CodeInstruction(OpCodes.Ldc_I4, AddVeinPatches.VeinTypeCount));
 
             return matcher.InstructionEnumeration();
         }
@@ -417,7 +419,7 @@ namespace ProjectGenesis.Compatibility
                                                                             nameof(AddVeinPatches.OnStarDataSet_ChangeVeinData_IndexPatches))),
                                      new CodeInstruction(OpCodes.Stloc_S, index));
 
-            matcher.Advance(1).SetOperandAndAdvance(18);
+            matcher.Advance(1).SetOperandAndAdvance(AddVeinPatches.VeinTypeCount);
 
             return matcher.InstructionEnumeration();
         }

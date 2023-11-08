@@ -30,7 +30,7 @@ namespace ProjectGenesis.Patches.Logic.AddVein
             object addLabel = matcher.Clone().MatchBack(false, new CodeMatch(OpCodes.Bne_Un)).Operand;
 
             matcher.Advance(2).InsertAndAdvance(new CodeInstruction(OpCodes.Beq, addLabel), new CodeInstruction(OpCodes.Ldloc_S, index),
-                                                new CodeInstruction(OpCodes.Ldc_I4, 18));
+                                                new CodeInstruction(OpCodes.Ldc_I4_S, VeinTypeCount));
 
             return matcher.InstructionEnumeration();
         }
@@ -67,7 +67,7 @@ namespace ProjectGenesis.Patches.Logic.AddVein
                                                                             nameof(OnStarDataSet_ChangeVeinData_IndexPatches))),
                                      new CodeInstruction(OpCodes.Stloc_S, index));
 
-            matcher.Advance(1).SetOperandAndAdvance(18);
+            matcher.Advance(1).SetOperandAndAdvance(VeinTypeCount);
 
             return matcher.InstructionEnumeration();
         }

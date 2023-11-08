@@ -56,11 +56,16 @@ namespace ProjectGenesis
 
         internal static int[] TableID;
 
-        internal static bool ChangeStackingLogicValue, LDBToolCacheValue, HideTechModeValue, ShowMessageBoxValue;
+        internal static bool ChangeStackingLogicValue, LDBToolCacheValue, HideTechModeValue, ChemOxygenCollectValue, ShowMessageBoxValue;
 
         internal static string ModPath;
 
-        private static ConfigEntry<bool> ChangeStackingLogicEntry, EnableLDBToolCacheEntry, EnableHideTechModeEntry, ShowMessageBoxEntry;
+        private static ConfigEntry<bool> ChangeStackingLogicEntry,
+                                         EnableLDBToolCacheEntry,
+                                         EnableHideTechModeEntry,
+                                         ChemOxygenCollectEntry,
+                                         ShowMessageBoxEntry;
+
         private Harmony Harmony;
 
         public void Awake()
@@ -91,6 +96,11 @@ namespace ProjectGenesis
                                                   "Enable Tech Exploration Mode, which will hide locked techs in tech tree.\n启用科技探索模式，启用后将隐藏未解锁的科技");
 
             HideTechModeValue = EnableHideTechModeEntry.Value;
+
+            ChemOxygenCollectEntry = Config.Bind("config", "ChemOxygenCollectEntry", true,
+                                                 "Whether chemical plants are allowed to automatically enrich oxygen in an aerobic atmosphere.\n是否允许化工厂在有氧大气下自动富集氧气");
+
+            ChemOxygenCollectValue = ChemOxygenCollectEntry.Value;
 
             ShowMessageBoxEntry = Config.Bind("config", "ShowMessageBox", true, "Show message when GenesisBook is loaded.\n启用首次加载时的提示信息");
 
@@ -179,14 +189,14 @@ namespace ProjectGenesis
         {
             LDB.strings.OnAfterDeserialize();
             Localization._strings = LDB.strings;
-            
+
             //飞行舱拆除
             VegeProto @base = LDB.veges.Select(9999);
             @base.MiningItem = new[] { 1801, 1101, 1104 };
             @base.MiningCount = new[] { 6, 60, 60 };
             @base.MiningChance = new float[] { 1, 1, 1 };
             @base.Preload();
-            
+
             LDB.items.OnAfterDeserialize();
             LDB.recipes.OnAfterDeserialize();
             LDB.techs.OnAfterDeserialize();
@@ -251,6 +261,7 @@ namespace ProjectGenesis
             bool currentChangeStackingLogic,
             bool currentLDBToolCache,
             bool currentHideTechMode,
+            bool currentChemOxygenCollectValue,
             bool currentShowMessageBox)
         {
             ChangeStackingLogicValue = currentChangeStackingLogic;
@@ -259,6 +270,8 @@ namespace ProjectGenesis
             EnableLDBToolCacheEntry.Value = currentLDBToolCache;
             HideTechModeValue = currentHideTechMode;
             EnableHideTechModeEntry.Value = currentHideTechMode;
+            ChemOxygenCollectValue = currentChemOxygenCollectValue;
+            ChemOxygenCollectEntry.Value = currentChemOxygenCollectValue;
             ShowMessageBoxValue = currentShowMessageBox;
             ShowMessageBoxEntry.Value = currentShowMessageBox;
             logger.LogInfo("SettingChanged");

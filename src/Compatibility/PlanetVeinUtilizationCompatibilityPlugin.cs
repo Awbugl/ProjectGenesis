@@ -5,6 +5,7 @@ using System.Reflection.Emit;
 using BepInEx;
 using BepInEx.Bootstrap;
 using HarmonyLib;
+using ProjectGenesis.Patches.Logic.AddVein;
 
 // ReSharper disable InconsistentNaming
 // ReSharper disable MemberCanBeInternal
@@ -44,16 +45,18 @@ namespace ProjectGenesis.Compatibility
             ref Array local1 = ref AccessTools.StaticFieldRefAccess<Array>(type, "planetVeinCount");
             ref Array local2 = ref AccessTools.StaticFieldRefAccess<Array>(type, "starVeinCount");
 
-            local1 = Array.CreateInstance(veinTypeInfoType, 18);
+            sbyte veinTypeCount = AddVeinPatches.VeinTypeCount;
+            
+            local1 = Array.CreateInstance(veinTypeInfoType, veinTypeCount);
 
-            for (int i = 0; i < 18; i++)
+            for (int i = 0; i < veinTypeCount; i++)
             {
                 local1.SetValue(Activator.CreateInstance(veinTypeInfoType, null), i);
             }
 
-            local2 = Array.CreateInstance(veinTypeInfoType, 18);
+            local2 = Array.CreateInstance(veinTypeInfoType, veinTypeCount);
 
-            for (int i = 0; i < 18; i++)
+            for (int i = 0; i < veinTypeCount; i++)
             {
                 local2.SetValue(Activator.CreateInstance(veinTypeInfoType, null), i);
             }
@@ -64,7 +67,7 @@ namespace ProjectGenesis.Compatibility
             CodeMatcher matcher
                 = new CodeMatcher(instructions).MatchForward(true, new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldc_I4_S, (sbyte)15));
 
-            matcher.SetOperandAndAdvance((sbyte)18);
+            matcher.SetOperandAndAdvance(AddVeinPatches.VeinTypeCount);
 
             return matcher.InstructionEnumeration();
         }

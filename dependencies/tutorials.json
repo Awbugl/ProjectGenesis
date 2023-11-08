@@ -10,21 +10,20 @@
   },
   {
     "ID": 32,
-    "Name": "大气采集介绍标题",
-    "PreText": "大气采集介绍前字",
-    "DeterminatorName": "TOR_TechUnlocked",
+    "Name": "星球大气介绍标题",
+    "PreText": "星球大气介绍前字",
+    "DeterminatorName": "TOR_GameSecond",
     "DeterminatorParams": [
-      1605,
-      7
+      5
     ]
   },
   {
     "ID": 33,
-    "Name": "火力发电介绍标题",
-    "PreText": "火力发电介绍前字",
+    "Name": "物质分解设施介绍标题",
+    "PreText": "物质分解设施介绍前字",
     "DeterminatorName": "TOR_TechUnlocked",
     "DeterminatorParams": [
-      1412,
+      1831,
       7
     ]
   },
@@ -55,16 +54,6 @@
     "DeterminatorName": "TOR_TechUnlocked",
     "DeterminatorParams": [
       1111,
-      7
-    ]
-  },
-  {
-    "ID": 37,
-    "Name": "物质分解设施介绍标题",
-    "PreText": "物质分解设施介绍前字",
-    "DeterminatorName": "TOR_TechUnlocked",
-    "DeterminatorParams": [
-      1831,
       7
     ]
   }

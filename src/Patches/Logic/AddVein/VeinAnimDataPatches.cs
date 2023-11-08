@@ -50,7 +50,10 @@ namespace ProjectGenesis.Patches.Logic.AddVein
                         return 11;
 
                     case 17:
-                        return 6;
+                        return 6; 
+                    
+                    case 18:
+                        return 14;
                 }
 
             return type;

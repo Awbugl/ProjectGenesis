@@ -46,8 +46,15 @@ namespace ProjectGenesis
                                                    FieldAttributes.Public |
                                                    FieldAttributes.HasDefault, veinType) { Constant = 17 };
 
+                var sulfur = new FieldDefinition("Sulfur",
+                                                 FieldAttributes.Static |
+                                                 FieldAttributes.Literal |
+                                                 FieldAttributes.Public |
+                                                 FieldAttributes.HasDefault, veinType) { Constant = 18 };
+
                 veinType.Fields.Add(radioactive);
                 veinType.Fields.Add(tungsten);
+                veinType.Fields.Add(sulfur);
             }
 
             TypeDefinition planetData = module.Types.FirstOrDefault(t => t.FullName == "PlanetData");

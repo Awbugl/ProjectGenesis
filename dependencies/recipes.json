@@ -612,12 +612,10 @@
     "GridIndex": 4105,
     "Time": 120,
     "Input": [
-      7009,
-      1116
+      7009
     ],
     "InCounts": [
-      2,
-      1
+      2
     ],
     "Output": [
       1115
@@ -632,28 +630,27 @@
   {
     "ID": 24,
     "Name": "硫酸",
-    "Description": "R硫酸",
-    "IconPath": "",
+    "Description": "",
     "Type": 2,
-    "GridIndex": 4215,
+    "GridIndex": 4315,
     "Time": 120,
     "Input": [
-      7103,
-      1000
+      6277,
+      1000,
+      7019
     ],
     "InCounts": [
       2,
-      4
+      2,
+      6
     ],
     "Output": [
-      1116,
-      7020
+      1116
     ],
     "OutCounts": [
-      2,
-      4
+      2
     ],
-    "Explicit": true,
+    "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
@@ -1373,13 +1370,13 @@
     "Type": 9,
     "GridIndex": 1412,
     "Time": 120,
-    "Input": [
-      1302,
-      7501
+    "Input": [     
+      7501,
+      1302
     ],
     "InCounts": [
-      2,
-      2
+      1,
+      1
     ],
     "Output": [
       1303
@@ -2354,14 +2351,14 @@
       1203
     ],
     "InCounts": [
-      2,
-      2
+      4,
+      4
     ],
     "Output": [
       2011
     ],
     "OutCounts": [
-      2
+      4
     ],
     "Explicit": false,
     "Handcraft": true,
@@ -3519,7 +3516,7 @@
     "Description": "R盐水分解",
     "IconPath": "Assets/texpack/盐酸_新",
     "Type": 2,
-    "GridIndex": 4111,
+    "GridIndex": 4115,
     "Time": 120,
     "Input": [
       1000,
@@ -3530,8 +3527,8 @@
       2
     ],
     "Output": [
-      7020,
-      7014
+      7014,
+      7020
     ],
     "OutCounts": [
       2,
@@ -3557,14 +3554,10 @@
     ],
     "Output": [
       1000,
-      7101,
-      7102,
-      7103
+      7101
     ],
     "OutCounts": [
       4,
-      1,
-      1,
       1
     ],
     "Explicit": true,
@@ -3625,34 +3618,6 @@
     ],
     "OutCounts": [
       1,
-      1
-    ],
-    "Explicit": true,
-    "Handcraft": false,
-    "NonProductive": false
-  },
-  {
-    "ID": 707,
-    "Name": "硝酸化合",
-    "Description": "R硝酸化合",
-    "IconPath": "",
-    "Type": 2,
-    "GridIndex": 4115,
-    "Time": 120,
-    "Input": [
-      7102,
-      1116
-    ],
-    "InCounts": [
-      2,
-      1
-    ],
-    "Output": [
-      7017,
-      7103
-    ],
-    "OutCounts": [
-      2,
       1
     ],
     "Explicit": true,
@@ -3847,7 +3812,7 @@
     "Description": "R三氯化铁",
     "IconPath": "",
     "Type": 2,
-    "GridIndex": 4211,
+    "GridIndex": 4111,
     "Time": 180,
     "Input": [
       7014,
@@ -3873,9 +3838,9 @@
   },
   {
     "ID": 717,
-    "Name": "氨氧化",
-    "Description": "R氨氧化",
-    "IconPath": "Assets/texpack/氨氧制硝酸",
+    "Name": "硝酸",
+    "Description": "",
+    "IconPath": "",
     "Type": 2,
     "GridIndex": 4313,
     "Time": 120,
@@ -3895,7 +3860,7 @@
       1,
       1
     ],
-    "Explicit": true,
+    "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
@@ -4203,7 +4168,7 @@
     "Description": "R钨矿精炼",
     "IconPath": "",
     "Type": 2,
-    "GridIndex": 1715,
+    "GridIndex": 1515,
     "Time": 180,
     "Input": [
       1004,
@@ -5534,10 +5499,10 @@
     "GridIndex": 3408,
     "Time": 120,
     "Input": [
-      6256
+      6207
     ],
     "InCounts": [
-      4
+      2
     ],
     "Output": [
       6277
@@ -5546,34 +5511,6 @@
       2
     ],
     "Explicit": false,
-    "Handcraft": false,
-    "NonProductive": false
-  },
-  {
-    "ID": 538,
-    "Name": "硫酸化合",
-    "Description": "R硫酸化合",
-    "IconPath": "Assets/texpack/硫酸化合 1",
-    "Type": 2,
-    "GridIndex": 4315,
-    "Time": 120,
-    "Input": [
-      6277,
-      1000,
-      7019
-    ],
-    "InCounts": [
-      2,
-      2,
-      6
-    ],
-    "Output": [
-      1116
-    ],
-    "OutCounts": [
-      2
-    ],
-    "Explicit": true,
     "Handcraft": false,
     "NonProductive": false
   },

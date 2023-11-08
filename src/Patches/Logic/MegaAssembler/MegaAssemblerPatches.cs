@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 using System.Reflection.Emit;
 using HarmonyLib;
@@ -110,12 +111,12 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
             FactorySystem factorySystem,
             float power)
         {
-            // 巨型建筑效果
+            PlanetFactory factory = factorySystem.factory;
+
+            // MegaBuildings
             if (__instance.speed >= TrashSpeed)
             {
-                PlanetFactory factory = factorySystem.factory;
                 SlotData[] slotdata = GetSlots(factory.planetId, __instance.entityId);
-
                 CargoTraffic cargoTraffic = factory.cargoTraffic;
                 SignData[] entitySignPool = factory.entitySignPool;
 
@@ -125,7 +126,53 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
                 UpdateInputSlots(ref __instance, power, factory, cargoTraffic, slotdata, entitySignPool);
             }
 
+            // OxygenAtmospherePatch
+            OxygenAtmosphereChemicalPatch(ref __instance, factorySystem, factory);
+
             return power >= 0.1f;
+        }
+
+        private static void OxygenAtmosphereChemicalPatch(ref AssemblerComponent __instance, FactorySystem factorySystem, PlanetFactory factory)
+        {
+            if (!factorySystem.planet.gasItems.Contains(ProtoIDUsedByPatches.I氧)) return;
+
+            if (__instance.recipeType != ERecipeType.Chemical) return;
+
+            bool b = false;
+
+            switch (__instance.recipeId)
+            {
+                case ProtoIDUsedByPatches.R硫酸:
+                case ProtoIDUsedByPatches.R环氧氯丙烷:
+                case ProtoIDUsedByPatches.R双酚A:
+                case ProtoIDUsedByPatches.R三氯化铁:
+                case ProtoIDUsedByPatches.R硝酸:
+                case ProtoIDUsedByPatches.R二氧化碳:
+                case ProtoIDUsedByPatches.R四氢双环戊二烯:
+                    b = true;
+                    break;
+            }
+
+            if (!b) return;
+            
+            int index = Array.IndexOf(__instance.requires, ProtoIDUsedByPatches.I氧);
+
+            if (index < 0) return;
+
+            int instanceRequireCount = __instance.requireCounts[index] * 3;
+
+            int addCount = instanceRequireCount - __instance.served[index];
+
+            if (addCount <= 0) return;
+
+            __instance.served[index] = instanceRequireCount;
+
+            int[] productRegister = GameMain.statistics.production.factoryStatPool[factory.index].productRegister;
+
+            lock (productRegister)
+            {
+                productRegister[ProtoIDUsedByPatches.I氧] += addCount;
+            }
         }
 
         private static void UpdateOutputSlots(

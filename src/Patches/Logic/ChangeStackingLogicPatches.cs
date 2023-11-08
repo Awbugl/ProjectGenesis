@@ -85,7 +85,6 @@ namespace ProjectGenesis.Patches.Logic
             switch (component.recipeId)
             {
                 case ProtoIDUsedByPatches.R氢氯酸:
-                case ProtoIDUsedByPatches.R硫酸:
                 case ProtoIDUsedByPatches.R海水淡化:
                 case ProtoIDUsedByPatches.R环氧氯丙烷:
                 case ProtoIDUsedByPatches.R双酚A:
