@@ -125,9 +125,10 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
                 UpdateOutputSlots(ref __instance, cargoTraffic, slotdata, entitySignPool, stationPilerLevel);
                 UpdateInputSlots(ref __instance, power, factory, cargoTraffic, slotdata, entitySignPool);
             }
-
-            // OxygenAtmospherePatch
-            OxygenAtmosphereChemicalPatch(ref __instance, factorySystem, factory);
+            else if (__instance.recipeType == ERecipeType.Chemical)
+            {
+                OxygenAtmosphereChemicalPatch(ref __instance, factorySystem, factory);
+            }
 
             return power >= 0.1f;
         }
@@ -136,13 +137,11 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
         {
             if (!factorySystem.planet.gasItems.Contains(ProtoIDUsedByPatches.I氧)) return;
 
-            if (__instance.recipeType != ERecipeType.Chemical) return;
-
             int index = Array.IndexOf(__instance.requires, ProtoIDUsedByPatches.I氧);
 
             if (index < 0) return;
 
-            int instanceRequireCount = __instance.requireCounts[index] * 3;
+            int instanceRequireCount = __instance.requireCounts[index];
 
             int addCount = instanceRequireCount - __instance.served[index];
 
