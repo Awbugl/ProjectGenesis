@@ -138,23 +138,6 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
 
             if (__instance.recipeType != ERecipeType.Chemical) return;
 
-            bool b = false;
-
-            switch (__instance.recipeId)
-            {
-                case ProtoIDUsedByPatches.R硫酸:
-                case ProtoIDUsedByPatches.R环氧氯丙烷:
-                case ProtoIDUsedByPatches.R双酚A:
-                case ProtoIDUsedByPatches.R三氯化铁:
-                case ProtoIDUsedByPatches.R硝酸:
-                case ProtoIDUsedByPatches.R二氧化碳:
-                case ProtoIDUsedByPatches.R四氢双环戊二烯:
-                    b = true;
-                    break;
-            }
-
-            if (!b) return;
-            
             int index = Array.IndexOf(__instance.requires, ProtoIDUsedByPatches.I氧);
 
             if (index < 0) return;
