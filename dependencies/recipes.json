@@ -1395,14 +1395,14 @@
     "IconPath": "",
     "Type": 10,
     "GridIndex": 1609,
-    "Time": 240,
+    "Time": 120,
     "Input": [
       1303,
       1304
     ],
     "InCounts": [
-      2,
-      2
+      1,
+      1
     ],
     "Output": [
       1305

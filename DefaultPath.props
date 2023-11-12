@@ -3,6 +3,7 @@
     <PropertyGroup Label="DefaultPath">
         <BepInExPath>C:\Users\littl\AppData\Roaming\r2modmanPlus-local\DysonSphereProgram\profiles\Default\BepInEx</BepInExPath>
         <DefaultOutputPath>$(BepInExPath)\plugins\HiddenCirno-GenesisBook\</DefaultOutputPath>
+        <DefaultPreloaderOutputPath>$(BepInExPath)\patchers\HiddenCirno-GenesisBook\</DefaultPreloaderOutputPath>
         <DSPAssemblyPath>D:\SteamLibrary\steamapps\common\Dyson Sphere Program\DSPGAME_Data\Managed</DSPAssemblyPath>
         <CommonAPIPath>$(BepInExPath)\plugins\CommonAPI-CommonAPI\CommonAPI.dll</CommonAPIPath>
         <DSPModSavePath>$(BepInExPath)\plugins\CommonAPI-DSPModSave\DSPModSave.dll</DSPModSavePath>
