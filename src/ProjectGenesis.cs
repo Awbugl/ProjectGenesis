@@ -56,15 +56,15 @@ namespace ProjectGenesis
 
         internal static int[] TableID;
 
-        internal static bool ChangeStackingLogicValue, LDBToolCacheValue, HideTechModeValue, ChemOxygenCollectValue, ShowMessageBoxValue;
+        internal static bool ChangeStackingLogicValue, LDBToolCacheValue, HideTechModeValue, DisableChemOxygenCollectValue, DisableMessageBoxValue;
 
         internal static string ModPath;
 
         private static ConfigEntry<bool> ChangeStackingLogicEntry,
                                          EnableLDBToolCacheEntry,
                                          EnableHideTechModeEntry,
-                                         ChemOxygenCollectEntry,
-                                         ShowMessageBoxEntry;
+                                         DisableChemOxygenCollectEntry,
+                                         DisableMessageBoxEntry;
 
         private Harmony Harmony;
 
@@ -97,14 +97,14 @@ namespace ProjectGenesis
 
             HideTechModeValue = EnableHideTechModeEntry.Value;
 
-            ChemOxygenCollectEntry = Config.Bind("config", "ChemOxygenCollectEntry", true,
-                                                 "Whether chemical plants are allowed to automatically enrich oxygen in an aerobic atmosphere.\n是否允许化工厂在有氧大气下自动富集氧气");
+            DisableChemOxygenCollectEntry = Config.Bind("config", "DisableChemOxygenCollectEntry", false,
+                                                        "Disable chemical plants automatically enrich oxygen in an aerobic atmosphere.\n禁用化工厂在有氧大气下自动富集氧气功能");
 
-            ChemOxygenCollectValue = ChemOxygenCollectEntry.Value;
+            DisableChemOxygenCollectValue = DisableChemOxygenCollectEntry.Value;
 
-            ShowMessageBoxEntry = Config.Bind("config", "ShowMessageBox", true, "Show message when GenesisBook is loaded.\n启用首次加载时的提示信息");
+            DisableMessageBoxEntry = Config.Bind("config", "DiableMessageBox", false, "Don't show message when GenesisBook is loaded.\n禁用首次加载时的提示信息");
 
-            ShowMessageBoxValue = ShowMessageBoxEntry.Value;
+            DisableMessageBoxValue = DisableMessageBoxEntry.Value;
 
             Config.Save();
 
@@ -261,8 +261,8 @@ namespace ProjectGenesis
             bool currentChangeStackingLogic,
             bool currentLDBToolCache,
             bool currentHideTechMode,
-            bool currentChemOxygenCollectValue,
-            bool currentShowMessageBox)
+            bool currentDisableChemOxygenCollectValue,
+            bool currentDisableMessageBox)
         {
             ChangeStackingLogicValue = currentChangeStackingLogic;
             ChangeStackingLogicEntry.Value = currentChangeStackingLogic;
@@ -270,10 +270,10 @@ namespace ProjectGenesis
             EnableLDBToolCacheEntry.Value = currentLDBToolCache;
             HideTechModeValue = currentHideTechMode;
             EnableHideTechModeEntry.Value = currentHideTechMode;
-            ChemOxygenCollectValue = currentChemOxygenCollectValue;
-            ChemOxygenCollectEntry.Value = currentChemOxygenCollectValue;
-            ShowMessageBoxValue = currentShowMessageBox;
-            ShowMessageBoxEntry.Value = currentShowMessageBox;
+            DisableChemOxygenCollectValue = currentDisableChemOxygenCollectValue;
+            DisableChemOxygenCollectEntry.Value = currentDisableChemOxygenCollectValue;
+            DisableMessageBoxValue = currentDisableMessageBox;
+            DisableMessageBoxEntry.Value = currentDisableMessageBox;
             logger.LogInfo("SettingChanged");
             configFile.Save();
         }

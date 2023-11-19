@@ -88,6 +88,10 @@ namespace ProjectGenesis.Patches.Logic
                 case ProtoIDUsedByPatches.R海水淡化:
                 case ProtoIDUsedByPatches.R环氧氯丙烷:
                 case ProtoIDUsedByPatches.R双酚A:
+                case ProtoIDUsedByPatches.R羰基合成:
+                case ProtoIDUsedByPatches.R氨氧化:
+                case ProtoIDUsedByPatches.R三氯化铁:
+                case ProtoIDUsedByPatches.R四氢双环戊二烯:
                 case ProtoIDUsedByPatches.R高效石墨烯:
                 case ProtoIDUsedByPatches.R水电解:
                     b = true;

@@ -9,12 +9,13 @@ namespace ProjectGenesis.Patches.UI
 {
     public static class UISettingPatches
     {
-        private static bool _currentChangeStackingLogic,
-                            _currentLDBToolCache,
-                            _currentHideTechMode,
-                            _currentChemOxygenCollectValue,
-                            _currentShowMessageBoxValue;
-
+        private static bool 
+            _currentChangeStackingLogic,
+            _currentLDBToolCache,
+            _currentHideTechMode,
+            _currentDisableChemOxygenCollectValue,
+            _currentDisableMessageBox;
+        
         [HarmonyPatch(typeof(VFPreload), "InvokeOnLoadWorkEnded")]
         [HarmonyPostfix]
         [HarmonyPriority(Priority.Last)]
@@ -37,13 +38,13 @@ namespace ProjectGenesis.Patches.UI
                                 "EnableHideTechModeAdditionalText".TranslateFromJson(), new Vector2(30, -260), HideTechModeValue,
                                 SetHideTechModeValue);
 
-            CreateSettingObject(queryObj, pageParent, "gb-coc-setting", "ChemOxygenCollect".TranslateFromJson(),
-                                "ChemOxygenCollectText".TranslateFromJson(), new Vector2(30, -300), ChemOxygenCollectValue,
-                                SetChemOxygenCollectValue);
+            CreateSettingObject(queryObj, pageParent, "gb-coc-setting", "DisableChemOxygenCollect".TranslateFromJson(),
+                                "ChemOxygenCollectText".TranslateFromJson(), new Vector2(30, -300), DisableChemOxygenCollectValue,
+                                SetDisableChemOxygenCollectValue);
 
-            CreateSettingObject(queryObj, pageParent, "gb-smb-setting", "ShowMessageBox".TranslateFromJson(),
-                                "ShowMessageBoxAdditionalText".TranslateFromJson(), new Vector2(30, -340), ShowMessageBoxValue,
-                                SetShowMessageBoxValue);
+            CreateSettingObject(queryObj, pageParent, "gb-smb-setting", "DisableMessageBox".TranslateFromJson(),
+                                "ShowMessageBoxAdditionalText".TranslateFromJson(), new Vector2(30, -340), DisableMessageBoxValue,
+                                SetDisableMessageBoxValue);
         }
 
         private static void SetChangeStackingLogicValue(bool value) => _currentChangeStackingLogic = value;
@@ -52,9 +53,9 @@ namespace ProjectGenesis.Patches.UI
 
         private static void SetHideTechModeValue(bool value) => _currentHideTechMode = value;
 
-        private static void SetChemOxygenCollectValue(bool value) => _currentChemOxygenCollectValue = value;
+        private static void SetDisableChemOxygenCollectValue(bool value) => _currentDisableChemOxygenCollectValue = value;
 
-        private static void SetShowMessageBoxValue(bool value) => _currentShowMessageBoxValue = value;
+        private static void SetDisableMessageBoxValue(bool value) => _currentDisableMessageBox = value;
 
         private static void CreateSettingObject(
             GameObject oriObj,
@@ -92,14 +93,14 @@ namespace ProjectGenesis.Patches.UI
             _currentChangeStackingLogic = ChangeStackingLogicValue;
             _currentLDBToolCache = LDBToolCacheValue;
             _currentHideTechMode = HideTechModeValue;
-            _currentChemOxygenCollectValue = ChemOxygenCollectValue;
-            _currentShowMessageBoxValue = ShowMessageBoxValue;
+            _currentDisableChemOxygenCollectValue = DisableChemOxygenCollectValue;
+            _currentDisableMessageBox = DisableMessageBoxValue;
         }
 
         [HarmonyPatch(typeof(UIOptionWindow), "OnApplyClick")]
         [HarmonyPostfix]
         public static void UIOptionWindow_OnApplyClick_Postfix()
-            => SetConfig(_currentChangeStackingLogic, _currentLDBToolCache, _currentHideTechMode, _currentChemOxygenCollectValue,
-                         _currentShowMessageBoxValue);
+            => SetConfig(_currentChangeStackingLogic, _currentLDBToolCache, _currentHideTechMode, _currentDisableChemOxygenCollectValue,
+                         _currentDisableMessageBox);
     }
 }

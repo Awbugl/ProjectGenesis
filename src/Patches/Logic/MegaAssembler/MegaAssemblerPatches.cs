@@ -113,6 +113,8 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
         {
             PlanetFactory factory = factorySystem.factory;
 
+            bool b = power >= 0.1f;
+
             // MegaBuildings
             if (__instance.speed >= TrashSpeed)
             {
@@ -125,16 +127,18 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
                 UpdateOutputSlots(ref __instance, cargoTraffic, slotdata, entitySignPool, stationPilerLevel);
                 UpdateInputSlots(ref __instance, power, factory, cargoTraffic, slotdata, entitySignPool);
             }
-            else if (__instance.recipeType == ERecipeType.Chemical)
+            else if (b && __instance.recipeType == ERecipeType.Chemical)
             {
                 OxygenAtmosphereChemicalPatch(ref __instance, factorySystem, factory);
             }
 
-            return power >= 0.1f;
+            return b;
         }
 
         private static void OxygenAtmosphereChemicalPatch(ref AssemblerComponent __instance, FactorySystem factorySystem, PlanetFactory factory)
         {
+            if (__instance.time != 0 && __instance.time < __instance.timeSpend) return;
+
             if (!factorySystem.planet.gasItems.Contains(ProtoIDUsedByPatches.I氧)) return;
 
             int index = Array.IndexOf(__instance.requires, ProtoIDUsedByPatches.I氧);

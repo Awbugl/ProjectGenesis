@@ -65,14 +65,14 @@
     "ENUS": "Enable tech exploration mode"
   },
   {
-    "Name": "ChemOxygenCollect",
-    "ZHCN": "化工厂自动富集氧气",
-    "ENUS": "chemical plants enrich oxygen automatically"
+    "Name": "DisableChemOxygenCollect",
+    "ZHCN": "禁用化工厂自动富集氧气功能",
+    "ENUS": "Disable chemical plants enrich oxygen function"
   },
   {
-    "Name": "ShowMessageBox",
-    "ZHCN": "显示创世之书加载弹窗",
-    "ENUS": "Show messagebox when loaded"
+    "Name": "DisableMessageBox",
+    "ZHCN": "禁用创世之书加载弹窗",
+    "ENUS": "Disable messagebox when loaded"
   },
   {
     "Name": "ChangeStackingLogicAdditionalText",
@@ -583,6 +583,11 @@
     "Name": "I四氢双环戊二烯",
     "ZHCN": "代表性饱和多环碳氢化合物，广泛应用于航空航天领域。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "ENUS": "Representative saturated polycyclic hydrocarbons, widely used in aerospace applications.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+  },
+  {
+    "Name": "R四氢双环戊二烯",
+    "ZHCN": "代表性饱和多环碳氢化合物，广泛应用于航空航天领域。\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作.</color>\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Representative saturated polycyclic hydrocarbons, widely used in aerospace applications.\n<color=\"#FD965ECC\">It will not stop working until all products are stacked.</color>\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "四氢双环戊二烯燃料棒",
@@ -1441,18 +1446,8 @@
   },
   {
     "Name": "R丙烯合成",
-    "ZHCN": "一氧化碳和氢在催化剂的作用下可高效合成丙烯，是碳中和进程的重要一步.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Carbon monoxide and hydrogen can efficiently synthesize propylene in the presence of a catalyst, an important step in the carbon-neutral process.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
-    "Name": "硝酸化合",
-    "ZHCN": "硝酸化合",
-    "ENUS": "Nitric acid chemistry"
-  },
-  {
-    "Name": "R硝酸化合",
-    "ZHCN": "利用物理性质，从硝酸钠和硫酸的混合体系中分离出硝酸.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Separation of nitric acid from a mixture of sodium nitrate and sulfuric acid by physical properties.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "一氧化碳和氢在催化剂的作用下可高效合成丙烯，是碳中和进程的重要一步.\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作.</color>\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Carbon monoxide and hydrogen can efficiently synthesize propylene in the presence of a catalyst, an important step in the carbon-neutral process.\n<color=\"#FD965ECC\">It will not stop working until all products are stacked.</color>\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "合成氨",
@@ -1506,8 +1501,8 @@
   },
   {
     "Name": "R三氯化铁",
-    "ZHCN": "向氢氯酸和铁的反应体系中加入氧气，使其转化为三氯化铁和水.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Add oxygen to the reaction system of hydrochloric acid and iron to convert it to ferric chloride and water.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "向氢氯酸和铁的反应体系中加入氧气，使其转化为三氯化铁和水.\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作.</color>\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Add oxygen to the reaction system of hydrochloric acid and iron to convert it to ferric chloride and water.\n<color=\"#FD965ECC\">It will not stop working until all products are stacked.</color>\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "钨矿精炼",
@@ -1581,8 +1576,8 @@
   },
   {
     "Name": "R氨氧化",
-    "ZHCN": "氨气与氧气进行反应, 经过一系列反应合成硝酸.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Ammonia reacts with oxygen to produce nitric acid.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "氨气与氧气进行反应, 经过一系列反应合成硝酸.\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作.</color>\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Ammonia reacts with oxygen to produce nitric acid.\n<color=\"#FD965ECC\">Will not stop working until all products are accumulated.</color>\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "R石墨烯（高效）",

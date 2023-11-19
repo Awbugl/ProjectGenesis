@@ -1766,9 +1766,11 @@
     "Time": 180,
     "Input": [
       1103,
-      1106
+      1106,
+      1116
     ],
     "InCounts": [
+      2,
       2,
       2
     ],
@@ -3838,8 +3840,8 @@
   },
   {
     "ID": 717,
-    "Name": "硝酸",
-    "Description": "",
+    "Name": "氨氧化",
+    "Description": "R氨氧化",
     "IconPath": "",
     "Type": 2,
     "GridIndex": 4313,
@@ -3860,7 +3862,7 @@
       1,
       1
     ],
-    "Explicit": false,
+    "Explicit": true,
     "Handcraft": false,
     "NonProductive": false
   },
@@ -4248,17 +4250,19 @@
     "Time": 180,
     "Input": [
       1107,
-      7705
+      7705,
+      7017
     ],
     "InCounts": [
-      1,
+      2,
+      2,
       2
     ],
     "Output": [
       7707
     ],
     "OutCounts": [
-      1
+      2
     ],
     "Explicit": false,
     "Handcraft": false,
@@ -4657,7 +4661,7 @@
   {
     "ID": 512,
     "Name": "四氢双环戊二烯",
-    "Description": "",
+    "Description": "R四氢双环戊二烯",
     "IconPath": "",
     "Type": 2,
     "GridIndex": 4309,
@@ -4678,7 +4682,7 @@
       3,
       6
     ],
-    "Explicit": false,
+    "Explicit": true,
     "Handcraft": false,
     "NonProductive": false
   },

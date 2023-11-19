@@ -29,7 +29,7 @@ namespace ProjectGenesis.Patches.Logic.AddVein
                                                                             { 20, new[] { 6220 } },
                                                                             { 22, new[] { 6220, 7019 } },
                                                                             { 23, new[] { 6206 } },
-                                                                            { 24, new[] { 6220, 6205 } },
+                                                                            { 24, new[] { 6220, 6206 } },
                                                                             { 25, new[] { 6220, 7019 } }
                                                                         };
 
@@ -42,7 +42,7 @@ namespace ProjectGenesis.Patches.Logic.AddVein
                                                                                                               {
                                                                                                                   1.0f, 1.0f, 0.0f, 0.4f,
                                                                                                                   1.0f, 1.0f, 0.0f, 0.4f,
-                                                                                                                  1.0f, 1.0f, 0.2f, 0.5f
+                                                                                                                  1.0f, 1.0f, 1.0f, 0.3f
                                                                                                               })
                                                                                           },
                                                                                           {
