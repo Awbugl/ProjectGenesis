@@ -39,11 +39,11 @@ namespace ProjectGenesis.Patches.UI
                                 SetHideTechModeValue);
 
             CreateSettingObject(queryObj, pageParent, "gb-coc-setting", "DisableChemOxygenCollect".TranslateFromJson(),
-                                "ChemOxygenCollectText".TranslateFromJson(), new Vector2(30, -300), DisableChemOxygenCollectValue,
+                                "DisableChemOxygenCollectText".TranslateFromJson(), new Vector2(30, -300), DisableChemOxygenCollectValue,
                                 SetDisableChemOxygenCollectValue);
 
             CreateSettingObject(queryObj, pageParent, "gb-smb-setting", "DisableMessageBox".TranslateFromJson(),
-                                "ShowMessageBoxAdditionalText".TranslateFromJson(), new Vector2(30, -340), DisableMessageBoxValue,
+                                "DisableMessageBoxAdditionalText".TranslateFromJson(), new Vector2(30, -340), DisableMessageBoxValue,
                                 SetDisableMessageBoxValue);
         }
 

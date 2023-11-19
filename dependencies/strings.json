@@ -90,14 +90,14 @@
     "ENUS": "(Hide the unlocked technology, need to restart the game to take effect)"
   },
   {
-    "Name": "ChemOxygenCollectText",
-    "ZHCN": "（在有氧大气下，化工厂可自动富集氧气并作为原料利用）",
-    "ENUS": "(In an aerobic atmosphere, chemical plants can automatically enrich oxygen and utilize it as a source)"
+    "Name": "DisableChemOxygenCollectText",
+    "ZHCN": "（禁用化工厂在有氧大气下自动富集氧气并作为原料利用的功能）",
+    "ENUS": "(Disable function of chemical plants that could automatically enrich oxygen and utilize as a source in an aerobic atmosphere)"
   },
   {
-    "Name": "ShowMessageBoxAdditionalText",
-    "ZHCN": "（在MOD加载完成后弹窗显示创世之书的额外信息）",
-    "ENUS": "(Show additional information about GenesisBook in a messagebox after the mod is loaded)"
+    "Name": "DisableMessageBoxAdditionalText",
+    "ZHCN": "（在MOD加载完成后禁用弹窗显示创世之书的额外信息）",
+    "ENUS": "(Disable additional information about GenesisBook in a messagebox after the mod is loaded)"
   },
   {
     "Name": "星球基地",

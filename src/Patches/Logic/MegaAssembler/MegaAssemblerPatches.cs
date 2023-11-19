@@ -127,7 +127,7 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
                 UpdateOutputSlots(ref __instance, cargoTraffic, slotdata, entitySignPool, stationPilerLevel);
                 UpdateInputSlots(ref __instance, power, factory, cargoTraffic, slotdata, entitySignPool);
             }
-            else if (b && __instance.recipeType == ERecipeType.Chemical)
+            else if (b && __instance.recipeType == ERecipeType.Chemical && !ProjectGenesis.DisableChemOxygenCollectValue)
             {
                 OxygenAtmosphereChemicalPatch(ref __instance, factorySystem, factory);
             }
