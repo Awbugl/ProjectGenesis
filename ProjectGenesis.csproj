@@ -81,6 +81,9 @@
         <Reference Include="UnityEngine">
             <HintPath>$(DSPAssemblyPath)\UnityEngine.dll</HintPath>
         </Reference>
+        <Reference Include="UnityEngine.AssetBundleModule">
+          <HintPath>$(DSPAssemblyPath)\UnityEngine.AssetBundleModule.dll</HintPath>
+        </Reference>
         <Reference Include="UnityEngine.CoreModule">
             <HintPath>$(DSPAssemblyPath)\UnityEngine.CoreModule.dll</HintPath>
         </Reference>
@@ -108,6 +111,7 @@
         <Compile Include="src\Compatibility\PlanetwideMiningCompatibilityPlugin.cs"/>
         <Compile Include="src\Patches\Logic\AddVein\AddVeinPatches.cs"/>
         <Compile Include="src\Patches\Logic\AddVein\AdjustPlanetTheme.cs" />
+        <Compile Include="src\Patches\Logic\AddVein\SwapShaderPatches.cs" />
         <Compile Include="src\Patches\Logic\AddVein\UIDetailPatches.cs"/>
         <Compile Include="src\Patches\Logic\AddVein\VeinAnimDataPatches.cs"/>
         <Compile Include="src\Patches\Logic\DisableLDBToolCachePatches.cs"/>
