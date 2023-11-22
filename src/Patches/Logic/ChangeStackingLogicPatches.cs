@@ -86,8 +86,6 @@ namespace ProjectGenesis.Patches.Logic
             {
                 case ProtoIDUsedByPatches.R氢氯酸:
                 case ProtoIDUsedByPatches.R海水淡化:
-                case ProtoIDUsedByPatches.R环氧氯丙烷:
-                case ProtoIDUsedByPatches.R双酚A:
                 case ProtoIDUsedByPatches.R羰基合成:
                 case ProtoIDUsedByPatches.R氨氧化:
                 case ProtoIDUsedByPatches.R三氯化铁:
@@ -105,17 +103,7 @@ namespace ProjectGenesis.Patches.Logic
         {
             if (component.products.Length < 2) return false;
 
-            bool b = false;
-
-            switch (component.recipeId)
-            {
-                case ProtoIDUsedByPatches.R二氨基联苯胺:
-                case ProtoIDUsedByPatches.R间苯二甲酸二苯酯:
-                    b = true;
-                    break;
-            }
-
-            return (b || ProjectGenesis.ChangeStackingLogicValue) && CalcMaxProduct(ref component, productRegister, 19);
+            return ProjectGenesis.ChangeStackingLogicValue && CalcMaxProduct(ref component, productRegister, 19);
         }
 
         private static bool CalcMaxProduct(ref AssemblerComponent component, int[] productRegister, int maxproduct)

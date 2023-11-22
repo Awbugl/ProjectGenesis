@@ -382,7 +382,7 @@ namespace ProjectGenesis.Compatibility
             object addLabel = matcher.Clone().MatchBack(false, new CodeMatch(OpCodes.Brfalse)).Operand;
 
             matcher.Advance(2).InsertAndAdvance(new CodeInstruction(OpCodes.Beq, addLabel), new CodeInstruction(OpCodes.Ldloc_S, index),
-                                                new CodeInstruction(OpCodes.Ldc_I4, AddVeinPatches.VeinTypeCount));
+                                                new CodeInstruction(OpCodes.Ldc_I4_S, AddVeinPatches.VeinTypeCount));
 
             return matcher.InstructionEnumeration();
         }

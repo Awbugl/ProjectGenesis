@@ -69,7 +69,7 @@
     "ItemID": 2203,
     "ModelID": 53,
     "powerConnectDistance": 24.0,
-    "powerCoverRadius": 14.9,
+    "powerCoverRadius": 15.0,
     "genEnergyPerTick": 12500
   },
   {

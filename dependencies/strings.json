@@ -565,16 +565,6 @@
     "ENUS": "Nuclear power station"
   },
   {
-    "Name": "一氧化碳",
-    "ZHCN": "一氧化碳",
-    "ENUS": "Carbon monoxide"
-  },
-  {
-    "Name": "I一氧化碳",
-    "ZHCN": "无色无味的气体，有毒，可作为有机合成的原料。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A colorless odorless gas, toxic, can be used as raw materials for organic synthesis.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
     "Name": "四氢双环戊二烯",
     "ZHCN": "四氢双环戊二烯(JP-10)",
     "ENUS": "Tetrahydrocyclopentadiene(JP-10)"
@@ -741,7 +731,7 @@
   },
   {
     "Name": "氘氦混合聚变燃料棒",
-    "ZHCN": "氘氦混合聚变燃料棒",
+    "ZHCN": "氘氦混合燃料棒",
     "ENUS": "Deuterium helium fusion fuel rod"
   },
   {
@@ -1085,14 +1075,14 @@
     "ENUS": "A colorless gas with a strong irritating odor. It is usually stored as a liquid.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
-    "Name": "二氨基联苯胺",
-    "ZHCN": "二氨基联苯胺（DAB）",
-    "ENUS": "Diaminobenzidine (DAB)"
+    "Name": "聚酰亚胺",
+    "ZHCN": "聚酰亚胺(PI)",
+    "ENUS": "Polyimide(PI)"
   },
   {
-    "Name": "I二氨基联苯胺",
-    "ZHCN": "二氨基联苯胺是合成聚苯并咪唑的原料之一，有显著的生化和毒理特性。但其宜人的香气可能使人忽略其本身对健康的危害.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Diamiobenzidine is one of the raw materials for the synthesis of PBI, which has significant biochemical and toxicological characteristics. But its pleasant aroma may make people ignore its own harm to health.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "Name": "I聚酰亚胺",
+    "ZHCN": "聚酰亚胺是一种高性能有机高分子化合物，具有优异的高温稳定性、耐化学腐蚀性和电绝缘性能。\n<color=\"#7AF0FFC8\">——来自创世之书。</color>",
+    "ENUS": "Polyimide is a high-performance organic polymer compound, exhibits excellent high-temperature stability, chemical resistance, and electrical insulation properties.\n<color=\"#7AF0FFC8\">——Added by GenesisBook.</color>"
   },
   {
     "Name": "苯",
@@ -1115,41 +1105,6 @@
     "ENUS": "Colorless gas with a similar odor to petroleum gas, an important organic chemical raw material.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
-    "Name": "环氧氯丙烷",
-    "ZHCN": "环氧氯丙烷",
-    "ENUS": "Epichlorohydrin"
-  },
-  {
-    "Name": "I环氧氯丙烷",
-    "ZHCN": "无色液体，有类似氯仿的气味，常作为有机化工原料。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Colorless liquid with a similar odor to chloroform, usually used as an organic chemical raw material.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
-    "Name": "R环氧氯丙烷",
-    "ZHCN": "无色液体，有类似氯仿的气味，常作为有机化工原料。\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作.</color>\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Colorless liquid with a similar odor to chloroform, usually used as an organic chemical raw material.\n<color=\"#FD965ECC\">It will not stop working until all products are stacked.</color>\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
-    "Name": "间苯二甲酸二苯酯",
-    "ZHCN": "间苯二甲酸二苯酯",
-    "ENUS": "Diphenyl isophthalate"
-  },
-  {
-    "Name": "I间苯二甲酸二苯酯",
-    "ZHCN": "耐热性能良好的有机化合物，是合成聚苯并咪唑的原料之一。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A kind of organic compound with good heat resistance, one of the raw materials for the synthesis of PBI.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
-    "Name": "R二氨基联苯胺",
-    "ZHCN": "二氨基联苯胺是合成聚苯并咪唑的原料之一，有显著的生化和毒理特性。但其宜人的香气可能使人忽略其本身对健康的危害.\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作.</color>\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Diamiobenzidine is one of the raw materials for the synthesis of PBI, which has significant biochemical and toxicological characteristics. But its pleasant aroma may make people ignore its own harm to health.\n<color=\"#FD965ECC\">It will not stop working until all products are stacked.</color>\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
-    "Name": "R间苯二甲酸二苯酯",
-    "ZHCN": "耐热性能良好的有机化合物，是合成聚苯并咪唑的原料之一.\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作.</color>\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A kind of organic compound with good heat resistance, one of the raw materials for the synthesis of PBI.\n<color=\"#FD965ECC\">It will not stop working until all products are stacked.</color>\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
     "Name": "氢氯酸",
     "ZHCN": "氢氯酸",
     "ENUS": "Hydrochloric acid"
@@ -1168,21 +1123,6 @@
     "Name": "I三氯化铁",
     "ZHCN": "常见的共价化合物，工业用途广泛。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "ENUS": "A common covalent compound, widely used in industry.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
-    "Name": "双酚A",
-    "ZHCN": "双酚A",
-    "ENUS": "Bisphenol A"
-  },
-  {
-    "Name": "I双酚A",
-    "ZHCN": "白色针晶或片状粉末。微带苯酚气味，是高分子合成材料的重要原料。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "White needle crystals or plate-shaped powder. Slightly phenol odor, is an important raw material for high polymer synthesis materials.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
-    "Name": "R双酚A",
-    "ZHCN": "白色针晶或片状粉末。微带苯酚气味，是高分子合成材料的重要原料。\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作.</color>\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "White needle crystals or plate-shaped powder. Slightly phenol odor, is an important raw material for high polymer synthesis materials.\n<color=\"#FD965ECC\">It will not stop working until all products are stacked.</color>\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "硝酸",
@@ -1251,8 +1191,8 @@
   },
   {
     "Name": "I生物基板",
-    "ZHCN": "使用聚苯并咪唑制造的基板，具有更好的生物相容性、稳定性和耐用性。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "The substrate made of polybenzimidazole, which has better biocompatibility, stability and durability.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "使用聚酰亚胺制造的基板，具有更好的生物相容性、稳定性和耐用性。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "The substrate made of polyimide, which has better biocompatibility, stability and durability.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "钨块",
@@ -1270,24 +1210,14 @@
     "ENUS": "Tungsten alloy"
   },
   {
-    "Name": "环氧树脂",
-    "ZHCN": "环氧树脂",
-    "ENUS": "Epoxy resin"
+    "Name": "聚苯硫醚",
+    "ZHCN": "聚苯硫醚(PPS)",
+    "ENUS": "Polyphenylene sulfide(PPS)"
   },
   {
-    "Name": "I环氧树脂",
-    "ZHCN": "有机高分子化合物，用于生产覆层塑料基板。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Organic polymer used to produce coated plastic substrate.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
-    "Name": "聚苯并咪唑",
-    "ZHCN": "聚苯并咪唑(PBI)",
-    "ENUS": "Polybenzimidazole(PBI)"
-  },
-  {
-    "Name": "I聚苯并咪唑",
-    "ZHCN": "高性能复合材料，具有优异的热稳定性、化学稳定性和力学性能，在航天工业具有很好的应用前景.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "High performance composite material with excellent thermal stability, chemical stability and mechanical properties, which has a good application prospect in aerospace industry.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "Name": "I聚苯硫醚",
+    "ZHCN": "一种有机高分子化合物，具有良好的热稳定性和电绝缘性能。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Polyphenyl sulfide (PPS) is an organic polymer compound, exhibits excellent thermal stability and electrical insulation properties.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "活性生物纤维",
@@ -1298,16 +1228,6 @@
     "Name": "I活性生物纤维",
     "ZHCN": "由有机晶体制作成的复合材料，具有高强度、高韧性，以及良好的生物相容性.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "ENUS": "Made of organic crystal, it has high strength, high toughness, and good biocompatibility.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
-    "Name": "生物微晶元件",
-    "ZHCN": "生物微晶元件",
-    "ENUS": "Biological microcrystalline element"
-  },
-  {
-    "Name": "I生物微晶元件",
-    "ZHCN": "具有良好生物相容性的微晶元件.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Microcrystalline element with good biocompatibility.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "先进生物电路",
@@ -1446,8 +1366,8 @@
   },
   {
     "Name": "R丙烯合成",
-    "ZHCN": "一氧化碳和氢在催化剂的作用下可高效合成丙烯，是碳中和进程的重要一步.\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作.</color>\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Carbon monoxide and hydrogen can efficiently synthesize propylene in the presence of a catalyst, an important step in the carbon-neutral process.\n<color=\"#FD965ECC\">It will not stop working until all products are stacked.</color>\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "二氧化碳和氢在催化剂的作用下可高效合成丙烯，是碳中和进程的重要一步.\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作.</color>\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Carbon dioxide and hydrogen can efficiently synthesize propylene in the presence of a catalyst, an important step in the carbon-neutral process.\n<color=\"#FD965ECC\">It will not stop working until all products are stacked.</color>\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "合成氨",
@@ -1466,8 +1386,8 @@
   },
   {
     "Name": "R活性纤维分离",
-    "ZHCN": "使用亚原子操控技术，可以有效地将活性纤维的组分分解并将组装成聚苯并咪唑.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Using subatomic manipulation technology, it can effectively decompose the components of active fibers and assemble them into polybenzimidazole.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "使用亚原子操控技术，可以有效地将活性纤维的组分分解并将组装成聚酰亚胺.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "Using subatomic manipulation technology, it can effectively decompose the components of active fibers and assemble them into polyimide.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "焦油转化",
@@ -1716,13 +1636,13 @@
   },
   {
     "Name": "T基础化工描述",
-    "ZHCN": "没有化工的科学是停滞不前的。\n[由于显示限制，解锁配方显示不完全]",
-    "ENUS": "Science without chemicals is stagnant.\n[The unlocked recipe is not fully displayed due to display limitations]"
+    "ZHCN": "没有化工的科学是停滞不前的。",
+    "ENUS": "Science without chemicals is stagnant."
   },
   {
     "Name": "T高分子化工描述",
-    "ZHCN": "现在可以合成更多种类的化工原料。\n[由于显示限制，解锁配方显示不完全]",
-    "ENUS": "A wider variety of chemicals can now be synthesized.\n[The unlocked recipe is not fully displayed due to display limitations]"
+    "ZHCN": "现在可以合成更多种类的化工原料。",
+    "ENUS": "A wider variety of chemicals can now be synthesized."
   },
   {
     "Name": "T先驱者遗物",
@@ -2136,8 +2056,8 @@
   },
   {
     "Name": "T先进化工描述",
-    "ZHCN": "现在可以合成更多种类的化工原料。\n[由于显示限制，解锁配方显示不完全]",
-    "ENUS": "A wider variety of chemicals can now be synthesized.\n[The unlocked recipe is not fully displayed due to display limitations]"
+    "ZHCN": "现在可以合成更多种类的化工原料。",
+    "ENUS": "A wider variety of chemicals can now be synthesized."
   },
   {
     "Name": "T焦油分馏",
@@ -2333,11 +2253,6 @@
     "Name": "I人造恒星",
     "ZHCN": "“你只需要把聚变燃料棒送进去就可以了，轻松愉快！” 它简单的外形归功于理论的优雅，被人们称为“人造小太阳”。",
     "ENUS": "\"All you have to do is let fusion fuel rod in, nice'n easy!\" This scaled-down version of the system is known as the Mini-sun.\n"
-  },
-  {
-    "Name": "I抽水站",
-    "ZHCN": "用于直接抽取液体资源的设施，可以从宇宙中的各种海洋中采集化工原料。解锁海洋排污科技后，可以用于排放工业废弃物。",
-    "ENUS": "Facility used to collect liquid resources from an ocean. After unlocking the ocean outfall technology, it can be used to discharge industrial waste."
   },
   {
     "Name": "原油精炼厂",
@@ -2543,16 +2458,6 @@
     "Name": "I氮",
     "ZHCN": "无色无味的气体，分布广泛。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "ENUS": "Colorless and odorless gas, widely distributed.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
-  },
-  {
-    "Name": "二氧化碳还原",
-    "ZHCN": "二氧化碳还原",
-    "ENUS": "Carbon Dioxide Reduction"
-  },
-  {
-    "Name": "R二氧化碳还原",
-    "ZHCN": "将二氧化碳还原为一氧化碳，作为化工原料。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Reduce carbon dioxide to carbon monoxide for chemical raw materials.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "开发者日志01",
