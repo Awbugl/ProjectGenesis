@@ -326,8 +326,8 @@
   },
   {
     "Name": "星球大气介绍前字",
-    "ZHCN": "除部分无大气环境的星球外，现在各类星球各有其独特的大气成分。\n大气采集站是类似于轨道采集器的采集设施，可部署在星球赤道并采集星球大气层的成分供给生产线使用，大气采集站与物流站之间无建造距离限制。\n火力发电厂输入的原料种类现受到星球大气类型的限制。除三种化学能燃料棒外，其他燃料不能在无氧大气环境下发电。\n在有氧大气下，化工厂可自动富集氧气并作为原料利用（可在<color=\"#FD965ECC\">设置 - 杂项</color>中关闭此功能）。",
-    "ENUS": "Except for some planets with no atmosphere, all types of planets now have their own unique atmospheric composition.\nAtmospheric Collect Stations are facilities that can be deployed at a planet's equator and harvest components of the planet's atmosphere for use in production lines. No distance constraints between Atmospheric Collect Station and the Logistics Station.\nThe type of feedstock input to thermal power plants is now limited by the type of planetary atmosphere.\nAll but three chemical energy fuel rods cannot generate electricity in an anoxic atmosphere.\nIn an aerobic atmosphere, chemical plants can automatically enrich oxygen and utilize it as a source (it can be turned off in <color=\"#FD965ECC\">Settings - Miscellaneous</color>)."
+    "ZHCN": "除部分无大气环境的星球外，现在各类星球各有其独特的大气成分。\n大气采集站是类似于轨道采集器的采集设施，可部署在星球上并采集星球大气层的成分供给生产线使用，大气采集站与物流站之间无建造距离限制。\n火力发电厂输入的原料种类现受到星球大气类型的限制。除三种化学能燃料棒外，其他燃料不能在无氧大气环境下发电。\n在有氧大气下，化工厂可自动富集氧气并作为原料利用（可在<color=\"#FD965ECC\">设置 - 杂项</color>中关闭此功能）。",
+    "ENUS": "Except for some planets with no atmosphere, all types of planets now have their own unique atmospheric composition.\nAtmospheric Collect Stations are facilities that can be deployed at a planet and harvest components of the planet's atmosphere for use in production lines. No distance constraints between Atmospheric Collect Station and the Logistics Station.\nThe type of feedstock input to thermal power plants is now limited by the type of planetary atmosphere.\nAll but three chemical energy fuel rods cannot generate electricity in an anoxic atmosphere.\nIn an aerobic atmosphere, chemical plants can automatically enrich oxygen and utilize it as a source (it can be turned off in <color=\"#FD965ECC\">Settings - Miscellaneous</color>)."
   },
   {
     "Name": "巨型建筑介绍标题",
@@ -1041,7 +1041,7 @@
   },
   {
     "Name": "I起源之书",
-    "ZHCN": "如果你拿到这本书，那我猜你应该已经试着接受这个MOD了。欢迎来到第一阶段，开拓者。\n第一阶段需要做的并不是很多，也不会很难。\n之前的开拓者们在交流群里留下了一份小型处理器蓝图，我想你可能会需要它的。希望我能在下一个阶段见到你。<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ZHCN": "如果你拿到这本书，那我猜你应该已经试着接受这个MOD了。欢迎来到第一阶段，开拓者。\n第一阶段需要做的并不是很多，也不会很难。希望我能在下一个阶段见到你。<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "ENUS": "If you get this book, I guess you should have tried to accept this MOD. Welcome to the first stage, pioneer.\nThere is not much to do in the first stage, and it will not be difficult.\nI hope to see you in the next stage.<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
@@ -1051,8 +1051,8 @@
   },
   {
     "Name": "I虚空之书",
-    "ZHCN": "我曾经无数次仰望星空，幻想银河彼端是否存在另一个文明。\n而现在，你已经踏出了远航星海的第一步。欢迎来到第二阶段，开拓者。\n在这个阶段，你需要铺设稳定的物流网络、推动材料技术不断进步，以及逐步发展信息技术。善用巨型建筑，它们将为你节省很大一部分算力。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "I have looked up at the stars countless times, and have imagined whether there is another civilization at the other end of the Milky Way.\nAnd now, you have taken the first step of the voyage. Welcome to the second stage, pioneer.\nIn this stage, you need to lay a stable logistics network, promote material technology to continue to improve, and gradually develop information technology. Make good use of the giant buildings, they will save you a lot of computing power.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "我曾经无数次仰望星空，幻想银河彼端是否存在另一个文明。\n而现在，你已经踏出了远航星海的第一步。欢迎来到第二阶段，开拓者。\n在这个阶段，你需要铺设稳定的物流网络、推动材料技术不断进步，以及逐步发展信息技术。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "I have looked up at the stars countless times, and have imagined whether there is another civilization at the other end of the Milky Way.\nAnd now, you have taken the first step of the voyage. Welcome to the second stage, pioneer.\nIn this stage, you need to lay a stable logistics network, promote material technology to continue to improve, and gradually develop information technology.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
     "Name": "起源之书",
@@ -1798,6 +1798,16 @@
     "Name": "T物品仓储",
     "ZHCN": "物品仓储",
     "ENUS": "Item storage"
+  },
+  {
+    "Name": "T气体冷凝",
+    "ZHCN": "气体冷凝",
+    "ENUS": "Gas Condensation"
+  },
+  {
+    "Name": "T气体冷凝描述",
+    "ZHCN": "经过低温技术的进一步发展，可以将气体冷凝为液态，并作为工业原料利用。",
+    "ENUS": "With further development of cryogenic technology, gases can be condensed to liquid form and utilized as industrial raw materials."
   },
   {
     "Name": "T广播式能源",

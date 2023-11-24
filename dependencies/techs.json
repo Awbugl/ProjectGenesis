@@ -335,10 +335,10 @@
   },
   {
     "ID": 1112,
-    "Name": "T氢燃料棒",
+    "Name": "T气体冷凝",
     "IconPath": "Icons/Tech/1112",
-    "Desc": "氢燃料棒描述",
-    "Conclusion": "氢燃料棒结果",
+    "Desc": "T气体冷凝描述",
+    "Conclusion": "T气体冷凝描述",
     "Position": [
       13.0,
       -39.0
@@ -355,7 +355,8 @@
     ],
     "HashNeeded": 72000,
     "UnlockRecipes": [
-      19
+      19,
+      419
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -2974,8 +2975,7 @@
     "HashNeeded": 216000,
     "UnlockRecipes": [
       96,
-      95,
-      419
+      95
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -8540,13 +8540,11 @@
     ],
     "Items": [
       6001,
-      6002,
-      6003
+      6002
     ],
     "ItemPoints": [
       40,
-      40,
-      20
+      40
     ],
     "HashNeeded": 36000,
     "UnlockRecipes": [

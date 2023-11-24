@@ -15,7 +15,8 @@ namespace ProjectGenesis.Patches.Logic
         private static readonly FieldInfo StationComponent_IsCollector_Field = AccessTools.Field(typeof(StationComponent), "isCollector"),
                                           PlanetData_GasItems_Field = AccessTools.Field(typeof(PlanetData), "gasItems"),
                                           StationComponent_isStellar_Field = AccessTools.Field(typeof(StationComponent), "isStellar"),
-                                          PrefabDesc_isStellarStation_Field = AccessTools.Field(typeof(PrefabDesc), "isStellarStation");
+                                          PrefabDesc_isStellarStation_Field = AccessTools.Field(typeof(PrefabDesc), "isStellarStation"),
+                                          BuildTool_planet_Field = AccessTools.Field(typeof(BuildTool), "planet");
 
         [HarmonyPatch(typeof(UIPlanetDetail), "OnPlanetDataSet")]
         [HarmonyTranspiler]
@@ -174,8 +175,8 @@ namespace ProjectGenesis.Patches.Logic
 
             matcher.MatchForward(false, new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(BuildPreview), "desc")),
                                  new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(PrefabDesc), "isCollectStation")),
-                                 new CodeMatch(OpCodes.Brfalse), new CodeMatch(OpCodes.Ldarg_0),
-                                 new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(BuildTool), "planet")), new CodeMatch(OpCodes.Brfalse));
+                                 new CodeMatch(OpCodes.Brfalse), new CodeMatch(OpCodes.Ldarg_0), new CodeMatch(OpCodes.Ldfld, BuildTool_planet_Field),
+                                 new CodeMatch(OpCodes.Brfalse));
 
             object preview = matcher.Operand;
 
@@ -203,7 +204,7 @@ namespace ProjectGenesis.Patches.Logic
             matcher.MatchForward(false, new CodeMatch(OpCodes.Ldc_R4, 14297f));
 
             matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Pop), new CodeInstruction(OpCodes.Ldarg_0),
-                                                new CodeInstruction(OpCodes.Ldfld, AccessTools.Field(typeof(BuildTool), "planet")),
+                                                new CodeInstruction(OpCodes.Ldfld, BuildTool_planet_Field),
                                                 new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(PlanetGasPatches), nameof(GetDistance))));
 
             matcher.MatchForward(false, new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldelem_Ref),
@@ -239,6 +240,14 @@ namespace ProjectGenesis.Patches.Logic
             matcher.InsertAndAdvance(ins3).InsertAndAdvance(ins4)
                    .InsertAndAdvance(new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(PlanetGasPatches), nameof(SetPreBuildDistance))));
 
+            // unlock BuildInEquator 
+            matcher.MatchBack(false, new CodeMatch(OpCodes.Ldc_I4_S, (sbyte)35));
+
+            object label = matcher.Advance(-2).Operand;
+
+            matcher.Advance(-5).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0), new CodeInstruction(OpCodes.Ldfld, BuildTool_planet_Field),
+                                                 new CodeInstruction(OpCodes.Ldfld, AccessTools.Field(typeof(PlanetData), nameof(PlanetData.type))),
+                                                 new CodeInstruction(OpCodes.Ldc_I4_5), new CodeInstruction(OpCodes.Bne_Un_S, label));
 
             return matcher.InstructionEnumeration();
         }
@@ -336,9 +345,9 @@ namespace ProjectGenesis.Patches.Logic
                         return;
                     }
                 }
-
-                __instance.energy = 0;
             }
+
+            __instance.energy = 0;
         }
     }
 }

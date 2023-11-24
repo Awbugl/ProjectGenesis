@@ -10,10 +10,8 @@ namespace ProjectGenesis.Patches.UI
     public static class UISettingPatches
     {
         private static bool 
-            _currentChangeStackingLogic,
             _currentLDBToolCache,
             _currentHideTechMode,
-            _currentDisableChemOxygenCollectValue,
             _currentDisableMessageBox;
         
         [HarmonyPatch(typeof(VFPreload), "InvokeOnLoadWorkEnded")]
@@ -27,33 +25,21 @@ namespace ProjectGenesis.Patches.UI
             Transform pageParent = GameObject.Find("UI Root/Overlay Canvas/Top Windows/Option Window/details/content-5/advisor-tips").transform
                                              .parent;
 
-            CreateSettingObject(queryObj, pageParent, "gb-ae-setting", "ChangeStackingLogic".TranslateFromJson(),
-                                "ChangeStackingLogicAdditionalText".TranslateFromJson(), new Vector2(30, -180), ChangeStackingLogicValue,
-                                SetChangeStackingLogicValue);
-
             CreateSettingObject(queryObj, pageParent, "gb-ldbtc-setting", "UseLDBToolCache".TranslateFromJson(),
-                                "UseLDBToolCacheAdditionalText".TranslateFromJson(), new Vector2(30, -220), LDBToolCacheValue, SetLDBToolCacheValue);
+                                "UseLDBToolCacheAdditionalText".TranslateFromJson(), new Vector2(30, -180), LDBToolCacheValue, SetLDBToolCacheValue);
 
             CreateSettingObject(queryObj, pageParent, "gb-htc-setting", "EnableHideTechMode".TranslateFromJson(),
-                                "EnableHideTechModeAdditionalText".TranslateFromJson(), new Vector2(30, -260), HideTechModeValue,
+                                "EnableHideTechModeAdditionalText".TranslateFromJson(), new Vector2(30, -220), HideTechModeValue,
                                 SetHideTechModeValue);
 
-            CreateSettingObject(queryObj, pageParent, "gb-coc-setting", "DisableChemOxygenCollect".TranslateFromJson(),
-                                "DisableChemOxygenCollectText".TranslateFromJson(), new Vector2(30, -300), DisableChemOxygenCollectValue,
-                                SetDisableChemOxygenCollectValue);
-
             CreateSettingObject(queryObj, pageParent, "gb-smb-setting", "DisableMessageBox".TranslateFromJson(),
-                                "DisableMessageBoxAdditionalText".TranslateFromJson(), new Vector2(30, -340), DisableMessageBoxValue,
+                                "DisableMessageBoxAdditionalText".TranslateFromJson(), new Vector2(30, -260), DisableMessageBoxValue,
                                 SetDisableMessageBoxValue);
         }
-
-        private static void SetChangeStackingLogicValue(bool value) => _currentChangeStackingLogic = value;
 
         private static void SetLDBToolCacheValue(bool value) => _currentLDBToolCache = value;
 
         private static void SetHideTechModeValue(bool value) => _currentHideTechMode = value;
-
-        private static void SetDisableChemOxygenCollectValue(bool value) => _currentDisableChemOxygenCollectValue = value;
 
         private static void SetDisableMessageBoxValue(bool value) => _currentDisableMessageBox = value;
 
@@ -90,17 +76,14 @@ namespace ProjectGenesis.Patches.UI
         [HarmonyPostfix]
         public static void UIOptionWindow_OnCancelClick_Postfix()
         {
-            _currentChangeStackingLogic = ChangeStackingLogicValue;
             _currentLDBToolCache = LDBToolCacheValue;
             _currentHideTechMode = HideTechModeValue;
-            _currentDisableChemOxygenCollectValue = DisableChemOxygenCollectValue;
             _currentDisableMessageBox = DisableMessageBoxValue;
         }
 
         [HarmonyPatch(typeof(UIOptionWindow), "OnApplyClick")]
         [HarmonyPostfix]
         public static void UIOptionWindow_OnApplyClick_Postfix()
-            => SetConfig(_currentChangeStackingLogic, _currentLDBToolCache, _currentHideTechMode, _currentDisableChemOxygenCollectValue,
-                         _currentDisableMessageBox);
+            => SetConfig(_currentLDBToolCache, _currentHideTechMode, _currentDisableMessageBox);
     }
 }

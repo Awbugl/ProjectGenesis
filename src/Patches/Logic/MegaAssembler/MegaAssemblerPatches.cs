@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
 using System.Reflection.Emit;
 using HarmonyLib;
@@ -127,38 +126,8 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
                 UpdateOutputSlots(ref __instance, cargoTraffic, slotdata, entitySignPool, stationPilerLevel);
                 UpdateInputSlots(ref __instance, power, factory, cargoTraffic, slotdata, entitySignPool);
             }
-            else if (b && __instance.recipeType == ERecipeType.Chemical && !ProjectGenesis.DisableChemOxygenCollectValue)
-            {
-                OxygenAtmosphereChemicalPatch(ref __instance, factorySystem, factory);
-            }
 
             return b;
-        }
-
-        private static void OxygenAtmosphereChemicalPatch(ref AssemblerComponent __instance, FactorySystem factorySystem, PlanetFactory factory)
-        {
-            if (__instance.time != 0 && __instance.time < __instance.timeSpend) return;
-
-            if (!factorySystem.planet.gasItems.Contains(ProtoIDUsedByPatches.I氧)) return;
-
-            int index = Array.IndexOf(__instance.requires, ProtoIDUsedByPatches.I氧);
-
-            if (index < 0) return;
-
-            int instanceRequireCount = __instance.requireCounts[index];
-
-            int addCount = instanceRequireCount - __instance.served[index];
-
-            if (addCount <= 0) return;
-
-            __instance.served[index] = instanceRequireCount;
-
-            int[] productRegister = GameMain.statistics.production.factoryStatPool[factory.index].productRegister;
-
-            lock (productRegister)
-            {
-                productRegister[ProtoIDUsedByPatches.I氧] += addCount;
-            }
         }
 
         private static void UpdateOutputSlots(

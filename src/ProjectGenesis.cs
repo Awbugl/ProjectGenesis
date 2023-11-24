@@ -56,14 +56,12 @@ namespace ProjectGenesis
 
         internal static int[] TableID;
 
-        internal static bool ChangeStackingLogicValue, LDBToolCacheValue, HideTechModeValue, DisableChemOxygenCollectValue, DisableMessageBoxValue;
+        internal static bool LDBToolCacheValue, HideTechModeValue, DisableMessageBoxValue;
 
         internal static string ModPath;
 
-        private static ConfigEntry<bool> ChangeStackingLogicEntry,
-                                         EnableLDBToolCacheEntry,
+        private static ConfigEntry<bool> EnableLDBToolCacheEntry,
                                          EnableHideTechModeEntry,
-                                         DisableChemOxygenCollectEntry,
                                          DisableMessageBoxEntry;
 
         private Harmony Harmony;
@@ -83,10 +81,6 @@ namespace ProjectGenesis
 
             #region Settings
 
-            ChangeStackingLogicEntry = Config.Bind("config", "ChangeStackingLogic", false,
-                                                   "Change the judgment of chemical-related factories to stop production from single product stacking to all products stacking, which may casue resource waste in low resource rate game.\n修改所有化工相关配方的堆积逻辑，可能会导致低资源倍率游戏的资源浪费");
-            ChangeStackingLogicValue = ChangeStackingLogicEntry.Value;
-
             EnableLDBToolCacheEntry = Config.Bind("config", "UseLDBToolCache", false,
                                                   "Enable LDBTool Cache, which allows you use config to fix some compatibility issues.\n启用LDBTool缓存，允许使用配置文件修复部分兼容性问题");
 
@@ -96,11 +90,6 @@ namespace ProjectGenesis
                                                   "Enable Tech Exploration Mode, which will hide locked techs in tech tree.\n启用科技探索模式，启用后将隐藏未解锁的科技");
 
             HideTechModeValue = EnableHideTechModeEntry.Value;
-
-            DisableChemOxygenCollectEntry = Config.Bind("config", "DisableChemOxygenCollectEntry", false,
-                                                        "Disable chemical plants automatically enrich oxygen in an aerobic atmosphere.\n禁用化工厂在有氧大气下自动富集氧气功能");
-
-            DisableChemOxygenCollectValue = DisableChemOxygenCollectEntry.Value;
 
             DisableMessageBoxEntry = Config.Bind("config", "DiableMessageBox", false, "Don't show message when GenesisBook is loaded.\n禁用首次加载时的提示信息");
 
@@ -258,20 +247,14 @@ namespace ProjectGenesis
         }
 
         internal static void SetConfig(
-            bool currentChangeStackingLogic,
             bool currentLDBToolCache,
             bool currentHideTechMode,
-            bool currentDisableChemOxygenCollectValue,
             bool currentDisableMessageBox)
         {
-            ChangeStackingLogicValue = currentChangeStackingLogic;
-            ChangeStackingLogicEntry.Value = currentChangeStackingLogic;
             LDBToolCacheValue = currentLDBToolCache;
             EnableLDBToolCacheEntry.Value = currentLDBToolCache;
             HideTechModeValue = currentHideTechMode;
             EnableHideTechModeEntry.Value = currentHideTechMode;
-            DisableChemOxygenCollectValue = currentDisableChemOxygenCollectValue;
-            DisableChemOxygenCollectEntry.Value = currentDisableChemOxygenCollectValue;
             DisableMessageBoxValue = currentDisableMessageBox;
             DisableMessageBoxEntry.Value = currentDisableMessageBox;
             logger.LogInfo("SettingChanged");
