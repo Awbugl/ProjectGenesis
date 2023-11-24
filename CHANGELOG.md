@@ -5,6 +5,7 @@
   + 调整了部分配方及物品的图标
   + 调整了部分建筑的配方（影响存档）
   + 下调了`量子芯片`的原料需求
+  + 移除了`大气采集站`的建造位置限制
 
   + Redesigned polymer related recipes (affects save)
   + Adjusted requirements for some items (affects save)
@@ -12,10 +13,11 @@
   + Adjusted some recipe and item icons
   + Adjusted some building recipes (affects save)
   + Downgraded ingredient requirements for `Quantum Chip`
-
+  + Removal of restrictions on the location of `Atmospheric Collect Station`
 
 <details>
   <summary>点击展开日志 | Click to view all </summary>
+
 
 - v2.8.0-beta2 (Experimental 0.2.6)
   + 调整了配方`环氧氯丙烷`、`双酚A`的默认堆积逻辑
