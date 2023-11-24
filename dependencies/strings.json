@@ -790,6 +790,16 @@
     "ENUS": "The product of pre-crushing of titanium ore, which can significantly improve the efficiency of the furnace.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
+    "Name": "钨矿粉",
+    "ZHCN": "钨矿粉",
+    "ENUS": "Tungsten ore dust"
+  },
+  {
+    "Name": "I钨矿粉",
+    "ZHCN": "对钨矿进行预先粉碎处理的产物，可明显提高熔炉的效率.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "The product of pre-crushing of tungsten ore, which can significantly improve the efficiency of the furnace.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+  },
+  {
     "Name": "煤矿粉",
     "ZHCN": "煤矿粉",
     "ENUS": "Coal ore dust"
@@ -1206,7 +1216,7 @@
   },
   {
     "Name": "钨复合金属",
-    "ZHCN": "钨复合金属",
+    "ZHCN": "钨合金",
     "ENUS": "Tungsten alloy"
   },
   {
@@ -1425,12 +1435,12 @@
     "ENUS": "Add oxygen to the reaction system of hydrochloric acid and iron to convert it to ferric chloride and water.\n<color=\"#FD965ECC\">It will not stop working until all products are stacked.</color>\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
   {
-    "Name": "钨矿精炼",
-    "ZHCN": "钨矿精炼",
-    "ENUS": "Tungsten ore refining"
+    "Name": "钨矿筛选",
+    "ZHCN": "钨矿筛选",
+    "ENUS": "Tungsten ore screening"
   },
   {
-    "Name": "R钨矿精炼",
+    "Name": "R钨矿筛选",
     "ZHCN": "使用硝酸浸洗钛矿, 从中分离含钨的伴生矿.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "ENUS": "Separation of tungsten-bearing associated ore from titanium ore by nitric acid leaching.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
@@ -1586,6 +1596,16 @@
   },
   {
     "Name": "R钛矿精炼",
+    "ZHCN": "从原矿中分离的纯净粉可以实现效率更高的生产.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
+    "ENUS": "The pure powder separated from the raw ore allows for more efficient production.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+  },
+  {
+    "Name": "钨矿精炼",
+    "ZHCN": "钨矿精炼",
+    "ENUS": "Tungsten ore refining"
+  },
+  {
+    "Name": "R钨矿精炼",
     "ZHCN": "从原矿中分离的纯净粉可以实现效率更高的生产.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
     "ENUS": "The pure powder separated from the raw ore allows for more efficient production.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
   },
@@ -2028,16 +2048,6 @@
     "Name": "T巨型建筑工程学描述",
     "ZHCN": "随着生产线的不断扩张，对更高集成度的生产设施的需求愈发迫切.",
     "ENUS": "As production lines continue to expand, the need for more integrated production facilities becomes increasingly urgent."
-  },
-  {
-    "Name": "T晶圆冶炼",
-    "ZHCN": "晶圆冶炼",
-    "ENUS": "Wafer smelting"
-  },
-  {
-    "Name": "T晶圆冶炼描述",
-    "ZHCN": "深入了解晶体冶炼技术后，我们可以将硅冶炼成硅晶圆。",
-    "ENUS": "With a deeper understanding of crystal smelting technology, we can smelt silicon into silicon wafers."
   },
   {
     "Name": "T化学能燃料棒",
