@@ -316,8 +316,8 @@
   },
   {
     "Name": "堆积逻辑介绍前字",
-    "ZHCN": "创世之书MOD修改了部分配方的堆积逻辑（停止生产的判定由单产物堆积改为所有产物均堆积）。\n您可在<color=\"#FD965ECC\">设置 - 杂项</color>内将新的堆积逻辑推广到化工相关的所有配方。",
-    "ENUS": "GenesisBook MOD has modified the stacking logic of some recipes (the decision to stop production has been changed from single product stacking to all products are stacked).\nYou can extend the new stacking logic to all chemicals-related recipes within <color=\"#FD965ECC\">Settings - Miscellaneous</color>."
+    "ZHCN": "部分化工配方的停止生产的判定由单产物堆积调整为所有产物均堆积，具体受影响的配方可在配方介绍中查看。",
+    "ENUS": "The decision to stop production of some chemical formulations has been adjusted from single product buildup to all products buildup, the specific affected formulations can be viewed in the formulation introduction."
   },
   {
     "Name": "星球大气介绍标题",
@@ -326,8 +326,8 @@
   },
   {
     "Name": "星球大气介绍前字",
-    "ZHCN": "除部分无大气环境的星球外，现在各类星球各有其独特的大气成分。\n大气采集站是类似于轨道采集器的采集设施，可部署在星球上并采集星球大气层的成分供给生产线使用，大气采集站与物流站之间无建造距离限制。\n火力发电厂输入的原料种类现受到星球大气类型的限制。除三种化学能燃料棒外，其他燃料不能在无氧大气环境下发电。\n在有氧大气下，化工厂可自动富集氧气并作为原料利用（可在<color=\"#FD965ECC\">设置 - 杂项</color>中关闭此功能）。",
-    "ENUS": "Except for some planets with no atmosphere, all types of planets now have their own unique atmospheric composition.\nAtmospheric Collect Stations are facilities that can be deployed at a planet and harvest components of the planet's atmosphere for use in production lines. No distance constraints between Atmospheric Collect Station and the Logistics Station.\nThe type of feedstock input to thermal power plants is now limited by the type of planetary atmosphere.\nAll but three chemical energy fuel rods cannot generate electricity in an anoxic atmosphere.\nIn an aerobic atmosphere, chemical plants can automatically enrich oxygen and utilize it as a source (it can be turned off in <color=\"#FD965ECC\">Settings - Miscellaneous</color>)."
+    "ZHCN": "除部分无大气环境的星球外，现在各类星球各有其独特的大气成分。\n大气采集站是类似于轨道采集器的采集设施，可部署在星球上并采集星球大气层的成分供给生产线使用，大气采集站与物流站之间无建造距离限制。\n火力发电厂输入的原料种类现受到星球大气类型的限制。除三种化学能燃料棒外，其他燃料不能在无氧大气环境下发电。",
+    "ENUS": "Except for some planets with no atmosphere, all types of planets now have their own unique atmospheric composition.\nAtmospheric Collect Stations are facilities that can be deployed at a planet and harvest components of the planet's atmosphere for use in production lines. No distance constraints between Atmospheric Collect Station and the Logistics Station.\nThe type of feedstock input to thermal power plants is now limited by the type of planetary atmosphere.\nAll but three chemical energy fuel rods cannot generate electricity in an anoxic atmosphere."
   },
   {
     "Name": "巨型建筑介绍标题",

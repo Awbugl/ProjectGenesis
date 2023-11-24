@@ -1,3 +1,22 @@
+- v2.8.1-alpha1 (Experimental 0.2.7)
+  + 重新设计了聚合物相关配方（影响存档）
+  + 调整了部分物品的制造需求（影响存档）
+  + 添加新矿物`硫矿`并调整了相应配方（影响存档）
+  + 调整了部分配方及物品的图标
+  + 调整了部分建筑的配方（影响存档）
+  + 下调了`量子芯片`的原料需求
+
+  + Redesigned polymer related recipes (affects save)
+  + Adjusted requirements for some items (affects save)
+  + Added new mineral `Sulfur Ore` and adjusted recipe accordingly (affects save)
+  + Adjusted some recipe and item icons
+  + Adjusted some building recipes (affects save)
+  + Downgraded ingredient requirements for `Quantum Chip`
+
+
+<details>
+  <summary>点击展开日志 | Click to view all </summary>
+
 - v2.8.0-beta2 (Experimental 0.2.6)
   + 调整了配方`环氧氯丙烷`、`双酚A`的默认堆积逻辑
   + 调整了部分配方及物品的图标
@@ -8,11 +27,6 @@
   + Adjusted icons for some recipes and items
   + Adjusted manual digging time for some minerals
   + Added item `Radioisotope thermoelectric generator`
-
-
-<details>
-  <summary>点击展开日志 | Click to view all </summary>
-
 
 - v2.8.0-beta1 (Experimental 0.2.5) 轻韧革新 | Lightweight Evolution
   + 加强与 `GalacticScale` mod的兼容，母星稀有矿物资源现在可正常生成
