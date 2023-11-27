@@ -280,6 +280,16 @@
     "ENUS": "Mismatched item"
   },
   {
+    "Name": "快速开局",
+    "ZHCN": "快速开局",
+    "ENUS": "Fast Start"
+  },
+  {
+    "Name": "快速开局描述",
+    "ZHCN": "解锁额外科技，并提供额外的初始物品",
+    "ENUS": "Unlocks additional techs and provides additional items at the beginning"
+  },  
+  {
     "Name": "里程碑名称29",
     "ZHCN": "里程碑：裂变发电",
     "ENUS": "Milestone: Fission Energy"

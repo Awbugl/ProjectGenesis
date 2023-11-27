@@ -111,6 +111,7 @@
         <Compile Include="src\Patches\Logic\AddVein\UIDetailPatches.cs"/>
         <Compile Include="src\Patches\Logic\AddVein\VeinAnimDataPatches.cs"/>
         <Compile Include="src\Patches\Logic\DisableLDBToolCachePatches.cs"/>
+        <Compile Include="src\Patches\Logic\FastStartOptionPatches.cs" />
         <Compile Include="src\Patches\Logic\FastTravelPatches.cs"/>
         <Compile Include="src\Patches\Logic\InitialTechPatches.cs"/>
         <Compile Include="src\Patches\Logic\MartixComplexPatches.cs"/>
@@ -143,13 +144,14 @@
         <Compile Include="src\Patches\UI\GridIndexExpandPatches.cs"/>
         <Compile Include="src\Patches\UI\HarmonyLogPatches.cs"/>
         <Compile Include="src\Patches\UI\MultiProductionPatches.cs"/>
+        <Compile Include="src\Patches\UI\QTools.cs" />
         <Compile Include="src\Patches\UI\UIAbnormalityTipPatches.cs"/>
         <Compile Include="src\Patches\UI\UIMonitorPatches.cs"/>
         <Compile Include="src\Patches\UI\UIPowerGeneratorWindowPatches.cs" />
         <Compile Include="src\Patches\UI\UITechNodePatches.cs"/>
         <Compile Include="src\Patches\UI\UIPlanetFocus\UIPlanetFocusWindow.cs"/>
         <Compile Include="src\Patches\UI\UIPlanetFocus\UIPlanetDetailExpand.cs"/>
-        <Compile Include="src\Patches\UI\UISettingPatches.cs"/>
+        <Compile Include="src\Patches\UI\UIOptionWindowPatches.cs" />
         <Compile Include="src\Patches\UI\UISignalPickerPatches.cs"/>
         <Compile Include="src\Patches\UI\UpdateLogoPatches.cs"/>
         <Compile Include="src\Patches\UI\Utils\MyWindowCtl.cs"/>

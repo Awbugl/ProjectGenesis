@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Emit;
 using CommonAPI.Systems.UI;
@@ -21,25 +20,22 @@ namespace ProjectGenesis.Patches.UI
     internal static class GridIndexExpandPatches
     {
         [HarmonyPatch(typeof(UIReplicatorWindow), "_OnInit")]
-        [HarmonyPrefix]
-        public static void UIReplicatorWindow_OnInit_Prefix() => Array.Resize(ref UIRoot.instance.uiGame.replicator.queueNumTexts, 17);
-
-        [HarmonyPatch(typeof(VFPreload), "InvokeOnLoadWorkEnded")]
         [HarmonyPostfix]
-        [HarmonyPriority(Priority.Last)]
-        public static void VFPreload_InvokeOnLoadWorkEnded_Postfix()
+        public static void UIReplicatorWindow_OnInit_Postfix(UIReplicatorWindow __instance)
         {
-            ref UIGame uiGame = ref UIRoot.instance.uiGame;
+            __instance.windowRect.sizeDelta = new Vector2(900, 811);
+            __instance.recipeGroup.sizeDelta = new Vector2(782, 322);
+            __instance.queueGroup.GetComponentInChildren<RectTransform>().sizeDelta = new Vector2(782f, 46f);
+        }
 
-            uiGame.replicator.windowRect.sizeDelta = new Vector2(900, 811);
-            uiGame.replicator.recipeGroup.sizeDelta = new Vector2(782, 322);
-            uiGame.assemblerWindow.recipeGroup.sizeDelta = new Vector2(190, 100);
-            uiGame.recipePicker.pickerTrans.sizeDelta = new Vector2(830, 476);
-            uiGame.itemPicker.pickerTrans.sizeDelta = new Vector2(830, 476);
-            uiGame.signalPicker.pickerTrans.sizeDelta = new Vector2(830, 476);
-
-            GameObject.Find("UI Root/Overlay Canvas/In Game/Windows/Replicator Window/queue-group").GetComponentInChildren<RectTransform>().sizeDelta
-                = new Vector2(782f, 46f);
+        [HarmonyPatch(typeof(UIGame), "_OnInit")]
+        [HarmonyPostfix]
+        public static void UIGame_OnInit_Postfix(UIGame __instance)
+        {
+            __instance.assemblerWindow.recipeGroup.sizeDelta = new Vector2(190, 100);
+            __instance.recipePicker.pickerTrans.sizeDelta = new Vector2(830, 476);
+            __instance.itemPicker.pickerTrans.sizeDelta = new Vector2(830, 476);
+            __instance.signalPicker.pickerTrans.sizeDelta = new Vector2(830, 476);
         }
 
         [HarmonyPatch(typeof(UIRecipePicker), "_OnCreate")]
@@ -55,6 +51,7 @@ namespace ProjectGenesis.Patches.UI
         [HarmonyPatch(typeof(UIReplicatorWindow), "SetSelectedRecipeIndex")]
         [HarmonyPatch(typeof(UIReplicatorWindow), "SetSelectedRecipe")]
         [HarmonyPatch(typeof(UIReplicatorWindow), "_OnInit")]
+        [HarmonyPatch(typeof(UIReplicatorWindow), "_OnCreate")]
         [HarmonyPatch(typeof(UIReplicatorWindow), "_OnUpdate")]
         [HarmonyPatch(typeof(UIReplicatorWindow), "RepositionQueueText")]
         [HarmonyPatch(typeof(UIReplicatorWindow), "RefreshQueueIcons")]

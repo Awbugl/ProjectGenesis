@@ -35,12 +35,14 @@ namespace ProjectGenesis.Compatibility
             9502, 9512
         };
 
+        private static bool _finished;
+
         public void Awake()
         {
             Chainloader.PluginInfos.TryGetValue(MoreMegaStructureGUID, out PluginInfo pluginInfo);
 
             if (pluginInfo == null) return;
-            
+
             var harmonyMethod
                 = new HarmonyMethod(typeof(MoreMegaStructureCompatibilityPlugin), nameof(LDBToolOnPostAddDataAction))
                   {
@@ -52,6 +54,8 @@ namespace ProjectGenesis.Compatibility
 
         public static void LDBToolOnPostAddDataAction()
         {
+            if (_finished) return;
+
             foreach (int recipeID in AddedRecipes)
             {
                 RecipeProto recipeProto = LDB.recipes.Select(recipeID);
@@ -105,6 +109,8 @@ namespace ProjectGenesis.Compatibility
                     AccessTools.Method(typeof(ItemProto), "FindRecipes").Invoke(itemProto, null);
                 }
             }
+
+            _finished = true;
         }
     }
 }

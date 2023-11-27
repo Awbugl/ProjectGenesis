@@ -5,6 +5,7 @@ using System.Reflection.Emit;
 using HarmonyLib;
 
 // ReSharper disable InconsistentNaming
+// ReSharper disable ForeachCanBePartlyConvertedToQueryUsingAnotherGetEnumerator
 
 namespace ProjectGenesis.Patches.Logic
 {
@@ -16,23 +17,34 @@ namespace ProjectGenesis.Patches.Logic
         [HarmonyPostfix]
         public static void SetForNewGame(GameData __instance)
         {
-            foreach (int tech in InitialTechs) __instance.history.UnlockTech(tech);
-            foreach (int tech in BonusTechs) __instance.history.UnlockTech(tech);
+            if (DSPGame.IsMenuDemo) return;
+
+            foreach (int tech in InitialTechs)
+            {
+                if (!__instance.history.TechUnlocked(tech)) __instance.history.UnlockTech(tech);
+            }
+
+            foreach (int tech in BonusTechs)
+            {
+                if (!__instance.history.TechUnlocked(tech)) __instance.history.UnlockTech(tech);
+            }
         }
 
         [HarmonyPatch(typeof(GameData), "Import")]
         [HarmonyPostfix]
         public static void Import(GameData __instance)
         {
-            // ReSharper disable ForeachCanBePartlyConvertedToQueryUsingAnotherGetEnumerator
+            if (DSPGame.IsMenuDemo) return;
 
             foreach (int tech in InitialTechs)
-                if (!__instance.history.TechUnlocked(tech))
-                    __instance.history.UnlockTech(tech);
+            {
+                if (!__instance.history.TechUnlocked(tech)) __instance.history.UnlockTech(tech);
+            }
 
             foreach (int tech in BonusTechs)
-                if (!__instance.history.TechUnlocked(tech))
-                    __instance.history.UnlockTech(tech);
+            {
+                if (!__instance.history.TechUnlocked(tech)) __instance.history.UnlockTech(tech);
+            }
 
             foreach (var (key, value) in __instance.history.techStates)
             {

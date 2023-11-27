@@ -6,6 +6,7 @@
   + 调整了部分建筑的配方（影响存档）
   + 下调了`量子芯片`的原料需求
   + 移除了`大气采集站`的建造位置限制
+  + 添加`快速开局`模式
 
   + Redesigned polymer related recipes (affects save)
   + Adjusted requirements for some items (affects save)
@@ -14,6 +15,7 @@
   + Adjusted some building recipes (affects save)
   + Downgraded ingredient requirements for `Quantum Chip`
   + Removal of restrictions on the location of `Atmospheric Collect Station`
+  + Add `Fast Start` mode
 
 <details>
   <summary>点击展开日志 | Click to view all </summary>

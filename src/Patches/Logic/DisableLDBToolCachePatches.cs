@@ -7,6 +7,8 @@ namespace ProjectGenesis.Patches.Logic
 {
     public static class DisableLDBToolCachePatches
     {
+        private static bool _finished;
+
         [HarmonyPrefix]
         [HarmonyPatch(typeof(LDBTool), "Bind")]
         public static bool LDBTool_Bind() => ProjectGenesis.LDBToolCacheValue;
@@ -16,6 +18,8 @@ namespace ProjectGenesis.Patches.Logic
         [HarmonyPatch(typeof(VFPreload), "InvokeOnLoadWorkEnded")]
         public static void DeleteFiles()
         {
+            if (_finished) return;
+
             if (!ProjectGenesis.LDBToolCacheValue) return;
 
             try
@@ -27,6 +31,8 @@ namespace ProjectGenesis.Patches.Logic
             {
                 // ignored
             }
+
+            _finished = true;
         }
     }
 }

@@ -9,9 +9,10 @@ namespace ProjectGenesis.Patches.UI.Utils
     /// </summary>
     internal static class Util
     {
-        private static readonly UIButton Src = UIRoot.instance.uiGame.dysonEditor.controlPanel.hierarchy.swarmPanel.orbitAddButton;
+        private static readonly UIButton OrbitAddButton = UIRoot.instance.uiGame.dysonEditor.controlPanel.hierarchy.swarmPanel.orbitAddButton;
         private static readonly GameObject TransformGameObject = UIRoot.instance.uiGame.beltWindow.iconTagButton.transform.gameObject;
         private static readonly UIAssemblerWindow UIGameAssemblerWindow = UIRoot.instance.uiGame.assemblerWindow;
+        private static readonly UIButton CategoryButton = UIRoot.instance.uiGame.functionPanel.buildMenu.categoryButtons[0];
 
         internal static void NormalizeRectWithTopLeft(
             Component cmp,
@@ -74,7 +75,7 @@ namespace ProjectGenesis.Patches.UI.Utils
 
         internal static UIButton CreateButton(string label, float width = 0f, float height = 0f)
         {
-            UIButton btn = Object.Instantiate(Src);
+            UIButton btn = Object.Instantiate(OrbitAddButton);
             btn.gameObject.name = "btn_" + label;
             if (btn.transitions.Length >= 1) btn.transitions[0].target.color = new Color(0.2392f, 0.6f, 0.9f, 0.078f);
 
@@ -87,6 +88,24 @@ namespace ProjectGenesis.Patches.UI.Utils
                 btnRect.sizeDelta = new Vector2(btnText.preferredWidth + 14f, 24f); //22
             else
                 btnRect.sizeDelta = new Vector2(width, height);
+
+            return btn;
+        }
+
+        internal static UIButton CreateCategoryButton(Sprite img, string text = null)
+        {
+            UIButton btn = Object.Instantiate(CategoryButton);
+            btn.gameObject.name = "btn_" + (text ?? "");
+            if (btn.transitions.Length >= 1) btn.transitions[0].target.color = new Color(0.2392f, 0.6f, 0.9f, 0.078f);
+
+            var btnText = btn.GetComponentInChildren<Text>();
+            var btnImage = btn.GetComponentInChildren<Image>();
+
+            btnText.text = text;
+            btnText.fontSize = 17;
+            btnImage.sprite = img;
+
+            Object.Destroy(btn.transform.Find("Text").GetComponent<Localizer>());
 
             return btn;
         }

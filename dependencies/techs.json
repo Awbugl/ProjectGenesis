@@ -1338,7 +1338,7 @@
       2303
     ],
     "AddItemCounts": [
-      1
+      4
     ],
     "PropertyOverrideItems": [
       6001
@@ -1385,8 +1385,12 @@
     "LevelCoef2": 0,
     "IsLabTech": true,
     "PreTechsMax": false,
-    "AddItems": [],
-    "AddItemCounts": [],
+    "AddItems": [
+      2304
+    ],
+    "AddItemCounts": [
+      4
+    ],
     "PropertyOverrideItems": [],
     "PropertyItemCounts": []
   },
@@ -1594,7 +1598,6 @@
       1832
     ],
     "PreTechsImplicit": [
-      1830,
       1414,
       1126,
       1302
@@ -1745,7 +1748,7 @@
       2302
     ],
     "AddItemCounts": [
-      3
+      4
     ],
     "PropertyOverrideItems": [
       6001
@@ -2018,7 +2021,7 @@
       1414
     ],
     "PreTechsImplicit": [
-      1830
+      1122
     ],
     "Items": [
       6001,
@@ -9610,7 +9613,9 @@
     "PreTechs": [
       1122
     ],
-    "PreTechsImplicit": [],
+    "PreTechsImplicit": [
+      1305
+    ],
     "Items": [
       6001,
       6002,

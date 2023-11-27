@@ -8,67 +8,44 @@ namespace ProjectGenesis
     {
         public static IEnumerable<string> TargetDLLs { get; } = new[] { "Assembly-CSharp.dll" };
 
+        private static TypeDefinition GetTypeByName(this AssemblyDefinition assembly, string name)
+            => assembly.MainModule.Types.FirstOrDefault(t => t.FullName == name);
+
+        private static FieldDefinition GetFieldByName(this TypeDefinition type, string name) => type.Fields.FirstOrDefault(t => t.Name == name);
+
+        private static void AddEnumField(
+            this TypeDefinition type,
+            string name,
+            object constant,
+            FieldAttributes fieldAttributes)
+            => type.Fields.Add(new FieldDefinition(name, fieldAttributes, type) { Constant = constant });
+
+        private static void AddTypeField(
+            this AssemblyDefinition assembly,
+            string typeName,
+            string oriFieldName,
+            string newFieldName)
+        {
+            TypeDefinition type = assembly.GetTypeByName(typeName);
+            FieldDefinition oriField = type.GetFieldByName(oriFieldName);
+            type.Fields.Add(new FieldDefinition(newFieldName, oriField.Attributes, oriField.FieldType));
+        }
+
         public static void Patch(AssemblyDefinition assembly)
         {
-            ModuleDefinition module = assembly.MainModule;
+            TypeDefinition veinType = assembly.GetTypeByName("EVeinType");
+            FieldDefinition max = veinType.Fields.FirstOrDefault(i => i.HasDefault && (byte)i.Constant == 15);
+            if (max != null) veinType.Fields.Remove(max);
 
-            TypeDefinition veinType = module.Types.FirstOrDefault(t => t.FullName == "EVeinType");
+            FieldAttributes fieldAttributes = FieldAttributes.Static | FieldAttributes.Literal | FieldAttributes.Public | FieldAttributes.HasDefault;
 
-            if (veinType != null)
-            {
-                FieldDefinition aluminum = veinType.Fields.FirstOrDefault(i => i.HasDefault && (byte)i.Constant == 15);
-                if (aluminum == null)
-                {
-                    aluminum = new FieldDefinition("Aluminum",
-                                                   FieldAttributes.Static |
-                                                   FieldAttributes.Literal |
-                                                   FieldAttributes.Public |
-                                                   FieldAttributes.HasDefault, veinType) { Constant = 15 };
+            veinType.AddEnumField("Aluminum", 15, fieldAttributes);
+            veinType.AddEnumField("Radioactive", 16, fieldAttributes);
+            veinType.AddEnumField("Tungsten", 17, fieldAttributes);
+            veinType.AddEnumField("Sulfur", 18, fieldAttributes);
 
-                    veinType.Fields.Add(aluminum);
-                }
-                else
-                {
-                    veinType.Fields.Remove(aluminum);
-                    aluminum.Name = "Aluminum";
-                    veinType.Fields.Add(aluminum);
-                }
-
-                var radioactive = new FieldDefinition("Radioactive",
-                                                      FieldAttributes.Static |
-                                                      FieldAttributes.Literal |
-                                                      FieldAttributes.Public |
-                                                      FieldAttributes.HasDefault, veinType) { Constant = 16 };
-
-                var tungsten = new FieldDefinition("Tungsten",
-                                                   FieldAttributes.Static |
-                                                   FieldAttributes.Literal |
-                                                   FieldAttributes.Public |
-                                                   FieldAttributes.HasDefault, veinType) { Constant = 17 };
-
-                var sulfur = new FieldDefinition("Sulfur",
-                                                 FieldAttributes.Static |
-                                                 FieldAttributes.Literal |
-                                                 FieldAttributes.Public |
-                                                 FieldAttributes.HasDefault, veinType) { Constant = 18 };
-
-                veinType.Fields.Add(radioactive);
-                veinType.Fields.Add(tungsten);
-                veinType.Fields.Add(sulfur);
-            }
-
-            TypeDefinition planetData = module.Types.FirstOrDefault(t => t.FullName == "PlanetData");
-
-            if (planetData != null)
-            {
-                FieldDefinition birthResourcePoint0 = planetData.Fields.FirstOrDefault(i => i.Name == "birthResourcePoint0");
-
-                if (birthResourcePoint0 != null)
-                {
-                    var vector3 = new FieldDefinition("birthResourcePoint2", birthResourcePoint0.Attributes, birthResourcePoint0.FieldType);
-                    planetData.Fields.Add(vector3);
-                }
-            }
+            assembly.AddTypeField("PlanetData", "birthResourcePoint0", "birthResourcePoint2");
+            assembly.AddTypeField("GameDesc", "isSandboxMode", "isFastStartMode");
         }
     }
 }
