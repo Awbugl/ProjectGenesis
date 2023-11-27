@@ -7,21 +7,12 @@ namespace ProjectGenesis.Utils
 {
     internal static class TranslateUtils
     {
-        private static Dictionary<string, StringProtoJson> _stringProtoJsons;
+        private static readonly Dictionary<string, StringProtoJson> StringProtoJsons;
 
         static TranslateUtils()
         {
             Localization.language = (Language)PlayerPrefs.GetInt("language", 0);
-        }
-
-        private static Dictionary<string, StringProtoJson> StringProtoJsons
-        {
-            get
-            {
-                if (_stringProtoJsons != null) return _stringProtoJsons;
-                _stringProtoJsons = StringProtos().ToDictionary(i => i.Name);
-                return _stringProtoJsons;
-            }
+            StringProtoJsons = StringProtos().ToDictionary(i => i.Name);
         }
 
         public static string TranslateFromJson(this string s)
