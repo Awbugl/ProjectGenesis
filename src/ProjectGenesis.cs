@@ -62,9 +62,7 @@ namespace ProjectGenesis
 
         internal static string ModPath;
 
-        private static ConfigEntry<bool> EnableLDBToolCacheEntry,
-                                         EnableHideTechModeEntry,
-                                         DisableMessageBoxEntry;
+        private static ConfigEntry<bool> EnableLDBToolCacheEntry, EnableHideTechModeEntry, DisableMessageBoxEntry;
 
         private Harmony Harmony;
 
@@ -112,12 +110,9 @@ namespace ProjectGenesis
             var resources_models = new ResourceData("org.LoShin.GenesisBook", "genesis-models", ModPath);
             resources_models.LoadAssetBundle("genesis-models");
             ProtoRegistry.AddResource(resources_models);
-            
-            Shader stoneVeinShader = resources_models.bundle.LoadAsset<Shader>("VF Shaders/Forward/PBR Standard Vein Stone REPLACE");
+
+            var stoneVeinShader = resources_models.bundle.LoadAsset<Shader>("Assets/genesis-models/shaders/pbr standard vein stone.shader");
             SwapShaderPatches.AddSwapShaderMapping("VF Shaders/Forward/PBR Standard Vein Stone", stoneVeinShader);
-            Dictionary<string, Color> newProps = new Dictionary<string, Color>();
-            newProps.Add("_Color11", new Color(0.68536454f, 0.7924528f, 0f, 1f));
-            SwapShaderPatches.AddShaderPropMapping("VF Shaders/Forward/PBR Standard Vein Stone", newProps);
 
             TableID = new int[]
                       {
@@ -254,10 +249,7 @@ namespace ProjectGenesis
             // JsonHelper.ExportAsJson(@"D:\Git\ProjectGenesis\dependencies");
         }
 
-        internal static void SetConfig(
-            bool currentLDBToolCache,
-            bool currentHideTechMode,
-            bool currentDisableMessageBox)
+        internal static void SetConfig(bool currentLDBToolCache, bool currentHideTechMode, bool currentDisableMessageBox)
         {
             LDBToolCacheValue = currentLDBToolCache;
             EnableLDBToolCacheEntry.Value = currentLDBToolCache;

@@ -12,11 +12,13 @@ namespace ProjectGenesis.Patches.Logic.AddVein
     public static partial class AddVeinPatches
     {
         public static readonly sbyte VeinTypeCount = 19;
-        
+
         internal static void ModifyVeinData()
         {
+            // SwapShaderPatches.AddShaderPropMapping("VF Shaders/Forward/PBR Standard Vein Stone", "_Color11", new Color(0.68536454f, 0.7924528f, 0f, 1f));
+
             AddVeinProtos(NewVein(15, "铝矿脉", "I铝矿", "Assets/texpack/铝矿脉", 6202, 25),
-                          NewVein(16, "放射性矿脉", "I放射性矿物", "Assets/texpack/放射晶体矿脉_新", 6222, 31, 2, 90),
+                          NewVein(16, "放射性矿脉", "I放射性矿物", "Assets/texpack/放射晶体矿脉_新", 6222, 31, 4, 90),
                           NewVein(17, "钨矿脉", "I钨矿", "Assets/texpack/钨矿脉", 6201, 34, 1, 120),
                           NewVein(18, "硫矿脉", "I硫矿", "Assets/texpack/硫矿脉", 6207, 34, 4, 90));
 
