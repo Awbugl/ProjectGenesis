@@ -12,10 +12,12 @@ using crecheng.DSPModSave;
 using HarmonyLib;
 using NebulaAPI;
 using ProjectGenesis.Compatibility;
+using ProjectGenesis.Patches.Logic.AddVein;
 using ProjectGenesis.Patches.Logic.MegaAssembler;
 using ProjectGenesis.Patches.Logic.PlanetFocus;
 using ProjectGenesis.Patches.UI.UIPlanetFocus;
 using ProjectGenesis.Utils;
+using UnityEngine;
 using xiaoye97;
 using static ProjectGenesis.Patches.Logic.AddVein.AddVeinPatches;
 using ERecipeType_1 = ERecipeType;
@@ -110,6 +112,12 @@ namespace ProjectGenesis
             var resources_models = new ResourceData("org.LoShin.GenesisBook", "genesis-models", ModPath);
             resources_models.LoadAssetBundle("genesis-models");
             ProtoRegistry.AddResource(resources_models);
+            
+            Shader stoneVeinShader = resources_models.bundle.LoadAsset<Shader>("VF Shaders/Forward/PBR Standard Vein Stone REPLACE");
+            SwapShaderPatches.AddSwapShaderMapping("VF Shaders/Forward/PBR Standard Vein Stone", stoneVeinShader);
+            Dictionary<string, Color> newProps = new Dictionary<string, Color>();
+            newProps.Add("_Color11", new Color(0.68536454f, 0.7924528f, 0f, 1f));
+            SwapShaderPatches.AddShaderPropMapping("VF Shaders/Forward/PBR Standard Vein Stone", newProps);
 
             TableID = new int[]
                       {
