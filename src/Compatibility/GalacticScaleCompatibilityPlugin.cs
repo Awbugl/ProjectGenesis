@@ -133,12 +133,13 @@ namespace ProjectGenesis.Compatibility
 
             var vt1 = GSVeinType.Generate((EVeinType)16, 1, 1, 0.6f, 0.6f, 6, 6, false);
             var vt2 = GSVeinType.Generate(EVeinType.Fireice, 1, 1, 0.6f, 0.6f, 6, 6, false);
+            var vt3 = GSVeinType.Generate((EVeinType)18, 10, 10, 0.3f, 0.3f, 5, 5, false);
 
             List<EVeinType> eveinTypeList = gsPlanet.veinSettings.VeinTypes.Select(veinType => veinType.type).ToList();
 
             if (!eveinTypeList.Contains((EVeinType)16)) gsPlanet.veinSettings.VeinTypes.Add(vt1);
-
             if (!eveinTypeList.Contains(EVeinType.Fireice)) gsPlanet.veinSettings.VeinTypes.Add(vt2);
+            if (!eveinTypeList.Contains((EVeinType)18)) gsPlanet.veinSettings.VeinTypes.Add(vt3);
 
             for (int index = 0; index < gsPlanet.veinSettings.VeinTypes.Count; index++)
             {
@@ -152,6 +153,10 @@ namespace ProjectGenesis.Compatibility
 
                     case EVeinType.Fireice:
                         gsPlanet.veinSettings.VeinTypes[index] = vt2;
+                        break;
+
+                    case (EVeinType)18:
+                        gsPlanet.veinSettings.VeinTypes[index] = vt3;
                         break;
                 }
             }
