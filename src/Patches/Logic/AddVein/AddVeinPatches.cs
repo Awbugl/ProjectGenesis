@@ -35,7 +35,7 @@ namespace ProjectGenesis.Patches.Logic.AddVein
                                                            new Color(0.571f, 0.708f, 0.647f), // Bamboo
                                                            new Color(0.349f, 0.222f, 0.247f), // Mag
                                                            new Color(0.538f, 0.538f, 0.538f), // Aluminum
-                                                           new Color(0.395f, 0.965f, 0.352f), // Radioactive
+                                                           new Color(0.685f, 0.792f, 0.000f), // Radioactive
                                                            new Color(0.113f, 0.130f, 0.140f), // Tungsten
                                                            new Color(0.965f, 0.867f, 0.352f), // Sulfur
                                                        };
