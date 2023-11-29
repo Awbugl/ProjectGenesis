@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 #pragma warning disable CS0618
 
@@ -34,7 +35,7 @@ namespace ProjectGenesis.Patches.Logic.AddVein
             get
             {
                 EffectEmitterProto effectEmitterProto = LDB.effectEmitters.Select(21);
-                return Resources.Load<ParticleSystem>(effectEmitterProto.PrefabPath);
+                return Object.Instantiate(Resources.Load<ParticleSystem>(effectEmitterProto.PrefabPath));
             }
         }
 
