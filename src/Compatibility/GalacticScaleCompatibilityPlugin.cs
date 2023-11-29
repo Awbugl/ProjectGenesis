@@ -52,10 +52,12 @@ namespace ProjectGenesis.Compatibility
             GSVeinType.saneVeinTypes["Aluminum"] = (EVeinType)15;
             GSVeinType.saneVeinTypes["Radioactive"] = (EVeinType)16;
             GSVeinType.saneVeinTypes["Tungsten"] = (EVeinType)17;
+            GSVeinType.saneVeinTypes["Sulfur"] = (EVeinType)18;
 
             GSVeinType.insaneVeinTypes[(EVeinType)15] = "Aluminum";
             GSVeinType.insaneVeinTypes[(EVeinType)16] = "Radioactive";
             GSVeinType.insaneVeinTypes[(EVeinType)17] = "Tungsten";
+            GSVeinType.insaneVeinTypes[(EVeinType)18] = "Sulfur";
 
             var harmony = new Harmony(MODGUID);
 
@@ -475,6 +477,11 @@ namespace ProjectGenesis.Compatibility
                         RemoveVein(ref theme, 0);
                         RemoveVein(ref theme, 3);
                         RemoveVein(ref theme, 14);
+                        break;
+
+                    case 19:
+                    case 25:
+                        theme.Distribute = EThemeDistribute.Default;
                         break;
                 }
             }

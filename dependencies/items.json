@@ -5308,7 +5308,7 @@
     "ID": 6207,
     "Name": "硫矿",
     "Description": "I硫矿",
-    "IconPath": "Assets/texpack/硫酸钠",
+    "IconPath": "Assets/texpack/硫矿",
     "GridIndex": 1415,
     "StackSize": 100,
     "Type": 1,

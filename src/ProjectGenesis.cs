@@ -111,8 +111,11 @@ namespace ProjectGenesis
             resources_models.LoadAssetBundle("genesis-models");
             ProtoRegistry.AddResource(resources_models);
 
-            var stoneVeinShader = resources_models.bundle.LoadAsset<Shader>("Assets/genesis-models/shaders/pbr standard vein stone.shader");
+            var stoneVeinShader = resources_models.bundle.LoadAsset<Shader>("Assets/genesis-models/shaders/PBR Standard Vein Stone COLOR.shader");
             SwapShaderPatches.AddSwapShaderMapping("VF Shaders/Forward/PBR Standard Vein Stone", stoneVeinShader);
+
+            var metalVeinShader = resources_models.bundle.LoadAsset<Shader>("Assets/genesis-models/shaders/PBR Standard Vein Metal COLOR.shader");
+            SwapShaderPatches.AddSwapShaderMapping("VF Shaders/Forward/PBR Standard Vein Metal", metalVeinShader);
 
             TableID = new int[]
                       {
@@ -174,6 +177,7 @@ namespace ProjectGenesis
             LDB.items.OnAfterDeserialize();
             AdjustPlanetThemeDataVanilla();
             AddCopiedModelProto();
+            AddEffectEmitterProto();
             ImportJson(TableID);
         }
 
@@ -230,8 +234,12 @@ namespace ProjectGenesis
                 proto.Preload2();
             }
 
+            SetMinerMk2Color();
             PrefabDescPostFix();
             SetBuildBar();
+
+            SetEffectEmitterProto();
+            VFEffectEmitter.Init();
 
             ItemProto.InitFluids();
             ItemProto.InitItemIds();

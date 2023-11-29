@@ -36,6 +36,7 @@ namespace ProjectGenesis.Compatibility
             ResourceTypes.Add((EVeinType)15);
             ResourceTypes.Add((EVeinType)16);
             ResourceTypes.Add((EVeinType)17);
+            ResourceTypes.Add((EVeinType)18);
         }
     }
 }

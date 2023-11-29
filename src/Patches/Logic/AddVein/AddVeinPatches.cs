@@ -5,22 +5,47 @@ using System.Reflection.Emit;
 using HarmonyLib;
 using UnityEngine;
 
+#pragma warning disable CS0618
+
 // ReSharper disable InconsistentNaming
+// ReSharper disable Unity.UnknownResource
+// ReSharper disable Unity.PreferAddressByIdToGraphicsParams
 
 namespace ProjectGenesis.Patches.Logic.AddVein
 {
     public static partial class AddVeinPatches
     {
-        public static readonly sbyte VeinTypeCount = 19;
+        internal static readonly sbyte VeinTypeCount = 19;
+
+        private static readonly Color32[] VeinColors = new Color32[]
+                                                       {
+                                                           new Color(0.538f, 0.538f, 0.538f), // Default
+                                                           new Color(0.288f, 0.587f, 0.858f), // Iron
+                                                           new Color(1.000f, 0.490f, 0.307f), // Copper
+                                                           new Color(0.214f, 0.745f, 0.531f), // Silicium
+                                                           new Color(1.000f, 1.000f, 1.000f), // Titanium
+                                                           new Color(0.483f, 0.461f, 0.444f), // Stone
+                                                           new Color(0.113f, 0.130f, 0.140f), // Coal
+                                                           new Color(0.000f, 0.000f, 0.000f), // Oil
+                                                           new Color(1.000f, 1.000f, 1.000f), // Fireice
+                                                           new Color(0.489f, 0.601f, 0.745f), // Diamond
+                                                           new Color(0.091f, 0.377f, 0.217f), // Fractal
+                                                           new Color(0.538f, 0.613f, 0.078f), // Crysrub
+                                                           new Color(0.575f, 0.270f, 0.830f), // Grat
+                                                           new Color(0.571f, 0.708f, 0.647f), // Bamboo
+                                                           new Color(0.349f, 0.222f, 0.247f), // Mag
+                                                           new Color(0.538f, 0.538f, 0.538f), // Aluminum
+                                                           new Color(0.685f, 0.792f, 0.000f), // Radioactive
+                                                           new Color(0.113f, 0.130f, 0.140f), // Tungsten
+                                                           new Color(0.965f, 0.867f, 0.352f), // Sulfur
+                                                       };
 
         internal static void ModifyVeinData()
         {
-            // SwapShaderPatches.AddShaderPropMapping("VF Shaders/Forward/PBR Standard Vein Stone", "_Color11", new Color(0.68536454f, 0.7924528f, 0f, 1f));
-
-            AddVeinProtos(NewVein(15, "铝矿脉", "I铝矿", "Assets/texpack/铝矿脉", 6202, 25),
-                          NewVein(16, "放射性矿脉", "I放射性矿物", "Assets/texpack/放射晶体矿脉_新", 6222, 31, 4, 90),
+            AddVeinProtos(NewVein(15, "铝矿脉", "I铝矿", "Assets/texpack/铝矿脉", 6202, 25, 1, 60),
+                          NewVein(16, "放射性矿脉", "I放射性矿物", "Assets/texpack/放射晶体矿脉_新新", 6222, 35, 2, 90),
                           NewVein(17, "钨矿脉", "I钨矿", "Assets/texpack/钨矿脉", 6201, 34, 1, 120),
-                          NewVein(18, "硫矿脉", "I硫矿", "Assets/texpack/硫矿脉", 6207, 34, 4, 90));
+                          NewVein(18, "硫矿脉", "I硫矿", "Assets/texpack/硫矿脉_新", 6207, 36, 1, 90));
 
             VeinProto NewVein(
                 int id,
@@ -29,8 +54,8 @@ namespace ProjectGenesis.Patches.Logic.AddVein
                 string iconPath,
                 int miningItem,
                 int miningEffect,
-                int modelIndex = 1,
-                int miningTime = 60)
+                int modelIndex,
+                int miningTime)
                 => new VeinProto
                    {
                        ID = id,
@@ -63,6 +88,23 @@ namespace ProjectGenesis.Patches.Logic.AddVein
             }
 
             veins.OnAfterDeserialize();
+        }
+
+        internal static void SetMinerMk2Color()
+        {
+            ref PrefabDesc prefabDesc = ref LDB.models.Select(256).prefabDesc;
+            var texture = Resources.Load<Texture>("Assets/texpack/矿机渲染索引");
+            prefabDesc.materials[0].SetTexture("_VeinColorTex", texture);
+            ref Material[] prefabDescLODMaterial = ref prefabDesc.lodMaterials[0];
+            prefabDescLODMaterial[0].SetTexture("_VeinColorTex", texture);
+            prefabDescLODMaterial[1].SetTexture("_VeinColorTex", texture);
+            prefabDescLODMaterial[2].SetTexture("_VeinColorTex", texture);
+
+            prefabDesc = ref LDB.models.Select(59).prefabDesc;
+            prefabDescLODMaterial = ref prefabDesc.lodMaterials[0];
+            prefabDescLODMaterial[1].SetTexture("_VeinColorTex", texture);
+            prefabDescLODMaterial[2].SetTexture("_VeinColorTex", texture);
+            prefabDescLODMaterial[3].SetTexture("_VeinColorTex", texture);
         }
 
         [HarmonyPatch(typeof(UISandboxMenu), "StaticLoad")]

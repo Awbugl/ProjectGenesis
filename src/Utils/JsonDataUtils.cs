@@ -181,8 +181,6 @@ namespace ProjectGenesis.Utils
 
         internal static void PrefabDescPostFix()
         {
-            #region PrefabDesc
-
             PrefabDescJson[] prefabDescs = PrefabDescs();
 
             foreach (PrefabDescJson json in prefabDescs)
@@ -230,18 +228,17 @@ namespace ProjectGenesis.Utils
                 if (json.stationMaxShipCount != null) desc.stationMaxShipCount = json.stationMaxShipCount.Value;
                 if (json.stationMaxDroneCount != null) desc.stationMaxDroneCount = json.stationMaxDroneCount.Value;
             }
-            
+
             ref PrefabDesc pumper = ref LDB.models.Select(60).prefabDesc;
             pumper.waterTypes = new[] { 1000, 1116, 7014, 7017, 7018 };
 
             ref PrefabDesc megapumper = ref LDB.models.Select(462).prefabDesc;
             megapumper.waterTypes = new[] { 1000, 1116, 7014, 7017, 7018 };
-            
+
             megapumper.waterPoints = new[] { Vector3.zero };
             megapumper.portPoses = new[] { megapumper.portPoses[0] };
-
-            #endregion
         }
+
         internal static void SetBuildBar()
         {
             LDBTool.SetBuildBar(1, 9, 6221);
