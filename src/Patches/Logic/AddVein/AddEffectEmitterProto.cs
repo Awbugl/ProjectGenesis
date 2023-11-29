@@ -14,7 +14,7 @@ namespace ProjectGenesis.Patches.Logic.AddVein
 
         internal static void AddEffectEmitterProto()
         {
-            Map.Add(35, new Color(0.685f, 0.792f, 0.000f));
+            Map.Add(35, new Color(0.395f, 0.965f, 0.352f));
             Map.Add(36, new Color(0.965f, 0.867f, 0.352f));
 
             AddEffectEmitterProto(Map);
