@@ -3078,8 +3078,12 @@
     "PreTechsMax": false,
     "AddItems": [],
     "AddItemCounts": [],
-    "PropertyOverrideItems": [],
-    "PropertyItemCounts": []
+    "PropertyOverrideItems": [
+      6001
+    ],
+    "PropertyItemCounts": [
+      20
+    ]
   },
   {
     "ID": 1608,
@@ -3166,8 +3170,12 @@
     "AddItemCounts": [
       4
     ],
-    "PropertyOverrideItems": [],
-    "PropertyItemCounts": []
+    "PropertyOverrideItems": [
+      6001
+    ],
+    "PropertyItemCounts": [
+      20
+    ]
   },
   {
     "ID": 1702,
@@ -8521,8 +8529,12 @@
     "AddItemCounts": [
       4
     ],
-    "PropertyOverrideItems": [],
-    "PropertyItemCounts": []
+    "PropertyOverrideItems": [
+      6001
+    ],
+    "PropertyItemCounts": [
+      20
+    ]
   },
   {
     "ID": 1802,
