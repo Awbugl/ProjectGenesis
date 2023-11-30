@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System;
+using System.Collections.Generic;
 using System.Reflection.Emit;
 using CommonAPI.Systems.UI;
 using HarmonyLib;
@@ -26,10 +26,18 @@ namespace ProjectGenesis.Patches.UI
             __instance.windowRect.sizeDelta = new Vector2(900, 811);
             __instance.recipeGroup.sizeDelta = new Vector2(782, 322);
             __instance.queueGroup.GetComponentInChildren<RectTransform>().sizeDelta = new Vector2(782f, 46f);
+
+            Array.Resize(ref __instance.queueNumTexts, 17);
+
+            for (int index = 12; index < 17; ++index)
+            {
+                __instance.CreateQueueText(index);
+            }
         }
 
         [HarmonyPatch(typeof(UIGame), "_OnInit")]
         [HarmonyPostfix]
+        [HarmonyPriority(Priority.Last)]
         public static void UIGame_OnInit_Postfix(UIGame __instance)
         {
             __instance.assemblerWindow.recipeGroup.sizeDelta = new Vector2(190, 100);
@@ -50,8 +58,6 @@ namespace ProjectGenesis.Patches.UI
         [HarmonyPatch(typeof(UIReplicatorWindow), "TestMouseRecipeIndex")]
         [HarmonyPatch(typeof(UIReplicatorWindow), "SetSelectedRecipeIndex")]
         [HarmonyPatch(typeof(UIReplicatorWindow), "SetSelectedRecipe")]
-        [HarmonyPatch(typeof(UIReplicatorWindow), "_OnInit")]
-        [HarmonyPatch(typeof(UIReplicatorWindow), "_OnCreate")]
         [HarmonyPatch(typeof(UIReplicatorWindow), "_OnUpdate")]
         [HarmonyPatch(typeof(UIReplicatorWindow), "RepositionQueueText")]
         [HarmonyPatch(typeof(UIReplicatorWindow), "RefreshQueueIcons")]
@@ -70,17 +76,17 @@ namespace ProjectGenesis.Patches.UI
         [HarmonyPriority(Priority.Last)]
         public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
         {
-            var source = new List<CodeInstruction>(instructions);
-            for (int index = 0; index < source.Count; ++index)
+            foreach (CodeInstruction ci in instructions)
             {
-                if (source[index].opcode == OpCodes.Ldc_I4_S && source[index].operand is sbyte operand)
+                if (ci.opcode == OpCodes.Ldc_I4_S)
                 {
-                    if (operand == 12) source[index].operand = (sbyte)17;
-                    if (operand == 9) source[index].operand = (sbyte)7;
+                    sbyte operand = (sbyte)ci.operand;
+                    if (operand == 12) ci.operand = (sbyte)17;
+                    if (operand == 9) ci.operand = (sbyte)7;
                 }
-            }
 
-            return source.AsEnumerable();
+                yield return ci;
+            }
         }
 
         [HarmonyPatch(typeof(UIReplicatorWindow), "SetMaterialProps")]
@@ -91,17 +97,17 @@ namespace ProjectGenesis.Patches.UI
         [HarmonyPriority(Priority.Last)]
         public static IEnumerable<CodeInstruction> SetMaterialProps_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
-            var source = new List<CodeInstruction>(instructions);
-            for (int index = 0; index < source.Count; ++index)
+            foreach (CodeInstruction ci in instructions)
             {
-                if (source[index].opcode == OpCodes.Ldc_R4 && source[index].operand is float operand)
+                if (ci.opcode == OpCodes.Ldc_R4)
                 {
-                    if (operand is 12f) source[index].operand = 17f;
-                    if (operand is 9f) source[index].operand = 7f;
+                    float operand = (float)ci.operand;
+                    if (operand == 12f) ci.operand = 17f;
+                    if (operand == 9f) ci.operand = 7f;
                 }
-            }
 
-            return source.AsEnumerable();
+                yield return ci;
+            }
         }
 
         [HarmonyPatch(typeof(UIStationStorage), "OnSelectItemButtonClick")]

@@ -187,11 +187,11 @@ namespace ProjectGenesis
             Localization._strings = LDB.strings;
 
             //飞行舱拆除
-            VegeProto @base = LDB.veges.Select(9999);
-            @base.MiningItem = new[] { 1801, 1101, 1104 };
-            @base.MiningCount = new[] { 6, 60, 60 };
-            @base.MiningChance = new float[] { 1, 1, 1 };
-            @base.Preload();
+            VegeProto vegeProto = LDB.veges.Select(9999);
+            vegeProto.MiningItem = new[] { 6216, 1101, 1104 };
+            vegeProto.MiningCount = new[] { 3, 60, 60 };
+            vegeProto.MiningChance = new float[] { 1, 1, 1 };
+            vegeProto.Preload();
 
             LDB.items.OnAfterDeserialize();
             LDB.recipes.OnAfterDeserialize();
@@ -202,7 +202,12 @@ namespace ProjectGenesis
             LDB.themes.OnAfterDeserialize();
             LDB.veins.OnAfterDeserialize();
 
-            GameMain.gpuiManager.Init();
+            if (GameMain.instance != null)
+            {
+                GameMain.instance.CreateGPUInstancing();
+                GameMain.instance.CreateBPGPUInstancing();
+                GameMain.instance.CreateMultithreadSystem();
+            }
 
             PrefabDescPostFix();
 
@@ -249,11 +254,8 @@ namespace ProjectGenesis
             ItemProto.InitMechaMaterials();
             ItemProto.stationCollectorId = 2105;
 
-            foreach (ItemProto proto in LDB.items.dataArray)
-            {
-                StorageComponent.itemIsFuel[proto.ID] = proto.HeatValue > 0L;
-                StorageComponent.itemStackCount[proto.ID] = proto.StackSize;
-            }
+            StorageComponent.staticLoaded = false;
+            StorageComponent.LoadStatic();
 
             // JsonHelper.ExportAsJson(@"D:\Git\ProjectGenesis\data");
         }

@@ -94,6 +94,7 @@
         <Compile Include="src\Compatibility\MoreMegaStructureCompatibilityPlugin.cs"/>
         <Compile Include="src\Compatibility\PlanetVeinUtilizationCompatibilityPlugin.cs"/>
         <Compile Include="src\Compatibility\PlanetwideMiningCompatibilityPlugin.cs"/>
+        <Compile Include="src\Patches\Logic\VFPreloadPatches.cs" />
         <Compile Include="src\Patches\Logic\AddVein\AddEffectEmitterProto.cs"/>
         <Compile Include="src\Patches\Logic\AddVein\AddVeinPatches.cs"/>
         <Compile Include="src\Patches\Logic\AddVein\AdjustPlanetTheme.cs"/>
