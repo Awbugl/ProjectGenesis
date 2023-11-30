@@ -37,21 +37,6 @@
         <Prefer32Bit>false</Prefer32Bit>
     </PropertyGroup>
     <ItemGroup>
-        <Reference Include="0Harmony20">
-            <HintPath>$(BepInExPath)\core\0Harmony20.dll</HintPath>
-        </Reference>
-        <Reference Include="BepInEx">
-            <HintPath>$(BepInExPath)\core\BepInEx.dll</HintPath>
-        </Reference>
-        <Reference Include="CommonAPI">
-            <HintPath>$(CommonAPIPath)</HintPath>
-        </Reference>
-        <Reference Include="DSPModSave">
-            <HintPath>$(DSPModSavePath)</HintPath>
-        </Reference>
-        <Reference Include="LDBTool">
-            <HintPath>$(LDBToolPath)</HintPath>
-        </Reference>
         <Reference Include="mscorlib">
             <HintPath>$(DSPAssemblyPath)\mscorlib.dll</HintPath>
         </Reference>
@@ -187,10 +172,14 @@
         <Content Include="README.md"/>
     </ItemGroup>
     <ItemGroup>
+        <PackageReference Include="BepInEx.Core" Version="5.4.19" />
         <PackageReference Include="DysonSphereProgram.Modding.CommonAPI" Version="1.5.4"/>
         <PackageReference Include="DysonSphereProgram.Modding.DSPModSave" Version="1.1.3"/>
         <PackageReference Include="DysonSphereProgram.Modding.LDBTool" Version="2.0.5"/>
-        <PackageReference Include="DysonSphereProgram.Modding.NebulaMultiplayerModApi" Version="1.3.0"/>
+        <PackageReference Include="DysonSphereProgram.Modding.NebulaMultiplayerModApi" Version="1.3.0"/>        
+    </ItemGroup>
+    <ItemGroup>
+      <None Include="nuget.config" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
     <Target Name="AfterBuild">

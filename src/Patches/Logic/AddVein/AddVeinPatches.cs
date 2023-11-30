@@ -7,6 +7,7 @@ using UnityEngine;
 
 #pragma warning disable CS0618
 
+// ReSharper disable CommentTypo
 // ReSharper disable InconsistentNaming
 // ReSharper disable Unity.UnknownResource
 // ReSharper disable Unity.PreferAddressByIdToGraphicsParams

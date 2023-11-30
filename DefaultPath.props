@@ -1,12 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup Label="DefaultPath">
-        <BepInExPath>C:\Users\littl\AppData\Roaming\r2modmanPlus-local\DysonSphereProgram\profiles\Default\BepInEx</BepInExPath>
-        <DefaultOutputPath>$(BepInExPath)\plugins\HiddenCirno-GenesisBook\</DefaultOutputPath>
-        <DefaultPreloaderOutputPath>$(BepInExPath)\patchers\HiddenCirno-GenesisBook\</DefaultPreloaderOutputPath>
+        <!-- R2modmanProfilesPath is only for output -->
+        <R2modmanProfilesPath>C:\Users\littl\AppData\Roaming\r2modmanPlus-local\DysonSphereProgram\profiles\Default</R2modmanProfilesPath>
+        <DefaultOutputPath>$(R2modmanProfilesPath)\BepInEx\plugins\HiddenCirno-GenesisBook\</DefaultOutputPath>
+        <DefaultPreloaderOutputPath>$(R2modmanProfilesPath)\BepInEx\patchers\HiddenCirno-GenesisBook\</DefaultPreloaderOutputPath>
         <DSPAssemblyPath>D:\SteamLibrary\steamapps\common\Dyson Sphere Program\DSPGAME_Data\Managed</DSPAssemblyPath>
-        <CommonAPIPath>$(BepInExPath)\plugins\CommonAPI-CommonAPI\CommonAPI.dll</CommonAPIPath>
-        <DSPModSavePath>$(BepInExPath)\plugins\CommonAPI-DSPModSave\DSPModSave.dll</DSPModSavePath>
-        <LDBToolPath>$(BepInExPath)\plugins\xiaoye97-LDBTool\LDBTool.dll</LDBToolPath>
     </PropertyGroup>
 </Project>
