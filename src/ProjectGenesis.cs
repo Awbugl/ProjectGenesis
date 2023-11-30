@@ -204,6 +204,8 @@ namespace ProjectGenesis
 
             GameMain.gpuiManager.Init();
 
+            PrefabDescPostFix();
+
             foreach (MilestoneProto milestone in LDB.milestones.dataArray) milestone.Preload();
             foreach (JournalPatternProto journalPattern in LDB.journalPatterns.dataArray) journalPattern.Preload();
 
@@ -235,7 +237,6 @@ namespace ProjectGenesis
             }
 
             SetMinerMk2Color();
-            PrefabDescPostFix();
             SetBuildBar();
 
             SetEffectEmitterProto();
@@ -254,7 +255,7 @@ namespace ProjectGenesis
                 StorageComponent.itemStackCount[proto.ID] = proto.StackSize;
             }
 
-            // JsonHelper.ExportAsJson(@"D:\Git\ProjectGenesis\dependencies");
+            // JsonHelper.ExportAsJson(@"D:\Git\ProjectGenesis\data");
         }
 
         internal static void SetConfig(bool currentLDBToolCache, bool currentHideTechMode, bool currentDisableMessageBox)

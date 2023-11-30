@@ -32,7 +32,7 @@
   {
     "ItemID": 2201,
     "ModelID": 44,
-    "powerConnectDistance": 44.5,
+    "powerConnectDistance": 40.5,
     "powerCoverRadius": 20.5
   },
   {
@@ -68,8 +68,8 @@
   {
     "ItemID": 2203,
     "ModelID": 53,
-    "powerConnectDistance": 24.0,
-    "powerCoverRadius": 15.0,
+    "powerConnectDistance": 15.0,
+    "powerCoverRadius": 0.0,
     "genEnergyPerTick": 12500
   },
   {
@@ -150,8 +150,8 @@
     "ModelID": 68,
     "idleEnergyPerTick": 12000000,
     "workEnergyPerTick": 48000000,
-    "powerConnectDistance": 5300.5,
-    "powerCoverRadius": 2600.5
+    "powerConnectDistance": 5000.5,
+    "powerCoverRadius": 2000.5
   },
   {
     "ItemID": 2310,

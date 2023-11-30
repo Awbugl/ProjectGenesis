@@ -3472,8 +3472,6 @@
     "DescFields": [
       4,
       5,
-      13,
-      14,
       1,
       40
     ],
@@ -3831,6 +3829,7 @@
     "DescFields": [
       13,
       14,
+      11,
       12,
       1,
       40
@@ -6467,9 +6466,9 @@
     "PreTech": 1144,
     "PreTechOverride": 0,
     "DescFields": [
-      1,
       4,
       5,
+      1,
       40
     ],
     "FuelType": 0,
