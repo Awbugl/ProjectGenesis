@@ -646,13 +646,13 @@
   },
   {
     "Name": "高纯铀块",
-    "ZHCN": "高纯铀块",
-    "ENUS": "High-purity uranium"
+    "ZHCN": "含铀核燃料",
+    "ENUS": "Uranium fissile fuel"
   },
   {
     "Name": "高纯钚块",
-    "ZHCN": "高纯钚块",
-    "ENUS": "High-purity plutonium"
+    "ZHCN": "含钚核燃料",
+    "ENUS": "Plutonium fissile fuel"
   },
   {
     "Name": "量子储液罐",
