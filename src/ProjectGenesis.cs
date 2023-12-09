@@ -16,6 +16,7 @@ using ProjectGenesis.Patches.Logic.AddVein;
 using ProjectGenesis.Patches.Logic.MegaAssembler;
 using ProjectGenesis.Patches.Logic.PlanetFocus;
 using ProjectGenesis.Patches.UI.UIPlanetFocus;
+using ProjectGenesis.Patches.UI.UIQTools;
 using ProjectGenesis.Utils;
 using UnityEngine;
 using xiaoye97;
@@ -53,16 +54,17 @@ namespace ProjectGenesis
         internal static ManualLogSource logger;
         internal static ConfigFile configFile;
         internal static UIPlanetFocusWindow PlanetFocusWindow;
+        internal static UIQToolsWindow QToolsWindow;
 
         public static bool LoadCompleted;
 
         internal static int[] TableID;
 
-        internal static bool LDBToolCacheValue, HideTechModeValue, DisableMessageBoxValue;
-
         internal static string ModPath;
 
-        private static ConfigEntry<bool> EnableLDBToolCacheEntry, EnableHideTechModeEntry, DisableMessageBoxEntry;
+        internal static ConfigEntry<bool> EnableLDBToolCacheEntry, EnableHideTechModeEntry, DisableMessageBoxEntry;
+
+        internal static ConfigEntry<KeyboardShortcut> QToolsHotkey;
 
         private Harmony Harmony;
 
@@ -84,16 +86,12 @@ namespace ProjectGenesis
             EnableLDBToolCacheEntry = Config.Bind("config", "UseLDBToolCache", false,
                                                   "Enable LDBTool Cache, which allows you use config to fix some compatibility issues.\n启用LDBTool缓存，允许使用配置文件修复部分兼容性问题");
 
-            LDBToolCacheValue = EnableLDBToolCacheEntry.Value;
-
             EnableHideTechModeEntry = Config.Bind("config", "HideTechMode", false,
                                                   "Enable Tech Exploration Mode, which will hide locked techs in tech tree.\n启用科技探索模式，启用后将隐藏未解锁的科技");
 
-            HideTechModeValue = EnableHideTechModeEntry.Value;
-
             DisableMessageBoxEntry = Config.Bind("config", "DiableMessageBox", false, "Don't show message when GenesisBook is loaded.\n禁用首次加载时的提示信息");
 
-            DisableMessageBoxValue = DisableMessageBoxEntry.Value;
+            QToolsHotkey = Config.Bind("config", "QToolsHotkey", KeyboardShortcut.Deserialize("BackQuote"), "Shortcut to open QTools window");
 
             Config.Save();
 
@@ -148,6 +146,12 @@ namespace ProjectGenesis
             LDBTool.PostAddDataAction += PostAddDataAction;
 
             LoadCompleted = true;
+        }
+
+        private void Update()
+        {
+            if (VFInput.inputing) return;
+            if (QToolsWindow) QToolsWindow._OnUpdate();
         }
 
         public void Export(BinaryWriter w)
@@ -257,16 +261,15 @@ namespace ProjectGenesis
             StorageComponent.staticLoaded = false;
             StorageComponent.LoadStatic();
 
+            QToolsWindow.PostInit();
+
             // JsonHelper.ExportAsJson(@"D:\Git\ProjectGenesis\data");
         }
 
         internal static void SetConfig(bool currentLDBToolCache, bool currentHideTechMode, bool currentDisableMessageBox)
         {
-            LDBToolCacheValue = currentLDBToolCache;
             EnableLDBToolCacheEntry.Value = currentLDBToolCache;
-            HideTechModeValue = currentHideTechMode;
             EnableHideTechModeEntry.Value = currentHideTechMode;
-            DisableMessageBoxValue = currentDisableMessageBox;
             DisableMessageBoxEntry.Value = currentDisableMessageBox;
             logger.LogInfo("SettingChanged");
             configFile.Save();

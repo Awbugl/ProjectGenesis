@@ -21,15 +21,15 @@ namespace ProjectGenesis.Patches.UI
                                              .parent;
 
             CreateSettingObject(queryObj, pageParent, "gb-ldbtc-setting", "UseLDBToolCache".TranslateFromJson(),
-                                "UseLDBToolCacheAdditionalText".TranslateFromJson(), new Vector2(30, -180), LDBToolCacheValue,
+                                "UseLDBToolCacheAdditionalText".TranslateFromJson(), new Vector2(30, -180), EnableLDBToolCacheEntry.Value,
                                 out LDBToolCacheToggle);
 
             CreateSettingObject(queryObj, pageParent, "gb-htc-setting", "EnableHideTechMode".TranslateFromJson(),
-                                "EnableHideTechModeAdditionalText".TranslateFromJson(), new Vector2(30, -220), HideTechModeValue,
+                                "EnableHideTechModeAdditionalText".TranslateFromJson(), new Vector2(30, -220), EnableHideTechModeEntry.Value,
                                 out HideTechModeToggle);
 
             CreateSettingObject(queryObj, pageParent, "gb-smb-setting", "DisableMessageBox".TranslateFromJson(),
-                                "DisableMessageBoxAdditionalText".TranslateFromJson(), new Vector2(30, -260), DisableMessageBoxValue,
+                                "DisableMessageBoxAdditionalText".TranslateFromJson(), new Vector2(30, -260), DisableMessageBoxEntry.Value,
                                 out DisableMessageToggle);
         }
 
@@ -72,11 +72,16 @@ namespace ProjectGenesis.Patches.UI
 
         [HarmonyPatch(typeof(UIOptionWindow), "OnRevertButtonClick")]
         [HarmonyPostfix]
-        public static void Reset()
+        public static void UIOptionWindow_OnRevertButtonClick_Postfix(int idx)
         {
-            LDBToolCacheToggle.isOn = LDBToolCacheValue;
-            HideTechModeToggle.isOn = HideTechModeValue;
-            DisableMessageToggle.isOn = DisableMessageBoxValue;
+            if (idx == 4) Reset();
+        }
+
+        private static void Reset()
+        {
+            LDBToolCacheToggle.isOn = EnableLDBToolCacheEntry.Value;
+            HideTechModeToggle.isOn = EnableHideTechModeEntry.Value;
+            DisableMessageToggle.isOn = DisableMessageBoxEntry.Value;
         }
 
         [HarmonyPatch(typeof(UIOptionWindow), "OnApplyClick")]

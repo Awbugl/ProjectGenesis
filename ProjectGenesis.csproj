@@ -138,6 +138,12 @@
         <Compile Include="src\Patches\UI\UIAbnormalityTipPatches.cs"/>
         <Compile Include="src\Patches\UI\UIMonitorPatches.cs"/>
         <Compile Include="src\Patches\UI\UIPowerGeneratorWindowPatches.cs"/>
+        <Compile Include="src\Patches\UI\UIQTools\MyComboBox\ItemComboBox.cs" />
+        <Compile Include="src\Patches\UI\UIQTools\MyComboBox\MyComboBox.cs" />
+        <Compile Include="src\Patches\UI\UIQTools\MyKeyBinder.cs" />
+        <Compile Include="src\Patches\UI\UIQTools\ProductDetail.cs" />
+        <Compile Include="src\Patches\UI\UIQTools\QToolsWindowPatches.cs" />
+        <Compile Include="src\Patches\UI\UIQTools\UIQToolsWindow.cs" />
         <Compile Include="src\Patches\UI\UITechNodePatches.cs"/>
         <Compile Include="src\Patches\UI\UIPlanetFocus\UIPlanetFocusWindow.cs"/>
         <Compile Include="src\Patches\UI\UIPlanetFocus\UIPlanetDetailExpand.cs"/>

@@ -14,7 +14,7 @@ namespace ProjectGenesis.Patches.UI.Utils
         private static readonly UIAssemblerWindow UIGameAssemblerWindow = UIRoot.instance.uiGame.assemblerWindow;
         private static readonly UIButton CategoryButton = UIRoot.instance.uiGame.functionPanel.buildMenu.categoryButtons[0];
 
-        internal static void NormalizeRectWithTopLeft(
+        internal static RectTransform NormalizeRectWithTopLeft(
             Component cmp,
             float left,
             float top,
@@ -27,6 +27,7 @@ namespace ProjectGenesis.Patches.UI.Utils
             rect.anchorMin = new Vector2(0f, 1f);
             rect.pivot = new Vector2(0f, 1f);
             rect.anchoredPosition3D = new Vector3(left, -top, 0f);
+            return rect;
         }
 
         public static void NormalizeRectWithMargin(
@@ -59,6 +60,15 @@ namespace ProjectGenesis.Patches.UI.Utils
             txt.alignment = anchor;
             //txt_.supportRichText = false;
             txt.fontSize = fontSize;
+            return txt;
+        }
+
+        public static Text CreateLabelText(GameObject obj, string label)
+        {
+            Text txt = Object.Instantiate(obj.GetComponent<Text>(), obj.transform.parent);
+            Object.Destroy(txt.gameObject.GetComponent<Localizer>());
+            txt.gameObject.name = "txt_" + label;
+            txt.text = label;
             return txt;
         }
 
@@ -110,7 +120,11 @@ namespace ProjectGenesis.Patches.UI.Utils
             return btn;
         }
 
-        internal static void CreateSignalIcon(out UIButton iconButton, out Image iconImage)
+        internal static void CreateSignalIcon(
+            string tipTitle,
+            string tipText,
+            out UIButton iconButton,
+            out Image iconImage)
         {
             GameObject go = Object.Instantiate(TransformGameObject);
 
@@ -123,9 +137,27 @@ namespace ProjectGenesis.Patches.UI.Utils
             }
 
             iconButton = rect.GetComponent<UIButton>();
-            iconButton.tips.tipTitle = "选择星球倾向".TranslateFromJson();
-            iconButton.tips.tipText = "选择星球倾向描述".TranslateFromJson();
+            iconButton.tips.tipTitle = tipTitle.TranslateFromJson();
+            iconButton.tips.tipText = tipText.TranslateFromJson();
 
+            iconImage = rect.GetComponent<Image>();
+        }
+
+        internal static void CreateSignalImage(out Image iconImage)
+        {
+            GameObject go = Object.Instantiate(TransformGameObject);
+
+            go.name = "signal-button";
+            go.SetActive(true);
+            var rect = (RectTransform)go.transform;
+
+            for (int i = rect.childCount - 1; i >= 0; --i)
+            {
+                Object.Destroy(rect.GetChild(i).gameObject);
+            }
+
+            var iconButton = rect.GetComponent<UIButton>();
+            Object.Destroy(iconButton);
             iconImage = rect.GetComponent<Image>();
         }
     }

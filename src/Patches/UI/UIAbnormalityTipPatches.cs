@@ -20,5 +20,10 @@ namespace ProjectGenesis.Patches.UI
             __instance.mainTweener.Play1To0Continuing();
             ___closeDelayTime = 3f;
         }
+
+        [HarmonyPatch(typeof(AbnormalityLogic), "GameTick")]
+        [HarmonyPrefix]
+        [HarmonyPriority(Priority.VeryHigh)]
+        public static bool AbnormalityLogic_GameTick() => false;
     }
 }

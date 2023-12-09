@@ -53,7 +53,7 @@ namespace ProjectGenesis
 
             string msg = string.Empty;
 
-            if (!ProjectGenesis.DisableMessageBoxValue) msg = "GenesisBookLoadMessage";
+            if (!ProjectGenesis.DisableMessageBoxEntry.Value) msg = "GenesisBookLoadMessage";
 
             if (DSPBattleCompatibilityPlugin.DSPBattleInstalled) msg = "DSPBattleInstalled";
 

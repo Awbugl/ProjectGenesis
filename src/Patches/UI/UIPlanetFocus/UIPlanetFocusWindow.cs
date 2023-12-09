@@ -28,11 +28,7 @@ namespace ProjectGenesis.Patches.UI.UIPlanetFocus
 
         private RectTransform _tab1;
 
-        internal static UIPlanetFocusWindow CreateWindow()
-        {
-            var win = CreateWindow<UIPlanetFocusWindow>("UIPlanetFocusWindow", "星球基地".TranslateFromJson());
-            return win;
-        }
+        internal static UIPlanetFocusWindow CreateWindow() => CreateWindow<UIPlanetFocusWindow>("UIPlanetFocusWindow", "星球基地".TranslateFromJson());
 
         public void OpenWindow() => MyWindowCtl.OpenWindow(this);
 
@@ -51,12 +47,12 @@ namespace ProjectGenesis.Patches.UI.UIPlanetFocus
             NormalizeRectWithMargin(_tab1, 40, 40, 40, 40, windowTrans);
             tab.name = "tab-1";
 
-            nameText = CreateText("星球倾向", 16);
+            nameText = CreateText("", 16);
             NormalizeRectWithTopLeft(nameText.transform, 0f, 20f, _tab1);
 
             for (int i = 0; i < FocusMaxCount; ++i)
             {
-                CreateSignalIcon(out UIButton iconBtn, out Image iconImage);
+                CreateSignalIcon("选择星球倾向", "选择星球倾向描述", out UIButton iconBtn, out Image iconImage);
                 _iconBtns[i] = iconBtn;
                 _iconImgs[i] = iconImage;
                 _iconTexts[i] = CreateText("", 16);

@@ -99,7 +99,7 @@ namespace ProjectGenesis.Patches.Logic
         [HarmonyPostfix]
         public static void UITechTree_OnQueueUpdate_Postfix(UITechTree __instance)
         {
-            if (!ProjectGenesis.HideTechModeValue) return;
+            if (!ProjectGenesis.EnableHideTechModeEntry.Value) return;
 
             GameHistoryData history = GameMain.history;
             foreach (var (tech, node) in __instance.nodes)
@@ -125,7 +125,7 @@ namespace ProjectGenesis.Patches.Logic
         [HarmonyPostfix]
         public static void UITechTree_OnPageChanged_Postfix(UITechTree __instance)
         {
-            if (!ProjectGenesis.HideTechModeValue) return;
+            if (!ProjectGenesis.EnableHideTechModeEntry.Value) return;
 
             if (__instance.page != 0) return;
             GameHistoryData history = GameMain.history;

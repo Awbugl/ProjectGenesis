@@ -397,7 +397,7 @@
     "Description": "R等离子精炼",
     "IconPath": "Icons/ItemRecipe/plasma-refining",
     "Type": 3,
-    "GridIndex": 3201,
+    "GridIndex": 4201,
     "Time": 120,
     "Input": [
       1007
@@ -1535,7 +1535,7 @@
     "Description": "RX射线裂解",
     "IconPath": "Icons/ItemRecipe/X-ray",
     "Type": 3,
-    "GridIndex": 3202,
+    "GridIndex": 4202,
     "Time": 120,
     "Input": [
       1114,
@@ -1794,7 +1794,7 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 1410,
-    "Time": 180,
+    "Time": 120,
     "Input": [
       1111,
       1301
@@ -1820,20 +1820,20 @@
     "IconPath": "Icons/ItemRecipe/photo-shifter-lv2",
     "Type": 4,
     "GridIndex": 1510,
-    "Time": 180,
+    "Time": 120,
     "Input": [
       1014,
       1301
     ],
     "InCounts": [
-      1,
-      1
+      2,
+      2
     ],
     "Output": [
       1404
     ],
     "OutCounts": [
-      1
+      2
     ],
     "Explicit": true,
     "Handcraft": false,
@@ -3595,7 +3595,7 @@
     "Description": "R焦油转化",
     "IconPath": "Assets/texpack/煤焦油生产",
     "Type": 3,
-    "GridIndex": 3203,
+    "GridIndex": 4203,
     "Time": 120,
     "Input": [
       1006
@@ -3619,7 +3619,7 @@
     "Description": "R焦油分馏",
     "IconPath": "Assets/texpack/氯苯",
     "Type": 3,
-    "GridIndex": 3204,
+    "GridIndex": 4204,
     "Time": 120,
     "Input": [
       1114
@@ -4342,7 +4342,7 @@
     "Description": "R焦油裂化",
     "IconPath": "Assets/texpack/甘油",
     "Type": 3,
-    "GridIndex": 3205,
+    "GridIndex": 4205,
     "Time": 120,
     "Input": [
       1114

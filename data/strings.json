@@ -50,6 +50,96 @@
     "ENUS": "https://discord.gg/QwMEeaRZZR"
   },
   {
+    "Name": "恢复默认",
+    "ZHCN": "恢复默认",
+    "ENUS": "Restore default"
+  },
+  {
+    "Name": "量化计算器",
+    "ZHCN": "量化计算器",
+    "ENUS": "Calculator"
+  },
+  {
+    "Name": "设置",
+    "ZHCN": "设置",
+    "ENUS": "Settings"
+  },
+  {
+    "Name": "量化",
+    "ZHCN": "量化",
+    "ENUS": "Calculator"
+  },
+  {
+    "Name": "计算器快捷键",
+    "ZHCN": "计算器快捷键",
+    "ENUS": "Calculator Hotkey"
+  },
+  {
+    "Name": "默认生产设备",
+    "ZHCN": "默认生产设备",
+    "ENUS": "Default Factory"
+  },
+  {
+    "Name": "默认增产策略",
+    "ZHCN": "默认增产策略",
+    "ENUS": "Default Proliferator"
+  },
+  {
+    "Name": "不使用增产剂",
+    "ZHCN": "不使用增产剂",
+    "ENUS": "Non-use Proliferator"
+  },
+  {
+    "Name": "增产",
+    "ZHCN": "增产",
+    "ENUS": "Extra Products"
+  },
+  {
+    "Name": "加速",
+    "ZHCN": "加速",
+    "ENUS": "Production Speedup"
+  },
+  {
+    "Name": "物品",
+    "ZHCN": "物品",
+    "ENUS": "Item"
+  },
+  {
+    "Name": "产能",
+    "ZHCN": "产能",
+    "ENUS": "Count"
+  },
+  {
+    "Name": "工厂",
+    "ZHCN": "工厂",
+    "ENUS": "Factory"
+  },
+  {
+    "Name": "配方选取",
+    "ZHCN": "配方选取",
+    "ENUS": "Recipe Select"
+  },
+  {
+    "Name": "增产策略",
+    "ZHCN": "增产策略",
+    "ENUS": "Proliferator Strategy"
+  },
+  {
+    "Name": "右键点击：将其设置为原材料",
+    "ZHCN": "右键点击：将其设置为原材料",
+    "ENUS": "Right click: set it to raw material"
+  },
+  {
+    "Name": "左键点击：更换生产设备",
+    "ZHCN": "左键点击：更换生产设备",
+    "ENUS": "Left click: Adjust machine"
+  },
+  {
+    "Name": "左键点击：更换配方",
+    "ZHCN": "左键点击：更换配方",
+    "ENUS": "Left click: Adjust recipe"
+  },
+  {
     "Name": "ChangeStackingLogic",
     "ZHCN": "修改化工配方的堆积逻辑",
     "ENUS": "Change chemical stacking logic"
@@ -288,7 +378,7 @@
     "Name": "快速开局描述",
     "ZHCN": "解锁额外科技，并提供额外的初始物品",
     "ENUS": "Unlocks additional techs and provides additional items at the beginning"
-  },  
+  },
   {
     "Name": "里程碑名称29",
     "ZHCN": "里程碑：裂变发电",
