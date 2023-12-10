@@ -5,7 +5,7 @@ using ProjectGenesis.Utils;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace ProjectGenesis.Patches.UI.UIQTools
+namespace ProjectGenesis.Patches.UI.QTools.MyComboBox
 {
     public abstract class MyComboBox : MonoBehaviour
     {
@@ -16,7 +16,7 @@ namespace ProjectGenesis.Patches.UI.UIQTools
         public Image iconImg;
         public UIButton button;
 
-        public event Action<int> OnItemChange;
+        public event Action<int> OnIndexChange;
 
         internal static T CreateComboBox<T>(
             float x,
@@ -61,20 +61,20 @@ namespace ProjectGenesis.Patches.UI.UIQTools
             comboBox.ItemButtons = new List<Button>();
             comboBox.UpdateItems();
             comboBox.onItemIndexChange.RemoveAllListeners();
-            comboBox.onItemIndexChange.AddListener(OnItemIndexChange);
+            comboBox.onItemIndexChange.AddListener(ComboBoxIndexChange);
             comboBox.itemIndex = 0;
         }
 
         public void OnUIButtonClick() => comboBox.itemIndex = (comboBox.itemIndex + 1) % comboBox.Items.Count;
 
-        private void OnItemIndexChange()
+        public void ComboBoxIndexChange()
         {
             selectIndex = comboBox.itemIndex;
-            UpdateSprite();
-            OnItemChange?.Invoke(selectIndex);
+            OnItemIndexChange();
+            OnIndexChange?.Invoke(selectIndex);
         }
 
-        public abstract void UpdateSprite();
+        public abstract void OnItemIndexChange();
 
         public void SetLabelText(string val)
         {

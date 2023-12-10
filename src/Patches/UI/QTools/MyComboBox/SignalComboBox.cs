@@ -2,9 +2,9 @@
 using System.Linq;
 using ProjectGenesis.Utils;
 
-namespace ProjectGenesis.Patches.UI.UIQTools
+namespace ProjectGenesis.Patches.UI.QTools.MyComboBox
 {
-    public class ItemComboBox : MyComboBox
+    public class SignalComboBox : MyComboBox
     {
         private List<int> _items;
 
@@ -36,6 +36,6 @@ namespace ProjectGenesis.Patches.UI.UIQTools
         public new void Init(List<string> overrideString, int defaultSprite = 509)
             => base.Init(overrideString.Select(i => i.TranslateFromJson()).ToList(), defaultSprite);
 
-        public override void UpdateSprite() => iconImg.sprite = LDB.signals.IconSprite(_items != null ? _items[selectIndex] : DefaultSprite);
+        public override void OnItemIndexChange() => iconImg.sprite = LDB.signals.IconSprite(_items != null ? _items[selectIndex] : DefaultSprite);
     }
 }

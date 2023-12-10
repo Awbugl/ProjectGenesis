@@ -4,7 +4,7 @@ using ProjectGenesis.Utils;
 
 // ReSharper disable InconsistentNaming
 
-namespace ProjectGenesis.Patches.UI.UIPlanetFocus
+namespace ProjectGenesis.Patches.UI.PlanetFocus
 {
     public static class UIPlanetDetailExpand
     {

@@ -73,7 +73,7 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
             TmpSandCount = 0;
         }
 
-        private static bool ContainsRecipeType(ERecipeType filter, ERecipeType recipetype)
+        internal static bool ContainsRecipeType(ERecipeType filter, ERecipeType recipetype)
         {
             var type = (Utils.ERecipeType)recipetype;
 

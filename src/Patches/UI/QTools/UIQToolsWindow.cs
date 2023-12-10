@@ -1,28 +1,33 @@
 ﻿using System.Collections.Generic;
 using NGPT;
+using ProjectGenesis.Patches.Logic;
+using ProjectGenesis.Patches.UI.QTools.MyComboBox;
 using ProjectGenesis.Patches.UI.Utils;
 using ProjectGenesis.Utils;
 using UnityEngine;
 using UnityEngine.UI;
+using static ProjectGenesis.Patches.Logic.QTools;
 using Utils_ERecipeType = ProjectGenesis.Utils.ERecipeType;
 
-namespace ProjectGenesis.Patches.UI.UIQTools
+namespace ProjectGenesis.Patches.UI.QTools
 {
-    // ReSharper disable once InconsistentNaming
-    public partial class UIQToolsWindow
-    {
-        public void AddItemNeed(ItemProto proto, int count) { }
-    }
-
     /// <summary>
     ///     special thanks to https://github.com/hetima/DSP_PlanetFinder/tree/main/PlanetFinder
     ///     special thanks to https://github.com/starfi5h/DSP_Mod_Support/tree/main/FactoryLocator/src/UI
     /// </summary>
 
     // ReSharper disable once InconsistentNaming
-    public partial class UIQToolsWindow : ManualBehaviour
+    public class UIQToolsWindow : ManualBehaviour
     {
         public bool isOpening;
+
+        private UIButton _pauseButton;
+        private Sprite _playSprite;
+        private Sprite _pauseSprite;
+        private string _playString;
+        private string _pauseString;
+        private Image _pauseImg;
+        private Text _pauseText;
 
         private RectTransform[] _tabs;
         private UIButton[] _tabButtons;
@@ -36,9 +41,10 @@ namespace ProjectGenesis.Patches.UI.UIQTools
 
         private GameObject _labelText;
 
-        private ItemComboBox _proliferatorComboBox;
+        private ProliferatorComboBox _proliferatorComboBox;
         private Dictionary<Utils_ERecipeType, ItemComboBox> _recipeMachines;
 
+        private NodeDataSet _data;
         private List<ProductDetail> _productDetailPool;
 
         private void CreateUI()
@@ -47,70 +53,61 @@ namespace ProjectGenesis.Patches.UI.UIQTools
 
             _recipeMachines = new Dictionary<Utils_ERecipeType, ItemComboBox>
                               {
-                                  [Utils_ERecipeType.Smelt] = MyComboBox.CreateComboBox<ItemComboBox>(30, 110, _tabs[0], "默认生产设备"),
-                                  [Utils_ERecipeType.矿物处理] = MyComboBox.CreateComboBox<ItemComboBox>(430, 110, _tabs[0]),
-                                  [Utils_ERecipeType.Assemble] = MyComboBox.CreateComboBox<ItemComboBox>(830, 110, _tabs[0]),
-                                  [Utils_ERecipeType.标准制造] = MyComboBox.CreateComboBox<ItemComboBox>(30, 155, _tabs[0]),
-                                  [Utils_ERecipeType.高精度加工] = MyComboBox.CreateComboBox<ItemComboBox>(430, 155, _tabs[0]),
-                                  [Utils_ERecipeType.Refine] = MyComboBox.CreateComboBox<ItemComboBox>(830, 155, _tabs[0]),
-                                  [Utils_ERecipeType.Chemical] = MyComboBox.CreateComboBox<ItemComboBox>(30, 200, _tabs[0]),
-                                  [Utils_ERecipeType.高分子化工] = MyComboBox.CreateComboBox<ItemComboBox>(430, 200, _tabs[0]),
-                                  [Utils_ERecipeType.Particle] = MyComboBox.CreateComboBox<ItemComboBox>(830, 200, _tabs[0])
+                                  [Utils_ERecipeType.Smelt] = MyComboBox.MyComboBox.CreateComboBox<ItemComboBox>(30, 110, _tabs[0], "默认生产设备"),
+                                  [Utils_ERecipeType.矿物处理] = MyComboBox.MyComboBox.CreateComboBox<ItemComboBox>(430, 110, _tabs[0]),
+                                  [Utils_ERecipeType.Assemble] = MyComboBox.MyComboBox.CreateComboBox<ItemComboBox>(830, 110, _tabs[0]),
+                                  [Utils_ERecipeType.标准制造] = MyComboBox.MyComboBox.CreateComboBox<ItemComboBox>(30, 155, _tabs[0]),
+                                  [Utils_ERecipeType.高精度加工] = MyComboBox.MyComboBox.CreateComboBox<ItemComboBox>(430, 155, _tabs[0]),
+                                  [Utils_ERecipeType.Refine] = MyComboBox.MyComboBox.CreateComboBox<ItemComboBox>(830, 155, _tabs[0]),
+                                  [Utils_ERecipeType.Chemical] = MyComboBox.MyComboBox.CreateComboBox<ItemComboBox>(30, 200, _tabs[0]),
+                                  [Utils_ERecipeType.高分子化工] = MyComboBox.MyComboBox.CreateComboBox<ItemComboBox>(430, 200, _tabs[0]),
+                                  [Utils_ERecipeType.Particle] = MyComboBox.MyComboBox.CreateComboBox<ItemComboBox>(830, 200, _tabs[0])
                               };
 
-            _proliferatorComboBox = MyComboBox.CreateComboBox<ItemComboBox>(30, 290, _tabs[0], "默认增产策略");
+            _proliferatorComboBox = MyComboBox.MyComboBox.CreateComboBox<ProliferatorComboBox>(30, 290, _tabs[0], "默认增产策略");
+
+            CreateLabelText("工厂", 255, 0);
+            CreateLabelText("配方选取", 415, 0);
+            CreateLabelText("增产策略", 850, 0);
 
             _labelText.GetComponent<Text>().text = "物品".TranslateFromJson();
-
-            CreateLabelText("产能", 200, 0);
-            CreateLabelText("工厂", 300, 0);
-            CreateLabelText("配方选取", 450, 0);
-            CreateLabelText("增产策略", 900, 0);
+            Util.NormalizeRectWithTopLeft(_labelText.transform, -5, 0);
         }
 
         public void PostInit()
         {
+            _pauseButton.onClick += OnPauseButtonClick;
+
             _tabButtons[0].onClick += OnTabButtonClick;
             _tabButtons[1].onClick += OnTabButtonClick;
 
             _tabs[0].gameObject.SetActive(true);
 
-            _recipeMachines[Utils_ERecipeType.Smelt].Init(new List<int> { 2302, 2315, 6258 });
-            _recipeMachines[Utils_ERecipeType.Smelt].OnItemChange += TestComboBoxItemChange;
+            if (RecipeTypeFactoryMap == null) RecipeTypeFactoryMap = GetFactoryDict();
 
-            _recipeMachines[Utils_ERecipeType.矿物处理].Init(new List<int> { 6230, 6258 });
-            _recipeMachines[Utils_ERecipeType.矿物处理].OnItemChange += TestComboBoxItemChange;
-
-            _recipeMachines[Utils_ERecipeType.Assemble].Init(new List<int> { 2303, 6257 });
-            _recipeMachines[Utils_ERecipeType.Assemble].OnItemChange += TestComboBoxItemChange;
-
-            _recipeMachines[Utils_ERecipeType.标准制造].Init(new List<int> { 2304, 6260 });
-            _recipeMachines[Utils_ERecipeType.标准制造].OnItemChange += TestComboBoxItemChange;
-
-            _recipeMachines[Utils_ERecipeType.高精度加工].Init(new List<int> { 2305, 6260 });
-            _recipeMachines[Utils_ERecipeType.高精度加工].OnItemChange += TestComboBoxItemChange;
-
-            _recipeMachines[Utils_ERecipeType.Refine].Init(new List<int> { 2308, 6259 });
-            _recipeMachines[Utils_ERecipeType.Refine].OnItemChange += TestComboBoxItemChange;
-
-            _recipeMachines[Utils_ERecipeType.Chemical].Init(new List<int> { 2309, 6259 });
-            _recipeMachines[Utils_ERecipeType.Chemical].OnItemChange += TestComboBoxItemChange;
-
-            _recipeMachines[Utils_ERecipeType.高分子化工].Init(new List<int> { 2317, 6259 });
-            _recipeMachines[Utils_ERecipeType.高分子化工].OnItemChange += TestComboBoxItemChange;
-
-            _recipeMachines[Utils_ERecipeType.Particle].Init(new List<int> { 2310, 6265 });
-            _recipeMachines[Utils_ERecipeType.Particle].OnItemChange += TestComboBoxItemChange;
-
-            _proliferatorComboBox.Init(new List<int> { 509, 1143, 1143 }, new List<string> { "不使用增产剂", "增产", "加速" });
+            _data = new NodeDataSet();
+            _productDetailPool = new List<ProductDetail>();
+            
+            foreach (KeyValuePair<Utils_ERecipeType, ItemComboBox> pair in _recipeMachines)
+            {
+                List<ItemProto> recipeTypeFactory = RecipeTypeFactoryMap[pair.Key];
+                pair.Value.Init(pair.Key, recipeTypeFactory);
+                _data.SetDefaultMachine(pair.Key, recipeTypeFactory[0]);
+                pair.Value.OnItemChange += DefaultMachinesChange;
+            }
+            
+            _proliferatorComboBox.Init();
+            _proliferatorComboBox.OnIndexChange += OnProliferatorChange;
 
             var productDetail = ProductDetail.CreateProductDetail(0, 40, _listContent);
             productDetail.Init();
-            productDetail.SetData(1404, 720, 69, 2303);
+            productDetail.SetData(_data.AddItemNeed(LDB.items.Select(1404), 720f));
             _productDetailPool.Add(productDetail);
         }
 
-        private void TestComboBoxItemChange(int index) { }
+        private void OnProliferatorChange(int obj) => _data.SetDefaultStrategy(_proliferatorComboBox.Strategy);
+
+        private void DefaultMachinesChange((Utils_ERecipeType type, ItemProto proto) obj) => _data.SetDefaultMachine(obj.type, obj.proto);
 
         public void OnTabButtonClick(int idx) => SetTabIndex(idx, false);
 
@@ -168,6 +165,14 @@ namespace ProjectGenesis.Patches.UI.UIQTools
             }
         }
 
+        public void LateUpdate()
+        {
+            bool fullscreenPaused = GameMain.isFullscreenPaused;
+            _pauseButton.highlighted = !fullscreenPaused;
+            _pauseImg.sprite = fullscreenPaused ? _pauseSprite : _playSprite;
+            _pauseText.text = (fullscreenPaused ? _pauseString : _playString).Translate();
+        }
+
         public void OpenWindow()
         {
             MyWindowCtl.OpenWindow(this);
@@ -179,24 +184,45 @@ namespace ProjectGenesis.Patches.UI.UIQTools
         {
             _Close();
             isOpening = false;
+            if (UIRoot.instance.uiGame.starmap.fastTravelling) return;
+            GameMain.isFullscreenPaused = false;
+        }
+
+        public void OnPauseButtonClick(int obj)
+        {
+            if (UIRoot.instance.uiGame.starmap.fastTravelling) return;
+            GameMain.isFullscreenPaused = !GameMain.isFullscreenPaused;
         }
 
         internal static UIQToolsWindow CreateWindow()
         {
             UIOptionWindow srcWin = UIRoot.instance.optionWindow;
             GameObject src = srcWin.gameObject;
-            GameObject go = Instantiate(src, srcWin.transform.parent);
+            GameObject go = Instantiate(src, UIRoot.instance.uiGame.recipePicker.transform.parent);
             go.name = "ui-qtools";
             go.SetActive(false);
             Destroy(go.GetComponent<UIOptionWindow>());
             var win = go.AddComponent<UIQToolsWindow>();
 
+            UIDETopFunction controlPanelTopFunction = UIRoot.instance.uiGame.dysonEditor.controlPanel.topFunction;
+            UIButton pauseButton = controlPanelTopFunction.pauseButton;
+            GameObject pGameObject = pauseButton.gameObject;
+            GameObject p = Instantiate(pGameObject, go.transform);
+            p.name = "ui-qtools-pauseButton";
+            Destroy(p.GetComponent<Button>());
+            p.AddComponent<Button>();
+            win._pauseButton = p.GetComponent<UIButton>();
+            win._playSprite = controlPanelTopFunction.playSprite;
+            win._pauseSprite = controlPanelTopFunction.pauseSprite;
+            win._playString = controlPanelTopFunction.playString;
+            win._pauseString = controlPanelTopFunction.pauseString;
+            win._pauseImg = p.transform.GetChild(1).GetComponent<Image>();
+            win._pauseText = p.GetComponentInChildren<Text>();
+
             win._tabs = new RectTransform[2];
             win._tabButtons = new UIButton[2];
             win._tabTweeners = new Tweener[2];
             win._tabTexts = new Text[2];
-
-            win._productDetailPool = new List<ProductDetail>(20);
 
             Transform goTransform = go.transform;
 
@@ -207,7 +233,9 @@ namespace ProjectGenesis.Patches.UI.UIQTools
                 if (child.name == "title-text")
                 {
                     DestroyImmediate(child.GetComponent<Localizer>());
-                    child.GetComponent<Text>().text = "量化计算器".TranslateFromJson();
+                    var component = child.GetComponent<Text>();
+                    component.text = "量化计算器".TranslateFromJson();
+                    Util.NormalizeRectWithTopLeft(component, 80, 10);
                 }
 
                 if (child.name == "tab-line")
@@ -283,10 +311,7 @@ namespace ProjectGenesis.Patches.UI.UIQTools
                             }
                         }
 
-                        if (t.name == "revert-button")
-                        {
-                            Destroy(t.gameObject);
-                        }
+                        if (t.name == "cancel-button" || t.name == "apply-button") Destroy(t.gameObject);
                     }
 
                     var o = new GameObject();
@@ -298,6 +323,8 @@ namespace ProjectGenesis.Patches.UI.UIQTools
                     Destroy(child.GetChild(2).gameObject);
                     Destroy(child.GetChild(4).gameObject);
                 }
+
+                if (child.name == "details") { }
             }
 
             win.CreateUI();

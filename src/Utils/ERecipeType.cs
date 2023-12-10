@@ -1,6 +1,6 @@
 namespace ProjectGenesis.Utils
 {
-    internal enum ERecipeType
+    public enum ERecipeType
     {
         None = 0,
         Smelt = 1,

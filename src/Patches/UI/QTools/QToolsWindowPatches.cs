@@ -2,7 +2,7 @@
 
 // ReSharper disable InconsistentNaming
 
-namespace ProjectGenesis.Patches.UI.UIQTools
+namespace ProjectGenesis.Patches.UI.QTools
 {
     public static class QToolsWindowPatches
     {

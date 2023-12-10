@@ -6,7 +6,7 @@ using ProjectGenesis.Utils;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace ProjectGenesis.Patches.UI.UIQTools
+namespace ProjectGenesis.Patches.UI.QTools
 {
     // MyKeyBinder modified from LSTM: https://github.com/hetima/DSP_LSTM/blob/main/LSTM/MyKeyBinder.cs
     public class MyKeyBinder : MonoBehaviour

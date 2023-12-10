@@ -7,7 +7,7 @@ using static ProjectGenesis.Patches.Logic.PlanetFocus.PlanetFocusPatches;
 using static ProjectGenesis.Patches.UI.Utils.Util;
 using static ProjectGenesis.Patches.UI.Utils.MyWindowCtl;
 
-namespace ProjectGenesis.Patches.UI.UIPlanetFocus
+namespace ProjectGenesis.Patches.UI.PlanetFocus
 {
     /// <summary>
     ///     special thanks to https://github.com/hetima/DSP_PlanetFinder/tree/main/PlanetFinder
