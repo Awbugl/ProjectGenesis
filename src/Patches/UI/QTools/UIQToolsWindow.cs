@@ -46,6 +46,7 @@ namespace ProjectGenesis.Patches.UI.QTools
 
         private NodeDataSet _data;
         private List<ProductDetail> _productDetailPool;
+        private int curReuseIndex;
 
         private void CreateUI()
         {
@@ -87,7 +88,7 @@ namespace ProjectGenesis.Patches.UI.QTools
 
             _data = new NodeDataSet();
             _productDetailPool = new List<ProductDetail>();
-            
+
             foreach (KeyValuePair<Utils_ERecipeType, ItemComboBox> pair in _recipeMachines)
             {
                 List<ItemProto> recipeTypeFactory = RecipeTypeFactoryMap[pair.Key];
@@ -95,14 +96,69 @@ namespace ProjectGenesis.Patches.UI.QTools
                 _data.SetDefaultMachine(pair.Key, recipeTypeFactory[0]);
                 pair.Value.OnItemChange += DefaultMachinesChange;
             }
-            
+
             _proliferatorComboBox.Init();
             _proliferatorComboBox.OnIndexChange += OnProliferatorChange;
 
-            var productDetail = ProductDetail.CreateProductDetail(0, 40, _listContent);
-            productDetail.Init();
-            productDetail.SetData(_data.AddItemNeed(LDB.items.Select(1404), 720f));
-            _productDetailPool.Add(productDetail);
+            _data.OnNeedRefreshed += RefreshProductDetails;
+        }
+
+        private void AddTestItem()
+        {
+            _data.AddItemNeed(LDB.items.Select(1404), 720);
+        }
+
+        private void RefreshProductDetails()
+        {
+            _productDetailPool.ForEach(i => i.gameObject.SetActive(false));
+            curReuseIndex = 0;
+
+            foreach (NodeData t in _data.Inputs)
+            {
+                // TODO: raw meterial layer output
+            }
+
+            foreach (NodeData t in _data.Byproducts)
+            {
+                // TODO: Byproducts meterial layer output
+            }
+            
+            int y = 40;
+
+            foreach (NodeData t in _data.Needs)
+            {
+                ProductDetail productDetail = GetProductDetail();
+                productDetail.SetPos(y);
+                productDetail.SetData(t);
+                productDetail.gameObject.SetActive(true);
+
+                y += 60;
+            }
+
+            foreach (NodeData t in _data.Datas.Values)
+            {
+                ProductDetail productDetail = GetProductDetail();
+                productDetail.SetPos(y);
+                productDetail.SetData(t);
+                productDetail.gameObject.SetActive(true);
+
+                y += 60;
+            }
+        }
+
+        private ProductDetail GetProductDetail()
+        {
+            if (curReuseIndex >= _productDetailPool.Count)
+            {
+                var productDetail = ProductDetail.CreateProductDetail(0, 40, _listContent);
+                productDetail.Init();
+                _productDetailPool.Add(productDetail);
+                return productDetail;
+            }
+            else
+            {
+                return _productDetailPool[curReuseIndex++];
+            }
         }
 
         private void OnProliferatorChange(int obj) => _data.SetDefaultStrategy(_proliferatorComboBox.Strategy);
@@ -178,6 +234,7 @@ namespace ProjectGenesis.Patches.UI.QTools
             MyWindowCtl.OpenWindow(this);
             SetTabIndex(0, false);
             isOpening = true;
+            GameMain.isFullscreenPaused = true;
         }
 
         public void CloseWindow()
@@ -209,8 +266,6 @@ namespace ProjectGenesis.Patches.UI.QTools
             GameObject pGameObject = pauseButton.gameObject;
             GameObject p = Instantiate(pGameObject, go.transform);
             p.name = "ui-qtools-pauseButton";
-            Destroy(p.GetComponent<Button>());
-            p.AddComponent<Button>();
             win._pauseButton = p.GetComponent<UIButton>();
             win._playSprite = controlPanelTopFunction.playSprite;
             win._pauseSprite = controlPanelTopFunction.pauseSprite;

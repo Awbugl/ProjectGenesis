@@ -78,6 +78,8 @@ namespace ProjectGenesis.Patches.UI.QTools
             return cb;
         }
 
+        internal void SetPos(float y) => _rect = Util.NormalizeRectWithTopLeft(this, 0, y);
+
         private static UIRecipeEntry NewUIRecipeEntry(Transform parent)
         {
             if (_uiItemTip is null)

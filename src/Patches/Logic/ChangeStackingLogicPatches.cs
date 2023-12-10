@@ -2,7 +2,6 @@
 using System.Reflection;
 using System.Reflection.Emit;
 using HarmonyLib;
-using ProjectGenesis.Utils;
 
 // ReSharper disable InconsistentNaming
 
@@ -12,6 +11,33 @@ namespace ProjectGenesis.Patches.Logic
     {
         private static readonly FieldInfo AssemblerComponent_RecipeType_FieldInfo
             = AccessTools.Field(typeof(AssemblerComponent), nameof(AssemblerComponent.recipeType));
+
+        [HarmonyPatch(typeof(AssemblerComponent), "Import")]
+        [HarmonyPostfix]
+        public static void AssemblerComponent_Import_Postfix(ref AssemblerComponent __instance)
+        {
+            int recipeId = __instance.recipeId;
+            RecipeProto proto = LDB.recipes.Select(recipeId);
+            __instance.recipeSpecialStackingLogic = proto.SpecialStackingLogic;
+        }
+
+        [HarmonyPatch(typeof(AssemblerComponent), "SetRecipe")]
+        [HarmonyTranspiler]
+        public static IEnumerable<CodeInstruction> AssemblerComponent_SetRecipe_Postfix(IEnumerable<CodeInstruction> instructions)
+        {
+            var matcher = new CodeMatcher(instructions);
+
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Stfld, AssemblerComponent_RecipeType_FieldInfo));
+
+            matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0), new CodeInstruction(OpCodes.Ldloc_0),
+                                                new CodeInstruction(OpCodes.Ldfld,
+                                                                    AccessTools.Field(typeof(RecipeProto), nameof(RecipeProto.SpecialStackingLogic))),
+                                                new CodeInstruction(OpCodes.Stfld,
+                                                                    AccessTools.Field(typeof(AssemblerComponent),
+                                                                                      nameof(AssemblerComponent.recipeSpecialStackingLogic))));
+
+            return matcher.InstructionEnumeration();
+        }
 
         [HarmonyPatch(typeof(AssemblerComponent), "InternalUpdate")]
         [HarmonyTranspiler]
@@ -31,7 +57,7 @@ namespace ProjectGenesis.Patches.Logic
             matcher.Advance(4).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0), new CodeInstruction(OpCodes.Ldarg_2),
                                                 new CodeInstruction(OpCodes.Call,
                                                                     AccessTools.Method(typeof(ChangeStackingLogicPatches),
-                                                                                       nameof(AssemblerComponent_InsertMethod_Chemical))),
+                                                                                       nameof(AssemblerComponent_InsertMethod))),
                                                 new CodeInstruction(OpCodes.Brtrue_S, label));
 
             // refine
@@ -41,50 +67,14 @@ namespace ProjectGenesis.Patches.Logic
             matcher.Advance(4).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0), new CodeInstruction(OpCodes.Ldarg_2),
                                                 new CodeInstruction(OpCodes.Call,
                                                                     AccessTools.Method(typeof(ChangeStackingLogicPatches),
-                                                                                       nameof(AssemblerComponent_InsertMethod_Refine))),
+                                                                                       nameof(AssemblerComponent_InsertMethod))),
                                                 new CodeInstruction(OpCodes.Brtrue_S, label));
 
             return matcher.InstructionEnumeration();
         }
 
-        public static bool AssemblerComponent_InsertMethod_Refine(ref AssemblerComponent component, int[] productRegister)
-        {
-            if (component.products.Length < 2) return false;
-
-            bool b = false;
-
-            switch (component.recipeId)
-            {
-                case ProtoIDUsedByPatches.R等离子精炼:
-                    b = true;
-                    break;
-            }
-
-            return b && CalcMaxProduct(ref component, productRegister, 19);
-        }
-
-        public static bool AssemblerComponent_InsertMethod_Chemical(ref AssemblerComponent component, int[] productRegister)
-        {
-            if (component.products.Length < 2) return false;
-
-            bool b = false;
-
-            switch (component.recipeId)
-            {
-                case ProtoIDUsedByPatches.R氢氯酸:
-                case ProtoIDUsedByPatches.R海水淡化:
-                case ProtoIDUsedByPatches.R羰基合成:
-                case ProtoIDUsedByPatches.R氨氧化:
-                case ProtoIDUsedByPatches.R三氯化铁:
-                case ProtoIDUsedByPatches.R四氢双环戊二烯:
-                case ProtoIDUsedByPatches.R高效石墨烯:
-                case ProtoIDUsedByPatches.R水电解:
-                    b = true;
-                    break;
-            }
-
-            return b && CalcMaxProduct(ref component, productRegister, 19);
-        }
+        public static bool AssemblerComponent_InsertMethod(ref AssemblerComponent component, int[] productRegister)
+            => component.products.Length > 1 && component.recipeSpecialStackingLogic && CalcMaxProduct(ref component, productRegister, 19);
 
         private static bool CalcMaxProduct(ref AssemblerComponent component, int[] productRegister, int maxproduct)
         {

@@ -415,7 +415,8 @@
     ],
     "Explicit": true,
     "Handcraft": false,
-    "NonProductive": false
+    "NonProductive": false,
+    "SpecialStackingLogic": true
   },
   {
     "ID": 17,
@@ -847,7 +848,8 @@
     ],
     "Explicit": true,
     "Handcraft": false,
-    "NonProductive": false
+    "NonProductive": false,
+    "SpecialStackingLogic": true
   },
   {
     "ID": 33,
@@ -3361,7 +3363,8 @@
     ],
     "Explicit": true,
     "Handcraft": false,
-    "NonProductive": false
+    "NonProductive": false,
+    "SpecialStackingLogic": true
   },
   {
     "ID": 703,
@@ -3389,7 +3392,8 @@
     ],
     "Explicit": true,
     "Handcraft": false,
-    "NonProductive": false
+    "NonProductive": false,
+    "SpecialStackingLogic": true
   },
   {
     "ID": 801,
@@ -3415,7 +3419,8 @@
     ],
     "Explicit": true,
     "Handcraft": true,
-    "NonProductive": false
+    "NonProductive": false,
+    "SpecialStackingLogic": true
   },
   {
     "ID": 422,
@@ -3691,7 +3696,8 @@
     ],
     "Explicit": true,
     "Handcraft": false,
-    "NonProductive": false
+    "NonProductive": false,
+    "SpecialStackingLogic": true
   },
   {
     "ID": 717,
@@ -3719,7 +3725,8 @@
     ],
     "Explicit": true,
     "Handcraft": false,
-    "NonProductive": false
+    "NonProductive": false,
+    "SpecialStackingLogic": true
   },
   {
     "ID": 720,
@@ -3747,7 +3754,8 @@
     ],
     "Explicit": true,
     "Handcraft": false,
-    "NonProductive": false
+    "NonProductive": false,
+    "SpecialStackingLogic": true
   },
   {
     "ID": 793,
@@ -3959,7 +3967,6 @@
       7708
     ],
     "OutCounts": [
-      1,
       1
     ],
     "Explicit": false,
@@ -4486,7 +4493,8 @@
     ],
     "Explicit": true,
     "Handcraft": false,
-    "NonProductive": false
+    "NonProductive": false,
+    "SpecialStackingLogic": true
   },
   {
     "ID": 515,

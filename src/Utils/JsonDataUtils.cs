@@ -149,6 +149,7 @@ namespace ProjectGenesis.Utils
                 proto.GridIndex = recipeJson.GridIndex;
                 proto.IconPath = recipeJson.IconPath;
                 proto.NonProductive = recipeJson.NonProductive;
+                proto.SpecialStackingLogic = recipeJson.SpecialStackingLogic;
             }
 
             #endregion

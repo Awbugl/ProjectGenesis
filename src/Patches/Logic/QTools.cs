@@ -62,68 +62,180 @@ namespace ProjectGenesis.Patches.Logic
 
     internal class NodeDataSet
     {
-        private readonly List<NodeData> _needs = new List<NodeData>(); // final product
+        internal readonly List<NodeData> Byproducts = new List<NodeData>(); // by product
 
-        private readonly List<NodeData> _inputs = new List<NodeData>(); // ore and input
+        internal readonly List<NodeData> Needs = new List<NodeData>(); // final product
 
-        private readonly Dictionary<ItemProto, NodeData> _datas = new Dictionary<ItemProto, NodeData>(); // middle tier products 
+        internal readonly List<NodeData> Inputs = new List<NodeData>(); // ore and input
 
-        private readonly Dictionary<ItemProto, NodeOptions> _customOptions = new Dictionary<ItemProto, NodeOptions>(); // middle tier products 
+        internal readonly Dictionary<ItemProto, NodeData> Datas = new Dictionary<ItemProto, NodeData>(); // middle tier products 
+
+        private readonly Dictionary<ItemProto, NodeOptions> _customOptions = new Dictionary<ItemProto, NodeOptions>();
 
         private readonly Dictionary<Utils.ERecipeType, ItemProto> _defaultMachine = new Dictionary<Utils.ERecipeType, ItemProto>();
 
         private EProliferatorStrategy _defaultStrategy = EProliferatorStrategy.Nonuse;
 
+        internal event Action OnNeedRefreshed;
+
         public void RefreshNeeds()
         {
-            _datas.Clear();
-            _inputs.Clear();
-            
-            foreach (NodeData node in _needs) { }
+            Datas.Clear();
+            Inputs.Clear();
+
+            foreach (NodeData node in Needs)
+            {
+                if (node.Options.AsRaw)
+                {
+                    Inputs.Add(node);
+                    continue;
+                }
+
+                if (_customOptions.TryGetValue(node.Item, out NodeOptions option))
+                {
+                    node.Options = option;
+                    node.RefreshFactoryCount();
+                }
+
+                AddNodeChilds(node);
+            }
+
+            OnNeedRefreshed?.Invoke();
+        }
+
+        private void AddNodeChilds(NodeData node)
+        {
+            if (node.Options.AsRaw)
+            {
+                Inputs.Add(node);
+                return;
+            }
+
+            RecipeProto recipe = node.Options.Recipe;
+
+            int idx = Array.IndexOf(recipe.Results, node.Item.ID);
+
+            int resultsLength = recipe.Results.Length;
+
+            if (resultsLength > 1 && !recipe.SpecialStackingLogic)
+                for (int index = 0; index < resultsLength; index++)
+                {
+                    if (idx != index)
+                    {
+                        ItemProto proto = LDB.items.Select(recipe.Results[index]);
+                        float count = node.ItemCount * recipe.ResultCounts[index] / recipe.ResultCounts[idx];
+                        Byproducts.Add(ItemRaw(proto, count));
+                    }
+                }
+
+            int itemsLength = recipe.Items.Length;
+
+            for (int index = 0; index < itemsLength; index++)
+            {
+                ItemProto proto = LDB.items.Select(recipe.Items[index]);
+                float count = node.ItemCount * recipe.ItemCounts[index] / recipe.ResultCounts[idx];
+                if (node.Options.Strategy == EProliferatorStrategy.ExtraProducts) count *= 0.8f;
+
+                NodeData nodeData = ItemNeed(proto, count);
+                AddNodeChilds(nodeData);
+
+                MergeData(nodeData);
+            }
+        }
+
+        private void MergeData(NodeData nodeData)
+        {
+            if (Datas.TryGetValue(nodeData.Item, out NodeData t))
+            {
+                t.ItemCount += nodeData.ItemCount;
+                t.RefreshFactoryCount();
+            }
+            else
+            {
+                Datas.Add(nodeData.Item, nodeData);
+            }
         }
 
         internal void SetDefaultMachine(Utils.ERecipeType type, ItemProto proto) => _defaultMachine[type] = proto;
 
         internal void SetDefaultStrategy(EProliferatorStrategy strategy) => _defaultStrategy = strategy;
 
-        public NodeData AddItemNeed(ItemProto proto, float count)
+        public void AddItemNeed(ItemProto proto, float count)
         {
+            NodeData data = ItemNeed(proto, count);
+            Needs.Add(data);
+            RefreshNeeds();
+        }
+
+        private NodeData ItemNeed(ItemProto proto, float count)
+        {
+            if (_customOptions.TryGetValue(proto, out NodeOptions option))
+            {
+                if (option.AsRaw) return ItemRaw(proto, count, option);
+
+                NodeData data = ItemNeed(proto, count, option);
+                data.RefreshFactoryCount();
+                return data;
+            }
+
             RecipeProto recipe = proto.recipes.FirstOrDefault();
-            
-            if (recipe == null)
+            Utils.ERecipeType type = (Utils.ERecipeType?)recipe?.Type ?? Utils.ERecipeType.None;
+
+            if (type == Utils.ERecipeType.None)
             {
-                recipe = new RecipeProto()
-                         {
-                             _iconSprite = LDB.signals.IconSprite(509),
-                             name = "",
-                             Type = ERecipeType.None,
-                             GridIndex = 0,
-                             TimeSpend = 60,
-                             Items = new int[] { },
-                             ItemCounts = new int[] { },
-                             Results = new int[] { proto.ID },
-                             ResultCounts = new int[] { 1 }
-                         };
+                return ItemRaw(proto, count);
             }
-
-            var type = (Utils.ERecipeType)recipe.Type;
-
-            ItemProto factory = _defaultMachine[type];
-
-            if (factory == null)
+            else
             {
-                factory = QTools.RecipeTypeFactoryMap[type][0];
-                SetDefaultMachine(type, factory);
-            }
+                if (!_defaultMachine.TryGetValue(type, out ItemProto factory))
+                {
+                    factory = QTools.RecipeTypeFactoryMap[type][0];
+                    SetDefaultMachine(type, factory);
+                }
 
+                return ItemNeed(proto, count, factory, recipe);
+            }
+        }
+
+        private NodeData ItemRaw(ItemProto proto, float count, NodeOptions option)
+        {
+            var data = new NodeData { DataSet = this, Item = proto, ItemCount = count, Options = option };
+            return data;
+        }
+
+        private NodeData ItemRaw(ItemProto proto, float count)
+        {
             var data = new NodeData
                        {
-                           DataSet = this, Item = proto, ItemCount = count, Options = new NodeOptions(proto, factory, recipe, _defaultStrategy)
+                           DataSet = this, Item = proto, ItemCount = count, Options = new NodeOptions(proto, null, null, _defaultStrategy, true)
+                       };
+
+            data.Options.OnOptionsChange += OnOptionsChange;
+
+            return data;
+        }
+
+        private NodeData ItemNeed(ItemProto proto, float count, NodeOptions option)
+        {
+            var data = new NodeData { DataSet = this, Item = proto, ItemCount = count, Options = option };
+
+            data.RefreshFactoryCount();
+            return data;
+        }
+
+        private NodeData ItemNeed(
+            ItemProto proto,
+            float count,
+            ItemProto factory,
+            RecipeProto recipe)
+        {
+            var data = new NodeData
+                       {
+                           DataSet = this, Item = proto, ItemCount = count, Options = new NodeOptions(proto, factory, recipe, _defaultStrategy, false)
                        };
 
             data.RefreshFactoryCount();
             data.Options.OnOptionsChange += OnOptionsChange;
-            _needs.Add(data);
             return data;
         }
 
@@ -163,9 +275,9 @@ namespace ProjectGenesis.Patches.Logic
     internal class NodeOptions
     {
         internal ItemProto Item { get; }
-        
+
         internal float FactoryCount { get; set; }
-        
+
         internal NodeOptions(
             ItemProto item,
             ItemProto factory,
@@ -195,7 +307,7 @@ namespace ProjectGenesis.Patches.Logic
         }
 
         private bool _asRaw;
-        
+
         internal bool AsRaw
         {
             get => _asRaw;
@@ -205,7 +317,7 @@ namespace ProjectGenesis.Patches.Logic
                 OnOptionsChange?.Invoke(this);
             }
         }
-        
+
         private RecipeProto _recipe;
 
         internal RecipeProto Recipe

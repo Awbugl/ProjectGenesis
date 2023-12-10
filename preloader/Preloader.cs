@@ -46,6 +46,9 @@ namespace ProjectGenesis
 
             assembly.AddTypeField("PlanetData", "birthResourcePoint0", "birthResourcePoint2");
             assembly.AddTypeField("GameDesc", "isSandboxMode", "isFastStartMode");
+            
+            assembly.AddTypeField("RecipeProto", "Handcraft", "SpecialStackingLogic");
+            assembly.AddTypeField("AssemblerComponent", "productive", "recipeSpecialStackingLogic");
         }
     }
 }
