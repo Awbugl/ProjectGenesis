@@ -138,7 +138,12 @@ namespace ProjectGenesis
                                       where t.IsClass && !string.IsNullOrWhiteSpace(t.Namespace) && t.Namespace.StartsWith("ProjectGenesis.Patches")
                                       select t;
 
-            foreach (Type type in types) Harmony.PatchAll(type);
+            foreach (Type type in types)
+            {
+                Harmony.PatchAll(type);
+
+                GC.Collect();
+            }
 
             ModifyVeinData();
 
