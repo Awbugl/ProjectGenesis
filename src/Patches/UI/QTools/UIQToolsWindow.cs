@@ -60,7 +60,7 @@ namespace ProjectGenesis.Patches.UI.QTools
 
         private NodeDataSet _data;
         private ObjectPool<ProductDetail> _productDetailPool;
-        private ObjectPool<ItemCounter> _itemCounterPool;
+        private ObjectPool<ItemNeedDetail> _itemCounterPool;
         private ObjectPool<ItemNeedDetail> _needPool;
 
         private void CreateUI()
@@ -144,7 +144,7 @@ namespace ProjectGenesis.Patches.UI.QTools
 
             _data = new NodeDataSet();
             _productDetailPool = new ObjectPool<ProductDetail>(GetProductDetail);
-            _itemCounterPool = new ObjectPool<ItemCounter>(GetItemCounter);
+            _itemCounterPool = new ObjectPool<ItemNeedDetail>(GetItemCounter);
             _needPool = new ObjectPool<ItemNeedDetail>(GetItemNeedDetail);
 
             foreach (KeyValuePair<Utils_ERecipeType, ItemComboBox> pair in _recipeMachines)
@@ -167,7 +167,7 @@ namespace ProjectGenesis.Patches.UI.QTools
         {
             _productDetailPool.RecycleAll();
 
-            int y = 40;
+            int y = 20;
 
             foreach (NodeData t in _data.Datas.Values)
             {
@@ -228,11 +228,11 @@ namespace ProjectGenesis.Patches.UI.QTools
 
             foreach (NodeData t in _data.Raws.Values)
             {
-                ItemCounter counter = _itemCounterPool.Alloc();
+                ItemNeedDetail counter = _itemCounterPool.Alloc();
                 counter.SetPos(x, y);
                 counter.SetData(t);
 
-                x += 45;
+                x += 200;
 
                 if (x > 350)
                 {
@@ -248,11 +248,11 @@ namespace ProjectGenesis.Patches.UI.QTools
 
             foreach (NodeData t in _data.Byproducts.Values)
             {
-                ItemCounter counter = _itemCounterPool.Alloc();
+                ItemNeedDetail counter = _itemCounterPool.Alloc();
                 counter.SetPos(x, y);
                 counter.SetData(t);
 
-                x += 40;
+                x += 200;
 
                 if (x > 350)
                 {
@@ -264,7 +264,7 @@ namespace ProjectGenesis.Patches.UI.QTools
 
         private ProductDetail GetProductDetail() => ProductDetail.CreateProductDetail(0, 40, _listContent);
 
-        private ItemCounter GetItemCounter() => ItemCounter.CreateItemCounter(0, 40, _rightContent);
+        private ItemNeedDetail GetItemCounter() => ItemNeedDetail.CreateItemNeedDetail(0, 40, _rightContent, false);
 
         private ItemNeedDetail GetItemNeedDetail() => ItemNeedDetail.CreateItemNeedDetail(0, 40, _rightContent);
 

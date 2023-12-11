@@ -136,7 +136,6 @@
         <Compile Include="src\Patches\UI\GridIndexExpandPatches.cs"/>
         <Compile Include="src\Patches\UI\HarmonyLogPatches.cs"/>
         <Compile Include="src\Patches\UI\MultiProductionPatches.cs"/>
-        <Compile Include="src\Patches\UI\QTools\ItemCounter.cs" />
         <Compile Include="src\Patches\UI\QTools\ItemNeedDetail.cs" />
         <Compile Include="src\Patches\UI\QTools\ObjectPool.cs" />
         <Compile Include="src\Patches\UI\UIAbnormalityTipPatches.cs"/>
