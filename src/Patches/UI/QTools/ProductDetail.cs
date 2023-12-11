@@ -125,6 +125,7 @@ namespace ProjectGenesis.Patches.UI.QTools
             var type = (Utils_ERecipeType)recipe.Type;
             List<ItemProto> recipeTypeFactory = Logic.QTools.RecipeTypeFactoryMap[type];
             int index = recipeTypeFactory.IndexOf(data.Options.Factory);
+            
             factoryComboBox.Init(type, recipeTypeFactory, index);
             factoryComboBox.OnItemChange += OnFactoryChange;
 
@@ -206,7 +207,7 @@ namespace ProjectGenesis.Patches.UI.QTools
         {
             if (_data.Item.recipes.Count < 2) return;
 
-            UIRecipePickerExtension.Popup(VFInput.mouseMoveAxis, OnRecipePickerReturn, true, Filter);
+            UIRecipePickerExtension.Popup(new Vector2(-400f, 300f), OnRecipePickerReturn, true, Filter);
 
             if (_recipePickerTranslucentImageGameObject == null)
                 _recipePickerTranslucentImageGameObject = UIRoot.instance.uiGame.recipePicker.GetComponentInChildren<TranslucentImage>().gameObject;
@@ -224,6 +225,7 @@ namespace ProjectGenesis.Patches.UI.QTools
             if (refresh)
             {
                 _data.Options.Recipe = recipeProto;
+                _data.CheckFactory();
                 RefreshFactoryCount();
                 UpdateNeeds();
             }

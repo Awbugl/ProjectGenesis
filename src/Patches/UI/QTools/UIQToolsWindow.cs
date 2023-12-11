@@ -50,10 +50,13 @@ namespace ProjectGenesis.Patches.UI.QTools
         private UIButton _selectItemButton;
         private UIButton _clearNeedsButton;
 
+        private UIButton _clearOptionsButton;
+
         private Text _needLabelText;
         private Text _asRawsLabelText;
         private Text _rawsLabelText;
         private Text _byproductsLabelText;
+        private Text _factoryLabelText;
 
         private ProliferatorComboBox _proliferatorComboBox;
         private Dictionary<Utils_ERecipeType, ItemComboBox> _recipeMachines;
@@ -82,6 +85,9 @@ namespace ProjectGenesis.Patches.UI.QTools
 
             _proliferatorComboBox = MyComboBox.MyComboBox.CreateComboBox<ProliferatorComboBox>(30, 290, _tabs[0], "默认增产策略");
 
+            _clearOptionsButton = Util.MakeHiliteTextButton("清空设置".TranslateFromJson(), 80, 24);
+            Util.NormalizeRectWithTopLeft(_clearOptionsButton, 1635, 2, _labelTextPrefeb.transform);
+
             CreateLabelText("工厂", 255, 0);
             CreateLabelText("配方选取", 415, 0);
             CreateLabelText("增产策略", 850, 0);
@@ -102,6 +108,9 @@ namespace ProjectGenesis.Patches.UI.QTools
 
             _byproductsLabelText = Util.CreateLabelText(_labelTextPrefeb, "副产物：".TranslateFromJson());
             Util.NormalizeRectWithTopLeft(_byproductsLabelText, 20, 360, _rightContent);
+
+            _factoryLabelText = Util.CreateLabelText(_labelTextPrefeb, "工厂：".TranslateFromJson());
+            Util.NormalizeRectWithTopLeft(_factoryLabelText, 20, 460, _rightContent);
 
             GameObject inputObj = GameObject.Find("UI Root/Overlay Canvas/In Game/Planet & Star Details/planet-detail-ui/name-input");
             GameObject go = Instantiate(inputObj, _rightContent);
@@ -128,6 +137,9 @@ namespace ProjectGenesis.Patches.UI.QTools
             _tabButtons[0].onClick += OnTabButtonClick;
             _tabButtons[1].onClick += OnTabButtonClick;
 
+            _clearOptionsButton.button.onClick.RemoveAllListeners();
+            _clearOptionsButton.button.onClick.AddListener(OnClearOptionsButtonClick);
+
             _addItemCountInput.onValueChanged.RemoveAllListeners();
             _addItemCountInput.onValueChanged.AddListener(OnInputValueChanged);
             _addItemCountInput.characterValidation = InputField.CharacterValidation.Decimal;
@@ -139,8 +151,6 @@ namespace ProjectGenesis.Patches.UI.QTools
             _clearNeedsButton.button.onClick.AddListener(OnClearNeedsButtonClick);
 
             _tabs[0].gameObject.SetActive(true);
-
-            if (RecipeTypeFactoryMap == null) RecipeTypeFactoryMap = GetFactoryDict();
 
             _data = new NodeDataSet();
             _productDetailPool = new ObjectPool<ProductDetail>(GetProductDetail);
@@ -181,84 +191,106 @@ namespace ProjectGenesis.Patches.UI.QTools
 
             _needPool.RecycleAll();
 
-            int x = 20;
+            int x = -180;
             y = 100;
 
             foreach (NodeData t in _data.Needs.Values)
             {
-                ItemNeedDetail counter = _needPool.Alloc();
-                counter.SetPos(x, y);
-                counter.SetData(t);
-
                 x += 200;
 
                 if (x > 350)
                 {
                     x = 20;
-                    y += 40;
+                    y += 45;
                 }
+
+                ItemNeedDetail counter = _needPool.Alloc();
+                counter.SetPos(x, y);
+                counter.SetData(t, true);
             }
 
             Util.NormalizeRectWithTopLeft(_asRawsLabelText, 20, y + 60, _rightContent);
 
-            x = 20;
+            x = -180;
             y += 100;
 
             foreach (NodeData t in _data.AsRaws.Values)
             {
-                ItemNeedDetail counter = _needPool.Alloc();
-                counter.SetPos(x, y);
-                counter.SetData(t, false);
-
                 x += 200;
 
                 if (x > 350)
                 {
                     x = 20;
-                    y += 40;
+                    y += 45;
                 }
+
+                ItemNeedDetail counter = _needPool.Alloc();
+                counter.SetPos(x, y);
+                counter.SetData(t);
             }
 
             _itemCounterPool.RecycleAll();
 
             Util.NormalizeRectWithTopLeft(_rawsLabelText, 20, y + 60, _rightContent);
 
-            x = 20;
+            x = -180;
             y += 100;
 
             foreach (NodeData t in _data.Raws.Values)
             {
-                ItemNeedDetail counter = _itemCounterPool.Alloc();
-                counter.SetPos(x, y);
-                counter.SetData(t);
-
                 x += 200;
 
                 if (x > 350)
                 {
                     x = 20;
-                    y += 40;
+                    y += 45;
                 }
+
+                ItemNeedDetail counter = _itemCounterPool.Alloc();
+                counter.SetPos(x, y);
+                counter.SetData(t);
             }
 
             Util.NormalizeRectWithTopLeft(_byproductsLabelText, 20, y + 60, _rightContent);
 
-            x = 20;
+            x = -180;
             y += 100;
 
             foreach (NodeData t in _data.Byproducts.Values)
             {
-                ItemNeedDetail counter = _itemCounterPool.Alloc();
-                counter.SetPos(x, y);
-                counter.SetData(t);
-
                 x += 200;
 
                 if (x > 350)
                 {
                     x = 20;
-                    y += 40;
+                    y += 45;
                 }
+
+                ItemNeedDetail counter = _itemCounterPool.Alloc();
+                counter.SetPos(x, y);
+                counter.SetData(t);
+            }
+
+            Util.NormalizeRectWithTopLeft(_factoryLabelText, 20, y + 60, _rightContent);
+
+            x = -180;
+            y += 100;
+
+            _data.CalcFactories();
+
+            foreach (NodeData t in _data.Factories.Values)
+            {
+                x += 200;
+
+                if (x > 350)
+                {
+                    x = 20;
+                    y += 45;
+                }
+
+                ItemNeedDetail counter = _itemCounterPool.Alloc();
+                counter.SetPos(x, y);
+                counter.SetData(t, false, "F0");
             }
         }
 
@@ -278,7 +310,7 @@ namespace ProjectGenesis.Patches.UI.QTools
 
         public void OnItemSelectButtonClick()
         {
-            UIItemPickerExtension.Popup(new Vector2(-300f, -50f), OnItemSelectReturn, true, null);
+            UIItemPickerExtension.Popup(new Vector2(-400f, 300f), OnItemSelectReturn, true, null);
 
             if (_itemPickerTranslucentImageGameObject == null)
                 _itemPickerTranslucentImageGameObject = UIRoot.instance.uiGame.itemPicker.GetComponentInChildren<TranslucentImage>().gameObject;
@@ -286,6 +318,8 @@ namespace ProjectGenesis.Patches.UI.QTools
             _itemPickerTranslucentImageGameObject.SetActive(false);
             UIRoot.instance.uiGame.itemPicker.transform.SetAsLastSibling();
         }
+
+        public void OnClearOptionsButtonClick() => _data.ClearOptions();
 
         public void OnClearNeedsButtonClick() => _data.ClearNeeds();
 

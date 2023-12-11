@@ -107,6 +107,7 @@ namespace ProjectGenesis.Compatibility
                 {
                     itemProto.recipes = null;
                     AccessTools.Method(typeof(ItemProto), "FindRecipes").Invoke(itemProto, null);
+                    itemProto.isRaw = true;
                 }
             }
 

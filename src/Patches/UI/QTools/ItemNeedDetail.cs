@@ -66,12 +66,12 @@ namespace ProjectGenesis.Patches.UI.QTools
 
         internal void SetPos(float x, float y) => _rect = Util.NormalizeRectWithTopLeft(this, x, y);
 
-        internal void SetData(NodeData data, bool isNeed = true)
+        internal void SetData(NodeData data, bool isNeed = false, string format = "F2")
         {
             _isNeed = isNeed;
             _data = data;
             _image.sprite = data.Item.iconSprite;
-            _countText.text = data.ItemCount.ToString("F2");
+            _countText.text = data.ItemCount.ToString(format);
         }
     }
 }
