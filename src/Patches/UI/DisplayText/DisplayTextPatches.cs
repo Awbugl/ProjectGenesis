@@ -148,5 +148,9 @@ namespace ProjectGenesis.Patches.UI.DisplayText
                     break;
             }
         }
+
+        [HarmonyPostfix]
+        [HarmonyPatch(typeof(ItemProto), "FindRecipes")]
+        public static void ItemProto_FindRecipes(ItemProto __instance) => __instance.isRaw = __instance.recipes.Count == 0;
     }
 }

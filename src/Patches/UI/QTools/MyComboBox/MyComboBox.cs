@@ -53,7 +53,7 @@ namespace ProjectGenesis.Patches.UI.QTools.MyComboBox
             return cb;
         }
 
-        protected void Init(List<string> items, int defaultSprite = 509)
+        protected void Init(List<string> items, int itemIndex, int defaultSprite)
         {
             comboBox.Items = items;
             DefaultSprite = defaultSprite;
@@ -62,7 +62,7 @@ namespace ProjectGenesis.Patches.UI.QTools.MyComboBox
             comboBox.UpdateItems();
             comboBox.onItemIndexChange.RemoveAllListeners();
             comboBox.onItemIndexChange.AddListener(ComboBoxIndexChange);
-            comboBox.itemIndex = 0;
+            comboBox.itemIndex = itemIndex;
         }
 
         public void OnUIButtonClick() => comboBox.itemIndex = (comboBox.itemIndex + 1) % comboBox.Items.Count;

@@ -7,6 +7,8 @@ namespace ProjectGenesis.Patches.Logic
 {
     internal static class QTools
     {
+        internal static readonly ItemProto ProliferatorProto = LDB.items.Select(1143);
+
         internal static Dictionary<Utils.ERecipeType, List<ItemProto>> RecipeTypeFactoryMap;
 
         internal static Dictionary<Utils.ERecipeType, List<ItemProto>> GetFactoryDict()
@@ -19,7 +21,12 @@ namespace ProjectGenesis.Patches.Logic
             {
                 PrefabDesc protoPrefabDesc = proto.prefabDesc;
 
-                if (!protoPrefabDesc.isAssembler) continue;
+                if (!protoPrefabDesc.isAssembler)
+                {
+                    if (protoPrefabDesc.isLab) dict.TryAddOrInsert(Utils.ERecipeType.Research, proto);
+
+                    continue;
+                }
 
                 var filter = (Utils.ERecipeType)protoPrefabDesc.assemblerRecipeType;
                 if (filter == Utils.ERecipeType.None) continue;
@@ -62,11 +69,13 @@ namespace ProjectGenesis.Patches.Logic
 
     internal class NodeDataSet
     {
-        internal readonly List<NodeData> Byproducts = new List<NodeData>(); // by product
+        internal readonly Dictionary<ItemProto, NodeData> Byproducts = new Dictionary<ItemProto, NodeData>(); // by product
 
-        internal readonly List<NodeData> Needs = new List<NodeData>(); // final product
+        internal readonly Dictionary<ItemProto, NodeData> Needs = new Dictionary<ItemProto, NodeData>(); // final product
 
-        internal readonly List<NodeData> Inputs = new List<NodeData>(); // ore and input
+        internal readonly Dictionary<ItemProto, NodeData> Raws = new Dictionary<ItemProto, NodeData>(); // ore
+
+        internal readonly Dictionary<ItemProto, NodeData> AsRaws = new Dictionary<ItemProto, NodeData>(); // AsRaws
 
         internal readonly Dictionary<ItemProto, NodeData> Datas = new Dictionary<ItemProto, NodeData>(); // middle tier products 
 
@@ -74,42 +83,91 @@ namespace ProjectGenesis.Patches.Logic
 
         private readonly Dictionary<Utils.ERecipeType, ItemProto> _defaultMachine = new Dictionary<Utils.ERecipeType, ItemProto>();
 
+        private float ProliferatorCount => _totalProliferatedItemCount / 74;
+
+        private float _totalProliferatedItemCount;
+
         private EProliferatorStrategy _defaultStrategy = EProliferatorStrategy.Nonuse;
 
         internal event Action OnNeedRefreshed;
 
         public void RefreshNeeds()
         {
+            _totalProliferatedItemCount = 0f;
             Datas.Clear();
-            Inputs.Clear();
+            Raws.Clear();
+            AsRaws.Clear();
+            Byproducts.Clear();
 
-            foreach (NodeData node in Needs)
+            foreach (NodeData node in Needs.Values)
             {
-                if (node.Options.AsRaw)
-                {
-                    Inputs.Add(node);
-                    continue;
-                }
-
-                if (_customOptions.TryGetValue(node.Item, out NodeOptions option))
-                {
-                    node.Options = option;
-                    node.RefreshFactoryCount();
-                }
+                if (_customOptions.TryGetValue(node.Item, out NodeOptions option)) node.Options = option;
 
                 AddNodeChilds(node);
             }
 
+            // ReSharper disable once LoopCanBePartlyConvertedToQuery
+            foreach (NodeData node in Byproducts.Values.ToArray())
+            {
+                if (ReuseByProducts(node, AsRaws))
+                {
+                    ReuseByProducts(node, Raws);
+                }
+            }
+
+            if (_totalProliferatedItemCount > 0) MergeRaws(ItemRaw(QTools.ProliferatorProto, ProliferatorCount));
+
             OnNeedRefreshed?.Invoke();
+        }
+
+        private bool ReuseByProducts(NodeData node, Dictionary<ItemProto, NodeData> datas)
+        {
+            if (datas.TryGetValue(node.Item, out NodeData t))
+            {
+                if (t.ItemCount >= node.ItemCount)
+                {
+                    t.ItemCount -= node.ItemCount;
+
+                    Byproducts.Remove(node.Item);
+
+                    if (t.ItemCount < 1e-6) datas.Remove(t.Item);
+
+                    return false;
+                }
+                else
+                {
+                    node.ItemCount -= t.ItemCount;
+
+                    datas.Remove(t.Item);
+
+                    if (node.ItemCount < 1e-6)
+                    {
+                        Byproducts.Remove(node.Item);
+                        return false;
+                    }
+
+                    return true;
+                }
+            }
+
+            return true;
         }
 
         private void AddNodeChilds(NodeData node)
         {
-            if (node.Options.AsRaw)
+            if (node.Item.isRaw)
             {
-                Inputs.Add(node);
+                MergeRaws(node);
                 return;
             }
+
+            if (node.Options.AsRaw)
+            {
+                MergeAsRaws(node);
+                return;
+            }
+
+            MergeData(node);
 
             RecipeProto recipe = node.Options.Recipe;
 
@@ -117,14 +175,14 @@ namespace ProjectGenesis.Patches.Logic
 
             int resultsLength = recipe.Results.Length;
 
-            if (resultsLength > 1 && !recipe.SpecialStackingLogic)
+            if (resultsLength > 1)
                 for (int index = 0; index < resultsLength; index++)
                 {
                     if (idx != index)
                     {
                         ItemProto proto = LDB.items.Select(recipe.Results[index]);
                         float count = node.ItemCount * recipe.ResultCounts[index] / recipe.ResultCounts[idx];
-                        Byproducts.Add(ItemRaw(proto, count));
+                        MergeByproducts(ItemRaw(proto, count));
                     }
                 }
 
@@ -134,26 +192,45 @@ namespace ProjectGenesis.Patches.Logic
             {
                 ItemProto proto = LDB.items.Select(recipe.Items[index]);
                 float count = node.ItemCount * recipe.ItemCounts[index] / recipe.ResultCounts[idx];
+
                 if (node.Options.Strategy == EProliferatorStrategy.ExtraProducts) count *= 0.8f;
 
-                NodeData nodeData = ItemNeed(proto, count);
-                AddNodeChilds(nodeData);
+                if (node.Options.Strategy != EProliferatorStrategy.Nonuse) _totalProliferatedItemCount += count;
 
-                MergeData(nodeData);
+                NodeData nodeData = ItemNeed(proto, count);
+
+                AddNodeChilds(nodeData);
             }
         }
 
-        private void MergeData(NodeData nodeData)
+        private NodeData MergeNode(Dictionary<ItemProto, NodeData> datas, NodeData node)
         {
-            if (Datas.TryGetValue(nodeData.Item, out NodeData t))
+            if (datas.TryGetValue(node.Item, out NodeData t))
             {
-                t.ItemCount += nodeData.ItemCount;
-                t.RefreshFactoryCount();
+                t.ItemCount += node.ItemCount;
+                return t;
             }
             else
             {
-                Datas.Add(nodeData.Item, nodeData);
+                datas.Add(node.Item, node);
+                return node;
             }
+        }
+
+        private void MergeData(NodeData node) => MergeNode(Datas, node).RefreshFactoryCount();
+
+        private void MergeNeeds(NodeData node) => MergeNode(Needs, node);
+
+        private void MergeRaws(NodeData node) => MergeNode(Raws, node);
+
+        private void MergeAsRaws(NodeData node) => MergeNode(AsRaws, node);
+
+        private void MergeByproducts(NodeData node) => MergeNode(Byproducts, node);
+
+        public void ClearNeeds()
+        {
+            Needs.Clear();
+            RefreshNeeds();
         }
 
         internal void SetDefaultMachine(Utils.ERecipeType type, ItemProto proto) => _defaultMachine[type] = proto;
@@ -163,7 +240,13 @@ namespace ProjectGenesis.Patches.Logic
         public void AddItemNeed(ItemProto proto, float count)
         {
             NodeData data = ItemNeed(proto, count);
-            Needs.Add(data);
+            MergeNeeds(data);
+            RefreshNeeds();
+        }
+
+        public void RemoveNeed(NodeData nodeData)
+        {
+            Needs.Remove(nodeData.Item);
             RefreshNeeds();
         }
 
@@ -171,7 +254,7 @@ namespace ProjectGenesis.Patches.Logic
         {
             if (_customOptions.TryGetValue(proto, out NodeOptions option))
             {
-                if (option.AsRaw) return ItemRaw(proto, count, option);
+                if (proto.isRaw || option.AsRaw) return ItemRaw(proto, count, option);
 
                 NodeData data = ItemNeed(proto, count, option);
                 data.RefreshFactoryCount();
@@ -207,7 +290,10 @@ namespace ProjectGenesis.Patches.Logic
         {
             var data = new NodeData
                        {
-                           DataSet = this, Item = proto, ItemCount = count, Options = new NodeOptions(proto, null, null, _defaultStrategy, true)
+                           DataSet = this,
+                           Item = proto,
+                           ItemCount = count,
+                           Options = new NodeOptions(proto, null, null, EProliferatorStrategy.Nonuse, true)
                        };
 
             data.Options.OnOptionsChange += OnOptionsChange;
@@ -229,9 +315,13 @@ namespace ProjectGenesis.Patches.Logic
             ItemProto factory,
             RecipeProto recipe)
         {
+            EProliferatorStrategy strategy = _defaultStrategy;
+
+            if (strategy == EProliferatorStrategy.ExtraProducts && !recipe.productive) strategy = EProliferatorStrategy.Nonuse;
+
             var data = new NodeData
                        {
-                           DataSet = this, Item = proto, ItemCount = count, Options = new NodeOptions(proto, factory, recipe, _defaultStrategy, false)
+                           DataSet = this, Item = proto, ItemCount = count, Options = new NodeOptions(proto, factory, recipe, strategy, false)
                        };
 
             data.RefreshFactoryCount();
@@ -251,9 +341,15 @@ namespace ProjectGenesis.Patches.Logic
 
         internal void RefreshFactoryCount()
         {
+            PrefabDesc factoryPrefabDesc = Options.Factory.prefabDesc;
+
+            float assemblerSpeed = factoryPrefabDesc.assemblerSpeed;
+
+            if (factoryPrefabDesc.isLab) assemblerSpeed = factoryPrefabDesc.labAssembleSpeed * 10000;
+
             int idx = Array.IndexOf(Options.Recipe.Results, Item.ID);
 
-            float count = ItemCount * Options.Recipe.TimeSpend / Options.Recipe.ResultCounts[idx] / Options.Factory.prefabDesc.assemblerSpeed / 0.36f;
+            float count = ItemCount * Options.Recipe.TimeSpend / Options.Recipe.ResultCounts[idx] / assemblerSpeed / 0.36f;
 
             switch (Options.Strategy)
             {
@@ -270,6 +366,8 @@ namespace ProjectGenesis.Patches.Logic
         }
 
         internal void UpdateNeeds() => DataSet.RefreshNeeds();
+
+        public void RemoveNeed() => DataSet.RemoveNeed(this);
     }
 
     internal class NodeOptions

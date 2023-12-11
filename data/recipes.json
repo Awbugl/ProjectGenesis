@@ -415,8 +415,7 @@
     ],
     "Explicit": true,
     "Handcraft": false,
-    "NonProductive": false,
-    "SpecialStackingLogic": true
+    "NonProductive": false
   },
   {
     "ID": 17,
@@ -848,8 +847,7 @@
     ],
     "Explicit": true,
     "Handcraft": false,
-    "NonProductive": false,
-    "SpecialStackingLogic": true
+    "NonProductive": false
   },
   {
     "ID": 33,
@@ -3314,32 +3312,6 @@
     "NonProductive": false
   },
   {
-    "ID": 701,
-    "Name": "光子自增殖",
-    "Description": "R光子自增殖",
-    "IconPath": "",
-    "Type": 13,
-    "GridIndex": 3106,
-    "Time": 3600,
-    "Input": [
-      6272
-    ],
-    "InCounts": [
-      1
-    ],
-    "Output": [
-      1208,
-      6272
-    ],
-    "OutCounts": [
-      1,
-      1
-    ],
-    "Explicit": true,
-    "Handcraft": false,
-    "NonProductive": true
-  },
-  {
     "ID": 702,
     "Name": "水电解",
     "Description": "R水电解",
@@ -3363,8 +3335,7 @@
     ],
     "Explicit": true,
     "Handcraft": false,
-    "NonProductive": false,
-    "SpecialStackingLogic": true
+    "NonProductive": false
   },
   {
     "ID": 703,
@@ -3392,8 +3363,7 @@
     ],
     "Explicit": true,
     "Handcraft": false,
-    "NonProductive": false,
-    "SpecialStackingLogic": true
+    "NonProductive": false
   },
   {
     "ID": 801,
@@ -3419,8 +3389,7 @@
     ],
     "Explicit": true,
     "Handcraft": true,
-    "NonProductive": false,
-    "SpecialStackingLogic": true
+    "NonProductive": false
   },
   {
     "ID": 422,
@@ -3696,8 +3665,7 @@
     ],
     "Explicit": true,
     "Handcraft": false,
-    "NonProductive": false,
-    "SpecialStackingLogic": true
+    "NonProductive": false
   },
   {
     "ID": 717,
@@ -3725,8 +3693,7 @@
     ],
     "Explicit": true,
     "Handcraft": false,
-    "NonProductive": false,
-    "SpecialStackingLogic": true
+    "NonProductive": false
   },
   {
     "ID": 720,
@@ -3754,8 +3721,7 @@
     ],
     "Explicit": true,
     "Handcraft": false,
-    "NonProductive": false,
-    "SpecialStackingLogic": true
+    "NonProductive": false
   },
   {
     "ID": 793,
@@ -4493,8 +4459,7 @@
     ],
     "Explicit": true,
     "Handcraft": false,
-    "NonProductive": false,
-    "SpecialStackingLogic": true
+    "NonProductive": false
   },
   {
     "ID": 515,

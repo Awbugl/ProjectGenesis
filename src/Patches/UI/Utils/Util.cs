@@ -12,7 +12,7 @@ namespace ProjectGenesis.Patches.UI.Utils
         private static readonly UIButton OrbitAddButton = UIRoot.instance.uiGame.dysonEditor.controlPanel.hierarchy.swarmPanel.orbitAddButton;
         private static readonly GameObject TransformGameObject = UIRoot.instance.uiGame.beltWindow.iconTagButton.transform.gameObject;
         private static readonly UIAssemblerWindow UIGameAssemblerWindow = UIRoot.instance.uiGame.assemblerWindow;
-        private static readonly UIButton CategoryButton = UIRoot.instance.uiGame.functionPanel.buildMenu.categoryButtons[0];
+        private static readonly UIButton CategoryButton = UIRoot.instance.uiGame.functionPanel.buildMenu.categoryButtons[1];
 
         internal static RectTransform NormalizeRectWithTopLeft(
             Component cmp,
@@ -114,9 +114,6 @@ namespace ProjectGenesis.Patches.UI.Utils
             btnText.text = text;
             btnText.fontSize = 17;
             btnImage.sprite = img;
-
-            Object.Destroy(btn.transform.Find("Text").GetComponent<Localizer>());
-
             return btn;
         }
 
@@ -143,22 +140,134 @@ namespace ProjectGenesis.Patches.UI.Utils
             iconImage = rect.GetComponent<Image>();
         }
 
-        internal static void CreateSignalImage(out Image iconImage)
+        public static UIButton MakeIconButtonB(Sprite sprite, float size = 60)
         {
-            GameObject go = Object.Instantiate(TransformGameObject);
-
-            go.name = "signal-button";
-            go.SetActive(true);
+            GameObject go = Object.Instantiate(UIRoot.instance.uiGame.researchQueue.pauseButton.gameObject);
+            var btn = go.GetComponent<UIButton>();
             var rect = (RectTransform)go.transform;
+            //rect.sizeDelta = new Vector2(size, size);
+            float scale = size / 60;
+            rect.localScale = new Vector3(scale, scale, scale);
+            var img = go.transform.Find("icon")?.GetComponent<Image>();
+            if (img != null)
+            {
+                img.sprite = sprite;
+            }
 
+            btn.tips.tipText = "";
+            btn.tips.tipTitle = "";
+            btn.tips.delay = 0.7f;
+            return btn;
+        }
+
+        private static void RemovePersistentCalls(GameObject go)
+        {
+            var oldbutton = go.GetComponent<Button>();
+            var btn = go.GetComponent<UIButton>();
+            if (btn != null && oldbutton != null)
+            {
+                Object.DestroyImmediate(oldbutton);
+                btn.button = go.AddComponent<Button>();
+            }
+        }
+
+        public static UIButton MakeIconButtonC(Sprite sprite, float size = 30)
+        {
+            GameObject src = UIRoot.instance.uiGame.starmap.northButton.transform.parent.Find("tip")?.gameObject;
+            GameObject go = Object.Instantiate(src);
+
+            RemovePersistentCalls(go);
+            var btn = go.GetComponent<UIButton>();
+            var rect = (RectTransform)go.transform;
             for (int i = rect.childCount - 1; i >= 0; --i)
             {
                 Object.Destroy(rect.GetChild(i).gameObject);
             }
 
-            var iconButton = rect.GetComponent<UIButton>();
-            Object.Destroy(iconButton);
-            iconImage = rect.GetComponent<Image>();
+            rect.DetachChildren();
+
+            if (size > 0)
+            {
+                rect.sizeDelta = new Vector2(size, size);
+                //float scale = size / rect.sizeDelta.y; //y=30
+                //rect.localScale = new Vector3(scale, scale, scale);
+            }
+
+            var img = go.GetComponent<Image>();
+            if (img != null)
+            {
+                img.sprite = sprite;
+            }
+
+            btn.tips.tipText = "";
+            btn.tips.tipTitle = "";
+            btn.tips.delay = 0.6f;
+
+            if (btn.transitions != null && btn.transitions.Length > 0)
+            {
+                btn.transitions = new UIButton.Transition[] { btn.transitions[0] };
+            }
+
+            return btn;
+        }
+
+        public static UIButton MakeSmallTextButton(string label = "", float width = 0, float height = 0)
+        {
+            UIAssemblerWindow assemblerWindow = UIRoot.instance.uiGame.assemblerWindow;
+            GameObject go = Object.Instantiate(assemblerWindow.copyButton.gameObject);
+            var btn = go.GetComponent<UIButton>();
+            Transform child = go.transform.Find("Text");
+            Object.DestroyImmediate(child.GetComponent<Localizer>());
+            var txt = child.GetComponent<Text>();
+            txt.text = label;
+            btn.tips.tipText = "";
+            btn.tips.tipTitle = "";
+
+            if (width > 0 || height > 0)
+            {
+                var rect = (RectTransform)go.transform;
+                if (width == 0)
+                {
+                    width = rect.sizeDelta.x;
+                }
+
+                if (height == 0)
+                {
+                    height = rect.sizeDelta.y;
+                }
+
+                rect.sizeDelta = new Vector2(width, height);
+            }
+
+            go.transform.localScale = Vector3.one;
+
+            return btn;
+        }
+
+        public static UIButton MakeHiliteTextButton(string label, float width = 0f, float height = 0f)
+        {
+            UIDESwarmPanel swarmPanel = UIRoot.instance.uiGame.dysonEditor.controlPanel.hierarchy.swarmPanel;
+            UIButton src = swarmPanel.orbitButtons[0];
+            UIButton btn = Object.Instantiate(src);
+            if (btn.transitions.Length >= 2)
+            {
+                btn.transitions[0].normalColor = new Color(0.1f, 0.1f, 0.1f, 0.68f);
+                btn.transitions[0].highlightColorOverride = new Color(0.9906f, 0.5897f, 0.3691f, 0.4f);
+                btn.transitions[1].normalColor = new Color(1f, 1f, 1f, 0.6f);
+                btn.transitions[1].highlightColorOverride = new Color(0.2f, 0.1f, 0.1f, 0.9f);
+            }
+
+            var btnText = btn.transform.Find("Text").GetComponent<Text>();
+            btnText.text = label;
+            btnText.fontSize = 14;
+
+            Transform transform;
+            (transform = btn.transform).Find("frame")?.gameObject.SetActive(false);
+            var btnRect = (RectTransform)transform;
+
+            btnRect.sizeDelta = width == 0f || height == 0f ? new Vector2(btnText.preferredWidth + 14f, 22f) : new Vector2(width, height);
+
+            return btn;
         }
     }
 }

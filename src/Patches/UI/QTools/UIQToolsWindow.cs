@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using CommonAPI.Systems;
 using NGPT;
 using ProjectGenesis.Patches.Logic;
 using ProjectGenesis.Patches.UI.QTools.MyComboBox;
@@ -19,6 +20,8 @@ namespace ProjectGenesis.Patches.UI.QTools
     // ReSharper disable once InconsistentNaming
     public class UIQToolsWindow : ManualBehaviour
     {
+        private static GameObject _itemPickerTranslucentImageGameObject;
+
         public bool isOpening;
 
         private UIButton _pauseButton;
@@ -37,16 +40,28 @@ namespace ProjectGenesis.Patches.UI.QTools
         private int _tabIndex;
         private RectTransform _list;
         private RectTransform _listContent;
-        private RectTransform _rightInfoArea;
+        private RectTransform _rightInfo;
+        private RectTransform _rightContent;
 
-        private GameObject _labelText;
+        private GameObject _labelTextPrefeb;
+        private InputField _addItemCountInput;
+        private string _countText;
+
+        private UIButton _selectItemButton;
+        private UIButton _clearNeedsButton;
+
+        private Text _needLabelText;
+        private Text _asRawsLabelText;
+        private Text _rawsLabelText;
+        private Text _byproductsLabelText;
 
         private ProliferatorComboBox _proliferatorComboBox;
         private Dictionary<Utils_ERecipeType, ItemComboBox> _recipeMachines;
 
         private NodeDataSet _data;
-        private List<ProductDetail> _productDetailPool;
-        private int curReuseIndex;
+        private ObjectPool<ProductDetail> _productDetailPool;
+        private ObjectPool<ItemCounter> _itemCounterPool;
+        private ObjectPool<ItemNeedDetail> _needPool;
 
         private void CreateUI()
         {
@@ -71,101 +86,221 @@ namespace ProjectGenesis.Patches.UI.QTools
             CreateLabelText("配方选取", 415, 0);
             CreateLabelText("增产策略", 850, 0);
 
-            _labelText.GetComponent<Text>().text = "物品".TranslateFromJson();
-            Util.NormalizeRectWithTopLeft(_labelText.transform, -5, 0);
+            _labelTextPrefeb.GetComponent<Text>().text = "物品".TranslateFromJson();
+            Util.NormalizeRectWithTopLeft(_labelTextPrefeb.transform, -5, 0);
+
+            Util.NormalizeRectWithTopLeft(Util.CreateLabelText(_labelTextPrefeb, "添加需求：".TranslateFromJson()), 20, 20, _rightContent);
+
+            _needLabelText = Util.CreateLabelText(_labelTextPrefeb, "需求：".TranslateFromJson());
+            Util.NormalizeRectWithTopLeft(_needLabelText, 20, 60, _rightContent);
+
+            _asRawsLabelText = Util.CreateLabelText(_labelTextPrefeb, "额外输入：".TranslateFromJson());
+            Util.NormalizeRectWithTopLeft(_asRawsLabelText, 20, 160, _rightContent);
+
+            _rawsLabelText = Util.CreateLabelText(_labelTextPrefeb, "原料需求：".TranslateFromJson());
+            Util.NormalizeRectWithTopLeft(_rawsLabelText, 20, 260, _rightContent);
+
+            _byproductsLabelText = Util.CreateLabelText(_labelTextPrefeb, "副产物：".TranslateFromJson());
+            Util.NormalizeRectWithTopLeft(_byproductsLabelText, 20, 360, _rightContent);
+
+            GameObject inputObj = GameObject.Find("UI Root/Overlay Canvas/In Game/Globe Panel/name-input");
+            GameObject go = Instantiate(inputObj, _rightContent);
+            go.name = "input";
+            Util.NormalizeRectWithTopLeft(go.transform, 60, 20);
+
+            _addItemCountInput = go.GetComponent<InputField>();
+            _addItemCountInput.GetComponent<RectTransform>().sizeDelta = new Vector2(80, 28);
+            _addItemCountInput.text = "60";
+            _countText = _addItemCountInput.text;
+
+            Util.NormalizeRectWithTopLeft(_addItemCountInput, 120, 20, _rightContent);
+
+            _selectItemButton = Util.MakeHiliteTextButton("选择物品".TranslateFromJson(), 80, 24);
+            Util.NormalizeRectWithTopLeft(_selectItemButton, 210, 22, _rightContent);
+            _clearNeedsButton = Util.MakeHiliteTextButton("清空需求".TranslateFromJson(), 80, 24);
+            Util.NormalizeRectWithTopLeft(_clearNeedsButton, 300, 22, _rightContent);
         }
 
-        public void PostInit()
+        public override bool _OnInit()
         {
             _pauseButton.onClick += OnPauseButtonClick;
 
             _tabButtons[0].onClick += OnTabButtonClick;
             _tabButtons[1].onClick += OnTabButtonClick;
 
+            _addItemCountInput.onValueChanged.RemoveAllListeners();
+            _addItemCountInput.onValueChanged.AddListener(OnInputValueChanged);
+            _addItemCountInput.characterValidation = InputField.CharacterValidation.Decimal;
+
+            _selectItemButton.button.onClick.RemoveAllListeners();
+            _selectItemButton.button.onClick.AddListener(OnItemSelectButtonClick);
+
+            _clearNeedsButton.button.onClick.RemoveAllListeners();
+            _clearNeedsButton.button.onClick.AddListener(OnClearNeedsButtonClick);
+
             _tabs[0].gameObject.SetActive(true);
 
             if (RecipeTypeFactoryMap == null) RecipeTypeFactoryMap = GetFactoryDict();
 
             _data = new NodeDataSet();
-            _productDetailPool = new List<ProductDetail>();
+            _productDetailPool = new ObjectPool<ProductDetail>(GetProductDetail);
+            _itemCounterPool = new ObjectPool<ItemCounter>(GetItemCounter);
+            _needPool = new ObjectPool<ItemNeedDetail>(GetItemNeedDetail);
 
             foreach (KeyValuePair<Utils_ERecipeType, ItemComboBox> pair in _recipeMachines)
             {
                 List<ItemProto> recipeTypeFactory = RecipeTypeFactoryMap[pair.Key];
-                pair.Value.Init(pair.Key, recipeTypeFactory);
+                pair.Value.Init(pair.Key, recipeTypeFactory, 0);
                 _data.SetDefaultMachine(pair.Key, recipeTypeFactory[0]);
                 pair.Value.OnItemChange += DefaultMachinesChange;
             }
 
-            _proliferatorComboBox.Init();
+            _proliferatorComboBox.Init(0);
             _proliferatorComboBox.OnIndexChange += OnProliferatorChange;
 
             _data.OnNeedRefreshed += RefreshProductDetails;
-        }
 
-        private void AddTestItem()
-        {
-            _data.AddItemNeed(LDB.items.Select(1404), 720);
+            return true;
         }
 
         private void RefreshProductDetails()
         {
-            _productDetailPool.ForEach(i => i.gameObject.SetActive(false));
-            curReuseIndex = 0;
+            _productDetailPool.RecycleAll();
 
-            foreach (NodeData t in _data.Inputs)
-            {
-                // TODO: raw meterial layer output
-            }
-
-            foreach (NodeData t in _data.Byproducts)
-            {
-                // TODO: Byproducts meterial layer output
-            }
-            
             int y = 40;
-
-            foreach (NodeData t in _data.Needs)
-            {
-                ProductDetail productDetail = GetProductDetail();
-                productDetail.SetPos(y);
-                productDetail.SetData(t);
-                productDetail.gameObject.SetActive(true);
-
-                y += 60;
-            }
 
             foreach (NodeData t in _data.Datas.Values)
             {
-                ProductDetail productDetail = GetProductDetail();
+                ProductDetail productDetail = _productDetailPool.Alloc();
                 productDetail.SetPos(y);
                 productDetail.SetData(t);
-                productDetail.gameObject.SetActive(true);
-
                 y += 60;
             }
+
+            Util.NormalizeRectWithTopLeft(_needLabelText, 20, 60, _rightContent);
+
+            _needPool.RecycleAll();
+
+            int x = 20;
+            y = 100;
+
+            foreach (NodeData t in _data.Needs.Values)
+            {
+                ItemNeedDetail counter = _needPool.Alloc();
+                counter.SetPos(x, y);
+                counter.SetData(t);
+
+                x += 200;
+
+                if (x > 350)
+                {
+                    x = 20;
+                    y += 40;
+                }
+            }
+
+            Util.NormalizeRectWithTopLeft(_asRawsLabelText, 20, y + 60, _rightContent);
+
+            x = 20;
+            y += 100;
+
+            foreach (NodeData t in _data.AsRaws.Values)
+            {
+                ItemNeedDetail counter = _needPool.Alloc();
+                counter.SetPos(x, y);
+                counter.SetData(t, false);
+
+                x += 200;
+
+                if (x > 350)
+                {
+                    x = 20;
+                    y += 40;
+                }
+            }
+
+            _itemCounterPool.RecycleAll();
+
+            Util.NormalizeRectWithTopLeft(_rawsLabelText, 20, y + 60, _rightContent);
+
+            x = 20;
+            y += 100;
+
+            foreach (NodeData t in _data.Raws.Values)
+            {
+                ItemCounter counter = _itemCounterPool.Alloc();
+                counter.SetPos(x, y);
+                counter.SetData(t);
+
+                x += 45;
+
+                if (x > 350)
+                {
+                    x = 20;
+                    y += 40;
+                }
+            }
+
+            Util.NormalizeRectWithTopLeft(_byproductsLabelText, 20, y + 60, _rightContent);
+
+            x = 20;
+            y += 100;
+
+            foreach (NodeData t in _data.Byproducts.Values)
+            {
+                ItemCounter counter = _itemCounterPool.Alloc();
+                counter.SetPos(x, y);
+                counter.SetData(t);
+
+                x += 40;
+
+                if (x > 350)
+                {
+                    x = 20;
+                    y += 40;
+                }
+            }
         }
 
-        private ProductDetail GetProductDetail()
-        {
-            if (curReuseIndex >= _productDetailPool.Count)
-            {
-                var productDetail = ProductDetail.CreateProductDetail(0, 40, _listContent);
-                productDetail.Init();
-                _productDetailPool.Add(productDetail);
-                return productDetail;
-            }
-            else
-            {
-                return _productDetailPool[curReuseIndex++];
-            }
-        }
+        private ProductDetail GetProductDetail() => ProductDetail.CreateProductDetail(0, 40, _listContent);
+
+        private ItemCounter GetItemCounter() => ItemCounter.CreateItemCounter(0, 40, _rightContent);
+
+        private ItemNeedDetail GetItemNeedDetail() => ItemNeedDetail.CreateItemNeedDetail(0, 40, _rightContent);
 
         private void OnProliferatorChange(int obj) => _data.SetDefaultStrategy(_proliferatorComboBox.Strategy);
 
         private void DefaultMachinesChange((Utils_ERecipeType type, ItemProto proto) obj) => _data.SetDefaultMachine(obj.type, obj.proto);
 
         public void OnTabButtonClick(int idx) => SetTabIndex(idx, false);
+
+        public void OnInputValueChanged(string s) => _countText = s;
+
+        public void OnItemSelectButtonClick()
+        {
+            UIItemPickerExtension.Popup(new Vector2(-300f, -50f), OnItemSelectReturn, true, null);
+
+            if (_itemPickerTranslucentImageGameObject == null)
+                _itemPickerTranslucentImageGameObject = UIRoot.instance.uiGame.itemPicker.GetComponentInChildren<TranslucentImage>().gameObject;
+
+            _itemPickerTranslucentImageGameObject.SetActive(false);
+            UIRoot.instance.uiGame.itemPicker.transform.SetAsLastSibling();
+        }
+
+        public void OnClearNeedsButtonClick() => _data.ClearNeeds();
+
+        private void OnItemSelectReturn(ItemProto obj)
+        {
+            if (obj != null)
+            {
+                if (float.TryParse(_countText, out float count) && count > 0)
+                    _data.AddItemNeed(obj, count);
+                else
+                    UIRealtimeTip.Popup("输入的数值有误".TranslateFromJson());
+            }
+
+            _itemPickerTranslucentImageGameObject.SetActive(true);
+        }
 
         public void SetTabIndex(int index, bool immediate)
         {
@@ -200,7 +335,7 @@ namespace ProjectGenesis.Patches.UI.QTools
         }
 
         private void CreateLabelText(string s, float left, float top)
-            => Util.NormalizeRectWithTopLeft(Util.CreateLabelText(_labelText, s.TranslateFromJson()), left, top);
+            => Util.NormalizeRectWithTopLeft(Util.CreateLabelText(_labelTextPrefeb, s.TranslateFromJson()), left, top);
 
         public override void _OnUpdate()
         {
@@ -233,6 +368,7 @@ namespace ProjectGenesis.Patches.UI.QTools
         {
             MyWindowCtl.OpenWindow(this);
             SetTabIndex(0, false);
+            Util.NormalizeRectWithTopLeft(_rightInfo, _list.rect.width, 52);
             isOpening = true;
             GameMain.isFullscreenPaused = true;
         }
@@ -342,8 +478,8 @@ namespace ProjectGenesis.Patches.UI.QTools
 
                         if (t.name == "title")
                         {
-                            win._labelText = t.GetChild(0).gameObject;
-                            Destroy(win._labelText.GetComponent<Localizer>());
+                            win._labelTextPrefeb = t.GetChild(0).gameObject;
+                            Destroy(win._labelTextPrefeb.GetComponent<Localizer>());
 
                             for (int j = 1; j < t.childCount; j++)
                             {
@@ -365,21 +501,20 @@ namespace ProjectGenesis.Patches.UI.QTools
                                 Destroy(content.GetChild(j).gameObject);
                             }
                         }
-
-                        if (t.name == "cancel-button" || t.name == "apply-button") Destroy(t.gameObject);
                     }
 
-                    var o = new GameObject();
-                    win._rightInfoArea = o.AddComponent<RectTransform>();
-                    Util.NormalizeRectWithTopLeft(win._rightInfoArea, 1360, 52);
-                    o.name = "rightInfoArea";
+                    win._rightInfo = Instantiate(win._list, win._list.parent);
+                    win._rightInfo.name = "rightInfoArea";
+                    win._rightContent = win._rightInfo.GetChild(0).GetChild(0).GetChild(0).GetComponent<RectTransform>();
+                    win._rightInfo.sizeDelta = new Vector2(400, 650);
+                    Util.NormalizeRectWithTopLeft(win._rightInfo, win._list.rect.x, 52, transform);
 
                     Destroy(child.GetChild(1).gameObject);
                     Destroy(child.GetChild(2).gameObject);
                     Destroy(child.GetChild(4).gameObject);
                 }
 
-                if (child.name == "details") { }
+                if (child.name == "cancel-button" || child.name == "apply-button") Destroy(child.gameObject);
             }
 
             win.CreateUI();

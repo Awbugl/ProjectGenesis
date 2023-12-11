@@ -1,25 +1,19 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using ProjectGenesis.Utils;
 
 namespace ProjectGenesis.Patches.UI.QTools.MyComboBox
 {
     public class SignalComboBox : MyComboBox
     {
-        private List<int> _items;
+        protected List<int> Items;
 
-        public void Init(List<int> items, string defaultString = "", int defaultSprite = 509)
+        public void Init(
+            List<int> items,
+            List<string> overrideString,
+            int itemIndex,
+            int defaultSprite = 509)
         {
-            _items = items;
-
-            List<string> list = items.Select(i => i > 0 ? LDB.items.Select(i).name : defaultString.TranslateFromJson()).ToList();
-
-            base.Init(list, defaultSprite);
-        }
-
-        public void Init(List<int> items, List<string> overrideString, int defaultSprite = 509)
-        {
-            _items = items;
+            Items = items;
 
             var list = new List<string>(items.Count);
 
@@ -30,12 +24,9 @@ namespace ProjectGenesis.Patches.UI.QTools.MyComboBox
                 list.Add(s == null ? LDB.items.Select(i).name : s.TranslateFromJson());
             }
 
-            base.Init(list, defaultSprite);
+            base.Init(list, itemIndex, defaultSprite);
         }
 
-        public new void Init(List<string> overrideString, int defaultSprite = 509)
-            => base.Init(overrideString.Select(i => i.TranslateFromJson()).ToList(), defaultSprite);
-
-        public override void OnItemIndexChange() => iconImg.sprite = LDB.signals.IconSprite(_items != null ? _items[selectIndex] : DefaultSprite);
+        public override void OnItemIndexChange() => iconImg.sprite = LDB.signals.IconSprite(Items != null ? Items[selectIndex] : DefaultSprite);
     }
 }

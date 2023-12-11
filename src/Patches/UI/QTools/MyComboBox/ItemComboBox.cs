@@ -12,14 +12,16 @@ namespace ProjectGenesis.Patches.UI.QTools.MyComboBox
 
         public event Action<(Utils_ERecipeType, ItemProto)> OnItemChange;
 
-        public void Init(Utils_ERecipeType type, List<ItemProto> items)
+        public void Init(Utils_ERecipeType type, List<ItemProto> items, int itemIndex)
         {
             OnItemChange = null;
-            
+
             _type = type;
             _items = items;
 
-            Init(_items.Select(i => i.name).ToList());
+            Init(_items.Select(i => i.name).ToList(), itemIndex, 509);
+
+            OnItemIndexChange();
         }
 
         public override void OnItemIndexChange()

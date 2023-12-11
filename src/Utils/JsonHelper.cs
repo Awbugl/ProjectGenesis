@@ -136,7 +136,6 @@ namespace ProjectGenesis.Utils
             public bool Explicit { get; set; }
             public bool Handcraft { get; set; }
             public bool NonProductive { get; set; }
-            public bool SpecialStackingLogic { get; set; }
 
             public static RecipeProtoJson FromProto(RecipeProto i)
                 => new RecipeProtoJson
@@ -154,8 +153,7 @@ namespace ProjectGenesis.Utils
                        Description = i.Description,
                        GridIndex = i.GridIndex,
                        IconPath = i.IconPath,
-                       NonProductive = i.NonProductive,
-                       SpecialStackingLogic = i.SpecialStackingLogic
+                       NonProductive = i.NonProductive
                    };
         }
 

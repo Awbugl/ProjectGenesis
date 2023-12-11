@@ -263,10 +263,11 @@ namespace ProjectGenesis
             ItemProto.InitMechaMaterials();
             ItemProto.stationCollectorId = 2105;
 
+            LDB.items.Select(1000).recipes = new List<RecipeProto>() { LDB.recipes.Select(801) };
+            LDB.items.Select(1120).isRaw = true;
+
             StorageComponent.staticLoaded = false;
             StorageComponent.LoadStatic();
-
-            QToolsWindow.PostInit();
 
             // JsonHelper.ExportAsJson(@"D:\Git\ProjectGenesis\data");
         }

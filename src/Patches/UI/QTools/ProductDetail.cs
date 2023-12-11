@@ -1,4 +1,5 @@
-﻿using CommonAPI.Systems;
+﻿using System.Collections.Generic;
+using CommonAPI.Systems;
 using ProjectGenesis.Patches.Logic;
 using ProjectGenesis.Patches.UI.QTools.MyComboBox;
 using ProjectGenesis.Patches.UI.Utils;
@@ -28,11 +29,14 @@ namespace ProjectGenesis.Patches.UI.QTools
         public Text factoryCountText;
         public UIButton factoryButton;
 
-        public Image recipeImg;
         public UIButton recipeImgButton;
         public UIRecipeEntry recipeEntry;
 
-        public ProliferatorComboBox proliferatorComboBox;
+        public Text proliferatorText;
+
+        private ProliferatorComboBox _proliferatorComboBoxNormal, _proliferatorComboBoxNonProductive;
+
+        public ProliferatorComboBox currentProliferatorComboBox;
 
         internal static ProductDetail CreateProductDetail(float x, float y, RectTransform parent)
         {
@@ -57,23 +61,35 @@ namespace ProjectGenesis.Patches.UI.QTools
             cb.factoryButton = cb.factoryComboBox.button;
             cb.factoryButton.tips.tipTitle = "";
             cb.factoryButton.tips.tipText = "左键点击：更换生产设备".TranslateFromJson();
-            
+
             Util.NormalizeRectWithTopLeft(Util.CreateText("\u00d7", 18), 320, 10, cb._rect);
             cb.factoryCountText = Util.CreateText("", 18);
             Util.NormalizeRectWithTopLeft(cb.factoryCountText, 340, 10, cb._rect);
 
-            Util.CreateSignalIcon("", "左键点击：更换配方", out UIButton recipebutton, out Image recipeImage);
-            cb.recipeImg = recipeImage;
+            Util.CreateSignalIcon("可调整配方", "左键点击：更换配方", out UIButton recipebutton, out Image recipeImage);
+            recipeImage.sprite = LDB.signals.IconSprite(401);
             cb.recipeImgButton = recipebutton;
             Util.NormalizeRectWithTopLeft(recipebutton, 440, 0, cb._rect);
             cb.recipeImgButton.button.onClick.RemoveAllListeners();
             cb.recipeImgButton.button.onClick.AddListener(cb.OnRecipeButtonClick);
+            cb.recipeImgButton.onRightClick += cb.OnRecipeButtonRightClick;
 
             cb.recipeEntry = NewUIRecipeEntry(cb._rect);
-            Util.NormalizeRectWithTopLeft(cb.recipeEntry, 500, 0, cb._rect);
+            Util.NormalizeRectWithTopLeft(cb.recipeEntry, 550, 0, cb._rect);
             cb.recipeEntry.gameObject.SetActive(true);
 
-            cb.proliferatorComboBox = MyComboBox.MyComboBox.CreateComboBox<ProliferatorComboBox>(700, 10, cb._rect);
+            cb._proliferatorComboBoxNormal = MyComboBox.MyComboBox.CreateComboBox<ProliferatorComboBox>(700, 10, cb._rect);
+            cb._proliferatorComboBoxNormal.gameObject.SetActive(false);
+            cb._proliferatorComboBoxNormal.comboBox.gameObject.SetActive(false);
+
+            cb._proliferatorComboBoxNonProductive = MyComboBox.MyComboBox.CreateComboBox<ProliferatorComboBox>(700, 10, cb._rect);
+            cb._proliferatorComboBoxNormal.comboBox.gameObject.SetActive(false);
+            cb._proliferatorComboBoxNonProductive.comboBox.gameObject.SetActive(false);
+
+            cb.proliferatorText = Util.CreateText("", 18);
+            Util.NormalizeRectWithTopLeft(cb.proliferatorText, 925, 15, cb._rect);
+
+            cb.Init();
 
             return cb;
         }
@@ -93,48 +109,103 @@ namespace ProjectGenesis.Patches.UI.QTools
 
         public void Init()
         {
-            proliferatorComboBox.Init();
-            proliferatorComboBox.OnIndexChange += OnProliferatorChange;
+            _proliferatorComboBoxNormal.Init(0);
+            _proliferatorComboBoxNonProductive.InitNoProductive(0);
+
+            _proliferatorComboBoxNormal.OnIndexChange += OnProliferatorChange;
+            _proliferatorComboBoxNonProductive.OnIndexChange += OnProliferatorChange;
         }
 
         internal void SetData(NodeData data)
         {
             _data = data;
 
-            var type = (Utils_ERecipeType)data.Options.Recipe.Type;
-
-            factoryComboBox.Init(type, Logic.QTools.RecipeTypeFactoryMap[type]);
+            RecipeProto recipe = data.Options.Recipe;
+            
+            var type = (Utils_ERecipeType)recipe.Type;
+            List<ItemProto> recipeTypeFactory = Logic.QTools.RecipeTypeFactoryMap[type];
+            int index = recipeTypeFactory.IndexOf(data.Options.Factory);
+            factoryComboBox.Init(type, recipeTypeFactory, index);
             factoryComboBox.OnItemChange += OnFactoryChange;
 
             itemImg.sprite = data.Item.iconSprite;
             itemImgButton.tips.tipTitle = data.Item.name;
             itemCountText.text = data.ItemCount.ToString("F2");
+            
             factoryButton.tips.tipTitle = data.Options.Factory.name;
+            factoryCountText.text = _data.Options.FactoryCount.ToString("F2");
 
-            ChangeRecipe(data.Options.Recipe, false);
+            bool muitiRecipes = data.Item.recipes.Count > 1;
+            bool canMining = !string.IsNullOrWhiteSpace(data.Item.miningFrom);
+            bool buttonShow = muitiRecipes || canMining;
+
+            if (buttonShow)
+            {
+                var sb = new System.Text.StringBuilder();
+                if (muitiRecipes) sb.AppendLine("左键点击：更换配方".TranslateFromJson());
+                if (canMining) sb.AppendLine("右键点击：将其设置为原材料".TranslateFromJson());
+
+                recipeImgButton.tips.tipTitle = (muitiRecipes ? canMining ? "可采集多配方物品" : "可调整配方" : "可采集物品").TranslateFromJson();
+                recipeImgButton.tips.tipText = sb.ToString();
+            }
+
+            recipeImgButton.gameObject.SetActive(buttonShow);
+
+            recipeEntry.SetRecipe(recipe);
+
+            if (recipe.productive)
+            {
+                _proliferatorComboBoxNormal.gameObject.SetActive(true);
+                _proliferatorComboBoxNonProductive.gameObject.SetActive(false);
+
+                currentProliferatorComboBox = _proliferatorComboBoxNormal;
+            }
+            else
+            {
+                _proliferatorComboBoxNormal.gameObject.SetActive(false);
+                _proliferatorComboBoxNonProductive.gameObject.SetActive(true);
+
+                currentProliferatorComboBox = _proliferatorComboBoxNonProductive;
+            }
+
+            currentProliferatorComboBox.SetStrategySlience(data.Options.Strategy);
+            proliferatorText.text = currentProliferatorComboBox.comboBox.m_Input.text;
         }
-
-        public void SetEmpty() { }
 
         private void OnFactoryChange((ProjectGenesis_Utils_ERecipeType, ItemProto proto) obj)
         {
             _data.Options.Factory = obj.proto;
-            
+
             factoryButton.tips.tipTitle = obj.proto.name;
             RefreshFactoryCount();
         }
 
         public void OnProliferatorChange(int obj)
         {
-            _data.Options.Strategy = proliferatorComboBox.Strategy;
+            proliferatorText.text = currentProliferatorComboBox.comboBox.m_Input.text;
+            _data.Options.Strategy = currentProliferatorComboBox.Strategy;
             RefreshFactoryCount();
             UpdateNeeds();
         }
 
-        private void OnItemButtonRightClick(int obj) { }
+        private void OnItemButtonRightClick(int obj)
+        {
+            _data.Options.AsRaw = true;
+            UpdateNeeds();
+        }
+
+        private void OnRecipeButtonRightClick(int obj)
+        {
+            if (string.IsNullOrWhiteSpace(_data.Item.miningFrom)) return;
+
+            _data.Options.AsRaw = true;
+            UpdateNeeds();
+        }
 
         public void OnRecipeButtonClick()
         {
+            if (_data.Item.recipes.Count < 2) return;
+
             UIRecipePickerExtension.Popup(VFInput.mouseMoveAxis, OnRecipePickerReturn, true, Filter);
 
             if (_recipePickerTranslucentImageGameObject == null)
@@ -148,8 +219,6 @@ namespace ProjectGenesis.Patches.UI.QTools
         {
             if (recipeProto == null) return;
 
-            recipeImg.sprite = recipeProto.iconSprite;
-            recipeImgButton.tips.tipTitle = recipeProto.name;
             recipeEntry.SetRecipe(recipeProto);
 
             if (refresh)

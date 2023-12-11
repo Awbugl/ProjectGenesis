@@ -140,6 +140,66 @@
     "ENUS": "Left click: Adjust recipe"
   },
   {
+    "Name": "左键点击：调整增产策略",
+    "ZHCN": "左键点击：调整增产策略",
+    "ENUS": "Left click: Adjust proliferator strategy"
+  },
+  {
+    "Name": "添加需求：",
+    "ZHCN": "添加需求：",
+    "ENUS": "Add need item:"
+  },
+  {
+    "Name": "需求：",
+    "ZHCN": "需求：",
+    "ENUS": "Need items:"
+  },
+  {
+    "Name": "额外输入：",
+    "ZHCN": "额外输入：",
+    "ENUS": "Extra input:"
+  },
+  {
+    "Name": "原料需求：",
+    "ZHCN": "原料需求：",
+    "ENUS": "Input:"
+  },
+  {
+    "Name": "副产物：",
+    "ZHCN": "副产物：",
+    "ENUS": "Byproducts:"
+  },
+  {
+    "Name": "选择物品",
+    "ZHCN": "选择物品",
+    "ENUS": "Select item"
+  },
+  {
+    "Name": "清空需求",
+    "ZHCN": "清空需求",
+    "ENUS": "Clear needs"
+  },
+  {
+    "Name": "输入的数值有误",
+    "ZHCN": "输入的数值有误！",
+    "ENUS": "Invalid count inputs!"
+  },
+  {
+    "Name": "可调整配方",
+    "ZHCN": "可调整配方",
+    "ENUS": "Multiple recipes"
+  },
+  {
+    "Name": "可采集物品",
+    "ZHCN": "可采集物品",
+    "ENUS": "Mineable item"
+  },
+  {
+    "Name": "可采集多配方物品",
+    "ZHCN": "可采集物品、可调整配方",
+    "ENUS": "Multiple recipes | Mineable item"
+  },
+  {
     "Name": "ChangeStackingLogic",
     "ZHCN": "修改化工配方的堆积逻辑",
     "ENUS": "Change chemical stacking logic"
