@@ -89,7 +89,7 @@ namespace ProjectGenesis.Patches.UI.QTools
             _labelTextPrefeb.GetComponent<Text>().text = "物品".TranslateFromJson();
             Util.NormalizeRectWithTopLeft(_labelTextPrefeb.transform, -5, 0);
 
-            Util.NormalizeRectWithTopLeft(Util.CreateLabelText(_labelTextPrefeb, "添加需求：".TranslateFromJson()), 20, 20, _rightContent);
+            Util.NormalizeRectWithTopLeft(Util.CreateLabelText(_labelTextPrefeb, "添加需求：".TranslateFromJson()), 20, 19, _rightContent);
 
             _needLabelText = Util.CreateLabelText(_labelTextPrefeb, "需求：".TranslateFromJson());
             Util.NormalizeRectWithTopLeft(_needLabelText, 20, 60, _rightContent);
@@ -103,7 +103,7 @@ namespace ProjectGenesis.Patches.UI.QTools
             _byproductsLabelText = Util.CreateLabelText(_labelTextPrefeb, "副产物：".TranslateFromJson());
             Util.NormalizeRectWithTopLeft(_byproductsLabelText, 20, 360, _rightContent);
 
-            GameObject inputObj = GameObject.Find("UI Root/Overlay Canvas/In Game/Globe Panel/name-input");
+            GameObject inputObj = GameObject.Find("UI Root/Overlay Canvas/In Game/Planet & Star Details/planet-detail-ui/name-input");
             GameObject go = Instantiate(inputObj, _rightContent);
             go.name = "input";
             Util.NormalizeRectWithTopLeft(go.transform, 60, 20);
