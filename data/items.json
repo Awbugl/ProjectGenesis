@@ -1291,7 +1291,7 @@
     "IconPath": "Icons/ItemRecipe/hydrogen",
     "GridIndex": 1113,
     "StackSize": 20,
-    "Type": 2,
+    "Type": 1,
     "PreTech": 1102,
     "PreTechOverride": 0,
     "DescFields": [
@@ -5387,7 +5387,7 @@
     "IconPath": "Assets/texpack/硝基柴油燃料棒",
     "GridIndex": 3703,
     "StackSize": 100,
-    "Type": 2,
+    "Type": 4,
     "PreTech": 1828,
     "PreTechOverride": 0,
     "DescFields": [
@@ -5427,7 +5427,7 @@
     "IconPath": "Assets/texpack/火箭燃料棒",
     "GridIndex": 3702,
     "StackSize": 100,
-    "Type": 2,
+    "Type": 4,
     "PreTech": 1828,
     "PreTechOverride": 0,
     "DescFields": [
@@ -5503,7 +5503,7 @@
     "IconPath": "Assets/texpack/放射性同位素温差电池",
     "GridIndex": 2113,
     "StackSize": 50,
-    "Type": 5,
+    "Type": 6,
     "PreTech": 1511,
     "PreTechOverride": 0,
     "DescFields": [
@@ -5579,7 +5579,7 @@
     "IconPath": "Assets/texpack/铀矿",
     "GridIndex": 3301,
     "StackSize": 100,
-    "Type": 2,
+    "Type": 1,
     "PreTech": 1816,
     "PreTechOverride": 0,
     "DescFields": [
@@ -5616,7 +5616,7 @@
     "IconPath": "Assets/texpack/钚矿",
     "GridIndex": 3302,
     "StackSize": 100,
-    "Type": 2,
+    "Type": 1,
     "PreTech": 1816,
     "PreTechOverride": 0,
     "DescFields": [
@@ -5805,7 +5805,7 @@
     "IconPath": "Assets/texpack/氦_新",
     "GridIndex": 1213,
     "StackSize": 20,
-    "Type": 2,
+    "Type": 1,
     "PreTech": 0,
     "PreTechOverride": 0,
     "DescFields": [
@@ -5880,7 +5880,7 @@
     "IconPath": "Assets/texpack/钚燃料棒",
     "GridIndex": 3705,
     "StackSize": 30,
-    "Type": 2,
+    "Type": 4,
     "PreTech": 1820,
     "PreTechOverride": 0,
     "DescFields": [
@@ -5920,7 +5920,7 @@
     "IconPath": "Assets/texpack/铀235燃料棒",
     "GridIndex": 3704,
     "StackSize": 30,
-    "Type": 2,
+    "Type": 4,
     "PreTech": 1820,
     "PreTechOverride": 0,
     "DescFields": [
@@ -5960,7 +5960,7 @@
     "IconPath": "Assets/texpack/钚铀混合氧化物燃料棒",
     "GridIndex": 3706,
     "StackSize": 30,
-    "Type": 2,
+    "Type": 4,
     "PreTech": 1820,
     "PreTechOverride": 0,
     "DescFields": [
@@ -6000,7 +6000,7 @@
     "IconPath": "Assets/texpack/氦三燃料棒",
     "GridIndex": 3708,
     "StackSize": 30,
-    "Type": 2,
+    "Type": 4,
     "PreTech": 1822,
     "PreTechOverride": 0,
     "DescFields": [
@@ -6040,7 +6040,7 @@
     "IconPath": "Assets/texpack/氘氦三混合聚变燃料棒",
     "GridIndex": 3709,
     "StackSize": 30,
-    "Type": 2,
+    "Type": 4,
     "PreTech": 1822,
     "PreTechOverride": 0,
     "DescFields": [
@@ -6501,7 +6501,7 @@
     "IconPath": "Assets/texpack/反物质约束单元_新",
     "GridIndex": 3101,
     "StackSize": 100,
-    "Type": 2,
+    "Type": 3,
     "PreTech": 1145,
     "PreTechOverride": 0,
     "DescFields": [
@@ -6538,7 +6538,7 @@
     "IconPath": "Assets/texpack/金属氢单元",
     "GridIndex": 1604,
     "StackSize": 100,
-    "Type": 2,
+    "Type": 3,
     "PreTech": 1153,
     "PreTechOverride": 0,
     "DescFields": [
@@ -7148,7 +7148,7 @@
     "IconPath": "Assets/texpack/基础机械组件",
     "GridIndex": 1401,
     "StackSize": 100,
-    "Type": 2,
+    "Type": 3,
     "PreTech": 1801,
     "PreTechOverride": 0,
     "DescFields": [
@@ -7184,7 +7184,7 @@
     "IconPath": "Assets/texpack/先进机械组件_新",
     "GridIndex": 1402,
     "StackSize": 100,
-    "Type": 2,
+    "Type": 3,
     "PreTech": 1802,
     "PreTechOverride": 0,
     "DescFields": [
@@ -7220,7 +7220,7 @@
     "IconPath": "Assets/texpack/尖端机械组件_新",
     "GridIndex": 1403,
     "StackSize": 100,
-    "Type": 2,
+    "Type": 3,
     "PreTech": 1803,
     "PreTechOverride": 0,
     "DescFields": [
@@ -7780,7 +7780,7 @@
     "IconPath": "Assets/texpack/氧气",
     "GridIndex": 1116,
     "StackSize": 20,
-    "Type": 2,
+    "Type": 1,
     "PreTech": 1121,
     "PreTechOverride": 0,
     "DescFields": [
@@ -7922,7 +7922,7 @@
     "ID": 7504,
     "Name": "生物基板",
     "Description": "I生物基板",
-    "IconPath": "Assets/texpack/生物基板",
+    "IconPath": "Assets/texpack/光学基板",
     "GridIndex": 1309,
     "StackSize": 200,
     "Type": 2,
@@ -8141,7 +8141,7 @@
     "IconPath": "Assets/texpack/活性生物纤维_新",
     "GridIndex": 4104,
     "StackSize": 100,
-    "Type": 2,
+    "Type": 3,
     "PreTech": 1808,
     "PreTechOverride": 0,
     "DescFields": [
@@ -8177,7 +8177,7 @@
     "IconPath": "Assets/texpack/光学芯片",
     "GridIndex": 1612,
     "StackSize": 100,
-    "Type": 2,
+    "Type": 3,
     "PreTech": 1807,
     "PreTechOverride": 0,
     "DescFields": [
@@ -8213,7 +8213,7 @@
     "IconPath": "Assets/texpack/光学信息传输纤维",
     "GridIndex": 1611,
     "StackSize": 100,
-    "Type": 2,
+    "Type": 3,
     "PreTech": 1808,
     "PreTechOverride": 0,
     "DescFields": [
@@ -8249,7 +8249,7 @@
     "IconPath": "Assets/texpack/超级纳米电脑",
     "GridIndex": 1610,
     "StackSize": 50,
-    "Type": 2,
+    "Type": 4,
     "PreTech": 1809,
     "PreTechOverride": 0,
     "DescFields": [
@@ -8285,7 +8285,7 @@
     "IconPath": "Assets/texpack/光学主机",
     "GridIndex": 1613,
     "StackSize": 50,
-    "Type": 2,
+    "Type": 4,
     "PreTech": 1810,
     "PreTechOverride": 0,
     "DescFields": [
