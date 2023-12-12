@@ -52,7 +52,7 @@ namespace ProjectGenesis.Patches.UI.QTools
             Util.NormalizeRectWithTopLeft(itemButton, 20, 0, cb._rect);
             cb.itemImgButton.onRightClick += cb.OnItemButtonRightClick;
 
-            Util.NormalizeRectWithTopLeft(Util.CreateText("\u00d7", 18), 80, 10, cb._rect);
+            Util.NormalizeRectWithTopLeft(Util.CreateText("\u2573", 18), 80, 11, cb._rect);
             cb.itemCountText = Util.CreateText("", 18);
             Util.NormalizeRectWithTopLeft(cb.itemCountText, 100, 10, cb._rect);
 
@@ -62,7 +62,7 @@ namespace ProjectGenesis.Patches.UI.QTools
             cb.factoryButton.tips.tipTitle = "";
             cb.factoryButton.tips.tipText = "左键点击：更换生产设备".TranslateFromJson();
 
-            Util.NormalizeRectWithTopLeft(Util.CreateText("\u00d7", 18), 320, 10, cb._rect);
+            Util.NormalizeRectWithTopLeft(Util.CreateText("\u2573", 18), 320, 11, cb._rect);
             cb.factoryCountText = Util.CreateText("", 18);
             Util.NormalizeRectWithTopLeft(cb.factoryCountText, 340, 10, cb._rect);
 
