@@ -2,9 +2,9 @@
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup Label="DefaultPath">
         <!-- R2modmanProfilesPath is only for output -->
-        <R2modmanProfilesPath>E:\DysonSphereProgram\Default</R2modmanProfilesPath>
+        <R2modmanProfilesPath>C:\Users\littl\AppData\Roaming\r2modmanPlus-local\DysonSphereProgram\profiles\Default</R2modmanProfilesPath>
         <DefaultOutputPath>$(R2modmanProfilesPath)\BepInEx\plugins\HiddenCirno-GenesisBook\</DefaultOutputPath>
         <DefaultPreloaderOutputPath>$(R2modmanProfilesPath)\BepInEx\patchers\HiddenCirno-GenesisBook\</DefaultPreloaderOutputPath>
-        <DSPAssemblyPath>E:\SteamGames\steamapps\common\Dyson Sphere Program\DSPGAME_Data\Managed</DSPAssemblyPath>
+        <DSPAssemblyPath>D:\SteamLibrary\steamapps\common\Dyson Sphere Program\DSPGAME_Data\Managed</DSPAssemblyPath>
     </PropertyGroup>
 </Project>
