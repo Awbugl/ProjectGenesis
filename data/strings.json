@@ -576,7 +576,7 @@
   },
   {
     "Name": "虫洞能量不足",
-    "ZHCN": "机甲能量不足, 无法开启虫洞",
+    "ZHCN": "机甲能量不足， 无法开启虫洞",
     "ENUS": "The mecha does not have enough energy to open the wormhole"
   },
   {
@@ -606,7 +606,7 @@
   },
   {
     "Name": "巨型建筑工程学文字描述",
-    "ZHCN": "解锁巨型建筑的蓝图.",
+    "ZHCN": "解锁巨型建筑的蓝图。",
     "ENUS": "Unlock the blueprints of the Mega Building."
   },
   {
@@ -681,8 +681,8 @@
   },
   {
     "Name": "I混凝土",
-    "ZHCN": "远古时期就存在的建筑材料, 可以用于建造大型建筑.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A material that has existed since ancient times and can be used to build large structures.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "远古时期就存在的建筑材料， 可以用于建造大型建筑。",
+    "ENUS": "A material that has existed since ancient times and can be used to build large structures."
   },
   {
     "Name": "煤焦油",
@@ -696,8 +696,8 @@
   },
   {
     "Name": "I剧毒有机液体",
-    "ZHCN": "由多种化合物组成的剧毒液体,很难有效利用.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Toxic liquid consisting of many compounds.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "由多种化合物组成的剧毒液体，很难有效利用。",
+    "ENUS": "Toxic liquid consisting of many compounds."
   },
   {
     "Name": "聚丙烯",
@@ -706,8 +706,8 @@
   },
   {
     "Name": "I聚丙烯",
-    "ZHCN": "初级化工产品,广泛应用于各种行业.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Basic chemical material, widely used.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "初级化工产品，广泛应用于各种行业。",
+    "ENUS": "Basic chemical material, widely used."
   },
   {
     "Name": "增产剂",
@@ -731,18 +731,18 @@
   },
   {
     "Name": "四氢双环戊二烯",
-    "ZHCN": "四氢双环戊二烯(JP-10)",
+    "ZHCN": "四氢双环戊二烯（JP-10）",
     "ENUS": "Tetrahydrocyclopentadiene(JP-10)"
   },
   {
     "Name": "I四氢双环戊二烯",
-    "ZHCN": "代表性饱和多环碳氢化合物，广泛应用于航空航天领域。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Representative saturated polycyclic hydrocarbons, widely used in aerospace applications.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "代表性饱和多环碳氢化合物，广泛应用于航空航天领域。",
+    "ENUS": "Representative saturated polycyclic hydrocarbons, widely used in aerospace applications."
   },
   {
     "Name": "R四氢双环戊二烯",
-    "ZHCN": "代表性饱和多环碳氢化合物，广泛应用于航空航天领域。\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作.</color>\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Representative saturated polycyclic hydrocarbons, widely used in aerospace applications.\n<color=\"#FD965ECC\">It will not stop working until all products are stacked.</color>\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "代表性饱和多环碳氢化合物，广泛应用于航空航天领域。\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作。</color>",
+    "ENUS": "Representative saturated polycyclic hydrocarbons, widely used in aerospace applications.\n<color=\"#FD965ECC\">It will not stop working until all products are stacked.</color>"
   },
   {
     "Name": "四氢双环戊二烯燃料棒",
@@ -751,8 +751,8 @@
   },
   {
     "Name": "I四氢双环戊二烯燃料棒",
-    "ZHCN": "将四氢双环戊二烯封装在燃料棒中，提高利用率和燃烧效率。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Encapsulation of JP-10 in fuel rods, to improve utilization and combustion efficiency.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "将四氢双环戊二烯封装在燃料棒中，提高利用率和燃烧效率。",
+    "ENUS": "Encapsulation of JP-10 in fuel rods, to improve utilization and combustion efficiency."
   },
   {
     "Name": "煤油燃料棒",
@@ -761,8 +761,8 @@
   },
   {
     "Name": "I煤油燃料棒",
-    "ZHCN": "随着精炼技术的发展，将石油分馏后得到的高品质煤油封装在燃料棒中，提高利用率和燃烧效率。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "With the development of refining technology, high-quality kerosene obtained from petroleum fractionation is encapsulated in fuel rods to improve utilization and combustion efficiency.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "随着精炼技术的发展，将石油分馏后得到的高品质煤油封装在燃料棒中，提高利用率和燃烧效率。",
+    "ENUS": "With the development of refining technology, high-quality kerosene obtained from petroleum fractionation is encapsulated in fuel rods to improve utilization and combustion efficiency."
   },
   {
     "Name": "同位素温差发电机",
@@ -771,8 +771,8 @@
   },
   {
     "Name": "I同位素温差发电机",
-    "ZHCN": "将放射性同位素的衰变热利用塞贝克效应直接转换成电能的一种致密能源，抗干扰性强。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A dense energy source that converts the decay heat of radioisotopes directly into electricity using the Seebeck effect and is highly resistant to interference.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "将放射性同位素的衰变热利用塞贝克效应直接转换成电能的一种致密能源，抗干扰性强。",
+    "ENUS": "A dense energy source that converts the decay heat of radioisotopes directly into electricity using the Seebeck effect and is highly resistant to interference."
   },
   {
     "Name": "放射性矿物",
@@ -816,8 +816,8 @@
   },
   {
     "Name": "I量子储液罐",
-    "ZHCN": "将量子技术应用于液体存储上的科研成果,这种储罐有着远超普通储液罐的液体容量.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "The scientific research results of applying quantum technology to liquid storage,this storage tank has a liquid capacity far greater than that of ordinary storage tanks.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "将量子技术应用于液体存储上的科研成果，这种储罐有着远超普通储液罐的液体容量。",
+    "ENUS": "The scientific research results of applying quantum technology to liquid storage,this storage tank has a liquid capacity far greater than that of ordinary storage tanks."
   },
   {
     "Name": "矿物处理厂",
@@ -826,8 +826,8 @@
   },
   {
     "Name": "I矿物处理厂",
-    "ZHCN": "用于矿物预处理的工厂.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Mineral processor, used to smash ores.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "用于矿物预处理的工厂。",
+    "ENUS": "Mineral processor, used to smash ores."
   },
   {
     "Name": "氦",
@@ -846,8 +846,8 @@
   },
   {
     "Name": "I钚燃料棒",
-    "ZHCN": "将钚燃料封装在燃料棒中，提高利用率和输出功率。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Encapsulation of plutonium fuel in fuel rods to improve utilization and output power.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "将钚燃料封装在燃料棒中，提高利用率和输出功率。",
+    "ENUS": "Encapsulation of plutonium fuel in fuel rods to improve utilization and output power."
   },
   {
     "Name": "铀燃料棒",
@@ -856,8 +856,8 @@
   },
   {
     "Name": "I铀燃料棒",
-    "ZHCN": "将铀燃料封装在燃料棒中，提高利用率和输出功率。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Encapsulation of uranium fuel in fuel rods to improve utilization and output power.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "将铀燃料封装在燃料棒中，提高利用率和输出功率。",
+    "ENUS": "Encapsulation of uranium fuel in fuel rods to improve utilization and output power."
   },
   {
     "Name": "MOX燃料棒",
@@ -866,8 +866,8 @@
   },
   {
     "Name": "IMOX燃料棒",
-    "ZHCN": "一种铀和钚的混合燃料，可以最大化利用铀和钚的能量。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A mixed fuel of uranium and plutonium, which can maximize the energy of them.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "一种铀和钚的混合燃料，可以最大化利用铀和钚的能量。",
+    "ENUS": "A mixed fuel of uranium and plutonium, which can maximize the energy of them."
   },
   {
     "Name": "I氢燃料棒",
@@ -891,8 +891,8 @@
   },
   {
     "Name": "I氦三燃料棒",
-    "ZHCN": "将氦三燃料封装在燃料棒中，提高利用率和输出功率。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Encapsulation of helium-3 fuel in fuel rods to improve utilization and output power.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "将氦三燃料封装在燃料棒中，提高利用率和输出功率。",
+    "ENUS": "Encapsulation of helium-3 fuel in fuel rods to improve utilization and output power."
   },
   {
     "Name": "氘氦混合聚变燃料棒",
@@ -901,8 +901,8 @@
   },
   {
     "Name": "I氘氦混合聚变燃料棒",
-    "ZHCN": "你掌握着恒星的能量.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "You hold the energy of the stars.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "你掌握着恒星的能量。",
+    "ENUS": "You hold the energy of the stars."
   },
   {
     "Name": "石粉",
@@ -911,8 +911,8 @@
   },
   {
     "Name": "I石粉",
-    "ZHCN": "对石矿进行预先粉碎处理的产物，可明显提高熔炉的效率.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "The product of pre-crushing of stone ore, which can significantly improve the efficiency of the furnace.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "对石矿进行预先粉碎处理的产物，可明显提高熔炉的效率。",
+    "ENUS": "The product of pre-crushing of stone ore, which can significantly improve the efficiency of the furnace."
   },
   {
     "Name": "铁矿粉",
@@ -921,8 +921,8 @@
   },
   {
     "Name": "I铁矿粉",
-    "ZHCN": "对铁矿进行预先粉碎处理的产物，可明显提高熔炉的效率.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "The product of pre-crushing of iron ore, which can significantly improve the efficiency of the furnace.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "对铁矿进行预先粉碎处理的产物，可明显提高熔炉的效率。",
+    "ENUS": "The product of pre-crushing of iron ore, which can significantly improve the efficiency of the furnace."
   },
   {
     "Name": "铜矿粉",
@@ -931,8 +931,8 @@
   },
   {
     "Name": "I铜矿粉",
-    "ZHCN": "对铜矿进行预先粉碎处理的产物，可明显提高熔炉的效率.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "The product of pre-crushing of copper ore, which can significantly improve the efficiency of the furnace.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "对铜矿进行预先粉碎处理的产物，可明显提高熔炉的效率。",
+    "ENUS": "The product of pre-crushing of copper ore, which can significantly improve the efficiency of the furnace."
   },
   {
     "Name": "硅矿粉",
@@ -941,8 +941,8 @@
   },
   {
     "Name": "I硅矿粉",
-    "ZHCN": "对硅矿进行预先粉碎处理的产物，可明显提高熔炉的效率.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "The product of pre-crushing of silicon ore, which can significantly improve the efficiency of the furnace.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "对硅矿进行预先粉碎处理的产物，可明显提高熔炉的效率。",
+    "ENUS": "The product of pre-crushing of silicon ore, which can significantly improve the efficiency of the furnace."
   },
   {
     "Name": "钛矿粉",
@@ -951,8 +951,8 @@
   },
   {
     "Name": "I钛矿粉",
-    "ZHCN": "对钛矿进行预先粉碎处理的产物，可明显提高熔炉的效率.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "The product of pre-crushing of titanium ore, which can significantly improve the efficiency of the furnace.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "对钛矿进行预先粉碎处理的产物，可明显提高熔炉的效率。",
+    "ENUS": "The product of pre-crushing of titanium ore, which can significantly improve the efficiency of the furnace."
   },
   {
     "Name": "钨矿粉",
@@ -961,8 +961,8 @@
   },
   {
     "Name": "I钨矿粉",
-    "ZHCN": "对钨矿进行预先粉碎处理的产物，可明显提高熔炉的效率.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "The product of pre-crushing of tungsten ore, which can significantly improve the efficiency of the furnace.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "对钨矿进行预先粉碎处理的产物，可明显提高熔炉的效率。",
+    "ENUS": "The product of pre-crushing of tungsten ore, which can significantly improve the efficiency of the furnace."
   },
   {
     "Name": "煤矿粉",
@@ -971,8 +971,8 @@
   },
   {
     "Name": "I煤矿粉",
-    "ZHCN": "对煤矿进行预先粉碎处理的产物，可明显提高熔炉的效率.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "The product of pre-crushing of coal ore, which can significantly improve the efficiency of the furnace.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "对煤矿进行预先粉碎处理的产物，可明显提高熔炉的效率。",
+    "ENUS": "The product of pre-crushing of coal ore, which can significantly improve the efficiency of the furnace."
   },
   {
     "Name": "天穹装配厂",
@@ -981,8 +981,8 @@
   },
   {
     "Name": "I天穹装配厂",
-    "ZHCN": "一座规模庞大的巨型工厂,包括大量的加工单元,高速运输轨道和精密机械臂.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Mega Assembler.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "一座规模庞大的巨型工厂，包括大量的加工单元，高速运输轨道和精密机械臂。",
+    "ENUS": "Mega Assembler."
   },
   {
     "Name": "物质裂解塔",
@@ -991,8 +991,8 @@
   },
   {
     "Name": "I物质裂解塔",
-    "ZHCN": "使用裂解光束对基础矿物进行加工熔炼的大型工厂,高功率裂解光束能够以极高的效率处理矿物.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Mega Smelter.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "使用裂解光束对基础矿物进行加工熔炼的大型工厂，高功率裂解光束能够以极高的效率处理矿物。",
+    "ENUS": "Mega Smelter."
   },
   {
     "Name": "巨型化学反应釜",
@@ -1001,8 +1001,8 @@
   },
   {
     "Name": "I巨型化学反应釜",
-    "ZHCN": "一座大型化工厂,当你置身其中,犹如进入了一片管道森林.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Mega Chemical Reaction Kettle.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "一座大型化工厂，当你置身其中，犹如进入了一片管道森林。",
+    "ENUS": "Mega Chemical Reaction Kettle."
   },
   {
     "Name": "精密结构组装厂",
@@ -1011,8 +1011,8 @@
   },
   {
     "Name": "I精密结构组装厂",
-    "ZHCN": "这座工厂将精密装配线进行大规模集成以提升运转效率.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Mega Precise Assembler.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "这座工厂将精密装配线进行大规模集成以提升运转效率。",
+    "ENUS": "Mega Precise Assembler."
   },
   {
     "Name": "巨型粒子对撞机",
@@ -1021,8 +1021,8 @@
   },
   {
     "Name": "I巨型粒子对撞机",
-    "ZHCN": "大量并行运行的加速器将生产力提升到一个崭新的高度.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "The large number of parallel running accelerators takes productivity to a whole new level.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "大量并行运行的加速器将生产力提升到一个崭新的高度。",
+    "ENUS": "The large number of parallel running accelerators takes productivity to a whole new level."
   },
   {
     "Name": "反物质能量炉",
@@ -1046,8 +1046,8 @@
   },
   {
     "Name": "I物质分解设施",
-    "ZHCN": "将工业废弃物转换为沙土的巨型设施。有人会称这种做法为严重的资源浪费，而我们将其称为高效。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Mega Facility for converting industrial waste into Sand.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "将工业废弃物转换为沙土的巨型设施。有人会称这种做法为严重的资源浪费，而我们将其称为高效。",
+    "ENUS": "Mega Facility for converting industrial waste into Sand."
   },
   {
     "Name": "三元精金",
@@ -1066,8 +1066,8 @@
   },
   {
     "Name": "I先驱者晶片",
-    "ZHCN": "基于未知文明留下的蓝图，使用精密制造厂打印出的神秘材料。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Based on blueprints left behind by an unknown civilization, using mysterious materials printed by an accurate manufacturing facility.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "基于未知文明留下的蓝图，使用精密制造厂打印出的神秘材料。",
+    "ENUS": "Based on blueprints left behind by an unknown civilization, using mysterious materials printed by an accurate manufacturing facility."
   },
   {
     "Name": "精密制造厂",
@@ -1076,8 +1076,8 @@
   },
   {
     "Name": "I精密制造厂",
-    "ZHCN": "基于未知文明留下的蓝图制造的设备。能够将蓝图以物质世界基本单位的尺度精准还原。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "This factory is capable of accurately reproducing blueprints on the scale of the basic units of the material world.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "基于未知文明留下的蓝图制造的设备。能够将蓝图以物质世界基本单位的尺度精准还原。",
+    "ENUS": "This factory is capable of accurately reproducing blueprints on the scale of the basic units of the material world."
   },
   {
     "Name": "紧凑式回旋加速器",
@@ -1086,13 +1086,13 @@
   },
   {
     "Name": "I紧凑式回旋加速器",
-    "ZHCN": "基于未知文明留下的蓝图制造的设备。可在极小的空间内将粒子加速至极限。工作原理仍在逆向过程中。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Based on blueprints left behind by an unknown civilization, particles can be accelerated to their limits in a very small space. The working principle is still in the reverse process.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "基于未知文明留下的蓝图制造的设备。可在极小的空间内将粒子加速至极限。工作原理仍在逆向过程中。",
+    "ENUS": "Based on blueprints left behind by an unknown civilization, particles can be accelerated to their limits in a very small space. The working principle is still in the reverse process."
   },
   {
     "Name": "I反物质能量炉",
-    "ZHCN": "基于未知文明留下的蓝图制造的设备。掌控质能。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Based on blueprints left behind by an unknown civilization, Mass-energy is in your control now.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "基于未知文明留下的蓝图制造的设备。掌控质能。",
+    "ENUS": "Based on blueprints left behind by an unknown civilization, Mass-energy is in your control now."
   },
   {
     "Name": "硫粉",
@@ -1101,8 +1101,8 @@
   },
   {
     "Name": "I硫粉",
-    "ZHCN": "从硫矿中提取还原得到的粉末状硫单质.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Powdered sulfur monomer extracted from sulfur ore.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "从硫矿中提取还原得到的粉末状硫单质。",
+    "ENUS": "Powdered sulfur monomer extracted from sulfur ore."
   },
   {
     "Name": "结构矩阵",
@@ -1121,8 +1121,8 @@
   },
   {
     "Name": "I稳定矩阵",
-    "ZHCN": "由两种矩阵组成的复合矩阵。可被分拣器解离成等量的两种矩阵用于科研，也可作为合成宇宙矩阵的原料之一.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "It is a composite matrix composed of two matrixes, which can be disassembled into two matrixes for research lab by sorter, and can also be used as one of the raw materials for synthesizing the universe matrix roughcast.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "由两种矩阵组成的复合矩阵。可被分拣器解离成等量的两种矩阵用于科研，也可作为合成宇宙矩阵的原料之一。",
+    "ENUS": "It is a composite matrix composed of two matrixes, which can be disassembled into two matrixes for research lab by sorter, and can also be used as one of the raw materials for synthesizing the universe matrix roughcast."
   },
   {
     "Name": "虚空矩阵",
@@ -1131,8 +1131,8 @@
   },
   {
     "Name": "I虚空矩阵",
-    "ZHCN": "由两种矩阵组成的复合矩阵。可被分拣器解离成等量的两种矩阵用于科研，也可作为合成宇宙矩阵的原料之一.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "It is a composite matrix composed of two matrixes, which can be disassembled into two matrixes for research lab by sorter, and can also be used as one of the raw materials for synthesizing the universe matrix roughcast.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "由两种矩阵组成的复合矩阵。可被分拣器解离成等量的两种矩阵用于科研，也可作为合成宇宙矩阵的原料之一。",
+    "ENUS": "It is a composite matrix composed of two matrixes, which can be disassembled into two matrixes for research lab by sorter, and can also be used as one of the raw materials for synthesizing the universe matrix roughcast."
   },
   {
     "Name": "宇宙矩阵粗坯",
@@ -1141,8 +1141,8 @@
   },
   {
     "Name": "I宇宙矩阵粗坯",
-    "ZHCN": "由五种矩阵组成的复合矩阵。使用反物质充能后可转换为宇宙矩阵，也可被分拣器解离成等量的五种矩阵用于科研.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "It is a composite matrix, which can be disassembled into five matrixes for research lab by sorter, and can be converted to universe matrix after charging with antimatter.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "由五种矩阵组成的复合矩阵。使用反物质充能后可转换为宇宙矩阵，也可被分拣器解离成等量的五种矩阵用于科研。",
+    "ENUS": "It is a composite matrix, which can be disassembled into five matrixes for research lab by sorter, and can be converted to universe matrix after charging with antimatter."
   },
   {
     "Name": "I湮灭约束球",
@@ -1156,8 +1156,8 @@
   },
   {
     "Name": "I基础机械组件",
-    "ZHCN": "一个通用组件包,用途广泛.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A common component, widely used.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "一个通用组件包，用途广泛。",
+    "ENUS": "A common component, widely used."
   },
   {
     "Name": "先进机械组件",
@@ -1166,8 +1166,8 @@
   },
   {
     "Name": "I先进机械组件",
-    "ZHCN": "一个通用组件包,用途广泛.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A common component, widely used.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "一个通用组件包，用途广泛。",
+    "ENUS": "A common component, widely used."
   },
   {
     "Name": "尖端机械组件",
@@ -1176,8 +1176,8 @@
   },
   {
     "Name": "I尖端机械组件",
-    "ZHCN": "一个通用组件包,用途广泛.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A common component, widely used.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "一个通用组件包，用途广泛。",
+    "ENUS": "A common component, widely used."
   },
   {
     "Name": "超级机械组件",
@@ -1186,8 +1186,8 @@
   },
   {
     "Name": "I超级机械组件",
-    "ZHCN": "这是...什么?\n(To be announced)\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "What the hell...\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "这是。。。什么？\n（To be announced）",
+    "ENUS": "What the hell..."
   },
   {
     "Name": "终极机械组件",
@@ -1196,8 +1196,8 @@
   },
   {
     "Name": "I终极机械组件",
-    "ZHCN": "一个通用组件包,用途广泛.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "You know, you shouldn't get this, right?\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "一个通用组件包，用途广泛。",
+    "ENUS": "You know, you shouldn't get this, right?"
   },
   {
     "Name": "创世之书",
@@ -1206,8 +1206,8 @@
   },
   {
     "Name": "I起源之书",
-    "ZHCN": "如果你拿到这本书，那我猜你应该已经试着接受这个MOD了。欢迎来到第一阶段，开拓者。\n第一阶段需要做的并不是很多，也不会很难。希望我能在下一个阶段见到你。<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "If you get this book, I guess you should have tried to accept this MOD. Welcome to the first stage, pioneer.\nThere is not much to do in the first stage, and it will not be difficult.\nI hope to see you in the next stage.<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "如果你拿到这本书，那我猜你应该已经试着接受这个MOD了。欢迎来到第一阶段，开拓者。\n第一阶段需要做的并不是很多，也不会很难。希望我能在下一个阶段见到你。",
+    "ENUS": "If you get this book, I guess you should have tried to accept this MOD. Welcome to the first stage, pioneer.\nThere is not much to do in the first stage, and it will not be difficult.\nI hope to see you in the next stage."
   },
   {
     "Name": "虚空之书",
@@ -1216,8 +1216,8 @@
   },
   {
     "Name": "I虚空之书",
-    "ZHCN": "我曾经无数次仰望星空，幻想银河彼端是否存在另一个文明。\n而现在，你已经踏出了远航星海的第一步。欢迎来到第二阶段，开拓者。\n在这个阶段，你需要铺设稳定的物流网络、推动材料技术不断进步，以及逐步发展信息技术。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "I have looked up at the stars countless times, and have imagined whether there is another civilization at the other end of the Milky Way.\nAnd now, you have taken the first step of the voyage. Welcome to the second stage, pioneer.\nIn this stage, you need to lay a stable logistics network, promote material technology to continue to improve, and gradually develop information technology.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "我曾经无数次仰望星空，幻想银河彼端是否存在另一个文明。\n而现在，你已经踏出了远航星海的第一步。欢迎来到第二阶段，开拓者。\n在这个阶段，你需要铺设稳定的物流网络、推动材料技术不断进步，以及逐步发展信息技术。",
+    "ENUS": "I have looked up at the stars countless times, and have imagined whether there is another civilization at the other end of the Milky Way.\nAnd now, you have taken the first step of the voyage. Welcome to the second stage, pioneer.\nIn this stage, you need to lay a stable logistics network, promote material technology to continue to improve, and gradually develop information technology."
   },
   {
     "Name": "起源之书",
@@ -1226,8 +1226,8 @@
   },
   {
     "Name": "I创世之书",
-    "ZHCN": "很高兴你能走到这一步，开拓者。\n欢迎来到最终阶段，宇宙的终点对你来说已经触手可及。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "I am glad you can get to this step, pioneer.\nWelcome to the final stage, the end of the universe is within your reach.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "很高兴你能走到这一步，开拓者。\n欢迎来到最终阶段，宇宙的终点对你来说已经触手可及。",
+    "ENUS": "I am glad you can get to this step, pioneer.\nWelcome to the final stage, the end of the universe is within your reach."
   },
   {
     "Name": "空燃料棒",
@@ -1236,8 +1236,8 @@
   },
   {
     "Name": "I空燃料棒",
-    "ZHCN": "一个空的燃料棒,可以用来装载多种燃料。需要时可加装额外的氧化剂存储仓。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "An empty fuel rod, can be filled with various fuels. Extra oxidizer storage can be added when needed.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "一个空的燃料棒，可以用来装载多种燃料。需要时可加装额外的氧化剂存储仓。",
+    "ENUS": "An empty fuel rod, can be filled with various fuels. Extra oxidizer storage can be added when needed."
   },
   {
     "Name": "氨",
@@ -1246,18 +1246,18 @@
   },
   {
     "Name": "I氨",
-    "ZHCN": "无色、有强烈的刺激气味的气体。常以液态形式储存.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A colorless gas with a strong irritating odor. It is usually stored as a liquid.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "无色、有强烈的刺激气味的气体。常以液态形式储存。",
+    "ENUS": "A colorless gas with a strong irritating odor. It is usually stored as a liquid."
   },
   {
     "Name": "聚酰亚胺",
-    "ZHCN": "聚酰亚胺(PI)",
+    "ZHCN": "聚酰亚胺（PI）",
     "ENUS": "Polyimide(PI)"
   },
   {
     "Name": "I聚酰亚胺",
-    "ZHCN": "聚酰亚胺是一种高性能有机高分子化合物，具有优异的高温稳定性、耐化学腐蚀性和电绝缘性能。\n<color=\"#7AF0FFC8\">——来自创世之书。</color>",
-    "ENUS": "Polyimide is a high-performance organic polymer compound, exhibits excellent high-temperature stability, chemical resistance, and electrical insulation properties.\n<color=\"#7AF0FFC8\">——Added by GenesisBook.</color>"
+    "ZHCN": "聚酰亚胺是一种高性能有机高分子化合物，具有优异的高温稳定性、耐化学腐蚀性和电绝缘性能。",
+    "ENUS": "Polyimide is a high-performance organic polymer compound, exhibits excellent high-temperature stability, chemical resistance, and electrical insulation properties."
   },
   {
     "Name": "苯",
@@ -1266,8 +1266,8 @@
   },
   {
     "Name": "I苯",
-    "ZHCN": "由六个碳原子和六个氢原子组成的有机化合物，是重要的有机化工原料。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "An organic compound consisting of six carbon atoms and six hydrogen atoms, an important organic chemical raw material.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "由六个碳原子和六个氢原子组成的有机化合物，是重要的有机化工原料。",
+    "ENUS": "An organic compound consisting of six carbon atoms and six hydrogen atoms, an important organic chemical raw material."
   },
   {
     "Name": "丙烯",
@@ -1276,8 +1276,8 @@
   },
   {
     "Name": "I丙烯",
-    "ZHCN": "无色气体，有类似石油气的气味，是重要的有机化工原料。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Colorless gas with a similar odor to petroleum gas, an important organic chemical raw material.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "无色气体，有类似石油气的气味，是重要的有机化工原料。",
+    "ENUS": "Colorless gas with a similar odor to petroleum gas, an important organic chemical raw material."
   },
   {
     "Name": "氢氯酸",
@@ -1286,8 +1286,8 @@
   },
   {
     "Name": "I氢氯酸",
-    "ZHCN": "无色透明的液体，有强烈的刺激性气味，俗称盐酸，工业用途广泛。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Colorless transparent liquid with a strong irritating odor, widely used in industry.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "无色透明的液体，有强烈的刺激性气味，俗称盐酸，工业用途广泛。",
+    "ENUS": "Colorless transparent liquid with a strong irritating odor, widely used in industry."
   },
   {
     "Name": "三氯化铁",
@@ -1296,8 +1296,8 @@
   },
   {
     "Name": "I三氯化铁",
-    "ZHCN": "常见的共价化合物，工业用途广泛。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A common covalent compound, widely used in industry.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "常见的共价化合物，工业用途广泛。",
+    "ENUS": "A common covalent compound, widely used in industry."
   },
   {
     "Name": "硝酸",
@@ -1306,8 +1306,8 @@
   },
   {
     "Name": "I硝酸",
-    "ZHCN": "无色液体。由于光解而一般带有微黄色，有刺激性气味，强酸，常用于制造硝基化合物。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Colorless liquid. Generally with a slight yellow, with a strong irritating odor, is a strong acid, often used to make nitro compounds.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "无色液体。由于光解而一般带有微黄色，有刺激性气味，强酸，常用于制造硝基化合物。",
+    "ENUS": "Colorless liquid. Generally with a slight yellow, with a strong irritating odor, is a strong acid, often used to make nitro compounds."
   },
   {
     "Name": "海水",
@@ -1316,8 +1316,8 @@
   },
   {
     "Name": "I海水",
-    "ZHCN": "大部分生态星球表面的水体，含有大量的钠盐，是一种无色透明的液体。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Most of the water on the surface of the ecological planet, containing a large number of sodium salts, is a colorless transparent liquid.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "大部分生态星球表面的水体，含有大量的钠盐，是一种无色透明的液体。",
+    "ENUS": "Most of the water on the surface of the ecological planet, containing a large number of sodium salts, is a colorless transparent liquid."
   },
   {
     "Name": "氧",
@@ -1326,8 +1326,8 @@
   },
   {
     "Name": "I氧",
-    "ZHCN": "生命的必需品，同时也是强氧化剂。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "The essential of life, but also a strong oxidant.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "生命的必需品，同时也是强氧化剂。",
+    "ENUS": "The essential of life, but also a strong oxidant."
   },
   {
     "Name": "氢氧化钠",
@@ -1336,8 +1336,8 @@
   },
   {
     "Name": "I氢氧化钠",
-    "ZHCN": "具有强腐蚀性的强碱，工业用途广泛。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A strong alkali with strong corrosive, widely used in industry.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "具有强腐蚀性的强碱，工业用途广泛。",
+    "ENUS": "A strong alkali with strong corrosive, widely used in industry."
   },
   {
     "Name": "氯化钠",
@@ -1346,8 +1346,8 @@
   },
   {
     "Name": "I氯化钠",
-    "ZHCN": "无色立方结晶或细小结晶粉末，味咸。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Colorless cubic crystals or fine crystalline powder, salty taste.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "无色立方结晶或细小结晶粉末，味咸。",
+    "ENUS": "Colorless cubic crystals or fine crystalline powder, salty taste."
   },
   {
     "Name": "塑料基板",
@@ -1356,8 +1356,8 @@
   },
   {
     "Name": "I塑料基板",
-    "ZHCN": "使用聚丙烯制造的基板，用于制造基础电路板。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "The substrate made of polyethylene, used to make the basic circuit board.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "使用聚丙烯制造的基板，用于制造基础电路板。",
+    "ENUS": "The substrate made of polyethylene, used to make the basic circuit board."
   },
   {
     "Name": "生物基板",
@@ -1366,8 +1366,8 @@
   },
   {
     "Name": "I生物基板",
-    "ZHCN": "使用聚酰亚胺制造的基板，具有更好的生物相容性、稳定性和耐用性。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "The substrate made of polyimide, which has better biocompatibility, stability and durability.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "使用聚酰亚胺制造的基板，具有更好的生物相容性、稳定性和耐用性。",
+    "ENUS": "The substrate made of polyimide, which has better biocompatibility, stability and durability."
   },
   {
     "Name": "钨块",
@@ -1386,13 +1386,13 @@
   },
   {
     "Name": "聚苯硫醚",
-    "ZHCN": "聚苯硫醚(PPS)",
+    "ZHCN": "聚苯硫醚（PPS）",
     "ENUS": "Polyphenylene sulfide(PPS)"
   },
   {
     "Name": "I聚苯硫醚",
-    "ZHCN": "一种有机高分子化合物，具有良好的热稳定性和电绝缘性能。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Polyphenyl sulfide (PPS) is an organic polymer compound, exhibits excellent thermal stability and electrical insulation properties.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "一种有机高分子化合物，具有良好的热稳定性和电绝缘性能。",
+    "ENUS": "Polyphenyl sulfide (PPS) is an organic polymer compound, exhibits excellent thermal stability and electrical insulation properties."
   },
   {
     "Name": "活性生物纤维",
@@ -1401,8 +1401,8 @@
   },
   {
     "Name": "I活性生物纤维",
-    "ZHCN": "由有机晶体制作成的复合材料，具有高强度、高韧性，以及良好的生物相容性.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Made of organic crystal, it has high strength, high toughness, and good biocompatibility.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "由有机晶体制作成的复合材料，具有高强度、高韧性，以及良好的生物相容性。",
+    "ENUS": "Made of organic crystal, it has high strength, high toughness, and good biocompatibility."
   },
   {
     "Name": "先进生物电路",
@@ -1411,8 +1411,8 @@
   },
   {
     "Name": "I先进生物电路",
-    "ZHCN": "具有良好生物相容性的先进计算单元.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Advanced computing unit with good biocompatibility.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "具有良好生物相容性的先进计算单元。",
+    "ENUS": "Advanced computing unit with good biocompatibility."
   },
   {
     "Name": "超生物计算集群",
@@ -1421,8 +1421,8 @@
   },
   {
     "Name": "I超生物计算集群",
-    "ZHCN": "具有良好生物相容性的计算集群.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Computing cluster with good biocompatibility.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "具有良好生物相容性的计算集群。",
+    "ENUS": "Computing cluster with good biocompatibility."
   },
   {
     "Name": "生物神经纤维",
@@ -1431,8 +1431,8 @@
   },
   {
     "Name": "I生物神经纤维",
-    "ZHCN": "使用活性生物纤维仿制的人造生物神经，能够用来在活性生物组织之间传递信息.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Artificial biological nerve made of active biological fiber, which can be used to transmit information between active biological tissues.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "使用活性生物纤维仿制的人造生物神经，能够用来在活性生物组织之间传递信息。",
+    "ENUS": "Artificial biological nerve made of active biological fiber, which can be used to transmit information between active biological tissues."
   },
   {
     "Name": "超级纳米电脑",
@@ -1441,8 +1441,8 @@
   },
   {
     "Name": "I超级纳米电脑",
-    "ZHCN": "量子芯片与粒子宽带结合制造出的纳米级精度的庞然大物，能够实现超高速的计算.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A huge thing made of quantum chips and particle broadband, which can achieve super high speed computing.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "量子芯片与粒子宽带结合制造出的纳米级精度的庞然大物，能够实现超高速的计算。",
+    "ENUS": "A huge thing made of quantum chips and particle broadband, which can achieve super high speed computing."
   },
   {
     "Name": "湿件主机",
@@ -1451,8 +1451,8 @@
   },
   {
     "Name": "I湿件主机",
-    "ZHCN": "无数的生物芯片用生物神经纤维连接而成。算力与超级纳米电脑相当，能够与生物组织接驳.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A huge thing made of quantum chips and particle broadband, which can achieve super high speed computing.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "无数的生物芯片用生物神经纤维连接而成。算力与超级纳米电脑相当，能够与生物组织接驳。",
+    "ENUS": "A huge thing made of quantum chips and particle broadband, which can achieve super high speed computing."
   },
   {
     "Name": "先进化学反应釜",
@@ -1461,8 +1461,8 @@
   },
   {
     "Name": "I先进化学反应釜",
-    "ZHCN": "相较于原始的化工厂，这台机器拥有更加高效的控制系统，更加稳定的压力容器，能够满足极端的化工生产条件需求.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Compared to the original chemical plant, this machine has a more efficient control system and a more stable pressure vessel to meet the demands of extreme chemical production conditions.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "相较于原始的化工厂，这台机器拥有更加高效的控制系统，更加稳定的压力容器，能够满足极端的化工生产条件需求。",
+    "ENUS": "Compared to the original chemical plant, this machine has a more efficient control system and a more stable pressure vessel to meet the demands of extreme chemical production conditions."
   },
   {
     "Name": "T化学反应釜压力容器",
@@ -1471,7 +1471,7 @@
   },
   {
     "Name": "T化学反应釜压力容器描述",
-    "ZHCN": "使用新的材料改良化工厂的压力容器，结合更新换代的控制系统从而满足极端的化工生产条件需求.",
+    "ZHCN": "使用新的材料改良化工厂的压力容器，结合更新换代的控制系统从而满足极端的化工生产条件需求。",
     "ENUS": "Improvement of pressure vessels in chemical plants with new materials, combined with updated control systems to meet the demands of extreme chemical production conditions.</color>"
   },
   {
@@ -1481,8 +1481,8 @@
   },
   {
     "Name": "R硅石筛选",
-    "ZHCN": "利用化学性质不同,筛选出含硅量较高的硅石.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "The silica with higher silica content is selected by using different chemical properties.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "利用化学性质不同，筛选出含硅量较高的硅石。",
+    "ENUS": "The silica with higher silica content is selected by using different chemical properties."
   },
   {
     "Name": "氦元素离心",
@@ -1491,8 +1491,8 @@
   },
   {
     "Name": "R氦元素离心",
-    "ZHCN": "从光栅石的晶格中提取出富集的氦.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Extract enriched helium from the lattice of grating stone.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "从光栅石的晶格中提取出富集的氦。",
+    "ENUS": "Extract enriched helium from the lattice of grating stone."
   },
   {
     "Name": "光子自增殖",
@@ -1501,8 +1501,8 @@
   },
   {
     "Name": "R光子自增殖",
-    "ZHCN": "利用光子结晶奇妙的特性，我们可以提供能量将光子激发为临界光子.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "With the wonderful properties of photon crystallization, we can provide energy to excite photons to critical photons.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "利用光子结晶奇妙的特性，我们可以提供能量将光子激发为临界光子。",
+    "ENUS": "With the wonderful properties of photon crystallization, we can provide energy to excite photons to critical photons."
   },
   {
     "Name": "水电解",
@@ -1511,8 +1511,8 @@
   },
   {
     "Name": "R水电解",
-    "ZHCN": "电解水，产生氢气和氧气.\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作.</color>\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Electrolysis of water, producing hydrogen and oxygen.\n<color=\"#FD965ECC\">Will not stop working until all products are accumulated.</color>\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "电解水，产生氢气和氧气。\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作。</color>",
+    "ENUS": "Electrolysis of water, producing hydrogen and oxygen.\n<color=\"#FD965ECC\">Will not stop working until all products are accumulated.</color>"
   },
   {
     "Name": "盐水分解",
@@ -1521,8 +1521,8 @@
   },
   {
     "Name": "R盐水分解",
-    "ZHCN": "使用离子交换膜电解氯化钠溶液，生产氢氯酸和氢氧化钠.\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作.</color>\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Electrolysis of salt water using ion exchange membranes, producing hydrochloric acid and sodium hydroxide.\n<color=\"#FD965ECC\">Will not stop working until all products are accumulated.</color>\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "使用离子交换膜电解氯化钠溶液，生产氢氯酸和氢氧化钠。\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作。</color>",
+    "ENUS": "Electrolysis of salt water using ion exchange membranes, producing hydrochloric acid and sodium hydroxide.\n<color=\"#FD965ECC\">Will not stop working until all products are accumulated.</color>"
   },
   {
     "Name": "海水淡化",
@@ -1531,8 +1531,8 @@
   },
   {
     "Name": "R海水淡化",
-    "ZHCN": "利用反渗透膜将海水中的盐分去除.\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作.</color>\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Remove salt from seawater using reverse osmosis membranes (will not stop working until all products are accumulated).\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "利用反渗透膜将海水中的盐分去除。\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作。</color>",
+    "ENUS": "Remove salt from seawater using reverse osmosis membranes (will not stop working until all products are accumulated)."
   },
   {
     "Name": "丙烯合成",
@@ -1541,8 +1541,8 @@
   },
   {
     "Name": "R丙烯合成",
-    "ZHCN": "二氧化碳和氢在催化剂的作用下可高效合成丙烯，是碳中和进程的重要一步.\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作.</color>\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Carbon dioxide and hydrogen can efficiently synthesize propylene in the presence of a catalyst, an important step in the carbon-neutral process.\n<color=\"#FD965ECC\">It will not stop working until all products are stacked.</color>\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "二氧化碳和氢在催化剂的作用下可高效合成丙烯，是碳中和进程的重要一步。\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作。</color>",
+    "ENUS": "Carbon dioxide and hydrogen can efficiently synthesize propylene in the presence of a catalyst, an important step in the carbon-neutral process.\n<color=\"#FD965ECC\">It will not stop working until all products are stacked.</color>"
   },
   {
     "Name": "合成氨",
@@ -1551,8 +1551,8 @@
   },
   {
     "Name": "R合成氨",
-    "ZHCN": "使用氮气和氢气作为原料, 合成氨.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Using nitrogen and hydrogen as raw materials to synthesize ammonia.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "使用氮气和氢气作为原料， 合成氨。",
+    "ENUS": "Using nitrogen and hydrogen as raw materials to synthesize ammonia."
   },
   {
     "Name": "活性纤维分离",
@@ -1561,8 +1561,8 @@
   },
   {
     "Name": "R活性纤维分离",
-    "ZHCN": "使用亚原子操控技术，可以有效地将活性纤维的组分分解并将组装成聚酰亚胺.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Using subatomic manipulation technology, it can effectively decompose the components of active fibers and assemble them into polyimide.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "使用亚原子操控技术，可以有效地将活性纤维的组分分解并将组装成聚酰亚胺。",
+    "ENUS": "Using subatomic manipulation technology, it can effectively decompose the components of active fibers and assemble them into polyimide."
   },
   {
     "Name": "焦油转化",
@@ -1571,8 +1571,8 @@
   },
   {
     "Name": "R焦油转化",
-    "ZHCN": "将煤炭干馏成煤焦油.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Dry distillation of coal into coal tar.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "将煤炭干馏成煤焦油。",
+    "ENUS": "Dry distillation of coal into coal tar."
   },
   {
     "Name": "焦油分馏",
@@ -1581,8 +1581,8 @@
   },
   {
     "Name": "R焦油分馏",
-    "ZHCN": "从煤焦油中分馏出苯.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Extract benzene from coal tar.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "从煤焦油中分馏出苯。",
+    "ENUS": "Extract benzene from coal tar."
   },
   {
     "Name": "焦油裂化",
@@ -1591,13 +1591,13 @@
   },
   {
     "Name": "R焦油裂化",
-    "ZHCN": "将煤焦油裂化为丙烯.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Cracking coal tar into propylene.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "将煤焦油裂化为丙烯。",
+    "ENUS": "Cracking coal tar into propylene."
   },
   {
     "Name": "R三氯化铁",
-    "ZHCN": "向氢氯酸和铁的反应体系中加入氧气，使其转化为三氯化铁和水.\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作.</color>\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Add oxygen to the reaction system of hydrochloric acid and iron to convert it to ferric chloride and water.\n<color=\"#FD965ECC\">It will not stop working until all products are stacked.</color>\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "向氢氯酸和铁的反应体系中加入氧气，使其转化为三氯化铁和水。\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作。</color>",
+    "ENUS": "Add oxygen to the reaction system of hydrochloric acid and iron to convert it to ferric chloride and water.\n<color=\"#FD965ECC\">It will not stop working until all products are stacked.</color>"
   },
   {
     "Name": "钨矿筛选",
@@ -1606,8 +1606,8 @@
   },
   {
     "Name": "R钨矿筛选",
-    "ZHCN": "使用硝酸浸洗钛矿, 从中分离含钨的伴生矿.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Separation of tungsten-bearing associated ore from titanium ore by nitric acid leaching.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "使用硝酸浸洗钛矿， 从中分离含钨的伴生矿。",
+    "ENUS": "Separation of tungsten-bearing associated ore from titanium ore by nitric acid leaching."
   },
   {
     "Name": "光子结晶化",
@@ -1616,8 +1616,8 @@
   },
   {
     "Name": "R光子结晶化",
-    "ZHCN": "对未知先驱者科技进行逆向工程的部分成果。可在高能环境下将光子压缩成固体.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Partial results of reverse engineering unknown Herald technology. Compression of photons into solids in a high-energy environment.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "对未知先驱者科技进行逆向工程的部分成果。可在高能环境下将光子压缩成固体。",
+    "ENUS": "Partial results of reverse engineering unknown Herald technology. Compression of photons into solids in a high-energy environment."
   },
   {
     "Name": "钛晶石（高效）",
@@ -1626,8 +1626,8 @@
   },
   {
     "Name": "R钛晶石（高效）",
-    "ZHCN": "找到了有机晶体矿, 生产钛晶石就变得容易许多.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Once the organic crystal ore is found, the production of titanium crystal becomes much easier.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "找到了有机晶体矿， 生产钛晶石就变得容易许多。",
+    "ENUS": "Once the organic crystal ore is found, the production of titanium crystal becomes much easier."
   },
   {
     "Name": "质能储存（高效）",
@@ -1636,13 +1636,13 @@
   },
   {
     "Name": "R质能储存（高效）",
-    "ZHCN": "在只收集反物质的前提下, 可以采用更激进的磁场结构加快反物质的产出速度.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "If only collect antimatter, a more aggressive magnetic field structure to speed up the antimatter output.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "在只收集反物质的前提下， 可以采用更激进的磁场结构加快反物质的产出速度。",
+    "ENUS": "If only collect antimatter, a more aggressive magnetic field structure to speed up the antimatter output."
   },
   {
     "Name": "R等离子精炼",
-    "ZHCN": "利用等离子体精炼原油，可以获得氢气和煤焦油.\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作.</color>\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Hydrogen and coal tar can be obtained by refining crude oil with plasma.\n<color=\"#FD965ECC\">It will not stop working until all products are stacked.</color>\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "利用等离子体精炼原油，可以获得氢气和煤焦油。\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作。</color>",
+    "ENUS": "Hydrogen and coal tar can be obtained by refining crude oil with plasma.\n<color=\"#FD965ECC\">It will not stop working until all products are stacked.</color>"
   },
   {
     "Name": "苯合成",
@@ -1651,8 +1651,8 @@
   },
   {
     "Name": "R苯合成",
-    "ZHCN": "经过漫长的重整工序，可以将丙烯合成为苯。效率较低，却是历史上推动化石燃料资源封存的重要技术.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "After a lengthy reforming process, propylene can be synthesized into benzene. Less efficient, but an important technology that has historically driven the sequestration of fossil fuel resources.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "经过漫长的重整工序，可以将丙烯合成为苯。效率较低，却是历史上推动化石燃料资源封存的重要技术。",
+    "ENUS": "After a lengthy reforming process, propylene can be synthesized into benzene. Less efficient, but an important technology that has historically driven the sequestration of fossil fuel resources."
   },
   {
     "Name": "水煤气制取",
@@ -1661,8 +1661,8 @@
   },
   {
     "Name": "R水煤气制取",
-    "ZHCN": "将水蒸气通过炽热的石墨, 产生水煤气.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Steam is passed through a hot graphite to produce syngas.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "将水蒸气通过炽热的石墨， 产生水煤气。",
+    "ENUS": "Steam is passed through a hot graphite to produce syngas."
   },
   {
     "Name": "氨氧化",
@@ -1671,18 +1671,18 @@
   },
   {
     "Name": "R氨氧化",
-    "ZHCN": "氨气与氧气进行反应, 经过一系列反应合成硝酸.\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作.</color>\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Ammonia reacts with oxygen to produce nitric acid.\n<color=\"#FD965ECC\">Will not stop working until all products are accumulated.</color>\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "氨气与氧气进行反应， 经过一系列反应合成硝酸。\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作。</color>",
+    "ENUS": "Ammonia reacts with oxygen to produce nitric acid.\n<color=\"#FD965ECC\">Will not stop working until all products are accumulated.</color>"
   },
   {
     "Name": "R石墨烯（高效）",
-    "ZHCN": "找到可燃冰矿，制造石墨烯就会变得容易许多。\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作.</color>",
+    "ZHCN": "找到可燃冰矿，制造石墨烯就会变得容易许多。\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作。</color>",
     "ENUS": "It will be a lot easier to produce graphene if you can find combustible ice minerals.\n<color=\"#FD965ECC\">Will not stop working until all products are accumulated.</color>"
   },
   {
     "Name": "R硫酸",
-    "ZHCN": "使用离子交换膜电解硫酸钠溶液, 产生硫酸.\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作.</color>\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Sulfuric acid is produced by electrolysis of sodium sulfate solution using ion exchange membrane.\n<color=\"#FD965ECC\">Will not stop working until all products are accumulated.</color>\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "使用离子交换膜电解硫酸钠溶液， 产生硫酸。\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作。</color>",
+    "ENUS": "Sulfuric acid is produced by electrolysis of sodium sulfate solution using ion exchange membrane.\n<color=\"#FD965ECC\">Will not stop working until all products are accumulated.</color>"
   },
   {
     "Name": "处理器（高效）",
@@ -1691,8 +1691,8 @@
   },
   {
     "Name": "R处理器（高效）",
-    "ZHCN": "利用主机算力对生产流程大幅优化, 批量生产处理器变得简单.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "The production process of processors is greatly optimized by mainframe computing power, making it easy to produce in batch.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "利用主机算力对生产流程大幅优化， 批量生产处理器变得简单。",
+    "ENUS": "The production process of processors is greatly optimized by mainframe computing power, making it easy to produce in batch."
   },
   {
     "Name": "硫酸（高效）",
@@ -1701,8 +1701,8 @@
   },
   {
     "Name": "R硫酸（高效）",
-    "ZHCN": "利用硫化氢作为原料, 硫酸生产变得更加高效.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Sulfuric acid production becomes more efficient by using hydrogen sulfide as a raw material.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "利用硫化氢作为原料， 硫酸生产变得更加高效。",
+    "ENUS": "Sulfuric acid production becomes more efficient by using hydrogen sulfide as a raw material."
   },
   {
     "Name": "放射性矿物处理",
@@ -1711,8 +1711,8 @@
   },
   {
     "Name": "R放射性矿物处理",
-    "ZHCN": "利用氢氧化钠处理放射性矿物，将含有的放射性物质沉降分离.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Treatment of radioactive minerals with sodium hydroxide to precipitate and separate the contained radioactive ore.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "利用氢氧化钠处理放射性矿物，将含有的放射性物质沉降分离。",
+    "ENUS": "Treatment of radioactive minerals with sodium hydroxide to precipitate and separate the contained radioactive ore."
   },
   {
     "Name": "铁矿精炼",
@@ -1721,8 +1721,8 @@
   },
   {
     "Name": "R铁矿精炼",
-    "ZHCN": "从原矿中分离的纯净粉可以实现效率更高的生产.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "The pure powder separated from the raw ore allows for more efficient production.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "从原矿中分离的纯净粉可以实现效率更高的生产。",
+    "ENUS": "The pure powder separated from the raw ore allows for more efficient production."
   },
   {
     "Name": "铜矿精炼",
@@ -1731,8 +1731,8 @@
   },
   {
     "Name": "R铜矿精炼",
-    "ZHCN": "从原矿中分离的纯净粉可以实现效率更高的生产.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "The pure powder separated from the raw ore allows for more efficient production.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "从原矿中分离的纯净粉可以实现效率更高的生产。",
+    "ENUS": "The pure powder separated from the raw ore allows for more efficient production."
   },
   {
     "Name": "硅矿精炼",
@@ -1741,8 +1741,8 @@
   },
   {
     "Name": "R硅矿精炼",
-    "ZHCN": "从原矿中分离的纯净粉可以实现效率更高的生产.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "The pure powder separated from the raw ore allows for more efficient production.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "从原矿中分离的纯净粉可以实现效率更高的生产。",
+    "ENUS": "The pure powder separated from the raw ore allows for more efficient production."
   },
   {
     "Name": "铝矿精炼",
@@ -1751,8 +1751,8 @@
   },
   {
     "Name": "R铝矿精炼",
-    "ZHCN": "从原矿中分离的纯净粉可以实现效率更高的生产.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "The pure powder separated from the raw ore allows for more efficient production.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "从原矿中分离的纯净粉可以实现效率更高的生产。",
+    "ENUS": "The pure powder separated from the raw ore allows for more efficient production."
   },
   {
     "Name": "钛矿精炼",
@@ -1761,8 +1761,8 @@
   },
   {
     "Name": "R钛矿精炼",
-    "ZHCN": "从原矿中分离的纯净粉可以实现效率更高的生产.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "The pure powder separated from the raw ore allows for more efficient production.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "从原矿中分离的纯净粉可以实现效率更高的生产。",
+    "ENUS": "The pure powder separated from the raw ore allows for more efficient production."
   },
   {
     "Name": "钨矿精炼",
@@ -1771,8 +1771,8 @@
   },
   {
     "Name": "R钨矿精炼",
-    "ZHCN": "从原矿中分离的纯净粉可以实现效率更高的生产.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "The pure powder separated from the raw ore allows for more efficient production.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "从原矿中分离的纯净粉可以实现效率更高的生产。",
+    "ENUS": "The pure powder separated from the raw ore allows for more efficient production."
   },
   {
     "Name": "石矿精炼",
@@ -1781,8 +1781,8 @@
   },
   {
     "Name": "R石矿精炼",
-    "ZHCN": "从原矿中分离的纯净粉可以实现效率更高的生产.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "The pure powder separated from the raw ore allows for more efficient production.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "从原矿中分离的纯净粉可以实现效率更高的生产。",
+    "ENUS": "The pure powder separated from the raw ore allows for more efficient production."
   },
   {
     "Name": "煤矿精炼",
@@ -1791,8 +1791,8 @@
   },
   {
     "Name": "R煤矿精炼",
-    "ZHCN": "从原矿中分离的纯净粉可以实现效率更高的生产.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "The pure powder separated from the raw ore allows for more efficient production.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "从原矿中分离的纯净粉可以实现效率更高的生产。",
+    "ENUS": "The pure powder separated from the raw ore allows for more efficient production."
   },
   {
     "Name": "物质回收",
@@ -1801,8 +1801,8 @@
   },
   {
     "Name": "R物质回收",
-    "ZHCN": "将物质分解成沙土.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Breaks down the matter into soil pile.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "将物质分解成沙土。",
+    "ENUS": "Breaks down the matter into soil pile."
   },
   {
     "Name": "硫酸化合",
@@ -1811,8 +1811,8 @@
   },
   {
     "Name": "R硫酸化合",
-    "ZHCN": "在高温下硫粉被氧气氧化生成三氧化硫, 用水雾进行吸附就能得到高品质的硫酸.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Sulfur powder is oxidized by oxygen at high temperature to form sulfur trioxide. Just adsorption with water mist, high quality sulfuric acid can be obtained.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "在高温下硫粉被氧气氧化生成三氧化硫， 用水雾进行吸附就能得到高品质的硫酸。",
+    "ENUS": "Sulfur powder is oxidized by oxygen at high temperature to form sulfur trioxide. Just adsorption with water mist, high quality sulfuric acid can be obtained."
   },
   {
     "Name": "T地热开采",
@@ -1856,7 +1856,7 @@
   },
   {
     "Name": "T反物质能量炉结果",
-    "ZHCN": "掌控质能.",
+    "ZHCN": "掌控质能。",
     "ENUS": "You have mastered the technology of mass-energy conversion, and can now convert antimatter into energy."
   },
   {
@@ -1896,12 +1896,12 @@
   },
   {
     "Name": "T虫洞航行描述",
-    "ZHCN": "消耗1个<color=\"#FD965ECC\">空间翘曲器</color>和 12GJ 能量制造一个一次性虫洞, 可将机甲传送至<color=\"#FD965ECC\">星图模式</color>下选择的任意星球，但请小心星轨间的干扰.",
+    "ZHCN": "消耗1个<color=\"#FD965ECC\">空间翘曲器</color>和 12GJ 能量制造一个一次性虫洞， 可将机甲传送至<color=\"#FD965ECC\">星图模式</color>下选择的任意星球，但请小心星轨间的干扰。",
     "ENUS": "Consumes 1 <color=\"#FD965ECC\">Space Warper</color> and 12GJ mecha energy to create a one-time wormhole that can teleport the mecha to any planet selected in <color=\"#FD965ECC\">Star Map Mode</color>, but be careful of the interference between the orbits."
   },
   {
     "Name": "人造恒星描述",
-    "ZHCN": "使用约束技术将聚变反应稳定掌控,并将其作为能源利用.",
+    "ZHCN": "使用约束技术将聚变反应稳定掌控，并将其作为能源利用。",
     "ENUS": "Using confinement technology to stabilize and control fusion reactions and use them as an energy source."
   },
   {
@@ -1921,7 +1921,7 @@
   },
   {
     "Name": "T矿物处理描述",
-    "ZHCN": "进一步对矿石进行预先粉碎处理可明显提高熔炉的效率, 并使矿物转化变得可能.",
+    "ZHCN": "进一步对矿石进行预先粉碎处理可明显提高熔炉的效率， 并使矿物转化变得可能。",
     "ENUS": "Further pre-crushing of the ore significantly improves the efficiency of the furnace and makes mineral transformation possible."
   },
   {
@@ -2106,7 +2106,7 @@
   },
   {
     "Name": "T裂变能源燃料棒描述",
-    "ZHCN": "使用放射性同位素制作的裂变燃料.",
+    "ZHCN": "使用放射性同位素制作的裂变燃料。",
     "ENUS": "Fission fuel made with radioisotopes."
   },
   {
@@ -2116,7 +2116,7 @@
   },
   {
     "Name": "T聚变燃料提取描述",
-    "ZHCN": "光栅石的特殊晶格结构使其可作为富集氦原子的理想载体, 利用其富集的氦原子可以为制作聚变燃料找到一条捷径.",
+    "ZHCN": "光栅石的特殊晶格结构使其可作为富集氦原子的理想载体， 利用其富集的氦原子可以为制作聚变燃料找到一条捷径。",
     "ENUS": "The special lattice structure of the grating stone makes it an ideal carrier for enriching helium atoms. The enriched helium atoms can be used to find a shortcut for making fusion fuel."
   },
   {
@@ -2126,7 +2126,7 @@
   },
   {
     "Name": "T聚变能源燃料棒描述",
-    "ZHCN": "使用聚变同位素制作的聚变燃料棒.",
+    "ZHCN": "使用聚变同位素制作的聚变燃料棒。",
     "ENUS": "Fusion fuel rod made with fusion isotopes."
   },
   {
@@ -2136,7 +2136,7 @@
   },
   {
     "Name": "T天穹装配厂描述",
-    "ZHCN": "高度智能化的大型工厂,有着远超标准制造单元的效率.",
+    "ZHCN": "高度智能化的大型工厂，有着远超标准制造单元的效率。",
     "ENUS": "A highly intelligent large-scale factory with efficiency far exceeding that of a Standard Assembler."
   },
   {
@@ -2146,7 +2146,7 @@
   },
   {
     "Name": "T物质裂解塔描述",
-    "ZHCN": "使用聚变能源驱动的裂解炉,能够对矿物进行最高效率的利用.",
+    "ZHCN": "使用聚变能源驱动的裂解炉，能够对矿物进行最高效率的利用。",
     "ENUS": "Splitting furnaces powered by fusion energy enable the most efficient use of minerals."
   },
   {
@@ -2156,7 +2156,7 @@
   },
   {
     "Name": "T行星级化学反应釜描述",
-    "ZHCN": "一座史无前例的巨型化工厂.",
+    "ZHCN": "一座史无前例的巨型化工厂。",
     "ENUS": "An unprecedented mega chemical plant."
   },
   {
@@ -2166,7 +2166,7 @@
   },
   {
     "Name": "T精密结构组装厂描述",
-    "ZHCN": "精密装配线的未来.",
+    "ZHCN": "精密装配线的未来。",
     "ENUS": "Precise assembler's future."
   },
   {
@@ -2176,7 +2176,7 @@
   },
   {
     "Name": "T物质分解设施描述",
-    "ZHCN": "利用光子聚束技术将物质分解成粒子态并将其重组为<color=\"#FD965ECC\">沙土</color>,一举两得.\n[产出的沙土会直接加入背包中]",
+    "ZHCN": "利用光子聚束技术将物质分解成粒子态并将其重组为<color=\"#FD965ECC\">沙土</color>，一举两得。\n[产出的沙土会直接加入背包中]",
     "ENUS": "By using photon beam technology, the material is broken down into particle states and reconstituted into <color=\"#FD965ECC\">sand</color>."
   },
   {
@@ -2186,12 +2186,12 @@
   },
   {
     "Name": "T巨型粒子对撞机描述",
-    "ZHCN": "大量并行运行的加速器将生产力提升到一个崭新的高度.",
+    "ZHCN": "大量并行运行的加速器将生产力提升到一个崭新的高度。",
     "ENUS": "The large number of parallel running accelerators takes productivity to a whole new level."
   },
   {
     "Name": "T广播式能源描述",
-    "ZHCN": "一种能够在整个星球中传播的能源，它的能量可以被任何接收到它的设备所利用.",
+    "ZHCN": "一种能够在整个星球中传播的能源，它的能量可以被任何接收到它的设备所利用。",
     "ENUS": "A form of energy that can be broadcast throughout the planet, and its energy can be used by any device that receives it."
   },
   {
@@ -2221,7 +2221,7 @@
   },
   {
     "Name": "T巨型建筑工程学描述",
-    "ZHCN": "随着生产线的不断扩张，对更高集成度的生产设施的需求愈发迫切.",
+    "ZHCN": "随着生产线的不断扩张，对更高集成度的生产设施的需求愈发迫切。",
     "ENUS": "As production lines continue to expand, the need for more integrated production facilities becomes increasingly urgent."
   },
   {
@@ -2261,7 +2261,7 @@
   },
   {
     "Name": "T行星协调中心描述",
-    "ZHCN": "随着星球生产线的不断扩大和算力的发展，部署一个协调中心可以更精确地控制星球工厂.",
+    "ZHCN": "随着星球生产线的不断扩大和算力的发展，部署一个协调中心可以更精确地控制星球工厂。",
     "ENUS": "As the production lines on the planet are constantly expanding and the computing power is developing, deploying a coordination center can more accurately control the planet's factories."
   },
   {
@@ -2351,8 +2351,8 @@
   },
   {
     "Name": "I高精度装配线",
-    "ZHCN": "一台用于生产精密仪器的机器,当然,不包括它自己.\n <color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Used to produce precision instruments, oh of course not have itself.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "一台用于生产精密仪器的机器，当然，不包括它自己。\n <color=\"#7AF0FFC8\">——来自创世之书。</color>",
+    "ENUS": "Used to produce precision instruments, oh of course not have itself."
   },
   {
     "Name": "T标准制造单元描述",
@@ -2422,7 +2422,7 @@
   {
     "Name": "I硫酸",
     "ZHCN": "初级化工产品，在生产中应用广泛。也可以通过分解火山灰星球的剧毒液体来获得。",
-    "ENUS": "Primary chemical product with a wide range of applications in production. It can also be obtained by decomposing the toxic liquid of the volcanic ash planet.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ENUS": "Primary chemical product with a wide range of applications in production. It can also be obtained by decomposing the toxic liquid of the volcanic ash planet."
   },
   {
     "Name": "I有机晶体",
@@ -2456,48 +2456,48 @@
   },
   {
     "Name": "位面冶金结果",
-    "ZHCN": "你解锁了更高级的熔炉━━<color=\"#FD965ECC\">位面熔炉</color>，它的速度是电弧熔炉的2倍! ",
+    "ZHCN": "你解锁了更高级的熔炉━━<color=\"#FD965ECC\">位面熔炉</color>，它的速度是电弧熔炉的2倍！ ",
     "ENUS": "You have unlocked the more advanced smelter ━━ <color=\"#FD965ECC\">Plane Smelter</color>, which is twice as fast as an Arc Smelter!"
   },
   {
     "Name": "I钨矿",
-    "ZHCN": "稀有矿物。也可以通过精炼钛石来少量获取。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A rare mineral. It also can be obtained in small quantities by acid beneficiation of titanium ore. \n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "稀有矿物。也可以通过精炼钛石来少量获取。",
+    "ENUS": "A rare mineral. It also can be obtained in small quantities by acid beneficiation of titanium ore. "
   },
   {
     "Name": "I铜线圈",
-    "ZHCN": "最基本的电磁元件，非常实用。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "The most basic electromagnetic components, very practical.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "最基本的电磁元件，非常实用。",
+    "ENUS": "The most basic electromagnetic components, very practical."
   },
   {
     "Name": "I煤焦油",
-    "ZHCN": "重要的化工原料，可以通过多种方式获得。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "An important chemical raw material that can be obtained in a variety of ways.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "重要的化工原料，可以通过多种方式获得。",
+    "ENUS": "An important chemical raw material that can be obtained in a variety of ways."
   },
   {
     "Name": "I放射性矿物",
-    "ZHCN": "具有微弱放射性的碎块。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Faintly radioactive fractions.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "具有微弱放射性的碎块。",
+    "ENUS": "Faintly radioactive fractions."
   },
   {
     "Name": "I铀矿",
-    "ZHCN": "经提炼后，矿石中的铀浓度已经已经相当可观。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "After refinements, the concentration of uranium in the ore is already considerable.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "经提炼后，矿石中的铀浓度已经已经相当可观。",
+    "ENUS": "After refinements, the concentration of uranium in the ore is already considerable."
   },
   {
     "Name": "I钚矿",
-    "ZHCN": "经提炼后，矿石中的钚浓度已经相当可观。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "After refinements, the concentration of plutonium in the ore is already considerable.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "经提炼后，矿石中的钚浓度已经相当可观。",
+    "ENUS": "After refinements, the concentration of plutonium in the ore is already considerable."
   },
   {
     "Name": "I高纯铀块",
-    "ZHCN": "铀矿提炼产物，已经可以支撑链式反应。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "The product of refining uranium ore, which can support the chain reaction.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "铀矿提炼产物，已经可以支撑链式反应。",
+    "ENUS": "The product of refining uranium ore, which can support the chain reaction."
   },
   {
     "Name": "I高纯钚块",
-    "ZHCN": "钚矿提炼产物，已经可以支撑链式反应。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "The product of refining plutonium ore, which can support the chain reaction.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "钚矿提炼产物，已经可以支撑链式反应。",
+    "ENUS": "The product of refining plutonium ore, which can support the chain reaction."
   },
   {
     "Name": "铝矿脉",
@@ -2511,8 +2511,8 @@
   },
   {
     "Name": "I铝矿",
-    "ZHCN": "采集铝矿脉获得，可以直接冶炼成铝块。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Used to smelt aluminum ingots. Obtained by gathering aluminum vein.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "采集铝矿脉获得，可以直接冶炼成铝块。",
+    "ENUS": "Used to smelt aluminum ingots. Obtained by gathering aluminum vein."
   },
   {
     "Name": "硫矿脉",
@@ -2526,8 +2526,8 @@
   },
   {
     "Name": "I硫矿",
-    "ZHCN": "采集硫矿脉获得，经处理后可用于制造硫酸。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Obtained by collecting sulphur vein, it is treated and used in making sulphuric acid.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "采集硫矿脉获得，经处理后可用于制造硫酸。",
+    "ENUS": "Obtained by collecting sulphur vein, it is treated and used in making sulphuric acid."
   },
   {
     "Name": "铝块",
@@ -2536,8 +2536,8 @@
   },
   {
     "Name": "I铝块",
-    "ZHCN": "基本原材料之一。用于制造各种铝质组件。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Basic raw material. Used to produce various aluminum components.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "基本原材料之一。用于制造各种铝质组件。",
+    "ENUS": "Basic raw material. Used to produce various aluminum components."
   },
   {
     "Name": "铝矿粉",
@@ -2546,8 +2546,8 @@
   },
   {
     "Name": "I铝矿粉",
-    "ZHCN": "对铝矿进行预先粉碎处理的产物，可明显提高熔炉的效率.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "The product of pre-crushing of aluminum ore, which can significantly improve the efficiency of the furnace.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "对铝矿进行预先粉碎处理的产物，可明显提高熔炉的效率。",
+    "ENUS": "The product of pre-crushing of aluminum ore, which can significantly improve the efficiency of the furnace."
   },
   {
     "Name": "铝合金",
@@ -2556,53 +2556,53 @@
   },
   {
     "Name": "I铝合金",
-    "ZHCN": "轻金属材料之一，可作结构材料使用。由于具有较高的强度和良好的耐蚀性和可焊性，有着广泛的应用。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "One of the light metal materials, can be used as structural materials. It has a wide range of applications due to its high strength and good corrosion resistance and weldability.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "轻金属材料之一，可作结构材料使用。由于具有较高的强度和良好的耐蚀性和可焊性，有着广泛的应用。",
+    "ENUS": "One of the light metal materials, can be used as structural materials. It has a wide range of applications due to its high strength and good corrosion resistance and weldability."
   },
   {
     "Name": "I氦",
-    "ZHCN": "宇宙中丰度第二高的元素，“太阳的元素”。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "The second most abundant element in the universe, \"the element of the sun\".\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "宇宙中丰度第二高的元素，“太阳的元素”。",
+    "ENUS": "The second most abundant element in the universe, \"the element of the sun\"."
   },
   {
     "Name": "I氦三",
-    "ZHCN": "稳定的氦同位素，它与重氢发生的聚变反应即是恒星的秘密。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A stable isotope of helium, whose fusion reaction with heavy hydrogen is the secret of the star.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "稳定的氦同位素，它与重氢发生的聚变反应即是恒星的秘密。",
+    "ENUS": "A stable isotope of helium, whose fusion reaction with heavy hydrogen is the secret of the star."
   },
   {
     "Name": "I反物质约束单元",
-    "ZHCN": "可以约束一单位反物质的磁阱。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "The magnetic trap that can confine one unit of antimatter.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "可以约束一单位反物质的磁阱。",
+    "ENUS": "The magnetic trap that can confine one unit of antimatter."
   },
   {
     "Name": "I氦闪约束器",
-    "ZHCN": "以强大的磁场约束等离子体在其中环绕，坚固的材料甚至可以承受氦闪的冲击.\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "With a strong magnetic field to bind the plasma around it, the robust material can even withstand the impact of a helium flash.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "以强大的磁场约束等离子体在其中环绕，坚固的材料甚至可以承受氦闪的冲击。",
+    "ENUS": "With a strong magnetic field to bind the plasma around it, the robust material can even withstand the impact of a helium flash."
   },
   {
     "Name": "I光子结晶",
-    "ZHCN": "利用庞大的能量将大量临界光子约束在一小块区域，使其具有部分晶体性质。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "The massive energy is used to confine a large number of critical photons to a small region, giving them partially crystalline properties.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "利用庞大的能量将大量临界光子约束在一小块区域，使其具有部分晶体性质。",
+    "ENUS": "The massive energy is used to confine a large number of critical photons to a small region, giving them partially crystalline properties."
   },
   {
     "Name": "I三元精金",
-    "ZHCN": "在特殊力场的作用下，使强相互作用力溢出至宏观尺度而形成的材料，是具象化的“坚固”概念。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A material formed by the spillover of strong interaction forces to the macroscopic scale under the action of a special force field - a figurative concept of \"solidity\".\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "在特殊力场的作用下，使强相互作用力溢出至宏观尺度而形成的材料，是具象化的“坚固”概念。",
+    "ENUS": "A material formed by the spillover of strong interaction forces to the macroscopic scale under the action of a special force field - a figurative concept of \"solidity\"."
   },
   {
     "Name": "I钨块",
-    "ZHCN": "冶炼钨矿获得。这种元素具有划时代的潜力。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Obtained by smelting tungsten ore. This element has epoch-making potential.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "冶炼钨矿获得。这种元素具有划时代的潜力。",
+    "ENUS": "Obtained by smelting tungsten ore. This element has epoch-making potential."
   },
   {
     "Name": "I钨强化玻璃",
-    "ZHCN": "当反应剧烈到钛强化玻璃也很难承受时，就轮到它登场了。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "When the reaction is so violent that even titanium-reinforced glass is difficult to withstand, it is its turn to make an appearance.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "当反应剧烈到钛强化玻璃也很难承受时，就轮到它登场了。",
+    "ENUS": "When the reaction is so violent that even titanium-reinforced glass is difficult to withstand, it is its turn to make an appearance."
   },
   {
     "Name": "I钨复合金属",
-    "ZHCN": "加入钨的合金。在电磁力的领域中，它就是王者。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "An alloy with tungsten added. In the field of electromagnetic force, it is the king.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "加入钨的合金。在电磁力的领域中，它就是王者。",
+    "ENUS": "An alloy with tungsten added. In the field of electromagnetic force, it is the king."
   },
   {
     "Name": "大抽水机",
@@ -2611,8 +2611,8 @@
   },
   {
     "Name": "I大抽水机",
-    "ZHCN": "利用光子聚束技术，快速汲取大量液体。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Using photon beam technology, quickly extract large amounts of liquid.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "利用光子聚束技术，快速汲取大量液体。",
+    "ENUS": "Using photon beam technology, quickly extract large amounts of liquid."
   },
   {
     "Name": "大气收集设施",
@@ -2621,8 +2621,8 @@
   },
   {
     "Name": "I大气收集设施",
-    "ZHCN": "可以富集并收集大气成分的自维持大型设施。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "A large self-sustaining facility that can enrich and collect atmospheric components.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "可以富集并收集大气成分的自维持大型设施。",
+    "ENUS": "A large self-sustaining facility that can enrich and collect atmospheric components."
   },
   {
     "Name": "二氧化碳",
@@ -2631,8 +2631,8 @@
   },
   {
     "Name": "I二氧化碳",
-    "ZHCN": "无色无味的气体，分布广泛。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Colorless and odorless gas, widely distributed.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "无色无味的气体，分布广泛。",
+    "ENUS": "Colorless and odorless gas, widely distributed."
   },
   {
     "Name": "氮",
@@ -2641,8 +2641,8 @@
   },
   {
     "Name": "I氮",
-    "ZHCN": "无色无味的气体，分布广泛。\n<color=\"#7AF0FFC8\">——来自创世之书.</color>",
-    "ENUS": "Colorless and odorless gas, widely distributed.\n<color=\"#7AF0FFC8\">——Add by GenesisBook.</color>"
+    "ZHCN": "无色无味的气体，分布广泛。",
+    "ENUS": "Colorless and odorless gas, widely distributed."
   },
   {
     "Name": "开发者日志01",
@@ -2651,7 +2651,7 @@
   },
   {
     "Name": "I开发者日志01",
-    "ZHCN": "嗯……现在是2022年，一月三十日，大年二十九的凌晨三点半。\n我不知道我是怀着怎样的心态写下这个企划。\n我只希望我能做到心目中的最好。\n凌晨四点。\n我给自己定下的目标是，二月底之前，一个月。\n我希望自己能做到。\n晚安。",
+    "ZHCN": "当地时间2022年1月30日-条目1\n嗯……现在是2022年，一月三十日，大年二十九的凌晨三点半。\n我不知道我是怀着怎样的心态写下这个企划。\n我只希望我能做到心目中的最好。\n凌晨四点。\n我给自己定下的目标是，二月底之前，一个月。\n我希望自己能做到。\n晚安。",
     "ENUS": "Waiting for a translation..."
   },
   {
@@ -2661,7 +2661,7 @@
   },
   {
     "Name": "I开发者日志02",
-    "ZHCN": "2022.01.30，晚上八点零三分。\n我感觉自己受到了双重打击……api作者做出了我梦寐以求的东西，他的源码我却看不懂。\n我还能坚持下去吗？这个企划会胎死腹中吗？\n……………………\n好吧，也许会。我很不愿意这么说……但恐怕这次，我只能做出一个半成品了。\n希望你不会责备我。",
+    "ZHCN": "当地时间2022年1月30日-条目2\n2022。01。30，晚上八点零三分。\n我感觉自己受到了双重打击……api作者做出了我梦寐以求的东西，他的源码我却看不懂。\n我还能坚持下去吗？这个企划会胎死腹中吗？\n……………………\n好吧，也许会。我很不愿意这么说……但恐怕这次，我只能做出一个半成品了。\n希望你不会责备我。",
     "ENUS": "Waiting for a translation..."
   },
   {
@@ -2671,7 +2671,7 @@
   },
   {
     "Name": "I开发者日志03",
-    "ZHCN": "咕了好久终于正式启动了，图标，科技，新物品……\n现在是2022年，2月1日，大年初一。\n我又有了一个新的想法，不过要回去看看另一套源码才能决定能不能实现……我想改变火箭的结构点数。\n我能成功吗？\n血的教训。\n不要，TMD，犯，低级错误。还有，一定要debug。\n（死目）\n哦对，结构点数没改成。\n啊对，记得回去加一个配方类型的修改方法。",
+    "ZHCN": "当地时间2022年2月1日-条目1\n咕了好久终于正式启动了，图标，科技，新物品……\n现在是2022年，2月1日，大年初一。\n我又有了一个新的想法，不过要回去看看另一套源码才能决定能不能实现……我想改变火箭的结构点数。\n我能成功吗？\n血的教训。\n不要，TMD，犯，低级错误。还有，一定要debug。\n（死目）\n哦对，结构点数没改成。\n啊对，记得回去加一个配方类型的修改方法。",
     "ENUS": "Waiting for a translation..."
   },
   {
@@ -2681,7 +2681,7 @@
   },
   {
     "Name": "I开发者日志04",
-    "ZHCN": "偏偏这个时候出现了一个更多页面的mod\n那自然是……拿来主义）\n成为我的前置吧！（笑）\n既然这样，那这个游戏就有更多的可能性了……钛晶圆，钨晶圆，功率IC，电路基板，化工……\n2022.02.03，现在是大年初三晚上十点五十分。化工线基本完成，接下来就是烦人的代码环节……\n顺便把科技树图标做完了。\n今晚应该又要熬夜吧。",
+    "ZHCN": "当地时间2022年2月3日-条目1\n偏偏这个时候出现了一个更多页面的mod\n那自然是……拿来主义）\n成为我的前置吧！（笑）\n既然这样，那这个游戏就有更多的可能性了……钛晶圆，钨晶圆，功率IC，电路基板，化工……\n2022.02.03，现在是大年初三晚上十点五十分。化工线基本完成，接下来就是烦人的代码环节……\n顺便把科技树图标做完了。\n今晚应该又要熬夜吧。",
     "ENUS": "Waiting for a translation..."
   },
   {
@@ -2691,7 +2691,7 @@
   },
   {
     "Name": "I开发者日志05",
-    "ZHCN": "……坏事了，unity好像不支持中文名诶？！\n我需要，做个小小的实验……\n顺便，现在是2022.02.04，大年初四,凌晨零点二十分。\n……凌晨一点十三分，我好像又踩了一个坑。\n我希望这是个坑，因为那样我就不用继续debug了。",
+    "ZHCN": "当地时间2022年2月4日-条目1\n……坏事了，unity好像不支持中文名诶？！\n我需要，做个小小的实验……\n顺便，现在是2022.02.04，大年初四，凌晨零点二十分。\n……凌晨一点十三分，我好像又踩了一个坑。\n我希望这是个坑，因为那样我就不用继续debug了。",
     "ENUS": "Waiting for a translation..."
   },
   {
@@ -2701,7 +2701,7 @@
   },
   {
     "Name": "I开发者日志06",
-    "ZHCN": "现在是，2022.02.04，星期五，凌晨一点四十六分。\n我感觉我所学不多且不成体系的编程知识在此刻受到了严重冲击。\n写下上一条日志的时候，我的工程文件不管怎么编译，修改，都在报错。\n我debug了将近一个小时，始终无果。\n就在刚才，我第不知道多少次重新编译源码——\n嘿，您猜怎么着？\n我的代码跑起来辣！\n草。",
+    "ZHCN": "当地时间2022年2月4日-条目2\n现在是，2022.02.04，星期五，凌晨一点四十六分。\n我感觉我所学不多且不成体系的编程知识在此刻受到了严重冲击。\n写下上一条日志的时候，我的工程文件不管怎么编译，修改，都在报错。\n我debug了将近一个小时，始终无果。\n就在刚才，我第不知道多少次重新编译源码——\n嘿，您猜怎么着？\n我的代码跑起来辣！\n草。",
     "ENUS": "Waiting for a translation..."
   },
   {
@@ -2711,7 +2711,7 @@
   },
   {
     "Name": "I开发者日志07",
-    "ZHCN": "现在是，2022.02.04，下午两点零八分。\n化工线的第一个配方终于成功写入。\n这是第一步，但绝不是最后一步。\n……又踩了个坑。\n戴森球的配方逻辑是，配方会继承第一个产物的信息，包括名字介绍这些。\n当然也不会显示副产物。\n想要修改必须使用公式配方作为元数据。\n草。",
+    "ZHCN": "当地时间2022年2月4日-条目3\n现在是，2022.02.04，下午两点零八分。\n化工线的第一个配方终于成功写入。\n这是第一步，但绝不是最后一步。\n……又踩了个坑。\n戴森球的配方逻辑是，配方会继承第一个产物的信息，包括名字介绍这些。\n当然也不会显示副产物。\n想要修改必须使用公式配方作为元数据。\n草。",
     "ENUS": "Waiting for a translation..."
   },
   {
@@ -2721,7 +2721,7 @@
   },
   {
     "Name": "I开发者日志08",
-    "ZHCN": "现在是，2022.02.04，晚上七点零四分。\n化工线做到一半发现一点问题。\n稍微思考了一下，我决定还是自己打开gtnh……然后把化工线重新捋一遍。\n因为群友提醒了我，虽然木头是不可再生的……\n——但是有个东西，叫煤焦油。",
+    "ZHCN": "当地时间2022年2月4日-条目4\n现在是，2022.02.04，晚上七点零四分。\n化工线做到一半发现一点问题。\n稍微思考了一下，我决定还是自己打开gtnh……然后把化工线重新捋一遍。\n因为群友提醒了我，虽然木头是不可再生的……\n——但是有个东西，叫煤焦油。",
     "ENUS": "Waiting for a translation..."
   },
   {
@@ -2731,7 +2731,7 @@
   },
   {
     "Name": "I开发者日志09",
-    "ZHCN": "现在是，2022.02.05，上午十点三十九分。\n做完彻底完成了化工线，只剩两个最终产物了，顺便把电路基板和IC晶片的配方做了一下。\n距离物品系统实装又近了一步。\n现在是，2022.02.05，下午五点五十六分。\n又踩了个坑。\n戴森球的配方上限是825……怪。",
+    "ZHCN": "当地时间2022年2月5日-条目1\n现在是，2022.02.05，上午十点三十九分。\n做完彻底完成了化工线，只剩两个最终产物了，顺便把电路基板和IC晶片的配方做了一下。\n距离物品系统实装又近了一步。\n现在是，2022.02.05，下午五点五十六分。\n又踩了个坑。\n戴森球的配方上限是825……怪。",
     "ENUS": "Waiting for a translation..."
   },
   {
@@ -2741,7 +2741,7 @@
   },
   {
     "Name": "I开发者日志10",
-    "ZHCN": "现在是，2022.02.06，凌晨零点五十七分。\n现实里遇到一些胃疼的事，开发进度可能会延缓一点。\n顺便给化工线加了点新东西。\n物品已经彻底完成，接下来就是覆写配方和科技树。\n这将是一个漫长的过程。\n现在是，2022.02.06，凌晨两点零三分。\n有一小部分配方出现了莫名其妙的数组越界现象，但是我找不到问题在哪。\n似乎并没有影响到游戏。",
+    "ZHCN": "当地时间2022年2月6日-条目1\n现在是，2022.02.06，凌晨零点五十七分。\n现实里遇到一些胃疼的事，开发进度可能会延缓一点。\n顺便给化工线加了点新东西。\n物品已经彻底完成，接下来就是覆写配方和科技树。\n这将是一个漫长的过程。\n现在是，2022.02.06，凌晨两点零三分。\n有一小部分配方出现了莫名其妙的数组越界现象，但是我找不到问题在哪。\n似乎并没有影响到游戏。",
     "ENUS": "Waiting for a translation..."
   },
   {
@@ -2751,7 +2751,7 @@
   },
   {
     "Name": "I开发者日志11",
-    "ZHCN": "开发日志#11\n……凌晨两点二十三分。\n它莫名其妙被我修好了。\n程序，很奇妙罢）\n凌晨两点二十九分。\n我找到制造逻辑了，芜湖~\n是makes。\n现在是，2022.02.06，下午两点二十⑨分。\n我突然有个想法。\n我不能添加新矿物，但是原版有几个没啥大用的旧矿物……\n嘿嘿嘿。",
+    "ZHCN": "当地时间2022年2月6日-条目2\n开发日志#11\n……凌晨两点二十三分。\n它莫名其妙被我修好了。\n程序，很奇妙罢）\n凌晨两点二十九分。\n我找到制造逻辑了，芜湖~\n是makes。\n现在是，2022.02.06，下午两点二十⑨分。\n我突然有个想法。\n我不能添加新矿物，但是原版有几个没啥大用的旧矿物……\n嘿嘿嘿。",
     "ENUS": "Waiting for a translation..."
   }
 ]
