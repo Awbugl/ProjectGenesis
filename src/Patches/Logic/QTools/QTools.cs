@@ -48,7 +48,7 @@ namespace ProjectGenesis.Patches.Logic
                         continue;
                     }
 
-                    case Utils.ERecipeType.所有制造:
+                    case Utils.ERecipeType.复合制造:
                     {
                         dict.TryAddOrInsert(Utils.ERecipeType.Assemble, proto);
                         dict.TryAddOrInsert(Utils.ERecipeType.标准制造, proto);

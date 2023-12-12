@@ -430,6 +430,11 @@
     "ENUS": "Chemical"
   },
   {
+    "Name": "防御页面",
+    "ZHCN": "防御",
+    "ENUS": "Defense"
+  },
+  {
     "Name": "不相符的物品",
     "ZHCN": "不相符的物品",
     "ENUS": "Mismatched item"
@@ -545,8 +550,8 @@
     "ENUS": "Radioactive Veins"
   },
   {
-    "Name": "氢氯酸海洋",
-    "ZHCN": "氢氯酸海洋",
+    "Name": "盐酸海洋",
+    "ZHCN": "盐酸海洋",
     "ENUS": "Hydrochloric acid ocean"
   },
   {
@@ -558,11 +563,6 @@
     "Name": "淡水海洋",
     "ZHCN": "淡水海洋",
     "ENUS": "Freshwater ocean"
-  },
-  {
-    "Name": "裂变能",
-    "ZHCN": "裂变能",
-    "ENUS": "Fission Energy"
   },
   {
     "Name": "裂变能源发电站",
@@ -580,6 +580,11 @@
     "ENUS": "The mecha does not have enough energy to open the wormhole"
   },
   {
+    "Name": "裂变能",
+    "ZHCN": "裂变能",
+    "ENUS": "Fission Energy"
+  },
+  {
     "Name": "聚变能",
     "ZHCN": "聚变能",
     "ENUS": "Fusion Energy"
@@ -593,6 +598,41 @@
     "Name": "行星大气",
     "ZHCN": "行星大气",
     "ENUS": "Planet Atmosphere"
+  },
+  {
+    "Name": "基础制造",
+    "ZHCN": "基础制造",
+    "ENUS": "Basic Assembler"
+  },
+  {
+    "Name": "标准制造",
+    "ZHCN": "标准制造",
+    "ENUS": "Standard Assembler"
+  },
+  {
+    "Name": "高精度加工",
+    "ZHCN": "高精度加工",
+    "ENUS": "Precise Assembler"
+  },
+  {
+    "Name": "复合制造",
+    "ZHCN": "复合制造",
+    "ENUS": "Multi Assembler"
+  },
+  {
+    "Name": "复合冶炼",
+    "ZHCN": "复合冶炼",
+    "ENUS": "Multi Smelter"
+  },
+  {
+    "Name": "精密制造",
+    "ZHCN": "精密制造",
+    "ENUS": "Accurate Manufacturing"
+  },
+  {
+    "Name": "复合化工",
+    "ZHCN": "复合化工",
+    "ENUS": "Multi Chemical"
   },
   {
     "Name": "需要氧气",
@@ -1280,13 +1320,13 @@
     "ENUS": "Colorless gas with a similar odor to petroleum gas, an important organic chemical raw material."
   },
   {
-    "Name": "氢氯酸",
-    "ZHCN": "氢氯酸",
+    "Name": "盐酸",
+    "ZHCN": "盐酸",
     "ENUS": "Hydrochloric acid"
   },
   {
-    "Name": "I氢氯酸",
-    "ZHCN": "无色透明的液体，有强烈的刺激性气味，俗称盐酸，工业用途广泛。",
+    "Name": "I盐酸",
+    "ZHCN": "无色透明的液体，有强烈的刺激性气味，工业用途广泛。",
     "ENUS": "Colorless transparent liquid with a strong irritating odor, widely used in industry."
   },
   {
@@ -1521,7 +1561,7 @@
   },
   {
     "Name": "R盐水分解",
-    "ZHCN": "使用离子交换膜电解氯化钠溶液，生产氢氯酸和氢氧化钠。\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作。</color>",
+    "ZHCN": "使用离子交换膜电解氯化钠溶液，生产盐酸和氢氧化钠。\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作。</color>",
     "ENUS": "Electrolysis of salt water using ion exchange membranes, producing hydrochloric acid and sodium hydroxide.\n<color=\"#FD965ECC\">Will not stop working until all products are accumulated.</color>"
   },
   {
@@ -1596,7 +1636,7 @@
   },
   {
     "Name": "R三氯化铁",
-    "ZHCN": "向氢氯酸和铁的反应体系中加入氧气，使其转化为三氯化铁和水。\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作。</color>",
+    "ZHCN": "向盐酸和铁的反应体系中加入氧气，使其转化为三氯化铁和水。\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作。</color>",
     "ENUS": "Add oxygen to the reaction system of hydrochloric acid and iron to convert it to ferric chloride and water.\n<color=\"#FD965ECC\">It will not stop working until all products are stacked.</color>"
   },
   {
@@ -2332,12 +2372,12 @@
   {
     "Name": "基础制造台",
     "ZHCN": "基础制造台",
-    "ENUS": "Basic assembler"
+    "ENUS": "Basic Assembler"
   },
   {
     "Name": "标准制造单元",
     "ZHCN": "标准制造单元",
-    "ENUS": "Standard assembler"
+    "ENUS": "Standard Assembler"
   },
   {
     "Name": "I标准制造单元",
@@ -2347,7 +2387,7 @@
   {
     "Name": "高精度装配线",
     "ZHCN": "高精度装配线",
-    "ENUS": "Precise assembler"
+    "ENUS": "Precise Assembler"
   },
   {
     "Name": "I高精度装配线",
@@ -2661,7 +2701,7 @@
   },
   {
     "Name": "I开发者日志02",
-    "ZHCN": "当地时间2022年1月30日-条目2\n2022。01。30，晚上八点零三分。\n我感觉自己受到了双重打击……api作者做出了我梦寐以求的东西，他的源码我却看不懂。\n我还能坚持下去吗？这个企划会胎死腹中吗？\n……………………\n好吧，也许会。我很不愿意这么说……但恐怕这次，我只能做出一个半成品了。\n希望你不会责备我。",
+    "ZHCN": "当地时间2022年1月30日-条目2\n晚上八点零三分。\n我感觉自己受到了双重打击……api作者做出了我梦寐以求的东西，他的源码我却看不懂。\n我还能坚持下去吗？这个企划会胎死腹中吗？\n……………………\n好吧，也许会。我很不愿意这么说……但恐怕这次，我只能做出一个半成品了。\n希望你不会责备我。",
     "ENUS": "Waiting for a translation..."
   },
   {
@@ -2751,7 +2791,7 @@
   },
   {
     "Name": "I开发者日志11",
-    "ZHCN": "当地时间2022年2月6日-条目2\n开发日志#11\n……凌晨两点二十三分。\n它莫名其妙被我修好了。\n程序，很奇妙罢）\n凌晨两点二十九分。\n我找到制造逻辑了，芜湖~\n是makes。\n现在是，2022.02.06，下午两点二十⑨分。\n我突然有个想法。\n我不能添加新矿物，但是原版有几个没啥大用的旧矿物……\n嘿嘿嘿。",
+    "ZHCN": "当地时间2022年2月6日-条目2\n……凌晨两点二十三分。\n它莫名其妙被我修好了。\n程序，很奇妙罢）\n凌晨两点二十九分。\n我找到制造逻辑了，芜湖~\n是makes。\n现在是，2022.02.06，下午两点二十⑨分。\n我突然有个想法。\n我不能添加新矿物，但是原版有几个没啥大用的旧矿物……\n嘿嘿嘿。",
     "ENUS": "Waiting for a translation..."
   }
 ]

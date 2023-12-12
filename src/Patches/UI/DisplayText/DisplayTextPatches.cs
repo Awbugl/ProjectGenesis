@@ -1,7 +1,6 @@
 ﻿using System.Text;
 using HarmonyLib;
 using ProjectGenesis.Utils;
-using UnityEngine;
 using Utils_ERecipeType = ProjectGenesis.Utils.ERecipeType;
 
 // ReSharper disable InconsistentNaming
@@ -78,6 +77,60 @@ namespace ProjectGenesis.Patches.UI.DisplayText
 
                 case 16:
                     __result = "聚变能".TranslateFromJson();
+                    break;
+            }
+        }
+
+        [HarmonyPostfix]
+        [HarmonyPatch(typeof(ItemProto), "typeString", MethodType.Getter)]
+        public static void ItemProto_typeString(ref ItemProto __instance, ref string __result)
+        {
+            if (__instance.Type != EItemType.Production) return;
+            
+            switch ((Utils_ERecipeType)__instance.prefabDesc.assemblerRecipeType)
+            {
+                case Utils_ERecipeType.Assemble:
+                    __result = "基础制造".TranslateFromJson();
+                    break;
+
+                case Utils_ERecipeType.标准制造:
+                    __result = "标准制造".TranslateFromJson();
+                    break;
+
+                case Utils_ERecipeType.高精度加工:
+                    __result = "高精度加工".TranslateFromJson();
+                    break;
+
+                case Utils_ERecipeType.矿物处理:
+                    __result = "T矿物处理".TranslateFromJson();
+                    break;
+
+                case Utils_ERecipeType.精密组装:
+                    __result = "精密制造".TranslateFromJson();
+                    break;
+
+                case Utils_ERecipeType.聚变生产:
+                    __result = "紧凑式回旋加速器".TranslateFromJson();
+                    break;
+
+                case Utils_ERecipeType.垃圾回收:
+                    __result = "物质回收".TranslateFromJson();
+                    break;
+
+                case Utils_ERecipeType.高分子化工:
+                    __result = "T先进化工".TranslateFromJson();
+                    break;
+                    
+                case Utils_ERecipeType.所有化工:
+                    __result = "复合化工".TranslateFromJson();
+                    break;
+
+                case Utils_ERecipeType.复合制造:
+                    __result = "复合制造".TranslateFromJson();
+                    break;
+
+                case Utils_ERecipeType.所有熔炉:
+                    __result = "复合冶炼".TranslateFromJson();
                     break;
             }
         }
