@@ -1100,39 +1100,9 @@
     "ENUS": "Photon Crystal"
   },
   {
-    "Name": "先驱者晶片",
-    "ZHCN": "先驱者晶片",
-    "ENUS": "Pioneer Chip"
-  },
-  {
-    "Name": "I先驱者晶片",
-    "ZHCN": "基于未知文明留下的蓝图，使用精密制造厂打印出的神秘材料。",
-    "ENUS": "Based on blueprints left behind by an unknown civilization, using mysterious materials printed by an accurate manufacturing facility."
-  },
-  {
-    "Name": "精密制造厂",
-    "ZHCN": "精密制造厂",
-    "ENUS": "Accurate Manufacturing Facility"
-  },
-  {
-    "Name": "I精密制造厂",
-    "ZHCN": "基于未知文明留下的蓝图制造的设备。能够将蓝图以物质世界基本单位的尺度精准还原。",
-    "ENUS": "This factory is capable of accurately reproducing blueprints on the scale of the basic units of the material world."
-  },
-  {
-    "Name": "紧凑式回旋加速器",
-    "ZHCN": "紧凑式回旋加速器",
-    "ENUS": "Compact Cyclotron"
-  },
-  {
-    "Name": "I紧凑式回旋加速器",
-    "ZHCN": "基于未知文明留下的蓝图制造的设备。可在极小的空间内将粒子加速至极限。工作原理仍在逆向过程中。",
-    "ENUS": "Based on blueprints left behind by an unknown civilization, particles can be accelerated to their limits in a very small space. The working principle is still in the reverse process."
-  },
-  {
     "Name": "I反物质能量炉",
-    "ZHCN": "基于未知文明留下的蓝图制造的设备。掌控质能。",
-    "ENUS": "Based on blueprints left behind by an unknown civilization, Mass-energy is in your control now."
+    "ZHCN": "基于湮灭反应将反物质转化为能量的设备。",
+    "ENUS": "Reactor based on annihilation reactions converting antimatter into energy."
   },
   {
     "Name": "硫粉",
@@ -1870,24 +1840,14 @@
     "ENUS": "A wider variety of chemicals can now be synthesized."
   },
   {
-    "Name": "T先驱者遗物",
-    "ZHCN": "逆向工程: 先驱者晶片",
-    "ENUS": "Reverse Engineering: Pioneer Chip"
-  },
-  {
-    "Name": "T先驱者遗物描述",
-    "ZHCN": "上传大量矩阵后，主脑开放了先驱者芯片蓝图。",
-    "ENUS": "After uploading a large number of matrices, the CentreBrain opened up the blueprint of Pioneer Chip."
-  },
-  {
     "Name": "T无尽材料学",
-    "ZHCN": "逆向工程: 先驱者材料学",
-    "ENUS": "Reverse Engineering: Pioneer Material Science"
+    "ZHCN": "强相互作用力材料",
+    "ENUS": "Strong force material"
   },
   {
     "Name": "T无尽材料学描述",
-    "ZHCN": "上传大量矩阵后，主脑开放了部分逆向成功的材料学科技。",
-    "ENUS": "After uploading a large number of matrices, the CentreBrain opened up some of the reversed successful material science technology.."
+    "ZHCN": "在特殊力场的作用下，可使强相互作用力溢出至宏观尺度。",
+    "ENUS": "With the action of a special force field, A material can formed by the spillover of strong interaction forces to the macroscopic scale."
   },
   {
     "Name": "T反物质能量炉描述",
@@ -1896,7 +1856,7 @@
   },
   {
     "Name": "T反物质能量炉结果",
-    "ZHCN": "掌控质能。",
+    "ZHCN": "掌控质能转换技术，可以将反物质转化为能量。",
     "ENUS": "You have mastered the technology of mass-energy conversion, and can now convert antimatter into energy."
   },
   {
@@ -1906,13 +1866,8 @@
   },
   {
     "Name": "T反物质能量炉",
-    "ZHCN": "逆向工程: 反物质能量炉",
-    "ENUS": "Reverse Engineering: Antimatter Energy Reactor"
-  },
-  {
-    "Name": "T可控湮灭反应",
-    "ZHCN": "逆向工程: 可控湮灭反应",
-    "ENUS": "Reverse Engineering: Controlled annihilation reactions"
+    "ZHCN": "反物质能量炉",
+    "ENUS": "Antimatter Energy Reactor"
   },
   {
     "Name": "T物品增产",
@@ -1920,19 +1875,9 @@
     "ENUS": "Incremental production of items"
   },
   {
-    "Name": "T不再是菜鸟的证明",
-    "ZHCN": "不再是菜鸟的证明",
-    "ENUS": "Certificate of Not Being a Noob Anymore"
-  },
-  {
-    "Name": "T不再是菜鸟的证明描述",
-    "ZHCN": "上传的大量矩阵已经证明了戴森球计划的成功。主脑将会开放部分科研前沿领域。",
-    "ENUS": "The large number of matrices uploaded has proven the success of the Dyson Sphere program. The mastermind will open up some of the scientific frontiers."
-  },
-  {
     "Name": "T虫洞航行",
-    "ZHCN": "逆向工程: 虫洞航行",
-    "ENUS": "Reverse Engineering: Wormhole navigation"
+    "ZHCN": "虫洞航行",
+    "ENUS": "Wormhole navigation"
   },
   {
     "Name": "T虫洞航行描述",

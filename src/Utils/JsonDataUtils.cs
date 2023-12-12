@@ -173,6 +173,7 @@ namespace ProjectGenesis.Utils
 
             int GetTableID(int gridIndex)
             {
+                if (gridIndex >= 5000) return (tableID[2] - 5) * 1000 + gridIndex;
                 if (gridIndex >= 4000) return (tableID[1] - 4) * 1000 + gridIndex;
                 if (gridIndex >= 3000) return (tableID[0] - 3) * 1000 + gridIndex;
                 return gridIndex;

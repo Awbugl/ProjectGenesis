@@ -148,10 +148,10 @@
   {
     "ItemID": 2212,
     "ModelID": 68,
-    "idleEnergyPerTick": 12000000,
-    "workEnergyPerTick": 48000000,
-    "powerConnectDistance": 5000.5,
-    "powerCoverRadius": 2000.5
+    "idleEnergyPerTick": 12000,
+    "workEnergyPerTick": 120000,
+    "powerConnectDistance": 120.5,
+    "powerCoverRadius": 50.5
   },
   {
     "ItemID": 2310,
@@ -286,8 +286,8 @@
   {
     "ItemID": 6261,
     "ModelID": 457,
-    "genEnergyPerTick": 1200000000,
-    "useFuelPerTick": 1200000000,
+    "genEnergyPerTick": 120000000,
+    "useFuelPerTick": 120000000,
     "fuelMask": 4
   },
   {

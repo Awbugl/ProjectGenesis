@@ -233,7 +233,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 2309,
+    "GridIndex": 2310,
     "Time": 120,
     "Input": [
       6501,
@@ -339,7 +339,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 2307,
+    "GridIndex": 2308,
     "Time": 240,
     "Input": [
       6501,
@@ -369,7 +369,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 2308,
+    "GridIndex": 2309,
     "Time": 120,
     "Input": [
       6501,
@@ -555,7 +555,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 2408,
+    "GridIndex": 2409,
     "Time": 240,
     "Input": [
       6501,
@@ -633,59 +633,49 @@
   },
   {
     "ID": 25,
-    "Name": "精密制造厂",
+    "Name": "铝块",
     "Description": "",
     "IconPath": "",
-    "Type": 10,
-    "GridIndex": 2404,
-    "Time": 10800,
+    "Type": 1,
+    "GridIndex": 1103,
+    "Time": 120,
     "Input": [
-      2305,
-      2003,
-      7707,
-      7803
+      6202
     ],
     "InCounts": [
-      60,
-      240,
-      120,
-      60
+      2
     ],
     "Output": [
-      6275
+      6203
     ],
     "OutCounts": [
-      1
+      2
     ],
     "Explicit": false,
-    "Handcraft": false,
+    "Handcraft": true,
     "NonProductive": false
   },
   {
     "ID": 26,
-    "Name": "紧凑式回旋加速器",
+    "Name": "铝合金",
     "Description": "",
     "IconPath": "",
-    "Type": 10,
-    "GridIndex": 2413,
-    "Time": 10800,
+    "Type": 1,
+    "GridIndex": 1202,
+    "Time": 180,
     "Input": [
-      2310,
-      1125,
-      1205,
-      7806
+      1101,
+      6203
     ],
     "InCounts": [
-      40,
-      240,
-      120,
-      5
+      2,
+      2
     ],
     "Output": [
-      6276
+      6204
     ],
     "OutCounts": [
-      1
+      2
     ],
     "Explicit": false,
     "Handcraft": false,
@@ -1009,7 +999,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 10,
-    "GridIndex": 2412,
+    "GridIndex": 2413,
     "Time": 600,
     "Input": [
       6502,
@@ -1090,17 +1080,17 @@
     "Name": "湮灭约束球",
     "Description": "",
     "IconPath": "",
-    "Type": 12,
-    "GridIndex": 3102,
-    "Time": 3600,
+    "Type": 10,
+    "GridIndex": 1614,
+    "Time": 720,
     "Input": [
-      6271,
-      6262,
-      7803
+      1125,
+      1205,
+      1305
     ],
     "InCounts": [
-      20,
-      12,
+      8,
+      4,
       4
     ],
     "Output": [
@@ -1155,7 +1145,7 @@
       6509,
       1122,
       1120,
-      6262
+      1403
     ],
     "InCounts": [
       1,
@@ -1265,7 +1255,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 2410,
+    "GridIndex": 2411,
     "Time": 180,
     "Input": [
       6501,
@@ -1509,7 +1499,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 5,
-    "GridIndex": 3103,
+    "GridIndex": 1714,
     "Time": 720,
     "Input": [
       6204,
@@ -1875,7 +1865,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 10,
-    "GridIndex": 2311,
+    "GridIndex": 2313,
     "Time": 360,
     "Input": [
       6502,
@@ -1931,22 +1921,20 @@
   },
   {
     "ID": 73,
-    "Name": "广播式能源塔",
+    "Name": "卫星配电站",
     "Description": "",
     "IconPath": "",
-    "Type": 12,
+    "Type": 10,
     "GridIndex": 2103,
     "Time": 10800,
     "Input": [
-      6271,
-      6503,
-      6272,
-      6274
+      2202,
+      1205,
+      1125
     ],
     "InCounts": [
-      120,
-      60,
-      60,
+      1,
+      10,
       4
     ],
     "Output": [
@@ -2045,7 +2033,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 9,
-    "GridIndex": 2310,
+    "GridIndex": 2312,
     "Time": 360,
     "Input": [
       6502,
@@ -2179,7 +2167,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 10,
-    "GridIndex": 2312,
+    "GridIndex": 2314,
     "Time": 900,
     "Input": [
       6503,
@@ -2894,20 +2882,18 @@
     "Name": "反物质能量炉",
     "Description": "",
     "IconPath": "",
-    "Type": 12,
+    "Type": 10,
     "GridIndex": 2112,
-    "Time": 10800,
+    "Time": 1800,
     "Input": [
-      6271,
       6503,
-      1403,
-      6274
+      6271,
+      7806
     ],
     "InCounts": [
-      240,
-      120,
-      120,
-      8
+      20,
+      40,
+      1
     ],
     "Output": [
       6261
@@ -3065,7 +3051,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 9,
-    "GridIndex": 2406,
+    "GridIndex": 2407,
     "Time": 240,
     "Input": [
       6502,
@@ -3149,7 +3135,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 10,
-    "GridIndex": 2411,
+    "GridIndex": 2412,
     "Time": 600,
     "Input": [
       6503,
@@ -3197,34 +3183,6 @@
     ],
     "Explicit": false,
     "Handcraft": true,
-    "NonProductive": false
-  },
-  {
-    "ID": 121,
-    "Name": "反物质约束单元",
-    "Description": "",
-    "IconPath": "",
-    "Type": 10,
-    "GridIndex": 3101,
-    "Time": 1800,
-    "Input": [
-      1125,
-      1205,
-      1305
-    ],
-    "InCounts": [
-      8,
-      4,
-      4
-    ],
-    "Output": [
-      6262
-    ],
-    "OutCounts": [
-      1
-    ],
-    "Explicit": false,
-    "Handcraft": false,
     "NonProductive": false
   },
   {
@@ -3289,7 +3247,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 9,
-    "GridIndex": 2409,
+    "GridIndex": 2410,
     "Time": 600,
     "Input": [
       6502,
@@ -3812,16 +3770,16 @@
     "IconPath": "",
     "Type": 10,
     "GridIndex": 1613,
-    "Time": 3600,
+    "Time": 1800,
     "Input": [
       7707,
       7804,
       7803
     ],
     "InCounts": [
-      50,
-      20,
-      20
+      25,
+      10,
+      10
     ],
     "Output": [
       7806
@@ -4074,54 +4032,6 @@
     "NonProductive": false
   },
   {
-    "ID": 780,
-    "Name": "活性生物纤维",
-    "Description": "",
-    "IconPath": "",
-    "Type": 16,
-    "GridIndex": 4104,
-    "Time": 120,
-    "Input": [
-      1117
-    ],
-    "InCounts": [
-      2
-    ],
-    "Output": [
-      7710
-    ],
-    "OutCounts": [
-      1
-    ],
-    "Explicit": false,
-    "Handcraft": false,
-    "NonProductive": false
-  },
-  {
-    "ID": 425,
-    "Name": "光子结晶化",
-    "Description": "R光子结晶化",
-    "IconPath": "",
-    "Type": 13,
-    "GridIndex": 3104,
-    "Time": 3600,
-    "Input": [
-      1208
-    ],
-    "InCounts": [
-      10
-    ],
-    "Output": [
-      6272
-    ],
-    "OutCounts": [
-      1
-    ],
-    "Explicit": true,
-    "Handcraft": false,
-    "NonProductive": false
-  },
-  {
     "ID": 641,
     "Name": "基础机械组件",
     "Description": "",
@@ -4293,7 +4203,7 @@
     "Description": "R活性纤维分离",
     "IconPath": "Assets/texpack/有机晶体重组",
     "Type": 16,
-    "GridIndex": 4105,
+    "GridIndex": 4104,
     "Time": 720,
     "Input": [
       1117
@@ -4332,56 +4242,6 @@
       4
     ],
     "Explicit": true,
-    "Handcraft": false,
-    "NonProductive": false
-  },
-  {
-    "ID": 502,
-    "Name": "铝块",
-    "Description": "",
-    "IconPath": "",
-    "Type": 1,
-    "GridIndex": 1103,
-    "Time": 120,
-    "Input": [
-      6202
-    ],
-    "InCounts": [
-      2
-    ],
-    "Output": [
-      6203
-    ],
-    "OutCounts": [
-      2
-    ],
-    "Explicit": false,
-    "Handcraft": true,
-    "NonProductive": false
-  },
-  {
-    "ID": 503,
-    "Name": "铝合金",
-    "Description": "",
-    "IconPath": "",
-    "Type": 1,
-    "GridIndex": 1202,
-    "Time": 180,
-    "Input": [
-      1101,
-      6203
-    ],
-    "InCounts": [
-      2,
-      2
-    ],
-    "Output": [
-      6204
-    ],
-    "OutCounts": [
-      2
-    ],
-    "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
@@ -4581,7 +4441,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 2407,
+    "GridIndex": 2406,
     "Time": 180,
     "Input": [
       6501,
@@ -5026,7 +4886,7 @@
     "NonProductive": false
   },
   {
-    "ID": 403,
+    "ID": 121,
     "Name": "铝矿粉",
     "Description": "",
     "IconPath": "",
@@ -5146,34 +5006,6 @@
     "NonProductive": false
   },
   {
-    "ID": 424,
-    "Name": "先驱者晶片",
-    "Description": "",
-    "IconPath": "",
-    "Type": 12,
-    "GridIndex": 3105,
-    "Time": 5400,
-    "Input": [
-      6271,
-      6272,
-      7806
-    ],
-    "InCounts": [
-      40,
-      20,
-      2
-    ],
-    "Output": [
-      6274
-    ],
-    "OutCounts": [
-      1
-    ],
-    "Explicit": false,
-    "Handcraft": false,
-    "NonProductive": false
-  },
-  {
     "ID": 415,
     "Name": "混凝土",
     "Description": "",
@@ -5273,7 +5105,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 10,
-    "GridIndex": 2313,
+    "GridIndex": 2307,
     "Time": 600,
     "Input": [
       6503,

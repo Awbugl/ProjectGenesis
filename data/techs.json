@@ -15,7 +15,7 @@
     "ItemPoints": [],
     "HashNeeded": 1,
     "UnlockRecipes": [
-      502
+      25
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -574,52 +574,6 @@
     "PropertyItemCounts": []
   },
   {
-    "ID": 1837,
-    "Name": "T先驱者遗物",
-    "IconPath": "Icons/Tech/1303",
-    "Desc": "T先驱者遗物描述",
-    "Conclusion": "T先驱者遗物描述",
-    "Position": [
-      45.0,
-      -15.0
-    ],
-    "PreTechs": [
-      1152
-    ],
-    "PreTechsImplicit": [],
-    "Items": [
-      6001,
-      6002,
-      6003,
-      6004,
-      6005
-    ],
-    "ItemPoints": [
-      1,
-      1,
-      1,
-      1,
-      1
-    ],
-    "HashNeeded": 72000000,
-    "UnlockRecipes": [
-      424
-    ],
-    "UnlockFunctions": [],
-    "UnlockValues": [],
-    "Published": true,
-    "Level": 0,
-    "MaxLevel": 0,
-    "LevelCoef1": 0,
-    "LevelCoef2": 0,
-    "IsLabTech": true,
-    "PreTechsMax": false,
-    "AddItems": [],
-    "AddItemCounts": [],
-    "PropertyOverrideItems": [],
-    "PropertyItemCounts": []
-  },
-  {
     "ID": 1124,
     "Name": "T结构矩阵",
     "IconPath": "Icons/Tech/1124",
@@ -882,13 +836,15 @@
     "Desc": "T无尽材料学描述",
     "Conclusion": "T无尽材料学描述",
     "Position": [
-      45.0,
+      29.0,
       -11.0
     ],
     "PreTechs": [
-      1152
+      1521
     ],
-    "PreTechsImplicit": [],
+    "PreTechsImplicit": [
+      1142
+    ],
     "Items": [
       6001,
       6002,
@@ -897,16 +853,15 @@
       6005
     ],
     "ItemPoints": [
-      1,
-      1,
-      1,
-      1,
-      1
+      10,
+      10,
+      10,
+      10,
+      10
     ],
-    "HashNeeded": 72000000,
+    "HashNeeded": 720000,
     "UnlockRecipes": [
-      57,
-      425
+      57
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -1058,13 +1013,11 @@
     "Desc": "T反物质能量炉描述",
     "Conclusion": "T反物质能量炉结果",
     "Position": [
-      49.0,
-      -15.0
+      33.0,
+      -19.0
     ],
     "PreTechs": [
-      1134,
-      1837,
-      1145
+      1153
     ],
     "PreTechsImplicit": [],
     "Items": [
@@ -1075,13 +1028,13 @@
       6005
     ],
     "ItemPoints": [
-      1,
-      1,
-      1,
-      1,
-      1
+      10,
+      10,
+      10,
+      10,
+      10
     ],
-    "HashNeeded": 72000000,
+    "HashNeeded": 1440000,
     "UnlockRecipes": [
       110,
       44
@@ -1111,31 +1064,24 @@
     "Desc": "可控湮灭反应描述",
     "Conclusion": "可控湮灭反应结果",
     "Position": [
-      45.0,
-      -19.0
+      53.0,
+      1.0
     ],
     "PreTechs": [
-      1152
+      1506
     ],
     "PreTechsImplicit": [],
     "Items": [
-      6001,
       6002,
-      6003,
-      6004,
       6005
     ],
     "ItemPoints": [
-      1,
-      1,
-      1,
-      1,
-      1
+      24,
+      12
     ],
-    "HashNeeded": 72000000,
+    "HashNeeded": 600000,
     "UnlockRecipes": [
-      42,
-      121
+      42
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -1197,55 +1143,6 @@
     "PropertyItemCounts": []
   },
   {
-    "ID": 1152,
-    "Name": "T不再是菜鸟的证明",
-    "IconPath": "Assets/texpack/终极科技修复版",
-    "Desc": "T不再是菜鸟的证明描述",
-    "Conclusion": "T不再是菜鸟的证明描述",
-    "Position": [
-      41.0,
-      -15.0
-    ],
-    "PreTechs": [
-      1
-    ],
-    "PreTechsImplicit": [
-      1810
-    ],
-    "Items": [
-      6001,
-      6002,
-      6003,
-      6004,
-      6005
-    ],
-    "ItemPoints": [
-      1,
-      1,
-      1,
-      1,
-      1
-    ],
-    "HashNeeded": 360000000,
-    "UnlockRecipes": [
-      25,
-      26
-    ],
-    "UnlockFunctions": [],
-    "UnlockValues": [],
-    "Published": true,
-    "Level": 0,
-    "MaxLevel": 0,
-    "LevelCoef1": 0,
-    "LevelCoef2": 0,
-    "IsLabTech": true,
-    "PreTechsMax": false,
-    "AddItems": [],
-    "AddItemCounts": [],
-    "PropertyOverrideItems": [],
-    "PropertyItemCounts": []
-  },
-  {
     "ID": 1153,
     "Name": "人造恒星",
     "IconPath": "Icons/Tech/1144",
@@ -1263,17 +1160,15 @@
       6001,
       6002,
       6003,
-      6004,
-      6005
+      6004
     ],
     "ItemPoints": [
       40,
       40,
-      40,
-      40,
+      80,
       40
     ],
-    "HashNeeded": 144000,
+    "HashNeeded": 288000,
     "UnlockRecipes": [
       43,
       115
@@ -1862,7 +1757,7 @@
     "HashNeeded": 21600,
     "UnlockRecipes": [
       63,
-      503,
+      26,
       112
     ],
     "UnlockFunctions": [],
@@ -2498,11 +2393,11 @@
     "Desc": "任务完成描述",
     "Conclusion": "任务完成结果",
     "Position": [
-      53.0,
+      57.0,
       1.0
     ],
     "PreTechs": [
-      1506
+      1145
     ],
     "PreTechsImplicit": [],
     "Items": [
@@ -2511,7 +2406,7 @@
     "ItemPoints": [
       4
     ],
-    "HashNeeded": 36000000,
+    "HashNeeded": 3600000,
     "UnlockRecipes": [],
     "UnlockFunctions": [
       99
@@ -3387,34 +3282,32 @@
   },
   {
     "ID": 1712,
-    "Name": "T广播式能源",
+    "Name": "T卫星配电系统",
     "IconPath": "Icons/Tech/1712",
-    "Desc": "T广播式能源描述",
-    "Conclusion": "T广播式能源描述",
+    "Desc": "卫星配电系统描述",
+    "Conclusion": "卫星配电系统结果",
     "Position": [
-      49.0,
-      -11.0
+      29.0,
+      -3.0
     ],
     "PreTechs": [
-      1134,
-      1837
+      1512
     ],
-    "PreTechsImplicit": [],
+    "PreTechsImplicit": [
+      1521,
+      1711
+    ],
     "Items": [
       6001,
       6002,
-      6003,
-      6004,
-      6005
+      6003
     ],
     "ItemPoints": [
-      1,
-      1,
-      1,
-      1,
-      1
+      20,
+      20,
+      10
     ],
-    "HashNeeded": 72000000,
+    "HashNeeded": 720000,
     "UnlockRecipes": [
       73
     ],
@@ -8639,7 +8532,7 @@
     "Items": [
       6001,
       6002,
-      6004
+      6003
     ],
     "ItemPoints": [
       20,
@@ -8682,11 +8575,9 @@
       6001,
       6002,
       6003,
-      6004,
-      6005
+      6004
     ],
     "ItemPoints": [
-      20,
       20,
       20,
       20,
@@ -8740,11 +8631,9 @@
       6001,
       6002,
       6003,
-      6004,
-      6005
+      6004
     ],
     "ItemPoints": [
-      20,
       20,
       20,
       20,
@@ -8752,8 +8641,6 @@
     ],
     "HashNeeded": 288000,
     "UnlockRecipes": [
-      780,
-      550,
       794
     ],
     "UnlockFunctions": [],
@@ -8855,11 +8742,11 @@
       20,
       20,
       20,
-      20,
-      20
+      40,
+      5
     ],
     "HashNeeded": 576000,
-    "UnlockRecipes": [     
+    "UnlockRecipes": [
       569
     ],
     "UnlockFunctions": [],
@@ -8901,9 +8788,9 @@
     ],
     "PreTechsImplicit": [],
     "Items": [
+      6001,
       6002,
-      6003,
-      6004
+      6003
     ],
     "ItemPoints": [
       20,
@@ -9579,6 +9466,7 @@
       24,
       773,
       34,
+      121,
       531,
       532,
       533,
@@ -9587,7 +9475,6 @@
       536,
       537,
       402,
-      403,
       404,
       405,
       411,
@@ -9639,7 +9526,8 @@
     ],
     "HashNeeded": 144000,
     "UnlockRecipes": [
-      772
+      772,
+      550
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -9814,17 +9702,17 @@
     "PropertyItemCounts": []
   },
   {
-    "ID": 1835,
+    "ID": 1152,
     "Name": "T虫洞航行",
     "IconPath": "Icons/Tech/1143",
     "Desc": "T虫洞航行描述",
     "Conclusion": "T虫洞航行描述",
     "Position": [
-      49.0,
-      -19.0
+      33.0,
+      -31.0
     ],
     "PreTechs": [
-      1145
+      1704
     ],
     "PreTechsImplicit": [],
     "Items": [
@@ -9835,13 +9723,13 @@
       6005
     ],
     "ItemPoints": [
-      1,
-      1,
-      1,
-      1,
-      1
+      10,
+      10,
+      10,
+      10,
+      10
     ],
-    "HashNeeded": 72000000,
+    "HashNeeded": 7200000,
     "UnlockRecipes": [],
     "UnlockFunctions": [],
     "UnlockValues": [],
