@@ -821,7 +821,7 @@
   },
   {
     "Name": "I矿物处理厂",
-    "ZHCN": "用于矿物预处理的工厂。",
+    "ZHCN": "用于将大块的矿石粉碎成较小的颗粒或粉末，可以提高矿石的利用率，并为后续的矿石冶炼过程提供更好的条件，从而提高产能。",
     "ENUS": "Mineral processor, used to smash ores."
   },
   {
@@ -1151,7 +1151,7 @@
   },
   {
     "Name": "I基础机械组件",
-    "ZHCN": "一个通用组件包，用途广泛。",
+    "ZHCN": "一个通用组件包，机械工程中常用的元件，用于构建各种机械装置和系统，用途广泛。",
     "ENUS": "A common component, widely used."
   },
   {
@@ -1161,7 +1161,7 @@
   },
   {
     "Name": "I先进机械组件",
-    "ZHCN": "一个通用组件包，用途广泛。",
+    "ZHCN": "一个通用组件包，机械工程中常用的元件，用于构建各种机械装置和系统，用途广泛。",
     "ENUS": "A common component, widely used."
   },
   {
@@ -1171,7 +1171,7 @@
   },
   {
     "Name": "I尖端机械组件",
-    "ZHCN": "一个通用组件包，用途广泛。",
+    "ZHCN": "一个通用组件包，机械工程中常用的元件，用于构建各种机械装置和系统，用途广泛。",
     "ENUS": "A common component, widely used."
   },
   {
@@ -1401,12 +1401,12 @@
   },
   {
     "Name": "先进生物电路",
-    "ZHCN": "先进生物电路",
-    "ENUS": "Advanced biological circuit"
+    "ZHCN": "光学处理器",
+    "ENUS": "Optical Processor"
   },
   {
     "Name": "I先进生物电路",
-    "ZHCN": "具有良好生物相容性的先进计算单元。",
+    "ZHCN": "使用新一代光学技术制造的计算芯片，光子脉冲代替传统的电子讯号，能够显著降低工作时产生的积热，解决因过热产生的效能下降问题，有效提高计算效率。",
     "ENUS": "Advanced computing unit with good biocompatibility."
   },
   {
@@ -1421,13 +1421,13 @@
   },
   {
     "Name": "生物神经纤维",
-    "ZHCN": "生物神经纤维",
-    "ENUS": "Biological nerve fiber"
+    "ZHCN": "光学信息传输纤维",
+    "ENUS": "Optical Information Transfer Fiber"
   },
   {
     "Name": "I生物神经纤维",
-    "ZHCN": "使用活性生物纤维仿制的人造生物神经，能够用来在活性生物组织之间传递信息。",
-    "ENUS": "Artificial biological nerve made of active biological fiber, which can be used to transmit information between active biological tissues."
+    "ZHCN": "使用天然光栅石制造的类光纤信息传输介质，光栅石独特的晶体结构在重塑后能大幅度提高信息传输效率，通常用于构建光学主机的信息链路。",
+    "ENUS": "Fiber-like information transmission media made with natural lenticular stones, whose unique crystal structure can dramatically increase the efficiency of information transmission after remodeling, are often used to build information links to optical hosts."
   },
   {
     "Name": "超级纳米电脑",
@@ -1441,12 +1441,12 @@
   },
   {
     "Name": "湿件主机",
-    "ZHCN": "湿件主机",
-    "ENUS": "Biological computer"
+    "ZHCN": "“超越”X-1光学计算机",
+    "ENUS": "\"Beyond\" X-1 optical computer"
   },
   {
     "Name": "I湿件主机",
-    "ZHCN": "无数的生物芯片用生物神经纤维连接而成。算力与超级纳米电脑相当，能够与生物组织接驳。",
+    "ZHCN": "光学计算技术的最高结晶，使用光学处理器构建的大型计算机。光学芯片是它的大脑，高效信息链路构成了它的神经，这台设备的计算力足以统筹一些非常复杂的工作过程。",
     "ENUS": "A huge thing made of quantum chips and particle broadband, which can achieve super high speed computing."
   },
   {
