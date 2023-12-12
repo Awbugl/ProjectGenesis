@@ -189,7 +189,8 @@
   {
     "ItemID": 2315,
     "ModelID": 194,
-    "assemblerSpeed": 40000
+    "assemblerSpeed": 40000,
+    "assemblerRecipeType": 19
   },
   {
     "ItemID": 2213,

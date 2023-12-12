@@ -86,12 +86,7 @@ namespace ProjectGenesis.Patches.UI.DisplayText
         [HarmonyPostfix]
         public static void GetPropValuePatch(ref ItemProto __instance, int index, ref string __result)
         {
-            if ((ulong)index >= (ulong)__instance.DescFields.Length)
-            {
-                Debug.Log("Genesis Book:Now Loading");
-                __result = "";
-                return;
-            }
+            if (index >= __instance.DescFields.Length) return;
 
             switch (__instance.DescFields[index])
             {
