@@ -5439,7 +5439,7 @@
     ],
     "FuelType": 1,
     "HeatValue": 90000000,
-    "ReactorInc": 0.75,
+    "ReactorInc": 1.5,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
