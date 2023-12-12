@@ -55,8 +55,8 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
                                                  new CodeInstruction(OpCodes.Call, MegaAssembler_AssemblerComponent_InternalUpdate_Patch_Method),
                                                  new CodeInstruction(OpCodes.Brfalse_S, label1), new CodeInstruction(OpCodes.Pop));
 
-            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldloc_1),
-                                 new CodeMatch(OpCodes.Ldloc_2), new CodeMatch(OpCodes.Call, AssemblerComponent_InternalUpdate_Method));
+            matcher.Advance(5).MatchForward(false, new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldloc_1),
+                                            new CodeMatch(OpCodes.Ldloc_2), new CodeMatch(OpCodes.Call, AssemblerComponent_InternalUpdate_Method));
 
             if (matcher.IsValid)
             {
@@ -125,6 +125,15 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
 
                 UpdateOutputSlots(ref __instance, cargoTraffic, slotdata, entitySignPool, stationPilerLevel);
                 UpdateInputSlots(ref __instance, power, factory, cargoTraffic, slotdata, entitySignPool);
+            }
+
+            if (factory.entityPool[__instance.entityId].protoId == ProtoIDUsedByPatches.I位面熔炉)
+            {
+                if (__instance.replicating)
+                {
+                    __instance.extraTime += (int)(power * __instance.extraSpeed) +
+                                            (int)(power * __instance.speedOverride * __instance.extraTimeSpend / __instance.timeSpend);
+                }
             }
 
             return b;
