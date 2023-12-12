@@ -32,10 +32,12 @@
     "GridIndex": 1302,
     "Time": 120,
     "Input": [
-      1104
+      1104,
+      1101
     ],
     "InCounts": [
-      4
+      2,
+      1
     ],
     "Output": [
       1102
@@ -1126,9 +1128,9 @@
       7805
     ],
     "InCounts": [
-      40,
-      60,
-      16,
+      20,
+      20,
+      8,
       1
     ],
     "Output": [
@@ -1506,18 +1508,18 @@
     "Name": "三元精金",
     "Description": "",
     "IconPath": "",
-    "Type": 13,
+    "Type": 5,
     "GridIndex": 3103,
-    "Time": 3600,
+    "Time": 720,
     "Input": [
       6204,
       1107,
       7707
     ],
     "InCounts": [
-      2,
-      2,
-      2
+      1,
+      1,
+      1
     ],
     "Output": [
       6271
@@ -2189,7 +2191,7 @@
       20,
       40,
       20,
-      8
+      2
     ],
     "Output": [
       2312
@@ -3040,10 +3042,10 @@
     "Input": [
       7707,
       1205,
-      1305
+      7803
     ],
     "InCounts": [
-      8,
+      4,
       4,
       1
     ],
@@ -3315,7 +3317,7 @@
     "ID": 702,
     "Name": "水电解",
     "Description": "R水电解",
-    "IconPath": "Assets/texpack/电解水",
+    "IconPath": "Assets/texpack/电解水_新",
     "Type": 2,
     "GridIndex": 4706,
     "Time": 120,
@@ -3341,7 +3343,7 @@
     "ID": 703,
     "Name": "盐水分解",
     "Description": "R盐水分解",
-    "IconPath": "Assets/texpack/盐酸_新",
+    "IconPath": "Assets/texpack/氢氯酸_新新",
     "Type": 2,
     "GridIndex": 4502,
     "Time": 120,
@@ -3567,7 +3569,7 @@
     "ID": 712,
     "Name": "焦油转化",
     "Description": "R焦油转化",
-    "IconPath": "Assets/texpack/煤焦油生产",
+    "IconPath": "Assets/texpack/焦油循环",
     "Type": 3,
     "GridIndex": 4203,
     "Time": 120,
@@ -3699,7 +3701,7 @@
     "ID": 720,
     "Name": "丙烯合成",
     "Description": "R丙烯合成",
-    "IconPath": "Assets/texpack/甘油制取",
+    "IconPath": "Assets/texpack/丙烯循环",
     "Type": 2,
     "GridIndex": 4302,
     "Time": 120,
@@ -3758,12 +3760,12 @@
     "GridIndex": 1611,
     "Time": 240,
     "Input": [
-      7710,
-      1106
+      1402,
+      1014
     ],
     "InCounts": [
-      2,
-      2
+      1,
+      4
     ],
     "Output": [
       7804
@@ -3782,16 +3784,16 @@
     "IconPath": "",
     "Type": 10,
     "GridIndex": 1610,
-    "Time": 3600,
+    "Time": 1800,
     "Input": [
       1107,
       1402,
       1305
     ],
     "InCounts": [
-      50,
-      20,
-      20
+      25,
+      10,
+      10
     ],
     "Output": [
       7805
@@ -4289,15 +4291,15 @@
     "ID": 550,
     "Name": "活性纤维分离",
     "Description": "R活性纤维分离",
-    "IconPath": "Assets/texpack/活性纤维分解",
+    "IconPath": "Assets/texpack/有机晶体重组",
     "Type": 16,
     "GridIndex": 4105,
     "Time": 720,
     "Input": [
-      7710
+      1117
     ],
     "InCounts": [
-      4
+      8
     ],
     "Output": [
       7709
@@ -4313,7 +4315,7 @@
     "ID": 501,
     "Name": "焦油裂化",
     "Description": "R焦油裂化",
-    "IconPath": "Assets/texpack/甘油",
+    "IconPath": "Assets/texpack/丙烯_新",
     "Type": 3,
     "GridIndex": 4205,
     "Time": 120,
@@ -5329,7 +5331,7 @@
     "ID": 429,
     "Name": "物质回收",
     "Description": "R物质回收",
-    "IconPath": "Assets/texpack/垃圾回收",
+    "IconPath": "Assets/texpack/沙土回收_新",
     "Type": 14,
     "GridIndex": 1210,
     "Time": 10800,

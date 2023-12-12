@@ -826,7 +826,7 @@
   },
   {
     "Name": "I矿物处理厂",
-    "ZHCN": "用于矿物预处理的工厂。",
+    "ZHCN": "用于将大块的矿石粉碎成较小的颗粒或粉末，可以提高矿石的利用率，并为后续的矿石冶炼过程提供更好的条件，从而提高产能。",
     "ENUS": "Mineral processor, used to smash ores."
   },
   {
@@ -1156,8 +1156,8 @@
   },
   {
     "Name": "I基础机械组件",
-    "ZHCN": "一个通用组件包，用途广泛。",
-    "ENUS": "A common component, widely used."
+    "ZHCN": "一个通用组件包，机械工程中常用的元件，用于构建各种机械装置和系统，用途广泛。",
+    "ENUS": "A general-purpose kit of components commonly used in mechanical engineering to build a wide variety of mechanical devices and systems for a wide range of uses."
   },
   {
     "Name": "先进机械组件",
@@ -1166,8 +1166,8 @@
   },
   {
     "Name": "I先进机械组件",
-    "ZHCN": "一个通用组件包，用途广泛。",
-    "ENUS": "A common component, widely used."
+    "ZHCN": "一个通用组件包，机械工程中常用的元件，用于构建各种机械装置和系统，用途广泛。",
+    "ENUS": "A general-purpose kit of components commonly used in mechanical engineering to build a wide variety of mechanical devices and systems for a wide range of uses."
   },
   {
     "Name": "尖端机械组件",
@@ -1176,8 +1176,8 @@
   },
   {
     "Name": "I尖端机械组件",
-    "ZHCN": "一个通用组件包，用途广泛。",
-    "ENUS": "A common component, widely used."
+    "ZHCN": "一个通用组件包，机械工程中常用的元件，用于构建各种机械装置和系统，用途广泛。",
+    "ENUS": "A general-purpose kit of components commonly used in mechanical engineering to build a wide variety of mechanical devices and systems for a wide range of uses."
   },
   {
     "Name": "超级机械组件",
@@ -1361,13 +1361,13 @@
   },
   {
     "Name": "生物基板",
-    "ZHCN": "生物基板",
-    "ENUS": "Biological substrate"
+    "ZHCN": "光学基板",
+    "ENUS": "Optical substrate"
   },
   {
     "Name": "I生物基板",
-    "ZHCN": "使用聚酰亚胺制造的基板，具有更好的生物相容性、稳定性和耐用性。",
-    "ENUS": "The substrate made of polyimide, which has better biocompatibility, stability and durability."
+    "ZHCN": "使用聚酰亚胺制造的基板，拥有专为光学计算技术设计的蚀刻结构。",
+    "ENUS": "Substrates made with polyimide have etched structures designed for optical computing technology."
   },
   {
     "Name": "钨块",
@@ -1406,12 +1406,12 @@
   },
   {
     "Name": "先进生物电路",
-    "ZHCN": "先进生物电路",
-    "ENUS": "Advanced biological circuit"
+    "ZHCN": "光学处理器",
+    "ENUS": "Optical processor"
   },
   {
     "Name": "I先进生物电路",
-    "ZHCN": "具有良好生物相容性的先进计算单元。",
+    "ZHCN": "使用新一代光学技术制造的计算芯片，光子脉冲代替传统的电子讯号，能够显著降低工作时产生的积热，解决因过热产生的效能下降问题，有效提高计算效率。",
     "ENUS": "Advanced computing unit with good biocompatibility."
   },
   {
@@ -1426,13 +1426,13 @@
   },
   {
     "Name": "生物神经纤维",
-    "ZHCN": "生物神经纤维",
-    "ENUS": "Biological nerve fiber"
+    "ZHCN": "光学信息传输纤维",
+    "ENUS": "Optical information transfer fiber"
   },
   {
     "Name": "I生物神经纤维",
-    "ZHCN": "使用活性生物纤维仿制的人造生物神经，能够用来在活性生物组织之间传递信息。",
-    "ENUS": "Artificial biological nerve made of active biological fiber, which can be used to transmit information between active biological tissues."
+    "ZHCN": "使用天然光栅石制造的类光纤信息传输介质，光栅石独特的晶体结构在重塑后能大幅度提高信息传输效率，通常用于构建光学主机的信息链路。",
+    "ENUS": "Fiber-like information transmission media made with natural lenticular stones, whose unique crystal structure can dramatically increase the efficiency of information transmission after remodeling, are often used to build information links to optical hosts."
   },
   {
     "Name": "超级纳米电脑",
@@ -1446,13 +1446,13 @@
   },
   {
     "Name": "湿件主机",
-    "ZHCN": "湿件主机",
-    "ENUS": "Biological computer"
+    "ZHCN": "“超越”X-1光学计算机",
+    "ENUS": "\"Beyond\" X-1 optical computer"
   },
   {
     "Name": "I湿件主机",
-    "ZHCN": "无数的生物芯片用生物神经纤维连接而成。算力与超级纳米电脑相当，能够与生物组织接驳。",
-    "ENUS": "A huge thing made of quantum chips and particle broadband, which can achieve super high speed computing."
+    "ZHCN": "光学计算技术的最高结晶，使用光学处理器构建的大型计算机。光学芯片是它的大脑，高效信息链路构成了它的神经，这台设备的计算力足以统筹一些非常复杂的工作过程。",
+    "ENUS": "The highest crystallization of optical computing technology, a mainframe computer built using an optical processor. With an optical chip as its brain and highly efficient information links forming its nerves, this device has enough computational power to orchestrate some very complex work processes."
   },
   {
     "Name": "先进化学反应釜",
@@ -2022,22 +2022,22 @@
   {
     "Name": "T虚拟技术革新",
     "ZHCN": "家园世界: 虚拟技术革新",
-    "ENUS": "Homeworld: Virtual Technology Innovation"
+    "ENUS": "Homeworld: Virtual technology innovation"
   },
   {
     "Name": "T虚拟技术革新描述",
-    "ZHCN": "高精度、可自生的生物电路一经应用就极大的提高了设备的计算能力和稳定性，我们的生产设施迎来了新一轮的技术革新。由于使用的材料具有活性，这种电路技术与碳基生物有着天然的融洽性。据悉，主脑所维持的家园世界就大量的使用了这种技术。",
-    "ENUS": "The application of highly accurate, self-generating biological circuits has greatly improved the computational power and stability of our devices, ushering in a new wave of technological innovation in our production facilities."
+    "ZHCN": "光学计算技术的问世标志着一场新的信息技术革命的开始，使用光脉冲信号代替传统电子讯号能够显著降低计算设备的发热量从而提高工作效率，而天然光栅石所制造的新型传输介质让从未有人敢设想的信息传输速度变成了现实。据悉，主脑所维持的家园世界就大量的使用了这种技术。",
+    "ENUS": "The introduction of optical computing technology marked the beginning of a new revolution in information technology. The use of light pulse signals instead of traditional electronic signals could significantly reduce the heat generated by computing equipment and thus increase work efficiency, while the new transmission medium made of natural lenticular stone made information transmission speeds that no one had ever dared to envision a reality. It is said that the home world maintained by the Mastermind makes extensive use of this technology."
   },
   {
     "Name": "T生物神经技术",
-    "ZHCN": "家园世界: 生物神经技术",
-    "ENUS": "Homeworld: Bio-neurotechnology"
+    "ZHCN": "家园世界: 光学信息传输技术",
+    "ENUS": "Homeworld: Optical information transfer technology"
   },
   {
     "Name": "T生物神经技术描述",
-    "ZHCN": "使用活性生物纤维仿制的人造生物神经，能够用来在活性生物组织之间传递信息，是脑机接口技术的核心之一，绝大多数人类通过这种材料链接家园世界。",
-    "ENUS": "Artificial biological nerves, imitated using active biological fibers, can be used to transmit information between active biological tissues and are one of the cores of brain-computer interface technology, through which the vast majority of humans are linked to the home world."
+    "ZHCN": "使用天然光栅石制造的类光纤信息传输介质，这种全新的介质让信息传输速度达到了一个全新的层次。",
+    "ENUS": "Using a fiber-like information transmission medium made from natural lenticular stone, this new medium takes information transmission speeds to a whole new level."
   },
   {
     "Name": "T超级纳米计算机",
@@ -2051,13 +2051,13 @@
   },
   {
     "Name": "T生物活性计算机",
-    "ZHCN": "家园世界: 生物活性计算机",
-    "ENUS": "Homeworld: Bioactive computer"
+    "ZHCN": "家园世界: 光学计算机",
+    "ENUS": "Homeworld: Optical computer"
   },
   {
     "Name": "T生物活性计算机描述",
-    "ZHCN": "将无数的生物芯片连接起来，爆发出了巨大的算力。伦理不是现在该考虑的事情。",
-    "ENUS": "Connecting countless biochips explodes with enormous arithmetic power. Ethics is not something to consider right now."
+    "ZHCN": "使用新一代光学计算技术制造的先进计算机，拥有远超传统计算机的优异性能。",
+    "ENUS": "Advanced computers built with next-generation optical computing technology have superior performance far beyond that of conventional computers."
   },
   {
     "Name": "T钨强化玻璃",
