@@ -1446,22 +1446,22 @@
   },
   {
     "Name": "超级纳米电脑",
-    "ZHCN": "超级纳米电脑",
-    "ENUS": "Super nano computer"
+    "ZHCN": "量子计算机",
+    "ENUS": "Quantum computer"
   },
   {
     "Name": "I超级纳米电脑",
-    "ZHCN": "量子芯片与粒子宽带结合制造出的纳米级精度的庞然大物，能够实现超高速的计算。",
-    "ENUS": "A huge thing made of quantum chips and particle broadband, which can achieve super high speed computing."
+    "ZHCN": "量子芯片与粒子宽带结合制造出的超大型计算集群，成熟的量子计算技术是衡量一个文明发展水平的条件之一，在主脑的计算中，这是一个重要的分水岭。",
+    "ENUS": "The combination of quantum chips and particle broadband creates a mega-computing cluster. Mature quantum computing technology is one of the conditions to measure the level of development of a civilization, and it is an important node in the mastermind's computation."
   },
   {
     "Name": "湿件主机",
-    "ZHCN": "“超越”X-1光学计算机",
+    "ZHCN": "“超越”X-1型光学主机",
     "ENUS": "\"Beyond\" X-1 optical computer"
   },
   {
     "Name": "I湿件主机",
-    "ZHCN": "光学计算技术的最高结晶，使用光学处理器构建的大型计算机。光学芯片是它的大脑，高效信息链路构成了它的神经，这台设备的计算力足以统筹一些非常复杂的工作过程。",
+    "ZHCN": "光学计算技术的最高结晶，使用光学处理器构建的大型计算机。光学芯片是它的大脑，高效信息链路构成了它的神经，这台设备庞大的计算力能够统筹一些非常复杂的工作过程。",
     "ENUS": "The highest crystallization of optical computing technology, a mainframe computer built using an optical processor. With an optical chip as its brain and highly efficient information links forming its nerves, this device has enough computational power to orchestrate some very complex work processes."
   },
   {
@@ -2026,13 +2026,13 @@
   },
   {
     "Name": "T超级纳米计算机",
-    "ZHCN": "超级纳米计算机",
+    "ZHCN": "超级量子计算机",
     "ENUS": "Super nano computer"
   },
   {
     "Name": "T超级纳米计算机描述",
-    "ZHCN": "上千万的量子芯片在无数粒子宽带的链接下无声工作着，对于人类的任何一个个体来说，这台超级计算机都是非常巨大的，像一座堡垒、一座方尖碑一样矗立在那里，提供着难以想象的巨大算力。",
-    "ENUS": "Tens of millions of quantum chips work silently under the link of countless particle broadband. For any individual human being, this supercomputer is very huge, standing like a fortress, an obelisk, providing unimaginably huge arithmetic power."
+    "ZHCN": "成熟的量子计算技术是衡量一个文明发展水平的条件之一，在主脑的计算中，这是一个重要的分水岭。",
+    "ENUS": "Mature quantum computing technology is one of the conditions that measures the level of development of a civilization, and in the case of mastermind computing, it is an important watershed."
   },
   {
     "Name": "T生物活性计算机",
@@ -2336,7 +2336,7 @@
   },
   {
     "Name": "I高精度装配线",
-    "ZHCN": "一台用于生产精密仪器的机器，当然，不包括它自己。\n <color=\"#7AF0FFC8\">——来自创世之书。</color>",
+    "ZHCN": "一台用于生产精密仪器的机器，当然，不包括它自己。",
     "ENUS": "Used to produce precision instruments, oh of course not have itself."
   },
   {
