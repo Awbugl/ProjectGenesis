@@ -180,6 +180,11 @@
     "ENUS": "Clear needs"
   },
   {
+    "Name": "清空设置",
+    "ZHCN": "清空设置",
+    "ENUS": "Clear options"
+  },
+  {
     "Name": "输入的数值有误",
     "ZHCN": "输入的数值有误！",
     "ENUS": "Invalid count inputs!"

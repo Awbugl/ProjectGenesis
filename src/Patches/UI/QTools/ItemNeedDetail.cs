@@ -30,13 +30,13 @@ namespace ProjectGenesis.Patches.UI.QTools
             cb._image = src.GetComponent<Image>();
             Destroy(src.GetComponentInChildren<Text>());
 
-            Util.NormalizeRectWithTopLeft(Util.CreateText("\u00d7", 18), 50, 10, cb._rect);
+            Util.NormalizeRectWithTopLeft(Util.CreateText("\u2573", 18), 50, 11, cb._rect);
             cb._countText = Util.CreateText("", 18);
             Util.NormalizeRectWithTopLeft(cb._countText, 70, 10, cb._rect);
 
             if (needButton)
             {
-                cb._button = Util.MakeHiliteTextButton("\u00d7", 20, 20);
+                cb._button = Util.MakeHiliteTextButton("\u2573", 20, 20);
                 Util.NormalizeRectWithTopLeft(cb._button, 125, 10, cb._rect);
 
                 cb.Init();
@@ -66,12 +66,12 @@ namespace ProjectGenesis.Patches.UI.QTools
 
         internal void SetPos(float x, float y) => _rect = Util.NormalizeRectWithTopLeft(this, x, y);
 
-        internal void SetData(NodeData data, bool isNeed = true)
+        internal void SetData(NodeData data, bool isNeed = false, string format = "F2")
         {
             _isNeed = isNeed;
             _data = data;
             _image.sprite = data.Item.iconSprite;
-            _countText.text = data.ItemCount.ToString("F2");
+            _countText.text = data.ItemCount.ToString(format);
         }
     }
 }

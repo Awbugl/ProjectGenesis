@@ -31,6 +31,7 @@ namespace ProjectGenesis.Utils
                            I宇宙矩阵粗坯 = 6280,
                            I氧 = 7019,
                            R等离子精炼 = 16,
+                           RX射线裂解 = 58,
                            R羰基合成 = 720,
                            R二氧化碳 = 506,
                            R四氢双环戊二烯 = 512,

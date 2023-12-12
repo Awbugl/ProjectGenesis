@@ -44,7 +44,7 @@ namespace ProjectGenesis
     [BepInDependency(LDBToolPlugin.MODGUID)]
     [BepInDependency(NebulaModAPI.API_GUID)]
     [BepInDependency(InstallationCheckPlugin.MODGUID, BepInDependency.DependencyFlags.SoftDependency)]
-    [CommonAPISubmoduleDependency(nameof(ProtoRegistry), nameof(CustomDescSystem), nameof(TabSystem), nameof(AssemblerRecipeSystem))]
+    [CommonAPISubmoduleDependency(nameof(ProtoRegistry), nameof(TabSystem))]
     public class ProjectGenesis : BaseUnityPlugin, IModCanSave, IMultiplayerMod
     {
         public const string MODGUID = "org.LoShin.GenesisBook";

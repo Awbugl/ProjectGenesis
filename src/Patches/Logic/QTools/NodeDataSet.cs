@@ -1,72 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using ProjectGenesis.Utils;
+using UnityEngine;
 
 namespace ProjectGenesis.Patches.Logic
 {
-    internal static class QTools
-    {
-        internal static readonly ItemProto ProliferatorProto = LDB.items.Select(1143);
-
-        internal static Dictionary<Utils.ERecipeType, List<ItemProto>> RecipeTypeFactoryMap;
-
-        internal static Dictionary<Utils.ERecipeType, List<ItemProto>> GetFactoryDict()
-        {
-            var dict = new Dictionary<Utils.ERecipeType, List<ItemProto>>();
-
-            ItemProto[] items = LDB.items.dataArray;
-
-            foreach (ItemProto proto in items)
-            {
-                PrefabDesc protoPrefabDesc = proto.prefabDesc;
-
-                if (!protoPrefabDesc.isAssembler)
-                {
-                    if (protoPrefabDesc.isLab) dict.TryAddOrInsert(Utils.ERecipeType.Research, proto);
-
-                    continue;
-                }
-
-                var filter = (Utils.ERecipeType)protoPrefabDesc.assemblerRecipeType;
-                if (filter == Utils.ERecipeType.None) continue;
-
-                switch (filter)
-                {
-                    case Utils.ERecipeType.所有化工:
-                    {
-                        dict.TryAddOrInsert(Utils.ERecipeType.Chemical, proto);
-                        dict.TryAddOrInsert(Utils.ERecipeType.Refine, proto);
-                        dict.TryAddOrInsert(Utils.ERecipeType.高分子化工, proto);
-                        continue;
-                    }
-
-                    case Utils.ERecipeType.所有熔炉:
-                    {
-                        dict.TryAddOrInsert(Utils.ERecipeType.Smelt, proto);
-                        dict.TryAddOrInsert(Utils.ERecipeType.矿物处理, proto);
-                        continue;
-                    }
-
-                    case Utils.ERecipeType.所有制造:
-                    {
-                        dict.TryAddOrInsert(Utils.ERecipeType.Assemble, proto);
-                        dict.TryAddOrInsert(Utils.ERecipeType.标准制造, proto);
-                        continue;
-                    }
-
-                    default:
-                    {
-                        dict.TryAddOrInsert(filter, proto);
-                        continue;
-                    }
-                }
-            }
-
-            return dict;
-        }
-    }
-
     internal class NodeDataSet
     {
         internal readonly Dictionary<ItemProto, NodeData> Byproducts = new Dictionary<ItemProto, NodeData>(); // by product
@@ -79,9 +17,11 @@ namespace ProjectGenesis.Patches.Logic
 
         internal readonly Dictionary<ItemProto, NodeData> Datas = new Dictionary<ItemProto, NodeData>(); // middle tier products 
 
-        private readonly Dictionary<ItemProto, NodeOptions> _customOptions = new Dictionary<ItemProto, NodeOptions>();
+        internal readonly Dictionary<ItemProto, NodeData> Factories = new Dictionary<ItemProto, NodeData>(); // middle tier products 
 
-        private readonly Dictionary<Utils.ERecipeType, ItemProto> _defaultMachine = new Dictionary<Utils.ERecipeType, ItemProto>();
+        internal readonly Dictionary<ItemProto, NodeOptions> CustomOptions = new Dictionary<ItemProto, NodeOptions>();
+
+        internal readonly Dictionary<Utils.ERecipeType, ItemProto> DefaultMachine = new Dictionary<Utils.ERecipeType, ItemProto>();
 
         private float ProliferatorCount => _totalProliferatedItemCount / 74;
 
@@ -101,7 +41,7 @@ namespace ProjectGenesis.Patches.Logic
 
             foreach (NodeData node in Needs.Values)
             {
-                if (_customOptions.TryGetValue(node.Item, out NodeOptions option)) node.Options = option;
+                if (CustomOptions.TryGetValue(node.Item, out NodeOptions option)) node.Options = option;
 
                 AddNodeChilds(node);
             }
@@ -118,6 +58,20 @@ namespace ProjectGenesis.Patches.Logic
             if (_totalProliferatedItemCount > 0) MergeRaws(ItemRaw(QTools.ProliferatorProto, ProliferatorCount));
 
             OnNeedRefreshed?.Invoke();
+        }
+
+        public void CalcFactories()
+        {
+            Factories.Clear();
+
+            // ReSharper disable once ForeachCanBePartlyConvertedToQueryUsingAnotherGetEnumerator
+            foreach (NodeData node in Datas.Values)
+            {
+                NodeOptions nodeOptions = node.Options;
+
+                if (!nodeOptions.AsRaw && nodeOptions.Factory != null)
+                    MergeFactories(ItemRaw(nodeOptions.Factory, Mathf.Ceil(nodeOptions.FactoryCount)));
+            }
         }
 
         private bool ReuseByProducts(NodeData node, Dictionary<ItemProto, NodeData> datas)
@@ -227,13 +181,17 @@ namespace ProjectGenesis.Patches.Logic
 
         private void MergeByproducts(NodeData node) => MergeNode(Byproducts, node);
 
+        private void MergeFactories(NodeData node) => MergeNode(Factories, node);
+
         public void ClearNeeds()
         {
             Needs.Clear();
             RefreshNeeds();
         }
 
-        internal void SetDefaultMachine(Utils.ERecipeType type, ItemProto proto) => _defaultMachine[type] = proto;
+        public void ClearOptions() => CustomOptions.Clear();
+
+        internal void SetDefaultMachine(Utils.ERecipeType type, ItemProto proto) => DefaultMachine[type] = proto;
 
         internal void SetDefaultStrategy(EProliferatorStrategy strategy) => _defaultStrategy = strategy;
 
@@ -252,7 +210,7 @@ namespace ProjectGenesis.Patches.Logic
 
         private NodeData ItemNeed(ItemProto proto, float count)
         {
-            if (_customOptions.TryGetValue(proto, out NodeOptions option))
+            if (CustomOptions.TryGetValue(proto, out NodeOptions option))
             {
                 if (proto.isRaw || option.AsRaw) return ItemRaw(proto, count, option);
 
@@ -264,20 +222,15 @@ namespace ProjectGenesis.Patches.Logic
             RecipeProto recipe = proto.recipes.FirstOrDefault();
             Utils.ERecipeType type = (Utils.ERecipeType?)recipe?.Type ?? Utils.ERecipeType.None;
 
-            if (type == Utils.ERecipeType.None)
-            {
-                return ItemRaw(proto, count);
-            }
-            else
-            {
-                if (!_defaultMachine.TryGetValue(type, out ItemProto factory))
-                {
-                    factory = QTools.RecipeTypeFactoryMap[type][0];
-                    SetDefaultMachine(type, factory);
-                }
+            if (type == Utils.ERecipeType.None) return ItemRaw(proto, count);
 
-                return ItemNeed(proto, count, factory, recipe);
+            if (!DefaultMachine.TryGetValue(type, out ItemProto factory))
+            {
+                factory = QTools.RecipeTypeFactoryMap[type][0];
+                SetDefaultMachine(type, factory);
             }
+
+            return ItemNeed(proto, count, factory, recipe, !string.IsNullOrWhiteSpace(proto.miningFrom));
         }
 
         private NodeData ItemRaw(ItemProto proto, float count, NodeOptions option)
@@ -313,7 +266,8 @@ namespace ProjectGenesis.Patches.Logic
             ItemProto proto,
             float count,
             ItemProto factory,
-            RecipeProto recipe)
+            RecipeProto recipe,
+            bool asRaw = false)
         {
             EProliferatorStrategy strategy = _defaultStrategy;
 
@@ -321,7 +275,7 @@ namespace ProjectGenesis.Patches.Logic
 
             var data = new NodeData
                        {
-                           DataSet = this, Item = proto, ItemCount = count, Options = new NodeOptions(proto, factory, recipe, strategy, false)
+                           DataSet = this, Item = proto, ItemCount = count, Options = new NodeOptions(proto, factory, recipe, strategy, asRaw)
                        };
 
             data.RefreshFactoryCount();
@@ -329,122 +283,6 @@ namespace ProjectGenesis.Patches.Logic
             return data;
         }
 
-        private void OnOptionsChange(NodeOptions options) => _customOptions[options.Item] = options;
-    }
-
-    internal class NodeData
-    {
-        internal NodeDataSet DataSet;
-        internal ItemProto Item;
-        internal float ItemCount;
-        internal NodeOptions Options;
-
-        internal void RefreshFactoryCount()
-        {
-            PrefabDesc factoryPrefabDesc = Options.Factory.prefabDesc;
-
-            float assemblerSpeed = factoryPrefabDesc.assemblerSpeed;
-
-            if (factoryPrefabDesc.isLab) assemblerSpeed = factoryPrefabDesc.labAssembleSpeed * 10000;
-
-            int idx = Array.IndexOf(Options.Recipe.Results, Item.ID);
-
-            float count = ItemCount * Options.Recipe.TimeSpend / Options.Recipe.ResultCounts[idx] / assemblerSpeed / 0.36f;
-
-            switch (Options.Strategy)
-            {
-                case EProliferatorStrategy.ExtraProducts:
-                    count /= 1.25f;
-                    break;
-
-                case EProliferatorStrategy.ProductionSpeedup:
-                    count /= 2f;
-                    break;
-            }
-
-            Options.FactoryCount = count;
-        }
-
-        internal void UpdateNeeds() => DataSet.RefreshNeeds();
-
-        public void RemoveNeed() => DataSet.RemoveNeed(this);
-    }
-
-    internal class NodeOptions
-    {
-        internal ItemProto Item { get; }
-
-        internal float FactoryCount { get; set; }
-
-        internal NodeOptions(
-            ItemProto item,
-            ItemProto factory,
-            RecipeProto recipe,
-            EProliferatorStrategy strategy,
-            bool asRaw)
-        {
-            Item = item;
-            _factory = factory;
-            _recipe = recipe;
-            _strategy = strategy;
-            _asRaw = asRaw;
-        }
-
-        internal event Action<NodeOptions> OnOptionsChange;
-
-        private ItemProto _factory;
-
-        internal ItemProto Factory
-        {
-            get => _factory;
-            set
-            {
-                _factory = value;
-                OnOptionsChange?.Invoke(this);
-            }
-        }
-
-        private bool _asRaw;
-
-        internal bool AsRaw
-        {
-            get => _asRaw;
-            set
-            {
-                _asRaw = value;
-                OnOptionsChange?.Invoke(this);
-            }
-        }
-
-        private RecipeProto _recipe;
-
-        internal RecipeProto Recipe
-        {
-            get => _recipe;
-            set
-            {
-                _recipe = value;
-                OnOptionsChange?.Invoke(this);
-            }
-        }
-
-        private EProliferatorStrategy _strategy;
-
-        internal EProliferatorStrategy Strategy
-        {
-            get => _strategy;
-            set
-            {
-                _strategy = value;
-                OnOptionsChange?.Invoke(this);
-            }
-        }
-    }
-
-    internal enum EProliferatorStrategy
-    {
-        Nonuse,
-        ExtraProducts,
-        ProductionSpeedup
+        private void OnOptionsChange(NodeOptions options) => CustomOptions[options.Item] = options;
     }
 }
