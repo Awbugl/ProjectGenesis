@@ -102,8 +102,8 @@ namespace ProjectGenesis.Patches.UI
                 if (ci.opcode == OpCodes.Ldc_R4)
                 {
                     float operand = (float)ci.operand;
-                    if (operand == 12f) ci.operand = 17f;
-                    if (operand == 9f) ci.operand = 7f;
+                    if (operand is 12f) ci.operand = 17f;
+                    if (operand is 9f) ci.operand = 7f;
                 }
 
                 yield return ci;

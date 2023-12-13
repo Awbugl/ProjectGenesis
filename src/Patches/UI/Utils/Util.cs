@@ -160,7 +160,7 @@ namespace ProjectGenesis.Patches.UI.Utils
             return btn;
         }
 
-        private static void RemovePersistentCalls(GameObject go)
+        internal static void RemovePersistentCalls(GameObject go)
         {
             var oldbutton = go.GetComponent<Button>();
             var btn = go.GetComponent<UIButton>();
