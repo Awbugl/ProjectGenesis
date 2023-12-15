@@ -411,13 +411,13 @@ namespace ProjectGenesis.Patches.UI.QTools
         {
             _Close();
             isOpening = false;
-            if (UIRoot.instance.uiGame.starmap.fastTravelling) return;
+            if (GameMain.mainPlayer.fastTravelling) return;
             GameMain.isFullscreenPaused = false;
         }
 
         public void OnPauseButtonClick(int obj)
         {
-            if (UIRoot.instance.uiGame.starmap.fastTravelling) return;
+            if (GameMain.mainPlayer.fastTravelling) return;
             GameMain.isFullscreenPaused = !GameMain.isFullscreenPaused;
         }
 

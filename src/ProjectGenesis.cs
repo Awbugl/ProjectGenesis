@@ -74,6 +74,8 @@ namespace ProjectGenesis
             logger.Log(LogLevel.Info, "GenesisBook Awake");
 
             configFile = Config;
+            
+            JsonHelper.ExportAsJson(@"D:\dspData");
 
             if (DSPBattleCompatibilityPlugin.DSPBattleInstalled)
             {
@@ -194,9 +196,6 @@ namespace ProjectGenesis
 
         private void PostAddDataAction()
         {
-            LDB.strings.OnAfterDeserialize();
-            Localization._strings = LDB.strings;
-
             //飞行舱拆除
             VegeProto vegeProto = LDB.veges.Select(9999);
             vegeProto.MiningItem = new[] { 6216, 1101, 1104 };

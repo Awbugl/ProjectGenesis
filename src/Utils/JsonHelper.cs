@@ -42,7 +42,6 @@ namespace ProjectGenesis.Utils
             File.WriteAllText($"{path}/techs.json", SerializeObject(LDB.techs.dataArray.Select(TechProtoJson.FromProto)));
             File.WriteAllText($"{path}/items.json", SerializeObject(LDB.items.dataArray.Select(ItemProtoJson.FromProto)));
             File.WriteAllText($"{path}/recipes.json", SerializeObject(LDB.recipes.dataArray.Select(RecipeProtoJson.FromProto)));
-            File.WriteAllText($"{path}/strings_all.json", SerializeObject(LDB.strings.dataArray.Select(StringProtoJson.FromProto)));
         }
 
         [Serializable]
@@ -80,6 +79,14 @@ namespace ProjectGenesis.Utils
             public int BuildMode { get; set; }
             public int UnlockKey { get; set; }
             public int MechaMaterialID { get; set; }
+            public int AmmoType { get; set; }
+            public int BombType { get; set; }
+            public int CraftType { get; set; }
+            public float DropRate { get; set; }
+            public int EnemyDropLevel { get; set; }
+            public float[] EnemyDropRange { get; set; }
+            public float EnemyDropCount { get; set; }
+            public int EnemyDropMask { get; set; }
 
             public static ItemProtoJson FromProto(ItemProto i)
                 => new ItemProtoJson
@@ -115,7 +122,15 @@ namespace ProjectGenesis.Utils
                        UnlockKey = i.UnlockKey,
                        PreTechOverride = i.PreTechOverride,
                        Productive = i.Productive,
-                       MechaMaterialID = i.MechaMaterialID
+                       MechaMaterialID = i.MechaMaterialID,
+                       AmmoType = (int)i.AmmoType,
+                       BombType = i.BombType,
+                       CraftType = i.CraftType,
+                       DropRate = i.DropRate,
+                       EnemyDropLevel = i.EnemyDropLevel,
+                       EnemyDropRange = new[] { i.EnemyDropRange.x, i.EnemyDropRange.y },
+                       EnemyDropCount = i.EnemyDropCount,
+                       EnemyDropMask = i.EnemyDropMask
                    };
         }
 
@@ -162,9 +177,12 @@ namespace ProjectGenesis.Utils
         {
             public int ID { get; set; }
             public string Name { get; set; }
+
             public string IconPath { get; set; }
             public string Desc { get; set; }
             public string Conclusion { get; set; }
+            public bool IsHiddenTech { get; set; }
+            public int[] PreItem { get; set; }
             public float[] Position { get; set; }
             public int[] PreTechs { get; set; }
             public int[] PreTechsImplicit { get; set; }
@@ -193,6 +211,8 @@ namespace ProjectGenesis.Utils
                        Name = i.Name,
                        Desc = i.Desc,
                        Conclusion = i.Conclusion,
+                       IsHiddenTech = i.IsHiddenTech,
+                       PreItem = i.PreItem,
                        Published = i.Published,
                        Level = i.Level,
                        MaxLevel = i.MaxLevel,
@@ -223,7 +243,6 @@ namespace ProjectGenesis.Utils
             public string Name { get; set; }
             public string ZHCN { get; set; }
             public string ENUS { get; set; }
-            public static StringProtoJson FromProto(StringProto i) => new StringProtoJson { Name = i.Name, ZHCN = i.ZHCN, ENUS = i.ENUS };
         }
 
         [Serializable]

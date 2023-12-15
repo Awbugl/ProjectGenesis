@@ -18,22 +18,6 @@ namespace ProjectGenesis.Utils
             ref Dictionary<int, IconToolNew.IconDesc> itemIconDescs
                 = ref AccessTools.StaticFieldRefAccess<Dictionary<int, IconToolNew.IconDesc>>(typeof(ProtoRegistry), "itemIconDescs");
 
-            #region StringProto
-
-            StringProtoJson[] stringProtoJsons = StringProtos();
-
-            LDB.strings.OnAfterDeserialize();
-
-            foreach (StringProtoJson stringProto in stringProtoJsons)
-            {
-                if (LDB.strings.Exist(stringProto.Name))
-                    ProtoRegistry.EditString(stringProto.Name, stringProto.ENUS, stringProto.ZHCN);
-                else
-                    ProtoRegistry.RegisterString(stringProto.Name, stringProto.ENUS, stringProto.ZHCN);
-            }
-
-            #endregion
-
             #region TechProto
 
             TechProto templateTech = LDB.techs.Select(1311);
@@ -45,6 +29,8 @@ namespace ProjectGenesis.Utils
                 proto.Name = techjson.Name;
                 proto.Desc = techjson.Desc;
                 proto.Conclusion = techjson.Conclusion;
+                proto.IsHiddenTech = techjson.IsHiddenTech;
+                proto.PreItem = techjson.PreItem;
                 proto.Published = techjson.Published;
                 proto.IconPath = techjson.IconPath;
                 proto.IsLabTech = techjson.IsLabTech;
@@ -119,6 +105,15 @@ namespace ProjectGenesis.Utils
                 proto.MechaMaterialID = itemjson.MechaMaterialID;
                 proto.PreTechOverride = itemjson.PreTechOverride;
                 proto.Productive = itemjson.Productive;
+                proto.MechaMaterialID = itemjson.MechaMaterialID;
+                proto.AmmoType = (EAmmoType)itemjson.AmmoType;
+                proto.BombType = itemjson.BombType;
+                proto.CraftType = itemjson.CraftType;
+                proto.DropRate = itemjson.DropRate;
+                proto.EnemyDropLevel = itemjson.EnemyDropLevel;
+                proto.EnemyDropRange = new Vector2(itemjson.EnemyDropRange[0], itemjson.EnemyDropRange[1]);
+                proto.EnemyDropCount = itemjson.EnemyDropCount;
+                proto.EnemyDropMask = itemjson.EnemyDropMask;
             }
 
             #endregion

@@ -1,6 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
-using UnityEngine;
 using static ProjectGenesis.Utils.JsonHelper;
 
 namespace ProjectGenesis.Utils
@@ -9,10 +9,41 @@ namespace ProjectGenesis.Utils
     {
         private static readonly Dictionary<string, StringProtoJson> StringProtoJsons;
 
+        private static readonly int ZHCNIndex, ENUSIndex;
+
         static TranslateUtils()
         {
-            Localization.language = (Language)PlayerPrefs.GetInt("language", 0);
+            if (!Localization.Loaded) Localization.Load();
+
+            int languageCount = Localization.LanguageCount;
+            for (int index = 0; index < languageCount; ++index)
+            {
+                if (Localization.Languages[index].lcId == 2052) ZHCNIndex = index;
+
+                if (Localization.Languages[index].lcId == 1033) ENUSIndex = index;
+            }
+
             StringProtoJsons = StringProtos().ToDictionary(i => i.Name);
+
+            RegisterStrings();
+        }
+
+        private static void RegisterStrings()
+        {
+            int newlength = Localization.namesIndexer.Count + StringProtoJsons.Count;
+
+            for (int index = 0; index < Localization.strings.Length; index++)
+            {
+                Array.Resize(ref Localization.strings[index], newlength);
+            }
+
+            foreach ((string key, StringProtoJson value) in StringProtoJsons)
+            {
+                Localization.namesIndexer.TryAdd(key, Localization.namesIndexer.Count);
+                int idx = Localization.namesIndexer[key];
+                Localization.strings[ZHCNIndex][idx] = value.ZHCN;
+                Localization.strings[ENUSIndex][idx] = value.ENUS;
+            }
         }
 
         public static string TranslateFromJson(this string s)
@@ -21,17 +52,18 @@ namespace ProjectGenesis.Utils
 
             if (!StringProtoJsons.TryGetValue(s, out StringProtoJson stringProtoJson)) return s;
 
-            switch (Localization.language)
+
+            if (Localization.isZHCN)
             {
-                case Language.zhCN:
-                    return stringProtoJson.ZHCN;
-
-                case Language.enUS:
-                    return stringProtoJson.ENUS;
-
-                default:
-                    return s;
+                return stringProtoJson.ZHCN;
             }
+
+            if (Localization.isENUS)
+            {
+                return stringProtoJson.ENUS;
+            }
+
+            return !Localization.namesIndexer.ContainsKey(s) ? s : Localization.currentStrings[Localization.namesIndexer[s]];
         }
     }
 }
