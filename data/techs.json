@@ -42,7 +42,7 @@
       -19.0
     ],
     "PreTechs": [
-      1901
+      1900
     ],
     "PreTechsImplicit": [],
     "Items": [
@@ -90,7 +90,7 @@
       1.0
     ],
     "PreTechs": [
-      1901
+      1900
     ],
     "PreTechsImplicit": [],
     "Items": [
@@ -224,7 +224,7 @@
     ],
     "PreTechs": [
       1102,
-      1815
+      1915
     ],
     "PreTechsImplicit": [],
     "Items": [
@@ -459,7 +459,7 @@
       -31.0
     ],
     "PreTechs": [
-      1901
+      1900
     ],
     "PreTechsImplicit": [],
     "Items": [
@@ -1108,7 +1108,7 @@
       29.0
     ],
     "PreTechs": [
-      1802
+      1942
     ],
     "PreTechsImplicit": [],
     "Items": [
@@ -1202,7 +1202,7 @@
       17.0
     ],
     "PreTechs": [
-      1801
+      1941
     ],
     "PreTechsImplicit": [
       1601
@@ -1302,7 +1302,7 @@
       1202
     ],
     "PreTechsImplicit": [
-      1802,
+      1942,
       1302,
       1414,
       1602
@@ -1443,7 +1443,7 @@
       1606
     ],
     "PreTechsImplicit": [
-      1803
+      1943
     ],
     "Items": [
       6001,
@@ -1489,7 +1489,7 @@
       13.0
     ],
     "PreTechs": [
-      1832
+      1932
     ],
     "PreTechsImplicit": [
       1414,
@@ -1537,7 +1537,7 @@
       9.0
     ],
     "PreTechs": [
-      1901
+      1900
     ],
     "PreTechsImplicit": [],
     "Items": [
@@ -1616,7 +1616,7 @@
       21.0
     ],
     "PreTechs": [
-      1801
+      1941
     ],
     "PreTechsImplicit": [],
     "Items": [
@@ -1662,7 +1662,7 @@
       -7.0
     ],
     "PreTechs": [
-      1901
+      1900
     ],
     "PreTechsImplicit": [
       1401
@@ -1703,7 +1703,7 @@
       -3.0
     ],
     "PreTechs": [
-      1829
+      1929
     ],
     "PreTechsImplicit": [],
     "Items": [
@@ -1873,7 +1873,7 @@
       1402
     ],
     "PreTechsImplicit": [
-      1829
+      1929
     ],
     "Items": [
       6001,
@@ -1955,7 +1955,7 @@
       25.0
     ],
     "PreTechs": [
-      1901
+      1900
     ],
     "PreTechsImplicit": [],
     "Items": [
@@ -2523,7 +2523,7 @@
       -11.0
     ],
     "PreTechs": [
-      1804
+      1944
     ],
     "PreTechsImplicit": [],
     "Items": [
@@ -2809,13 +2809,13 @@
       25.0
     ],
     "PreTechs": [
-      1836,
-      1801
+      1936,
+      1941
     ],
     "PreTechsImplicit": [
       1113,
       1311,
-      1829
+      1929
     ],
     "Items": [
       6001,
@@ -2855,7 +2855,7 @@
       25.0
     ],
     "PreTechs": [
-      1802,
+      1942,
       1604
     ],
     "PreTechsImplicit": [],
@@ -8382,7 +8382,7 @@
     "PropertyItemCounts": []
   },
   {
-    "ID": 1801,
+    "ID": 1941,
     "Name": "T基础机械组件",
     "IconPath": "Assets/texpack/基础组件",
     "Desc": "T基础机械组件描述",
@@ -8429,7 +8429,7 @@
     ]
   },
   {
-    "ID": 1802,
+    "ID": 1942,
     "Name": "T先进机械组件",
     "IconPath": "Assets/texpack/先进组件",
     "Desc": "T先进机械组件描述",
@@ -8439,7 +8439,7 @@
       29.0
     ],
     "PreTechs": [
-      1801
+      1941
     ],
     "PreTechsImplicit": [
       1302,
@@ -8472,7 +8472,7 @@
     "PropertyItemCounts": []
   },
   {
-    "ID": 1803,
+    "ID": 1943,
     "Name": "T尖端机械组件",
     "IconPath": "Assets/texpack/尖端组件",
     "Desc": "T尖端机械组件描述",
@@ -8482,7 +8482,7 @@
       29.0
     ],
     "PreTechs": [
-      1802
+      1942
     ],
     "PreTechsImplicit": [
       1303
@@ -8516,7 +8516,7 @@
     "PropertyItemCounts": []
   },
   {
-    "ID": 1804,
+    "ID": 1944,
     "Name": "T钨强化金属",
     "IconPath": "Assets/texpack/钨钢",
     "Desc": "T钨强化金属描述",
@@ -8558,7 +8558,7 @@
     "PropertyItemCounts": []
   },
   {
-    "ID": 1807,
+    "ID": 1947,
     "Name": "T虚拟技术革新",
     "IconPath": "Assets/texpack/虚拟技术革新",
     "Desc": "T虚拟技术革新描述",
@@ -8568,7 +8568,7 @@
       9.0
     ],
     "PreTechs": [
-      1809
+      1949
     ],
     "PreTechsImplicit": [],
     "Items": [
@@ -8614,7 +8614,7 @@
     "PropertyItemCounts": []
   },
   {
-    "ID": 1808,
+    "ID": 1948,
     "Name": "T生物神经技术",
     "IconPath": "Assets/texpack/生物神经",
     "Desc": "T生物神经技术描述",
@@ -8668,7 +8668,7 @@
     "PropertyItemCounts": []
   },
   {
-    "ID": 1809,
+    "ID": 1949,
     "Name": "T超级纳米计算机",
     "IconPath": "Assets/texpack/主机科技",
     "Desc": "T超级纳米计算机描述",
@@ -8717,7 +8717,7 @@
     "PropertyItemCounts": []
   },
   {
-    "ID": 1810,
+    "ID": 1950,
     "Name": "T生物活性计算机",
     "IconPath": "Assets/texpack/主机科技",
     "Desc": "T生物活性计算机描述",
@@ -8727,8 +8727,8 @@
       9.0
     ],
     "PreTechs": [
-      1807,
-      1808
+      1947,
+      1908
     ],
     "PreTechsImplicit": [],
     "Items": [
@@ -8774,7 +8774,7 @@
     "PropertyItemCounts": []
   },
   {
-    "ID": 1811,
+    "ID": 1911,
     "Name": "T钨强化玻璃",
     "IconPath": "Assets/texpack/玻璃科技",
     "Desc": "T钨强化玻璃描述",
@@ -8828,7 +8828,7 @@
     "PreTechs": [
       1122,
       1102,
-      1815
+      1915
     ],
     "PreTechsImplicit": [],
     "Items": [
@@ -8860,7 +8860,7 @@
     "PropertyItemCounts": []
   },
   {
-    "ID": 1816,
+    "ID": 1916,
     "Name": "T放射性原料提纯",
     "IconPath": "Icons/Tech/1416",
     "Desc": "T放射性原料提纯描述",
@@ -8873,7 +8873,7 @@
       1402
     ],
     "PreTechsImplicit": [
-      1829
+      1929
     ],
     "Items": [
       6001,
@@ -8904,7 +8904,7 @@
     "PropertyItemCounts": []
   },
   {
-    "ID": 1819,
+    "ID": 1919,
     "Name": "T裂变能源燃料棒",
     "IconPath": "Icons/Tech/1416",
     "Desc": "T裂变能源燃料棒描述",
@@ -8914,7 +8914,7 @@
       -15.0
     ],
     "PreTechs": [
-      1816
+      1916
     ],
     "PreTechsImplicit": [],
     "Items": [
@@ -8945,7 +8945,7 @@
     "PropertyItemCounts": []
   },
   {
-    "ID": 1820,
+    "ID": 1920,
     "Name": "T同位素温差发电",
     "IconPath": "Icons/Tech/1416",
     "Desc": "T同位素温差发电描述",
@@ -8955,7 +8955,7 @@
       -15.0
     ],
     "PreTechs": [
-      1819
+      1919
     ],
     "PreTechsImplicit": [],
     "Items": [
@@ -8988,7 +8988,7 @@
     "PropertyItemCounts": []
   },
   {
-    "ID": 1821,
+    "ID": 1921,
     "Name": "T聚变燃料提取",
     "IconPath": "Icons/Tech/1416",
     "Desc": "T聚变燃料提取描述",
@@ -8998,7 +8998,7 @@
       -15.0
     ],
     "PreTechs": [
-      1820
+      1920
     ],
     "PreTechsImplicit": [
       1104
@@ -9037,7 +9037,7 @@
     "PropertyItemCounts": []
   },
   {
-    "ID": 1822,
+    "ID": 1922,
     "Name": "T聚变能源燃料棒",
     "IconPath": "Icons/Tech/1416",
     "Desc": "T聚变能源燃料棒描述",
@@ -9047,7 +9047,7 @@
       -15.0
     ],
     "PreTechs": [
-      1821
+      1921
     ],
     "PreTechsImplicit": [],
     "Items": [
@@ -9085,7 +9085,7 @@
     "PropertyItemCounts": []
   },
   {
-    "ID": 1823,
+    "ID": 1923,
     "Name": "T天穹装配厂",
     "IconPath": "Icons/Tech/1604",
     "Desc": "T天穹装配厂描述",
@@ -9095,7 +9095,7 @@
       21.0
     ],
     "PreTechs": [
-      1824
+      1924
     ],
     "PreTechsImplicit": [
       1201
@@ -9137,7 +9137,7 @@
     "PropertyItemCounts": []
   },
   {
-    "ID": 1824,
+    "ID": 1924,
     "Name": "T物质裂解塔",
     "IconPath": "Icons/Tech/1604",
     "Desc": "T物质裂解塔描述",
@@ -9147,7 +9147,7 @@
       21.0
     ],
     "PreTechs": [
-      1834
+      1934
     ],
     "PreTechsImplicit": [
       1401
@@ -9189,7 +9189,7 @@
     "PropertyItemCounts": []
   },
   {
-    "ID": 1825,
+    "ID": 1925,
     "Name": "T行星级化学反应釜",
     "IconPath": "Icons/Tech/1604",
     "Desc": "T行星级化学反应釜描述",
@@ -9199,7 +9199,7 @@
       17.0
     ],
     "PreTechs": [
-      1834
+      1934
     ],
     "PreTechsImplicit": [
       1305
@@ -9241,7 +9241,7 @@
     "PropertyItemCounts": []
   },
   {
-    "ID": 1826,
+    "ID": 1926,
     "Name": "T精密结构组装厂",
     "IconPath": "Icons/Tech/1604",
     "Desc": "T精密结构组装厂描述",
@@ -9251,7 +9251,7 @@
       13.0
     ],
     "PreTechs": [
-      1834
+      1934
     ],
     "PreTechsImplicit": [
       1203
@@ -9293,7 +9293,7 @@
     "PropertyItemCounts": []
   },
   {
-    "ID": 1827,
+    "ID": 1927,
     "Name": "T巨型粒子对撞机",
     "IconPath": "Icons/Tech/1604",
     "Desc": "T巨型粒子对撞机描述",
@@ -9303,7 +9303,7 @@
       13.0
     ],
     "PreTechs": [
-      1826
+      1926
     ],
     "PreTechsImplicit": [
       1142
@@ -9345,7 +9345,7 @@
     "PropertyItemCounts": []
   },
   {
-    "ID": 1831,
+    "ID": 1931,
     "Name": "T物质分解设施",
     "IconPath": "Assets/texpack/回收科技",
     "Desc": "T物质分解设施描述",
@@ -9355,7 +9355,7 @@
       17.0
     ],
     "PreTechs": [
-      1825
+      1925
     ],
     "PreTechsImplicit": [],
     "Items": [
@@ -9396,7 +9396,7 @@
     "PropertyItemCounts": []
   },
   {
-    "ID": 1828,
+    "ID": 1928,
     "Name": "T化学能燃料棒",
     "IconPath": "Assets/texpack/燃料棒科技",
     "Desc": "T化学能燃料棒描述",
@@ -9436,7 +9436,7 @@
     "PropertyItemCounts": []
   },
   {
-    "ID": 1829,
+    "ID": 1929,
     "Name": "T矿物处理",
     "IconPath": "Assets/texpack/矿物处理",
     "Desc": "T矿物处理描述",
@@ -9499,7 +9499,7 @@
     "PropertyItemCounts": []
   },
   {
-    "ID": 1830,
+    "ID": 1930,
     "Name": "T先进化工",
     "IconPath": "Icons/Tech/1122",
     "Desc": "T先进化工描述",
@@ -9544,7 +9544,7 @@
     "PropertyItemCounts": []
   },
   {
-    "ID": 1815,
+    "ID": 1915,
     "Name": "T焦油分馏",
     "IconPath": "Icons/Tech/1102",
     "Desc": "T焦油分馏描述",
@@ -9586,7 +9586,7 @@
     "PropertyItemCounts": []
   },
   {
-    "ID": 1832,
+    "ID": 1932,
     "Name": "化工厂",
     "IconPath": "Assets/texpack/化工科技",
     "Desc": "基础化工描述",
@@ -9596,7 +9596,7 @@
       13.0
     ],
     "PreTechs": [
-      1801
+      1941
     ],
     "PreTechsImplicit": [
       1120
@@ -9628,7 +9628,7 @@
     "PropertyItemCounts": []
   },
   {
-    "ID": 1901,
+    "ID": 1900,
     "Name": "T科学理论",
     "IconPath": "Icons/Tech/1507",
     "Desc": "",
@@ -9658,7 +9658,7 @@
     "PropertyItemCounts": []
   },
   {
-    "ID": 1834,
+    "ID": 1934,
     "Name": "T巨型建筑工程学",
     "IconPath": "Icons/Tech/1604",
     "Desc": "T巨型建筑工程学描述",
@@ -9746,7 +9746,7 @@
     "PropertyItemCounts": []
   },
   {
-    "ID": 1836,
+    "ID": 1936,
     "Name": "T行星协调中心",
     "IconPath": "Icons/Tech/2902",
     "Desc": "T行星协调中心描述",
