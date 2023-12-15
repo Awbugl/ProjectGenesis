@@ -17,7 +17,9 @@ namespace ProjectGenesis.Utils
     {
         private static readonly Assembly Assembly = Assembly.GetExecutingAssembly();
 
-        internal static ItemProtoJson[] ItemProtos() => GetJsonContent<ItemProtoJson>("items");
+        internal static ItemProtoJson[] ItemModProtos() => GetJsonContent<ItemProtoJson>("items_mod");
+
+        internal static ItemProtoJson[] ItemVanillaProtos() => GetJsonContent<ItemProtoJson>("items_vanilla");
 
         internal static RecipeProtoJson[] RecipeProtos() => GetJsonContent<RecipeProtoJson>("recipes");
 

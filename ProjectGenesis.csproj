@@ -109,7 +109,6 @@
         <Compile Include="src\Patches\Logic\FastStartOptionPatches.cs"/>
         <Compile Include="src\Patches\Logic\FastTravelPatches.cs"/>
         <Compile Include="src\Patches\Logic\InitialTechPatches.cs"/>
-        <Compile Include="src\Patches\Logic\MartixComplexPatches.cs"/>
         <Compile Include="src\Patches\Logic\MegaAssembler\InternalFunctions.cs"/>
         <Compile Include="src\Patches\Logic\MegaAssembler\MegaAssemblerPatches.cs"/>
         <Compile Include="src\Patches\Logic\MegaAssembler\NebulaCompat.cs"/>
@@ -142,7 +141,7 @@
         <Compile Include="src\Patches\UI\QTools\ItemNeedDetail.cs"/>
         <Compile Include="src\Patches\UI\QTools\ObjectPool.cs"/>
         <Compile Include="src\Patches\UI\UIAbnormalityTipPatches.cs"/>
-        <Compile Include="src\Patches\UI\UIBuildMenuPatches.cs" />
+        <Compile Include="src\Patches\UI\UIBuildMenuPatches.cs"/>
         <Compile Include="src\Patches\UI\UIMonitorPatches.cs"/>
         <Compile Include="src\Patches\UI\UIPowerGeneratorWindowPatches.cs"/>
         <Compile Include="src\Patches\UI\QTools\MyComboBox\ItemComboBox.cs"/>
@@ -173,7 +172,8 @@
         <Compile Include="src\Utils\TranslateUtils.cs"/>
     </ItemGroup>
     <ItemGroup>
-        <EmbeddedResource Include="data\items.json"/>
+        <EmbeddedResource Include="data\items_mod.json"/>
+        <EmbeddedResource Include="data\items_vanilla.json"/>
         <EmbeddedResource Include="data\prefabDescs.json"/>
         <EmbeddedResource Include="data\recipes.json"/>
         <EmbeddedResource Include="data\strings.json"/>

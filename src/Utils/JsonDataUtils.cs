@@ -58,21 +58,68 @@ namespace ProjectGenesis.Utils
 
             #endregion
 
-            #region ItemProto
+            #region Mod ItemProto
 
-            foreach (ItemProtoJson itemjson in ItemProtos())
+            foreach (ItemProtoJson itemjson in ItemModProtos())
             {
                 itemjson.GridIndex = GetTableID(itemjson.GridIndex);
 
-                bool exist = LDB.items.Exist(itemjson.ID);
+                ItemProto proto = ProtoRegistry.RegisterItem(itemjson.ID, itemjson.Name, itemjson.Description, itemjson.IconPath, itemjson.GridIndex,
+                                                             itemjson.StackSize, (EItemType)itemjson.Type, IconDescUtils.GetIconDesc(itemjson.ID));
 
-                ItemProto proto = exist
-                                      ? LDB.items.Select(itemjson.ID)
-                                      : ProtoRegistry.RegisterItem(itemjson.ID, itemjson.Name, itemjson.Description, itemjson.IconPath,
-                                                                   itemjson.GridIndex, itemjson.StackSize, (EItemType)itemjson.Type,
-                                                                   IconDescUtils.GetIconDesc(itemjson.ID));
+                proto.ID = itemjson.ID;
+                proto.Name = itemjson.Name;
+                proto.Description = itemjson.Description;
+                proto.IconPath = itemjson.IconPath;
+                proto.StackSize = itemjson.StackSize;
+                proto.GridIndex = itemjson.GridIndex;
+                proto.FuelType = itemjson.FuelType;
+                proto.HeatValue = itemjson.HeatValue;
+                proto.ReactorInc = itemjson.ReactorInc;
+                proto.DescFields = itemjson.DescFields ?? Array.Empty<int>();
+                proto.IsFluid = itemjson.IsFluid;
+                proto.Type = (EItemType)itemjson.Type;
+                proto.SubID = itemjson.SubID;
+                proto.MiningFrom = itemjson.MiningFrom;
+                proto.ProduceFrom = itemjson.ProduceFrom;
+                proto.Grade = itemjson.Grade;
+                proto.Upgrades = itemjson.Upgrades ?? Array.Empty<int>();
+                proto.IsEntity = itemjson.IsEntity;
+                proto.CanBuild = itemjson.CanBuild;
+                proto.BuildInGas = itemjson.BuildInGas;
+                proto.ModelIndex = itemjson.ModelIndex;
+                proto.ModelCount = itemjson.ModelCount;
+                proto.HpMax = itemjson.HpMax;
+                proto.Ability = itemjson.Ability;
+                proto.Potential = itemjson.Potential;
+                proto.BuildIndex = itemjson.BuildIndex;
+                proto.BuildMode = itemjson.BuildMode;
+                proto.UnlockKey = itemjson.UnlockKey;
+                proto.MechaMaterialID = itemjson.MechaMaterialID;
+                proto.PreTechOverride = itemjson.PreTechOverride;
+                proto.Productive = itemjson.Productive;
+                proto.MechaMaterialID = itemjson.MechaMaterialID;
+                proto.AmmoType = (EAmmoType)itemjson.AmmoType;
+                proto.BombType = itemjson.BombType;
+                proto.CraftType = itemjson.CraftType;
+                proto.DropRate = itemjson.DropRate;
+                proto.EnemyDropLevel = itemjson.EnemyDropLevel;
+                proto.EnemyDropRange = new Vector2(itemjson.EnemyDropRange[0], itemjson.EnemyDropRange[1]);
+                proto.EnemyDropCount = itemjson.EnemyDropCount;
+                proto.EnemyDropMask = itemjson.EnemyDropMask;
+            }
 
-                if (exist && proto.IconPath != itemjson.IconPath) itemIconDescs.Add(itemjson.ID, IconDescUtils.GetIconDesc(itemjson.ID));
+            #endregion
+
+            #region Vanilla ItemProto
+
+            foreach (ItemProtoJson itemjson in ItemVanillaProtos())
+            {
+                itemjson.GridIndex = GetTableID(itemjson.GridIndex);
+
+                ItemProto proto = LDB.items.Select(itemjson.ID);
+
+                if (proto.IconPath != itemjson.IconPath) itemIconDescs.Add(itemjson.ID, IconDescUtils.GetIconDesc(itemjson.ID));
 
                 proto.ID = itemjson.ID;
                 proto.Name = itemjson.Name;
