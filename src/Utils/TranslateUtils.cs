@@ -44,6 +44,13 @@ namespace ProjectGenesis.Utils
                 Localization.strings[ZHCNIndex][idx] = value.ZHCN;
                 Localization.strings[ENUSIndex][idx] = value.ENUS;
             }
+
+            newlength = Localization.namesIndexer.Count;
+
+            for (int index = 0; index < Localization.strings.Length; index++)
+            {
+                Array.Resize(ref Localization.strings[index], newlength);
+            }
         }
 
         public static string TranslateFromJson(this string s)
