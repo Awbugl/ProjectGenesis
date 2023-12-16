@@ -11,8 +11,8 @@
     "PreTechOverride": 0,
     "DescFields": [
       0,
-      40,
-      1
+      1,
+      40
     ],
     "FuelType": 0,
     "HeatValue": 0,
@@ -884,7 +884,7 @@
     "Name": "磁铁",
     "Description": "I磁铁",
     "IconPath": "Icons/ItemRecipe/magnet",
-    "GridIndex": 1301,
+    "GridIndex": 0,
     "StackSize": 200,
     "Type": 2,
     "PreTech": 0,
@@ -914,7 +914,7 @@
     "BuildIndex": 0,
     "BuildMode": 0,
     "UnlockKey": 0,
-    "MechaMaterialID": 22,
+    "MechaMaterialID": 0,
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
