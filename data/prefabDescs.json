@@ -349,5 +349,20 @@
     "workEnergyPerTick": 0,
     "stationMaxDroneCount": 0,
     "stationCollectSpeed": 4
+  },
+  {
+    "ItemID": 7614,
+    "ModelID": 513,
+    "AmmoBlastRadius1": 20
+  },
+  {
+    "ItemID": 7615,
+    "ModelID": 514,
+    "AmmoBlastRadius1": 25
+  },
+  {
+    "ItemID": 1611,
+    "ModelID": 434,
+    "AmmoBlastRadius1": 15
   }
 ]

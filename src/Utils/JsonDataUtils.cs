@@ -270,6 +270,7 @@ namespace ProjectGenesis.Utils
                 if (json.stationMaxItemKinds != null) desc.stationMaxItemKinds = json.stationMaxItemKinds.Value;
                 if (json.stationMaxShipCount != null) desc.stationMaxShipCount = json.stationMaxShipCount.Value;
                 if (json.stationMaxDroneCount != null) desc.stationMaxDroneCount = json.stationMaxDroneCount.Value;
+                if (json.AmmoBlastRadius1 != null) desc.AmmoBlastRadius1 = json.AmmoBlastRadius1.Value;
             }
 
             ref PrefabDesc pumper = ref LDB.models.Select(60).prefabDesc;

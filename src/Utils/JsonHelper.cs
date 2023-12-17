@@ -300,8 +300,9 @@ namespace ProjectGenesis.Utils
             public long? stationMaxEnergyAcc { get; set; } = null;
             public int? stationMaxItemCount { get; set; } = null;
             public int? stationMaxItemKinds { get; set; } = null;
-            public int? stationMaxDroneCount { get; set; } = null;
+            public int? stationMaxDroneCount { get; set; } = null; 
             public int? stationMaxShipCount { get; set; } = null;
+            public float? AmmoBlastRadius1 { get; set; } = null;
 
             public static PrefabDescJson FromPrefabDesc(PrefabDesc i, int itemID, int modelID)
                 => new PrefabDescJson
@@ -347,7 +348,8 @@ namespace ProjectGenesis.Utils
                        stationMaxItemCount = i.stationMaxItemCount,
                        stationMaxItemKinds = i.stationMaxItemKinds,
                        stationMaxShipCount = i.stationMaxShipCount,
-                       stationMaxDroneCount = i.stationMaxDroneCount
+                       stationMaxDroneCount = i.stationMaxDroneCount,
+                       AmmoBlastRadius1 = i.AmmoBlastRadius1
                    };
         }
     }

@@ -48,6 +48,12 @@ namespace ProjectGenesis.Utils
             ModelProto testCraftingTableModel6 = CopyModelProto(49, 511, new Color(0.3059F, 0.2196F, 0.4941F));
             LDBTool.PreAddProto(testCraftingTableModel6);
 
+            ModelProto testMissileModel1 = CopyModelProto(432, 513, new Color(0.3059F, 0.2196F, 0.4941F));
+            LDBTool.PreAddProto(testMissileModel1);
+
+            ModelProto testMissileModel2 = CopyModelProto(432, 514, new Color(0.3059F, 0.2196F, 0.4941F));
+            LDBTool.PreAddProto(testMissileModel2);
+
             AddAtmosphericCollectStation();
         }
 

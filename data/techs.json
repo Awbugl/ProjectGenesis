@@ -1248,7 +1248,7 @@
   {
     "ID": 1152,
     "Name": "T虫洞航行",
-    "IconPath": "Icons/Tech/1143",
+    "IconPath": "Assets/texpack/虫洞航行",
     "Desc": "T虫洞航行描述",
     "Conclusion": "T虫洞航行描述",
     "IsHiddenTech": false,
@@ -3811,7 +3811,7 @@
     "ItemPoints": [
       10
     ],
-    "HashNeeded": 54000,
+    "HashNeeded": 36000,
     "UnlockRecipes": [
       129,
       144
@@ -3853,8 +3853,8 @@
       6002
     ],
     "ItemPoints": [
-      10,
-      10
+      5,
+      5
     ],
     "HashNeeded": 108000,
     "UnlockRecipes": [
@@ -3942,8 +3942,8 @@
       6002
     ],
     "ItemPoints": [
-      12,
-      12
+      8,
+      8
     ],
     "HashNeeded": 180000,
     "UnlockRecipes": [
@@ -3985,13 +3985,11 @@
     "Items": [
       6001,
       6002,
-      6003,
-      6004
+      6003
     ],
     "ItemPoints": [
-      12,
-      12,
-      12,
+      6,
+      6,
       6
     ],
     "HashNeeded": 300000,
@@ -4365,7 +4363,7 @@
     "ItemPoints": [
       10
     ],
-    "HashNeeded": 72000,
+    "HashNeeded": 36000,
     "UnlockRecipes": [
       147
     ],
@@ -4601,9 +4599,9 @@
       6001
     ],
     "ItemPoints": [
-      10
+      8
     ],
-    "HashNeeded": 36000,
+    "HashNeeded": 18000,
     "UnlockRecipes": [
       152
     ],
@@ -5712,7 +5710,7 @@
   {
     "ID": 1936,
     "Name": "T行星协调中心",
-    "IconPath": "Icons/Tech/2902",
+    "IconPath": "Assets/texpack/行星协调中心",
     "Desc": "T行星协调中心描述",
     "Conclusion": "T行星协调中心描述",
     "IsHiddenTech": false,
