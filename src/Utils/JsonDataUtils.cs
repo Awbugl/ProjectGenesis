@@ -275,7 +275,7 @@ namespace ProjectGenesis.Utils
             ref PrefabDesc pumper = ref LDB.models.Select(60).prefabDesc;
             pumper.waterTypes = new[] { 1000, 1116, 7014, 7017, 7018 };
 
-            ref PrefabDesc megapumper = ref LDB.models.Select(462).prefabDesc;
+            ref PrefabDesc megapumper = ref LDB.models.Select(508).prefabDesc;
             megapumper.waterTypes = new[] { 1000, 1116, 7014, 7017, 7018 };
 
             megapumper.waterPoints = new[] { Vector3.zero };
