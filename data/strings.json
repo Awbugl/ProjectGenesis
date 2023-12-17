@@ -375,6 +375,46 @@
     "ENUS": "Coordination Center will tend to increase the speed of drones."
   },
   {
+    "Name": "特征向量模拟",
+    "ZHCN": "特征向量模拟",
+    "ENUS": "Eigenvector simulation"
+  },
+  {
+    "Name": "I特征向量模拟",
+    "ZHCN": "根据机械能量计划的相关信息，模拟信号。降低由于电力因素导致的地面黑雾巢穴威胁度增长。",
+    "ENUS": "Analog signals based on information about the Mechanical Energy Program. Reduce the increase in threat level of dark fog ground nests due to factory power factors."
+  },
+  {
+    "Name": "中继信号干扰",
+    "ZHCN": "中继信号干扰",
+    "ENUS": "Relay signal interference"
+  },
+  {
+    "Name": "I中继信号干扰",
+    "ZHCN": "干扰中继站与太空黑雾巢穴间的信号链路。降低由于地面战斗因素导致的太空黑雾巢穴威胁度增长。",
+    "ENUS": "Interferes with signaling links between relay stations and black fog nests in space. Reduce the increase in the threat level of dark fog space nests due to ground combats."
+  },
+  {
+    "Name": "神经元重编程",
+    "ZHCN": "神经元重编程",
+    "ENUS": "Neuronal reprogramming"
+  },
+  {
+    "Name": "I神经元重编程",
+    "ZHCN": "利用现有黑雾残骸，重编程神经元后可干扰黑雾系统的运转模式。降低地面黑雾巢穴部队建造速度。",
+    "ENUS": "Utilizes existing Black Mist debris, reprogramming neurons can interfere with the Black Mist system's mode of operation. Reduce the units replicate speed of dark fog ground nests."
+  },
+  {
+    "Name": "异常代码分析",
+    "ZHCN": "异常代码分析",
+    "ENUS": "Abnormal code analysis"
+  },
+  {
+    "Name": "I异常代码分析",
+    "ZHCN": "逆向分析残骸中的黑雾代码，并尝试利用机械能量计划的相关数据链路。降低地面黑雾巢穴基地扩张速度。",
+    "ENUS": "Reverse analyze the Black Mist code in the wreckage and attempt to utilize the data link associated with the Mechanical Energy Program. Reduce the build speed of dark fog ground nests."
+  },
+  {
     "Name": "工厂电力需求 -10%",
     "ZHCN": "工厂电力需求 -10%",
     "ENUS": "Assembler Power Consumption -10%"
@@ -418,6 +458,26 @@
     "Name": "配送物流速度 +25%",
     "ZHCN": "配送物流速度 +25%",
     "ENUS": "Drone Speed +25%"
+  },
+  {
+    "Name": "电力威胁增长 -20%",
+    "ZHCN": "电力威胁增长 -20%",
+    "ENUS": "Power related threat growth -20%"
+  },
+  {
+    "Name": "太空威胁增长 -20%",
+    "ZHCN": "太空威胁增长 -20%",
+    "ENUS": "Space threat growth -20%"
+  },
+  {
+    "Name": "部队建造速度 -20%",
+    "ZHCN": "部队建造速度 -20%",
+    "ENUS": "Unit replicate Speed -20%"
+  },
+  {
+    "Name": "基地扩张速度 -20%",
+    "ZHCN": "基地扩张速度 -20%",
+    "ENUS": "Base build Speed -20%"
   },
   {
     "Name": "星际组装厂（巨构）",
