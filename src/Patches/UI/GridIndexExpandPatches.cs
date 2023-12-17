@@ -81,8 +81,8 @@ namespace ProjectGenesis.Patches.UI
                 if (ci.opcode == OpCodes.Ldc_I4_S)
                 {
                     sbyte operand = (sbyte)ci.operand;
-                    if (operand == 12) ci.operand = (sbyte)17;
-                    if (operand == 9) ci.operand = (sbyte)7;
+                    if (operand == 14) ci.operand = (sbyte)17;
+                    if (operand == 8) ci.operand = (sbyte)7;
                 }
 
                 yield return ci;
@@ -102,8 +102,8 @@ namespace ProjectGenesis.Patches.UI
                 if (ci.opcode == OpCodes.Ldc_R4)
                 {
                     float operand = (float)ci.operand;
-                    if (operand is 12f) ci.operand = 17f;
-                    if (operand is 9f) ci.operand = 7f;
+                    if (operand is 14f) ci.operand = 17f;
+                    if (operand is 8f) ci.operand = 7f;
                 }
 
                 yield return ci;

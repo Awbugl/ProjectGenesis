@@ -75,7 +75,7 @@ namespace ProjectGenesis
 
             configFile = Config;
             
-            JsonHelper.ExportAsJson(@"D:\dspData");
+            //JsonHelper.ExportAsJson(@"D:\dspData");
 
             if (DSPBattleCompatibilityPlugin.DSPBattleInstalled)
             {
