@@ -212,12 +212,12 @@
   },
   {
     "ItemID": 6229,
-    "ModelID": 601,
+    "ModelID": 501,
     "fluidStorageCount": 1000000
   },
   {
     "ItemID": 6230,
-    "ModelID": 602,
+    "ModelID": 502,
     "assemblerRecipeType": 11,
     "idleEnergyPerTick": 400,
     "workEnergyPerTick": 12000,
@@ -229,7 +229,7 @@
   },
   {
     "ItemID": 6257,
-    "ModelID": 603,
+    "ModelID": 503,
     "isAssembler": true,
     "isStation": false,
     "assemblerRecipeType": 18,
@@ -243,7 +243,7 @@
   },
   {
     "ItemID": 6258,
-    "ModelID": 604,
+    "ModelID": 504,
     "isAssembler": true,
     "isStation": false,
     "assemblerRecipeType": 19,
@@ -257,7 +257,7 @@
   },
   {
     "ItemID": 6259,
-    "ModelID": 605,
+    "ModelID": 505,
     "isAssembler": true,
     "isStation": false,
     "assemblerRecipeType": 17,
@@ -271,7 +271,7 @@
   },
   {
     "ItemID": 6260,
-    "ModelID": 606,
+    "ModelID": 506,
     "isAssembler": true,
     "isStation": false,
     "assemblerRecipeType": 10,
@@ -285,14 +285,14 @@
   },
   {
     "ItemID": 6261,
-    "ModelID": 607,
+    "ModelID": 507,
     "genEnergyPerTick": 120000000,
     "useFuelPerTick": 120000000,
     "fuelMask": 4
   },
   {
     "ItemID": 6266,
-    "ModelID": 608,
+    "ModelID": 508,
     "isFractionator": false,
     "assemblerRecipeType": 0,
     "idleEnergyPerTick": 50000,
@@ -303,7 +303,7 @@
   },
   {
     "ItemID": 6221,
-    "ModelID": 609,
+    "ModelID": 509,
     "isAccumulator": false,
     "isPowerGen": true,
     "genEnergyPerTick": 50000,
@@ -315,7 +315,7 @@
   },
   {
     "ItemID": 6264,
-    "ModelID": 610,
+    "ModelID": 510,
     "isAssembler": true,
     "isStation": false,
     "assemblerRecipeType": 14,
@@ -329,7 +329,7 @@
   },
   {
     "ItemID": 6265,
-    "ModelID": 611,
+    "ModelID": 511,
     "isAssembler": true,
     "isStation": false,
     "assemblerRecipeType": 5,
@@ -343,7 +343,7 @@
   },
   {
     "ItemID": 6267,
-    "ModelID": 612,
+    "ModelID": 512,
     "isCollectStation": true,
     "isPowerConsumer": false,
     "workEnergyPerTick": 0,
