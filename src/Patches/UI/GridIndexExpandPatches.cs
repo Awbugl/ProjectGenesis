@@ -26,7 +26,7 @@ namespace ProjectGenesis.Patches.UI
             __instance.windowRect.sizeDelta = new Vector2(900, 811);
             __instance.recipeGroup.sizeDelta = new Vector2(782, 322);
             __instance.queueGroup.GetComponentInChildren<RectTransform>().sizeDelta = new Vector2(782f, 46f);
-            
+
             __instance.recipeGroup.GetChild(0).GetChild(9).gameObject.SetActive(false);
 
             Array.Resize(ref __instance.queueNumTexts, 17);
@@ -72,9 +72,6 @@ namespace ProjectGenesis.Patches.UI
         [HarmonyPatch(typeof(UIItemPicker), "_OnUpdate")]
         [HarmonyPatch(typeof(UIItemPicker), "RefreshIcons")]
         [HarmonyPatch(typeof(UIItemPicker), "TestMouseIndex")]
-        [HarmonyPatch(typeof(UILootFilter), "_OnUpdate")]
-        [HarmonyPatch(typeof(UILootFilter), "RefreshIcons")]
-        [HarmonyPatch(typeof(UILootFilter), "TestMouseIndex")]
         [HarmonyPatch(typeof(UIShowSignalTipExtension), "OnUpdate")]
         [HarmonyTranspiler]
         [HarmonyPriority(Priority.Last)]
@@ -93,30 +90,9 @@ namespace ProjectGenesis.Patches.UI
             }
         }
 
-        [HarmonyPatch(typeof(UISignalPicker), "_OnUpdate")]
-        [HarmonyPatch(typeof(UISignalPicker), "RefreshIcons")]
-        [HarmonyPatch(typeof(UISignalPicker), "TestMouseIndex")]
-        [HarmonyTranspiler]
-        [HarmonyPriority(Priority.Last)]
-        public static IEnumerable<CodeInstruction> UISignalPicker_Transpiler(IEnumerable<CodeInstruction> instructions)
-        {
-            foreach (CodeInstruction ci in instructions)
-            {
-                if (ci.opcode == OpCodes.Ldc_I4_S)
-                {
-                    sbyte operand = (sbyte)ci.operand;
-                    if (operand == 14) ci.operand = (sbyte)17;
-                    if (operand == 10) ci.operand = (sbyte)7;
-                }
-
-                yield return ci;
-            }
-        }
-
         [HarmonyPatch(typeof(UIReplicatorWindow), "SetMaterialProps")]
         [HarmonyPatch(typeof(UIRecipePicker), "SetMaterialProps")]
         [HarmonyPatch(typeof(UIItemPicker), "SetMaterialProps")]
-        [HarmonyPatch(typeof(UILootFilter), "SetMaterialProps")]
         [HarmonyTranspiler]
         [HarmonyPriority(Priority.Last)]
         public static IEnumerable<CodeInstruction> SetMaterialProps_Transpiler(IEnumerable<CodeInstruction> instructions)
@@ -128,24 +104,6 @@ namespace ProjectGenesis.Patches.UI
                     float operand = (float)ci.operand;
                     if (operand is 14f) ci.operand = 17f;
                     if (operand is 8f) ci.operand = 7f;
-                }
-
-                yield return ci;
-            }
-        }
-
-        [HarmonyPatch(typeof(UISignalPicker), "SetMaterialProps")]
-        [HarmonyTranspiler]
-        [HarmonyPriority(Priority.Last)]
-        public static IEnumerable<CodeInstruction> UISignalPicker_SetMaterialProps_Transpiler(IEnumerable<CodeInstruction> instructions)
-        {
-            foreach (CodeInstruction ci in instructions)
-            {
-                if (ci.opcode == OpCodes.Ldc_R4)
-                {
-                    float operand = (float)ci.operand;
-                    if (operand is 14f) ci.operand = 17f;
-                    if (operand is 10f) ci.operand = 7f;
                 }
 
                 yield return ci;

@@ -47,7 +47,8 @@ namespace ProjectGenesis.Patches.UI
 
         [HarmonyPatch(typeof(UIShowSignalTipExtension), "OnUpdate")]
         [HarmonyPrefix]
-        public static bool UIShowSignalTipExtension_OnUpdate(UISignalPicker picker) => picker.hoveredIndex >= 0 && picker.hoveredIndex < picker.signalArray.Length;
+        public static bool UIShowSignalTipExtension_OnUpdate(UISignalPicker picker)
+            => picker.hoveredIndex >= 0 && picker.hoveredIndex < picker.signalArray.Length;
 
         [HarmonyPatch(typeof(UISignalPicker), "_OnUpdate")]
         [HarmonyTranspiler]
@@ -63,6 +64,44 @@ namespace ProjectGenesis.Patches.UI
                                                 new CodeInstruction(OpCodes.Ldc_I4_8), new CodeInstruction(OpCodes.Bge, labal));
 
             return matcher.InstructionEnumeration();
+        }
+
+        [HarmonyPatch(typeof(UISignalPicker), "_OnUpdate")]
+        [HarmonyPatch(typeof(UISignalPicker), "RefreshIcons")]
+        [HarmonyPatch(typeof(UISignalPicker), "TestMouseIndex")]
+        [HarmonyTranspiler]
+        [HarmonyPriority(Priority.Last)]
+        public static IEnumerable<CodeInstruction> UISignalPicker_Transpiler(IEnumerable<CodeInstruction> instructions)
+        {
+            foreach (CodeInstruction ci in instructions)
+            {
+                if (ci.opcode == OpCodes.Ldc_I4_S)
+                {
+                    sbyte operand = (sbyte)ci.operand;
+                    if (operand == 14) ci.operand = (sbyte)17;
+                    if (operand == 10) ci.operand = (sbyte)7;
+                }
+
+                yield return ci;
+            }
+        }
+
+        [HarmonyPatch(typeof(UISignalPicker), "SetMaterialProps")]
+        [HarmonyTranspiler]
+        [HarmonyPriority(Priority.Last)]
+        public static IEnumerable<CodeInstruction> UISignalPicker_SetMaterialProps_Transpiler(IEnumerable<CodeInstruction> instructions)
+        {
+            foreach (CodeInstruction ci in instructions)
+            {
+                if (ci.opcode == OpCodes.Ldc_R4)
+                {
+                    float operand = (float)ci.operand;
+                    if (operand is 14f) ci.operand = 17f;
+                    if (operand is 10f) ci.operand = 7f;
+                }
+
+                yield return ci;
+            }
         }
 
         [HarmonyPatch(typeof(UISignalPicker), "RefreshIcons")]
@@ -82,7 +121,7 @@ namespace ProjectGenesis.Patches.UI
                     if (t.GridIndex >= 1101)
                     {
                         int num4 = t.GridIndex / 1000;
-                        if (num4 == ___currentType - 4)
+                        if (num4 == ___currentType - 5)
                         {
                             int num5 = (t.GridIndex - num4 * 1000) / 100 - 1;
                             int num6 = t.GridIndex % 100 - 1;
