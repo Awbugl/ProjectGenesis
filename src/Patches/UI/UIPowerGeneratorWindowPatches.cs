@@ -16,7 +16,7 @@ namespace ProjectGenesis.Patches.UI
         {
             CodeMatcher matcher = new CodeMatcher(instructions).End();
 
-            matcher.MatchBack(false, new CodeMatch(OpCodes.Ldarg_0), new CodeMatch(OpCodes.Call));
+            matcher.MatchBack(false, new CodeMatch(OpCodes.Ldarg_0), new CodeMatch(OpCodes.Call), new CodeMatch(OpCodes.Ret));
             matcher.Advance(1).SetOperandAndAdvance(AccessTools.Method(typeof(UIPowerGeneratorWindowPatches), nameof(OnUpdate_Patch)));
 
             return matcher.InstructionEnumeration();

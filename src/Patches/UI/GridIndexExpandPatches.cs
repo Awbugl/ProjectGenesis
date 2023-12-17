@@ -26,6 +26,8 @@ namespace ProjectGenesis.Patches.UI
             __instance.windowRect.sizeDelta = new Vector2(900, 811);
             __instance.recipeGroup.sizeDelta = new Vector2(782, 322);
             __instance.queueGroup.GetComponentInChildren<RectTransform>().sizeDelta = new Vector2(782f, 46f);
+            
+            __instance.recipeGroup.GetChild(0).GetChild(9).gameObject.SetActive(false);
 
             Array.Resize(ref __instance.queueNumTexts, 17);
 
@@ -44,11 +46,13 @@ namespace ProjectGenesis.Patches.UI
             __instance.recipePicker.pickerTrans.sizeDelta = new Vector2(830, 476);
             __instance.itemPicker.pickerTrans.sizeDelta = new Vector2(830, 476);
             __instance.signalPicker.pickerTrans.sizeDelta = new Vector2(830, 476);
+            __instance.lootFilter.filterTrans.sizeDelta = new Vector2(830, 476);
         }
 
         [HarmonyPatch(typeof(UIRecipePicker), "_OnCreate")]
         [HarmonyPatch(typeof(UISignalPicker), "_OnCreate")]
         [HarmonyPatch(typeof(UIItemPicker), "_OnCreate")]
+        [HarmonyPatch(typeof(UILootFilter), "_OnCreate")]
         [HarmonyPostfix]
         [HarmonyPriority(Priority.Last)]
         public static void UIRecipePicker_OnOpen_Postfix(ManualBehaviour __instance)
@@ -68,6 +72,9 @@ namespace ProjectGenesis.Patches.UI
         [HarmonyPatch(typeof(UIItemPicker), "_OnUpdate")]
         [HarmonyPatch(typeof(UIItemPicker), "RefreshIcons")]
         [HarmonyPatch(typeof(UIItemPicker), "TestMouseIndex")]
+        [HarmonyPatch(typeof(UILootFilter), "_OnUpdate")]
+        [HarmonyPatch(typeof(UILootFilter), "RefreshIcons")]
+        [HarmonyPatch(typeof(UILootFilter), "TestMouseIndex")]
         [HarmonyPatch(typeof(UIShowSignalTipExtension), "OnUpdate")]
         [HarmonyTranspiler]
         [HarmonyPriority(Priority.Last)]
@@ -77,8 +84,7 @@ namespace ProjectGenesis.Patches.UI
             {
                 if (ci.opcode == OpCodes.Ldc_I4_S)
                 {
-                    sbyte operand = (sbyte)ci.operand;
-                    if (operand == 14) ci.operand = (sbyte)17;
+                    if ((sbyte)ci.operand == 14) ci.operand = (sbyte)17;
                 }
 
                 if (ci.opcode == OpCodes.Ldc_I4_8) ci.opcode = OpCodes.Ldc_I4_7;
@@ -110,6 +116,7 @@ namespace ProjectGenesis.Patches.UI
         [HarmonyPatch(typeof(UIReplicatorWindow), "SetMaterialProps")]
         [HarmonyPatch(typeof(UIRecipePicker), "SetMaterialProps")]
         [HarmonyPatch(typeof(UIItemPicker), "SetMaterialProps")]
+        [HarmonyPatch(typeof(UILootFilter), "SetMaterialProps")]
         [HarmonyTranspiler]
         [HarmonyPriority(Priority.Last)]
         public static IEnumerable<CodeInstruction> SetMaterialProps_Transpiler(IEnumerable<CodeInstruction> instructions)

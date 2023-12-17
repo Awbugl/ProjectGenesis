@@ -6145,10 +6145,10 @@
     "IsLabTech": true,
     "PreTechsMax": false,
     "AddItems": [
-      6506,
       6519,
       6520,
-      6521
+      6521,
+      6506
     ],
     "AddItemCounts": [
       1,

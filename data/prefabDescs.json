@@ -195,7 +195,7 @@
   {
     "ItemID": 2213,
     "ModelID": 255,
-    "genEnergyPerTick": 400000
+    "genEnergyPerTick": 800000
   },
   {
     "ItemID": 2316,
