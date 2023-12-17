@@ -30,8 +30,12 @@ namespace ProjectGenesis.Patches.UI
             Texture2D texture = Resources.Load<Sprite>(iconstr).texture;
             mainLogo.GetComponent<RawImage>().texture = texture;
             escLogo.GetComponent<RawImage>().texture = texture;
-            mainLogo.GetComponent<RectTransform>().sizeDelta = new Vector2(texture.width, texture.height);
-            escLogo.GetComponent<RectTransform>().sizeDelta = new Vector2(texture.width, texture.height);
+            mainLogo.GetComponent<RectTransform>().sizeDelta = new Vector2(600f, 250f);
+            mainLogo.GetComponent<RectTransform>().anchoredPosition = new Vector2(120, -60);
+            mainLogo.GetComponent<RectTransform>().anchoredPosition3D = new Vector3(120, -60, 0);
+            escLogo.GetComponent<RectTransform>().sizeDelta = new Vector2(600f, 250f);
+            escLogo.GetComponent<RectTransform>().anchoredPosition = new Vector2(30, 300);
+            escLogo.GetComponent<RectTransform>().anchoredPosition3D = new Vector3(30, 300, 0);
         }
     }
 }
