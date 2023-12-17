@@ -23,7 +23,11 @@ namespace ProjectGenesis.Patches.Logic.PlanetFocus
                                                                         { 6527, "聚变发电效率 +10%".TranslateFromJson() },
                                                                         { 6528, "矿物采集速度 +25%".TranslateFromJson() },
                                                                         { 6529, "裂变发电效率 +20%".TranslateFromJson() },
-                                                                        { 6530, "配送物流速度 +25%".TranslateFromJson() }
+                                                                        { 6530, "配送物流速度 +25%".TranslateFromJson() },
+                                                                        { 6531, "电力威胁增长 -20%".TranslateFromJson() },
+                                                                        { 6532, "太空威胁增长 -20%".TranslateFromJson() },
+                                                                        { 6533, "部队建造速度 -20%".TranslateFromJson() },
+                                                                        { 6534, "基地扩张速度 -20%".TranslateFromJson() }
                                                                     };
 
         internal static void SetPlanetFocus(int planetId, int index, int focusid)
