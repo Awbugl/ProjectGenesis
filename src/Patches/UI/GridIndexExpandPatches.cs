@@ -58,7 +58,6 @@ namespace ProjectGenesis.Patches.UI
         public static void UIRecipePicker_OnOpen_Postfix(ManualBehaviour __instance)
             => __instance.transform.Find("content").GetComponent<RectTransform>().sizeDelta = new Vector2(782, 322);
 
-        [HarmonyPatch(typeof(UIReplicatorWindow), "RefreshRecipeIcons")]
         [HarmonyPatch(typeof(UIReplicatorWindow), "TestMouseRecipeIndex")]
         [HarmonyPatch(typeof(UIReplicatorWindow), "SetSelectedRecipeIndex")]
         [HarmonyPatch(typeof(UIReplicatorWindow), "SetSelectedRecipe")]
@@ -88,6 +87,24 @@ namespace ProjectGenesis.Patches.UI
 
                 yield return ci;
             }
+        }
+
+        [HarmonyPatch(typeof(UIReplicatorWindow), "RefreshRecipeIcons")]
+        [HarmonyTranspiler]
+        public static IEnumerable<CodeInstruction> RefreshRecipeIcons_Transpiler(IEnumerable<CodeInstruction> instructions)
+        {
+            var matcher = new CodeMatcher(instructions);
+
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldc_I4_8));
+            matcher.SetOpcodeAndAdvance(OpCodes.Ldc_I4_7);
+
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldc_I4_S, (sbyte)14));
+            matcher.SetOperandAndAdvance((sbyte)17);
+
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldc_I4_S, (sbyte)14));
+            matcher.SetOperandAndAdvance((sbyte)17);
+
+            return matcher.InstructionEnumeration();
         }
 
         [HarmonyPatch(typeof(UIReplicatorWindow), "SetMaterialProps")]
