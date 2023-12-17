@@ -68,9 +68,6 @@ namespace ProjectGenesis.Patches.UI
         [HarmonyPatch(typeof(UIItemPicker), "_OnUpdate")]
         [HarmonyPatch(typeof(UIItemPicker), "RefreshIcons")]
         [HarmonyPatch(typeof(UIItemPicker), "TestMouseIndex")]
-        [HarmonyPatch(typeof(UISignalPicker), "_OnUpdate")]
-        [HarmonyPatch(typeof(UISignalPicker), "RefreshIcons")]
-        [HarmonyPatch(typeof(UISignalPicker), "TestMouseIndex")]
         [HarmonyPatch(typeof(UIShowSignalTipExtension), "OnUpdate")]
         [HarmonyTranspiler]
         [HarmonyPriority(Priority.Last)]
@@ -82,7 +79,28 @@ namespace ProjectGenesis.Patches.UI
                 {
                     sbyte operand = (sbyte)ci.operand;
                     if (operand == 14) ci.operand = (sbyte)17;
-                    if (operand == 8) ci.operand = (sbyte)7;
+                }
+
+                if (ci.opcode == OpCodes.Ldc_I4_8) ci.opcode = OpCodes.Ldc_I4_7;
+
+                yield return ci;
+            }
+        }
+
+        [HarmonyPatch(typeof(UISignalPicker), "_OnUpdate")]
+        [HarmonyPatch(typeof(UISignalPicker), "RefreshIcons")]
+        [HarmonyPatch(typeof(UISignalPicker), "TestMouseIndex")]
+        [HarmonyTranspiler]
+        [HarmonyPriority(Priority.Last)]
+        public static IEnumerable<CodeInstruction> UISignalPicker_Transpiler(IEnumerable<CodeInstruction> instructions)
+        {
+            foreach (CodeInstruction ci in instructions)
+            {
+                if (ci.opcode == OpCodes.Ldc_I4_S)
+                {
+                    sbyte operand = (sbyte)ci.operand;
+                    if (operand == 14) ci.operand = (sbyte)17;
+                    if (operand == 10) ci.operand = (sbyte)7;
                 }
 
                 yield return ci;
@@ -108,7 +126,7 @@ namespace ProjectGenesis.Patches.UI
                 yield return ci;
             }
         }
-        
+
         [HarmonyPatch(typeof(UISignalPicker), "SetMaterialProps")]
         [HarmonyTranspiler]
         [HarmonyPriority(Priority.Last)]
