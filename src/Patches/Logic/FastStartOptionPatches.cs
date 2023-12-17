@@ -16,8 +16,8 @@ namespace ProjectGenesis.Patches.Logic
 
         private static void Init()
         {
-            GameObject fastStartObj = Object.Instantiate(GameObject.Find("UI Root/Overlay Canvas/Galaxy Select/sandbox-mode"),
-                                                         GameObject.Find("UI Root/Overlay Canvas/Galaxy Select").transform, false);
+            GameObject fastStartObj = Object.Instantiate(GameObject.Find("UI Root/Overlay Canvas/Galaxy Select/setting-group/sandbox-mode/"),
+                                                         GameObject.Find("UI Root/Overlay Canvas/setting-group/Galaxy Select").transform, false);
             fastStartObj.name = "fast-start-mode";
             fastStartObj.transform.localPosition = new Vector3(0, 209, 0);
             Object.DestroyImmediate(fastStartObj.GetComponent<Localizer>());

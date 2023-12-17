@@ -1,5 +1,4 @@
 ﻿using HarmonyLib;
-using PowerNetworkStructures;
 using ProjectGenesis.Utils;
 using UnityEngine;
 
@@ -33,37 +32,5 @@ namespace ProjectGenesis.Patches.UI
             if (!(atmosphericCollectStationMaterial != null)) return;
             atmosphericCollectStationMaterial.SetColor("_TintColor", __instance.collectorEffectColor);
         }
-
-        [HarmonyPatch(typeof(FactoryModel), "OnCameraPostRender")]
-        [HarmonyPrefix]
-        public static bool FactoryModel_OnCameraPostRender(FactoryModel __instance)
-        {
-            if (GameMain.isPaused ||
-                GameMain.inOtherScene ||
-                __instance.planet == null ||
-                !__instance.planet.factoryLoaded ||
-                __instance.planet != GameMain.localPlanet)
-                return false;
-
-            foreach (PowerNodeComponent powerNodeComponent in __instance.planet.factory.powerSystem.nodePool)
-            {
-                if (powerNodeComponent.coverRadius < 2000) continue;
-
-                if (PowerSystemRenderer.powerGraphOn || PowerSystemRenderer.forceConsumersOn || __instance.drawPowerConsumers)
-                    __instance.powerSystemRenderer.DrawConsumers();
-
-                if (!__instance.disableEntitySigns && EntitySignRenderer.entitySignOn) __instance.entitySignRenderer.Draw();
-
-                return false;
-            }
-
-            return true;
-        }
-
-        [HarmonyPatch(typeof(PowerSystem), "line_arragement_for_add_node")]
-        [HarmonyPatch(typeof(PowerSystem), "line_arragement_for_remove_node")]
-        [HarmonyPrefix]
-        public static bool line_arragement_for_node_Prefix(PowerSystem __instance, Node node)
-            => __instance.planet.factory.powerSystem.nodePool[node.id].coverRadius < 2000;
     }
 }

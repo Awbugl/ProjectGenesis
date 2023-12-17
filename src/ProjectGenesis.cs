@@ -49,7 +49,7 @@ namespace ProjectGenesis
     {
         public const string MODGUID = "org.LoShin.GenesisBook";
         public const string MODNAME = "GenesisBook";
-        public const string VERSION = "2.8.1";
+        public const string VERSION = "2.9.0";
 
         internal static ManualLogSource logger;
         internal static ConfigFile configFile;
@@ -74,8 +74,6 @@ namespace ProjectGenesis
             logger.Log(LogLevel.Info, "GenesisBook Awake");
 
             configFile = Config;
-            
-            //JsonHelper.ExportAsJson(@"D:\dspData");
 
             if (DSPBattleCompatibilityPlugin.DSPBattleInstalled)
             {

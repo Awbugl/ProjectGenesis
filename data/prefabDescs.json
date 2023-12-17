@@ -212,12 +212,12 @@
   },
   {
     "ItemID": 6229,
-    "ModelID": 451,
+    "ModelID": 601,
     "fluidStorageCount": 1000000
   },
   {
     "ItemID": 6230,
-    "ModelID": 452,
+    "ModelID": 602,
     "assemblerRecipeType": 11,
     "idleEnergyPerTick": 400,
     "workEnergyPerTick": 12000,
@@ -229,7 +229,7 @@
   },
   {
     "ItemID": 6257,
-    "ModelID": 453,
+    "ModelID": 603,
     "isAssembler": true,
     "isStation": false,
     "assemblerRecipeType": 18,
@@ -243,7 +243,7 @@
   },
   {
     "ItemID": 6258,
-    "ModelID": 454,
+    "ModelID": 604,
     "isAssembler": true,
     "isStation": false,
     "assemblerRecipeType": 19,
@@ -257,7 +257,7 @@
   },
   {
     "ItemID": 6259,
-    "ModelID": 455,
+    "ModelID": 605,
     "isAssembler": true,
     "isStation": false,
     "assemblerRecipeType": 17,
@@ -271,7 +271,7 @@
   },
   {
     "ItemID": 6260,
-    "ModelID": 456,
+    "ModelID": 606,
     "isAssembler": true,
     "isStation": false,
     "assemblerRecipeType": 10,
@@ -285,29 +285,37 @@
   },
   {
     "ItemID": 6261,
-    "ModelID": 457,
+    "ModelID": 607,
     "genEnergyPerTick": 120000000,
     "useFuelPerTick": 120000000,
     "fuelMask": 4
   },
   {
-    "ItemID": 6275,
-    "ModelID": 458,
-    "assemblerRecipeType": 12,
-    "idleEnergyPerTick": 4000000,
-    "workEnergyPerTick": 40000000,
-    "assemblerSpeed": 10000
+    "ItemID": 6266,
+    "ModelID": 608,
+    "isFractionator": false,
+    "assemblerRecipeType": 0,
+    "idleEnergyPerTick": 50000,
+    "workEnergyPerTick": 500000,
+    "minerPeriod": 36000,
+    "minerType": 1,
+    "minimapType": 2
   },
   {
-    "ItemID": 6276,
-    "ModelID": 459,
-    "assemblerRecipeType": 13,
-    "idleEnergyPerTick": 8000000,
-    "workEnergyPerTick": 80000000
+    "ItemID": 6221,
+    "ModelID": 609,
+    "isAccumulator": false,
+    "isPowerGen": true,
+    "genEnergyPerTick": 50000,
+    "dragBuild": true,
+    "dragBuildDist": [
+      2.8,
+      3.2
+    ]
   },
   {
     "ItemID": 6264,
-    "ModelID": 460,
+    "ModelID": 610,
     "isAssembler": true,
     "isStation": false,
     "assemblerRecipeType": 14,
@@ -321,7 +329,7 @@
   },
   {
     "ItemID": 6265,
-    "ModelID": 461,
+    "ModelID": 611,
     "isAssembler": true,
     "isStation": false,
     "assemblerRecipeType": 5,
@@ -334,35 +342,12 @@
     "stationMaxDroneCount": 0
   },
   {
-    "ItemID": 6266,
-    "ModelID": 462,
-    "isFractionator": false,
-    "assemblerRecipeType": 0,
-    "idleEnergyPerTick": 50000,
-    "workEnergyPerTick": 500000,
-    "minerPeriod": 36000,
-    "minerType": 1,
-    "minimapType": 2
-  },
-  {
     "ItemID": 6267,
-    "ModelID": 463,
+    "ModelID": 612,
     "isCollectStation": true,
     "isPowerConsumer": false,
     "workEnergyPerTick": 0,
     "stationMaxDroneCount": 0,
     "stationCollectSpeed": 4
-  },
-  {
-    "ItemID": 6221,
-    "ModelID": 464,
-    "isAccumulator": false,
-    "isPowerGen": true,
-    "genEnergyPerTick": 50000,
-    "dragBuild": true,
-    "dragBuildDist": [
-      2.8,
-      3.2
-    ]
   }
 ]
