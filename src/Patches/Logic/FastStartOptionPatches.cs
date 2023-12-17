@@ -16,10 +16,22 @@ namespace ProjectGenesis.Patches.Logic
 
         private static void Init()
         {
+            GameObject gameObject = GameObject.Find("UI Root/Overlay Canvas/Galaxy Select/setting-group");
             GameObject fastStartObj = Object.Instantiate(GameObject.Find("UI Root/Overlay Canvas/Galaxy Select/setting-group/sandbox-mode/"),
-                                                         GameObject.Find("UI Root/Overlay Canvas/setting-group/Galaxy Select").transform, false);
+                                                         gameObject.transform, false);
+
+            for (int i = 5; i < gameObject.transform.childCount; i++)
+            {
+                Transform transform = gameObject.transform.GetChild(i);
+                Transform transform1 = transform.transform;
+                Vector3 localPosition = transform1.localPosition;
+
+                localPosition = new Vector3(localPosition.x, localPosition.y - 36, localPosition.z);
+                transform1.localPosition = localPosition;
+            }
+            
             fastStartObj.name = "fast-start-mode";
-            fastStartObj.transform.localPosition = new Vector3(0, 209, 0);
+            fastStartObj.transform.localPosition = new Vector3(0, -244, 0);
             Object.DestroyImmediate(fastStartObj.GetComponent<Localizer>());
             var button = fastStartObj.GetComponentInChildren<UIButton>();
             button.tips.tipTitle = "快速开局".TranslateFromJson();
@@ -57,7 +69,7 @@ namespace ProjectGenesis.Patches.Logic
 
             foreach (TechProto proto in LDB.techs.dataArray)
             {
-                if (!GameMain.data.history.TechUnlocked(proto.ID) && proto.Items.All((e) => e < 6003))
+                if (!GameMain.data.history.TechUnlocked(proto.ID) && proto.Items.All((e) => e < 6003 && e != 5201))
                     GameMain.data.history.UnlockTechUnlimited(proto.ID, true);
             }
 
@@ -69,6 +81,8 @@ namespace ProjectGenesis.Patches.Logic
             AddItemToPackage(6267, 10);   // 大气
             AddItemToPackage(2201, 98);   // 电线杆
             AddItemToPackage(2202, 4);    // 充电杆
+            AddItemToPackage(2107, 20);   // 配送器
+            AddItemToPackage(5003, 200);  // 配送小飞机
             AddItemToPackage(2203, 46);   // 风电
             AddItemToPackage(2204, 19);   // 火电
             AddItemToPackage(2205, 49);   // 太阳能

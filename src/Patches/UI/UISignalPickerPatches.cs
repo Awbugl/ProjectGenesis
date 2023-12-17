@@ -22,16 +22,16 @@ namespace ProjectGenesis.Patches.UI
         public static void Create(UISignalPicker __instance)
         {
             TabData[] allTabs = TabSystem.GetAllTabs();
-            _tabs = new List<UITabButton>(allTabs.Length - 3);
+            _tabs = new List<UITabButton>();
             foreach (TabData tabData in allTabs)
             {
                 if (tabData != null)
                 {
                     GameObject gameObject = Object.Instantiate(TabSystem.GetTabPrefab(), __instance.pickerTrans, false);
-                    ((RectTransform)gameObject.transform).anchoredPosition = new Vector2((tabData.tabIndex + 4) * 70 - 54, -75f);
+                    ((RectTransform)gameObject.transform).anchoredPosition = new Vector2((tabData.tabIndex + 5) * 70 - 54, -75f);
                     var component = gameObject.GetComponent<UITabButton>();
                     var newIcon = Resources.Load<Sprite>(tabData.tabIconPath);
-                    component.Init(newIcon, tabData.tabName, tabData.tabIndex + 4,
+                    component.Init(newIcon, tabData.tabName, tabData.tabIndex + 5,
                                    i => AccessTools.Method(typeof(UISignalPicker), "OnTypeButtonClick").Invoke(__instance, new object[] { i }));
                     _tabs.Add(component);
                 }
@@ -60,7 +60,7 @@ namespace ProjectGenesis.Patches.UI
             object labal = matcher.Advance(1).Operand;
 
             matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0), new CodeInstruction(OpCodes.Ldfld, currentTypeField),
-                                                new CodeInstruction(OpCodes.Ldc_I4_7), new CodeInstruction(OpCodes.Bge, labal));
+                                                new CodeInstruction(OpCodes.Ldc_I4_8), new CodeInstruction(OpCodes.Bge, labal));
 
             return matcher.InstructionEnumeration();
         }
@@ -73,7 +73,7 @@ namespace ProjectGenesis.Patches.UI
             ref uint[] ___indexArray,
             ref int[] ___signalArray)
         {
-            if (___currentType > 6)
+            if (___currentType > 7)
             {
                 IconSet iconSet = GameMain.iconSet;
                 ItemProto[] dataArray = LDB.items.dataArray;

@@ -251,15 +251,24 @@ namespace ProjectGenesis
 
             SetMinerMk2Color();
             SetBuildBar();
-
             SetEffectEmitterProto();
             VFEffectEmitter.Init();
 
-            ItemProto.InitFluids();
-            ItemProto.InitItemIds();
             ItemProto.InitFuelNeeds();
+            ItemProto.InitTurretNeeds();
+            ItemProto.InitFluids();
+            ItemProto.InitTurrets();
+            ItemProto.InitEnemyDropTables();
+            ItemProto.InitItemIds();
             ItemProto.InitItemIndices();
             ItemProto.InitMechaMaterials();
+            ItemProto.InitFighterIndices();
+            ModelProto.InitMaxModelIndex();
+            RecipeProto.InitFractionatorNeeds();
+            RaycastLogic.LoadStatic();
+            
+            SetSkillSystem();
+
             ItemProto.stationCollectorId = 2105;
 
             LDB.items.Select(1000).recipes = new List<RecipeProto>() { LDB.recipes.Select(801) };
@@ -267,6 +276,7 @@ namespace ProjectGenesis
 
             StorageComponent.staticLoaded = false;
             StorageComponent.LoadStatic();
+
 
             // JsonHelper.ExportAsJson(@"D:\Git\ProjectGenesis\data");
         }

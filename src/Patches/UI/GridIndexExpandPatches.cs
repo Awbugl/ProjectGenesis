@@ -29,7 +29,7 @@ namespace ProjectGenesis.Patches.UI
 
             Array.Resize(ref __instance.queueNumTexts, 17);
 
-            for (int index = 12; index < 17; ++index)
+            for (int index = 14; index < 17; ++index)
             {
                 __instance.CreateQueueText(index);
             }
@@ -92,7 +92,6 @@ namespace ProjectGenesis.Patches.UI
         [HarmonyPatch(typeof(UIReplicatorWindow), "SetMaterialProps")]
         [HarmonyPatch(typeof(UIRecipePicker), "SetMaterialProps")]
         [HarmonyPatch(typeof(UIItemPicker), "SetMaterialProps")]
-        [HarmonyPatch(typeof(UISignalPicker), "SetMaterialProps")]
         [HarmonyTranspiler]
         [HarmonyPriority(Priority.Last)]
         public static IEnumerable<CodeInstruction> SetMaterialProps_Transpiler(IEnumerable<CodeInstruction> instructions)
@@ -104,6 +103,24 @@ namespace ProjectGenesis.Patches.UI
                     float operand = (float)ci.operand;
                     if (operand is 14f) ci.operand = 17f;
                     if (operand is 8f) ci.operand = 7f;
+                }
+
+                yield return ci;
+            }
+        }
+        
+        [HarmonyPatch(typeof(UISignalPicker), "SetMaterialProps")]
+        [HarmonyTranspiler]
+        [HarmonyPriority(Priority.Last)]
+        public static IEnumerable<CodeInstruction> UISignalPicker_SetMaterialProps_Transpiler(IEnumerable<CodeInstruction> instructions)
+        {
+            foreach (CodeInstruction ci in instructions)
+            {
+                if (ci.opcode == OpCodes.Ldc_R4)
+                {
+                    float operand = (float)ci.operand;
+                    if (operand is 14f) ci.operand = 17f;
+                    if (operand is 10f) ci.operand = 7f;
                 }
 
                 yield return ci;

@@ -46,15 +46,5 @@
       1836,
       7
     ]
-  },
-  {
-    "ID": 36,
-    "Name": "复合矩阵介绍标题",
-    "PreText": "复合矩阵介绍前字",
-    "DeterminatorName": "TOR_TechUnlocked",
-    "DeterminatorParams": [
-      1111,
-      7
-    ]
   }
 ]

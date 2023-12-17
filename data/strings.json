@@ -525,16 +525,6 @@
     "ENUS": "A Planetary Coordination Center can provide multiple gains for a planetary factory, with the ability to switch gains in the planet view to accommodate different stages of development."
   },
   {
-    "Name": "复合矩阵介绍标题",
-    "ZHCN": "复合矩阵介绍",
-    "ENUS": "Composite Matrix Introduction"
-  },
-  {
-    "Name": "复合矩阵介绍前字",
-    "ZHCN": "复合矩阵由两种或多种科研矩阵组合而成，可被分拣器解离成等量的两（多）种矩阵用于科研，但增产点数将会平分到两（多）个矩阵上。也作为合成宇宙矩阵的原料之一。",
-    "ENUS": "Composite Matrixes are a combination of two or more research matrixes that can be dissociated by the sorter into an equal number of two(more) matrixes for research purposes, but the incremental points will be divided equally between the two(more) matrixes. They are also used as the raw material for synthesizing the Cosmic Matrix."
-  },
-  {
     "Name": "物质分解设施介绍标题",
     "ZHCN": "物质分解设施",
     "ENUS": "Recycling Factory Introduction"
@@ -1136,8 +1126,8 @@
   },
   {
     "Name": "I稳定矩阵",
-    "ZHCN": "由两种矩阵组成的复合矩阵。可被分拣器解离成等量的两种矩阵用于科研，也可作为合成宇宙矩阵的原料之一。",
-    "ENUS": "It is a composite matrix composed of two matrixes, which can be disassembled into two matrixes for research lab by sorter, and can also be used as one of the raw materials for synthesizing the universe matrix roughcast."
+    "ZHCN": "由两种矩阵组成的复合矩阵，可作为合成宇宙矩阵的原料之一。",
+    "ENUS": "It is a composite matrix composed of two matrixes, which can be used as one of the raw materials for synthesizing the universe matrix roughcast."
   },
   {
     "Name": "虚空矩阵",
@@ -1146,8 +1136,8 @@
   },
   {
     "Name": "I虚空矩阵",
-    "ZHCN": "由两种矩阵组成的复合矩阵。可被分拣器解离成等量的两种矩阵用于科研，也可作为合成宇宙矩阵的原料之一。",
-    "ENUS": "It is a composite matrix composed of two matrixes, which can be disassembled into two matrixes for research lab by sorter, and can also be used as one of the raw materials for synthesizing the universe matrix roughcast."
+    "ZHCN": "由两种矩阵组成的复合矩阵，可作为合成宇宙矩阵的原料之一。",
+    "ENUS": "It is a composite matrix composed of two matrixes, which can be used as one of the raw materials for synthesizing the universe matrix roughcast."
   },
   {
     "Name": "宇宙矩阵粗坯",
@@ -1156,8 +1146,8 @@
   },
   {
     "Name": "I宇宙矩阵粗坯",
-    "ZHCN": "由五种矩阵组成的复合矩阵。使用反物质充能后可转换为宇宙矩阵，也可被分拣器解离成等量的五种矩阵用于科研。",
-    "ENUS": "It is a composite matrix, which can be disassembled into five matrixes for research lab by sorter, and can be converted to universe matrix after charging with antimatter."
+    "ZHCN": "由五种矩阵组成的复合矩阵，使用反物质充能后可转换为宇宙矩阵。",
+    "ENUS": "It is a composite matrix, which can be converted to universe matrix after charging with antimatter."
   },
   {
     "Name": "I湮灭约束球",

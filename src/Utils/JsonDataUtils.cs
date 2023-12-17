@@ -310,5 +310,35 @@ namespace ProjectGenesis.Utils
             LDBTool.SetBuildBar(12, 5, 6264);
             LDBTool.SetBuildBar(12, 6, 6265);
         }
+
+        internal static void SetSkillSystem()
+        {
+            ModelProto[] dataArray = LDB.models.dataArray;
+
+            foreach (ModelProto t in dataArray)
+            {
+                PlanetFactory.PrefabDescByModelIndex[t.ID] = t.prefabDesc;
+
+                SkillSystem.HpMaxByModelIndex[t.ID] = t.HpMax;
+
+                SkillSystem.HpUpgradeByModelIndex[t.ID] = t.HpUpgrade;
+
+                SkillSystem.HpRecoverByModelIndex[t.ID] = t.HpRecover;
+
+                SkillSystem.RoughRadiusByModelIndex[t.ID] = t.prefabDesc.roughRadius;
+
+                SkillSystem.RoughHeightByModelIndex[t.ID] = t.prefabDesc.roughHeight;
+
+                SkillSystem.RoughWidthByModelIndex[t.ID] = t.prefabDesc.roughWidth;
+
+                SkillSystem.BarHeightByModelIndex[t.ID] = t.prefabDesc.barHeight;
+
+                SkillSystem.BarWidthByModelIndex[t.ID] = t.prefabDesc.barWidth;
+
+                SkillSystem.ColliderComplexityByModelIndex[t.ID] = t.prefabDesc.colliderComplexity;
+
+                SkillSystem.EnemySandCountByModelIndex[t.ID] = t.prefabDesc.enemySandCount;
+            }
+        }
     }
 }
