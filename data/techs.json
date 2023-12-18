@@ -4254,11 +4254,11 @@
     "IsHiddenTech": false,
     "PreItem": [],
     "Position": [
-      21.0,
+      25.0,
       61.0
     ],
     "PreTechs": [
-      1815
+      1959
     ],
     "PreTechsImplicit": [
       1143
@@ -14794,11 +14794,11 @@
     "IsHiddenTech": false,
     "PreItem": [],
     "Position": [
-      25.0,
+      21.0,
       61.0
     ],
     "PreTechs": [
-      1817
+      1815
     ],
     "PreTechsImplicit": [],
     "Items": [
@@ -14844,7 +14844,7 @@
       61.0
     ],
     "PreTechs": [
-      1958
+      1817
     ],
     "PreTechsImplicit": [],
     "Items": [

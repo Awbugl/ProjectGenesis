@@ -393,7 +393,8 @@
   {
     "ItemID": 3002,
     "ModelID": 373 ,
-    "idleEnergyPerTick": 250,
-    "workEnergyPerTick": 12500
+    "turretDamageScale": 2,
+    "idleEnergyPerTick": 500,
+    "workEnergyPerTick": 25000
   }
 ]

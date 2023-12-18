@@ -2876,7 +2876,7 @@
   },
   {
     "Name": "I洲际导弹组",
-    "ZHCN": "在引力导弹的基础上加装了二级推进器，低效的战斗部被战术核弹头取代，离开大气层后能够继续做出机动反应精准追踪目标。一个导弹组包含24枚导弹。",
+    "ZHCN": "在超音速导弹的基础上加装了二级推进器，低效的战斗部被晶石爆破单元取代，脱离大气层后能够继续做出机动反应精准追踪目标。一个导弹组包含24枚导弹。",
     "ENUS": "Simple and effective application of artillery shells using antimatter combatant charges. One shell group contains 12 shells."
   },
   {
@@ -3021,17 +3021,17 @@
   },
   {
     "Name": "T洲际导弹组",
-    "ZHCN": "战术核导弹",
-    "ENUS": "Tactical nuclear missile"
+    "ZHCN": "洲际导弹",
+    "ENUS": "I.C.B.M."
   },
   {
     "Name": "洲际导弹组描述",
-    "ZHCN": "在引力导弹的基础上进一步改装的洲际导弹，其二级推进器能够在脱离大气层后继续提供动力。",
+    "ZHCN": "在超音速导弹的基础上进一步改装的洲际导弹，其二级推进器能够在脱离大气层后继续提供动力。",
     "ENUS": "Tactical nuclear missiles are intercontinental missiles further modified from gravitational missiles with secondary thrusters capable of continuing to provide power after exiting the atmosphere."
   },
   {
     "Name": "洲际导弹组结果",
-    "ZHCN": "你解锁了洲际导弹组，这种导弹安装了战术核弹头，能够进行高效杀伤。",
+    "ZHCN": "你解锁了洲际导弹组，这种导弹安装了晶石爆破单元作为战斗部，能够进行高效杀伤。",
     "ENUS": "You have unlocked the Intercontinental Missile Group, a missile fitted with a tactical nuclear warhead capable of efficient killing."
   },
   {
@@ -3068,5 +3068,35 @@
     "Name": "黑雾协调中心文字描述",
     "ZHCN": "为行星协调中心解锁新的功能",
     "ENUS": "Unlocking new features for the Planetary Coordination Center"
+  },
+  {
+    "Name": "高斯机枪塔",
+    "ZHCN": "高斯机枪塔 MK.I",
+    "ENUS": "Gauss turret MK.I"
+  },
+  {
+    "Name": "高斯机枪塔MK2",
+    "ZHCN": "高斯机枪塔 MK.II",
+    "ENUS": "Gauss turret MK.II"
+  },
+  {
+    "Name": "I高斯机枪塔MK2",
+    "ZHCN": "高斯机枪塔 MK.II，装有四联装高斯机枪，拥有更高的射速以及更加优秀的供弹系统，更新换代的处理器能够让它精确打击更远的目标。",
+    "ENUS": "The Gauss Turret MK.II, fitted with a quadruple Gauss machine gun, has a higher rate of fire as well as a better ammunition supply system, and an upgraded processor that allows it to accurately hit targets at greater distances."
+  },
+  {
+    "Name": "高频激光塔",
+    "ZHCN": "高频激光塔 MK.I",
+    "ENUS": "High frequency laser tower MK.I"
+  },
+  {
+    "Name": "高频激光塔MK2",
+    "ZHCN": "高频激光塔 MK.II",
+    "ENUS": "High frequency laser tower MK.II"
+  },
+  {
+    "Name": "I高频激光塔MK2",
+    "ZHCN": "高频激光塔 MK.II，使用粒子容器替代简陋的激光发生器，也能承受更高的能量负载，而新的处理器能够为它提供更加精准的索敌能力。",
+    "ENUS": "The High Frequency Laser Tower MK.II, which uses particle containers instead of a rudimentary laser generator, is also capable of withstanding higher energy loads, while a new processor provides it with the ability to claim enemies with greater precision."
   }
 ]

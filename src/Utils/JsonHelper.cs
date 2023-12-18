@@ -350,10 +350,10 @@ namespace ProjectGenesis.Utils
                        stationMaxItemKinds = i.stationMaxItemKinds,
                        stationMaxShipCount = i.stationMaxShipCount,
                        stationMaxDroneCount = i.stationMaxDroneCount,
-                       AmmoBlastRadius1 = i.AmmoBlastRadius1
-                       turretMuzzleInterval = i.turretMuzzleInterval
-                       turretRoundInterval = i.turretRoundInterval
-                       turretMaxAttackRange = i.turretMaxAttackRange
+                       AmmoBlastRadius1 = i.AmmoBlastRadius1,
+                       turretMuzzleInterval = i.turretMuzzleInterval,
+                       turretRoundInterval = i.turretRoundInterval,
+                       turretMaxAttackRange = i.turretMaxAttackRange,
                        turretDamageScale = i.turretDamageScale
                    };
         }
