@@ -44,6 +44,20 @@ namespace ProjectGenesis.Patches.Logic
                                                                                        nameof(AssemblerComponent_InsertMethod_Refine))),
                                                 new CodeInstruction(OpCodes.Brtrue_S, label));
 
+            // assemble
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldarg_0), new CodeMatch(OpCodes.Ldfld, AssemblerComponent_RecipeType_FieldInfo),
+                                 new CodeMatch(OpCodes.Ldc_I4_4));
+            matcher.Advance(4);
+
+            // other recipe
+            matcher.Advance(6).MatchForward(false, new CodeMatch(OpCodes.Ldc_I4_0), new CodeMatch(OpCodes.Stloc_S));
+            matcher.Advance(2).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0), new CodeInstruction(OpCodes.Ldarg_2),
+                                                new CodeInstruction(OpCodes.Call,
+                                                                    AccessTools.Method(typeof(ChangeStackingLogicPatches),
+                                                                                       nameof(AssemblerComponent_InsertMethod_Other))),
+                                                new CodeInstruction(OpCodes.Brtrue_S, label));
+
+            
             return matcher.InstructionEnumeration();
         }
 
@@ -79,6 +93,22 @@ namespace ProjectGenesis.Patches.Logic
                 case ProtoIDUsedByPatches.R四氢双环戊二烯:
                 case ProtoIDUsedByPatches.R高效石墨烯:
                 case ProtoIDUsedByPatches.R水电解:
+                    b = true;
+                    break;
+            }
+
+            return b && CalcMaxProduct(ref component, productRegister, 19);
+        }
+        
+        public static bool AssemblerComponent_InsertMethod_Other(ref AssemblerComponent component, int[] productRegister)
+        {
+            if (component.products.Length < 2) return false;
+
+            var b = false;
+
+            switch (component.recipeId)
+            {
+                case ProtoIDUsedByPatches.R放射性矿物处理:
                     b = true;
                     break;
             }

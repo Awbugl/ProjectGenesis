@@ -16,6 +16,7 @@ namespace ProjectGenesis.Patches.UI
             if (tankComponent.id != __instance.tankId) return;
 
             if (FluidColor.TryGetValue(tankComponent.fluidId, out Color32 value)) __instance.exchangeAndColoring(value);
+            if (FluidWithoutIconColor.TryGetValue(tankComponent.fluidId, out value)) __instance.exchangeAndColoring(value);
         }
     }
 }
