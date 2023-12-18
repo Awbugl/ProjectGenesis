@@ -921,11 +921,11 @@
     "DropRate": 0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0.151,
-      0.01
+      0,
+      0
     ],
-    "EnemyDropCount": 3,
-    "EnemyDropMask": 2147483647
+    "EnemyDropCount": 0,
+    "EnemyDropMask": 0
   },
   {
     "ID": 1103,

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Reflection;
 using System.Reflection.Emit;
 using HarmonyLib;
@@ -257,17 +256,8 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
 
                             if (TmpSandCount < 1000 || GameMain.mainPlayer == null) continue;
 
-                            // This method will be called in a worker thread (not main UI thread).
-                            // Thus, calling `GameMain.mainPlayer.SetSandCount` which brings up sand tooltip UI
-                            // will crash the program.
-                            // Instead, we should increase the sand count directly.
-                            AccessTools.PropertySetter(typeof(Player), "sandCount").Invoke(GameMain.mainPlayer,
-                                                                                           new object[]
-                                                                                           {
-                                                                                               Math.Min(1000000000,
-                                                                                                        GameMain.mainPlayer.sandCount +
-                                                                                                        TmpSandCount * 20)
-                                                                                           });
+                            GameMain.mainPlayer.sandCount += TmpSandCount * 40;
+                            
                             TmpSandCount = 0;
                         }
                         else
