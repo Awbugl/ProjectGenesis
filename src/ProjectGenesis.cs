@@ -140,12 +140,7 @@ namespace ProjectGenesis
                                       where t.IsClass && !string.IsNullOrWhiteSpace(t.Namespace) && t.Namespace.StartsWith("ProjectGenesis.Patches")
                                       select t;
 
-            foreach (Type type in types)
-            {
-                Harmony.PatchAll(type);
-
-                GC.Collect();
-            }
+            foreach (Type type in types) Harmony.PatchAll(type);
 
             ModifyVeinData();
 
@@ -218,6 +213,7 @@ namespace ProjectGenesis
             }
 
             PrefabDescPostFix();
+            ModelPostFix();
 
             foreach (MilestoneProto milestone in LDB.milestones.dataArray) milestone.Preload();
             foreach (JournalPatternProto journalPattern in LDB.journalPatterns.dataArray) journalPattern.Preload();

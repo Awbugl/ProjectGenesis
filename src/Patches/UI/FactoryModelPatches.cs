@@ -12,11 +12,6 @@ namespace ProjectGenesis.Patches.UI
     {
         private static Material atmosphericCollectStationMaterial;
 
-        [HarmonyPrefix]
-        [HarmonyPatch(typeof(UIPowerGizmo), "DrawArea")]
-        [HarmonyPatch(typeof(UIPowerGizmo), "DrawCover")]
-        public static bool UIPowerGizmo_Draw(ref UIPowerGizmo __instance, Vector3 center, float radius) => radius < 2000;
-
         [HarmonyPatch(typeof(FactoryModel), "InitCollectorMaterial")]
         [HarmonyPostfix]
         public static void FactoryModel_InitCollectorMaterial(FactoryModel __instance)

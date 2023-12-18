@@ -140,7 +140,11 @@ namespace ProjectGenesis.Utils
             collectEffectMat.SetVector("_Circle", new Vector4(2.5f, 34f, 1f, 0.04f));
 
             newMats.Add(collectEffectMat);
-            ProtoRegistry.RegisterModel(512, "Assets/genesis-models/entities/prefabs/atmospheric-collect-station", newMats.ToArray());
+            ModelProto registerModel = ProtoRegistry.RegisterModel(ProtoIDUsedByPatches.M大气采集器, "Assets/genesis-models/entities/prefabs/atmospheric-collect-station", newMats.ToArray());
+           
+            registerModel.HpMax = 300000;
+            registerModel.RuinId = 384;
+            registerModel.RuinCount = 1;
         }
 
         private static ModelProto CopyModelProto(int oriId, int id, Color color)
