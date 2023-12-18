@@ -3602,6 +3602,7 @@
     ],
     "HashNeeded": 7200,
     "UnlockRecipes": [
+      126,
       125,
       136
     ],
@@ -3932,26 +3933,27 @@
     "IsHiddenTech": false,
     "PreItem": [],
     "Position": [
-      13.0,
+      17.0,
       49.0
     ],
     "PreTechs": [
-      1801
+      1960
     ],
     "PreTechsImplicit": [
       1703
     ],
     "Items": [
       6001,
-      6002
+      6002,
+      6003
     ],
     "ItemPoints": [
-      8,
-      8
+      6,
+      6,
+      6
     ],
     "HashNeeded": 180000,
     "UnlockRecipes": [
-      126,
       132
     ],
     "UnlockFunctions": [],
@@ -4043,7 +4045,7 @@
     ],
     "HashNeeded": 180000,
     "UnlockRecipes": [
-      137
+      781
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -4264,13 +4266,9 @@
     "Items": [
       6001,
       6002,
-      6003,
-      6004,
-      6005
+      6003
     ],
     "ItemPoints": [
-      10,
-      10,
       10,
       10,
       10
@@ -4302,7 +4300,7 @@
     "IsHiddenTech": false,
     "PreItem": [],
     "Position": [
-      29.0,
+      25.0,
       49.0
     ],
     "PreTechs": [
@@ -14462,8 +14460,8 @@
     "IsHiddenTech": false,
     "PreItem": [],
     "Position": [
-      21.0,
-      49.0
+      25.0,
+      45.0
     ],
     "PreTechs": [
       1804
@@ -14476,9 +14474,436 @@
       6004
     ],
     "ItemPoints": [
-      20
+      10,
+      10,
+      10,
+      10
     ],
-    "HashNeeded": 3600000,
+    "HashNeeded": 360000,
+    "UnlockRecipes": [
+      784
+    ],
+    "UnlockFunctions": [],
+    "UnlockValues": [],
+    "Published": true,
+    "Level": 0,
+    "MaxLevel": 0,
+    "LevelCoef1": 0,
+    "LevelCoef2": 0,
+    "IsLabTech": true,
+    "PreTechsMax": false,
+    "AddItems": [],
+    "AddItemCounts": [],
+    "PropertyOverrideItems": [],
+    "PropertyItemCounts": []
+  },
+  {
+    "ID": 1952,
+    "Name": "T反物质湮灭单元",
+    "IconPath": "Assets/texpack/反物质单元",
+    "Desc": "反物质湮灭单元描述",
+    "Conclusion": "反物质湮灭单元结果",
+    "IsHiddenTech": false,
+    "PreItem": [],
+    "Position": [
+      29.0,
+      45.0
+    ],
+    "PreTechs": [
+      1951
+    ],
+    "PreTechsImplicit": [],
+    "Items": [
+      6001,
+      6002,
+      6003,
+      6004,
+      6005
+    ],
+    "ItemPoints": [
+      10,
+      10,
+      10,
+      10,
+      10
+    ],
+    "HashNeeded": 720000,
+    "UnlockRecipes": [
+      785
+    ],
+    "UnlockFunctions": [],
+    "UnlockValues": [],
+    "Published": true,
+    "Level": 0,
+    "MaxLevel": 0,
+    "LevelCoef1": 0,
+    "LevelCoef2": 0,
+    "IsLabTech": true,
+    "PreTechsMax": false,
+    "AddItems": [],
+    "AddItemCounts": [],
+    "PropertyOverrideItems": [],
+    "PropertyItemCounts": []
+  },
+  {
+    "ID": 1953,
+    "Name": "T微型核弹组",
+    "IconPath": "Icons/Tech/1816",
+    "Desc": "微型核弹组描述",
+    "Conclusion": "微型核弹组结果",
+    "IsHiddenTech": false,
+    "PreItem": [],
+    "Position": [
+      25.0,
+      37.0
+    ],
+    "PreTechs": [
+      1816
+    ],
+    "PreTechsImplicit": [],
+    "Items": [
+      6001,
+      6002,
+      6003,
+      6004
+    ],
+    "ItemPoints": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "HashNeeded": 540000,
+    "UnlockRecipes": [
+      786
+    ],
+    "UnlockFunctions": [],
+    "UnlockValues": [],
+    "Published": true,
+    "Level": 0,
+    "MaxLevel": 0,
+    "LevelCoef1": 0,
+    "LevelCoef2": 0,
+    "IsLabTech": true,
+    "PreTechsMax": false,
+    "AddItems": [],
+    "AddItemCounts": [],
+    "PropertyOverrideItems": [],
+    "PropertyItemCounts": []
+  },
+  {
+    "ID": 1954,
+    "Name": "T反物质炮弹",
+    "IconPath": "Icons/Tech/1816",
+    "Desc": "反物质炮弹描述",
+    "Conclusion": "反物质炮弹结果",
+    "IsHiddenTech": false,
+    "PreItem": [],
+    "Position": [
+      29.0,
+      37.0
+    ],
+    "PreTechs": [
+      1953
+    ],
+    "PreTechsImplicit": [],
+    "Items": [
+      6001,
+      6002,
+      6003,
+      6004,
+      6005
+    ],
+    "ItemPoints": [
+      10,
+      10,
+      10,
+      10,
+      10
+    ],
+    "HashNeeded": 1080000,
+    "UnlockRecipes": [
+      787
+    ],
+    "UnlockFunctions": [],
+    "UnlockValues": [],
+    "Published": true,
+    "Level": 0,
+    "MaxLevel": 0,
+    "LevelCoef1": 0,
+    "LevelCoef2": 0,
+    "IsLabTech": true,
+    "PreTechsMax": false,
+    "AddItems": [],
+    "AddItemCounts": [],
+    "PropertyOverrideItems": [],
+    "PropertyItemCounts": []
+  },
+  {
+    "ID": 1955,
+    "Name": "T钨芯弹箱",
+    "IconPath": "Icons/Tech/1813",
+    "Desc": "钨芯弹箱描述",
+    "Conclusion": "钨芯弹箱结果",
+    "IsHiddenTech": false,
+    "PreItem": [],
+    "Position": [
+      21.0,
+      41.0
+    ],
+    "PreTechs": [
+      1813
+    ],
+    "PreTechsImplicit": [],
+    "Items": [
+      6001,
+      6002,
+      6003
+    ],
+    "ItemPoints": [
+      16,
+      16,
+      16
+    ],
+    "HashNeeded": 180000,
+    "UnlockRecipes": [
+      782
+    ],
+    "UnlockFunctions": [],
+    "UnlockValues": [],
+    "Published": true,
+    "Level": 0,
+    "MaxLevel": 0,
+    "LevelCoef1": 0,
+    "LevelCoef2": 0,
+    "IsLabTech": true,
+    "PreTechsMax": false,
+    "AddItems": [],
+    "AddItemCounts": [],
+    "PropertyOverrideItems": [],
+    "PropertyItemCounts": []
+  },
+  {
+    "ID": 1956,
+    "Name": "T三元弹箱",
+    "IconPath": "Icons/Tech/1813",
+    "Desc": "三元弹箱描述",
+    "Conclusion": "三元弹箱结果",
+    "IsHiddenTech": false,
+    "PreItem": [],
+    "Position": [
+      25.0,
+      41.0
+    ],
+    "PreTechs": [
+      1955
+    ],
+    "PreTechsImplicit": [],
+    "Items": [
+      6001,
+      6002,
+      6003,
+      6004,
+      6005
+    ],
+    "ItemPoints": [
+      10,
+      10,
+      10,
+      10,
+      10
+    ],
+    "HashNeeded": 720000,
+    "UnlockRecipes": [
+      783
+    ],
+    "UnlockFunctions": [],
+    "UnlockValues": [],
+    "Published": true,
+    "Level": 0,
+    "MaxLevel": 0,
+    "LevelCoef1": 0,
+    "LevelCoef2": 0,
+    "IsLabTech": true,
+    "PreTechsMax": false,
+    "AddItems": [],
+    "AddItemCounts": [],
+    "PropertyOverrideItems": [],
+    "PropertyItemCounts": []
+  },
+  {
+    "ID": 1957,
+    "Name": "T湮灭弹箱",
+    "IconPath": "Icons/Tech/1813",
+    "Desc": "湮灭弹箱描述",
+    "Conclusion": "湮灭弹箱结果",
+    "IsHiddenTech": true,
+    "PreItem": [
+      7609,
+      7611,
+      7613,
+      7615,
+      5205
+    ],
+    "Position": [
+      29.0,
+      41.0
+    ],
+    "PreTechs": [
+      1956
+    ],
+    "PreTechsImplicit": [],
+    "Items": [
+      6001,
+      6002,
+      6003,
+      6004,
+      6005
+    ],
+    "ItemPoints": [
+      10,
+      10,
+      10,
+      10,
+      10
+    ],
+    "HashNeeded": 7200000,
+    "UnlockRecipes": [
+      790
+    ],
+    "UnlockFunctions": [],
+    "UnlockValues": [],
+    "Published": true,
+    "Level": 0,
+    "MaxLevel": 0,
+    "LevelCoef1": 0,
+    "LevelCoef2": 0,
+    "IsLabTech": true,
+    "PreTechsMax": false,
+    "AddItems": [],
+    "AddItemCounts": [],
+    "PropertyOverrideItems": [],
+    "PropertyItemCounts": []
+  },
+  {
+    "ID": 1958,
+    "Name": "T洲际导弹组",
+    "IconPath": "Assets/texpack/洲际导弹",
+    "Desc": "洲际导弹组描述",
+    "Conclusion": "洲际导弹组结果",
+    "IsHiddenTech": false,
+    "PreItem": [],
+    "Position": [
+      25.0,
+      61.0
+    ],
+    "PreTechs": [
+      1817
+    ],
+    "PreTechsImplicit": [],
+    "Items": [
+      6001,
+      6002,
+      6003,
+      6004
+    ],
+    "ItemPoints": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "HashNeeded": 720000,
+    "UnlockRecipes": [
+      788
+    ],
+    "UnlockFunctions": [],
+    "UnlockValues": [],
+    "Published": true,
+    "Level": 0,
+    "MaxLevel": 0,
+    "LevelCoef1": 0,
+    "LevelCoef2": 0,
+    "IsLabTech": true,
+    "PreTechsMax": false,
+    "AddItems": [],
+    "AddItemCounts": [],
+    "PropertyOverrideItems": [],
+    "PropertyItemCounts": []
+  },
+  {
+    "ID": 1959,
+    "Name": "T反物质导弹组",
+    "IconPath": "Assets/texpack/反物质飞弹",
+    "Desc": "反物质导弹组描述",
+    "Conclusion": "反物质导弹组结果",
+    "IsHiddenTech": false,
+    "PreItem": [],
+    "Position": [
+      29.0,
+      61.0
+    ],
+    "PreTechs": [
+      1958
+    ],
+    "PreTechsImplicit": [],
+    "Items": [
+      6001,
+      6002,
+      6003,
+      6004,
+      6005
+    ],
+    "ItemPoints": [
+      10,
+      10,
+      10,
+      10,
+      10
+    ],
+    "HashNeeded": 1080000,
+    "UnlockRecipes": [
+      789
+    ],
+    "UnlockFunctions": [],
+    "UnlockValues": [],
+    "Published": true,
+    "Level": 0,
+    "MaxLevel": 0,
+    "LevelCoef1": 0,
+    "LevelCoef2": 0,
+    "IsLabTech": true,
+    "PreTechsMax": false,
+    "AddItems": [],
+    "AddItemCounts": [],
+    "PropertyOverrideItems": [],
+    "PropertyItemCounts": []
+  },
+  {
+    "ID": 1960,
+    "Name": "T黑雾协调中心",
+    "IconPath": "Assets/texpack/黑雾协调科技",
+    "Desc": "黑雾协调中心描述",
+    "Conclusion": "黑雾协调中心结果",
+    "IsHiddenTech": false,
+    "PreItem": [],
+    "Position": [
+      13.0,
+      49.0
+    ],
+    "PreTechs": [
+      1801
+    ],
+    "PreTechsImplicit": [],
+    "Items": [
+      6001,
+      6002
+    ],
+    "ItemPoints": [
+      10,
+      10
+    ],
+    "HashNeeded": 90000,
     "UnlockRecipes": [],
     "UnlockFunctions": [],
     "UnlockValues": [],

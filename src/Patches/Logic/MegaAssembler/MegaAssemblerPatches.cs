@@ -127,7 +127,7 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
                 UpdateInputSlots(ref __instance, power, factory, cargoTraffic, slotdata, entitySignPool);
             }
 
-            if (factory.entityPool[__instance.entityId].protoId == ProtoIDUsedByPatches.I位面熔炉)
+            if (factory.entityPool[__instance.entityId].protoId == ProtoIDUsedByPatches.I负熵熔炉)
             {
                 if (__instance.replicating)
                 {

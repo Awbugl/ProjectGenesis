@@ -271,6 +271,10 @@ namespace ProjectGenesis.Utils
                 if (json.stationMaxShipCount != null) desc.stationMaxShipCount = json.stationMaxShipCount.Value;
                 if (json.stationMaxDroneCount != null) desc.stationMaxDroneCount = json.stationMaxDroneCount.Value;
                 if (json.AmmoBlastRadius1 != null) desc.AmmoBlastRadius1 = json.AmmoBlastRadius1.Value;
+                if (json.turretMuzzleInterval != null) desc.turretMuzzleInterval = json.turretMuzzleInterval.Value;
+                if (json.turretRoundInterval != null) desc.turretRoundInterval = json.turretRoundInterval.Value;
+                if (json.turretMaxAttackRange != null) desc.turretMaxAttackRange = json.turretMaxAttackRange.Value;
+                if (json.turretDamageScale != null) desc.turretDamageScale = json.turretDamageScale.Value;
             }
 
             ref PrefabDesc pumper = ref LDB.models.Select(60).prefabDesc;

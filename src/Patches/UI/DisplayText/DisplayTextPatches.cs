@@ -194,6 +194,9 @@ namespace ProjectGenesis.Patches.UI.DisplayText
                 case ProtoIDUsedByPatches.T虫洞航行:
                     __result = "虫洞航行文字描述".TranslateFromJson();
                     break;
+                case ProtoIDUsedByPatches.T黑雾协调中心:
+                    __result = "黑雾协调中心文字描述".TranslateFromJson();
+                    break;
             }
         }
 

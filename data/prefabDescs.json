@@ -364,5 +364,36 @@
     "ItemID": 1611,
     "ModelID": 434,
     "AmmoBlastRadius1": 15
+  },
+  {
+    "ItemID": 2319,
+    "ModelID": 457,
+    "assemblerSpeed": 40000
+  },
+  {
+    "ItemID": 2318,
+    "ModelID": 456,
+    "assemblerSpeed": 20000
+  },
+  {
+    "ItemID": 7617,
+    "ModelID": 515 ,
+    "turretMaxAttackRange": 66,
+    "turretMuzzleInterval": 0,
+    "turretRoundInterval": 300000,
+    "idleEnergyPerTick": 800,
+    "workEnergyPerTick": 16000
+  },
+  {
+    "ItemID": 7618,
+    "ModelID": 516 ,
+    "turretMaxAttackRange": 60,
+    "turretDamageScale": 4
+  },
+  {
+    "ItemID": 3002,
+    "ModelID": 373 ,
+    "idleEnergyPerTick": 250,
+    "workEnergyPerTick": 12500
   }
 ]

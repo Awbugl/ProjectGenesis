@@ -2891,12 +2891,182 @@
   },
   {
     "Name": "湮灭弹药箱",
-    "ZHCN": "湮灭弹药箱",
+    "ZHCN": "湮灭弹箱",
     "ENUS": "Annihilation ammo box"
   },
   {
     "Name": "I湮灭弹药箱",
     "ZHCN": "托马斯·维德兵工厂生产的超级弹药。一个弹箱包含20发子弹。",
     "ENUS": "Superb ammunition produced by Thomas Vedder Arsenal. One cartridge box contains 20 rounds."
+  },
+  {
+    "Name": "T钛化弹箱",
+    "ZHCN": "钢芯穿甲弹",
+    "ENUS": "Steel piercing shell"
+  },
+  {
+    "Name": "钛化弹箱描述",
+    "ZHCN": "使用钢芯铜被甲替代纯铜弹头，实现更好的穿透效果。",
+    "ENUS": "Use of steel-core copper armor instead of pure copper warheads to achieve better penetration."
+  },
+  {
+    "Name": "T超合金弹箱",
+    "ZHCN": "钛金强化弹壳",
+    "ENUS": "Titanium cases"
+  },
+  {
+    "Name": "T核子爆破单元",
+    "ZHCN": "核能爆破单元",
+    "ENUS": "Nuclear demolition unit"
+  },
+  {
+    "Name": "核子爆破单元描述",
+    "ZHCN": "使用放射性物质填装的进阶爆破单元，通过核裂变反应释放的高温高压以及剧烈辐射造成杀伤。",
+    "ENUS": "An advanced demolition unit filled with radioactive material that kills through the high temperature and pressure released by the nuclear fission reaction and intense radiation."
+  },
+  {
+    "Name": "核子爆破单元结果",
+    "ZHCN": "你解锁了核子爆破单元，这种爆破单元使用放射性装药以追求更高的杀伤效果。",
+    "ENUS": "You have unlocked the Nuclear Demolition Unit, which uses a radioactive charge in pursuit of higher lethality."
+  },
+  {
+    "Name": "T反物质湮灭单元",
+    "ZHCN": "反物质湮灭单元",
+    "ENUS": "Antimatter annihilation unit"
+  },
+  {
+    "Name": "反物质湮灭单元描述",
+    "ZHCN": "自卫火力序列中最先进的战斗单元，其中装填有正反物质两极，激发后会通过湮灭反应释放出巨大的能量。",
+    "ENUS": "The most advanced combat unit in the self-defense fire sequence, which is loaded with both positive and negative matter poles that, when excited, release tremendous energy through an annihilation reaction."
+  },
+  {
+    "Name": "反物质湮灭单元结果",
+    "ZHCN": "你解锁了反物质湮灭单元，这是自卫火力序列中最先进的战斗单元。",
+    "ENUS": "You unlock the Antimatter Annihilation Unit, the most advanced combat unit in the Self-Defense fire sequence."
+  },
+  {
+    "Name": "T微型核弹组",
+    "ZHCN": "微型核弹",
+    "ENUS": "Mini nukes"
+  },
+  {
+    "Name": "微型核弹组描述",
+    "ZHCN": "战斗部采用核子爆破单元的进阶炮弹，在核反应的作用下，其杀伤力要远超普通的化学能炮弹。",
+    "ENUS": "Advanced shells with nuclear demolition units in the combat section are far more lethal than ordinary chemical-energy shells under the effect of nuclear reaction."
+  },
+  {
+    "Name": "微型核弹组结果",
+    "ZHCN": "你解锁了微型核弹，这种大威力炮弹会造成严重的辐射污染，相比于面对黑雾，这是可以接受的代价。",
+    "ENUS": "You unlock the mini-nuke, a high-powered projectile that causes severe radiation contamination, which is an acceptable price to pay compared to facing the Dark Fog."
+  },
+  {
+    "Name": "T反物质炮弹",
+    "ZHCN": "湮灭战斗部",
+    "ENUS": "Annihilation combat unit"
+  },
+  {
+    "Name": "反物质炮弹描述",
+    "ZHCN": "使用湮灭单元填装的超重型炮弹，依靠湮灭反应释放的巨大能量造成杀伤。",
+    "ENUS": "A super-powerful projectile filled with an annihilation unit that relies on the massive energy released by the annihilation reaction to inflict a kill."
+  },
+  {
+    "Name": "反物质炮弹结果",
+    "ZHCN": "你解锁了反物质炮弹，这是一种原始但可靠的质能武器。",
+    "ENUS": "You unlock the Antimatter Cannonball, a primitive but reliable mass energy weapon."
+  },
+  {
+    "Name": "T钨芯弹箱",
+    "ZHCN": "超重型穿甲弹",
+    "ENUS": "Super-heavy armor piercing shell"
+  },
+  {
+    "Name": "钨芯弹箱描述",
+    "ZHCN": "使用钨制作的超重型穿甲弹，能够穿透某些较为坚硬的护甲。",
+    "ENUS": "Superheavy armor-piercing rounds made with tungsten, capable of penetrating some of the tougher armor."
+  },
+  {
+    "Name": "钨芯弹箱结果",
+    "ZHCN": "你解锁了钨芯弹箱，这是一种高强度的穿甲弹，能够有效对黑雾造成打击。",
+    "ENUS": "You have unlocked the Tungsten Core Cartridge, a high-strength armor-piercing round that is effective against the Dark Fog."
+  },
+  {
+    "Name": "T三元弹箱",
+    "ZHCN": "强互作用力弹药",
+    "ENUS": "High interaction ammunition"
+  },
+  {
+    "Name": "三元弹箱描述",
+    "ZHCN": "使用三元精金制作的超重型穿甲弹，这是自卫火力序列中最顶级的穿甲弹。",
+    "ENUS": "Superheavy armor-piercing rounds made with Ternary Adamantium, capable of penetrating some of the tougher armor."
+  },
+  {
+    "Name": "三元弹箱结果",
+    "ZHCN": "你解锁了三元弹箱，这是自卫火力序列中最顶级的穿甲弹。",
+    "ENUS": "You have unlocked the Ternary Adamantium Cartridge, a high-strength armor-piercing round that is effective against the Dark Fog."
+  },
+  {
+    "Name": "T湮灭弹箱",
+    "ZHCN": "小型化湮灭反应",
+    "ENUS": "Miniaturized annihilation reactions"
+  },
+  {
+    "Name": "湮灭弹箱描述",
+    "ZHCN": "发现关键物品……\n发现缺失的数据库条目，申请连接主脑……\n隐藏数据库条目解锁……\n新的蓝图档案已录入……",
+    "ENUS": "Key items found ......\nMissing database entries found, request connection to mastermind ......\nHidden database entries unlocked ......\nNew blueprint files entered ......"
+  },
+  {
+    "Name": "湮灭弹箱结果",
+    "ZHCN": "你解锁了湮灭弹箱，这种弹药在历史上涉及到一场灾难，相关条目因此被封存。",
+    "ENUS": "You have unlocked the Annihilation Chest, a munition that was historically involved in a catastrophe and the related entry was sealed as a result."
+  },
+  {
+    "Name": "T洲际导弹组",
+    "ZHCN": "战术核导弹",
+    "ENUS": "Tactical nuclear missile"
+  },
+  {
+    "Name": "洲际导弹组描述",
+    "ZHCN": "在引力导弹的基础上进一步改装的洲际导弹，其二级推进器能够在脱离大气层后继续提供动力。",
+    "ENUS": "Tactical nuclear missiles are intercontinental missiles further modified from gravitational missiles with secondary thrusters capable of continuing to provide power after exiting the atmosphere."
+  },
+  {
+    "Name": "洲际导弹组结果",
+    "ZHCN": "你解锁了洲际导弹组，这种导弹安装了战术核弹头，能够进行高效杀伤。",
+    "ENUS": "You have unlocked the Intercontinental Missile Group, a missile fitted with a tactical nuclear warhead capable of efficient killing."
+  },
+  {
+    "Name": "T反物质导弹组",
+    "ZHCN": "反物质飞弹",
+    "ENUS": "Antimatter missile"
+  },
+  {
+    "Name": "反物质导弹组描述",
+    "ZHCN": "装有湮灭单元的超级导弹，其推进系统被内置的空间翘曲器取代，使其能够进行短距跃迁。",
+    "ENUS": "Super missiles fitted with annihilation units have their propulsion system replaced by a built-in space warper, allowing them to make short leaps."
+  },
+  {
+    "Name": "反物质导弹组结果",
+    "ZHCN": "你解锁了反物质导弹组，这是自卫火力序列中最顶级的导弹组。",
+    "ENUS": "You unlock the Antimatter Missile Group, the top missile group in the self-defense fire sequence."
+  },
+  {
+    "Name": "T黑雾协调中心",
+    "ZHCN": "行星协调中心：黑雾数据库",
+    "ENUS": "Planetary Coordination Center: Dark Fog Database"
+  },
+  {
+    "Name": "黑雾协调中心描述",
+    "ZHCN": "正在将日志上传至COSMO……\n辅助策略单元运行中……\n授权代码验证通过，隐藏数据库已解锁……\n数据同步至行星协调中心……",
+    "ENUS": "Logs are being uploaded to COSMO ......\nAuxiliary Policy Unit is running ......\nAuthorization Code Verification Passed, Hidden Database Unlocked ......\nData Synchronization to Planetary Coordination Center ......"
+  },
+  {
+    "Name": "黑雾协调中心结果",
+    "ZHCN": "通过对数据库中黑雾资料的分析、处理，可以为行星协调中心建立新的行为模型。利用这个模型能够对黑雾行为进行一定的预测及干扰。",
+    "ENUS": "By analyzing and processing the information of Dark Fog in the database, it is possible to create a new behavioral model for the Planetary Coordination Center. Using this model it is possible to make certain predictions and interferences with the behavior of the black fog."
+  },
+  {
+    "Name": "黑雾协调中心文字描述",
+    "ZHCN": "为行星协调中心解锁新的功能",
+    "ENUS": "Unlocking new features for the Planetary Coordination Center"
   }
 ]
