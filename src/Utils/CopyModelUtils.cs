@@ -53,8 +53,10 @@ namespace ProjectGenesis.Utils
 
             ModelProto testMissileModel2 = CopyModelProto(432, 514, new Color(0.3059F, 0.2196F, 0.4941F));
             LDBTool.PreAddProto(testMissileModel2);
+
             ModelProto testTurretMachineGunModel1 = CopyModelProto(374, 515, new Color(0.0000f, 0.7490f, 1.0000f));
             LDBTool.PreAddProto(testTurretMachineGunModel1);
+
             ModelProto testTurretLaserModel1 = CopyModelProto(373, 516, new Color(0.5765f, 0.4392f, 0.8588f));
             LDBTool.PreAddProto(testTurretLaserModel1);
 
@@ -144,8 +146,10 @@ namespace ProjectGenesis.Utils
             collectEffectMat.SetVector("_Circle", new Vector4(2.5f, 34f, 1f, 0.04f));
 
             newMats.Add(collectEffectMat);
-            ModelProto registerModel = ProtoRegistry.RegisterModel(ProtoIDUsedByPatches.M大气采集器, "Assets/genesis-models/entities/prefabs/atmospheric-collect-station", newMats.ToArray());
-           
+            ModelProto registerModel = ProtoRegistry.RegisterModel(ProtoIDUsedByPatches.M大气采集器,
+                                                                   "Assets/genesis-models/entities/prefabs/atmospheric-collect-station",
+                                                                   newMats.ToArray());
+
             registerModel.HpMax = 300000;
             registerModel.RuinId = 384;
             registerModel.RuinType = ERuinType.Normal;
@@ -160,6 +164,7 @@ namespace ProjectGenesis.Utils
             model.ID = id;
             PrefabDesc desc = oriModel.prefabDesc;
             model.prefabDesc = new PrefabDesc(id, desc.prefab, desc.colliderPrefab);
+
             for (int i = 0; i < model.prefabDesc.lodMaterials.Length; i++)
             {
                 if (model.prefabDesc.lodMaterials[i] == null) continue;
@@ -168,17 +173,15 @@ namespace ProjectGenesis.Utils
                     if (model.prefabDesc.lodMaterials[i][j] == null) continue;
                     model.prefabDesc.lodMaterials[i][j] = new Material(desc.lodMaterials[i][j]);
                 }
-            }
 
-            try
-            {
-                model.prefabDesc.lodMaterials[0][0].color = color;
-                model.prefabDesc.lodMaterials[1][0].color = color;
-                model.prefabDesc.lodMaterials[2][0].color = color;
-            }
-            catch
-            {
-                // ignored
+                try
+                {
+                    model.prefabDesc.lodMaterials[i][0].color = color;
+                }
+                catch
+                {
+                    // ignored
+                }
             }
 
             model.prefabDesc.modelIndex = id;
@@ -192,13 +195,16 @@ namespace ProjectGenesis.Utils
             model.SID = "";
             return model;
         }
-        
+
         internal static void ModelPostFix()
         {
             ModelProto modelProto = LDB.models.Select(ProtoIDUsedByPatches.M大气采集器);
-
             modelProto._ruinPath = "Entities/Prefabs/Ruins/interstellar-logistic-station-ruins";
             modelProto._wreckagePath = "Entities/Prefabs/Wreckages/interstellar-logistic-station-wreckages";
+
+            ref PrefabDesc prefabDesc = ref LDB.models.Select(509).prefabDesc;
+            ref Material[] prefabDescLODMaterial = ref prefabDesc.lodMaterials[0];
+            prefabDescLODMaterial[2].SetColor("_TintColor", new Color(0.3861f, 2.4837f, 0.3137f, 0.7692f));
         }
     }
 }
