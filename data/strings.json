@@ -2876,7 +2876,7 @@
   },
   {
     "Name": "I洲际导弹组",
-    "ZHCN": "在超音速导弹的基础上加装了二级推进器，低效的战斗部被晶石爆破单元取代，脱离大气层后能够继续做出机动反应精准追踪目标。一个导弹组包含24枚导弹。",
+    "ZHCN": "在引力导弹的基础上加装了二级推进器，低效的战斗部被战术核弹头取代，离开大气层后能够继续做出机动反应精准追踪目标。一个导弹组包含24枚导弹。",
     "ENUS": "Simple and effective application of artillery shells using antimatter combatant charges. One shell group contains 12 shells."
   },
   {
@@ -3021,17 +3021,17 @@
   },
   {
     "Name": "T洲际导弹组",
-    "ZHCN": "洲际导弹",
-    "ENUS": "I.C.B.M."
+    "ZHCN": "战术核导弹",
+    "ENUS": "Tactical nuclear missile"
   },
   {
     "Name": "洲际导弹组描述",
-    "ZHCN": "在超音速导弹的基础上进一步改装的洲际导弹，其二级推进器能够在脱离大气层后继续提供动力。",
+    "ZHCN": "在引力导弹的基础上进一步改装的洲际导弹，其二级推进器能够在脱离大气层后继续提供动力。",
     "ENUS": "Tactical nuclear missiles are intercontinental missiles further modified from gravitational missiles with secondary thrusters capable of continuing to provide power after exiting the atmosphere."
   },
   {
     "Name": "洲际导弹组结果",
-    "ZHCN": "你解锁了洲际导弹组，这种导弹安装了晶石爆破单元作为战斗部，能够进行高效杀伤。",
+    "ZHCN": "你解锁了洲际导弹组，这种导弹安装了战术核弹头，能够进行高效杀伤。",
     "ENUS": "You have unlocked the Intercontinental Missile Group, a missile fitted with a tactical nuclear warhead capable of efficient killing."
   },
   {
