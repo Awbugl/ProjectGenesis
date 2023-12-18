@@ -46,7 +46,7 @@
             <HintPath>$(DSPAssemblyPath)\netstandard.dll</HintPath>
         </Reference>
         <Reference Include="Assembly-CSharp">
-            <HintPath>lib\Assembly-CSharp-nstrip.dll</HintPath>
+            <HintPath>lib\Assembly-CSharp-publicized.dll</HintPath>
         </Reference>
         <Reference Include="Newtonsoft.Json">
             <HintPath>lib\Newtonsoft.Json.dll</HintPath>
@@ -184,7 +184,7 @@
     <ItemGroup>
         <Content Include="CHANGELOG.md"/>
         <Content Include="DefaultPath.props"/>
-        <Content Include="lib\Assembly-CSharp-nstrip.dll"/>
+        <Content Include="lib\Assembly-CSharp-publicized.dll" />
         <Content Include="lib\GalacticScale-nstrip.dll"/>
         <Content Include="lib\Newtonsoft.Json.dll"/>
         <Content Include="README.md"/>

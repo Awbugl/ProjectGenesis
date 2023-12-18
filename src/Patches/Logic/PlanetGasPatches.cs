@@ -189,7 +189,7 @@ namespace ProjectGenesis.Patches.Logic
             matcher.SetAndAdvance(OpCodes.Nop, null);
             matcher.SetAndAdvance(OpCodes.Nop, null);
 
-            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldc_I4_S, (sbyte)36));
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldc_I4_S, (sbyte)37));
             matcher.Advance(-2).SetOpcodeAndAdvance(matcher.Opcode == OpCodes.Bgt_Un_S ? OpCodes.Br_S : OpCodes.Br);
 
             matcher.Advance(-3);
@@ -241,7 +241,7 @@ namespace ProjectGenesis.Patches.Logic
                    .InsertAndAdvance(new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(PlanetGasPatches), nameof(SetPreBuildDistance))));
 
             // unlock BuildInEquator 
-            matcher.MatchBack(false, new CodeMatch(OpCodes.Ldc_I4_S, (sbyte)35));
+            matcher.MatchBack(false, new CodeMatch(OpCodes.Ldc_I4_S, (sbyte)36));
 
             object label = matcher.Advance(-2).Operand;
 
