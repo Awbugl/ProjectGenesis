@@ -6668,7 +6668,7 @@
     "Name": "分馏塔",
     "Description": "I分馏塔",
     "IconPath": "Icons/ItemRecipe/fractionator",
-    "GridIndex": 2309,
+    "GridIndex": 0,
     "StackSize": 30,
     "Type": 6,
     "PreTech": 0,
