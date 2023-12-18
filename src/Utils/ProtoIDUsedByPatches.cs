@@ -18,6 +18,8 @@ namespace ProjectGenesis.Utils
         //   PrefabFixUtils
 
         internal const int I大气采集器 = 6267,
+                           I水 = 1000,
+                           I氢 = 1120,
                            I轨道采集器 = 2105,
                            I人造恒星 = 2210,
                            I巨型精密组装厂 = 6260,
@@ -38,6 +40,10 @@ namespace ProjectGenesis.Utils
                            R海水淡化 = 801,
                            M大抽水机 = 508,
                            M大气采集器 = 512,
+                           T宇宙探索1 = 4101,
+                           T宇宙探索2 = 4102,
+                           T宇宙探索3 = 4103,
+                           T宇宙探索4 = 4104,
                            T物品增产 = 1151,
                            T行星协调中心 = 1936,
                            T虫洞航行 = 1152,

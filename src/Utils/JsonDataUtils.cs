@@ -314,6 +314,16 @@ namespace ProjectGenesis.Utils
             LDBTool.SetBuildBar(12, 6, 6265);
         }
 
+        internal static void ModifyUpgradeTech()
+        {
+            for (int i = ProtoIDUsedByPatches.T宇宙探索1; i <= ProtoIDUsedByPatches.T宇宙探索4; i++)
+            {
+                TechProto techProto = LDB.techs.Select(i);
+                techProto.Items = new[] { 6001 };
+                techProto.ItemPoints = new[] { 20 };
+            }
+        }
+
         internal static void SetSkillSystem()
         {
             ModelProto[] dataArray = LDB.models.dataArray;
