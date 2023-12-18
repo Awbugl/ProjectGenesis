@@ -675,6 +675,11 @@
     "ENUS": "Multi Assembler"
   },
   {
+    "Name": "所有制造",
+    "ZHCN": "自适应制造",
+    "ENUS": "Re-composing Assembler"
+  },
+  {
     "Name": "复合冶炼",
     "ZHCN": "复合冶炼",
     "ENUS": "Multi Smelter"

@@ -41,14 +41,6 @@ namespace ProjectGenesis.Patches.UI.DisplayText
                     __result = "矿物处理厂".TranslateFromJson();
                     break;
 
-                case Utils_ERecipeType.精密组装:
-                    __result = "精密制造厂".TranslateFromJson();
-                    break;
-
-                case Utils_ERecipeType.聚变生产:
-                    __result = "紧凑式回旋加速器".TranslateFromJson();
-                    break;
-
                 case Utils_ERecipeType.垃圾回收:
                     __result = "物质分解设施".TranslateFromJson();
                     break;
@@ -105,12 +97,8 @@ namespace ProjectGenesis.Patches.UI.DisplayText
                     __result = "T矿物处理".TranslateFromJson();
                     break;
 
-                case Utils_ERecipeType.精密组装:
-                    __result = "精密制造".TranslateFromJson();
-                    break;
-
-                case Utils_ERecipeType.聚变生产:
-                    __result = "紧凑式回旋加速器".TranslateFromJson();
+                case Utils_ERecipeType.所有制造:
+                    __result = "所有制造".TranslateFromJson();
                     break;
 
                 case Utils_ERecipeType.垃圾回收:
