@@ -374,11 +374,11 @@
     "ItemID": 2318,
     "ModelID": 456,
     "assemblerSpeed": 40000,
-    "assemblerRecipeType": 4
+    "assemblerRecipeType": 12
   },
   {
     "ItemID": 7617,
-    "ModelID": 515 ,
+    "ModelID": 515,
     "turretMaxAttackRange": 66,
     "turretMuzzleInterval": 0,
     "turretRoundInterval": 300000,
@@ -387,13 +387,13 @@
   },
   {
     "ItemID": 7618,
-    "ModelID": 516 ,
+    "ModelID": 516,
     "turretMaxAttackRange": 60,
     "turretDamageScale": 4
   },
   {
     "ItemID": 3002,
-    "ModelID": 373 ,
+    "ModelID": 373,
     "turretDamageScale": 2,
     "idleEnergyPerTick": 500,
     "workEnergyPerTick": 25000

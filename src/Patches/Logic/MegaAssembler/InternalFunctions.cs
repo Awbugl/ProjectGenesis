@@ -90,6 +90,9 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
                 case Utils.ERecipeType.复合制造:
                     return type == Utils.ERecipeType.Assemble || type == Utils.ERecipeType.标准制造;
 
+                case Utils.ERecipeType.所有制造:
+                    return type == Utils.ERecipeType.Assemble || type == Utils.ERecipeType.标准制造 || type == Utils.ERecipeType.高精度加工;
+
                 default:
                     return filter == recipetype;
             }

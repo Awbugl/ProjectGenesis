@@ -7,7 +7,6 @@
     "GridIndex": 1515,
     "StackSize": 100,
     "Type": 1,
-    "PreTech": 1,
     "PreTechOverride": 0,
     "DescFields": [
       0,
@@ -16,7 +15,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -39,13 +38,13 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0
   },
   {
@@ -56,7 +55,6 @@
     "GridIndex": 1215,
     "StackSize": 100,
     "Type": 1,
-    "PreTech": 0,
     "PreTechOverride": 0,
     "DescFields": [
       0,
@@ -64,7 +62,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -87,13 +85,13 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0
   },
   {
@@ -104,7 +102,6 @@
     "GridIndex": 1103,
     "StackSize": 100,
     "Type": 2,
-    "PreTech": 0,
     "PreTechOverride": 0,
     "DescFields": [
       1,
@@ -112,7 +109,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -135,13 +132,13 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
       0.151,
       0.01
     ],
-    "EnemyDropCount": 3,
+    "EnemyDropCount": 3.0,
     "EnemyDropMask": 2147483647
   },
   {
@@ -152,7 +149,6 @@
     "GridIndex": 1202,
     "StackSize": 100,
     "Type": 2,
-    "PreTech": 1414,
     "PreTechOverride": 0,
     "DescFields": [
       1,
@@ -160,7 +156,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -183,14 +179,14 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
-    "EnemyDropLevel": 0,
+    "DropRate": 0.0,
+    "EnemyDropLevel": 1,
     "EnemyDropRange": [
-      0,
-      0
+      0.87,
+      0.01
     ],
-    "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropCount": 2.0,
+    "EnemyDropMask": 2147483647
   },
   {
     "ID": 6206,
@@ -200,7 +196,6 @@
     "GridIndex": 4301,
     "StackSize": 20,
     "Type": 2,
-    "PreTech": 1121,
     "PreTechOverride": 0,
     "DescFields": [
       0,
@@ -208,7 +203,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": true,
     "Productive": true,
     "SubID": 0,
@@ -231,13 +226,13 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0
   },
   {
@@ -248,7 +243,6 @@
     "GridIndex": 1415,
     "StackSize": 100,
     "Type": 1,
-    "PreTech": 0,
     "PreTechOverride": 0,
     "DescFields": [
       0,
@@ -256,7 +250,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -279,14 +273,14 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
-    "EnemyDropLevel": 0,
+    "DropRate": 0.0,
+    "EnemyDropLevel": 3,
     "EnemyDropRange": [
-      0,
-      0
+      0.89,
+      0.01
     ],
-    "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropCount": 1.0,
+    "EnemyDropMask": 2147483647
   },
   {
     "ID": 6208,
@@ -296,7 +290,6 @@
     "GridIndex": 1206,
     "StackSize": 100,
     "Type": 2,
-    "PreTech": 1604,
     "PreTechOverride": 0,
     "DescFields": [
       1,
@@ -304,7 +297,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -327,14 +320,14 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
-    "EnemyDropLevel": 0,
+    "DropRate": 0.0,
+    "EnemyDropLevel": 2,
     "EnemyDropRange": [
-      0,
-      0
+      0.88,
+      0.01
     ],
-    "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropCount": 1.0,
+    "EnemyDropMask": 2147483647
   },
   {
     "ID": 6212,
@@ -344,7 +337,6 @@
     "GridIndex": 4304,
     "StackSize": 20,
     "Type": 2,
-    "PreTech": 1828,
     "PreTechOverride": 0,
     "DescFields": [
       2,
@@ -355,7 +347,7 @@
     ],
     "FuelType": 1,
     "HeatValue": 30000000,
-    "ReactorInc": 1,
+    "ReactorInc": 1.0,
     "IsFluid": true,
     "Productive": true,
     "SubID": 0,
@@ -378,13 +370,13 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0
   },
   {
@@ -395,7 +387,6 @@
     "GridIndex": 3703,
     "StackSize": 100,
     "Type": 4,
-    "PreTech": 1828,
     "PreTechOverride": 0,
     "DescFields": [
       2,
@@ -406,7 +397,7 @@
     ],
     "FuelType": 1,
     "HeatValue": 180000000,
-    "ReactorInc": 2,
+    "ReactorInc": 2.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -429,13 +420,13 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0
   },
   {
@@ -446,7 +437,6 @@
     "GridIndex": 3702,
     "StackSize": 100,
     "Type": 4,
-    "PreTech": 1828,
     "PreTechOverride": 0,
     "DescFields": [
       2,
@@ -480,13 +470,13 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0
   },
   {
@@ -497,14 +487,13 @@
     "GridIndex": 1115,
     "StackSize": 20,
     "Type": 1,
-    "PreTech": 1121,
     "PreTechOverride": 0,
     "DescFields": [
       0
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": true,
     "Productive": true,
     "SubID": 0,
@@ -527,13 +516,13 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0
   },
   {
@@ -544,7 +533,6 @@
     "GridIndex": 2113,
     "StackSize": 50,
     "Type": 6,
-    "PreTech": 1511,
     "PreTechOverride": 0,
     "DescFields": [
       53,
@@ -555,7 +543,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -578,13 +566,13 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0
   },
   {
@@ -595,7 +583,6 @@
     "GridIndex": 1315,
     "StackSize": 100,
     "Type": 1,
-    "PreTech": 0,
     "PreTechOverride": 0,
     "DescFields": [
       0,
@@ -603,7 +590,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -626,14 +613,14 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
-    "EnemyDropLevel": 0,
+    "DropRate": 0.0,
+    "EnemyDropLevel": 4,
     "EnemyDropRange": [
-      0,
-      0
+      0.9,
+      0.01
     ],
-    "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropCount": 1.0,
+    "EnemyDropMask": 2147483647
   },
   {
     "ID": 6225,
@@ -643,7 +630,6 @@
     "GridIndex": 3301,
     "StackSize": 100,
     "Type": 1,
-    "PreTech": 1816,
     "PreTechOverride": 0,
     "DescFields": [
       1,
@@ -651,7 +637,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -674,13 +660,13 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0
   },
   {
@@ -691,7 +677,6 @@
     "GridIndex": 3302,
     "StackSize": 100,
     "Type": 1,
-    "PreTech": 1816,
     "PreTechOverride": 0,
     "DescFields": [
       1,
@@ -699,7 +684,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -722,13 +707,13 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0
   },
   {
@@ -739,7 +724,6 @@
     "GridIndex": 3303,
     "StackSize": 100,
     "Type": 2,
-    "PreTech": 1819,
     "PreTechOverride": 0,
     "DescFields": [
       1,
@@ -747,7 +731,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -770,13 +754,13 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0
   },
   {
@@ -787,7 +771,6 @@
     "GridIndex": 3304,
     "StackSize": 100,
     "Type": 2,
-    "PreTech": 1819,
     "PreTechOverride": 0,
     "DescFields": [
       1,
@@ -795,7 +778,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -818,13 +801,13 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0
   },
   {
@@ -835,7 +818,6 @@
     "GridIndex": 2208,
     "StackSize": 50,
     "Type": 5,
-    "PreTech": 1303,
     "PreTechOverride": 0,
     "DescFields": [
       53,
@@ -845,7 +827,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -868,13 +850,13 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0
   },
   {
@@ -885,7 +867,6 @@
     "GridIndex": 2406,
     "StackSize": 50,
     "Type": 6,
-    "PreTech": 1829,
     "PreTechOverride": 0,
     "DescFields": [
       53,
@@ -897,7 +878,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -920,13 +901,13 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0
   },
   {
@@ -937,7 +918,6 @@
     "GridIndex": 1213,
     "StackSize": 20,
     "Type": 1,
-    "PreTech": 0,
     "PreTechOverride": 0,
     "DescFields": [
       0,
@@ -946,7 +926,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": true,
     "Productive": true,
     "SubID": 0,
@@ -969,14 +949,14 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
-    "EnemyDropLevel": 0,
+    "DropRate": 0.0,
+    "EnemyDropLevel": 4,
     "EnemyDropRange": [
-      0,
-      0
+      0.91,
+      0.01
     ],
-    "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropCount": 1.0,
+    "EnemyDropMask": 2147483647
   },
   {
     "ID": 6235,
@@ -986,7 +966,6 @@
     "GridIndex": 1214,
     "StackSize": 100,
     "Type": 2,
-    "PreTech": 1821,
     "PreTechOverride": 0,
     "DescFields": [
       1,
@@ -994,7 +973,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": true,
     "Productive": true,
     "SubID": 0,
@@ -1017,14 +996,14 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
-    "EnemyDropLevel": 0,
+    "DropRate": 0.0,
+    "EnemyDropLevel": 6,
     "EnemyDropRange": [
-      0,
-      0
+      0.932,
+      0.008
     ],
-    "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropCount": 1.0,
+    "EnemyDropMask": 2147483647
   },
   {
     "ID": 6241,
@@ -1034,7 +1013,6 @@
     "GridIndex": 3705,
     "StackSize": 30,
     "Type": 4,
-    "PreTech": 1820,
     "PreTechOverride": 0,
     "DescFields": [
       2,
@@ -1045,7 +1023,7 @@
     ],
     "FuelType": 2,
     "HeatValue": 1200000000,
-    "ReactorInc": 2,
+    "ReactorInc": 2.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -1068,13 +1046,13 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0
   },
   {
@@ -1085,7 +1063,6 @@
     "GridIndex": 3704,
     "StackSize": 30,
     "Type": 4,
-    "PreTech": 1820,
     "PreTechOverride": 0,
     "DescFields": [
       2,
@@ -1096,7 +1073,7 @@
     ],
     "FuelType": 2,
     "HeatValue": 600000000,
-    "ReactorInc": 2,
+    "ReactorInc": 2.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -1119,13 +1096,13 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0
   },
   {
@@ -1136,7 +1113,6 @@
     "GridIndex": 3706,
     "StackSize": 30,
     "Type": 4,
-    "PreTech": 1820,
     "PreTechOverride": 0,
     "DescFields": [
       2,
@@ -1170,14 +1146,14 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
-    "EnemyDropLevel": 0,
+    "DropRate": 0.0,
+    "EnemyDropLevel": 5,
     "EnemyDropRange": [
-      0,
-      0
+      0.928,
+      0.004
     ],
-    "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropCount": 0.25,
+    "EnemyDropMask": 2147483647
   },
   {
     "ID": 6244,
@@ -1187,7 +1163,6 @@
     "GridIndex": 3708,
     "StackSize": 30,
     "Type": 4,
-    "PreTech": 1822,
     "PreTechOverride": 0,
     "DescFields": [
       2,
@@ -1198,7 +1173,7 @@
     ],
     "FuelType": 16,
     "HeatValue": 3600000000,
-    "ReactorInc": 4,
+    "ReactorInc": 4.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -1221,14 +1196,14 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
-    "EnemyDropLevel": 0,
+    "DropRate": 0.0,
+    "EnemyDropLevel": 7,
     "EnemyDropRange": [
-      0,
-      0
+      0.971,
+      0.007
     ],
-    "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropCount": 1.0,
+    "EnemyDropMask": 2147483647
   },
   {
     "ID": 6245,
@@ -1238,7 +1213,6 @@
     "GridIndex": 3709,
     "StackSize": 30,
     "Type": 4,
-    "PreTech": 1822,
     "PreTechOverride": 0,
     "DescFields": [
       2,
@@ -1249,7 +1223,7 @@
     ],
     "FuelType": 16,
     "HeatValue": 9000000000,
-    "ReactorInc": 5,
+    "ReactorInc": 5.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -1272,13 +1246,13 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0
   },
   {
@@ -1289,7 +1263,6 @@
     "GridIndex": 3408,
     "StackSize": 100,
     "Type": 2,
-    "PreTech": 1829,
     "PreTechOverride": 0,
     "DescFields": [
       1,
@@ -1297,7 +1270,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -1320,13 +1293,13 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0
   },
   {
@@ -1337,7 +1310,6 @@
     "GridIndex": 3401,
     "StackSize": 100,
     "Type": 2,
-    "PreTech": 1829,
     "PreTechOverride": 0,
     "DescFields": [
       1,
@@ -1345,7 +1317,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -1368,13 +1340,13 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0
   },
   {
@@ -1385,7 +1357,6 @@
     "GridIndex": 3402,
     "StackSize": 100,
     "Type": 2,
-    "PreTech": 1829,
     "PreTechOverride": 0,
     "DescFields": [
       1,
@@ -1393,7 +1364,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -1416,13 +1387,13 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0
   },
   {
@@ -1433,7 +1404,6 @@
     "GridIndex": 3404,
     "StackSize": 100,
     "Type": 2,
-    "PreTech": 1829,
     "PreTechOverride": 0,
     "DescFields": [
       1,
@@ -1441,7 +1411,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -1464,13 +1434,13 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0
   },
   {
@@ -1481,7 +1451,6 @@
     "GridIndex": 3405,
     "StackSize": 100,
     "Type": 2,
-    "PreTech": 1829,
     "PreTechOverride": 0,
     "DescFields": [
       1,
@@ -1489,7 +1458,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -1512,13 +1481,13 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0
   },
   {
@@ -1529,7 +1498,6 @@
     "GridIndex": 3407,
     "StackSize": 100,
     "Type": 2,
-    "PreTech": 1829,
     "PreTechOverride": 0,
     "DescFields": [
       1,
@@ -1537,7 +1505,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -1560,13 +1528,13 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0
   },
   {
@@ -1577,7 +1545,6 @@
     "GridIndex": 2501,
     "StackSize": 30,
     "Type": 6,
-    "PreTech": 1823,
     "PreTechOverride": 0,
     "DescFields": [
       53,
@@ -1589,7 +1556,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -1612,13 +1579,13 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0
   },
   {
@@ -1629,7 +1596,6 @@
     "GridIndex": 2502,
     "StackSize": 30,
     "Type": 6,
-    "PreTech": 1824,
     "PreTechOverride": 0,
     "DescFields": [
       53,
@@ -1641,7 +1607,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -1664,13 +1630,13 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0
   },
   {
@@ -1681,7 +1647,6 @@
     "GridIndex": 2503,
     "StackSize": 30,
     "Type": 6,
-    "PreTech": 1825,
     "PreTechOverride": 0,
     "DescFields": [
       53,
@@ -1693,7 +1658,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -1716,13 +1681,13 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0
   },
   {
@@ -1733,7 +1698,6 @@
     "GridIndex": 2504,
     "StackSize": 30,
     "Type": 6,
-    "PreTech": 1826,
     "PreTechOverride": 0,
     "DescFields": [
       53,
@@ -1745,7 +1709,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -1768,13 +1732,13 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0
   },
   {
@@ -1785,7 +1749,6 @@
     "GridIndex": 2112,
     "StackSize": 20,
     "Type": 6,
-    "PreTech": 1144,
     "PreTechOverride": 0,
     "DescFields": [
       53,
@@ -1796,7 +1759,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -1819,13 +1782,13 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0
   },
   {
@@ -1836,7 +1799,6 @@
     "GridIndex": 1604,
     "StackSize": 100,
     "Type": 3,
-    "PreTech": 1153,
     "PreTechOverride": 0,
     "DescFields": [
       1,
@@ -1844,7 +1806,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -1867,14 +1829,14 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
-    "EnemyDropLevel": 0,
+    "DropRate": 0.0,
+    "EnemyDropLevel": 6,
     "EnemyDropRange": [
-      0,
-      0
+      0.956,
+      0.008
     ],
-    "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropCount": 1.0,
+    "EnemyDropMask": 2147483647
   },
   {
     "ID": 6264,
@@ -1884,7 +1846,6 @@
     "GridIndex": 2505,
     "StackSize": 30,
     "Type": 6,
-    "PreTech": 1831,
     "PreTechOverride": 0,
     "DescFields": [
       53,
@@ -1896,7 +1857,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -1919,13 +1880,13 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0
   },
   {
@@ -1936,7 +1897,6 @@
     "GridIndex": 2506,
     "StackSize": 30,
     "Type": 6,
-    "PreTech": 1827,
     "PreTechOverride": 0,
     "DescFields": [
       53,
@@ -1948,7 +1908,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -1971,13 +1931,13 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0
   },
   {
@@ -1988,7 +1948,6 @@
     "GridIndex": 2307,
     "StackSize": 30,
     "Type": 6,
-    "PreTech": 1304,
     "PreTechOverride": 0,
     "DescFields": [
       53,
@@ -2001,7 +1960,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -2024,13 +1983,13 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0
   },
   {
@@ -2041,7 +2000,6 @@
     "GridIndex": 2214,
     "StackSize": 10,
     "Type": 5,
-    "PreTech": 1605,
     "PreTechOverride": 0,
     "DescFields": [
       53,
@@ -2052,7 +2010,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -2075,13 +2033,13 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0
   },
   {
@@ -2092,7 +2050,6 @@
     "GridIndex": 1714,
     "StackSize": 100,
     "Type": 2,
-    "PreTech": 1134,
     "PreTechOverride": 0,
     "DescFields": [
       1,
@@ -2100,7 +2057,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -2123,14 +2080,14 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
-    "EnemyDropLevel": 0,
+    "DropRate": 0.0,
+    "EnemyDropLevel": 8,
     "EnemyDropRange": [
-      0,
-      0
+      0.995,
+      0.005
     ],
-    "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropCount": 0.25,
+    "EnemyDropMask": 2147483647
   },
   {
     "ID": 6273,
@@ -2140,7 +2097,6 @@
     "GridIndex": 3403,
     "StackSize": 100,
     "Type": 2,
-    "PreTech": 1829,
     "PreTechOverride": 0,
     "DescFields": [
       1,
@@ -2148,7 +2104,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -2171,13 +2127,13 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0
   },
   {
@@ -2188,7 +2144,6 @@
     "GridIndex": 3409,
     "StackSize": 100,
     "Type": 2,
-    "PreTech": 1829,
     "PreTechOverride": 0,
     "DescFields": [
       1,
@@ -2196,7 +2151,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -2219,13 +2174,13 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0
   },
   {
@@ -2236,7 +2191,6 @@
     "GridIndex": 1707,
     "StackSize": 200,
     "Type": 11,
-    "PreTech": 1111,
     "PreTechOverride": 0,
     "DescFields": [
       1,
@@ -2244,7 +2198,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -2267,13 +2221,13 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0
   },
   {
@@ -2284,7 +2238,6 @@
     "GridIndex": 1708,
     "StackSize": 200,
     "Type": 11,
-    "PreTech": 1312,
     "PreTechOverride": 0,
     "DescFields": [
       1,
@@ -2292,7 +2245,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -2315,13 +2268,13 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0
   },
   {
@@ -2332,7 +2285,6 @@
     "GridIndex": 1709,
     "StackSize": 200,
     "Type": 11,
-    "PreTech": 1507,
     "PreTechOverride": 0,
     "DescFields": [
       1,
@@ -2340,7 +2292,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -2363,13 +2315,13 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0
   },
   {
@@ -2380,7 +2332,6 @@
     "GridIndex": 3406,
     "StackSize": 100,
     "Type": 2,
-    "PreTech": 1829,
     "PreTechOverride": 0,
     "DescFields": [
       1,
@@ -2388,7 +2339,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -2411,13 +2362,13 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0
   },
   {
@@ -2428,14 +2379,13 @@
     "GridIndex": 1401,
     "StackSize": 100,
     "Type": 3,
-    "PreTech": 1801,
     "PreTechOverride": 0,
     "DescFields": [
       1
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -2458,13 +2408,13 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0
   },
   {
@@ -2475,14 +2425,13 @@
     "GridIndex": 1402,
     "StackSize": 100,
     "Type": 3,
-    "PreTech": 1802,
     "PreTechOverride": 0,
     "DescFields": [
       1
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -2505,13 +2454,13 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0
   },
   {
@@ -2522,14 +2471,13 @@
     "GridIndex": 1403,
     "StackSize": 100,
     "Type": 3,
-    "PreTech": 1803,
     "PreTechOverride": 0,
     "DescFields": [
       1
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -2552,13 +2500,13 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0
   },
   {
@@ -2569,14 +2517,13 @@
     "GridIndex": 0,
     "StackSize": 100,
     "Type": 2,
-    "PreTech": 0,
     "PreTechOverride": 0,
     "DescFields": [
       1
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -2599,13 +2546,13 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0
   },
   {
@@ -2616,14 +2563,13 @@
     "GridIndex": 0,
     "StackSize": 100,
     "Type": 2,
-    "PreTech": 0,
     "PreTechOverride": 0,
     "DescFields": [
       1
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -2646,13 +2592,13 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0
   },
   {
@@ -2663,7 +2609,6 @@
     "GridIndex": 0,
     "StackSize": 1,
     "Type": 2,
-    "PreTech": 1,
     "PreTechOverride": 1,
     "DescFields": [
       2,
@@ -2672,7 +2617,7 @@
     ],
     "FuelType": 1,
     "HeatValue": 1,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -2695,13 +2640,13 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0
   },
   {
@@ -2712,7 +2657,6 @@
     "GridIndex": 0,
     "StackSize": 1,
     "Type": 2,
-    "PreTech": 1,
     "PreTechOverride": 1,
     "DescFields": [
       2,
@@ -2721,7 +2665,7 @@
     ],
     "FuelType": 1,
     "HeatValue": 1,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -2744,13 +2688,13 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0
   },
   {
@@ -2761,7 +2705,6 @@
     "GridIndex": 0,
     "StackSize": 1,
     "Type": 2,
-    "PreTech": 1,
     "PreTechOverride": 1,
     "DescFields": [
       2,
@@ -2770,7 +2713,7 @@
     ],
     "FuelType": 1,
     "HeatValue": 1,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -2793,13 +2736,13 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0
   },
   {
@@ -2810,14 +2753,13 @@
     "GridIndex": 1307,
     "StackSize": 30,
     "Type": 2,
-    "PreTech": 1120,
     "PreTechOverride": 0,
     "DescFields": [
       1
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -2840,13 +2782,13 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0
   },
   {
@@ -2857,7 +2799,6 @@
     "GridIndex": 0,
     "StackSize": 1,
     "Type": 2,
-    "PreTech": 1,
     "PreTechOverride": 1,
     "DescFields": [
       2,
@@ -2866,7 +2807,7 @@
     ],
     "FuelType": 1,
     "HeatValue": 1,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -2889,13 +2830,13 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0
   },
   {
@@ -2906,7 +2847,6 @@
     "GridIndex": 0,
     "StackSize": 1,
     "Type": 2,
-    "PreTech": 1,
     "PreTechOverride": 1,
     "DescFields": [
       2,
@@ -2915,7 +2855,7 @@
     ],
     "FuelType": 1,
     "HeatValue": 1,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -2938,13 +2878,13 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0
   },
   {
@@ -2955,7 +2895,6 @@
     "GridIndex": 0,
     "StackSize": 1,
     "Type": 2,
-    "PreTech": 1,
     "PreTechOverride": 1,
     "DescFields": [
       2,
@@ -2964,7 +2903,7 @@
     ],
     "FuelType": 1,
     "HeatValue": 1,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -2987,13 +2926,13 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0
   },
   {
@@ -3004,7 +2943,6 @@
     "GridIndex": 0,
     "StackSize": 1,
     "Type": 2,
-    "PreTech": 1,
     "PreTechOverride": 1,
     "DescFields": [
       2,
@@ -3013,7 +2951,7 @@
     ],
     "FuelType": 1,
     "HeatValue": 1,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -3036,13 +2974,13 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0
   },
   {
@@ -3053,7 +2991,6 @@
     "GridIndex": 0,
     "StackSize": 1,
     "Type": 2,
-    "PreTech": 1,
     "PreTechOverride": 1,
     "DescFields": [
       2,
@@ -3062,7 +2999,7 @@
     ],
     "FuelType": 1,
     "HeatValue": 1,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -3085,13 +3022,13 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0
   },
   {
@@ -3102,7 +3039,6 @@
     "GridIndex": 0,
     "StackSize": 1,
     "Type": 2,
-    "PreTech": 1,
     "PreTechOverride": 1,
     "DescFields": [
       2,
@@ -3111,7 +3047,7 @@
     ],
     "FuelType": 1,
     "HeatValue": 1,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -3134,13 +3070,13 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0
   },
   {
@@ -3151,7 +3087,6 @@
     "GridIndex": 0,
     "StackSize": 1,
     "Type": 2,
-    "PreTech": 1,
     "PreTechOverride": 1,
     "DescFields": [
       2,
@@ -3160,7 +3095,7 @@
     ],
     "FuelType": 1,
     "HeatValue": 1,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -3183,13 +3118,13 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0
   },
   {
@@ -3200,7 +3135,6 @@
     "GridIndex": 0,
     "StackSize": 1,
     "Type": 2,
-    "PreTech": 1,
     "PreTechOverride": 1,
     "DescFields": [
       2,
@@ -3209,7 +3143,7 @@
     ],
     "FuelType": 1,
     "HeatValue": 1,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -3232,13 +3166,13 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0
   },
   {
@@ -3249,7 +3183,6 @@
     "GridIndex": 0,
     "StackSize": 1,
     "Type": 2,
-    "PreTech": 1,
     "PreTechOverride": 1,
     "DescFields": [
       2,
@@ -3258,7 +3191,7 @@
     ],
     "FuelType": 1,
     "HeatValue": 1,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -3281,13 +3214,13 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0
   },
   {
@@ -3298,7 +3231,6 @@
     "GridIndex": 0,
     "StackSize": 1,
     "Type": 2,
-    "PreTech": 1,
     "PreTechOverride": 1,
     "DescFields": [
       2,
@@ -3307,7 +3239,7 @@
     ],
     "FuelType": 1,
     "HeatValue": 1,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -3330,13 +3262,13 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0
   },
   {
@@ -3347,7 +3279,6 @@
     "GridIndex": 0,
     "StackSize": 1,
     "Type": 2,
-    "PreTech": 1,
     "PreTechOverride": 1,
     "DescFields": [
       2,
@@ -3356,7 +3287,7 @@
     ],
     "FuelType": 1,
     "HeatValue": 1,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -3379,13 +3310,13 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0
   },
   {
@@ -3396,12 +3327,11 @@
     "GridIndex": 3213,
     "StackSize": 1,
     "Type": 1,
-    "PreTech": 0,
     "PreTechOverride": 0,
     "DescFields": [],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -3424,13 +3354,13 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0
   },
   {
@@ -3441,12 +3371,11 @@
     "GridIndex": 3214,
     "StackSize": 1,
     "Type": 1,
-    "PreTech": 0,
     "PreTechOverride": 0,
     "DescFields": [],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -3469,13 +3398,13 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0
   },
   {
@@ -3486,12 +3415,11 @@
     "GridIndex": 3113,
     "StackSize": 1,
     "Type": 1,
-    "PreTech": 0,
     "PreTechOverride": 0,
     "DescFields": [],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -3514,13 +3442,13 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0
   },
   {
@@ -3531,12 +3459,11 @@
     "GridIndex": 3114,
     "StackSize": 1,
     "Type": 1,
-    "PreTech": 0,
     "PreTechOverride": 0,
     "DescFields": [],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -3559,13 +3486,13 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0
   },
   {
@@ -3576,12 +3503,11 @@
     "GridIndex": 3115,
     "StackSize": 1,
     "Type": 1,
-    "PreTech": 0,
     "PreTechOverride": 0,
     "DescFields": [],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -3604,13 +3530,13 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0
   },
   {
@@ -3621,12 +3547,11 @@
     "GridIndex": 3116,
     "StackSize": 1,
     "Type": 1,
-    "PreTech": 0,
     "PreTechOverride": 0,
     "DescFields": [],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -3649,13 +3574,13 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0
   },
   {
@@ -3666,12 +3591,11 @@
     "GridIndex": 3215,
     "StackSize": 1,
     "Type": 1,
-    "PreTech": 0,
     "PreTechOverride": 0,
     "DescFields": [],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -3694,13 +3618,13 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0
   },
   {
@@ -3711,12 +3635,11 @@
     "GridIndex": 3117,
     "StackSize": 1,
     "Type": 1,
-    "PreTech": 0,
     "PreTechOverride": 0,
     "DescFields": [],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -3739,13 +3662,13 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0
   },
   {
@@ -3756,12 +3679,11 @@
     "GridIndex": 3216,
     "StackSize": 1,
     "Type": 1,
-    "PreTech": 0,
     "PreTechOverride": 0,
     "DescFields": [],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -3784,13 +3706,13 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0
   },
   {
@@ -3801,12 +3723,11 @@
     "GridIndex": 3313,
     "StackSize": 1,
     "Type": 1,
-    "PreTech": 0,
     "PreTechOverride": 1960,
     "DescFields": [],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -3829,13 +3750,13 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0
   },
   {
@@ -3846,12 +3767,11 @@
     "GridIndex": 3314,
     "StackSize": 1,
     "Type": 1,
-    "PreTech": 0,
     "PreTechOverride": 1960,
     "DescFields": [],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -3874,13 +3794,13 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0
   },
   {
@@ -3891,12 +3811,11 @@
     "GridIndex": 3315,
     "StackSize": 1,
     "Type": 1,
-    "PreTech": 0,
     "PreTechOverride": 1960,
     "DescFields": [],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -3919,13 +3838,13 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0
   },
   {
@@ -3936,12 +3855,11 @@
     "GridIndex": 3316,
     "StackSize": 1,
     "Type": 1,
-    "PreTech": 0,
     "PreTechOverride": 1960,
     "DescFields": [],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -3964,13 +3882,13 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0
   },
   {
@@ -3981,14 +3899,13 @@
     "GridIndex": 0,
     "StackSize": 20,
     "Type": 2,
-    "PreTech": 1831,
     "PreTechOverride": 0,
     "DescFields": [
       1
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": true,
     "Productive": true,
     "SubID": 0,
@@ -4011,13 +3928,13 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0
   },
   {
@@ -4028,7 +3945,6 @@
     "GridIndex": 4701,
     "StackSize": 20,
     "Type": 2,
-    "PreTech": 1121,
     "PreTechOverride": 0,
     "DescFields": [
       0,
@@ -4039,7 +3955,7 @@
     ],
     "FuelType": 1,
     "HeatValue": 6000000,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": true,
     "Productive": true,
     "SubID": 0,
@@ -4062,13 +3978,13 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0
   },
   {
@@ -4079,7 +3995,6 @@
     "GridIndex": 4202,
     "StackSize": 20,
     "Type": 2,
-    "PreTech": 1815,
     "PreTechOverride": 0,
     "DescFields": [
       2,
@@ -4090,7 +4005,7 @@
     ],
     "FuelType": 1,
     "HeatValue": 3000000,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": true,
     "Productive": true,
     "SubID": 0,
@@ -4113,13 +4028,13 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0
   },
   {
@@ -4130,7 +4045,6 @@
     "GridIndex": 4203,
     "StackSize": 20,
     "Type": 2,
-    "PreTech": 1815,
     "PreTechOverride": 0,
     "DescFields": [
       2,
@@ -4141,7 +4055,7 @@
     ],
     "FuelType": 1,
     "HeatValue": 2000000,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": true,
     "Productive": true,
     "SubID": 0,
@@ -4164,13 +4078,13 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0
   },
   {
@@ -4181,7 +4095,6 @@
     "GridIndex": 4502,
     "StackSize": 20,
     "Type": 2,
-    "PreTech": 1832,
     "PreTechOverride": 0,
     "DescFields": [
       0,
@@ -4189,7 +4102,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": true,
     "Productive": true,
     "SubID": 0,
@@ -4212,13 +4125,13 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0
   },
   {
@@ -4229,14 +4142,13 @@
     "GridIndex": 4504,
     "StackSize": 20,
     "Type": 2,
-    "PreTech": 1121,
     "PreTechOverride": 0,
     "DescFields": [
       1
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": true,
     "Productive": true,
     "SubID": 0,
@@ -4259,13 +4171,13 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0
   },
   {
@@ -4276,7 +4188,6 @@
     "GridIndex": 4702,
     "StackSize": 20,
     "Type": 2,
-    "PreTech": 1121,
     "PreTechOverride": 0,
     "DescFields": [
       0,
@@ -4284,7 +4195,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": true,
     "Productive": true,
     "SubID": 0,
@@ -4307,13 +4218,13 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0
   },
   {
@@ -4324,14 +4235,13 @@
     "GridIndex": 1110,
     "StackSize": 20,
     "Type": 1,
-    "PreTech": 0,
     "PreTechOverride": 0,
     "DescFields": [
       0
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": true,
     "Productive": true,
     "SubID": 0,
@@ -4354,13 +4264,13 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0
   },
   {
@@ -4371,7 +4281,6 @@
     "GridIndex": 1116,
     "StackSize": 20,
     "Type": 1,
-    "PreTech": 1121,
     "PreTechOverride": 0,
     "DescFields": [
       0,
@@ -4379,7 +4288,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": true,
     "Productive": true,
     "SubID": 0,
@@ -4402,13 +4311,13 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0
   },
   {
@@ -4419,14 +4328,13 @@
     "GridIndex": 4503,
     "StackSize": 100,
     "Type": 2,
-    "PreTech": 1121,
     "PreTechOverride": 0,
     "DescFields": [
       1
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -4449,13 +4357,13 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0
   },
   {
@@ -4466,14 +4374,13 @@
     "GridIndex": 4501,
     "StackSize": 100,
     "Type": 2,
-    "PreTech": 1832,
     "PreTechOverride": 0,
     "DescFields": [
       1
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -4496,13 +4403,13 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0
   },
   {
@@ -4513,14 +4420,13 @@
     "GridIndex": 1308,
     "StackSize": 100,
     "Type": 2,
-    "PreTech": 1805,
     "PreTechOverride": 0,
     "DescFields": [
       1
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -4543,13 +4449,13 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0
   },
   {
@@ -4560,14 +4466,13 @@
     "GridIndex": 1309,
     "StackSize": 200,
     "Type": 2,
-    "PreTech": 1805,
     "PreTechOverride": 0,
     "DescFields": [
       1
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -4590,436 +4495,13 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
-    "EnemyDropMask": 0
-  },
-  {
-    "ID": 7705,
-    "Name": "钨块",
-    "Description": "I钨块",
-    "IconPath": "Assets/texpack/钨块",
-    "GridIndex": 1106,
-    "StackSize": 100,
-    "Type": 2,
-    "PreTech": 1413,
-    "PreTechOverride": 0,
-    "DescFields": [
-      1
-    ],
-    "FuelType": 0,
-    "HeatValue": 0,
-    "ReactorInc": 0,
-    "IsFluid": false,
-    "Productive": true,
-    "SubID": 0,
-    "MiningFrom": null,
-    "ProduceFrom": null,
-    "Grade": 0,
-    "Upgrades": [],
-    "IsEntity": false,
-    "CanBuild": false,
-    "BuildInGas": false,
-    "ModelIndex": 0,
-    "ModelCount": 0,
-    "HpMax": 0,
-    "Ability": 0,
-    "Potential": 0,
-    "BuildIndex": 0,
-    "BuildMode": 0,
-    "UnlockKey": 0,
-    "MechaMaterialID": 22,
-    "AmmoType": 0,
-    "BombType": 0,
-    "CraftType": 0,
-    "DropRate": 0,
-    "EnemyDropLevel": 0,
-    "EnemyDropRange": [
-      0,
-      0
-    ],
-    "EnemyDropCount": 0,
-    "EnemyDropMask": 0
-  },
-  {
-    "ID": 7706,
-    "Name": "钨强化玻璃",
-    "Description": "I钨强化玻璃",
-    "IconPath": "Assets/texpack/钨强化玻璃",
-    "GridIndex": 1503,
-    "StackSize": 100,
-    "Type": 2,
-    "PreTech": 1811,
-    "PreTechOverride": 0,
-    "DescFields": [
-      1
-    ],
-    "FuelType": 0,
-    "HeatValue": 0,
-    "ReactorInc": 0,
-    "IsFluid": false,
-    "Productive": true,
-    "SubID": 0,
-    "MiningFrom": null,
-    "ProduceFrom": null,
-    "Grade": 0,
-    "Upgrades": [],
-    "IsEntity": false,
-    "CanBuild": false,
-    "BuildInGas": false,
-    "ModelIndex": 0,
-    "ModelCount": 0,
-    "HpMax": 0,
-    "Ability": 0,
-    "Potential": 0,
-    "BuildIndex": 0,
-    "BuildMode": 0,
-    "UnlockKey": 0,
-    "MechaMaterialID": 0,
-    "AmmoType": 0,
-    "BombType": 0,
-    "CraftType": 0,
-    "DropRate": 0,
-    "EnemyDropLevel": 0,
-    "EnemyDropRange": [
-      0,
-      0
-    ],
-    "EnemyDropCount": 0,
-    "EnemyDropMask": 0
-  },
-  {
-    "ID": 7707,
-    "Name": "钨复合金属",
-    "Description": "I钨复合金属",
-    "IconPath": "Assets/texpack/钨复合金属_修复",
-    "GridIndex": 1204,
-    "StackSize": 100,
-    "Type": 2,
-    "PreTech": 1804,
-    "PreTechOverride": 0,
-    "DescFields": [
-      1
-    ],
-    "FuelType": 0,
-    "HeatValue": 0,
-    "ReactorInc": 0,
-    "IsFluid": false,
-    "Productive": true,
-    "SubID": 0,
-    "MiningFrom": null,
-    "ProduceFrom": null,
-    "Grade": 0,
-    "Upgrades": [],
-    "IsEntity": false,
-    "CanBuild": false,
-    "BuildInGas": false,
-    "ModelIndex": 0,
-    "ModelCount": 0,
-    "HpMax": 0,
-    "Ability": 0,
-    "Potential": 0,
-    "BuildIndex": 0,
-    "BuildMode": 0,
-    "UnlockKey": 0,
-    "MechaMaterialID": 0,
-    "AmmoType": 0,
-    "BombType": 0,
-    "CraftType": 0,
-    "DropRate": 0,
-    "EnemyDropLevel": 0,
-    "EnemyDropRange": [
-      0,
-      0
-    ],
-    "EnemyDropCount": 0,
-    "EnemyDropMask": 0
-  },
-  {
-    "ID": 7708,
-    "Name": "聚苯硫醚",
-    "Description": "I聚苯硫醚",
-    "IconPath": "Assets/texpack/环氧树脂_新",
-    "GridIndex": 4102,
-    "StackSize": 100,
-    "Type": 2,
-    "PreTech": 1830,
-    "PreTechOverride": 0,
-    "DescFields": [
-      1
-    ],
-    "FuelType": 0,
-    "HeatValue": 0,
-    "ReactorInc": 0,
-    "IsFluid": false,
-    "Productive": true,
-    "SubID": 0,
-    "MiningFrom": null,
-    "ProduceFrom": null,
-    "Grade": 0,
-    "Upgrades": [],
-    "IsEntity": false,
-    "CanBuild": false,
-    "BuildInGas": false,
-    "ModelIndex": 0,
-    "ModelCount": 0,
-    "HpMax": 0,
-    "Ability": 0,
-    "Potential": 0,
-    "BuildIndex": 0,
-    "BuildMode": 0,
-    "UnlockKey": 0,
-    "MechaMaterialID": 0,
-    "AmmoType": 0,
-    "BombType": 0,
-    "CraftType": 0,
-    "DropRate": 0,
-    "EnemyDropLevel": 0,
-    "EnemyDropRange": [
-      0,
-      0
-    ],
-    "EnemyDropCount": 0,
-    "EnemyDropMask": 0
-  },
-  {
-    "ID": 7709,
-    "Name": "聚酰亚胺",
-    "Description": "I聚酰亚胺",
-    "IconPath": "Assets/texpack/聚苯并咪唑",
-    "GridIndex": 4103,
-    "StackSize": 100,
-    "Type": 2,
-    "PreTech": 1305,
-    "PreTechOverride": 0,
-    "DescFields": [
-      1
-    ],
-    "FuelType": 0,
-    "HeatValue": 0,
-    "ReactorInc": 0,
-    "IsFluid": false,
-    "Productive": true,
-    "SubID": 0,
-    "MiningFrom": null,
-    "ProduceFrom": null,
-    "Grade": 0,
-    "Upgrades": [],
-    "IsEntity": false,
-    "CanBuild": false,
-    "BuildInGas": false,
-    "ModelIndex": 0,
-    "ModelCount": 0,
-    "HpMax": 0,
-    "Ability": 0,
-    "Potential": 0,
-    "BuildIndex": 0,
-    "BuildMode": 0,
-    "UnlockKey": 0,
-    "MechaMaterialID": 0,
-    "AmmoType": 0,
-    "BombType": 0,
-    "CraftType": 0,
-    "DropRate": 0,
-    "EnemyDropLevel": 0,
-    "EnemyDropRange": [
-      0,
-      0
-    ],
-    "EnemyDropCount": 0,
-    "EnemyDropMask": 0
-  },
-  {
-    "ID": 7803,
-    "Name": "先进生物电路",
-    "Description": "I先进生物电路",
-    "IconPath": "Assets/texpack/光学芯片",
-    "GridIndex": 1612,
-    "StackSize": 100,
-    "Type": 3,
-    "PreTech": 1807,
-    "PreTechOverride": 0,
-    "DescFields": [
-      1
-    ],
-    "FuelType": 0,
-    "HeatValue": 0,
-    "ReactorInc": 0,
-    "IsFluid": false,
-    "Productive": true,
-    "SubID": 0,
-    "MiningFrom": null,
-    "ProduceFrom": null,
-    "Grade": 0,
-    "Upgrades": [],
-    "IsEntity": false,
-    "CanBuild": false,
-    "BuildInGas": false,
-    "ModelIndex": 0,
-    "ModelCount": 0,
-    "HpMax": 0,
-    "Ability": 0,
-    "Potential": 0,
-    "BuildIndex": 0,
-    "BuildMode": 0,
-    "UnlockKey": 0,
-    "MechaMaterialID": 0,
-    "AmmoType": 0,
-    "BombType": 0,
-    "CraftType": 0,
-    "DropRate": 0,
-    "EnemyDropLevel": 0,
-    "EnemyDropRange": [
-      0,
-      0
-    ],
-    "EnemyDropCount": 0,
-    "EnemyDropMask": 0
-  },
-  {
-    "ID": 7804,
-    "Name": "生物神经纤维",
-    "Description": "I生物神经纤维",
-    "IconPath": "Assets/texpack/光学信息传输纤维",
-    "GridIndex": 1611,
-    "StackSize": 100,
-    "Type": 3,
-    "PreTech": 1808,
-    "PreTechOverride": 0,
-    "DescFields": [
-      1
-    ],
-    "FuelType": 0,
-    "HeatValue": 0,
-    "ReactorInc": 0,
-    "IsFluid": false,
-    "Productive": true,
-    "SubID": 0,
-    "MiningFrom": null,
-    "ProduceFrom": null,
-    "Grade": 0,
-    "Upgrades": [],
-    "IsEntity": false,
-    "CanBuild": false,
-    "BuildInGas": false,
-    "ModelIndex": 0,
-    "ModelCount": 0,
-    "HpMax": 0,
-    "Ability": 0,
-    "Potential": 0,
-    "BuildIndex": 0,
-    "BuildMode": 0,
-    "UnlockKey": 0,
-    "MechaMaterialID": 0,
-    "AmmoType": 0,
-    "BombType": 0,
-    "CraftType": 0,
-    "DropRate": 0,
-    "EnemyDropLevel": 0,
-    "EnemyDropRange": [
-      0,
-      0
-    ],
-    "EnemyDropCount": 0,
-    "EnemyDropMask": 0
-  },
-  {
-    "ID": 7805,
-    "Name": "超级纳米电脑",
-    "Description": "I超级纳米电脑",
-    "IconPath": "Assets/texpack/超级纳米电脑",
-    "GridIndex": 1610,
-    "StackSize": 50,
-    "Type": 4,
-    "PreTech": 1809,
-    "PreTechOverride": 0,
-    "DescFields": [
-      1
-    ],
-    "FuelType": 0,
-    "HeatValue": 0,
-    "ReactorInc": 0,
-    "IsFluid": false,
-    "Productive": true,
-    "SubID": 0,
-    "MiningFrom": null,
-    "ProduceFrom": null,
-    "Grade": 0,
-    "Upgrades": [],
-    "IsEntity": false,
-    "CanBuild": false,
-    "BuildInGas": false,
-    "ModelIndex": 0,
-    "ModelCount": 0,
-    "HpMax": 0,
-    "Ability": 0,
-    "Potential": 0,
-    "BuildIndex": 0,
-    "BuildMode": 0,
-    "UnlockKey": 0,
-    "MechaMaterialID": 0,
-    "AmmoType": 0,
-    "BombType": 0,
-    "CraftType": 0,
-    "DropRate": 0,
-    "EnemyDropLevel": 0,
-    "EnemyDropRange": [
-      0,
-      0
-    ],
-    "EnemyDropCount": 0,
-    "EnemyDropMask": 0
-  },
-  {
-    "ID": 7806,
-    "Name": "湿件主机",
-    "Description": "I湿件主机",
-    "IconPath": "Assets/texpack/光学主机",
-    "GridIndex": 1613,
-    "StackSize": 50,
-    "Type": 4,
-    "PreTech": 1810,
-    "PreTechOverride": 0,
-    "DescFields": [
-      1
-    ],
-    "FuelType": 0,
-    "HeatValue": 0,
-    "ReactorInc": 0,
-    "IsFluid": false,
-    "Productive": true,
-    "SubID": 0,
-    "MiningFrom": null,
-    "ProduceFrom": null,
-    "Grade": 0,
-    "Upgrades": [],
-    "IsEntity": false,
-    "CanBuild": false,
-    "BuildInGas": false,
-    "ModelIndex": 0,
-    "ModelCount": 0,
-    "HpMax": 0,
-    "Ability": 0,
-    "Potential": 0,
-    "BuildIndex": 0,
-    "BuildMode": 0,
-    "UnlockKey": 0,
-    "MechaMaterialID": 0,
-    "AmmoType": 0,
-    "BombType": 0,
-    "CraftType": 0,
-    "DropRate": 0,
-    "EnemyDropLevel": 0,
-    "EnemyDropRange": [
-      0,
-      0
-    ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0
   },
   {
@@ -5030,7 +4512,6 @@
     "GridIndex": 5302,
     "StackSize": 100,
     "Type": 4,
-    "PreTech": 0,
     "PreTechOverride": 0,
     "DescFields": [
       48,
@@ -5042,7 +4523,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -5065,13 +4546,13 @@
     "AmmoType": 1,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0
   },
   {
@@ -5082,7 +4563,6 @@
     "GridIndex": 5304,
     "StackSize": 100,
     "Type": 4,
-    "PreTech": 0,
     "PreTechOverride": 0,
     "DescFields": [
       48,
@@ -5094,7 +4574,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -5117,13 +4597,13 @@
     "AmmoType": 1,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0
   },
   {
@@ -5134,7 +4614,6 @@
     "GridIndex": 5305,
     "StackSize": 100,
     "Type": 4,
-    "PreTech": 0,
     "PreTechOverride": 0,
     "DescFields": [
       48,
@@ -5146,7 +4625,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -5169,13 +4648,13 @@
     "AmmoType": 1,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0
   },
   {
@@ -5186,7 +4665,6 @@
     "GridIndex": 5404,
     "StackSize": 100,
     "Type": 3,
-    "PreTech": 0,
     "PreTechOverride": 0,
     "DescFields": [
       2,
@@ -5197,7 +4675,7 @@
     ],
     "FuelType": 2,
     "HeatValue": 720000000,
-    "ReactorInc": 2,
+    "ReactorInc": 2.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -5220,14 +4698,14 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
-    "EnemyDropLevel": 0,
+    "DropRate": 0.0,
+    "EnemyDropLevel": 7,
     "EnemyDropRange": [
-      0,
-      0
+      0.964,
+      0.007
     ],
-    "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropCount": 1.0,
+    "EnemyDropMask": 2147483647
   },
   {
     "ID": 7611,
@@ -5237,7 +4715,6 @@
     "GridIndex": 5405,
     "StackSize": 100,
     "Type": 3,
-    "PreTech": 0,
     "PreTechOverride": 0,
     "DescFields": [
       2,
@@ -5248,7 +4725,7 @@
     ],
     "FuelType": 4,
     "HeatValue": 18000000000,
-    "ReactorInc": 6,
+    "ReactorInc": 6.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -5271,13 +4748,13 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0
   },
   {
@@ -5288,7 +4765,6 @@
     "GridIndex": 5504,
     "StackSize": 100,
     "Type": 4,
-    "PreTech": 0,
     "PreTechOverride": 0,
     "DescFields": [
       48,
@@ -5301,7 +4777,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -5324,13 +4800,13 @@
     "AmmoType": 3,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0
   },
   {
@@ -5341,7 +4817,6 @@
     "GridIndex": 5505,
     "StackSize": 100,
     "Type": 4,
-    "PreTech": 0,
     "PreTechOverride": 0,
     "DescFields": [
       48,
@@ -5354,7 +4829,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -5377,13 +4852,13 @@
     "AmmoType": 3,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0
   },
   {
@@ -5394,7 +4869,6 @@
     "GridIndex": 5604,
     "StackSize": 100,
     "Type": 4,
-    "PreTech": 0,
     "PreTechOverride": 0,
     "DescFields": [
       48,
@@ -5407,7 +4881,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -5430,13 +4904,13 @@
     "AmmoType": 5,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0
   },
   {
@@ -5447,7 +4921,6 @@
     "GridIndex": 5605,
     "StackSize": 100,
     "Type": 4,
-    "PreTech": 0,
     "PreTechOverride": 0,
     "DescFields": [
       48,
@@ -5460,7 +4933,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -5483,13 +4956,13 @@
     "AmmoType": 5,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0
   },
   {
@@ -5500,7 +4973,6 @@
     "GridIndex": 5306,
     "StackSize": 100,
     "Type": 10,
-    "PreTech": 0,
     "PreTechOverride": 0,
     "DescFields": [
       48,
@@ -5512,7 +4984,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -5535,13 +5007,13 @@
     "AmmoType": 1,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0
   },
   {
@@ -5552,7 +5024,6 @@
     "GridIndex": 5202,
     "StackSize": 50,
     "Type": 8,
-    "PreTech": 0,
     "PreTechOverride": 0,
     "DescFields": [
       53,
@@ -5568,7 +5039,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": false,
     "SubID": 0,
@@ -5591,13 +5062,13 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0
   },
   {
@@ -5608,7 +5079,6 @@
     "GridIndex": 5204,
     "StackSize": 50,
     "Type": 8,
-    "PreTech": 0,
     "PreTechOverride": 0,
     "DescFields": [
       53,
@@ -5623,7 +5093,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": false,
     "SubID": 0,
@@ -5646,13 +5116,427 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
+    "EnemyDropMask": 0
+  },
+  {
+    "ID": 7705,
+    "Name": "钨块",
+    "Description": "I钨块",
+    "IconPath": "Assets/texpack/钨块",
+    "GridIndex": 1106,
+    "StackSize": 100,
+    "Type": 2,
+    "PreTechOverride": 0,
+    "DescFields": [
+      1
+    ],
+    "FuelType": 0,
+    "HeatValue": 0,
+    "ReactorInc": 0.0,
+    "IsFluid": false,
+    "Productive": true,
+    "SubID": 0,
+    "MiningFrom": null,
+    "ProduceFrom": null,
+    "Grade": 0,
+    "Upgrades": [],
+    "IsEntity": false,
+    "CanBuild": false,
+    "BuildInGas": false,
+    "ModelIndex": 0,
+    "ModelCount": 0,
+    "HpMax": 0,
+    "Ability": 0,
+    "Potential": 0,
+    "BuildIndex": 0,
+    "BuildMode": 0,
+    "UnlockKey": 0,
+    "MechaMaterialID": 22,
+    "AmmoType": 0,
+    "BombType": 0,
+    "CraftType": 0,
+    "DropRate": 0.0,
+    "EnemyDropLevel": 5,
+    "EnemyDropRange": [
+      0.92,
+      0.008
+    ],
+    "EnemyDropCount": 0.25,
+    "EnemyDropMask": 2147483647
+  },
+  {
+    "ID": 7706,
+    "Name": "钨强化玻璃",
+    "Description": "I钨强化玻璃",
+    "IconPath": "Assets/texpack/钨强化玻璃",
+    "GridIndex": 1503,
+    "StackSize": 100,
+    "Type": 2,
+    "PreTechOverride": 0,
+    "DescFields": [
+      1
+    ],
+    "FuelType": 0,
+    "HeatValue": 0,
+    "ReactorInc": 0.0,
+    "IsFluid": false,
+    "Productive": true,
+    "SubID": 0,
+    "MiningFrom": null,
+    "ProduceFrom": null,
+    "Grade": 0,
+    "Upgrades": [],
+    "IsEntity": false,
+    "CanBuild": false,
+    "BuildInGas": false,
+    "ModelIndex": 0,
+    "ModelCount": 0,
+    "HpMax": 0,
+    "Ability": 0,
+    "Potential": 0,
+    "BuildIndex": 0,
+    "BuildMode": 0,
+    "UnlockKey": 0,
+    "MechaMaterialID": 0,
+    "AmmoType": 0,
+    "BombType": 0,
+    "CraftType": 0,
+    "DropRate": 0.0,
+    "EnemyDropLevel": 0,
+    "EnemyDropRange": [
+      0.0,
+      0.0
+    ],
+    "EnemyDropCount": 0.0,
+    "EnemyDropMask": 0
+  },
+  {
+    "ID": 7707,
+    "Name": "钨复合金属",
+    "Description": "I钨复合金属",
+    "IconPath": "Assets/texpack/钨复合金属_修复",
+    "GridIndex": 1204,
+    "StackSize": 100,
+    "Type": 2,
+    "PreTechOverride": 0,
+    "DescFields": [
+      1
+    ],
+    "FuelType": 0,
+    "HeatValue": 0,
+    "ReactorInc": 0.0,
+    "IsFluid": false,
+    "Productive": true,
+    "SubID": 0,
+    "MiningFrom": null,
+    "ProduceFrom": null,
+    "Grade": 0,
+    "Upgrades": [],
+    "IsEntity": false,
+    "CanBuild": false,
+    "BuildInGas": false,
+    "ModelIndex": 0,
+    "ModelCount": 0,
+    "HpMax": 0,
+    "Ability": 0,
+    "Potential": 0,
+    "BuildIndex": 0,
+    "BuildMode": 0,
+    "UnlockKey": 0,
+    "MechaMaterialID": 0,
+    "AmmoType": 0,
+    "BombType": 0,
+    "CraftType": 0,
+    "DropRate": 0.0,
+    "EnemyDropLevel": 6,
+    "EnemyDropRange": [
+      0.948,
+      0.008
+    ],
+    "EnemyDropCount": 1.0,
+    "EnemyDropMask": 2147483647
+  },
+  {
+    "ID": 7708,
+    "Name": "聚苯硫醚",
+    "Description": "I聚苯硫醚",
+    "IconPath": "Assets/texpack/环氧树脂_新",
+    "GridIndex": 4102,
+    "StackSize": 100,
+    "Type": 2,
+    "PreTechOverride": 0,
+    "DescFields": [
+      1
+    ],
+    "FuelType": 0,
+    "HeatValue": 0,
+    "ReactorInc": 0.0,
+    "IsFluid": false,
+    "Productive": true,
+    "SubID": 0,
+    "MiningFrom": null,
+    "ProduceFrom": null,
+    "Grade": 0,
+    "Upgrades": [],
+    "IsEntity": false,
+    "CanBuild": false,
+    "BuildInGas": false,
+    "ModelIndex": 0,
+    "ModelCount": 0,
+    "HpMax": 0,
+    "Ability": 0,
+    "Potential": 0,
+    "BuildIndex": 0,
+    "BuildMode": 0,
+    "UnlockKey": 0,
+    "MechaMaterialID": 0,
+    "AmmoType": 0,
+    "BombType": 0,
+    "CraftType": 0,
+    "DropRate": 0.0,
+    "EnemyDropLevel": 0,
+    "EnemyDropRange": [
+      0.0,
+      0.0
+    ],
+    "EnemyDropCount": 0.0,
+    "EnemyDropMask": 0
+  },
+  {
+    "ID": 7709,
+    "Name": "聚酰亚胺",
+    "Description": "I聚酰亚胺",
+    "IconPath": "Assets/texpack/聚苯并咪唑",
+    "GridIndex": 4103,
+    "StackSize": 100,
+    "Type": 2,
+    "PreTechOverride": 0,
+    "DescFields": [
+      1
+    ],
+    "FuelType": 0,
+    "HeatValue": 0,
+    "ReactorInc": 0.0,
+    "IsFluid": false,
+    "Productive": true,
+    "SubID": 0,
+    "MiningFrom": null,
+    "ProduceFrom": null,
+    "Grade": 0,
+    "Upgrades": [],
+    "IsEntity": false,
+    "CanBuild": false,
+    "BuildInGas": false,
+    "ModelIndex": 0,
+    "ModelCount": 0,
+    "HpMax": 0,
+    "Ability": 0,
+    "Potential": 0,
+    "BuildIndex": 0,
+    "BuildMode": 0,
+    "UnlockKey": 0,
+    "MechaMaterialID": 0,
+    "AmmoType": 0,
+    "BombType": 0,
+    "CraftType": 0,
+    "DropRate": 0.0,
+    "EnemyDropLevel": 7,
+    "EnemyDropRange": [
+      0.978,
+      0.007
+    ],
+    "EnemyDropCount": 1.0,
+    "EnemyDropMask": 2147483647
+  },
+  {
+    "ID": 7803,
+    "Name": "先进生物电路",
+    "Description": "I先进生物电路",
+    "IconPath": "Assets/texpack/光学芯片",
+    "GridIndex": 1612,
+    "StackSize": 100,
+    "Type": 3,
+    "PreTechOverride": 0,
+    "DescFields": [
+      1
+    ],
+    "FuelType": 0,
+    "HeatValue": 0,
+    "ReactorInc": 0.0,
+    "IsFluid": false,
+    "Productive": true,
+    "SubID": 0,
+    "MiningFrom": null,
+    "ProduceFrom": null,
+    "Grade": 0,
+    "Upgrades": [],
+    "IsEntity": false,
+    "CanBuild": false,
+    "BuildInGas": false,
+    "ModelIndex": 0,
+    "ModelCount": 0,
+    "HpMax": 0,
+    "Ability": 0,
+    "Potential": 0,
+    "BuildIndex": 0,
+    "BuildMode": 0,
+    "UnlockKey": 0,
+    "MechaMaterialID": 0,
+    "AmmoType": 0,
+    "BombType": 0,
+    "CraftType": 0,
+    "DropRate": 0.0,
+    "EnemyDropLevel": 8,
+    "EnemyDropRange": [
+      0.985,
+      0.005
+    ],
+    "EnemyDropCount": 0.3,
+    "EnemyDropMask": 2147483647
+  },
+  {
+    "ID": 7804,
+    "Name": "生物神经纤维",
+    "Description": "I生物神经纤维",
+    "IconPath": "Assets/texpack/光学信息传输纤维",
+    "GridIndex": 1611,
+    "StackSize": 100,
+    "Type": 3,
+    "PreTechOverride": 0,
+    "DescFields": [
+      1
+    ],
+    "FuelType": 0,
+    "HeatValue": 0,
+    "ReactorInc": 0.0,
+    "IsFluid": false,
+    "Productive": true,
+    "SubID": 0,
+    "MiningFrom": null,
+    "ProduceFrom": null,
+    "Grade": 0,
+    "Upgrades": [],
+    "IsEntity": false,
+    "CanBuild": false,
+    "BuildInGas": false,
+    "ModelIndex": 0,
+    "ModelCount": 0,
+    "HpMax": 0,
+    "Ability": 0,
+    "Potential": 0,
+    "BuildIndex": 0,
+    "BuildMode": 0,
+    "UnlockKey": 0,
+    "MechaMaterialID": 0,
+    "AmmoType": 0,
+    "BombType": 0,
+    "CraftType": 0,
+    "DropRate": 0.0,
+    "EnemyDropLevel": 6,
+    "EnemyDropRange": [
+      0.94,
+      0.008
+    ],
+    "EnemyDropCount": 1.0,
+    "EnemyDropMask": 2147483647
+  },
+  {
+    "ID": 7805,
+    "Name": "超级纳米电脑",
+    "Description": "I超级纳米电脑",
+    "IconPath": "Assets/texpack/超级纳米电脑",
+    "GridIndex": 1610,
+    "StackSize": 50,
+    "Type": 4,
+    "PreTechOverride": 0,
+    "DescFields": [
+      1
+    ],
+    "FuelType": 0,
+    "HeatValue": 0,
+    "ReactorInc": 0.0,
+    "IsFluid": false,
+    "Productive": true,
+    "SubID": 0,
+    "MiningFrom": null,
+    "ProduceFrom": null,
+    "Grade": 0,
+    "Upgrades": [],
+    "IsEntity": false,
+    "CanBuild": false,
+    "BuildInGas": false,
+    "ModelIndex": 0,
+    "ModelCount": 0,
+    "HpMax": 0,
+    "Ability": 0,
+    "Potential": 0,
+    "BuildIndex": 0,
+    "BuildMode": 0,
+    "UnlockKey": 0,
+    "MechaMaterialID": 0,
+    "AmmoType": 0,
+    "BombType": 0,
+    "CraftType": 0,
+    "DropRate": 0.0,
+    "EnemyDropLevel": 8,
+    "EnemyDropRange": [
+      0.99,
+      0.005
+    ],
+    "EnemyDropCount": 0.2,
+    "EnemyDropMask": 2147483647
+  },
+  {
+    "ID": 7806,
+    "Name": "湿件主机",
+    "Description": "I湿件主机",
+    "IconPath": "Assets/texpack/光学主机",
+    "GridIndex": 1613,
+    "StackSize": 50,
+    "Type": 4,
+    "PreTechOverride": 0,
+    "DescFields": [
+      1
+    ],
+    "FuelType": 0,
+    "HeatValue": 0,
+    "ReactorInc": 0.0,
+    "IsFluid": false,
+    "Productive": true,
+    "SubID": 0,
+    "MiningFrom": null,
+    "ProduceFrom": null,
+    "Grade": 0,
+    "Upgrades": [],
+    "IsEntity": false,
+    "CanBuild": false,
+    "BuildInGas": false,
+    "ModelIndex": 0,
+    "ModelCount": 0,
+    "HpMax": 0,
+    "Ability": 0,
+    "Potential": 0,
+    "BuildIndex": 0,
+    "BuildMode": 0,
+    "UnlockKey": 0,
+    "MechaMaterialID": 0,
+    "AmmoType": 0,
+    "BombType": 0,
+    "CraftType": 0,
+    "DropRate": 0.0,
+    "EnemyDropLevel": 0,
+    "EnemyDropRange": [
+      0.0,
+      0.0
+    ],
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0
   }
 ]

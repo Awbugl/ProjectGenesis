@@ -675,6 +675,11 @@
     "ENUS": "Multi Assembler"
   },
   {
+    "Name": "所有制造",
+    "ZHCN": "自适应制造",
+    "ENUS": "Re-composing Assembler"
+  },
+  {
     "Name": "复合冶炼",
     "ZHCN": "复合冶炼",
     "ENUS": "Multi Smelter"
@@ -3117,16 +3122,16 @@
   {
     "Name": "熔炉 Mk.III",
     "ZHCN": "赫菲斯托斯 · 负熵熔炉",
-    "ENUS": "Hephaestus·negentropic furnace"
+    "ENUS": "Hephaestus · Negentropy Smelter"
   },
   {
     "Name": "矩阵研究站 Mk.II",
     "ZHCN": "弥米尔 · 自演化研究站",
-    "ENUS": "Mimir·Autoevolutionary research station"
+    "ENUS": "Mimir · Self-evolution Lab"
   },
   {
     "Name": "制造台 Mk.IV",
     "ZHCN": "尼德威阿尔 · 物质重组工厂",
-    "ENUS": "Nidavellir·物质重组工厂"
+    "ENUS": "Nidavellir · Re-composing Assembler"
   }
 ]
