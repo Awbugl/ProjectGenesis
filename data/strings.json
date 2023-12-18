@@ -1781,8 +1781,8 @@
   },
   {
     "Name": "R放射性矿物处理",
-    "ZHCN": "利用氢氧化钠处理放射性矿物，将含有的放射性物质沉降分离。",
-    "ENUS": "Treatment of radioactive minerals with sodium hydroxide to precipitate and separate the contained radioactive ore."
+    "ZHCN": "利用氢氧化钠处理放射性矿物，将含有的放射性物质沉降分离。\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作。</color>",
+    "ENUS": "Treatment of radioactive minerals with sodium hydroxide to precipitate and separate the contained radioactive ore.\n<color=\"#FD965ECC\">Will not stop working until all products are accumulated.</color"
   },
   {
     "Name": "铁矿精炼",
