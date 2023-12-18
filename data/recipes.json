@@ -3587,11 +3587,9 @@
     "Time": 360,
     "Input": [
       1128,
-      7017,
-      7002
+      6212
     ],
     "InCounts": [
-      2,
       2,
       2
     ],
@@ -4118,7 +4116,7 @@
     "Name": "矩阵研究站 Mk.II",
     "Description": "",
     "IconPath": "",
-    "Type": 4,
+    "Type": 10,
     "GridIndex": 2311,
     "Time": 240,
     "Input": [
@@ -4148,7 +4146,7 @@
     "Name": "制造台 Mk.IV",
     "Description": "",
     "IconPath": "",
-    "Type": 4,
+    "Type": 10,
     "GridIndex": 2404,
     "Time": 240,
     "Input": [
@@ -4178,7 +4176,7 @@
     "Name": "熔炉 Mk.III",
     "Description": "",
     "IconPath": "",
-    "Type": 4,
+    "Type": 10,
     "GridIndex": 2408,
     "Time": 1800,
     "Input": [
@@ -5913,13 +5911,13 @@
       1104,
       6203,
       1105,
-      6243
+      6241
     ],
     "InCounts": [
       8,
       4,
       2,
-      1
+      2
     ],
     "Output": [
       6221
@@ -6311,12 +6309,12 @@
     "Time": 720,
     "Input": [
       1130,
-      6227,
+      6242,
       1124
     ],
     "InCounts": [
       4,
-      16,
+      4,
       2
     ],
     "Output": [
@@ -6506,7 +6504,7 @@
     "GridIndex": 5202,
     "Time": 480,
     "Input": [
-      3002,
+      3001,
       1107,
       1204,
       1303
@@ -6536,7 +6534,7 @@
     "GridIndex": 5204,
     "Time": 480,
     "Input": [
-      3001,
+      3002,
       1107,
       1206,
       1303

@@ -53,9 +53,9 @@ namespace ProjectGenesis.Utils
 
             ModelProto testMissileModel2 = CopyModelProto(432, 514, new Color(0.3059F, 0.2196F, 0.4941F));
             LDBTool.PreAddProto(testMissileModel2);
-            ModelProto testTurretMachineGunModel1 = CopyModelProto(374, 515, new Color(0.3059F, 0.2196F, 0.4941F));
+            ModelProto testTurretMachineGunModel1 = CopyModelProto(374, 515, new Color(0.0000f, 0.7490f, 1.0000f));
             LDBTool.PreAddProto(testTurretMachineGunModel1);
-            ModelProto testTurretLaserModel1 = CopyModelProto(373, 516, new Color(0.3059F, 0.2196F, 0.4941F));
+            ModelProto testTurretLaserModel1 = CopyModelProto(373, 516, new Color(0.5765f, 0.4392f, 0.8588f));
             LDBTool.PreAddProto(testTurretLaserModel1);
 
             AddAtmosphericCollectStation();
