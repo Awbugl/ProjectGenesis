@@ -4255,14 +4255,14 @@
     "IsHiddenTech": false,
     "PreItem": [],
     "Position": [
-      29.0,
+      21.0,
       61.0
     ],
     "PreTechs": [
-      1959
+      1815
     ],
     "PreTechsImplicit": [
-      1815
+      1143
     ],
     "Items": [
       6001,

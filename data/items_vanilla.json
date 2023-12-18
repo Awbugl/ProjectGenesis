@@ -1532,7 +1532,7 @@
     "ID": 1116,
     "Name": "硫酸",
     "Description": "I硫酸",
-    "IconPath": "Assets/texpack/硫酸",
+    "IconPath": "Icons/ItemRecipe/sulphuric-acid",
     "GridIndex": 4704,
     "StackSize": 20,
     "Type": 2,
