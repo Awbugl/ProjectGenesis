@@ -98,7 +98,6 @@ namespace ProjectGenesis.Utils
                 proto.MechaMaterialID = itemjson.MechaMaterialID;
                 proto.PreTechOverride = itemjson.PreTechOverride;
                 proto.Productive = itemjson.Productive;
-                proto.MechaMaterialID = itemjson.MechaMaterialID;
                 proto.AmmoType = (EAmmoType)itemjson.AmmoType;
                 proto.BombType = itemjson.BombType;
                 proto.CraftType = itemjson.CraftType;
@@ -152,7 +151,6 @@ namespace ProjectGenesis.Utils
                 proto.MechaMaterialID = itemjson.MechaMaterialID;
                 proto.PreTechOverride = itemjson.PreTechOverride;
                 proto.Productive = itemjson.Productive;
-                proto.MechaMaterialID = itemjson.MechaMaterialID;
                 proto.AmmoType = (EAmmoType)itemjson.AmmoType;
                 proto.BombType = itemjson.BombType;
                 proto.CraftType = itemjson.CraftType;
