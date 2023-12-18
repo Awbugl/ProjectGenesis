@@ -14450,5 +14450,46 @@
     "AddItemCounts": [],
     "PropertyOverrideItems": [],
     "PropertyItemCounts": []
+  },
+  {
+    "ID": 1951,
+    "Name": "T核子爆破单元",
+    "IconPath": "Assets/texpack/核子单元",
+    "Desc": "核子爆破单元描述",
+    "Conclusion": "核子爆破单元结果",
+    "IsHiddenTech": false,
+    "PreItem": [],
+    "Position": [
+      21.0,
+      49.0
+    ],
+    "PreTechs": [
+      1804
+    ],
+    "PreTechsImplicit": [],
+    "Items": [
+      6001,
+      6002,
+      6003,
+      6004
+    ],
+    "ItemPoints": [
+      20
+    ],
+    "HashNeeded": 3600000,
+    "UnlockRecipes": [],
+    "UnlockFunctions": [],
+    "UnlockValues": [],
+    "Published": true,
+    "Level": 0,
+    "MaxLevel": 0,
+    "LevelCoef1": 0,
+    "LevelCoef2": 0,
+    "IsLabTech": true,
+    "PreTechsMax": false,
+    "AddItems": [],
+    "AddItemCounts": [],
+    "PropertyOverrideItems": [],
+    "PropertyItemCounts": []
   }
 ]
