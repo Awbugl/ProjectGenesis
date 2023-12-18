@@ -921,11 +921,11 @@
     "DropRate": 0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0.151,
-      0.01
+      0,
+      0
     ],
-    "EnemyDropCount": 3,
-    "EnemyDropMask": 2147483647
+    "EnemyDropCount": 0,
+    "EnemyDropMask": 0
   },
   {
     "ID": 1103,
@@ -6668,7 +6668,7 @@
     "Name": "分馏塔",
     "Description": "I分馏塔",
     "IconPath": "Icons/ItemRecipe/fractionator",
-    "GridIndex": 2309,
+    "GridIndex": 0,
     "StackSize": 30,
     "Type": 6,
     "PreTech": 0,

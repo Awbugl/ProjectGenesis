@@ -44,6 +44,8 @@ namespace ProjectGenesis.Patches.UI
         [HarmonyPostfix]
         public static void OnTypeClicked(int type)
         {
+            UILootFilter.showAll = type == 2;
+
             foreach (UITabButton tab in _tabs) tab.TabSelected(type);
         }
 
