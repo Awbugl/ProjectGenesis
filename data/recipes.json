@@ -3410,7 +3410,7 @@
     "Name": "磁化电浆炮",
     "Description": "",
     "IconPath": "",
-    "Type": 4,
+    "Type": 10,
     "GridIndex": 5204,
     "Time": 600,
     "Input": [
@@ -3434,7 +3434,7 @@
       1
     ],
     "Explicit": false,
-    "Handcraft": true,
+    "Handcraft": false,
     "NonProductive": false
   },
   {
@@ -3528,7 +3528,7 @@
     "Name": "护盾发生器",
     "Description": "",
     "IconPath": "",
-    "Type": 4,
+    "Type": 10,
     "GridIndex": 5208,
     "Time": 600,
     "Input": [
@@ -3550,7 +3550,7 @@
       1
     ],
     "Explicit": false,
-    "Handcraft": true,
+    "Handcraft": false,
     "NonProductive": false
   },
   {
@@ -3610,7 +3610,7 @@
     "Name": "晶石爆破单元",
     "Description": "",
     "IconPath": "",
-    "Type": 2,
+    "Type": 4,
     "GridIndex": 5403,
     "Time": 1440,
     "Input": [
@@ -3692,7 +3692,7 @@
     "GridIndex": 5303,
     "Time": 120,
     "Input": [
-      1602,
+      7607,
       1107
     ],
     "InCounts": [
@@ -3760,7 +3760,7 @@
       1
     ],
     "Explicit": false,
-    "Handcraft": true,
+    "Handcraft": false,
     "NonProductive": false
   },
   {
@@ -3768,7 +3768,7 @@
     "Name": "晶石炮弹组",
     "Description": "",
     "IconPath": "",
-    "Type": 4,
+    "Type": 9,
     "GridIndex": 5503,
     "Time": 240,
     "Input": [
@@ -3788,7 +3788,7 @@
       1
     ],
     "Explicit": false,
-    "Handcraft": true,
+    "Handcraft": false,
     "NonProductive": false
   },
   {
@@ -3796,7 +3796,7 @@
     "Name": "等离子胶囊",
     "Description": "",
     "IconPath": "",
-    "Type": 4,
+    "Type": 9,
     "GridIndex": 5701,
     "Time": 120,
     "Input": [
@@ -3816,7 +3816,7 @@
       1
     ],
     "Explicit": false,
-    "Handcraft": true,
+    "Handcraft": false,
     "NonProductive": false
   },
   {
@@ -3824,7 +3824,7 @@
     "Name": "反物质胶囊",
     "Description": "",
     "IconPath": "",
-    "Type": 4,
+    "Type": 10,
     "GridIndex": 5702,
     "Time": 120,
     "Input": [
@@ -3902,7 +3902,7 @@
       2
     ],
     "Explicit": false,
-    "Handcraft": true,
+    "Handcraft": false,
     "NonProductive": false
   },
   {
@@ -3910,7 +3910,7 @@
     "Name": "引力导弹组",
     "Description": "",
     "IconPath": "",
-    "Type": 4,
+    "Type": 9,
     "GridIndex": 5603,
     "Time": 240,
     "Input": [
@@ -3930,7 +3930,7 @@
       2
     ],
     "Explicit": false,
-    "Handcraft": true,
+    "Handcraft": false,
     "NonProductive": false
   },
   {
@@ -3968,7 +3968,7 @@
     "Name": "地面战斗机-A型",
     "Description": "",
     "IconPath": "",
-    "Type": 4,
+    "Type": 9,
     "GridIndex": 5103,
     "Time": 240,
     "Input": [
@@ -3990,7 +3990,7 @@
       1
     ],
     "Explicit": false,
-    "Handcraft": true,
+    "Handcraft": false,
     "NonProductive": false
   },
   {
@@ -3998,7 +3998,7 @@
     "Name": "地面战斗机-F型",
     "Description": "",
     "IconPath": "",
-    "Type": 4,
+    "Type": 9,
     "GridIndex": 5104,
     "Time": 240,
     "Input": [
@@ -4020,7 +4020,7 @@
       1
     ],
     "Explicit": false,
-    "Handcraft": true,
+    "Handcraft": false,
     "NonProductive": false
   },
   {
@@ -4028,7 +4028,7 @@
     "Name": "太空战斗机-A型",
     "Description": "",
     "IconPath": "",
-    "Type": 4,
+    "Type": 10,
     "GridIndex": 5105,
     "Time": 360,
     "Input": [
@@ -4050,7 +4050,7 @@
       1
     ],
     "Explicit": false,
-    "Handcraft": true,
+    "Handcraft": false,
     "NonProductive": false
   },
   {
@@ -4058,7 +4058,7 @@
     "Name": "太空战斗机-F型",
     "Description": "",
     "IconPath": "",
-    "Type": 4,
+    "Type": 10,
     "GridIndex": 5106,
     "Time": 720,
     "Input": [
@@ -4068,8 +4068,8 @@
       1127
     ],
     "InCounts": [
+      8,
       4,
-      2,
       2,
       1
     ],
@@ -4080,7 +4080,7 @@
       1
     ],
     "Explicit": false,
-    "Handcraft": true,
+    "Handcraft": false,
     "NonProductive": false
   },
   {
@@ -6221,6 +6221,280 @@
     ],
     "Explicit": true,
     "Handcraft": true,
+    "NonProductive": false
+  },
+  {
+    "ID": 781,
+    "Name": "钢芯弹箱",
+    "Description": "R钢芯弹箱",
+    "IconPath": "",
+    "Type": 4,
+    "GridIndex": 5302,
+    "Time": 120,
+    "Input": [
+      1601,
+      1103
+    ],
+    "InCounts": [
+      2,
+      2
+    ],
+    "Output": [
+      7607
+    ],
+    "OutCounts": [
+      2
+    ],
+    "Explicit": false,
+    "Handcraft": true,
+    "NonProductive": false
+  },
+  {
+    "ID": 782,
+    "Name": "钨芯弹箱",
+    "Description": "R钨芯弹箱",
+    "IconPath": "",
+    "Type": 4,
+    "GridIndex": 5304,
+    "Time": 120,
+    "Input": [
+      1603,
+      7707
+    ],
+    "InCounts": [
+      2,
+      2
+    ],
+    "Output": [
+      7608
+    ],
+    "OutCounts": [
+      2
+    ],
+    "Explicit": false,
+    "Handcraft": true,
+    "NonProductive": false
+  },
+  {
+    "ID": 783,
+    "Name": "三元弹箱",
+    "Description": "R三元弹箱",
+    "IconPath": "",
+    "Type": 4,
+    "GridIndex": 5305,
+    "Time": 120,
+    "Input": [
+      7608,
+      6271
+    ],
+    "InCounts": [
+      2,
+      2
+    ],
+    "Output": [
+      7609
+    ],
+    "OutCounts": [
+      2
+    ],
+    "Explicit": false,
+    "Handcraft": true,
+    "NonProductive": false
+  },
+  {
+    "ID": 784,
+    "Name": "核子爆破单元",
+    "Description": "R核子爆破单元",
+    "IconPath": "",
+    "Type": 9,
+    "GridIndex": 5404,
+    "Time": 720,
+    "Input": [
+      1130,
+      6227,
+      1124
+    ],
+    "InCounts": [
+      4,
+      16,
+      2
+    ],
+    "Output": [
+      7610
+    ],
+    "OutCounts": [
+      4
+    ],
+    "Explicit": false,
+    "Handcraft": false,
+    "NonProductive": false
+  },
+  {
+    "ID": 785,
+    "Name": "反物质湮灭单元",
+    "Description": "R反物质湮灭单元",
+    "IconPath": "",
+    "Type": 10,
+    "GridIndex": 5405,
+    "Time": 360,
+    "Input": [
+      7610,
+      1122,
+      1403
+    ],
+    "InCounts": [
+      2,
+      6,
+      2
+    ],
+    "Output": [
+      7611
+    ],
+    "OutCounts": [
+      2
+    ],
+    "Explicit": false,
+    "Handcraft": false,
+    "NonProductive": false
+  },
+  {
+    "ID": 786,
+    "Name": "微型核弹组",
+    "Description": "R微型核弹组",
+    "IconPath": "",
+    "Type": 9,
+    "GridIndex": 5504,
+    "Time": 360,
+    "Input": [
+      1606,
+      7705,
+      7610
+    ],
+    "InCounts": [
+      1,
+      2,
+      2
+    ],
+    "Output": [
+      7612
+    ],
+    "OutCounts": [
+      1
+    ],
+    "Explicit": false,
+    "Handcraft": false,
+    "NonProductive": false
+  },
+  {
+    "ID": 787,
+    "Name": "反物质炮弹",
+    "Description": "R反物质炮弹",
+    "IconPath": "",
+    "Type": 10,
+    "GridIndex": 5505,
+    "Time": 720,
+    "Input": [
+      7612,
+      6271,
+      7611
+    ],
+    "InCounts": [
+      1,
+      1,
+      2
+    ],
+    "Output": [
+      7613
+    ],
+    "OutCounts": [
+      1
+    ],
+    "Explicit": false,
+    "Handcraft": false,
+    "NonProductive": false
+  },
+  {
+    "ID": 788,
+    "Name": "洲际导弹组",
+    "Description": "R洲际导弹组",
+    "IconPath": "",
+    "Type": 9,
+    "GridIndex": 5604,
+    "Time": 360,
+    "Input": [
+      1611,
+      7610,
+      1406
+    ],
+    "InCounts": [
+      2,
+      4,
+      2
+    ],
+    "Output": [
+      7614
+    ],
+    "OutCounts": [
+      2
+    ],
+    "Explicit": false,
+    "Handcraft": false,
+    "NonProductive": false
+  },
+  {
+    "ID": 789,
+    "Name": "反物质导弹组",
+    "Description": "R反物质导弹组",
+    "IconPath": "",
+    "Type": 10,
+    "GridIndex": 5605,
+    "Time": 360,
+    "Input": [
+      7614,
+      7611,
+      1210
+    ],
+    "InCounts": [
+      2,
+      4,
+      2
+    ],
+    "Output": [
+      7615
+    ],
+    "OutCounts": [
+      2
+    ],
+    "Explicit": false,
+    "Handcraft": false,
+    "NonProductive": false
+  },
+  {
+    "ID": 790,
+    "Name": "湮灭弹药箱",
+    "Description": "R湮灭弹药箱",
+    "IconPath": "",
+    "Type": 10,
+    "GridIndex": 5306,
+    "Time": 360,
+    "Input": [
+      7609,
+      7611,
+      5205
+    ],
+    "InCounts": [
+      1,
+      1,
+      1
+    ],
+    "Output": [
+      7616
+    ],
+    "OutCounts": [
+      1
+    ],
+    "Explicit": false,
+    "Handcraft": false,
     "NonProductive": false
   }
 ]
