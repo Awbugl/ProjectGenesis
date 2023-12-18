@@ -117,7 +117,7 @@ namespace ProjectGenesis.Utils
             byte r,
             byte g,
             byte b,
-            byte a)
+            byte a = 255)
         {
             rgba = 0;
             this.r = r;
@@ -130,8 +130,8 @@ namespace ProjectGenesis.Utils
             float r,
             float g,
             float b,
-            float a) : this((byte)(Mathf.Clamp01(r) * (double)byte.MaxValue), (byte)(Mathf.Clamp01(g) * (double)byte.MaxValue),
-                            (byte)(Mathf.Clamp01(b) * (double)byte.MaxValue), (byte)(Mathf.Clamp01(a) * (double)byte.MaxValue)) { }
+            float a = 1) : this((byte)(Mathf.Clamp01(r) * (double)byte.MaxValue), (byte)(Mathf.Clamp01(g) * (double)byte.MaxValue),
+                                (byte)(Mathf.Clamp01(b) * (double)byte.MaxValue), (byte)(Mathf.Clamp01(a) * (double)byte.MaxValue)) { }
 
         public MyColor(string hex)
         {
