@@ -158,6 +158,6 @@ namespace ProjectGenesis.Utils
         public static implicit operator Color(MyColor c)
             => new Color(c.r / (float)byte.MaxValue, c.g / (float)byte.MaxValue, c.b / (float)byte.MaxValue, c.a / (float)byte.MaxValue);
 
-        public static implicit operator Color32(MyColor c) => new Color32(c.r, c.b, c.g, c.a);
+        public static implicit operator Color32(MyColor c) => new Color32(c.r, c.g, c.b, c.a);
     }
 }
