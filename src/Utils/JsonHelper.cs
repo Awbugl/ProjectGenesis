@@ -56,7 +56,6 @@ namespace ProjectGenesis.Utils
             public int GridIndex { get; set; }
             public int StackSize { get; set; }
             public int Type { get; set; }
-            public int PreTech { get; set; }
             public int PreTechOverride { get; set; }
             public int[] DescFields { get; set; }
             public int FuelType { get; set; }
@@ -104,7 +103,6 @@ namespace ProjectGenesis.Utils
                        ReactorInc = i.ReactorInc,
                        DescFields = i.DescFields,
                        IsFluid = i.IsFluid,
-                       PreTech = i.preTech?.ID ?? i.PreTechOverride,
                        Type = (int)i.Type,
                        SubID = i.SubID,
                        MiningFrom = i.MiningFrom,

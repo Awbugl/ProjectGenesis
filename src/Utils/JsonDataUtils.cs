@@ -98,7 +98,6 @@ namespace ProjectGenesis.Utils
                 proto.MechaMaterialID = itemjson.MechaMaterialID;
                 proto.PreTechOverride = itemjson.PreTechOverride;
                 proto.Productive = itemjson.Productive;
-                proto.MechaMaterialID = itemjson.MechaMaterialID;
                 proto.AmmoType = (EAmmoType)itemjson.AmmoType;
                 proto.BombType = itemjson.BombType;
                 proto.CraftType = itemjson.CraftType;
@@ -152,7 +151,6 @@ namespace ProjectGenesis.Utils
                 proto.MechaMaterialID = itemjson.MechaMaterialID;
                 proto.PreTechOverride = itemjson.PreTechOverride;
                 proto.Productive = itemjson.Productive;
-                proto.MechaMaterialID = itemjson.MechaMaterialID;
                 proto.AmmoType = (EAmmoType)itemjson.AmmoType;
                 proto.BombType = itemjson.BombType;
                 proto.CraftType = itemjson.CraftType;
@@ -346,14 +344,6 @@ namespace ProjectGenesis.Utils
 
                 SkillSystem.EnemySandCountByModelIndex[t.ID] = t.prefabDesc.enemySandCount;
             }
-        }
-
-        internal static void ModelPostFix()
-        {
-            ModelProto modelProto = LDB.models.Select(ProtoIDUsedByPatches.M大气采集器);
-
-            modelProto._ruinPath = "Entities/Prefabs/Ruins/interstellar-logistic-station-ruins";
-            modelProto._wreckagePath = "Entities/Prefabs/Wreckages/interstellar-logistic-station-wreckages";
         }
     }
 }

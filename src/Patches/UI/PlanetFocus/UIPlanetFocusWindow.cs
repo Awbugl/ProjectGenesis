@@ -105,7 +105,7 @@ namespace ProjectGenesis.Patches.UI.PlanetFocus
         private void OnIconBtnClick(int id)
         {
             UIRoot.instance.uiGame.itemPicker.currentType = ProjectGenesis.TableID[0];
-            UIItemPickerExtension.Popup(new Vector2(-300f, 250f), j => OnPickReturn(j, id), true, itemProto => FocusIds.ContainsKey(itemProto.ID));
+            UIItemPickerExtension.Popup(new Vector2(-300f, 250f), j => OnPickReturn(j, id), true, itemProto => FocusIds.ContainsKey(itemProto.ID) && GameMain.data.history.TechUnlocked(itemProto.PreTechOverride));
         }
 
         private void OnIconBtnRightClick(int id)

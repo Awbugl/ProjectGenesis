@@ -148,6 +148,7 @@ namespace ProjectGenesis.Utils
            
             registerModel.HpMax = 300000;
             registerModel.RuinId = 384;
+            registerModel.RuinType = ERuinType.Normal;
             registerModel.RuinCount = 1;
         }
 
@@ -190,6 +191,14 @@ namespace ProjectGenesis.Utils
             model.sid = "";
             model.SID = "";
             return model;
+        }
+        
+        internal static void ModelPostFix()
+        {
+            ModelProto modelProto = LDB.models.Select(ProtoIDUsedByPatches.M大气采集器);
+
+            modelProto._ruinPath = "Entities/Prefabs/Ruins/interstellar-logistic-station-ruins";
+            modelProto._wreckagePath = "Entities/Prefabs/Wreckages/interstellar-logistic-station-wreckages";
         }
     }
 }
