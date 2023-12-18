@@ -318,6 +318,8 @@ namespace ProjectGenesis.Utils
 
             foreach (ModelProto t in dataArray)
             {
+                SpaceSector.PrefabDescByModelIndex[t.ID] = t.prefabDesc;
+
                 PlanetFactory.PrefabDescByModelIndex[t.ID] = t.prefabDesc;
 
                 SkillSystem.HpMaxByModelIndex[t.ID] = t.HpMax;
