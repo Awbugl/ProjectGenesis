@@ -185,6 +185,7 @@ namespace ProjectGenesis
             AddCopiedModelProto();
             AddEffectEmitterProto();
             ImportJson(TableID);
+            ModifyUpgradeTech();
         }
 
         private void PostAddDataAction()
@@ -267,8 +268,10 @@ namespace ProjectGenesis
 
             ItemProto.stationCollectorId = 2105;
 
-            LDB.items.Select(1000).recipes = new List<RecipeProto>() { LDB.recipes.Select(801) };
-            LDB.items.Select(1120).isRaw = true;
+            LDB.items.Select(ProtoIDUsedByPatches.I水).recipes = new List<RecipeProto>() { LDB.recipes.Select(ProtoIDUsedByPatches.R海水淡化) };
+            LDB.items.Select(ProtoIDUsedByPatches.I氢).isRaw = true;
+            
+            
 
             StorageComponent.staticLoaded = false;
             StorageComponent.LoadStatic();
