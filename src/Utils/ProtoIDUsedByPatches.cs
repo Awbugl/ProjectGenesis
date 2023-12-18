@@ -19,7 +19,6 @@ namespace ProjectGenesis.Utils
 
         internal const int I大气采集器 = 6267,
                            I轨道采集器 = 2105,
-                           I位面熔炉 = 2315,
                            I人造恒星 = 2210,
                            I巨型精密组装厂 = 6260,
                            I巨型对撞机 = 6265,
