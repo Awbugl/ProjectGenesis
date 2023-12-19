@@ -392,6 +392,13 @@
     "turretDamageScale": 4
   },
   {
+    "ItemID": 6231,
+    "ModelID": 517,
+    "storageCol": 10,
+    "storageRow": 9,
+    "isStorage": true
+  },
+  {
     "ItemID": 3002,
     "ModelID": 373,
     "turretDamageScale": 2,

@@ -10,7 +10,7 @@ using HarmonyLib;
 using ProjectGenesis.Patches.Logic;
 using ProjectGenesis.Patches.Logic.AddVein;
 using UnityEngine;
-using static ProjectGenesis.Patches.Logic.AddVein.AdjustPlanetTheme;
+using static ProjectGenesis.Patches.Logic.AddVein.ModifyPlanetTheme;
 using PluginInfo = BepInEx.PluginInfo;
 
 // ReSharper disable CommentTypo

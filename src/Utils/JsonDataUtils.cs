@@ -273,6 +273,9 @@ namespace ProjectGenesis.Utils
                 if (json.turretRoundInterval != null) desc.turretRoundInterval = json.turretRoundInterval.Value;
                 if (json.turretMaxAttackRange != null) desc.turretMaxAttackRange = json.turretMaxAttackRange.Value;
                 if (json.turretDamageScale != null) desc.turretDamageScale = json.turretDamageScale.Value;
+                if (json.storageCol != null) desc.storageCol = json.storageCol.Value;
+                if (json.storageRow != null) desc.storageRow = json.storageRow.Value;
+                if (json.isStorage != null) desc.isStorage = json.isStorage.Value;
             }
 
             ref PrefabDesc pumper = ref LDB.models.Select(60).prefabDesc;
@@ -283,35 +286,6 @@ namespace ProjectGenesis.Utils
 
             megapumper.waterPoints = new[] { Vector3.zero };
             megapumper.portPoses = new[] { megapumper.portPoses[0] };
-        }
-
-        internal static void SetBuildBar()
-        {
-            LDBTool.SetBuildBar(1, 9, 6221);
-            LDBTool.SetBuildBar(1, 10, 6261);
-            LDBTool.SetBuildBar(2, 5, 6266);
-            LDBTool.SetBuildBar(3, 10, 2313);
-            LDBTool.SetBuildBar(4, 4, 6229);
-
-            LDBTool.SetBuildBar(5, 3, 6230);
-            LDBTool.SetBuildBar(5, 4, 2303);
-            LDBTool.SetBuildBar(5, 5, 2304);
-            LDBTool.SetBuildBar(5, 6, 2305);
-            LDBTool.SetBuildBar(5, 7, 2308);
-            LDBTool.SetBuildBar(5, 8, 2309);
-            LDBTool.SetBuildBar(5, 9, 2317);
-            LDBTool.SetBuildBar(5, 10, 2310);
-
-            LDBTool.SetBuildBar(6, 5, 6267);
-            LDBTool.SetBuildBar(6, 6, 2209);
-            LDBTool.SetBuildBar(6, 7, 2206);
-
-            LDBTool.SetBuildBar(12, 1, 6257);
-            LDBTool.SetBuildBar(12, 2, 6258);
-            LDBTool.SetBuildBar(12, 3, 6259);
-            LDBTool.SetBuildBar(12, 4, 6260);
-            LDBTool.SetBuildBar(12, 5, 6264);
-            LDBTool.SetBuildBar(12, 6, 6265);
         }
 
         internal static void ModifyUpgradeTech()

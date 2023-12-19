@@ -8,7 +8,7 @@ using System.Linq;
 
 namespace ProjectGenesis.Patches.Logic.AddVein
 {
-    internal static class AdjustPlanetTheme
+    internal static class ModifyPlanetTheme
     {
         internal static readonly Dictionary<int, int[]> PlanetGasData = new Dictionary<int, int[]>
                                                                         {
@@ -93,21 +93,21 @@ namespace ProjectGenesis.Patches.Logic.AddVein
                                                                                           },
                                                                                       };
 
-        internal static void AdjustPlanetThemeDataVanilla()
+        internal static void ModifyPlanetThemeDataVanilla()
         {
-            foreach (ThemeProto theme in LDB.themes.dataArray) AdjustThemeVanilla(theme);
+            foreach (ThemeProto theme in LDB.themes.dataArray) ModifyThemeVanilla(theme);
         }
 
-        internal static void AdjustThemeVanilla(ThemeProto theme)
+        internal static void ModifyThemeVanilla(ThemeProto theme)
         {
             if (theme.PlanetType == EPlanetType.Gas)
             {
-                GasGiantAdjust(theme);
+                GasGiantModify(theme);
             }
             else
             {
-                AdjustGasItems(theme);
-                AdjustVeins(theme);
+                ModifyGasItems(theme);
+                ModifyVeins(theme);
 
                 if (theme.WaterItemId == 1000) theme.WaterItemId = 7018;
 
@@ -154,7 +154,7 @@ namespace ProjectGenesis.Patches.Logic.AddVein
             }
         }
 
-        private static void GasGiantAdjust(ThemeProto theme)
+        private static void GasGiantModify(ThemeProto theme)
         {
             if (theme.GasItems.Length != 2) return;
 
@@ -170,7 +170,7 @@ namespace ProjectGenesis.Patches.Logic.AddVein
             }
         }
 
-        private static void AdjustVeins(ThemeProto theme)
+        private static void ModifyVeins(ThemeProto theme)
         {
             Array.Resize(ref theme.VeinSpot, 15);
             Array.Resize(ref theme.VeinCount, 15);
@@ -197,7 +197,7 @@ namespace ProjectGenesis.Patches.Logic.AddVein
             }
         }
 
-        private static void AdjustGasItems(ThemeProto theme)
+        private static void ModifyGasItems(ThemeProto theme)
         {
             if (theme.Wind == 0)
             {

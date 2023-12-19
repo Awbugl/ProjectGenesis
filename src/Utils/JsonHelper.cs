@@ -298,13 +298,17 @@ namespace ProjectGenesis.Utils
             public long? stationMaxEnergyAcc { get; set; } = null;
             public int? stationMaxItemCount { get; set; } = null;
             public int? stationMaxItemKinds { get; set; } = null;
-            public int? stationMaxDroneCount { get; set; } = null; 
+            public int? stationMaxDroneCount { get; set; } = null;
             public int? stationMaxShipCount { get; set; } = null;
             public float? AmmoBlastRadius1 { get; set; } = null;
-            public int? turretMuzzleInterval { get; set; } = null; 
+            public int? turretMuzzleInterval { get; set; } = null;
             public int? turretRoundInterval { get; set; } = null;
             public float? turretMaxAttackRange { get; set; } = null;
             public float? turretDamageScale { get; set; } = null;
+            public int? storageCol { get; set; } = null;
+            public int? storageRow { get; set; } = null;
+            public bool? isStorage { get; set; } = null;
+
             public static PrefabDescJson FromPrefabDesc(PrefabDesc i, int itemID, int modelID)
                 => new PrefabDescJson
                    {
@@ -354,7 +358,10 @@ namespace ProjectGenesis.Utils
                        turretMuzzleInterval = i.turretMuzzleInterval,
                        turretRoundInterval = i.turretRoundInterval,
                        turretMaxAttackRange = i.turretMaxAttackRange,
-                       turretDamageScale = i.turretDamageScale
+                       turretDamageScale = i.turretDamageScale,
+                       storageCol = i.storageCol,
+                       storageRow = i.storageRow,
+                       isStorage = i.isStorage,
                    };
         }
     }

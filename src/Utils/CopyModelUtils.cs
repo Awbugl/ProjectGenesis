@@ -30,6 +30,7 @@ namespace ProjectGenesis.Utils
             CopyModelProto(432, ProtoIDUsedByPatches.M反物质导弹组, new Color(0.3059F, 0.2196F, 0.4941F));
             CopyModelProto(374, ProtoIDUsedByPatches.M高斯机枪塔MK2, new Color(0.0000f, 0.7490f, 1.0000f));
             CopyModelProto(373, ProtoIDUsedByPatches.M高频激光塔MK2, new Color(0.5765f, 0.4392f, 0.8588f));
+            CopyModelProto(52, ProtoIDUsedByPatches.M量子储物仓, new Color(0.0000f, 0.7490f, 1.0000f));
 
             AddAtmosphericCollectStation();
         }
@@ -122,9 +123,15 @@ namespace ProjectGenesis.Utils
             modelProto._ruinPath = "Entities/Prefabs/Ruins/interstellar-logistic-station-ruins";
             modelProto._wreckagePath = "Entities/Prefabs/Wreckages/interstellar-logistic-station-wreckages";
 
-            ref PrefabDesc prefabDesc = ref LDB.models.Select(509).prefabDesc;
+            ref PrefabDesc prefabDesc = ref LDB.models.Select(ProtoIDUsedByPatches.M同位素温差发电机).prefabDesc;
             ref Material[] prefabDescLODMaterial = ref prefabDesc.lodMaterials[0];
             prefabDescLODMaterial[2].SetColor("_TintColor", new Color(0.3861f, 2.4837f, 0.3137f, 0.7692f));
+        }
+
+        internal static void ItemPostFix()
+        {
+            LDB.items.Select(ProtoIDUsedByPatches.I水).recipes = new List<RecipeProto>() { LDB.recipes.Select(ProtoIDUsedByPatches.R海水淡化) };
+            LDB.items.Select(ProtoIDUsedByPatches.I氢).isRaw = true;
         }
     }
 }

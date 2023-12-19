@@ -5090,6 +5090,36 @@
     "NonProductive": false
   },
   {
+    "ID": 524,
+    "Name": "量子储物仓",
+    "Description": "",
+    "IconPath": "",
+    "Type": 9,
+    "GridIndex": 2215,
+    "Time": 900,
+    "Input": [
+      1107,
+      1124,
+      1305,
+      7706
+    ],
+    "InCounts": [
+      16,
+      8,
+      4,
+      4
+    ],
+    "Output": [
+      6231
+    ],
+    "OutCounts": [
+      1
+    ],
+    "Explicit": false,
+    "Handcraft": false,
+    "NonProductive": false
+  },
+  {
     "ID": 531,
     "Name": "铁矿粉",
     "Description": "",
