@@ -308,6 +308,9 @@ namespace ProjectGenesis.Utils
             public int? storageCol { get; set; } = null;
             public int? storageRow { get; set; } = null;
             public bool? isStorage { get; set; } = null;
+            public bool? allowBuildInWater { get; set; } = null;
+            public bool? needBuildInWaterTech { get; set; } = null;
+            public int[] waterTypes { get; set; } = null;
 
             public static PrefabDescJson FromPrefabDesc(PrefabDesc i, int itemID, int modelID)
                 => new PrefabDescJson
@@ -362,6 +365,9 @@ namespace ProjectGenesis.Utils
                        storageCol = i.storageCol,
                        storageRow = i.storageRow,
                        isStorage = i.isStorage,
+                       allowBuildInWater = i.allowBuildInWater,
+                       needBuildInWaterTech = i.needBuildInWaterTech,
+                       waterTypes = i.waterTypes,
                    };
         }
     }
