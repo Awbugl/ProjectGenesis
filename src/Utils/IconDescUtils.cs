@@ -110,6 +110,12 @@ namespace ProjectGenesis.Utils
         internal static readonly Dictionary<int, Color32> RodColor = new Dictionary<int, Color32>
                                                                                   {
                                                                                       { 6217, new Color32(163, 145, 85, 255) }, //煤油棒
+                                                                                      { 6216, new Color32(198, 207, 111, 255) }, //JP10棒
+                                                                                      { 6242, new Color32(33, 170, 87, 255) }, //铀棒
+                                                                                      { 6241, new Color32(204, 74, 78, 255) }, //钚棒
+                                                                                      { 6243, new Color32(153, 157, 169, 255) }, //MOX棒
+                                                                                      { 6244, new Color32(245, 250, 105, 255) }, //He3棒
+                                                                                      { 6245, new Color32(147, 77, 255, 255) }, //混合棒
                                                                                   };
 
 
@@ -140,7 +146,8 @@ namespace ProjectGenesis.Utils
                 desc.reserved0 = value;
                 desc.liquidity = 1f;
                 desc.metallic = 1f;
-                desc.solidAlpha = 0.6f;
+                desc.smoothness = 0.302f;
+                desc.solidAlpha = 0.0f;
             }
 
             if (FluidWithoutIconColor.TryGetValue(itemid, out value))
@@ -150,7 +157,8 @@ namespace ProjectGenesis.Utils
                 desc.reserved0 = value;
                 desc.liquidity = 1f;
                 desc.metallic = 1f;
-                desc.solidAlpha = 0.6f;
+                desc.solidAlpha = 0.0f;
+                desc.smoothness = 0.302f; 
                 desc.iconEmission = Color.clear;
                 desc.iconAlpha = 0.0f;
             }
@@ -166,7 +174,9 @@ namespace ProjectGenesis.Utils
             {
                 desc.faceColor = value;
                 desc.sideColor = value;
-                desc.reserved0 = value;
+                desc.metallic = 1.0f;
+                desc.smoothness = 0.6f;
+                desc.solidAlpha = 1.0f;
                 desc.iconAlpha = 0.0f;
                 desc.iconEmission = Color.clear;
             }
@@ -174,7 +184,7 @@ namespace ProjectGenesis.Utils
             {
                 desc.faceColor = value;
                 desc.sideColor = value;
-                desc.reserved0 = value;
+                //desc.reserved0 = value;
                 desc.metallic = 0.0f;
                 desc.iconEmission = Color.clear;
             }
@@ -183,7 +193,7 @@ namespace ProjectGenesis.Utils
             {
                 //desc.faceColor = colors[1];
                 desc.sideColor = value;
-                desc.reserved0 = value;
+                //desc.reserved0 = value;
                 desc.iconEmission = Color.clear;
             }
             if (GlassColor.TryGetValue(itemid, out value))
@@ -192,13 +202,13 @@ namespace ProjectGenesis.Utils
                 desc.sideColor = value;
                 desc.reserved0 = value;
                 desc.iconAlpha = 0.0f;
-                desc.metallic = 1.5f;
+                desc.metallic = 1.0f;
                 desc.solidAlpha = 0.8f;
                 desc.iconEmission = Color.clear;
             }
             if (RodColor.TryGetValue(itemid, out value))
             {
-                //desc.faceColor = value;
+                desc.faceColor = value;
                 desc.sideColor = value;
                 desc.reserved0 = value;
                 //desc.iconAlpha = 0.0f;
