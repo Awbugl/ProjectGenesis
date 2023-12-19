@@ -135,6 +135,7 @@
         <Compile Include="src\Patches\UI\DisplayText\DisplayTextPatches.cs"/>
         <Compile Include="src\Patches\UI\FactoryModelPatches.cs"/>
         <Compile Include="src\Patches\UI\FluidColorPatches.cs"/>
+        <Compile Include="src\Patches\UI\GeneralMissilePatches.cs" />
         <Compile Include="src\Patches\UI\GridIndexExpandPatches.cs"/>
         <Compile Include="src\Patches\UI\HarmonyLogPatches.cs"/>
         <Compile Include="src\Patches\UI\MultiProductionPatches.cs"/>

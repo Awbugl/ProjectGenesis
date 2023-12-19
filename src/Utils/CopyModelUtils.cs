@@ -27,7 +27,7 @@ namespace ProjectGenesis.Utils
             CopyModelProto(46, ProtoIDUsedByPatches.M同位素温差发电机, Color.HSVToRGB(0.4174f, 0.742f, 0.9686f));
             CopyModelProto(49, ProtoIDUsedByPatches.M物质分解设施, new Color(0.3216F, 0.8157F, 0.09020F));
             CopyModelProto(49, ProtoIDUsedByPatches.M巨型粒子对撞机, new Color(0.3059F, 0.2196F, 0.4941F));
-            CopyModelProto(432, ProtoIDUsedByPatches.M洲际导弹组, new Color(0.3059F, 0.2196F, 0.4941F));
+            CopyModelProto(432, ProtoIDUsedByPatches.M洲际导弹组, new Color(0.0000f, 0.7490f, 1.0000f));
             CopyModelProto(432, ProtoIDUsedByPatches.M反物质导弹组, new Color(0.3059F, 0.2196F, 0.4941F));
             CopyModelProto(374, ProtoIDUsedByPatches.M高斯机枪塔MK2, new Color(0.0000f, 0.7490f, 1.0000f));
             CopyModelProto(373, ProtoIDUsedByPatches.M高频激光塔MK2, new Color(0.5765f, 0.4392f, 0.8588f));

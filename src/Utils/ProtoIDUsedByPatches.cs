@@ -35,7 +35,6 @@ namespace ProjectGenesis.Utils
                            R三氯化铁 = 716,
                            R氨氧化 = 717,
                            R放射性矿物处理 = 401,
-                           R硫酸 = 24,
                            R高效石墨烯 = 32,
                            R物质分解 = 429,
                            R海水淡化 = 801,

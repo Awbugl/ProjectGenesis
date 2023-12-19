@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Reflection;
 using System.Runtime.InteropServices;
 using CommonAPI.Systems;
 using UnityEngine;
@@ -82,6 +83,7 @@ namespace ProjectGenesis.Utils
                 desc.iconEmission = Color.clear;
                 desc.iconAlpha = 0.0f;
             }
+
             if (OreColor.TryGetValue(itemid, out value))
             {
                 desc.faceColor = value;
@@ -89,6 +91,7 @@ namespace ProjectGenesis.Utils
                 desc.reserved0 = value;
                 desc.iconEmission = Color.clear;
             }
+
             if (CompentColor.TryGetValue(itemid, out value))
             {
                 //desc.faceColor = colors[1];
@@ -116,71 +119,96 @@ namespace ProjectGenesis.Utils
 
         private static IconToolNew.IconDesc GetDefaultIconDesc(Color color, Color emission)
             => ProtoRegistry.GetDefaultIconDesc(color, color, emission, emission);
-    }
 
-    [StructLayout(LayoutKind.Explicit)]
-    internal struct MyColor
-    {
-        [FieldOffset(0)]
-        private int rgba;
-
-        [FieldOffset(0)]
-        public byte r;
-
-        [FieldOffset(1)]
-        public byte g;
-
-        [FieldOffset(2)]
-        public byte b;
-
-        [FieldOffset(3)]
-        public byte a;
-
-        public MyColor(
-            byte r,
-            byte g,
-            byte b,
-            byte a = 255)
+        internal static IconToolNew.IconDesc ExportIconDesc(int itemId)
         {
-            rgba = 0;
-            this.r = r;
-            this.g = g;
-            this.b = b;
-            this.a = a;
-        }
+            IconSet iconSet = GameMain.iconSet;
 
-        public MyColor(
-            float r,
-            float g,
-            float b,
-            float a = 1) : this((byte)(Mathf.Clamp01(r) * (double)byte.MaxValue), (byte)(Mathf.Clamp01(g) * (double)byte.MaxValue),
-                                (byte)(Mathf.Clamp01(b) * (double)byte.MaxValue), (byte)(Mathf.Clamp01(a) * (double)byte.MaxValue)) { }
+            var iconDesc = new IconToolNew.IconDesc();
 
-        public MyColor(string hex)
-        {
-            r = 0;
-            g = 0;
-            b = 0;
-            a = 0;
+            uint num1 = iconSet.itemIconIndex[itemId];
+            if (num1 <= 0) return iconDesc;
 
-            switch (hex.Length)
+            FieldInfo[] fields = typeof(IconToolNew.IconDesc).GetFields(BindingFlags.Instance | BindingFlags.Public);
+
+            uint index = 0;
+            foreach (FieldInfo fieldInfo in fields)
             {
-                case 8:
-                    rgba = int.Parse(hex, System.Globalization.NumberStyles.HexNumber);
-                    break;
+                if (fieldInfo.FieldType == typeof(float))
+                {
+                    fieldInfo.SetValue(iconDesc, iconSet.itemDescArr[(int)num1 * 40 + (int)index++]);
+                }
+                else if (fieldInfo.FieldType == typeof(Color))
+                {
+                    float r = iconSet.itemDescArr[(int)num1 * 40 + (int)index++];
+                    float g = iconSet.itemDescArr[(int)num1 * 40 + (int)index++];
+                    float b = iconSet.itemDescArr[(int)num1 * 40 + (int)index++];
+                    float a = iconSet.itemDescArr[(int)num1 * 40 + (int)index++];
 
-                case 6:
-                    rgba = (int.Parse(hex, System.Globalization.NumberStyles.HexNumber) << 2) + 0xFF;
-                    break;
-
-                default:
-                    throw new ArgumentException("Argument " + nameof(hex) + " : Invavid Length");
+                    fieldInfo.SetValue(iconDesc, new Color(r, g, b, a));
+                }
             }
+
+            return iconDesc;
         }
-
-        public static implicit operator Color(MyColor c)
-            => new Color(c.r / (float)byte.MaxValue, c.g / (float)byte.MaxValue, c.b / (float)byte.MaxValue, c.a / (float)byte.MaxValue);
-
-        public static implicit operator Color32(MyColor c) => new Color32(c.r, c.g, c.b, c.a);
     }
+}
+
+[StructLayout(LayoutKind.Explicit)]
+internal struct MyColor
+{
+    [FieldOffset(0)]
+    private int rgba;
+
+    [FieldOffset(0)]
+    public byte r;
+
+    [FieldOffset(1)]
+    public byte g;
+
+    [FieldOffset(2)]
+    public byte b;
+
+    [FieldOffset(3)]
+    public byte a;
+
+    public MyColor(
+        byte r,
+        byte g,
+        byte b,
+        byte a = 255)
+    {
+        rgba = 0;
+        this.r = r;
+        this.g = g;
+        this.b = b;
+        this.a = a;
+    }
+
+    public MyColor(
+        float r,
+        float g,
+        float b,
+        float a = 1) : this((byte)(Mathf.Clamp01(r) * (double)byte.MaxValue), (byte)(Mathf.Clamp01(g) * (double)byte.MaxValue),
+                            (byte)(Mathf.Clamp01(b) * (double)byte.MaxValue), (byte)(Mathf.Clamp01(a) * (double)byte.MaxValue)) { }
+
+    public MyColor(string hex)
+    {
+        r = 0;
+        g = 0;
+        b = 0;
+        a = 0;
+        
+        if (hex.Length == 6) hex += "FF";
+        
+        if (hex.Length == 8)
+            rgba = int.Parse(hex, System.Globalization.NumberStyles.HexNumber);
+        else
+            throw new ArgumentException("Argument " + nameof(hex) + " : Invavid Length");
+    }
+
+    public static implicit operator Color(MyColor c)
+        => new Color(c.r / (float)byte.MaxValue, c.g / (float)byte.MaxValue, c.b / (float)byte.MaxValue, c.a / (float)byte.MaxValue);
+
+    public static implicit operator Color32(MyColor c) => new Color32(c.r, c.g, c.b, c.a);
 }
