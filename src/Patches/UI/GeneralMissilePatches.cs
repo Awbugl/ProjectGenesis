@@ -11,7 +11,7 @@ namespace ProjectGenesis.Patches.UI
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> TickSkillLogic_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
-            CodeMatcher matcher = new CodeMatcher(instructions);
+            var matcher = new CodeMatcher(instructions);
 
             matcher.MatchForward(true, new CodeMatch(OpCodes.Ldarg_0),
                                  new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(GeneralMissile), nameof(GeneralMissile.modelIndex))),
@@ -28,10 +28,10 @@ namespace ProjectGenesis.Patches.UI
             switch (modelIndex)
             {
                 case ProtoIDUsedByPatches.M洲际导弹组:
-                    return 1;
+                    return 5;
 
                 case ProtoIDUsedByPatches.M反物质导弹组:
-                    return 3;
+                    return 6;
             }
 
             return modelIndex - 431;
