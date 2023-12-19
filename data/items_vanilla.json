@@ -3691,7 +3691,7 @@
     "BuildMode": 0,
     "UnlockKey": 0,
     "MechaMaterialID": 0,
-    "AmmoType": 1,
+    "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
     "DropRate": 0,

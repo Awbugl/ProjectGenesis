@@ -5,6 +5,7 @@ using xiaoye97;
 
 // ReSharper disable CommentTypo
 // ReSharper disable LoopCanBePartlyConvertedToQuery
+// ReSharper disable Unity.UnknownResource
 // ReSharper disable Unity.PreferAddressByIdToGraphicsParams
 
 #pragma warning disable CS0618
@@ -76,7 +77,7 @@ namespace ProjectGenesis.Utils
             registerModel.RuinCount = 1;
         }
 
-        private static void CopyModelProto(int oriId, int id, Color color)
+        private static void CopyModelProto(int oriId, int id, Color? color = null)
         {
             ModelProto oriModel = LDB.models.Select(oriId);
             ModelProto model = oriModel.Copy();
@@ -94,47 +95,17 @@ namespace ProjectGenesis.Utils
                     model.prefabDesc.lodMaterials[i][j] = new Material(desc.lodMaterials[i][j]);
                 }
 
-                try
+                if (color.HasValue)
                 {
-                    model.prefabDesc.lodMaterials[i][0].color = color;
+                    try
+                    {
+                        model.prefabDesc.lodMaterials[i][0].color = color.Value;
+                    }
+                    catch
+                    {
+                        // ignored
+                    }
                 }
-                catch
-                {
-                    // ignored
-                }
-            }
-
-            model.prefabDesc.modelIndex = id;
-            model.prefabDesc.hasBuildCollider = true;
-            model.prefabDesc.colliders = desc.colliders;
-            model.prefabDesc.buildCollider = desc.buildCollider;
-            model.prefabDesc.buildColliders = desc.buildColliders;
-            model.prefabDesc.colliderPrefab = desc.colliderPrefab;
-
-            model.sid = "";
-            model.SID = "";
-
-            LDBTool.PreAddProto(model);
-        }
-        private static void CopyModelProto(int oriId, int id)
-        {
-            ModelProto oriModel = LDB.models.Select(oriId);
-            ModelProto model = oriModel.Copy();
-            model.Name = id.ToString();
-            model.ID = id;
-            PrefabDesc desc = oriModel.prefabDesc;
-            model.prefabDesc = new PrefabDesc(id, desc.prefab, desc.colliderPrefab);
-
-            for (int i = 0; i < model.prefabDesc.lodMaterials.Length; i++)
-            {
-                if (model.prefabDesc.lodMaterials[i] == null) continue;
-                for (int j = 0; j < model.prefabDesc.lodMaterials[i].Length; j++)
-                {
-                    if (model.prefabDesc.lodMaterials[i][j] == null) continue;
-                    model.prefabDesc.lodMaterials[i][j] = new Material(desc.lodMaterials[i][j]);
-                }
-
-                
             }
 
             model.prefabDesc.modelIndex = id;
@@ -159,12 +130,14 @@ namespace ProjectGenesis.Utils
             ref PrefabDesc prefabDesc = ref LDB.models.Select(ProtoIDUsedByPatches.M同位素温差发电机).prefabDesc;
             ref Material[] prefabDescLODMaterial = ref prefabDesc.lodMaterials[0];
             prefabDescLODMaterial[2].SetColor("_TintColor", new Color(0.2715f, 1.7394f, 0.1930f));
-            ref PrefabDesc prefabDesc2 = ref LDB.models.Select(ProtoIDUsedByPatches.M人造恒星MK2).prefabDesc;
-            ref Material[] prefabDescLODMaterial2 = ref prefabDesc2.lodMaterials[0];
-            prefabDescLODMaterial2[1].SetColor("_TintColor", new Color(0.1804f, 0.4953f, 1.3584f));//亮部
-            prefabDescLODMaterial2[1].SetColor("_TintColor1", new Color(0.1294f, 0.3130f, 1.1508f));//暗部
-            prefabDescLODMaterial2[1].SetColor("_RimColor", new Color(0.4157f, 0.6784f, 1.0000f));//边缘特效
-            //prefabDescLODMaterial2[1].SetFloat("_Multiplier", 0.1f);
+
+            prefabDesc = ref LDB.models.Select(ProtoIDUsedByPatches.M人造恒星MK2).prefabDesc;
+            var texture = Resources.Load<Texture>("Assets/texpack/人造恒星MK2材质");
+            prefabDescLODMaterial = ref prefabDesc.lodMaterials[0];
+            prefabDescLODMaterial[0].SetTexture("_EmissionTex", texture);
+            prefabDescLODMaterial[1].SetColor("_TintColor", new Color(0.1804f, 0.4953f, 1.3584f));  //亮部
+            prefabDescLODMaterial[1].SetColor("_TintColor1", new Color(0.1294f, 0.3130f, 1.1508f)); //暗部
+            prefabDescLODMaterial[1].SetColor("_RimColor", new Color(0.4157f, 0.6784f, 1.0000f));   //边缘特效
         }
 
         internal static void ItemPostFix()

@@ -5021,7 +5021,7 @@
     "IconPath": "Assets/texpack/湮灭弹药箱",
     "GridIndex": 5306,
     "StackSize": 100,
-    "Type": 10,
+    "Type": 4,
     "PreTechOverride": 0,
     "DescFields": [
       48,
