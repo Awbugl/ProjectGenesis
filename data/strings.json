@@ -515,6 +515,26 @@
     "ENUS": "Unlocks additional techs and provides additional items at the beginning"
   },
   {
+    "Name": "海洋丛林介绍",
+    "ZHCN": "　　海洋丛林星球上有60%-70%的地表被淡水海洋所覆盖，丰沛的水资源在大陆上孕育出繁茂的雨林。\r\n　　这里的赤道附近往往有连绵不绝的降雨，而纬度更低的地方则随着星球公转有鲜明的雨季和旱季之分。\r\n　　海洋丛林星球上保有巨大的生物量，从而在漫长的演化史中将海洋中的可溶性矿物质逐渐转移到地壳和生物体内。在当地发展工业会动摇这个庞大复杂却又脆弱的生态系统，孰轻孰重，就看怎么取舍了。",
+    "ENUS": "Tropicana planets have 60 to 70 percent of their surface covered by bodies of flesh water, nurturing lush rainforests within the continents.\r\nThese biomes see continuous rainfall near the equator, while lower latitudes have distinct wet and dry seasons as the planet rotates.\r\nTropicanas retain a huge biomass, thus gradually transferring soluble minerals from the oceans to the crust and living organisms over its long evolutionary history. Any local industrial development will shake this large, complex, yet fragile ecosystem to its core, but what’s more important - nature, or progress?"
+  },
+  {
+    "Name": "戈壁介绍",
+    "ZHCN": "　　戈壁星球拥有极端稠密的二氧化碳大气层，导致昼夜温差极小，接近地表的地方风速也不高。\r\n　　但无论这类星球曾经的模样如何，都已经被历史上无节制发展的化学工业毁掉了，目前只留下失控的温室效应带来的极高地表温度，以及地表上零星存在的硝酸湖泊。",
+    "ENUS": "Gobi planets have extremely dense carbon dioxide atmospheres, resulting in minimal temperature differences between day and night, and low wind speeds near the surface. \r\nBut whatever such planets may have once looked like has been destroyed by the historically uncontrolled development of the chemical industry, leaving at present only extremely high surface temperatures due to the runaway greenhouse effect and the sporadic presence of nitric acid lakes on the surface."
+  },
+  {
+    "Name": "黑石岩滩介绍",
+    "ZHCN": "　　黑石盐滩星球上拥有以氮气为主要成分的大气层，地表上覆盖着细腻的沙砾和盐花。\r\n　　由于原料丰富，黑石盐滩星球曾作为主要的氯碱工业基地，目前地表上零星存在的盐酸湖泊就是它昔日辉煌的证明。",
+    "ENUS": "Halitum planets have an atmosphere dominated by nitrogen and a surface covered by fine sand and salt.\r\nDue to the abundance of raw materials, it served as a major chlor-alkali industrial base, and the hydrochloric acid lakes that now exist sporadically on the surface are a testament to its former glory."
+  },
+  {
+    "Name": "飓风石林介绍",
+    "ZHCN": "　　飓风石林星球的地表上散布着碎石，拥有一个主要成分为氮气的稀薄大气。\r\n　　由于稀薄的大气层有利于与深空工业空间站对接，这类星球曾一度作为星际工业中心的标准选址。",
+    "ENUS": "The surface of a Cyclonius planet is scattered with the rocks under a thin atmosphere composed mainly of nitrogen gas.\r\nBecause the thin atmosphere facilitates docking with deep space industrial space stations, such planets were once used as standard sites for interstellar industrial centers."
+  },
+  {
     "Name": "里程碑名称29",
     "ZHCN": "里程碑：裂变发电",
     "ENUS": "Milestone: Fission Energy"
@@ -543,16 +563,6 @@
     "Name": "里程碑已达成描述32",
     "ZHCN": "你激活了第一座人造恒星。它优雅地转动着，犹如太阳般炽烈地燃烧着，稳定地将聚变原料所蕴藏的巨大能量输出到电网。",
     "ENUS": "You activated your first Artificial Star. It rotates so gracefully yet burns so intensely, this spectacle surely means that you've truly harnessed the stars and can stably transport this energy to all corners of the universe."
-  },
-  {
-    "Name": "堆积逻辑介绍标题",
-    "ZHCN": "化工配方特殊堆积逻辑介绍",
-    "ENUS": "Introduction to special stacking logic for chemical-related recipes"
-  },
-  {
-    "Name": "堆积逻辑介绍前字",
-    "ZHCN": "部分化工配方的停止生产的判定由单产物堆积调整为所有产物均堆积，具体受影响的配方可在配方介绍中查看。",
-    "ENUS": "The decision to stop production of some chemical formulations has been adjusted from single product buildup to all products buildup, the specific affected formulations can be viewed in the formulation introduction."
   },
   {
     "Name": "星球大气介绍标题",

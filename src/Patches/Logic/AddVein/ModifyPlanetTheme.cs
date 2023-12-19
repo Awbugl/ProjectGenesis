@@ -19,7 +19,7 @@ namespace ProjectGenesis.Patches.Logic.AddVein
                                                                             { 9, new[] { 6206, 6220 } },
                                                                             { 10, new[] { 6220 } },
                                                                             { 12, new[] { 6206 } },
-                                                                            { 13, new[] { 6206, 6220 } },
+                                                                            { 13, new[] { 6206 } },
                                                                             { 14, new[] { 6220, 7019 } },
                                                                             { 15, new[] { 6220, 7019 } },
                                                                             { 16, new[] { 6220, 7019 } },
@@ -29,7 +29,7 @@ namespace ProjectGenesis.Patches.Logic.AddVein
                                                                             { 20, new[] { 6220 } },
                                                                             { 22, new[] { 6220, 7019 } },
                                                                             { 23, new[] { 6206 } },
-                                                                            { 24, new[] { 6220, 6206 } },
+                                                                            { 24, new[] { 6220 } },
                                                                             { 25, new[] { 6220, 7019 } }
                                                                         };
 
@@ -199,7 +199,13 @@ namespace ProjectGenesis.Patches.Logic.AddVein
 
         private static void ModifyGasItems(ThemeProto theme)
         {
-            if (theme.Wind == 0)
+            var rand = new DotNet35Random();
+
+            float themeWind = theme.Wind;
+
+            if (theme.ID == 12) themeWind = 1;
+
+            if (themeWind == 0)
             {
                 theme.GasItems = Array.Empty<int>();
                 theme.GasSpeeds = Array.Empty<float>();
@@ -207,9 +213,7 @@ namespace ProjectGenesis.Patches.Logic.AddVein
             else if (PlanetGasData.TryGetValue(theme.ID, out int[] value))
             {
                 theme.GasItems = value;
-                theme.GasSpeeds = theme.GasItems.Length == 1
-                                      ? new float[] { theme.Wind * 0.7f }
-                                      : new float[] { theme.Wind * 0.7f, theme.Wind * 0.18f };
+                theme.GasSpeeds = theme.GasItems.Length == 1 ? GasSpeedsOneItem() : GasSpeedsTwoItems();
             }
             else if (theme.GasItems == null || theme.GasItems.Length == 0)
             {
@@ -217,15 +221,20 @@ namespace ProjectGenesis.Patches.Logic.AddVein
                 {
                     case EPlanetType.Ocean:
                         theme.GasItems = new[] { 6220, 7019 };
-                        theme.GasSpeeds = new float[] { theme.Wind * 0.7f, theme.Wind * 0.18f };
+                        theme.GasSpeeds = GasSpeedsTwoItems();
                         break;
 
                     default:
                         theme.GasItems = new[] { 6206 };
-                        theme.GasSpeeds = new float[] { theme.Wind * 0.7f };
+                        theme.GasSpeeds = GasSpeedsOneItem();
                         break;
                 }
             }
+
+            float[] GasSpeedsTwoItems()
+                => new float[] { (float)(themeWind * (0.65f + rand.NextDouble() * 0.1f)), (float)(themeWind * (0.16f + rand.NextDouble() * 0.04f)) };
+
+            float[] GasSpeedsOneItem() => new float[] { (float)(themeWind * (0.65f + rand.NextDouble() * 0.1f)) };
         }
 
         private static void RemoveVein(ThemeProto theme, int id)
