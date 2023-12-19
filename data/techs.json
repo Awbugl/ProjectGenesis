@@ -1574,7 +1574,8 @@
     "HashNeeded": 288000,
     "UnlockRecipes": [
       52,
-      522
+      522,
+      524
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],

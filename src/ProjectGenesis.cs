@@ -24,7 +24,7 @@ using static ProjectGenesis.Patches.Logic.AddVein.AddVeinPatches;
 using ERecipeType_1 = ERecipeType;
 using static ProjectGenesis.Utils.JsonDataUtils;
 using static ProjectGenesis.Utils.CopyModelUtils;
-using static ProjectGenesis.Patches.Logic.AddVein.AdjustPlanetTheme;
+using static ProjectGenesis.Patches.Logic.AddVein.ModifyPlanetTheme;
 
 #pragma warning disable CS0618
 
@@ -181,7 +181,7 @@ namespace ProjectGenesis
         private void PreAddDataAction()
         {
             LDB.items.OnAfterDeserialize();
-            AdjustPlanetThemeDataVanilla();
+            ModifyPlanetThemeDataVanilla();
             AddCopiedModelProto();
             AddEffectEmitterProto();
             ImportJson(TableID);
@@ -216,6 +216,42 @@ namespace ProjectGenesis
             PrefabDescPostFix();
             ModelPostFix();
 
+            ProtoPreload();
+
+            SetSkillSystem();
+            SetMinerMk2Color();
+            SetEffectEmitterProto();
+
+            VFEffectEmitter.Init();
+
+            ItemProto.InitFuelNeeds();
+            ItemProto.InitTurretNeeds();
+            ItemProto.InitFluids();
+            ItemProto.InitTurrets();
+            ItemProto.InitEnemyDropTables();
+            ItemProto.InitItemIds();
+            ItemProto.InitItemIndices();
+            ItemProto.InitMechaMaterials();
+            ItemProto.InitFighterIndices();
+            ModelProto.InitMaxModelIndex();
+            RecipeProto.InitFractionatorNeeds();
+            RaycastLogic.LoadStatic();
+
+            ItemProto.stationCollectorId = 2105;
+
+            ItemPostFix();
+
+            StorageComponent.staticLoaded = false;
+            StorageComponent.LoadStatic();
+
+            UIBuildMenu.staticLoaded = false;
+            UIBuildMenu.StaticLoad();
+
+            // JsonHelper.ExportAsJson(@"D:\Git\ProjectGenesis\data");
+        }
+
+        private static void ProtoPreload()
+        {
             foreach (MilestoneProto milestone in LDB.milestones.dataArray) milestone.Preload();
             foreach (JournalPatternProto journalPattern in LDB.journalPatterns.dataArray) journalPattern.Preload();
 
@@ -245,39 +281,6 @@ namespace ProjectGenesis
                 proto.UnlockRecipes = proto.UnlockRecipes.Distinct().ToArray();
                 proto.Preload2();
             }
-
-            SetMinerMk2Color();
-            SetBuildBar();
-            SetEffectEmitterProto();
-            VFEffectEmitter.Init();
-
-            ItemProto.InitFuelNeeds();
-            ItemProto.InitTurretNeeds();
-            ItemProto.InitFluids();
-            ItemProto.InitTurrets();
-            ItemProto.InitEnemyDropTables();
-            ItemProto.InitItemIds();
-            ItemProto.InitItemIndices();
-            ItemProto.InitMechaMaterials();
-            ItemProto.InitFighterIndices();
-            ModelProto.InitMaxModelIndex();
-            RecipeProto.InitFractionatorNeeds();
-            RaycastLogic.LoadStatic();
-            
-            SetSkillSystem();
-
-            ItemProto.stationCollectorId = 2105;
-
-            LDB.items.Select(ProtoIDUsedByPatches.I水).recipes = new List<RecipeProto>() { LDB.recipes.Select(ProtoIDUsedByPatches.R海水淡化) };
-            LDB.items.Select(ProtoIDUsedByPatches.I氢).isRaw = true;
-            
-            
-
-            StorageComponent.staticLoaded = false;
-            StorageComponent.LoadStatic();
-
-
-            // JsonHelper.ExportAsJson(@"D:\Git\ProjectGenesis\data");
         }
 
         internal static void SetConfig(bool currentLDBToolCache, bool currentHideTechMode, bool currentDisableMessageBox)
