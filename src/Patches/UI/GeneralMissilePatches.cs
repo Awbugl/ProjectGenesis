@@ -17,7 +17,7 @@ namespace ProjectGenesis.Patches.UI
                                  new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(GeneralMissile), nameof(GeneralMissile.modelIndex))),
                                  new CodeMatch(OpCodes.Ldc_I4, 431), new CodeMatch(OpCodes.Sub));
 
-            matcher.Advance(-1).SetAndAdvance(OpCodes.Call, AccessTools.Method(typeof(UIPowerGeneratorWindowPatches), nameof(TickSkillLogic_Patch)))
+            matcher.Advance(-1).SetAndAdvance(OpCodes.Call, AccessTools.Method(typeof(GeneralMissile), nameof(TickSkillLogic_Patch)))
                    .SetOpcodeAndAdvance(OpCodes.Nop);
 
 
