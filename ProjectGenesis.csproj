@@ -138,6 +138,7 @@
         <Compile Include="src\Patches\UI\GeneralMissilePatches.cs" />
         <Compile Include="src\Patches\UI\GridIndexExpandPatches.cs"/>
         <Compile Include="src\Patches\UI\HarmonyLogPatches.cs"/>
+        <Compile Include="src\Patches\UI\LaserMk2Patches.cs" />
         <Compile Include="src\Patches\UI\MultiProductionPatches.cs"/>
         <Compile Include="src\Patches\UI\QTools\ItemNeedDetail.cs"/>
         <Compile Include="src\Patches\UI\QTools\ObjectPool.cs"/>
