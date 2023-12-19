@@ -70,7 +70,11 @@
     "ModelID": 53,
     "powerConnectDistance": 15.0,
     "powerCoverRadius": 0.0,
-    "genEnergyPerTick": 12500
+    "genEnergyPerTick": 12500,
+    "waterTypes": [
+      1000,
+      7018
+    ]
   },
   {
     "ItemID": 2204,
@@ -98,7 +102,14 @@
   {
     "ItemID": 2306,
     "ModelID": 60,
-    "minerPeriod": 360000
+    "minerPeriod": 360000,
+    "waterTypes": [
+      1000,
+      1116,
+      7014,
+      7017,
+      7018
+    ]
   },
   {
     "ItemID": 2307,
@@ -298,7 +309,16 @@
     "workEnergyPerTick": 500000,
     "minerPeriod": 36000,
     "minerType": 1,
-    "minimapType": 2
+    "minimapType": 2,
+    "allowBuildInWater": true,
+    "needBuildInWaterTech": false,
+    "waterTypes": [
+      1000,
+      1116,
+      7014,
+      7017,
+      7018
+    ]
   },
   {
     "ItemID": 6221,

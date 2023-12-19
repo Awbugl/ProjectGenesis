@@ -276,14 +276,12 @@ namespace ProjectGenesis.Utils
                 if (json.storageCol != null) desc.storageCol = json.storageCol.Value;
                 if (json.storageRow != null) desc.storageRow = json.storageRow.Value;
                 if (json.isStorage != null) desc.isStorage = json.isStorage.Value;
+                if (json.allowBuildInWater != null) desc.allowBuildInWater = json.allowBuildInWater.Value;
+                if (json.needBuildInWaterTech != null) desc.needBuildInWaterTech = json.needBuildInWaterTech.Value;
+                if (json.waterTypes != null) desc.waterTypes = json.waterTypes;
             }
 
-            ref PrefabDesc pumper = ref LDB.models.Select(60).prefabDesc;
-            pumper.waterTypes = new[] { 1000, 1116, 7014, 7017, 7018 };
-
-            ref PrefabDesc megapumper = ref LDB.models.Select(508).prefabDesc;
-            megapumper.waterTypes = new[] { 1000, 1116, 7014, 7017, 7018 };
-
+            ref PrefabDesc megapumper = ref LDB.models.Select(ProtoIDUsedByPatches.M大抽水机).prefabDesc;
             megapumper.waterPoints = new[] { Vector3.zero };
             megapumper.portPoses = new[] { megapumper.portPoses[0] };
         }
