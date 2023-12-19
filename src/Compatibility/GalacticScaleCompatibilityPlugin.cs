@@ -46,7 +46,7 @@ namespace ProjectGenesis.Compatibility
             {
                 ref GSTheme theme = ref AccessTools.StaticFieldRefAccess<GSTheme>(fi)();
 
-                GSThemeAdjust.AdjustTheme(ref theme);
+                GSThemeModify.ModifyTheme(ref theme);
             }
 
             GSVeinType.saneVeinTypes["Aluminum"] = (EVeinType)15;
@@ -432,18 +432,18 @@ namespace ProjectGenesis.Compatibility
         }
     }
 
-    public static class GSThemeAdjust
+    public static class GSThemeModify
     {
-        internal static void AdjustTheme(ref GSTheme theme)
+        internal static void ModifyTheme(ref GSTheme theme)
         {
             if (theme.PlanetType == EPlanetType.Gas)
             {
-                GasGiantAdjust(ref theme);
+                GasGiantModify(ref theme);
             }
             else
             {
-                AdjustGasItems(ref theme);
-                AdjustVeins(ref theme);
+                ModifyGasItems(ref theme);
+                ModifyVeins(ref theme);
 
                 if (theme.WaterItemId == 1000) theme.WaterItemId = 7018;
 
@@ -492,7 +492,7 @@ namespace ProjectGenesis.Compatibility
             }
         }
 
-        private static void GasGiantAdjust(ref GSTheme theme)
+        private static void GasGiantModify(ref GSTheme theme)
         {
             if (theme.GasItems.Length != 2) return;
 
@@ -508,7 +508,7 @@ namespace ProjectGenesis.Compatibility
             }
         }
 
-        private static void AdjustVeins(ref GSTheme theme)
+        private static void ModifyVeins(ref GSTheme theme)
         {
             Array.Resize(ref theme.VeinSpot, 15);
             Array.Resize(ref theme.VeinCount, 15);
@@ -535,9 +535,15 @@ namespace ProjectGenesis.Compatibility
             }
         }
 
-        private static void AdjustGasItems(ref GSTheme theme)
+        private static void ModifyGasItems(ref GSTheme theme)
         {
-            if (theme.Wind == 0)
+            var rand = new DotNet35Random();
+
+            float themeWind = theme.Wind;
+
+            if (theme.LDBThemeId == 12) themeWind = 1;
+
+            if (themeWind == 0)
             {
                 theme.GasItems = Array.Empty<int>();
                 theme.GasSpeeds = Array.Empty<float>();
@@ -545,9 +551,7 @@ namespace ProjectGenesis.Compatibility
             else if (PlanetGasData.TryGetValue(theme.LDBThemeId, out int[] value))
             {
                 theme.GasItems = value;
-                theme.GasSpeeds = theme.GasItems.Length == 1
-                                      ? new float[] { theme.Wind * 0.7f }
-                                      : new float[] { theme.Wind * 0.7f, theme.Wind * 0.18f };
+                theme.GasSpeeds = theme.GasItems.Length == 1 ? GasSpeedsOneItem() : GasSpeedsTwoItems();
             }
             else if (theme.GasItems == null || theme.GasItems.Length == 0)
             {
@@ -555,15 +559,20 @@ namespace ProjectGenesis.Compatibility
                 {
                     case EPlanetType.Ocean:
                         theme.GasItems = new[] { 6220, 7019 };
-                        theme.GasSpeeds = new float[] { theme.Wind * 0.7f, theme.Wind * 0.18f };
+                        theme.GasSpeeds = GasSpeedsTwoItems();
                         break;
 
                     default:
                         theme.GasItems = new[] { 6206 };
-                        theme.GasSpeeds = new float[] { theme.Wind * 0.7f };
+                        theme.GasSpeeds = GasSpeedsOneItem();
                         break;
                 }
             }
+
+            float[] GasSpeedsTwoItems()
+                => new float[] { (float)(themeWind * (0.65f + rand.NextDouble() * 0.1f)), (float)(themeWind * (0.16f + rand.NextDouble() * 0.04f)) };
+
+            float[] GasSpeedsOneItem() => new float[] { (float)(themeWind * (0.65f + rand.NextDouble() * 0.1f)) };
         }
 
         private static void RemoveVein(ref GSTheme theme, int id)
