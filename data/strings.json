@@ -1126,8 +1126,8 @@
   },
   {
     "Name": "反物质能量炉",
-    "ZHCN": "反物质能量炉",
-    "ENUS": "Antimatter Energy Reactor"
+    "ZHCN": "人造恒星 MK.II",
+    "ENUS": "Artificial Star MK.II"
   },
   {
     "Name": "反物质约束单元",
@@ -1161,8 +1161,8 @@
   },
   {
     "Name": "I反物质能量炉",
-    "ZHCN": "基于湮灭反应将反物质转化为能量的设备。",
-    "ENUS": "Reactor based on annihilation reactions converting antimatter into energy."
+    "ZHCN": "“你只需要让正反质子束从两端静静的穿过磁场进入约束球就可以了，轻松愉快！”它简单的外形归功于理论的优雅，被人们称为“人造小太阳”。",
+    "ENUS": "\"Just allow the positive and negative proton beams to pass silently through the magnetic field from both ends into the Constraint Sphere, nice and easy!\" It is simple but effective and is called the Artificial Sun."
   },
   {
     "Name": "硫粉",
@@ -1911,8 +1911,8 @@
   },
   {
     "Name": "T反物质能量炉描述",
-    "ZHCN": "掌控质能转换技术，可以将反物质转化为能量。",
-    "ENUS": "Technology of mass-energy conversion can now convert antimatter into energy."
+    "ZHCN": "基于反物质约束技术的新一代人造恒星，直接利用质能转换过程进行发电。",
+    "ENUS": "A new generation of artificial stars based on antimatter confinement technology, directly utilizing the mass-energy conversion process for power generation."
   },
   {
     "Name": "T反物质能量炉结果",
@@ -1926,8 +1926,8 @@
   },
   {
     "Name": "T反物质能量炉",
-    "ZHCN": "反物质能量炉",
-    "ENUS": "Antimatter Energy Reactor"
+    "ZHCN": "质能转换利用",
+    "ENUS": "Qualitative transformation annihilation"
   },
   {
     "Name": "T物品增产",
@@ -1946,8 +1946,8 @@
   },
   {
     "Name": "人造恒星描述",
-    "ZHCN": "使用约束技术将聚变反应稳定掌控，并将其作为能源利用。",
-    "ENUS": "Using confinement technology to stabilize and control fusion reactions and use them as an energy source."
+    "ZHCN": "基于磁约束技术对等离子体进行精准控制，模拟恒星结构并以此发电。",
+    "ENUS": "Precise control of plasma based on magnetic confinement technology to simulate stellar structure and generate electricity from it."
   },
   {
     "Name": "T标准制造单元",
@@ -2481,8 +2481,8 @@
   },
   {
     "Name": "I人造恒星",
-    "ZHCN": "“你只需要把聚变燃料棒送进去就可以了，轻松愉快！” 它简单的外形归功于理论的优雅，被人们称为“人造小太阳”。",
-    "ENUS": "\"All you have to do is let fusion fuel rod in, nice'n easy!\" This scaled-down version of the system is known as the Mini-sun.\n"
+    "ZHCN": "其外围有三个使用高强度合金制造的环形结构，能够精准生成磁场约束其中的等离子体并模拟恒星反应进行发电。",
+    "ENUS": "It is surrounded by three rings made of high-strength alloys that precisely generate a magnetic field to confine the plasma therein and simulate stellar reactions for power generation."
   },
   {
     "Name": "原油精炼厂",
@@ -3133,5 +3133,35 @@
     "Name": "制造台 Mk.IV",
     "ZHCN": "尼德威阿尔 · 物质重组工厂",
     "ENUS": "Nidavellir · Re-composing Assembler"
+  },
+  {
+    "Name": "人造恒星",
+    "ZHCN": "人造恒星 MK.I",
+    "ENUS": "Artificial Star MK.I"
+  },
+  {
+    "Name": "T虚数空间存储",
+    "ZHCN": "虚数空间存储",
+    "ENUS": "Virtual space storage"
+  },
+  {
+    "Name": "虚数空间存储描述",
+    "ZHCN": "得当的使用负熵奇点，我们可以利用它打开一道通向虚数空间的裂隙，由于虚数空间的特殊性质，你可以在任何一个地方再次复现这个过程。\r\n<color=\"#FD965ECC\">警告：</color>该科技的相关技术已被COSMO技术伦理委员会禁用，<color=\"#FD965ECC\">请手动研究。</color>",
+    "ENUS": "Using the negentropic singularity properly, we can use it to open up a rift to imaginary space, and due to the special nature of imaginary space, you can reproduce the process again anywhere.\r\n<color=\"#FD965ECC\">Warning:</color> This technology has been prohibited by the COSMO Technology Ethics Committee. <color=\"#FD965ECC\">Please initiate such research manually.</color>"
+  },
+  {
+    "Name": "虚数空间存储结果",
+    "ZHCN": "你解锁了量子储物仓，它的内部始终指向一个特殊空间，你可以利用这一特性轻松跨越数十光年的距离进行物品传输。",
+    "ENUS": "You unlock the Quantum Storage Bin, whose interior always points to a special space, and you can use this property to easily transfer items across distances of tens of light years."
+  },
+  {
+    "Name": "量子储物仓",
+    "ZHCN": "量子储物仓",
+    "ENUS": "Quantum Storage Warehouse"
+  },
+  {
+    "Name": "I量子储物仓",
+    "ZHCN": "借助负熵奇点，我们凿穿了物质界限，打开了通往虚数空间的大门。所有的量子储物仓内部都指向同一个空间，你放入其中的物品可以在\r<color=\"#FD965ECC\">任何一个</color>量子储物仓中拿出来。",
+    "ENUS": "Quantum Storage Warehouse"
   }
 ]

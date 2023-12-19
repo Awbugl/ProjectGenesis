@@ -1269,11 +1269,11 @@
       6005
     ],
     "ItemPoints": [
-      10,
-      10,
-      10,
-      10,
-      10
+      4,
+      4,
+      4,
+      4,
+      4
     ],
     "HashNeeded": 7200000,
     "UnlockRecipes": [],
@@ -1574,8 +1574,7 @@
     "HashNeeded": 288000,
     "UnlockRecipes": [
       52,
-      522,
-      524
+      522
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -6658,6 +6657,46 @@
     "HashNeeded": 180000,
     "UnlockRecipes": [
       791
+    ],
+    "UnlockFunctions": [],
+    "UnlockValues": [],
+    "Published": true,
+    "Level": 0,
+    "MaxLevel": 0,
+    "LevelCoef1": 0,
+    "LevelCoef2": 0,
+    "IsLabTech": true,
+    "PreTechsMax": false,
+    "AddItems": [],
+    "AddItemCounts": [],
+    "PropertyOverrideItems": [],
+    "PropertyItemCounts": []
+  },
+  {
+    "ID": 1962,
+    "Name": "T虚数空间存储",
+    "IconPath": "Assets/texpack/量子无距传输",
+    "Desc": "虚数空间存储描述",
+    "Conclusion": "虚数空间存储结果",
+    "IsHiddenTech": true,
+    "PreItem": [
+      5204
+    ],
+    "Position": [
+      29.0,
+      21.0
+    ],
+    "PreTechs": [],
+    "PreTechsImplicit": [],
+    "Items": [
+      5201
+    ],
+    "ItemPoints": [
+      10
+    ],
+    "HashNeeded": 720000,
+    "UnlockRecipes": [
+      524
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],

@@ -21,7 +21,7 @@ namespace ProjectGenesis.Utils
             CopyModelProto(49, ProtoIDUsedByPatches.M物质裂解塔, Color.HSVToRGB(0.6174f, 0.6842f, 0.9686f));
             CopyModelProto(49, ProtoIDUsedByPatches.M巨型化学反应釜, Color.HSVToRGB(0.1404f, 0.8294f, 0.9882f));
             CopyModelProto(49, ProtoIDUsedByPatches.M精密结构组装厂, Color.HSVToRGB(0.9814f, 0.6620f, 0.8471f));
-            CopyModelProto(118, ProtoIDUsedByPatches.M反物质能量炉, Color.HSVToRGB(0.5985f, 0.7333f, 0.2353f));
+            CopyModelProto(56, ProtoIDUsedByPatches.M人造恒星MK2);
             CopyModelProto(119, ProtoIDUsedByPatches.M大抽水机, Color.HSVToRGB(0.6174f, 0.6842f, 0.9686f));
             CopyModelProto(46, ProtoIDUsedByPatches.M同位素温差发电机, Color.HSVToRGB(0.4174f, 0.742f, 0.9686f));
             CopyModelProto(49, ProtoIDUsedByPatches.M物质分解设施, new Color(0.3216F, 0.8157F, 0.09020F));
@@ -30,7 +30,7 @@ namespace ProjectGenesis.Utils
             CopyModelProto(432, ProtoIDUsedByPatches.M反物质导弹组, new Color(0.3059F, 0.2196F, 0.4941F));
             CopyModelProto(374, ProtoIDUsedByPatches.M高斯机枪塔MK2, new Color(0.0000f, 0.7490f, 1.0000f));
             CopyModelProto(373, ProtoIDUsedByPatches.M高频激光塔MK2, new Color(0.5765f, 0.4392f, 0.8588f));
-            CopyModelProto(52, ProtoIDUsedByPatches.M量子储物仓, new Color(0.0000f, 0.7490f, 1.0000f));
+            CopyModelProto(52, ProtoIDUsedByPatches.M量子储物仓, new Color(0.7373f, 0.2118f, 0.8510f));
 
             AddAtmosphericCollectStation();
         }
@@ -116,6 +116,39 @@ namespace ProjectGenesis.Utils
 
             LDBTool.PreAddProto(model);
         }
+        private static void CopyModelProto(int oriId, int id)
+        {
+            ModelProto oriModel = LDB.models.Select(oriId);
+            ModelProto model = oriModel.Copy();
+            model.Name = id.ToString();
+            model.ID = id;
+            PrefabDesc desc = oriModel.prefabDesc;
+            model.prefabDesc = new PrefabDesc(id, desc.prefab, desc.colliderPrefab);
+
+            for (int i = 0; i < model.prefabDesc.lodMaterials.Length; i++)
+            {
+                if (model.prefabDesc.lodMaterials[i] == null) continue;
+                for (int j = 0; j < model.prefabDesc.lodMaterials[i].Length; j++)
+                {
+                    if (model.prefabDesc.lodMaterials[i][j] == null) continue;
+                    model.prefabDesc.lodMaterials[i][j] = new Material(desc.lodMaterials[i][j]);
+                }
+
+                
+            }
+
+            model.prefabDesc.modelIndex = id;
+            model.prefabDesc.hasBuildCollider = true;
+            model.prefabDesc.colliders = desc.colliders;
+            model.prefabDesc.buildCollider = desc.buildCollider;
+            model.prefabDesc.buildColliders = desc.buildColliders;
+            model.prefabDesc.colliderPrefab = desc.colliderPrefab;
+
+            model.sid = "";
+            model.SID = "";
+
+            LDBTool.PreAddProto(model);
+        }
 
         internal static void ModelPostFix()
         {
@@ -125,7 +158,13 @@ namespace ProjectGenesis.Utils
 
             ref PrefabDesc prefabDesc = ref LDB.models.Select(ProtoIDUsedByPatches.M同位素温差发电机).prefabDesc;
             ref Material[] prefabDescLODMaterial = ref prefabDesc.lodMaterials[0];
-            prefabDescLODMaterial[2].SetColor("_TintColor", new Color(0.3861f, 2.4837f, 0.3137f, 0.7692f));
+            prefabDescLODMaterial[2].SetColor("_TintColor", new Color(0.2715f, 1.7394f, 0.1930f));
+            ref PrefabDesc prefabDesc2 = ref LDB.models.Select(ProtoIDUsedByPatches.M人造恒星MK2).prefabDesc;
+            ref Material[] prefabDescLODMaterial2 = ref prefabDesc2.lodMaterials[0];
+            prefabDescLODMaterial2[1].SetColor("_TintColor", new Color(0.1804f, 0.4953f, 1.3584f));//亮部
+            prefabDescLODMaterial2[1].SetColor("_TintColor1", new Color(0.1294f, 0.3130f, 1.1508f));//暗部
+            prefabDescLODMaterial2[1].SetColor("_RimColor", new Color(0.4157f, 0.6784f, 1.0000f));//边缘特效
+            //prefabDescLODMaterial2[1].SetFloat("_Multiplier", 0.1f);
         }
 
         internal static void ItemPostFix()

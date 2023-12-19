@@ -233,7 +233,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 2310,
+    "GridIndex": 2311,
     "Time": 120,
     "Input": [
       6501,
@@ -339,7 +339,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 2308,
+    "GridIndex": 2309,
     "Time": 240,
     "Input": [
       6501,
@@ -369,7 +369,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 2309,
+    "GridIndex": 2310,
     "Time": 120,
     "Input": [
       6501,
@@ -1086,12 +1086,12 @@
     "Input": [
       1125,
       1205,
-      1305
+      7803
     ],
     "InCounts": [
       8,
       4,
-      4
+      2
     ],
     "Output": [
       1403
@@ -1283,7 +1283,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 2306,
+    "GridIndex": 2307,
     "Time": 240,
     "Input": [
       6501,
@@ -1500,16 +1500,18 @@
     "IconPath": "",
     "Type": 5,
     "GridIndex": 1714,
-    "Time": 720,
+    "Time": 360,
     "Input": [
-      6204,
-      1107,
-      7707
+      6203,
+      1106,
+      7705,
+      5206
     ],
     "InCounts": [
-      1,
-      1,
-      1
+      2,
+      2,
+      2,
+      2
     ],
     "Output": [
       6271
@@ -1865,7 +1867,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 10,
-    "GridIndex": 2313,
+    "GridIndex": 2314,
     "Time": 360,
     "Input": [
       6502,
@@ -2033,7 +2035,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 9,
-    "GridIndex": 2312,
+    "GridIndex": 2313,
     "Time": 360,
     "Input": [
       6502,
@@ -2167,7 +2169,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 10,
-    "GridIndex": 2314,
+    "GridIndex": 2315,
     "Time": 900,
     "Input": [
       6503,
@@ -2910,15 +2912,17 @@
     "IconPath": "",
     "Type": 10,
     "GridIndex": 2112,
-    "Time": 1800,
+    "Time": 3600,
     "Input": [
       6503,
       6271,
+      1403,
       7806
     ],
     "InCounts": [
       20,
-      40,
+      20,
+      8,
       1
     ],
     "Output": [
@@ -3054,7 +3058,7 @@
     "Input": [
       7707,
       1205,
-      7803
+      1305
     ],
     "InCounts": [
       4,
@@ -3318,7 +3322,7 @@
       1
     ],
     "Explicit": false,
-    "Handcraft": true,
+    "Handcraft": false,
     "NonProductive": false
   },
   {
@@ -3917,7 +3921,7 @@
     "Time": 240,
     "Input": [
       1610,
-      7610,
+      1130,
       1127
     ],
     "InCounts": [
@@ -4121,7 +4125,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 10,
-    "GridIndex": 2311,
+    "GridIndex": 2312,
     "Time": 240,
     "Input": [
       2901,
@@ -4142,7 +4146,7 @@
       1
     ],
     "Explicit": false,
-    "Handcraft": true,
+    "Handcraft": false,
     "NonProductive": false
   },
   {
@@ -4172,7 +4176,7 @@
       1
     ],
     "Explicit": false,
-    "Handcraft": true,
+    "Handcraft": false,
     "NonProductive": false
   },
   {
@@ -4185,16 +4189,16 @@
     "Time": 1800,
     "Input": [
       6503,
-      5204,
+      6271,
       5205,
-      5206,
+      5204,
       7803
     ],
     "InCounts": [
-      8,
+      10,
+      40,
       20,
       10,
-      30,
       10
     ],
     "Output": [
@@ -4204,7 +4208,7 @@
       1
     ],
     "Explicit": false,
-    "Handcraft": true,
+    "Handcraft": false,
     "NonProductive": false
   },
   {
@@ -4663,7 +4667,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 10,
-    "GridIndex": 2307,
+    "GridIndex": 2308,
     "Time": 600,
     "Input": [
       6503,
@@ -5038,7 +5042,7 @@
     "Name": "量子储液罐",
     "Description": "",
     "IconPath": "",
-    "Type": 9,
+    "Type": 10,
     "GridIndex": 2208,
     "Time": 900,
     "Input": [
@@ -5094,20 +5098,20 @@
     "Name": "量子储物仓",
     "Description": "",
     "IconPath": "",
-    "Type": 9,
-    "GridIndex": 2215,
-    "Time": 900,
+    "Type": 10,
+    "GridIndex": 2306,
+    "Time": 2400,
     "Input": [
-      1107,
-      1124,
-      1305,
-      7706
+      6271,
+      2102,
+      5204,
+      7805
     ],
     "InCounts": [
-      16,
-      8,
-      4,
-      4
+      20,
+      60,
+      10,
+      2
     ],
     "Output": [
       6231
@@ -6455,7 +6459,7 @@
     "Time": 240,
     "Input": [
       1611,
-      1130,
+      7610,
       1406
     ],
     "InCounts": [
