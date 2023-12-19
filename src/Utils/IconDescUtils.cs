@@ -22,7 +22,7 @@ namespace ProjectGenesis.Utils
                                                                                   {
                                                                                       { 1114, new Color32(138, 83, 43, 255) },   //Coal Oil
                                                                                       { 7018, new Color32(97, 132, 186, 255) },  //Ocean
-                                                                                      { 7006, new Color32(218, 56, 70, 255) },   //苯
+                                                                                      { 7006, new MyColor("DA3846FF") },   //苯
                                                                                       { 7009, new Color32(167, 255, 39, 255) },  //丙烯
                                                                                       { 6206, new Color32(191, 227, 255, 255) }, //CO2
                                                                                       { 6212, new Color32(188, 182, 5, 255) },   //JP10
@@ -31,6 +31,15 @@ namespace ProjectGenesis.Utils
                                                                                       { 7002, new Color32(195, 198, 234, 255) }, //NH3
                                                                                       { 7017, new Color32(157, 56, 157, 255) },  //HNO3
                                                                                   };
+        internal static readonly Dictionary<int, Color32> OreColor = new Dictionary<int, Color32>
+                                                                                  {
+                                                                                      { 6202, new Color32(210, 184, 147, 255) }, //Al
+                                                                                  };
+        internal static readonly Dictionary<int, Color32> CompentColor = new Dictionary<int, Color32>
+                                                                                  {
+                                                                                      { 7803, new Color32(228, 153, 255, 255) }, //光学芯片
+                                                                                  };
+
 
         private static readonly Color DefaultSideColor = new Color32(119, 136, 153, 255),
                                       Color6278 = new Color(1f, 0.4117f, 0.3137f, 0.1961f),
@@ -72,6 +81,20 @@ namespace ProjectGenesis.Utils
                 desc.solidAlpha = 0.6f;
                 desc.iconEmission = Color.clear;
                 desc.iconAlpha = 0.0f;
+            }
+            if (OreColor.TryGetValue(itemid, out value))
+            {
+                desc.faceColor = value;
+                desc.sideColor = value;
+                desc.reserved0 = value;
+                desc.iconEmission = Color.clear;
+            }
+            if (CompentColor.TryGetValue(itemid, out value))
+            {
+                //desc.faceColor = colors[1];
+                desc.sideColor = value;
+                desc.reserved0 = value;
+                desc.iconEmission = Color.clear;
             }
 
             return desc;
