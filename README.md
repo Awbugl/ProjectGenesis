@@ -9,7 +9,7 @@ Construct Real Universe. Then leave a GenesisBook.
 ![img.png](https://assets.awbugl.top/dsp-genesisbook/1.jpg)
 ![img.png](https://assets.awbugl.top/dsp-genesisbook/5.jpg)
 ![img.png](https://assets.awbugl.top/dsp-genesisbook/3.jpg)
-![img.png](https://assets.awbugl.top/dsp-genesisbook/4.jpg)
+![img.png](https://assets.awbugl.top/dsp-genesisbook/6.jpg)
 
 ## 意见和反馈 | Feedback and suggestions
 
