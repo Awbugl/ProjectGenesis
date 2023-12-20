@@ -26,6 +26,7 @@ using ERecipeType_1 = ERecipeType;
 using static ProjectGenesis.Utils.JsonDataUtils;
 using static ProjectGenesis.Utils.CopyModelUtils;
 using static ProjectGenesis.Patches.Logic.AddVein.ModifyPlanetTheme;
+using static ProjectGenesis.Utils.TranslateUtils;
 
 #pragma warning disable CS0618
 
@@ -46,7 +47,7 @@ namespace ProjectGenesis
     [BepInDependency(NebulaModAPI.API_GUID)]
     [BepInDependency(InstallationCheckPlugin.MODGUID, BepInDependency.DependencyFlags.SoftDependency)]
     [CommonAPISubmoduleDependency(nameof(ProtoRegistry), nameof(TabSystem))]
-    [CommonAPISubmoduleDependency(nameof(CommonAPI.Systems.ModLocalization.LocalizationModule))]
+    [CommonAPISubmoduleDependency(nameof(LocalizationModule))]
     public class ProjectGenesis : BaseUnityPlugin, IModCanSave, IMultiplayerMod
     {
         public const string MODGUID = "org.LoShin.GenesisBook";
@@ -143,6 +144,8 @@ namespace ProjectGenesis
                                       select t;
 
             foreach (Type type in types) Harmony.PatchAll(type);
+            
+            RegisterStrings();
 
             ModifyVeinData();
 
