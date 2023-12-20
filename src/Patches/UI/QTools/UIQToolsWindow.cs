@@ -373,17 +373,14 @@ namespace ProjectGenesis.Patches.UI.QTools
 
         public override void _OnUpdate()
         {
+            SetTabIndex(_tabIndex, false);
+
             if (ProjectGenesis.QToolsHotkey.Value.IsDown())
             {
                 if (isOpening)
-                {
                     CloseWindow();
-                }
                 else
-                {
-                    SetTabIndex(_tabIndex, false);
                     OpenWindow();
-                }
             }
 
             if (isOpening && VFInput.escape)

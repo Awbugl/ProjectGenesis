@@ -22,7 +22,7 @@ namespace ProjectGenesis.Patches.UI.DisplayText
                     break;
 
                 case Utils_ERecipeType.Refine:
-                    __result = "原油精炼厂".TranslateFromJson();
+                    __result = "原油精炼厂".Translate();
                     break;
 
                 case Utils_ERecipeType.Assemble:
