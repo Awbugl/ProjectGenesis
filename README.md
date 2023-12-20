@@ -42,8 +42,6 @@ or open a issue via [github](https://github.com/Awbugl/ProjectGenesis).
 
 ## 介绍
 
-> 如果你玩过 Minecraft 的 GregTech mod, 可能会看到一些熟悉的东西。
-
 ### 特色
 
 - 真正的科技“树”：完全重做的、更加条理分明的科技树，现在它的结构更加合理了。
