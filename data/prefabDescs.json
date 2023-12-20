@@ -389,7 +389,6 @@
   {
     "ItemID": 7617,
     "ModelID": 515,
-    "turretMaxAttackRange": 66,
     "turretMuzzleInterval": 0,
     "turretRoundInterval": 300000,
     "idleEnergyPerTick": 800,
@@ -398,7 +397,6 @@
   {
     "ItemID": 7618,
     "ModelID": 516,
-    "turretMaxAttackRange": 60,
     "turretDamageScale": 4
   },
   {
