@@ -20,11 +20,9 @@ namespace ProjectGenesis.Utils
 
             #region TechProto
 
-            TechProto templateTech = LDB.techs.Select(1311);
-
             foreach (TechProtoJson techjson in TechProtos())
             {
-                TechProto proto = LDB.techs.Exist(techjson.ID) ? LDB.techs.Select(techjson.ID) : templateTech.Copy();
+                TechProto proto = LDB.techs.Exist(techjson.ID) ? LDB.techs.Select(techjson.ID) : new TechProto();
                 proto.ID = techjson.ID;
                 proto.Name = techjson.Name;
                 proto.Desc = techjson.Desc;
