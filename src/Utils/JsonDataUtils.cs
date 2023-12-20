@@ -240,8 +240,6 @@ namespace ProjectGenesis.Utils
                 if (json.assemblerRecipeType != null) desc.assemblerRecipeType = (ERecipeType_1)json.assemblerRecipeType.Value;
                 if (json.workEnergyPerTick != null) desc.workEnergyPerTick = json.workEnergyPerTick.Value;
                 if (json.idleEnergyPerTick != null) desc.idleEnergyPerTick = json.idleEnergyPerTick.Value;
-                if (json.dragBuild != null) desc.dragBuild = json.dragBuild.Value;
-                if (json.dragBuildDist != null) desc.dragBuildDist = new Vector2(json.dragBuildDist[0], json.dragBuildDist[1]);
                 if (json.minerPeriod != null) desc.minerPeriod = json.minerPeriod.Value;
                 if (json.ejectorChargeFrame != null) desc.ejectorChargeFrame = json.ejectorChargeFrame.Value;
                 if (json.ejectorColdFrame != null) desc.ejectorColdFrame = json.ejectorColdFrame.Value;

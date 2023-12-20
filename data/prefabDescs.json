@@ -230,12 +230,7 @@
     "ModelID": 502,
     "assemblerRecipeType": 11,
     "idleEnergyPerTick": 400,
-    "workEnergyPerTick": 12000,
-    "dragBuild": true,
-    "dragBuildDist": [
-      2.9,
-      2.9
-    ]
+    "workEnergyPerTick": 12000
   },
   {
     "ItemID": 6257,
@@ -325,12 +320,7 @@
     "ModelID": 509,
     "isAccumulator": false,
     "isPowerGen": true,
-    "genEnergyPerTick": 50000,
-    "dragBuild": true,
-    "dragBuildDist": [
-      2.8,
-      3.2
-    ]
+    "genEnergyPerTick": 50000
   },
   {
     "ItemID": 6264,

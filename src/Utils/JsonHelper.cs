@@ -272,8 +272,6 @@ namespace ProjectGenesis.Utils
             public long? idleEnergyPerTick { get; set; } = null;
             public long? workEnergyPerTick { get; set; } = null;
             public int? assemblerSpeed { get; set; } = null;
-            public bool? dragBuild { get; set; } = null;
-            public float[] dragBuildDist { get; set; } = null;
             public int? minerPeriod { get; set; } = null;
             public int? ejectorChargeFrame { get; set; } = null;
             public int? ejectorColdFrame { get; set; } = null;
@@ -329,8 +327,6 @@ namespace ProjectGenesis.Utils
                        assemblerRecipeType = (int)i.assemblerRecipeType,
                        workEnergyPerTick = i.workEnergyPerTick,
                        idleEnergyPerTick = i.idleEnergyPerTick,
-                       dragBuild = i.dragBuild,
-                       dragBuildDist = new[] { i.dragBuildDist.x, i.dragBuildDist.y },
                        minerPeriod = i.minerPeriod,
                        ejectorChargeFrame = i.ejectorChargeFrame,
                        ejectorColdFrame = i.ejectorColdFrame,

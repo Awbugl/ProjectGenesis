@@ -84,22 +84,23 @@ namespace ProjectGenesis.Utils
             model.Name = id.ToString();
             model.ID = id;
             PrefabDesc desc = oriModel.prefabDesc;
-            model.prefabDesc = new PrefabDesc(id, desc.prefab, desc.colliderPrefab);
+            ref PrefabDesc modelPrefabDesc = ref model.prefabDesc;
+            modelPrefabDesc = new PrefabDesc(id, desc.prefab, desc.colliderPrefab);
 
-            for (int i = 0; i < model.prefabDesc.lodMaterials.Length; i++)
+            for (int i = 0; i < modelPrefabDesc.lodMaterials.Length; i++)
             {
-                if (model.prefabDesc.lodMaterials[i] == null) continue;
-                for (int j = 0; j < model.prefabDesc.lodMaterials[i].Length; j++)
+                if (modelPrefabDesc.lodMaterials[i] == null) continue;
+                for (int j = 0; j < modelPrefabDesc.lodMaterials[i].Length; j++)
                 {
-                    if (model.prefabDesc.lodMaterials[i][j] == null) continue;
-                    model.prefabDesc.lodMaterials[i][j] = new Material(desc.lodMaterials[i][j]);
+                    if (modelPrefabDesc.lodMaterials[i][j] == null) continue;
+                    modelPrefabDesc.lodMaterials[i][j] = new Material(desc.lodMaterials[i][j]);
                 }
 
                 if (color.HasValue)
                 {
                     try
                     {
-                        model.prefabDesc.lodMaterials[i][0].color = color.Value;
+                        modelPrefabDesc.lodMaterials[i][0].color = color.Value;
                     }
                     catch
                     {
@@ -108,12 +109,15 @@ namespace ProjectGenesis.Utils
                 }
             }
 
-            model.prefabDesc.modelIndex = id;
-            model.prefabDesc.hasBuildCollider = true;
-            model.prefabDesc.colliders = desc.colliders;
-            model.prefabDesc.buildCollider = desc.buildCollider;
-            model.prefabDesc.buildColliders = desc.buildColliders;
-            model.prefabDesc.colliderPrefab = desc.colliderPrefab;
+            modelPrefabDesc.modelIndex = id;
+            modelPrefabDesc.hasBuildCollider = desc.hasBuildCollider;
+            modelPrefabDesc.colliders = desc.colliders;
+            modelPrefabDesc.buildCollider = desc.buildCollider;
+            modelPrefabDesc.buildColliders = desc.buildColliders;
+            modelPrefabDesc.colliderPrefab = desc.colliderPrefab;
+
+            modelPrefabDesc.dragBuild = desc.dragBuild;
+            modelPrefabDesc.dragBuildDist = desc.dragBuildDist;
 
             model.sid = "";
             model.SID = "";
