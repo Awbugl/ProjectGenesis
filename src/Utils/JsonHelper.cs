@@ -27,6 +27,8 @@ namespace ProjectGenesis.Utils
 
         internal static StringProtoJson[] StringProtos() => GetJsonContent<StringProtoJson>("strings");
 
+        internal static StringProtoJson[] StringModProtos() => GetJsonContent<StringProtoJson>("strings_mod");
+
         internal static TutorialProtoJson[] TutorialProtos() => GetJsonContent<TutorialProtoJson>("tutorials");
 
         internal static PrefabDescJson[] PrefabDescs() => GetJsonContent<PrefabDescJson>("prefabDescs");

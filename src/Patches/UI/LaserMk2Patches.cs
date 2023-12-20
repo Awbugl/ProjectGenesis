@@ -27,7 +27,9 @@ namespace ProjectGenesis.Patches.UI
             _combatTurretLaserMk2ContinuousDesc = turretLaserContinuousDesc.gameObject.AddComponent<RenderableObjectDesc>();
 
             _combatTurretLaserMk2ContinuousDesc.gpuWorkType = EGpuWorkEntry.Skill;
+            _combatTurretLaserMk2ContinuousDesc.castShadow = new[] { false };
             _combatTurretLaserMk2ContinuousDesc.meshProcedured = turretLaserContinuousDesc.meshProcedured;
+            _combatTurretLaserMk2ContinuousDesc.rendererName = turretLaserContinuousDesc.rendererName;
 
             var material = new Material(turretLaserContinuousDesc.materials[0]);
 
@@ -64,11 +66,7 @@ namespace ProjectGenesis.Patches.UI
 
             ref LocalLaserContinuous local = ref turretLaserMk2Continuous.buffer[projectileId];
 
-            if (local.id != projectileId)
-            {
-                ProjectGenesis.logger.LogInfo("local.id != projectileId ! local.id: " + local.id + "projectileId: "+ projectileId);
-                return true;
-            }
+            if (local.id != projectileId) return true;
 
             local.Stop(skillSystem);
             __instance.projectileId = 0;
@@ -157,7 +155,7 @@ namespace ProjectGenesis.Patches.UI
             matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_1), new CodeInstruction(OpCodes.Ldarg_0),
                                      new CodeInstruction(OpCodes.Call,
                                                          AccessTools.Method(typeof(LaserMk2Patches), nameof(Patch_ProjectileId_Method))));
-            
+
             return matcher.InstructionEnumeration();
         }
 

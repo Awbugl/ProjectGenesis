@@ -181,6 +181,7 @@
         <EmbeddedResource Include="data\prefabDescs.json"/>
         <EmbeddedResource Include="data\recipes.json"/>
         <EmbeddedResource Include="data\strings.json"/>
+        <EmbeddedResource Include="data\strings_mod.json" />
         <EmbeddedResource Include="data\techs.json"/>
         <EmbeddedResource Include="data\tutorials.json"/>
     </ItemGroup>
