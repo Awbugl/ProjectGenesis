@@ -2711,7 +2711,12 @@
   },
   {
     "Name": "I量子储物仓",
-    "ZHCN": "借助负熵奇点，我们凿穿了物质界限，打开了通往虚数空间的大门。所有的量子储物仓内部都指向同一个空间，你放入其中的物品可以在\r<color=\"#FD965ECC\">任何一个</color>量子储物仓中拿出来。",
-    "ENUS": "Quantum Storage Warehouse"
+    "ZHCN": "借助负熵奇点，我们能够凿穿物质界限，打开通往虚数空间的大门。量子储物仓在虚数空间上切割出一小块独立的区域，并以此进行物品存储。\n所有的量子储物仓内部都指向同一个空间，你放入其中的物品可以在\r<color=\"#FD965ECC\">任何一个</color>量子储物仓中拿出来。",
+    "ENUS": "With the help of a negative entropy singularity, we are able to chisel through the boundaries of matter and open the door to imaginary space. Quantum depot cut out a small, separate area on imaginary space and use it for item storage. \n All quantum storage bins point to the same space internally, and items you put in them can be taken out in \r<color=\"#FD965ECC\">any</color> quantum depot."
+  },
+  {
+    "Name": "I熔炉 Mk.III",
+    "ZHCN": "在不断输入能量后，熔炉内部被激发的负熵奇点可以稳定地输出负熵，利用核心素的稳定性，可以进一步约束处于激发态的负熵奇点，引导其击穿物质界限。我们能够借此从虚数空间中解构粒子信息，并将其转换为实在的物质。\n负熵熔炉能够将配方<color=\"#FD965ECC\">翻倍产出</color>，你只需要输入一份原料，就能得到两份成品。",
+    "ENUS": "With the constant input of energy, the excited negentropic singularity inside the furnace can stabilize the output of negentropy, and by using the stability of the core elements, the negentropic singularity in the excited state can be further constrained and guided to penetrate the boundaries of matter. We are able to use this to deconstruct particle information from imaginary number space and convert it into additional real matter. The \n Negentropic Furnace is able to <color=\"#FD965ECC\">double the output of the recipe</color>, you only need to input one ingredient to get two finished products."
   }
 ]
