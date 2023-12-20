@@ -915,7 +915,7 @@
     "Name": "量子储物仓",
     "Description": "I量子储物仓",
     "IconPath": "Assets/texpack/量子箱",
-    "GridIndex": 2215,
+    "GridIndex": 2306,
     "StackSize": 50,
     "Type": 5,
     "PreTechOverride": 0,
