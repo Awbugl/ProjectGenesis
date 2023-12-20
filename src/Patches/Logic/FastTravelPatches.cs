@@ -49,7 +49,9 @@ namespace ProjectGenesis.Patches.Logic
                 return false;
             }
 
-            Mecha mecha = GameMain.mainPlayer.mecha;
+            Player player = GameMain.mainPlayer;
+
+            Mecha mecha = player.mecha;
 
             long energyWant = 12000000000;
 
@@ -61,15 +63,31 @@ namespace ProjectGenesis.Patches.Logic
                 return false;
             }
 
-            if (!mecha.UseWarper())
+            if (UseNegentropySingularity(player))
             {
-                UIRealtimeTip.PopupAhead("空间翘曲器不足".Translate());
+                UIRealtimeTip.PopupAhead("负熵奇点不足".TranslateFromJson());
                 return false;
             }
 
             mecha.coreEnergy -= energyGet;
             mecha.MarkEnergyChange(9, -energyWant);
 
+            return true;
+        }
+
+        private static bool UseNegentropySingularity(Player player)
+        {
+            int itemId = 5204;
+            int itemCount = 1;
+
+            player.TakeItemFromPlayer(ref itemId, ref itemCount, out _, true, null);
+
+            if (itemId != 5204) return false;
+
+            if (itemCount != 1) return false;
+
+            player.mecha.AddConsumptionStat(itemId, itemCount, player.nearestFactory);
+            
             return true;
         }
     }

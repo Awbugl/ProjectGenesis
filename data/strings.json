@@ -1421,8 +1421,8 @@
   },
   {
     "Name": "T虫洞航行描述",
-    "ZHCN": "消耗1个<color=\"#FD965ECC\">空间翘曲器</color>和 12GJ 能量制造一个一次性虫洞，可将机甲传送至<color=\"#FD965ECC\">星图模式</color>下选择的任意星球，但请小心星轨间的干扰。",
-    "ENUS": "Consumes 1 <color=\"#FD965ECC\">Space Warper</color> and 12GJ mecha energy to create a one-time wormhole that can teleport the mecha to any planet selected in <color=\"#FD965ECC\">Star Map Mode</color>, but be careful of the interference between the orbits."
+    "ZHCN": "消耗1个<color=\"#FD965ECC\">负熵奇点</color>和 12GJ 能量制造一个一次性虫洞，可将机甲传送至<color=\"#FD965ECC\">星图模式</color>下选择的任意星球，但请小心星轨间的干扰。",
+    "ENUS": "Consumes 1 <color=\"#FD965ECC\">Negentropy Singularity</color> and 12GJ mecha energy to create a one-time wormhole that can teleport the mecha to any planet selected in <color=\"#FD965ECC\">Star Map Mode</color>, but be careful of the interference between the orbits."
   },
   {
     "Name": "人造恒星描述",
@@ -2602,7 +2602,7 @@
   {
     "Name": "T虚数空间存储",
     "ZHCN": "虚数空间存储",
-    "ENUS": "Virtual space storage"
+    "ENUS": "Virtual Space Storage"
   },
   {
     "Name": "虚数空间存储描述",

@@ -1251,8 +1251,10 @@
     "IconPath": "Assets/texpack/虫洞航行",
     "Desc": "T虫洞航行描述",
     "Conclusion": "T虫洞航行描述",
-    "IsHiddenTech": false,
-    "PreItem": null,
+    "IsHiddenTech": true,
+    "PreItem": [
+      5204
+    ],
     "Position": [
       33.0,
       -31.0
@@ -1262,20 +1264,12 @@
     ],
     "PreTechsImplicit": [],
     "Items": [
-      6001,
-      6002,
-      6003,
-      6004,
-      6005
+      5201
     ],
     "ItemPoints": [
-      4,
-      4,
-      4,
-      4,
-      4
+      10
     ],
-    "HashNeeded": 7200000,
+    "HashNeeded": 2880000,
     "UnlockRecipes": [],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -1284,7 +1278,7 @@
     "MaxLevel": 0,
     "LevelCoef1": 0,
     "LevelCoef2": 0,
-    "IsLabTech": true,
+    "IsLabTech": false,
     "PreTechsMax": false,
     "AddItems": [],
     "AddItemCounts": [],
@@ -6705,7 +6699,7 @@
     "MaxLevel": 0,
     "LevelCoef1": 0,
     "LevelCoef2": 0,
-    "IsLabTech": true,
+    "IsLabTech": false,
     "PreTechsMax": false,
     "AddItems": [],
     "AddItemCounts": [],
