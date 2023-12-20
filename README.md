@@ -1,4 +1,4 @@
-![img.png](https://assets.awbugl.top/dsp-genesisbook/profile.png)
+![img.png](https://assets.awbugl.top/dsp-genesisbook/icon.png)
 
 构建真实宇宙，撰写创世之书。
 
