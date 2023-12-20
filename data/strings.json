@@ -980,6 +980,11 @@
     "ENUS": "Substrates made with polyimide have etched structures designed for optical computing technology."
   },
   {
+    "Name": "流速监测器",
+    "ZHCN": "流速监测器",
+    "ENUS": "Traffic Monitor"
+  },
+  {
     "Name": "钨块",
     "ZHCN": "钨块",
     "ENUS": "Tungsten Ingot"

@@ -165,21 +165,18 @@ namespace ProjectGenesis
         {
             MegaAssemblerPatches.Export(w);
             PlanetFocusPatches.Export(w);
-            Patches.UI.LaserMk2Patches.Export(w);
         }
 
         public void Import(BinaryReader r)
         {
             MegaAssemblerPatches.Import(r);
             PlanetFocusPatches.Import(r);
-            Patches.UI.LaserMk2Patches.Import(r);
         }
 
         public void IntoOtherSave()
         {
             MegaAssemblerPatches.IntoOtherSave();
             PlanetFocusPatches.IntoOtherSave();
-            Patches.UI.LaserMk2Patches.IntoOtherSave();
         }
 
         public string Version => VERSION;
