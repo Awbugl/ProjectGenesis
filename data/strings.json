@@ -92,7 +92,7 @@
   {
     "Name": "特征向量模拟",
     "ZHCN": "特征向量模拟",
-    "ENUS": "Eigenvector simulation"
+    "ENUS": "Eigenvector Simulation"
   },
   {
     "Name": "I特征向量模拟",
@@ -102,7 +102,7 @@
   {
     "Name": "中继信号干扰",
     "ZHCN": "中继信号干扰",
-    "ENUS": "Relay signal interference"
+    "ENUS": "Relay Signal Interference"
   },
   {
     "Name": "I中继信号干扰",
@@ -112,7 +112,7 @@
   {
     "Name": "神经元重编程",
     "ZHCN": "神经元重编程",
-    "ENUS": "Neuronal reprogramming"
+    "ENUS": "Neuronal Reprogramming"
   },
   {
     "Name": "I神经元重编程",
@@ -122,7 +122,7 @@
   {
     "Name": "异常代码分析",
     "ZHCN": "异常代码分析",
-    "ENUS": "Abnormal code analysis"
+    "ENUS": "Abnormal Code Analysis"
   },
   {
     "Name": "I异常代码分析",
@@ -232,17 +232,17 @@
   {
     "Name": "盐酸海洋",
     "ZHCN": "盐酸海洋",
-    "ENUS": "Hydrochloric acid ocean"
+    "ENUS": "Hydrochloric Acid Ocean"
   },
   {
     "Name": "硝酸海洋",
     "ZHCN": "硝酸海洋",
-    "ENUS": "Nitric acid ocean"
+    "ENUS": "Nitric Acid Ocean"
   },
   {
     "Name": "淡水海洋",
     "ZHCN": "淡水海洋",
-    "ENUS": "Freshwater ocean"
+    "ENUS": "Freshwater Ocean"
   },
   {
     "Name": "裂变能源发电站",
@@ -327,7 +327,7 @@
   {
     "Name": "铜线圈",
     "ZHCN": "铜线圈",
-    "ENUS": "Copper coil"
+    "ENUS": "Copper Coil"
   },
   {
     "Name": "混凝土",
@@ -342,12 +342,12 @@
   {
     "Name": "煤焦油",
     "ZHCN": "煤焦油",
-    "ENUS": "Coal tar"
+    "ENUS": "Coal Tar"
   },
   {
     "Name": "剧毒有机液体",
     "ZHCN": "剧毒液体",
-    "ENUS": "Toxic liquid"
+    "ENUS": "Toxic Liquid"
   },
   {
     "Name": "I剧毒有机液体",
@@ -370,21 +370,6 @@
     "ENUS": "Proliferator"
   },
   {
-    "Name": "流速监测器",
-    "ZHCN": "流速监测器",
-    "ENUS": "Traffic monitor"
-  },
-  {
-    "Name": "广播式能源塔",
-    "ZHCN": "广播式能源塔",
-    "ENUS": "Broadcast energy tower"
-  },
-  {
-    "Name": "核子能源发电站",
-    "ZHCN": "核子能源发电站",
-    "ENUS": "Nuclear power station"
-  },
-  {
     "Name": "四氢双环戊二烯",
     "ZHCN": "四氢双环戊二烯（JP-10）",
     "ENUS": "Tetrahydrocyclopentadiene(JP-10)"
@@ -402,7 +387,7 @@
   {
     "Name": "四氢双环戊二烯燃料棒",
     "ZHCN": "四氢双环戊二烯燃料棒",
-    "ENUS": "JP-10 fuel rod"
+    "ENUS": "JP-10 Fuel Rod"
   },
   {
     "Name": "I四氢双环戊二烯燃料棒",
@@ -412,7 +397,7 @@
   {
     "Name": "煤油燃料棒",
     "ZHCN": "煤油燃料棒",
-    "ENUS": "Kerosene fuel rod"
+    "ENUS": "Kerosene Fuel Rod"
   },
   {
     "Name": "I煤油燃料棒",
@@ -422,7 +407,7 @@
   {
     "Name": "同位素温差发电机",
     "ZHCN": "同位素温差发电机",
-    "ENUS": "Radioisotope thermoelectric generator"
+    "ENUS": "Radioisotope Thermoelectric Generator"
   },
   {
     "Name": "I同位素温差发电机",
@@ -437,37 +422,37 @@
   {
     "Name": "发光铀碎块",
     "ZHCN": "发光铀碎块",
-    "ENUS": "Luminous uranium fragments"
+    "ENUS": "Luminous Uranium Fragments"
   },
   {
     "Name": "晶质钚碎块",
     "ZHCN": "晶质钚碎块",
-    "ENUS": "Crystalline plutonium fragments"
+    "ENUS": "Crystalline Plutonium Fragments"
   },
   {
     "Name": "铀矿",
     "ZHCN": "铀矿",
-    "ENUS": "Uranium ore"
+    "ENUS": "Uranium Ore"
   },
   {
     "Name": "钚矿",
     "ZHCN": "钚矿",
-    "ENUS": "Plutonium ore"
+    "ENUS": "Plutonium Ore"
   },
   {
     "Name": "高纯铀块",
     "ZHCN": "含铀核燃料",
-    "ENUS": "Uranium fissile fuel"
+    "ENUS": "Uranium Fissile Fuel"
   },
   {
     "Name": "高纯钚块",
     "ZHCN": "含钚核燃料",
-    "ENUS": "Plutonium fissile fuel"
+    "ENUS": "Plutonium Fissile Fuel"
   },
   {
     "Name": "量子储液罐",
     "ZHCN": "量子储液罐",
-    "ENUS": "Quantum storage tank"
+    "ENUS": "Quantum Tank"
   },
   {
     "Name": "I量子储液罐",
@@ -477,7 +462,7 @@
   {
     "Name": "矿物处理厂",
     "ZHCN": "矿物处理厂",
-    "ENUS": "Mineral processor"
+    "ENUS": "Mineral Processor"
   },
   {
     "Name": "I矿物处理厂",
@@ -497,7 +482,7 @@
   {
     "Name": "钚燃料棒",
     "ZHCN": "钚燃料棒",
-    "ENUS": "Plutonium fuel rod"
+    "ENUS": "Plutonium Fuel Rod"
   },
   {
     "Name": "I钚燃料棒",
@@ -507,7 +492,7 @@
   {
     "Name": "铀燃料棒",
     "ZHCN": "铀燃料棒",
-    "ENUS": "Uranium fuel rod"
+    "ENUS": "Uranium Fuel Rod"
   },
   {
     "Name": "I铀燃料棒",
@@ -517,7 +502,7 @@
   {
     "Name": "MOX燃料棒",
     "ZHCN": "MOX燃料棒",
-    "ENUS": "MOX fuel rod"
+    "ENUS": "MOX Fuel Rod"
   },
   {
     "Name": "IMOX燃料棒",
@@ -542,7 +527,7 @@
   {
     "Name": "氦三燃料棒",
     "ZHCN": "氦三燃料棒",
-    "ENUS": "Helium-3 fuel rod"
+    "ENUS": "Helium-3 Fuel Rod"
   },
   {
     "Name": "I氦三燃料棒",
@@ -562,7 +547,7 @@
   {
     "Name": "石粉",
     "ZHCN": "石粉",
-    "ENUS": "Stone dust"
+    "ENUS": "Stone Dust"
   },
   {
     "Name": "I石粉",
@@ -572,7 +557,7 @@
   {
     "Name": "铁矿粉",
     "ZHCN": "铁矿粉",
-    "ENUS": "Iron ore dust"
+    "ENUS": "Iron Ore Dust"
   },
   {
     "Name": "I铁矿粉",
@@ -582,7 +567,7 @@
   {
     "Name": "铜矿粉",
     "ZHCN": "铜矿粉",
-    "ENUS": "Copper ore dust"
+    "ENUS": "Copper Ore Dust"
   },
   {
     "Name": "I铜矿粉",
@@ -592,7 +577,7 @@
   {
     "Name": "硅矿粉",
     "ZHCN": "硅矿粉",
-    "ENUS": "Silicon ore dust"
+    "ENUS": "Silicon Ore Dust"
   },
   {
     "Name": "I硅矿粉",
@@ -602,7 +587,7 @@
   {
     "Name": "钛矿粉",
     "ZHCN": "钛矿粉",
-    "ENUS": "Titanium ore dust"
+    "ENUS": "Titanium Ore Dust"
   },
   {
     "Name": "I钛矿粉",
@@ -612,7 +597,7 @@
   {
     "Name": "钨矿粉",
     "ZHCN": "钨矿粉",
-    "ENUS": "Tungsten ore dust"
+    "ENUS": "Tungsten Ore Dust"
   },
   {
     "Name": "I钨矿粉",
@@ -622,7 +607,7 @@
   {
     "Name": "煤矿粉",
     "ZHCN": "煤矿粉",
-    "ENUS": "Coal ore dust"
+    "ENUS": "Coal Dust"
   },
   {
     "Name": "I煤矿粉",
@@ -722,7 +707,7 @@
   {
     "Name": "硫粉",
     "ZHCN": "硫粉",
-    "ENUS": "Sulfur dust"
+    "ENUS": "Sulfur Dust"
   },
   {
     "Name": "I硫粉",
@@ -732,17 +717,17 @@
   {
     "Name": "结构矩阵",
     "ZHCN": "结构矩阵",
-    "ENUS": "Structure matrix"
+    "ENUS": "Structure Matrix"
   },
   {
     "Name": "引力矩阵",
     "ZHCN": "引力矩阵",
-    "ENUS": "Gravity matrix"
+    "ENUS": "Gravity Matrix"
   },
   {
     "Name": "稳定矩阵",
     "ZHCN": "通量矩阵",
-    "ENUS": "Flux matrix"
+    "ENUS": "Flux Matrix"
   },
   {
     "Name": "I稳定矩阵",
@@ -752,7 +737,7 @@
   {
     "Name": "虚空矩阵",
     "ZHCN": "空间矩阵",
-    "ENUS": "Space matrix"
+    "ENUS": "Space Matrix"
   },
   {
     "Name": "I虚空矩阵",
@@ -762,7 +747,7 @@
   {
     "Name": "宇宙矩阵粗坯",
     "ZHCN": "宇宙矩阵粗坯",
-    "ENUS": "Universe matrix roughcast"
+    "ENUS": "Universe Matrix Roughcast"
   },
   {
     "Name": "I宇宙矩阵粗坯",
@@ -777,7 +762,7 @@
   {
     "Name": "基础机械组件",
     "ZHCN": "基础机械组件",
-    "ENUS": "Basic mechanical components"
+    "ENUS": "Basic Mechanical Components"
   },
   {
     "Name": "I基础机械组件",
@@ -787,7 +772,7 @@
   {
     "Name": "先进机械组件",
     "ZHCN": "先进机械组件",
-    "ENUS": "Advanced mechanical components"
+    "ENUS": "Advanced Mechanical Components"
   },
   {
     "Name": "I先进机械组件",
@@ -797,7 +782,7 @@
   {
     "Name": "尖端机械组件",
     "ZHCN": "尖端机械组件",
-    "ENUS": "Sophisticated mechanical components"
+    "ENUS": "Sophisticated Mechanical Components"
   },
   {
     "Name": "I尖端机械组件",
@@ -807,7 +792,7 @@
   {
     "Name": "超级机械组件",
     "ZHCN": "超级机械组件",
-    "ENUS": "Super mechanical components"
+    "ENUS": "Super Mechanical Components"
   },
   {
     "Name": "I超级机械组件",
@@ -817,7 +802,7 @@
   {
     "Name": "终极机械组件",
     "ZHCN": "终极机械组件",
-    "ENUS": "Ultimate mechanical components"
+    "ENUS": "Ultimate Mechanical Components"
   },
   {
     "Name": "I终极机械组件",
@@ -857,7 +842,7 @@
   {
     "Name": "空燃料棒",
     "ZHCN": "空燃料棒",
-    "ENUS": "Empty fuel rod"
+    "ENUS": "Empty Fuel Rod"
   },
   {
     "Name": "I空燃料棒",
@@ -907,7 +892,7 @@
   {
     "Name": "盐酸",
     "ZHCN": "盐酸",
-    "ENUS": "Hydrochloric acid"
+    "ENUS": "Hydrochloric Acid"
   },
   {
     "Name": "I盐酸",
@@ -917,7 +902,7 @@
   {
     "Name": "三氯化铁",
     "ZHCN": "三氯化铁",
-    "ENUS": "Ferric trichloride"
+    "ENUS": "Ferric Trichloride"
   },
   {
     "Name": "I三氯化铁",
@@ -927,7 +912,7 @@
   {
     "Name": "硝酸",
     "ZHCN": "硝酸",
-    "ENUS": "Nitric acid"
+    "ENUS": "Nitric Acid"
   },
   {
     "Name": "I硝酸",
@@ -957,7 +942,7 @@
   {
     "Name": "氢氧化钠",
     "ZHCN": "氢氧化钠",
-    "ENUS": "Sodium hydroxide"
+    "ENUS": "Sodium Hydroxide"
   },
   {
     "Name": "I氢氧化钠",
@@ -967,7 +952,7 @@
   {
     "Name": "氯化钠",
     "ZHCN": "氯化钠",
-    "ENUS": "Sodium chloride"
+    "ENUS": "Sodium Chloride"
   },
   {
     "Name": "I氯化钠",
@@ -977,7 +962,7 @@
   {
     "Name": "塑料基板",
     "ZHCN": "塑料基板",
-    "ENUS": "Plastic substrate"
+    "ENUS": "Plastic Substrate"
   },
   {
     "Name": "I塑料基板",
@@ -987,7 +972,7 @@
   {
     "Name": "生物基板",
     "ZHCN": "光学基板",
-    "ENUS": "Optical substrate"
+    "ENUS": "Optical Substrate"
   },
   {
     "Name": "I生物基板",
@@ -995,24 +980,29 @@
     "ENUS": "Substrates made with polyimide have etched structures designed for optical computing technology."
   },
   {
+    "Name": "流速监测器",
+    "ZHCN": "流速监测器",
+    "ENUS": "Traffic Monitor"
+  },
+  {
     "Name": "钨块",
     "ZHCN": "钨块",
-    "ENUS": "Tungsten ingot"
+    "ENUS": "Tungsten Ingot"
   },
   {
     "Name": "钨强化玻璃",
     "ZHCN": "钨强化玻璃",
-    "ENUS": "Tungsten glass"
+    "ENUS": "Tungsten Glass"
   },
   {
     "Name": "钨复合金属",
     "ZHCN": "钨合金",
-    "ENUS": "Tungsten alloy"
+    "ENUS": "Tungsten Alloy"
   },
   {
     "Name": "聚苯硫醚",
     "ZHCN": "聚苯硫醚（PPS）",
-    "ENUS": "Polyphenylene sulfide(PPS)"
+    "ENUS": "Polyphenylene Sulfide(PPS)"
   },
   {
     "Name": "I聚苯硫醚",
@@ -1020,19 +1010,9 @@
     "ENUS": "Polyphenyl sulfide (PPS) is an organic polymer compound, exhibits excellent thermal stability and electrical insulation properties."
   },
   {
-    "Name": "活性生物纤维",
-    "ZHCN": "活性生物纤维",
-    "ENUS": "Active biological fiber"
-  },
-  {
-    "Name": "I活性生物纤维",
-    "ZHCN": "由有机晶体制作成的复合材料，具有高强度、高韧性，以及良好的生物相容性。",
-    "ENUS": "Made of organic crystal, it has high strength, high toughness, and good biocompatibility."
-  },
-  {
     "Name": "先进生物电路",
     "ZHCN": "光学处理器",
-    "ENUS": "Optical processor"
+    "ENUS": "Optical Processor"
   },
   {
     "Name": "I先进生物电路",
@@ -1040,19 +1020,9 @@
     "ENUS": "Advanced computing unit with good biocompatibility."
   },
   {
-    "Name": "超生物计算集群",
-    "ZHCN": "超生物计算集群",
-    "ENUS": "Hyperbiological computing cluster"
-  },
-  {
-    "Name": "I超生物计算集群",
-    "ZHCN": "具有良好生物相容性的计算集群。",
-    "ENUS": "Computing cluster with good biocompatibility."
-  },
-  {
     "Name": "生物神经纤维",
     "ZHCN": "光学信息传输纤维",
-    "ENUS": "Optical information transfer fiber"
+    "ENUS": "Optical Fiber"
   },
   {
     "Name": "I生物神经纤维",
@@ -1092,7 +1062,7 @@
   {
     "Name": "T化学反应釜压力容器",
     "ZHCN": "化学反应釜压力容器",
-    "ENUS": "Chemical reactor pressure vessel"
+    "ENUS": "Chemical Reactor Pressure Vessel"
   },
   {
     "Name": "T化学反应釜压力容器描述",
@@ -1102,7 +1072,7 @@
   {
     "Name": "硅石筛选",
     "ZHCN": "硅石筛选",
-    "ENUS": "Silicon ore screening"
+    "ENUS": "Silicon Ore Screening"
   },
   {
     "Name": "R硅石筛选",
@@ -1112,7 +1082,7 @@
   {
     "Name": "氦元素离心",
     "ZHCN": "氦原子提取",
-    "ENUS": "Helium element centrifuge"
+    "ENUS": "Helium Element Centrifuge"
   },
   {
     "Name": "R氦元素离心",
@@ -1122,7 +1092,7 @@
   {
     "Name": "光子自增殖",
     "ZHCN": "光子自增殖",
-    "ENUS": "Photon self-replication"
+    "ENUS": "Photon Self-replication"
   },
   {
     "Name": "R光子自增殖",
@@ -1132,7 +1102,7 @@
   {
     "Name": "水电解",
     "ZHCN": "水电解",
-    "ENUS": "Water electrolysis"
+    "ENUS": "Water Electrolysis"
   },
   {
     "Name": "R水电解",
@@ -1142,7 +1112,7 @@
   {
     "Name": "盐水分解",
     "ZHCN": "盐水电解",
-    "ENUS": "Salt water electrolysis"
+    "ENUS": "Salt Water Electrolysis"
   },
   {
     "Name": "R盐水分解",
@@ -1152,7 +1122,7 @@
   {
     "Name": "海水淡化",
     "ZHCN": "海水淡化",
-    "ENUS": "Sea water desalination"
+    "ENUS": "Seawater Desalination"
   },
   {
     "Name": "R海水淡化",
@@ -1172,27 +1142,27 @@
   {
     "Name": "合成氨",
     "ZHCN": "合成氨",
-    "ENUS": "Ammonia synthesis"
+    "ENUS": "Ammonia Synthesis"
   },
   {
     "Name": "R合成氨",
-    "ZHCN": "使用氮气和氢气作为原料， 合成氨。",
+    "ZHCN": "使用氮气和氢气作为原料，合成氨。",
     "ENUS": "Using nitrogen and hydrogen as raw materials to synthesize ammonia."
   },
   {
     "Name": "活性纤维分离",
     "ZHCN": "活性纤维重组",
-    "ENUS": "Active biological fiber reassemble"
+    "ENUS": "Active Biological Fiber Reassemble"
   },
   {
     "Name": "R活性纤维分离",
-    "ZHCN": "使用亚原子操控技术，可以有效地将活性纤维的组分分解并将组装成聚酰亚胺。",
-    "ENUS": "Using subatomic manipulation technology, it can effectively decompose the components of active fibers and assemble them into polyimide."
+    "ZHCN": "使用亚原子操控技术，可以有效地将有机晶体的组分分解并将组装成聚酰亚胺。",
+    "ENUS": "Using subatomic manipulation technology, it can effectively decompose the components of organic crystal and assemble them into polyimide."
   },
   {
     "Name": "焦油转化",
     "ZHCN": "煤炭干馏",
-    "ENUS": "Coal dry distillation"
+    "ENUS": "Coal Dry Distillation"
   },
   {
     "Name": "R焦油转化",
@@ -1202,7 +1172,7 @@
   {
     "Name": "焦油分馏",
     "ZHCN": "焦油分馏",
-    "ENUS": "Coal tar fractionation"
+    "ENUS": "Coal Tar Fractionation"
   },
   {
     "Name": "R焦油分馏",
@@ -1212,7 +1182,7 @@
   {
     "Name": "焦油裂化",
     "ZHCN": "焦油裂化",
-    "ENUS": "Coal tar cracking"
+    "ENUS": "Coal Tar Cracking"
   },
   {
     "Name": "R焦油裂化",
@@ -1227,41 +1197,31 @@
   {
     "Name": "钨矿筛选",
     "ZHCN": "钨矿筛选",
-    "ENUS": "Tungsten ore screening"
+    "ENUS": "Tungsten Ore Screening"
   },
   {
     "Name": "R钨矿筛选",
-    "ZHCN": "使用硝酸浸洗钛矿， 从中分离含钨的伴生矿。",
+    "ZHCN": "使用硝酸浸洗钛矿，从中分离含钨的伴生矿。",
     "ENUS": "Separation of tungsten-bearing associated ore from titanium ore by nitric acid leaching."
-  },
-  {
-    "Name": "光子结晶化",
-    "ZHCN": "光子结晶化",
-    "ENUS": "Photonic crystallization"
-  },
-  {
-    "Name": "R光子结晶化",
-    "ZHCN": "对未知先驱者科技进行逆向工程的部分成果。可在高能环境下将光子压缩成固体。",
-    "ENUS": "Partial results of reverse engineering unknown Herald technology. Compression of photons into solids in a high-energy environment."
   },
   {
     "Name": "钛晶石（高效）",
     "ZHCN": "钛晶石（高效）",
-    "ENUS": "Titanium crystal (advanced)"
+    "ENUS": "Titanium Crystal (advanced)"
   },
   {
     "Name": "R钛晶石（高效）",
-    "ZHCN": "找到了有机晶体矿， 生产钛晶石就变得容易许多。",
+    "ZHCN": "找到了有机晶体矿，生产钛晶石就变得容易许多。",
     "ENUS": "Once the organic crystal ore is found, the production of titanium crystal becomes much easier."
   },
   {
     "Name": "质能储存（高效）",
     "ZHCN": "质能储存（高效）",
-    "ENUS": "Mass-energy storage (advanced)"
+    "ENUS": "Mass-energy Storage (advanced)"
   },
   {
     "Name": "R质能储存（高效）",
-    "ZHCN": "在只收集反物质的前提下， 可以采用更激进的磁场结构加快反物质的产出速度。",
+    "ZHCN": "在只收集反物质的前提下，可以采用更激进的磁场结构加快反物质的产出速度。",
     "ENUS": "If only collect antimatter, a more aggressive magnetic field structure to speed up the antimatter output."
   },
   {
@@ -1272,7 +1232,7 @@
   {
     "Name": "苯合成",
     "ZHCN": "催化重整",
-    "ENUS": "Catalytic reforming"
+    "ENUS": "Catalytic Reforming"
   },
   {
     "Name": "R苯合成",
@@ -1280,23 +1240,13 @@
     "ENUS": "After a lengthy reforming process, propylene can be synthesized into benzene. Less efficient, but an important technology that has historically driven the sequestration of fossil fuel resources."
   },
   {
-    "Name": "水煤气制取",
-    "ZHCN": "水煤气制取",
-    "ENUS": "Syngas production"
-  },
-  {
-    "Name": "R水煤气制取",
-    "ZHCN": "将水蒸气通过炽热的石墨， 产生水煤气。",
-    "ENUS": "Steam is passed through a hot graphite to produce syngas."
-  },
-  {
     "Name": "氨氧化",
     "ZHCN": "氨氧化",
-    "ENUS": "Ammonia oxidation"
+    "ENUS": "Ammonia Oxidation"
   },
   {
     "Name": "R氨氧化",
-    "ZHCN": "氨气与氧气进行反应， 经过一系列反应合成硝酸。\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作。</color>",
+    "ZHCN": "氨气与氧气进行反应，经过一系列反应合成硝酸。\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作。</color>",
     "ENUS": "Ammonia reacts with oxygen to produce nitric acid.\n<color=\"#FD965ECC\">Will not stop working until all products are accumulated.</color>"
   },
   {
@@ -1305,34 +1255,19 @@
     "ENUS": "It will be a lot easier to produce graphene if you can find combustible ice minerals.\n<color=\"#FD965ECC\">Will not stop working until all products are accumulated.</color>"
   },
   {
-    "Name": "R硫酸",
-    "ZHCN": "使用离子交换膜电解硫酸钠溶液， 产生硫酸。\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作。</color>",
-    "ENUS": "Sulfuric acid is produced by electrolysis of sodium sulfate solution using ion exchange membrane.\n<color=\"#FD965ECC\">Will not stop working until all products are accumulated.</color>"
-  },
-  {
     "Name": "处理器（高效）",
     "ZHCN": "处理器（高效）",
     "ENUS": "Processor (advanced)"
   },
   {
     "Name": "R处理器（高效）",
-    "ZHCN": "利用主机算力对生产流程大幅优化， 批量生产处理器变得简单。",
-    "ENUS": "The production process of processors is greatly optimized by mainframe computing power, making it easy to produce in batch."
-  },
-  {
-    "Name": "硫酸（高效）",
-    "ZHCN": "硫酸（高效）",
-    "ENUS": "Sulfuric acid (advanced)"
-  },
-  {
-    "Name": "R硫酸（高效）",
-    "ZHCN": "利用硫化氢作为原料， 硫酸生产变得更加高效。",
-    "ENUS": "Sulfuric acid production becomes more efficient by using hydrogen sulfide as a raw material."
+    "ZHCN": "利用光学基板，可以高效生产处理器。",
+    "ENUS": "Using optical substrate making it easy to produce processors in batch."
   },
   {
     "Name": "放射性矿物处理",
     "ZHCN": "放射性矿物处理",
-    "ENUS": "Radioactive mineral processing"
+    "ENUS": "Radioactive Mineral Processing"
   },
   {
     "Name": "R放射性矿物处理",
@@ -1342,7 +1277,7 @@
   {
     "Name": "铁矿精炼",
     "ZHCN": "铁矿精炼",
-    "ENUS": "Iron ore refining"
+    "ENUS": "Iron Ore Refining"
   },
   {
     "Name": "R铁矿精炼",
@@ -1352,7 +1287,7 @@
   {
     "Name": "铜矿精炼",
     "ZHCN": "铜矿精炼",
-    "ENUS": "Copper ore refining"
+    "ENUS": "Copper Ore Refining"
   },
   {
     "Name": "R铜矿精炼",
@@ -1362,7 +1297,7 @@
   {
     "Name": "硅矿精炼",
     "ZHCN": "硅矿精炼",
-    "ENUS": "Silicon ore refining"
+    "ENUS": "Silicon Ore Refining"
   },
   {
     "Name": "R硅矿精炼",
@@ -1372,7 +1307,7 @@
   {
     "Name": "铝矿精炼",
     "ZHCN": "铝矿精炼",
-    "ENUS": "Aluminum ore refining"
+    "ENUS": "Aluminum Ore Refining"
   },
   {
     "Name": "R铝矿精炼",
@@ -1382,7 +1317,7 @@
   {
     "Name": "钛矿精炼",
     "ZHCN": "钛矿精炼",
-    "ENUS": "Titanium ore refining"
+    "ENUS": "Titanium Ore Refining"
   },
   {
     "Name": "R钛矿精炼",
@@ -1392,7 +1327,7 @@
   {
     "Name": "钨矿精炼",
     "ZHCN": "钨矿精炼",
-    "ENUS": "Tungsten ore refining"
+    "ENUS": "Tungsten Ore Refining"
   },
   {
     "Name": "R钨矿精炼",
@@ -1402,7 +1337,7 @@
   {
     "Name": "石矿精炼",
     "ZHCN": "石矿精炼",
-    "ENUS": "Stone refining"
+    "ENUS": "Stone Refining"
   },
   {
     "Name": "R石矿精炼",
@@ -1412,7 +1347,7 @@
   {
     "Name": "煤矿精炼",
     "ZHCN": "煤矿精炼",
-    "ENUS": "Coal ore refining"
+    "ENUS": "Coal Refining"
   },
   {
     "Name": "R煤矿精炼",
@@ -1422,7 +1357,7 @@
   {
     "Name": "物质回收",
     "ZHCN": "物质回收",
-    "ENUS": "Matter recovery"
+    "ENUS": "Matter Recovery"
   },
   {
     "Name": "R物质回收",
@@ -1430,19 +1365,9 @@
     "ENUS": "Breaks down the matter into soil pile."
   },
   {
-    "Name": "硫酸化合",
-    "ZHCN": "硫酸化合",
-    "ENUS": "Sulfuric acid chemistry"
-  },
-  {
-    "Name": "R硫酸化合",
-    "ZHCN": "在高温下硫粉被氧气氧化生成三氧化硫， 用水雾进行吸附就能得到高品质的硫酸。",
-    "ENUS": "Sulfur powder is oxidized by oxygen at high temperature to form sulfur trioxide. Just adsorption with water mist, high quality sulfuric acid can be obtained."
-  },
-  {
     "Name": "T地热开采",
     "ZHCN": "地热开采",
-    "ENUS": "Geothermal mining"
+    "ENUS": "Geothermal Mining"
   },
   {
     "Name": "T基础化工描述",
@@ -1457,7 +1382,7 @@
   {
     "Name": "T无尽材料学",
     "ZHCN": "强相互作用力材料",
-    "ENUS": "Strong force material"
+    "ENUS": "Strong Force Material"
   },
   {
     "Name": "T无尽材料学描述",
@@ -1487,16 +1412,16 @@
   {
     "Name": "T物品增产",
     "ZHCN": "物品增产",
-    "ENUS": "Incremental production of items"
+    "ENUS": "Incremental Production"
   },
   {
     "Name": "T虫洞航行",
     "ZHCN": "虫洞航行",
-    "ENUS": "Wormhole navigation"
+    "ENUS": "Wormhole Navigation"
   },
   {
     "Name": "T虫洞航行描述",
-    "ZHCN": "消耗1个<color=\"#FD965ECC\">空间翘曲器</color>和 12GJ 能量制造一个一次性虫洞， 可将机甲传送至<color=\"#FD965ECC\">星图模式</color>下选择的任意星球，但请小心星轨间的干扰。",
+    "ZHCN": "消耗1个<color=\"#FD965ECC\">空间翘曲器</color>和 12GJ 能量制造一个一次性虫洞，可将机甲传送至<color=\"#FD965ECC\">星图模式</color>下选择的任意星球，但请小心星轨间的干扰。",
     "ENUS": "Consumes 1 <color=\"#FD965ECC\">Space Warper</color> and 12GJ mecha energy to create a one-time wormhole that can teleport the mecha to any planet selected in <color=\"#FD965ECC\">Star Map Mode</color>, but be careful of the interference between the orbits."
   },
   {
@@ -1517,22 +1442,22 @@
   {
     "Name": "T矿物处理",
     "ZHCN": "矿物处理",
-    "ENUS": "Mineral pretreatment"
+    "ENUS": "Mineral Pretreatment"
   },
   {
     "Name": "T矿物处理描述",
-    "ZHCN": "进一步对矿石进行预先粉碎处理可明显提高熔炉的效率， 并使矿物转化变得可能。",
+    "ZHCN": "进一步对矿石进行预先粉碎处理可明显提高熔炉的效率，并使矿物转化变得可能。",
     "ENUS": "Further pre-crushing of the ore significantly improves the efficiency of the furnace and makes mineral transformation possible."
   },
   {
     "Name": "T裂变发电站",
     "ZHCN": "裂变发电站",
-    "ENUS": "Fission power station"
+    "ENUS": "Fission Power Station"
   },
   {
     "Name": "T戴森球计划:太阳帆轨道系统",
     "ZHCN": "戴森球计划: 太阳帆轨道系统",
-    "ENUS": "Dyson Sphere Program: Solar sail orbital system"
+    "ENUS": "Dyson Sphere Program: Solar Sail Orbital System"
   },
   {
     "Name": "T戴森球计划:戴森球能源传输系统",
@@ -1562,7 +1487,7 @@
   {
     "Name": "T物品仓储",
     "ZHCN": "物品仓储",
-    "ENUS": "Item storage"
+    "ENUS": "Item Storage"
   },
   {
     "Name": "T气体冷凝",
@@ -1582,7 +1507,7 @@
   {
     "Name": "T基础机械组件",
     "ZHCN": "基础机械组件",
-    "ENUS": "Basic mechanical components"
+    "ENUS": "Basic Mechanical Components"
   },
   {
     "Name": "T基础机械组件描述",
@@ -1592,7 +1517,7 @@
   {
     "Name": "T先进机械组件",
     "ZHCN": "先进机械组件",
-    "ENUS": "Advanced mechanical components"
+    "ENUS": "Advanced Mechanical Components"
   },
   {
     "Name": "T先进机械组件描述",
@@ -1602,7 +1527,7 @@
   {
     "Name": "T尖端机械组件",
     "ZHCN": "尖端机械组件",
-    "ENUS": "Sophisticated mechanical components"
+    "ENUS": "Sophisticated Mechanical Components"
   },
   {
     "Name": "T尖端机械组件描述",
@@ -1612,7 +1537,7 @@
   {
     "Name": "T钨强化金属",
     "ZHCN": "钨强化金属",
-    "ENUS": "Tungsten-enhanced metals"
+    "ENUS": "Tungsten Alloy"
   },
   {
     "Name": "T钨强化金属描述",
@@ -1642,7 +1567,7 @@
   {
     "Name": "T超级纳米计算机",
     "ZHCN": "超级量子计算机",
-    "ENUS": "Super nano computer"
+    "ENUS": "Super Nano Computer"
   },
   {
     "Name": "T超级纳米计算机描述",
@@ -1652,7 +1577,7 @@
   {
     "Name": "T生物活性计算机",
     "ZHCN": "家园世界: 光学计算机",
-    "ENUS": "Homeworld: Optical computer"
+    "ENUS": "Homeworld: Optical Computer"
   },
   {
     "Name": "T生物活性计算机描述",
@@ -1662,7 +1587,7 @@
   {
     "Name": "T钨强化玻璃",
     "ZHCN": "钨强化玻璃",
-    "ENUS": "Tungsten tempered glass"
+    "ENUS": "Tungsten Glass"
   },
   {
     "Name": "T钨强化玻璃描述",
@@ -1672,7 +1597,7 @@
   {
     "Name": "T先进精炼技术",
     "ZHCN": "先进有机合成技术",
-    "ENUS": "Advanced organic synthesis technology"
+    "ENUS": "Advanced Organic Synthesis Technology"
   },
   {
     "Name": "T先进精炼技术描述",
@@ -1682,7 +1607,7 @@
   {
     "Name": "T放射性原料提纯",
     "ZHCN": "放射性矿物提炼",
-    "ENUS": "Radioactive ore purification"
+    "ENUS": "Radioactive Ore Purification"
   },
   {
     "Name": "T放射性原料提纯描述",
@@ -1692,7 +1617,7 @@
   {
     "Name": "T同位素温差发电",
     "ZHCN": "同位素温差发电",
-    "ENUS": "Radioisotope thermoelectric generator"
+    "ENUS": "Radioisotope Thermoelectric Generator"
   },
   {
     "Name": "T同位素温差发电描述",
@@ -1702,7 +1627,7 @@
   {
     "Name": "T裂变能源燃料棒",
     "ZHCN": "裂变能源燃料棒",
-    "ENUS": "Fission energy fuel rod"
+    "ENUS": "Fission Fuel Rod"
   },
   {
     "Name": "T裂变能源燃料棒描述",
@@ -1712,17 +1637,17 @@
   {
     "Name": "T聚变燃料提取",
     "ZHCN": "聚变燃料提取",
-    "ENUS": "Fusion isotope extraction"
+    "ENUS": "Fusion Isotope Extraction"
   },
   {
     "Name": "T聚变燃料提取描述",
-    "ZHCN": "光栅石的特殊晶格结构使其可作为富集氦原子的理想载体， 利用其富集的氦原子可以为制作聚变燃料找到一条捷径。",
+    "ZHCN": "光栅石的特殊晶格结构使其可作为富集氦原子的理想载体，利用其富集的氦原子可以为制作聚变燃料找到一条捷径。",
     "ENUS": "The special lattice structure of the grating stone makes it an ideal carrier for enriching helium atoms. The enriched helium atoms can be used to find a shortcut for making fusion fuel."
   },
   {
     "Name": "T聚变能源燃料棒",
     "ZHCN": "聚变能源燃料棒",
-    "ENUS": "Fusion energy fuel rod"
+    "ENUS": "Fusion Fuel Rod"
   },
   {
     "Name": "T聚变能源燃料棒描述",
@@ -1790,16 +1715,6 @@
     "ENUS": "The large number of parallel running accelerators takes productivity to a whole new level."
   },
   {
-    "Name": "T广播式能源描述",
-    "ZHCN": "一种能够在整个星球中传播的能源，它的能量可以被任何接收到它的设备所利用。",
-    "ENUS": "A form of energy that can be broadcast throughout the planet, and its energy can be used by any device that receives it."
-  },
-  {
-    "Name": "I广播式能源塔",
-    "ZHCN": "基于未知文明留下的蓝图制造的设备。将能量从塔顶发射到行星电离层，使得星球上的所有设备都能够获得能量。",
-    "ENUS": "Based on blueprints left behind by an unknown civilization, the energy is emitted from the top of the tower to the ionosphere of the planet, so that all devices on the planet can get energy."
-  },
-  {
     "Name": "T化学",
     "ZHCN": "化学",
     "ENUS": "Chemistry"
@@ -1827,7 +1742,7 @@
   {
     "Name": "T化学能燃料棒",
     "ZHCN": "化学能燃料棒",
-    "ENUS": "Chemical energy fuel rod"
+    "ENUS": "Chemical Fuel Rod"
   },
   {
     "Name": "T化学能燃料棒描述",
@@ -2020,11 +1935,6 @@
     "ENUS": "Used to smelt iron ingots. Obtained by gathering iron vein.\n"
   },
   {
-    "Name": "I硫酸",
-    "ZHCN": "初级化工产品，在生产中应用广泛。也可以通过分解火山灰星球的剧毒液体来获得。",
-    "ENUS": "Primary chemical product with a wide range of applications in production. It can also be obtained by decomposing the toxic liquid of the volcanic ash planet."
-  },
-  {
     "Name": "I有机晶体",
     "ZHCN": "稀有矿物。如此多的有机物以非生命的晶体形式存在，这种奇特的矿物或许在尖端工业生产中可以发挥特殊作用。",
     "ENUS": "Rare minerals. With so much organic matter in non-living crystalline form, this peculiar mineral may have a special role to play in cutting-edge industrial production."
@@ -2137,7 +2047,7 @@
   {
     "Name": "铝矿粉",
     "ZHCN": "铝矿粉",
-    "ENUS": "Aluminum ore dust"
+    "ENUS": "Aluminum Ore Dust"
   },
   {
     "Name": "I铝矿粉",
@@ -2147,7 +2057,7 @@
   {
     "Name": "铝合金",
     "ZHCN": "铝合金",
-    "ENUS": "Aluminum alloy"
+    "ENUS": "Aluminum Alloy"
   },
   {
     "Name": "I铝合金",
@@ -2357,7 +2267,7 @@
   {
     "Name": "钢芯弹箱",
     "ZHCN": "钢芯弹箱",
-    "ENUS": "Steel bullet box"
+    "ENUS": "Steel Ammo Box"
   },
   {
     "Name": "I钢芯弹箱",
@@ -2367,7 +2277,7 @@
   {
     "Name": "钨芯弹箱",
     "ZHCN": "钨芯弹箱",
-    "ENUS": "Tungsten bullet box"
+    "ENUS": "Tungsten Ammo Box"
   },
   {
     "Name": "I钨芯弹箱",
@@ -2377,7 +2287,7 @@
   {
     "Name": "三元弹箱",
     "ZHCN": "三元弹箱",
-    "ENUS": "Ternary Adamantium bullet box"
+    "ENUS": "Ternary Adamantium Ammo Box"
   },
   {
     "Name": "I三元弹箱",
@@ -2387,7 +2297,7 @@
   {
     "Name": "核子爆破单元",
     "ZHCN": "核子爆破单元",
-    "ENUS": "Nuclear demolition unit"
+    "ENUS": "Nuclear Demolition Unit"
   },
   {
     "Name": "I核子爆破单元",
@@ -2397,7 +2307,7 @@
   {
     "Name": "反物质湮灭单元",
     "ZHCN": "反物质湮灭单元",
-    "ENUS": "Antimatter annihilation unit"
+    "ENUS": "Antimatter Annihilation Unit"
   },
   {
     "Name": "I反物质湮灭单元",
@@ -2407,7 +2317,7 @@
   {
     "Name": "微型核弹组",
     "ZHCN": "微型核弹组",
-    "ENUS": "Mini-nukes"
+    "ENUS": "Mini-nukes Shell Set"
   },
   {
     "Name": "I微型核弹组",
@@ -2417,7 +2327,7 @@
   {
     "Name": "反物质炮弹",
     "ZHCN": "反物质炮弹组",
-    "ENUS": "Antimatter batteries"
+    "ENUS": "Antimatter Shell Set"
   },
   {
     "Name": "I反物质炮弹",
@@ -2426,8 +2336,8 @@
   },
   {
     "Name": "洲际导弹组",
-    "ZHCN": "洲际导弹组（I.C.B.M.）",
-    "ENUS": "Intercontinental missile group(I.C.B.M.)"
+    "ZHCN": "核裂变导弹组",
+    "ENUS": "Nuclear Missile Set"
   },
   {
     "Name": "I洲际导弹组",
@@ -2437,7 +2347,7 @@
   {
     "Name": "反物质导弹组",
     "ZHCN": "反物质导弹组",
-    "ENUS": "Antimatter bissile group"
+    "ENUS": "Antimatter Missile Set"
   },
   {
     "Name": "I反物质导弹组",
@@ -2447,7 +2357,7 @@
   {
     "Name": "湮灭弹药箱",
     "ZHCN": "湮灭弹箱",
-    "ENUS": "Annihilation ammo box"
+    "ENUS": "Annihilation Ammo Box"
   },
   {
     "Name": "I湮灭弹药箱",
@@ -2457,7 +2367,7 @@
   {
     "Name": "T钛化弹箱",
     "ZHCN": "钢芯穿甲弹",
-    "ENUS": "Steel piercing shell"
+    "ENUS": "Steel Piercing Shell"
   },
   {
     "Name": "钛化弹箱描述",
@@ -2467,12 +2377,12 @@
   {
     "Name": "T超合金弹箱",
     "ZHCN": "钛金强化弹壳",
-    "ENUS": "Titanium cases"
+    "ENUS": "Titanium Cases"
   },
   {
     "Name": "T核子爆破单元",
     "ZHCN": "核能爆破单元",
-    "ENUS": "Nuclear demolition unit"
+    "ENUS": "Nuclear Demolition Unit"
   },
   {
     "Name": "核子爆破单元描述",
@@ -2487,7 +2397,7 @@
   {
     "Name": "T反物质湮灭单元",
     "ZHCN": "反物质湮灭单元",
-    "ENUS": "Antimatter annihilation unit"
+    "ENUS": "Antimatter Annihilation Unit"
   },
   {
     "Name": "反物质湮灭单元描述",
@@ -2502,7 +2412,7 @@
   {
     "Name": "T微型核弹组",
     "ZHCN": "微型核弹",
-    "ENUS": "Mini nukes"
+    "ENUS": "Mini Nukes"
   },
   {
     "Name": "微型核弹组描述",
@@ -2517,7 +2427,7 @@
   {
     "Name": "T反物质炮弹",
     "ZHCN": "湮灭战斗部",
-    "ENUS": "Annihilation combat unit"
+    "ENUS": "Annihilation Unit"
   },
   {
     "Name": "反物质炮弹描述",
@@ -2527,12 +2437,12 @@
   {
     "Name": "反物质炮弹结果",
     "ZHCN": "你解锁了反物质炮弹，这是一种原始但可靠的质能武器。",
-    "ENUS": "You unlock the Antimatter Cannonball, a primitive but reliable mass energy weapon."
+    "ENUS": "You unlock the Antimatter Unit, a primitive but reliable mass energy weapon."
   },
   {
     "Name": "T钨芯弹箱",
     "ZHCN": "超重型穿甲弹",
-    "ENUS": "Super-heavy armor piercing shell"
+    "ENUS": "Super-heavy Armor Piercing Shell"
   },
   {
     "Name": "钨芯弹箱描述",
@@ -2547,7 +2457,7 @@
   {
     "Name": "T三元弹箱",
     "ZHCN": "强互作用力弹药",
-    "ENUS": "High interaction ammunition"
+    "ENUS": "High Interaction Ammunition"
   },
   {
     "Name": "三元弹箱描述",
@@ -2562,7 +2472,7 @@
   {
     "Name": "T湮灭弹箱",
     "ZHCN": "小型化湮灭反应",
-    "ENUS": "Miniaturized annihilation reactions"
+    "ENUS": "Miniaturized Annihilation Reactions"
   },
   {
     "Name": "湮灭弹箱描述",
@@ -2577,7 +2487,7 @@
   {
     "Name": "T洲际导弹组",
     "ZHCN": "战术核导弹",
-    "ENUS": "Tactical nuclear missile"
+    "ENUS": "Tactical Nuclear Missile"
   },
   {
     "Name": "洲际导弹组描述",
@@ -2592,7 +2502,7 @@
   {
     "Name": "T反物质导弹组",
     "ZHCN": "反物质飞弹",
-    "ENUS": "Antimatter missile"
+    "ENUS": "Antimatter Missile"
   },
   {
     "Name": "反物质导弹组描述",
@@ -2627,12 +2537,12 @@
   {
     "Name": "高斯机枪塔",
     "ZHCN": "高斯机枪塔 MK.I",
-    "ENUS": "Gauss turret MK.I"
+    "ENUS": "Gauss Turret MK.I"
   },
   {
     "Name": "高斯机枪塔MK2",
     "ZHCN": "高斯机枪塔 MK.II",
-    "ENUS": "Gauss turret MK.II"
+    "ENUS": "Gauss Turret MK.II"
   },
   {
     "Name": "I高斯机枪塔MK2",
@@ -2642,12 +2552,12 @@
   {
     "Name": "高频激光塔",
     "ZHCN": "高频激光塔 MK.I",
-    "ENUS": "High frequency laser tower MK.I"
+    "ENUS": "Laser Tower MK.I"
   },
   {
     "Name": "高频激光塔MK2",
     "ZHCN": "高频激光塔 MK.II",
-    "ENUS": "High frequency laser tower MK.II"
+    "ENUS": "Laser Tower MK.II"
   },
   {
     "Name": "I高频激光塔MK2",
@@ -2657,7 +2567,7 @@
   {
     "Name": "T先进机枪塔",
     "ZHCN": "四联装高斯机枪",
-    "ENUS": "Quadruple gauss machine gun"
+    "ENUS": "Quadruple Gauss Turret"
   },
   {
     "Name": "先进机枪塔描述",
@@ -2702,12 +2612,12 @@
   {
     "Name": "虚数空间存储结果",
     "ZHCN": "你解锁了量子储物仓，它的内部始终指向一个特殊空间，你可以利用这一特性轻松跨越数十光年的距离进行物品传输。",
-    "ENUS": "You unlock the Quantum Storage Bin, whose interior always points to a special space, and you can use this property to easily transfer items across distances of tens of light years."
+    "ENUS": "You unlock the Quantum Depot, whose interior always points to a special space, and you can use this property to easily transfer items across distances of tens of light years."
   },
   {
     "Name": "量子储物仓",
     "ZHCN": "量子储物仓",
-    "ENUS": "Quantum Storage Warehouse"
+    "ENUS": "Quantum Depot"
   },
   {
     "Name": "I量子储物仓",
