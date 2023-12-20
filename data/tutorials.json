@@ -1,8 +1,8 @@
 ﻿[
   {
     "ID": 31,
-    "Name": "堆积逻辑介绍标题",
-    "PreText": "堆积逻辑介绍前字",
+    "Name": "星球大气介绍标题",
+    "PreText": "星球大气介绍前字",
     "DeterminatorName": "TOR_GameSecond",
     "DeterminatorParams": [
       4
@@ -10,15 +10,6 @@
   },
   {
     "ID": 32,
-    "Name": "星球大气介绍标题",
-    "PreText": "星球大气介绍前字",
-    "DeterminatorName": "TOR_GameSecond",
-    "DeterminatorParams": [
-      5
-    ]
-  },
-  {
-    "ID": 33,
     "Name": "物质分解设施介绍标题",
     "PreText": "物质分解设施介绍前字",
     "DeterminatorName": "TOR_TechUnlocked",
@@ -28,7 +19,7 @@
     ]
   },
   {
-    "ID": 34,
+    "ID": 33,
     "Name": "巨型建筑介绍标题",
     "PreText": "巨型建筑介绍前字",
     "DeterminatorName": "TOR_TechUnlocked",
@@ -38,7 +29,7 @@
     ]
   },
   {
-    "ID": 35,
+    "ID": 34,
     "Name": "行星协调中心介绍标题",
     "PreText": "行星协调中心介绍前字",
     "DeterminatorName": "TOR_TechUnlocked",
