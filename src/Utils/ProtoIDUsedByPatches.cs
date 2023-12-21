@@ -19,6 +19,7 @@ namespace ProjectGenesis.Utils
 
         internal const int I大气采集器 = 6267,
                            I水 = 1000,
+                           I沙土 = 1099,
                            I氢 = 1120,
                            I氢燃料棒 = 1801,
                            I氘核燃料棒 = 1802,

@@ -14,8 +14,6 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
         internal const int TrashSpeed = 60000;
         internal const int MegaAssemblerSpeed = 400000;
 
-        private static int TmpSandCount;
-
         private static readonly FieldInfo EntityData_StationId_Field = AccessTools.Field(typeof(EntityData), nameof(EntityData.stationId)),
                                           EntityData_AssemblerId_Field = AccessTools.Field(typeof(EntityData), nameof(EntityData.assemblerId)),
                                           PlanetFactory_EntityPool_Field = AccessTools.Field(typeof(PlanetFactory), nameof(PlanetFactory.entityPool)),
@@ -122,17 +120,29 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
 
                 int stationPilerLevel = GameMain.history.stationPilerLevel;
 
-                UpdateOutputSlots(ref __instance, cargoTraffic, slotdata, entitySignPool, stationPilerLevel);
-                UpdateInputSlots(ref __instance, power, factory, cargoTraffic, slotdata, entitySignPool);
+                if (__instance.recipeId != ProtoIDUsedByPatches.R物质分解)
+                {
+                    UpdateOutputSlots(ref __instance, cargoTraffic, slotdata, entitySignPool, stationPilerLevel);
+                    UpdateInputSlots(ref __instance, cargoTraffic, slotdata, entitySignPool);
+                }
+                else if (b)
+                {
+                    UpdateTrashInputSlots(ref __instance, power, factory, cargoTraffic, slotdata);
+
+                    int sandCount = __instance.produced[0];
+
+                    if (sandCount >= 800 && GameMain.mainPlayer != null)
+                    {
+                        GameMain.mainPlayer.sandCount += sandCount;
+                        __instance.produced[0] = 0;
+                    }
+                }
             }
 
-            if (factory.entityPool[__instance.entityId].protoId == ProtoIDUsedByPatches.I负熵熔炉)
+            if (factory.entityPool[__instance.entityId].protoId == ProtoIDUsedByPatches.I负熵熔炉 && __instance.replicating)
             {
-                if (__instance.replicating)
-                {
-                    __instance.extraTime += (int)(power * __instance.extraSpeed) +
-                                            (int)(power * __instance.speedOverride * __instance.extraTimeSpend / __instance.timeSpend);
-                }
+                __instance.extraTime += (int)(power * __instance.extraSpeed) +
+                                        (int)(power * __instance.speedOverride * __instance.extraTimeSpend / __instance.timeSpend);
             }
 
             return b;
@@ -213,10 +223,62 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
             }
         }
 
-        private static void UpdateInputSlots(
+        private static void UpdateTrashInputSlots(
             ref AssemblerComponent __instance,
             float power,
             PlanetFactory factory,
+            CargoTraffic traffic,
+            SlotData[] slotdata)
+        {
+            for (int index = 0; index < slotdata.Length; ++index)
+            {
+                if (slotdata[index].dir == IODir.Input)
+                {
+                    if (slotdata[index].counter > 0)
+                    {
+                        --slotdata[index].counter;
+                    }
+                    else
+                    {
+                        int beltId = slotdata[index].beltId;
+                        if (beltId <= 0) continue;
+                        BeltComponent beltComponent = traffic.beltPool[beltId];
+                        CargoPath cargoPath = traffic.GetCargoPath(beltComponent.segPathId);
+                        if (cargoPath == null) continue;
+
+                        int itemId = traffic.TryPickItemAtRear(beltId, 0, null, out byte stack, out _);
+
+                        if (itemId <= 0) continue;
+
+                        ref int sandCount = ref __instance.produced[0];
+
+                        if (itemId == ProtoIDUsedByPatches.I沙土)
+                        {
+                            sandCount += stack;
+                        }
+                        else
+                        {
+                            int[] consumeRegister = GameMain.statistics.production.factoryStatPool[factory.index].consumeRegister;
+
+                            lock (consumeRegister)
+                            {
+                                consumeRegister[itemId] += stack;
+                            }
+
+                            sandCount += (int)(stack * 40 * power);
+                        }
+                    }
+                }
+                else if (slotdata[index].dir != IODir.Output)
+                {
+                    slotdata[index].beltId = 0;
+                    slotdata[index].counter = 0;
+                }
+            }
+        }
+
+        private static void UpdateInputSlots(
+            ref AssemblerComponent __instance,
             CargoTraffic traffic,
             SlotData[] slotdata,
             SignData[] signPool)
@@ -237,60 +299,34 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
                         CargoPath cargoPath = traffic.GetCargoPath(beltComponent.segPathId);
                         if (cargoPath == null) continue;
 
-                        if (__instance.recipeId == ProtoIDUsedByPatches.R物质分解)
+                        int itemId = cargoPath.TryPickItemAtRear(__instance.needs, out int needIdx, out byte stack, out byte inc);
+
+                        if (needIdx >= 0 && itemId > 0 && __instance.needs[needIdx] == itemId)
                         {
-                            if (power < 0.1f) return;
-
-                            int itemId = traffic.TryPickItemAtRear(beltId, 0, null, out byte stack, out _);
-
-                            if (itemId <= 0) continue;
-
-                            int[] consumeRegister = GameMain.statistics.production.factoryStatPool[factory.index].consumeRegister;
-
-                            lock (consumeRegister)
-                            {
-                                consumeRegister[itemId] += stack;
-                            }
-
-                            TmpSandCount += stack;
-
-                            if (TmpSandCount < 1000 || GameMain.mainPlayer == null) continue;
-
-                            GameMain.mainPlayer.sandCount += TmpSandCount * 40;
-                            
-                            TmpSandCount = 0;
+                            __instance.served[needIdx] += stack;
+                            __instance.incServed[needIdx] += inc;
+                            slotdata[index].storageIdx = __instance.products.Length + needIdx + 1;
                         }
-                        else
+
+                        for (int i = 0; i < __instance.products.Length; i++)
                         {
-                            int itemId = cargoPath.TryPickItemAtRear(__instance.needs, out int needIdx, out byte stack, out byte inc);
+                            if (__instance.produced[i] >= 50) continue;
 
-                            if (needIdx >= 0 && itemId > 0 && __instance.needs[needIdx] == itemId)
+                            itemId = traffic.TryPickItemAtRear(beltId, __instance.products[i], null, out stack, out _);
+
+                            if (__instance.products[i] == itemId)
                             {
-                                __instance.served[needIdx] += stack;
-                                __instance.incServed[needIdx] += inc;
-                                slotdata[index].storageIdx = __instance.products.Length + needIdx + 1;
+                                __instance.produced[i] += stack;
+                                slotdata[index].storageIdx = i + 1;
+                                break;
                             }
+                        }
 
-                            for (int i = 0; i < __instance.products.Length; i++)
-                            {
-                                if (__instance.produced[i] >= 50) continue;
-
-                                itemId = traffic.TryPickItemAtRear(beltId, __instance.products[i], null, out stack, out _);
-
-                                if (__instance.products[i] == itemId)
-                                {
-                                    __instance.produced[i] += stack;
-                                    slotdata[index].storageIdx = i + 1;
-                                    break;
-                                }
-                            }
-
-                            if (itemId > 0)
-                            {
-                                int entityId = beltComponent.entityId;
-                                signPool[entityId].iconType = 1U;
-                                signPool[entityId].iconId0 = (uint)itemId;
-                            }
+                        if (itemId > 0)
+                        {
+                            int entityId = beltComponent.entityId;
+                            signPool[entityId].iconType = 1U;
+                            signPool[entityId].iconId0 = (uint)itemId;
                         }
                     }
                 }

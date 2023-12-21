@@ -67,11 +67,7 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
 
         internal static void IntoOtherSave() => ReInitAll();
 
-        private static void ReInitAll()
-        {
-            _slotdata = new ConcurrentDictionary<(int, int), SlotData[]>();
-            TmpSandCount = 0;
-        }
+        private static void ReInitAll() => _slotdata = new ConcurrentDictionary<(int, int), SlotData[]>();
 
         internal static bool ContainsRecipeTypeRevert(ERecipeType recipetype, ERecipeType filter) => ContainsRecipeType(filter, recipetype);
 

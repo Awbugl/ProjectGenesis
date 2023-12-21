@@ -778,7 +778,8 @@
     "Type": 1,
     "PreTechOverride": 0,
     "DescFields": [
-      0
+      0,
+      1
     ],
     "FuelType": 0,
     "HeatValue": 0,
@@ -786,7 +787,7 @@
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
-    "MiningFrom": "",
+    "MiningFrom": "黑雾单位",
     "ProduceFrom": "",
     "Grade": 0,
     "Upgrades": [],

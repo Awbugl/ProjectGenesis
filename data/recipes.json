@@ -4840,14 +4840,14 @@
     "IconPath": "Assets/texpack/沙土回收_新",
     "Type": 14,
     "GridIndex": 1210,
-    "Time": 10800,
+    "Time": 1200,
     "Input": [],
     "InCounts": [],
     "Output": [
-      6999
+      1099
     ],
     "OutCounts": [
-      1
+      40
     ],
     "Explicit": true,
     "Handcraft": false,
