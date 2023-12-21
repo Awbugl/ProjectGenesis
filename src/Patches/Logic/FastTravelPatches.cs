@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Reflection.Emit;
 using HarmonyLib;
+using ProjectGenesis.Compatibility;
 using ProjectGenesis.Utils;
 
 namespace ProjectGenesis.Patches.Logic
@@ -12,6 +13,8 @@ namespace ProjectGenesis.Patches.Logic
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> UIStarmap_UpdateCursorView_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
+            if (FastTravelEnablerCompatibilityPlugin.FastTravelEnablerInstalled) return instructions;
+
             var matcher = new CodeMatcher(instructions);
 
             matcher.MatchForward(true, new CodeMatch(OpCodes.Call, AccessTools.PropertyGetter(typeof(GameMain), "sandboxToolsEnabled")));
@@ -26,6 +29,8 @@ namespace ProjectGenesis.Patches.Logic
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> UIStarmap_FastTravel_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
+            if (FastTravelEnablerCompatibilityPlugin.FastTravelEnablerInstalled) return instructions;
+
             var matcher = new CodeMatcher(instructions);
 
             matcher.MatchForward(false, new CodeMatch(OpCodes.Call, AccessTools.PropertyGetter(typeof(GameMain), "sandboxToolsEnabled")));
@@ -87,7 +92,7 @@ namespace ProjectGenesis.Patches.Logic
             if (itemCount != 1) return false;
 
             player.mecha.AddConsumptionStat(itemId, itemCount, player.nearestFactory);
-            
+
             return true;
         }
     }

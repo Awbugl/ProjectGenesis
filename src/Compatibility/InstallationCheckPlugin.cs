@@ -25,6 +25,7 @@ namespace ProjectGenesis
     [BepInDependency(GalacticScaleCompatibilityPlugin.MODGUID, BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency(PlanetwideMiningCompatibilityPlugin.MODGUID, BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency(PlanetVeinUtilizationCompatibilityPlugin.MODGUID, BepInDependency.DependencyFlags.SoftDependency)]
+    [BepInDependency(FastTravelEnablerCompatibilityPlugin.MODGUID, BepInDependency.DependencyFlags.SoftDependency)]
     public class InstallationCheckPlugin : BaseUnityPlugin
     {
         public const string MODGUID = "org.LoShin.GenesisBook.InstallationCheck";

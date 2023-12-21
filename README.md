@@ -31,7 +31,6 @@ or open a issue via [github](https://github.com/Awbugl/ProjectGenesis).
 + [BeltSpeedEnhancement](https://dsp.thunderstore.io/package/Awbugl/BeltSpeedEnhancement/)
 + [WaterElectrolysis](https://dsp.thunderstore.io/package/jinxOAO/WaterElectrolysis/)
 + [GigaStationsUpdated](https://dsp.thunderstore.io/package/kremnev8/GigaStationsUpdated/)
-+ [FastTravelEnabler](https://dsp.thunderstore.io/package/hetima/FastTravelEnabler/)
 
 ## 安装方法
 
