@@ -1211,20 +1211,18 @@
       29.0
     ],
     "PreTechs": [
-      1942
+      1943
     ],
     "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
-      6003,
-      6004
+      6003
     ],
     "ItemPoints": [
       8,
-      8,
-      6,
-      2
+      12,
+      4
     ],
     "HashNeeded": 720000,
     "UnlockRecipes": [
@@ -1256,13 +1254,15 @@
       5204
     ],
     "Position": [
-      33.0,
-      -31.0
+      49.0,
+      -19.0
     ],
-    "PreTechs": [
+    "PreTechs": [],
+    "PreTechsImplicit": [
+      1962,
+      1904,
       1704
     ],
-    "PreTechsImplicit": [],
     "Items": [
       5201
     ],
@@ -2138,13 +2138,11 @@
     "PreTechsImplicit": [],
     "Items": [
       6001,
-      6002,
-      6003
+      6002
     ],
     "ItemPoints": [
-      20,
-      10,
-      5
+      5,
+      20
     ],
     "HashNeeded": 180000,
     "UnlockRecipes": [
@@ -2697,8 +2695,8 @@
       6002
     ],
     "ItemPoints": [
-      20,
-      20
+      10,
+      10
     ],
     "HashNeeded": 144000,
     "UnlockRecipes": [
@@ -4662,8 +4660,8 @@
       5202
     ],
     "Position": [
-      29.0,
-      5.0
+      41.0,
+      -15.0
     ],
     "PreTechs": [],
     "PreTechsImplicit": [
@@ -4704,11 +4702,13 @@
       5203
     ],
     "Position": [
-      29.0,
-      17.0
+      45.0,
+      -11.0
     ],
     "PreTechs": [],
-    "PreTechsImplicit": [],
+    "PreTechsImplicit": [
+      1203
+    ],
     "Items": [
       5201
     ],
@@ -4741,16 +4741,19 @@
     "Conclusion": "负熵递归结果",
     "IsHiddenTech": true,
     "PreItem": [
-      5204
+      5204,
+      5205
     ],
     "Position": [
-      25.0,
-      21.0
+      49.0,
+      -11.0
     ],
-    "PreTechs": [
+    "PreTechs": [],
+    "PreTechsImplicit": [
+      1902,
+      1962,
       1417
     ],
-    "PreTechsImplicit": [],
     "Items": [
       5201
     ],
@@ -4786,13 +4789,14 @@
       5205
     ],
     "Position": [
-      37.0,
+      45.0,
       -19.0
     ],
-    "PreTechs": [
+    "PreTechs": [],
+    "PreTechsImplicit": [
+      1901,
       1144
     ],
-    "PreTechsImplicit": [],
     "Items": [
       5201
     ],
@@ -5862,7 +5866,7 @@
     "Items": [
       6001,
       6002,
-      6004
+      6003
     ],
     "ItemPoints": [
       40,
@@ -6678,11 +6682,13 @@
       5204
     ],
     "Position": [
-      29.0,
-      21.0
+      45.0,
+      -15.0
     ],
     "PreTechs": [],
-    "PreTechsImplicit": [],
+    "PreTechsImplicit": [
+      1901
+    ],
     "Items": [
       5201
     ],
