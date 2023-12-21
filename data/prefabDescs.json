@@ -377,6 +377,8 @@
   {
     "ItemID": 2319,
     "ModelID": 457,
+    "idleEnergyPerTick": 16000,
+    "workEnergyPerTick": 480000,
     "assemblerSpeed": 40000,
     "assemblerRecipeType": 19
   },

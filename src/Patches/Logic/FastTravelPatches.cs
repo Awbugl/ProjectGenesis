@@ -63,9 +63,9 @@ namespace ProjectGenesis.Patches.Logic
                 return false;
             }
 
-            if (UseNegentropySingularity(player))
+            if (!UseNegentropySingularity(player))
             {
-                UIRealtimeTip.PopupAhead("负熵奇点不足".TranslateFromJson());
+                UIRealtimeTip.Popup("负熵奇点不足".TranslateFromJson());
                 return false;
             }
 
@@ -77,12 +77,12 @@ namespace ProjectGenesis.Patches.Logic
 
         private static bool UseNegentropySingularity(Player player)
         {
-            int itemId = 5204;
+            int itemId = ProtoIDUsedByPatches.I负熵奇点;
             int itemCount = 1;
 
             player.TakeItemFromPlayer(ref itemId, ref itemCount, out _, true, null);
 
-            if (itemId != 5204) return false;
+            if (itemId != ProtoIDUsedByPatches.I负熵奇点) return false;
 
             if (itemCount != 1) return false;
 

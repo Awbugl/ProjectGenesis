@@ -10,7 +10,7 @@ namespace ProjectGenesis.Patches.UI.QTools
 
         private readonly List<T> _pointer = new List<T>();
 
-        private int _curReuseIndex = 0;
+        private int _curReuseIndex;
 
         internal ObjectPool(Func<T> ctor)
         {

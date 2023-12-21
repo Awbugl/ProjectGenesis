@@ -6,11 +6,14 @@ namespace ProjectGenesis.Patches.UI
 {
     internal class HarmonyLogListener : ILogListener
     {
-        internal static readonly Queue<object> LogData = new Queue<object>();
+        internal static readonly Queue<string> LogData = new Queue<string>();
 
         public void LogEvent(object sender, LogEventArgs eventArgs)
         {
-            if (eventArgs.Source.SourceName == "HarmonyX" && eventArgs.Level == LogLevel.Error) LogData.Enqueue(eventArgs.Data);
+            string s = eventArgs.Data.ToString();
+
+            if ((eventArgs.Source.SourceName == "HarmonyX" || s.Contains("InvalidProgramException")) && eventArgs.Level == LogLevel.Error)
+                LogData.Enqueue(s);
         }
 
         public void Dispose() { }
@@ -22,13 +25,12 @@ namespace ProjectGenesis.Patches.UI
 
         [HarmonyPatch(typeof(VFPreload), "InvokeOnLoadWorkEnded")]
         [HarmonyPostfix]
-        [HarmonyPriority(Priority.Low)]
         public static void InvokeOnLoadWorkEnded()
         {
             if (_finished) return;
 
             while (HarmonyLogListener.LogData.Count > 0)
-                UIFatalErrorTip.instance.ShowError("Harmony throws an error when patching!", HarmonyLogListener.LogData.Dequeue().ToString());
+                UIFatalErrorTip.instance.ShowError("Harmony throws an error when patching!", HarmonyLogListener.LogData.Dequeue());
 
             _finished = true;
         }

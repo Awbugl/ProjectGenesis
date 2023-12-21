@@ -2,7 +2,7 @@
 using System.Reflection.Emit;
 using HarmonyLib;
 
-namespace ProjectGenesis.Patches
+namespace ProjectGenesis.Patches.Logic
 {
     internal static class TankComponentPatches
     {

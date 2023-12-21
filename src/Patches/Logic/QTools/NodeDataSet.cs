@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using ProjectGenesis.Utils;
 using UnityEngine;
 
-namespace ProjectGenesis.Patches.Logic
+namespace ProjectGenesis.Patches.Logic.QTools
 {
     internal class NodeDataSet
     {
@@ -146,6 +147,8 @@ namespace ProjectGenesis.Patches.Logic
             {
                 ItemProto proto = LDB.items.Select(recipe.Items[index]);
                 float count = node.ItemCount * recipe.ItemCounts[index] / recipe.ResultCounts[idx];
+                
+                if (node.Options.Factory.ModelIndex == ProtoIDUsedByPatches.M负熵熔炉) count *= 0.5f;
 
                 if (node.Options.Strategy == EProliferatorStrategy.ExtraProducts) count *= 0.8f;
 

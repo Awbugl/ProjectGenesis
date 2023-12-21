@@ -8,7 +8,7 @@ namespace ProjectGenesis.Patches.Logic
 {
     public static class ThermalPowerGenPatches
     {
-        private static readonly int[] FuelRods = { 1801, 6216, 6217 };
+        private static readonly int[] FuelRods = { ProtoIDUsedByPatches.I氢燃料棒, ProtoIDUsedByPatches.I煤油燃料棒, ProtoIDUsedByPatches.I四氢双环戊二烯燃料棒 };
 
         [HarmonyPatch(typeof(PlanetFactory), "EntityFastFillIn")]
         [HarmonyPatch(typeof(PlanetFactory), "InsertInto")]

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ProjectGenesis.Patches.Logic
+namespace ProjectGenesis.Patches.Logic.QTools
 {
     internal class NodeOptions
     {

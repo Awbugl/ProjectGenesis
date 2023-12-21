@@ -2,12 +2,13 @@
 using CommonAPI.Systems;
 using NGPT;
 using ProjectGenesis.Patches.Logic;
+using ProjectGenesis.Patches.Logic.QTools;
 using ProjectGenesis.Patches.UI.QTools.MyComboBox;
 using ProjectGenesis.Patches.UI.Utils;
 using ProjectGenesis.Utils;
 using UnityEngine;
 using UnityEngine.UI;
-using static ProjectGenesis.Patches.Logic.QTools;
+using static ProjectGenesis.Patches.Logic.QTools.QTools;
 using Utils_ERecipeType = ProjectGenesis.Utils.ERecipeType;
 
 namespace ProjectGenesis.Patches.UI.QTools
@@ -74,16 +75,17 @@ namespace ProjectGenesis.Patches.UI.QTools
                               {
                                   [Utils_ERecipeType.Smelt] = MyComboBox.MyComboBox.CreateComboBox<ItemComboBox>(30, 110, _tabs[0], "默认生产设备"),
                                   [Utils_ERecipeType.矿物处理] = MyComboBox.MyComboBox.CreateComboBox<ItemComboBox>(430, 110, _tabs[0]),
-                                  [Utils_ERecipeType.Assemble] = MyComboBox.MyComboBox.CreateComboBox<ItemComboBox>(830, 110, _tabs[0]),
-                                  [Utils_ERecipeType.标准制造] = MyComboBox.MyComboBox.CreateComboBox<ItemComboBox>(30, 155, _tabs[0]),
-                                  [Utils_ERecipeType.高精度加工] = MyComboBox.MyComboBox.CreateComboBox<ItemComboBox>(430, 155, _tabs[0]),
-                                  [Utils_ERecipeType.Refine] = MyComboBox.MyComboBox.CreateComboBox<ItemComboBox>(830, 155, _tabs[0]),
-                                  [Utils_ERecipeType.Chemical] = MyComboBox.MyComboBox.CreateComboBox<ItemComboBox>(30, 200, _tabs[0]),
-                                  [Utils_ERecipeType.高分子化工] = MyComboBox.MyComboBox.CreateComboBox<ItemComboBox>(430, 200, _tabs[0]),
-                                  [Utils_ERecipeType.Particle] = MyComboBox.MyComboBox.CreateComboBox<ItemComboBox>(830, 200, _tabs[0])
+                                  [Utils_ERecipeType.Assemble] = MyComboBox.MyComboBox.CreateComboBox<ItemComboBox>(30, 155, _tabs[0]),
+                                  [Utils_ERecipeType.标准制造] = MyComboBox.MyComboBox.CreateComboBox<ItemComboBox>(430, 155, _tabs[0]),
+                                  [Utils_ERecipeType.高精度加工] = MyComboBox.MyComboBox.CreateComboBox<ItemComboBox>(30, 200, _tabs[0]),
+                                  [Utils_ERecipeType.Refine] = MyComboBox.MyComboBox.CreateComboBox<ItemComboBox>(430, 200, _tabs[0]),
+                                  [Utils_ERecipeType.Chemical] = MyComboBox.MyComboBox.CreateComboBox<ItemComboBox>(30, 245, _tabs[0]),
+                                  [Utils_ERecipeType.高分子化工] = MyComboBox.MyComboBox.CreateComboBox<ItemComboBox>(430, 245, _tabs[0]),
+                                  [Utils_ERecipeType.Particle] = MyComboBox.MyComboBox.CreateComboBox<ItemComboBox>(30, 290, _tabs[0]),
+                                  [Utils_ERecipeType.Research] = MyComboBox.MyComboBox.CreateComboBox<ItemComboBox>(430, 290, _tabs[0])
                               };
 
-            _proliferatorComboBox = MyComboBox.MyComboBox.CreateComboBox<ProliferatorComboBox>(30, 290, _tabs[0], "默认增产策略");
+            _proliferatorComboBox = MyComboBox.MyComboBox.CreateComboBox<ProliferatorComboBox>(30, 380, _tabs[0], "默认增产策略");
 
             _clearOptionsButton = Util.MakeHiliteTextButton("清空设置".TranslateFromJson(), 80, 24);
             Util.NormalizeRectWithTopLeft(_clearOptionsButton, 1635, 2, _labelTextPrefeb.transform);
@@ -431,18 +433,19 @@ namespace ProjectGenesis.Patches.UI.QTools
             Destroy(go.GetComponent<UIOptionWindow>());
             var win = go.AddComponent<UIQToolsWindow>();
 
-            UIDETopFunction controlPanelTopFunction = UIRoot.instance.uiGame.dysonEditor.controlPanel.topFunction;
-            UIButton pauseButton = controlPanelTopFunction.pauseButton;
+            UITechTree uiGameTechTree = UIRoot.instance.uiGame.techTree;
+            UIButton pauseButton = uiGameTechTree.pauseButton;
             GameObject pGameObject = pauseButton.gameObject;
             GameObject p = Instantiate(pGameObject, go.transform);
             p.name = "ui-qtools-pauseButton";
             win._pauseButton = p.GetComponent<UIButton>();
-            win._playSprite = controlPanelTopFunction.playSprite;
-            win._pauseSprite = controlPanelTopFunction.pauseSprite;
-            win._playString = controlPanelTopFunction.playString;
-            win._pauseString = controlPanelTopFunction.pauseString;
-            win._pauseImg = p.transform.GetChild(1).GetComponent<Image>();
-            win._pauseText = p.GetComponentInChildren<Text>();
+            win._playSprite = uiGameTechTree.playSprite;
+            win._pauseSprite = uiGameTechTree.pauseSprite;
+            win._playString = uiGameTechTree.playString;
+            win._pauseString = uiGameTechTree.pauseString;
+            Transform pauseButtonContent = p.transform.GetChild(2);
+            win._pauseImg = pauseButtonContent.GetComponentInChildren<Image>();
+            win._pauseText = pauseButtonContent.GetComponentInChildren<Text>();
 
             win._tabs = new RectTransform[2];
             win._tabButtons = new UIButton[2];

@@ -175,6 +175,11 @@
     "ENUS": "Byproducts:"
   },
   {
+    "Name": "工厂：",
+    "ZHCN": "工厂：",
+    "ENUS": "Factories:"
+  },
+  {
     "Name": "选择物品",
     "ZHCN": "选择物品",
     "ENUS": "Select item"

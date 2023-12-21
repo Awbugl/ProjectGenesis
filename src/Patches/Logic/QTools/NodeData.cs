@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using ProjectGenesis.Utils;
 
-namespace ProjectGenesis.Patches.Logic
+namespace ProjectGenesis.Patches.Logic.QTools
 {
     internal class NodeData
     {
@@ -16,7 +17,7 @@ namespace ProjectGenesis.Patches.Logic
 
             float assemblerSpeed = factoryPrefabDesc.assemblerSpeed;
 
-            if (factoryPrefabDesc.isLab) assemblerSpeed = factoryPrefabDesc.labAssembleSpeed * 10000;
+            if (factoryPrefabDesc.isLab) assemblerSpeed = factoryPrefabDesc.labAssembleSpeed;
 
             int idx = Array.IndexOf(Options.Recipe.Results, Item.ID);
 
@@ -25,13 +26,15 @@ namespace ProjectGenesis.Patches.Logic
             switch (Options.Strategy)
             {
                 case EProliferatorStrategy.ExtraProducts:
-                    count /= 1.25f;
+                    count *= 0.8f;
                     break;
 
                 case EProliferatorStrategy.ProductionSpeedup:
-                    count /= 2f;
+                    count *= 0.5f;
                     break;
             }
+
+            if (Options.Factory.ModelIndex == ProtoIDUsedByPatches.M负熵熔炉) count *= 0.5f;
 
             Options.FactoryCount = count;
         }

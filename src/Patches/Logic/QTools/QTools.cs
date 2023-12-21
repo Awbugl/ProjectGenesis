@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using ProjectGenesis.Utils;
 
-namespace ProjectGenesis.Patches.Logic
+namespace ProjectGenesis.Patches.Logic.QTools
 {
     internal static class QTools
     {
@@ -45,6 +45,14 @@ namespace ProjectGenesis.Patches.Logic
                     {
                         dict.TryAddOrInsert(Utils.ERecipeType.Smelt, proto);
                         dict.TryAddOrInsert(Utils.ERecipeType.矿物处理, proto);
+                        continue;
+                    }
+                    
+                    case Utils.ERecipeType.所有制造:
+                    {
+                        dict.TryAddOrInsert(Utils.ERecipeType.Assemble, proto);
+                        dict.TryAddOrInsert(Utils.ERecipeType.标准制造, proto);
+                        dict.TryAddOrInsert(Utils.ERecipeType.高精度加工, proto);
                         continue;
                     }
 

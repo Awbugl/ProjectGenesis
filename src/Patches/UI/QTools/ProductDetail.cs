@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using CommonAPI.Systems;
 using ProjectGenesis.Patches.Logic;
+using ProjectGenesis.Patches.Logic.QTools;
 using ProjectGenesis.Patches.UI.QTools.MyComboBox;
 using ProjectGenesis.Patches.UI.Utils;
 using ProjectGenesis.Utils;
@@ -123,7 +124,7 @@ namespace ProjectGenesis.Patches.UI.QTools
             RecipeProto recipe = data.Options.Recipe;
             
             var type = (Utils_ERecipeType)recipe.Type;
-            List<ItemProto> recipeTypeFactory = Logic.QTools.RecipeTypeFactoryMap[type];
+            List<ItemProto> recipeTypeFactory = Logic.QTools.QTools.RecipeTypeFactoryMap[type];
             int index = recipeTypeFactory.IndexOf(data.Options.Factory);
             
             factoryComboBox.Init(type, recipeTypeFactory, index);

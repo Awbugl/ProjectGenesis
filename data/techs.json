@@ -5471,14 +5471,12 @@
       1413
     ],
     "Items": [
-      6001,
-      6002
+      6001
     ],
     "ItemPoints": [
-      20,
       20
     ],
-    "HashNeeded": 90000,
+    "HashNeeded": 72000,
     "UnlockRecipes": [
       523,
       415,

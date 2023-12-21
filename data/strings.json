@@ -340,9 +340,9 @@
     "ENUS": "A material that has existed since ancient times and can be used to build large structures."
   },
   {
-    "Name": "煤焦油",
-    "ZHCN": "煤焦油",
-    "ENUS": "Coal Tar"
+    "Name": "焦油",
+    "ZHCN": "焦油",
+    "ENUS": "Tar"
   },
   {
     "Name": "剧毒有机液体",
@@ -876,8 +876,8 @@
   },
   {
     "Name": "I苯",
-    "ZHCN": "由六个碳原子和六个氢原子组成的有机化合物，是重要的有机化工原料。",
-    "ENUS": "An organic compound consisting of six carbon atoms and six hydrogen atoms, an important organic chemical raw material."
+    "ZHCN": "有特殊气味的油状液体，化学性质相对稳定。在聚合物中引入苯基团，可以提高其玻璃化温度及化学稳定性。",
+    "ENUS": "An oily liquid with a special odor and relatively stable chemical properties. The introduction of phenyl groups into the polymer can increase its glass transition temperature and chemical stability."
   },
   {
     "Name": "丙烯",
@@ -1166,33 +1166,33 @@
   },
   {
     "Name": "R焦油转化",
-    "ZHCN": "将煤炭干馏成煤焦油。",
-    "ENUS": "Dry distillation of coal into coal tar."
+    "ZHCN": "煤炭在隔绝空气条件下高温处理后，可以得到一种重要的化工原料——焦油。",
+    "ENUS": "When coal is treated at high temperatures under air-insulated conditions, an important chemical raw material, tar, can be obtained."
   },
   {
     "Name": "焦油分馏",
     "ZHCN": "焦油分馏",
-    "ENUS": "Coal Tar Fractionation"
+    "ENUS": "Tar Fractionation"
   },
   {
     "Name": "R焦油分馏",
-    "ZHCN": "从煤焦油中分馏出苯。",
-    "ENUS": "Extract benzene from coal tar."
+    "ZHCN": "经过减压多次蒸馏，焦油中的芳香族化合物会富集在轻馏分和洗油馏分。经过后处理和纯化即可得到高质量的苯。",
+    "ENUS": "After several distillations under reduced pressure, the aromatic compounds in the tar are enriched in the light and wash fractions. High quality benzene can be obtained after post-treatment and purification."
   },
   {
     "Name": "焦油裂化",
     "ZHCN": "焦油裂化",
-    "ENUS": "Coal Tar Cracking"
+    "ENUS": "Tar Cracking"
   },
   {
     "Name": "R焦油裂化",
-    "ZHCN": "将煤焦油裂化为丙烯。",
-    "ENUS": "Cracking coal tar into propylene."
+    "ZHCN": "在等离子体的作用下，焦油组分发生碳链的断裂和重整，产生大量的低级不饱和烃。可通过对冷凝温度的控制稳定收集其中的丙烯。",
+    "ENUS": "In the presence of plasma, the tar fraction undergoes carbon chain breaking and reforming, producing a large number of lower unsaturated hydrocarbons. The propylene can be collected in a stabilized manner by controlling the condensation temperature."
   },
   {
     "Name": "R三氯化铁",
-    "ZHCN": "向盐酸和铁的反应体系中加入氧气，使其转化为三氯化铁和水。\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作。</color>",
-    "ENUS": "Add oxygen to the reaction system of hydrochloric acid and iron to convert it to ferric chloride and water.\n<color=\"#FD965ECC\">It will not stop working until all products are stacked.</color>"
+    "ZHCN": "向盐酸和铁的液相反应体系中加入氧化剂，可以稳定产出三氯化铁。\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作。</color>",
+    "ENUS": "Addition of an oxidizing agent to the liquid-phase reaction system of hydrochloric acid and iron stabilizes the output of ferric chloride.\n<color=\"#FD965ECC\">It will not stop working until all products are stacked.</color>"
   },
   {
     "Name": "钨矿筛选",
@@ -1226,8 +1226,8 @@
   },
   {
     "Name": "R等离子精炼",
-    "ZHCN": "利用等离子体精炼原油，可以获得氢气和煤焦油。\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作。</color>",
-    "ENUS": "Hydrogen and coal tar can be obtained by refining crude oil with plasma.\n<color=\"#FD965ECC\">It will not stop working until all products are stacked.</color>"
+    "ZHCN": "利用等离子体精炼原油，可以获得氢气和焦油。\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作。</color>",
+    "ENUS": "Hydrogen and tar can be obtained by refining crude oil with plasma.\n<color=\"#FD965ECC\">It will not stop working until all products are stacked.</color>"
   },
   {
     "Name": "苯合成",
@@ -1766,8 +1766,8 @@
   },
   {
     "Name": "T焦油分馏描述",
-    "ZHCN": "精炼煤焦油可以得到数种重要的化工原料。",
-    "ENUS": "Refining coal tar can yield several important chemicals."
+    "ZHCN": "精炼焦油可以得到数种重要的化工原料。",
+    "ENUS": "Refining tar can yield several important chemicals."
   },
   {
     "Name": "T行星协调中心",
@@ -1796,13 +1796,13 @@
   },
   {
     "Name": "X射线裂解描述",
-    "ZHCN": "在氢气的催化作用下，利用高能的X射线将煤焦油裂解成更多的氢，同时将生产过程中的副产品加工成高能石墨。",
-    "ENUS": "High-energy X-ray photocatalysis can crack coal tar into more hydrogen and process the byproducts into energetic graphite."
+    "ZHCN": "在氢气的催化作用下，利用高能的X射线将焦油裂解成更多的氢，同时将生产过程中的副产品加工成高能石墨。",
+    "ENUS": "High-energy X-ray photocatalysis can crack tar into more hydrogen and process the byproducts into energetic graphite."
   },
   {
     "Name": "RX射线裂解",
-    "ZHCN": "在氢气的催化作用下，利用高能的X射线将煤焦油裂解，从而获得更多的氢以及副产品高能石墨。",
-    "ENUS": "Under the catalysis of hydrogen, X-rays can crack the coal tar into more hydrogen and a by-product, energetic graphite."
+    "ZHCN": "在氢气的催化作用下，利用高能的X射线将焦油裂解，从而获得更多的氢以及副产品高能石墨。",
+    "ENUS": "Under the catalysis of hydrogen, X-rays can crack the tar into more hydrogen and a by-product, energetic graphite."
   },
   {
     "Name": "高强度玻璃描述",
@@ -1975,14 +1975,14 @@
     "ENUS": "The most basic electromagnetic components, very practical."
   },
   {
-    "Name": "I煤焦油",
-    "ZHCN": "重要的化工原料，可以通过多种方式获得。",
-    "ENUS": "An important chemical raw material that can be obtained in a variety of ways."
+    "Name": "I焦油",
+    "ZHCN": "有刺激性气味的粘稠液体，密度较大，富含多种芳香族、杂环和支链化合物且便于提取，是一种重要的化工原料。可由煤炭干馏，或由石油分离获得。",
+    "ENUS": "Viscous liquid with irritating odor, high density, rich in many aromatic, heterocyclic and branched chain compounds and easy to extract, it is an important chemical raw material. It can be obtained by dry distillation of coal or separation of oil."
   },
   {
     "Name": "I放射性矿物",
-    "ZHCN": "具有微弱放射性的碎块。",
-    "ENUS": "Faintly radioactive fractions."
+    "ZHCN": "超重元素由类质同象作用部分取代了成岩矿物的金属离子，形成的具有放射性的岩石，可从中分离出多种具有工业价值的超重元素化合物。",
+    "ENUS": "Superheavy elements are radioactive rocks formed by the partial replacement of metal ions in rock-forming minerals by homogeneous isomorphism, from which a variety of superheavy element compounds of industrial value can be isolated."
   },
   {
     "Name": "I铀矿",

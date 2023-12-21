@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using ProjectGenesis.Patches.Logic;
+using ProjectGenesis.Patches.Logic.QTools;
 
 namespace ProjectGenesis.Patches.UI.QTools.MyComboBox
 {

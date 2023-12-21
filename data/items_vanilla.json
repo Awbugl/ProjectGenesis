@@ -1433,8 +1433,8 @@
   },
   {
     "ID": 1114,
-    "Name": "煤焦油",
-    "Description": "I煤焦油",
+    "Name": "焦油",
+    "Description": "I焦油",
     "IconPath": "Assets/texpack/煤焦油",
     "GridIndex": 4201,
     "StackSize": 20,

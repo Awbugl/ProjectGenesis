@@ -94,6 +94,7 @@
         <Compile Include="src\Compatibility\MoreMegaStructureCompatibilityPlugin.cs"/>
         <Compile Include="src\Compatibility\PlanetVeinUtilizationCompatibilityPlugin.cs"/>
         <Compile Include="src\Compatibility\PlanetwideMiningCompatibilityPlugin.cs"/>
+        <Compile Include="src\Patches\Logic\FuelRodPatches.cs" />
         <Compile Include="src\Patches\Logic\PlanetFocus\DarkFrogPatches.cs" />
         <Compile Include="src\Patches\Logic\QTools\NodeData.cs"/>
         <Compile Include="src\Patches\Logic\QTools\NodeDataSet.cs"/>

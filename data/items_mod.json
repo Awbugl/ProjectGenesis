@@ -1549,12 +1549,15 @@
     "Type": 2,
     "PreTechOverride": 0,
     "DescFields": [
+      2,
+      3,
       1,
+      31,
       40
     ],
-    "FuelType": 0,
-    "HeatValue": 0,
-    "ReactorInc": 0.0,
+    "FuelType": 1,
+    "HeatValue": 1620000,
+    "ReactorInc": 0.5,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,

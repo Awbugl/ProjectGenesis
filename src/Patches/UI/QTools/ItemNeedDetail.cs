@@ -1,4 +1,5 @@
 ﻿using ProjectGenesis.Patches.Logic;
+using ProjectGenesis.Patches.Logic.QTools;
 using ProjectGenesis.Patches.UI.Utils;
 using UnityEngine;
 using UnityEngine.UI;
