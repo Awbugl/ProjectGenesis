@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using CommonAPI.Systems;
-using ProjectGenesis.Patches.Logic;
 using ProjectGenesis.Patches.Logic.QTools;
 using ProjectGenesis.Patches.UI.QTools.MyComboBox;
 using ProjectGenesis.Patches.UI.Utils;
@@ -16,7 +15,6 @@ namespace ProjectGenesis.Patches.UI.QTools
     public class ProductDetail : MonoBehaviour
     {
         private static UIItemTip _uiItemTip;
-        private static GameObject _recipePickerTranslucentImageGameObject;
 
         private NodeData _data;
 
@@ -122,18 +120,18 @@ namespace ProjectGenesis.Patches.UI.QTools
             _data = data;
 
             RecipeProto recipe = data.Options.Recipe;
-            
+
             var type = (Utils_ERecipeType)recipe.Type;
             List<ItemProto> recipeTypeFactory = Logic.QTools.QTools.RecipeTypeFactoryMap[type];
             int index = recipeTypeFactory.IndexOf(data.Options.Factory);
-            
+
             factoryComboBox.Init(type, recipeTypeFactory, index);
             factoryComboBox.OnItemChange += OnFactoryChange;
 
             itemImg.sprite = data.Item.iconSprite;
             itemImgButton.tips.tipTitle = data.Item.name;
             itemCountText.text = data.ItemCount.ToString("F2");
-            
+
             factoryButton.tips.tipTitle = data.Options.Factory.name;
             factoryCountText.text = _data.Options.FactoryCount.ToString("F2");
 
@@ -210,26 +208,19 @@ namespace ProjectGenesis.Patches.UI.QTools
 
             UIRecipePickerExtension.Popup(new Vector2(-400f, 300f), OnRecipePickerReturn, true, Filter);
 
-            if (_recipePickerTranslucentImageGameObject == null)
-                _recipePickerTranslucentImageGameObject = UIRoot.instance.uiGame.recipePicker.GetComponentInChildren<TranslucentImage>().gameObject;
-
-            _recipePickerTranslucentImageGameObject.SetActive(false);
             UIRoot.instance.uiGame.recipePicker.transform.SetAsLastSibling();
         }
 
-        public void ChangeRecipe(RecipeProto recipeProto, bool refresh = true)
+        public void OnRecipePickerReturn(RecipeProto recipeProto)
         {
             if (recipeProto == null) return;
 
             recipeEntry.SetRecipe(recipeProto);
 
-            if (refresh)
-            {
-                _data.Options.Recipe = recipeProto;
-                _data.CheckFactory();
-                RefreshFactoryCount();
-                UpdateNeeds();
-            }
+            _data.Options.Recipe = recipeProto;
+            _data.CheckFactory();
+            RefreshFactoryCount();
+            UpdateNeeds();
         }
 
         private void UpdateNeeds() => _data.UpdateNeeds();
@@ -238,12 +229,6 @@ namespace ProjectGenesis.Patches.UI.QTools
         {
             _data.RefreshFactoryCount();
             factoryCountText.text = _data.Options.FactoryCount.ToString("F2");
-        }
-
-        public void OnRecipePickerReturn(RecipeProto recipeProto)
-        {
-            ChangeRecipe(recipeProto);
-            _recipePickerTranslucentImageGameObject.SetActive(true);
         }
 
         private bool Filter(RecipeProto recipeProto) => _data.Item.recipes.Contains(recipeProto);
