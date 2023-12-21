@@ -15,19 +15,19 @@ namespace ProjectGenesis.Patches.Logic.PlanetFocus
 
         internal static readonly Dictionary<int, string> FocusIds = new Dictionary<int, string>
                                                                     {
-                                                                        { 6522, "工厂电力需求 -10%".TranslateFromJson() },
-                                                                        { 6523, "研究上传速度 +10%".TranslateFromJson() },
-                                                                        { 6524, "火力发电效率 +20%".TranslateFromJson() },
-                                                                        { 6525, "风力发电效率 +20%".TranslateFromJson() },
-                                                                        { 6526, "光伏发电效率 +20%".TranslateFromJson() },
-                                                                        { 6527, "聚变发电效率 +10%".TranslateFromJson() },
-                                                                        { 6528, "矿物采集速度 +25%".TranslateFromJson() },
-                                                                        { 6529, "裂变发电效率 +20%".TranslateFromJson() },
-                                                                        { 6530, "配送物流速度 +25%".TranslateFromJson() },
-                                                                        { 6531, "电力威胁增长 -20%".TranslateFromJson() },
-                                                                        { 6532, "太空威胁增长 -20%".TranslateFromJson() },
-                                                                        { 6533, "部队建造速度 -20%".TranslateFromJson() },
-                                                                        { 6534, "基地扩张速度 -20%".TranslateFromJson() }
+                                                                        { 6522, "工厂电力需求 -10%" },
+                                                                        { 6523, "研究上传速度 +10%" },
+                                                                        { 6524, "火力发电效率 +20%" },
+                                                                        { 6525, "风力发电效率 +20%" },
+                                                                        { 6526, "光伏发电效率 +20%" },
+                                                                        { 6527, "聚变发电效率 +10%" },
+                                                                        { 6528, "矿物采集速度 +25%" },
+                                                                        { 6529, "裂变发电效率 +20%" },
+                                                                        { 6530, "配送物流速度 +25%" },
+                                                                        { 6531, "电力威胁增长 -20%" },
+                                                                        { 6532, "太空威胁增长 -20%" },
+                                                                        { 6533, "部队建造速度 -20%" },
+                                                                        { 6534, "基地扩张速度 -20%" }
                                                                     };
 
         internal static void SetPlanetFocus(int planetId, int index, int focusid)

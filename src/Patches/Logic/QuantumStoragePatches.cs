@@ -32,6 +32,14 @@ namespace ProjectGenesis.Patches.Logic
         [HarmonyPrefix]
         public static bool StorageComponent_SetEmpty(StorageComponent __instance) => __instance.size != QuantumStorageSize;
 
+        [HarmonyPatch(typeof(FactoryStorage), "TryTakeBackItems_Storage")]
+        [HarmonyPostfix]
+        public static void FactoryStorage_TryTakeBackItems_Storage(FactoryStorage __instance, int storageId, ref bool __result)
+        {
+            StorageComponent package = __instance.GetStorageComponent(storageId);
+            if (package == null || package.size == QuantumStorageSize) __result = true;
+        }
+
         [HarmonyPatch(typeof(UIStorageWindow), "_OnUpdate")]
         [HarmonyPatch(typeof(UIStorageWindow), "OnStorageIdChange")]
         [HarmonyPatch(typeof(UIStorageWindow), "OnSortClick")]

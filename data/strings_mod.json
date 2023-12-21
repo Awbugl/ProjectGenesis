@@ -391,8 +391,13 @@
   },
   {
     "Name": "虫洞能量不足",
-    "ZHCN": "机甲能量不足， 无法开启虫洞",
+    "ZHCN": "机甲能量不足，无法开启虫洞",
     "ENUS": "The mecha does not have enough energy to open the wormhole"
+  },
+  {
+    "Name": "负熵奇点不足",
+    "ZHCN": "机甲背包负熵奇点数量不足，无法开启虫洞",
+    "ENUS": "The mecha does not have enough Negentropy Singularity to open the wormhole"
   },
   {
     "Name": "裂变能",

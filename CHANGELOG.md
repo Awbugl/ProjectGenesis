@@ -1,18 +1,32 @@
-- v2.8.1-alpha1 (Experimental 0.2.7)
+- v2.9.0-alpha1 (Experimental 0.2.7) 群星之影 | Shadows of the Galaxy
+  + 适配版本v0.10.28.20959
+  + 为巨型建筑添加单独的快捷建造按钮
+  + 移除了`复合矩阵`的解离特性
+  + 移除了终极科技线
+  + 提高了`地热发电站`的发电量
+  + 重新制作了掉落物外观
   + 重新设计了聚合物相关配方（影响存档）
-  + 调整了部分物品的制造需求（影响存档）
+  + 添加了新的光学处理器以及其相关的物品
+  + 调整了部分物品的配方（影响存档）
+  + 调整了部分建筑的配方（影响存档）
   + 添加新矿物`硫矿`并调整了相应配方（影响存档）
   + 调整了部分配方及物品的图标
-  + 调整了部分建筑的配方（影响存档）
   + 下调了`量子芯片`的原料需求
   + 移除了`大气采集站`的建造位置限制
   + 添加`快速开局`模式
 
+  + Adaptation of version v0.10.28.20959
+  + Added separate quick build button for mega buildings
+  + Removed the dissociation feature of `composite matrixs`
+  + Removed Ultimate Technology Line
+  + Increased power generation from geothermal
+  + Reworked trash appearance
+  + Added optical processor and associated items
   + Redesigned polymer related recipes (affects save)
   + Adjusted requirements for some items (affects save)
+  + Adjusted some building recipes (affects save)
   + Added new mineral `Sulfur Ore` and adjusted recipe accordingly (affects save)
   + Adjusted some recipe and item icons
-  + Adjusted some building recipes (affects save)
   + Downgraded ingredient requirements for `Quantum Chip`
   + Removal of restrictions on the location of `Atmospheric Collect Station`
   + Add `Fast Start` mode

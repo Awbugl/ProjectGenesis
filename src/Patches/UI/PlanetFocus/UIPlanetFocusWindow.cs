@@ -96,7 +96,7 @@ namespace ProjectGenesis.Patches.UI.PlanetFocus
                 }
 
                 ItemProto proto = LDB.items.Select(currentFocusId);
-                _iconTexts[i].text = FocusIds[currentFocusId];
+                _iconTexts[i].text = FocusIds[currentFocusId].TranslateFromJson();
                 Sprite sprite = proto.iconSprite;
                 if (sprite != null) _iconImgs[i].sprite = sprite;
             }
@@ -105,7 +105,9 @@ namespace ProjectGenesis.Patches.UI.PlanetFocus
         private void OnIconBtnClick(int id)
         {
             UIRoot.instance.uiGame.itemPicker.currentType = ProjectGenesis.TableID[0];
-            UIItemPickerExtension.Popup(new Vector2(-300f, 250f), j => OnPickReturn(j, id), true, itemProto => FocusIds.ContainsKey(itemProto.ID) && GameMain.data.history.TechUnlocked(itemProto.PreTechOverride));
+            UIItemPickerExtension.Popup(new Vector2(-300f, 250f), j => OnPickReturn(j, id), true,
+                                        itemProto => FocusIds.ContainsKey(itemProto.ID) &&
+                                                     GameMain.data.history.TechUnlocked(itemProto.PreTechOverride));
         }
 
         private void OnIconBtnRightClick(int id)
@@ -121,6 +123,8 @@ namespace ProjectGenesis.Patches.UI.PlanetFocus
             if (proto == null) return;
 
             int currentFocusId = proto.ID;
+
+            if (_currentFocusIds == null) _currentFocusIds = GetPlanetFocus(CurPlanetId);
 
             // ReSharper disable once LoopCanBeConvertedToQuery
             foreach (int t in _currentFocusIds)

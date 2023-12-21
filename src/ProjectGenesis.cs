@@ -53,6 +53,7 @@ namespace ProjectGenesis
         public const string MODGUID = "org.LoShin.GenesisBook";
         public const string MODNAME = "GenesisBook";
         public const string VERSION = "2.9.0";
+        public const string DEBUGVERSION = "-Alpha-1.1";
 
         internal static ManualLogSource logger;
         internal static ConfigFile configFile;
@@ -121,11 +122,11 @@ namespace ProjectGenesis
             TableID = new int[]
                       {
                           TabSystem.RegisterTab("org.LoShin.GenesisBook:org.LoShin.GenesisBookTab1",
-                                                new TabData("精炼页面".TranslateFromJson(), "Icons/Tech/1101")),
+                                                new TabData("精炼页面".TranslateFromJsonSpecial(), "Icons/Tech/1101")),
                           TabSystem.RegisterTab("org.LoShin.GenesisBook:org.LoShin.GenesisBookTab2",
-                                                new TabData("化工页面".TranslateFromJson(), "Assets/texpack/化工科技")),
+                                                new TabData("化工页面".TranslateFromJsonSpecial(), "Assets/texpack/化工科技")),
                           TabSystem.RegisterTab("org.LoShin.GenesisBook:org.LoShin.GenesisBookTab3",
-                                                new TabData("防御页面".TranslateFromJson(), "Assets/texpack/防御"))
+                                                new TabData("防御页面".TranslateFromJsonSpecial(), "Assets/texpack/防御"))
                       };
 
             NebulaModAPI.RegisterPackets(executingAssembly);
@@ -144,7 +145,7 @@ namespace ProjectGenesis
                                       select t;
 
             foreach (Type type in types) Harmony.PatchAll(type);
-            
+
             RegisterStrings();
 
             ModifyVeinData();

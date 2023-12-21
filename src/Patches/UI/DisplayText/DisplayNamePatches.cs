@@ -30,7 +30,7 @@ namespace ProjectGenesis.Patches.UI.DisplayText
 
             return codeMatcher.Advance(1)
                               .InsertAndAdvance(Transpilers.EmitDelegate<Func<string, string>>(text
-                                                                                                   => $"{ProjectGenesis.MODNAME.TranslateFromJson()} {ProjectGenesis.VERSION}\r\n{text}"))
+                                                                                                   => $"{ProjectGenesis.MODNAME.TranslateFromJson()} {ProjectGenesis.VERSION}{ProjectGenesis.DEBUGVERSION}\r\n{text}"))
                               .InstructionEnumeration();
         }
     }

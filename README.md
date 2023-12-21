@@ -1,4 +1,4 @@
-![img.png](https://assets.awbugl.top/dsp-genesisbook/profile.png)
+![img.png](https://assets.awbugl.top/dsp-genesisbook/icon.png)
 
 构建真实宇宙，撰写创世之书。
 
@@ -6,10 +6,10 @@ Construct Real Universe. Then leave a GenesisBook.
 
 ## MOD内容速览 | A glimpse
 
-![img.png](https://assets.awbugl.top/dsp-genesisbook/1.jpg)
-![img.png](https://assets.awbugl.top/dsp-genesisbook/5.jpg)
+![img.png](https://assets.awbugl.top/dsp-genesisbook/7.jpg)
+![img.png](https://assets.awbugl.top/dsp-genesisbook/8.jpg)
 ![img.png](https://assets.awbugl.top/dsp-genesisbook/3.jpg)
-![img.png](https://assets.awbugl.top/dsp-genesisbook/4.jpg)
+![img.png](https://assets.awbugl.top/dsp-genesisbook/6.jpg)
 
 ## 意见和反馈 | Feedback and suggestions
 
@@ -31,6 +31,7 @@ or open a issue via [github](https://github.com/Awbugl/ProjectGenesis).
 + [BeltSpeedEnhancement](https://dsp.thunderstore.io/package/Awbugl/BeltSpeedEnhancement/)
 + [WaterElectrolysis](https://dsp.thunderstore.io/package/jinxOAO/WaterElectrolysis/)
 + [GigaStationsUpdated](https://dsp.thunderstore.io/package/kremnev8/GigaStationsUpdated/)
++ [FastTravelEnabler](https://dsp.thunderstore.io/package/hetima/FastTravelEnabler/)
 
 ## 安装方法
 
@@ -39,17 +40,7 @@ or open a issue via [github](https://github.com/Awbugl/ProjectGenesis).
 打开mod管理器（如果你还没安装可以[**点此安装**](https://dsp.thunderstore.io/package/ebkr/r2modman/)），
 选择**GenesisBook**，下载即可。
 
-### 手动安装
-
-请加入交流群，群文件有打包好的版本
-
-视频教程（基于打包版，后半部分）：[**点此观看**](https://www.bilibili.com/video/BV13Y411d7ps/)
-
-文字教程：请加入交流群，参考群文件
-
 ## 介绍
-
-> 如果你玩过 Minecraft 的 GregTech mod, 可能会看到一些熟悉的东西。
 
 ### 特色
 
@@ -69,6 +60,7 @@ or open a issue via [github](https://github.com/Awbugl/ProjectGenesis).
 
 - 特别感谢ckcz对本项目做出的贡献以及1.0版本的开发支持.
 - 特别感谢kremnev8在开发过程中提供的帮助.
+- 特别感谢karki在开发过程中提供的帮助.
 - 特别感谢所有在开发过程中提供技术支持的MOD作者.
 - 特别感谢所有为本项目做出贡献和提出建议的玩家.
 
@@ -93,14 +85,11 @@ Install DSPModSave from [here](https://dsp.thunderstore.io/package/CommonAPI/DSP
 Install CommonAPI from [here](https://dsp.thunderstore.io/package/CommonAPI/CommonAPI/)<br/>
 Install NebulaMultiplayerModApi from [here](https://dsp.thunderstore.io/package/nebula/NebulaMultiplayerModApi/)<br/>
 
-Then download this mod manully and unzip into `BepInEx/plugins/` (including the `GenesisBook.dll`, `Newtonsoft.Json.dll`
-and `texpack` file).
+Then download this mod manully and unzip into `BepInEx/plugins/`
 
 If you can see the new **GenesisBook** logo, then the mod is installed successfully.
 
 ## Intro
-
-> If you've played Minecraft's GregTech mod, you may have seen something familiar.
 
 ### Modified
 
@@ -122,5 +111,6 @@ If you can see the new **GenesisBook** logo, then the mod is installed successfu
   mod will not be released.
 - Special thanks to kremnev8 for his help during the development process. He developed tools such as CommonAPI and
   LDBTool which are very important.
+- Special thanks to karki for his help during the development process. He help us to modify shaders and materials.
 - Special thanks to all the MOD authors who provided support during the development process.
 - Special thanks to all those who contributed to this project or made suggestions.
