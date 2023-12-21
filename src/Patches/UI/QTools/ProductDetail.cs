@@ -15,6 +15,7 @@ namespace ProjectGenesis.Patches.UI.QTools
     public class ProductDetail : MonoBehaviour
     {
         private static UIItemTip _uiItemTip;
+        private static GameObject _recipePickerTranslucentImageGameObject;
 
         private NodeData _data;
 
@@ -208,10 +209,14 @@ namespace ProjectGenesis.Patches.UI.QTools
 
             UIRecipePickerExtension.Popup(new Vector2(-400f, 300f), OnRecipePickerReturn, true, Filter);
 
+            if (_recipePickerTranslucentImageGameObject == null)
+                _recipePickerTranslucentImageGameObject = UIRoot.instance.uiGame.recipePicker.GetComponentInChildren<TranslucentImage>().gameObject;
+
+            _recipePickerTranslucentImageGameObject.SetActive(false);
             UIRoot.instance.uiGame.recipePicker.transform.SetAsLastSibling();
         }
 
-        public void OnRecipePickerReturn(RecipeProto recipeProto)
+        public void ChangeRecipe(RecipeProto recipeProto)
         {
             if (recipeProto == null) return;
 
@@ -229,6 +234,12 @@ namespace ProjectGenesis.Patches.UI.QTools
         {
             _data.RefreshFactoryCount();
             factoryCountText.text = _data.Options.FactoryCount.ToString("F2");
+        }
+
+        public void OnRecipePickerReturn(RecipeProto recipeProto)
+        {
+            ChangeRecipe(recipeProto);
+            _recipePickerTranslucentImageGameObject.SetActive(true);
         }
 
         private bool Filter(RecipeProto recipeProto) => _data.Item.recipes.Contains(recipeProto);
