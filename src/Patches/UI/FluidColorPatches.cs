@@ -12,11 +12,22 @@ namespace ProjectGenesis.Patches.UI
         [HarmonyPatch(typeof(UITankWindow), "_OnUpdate")]
         public static void UITankWindow_OnUpdate(ref UITankWindow __instance)
         {
-            TankComponent tankComponent = __instance.storage.tankPool[__instance.tankId];
-            if (tankComponent.id != __instance.tankId) return;
+            int tankId = __instance.tankId;
 
-            if (FluidColor.TryGetValue(tankComponent.fluidId, out Color32 value)) __instance.exchangeAndColoring(value);
-            if (FluidWithoutIconColor.TryGetValue(tankComponent.fluidId, out value)) __instance.exchangeAndColoring(value);
+            TankComponent tankComponent = __instance.storage.tankPool[tankId];
+            if (tankComponent.id != tankId) return;
+
+            int fluidId = tankComponent.fluidId;
+
+            if (FluidColor.TryGetValue(fluidId, out Color value))
+            {
+                __instance.exchangeAndColoring(value);
+                return;
+            }
+            else if (FluidWithoutIconColor.TryGetValue(fluidId, out value))
+            {
+                __instance.exchangeAndColoring(value);
+            }
         }
     }
 }

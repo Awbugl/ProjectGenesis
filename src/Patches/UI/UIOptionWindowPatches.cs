@@ -21,15 +21,15 @@ namespace ProjectGenesis.Patches.UI
                                              .parent;
 
             CreateSettingObject(queryObj, pageParent, "gb-ldbtc-setting", "UseLDBToolCache".TranslateFromJson(),
-                                "UseLDBToolCacheAdditionalText".TranslateFromJson(), new Vector2(30, -180), EnableLDBToolCacheEntry.Value,
+                                "UseLDBToolCacheAdditionalText".TranslateFromJson(), new Vector2(30, -220), EnableLDBToolCacheEntry.Value,
                                 out LDBToolCacheToggle);
 
             CreateSettingObject(queryObj, pageParent, "gb-htc-setting", "EnableHideTechMode".TranslateFromJson(),
-                                "EnableHideTechModeAdditionalText".TranslateFromJson(), new Vector2(30, -220), EnableHideTechModeEntry.Value,
+                                "EnableHideTechModeAdditionalText".TranslateFromJson(), new Vector2(30, -260), EnableHideTechModeEntry.Value,
                                 out HideTechModeToggle);
 
             CreateSettingObject(queryObj, pageParent, "gb-smb-setting", "DisableMessageBox".TranslateFromJson(),
-                                "DisableMessageBoxAdditionalText".TranslateFromJson(), new Vector2(30, -260), DisableMessageBoxEntry.Value,
+                                "DisableMessageBoxAdditionalText".TranslateFromJson(), new Vector2(30, -300), DisableMessageBoxEntry.Value,
                                 out DisableMessageToggle);
         }
 

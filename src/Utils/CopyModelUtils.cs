@@ -8,8 +8,6 @@ using xiaoye97;
 // ReSharper disable Unity.UnknownResource
 // ReSharper disable Unity.PreferAddressByIdToGraphicsParams
 
-#pragma warning disable CS0618
-
 namespace ProjectGenesis.Utils
 {
     internal static class CopyModelUtils
@@ -38,12 +36,12 @@ namespace ProjectGenesis.Utils
 
         private static void AddAtmosphericCollectStation()
         {
-            var color = new Color32(60, 179, 113, 255);
-            ModelProto oriModel = LDB.models.Select(50); //ILS
-            Debug.Log(oriModel.name);
+            ModelProto oriModel = LDB.models.Select(ProtoIDUsedByPatches.M星际物流运输站);
             PrefabDesc desc = oriModel.prefabDesc;
-            var newMats = new List<Material>();
 
+            var color = new MyColor(60, 179, 113);
+
+            var newMats = new List<Material>();
             foreach (Material[] lodMats in desc.lodMaterials)
             {
                 if (lodMats == null) continue;
@@ -57,8 +55,9 @@ namespace ProjectGenesis.Utils
                 }
             }
 
-            oriModel = LDB.models.Select(73); // ray receiver
+            oriModel = LDB.models.Select(ProtoIDUsedByPatches.M射线接收站); // ray receiver
             var collectEffectMat = new Material(oriModel.prefabDesc.lodMaterials[0][3]);
+
             collectEffectMat.SetColor("_TintColor", new Color32(131, 127, 197, 255));
             collectEffectMat.SetColor("_PolarColor", new Color32(234, 255, 253, 170));
             collectEffectMat.SetVector("_Aurora", new Vector4(75f, 1f, 20f, 0.1f));
@@ -67,6 +66,7 @@ namespace ProjectGenesis.Utils
             collectEffectMat.SetVector("_Circle", new Vector4(2.5f, 34f, 1f, 0.04f));
 
             newMats.Add(collectEffectMat);
+
             ModelProto registerModel = ProtoRegistry.RegisterModel(ProtoIDUsedByPatches.M大气采集器,
                                                                    "Assets/genesis-models/entities/prefabs/atmospheric-collect-station",
                                                                    newMats.ToArray());
@@ -83,29 +83,36 @@ namespace ProjectGenesis.Utils
             ModelProto model = oriModel.Copy();
             model.Name = id.ToString();
             model.ID = id;
+            
             PrefabDesc desc = oriModel.prefabDesc;
-            ref PrefabDesc modelPrefabDesc = ref model.prefabDesc;
-            modelPrefabDesc = new PrefabDesc(id, desc.prefab, desc.colliderPrefab);
+            GameObject prefab = desc.prefab ? desc.prefab : Resources.Load<GameObject>(oriModel.PrefabPath);
+            GameObject colliderPrefab = desc.colliderPrefab ? desc.colliderPrefab : Resources.Load<GameObject>(oriModel._colliderPath);
 
-            for (int i = 0; i < modelPrefabDesc.lodMaterials.Length; i++)
+            ref PrefabDesc modelPrefabDesc = ref model.prefabDesc;
+            modelPrefabDesc = prefab == null         ? PrefabDesc.none :
+                              colliderPrefab == null ? new PrefabDesc(id, prefab) : new PrefabDesc(id, prefab, colliderPrefab);
+
+            foreach (Material[] lodMaterial in modelPrefabDesc.lodMaterials)
             {
-                if (modelPrefabDesc.lodMaterials[i] == null) continue;
-                for (int j = 0; j < modelPrefabDesc.lodMaterials[i].Length; j++)
+                if (lodMaterial == null) continue;
+
+                for (int j = 0; j < lodMaterial.Length; j++)
                 {
-                    if (modelPrefabDesc.lodMaterials[i][j] == null) continue;
-                    modelPrefabDesc.lodMaterials[i][j] = new Material(desc.lodMaterials[i][j]);
+                    ref Material material = ref lodMaterial[j];
+
+                    if (material == null) continue;
+                    material = new Material(material);
                 }
 
-                if (color.HasValue)
+                if (!color.HasValue) continue;
+
+                try
                 {
-                    try
-                    {
-                        modelPrefabDesc.lodMaterials[i][0].color = color.Value;
-                    }
-                    catch
-                    {
-                        // ignored
-                    }
+                    lodMaterial[0].color = color.Value;
+                }
+                catch
+                {
+                    // ignored
                 }
             }
 
@@ -115,15 +122,39 @@ namespace ProjectGenesis.Utils
             modelPrefabDesc.buildCollider = desc.buildCollider;
             modelPrefabDesc.buildColliders = desc.buildColliders;
             modelPrefabDesc.colliderPrefab = desc.colliderPrefab;
-
             modelPrefabDesc.dragBuild = desc.dragBuild;
             modelPrefabDesc.dragBuildDist = desc.dragBuildDist;
+            modelPrefabDesc.blueprintBoxSize = desc.blueprintBoxSize;
+            modelPrefabDesc.roughHeight = desc.roughHeight;
+            modelPrefabDesc.roughWidth = desc.roughWidth;
+            modelPrefabDesc.roughRadius = desc.roughRadius;
+            modelPrefabDesc.barHeight = desc.barHeight;
+            modelPrefabDesc.barWidth = desc.barWidth;
 
             model.sid = "";
             model.SID = "";
 
             LDBTool.PreAddProto(model);
         }
+
+        private static ModelProto Copy(this ModelProto proto)
+            => new ModelProto()
+               {
+                   ObjectType = proto.ObjectType,
+                   RuinType = proto.RuinType,
+                   RendererType = proto.RendererType,
+                   HpMax = proto.HpMax,
+                   HpUpgrade = proto.HpUpgrade,
+                   HpRecover = proto.HpRecover,
+                   RuinId = proto.RuinId,
+                   RuinCount = proto.RuinCount,
+                   RuinLifeTime = proto.RuinLifeTime,
+                   PrefabPath = proto.PrefabPath,
+                   _colliderPath = proto._colliderPath,
+                   _ruinPath = proto._ruinPath,
+                   _wreckagePath = proto._wreckagePath,
+                   _ruinOriginModelIndex = proto._ruinOriginModelIndex
+               };
 
         internal static void ModelPostFix()
         {

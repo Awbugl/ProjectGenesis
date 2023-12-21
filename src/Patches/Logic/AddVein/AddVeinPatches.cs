@@ -5,8 +5,6 @@ using System.Reflection.Emit;
 using HarmonyLib;
 using UnityEngine;
 
-#pragma warning disable CS0618
-
 // ReSharper disable CommentTypo
 // ReSharper disable InconsistentNaming
 // ReSharper disable Unity.UnknownResource

@@ -5,7 +5,7 @@ namespace ProjectGenesis.Patches.Logic.QTools
 {
     internal static class QTools
     {
-        internal static readonly ItemProto ProliferatorProto = LDB.items.Select(1143);
+        internal static readonly ItemProto ProliferatorProto = LDB.items.Select(ProtoIDUsedByPatches.I增产剂);
         private static Dictionary<Utils.ERecipeType, List<ItemProto>> _recipeTypeFactoryMap;
 
         internal static Dictionary<Utils.ERecipeType, List<ItemProto>> RecipeTypeFactoryMap
@@ -80,5 +80,20 @@ namespace ProjectGenesis.Patches.Logic.QTools
         Nonuse,
         ExtraProducts,
         ProductionSpeedup
+    }
+    
+    internal static class DictionaryExtend
+    {
+        public static void TryAddOrInsert<TKey, TValue>(this Dictionary<TKey, List<TValue>> dict, TKey key, TValue value)
+        {
+            if (dict.ContainsKey(key))
+            {
+                dict[key].Add(value);
+            }
+            else
+            {
+                dict[key] = new List<TValue>() { value };
+            }
+        }
     }
 }

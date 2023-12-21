@@ -7,8 +7,6 @@ using xiaoye97;
 using static ProjectGenesis.Utils.JsonHelper;
 using ERecipeType_1 = ERecipeType;
 
-#pragma warning disable CS0618
-
 namespace ProjectGenesis.Utils
 {
     internal static class JsonDataUtils

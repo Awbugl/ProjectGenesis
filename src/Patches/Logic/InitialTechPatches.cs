@@ -87,14 +87,6 @@ namespace ProjectGenesis.Patches.Logic
             UITechTree_OnQueueUpdate_Postfix(tree);
         }
 
-        [HarmonyPatch(typeof(GameHistoryData), "RemoveTechInQueue")]
-        [HarmonyPostfix]
-        public static void GameHistoryData_RemoveTechInQueue_Postfix()
-        {
-            UITechTree tree = UIRoot.instance.uiGame.techTree;
-            UITechTree_OnQueueUpdate_Postfix(tree);
-        }
-
         [HarmonyPatch(typeof(UITechTree), "Do1KeyUnlock")]
         [HarmonyPostfix]
         public static void UITechTree_OnQueueUpdate_Postfix(UITechTree __instance)
@@ -104,7 +96,7 @@ namespace ProjectGenesis.Patches.Logic
             GameHistoryData history = GameMain.history;
             foreach (var (tech, node) in __instance.nodes)
             {
-                if (node != null && tech < 2000)
+                if (node != null && tech < 2000 && !node.techProto.IsHiddenTech)
                 {
                     bool techSought = TechSought(history, tech);
                     if (techSought || PreTechSought(history, node.techProto))
@@ -130,10 +122,9 @@ namespace ProjectGenesis.Patches.Logic
             if (__instance.page != 0) return;
             GameHistoryData history = GameMain.history;
 
-            // ReSharper disable once EnforceForeachStatementBraces
             foreach (var (tech, node) in __instance.nodes)
             {
-                if (node != null && tech < 2000)
+                if (node != null && tech < 2000 && !node.techProto.IsHiddenTech)
                 {
                     bool techSought = TechSought(history, tech);
                     node.gameObject.SetActive(techSought || PreTechSought(history, node.techProto));
@@ -142,7 +133,7 @@ namespace ProjectGenesis.Patches.Logic
             }
         }
 
-        private static bool TechSought(GameHistoryData history, int tech) => history.TechInQueue(tech) || history.TechUnlocked(tech);
+        private static bool TechSought(GameHistoryData history, int tech) => history.TechUnlocked(tech);
 
         private static bool PreTechSought(GameHistoryData history, TechProto proto) => proto.PreTechs.Any(i => TechSought(history, i));
     }

@@ -4,8 +4,6 @@ using System.Linq;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
-#pragma warning disable CS0618
-
 namespace ProjectGenesis.Patches.Logic.AddVein
 {
     public static partial class AddVeinPatches
@@ -26,7 +24,8 @@ namespace ProjectGenesis.Patches.Logic.AddVein
             {
                 ref ParticleSystem system = ref LDB.effectEmitters.Select(pair.Key).emitter;
                 system = ParticleSystem;
-                system.startColor = pair.Value;
+                ParticleSystem.MainModule systemMain = system.main;
+                systemMain.startColor = pair.Value;
             }
         }
 

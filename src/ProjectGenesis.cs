@@ -28,8 +28,6 @@ using static ProjectGenesis.Utils.CopyModelUtils;
 using static ProjectGenesis.Patches.Logic.AddVein.ModifyPlanetTheme;
 using static ProjectGenesis.Utils.TranslateUtils;
 
-#pragma warning disable CS0618
-
 // ReSharper disable UnusedVariable
 // ReSharper disable UnusedMember.Local
 // ReSharper disable InconsistentNaming
@@ -90,7 +88,7 @@ namespace ProjectGenesis
             EnableLDBToolCacheEntry = Config.Bind("config", "UseLDBToolCache", false,
                                                   "Enable LDBTool Cache, which allows you use config to fix some compatibility issues.\n启用LDBTool缓存，允许使用配置文件修复部分兼容性问题");
 
-            EnableHideTechModeEntry = Config.Bind("config", "HideTechMode", false,
+            EnableHideTechModeEntry = Config.Bind("config", "HideTechMode", true,
                                                   "Enable Tech Exploration Mode, which will hide locked techs in tech tree.\n启用科技探索模式，启用后将隐藏未解锁的科技");
 
             DisableMessageBoxEntry = Config.Bind("config", "DiableMessageBox", false, "Don't show message when GenesisBook is loaded.\n禁用首次加载时的提示信息");
@@ -198,7 +196,7 @@ namespace ProjectGenesis
         {
             //飞行舱拆除
             VegeProto vegeProto = LDB.veges.Select(9999);
-            vegeProto.MiningItem = new[] { 6216, 1101, 1104 };
+            vegeProto.MiningItem = new[] { ProtoIDUsedByPatches.I四氢双环戊二烯燃料棒, ProtoIDUsedByPatches.I铁块, ProtoIDUsedByPatches.I铜块 };
             vegeProto.MiningCount = new[] { 3, 60, 60 };
             vegeProto.MiningChance = new float[] { 1, 1, 1 };
             vegeProto.Preload();
@@ -243,7 +241,7 @@ namespace ProjectGenesis
             RecipeProto.InitFractionatorNeeds();
             RaycastLogic.LoadStatic();
 
-            ItemProto.stationCollectorId = 2105;
+            ItemProto.stationCollectorId = ProtoIDUsedByPatches.I轨道采集器;
 
             ItemPostFix();
 

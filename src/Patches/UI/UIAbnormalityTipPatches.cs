@@ -22,8 +22,9 @@ namespace ProjectGenesis.Patches.UI
         }
 
         [HarmonyPatch(typeof(AbnormalityLogic), "GameTick")]
+        [HarmonyPatch(typeof(AbnormalityLogic), "InitDeterminators")]
         [HarmonyPrefix]
         [HarmonyPriority(Priority.VeryHigh)]
-        public static bool AbnormalityLogic_GameTick() => false;
+        public static bool AbnormalityLogic() => false;
     }
 }
