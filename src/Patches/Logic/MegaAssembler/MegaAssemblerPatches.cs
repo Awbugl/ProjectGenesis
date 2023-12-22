@@ -160,60 +160,53 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
                 ref SlotData slotData = ref slotdata[index1];
                 if (slotData.dir == IODir.Output)
                 {
-                    if (slotData.counter > 0)
-                    {
-                        --slotData.counter;
-                    }
-                    else
-                    {
-                        int beltId = slotData.beltId;
-                        if (beltId <= 0) continue;
-                        BeltComponent beltComponent = traffic.beltPool[beltId];
-                        CargoPath cargoPath = traffic.GetCargoPath(beltComponent.segPathId);
-                        if (cargoPath == null) continue;
+                    int beltId = slotData.beltId;
+                    if (beltId <= 0) continue;
+                    BeltComponent beltComponent = traffic.beltPool[beltId];
+                    CargoPath cargoPath = traffic.GetCargoPath(beltComponent.segPathId);
+                    if (cargoPath == null) continue;
 
-                        int index2 = slotData.storageIdx - 1;
-                        int itemId = 0;
+                    int index2 = slotData.storageIdx - 1;
+                    int itemId = 0;
 
-                        if (index2 >= 0)
+                    if (index2 >= 0)
+                    {
+                        if (index2 < __instance.products.Length)
                         {
-                            if (index2 < __instance.products.Length)
+                            itemId = __instance.products[index2];
+                            int produced = __instance.produced[index2];
+                            if (itemId > 0 && produced > 0)
                             {
-                                itemId = __instance.products[index2];
-                                int produced = __instance.produced[index2];
-                                if (itemId > 0 && produced > 0)
-                                {
-                                    int num2 = produced < maxPilerCount ? produced : maxPilerCount;
-                                    if (cargoPath.TryInsertItemAtHeadAndFillBlank(itemId, (byte)num2, 0)) __instance.produced[index2] -= num2;
-                                }
+                                int num2 = produced < maxPilerCount ? produced : maxPilerCount;
+                                if (cargoPath.TryInsertItemAtHeadAndFillBlank(itemId, (byte)num2, 0)) __instance.produced[index2] -= num2;
                             }
-                            else
+                        }
+                        else
+                        {
+                            int index3 = index2 - __instance.products.Length;
+                            if (index3 < __instance.requires.Length)
                             {
-                                int index3 = index2 - __instance.products.Length;
-                                if (index3 < __instance.requires.Length)
+                                itemId = __instance.requires[index3];
+                                int served = __instance.served[index3];
+                                if (itemId > 0 && served > 0)
                                 {
-                                    itemId = __instance.requires[index3];
-                                    int served = __instance.served[index3];
-                                    if (itemId > 0 && served > 0)
+                                    int num2 = served < maxPilerCount ? served : maxPilerCount;
+                                    int inc = (int)((double)__instance.incServed[index3] * num2 / __instance.served[index3]);
+                                    if (cargoPath.TryInsertItemAtHeadAndFillBlank(itemId, (byte)num2, (byte)inc))
                                     {
-                                        int num2 = served < maxPilerCount ? served : maxPilerCount;
-                                        int inc = (int)((double)__instance.incServed[index3] * num2 / __instance.served[index3]);
-                                        if (cargoPath.TryInsertItemAtHeadAndFillBlank(itemId, (byte)num2, (byte)inc))
-                                        {
-                                            __instance.incServed[index3] -= inc;
-                                            __instance.served[index3] -= num2;
-                                        }
+                                        __instance.incServed[index3] -= inc;
+                                        __instance.served[index3] -= num2;
                                     }
                                 }
                             }
                         }
+                    }
 
-                        if (itemId > 0)
-                        {
-                            int entityId = beltComponent.entityId;
-                            signPool[entityId].iconType = 1U;
-                            signPool[entityId].iconId0 = (uint)itemId;
-                        }
+                    if (itemId > 0)
+                    {
+                        int entityId = beltComponent.entityId;
+                        signPool[entityId].iconType = 1U;
+                        signPool[entityId].iconId0 = (uint)itemId;
                     }
                 }
                 else if (slotData.dir != IODir.Input)
@@ -235,39 +228,32 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
             {
                 if (slotdata[index].dir == IODir.Input)
                 {
-                    if (slotdata[index].counter > 0)
+                    int beltId = slotdata[index].beltId;
+                    if (beltId <= 0) continue;
+                    BeltComponent beltComponent = traffic.beltPool[beltId];
+                    CargoPath cargoPath = traffic.GetCargoPath(beltComponent.segPathId);
+                    if (cargoPath == null) continue;
+
+                    int itemId = traffic.TryPickItemAtRear(beltId, 0, null, out byte stack, out _);
+
+                    if (itemId <= 0) continue;
+
+                    ref int sandCount = ref __instance.produced[0];
+
+                    if (itemId == ProtoIDUsedByPatches.I沙土)
                     {
-                        --slotdata[index].counter;
+                        sandCount += stack;
                     }
                     else
                     {
-                        int beltId = slotdata[index].beltId;
-                        if (beltId <= 0) continue;
-                        BeltComponent beltComponent = traffic.beltPool[beltId];
-                        CargoPath cargoPath = traffic.GetCargoPath(beltComponent.segPathId);
-                        if (cargoPath == null) continue;
+                        int[] consumeRegister = GameMain.statistics.production.factoryStatPool[factory.index].consumeRegister;
 
-                        int itemId = traffic.TryPickItemAtRear(beltId, 0, null, out byte stack, out _);
-
-                        if (itemId <= 0) continue;
-
-                        ref int sandCount = ref __instance.produced[0];
-
-                        if (itemId == ProtoIDUsedByPatches.I沙土)
+                        lock (consumeRegister)
                         {
-                            sandCount += stack;
+                            consumeRegister[itemId] += stack;
                         }
-                        else
-                        {
-                            int[] consumeRegister = GameMain.statistics.production.factoryStatPool[factory.index].consumeRegister;
 
-                            lock (consumeRegister)
-                            {
-                                consumeRegister[itemId] += stack;
-                            }
-
-                            sandCount += (int)(stack * 40 * power);
-                        }
+                        sandCount += (int)(stack * 40 * power);
                     }
                 }
                 else if (slotdata[index].dir != IODir.Output)
@@ -288,47 +274,40 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
             {
                 if (slotdata[index].dir == IODir.Input)
                 {
-                    if (slotdata[index].counter > 0)
+                    int beltId = slotdata[index].beltId;
+                    if (beltId <= 0) continue;
+                    BeltComponent beltComponent = traffic.beltPool[beltId];
+                    CargoPath cargoPath = traffic.GetCargoPath(beltComponent.segPathId);
+                    if (cargoPath == null) continue;
+
+                    int itemId = cargoPath.TryPickItemAtRear(__instance.needs, out int needIdx, out byte stack, out byte inc);
+
+                    if (needIdx >= 0 && itemId > 0 && __instance.needs[needIdx] == itemId)
                     {
-                        --slotdata[index].counter;
+                        __instance.served[needIdx] += stack;
+                        __instance.incServed[needIdx] += inc;
+                        slotdata[index].storageIdx = __instance.products.Length + needIdx + 1;
                     }
-                    else
+
+                    for (int i = 0; i < __instance.products.Length; i++)
                     {
-                        int beltId = slotdata[index].beltId;
-                        if (beltId <= 0) continue;
-                        BeltComponent beltComponent = traffic.beltPool[beltId];
-                        CargoPath cargoPath = traffic.GetCargoPath(beltComponent.segPathId);
-                        if (cargoPath == null) continue;
+                        if (__instance.produced[i] >= 50) continue;
 
-                        int itemId = cargoPath.TryPickItemAtRear(__instance.needs, out int needIdx, out byte stack, out byte inc);
+                        itemId = traffic.TryPickItemAtRear(beltId, __instance.products[i], null, out stack, out _);
 
-                        if (needIdx >= 0 && itemId > 0 && __instance.needs[needIdx] == itemId)
+                        if (__instance.products[i] == itemId)
                         {
-                            __instance.served[needIdx] += stack;
-                            __instance.incServed[needIdx] += inc;
-                            slotdata[index].storageIdx = __instance.products.Length + needIdx + 1;
+                            __instance.produced[i] += stack;
+                            slotdata[index].storageIdx = i + 1;
+                            break;
                         }
+                    }
 
-                        for (int i = 0; i < __instance.products.Length; i++)
-                        {
-                            if (__instance.produced[i] >= 50) continue;
-
-                            itemId = traffic.TryPickItemAtRear(beltId, __instance.products[i], null, out stack, out _);
-
-                            if (__instance.products[i] == itemId)
-                            {
-                                __instance.produced[i] += stack;
-                                slotdata[index].storageIdx = i + 1;
-                                break;
-                            }
-                        }
-
-                        if (itemId > 0)
-                        {
-                            int entityId = beltComponent.entityId;
-                            signPool[entityId].iconType = 1U;
-                            signPool[entityId].iconId0 = (uint)itemId;
-                        }
+                    if (itemId > 0)
+                    {
+                        int entityId = beltComponent.entityId;
+                        signPool[entityId].iconType = 1U;
+                        signPool[entityId].iconId0 = (uint)itemId;
                     }
                 }
                 else if (slotdata[index].dir != IODir.Output)
