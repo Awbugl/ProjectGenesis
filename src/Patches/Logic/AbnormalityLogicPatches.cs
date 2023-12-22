@@ -1,4 +1,5 @@
-﻿using HarmonyLib;
+﻿using System.Collections.Generic;
+using HarmonyLib;
 
 // ReSharper disable InconsistentNaming
 // ReSharper disable RedundantAssignment
@@ -29,5 +30,13 @@ namespace ProjectGenesis.Patches.Logic
         [HarmonyPrefix]
         [HarmonyPriority(Priority.VeryHigh)]
         public static bool Skip() => false;
+
+        [HarmonyPatch(typeof(AbnormalityLogic), nameof(AbnormalityLogic.InitDeterminators))]
+        [HarmonyPostfix]
+        [HarmonyPriority(Priority.VeryHigh)]
+        public static void InitDeterminators(AbnormalityLogic __instance)
+        {
+            if (__instance.determinators == null) __instance.determinators = new Dictionary<int, AbnormalityDeterminator>();
+        }
     }
 }
