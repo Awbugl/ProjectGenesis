@@ -13,6 +13,7 @@ using crecheng.DSPModSave;
 using HarmonyLib;
 using NebulaAPI;
 using ProjectGenesis.Compatibility;
+using ProjectGenesis.Patches.Logic;
 using ProjectGenesis.Patches.Logic.AddVein;
 using ProjectGenesis.Patches.Logic.MegaAssembler;
 using ProjectGenesis.Patches.Logic.PlanetFocus;
@@ -164,18 +165,21 @@ namespace ProjectGenesis
         {
             MegaAssemblerPatches.Export(w);
             PlanetFocusPatches.Export(w);
+            QuantumStoragePatches.Export(w);
         }
 
         public void Import(BinaryReader r)
         {
             MegaAssemblerPatches.Import(r);
             PlanetFocusPatches.Import(r);
+            QuantumStoragePatches.Import(r);
         }
 
         public void IntoOtherSave()
         {
             MegaAssemblerPatches.IntoOtherSave();
             PlanetFocusPatches.IntoOtherSave();
+            QuantumStoragePatches.IntoOtherSave();
         }
 
         public string Version => VERSION;

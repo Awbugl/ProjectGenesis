@@ -167,6 +167,7 @@
         <Compile Include="src\Patches\UI\Utils\Util.cs"/>
         <Compile Include="src\ProjectGenesis.cs"/>
         <Compile Include="src\Utils\CopyModelUtils.cs"/>
+        <Compile Include="src\Utils\DictionaryExtend.cs" />
         <Compile Include="src\Utils\ERecipeType.cs"/>
         <Compile Include="src\Utils\IconDescUtils.cs"/>
         <Compile Include="src\Utils\JsonDataUtils.cs"/>
