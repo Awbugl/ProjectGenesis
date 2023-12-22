@@ -157,21 +157,22 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
         {
             for (int index1 = 0; index1 < slotdata.Length; ++index1)
             {
-                if (slotdata[index1].dir == IODir.Output)
+                ref SlotData slotData = ref slotdata[index1];
+                if (slotData.dir == IODir.Output)
                 {
-                    if (slotdata[index1].counter > 0)
+                    if (slotData.counter > 0)
                     {
-                        --slotdata[index1].counter;
+                        --slotData.counter;
                     }
                     else
                     {
-                        int beltId = slotdata[index1].beltId;
+                        int beltId = slotData.beltId;
                         if (beltId <= 0) continue;
                         BeltComponent beltComponent = traffic.beltPool[beltId];
                         CargoPath cargoPath = traffic.GetCargoPath(beltComponent.segPathId);
                         if (cargoPath == null) continue;
 
-                        int index2 = slotdata[index1].storageIdx - 1;
+                        int index2 = slotData.storageIdx - 1;
                         int itemId = 0;
 
                         if (index2 >= 0)
@@ -215,10 +216,10 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
                         }
                     }
                 }
-                else if (slotdata[index1].dir != IODir.Input)
+                else if (slotData.dir != IODir.Input)
                 {
-                    slotdata[index1].beltId = 0;
-                    slotdata[index1].counter = 0;
+                    slotData.beltId = 0;
+                    slotData.counter = 0;
                 }
             }
         }

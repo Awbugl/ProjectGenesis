@@ -6,15 +6,14 @@ namespace ProjectGenesis.Patches.Logic
 {
     public static class StationOutputPatches
     {
-        [HarmonyPatch(typeof(UIPlanetDetail), "OnPlanetDataSet")]
+        [HarmonyPatch(typeof(StationComponent), nameof(StationComponent.UpdateOutputSlots))]
         [HarmonyTranspiler]
-        public static IEnumerable<CodeInstruction> OnPlanetDataSet_Transpiler(IEnumerable<CodeInstruction> instructions)
+        public static IEnumerable<CodeInstruction> UpdateOutputSlots_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
             var matcher = new CodeMatcher(instructions);
 
             matcher.MatchForward(false, new CodeMatch(OpCodes.Ldloc_S),
-                                 new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(CargoPath), nameof(CargoPath.buffer))),
-                                 new CodeMatch(OpCodes.Ldc_I4_S, (sbyte)9));
+                                 new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(CargoPath), nameof(CargoPath.buffer))));
 
             matcher.SetInstructionAndAdvance(new CodeInstruction(OpCodes.Nop)).SetInstructionAndAdvance(new CodeInstruction(OpCodes.Nop))
                    .SetInstructionAndAdvance(new CodeInstruction(OpCodes.Nop)).SetInstructionAndAdvance(new CodeInstruction(OpCodes.Nop))
