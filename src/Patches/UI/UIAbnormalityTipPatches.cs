@@ -23,8 +23,10 @@ namespace ProjectGenesis.Patches.UI
 
         [HarmonyPatch(typeof(AbnormalityLogic), "GameTick")]
         [HarmonyPatch(typeof(AbnormalityLogic), "InitDeterminators")]
+        [HarmonyPatch(typeof(AchievementLogic), "GameTick")]
+        [HarmonyPatch(typeof(AchievementLogic), "InitAchievementDeterminators")]
         [HarmonyPrefix]
         [HarmonyPriority(Priority.VeryHigh)]
-        public static bool AbnormalityLogic() => false;
+        public static bool Skip() => false;
     }
 }
