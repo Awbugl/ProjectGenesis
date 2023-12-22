@@ -18,9 +18,9 @@ namespace ProjectGenesis.Patches.UI
 
         [HarmonyPostfix]
         [HarmonyPatch(typeof(UIReplicatorWindow), "OnSelectedRecipeChange")]
-        public static void UIReplicatorWindow_OnSelectedRecipeChange(ref UIReplicatorWindow __instance)
+        public static void UIReplicatorWindow_OnSelectedRecipeChange(UIReplicatorWindow __instance)
         {
-            ref RecipeProto selectedRecipe = ref UIRoot.instance.uiGame.replicator.selectedRecipe;
+            RecipeProto selectedRecipe = UIRoot.instance.uiGame.replicator.selectedRecipe;
             if (selectedRecipe == null) return;
 
             int results = selectedRecipe.Results.Length;
@@ -101,7 +101,7 @@ namespace ProjectGenesis.Patches.UI
 
         [HarmonyPostfix]
         [HarmonyPatch(typeof(UIAssemblerWindow), "_OnUpdate")]
-        public static void UIAssemblerWindow_OnUpdate(ref UIAssemblerWindow __instance)
+        public static void UIAssemblerWindow_OnUpdate(UIAssemblerWindow __instance)
         {
             if (__instance.assemblerId == 0 || __instance.factory == null) return;
             AssemblerComponent assembler = __instance.factorySystem.assemblerPool[__instance.assemblerId];

@@ -3,6 +3,8 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using Newtonsoft.Json;
+using UnityEngine;
+using ERecipeType_1 = ERecipeType;
 
 // ReSharper disable InconsistentNaming
 // ReSharper disable MemberCanBeInternal
@@ -134,6 +136,53 @@ namespace ProjectGenesis.Utils
                        EnemyDropCount = i.EnemyDropCount,
                        EnemyDropMask = i.EnemyDropMask
                    };
+
+            public ItemProto ToProto() => ToProto(new ItemProto());
+
+            public ItemProto ToProto(ItemProto proto)
+            {
+                proto.ID = ID;
+                proto.Name = Name;
+                proto.Description = Description;
+                proto.IconPath = IconPath;
+                proto.GridIndex = GridIndex;
+                proto.StackSize = StackSize;
+                proto.FuelType = FuelType;
+                proto.HeatValue = HeatValue;
+                proto.ReactorInc = ReactorInc;
+                proto.DescFields = DescFields ?? Array.Empty<int>();
+                proto.IsFluid = IsFluid;
+                proto.Type = (EItemType)Type;
+                proto.SubID = SubID;
+                proto.MiningFrom = MiningFrom;
+                proto.ProduceFrom = ProduceFrom;
+                proto.Grade = Grade;
+                proto.Upgrades = Upgrades ?? Array.Empty<int>();
+                proto.IsEntity = IsEntity;
+                proto.CanBuild = CanBuild;
+                proto.BuildInGas = BuildInGas;
+                proto.ModelIndex = ModelIndex;
+                proto.ModelCount = ModelCount;
+                proto.HpMax = HpMax;
+                proto.Ability = Ability;
+                proto.Potential = Potential;
+                proto.BuildIndex = BuildIndex;
+                proto.BuildMode = BuildMode;
+                proto.UnlockKey = UnlockKey;
+                proto.MechaMaterialID = MechaMaterialID;
+                proto.PreTechOverride = PreTechOverride;
+                proto.Productive = Productive;
+                proto.AmmoType = (EAmmoType)AmmoType;
+                proto.BombType = BombType;
+                proto.CraftType = CraftType;
+                proto.DropRate = DropRate;
+                proto.EnemyDropLevel = EnemyDropLevel;
+                proto.EnemyDropRange = new Vector2(EnemyDropRange[0], EnemyDropRange[1]);
+                proto.EnemyDropCount = EnemyDropCount;
+                proto.EnemyDropMask = EnemyDropMask;
+
+                return proto;
+            }
         }
 
         [Serializable]
@@ -172,6 +221,28 @@ namespace ProjectGenesis.Utils
                        IconPath = i.IconPath,
                        NonProductive = i.NonProductive
                    };
+
+            public RecipeProto ToProto() => ToProto(new RecipeProto());
+
+            public RecipeProto ToProto(RecipeProto proto)
+            {
+                proto.ID = ID;
+                proto.Explicit = Explicit;
+                proto.Name = Name;
+                proto.Handcraft = Handcraft;
+                proto.Type = (ERecipeType_1)Type;
+                proto.TimeSpend = Time;
+                proto.Items = Input;
+                proto.ItemCounts = InCounts;
+                proto.Results = Output ?? Array.Empty<int>();
+                proto.ResultCounts = OutCounts ?? Array.Empty<int>();
+                proto.Description = Description;
+                proto.GridIndex = GridIndex;
+                proto.IconPath = IconPath;
+                proto.NonProductive = NonProductive;
+
+                return proto;
+            }
         }
 
         [Serializable]
@@ -237,6 +308,41 @@ namespace ProjectGenesis.Utils
                        PropertyOverrideItems = i.PropertyOverrideItems,
                        PropertyItemCounts = i.PropertyItemCounts
                    };
+
+            public TechProto ToProto() => ToProto(new TechProto());
+
+            public TechProto ToProto(TechProto proto)
+            {
+                proto.ID = ID;
+                proto.Name = Name;
+                proto.Desc = Desc;
+                proto.Conclusion = Conclusion;
+                proto.IsHiddenTech = IsHiddenTech;
+                proto.PreItem = PreItem;
+                proto.Published = Published;
+                proto.IconPath = IconPath;
+                proto.IsLabTech = IsLabTech;
+                proto.PreTechs = PreTechs;
+                proto.PreTechsImplicit = PreTechsImplicit;
+                proto.PreTechsMax = PreTechsMax;
+                proto.Items = Items ?? Array.Empty<int>();
+                proto.ItemPoints = ItemPoints ?? Array.Empty<int>();
+                proto.AddItems = AddItems ?? Array.Empty<int>();
+                proto.AddItemCounts = AddItemCounts ?? Array.Empty<int>();
+                proto.Position = new Vector2(Position[0], Position[1]);
+                proto.HashNeeded = HashNeeded;
+                proto.UnlockRecipes = UnlockRecipes;
+                proto.UnlockFunctions = UnlockFunctions;
+                proto.UnlockValues = UnlockValues;
+                proto.Level = Level;
+                proto.MaxLevel = MaxLevel;
+                proto.LevelCoef1 = LevelCoef1;
+                proto.LevelCoef2 = LevelCoef2;
+                proto.PropertyOverrideItems = PropertyOverrideItems;
+                proto.PropertyItemCounts = PropertyItemCounts;
+
+                return proto;
+            }
         }
 
         [Serializable]
@@ -255,6 +361,16 @@ namespace ProjectGenesis.Utils
             public string PreText { get; set; }
             public string DeterminatorName { get; set; }
             public long[] DeterminatorParams { get; set; }
+
+            public TutorialProto ToProto()
+                => new TutorialProto
+                   {
+                       ID = ID,
+                       Name = Name,
+                       PreText = PreText,
+                       DeterminatorName = DeterminatorName,
+                       DeterminatorParams = DeterminatorParams
+                   };
         }
 
         [Serializable]
@@ -367,6 +483,59 @@ namespace ProjectGenesis.Utils
                        needBuildInWaterTech = i.needBuildInWaterTech,
                        waterTypes = i.waterTypes,
                    };
+
+            public void ToPrefabDesc(PrefabDesc desc)
+            {
+                if (isAccumulator != null) desc.isAccumulator = isAccumulator.Value;
+                if (isAssembler != null) desc.isAssembler = isAssembler.Value;
+                if (isFractionator != null) desc.isFractionator = isFractionator.Value;
+                if (isPowerGen != null) desc.isPowerGen = isPowerGen.Value;
+                if (isStation != null) desc.isStation = isStation.Value;
+                if (isStellarStation != null) desc.isStellarStation = isStellarStation.Value;
+                if (isCollectStation != null) desc.isCollectStation = isCollectStation.Value;
+                if (isPowerConsumer != null) desc.isPowerConsumer = isPowerConsumer.Value;
+                if (assemblerSpeed != null) desc.assemblerSpeed = assemblerSpeed.Value;
+                if (assemblerRecipeType != null) desc.assemblerRecipeType = (ERecipeType_1)assemblerRecipeType.Value;
+                if (workEnergyPerTick != null) desc.workEnergyPerTick = workEnergyPerTick.Value;
+                if (idleEnergyPerTick != null) desc.idleEnergyPerTick = idleEnergyPerTick.Value;
+                if (minerPeriod != null) desc.minerPeriod = minerPeriod.Value;
+                if (ejectorChargeFrame != null) desc.ejectorChargeFrame = ejectorChargeFrame.Value;
+                if (ejectorColdFrame != null) desc.ejectorColdFrame = ejectorColdFrame.Value;
+                if (siloChargeFrame != null) desc.siloChargeFrame = siloChargeFrame.Value;
+                if (siloColdFrame != null) desc.siloColdFrame = siloColdFrame.Value;
+                if (powerConnectDistance != null) desc.powerConnectDistance = powerConnectDistance.Value;
+                if (powerCoverRadius != null) desc.powerCoverRadius = powerCoverRadius.Value;
+                if (genEnergyPerTick != null) desc.genEnergyPerTick = genEnergyPerTick.Value;
+                if (useFuelPerTick != null) desc.useFuelPerTick = useFuelPerTick.Value;
+                if (beltSpeed != null) desc.beltSpeed = beltSpeed.Value;
+                if (inserterSTT != null) desc.inserterSTT = inserterSTT.Value;
+                if (fluidStorageCount != null) desc.fluidStorageCount = fluidStorageCount.Value;
+                if (fuelMask != null) desc.fuelMask = fuelMask.Value;
+                if (minerType != null) desc.minerType = (EMinerType)minerType.Value;
+                if (minimapType != null) desc.minimapType = minimapType.Value;
+                if (maxAcuEnergy != null) desc.maxAcuEnergy = maxAcuEnergy.Value;
+                if (maxExcEnergy != null) desc.maxExcEnergy = maxExcEnergy.Value;
+                if (inputEnergyPerTick != null) desc.inputEnergyPerTick = inputEnergyPerTick.Value;
+                if (outputEnergyPerTick != null) desc.outputEnergyPerTick = outputEnergyPerTick.Value;
+                if (exchangeEnergyPerTick != null) desc.exchangeEnergyPerTick = exchangeEnergyPerTick.Value;
+                if (stationCollectSpeed != null) desc.stationCollectSpeed = stationCollectSpeed.Value;
+                if (stationMaxEnergyAcc != null) desc.stationMaxEnergyAcc = stationMaxEnergyAcc.Value;
+                if (stationMaxItemCount != null) desc.stationMaxItemCount = stationMaxItemCount.Value;
+                if (stationMaxItemKinds != null) desc.stationMaxItemKinds = stationMaxItemKinds.Value;
+                if (stationMaxShipCount != null) desc.stationMaxShipCount = stationMaxShipCount.Value;
+                if (stationMaxDroneCount != null) desc.stationMaxDroneCount = stationMaxDroneCount.Value;
+                if (AmmoBlastRadius1 != null) desc.AmmoBlastRadius1 = AmmoBlastRadius1.Value;
+                if (turretMuzzleInterval != null) desc.turretMuzzleInterval = turretMuzzleInterval.Value;
+                if (turretRoundInterval != null) desc.turretRoundInterval = turretRoundInterval.Value;
+                if (turretMaxAttackRange != null) desc.turretMaxAttackRange = turretMaxAttackRange.Value;
+                if (turretDamageScale != null) desc.turretDamageScale = turretDamageScale.Value;
+                if (storageCol != null) desc.storageCol = storageCol.Value;
+                if (storageRow != null) desc.storageRow = storageRow.Value;
+                if (isStorage != null) desc.isStorage = isStorage.Value;
+                if (allowBuildInWater != null) desc.allowBuildInWater = allowBuildInWater.Value;
+                if (needBuildInWaterTech != null) desc.needBuildInWaterTech = needBuildInWaterTech.Value;
+                if (waterTypes != null) desc.waterTypes = waterTypes;
+            }
         }
     }
 }

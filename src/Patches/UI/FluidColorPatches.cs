@@ -10,7 +10,7 @@ namespace ProjectGenesis.Patches.UI
     {
         [HarmonyPostfix]
         [HarmonyPatch(typeof(UITankWindow), "_OnUpdate")]
-        public static void UITankWindow_OnUpdate(ref UITankWindow __instance)
+        public static void UITankWindow_OnUpdate(UITankWindow __instance)
         {
             int tankId = __instance.tankId;
 

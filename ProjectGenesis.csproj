@@ -95,6 +95,7 @@
         <Compile Include="src\Compatibility\MoreMegaStructureCompatibilityPlugin.cs"/>
         <Compile Include="src\Compatibility\PlanetVeinUtilizationCompatibilityPlugin.cs"/>
         <Compile Include="src\Compatibility\PlanetwideMiningCompatibilityPlugin.cs"/>
+        <Compile Include="src\Patches\Logic\AbnormalityLogicPatches.cs" />
         <Compile Include="src\Patches\Logic\FuelRodPatches.cs" />
         <Compile Include="src\Patches\Logic\PlanetFocus\DarkFrogPatches.cs" />
         <Compile Include="src\Patches\Logic\QTools\NodeData.cs"/>
@@ -142,10 +143,8 @@
         <Compile Include="src\Patches\UI\HarmonyLogPatches.cs"/>
         <Compile Include="src\Patches\UI\LaserMk2Patches.cs" />
         <Compile Include="src\Patches\UI\MultiProductionPatches.cs"/>
-        <Compile Include="src\Patches\UI\PrerequisitePatches.cs" />
         <Compile Include="src\Patches\UI\QTools\ItemNeedDetail.cs"/>
         <Compile Include="src\Patches\UI\QTools\ObjectPool.cs"/>
-        <Compile Include="src\Patches\UI\UIAbnormalityTipPatches.cs"/>
         <Compile Include="src\Patches\UI\UIBuildMenuPatches.cs"/>
         <Compile Include="src\Patches\UI\UILootFilterPatches.cs" />
         <Compile Include="src\Patches\UI\UIMonitorPatches.cs"/>

@@ -11,7 +11,7 @@ namespace ProjectGenesis.Patches.UI.DisplayText
     {
         [HarmonyPostfix]
         [HarmonyPatch(typeof(RecipeProto), "madeFromString", MethodType.Getter)]
-        public static void RecipeProto_madeFromString(ref RecipeProto __instance, ref string __result)
+        public static void RecipeProto_madeFromString(RecipeProto __instance, ref string __result)
         {
             var type = (Utils_ERecipeType)__instance.Type;
 
@@ -57,7 +57,7 @@ namespace ProjectGenesis.Patches.UI.DisplayText
 
         [HarmonyPostfix]
         [HarmonyPatch(typeof(ItemProto), "fuelTypeString", MethodType.Getter)]
-        public static void ItemProto_fuelTypeString(ref ItemProto __instance, ref string __result)
+        public static void ItemProto_fuelTypeString(ItemProto __instance, ref string __result)
         {
             int type = __instance.FuelType;
 
@@ -75,7 +75,7 @@ namespace ProjectGenesis.Patches.UI.DisplayText
 
         [HarmonyPostfix]
         [HarmonyPatch(typeof(ItemProto), "typeString", MethodType.Getter)]
-        public static void ItemProto_typeString(ref ItemProto __instance, ref string __result)
+        public static void ItemProto_typeString(ItemProto __instance, ref string __result)
         {
             if (__instance.Type != EItemType.Production) return;
             
@@ -125,7 +125,7 @@ namespace ProjectGenesis.Patches.UI.DisplayText
 
         [HarmonyPatch(typeof(ItemProto), "GetPropValue")]
         [HarmonyPostfix]
-        public static void GetPropValuePatch(ref ItemProto __instance, int index, ref string __result)
+        public static void GetPropValuePatch(ItemProto __instance, int index, ref string __result)
         {
             if (index >= __instance.DescFields.Length) return;
 
@@ -167,7 +167,7 @@ namespace ProjectGenesis.Patches.UI.DisplayText
 
         [HarmonyPostfix]
         [HarmonyPatch(typeof(TechProto), "UnlockFunctionText")]
-        public static void TechProto_UnlockFunctionText(ref TechProto __instance, ref string __result, StringBuilder sb)
+        public static void TechProto_UnlockFunctionText(TechProto __instance, ref string __result, StringBuilder sb)
         {
             switch (__instance.ID)
             {

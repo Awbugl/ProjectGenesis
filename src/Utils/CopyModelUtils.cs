@@ -83,7 +83,7 @@ namespace ProjectGenesis.Utils
             ModelProto model = oriModel.Copy();
             model.Name = id.ToString();
             model.ID = id;
-            
+
             PrefabDesc desc = oriModel.prefabDesc;
             GameObject prefab = desc.prefab ? desc.prefab : Resources.Load<GameObject>(oriModel.PrefabPath);
             GameObject colliderPrefab = desc.colliderPrefab ? desc.colliderPrefab : Resources.Load<GameObject>(oriModel._colliderPath);
@@ -162,11 +162,11 @@ namespace ProjectGenesis.Utils
             modelProto._ruinPath = "Entities/Prefabs/Ruins/interstellar-logistic-station-ruins";
             modelProto._wreckagePath = "Entities/Prefabs/Wreckages/interstellar-logistic-station-wreckages";
 
-            ref PrefabDesc prefabDesc = ref LDB.models.Select(ProtoIDUsedByPatches.M同位素温差发电机).prefabDesc;
+            PrefabDesc prefabDesc = LDB.models.Select(ProtoIDUsedByPatches.M同位素温差发电机).prefabDesc;
             ref Material[] prefabDescLODMaterial = ref prefabDesc.lodMaterials[0];
             prefabDescLODMaterial[2].SetColor("_TintColor", new Color(0.2715f, 1.7394f, 0.1930f));
 
-            prefabDesc = ref LDB.models.Select(ProtoIDUsedByPatches.M人造恒星MK2).prefabDesc;
+            prefabDesc = LDB.models.Select(ProtoIDUsedByPatches.M人造恒星MK2).prefabDesc;
             var texture = Resources.Load<Texture>("Assets/texpack/人造恒星MK2材质");
             prefabDescLODMaterial = ref prefabDesc.lodMaterials[0];
             prefabDescLODMaterial[0].SetTexture("_EmissionTex", texture);

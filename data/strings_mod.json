@@ -26,8 +26,8 @@
   },
   {
     "Name": "GenesisBookLoadMessage",
-    "ZHCN": "若您在主界面中看到了创世之书的图标、看到了修改后的科技树且无红字报错，说明创世之书已成功加载。\n请注意，本MOD修改了大量原版内容，游玩本MOD时无法获得元数据、上传银河系。\n如果您在游玩MOD时遇到了任何问题，或者有宝贵的意见或建议，欢迎加入MOD交流群",
-    "ENUS": "If the GenesisBook icon appears in the main menu, the modified technology tree appears and there is no error message, it means GenesisBook is successfully loaded. \nPlease note that this MOD modifies a lot of original content, and you cannot get metadata and upload the galaxy when playing this MOD. \nIf have any issues or ideas about the mod, please join our community on Discord."
+    "ZHCN": "若您在主界面中看到了创世之书的图标、无红字报错，且科技树与原版不同，说明创世之书已成功加载。\n请注意，本MOD修改了大量原版内容，因此禁用了上传银河系的功能。\n如果您在游玩MOD时遇到了任何问题，或者有宝贵的意见或建议，欢迎加入MOD交流群",
+    "ENUS": "If the GenesisBook icon appears in the main menu, the modified tech tree appears and there is no error message, it means GenesisBook is successfully loaded. \nPlease note that this mode modifies a lot of content, and you cannot upload the data the galaxy. \nIf have any issues or ideas about the mod, please join our community on Discord."
   },
   {
     "Name": "巨构类",

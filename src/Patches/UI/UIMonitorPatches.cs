@@ -10,7 +10,7 @@ namespace ProjectGenesis.Patches.UI
     {
         [HarmonyPatch(typeof(UIMonitorWindow), "_OnInit")]
         [HarmonyPostfix]
-        public static void UIMonitorWindow__OnInit(ref UIMonitorWindow __instance) => __instance.cargoFlowSlider.maxValue = 600;
+        public static void UIMonitorWindow__OnInit(UIMonitorWindow __instance) => __instance.cargoFlowSlider.maxValue = 600;
 
         [HarmonyPatch(typeof(MonitorComponent), "SetTargetCargoBytes")]
         [HarmonyTranspiler]
