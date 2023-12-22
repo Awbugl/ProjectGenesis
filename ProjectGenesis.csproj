@@ -103,6 +103,7 @@
         <Compile Include="src\Patches\Logic\QTools\NodeOptions.cs"/>
         <Compile Include="src\Patches\Logic\QTools\QTools.cs"/>
         <Compile Include="src\Patches\Logic\QuantumStoragePatches.cs" />
+        <Compile Include="src\Patches\Logic\StationOutputPatches.cs" />
         <Compile Include="src\Patches\Logic\VFPreloadPatches.cs"/>
         <Compile Include="src\Patches\Logic\AddVein\AddEffectEmitterProto.cs"/>
         <Compile Include="src\Patches\Logic\AddVein\AddVeinPatches.cs"/>
