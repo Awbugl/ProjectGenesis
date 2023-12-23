@@ -1,3 +1,47 @@
+- v2.9.0-alpha2 (Experimental 0.2.12)
+  + 修复了建造栏建筑位置错误的问题
+  + 修复了`动力引擎`科技位置不正确的问题
+  + 修复了文本本地化语言读取不正确的问题
+  + 修复了`量子储物仓`存读档后数据丢失的问题
+  + 修复了`卫星配电站`制造速度不正确的问题
+  + 修复了物流塔单条传送带输出被限制在1800/min的问题
+  + 修复了机甲自定义钨块强度与密度数据不正确的问题
+  + 调整了部分建筑的制造需求
+  + 调整了部分物品的介绍
+  + 调整了部分星球的介绍
+  + 调整了物质分解配方的产出
+  + 调整了`负熵熔炉`的耗电
+  + 调整了飞行仓拆除产出
+  + 调整了快速开局模式的额外物品的种类和数量
+  + 调整了`导弹防御塔`与`磁化电浆炮`的攻击距离
+  + 调整了制造类巨型建筑的制造速度、耗电、配方时间及原料需求
+  + 新增伊卡洛斯燃料舱在燃尽燃料棒后会返回空燃料棒到背包的功能
+  + 新增与`FastTravelEnabler`的兼容补丁
+  + 将科技探索模式调整为默认开启（可在设置中关闭）
+
+  + Fixed incorrect placement of buildings in the build bar
+  + Fixed incorrect placement of engine tech.
+  + Fixed incorrectly localization.
+  + Fixed an issue where data of Quantum Dopot was lost when load and save.
+  + Fixed incorrect manufacturing speed of Satellite Distribution Stations.
+  + Fixed an issue where the output of a single conveyor belt in the Logistics Tower was limited to 1800/min.
+  + Adjusted the manufacturing requirements of some buildings.
+  + Adjusted the description of some items.
+  + Adjusted the description of some planets.
+  + Adjusted the output of Matter Disintegration Recipe.
+  + Adjusted power consumption of Negentropic Furnace.
+  + Adjusted the output of the Flight Silo dismantling
+  + Adjusted the types and quantities of extra items in Fast Start Mode
+  + Adjusted the attack distance of Missile Towers and Magnetized Plasma Cannons.
+  + Adjusted manufacturing speed, power consumption, recipe time, and raw material requirements for manufacturing
+    megastructures.
+  + Added the ability for the Icarus Fuel Pod to return empty fuel rods to the backpack after exhausting them.
+  + Added patch for compatibility with `FastTravelEnabler`.
+  + Adjusted tech exploration mode to be on by default (can be turned off in settings)
+
+<details>
+  <summary>点击展开日志 | Click to view all </summary>
+
 - v2.9.0-alpha1 (Experimental 0.2.7) 群星之影 | Shadows of the Galaxy
   + 适配版本v0.10.28.20959
   + 为巨型建筑添加单独的快捷建造按钮
@@ -31,10 +75,6 @@
   + Removal of restrictions on the location of `Atmospheric Collect Station`
   + Add `Fast Start` mode
 
-<details>
-  <summary>点击展开日志 | Click to view all </summary>
-
-
 - v2.8.0-beta2 (Experimental 0.2.6)
   + 调整了配方`环氧氯丙烷`、`双酚A`的默认堆积逻辑
   + 调整了部分配方及物品的图标
@@ -51,7 +91,8 @@
   + 添加了对mod未正确安装的检测和提示
   + 调整了`小型运载火箭`的制造需求
 
-  + Enhanced compatibility with the `GalacticScale` mod, rare mineral resources from the home planet are now generated properly
+  + Enhanced compatibility with the `GalacticScale` mod, rare mineral resources from the home planet are now generated
+    properly
   + Added detection and hints when mod installed incorrectly
   + Adjusted `Small Launch Vehicle` requirements
 

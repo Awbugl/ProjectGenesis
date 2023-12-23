@@ -96,7 +96,7 @@ namespace ProjectGenesis.Patches.Logic
             AddItemToPackage(2308, 30);   // 精炼厂
             AddItemToPackage(2309, 30);   // 化工厂
             AddItemToPackage(2901, 49);   // 研究站
-            AddItemToPackage(6241, 50);   // 燃料棒
+            AddItemToPackage(6241, 60);   // 燃料棒
             AddItemToPackage(3001, 10);   // 机枪
             AddItemToPackage(3002, 10);   // 激光
             AddItemToPackage(3003, 10);   // 加农炮

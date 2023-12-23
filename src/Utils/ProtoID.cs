@@ -48,7 +48,8 @@ namespace ProjectGenesis.Utils
                            I盐酸 = 7014,
                            I硝酸 = 7017,
                            I海水 = 7018,
-                           I氧 = 7019;
+                           I氧 = 7019,
+                           I钨块 = 7705;
 
         internal const int R等离子精炼 = 16,
                            R高效石墨烯 = 32,

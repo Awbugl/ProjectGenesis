@@ -20,8 +20,6 @@ namespace ProjectGenesis.Patches.UI.QTools
     // ReSharper disable once InconsistentNaming
     public class UIQToolsWindow : ManualBehaviour
     {
-        private static GameObject _itemPickerTranslucentImageGameObject;
-
         public bool isOpening;
         private InputField _addItemCountInput;
         private Text _asRawsLabelText;
@@ -321,10 +319,6 @@ namespace ProjectGenesis.Patches.UI.QTools
         {
             UIItemPickerExtension.Popup(new Vector2(-400f, 300f), OnItemSelectReturn, true, null);
 
-            if (_itemPickerTranslucentImageGameObject == null)
-                _itemPickerTranslucentImageGameObject = UIRoot.instance.uiGame.itemPicker.GetComponentInChildren<TranslucentImage>().gameObject;
-
-            _itemPickerTranslucentImageGameObject.SetActive(false);
             UIRoot.instance.uiGame.itemPicker.transform.SetAsLastSibling();
         }
 
@@ -334,15 +328,12 @@ namespace ProjectGenesis.Patches.UI.QTools
 
         private void OnItemSelectReturn(ItemProto obj)
         {
-            if (obj != null)
-            {
-                if (float.TryParse(_countText, out float count) && count > 0)
-                    _data.AddItemNeed(obj, count);
-                else
-                    UIRealtimeTip.Popup("输入的数值有误".TranslateFromJson());
-            }
+            if (obj == null) return;
 
-            _itemPickerTranslucentImageGameObject.SetActive(true);
+            if (float.TryParse(_countText, out float count) && count > 0)
+                _data.AddItemNeed(obj, count);
+            else
+                UIRealtimeTip.Popup("输入的数值有误".TranslateFromJson());
         }
 
         public void SetTabIndex(int index, bool immediate)

@@ -52,7 +52,7 @@ namespace ProjectGenesis
         public const string MODGUID = "org.LoShin.GenesisBook";
         public const string MODNAME = "GenesisBook";
         public const string VERSION = "2.9.0";
-        public const string DEBUGVERSION = "-Alpha-1.4";
+        public const string DEBUGVERSION = "-Alpha-2.0";
 
         internal static ManualLogSource logger;
         internal static ConfigFile configFile;
@@ -254,6 +254,11 @@ namespace ProjectGenesis
 
             UIBuildMenu.staticLoaded = false;
             UIBuildMenu.StaticLoad();
+
+            ref MechaMaterialSetting material = ref Configs.builtin.mechaArmorMaterials[21];
+            material.itemId = ProtoID.I钨块;
+            material.density = 19.35f;
+            material.durability = 4.35f;
 
             // JsonHelper.ExportAsJson(@"D:\Git\ProjectGenesis\data");
         }

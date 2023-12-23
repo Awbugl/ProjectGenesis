@@ -52,7 +52,7 @@ or open a issue via [github](https://github.com/Awbugl/ProjectGenesis).
 - 全新的矿物类型：挖掘钨矿冶炼超级合金，或者采集放射性矿物制造核燃料棒，以及晶体硫。
 - 接近90%的配方重做：与原版完全不同的流程体验，放心，这会让你感觉很新颖的。
 - 行星协调中心：十数种不同的额外增益效果，可以在全球范围内提供增益。
-- 巨型建筑：使用传送带输入输出物料的超级生产设备，40倍速度。
+- 巨型建筑：使用传送带输入输出物料的超级生产设备，30倍速度。
 - 新的失落科技：使用量子存储技术在异星快速部署，或者进行虫洞航行瞬间抵达银河彼端。
 
 ## 致谢
@@ -101,7 +101,7 @@ If you can see the new **GenesisBook** logo, then the mod is installed successfu
 - New mineral types: mine tungsten ore to smelt superalloys, or harvest radioactive minerals to make nuclear fuel rods, and crystalline sulfur.
 - Nearly 90% of the recipes reworked: a completely different process experience from the original, don't worry, it'll feel new to you.
 - Planetary Coordination Centers: dozens of different extra gain effects that can provide gains on a global scale.
-- Mega Buildings: super production facilities that use conveyor belts to input and output materials at 40 times the speed.
+- Mega Buildings: super production facilities that use conveyor belts to input and output materials with 30x speed.
 - New Lost Technology: use quantum storage technology for rapid deployment on alien planets, or make wormhole voyages to reach the other side of the galaxy instantly.
 
 ## Credits
