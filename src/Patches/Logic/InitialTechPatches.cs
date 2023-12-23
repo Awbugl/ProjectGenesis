@@ -6,6 +6,7 @@ using HarmonyLib;
 using ProjectGenesis.Utils;
 
 // ReSharper disable InconsistentNaming
+// ReSharper disable RemoveRedundantBraces
 // ReSharper disable ForeachCanBePartlyConvertedToQueryUsingAnotherGetEnumerator
 
 namespace ProjectGenesis.Patches.Logic
@@ -22,12 +23,14 @@ namespace ProjectGenesis.Patches.Logic
             if (DSPGame.IsMenuDemo) return;
 
             foreach (int tech in InitialTechs)
-                if (!__instance.history.TechUnlocked(tech))
-                    __instance.history.UnlockTech(tech);
+            {
+                if (!__instance.history.TechUnlocked(tech)) __instance.history.UnlockTech(tech);
+            }
 
             foreach (int tech in BonusTechs)
-                if (!__instance.history.TechUnlocked(tech))
-                    __instance.history.UnlockTech(tech);
+            {
+                if (!__instance.history.TechUnlocked(tech)) __instance.history.UnlockTech(tech);
+            }
         }
 
         [HarmonyPatch(typeof(GameData), "Import")]
@@ -37,21 +40,25 @@ namespace ProjectGenesis.Patches.Logic
             if (DSPGame.IsMenuDemo) return;
 
             foreach (int tech in InitialTechs)
-                if (!__instance.history.TechUnlocked(tech))
-                    __instance.history.UnlockTech(tech);
+            {
+                if (!__instance.history.TechUnlocked(tech)) __instance.history.UnlockTech(tech);
+            }
 
             foreach (int tech in BonusTechs)
-                if (!__instance.history.TechUnlocked(tech))
-                    __instance.history.UnlockTech(tech);
+            {
+                if (!__instance.history.TechUnlocked(tech)) __instance.history.UnlockTech(tech);
+            }
 
             foreach (var (key, value) in __instance.history.techStates)
             {
-                if (value.unlocked)
+                if (!value.unlocked) continue;
+
+                TechProto techProto = LDB.techs.Select(key);
+                if (techProto == null) continue;
+
+                foreach (int t in techProto.UnlockRecipes)
                 {
-                    TechProto techProto = LDB.techs.Select(key);
-                    if (techProto != null)
-                        foreach (int t in techProto.UnlockRecipes)
-                            __instance.history.UnlockRecipe(t);
+                    __instance.history.UnlockRecipe(t);
                 }
             }
         }
@@ -75,18 +82,7 @@ namespace ProjectGenesis.Patches.Logic
             return matcher.InstructionEnumeration();
         }
 
-        [HarmonyPatch(typeof(UITechNode), "DoStartTech")]
-        [HarmonyPatch(typeof(UITechNode), "DoBuyoutTech")]
-        [HarmonyPatch(typeof(UITechNode), "OnUnlockDirectButton")]
-        [HarmonyPatch(typeof(UITechNode), "UpdateInfoComplete")]
-        [HarmonyPostfix]
-        public static void UITechNode_OnQueueUpdate_Postfix()
-        {
-            UITechTree tree = UIRoot.instance.uiGame.techTree;
-            UITechTree_OnQueueUpdate_Postfix(tree);
-        }
-
-        [HarmonyPatch(typeof(UITechTree), "Do1KeyUnlock")]
+        [HarmonyPatch(typeof(UITechTree), "OnTechUnlocked")]
         [HarmonyPostfix]
         public static void UITechTree_OnQueueUpdate_Postfix(UITechTree __instance)
         {
@@ -95,20 +91,11 @@ namespace ProjectGenesis.Patches.Logic
             GameHistoryData history = GameMain.history;
             foreach (var (tech, node) in __instance.nodes)
             {
-                if (node != null && tech < 2000 && !node.techProto.IsHiddenTech)
-                {
-                    bool techSought = TechSought(history, tech);
-                    if (techSought || PreTechSought(history, node.techProto))
-                    {
-                        node.gameObject.SetActive(true);
-                        if (node.techProto.postTechArray.Length > 0) node.connGroup.gameObject.SetActive(techSought);
-                    }
-                    else
-                    {
-                        node.gameObject.SetActive(false);
-                        node.connGroup.gameObject.SetActive(false);
-                    }
-                }
+                if (node == null || tech > 1999 || node.techProto.IsHiddenTech) continue;
+
+                bool techUnlocked = TechUnlocked(history, tech);
+                node.gameObject.SetActive(techUnlocked || AnyPreTechUnlocked(history, node.techProto));
+                if (node.techProto.postTechArray.Length > 0) node.connGroup.gameObject.SetActive(techUnlocked);
             }
         }
 
@@ -119,21 +106,21 @@ namespace ProjectGenesis.Patches.Logic
             if (!ProjectGenesis.EnableHideTechModeEntry.Value) return;
 
             if (__instance.page != 0) return;
+
             GameHistoryData history = GameMain.history;
 
             foreach (var (tech, node) in __instance.nodes)
             {
-                if (node != null && tech < 2000 && !node.techProto.IsHiddenTech)
-                {
-                    bool techSought = TechSought(history, tech);
-                    node.gameObject.SetActive(techSought || PreTechSought(history, node.techProto));
-                    if (node.techProto.postTechArray.Length > 0) node.connGroup.gameObject.SetActive(techSought);
-                }
+                if (node == null || tech > 1999 || node.techProto.IsHiddenTech) continue;
+
+                bool techUnlocked = TechUnlocked(history, tech);
+                node.gameObject.SetActive(techUnlocked || AnyPreTechUnlocked(history, node.techProto));
+                if (node.techProto.postTechArray.Length > 0) node.connGroup.gameObject.SetActive(techUnlocked);
             }
         }
 
-        private static bool TechSought(GameHistoryData history, int tech) => history.TechUnlocked(tech);
+        private static bool TechUnlocked(GameHistoryData history, int tech) => history.TechUnlocked(tech);
 
-        private static bool PreTechSought(GameHistoryData history, TechProto proto) => proto.PreTechs.Any(i => TechSought(history, i));
+        private static bool AnyPreTechUnlocked(GameHistoryData history, TechProto proto) => proto.PreTechs.Any(i => TechUnlocked(history, i));
     }
 }
