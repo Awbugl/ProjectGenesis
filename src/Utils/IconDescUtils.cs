@@ -155,7 +155,7 @@ namespace ProjectGenesis.Utils
     {
         internal abstract class ModIconDesc
         {
-            protected Color Color;
+            internal Color Color;
 
             protected ModIconDesc(Color color)
             {

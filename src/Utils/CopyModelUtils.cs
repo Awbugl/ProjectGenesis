@@ -39,8 +39,6 @@ namespace ProjectGenesis.Utils
             ModelProto oriModel = LDB.models.Select(ProtoID.M星际物流运输站);
             PrefabDesc desc = oriModel.prefabDesc;
 
-            var color = new MyColor(60, 179, 113);
-
             var newMats = new List<Material>();
             foreach (Material[] lodMats in desc.lodMaterials)
             {
@@ -50,7 +48,7 @@ namespace ProjectGenesis.Utils
                 {
                     if (mat == null) continue;
                     var newMaterial = new Material(mat);
-                    newMaterial.SetColor("_Color", color);
+                    newMaterial.SetColor("_Color", new Color32(60, 179, 113, 255));
                     newMats.Add(newMaterial);
                 }
             }
@@ -89,8 +87,8 @@ namespace ProjectGenesis.Utils
             GameObject colliderPrefab = desc.colliderPrefab ? desc.colliderPrefab : Resources.Load<GameObject>(oriModel._colliderPath);
 
             ref PrefabDesc modelPrefabDesc = ref model.prefabDesc;
-            modelPrefabDesc = prefab == null         ? PrefabDesc.none :
-                              colliderPrefab == null ? new PrefabDesc(id, prefab) : new PrefabDesc(id, prefab, colliderPrefab);
+            modelPrefabDesc = prefab == null ? PrefabDesc.none :
+                colliderPrefab == null       ? new PrefabDesc(id, prefab) : new PrefabDesc(id, prefab, colliderPrefab);
 
             foreach (Material[] lodMaterial in modelPrefabDesc.lodMaterials)
             {
@@ -139,22 +137,22 @@ namespace ProjectGenesis.Utils
 
         private static ModelProto Copy(this ModelProto proto)
             => new ModelProto()
-               {
-                   ObjectType = proto.ObjectType,
-                   RuinType = proto.RuinType,
-                   RendererType = proto.RendererType,
-                   HpMax = proto.HpMax,
-                   HpUpgrade = proto.HpUpgrade,
-                   HpRecover = proto.HpRecover,
-                   RuinId = proto.RuinId,
-                   RuinCount = proto.RuinCount,
-                   RuinLifeTime = proto.RuinLifeTime,
-                   PrefabPath = proto.PrefabPath,
-                   _colliderPath = proto._colliderPath,
-                   _ruinPath = proto._ruinPath,
-                   _wreckagePath = proto._wreckagePath,
-                   _ruinOriginModelIndex = proto._ruinOriginModelIndex
-               };
+            {
+                ObjectType = proto.ObjectType,
+                RuinType = proto.RuinType,
+                RendererType = proto.RendererType,
+                HpMax = proto.HpMax,
+                HpUpgrade = proto.HpUpgrade,
+                HpRecover = proto.HpRecover,
+                RuinId = proto.RuinId,
+                RuinCount = proto.RuinCount,
+                RuinLifeTime = proto.RuinLifeTime,
+                PrefabPath = proto.PrefabPath,
+                _colliderPath = proto._colliderPath,
+                _ruinPath = proto._ruinPath,
+                _wreckagePath = proto._wreckagePath,
+                _ruinOriginModelIndex = proto._ruinOriginModelIndex
+            };
 
         internal static void ModelPostFix()
         {
