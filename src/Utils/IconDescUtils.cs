@@ -78,16 +78,11 @@ namespace ProjectGenesis.Utils
             { 6251, new FullIconDesc(new Color32(181, 184, 198, 255)) }, // 石粉
             { 6277, new FullIconDesc(new Color32(255, 255, 142, 255)) }, // 硫粉
 
-            { 7610, new WhiteIconDesc() }, // 核子单元
-            { 7611, new WhiteIconDesc() }, // 反物质单元
-
             { 6203, new NoIconMetalIconDesc(new Color32(186, 176, 144, 255)) }, // 铝块
             { 7705, new NoIconMetalIconDesc(new Color32(43, 44, 48, 255)) },    // 钨块
             { 6227, new NoIconMetalIconDesc(new Color32(66, 222, 87, 255)) },   // 铀块
             { 6228, new NoIconMetalIconDesc(new Color32(239, 83, 90, 255)) },   // 钚块
             { 6208, new NoIconMetalIconDesc(new Color32(93, 91, 83, 255)) },    // 混凝土
-
-            { 7706, new GlassIconDesc(new Color32(91, 91, 91, 255)) }, // 钨玻璃
 
             { 6217, new RodIconDesc(new Color32(163, 145, 85, 255)) },  // 煤油棒
             { 6216, new RodIconDesc(new Color32(198, 207, 111, 255)) }, // JP10棒
@@ -99,6 +94,12 @@ namespace ProjectGenesis.Utils
 
             { 6278, new MartixIconDesc(new Color(1f, 0.4117f, 0.3137f, 0.1961f), new Color(1f, 0.2706f, 0f, 0f)) },
             { 6279, new MartixIconDesc(new Color(1f, 0.7530f, 0.7961f, 0.1961f), new Color(0.7804f, 0.0824f, 0.5216f, 0f)) },
+            
+            { 7610, new WhiteIconDesc() }, // 核子单元
+            { 7611, new WhiteIconDesc() }, // 反物质单元
+            
+            { 7706, new GlassIconDesc(new Color32(91, 91, 91, 255)) }, // 钨玻璃
+
             { 6280, new DefaultIconDesc(new Color(0.5020f, 0.5020f, 0.5020f, 0.1961f), Color.clear) }
         };
 
