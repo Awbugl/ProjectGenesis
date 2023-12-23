@@ -174,7 +174,7 @@
         <Compile Include="src\Utils\JsonDataUtils.cs"/>
         <Compile Include="src\Utils\JsonHelper.cs"/>
         <Compile Include="src\Utils\MutliPlayerPacket.cs"/>
-        <Compile Include="src\Utils\ProtoIDUsedByPatches.cs"/>
+        <Compile Include="src\Utils\ProtoID.cs" />
         <Compile Include="src\Utils\TranslateUtils.cs"/>
         <Compile Include="src\Utils\TranspilerLogUtils.cs" />
     </ItemGroup>

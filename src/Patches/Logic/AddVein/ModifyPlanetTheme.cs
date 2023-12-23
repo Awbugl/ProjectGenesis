@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using ProjectGenesis.Utils;
 
 // ReSharper disable MemberCanBePrivate.Global
 
@@ -12,25 +13,25 @@ namespace ProjectGenesis.Patches.Logic.AddVein
     {
         internal static readonly Dictionary<int, int[]> PlanetGasData = new Dictionary<int, int[]>
                                                                         {
-                                                                            { 1, new[] { 6220, 7019 } },
-                                                                            { 6, new[] { 6206 } },
-                                                                            { 7, new[] { 6220 } },
-                                                                            { 8, new[] { 6220, 7019 } },
-                                                                            { 9, new[] { 6206, 6220 } },
-                                                                            { 10, new[] { 6220 } },
-                                                                            { 12, new[] { 6206 } },
-                                                                            { 13, new[] { 6206 } },
-                                                                            { 14, new[] { 6220, 7019 } },
-                                                                            { 15, new[] { 6220, 7019 } },
-                                                                            { 16, new[] { 6220, 7019 } },
-                                                                            { 17, new[] { 6220 } },
-                                                                            { 18, new[] { 6220, 7019 } },
-                                                                            { 19, new[] { 6220 } },
-                                                                            { 20, new[] { 6220 } },
-                                                                            { 22, new[] { 6220, 7019 } },
-                                                                            { 23, new[] { 6206 } },
-                                                                            { 24, new[] { 6220 } },
-                                                                            { 25, new[] { 6220, 7019 } }
+                                                                            { 1, new[] { ProtoID.I氮, ProtoID.I氧 } },
+                                                                            { 6, new[] { ProtoID.I二氧化碳 } },
+                                                                            { 7, new[] { ProtoID.I氮 } },
+                                                                            { 8, new[] { ProtoID.I氮, ProtoID.I氧 } },
+                                                                            { 9, new[] { ProtoID.I二氧化碳, ProtoID.I氮 } },
+                                                                            { 10, new[] { ProtoID.I氮 } },
+                                                                            { 12, new[] { ProtoID.I二氧化碳 } },
+                                                                            { 13, new[] { ProtoID.I二氧化碳 } },
+                                                                            { 14, new[] { ProtoID.I氮, ProtoID.I氧 } },
+                                                                            { 15, new[] { ProtoID.I氮, ProtoID.I氧 } },
+                                                                            { 16, new[] { ProtoID.I氮, ProtoID.I氧 } },
+                                                                            { 17, new[] { ProtoID.I氮 } },
+                                                                            { 18, new[] { ProtoID.I氮, ProtoID.I氧 } },
+                                                                            { 19, new[] { ProtoID.I氮 } },
+                                                                            { 20, new[] { ProtoID.I氮 } },
+                                                                            { 22, new[] { ProtoID.I氮, ProtoID.I氧 } },
+                                                                            { 23, new[] { ProtoID.I二氧化碳 } },
+                                                                            { 24, new[] { ProtoID.I氮 } },
+                                                                            { 25, new[] { ProtoID.I氮, ProtoID.I氧 } }
                                                                         };
 
         internal static readonly Dictionary<int, AddVeinData> PlanetAddRareVeinData = new Dictionary<int, AddVeinData>
@@ -109,17 +110,17 @@ namespace ProjectGenesis.Patches.Logic.AddVein
                 ModifyGasItems(theme);
                 ModifyVeins(theme);
 
-                if (theme.WaterItemId == 1000) theme.WaterItemId = 7018;
+                if (theme.WaterItemId == ProtoID.I水) theme.WaterItemId = ProtoID.I海水;
 
                 switch (theme.ID)
                 {
                     case 8:
-                        theme.WaterItemId = 1000;
+                        theme.WaterItemId = ProtoID.I水;
                         theme.Distribute = EThemeDistribute.Interstellar;
                         break;
 
                     case 12:
-                        theme.WaterItemId = 7017;
+                        theme.WaterItemId = ProtoID.I硝酸;
                         theme.WaterHeight = -0.1f;
                         theme.Distribute = EThemeDistribute.Interstellar;
                         theme.oceanMat = LDB.themes.Select(22).oceanMat;
@@ -136,7 +137,7 @@ namespace ProjectGenesis.Patches.Logic.AddVein
                         break;
 
                     case 17:
-                        theme.WaterItemId = 7014;
+                        theme.WaterItemId = ProtoID.I盐酸;
                         theme.WaterHeight = -0.1f;
                         theme.Distribute = EThemeDistribute.Interstellar;
                         theme.Algos = new[] { 3 };
@@ -158,14 +159,14 @@ namespace ProjectGenesis.Patches.Logic.AddVein
         {
             if (theme.GasItems.Length != 2) return;
 
-            if (theme.GasItems[0] == 1011 && theme.GasItems[1] == 1120)
+            if (theme.GasItems[0] == ProtoID.I可燃冰 && theme.GasItems[1] == ProtoID.I氢)
             {
-                theme.GasItems = new[] { 1011, 1120, 7002 };
+                theme.GasItems = new[] { ProtoID.I可燃冰, ProtoID.I氢, ProtoID.I氨 };
                 theme.GasSpeeds = new float[] { theme.GasSpeeds[0], theme.GasSpeeds[1], theme.GasSpeeds[1] * 0.7f };
             }
-            else if (theme.GasItems[0] == 1120 && theme.GasItems[1] == 1121)
+            else if (theme.GasItems[0] == ProtoID.I氢 && theme.GasItems[1] == ProtoID.I重氢)
             {
-                theme.GasItems = new[] { 1120, 1121, 6234 };
+                theme.GasItems = new[] { ProtoID.I氢, ProtoID.I重氢, ProtoID.I氦 };
                 theme.GasSpeeds = new float[] { theme.GasSpeeds[0], theme.GasSpeeds[1], theme.GasSpeeds[1] * 0.5f };
             }
         }
@@ -180,7 +181,7 @@ namespace ProjectGenesis.Patches.Logic.AddVein
             theme.VeinCount[14] = (theme.VeinCount[0] + theme.VeinCount[1]) / 2;
             theme.VeinOpacity[14] = (theme.VeinOpacity[0] + theme.VeinOpacity[1]) / 2;
 
-            if (!theme.GasItems.Contains(7019))
+            if (!theme.GasItems.Contains(ProtoID.I氧))
             {
                 RemoveVein(theme, 5);
             }
@@ -220,12 +221,12 @@ namespace ProjectGenesis.Patches.Logic.AddVein
                 switch (theme.PlanetType)
                 {
                     case EPlanetType.Ocean:
-                        theme.GasItems = new[] { 6220, 7019 };
+                        theme.GasItems = new[] { ProtoID.I氮, ProtoID.I氧 };
                         theme.GasSpeeds = GasSpeedsTwoItems();
                         break;
 
                     default:
-                        theme.GasItems = new[] { 6206 };
+                        theme.GasItems = new[] { ProtoID.I二氧化碳 };
                         theme.GasSpeeds = GasSpeedsOneItem();
                         break;
                 }

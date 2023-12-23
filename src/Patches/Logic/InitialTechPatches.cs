@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Emit;
 using HarmonyLib;
+using ProjectGenesis.Utils;
 
 // ReSharper disable InconsistentNaming
 // ReSharper disable ForeachCanBePartlyConvertedToQueryUsingAnotherGetEnumerator
@@ -11,7 +12,18 @@ namespace ProjectGenesis.Patches.Logic
 {
     public static class InitialTechPatches
     {
-        private static readonly List<int> InitialTechs = new List<int> { 1, 1900, 1415 }, BonusTechs = new List<int> { 1001, 1941, 1801, 1701 };
+        private static readonly List<int> InitialTechs
+                                              = new List<int>
+                                                {
+                                                    ProtoID.T戴森球计划, ProtoID.T科学理论, ProtoID.T工业化生产
+                                                },
+                                          BonusTechs = new List<int>
+                                                       {
+                                                           ProtoID.T电磁学,
+                                                           ProtoID.T基础机械组件,
+                                                           ProtoID.T武器系统,
+                                                           ProtoID.T电磁驱动
+                                                       };
 
         [HarmonyPatch(typeof(GameData), "SetForNewGame")]
         [HarmonyPostfix]
@@ -80,6 +92,7 @@ namespace ProjectGenesis.Patches.Logic
         [HarmonyPatch(typeof(UITechNode), "DoStartTech")]
         [HarmonyPatch(typeof(UITechNode), "DoBuyoutTech")]
         [HarmonyPatch(typeof(UITechNode), "OnUnlockDirectButton")]
+        [HarmonyPatch(typeof(UITechNode), "UpdateInfoComplete")]
         [HarmonyPostfix]
         public static void UITechNode_OnQueueUpdate_Postfix()
         {

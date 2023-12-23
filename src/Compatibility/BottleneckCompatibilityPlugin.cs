@@ -35,7 +35,7 @@ namespace ProjectGenesis.Compatibility
 
         public static bool GetMaxIncIndex_Prefix(ref int __result)
         {
-            __result = GameMain.history.techStates[ProtoIDUsedByPatches.T物品增产].unlocked ? 4 : 0;
+            __result = GameMain.history.techStates[ProtoID.T物品增产].unlocked ? 4 : 0;
             return false;
         }
     }

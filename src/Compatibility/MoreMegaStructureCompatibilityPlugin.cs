@@ -78,12 +78,12 @@ namespace ProjectGenesis.Compatibility
 
                     switch (recipeProtoResult)
                     {
-                        case ProtoIDUsedByPatches.I巨型精密组装厂:
-                        case ProtoIDUsedByPatches.I巨型对撞机:
+                        case ProtoID.I巨型精密组装厂:
+                        case ProtoID.I巨型对撞机:
                             recipeProto.ItemCounts[0] = 60;
                             continue;
 
-                        case ProtoIDUsedByPatches.I人造恒星:
+                        case ProtoID.I人造恒星:
                             recipeProto.ItemCounts[0] = 30;
                             continue;
 

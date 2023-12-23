@@ -42,13 +42,13 @@ namespace ProjectGenesis.Patches.Logic
         }
 
         public static bool IsFastTravelTechUnlocked(bool sandboxToolsEnabled)
-            => sandboxToolsEnabled || GameMain.history.TechUnlocked(ProtoIDUsedByPatches.T虫洞航行);
+            => sandboxToolsEnabled || GameMain.history.TechUnlocked(ProtoID.T虫洞航行);
 
         public static bool IsFastTravelEnabled(bool sandboxToolsEnabled)
         {
             if (sandboxToolsEnabled) return true;
 
-            if (!GameMain.history.TechUnlocked(ProtoIDUsedByPatches.T虫洞航行))
+            if (!GameMain.history.TechUnlocked(ProtoID.T虫洞航行))
             {
                 UIRealtimeTip.Popup("未解锁虫洞航行".TranslateFromJson());
                 return false;
@@ -82,12 +82,12 @@ namespace ProjectGenesis.Patches.Logic
 
         private static bool UseNegentropySingularity(Player player)
         {
-            int itemId = ProtoIDUsedByPatches.I负熵奇点;
+            int itemId = ProtoID.I负熵奇点;
             int itemCount = 1;
 
             player.TakeItemFromPlayer(ref itemId, ref itemCount, out _, true, null);
 
-            if (itemId != ProtoIDUsedByPatches.I负熵奇点) return false;
+            if (itemId != ProtoID.I负熵奇点) return false;
 
             if (itemCount != 1) return false;
 

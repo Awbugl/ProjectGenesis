@@ -2,26 +2,19 @@
 
 namespace ProjectGenesis.Utils
 {
-    internal static class ProtoIDUsedByPatches
+    internal static class ProtoID
     {
-        // Tech
-        //   InitialTechPatches.InitialTechs
-
         // Item
-        //   IconDescUtils.FluidColor
-        //   PlanetThemeUtils.PlanetGasData
-        //   PrefabFixUtils
-
-        // Model
-        //   ModelLoadingPatches.Action
-        //   CopyModelUtils
-        //   PrefabFixUtils
+        //   IconDescUtils
+        //   PlanetFocus
 
         internal const int I水 = 1000,
                            I沙土 = 1099,
-                           I铁块 = 1101, 
+                           I铁块 = 1101,
                            I铜块 = 1104,
+                           I可燃冰 = 1011,
                            I氢 = 1120,
+                           I重氢 = 1121,
                            I增产剂 = 1143,
                            I氢燃料棒 = 1801,
                            I氘核燃料棒 = 1802,
@@ -31,10 +24,16 @@ namespace ProjectGenesis.Utils
                            I人造恒星 = 2210,
                            I负熵熔炉 = 2319,
                            I负熵奇点 = 5204,
-                           I空燃料棒 = 6509,
+                           I钨矿 = 6201,
+                           I铝矿 = 6202,
+                           I二氧化碳 = 6206,
+                           I硫矿 = 6207,
                            I四氢双环戊二烯燃料棒 = 6216,
                            I煤油燃料棒 = 6217,
+                           I氮 = 6220,
+                           I放射性矿物 = 6222,
                            I量子储物仓 = 6231,
+                           I氦 = 6234,
                            I钚燃料棒 = 6241,
                            I铀燃料棒 = 6242,
                            IMOX燃料棒 = 6243,
@@ -43,6 +42,11 @@ namespace ProjectGenesis.Utils
                            I巨型精密组装厂 = 6260,
                            I巨型对撞机 = 6265,
                            I大气采集器 = 6267,
+                           I空燃料棒 = 6509,
+                           I氨 = 7002,
+                           I盐酸 = 7014,
+                           I硝酸 = 7017,
+                           I海水 = 7018,
                            I氧 = 7019;
 
         internal const int R等离子精炼 = 16,
@@ -58,7 +62,7 @@ namespace ProjectGenesis.Utils
                            R海水淡化 = 801;
 
         internal const int M星际物流运输站 = 50,
-                           M射线接收站=73,
+                           M射线接收站 = 73,
                            M负熵熔炉 = 457,
                            M量子储液罐 = 501,
                            M矿物处理厂 = 502,
@@ -78,12 +82,19 @@ namespace ProjectGenesis.Utils
                            M高频激光塔MK2 = 516,
                            M量子储物仓 = 517;
 
-        internal const int T宇宙探索1 = 4101,
-                           T宇宙探索4 = 4104,
+        internal const int T戴森球计划 = 1,
+                           T电磁学 = 1001,
                            T物品增产 = 1151,
                            T虫洞航行 = 1152,
+                           T工业化生产 = 1415,
+                           T电磁驱动 = 1701,
+                           T武器系统 = 1801,
+                           T科学理论 = 1900,
                            T巨型建筑工程学 = 1934,
                            T行星协调中心 = 1936,
-                           T黑雾协调中心 = 1960;
+                           T基础机械组件 = 1941,
+                           T黑雾协调中心 = 1960,
+                           T宇宙探索1 = 4101,
+                           T宇宙探索4 = 4104;
     }
 }

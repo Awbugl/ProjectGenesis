@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using System.Reflection.Emit;
 using HarmonyLib;
+using ProjectGenesis.Utils;
 using UnityEngine;
 
 // ReSharper disable CommentTypo
@@ -41,10 +42,10 @@ namespace ProjectGenesis.Patches.Logic.AddVein
 
         internal static void ModifyVeinData()
         {
-            AddVeinProtos(NewVein(15, "铝矿脉", "I铝矿", "Assets/texpack/铝矿脉", 6202, 25, 1, 60),
-                          NewVein(16, "放射性矿脉", "I放射性矿物", "Assets/texpack/放射晶体矿脉_新新", 6222, 35, 2, 90),
-                          NewVein(17, "钨矿脉", "I钨矿", "Assets/texpack/钨矿脉", 6201, 34, 1, 120),
-                          NewVein(18, "硫矿脉", "I硫矿", "Assets/texpack/硫矿脉_新", 6207, 36, 1, 90));
+            AddVeinProtos(NewVein(15, "铝矿脉", "I铝矿", "Assets/texpack/铝矿脉", ProtoID.I铝矿, 25, 1, 60),
+                          NewVein(16, "放射性矿脉", "I放射性矿物", "Assets/texpack/放射晶体矿脉_新新", ProtoID.I放射性矿物, 35, 2, 90),
+                          NewVein(17, "钨矿脉", "I钨矿", "Assets/texpack/钨矿脉", ProtoID.I钨矿, 34, 1, 120),
+                          NewVein(18, "硫矿脉", "I硫矿", "Assets/texpack/硫矿脉_新", ProtoID.I硫矿, 36, 1, 90));
 
             VeinProto NewVein(
                 int id,

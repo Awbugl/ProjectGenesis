@@ -12,7 +12,6 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
     internal static partial class MegaAssemblerPatches
     {
         internal const int TrashSpeed = 60000;
-        internal const int MegaAssemblerSpeed = 400000;
 
         private static readonly FieldInfo EntityData_StationId_Field = AccessTools.Field(typeof(EntityData), nameof(EntityData.stationId)),
                                           EntityData_AssemblerId_Field = AccessTools.Field(typeof(EntityData), nameof(EntityData.assemblerId)),
@@ -120,7 +119,7 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
 
                 int stationPilerLevel = GameMain.history.stationPilerLevel;
 
-                if (__instance.recipeId != ProtoIDUsedByPatches.R物质分解)
+                if (__instance.recipeId != ProtoID.R物质分解)
                 {
                     UpdateOutputSlots(ref __instance, cargoTraffic, slotdata, entitySignPool, stationPilerLevel);
                     UpdateInputSlots(ref __instance, cargoTraffic, slotdata, entitySignPool);
@@ -139,7 +138,7 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
                 }
             }
 
-            if (factory.entityPool[__instance.entityId].protoId == ProtoIDUsedByPatches.I负熵熔炉 && __instance.replicating)
+            if (factory.entityPool[__instance.entityId].protoId == ProtoID.I负熵熔炉 && __instance.replicating)
             {
                 __instance.extraTime += (int)(power * __instance.extraSpeed) +
                                         (int)(power * __instance.speedOverride * __instance.extraTimeSpend / __instance.timeSpend);
@@ -240,7 +239,7 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
 
                     ref int sandCount = ref __instance.produced[0];
 
-                    if (itemId == ProtoIDUsedByPatches.I沙土)
+                    if (itemId == ProtoID.I沙土)
                     {
                         sandCount += stack;
                     }

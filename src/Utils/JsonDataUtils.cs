@@ -103,14 +103,14 @@ namespace ProjectGenesis.Utils
                 json.ToPrefabDesc(LDB.models.Select(json.ModelID).prefabDesc);
             }
 
-            PrefabDesc megapumper = LDB.models.Select(ProtoIDUsedByPatches.M大抽水机).prefabDesc;
+            PrefabDesc megapumper = LDB.models.Select(ProtoID.M大抽水机).prefabDesc;
             megapumper.waterPoints = new[] { Vector3.zero };
             megapumper.portPoses = new[] { megapumper.portPoses[0] };
         }
 
         internal static void ModifyUpgradeTech()
         {
-            for (int i = ProtoIDUsedByPatches.T宇宙探索1; i <= ProtoIDUsedByPatches.T宇宙探索4; i++)
+            for (int i = ProtoID.T宇宙探索1; i <= ProtoID.T宇宙探索4; i++)
             {
                 TechProto techProto = LDB.techs.Select(i);
                 techProto.Items = new[] { 6001 };

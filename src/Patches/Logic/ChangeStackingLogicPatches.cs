@@ -69,7 +69,7 @@ namespace ProjectGenesis.Patches.Logic
 
             switch (component.recipeId)
             {
-                case ProtoIDUsedByPatches.R等离子精炼:
+                case ProtoID.R等离子精炼:
                     b = true;
                     break;
             }
@@ -85,14 +85,14 @@ namespace ProjectGenesis.Patches.Logic
 
             switch (component.recipeId)
             {
-                case ProtoIDUsedByPatches.R氢氯酸:
-                case ProtoIDUsedByPatches.R海水淡化:
-                case ProtoIDUsedByPatches.R羰基合成:
-                case ProtoIDUsedByPatches.R氨氧化:
-                case ProtoIDUsedByPatches.R三氯化铁:
-                case ProtoIDUsedByPatches.R四氢双环戊二烯:
-                case ProtoIDUsedByPatches.R高效石墨烯:
-                case ProtoIDUsedByPatches.R水电解:
+                case ProtoID.R氢氯酸:
+                case ProtoID.R海水淡化:
+                case ProtoID.R羰基合成:
+                case ProtoID.R氨氧化:
+                case ProtoID.R三氯化铁:
+                case ProtoID.R四氢双环戊二烯:
+                case ProtoID.R高效石墨烯:
+                case ProtoID.R水电解:
                     b = true;
                     break;
             }
@@ -108,7 +108,7 @@ namespace ProjectGenesis.Patches.Logic
 
             switch (component.recipeId)
             {
-                case ProtoIDUsedByPatches.R放射性矿物处理:
+                case ProtoID.R放射性矿物处理:
                     b = true;
                     break;
             }

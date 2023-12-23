@@ -14,29 +14,29 @@ namespace ProjectGenesis.Utils
     {
         internal static void AddCopiedModelProto()
         {
-            CopyModelProto(121, ProtoIDUsedByPatches.M量子储液罐, Color.HSVToRGB(0.5571f, 0.3188f, 0.8980f));
-            CopyModelProto(194, ProtoIDUsedByPatches.M矿物处理厂, Color.HSVToRGB(0.2035f, 0.8326f, 0.9373f));
-            CopyModelProto(49, ProtoIDUsedByPatches.M天穹装配厂, Color.HSVToRGB(0.0710f, 0.7412f, 0.8941f));
-            CopyModelProto(49, ProtoIDUsedByPatches.M物质裂解塔, Color.HSVToRGB(0.6174f, 0.6842f, 0.9686f));
-            CopyModelProto(49, ProtoIDUsedByPatches.M巨型化学反应釜, Color.HSVToRGB(0.1404f, 0.8294f, 0.9882f));
-            CopyModelProto(49, ProtoIDUsedByPatches.M精密结构组装厂, Color.HSVToRGB(0.9814f, 0.6620f, 0.8471f));
-            CopyModelProto(56, ProtoIDUsedByPatches.M人造恒星MK2);
-            CopyModelProto(119, ProtoIDUsedByPatches.M大抽水机, Color.HSVToRGB(0.6174f, 0.6842f, 0.9686f));
-            CopyModelProto(46, ProtoIDUsedByPatches.M同位素温差发电机, Color.HSVToRGB(0.4174f, 0.742f, 0.9686f));
-            CopyModelProto(49, ProtoIDUsedByPatches.M物质分解设施, new Color(0.3216F, 0.8157F, 0.09020F));
-            CopyModelProto(49, ProtoIDUsedByPatches.M巨型粒子对撞机, new Color(0.3059F, 0.2196F, 0.4941F));
-            CopyModelProto(432, ProtoIDUsedByPatches.M洲际导弹组, new Color(0.0000f, 0.7490f, 1.0000f));
-            CopyModelProto(432, ProtoIDUsedByPatches.M反物质导弹组, new Color(0.3059F, 0.2196F, 0.4941F));
-            CopyModelProto(374, ProtoIDUsedByPatches.M高斯机枪塔MK2, new Color(0.0000f, 0.7490f, 1.0000f));
-            CopyModelProto(373, ProtoIDUsedByPatches.M高频激光塔MK2, new Color(0.5765f, 0.4392f, 0.8588f));
-            CopyModelProto(52, ProtoIDUsedByPatches.M量子储物仓, new Color(0.7373f, 0.2118f, 0.8510f));
+            CopyModelProto(121, ProtoID.M量子储液罐, Color.HSVToRGB(0.5571f, 0.3188f, 0.8980f));
+            CopyModelProto(194, ProtoID.M矿物处理厂, Color.HSVToRGB(0.2035f, 0.8326f, 0.9373f));
+            CopyModelProto(49, ProtoID.M天穹装配厂, Color.HSVToRGB(0.0710f, 0.7412f, 0.8941f));
+            CopyModelProto(49, ProtoID.M物质裂解塔, Color.HSVToRGB(0.6174f, 0.6842f, 0.9686f));
+            CopyModelProto(49, ProtoID.M巨型化学反应釜, Color.HSVToRGB(0.1404f, 0.8294f, 0.9882f));
+            CopyModelProto(49, ProtoID.M精密结构组装厂, Color.HSVToRGB(0.9814f, 0.6620f, 0.8471f));
+            CopyModelProto(56, ProtoID.M人造恒星MK2);
+            CopyModelProto(119, ProtoID.M大抽水机, Color.HSVToRGB(0.6174f, 0.6842f, 0.9686f));
+            CopyModelProto(46, ProtoID.M同位素温差发电机, Color.HSVToRGB(0.4174f, 0.742f, 0.9686f));
+            CopyModelProto(49, ProtoID.M物质分解设施, new Color(0.3216F, 0.8157F, 0.09020F));
+            CopyModelProto(49, ProtoID.M巨型粒子对撞机, new Color(0.3059F, 0.2196F, 0.4941F));
+            CopyModelProto(432, ProtoID.M洲际导弹组, new Color(0.0000f, 0.7490f, 1.0000f));
+            CopyModelProto(432, ProtoID.M反物质导弹组, new Color(0.3059F, 0.2196F, 0.4941F));
+            CopyModelProto(374, ProtoID.M高斯机枪塔MK2, new Color(0.0000f, 0.7490f, 1.0000f));
+            CopyModelProto(373, ProtoID.M高频激光塔MK2, new Color(0.5765f, 0.4392f, 0.8588f));
+            CopyModelProto(52, ProtoID.M量子储物仓, new Color(0.7373f, 0.2118f, 0.8510f));
 
             AddAtmosphericCollectStation();
         }
 
         private static void AddAtmosphericCollectStation()
         {
-            ModelProto oriModel = LDB.models.Select(ProtoIDUsedByPatches.M星际物流运输站);
+            ModelProto oriModel = LDB.models.Select(ProtoID.M星际物流运输站);
             PrefabDesc desc = oriModel.prefabDesc;
 
             var color = new MyColor(60, 179, 113);
@@ -55,7 +55,7 @@ namespace ProjectGenesis.Utils
                 }
             }
 
-            oriModel = LDB.models.Select(ProtoIDUsedByPatches.M射线接收站); // ray receiver
+            oriModel = LDB.models.Select(ProtoID.M射线接收站); // ray receiver
             var collectEffectMat = new Material(oriModel.prefabDesc.lodMaterials[0][3]);
 
             collectEffectMat.SetColor("_TintColor", new Color32(131, 127, 197, 255));
@@ -67,7 +67,7 @@ namespace ProjectGenesis.Utils
 
             newMats.Add(collectEffectMat);
 
-            ModelProto registerModel = ProtoRegistry.RegisterModel(ProtoIDUsedByPatches.M大气采集器,
+            ModelProto registerModel = ProtoRegistry.RegisterModel(ProtoID.M大气采集器,
                                                                    "Assets/genesis-models/entities/prefabs/atmospheric-collect-station",
                                                                    newMats.ToArray());
 
@@ -158,15 +158,15 @@ namespace ProjectGenesis.Utils
 
         internal static void ModelPostFix()
         {
-            ModelProto modelProto = LDB.models.Select(ProtoIDUsedByPatches.M大气采集器);
+            ModelProto modelProto = LDB.models.Select(ProtoID.M大气采集器);
             modelProto._ruinPath = "Entities/Prefabs/Ruins/interstellar-logistic-station-ruins";
             modelProto._wreckagePath = "Entities/Prefabs/Wreckages/interstellar-logistic-station-wreckages";
 
-            PrefabDesc prefabDesc = LDB.models.Select(ProtoIDUsedByPatches.M同位素温差发电机).prefabDesc;
+            PrefabDesc prefabDesc = LDB.models.Select(ProtoID.M同位素温差发电机).prefabDesc;
             ref Material[] prefabDescLODMaterial = ref prefabDesc.lodMaterials[0];
             prefabDescLODMaterial[2].SetColor("_TintColor", new Color(0.2715f, 1.7394f, 0.1930f));
 
-            prefabDesc = LDB.models.Select(ProtoIDUsedByPatches.M人造恒星MK2).prefabDesc;
+            prefabDesc = LDB.models.Select(ProtoID.M人造恒星MK2).prefabDesc;
             var texture = Resources.Load<Texture>("Assets/texpack/人造恒星MK2材质");
             prefabDescLODMaterial = ref prefabDesc.lodMaterials[0];
             prefabDescLODMaterial[0].SetTexture("_EmissionTex", texture);
@@ -177,8 +177,8 @@ namespace ProjectGenesis.Utils
 
         internal static void ItemPostFix()
         {
-            LDB.items.Select(ProtoIDUsedByPatches.I水).recipes = new List<RecipeProto>() { LDB.recipes.Select(ProtoIDUsedByPatches.R海水淡化) };
-            LDB.items.Select(ProtoIDUsedByPatches.I氢).isRaw = true;
+            LDB.items.Select(ProtoID.I水).recipes = new List<RecipeProto>() { LDB.recipes.Select(ProtoID.R海水淡化) };
+            LDB.items.Select(ProtoID.I氢).isRaw = true;
         }
     }
 }

@@ -8,7 +8,7 @@ namespace ProjectGenesis.Patches.Logic
 {
     public static class ThermalPowerGenPatches
     {
-        private static readonly int[] FuelRods = { ProtoIDUsedByPatches.I氢燃料棒, ProtoIDUsedByPatches.I煤油燃料棒, ProtoIDUsedByPatches.I四氢双环戊二烯燃料棒 };
+        private static readonly int[] FuelRods = { ProtoID.I氢燃料棒, ProtoID.I煤油燃料棒, ProtoID.I四氢双环戊二烯燃料棒 };
 
         [HarmonyPatch(typeof(PlanetFactory), "EntityFastFillIn")]
         [HarmonyPatch(typeof(PlanetFactory), "InsertInto")]
@@ -38,7 +38,7 @@ namespace ProjectGenesis.Patches.Logic
 
             if (componentFuelMask != 1) return ItemProto.fuelNeeds[componentFuelMask];
 
-            return factory.planet.gasItems.Contains(ProtoIDUsedByPatches.I氧) ? ItemProto.fuelNeeds[1] : FuelRods;
+            return factory.planet.gasItems.Contains(ProtoID.I氧) ? ItemProto.fuelNeeds[1] : FuelRods;
         }
 
         [HarmonyPatch(typeof(UIPowerGeneratorWindow), "OnFuelButtonClick")]
@@ -69,7 +69,7 @@ namespace ProjectGenesis.Patches.Logic
 
             if (componentFuelMask != 1) return ItemProto.fuelNeeds[componentFuelMask];
 
-            if (window.factory.planet.gasItems.Contains(ProtoIDUsedByPatches.I氧)) return ItemProto.fuelNeeds[1];
+            if (window.factory.planet.gasItems.Contains(ProtoID.I氧)) return ItemProto.fuelNeeds[1];
 
             int playerInhandItemId = window.player.inhandItemId;
 

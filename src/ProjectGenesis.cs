@@ -200,7 +200,7 @@ namespace ProjectGenesis
         {
             //飞行舱拆除
             VegeProto vegeProto = LDB.veges.Select(9999);
-            vegeProto.MiningItem = new[] { ProtoIDUsedByPatches.I四氢双环戊二烯燃料棒, ProtoIDUsedByPatches.I铁块, ProtoIDUsedByPatches.I铜块 };
+            vegeProto.MiningItem = new[] { ProtoID.I四氢双环戊二烯燃料棒, ProtoID.I铁块, ProtoID.I铜块 };
             vegeProto.MiningCount = new[] { 3, 60, 60 };
             vegeProto.MiningChance = new float[] { 1, 1, 1 };
             vegeProto.Preload();
@@ -245,7 +245,7 @@ namespace ProjectGenesis
             RecipeProto.InitFractionatorNeeds();
             RaycastLogic.LoadStatic();
 
-            ItemProto.stationCollectorId = ProtoIDUsedByPatches.I轨道采集器;
+            ItemProto.stationCollectorId = ProtoID.I轨道采集器;
 
             ItemPostFix();
 

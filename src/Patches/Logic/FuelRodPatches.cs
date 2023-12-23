@@ -29,34 +29,34 @@ namespace ProjectGenesis.Patches.Logic
 
             switch (mecha.reactorItemId)
             {
-                case ProtoIDUsedByPatches.I氢燃料棒:
-                case ProtoIDUsedByPatches.I煤油燃料棒:
-                case ProtoIDUsedByPatches.I四氢双环戊二烯燃料棒:
-                case ProtoIDUsedByPatches.I铀燃料棒:
-                case ProtoIDUsedByPatches.I钚燃料棒:
-                case ProtoIDUsedByPatches.I氘核燃料棒:
-                case ProtoIDUsedByPatches.I氦三燃料棒:
-                case ProtoIDUsedByPatches.I反物质燃料棒:
+                case ProtoID.I氢燃料棒:
+                case ProtoID.I煤油燃料棒:
+                case ProtoID.I四氢双环戊二烯燃料棒:
+                case ProtoID.I铀燃料棒:
+                case ProtoID.I钚燃料棒:
+                case ProtoID.I氘核燃料棒:
+                case ProtoID.I氦三燃料棒:
+                case ProtoID.I反物质燃料棒:
                     count = 1;
                     break;
 
-                case ProtoIDUsedByPatches.I氘氦混合聚变燃料棒:
+                case ProtoID.I氘氦混合聚变燃料棒:
                     count = 2;
                     break;
                 
-                case ProtoIDUsedByPatches.IMOX燃料棒:
+                case ProtoID.IMOX燃料棒:
                     count = 3;
                     break;
 
-                case ProtoIDUsedByPatches.I奇异燃料棒:
+                case ProtoID.I奇异燃料棒:
                     count = 4;
                     break;
             }
             
             if (count == 0) return;
             
-            mecha.player.TryAddItemToPackage(ProtoIDUsedByPatches.I空燃料棒, count, mecha.reactorItemInc, true);
-            UIItemup.Up(ProtoIDUsedByPatches.I空燃料棒, count);
+            mecha.player.TryAddItemToPackage(ProtoID.I空燃料棒, count, mecha.reactorItemInc, true);
+            UIItemup.Up(ProtoID.I空燃料棒, count);
         }
     }
 }

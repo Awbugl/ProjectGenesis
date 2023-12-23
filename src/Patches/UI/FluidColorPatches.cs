@@ -19,7 +19,7 @@ namespace ProjectGenesis.Patches.UI
 
             int fluidId = tankComponent.fluidId;
 
-            if (FluidColor.TryGetValue(fluidId, out Color value))
+            if (IconDescs.TryGetValue(fluidId, out Color value))
             {
                 __instance.exchangeAndColoring(value);
                 return;

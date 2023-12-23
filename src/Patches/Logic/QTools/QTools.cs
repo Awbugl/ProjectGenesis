@@ -5,7 +5,7 @@ namespace ProjectGenesis.Patches.Logic.QTools
 {
     internal static class QTools
     {
-        internal static readonly ItemProto ProliferatorProto = LDB.items.Select(ProtoIDUsedByPatches.I增产剂);
+        internal static readonly ItemProto ProliferatorProto = LDB.items.Select(ProtoID.I增产剂);
         private static Dictionary<Utils.ERecipeType, List<ItemProto>> _recipeTypeFactoryMap;
 
         internal static Dictionary<Utils.ERecipeType, List<ItemProto>> RecipeTypeFactoryMap

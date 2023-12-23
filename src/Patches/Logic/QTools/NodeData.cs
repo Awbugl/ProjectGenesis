@@ -34,7 +34,7 @@ namespace ProjectGenesis.Patches.Logic.QTools
                     break;
             }
 
-            if (Options.Factory.ModelIndex == ProtoIDUsedByPatches.M负熵熔炉) count *= 0.5f;
+            if (Options.Factory.ModelIndex == ProtoID.M负熵熔炉) count *= 0.5f;
 
             Options.FactoryCount = count;
         }

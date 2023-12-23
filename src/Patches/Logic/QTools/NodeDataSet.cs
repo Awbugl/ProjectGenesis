@@ -148,7 +148,7 @@ namespace ProjectGenesis.Patches.Logic.QTools
                 ItemProto proto = LDB.items.Select(recipe.Items[index]);
                 float count = node.ItemCount * recipe.ItemCounts[index] / recipe.ResultCounts[idx];
 
-                if (node.Options.Factory.ModelIndex == ProtoIDUsedByPatches.M负熵熔炉) count *= 0.5f;
+                if (node.Options.Factory.ModelIndex == ProtoID.M负熵熔炉) count *= 0.5f;
 
                 if (node.Options.Strategy == EProliferatorStrategy.ExtraProducts) count *= 0.8f;
 

@@ -78,7 +78,7 @@ namespace ProjectGenesis.Patches.UI.DisplayText
         public static void ItemProto_typeString(ItemProto __instance, ref string __result)
         {
             if (__instance.Type != EItemType.Production) return;
-            
+
             switch ((Utils_ERecipeType)__instance.prefabDesc.assemblerRecipeType)
             {
                 case Utils_ERecipeType.Assemble:
@@ -108,7 +108,7 @@ namespace ProjectGenesis.Patches.UI.DisplayText
                 case Utils_ERecipeType.高分子化工:
                     __result = "T先进化工".TranslateFromJson();
                     break;
-                    
+
                 case Utils_ERecipeType.所有化工:
                     __result = "复合化工".TranslateFromJson();
                     break;
@@ -149,12 +149,12 @@ namespace ProjectGenesis.Patches.UI.DisplayText
                             return;
                     }
 
-                    if (__instance.ModelIndex == 464) __result = "裂变能".TranslateFromJson();
+                    if (__instance.ModelIndex == ProtoID.M同位素温差发电机) __result = "裂变能".TranslateFromJson();
 
                     return;
 
                 case 18:
-                    if (__instance.prefabDesc.isCollectStation && __instance.ID == ProtoIDUsedByPatches.I大气采集器) __result = "行星大气".TranslateFromJson();
+                    if (__instance.prefabDesc.isCollectStation && __instance.ID == ProtoID.I大气采集器) __result = "行星大气".TranslateFromJson();
 
                     return;
 
@@ -171,18 +171,19 @@ namespace ProjectGenesis.Patches.UI.DisplayText
         {
             switch (__instance.ID)
             {
-                case ProtoIDUsedByPatches.T巨型建筑工程学:
+                case ProtoID.T巨型建筑工程学:
                     __result = "巨型建筑工程学文字描述".TranslateFromJson();
                     break;
 
-                case ProtoIDUsedByPatches.T行星协调中心:
+                case ProtoID.T行星协调中心:
                     __result = "行星协调中心文字描述".TranslateFromJson();
                     break;
 
-                case ProtoIDUsedByPatches.T虫洞航行:
+                case ProtoID.T虫洞航行:
                     __result = "虫洞航行文字描述".TranslateFromJson();
                     break;
-                case ProtoIDUsedByPatches.T黑雾协调中心:
+
+                case ProtoID.T黑雾协调中心:
                     __result = "黑雾协调中心文字描述".TranslateFromJson();
                     break;
             }

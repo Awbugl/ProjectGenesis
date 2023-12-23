@@ -16,7 +16,7 @@ namespace ProjectGenesis.Patches.UI
         [HarmonyPostfix]
         public static void FactoryModel_InitCollectorMaterial(FactoryModel __instance)
         {
-            ObjectRenderer objectRenderer = __instance.gpuiManager.GetObjectRenderer(ProtoIDUsedByPatches.M大气采集器);
+            ObjectRenderer objectRenderer = __instance.gpuiManager.GetObjectRenderer(ProtoID.M大气采集器);
             if (objectRenderer != null) atmosphericCollectStationMaterial = objectRenderer.lodBatches[0].materials[2];
         }
 

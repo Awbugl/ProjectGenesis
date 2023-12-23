@@ -9,6 +9,7 @@ using GalacticScale;
 using HarmonyLib;
 using ProjectGenesis.Patches.Logic;
 using ProjectGenesis.Patches.Logic.AddVein;
+using ProjectGenesis.Utils;
 using UnityEngine;
 using static ProjectGenesis.Patches.Logic.AddVein.ModifyPlanetTheme;
 using PluginInfo = BepInEx.PluginInfo;
@@ -185,7 +186,7 @@ namespace ProjectGenesis.Compatibility
             double num4 = 85.0 / planetData.rotationPeriod + planetData.rotationPhase / 360.0;
             int num5 = (int)(num4 + 0.1);
             double angle = (num4 - num5) * 360.0;
-            Vector3 v = new Vector3((float)Math.Cos(num3) * planetData.orbitRadius, 0.0f, (float)Math.Sin(num3) * planetData.orbitRadius);
+            var v = new Vector3((float)Math.Cos(num3) * planetData.orbitRadius, 0.0f, (float)Math.Sin(num3) * planetData.orbitRadius);
             Vector3 position = Maths.QRotate(planetData.runtimeOrbitRotation, v);
             Pose pose;
             if (planetData.orbitAroundPlanet != null)
@@ -445,17 +446,17 @@ namespace ProjectGenesis.Compatibility
                 ModifyGasItems(ref theme);
                 ModifyVeins(ref theme);
 
-                if (theme.WaterItemId == 1000) theme.WaterItemId = 7018;
+                if (theme.WaterItemId == ProtoID.I水) theme.WaterItemId = ProtoID.I海水;
 
                 switch (theme.LDBThemeId)
                 {
                     case 8:
-                        theme.WaterItemId = 1000;
+                        theme.WaterItemId = ProtoID.I水;
                         theme.Distribute = EThemeDistribute.Interstellar;
                         break;
 
                     case 12:
-                        theme.WaterItemId = 7017;
+                        theme.WaterItemId = ProtoID.I硝酸;
                         theme.WaterHeight = -0.1f;
                         theme.Distribute = EThemeDistribute.Interstellar;
                         Themes.Savanna.InitMaterials();
@@ -473,7 +474,7 @@ namespace ProjectGenesis.Compatibility
                         break;
 
                     case 17:
-                        theme.WaterItemId = 7014;
+                        theme.WaterItemId = ProtoID.I盐酸;
                         theme.WaterHeight = -0.1f;
                         theme.Distribute = EThemeDistribute.Interstellar;
                         theme.Algo = 3;
@@ -496,14 +497,14 @@ namespace ProjectGenesis.Compatibility
         {
             if (theme.GasItems.Length != 2) return;
 
-            if (theme.GasItems[0] == 1011 && theme.GasItems[1] == 1120)
+            if (theme.GasItems[0] == ProtoID.I可燃冰 && theme.GasItems[1] == ProtoID.I氢)
             {
-                theme.GasItems = new[] { 1011, 1120, 7002 };
+                theme.GasItems = new[] { ProtoID.I可燃冰, ProtoID.I氢, ProtoID.I氨 };
                 theme.GasSpeeds = new float[] { theme.GasSpeeds[0], theme.GasSpeeds[1], theme.GasSpeeds[1] * 0.7f };
             }
-            else if (theme.GasItems[0] == 1120 && theme.GasItems[1] == 1121)
+            else if (theme.GasItems[0] == ProtoID.I氢 && theme.GasItems[1] == ProtoID.I重氢)
             {
-                theme.GasItems = new[] { 1120, 1121, 6234 };
+                theme.GasItems = new[] { ProtoID.I氢, ProtoID.I重氢, ProtoID.I氦 };
                 theme.GasSpeeds = new float[] { theme.GasSpeeds[0], theme.GasSpeeds[1], theme.GasSpeeds[1] * 0.5f };
             }
         }
@@ -518,7 +519,7 @@ namespace ProjectGenesis.Compatibility
             theme.VeinCount[14] = (theme.VeinCount[0] + theme.VeinCount[1]) / 2;
             theme.VeinOpacity[14] = (theme.VeinOpacity[0] + theme.VeinOpacity[1]) / 2;
 
-            if (!theme.GasItems.Contains(7019))
+            if (!theme.GasItems.Contains(ProtoID.I氧))
             {
                 RemoveVein(ref theme, 5);
             }
@@ -558,12 +559,12 @@ namespace ProjectGenesis.Compatibility
                 switch (theme.PlanetType)
                 {
                     case EPlanetType.Ocean:
-                        theme.GasItems = new[] { 6220, 7019 };
+                        theme.GasItems = new[] { ProtoID.I氮, ProtoID.I氧 };
                         theme.GasSpeeds = GasSpeedsTwoItems();
                         break;
 
                     default:
-                        theme.GasItems = new[] { 6206 };
+                        theme.GasItems = new[] { ProtoID.I二氧化碳 };
                         theme.GasSpeeds = GasSpeedsOneItem();
                         break;
                 }

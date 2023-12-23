@@ -27,10 +27,10 @@ namespace ProjectGenesis.Patches.UI
         {
             switch (modelIndex)
             {
-                case ProtoIDUsedByPatches.M洲际导弹组:
+                case ProtoID.M洲际导弹组:
                     return 5;
 
-                case ProtoIDUsedByPatches.M反物质导弹组:
+                case ProtoID.M反物质导弹组:
                     return 6;
             }
 
