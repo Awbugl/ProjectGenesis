@@ -8,27 +8,26 @@ namespace ProjectGenesis.Patches.Logic.QTools
 {
     internal class NodeDataSet
     {
+        internal readonly Dictionary<ItemProto, NodeData> AsRaws = new Dictionary<ItemProto, NodeData>();     // AsRaws
         internal readonly Dictionary<ItemProto, NodeData> Byproducts = new Dictionary<ItemProto, NodeData>(); // by product
+
+        internal readonly Dictionary<ItemProto, NodeOptions> CustomOptions = new Dictionary<ItemProto, NodeOptions>();
+
+        internal readonly Dictionary<ItemProto, NodeData> Datas = new Dictionary<ItemProto, NodeData>(); // middle tier products 
+
+        internal readonly Dictionary<Utils.ERecipeType, ItemProto> DefaultMachine = new Dictionary<Utils.ERecipeType, ItemProto>();
+
+        internal readonly Dictionary<ItemProto, NodeData> Factories = new Dictionary<ItemProto, NodeData>(); // middle tier products 
 
         internal readonly Dictionary<ItemProto, NodeData> Needs = new Dictionary<ItemProto, NodeData>(); // final product
 
         internal readonly Dictionary<ItemProto, NodeData> Raws = new Dictionary<ItemProto, NodeData>(); // ore
 
-        internal readonly Dictionary<ItemProto, NodeData> AsRaws = new Dictionary<ItemProto, NodeData>(); // AsRaws
-
-        internal readonly Dictionary<ItemProto, NodeData> Datas = new Dictionary<ItemProto, NodeData>(); // middle tier products 
-
-        internal readonly Dictionary<ItemProto, NodeData> Factories = new Dictionary<ItemProto, NodeData>(); // middle tier products 
-
-        internal readonly Dictionary<ItemProto, NodeOptions> CustomOptions = new Dictionary<ItemProto, NodeOptions>();
-
-        internal readonly Dictionary<Utils.ERecipeType, ItemProto> DefaultMachine = new Dictionary<Utils.ERecipeType, ItemProto>();
-
-        private float ProliferatorCount => _totalProliferatedItemCount / 74;
+        private EProliferatorStrategy _defaultStrategy = EProliferatorStrategy.Nonuse;
 
         private float _totalProliferatedItemCount;
 
-        private EProliferatorStrategy _defaultStrategy = EProliferatorStrategy.Nonuse;
+        private float ProliferatorCount => _totalProliferatedItemCount / 74;
 
         internal event Action OnNeedRefreshed;
 
@@ -50,10 +49,7 @@ namespace ProjectGenesis.Patches.Logic.QTools
             // ReSharper disable once LoopCanBePartlyConvertedToQuery
             foreach (NodeData node in Byproducts.Values.ToArray())
             {
-                if (ReuseByProducts(node, AsRaws))
-                {
-                    ReuseByProducts(node, Raws);
-                }
+                if (ReuseByProducts(node, AsRaws)) ReuseByProducts(node, Raws);
             }
 
             if (_totalProliferatedItemCount > 0) MergeRaws(ItemRaw(QTools.ProliferatorProto, ProliferatorCount));
@@ -89,20 +85,18 @@ namespace ProjectGenesis.Patches.Logic.QTools
 
                     return false;
                 }
-                else
+
+                node.ItemCount -= t.ItemCount;
+
+                datas.Remove(t.Item);
+
+                if (node.ItemCount < 1e-6)
                 {
-                    node.ItemCount -= t.ItemCount;
-
-                    datas.Remove(t.Item);
-
-                    if (node.ItemCount < 1e-6)
-                    {
-                        Byproducts.Remove(node.Item);
-                        return false;
-                    }
-
-                    return true;
+                    Byproducts.Remove(node.Item);
+                    return false;
                 }
+
+                return true;
             }
 
             return true;
@@ -167,11 +161,9 @@ namespace ProjectGenesis.Patches.Logic.QTools
                 t.ItemCount += node.ItemCount;
                 return t;
             }
-            else
-            {
-                datas.Add(node.Item, node);
-                return node;
-            }
+
+            datas.Add(node.Item, node);
+            return node;
         }
 
         private void MergeData(NodeData node) => MergeNode(Datas, node).RefreshFactoryCount();
@@ -245,12 +237,9 @@ namespace ProjectGenesis.Patches.Logic.QTools
         private NodeData ItemRaw(ItemProto proto, float count)
         {
             var data = new NodeData
-                       {
-                           DataSet = this,
-                           Item = proto,
-                           ItemCount = count,
-                           Options = new NodeOptions(proto, null, null, EProliferatorStrategy.Nonuse, true)
-                       };
+            {
+                DataSet = this, Item = proto, ItemCount = count, Options = new NodeOptions(proto, null, null, EProliferatorStrategy.Nonuse, true)
+            };
 
             data.Options.OnOptionsChange += OnOptionsChange;
 
@@ -277,9 +266,9 @@ namespace ProjectGenesis.Patches.Logic.QTools
             if (strategy == EProliferatorStrategy.ExtraProducts && !recipe.productive) strategy = EProliferatorStrategy.Nonuse;
 
             var data = new NodeData
-                       {
-                           DataSet = this, Item = proto, ItemCount = count, Options = new NodeOptions(proto, factory, recipe, strategy, asRaw)
-                       };
+            {
+                DataSet = this, Item = proto, ItemCount = count, Options = new NodeOptions(proto, factory, recipe, strategy, asRaw)
+            };
 
             data.RefreshFactoryCount();
             data.Options.OnOptionsChange += OnOptionsChange;

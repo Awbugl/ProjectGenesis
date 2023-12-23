@@ -160,9 +160,7 @@ namespace ProjectGenesis.Patches.UI
         [HarmonyPatch(typeof(UILootFilter), "RefreshWindow")]
         [HarmonyPostfix]
         public static void RefreshWindow_Postfix(UILootFilter __instance)
-        {
-            __instance.contentTrans.sizeDelta = __instance.currentType == 1 ? new Vector2(644f, 414f) : new Vector2(782f, 322f);
-        }
+            => __instance.contentTrans.sizeDelta = __instance.currentType == 1 ? new Vector2(644f, 414f) : new Vector2(782f, 322f);
 
         [HarmonyPatch(typeof(UILootFilter), "SetMaterialProps")]
         [HarmonyTranspiler]

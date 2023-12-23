@@ -15,7 +15,7 @@ namespace ProjectGenesis.Compatibility
         public const string MODGUID = "org.LoShin.GenesisBook.Compatibility.FastTravelEnabler";
         public const string MODNAME = "GenesisBook.Compatibility.FastTravelEnabler";
         public const string VERSION = "1.0.0";
-        
+
         private const string FastTravelEnablerGUID = "com.hetima.dsp.FastTravelEnabler";
 
         internal static bool FastTravelEnablerInstalled;

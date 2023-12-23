@@ -84,7 +84,7 @@ namespace ProjectGenesis
                 return;
             }
 
-            #region Settings
+#region Settings
 
             EnableLDBToolCacheEntry = Config.Bind("config", "UseLDBToolCache", false,
                                                   "Enable LDBTool Cache, which allows you use config to fix some compatibility issues.\n启用LDBTool缓存，允许使用配置文件修复部分兼容性问题");
@@ -98,7 +98,7 @@ namespace ProjectGenesis
 
             Config.Save();
 
-            #endregion Settings
+#endregion Settings
 
             var executingAssembly = Assembly.GetExecutingAssembly();
 
@@ -119,14 +119,14 @@ namespace ProjectGenesis
             SwapShaderPatches.AddSwapShaderMapping("VF Shaders/Forward/PBR Standard Vein Metal", metalVeinShader);
 
             TableID = new int[]
-                      {
-                          TabSystem.RegisterTab("org.LoShin.GenesisBook:org.LoShin.GenesisBookTab1",
-                                                new TabData("精炼页面".TranslateFromJsonSpecial(), "Assets/texpack/矿物处理")),
-                          TabSystem.RegisterTab("org.LoShin.GenesisBook:org.LoShin.GenesisBookTab2",
-                                                new TabData("化工页面".TranslateFromJsonSpecial(), "Assets/texpack/化工科技")),
-                          TabSystem.RegisterTab("org.LoShin.GenesisBook:org.LoShin.GenesisBookTab3",
-                                                new TabData("防御页面".TranslateFromJsonSpecial(), "Assets/texpack/防御"))
-                      };
+            {
+                TabSystem.RegisterTab("org.LoShin.GenesisBook:org.LoShin.GenesisBookTab1",
+                                      new TabData("精炼页面".TranslateFromJsonSpecial(), "Assets/texpack/矿物处理")),
+                TabSystem.RegisterTab("org.LoShin.GenesisBook:org.LoShin.GenesisBookTab2",
+                                      new TabData("化工页面".TranslateFromJsonSpecial(), "Assets/texpack/化工科技")),
+                TabSystem.RegisterTab("org.LoShin.GenesisBook:org.LoShin.GenesisBookTab3",
+                                      new TabData("防御页面".TranslateFromJsonSpecial(), "Assets/texpack/防御"))
+            };
 
             NebulaModAPI.RegisterPackets(executingAssembly);
 

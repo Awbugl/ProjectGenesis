@@ -23,18 +23,15 @@ namespace ProjectGenesis.Utils
                 num = Application.systemLanguage == SystemLanguage.Chinese ||
                       Application.systemLanguage == SystemLanguage.ChineseSimplified ||
                       Application.systemLanguage == SystemLanguage.ChineseTraditional
-                          ? 2052
-                          : 1033;
+                    ? 2052
+                    : 1033;
 
             IsSystemZHCN = num == 2052;
         }
 
         internal static void RegisterStrings()
         {
-            foreach ((string key, StringProtoJson value) in StringProtoJsons)
-            {
-                LocalizationModule.RegisterTranslation(key, value.ENUS, value.ZHCN, "");
-            }
+            foreach ((string key, StringProtoJson value) in StringProtoJsons) LocalizationModule.RegisterTranslation(key, value.ENUS, value.ZHCN, "");
         }
 
         public static string TranslateFromJsonSpecial(this string s)

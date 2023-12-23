@@ -41,8 +41,7 @@ namespace ProjectGenesis.Patches.Logic
             return matcher.InstructionEnumeration();
         }
 
-        public static bool IsFastTravelTechUnlocked(bool sandboxToolsEnabled)
-            => sandboxToolsEnabled || GameMain.history.TechUnlocked(ProtoID.T虫洞航行);
+        public static bool IsFastTravelTechUnlocked(bool sandboxToolsEnabled) => sandboxToolsEnabled || GameMain.history.TechUnlocked(ProtoID.T虫洞航行);
 
         public static bool IsFastTravelEnabled(bool sandboxToolsEnabled)
         {

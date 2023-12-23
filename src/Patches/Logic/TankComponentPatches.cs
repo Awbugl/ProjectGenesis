@@ -17,8 +17,8 @@ namespace ProjectGenesis.Patches.Logic
             LocalBuilder local = ilGenerator.DeclareLocal(typeof(int));
             local.SetLocalSymInfo("currentOutputStack");
 
-            matcher.MatchForward(false,
-                                 new CodeMatch(OpCodes.Callvirt, AccessTools.Method(typeof(CargoTraffic), nameof(CargoTraffic.TryInsertItemAtHead))));
+            matcher.MatchForward(
+                false, new CodeMatch(OpCodes.Callvirt, AccessTools.Method(typeof(CargoTraffic), nameof(CargoTraffic.TryInsertItemAtHead))));
 
             do
             {
@@ -34,9 +34,8 @@ namespace ProjectGenesis.Patches.Logic
 
                 matcher.Advance(8).SetInstruction(new CodeInstruction(OpCodes.Ldloc_S, local.LocalIndex));
 
-                matcher.MatchForward(false,
-                                     new CodeMatch(OpCodes.Callvirt,
-                                                   AccessTools.Method(typeof(CargoTraffic), nameof(CargoTraffic.TryInsertItemAtHead))));
+                matcher.MatchForward(
+                    false, new CodeMatch(OpCodes.Callvirt, AccessTools.Method(typeof(CargoTraffic), nameof(CargoTraffic.TryInsertItemAtHead))));
             }
             while (matcher.IsValid);
 

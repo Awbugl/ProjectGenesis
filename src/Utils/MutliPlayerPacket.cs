@@ -70,9 +70,9 @@ namespace ProjectGenesis.Utils
                 for (int i = 0; i < length; i++)
                 {
                     slotsData[i] = new SlotData
-                                   {
-                                       dir = (IODir)r.ReadInt32(), beltId = r.ReadInt32(), storageIdx = r.ReadInt32(), counter = r.ReadInt32()
-                                   };
+                    {
+                        dir = (IODir)r.ReadInt32(), beltId = r.ReadInt32(), storageIdx = r.ReadInt32(), counter = r.ReadInt32()
+                    };
                 }
 
                 p.BinaryReader.Close();

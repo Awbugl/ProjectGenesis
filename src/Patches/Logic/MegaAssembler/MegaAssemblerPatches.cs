@@ -139,10 +139,8 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
             }
 
             if (factory.entityPool[__instance.entityId].protoId == ProtoID.I负熵熔炉 && __instance.replicating)
-            {
                 __instance.extraTime += (int)(power * __instance.extraSpeed) +
                                         (int)(power * __instance.speedOverride * __instance.extraTimeSpend / __instance.timeSpend);
-            }
 
             return b;
         }

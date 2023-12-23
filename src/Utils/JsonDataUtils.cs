@@ -17,7 +17,7 @@ namespace ProjectGenesis.Utils
             ref Dictionary<int, IconToolNew.IconDesc> itemIconDescs
                 = ref AccessTools.StaticFieldRefAccess<Dictionary<int, IconToolNew.IconDesc>>(typeof(ProtoRegistry), "itemIconDescs");
 
-            #region TechProto
+#region TechProto
 
             foreach (TechProtoJson techjson in TechProtos())
             {
@@ -31,9 +31,9 @@ namespace ProjectGenesis.Utils
                 }
             }
 
-            #endregion
+#endregion
 
-            #region Mod ItemProto
+#region Mod ItemProto
 
             foreach (ItemProtoJson itemjson in ItemModProtos())
             {
@@ -42,9 +42,9 @@ namespace ProjectGenesis.Utils
                 LDBTool.PreAddProto(itemjson.ToProto());
             }
 
-            #endregion
+#endregion
 
-            #region Vanilla ItemProto
+#region Vanilla ItemProto
 
             foreach (ItemProtoJson itemjson in ItemVanillaProtos())
             {
@@ -54,9 +54,9 @@ namespace ProjectGenesis.Utils
                 itemjson.ToProto(proto);
             }
 
-            #endregion
+#endregion
 
-            #region RecipeProto
+#region RecipeProto
 
             foreach (RecipeProtoJson recipeJson in RecipeProtos())
             {
@@ -72,9 +72,9 @@ namespace ProjectGenesis.Utils
                 }
             }
 
-            #endregion
+#endregion
 
-            #region TutorialProto
+#region TutorialProto
 
             TutorialProtoJson[] tutorialProtos = TutorialProtos();
 
@@ -83,7 +83,7 @@ namespace ProjectGenesis.Utils
                 LDBTool.PreAddProto(json.ToProto());
             }
 
-            #endregion
+#endregion
 
             int GetTableID(int gridIndex)
             {

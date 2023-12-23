@@ -2,12 +2,11 @@
 using System.Reflection;
 using BepInEx;
 using HarmonyLib;
-using ProjectGenesis.Compatibility;
 using ProjectGenesis.Patches.UI;
 using ProjectGenesis.Utils;
 using UnityEngine;
 
-namespace ProjectGenesis
+namespace ProjectGenesis.Compatibility
 {
     /// <summary>
     ///     special thanks for https://github.com/kremnev8/DSP-Mods/blob/master/Mods/BlueprintTweaks/InstallationChecker.cs

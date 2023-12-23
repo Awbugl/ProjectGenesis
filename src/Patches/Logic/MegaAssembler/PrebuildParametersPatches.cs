@@ -29,9 +29,8 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
 
             matcher.SetOpcodeAndAdvance(OpCodes.Brfalse);
 
-            matcher.MatchForward(false,
-                                 new CodeMatch(OpCodes.Stfld,
-                                               AccessTools.Field(typeof(AssemblerComponent), nameof(AssemblerComponent.forceAccMode))));
+            matcher.MatchForward(
+                false, new CodeMatch(OpCodes.Stfld, AccessTools.Field(typeof(AssemblerComponent), nameof(AssemblerComponent.forceAccMode))));
 
             matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0), new CodeInstruction(OpCodes.Ldarg_3),
                                                 new CodeInstruction(OpCodes.Ldarg, 4),

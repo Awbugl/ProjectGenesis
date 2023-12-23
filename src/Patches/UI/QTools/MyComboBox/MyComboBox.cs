@@ -9,12 +9,12 @@ namespace ProjectGenesis.Patches.UI.QTools.MyComboBox
 {
     public abstract class MyComboBox : MonoBehaviour
     {
-        protected int DefaultSprite;
         public int selectIndex;
         public Text labelText;
         public UIComboBox comboBox;
         public Image iconImg;
         public UIButton button;
+        protected int DefaultSprite;
 
         public event Action<int> OnIndexChange;
 

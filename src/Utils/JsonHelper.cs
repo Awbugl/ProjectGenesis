@@ -36,8 +36,8 @@ namespace ProjectGenesis.Utils
         internal static PrefabDescJson[] PrefabDescs() => GetJsonContent<PrefabDescJson>("prefabDescs");
 
         internal static T[] GetJsonContent<T>(string json)
-            => JsonConvert.DeserializeObject<T[]>(new StreamReader(Assembly.GetManifestResourceStream($"ProjectGenesis.data.{json}.json"))
-                                                     .ReadToEnd());
+            => JsonConvert.DeserializeObject<T[]>(
+                new StreamReader(Assembly.GetManifestResourceStream($"ProjectGenesis.data.{json}.json")).ReadToEnd());
 
         internal static string SerializeObject(object obj)
             => JsonConvert.SerializeObject(obj, Formatting.Indented,
@@ -95,47 +95,47 @@ namespace ProjectGenesis.Utils
 
             public static ItemProtoJson FromProto(ItemProto i)
                 => new ItemProtoJson
-                   {
-                       ID = i.ID,
-                       Name = i.Name,
-                       Description = i.Description,
-                       IconPath = i.IconPath,
-                       GridIndex = i.GridIndex,
-                       StackSize = i.StackSize,
-                       FuelType = i.FuelType,
-                       HeatValue = i.HeatValue,
-                       ReactorInc = i.ReactorInc,
-                       DescFields = i.DescFields,
-                       IsFluid = i.IsFluid,
-                       Type = (int)i.Type,
-                       SubID = i.SubID,
-                       MiningFrom = i.MiningFrom,
-                       ProduceFrom = i.ProduceFrom,
-                       Grade = i.Grade,
-                       Upgrades = i.Upgrades,
-                       IsEntity = i.IsEntity,
-                       CanBuild = i.CanBuild,
-                       BuildInGas = i.BuildInGas,
-                       ModelIndex = i.ModelIndex,
-                       ModelCount = i.ModelCount,
-                       HpMax = i.HpMax,
-                       Ability = i.Ability,
-                       Potential = i.Potential,
-                       BuildIndex = i.BuildIndex,
-                       BuildMode = i.BuildMode,
-                       UnlockKey = i.UnlockKey,
-                       PreTechOverride = i.PreTechOverride,
-                       Productive = i.Productive,
-                       MechaMaterialID = i.MechaMaterialID,
-                       AmmoType = (int)i.AmmoType,
-                       BombType = i.BombType,
-                       CraftType = i.CraftType,
-                       DropRate = i.DropRate,
-                       EnemyDropLevel = i.EnemyDropLevel,
-                       EnemyDropRange = new[] { i.EnemyDropRange.x, i.EnemyDropRange.y },
-                       EnemyDropCount = i.EnemyDropCount,
-                       EnemyDropMask = i.EnemyDropMask
-                   };
+                {
+                    ID = i.ID,
+                    Name = i.Name,
+                    Description = i.Description,
+                    IconPath = i.IconPath,
+                    GridIndex = i.GridIndex,
+                    StackSize = i.StackSize,
+                    FuelType = i.FuelType,
+                    HeatValue = i.HeatValue,
+                    ReactorInc = i.ReactorInc,
+                    DescFields = i.DescFields,
+                    IsFluid = i.IsFluid,
+                    Type = (int)i.Type,
+                    SubID = i.SubID,
+                    MiningFrom = i.MiningFrom,
+                    ProduceFrom = i.ProduceFrom,
+                    Grade = i.Grade,
+                    Upgrades = i.Upgrades,
+                    IsEntity = i.IsEntity,
+                    CanBuild = i.CanBuild,
+                    BuildInGas = i.BuildInGas,
+                    ModelIndex = i.ModelIndex,
+                    ModelCount = i.ModelCount,
+                    HpMax = i.HpMax,
+                    Ability = i.Ability,
+                    Potential = i.Potential,
+                    BuildIndex = i.BuildIndex,
+                    BuildMode = i.BuildMode,
+                    UnlockKey = i.UnlockKey,
+                    PreTechOverride = i.PreTechOverride,
+                    Productive = i.Productive,
+                    MechaMaterialID = i.MechaMaterialID,
+                    AmmoType = (int)i.AmmoType,
+                    BombType = i.BombType,
+                    CraftType = i.CraftType,
+                    DropRate = i.DropRate,
+                    EnemyDropLevel = i.EnemyDropLevel,
+                    EnemyDropRange = new[] { i.EnemyDropRange.x, i.EnemyDropRange.y },
+                    EnemyDropCount = i.EnemyDropCount,
+                    EnemyDropMask = i.EnemyDropMask
+                };
 
             public ItemProto ToProto() => ToProto(new ItemProto());
 
@@ -205,22 +205,22 @@ namespace ProjectGenesis.Utils
 
             public static RecipeProtoJson FromProto(RecipeProto i)
                 => new RecipeProtoJson
-                   {
-                       ID = i.ID,
-                       Explicit = i.Explicit,
-                       Name = i.Name,
-                       Handcraft = i.Handcraft,
-                       Type = (int)i.Type,
-                       Time = i.TimeSpend,
-                       Input = i.Items ?? Array.Empty<int>(),
-                       InCounts = i.ItemCounts ?? Array.Empty<int>(),
-                       Output = i.Results ?? Array.Empty<int>(),
-                       OutCounts = i.ResultCounts ?? Array.Empty<int>(),
-                       Description = i.Description,
-                       GridIndex = i.GridIndex,
-                       IconPath = i.IconPath,
-                       NonProductive = i.NonProductive
-                   };
+                {
+                    ID = i.ID,
+                    Explicit = i.Explicit,
+                    Name = i.Name,
+                    Handcraft = i.Handcraft,
+                    Type = (int)i.Type,
+                    Time = i.TimeSpend,
+                    Input = i.Items ?? Array.Empty<int>(),
+                    InCounts = i.ItemCounts ?? Array.Empty<int>(),
+                    Output = i.Results ?? Array.Empty<int>(),
+                    OutCounts = i.ResultCounts ?? Array.Empty<int>(),
+                    Description = i.Description,
+                    GridIndex = i.GridIndex,
+                    IconPath = i.IconPath,
+                    NonProductive = i.NonProductive
+                };
 
             public RecipeProto ToProto() => ToProto(new RecipeProto());
 
@@ -279,35 +279,35 @@ namespace ProjectGenesis.Utils
 
             public static TechProtoJson FromProto(TechProto i)
                 => new TechProtoJson
-                   {
-                       ID = i.ID,
-                       Name = i.Name,
-                       Desc = i.Desc,
-                       Conclusion = i.Conclusion,
-                       IsHiddenTech = i.IsHiddenTech,
-                       PreItem = i.PreItem,
-                       Published = i.Published,
-                       Level = i.Level,
-                       MaxLevel = i.MaxLevel,
-                       LevelCoef1 = i.LevelCoef1,
-                       LevelCoef2 = i.LevelCoef2,
-                       IconPath = i.IconPath,
-                       IsLabTech = i.IsLabTech,
-                       PreTechs = i.PreTechs,
-                       PreTechsImplicit = i.PreTechsImplicit,
-                       PreTechsMax = i.PreTechsMax,
-                       Items = i.Items,
-                       ItemPoints = i.ItemPoints,
-                       HashNeeded = i.HashNeeded,
-                       UnlockRecipes = i.UnlockRecipes.Distinct().ToArray(),
-                       UnlockFunctions = i.UnlockFunctions,
-                       UnlockValues = i.UnlockValues,
-                       AddItems = i.AddItems,
-                       AddItemCounts = i.AddItemCounts,
-                       Position = new[] { i.Position.x, i.Position.y },
-                       PropertyOverrideItems = i.PropertyOverrideItems,
-                       PropertyItemCounts = i.PropertyItemCounts
-                   };
+                {
+                    ID = i.ID,
+                    Name = i.Name,
+                    Desc = i.Desc,
+                    Conclusion = i.Conclusion,
+                    IsHiddenTech = i.IsHiddenTech,
+                    PreItem = i.PreItem,
+                    Published = i.Published,
+                    Level = i.Level,
+                    MaxLevel = i.MaxLevel,
+                    LevelCoef1 = i.LevelCoef1,
+                    LevelCoef2 = i.LevelCoef2,
+                    IconPath = i.IconPath,
+                    IsLabTech = i.IsLabTech,
+                    PreTechs = i.PreTechs,
+                    PreTechsImplicit = i.PreTechsImplicit,
+                    PreTechsMax = i.PreTechsMax,
+                    Items = i.Items,
+                    ItemPoints = i.ItemPoints,
+                    HashNeeded = i.HashNeeded,
+                    UnlockRecipes = i.UnlockRecipes.Distinct().ToArray(),
+                    UnlockFunctions = i.UnlockFunctions,
+                    UnlockValues = i.UnlockValues,
+                    AddItems = i.AddItems,
+                    AddItemCounts = i.AddItemCounts,
+                    Position = new[] { i.Position.x, i.Position.y },
+                    PropertyOverrideItems = i.PropertyOverrideItems,
+                    PropertyItemCounts = i.PropertyItemCounts
+                };
 
             public TechProto ToProto() => ToProto(new TechProto());
 
@@ -364,13 +364,13 @@ namespace ProjectGenesis.Utils
 
             public TutorialProto ToProto()
                 => new TutorialProto
-                   {
-                       ID = ID,
-                       Name = Name,
-                       PreText = PreText,
-                       DeterminatorName = DeterminatorName,
-                       DeterminatorParams = DeterminatorParams
-                   };
+                {
+                    ID = ID,
+                    Name = Name,
+                    PreText = PreText,
+                    DeterminatorName = DeterminatorName,
+                    DeterminatorParams = DeterminatorParams
+                };
         }
 
         [Serializable]
@@ -430,59 +430,59 @@ namespace ProjectGenesis.Utils
 
             public static PrefabDescJson FromPrefabDesc(PrefabDesc i, int itemID, int modelID)
                 => new PrefabDescJson
-                   {
-                       ItemID = itemID,
-                       ModelID = modelID,
-                       isAccumulator = i.isAccumulator,
-                       isAssembler = i.isAssembler,
-                       isFractionator = i.isFractionator,
-                       isPowerGen = i.isPowerGen,
-                       isStation = i.isStation,
-                       isStellarStation = i.isStellarStation,
-                       isCollectStation = i.isCollectStation,
-                       isPowerConsumer = i.isPowerConsumer,
-                       assemblerSpeed = i.assemblerSpeed,
-                       assemblerRecipeType = (int)i.assemblerRecipeType,
-                       workEnergyPerTick = i.workEnergyPerTick,
-                       idleEnergyPerTick = i.idleEnergyPerTick,
-                       minerPeriod = i.minerPeriod,
-                       ejectorChargeFrame = i.ejectorChargeFrame,
-                       ejectorColdFrame = i.ejectorColdFrame,
-                       siloChargeFrame = i.siloChargeFrame,
-                       siloColdFrame = i.siloColdFrame,
-                       powerConnectDistance = i.powerConnectDistance,
-                       powerCoverRadius = i.powerCoverRadius,
-                       genEnergyPerTick = i.genEnergyPerTick,
-                       useFuelPerTick = i.useFuelPerTick,
-                       beltSpeed = i.beltSpeed,
-                       inserterSTT = i.inserterSTT,
-                       fluidStorageCount = i.fluidStorageCount,
-                       fuelMask = i.fuelMask,
-                       minerType = (int)i.minerType,
-                       minimapType = i.minimapType,
-                       maxAcuEnergy = i.maxAcuEnergy,
-                       maxExcEnergy = i.maxExcEnergy,
-                       inputEnergyPerTick = i.inputEnergyPerTick,
-                       outputEnergyPerTick = i.outputEnergyPerTick,
-                       exchangeEnergyPerTick = i.exchangeEnergyPerTick,
-                       stationCollectSpeed = i.stationCollectSpeed,
-                       stationMaxEnergyAcc = i.stationMaxEnergyAcc,
-                       stationMaxItemCount = i.stationMaxItemCount,
-                       stationMaxItemKinds = i.stationMaxItemKinds,
-                       stationMaxShipCount = i.stationMaxShipCount,
-                       stationMaxDroneCount = i.stationMaxDroneCount,
-                       AmmoBlastRadius1 = i.AmmoBlastRadius1,
-                       turretMuzzleInterval = i.turretMuzzleInterval,
-                       turretRoundInterval = i.turretRoundInterval,
-                       turretMaxAttackRange = i.turretMaxAttackRange,
-                       turretDamageScale = i.turretDamageScale,
-                       storageCol = i.storageCol,
-                       storageRow = i.storageRow,
-                       isStorage = i.isStorage,
-                       allowBuildInWater = i.allowBuildInWater,
-                       needBuildInWaterTech = i.needBuildInWaterTech,
-                       waterTypes = i.waterTypes,
-                   };
+                {
+                    ItemID = itemID,
+                    ModelID = modelID,
+                    isAccumulator = i.isAccumulator,
+                    isAssembler = i.isAssembler,
+                    isFractionator = i.isFractionator,
+                    isPowerGen = i.isPowerGen,
+                    isStation = i.isStation,
+                    isStellarStation = i.isStellarStation,
+                    isCollectStation = i.isCollectStation,
+                    isPowerConsumer = i.isPowerConsumer,
+                    assemblerSpeed = i.assemblerSpeed,
+                    assemblerRecipeType = (int)i.assemblerRecipeType,
+                    workEnergyPerTick = i.workEnergyPerTick,
+                    idleEnergyPerTick = i.idleEnergyPerTick,
+                    minerPeriod = i.minerPeriod,
+                    ejectorChargeFrame = i.ejectorChargeFrame,
+                    ejectorColdFrame = i.ejectorColdFrame,
+                    siloChargeFrame = i.siloChargeFrame,
+                    siloColdFrame = i.siloColdFrame,
+                    powerConnectDistance = i.powerConnectDistance,
+                    powerCoverRadius = i.powerCoverRadius,
+                    genEnergyPerTick = i.genEnergyPerTick,
+                    useFuelPerTick = i.useFuelPerTick,
+                    beltSpeed = i.beltSpeed,
+                    inserterSTT = i.inserterSTT,
+                    fluidStorageCount = i.fluidStorageCount,
+                    fuelMask = i.fuelMask,
+                    minerType = (int)i.minerType,
+                    minimapType = i.minimapType,
+                    maxAcuEnergy = i.maxAcuEnergy,
+                    maxExcEnergy = i.maxExcEnergy,
+                    inputEnergyPerTick = i.inputEnergyPerTick,
+                    outputEnergyPerTick = i.outputEnergyPerTick,
+                    exchangeEnergyPerTick = i.exchangeEnergyPerTick,
+                    stationCollectSpeed = i.stationCollectSpeed,
+                    stationMaxEnergyAcc = i.stationMaxEnergyAcc,
+                    stationMaxItemCount = i.stationMaxItemCount,
+                    stationMaxItemKinds = i.stationMaxItemKinds,
+                    stationMaxShipCount = i.stationMaxShipCount,
+                    stationMaxDroneCount = i.stationMaxDroneCount,
+                    AmmoBlastRadius1 = i.AmmoBlastRadius1,
+                    turretMuzzleInterval = i.turretMuzzleInterval,
+                    turretRoundInterval = i.turretRoundInterval,
+                    turretMaxAttackRange = i.turretMaxAttackRange,
+                    turretDamageScale = i.turretDamageScale,
+                    storageCol = i.storageCol,
+                    storageRow = i.storageRow,
+                    isStorage = i.isStorage,
+                    allowBuildInWater = i.allowBuildInWater,
+                    needBuildInWaterTech = i.needBuildInWaterTech,
+                    waterTypes = i.waterTypes
+                };
 
             public void ToPrefabDesc(PrefabDesc desc)
             {

@@ -46,7 +46,7 @@ namespace ProjectGenesis.Compatibility
             ref Array local2 = ref AccessTools.StaticFieldRefAccess<Array>(type, "starVeinCount");
 
             sbyte veinTypeCount = AddVeinPatches.VeinTypeCount;
-            
+
             local1 = Array.CreateInstance(veinTypeInfoType, veinTypeCount);
 
             for (int i = 0; i < veinTypeCount; i++)

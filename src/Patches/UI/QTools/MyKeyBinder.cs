@@ -11,7 +11,11 @@ namespace ProjectGenesis.Patches.UI.QTools
     // MyKeyBinder modified from LSTM: https://github.com/hetima/DSP_LSTM/blob/main/LSTM/MyKeyBinder.cs
     public class MyKeyBinder : MonoBehaviour
     {
-        private ConfigEntry<KeyboardShortcut> _config;
+        private static readonly KeyCode[] ModKeys =
+        {
+            KeyCode.RightShift, KeyCode.LeftShift, KeyCode.RightControl, KeyCode.LeftControl, KeyCode.RightAlt, KeyCode.LeftAlt,
+            KeyCode.LeftCommand, KeyCode.LeftApple, KeyCode.LeftWindows, KeyCode.RightCommand, KeyCode.RightApple, KeyCode.RightWindows
+        };
 
         public Text functionText;
         public Text keyText;
@@ -23,8 +27,45 @@ namespace ProjectGenesis.Patches.UI.QTools
         public Text waitingText;
         public UIButton setDefaultUIButton;
         public UIButton setNoneKeyUIButton;
+        private ConfigEntry<KeyboardShortcut> _config;
+
+        private KeyCode _lastKey;
 
         private bool _nextNotOn;
+
+        public void Reset()
+        {
+            conflictText.gameObject.SetActive(false);
+            waitingText.gameObject.SetActive(false);
+            setDefaultUIButton.button.Select();
+            _lastKey = KeyCode.None;
+        }
+
+        private void Update()
+        {
+            if (!setTheKeyToggle.isOn && inputUIButton.highlighted) setTheKeyToggle.isOn = true;
+
+            if (!setTheKeyToggle.isOn) return;
+            if (!inputUIButton._isPointerEnter && Input.GetKeyDown(KeyCode.Mouse0))
+            {
+                inputUIButton.highlighted = false;
+                setTheKeyToggle.isOn = false;
+                Reset();
+            }
+            else if (!inputUIButton.highlighted)
+            {
+                setTheKeyToggle.isOn = false;
+                Reset();
+            }
+            else
+            {
+                waitingText.gameObject.SetActive(true);
+                if (!TrySetValue()) return;
+                setTheKeyToggle.isOn = false;
+                inputUIButton.highlighted = false;
+                Reset();
+            }
+        }
 
         internal static RectTransform CreateKeyBinder(
             float x,
@@ -60,7 +101,7 @@ namespace ProjectGenesis.Patches.UI.QTools
 
             Destroy(kb.setDefaultUIButton.gameObject.GetComponentInChildren<Localizer>());
             kb.setDefaultUIButton.gameObject.GetComponentInChildren<Text>().text = "恢复默认".TranslateFromJson();
-            
+
             ((RectTransform)kb.keyText.transform).anchoredPosition = new Vector2(170f, 0f);
             ((RectTransform)kb.inputUIButton.transform.parent.transform).anchoredPosition = new Vector2(330f, 0f);
             ((RectTransform)kb.setDefaultUIButton.transform).anchoredPosition = new Vector2(470f, 0f);
@@ -76,32 +117,6 @@ namespace ProjectGenesis.Patches.UI.QTools
             kb.inputUIButton.onClick += kb.OnInputUIButtonClick;
             kb.setDefaultUIButton.onClick += kb.OnSetDefaultKeyClick;
             return go.transform as RectTransform;
-        }
-
-        private void Update()
-        {
-            if (!setTheKeyToggle.isOn && inputUIButton.highlighted) setTheKeyToggle.isOn = true;
-
-            if (!setTheKeyToggle.isOn) return;
-            if (!inputUIButton._isPointerEnter && Input.GetKeyDown(KeyCode.Mouse0))
-            {
-                inputUIButton.highlighted = false;
-                setTheKeyToggle.isOn = false;
-                Reset();
-            }
-            else if (!inputUIButton.highlighted)
-            {
-                setTheKeyToggle.isOn = false;
-                Reset();
-            }
-            else
-            {
-                waitingText.gameObject.SetActive(true);
-                if (!TrySetValue()) return;
-                setTheKeyToggle.isOn = false;
-                inputUIButton.highlighted = false;
-                Reset();
-            }
         }
 
         private bool TrySetValue()
@@ -124,14 +139,6 @@ namespace ProjectGenesis.Patches.UI.QTools
             _config.Value = KeyboardShortcut.Deserialize(k);
             return true;
         }
-
-        private KeyCode _lastKey;
-
-        private static readonly KeyCode[] ModKeys =
-        {
-            KeyCode.RightShift, KeyCode.LeftShift, KeyCode.RightControl, KeyCode.LeftControl, KeyCode.RightAlt, KeyCode.LeftAlt,
-            KeyCode.LeftCommand, KeyCode.LeftApple, KeyCode.LeftWindows, KeyCode.RightCommand, KeyCode.RightApple, KeyCode.RightWindows
-        };
 
         private string GetPressedKey()
         {
@@ -157,14 +164,6 @@ namespace ProjectGenesis.Patches.UI.QTools
             }
 
             return false;
-        }
-
-        public void Reset()
-        {
-            conflictText.gameObject.SetActive(false);
-            waitingText.gameObject.SetActive(false);
-            setDefaultUIButton.button.Select();
-            _lastKey = KeyCode.None;
         }
 
         public void OnInputUIButtonClick(int data)

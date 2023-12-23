@@ -10,6 +10,15 @@ namespace ProjectGenesis.Patches.Logic.AddVein
     {
         private static readonly Dictionary<int, Color> Map = new Dictionary<int, Color>();
 
+        private static ParticleSystem ParticleSystem
+        {
+            get
+            {
+                EffectEmitterProto effectEmitterProto = LDB.effectEmitters.Select(21);
+                return Object.Instantiate(Resources.Load<ParticleSystem>(effectEmitterProto.PrefabPath));
+            }
+        }
+
         internal static void AddEffectEmitterProto()
         {
             Map.Add(35, new Color(0.685f, 0.792f, 0.000f));
@@ -29,22 +38,13 @@ namespace ProjectGenesis.Patches.Logic.AddVein
             }
         }
 
-        private static ParticleSystem ParticleSystem
-        {
-            get
-            {
-                EffectEmitterProto effectEmitterProto = LDB.effectEmitters.Select(21);
-                return Object.Instantiate(Resources.Load<ParticleSystem>(effectEmitterProto.PrefabPath));
-            }
-        }
-
         private static void AddEffectEmitterProto(Dictionary<int, Color> protos)
         {
             EffectEmitterProtoSet effectEmitters = LDB.effectEmitters;
 
             int dataArrayLength = effectEmitters.dataArray.Length;
 
-            EffectEmitterProto[] proto = protos.Select(p => new EffectEmitterProto() { ID = p.Key, Name = "vein-break-" + p.Key }).ToArray();
+            EffectEmitterProto[] proto = protos.Select(p => new EffectEmitterProto { ID = p.Key, Name = "vein-break-" + p.Key }).ToArray();
 
             Array.Resize(ref effectEmitters.dataArray, dataArrayLength + proto.Length);
 

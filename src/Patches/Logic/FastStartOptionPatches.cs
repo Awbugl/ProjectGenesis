@@ -3,7 +3,6 @@ using HarmonyLib;
 using ProjectGenesis.Utils;
 using UnityEngine;
 using UnityEngine.UI;
-using Object = UnityEngine.Object;
 
 // ReSharper disable InconsistentNaming
 // ReSharper disable LoopCanBePartlyConvertedToQuery
@@ -29,7 +28,7 @@ namespace ProjectGenesis.Patches.Logic
                 localPosition = new Vector3(localPosition.x, localPosition.y - 36, localPosition.z);
                 transform1.localPosition = localPosition;
             }
-            
+
             fastStartObj.name = "fast-start-mode";
             fastStartObj.transform.localPosition = new Vector3(0, -244, 0);
             Object.DestroyImmediate(fastStartObj.GetComponent<Localizer>());
@@ -69,7 +68,7 @@ namespace ProjectGenesis.Patches.Logic
 
             foreach (TechProto proto in LDB.techs.dataArray)
             {
-                if (!GameMain.data.history.TechUnlocked(proto.ID) && proto.Items.All((e) => e < 6003 && e != 5201))
+                if (!GameMain.data.history.TechUnlocked(proto.ID) && proto.Items.All(e => e < 6003 && e != 5201))
                     GameMain.data.history.UnlockTechUnlimited(proto.ID, true);
             }
 

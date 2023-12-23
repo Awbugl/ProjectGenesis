@@ -4,9 +4,13 @@ namespace ProjectGenesis.Patches.Logic.QTools
 {
     internal class NodeOptions
     {
-        internal ItemProto Item { get; }
+        private bool _asRaw;
 
-        internal float FactoryCount { get; set; }
+        private ItemProto _factory;
+
+        private RecipeProto _recipe;
+
+        private EProliferatorStrategy _strategy;
 
         internal NodeOptions(
             ItemProto item,
@@ -22,9 +26,9 @@ namespace ProjectGenesis.Patches.Logic.QTools
             _asRaw = asRaw;
         }
 
-        internal event Action<NodeOptions> OnOptionsChange;
+        internal ItemProto Item { get; }
 
-        private ItemProto _factory;
+        internal float FactoryCount { get; set; }
 
         internal ItemProto Factory
         {
@@ -36,8 +40,6 @@ namespace ProjectGenesis.Patches.Logic.QTools
             }
         }
 
-        private bool _asRaw;
-
         internal bool AsRaw
         {
             get => _asRaw;
@@ -47,8 +49,6 @@ namespace ProjectGenesis.Patches.Logic.QTools
                 OnOptionsChange?.Invoke(this);
             }
         }
-
-        private RecipeProto _recipe;
 
         internal RecipeProto Recipe
         {
@@ -60,8 +60,6 @@ namespace ProjectGenesis.Patches.Logic.QTools
             }
         }
 
-        private EProliferatorStrategy _strategy;
-
         internal EProliferatorStrategy Strategy
         {
             get => _strategy;
@@ -71,5 +69,7 @@ namespace ProjectGenesis.Patches.Logic.QTools
                 OnOptionsChange?.Invoke(this);
             }
         }
+
+        internal event Action<NodeOptions> OnOptionsChange;
     }
 }

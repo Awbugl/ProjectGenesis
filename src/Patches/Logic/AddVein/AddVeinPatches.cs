@@ -17,28 +17,28 @@ namespace ProjectGenesis.Patches.Logic.AddVein
     {
         internal static readonly sbyte VeinTypeCount = 19;
 
-        private static readonly Color32[] VeinColors = new Color32[]
-                                                       {
-                                                           new Color(0.538f, 0.538f, 0.538f), // Default
-                                                           new Color(0.288f, 0.587f, 0.858f), // Iron
-                                                           new Color(1.000f, 0.490f, 0.307f), // Copper
-                                                           new Color(0.214f, 0.745f, 0.531f), // Silicium
-                                                           new Color(1.000f, 1.000f, 1.000f), // Titanium
-                                                           new Color(0.483f, 0.461f, 0.444f), // Stone
-                                                           new Color(0.113f, 0.130f, 0.140f), // Coal
-                                                           new Color(0.000f, 0.000f, 0.000f), // Oil
-                                                           new Color(1.000f, 1.000f, 1.000f), // Fireice
-                                                           new Color(0.489f, 0.601f, 0.745f), // Diamond
-                                                           new Color(0.091f, 0.377f, 0.217f), // Fractal
-                                                           new Color(0.538f, 0.613f, 0.078f), // Crysrub
-                                                           new Color(0.575f, 0.270f, 0.830f), // Grat
-                                                           new Color(0.571f, 0.708f, 0.647f), // Bamboo
-                                                           new Color(0.349f, 0.222f, 0.247f), // Mag
-                                                           new Color(0.538f, 0.538f, 0.538f), // Aluminum
-                                                           new Color(0.685f, 0.792f, 0.000f), // Radioactive
-                                                           new Color(0.113f, 0.130f, 0.140f), // Tungsten
-                                                           new Color(0.965f, 0.867f, 0.352f), // Sulfur
-                                                       };
+        private static readonly Color32[] VeinColors =
+        {
+            new Color(0.538f, 0.538f, 0.538f), // Default
+            new Color(0.288f, 0.587f, 0.858f), // Iron
+            new Color(1.000f, 0.490f, 0.307f), // Copper
+            new Color(0.214f, 0.745f, 0.531f), // Silicium
+            new Color(1.000f, 1.000f, 1.000f), // Titanium
+            new Color(0.483f, 0.461f, 0.444f), // Stone
+            new Color(0.113f, 0.130f, 0.140f), // Coal
+            new Color(0.000f, 0.000f, 0.000f), // Oil
+            new Color(1.000f, 1.000f, 1.000f), // Fireice
+            new Color(0.489f, 0.601f, 0.745f), // Diamond
+            new Color(0.091f, 0.377f, 0.217f), // Fractal
+            new Color(0.538f, 0.613f, 0.078f), // Crysrub
+            new Color(0.575f, 0.270f, 0.830f), // Grat
+            new Color(0.571f, 0.708f, 0.647f), // Bamboo
+            new Color(0.349f, 0.222f, 0.247f), // Mag
+            new Color(0.538f, 0.538f, 0.538f), // Aluminum
+            new Color(0.685f, 0.792f, 0.000f), // Radioactive
+            new Color(0.113f, 0.130f, 0.140f), // Tungsten
+            new Color(0.965f, 0.867f, 0.352f)  // Sulfur
+        };
 
         internal static void ModifyVeinData()
         {
@@ -57,21 +57,21 @@ namespace ProjectGenesis.Patches.Logic.AddVein
                 int modelIndex,
                 int miningTime)
                 => new VeinProto
-                   {
-                       ID = id,
-                       Name = name,
-                       Description = description,
-                       IconPath = iconPath,
-                       MiningItem = miningItem,
-                       MiningEffect = miningEffect,
-                       ModelIndex = modelIndex,
-                       MiningTime = miningTime,
-                       CircleRadius = 1,
-                       MinerBaseModelIndex = 58,
-                       MinerCircleModelIndex = 59,
-                       MiningAudio = 122,
-                       ModelCount = 1
-                   };
+                {
+                    ID = id,
+                    Name = name,
+                    Description = description,
+                    IconPath = iconPath,
+                    MiningItem = miningItem,
+                    MiningEffect = miningEffect,
+                    ModelIndex = modelIndex,
+                    MiningTime = miningTime,
+                    CircleRadius = 1,
+                    MinerBaseModelIndex = 58,
+                    MinerCircleModelIndex = 59,
+                    MiningAudio = 122,
+                    ModelCount = 1
+                };
         }
 
         private static void AddVeinProtos(params VeinProto[] protos)

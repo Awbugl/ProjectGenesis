@@ -23,9 +23,8 @@ namespace ProjectGenesis.Patches.Logic.PlanetFocus
 
             while (true)
             {
-                matcher.MatchForward(false,
-                                     new CodeMatch(OpCodes.Ldfld,
-                                                   AccessTools.Field(typeof(GameHistoryData), nameof(GameHistoryData.miningSpeedScale))));
+                matcher.MatchForward(
+                    false, new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(GameHistoryData), nameof(GameHistoryData.miningSpeedScale))));
 
                 if (matcher.IsInvalid) break;
 
@@ -81,9 +80,8 @@ namespace ProjectGenesis.Patches.Logic.PlanetFocus
 
             while (true)
             {
-                matcher.MatchForward(false,
-                                     new CodeMatch(OpCodes.Ldfld,
-                                                   AccessTools.Field(typeof(GameHistoryData), nameof(GameHistoryData.miningSpeedScale))));
+                matcher.MatchForward(
+                    false, new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(GameHistoryData), nameof(GameHistoryData.miningSpeedScale))));
 
                 if (matcher.IsInvalid) break;
 

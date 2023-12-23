@@ -6,10 +6,7 @@ namespace ProjectGenesis.Utils
     {
         public static void LogInstructionEnumeration(this CodeMatcher matcher)
         {
-            foreach (CodeInstruction codeInstruction in matcher.InstructionEnumeration())
-            {
-                ProjectGenesis.logger.LogInfo(codeInstruction.ToString());
-            }
+            foreach (CodeInstruction codeInstruction in matcher.InstructionEnumeration()) ProjectGenesis.logger.LogInfo(codeInstruction.ToString());
         }
     }
 }

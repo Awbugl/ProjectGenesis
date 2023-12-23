@@ -57,7 +57,7 @@ namespace ProjectGenesis.Patches.Logic
                                                                                        nameof(AssemblerComponent_InsertMethod_Other))),
                                                 new CodeInstruction(OpCodes.Brtrue_S, label));
 
-            
+
             return matcher.InstructionEnumeration();
         }
 
@@ -99,12 +99,12 @@ namespace ProjectGenesis.Patches.Logic
 
             return b && CalcMaxProduct(ref component, productRegister, 19);
         }
-        
+
         public static bool AssemblerComponent_InsertMethod_Other(ref AssemblerComponent component, int[] productRegister)
         {
             if (component.products.Length < 2) return false;
 
-            var b = false;
+            bool b = false;
 
             switch (component.recipeId)
             {

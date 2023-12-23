@@ -12,13 +12,13 @@ namespace ProjectGenesis.Patches.Logic
         public static IEnumerable<CodeInstruction> SetTargetCargoBytes_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
             var matcher = new CodeMatcher(instructions);
-            
-            matcher.MatchForward(true, new CodeMatch(OpCodes.Ldc_I4_M1), 
-                                 new CodeMatch(OpCodes.Stloc_S));
-            
-            
-            matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0), 
-                                                new CodeInstruction(OpCodes.Call,AccessTools.Method(typeof(FuelRodPatches), nameof(GenerateEnergy_Patch))));
+
+            matcher.MatchForward(true, new CodeMatch(OpCodes.Ldc_I4_M1), new CodeMatch(OpCodes.Stloc_S));
+
+
+            matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0),
+                                                new CodeInstruction(
+                                                    OpCodes.Call, AccessTools.Method(typeof(FuelRodPatches), nameof(GenerateEnergy_Patch))));
 
             return matcher.InstructionEnumeration();
         }
@@ -43,7 +43,7 @@ namespace ProjectGenesis.Patches.Logic
                 case ProtoID.I氘氦混合聚变燃料棒:
                     count = 2;
                     break;
-                
+
                 case ProtoID.IMOX燃料棒:
                     count = 3;
                     break;
@@ -52,9 +52,9 @@ namespace ProjectGenesis.Patches.Logic
                     count = 4;
                     break;
             }
-            
+
             if (count == 0) return;
-            
+
             mecha.player.TryAddItemToPackage(ProtoID.I空燃料棒, count, mecha.reactorItemInc, true);
             UIItemup.Up(ProtoID.I空燃料棒, count);
         }

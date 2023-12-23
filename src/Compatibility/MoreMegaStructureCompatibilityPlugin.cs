@@ -45,9 +45,9 @@ namespace ProjectGenesis.Compatibility
 
             var harmonyMethod
                 = new HarmonyMethod(typeof(MoreMegaStructureCompatibilityPlugin), nameof(LDBToolOnPostAddDataAction))
-                  {
-                      after = new[] { LDBToolPlugin.MODGUID }
-                  };
+                {
+                    after = new[] { LDBToolPlugin.MODGUID }
+                };
 
             new Harmony(MODGUID).Patch(AccessTools.Method(typeof(VFPreload), "InvokeOnLoadWorkEnded"), null, harmonyMethod);
         }

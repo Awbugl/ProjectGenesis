@@ -23,66 +23,74 @@ namespace ProjectGenesis.Patches.UI.QTools
         private static GameObject _itemPickerTranslucentImageGameObject;
 
         public bool isOpening;
-
-        private UIButton _pauseButton;
-        private Sprite _playSprite;
-        private Sprite _pauseSprite;
-        private string _playString;
-        private string _pauseString;
-        private Image _pauseImg;
-        private Text _pauseText;
-
-        private RectTransform[] _tabs;
-        private UIButton[] _tabButtons;
-        private Tweener[] _tabTweeners;
-        private Text[] _tabTexts;
-        private Image _tabSlider;
-        private int _tabIndex;
-        private RectTransform _list;
-        private RectTransform _listContent;
-        private RectTransform _rightInfo;
-        private RectTransform _rightContent;
-
-        private GameObject _labelTextPrefeb;
         private InputField _addItemCountInput;
-        private string _countText;
-
-        private UIButton _selectItemButton;
+        private Text _asRawsLabelText;
+        private Text _byproductsLabelText;
         private UIButton _clearNeedsButton;
 
         private UIButton _clearOptionsButton;
-
-        private Text _needLabelText;
-        private Text _asRawsLabelText;
-        private Text _rawsLabelText;
-        private Text _byproductsLabelText;
-        private Text _factoryLabelText;
-
-        private ProliferatorComboBox _proliferatorComboBox;
-        private Dictionary<Utils_ERecipeType, ItemComboBox> _recipeMachines;
+        private string _countText;
 
         private NodeDataSet _data;
-        private ObjectPool<ProductDetail> _productDetailPool;
+        private Text _factoryLabelText;
         private ObjectPool<ItemNeedDetail> _itemCounterPool;
+
+        private GameObject _labelTextPrefeb;
+        private RectTransform _list;
+        private RectTransform _listContent;
+
+        private Text _needLabelText;
         private ObjectPool<ItemNeedDetail> _needPool;
+
+        private UIButton _pauseButton;
+        private Image _pauseImg;
+        private Sprite _pauseSprite;
+        private string _pauseString;
+        private Text _pauseText;
+        private Sprite _playSprite;
+        private string _playString;
+        private ObjectPool<ProductDetail> _productDetailPool;
+
+        private ProliferatorComboBox _proliferatorComboBox;
+        private Text _rawsLabelText;
+        private Dictionary<Utils_ERecipeType, ItemComboBox> _recipeMachines;
+        private RectTransform _rightContent;
+        private RectTransform _rightInfo;
+
+        private UIButton _selectItemButton;
+        private UIButton[] _tabButtons;
+        private int _tabIndex;
+
+        private RectTransform[] _tabs;
+        private Image _tabSlider;
+        private Text[] _tabTexts;
+        private Tweener[] _tabTweeners;
+
+        public void LateUpdate()
+        {
+            bool fullscreenPaused = GameMain.isFullscreenPaused;
+            _pauseButton.highlighted = !fullscreenPaused;
+            _pauseImg.sprite = fullscreenPaused ? _pauseSprite : _playSprite;
+            _pauseText.text = (fullscreenPaused ? _pauseString : _playString).Translate();
+        }
 
         private void CreateUI()
         {
             MyKeyBinder.CreateKeyBinder(30, 20, _tabs[0], ProjectGenesis.QToolsHotkey, "计算器快捷键");
 
             _recipeMachines = new Dictionary<Utils_ERecipeType, ItemComboBox>
-                              {
-                                  [Utils_ERecipeType.Smelt] = MyComboBox.MyComboBox.CreateComboBox<ItemComboBox>(30, 110, _tabs[0], "默认生产设备"),
-                                  [Utils_ERecipeType.矿物处理] = MyComboBox.MyComboBox.CreateComboBox<ItemComboBox>(430, 110, _tabs[0]),
-                                  [Utils_ERecipeType.Assemble] = MyComboBox.MyComboBox.CreateComboBox<ItemComboBox>(30, 155, _tabs[0]),
-                                  [Utils_ERecipeType.标准制造] = MyComboBox.MyComboBox.CreateComboBox<ItemComboBox>(430, 155, _tabs[0]),
-                                  [Utils_ERecipeType.高精度加工] = MyComboBox.MyComboBox.CreateComboBox<ItemComboBox>(30, 200, _tabs[0]),
-                                  [Utils_ERecipeType.Refine] = MyComboBox.MyComboBox.CreateComboBox<ItemComboBox>(430, 200, _tabs[0]),
-                                  [Utils_ERecipeType.Chemical] = MyComboBox.MyComboBox.CreateComboBox<ItemComboBox>(30, 245, _tabs[0]),
-                                  [Utils_ERecipeType.高分子化工] = MyComboBox.MyComboBox.CreateComboBox<ItemComboBox>(430, 245, _tabs[0]),
-                                  [Utils_ERecipeType.Particle] = MyComboBox.MyComboBox.CreateComboBox<ItemComboBox>(30, 290, _tabs[0]),
-                                  [Utils_ERecipeType.Research] = MyComboBox.MyComboBox.CreateComboBox<ItemComboBox>(430, 290, _tabs[0])
-                              };
+            {
+                [Utils_ERecipeType.Smelt] = MyComboBox.MyComboBox.CreateComboBox<ItemComboBox>(30, 110, _tabs[0], "默认生产设备"),
+                [Utils_ERecipeType.矿物处理] = MyComboBox.MyComboBox.CreateComboBox<ItemComboBox>(430, 110, _tabs[0]),
+                [Utils_ERecipeType.Assemble] = MyComboBox.MyComboBox.CreateComboBox<ItemComboBox>(30, 155, _tabs[0]),
+                [Utils_ERecipeType.标准制造] = MyComboBox.MyComboBox.CreateComboBox<ItemComboBox>(430, 155, _tabs[0]),
+                [Utils_ERecipeType.高精度加工] = MyComboBox.MyComboBox.CreateComboBox<ItemComboBox>(30, 200, _tabs[0]),
+                [Utils_ERecipeType.Refine] = MyComboBox.MyComboBox.CreateComboBox<ItemComboBox>(430, 200, _tabs[0]),
+                [Utils_ERecipeType.Chemical] = MyComboBox.MyComboBox.CreateComboBox<ItemComboBox>(30, 245, _tabs[0]),
+                [Utils_ERecipeType.高分子化工] = MyComboBox.MyComboBox.CreateComboBox<ItemComboBox>(430, 245, _tabs[0]),
+                [Utils_ERecipeType.Particle] = MyComboBox.MyComboBox.CreateComboBox<ItemComboBox>(30, 290, _tabs[0]),
+                [Utils_ERecipeType.Research] = MyComboBox.MyComboBox.CreateComboBox<ItemComboBox>(430, 290, _tabs[0])
+            };
 
             _proliferatorComboBox = MyComboBox.MyComboBox.CreateComboBox<ProliferatorComboBox>(30, 380, _tabs[0], "默认增产策略");
 
@@ -339,7 +347,7 @@ namespace ProjectGenesis.Patches.UI.QTools
 
         public void SetTabIndex(int index, bool immediate)
         {
-            if (_tabIndex != index | immediate)
+            if ((_tabIndex != index) | immediate)
                 for (int index1 = 0; index1 < _tabButtons.Length; ++index1)
                 {
                     if (index1 == index)
@@ -389,14 +397,6 @@ namespace ProjectGenesis.Patches.UI.QTools
                 VFInput.UseEscape();
                 CloseWindow();
             }
-        }
-
-        public void LateUpdate()
-        {
-            bool fullscreenPaused = GameMain.isFullscreenPaused;
-            _pauseButton.highlighted = !fullscreenPaused;
-            _pauseImg.sprite = fullscreenPaused ? _pauseSprite : _playSprite;
-            _pauseText.text = (fullscreenPaused ? _pauseString : _playString).Translate();
         }
 
         public void OpenWindow()
@@ -507,10 +507,7 @@ namespace ProjectGenesis.Patches.UI.QTools
                     {
                         Transform t = transform.GetChild(k);
 
-                        if (t.name == "revert-button")
-                        {
-                            Destroy(t.gameObject);
-                        }
+                        if (t.name == "revert-button") Destroy(t.gameObject);
 
                         if (t.name == "title")
                         {

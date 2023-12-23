@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Text;
 using CommonAPI.Systems;
 using ProjectGenesis.Patches.Logic.QTools;
 using ProjectGenesis.Patches.UI.QTools.MyComboBox;
@@ -17,10 +18,6 @@ namespace ProjectGenesis.Patches.UI.QTools
         private static UIItemTip _uiItemTip;
         private static GameObject _recipePickerTranslucentImageGameObject;
 
-        private NodeData _data;
-
-        private RectTransform _rect;
-
         public Image itemImg;
         public UIButton itemImgButton;
         public Text itemCountText;
@@ -34,9 +31,13 @@ namespace ProjectGenesis.Patches.UI.QTools
 
         public Text proliferatorText;
 
+        public ProliferatorComboBox currentProliferatorComboBox;
+
+        private NodeData _data;
+
         private ProliferatorComboBox _proliferatorComboBoxNormal, _proliferatorComboBoxNonProductive;
 
-        public ProliferatorComboBox currentProliferatorComboBox;
+        private RectTransform _rect;
 
         internal static ProductDetail CreateProductDetail(float x, float y, RectTransform parent)
         {
@@ -142,7 +143,7 @@ namespace ProjectGenesis.Patches.UI.QTools
 
             if (buttonShow)
             {
-                var sb = new System.Text.StringBuilder();
+                var sb = new StringBuilder();
                 if (muitiRecipes) sb.AppendLine("左键点击：更换配方".TranslateFromJson());
                 if (canMining) sb.AppendLine("右键点击：将其设置为原材料".TranslateFromJson());
 

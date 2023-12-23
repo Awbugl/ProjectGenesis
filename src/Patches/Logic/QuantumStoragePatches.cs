@@ -85,8 +85,7 @@ namespace ProjectGenesis.Patches.Logic
 
             matcher.CreateLabelAt(matcher.Pos + 1, out Label label);
 
-            matcher.Advance(-6).InsertAndAdvance(new CodeInstruction(OpCodes.Ldc_I4, ProtoID.I量子储物仓),
-                                                 new CodeInstruction(OpCodes.Ldloc_0),
+            matcher.Advance(-6).InsertAndAdvance(new CodeInstruction(OpCodes.Ldc_I4, ProtoID.I量子储物仓), new CodeInstruction(OpCodes.Ldloc_0),
                                                  new CodeInstruction(OpCodes.Call,
                                                                      AccessTools.Method(typeof(QuantumStoragePatches), nameof(PatchMethod))),
                                                  new CodeInstruction(OpCodes.Brtrue_S, label), new CodeInstruction(OpCodes.Pop));

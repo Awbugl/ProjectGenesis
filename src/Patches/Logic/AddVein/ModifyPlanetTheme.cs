@@ -12,87 +12,39 @@ namespace ProjectGenesis.Patches.Logic.AddVein
     internal static class ModifyPlanetTheme
     {
         internal static readonly Dictionary<int, int[]> PlanetGasData = new Dictionary<int, int[]>
-                                                                        {
-                                                                            { 1, new[] { ProtoID.I氮, ProtoID.I氧 } },
-                                                                            { 6, new[] { ProtoID.I二氧化碳 } },
-                                                                            { 7, new[] { ProtoID.I氮 } },
-                                                                            { 8, new[] { ProtoID.I氮, ProtoID.I氧 } },
-                                                                            { 9, new[] { ProtoID.I二氧化碳, ProtoID.I氮 } },
-                                                                            { 10, new[] { ProtoID.I氮 } },
-                                                                            { 12, new[] { ProtoID.I二氧化碳 } },
-                                                                            { 13, new[] { ProtoID.I二氧化碳 } },
-                                                                            { 14, new[] { ProtoID.I氮, ProtoID.I氧 } },
-                                                                            { 15, new[] { ProtoID.I氮, ProtoID.I氧 } },
-                                                                            { 16, new[] { ProtoID.I氮, ProtoID.I氧 } },
-                                                                            { 17, new[] { ProtoID.I氮 } },
-                                                                            { 18, new[] { ProtoID.I氮, ProtoID.I氧 } },
-                                                                            { 19, new[] { ProtoID.I氮 } },
-                                                                            { 20, new[] { ProtoID.I氮 } },
-                                                                            { 22, new[] { ProtoID.I氮, ProtoID.I氧 } },
-                                                                            { 23, new[] { ProtoID.I二氧化碳 } },
-                                                                            { 24, new[] { ProtoID.I氮 } },
-                                                                            { 25, new[] { ProtoID.I氮, ProtoID.I氧 } }
-                                                                        };
+        {
+            { 1, new[] { ProtoID.I氮, ProtoID.I氧 } },
+            { 6, new[] { ProtoID.I二氧化碳 } },
+            { 7, new[] { ProtoID.I氮 } },
+            { 8, new[] { ProtoID.I氮, ProtoID.I氧 } },
+            { 9, new[] { ProtoID.I二氧化碳, ProtoID.I氮 } },
+            { 10, new[] { ProtoID.I氮 } },
+            { 12, new[] { ProtoID.I二氧化碳 } },
+            { 13, new[] { ProtoID.I二氧化碳 } },
+            { 14, new[] { ProtoID.I氮, ProtoID.I氧 } },
+            { 15, new[] { ProtoID.I氮, ProtoID.I氧 } },
+            { 16, new[] { ProtoID.I氮, ProtoID.I氧 } },
+            { 17, new[] { ProtoID.I氮 } },
+            { 18, new[] { ProtoID.I氮, ProtoID.I氧 } },
+            { 19, new[] { ProtoID.I氮 } },
+            { 20, new[] { ProtoID.I氮 } },
+            { 22, new[] { ProtoID.I氮, ProtoID.I氧 } },
+            { 23, new[] { ProtoID.I二氧化碳 } },
+            { 24, new[] { ProtoID.I氮 } },
+            { 25, new[] { ProtoID.I氮, ProtoID.I氧 } }
+        };
 
         internal static readonly Dictionary<int, AddVeinData> PlanetAddRareVeinData = new Dictionary<int, AddVeinData>
-                                                                                      {
-                                                                                          {
-                                                                                              1,
-                                                                                              new AddVeinData(new[] { 8, 16, 18 },
-                                                                                                              new[]
-                                                                                                              {
-                                                                                                                  1.0f, 1.0f, 0.0f, 0.4f, 1.0f, 1.0f,
-                                                                                                                  0.0f, 0.4f, 1.0f, 1.0f, 1.0f, 0.3f
-                                                                                                              })
-                                                                                          },
-                                                                                          {
-                                                                                              6,
-                                                                                              new AddVeinData(new[] { 16, 18 },
-                                                                                                              new[]
-                                                                                                              {
-                                                                                                                  0.2f, 0.7f, 0.2f, 0.8f, 1.0f, 1.0f,
-                                                                                                                  0.3f, 0.5f
-                                                                                                              })
-                                                                                          },
-                                                                                          {
-                                                                                              9,
-                                                                                              new AddVeinData(new[] { 16, 17, 18 },
-                                                                                                              new[]
-                                                                                                              {
-                                                                                                                  0.2f, 0.5f, 0.3f, 0.7f, 0.2f, 0.6f,
-                                                                                                                  0.3f, 0.8f, 0.6f, 0.8f, 0.4f, 0.8f
-                                                                                                              })
-                                                                                          },
-                                                                                          {
-                                                                                              12,
-                                                                                              new AddVeinData(new[] { 17 },
-                                                                                                              new[] { 0.2f, 0.6f, 0.3f, 0.8f })
-                                                                                          },
-                                                                                          {
-                                                                                              13,
-                                                                                              new AddVeinData(new[] { 17, 18 },
-                                                                                                              new[]
-                                                                                                              {
-                                                                                                                  0.2f, 0.6f, 0.3f, 0.8f, 1.0f, 1.0f,
-                                                                                                                  0.4f, 0.8f
-                                                                                                              })
-                                                                                          },
-                                                                                          {
-                                                                                              16,
-                                                                                              new AddVeinData(new[] { 18 },
-                                                                                                              new[] { 0.2f, 0.6f, 0.2f, 0.3f })
-                                                                                          },
-                                                                                          {
-                                                                                              17,
-                                                                                              new AddVeinData(new[] { 16 },
-                                                                                                              new[] { 0.2f, 0.6f, 0.2f, 0.8f })
-                                                                                          },
-                                                                                          {
-                                                                                              23,
-                                                                                              new AddVeinData(new[] { 17 },
-                                                                                                              new[] { 0.2f, 0.6f, 0.5f, 0.8f })
-                                                                                          },
-                                                                                      };
+        {
+            { 1, new AddVeinData(new[] { 8, 16, 18 }, new[] { 1.0f, 1.0f, 0.0f, 0.4f, 1.0f, 1.0f, 0.0f, 0.4f, 1.0f, 1.0f, 1.0f, 0.3f }) },
+            { 6, new AddVeinData(new[] { 16, 18 }, new[] { 0.2f, 0.7f, 0.2f, 0.8f, 1.0f, 1.0f, 0.3f, 0.5f }) },
+            { 9, new AddVeinData(new[] { 16, 17, 18 }, new[] { 0.2f, 0.5f, 0.3f, 0.7f, 0.2f, 0.6f, 0.3f, 0.8f, 0.6f, 0.8f, 0.4f, 0.8f }) },
+            { 12, new AddVeinData(new[] { 17 }, new[] { 0.2f, 0.6f, 0.3f, 0.8f }) },
+            { 13, new AddVeinData(new[] { 17, 18 }, new[] { 0.2f, 0.6f, 0.3f, 0.8f, 1.0f, 1.0f, 0.4f, 0.8f }) },
+            { 16, new AddVeinData(new[] { 18 }, new[] { 0.2f, 0.6f, 0.2f, 0.3f }) },
+            { 17, new AddVeinData(new[] { 16 }, new[] { 0.2f, 0.6f, 0.2f, 0.8f }) },
+            { 23, new AddVeinData(new[] { 17 }, new[] { 0.2f, 0.6f, 0.5f, 0.8f }) }
+        };
 
         internal static void ModifyPlanetThemeDataVanilla()
         {

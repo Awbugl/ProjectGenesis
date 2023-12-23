@@ -15,7 +15,8 @@ namespace ProjectGenesis.Patches.UI
         private static void Init()
         {
             GameObject queryObj
-                = GameObject.Find("UI Root/Overlay Canvas/Top Windows/Option Window/details/content-3/list/scroll-view/viewport/content/demolish-query");
+                = GameObject.Find(
+                    "UI Root/Overlay Canvas/Top Windows/Option Window/details/content-3/list/scroll-view/viewport/content/demolish-query");
 
             Transform pageParent = GameObject.Find("UI Root/Overlay Canvas/Top Windows/Option Window/details/content-5/advisor-tips").transform
                                              .parent;

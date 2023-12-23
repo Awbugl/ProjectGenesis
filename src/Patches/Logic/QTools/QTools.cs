@@ -47,7 +47,7 @@ namespace ProjectGenesis.Patches.Logic.QTools
                         dict.TryAddOrInsert(Utils.ERecipeType.矿物处理, proto);
                         continue;
                     }
-                    
+
                     case Utils.ERecipeType.所有制造:
                     {
                         dict.TryAddOrInsert(Utils.ERecipeType.Assemble, proto);

@@ -30,7 +30,7 @@ namespace ProjectGenesis.Patches.UI
             Util.RemovePersistentCalls(btn.gameObject);
 
             btn.button.onClick.AddListener(OnCategoryButtonClick);
-            
+
             btn.tips.tipTitle = "巨构类".TranslateFromJson();
 
             var img = btn.transform.GetChild(0).GetComponent<Image>();
@@ -45,9 +45,8 @@ namespace ProjectGenesis.Patches.UI
 
             // ReSharper disable once LoopCanBePartlyConvertedToQuery
             foreach (UIButton button in __instance.categoryButtons)
-            {
-                if (button != null) SetButtonPosition(button);
-            }
+                if (button != null)
+                    SetButtonPosition(button);
 
             SetButtonPosition(__instance.blueprintButton);
 
@@ -74,8 +73,8 @@ namespace ProjectGenesis.Patches.UI
             matcher.MatchForward(false, new CodeMatch(OpCodes.Ldc_I4_S, (sbyte)49));
 
             matcher.Advance(5)
-                   .InsertAndAdvance(new CodeInstruction(OpCodes.Call,
-                                                         AccessTools.Method(typeof(UIBuildMenuPatches), nameof(OnUpdate_KeyCode_Patch))));
+                   .InsertAndAdvance(
+                        new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(UIBuildMenuPatches), nameof(OnUpdate_KeyCode_Patch))));
 
             matcher.MatchForward(true, new CodeMatch(OpCodes.Ldloc_2), new CodeMatch(OpCodes.Ldc_I4_S, (sbyte)9));
 

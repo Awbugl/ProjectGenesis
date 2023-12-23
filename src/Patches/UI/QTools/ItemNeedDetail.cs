@@ -1,5 +1,4 @@
-﻿using ProjectGenesis.Patches.Logic;
-using ProjectGenesis.Patches.Logic.QTools;
+﻿using ProjectGenesis.Patches.Logic.QTools;
 using ProjectGenesis.Patches.UI.Utils;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,14 +7,13 @@ namespace ProjectGenesis.Patches.UI.QTools
 {
     public class ItemNeedDetail : MonoBehaviour
     {
-        private RectTransform _rect;
+        private UIButton _button;
+        private Text _countText;
+        private NodeData _data;
 
         private Image _image;
-        private Text _countText;
-
-        private UIButton _button;
-        private NodeData _data;
         private bool _isNeed;
+        private RectTransform _rect;
 
         internal static ItemNeedDetail CreateItemNeedDetail(
             float x,

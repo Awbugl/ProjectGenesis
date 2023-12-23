@@ -89,25 +89,25 @@
         <Compile Include="src\Compatibility\BlueprintTweaksCompatibilityPlugin.cs"/>
         <Compile Include="src\Compatibility\BottleneckCompatibilityPlugin.cs"/>
         <Compile Include="src\Compatibility\DSPBattleCompatibilityPlugin.cs"/>
-        <Compile Include="src\Compatibility\FastTravelEnablerCompatibilityPlugin.cs" />
+        <Compile Include="src\Compatibility\FastTravelEnablerCompatibilityPlugin.cs"/>
         <Compile Include="src\Compatibility\GalacticScaleCompatibilityPlugin.cs"/>
         <Compile Include="src\Compatibility\InstallationCheckPlugin.cs"/>
         <Compile Include="src\Compatibility\MoreMegaStructureCompatibilityPlugin.cs"/>
         <Compile Include="src\Compatibility\PlanetVeinUtilizationCompatibilityPlugin.cs"/>
         <Compile Include="src\Compatibility\PlanetwideMiningCompatibilityPlugin.cs"/>
-        <Compile Include="src\Patches\Logic\AbnormalityLogicPatches.cs" />
-        <Compile Include="src\Patches\Logic\FuelRodPatches.cs" />
-        <Compile Include="src\Patches\Logic\PlanetFocus\DarkFrogPatches.cs" />
+        <Compile Include="src\Patches\Logic\AbnormalityLogicPatches.cs"/>
+        <Compile Include="src\Patches\Logic\FuelRodPatches.cs"/>
+        <Compile Include="src\Patches\Logic\PlanetFocus\DarkFrogPatches.cs"/>
         <Compile Include="src\Patches\Logic\QTools\NodeData.cs"/>
         <Compile Include="src\Patches\Logic\QTools\NodeDataSet.cs"/>
         <Compile Include="src\Patches\Logic\QTools\NodeOptions.cs"/>
         <Compile Include="src\Patches\Logic\QTools\QTools.cs"/>
-        <Compile Include="src\Patches\Logic\QuantumStoragePatches.cs" />
-        <Compile Include="src\Patches\Logic\StationOutputPatches.cs" />
+        <Compile Include="src\Patches\Logic\QuantumStoragePatches.cs"/>
+        <Compile Include="src\Patches\Logic\StationOutputPatches.cs"/>
         <Compile Include="src\Patches\Logic\VFPreloadPatches.cs"/>
         <Compile Include="src\Patches\Logic\AddVein\AddEffectEmitterProto.cs"/>
         <Compile Include="src\Patches\Logic\AddVein\AddVeinPatches.cs"/>
-        <Compile Include="src\Patches\Logic\AddVein\ModifyPlanetTheme.cs" />
+        <Compile Include="src\Patches\Logic\AddVein\ModifyPlanetTheme.cs"/>
         <Compile Include="src\Patches\Logic\AddVein\SwapShaderPatches.cs"/>
         <Compile Include="src\Patches\Logic\AddVein\UIDetailPatches.cs"/>
         <Compile Include="src\Patches\Logic\AddVein\VeinAnimDataPatches.cs"/>
@@ -139,15 +139,15 @@
         <Compile Include="src\Patches\UI\DisplayText\DisplayTextPatches.cs"/>
         <Compile Include="src\Patches\UI\FactoryModelPatches.cs"/>
         <Compile Include="src\Patches\UI\FluidColorPatches.cs"/>
-        <Compile Include="src\Patches\UI\GeneralMissilePatches.cs" />
+        <Compile Include="src\Patches\UI\GeneralMissilePatches.cs"/>
         <Compile Include="src\Patches\UI\GridIndexExpandPatches.cs"/>
         <Compile Include="src\Patches\UI\HarmonyLogPatches.cs"/>
-        <Compile Include="src\Patches\UI\LaserMk2Patches.cs" />
+        <Compile Include="src\Patches\UI\LaserMk2Patches.cs"/>
         <Compile Include="src\Patches\UI\MultiProductionPatches.cs"/>
         <Compile Include="src\Patches\UI\QTools\ItemNeedDetail.cs"/>
         <Compile Include="src\Patches\UI\QTools\ObjectPool.cs"/>
         <Compile Include="src\Patches\UI\UIBuildMenuPatches.cs"/>
-        <Compile Include="src\Patches\UI\UILootFilterPatches.cs" />
+        <Compile Include="src\Patches\UI\UILootFilterPatches.cs"/>
         <Compile Include="src\Patches\UI\UIMonitorPatches.cs"/>
         <Compile Include="src\Patches\UI\UIPowerGeneratorWindowPatches.cs"/>
         <Compile Include="src\Patches\UI\QTools\MyComboBox\ItemComboBox.cs"/>
@@ -168,15 +168,15 @@
         <Compile Include="src\Patches\UI\Utils\Util.cs"/>
         <Compile Include="src\ProjectGenesis.cs"/>
         <Compile Include="src\Utils\CopyModelUtils.cs"/>
-        <Compile Include="src\Utils\DictionaryExtend.cs" />
+        <Compile Include="src\Utils\DictionaryExtend.cs"/>
         <Compile Include="src\Utils\ERecipeType.cs"/>
         <Compile Include="src\Utils\IconDescUtils.cs"/>
         <Compile Include="src\Utils\JsonDataUtils.cs"/>
         <Compile Include="src\Utils\JsonHelper.cs"/>
         <Compile Include="src\Utils\MutliPlayerPacket.cs"/>
-        <Compile Include="src\Utils\ProtoID.cs" />
+        <Compile Include="src\Utils\ProtoID.cs"/>
         <Compile Include="src\Utils\TranslateUtils.cs"/>
-        <Compile Include="src\Utils\TranspilerLogUtils.cs" />
+        <Compile Include="src\Utils\TranspilerLogUtils.cs"/>
     </ItemGroup>
     <ItemGroup>
         <EmbeddedResource Include="data\items_mod.json"/>
@@ -184,24 +184,24 @@
         <EmbeddedResource Include="data\prefabDescs.json"/>
         <EmbeddedResource Include="data\recipes.json"/>
         <EmbeddedResource Include="data\strings.json"/>
-        <EmbeddedResource Include="data\strings_mod.json" />
+        <EmbeddedResource Include="data\strings_mod.json"/>
         <EmbeddedResource Include="data\techs.json"/>
         <EmbeddedResource Include="data\tutorials.json"/>
     </ItemGroup>
     <ItemGroup>
         <Content Include="CHANGELOG.md"/>
         <Content Include="DefaultPath.props"/>
-        <Content Include="lib\Assembly-CSharp-publicized.dll" />
+        <Content Include="lib\Assembly-CSharp-publicized.dll"/>
         <Content Include="lib\GalacticScale-nstrip.dll"/>
         <Content Include="lib\Newtonsoft.Json.dll"/>
         <Content Include="README.md"/>
     </ItemGroup>
     <ItemGroup>
         <PackageReference Include="BepInEx.Core" Version="5.4.17"/>
-        <PackageReference Include="DysonSphereProgram.Modding.CommonAPI" Version="1.6.2" />
+        <PackageReference Include="DysonSphereProgram.Modding.CommonAPI" Version="1.6.2"/>
         <PackageReference Include="DysonSphereProgram.Modding.DSPModSave" Version="1.1.3"/>
-        <PackageReference Include="DysonSphereProgram.Modding.LDBTool" Version="3.0.0" />
-        <PackageReference Include="DysonSphereProgram.Modding.NebulaMultiplayerModApi" Version="1.3.1" />
+        <PackageReference Include="DysonSphereProgram.Modding.LDBTool" Version="3.0.0"/>
+        <PackageReference Include="DysonSphereProgram.Modding.NebulaMultiplayerModApi" Version="1.3.1"/>
     </ItemGroup>
     <ItemGroup>
         <None Include="nuget.config"/>

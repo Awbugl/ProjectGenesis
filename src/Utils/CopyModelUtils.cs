@@ -136,7 +136,7 @@ namespace ProjectGenesis.Utils
         }
 
         private static ModelProto Copy(this ModelProto proto)
-            => new ModelProto()
+            => new ModelProto
             {
                 ObjectType = proto.ObjectType,
                 RuinType = proto.RuinType,
@@ -175,7 +175,7 @@ namespace ProjectGenesis.Utils
 
         internal static void ItemPostFix()
         {
-            LDB.items.Select(ProtoID.I水).recipes = new List<RecipeProto>() { LDB.recipes.Select(ProtoID.R海水淡化) };
+            LDB.items.Select(ProtoID.I水).recipes = new List<RecipeProto> { LDB.recipes.Select(ProtoID.R海水淡化) };
             LDB.items.Select(ProtoID.I氢).isRaw = true;
         }
     }

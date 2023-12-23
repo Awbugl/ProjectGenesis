@@ -102,10 +102,7 @@ namespace ProjectGenesis.Utils
             { 6280, new DefaultIconDesc(new Color(0.5020f, 0.5020f, 0.5020f, 0.1961f), Color.clear) }
         };
 
-        internal static IconToolNew.IconDesc GetIconDesc(int itemid)
-            => IconDescs.TryGetValue(itemid, out ModIconDesc value) ? value.ToIconDesc() : Default;
-
-        private static readonly IconToolNew.IconDesc Default = new IconToolNew.IconDesc()
+        private static readonly IconToolNew.IconDesc Default = new IconToolNew.IconDesc
         {
             faceColor = Color.white,
             sideColor = new Color(0.4667F, 0.5333F, 0.6F, 1f),
@@ -117,6 +114,9 @@ namespace ProjectGenesis.Utils
             solidAlpha = 1f,
             iconAlpha = 1f
         };
+
+        internal static IconToolNew.IconDesc GetIconDesc(int itemid)
+            => IconDescs.TryGetValue(itemid, out ModIconDesc value) ? value.ToIconDesc() : Default;
 
         internal static IconToolNew.IconDesc ExportIconDesc(int itemId)
         {
@@ -170,7 +170,7 @@ namespace ProjectGenesis.Utils
             public FluidIconDesc(Color color) : base(color) { }
 
             internal override IconToolNew.IconDesc ToIconDesc()
-                => new IconToolNew.IconDesc()
+                => new IconToolNew.IconDesc
                 {
                     faceColor = Color,
                     sideColor = Color,
@@ -191,7 +191,7 @@ namespace ProjectGenesis.Utils
             internal NoIconFluidIconDesc(Color color) : base(color) { }
 
             internal override IconToolNew.IconDesc ToIconDesc()
-                => new IconToolNew.IconDesc()
+                => new IconToolNew.IconDesc
                 {
                     faceColor = Color,
                     sideColor = Color,
@@ -212,7 +212,7 @@ namespace ProjectGenesis.Utils
             public OreIconDesc(Color color) : base(color) { }
 
             internal override IconToolNew.IconDesc ToIconDesc()
-                => new IconToolNew.IconDesc()
+                => new IconToolNew.IconDesc
                 {
                     faceColor = Color,
                     sideColor = Color,
@@ -232,7 +232,7 @@ namespace ProjectGenesis.Utils
             public NoIconMetalIconDesc(Color color) : base(color) { }
 
             internal override IconToolNew.IconDesc ToIconDesc()
-                => new IconToolNew.IconDesc()
+                => new IconToolNew.IconDesc
                 {
                     faceColor = Color,
                     sideColor = Color,
@@ -251,7 +251,7 @@ namespace ProjectGenesis.Utils
             public FullIconDesc(Color color) : base(color) { }
 
             internal override IconToolNew.IconDesc ToIconDesc()
-                => new IconToolNew.IconDesc()
+                => new IconToolNew.IconDesc
                 {
                     faceColor = Color,
                     sideColor = Color,
@@ -270,7 +270,7 @@ namespace ProjectGenesis.Utils
             public ComponentIconDesc(Color color) : base(color) { }
 
             internal override IconToolNew.IconDesc ToIconDesc()
-                => new IconToolNew.IconDesc()
+                => new IconToolNew.IconDesc
                 {
                     faceColor = Color.white,
                     sideColor = Color,
@@ -289,7 +289,7 @@ namespace ProjectGenesis.Utils
             public GlassIconDesc(Color color) : base(color) { }
 
             internal override IconToolNew.IconDesc ToIconDesc()
-                => new IconToolNew.IconDesc()
+                => new IconToolNew.IconDesc
                 {
                     faceColor = Color,
                     sideColor = Color,
@@ -309,7 +309,7 @@ namespace ProjectGenesis.Utils
             public RodIconDesc(Color color) : base(color) { }
 
             internal override IconToolNew.IconDesc ToIconDesc()
-                => new IconToolNew.IconDesc()
+                => new IconToolNew.IconDesc
                 {
                     faceColor = Color,
                     sideColor = Color,
@@ -329,7 +329,7 @@ namespace ProjectGenesis.Utils
             public WhiteIconDesc() : base(Color.white) { }
 
             internal override IconToolNew.IconDesc ToIconDesc()
-                => new IconToolNew.IconDesc()
+                => new IconToolNew.IconDesc
                 {
                     faceColor = Color,
                     sideColor = Color,
@@ -353,7 +353,7 @@ namespace ProjectGenesis.Utils
             }
 
             internal override IconToolNew.IconDesc ToIconDesc()
-                => new IconToolNew.IconDesc()
+                => new IconToolNew.IconDesc
                 {
                     faceColor = Color,
                     sideColor = Color,
@@ -377,7 +377,7 @@ namespace ProjectGenesis.Utils
             }
 
             internal override IconToolNew.IconDesc ToIconDesc()
-                => new IconToolNew.IconDesc()
+                => new IconToolNew.IconDesc
                 {
                     faceColor = Color,
                     sideColor = Color,

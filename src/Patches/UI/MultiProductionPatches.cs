@@ -10,7 +10,7 @@ namespace ProjectGenesis.Patches.UI
     // A patch to support multi (>=3) productions.
     internal static class MultiProductionPatches
     {
-        #region UIReplicatorWindow
+#region UIReplicatorWindow
 
         // Patch replicator window
         private static readonly List<Image> ReplicatorImages = new List<Image>();
@@ -89,9 +89,9 @@ namespace ProjectGenesis.Patches.UI
             foreach (UIButton treeUp in treeUpList) treeUp.gameObject.SetActive(false);
         }
 
-        #endregion
+#endregion
 
-        #region UIAssemblerWindow
+#region UIAssemblerWindow
 
         // Patch assembler window
         private static readonly List<Image> AssemblerProductProgress = new List<Image>();
@@ -205,6 +205,6 @@ namespace ProjectGenesis.Patches.UI
             __instance.servingGroup.anchoredPosition = new Vector2(64 * results + 96, __instance.servingGroup.anchoredPosition.y);
         }
 
-        #endregion
+#endregion
     }
 }

@@ -29,7 +29,7 @@ namespace ProjectGenesis.Compatibility
             if (pluginInfo == null) return;
 
             Assembly assembly = pluginInfo.Instance.GetType().Assembly;
-           
+
             ref List<EVeinType> ResourceTypes
                 = ref AccessTools.StaticFieldRefAccess<List<EVeinType>>(assembly.GetType("PlanetwideMining.PlanetwideMining"), "ResourceTypes");
 

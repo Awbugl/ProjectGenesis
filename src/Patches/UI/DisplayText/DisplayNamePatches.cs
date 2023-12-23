@@ -18,9 +18,8 @@ namespace ProjectGenesis.Patches.UI.DisplayText
         public static IEnumerable<CodeInstruction> Refresh_Transpiler(IEnumerable<CodeInstruction> instructions, ILGenerator generator)
         {
             CodeMatcher codeMatcher
-                = new CodeMatcher(instructions, generator).MatchForward(true,
-                                                                        new CodeMatch(i => i.opcode == OpCodes.Ldfld &&
-                                                                                           ((FieldInfo)i.operand).Name == "userName"));
+                = new CodeMatcher(instructions, generator).MatchForward(
+                    true, new CodeMatch(i => i.opcode == OpCodes.Ldfld && ((FieldInfo)i.operand).Name == "userName"));
 
             if (codeMatcher.IsInvalid)
                 // For XGP version
@@ -29,8 +28,9 @@ namespace ProjectGenesis.Patches.UI.DisplayText
                                          new CodeMatch(i => i.opcode == OpCodes.Call && ((MethodInfo)i.operand).Name == "get_usernameAndSuffix"));
 
             return codeMatcher.Advance(1)
-                              .InsertAndAdvance(Transpilers.EmitDelegate<Func<string, string>>(text
-                                                                                                   => $"{ProjectGenesis.MODNAME.TranslateFromJson()} {ProjectGenesis.VERSION}{ProjectGenesis.DEBUGVERSION}\r\n{text}"))
+                              .InsertAndAdvance(Transpilers.EmitDelegate<Func<string, string>>(
+                                                    text
+                                                        => $"{ProjectGenesis.MODNAME.TranslateFromJson()} {ProjectGenesis.VERSION}{ProjectGenesis.DEBUGVERSION}\r\n{text}"))
                               .InstructionEnumeration();
         }
     }

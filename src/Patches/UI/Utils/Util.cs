@@ -149,10 +149,7 @@ namespace ProjectGenesis.Patches.UI.Utils
             float scale = size / 60;
             rect.localScale = new Vector3(scale, scale, scale);
             var img = go.transform.Find("icon")?.GetComponent<Image>();
-            if (img != null)
-            {
-                img.sprite = sprite;
-            }
+            if (img != null) img.sprite = sprite;
 
             btn.tips.tipText = "";
             btn.tips.tipTitle = "";
@@ -186,27 +183,17 @@ namespace ProjectGenesis.Patches.UI.Utils
 
             rect.DetachChildren();
 
-            if (size > 0)
-            {
-                rect.sizeDelta = new Vector2(size, size);
-                //float scale = size / rect.sizeDelta.y; //y=30
-                //rect.localScale = new Vector3(scale, scale, scale);
-            }
-
+            if (size > 0) rect.sizeDelta = new Vector2(size, size);
+            //float scale = size / rect.sizeDelta.y; //y=30
+            //rect.localScale = new Vector3(scale, scale, scale);
             var img = go.GetComponent<Image>();
-            if (img != null)
-            {
-                img.sprite = sprite;
-            }
+            if (img != null) img.sprite = sprite;
 
             btn.tips.tipText = "";
             btn.tips.tipTitle = "";
             btn.tips.delay = 0.6f;
 
-            if (btn.transitions != null && btn.transitions.Length > 0)
-            {
-                btn.transitions = new UIButton.Transition[] { btn.transitions[0] };
-            }
+            if (btn.transitions != null && btn.transitions.Length > 0) btn.transitions = new UIButton.Transition[] { btn.transitions[0] };
 
             return btn;
         }
@@ -226,15 +213,9 @@ namespace ProjectGenesis.Patches.UI.Utils
             if (width > 0 || height > 0)
             {
                 var rect = (RectTransform)go.transform;
-                if (width == 0)
-                {
-                    width = rect.sizeDelta.x;
-                }
+                if (width == 0) width = rect.sizeDelta.x;
 
-                if (height == 0)
-                {
-                    height = rect.sizeDelta.y;
-                }
+                if (height == 0) height = rect.sizeDelta.y;
 
                 rect.sizeDelta = new Vector2(width, height);
             }

@@ -12,18 +12,8 @@ namespace ProjectGenesis.Patches.Logic
 {
     public static class InitialTechPatches
     {
-        private static readonly List<int> InitialTechs
-                                              = new List<int>
-                                                {
-                                                    ProtoID.T戴森球计划, ProtoID.T科学理论, ProtoID.T工业化生产
-                                                },
-                                          BonusTechs = new List<int>
-                                                       {
-                                                           ProtoID.T电磁学,
-                                                           ProtoID.T基础机械组件,
-                                                           ProtoID.T武器系统,
-                                                           ProtoID.T电磁驱动
-                                                       };
+        private static readonly List<int> InitialTechs = new List<int> { ProtoID.T戴森球计划, ProtoID.T科学理论, ProtoID.T工业化生产 },
+                                          BonusTechs = new List<int> { ProtoID.T电磁学, ProtoID.T基础机械组件, ProtoID.T武器系统, ProtoID.T电磁驱动 };
 
         [HarmonyPatch(typeof(GameData), "SetForNewGame")]
         [HarmonyPostfix]
@@ -32,14 +22,12 @@ namespace ProjectGenesis.Patches.Logic
             if (DSPGame.IsMenuDemo) return;
 
             foreach (int tech in InitialTechs)
-            {
-                if (!__instance.history.TechUnlocked(tech)) __instance.history.UnlockTech(tech);
-            }
+                if (!__instance.history.TechUnlocked(tech))
+                    __instance.history.UnlockTech(tech);
 
             foreach (int tech in BonusTechs)
-            {
-                if (!__instance.history.TechUnlocked(tech)) __instance.history.UnlockTech(tech);
-            }
+                if (!__instance.history.TechUnlocked(tech))
+                    __instance.history.UnlockTech(tech);
         }
 
         [HarmonyPatch(typeof(GameData), "Import")]
@@ -49,14 +37,12 @@ namespace ProjectGenesis.Patches.Logic
             if (DSPGame.IsMenuDemo) return;
 
             foreach (int tech in InitialTechs)
-            {
-                if (!__instance.history.TechUnlocked(tech)) __instance.history.UnlockTech(tech);
-            }
+                if (!__instance.history.TechUnlocked(tech))
+                    __instance.history.UnlockTech(tech);
 
             foreach (int tech in BonusTechs)
-            {
-                if (!__instance.history.TechUnlocked(tech)) __instance.history.UnlockTech(tech);
-            }
+                if (!__instance.history.TechUnlocked(tech))
+                    __instance.history.UnlockTech(tech);
 
             foreach (var (key, value) in __instance.history.techStates)
             {

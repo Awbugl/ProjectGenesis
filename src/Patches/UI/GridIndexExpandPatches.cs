@@ -79,9 +79,8 @@ namespace ProjectGenesis.Patches.UI
             foreach (CodeInstruction ci in instructions)
             {
                 if (ci.opcode == OpCodes.Ldc_I4_S)
-                {
-                    if ((sbyte)ci.operand == 14) ci.operand = (sbyte)17;
-                }
+                    if ((sbyte)ci.operand == 14)
+                        ci.operand = (sbyte)17;
 
                 if (ci.opcode == OpCodes.Ldc_I4_8) ci.opcode = OpCodes.Ldc_I4_7;
 

@@ -33,13 +33,13 @@ namespace ProjectGenesis.Patches.UI.BeltColorFix
             matcher2.Advance(1);
             object label = matcher2.Operand;
 
-            matcher.Advance(2).InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_S, arg))
-                   .SetInstruction(Transpilers.EmitDelegate<Func<int, int, int>>((speed, other) =>
-                    {
-                        if (speed == 10) other += 8;
-                        if (speed == 5) other += 4;
-                        return other;
-                    })).Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Stloc_S, arg)).SetInstruction(new CodeInstruction(OpCodes.Br, label));
+            matcher.Advance(2).InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_S, arg)).SetInstruction(
+                Transpilers.EmitDelegate<Func<int, int, int>>((speed, other) =>
+                {
+                    if (speed == 10) other += 8;
+                    if (speed == 5) other += 4;
+                    return other;
+                })).Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Stloc_S, arg)).SetInstruction(new CodeInstruction(OpCodes.Br, label));
 
             return matcher.InstructionEnumeration();
         }
@@ -104,20 +104,20 @@ namespace ProjectGenesis.Patches.UI.BeltColorFix
                                                new CodeMatch(OpCodes.Ldfld,
                                                              AccessTools.Field(typeof(ConnGizmoRenderer), nameof(ConnGizmoRenderer.factory))),
                                                new CodeMatch(OpCodes.Ldloc_3)).Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_S, 6))
-                                 .InsertAndAdvance(new CodeInstruction(OpCodes.Ldloca_S, 0))
-                                 .InsertAndAdvance(Transpilers.EmitDelegate<RefAction<int, ConnGizmoObj>>((int speed, ref ConnGizmoObj renderer) =>
-                                  {
-                                      switch (speed)
+                                 .InsertAndAdvance(new CodeInstruction(OpCodes.Ldloca_S, 0)).InsertAndAdvance(
+                                      Transpilers.EmitDelegate<RefAction<int, ConnGizmoObj>>((int speed, ref ConnGizmoObj renderer) =>
                                       {
-                                          case 5:
-                                              renderer.color = 2;
-                                              break;
+                                          switch (speed)
+                                          {
+                                              case 5:
+                                                  renderer.color = 2;
+                                                  break;
 
-                                          case 3:
-                                              renderer.color = 1;
-                                              break;
-                                      }
-                                  }));
+                                              case 3:
+                                                  renderer.color = 1;
+                                                  break;
+                                          }
+                                      }));
 
             return matcher.InstructionEnumeration();
         }

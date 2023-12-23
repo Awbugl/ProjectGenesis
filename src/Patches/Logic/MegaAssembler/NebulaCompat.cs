@@ -80,9 +80,9 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
                 for (int i = 0; i < length; i++)
                 {
                     datas[i] = new SlotData
-                               {
-                                   dir = (IODir)r.ReadInt32(), beltId = r.ReadInt32(), storageIdx = r.ReadInt32(), counter = r.ReadInt32()
-                               };
+                    {
+                        dir = (IODir)r.ReadInt32(), beltId = r.ReadInt32(), storageIdx = r.ReadInt32(), counter = r.ReadInt32()
+                    };
 
                     if (factory == null) continue;
 

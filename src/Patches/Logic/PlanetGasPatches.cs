@@ -22,9 +22,9 @@ namespace ProjectGenesis.Patches.Logic
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> UIPlanetDetail_OnPlanetDataSet_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
-            CodeMatcher matcher
-                = new CodeMatcher(instructions).MatchForward(true, new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(PlanetData), "type")),
-                                                             new CodeMatch(OpCodes.Ldc_I4_5), new CodeMatch(OpCodes.Beq));
+            CodeMatcher matcher = new CodeMatcher(instructions).MatchForward(
+                true, new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(PlanetData), "type")), new CodeMatch(OpCodes.Ldc_I4_5),
+                new CodeMatch(OpCodes.Beq));
 
             object label = matcher.Operand;
 
@@ -40,9 +40,8 @@ namespace ProjectGenesis.Patches.Logic
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> PlanetGen_SetPlanetTheme_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
-            CodeMatcher matcher
-                = new CodeMatcher(instructions).MatchForward(false, new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(PlanetData), "type")),
-                                                             new CodeMatch(OpCodes.Ldc_I4_5));
+            CodeMatcher matcher = new CodeMatcher(instructions).MatchForward(
+                false, new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(PlanetData), "type")), new CodeMatch(OpCodes.Ldc_I4_5));
             matcher.Advance(-1);
             matcher.SetAndAdvance(OpCodes.Nop, null);
             matcher.SetAndAdvance(OpCodes.Nop, null);
@@ -71,9 +70,8 @@ namespace ProjectGenesis.Patches.Logic
         public static IEnumerable<CodeInstruction> OnPlanetDataSet_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
             CodeMatcher matcher
-                = new CodeMatcher(instructions).MatchForward(false,
-                                                             new CodeMatch(OpCodes.Ldfld,
-                                                                           AccessTools.Field(typeof(StationComponent), "collectionPerTick")));
+                = new CodeMatcher(instructions).MatchForward(
+                    false, new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(StationComponent), "collectionPerTick")));
 
             CodeInstruction stationComponent = matcher.Advance(-1).Instruction;
 

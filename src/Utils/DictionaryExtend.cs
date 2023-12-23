@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
 
+// ReSharper disable RemoveRedundantBraces
+
 namespace ProjectGenesis.Utils
 {
     internal static class DictionaryExtend
@@ -12,7 +14,7 @@ namespace ProjectGenesis.Utils
             }
             else
             {
-                dict[key] = new List<TValue>() { value };
+                dict[key] = new List<TValue> { value };
             }
         }
     }

@@ -111,9 +111,8 @@ namespace ProjectGenesis.Compatibility
 
         public static IEnumerable<CodeInstruction> SetPlanetTheme_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
-            CodeMatcher matcher
-                = new CodeMatcher(instructions).MatchForward(false, new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(PlanetData), "type")),
-                                                             new CodeMatch(OpCodes.Ldc_I4_5));
+            CodeMatcher matcher = new CodeMatcher(instructions).MatchForward(
+                false, new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(PlanetData), "type")), new CodeMatch(OpCodes.Ldc_I4_5));
             matcher.Advance(-1);
             matcher.SetAndAdvance(OpCodes.Nop, null);
             matcher.SetAndAdvance(OpCodes.Nop, null);
@@ -167,13 +166,13 @@ namespace ProjectGenesis.Compatibility
         {
             if (gsPlanet.planetData.id == GSSettings.BirthPlanetId)
                 __result.Add(new GSVeinDescriptor
-                             {
-                                 count = 6,
-                                 position = gsPlanet.planetData.birthResourcePoint2,
-                                 rare = false,
-                                 type = (EVeinType)15,
-                                 richness = 0.1f
-                             });
+                {
+                    count = 6,
+                    position = gsPlanet.planetData.birthResourcePoint2,
+                    rare = false,
+                    type = (EVeinType)15,
+                    richness = 0.1f
+                });
         }
 
         public static void GenBirthPoints_Postfix(GSPlanet gsPlanet)
@@ -342,12 +341,10 @@ namespace ProjectGenesis.Compatibility
 
         public static IEnumerable<CodeInstruction> OnPlanetDataSet_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
-            CodeMatcher matcher
-                = new CodeMatcher(instructions).MatchForward(true, new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(PlanetData), "type")),
-                                                             new CodeMatch(OpCodes.Ldc_I4_5), new CodeMatch(OpCodes.Ceq),
-                                                             new CodeMatch(OpCodes.Ldc_I4_0), new CodeMatch(OpCodes.Ceq),
-                                                             new CodeMatch(OpCodes.Stloc_S), new CodeMatch(OpCodes.Ldloc_S),
-                                                             new CodeMatch(OpCodes.Brfalse));
+            CodeMatcher matcher = new CodeMatcher(instructions).MatchForward(
+                true, new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(PlanetData), "type")), new CodeMatch(OpCodes.Ldc_I4_5),
+                new CodeMatch(OpCodes.Ceq), new CodeMatch(OpCodes.Ldc_I4_0), new CodeMatch(OpCodes.Ceq), new CodeMatch(OpCodes.Stloc_S),
+                new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Brfalse));
 
             object label = matcher.Operand;
 
