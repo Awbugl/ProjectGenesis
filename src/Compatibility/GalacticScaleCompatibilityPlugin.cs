@@ -69,43 +69,49 @@ namespace ProjectGenesis.Compatibility
             harmony.Patch(AccessTools.Method(assembly.GetType("GalacticScale.GSTheme"), "ToProto"), null,
                           new HarmonyMethod(typeof(GalacticScaleCompatibilityPlugin), nameof(GSTheme_ToProto_Postfix)));
 
-            harmony.Patch(AccessTools.Method(assembly.GetType("GalacticScale.VeinAlgorithms"), "DisableVeins"), null, null,
+            Type VeinAlgorithms = assembly.GetType("GalacticScale.VeinAlgorithms");
+
+            harmony.Patch(AccessTools.Method(VeinAlgorithms, "DisableVeins"), null, null,
                           new HarmonyMethod(typeof(GalacticScaleCompatibilityPlugin), nameof(DisableVeins_Transpiler)));
 
-            harmony.Patch(AccessTools.Method(assembly.GetType("GalacticScale.VeinAlgorithms"), "DistributeVeinTypes"),
+            harmony.Patch(AccessTools.Method(VeinAlgorithms, "DistributeVeinTypes"),
                           new HarmonyMethod(typeof(GalacticScaleCompatibilityPlugin), nameof(DistributeVeinTypes_Prefix)));
 
-            harmony.Patch(AccessTools.Method(assembly.GetType("GalacticScale.VeinAlgorithms"), "GenBirthPoints"), null,
+            harmony.Patch(AccessTools.Method(VeinAlgorithms, "GenBirthPoints"), null,
                           new HarmonyMethod(typeof(GalacticScaleCompatibilityPlugin), nameof(GenBirthPoints_Postfix)));
 
-            harmony.Patch(AccessTools.Method(assembly.GetType("GalacticScale.VeinAlgorithms"), "CalculateVectorsGS2"), null,
+            harmony.Patch(AccessTools.Method(VeinAlgorithms, "CalculateVectorsGS2"), null,
                           new HarmonyMethod(typeof(GalacticScaleCompatibilityPlugin), nameof(CalculateVectorsGS2_Postfix)));
 
-            harmony.Patch(AccessTools.Method(assembly.GetType("GalacticScale.VeinAlgorithms"), "InitBirthVeinVectors"),
+            harmony.Patch(AccessTools.Method(VeinAlgorithms, "InitBirthVeinVectors"),
                           new HarmonyMethod(typeof(GalacticScaleCompatibilityPlugin), nameof(InitBirthVeinVectors_Postfix)));
 
             harmony.Patch(AccessTools.PropertyGetter(assembly.GetType("GalacticScale.GS2MainSettings"), "VeinTips"), null, null,
                           new HarmonyMethod(typeof(GalacticScaleCompatibilityPlugin), nameof(GS2MainSettings_VeinTips_Getter_Transpiler)));
 
-            harmony.Patch(AccessTools.Method(assembly.GetType("GalacticScale.PatchOnUIPlanetDetail"), "OnPlanetDataSet7Prefix"), null, null,
+            Type PatchOnUIPlanetDetail = assembly.GetType("GalacticScale.PatchOnUIPlanetDetail");
+
+            harmony.Patch(AccessTools.Method(PatchOnUIPlanetDetail, "OnPlanetDataSet7Prefix"), null, null,
                           new HarmonyMethod(typeof(GalacticScaleCompatibilityPlugin), nameof(OnPlanetDataSet_Transpiler)));
 
-            harmony.Patch(AccessTools.Method(assembly.GetType("GalacticScale.PatchOnUIPlanetDetail"), "OnPlanetDataSet7Prefix"), null, null,
+            harmony.Patch(AccessTools.Method(PatchOnUIPlanetDetail, "OnPlanetDataSet7Prefix"), null, null,
                           new HarmonyMethod(typeof(PlanetGasPatches), nameof(PlanetGasPatches.OnDataSet_ChangeWaterId_Transpiler)));
 
-            harmony.Patch(AccessTools.Method(assembly.GetType("GalacticScale.PatchOnUIPlanetDetail"), "OnPlanetDataSet7Prefix"), null, null,
+            harmony.Patch(AccessTools.Method(PatchOnUIPlanetDetail, "OnPlanetDataSet7Prefix"), null, null,
                           new HarmonyMethod(typeof(GalacticScaleCompatibilityPlugin), nameof(OnPlanetDataSet_ChangeVeinData_Transpiler)));
 
-            harmony.Patch(AccessTools.Method(assembly.GetType("GalacticScale.PatchOnUIStarDetail"), "OnStarDataSet2"), null, null,
+            Type PatchOnUIStarDetail = assembly.GetType("GalacticScale.PatchOnUIStarDetail");
+
+            harmony.Patch(AccessTools.Method(PatchOnUIStarDetail, "OnStarDataSet2"), null, null,
                           new HarmonyMethod(typeof(PlanetGasPatches), nameof(PlanetGasPatches.OnDataSet_ChangeWaterId_Transpiler)));
 
-            harmony.Patch(AccessTools.Method(assembly.GetType("GalacticScale.PatchOnUIStarDetail"), "OnStarDataSet2"), null, null,
+            harmony.Patch(AccessTools.Method(PatchOnUIStarDetail, "OnStarDataSet2"), null, null,
                           new HarmonyMethod(typeof(PlanetGasPatches), nameof(PlanetGasPatches.PlanetGen_SetPlanetTheme_Transpiler)));
 
-            harmony.Patch(AccessTools.Method(assembly.GetType("GalacticScale.PatchOnUIStarDetail"), "OnStarDataSet2"), null, null,
+            harmony.Patch(AccessTools.Method(PatchOnUIStarDetail, "OnStarDataSet2"), null, null,
                           new HarmonyMethod(typeof(PlanetGasPatches), nameof(PlanetGasPatches.OnStarDataSet_Transpiler)));
 
-            harmony.Patch(AccessTools.Method(assembly.GetType("GalacticScale.PatchOnUIStarDetail"), "OnStarDataSet2"), null, null,
+            harmony.Patch(AccessTools.Method(PatchOnUIStarDetail, "OnStarDataSet2"), null, null,
                           new HarmonyMethod(typeof(GalacticScaleCompatibilityPlugin), nameof(OnStarDataSet_ChangeVeinData_Transpiler)));
         }
 
@@ -222,13 +228,13 @@ namespace ProjectGenesis.Compatibility
                                                     (float)(VeinAlgorithms.random.NextDouble() * 2.0 - 1.0)).normalized *
                                         0.1f;
                     Vector2 vector2_2 = AddVeinPatches.Rotate(vector2_1, 120);
-                    float num9 = (float)(VeinAlgorithms.random.NextDouble() * 2.0 - 1.0) * 0.06f;
-                    float num10 = (float)(VeinAlgorithms.random.NextDouble() * 2.0 - 1.0) * 0.06f;
+                    float num9 = (float)(VeinAlgorithms.random.NextDouble() * 2.0 - 1.0) * 0.006f;
+                    float num10 = (float)(VeinAlgorithms.random.NextDouble() * 2.0 - 1.0) * 0.006f;
                     vector2_2.x += num9;
                     vector2_2.y += num10;
-                    Vector2 vector2_3 = AddVeinPatches.Rotate(vector2_2, 120);
-                    float num51 = (float)(VeinAlgorithms.random.NextDouble() * 2.0 - 1.0) * 0.06f;
-                    float num61 = (float)(VeinAlgorithms.random.NextDouble() * 2.0 - 1.0) * 0.06f;
+                    Vector2 vector2_3 = AddVeinPatches.Rotate(vector2_1, 240);
+                    float num51 = (float)(VeinAlgorithms.random.NextDouble() * 2.0 - 1.0) * 0.006f;
+                    float num61 = (float)(VeinAlgorithms.random.NextDouble() * 2.0 - 1.0) * 0.006f;
                     vector2_3.x += num51;
                     vector2_3.y += num61;
                     vector3_2 = vector3_3 + vector2_1.x * normalized1 + vector2_1.y * normalized2;
