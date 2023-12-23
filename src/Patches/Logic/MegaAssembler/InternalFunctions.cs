@@ -8,19 +8,22 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
     {
         internal static void Export(BinaryWriter w)
         {
-            w.Write(_slotdata.Count);
-
-            foreach (KeyValuePair<(int, int), SlotData[]> pair in _slotdata)
+            lock (_slotdata)
             {
-                w.Write(pair.Key.Item1);
-                w.Write(pair.Key.Item2);
-                w.Write(pair.Value.Length);
-                for (int i = 0; i < pair.Value.Length; i++)
+                w.Write(_slotdata.Count);
+
+                foreach (KeyValuePair<(int, int), SlotData[]> pair in _slotdata)
                 {
-                    w.Write((int)pair.Value[i].dir);
-                    w.Write(pair.Value[i].beltId);
-                    w.Write(pair.Value[i].storageIdx);
-                    w.Write(pair.Value[i].counter);
+                    w.Write(pair.Key.Item1);
+                    w.Write(pair.Key.Item2);
+                    w.Write(pair.Value.Length);
+                    for (int i = 0; i < pair.Value.Length; i++)
+                    {
+                        w.Write((int)pair.Value[i].dir);
+                        w.Write(pair.Value[i].beltId);
+                        w.Write(pair.Value[i].storageIdx);
+                        w.Write(pair.Value[i].counter);
+                    }
                 }
             }
         }

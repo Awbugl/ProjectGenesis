@@ -7,6 +7,7 @@ namespace ProjectGenesis.Utils
         // Item
         //   IconDescUtils
         //   PlanetFocus
+        //   FastStartOption
 
         internal const int I水 = 1000,
                            I沙土 = 1099,

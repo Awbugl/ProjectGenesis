@@ -10,13 +10,10 @@ namespace ProjectGenesis.Patches.Logic.AddVein
     {
         private static readonly Dictionary<int, Color> Map = new Dictionary<int, Color>();
 
-        private static ParticleSystem ParticleSystem
+        private static ParticleSystem NewParticleSystem()
         {
-            get
-            {
-                EffectEmitterProto effectEmitterProto = LDB.effectEmitters.Select(21);
-                return Object.Instantiate(Resources.Load<ParticleSystem>(effectEmitterProto.PrefabPath));
-            }
+            EffectEmitterProto effectEmitterProto = LDB.effectEmitters.Select(21);
+            return Object.Instantiate(Resources.Load<ParticleSystem>(effectEmitterProto.PrefabPath));
         }
 
         internal static void AddEffectEmitterProto()
@@ -32,7 +29,7 @@ namespace ProjectGenesis.Patches.Logic.AddVein
             foreach (KeyValuePair<int, Color> pair in Map)
             {
                 ref ParticleSystem system = ref LDB.effectEmitters.Select(pair.Key).emitter;
-                system = ParticleSystem;
+                system = NewParticleSystem();
                 ParticleSystem.MainModule systemMain = system.main;
                 systemMain.startColor = pair.Value;
             }

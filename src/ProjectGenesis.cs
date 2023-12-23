@@ -299,5 +299,7 @@ namespace ProjectGenesis
             logger.LogInfo("SettingChanged");
             configFile.Save();
         }
+
+        internal static void LogInfo(object data) => logger.LogInfo(data);
     }
 }

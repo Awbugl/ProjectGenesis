@@ -221,6 +221,16 @@
     "assemblerSpeed": 40000
   },
   {
+    "ItemID": 3005,
+    "ModelID": 407,
+    "turretSpaceAttackRange": 8200
+  },
+  {
+    "ItemID": 3004,
+    "ModelID": 408,
+    "turretSpaceAttackRange": 10500
+  },
+  {
     "ItemID": 6229,
     "ModelID": 501,
     "fluidStorageCount": 1000000

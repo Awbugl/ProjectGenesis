@@ -54,7 +54,8 @@ namespace ProjectGenesis.Patches.Logic.QTools
 
                 Options.Factory = factory;
 
-                DataSet.CustomOptions.Remove(Item);
+                if (Options.Strategy == EProliferatorStrategy.ExtraProducts && !Options.Recipe.productive)
+                    Options.Strategy = EProliferatorStrategy.Nonuse;
             }
         }
 

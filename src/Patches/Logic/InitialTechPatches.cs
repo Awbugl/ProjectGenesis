@@ -7,6 +7,7 @@ using ProjectGenesis.Utils;
 
 // ReSharper disable InconsistentNaming
 // ReSharper disable RemoveRedundantBraces
+// ReSharper disable LoopCanBePartlyConvertedToQuery
 // ReSharper disable ForeachCanBePartlyConvertedToQueryUsingAnotherGetEnumerator
 
 namespace ProjectGenesis.Patches.Logic
@@ -22,14 +23,11 @@ namespace ProjectGenesis.Patches.Logic
         {
             if (DSPGame.IsMenuDemo) return;
 
-            foreach (int tech in InitialTechs)
+            foreach (int tech in InitialTechs.Concat(BonusTechs))
             {
-                if (!__instance.history.TechUnlocked(tech)) __instance.history.UnlockTech(tech);
-            }
+                if (__instance.history.TechUnlocked(tech)) continue;
 
-            foreach (int tech in BonusTechs)
-            {
-                if (!__instance.history.TechUnlocked(tech)) __instance.history.UnlockTech(tech);
+                __instance.history.UnlockTech(tech);
             }
         }
 
@@ -39,14 +37,11 @@ namespace ProjectGenesis.Patches.Logic
         {
             if (DSPGame.IsMenuDemo) return;
 
-            foreach (int tech in InitialTechs)
+            foreach (int tech in InitialTechs.Concat(BonusTechs))
             {
-                if (!__instance.history.TechUnlocked(tech)) __instance.history.UnlockTech(tech);
-            }
+                if (__instance.history.TechUnlocked(tech)) continue;
 
-            foreach (int tech in BonusTechs)
-            {
-                if (!__instance.history.TechUnlocked(tech)) __instance.history.UnlockTech(tech);
+                __instance.history.UnlockTech(tech);
             }
 
             foreach (var (key, value) in __instance.history.techStates)
@@ -88,15 +83,7 @@ namespace ProjectGenesis.Patches.Logic
         {
             if (!ProjectGenesis.EnableHideTechModeEntry.Value) return;
 
-            GameHistoryData history = GameMain.history;
-            foreach (var (tech, node) in __instance.nodes)
-            {
-                if (node == null || tech > 1999 || node.techProto.IsHiddenTech) continue;
-
-                bool techUnlocked = TechUnlocked(history, tech);
-                node.gameObject.SetActive(techUnlocked || AnyPreTechUnlocked(history, node.techProto));
-                if (node.techProto.postTechArray.Length > 0) node.connGroup.gameObject.SetActive(techUnlocked);
-            }
+            RefreshNode(__instance);
         }
 
         [HarmonyPatch(typeof(UITechTree), "OnPageChanged")]
@@ -104,23 +91,22 @@ namespace ProjectGenesis.Patches.Logic
         public static void UITechTree_OnPageChanged_Postfix(UITechTree __instance)
         {
             if (!ProjectGenesis.EnableHideTechModeEntry.Value) return;
-
             if (__instance.page != 0) return;
 
-            GameHistoryData history = GameMain.history;
+            RefreshNode(__instance);
+        }
 
+        private static void RefreshNode(UITechTree __instance)
+        {
+            GameHistoryData history = GameMain.history;
             foreach (var (tech, node) in __instance.nodes)
             {
-                if (node == null || tech > 1999 || node.techProto.IsHiddenTech) continue;
+                if (tech > 1999 || node == null || node.techProto.IsHiddenTech) continue;
 
-                bool techUnlocked = TechUnlocked(history, tech);
-                node.gameObject.SetActive(techUnlocked || AnyPreTechUnlocked(history, node.techProto));
+                bool techUnlocked = history.TechUnlocked(tech);
+                node.gameObject.SetActive(techUnlocked || node.techProto.PreTechs.Any(history.TechUnlocked));
                 if (node.techProto.postTechArray.Length > 0) node.connGroup.gameObject.SetActive(techUnlocked);
             }
         }
-
-        private static bool TechUnlocked(GameHistoryData history, int tech) => history.TechUnlocked(tech);
-
-        private static bool AnyPreTechUnlocked(GameHistoryData history, TechProto proto) => proto.PreTechs.Any(i => TechUnlocked(history, i));
     }
 }

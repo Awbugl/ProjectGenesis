@@ -6604,16 +6604,18 @@
     "PreTechs": [
       1801
     ],
-    "PreTechsImplicit": [],
+    "PreTechsImplicit": [
+      1936
+    ],
     "Items": [
       6001,
       6002
     ],
     "ItemPoints": [
-      10,
-      10
+      8,
+      6
     ],
-    "HashNeeded": 90000,
+    "HashNeeded": 180000,
     "UnlockRecipes": [],
     "UnlockFunctions": [],
     "UnlockValues": [],

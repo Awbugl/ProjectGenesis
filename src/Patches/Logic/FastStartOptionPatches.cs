@@ -73,31 +73,40 @@ namespace ProjectGenesis.Patches.Logic
             }
 
             AddItemToPackage(1131, 2000); // 地基
-            AddItemToPackage(2003, 900);  // 三级带
-            AddItemToPackage(2013, 400);  // 三级爪
-            AddItemToPackage(2103, 20);   // 小塔
-            AddItemToPackage(5001, 800);  // 小船
+            AddItemToPackage(2003, 600);  // 三级带
+            AddItemToPackage(2013, 200);  // 三级爪
+            AddItemToPackage(2103, 10);   // 小塔
+            AddItemToPackage(5001, 400);  // 小船
             AddItemToPackage(6267, 10);   // 大气
             AddItemToPackage(2201, 98);   // 电线杆
             AddItemToPackage(2202, 4);    // 充电杆
             AddItemToPackage(2107, 20);   // 配送器
-            AddItemToPackage(5003, 200);  // 配送小飞机
+            AddItemToPackage(5003, 100);  // 配送小飞机
             AddItemToPackage(2203, 46);   // 风电
             AddItemToPackage(2204, 19);   // 火电
             AddItemToPackage(2205, 49);   // 太阳能
-            AddItemToPackage(6221, 50);   // 温差
-            AddItemToPackage(2301, 96);   // 矿机
-            AddItemToPackage(2302, 96);   // 熔炉
-            AddItemToPackage(6230, 30);   // 处理厂
-            AddItemToPackage(2303, 46);   // 制造台MK1
-            AddItemToPackage(2304, 46);   // 制造台MK2
+            AddItemToPackage(2211, 10);   // 裂变
+            AddItemToPackage(2301, 46);   // 矿机
+            AddItemToPackage(2302, 16);   // 熔炉
+            AddItemToPackage(6230, 20);   // 处理厂
+            AddItemToPackage(2303, 16);   // 制造台MK1
+            AddItemToPackage(2304, 16);   // 制造台MK2
             AddItemToPackage(2306, 20);   // 抽水站
             AddItemToPackage(2307, 10);   // 抽油机
             AddItemToPackage(2308, 30);   // 精炼厂
             AddItemToPackage(2309, 30);   // 化工厂
-            AddItemToPackage(2901, 99);   // 研究站
-            AddItemToPackage(6216, 50);   // 燃料棒
+            AddItemToPackage(2901, 49);   // 研究站
+            AddItemToPackage(6241, 50);   // 燃料棒
+            AddItemToPackage(3001, 10);   // 机枪
+            AddItemToPackage(3002, 10);   // 激光
+            AddItemToPackage(3003, 10);   // 加农炮
+            AddItemToPackage(3005, 10);   // 导弹
+            AddItemToPackage(5102, 24);   // 精准无人机
+            AddItemToPackage(1605, 100);  // 炮弹
+            AddItemToPackage(1609, 100);  // 导弹
+            AddItemToPackage(7607, 100);  // 钢弹
 
+            TakeItemFromPlayer(1601, 10);
             TakeItemFromPlayer(1401, 10);
             TakeItemFromPlayer(2001, 20);
             TakeItemFromPlayer(2011, 5);

@@ -133,16 +133,22 @@ namespace ProjectGenesis.Patches.Logic
 
         internal static void Export(BinaryWriter w)
         {
-            w.Write(_quantumStorageIds.Count);
-
-            foreach (KeyValuePair<int, List<int>> pair in _quantumStorageIds)
+            lock (_quantumStorageIds)
             {
-                w.Write(pair.Key);
-                w.Write(pair.Value.Count);
-                foreach (int t in pair.Value) w.Write(t);
+                w.Write(_quantumStorageIds.Count);
+
+                foreach (KeyValuePair<int, List<int>> pair in _quantumStorageIds)
+                {
+                    w.Write(pair.Key);
+                    w.Write(pair.Value.Count);
+                    foreach (int t in pair.Value) w.Write(t);
+                }
             }
 
-            _component.Export(w);
+            lock (_component)
+            {
+                _component.Export(w);
+            }
         }
 
         internal static void Import(BinaryReader r)

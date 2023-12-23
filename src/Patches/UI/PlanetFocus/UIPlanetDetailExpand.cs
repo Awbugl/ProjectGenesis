@@ -14,6 +14,8 @@ namespace ProjectGenesis.Patches.UI.PlanetFocus
         [HarmonyPatch(typeof(UIGame), "_OnInit")]
         public static void Init(UIGame __instance)
         {
+            if (_planetFocusBtn) return;
+
             ProjectGenesis.PlanetFocusWindow = UIPlanetFocusWindow.CreateWindow();
 
             _planetFocusBtn = Util.CreateButton("星球基地".TranslateFromJson());

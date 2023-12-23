@@ -421,6 +421,7 @@ namespace ProjectGenesis.Utils
             public int? turretRoundInterval { get; set; } = null;
             public float? turretMaxAttackRange { get; set; } = null;
             public float? turretDamageScale { get; set; } = null;
+            public float? turretSpaceAttackRange { get; set; } = null;
             public int? storageCol { get; set; } = null;
             public int? storageRow { get; set; } = null;
             public bool? isStorage { get; set; } = null;
@@ -476,6 +477,7 @@ namespace ProjectGenesis.Utils
                     turretRoundInterval = i.turretRoundInterval,
                     turretMaxAttackRange = i.turretMaxAttackRange,
                     turretDamageScale = i.turretDamageScale,
+                    turretSpaceAttackRange = i.turretSpaceAttackRange,
                     storageCol = i.storageCol,
                     storageRow = i.storageRow,
                     isStorage = i.isStorage,
@@ -529,6 +531,7 @@ namespace ProjectGenesis.Utils
                 if (turretRoundInterval != null) desc.turretRoundInterval = turretRoundInterval.Value;
                 if (turretMaxAttackRange != null) desc.turretMaxAttackRange = turretMaxAttackRange.Value;
                 if (turretDamageScale != null) desc.turretDamageScale = turretDamageScale.Value;
+                if (turretSpaceAttackRange != null) desc.turretSpaceAttackRange = turretSpaceAttackRange.Value;
                 if (storageCol != null) desc.storageCol = storageCol.Value;
                 if (storageRow != null) desc.storageRow = storageRow.Value;
                 if (isStorage != null) desc.isStorage = isStorage.Value;

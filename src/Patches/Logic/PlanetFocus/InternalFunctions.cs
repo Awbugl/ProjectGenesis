@@ -8,13 +8,16 @@ namespace ProjectGenesis.Patches.Logic.PlanetFocus
     {
         internal static void Export(BinaryWriter w)
         {
-            w.Write(_planetFocuses.Count);
-
-            foreach (KeyValuePair<int, int[]> pair in _planetFocuses)
+            lock (_planetFocuses)
             {
-                w.Write(pair.Key);
-                w.Write(pair.Value.Length);
-                foreach (int t in pair.Value) w.Write(t);
+                w.Write(_planetFocuses.Count);
+
+                foreach (KeyValuePair<int, int[]> pair in _planetFocuses)
+                {
+                    w.Write(pair.Key);
+                    w.Write(pair.Value.Length);
+                    foreach (int t in pair.Value) w.Write(t);
+                }
             }
         }
 
