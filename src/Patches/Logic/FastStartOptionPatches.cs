@@ -105,13 +105,18 @@ namespace ProjectGenesis.Patches.Logic
             AddItemToPackage(1605, 100);  // 炮弹
             AddItemToPackage(1609, 100);  // 导弹
             AddItemToPackage(7607, 100);  // 钢弹
-
+            AddItemToPackage(2020, 49);   // 分流
+            AddItemToPackage(2101, 50);   // 小箱子
+            AddItemToPackage(2102, 50);   // 大箱子
+            AddItemToPackage(2206, 50);   // 电池
+            AddItemToPackage(3007, 5);   // 分析基站
+            AddItemToPackage(3009, 5);   // 信号塔
+            
             TakeItemFromPlayer(1601, 10);
             TakeItemFromPlayer(1401, 10);
             TakeItemFromPlayer(2001, 20);
             TakeItemFromPlayer(2011, 5);
             TakeItemFromPlayer(2012, 5);
-            TakeItemFromPlayer(2020, 1);
             TakeItemFromPlayer(2030, 5);
             TakeItemFromPlayer(2106, 1);
 

@@ -3590,7 +3590,7 @@
     "Name": "爆破单元",
     "Description": "",
     "IconPath": "",
-    "Type": 2,
+    "Type": 4,
     "GridIndex": 5402,
     "Time": 180,
     "Input": [
@@ -3613,27 +3613,27 @@
   },
   {
     "ID": 135,
-    "Name": "晶石爆破单元",
-    "Description": "",
+    "Name": "核子爆破单元",
+    "Description": "R核子爆破单元",
     "IconPath": "",
-    "Type": 4,
+    "Type": 9,
     "GridIndex": 5403,
-    "Time": 1440,
+    "Time": 180,
     "Input": [
       1129,
-      1126,
-      1113
+      6242,
+      1124
     ],
     "InCounts": [
-      8,
       1,
-      8
+      1,
+      1
     ],
     "Output": [
-      1130
+      7610
     ],
     "OutCounts": [
-      8
+      1
     ],
     "Explicit": false,
     "Handcraft": false,
@@ -3771,16 +3771,16 @@
   },
   {
     "ID": 141,
-    "Name": "晶石炮弹组",
-    "Description": "",
+    "Name": "微型核弹组",
+    "Description": "R微型核弹组",
     "IconPath": "",
     "Type": 9,
     "GridIndex": 5503,
-    "Time": 240,
+    "Time": 360,
     "Input": [
       1605,
-      1106,
-      1130
+      7705,
+      7610
     ],
     "InCounts": [
       1,
@@ -3788,7 +3788,7 @@
       2
     ],
     "Output": [
-      1606
+      7612
     ],
     "OutCounts": [
       1
@@ -3921,7 +3921,7 @@
     "Time": 120,
     "Input": [
       1610,
-      1130,
+      7610,
       1127
     ],
     "InCounts": [
@@ -6228,41 +6228,13 @@
     "NonProductive": false
   },
   {
-    "ID": 784,
-    "Name": "核子爆破单元",
-    "Description": "R核子爆破单元",
-    "IconPath": "",
-    "Type": 9,
-    "GridIndex": 5404,
-    "Time": 360,
-    "Input": [
-      1130,
-      6242,
-      1124
-    ],
-    "InCounts": [
-      2,
-      2,
-      1
-    ],
-    "Output": [
-      7610
-    ],
-    "OutCounts": [
-      2
-    ],
-    "Explicit": false,
-    "Handcraft": false,
-    "NonProductive": false
-  },
-  {
     "ID": 785,
     "Name": "反物质湮灭单元",
     "Description": "R反物质湮灭单元",
     "IconPath": "",
     "Type": 10,
-    "GridIndex": 5405,
-    "Time": 360,
+    "GridIndex": 5404,
+    "Time": 180,
     "Input": [
       7610,
       1122,
@@ -6270,41 +6242,13 @@
       1403
     ],
     "InCounts": [
-      2,
+      1,
       6,
       6,
       1
     ],
     "Output": [
       7611
-    ],
-    "OutCounts": [
-      2
-    ],
-    "Explicit": false,
-    "Handcraft": false,
-    "NonProductive": false
-  },
-  {
-    "ID": 786,
-    "Name": "微型核弹组",
-    "Description": "R微型核弹组",
-    "IconPath": "",
-    "Type": 9,
-    "GridIndex": 5504,
-    "Time": 360,
-    "Input": [
-      1606,
-      7705,
-      7610
-    ],
-    "InCounts": [
-      1,
-      2,
-      2
-    ],
-    "Output": [
-      7612
     ],
     "OutCounts": [
       1
@@ -6319,7 +6263,7 @@
     "Description": "R反物质炮弹",
     "IconPath": "",
     "Type": 10,
-    "GridIndex": 5505,
+    "GridIndex": 5504,
     "Time": 720,
     "Input": [
       7612,
@@ -6342,43 +6286,15 @@
     "NonProductive": false
   },
   {
-    "ID": 788,
-    "Name": "洲际导弹组",
-    "Description": "R洲际导弹组",
-    "IconPath": "",
-    "Type": 9,
-    "GridIndex": 5604,
-    "Time": 120,
-    "Input": [
-      1611,
-      7610,
-      1406
-    ],
-    "InCounts": [
-      1,
-      2,
-      1
-    ],
-    "Output": [
-      7614
-    ],
-    "OutCounts": [
-      1
-    ],
-    "Explicit": false,
-    "Handcraft": false,
-    "NonProductive": false
-  },
-  {
     "ID": 789,
     "Name": "反物质导弹组",
     "Description": "R反物质导弹组",
     "IconPath": "",
     "Type": 10,
-    "GridIndex": 5605,
+    "GridIndex": 5604,
     "Time": 120,
     "Input": [
-      7614,
+      1611,
       7611,
       1210
     ],

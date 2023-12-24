@@ -422,6 +422,13 @@ namespace ProjectGenesis.Utils
             public float? turretMaxAttackRange { get; set; } = null;
             public float? turretDamageScale { get; set; } = null;
             public float? turretSpaceAttackRange { get; set; } = null;
+            public int? turretAddEnemyExppBase { get; set; } = null;
+            public float? turretAddEnemyExppCoef { get; set; } = null;
+            public int? turretAddEnemyHatredBase { get; set; } = null;
+            public float? turretAddEnemyHatredCoef { get; set; } = null;
+            public int? turretAddEnemyThreatBase { get; set; } = null;
+            public float? turretAddEnemyThreatCoef { get; set; } = null;
+            public int? enemyGenMatter { get; set; } = null;
             public int? storageCol { get; set; } = null;
             public int? storageRow { get; set; } = null;
             public bool? isStorage { get; set; } = null;
@@ -478,6 +485,13 @@ namespace ProjectGenesis.Utils
                     turretMaxAttackRange = i.turretMaxAttackRange,
                     turretDamageScale = i.turretDamageScale,
                     turretSpaceAttackRange = i.turretSpaceAttackRange,
+                    turretAddEnemyExppBase = i.turretAddEnemyExppBase,
+                    turretAddEnemyExppCoef = i.turretAddEnemyExppCoef,
+                    turretAddEnemyHatredBase = i.turretAddEnemyHatredBase,
+                    turretAddEnemyHatredCoef = i.turretAddEnemyHatredCoef,
+                    turretAddEnemyThreatBase = i.turretAddEnemyThreatBase,
+                    turretAddEnemyThreatCoef = i.turretAddEnemyThreatCoef,
+                    enemyGenMatter = i.enemyGenMatter,
                     storageCol = i.storageCol,
                     storageRow = i.storageRow,
                     isStorage = i.isStorage,
@@ -532,6 +546,13 @@ namespace ProjectGenesis.Utils
                 if (turretMaxAttackRange != null) desc.turretMaxAttackRange = turretMaxAttackRange.Value;
                 if (turretDamageScale != null) desc.turretDamageScale = turretDamageScale.Value;
                 if (turretSpaceAttackRange != null) desc.turretSpaceAttackRange = turretSpaceAttackRange.Value;
+                if (turretAddEnemyExppBase != null) desc.turretAddEnemyExppBase = turretAddEnemyExppBase.Value;
+                if (turretAddEnemyExppCoef != null) desc.turretAddEnemyExppCoef = turretAddEnemyExppCoef.Value;
+                if (turretAddEnemyHatredBase != null) desc.turretAddEnemyHatredBase = turretAddEnemyHatredBase.Value;
+                if (turretAddEnemyHatredCoef != null) desc.turretAddEnemyHatredCoef = turretAddEnemyHatredCoef.Value;
+                if (turretAddEnemyThreatBase != null) desc.turretAddEnemyThreatBase = turretAddEnemyThreatBase.Value;
+                if (turretAddEnemyThreatCoef != null) desc.turretAddEnemyThreatCoef = turretAddEnemyThreatCoef.Value;
+                if (enemyGenMatter != null) desc.enemyGenMatter = enemyGenMatter.Value;
                 if (storageCol != null) desc.storageCol = storageCol.Value;
                 if (storageRow != null) desc.storageRow = storageRow.Value;
                 if (isStorage != null) desc.isStorage = isStorage.Value;

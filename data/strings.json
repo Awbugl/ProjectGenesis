@@ -2301,7 +2301,7 @@
   },
   {
     "Name": "I核子爆破单元",
-    "ZHCN": "在晶石爆破单元的基础上引入链式反应，通过其产生的高温高压环境造成杀伤。不必担心，在连接引信之前，它非常安全。",
+    "ZHCN": "在爆破单元的基础上引入链式反应，通过其产生的高温高压环境造成杀伤。不必担心，在连接引信之前，它非常安全。",
     "ENUS": "A chain reaction is introduced on top of the crystal blasting unit, causing killing through the high temperature and high pressure environment it creates. No need to worry, it is very safe until the fuse is attached."
   },
   {
@@ -2546,8 +2546,8 @@
   },
   {
     "Name": "I高斯机枪塔MK2",
-    "ZHCN": "高斯机枪塔MK.II，装有四联装高斯机枪，拥有更高的射速以及更加优秀的供弹系统，更新换代的处理器能够让它精确打击更远的目标。",
-    "ENUS": "The Gauss Turret MK.II, fitted with a quadruple Gauss machine gun, has a higher rate of fire as well as a better ammunition supply system, and an upgraded processor that allows it to accurately hit targets at greater distances."
+    "ZHCN": "高斯机枪塔MK.II，装有四联装高斯机枪，拥有更高的射速以及更加优秀的供弹系统。",
+    "ENUS": "The Gauss Turret MK.II, fitted with a quadruple Gauss machine gun, has a higher rate of fire as well as a better ammunition supply system."
   },
   {
     "Name": "高频激光塔",

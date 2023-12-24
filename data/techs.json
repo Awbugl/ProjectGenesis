@@ -3706,10 +3706,10 @@
   },
   {
     "ID": 1804,
-    "Name": "T晶石爆破单元",
-    "IconPath": "Icons/Tech/1804",
-    "Desc": "晶石爆破单元描述",
-    "Conclusion": "晶石爆破单元结果",
+    "Name": "T核子爆破单元",
+    "IconPath": "Assets/texpack/核子单元",
+    "Desc": "核子爆破单元描述",
+    "Conclusion": "核子爆破单元结果",
     "IsHiddenTech": false,
     "PreItem": [],
     "Position": [
@@ -3725,11 +3725,9 @@
     "Items": [
       6001,
       6002,
-      6003,
-      6004
+      6003
     ],
     "ItemPoints": [
-      10,
       10,
       10,
       5
@@ -4203,10 +4201,10 @@
   },
   {
     "ID": 1816,
-    "Name": "T晶石炮弹组",
+    "Name": "T微型核弹组",
     "IconPath": "Icons/Tech/1816",
-    "Desc": "晶石炮弹组描述",
-    "Conclusion": "晶石炮弹组结果",
+    "Desc": "微型核弹组描述",
+    "Conclusion": "微型核弹组结果",
     "IsHiddenTech": false,
     "PreItem": [],
     "Position": [
@@ -4222,14 +4220,12 @@
     "Items": [
       6001,
       6002,
-      6003,
-      6004
+      6003
     ],
     "ItemPoints": [
       10,
       10,
-      10,
-      10
+      5
     ],
     "HashNeeded": 288000,
     "UnlockRecipes": [
@@ -6162,52 +6158,6 @@
     "PropertyItemCounts": []
   },
   {
-    "ID": 1951,
-    "Name": "T核子爆破单元",
-    "IconPath": "Assets/texpack/核子单元",
-    "Desc": "核子爆破单元描述",
-    "Conclusion": "核子爆破单元结果",
-    "IsHiddenTech": false,
-    "PreItem": [],
-    "Position": [
-      25.0,
-      45.0
-    ],
-    "PreTechs": [
-      1804
-    ],
-    "PreTechsImplicit": [],
-    "Items": [
-      6001,
-      6002,
-      6003,
-      6004
-    ],
-    "ItemPoints": [
-      10,
-      10,
-      10,
-      10
-    ],
-    "HashNeeded": 360000,
-    "UnlockRecipes": [
-      784
-    ],
-    "UnlockFunctions": [],
-    "UnlockValues": [],
-    "Published": true,
-    "Level": 0,
-    "MaxLevel": 0,
-    "LevelCoef1": 0,
-    "LevelCoef2": 0,
-    "IsLabTech": true,
-    "PreTechsMax": false,
-    "AddItems": [],
-    "AddItemCounts": [],
-    "PropertyOverrideItems": [],
-    "PropertyItemCounts": []
-  },
-  {
     "ID": 1952,
     "Name": "T反物质湮灭单元",
     "IconPath": "Assets/texpack/反物质单元",
@@ -6216,11 +6166,11 @@
     "IsHiddenTech": false,
     "PreItem": [],
     "Position": [
-      29.0,
+      25.0,
       45.0
     ],
     "PreTechs": [
-      1951
+      1804
     ],
     "PreTechsImplicit": [],
     "Items": [
@@ -6256,52 +6206,6 @@
     "PropertyItemCounts": []
   },
   {
-    "ID": 1953,
-    "Name": "T微型核弹组",
-    "IconPath": "Icons/Tech/1816",
-    "Desc": "微型核弹组描述",
-    "Conclusion": "微型核弹组结果",
-    "IsHiddenTech": false,
-    "PreItem": [],
-    "Position": [
-      25.0,
-      37.0
-    ],
-    "PreTechs": [
-      1816
-    ],
-    "PreTechsImplicit": [],
-    "Items": [
-      6001,
-      6002,
-      6003,
-      6004
-    ],
-    "ItemPoints": [
-      10,
-      10,
-      10,
-      10
-    ],
-    "HashNeeded": 540000,
-    "UnlockRecipes": [
-      786
-    ],
-    "UnlockFunctions": [],
-    "UnlockValues": [],
-    "Published": true,
-    "Level": 0,
-    "MaxLevel": 0,
-    "LevelCoef1": 0,
-    "LevelCoef2": 0,
-    "IsLabTech": true,
-    "PreTechsMax": false,
-    "AddItems": [],
-    "AddItemCounts": [],
-    "PropertyOverrideItems": [],
-    "PropertyItemCounts": []
-  },
-  {
     "ID": 1954,
     "Name": "T反物质炮弹",
     "IconPath": "Icons/Tech/1816",
@@ -6310,11 +6214,11 @@
     "IsHiddenTech": false,
     "PreItem": [],
     "Position": [
-      29.0,
+      25.0,
       37.0
     ],
     "PreTechs": [
-      1953
+      1816
     ],
     "PreTechsImplicit": [],
     "Items": [
@@ -6496,52 +6400,6 @@
     "PropertyItemCounts": []
   },
   {
-    "ID": 1958,
-    "Name": "T洲际导弹组",
-    "IconPath": "Assets/texpack/洲际导弹",
-    "Desc": "洲际导弹组描述",
-    "Conclusion": "洲际导弹组结果",
-    "IsHiddenTech": false,
-    "PreItem": [],
-    "Position": [
-      25.0,
-      61.0
-    ],
-    "PreTechs": [
-      1817
-    ],
-    "PreTechsImplicit": [],
-    "Items": [
-      6001,
-      6002,
-      6003,
-      6004
-    ],
-    "ItemPoints": [
-      10,
-      10,
-      10,
-      10
-    ],
-    "HashNeeded": 720000,
-    "UnlockRecipes": [
-      788
-    ],
-    "UnlockFunctions": [],
-    "UnlockValues": [],
-    "Published": true,
-    "Level": 0,
-    "MaxLevel": 0,
-    "LevelCoef1": 0,
-    "LevelCoef2": 0,
-    "IsLabTech": true,
-    "PreTechsMax": false,
-    "AddItems": [],
-    "AddItemCounts": [],
-    "PropertyOverrideItems": [],
-    "PropertyItemCounts": []
-  },
-  {
     "ID": 1959,
     "Name": "T反物质导弹组",
     "IconPath": "Assets/texpack/反物质飞弹",
@@ -6550,11 +6408,11 @@
     "IsHiddenTech": false,
     "PreItem": [],
     "Position": [
-      29.0,
+      25.0,
       61.0
     ],
     "PreTechs": [
-      1958
+      1817
     ],
     "PreTechsImplicit": [],
     "Items": [

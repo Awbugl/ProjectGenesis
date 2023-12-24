@@ -60,7 +60,6 @@ namespace ProjectGenesis.Utils
 
             { 7612, new FullIconDesc(new Color32(173, 207, 172, 255)) }, // 核子炮弹
             { 7613, new FullIconDesc(new Color32(187, 172, 252, 255)) }, // 反物质炮弹
-            { 7614, new FullIconDesc(new Color32(155, 208, 233, 255)) }, // 洲际导弹
             { 7615, new FullIconDesc(new Color32(187, 172, 252, 255)) }, // 反物质导弹
             { 6204, new FullIconDesc(new Color32(161, 157, 152, 255)) }, // 铝合金
             { 7707, new FullIconDesc(new Color32(51, 51, 57, 255)) },    // 钨钢
