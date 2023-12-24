@@ -180,7 +180,7 @@
     "BombType": 0,
     "CraftType": 0,
     "DropRate": 0.0,
-    "EnemyDropLevel": 2,
+    "EnemyDropLevel": 1,
     "EnemyDropRange": [
       0.877,
       100.0
@@ -274,7 +274,7 @@
     "BombType": 0,
     "CraftType": 0,
     "DropRate": 0.0,
-    "EnemyDropLevel": 4,
+    "EnemyDropLevel": 3,
     "EnemyDropRange": [
       0.897,
       100.0
@@ -321,7 +321,7 @@
     "BombType": 0,
     "CraftType": 0,
     "DropRate": 0.0,
-    "EnemyDropLevel": 3,
+    "EnemyDropLevel": 2,
     "EnemyDropRange": [
       0.887,
       100.0
@@ -999,7 +999,7 @@
     "BombType": 0,
     "CraftType": 0,
     "DropRate": 0.0,
-    "EnemyDropLevel": 5,
+    "EnemyDropLevel": 4,
     "EnemyDropRange": [
       0.917,
       100.0
@@ -1196,7 +1196,7 @@
     "BombType": 0,
     "CraftType": 0,
     "DropRate": 0.0,
-    "EnemyDropLevel": 6,
+    "EnemyDropLevel": 5,
     "EnemyDropRange": [
       0.935,
       40.0
@@ -1882,7 +1882,7 @@
     "BombType": 0,
     "CraftType": 0,
     "DropRate": 0.0,
-    "EnemyDropLevel": 7,
+    "EnemyDropLevel": 6,
     "EnemyDropRange": [
       0.963,
       80.0
