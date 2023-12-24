@@ -45,8 +45,7 @@ namespace ProjectGenesis
     [BepInDependency(LDBToolPlugin.MODGUID)]
     [BepInDependency(NebulaModAPI.API_GUID)]
     [BepInDependency(InstallationCheckPlugin.MODGUID, BepInDependency.DependencyFlags.SoftDependency)]
-    [CommonAPISubmoduleDependency(nameof(ProtoRegistry), nameof(TabSystem))]
-    [CommonAPISubmoduleDependency(nameof(LocalizationModule))]
+    [CommonAPISubmoduleDependency(nameof(ProtoRegistry), nameof(TabSystem), nameof(LocalizationModule))]
     public class ProjectGenesis : BaseUnityPlugin, IModCanSave, IMultiplayerMod
     {
         public const string MODGUID = "org.LoShin.GenesisBook";
@@ -224,8 +223,8 @@ namespace ProjectGenesis
             PrefabDescPostFix();
             ModelPostFix();
 
-            ProtoPreload(); 
-            
+            ProtoPreload();
+
             ModifyEnemyHpUpgrade();
             SetSkillSystem();
             SetMinerMk2Color();
