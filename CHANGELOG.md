@@ -1,3 +1,15 @@
+- v2.9.0-alpha2 (Experimental 0.2.13)
+  + 调整了部分武器和弹药的数值
+  + 调整了黑雾地面建筑和单位的耐久度
+  + 修复了信号界面图标缺失的问题
+
+  + Adjusted some weapon and ammo values
+  + Adjusted durability of Dark Frog ground structures and units.
+  + Fixed missing signal icon
+
+<details>
+  <summary>点击展开日志 | Click to view all </summary>
+
 - v2.9.0-alpha2 (Experimental 0.2.12)
   + 修复了建造栏建筑位置错误的问题
   + 修复了`动力引擎`科技位置不正确的问题
@@ -39,8 +51,6 @@
   + Added patch for compatibility with `FastTravelEnabler`.
   + Adjusted tech exploration mode to be on by default (can be turned off in settings)
 
-<details>
-  <summary>点击展开日志 | Click to view all </summary>
 
 - v2.9.0-alpha1 (Experimental 0.2.7) 群星之影 | Shadows of the Galaxy
   + 适配版本v0.10.28.20959
@@ -75,6 +85,7 @@
   + Removal of restrictions on the location of `Atmospheric Collect Station`
   + Add `Fast Start` mode
 
+
 - v2.8.0-beta2 (Experimental 0.2.6)
   + 调整了配方`环氧氯丙烷`、`双酚A`的默认堆积逻辑
   + 调整了部分配方及物品的图标
@@ -86,6 +97,7 @@
   + Adjusted manual digging time for some minerals
   + Added item `Radioisotope thermoelectric generator`
 
+
 - v2.8.0-beta1 (Experimental 0.2.5) 轻韧革新 | Lightweight Evolution
   + 加强与 `GalacticScale` mod的兼容，母星稀有矿物资源现在可正常生成
   + 添加了对mod未正确安装的检测和提示
@@ -95,6 +107,7 @@
     properly
   + Added detection and hints when mod installed incorrectly
   + Adjusted `Small Launch Vehicle` requirements
+
 
 - v2.8.0-alpha3 (Experimental 0.2.3)
   + 恢复与 `GalacticScale` mod的兼容
