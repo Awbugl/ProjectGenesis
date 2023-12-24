@@ -3636,7 +3636,7 @@
       1801
     ],
     "PreTechsImplicit": [
-      1401
+      1929
     ],
     "Items": [
       6001
@@ -3720,7 +3720,7 @@
       1803
     ],
     "PreTechsImplicit": [
-      1125
+      1919
     ],
     "Items": [
       6001,
@@ -3850,7 +3850,7 @@
       1801
     ],
     "PreTechsImplicit": [
-      1702
+      1711
     ],
     "Items": [
       6001,
@@ -4035,7 +4035,7 @@
       1801
     ],
     "PreTechsImplicit": [
-      1413
+      1411
     ],
     "Items": [
       6001,
@@ -4125,7 +4125,7 @@
       1807
     ],
     "PreTechsImplicit": [
-      1413
+      1803
     ],
     "Items": [
       6001,
@@ -4169,6 +4169,7 @@
       1806
     ],
     "PreTechsImplicit": [
+      1803,
       1113
     ],
     "Items": [
@@ -4215,7 +4216,7 @@
       1814
     ],
     "PreTechsImplicit": [
-      1414
+      1804
     ],
     "Items": [
       6001,
@@ -4261,7 +4262,8 @@
       1815
     ],
     "PreTechsImplicit": [
-      1143
+      1143,
+      1804
     ],
     "Items": [
       6001,
@@ -6172,7 +6174,9 @@
     "PreTechs": [
       1804
     ],
-    "PreTechsImplicit": [],
+    "PreTechsImplicit": [
+      1145
+    ],
     "Items": [
       6001,
       6002,
@@ -6220,7 +6224,10 @@
     "PreTechs": [
       1816
     ],
-    "PreTechsImplicit": [],
+    "PreTechsImplicit": [
+      1952,
+      1134
+    ],
     "Items": [
       6001,
       6002,
@@ -6268,7 +6275,9 @@
     "PreTechs": [
       1813
     ],
-    "PreTechsImplicit": [],
+    "PreTechsImplicit": [
+      1944
+    ],
     "Items": [
       6001,
       6002,
@@ -6312,7 +6321,9 @@
     "PreTechs": [
       1955
     ],
-    "PreTechsImplicit": [],
+    "PreTechsImplicit": [
+      1134
+    ],
     "Items": [
       6001,
       6002,
@@ -6366,7 +6377,9 @@
     "PreTechs": [
       1956
     ],
-    "PreTechsImplicit": [],
+    "PreTechsImplicit": [
+      1952
+    ],
     "Items": [
       6001,
       6002,
@@ -6414,7 +6427,10 @@
     "PreTechs": [
       1817
     ],
-    "PreTechsImplicit": [],
+    "PreTechsImplicit": [
+      1952,
+      1704
+    ],
     "Items": [
       6001,
       6002,
@@ -6504,7 +6520,9 @@
     "PreTechs": [
       1801
     ],
-    "PreTechsImplicit": [],
+    "PreTechsImplicit": [
+      1942
+    ],
     "Items": [
       6001,
       6002,
