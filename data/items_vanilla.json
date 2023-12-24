@@ -2255,13 +2255,13 @@
     "BombType": 0,
     "CraftType": 0,
     "DropRate": 0,
-    "EnemyDropLevel": 6,
+    "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0.359,
-      0.003
+      0,
+      0
     ],
-    "EnemyDropCount": 1,
-    "EnemyDropMask": 2147483647
+    "EnemyDropCount": 0,
+    "EnemyDropMask": 0
   },
   {
     "ID": 1131,
