@@ -53,12 +53,12 @@ namespace ProjectGenesis
         public const string VERSION = "2.9.0";
         public const string DEBUGVERSION = "-Alpha-2.1";
 
+        public static bool LoadCompleted;
+
         internal static ManualLogSource logger;
         internal static ConfigFile configFile;
         internal static UIPlanetFocusWindow PlanetFocusWindow;
         internal static UIQToolsWindow QToolsWindow;
-
-        public static bool LoadCompleted;
 
         internal static int[] TableID;
 
