@@ -28,7 +28,7 @@ namespace ProjectGenesis.Patches.UI
                 if (tabData != null)
                 {
                     GameObject gameObject = Object.Instantiate(TabSystem.GetTabPrefab(), __instance.pickerTrans, false);
-                    ((RectTransform)gameObject.transform).anchoredPosition = new Vector2((tabData.tabIndex + 5) * 70 - 54, -75f);
+                    ((RectTransform)gameObject.transform).anchoredPosition = new Vector2((tabData.tabIndex + 4) * 70 - 54, -75f);
                     var component = gameObject.GetComponent<UITabButton>();
                     var newIcon = Resources.Load<Sprite>(tabData.tabIconPath);
                     component.Init(newIcon, tabData.tabName, tabData.tabIndex + 5,
@@ -36,6 +36,11 @@ namespace ProjectGenesis.Patches.UI
                     _tabs.Add(component);
                 }
             }
+
+            Transform typeButton6Transform = __instance.typeButton6.transform;
+            __instance.typeButton7.transform.localPosition = typeButton6Transform.localPosition;
+            typeButton6Transform.localPosition = __instance.typeButton5.transform.localPosition;
+            __instance.typeButton5.gameObject.SetActive(false);
         }
 
         [HarmonyPatch(typeof(UISignalPicker), "OnTypeButtonClick")]
@@ -81,6 +86,19 @@ namespace ProjectGenesis.Patches.UI
                     if (operand == 14) ci.operand = (sbyte)17;
                     if (operand == 10) ci.operand = (sbyte)7;
                 }
+
+                yield return ci;
+            }
+        }
+        
+        [HarmonyPatch(typeof(UIShowSignalTipExtension), "OnUpdate")]
+        [HarmonyTranspiler]
+        [HarmonyPriority(Priority.Last)]
+        public static IEnumerable<CodeInstruction> UIShowSignalTipExtension_Transpiler(IEnumerable<CodeInstruction> instructions)
+        {
+            foreach (CodeInstruction ci in instructions)
+            {
+                if (ci.opcode == OpCodes.Ldc_I4_S && (sbyte)ci.operand == 12) ci.operand = (sbyte)17;
 
                 yield return ci;
             }

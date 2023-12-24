@@ -71,7 +71,6 @@ namespace ProjectGenesis.Patches.UI
         [HarmonyPatch(typeof(UIItemPicker), "_OnUpdate")]
         [HarmonyPatch(typeof(UIItemPicker), "RefreshIcons")]
         [HarmonyPatch(typeof(UIItemPicker), "TestMouseIndex")]
-        [HarmonyPatch(typeof(UIShowSignalTipExtension), "OnUpdate")]
         [HarmonyTranspiler]
         [HarmonyPriority(Priority.Last)]
         public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)

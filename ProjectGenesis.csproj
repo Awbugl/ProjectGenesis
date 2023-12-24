@@ -146,6 +146,7 @@
         <Compile Include="src\Patches\UI\MultiProductionPatches.cs"/>
         <Compile Include="src\Patches\UI\QTools\ItemNeedDetail.cs"/>
         <Compile Include="src\Patches\UI\QTools\ObjectPool.cs"/>
+        <Compile Include="src\Patches\UI\ResourcesLoadPatches.cs" />
         <Compile Include="src\Patches\UI\UIBuildMenuPatches.cs"/>
         <Compile Include="src\Patches\UI\UILootFilterPatches.cs"/>
         <Compile Include="src\Patches\UI\UIMainMenuPatches.cs" />
