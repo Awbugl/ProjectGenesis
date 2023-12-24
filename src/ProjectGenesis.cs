@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -72,10 +71,10 @@ namespace ProjectGenesis
 
         public void Awake()
         {
+#region Logger
+
             logger = Logger;
             logger.Log(LogLevel.Info, "GenesisBook Awake");
-
-            configFile = Config;
 
             if (DSPBattleCompatibilityPlugin.DSPBattleInstalled)
             {
@@ -83,7 +82,11 @@ namespace ProjectGenesis
                 return;
             }
 
-#region Settings
+#endregion Logger
+
+#region Configs
+
+            configFile = Config;
 
             EnableLDBToolCacheEntry = Config.Bind("config", "UseLDBToolCache", false,
                                                   "Enable LDBTool Cache, which allows you use config to fix some compatibility issues.\n启用LDBTool缓存，允许使用配置文件修复部分兼容性问题");
@@ -97,7 +100,9 @@ namespace ProjectGenesis
 
             Config.Save();
 
-#endregion Settings
+#endregion Configs
+
+#region ResourceData
 
             var executingAssembly = Assembly.GetExecutingAssembly();
 
@@ -117,15 +122,9 @@ namespace ProjectGenesis
             var metalVeinShader = resources_models.bundle.LoadAsset<Shader>("Assets/genesis-models/shaders/PBR Standard Vein Metal COLOR.shader");
             SwapShaderPatches.AddSwapShaderMapping("VF Shaders/Forward/PBR Standard Vein Metal", metalVeinShader);
 
-            TableID = new int[]
-            {
-                TabSystem.RegisterTab("org.LoShin.GenesisBook:org.LoShin.GenesisBookTab1",
-                                      new TabData("精炼页面".TranslateFromJsonSpecial(), "Assets/texpack/矿物处理")),
-                TabSystem.RegisterTab("org.LoShin.GenesisBook:org.LoShin.GenesisBookTab2",
-                                      new TabData("化工页面".TranslateFromJsonSpecial(), "Assets/texpack/化工科技")),
-                TabSystem.RegisterTab("org.LoShin.GenesisBook:org.LoShin.GenesisBookTab3",
-                                      new TabData("防御页面".TranslateFromJsonSpecial(), "Assets/texpack/防御"))
-            };
+#endregion ResourceData
+
+#region NebulaModAPI
 
             NebulaModAPI.RegisterPackets(executingAssembly);
 
@@ -136,13 +135,28 @@ namespace ProjectGenesis
 
             NebulaModAPI.OnPlanetLoadFinished += GenesisBookPlanetDataProcessor.ProcessBytesLater;
 
+#endregion NebulaModAPI
+
             Harmony = new Harmony(MODGUID);
 
-            IEnumerable<Type> types = from t in executingAssembly.GetTypes()
-                                      where t.IsClass && !string.IsNullOrWhiteSpace(t.Namespace) && t.Namespace.StartsWith("ProjectGenesis.Patches")
-                                      select t;
+            foreach (Type type in executingAssembly.GetTypes())
+            {
+                if (type.Namespace == null) continue;
 
-            foreach (Type type in types) Harmony.PatchAll(type);
+                if (!type.Namespace.StartsWith("ProjectGenesis.Patches", StringComparison.Ordinal)) continue;
+
+                Harmony.PatchAll(type);
+            }
+
+            TableID = new int[]
+            {
+                TabSystem.RegisterTab("org.LoShin.GenesisBook:org.LoShin.GenesisBookTab1",
+                                      new TabData("精炼页面".TranslateFromJsonSpecial(), "Assets/texpack/矿物处理")),
+                TabSystem.RegisterTab("org.LoShin.GenesisBook:org.LoShin.GenesisBookTab2",
+                                      new TabData("化工页面".TranslateFromJsonSpecial(), "Assets/texpack/化工科技")),
+                TabSystem.RegisterTab("org.LoShin.GenesisBook:org.LoShin.GenesisBookTab3",
+                                      new TabData("防御页面".TranslateFromJsonSpecial(), "Assets/texpack/防御"))
+            };
 
             RegisterStrings();
 
@@ -257,6 +271,7 @@ namespace ProjectGenesis
 
             ref MechaMaterialSetting material = ref Configs.builtin.mechaArmorMaterials[21];
             material.itemId = ProtoID.I钨块;
+
             material.density = 19.35f;
             material.durability = 4.35f;
 
