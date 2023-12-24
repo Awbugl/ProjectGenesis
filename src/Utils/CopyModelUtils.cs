@@ -178,5 +178,17 @@ namespace ProjectGenesis.Utils
             LDB.items.Select(ProtoID.I水).recipes = new List<RecipeProto> { LDB.recipes.Select(ProtoID.R海水淡化) };
             LDB.items.Select(ProtoID.I氢).isRaw = true;
         }
+
+        internal static void ModifyEnemyHpUpgrade()
+        {
+            ModelProto modelProto = LDB.models.Select(ProtoID.M强袭者);
+            modelProto.HpUpgrade = 1500;
+
+            modelProto = LDB.models.Select(ProtoID.M游骑兵);
+            modelProto.HpUpgrade = 1200;
+
+            modelProto = LDB.models.Select(ProtoID.M守卫者);
+            modelProto.HpUpgrade = 1200;
+        }
     }
 }

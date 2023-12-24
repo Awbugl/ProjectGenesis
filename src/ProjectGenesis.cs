@@ -22,12 +22,12 @@ using ProjectGenesis.Patches.UI.QTools;
 using ProjectGenesis.Utils;
 using UnityEngine;
 using xiaoye97;
-using static ProjectGenesis.Patches.Logic.AddVein.AddVeinPatches;
 using ERecipeType_1 = ERecipeType;
 using static ProjectGenesis.Utils.JsonDataUtils;
 using static ProjectGenesis.Utils.CopyModelUtils;
-using static ProjectGenesis.Patches.Logic.AddVein.ModifyPlanetTheme;
 using static ProjectGenesis.Utils.TranslateUtils;
+using static ProjectGenesis.Patches.Logic.AddVein.AddVeinPatches;
+using static ProjectGenesis.Patches.Logic.AddVein.ModifyPlanetTheme;
 
 // ReSharper disable UnusedVariable
 // ReSharper disable UnusedMember.Local
@@ -224,8 +224,9 @@ namespace ProjectGenesis
             PrefabDescPostFix();
             ModelPostFix();
 
-            ProtoPreload();
-
+            ProtoPreload(); 
+            
+            ModifyEnemyHpUpgrade();
             SetSkillSystem();
             SetMinerMk2Color();
             SetEffectEmitterProto();

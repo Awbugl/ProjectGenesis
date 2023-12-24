@@ -409,7 +409,9 @@
   {
     "ItemID": 7618,
     "ModelID": 516,
-    "turretDamageScale": 4
+    "turretDamageScale": 4,
+    "idleEnergyPerTick": 600,
+    "workEnergyPerTick": 150000
   },
   {
     "ItemID": 6231,
@@ -421,8 +423,6 @@
   {
     "ItemID": 3002,
     "ModelID": 373,
-    "turretDamageScale": 2,
-    "idleEnergyPerTick": 500,
-    "workEnergyPerTick": 25000
+    "turretDamageScale": 2
   }
 ]
