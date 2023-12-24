@@ -180,10 +180,10 @@
     "BombType": 0,
     "CraftType": 0,
     "DropRate": 0.0,
-    "EnemyDropLevel": 1,
+    "EnemyDropLevel": 2,
     "EnemyDropRange": [
-      0.87,
-      0.01
+      0.877,
+      100.0
     ],
     "EnemyDropCount": 2.0,
     "EnemyDropMask": 2147483647
@@ -274,10 +274,10 @@
     "BombType": 0,
     "CraftType": 0,
     "DropRate": 0.0,
-    "EnemyDropLevel": 3,
+    "EnemyDropLevel": 4,
     "EnemyDropRange": [
-      0.89,
-      0.01
+      0.897,
+      100.0
     ],
     "EnemyDropCount": 1.0,
     "EnemyDropMask": 2147483647
@@ -321,10 +321,10 @@
     "BombType": 0,
     "CraftType": 0,
     "DropRate": 0.0,
-    "EnemyDropLevel": 2,
+    "EnemyDropLevel": 3,
     "EnemyDropRange": [
-      0.88,
-      0.01
+      0.887,
+      100.0
     ],
     "EnemyDropCount": 1.0,
     "EnemyDropMask": 2147483647
@@ -616,8 +616,8 @@
     "DropRate": 0.0,
     "EnemyDropLevel": 4,
     "EnemyDropRange": [
-      0.9,
-      0.01
+      0.907,
+      100.0
     ],
     "EnemyDropCount": 1.0,
     "EnemyDropMask": 2147483647
@@ -953,10 +953,10 @@
     "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0
   },
   {
@@ -999,10 +999,10 @@
     "BombType": 0,
     "CraftType": 0,
     "DropRate": 0.0,
-    "EnemyDropLevel": 4,
+    "EnemyDropLevel": 5,
     "EnemyDropRange": [
-      0.91,
-      0.01
+      0.917,
+      100.0
     ],
     "EnemyDropCount": 1.0,
     "EnemyDropMask": 2147483647
@@ -1048,8 +1048,8 @@
     "DropRate": 0.0,
     "EnemyDropLevel": 6,
     "EnemyDropRange": [
-      0.932,
-      0.008
+      0.939,
+      80.0
     ],
     "EnemyDropCount": 1.0,
     "EnemyDropMask": 2147483647
@@ -1196,10 +1196,10 @@
     "BombType": 0,
     "CraftType": 0,
     "DropRate": 0.0,
-    "EnemyDropLevel": 5,
+    "EnemyDropLevel": 6,
     "EnemyDropRange": [
-      0.928,
-      0.004
+      0.935,
+      40.0
     ],
     "EnemyDropCount": 0.25,
     "EnemyDropMask": 2147483647
@@ -1249,7 +1249,7 @@
     "EnemyDropLevel": 7,
     "EnemyDropRange": [
       0.971,
-      0.007
+      70.0
     ],
     "EnemyDropCount": 1.0,
     "EnemyDropMask": 2147483647
@@ -1882,10 +1882,10 @@
     "BombType": 0,
     "CraftType": 0,
     "DropRate": 0.0,
-    "EnemyDropLevel": 6,
+    "EnemyDropLevel": 7,
     "EnemyDropRange": [
-      0.956,
-      0.008
+      0.963,
+      80.0
     ],
     "EnemyDropCount": 1.0,
     "EnemyDropMask": 2147483647
@@ -2136,7 +2136,7 @@
     "EnemyDropLevel": 8,
     "EnemyDropRange": [
       0.995,
-      0.005
+      50.0
     ],
     "EnemyDropCount": 0.25,
     "EnemyDropMask": 2147483647
@@ -4707,8 +4707,8 @@
     "DropRate": 0.0,
     "EnemyDropLevel": 6,
     "EnemyDropRange": [
-      0.964,
-      0.007
+      0.359,
+      0.003
     ],
     "EnemyDropCount": 1.0,
     "EnemyDropMask": 2147483647
@@ -5125,8 +5125,8 @@
     "DropRate": 0.0,
     "EnemyDropLevel": 5,
     "EnemyDropRange": [
-      0.92,
-      0.008
+      0.927,
+      80.0
     ],
     "EnemyDropCount": 0.25,
     "EnemyDropMask": 2147483647
@@ -5217,8 +5217,8 @@
     "DropRate": 0.0,
     "EnemyDropLevel": 6,
     "EnemyDropRange": [
-      0.948,
-      0.008
+      0.955,
+      80.0
     ],
     "EnemyDropCount": 1.0,
     "EnemyDropMask": 2147483647
@@ -5310,7 +5310,7 @@
     "EnemyDropLevel": 7,
     "EnemyDropRange": [
       0.978,
-      0.007
+      70.0
     ],
     "EnemyDropCount": 1.0,
     "EnemyDropMask": 2147483647
@@ -5356,7 +5356,7 @@
     "EnemyDropLevel": 8,
     "EnemyDropRange": [
       0.985,
-      0.005
+      50.0
     ],
     "EnemyDropCount": 0.3,
     "EnemyDropMask": 2147483647
@@ -5401,8 +5401,8 @@
     "DropRate": 0.0,
     "EnemyDropLevel": 6,
     "EnemyDropRange": [
-      0.94,
-      0.008
+      0.947,
+      80.0
     ],
     "EnemyDropCount": 1.0,
     "EnemyDropMask": 2147483647
@@ -5448,7 +5448,7 @@
     "EnemyDropLevel": 8,
     "EnemyDropRange": [
       0.99,
-      0.005
+      50.0
     ],
     "EnemyDropCount": 0.2,
     "EnemyDropMask": 2147483647
