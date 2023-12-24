@@ -50,7 +50,7 @@ namespace ProjectGenesis
         public const string MODGUID = "org.LoShin.GenesisBook";
         public const string MODNAME = "GenesisBook";
         public const string VERSION = "2.9.0";
-        public const string DEBUGVERSION = "-Alpha-2.1";
+        public const string DEBUGVERSION = "";
 
         public static bool LoadCompleted;
 
@@ -159,7 +159,6 @@ namespace ProjectGenesis
             };
 
             RegisterStrings();
-
             ModifyVeinData();
 
             LDBTool.PreAddDataAction += PreAddDataAction;
@@ -271,7 +270,6 @@ namespace ProjectGenesis
 
             ref MechaMaterialSetting material = ref Configs.builtin.mechaArmorMaterials[21];
             material.itemId = ProtoID.I钨块;
-
             material.density = 19.35f;
             material.durability = 4.35f;
 

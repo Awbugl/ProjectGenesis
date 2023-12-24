@@ -1,4 +1,60 @@
-- v2.9.0-alpha2.1 (Experimental 0.2.13)
+- v2.9.0 群星之影 | Shadows of the Galaxy
+  + 适配版本v0.10.28.21014
+  + 为巨型建筑添加单独的快捷建造按钮
+  + 移除了`复合矩阵`的解离特性
+  + 移除了终极科技线
+  + 提高了`地热发电站`的发电量
+  + 重新制作了掉落物外观
+  + 重新设计了聚合物相关配方（影响存档）
+  + 添加了新的光学处理器以及其相关的物品
+  + 调整了部分物品的配方（影响存档）
+  + 调整了部分建筑的配方（影响存档）
+  + 添加新矿物`硫矿`并调整了相应配方（影响存档）
+  + 调整了部分配方及物品的图标
+  + 下调了`量子芯片`的原料需求
+  + 移除了`大气采集站`的建造位置限制
+  + 添加`快速开局`模式
+  + 调整了部分星球的介绍
+  + 调整了物质分解配方的产出
+  + 调整了飞行仓拆除产出
+  + 调整了`导弹防御塔`与`磁化电浆炮`的攻击距离
+  + 调整了制造类巨型建筑的制造速度、耗电、配方时间及原料需求
+  + 新增伊卡洛斯燃料舱在燃尽燃料棒后会返回空燃料棒到背包的功能
+  + 调整了部分武器和弹药的数值
+  + 调整了黑雾地面建筑和单位的耐久度
+  + 将科技探索模式调整为默认开启（可在设置中关闭）
+
+  + Adaptation of version v0.10.28.20959
+  + Added separate quick build button for mega buildings
+  + Removed the dissociation feature of `composite matrixs`
+  + Removed Ultimate Technology Line
+  + Increased power generation from geothermal
+  + Reworked trash appearance
+  + Added optical processor and associated items
+  + Redesigned polymer related recipes (affects save)
+  + Adjusted requirements for some items (affects save)
+  + Adjusted some building recipes (affects save)
+  + Added new mineral `Sulfur Ore` and adjusted recipe accordingly (affects save)
+  + Adjusted some recipe and item icons
+  + Downgraded ingredient requirements for `Quantum Chip`
+  + Removal of restrictions on the location of `Atmospheric Collect Station`
+  + Add `Fast Start` mode
+  + Adjusted the description of some planets
+  + Adjusted the output of Matter Disintegration Recipe
+  + Adjusted the output of the Flight Silo dismantling
+  + Adjusted the attack distance of Missile Towers and Magnetized Plasma Cannons
+  + Adjusted manufacturing speed, power consumption, recipe time, and raw material requirements for manufacturing
+    megastructures.
+  + Added the ability for the Icarus Fuel Pod to return empty fuel rods to the backpack after exhausting them
+  + Adjusted some weapon and ammo values
+  + Adjusted durability of Dark Frog ground structures and units
+  + Adjusted tech exploration mode to be on by default (can be turned off in settings)
+
+
+<details>
+  <summary>点击展开日志 | Click to view all </summary>
+
+- v2.9.0 (Experimental 0.2.13)
   + 调整了部分武器和弹药的数值
   + 调整了黑雾地面建筑和单位的耐久度
   + 修复了信号界面图标缺失的问题
@@ -7,8 +63,6 @@
   + Adjusted durability of Dark Frog ground structures and units.
   + Fixed missing signal icon
 
-<details>
-  <summary>点击展开日志 | Click to view all </summary>
 
 - v2.9.0-alpha2 (Experimental 0.2.12)
   + 修复了建造栏建筑位置错误的问题

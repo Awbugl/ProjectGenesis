@@ -184,7 +184,7 @@
   },
   {
     "ModelID": 373,
-    "turretDamageScale": 2,
+    "turretDamageScale": 4,
     "turretMaxAttackRange": 25
   },
   {
@@ -365,8 +365,8 @@
   },
   {
     "ModelID": 516,
-    "turretDamageScale": 4,
-    "turretMaxAttackRange": 30,
+    "turretDamageScale": 8,
+    "turretMaxAttackRange": 25,
     "idleEnergyPerTick": 600,
     "workEnergyPerTick": 150000,
     "turretAddEnemyExppBase": 48,
