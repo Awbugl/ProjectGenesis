@@ -31,6 +31,7 @@ or open a issue via [github](https://github.com/Awbugl/ProjectGenesis).
 + [BeltSpeedEnhancement](https://dsp.thunderstore.io/package/Awbugl/BeltSpeedEnhancement/)
 + [WaterElectrolysis](https://dsp.thunderstore.io/package/jinxOAO/WaterElectrolysis/)
 + [GigaStationsUpdated](https://dsp.thunderstore.io/package/kremnev8/GigaStationsUpdated/)
++ [ReBuffer](https://dsp.thunderstore.io/package/Eirshy/ReBuffer/)
 
 ## 安装方法
 
