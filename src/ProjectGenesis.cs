@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -6,22 +8,26 @@ using BepInEx.Configuration;
 using BepInEx.Logging;
 using CommonAPI;
 using CommonAPI.Systems;
+using CommonAPI.Systems.ModLocalization;
 using crecheng.DSPModSave;
 using HarmonyLib;
 using NebulaAPI;
 using ProjectGenesis.Compatibility;
+using ProjectGenesis.Patches.Logic;
+using ProjectGenesis.Patches.Logic.AddVein;
 using ProjectGenesis.Patches.Logic.MegaAssembler;
 using ProjectGenesis.Patches.Logic.PlanetFocus;
-using ProjectGenesis.Patches.UI.UIPlanetFocus;
+using ProjectGenesis.Patches.UI.PlanetFocus;
+using ProjectGenesis.Patches.UI.QTools;
 using ProjectGenesis.Utils;
+using UnityEngine;
 using xiaoye97;
 using ERecipeType_1 = ERecipeType;
-using static ProjectGenesis.Utils.PrefabFixUtils;
 using static ProjectGenesis.Utils.JsonDataUtils;
 using static ProjectGenesis.Utils.CopyModelUtils;
-using static ProjectGenesis.Utils.PlanetThemeUtils;
-
-#pragma warning disable CS0618
+using static ProjectGenesis.Utils.TranslateUtils;
+using static ProjectGenesis.Patches.Logic.AddVein.AddVeinPatches;
+using static ProjectGenesis.Patches.Logic.AddVein.ModifyPlanetTheme;
 
 // ReSharper disable UnusedVariable
 // ReSharper disable UnusedMember.Local
@@ -38,31 +44,32 @@ namespace ProjectGenesis
     [BepInDependency(CommonAPIPlugin.GUID)]
     [BepInDependency(LDBToolPlugin.MODGUID)]
     [BepInDependency(NebulaModAPI.API_GUID)]
-    [BepInDependency(IncompatibleCheckPlugin.MODGUID, BepInDependency.DependencyFlags.SoftDependency)]
-    [CommonAPISubmoduleDependency(nameof(ProtoRegistry), nameof(CustomDescSystem), nameof(TabSystem), nameof(AssemblerRecipeSystem))]
+    [BepInDependency(InstallationCheckPlugin.MODGUID, BepInDependency.DependencyFlags.SoftDependency)]
+    [CommonAPISubmoduleDependency(nameof(ProtoRegistry), nameof(TabSystem))]
+    [CommonAPISubmoduleDependency(nameof(LocalizationModule))]
     public class ProjectGenesis : BaseUnityPlugin, IModCanSave, IMultiplayerMod
     {
         public const string MODGUID = "org.LoShin.GenesisBook";
         public const string MODNAME = "GenesisBook";
-        public const string VERSION = "2.6.0";
-
-        public string Version => VERSION;
+        public const string VERSION = "2.9.0";
+        public const string DEBUGVERSION = "-Alpha-2.1";
 
         internal static ManualLogSource logger;
         internal static ConfigFile configFile;
         internal static UIPlanetFocusWindow PlanetFocusWindow;
+        internal static UIQToolsWindow QToolsWindow;
 
-        //无限堆叠开关(私货)
-        private readonly bool StackSizeButton = false;
+        public static bool LoadCompleted;
 
         internal static int[] TableID;
-        private Harmony Harmony;
-
-        internal static bool AtmosphericEmissionValue;
 
         internal static string ModPath;
 
-        private static ConfigEntry<bool> EnableAtmosphericEmissionEntry;
+        internal static ConfigEntry<bool> EnableLDBToolCacheEntry, EnableHideTechModeEntry, DisableMessageBoxEntry;
+
+        internal static ConfigEntry<KeyboardShortcut> QToolsHotkey;
+
+        private Harmony Harmony;
 
         public void Awake()
         {
@@ -71,16 +78,27 @@ namespace ProjectGenesis
 
             configFile = Config;
 
-            if (IncompatibleCheckPlugin.DSPBattleInstalled)
+            if (DSPBattleCompatibilityPlugin.DSPBattleInstalled)
             {
                 logger.Log(LogLevel.Error, "They Come From Void is installed, which is incompatible with GenesisBook. Load Cancelled.");
                 return;
             }
 
-            EnableAtmosphericEmissionEntry = Config.Bind("config", "EnableAtmosphericEmission", true,
-                                                         "Enable Atmospheric Emission tech effect in game, which may casue resource waste in low resource rate game.\n是否启用大气排污科技效果；注：大气排污科技在低资源倍率下可能导致资源浪费");
-            AtmosphericEmissionValue = EnableAtmosphericEmissionEntry.Value;
+#region Settings
+
+            EnableLDBToolCacheEntry = Config.Bind("config", "UseLDBToolCache", false,
+                                                  "Enable LDBTool Cache, which allows you use config to fix some compatibility issues.\n启用LDBTool缓存，允许使用配置文件修复部分兼容性问题");
+
+            EnableHideTechModeEntry = Config.Bind("config", "HideTechMode", true,
+                                                  "Enable Tech Exploration Mode, which will hide locked techs in tech tree.\n启用科技探索模式，启用后将隐藏未解锁的科技");
+
+            DisableMessageBoxEntry = Config.Bind("config", "DiableMessageBox", false, "Don't show message when GenesisBook is loaded.\n禁用首次加载时的提示信息");
+
+            QToolsHotkey = Config.Bind("config", "QToolsHotkey", KeyboardShortcut.Deserialize("BackQuote"), "Shortcut to open QTools window");
+
             Config.Save();
+
+#endregion Settings
 
             var executingAssembly = Assembly.GetExecutingAssembly();
 
@@ -94,15 +112,21 @@ namespace ProjectGenesis
             resources_models.LoadAssetBundle("genesis-models");
             ProtoRegistry.AddResource(resources_models);
 
+            var stoneVeinShader = resources_models.bundle.LoadAsset<Shader>("Assets/genesis-models/shaders/PBR Standard Vein Stone COLOR.shader");
+            SwapShaderPatches.AddSwapShaderMapping("VF Shaders/Forward/PBR Standard Vein Stone", stoneVeinShader);
+
+            var metalVeinShader = resources_models.bundle.LoadAsset<Shader>("Assets/genesis-models/shaders/PBR Standard Vein Metal COLOR.shader");
+            SwapShaderPatches.AddSwapShaderMapping("VF Shaders/Forward/PBR Standard Vein Metal", metalVeinShader);
+
             TableID = new int[]
-                      {
-                          TabSystem.RegisterTab("org.LoShin.GenesisBook:org.LoShin.GenesisBookTab1",
-                                                new TabData("精炼页面".TranslateFromJson(), "Icons/Tech/1101")),
-                          TabSystem.RegisterTab("org.LoShin.GenesisBook:org.LoShin.GenesisBookTab2",
-                                                new TabData("化工页面".TranslateFromJson(), "Assets/texpack/化工科技")),
-                          TabSystem.RegisterTab("org.LoShin.GenesisBook:org.LoShin.GenesisBookTab3",
-                                                new TabData("信息页面".TranslateFromJson(), "Assets/texpack/主机科技")),
-                      };
+            {
+                TabSystem.RegisterTab("org.LoShin.GenesisBook:org.LoShin.GenesisBookTab1",
+                                      new TabData("精炼页面".TranslateFromJsonSpecial(), "Assets/texpack/矿物处理")),
+                TabSystem.RegisterTab("org.LoShin.GenesisBook:org.LoShin.GenesisBookTab2",
+                                      new TabData("化工页面".TranslateFromJsonSpecial(), "Assets/texpack/化工科技")),
+                TabSystem.RegisterTab("org.LoShin.GenesisBook:org.LoShin.GenesisBookTab3",
+                                      new TabData("防御页面".TranslateFromJsonSpecial(), "Assets/texpack/防御"))
+            };
 
             NebulaModAPI.RegisterPackets(executingAssembly);
 
@@ -115,27 +139,72 @@ namespace ProjectGenesis
 
             Harmony = new Harmony(MODGUID);
 
-            foreach (var type in executingAssembly.GetTypes()) Harmony.PatchAll(type);
+            IEnumerable<Type> types = from t in executingAssembly.GetTypes()
+                                      where t.IsClass && !string.IsNullOrWhiteSpace(t.Namespace) && t.Namespace.StartsWith("ProjectGenesis.Patches")
+                                      select t;
+
+            foreach (Type type in types) Harmony.PatchAll(type);
+
+            RegisterStrings();
+
+            ModifyVeinData();
 
             LDBTool.PreAddDataAction += PreAddDataAction;
             LDBTool.PostAddDataAction += PostAddDataAction;
+
+            LoadCompleted = true;
         }
+
+        private void Update()
+        {
+            if (VFInput.inputing) return;
+            if (QToolsWindow) QToolsWindow._OnUpdate();
+        }
+
+        public void Export(BinaryWriter w)
+        {
+            MegaAssemblerPatches.Export(w);
+            PlanetFocusPatches.Export(w);
+            QuantumStoragePatches.Export(w);
+        }
+
+        public void Import(BinaryReader r)
+        {
+            MegaAssemblerPatches.Import(r);
+            PlanetFocusPatches.Import(r);
+            QuantumStoragePatches.Import(r);
+        }
+
+        public void IntoOtherSave()
+        {
+            MegaAssemblerPatches.IntoOtherSave();
+            PlanetFocusPatches.IntoOtherSave();
+            QuantumStoragePatches.IntoOtherSave();
+        }
+
+        public string Version => VERSION;
+
+        public bool CheckVersion(string hostVersion, string clientVersion) => hostVersion.Equals(clientVersion);
 
         private void PreAddDataAction()
         {
-            LDB.veins.Select(14).name = "钨矿";
-            LDB.veins.Select(14).Name = "钨矿".TranslateFromJson();
-
             LDB.items.OnAfterDeserialize();
-
-            AdjustPlanetThemeDataVanilla();
+            ModifyPlanetThemeDataVanilla();
             AddCopiedModelProto();
+            AddEffectEmitterProto();
             ImportJson(TableID);
+            ModifyUpgradeTech();
         }
 
         private void PostAddDataAction()
         {
-            LDB.strings.OnAfterDeserialize();
+            //飞行舱拆除
+            VegeProto vegeProto = LDB.veges.Select(9999);
+            vegeProto.MiningItem = new[] { ProtoID.I四氢双环戊二烯燃料棒, ProtoID.I铁块, ProtoID.I铜块 };
+            vegeProto.MiningCount = new[] { 3, 70, 40 };
+            vegeProto.MiningChance = new float[] { 1, 1, 1 };
+            vegeProto.Preload();
+
             LDB.items.OnAfterDeserialize();
             LDB.recipes.OnAfterDeserialize();
             LDB.techs.OnAfterDeserialize();
@@ -145,92 +214,98 @@ namespace ProjectGenesis
             LDB.themes.OnAfterDeserialize();
             LDB.veins.OnAfterDeserialize();
 
-            GameMain.gpuiManager.Init();
-
-            foreach (var milestone in LDB.milestones.dataArray) milestone.Preload();
-            foreach (var journalPattern in LDB.journalPatterns.dataArray) journalPattern.Preload();
-
-            //飞行舱拆除
-            var @base = LDB.veges.Select(9999);
-            @base.MiningItem = new[] { 1801, 1101, 1104 };
-            @base.MiningCount = new[] { 6, 50, 50 };
-            @base.MiningChance = new float[] { 1, 1, 1 };
-            @base.Preload();
-
-            ref var locstrs = ref AccessTools.StaticFieldRefAccess<StringProtoSet>(AccessTools.Field(typeof(Localization), "_strings"))();
-            locstrs = LDB.strings;
-
-            foreach (var proto in LDB.veins.dataArray)
+            if (GameMain.instance != null)
             {
-                proto.Preload();
-                proto.name = proto.Name.TranslateFromJson();
+                GameMain.instance.CreateGPUInstancing();
+                GameMain.instance.CreateBPGPUInstancing();
+                GameMain.instance.CreateMultithreadSystem();
             }
 
-            foreach (var proto in LDB.techs.dataArray) proto.Preload();
+            PrefabDescPostFix();
+            ModelPostFix();
 
-            for (var i = 0; i < LDB.items.dataArray.Length; ++i)
+            ProtoPreload(); 
+            
+            ModifyEnemyHpUpgrade();
+            SetSkillSystem();
+            SetMinerMk2Color();
+            SetEffectEmitterProto();
+
+            VFEffectEmitter.Init();
+
+            ItemProto.InitFuelNeeds();
+            ItemProto.InitTurretNeeds();
+            ItemProto.InitFluids();
+            ItemProto.InitTurrets();
+            ItemProto.InitEnemyDropTables();
+            ItemProto.InitItemIds();
+            ItemProto.InitItemIndices();
+            ItemProto.InitMechaMaterials();
+            ItemProto.InitFighterIndices();
+            ModelProto.InitMaxModelIndex();
+            RecipeProto.InitFractionatorNeeds();
+            RaycastLogic.LoadStatic();
+
+            ItemProto.stationCollectorId = ProtoID.I轨道采集器;
+
+            ItemPostFix();
+
+            StorageComponent.staticLoaded = false;
+            StorageComponent.LoadStatic();
+
+            UIBuildMenu.staticLoaded = false;
+            UIBuildMenu.StaticLoad();
+
+            ref MechaMaterialSetting material = ref Configs.builtin.mechaArmorMaterials[21];
+            material.itemId = ProtoID.I钨块;
+            material.density = 19.35f;
+            material.durability = 4.35f;
+
+            // JsonHelper.ExportAsJson(@"D:\Git\ProjectGenesis\data");
+        }
+
+        private static void ProtoPreload()
+        {
+            foreach (MilestoneProto milestone in LDB.milestones.dataArray) milestone.Preload();
+            foreach (JournalPatternProto journalPattern in LDB.journalPatterns.dataArray) journalPattern.Preload();
+
+            foreach (VeinProto proto in LDB.veins.dataArray)
+            {
+                proto.Preload();
+                proto.name = proto.Name.Translate();
+            }
+
+            foreach (TechProto proto in LDB.techs.dataArray) proto.Preload();
+
+            for (int i = 0; i < LDB.items.dataArray.Length; ++i)
             {
                 LDB.items.dataArray[i].recipes = null;
                 LDB.items.dataArray[i].rawMats = null;
                 LDB.items.dataArray[i].Preload(i);
             }
 
-            for (var i = 0; i < LDB.recipes.dataArray.Length; ++i) LDB.recipes.dataArray[i].Preload(i);
+            for (int i = 0; i < LDB.recipes.dataArray.Length; ++i)
+            {
+                LDB.recipes.dataArray[i].Preload(i);
+            }
 
-            foreach (var proto in LDB.techs.dataArray)
+            foreach (TechProto proto in LDB.techs.dataArray)
             {
                 proto.PreTechsImplicit = proto.PreTechsImplicit.Except(proto.PreTechs).ToArray();
                 proto.UnlockRecipes = proto.UnlockRecipes.Distinct().ToArray();
                 proto.Preload2();
             }
-
-            ModelPostFix(LDB.models);
-            ItemPostFix(LDB.items);
-            SetBuildBar();
-
-            ItemProto.InitFluids();
-            ItemProto.InitItemIds();
-            ItemProto.InitFuelNeeds();
-            ItemProto.InitItemIndices();
-            ItemProto.InitMechaMaterials();
-            ItemProto.stationCollectorId = 2105;
-
-            foreach (var proto in LDB.items.dataArray)
-            {
-                StorageComponent.itemIsFuel[proto.ID] = proto.HeatValue > 0L;
-                if (StackSizeButton) proto.StackSize = 10000000;
-                StorageComponent.itemStackCount[proto.ID] = proto.StackSize;
-            }
-
-            // JsonHelper.ExportAsJson(@"D:\Git\ProjectGenesis\dependencies");
         }
 
-        internal static void SetAtmosphericEmission(bool value)
+        internal static void SetConfig(bool currentLDBToolCache, bool currentHideTechMode, bool currentDisableMessageBox)
         {
-            AtmosphericEmissionValue = value;
-            EnableAtmosphericEmissionEntry.Value = value;
-            logger.LogInfo("AtmosphericEmissionSettingChanged");
+            EnableLDBToolCacheEntry.Value = currentLDBToolCache;
+            EnableHideTechModeEntry.Value = currentHideTechMode;
+            DisableMessageBoxEntry.Value = currentDisableMessageBox;
+            logger.LogInfo("SettingChanged");
             configFile.Save();
         }
 
-        public void Export(BinaryWriter w)
-        {
-            MegaAssemblerPatches.Export(w);
-            PlanetFocusPatches.Export(w);
-        }
-
-        public void Import(BinaryReader r)
-        {
-            MegaAssemblerPatches.Import(r);
-            PlanetFocusPatches.Import(r);
-        }
-
-        public void IntoOtherSave()
-        {
-            MegaAssemblerPatches.IntoOtherSave();
-            PlanetFocusPatches.IntoOtherSave();
-        }
-
-        public bool CheckVersion(string hostVersion, string clientVersion) => hostVersion.Equals(clientVersion);
+        internal static void LogInfo(object data) => logger.LogInfo(data);
     }
 }

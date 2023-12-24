@@ -13,16 +13,16 @@ namespace ProjectGenesis.Patches.Logic.PlanetFocus
             var matcher = new CodeMatcher(instructions);
 
             // wind
-            matcher.MatchForward(false,
-                                 new CodeMatch(OpCodes.Call,
-                                               AccessTools.Method(typeof(PowerGeneratorComponent), nameof(PowerGeneratorComponent.EnergyCap_Wind))));
+            matcher.MatchForward(
+                false,
+                new CodeMatch(OpCodes.Call, AccessTools.Method(typeof(PowerGeneratorComponent), nameof(PowerGeneratorComponent.EnergyCap_Wind))));
             matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0));
             matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(PlanetFocusPatches), nameof(EnergyCap_Wind))));
 
             //pv
-            matcher.MatchForward(false,
-                                 new CodeMatch(OpCodes.Call,
-                                               AccessTools.Method(typeof(PowerGeneratorComponent), nameof(PowerGeneratorComponent.EnergyCap_PV))));
+            matcher.MatchForward(
+                false,
+                new CodeMatch(OpCodes.Call, AccessTools.Method(typeof(PowerGeneratorComponent), nameof(PowerGeneratorComponent.EnergyCap_PV))));
             matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0));
             matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(PlanetFocusPatches), nameof(EnergyCap_PV))));
 
@@ -43,13 +43,13 @@ namespace ProjectGenesis.Patches.Logic.PlanetFocus
 
         public static long EnergyCap_Wind(long power, PowerSystem powerSystem)
         {
-            var exist = ContainsFocus(powerSystem.factory.planetId, 6525);
+            bool exist = ContainsFocus(powerSystem.factory.planetId, 6525);
             return exist ? (long)(power * 1.2) : power;
         }
 
         public static long EnergyCap_PV(long power, PowerSystem powerSystem)
         {
-            var exist = ContainsFocus(powerSystem.factory.planetId, 6526);
+            bool exist = ContainsFocus(powerSystem.factory.planetId, 6526);
             return exist ? (long)(power * 1.2) : power;
         }
 
@@ -64,7 +64,7 @@ namespace ProjectGenesis.Patches.Logic.PlanetFocus
                     focusid = 6524;
                     extra = 1.2;
                     break;
-                
+
                 case 2:
                     focusid = 6529;
                     extra = 1.2;
@@ -79,7 +79,7 @@ namespace ProjectGenesis.Patches.Logic.PlanetFocus
                     return power;
             }
 
-            var exist = ContainsFocus(powerSystem.factory.planetId, focusid);
+            bool exist = ContainsFocus(powerSystem.factory.planetId, focusid);
             return exist ? (long)(power * extra) : power;
         }
 
@@ -94,7 +94,7 @@ namespace ProjectGenesis.Patches.Logic.PlanetFocus
                                                AccessTools.Field(typeof(PowerGeneratorComponent),
                                                                  nameof(PowerGeneratorComponent.capacityCurrentTick))));
 
-            var comp = matcher.Instruction;
+            CodeInstruction comp = matcher.Instruction;
 
             matcher.Advance(2).InsertAndAdvance(comp);
 
@@ -104,7 +104,7 @@ namespace ProjectGenesis.Patches.Logic.PlanetFocus
 
             matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Call,
                                                          AccessTools.Method(typeof(PlanetFocusPatches), nameof(UIPowerGeneratorWindow_OnUpdate))));
-            
+
             return matcher.InstructionEnumeration();
         }
 
@@ -131,7 +131,7 @@ namespace ProjectGenesis.Patches.Logic.PlanetFocus
                         focusid = 6524;
                         extra = 1.2;
                         break;
-                    
+
                     case 2:
                         focusid = 6529;
                         extra = 1.2;
@@ -147,7 +147,7 @@ namespace ProjectGenesis.Patches.Logic.PlanetFocus
                 }
             }
 
-            var exist = ContainsFocus(factory.planetId, focusid);
+            bool exist = ContainsFocus(factory.planetId, focusid);
             return exist ? (long)(power * extra) : power;
         }
     }

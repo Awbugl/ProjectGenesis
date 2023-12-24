@@ -8,6 +8,8 @@ namespace ProjectGenesis.Patches.Logic
 {
     public static class ThermalPowerGenPatches
     {
+        private static readonly int[] FuelRods = { ProtoID.I氢燃料棒, ProtoID.I煤油燃料棒, ProtoID.I四氢双环戊二烯燃料棒 };
+
         [HarmonyPatch(typeof(PlanetFactory), "EntityFastFillIn")]
         [HarmonyPatch(typeof(PlanetFactory), "InsertInto")]
         [HarmonyTranspiler]
@@ -32,23 +34,11 @@ namespace ProjectGenesis.Patches.Logic
 
         public static int[] ThermalPowerGen_InsertMethod(ref PowerGeneratorComponent component, PlanetFactory factory)
         {
-            var componentFuelMask = component.fuelMask;
-
-            if (componentFuelMask == 5)
-            {
-                component.fuelMask = 2;
-                return ItemProto.fuelNeeds[2];
-            }
-
-            if (componentFuelMask == 6)
-            {
-                component.fuelMask = 16;
-                return ItemProto.fuelNeeds[16];
-            }
+            short componentFuelMask = component.fuelMask;
 
             if (componentFuelMask != 1) return ItemProto.fuelNeeds[componentFuelMask];
 
-            return factory.planet.gasItems.Contains(ProtoIDUsedByPatches.I氧) ? ItemProto.fuelNeeds[1] : FuelRods;
+            return factory.planet.gasItems.Contains(ProtoID.I氧) ? ItemProto.fuelNeeds[1] : FuelRods;
         }
 
         [HarmonyPatch(typeof(UIPowerGeneratorWindow), "OnFuelButtonClick")]
@@ -71,31 +61,17 @@ namespace ProjectGenesis.Patches.Logic
             return matcher.InstructionEnumeration();
         }
 
-        private static readonly int[] FuelRods = { 1801, 6216, 6217, 6218 };
-
         public static int[] UIPowerGenerator_InsertMethod(UIPowerGeneratorWindow window)
         {
-            var component = window.powerSystem.genPool[window.generatorId];
+            PowerGeneratorComponent component = window.powerSystem.genPool[window.generatorId];
 
-            var componentFuelMask = component.fuelMask;
-
-            if (componentFuelMask == 5)
-            {
-                component.fuelMask = 2;
-                return ItemProto.fuelNeeds[2];
-            }
-
-            if (componentFuelMask == 6)
-            {
-                component.fuelMask = 16;
-                return ItemProto.fuelNeeds[16];
-            }
+            short componentFuelMask = component.fuelMask;
 
             if (componentFuelMask != 1) return ItemProto.fuelNeeds[componentFuelMask];
 
-            if (window.factory.planet.gasItems.Contains(ProtoIDUsedByPatches.I氧)) return ItemProto.fuelNeeds[1];
+            if (window.factory.planet.gasItems.Contains(ProtoID.I氧)) return ItemProto.fuelNeeds[1];
 
-            var playerInhandItemId = window.player.inhandItemId;
+            int playerInhandItemId = window.player.inhandItemId;
 
             if (playerInhandItemId > 0 && window.player.inhandItemCount > 0)
             {

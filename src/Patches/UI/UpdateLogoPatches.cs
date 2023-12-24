@@ -17,20 +17,23 @@ namespace ProjectGenesis.Patches.UI
         public static void UIEscMenu_OnOpen() => UpdateLogo();
 
         [HarmonyPostfix]
-        [HarmonyPatch(typeof(GameOption), "Apply")]
+        [HarmonyPatch(typeof(UIOptionWindow), "OnApplyClick")]
+        [HarmonyPatch(typeof(UIOptionWindow), "OnCancelClick")]
         public static void UpdateGameOption_Apply() => UpdateLogo();
 
         private static void UpdateLogo()
         {
-            var mainLogo = GameObject.Find("UI Root/Overlay Canvas/Main Menu/dsp-logo");
-            var escLogo = GameObject.Find("UI Root/Overlay Canvas/In Game/Esc Menu/logo");
+            GameObject mainLogo = GameObject.Find("UI Root/Overlay Canvas/Main Menu/dsp-logo");
+            GameObject escLogo = GameObject.Find("UI Root/Overlay Canvas/In Game/Esc Menu/logo");
 
-            var iconstr = Localization.language == Language.zhCN ? "Assets/texpack/中文图标" : "Assets/texpack/英文图标";
-            var texture = Resources.Load<Sprite>(iconstr).texture;
+            string iconstr = Localization.isZHCN ? "Assets/texpack/黑雾中文图标" : "Assets/texpack/黑雾英文图标";
+            Texture2D texture = Resources.Load<Sprite>(iconstr).texture;
             mainLogo.GetComponent<RawImage>().texture = texture;
             escLogo.GetComponent<RawImage>().texture = texture;
-            mainLogo.GetComponent<RectTransform>().sizeDelta = new Vector2(texture.width, texture.height);
-            escLogo.GetComponent<RectTransform>().sizeDelta = new Vector2(texture.width, texture.height);
+            mainLogo.GetComponent<RectTransform>().sizeDelta = new Vector2(600f, 250f);
+            mainLogo.GetComponent<RectTransform>().anchoredPosition = new Vector2(120, -60);
+            escLogo.GetComponent<RectTransform>().sizeDelta = new Vector2(600f, 250f);
+            escLogo.GetComponent<RectTransform>().anchoredPosition = new Vector2(30, 300);
         }
     }
 }

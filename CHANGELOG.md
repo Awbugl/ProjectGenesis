@@ -1,3 +1,301 @@
+- v2.9.0-alpha2.1 (Experimental 0.2.13)
+  + 调整了部分武器和弹药的数值
+  + 调整了黑雾地面建筑和单位的耐久度
+  + 修复了信号界面图标缺失的问题
+
+  + Adjusted some weapon and ammo values
+  + Adjusted durability of Dark Frog ground structures and units.
+  + Fixed missing signal icon
+
+<details>
+  <summary>点击展开日志 | Click to view all </summary>
+
+- v2.9.0-alpha2 (Experimental 0.2.12)
+  + 修复了建造栏建筑位置错误的问题
+  + 修复了`动力引擎`科技位置不正确的问题
+  + 修复了文本本地化语言读取不正确的问题
+  + 修复了`量子储物仓`存读档后数据丢失的问题
+  + 修复了`卫星配电站`制造速度不正确的问题
+  + 修复了物流塔单条传送带输出被限制在1800/min的问题
+  + 修复了机甲自定义钨块强度与密度数据不正确的问题
+  + 调整了部分建筑的制造需求
+  + 调整了部分物品的介绍
+  + 调整了部分星球的介绍
+  + 调整了物质分解配方的产出
+  + 调整了`负熵熔炉`的耗电
+  + 调整了飞行仓拆除产出
+  + 调整了快速开局模式的额外物品的种类和数量
+  + 调整了`导弹防御塔`与`磁化电浆炮`的攻击距离
+  + 调整了制造类巨型建筑的制造速度、耗电、配方时间及原料需求
+  + 新增伊卡洛斯燃料舱在燃尽燃料棒后会返回空燃料棒到背包的功能
+  + 新增与`FastTravelEnabler`的兼容补丁
+  + 将科技探索模式调整为默认开启（可在设置中关闭）
+
+  + Fixed incorrect placement of buildings in the build bar
+  + Fixed incorrect placement of engine tech.
+  + Fixed incorrectly localization.
+  + Fixed an issue where data of Quantum Dopot was lost when load and save.
+  + Fixed incorrect manufacturing speed of Satellite Distribution Stations.
+  + Fixed an issue where the output of a single conveyor belt in the Logistics Tower was limited to 1800/min.
+  + Adjusted the manufacturing requirements of some buildings.
+  + Adjusted the description of some items.
+  + Adjusted the description of some planets.
+  + Adjusted the output of Matter Disintegration Recipe.
+  + Adjusted power consumption of Negentropic Furnace.
+  + Adjusted the output of the Flight Silo dismantling
+  + Adjusted the types and quantities of extra items in Fast Start Mode
+  + Adjusted the attack distance of Missile Towers and Magnetized Plasma Cannons.
+  + Adjusted manufacturing speed, power consumption, recipe time, and raw material requirements for manufacturing
+    megastructures.
+  + Added the ability for the Icarus Fuel Pod to return empty fuel rods to the backpack after exhausting them.
+  + Added patch for compatibility with `FastTravelEnabler`.
+  + Adjusted tech exploration mode to be on by default (can be turned off in settings)
+
+
+- v2.9.0-alpha1 (Experimental 0.2.7) 群星之影 | Shadows of the Galaxy
+  + 适配版本v0.10.28.20959
+  + 为巨型建筑添加单独的快捷建造按钮
+  + 移除了`复合矩阵`的解离特性
+  + 移除了终极科技线
+  + 提高了`地热发电站`的发电量
+  + 重新制作了掉落物外观
+  + 重新设计了聚合物相关配方（影响存档）
+  + 添加了新的光学处理器以及其相关的物品
+  + 调整了部分物品的配方（影响存档）
+  + 调整了部分建筑的配方（影响存档）
+  + 添加新矿物`硫矿`并调整了相应配方（影响存档）
+  + 调整了部分配方及物品的图标
+  + 下调了`量子芯片`的原料需求
+  + 移除了`大气采集站`的建造位置限制
+  + 添加`快速开局`模式
+
+  + Adaptation of version v0.10.28.20959
+  + Added separate quick build button for mega buildings
+  + Removed the dissociation feature of `composite matrixs`
+  + Removed Ultimate Technology Line
+  + Increased power generation from geothermal
+  + Reworked trash appearance
+  + Added optical processor and associated items
+  + Redesigned polymer related recipes (affects save)
+  + Adjusted requirements for some items (affects save)
+  + Adjusted some building recipes (affects save)
+  + Added new mineral `Sulfur Ore` and adjusted recipe accordingly (affects save)
+  + Adjusted some recipe and item icons
+  + Downgraded ingredient requirements for `Quantum Chip`
+  + Removal of restrictions on the location of `Atmospheric Collect Station`
+  + Add `Fast Start` mode
+
+
+- v2.8.0-beta2 (Experimental 0.2.6)
+  + 调整了配方`环氧氯丙烷`、`双酚A`的默认堆积逻辑
+  + 调整了部分配方及物品的图标
+  + 调整了部分矿物的手动挖掘耗时
+  + 添加物品`同位素温差发电机`
+
+  + Adjusted default stacking logic for recipes `Epichlorohydrin`, `Bisphenol A`
+  + Adjusted icons for some recipes and items
+  + Adjusted manual digging time for some minerals
+  + Added item `Radioisotope thermoelectric generator`
+
+
+- v2.8.0-beta1 (Experimental 0.2.5) 轻韧革新 | Lightweight Evolution
+  + 加强与 `GalacticScale` mod的兼容，母星稀有矿物资源现在可正常生成
+  + 添加了对mod未正确安装的检测和提示
+  + 调整了`小型运载火箭`的制造需求
+
+  + Enhanced compatibility with the `GalacticScale` mod, rare mineral resources from the home planet are now generated
+    properly
+  + Added detection and hints when mod installed incorrectly
+  + Adjusted `Small Launch Vehicle` requirements
+
+
+- v2.8.0-alpha3 (Experimental 0.2.3)
+  + 恢复与 `GalacticScale` mod的兼容
+  + 为出生点添加了固定生成的铝矿脉
+  + 调整了部分物品的热值
+  + 移除了`氨`海洋
+
+  + Added patch for compatibility with the `GalacticScale` mod
+  + Added a fixed generation of aluminum veins to the birth point
+  + Adjusted the heat value for some items
+  + Removed the `Ammonia` ocean
+
+
+- v2.8.0-alpha2 (Experimental 0.2.2)
+  + 重新设计了化学能燃料及对应配方（影响存档）
+  + 重新设计了`处理器`及对应配方（影响存档）
+  + 重新设计了`湿件主机`对应配方（影响存档）
+  + 重新设计了`标准制造单元`的制造需求和可制造的配方类型（影响存档）
+  + 调整了开局物资的数量
+  + 调整了部分科技
+  + 调整了部分物品的图标
+  + 添加与 `Planet Vein Utilization` mod的兼容补丁
+  + 添加与 `GalacticScale` mod的不兼容提示
+
+  + Redesigned chemical energy fuels and their recipes (affect save)
+  + Redesigned `Processor` and their recipes (affect save)
+  + Redesigned `Biological computer` and their recipes (affect save)
+  + Redesigned `Standard Assembler` requirements and the types of recipes that can be made (affect save)
+  + Adjusted the amount of supplies at the start of the game
+  + Adjusted some teches
+  + Adjusted the icons for some items
+  + Added patch for compatibility with the `Planet Vein Utilization` mod
+  + Added an incompatibility tip for the `GalacticScale` mod
+
+
+- v2.8.0-alpha1 (Experimental 0.2.1)
+  + 恢复矿物`单极磁石`
+  + 添加新矿物`钨矿`、`放射性矿物`并调整了相应配方（影响存档）
+  + 添加新矿物`铝矿`并修改了大量配方以适应平衡矿物的需求（影响存档）
+  + 调整了裂变燃料的能量数值
+  + 调整了物品和配方在UI中的排序和位置
+  + 修复了部分文本未被正确替换的问题
+
+  + Restored the mineral `Unipolar Magnet`
+  + Added new mineral `Tungsten Ore`, `Radioactive ore` and adjusted recipes accordingly (affect save)
+  + Added new mineral `Aluminum Ore` and modified a number of recipes to accommodate new mineral (affect save)
+  + Adjusted energy value for fission fuel
+  + Adjusted the sorting and placement of items and recipes in selection UI.
+  + Fixed some text not being replaced correctly
+
+
+- v2.7.1-beta1 (Experimental 0.1.7)
+  + 移除配方`石墨烯（先进）`,`等离子精炼（高效）`,`有机液体离心`（影响存档）
+  + 调整了部分星球的海洋类型（影响存档）
+  + 具有特殊海洋类型的星球不再在母星系内生成（影响存档）
+  + 移除物品`乙烯`, 调整物品`聚乙烯`为`聚丙烯`并修改相应配方（影响存档）
+  + 为`石墨烯（高效）`配方调整了特殊堆积逻辑
+  + 调整了大抽水机的出口数量
+  + 调整了裂变燃料的需求数值（影响存档）
+  + 微调了母星的矿物生成算法，现在生成在海岸的矿物不再被掩埋
+  + 修复了部分文本未被正确替换的问题
+
+  + Removed recipes `Graphene (advanced-2)`, `Plasma refining (advanced)`, `Toxic liquid centrifugation` (affect save)
+  + Adjusted ocean types of some planets (affect save)
+  + Planets with special ocean types no longer spawn in the home system (affect save)
+  + Removed item `Ethylene`, changed item `Polyethylene` to `Polypropylene` and modified recipe (affect save)
+  + Adjusted special stacking logic for `Graphene (advanced)` recipe
+  + Adjusted the pose of the mega pumping machine
+  + Adjusted fissile fuel synthesis requirements (affect save)
+  + Fine-tuned the home planet's mineral generation algorithm so that minerals generated on the coast are no longer
+    buried
+  + Fixed some text not being replaced correctly
+
+
+- Experimental 0.1.6
+  + 调整了大气采集站的速度
+  + 调整了开局科技解锁状态
+  + 修复了部分文本未被正确替换的问题
+
+  + Adjusted the base speed of the atmospheric collection station
+  + Adjusted tech unlock status of the opening game
+  + Fixed the problem that some texts were not replaced correctly
+
+
+- Experimental 0.1.5
+  + 调整了大抽水机的耗电
+  + 提高了大气采集站的基础速度
+  + 添加了部分教程文本
+  + 储液罐将使用科技解锁的最大堆叠层数输出物品
+  + 修复了0.1.4测试版本的更新失误
+
+  + Adjusted the power consumption of the mega pumping machine
+  + Improved the base speed of the atmospheric collection station
+  + Added some tutorial text
+  + Tanks will output items using the maximum stacked layers by the tech
+  + Fixed Experimental v0.1.4 update bugs
+
+
+- Experimental 0.1.4
+  + 修改设置项的修改堆积逻辑的影响范围为：除黄字标注外的化工/精炼/反应釜配方
+  + 修复了虫洞科技不生效的bug
+  + 调整了开局科技解锁状态
+
+  + Changed the scope of setting item to modify stacking logic to chemical/refining/reactor recipes except those marked
+  + Fixed the bug that the wormhole technology does not work
+  + Adjusted tech unlock status of the opening game
+
+
+- Experimental 0.1.3
+  + 修复了位面熔炉无法复制设置的Bug
+  + 提高与 `GalacticScale` mod的兼容性
+
+  + Fixed a bug where dimensional smelters were unable to copy settings
+  + Improve compatibility with `GalacticScale` mod
+
+
+- Experimental 0.1.2
+  + 移除光刻透镜
+  + 添加配方 `粒子容器（高效）`
+  + 调整部分配方的制造设备（制造台 -> 高精度装配线）
+  + 下调位面熔炉的科技需求
+
+  + Removed Photolithography Lens
+  + Added recipe `Particle Container (High Efficiency)`.
+  + Adjusted manufacturing equipment for some recipes (Fabrication Bench -> High Precision Assembly Line).
+  + Downgraded tech requirements for dimensional furnaces
+
+
+- v2.7.0-beta6 (Experimental 0.1.1)
+  + 简化了`PBI`的合成路线
+  + 提高了`合成氨`的速度
+  + 提高了大抽水机的工作速度与耗电
+  + 调整了部分配方的堆积逻辑
+
+  + Simplified `PBI` synthesis route.
+  + Increased the speed of `Ammonia Synthesis`
+  + Improved the speed and power consumption of the mega pumping machine.
+  + Adjusted stacking logic for some recipes
+
+
+- v2.7.0-beta5 (Experimental 0.1.0) 森海之灵 | Forest Spirit
+  + 重新设计塑料、科研矩阵、化学能燃料、石油化工的配方及对应科技、物品（影响存档）
+    + 重新添加了`光子合并器`、`钛晶石`、`粒子容器`物品
+    + 删除了`苯酚`、`二甲苯`、`氯苯`物品，转为新物品`苯`
+    + 删除了`丙酮`、`甘油`物品，转为新物品`丙烯`
+    + 简化了化学能燃料的配方
+    + 简化了`先进机械组件`、`尖端机械组件`、`电磁涡轮`、`超级磁场环`的配方
+    + 为`量子芯片`配方添加了`位面过滤器`需求
+    + 芯片类配方的产物数量翻倍
+    + 删除了`海洋排污`、`大气排污`、`化工技术革新`科技
+    + 调整了`结构矩阵`、`信息矩阵`、`引力矩阵`的配方
+    + 调整了`引力透镜`、`奇异物质`、`混凝土`的配方
+    + 调整了`太阳帆`的配方
+  + 为部分配方调整了特殊堆积逻辑
+  + 调整了部分科技的前置科技需求
+  + 下调了终极目标科技的哈希需求
+  + 下调了部分建筑的配方原料需求
+  + 调整了部分建筑的耗电量和制造速度
+  + 修复了复合矩阵增产点数复制的问题
+  + 修复了部分文本翻译不正确的问题
+  + 修复了部分文本未被正确替换的问题
+  + 在设置里添加了部分MOD设置的说明
+
+  + Redesigned the recipes and corresponding technologies and items of plastic, research matrix, chemical energy fuel,
+    and petrochemical (affect save)
+    + Re-added `Photon Combiner`, `Titanium Crystal`, `Particle Container` items
+    + Removed `Phenol`, `Xylene`, `Chlorobenzene` items, converted to new item `Benzene`
+    + Removed `Acetone`, `Glycerol` items, converted to new item `Propylene`
+    + Simplified the recipe of chemical energy fuel
+    + Simplified the recipe of `Advanced Mechanical Components`, `Sophisticated Mechanical Components`, `Electromagnetic
+      Turbine`, `Super Magnetic Ring`
+    + Added `Dimensional Filter` requirement to the recipe of `Quantum Chip`
+    + Doubled the output of chip recipes
+    + Removed `Ocean Emission`, `Atmospheric Emission`, `Chemical Technology Innovation` technologies
+    + Adjusted the recipe of `Structure Matrix`, `Information Matrix`, `Gravity Matrix`
+    + Adjusted the recipe of `Graviton Lens`, `Strange Matter`, `Concrete`
+    + Adjusted the recipe of `Ray Receiver`, `Solar Sail`, `Geothermal Power Plant`
+  + Adjusted the special stacking logic of some recipes
+  + Adjusted the prerequisite technology requirements of some technologies
+  + Lowered the hash requirements of the ultimate goal technologies
+  + Lowered the material requirements of some buildings
+  + Adjusted the power consumption and manufacturing speed of some buildings
+  + Fixed the problem of copying the production point of the composite matrix
+  + Fixed the problem of incorrect translation of some texts
+  + Fixed the problem that some texts were not replaced correctly
+  + Added some MOD settings instructions in the settings
+
+
 - v2.6.0 原子之心 | Atomic Heart
   + 修复与联机MOD的兼容性问题
   + 调整图标选择界面公式部分的显示
@@ -16,16 +314,15 @@
   + Add `Fusion Enhancement` and `Advanced Propulsion` coordination effects
 
 
-<details>
-  <summary>点击展开日志 | Click to view all </summary>
-
 - v2.5.14
   + 修复已拆除的巨构传送带缓存未及时更新导致物品远程传送的问题
   + 修复`资源采掘`协调效果对`大气采集站`无效的问题
   + 修复`资源采掘`协调效果未在大矿机UI中显示的问题
 
-  + Fix the problem of not updating the cache of dismantled mega buildings conveyor belts in time, causing material transfer unexpectedly
-  + Fix the problem that the `Unlimited Resource Mining` coordination effect is invalid for `Atmospheric Collect Station`
+  + Fix the problem of not updating the cache of dismantled mega buildings conveyor belts in time, causing material
+    transfer unexpectedly
+  + Fix the problem that the `Unlimited Resource Mining` coordination effect is invalid
+    for `Atmospheric Collect Station`
   + Fix the problem that the `Unlimited Resource Mining` coordination effect is not displayed in the Mega Miner UI
 
 

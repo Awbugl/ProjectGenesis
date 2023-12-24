@@ -1,108 +1,394 @@
 ﻿using System.Collections.Generic;
-using CommonAPI.Systems;
+using System.Reflection;
 using UnityEngine;
+
+// ReSharper disable PrivateFieldCanBeConvertedToLocalVariable
 
 namespace ProjectGenesis.Utils
 {
-    internal static class IconDescUtils
+    internal static partial class IconDescUtils
     {
-        // Specify color of each fluid here, one per line.
-        internal static readonly Dictionary<int, Color32> FluidColor = new Dictionary<int, Color32>
-                                                                       {
-                                                                           { 7019, new Color32(170, 198, 255, 255) },
-                                                                           { 7018, new Color32(90, 126, 179, 255) },
-                                                                           { 7017, new Color32(61, 137, 224, 255) },
-                                                                           { 7016, new Color32(176, 106, 85, 255) },
-                                                                           { 7015, new Color32(116, 152, 99, 255) },
-                                                                           { 7014, new Color32(99, 179, 148, 255) },
-                                                                           { 7013, new Color32(226, 72, 86, 255) },
-                                                                           { 7012, new Color32(214, 39, 98, 255) },
-                                                                           { 7011, new Color32(51, 255, 173, 255) },
-                                                                           { 7010, new Color32(188, 149, 92, 255) },
-                                                                           { 7009, new Color32(218, 207, 147, 255) },
-                                                                           { 7008, new Color32(147, 230, 43, 255) },
-                                                                           { 7007, new Color32(109, 183, 101, 255) },
-                                                                           { 7006, new Color32(218, 127, 78, 255) },
-                                                                           { 7005, new Color32(158, 212, 68, 255) },
-                                                                           { 7004, new Color32(115, 177, 74, 255) },
-                                                                           { 7003, new Color32(119, 176, 123, 255) },
-                                                                           { 7002, new Color32(216, 216, 216, 255) },
-                                                                           { 7001, new Color32(185, 185, 185, 255) },
-                                                                           { 6999, new Color32(255, 243, 128, 255) },
-                                                                           { 6533, new Color32(33, 44, 65, 255) },
-                                                                           { 6532, new Color32(117, 184, 41, 255) },
-                                                                           { 6531, new Color32(187, 217, 219, 255) },
-                                                                           { 6235, new Color32(244, 164, 96, 255) },
-                                                                           { 6234, new Color32(255, 232, 124, 255) },
-                                                                           { 6220, new Color32(131, 209, 255, 255) },
-                                                                           { 6219, new Color32(193, 130, 58, 255) },
-                                                                           { 6215, new Color32(255, 128, 52, 255) },
-                                                                           { 6214, new Color32(142, 138, 60, 255) },
-                                                                           { 6213, new Color32(29, 29, 135, 255) },
-                                                                           { 6212, new Color32(222, 214, 0, 255) },
-                                                                           { 6211, new Color32(10, 60, 16, 255) },
-                                                                           { 6210, new Color32(138, 172, 164, 255) },
-                                                                           { 6209, new Color32(230, 81, 21, 255) },
-                                                                           { 6208, new Color32(220, 122, 29, 255) },
-                                                                           { 6207, new Color32(116, 99, 22, 255) },
-                                                                           { 6206, new Color32(131, 209, 255, 255) },
-                                                                           { 6205, new Color32(131, 209, 255, 255) },
-                                                                           { 6204, new Color32(224, 209, 23, 255) },
-                                                                           { 6203, new Color32(202, 167, 27, 255) },
-                                                                           { 6202, new Color32(223, 222, 31, 255) },
-                                                                           { 6201, new Color32(241, 181, 37, 255) },
-                                                                           { 1116, new Color32(125, 27, 126, 255) },
-                                                                           { 1114, new Color32(204, 102, 0, 255) },
-                                                                       };
+        internal static readonly Dictionary<int, ModIconDesc> IconDescs = new Dictionary<int, ModIconDesc>
+        {
+            { 7019, new FluidIconDesc(new Color32(129, 199, 241, 255)) }, // O2
+            { 6220, new FluidIconDesc(new Color32(137, 242, 178, 255)) }, // N2
+            { 6234, new FluidIconDesc(new Color32(244, 255, 183, 255)) }, // He4
+            { 6235, new FluidIconDesc(new Color32(210, 222, 142, 255)) }, // He3
 
-        private static readonly Color DefaultSideColor = new Color32(119, 136, 153, 255),
-                                      FluidSideColor = new Color32(229, 228, 226, 255),
-                                      Color6278 = new Color(1f, 0.4117f, 0.3137f, 0.1961f),
-                                      Emission6278 = new Color(1f, 0.2706f, 0f, 0f),
-                                      Color6279 = new Color(1f, 0.7530f, 0.7961f, 0.1961f),
-                                      Emission6279 = new Color(0.7804f, 0.0824f, 0.5216f, 0f),
-                                      Color6280 = new Color(0.5020f, 0.5020f, 0.5020f, 0.1961f);
+            { 1114, new NoIconFluidIconDesc(new Color32(138, 83, 43, 255)) },   // Coal Oil
+            { 7018, new NoIconFluidIconDesc(new Color32(97, 132, 186, 255)) },  // Ocean
+            { 7006, new NoIconFluidIconDesc(new Color32(218, 56, 70, 255)) },   // 苯
+            { 7009, new NoIconFluidIconDesc(new Color32(167, 255, 39, 255)) },  // 丙烯
+            { 6206, new NoIconFluidIconDesc(new Color32(191, 227, 255, 255)) }, // CO2
+            { 6212, new NoIconFluidIconDesc(new Color32(188, 182, 5, 255)) },   // JP10
+            { 7014, new NoIconFluidIconDesc(new Color32(104, 187, 154, 255)) }, // HCl
+            { 7015, new NoIconFluidIconDesc(new Color32(42, 97, 32, 255)) },    // FeCl3
+            { 7002, new NoIconFluidIconDesc(new Color32(195, 198, 234, 255)) }, // NH3
+            { 7017, new NoIconFluidIconDesc(new Color32(157, 56, 157, 255)) },  // HNO3
 
-        private static readonly Dictionary<int, IconToolNew.IconDesc> MartixsDescs = new Dictionary<int, IconToolNew.IconDesc>
-                                                                                     {
-                                                                                         { 6278, GetMartixIconDesc(Color6278, Emission6278) },
-                                                                                         { 6279, GetMartixIconDesc(Color6279, Emission6279) },
-                                                                                         { 6280, GetDefaultIconDesc(Color6280, Color.clear) }
-                                                                                     };
+            { 6202, new OreIconDesc(new Color32(210, 184, 147, 255)) }, // Al
+            { 6207, new OreIconDesc(new Color32(230, 239, 137, 255)) }, // S
+            { 6222, new OreIconDesc(new Color32(106, 175, 78, 255)) },  // Rads
+            { 6225, new OreIconDesc(new Color32(130, 235, 139, 255)) }, // U
+            { 6226, new OreIconDesc(new Color32(243, 98, 113, 255)) },  // Pu
+            { 6201, new OreIconDesc(new Color32(30, 29, 30, 255)) },    // Tungsten
+
+            { 7803, new ComponentIconDesc(new Color32(228, 153, 255, 255)) }, // 光学芯片
+            { 7804, new ComponentIconDesc(new Color32(228, 153, 255, 255)) }, // 光学纤维
+            { 7805, new ComponentIconDesc(new Color32(93, 191, 255, 255)) },  // 量子主机
+            { 7806, new ComponentIconDesc(new Color32(228, 153, 255, 255)) }, // 光学主机
+            { 6263, new ComponentIconDesc(new Color32(150, 173, 240, 255)) }, // 氦闪约束器
+            { 6267, new ComponentIconDesc(new Color32(147, 244, 241, 255)) }, // 大气采集站
+            { 6221, new ComponentIconDesc(new Color32(122, 227, 130, 255)) }, // 同位素发电机
+            { 6261, new ComponentIconDesc(new Color32(41, 221, 255, 255)) },  // 人造恒星MK2
+            { 6229, new ComponentIconDesc(new Color32(164, 218, 255, 255)) }, // 量子缸
+            { 6231, new ComponentIconDesc(new Color32(213, 82, 255, 255)) },  // 量子箱
+            { 6230, new ComponentIconDesc(new Color32(196, 255, 106, 255)) }, // 粉碎机
+            { 7617, new ComponentIconDesc(new Color32(77, 182, 241, 255)) },  // 机枪塔MK2
+            { 7618, new ComponentIconDesc(new Color32(140, 64, 219, 255)) },  // 激光塔MK2
+            { 6501, new ComponentIconDesc(new Color32(234, 163, 87, 255)) },  // 基础组件
+            { 6502, new ComponentIconDesc(new Color32(87, 255, 191, 255)) },  // 先进组件
+            { 6503, new ComponentIconDesc(new Color32(53, 206, 255, 255)) },  // 尖端组件
+            { 7501, new ComponentIconDesc(new Color32(210, 157, 118, 255)) }, // 塑料基板
+            { 7504, new ComponentIconDesc(new Color32(109, 196, 255, 255)) }, // 光学基板
+            { 6257, new ComponentIconDesc(new Color32(241, 158, 60, 255)) },  // 大组装
+            { 6258, new ComponentIconDesc(new Color32(71, 132, 253, 255)) },  // 大熔炉
+            { 6259, new ComponentIconDesc(new Color32(249, 255, 89, 255)) },  // 大化反
+            { 6260, new ComponentIconDesc(new Color32(201, 50, 65, 255)) },   // 大精密
+            { 6264, new ComponentIconDesc(new Color32(71, 188, 84, 255)) },   // 大回收
+            { 6265, new ComponentIconDesc(new Color32(106, 61, 172, 255)) },  // 大对撞
+
+            { 7612, new FullIconDesc(new Color32(173, 207, 172, 255)) }, // 核子炮弹
+            { 7613, new FullIconDesc(new Color32(187, 172, 252, 255)) }, // 反物质炮弹
+            { 7615, new FullIconDesc(new Color32(187, 172, 252, 255)) }, // 反物质导弹
+            { 6204, new FullIconDesc(new Color32(161, 157, 152, 255)) }, // 铝合金
+            { 7707, new FullIconDesc(new Color32(51, 51, 57, 255)) },    // 钨钢
+            { 6271, new FullIconDesc(new Color32(221, 218, 255, 255)) }, // 三元合金
+            { 7608, new FullIconDesc(new Color32(81, 83, 90, 255)) },    // 钨子弹
+            { 7609, new FullIconDesc(new Color32(221, 218, 255, 255)) }, // 三元子弹
+            { 7616, new FullIconDesc(new Color32(187, 172, 252, 255)) }, // 反物质子弹
+            { 6252, new FullIconDesc(new Color32(160, 216, 255, 255)) }, // 铁粉
+            { 6253, new FullIconDesc(new Color32(237, 176, 150, 255)) }, // 铜粉
+            { 6273, new FullIconDesc(new Color32(218, 212, 195, 255)) }, // 铝粉
+            { 6254, new FullIconDesc(new Color32(153, 236, 182, 255)) }, // 硅粉
+            { 6255, new FullIconDesc(new Color32(232, 236, 255, 255)) }, // 钛粉
+            { 6281, new FullIconDesc(new Color32(32, 33, 36, 255)) },    // 钨粉
+            { 6256, new FullIconDesc(new Color32(56, 57, 62, 255)) },    // 煤粉
+            { 6251, new FullIconDesc(new Color32(181, 184, 198, 255)) }, // 石粉
+            { 6277, new FullIconDesc(new Color32(255, 255, 142, 255)) }, // 硫粉
+
+            { 6203, new NoIconMetalIconDesc(new Color32(186, 176, 144, 255)) }, // 铝块
+            { 7705, new NoIconMetalIconDesc(new Color32(43, 44, 48, 255)) },    // 钨块
+            { 6227, new NoIconMetalIconDesc(new Color32(66, 222, 87, 255)) },   // 铀块
+            { 6228, new NoIconMetalIconDesc(new Color32(239, 83, 90, 255)) },   // 钚块
+            { 6208, new NoIconMetalIconDesc(new Color32(93, 91, 83, 255)) },    // 混凝土
+
+            { 6217, new RodIconDesc(new Color32(163, 145, 85, 255)) },  // 煤油棒
+            { 6216, new RodIconDesc(new Color32(198, 207, 111, 255)) }, // JP10棒
+            { 6242, new RodIconDesc(new Color32(33, 170, 87, 255)) },   // 铀棒
+            { 6241, new RodIconDesc(new Color32(204, 74, 78, 255)) },   // 钚棒
+            { 6243, new RodIconDesc(new Color32(153, 157, 169, 255)) }, // MOX棒
+            { 6244, new RodIconDesc(new Color32(245, 250, 105, 255)) }, // He3棒
+            { 6245, new RodIconDesc(new Color32(147, 77, 255, 255)) },  // 混合棒
+
+            { 6278, new MartixIconDesc(new Color(1f, 0.4117f, 0.3137f, 0.1961f), new Color(1f, 0.2706f, 0f, 0f)) },
+            { 6279, new MartixIconDesc(new Color(1f, 0.7530f, 0.7961f, 0.1961f), new Color(0.7804f, 0.0824f, 0.5216f, 0f)) },
+            
+            { 7610, new WhiteIconDesc() }, // 核子单元
+            { 7611, new WhiteIconDesc() }, // 反物质单元
+            
+            { 7706, new GlassIconDesc(new Color32(91, 91, 91, 255)) }, // 钨玻璃
+
+            { 6280, new DefaultIconDesc(new Color(0.5020f, 0.5020f, 0.5020f, 0.1961f), Color.clear) }
+        };
+
+        private static readonly IconToolNew.IconDesc Default = new IconToolNew.IconDesc
+        {
+            faceColor = Color.white,
+            sideColor = new Color(0.4667F, 0.5333F, 0.6F, 1f),
+            faceEmission = Color.black,
+            sideEmission = Color.black,
+            iconEmission = new Color(0.2f, 0.2f, 0.2f, 1f),
+            metallic = 0.8f,
+            smoothness = 0.5f,
+            solidAlpha = 1f,
+            iconAlpha = 1f
+        };
 
         internal static IconToolNew.IconDesc GetIconDesc(int itemid)
-        {
-            if (MartixsDescs.TryGetValue(itemid, out var iconDesc)) return iconDesc;
+            => IconDescs.TryGetValue(itemid, out ModIconDesc value) ? value.ToIconDesc() : Default;
 
-            var desc = ProtoRegistry.GetDefaultIconDesc(Color.white, DefaultSideColor);
-            if (FluidColor.ContainsKey(itemid))
+        internal static IconToolNew.IconDesc ExportIconDesc(int itemId)
+        {
+            IconSet iconSet = GameMain.iconSet;
+
+            var iconDesc = new IconToolNew.IconDesc();
+
+            uint num1 = iconSet.itemIconIndex[itemId];
+            if (num1 <= 0) return iconDesc;
+
+            FieldInfo[] fields = typeof(IconToolNew.IconDesc).GetFields(BindingFlags.Instance | BindingFlags.Public);
+
+            uint index = 0;
+            foreach (FieldInfo fieldInfo in fields)
             {
-                desc.faceColor = FluidSideColor;
-                desc.sideColor = FluidSideColor;
-                desc.reserved0 = FluidColor[itemid];
-                desc.liquidity = 1f;
-                desc.metallic = 1f;
-                desc.solidAlpha = 0.6f;
+                if (fieldInfo.FieldType == typeof(float))
+                {
+                    fieldInfo.SetValue(iconDesc, iconSet.itemDescArr[(int)num1 * 40 + (int)index++]);
+                }
+                else if (fieldInfo.FieldType == typeof(Color))
+                {
+                    float r = iconSet.itemDescArr[(int)num1 * 40 + (int)index++];
+                    float g = iconSet.itemDescArr[(int)num1 * 40 + (int)index++];
+                    float b = iconSet.itemDescArr[(int)num1 * 40 + (int)index++];
+                    float a = iconSet.itemDescArr[(int)num1 * 40 + (int)index++];
+
+                    fieldInfo.SetValue(iconDesc, new Color(r, g, b, a));
+                }
             }
 
-            return desc;
+            return iconDesc;
+        }
+    }
+
+    internal static partial class IconDescUtils
+    {
+        internal abstract class ModIconDesc
+        {
+            internal Color Color;
+
+            protected ModIconDesc(Color color)
+            {
+                Color = color;
+            }
+
+            internal abstract IconToolNew.IconDesc ToIconDesc();
         }
 
-        private static IconToolNew.IconDesc GetMartixIconDesc(Color color, Color emission)
-            => new IconToolNew.IconDesc
-               {
-                   faceColor = color,
-                   sideColor = color,
-                   faceEmission = emission,
-                   sideEmission = emission,
-                   iconEmission = Color.clear,
-                   metallic = 0f,
-                   smoothness = 0f,
-                   solidAlpha = 0.5f,
-                   iconAlpha = 0.0f
-               };
+        internal class FluidIconDesc : ModIconDesc
+        {
+            public FluidIconDesc(Color color) : base(color) { }
 
-        private static IconToolNew.IconDesc GetDefaultIconDesc(Color color, Color emission)
-            => ProtoRegistry.GetDefaultIconDesc(color, color, emission, emission);
+            internal override IconToolNew.IconDesc ToIconDesc()
+                => new IconToolNew.IconDesc
+                {
+                    faceColor = Color,
+                    sideColor = Color,
+                    reserved0 = Color,
+                    faceEmission = Color.black,
+                    sideEmission = Color.black,
+                    iconEmission = new Color(0.2f, 0.2f, 0.2f, 1f),
+                    metallic = 1f,
+                    smoothness = 0.302f,
+                    liquidity = 1f,
+                    solidAlpha = 0f,
+                    iconAlpha = 1f
+                };
+        }
+
+        internal class NoIconFluidIconDesc : ModIconDesc
+        {
+            internal NoIconFluidIconDesc(Color color) : base(color) { }
+
+            internal override IconToolNew.IconDesc ToIconDesc()
+                => new IconToolNew.IconDesc
+                {
+                    faceColor = Color,
+                    sideColor = Color,
+                    reserved0 = Color,
+                    faceEmission = Color.black,
+                    sideEmission = Color.black,
+                    iconEmission = Color.clear,
+                    metallic = 1f,
+                    liquidity = 1f,
+                    smoothness = 0.302f,
+                    solidAlpha = 0f,
+                    iconAlpha = 0f
+                };
+        }
+
+        internal class OreIconDesc : ModIconDesc
+        {
+            public OreIconDesc(Color color) : base(color) { }
+
+            internal override IconToolNew.IconDesc ToIconDesc()
+                => new IconToolNew.IconDesc
+                {
+                    faceColor = Color,
+                    sideColor = Color,
+                    reserved0 = Color,
+                    faceEmission = Color.black,
+                    sideEmission = Color.black,
+                    iconEmission = Color.clear,
+                    metallic = 0.8f,
+                    smoothness = 0.5f,
+                    solidAlpha = 1f,
+                    iconAlpha = 1f
+                };
+        }
+
+        internal class NoIconMetalIconDesc : ModIconDesc
+        {
+            public NoIconMetalIconDesc(Color color) : base(color) { }
+
+            internal override IconToolNew.IconDesc ToIconDesc()
+                => new IconToolNew.IconDesc
+                {
+                    faceColor = Color,
+                    sideColor = Color,
+                    faceEmission = Color.black,
+                    sideEmission = Color.black,
+                    iconEmission = Color.clear,
+                    metallic = 1f,
+                    smoothness = 0.6f,
+                    solidAlpha = 1f,
+                    iconAlpha = 0f
+                };
+        }
+
+        internal class FullIconDesc : ModIconDesc
+        {
+            public FullIconDesc(Color color) : base(color) { }
+
+            internal override IconToolNew.IconDesc ToIconDesc()
+                => new IconToolNew.IconDesc
+                {
+                    faceColor = Color,
+                    sideColor = Color,
+                    faceEmission = Color.black,
+                    sideEmission = Color.black,
+                    iconEmission = Color.clear,
+                    metallic = 0f,
+                    smoothness = 0.5f,
+                    solidAlpha = 1f,
+                    iconAlpha = 1f
+                };
+        }
+
+        internal class ComponentIconDesc : ModIconDesc
+        {
+            public ComponentIconDesc(Color color) : base(color) { }
+
+            internal override IconToolNew.IconDesc ToIconDesc()
+                => new IconToolNew.IconDesc
+                {
+                    faceColor = Color.white,
+                    sideColor = Color,
+                    faceEmission = Color.black,
+                    sideEmission = Color.black,
+                    iconEmission = Color.clear,
+                    metallic = 0.8f,
+                    smoothness = 0.5f,
+                    solidAlpha = 1f,
+                    iconAlpha = 1f
+                };
+        }
+
+        internal class GlassIconDesc : ModIconDesc
+        {
+            public GlassIconDesc(Color color) : base(color) { }
+
+            internal override IconToolNew.IconDesc ToIconDesc()
+                => new IconToolNew.IconDesc
+                {
+                    faceColor = Color,
+                    sideColor = Color,
+                    reserved0 = Color,
+                    faceEmission = Color.black,
+                    sideEmission = Color.black,
+                    iconEmission = Color.clear,
+                    metallic = 1f,
+                    smoothness = 0.5f,
+                    solidAlpha = 0.8f,
+                    iconAlpha = 0f
+                };
+        }
+
+        internal class RodIconDesc : ModIconDesc
+        {
+            public RodIconDesc(Color color) : base(color) { }
+
+            internal override IconToolNew.IconDesc ToIconDesc()
+                => new IconToolNew.IconDesc
+                {
+                    faceColor = Color,
+                    sideColor = Color,
+                    reserved0 = Color,
+                    faceEmission = Color.black,
+                    sideEmission = Color.black,
+                    iconEmission = Color.clear,
+                    metallic = 1f,
+                    smoothness = 0.5f,
+                    solidAlpha = 0.6f,
+                    iconAlpha = 1f
+                };
+        }
+
+        internal class WhiteIconDesc : ModIconDesc
+        {
+            public WhiteIconDesc() : base(Color.white) { }
+
+            internal override IconToolNew.IconDesc ToIconDesc()
+                => new IconToolNew.IconDesc
+                {
+                    faceColor = Color,
+                    sideColor = Color,
+                    faceEmission = Color.black,
+                    sideEmission = Color.black,
+                    iconEmission = new Color(0.2f, 0.2f, 0.2f, 1f),
+                    metallic = 0.8f,
+                    smoothness = 0.5f,
+                    solidAlpha = 1f,
+                    iconAlpha = 1f
+                };
+        }
+
+        internal class MartixIconDesc : ModIconDesc
+        {
+            private readonly Color _emission;
+
+            public MartixIconDesc(Color color, Color emission) : base(color)
+            {
+                _emission = emission;
+            }
+
+            internal override IconToolNew.IconDesc ToIconDesc()
+                => new IconToolNew.IconDesc
+                {
+                    faceColor = Color,
+                    sideColor = Color,
+                    faceEmission = _emission,
+                    sideEmission = _emission,
+                    iconEmission = Color.clear,
+                    metallic = 0f,
+                    smoothness = 0f,
+                    solidAlpha = 0.5f,
+                    iconAlpha = 0.0f
+                };
+        }
+
+        internal class DefaultIconDesc : ModIconDesc
+        {
+            private readonly Color _emission;
+
+            public DefaultIconDesc(Color color, Color emission) : base(color)
+            {
+                _emission = emission;
+            }
+
+            internal override IconToolNew.IconDesc ToIconDesc()
+                => new IconToolNew.IconDesc
+                {
+                    faceColor = Color,
+                    sideColor = Color,
+                    faceEmission = _emission,
+                    sideEmission = _emission,
+                    iconEmission = new Color(0.2f, 0.2f, 0.2f, 1f),
+                    metallic = 0.8f,
+                    smoothness = 0.5f,
+                    solidAlpha = 1f,
+                    iconAlpha = 1f
+                };
+        }
     }
 }

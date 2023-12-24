@@ -23,9 +23,8 @@ namespace ProjectGenesis.Patches.Logic.PlanetFocus
 
             while (true)
             {
-                matcher.MatchForward(false,
-                                     new CodeMatch(OpCodes.Ldfld,
-                                                   AccessTools.Field(typeof(GameHistoryData), nameof(GameHistoryData.miningSpeedScale))));
+                matcher.MatchForward(
+                    false, new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(GameHistoryData), nameof(GameHistoryData.miningSpeedScale))));
 
                 if (matcher.IsInvalid) break;
 
@@ -41,7 +40,7 @@ namespace ProjectGenesis.Patches.Logic.PlanetFocus
 
         public static float MiningSpeedScale(float scale, PlanetFactory factory)
         {
-            var exist = ContainsFocus(factory.planetId, 6528);
+            bool exist = ContainsFocus(factory.planetId, 6528);
             return exist ? scale * 1.25f : scale;
         }
 
@@ -66,7 +65,7 @@ namespace ProjectGenesis.Patches.Logic.PlanetFocus
         {
             if (__instance.station.isCollector && GameMain.localPlanet.type != EPlanetType.Gas)
             {
-                var collectSpeedRate = GameMain.history.miningSpeedScale * __instance.station.collectSpeed;
+                float collectSpeedRate = GameMain.history.miningSpeedScale * __instance.station.collectSpeed;
                 if (ContainsFocus(__instance.station.planetId, 6528)) collectSpeedRate *= 1.25f;
                 __instance.speedText.text
                     = $"{3600.0 * ((double)__instance.station.collectionPerTick[__instance.index] * collectSpeedRate):0.00}/min";
@@ -81,9 +80,8 @@ namespace ProjectGenesis.Patches.Logic.PlanetFocus
 
             while (true)
             {
-                matcher.MatchForward(false,
-                                     new CodeMatch(OpCodes.Ldfld,
-                                                   AccessTools.Field(typeof(GameHistoryData), nameof(GameHistoryData.miningSpeedScale))));
+                matcher.MatchForward(
+                    false, new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(GameHistoryData), nameof(GameHistoryData.miningSpeedScale))));
 
                 if (matcher.IsInvalid) break;
 

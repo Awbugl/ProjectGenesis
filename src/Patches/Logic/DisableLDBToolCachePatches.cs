@@ -7,24 +7,32 @@ namespace ProjectGenesis.Patches.Logic
 {
     public static class DisableLDBToolCachePatches
     {
+        private static bool _finished;
+
         [HarmonyPrefix]
         [HarmonyPatch(typeof(LDBTool), "Bind")]
-        public static bool LDBTool_Bind() => false;
+        public static bool LDBTool_Bind() => ProjectGenesis.EnableLDBToolCacheEntry.Value;
 
         [HarmonyPostfix]
         [HarmonyAfter(LDBToolPlugin.MODGUID)]
         [HarmonyPatch(typeof(VFPreload), "InvokeOnLoadWorkEnded")]
         public static void DeleteFiles()
         {
+            if (_finished) return;
+
+            if (!ProjectGenesis.EnableLDBToolCacheEntry.Value) return;
+
             try
             {
-                var path = Path.Combine(Paths.ConfigPath, "LDBTool");
+                string path = Path.Combine(Paths.ConfigPath, "LDBTool");
                 if (Directory.Exists(path)) Directory.Delete(path, true);
             }
             catch
             {
                 // ignored
             }
+
+            _finished = true;
         }
     }
 }

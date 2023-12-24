@@ -10,7 +10,7 @@ namespace ProjectGenesis.Patches.UI
     {
         [HarmonyPatch(typeof(UIMonitorWindow), "_OnInit")]
         [HarmonyPostfix]
-        public static void UIMonitorWindow__OnInit(ref UIMonitorWindow __instance) => __instance.cargoFlowSlider.maxValue = 600;
+        public static void UIMonitorWindow__OnInit(UIMonitorWindow __instance) => __instance.cargoFlowSlider.maxValue = 600;
 
         [HarmonyPatch(typeof(MonitorComponent), "SetTargetCargoBytes")]
         [HarmonyTranspiler]
@@ -23,10 +23,10 @@ namespace ProjectGenesis.Patches.UI
 
             matcher.MatchForward(false, new CodeMatch(OpCodes.Ldc_I4, 72000));
             matcher.SetOperandAndAdvance(144000);
-            
+
             return matcher.InstructionEnumeration();
         }
-        
+
         [HarmonyPatch(typeof(UIMonitorWindow), "OnPeriodValueChange")]
         [HarmonyPatch(typeof(UIMonitorWindow), "RefreshMonitorWindow")]
         [HarmonyPatch(typeof(UIMonitorWindow), "OnCargoFlowValueChange")]

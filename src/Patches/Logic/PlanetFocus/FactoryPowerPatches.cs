@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Reflection.Emit;
 using HarmonyLib;
-using ProjectGenesis.Utils;
 
 namespace ProjectGenesis.Patches.Logic.PlanetFocus
 {
@@ -27,9 +26,9 @@ namespace ProjectGenesis.Patches.Logic.PlanetFocus
 
         public static void GetWorkEnergyPerTick(ref AssemblerComponent assembler, PowerConsumerComponent[] pcPool, PlanetFactory factory)
         {
-            var modelIndex = factory.entityPool[assembler.entityId].modelIndex;
+            short modelIndex = factory.entityPool[assembler.entityId].modelIndex;
 
-            if (!ModelPowerCosts.TryGetValue(modelIndex, out var workEnergyPerTick))
+            if (!ModelPowerCosts.TryGetValue(modelIndex, out long workEnergyPerTick))
             {
                 workEnergyPerTick = LDB.models.Select(modelIndex).prefabDesc.workEnergyPerTick;
                 ModelPowerCosts.TryAdd(modelIndex, workEnergyPerTick);
@@ -37,7 +36,7 @@ namespace ProjectGenesis.Patches.Logic.PlanetFocus
 
             if (ContainsFocus(factory.planetId, 6522)) workEnergyPerTick = (long)(workEnergyPerTick * 0.9f);
 
-            pcPool[assembler.pcId].workEnergyPerTick = assembler.recipeId == ProtoIDUsedByPatches.R水电解 ? workEnergyPerTick * 10 : workEnergyPerTick;
+            pcPool[assembler.pcId].workEnergyPerTick = workEnergyPerTick;
             return;
         }
     }

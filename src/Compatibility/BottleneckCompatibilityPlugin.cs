@@ -1,4 +1,5 @@
-﻿using BepInEx;
+﻿using System.Reflection;
+using BepInEx;
 using BepInEx.Bootstrap;
 using HarmonyLib;
 using ProjectGenesis.Utils;
@@ -12,7 +13,7 @@ using ProjectGenesis.Utils;
 namespace ProjectGenesis.Compatibility
 {
     [BepInPlugin(MODGUID, MODNAME, VERSION)]
-    [BepInDependency(BottleneckGUID)]
+    [BepInDependency(BottleneckGUID, BepInDependency.DependencyFlags.SoftDependency)]
     public class BottleneckCompatibilityPlugin : BaseUnityPlugin
     {
         public const string MODGUID = "org.LoShin.GenesisBook.Compatibility.Bottleneck";
@@ -23,18 +24,18 @@ namespace ProjectGenesis.Compatibility
 
         public void Awake()
         {
-            Chainloader.PluginInfos.TryGetValue(BottleneckGUID, out var pluginInfo);
+            Chainloader.PluginInfos.TryGetValue(BottleneckGUID, out PluginInfo pluginInfo);
 
             if (pluginInfo == null) return;
 
-            var assembly = pluginInfo.Instance.GetType().Assembly;
+            Assembly assembly = pluginInfo.Instance.GetType().Assembly;
             new Harmony(MODGUID).Patch(AccessTools.Method(assembly.GetType("Bottleneck.Stats.ResearchTechHelper"), "GetMaxIncIndex"),
                                        new HarmonyMethod(typeof(BottleneckCompatibilityPlugin), nameof(GetMaxIncIndex_Prefix)));
         }
 
         public static bool GetMaxIncIndex_Prefix(ref int __result)
         {
-            __result = GameMain.history.techStates[ProtoIDUsedByPatches.T物品增产].unlocked ? 4 : 0;
+            __result = GameMain.history.techStates[ProtoID.T物品增产].unlocked ? 4 : 0;
             return false;
         }
     }

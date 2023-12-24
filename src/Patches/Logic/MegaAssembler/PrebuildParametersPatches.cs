@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Reflection;
+using System.Reflection.Emit;
 using HarmonyLib;
 using ProjectGenesis.Utils;
 
@@ -8,58 +11,58 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
 {
     internal static partial class MegaAssemblerPatches
     {
-        [HarmonyPostfix]
+        private static readonly FieldInfo PrefabDesc_assemblerRecipeType_Field
+            = AccessTools.Field(typeof(PrefabDesc), nameof(PrefabDesc.assemblerRecipeType));
+
+        private static readonly MethodInfo MegaAssemblerPatches_ContainsRecipeTypeRevert_Method
+            = AccessTools.Method(typeof(MegaAssemblerPatches), nameof(ContainsRecipeTypeRevert));
+
         [HarmonyPatch(typeof(BuildingParameters), "ApplyPrebuildParametersToEntity")]
-        public static void BuildingParameters_ApplyPrebuildParametersToEntity(
-            int entityId,
-            int recipeId,
-            int filterId,
-            int[] parameters,
-            PlanetFactory factory)
+        [HarmonyTranspiler]
+        public static IEnumerable<CodeInstruction> BuildingParameters_ApplyPrebuildParametersToEntity_Transpiler(
+            IEnumerable<CodeInstruction> instructions)
         {
-            if (entityId <= 0 || factory.entityPool[entityId].id != entityId) return;
-            var assemblerId = factory.entityPool[entityId].assemblerId;
-            if (assemblerId > 0)
-            {
-                ref var assembler = ref factory.factorySystem.assemblerPool[assemblerId];
-                if (assembler.id != assemblerId || assembler.speed < TrashSpeed || parameters == null || parameters.Length < 2048) return;
+            CodeMatcher matcher
+                = new CodeMatcher(instructions).MatchForward(false, new CodeMatch(OpCodes.Ldfld, PrefabDesc_assemblerRecipeType_Field));
 
-                if (assembler.recipeId != recipeId)
-                {
-                    if (recipeId == 0)
-                    {
-                        assembler.SetRecipe(0, factory.entitySignPool);
-                    }
-                    else
-                    {
-                        var recipe = LDB.recipes.Select(recipeId);
-                        var itemProto = LDB.items.Select(factory.entityPool[entityId].protoId);
+            matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Call, MegaAssemblerPatches_ContainsRecipeTypeRevert_Method));
 
-                        if (recipeId > 0 &&
-                            ContainsRecipeType(itemProto.prefabDesc.assemblerRecipeType, recipe.Type) &&
-                            factory.gameData.history.RecipeUnlocked(recipeId))
-                            assembler.SetRecipe(recipeId, factory.entitySignPool);
-                    }
-                }
+            matcher.SetOpcodeAndAdvance(OpCodes.Brfalse);
 
-                assembler.forceAccMode = parameters[0] > 0;
+            matcher.MatchForward(
+                false, new CodeMatch(OpCodes.Stfld, AccessTools.Field(typeof(AssemblerComponent), nameof(AssemblerComponent.forceAccMode))));
 
-                SlotData[] slots = GetSlots(factory.planetId, entityId);
-                const int num4 = 192;
-                for (var index = 0; index < slots.Length; ++index)
-                {
-                    slots[index].dir = (IODir)parameters[num4 + index * 4];
-                    slots[index].storageIdx = parameters[num4 + index * 4 + 1];
-                }
+            matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0), new CodeInstruction(OpCodes.Ldarg_3),
+                                                new CodeInstruction(OpCodes.Ldarg, 4),
+                                                new CodeInstruction(OpCodes.Call,
+                                                                    AccessTools.Method(typeof(MegaAssemblerPatches),
+                                                                                       nameof(
+                                                                                           BuildingParameters_ApplyPrebuildParametersToEntity_Patch_Method))));
 
-                SyncSlotsData.Sync(factory.planetId, entityId, slots);
-            }
+            return matcher.InstructionEnumeration();
         }
 
-        [HarmonyPostfix]
+        public static void BuildingParameters_ApplyPrebuildParametersToEntity_Patch_Method(int entityId, int[] parameters, PlanetFactory factory)
+        {
+            if (parameters == null || parameters.Length < 2048) return;
+
+            SlotData[] slots = GetSlots(factory.planetId, entityId);
+            const int num4 = 192;
+            for (int index = 0; index < slots.Length; ++index)
+            {
+                slots[index].dir = (IODir)parameters[num4 + index * 4];
+                slots[index].storageIdx = parameters[num4 + index * 4 + 1];
+            }
+
+            SyncSlotsData.Sync(factory.planetId, entityId, slots);
+        }
+
         [HarmonyPatch(typeof(BuildingParameters), "FromParamsArray")]
+        [HarmonyPostfix]
         public static void BuildingParameters_FromParamsArray(ref BuildingParameters __instance, int[] _parameters)
         {
+            if (__instance.type != BuildingType.Assembler) return;
+
             if (_parameters == null || _parameters.Length < 2048) return;
 
             if (__instance.parameters.Length < 2048) Array.Resize(ref __instance.parameters, 2048);
@@ -67,8 +70,8 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
             Array.Copy(_parameters, __instance.parameters, 2048);
         }
 
-        [HarmonyPostfix]
         [HarmonyPatch(typeof(BuildingParameters), "ToParamsArray")]
+        [HarmonyPostfix]
         public static void BuildingParameters_ToParamsArray(ref BuildingParameters __instance, ref int[] _parameters, ref int _paramCount)
         {
             if (__instance.type != BuildingType.Assembler) return;
@@ -86,23 +89,40 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
             }
         }
 
-        [HarmonyPostfix]
         [HarmonyPatch(typeof(BuildingParameters), "CopyFromFactoryObject")]
+        [HarmonyPatch(typeof(BuildingParameters), "CopyFromBuildPreview")]
+        [HarmonyTranspiler]
+        public static IEnumerable<CodeInstruction> BuildingParameters_CopyFromFactoryObject_Transpiler(IEnumerable<CodeInstruction> instructions)
+        {
+            CodeMatcher matcher
+                = new CodeMatcher(instructions).MatchForward(false, new CodeMatch(OpCodes.Ldfld, PrefabDesc_assemblerRecipeType_Field));
+
+
+            matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Call, MegaAssemblerPatches_ContainsRecipeTypeRevert_Method));
+
+            matcher.SetOpcodeAndAdvance(OpCodes.Brtrue);
+
+            return matcher.InstructionEnumeration();
+        }
+
+        [HarmonyPatch(typeof(BuildingParameters), "CopyFromFactoryObject")]
+        [HarmonyPostfix]
         public static void BuildingParameters_CopyFromFactoryObject(
             ref BuildingParameters __instance,
             int objectId,
             PlanetFactory factory,
             bool copyInserters)
         {
+            if (__instance.type != BuildingType.Assembler) return;
+
             if (objectId > 0)
             {
-                if (factory.entityPool.Length <= objectId || factory.entityPool[objectId].id != objectId || __instance.type != BuildingType.Assembler)
-                    return;
+                if (factory.entityPool.Length <= objectId || factory.entityPool[objectId].id != objectId) return;
 
-                var assemblerId = factory.entityPool[objectId].assemblerId;
+                int assemblerId = factory.entityPool[objectId].assemblerId;
                 if (assemblerId <= 0 || factory.factorySystem.assemblerPool.Length <= assemblerId) return;
 
-                var assembler = factory.factorySystem.assemblerPool[assemblerId];
+                AssemblerComponent assembler = factory.factorySystem.assemblerPool[assemblerId];
                 if (assembler.id != assemblerId || assembler.speed < TrashSpeed) return;
 
                 if (__instance.parameters == null || __instance.parameters.Length < 2048) Array.Resize(ref __instance.parameters, 2048);
@@ -115,7 +135,7 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
 
                 SlotData[] slots = GetSlots(factory.planetId, objectId);
 
-                for (var index = 0; index < slots.Length; ++index)
+                for (int index = 0; index < slots.Length; ++index)
                 {
                     __instance.parameters[num2 + index * 4] = (int)slots[index].dir;
                     __instance.parameters[num2 + index * 4 + 1] = slots[index].storageIdx;
@@ -123,143 +143,52 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
 
                 SyncSlotsData.Sync(factory.planetId, objectId, slots);
             }
-            else
-            {
-                var index2 = -objectId;
-                PrebuildData[] prebuildPool = factory.prebuildPool;
-                ref var prebuildData = ref prebuildPool[index2];
-                if (index2 <= 0 || prebuildData.id != index2) return;
-
-                if (prebuildData.parameters != null)
-                {
-                    var length = prebuildData.parameters.Length;
-                    if (__instance.parameters == null || __instance.parameters.Length < length) Array.Resize(ref __instance.parameters, length);
-                    Array.Copy(prebuildData.parameters, __instance.parameters, length);
-                }
-
-                __instance.recipeId = prebuildData.recipeId;
-                var recipeProto = LDB.recipes.Select(prebuildData.recipeId);
-                if (recipeProto != null) __instance.recipeType = recipeProto.Type;
-            }
         }
 
-        [HarmonyPostfix]
         [HarmonyPatch(typeof(BuildingParameters), "PasteToFactoryObject")]
-        public static void BuildingParameters_PasteToFactoryObject(
-            ref BuildingParameters __instance,
-            int objectId,
-            PlanetFactory factory,
-            ref bool __result)
+        [HarmonyTranspiler]
+        public static IEnumerable<CodeInstruction> BuildingParameters_PasteToFactoryObject_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
-            if (objectId > 0)
-            {
-                if (factory.entityPool.Length <= objectId || factory.entityPool[objectId].id != objectId || __instance.type != BuildingType.Assembler)
-                    return;
+            CodeMatcher matcher
+                = new CodeMatcher(instructions).MatchForward(false, new CodeMatch(OpCodes.Ldfld, PrefabDesc_assemblerRecipeType_Field));
 
-                var assemblerId = factory.entityPool[objectId].assemblerId;
-                if (assemblerId <= 0 || factory.factorySystem.assemblerPool.Length <= assemblerId) return;
+            matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Call, MegaAssemblerPatches_ContainsRecipeTypeRevert_Method));
 
-                ref var assembler = ref factory.factorySystem.assemblerPool[assemblerId];
-                if (assembler.id != assemblerId || assembler.speed < TrashSpeed) return;
+            matcher.SetOpcodeAndAdvance(OpCodes.Brfalse);
 
-                var itemProto = LDB.items.Select(factory.entityPool[objectId].protoId);
-                if (itemProto == null || itemProto.prefabDesc == null) return;
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldfld, PrefabDesc_assemblerRecipeType_Field));
 
-                var containsRecipeType = ContainsRecipeType(itemProto.prefabDesc.assemblerRecipeType, __instance.recipeType);
+            matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Call, MegaAssemblerPatches_ContainsRecipeTypeRevert_Method));
 
-                if (assembler.recipeId != __instance.recipeId &&
-                    (__instance.recipeId == 0 ||
-                     (__instance.recipeId > 0 && containsRecipeType && GameMain.history.RecipeUnlocked(__instance.recipeId))))
-                {
-                    factory.factorySystem.TakeBackItems_Assembler(GameMain.mainPlayer, assemblerId);
-                    assembler.SetRecipe(__instance.recipeId, factory.entitySignPool);
-                    __result = true;
-                }
+            matcher.SetOpcodeAndAdvance(OpCodes.Brfalse);
 
-                if (__instance.parameters != null && __instance.parameters.Length >= 1 && containsRecipeType)
-                    assembler.forceAccMode = __instance.parameters[0] > 0;
-            }
-            else
-            {
-                var index1 = -objectId;
-                PrebuildData[] prebuildPool = factory.prebuildPool;
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldfld, PrefabDesc_assemblerRecipeType_Field));
 
-                ref var prebuildData = ref prebuildPool[index1];
-                if (index1 <= 0 || prebuildData.id != index1) return;
+            matcher.Advance(3).InsertAndAdvance(new CodeInstruction(OpCodes.Call, MegaAssemblerPatches_ContainsRecipeTypeRevert_Method));
 
-                var itemProto = LDB.items.Select(prebuildData.protoId);
-                if (itemProto == null || itemProto.prefabDesc == null) return;
+            matcher.SetOpcodeAndAdvance(OpCodes.Brfalse);
 
-                if (!itemProto.prefabDesc.isAssembler ||
-                    __instance.type != BuildingType.Assembler ||
-                    !ContainsRecipeType(itemProto.prefabDesc.assemblerRecipeType, __instance.recipeType))
-                    return;
-
-                if (__instance.parameters != null)
-                {
-                    var length = __instance.parameters.Length;
-                    if (prebuildData.parameters == null || prebuildData.parameters.Length < length) Array.Resize(ref prebuildData.parameters, length);
-                    Array.Copy(__instance.parameters, prebuildData.parameters, length);
-                }
-
-                prebuildData.recipeId = __instance.recipeId;
-                prebuildData.filterId = __instance.filterId;
-                __instance.ToParamsArray(ref prebuildData.parameters, ref prebuildData.paramCount);
-            }
+            return matcher.InstructionEnumeration();
         }
 
-        [HarmonyPostfix]
         [HarmonyPatch(typeof(BuildingParameters), "CanPasteToFactoryObject")]
-        public static void BuildingParameters_CanPasteToFactoryObject(
-            ref BuildingParameters __instance,
-            int objectId,
-            PlanetFactory factory,
-            ref bool __result)
+        [HarmonyTranspiler]
+        public static IEnumerable<CodeInstruction> BuildingParameters_CanPasteToFactoryObject_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
-            if (objectId > 0)
-            {
-                if (factory.entityPool.Length <= objectId || factory.entityPool[objectId].id != objectId || __instance.type != BuildingType.Assembler)
-                    return;
+            CodeMatcher matcher
+                = new CodeMatcher(instructions).MatchForward(false, new CodeMatch(OpCodes.Ldfld, PrefabDesc_assemblerRecipeType_Field));
 
-                var assemblerId = factory.entityPool[objectId].assemblerId;
-                if (assemblerId <= 0 || factory.factorySystem.assemblerPool.Length <= assemblerId) return;
+            matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Call, MegaAssemblerPatches_ContainsRecipeTypeRevert_Method));
 
-                var assembler = factory.factorySystem.assemblerPool[assemblerId];
-                if (assembler.id != assemblerId || assembler.speed < TrashSpeed || assembler.recipeId == __instance.recipeId) return;
+            matcher.SetOpcodeAndAdvance(OpCodes.Brfalse);
 
-                var itemProto = LDB.items.Select(factory.entityPool[objectId].protoId);
-                if (itemProto != null &&
-                    itemProto.prefabDesc != null &&
-                    (__instance.recipeId == 0 ||
-                     (__instance.recipeId > 0 &&
-                      ContainsRecipeType(itemProto.prefabDesc.assemblerRecipeType, __instance.recipeType) &&
-                      GameMain.history.RecipeUnlocked(__instance.recipeId))))
-                    __result = true;
-            }
-            else
-            {
-                var index2 = -objectId;
-                PrebuildData[] prebuildPool = factory.prebuildPool;
-                if (index2 <= 0 || prebuildPool[index2].id != index2) return;
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldfld, PrefabDesc_assemblerRecipeType_Field));
 
-                var itemProto = LDB.items.Select(prebuildPool[index2].protoId);
-                if (itemProto != null &&
-                    itemProto.prefabDesc != null &&
-                    itemProto.prefabDesc.isAssembler &&
-                    __instance.type == BuildingType.Assembler &&
-                    ContainsRecipeType(itemProto.prefabDesc.assemblerRecipeType, __instance.recipeType))
-                    __result = true;
-            }
-        }
-        
-        [HarmonyPostfix]
-        [HarmonyPatch(typeof(BuildingParameters), "CopyFromBuildPreview")]
-        public static void BuildingParameters_CopyFromBuildPreview(ref BuildingParameters __instance, BuildPreview bp)
-        {
-            __instance.recipeId = bp.recipeId;
-            __instance.filterId = bp.filterId;
-            var recipeProto = LDB.recipes.Select(__instance.recipeId);
-            if (recipeProto != null) __instance.recipeType = recipeProto.Type;
+            matcher.Advance(3).InsertAndAdvance(new CodeInstruction(OpCodes.Call, MegaAssemblerPatches_ContainsRecipeTypeRevert_Method));
+
+            matcher.SetOpcodeAndAdvance(OpCodes.Brfalse);
+
+            return matcher.InstructionEnumeration();
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using BepInEx;
+using BepInEx.Bootstrap;
 
 // ReSharper disable InconsistentNaming
 // ReSharper disable MemberCanBeInternal
@@ -8,7 +9,7 @@
 namespace ProjectGenesis.Compatibility
 {
     [BepInPlugin(MODGUID, MODNAME, VERSION)]
-    [BepInDependency(BlueprintTweaksGUID)]
+    [BepInDependency(BlueprintTweaksGUID, BepInDependency.DependencyFlags.SoftDependency)]
     public class BlueprintTweaksCompatibilityPlugin : BaseUnityPlugin
     {
         public const string MODGUID = "org.LoShin.GenesisBook.Compatibility.BlueprintTweaks";
@@ -19,6 +20,6 @@ namespace ProjectGenesis.Compatibility
 
         internal static bool BlueprintTweaksInstalled;
 
-        public void Awake() => BlueprintTweaksInstalled = true;
+        public void Awake() => BlueprintTweaksInstalled = Chainloader.PluginInfos.TryGetValue(BlueprintTweaksGUID, out _);
     }
 }

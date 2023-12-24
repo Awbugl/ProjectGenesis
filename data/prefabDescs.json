@@ -1,0 +1,378 @@
+[
+  {
+    "ModelID": 35,
+    "beltSpeed": 3
+  },
+  {
+    "ModelID": 36,
+    "beltSpeed": 5
+  },
+  {
+    "ModelID": 37,
+    "beltSpeed": 10
+  },
+  {
+    "ModelID": 41,
+    "inserterSTT": 100000
+  },
+  {
+    "ModelID": 42,
+    "inserterSTT": 50000
+  },
+  {
+    "ModelID": 43,
+    "inserterSTT": 25000
+  },
+  {
+    "ModelID": 44,
+    "powerConnectDistance": 40.5,
+    "powerCoverRadius": 20.5
+  },
+  {
+    "ModelID": 45,
+    "maxAcuEnergy": 2700000000,
+    "maxExcEnergy": 2700000000,
+    "exchangeEnergyPerTick": 10000000
+  },
+  {
+    "ModelID": 46,
+    "maxAcuEnergy": 2700000000,
+    "inputEnergyPerTick": 150000,
+    "outputEnergyPerTick": 150000
+  },
+  {
+    "ModelID": 49,
+    "workEnergyPerTick": 400000,
+    "stationMaxEnergyAcc": 360000000,
+    "stationMaxItemCount": 10000,
+    "stationMaxItemKinds": 5,
+    "stationMaxDroneCount": 80
+  },
+  {
+    "ModelID": 50,
+    "workEnergyPerTick": 2000000,
+    "stationMaxEnergyAcc": 24000000000,
+    "stationMaxItemCount": 20000
+  },
+  {
+    "ModelID": 53,
+    "powerConnectDistance": 15.0,
+    "powerCoverRadius": 0.0,
+    "genEnergyPerTick": 12500,
+    "waterTypes": [
+      1000,
+      7018
+    ]
+  },
+  {
+    "ModelID": 54,
+    "genEnergyPerTick": 200000,
+    "useFuelPerTick": 250000
+  },
+  {
+    "ModelID": 55,
+    "genEnergyPerTick": 15000
+  },
+  {
+    "ModelID": 56,
+    "genEnergyPerTick": 10000000,
+    "useFuelPerTick": 10000000,
+    "fuelMask": 16
+  },
+  {
+    "ModelID": 57,
+    "minerPeriod": 600000
+  },
+  {
+    "ModelID": 60,
+    "minerPeriod": 360000,
+    "waterTypes": [
+      1000,
+      1116,
+      7014,
+      7017,
+      7018
+    ]
+  },
+  {
+    "ModelID": 61,
+    "minerPeriod": 300000
+  },
+  {
+    "ModelID": 62,
+    "idleEnergyPerTick": 400,
+    "workEnergyPerTick": 12000,
+    "assemblerSpeed": 20000
+  },
+  {
+    "ModelID": 63,
+    "assemblerSpeed": 40000
+  },
+  {
+    "ModelID": 64,
+    "assemblerSpeed": 40000
+  },
+  {
+    "ModelID": 65,
+    "idleEnergyPerTick": 400,
+    "workEnergyPerTick": 9000,
+    "assemblerSpeed": 20000
+  },
+  {
+    "ModelID": 66,
+    "assemblerRecipeType": 9,
+    "idleEnergyPerTick": 600,
+    "workEnergyPerTick": 18000,
+    "assemblerSpeed": 20000
+  },
+  {
+    "ModelID": 67,
+    "assemblerRecipeType": 10,
+    "idleEnergyPerTick": 800,
+    "workEnergyPerTick": 36000,
+    "assemblerSpeed": 20000
+  },
+  {
+    "ModelID": 68,
+    "idleEnergyPerTick": 12000,
+    "workEnergyPerTick": 120000,
+    "powerConnectDistance": 120.5,
+    "powerCoverRadius": 50.5
+  },
+  {
+    "ModelID": 69,
+    "assemblerSpeed": 40000
+  },
+  {
+    "ModelID": 71,
+    "powerConnectDistance": 90.5
+  },
+  {
+    "ModelID": 72,
+    "ejectorChargeFrame": 80,
+    "ejectorColdFrame": 40
+  },
+  {
+    "ModelID": 74,
+    "siloChargeFrame": 120,
+    "siloColdFrame": 60
+  },
+  {
+    "ModelID": 117,
+    "stationCollectSpeed": 18
+  },
+  {
+    "ModelID": 118,
+    "genEnergyPerTick": 2500000,
+    "useFuelPerTick": 2500000
+  },
+  {
+    "ModelID": 194,
+    "assemblerSpeed": 40000
+  },
+  {
+    "ModelID": 255,
+    "genEnergyPerTick": 800000
+  },
+  {
+    "ModelID": 256,
+    "minerPeriod": 300000
+  },
+  {
+    "ModelID": 292,
+    "enemyGenMatter": 360
+  },
+  {
+    "ModelID": 373,
+    "turretDamageScale": 2,
+    "turretMaxAttackRange": 25
+  },
+  {
+    "ModelID": 376,
+    "assemblerRecipeType": 16,
+    "idleEnergyPerTick": 800,
+    "workEnergyPerTick": 24000,
+    "assemblerSpeed": 40000
+  },
+  {
+    "ModelID": 407,
+    "turretSpaceAttackRange": 8200
+  },
+  {
+    "ModelID": 408,
+    "turretSpaceAttackRange": 10500
+  },
+  {
+    "ModelID": 434,
+    "AmmoBlastRadius1": 15
+  },
+  {
+    "ModelID": 456,
+    "assemblerSpeed": 40000,
+    "assemblerRecipeType": 12
+  },
+  {
+    "ModelID": 457,
+    "idleEnergyPerTick": 8000,
+    "workEnergyPerTick": 240000,
+    "assemblerSpeed": 40000,
+    "assemblerRecipeType": 19
+  },
+  {
+    "ModelID": 501,
+    "fluidStorageCount": 1000000
+  },
+  {
+    "ModelID": 502,
+    "assemblerRecipeType": 11,
+    "idleEnergyPerTick": 400,
+    "workEnergyPerTick": 12000
+  },
+  {
+    "ModelID": 503,
+    "isAssembler": true,
+    "isStation": false,
+    "assemblerRecipeType": 18,
+    "idleEnergyPerTick": 75000,
+    "workEnergyPerTick": 375000,
+    "assemblerSpeed": 300000,
+    "stationMaxEnergyAcc": 0,
+    "stationMaxItemCount": 0,
+    "stationMaxItemKinds": 0,
+    "stationMaxDroneCount": 0
+  },
+  {
+    "ModelID": 504,
+    "isAssembler": true,
+    "isStation": false,
+    "assemblerRecipeType": 19,
+    "idleEnergyPerTick": 75000,
+    "workEnergyPerTick": 375000,
+    "assemblerSpeed": 300000,
+    "stationMaxEnergyAcc": 0,
+    "stationMaxItemCount": 0,
+    "stationMaxItemKinds": 0,
+    "stationMaxDroneCount": 0
+  },
+  {
+    "ModelID": 505,
+    "isAssembler": true,
+    "isStation": false,
+    "assemblerRecipeType": 17,
+    "idleEnergyPerTick": 75000,
+    "workEnergyPerTick": 375000,
+    "assemblerSpeed": 300000,
+    "stationMaxEnergyAcc": 0,
+    "stationMaxItemCount": 0,
+    "stationMaxItemKinds": 0,
+    "stationMaxDroneCount": 0
+  },
+  {
+    "ModelID": 506,
+    "isAssembler": true,
+    "isStation": false,
+    "assemblerRecipeType": 10,
+    "idleEnergyPerTick": 75000,
+    "workEnergyPerTick": 375000,
+    "assemblerSpeed": 300000,
+    "stationMaxEnergyAcc": 0,
+    "stationMaxItemCount": 0,
+    "stationMaxItemKinds": 0,
+    "stationMaxDroneCount": 0
+  },
+  {
+    "ModelID": 507,
+    "genEnergyPerTick": 120000000,
+    "useFuelPerTick": 120000000,
+    "fuelMask": 4
+  },
+  {
+    "ModelID": 508,
+    "isFractionator": false,
+    "assemblerRecipeType": 0,
+    "idleEnergyPerTick": 50000,
+    "workEnergyPerTick": 500000,
+    "minerPeriod": 36000,
+    "minerType": 1,
+    "minimapType": 2,
+    "allowBuildInWater": true,
+    "needBuildInWaterTech": false,
+    "waterTypes": [
+      1000,
+      1116,
+      7014,
+      7017,
+      7018
+    ]
+  },
+  {
+    "ModelID": 509,
+    "isAccumulator": false,
+    "isPowerGen": true,
+    "genEnergyPerTick": 50000
+  },
+  {
+    "ModelID": 510,
+    "isAssembler": true,
+    "isStation": false,
+    "assemblerRecipeType": 14,
+    "idleEnergyPerTick": 500000,
+    "workEnergyPerTick": 500000,
+    "assemblerSpeed": 60000,
+    "stationMaxEnergyAcc": 0,
+    "stationMaxItemCount": 0,
+    "stationMaxItemKinds": 0,
+    "stationMaxDroneCount": 0
+  },
+  {
+    "ModelID": 511,
+    "isAssembler": true,
+    "isStation": false,
+    "assemblerRecipeType": 5,
+    "idleEnergyPerTick": 150000,
+    "workEnergyPerTick": 750000,
+    "assemblerSpeed": 300000,
+    "stationMaxEnergyAcc": 0,
+    "stationMaxItemCount": 0,
+    "stationMaxItemKinds": 0,
+    "stationMaxDroneCount": 0
+  },
+  {
+    "ModelID": 512,
+    "isCollectStation": true,
+    "isPowerConsumer": false,
+    "workEnergyPerTick": 0,
+    "stationMaxDroneCount": 0,
+    "stationCollectSpeed": 4
+  },
+  {
+    "ModelID": 513,
+    "AmmoBlastRadius1": 20
+  },
+  {
+    "ModelID": 514,
+    "storageCol": 10,
+    "storageRow": 9,
+    "isStorage": true
+  },
+  {
+    "ModelID": 515,
+    "turretMuzzleInterval": 0,
+    "turretRoundInterval": 300000,
+    "idleEnergyPerTick": 800,
+    "workEnergyPerTick": 16000
+  },
+  {
+    "ModelID": 516,
+    "turretDamageScale": 4,
+    "turretMaxAttackRange": 30,
+    "idleEnergyPerTick": 600,
+    "workEnergyPerTick": 150000,
+    "turretAddEnemyExppBase": 48,
+    "turretAddEnemyExppCoef": 0.4,
+    "turretAddEnemyHatredBase": 10,
+    "turretAddEnemyHatredCoef": 0.01,
+    "turretAddEnemyThreatBase": 2,
+    "turretAddEnemyThreatCoef": 0.002
+  }
+]

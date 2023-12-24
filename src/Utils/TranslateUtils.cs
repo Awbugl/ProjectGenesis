@@ -1,64 +1,57 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using CommonAPI.Systems.ModLocalization;
 using UnityEngine;
+using static ProjectGenesis.Utils.JsonHelper;
 
 namespace ProjectGenesis.Utils
 {
     internal static class TranslateUtils
     {
-        private static Dictionary<string, StringProtoJson> _stringProtoJsons;
+        private static readonly Dictionary<string, StringProtoJson> StringProtoJsons, StringModProtoJsons;
+
+        private static readonly bool IsSystemZHCN;
 
         static TranslateUtils()
         {
-            Localization.language = (Language)PlayerPrefs.GetInt("language", 0);
+            StringProtoJsons = StringProtos().ToDictionary(i => i.Name);
+            StringModProtoJsons = StringModProtos().ToDictionary(i => i.Name);
+
+            int num = PlayerPrefs.GetInt("language", 0);
+
+            if (num <= 2)
+                num = Application.systemLanguage == SystemLanguage.Chinese ||
+                      Application.systemLanguage == SystemLanguage.ChineseSimplified ||
+                      Application.systemLanguage == SystemLanguage.ChineseTraditional
+                    ? 2052
+                    : 1033;
+
+            IsSystemZHCN = num == 2052;
         }
 
-        private static Dictionary<string, StringProtoJson> StringProtoJsons
+        internal static void RegisterStrings()
         {
-            get
-            {
-                if (_stringProtoJsons != null) return _stringProtoJsons;
-                _stringProtoJsons = JsonHelper.StringProtos().ToDictionary(i => i.Name);
-                return _stringProtoJsons;
-            }
+            foreach ((string key, StringProtoJson value) in StringProtoJsons) LocalizationModule.RegisterTranslation(key, value.ENUS, value.ZHCN, "");
+        }
+
+        public static string TranslateFromJsonSpecial(this string s)
+        {
+            if (string.IsNullOrWhiteSpace(s)) return "";
+
+            if (!StringModProtoJsons.TryGetValue(s, out StringProtoJson stringProtoJson) && !StringProtoJsons.TryGetValue(s, out stringProtoJson))
+                return s;
+
+            return IsSystemZHCN ? stringProtoJson.ZHCN : stringProtoJson.ENUS;
         }
 
         public static string TranslateFromJson(this string s)
         {
-            if (s == null) return "";
+            if (string.IsNullOrWhiteSpace(s)) return "";
 
-            if (StringProtoJsons.ContainsKey(s))
-            {
-                var stringProtoJson = StringProtoJsons[s];
-                switch (Localization.language)
-                {
-                    case Language.zhCN:
-                        return stringProtoJson.ZHCN;
+            if (!StringModProtoJsons.TryGetValue(s, out StringProtoJson stringProtoJson) && !StringProtoJsons.TryGetValue(s, out stringProtoJson))
+                return s;
 
-                    case Language.enUS:
-                        return stringProtoJson.ENUS;
-                }
-            }
-
-            var strings = LDB.strings;
-            if (strings == null) return s;
-
-            var stringProto = strings[s];
-            if (stringProto == null) return s;
-            switch (Localization.language)
-            {
-                case Language.zhCN:
-                    return stringProto.ZHCN;
-
-                case Language.enUS:
-                    return stringProto.ENUS;
-
-                case Language.frFR:
-                    return stringProto.FRFR;
-
-                default:
-                    return s;
-            }
+            return Localization.isZHCN ? stringProtoJson.ZHCN : stringProtoJson.ENUS;
         }
     }
 }

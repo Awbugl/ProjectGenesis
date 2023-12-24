@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
-    <Import Project="DefaultPath.props" />
+    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')"/>
+    <Import Project="DefaultPath.props"/>
     <PropertyGroup>
         <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
         <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -13,7 +13,7 @@
         <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
         <FileAlignment>512</FileAlignment>
         <Deterministic>true</Deterministic>
-        <TargetFrameworkProfile />
+        <TargetFrameworkProfile/>
         <LangVersion>7.3</LangVersion>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -37,35 +37,23 @@
         <Prefer32Bit>false</Prefer32Bit>
     </PropertyGroup>
     <ItemGroup>
-        <Reference Include="0Harmony20">
-            <HintPath>$(BepInExPath)\core\0Harmony20.dll</HintPath>
-        </Reference>
-        <Reference Include="Assembly-CSharp">
-            <HintPath>$(DSPAssemblyPath)\Assembly-CSharp.dll</HintPath>
-        </Reference>
-        <Reference Include="BepInEx">
-            <HintPath>$(BepInExPath)\core\BepInEx.dll</HintPath>
-        </Reference>
-        <Reference Include="CommonAPI">
-            <HintPath>$(CommonAPIPath)</HintPath>
-        </Reference>
-        <Reference Include="DSPModSave">
-            <HintPath>$(DSPModSavePath)</HintPath>
-        </Reference>
-        <Reference Include="LDBTool">
-            <HintPath>$(LDBToolPath)</HintPath>
-        </Reference>
+        <Reference Include="System"/>
+        <Reference Include="System.Core"/>
         <Reference Include="mscorlib">
             <HintPath>$(DSPAssemblyPath)\mscorlib.dll</HintPath>
         </Reference>
         <Reference Include="netstandard">
             <HintPath>$(DSPAssemblyPath)\netstandard.dll</HintPath>
         </Reference>
-        <Reference Include="Newtonsoft.Json">
-            <HintPath>dependencies\Newtonsoft.Json.dll</HintPath>
+        <Reference Include="Assembly-CSharp">
+            <HintPath>lib\Assembly-CSharp-publicized.dll</HintPath>
         </Reference>
-        <Reference Include="System" />
-        <Reference Include="System.Core" />
+        <Reference Include="Newtonsoft.Json">
+            <HintPath>lib\Newtonsoft.Json.dll</HintPath>
+        </Reference>
+        <Reference Include="GalacticScale">
+            <HintPath>lib\GalacticScale-nstrip.dll</HintPath>
+        </Reference>
         <Reference Include="System.Diagnostics.StackTrace">
             <HintPath>$(DSPAssemblyPath)\System.Diagnostics.StackTrace.dll</HintPath>
         </Reference>
@@ -78,8 +66,14 @@
         <Reference Include="UnityEngine">
             <HintPath>$(DSPAssemblyPath)\UnityEngine.dll</HintPath>
         </Reference>
+        <Reference Include="UnityEngine.AssetBundleModule">
+            <HintPath>$(DSPAssemblyPath)\UnityEngine.AssetBundleModule.dll</HintPath>
+        </Reference>
         <Reference Include="UnityEngine.CoreModule">
             <HintPath>$(DSPAssemblyPath)\UnityEngine.CoreModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.ParticleSystemModule">
+            <HintPath>$(DSPAssemblyPath)\UnityEngine.ParticleSystemModule.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.TextRenderingModule">
             <HintPath>$(DSPAssemblyPath)\UnityEngine.TextRenderingModule.dll</HintPath>
@@ -92,88 +86,132 @@
         </Reference>
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="src\Compatibility\BlueprintTweaksCompatibilityPlugin.cs" />
-        <Compile Include="src\Compatibility\BottleneckCompatibilityPlugin.cs" />
-        <Compile Include="src\Compatibility\GalacticScaleCompatibilityPlugin.cs" />
-        <Compile Include="src\Compatibility\IncompatibleCheckPlugin.cs" />
-        <Compile Include="src\Compatibility\MoreMegaStructureCompatibilityPlugin.cs" />
-        <Compile Include="src\Compatibility\PlanetwideMiningCompatibilityPlugin.cs" />
-        <Compile Include="src\Patches\Logic\DisableLDBToolCachePatches.cs" />
-        <Compile Include="src\Patches\Logic\InitnalTechPatches.cs" />
-        <Compile Include="src\Patches\Logic\MartixComplexPatches.cs" />
-        <Compile Include="src\Patches\Logic\MegaAssembler\InternalFunctions.cs" />
-        <Compile Include="src\Patches\Logic\MegaAssembler\MegaAssemblerPatches.cs" />
-        <Compile Include="src\Patches\Logic\MegaAssembler\NebulaCompat.cs" />
-        <Compile Include="src\Patches\Logic\MegaAssembler\PrebuildParametersPatches.cs" />
-        <Compile Include="src\Patches\Logic\MegaAssembler\SetFilterPatches.cs" />
-        <Compile Include="src\Patches\Logic\MegaAssembler\UIRecipePickerPatches.cs" />
-        <Compile Include="src\Patches\Logic\MegaAssembler\UISlotPickerPatches.cs" />
-        <Compile Include="src\Patches\Logic\MegaPumpPatches.cs" />
-        <Compile Include="src\Patches\Logic\ModelLoadingPatches.cs" />
-        <Compile Include="src\Patches\Logic\OceanDischargePatches.cs" />
-        <Compile Include="src\Patches\Logic\PlanetFocus\DronePatches.cs" />
-        <Compile Include="src\Patches\Logic\PlanetFocus\FactoryPowerPatches.cs" />
-        <Compile Include="src\Patches\Logic\PlanetFocus\InternalFunctions.cs" />
-        <Compile Include="src\Patches\Logic\PlanetFocus\LabPatches.cs" />
-        <Compile Include="src\Patches\Logic\PlanetFocus\MinerPatches.cs" />
-        <Compile Include="src\Patches\Logic\PlanetFocus\PlanetFocusPatches.cs" />
-        <Compile Include="src\Patches\Logic\PlanetFocus\PowerSystemPatches.cs" />
-        <Compile Include="src\Patches\Logic\PlanetGasPatches.cs" />
-        <Compile Include="src\Patches\Logic\AtmosphericEmissionPatches.cs" />
-        <Compile Include="src\Patches\Logic\ThermalPowerGenPatches.cs" />
-        <Compile Include="src\Patches\UI\BeltColorFix\BeltFixPatches.cs" />
-        <Compile Include="src\Patches\UI\DisplayTextPatches\DisplayNamePatches.cs" />
-        <Compile Include="src\Patches\UI\DisplayTextPatches\DisplayTextPatches.cs" />
-        <Compile Include="src\Patches\UI\FactoryModelPatches.cs" />
-        <Compile Include="src\Patches\UI\FluidColorPatches.cs" />
-        <Compile Include="src\Patches\UI\GridIndexExpandPatches.cs" />
-        <Compile Include="src\Patches\UI\HarmonyLogPatches.cs" />
-        <Compile Include="src\Patches\UI\MultiProductionPatches.cs" />
-        <Compile Include="src\Patches\UI\UIAbnormalityTipPatches.cs" />
-        <Compile Include="src\Patches\UI\UIMonitorPatches.cs" />
-        <Compile Include="src\Patches\UI\UITechNodePatches.cs" />
-        <Compile Include="src\Patches\UI\UIPlanetFocus\UIPlanetFocusWindow.cs" />
-        <Compile Include="src\Patches\UI\UIPlanetFocus\UIPlanetDetailExpand.cs" />
-        <Compile Include="src\Patches\UI\UISettingPatches.cs" />
-        <Compile Include="src\Patches\UI\UISignalPickerPatches.cs" />
-        <Compile Include="src\Patches\UI\UpdateLogoPatches.cs" />
-        <Compile Include="src\Patches\UI\Utils\MyWindowCtl.cs" />
-        <Compile Include="src\Patches\UI\Utils\Util.cs" />
-        <Compile Include="src\ProjectGenesis.cs" />
-        <Compile Include="src\Utils\CopyModelUtils.cs" />
-        <Compile Include="src\Utils\ERecipeType.cs" />
-        <Compile Include="src\Utils\IconDescUtils.cs" />
-        <Compile Include="src\Utils\JsonDataUtils.cs" />
-        <Compile Include="src\Utils\JsonHelper.cs" />
-        <Compile Include="src\Utils\MutliPlayerPacket.cs" />
-        <Compile Include="src\Utils\PlanetThemeUtils.cs" />
-        <Compile Include="src\Utils\PrefabFixUtils.cs" />
-        <Compile Include="src\Utils\ProtoIDUsedByPatches.cs" />
-        <Compile Include="src\Utils\TranslateUtils.cs" />
+        <Compile Include="src\Compatibility\BlueprintTweaksCompatibilityPlugin.cs"/>
+        <Compile Include="src\Compatibility\BottleneckCompatibilityPlugin.cs"/>
+        <Compile Include="src\Compatibility\DSPBattleCompatibilityPlugin.cs"/>
+        <Compile Include="src\Compatibility\FastTravelEnablerCompatibilityPlugin.cs"/>
+        <Compile Include="src\Compatibility\GalacticScaleCompatibilityPlugin.cs"/>
+        <Compile Include="src\Compatibility\InstallationCheckPlugin.cs"/>
+        <Compile Include="src\Compatibility\MoreMegaStructureCompatibilityPlugin.cs"/>
+        <Compile Include="src\Compatibility\PlanetVeinUtilizationCompatibilityPlugin.cs"/>
+        <Compile Include="src\Compatibility\PlanetwideMiningCompatibilityPlugin.cs"/>
+        <Compile Include="src\Patches\Logic\AbnormalityLogicPatches.cs"/>
+        <Compile Include="src\Patches\Logic\FuelRodPatches.cs"/>
+        <Compile Include="src\Patches\Logic\PlanetFocus\DarkFrogPatches.cs"/>
+        <Compile Include="src\Patches\Logic\QTools\NodeData.cs"/>
+        <Compile Include="src\Patches\Logic\QTools\NodeDataSet.cs"/>
+        <Compile Include="src\Patches\Logic\QTools\NodeOptions.cs"/>
+        <Compile Include="src\Patches\Logic\QTools\QTools.cs"/>
+        <Compile Include="src\Patches\Logic\QuantumStoragePatches.cs"/>
+        <Compile Include="src\Patches\Logic\StationOutputPatches.cs"/>
+        <Compile Include="src\Patches\Logic\VFPreloadPatches.cs"/>
+        <Compile Include="src\Patches\Logic\AddVein\AddEffectEmitterProto.cs"/>
+        <Compile Include="src\Patches\Logic\AddVein\AddVeinPatches.cs"/>
+        <Compile Include="src\Patches\Logic\AddVein\ModifyPlanetTheme.cs"/>
+        <Compile Include="src\Patches\Logic\AddVein\SwapShaderPatches.cs"/>
+        <Compile Include="src\Patches\Logic\AddVein\UIDetailPatches.cs"/>
+        <Compile Include="src\Patches\Logic\AddVein\VeinAnimDataPatches.cs"/>
+        <Compile Include="src\Patches\Logic\DisableLDBToolCachePatches.cs"/>
+        <Compile Include="src\Patches\Logic\FastStartOptionPatches.cs"/>
+        <Compile Include="src\Patches\Logic\FastTravelPatches.cs"/>
+        <Compile Include="src\Patches\Logic\InitialTechPatches.cs"/>
+        <Compile Include="src\Patches\Logic\MegaAssembler\InternalFunctions.cs"/>
+        <Compile Include="src\Patches\Logic\MegaAssembler\MegaAssemblerPatches.cs"/>
+        <Compile Include="src\Patches\Logic\MegaAssembler\NebulaCompat.cs"/>
+        <Compile Include="src\Patches\Logic\MegaAssembler\PrebuildParametersPatches.cs"/>
+        <Compile Include="src\Patches\Logic\MegaAssembler\SetFilterPatches.cs"/>
+        <Compile Include="src\Patches\Logic\MegaAssembler\UIRecipePickerPatches.cs"/>
+        <Compile Include="src\Patches\Logic\MegaAssembler\UISlotPickerPatches.cs"/>
+        <Compile Include="src\Patches\Logic\PlanetAlgorithmPatches.cs"/>
+        <Compile Include="src\Patches\Logic\PlanetFocus\DronePatches.cs"/>
+        <Compile Include="src\Patches\Logic\PlanetFocus\FactoryPowerPatches.cs"/>
+        <Compile Include="src\Patches\Logic\PlanetFocus\InternalFunctions.cs"/>
+        <Compile Include="src\Patches\Logic\PlanetFocus\LabPatches.cs"/>
+        <Compile Include="src\Patches\Logic\PlanetFocus\MinerPatches.cs"/>
+        <Compile Include="src\Patches\Logic\PlanetFocus\PlanetFocusPatches.cs"/>
+        <Compile Include="src\Patches\Logic\PlanetFocus\PowerSystemPatches.cs"/>
+        <Compile Include="src\Patches\Logic\PlanetGasPatches.cs"/>
+        <Compile Include="src\Patches\Logic\ChangeStackingLogicPatches.cs"/>
+        <Compile Include="src\Patches\Logic\TankComponentPatches.cs"/>
+        <Compile Include="src\Patches\Logic\ThermalPowerGenPatches.cs"/>
+        <Compile Include="src\Patches\UI\BeltColorFix\BeltFixPatches.cs"/>
+        <Compile Include="src\Patches\UI\DisplayText\DisplayNamePatches.cs"/>
+        <Compile Include="src\Patches\UI\DisplayText\DisplayTextPatches.cs"/>
+        <Compile Include="src\Patches\UI\FactoryModelPatches.cs"/>
+        <Compile Include="src\Patches\UI\FluidColorPatches.cs"/>
+        <Compile Include="src\Patches\UI\GridIndexExpandPatches.cs"/>
+        <Compile Include="src\Patches\UI\HarmonyLogPatches.cs"/>
+        <Compile Include="src\Patches\UI\LaserMk2Patches.cs"/>
+        <Compile Include="src\Patches\UI\MultiProductionPatches.cs"/>
+        <Compile Include="src\Patches\UI\QTools\ItemNeedDetail.cs"/>
+        <Compile Include="src\Patches\UI\QTools\ObjectPool.cs"/>
+        <Compile Include="src\Patches\UI\ResourcesLoadPatches.cs" />
+        <Compile Include="src\Patches\UI\UIBuildMenuPatches.cs"/>
+        <Compile Include="src\Patches\UI\UILootFilterPatches.cs"/>
+        <Compile Include="src\Patches\UI\UIMainMenuPatches.cs" />
+        <Compile Include="src\Patches\UI\UIMonitorPatches.cs"/>
+        <Compile Include="src\Patches\UI\UIPowerGeneratorWindowPatches.cs"/>
+        <Compile Include="src\Patches\UI\QTools\MyComboBox\ItemComboBox.cs"/>
+        <Compile Include="src\Patches\UI\QTools\MyComboBox\SignalComboBox.cs"/>
+        <Compile Include="src\Patches\UI\QTools\MyComboBox\MyComboBox.cs"/>
+        <Compile Include="src\Patches\UI\QTools\MyComboBox\ProliferatorComboBox.cs"/>
+        <Compile Include="src\Patches\UI\QTools\MyKeyBinder.cs"/>
+        <Compile Include="src\Patches\UI\QTools\ProductDetail.cs"/>
+        <Compile Include="src\Patches\UI\QTools\QToolsWindowPatches.cs"/>
+        <Compile Include="src\Patches\UI\QTools\UIQToolsWindow.cs"/>
+        <Compile Include="src\Patches\UI\UITechNodePatches.cs"/>
+        <Compile Include="src\Patches\UI\PlanetFocus\UIPlanetFocusWindow.cs"/>
+        <Compile Include="src\Patches\UI\PlanetFocus\UIPlanetDetailExpand.cs"/>
+        <Compile Include="src\Patches\UI\UIOptionWindowPatches.cs"/>
+        <Compile Include="src\Patches\UI\UISignalPickerPatches.cs"/>
+        <Compile Include="src\Patches\UI\UpdateLogoPatches.cs"/>
+        <Compile Include="src\Patches\UI\Utils\MyWindowCtl.cs"/>
+        <Compile Include="src\Patches\UI\Utils\Util.cs"/>
+        <Compile Include="src\ProjectGenesis.cs"/>
+        <Compile Include="src\Utils\CopyModelUtils.cs"/>
+        <Compile Include="src\Utils\DictionaryExtend.cs"/>
+        <Compile Include="src\Utils\ERecipeType.cs"/>
+        <Compile Include="src\Utils\IconDescUtils.cs"/>
+        <Compile Include="src\Utils\JsonDataUtils.cs"/>
+        <Compile Include="src\Utils\JsonHelper.cs"/>
+        <Compile Include="src\Utils\MutliPlayerPacket.cs"/>
+        <Compile Include="src\Utils\ProtoID.cs"/>
+        <Compile Include="src\Utils\TranslateUtils.cs"/>
+        <Compile Include="src\Utils\TranspilerLogUtils.cs"/>
     </ItemGroup>
     <ItemGroup>
-        <EmbeddedResource Include="dependencies\items.json" />
-        <EmbeddedResource Include="dependencies\recipes.json" />
-        <EmbeddedResource Include="dependencies\strings.json" />
-        <EmbeddedResource Include="dependencies\techs.json" />
+        <EmbeddedResource Include="data\items_mod.json"/>
+        <EmbeddedResource Include="data\items_vanilla.json"/>
+        <EmbeddedResource Include="data\prefabDescs.json"/>
+        <EmbeddedResource Include="data\recipes.json"/>
+        <EmbeddedResource Include="data\strings.json"/>
+        <EmbeddedResource Include="data\strings_mod.json"/>
+        <EmbeddedResource Include="data\techs.json"/>
+        <EmbeddedResource Include="data\tutorials.json"/>
     </ItemGroup>
     <ItemGroup>
-        <Content Include="CHANGELOG.md" />
-        <Content Include="DefaultPath.props" />
-        <Content Include="dependencies\Newtonsoft.Json.dll" />
-        <Content Include="README.md" />
+        <Content Include="CHANGELOG.md"/>
+        <Content Include="DefaultPath.props"/>
+        <Content Include="lib\Assembly-CSharp-publicized.dll"/>
+        <Content Include="lib\GalacticScale-nstrip.dll"/>
+        <Content Include="lib\Newtonsoft.Json.dll"/>
+        <Content Include="README.md"/>
     </ItemGroup>
     <ItemGroup>
-        <PackageReference Include="DysonSphereProgram.Modding.CommonAPI" Version="1.5.4" />
-        <PackageReference Include="DysonSphereProgram.Modding.DSPModSave" Version="1.1.3" />
-        <PackageReference Include="DysonSphereProgram.Modding.LDBTool" Version="2.0.5" />
-        <PackageReference Include="DysonSphereProgram.Modding.NebulaMultiplayerModApi" Version="1.3.0" />
+        <PackageReference Include="BepInEx.Core" Version="5.4.17"/>
+        <PackageReference Include="DysonSphereProgram.Modding.CommonAPI" Version="1.6.2"/>
+        <PackageReference Include="DysonSphereProgram.Modding.DSPModSave" Version="1.1.3"/>
+        <PackageReference Include="DysonSphereProgram.Modding.LDBTool" Version="3.0.0"/>
+        <PackageReference Include="DysonSphereProgram.Modding.NebulaMultiplayerModApi" Version="1.3.1"/>
     </ItemGroup>
-    <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+    <ItemGroup>
+        <None Include="nuget.config"/>
+    </ItemGroup>
+    <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
     <Target Name="AfterBuild">
-        <Copy SourceFiles="$(TargetPath)" DestinationFiles="$(DefaultOutputPath)$(TargetName).dll" />
-        <Copy SourceFiles="README.md" DestinationFiles="$(DefaultOutputPath)README.md" />
-        <Copy SourceFiles="CHANGELOG.md" DestinationFiles="$(DefaultOutputPath)CHANGELOG.md" />        
-        <Exec Command="explorer $(DefaultOutputPath)" IgnoreExitCode="true" />
+        <Copy SourceFiles="$(TargetPath)" DestinationFiles="$(DefaultOutputPath)$(TargetName).dll"/>
+        <Copy SourceFiles="README.md" DestinationFiles="$(DefaultOutputPath)README.md"/>
+        <Copy SourceFiles="CHANGELOG.md" DestinationFiles="$(DefaultOutputPath)CHANGELOG.md"/>
+        <Exec Command="explorer $(DefaultOutputPath)" IgnoreExitCode="true"/>
     </Target>
 </Project>

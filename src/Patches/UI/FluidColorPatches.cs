@@ -1,5 +1,5 @@
 ﻿using HarmonyLib;
-using static ProjectGenesis.Utils.IconDescUtils;
+using ProjectGenesis.Utils;
 
 // ReSharper disable InconsistentNaming
 
@@ -7,14 +7,18 @@ namespace ProjectGenesis.Patches.UI
 {
     internal static class FluidColorPatches
     {
-        [HarmonyPostfix]
         [HarmonyPatch(typeof(UITankWindow), "_OnUpdate")]
-        public static void UITankWindow_OnUpdate(ref UITankWindow __instance)
+        [HarmonyPostfix]
+        public static void UITankWindow_OnUpdate(UITankWindow __instance)
         {
-            var tankComponent = __instance.storage.tankPool[__instance.tankId];
-            if (tankComponent.id != __instance.tankId) return;
+            int tankId = __instance.tankId;
 
-            if (FluidColor.ContainsKey(tankComponent.fluidId)) __instance.exchangeAndColoring(FluidColor[tankComponent.fluidId]);
+            TankComponent tankComponent = __instance.storage.tankPool[tankId];
+            if (tankComponent.id != tankId) return;
+
+            int fluidId = tankComponent.fluidId;
+
+            if (IconDescUtils.IconDescs.TryGetValue(fluidId, out IconDescUtils.ModIconDesc value)) __instance.exchangeAndColoring(value.Color);
         }
     }
 }

@@ -1,6 +1,6 @@
 namespace ProjectGenesis.Utils
 {
-    internal enum ERecipeType
+    public enum ERecipeType
     {
         None = 0,
         Smelt = 1,
@@ -11,16 +11,15 @@ namespace ProjectGenesis.Utils
         Exchange = 6,
         PhotonStore = 7,
         Fractionate = 8,
-        电路蚀刻 = 9,
+        标准制造 = 9,
         高精度加工 = 10,
         矿物处理 = 11,
-        精密组装 = 12,
-        聚变生产 = 13,
+        所有制造 = 12, // 4 + 9 + 10
         垃圾回收 = 14,
         Research = 15,
         高分子化工 = 16,
         所有化工 = 17, // 2 + 3 + 16 
-        所有高精 = 18, // 9 + 10
+        复合制造 = 18, // 4 + 9
         所有熔炉 = 19  // 1 + 11
     }
 }

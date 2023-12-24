@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.IO;
 using NebulaAPI;
 using ProjectGenesis.Patches.Logic.MegaAssembler;
 using ProjectGenesis.Patches.Logic.PlanetFocus;
@@ -22,12 +23,12 @@ namespace ProjectGenesis.Utils
             Guid = guid;
             PlanetId = planetId;
             EntityId = entityId;
-            using (var p = NebulaModAPI.GetBinaryWriter())
+            using (IWriterProvider p = NebulaModAPI.GetBinaryWriter())
             {
-                var w = p.BinaryWriter;
+                BinaryWriter w = p.BinaryWriter;
 
                 w.Write(data.Length);
-                for (var i = 0; i < data.Length; i++)
+                for (int i = 0; i < data.Length; i++)
                 {
                     w.Write((int)data[i].dir);
                     w.Write(data[i].beltId);
@@ -61,17 +62,17 @@ namespace ProjectGenesis.Utils
 
             SlotData[] slotsData;
 
-            using (var p = NebulaModAPI.GetBinaryReader(data))
-            using (var r = p.BinaryReader)
+            using (IReaderProvider p = NebulaModAPI.GetBinaryReader(data))
+            using (BinaryReader r = p.BinaryReader)
             {
-                var length = r.ReadInt32();
+                int length = r.ReadInt32();
                 slotsData = new SlotData[length];
-                for (var i = 0; i < length; i++)
+                for (int i = 0; i < length; i++)
                 {
                     slotsData[i] = new SlotData
-                                   {
-                                       dir = (IODir)r.ReadInt32(), beltId = r.ReadInt32(), storageIdx = r.ReadInt32(), counter = r.ReadInt32()
-                                   };
+                    {
+                        dir = (IODir)r.ReadInt32(), beltId = r.ReadInt32(), storageIdx = r.ReadInt32(), counter = r.ReadInt32()
+                    };
                 }
 
                 p.BinaryReader.Close();
@@ -104,9 +105,9 @@ namespace ProjectGenesis.Utils
             SlotId = slotId;
             EntityId = entityId;
 
-            using (var p = NebulaModAPI.GetBinaryWriter())
+            using (IWriterProvider p = NebulaModAPI.GetBinaryWriter())
             {
-                var w = p.BinaryWriter;
+                BinaryWriter w = p.BinaryWriter;
 
                 w.Write((int)data.dir);
                 w.Write(data.beltId);
@@ -145,13 +146,10 @@ namespace ProjectGenesis.Utils
 
             SlotData slotData;
 
-            using (var p = NebulaModAPI.GetBinaryReader(data))
-            using (var r = p.BinaryReader)
+            using (IReaderProvider p = NebulaModAPI.GetBinaryReader(data))
+            using (BinaryReader r = p.BinaryReader)
             {
-                slotData = new SlotData
-                           {
-                               dir = (IODir)r.ReadInt32(), beltId = r.ReadInt32(), storageIdx = r.ReadInt32(), counter = r.ReadInt32()
-                           };
+                slotData = new SlotData { dir = (IODir)r.ReadInt32(), beltId = r.ReadInt32(), storageIdx = r.ReadInt32(), counter = r.ReadInt32() };
 
 
                 p.BinaryReader.Close();
@@ -167,8 +165,8 @@ namespace ProjectGenesis.Utils
         public override void ProcessPacket(SyncSlotData packet, INebulaConnection conn)
             => SyncSlotData.OnReceive(packet.Guid, packet.PlanetId, packet.SlotId, packet.EntityId, packet.SlotData);
     }
-    
- public class SyncPlanetFocusData
+
+    public class SyncPlanetFocusData
     {
         public SyncPlanetFocusData() { }
 
@@ -189,10 +187,7 @@ namespace ProjectGenesis.Utils
         public int Index { get; set; }
         public int FocusId { get; set; }
 
-        internal static void Sync(
-            int planetId,
-            int index,
-            int focusId)
+        internal static void Sync(int planetId, int index, int focusId)
         {
             if (NebulaModAPI.IsMultiplayerActive)
                 NebulaModAPI.MultiplayerSession.Network.SendPacket(new SyncPlanetFocusData(ProjectGenesis.MODGUID, planetId, index, focusId));
@@ -215,17 +210,17 @@ namespace ProjectGenesis.Utils
         public override void ProcessPacket(SyncPlanetFocusData packet, INebulaConnection conn)
             => SyncPlanetFocusData.OnReceive(packet.Guid, packet.PlanetId, packet.Index, packet.FocusId);
     }
-   
+
     public class GenesisBookPlanetLoadRequest
     {
-        public int PlanetId { get; set; }
-        
         public GenesisBookPlanetLoadRequest() { }
 
         public GenesisBookPlanetLoadRequest(int planetId)
         {
             PlanetId = planetId;
         }
+
+        public int PlanetId { get; set; }
     }
 
     [RegisterPacketProcessor]
@@ -237,7 +232,7 @@ namespace ProjectGenesis.Utils
 
             byte[] data;
 
-            using (var p = NebulaModAPI.GetBinaryWriter())
+            using (IWriterProvider p = NebulaModAPI.GetBinaryWriter())
             {
                 MegaAssemblerPatches.ExportPlanetData(packet.PlanetId, p.BinaryWriter);
                 PlanetFocusPatches.ExportPlanetFocus(packet.PlanetId, p.BinaryWriter);
@@ -250,9 +245,6 @@ namespace ProjectGenesis.Utils
 
     public class GenesisBookPlanetData
     {
-        public int PlanetId { get; set; }
-        public byte[] BinaryData { get; set; }
-
         public GenesisBookPlanetData() { }
 
         public GenesisBookPlanetData(int id, byte[] data)
@@ -260,6 +252,9 @@ namespace ProjectGenesis.Utils
             PlanetId = id;
             BinaryData = data;
         }
+
+        public int PlanetId { get; set; }
+        public byte[] BinaryData { get; set; }
     }
 
     [RegisterPacketProcessor]
@@ -280,7 +275,7 @@ namespace ProjectGenesis.Utils
             if (!PendingData.TryGetValue(planetId, out byte[] bytes)) return;
             PendingData.Remove(planetId);
 
-            using (var p = NebulaModAPI.GetBinaryReader(bytes))
+            using (IReaderProvider p = NebulaModAPI.GetBinaryReader(bytes))
             {
                 MegaAssemblerPatches.ImportPlanetData(p.BinaryReader);
                 PlanetFocusPatches.ImportPlanetFocus(p.BinaryReader);

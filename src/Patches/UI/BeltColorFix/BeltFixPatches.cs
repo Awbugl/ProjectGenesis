@@ -22,24 +22,24 @@ namespace ProjectGenesis.Patches.UI.BeltColorFix
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> AddColors(IEnumerable<CodeInstruction> instructions)
         {
-            var matcher = new CodeMatcher(instructions).MatchForward(false, new CodeMatch(OpCodes.Ldloc_1),
-                                                                     new CodeMatch(OpCodes.Ldfld, BeltComponent_Speed_Field),
-                                                                     new CodeMatch(OpCodes.Ldc_I4_1));
+            CodeMatcher matcher = new CodeMatcher(instructions).MatchForward(false, new CodeMatch(OpCodes.Ldloc_1),
+                                                                             new CodeMatch(OpCodes.Ldfld, BeltComponent_Speed_Field),
+                                                                             new CodeMatch(OpCodes.Ldc_I4_1));
 
-            var matcher2 = matcher.Clone();
+            CodeMatcher matcher2 = matcher.Clone();
             matcher2.MatchForward(true, new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Stloc_S));
 
-            var arg = matcher2.Operand;
+            object arg = matcher2.Operand;
             matcher2.Advance(1);
-            var label = matcher2.Operand;
+            object label = matcher2.Operand;
 
-            matcher.Advance(2).InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_S, arg))
-                   .SetInstruction(Transpilers.EmitDelegate<Func<int, int, int>>((speed, other) =>
-                    {
-                        if (speed == 10) other += 8;
-                        if (speed == 5) other += 4;
-                        return other;
-                    })).Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Stloc_S, arg)).SetInstruction(new CodeInstruction(OpCodes.Br, label));
+            matcher.Advance(2).InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_S, arg)).SetInstruction(
+                Transpilers.EmitDelegate<Func<int, int, int>>((speed, other) =>
+                {
+                    if (speed == 10) other += 8;
+                    if (speed == 5) other += 4;
+                    return other;
+                })).Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Stloc_S, arg)).SetInstruction(new CodeInstruction(OpCodes.Br, label));
 
             return matcher.InstructionEnumeration();
         }
@@ -48,9 +48,9 @@ namespace ProjectGenesis.Patches.UI.BeltColorFix
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> CargoTraffic_SetBeltSelected_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
-            var matcher = new CodeMatcher(instructions).MatchForward(false, new CodeMatch(OpCodes.Ldelema),
-                                                                     new CodeMatch(OpCodes.Ldfld, BeltComponent_Speed_Field),
-                                                                     new CodeMatch(OpCodes.Call));
+            CodeMatcher matcher = new CodeMatcher(instructions).MatchForward(false, new CodeMatch(OpCodes.Ldelema),
+                                                                             new CodeMatch(OpCodes.Ldfld, BeltComponent_Speed_Field),
+                                                                             new CodeMatch(OpCodes.Call));
 
             matcher.Advance(2).InsertAndAdvance(Transpilers.EmitDelegate<Func<int, int>>(speed =>
             {
@@ -99,24 +99,25 @@ namespace ProjectGenesis.Patches.UI.BeltColorFix
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> GizmoColorUpdate(IEnumerable<CodeInstruction> instructions)
         {
-            var matcher = new CodeMatcher(instructions)
-                         .MatchForward(false, new CodeMatch(OpCodes.Ldarg_0),
-                                       new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(ConnGizmoRenderer), nameof(ConnGizmoRenderer.factory))),
-                                       new CodeMatch(OpCodes.Ldloc_3)).Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_S, 6))
-                         .InsertAndAdvance(new CodeInstruction(OpCodes.Ldloca_S, 0))
-                         .InsertAndAdvance(Transpilers.EmitDelegate<RefAction<int, ConnGizmoObj>>((int speed, ref ConnGizmoObj renderer) =>
-                          {
-                              switch (speed)
-                              {
-                                  case 5:
-                                      renderer.color = 2;
-                                      break;
+            CodeMatcher matcher = new CodeMatcher(instructions)
+                                 .MatchForward(false, new CodeMatch(OpCodes.Ldarg_0),
+                                               new CodeMatch(OpCodes.Ldfld,
+                                                             AccessTools.Field(typeof(ConnGizmoRenderer), nameof(ConnGizmoRenderer.factory))),
+                                               new CodeMatch(OpCodes.Ldloc_3)).Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_S, 6))
+                                 .InsertAndAdvance(new CodeInstruction(OpCodes.Ldloca_S, 0)).InsertAndAdvance(
+                                      Transpilers.EmitDelegate<RefAction<int, ConnGizmoObj>>((int speed, ref ConnGizmoObj renderer) =>
+                                      {
+                                          switch (speed)
+                                          {
+                                              case 5:
+                                                  renderer.color = 2;
+                                                  break;
 
-                                  case 3:
-                                      renderer.color = 1;
-                                      break;
-                              }
-                          }));
+                                              case 3:
+                                                  renderer.color = 1;
+                                                  break;
+                                          }
+                                      }));
 
             return matcher.InstructionEnumeration();
         }
