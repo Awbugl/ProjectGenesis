@@ -9,8 +9,8 @@ namespace ProjectGenesis.Patches.UI
 {
     internal static class UITechNodePatches
     {
-        [HarmonyPostfix]
         [HarmonyPatch(typeof(UITechNode), "UpdateLayoutDynamic")]
+        [HarmonyPostfix]
         public static void UITechNode_UpdateLayoutDynamic(UITechNode __instance, bool forceUpdate = false, bool forceReset = false)
         {
             float num4 = Mathf.Max(__instance.unlockText.preferredWidth - 40f + __instance.unlockTextTrans.anchoredPosition.x,

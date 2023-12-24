@@ -31,6 +31,24 @@ namespace ProjectGenesis.Patches.Logic
             }
         }
 
+        [HarmonyPatch(typeof(BuildTool_Addon), nameof(BuildTool_Addon.UpdateRaycast))]
+        [HarmonyPatch(typeof(BuildTool_Addon), nameof(BuildTool_Addon.DeterminePreviews))]
+        [HarmonyTranspiler]
+        public static IEnumerable<CodeInstruction> BuildTool_Addon_Transpiler(IEnumerable<CodeInstruction> instructions)
+        {
+            var matcher = new CodeMatcher(instructions);
+
+            matcher.MatchForward(true, new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(PrefabDesc), nameof(PrefabDesc.isStorage))));
+
+            matcher.SetInstructionAndAdvance(new CodeInstruction(OpCodes.Call,
+                                                                 AccessTools.Method(typeof(QuantumStoragePatches),
+                                                                                    nameof(BuildTool_Addon_PatchMethod))));
+            
+            return matcher.InstructionEnumeration();
+        }
+
+        public static bool BuildTool_Addon_PatchMethod(PrefabDesc desc) => desc.isStorage && desc.storageRow != 9;
+
         [HarmonyPatch(typeof(StorageComponent), "SetEmpty")]
         [HarmonyPrefix]
         public static bool StorageComponent_SetEmpty(StorageComponent __instance) => __instance.size != QuantumStorageSize;

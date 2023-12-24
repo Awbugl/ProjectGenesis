@@ -3776,7 +3776,7 @@
     "IconPath": "",
     "Type": 9,
     "GridIndex": 5503,
-    "Time": 360,
+    "Time": 240,
     "Input": [
       1605,
       7705,
@@ -3832,7 +3832,7 @@
     "IconPath": "",
     "Type": 10,
     "GridIndex": 5702,
-    "Time": 120,
+    "Time": 360,
     "Input": [
       1120,
       1122,
@@ -6264,7 +6264,7 @@
     "IconPath": "",
     "Type": 10,
     "GridIndex": 5504,
-    "Time": 720,
+    "Time": 480,
     "Input": [
       7612,
       6271,

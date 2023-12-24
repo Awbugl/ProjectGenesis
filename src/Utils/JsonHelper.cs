@@ -429,6 +429,7 @@ namespace ProjectGenesis.Utils
             public int? turretAddEnemyThreatBase { get; set; } = null;
             public float? turretAddEnemyThreatCoef { get; set; } = null;
             public int? enemyGenMatter { get; set; } = null;
+            public bool? multiLevel { get; set; } = null;
             public int? storageCol { get; set; } = null;
             public int? storageRow { get; set; } = null;
             public bool? isStorage { get; set; } = null;
@@ -492,6 +493,7 @@ namespace ProjectGenesis.Utils
                     turretAddEnemyThreatBase = i.turretAddEnemyThreatBase,
                     turretAddEnemyThreatCoef = i.turretAddEnemyThreatCoef,
                     enemyGenMatter = i.enemyGenMatter,
+                    multiLevel = i.multiLevel,
                     storageCol = i.storageCol,
                     storageRow = i.storageRow,
                     isStorage = i.isStorage,
@@ -553,6 +555,7 @@ namespace ProjectGenesis.Utils
                 if (turretAddEnemyThreatBase != null) desc.turretAddEnemyThreatBase = turretAddEnemyThreatBase.Value;
                 if (turretAddEnemyThreatCoef != null) desc.turretAddEnemyThreatCoef = turretAddEnemyThreatCoef.Value;
                 if (enemyGenMatter != null) desc.enemyGenMatter = enemyGenMatter.Value;
+                if (multiLevel != null) desc.multiLevel = multiLevel.Value;
                 if (storageCol != null) desc.storageCol = storageCol.Value;
                 if (storageRow != null) desc.storageRow = storageRow.Value;
                 if (isStorage != null) desc.isStorage = isStorage.Value;

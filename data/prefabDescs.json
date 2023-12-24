@@ -353,7 +353,8 @@
     "ModelID": 514,
     "storageCol": 10,
     "storageRow": 9,
-    "isStorage": true
+    "isStorage": true,
+    "multiLevel": false
   },
   {
     "ModelID": 515,
