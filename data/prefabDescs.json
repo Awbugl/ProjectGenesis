@@ -358,10 +358,11 @@
   },
   {
     "ModelID": 515,
-    "turretMuzzleInterval": 0,
-    "turretRoundInterval": 300000,
-    "idleEnergyPerTick": 800,
-    "workEnergyPerTick": 16000
+    "turretRoundInterval": 1200000,
+    "turretMinAttackRange": 30,
+    "turretMaxAttackRange": 75,
+    "idleEnergyPerTick": 1000,
+    "workEnergyPerTick": 25000
   },
   {
     "ModelID": 516,

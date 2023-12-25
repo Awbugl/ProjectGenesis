@@ -2535,19 +2535,19 @@
     "ENUS": "Unlocking new features for the Planetary Coordination Center"
   },
   {
-    "Name": "高斯机枪塔",
-    "ZHCN": "高斯机枪塔 MK.I",
-    "ENUS": "Gauss Turret MK.I"
+    "Name": "聚爆加农炮",
+    "ZHCN": "聚爆加农炮 MK.I",
+    "ENUS": "Implosion Cannon MK.I"
   },
   {
     "Name": "高斯机枪塔MK2",
-    "ZHCN": "高斯机枪塔 MK.II",
-    "ENUS": "Gauss Turret MK.II"
+    "ZHCN": "聚爆加农炮 MK.II",
+    "ENUS": "Implosion Cannon MK.II"
   },
   {
     "Name": "I高斯机枪塔MK2",
-    "ZHCN": "高斯机枪塔MK.II，装有四联装高斯机枪，拥有更高的射速以及更加优秀的供弹系统。",
-    "ENUS": "The Gauss Turret MK.II, fitted with a quadruple Gauss machine gun, has a higher rate of fire as well as a better ammunition supply system."
+    "ZHCN": "改进的质量投射器能够有效增加这门巨炮的射程，而新的高强度结构材料则可以承受更大的冲击力以抵消质量投射技术带来的巨大后坐，避免对其结构本身造成破坏，即使如此，这门巨炮每次开火仍需要更长时间进行充能。",
+    "ENUS": "The improved mass projector can effectively increase the range of this cannon, while the new high-strength structural material can withstand greater impact force to offset the huge recoil caused by mass projection technology, avoiding damage to its structure itself. Nevertheless, each firing of this cannon still requires longer charging time."
   },
   {
     "Name": "高频激光塔",

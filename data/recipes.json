@@ -3359,7 +3359,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 5203,
+    "GridIndex": 5202,
     "Time": 240,
     "Input": [
       6501,
@@ -3387,13 +3387,13 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 5205,
+    "GridIndex": 5204,
     "Time": 360,
     "Input": [
       6501,
       1103,
       1301,
-      1205
+      1204
     ],
     "InCounts": [
       2,
@@ -6347,15 +6347,17 @@
     "Description": "R高斯机枪塔MK2",
     "IconPath": "",
     "Type": 9,
-    "GridIndex": 5202,
-    "Time": 480,
+    "GridIndex": 5205,
+    "Time": 720,
     "Input": [
       6502,
       1107,
-      1204
+      1303,
+      1205
     ],
     "InCounts": [
       2,
+      8,
       4,
       2
     ],
@@ -6375,7 +6377,7 @@
     "Description": "激光塔MK2",
     "IconPath": "",
     "Type": 9,
-    "GridIndex": 5204,
+    "GridIndex": 5203,
     "Time": 480,
     "Input": [
       6502,

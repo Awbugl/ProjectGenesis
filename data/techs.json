@@ -4224,7 +4224,8 @@
     ],
     "HashNeeded": 288000,
     "UnlockRecipes": [
-      141
+      141,
+      791
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -6488,52 +6489,6 @@
     ],
     "HashNeeded": 180000,
     "UnlockRecipes": [],
-    "UnlockFunctions": [],
-    "UnlockValues": [],
-    "Published": true,
-    "Level": 0,
-    "MaxLevel": 0,
-    "LevelCoef1": 0,
-    "LevelCoef2": 0,
-    "IsLabTech": true,
-    "PreTechsMax": false,
-    "AddItems": [],
-    "AddItemCounts": [],
-    "PropertyOverrideItems": [],
-    "PropertyItemCounts": []
-  },
-  {
-    "ID": 1961,
-    "Name": "T先进机枪塔",
-    "IconPath": "Assets/texpack/机枪塔",
-    "Desc": "先进机枪塔描述",
-    "Conclusion": "先进机枪塔结果",
-    "IsHiddenTech": false,
-    "PreItem": [],
-    "Position": [
-      13.0,
-      57.0
-    ],
-    "PreTechs": [
-      1801
-    ],
-    "PreTechsImplicit": [
-      1942
-    ],
-    "Items": [
-      6001,
-      6002,
-      6003
-    ],
-    "ItemPoints": [
-      6,
-      6,
-      6
-    ],
-    "HashNeeded": 180000,
-    "UnlockRecipes": [
-      791
-    ],
     "UnlockFunctions": [],
     "UnlockValues": [],
     "Published": true,

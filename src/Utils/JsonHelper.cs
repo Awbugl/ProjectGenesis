@@ -436,6 +436,7 @@ namespace ProjectGenesis.Utils
             public bool? allowBuildInWater { get; set; } = null;
             public bool? needBuildInWaterTech { get; set; } = null;
             public int[] waterTypes { get; set; } = null;
+            public float? turretMinAttackRange { get; set; } = null;
 
             public static PrefabDescJson FromPrefabDesc(PrefabDesc i, int itemID, int modelID)
                 => new PrefabDescJson
@@ -499,7 +500,8 @@ namespace ProjectGenesis.Utils
                     isStorage = i.isStorage,
                     allowBuildInWater = i.allowBuildInWater,
                     needBuildInWaterTech = i.needBuildInWaterTech,
-                    waterTypes = i.waterTypes
+                    waterTypes = i.waterTypes,
+                    turretMinAttackRange = i.turretMinAttackRange
                 };
 
             public void ToPrefabDesc(PrefabDesc desc)
@@ -562,6 +564,7 @@ namespace ProjectGenesis.Utils
                 if (allowBuildInWater != null) desc.allowBuildInWater = allowBuildInWater.Value;
                 if (needBuildInWaterTech != null) desc.needBuildInWaterTech = needBuildInWaterTech.Value;
                 if (waterTypes != null) desc.waterTypes = waterTypes;
+                if (turretMinAttackRange != null) desc.turretMinAttackRange = turretMinAttackRange.Value;
             }
         }
     }
