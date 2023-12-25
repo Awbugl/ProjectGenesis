@@ -2540,12 +2540,12 @@
     "ENUS": "Implosion Cannon MK.I"
   },
   {
-    "Name": "高斯机枪塔MK2",
+    "Name": "聚爆加农炮MK2",
     "ZHCN": "聚爆加农炮 MK.II",
     "ENUS": "Implosion Cannon MK.II"
   },
   {
-    "Name": "I高斯机枪塔MK2",
+    "Name": "I聚爆加农炮MK2",
     "ZHCN": "改进的质量投射器能够有效增加这门巨炮的射程，而新的高强度结构材料则可以承受更大的冲击力以抵消质量投射技术带来的巨大后坐，避免对其结构本身造成破坏，即使如此，这门巨炮每次开火仍需要更长时间进行充能。",
     "ENUS": "The improved mass projector can effectively increase the range of this cannon, while the new high-strength structural material can withstand greater impact force to offset the huge recoil caused by mass projection technology, avoiding damage to its structure itself. Nevertheless, each firing of this cannon still requires longer charging time."
   },
@@ -2563,21 +2563,6 @@
     "Name": "I高频激光塔MK2",
     "ZHCN": "高频激光塔MK.II，使用粒子容器替代简陋的激光发生器，也能承受更高的能量负载，而新的处理器能够为它提供更加精准的索敌能力。",
     "ENUS": "The High Frequency Laser Tower MK.II, which uses particle containers instead of a rudimentary laser generator, is also capable of withstanding higher energy loads, while a new processor provides it with the ability to claim enemies with greater precision."
-  },
-  {
-    "Name": "T先进机枪塔",
-    "ZHCN": "四联装高斯机枪",
-    "ENUS": "Quadruple Gauss Turret"
-  },
-  {
-    "Name": "先进机枪塔描述",
-    "ZHCN": "改良过的高斯机枪塔，拥有比原始版本更加强大的火力。",
-    "ENUS": "A modified Gauss turret with more firepower than the original version."
-  },
-  {
-    "Name": "先进机枪塔结果",
-    "ZHCN": "比起它的原始版本，高斯机枪塔 MK.II的火力更加强大，覆盖范围也更加宽广。",
-    "ENUS": "The Gauss Turret MK.II offers more firepower and wider coverage than its original version."
   },
   {
     "Name": "熔炉 Mk.III",

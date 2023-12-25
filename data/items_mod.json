@@ -4972,8 +4972,8 @@
   },
   {
     "ID": 7617,
-    "Name": "高斯机枪塔MK2",
-    "Description": "I高斯机枪塔MK2",
+    "Name": "聚爆加农炮MK2",
+    "Description": "I聚爆加农炮MK2",
     "IconPath": "Assets/texpack/加农炮MK2",
     "GridIndex": 5205,
     "StackSize": 50,

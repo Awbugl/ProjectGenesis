@@ -27,7 +27,7 @@ namespace ProjectGenesis.Utils
             CopyModelProto(49, ProtoID.M巨型粒子对撞机, new Color(0.3059F, 0.2196F, 0.4941F));
             CopyModelProto(52, ProtoID.M量子储物仓, new Color(0.7373f, 0.2118f, 0.8510f));
             CopyModelProto(432, ProtoID.M反物质导弹组, new Color(0.3059F, 0.2196F, 0.4941F));
-            CopyModelProto(375, ProtoID.M高斯机枪塔MK2, new Color(0.2275f, 0.3804f, 0.6431f));
+            CopyModelProto(375, ProtoID.M聚爆加农炮MK2, new Color(0.2275f, 0.3804f, 0.6431f));
             CopyModelProto(373, ProtoID.M高频激光塔MK2, new Color(0.5765f, 0.4392f, 0.8588f));
 
             AddAtmosphericCollectStation();
