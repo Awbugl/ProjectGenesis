@@ -196,6 +196,7 @@
   },
   {
     "ModelID": 407,
+    "turretMaxAttackRange": 75,
     "turretSpaceAttackRange": 8200
   },
   {

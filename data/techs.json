@@ -3801,10 +3801,9 @@
       41.0
     ],
     "PreTechs": [
-      1801
+      1802
     ],
     "PreTechsImplicit": [
-      1802,
       1805
     ],
     "Items": [
@@ -3845,7 +3844,7 @@
       37.0
     ],
     "PreTechs": [
-      1801
+      1802
     ],
     "PreTechsImplicit": [
       1702
@@ -3886,13 +3885,15 @@
     "IsHiddenTech": false,
     "PreItem": [],
     "Position": [
-      17.0,
-      61.0
+      13.0,
+      37.0
     ],
     "PreTechs": [
-      1826
+      1801
     ],
     "PreTechsImplicit": [
+      1826,
+      1960,
       1101
     ],
     "Items": [
@@ -4116,11 +4117,10 @@
       37.0
     ],
     "PreTechs": [
+      1803,
       1807
     ],
-    "PreTechsImplicit": [
-      1803
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002
@@ -4160,10 +4160,10 @@
       41.0
     ],
     "PreTechs": [
+      1803,
       1806
     ],
     "PreTechsImplicit": [
-      1803,
       1113
     ],
     "Items": [
@@ -4207,11 +4207,10 @@
       37.0
     ],
     "PreTechs": [
+      1804,
       1814
     ],
-    "PreTechsImplicit": [
-      1804
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002,
@@ -4254,11 +4253,11 @@
       41.0
     ],
     "PreTechs": [
+      1804,
       1815
     ],
     "PreTechsImplicit": [
-      1143,
-      1804
+      1143
     ],
     "Items": [
       6001,
@@ -4347,11 +4346,11 @@
     "IsHiddenTech": false,
     "PreItem": [],
     "Position": [
-      17.0,
+      13.0,
       57.0
     ],
     "PreTechs": [
-      1826
+      1801
     ],
     "PreTechsImplicit": [
       1101
@@ -4395,7 +4394,7 @@
     "IsHiddenTech": false,
     "PreItem": [],
     "Position": [
-      21.0,
+      17.0,
       57.0
     ],
     "PreTechs": [
@@ -4439,7 +4438,7 @@
     "IsHiddenTech": false,
     "PreItem": [],
     "Position": [
-      25.0,
+      21.0,
       57.0
     ],
     "PreTechs": [
@@ -4485,8 +4484,8 @@
     "IsHiddenTech": false,
     "PreItem": [],
     "Position": [
-      21.0,
-      61.0
+      25.0,
+      57.0
     ],
     "PreTechs": [
       1819
@@ -4539,8 +4538,8 @@
     "IsHiddenTech": false,
     "PreItem": [],
     "Position": [
-      25.0,
-      61.0
+      29.0,
+      57.0
     ],
     "PreTechs": [
       1822
@@ -4588,7 +4587,7 @@
     "PreItem": [],
     "Position": [
       13.0,
-      57.0
+      41.0
     ],
     "PreTechs": [
       1801
@@ -6220,10 +6219,10 @@
       37.0
     ],
     "PreTechs": [
+      1952,
       1816
     ],
     "PreTechsImplicit": [
-      1952,
       1134
     ],
     "Items": [
@@ -6423,10 +6422,10 @@
       41.0
     ],
     "PreTechs": [
+      1952,
       1817
     ],
     "PreTechsImplicit": [
-      1952,
       1704
     ],
     "Items": [
@@ -6477,7 +6476,8 @@
       1801
     ],
     "PreTechsImplicit": [
-      1936
+      1936,
+      1826
     ],
     "Items": [
       6001,
