@@ -133,6 +133,7 @@
         <Compile Include="src\Patches\Logic\ChangeStackingLogicPatches.cs"/>
         <Compile Include="src\Patches\Logic\TankComponentPatches.cs"/>
         <Compile Include="src\Patches\Logic\ThermalPowerGenPatches.cs"/>
+        <Compile Include="src\Patches\Logic\VFPreloadPatches.cs" />
         <Compile Include="src\Patches\UI\BeltColorFix\BeltFixPatches.cs"/>
         <Compile Include="src\Patches\UI\DisplayText\DisplayNamePatches.cs"/>
         <Compile Include="src\Patches\UI\DisplayText\DisplayTextPatches.cs"/>
@@ -147,6 +148,7 @@
         <Compile Include="src\Patches\UI\ResourcesLoadPatches.cs" />
         <Compile Include="src\Patches\UI\UIBuildMenuPatches.cs"/>
         <Compile Include="src\Patches\UI\UILootFilterPatches.cs"/>
+        <Compile Include="src\Patches\UI\UIMainMenuPatches.cs" />
         <Compile Include="src\Patches\UI\UIMonitorPatches.cs"/>
         <Compile Include="src\Patches\UI\UIPowerGeneratorWindowPatches.cs"/>
         <Compile Include="src\Patches\UI\QTools\MyComboBox\ItemComboBox.cs"/>
