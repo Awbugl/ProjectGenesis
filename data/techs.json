@@ -489,7 +489,9 @@
     "PreTechs": [
       1900
     ],
-    "PreTechsImplicit": [],
+    "PreTechsImplicit": [
+      1002
+    ],
     "Items": [
       6001
     ],
@@ -1698,7 +1700,9 @@
     "PreTechs": [
       1900
     ],
-    "PreTechsImplicit": [],
+    "PreTechsImplicit": [
+      1002
+    ],
     "Items": [
       6001
     ],
@@ -1830,7 +1834,8 @@
       1900
     ],
     "PreTechsImplicit": [
-      1401
+      1401,
+      1002
     ],
     "Items": [
       6001
@@ -1963,6 +1968,7 @@
       1001
     ],
     "PreTechsImplicit": [
+      1002,
       1701
     ],
     "Items": [
@@ -3763,7 +3769,9 @@
     "PreTechs": [
       1701
     ],
-    "PreTechsImplicit": [],
+    "PreTechsImplicit": [
+      1002
+    ],
     "Items": [
       6001
     ],
@@ -4488,7 +4496,7 @@
       57.0
     ],
     "PreTechs": [
-      1819
+      1821
     ],
     "PreTechsImplicit": [
       1809
@@ -4663,7 +4671,7 @@
       5202
     ],
     "Position": [
-      41.0,
+      45.0,
       -15.0
     ],
     "PreTechs": [],
@@ -5675,7 +5683,9 @@
     "PreTechs": [
       1
     ],
-    "PreTechsImplicit": [],
+    "PreTechsImplicit": [
+      1507
+    ],
     "Items": [
       6001,
       6002,
@@ -6514,7 +6524,7 @@
       5204
     ],
     "Position": [
-      45.0,
+      49.0,
       -15.0
     ],
     "PreTechs": [],
@@ -6527,7 +6537,7 @@
     "ItemPoints": [
       120
     ],
-    "HashNeeded": 60000,
+    "HashNeeded": 120000,
     "UnlockRecipes": [
       524
     ],

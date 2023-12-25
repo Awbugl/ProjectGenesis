@@ -1,3 +1,17 @@
+- v2.9.2
+  + 调整了部分科技的需求
+  + 调整了`高频激光塔 MK.II`的攻击距离和伤害
+  + 移除`高斯机枪塔 MK.II`
+  + 添加`聚爆加农炮 MK.II`
+
+  + Adjusted requirements for some teches
+  + Adjusted the attack range and damage of the `Laser Tower MK.II`
+  + Removed the `Gauss Turret MK.II`
+  + Added `Implosion Cannon MK.II`
+
+<details>
+  <summary>点击展开日志 | Click to view all </summary>
+
 - v2.9.0 群星之影 | Shadows of the Galaxy
   + 适配版本v0.10.28.21014
   + 为巨型建筑添加单独的快捷建造按钮
@@ -50,9 +64,6 @@
   + Adjusted durability of Dark Frog ground structures and units
   + Adjusted tech exploration mode to be on by default (can be turned off in settings)
 
-
-<details>
-  <summary>点击展开日志 | Click to view all </summary>
 
 - v2.9.0 (Experimental 0.2.13)
   + 调整了部分武器和弹药的数值
