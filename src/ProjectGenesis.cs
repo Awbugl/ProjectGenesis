@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -21,7 +20,6 @@ using ProjectGenesis.Patches.UI.PlanetFocus;
 using ProjectGenesis.Patches.UI.QTools;
 using ProjectGenesis.Utils;
 using UnityEngine;
-using UnityEngine.UI;
 using xiaoye97;
 using ERecipeType_1 = ERecipeType;
 using static ProjectGenesis.Utils.JsonDataUtils;
@@ -168,147 +166,7 @@ namespace ProjectGenesis
 
             LoadCompleted = true;
         }
-
-        private Color GetItemColor(int itemId)
-        {
-            switch (itemId)
-            {
-                case 1117:
-                    return new Color(153 / 255f, 163 / 255f, 87 / 255f, 1F);
-
-                case 7101:
-                case 1114:
-                    return new Color(244 / 255f, 244 / 255f, 244 / 255f, 1F);
-
-                case 7020:
-                    return new Color(0.2275f, 0.3804f, 0.6431f, 1F);
-
-                case 1014:
-                    return new Color(0.8941f, 0.6000f, 1.0000f, 1F);
-
-                case 1124:
-                    return new Color(121 / 255f, 110 / 255f, 114 / 255f, 1F);
-
-                case 1123:
-                    return new Color(150 / 255f, 161 / 255f, 174 / 255f, 1F);
-
-                case 6201:
-                    return new Color(0.2118f, 0.2118f, 0.2118f, 1F);
-
-                case 7708:
-                    return new Color(0.8235f, 0.7451f, 0.5647f, 1F);
-
-                case 7709:
-                    return new Color(0.0824f, 0.0824f, 0.0824f, 1F);
-
-                case 1000:
-                    return new Color(165 / 255f, 198 / 255f, 208 / 255f, 1F);
-
-                case 1003:
-                    return new Color(0.2157f, 0.7020f, 0.4471f, 1F);
-
-                case 1004:
-                    return new Color(0.7647f, 0.8588f, 0.9765f, 1F);
-
-                case 1005:
-                    return new Color(0.5373f, 0.5686f, 0.6471f, 1F);
-
-                case 1143:
-                    return new Color(0.0824f, 0.6863f, 0.9804f, 1F);
-            }
-
-            if (IconDescUtils.IconDescs.TryGetValue(itemId, out var t))
-                return t.Color;
-            else
-                return IconDescUtils.ExportIconDesc(itemId).faceColor;
-        }
-
-        private void MakeTexture()
-        {
-            Texture2D texture = new Texture2D(1024, 16);
-
-            Graphics.CopyTexture(Resources.Load<Sprite>("Assets/texpack/chemical-plant-recipe-fcol").texture, 0, 0, 0, 0, 512, 16, texture, 0, 0, 0,
-                                 0);
-
-            Color[] colors = Enumerable.Repeat(new Color(165 / 255f, 198 / 255f, 208 / 255f, 255 / 255f), 16).ToArray();
-
-            for (int i = 1; i < 1024; i++)
-            {
-                if (i == 32 || i == 35) continue;
-
-                var proto = LDB.recipes.Select(i);
-
-                if (proto == null)
-                {
-                    texture.SetPixels(i, 0, 1, 16, colors);
-                    continue;
-                }
-                
-                texture.SetPixels(i, 0, 1, 16, colors);
-
-                if (proto.Type == ERecipeType.Chemical || proto.Type == (ERecipeType)16)
-                {
-                    Color output = GetItemColor(proto.Results[0]);
-
-                    texture.SetPixel(i, 15-6, output);
-                    texture.SetPixel(i, 15-9, output);
-                    texture.SetPixel(i, 15-13, output);
-                    texture.SetPixel(i, 15-14, output);
-                    texture.SetPixel(i, 15-15, output);
-
-                    switch (proto.Items.Length)
-                    {
-                        case 1:
-                            output = GetItemColor(proto.Items[0]);
-                            texture.SetPixel(i, 15-7, output);
-                            texture.SetPixel(i, 15-8, output);
-                            texture.SetPixel(i, 15-10, output);
-                            texture.SetPixel(i, 15-11, output);
-                            texture.SetPixel(i, 15-12, output);
-                            continue;
-
-                        case 2:
-                            output = GetItemColor(proto.Items[0]);
-                            texture.SetPixel(i, 15-7, output);
-                            texture.SetPixel(i, 15-10, output);
-                            texture.SetPixel(i, 15-11, output);
-
-                            output = GetItemColor(proto.Items[1]);
-                            texture.SetPixel(i, 15-8, output);
-                            texture.SetPixel(i, 15-12, output);
-                            continue;
-
-                        case 3:
-                            output = GetItemColor(proto.Items[0]);
-                            texture.SetPixel(i, 15-7, output);
-                            texture.SetPixel(i, 15-10, output);
-
-                            output = GetItemColor(proto.Items[1]);
-                            texture.SetPixel(i, 15-8, output);
-                            texture.SetPixel(i, 15-11, output);
-
-                            output = GetItemColor(proto.Items[2]);
-                            texture.SetPixel(i, 15-12, output);
-                            continue;
-                    }
-                }
-                else
-                {
-                    texture.SetPixels(i, 0, 1, 16, colors);
-                }
-            }
-
-            texture.Apply();
-            
-            ref var prefabDesc = ref LDB.models.Select(64).prefabDesc;
-            prefabDesc.lodMaterials[0][1].SetTexture("_FluidTex", texture);
-            prefabDesc.lodMaterials[1][1].SetTexture("_FluidTex", texture);
-
-            prefabDesc = ref LDB.models.Select(376).prefabDesc;
-            prefabDesc.lodMaterials[0][1].SetTexture("_FluidTex", texture);
-            prefabDesc.lodMaterials[1][1].SetTexture("_FluidTex", texture);
-        }
-
+        
         private void Update()
         {
             if (VFInput.inputing) return;
@@ -416,8 +274,6 @@ namespace ProjectGenesis
             material.durability = 4.35f;
 
             // JsonHelper.ExportAsJson(@"D:\Git\ProjectGenesis\data");
-
-            MakeTexture();
         }
 
         private static void ProtoPreload()
