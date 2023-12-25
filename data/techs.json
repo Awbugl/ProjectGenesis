@@ -3797,8 +3797,8 @@
     "IsHiddenTech": false,
     "PreItem": [],
     "Position": [
-      13.0,
-      61.0
+      17.0,
+      41.0
     ],
     "PreTechs": [
       1801
@@ -3841,7 +3841,7 @@
     "IsHiddenTech": false,
     "PreItem": [],
     "Position": [
-      13.0,
+      17.0,
       37.0
     ],
     "PreTechs": [
@@ -3887,7 +3887,7 @@
     "PreItem": [],
     "Position": [
       17.0,
-      57.0
+      61.0
     ],
     "PreTechs": [
       1826
@@ -4027,7 +4027,7 @@
     "PreItem": [],
     "Position": [
       13.0,
-      41.0
+      53.0
     ],
     "PreTechs": [
       1801
@@ -4069,7 +4069,7 @@
     "PreItem": [],
     "Position": [
       17.0,
-      41.0
+      53.0
     ],
     "PreTechs": [
       1812
@@ -4112,7 +4112,7 @@
     "IsHiddenTech": false,
     "PreItem": [],
     "Position": [
-      17.0,
+      21.0,
       37.0
     ],
     "PreTechs": [
@@ -4156,8 +4156,8 @@
     "IsHiddenTech": false,
     "PreItem": [],
     "Position": [
-      17.0,
-      61.0
+      21.0,
+      41.0
     ],
     "PreTechs": [
       1806
@@ -4203,7 +4203,7 @@
     "IsHiddenTech": false,
     "PreItem": [],
     "Position": [
-      21.0,
+      25.0,
       37.0
     ],
     "PreTechs": [
@@ -4250,8 +4250,8 @@
     "IsHiddenTech": false,
     "PreItem": [],
     "Position": [
-      21.0,
-      61.0
+      25.0,
+      41.0
     ],
     "PreTechs": [
       1815
@@ -4348,7 +4348,7 @@
     "PreItem": [],
     "Position": [
       17.0,
-      53.0
+      57.0
     ],
     "PreTechs": [
       1826
@@ -4396,7 +4396,7 @@
     "PreItem": [],
     "Position": [
       21.0,
-      53.0
+      57.0
     ],
     "PreTechs": [
       1819
@@ -4440,7 +4440,7 @@
     "PreItem": [],
     "Position": [
       25.0,
-      53.0
+      57.0
     ],
     "PreTechs": [
       1820
@@ -4486,7 +4486,7 @@
     "PreItem": [],
     "Position": [
       21.0,
-      57.0
+      61.0
     ],
     "PreTechs": [
       1819
@@ -4540,7 +4540,7 @@
     "PreItem": [],
     "Position": [
       25.0,
-      57.0
+      61.0
     ],
     "PreTechs": [
       1822
@@ -4588,7 +4588,7 @@
     "PreItem": [],
     "Position": [
       13.0,
-      53.0
+      57.0
     ],
     "PreTechs": [
       1801
@@ -6216,7 +6216,7 @@
     "IsHiddenTech": false,
     "PreItem": [],
     "Position": [
-      25.0,
+      29.0,
       37.0
     ],
     "PreTechs": [
@@ -6268,7 +6268,7 @@
     "PreItem": [],
     "Position": [
       21.0,
-      41.0
+      53.0
     ],
     "PreTechs": [
       1813
@@ -6314,7 +6314,7 @@
     "PreItem": [],
     "Position": [
       25.0,
-      41.0
+      53.0
     ],
     "PreTechs": [
       1955
@@ -6370,7 +6370,7 @@
     ],
     "Position": [
       29.0,
-      41.0
+      53.0
     ],
     "PreTechs": [
       1956
@@ -6419,8 +6419,8 @@
     "IsHiddenTech": false,
     "PreItem": [],
     "Position": [
-      25.0,
-      61.0
+      29.0,
+      41.0
     ],
     "PreTechs": [
       1817
