@@ -92,8 +92,9 @@ namespace ProjectGenesis.Patches.Logic.AddVein
 
         internal static void SetMinerMk2Color()
         {
-            ref PrefabDesc prefabDesc = ref LDB.models.Select(256).prefabDesc;
             var texture = Resources.Load<Texture>("Assets/texpack/矿机渲染索引");
+
+            ref PrefabDesc prefabDesc = ref LDB.models.Select(256).prefabDesc;
             prefabDesc.materials[0].SetTexture("_VeinColorTex", texture);
             ref Material[] prefabDescLODMaterial = ref prefabDesc.lodMaterials[0];
             prefabDescLODMaterial[0].SetTexture("_VeinColorTex", texture);
@@ -105,6 +106,19 @@ namespace ProjectGenesis.Patches.Logic.AddVein
             prefabDescLODMaterial[1].SetTexture("_VeinColorTex", texture);
             prefabDescLODMaterial[2].SetTexture("_VeinColorTex", texture);
             prefabDescLODMaterial[3].SetTexture("_VeinColorTex", texture);
+        }
+
+        internal static void SetChemicalRecipeFcol()
+        {
+            var texture = Resources.Load<Texture>("Assets/texpack/chemical-plant-recipe-fcol");
+
+            ref PrefabDesc prefabDesc = ref LDB.models.Select(64).prefabDesc;
+            prefabDesc.lodMaterials[0][1].SetTexture("_FluidTex", texture);
+            prefabDesc.lodMaterials[1][1].SetTexture("_FluidTex", texture);
+
+            prefabDesc = ref LDB.models.Select(376).prefabDesc;
+            prefabDesc.lodMaterials[0][1].SetTexture("_FluidTex", texture);
+            prefabDesc.lodMaterials[1][1].SetTexture("_FluidTex", texture);
         }
 
         [HarmonyPatch(typeof(UISandboxMenu), "StaticLoad")]

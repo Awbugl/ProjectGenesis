@@ -91,7 +91,7 @@ namespace ProjectGenesis.Utils
                            M大气采集器 = 512,
                            M反物质导弹组 = 513,
                            M量子储物仓 = 514,
-                           M高斯机枪塔MK2 = 515,
+                           M聚爆加农炮MK2 = 515,
                            M高频激光塔MK2 = 516;
 
         internal const int T戴森球计划 = 1,
@@ -99,6 +99,7 @@ namespace ProjectGenesis.Utils
                            T物品增产 = 1151,
                            T虫洞航行 = 1152,
                            T工业化生产 = 1415,
+                           T物品仓储 = 1607,
                            T电磁驱动 = 1701,
                            T武器系统 = 1801,
                            T科学理论 = 1900,

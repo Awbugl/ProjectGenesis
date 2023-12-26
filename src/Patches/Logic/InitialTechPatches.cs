@@ -15,7 +15,14 @@ namespace ProjectGenesis.Patches.Logic
     public static class InitialTechPatches
     {
         private static readonly List<int> InitialTechs = new List<int> { ProtoID.T戴森球计划, ProtoID.T科学理论, ProtoID.T工业化生产 },
-                                          BonusTechs = new List<int> { ProtoID.T电磁学, ProtoID.T基础机械组件, ProtoID.T武器系统, ProtoID.T电磁驱动 };
+                                          BonusTechs = new List<int>
+                                          {
+                                              ProtoID.T电磁学,
+                                              ProtoID.T基础机械组件,
+                                              ProtoID.T武器系统,
+                                              ProtoID.T电磁驱动,
+                                              ProtoID.T物品仓储
+                                          };
 
         [HarmonyPatch(typeof(GameData), "SetForNewGame")]
         [HarmonyPostfix]

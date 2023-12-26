@@ -196,6 +196,7 @@
   },
   {
     "ModelID": 407,
+    "turretMaxAttackRange": 75,
     "turretSpaceAttackRange": 8200
   },
   {
@@ -358,11 +359,17 @@
   },
   {
     "ModelID": 515,
-    "turretRoundInterval": 1200000,
-    "turretMinAttackRange": 30,
+    "turretRoundInterval": 800000,
+    "turretMinAttackRange": 25,
     "turretMaxAttackRange": 75,
     "idleEnergyPerTick": 1000,
-    "workEnergyPerTick": 25000
+    "workEnergyPerTick": 25000,
+    "turretAddEnemyExppBase": 4800,
+    "turretAddEnemyExppCoef": 0.4,
+    "turretAddEnemyHatredBase": 100,
+    "turretAddEnemyHatredCoef": 0.01,
+    "turretAddEnemyThreatBase": 4,
+    "turretAddEnemyThreatCoef": 0.002
   },
   {
     "ModelID": 516,

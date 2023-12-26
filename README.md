@@ -40,6 +40,21 @@ or open a issue via [github](https://github.com/Awbugl/ProjectGenesis).
 打开mod管理器（如果你还没安装可以[**点此安装**](https://dsp.thunderstore.io/package/ebkr/r2modman/)），
 选择**GenesisBook**，下载即可。
 
+### 手动安装
+
+请依次手动下载以下前置MOD，并按照其安装步骤操作：
+
++ [BepInEx](https://dsp.thunderstore.io/package/xiaoye97/BepInEx/)
++ [LDBTool](https://dsp.thunderstore.io/package/xiaoye97/LDBTool/)
++ [DSPModSave](https://dsp.thunderstore.io/package/CommonAPI/DSPModSave/)
++ [CommonAPI](https://dsp.thunderstore.io/package/CommonAPI/CommonAPI/)
++ [NebulaMultiplayerModApi](https://dsp.thunderstore.io/package/nebula/NebulaMultiplayerModApi/)
+
+在安装完成前置MOD后，下载本MOD、解压后，进行以下操作：
+
+将 `patchers` 文件夹中的所有文件移动到 `Dyson Sphere Program/BepInEx/patchers/GenesisBook/` (可能需要手动创建`GenesisBook`文件夹)<br/>
+将 `plugins` 文件夹中的所有文件移动到 `Dyson Sphere Program/BepInEx/plugins/GenesisBook/` (可能需要手动创建`GenesisBook`文件夹)<br/>
+
 ## 介绍
 
 ### 特色
@@ -85,9 +100,10 @@ Install DSPModSave from [here](https://dsp.thunderstore.io/package/CommonAPI/DSP
 Install CommonAPI from [here](https://dsp.thunderstore.io/package/CommonAPI/CommonAPI/)<br/>
 Install NebulaMultiplayerModApi from [here](https://dsp.thunderstore.io/package/nebula/NebulaMultiplayerModApi/)<br/>
 
-Then download this mod manully and unzip into `BepInEx/plugins/`
+Then download this mod manully and:
 
-If you can see the new **GenesisBook** logo, then the mod is installed successfully.
+Unzip folder `patchers` into `Dyson Sphere Program/BepInEx/patchers/GenesisBook/` (Create folder named `GenesisBook`)<br/>
+Unzip folder `plugins` into `Dyson Sphere Program/BepInEx/plugins/GenesisBook/`. (Create folder named `GenesisBook`)<br/>
 
 ## Intro
 

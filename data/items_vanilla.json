@@ -6985,11 +6985,8 @@
     "SubID": 0,
     "MiningFrom": "",
     "ProduceFrom": "",
-    "Grade": 1,
-    "Upgrades": [
-      3001,
-      7617
-    ],
+    "Grade": 0,
+    "Upgrades": [],
     "IsEntity": true,
     "CanBuild": true,
     "BuildInGas": false,
@@ -7100,8 +7097,11 @@
     "SubID": 0,
     "MiningFrom": "",
     "ProduceFrom": "",
-    "Grade": 0,
-    "Upgrades": [],
+    "Grade": 1,
+    "Upgrades": [
+      3003,
+      7617
+    ],
     "IsEntity": true,
     "CanBuild": true,
     "BuildInGas": false,
