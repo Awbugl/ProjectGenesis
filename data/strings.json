@@ -796,18 +796,8 @@
   },
   {
     "Name": "I超级机械组件",
-    "ZHCN": "这是。。。什么？\n（To be announced）",
-    "ENUS": "What the hell..."
-  },
-  {
-    "Name": "终极机械组件",
-    "ZHCN": "终极机械组件",
-    "ENUS": "Ultimate Mechanical Components"
-  },
-  {
-    "Name": "I终极机械组件",
-    "ZHCN": "一个通用组件包，用途广泛。",
-    "ENUS": "You know, you shouldn't get this, right?"
+    "ZHCN": "这是...什么？\n（To be announced）",
+    "ENUS": "What's this... (To be announced)"
   },
   {
     "Name": "创世之书",

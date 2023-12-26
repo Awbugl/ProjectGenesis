@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.IO;
 using System.Reflection.Emit;
 using HarmonyLib;
 using ProjectGenesis.Utils;
@@ -8,14 +7,8 @@ using ProjectGenesis.Utils;
 
 namespace ProjectGenesis.Patches.Logic
 {
-    public static class QuantumStoragePatches
+    public static partial class QuantumStoragePatches
     {
-        private const int QuantumStorageSize = 90;
-
-        private static StorageComponent _component = new StorageComponent(QuantumStorageSize);
-
-        private static Dictionary<int, List<int>> _quantumStorageIds = new Dictionary<int, List<int>>();
-
         [HarmonyPatch(typeof(FactoryStorage), "NewStorageComponent")]
         [HarmonyPostfix]
         public static void FactoryStorage_NewStorageComponent(
@@ -28,8 +21,33 @@ namespace ProjectGenesis.Patches.Logic
             {
                 __instance.storagePool[__result.id] = _component;
                 __result = _component;
+                SyncNewQuantumStorageData.Sync(__instance.planet.id, __result.id);
             }
         }
+
+        [HarmonyPatch(typeof(FactoryStorage), nameof(FactoryStorage.GameTick))]
+        [HarmonyPatch(typeof(FactoryStorage), nameof(FactoryStorage.GetStorageComponent))]
+        [HarmonyTranspiler]
+        public static IEnumerable<CodeInstruction> FactoryStorage_GameTick_Transpiler(IEnumerable<CodeInstruction> instructions)
+        {
+            var matcher = new CodeMatcher(instructions);
+
+            matcher.MatchForward(true, new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(StorageComponent), nameof(StorageComponent.id))));
+
+            CodeInstruction ins = matcher.InstructionAt(-1);
+
+            matcher.Advance(2).InsertAndAdvance(new CodeInstruction(ins),
+                                                new CodeInstruction(OpCodes.Call,
+                                                                    AccessTools.Method(typeof(QuantumStoragePatches),
+                                                                                       nameof(FactoryStorage_GameTick_PatchMethod))));
+
+            matcher.SetOpcodeAndAdvance(OpCodes.Brfalse);
+
+            return matcher.InstructionEnumeration();
+        }
+
+        public static bool FactoryStorage_GameTick_PatchMethod(int id, int index, StorageComponent component)
+            => id == index || component.size == QuantumStorageSize;
 
         [HarmonyPatch(typeof(BuildTool_Addon), nameof(BuildTool_Addon.UpdateRaycast))]
         [HarmonyPatch(typeof(BuildTool_Addon), nameof(BuildTool_Addon.DeterminePreviews))]
@@ -43,7 +61,7 @@ namespace ProjectGenesis.Patches.Logic
             matcher.SetInstructionAndAdvance(new CodeInstruction(OpCodes.Call,
                                                                  AccessTools.Method(typeof(QuantumStoragePatches),
                                                                                     nameof(BuildTool_Addon_PatchMethod))));
-            
+
             return matcher.InstructionEnumeration();
         }
 
@@ -131,81 +149,6 @@ namespace ProjectGenesis.Patches.Logic
             bool b = component.size == QuantumStorageSize;
             if (b) _quantumStorageIds.TryAddOrInsert(storage.planet.id, index);
             return b;
-        }
-
-        private static void SetQuantumStorage()
-        {
-            GalaxyData galaxy = GameMain.data.galaxy;
-
-            foreach (KeyValuePair<int, List<int>> pair in _quantumStorageIds)
-            {
-                foreach (int i in pair.Value)
-                {
-                    PlanetFactory planetFactory = galaxy.PlanetById(pair.Key)?.factory;
-                    if (planetFactory == null) continue;
-
-                    planetFactory.factoryStorage.storagePool[i] = _component;
-                }
-            }
-        }
-
-        internal static void Export(BinaryWriter w)
-        {
-            lock (_quantumStorageIds)
-            {
-                w.Write(_quantumStorageIds.Count);
-
-                foreach (KeyValuePair<int, List<int>> pair in _quantumStorageIds)
-                {
-                    w.Write(pair.Key);
-                    w.Write(pair.Value.Count);
-                    foreach (int t in pair.Value) w.Write(t);
-                }
-            }
-
-            lock (_component)
-            {
-                _component.Export(w);
-            }
-        }
-
-        internal static void Import(BinaryReader r)
-        {
-            ReInitAll();
-
-            try
-            {
-                int storagecount = r.ReadInt32();
-
-                for (int j = 0; j < storagecount; j++)
-                {
-                    int key = r.ReadInt32();
-                    int length = r.ReadInt32();
-                    var datas = new List<int>();
-                    for (int i = 0; i < length; i++)
-                    {
-                        datas.Add(r.ReadInt32());
-                    }
-
-                    _quantumStorageIds.Add(key, datas);
-                }
-
-                _component.Import(r);
-
-                SetQuantumStorage();
-            }
-            catch (EndOfStreamException)
-            {
-                // ignored
-            }
-        }
-
-        internal static void IntoOtherSave() => ReInitAll();
-
-        private static void ReInitAll()
-        {
-            _quantumStorageIds = new Dictionary<int, List<int>>();
-            _component = new StorageComponent(QuantumStorageSize);
         }
     }
 }

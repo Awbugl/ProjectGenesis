@@ -102,7 +102,8 @@
         <Compile Include="src\Patches\Logic\QTools\NodeDataSet.cs"/>
         <Compile Include="src\Patches\Logic\QTools\NodeOptions.cs"/>
         <Compile Include="src\Patches\Logic\QTools\QTools.cs"/>
-        <Compile Include="src\Patches\Logic\QuantumStoragePatches.cs"/>
+        <Compile Include="src\Patches\Logic\QuantumStorage\InternalFunctions.cs"/>
+        <Compile Include="src\Patches\Logic\QuantumStorage\QuantumStoragePatches.cs"/>
         <Compile Include="src\Patches\Logic\StationOutputPatches.cs"/>
         <Compile Include="src\Patches\Logic\AddVein\AddEffectEmitterProto.cs"/>
         <Compile Include="src\Patches\Logic\AddVein\AddVeinPatches.cs"/>
@@ -133,7 +134,7 @@
         <Compile Include="src\Patches\Logic\ChangeStackingLogicPatches.cs"/>
         <Compile Include="src\Patches\Logic\TankComponentPatches.cs"/>
         <Compile Include="src\Patches\Logic\ThermalPowerGenPatches.cs"/>
-        <Compile Include="src\Patches\Logic\VFPreloadPatches.cs" />
+        <Compile Include="src\Patches\Logic\VFPreloadPatches.cs"/>
         <Compile Include="src\Patches\UI\BeltColorFix\BeltFixPatches.cs"/>
         <Compile Include="src\Patches\UI\DisplayText\DisplayNamePatches.cs"/>
         <Compile Include="src\Patches\UI\DisplayText\DisplayTextPatches.cs"/>
@@ -145,10 +146,10 @@
         <Compile Include="src\Patches\UI\MultiProductionPatches.cs"/>
         <Compile Include="src\Patches\UI\QTools\ItemNeedDetail.cs"/>
         <Compile Include="src\Patches\UI\QTools\ObjectPool.cs"/>
-        <Compile Include="src\Patches\UI\ResourcesLoadPatches.cs" />
+        <Compile Include="src\Patches\UI\IconSetPatches.cs"/>
         <Compile Include="src\Patches\UI\UIBuildMenuPatches.cs"/>
         <Compile Include="src\Patches\UI\UILootFilterPatches.cs"/>
-        <Compile Include="src\Patches\UI\UIMainMenuPatches.cs" />
+        <Compile Include="src\Patches\UI\UIMainMenuPatches.cs"/>
         <Compile Include="src\Patches\UI\UIMonitorPatches.cs"/>
         <Compile Include="src\Patches\UI\UIPowerGeneratorWindowPatches.cs"/>
         <Compile Include="src\Patches\UI\QTools\MyComboBox\ItemComboBox.cs"/>
@@ -164,7 +165,7 @@
         <Compile Include="src\Patches\UI\PlanetFocus\UIPlanetDetailExpand.cs"/>
         <Compile Include="src\Patches\UI\UIOptionWindowPatches.cs"/>
         <Compile Include="src\Patches\UI\UISignalPickerPatches.cs"/>
-        <Compile Include="src\Patches\UI\UITurretWindowPatches.cs" />
+        <Compile Include="src\Patches\UI\UITurretWindowPatches.cs"/>
         <Compile Include="src\Patches\UI\UpdateLogoPatches.cs"/>
         <Compile Include="src\Patches\UI\Utils\MyWindowCtl.cs"/>
         <Compile Include="src\Patches\UI\Utils\Util.cs"/>
