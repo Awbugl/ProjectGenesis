@@ -440,12 +440,12 @@
     "ENUS": "Plutonium Ore"
   },
   {
-    "Name": "高纯铀块",
+    "Name": "含铀核燃料",
     "ZHCN": "含铀核燃料",
     "ENUS": "Uranium Fissile Fuel"
   },
   {
-    "Name": "高纯钚块",
+    "Name": "含钚核燃料",
     "ZHCN": "含钚核燃料",
     "ENUS": "Plutonium Fissile Fuel"
   },
@@ -665,7 +665,7 @@
     "ENUS": "The large number of parallel running accelerators takes productivity to a whole new level."
   },
   {
-    "Name": "反物质能量炉",
+    "Name": "人造恒星MK2",
     "ZHCN": "人造恒星 MK.II",
     "ENUS": "Artificial Star MK.II"
   },
@@ -700,7 +700,7 @@
     "ENUS": "Photon Crystal"
   },
   {
-    "Name": "I反物质能量炉",
+    "Name": "I人造恒星MK2",
     "ZHCN": "“你只需要让正反质子束从两端静静的穿过磁场进入约束球就可以了，轻松愉快！”它简单的外形归功于理论的优雅，被人们称为“人造小太阳”。",
     "ENUS": "\"Just allow the positive and negative proton beams to pass silently through the magnetic field from both ends into the Constraint Sphere, nice and easy!\" It is simple but effective and is called the Artificial Sun."
   },
@@ -725,22 +725,22 @@
     "ENUS": "Gravity Matrix"
   },
   {
-    "Name": "稳定矩阵",
+    "Name": "通量矩阵",
     "ZHCN": "通量矩阵",
     "ENUS": "Flux Matrix"
   },
   {
-    "Name": "I稳定矩阵",
+    "Name": "I通量矩阵",
     "ZHCN": "由两种矩阵组成的复合矩阵，可作为合成宇宙矩阵的原料之一。",
     "ENUS": "It is a composite matrix composed of two matrixes, which can be used as one of the raw materials for synthesizing the universe matrix roughcast."
   },
   {
-    "Name": "虚空矩阵",
+    "Name": "空间矩阵",
     "ZHCN": "空间矩阵",
     "ENUS": "Space Matrix"
   },
   {
-    "Name": "I虚空矩阵",
+    "Name": "I空间矩阵",
     "ZHCN": "由两种矩阵组成的复合矩阵，可作为合成宇宙矩阵的原料之一。",
     "ENUS": "It is a composite matrix composed of two matrixes, which can be used as one of the raw materials for synthesizing the universe matrix roughcast."
   },
@@ -756,7 +756,7 @@
   },
   {
     "Name": "I湮灭约束球",
-    "ZHCN": "将湮灭反应约束在球内，从而获得稳定可控的能量输出，是反物质能量炉的关键部件。",
+    "ZHCN": "将湮灭反应约束在球内，从而获得稳定可控的能量输出，是人造恒星 MK.II的关键部件。",
     "ENUS": "It is a crucial component of antimatter energy reactor to confine the annihilation reaction within the sphere to obtain stable and controllable energy output."
   },
   {
@@ -970,12 +970,12 @@
     "ENUS": "The substrate made of polyethylene, used to make the basic circuit board."
   },
   {
-    "Name": "生物基板",
+    "Name": "光学基板",
     "ZHCN": "光学基板",
     "ENUS": "Optical Substrate"
   },
   {
-    "Name": "I生物基板",
+    "Name": "I光学基板",
     "ZHCN": "使用聚酰亚胺制造的基板，拥有专为光学计算技术设计的蚀刻结构。",
     "ENUS": "Substrates made with polyimide have etched structures designed for optical computing technology."
   },
@@ -995,7 +995,7 @@
     "ENUS": "Tungsten Glass"
   },
   {
-    "Name": "钨复合金属",
+    "Name": "钨合金",
     "ZHCN": "钨合金",
     "ENUS": "Tungsten Alloy"
   },
@@ -1010,42 +1010,42 @@
     "ENUS": "Polyphenyl sulfide (PPS) is an organic polymer compound, exhibits excellent thermal stability and electrical insulation properties."
   },
   {
-    "Name": "先进生物电路",
+    "Name": "光学处理器",
     "ZHCN": "光学处理器",
     "ENUS": "Optical Processor"
   },
   {
-    "Name": "I先进生物电路",
+    "Name": "I光学处理器",
     "ZHCN": "使用新一代光学技术制造的计算芯片，光子脉冲代替传统的电子讯号，能够显著降低工作时产生的积热，解决因过热产生的效能下降问题，有效提高计算效率。",
     "ENUS": "Advanced computing unit with good biocompatibility."
   },
   {
-    "Name": "生物神经纤维",
+    "Name": "光学信息传输纤维",
     "ZHCN": "光学信息传输纤维",
     "ENUS": "Optical Fiber"
   },
   {
-    "Name": "I生物神经纤维",
+    "Name": "I光学信息传输纤维",
     "ZHCN": "使用天然光栅石制造的类光纤信息传输介质，光栅石独特的晶体结构在重塑后能大幅度提高信息传输效率，通常用于构建光学主机的信息链路。",
     "ENUS": "Fiber-like information transmission media made with natural lenticular stones, whose unique crystal structure can dramatically increase the efficiency of information transmission after remodeling, are often used to build information links to optical hosts."
   },
   {
-    "Name": "超级纳米电脑",
+    "Name": "量子计算机",
     "ZHCN": "量子计算机",
     "ENUS": "Quantum computer"
   },
   {
-    "Name": "I超级纳米电脑",
+    "Name": "I量子计算机",
     "ZHCN": "量子芯片与粒子宽带结合制造出的超大型计算集群，成熟的量子计算技术是衡量一个文明发展水平的条件之一，在主脑的计算中，这是一个重要的分水岭。",
     "ENUS": "The combination of quantum chips and particle broadband creates a mega-computing cluster. Mature quantum computing technology is one of the conditions to measure the level of development of a civilization, and it is an important node in the mastermind's computation."
   },
   {
-    "Name": "湿件主机",
+    "Name": "光学计算机",
     "ZHCN": "“超越”X-1型光学主机",
     "ENUS": "\"Beyond\" X-1 optical computer"
   },
   {
-    "Name": "I湿件主机",
+    "Name": "I光学计算机",
     "ZHCN": "光学计算技术的最高结晶，使用光学处理器构建的大型计算机。光学芯片是它的大脑，高效信息链路构成了它的神经，这台设备庞大的计算力能够统筹一些非常复杂的工作过程。",
     "ENUS": "The highest crystallization of optical computing technology, a mainframe computer built using an optical processor. With an optical chip as its brain and highly efficient information links forming its nerves, this device has enough computational power to orchestrate some very complex work processes."
   },
@@ -1080,12 +1080,12 @@
     "ENUS": "The silica with higher silica content is selected by using different chemical properties."
   },
   {
-    "Name": "氦元素离心",
+    "Name": "氦原子提取",
     "ZHCN": "氦原子提取",
     "ENUS": "Helium Element Centrifuge"
   },
   {
-    "Name": "R氦元素离心",
+    "Name": "R氦原子提取",
     "ZHCN": "从光栅石的晶格中提取出富集的氦。",
     "ENUS": "Extract enriched helium from the lattice of grating stone."
   },
@@ -1110,12 +1110,12 @@
     "ENUS": "Electrolysis of water, producing hydrogen and oxygen.\n<color=\"#FD965ECC\">Will not stop working until all products are accumulated.</color>"
   },
   {
-    "Name": "盐水分解",
+    "Name": "盐水电解",
     "ZHCN": "盐水电解",
     "ENUS": "Salt Water Electrolysis"
   },
   {
-    "Name": "R盐水分解",
+    "Name": "R盐水电解",
     "ZHCN": "使用离子交换膜电解氯化钠溶液，生产盐酸和氢氧化钠。\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作。</color>",
     "ENUS": "Electrolysis of salt water using ion exchange membranes, producing hydrochloric acid and sodium hydroxide.\n<color=\"#FD965ECC\">Will not stop working until all products are accumulated.</color>"
   },
@@ -1130,12 +1130,12 @@
     "ENUS": "Remove salt from seawater using reverse osmosis membranes (will not stop working until all products are accumulated)."
   },
   {
-    "Name": "丙烯合成",
+    "Name": "羰基合成",
     "ZHCN": "羰基合成",
     "ENUS": "Hydroformylation"
   },
   {
-    "Name": "R丙烯合成",
+    "Name": "R羰基合成",
     "ZHCN": "二氧化碳和氢在催化剂的作用下可高效合成丙烯，是碳中和进程的重要一步。\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作。</color>",
     "ENUS": "Carbon dioxide and hydrogen can efficiently synthesize propylene in the presence of a catalyst, an important step in the carbon-neutral process.\n<color=\"#FD965ECC\">It will not stop working until all products are stacked.</color>"
   },
@@ -1150,22 +1150,22 @@
     "ENUS": "Using nitrogen and hydrogen as raw materials to synthesize ammonia."
   },
   {
-    "Name": "活性纤维分离",
+    "Name": "活性纤维重组",
     "ZHCN": "活性纤维重组",
     "ENUS": "Active Biological Fiber Reassemble"
   },
   {
-    "Name": "R活性纤维分离",
+    "Name": "R活性纤维重组",
     "ZHCN": "使用亚原子操控技术，可以有效地将有机晶体的组分分解并将组装成聚酰亚胺。",
     "ENUS": "Using subatomic manipulation technology, it can effectively decompose the components of organic crystal and assemble them into polyimide."
   },
   {
-    "Name": "焦油转化",
+    "Name": "煤炭干馏",
     "ZHCN": "煤炭干馏",
     "ENUS": "Coal Dry Distillation"
   },
   {
-    "Name": "R焦油转化",
+    "Name": "R煤炭干馏",
     "ZHCN": "煤炭在隔绝空气条件下高温处理后，可以得到一种重要的化工原料——焦油。",
     "ENUS": "When coal is treated at high temperatures under air-insulated conditions, an important chemical raw material, tar, can be obtained."
   },
@@ -1230,12 +1230,12 @@
     "ENUS": "Hydrogen and tar can be obtained by refining crude oil with plasma.\n<color=\"#FD965ECC\">It will not stop working until all products are stacked.</color>"
   },
   {
-    "Name": "苯合成",
+    "Name": "催化重整",
     "ZHCN": "催化重整",
     "ENUS": "Catalytic Reforming"
   },
   {
-    "Name": "R苯合成",
+    "Name": "R催化重整",
     "ZHCN": "经过漫长的重整工序，可以将丙烯合成为苯。效率较低，却是历史上推动化石燃料资源封存的重要技术。",
     "ENUS": "After a lengthy reforming process, propylene can be synthesized into benzene. Less efficient, but an important technology that has historically driven the sequestration of fossil fuel resources."
   },
@@ -1380,22 +1380,22 @@
     "ENUS": "A wider variety of chemicals can now be synthesized."
   },
   {
-    "Name": "T无尽材料学",
+    "Name": "T强相互作用力材料",
     "ZHCN": "强相互作用力材料",
     "ENUS": "Strong Force Material"
   },
   {
-    "Name": "T无尽材料学描述",
+    "Name": "T强相互作用力材料描述",
     "ZHCN": "在特殊力场的作用下，可使强相互作用力溢出至宏观尺度。",
     "ENUS": "With the action of a special force field, A material can formed by the spillover of strong interaction forces to the macroscopic scale."
   },
   {
-    "Name": "T反物质能量炉描述",
+    "Name": "T人造恒星MK2描述",
     "ZHCN": "基于反物质约束技术的新一代人造恒星，直接利用质能转换过程进行发电。",
     "ENUS": "A new generation of artificial stars based on antimatter confinement technology, directly utilizing the mass-energy conversion process for power generation."
   },
   {
-    "Name": "T反物质能量炉结果",
+    "Name": "T人造恒星MK2结果",
     "ZHCN": "掌控质能转换技术，可以将反物质转化为能量。",
     "ENUS": "You have mastered the technology of mass-energy conversion, and can now convert antimatter into energy."
   },
@@ -1405,7 +1405,7 @@
     "ENUS": "Particle Collider"
   },
   {
-    "Name": "T反物质能量炉",
+    "Name": "T人造恒星MK2",
     "ZHCN": "质能转换利用",
     "ENUS": "Qualitative transformation annihilation"
   },
@@ -1555,32 +1555,32 @@
     "ENUS": "The introduction of optical computing technology marked the beginning of a new revolution in information technology. The use of light pulse signals instead of traditional electronic signals could significantly reduce the heat generated by computing equipment and thus increase work efficiency, while the new transmission medium made of natural lenticular stone made information transmission speeds that no one had ever dared to envision a reality. It is said that the home world maintained by the Mastermind makes extensive use of this technology."
   },
   {
-    "Name": "T生物神经技术",
+    "Name": "T光学信息传输技术",
     "ZHCN": "家园世界: 光学信息传输技术",
     "ENUS": "Homeworld: Optical information transfer technology"
   },
   {
-    "Name": "T生物神经技术描述",
+    "Name": "T光学信息传输技术描述",
     "ZHCN": "使用天然光栅石制造的类光纤信息传输介质，这种全新的介质让信息传输速度达到了一个全新的层次。",
     "ENUS": "Using a fiber-like information transmission medium made from natural lenticular stone, this new medium takes information transmission speeds to a whole new level."
   },
   {
-    "Name": "T超级纳米计算机",
+    "Name": "T超级量子计算机",
     "ZHCN": "超级量子计算机",
     "ENUS": "Super Nano Computer"
   },
   {
-    "Name": "T超级纳米计算机描述",
+    "Name": "T超级量子计算机描述",
     "ZHCN": "成熟的量子计算技术是衡量一个文明发展水平的条件之一，在主脑的计算中，这是一个重要的分水岭。",
     "ENUS": "Mature quantum computing technology is one of the conditions that measures the level of development of a civilization, and in the case of mastermind computing, it is an important watershed."
   },
   {
-    "Name": "T生物活性计算机",
+    "Name": "T光学计算机",
     "ZHCN": "家园世界: 光学计算机",
     "ENUS": "Homeworld: Optical Computer"
   },
   {
-    "Name": "T生物活性计算机描述",
+    "Name": "T光学计算机描述",
     "ZHCN": "使用新一代光学计算技术制造的先进计算机，拥有远超传统计算机的优异性能。",
     "ENUS": "Advanced computers built with next-generation optical computing technology have superior performance far beyond that of conventional computers."
   },
@@ -1595,22 +1595,22 @@
     "ENUS": "This glass, doped with a large number of tungsten nanoparticles, is dark, but has a very high hardness, and may be able to perform well in extreme environments."
   },
   {
-    "Name": "T先进精炼技术",
+    "Name": "T先进有机合成技术",
     "ZHCN": "先进有机合成技术",
     "ENUS": "Advanced Organic Synthesis Technology"
   },
   {
-    "Name": "T先进精炼技术描述",
+    "Name": "T先进有机合成技术描述",
     "ZHCN": "使用先进的合成技术，可以制造数种化学能燃料。",
     "ENUS": "Using advanced organic synthesis technology, several chemical energy fuels can be manufactured."
   },
   {
-    "Name": "T放射性原料提纯",
+    "Name": "T放射性矿物提炼",
     "ZHCN": "放射性矿物提炼",
     "ENUS": "Radioactive Ore Purification"
   },
   {
-    "Name": "T放射性原料提纯描述",
+    "Name": "T放射性矿物提炼描述",
     "ZHCN": "使用大量氢氧化钠可以将放射性矿物中的极少量的铀和钚提炼出来，作为后续提纯的原料。",
     "ENUS": "Using a large amount of sodium hydroxide can separate a small amount of plutonium ore and uranium ore in radioactive ore as raw materials for further separation."
   },
@@ -1760,12 +1760,12 @@
     "ENUS": "A wider variety of chemicals can now be synthesized."
   },
   {
-    "Name": "T焦油分馏",
+    "Name": "T焦油精炼",
     "ZHCN": "焦油精炼",
     "ENUS": "Tar Refining"
   },
   {
-    "Name": "T焦油分馏描述",
+    "Name": "T焦油精炼描述",
     "ZHCN": "精炼焦油可以得到数种重要的化工原料。",
     "ENUS": "Refining tar can yield several important chemicals."
   },
@@ -1995,12 +1995,12 @@
     "ENUS": "After refinements, the concentration of plutonium in the ore is already considerable."
   },
   {
-    "Name": "I高纯铀块",
+    "Name": "I含铀核燃料",
     "ZHCN": "铀矿提炼产物，已经可以支撑链式反应。",
     "ENUS": "The product of refining uranium ore, which can support the chain reaction."
   },
   {
-    "Name": "I高纯钚块",
+    "Name": "I含钚核燃料",
     "ZHCN": "钚矿提炼产物，已经可以支撑链式反应。",
     "ENUS": "The product of refining plutonium ore, which can support the chain reaction."
   },
@@ -2105,7 +2105,7 @@
     "ENUS": "When the reaction is so violent that even titanium-reinforced glass is difficult to withstand, it is its turn to make an appearance."
   },
   {
-    "Name": "I钨复合金属",
+    "Name": "I钨合金",
     "ZHCN": "加入钨的合金。在电磁力的领域中，它就是王者。",
     "ENUS": "An alloy with tungsten added. In the field of electromagnetic force, it is the king."
   },

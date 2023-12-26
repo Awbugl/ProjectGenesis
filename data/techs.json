@@ -268,10 +268,10 @@
   },
   {
     "ID": 1104,
-    "Name": "T先进精炼技术",
+    "Name": "T先进有机合成技术",
     "IconPath": "Assets/texpack/精炼科技",
-    "Desc": "T先进精炼技术描述",
-    "Conclusion": "T先进精炼技术描述",
+    "Desc": "T先进有机合成技术描述",
+    "Conclusion": "T先进有机合成技术描述",
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
@@ -920,10 +920,10 @@
   },
   {
     "ID": 1134,
-    "Name": "T无尽材料学",
+    "Name": "T强相互作用力材料",
     "IconPath": "Icons/Tech/1414",
-    "Desc": "T无尽材料学描述",
-    "Conclusion": "T无尽材料学描述",
+    "Desc": "T强相互作用力材料描述",
+    "Conclusion": "T强相互作用力材料描述",
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
@@ -1105,10 +1105,10 @@
   },
   {
     "ID": 1144,
-    "Name": "T反物质能量炉",
+    "Name": "T人造恒星MK2",
     "IconPath": "Icons/Tech/1144",
-    "Desc": "T反物质能量炉描述",
-    "Conclusion": "T反物质能量炉结果",
+    "Desc": "T人造恒星MK2描述",
+    "Conclusion": "T人造恒星MK2结果",
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
@@ -4871,10 +4871,10 @@
   },
   {
     "ID": 1915,
-    "Name": "T焦油分馏",
+    "Name": "T焦油精炼",
     "IconPath": "Icons/Tech/1102",
-    "Desc": "T焦油分馏描述",
-    "Conclusion": "T焦油分馏描述",
+    "Desc": "T焦油精炼描述",
+    "Conclusion": "T焦油精炼描述",
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
@@ -4915,10 +4915,10 @@
   },
   {
     "ID": 1916,
-    "Name": "T放射性原料提纯",
+    "Name": "T放射性矿物提炼",
     "IconPath": "Icons/Tech/1416",
-    "Desc": "T放射性原料提纯描述",
-    "Conclusion": "T放射性原料提纯描述",
+    "Desc": "T放射性矿物提炼描述",
+    "Conclusion": "T放射性矿物提炼描述",
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
@@ -5993,10 +5993,10 @@
   },
   {
     "ID": 1948,
-    "Name": "T生物神经技术",
+    "Name": "T光学信息传输技术",
     "IconPath": "Assets/texpack/生物神经",
-    "Desc": "T生物神经技术描述",
-    "Conclusion": "T生物神经技术描述",
+    "Desc": "T光学信息传输技术描述",
+    "Conclusion": "T光学信息传输技术描述",
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
@@ -6049,10 +6049,10 @@
   },
   {
     "ID": 1949,
-    "Name": "T超级纳米计算机",
+    "Name": "T超级量子计算机",
     "IconPath": "Assets/texpack/主机科技",
-    "Desc": "T超级纳米计算机描述",
-    "Conclusion": "T超级纳米计算机描述",
+    "Desc": "T超级量子计算机描述",
+    "Conclusion": "T超级量子计算机描述",
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
@@ -6100,10 +6100,10 @@
   },
   {
     "ID": 1950,
-    "Name": "T生物活性计算机",
+    "Name": "T光学计算机",
     "IconPath": "Assets/texpack/主机科技",
-    "Desc": "T生物活性计算机描述",
-    "Conclusion": "T生物活性计算机描述",
+    "Desc": "T光学计算机描述",
+    "Conclusion": "T光学计算机描述",
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
