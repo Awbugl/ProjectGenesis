@@ -17,5 +17,13 @@ namespace ProjectGenesis.Utils
                 dict[key] = new List<TValue> { value };
             }
         }
+        
+        public static void TryRemove<TKey, TValue>(this Dictionary<TKey, List<TValue>> dict, TKey key, TValue value)
+        {
+            if (dict.ContainsKey(key))
+            {
+                dict[key].Remove(value);
+            }
+        }
     }
 }

@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Reflection.Emit;
+using System.Threading;
 using HarmonyLib;
 using ProjectGenesis.Utils;
 
@@ -9,20 +11,32 @@ namespace ProjectGenesis.Patches.Logic
 {
     public static partial class QuantumStoragePatches
     {
-        [HarmonyPatch(typeof(FactoryStorage), "NewStorageComponent")]
-        [HarmonyPostfix]
-        public static void FactoryStorage_NewStorageComponent(
-            FactoryStorage __instance,
-            int entityId,
-            int size,
-            ref StorageComponent __result)
+        private static readonly Mutex QuantumStorageMutex = new Mutex(-1);
+
+        [HarmonyPatch(typeof(StorageComponent), nameof(StorageComponent.TakeTailItems),
+                      new Type[] { typeof(int), typeof(int), typeof(int), typeof(bool) },
+                      new ArgumentType[] { ArgumentType.Ref, ArgumentType.Ref, ArgumentType.Out, ArgumentType.Normal })]
+        [HarmonyPatch(typeof(StorageComponent), nameof(StorageComponent.TakeTailItems),
+                      new Type[] { typeof(int), typeof(int), typeof(int[]), typeof(int), typeof(bool) },
+                      new ArgumentType[] { ArgumentType.Ref, ArgumentType.Ref, ArgumentType.Normal, ArgumentType.Out, ArgumentType.Normal })]
+        [HarmonyPatch(typeof(StorageComponent), nameof(StorageComponent.TakeTailItemsFiltered))]
+        [HarmonyPrefix]
+        public static void StorageComponent_TakeTailItems_Prefix(StorageComponent __instance)
         {
-            if (size == QuantumStorageSize)
-            {
-                __instance.storagePool[__result.id] = _component;
-                __result = _component;
-                SyncNewQuantumStorageData.Sync(__instance.planet.id, __result.id);
-            }
+            if (__instance.size == QuantumStorageSize) Monitor.Enter(QuantumStorageMutex);
+        }
+
+        [HarmonyPatch(typeof(StorageComponent), nameof(StorageComponent.TakeTailItems),
+                      new Type[] { typeof(int), typeof(int), typeof(int), typeof(bool) },
+                      new ArgumentType[] { ArgumentType.Ref, ArgumentType.Ref, ArgumentType.Out, ArgumentType.Normal })]
+        [HarmonyPatch(typeof(StorageComponent), nameof(StorageComponent.TakeTailItems),
+                      new Type[] { typeof(int), typeof(int), typeof(int[]), typeof(int), typeof(bool) },
+                      new ArgumentType[] { ArgumentType.Ref, ArgumentType.Ref, ArgumentType.Normal, ArgumentType.Out, ArgumentType.Normal })]
+        [HarmonyPatch(typeof(StorageComponent), nameof(StorageComponent.TakeTailItemsFiltered))]
+        [HarmonyPostfix]
+        public static void StorageComponent_TakeTailItems_Postfix(StorageComponent __instance)
+        {
+            if (__instance.size == QuantumStorageSize) Monitor.Exit(QuantumStorageMutex);
         }
 
         [HarmonyPatch(typeof(FactoryStorage), nameof(FactoryStorage.GameTick))]
@@ -70,6 +84,42 @@ namespace ProjectGenesis.Patches.Logic
         [HarmonyPatch(typeof(StorageComponent), "SetEmpty")]
         [HarmonyPrefix]
         public static bool StorageComponent_SetEmpty(StorageComponent __instance) => __instance.size != QuantumStorageSize;
+
+        [HarmonyPatch(typeof(FactoryStorage), nameof(FactoryStorage.NewStorageComponent))]
+        [HarmonyPostfix]
+        public static void FactoryStorage_NewStorageComponent(
+            FactoryStorage __instance,
+            int entityId,
+            int size,
+            ref StorageComponent __result)
+        {
+            if (size != QuantumStorageSize) return;
+
+            __instance.storagePool[__result.id] = _component;
+            __result = _component;
+            
+            _quantumStorageIds.TryAddOrInsert(__instance.planet.id, __result.id);
+            SyncNewQuantumStorageData.Sync(__instance.planet.id, __result.id);
+        }
+
+        [HarmonyPatch(typeof(FactoryStorage), nameof(FactoryStorage.RemoveStorageComponent))]
+        [HarmonyPrefix]
+        public static bool FactoryStorage_RemoveStorageComponent(FactoryStorage __instance, int id)
+        {
+            StorageComponent storageComponent = __instance.storagePool[id];
+
+            if (storageComponent == null) return false;
+
+            if (storageComponent.size != QuantumStorageSize) return true;
+
+            _quantumStorageIds.TryRemove(__instance.planet.id, id);
+
+            __instance.storagePool[id] = new StorageComponent(30);
+            __instance.storagePool[id].SetEmpty();
+            __instance.storageRecycle[__instance.storageRecycleCursor++] = id;
+
+            return false;
+        }
 
         [HarmonyPatch(typeof(FactoryStorage), "TryTakeBackItems_Storage")]
         [HarmonyPostfix]
@@ -127,28 +177,6 @@ namespace ProjectGenesis.Patches.Logic
                                                  new CodeInstruction(OpCodes.Brtrue_S, label), new CodeInstruction(OpCodes.Pop));
 
             return matcher.InstructionEnumeration();
-        }
-
-        [HarmonyPatch(typeof(FactoryStorage), "Export")]
-        [HarmonyTranspiler]
-        public static IEnumerable<CodeInstruction> FactoryStorage_Export_Transpiler(IEnumerable<CodeInstruction> instructions)
-        {
-            var matcher = new CodeMatcher(instructions);
-
-            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(StorageComponent), nameof(StorageComponent.id))));
-
-            matcher.SetInstructionAndAdvance(new CodeInstruction(OpCodes.Ldarg_0)).Advance(1)
-                   .InsertAndAdvance(new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(QuantumStoragePatches), nameof(Export_PatchMethod))))
-                   .SetOpcodeAndAdvance(OpCodes.Brtrue);
-
-            return matcher.InstructionEnumeration();
-        }
-
-        public static bool Export_PatchMethod(StorageComponent component, FactoryStorage storage, int index)
-        {
-            bool b = component.size == QuantumStorageSize;
-            if (b) _quantumStorageIds.TryAddOrInsert(storage.planet.id, index);
-            return b;
         }
     }
 }
