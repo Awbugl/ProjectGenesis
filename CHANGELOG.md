@@ -1,3 +1,14 @@
+- v2.9.3
+  + 修复了量子储物箱的一系列Bug
+  + 修复传送带颜色不正确的问题
+
+  + Fixed a series of bugs about Quantum Dopot
+  + Fixed incorrect color of conveyor belt
+
+
+<details>
+  <summary>点击展开日志 | Click to view all </summary>
+
 - v2.9.2
   + 调整了部分科技的需求
   + 调整了`高频激光塔 MK.II`的攻击距离和伤害
@@ -9,8 +20,6 @@
   + Removed the `Gauss Turret MK.II`
   + Added `Implosion Cannon MK.II`
 
-<details>
-  <summary>点击展开日志 | Click to view all </summary>
 
 - v2.9.0 群星之影 | Shadows of the Galaxy
   + 适配版本v0.10.28.21014

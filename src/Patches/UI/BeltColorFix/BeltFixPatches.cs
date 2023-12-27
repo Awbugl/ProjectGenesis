@@ -4,19 +4,15 @@ using System.Reflection;
 using System.Reflection.Emit;
 using HarmonyLib;
 
-// ReSharper disable once CommentTypo
 // ReSharper disable InconsistentNaming
 
 namespace ProjectGenesis.Patches.UI.BeltColorFix
 {
-    /// <summary>
-    ///     special thanks for https://github.com/kremnev8/DSP-Mods/blob/master/Mods/BetterMachines/src/BeltFixes.cs
-    /// </summary>
-
-    //Original author: xiaoye97, modified heavily.
     public static class BeltFixPatches
     {
         private static readonly FieldInfo BeltComponent_Speed_Field = AccessTools.Field(typeof(BeltComponent), nameof(BeltComponent.speed));
+
+        private static readonly FieldInfo PrefabDesc_beltSpeed_Field = AccessTools.Field(typeof(PrefabDesc), nameof(PrefabDesc.beltSpeed));
 
         [HarmonyPatch(typeof(CargoTraffic), "AlterBeltRenderer")]
         [HarmonyTranspiler]
@@ -36,10 +32,22 @@ namespace ProjectGenesis.Patches.UI.BeltColorFix
             matcher.Advance(2).InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_S, arg)).SetInstruction(
                 Transpilers.EmitDelegate<Func<int, int, int>>((speed, other) =>
                 {
-                    if (speed == 10) other += 8;
-                    if (speed == 5) other += 4;
+                    if (speed == 10) return other + 8;
+                    if (speed == 5) return other + 4;
                     return other;
                 })).Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Stloc_S, arg)).SetInstruction(new CodeInstruction(OpCodes.Br, label));
+
+            return matcher.InstructionEnumeration();
+        }
+
+        [HarmonyPatch(typeof(ConnGizmoRenderer), "Update")]
+        [HarmonyTranspiler]
+        public static IEnumerable<CodeInstruction> BuildTool_BlueprintCopy_UpdatePreviewModels_Transpiler(IEnumerable<CodeInstruction> instructions)
+        {
+            CodeMatcher matcher = new CodeMatcher(instructions).MatchForward(false, new CodeMatch(OpCodes.Ldfld, PrefabDesc_beltSpeed_Field));
+
+            matcher.Advance(1).InsertAndAdvance(
+                new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(BeltFixPatches), nameof(BeltSpeed_Patch))));
 
             return matcher.InstructionEnumeration();
         }
@@ -48,80 +56,50 @@ namespace ProjectGenesis.Patches.UI.BeltColorFix
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> CargoTraffic_SetBeltSelected_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
-            CodeMatcher matcher = new CodeMatcher(instructions).MatchForward(false, new CodeMatch(OpCodes.Ldelema),
-                                                                             new CodeMatch(OpCodes.Ldfld, BeltComponent_Speed_Field),
-                                                                             new CodeMatch(OpCodes.Call));
+            CodeMatcher matcher = new CodeMatcher(instructions).MatchForward(false, new CodeMatch(OpCodes.Ldfld, BeltComponent_Speed_Field));
 
-            matcher.Advance(2).InsertAndAdvance(Transpilers.EmitDelegate<Func<int, int>>(speed =>
-            {
-                switch (speed)
-                {
-                    case 10:
-                        return 5;
+            matcher.Advance(1).InsertAndAdvance(
+                new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(BeltFixPatches), nameof(BeltSpeed_Patch))));
 
-                    case 5:
-                        return 2;
-
-                    case 3:
-                        return 1;
-
-                    default:
-                        return speed;
-                }
-            }));
 
             return matcher.InstructionEnumeration();
         }
 
-        [HarmonyPatch(typeof(ConnGizmoRenderer), "AddBlueprintBeltMajorPoint")]
-        [HarmonyPatch(typeof(ConnGizmoRenderer), "AddBlueprintBeltPoint")]
-        [HarmonyPatch(typeof(ConnGizmoRenderer), "AddBlueprintBeltConn")]
-        [HarmonyPrefix]
-        public static void GizmoColor(ref ConnGizmoRenderer __instance, ref uint color)
+        [HarmonyPatch(typeof(BuildTool_BlueprintPaste), nameof(BuildTool_BlueprintPaste.UpdatePreviewModels))]
+        [HarmonyPatch(typeof(BuildTool_BlueprintCopy), nameof(BuildTool_BlueprintCopy.UpdatePreviewModels))]
+        [HarmonyPatch(typeof(BuildTool_Path), nameof(BuildTool_Path.UpdateGizmos))]
+        [HarmonyTranspiler]
+        public static IEnumerable<CodeInstruction> BuildTool_Path_UpdateGizmos_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
-            switch (color)
+            CodeMatcher matcher = new CodeMatcher(instructions).MatchForward(false, new CodeMatch(OpCodes.Ldfld, PrefabDesc_beltSpeed_Field));
+
+            matcher.Advance(1).InsertAndAdvance(
+                new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(BeltFixPatches), nameof(BeltSpeed_Patch))));
+
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldfld, PrefabDesc_beltSpeed_Field));
+
+            matcher.Advance(1).InsertAndAdvance(
+                new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(BeltFixPatches), nameof(BeltSpeed_Patch))));
+
+            return matcher.InstructionEnumeration();
+        }
+
+        public static int BeltSpeed_Patch(int beltSpeed)
+        {
+            switch (beltSpeed)
             {
                 case 10:
-                    color = 5;
-                    break;
+                    return 5;
 
                 case 5:
-                    color = 2;
-                    break;
+                    return 2;
 
                 case 3:
-                    color = 1;
-                    break;
+                    return 1;
+
+                default:
+                    return beltSpeed;
             }
         }
-
-        [HarmonyPatch(typeof(ConnGizmoRenderer), "Update")]
-        [HarmonyTranspiler]
-        public static IEnumerable<CodeInstruction> GizmoColorUpdate(IEnumerable<CodeInstruction> instructions)
-        {
-            CodeMatcher matcher = new CodeMatcher(instructions)
-                                 .MatchForward(false, new CodeMatch(OpCodes.Ldarg_0),
-                                               new CodeMatch(OpCodes.Ldfld,
-                                                             AccessTools.Field(typeof(ConnGizmoRenderer), nameof(ConnGizmoRenderer.factory))),
-                                               new CodeMatch(OpCodes.Ldloc_3)).Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_S, 6))
-                                 .InsertAndAdvance(new CodeInstruction(OpCodes.Ldloca_S, 0)).InsertAndAdvance(
-                                      Transpilers.EmitDelegate<RefAction<int, ConnGizmoObj>>((int speed, ref ConnGizmoObj renderer) =>
-                                      {
-                                          switch (speed)
-                                          {
-                                              case 5:
-                                                  renderer.color = 2;
-                                                  break;
-
-                                              case 3:
-                                                  renderer.color = 1;
-                                                  break;
-                                          }
-                                      }));
-
-            return matcher.InstructionEnumeration();
-        }
-
-        private delegate void RefAction<in T1, T2>(T1 arg1, ref T2 arg2);
     }
 }
