@@ -20,6 +20,7 @@ namespace ProjectGenesis.Patches.Logic
                       new Type[] { typeof(int), typeof(int), typeof(int[]), typeof(int), typeof(bool) },
                       new ArgumentType[] { ArgumentType.Ref, ArgumentType.Ref, ArgumentType.Normal, ArgumentType.Out, ArgumentType.Normal })]
         [HarmonyPatch(typeof(StorageComponent), nameof(StorageComponent.TakeTailItemsFiltered))]
+        [HarmonyPriority(Priority.VeryHigh)]
         [HarmonyPrefix]
         public static void StorageComponent_TakeTailItems_Prefix(StorageComponent __instance)
         {
@@ -82,6 +83,7 @@ namespace ProjectGenesis.Patches.Logic
         public static bool BuildTool_Addon_PatchMethod(PrefabDesc desc) => desc.isStorage && desc.storageRow != 9;
 
         [HarmonyPatch(typeof(StorageComponent), "SetEmpty")]
+        [HarmonyPriority(Priority.VeryHigh)]
         [HarmonyPrefix]
         public static bool StorageComponent_SetEmpty(StorageComponent __instance) => __instance.size != QuantumStorageSize;
 
@@ -97,12 +99,13 @@ namespace ProjectGenesis.Patches.Logic
 
             __instance.storagePool[__result.id] = _component;
             __result = _component;
-            
+
             _quantumStorageIds.TryAddOrInsert(__instance.planet.id, __result.id);
             SyncNewQuantumStorageData.Sync(__instance.planet.id, __result.id);
         }
 
         [HarmonyPatch(typeof(FactoryStorage), nameof(FactoryStorage.RemoveStorageComponent))]
+        [HarmonyPriority(Priority.VeryHigh)]
         [HarmonyPrefix]
         public static bool FactoryStorage_RemoveStorageComponent(FactoryStorage __instance, int id)
         {

@@ -51,6 +51,7 @@ namespace ProjectGenesis.Patches.UI
         }
 
         [HarmonyPatch(typeof(UIShowSignalTipExtension), "OnUpdate")]
+        [HarmonyPriority(Priority.VeryHigh)]
         [HarmonyPrefix]
         public static bool UIShowSignalTipExtension_OnUpdate(UISignalPicker picker)
             => picker.hoveredIndex >= 0 && picker.hoveredIndex < picker.signalArray.Length;

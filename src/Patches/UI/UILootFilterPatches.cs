@@ -41,6 +41,7 @@ namespace ProjectGenesis.Patches.UI
         }
 
         [HarmonyPatch(typeof(UILootFilter), "OnTypeButtonClick")]
+        [HarmonyPriority(Priority.VeryHigh)]
         [HarmonyPrefix]
         public static void OnTypeClicked_Prefix(int type) => UILootFilter.showAll = type == 1;
 

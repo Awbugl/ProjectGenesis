@@ -394,9 +394,9 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
             SyncSlotData.Sync(__instance.planetId, otherSlotId, otherEntityId, slotdata[otherSlotId]);
         }
 
+        [HarmonyPatch(typeof(PlanetFactory), "RemoveEntityWithComponents")]
         [HarmonyPrefix]
         [HarmonyPriority(Priority.VeryHigh)]
-        [HarmonyPatch(typeof(PlanetFactory), "RemoveEntityWithComponents")]
         public static void PlanetFactory_RemoveEntityWithComponents(ref PlanetFactory __instance, int id)
         {
             if (id != 0)

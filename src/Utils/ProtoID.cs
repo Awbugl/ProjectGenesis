@@ -17,6 +17,7 @@ namespace ProjectGenesis.Utils
                            I氢 = 1120,
                            I重氢 = 1121,
                            I增产剂 = 1143,
+                           I超合金弹箱 = 1603,
                            I氢燃料棒 = 1801,
                            I氘核燃料棒 = 1802,
                            I反物质燃料棒 = 1803,
@@ -49,6 +50,7 @@ namespace ProjectGenesis.Utils
                            I硝酸 = 7017,
                            I海水 = 7018,
                            I氧 = 7019,
+                           I钢芯弹箱 = 7607,
                            I钨块 = 7705;
 
         internal const int R等离子精炼 = 16,

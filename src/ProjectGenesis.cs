@@ -258,6 +258,10 @@ namespace ProjectGenesis
             RecipeProto.InitFractionatorNeeds();
             RaycastLogic.LoadStatic();
 
+            ref int[] turretNeed = ref ItemProto.turretNeeds[(int)EAmmoType.Bullet];
+            turretNeed[1] = ProtoID.I钢芯弹箱;
+            turretNeed[2] = ProtoID.I超合金弹箱;
+
             ItemProto.stationCollectorId = ProtoID.I轨道采集器;
 
             ItemPostFix();

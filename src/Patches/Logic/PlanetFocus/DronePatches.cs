@@ -5,6 +5,7 @@ namespace ProjectGenesis.Patches.Logic.PlanetFocus
     public static partial class PlanetFocusPatches
     {
         [HarmonyPatch(typeof(StationComponent), "InternalTickLocal")]
+        [HarmonyPriority(Priority.VeryHigh)]
         [HarmonyPrefix]
         public static void StationComponent_InternalTickLocal_PreFix(PlanetFactory factory, ref float droneSpeed)
         {
@@ -12,6 +13,7 @@ namespace ProjectGenesis.Patches.Logic.PlanetFocus
         }
 
         [HarmonyPatch(typeof(DispenserComponent), "InternalTick")]
+        [HarmonyPriority(Priority.VeryHigh)]
         [HarmonyPrefix]
         public static void DispenserComponent_InternalTick_PreFix(PlanetFactory factory, ref float courierSpeed)
         {

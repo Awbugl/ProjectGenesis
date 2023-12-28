@@ -9,6 +9,7 @@ namespace ProjectGenesis.Patches.Logic.PlanetFocus
     public static partial class PlanetFocusPatches
     {
         [HarmonyPatch(typeof(MinerComponent), "InternalUpdate")]
+        [HarmonyPriority(Priority.VeryHigh)]
         [HarmonyPrefix]
         public static void MinerComponent_InternalUpdate_PreFix(PlanetFactory factory, ref float miningSpeed)
         {
@@ -45,6 +46,7 @@ namespace ProjectGenesis.Patches.Logic.PlanetFocus
         }
 
         [HarmonyPatch(typeof(StationComponent), "UpdateCollection")]
+        [HarmonyPriority(Priority.VeryHigh)]
         [HarmonyPrefix]
         public static void StationComponent_UpdateCollection_Prefix(
             StationComponent __instance,
