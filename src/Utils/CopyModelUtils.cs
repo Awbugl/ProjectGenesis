@@ -99,17 +99,8 @@ namespace ProjectGenesis.Utils
 
                     if (material == null) continue;
                     material = new Material(material);
-                }
-
-                if (!color.HasValue) continue;
-
-                try
-                {
-                    lodMaterial[0].color = color.Value;
-                }
-                catch
-                {
-                    // ignored
+                    if (!color.HasValue) continue;
+                    material.SetColor("_Color", color.Value);
                 }
             }
 
