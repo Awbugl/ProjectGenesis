@@ -39,7 +39,9 @@ namespace ProjectGenesis.Patches.UI
                 false, new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(AssemblerComponent), nameof(AssemblerComponent.recipeId))),
                 new CodeMatch(OpCodes.Conv_R4), new CodeMatch(OpCodes.Stfld, AccessTools.Field(typeof(AnimData), nameof(AnimData.working_length))));
 
-            matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Call, AccessTools.Method(nameof(ChemicalRecipeFcolPatch))));
+            matcher.Advance(1)
+                   .InsertAndAdvance(
+                        new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(ChemicalRecipeFcolPatches), nameof(ChemicalRecipeFcolPatch))));
 
             return matcher.InstructionEnumeration();
         }
