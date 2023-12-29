@@ -88,7 +88,7 @@ namespace ProjectGenesis.Patches.Logic
                         datas.Add(r.ReadInt32());
                     }
 
-                    _quantumStorageIds[key] = datas;
+                    _quantumStorageIds.TryAdd(key, datas);
                 }
 
                 _component.Import(r);

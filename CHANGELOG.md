@@ -1,8 +1,21 @@
 - v2.9.4
   + 修复了炮台UI不能手动填充对应子弹的问题
+  + 修复了化工厂特效缺失的问题
+  + 调整了所有化工配方的ID（影响存档）
+  + 调整`钛晶石`的制造需求为3`钛块`+1`聚苯硫醚`，3`钛块`+1`有机晶体`（高效）（影响存档）
+  + 调整了mod物品的掉落概率
+  + 下调了地面黑雾的等级耐久度加成（3倍->2倍）
+  + 取消了`羰基合成`、`氨氧化`、`三氯化铁`、`四氢双环戊二烯`配方的特殊堆积逻辑
 
   + Fixed turret UI not able to fill corresponding bullets manually
-
+  + Fixed the missing chemical plant effects
+  + Adjusted the IDs of chemical recipes (affects save)
+  + Adjusted `Titanium Crystals` manufacturing requirements to 3 `Titanium Ingot` + 1 `Polyphenylene Sulfide` or
+    3 `Titanium Ingot` + 1 `Organic Crystals` (advenced) (affects save)
+  + Adjusted the drop probability of mod items
+  + Downgraded durability bonus of Dark Frog ground units (3x -> 2x)
+  + Removed special stacking logic
+    for `Hydroformylation`, `Ammonia Oxidation`, `Ferric Trichloride`, `Tetrahydrocyclopentadiene` recipes
 
 <details>
   <summary>点击展开日志 | Click to view all </summary>

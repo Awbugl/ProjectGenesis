@@ -243,6 +243,7 @@ namespace ProjectGenesis
             ModifyEnemyHpUpgrade();
             SetSkillSystem();
             SetMinerMk2Color();
+            SetChemicalRecipeFcol();
             SetEffectEmitterProto();
 
             VFEffectEmitter.Init();

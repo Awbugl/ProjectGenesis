@@ -108,19 +108,6 @@ namespace ProjectGenesis.Patches.Logic.AddVein
             prefabDescLODMaterial[3].SetTexture("_VeinColorTex", texture);
         }
 
-        internal static void SetChemicalRecipeFcol()
-        {
-            var texture = Resources.Load<Texture>("Assets/texpack/chemical-plant-recipe-fcol");
-
-            ref PrefabDesc prefabDesc = ref LDB.models.Select(64).prefabDesc;
-            prefabDesc.lodMaterials[0][1].SetTexture("_FluidTex", texture);
-            prefabDesc.lodMaterials[1][1].SetTexture("_FluidTex", texture);
-
-            prefabDesc = ref LDB.models.Select(376).prefabDesc;
-            prefabDesc.lodMaterials[0][1].SetTexture("_FluidTex", texture);
-            prefabDesc.lodMaterials[1][1].SetTexture("_FluidTex", texture);
-        }
-
         [HarmonyPatch(typeof(UISandboxMenu), "StaticLoad")]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> UISandboxMenu_StaticLoad_Transpiler(IEnumerable<CodeInstruction> instructions)
