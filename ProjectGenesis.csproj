@@ -136,6 +136,7 @@
         <Compile Include="src\Patches\Logic\ThermalPowerGenPatches.cs"/>
         <Compile Include="src\Patches\Logic\VFPreloadPatches.cs"/>
         <Compile Include="src\Patches\UI\BeltColorFix\BeltFixPatches.cs"/>
+        <Compile Include="src\Patches\UI\ChemicalRecipeFcolPatches.cs" />
         <Compile Include="src\Patches\UI\DisplayText\DisplayNamePatches.cs"/>
         <Compile Include="src\Patches\UI\DisplayText\DisplayTextPatches.cs"/>
         <Compile Include="src\Patches\UI\FactoryModelPatches.cs"/>

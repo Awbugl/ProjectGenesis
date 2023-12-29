@@ -188,18 +188,5 @@ namespace ProjectGenesis.Utils
             modelProto = LDB.models.Select(ProtoID.M守卫者);
             modelProto.HpUpgrade = 800;
         }
-        
-        internal static void SetChemicalRecipeFcol()
-        {
-            var texture = Resources.Load<Texture>("Assets/texpack/chemical-plant-recipe-fcol");
-
-            ref PrefabDesc prefabDesc = ref LDB.models.Select(64).prefabDesc;
-            prefabDesc.lodMaterials[0][1].SetTexture("_FluidTex", texture);
-            prefabDesc.lodMaterials[1][1].SetTexture("_FluidTex", texture);
-
-            prefabDesc = ref LDB.models.Select(376).prefabDesc;
-            prefabDesc.lodMaterials[0][1].SetTexture("_FluidTex", texture);
-            prefabDesc.lodMaterials[1][1].SetTexture("_FluidTex", texture);
-        }
     }
 }

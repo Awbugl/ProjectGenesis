@@ -27,6 +27,7 @@ using static ProjectGenesis.Utils.CopyModelUtils;
 using static ProjectGenesis.Utils.TranslateUtils;
 using static ProjectGenesis.Patches.Logic.AddVein.AddVeinPatches;
 using static ProjectGenesis.Patches.Logic.AddVein.ModifyPlanetTheme;
+using static ProjectGenesis.Patches.UI.ChemicalRecipeFcolPatches;
 
 // ReSharper disable UnusedVariable
 // ReSharper disable UnusedMember.Local

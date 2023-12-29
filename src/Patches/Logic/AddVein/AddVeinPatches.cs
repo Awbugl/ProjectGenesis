@@ -9,7 +9,6 @@ using UnityEngine;
 // ReSharper disable CommentTypo
 // ReSharper disable InconsistentNaming
 // ReSharper disable Unity.UnknownResource
-// ReSharper disable Unity.PreferAddressByIdToGraphicsParams
 
 namespace ProjectGenesis.Patches.Logic.AddVein
 {
@@ -93,19 +92,20 @@ namespace ProjectGenesis.Patches.Logic.AddVein
         internal static void SetMinerMk2Color()
         {
             var texture = Resources.Load<Texture>("Assets/texpack/矿机渲染索引");
+            int veinColorTex = Shader.PropertyToID("_VeinColorTex");
 
             ref PrefabDesc prefabDesc = ref LDB.models.Select(256).prefabDesc;
-            prefabDesc.materials[0].SetTexture("_VeinColorTex", texture);
+            prefabDesc.materials[0].SetTexture(veinColorTex, texture);
             ref Material[] prefabDescLODMaterial = ref prefabDesc.lodMaterials[0];
-            prefabDescLODMaterial[0].SetTexture("_VeinColorTex", texture);
-            prefabDescLODMaterial[1].SetTexture("_VeinColorTex", texture);
-            prefabDescLODMaterial[2].SetTexture("_VeinColorTex", texture);
+            prefabDescLODMaterial[0].SetTexture(veinColorTex, texture);
+            prefabDescLODMaterial[1].SetTexture(veinColorTex, texture);
+            prefabDescLODMaterial[2].SetTexture(veinColorTex, texture);
 
             prefabDesc = ref LDB.models.Select(59).prefabDesc;
             prefabDescLODMaterial = ref prefabDesc.lodMaterials[0];
-            prefabDescLODMaterial[1].SetTexture("_VeinColorTex", texture);
-            prefabDescLODMaterial[2].SetTexture("_VeinColorTex", texture);
-            prefabDescLODMaterial[3].SetTexture("_VeinColorTex", texture);
+            prefabDescLODMaterial[1].SetTexture(veinColorTex, texture);
+            prefabDescLODMaterial[2].SetTexture(veinColorTex, texture);
+            prefabDescLODMaterial[3].SetTexture(veinColorTex, texture);
         }
 
         [HarmonyPatch(typeof(UISandboxMenu), "StaticLoad")]
