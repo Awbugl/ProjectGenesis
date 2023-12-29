@@ -73,8 +73,6 @@ namespace ProjectGenesis
         public void Awake()
         {
             
-            JsonHelper.ExportAsJson(@"D:\dspData1");
-            
 #region Logger
 
             logger = Logger;
