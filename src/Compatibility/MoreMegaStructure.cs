@@ -6,22 +6,13 @@ using ProjectGenesis.Utils;
 using xiaoye97;
 
 // ReSharper disable InconsistentNaming
-// ReSharper disable MemberCanBeInternal
-// ReSharper disable MemberCanBePrivate.Global
-// ReSharper disable ClassNeverInstantiated.Global
 // ReSharper disable LoopCanBePartlyConvertedToQuery
 
 namespace ProjectGenesis.Compatibility
 {
-    [BepInPlugin(MODGUID, MODNAME, VERSION)]
-    [BepInDependency(MoreMegaStructureGUID, BepInDependency.DependencyFlags.SoftDependency)]
-    public class MoreMegaStructureCompatibilityPlugin : BaseUnityPlugin
+    internal static class MoreMegaStructure
     {
-        public const string MODGUID = "org.LoShin.GenesisBook.Compatibility.MoreMegaStructure";
-        public const string MODNAME = "GenesisBook.Compatibility.MoreMegaStructure";
-        public const string VERSION = "1.0.0";
-
-        private const string MoreMegaStructureGUID = "Gnimaerd.DSP.plugin.MoreMegaStructure";
+        internal const string GUID = "Gnimaerd.DSP.plugin.MoreMegaStructure";
 
         private static readonly int[] AddedRecipes =
         {
@@ -37,19 +28,19 @@ namespace ProjectGenesis.Compatibility
 
         private static bool _finished;
 
-        public void Awake()
+        internal static void Awake()
         {
-            Chainloader.PluginInfos.TryGetValue(MoreMegaStructureGUID, out PluginInfo pluginInfo);
+            Chainloader.PluginInfos.TryGetValue(GUID, out PluginInfo pluginInfo);
 
             if (pluginInfo == null) return;
 
             var harmonyMethod
-                = new HarmonyMethod(typeof(MoreMegaStructureCompatibilityPlugin), nameof(LDBToolOnPostAddDataAction))
+                = new HarmonyMethod(typeof(MoreMegaStructure), nameof(LDBToolOnPostAddDataAction))
                 {
                     after = new[] { LDBToolPlugin.MODGUID }
                 };
 
-            new Harmony(MODGUID).Patch(AccessTools.Method(typeof(VFPreload), "InvokeOnLoadWorkEnded"), null, harmonyMethod);
+            new Harmony("org.LoShin.GenesisBook.Compatibility.MoreMegaStructure").Patch(AccessTools.Method(typeof(VFPreload), "InvokeOnLoadWorkEnded"), null, harmonyMethod);
         }
 
         public static void LDBToolOnPostAddDataAction()

@@ -13,7 +13,7 @@ namespace ProjectGenesis.Patches.Logic
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> UIStarmap_UpdateCursorView_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
-            if (FastTravelEnablerCompatibilityPlugin.FastTravelEnablerInstalled) return instructions;
+            if (FastTravelEnabler.Installed) return instructions;
 
             var matcher = new CodeMatcher(instructions);
 
@@ -29,7 +29,7 @@ namespace ProjectGenesis.Patches.Logic
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> UIStarmap_FastTravel_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
-            if (FastTravelEnablerCompatibilityPlugin.FastTravelEnablerInstalled) return instructions;
+            if (FastTravelEnabler.Installed) return instructions;
 
             var matcher = new CodeMatcher(instructions);
 

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Reflection.Emit;
-using BepInEx;
 using BepInEx.Bootstrap;
 using GalacticScale;
 using HarmonyLib;
@@ -14,32 +13,17 @@ using UnityEngine;
 using static ProjectGenesis.Patches.Logic.AddVein.ModifyPlanetTheme;
 using PluginInfo = BepInEx.PluginInfo;
 
-// ReSharper disable CommentTypo
 // ReSharper disable InconsistentNaming
-// ReSharper disable MemberCanBeInternal
-// ReSharper disable MemberCanBePrivate.Global
-// ReSharper disable ClassNeverInstantiated.Global
-// ReSharper disable ForeachCanBePartlyConvertedToQueryUsingAnotherGetEnumerator
 
 namespace ProjectGenesis.Compatibility
 {
-    [BepInPlugin(MODGUID, MODNAME, VERSION)]
-    [BepInDependency(GalacticScaleGUID)]
-    public class GalacticScaleCompatibilityPlugin : BaseUnityPlugin
+    internal static class GalacticScale
     {
-        public const string MODGUID = "org.LoShin.GenesisBook.Compatibility.GalacticScale";
-        public const string MODNAME = "GenesisBook.Compatibility.GalacticScale";
-        public const string VERSION = "1.0.0";
+        internal const string GUID = "dsp.galactic-scale.2";
 
-        private const string GalacticScaleGUID = "dsp.galactic-scale.2";
-
-        internal static bool GalacticScaleInstalled;
-
-        public void Awake()
+        internal static void Awake()
         {
-            GalacticScaleInstalled = Chainloader.PluginInfos.TryGetValue(GalacticScaleGUID, out PluginInfo pluginInfo);
-
-            if (!GalacticScaleInstalled || pluginInfo == null) return;
+            if (!Chainloader.PluginInfos.TryGetValue(GUID, out PluginInfo pluginInfo)) return;
 
             Assembly assembly = pluginInfo.Instance.GetType().Assembly;
 
@@ -60,45 +44,45 @@ namespace ProjectGenesis.Compatibility
             GSVeinType.insaneVeinTypes[(EVeinType)17] = "Tungsten";
             GSVeinType.insaneVeinTypes[(EVeinType)18] = "Sulfur";
 
-            var harmony = new Harmony(MODGUID);
+            var harmony = new Harmony("org.LoShin.GenesisBook.Compatibility.GalacticScale");
 
             harmony.Patch(AccessTools.Method(assembly.GetType("GalacticScale.GS2"), "SetPlanetTheme"), null,
-                          new HarmonyMethod(typeof(GalacticScaleCompatibilityPlugin), nameof(SetPlanetTheme_Postfix)),
-                          new HarmonyMethod(typeof(GalacticScaleCompatibilityPlugin), nameof(SetPlanetTheme_Transpiler)));
+                          new HarmonyMethod(typeof(GalacticScale), nameof(SetPlanetTheme_Postfix)),
+                          new HarmonyMethod(typeof(GalacticScale), nameof(SetPlanetTheme_Transpiler)));
 
             harmony.Patch(AccessTools.Method(assembly.GetType("GalacticScale.GSTheme"), "ToProto"), null,
-                          new HarmonyMethod(typeof(GalacticScaleCompatibilityPlugin), nameof(GSTheme_ToProto_Postfix)));
+                          new HarmonyMethod(typeof(GalacticScale), nameof(GSTheme_ToProto_Postfix)));
 
             Type VeinAlgorithms = assembly.GetType("GalacticScale.VeinAlgorithms");
 
             harmony.Patch(AccessTools.Method(VeinAlgorithms, "DisableVeins"), null, null,
-                          new HarmonyMethod(typeof(GalacticScaleCompatibilityPlugin), nameof(DisableVeins_Transpiler)));
+                          new HarmonyMethod(typeof(GalacticScale), nameof(DisableVeins_Transpiler)));
 
             harmony.Patch(AccessTools.Method(VeinAlgorithms, "DistributeVeinTypes"),
-                          new HarmonyMethod(typeof(GalacticScaleCompatibilityPlugin), nameof(DistributeVeinTypes_Prefix)));
+                          new HarmonyMethod(typeof(GalacticScale), nameof(DistributeVeinTypes_Prefix)));
 
             harmony.Patch(AccessTools.Method(VeinAlgorithms, "GenBirthPoints"), null,
-                          new HarmonyMethod(typeof(GalacticScaleCompatibilityPlugin), nameof(GenBirthPoints_Postfix)));
+                          new HarmonyMethod(typeof(GalacticScale), nameof(GenBirthPoints_Postfix)));
 
             harmony.Patch(AccessTools.Method(VeinAlgorithms, "CalculateVectorsGS2"), null,
-                          new HarmonyMethod(typeof(GalacticScaleCompatibilityPlugin), nameof(CalculateVectorsGS2_Postfix)));
+                          new HarmonyMethod(typeof(GalacticScale), nameof(CalculateVectorsGS2_Postfix)));
 
             harmony.Patch(AccessTools.Method(VeinAlgorithms, "InitBirthVeinVectors"),
-                          new HarmonyMethod(typeof(GalacticScaleCompatibilityPlugin), nameof(InitBirthVeinVectors_Postfix)));
+                          new HarmonyMethod(typeof(GalacticScale), nameof(InitBirthVeinVectors_Postfix)));
 
             harmony.Patch(AccessTools.PropertyGetter(assembly.GetType("GalacticScale.GS2MainSettings"), "VeinTips"), null, null,
-                          new HarmonyMethod(typeof(GalacticScaleCompatibilityPlugin), nameof(GS2MainSettings_VeinTips_Getter_Transpiler)));
+                          new HarmonyMethod(typeof(GalacticScale), nameof(GS2MainSettings_VeinTips_Getter_Transpiler)));
 
             Type PatchOnUIPlanetDetail = assembly.GetType("GalacticScale.PatchOnUIPlanetDetail");
 
             harmony.Patch(AccessTools.Method(PatchOnUIPlanetDetail, "OnPlanetDataSet7Prefix"), null, null,
-                          new HarmonyMethod(typeof(GalacticScaleCompatibilityPlugin), nameof(OnPlanetDataSet_Transpiler)));
+                          new HarmonyMethod(typeof(GalacticScale), nameof(OnPlanetDataSet_Transpiler)));
 
             harmony.Patch(AccessTools.Method(PatchOnUIPlanetDetail, "OnPlanetDataSet7Prefix"), null, null,
                           new HarmonyMethod(typeof(PlanetGasPatches), nameof(PlanetGasPatches.OnDataSet_ChangeWaterId_Transpiler)));
 
             harmony.Patch(AccessTools.Method(PatchOnUIPlanetDetail, "OnPlanetDataSet7Prefix"), null, null,
-                          new HarmonyMethod(typeof(GalacticScaleCompatibilityPlugin), nameof(OnPlanetDataSet_ChangeVeinData_Transpiler)));
+                          new HarmonyMethod(typeof(GalacticScale), nameof(OnPlanetDataSet_ChangeVeinData_Transpiler)));
 
             Type PatchOnUIStarDetail = assembly.GetType("GalacticScale.PatchOnUIStarDetail");
 
@@ -112,7 +96,7 @@ namespace ProjectGenesis.Compatibility
                           new HarmonyMethod(typeof(PlanetGasPatches), nameof(PlanetGasPatches.OnStarDataSet_Transpiler)));
 
             harmony.Patch(AccessTools.Method(PatchOnUIStarDetail, "OnStarDataSet2"), null, null,
-                          new HarmonyMethod(typeof(GalacticScaleCompatibilityPlugin), nameof(OnStarDataSet_ChangeVeinData_Transpiler)));
+                          new HarmonyMethod(typeof(GalacticScale), nameof(OnStarDataSet_ChangeVeinData_Transpiler)));
         }
 
         public static IEnumerable<CodeInstruction> SetPlanetTheme_Transpiler(IEnumerable<CodeInstruction> instructions)
@@ -436,7 +420,7 @@ namespace ProjectGenesis.Compatibility
         }
     }
 
-    public static class GSThemeModify
+    internal static class GSThemeModify
     {
         internal static void ModifyTheme(ref GSTheme theme)
         {

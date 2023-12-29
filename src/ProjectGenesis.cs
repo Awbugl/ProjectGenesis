@@ -79,7 +79,7 @@ namespace ProjectGenesis
             logger = Logger;
             logger.Log(LogLevel.Info, "GenesisBook Awake");
 
-            if (DSPBattleCompatibilityPlugin.DSPBattleInstalled)
+            if (DSPBattle.Installed)
             {
                 logger.Log(LogLevel.Error, "They Come From Void is installed, which is incompatible with GenesisBook. Load Cancelled.");
                 return;

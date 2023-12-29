@@ -111,7 +111,7 @@ namespace ProjectGenesis.Patches.Logic
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> BuildTool_Blueprint_DetermineActive_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
-            if (BlueprintTweaksCompatibilityPlugin.BlueprintTweaksInstalled) return instructions;
+            if (Compatibility.BlueprintTweaks.Installed) return instructions;
 
             CodeMatcher matcher = new CodeMatcher(instructions).MatchForward(true, new CodeMatch(OpCodes.Ldarg_0),
                                                                              new CodeMatch(OpCodes.Ldfld,
@@ -137,7 +137,7 @@ namespace ProjectGenesis.Patches.Logic
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> PlayerController_OpenBlueprintMode_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
-            if (BlueprintTweaksCompatibilityPlugin.BlueprintTweaksInstalled) return instructions;
+            if (Compatibility.BlueprintTweaks.Installed) return instructions;
 
             CodeMatcher matcher = new CodeMatcher(instructions).MatchForward(true, new CodeMatch(OpCodes.Ldarg_0),
                                                                              new CodeMatch(OpCodes.Ldfld,
