@@ -45,7 +45,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 1001,
@@ -92,7 +93,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 1002,
@@ -139,7 +141,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 1003,
@@ -187,7 +190,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 1004,
@@ -234,7 +238,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 1005,
@@ -281,7 +286,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 1006,
@@ -331,7 +337,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 1007,
@@ -381,7 +388,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 1011,
@@ -431,7 +439,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 1012,
@@ -478,7 +487,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 1013,
@@ -525,7 +535,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 1014,
@@ -568,11 +579,12 @@
     "DropRate": 0,
     "EnemyDropLevel": 5,
     "EnemyDropRange": [
-      0.01,
-      0.008
+      0.006,
+      0.006
     ],
-    "EnemyDropCount": 4,
-    "EnemyDropMask": 2147483647
+    "EnemyDropCount": 2.0,
+    "EnemyDropMask": 2147483647,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 1015,
@@ -619,7 +631,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 1016,
@@ -662,11 +675,12 @@
     "DropRate": 0,
     "EnemyDropLevel": 8,
     "EnemyDropRange": [
-      0.018,
-      0.005
+      0.012,
+      0.004
     ],
-    "EnemyDropCount": 4,
-    "EnemyDropMask": 2147483647
+    "EnemyDropCount": 2.0,
+    "EnemyDropMask": 2147483647,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 1030,
@@ -713,10 +727,11 @@
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
       0,
-      0.005
+      0.003
     ],
-    "EnemyDropCount": 5,
-    "EnemyDropMask": 2097695762
+    "EnemyDropCount": 4.0,
+    "EnemyDropMask": 2097695762,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 1031,
@@ -762,11 +777,12 @@
     "DropRate": 0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0.005,
-      0.005
+      0.003,
+      0.003
     ],
-    "EnemyDropCount": 5,
-    "EnemyDropMask": 2097695762
+    "EnemyDropCount": 4.0,
+    "EnemyDropMask": 2097695762,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 1099,
@@ -813,7 +829,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 1101,
@@ -856,11 +873,12 @@
     "DropRate": 0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0.023,
+      0.016,
       0.01
     ],
-    "EnemyDropCount": 3,
-    "EnemyDropMask": 2147483647
+    "EnemyDropCount": 2.0,
+    "EnemyDropMask": 2147483647,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 1102,
@@ -907,7 +925,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 1103,
@@ -950,11 +969,12 @@
     "DropRate": 0,
     "EnemyDropLevel": 1,
     "EnemyDropRange": [
-      0.079,
-      0.01
+      0.0635,
+      0.007
     ],
-    "EnemyDropCount": 3,
-    "EnemyDropMask": 2147483647
+    "EnemyDropCount": 1.6,
+    "EnemyDropMask": 2147483647,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 1104,
@@ -997,11 +1017,12 @@
     "DropRate": 0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0.033,
+      0.026,
       0.01
     ],
-    "EnemyDropCount": 3,
-    "EnemyDropMask": 2147483647
+    "EnemyDropCount": 2.4,
+    "EnemyDropMask": 2147483647,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 1105,
@@ -1044,11 +1065,12 @@
     "DropRate": 0,
     "EnemyDropLevel": 1,
     "EnemyDropRange": [
-      0.043,
+      0.036,
       0.008
     ],
-    "EnemyDropCount": 3,
-    "EnemyDropMask": 2147483647
+    "EnemyDropCount": 1.8,
+    "EnemyDropMask": 2131618808,
+    "EnemyDropMaskRatio": 0.3
   },
   {
     "ID": 1106,
@@ -1091,11 +1113,12 @@
     "DropRate": 0,
     "EnemyDropLevel": 1,
     "EnemyDropRange": [
-      0.051,
+      0.044,
       0.008
     ],
-    "EnemyDropCount": 3,
-    "EnemyDropMask": 2147483647
+    "EnemyDropCount": 2.2,
+    "EnemyDropMask": 2131733228,
+    "EnemyDropMaskRatio": 0.25
   },
   {
     "ID": 1107,
@@ -1138,11 +1161,12 @@
     "DropRate": 0,
     "EnemyDropLevel": 4,
     "EnemyDropRange": [
-      0.089,
-      0.008
+      0.0705,
+      0.005
     ],
-    "EnemyDropCount": 3,
-    "EnemyDropMask": 2147483647
+    "EnemyDropCount": 1.1,
+    "EnemyDropMask": 2131733228,
+    "EnemyDropMaskRatio": 0.3
   },
   {
     "ID": 1108,
@@ -1185,11 +1209,12 @@
     "DropRate": 0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0.059,
-      0.01
+      0.052,
+      0.006
     ],
-    "EnemyDropCount": 3,
-    "EnemyDropMask": 2147483647
+    "EnemyDropCount": 1.8,
+    "EnemyDropMask": 2147483647,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 1109,
@@ -1235,11 +1260,12 @@
     "DropRate": 0,
     "EnemyDropLevel": 1,
     "EnemyDropRange": [
-      0.069,
-      0.01
+      0.058,
+      0.0055
     ],
-    "EnemyDropCount": 3,
-    "EnemyDropMask": 2147483647
+    "EnemyDropCount": 1.6,
+    "EnemyDropMask": 2097798226,
+    "EnemyDropMaskRatio": 0.7
   },
   {
     "ID": 1110,
@@ -1282,11 +1308,12 @@
     "DropRate": 0,
     "EnemyDropLevel": 1,
     "EnemyDropRange": [
-      0.097,
-      0.01
+      0.0755,
+      0.006
     ],
-    "EnemyDropCount": 3,
-    "EnemyDropMask": 2147483647
+    "EnemyDropCount": 1.7,
+    "EnemyDropMask": 2147483647,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 1111,
@@ -1329,11 +1356,12 @@
     "DropRate": 0,
     "EnemyDropLevel": 1,
     "EnemyDropRange": [
-      0.115,
-      0.01
+      0.0855,
+      0.0055
     ],
-    "EnemyDropCount": 2,
-    "EnemyDropMask": 2147483647
+    "EnemyDropCount": 1.4,
+    "EnemyDropMask": 2147483647,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 1112,
@@ -1379,11 +1407,12 @@
     "DropRate": 0,
     "EnemyDropLevel": 2,
     "EnemyDropRange": [
-      0.125,
-      0.008
+      0.091,
+      0.004
     ],
-    "EnemyDropCount": 2,
-    "EnemyDropMask": 2147483647
+    "EnemyDropCount": 1.0,
+    "EnemyDropMask": 2147483647,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 1113,
@@ -1426,11 +1455,12 @@
     "DropRate": 0,
     "EnemyDropLevel": 3,
     "EnemyDropRange": [
-      0.133,
-      0.008
+      0.095,
+      0.005
     ],
-    "EnemyDropCount": 2,
-    "EnemyDropMask": 2147483647
+    "EnemyDropCount": 1.2,
+    "EnemyDropMask": 2131618808,
+    "EnemyDropMaskRatio": 0.4
   },
   {
     "ID": 1114,
@@ -1480,7 +1510,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 1115,
@@ -1523,11 +1554,12 @@
     "DropRate": 0,
     "EnemyDropLevel": 2,
     "EnemyDropRange": [
-      0.313,
-      0.008
+      0.197,
+      0.003
     ],
-    "EnemyDropCount": 1.5,
-    "EnemyDropMask": 2147483647
+    "EnemyDropCount": 1.0,
+    "EnemyDropMask": 2097798226,
+    "EnemyDropMaskRatio": 0.3
   },
   {
     "ID": 1116,
@@ -1575,7 +1607,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 1117,
@@ -1625,7 +1658,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 1118,
@@ -1668,11 +1702,12 @@
     "DropRate": 0,
     "EnemyDropLevel": 3,
     "EnemyDropRange": [
-      0.337,
-      0.008
+      0.205,
+      0.003
     ],
-    "EnemyDropCount": 1.5,
-    "EnemyDropMask": 2147483647
+    "EnemyDropCount": 0.8,
+    "EnemyDropMask": 2131733228,
+    "EnemyDropMaskRatio": 0.5
   },
   {
     "ID": 1119,
@@ -1715,11 +1750,12 @@
     "DropRate": 0,
     "EnemyDropLevel": 4,
     "EnemyDropRange": [
-      0.107,
-      0.008
+      0.0815,
+      0.004
     ],
-    "EnemyDropCount": 3,
-    "EnemyDropMask": 2147483647
+    "EnemyDropCount": 1.4,
+    "EnemyDropMask": 2131733228,
+    "EnemyDropMaskRatio": 0.4
   },
   {
     "ID": 1120,
@@ -1766,11 +1802,12 @@
     "DropRate": 0,
     "EnemyDropLevel": 3,
     "EnemyDropRange": [
-      0.274,
-      0.008
+      0.185,
+      0.004
     ],
-    "EnemyDropCount": 4,
-    "EnemyDropMask": 2147483647
+    "EnemyDropCount": 1.5,
+    "EnemyDropMask": 2147483647,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 1121,
@@ -1817,11 +1854,12 @@
     "DropRate": 0,
     "EnemyDropLevel": 5,
     "EnemyDropRange": [
-      0.282,
-      0.008
+      0.189,
+      0.002
     ],
-    "EnemyDropCount": 2,
-    "EnemyDropMask": 2147483647
+    "EnemyDropCount": 0.8,
+    "EnemyDropMask": 2147483647,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 1122,
@@ -1865,11 +1903,12 @@
     "DropRate": 0,
     "EnemyDropLevel": 7,
     "EnemyDropRange": [
-      0.29,
-      0.008
+      0.191,
+      0.002
     ],
-    "EnemyDropCount": 1,
-    "EnemyDropMask": 2147483647
+    "EnemyDropCount": 0.3,
+    "EnemyDropMask": 2147483647,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 1123,
@@ -1915,11 +1954,12 @@
     "DropRate": 0,
     "EnemyDropLevel": 3,
     "EnemyDropRange": [
-      0.321,
-      0.008
+      0.2,
+      0.003
     ],
-    "EnemyDropCount": 2,
-    "EnemyDropMask": 2147483647
+    "EnemyDropCount": 1.0,
+    "EnemyDropMask": 2097798226,
+    "EnemyDropMaskRatio": 0.5
   },
   {
     "ID": 1124,
@@ -1965,11 +2005,12 @@
     "DropRate": 0,
     "EnemyDropLevel": 4,
     "EnemyDropRange": [
-      0.329,
-      0.008
+      0.203,
+      0.002
     ],
-    "EnemyDropCount": 1.5,
-    "EnemyDropMask": 2147483647
+    "EnemyDropCount": 0.8,
+    "EnemyDropMask": 2097798226,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 1125,
@@ -2016,7 +2057,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 1126,
@@ -2059,11 +2101,12 @@
     "DropRate": 0,
     "EnemyDropLevel": 5,
     "EnemyDropRange": [
-      0.345,
-      0.008
+      0.208,
+      0.003
     ],
-    "EnemyDropCount": 1.5,
-    "EnemyDropMask": 2147483647
+    "EnemyDropCount": 0.55,
+    "EnemyDropMask": 2147483647,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 1127,
@@ -2106,11 +2149,12 @@
     "DropRate": 0,
     "EnemyDropLevel": 6,
     "EnemyDropRange": [
-      0.203,
-      0.008
+      0.1435,
+      0.0035
     ],
-    "EnemyDropCount": 1,
-    "EnemyDropMask": 2147483647
+    "EnemyDropCount": 0.4,
+    "EnemyDropMask": 2147483647,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 1128,
@@ -2156,11 +2200,12 @@
     "DropRate": 0,
     "EnemyDropLevel": 2,
     "EnemyDropRange": [
-      0.353,
-      0.003
+      0.211,
+      0.004
     ],
-    "EnemyDropCount": 1,
-    "EnemyDropMask": 2147483647
+    "EnemyDropCount": 1.0,
+    "EnemyDropMask": 2097798226,
+    "EnemyDropMaskRatio": 0.7
   },
   {
     "ID": 1129,
@@ -2206,11 +2251,12 @@
     "DropRate": 0,
     "EnemyDropLevel": 4,
     "EnemyDropRange": [
-      0.356,
+      0.215,
       0.003
     ],
-    "EnemyDropCount": 1,
-    "EnemyDropMask": 2147483647
+    "EnemyDropCount": 0.7,
+    "EnemyDropMask": 2147483647,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 1130,
@@ -2230,7 +2276,7 @@
     ],
     "FuelType": 1,
     "HeatValue": 54000000,
-    "ReactorInc": 2,
+    "ReactorInc": 2.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -2260,7 +2306,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 1131,
@@ -2303,11 +2350,12 @@
     "DropRate": 0,
     "EnemyDropLevel": 2,
     "EnemyDropRange": [
-      0.409,
-      0.008
+      0.2435,
+      0.005
     ],
-    "EnemyDropCount": 10,
-    "EnemyDropMask": 2147483647
+    "EnemyDropCount": 2.0,
+    "EnemyDropMask": 2147483647,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 1141,
@@ -2361,7 +2409,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 1142,
@@ -2415,7 +2464,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 1143,
@@ -2469,7 +2519,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 1201,
@@ -2512,11 +2563,12 @@
     "DropRate": 0,
     "EnemyDropLevel": 1,
     "EnemyDropRange": [
-      0.141,
-      0.01
+      0.1,
+      0.007
     ],
-    "EnemyDropCount": 3,
-    "EnemyDropMask": 2147483647
+    "EnemyDropCount": 1.7,
+    "EnemyDropMask": 2147483647,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 1202,
@@ -2559,11 +2611,12 @@
     "DropRate": 0,
     "EnemyDropLevel": 1,
     "EnemyDropRange": [
-      0.161,
-      0.01
+      0.116,
+      0.007
     ],
-    "EnemyDropCount": 3,
-    "EnemyDropMask": 2147483647
+    "EnemyDropCount": 2.0,
+    "EnemyDropMask": 2147483647,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 1203,
@@ -2606,11 +2659,12 @@
     "DropRate": 0,
     "EnemyDropLevel": 2,
     "EnemyDropRange": [
-      0.171,
-      0.008
+      0.123,
+      0.006
     ],
-    "EnemyDropCount": 2,
-    "EnemyDropMask": 2147483647
+    "EnemyDropCount": 1.2,
+    "EnemyDropMask": 2147483647,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 1204,
@@ -2653,11 +2707,12 @@
     "DropRate": 0,
     "EnemyDropLevel": 3,
     "EnemyDropRange": [
-      0.179,
-      0.008
+      0.129,
+      0.0055
     ],
-    "EnemyDropCount": 1.5,
-    "EnemyDropMask": 2147483647
+    "EnemyDropCount": 0.8,
+    "EnemyDropMask": 2147483647,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 1205,
@@ -2700,11 +2755,12 @@
     "DropRate": 0,
     "EnemyDropLevel": 4,
     "EnemyDropRange": [
-      0.187,
-      0.008
+      0.1345,
+      0.005
     ],
-    "EnemyDropCount": 1,
-    "EnemyDropMask": 2147483647
+    "EnemyDropCount": 0.5,
+    "EnemyDropMask": 2147483647,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 1206,
@@ -2747,11 +2803,12 @@
     "DropRate": 0,
     "EnemyDropLevel": 5,
     "EnemyDropRange": [
-      0.195,
-      0.008
+      0.1395,
+      0.004
     ],
-    "EnemyDropCount": 1,
-    "EnemyDropMask": 2147483647
+    "EnemyDropCount": 0.4,
+    "EnemyDropMask": 2147483647,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 1208,
@@ -2799,7 +2856,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 1209,
@@ -2842,11 +2900,12 @@
     "DropRate": 0,
     "EnemyDropLevel": 7,
     "EnemyDropRange": [
-      0.362,
-      0.005
+      0.22,
+      0.002
     ],
-    "EnemyDropCount": 1,
-    "EnemyDropMask": 2147483647
+    "EnemyDropCount": 0.4,
+    "EnemyDropMask": 2147483647,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 1210,
@@ -2889,11 +2948,12 @@
     "DropRate": 0,
     "EnemyDropLevel": 7,
     "EnemyDropRange": [
-      0.367,
-      0.008
+      0.222,
+      0.002
     ],
-    "EnemyDropCount": 1,
-    "EnemyDropMask": 2147483647
+    "EnemyDropCount": 0.3,
+    "EnemyDropMask": 2147483647,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 1301,
@@ -2936,11 +2996,12 @@
     "DropRate": 0,
     "EnemyDropLevel": 1,
     "EnemyDropRange": [
-      0.211,
-      0.01
+      0.147,
+      0.007
     ],
-    "EnemyDropCount": 3,
-    "EnemyDropMask": 2147483647
+    "EnemyDropCount": 2.0,
+    "EnemyDropMask": 2147483647,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 1302,
@@ -2983,11 +3044,12 @@
     "DropRate": 0,
     "EnemyDropLevel": 2,
     "EnemyDropRange": [
-      0.234,
-      0.008
+      0.161,
+      0.007
     ],
-    "EnemyDropCount": 2,
-    "EnemyDropMask": 2147483647
+    "EnemyDropCount": 1.0,
+    "EnemyDropMask": 2147483647,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 1303,
@@ -3030,11 +3092,12 @@
     "DropRate": 0,
     "EnemyDropLevel": 3,
     "EnemyDropRange": [
-      0.221,
-      0.008
+      0.154,
+      0.004
     ],
-    "EnemyDropCount": 2,
-    "EnemyDropMask": 2147483647
+    "EnemyDropCount": 0.75,
+    "EnemyDropMask": 2147483647,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 1304,
@@ -3077,11 +3140,12 @@
     "DropRate": 0,
     "EnemyDropLevel": 6,
     "EnemyDropRange": [
-      0.242,
-      0.008
+      0.168,
+      0.004
     ],
-    "EnemyDropCount": 2,
-    "EnemyDropMask": 2147483647
+    "EnemyDropCount": 0.4,
+    "EnemyDropMask": 2147483647,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 1305,
@@ -3124,11 +3188,12 @@
     "DropRate": 0,
     "EnemyDropLevel": 7,
     "EnemyDropRange": [
-      0.229,
-      0.005
+      0.158,
+      0.003
     ],
-    "EnemyDropCount": 1,
-    "EnemyDropMask": 2147483647
+    "EnemyDropCount": 0.25,
+    "EnemyDropMask": 2147483647,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 1401,
@@ -3171,11 +3236,12 @@
     "DropRate": 0,
     "EnemyDropLevel": 2,
     "EnemyDropRange": [
-      0.258,
-      0.008
+      0.176,
+      0.0045
     ],
-    "EnemyDropCount": 2,
-    "EnemyDropMask": 2147483647
+    "EnemyDropCount": 1.3,
+    "EnemyDropMask": 2147483647,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 1402,
@@ -3218,11 +3284,12 @@
     "DropRate": 0,
     "EnemyDropLevel": 5,
     "EnemyDropRange": [
-      0.25,
-      0.008
+      0.172,
+      0.004
     ],
-    "EnemyDropCount": 2,
-    "EnemyDropMask": 2147483647
+    "EnemyDropCount": 0.25,
+    "EnemyDropMask": 2147483647,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 1403,
@@ -3265,11 +3332,12 @@
     "DropRate": 0,
     "EnemyDropLevel": 7,
     "EnemyDropRange": [
-      0.375,
-      0.008
+      0.224,
+      0.0015
     ],
-    "EnemyDropCount": 1,
-    "EnemyDropMask": 2147483647
+    "EnemyDropCount": 0.3,
+    "EnemyDropMask": 2147483647,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 1404,
@@ -3312,11 +3380,12 @@
     "DropRate": 0,
     "EnemyDropLevel": 3,
     "EnemyDropRange": [
-      0.266,
-      0.008
+      0.1805,
+      0.0045
     ],
-    "EnemyDropCount": 2,
-    "EnemyDropMask": 2147483647
+    "EnemyDropCount": 1.4,
+    "EnemyDropMask": 2147483647,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 1405,
@@ -3359,11 +3428,12 @@
     "DropRate": 0,
     "EnemyDropLevel": 3,
     "EnemyDropRange": [
-      0.393,
-      0.008
+      0.2325,
+      0.006
     ],
-    "EnemyDropCount": 1,
-    "EnemyDropMask": 2147483647
+    "EnemyDropCount": 0.6,
+    "EnemyDropMask": 2147483647,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 1406,
@@ -3406,11 +3476,12 @@
     "DropRate": 0,
     "EnemyDropLevel": 5,
     "EnemyDropRange": [
-      0.401,
-      0.008
+      0.2385,
+      0.005
     ],
-    "EnemyDropCount": 1,
-    "EnemyDropMask": 2147483647
+    "EnemyDropCount": 0.3,
+    "EnemyDropMask": 2147483647,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 1407,
@@ -3453,11 +3524,12 @@
     "DropRate": 0,
     "EnemyDropLevel": 1,
     "EnemyDropRange": [
-      0.383,
-      0.01
+      0.2255,
+      0.007
     ],
-    "EnemyDropCount": 1,
-    "EnemyDropMask": 2147483647
+    "EnemyDropCount": 1.0,
+    "EnemyDropMask": 2147483647,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 1501,
@@ -3505,7 +3577,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 1502,
@@ -3552,7 +3625,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 1503,
@@ -3599,7 +3673,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 1601,
@@ -3650,7 +3725,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 1602,
@@ -3701,7 +3777,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 1603,
@@ -3752,7 +3829,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 1604,
@@ -3804,7 +3882,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 1605,
@@ -3856,7 +3935,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 1606,
@@ -3908,7 +3988,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 1607,
@@ -3960,7 +4041,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 1608,
@@ -4012,7 +4094,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 1609,
@@ -4064,7 +4147,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 1610,
@@ -4116,7 +4200,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 1611,
@@ -4168,7 +4253,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 1801,
@@ -4188,7 +4274,7 @@
     ],
     "FuelType": 1,
     "HeatValue": 60000000,
-    "ReactorInc": 1,
+    "ReactorInc": 1.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -4214,11 +4300,12 @@
     "DropRate": 0,
     "EnemyDropLevel": 4,
     "EnemyDropRange": [
-      0.298,
-      0.005
+      0.193,
+      0.002
     ],
-    "EnemyDropCount": 0.25,
-    "EnemyDropMask": 2147483647
+    "EnemyDropCount": 0.5,
+    "EnemyDropMask": 2147483647,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 1802,
@@ -4238,7 +4325,7 @@
     ],
     "FuelType": 16,
     "HeatValue": 1800000000,
-    "ReactorInc": 3,
+    "ReactorInc": 3.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -4264,11 +4351,12 @@
     "DropRate": 0,
     "EnemyDropLevel": 6,
     "EnemyDropRange": [
-      0.303,
-      0.005
+      0.195,
+      0.001
     ],
-    "EnemyDropCount": 0.25,
-    "EnemyDropMask": 2147483647
+    "EnemyDropCount": 0.4,
+    "EnemyDropMask": 2147483647,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 1803,
@@ -4288,7 +4376,7 @@
     ],
     "FuelType": 4,
     "HeatValue": 36000000000,
-    "ReactorInc": 9,
+    "ReactorInc": 9.0,
     "IsFluid": false,
     "Productive": false,
     "SubID": 0,
@@ -4314,11 +4402,12 @@
     "DropRate": 0,
     "EnemyDropLevel": 8,
     "EnemyDropRange": [
-      0.308,
-      0.005
+      0.196,
+      0.001
     ],
-    "EnemyDropCount": 0.25,
-    "EnemyDropMask": 2147483647
+    "EnemyDropCount": 0.3,
+    "EnemyDropMask": 2147483647,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 1804,
@@ -4338,7 +4427,7 @@
     ],
     "FuelType": 4,
     "HeatValue": 180000000000,
-    "ReactorInc": 11,
+    "ReactorInc": 11.0,
     "IsFluid": false,
     "Productive": false,
     "SubID": 0,
@@ -4368,7 +4457,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 2001,
@@ -4421,7 +4511,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 2002,
@@ -4474,7 +4565,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 2003,
@@ -4527,7 +4619,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 2011,
@@ -4583,7 +4676,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 2012,
@@ -4639,7 +4733,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 2013,
@@ -4695,7 +4790,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 2020,
@@ -4744,7 +4840,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 2030,
@@ -4794,7 +4891,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 2040,
@@ -4844,7 +4942,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 2101,
@@ -4893,7 +4992,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 2102,
@@ -4942,7 +5042,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 2103,
@@ -4994,7 +5095,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 2104,
@@ -5046,7 +5148,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 2105,
@@ -5097,7 +5200,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 2106,
@@ -5146,7 +5250,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 2107,
@@ -5198,7 +5303,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 2201,
@@ -5248,7 +5354,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 2202,
@@ -5300,7 +5407,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 2203,
@@ -5351,7 +5459,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 2204,
@@ -5402,7 +5511,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 2205,
@@ -5452,7 +5562,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 2206,
@@ -5503,7 +5614,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 2207,
@@ -5527,7 +5639,7 @@
     ],
     "FuelType": 8,
     "HeatValue": 2700000000,
-    "ReactorInc": 1,
+    "ReactorInc": 1.0,
     "IsFluid": false,
     "Productive": false,
     "SubID": 8,
@@ -5557,7 +5669,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 2208,
@@ -5607,7 +5720,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 2209,
@@ -5658,7 +5772,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 2210,
@@ -5709,7 +5824,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 2211,
@@ -5759,7 +5875,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 2212,
@@ -5810,7 +5927,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 2213,
@@ -5860,7 +5978,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 2301,
@@ -5912,7 +6031,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 2302,
@@ -5967,7 +6087,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 2303,
@@ -6018,7 +6139,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 2304,
@@ -6069,7 +6191,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 2305,
@@ -6120,7 +6243,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 2306,
@@ -6172,7 +6296,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 2307,
@@ -6224,7 +6349,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 2308,
@@ -6275,7 +6401,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 2309,
@@ -6326,7 +6453,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 2310,
@@ -6377,7 +6505,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 2311,
@@ -6428,7 +6557,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 2312,
@@ -6479,7 +6609,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 2313,
@@ -6529,7 +6660,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 2314,
@@ -6579,7 +6711,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 2315,
@@ -6634,7 +6767,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 2316,
@@ -6686,7 +6820,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 2317,
@@ -6737,7 +6872,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 2318,
@@ -6788,7 +6924,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 2319,
@@ -6843,7 +6980,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 2901,
@@ -6898,7 +7036,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 2902,
@@ -6953,7 +7092,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 3001,
@@ -7008,7 +7148,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 3002,
@@ -7065,7 +7206,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 3003,
@@ -7123,7 +7265,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 3004,
@@ -7178,7 +7321,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 3005,
@@ -7234,7 +7378,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 3006,
@@ -7284,7 +7429,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 3007,
@@ -7336,7 +7482,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 3008,
@@ -7386,7 +7533,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 3009,
@@ -7437,7 +7585,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 5001,
@@ -7486,7 +7635,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 5002,
@@ -7534,7 +7684,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 5003,
@@ -7583,7 +7734,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 5101,
@@ -7636,7 +7788,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 5102,
@@ -7689,7 +7842,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 5103,
@@ -7742,7 +7896,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 5111,
@@ -7795,7 +7950,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 5112,
@@ -7851,7 +8007,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 5201,
@@ -7894,11 +8051,12 @@
     "DropRate": 0,
     "EnemyDropLevel": 4,
     "EnemyDropRange": [
-      0.417,
-      0.0115
+      0.2485,
+      0.01
     ],
-    "EnemyDropCount": 3,
-    "EnemyDropMask": 2147483647
+    "EnemyDropCount": 2.5,
+    "EnemyDropMask": 2147483647,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 5202,
@@ -7941,11 +8099,12 @@
     "DropRate": 0,
     "EnemyDropLevel": 6,
     "EnemyDropRange": [
-      0.4285,
-      0.0085
+      0.2585,
+      0.009
     ],
-    "EnemyDropCount": 2,
-    "EnemyDropMask": 2147483647
+    "EnemyDropCount": 1.5,
+    "EnemyDropMask": 2147483647,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 5203,
@@ -7988,11 +8147,12 @@
     "DropRate": 0,
     "EnemyDropLevel": 5,
     "EnemyDropRange": [
-      0.437,
+      0.2675,
       0.008
     ],
-    "EnemyDropCount": 2,
-    "EnemyDropMask": 2147483647
+    "EnemyDropCount": 1.5,
+    "EnemyDropMask": 2147483647,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 5204,
@@ -8035,11 +8195,12 @@
     "DropRate": 0,
     "EnemyDropLevel": 7,
     "EnemyDropRange": [
-      0.445,
+      0.2755,
       0.006
     ],
-    "EnemyDropCount": 2,
-    "EnemyDropMask": 2147483647
+    "EnemyDropCount": 1.4,
+    "EnemyDropMask": 2147483647,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 5205,
@@ -8082,11 +8243,12 @@
     "DropRate": 0,
     "EnemyDropLevel": 8,
     "EnemyDropRange": [
-      0.451,
-      0.01
+      0.2815,
+      0.0065
     ],
-    "EnemyDropCount": 4,
-    "EnemyDropMask": 2147483647
+    "EnemyDropCount": 1.5,
+    "EnemyDropMask": 2147483647,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 5206,
@@ -8133,11 +8295,12 @@
     "DropRate": 0,
     "EnemyDropLevel": 1,
     "EnemyDropRange": [
-      0.461,
-      0.0144
+      0.288,
+      0.012
     ],
-    "EnemyDropCount": 6,
-    "EnemyDropMask": 2147483647
+    "EnemyDropCount": 2.5,
+    "EnemyDropMask": 2147483647,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 6001,
@@ -8184,7 +8347,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 6002,
@@ -8231,7 +8395,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 6003,
@@ -8278,7 +8443,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 6004,
@@ -8325,7 +8491,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 6005,
@@ -8372,7 +8539,8 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 6006,
@@ -8419,6 +8587,7 @@
       0
     ],
     "EnemyDropCount": 0,
-    "EnemyDropMask": 0
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   }
 ]
