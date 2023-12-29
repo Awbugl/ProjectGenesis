@@ -45,11 +45,12 @@ namespace ProjectGenesis
     [BepInDependency(NebulaModAPI.API_GUID)]
     [BepInDependency(InstallationCheckPlugin.MODGUID, BepInDependency.DependencyFlags.SoftDependency)]
     [CommonAPISubmoduleDependency(nameof(ProtoRegistry), nameof(TabSystem), nameof(LocalizationModule))]
+    [ModSaveSettings(LoadOrder = LoadOrder.Preload)]
     public class ProjectGenesis : BaseUnityPlugin, IModCanSave, IMultiplayerMod
     {
         public const string MODGUID = "org.LoShin.GenesisBook";
         public const string MODNAME = "GenesisBook";
-        public const string VERSION = "2.9.3";
+        public const string VERSION = "2.9.4";
         public const string DEBUGVERSION = "";
 
         public static bool LoadCompleted;
@@ -71,6 +72,9 @@ namespace ProjectGenesis
 
         public void Awake()
         {
+            
+            JsonHelper.ExportAsJson(@"D:\dspData1");
+            
 #region Logger
 
             logger = Logger;

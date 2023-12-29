@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections.Concurrent;
+using System.Collections.Generic;
 using ProjectGenesis.Utils;
 
 namespace ProjectGenesis.Patches.Logic.QTools
@@ -6,14 +7,14 @@ namespace ProjectGenesis.Patches.Logic.QTools
     internal static class QTools
     {
         internal static readonly ItemProto ProliferatorProto = LDB.items.Select(ProtoID.I增产剂);
-        private static Dictionary<Utils.ERecipeType, List<ItemProto>> _recipeTypeFactoryMap;
+        private static ConcurrentDictionary<Utils.ERecipeType, List<ItemProto>> _recipeTypeFactoryMap;
 
-        internal static Dictionary<Utils.ERecipeType, List<ItemProto>> RecipeTypeFactoryMap
+        internal static ConcurrentDictionary<Utils.ERecipeType, List<ItemProto>> RecipeTypeFactoryMap
             => _recipeTypeFactoryMap ?? (_recipeTypeFactoryMap = GetFactoryDict());
 
-        private static Dictionary<Utils.ERecipeType, List<ItemProto>> GetFactoryDict()
+        private static ConcurrentDictionary<Utils.ERecipeType, List<ItemProto>> GetFactoryDict()
         {
-            var dict = new Dictionary<Utils.ERecipeType, List<ItemProto>>();
+            var dict = new ConcurrentDictionary<Utils.ERecipeType, List<ItemProto>>();
 
             ItemProto[] items = LDB.items.dataArray;
 

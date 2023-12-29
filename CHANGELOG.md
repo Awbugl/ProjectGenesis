@@ -1,3 +1,12 @@
+- v2.9.4
+  + 修复了炮台UI不能手动填充对应子弹的问题
+
+  + Fixed turret UI not able to fill corresponding bullets manually
+
+
+<details>
+  <summary>点击展开日志 | Click to view all </summary>
+
 - v2.9.3
   + 修复了量子储物箱的一系列Bug
   + 修复传送带颜色不正确的问题
@@ -5,9 +14,6 @@
   + Fixed a series of bugs about Quantum Dopot
   + Fixed incorrect color of conveyor belt
 
-
-<details>
-  <summary>点击展开日志 | Click to view all </summary>
 
 - v2.9.2
   + 调整了部分科技的需求

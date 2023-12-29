@@ -181,5 +181,23 @@ namespace ProjectGenesis.Patches.Logic
 
             return matcher.InstructionEnumeration();
         }
+
+        [HarmonyPatch(typeof(FactoryStorage), nameof(FactoryStorage.Import))]
+        [HarmonyTranspiler]
+        public static IEnumerable<CodeInstruction> FactoryStorage_Import_Transpiler(IEnumerable<CodeInstruction> instructions)
+        {
+            var matcher = new CodeMatcher(instructions);
+
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Stloc_2), new CodeMatch(OpCodes.Ldloc_2));
+
+            object label = matcher.InstructionAt(2).operand;
+
+            matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0), new CodeInstruction(OpCodes.Ldloc_1),
+                                                new CodeInstruction(OpCodes.Call,
+                                                                    AccessTools.Method(typeof(QuantumStoragePatches), nameof(Import_PatchMethod))),
+                                                new CodeInstruction(OpCodes.Brtrue, label));
+
+            return matcher.InstructionEnumeration();
+        }
     }
 }
