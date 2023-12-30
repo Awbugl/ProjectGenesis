@@ -48,7 +48,11 @@
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
     <Target Name="AfterBuild">
-        <Copy SourceFiles="$(TargetPath)" DestinationFiles="$(DefaultPreloaderOutputPath)$(TargetName).dll"/>
-        <Copy SourceFiles="$(TargetDir)$(TargetName).pdb" DestinationFiles="$(DefaultPreloaderOutputPath)$(TargetName).pdb"/>
+        <MakeDir Directories="$(ReleasePath)"/>
+        <MakeDir Directories="$(ReleasePath)patchers/"/>
+        <Copy SourceFiles="$(TargetPath)" DestinationFiles="$(PatcherOutputPath)$(TargetName).dll"/>
+        <Copy SourceFiles="$(TargetDir)$(TargetName).pdb" DestinationFiles="$(PatcherOutputPath)$(TargetName).pdb"/>
+        <Copy SourceFiles="$(TargetPath)" DestinationFiles="$(ReleasePath)patchers/$(TargetName).dll"/>
+        <Copy SourceFiles="$(TargetDir)$(TargetName).pdb" DestinationFiles="$(ReleasePath)patchers/$(TargetName).pdb"/>
     </Target>
 </Project>

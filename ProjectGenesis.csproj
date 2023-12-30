@@ -40,10 +40,10 @@
         <Reference Include="System"/>
         <Reference Include="System.Core"/>
         <Reference Include="mscorlib">
-            <HintPath>$(DSPAssemblyPath)\mscorlib.dll</HintPath>
+            <HintPath>$(DSPAssemblyPath)mscorlib.dll</HintPath>
         </Reference>
         <Reference Include="netstandard">
-            <HintPath>$(DSPAssemblyPath)\netstandard.dll</HintPath>
+            <HintPath>$(DSPAssemblyPath)netstandard.dll</HintPath>
         </Reference>
         <Reference Include="Assembly-CSharp">
             <HintPath>lib\Assembly-CSharp-publicized.dll</HintPath>
@@ -55,34 +55,34 @@
             <HintPath>lib\GalacticScale-nstrip.dll</HintPath>
         </Reference>
         <Reference Include="System.Diagnostics.StackTrace">
-            <HintPath>$(DSPAssemblyPath)\System.Diagnostics.StackTrace.dll</HintPath>
+            <HintPath>$(DSPAssemblyPath)System.Diagnostics.StackTrace.dll</HintPath>
         </Reference>
         <Reference Include="System.Globalization.Extensions">
-            <HintPath>$(DSPAssemblyPath)\System.Globalization.Extensions.dll</HintPath>
+            <HintPath>$(DSPAssemblyPath)System.Globalization.Extensions.dll</HintPath>
         </Reference>
         <Reference Include="System.Runtime.Serialization.Xml">
-            <HintPath>$(DSPAssemblyPath)\System.Runtime.Serialization.Xml.dll</HintPath>
+            <HintPath>$(DSPAssemblyPath)System.Runtime.Serialization.Xml.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine">
-            <HintPath>$(DSPAssemblyPath)\UnityEngine.dll</HintPath>
+            <HintPath>$(DSPAssemblyPath)UnityEngine.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.AssetBundleModule">
-            <HintPath>$(DSPAssemblyPath)\UnityEngine.AssetBundleModule.dll</HintPath>
+            <HintPath>$(DSPAssemblyPath)UnityEngine.AssetBundleModule.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.CoreModule">
-            <HintPath>$(DSPAssemblyPath)\UnityEngine.CoreModule.dll</HintPath>
+            <HintPath>$(DSPAssemblyPath)UnityEngine.CoreModule.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.ParticleSystemModule">
-            <HintPath>$(DSPAssemblyPath)\UnityEngine.ParticleSystemModule.dll</HintPath>
+            <HintPath>$(DSPAssemblyPath)UnityEngine.ParticleSystemModule.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.TextRenderingModule">
-            <HintPath>$(DSPAssemblyPath)\UnityEngine.TextRenderingModule.dll</HintPath>
+            <HintPath>$(DSPAssemblyPath)UnityEngine.TextRenderingModule.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.UI">
-            <HintPath>$(DSPAssemblyPath)\UnityEngine.UI.dll</HintPath>
+            <HintPath>$(DSPAssemblyPath)UnityEngine.UI.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.UIModule">
-            <HintPath>$(DSPAssemblyPath)\UnityEngine.UIModule.dll</HintPath>
+            <HintPath>$(DSPAssemblyPath)UnityEngine.UIModule.dll</HintPath>
         </Reference>
     </ItemGroup>
     <ItemGroup>
@@ -212,9 +212,17 @@
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
     <Target Name="AfterBuild">
-        <Copy SourceFiles="$(TargetPath)" DestinationFiles="$(DefaultOutputPath)$(TargetName).dll"/>
-        <Copy SourceFiles="README.md" DestinationFiles="$(DefaultOutputPath)README.md"/>
-        <Copy SourceFiles="CHANGELOG.md" DestinationFiles="$(DefaultOutputPath)CHANGELOG.md"/>
-        <Exec Command="explorer $(DefaultOutputPath)" IgnoreExitCode="true"/>
+        <MakeDir Directories="$(ReleasePath)"/>
+        <MakeDir Directories="$(ReleasePath)plugins/"/>
+        <Copy SourceFiles="$(TargetPath)" DestinationFiles="$(PluginsOutputPath)$(TargetName).dll"/>
+        <Copy SourceFiles="$(SolutionDir)\assets\texpack" DestinationFiles="$(PluginsOutputPath)texpack"/>
+        <Copy SourceFiles="$(SolutionDir)\assets\genesis-models" DestinationFiles="$(PluginsOutputPath)genesis-models"/>
+        <Copy SourceFiles="$(TargetPath)" DestinationFiles="$(ReleasePath)plugins/$(TargetName).dll"/>
+        <Copy SourceFiles="README.md" DestinationFiles="$(ReleasePath)README.md"/>
+        <Copy SourceFiles="CHANGELOG.md" DestinationFiles="$(ReleasePath)CHANGELOG.md"/>
+        <Copy SourceFiles="$(SolutionDir)\assets\icon.png" DestinationFiles="$(ReleasePath)icon.png"/>
+        <Copy SourceFiles="$(SolutionDir)\assets\texpack" DestinationFiles="$(ReleasePath)plugins/texpack"/>
+        <Copy SourceFiles="$(SolutionDir)\assets\genesis-models" DestinationFiles="$(ReleasePath)plugins/genesis-models"/>
+        <Copy SourceFiles="$(SolutionDir)\lib\Newtonsoft.Json.dll" DestinationFiles="$(ReleasePath)plugins/Newtonsoft.Json.dll"/>
     </Target>
 </Project>
