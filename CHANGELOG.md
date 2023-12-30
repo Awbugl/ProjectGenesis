@@ -1,3 +1,16 @@
+- v2.9.5
+  + 适配版本v0.10.28.21172
+  + 修复了量子储物箱存档后数据丢失的问题（影响存档）
+  + 修复了巨型建筑数据读取异常的问题
+
+  + Adaptation of version v0.10.28.21172
+  + Fixed Quantum Dopot data lost after archiving (affects save)
+  + Fixed mega buildings data reading anomalies
+
+
+<details>
+  <summary>点击展开日志 | Click to view all </summary>
+
 - v2.9.4
   + 修复了炮台UI不能手动填充对应子弹的问题
   + 修复了化工厂特效缺失的问题
@@ -15,8 +28,6 @@
   + Removed special stacking logic
     for `Hydroformylation`, `Ammonia Oxidation`, `Ferric Trichloride`, `Tetrahydrocyclopentadiene` recipes
 
-<details>
-  <summary>点击展开日志 | Click to view all </summary>
 
 - v2.9.3
   + 修复了量子储物箱的一系列Bug
@@ -64,7 +75,7 @@
   + 调整了黑雾地面建筑和单位的耐久度
   + 将科技探索模式调整为默认开启（可在设置中关闭）
 
-  + Adaptation of version v0.10.28.20959
+  + Adaptation of version v0.10.28.21014
   + Added separate quick build button for mega buildings
   + Removed the dissociation feature of `composite matrixs`
   + Removed Ultimate Technology Line

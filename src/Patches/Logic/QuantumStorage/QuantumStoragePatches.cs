@@ -96,12 +96,13 @@ namespace ProjectGenesis.Patches.Logic
             ref StorageComponent __result)
         {
             if (size != QuantumStorageSize) return;
+            int storageId = __result.id;
 
-            __instance.storagePool[__result.id] = _component;
+            __instance.storagePool[storageId] = _component;
             __result = _component;
 
-            _quantumStorageIds.TryAddOrInsert(__instance.planet.id, __result.id);
-            SyncNewQuantumStorageData.Sync(__instance.planet.id, __result.id);
+            _quantumStorageIds.TryAddOrInsert(__instance.planet.id, storageId);
+            SyncNewQuantumStorageData.Sync(__instance.planet.id, storageId);
         }
 
         [HarmonyPatch(typeof(FactoryStorage), nameof(FactoryStorage.RemoveStorageComponent))]
@@ -121,6 +122,7 @@ namespace ProjectGenesis.Patches.Logic
             __instance.storagePool[id].SetEmpty();
             __instance.storageRecycle[__instance.storageRecycleCursor++] = id;
 
+            SyncRemoveQuantumStorageData.Sync(__instance.planet.id, id);
             return false;
         }
 
@@ -131,6 +133,35 @@ namespace ProjectGenesis.Patches.Logic
             StorageComponent package = __instance.GetStorageComponent(storageId);
             if (package == null || package.size == QuantumStorageSize) __result = true;
         }
+
+        [HarmonyPatch(typeof(PlanetFactory), nameof(PlanetFactory.InsertInto))]
+        [HarmonyPatch(typeof(PlanetFactory), nameof(PlanetFactory.InsertIntoStorage))]
+        [HarmonyPatch(typeof(PlanetFactory), nameof(PlanetFactory.InsertCargoIntoStorage))]
+        [HarmonyPatch(typeof(PlanetFactory), nameof(PlanetFactory.PickFrom))]
+        [HarmonyPatch(typeof(PlanetFactory), nameof(PlanetFactory.PickFromStorage))]
+        [HarmonyPatch(typeof(PlanetFactory), nameof(PlanetFactory.PickFromStorageFiltered))]
+        [HarmonyTranspiler]
+        public static IEnumerable<CodeInstruction> PlanetFactory_Mutexs_Transpiler(IEnumerable<CodeInstruction> instructions)
+        {
+            var matcher = new CodeMatcher(instructions);
+
+            matcher.MatchForward(true, new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(PlanetFactory), nameof(PlanetFactory.entityMutexs))),
+                                 new CodeMatch(inst => inst.IsLdloc()),
+                                 new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(StorageComponent), nameof(StorageComponent.entityId))),
+                                 new CodeMatch(OpCodes.Ldelem_Ref));
+
+            CodeInstruction ins = matcher.InstructionAt(-2);
+
+            matcher.Advance(1).InsertAndAdvance(new CodeInstruction(ins),
+                                                new CodeInstruction(OpCodes.Call,
+                                                                    AccessTools.Method(typeof(QuantumStoragePatches),
+                                                                                       nameof(PlanetFactory_Mutexs_PatchMethod))));
+
+            return matcher.InstructionEnumeration();
+        }
+
+        public static Mutex PlanetFactory_Mutexs_PatchMethod(Mutex mutex, StorageComponent component)
+            => component.size != QuantumStorageSize ? mutex : QuantumStorageMutex;
 
         [HarmonyPatch(typeof(UIStorageWindow), "_OnUpdate")]
         [HarmonyPatch(typeof(UIStorageWindow), "OnStorageIdChange")]

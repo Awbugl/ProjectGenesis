@@ -435,5 +435,30 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
         {
             if (speed >= TrashSpeed) __instance.factory.entityPool[entityId].stationId = 0;
         }
+
+        [HarmonyPatch(typeof(PlanetFactory), nameof(PlanetFactory.Import))]
+        [HarmonyPostfix]
+        public static void PlanetFactory_Import(ref PlanetFactory __instance)
+        {
+            foreach (((int planetId, int entityId), SlotData[] datas) in _slotdata)
+            {
+                if (planetId != __instance.planetId) continue;
+
+                for (int i = 0; i < datas.Length; i++)
+                {
+                    __instance.ReadObjectConn(entityId, i, out _, out int otherObjId, out _);
+
+                    if (otherObjId <= 0 || __instance.entityPool[otherObjId].beltId != datas[i].beltId)
+                    {
+                        BeltComponent beltComponent = __instance.cargoTraffic.beltPool[datas[i].beltId];
+                        ref SignData signData = ref __instance.entitySignPool[beltComponent.entityId];
+                        signData.iconType = 0U;
+                        signData.iconId0 = 0U;
+
+                        datas[i] = new SlotData();
+                    }
+                }
+            }
+        }
     }
 }

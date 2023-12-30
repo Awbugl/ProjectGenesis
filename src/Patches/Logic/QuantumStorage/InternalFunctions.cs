@@ -9,16 +9,24 @@ namespace ProjectGenesis.Patches.Logic
     {
         private const int QuantumStorageSize = 90;
 
-        private static StorageComponent _component = new StorageComponent(QuantumStorageSize);
+        private static StorageComponent _component;
 
-        private static ConcurrentDictionary<int, List<int>> _quantumStorageIds = new ConcurrentDictionary<int, List<int>>();
+        private static ConcurrentDictionary<int, List<int>> _quantumStorageIds;
+
+        static QuantumStoragePatches()
+        {
+            ReInitAll();
+        }
 
         internal static void SyncNewQuantumStorage(int planetId, int storageid)
         {
+            _quantumStorageIds.TryAddOrInsert(planetId, storageid);
             PlanetData planet = GameMain.galaxy.PlanetById(planetId);
             FactoryStorage factoryStorage = GameMain.data.GetOrCreateFactory(planet).factoryStorage;
             factoryStorage.storagePool[storageid] = _component;
         }
+
+        internal static void SyncRemoveQuantumStorage(int planetId, int storageid) => _quantumStorageIds.TryRemove(planetId, storageid);
 
         internal static void ExportPlanetQuantumStorage(int planetId, BinaryWriter w)
         {
@@ -92,8 +100,6 @@ namespace ProjectGenesis.Patches.Logic
                 }
 
                 _component.Import(r);
-                _component.InitConn();
-                _component.CutNext();
             }
             catch (EndOfStreamException)
             {
@@ -107,6 +113,7 @@ namespace ProjectGenesis.Patches.Logic
         {
             _quantumStorageIds = new ConcurrentDictionary<int, List<int>>();
             _component = new StorageComponent(QuantumStorageSize);
+            _component.CutNext();
         }
     }
 }

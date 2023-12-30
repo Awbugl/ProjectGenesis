@@ -37,7 +37,6 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
             for (int j = 0; j < slotdatacount; j++)
             {
                 int planetId = r.ReadInt32();
-                PlanetFactory factory = GameMain.galaxy.PlanetById(planetId)?.factory;
                 int entityId = r.ReadInt32();
                 int length = r.ReadInt32();
                 var datas = new SlotData[length];
@@ -48,20 +47,6 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
                     {
                         dir = (IODir)r.ReadInt32(), beltId = r.ReadInt32(), storageIdx = r.ReadInt32(), counter = r.ReadInt32()
                     };
-
-                    if (factory == null) continue;
-
-                    factory.ReadObjectConn(entityId, i, out _, out int otherObjId, out _);
-
-                    if (otherObjId <= 0 || factory.entityPool[otherObjId].beltId != datas[i].beltId)
-                    {
-                        BeltComponent beltComponent = factory.cargoTraffic.beltPool[datas[i].beltId];
-                        ref SignData signData = ref factory.entitySignPool[beltComponent.entityId];
-                        signData.iconType = 0U;
-                        signData.iconId0 = 0U;
-
-                        datas[i] = new SlotData();
-                    }
                 }
 
                 _slotdata.TryAdd((planetId, entityId), datas);

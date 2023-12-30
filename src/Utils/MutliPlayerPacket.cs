@@ -15,10 +15,7 @@ namespace ProjectGenesis.Utils
     {
         public SyncSlotsData() { }
 
-        public SyncSlotsData(
-            int planetId,
-            int entityId,
-            SlotData[] data)
+        public SyncSlotsData(int planetId, int entityId, SlotData[] data)
         {
             PlanetId = planetId;
             EntityId = entityId;
@@ -49,10 +46,7 @@ namespace ProjectGenesis.Utils
                 NebulaModAPI.MultiplayerSession.Network.SendPacket(new SyncSlotsData(planetId, entityId, slotsData));
         }
 
-        internal static void OnReceive(
-            int planetId,
-            int entityId,
-            byte[] data)
+        internal static void OnReceive(int planetId, int entityId, byte[] data)
         {
             SlotData[] slotsData;
 
@@ -158,10 +152,7 @@ namespace ProjectGenesis.Utils
     {
         public SyncPlanetFocusData() { }
 
-        public SyncPlanetFocusData(
-            int planetId,
-            int index,
-            int focusId)
+        public SyncPlanetFocusData(int planetId, int index, int focusId)
         {
             PlanetId = planetId;
             Index = index;
@@ -178,13 +169,7 @@ namespace ProjectGenesis.Utils
                 NebulaModAPI.MultiplayerSession.Network.SendPacket(new SyncPlanetFocusData(planetId, index, focusId));
         }
 
-        internal static void OnReceive(
-            int planetId,
-            int index,
-            int focusId)
-        {
-            PlanetFocusPatches.SyncPlanetFocus(planetId, index, focusId);
-        }
+        internal static void OnReceive(int planetId, int index, int focusId) => PlanetFocusPatches.SyncPlanetFocus(planetId, index, focusId);
     }
 
     [RegisterPacketProcessor]
@@ -198,9 +183,7 @@ namespace ProjectGenesis.Utils
     {
         public SyncNewQuantumStorageData() { }
 
-        public SyncNewQuantumStorageData(
-            int planetId,
-            int storageId)
+        public SyncNewQuantumStorageData(int planetId, int storageId)
         {
             PlanetId = planetId;
             StorageId = storageId;
@@ -215,10 +198,7 @@ namespace ProjectGenesis.Utils
                 NebulaModAPI.MultiplayerSession.Network.SendPacket(new SyncNewQuantumStorageData(planetId, storageId));
         }
 
-        internal static void OnReceive(
-            int planetId,
-            int storageId)
-            => QuantumStoragePatches.SyncNewQuantumStorage(planetId, storageId);
+        internal static void OnReceive(int planetId, int storageId) => QuantumStoragePatches.SyncNewQuantumStorage(planetId, storageId);
     }
 
     [RegisterPacketProcessor]
@@ -226,6 +206,35 @@ namespace ProjectGenesis.Utils
     {
         public override void ProcessPacket(SyncNewQuantumStorageData packet, INebulaConnection conn)
             => SyncNewQuantumStorageData.OnReceive(packet.PlanetId, packet.StorageId);
+    }
+
+    public class SyncRemoveQuantumStorageData
+    {
+        public SyncRemoveQuantumStorageData() { }
+
+        public SyncRemoveQuantumStorageData(int planetId, int storageId)
+        {
+            PlanetId = planetId;
+            StorageId = storageId;
+        }
+
+        public int PlanetId { get; set; }
+        public int StorageId { get; set; }
+
+        internal static void Sync(int planetId, int storageId)
+        {
+            if (NebulaModAPI.IsMultiplayerActive)
+                NebulaModAPI.MultiplayerSession.Network.SendPacket(new SyncRemoveQuantumStorageData(planetId, storageId));
+        }
+
+        internal static void OnReceive(int planetId, int storageId) => QuantumStoragePatches.SyncRemoveQuantumStorage(planetId, storageId);
+    }
+
+    [RegisterPacketProcessor]
+    public class SyncRemoveQuantumStorageDataProcessor : BasePacketProcessor<SyncRemoveQuantumStorageData>
+    {
+        public override void ProcessPacket(SyncRemoveQuantumStorageData packet, INebulaConnection conn)
+            => SyncRemoveQuantumStorageData.OnReceive(packet.PlanetId, packet.StorageId);
     }
 
     public class GenesisBookPlanetLoadRequest
