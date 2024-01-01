@@ -18,7 +18,7 @@ namespace ProjectGenesis.Patches.UI
     /// </summary>
     internal static class GridIndexExpandPatches
     {
-        [HarmonyPatch(typeof(UIReplicatorWindow), "_OnInit")]
+        [HarmonyPatch(typeof(UIReplicatorWindow), nameof(UIReplicatorWindow._OnInit))]
         [HarmonyPostfix]
         public static void UIReplicatorWindow_OnInit_Postfix(UIReplicatorWindow __instance)
         {
@@ -36,7 +36,7 @@ namespace ProjectGenesis.Patches.UI
             }
         }
 
-        [HarmonyPatch(typeof(UIGame), "_OnInit")]
+        [HarmonyPatch(typeof(UIGame), nameof(UIGame._OnInit))]
         [HarmonyPostfix]
         [HarmonyPriority(Priority.Last)]
         public static void UIGame_OnInit_Postfix(UIGame __instance)
@@ -48,28 +48,28 @@ namespace ProjectGenesis.Patches.UI
             __instance.lootFilter.filterTrans.sizeDelta = new Vector2(830, 476);
         }
 
-        [HarmonyPatch(typeof(UIRecipePicker), "_OnCreate")]
-        [HarmonyPatch(typeof(UISignalPicker), "_OnCreate")]
-        [HarmonyPatch(typeof(UIItemPicker), "_OnCreate")]
-        [HarmonyPatch(typeof(UILootFilter), "_OnCreate")]
+        [HarmonyPatch(typeof(UIRecipePicker), nameof(UIRecipePicker._OnCreate))]
+        [HarmonyPatch(typeof(UISignalPicker), nameof(UISignalPicker._OnCreate))]
+        [HarmonyPatch(typeof(UIItemPicker), nameof(UIItemPicker._OnCreate))]
+        [HarmonyPatch(typeof(UILootFilter), nameof(UILootFilter._OnCreate))]
         [HarmonyPostfix]
         [HarmonyPriority(Priority.Last)]
         public static void UIRecipePicker_OnOpen_Postfix(ManualBehaviour __instance)
             => __instance.transform.Find("content").GetComponent<RectTransform>().sizeDelta = new Vector2(782, 322);
 
-        [HarmonyPatch(typeof(UIReplicatorWindow), "TestMouseRecipeIndex")]
-        [HarmonyPatch(typeof(UIReplicatorWindow), "SetSelectedRecipeIndex")]
-        [HarmonyPatch(typeof(UIReplicatorWindow), "SetSelectedRecipe")]
-        [HarmonyPatch(typeof(UIReplicatorWindow), "_OnUpdate")]
-        [HarmonyPatch(typeof(UIReplicatorWindow), "RepositionQueueText")]
-        [HarmonyPatch(typeof(UIReplicatorWindow), "RefreshQueueIcons")]
-        [HarmonyPatch(typeof(UIReplicatorWindow), "TestMouseQueueIndex")]
-        [HarmonyPatch(typeof(UIRecipePicker), "_OnUpdate")]
-        [HarmonyPatch(typeof(UIRecipePicker), "RefreshIcons")]
-        [HarmonyPatch(typeof(UIRecipePicker), "TestMouseIndex")]
-        [HarmonyPatch(typeof(UIItemPicker), "_OnUpdate")]
-        [HarmonyPatch(typeof(UIItemPicker), "RefreshIcons")]
-        [HarmonyPatch(typeof(UIItemPicker), "TestMouseIndex")]
+        [HarmonyPatch(typeof(UIReplicatorWindow), nameof(UIReplicatorWindow.TestMouseRecipeIndex))]
+        [HarmonyPatch(typeof(UIReplicatorWindow), nameof(UIReplicatorWindow.SetSelectedRecipeIndex))]
+        [HarmonyPatch(typeof(UIReplicatorWindow), nameof(UIReplicatorWindow.SetSelectedRecipe))]
+        [HarmonyPatch(typeof(UIReplicatorWindow), nameof(UIReplicatorWindow._OnUpdate))]
+        [HarmonyPatch(typeof(UIReplicatorWindow), nameof(UIReplicatorWindow.RepositionQueueText))]
+        [HarmonyPatch(typeof(UIReplicatorWindow), nameof(UIReplicatorWindow.RefreshQueueIcons))]
+        [HarmonyPatch(typeof(UIReplicatorWindow), nameof(UIReplicatorWindow.TestMouseQueueIndex))]
+        [HarmonyPatch(typeof(UIRecipePicker), nameof(UIRecipePicker._OnUpdate))]
+        [HarmonyPatch(typeof(UIRecipePicker), nameof(UIRecipePicker.RefreshIcons))]
+        [HarmonyPatch(typeof(UIRecipePicker), nameof(UIRecipePicker.TestMouseIndex))]
+        [HarmonyPatch(typeof(UIItemPicker), nameof(UIItemPicker._OnUpdate))]
+        [HarmonyPatch(typeof(UIItemPicker), nameof(UIItemPicker.RefreshIcons))]
+        [HarmonyPatch(typeof(UIItemPicker), nameof(UIItemPicker.TestMouseIndex))]
         [HarmonyTranspiler]
         [HarmonyPriority(Priority.Last)]
         public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
@@ -86,7 +86,7 @@ namespace ProjectGenesis.Patches.UI
             }
         }
 
-        [HarmonyPatch(typeof(UIReplicatorWindow), "RefreshRecipeIcons")]
+        [HarmonyPatch(typeof(UIReplicatorWindow), nameof(UIReplicatorWindow.RefreshRecipeIcons))]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> RefreshRecipeIcons_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
@@ -104,9 +104,9 @@ namespace ProjectGenesis.Patches.UI
             return matcher.InstructionEnumeration();
         }
 
-        [HarmonyPatch(typeof(UIReplicatorWindow), "SetMaterialProps")]
-        [HarmonyPatch(typeof(UIRecipePicker), "SetMaterialProps")]
-        [HarmonyPatch(typeof(UIItemPicker), "SetMaterialProps")]
+        [HarmonyPatch(typeof(UIReplicatorWindow), nameof(UIReplicatorWindow.SetMaterialProps))]
+        [HarmonyPatch(typeof(UIRecipePicker), nameof(UIRecipePicker.SetMaterialProps))]
+        [HarmonyPatch(typeof(UIItemPicker), nameof(UIItemPicker.SetMaterialProps))]
         [HarmonyTranspiler]
         [HarmonyPriority(Priority.Last)]
         public static IEnumerable<CodeInstruction> SetMaterialProps_Transpiler(IEnumerable<CodeInstruction> instructions)
@@ -124,7 +124,7 @@ namespace ProjectGenesis.Patches.UI
             }
         }
 
-        [HarmonyPatch(typeof(UIStationStorage), "OnSelectItemButtonClick")]
+        [HarmonyPatch(typeof(UIStationStorage), nameof(UIStationStorage.OnSelectItemButtonClick))]
         [HarmonyTranspiler]
         [HarmonyPriority(Priority.Last)]
         public static IEnumerable<CodeInstruction> UIStationStorage_OnSelectItemButtonClick_Transpiler(IEnumerable<CodeInstruction> instructions)

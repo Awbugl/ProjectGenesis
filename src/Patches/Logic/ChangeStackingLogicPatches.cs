@@ -13,7 +13,7 @@ namespace ProjectGenesis.Patches.Logic
         private static readonly FieldInfo AssemblerComponent_RecipeType_FieldInfo
             = AccessTools.Field(typeof(AssemblerComponent), nameof(AssemblerComponent.recipeType));
 
-        [HarmonyPatch(typeof(AssemblerComponent), "InternalUpdate")]
+        [HarmonyPatch(typeof(AssemblerComponent), nameof(AssemblerComponent.InternalUpdate))]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> AssemblerComponent_InternalUpdate_Transpiler(
             IEnumerable<CodeInstruction> instructions,
@@ -85,12 +85,8 @@ namespace ProjectGenesis.Patches.Logic
 
             switch (component.recipeId)
             {
-                case ProtoID.R氢氯酸:
+                case ProtoID.R盐水电解:
                 case ProtoID.R海水淡化:
-                case ProtoID.R羰基合成:
-                case ProtoID.R氨氧化:
-                case ProtoID.R三氯化铁:
-                case ProtoID.R四氢双环戊二烯:
                 case ProtoID.R高效石墨烯:
                 case ProtoID.R水电解:
                     b = true;

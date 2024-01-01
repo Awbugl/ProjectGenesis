@@ -23,7 +23,7 @@ namespace ProjectGenesis.Patches.UI
     {
         private static bool _finished;
 
-        [HarmonyPatch(typeof(VFPreload), "InvokeOnLoadWorkEnded")]
+        [HarmonyPatch(typeof(VFPreload), nameof(VFPreload.InvokeOnLoadWorkEnded))]
         [HarmonyPostfix]
         public static void InvokeOnLoadWorkEnded()
         {

@@ -11,7 +11,7 @@ namespace ProjectGenesis.Patches.UI.PlanetFocus
         private static UIButton _planetFocusBtn;
 
         [HarmonyPostfix]
-        [HarmonyPatch(typeof(UIGame), "_OnInit")]
+        [HarmonyPatch(typeof(UIGame), nameof(UIGame._OnInit))]
         public static void Init(UIGame __instance)
         {
             if (_planetFocusBtn) return;
@@ -24,7 +24,7 @@ namespace ProjectGenesis.Patches.UI.PlanetFocus
         }
 
         [HarmonyPostfix]
-        [HarmonyPatch(typeof(UIPlanetDetail), "OnPlanetDataSet")]
+        [HarmonyPatch(typeof(UIPlanetDetail), nameof(UIPlanetDetail.OnPlanetDataSet))]
         public static void OnPlanetDataSet_Postfix(UIPlanetDetail __instance)
         {
             if (__instance.planet == null)

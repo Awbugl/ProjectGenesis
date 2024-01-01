@@ -11,7 +11,7 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
 {
     internal static partial class MegaAssemblerPatches
     {
-        internal const int TrashSpeed = 60000;
+        private const int TrashSpeed = 60000;
 
         private static readonly FieldInfo EntityData_StationId_Field = AccessTools.Field(typeof(EntityData), nameof(EntityData.stationId)),
                                           EntityData_AssemblerId_Field = AccessTools.Field(typeof(EntityData), nameof(EntityData.assemblerId)),
@@ -316,7 +316,7 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
         }
 
         [HarmonyPostfix]
-        [HarmonyPatch(typeof(PlanetFactory), "ApplyInsertTarget")]
+        [HarmonyPatch(typeof(PlanetFactory), nameof(PlanetFactory.ApplyInsertTarget))]
         public static void PlanetFactory_ApplyInsertTarget(
             ref PlanetFactory __instance,
             int entityId,
@@ -341,7 +341,7 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
         }
 
         [HarmonyPostfix]
-        [HarmonyPatch(typeof(PlanetFactory), "ApplyPickTarget")]
+        [HarmonyPatch(typeof(PlanetFactory), nameof(PlanetFactory.ApplyPickTarget))]
         public static void PlanetFactory_ApplyPickTarget(
             ref PlanetFactory __instance,
             int entityId,
@@ -367,7 +367,7 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
         }
 
         [HarmonyPostfix]
-        [HarmonyPatch(typeof(PlanetFactory), "ApplyEntityDisconnection")]
+        [HarmonyPatch(typeof(PlanetFactory), nameof(PlanetFactory.ApplyEntityDisconnection))]
         public static void PlanetFactory_ApplyEntityDisconnection(
             ref PlanetFactory __instance,
             int otherEntityId,
@@ -394,7 +394,7 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
             SyncSlotData.Sync(__instance.planetId, otherSlotId, otherEntityId, slotdata[otherSlotId]);
         }
 
-        [HarmonyPatch(typeof(PlanetFactory), "RemoveEntityWithComponents")]
+        [HarmonyPatch(typeof(PlanetFactory), nameof(PlanetFactory.RemoveEntityWithComponents))]
         [HarmonyPrefix]
         [HarmonyPriority(Priority.VeryHigh)]
         public static void PlanetFactory_RemoveEntityWithComponents(ref PlanetFactory __instance, int id)
@@ -407,7 +407,7 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
             }
         }
 
-        [HarmonyPatch(typeof(AssemblerComponent), "UpdateNeeds")]
+        [HarmonyPatch(typeof(AssemblerComponent), nameof(AssemblerComponent.UpdateNeeds))]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> AssemblerComponent_UpdateNeeds_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
@@ -430,10 +430,35 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
         public static sbyte AssemblerComponent_UpdateNeeds_Patch(int speed) => speed > TrashSpeed ? (sbyte)10 : (sbyte)3;
 
         [HarmonyPostfix]
-        [HarmonyPatch(typeof(FactorySystem), "NewAssemblerComponent")]
+        [HarmonyPatch(typeof(FactorySystem), nameof(FactorySystem.NewAssemblerComponent))]
         public static void FactorySystem_NewAssemblerComponent(ref FactorySystem __instance, int entityId, int speed)
         {
             if (speed >= TrashSpeed) __instance.factory.entityPool[entityId].stationId = 0;
+        }
+
+        [HarmonyPatch(typeof(PlanetFactory), nameof(PlanetFactory.Import))]
+        [HarmonyPostfix]
+        public static void PlanetFactory_Import(ref PlanetFactory __instance)
+        {
+            foreach (((int planetId, int entityId), SlotData[] datas) in _slotdata)
+            {
+                if (planetId != __instance.planetId) continue;
+
+                for (int i = 0; i < datas.Length; i++)
+                {
+                    __instance.ReadObjectConn(entityId, i, out _, out int otherObjId, out _);
+
+                    if (otherObjId <= 0 || __instance.entityPool[otherObjId].beltId != datas[i].beltId)
+                    {
+                        BeltComponent beltComponent = __instance.cargoTraffic.beltPool[datas[i].beltId];
+                        ref SignData signData = ref __instance.entitySignPool[beltComponent.entityId];
+                        signData.iconType = 0U;
+                        signData.iconId0 = 0U;
+
+                        datas[i] = new SlotData();
+                    }
+                }
+            }
         }
     }
 }

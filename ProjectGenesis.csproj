@@ -40,10 +40,10 @@
         <Reference Include="System"/>
         <Reference Include="System.Core"/>
         <Reference Include="mscorlib">
-            <HintPath>$(DSPAssemblyPath)\mscorlib.dll</HintPath>
+            <HintPath>$(DSPAssemblyPath)mscorlib.dll</HintPath>
         </Reference>
         <Reference Include="netstandard">
-            <HintPath>$(DSPAssemblyPath)\netstandard.dll</HintPath>
+            <HintPath>$(DSPAssemblyPath)netstandard.dll</HintPath>
         </Reference>
         <Reference Include="Assembly-CSharp">
             <HintPath>lib\Assembly-CSharp-publicized.dll</HintPath>
@@ -52,49 +52,49 @@
             <HintPath>lib\Newtonsoft.Json.dll</HintPath>
         </Reference>
         <Reference Include="GalacticScale">
-            <HintPath>lib\GalacticScale-nstrip.dll</HintPath>
+            <HintPath>lib\GalacticScale-publicized.dll</HintPath>
         </Reference>
         <Reference Include="System.Diagnostics.StackTrace">
-            <HintPath>$(DSPAssemblyPath)\System.Diagnostics.StackTrace.dll</HintPath>
+            <HintPath>$(DSPAssemblyPath)System.Diagnostics.StackTrace.dll</HintPath>
         </Reference>
         <Reference Include="System.Globalization.Extensions">
-            <HintPath>$(DSPAssemblyPath)\System.Globalization.Extensions.dll</HintPath>
+            <HintPath>$(DSPAssemblyPath)System.Globalization.Extensions.dll</HintPath>
         </Reference>
         <Reference Include="System.Runtime.Serialization.Xml">
-            <HintPath>$(DSPAssemblyPath)\System.Runtime.Serialization.Xml.dll</HintPath>
+            <HintPath>$(DSPAssemblyPath)System.Runtime.Serialization.Xml.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine">
-            <HintPath>$(DSPAssemblyPath)\UnityEngine.dll</HintPath>
+            <HintPath>$(DSPAssemblyPath)UnityEngine.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.AssetBundleModule">
-            <HintPath>$(DSPAssemblyPath)\UnityEngine.AssetBundleModule.dll</HintPath>
+            <HintPath>$(DSPAssemblyPath)UnityEngine.AssetBundleModule.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.CoreModule">
-            <HintPath>$(DSPAssemblyPath)\UnityEngine.CoreModule.dll</HintPath>
+            <HintPath>$(DSPAssemblyPath)UnityEngine.CoreModule.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.ParticleSystemModule">
-            <HintPath>$(DSPAssemblyPath)\UnityEngine.ParticleSystemModule.dll</HintPath>
+            <HintPath>$(DSPAssemblyPath)UnityEngine.ParticleSystemModule.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.TextRenderingModule">
-            <HintPath>$(DSPAssemblyPath)\UnityEngine.TextRenderingModule.dll</HintPath>
+            <HintPath>$(DSPAssemblyPath)UnityEngine.TextRenderingModule.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.UI">
-            <HintPath>$(DSPAssemblyPath)\UnityEngine.UI.dll</HintPath>
+            <HintPath>$(DSPAssemblyPath)UnityEngine.UI.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.UIModule">
-            <HintPath>$(DSPAssemblyPath)\UnityEngine.UIModule.dll</HintPath>
+            <HintPath>$(DSPAssemblyPath)UnityEngine.UIModule.dll</HintPath>
         </Reference>
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="src\Compatibility\BlueprintTweaksCompatibilityPlugin.cs"/>
-        <Compile Include="src\Compatibility\BottleneckCompatibilityPlugin.cs"/>
-        <Compile Include="src\Compatibility\DSPBattleCompatibilityPlugin.cs"/>
-        <Compile Include="src\Compatibility\FastTravelEnablerCompatibilityPlugin.cs"/>
-        <Compile Include="src\Compatibility\GalacticScaleCompatibilityPlugin.cs"/>
+        <Compile Include="src\Compatibility\BlueprintTweaks.cs"/>
+        <Compile Include="src\Compatibility\Bottleneck.cs"/>
+        <Compile Include="src\Compatibility\DSPBattle.cs"/>
+        <Compile Include="src\Compatibility\FastTravelEnabler.cs"/>
+        <Compile Include="src\Compatibility\GalacticScale.cs"/>
         <Compile Include="src\Compatibility\InstallationCheckPlugin.cs"/>
-        <Compile Include="src\Compatibility\MoreMegaStructureCompatibilityPlugin.cs"/>
-        <Compile Include="src\Compatibility\PlanetVeinUtilizationCompatibilityPlugin.cs"/>
-        <Compile Include="src\Compatibility\PlanetwideMiningCompatibilityPlugin.cs"/>
+        <Compile Include="src\Compatibility\MoreMegaStructure.cs"/>
+        <Compile Include="src\Compatibility\PlanetVeinUtilization.cs"/>
+        <Compile Include="src\Compatibility\PlanetwideMining.cs"/>
         <Compile Include="src\Patches\Logic\AbnormalityLogicPatches.cs"/>
         <Compile Include="src\Patches\Logic\FuelRodPatches.cs"/>
         <Compile Include="src\Patches\Logic\PlanetFocus\DarkFrogPatches.cs"/>
@@ -136,13 +136,14 @@
         <Compile Include="src\Patches\Logic\ThermalPowerGenPatches.cs"/>
         <Compile Include="src\Patches\Logic\VFPreloadPatches.cs"/>
         <Compile Include="src\Patches\UI\BeltColorFix\BeltFixPatches.cs"/>
+        <Compile Include="src\Patches\UI\ChemicalRecipeFcolPatches.cs"/>
         <Compile Include="src\Patches\UI\DisplayText\DisplayNamePatches.cs"/>
         <Compile Include="src\Patches\UI\DisplayText\DisplayTextPatches.cs"/>
         <Compile Include="src\Patches\UI\FactoryModelPatches.cs"/>
         <Compile Include="src\Patches\UI\FluidColorPatches.cs"/>
         <Compile Include="src\Patches\UI\GridIndexExpandPatches.cs"/>
         <Compile Include="src\Patches\UI\HarmonyLogPatches.cs"/>
-        <Compile Include="src\Patches\UI\LaserMk2Patches.cs"/>
+        <Compile Include="src\Patches\UI\AdvancedLaserPatches.cs" />
         <Compile Include="src\Patches\UI\MultiProductionPatches.cs"/>
         <Compile Include="src\Patches\UI\QTools\ItemNeedDetail.cs"/>
         <Compile Include="src\Patches\UI\QTools\ObjectPool.cs"/>
@@ -192,17 +193,20 @@
         <EmbeddedResource Include="data\tutorials.json"/>
     </ItemGroup>
     <ItemGroup>
-        <Content Include="CHANGELOG.md"/>
-        <Content Include="DefaultPath.props"/>
+        <Content Include="assets\genesis-models"/>
+        <Content Include="assets\icon.png"/>
+        <Content Include="assets\texpack"/>
         <Content Include="lib\Assembly-CSharp-publicized.dll"/>
-        <Content Include="lib\GalacticScale-nstrip.dll"/>
+        <Content Include="lib\GalacticScale-publicized.dll"/>
         <Content Include="lib\Newtonsoft.Json.dll"/>
+        <Content Include="DefaultPath.props"/>
+        <Content Include="CHANGELOG.md"/>
         <Content Include="README.md"/>
     </ItemGroup>
     <ItemGroup>
         <PackageReference Include="BepInEx.Core" Version="5.4.17"/>
         <PackageReference Include="DysonSphereProgram.Modding.CommonAPI" Version="1.6.2"/>
-        <PackageReference Include="DysonSphereProgram.Modding.DSPModSave" Version="1.2.0" />
+        <PackageReference Include="DysonSphereProgram.Modding.DSPModSave" Version="1.2.0"/>
         <PackageReference Include="DysonSphereProgram.Modding.LDBTool" Version="3.0.0"/>
         <PackageReference Include="DysonSphereProgram.Modding.NebulaMultiplayerModApi" Version="1.3.1"/>
     </ItemGroup>
@@ -211,9 +215,17 @@
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
     <Target Name="AfterBuild">
-        <Copy SourceFiles="$(TargetPath)" DestinationFiles="$(DefaultOutputPath)$(TargetName).dll"/>
-        <Copy SourceFiles="README.md" DestinationFiles="$(DefaultOutputPath)README.md"/>
-        <Copy SourceFiles="CHANGELOG.md" DestinationFiles="$(DefaultOutputPath)CHANGELOG.md"/>
-        <Exec Command="explorer $(DefaultOutputPath)" IgnoreExitCode="true"/>
+        <MakeDir Directories="$(ReleasePath)"/>
+        <MakeDir Directories="$(ReleasePath)plugins/"/>
+        <Copy SourceFiles="$(TargetPath)" DestinationFiles="$(BepinExPath)plugins\$(DebugModDir)\$(TargetName).dll"/>
+        <Copy SourceFiles="$(SolutionDir)\assets\texpack" DestinationFiles="$(BepinExPath)plugins\$(DebugModDir)\texpack"/>
+        <Copy SourceFiles="$(SolutionDir)\assets\genesis-models" DestinationFiles="$(BepinExPath)plugins\$(DebugModDir)\genesis-models"/>
+        <Copy SourceFiles="$(TargetPath)" DestinationFiles="$(ReleasePath)plugins\$(TargetName).dll"/>
+        <Copy SourceFiles="README.md" DestinationFiles="$(ReleasePath)README.md"/>
+        <Copy SourceFiles="CHANGELOG.md" DestinationFiles="$(ReleasePath)CHANGELOG.md"/>
+        <Copy SourceFiles="$(SolutionDir)\assets\icon.png" DestinationFiles="$(ReleasePath)icon.png"/>
+        <Copy SourceFiles="$(SolutionDir)\assets\texpack" DestinationFiles="$(ReleasePath)plugins\texpack"/>
+        <Copy SourceFiles="$(SolutionDir)\assets\genesis-models" DestinationFiles="$(ReleasePath)plugins\genesis-models"/>
+        <Copy SourceFiles="$(SolutionDir)\lib\Newtonsoft.Json.dll" DestinationFiles="$(ReleasePath)plugins\Newtonsoft.Json.dll"/>
     </Target>
 </Project>

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Reflection;
 using System.Reflection.Emit;
 using HarmonyLib;
-using ProjectGenesis.Compatibility;
 using ProjectGenesis.Utils;
 
 // ReSharper disable InconsistentNaming
@@ -18,7 +17,7 @@ namespace ProjectGenesis.Patches.Logic
                                           PrefabDesc_isStellarStation_Field = AccessTools.Field(typeof(PrefabDesc), "isStellarStation"),
                                           BuildTool_planet_Field = AccessTools.Field(typeof(BuildTool), "planet");
 
-        [HarmonyPatch(typeof(UIPlanetDetail), "OnPlanetDataSet")]
+        [HarmonyPatch(typeof(UIPlanetDetail), nameof(UIPlanetDetail.OnPlanetDataSet))]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> UIPlanetDetail_OnPlanetDataSet_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
@@ -30,13 +29,15 @@ namespace ProjectGenesis.Patches.Logic
 
             matcher.MatchForward(false, new CodeMatch(OpCodes.Ldstr, "实际采集速度"));
 
-            matcher.Advance(-10).SetOperandAndAdvance(label);
-            matcher.Advance(28).SetOperandAndAdvance(label);
+            matcher.InstructionAt(-10).operand = label;
+
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Br)).SetOperandAndAdvance(label);
+
             return matcher.InstructionEnumeration();
         }
 
-        [HarmonyPatch(typeof(UIStarDetail), "OnStarDataSet")]
-        [HarmonyPatch(typeof(PlanetGen), "SetPlanetTheme")]
+        [HarmonyPatch(typeof(UIStarDetail), nameof(UIStarDetail.OnStarDataSet))]
+        [HarmonyPatch(typeof(PlanetGen), nameof(PlanetGen.SetPlanetTheme))]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> PlanetGen_SetPlanetTheme_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
@@ -50,22 +51,22 @@ namespace ProjectGenesis.Patches.Logic
             return matcher.InstructionEnumeration();
         }
 
-        [HarmonyPatch(typeof(UIPlanetDetail), "OnPlanetDataSet")]
-        [HarmonyPatch(typeof(UIStarDetail), "OnStarDataSet")]
+        [HarmonyPatch(typeof(UIPlanetDetail), nameof(UIPlanetDetail.OnPlanetDataSet))]
+        [HarmonyPatch(typeof(UIStarDetail), nameof(UIStarDetail.OnStarDataSet))]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> OnDataSet_ChangeWaterId_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
             var matcher = new CodeMatcher(instructions);
-            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldc_I4, 1000));
-            matcher.SetOperandAndAdvance(7018);
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldc_I4, ProtoID.I水));
+            matcher.SetOperandAndAdvance(ProtoID.I海水);
 
-            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldc_I4, 1000));
-            matcher.SetOperandAndAdvance(7018);
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldc_I4, ProtoID.I水));
+            matcher.SetOperandAndAdvance(ProtoID.I海水);
 
             return matcher.InstructionEnumeration();
         }
 
-        [HarmonyPatch(typeof(UIPlanetDetail), "OnPlanetDataSet")]
+        [HarmonyPatch(typeof(UIPlanetDetail), nameof(UIPlanetDetail.OnPlanetDataSet))]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> OnPlanetDataSet_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
@@ -83,7 +84,7 @@ namespace ProjectGenesis.Patches.Logic
             return matcher.InstructionEnumeration();
         }
 
-        [HarmonyPatch(typeof(UIStarDetail), "OnStarDataSet")]
+        [HarmonyPatch(typeof(UIStarDetail), nameof(UIStarDetail.OnStarDataSet))]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> OnStarDataSet_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
@@ -105,13 +106,13 @@ namespace ProjectGenesis.Patches.Logic
         public static double GetGasCollectionPerTick(double original, StationComponent stationComponent, PlanetData planet)
             => planet.type == EPlanetType.Gas ? original : GameMain.history.miningSpeedScale * stationComponent.collectSpeed;
 
-        [HarmonyPatch(typeof(BuildTool_BlueprintCopy), "DetermineActive")]
-        [HarmonyPatch(typeof(BuildTool_BlueprintPaste), "DetermineActive")]
-        [HarmonyPatch(typeof(BuildTool_BlueprintPaste), "CheckBuildConditionsPrestage")]
+        [HarmonyPatch(typeof(BuildTool_BlueprintCopy), nameof(BuildTool_BlueprintCopy.DetermineActive))]
+        [HarmonyPatch(typeof(BuildTool_BlueprintPaste), nameof(BuildTool_BlueprintPaste.DetermineActive))]
+        [HarmonyPatch(typeof(BuildTool_BlueprintPaste), nameof(BuildTool_BlueprintPaste.CheckBuildConditionsPrestage))]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> BuildTool_Blueprint_DetermineActive_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
-            if (BlueprintTweaksCompatibilityPlugin.BlueprintTweaksInstalled) return instructions;
+            if (Compatibility.BlueprintTweaks.Installed) return instructions;
 
             CodeMatcher matcher = new CodeMatcher(instructions).MatchForward(true, new CodeMatch(OpCodes.Ldarg_0),
                                                                              new CodeMatch(OpCodes.Ldfld,
@@ -132,12 +133,12 @@ namespace ProjectGenesis.Patches.Logic
             return matcher.InstructionEnumeration();
         }
 
-        [HarmonyPatch(typeof(PlayerController), "OpenBlueprintCopyMode")]
-        [HarmonyPatch(typeof(PlayerController), "OpenBlueprintPasteMode")]
+        [HarmonyPatch(typeof(PlayerController), nameof(PlayerController.OpenBlueprintCopyMode))]
+        [HarmonyPatch(typeof(PlayerController), nameof(PlayerController.OpenBlueprintPasteMode))]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> PlayerController_OpenBlueprintMode_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
-            if (BlueprintTweaksCompatibilityPlugin.BlueprintTweaksInstalled) return instructions;
+            if (Compatibility.BlueprintTweaks.Installed) return instructions;
 
             CodeMatcher matcher = new CodeMatcher(instructions).MatchForward(true, new CodeMatch(OpCodes.Ldarg_0),
                                                                              new CodeMatch(OpCodes.Ldfld,
@@ -164,8 +165,8 @@ namespace ProjectGenesis.Patches.Logic
             return matcher.InstructionEnumeration();
         }
 
-        [HarmonyPatch(typeof(BuildTool_Click), "CheckBuildConditions")]
-        [HarmonyPatch(typeof(BuildTool_BlueprintPaste), "CheckBuildConditions")]
+        [HarmonyPatch(typeof(BuildTool_Click), nameof(BuildTool_Click.CheckBuildConditions))]
+        [HarmonyPatch(typeof(BuildTool_BlueprintPaste), nameof(BuildTool_BlueprintPaste.CheckBuildConditions))]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> BuildTool_Click_CheckBuildConditions_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
@@ -261,7 +262,7 @@ namespace ProjectGenesis.Patches.Logic
         public static float SetPreBuildDistance(float origin, PrefabDesc prebuildDesc, PrefabDesc prebuildDesc2)
             => prebuildDesc.isCollectStation ^ prebuildDesc2.isCollectStation ? 0 : origin;
 
-        [HarmonyPatch(typeof(PlanetTransport), "NewStationComponent")]
+        [HarmonyPatch(typeof(PlanetTransport), nameof(PlanetTransport.NewStationComponent))]
         [HarmonyPostfix]
         public static void PlanetTransport_NewStationComponent_Postfix(PlanetTransport __instance, PrefabDesc _desc, StationComponent __result)
         {
@@ -272,7 +273,7 @@ namespace ProjectGenesis.Patches.Logic
                 }
         }
 
-        [HarmonyPatch(typeof(PlanetGen), "SetPlanetTheme")]
+        [HarmonyPatch(typeof(PlanetGen), nameof(PlanetGen.SetPlanetTheme))]
         [HarmonyPostfix]
         public static void PlanetGen_SetPlanetTheme_Postfix(PlanetData planet)
         {
@@ -283,7 +284,7 @@ namespace ProjectGenesis.Patches.Logic
             }
         }
 
-        [HarmonyPatch(typeof(PlanetTransport), "GameTick")]
+        [HarmonyPatch(typeof(PlanetTransport), nameof(PlanetTransport.GameTick))]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> PlanetTransport_GameTick_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
@@ -303,8 +304,8 @@ namespace ProjectGenesis.Patches.Logic
 
         public static bool IsGas(PlanetData planet) => planet.type == EPlanetType.Gas;
 
-        [HarmonyPatch(typeof(UIBeltBuildTip), "SetOutputEntity")]
-        [HarmonyPatch(typeof(UISlotPicker), "SetOutputEntity")]
+        [HarmonyPatch(typeof(UIBeltBuildTip), nameof(UIBeltBuildTip.SetOutputEntity))]
+        [HarmonyPatch(typeof(UISlotPicker), nameof(UISlotPicker.SetOutputEntity))]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> SetOutputEntity_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
@@ -322,14 +323,14 @@ namespace ProjectGenesis.Patches.Logic
             return matcher.InstructionEnumeration();
         }
 
-        [HarmonyPatch(typeof(StationComponent), "Init")]
+        [HarmonyPatch(typeof(StationComponent), nameof(StationComponent.Init))]
         [HarmonyPostfix]
         public static void StationComponent_Init_Postfix(StationComponent __instance)
         {
             if (__instance.isCollector) __instance.warperMaxCount = 0;
         }
 
-        [HarmonyPatch(typeof(StationComponent), "UpdateCollection")]
+        [HarmonyPatch(typeof(StationComponent), nameof(StationComponent.UpdateCollection))]
         [HarmonyPostfix]
         public static void StationComponent_UpdateCollection_Postfix(StationComponent __instance)
         {

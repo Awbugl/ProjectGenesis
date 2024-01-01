@@ -9,7 +9,7 @@ namespace ProjectGenesis.Patches.UI
 {
     internal static class UITechNodePatches
     {
-        [HarmonyPatch(typeof(UITechNode), "UpdateLayoutDynamic")]
+        [HarmonyPatch(typeof(UITechNode), nameof(UITechNode.UpdateLayoutDynamic))]
         [HarmonyPostfix]
         public static void UITechNode_UpdateLayoutDynamic(UITechNode __instance, bool forceUpdate = false, bool forceReset = false)
         {

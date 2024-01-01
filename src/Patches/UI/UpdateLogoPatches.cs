@@ -8,16 +8,16 @@ namespace ProjectGenesis.Patches.UI
 {
     public static class UpdateLogoPatches
     {
-        [HarmonyPatch(typeof(UIMainMenu), "_OnOpen")]
+        [HarmonyPatch(typeof(UIMainMenu), nameof(UIMainMenu._OnOpen))]
         [HarmonyPostfix]
         public static void UIMainMenu_OnOpen() => UpdateLogo();
 
-        [HarmonyPatch(typeof(UIEscMenu), "_OnOpen")]
+        [HarmonyPatch(typeof(UIEscMenu), nameof(UIEscMenu._OnOpen))]
         [HarmonyPostfix]
         public static void UIEscMenu_OnOpen() => UpdateLogo();
 
-        [HarmonyPatch(typeof(UIOptionWindow), "OnApplyClick")]
-        [HarmonyPatch(typeof(UIOptionWindow), "OnCancelClick")]
+        [HarmonyPatch(typeof(UIOptionWindow), nameof(UIOptionWindow.OnApplyClick))]
+        [HarmonyPatch(typeof(UIOptionWindow), nameof(UIOptionWindow.OnCancelClick))]
         [HarmonyPostfix]
         public static void UpdateGameOption_Apply() => UpdateLogo();
 

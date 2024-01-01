@@ -12,7 +12,7 @@ namespace ProjectGenesis.Patches.UI
     {
         private static Material atmosphericCollectStationMaterial;
 
-        [HarmonyPatch(typeof(FactoryModel), "InitCollectorMaterial")]
+        [HarmonyPatch(typeof(FactoryModel), nameof(FactoryModel.InitCollectorMaterial))]
         [HarmonyPostfix]
         public static void FactoryModel_InitCollectorMaterial(FactoryModel __instance)
         {
@@ -20,7 +20,7 @@ namespace ProjectGenesis.Patches.UI
             if (objectRenderer != null) atmosphericCollectStationMaterial = objectRenderer.lodBatches[0].materials[2];
         }
 
-        [HarmonyPatch(typeof(FactoryModel), "SetCollectorEffectColor")]
+        [HarmonyPatch(typeof(FactoryModel), nameof(FactoryModel.SetCollectorEffectColor))]
         [HarmonyPostfix]
         public static void FactoryModel_SetCollectorEffectColor(FactoryModel __instance)
         {

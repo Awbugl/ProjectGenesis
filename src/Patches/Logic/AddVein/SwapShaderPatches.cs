@@ -10,7 +10,7 @@ namespace ProjectGenesis.Patches.Logic.AddVein
     {
         private static readonly Dictionary<string, Shader> ReplaceShaderMap = new Dictionary<string, Shader>();
 
-        [HarmonyPatch(typeof(VFPreload), "SaveMaterial")]
+        [HarmonyPatch(typeof(VFPreload), nameof(VFPreload.SaveMaterial))]
         [HarmonyPriority(Priority.VeryHigh)]
         [HarmonyPrefix]
         public static bool VFPreload_SaveMaterial_Prefix(Material mat)

@@ -40,15 +40,19 @@
         <Reference Include="System.Xml"/>
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="Preloader.cs" />
+        <Compile Include="Preloader.cs"/>
         <Compile Include="Properties\AssemblyInfo.cs"/>
     </ItemGroup>
     <ItemGroup>
-      <PackageReference Include="Mono.Cecil" Version="0.11.5" />
+        <PackageReference Include="Mono.Cecil" Version="0.11.5"/>
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
     <Target Name="AfterBuild">
-        <Copy SourceFiles="$(TargetPath)" DestinationFiles="$(DefaultPreloaderOutputPath)$(TargetName).dll"/>
-        <Copy SourceFiles="$(TargetDir)$(TargetName).pdb" DestinationFiles="$(DefaultPreloaderOutputPath)$(TargetName).pdb"/>
+        <MakeDir Directories="$(ReleasePath)"/>
+        <MakeDir Directories="$(ReleasePath)patchers/"/>
+        <Copy SourceFiles="$(TargetPath)" DestinationFiles="$(BepinExPath)patchers\$(DebugModDir)\$(TargetName).dll"/>
+        <Copy SourceFiles="$(TargetDir)$(TargetName).pdb" DestinationFiles="$(BepinExPath)patchers\$(DebugModDir)\$(TargetName).pdb"/>
+        <Copy SourceFiles="$(TargetPath)" DestinationFiles="$(ReleasePath)patchers\$(TargetName).dll"/>
+        <Copy SourceFiles="$(TargetDir)$(TargetName).pdb" DestinationFiles="$(ReleasePath)patchers\$(TargetName).pdb"/>
     </Target>
 </Project>

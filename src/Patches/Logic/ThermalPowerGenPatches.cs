@@ -10,8 +10,8 @@ namespace ProjectGenesis.Patches.Logic
     {
         private static readonly int[] FuelRods = { ProtoID.I氢燃料棒, ProtoID.I煤油燃料棒, ProtoID.I四氢双环戊二烯燃料棒 };
 
-        [HarmonyPatch(typeof(PlanetFactory), "EntityFastFillIn")]
-        [HarmonyPatch(typeof(PlanetFactory), "InsertInto")]
+        [HarmonyPatch(typeof(PlanetFactory), nameof(PlanetFactory.EntityFastFillIn))]
+        [HarmonyPatch(typeof(PlanetFactory), nameof(PlanetFactory.InsertInto))]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> PlanetFactory_InsertInto_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
@@ -41,7 +41,7 @@ namespace ProjectGenesis.Patches.Logic
             return factory.planet.gasItems.Contains(ProtoID.I氧) ? ItemProto.fuelNeeds[1] : FuelRods;
         }
 
-        [HarmonyPatch(typeof(UIPowerGeneratorWindow), "OnFuelButtonClick")]
+        [HarmonyPatch(typeof(UIPowerGeneratorWindow), nameof(UIPowerGeneratorWindow.OnFuelButtonClick))]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> OnSpawnTranspiler(IEnumerable<CodeInstruction> instructions)
         {

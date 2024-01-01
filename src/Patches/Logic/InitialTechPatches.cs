@@ -24,7 +24,7 @@ namespace ProjectGenesis.Patches.Logic
                                               ProtoID.T物品仓储
                                           };
 
-        [HarmonyPatch(typeof(GameData), "SetForNewGame")]
+        [HarmonyPatch(typeof(GameData), nameof(GameData.SetForNewGame))]
         [HarmonyPostfix]
         public static void SetForNewGame(GameData __instance)
         {
@@ -38,7 +38,7 @@ namespace ProjectGenesis.Patches.Logic
             }
         }
 
-        [HarmonyPatch(typeof(GameData), "Import")]
+        [HarmonyPatch(typeof(GameData), nameof(GameData.Import))]
         [HarmonyPostfix]
         public static void Import(GameData __instance)
         {
@@ -65,12 +65,12 @@ namespace ProjectGenesis.Patches.Logic
             }
         }
 
-        [HarmonyPatch(typeof(UITechNode), "DoBuyoutTech")]
-        [HarmonyPatch(typeof(UITechNode), "DoStartTech")]
-        [HarmonyPatch(typeof(UITechNode), "OnPointerEnter")]
-        [HarmonyPatch(typeof(UITechNode), "OnPointerExit")]
-        [HarmonyPatch(typeof(UITechNode), "OnPointerDown")]
-        [HarmonyPatch(typeof(UITechNode), "OnOtherIconClick")]
+        [HarmonyPatch(typeof(UITechNode), nameof(UITechNode.DoBuyoutTech))]
+        [HarmonyPatch(typeof(UITechNode), nameof(UITechNode.DoStartTech))]
+        [HarmonyPatch(typeof(UITechNode), nameof(UITechNode.OnPointerEnter))]
+        [HarmonyPatch(typeof(UITechNode), nameof(UITechNode.OnPointerExit))]
+        [HarmonyPatch(typeof(UITechNode), nameof(UITechNode.OnPointerDown))]
+        [HarmonyPatch(typeof(UITechNode), nameof(UITechNode.OnOtherIconClick))]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> UITechNode_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
@@ -84,7 +84,7 @@ namespace ProjectGenesis.Patches.Logic
             return matcher.InstructionEnumeration();
         }
 
-        [HarmonyPatch(typeof(UITechTree), "OnTechUnlocked")]
+        [HarmonyPatch(typeof(UITechTree), nameof(UITechTree.OnTechUnlocked))]
         [HarmonyPostfix]
         public static void UITechTree_OnQueueUpdate_Postfix(UITechTree __instance)
         {
@@ -93,7 +93,7 @@ namespace ProjectGenesis.Patches.Logic
             RefreshNode(__instance);
         }
 
-        [HarmonyPatch(typeof(UITechTree), "OnPageChanged")]
+        [HarmonyPatch(typeof(UITechTree), nameof(UITechTree.OnPageChanged))]
         [HarmonyPostfix]
         public static void UITechTree_OnPageChanged_Postfix(UITechTree __instance)
         {

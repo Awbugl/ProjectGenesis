@@ -12,7 +12,7 @@ namespace ProjectGenesis.Patches.Logic.PlanetFocus
     {
         private static readonly FieldInfo EvolveData_threatshr_Field = AccessTools.Field(typeof(EvolveData), nameof(EvolveData.threatshr));
 
-        [HarmonyPatch(typeof(DFGBaseComponent), "UpdateFactoryThreat")]
+        [HarmonyPatch(typeof(DFGBaseComponent), nameof(DFGBaseComponent.UpdateFactoryThreat))]
         [HarmonyPriority(Priority.VeryHigh)]
         [HarmonyPrefix]
         public static void DFGBaseComponent_UpdateFactoryThreat_PreFix(DFGBaseComponent __instance, ref float power_threat_factor)

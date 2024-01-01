@@ -9,7 +9,6 @@ using UnityEngine;
 // ReSharper disable CommentTypo
 // ReSharper disable InconsistentNaming
 // ReSharper disable Unity.UnknownResource
-// ReSharper disable Unity.PreferAddressByIdToGraphicsParams
 
 namespace ProjectGenesis.Patches.Logic.AddVein
 {
@@ -93,35 +92,23 @@ namespace ProjectGenesis.Patches.Logic.AddVein
         internal static void SetMinerMk2Color()
         {
             var texture = Resources.Load<Texture>("Assets/texpack/矿机渲染索引");
+            int veinColorTex = Shader.PropertyToID("_VeinColorTex");
 
             ref PrefabDesc prefabDesc = ref LDB.models.Select(256).prefabDesc;
-            prefabDesc.materials[0].SetTexture("_VeinColorTex", texture);
+            prefabDesc.materials[0].SetTexture(veinColorTex, texture);
             ref Material[] prefabDescLODMaterial = ref prefabDesc.lodMaterials[0];
-            prefabDescLODMaterial[0].SetTexture("_VeinColorTex", texture);
-            prefabDescLODMaterial[1].SetTexture("_VeinColorTex", texture);
-            prefabDescLODMaterial[2].SetTexture("_VeinColorTex", texture);
+            prefabDescLODMaterial[0].SetTexture(veinColorTex, texture);
+            prefabDescLODMaterial[1].SetTexture(veinColorTex, texture);
+            prefabDescLODMaterial[2].SetTexture(veinColorTex, texture);
 
             prefabDesc = ref LDB.models.Select(59).prefabDesc;
             prefabDescLODMaterial = ref prefabDesc.lodMaterials[0];
-            prefabDescLODMaterial[1].SetTexture("_VeinColorTex", texture);
-            prefabDescLODMaterial[2].SetTexture("_VeinColorTex", texture);
-            prefabDescLODMaterial[3].SetTexture("_VeinColorTex", texture);
+            prefabDescLODMaterial[1].SetTexture(veinColorTex, texture);
+            prefabDescLODMaterial[2].SetTexture(veinColorTex, texture);
+            prefabDescLODMaterial[3].SetTexture(veinColorTex, texture);
         }
 
-        internal static void SetChemicalRecipeFcol()
-        {
-            var texture = Resources.Load<Texture>("Assets/texpack/chemical-plant-recipe-fcol");
-
-            ref PrefabDesc prefabDesc = ref LDB.models.Select(64).prefabDesc;
-            prefabDesc.lodMaterials[0][1].SetTexture("_FluidTex", texture);
-            prefabDesc.lodMaterials[1][1].SetTexture("_FluidTex", texture);
-
-            prefabDesc = ref LDB.models.Select(376).prefabDesc;
-            prefabDesc.lodMaterials[0][1].SetTexture("_FluidTex", texture);
-            prefabDesc.lodMaterials[1][1].SetTexture("_FluidTex", texture);
-        }
-
-        [HarmonyPatch(typeof(UISandboxMenu), "StaticLoad")]
+        [HarmonyPatch(typeof(UISandboxMenu), nameof(UISandboxMenu.StaticLoad))]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> UISandboxMenu_StaticLoad_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
@@ -138,7 +125,7 @@ namespace ProjectGenesis.Patches.Logic.AddVein
             return matcher.InstructionEnumeration();
         }
 
-        [HarmonyPatch(typeof(UISandboxMenu), "StaticLoad")]
+        [HarmonyPatch(typeof(UISandboxMenu), nameof(UISandboxMenu.StaticLoad))]
         [HarmonyPostfix]
         public static void UISandboxMenu_StaticLoad_Postfix(ref VeinProto[,] ___veinProtos)
         {
@@ -146,11 +133,11 @@ namespace ProjectGenesis.Patches.Logic.AddVein
             ___veinProtos[1, 8] = LDB.veins.Select(16);
         }
 
-        [HarmonyPatch(typeof(PlanetAlgorithm), "GenerateVeins")]
-        [HarmonyPatch(typeof(PlanetAlgorithm7), "GenerateVeins")]
-        [HarmonyPatch(typeof(PlanetAlgorithm11), "GenerateVeins")]
-        [HarmonyPatch(typeof(PlanetAlgorithm12), "GenerateVeins")]
-        [HarmonyPatch(typeof(PlanetAlgorithm13), "GenerateVeins")]
+        [HarmonyPatch(typeof(PlanetAlgorithm), nameof(PlanetAlgorithm.GenerateVeins))]
+        [HarmonyPatch(typeof(PlanetAlgorithm7), nameof(PlanetAlgorithm7.GenerateVeins))]
+        [HarmonyPatch(typeof(PlanetAlgorithm11), nameof(PlanetAlgorithm11.GenerateVeins))]
+        [HarmonyPatch(typeof(PlanetAlgorithm12), nameof(PlanetAlgorithm12.GenerateVeins))]
+        [HarmonyPatch(typeof(PlanetAlgorithm13), nameof(PlanetAlgorithm13.GenerateVeins))]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> PlanetAlgorithm_GenerateVeins_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
@@ -161,10 +148,10 @@ namespace ProjectGenesis.Patches.Logic.AddVein
             return matcher.InstructionEnumeration();
         }
 
-        [HarmonyPatch(typeof(PlanetAlgorithm), "GenerateVeins")]
-        [HarmonyPatch(typeof(PlanetAlgorithm11), "GenerateVeins")]
-        [HarmonyPatch(typeof(PlanetAlgorithm12), "GenerateVeins")]
-        [HarmonyPatch(typeof(PlanetAlgorithm13), "GenerateVeins")]
+        [HarmonyPatch(typeof(PlanetAlgorithm), nameof(PlanetAlgorithm.GenerateVeins))]
+        [HarmonyPatch(typeof(PlanetAlgorithm11), nameof(PlanetAlgorithm11.GenerateVeins))]
+        [HarmonyPatch(typeof(PlanetAlgorithm12), nameof(PlanetAlgorithm12.GenerateVeins))]
+        [HarmonyPatch(typeof(PlanetAlgorithm13), nameof(PlanetAlgorithm13.GenerateVeins))]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> PlanetAlgorithm_InitnalVeins_Transpiler(
             IEnumerable<CodeInstruction> instructions,

@@ -6,7 +6,7 @@ namespace ProjectGenesis.Patches.UI.QTools
 {
     public static class QToolsWindowPatches
     {
-        [HarmonyPatch(typeof(UIGame), "_OnInit")]
+        [HarmonyPatch(typeof(UIGame), nameof(UIGame._OnInit))]
         [HarmonyPostfix]
         public static void Init(UIRoot __instance)
         {

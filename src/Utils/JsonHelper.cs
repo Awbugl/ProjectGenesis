@@ -92,6 +92,7 @@ namespace ProjectGenesis.Utils
             public float[] EnemyDropRange { get; set; }
             public float EnemyDropCount { get; set; }
             public int EnemyDropMask { get; set; }
+            public float EnemyDropMaskRatio { get; set; }
 
             public static ItemProtoJson FromProto(ItemProto i)
                 => new ItemProtoJson
@@ -134,7 +135,8 @@ namespace ProjectGenesis.Utils
                     EnemyDropLevel = i.EnemyDropLevel,
                     EnemyDropRange = new[] { i.EnemyDropRange.x, i.EnemyDropRange.y },
                     EnemyDropCount = i.EnemyDropCount,
-                    EnemyDropMask = i.EnemyDropMask
+                    EnemyDropMask = i.EnemyDropMask,
+                    EnemyDropMaskRatio = i.EnemyDropMaskRatio,
                 };
 
             public ItemProto ToProto() => ToProto(new ItemProto());
@@ -180,6 +182,7 @@ namespace ProjectGenesis.Utils
                 proto.EnemyDropRange = new Vector2(EnemyDropRange[0], EnemyDropRange[1]);
                 proto.EnemyDropCount = EnemyDropCount;
                 proto.EnemyDropMask = EnemyDropMask;
+                proto.EnemyDropMaskRatio = EnemyDropMaskRatio;
 
                 return proto;
             }
@@ -299,7 +302,7 @@ namespace ProjectGenesis.Utils
                     Items = i.Items,
                     ItemPoints = i.ItemPoints,
                     HashNeeded = i.HashNeeded,
-                    UnlockRecipes = i.UnlockRecipes.Distinct().ToArray(),
+                    UnlockRecipes = i.UnlockRecipes,
                     UnlockFunctions = i.UnlockFunctions,
                     UnlockValues = i.UnlockValues,
                     AddItems = i.AddItems,

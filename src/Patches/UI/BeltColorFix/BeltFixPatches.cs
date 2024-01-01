@@ -14,7 +14,7 @@ namespace ProjectGenesis.Patches.UI.BeltColorFix
 
         private static readonly FieldInfo PrefabDesc_beltSpeed_Field = AccessTools.Field(typeof(PrefabDesc), nameof(PrefabDesc.beltSpeed));
 
-        [HarmonyPatch(typeof(CargoTraffic), "AlterBeltRenderer")]
+        [HarmonyPatch(typeof(CargoTraffic), nameof(CargoTraffic.AlterBeltRenderer))]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> AddColors(IEnumerable<CodeInstruction> instructions)
         {
@@ -40,7 +40,7 @@ namespace ProjectGenesis.Patches.UI.BeltColorFix
             return matcher.InstructionEnumeration();
         }
 
-        [HarmonyPatch(typeof(ConnGizmoRenderer), "Update")]
+        [HarmonyPatch(typeof(ConnGizmoRenderer), nameof(ConnGizmoRenderer.Update))]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> BuildTool_BlueprintCopy_UpdatePreviewModels_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
@@ -52,7 +52,7 @@ namespace ProjectGenesis.Patches.UI.BeltColorFix
             return matcher.InstructionEnumeration();
         }
 
-        [HarmonyPatch(typeof(CargoTraffic), "SetBeltSelected")]
+        [HarmonyPatch(typeof(CargoTraffic), nameof(CargoTraffic.SetBeltSelected))]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> CargoTraffic_SetBeltSelected_Transpiler(IEnumerable<CodeInstruction> instructions)
         {

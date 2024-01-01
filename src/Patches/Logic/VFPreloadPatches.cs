@@ -7,7 +7,7 @@ namespace ProjectGenesis.Patches.Logic
 {
     public static class VFPreloadPatches
     {
-        [HarmonyPatch(typeof(VFPreload), "IsSplashSolid")]
+        [HarmonyPatch(typeof(VFPreload), nameof(VFPreload.IsSplashSolid))]
         [HarmonyPriority(Priority.VeryHigh)]
         [HarmonyPrefix]
         public static bool VFPreload_IsSplashSolid(ref bool __result)

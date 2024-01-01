@@ -99,17 +99,8 @@ namespace ProjectGenesis.Utils
 
                     if (material == null) continue;
                     material = new Material(material);
-                }
-
-                if (!color.HasValue) continue;
-
-                try
-                {
-                    lodMaterial[0].color = color.Value;
-                }
-                catch
-                {
-                    // ignored
+                    if (!color.HasValue) continue;
+                    material.SetColor("_Color", color.Value);
                 }
             }
 
@@ -189,13 +180,13 @@ namespace ProjectGenesis.Utils
             }
 
             ModelProto modelProto = LDB.models.Select(ProtoID.M强袭者);
-            modelProto.HpUpgrade = 1500;
+            modelProto.HpUpgrade = 1000;
 
             modelProto = LDB.models.Select(ProtoID.M游骑兵);
-            modelProto.HpUpgrade = 1200;
+            modelProto.HpUpgrade = 800;
 
             modelProto = LDB.models.Select(ProtoID.M守卫者);
-            modelProto.HpUpgrade = 1200;
+            modelProto.HpUpgrade = 800;
         }
     }
 }

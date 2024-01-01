@@ -62,7 +62,7 @@ namespace ProjectGenesis.Patches.UI
             additonalText.GetComponent<Text>().text = additionalText;
         }
 
-        [HarmonyPatch(typeof(UIOptionWindow), "_OnOpen")]
+        [HarmonyPatch(typeof(UIOptionWindow), nameof(UIOptionWindow._OnOpen))]
         [HarmonyPostfix]
         public static void UIOptionWindow_OnOpen_Postfix()
         {
@@ -71,7 +71,7 @@ namespace ProjectGenesis.Patches.UI
             Reset();
         }
 
-        [HarmonyPatch(typeof(UIOptionWindow), "OnRevertButtonClick")]
+        [HarmonyPatch(typeof(UIOptionWindow), nameof(UIOptionWindow.OnRevertButtonClick))]
         [HarmonyPostfix]
         public static void UIOptionWindow_OnRevertButtonClick_Postfix(int idx)
         {
@@ -85,7 +85,7 @@ namespace ProjectGenesis.Patches.UI
             DisableMessageToggle.isOn = DisableMessageBoxEntry.Value;
         }
 
-        [HarmonyPatch(typeof(UIOptionWindow), "OnApplyClick")]
+        [HarmonyPatch(typeof(UIOptionWindow), nameof(UIOptionWindow.OnApplyClick))]
         [HarmonyPostfix]
         public static void UIOptionWindow_OnApplyClick_Postfix()
             => SetConfig(LDBToolCacheToggle.isOn, HideTechModeToggle.isOn, DisableMessageToggle.isOn);

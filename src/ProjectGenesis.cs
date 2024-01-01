@@ -16,6 +16,7 @@ using ProjectGenesis.Patches.Logic;
 using ProjectGenesis.Patches.Logic.AddVein;
 using ProjectGenesis.Patches.Logic.MegaAssembler;
 using ProjectGenesis.Patches.Logic.PlanetFocus;
+using ProjectGenesis.Patches.UI;
 using ProjectGenesis.Patches.UI.PlanetFocus;
 using ProjectGenesis.Patches.UI.QTools;
 using ProjectGenesis.Utils;
@@ -27,6 +28,7 @@ using static ProjectGenesis.Utils.CopyModelUtils;
 using static ProjectGenesis.Utils.TranslateUtils;
 using static ProjectGenesis.Patches.Logic.AddVein.AddVeinPatches;
 using static ProjectGenesis.Patches.Logic.AddVein.ModifyPlanetTheme;
+using static ProjectGenesis.Patches.UI.ChemicalRecipeFcolPatches;
 
 // ReSharper disable UnusedVariable
 // ReSharper disable UnusedMember.Local
@@ -45,11 +47,12 @@ namespace ProjectGenesis
     [BepInDependency(NebulaModAPI.API_GUID)]
     [BepInDependency(InstallationCheckPlugin.MODGUID, BepInDependency.DependencyFlags.SoftDependency)]
     [CommonAPISubmoduleDependency(nameof(ProtoRegistry), nameof(TabSystem), nameof(LocalizationModule))]
+    [ModSaveSettings(LoadOrder = LoadOrder.Preload)]
     public class ProjectGenesis : BaseUnityPlugin, IModCanSave, IMultiplayerMod
     {
         public const string MODGUID = "org.LoShin.GenesisBook";
         public const string MODNAME = "GenesisBook";
-        public const string VERSION = "2.9.3";
+        public const string VERSION = "2.9.5";
         public const string DEBUGVERSION = "";
 
         public static bool LoadCompleted;
@@ -71,12 +74,13 @@ namespace ProjectGenesis
 
         public void Awake()
         {
+            
 #region Logger
 
             logger = Logger;
             logger.Log(LogLevel.Info, "GenesisBook Awake");
 
-            if (DSPBattleCompatibilityPlugin.DSPBattleInstalled)
+            if (DSPBattle.Installed)
             {
                 logger.Log(LogLevel.Error, "They Come From Void is installed, which is incompatible with GenesisBook. Load Cancelled.");
                 return;
@@ -178,6 +182,7 @@ namespace ProjectGenesis
             MegaAssemblerPatches.Export(w);
             PlanetFocusPatches.Export(w);
             QuantumStoragePatches.Export(w);
+            AdvancedLaserPatches.Export(w);
         }
 
         public void Import(BinaryReader r)
@@ -185,6 +190,7 @@ namespace ProjectGenesis
             MegaAssemblerPatches.Import(r);
             PlanetFocusPatches.Import(r);
             QuantumStoragePatches.Import(r);
+            AdvancedLaserPatches.Import(r);
         }
 
         public void IntoOtherSave()
@@ -192,6 +198,7 @@ namespace ProjectGenesis
             MegaAssemblerPatches.IntoOtherSave();
             PlanetFocusPatches.IntoOtherSave();
             QuantumStoragePatches.IntoOtherSave();
+            AdvancedLaserPatches.IntoOtherSave();
         }
 
         public string Version => VERSION;
@@ -241,6 +248,7 @@ namespace ProjectGenesis
             ModifyEnemyHpUpgrade();
             SetSkillSystem();
             SetMinerMk2Color();
+            SetChemicalRecipeFcol();
             SetEffectEmitterProto();
 
             VFEffectEmitter.Init();

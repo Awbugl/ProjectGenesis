@@ -6,7 +6,7 @@ namespace ProjectGenesis.Patches.Logic.PlanetFocus
 {
     public static partial class PlanetFocusPatches
     {
-        [HarmonyPatch(typeof(PowerSystem), "GameTick")]
+        [HarmonyPatch(typeof(PowerSystem), nameof(PowerSystem.GameTick))]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> EnergyCap_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
@@ -83,7 +83,7 @@ namespace ProjectGenesis.Patches.Logic.PlanetFocus
             return exist ? (long)(power * extra) : power;
         }
 
-        [HarmonyPatch(typeof(UIPowerGeneratorWindow), "_OnUpdate")]
+        [HarmonyPatch(typeof(UIPowerGeneratorWindow), nameof(UIPowerGeneratorWindow._OnUpdate))]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> UIPowerGeneratorWindow_OnUpdate_Transpiler(IEnumerable<CodeInstruction> instructions)
         {

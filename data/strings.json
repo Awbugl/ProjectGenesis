@@ -381,8 +381,8 @@
   },
   {
     "Name": "R四氢双环戊二烯",
-    "ZHCN": "代表性饱和多环碳氢化合物，广泛应用于航空航天领域。\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作。</color>",
-    "ENUS": "Representative saturated polycyclic hydrocarbons, widely used in aerospace applications.\n<color=\"#FD965ECC\">It will not stop working until all products are stacked.</color>"
+    "ZHCN": "代表性饱和多环碳氢化合物，广泛应用于航空航天领域。",
+    "ENUS": "Representative saturated polycyclic hydrocarbons, widely used in aerospace applications."
   },
   {
     "Name": "四氢双环戊二烯燃料棒",
@@ -1020,12 +1020,12 @@
     "ENUS": "Fiber-like information transmission media made with natural lenticular stones, whose unique crystal structure can dramatically increase the efficiency of information transmission after remodeling, are often used to build information links to optical hosts."
   },
   {
-    "Name": "量子计算机",
-    "ZHCN": "量子计算机",
+    "Name": "量子计算主机",
+    "ZHCN": "量子计算主机",
     "ENUS": "Quantum computer"
   },
   {
-    "Name": "I量子计算机",
+    "Name": "I量子计算主机",
     "ZHCN": "量子芯片与粒子宽带结合制造出的超大型计算集群，成熟的量子计算技术是衡量一个文明发展水平的条件之一，在主脑的计算中，这是一个重要的分水岭。",
     "ENUS": "The combination of quantum chips and particle broadband creates a mega-computing cluster. Mature quantum computing technology is one of the conditions to measure the level of development of a civilization, and it is an important node in the mastermind's computation."
   },
@@ -1126,8 +1126,8 @@
   },
   {
     "Name": "R羰基合成",
-    "ZHCN": "二氧化碳和氢在催化剂的作用下可高效合成丙烯，是碳中和进程的重要一步。\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作。</color>",
-    "ENUS": "Carbon dioxide and hydrogen can efficiently synthesize propylene in the presence of a catalyst, an important step in the carbon-neutral process.\n<color=\"#FD965ECC\">It will not stop working until all products are stacked.</color>"
+    "ZHCN": "二氧化碳和氢在催化剂的作用下可高效合成丙烯，是碳中和进程的重要一步。",
+    "ENUS": "Carbon dioxide and hydrogen can efficiently synthesize propylene in the presence of a catalyst, an important step in the carbon-neutral process."
   },
   {
     "Name": "合成氨",
@@ -1181,8 +1181,8 @@
   },
   {
     "Name": "R三氯化铁",
-    "ZHCN": "向盐酸和铁的液相反应体系中加入氧化剂，可以稳定产出三氯化铁。\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作。</color>",
-    "ENUS": "Addition of an oxidizing agent to the liquid-phase reaction system of hydrochloric acid and iron stabilizes the output of ferric chloride.\n<color=\"#FD965ECC\">It will not stop working until all products are stacked.</color>"
+    "ZHCN": "向盐酸和铁的液相反应体系中加入氧化剂，可以稳定产出三氯化铁。",
+    "ENUS": "Addition of an oxidizing agent to the liquid-phase reaction system of hydrochloric acid and iron stabilizes the output of ferric chloride."
   },
   {
     "Name": "钨矿筛选",
@@ -1236,8 +1236,8 @@
   },
   {
     "Name": "R氨氧化",
-    "ZHCN": "氨气与氧气进行反应，经过一系列反应合成硝酸。\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作。</color>",
-    "ENUS": "Ammonia reacts with oxygen to produce nitric acid.\n<color=\"#FD965ECC\">Will not stop working until all products are accumulated.</color>"
+    "ZHCN": "氨气与氧气进行反应，经过一系列反应合成硝酸。",
+    "ENUS": "Ammonia reacts with oxygen to produce nitric acid."
   },
   {
     "Name": "R石墨烯（高效）",

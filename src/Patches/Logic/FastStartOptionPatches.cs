@@ -44,7 +44,7 @@ namespace ProjectGenesis.Patches.Logic
 
         private static void OnToggleValueChanged(bool value) => UIRoot._instance.galaxySelect.gameDesc.isFastStartMode = value;
 
-        [HarmonyPatch(typeof(UIGalaxySelect), "UpdateUIDisplay")]
+        [HarmonyPatch(typeof(UIGalaxySelect), nameof(UIGalaxySelect.UpdateUIDisplay))]
         [HarmonyPostfix]
         public static void UIGalaxySelect_UpdateUIDisplay_Postfix(UIGalaxySelect __instance)
         {
@@ -52,7 +52,7 @@ namespace ProjectGenesis.Patches.Logic
         }
 
         [HarmonyPostfix]
-        [HarmonyPatch(typeof(UIGalaxySelect), "_OnOpen")]
+        [HarmonyPatch(typeof(UIGalaxySelect), nameof(UIGalaxySelect._OnOpen))]
         public static void UIGalaxySelect_OnOpen()
         {
             if (!_fastStartToggle) Init();
@@ -60,7 +60,7 @@ namespace ProjectGenesis.Patches.Logic
             _fastStartToggle.isOn = false;
         }
 
-        [HarmonyPatch(typeof(GameData), "SetForNewGame")]
+        [HarmonyPatch(typeof(GameData), nameof(GameData.SetForNewGame))]
         [HarmonyPostfix]
         public static void SetForNewGame(GameData __instance)
         {

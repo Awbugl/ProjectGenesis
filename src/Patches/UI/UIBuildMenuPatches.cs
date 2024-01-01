@@ -17,7 +17,7 @@ namespace ProjectGenesis.Patches.UI
         private static readonly FieldInfo UIBuildMenu_currentCategory_Field
             = AccessTools.Field(typeof(UIBuildMenu), nameof(UIBuildMenu.currentCategory));
 
-        [HarmonyPatch(typeof(UIBuildMenu), "_OnCreate")]
+        [HarmonyPatch(typeof(UIBuildMenu), nameof(UIBuildMenu._OnCreate))]
         [HarmonyPostfix]
         public static void UIBuildMenu_OnCreate(UIBuildMenu __instance)
         {
@@ -64,7 +64,7 @@ namespace ProjectGenesis.Patches.UI
 
         private static void OnCategoryButtonClick() => UIRoot.instance.uiGame.buildMenu.OnCategoryButtonClick(12);
 
-        [HarmonyPatch(typeof(UIBuildMenu), "_OnUpdate")]
+        [HarmonyPatch(typeof(UIBuildMenu), nameof(UIBuildMenu._OnUpdate))]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> UIBuildMenu_OnUpdate_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
@@ -95,7 +95,7 @@ namespace ProjectGenesis.Patches.UI
             return matcher.InstructionEnumeration();
         }
 
-        [HarmonyPatch(typeof(UIBuildMenu), "SetCurrentCategory")]
+        [HarmonyPatch(typeof(UIBuildMenu), nameof(UIBuildMenu.SetCurrentCategory))]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> UIBuildMenu_SetCurrentCategory_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
@@ -115,7 +115,7 @@ namespace ProjectGenesis.Patches.UI
             return matcher.InstructionEnumeration();
         }
 
-        [HarmonyPatch(typeof(UIBuildMenu), "DoPlayerPackageChange")]
+        [HarmonyPatch(typeof(UIBuildMenu), nameof(UIBuildMenu.DoPlayerPackageChange))]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> UIFunctionPanel_DoPlayerPackageChange_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
@@ -130,7 +130,7 @@ namespace ProjectGenesis.Patches.UI
             return matcher.InstructionEnumeration();
         }
 
-        [HarmonyPatch(typeof(UIFunctionPanel), "_OnUpdate")]
+        [HarmonyPatch(typeof(UIFunctionPanel), nameof(UIFunctionPanel._OnUpdate))]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> UIFunctionPanel_OnUpdate_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
@@ -145,7 +145,7 @@ namespace ProjectGenesis.Patches.UI
             return matcher.InstructionEnumeration();
         }
 
-        [HarmonyPatch(typeof(UIFunctionPanel), "_OnUpdate")]
+        [HarmonyPatch(typeof(UIFunctionPanel), nameof(UIFunctionPanel._OnUpdate))]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> UIFunctionPanel_OnUpdate_Transpiler_SetWidth(IEnumerable<CodeInstruction> instructions)
         {

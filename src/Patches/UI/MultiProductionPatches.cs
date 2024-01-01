@@ -17,7 +17,7 @@ namespace ProjectGenesis.Patches.UI
         private static readonly List<Text> ReplicatorTexts = new List<Text>();
 
         [HarmonyPostfix]
-        [HarmonyPatch(typeof(UIReplicatorWindow), "OnSelectedRecipeChange")]
+        [HarmonyPatch(typeof(UIReplicatorWindow), nameof(UIReplicatorWindow.OnSelectedRecipeChange))]
         public static void UIReplicatorWindow_OnSelectedRecipeChange(UIReplicatorWindow __instance)
         {
             RecipeProto selectedRecipe = UIRoot.instance.uiGame.replicator.selectedRecipe;
@@ -100,7 +100,7 @@ namespace ProjectGenesis.Patches.UI
         private static readonly List<Text> AssemblerProductCountText = new List<Text>();
 
         [HarmonyPostfix]
-        [HarmonyPatch(typeof(UIAssemblerWindow), "_OnUpdate")]
+        [HarmonyPatch(typeof(UIAssemblerWindow), nameof(UIAssemblerWindow._OnUpdate))]
         public static void UIAssemblerWindow_OnUpdate(UIAssemblerWindow __instance)
         {
             if (__instance.assemblerId == 0 || __instance.factory == null) return;

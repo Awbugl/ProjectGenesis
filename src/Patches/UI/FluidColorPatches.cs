@@ -7,7 +7,7 @@ namespace ProjectGenesis.Patches.UI
 {
     internal static class FluidColorPatches
     {
-        [HarmonyPatch(typeof(UITankWindow), "_OnUpdate")]
+        [HarmonyPatch(typeof(UITankWindow), nameof(UITankWindow._OnUpdate))]
         [HarmonyPostfix]
         public static void UITankWindow_OnUpdate(UITankWindow __instance)
         {

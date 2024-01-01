@@ -6,7 +6,7 @@ namespace ProjectGenesis.Patches.Logic
 {
     internal static class TankComponentPatches
     {
-        [HarmonyPatch(typeof(TankComponent), "GameTick")]
+        [HarmonyPatch(typeof(TankComponent), nameof(TankComponent.GameTick))]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> TankComponent_GameTick_Transpiler(
             IEnumerable<CodeInstruction> instructions,

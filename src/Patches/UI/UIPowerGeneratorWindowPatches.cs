@@ -10,7 +10,7 @@ namespace ProjectGenesis.Patches.UI
 {
     public static class UIPowerGeneratorWindowPatches
     {
-        [HarmonyPatch(typeof(UIPowerGeneratorWindow), "_OnUpdate")]
+        [HarmonyPatch(typeof(UIPowerGeneratorWindow), nameof(UIPowerGeneratorWindow._OnUpdate))]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> SetTargetCargoBytes_Transpiler(IEnumerable<CodeInstruction> instructions)
         {

@@ -7,7 +7,7 @@ namespace ProjectGenesis.Patches.Logic.AddVein
 {
     public static partial class AddVeinPatches
     {
-        [HarmonyPatch(typeof(UIPlanetDetail), "OnPlanetDataSet")]
+        [HarmonyPatch(typeof(UIPlanetDetail), nameof(UIPlanetDetail.OnPlanetDataSet))]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> OnPlanetDataSet_ChangeVeinData_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
@@ -35,7 +35,7 @@ namespace ProjectGenesis.Patches.Logic.AddVein
             return matcher.InstructionEnumeration();
         }
 
-        [HarmonyPatch(typeof(UIStarDetail), "OnStarDataSet")]
+        [HarmonyPatch(typeof(UIStarDetail), nameof(UIStarDetail.OnStarDataSet))]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> OnStarDataSet_ChangeVeinData_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
@@ -85,8 +85,8 @@ namespace ProjectGenesis.Patches.Logic.AddVein
             return index;
         }
 
-        [HarmonyPatch(typeof(UIPlanetDetail), "RefreshDynamicProperties")]
-        [HarmonyPatch(typeof(UIStarDetail), "RefreshDynamicProperties")]
+        [HarmonyPatch(typeof(UIPlanetDetail), nameof(UIPlanetDetail.RefreshDynamicProperties))]
+        [HarmonyPatch(typeof(UIStarDetail), nameof(UIStarDetail.RefreshDynamicProperties))]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> RefreshDynamicProperties_ChangeVeinData_Transpiler(IEnumerable<CodeInstruction> instructions)
         {

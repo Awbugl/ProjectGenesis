@@ -9,7 +9,7 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
 {
     internal static partial class MegaAssemblerPatches
     {
-        [HarmonyPatch(typeof(UIRecipePicker), "RefreshIcons")]
+        [HarmonyPatch(typeof(UIRecipePicker), nameof(UIRecipePicker.RefreshIcons))]
         [HarmonyPriority(int.MaxValue)]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> UIRecipePicker_RefreshIcons(IEnumerable<CodeInstruction> instructions)
