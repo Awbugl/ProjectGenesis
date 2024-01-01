@@ -16,6 +16,7 @@ using ProjectGenesis.Patches.Logic;
 using ProjectGenesis.Patches.Logic.AddVein;
 using ProjectGenesis.Patches.Logic.MegaAssembler;
 using ProjectGenesis.Patches.Logic.PlanetFocus;
+using ProjectGenesis.Patches.UI;
 using ProjectGenesis.Patches.UI.PlanetFocus;
 using ProjectGenesis.Patches.UI.QTools;
 using ProjectGenesis.Utils;
@@ -181,6 +182,7 @@ namespace ProjectGenesis
             MegaAssemblerPatches.Export(w);
             PlanetFocusPatches.Export(w);
             QuantumStoragePatches.Export(w);
+            AdvancedLaserPatches.Export(w);
         }
 
         public void Import(BinaryReader r)
@@ -188,6 +190,7 @@ namespace ProjectGenesis
             MegaAssemblerPatches.Import(r);
             PlanetFocusPatches.Import(r);
             QuantumStoragePatches.Import(r);
+            AdvancedLaserPatches.Import(r);
         }
 
         public void IntoOtherSave()
@@ -195,6 +198,7 @@ namespace ProjectGenesis
             MegaAssemblerPatches.IntoOtherSave();
             PlanetFocusPatches.IntoOtherSave();
             QuantumStoragePatches.IntoOtherSave();
+            AdvancedLaserPatches.IntoOtherSave();
         }
 
         public string Version => VERSION;
