@@ -621,8 +621,8 @@
   },
   {
     "Name": "I天穹装配厂",
-    "ZHCN": "重新设计的高度集成化装配工厂，原料在传送带上被高速机械臂抓取并运输到加工中心进行处理、组装，然后转移至输出端。这座工厂能够以极高的效率生产大部分工业物品，除了某些高精度设备。",
-    "ENUS": "A redesigned highly integrated assembly factory where raw materials are grabbed by high-speed robotic arms on conveyor belts and transported to processing centers for processing, assembly, and then transferred to the output end. This factory is able to produce most industrial items with extremely high efficiency, except for some high-precision equipment."
+    "ZHCN": "重新设计的高度集成化装配工厂，原料在传送带上被高速机械臂抓取并运输到加工中心进行处理、组装，然后转移至输出端。这座工厂能够以极高的效率生产大部分工业物品。",
+    "ENUS": "A redesigned highly integrated assembly factory where raw materials are grabbed by high-speed robotic arms on conveyor belts and transported to processing centers for processing, assembly, and then transferred to the output end. This factory is able to produce most industrial items with extremely high efficiency."
   },
   {
     "Name": "物质裂解塔",
@@ -631,8 +631,8 @@
   },
   {
     "Name": "I物质裂解塔",
-    "ZHCN": "使用裂解光束对原矿进行加工、熔炼的大型工厂，高功率裂解光束能够以极高的效率处理矿物，将其快速粉碎并处理成高纯度原材料。这项技术曾在家园世界用于挖掘某些深地设施。",
-    "ENUS": "A large factory that uses a cracking beam to process and melt raw ore. High power cracking beams can process minerals with extremely high efficiency, quickly crushing them and processing them into high-purity raw materials. This technology has been used in the home world to excavate certain deep ground facilities."
+    "ZHCN": "使用裂解光束对原矿进行加工、熔炼的大型工厂，高功率裂解光束能够以极高的效率处理矿物，将其快速粉碎并处理成高纯度原材料。。",
+    "ENUS": "A large factory that uses a cracking beam to process and melt raw ore. High power cracking beams can process minerals with extremely high efficiency, quickly crushing them and processing them into high-purity raw materials."
   },
   {
     "Name": "巨型化学反应釜",
@@ -646,23 +646,23 @@
   },
   {
     "Name": "精密结构组装厂",
-    "ZHCN": "”工业先锋“精密加工中心",
+    "ZHCN": "“工业先锋”精密加工中心",
     "ENUS": "\"Industrial Pioneers\" Precise Machining Center"
   },
   {
     "Name": "I精密结构组装厂",
-    "ZHCN": "一座规模庞大的精密工厂，大量运输轨道将原材料运送到核心部位的精密装配中心进行集成化、高效化生产，这一过程能够大幅提升我们制造某些尖端设备的效率。",
-    "ENUS": "A large-scale precision factory, with a large amount of transportation tracks, transports raw materials to the precision machining center in the core area for integrated and efficient production. This process can greatly improve the efficiency of manufacturing certain cutting-edge equipment."
+    "ZHCN": "一座规模庞大的精密工厂，大量运输轨道将原材料运送到核心部位的精密装配中心进行集成化、高效化生产，能够大幅提升我们制造某些尖端设备的效率。",
+    "ENUS": "A large-scale precision factory, with a large amount of transportation tracks, transports raw materials to the precision machining center in the core area for integrated and efficient production，greatly improve the efficiency of manufacturing certain cutting-edge equipment."
   },
   {
     "Name": "巨型粒子对撞机",
-    "ZHCN": "“苍穹”大型粒子加速器",
-    "ENUS": "\"Cosmic\" Large Particle Accelerator"
+    "ZHCN": "“苍穹”粒子加速器",
+    "ENUS": "\"Cosmic\" Particle Accelerator"
   },
   {
     "Name": "I巨型粒子对撞机",
-    "ZHCN": "在遥远的过去，家园世界中曾有不少人认为环日粒子加速器工程只是一场骗局，而在其落成后发现的几项重大物理成果以及后来在该工程基础上实施的“苍穹”环世界计划最终成功将这些声音彻底按了下去，这座大型加速器中运用的技术亦是当时的成果之一。",
-    "ENUS": "In the distant past, many people in the Homeworld believed that the Ring Particle Accelerator project was just a scam, and several major physical achievements discovered after its completion, as well as the \"Sky\" Ring World Project implemented on the basis of the project, ultimately successfully suppressed these sounds. The technology used in this large accelerator was also one of the achievements at that time."
+    "ZHCN": "“苍穹”粒子加速器由多个并行运行的环形加速器构成。由于高度集约化，曾用于临时大量制造反物质。",
+    "ENUS": "The \"Cosmic\" particle accelerator consists of several ring gas pedals operating in parallel. Because of its high degree of intensification, it has been used for the temporary mass production of antimatter."
   },
   {
     "Name": "人造恒星MK2",
@@ -2606,7 +2606,7 @@
   },
   {
     "Name": "I星际物流运输站",
-    "ZHCN": "巨大的太空电梯，实现了行星之间更便捷的物资运输，可以将不同星球上的工厂串联成一个庞大的工业帝国。\n<color=\"#FD965ECC\">“于上天入地之处，取寰宇无穷之物。”</color>",
-    "ENUS": "Giant space elevators make it easier to transport materials between planets. They can connect factories on different planets to form a massive industrial empire.\n<color=\"#FD965ECC\">\"From heaven to the earth, take infinite things in the worlds.\"</color>"
+    "ZHCN": "巨大的太空电梯，实现了行星之间更便捷的物资运输，可以将星球工厂连结成一个庞大的工业帝国。\n<color=\"#FD965ECC\">“于上天入地之处，取寰宇无穷之物。”</color>",
+    "ENUS": "Giant space elevators make it easier to transport materials between planets. They can connect planet factories to a massive industrial empire.\n<color=\"#FD965ECC\">\"From heaven to the earth, take infinite things in the worlds.\"</color>"
   }
 ]

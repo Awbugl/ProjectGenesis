@@ -1253,7 +1253,8 @@
     "Conclusion": "T虫洞航行描述",
     "IsHiddenTech": true,
     "PreItem": [
-      5204
+      5204,
+      5205
     ],
     "Position": [
       49.0,
@@ -4754,6 +4755,7 @@
     "Conclusion": "负熵递归结果",
     "IsHiddenTech": true,
     "PreItem": [
+      5203,
       5204,
       5205
     ],
@@ -4799,6 +4801,7 @@
     "Conclusion": "金色燃料棒结果",
     "IsHiddenTech": true,
     "PreItem": [
+      5202,
       5205
     ],
     "Position": [
@@ -6523,6 +6526,7 @@
     "Conclusion": "虚数空间存储结果",
     "IsHiddenTech": true,
     "PreItem": [
+      5202,
       5204
     ],
     "Position": [

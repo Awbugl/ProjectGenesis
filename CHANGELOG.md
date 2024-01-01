@@ -1,3 +1,16 @@
+- v2.9.6
+  + 修复与 `GalacticScale` mod的兼容问题
+  + 调整了`高频激光塔 MK.I`的伤害和激光特效
+  + 调整了部分文案
+
+  + Fixed compatibility issue with `GalacticScale` mod
+  + Adjusted the damage and effect of the `Laser Tower MK.I`
+  + Adjust some text
+
+
+<details>
+  <summary>点击展开日志 | Click to view all </summary>
+
 - v2.9.5
   + 适配版本v0.10.28.21172
   + 修复了量子储物箱存档后数据丢失的问题（影响存档）
@@ -7,9 +20,6 @@
   + Fixed Quantum Dopot data lost after archiving (affects save)
   + Fixed mega buildings data reading anomalies
 
-
-<details>
-  <summary>点击展开日志 | Click to view all </summary>
 
 - v2.9.4
   + 修复了炮台UI不能手动填充对应子弹的问题

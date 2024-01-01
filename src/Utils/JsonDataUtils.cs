@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using CommonAPI.Systems;
 using HarmonyLib;
@@ -115,7 +116,7 @@ namespace ProjectGenesis.Utils
                 TechProto techProto = LDB.techs.Select(i);
                 techProto.Items = new[] { 6001 };
                 techProto.ItemPoints = new[] { techProto.ItemPoints[0] };
-                techProto.PreTechsImplicit = new int[] { };
+                techProto.PreTechsImplicit = Array.Empty<int>();
             }
         }
 
@@ -123,31 +124,35 @@ namespace ProjectGenesis.Utils
         {
             ModelProto[] dataArray = LDB.models.dataArray;
 
-            foreach (ModelProto t in dataArray)
+            foreach (ModelProto model in dataArray)
             {
-                SpaceSector.PrefabDescByModelIndex[t.ID] = t.prefabDesc;
+                int id = model.ID;
 
-                PlanetFactory.PrefabDescByModelIndex[t.ID] = t.prefabDesc;
+                PrefabDesc desc = model.prefabDesc;
 
-                SkillSystem.HpMaxByModelIndex[t.ID] = t.HpMax;
+                SkillSystem.HpMaxByModelIndex[id] = model.HpMax;
 
-                SkillSystem.HpUpgradeByModelIndex[t.ID] = t.HpUpgrade;
+                SkillSystem.HpUpgradeByModelIndex[id] = model.HpUpgrade;
 
-                SkillSystem.HpRecoverByModelIndex[t.ID] = t.HpRecover;
+                SkillSystem.HpRecoverByModelIndex[id] = model.HpRecover;
 
-                SkillSystem.RoughRadiusByModelIndex[t.ID] = t.prefabDesc.roughRadius;
+                SkillSystem.RoughRadiusByModelIndex[id] = desc.roughRadius;
 
-                SkillSystem.RoughHeightByModelIndex[t.ID] = t.prefabDesc.roughHeight;
+                SkillSystem.RoughHeightByModelIndex[id] = desc.roughHeight;
 
-                SkillSystem.RoughWidthByModelIndex[t.ID] = t.prefabDesc.roughWidth;
+                SkillSystem.RoughWidthByModelIndex[id] = desc.roughWidth;
 
-                SkillSystem.BarHeightByModelIndex[t.ID] = t.prefabDesc.barHeight;
+                SkillSystem.BarHeightByModelIndex[id] = desc.barHeight;
 
-                SkillSystem.BarWidthByModelIndex[t.ID] = t.prefabDesc.barWidth;
+                SkillSystem.BarWidthByModelIndex[id] = desc.barWidth;
 
-                SkillSystem.ColliderComplexityByModelIndex[t.ID] = t.prefabDesc.colliderComplexity;
+                SkillSystem.ColliderComplexityByModelIndex[id] = desc.colliderComplexity;
 
-                SkillSystem.EnemySandCountByModelIndex[t.ID] = t.prefabDesc.enemySandCount;
+                SkillSystem.EnemySandCountByModelIndex[id] = desc.enemySandCount;
+
+                SpaceSector.PrefabDescByModelIndex[id] = desc;
+
+                PlanetFactory.PrefabDescByModelIndex[id] = desc;
             }
         }
     }
