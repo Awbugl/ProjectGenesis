@@ -115,6 +115,7 @@ namespace ProjectGenesis.Utils
                 TechProto techProto = LDB.techs.Select(i);
                 techProto.Items = new[] { 6001 };
                 techProto.ItemPoints = new[] { techProto.ItemPoints[0] };
+                techProto.PreTechsImplicit = new int[] { };
             }
         }
 
