@@ -621,8 +621,8 @@
   },
   {
     "Name": "I天穹装配厂",
-    "ZHCN": "一座规模庞大的巨型工厂，包括大量的加工单元，高速运输轨道和精密机械臂。",
-    "ENUS": "Mega Assembler."
+    "ZHCN": "重新设计的高度集成化装配工厂，原料在传送带上被高速机械臂抓取并运输到加工中心进行处理、组装，然后转移至输出端。这座工厂能够以极高的效率生产大部分工业物品，除了某些高精度设备。",
+    "ENUS": "A redesigned highly integrated assembly factory where raw materials are grabbed by high-speed robotic arms on conveyor belts and transported to processing centers for processing, assembly, and then transferred to the output end. This factory is able to produce most industrial items with extremely high efficiency, except for some high-precision equipment."
   },
   {
     "Name": "物质裂解塔",
@@ -631,38 +631,38 @@
   },
   {
     "Name": "I物质裂解塔",
-    "ZHCN": "使用裂解光束对基础矿物进行加工熔炼的大型工厂，高功率裂解光束能够以极高的效率处理矿物。",
-    "ENUS": "Mega Smelter."
+    "ZHCN": "使用裂解光束对原矿进行加工、熔炼的大型工厂，高功率裂解光束能够以极高的效率处理矿物，将其快速粉碎并处理成高纯度原材料。这项技术曾在家园世界用于挖掘某些深地设施。",
+    "ENUS": "A large factory that uses a cracking beam to process and melt raw ore. High power cracking beams can process minerals with extremely high efficiency, quickly crushing them and processing them into high-purity raw materials. This technology has been used in the home world to excavate certain deep ground facilities."
   },
   {
     "Name": "巨型化学反应釜",
-    "ZHCN": "巨型化学反应釜",
-    "ENUS": "Mega Chemical Reaction Kettle"
+    "ZHCN": "埃克森美孚化工厂",
+    "ENUS": "ExxonMobil Chemical Plant"
   },
   {
     "Name": "I巨型化学反应釜",
-    "ZHCN": "一座大型化工厂，当你置身其中，犹如进入了一片管道森林。",
-    "ENUS": "Mega Chemical Reaction Kettle."
+    "ZHCN": "一座巨型化工厂，包含数个万吨级反应釜、高效冷却塔以及大量的、数不胜数的密封运输管道。当你置身其中，仿佛进入一片管道森林。",
+    "ENUS": "A giant chemical plant consisting of several tens of thousands of ton reactors, high-efficiency cooling towers, and numerous sealed transportation pipelines. When you are in it, it feels like entering a forest of pipes."
   },
   {
     "Name": "精密结构组装厂",
-    "ZHCN": "精密结构组装厂",
-    "ENUS": "Mega Precise Assembler"
+    "ZHCN": "”工业先锋“精密加工中心",
+    "ENUS": "\"Industrial Pioneers\" Precise Machining Center"
   },
   {
     "Name": "I精密结构组装厂",
-    "ZHCN": "这座工厂将精密装配线进行大规模集成以提升运转效率。",
-    "ENUS": "Mega Precise Assembler."
+    "ZHCN": "一座规模庞大的精密工厂，大量运输轨道将原材料运送到核心部位的精密装配中心进行集成化、高效化生产，这一过程能够大幅提升我们制造某些尖端设备的效率。",
+    "ENUS": "A large-scale precision factory, with a large amount of transportation tracks, transports raw materials to the precision machining center in the core area for integrated and efficient production. This process can greatly improve the efficiency of manufacturing certain cutting-edge equipment."
   },
   {
     "Name": "巨型粒子对撞机",
-    "ZHCN": "巨型粒子对撞机",
-    "ENUS": "Mega Particle Collider"
+    "ZHCN": "“苍穹”大型粒子加速器",
+    "ENUS": "\"Cosmic\" Large Particle Accelerator"
   },
   {
     "Name": "I巨型粒子对撞机",
-    "ZHCN": "大量并行运行的加速器将生产力提升到一个崭新的高度。",
-    "ENUS": "The large number of parallel running accelerators takes productivity to a whole new level."
+    "ZHCN": "在遥远的过去，家园世界中曾有不少人认为环日粒子加速器工程只是一场骗局，而在其落成后发现的几项重大物理成果以及后来在该工程基础上实施的“苍穹”环世界计划最终成功将这些声音彻底按了下去，这座大型加速器中运用的技术亦是当时的成果之一。",
+    "ENUS": "In the distant past, many people in the Homeworld believed that the Ring Particle Accelerator project was just a scam, and several major physical achievements discovered after its completion, as well as the \"Sky\" Ring World Project implemented on the basis of the project, ultimately successfully suppressed these sounds. The technology used in this large accelerator was also one of the achievements at that time."
   },
   {
     "Name": "人造恒星MK2",
@@ -2603,5 +2603,10 @@
     "Name": "I熔炉 Mk.III",
     "ZHCN": "在不断输入能量后，熔炉内部被激发的负熵奇点可以稳定地输出负熵，利用核心素的稳定性，可以进一步约束处于激发态的负熵奇点，引导其击穿物质界限。我们能够借此从虚数空间中解构粒子信息，并将其转换为实在的物质。\n负熵熔炉能够将配方<color=\"#FD965ECC\">翻倍产出</color>，你只需要输入一份原料，就能得到两份成品。",
     "ENUS": "With the constant input of energy, the excited negentropic singularity inside the furnace can stabilize the output of negentropy, and by using the stability of the core elements, the negentropic singularity in the excited state can be further constrained and guided to penetrate the boundaries of matter. We are able to use this to deconstruct particle information from imaginary number space and convert it into additional real matter. The \n Negentropic Furnace is able to <color=\"#FD965ECC\">double the output of the recipe</color>, you only need to input one ingredient to get two finished products."
+  },
+  {
+    "Name": "I星际物流运输站",
+    "ZHCN": "巨大的太空电梯，实现了行星之间更便捷的物资运输，可以将不同星球上的工厂串联成一个庞大的工业帝国。\n<color=\"#FD965ECC\">“于上天入地之处，取寰宇无穷之物。”</color>",
+    "ENUS": "Giant space elevators make it easier to transport materials between planets. They can connect factories on different planets to form a massive industrial empire.\n<color=\"#FD965ECC\">\"From heaven to the earth, take infinite things in the worlds.\"</color>"
   }
 ]
