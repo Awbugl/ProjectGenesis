@@ -184,7 +184,7 @@
   },
   {
     "ModelID": 373,
-    "turretDamageScale": 4,
+    "turretDamageScale": 3,
     "turretMaxAttackRange": 25
   },
   {
