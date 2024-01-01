@@ -73,30 +73,27 @@ namespace ProjectGenesis.Compatibility
             harmony.Patch(AccessTools.PropertyGetter(assembly.GetType("GalacticScale.GS2MainSettings"), "VeinTips"), null, null,
                           new HarmonyMethod(typeof(GalacticScale), nameof(GS2MainSettings_VeinTips_Getter_Transpiler)));
 
-            Type PatchOnUIPlanetDetail = assembly.GetType("GalacticScale.PatchOnUIPlanetDetail");
+            MethodInfo OnPlanetDataSet7Prefix = AccessTools.Method(assembly.GetType("GalacticScale.PatchOnUIPlanetDetail"), "OnPlanetDataSet7Prefix");
 
-            harmony.Patch(AccessTools.Method(PatchOnUIPlanetDetail, "OnPlanetDataSet7Prefix"), null, null,
-                          new HarmonyMethod(typeof(GalacticScale), nameof(OnPlanetDataSet_Transpiler)));
+            harmony.Patch(OnPlanetDataSet7Prefix, null, null, new HarmonyMethod(typeof(GalacticScale), nameof(OnPlanetDataSet_Transpiler)));
 
-            harmony.Patch(AccessTools.Method(PatchOnUIPlanetDetail, "OnPlanetDataSet7Prefix"), null, null,
+            harmony.Patch(OnPlanetDataSet7Prefix, null, null,
                           new HarmonyMethod(typeof(PlanetGasPatches), nameof(PlanetGasPatches.OnDataSet_ChangeWaterId_Transpiler)));
 
-            harmony.Patch(AccessTools.Method(PatchOnUIPlanetDetail, "OnPlanetDataSet7Prefix"), null, null,
+            harmony.Patch(OnPlanetDataSet7Prefix, null, null,
                           new HarmonyMethod(typeof(GalacticScale), nameof(OnPlanetDataSet_ChangeVeinData_Transpiler)));
 
-            Type PatchOnUIStarDetail = assembly.GetType("GalacticScale.PatchOnUIStarDetail");
+            MethodInfo OnStarDataSet2 = AccessTools.Method(assembly.GetType("GalacticScale.PatchOnUIStarDetail"), "OnStarDataSet2");
 
-            harmony.Patch(AccessTools.Method(PatchOnUIStarDetail, "OnStarDataSet2"), null, null,
+            harmony.Patch(OnStarDataSet2, null, null,
                           new HarmonyMethod(typeof(PlanetGasPatches), nameof(PlanetGasPatches.OnDataSet_ChangeWaterId_Transpiler)));
 
-            harmony.Patch(AccessTools.Method(PatchOnUIStarDetail, "OnStarDataSet2"), null, null,
+            harmony.Patch(OnStarDataSet2, null, null,
                           new HarmonyMethod(typeof(PlanetGasPatches), nameof(PlanetGasPatches.PlanetGen_SetPlanetTheme_Transpiler)));
 
-            harmony.Patch(AccessTools.Method(PatchOnUIStarDetail, "OnStarDataSet2"), null, null,
-                          new HarmonyMethod(typeof(PlanetGasPatches), nameof(PlanetGasPatches.OnStarDataSet_Transpiler)));
+            harmony.Patch(OnStarDataSet2, null, null, new HarmonyMethod(typeof(PlanetGasPatches), nameof(PlanetGasPatches.OnStarDataSet_Transpiler)));
 
-            harmony.Patch(AccessTools.Method(PatchOnUIStarDetail, "OnStarDataSet2"), null, null,
-                          new HarmonyMethod(typeof(GalacticScale), nameof(OnStarDataSet_ChangeVeinData_Transpiler)));
+            harmony.Patch(OnStarDataSet2, null, null, new HarmonyMethod(typeof(GalacticScale), nameof(OnStarDataSet_ChangeVeinData_Transpiler)));
         }
 
         public static IEnumerable<CodeInstruction> SetPlanetTheme_Transpiler(IEnumerable<CodeInstruction> instructions)
@@ -331,17 +328,11 @@ namespace ProjectGenesis.Compatibility
 
         public static IEnumerable<CodeInstruction> OnPlanetDataSet_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
-            CodeMatcher matcher = new CodeMatcher(instructions).MatchForward(
-                true, new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(PlanetData), "type")), new CodeMatch(OpCodes.Ldc_I4_5),
-                new CodeMatch(OpCodes.Ceq), new CodeMatch(OpCodes.Ldc_I4_0), new CodeMatch(OpCodes.Ceq), new CodeMatch(OpCodes.Stloc_S),
-                new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Brfalse));
+            var matcher = new CodeMatcher(instructions);
 
-            object label = matcher.Operand;
-
-            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldstr, "实际采集速度"));
-
-            matcher.Advance(-14).SetOperandAndAdvance(label);
-            matcher.Advance(39).SetOperandAndAdvance(label);
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldstr, "实际采集速度"))
+                   .MatchForward(true, new CodeMatch(OpCodes.Nop), new CodeMatch(OpCodes.Br))
+                   .SetInstruction(new CodeInstruction(OpCodes.Nop));
 
             matcher.MatchForward(false, new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(StationComponent), "collectionPerTick")));
 
@@ -349,9 +340,9 @@ namespace ProjectGenesis.Compatibility
 
             matcher.Advance(-1).InsertAndAdvance(new CodeInstruction(stationComponent), new CodeInstruction(OpCodes.Ldarg_0),
                                                  new CodeInstruction(OpCodes.Ldfld, AccessTools.Field(typeof(UIPlanetDetail), "_planet")),
-                                                 new CodeInstruction(OpCodes.Call,
-                                                                     AccessTools.Method(typeof(PlanetGasPatches),
-                                                                                        nameof(PlanetGasPatches.GetGasCollectionPerTick))));
+                                                 new CodeInstruction(
+                                                     OpCodes.Call,
+                                                     AccessTools.Method(typeof(PlanetGasPatches), nameof(PlanetGasPatches.GetGasCollectionPerTick))));
 
             return matcher.InstructionEnumeration();
         }

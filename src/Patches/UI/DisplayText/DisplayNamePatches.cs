@@ -14,7 +14,7 @@ namespace ProjectGenesis.Patches.UI.DisplayText
     public static class DisplayNamePatches
     {
         [HarmonyTranspiler]
-        [HarmonyPatch(typeof(UIVersionText), "Refresh")]
+        [HarmonyPatch(typeof(UIVersionText), nameof(UIVersionText.Refresh))]
         public static IEnumerable<CodeInstruction> Refresh_Transpiler(IEnumerable<CodeInstruction> instructions, ILGenerator generator)
         {
             CodeMatcher codeMatcher

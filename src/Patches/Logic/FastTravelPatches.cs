@@ -8,8 +8,8 @@ namespace ProjectGenesis.Patches.Logic
 {
     public static class FastTravelPatches
     {
-        [HarmonyPatch(typeof(UIStarmap), "UpdateCursorView")]
-        [HarmonyPatch(typeof(UIStarmap), "StartFastTravelToPlanet")]
+        [HarmonyPatch(typeof(UIStarmap), nameof(UIStarmap.UpdateCursorView))]
+        [HarmonyPatch(typeof(UIStarmap), nameof(UIStarmap.StartFastTravelToPlanet))]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> UIStarmap_UpdateCursorView_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
@@ -25,7 +25,7 @@ namespace ProjectGenesis.Patches.Logic
             return matcher.InstructionEnumeration();
         }
 
-        [HarmonyPatch(typeof(UIStarmap), "OnFastTravelButtonClick")]
+        [HarmonyPatch(typeof(UIStarmap), nameof(UIStarmap.OnFastTravelButtonClick))]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> UIStarmap_FastTravel_Transpiler(IEnumerable<CodeInstruction> instructions)
         {

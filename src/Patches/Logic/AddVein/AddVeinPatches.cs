@@ -108,7 +108,7 @@ namespace ProjectGenesis.Patches.Logic.AddVein
             prefabDescLODMaterial[3].SetTexture(veinColorTex, texture);
         }
 
-        [HarmonyPatch(typeof(UISandboxMenu), "StaticLoad")]
+        [HarmonyPatch(typeof(UISandboxMenu), nameof(UISandboxMenu.StaticLoad))]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> UISandboxMenu_StaticLoad_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
@@ -125,7 +125,7 @@ namespace ProjectGenesis.Patches.Logic.AddVein
             return matcher.InstructionEnumeration();
         }
 
-        [HarmonyPatch(typeof(UISandboxMenu), "StaticLoad")]
+        [HarmonyPatch(typeof(UISandboxMenu), nameof(UISandboxMenu.StaticLoad))]
         [HarmonyPostfix]
         public static void UISandboxMenu_StaticLoad_Postfix(ref VeinProto[,] ___veinProtos)
         {
@@ -133,11 +133,11 @@ namespace ProjectGenesis.Patches.Logic.AddVein
             ___veinProtos[1, 8] = LDB.veins.Select(16);
         }
 
-        [HarmonyPatch(typeof(PlanetAlgorithm), "GenerateVeins")]
-        [HarmonyPatch(typeof(PlanetAlgorithm7), "GenerateVeins")]
-        [HarmonyPatch(typeof(PlanetAlgorithm11), "GenerateVeins")]
-        [HarmonyPatch(typeof(PlanetAlgorithm12), "GenerateVeins")]
-        [HarmonyPatch(typeof(PlanetAlgorithm13), "GenerateVeins")]
+        [HarmonyPatch(typeof(PlanetAlgorithm), nameof(PlanetAlgorithm.GenerateVeins))]
+        [HarmonyPatch(typeof(PlanetAlgorithm7), nameof(PlanetAlgorithm7.GenerateVeins))]
+        [HarmonyPatch(typeof(PlanetAlgorithm11), nameof(PlanetAlgorithm11.GenerateVeins))]
+        [HarmonyPatch(typeof(PlanetAlgorithm12), nameof(PlanetAlgorithm12.GenerateVeins))]
+        [HarmonyPatch(typeof(PlanetAlgorithm13), nameof(PlanetAlgorithm13.GenerateVeins))]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> PlanetAlgorithm_GenerateVeins_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
@@ -148,10 +148,10 @@ namespace ProjectGenesis.Patches.Logic.AddVein
             return matcher.InstructionEnumeration();
         }
 
-        [HarmonyPatch(typeof(PlanetAlgorithm), "GenerateVeins")]
-        [HarmonyPatch(typeof(PlanetAlgorithm11), "GenerateVeins")]
-        [HarmonyPatch(typeof(PlanetAlgorithm12), "GenerateVeins")]
-        [HarmonyPatch(typeof(PlanetAlgorithm13), "GenerateVeins")]
+        [HarmonyPatch(typeof(PlanetAlgorithm), nameof(PlanetAlgorithm.GenerateVeins))]
+        [HarmonyPatch(typeof(PlanetAlgorithm11), nameof(PlanetAlgorithm11.GenerateVeins))]
+        [HarmonyPatch(typeof(PlanetAlgorithm12), nameof(PlanetAlgorithm12.GenerateVeins))]
+        [HarmonyPatch(typeof(PlanetAlgorithm13), nameof(PlanetAlgorithm13.GenerateVeins))]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> PlanetAlgorithm_InitnalVeins_Transpiler(
             IEnumerable<CodeInstruction> instructions,

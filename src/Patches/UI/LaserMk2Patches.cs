@@ -8,7 +8,7 @@ namespace ProjectGenesis.Patches.UI
 {
     public static class LaserMk2Patches
     {
-        [HarmonyPatch(typeof(SkillSystem), "Init")]
+        [HarmonyPatch(typeof(SkillSystem), nameof(SkillSystem.Init))]
         [HarmonyPostfix]
         public static void SkillSystem_Init(SkillSystem __instance)
         {

@@ -7,7 +7,7 @@ namespace ProjectGenesis.Patches.Logic.AddVein
 {
     public static partial class AddVeinPatches
     {
-        [HarmonyPatch(typeof(PlanetModelingManager), "LoadingPlanetFactoryMain")]
+        [HarmonyPatch(typeof(PlanetModelingManager), nameof(PlanetModelingManager.LoadingPlanetFactoryMain))]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> PlanetModelingManager_LoadingPlanetFactoryMain_Transpiler(
             IEnumerable<CodeInstruction> instructions)
@@ -23,7 +23,7 @@ namespace ProjectGenesis.Patches.Logic.AddVein
             return matcher.InstructionEnumeration();
         }
 
-        [HarmonyPatch(typeof(PlanetFactory), "AddVeinData")]
+        [HarmonyPatch(typeof(PlanetFactory), nameof(PlanetFactory.AddVeinData))]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> PlanetFactory_AddVeinData_Transpiler(IEnumerable<CodeInstruction> instructions)
         {

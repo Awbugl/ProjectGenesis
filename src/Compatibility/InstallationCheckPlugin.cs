@@ -44,10 +44,10 @@ namespace ProjectGenesis.Compatibility
             new Harmony(MODGUID).Patch(AccessTools.Method(typeof(VFPreload), "InvokeOnLoadWorkEnded"), null,
                                        new HarmonyMethod(typeof(InstallationCheckPlugin), nameof(OnMainMenuOpen)) { priority = Priority.Last });
 
-            AwakePlugins();
+            AwakeCompatibilityPatchers();
         }
 
-        public static void AwakePlugins()
+        public static void AwakeCompatibilityPatchers()
         {
             MoreMegaStructure.Awake();
             PlanetVeinUtilization.Awake();
@@ -61,7 +61,7 @@ namespace ProjectGenesis.Compatibility
             {
                 GalacticScale.Awake();
             }
-            catch
+            catch (FileNotFoundException)
             {
                 // ignore
             }

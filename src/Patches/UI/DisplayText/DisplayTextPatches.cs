@@ -123,7 +123,7 @@ namespace ProjectGenesis.Patches.UI.DisplayText
             }
         }
 
-        [HarmonyPatch(typeof(ItemProto), "GetPropValue")]
+        [HarmonyPatch(typeof(ItemProto), nameof(ItemProto.GetPropValue))]
         [HarmonyPostfix]
         public static void GetPropValuePatch(ItemProto __instance, int index, ref string __result)
         {
@@ -166,7 +166,7 @@ namespace ProjectGenesis.Patches.UI.DisplayText
         }
 
         [HarmonyPostfix]
-        [HarmonyPatch(typeof(TechProto), "UnlockFunctionText")]
+        [HarmonyPatch(typeof(TechProto), nameof(TechProto.UnlockFunctionText))]
         public static void TechProto_UnlockFunctionText(TechProto __instance, ref string __result, StringBuilder sb)
         {
             switch (__instance.ID)
@@ -190,7 +190,7 @@ namespace ProjectGenesis.Patches.UI.DisplayText
         }
 
         [HarmonyPostfix]
-        [HarmonyPatch(typeof(ItemProto), "FindRecipes")]
+        [HarmonyPatch(typeof(ItemProto), nameof(ItemProto.FindRecipes))]
         public static void ItemProto_FindRecipes(ItemProto __instance) => __instance.isRaw = __instance.recipes.Count == 0;
     }
 }

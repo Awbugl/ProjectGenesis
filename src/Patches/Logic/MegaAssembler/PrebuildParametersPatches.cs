@@ -17,7 +17,7 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
         private static readonly MethodInfo MegaAssemblerPatches_ContainsRecipeTypeRevert_Method
             = AccessTools.Method(typeof(MegaAssemblerPatches), nameof(ContainsRecipeTypeRevert));
 
-        [HarmonyPatch(typeof(BuildingParameters), "ApplyPrebuildParametersToEntity")]
+        [HarmonyPatch(typeof(BuildingParameters), nameof(BuildingParameters.ApplyPrebuildParametersToEntity))]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> BuildingParameters_ApplyPrebuildParametersToEntity_Transpiler(
             IEnumerable<CodeInstruction> instructions)
@@ -57,7 +57,7 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
             SyncSlotsData.Sync(factory.planetId, entityId, slots);
         }
 
-        [HarmonyPatch(typeof(BuildingParameters), "FromParamsArray")]
+        [HarmonyPatch(typeof(BuildingParameters), nameof(BuildingParameters.FromParamsArray))]
         [HarmonyPostfix]
         public static void BuildingParameters_FromParamsArray(ref BuildingParameters __instance, int[] _parameters)
         {
@@ -70,7 +70,7 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
             Array.Copy(_parameters, __instance.parameters, 2048);
         }
 
-        [HarmonyPatch(typeof(BuildingParameters), "ToParamsArray")]
+        [HarmonyPatch(typeof(BuildingParameters), nameof(BuildingParameters.ToParamsArray))]
         [HarmonyPostfix]
         public static void BuildingParameters_ToParamsArray(ref BuildingParameters __instance, ref int[] _parameters, ref int _paramCount)
         {
@@ -89,8 +89,8 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
             }
         }
 
-        [HarmonyPatch(typeof(BuildingParameters), "CopyFromFactoryObject")]
-        [HarmonyPatch(typeof(BuildingParameters), "CopyFromBuildPreview")]
+        [HarmonyPatch(typeof(BuildingParameters), nameof(BuildingParameters.CopyFromFactoryObject))]
+        [HarmonyPatch(typeof(BuildingParameters), nameof(BuildingParameters.CopyFromBuildPreview))]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> BuildingParameters_CopyFromFactoryObject_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
@@ -105,7 +105,7 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
             return matcher.InstructionEnumeration();
         }
 
-        [HarmonyPatch(typeof(BuildingParameters), "CopyFromFactoryObject")]
+        [HarmonyPatch(typeof(BuildingParameters), nameof(BuildingParameters.CopyFromFactoryObject))]
         [HarmonyPostfix]
         public static void BuildingParameters_CopyFromFactoryObject(
             ref BuildingParameters __instance,
@@ -145,7 +145,7 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
             }
         }
 
-        [HarmonyPatch(typeof(BuildingParameters), "PasteToFactoryObject")]
+        [HarmonyPatch(typeof(BuildingParameters), nameof(BuildingParameters.PasteToFactoryObject))]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> BuildingParameters_PasteToFactoryObject_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
@@ -171,7 +171,7 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
             return matcher.InstructionEnumeration();
         }
 
-        [HarmonyPatch(typeof(BuildingParameters), "CanPasteToFactoryObject")]
+        [HarmonyPatch(typeof(BuildingParameters), nameof(BuildingParameters.CanPasteToFactoryObject))]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> BuildingParameters_CanPasteToFactoryObject_Transpiler(IEnumerable<CodeInstruction> instructions)
         {

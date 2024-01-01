@@ -10,8 +10,8 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
         private static readonly FieldInfo IsStationField = AccessTools.Field(typeof(PrefabDesc), nameof(PrefabDesc.isStation));
         private static readonly FieldInfo IsAssemblerField = AccessTools.Field(typeof(PrefabDesc), nameof(PrefabDesc.isAssembler));
 
-        [HarmonyPatch(typeof(BuildTool_Path), "DeterminePreviews")]
-        [HarmonyPatch(typeof(BuildTool_Path), "CheckBuildConditions")]
+        [HarmonyPatch(typeof(BuildTool_Path), nameof(BuildTool_Path.DeterminePreviews))]
+        [HarmonyPatch(typeof(BuildTool_Path), nameof(BuildTool_Path.CheckBuildConditions))]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> BuildTool_Path_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
@@ -26,7 +26,7 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
             return matcher.InstructionEnumeration();
         }
 
-        [HarmonyPatch(typeof(UISlotPicker), "Determine")]
+        [HarmonyPatch(typeof(UISlotPicker), nameof(UISlotPicker.Determine))]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> UISlotPicker_Determine_Transpiler(IEnumerable<CodeInstruction> instructions)
         {

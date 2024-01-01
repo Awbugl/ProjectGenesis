@@ -7,7 +7,7 @@ namespace ProjectGenesis.Patches.Logic
 {
     public static class FuelRodPatches
     {
-        [HarmonyPatch(typeof(Mecha), "GenerateEnergy")]
+        [HarmonyPatch(typeof(Mecha), nameof(Mecha.GenerateEnergy))]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> SetTargetCargoBytes_Transpiler(IEnumerable<CodeInstruction> instructions)
         {

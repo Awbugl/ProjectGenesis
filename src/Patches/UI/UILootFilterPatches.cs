@@ -17,7 +17,7 @@ namespace ProjectGenesis.Patches.UI
 
         private static readonly FieldInfo currentTypeField = AccessTools.Field(typeof(UILootFilter), "currentType");
 
-        [HarmonyPatch(typeof(UILootFilter), "_OnCreate")]
+        [HarmonyPatch(typeof(UILootFilter), nameof(UILootFilter._OnCreate))]
         [HarmonyPostfix]
         public static void Create(UILootFilter __instance)
         {
@@ -40,21 +40,21 @@ namespace ProjectGenesis.Patches.UI
             __instance.typeButton2.transform.localPosition = new Vector3(296, -40, 0);
         }
 
-        [HarmonyPatch(typeof(UILootFilter), "OnTypeButtonClick")]
+        [HarmonyPatch(typeof(UILootFilter), nameof(UILootFilter.OnTypeButtonClick))]
         [HarmonyPriority(Priority.VeryHigh)]
         [HarmonyPrefix]
         public static void OnTypeClicked_Prefix(int type) => UILootFilter.showAll = type == 1;
 
-        [HarmonyPatch(typeof(UILootFilter), "OnTypeButtonClick")]
+        [HarmonyPatch(typeof(UILootFilter), nameof(UILootFilter.OnTypeButtonClick))]
         [HarmonyPostfix]
         public static void OnTypeClicked_Postfix(int type)
         {
             foreach (UITabButton tab in _tabs) tab.TabSelected(type);
         }
 
-        [HarmonyPatch(typeof(UILootFilter), "_OnUpdate")]
-        [HarmonyPatch(typeof(UILootFilter), "RepositionGridText")]
-        [HarmonyPatch(typeof(UILootFilter), "RefreshIcons")]
+        [HarmonyPatch(typeof(UILootFilter), nameof(UILootFilter._OnUpdate))]
+        [HarmonyPatch(typeof(UILootFilter), nameof(UILootFilter.RepositionGridText))]
+        [HarmonyPatch(typeof(UILootFilter), nameof(UILootFilter.RefreshIcons))]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
         {
@@ -73,7 +73,7 @@ namespace ProjectGenesis.Patches.UI
             return matcher.InstructionEnumeration();
         }
 
-        [HarmonyPatch(typeof(UILootFilter), "TestMouseIndex")]
+        [HarmonyPatch(typeof(UILootFilter), nameof(UILootFilter.TestMouseIndex))]
         [HarmonyTranspiler]
         [HarmonyPriority(Priority.Last)]
         public static IEnumerable<CodeInstruction> RefreshIcons_Transpiler(IEnumerable<CodeInstruction> instructions)
@@ -103,8 +103,8 @@ namespace ProjectGenesis.Patches.UI
             return matcher.InstructionEnumeration();
         }
 
-        [HarmonyPatch(typeof(UILootFilter), "OnBoxMouseDown")]
-        [HarmonyPatch(typeof(UILootFilter), "RefreshWindow")]
+        [HarmonyPatch(typeof(UILootFilter), nameof(UILootFilter.OnBoxMouseDown))]
+        [HarmonyPatch(typeof(UILootFilter), nameof(UILootFilter.RefreshWindow))]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> UILootFilter_OnBoxMouseDown_currentTypeField_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
@@ -116,8 +116,8 @@ namespace ProjectGenesis.Patches.UI
             return matcher.InstructionEnumeration();
         }
 
-        [HarmonyPatch(typeof(UILootFilter), "TestMouseIndex")]
-        [HarmonyPatch(typeof(UILootFilter), "SetMaterialProps")]
+        [HarmonyPatch(typeof(UILootFilter), nameof(UILootFilter.TestMouseIndex))]
+        [HarmonyPatch(typeof(UILootFilter), nameof(UILootFilter.SetMaterialProps))]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> UILootFilter_SetMaterialProps_currentTypeField_Transpiler(
             IEnumerable<CodeInstruction> instructions)
@@ -130,7 +130,7 @@ namespace ProjectGenesis.Patches.UI
             return matcher.InstructionEnumeration();
         }
 
-        [HarmonyPatch(typeof(UILootFilter), "RefreshIcons")]
+        [HarmonyPatch(typeof(UILootFilter), nameof(UILootFilter.RefreshIcons))]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> UILootFilter_RefreshIcons_currentTypeField_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
@@ -146,7 +146,7 @@ namespace ProjectGenesis.Patches.UI
             return matcher.InstructionEnumeration();
         }
 
-        [HarmonyPatch(typeof(UILootFilter), "RefreshWindow")]
+        [HarmonyPatch(typeof(UILootFilter), nameof(UILootFilter.RefreshWindow))]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> UILootFilter_RefreshWindow_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
@@ -158,7 +158,7 @@ namespace ProjectGenesis.Patches.UI
             return matcher.InstructionEnumeration();
         }
 
-        [HarmonyPatch(typeof(UILootFilter), "RefreshWindow")]
+        [HarmonyPatch(typeof(UILootFilter), nameof(UILootFilter.RefreshWindow))]
         [HarmonyPostfix]
         public static void RefreshWindow_Postfix(UILootFilter __instance)
         {
@@ -169,7 +169,7 @@ namespace ProjectGenesis.Patches.UI
             foreach (UITabButton uiTabButton in _tabs) uiTabButton.gameObject.SetActive(show);
         }
 
-        [HarmonyPatch(typeof(UILootFilter), "SetMaterialProps")]
+        [HarmonyPatch(typeof(UILootFilter), nameof(UILootFilter.SetMaterialProps))]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> UILootFilter_SetMaterialProps_Transpiler(IEnumerable<CodeInstruction> instructions)
         {

@@ -14,7 +14,7 @@ namespace ProjectGenesis.Patches.Logic
         [HarmonyPrefix]
         public static bool LDBTool_Bind() => ProjectGenesis.EnableLDBToolCacheEntry.Value;
 
-        [HarmonyPatch(typeof(VFPreload), "InvokeOnLoadWorkEnded")]
+        [HarmonyPatch(typeof(VFPreload), nameof(VFPreload.InvokeOnLoadWorkEnded))]
         [HarmonyAfter(LDBToolPlugin.MODGUID)]
         [HarmonyPostfix]
         public static void DeleteFiles()

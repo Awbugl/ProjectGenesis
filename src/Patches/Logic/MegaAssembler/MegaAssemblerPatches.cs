@@ -316,7 +316,7 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
         }
 
         [HarmonyPostfix]
-        [HarmonyPatch(typeof(PlanetFactory), "ApplyInsertTarget")]
+        [HarmonyPatch(typeof(PlanetFactory), nameof(PlanetFactory.ApplyInsertTarget))]
         public static void PlanetFactory_ApplyInsertTarget(
             ref PlanetFactory __instance,
             int entityId,
@@ -341,7 +341,7 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
         }
 
         [HarmonyPostfix]
-        [HarmonyPatch(typeof(PlanetFactory), "ApplyPickTarget")]
+        [HarmonyPatch(typeof(PlanetFactory), nameof(PlanetFactory.ApplyPickTarget))]
         public static void PlanetFactory_ApplyPickTarget(
             ref PlanetFactory __instance,
             int entityId,
@@ -367,7 +367,7 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
         }
 
         [HarmonyPostfix]
-        [HarmonyPatch(typeof(PlanetFactory), "ApplyEntityDisconnection")]
+        [HarmonyPatch(typeof(PlanetFactory), nameof(PlanetFactory.ApplyEntityDisconnection))]
         public static void PlanetFactory_ApplyEntityDisconnection(
             ref PlanetFactory __instance,
             int otherEntityId,
@@ -394,7 +394,7 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
             SyncSlotData.Sync(__instance.planetId, otherSlotId, otherEntityId, slotdata[otherSlotId]);
         }
 
-        [HarmonyPatch(typeof(PlanetFactory), "RemoveEntityWithComponents")]
+        [HarmonyPatch(typeof(PlanetFactory), nameof(PlanetFactory.RemoveEntityWithComponents))]
         [HarmonyPrefix]
         [HarmonyPriority(Priority.VeryHigh)]
         public static void PlanetFactory_RemoveEntityWithComponents(ref PlanetFactory __instance, int id)
@@ -407,7 +407,7 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
             }
         }
 
-        [HarmonyPatch(typeof(AssemblerComponent), "UpdateNeeds")]
+        [HarmonyPatch(typeof(AssemblerComponent), nameof(AssemblerComponent.UpdateNeeds))]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> AssemblerComponent_UpdateNeeds_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
@@ -430,7 +430,7 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
         public static sbyte AssemblerComponent_UpdateNeeds_Patch(int speed) => speed > TrashSpeed ? (sbyte)10 : (sbyte)3;
 
         [HarmonyPostfix]
-        [HarmonyPatch(typeof(FactorySystem), "NewAssemblerComponent")]
+        [HarmonyPatch(typeof(FactorySystem), nameof(FactorySystem.NewAssemblerComponent))]
         public static void FactorySystem_NewAssemblerComponent(ref FactorySystem __instance, int entityId, int speed)
         {
             if (speed >= TrashSpeed) __instance.factory.entityPool[entityId].stationId = 0;

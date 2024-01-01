@@ -5475,8 +5475,8 @@
   },
   {
     "ID": 7805,
-    "Name": "量子计算机",
-    "Description": "I量子计算机",
+    "Name": "量子计算主机",
+    "Description": "I量子计算主机",
     "IconPath": "Assets/texpack/超级纳米电脑",
     "GridIndex": 1610,
     "StackSize": 50,

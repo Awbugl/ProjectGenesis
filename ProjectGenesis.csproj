@@ -52,7 +52,7 @@
             <HintPath>lib\Newtonsoft.Json.dll</HintPath>
         </Reference>
         <Reference Include="GalacticScale">
-            <HintPath>lib\GalacticScale-nstrip.dll</HintPath>
+            <HintPath>lib\GalacticScale-publicized.dll</HintPath>
         </Reference>
         <Reference Include="System.Diagnostics.StackTrace">
             <HintPath>$(DSPAssemblyPath)System.Diagnostics.StackTrace.dll</HintPath>
@@ -193,11 +193,14 @@
         <EmbeddedResource Include="data\tutorials.json"/>
     </ItemGroup>
     <ItemGroup>
-        <Content Include="CHANGELOG.md"/>
-        <Content Include="DefaultPath.props"/>
+        <Content Include="assets\genesis-models"/>
+        <Content Include="assets\icon.png"/>
+        <Content Include="assets\texpack"/>
         <Content Include="lib\Assembly-CSharp-publicized.dll"/>
-        <Content Include="lib\GalacticScale-nstrip.dll"/>
+        <Content Include="lib\GalacticScale-publicized.dll"/>
         <Content Include="lib\Newtonsoft.Json.dll"/>
+        <Content Include="DefaultPath.props"/>
+        <Content Include="CHANGELOG.md"/>
         <Content Include="README.md"/>
     </ItemGroup>
     <ItemGroup>
@@ -214,15 +217,15 @@
     <Target Name="AfterBuild">
         <MakeDir Directories="$(ReleasePath)"/>
         <MakeDir Directories="$(ReleasePath)plugins/"/>
-        <Copy SourceFiles="$(TargetPath)" DestinationFiles="$(PluginsOutputPath)$(TargetName).dll"/>
-        <Copy SourceFiles="$(SolutionDir)\assets\texpack" DestinationFiles="$(PluginsOutputPath)texpack"/>
-        <Copy SourceFiles="$(SolutionDir)\assets\genesis-models" DestinationFiles="$(PluginsOutputPath)genesis-models"/>
-        <Copy SourceFiles="$(TargetPath)" DestinationFiles="$(ReleasePath)plugins/$(TargetName).dll"/>
+        <Copy SourceFiles="$(TargetPath)" DestinationFiles="$(BepinExPath)plugins\$(DebugModDir)\$(TargetName).dll"/>
+        <Copy SourceFiles="$(SolutionDir)\assets\texpack" DestinationFiles="$(BepinExPath)plugins\$(DebugModDir)\texpack"/>
+        <Copy SourceFiles="$(SolutionDir)\assets\genesis-models" DestinationFiles="$(BepinExPath)plugins\$(DebugModDir)\genesis-models"/>
+        <Copy SourceFiles="$(TargetPath)" DestinationFiles="$(ReleasePath)plugins\$(TargetName).dll"/>
         <Copy SourceFiles="README.md" DestinationFiles="$(ReleasePath)README.md"/>
         <Copy SourceFiles="CHANGELOG.md" DestinationFiles="$(ReleasePath)CHANGELOG.md"/>
         <Copy SourceFiles="$(SolutionDir)\assets\icon.png" DestinationFiles="$(ReleasePath)icon.png"/>
-        <Copy SourceFiles="$(SolutionDir)\assets\texpack" DestinationFiles="$(ReleasePath)plugins/texpack"/>
-        <Copy SourceFiles="$(SolutionDir)\assets\genesis-models" DestinationFiles="$(ReleasePath)plugins/genesis-models"/>
-        <Copy SourceFiles="$(SolutionDir)\lib\Newtonsoft.Json.dll" DestinationFiles="$(ReleasePath)plugins/Newtonsoft.Json.dll"/>
+        <Copy SourceFiles="$(SolutionDir)\assets\texpack" DestinationFiles="$(ReleasePath)plugins\texpack"/>
+        <Copy SourceFiles="$(SolutionDir)\assets\genesis-models" DestinationFiles="$(ReleasePath)plugins\genesis-models"/>
+        <Copy SourceFiles="$(SolutionDir)\lib\Newtonsoft.Json.dll" DestinationFiles="$(ReleasePath)plugins\Newtonsoft.Json.dll"/>
     </Target>
 </Project>

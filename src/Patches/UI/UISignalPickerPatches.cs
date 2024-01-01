@@ -17,7 +17,7 @@ namespace ProjectGenesis.Patches.UI
 
         private static readonly FieldInfo currentTypeField = AccessTools.Field(typeof(UISignalPicker), "currentType");
 
-        [HarmonyPatch(typeof(UISignalPicker), "_OnCreate")]
+        [HarmonyPatch(typeof(UISignalPicker), nameof(UISignalPicker._OnCreate))]
         [HarmonyPostfix]
         public static void Create(UISignalPicker __instance)
         {
@@ -43,20 +43,20 @@ namespace ProjectGenesis.Patches.UI
             __instance.typeButton5.gameObject.SetActive(false);
         }
 
-        [HarmonyPatch(typeof(UISignalPicker), "OnTypeButtonClick")]
+        [HarmonyPatch(typeof(UISignalPicker), nameof(UISignalPicker.OnTypeButtonClick))]
         [HarmonyPostfix]
         public static void OnTypeClicked(int type)
         {
             foreach (UITabButton tab in _tabs) tab.TabSelected(type);
         }
 
-        [HarmonyPatch(typeof(UIShowSignalTipExtension), "OnUpdate")]
+        [HarmonyPatch(typeof(UIShowSignalTipExtension), nameof(UIShowSignalTipExtension.OnUpdate))]
         [HarmonyPriority(Priority.VeryHigh)]
         [HarmonyPrefix]
         public static bool UIShowSignalTipExtension_OnUpdate(UISignalPicker picker)
             => picker.hoveredIndex >= 0 && picker.hoveredIndex < picker.signalArray.Length;
 
-        [HarmonyPatch(typeof(UISignalPicker), "_OnUpdate")]
+        [HarmonyPatch(typeof(UISignalPicker), nameof(UISignalPicker._OnUpdate))]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> UISignalPicker_OnUpdate_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
@@ -72,9 +72,9 @@ namespace ProjectGenesis.Patches.UI
             return matcher.InstructionEnumeration();
         }
 
-        [HarmonyPatch(typeof(UISignalPicker), "_OnUpdate")]
-        [HarmonyPatch(typeof(UISignalPicker), "RefreshIcons")]
-        [HarmonyPatch(typeof(UISignalPicker), "TestMouseIndex")]
+        [HarmonyPatch(typeof(UISignalPicker), nameof(UISignalPicker._OnUpdate))]
+        [HarmonyPatch(typeof(UISignalPicker), nameof(UISignalPicker.RefreshIcons))]
+        [HarmonyPatch(typeof(UISignalPicker), nameof(UISignalPicker.TestMouseIndex))]
         [HarmonyTranspiler]
         [HarmonyPriority(Priority.Last)]
         public static IEnumerable<CodeInstruction> UISignalPicker_Transpiler(IEnumerable<CodeInstruction> instructions)
@@ -92,7 +92,7 @@ namespace ProjectGenesis.Patches.UI
             }
         }
         
-        [HarmonyPatch(typeof(UIShowSignalTipExtension), "OnUpdate")]
+        [HarmonyPatch(typeof(UIShowSignalTipExtension), nameof(UIShowSignalTipExtension.OnUpdate))]
         [HarmonyTranspiler]
         [HarmonyPriority(Priority.Last)]
         public static IEnumerable<CodeInstruction> UIShowSignalTipExtension_Transpiler(IEnumerable<CodeInstruction> instructions)
@@ -105,7 +105,7 @@ namespace ProjectGenesis.Patches.UI
             }
         }
 
-        [HarmonyPatch(typeof(UISignalPicker), "SetMaterialProps")]
+        [HarmonyPatch(typeof(UISignalPicker), nameof(UISignalPicker.SetMaterialProps))]
         [HarmonyTranspiler]
         [HarmonyPriority(Priority.Last)]
         public static IEnumerable<CodeInstruction> UISignalPicker_SetMaterialProps_Transpiler(IEnumerable<CodeInstruction> instructions)
@@ -123,7 +123,7 @@ namespace ProjectGenesis.Patches.UI
             }
         }
 
-        [HarmonyPatch(typeof(UISignalPicker), "RefreshIcons")]
+        [HarmonyPatch(typeof(UISignalPicker), nameof(UISignalPicker.RefreshIcons))]
         [HarmonyPostfix]
         public static void RefreshIcons(
             UISignalPicker __instance,

@@ -6,7 +6,7 @@ namespace ProjectGenesis.Patches.Logic.PlanetFocus
 {
     public static partial class PlanetFocusPatches
     {
-        [HarmonyPatch(typeof(FactorySystem), "GameTickLabResearchMode")]
+        [HarmonyPatch(typeof(FactorySystem), nameof(FactorySystem.GameTickLabResearchMode))]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> EnergyCap_Wind_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
@@ -27,7 +27,7 @@ namespace ProjectGenesis.Patches.Logic.PlanetFocus
             return exist ? techSpeed * 1.1f : techSpeed;
         }
 
-        [HarmonyPatch(typeof(UILabWindow), "_OnUpdate")]
+        [HarmonyPatch(typeof(UILabWindow), nameof(UILabWindow._OnUpdate))]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> UILabWindow_OnUpdate_Transpiler(IEnumerable<CodeInstruction> instructions)
         {

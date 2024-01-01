@@ -8,7 +8,7 @@ namespace ProjectGenesis.Patches.Logic.PlanetFocus
 {
     public static partial class PlanetFocusPatches
     {
-        [HarmonyPatch(typeof(MinerComponent), "InternalUpdate")]
+        [HarmonyPatch(typeof(MinerComponent), nameof(MinerComponent.InternalUpdate))]
         [HarmonyPriority(Priority.VeryHigh)]
         [HarmonyPrefix]
         public static void MinerComponent_InternalUpdate_PreFix(PlanetFactory factory, ref float miningSpeed)
@@ -16,7 +16,7 @@ namespace ProjectGenesis.Patches.Logic.PlanetFocus
             if (ContainsFocus(factory.planetId, 6528)) miningSpeed *= 1.25f;
         }
 
-        [HarmonyPatch(typeof(UIMinerWindow), "_OnUpdate")]
+        [HarmonyPatch(typeof(UIMinerWindow), nameof(UIMinerWindow._OnUpdate))]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> UIMinerWindow_OnUpdate_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
@@ -45,7 +45,7 @@ namespace ProjectGenesis.Patches.Logic.PlanetFocus
             return exist ? scale * 1.25f : scale;
         }
 
-        [HarmonyPatch(typeof(StationComponent), "UpdateCollection")]
+        [HarmonyPatch(typeof(StationComponent), nameof(StationComponent.UpdateCollection))]
         [HarmonyPriority(Priority.VeryHigh)]
         [HarmonyPrefix]
         public static void StationComponent_UpdateCollection_Prefix(
@@ -61,7 +61,7 @@ namespace ProjectGenesis.Patches.Logic.PlanetFocus
             }
         }
 
-        [HarmonyPatch(typeof(UIStationStorage), "RefreshValues")]
+        [HarmonyPatch(typeof(UIStationStorage), nameof(UIStationStorage.RefreshValues))]
         [HarmonyPostfix]
         public static void UIStationStorage_RefreshValues_Postfix(UIStationStorage __instance)
         {
@@ -74,7 +74,7 @@ namespace ProjectGenesis.Patches.Logic.PlanetFocus
             }
         }
 
-        [HarmonyPatch(typeof(UIVeinCollectorPanel), "_OnUpdate")]
+        [HarmonyPatch(typeof(UIVeinCollectorPanel), nameof(UIVeinCollectorPanel._OnUpdate))]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> UIVeinCollectorPanel_OnUpdate_Transpiler(IEnumerable<CodeInstruction> instructions)
         {

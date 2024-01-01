@@ -13,7 +13,7 @@ namespace ProjectGenesis.Patches.Logic
         private static readonly FieldInfo AssemblerComponent_RecipeType_FieldInfo
             = AccessTools.Field(typeof(AssemblerComponent), nameof(AssemblerComponent.recipeType));
 
-        [HarmonyPatch(typeof(AssemblerComponent), "InternalUpdate")]
+        [HarmonyPatch(typeof(AssemblerComponent), nameof(AssemblerComponent.InternalUpdate))]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> AssemblerComponent_InternalUpdate_Transpiler(
             IEnumerable<CodeInstruction> instructions,

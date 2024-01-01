@@ -9,8 +9,8 @@ namespace ProjectGenesis.Patches.Logic.PlanetFocus
     {
         private static readonly ConcurrentDictionary<short, long> ModelPowerCosts = new ConcurrentDictionary<short, long>();
 
-        [HarmonyPatch(typeof(FactorySystem), "GameTickBeforePower")]
-        [HarmonyPatch(typeof(FactorySystem), "ParallelGameTickBeforePower")]
+        [HarmonyPatch(typeof(FactorySystem), nameof(FactorySystem.GameTickBeforePower))]
+        [HarmonyPatch(typeof(FactorySystem), nameof(FactorySystem.ParallelGameTickBeforePower))]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> FactorySystem_GameTickBeforePower_Transpiler(IEnumerable<CodeInstruction> instructions)
         {

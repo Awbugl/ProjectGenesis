@@ -82,7 +82,7 @@ namespace ProjectGenesis.Patches.Logic
 
         public static bool BuildTool_Addon_PatchMethod(PrefabDesc desc) => desc.isStorage && desc.storageRow != 9;
 
-        [HarmonyPatch(typeof(StorageComponent), "SetEmpty")]
+        [HarmonyPatch(typeof(StorageComponent), nameof(StorageComponent.SetEmpty))]
         [HarmonyPriority(Priority.VeryHigh)]
         [HarmonyPrefix]
         public static bool StorageComponent_SetEmpty(StorageComponent __instance) => __instance.size != QuantumStorageSize;
@@ -126,7 +126,7 @@ namespace ProjectGenesis.Patches.Logic
             return false;
         }
 
-        [HarmonyPatch(typeof(FactoryStorage), "TryTakeBackItems_Storage")]
+        [HarmonyPatch(typeof(FactoryStorage), nameof(FactoryStorage.TryTakeBackItems_Storage))]
         [HarmonyPostfix]
         public static void FactoryStorage_TryTakeBackItems_Storage(FactoryStorage __instance, int storageId, ref bool __result)
         {
@@ -163,13 +163,13 @@ namespace ProjectGenesis.Patches.Logic
         public static Mutex PlanetFactory_Mutexs_PatchMethod(Mutex mutex, StorageComponent component)
             => component.size != QuantumStorageSize ? mutex : QuantumStorageMutex;
 
-        [HarmonyPatch(typeof(UIStorageWindow), "_OnUpdate")]
-        [HarmonyPatch(typeof(UIStorageWindow), "OnStorageIdChange")]
-        [HarmonyPatch(typeof(UIStorageWindow), "OnSortClick")]
-        [HarmonyPatch(typeof(UIStorageWindow), "OnBansSliderValueChange")]
-        [HarmonyPatch(typeof(UIStorageWindow), "OnFilterItemPickerReturn")]
-        [HarmonyPatch(typeof(UIStorageWindow), "OnFilterButton2Click")]
-        [HarmonyPatch(typeof(UIStorageWindow), "OnFilterButton3Click")]
+        [HarmonyPatch(typeof(UIStorageWindow), nameof(UIStorageWindow._OnUpdate))]
+        [HarmonyPatch(typeof(UIStorageWindow), nameof(UIStorageWindow.OnStorageIdChange))]
+        [HarmonyPatch(typeof(UIStorageWindow), nameof(UIStorageWindow.OnSortClick))]
+        [HarmonyPatch(typeof(UIStorageWindow), nameof(UIStorageWindow.OnBansSliderValueChange))]
+        [HarmonyPatch(typeof(UIStorageWindow), nameof(UIStorageWindow.OnFilterItemPickerReturn))]
+        [HarmonyPatch(typeof(UIStorageWindow), nameof(UIStorageWindow.OnFilterButton2Click))]
+        [HarmonyPatch(typeof(UIStorageWindow), nameof(UIStorageWindow.OnFilterButton3Click))]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> UIStorageWindow_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
@@ -192,7 +192,7 @@ namespace ProjectGenesis.Patches.Logic
 
         public static bool PatchMethod(StorageComponent component) => component.size == QuantumStorageSize;
 
-        [HarmonyPatch(typeof(UIStorageWindow), "OnStorageIdChange")]
+        [HarmonyPatch(typeof(UIStorageWindow), nameof(UIStorageWindow.OnStorageIdChange))]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> UIStorageWindow_OnStorageIdChange_Transpiler(
             IEnumerable<CodeInstruction> instructions,

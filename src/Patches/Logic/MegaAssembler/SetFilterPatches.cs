@@ -38,7 +38,7 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
         private static int LastSlotId;
         private static int LastSelectedIndex;
 
-        [HarmonyPatch(typeof(UIBeltBuildTip), "SetOutputEntity")]
+        [HarmonyPatch(typeof(UIBeltBuildTip), nameof(UIBeltBuildTip.SetOutputEntity))]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> UIBeltBuildTip_SetOutputEntity_Transpiler(
             IEnumerable<CodeInstruction> instructions,
@@ -63,7 +63,7 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
             return matcher.InstructionEnumeration();
         }
 
-        [HarmonyPatch(typeof(UISlotPicker), "SetOutputEntity")]
+        [HarmonyPatch(typeof(UISlotPicker), nameof(UISlotPicker.SetOutputEntity))]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> UISlotPicker_SetOutputEntity_Transpiler(
             IEnumerable<CodeInstruction> instructions,
@@ -119,7 +119,7 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
             return -1;
         }
 
-        [HarmonyPatch(typeof(UIBeltBuildTip), "SetFilterToEntity")]
+        [HarmonyPatch(typeof(UIBeltBuildTip), nameof(UIBeltBuildTip.SetFilterToEntity))]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> UIBeltBuildTip_SetFilterToEntity_Transpiler(
             IEnumerable<CodeInstruction> instructions,
@@ -146,7 +146,7 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
             return matcher.InstructionEnumeration();
         }
 
-        [HarmonyPatch(typeof(UISlotPicker), "SetFilterToEntity")]
+        [HarmonyPatch(typeof(UISlotPicker), nameof(UISlotPicker.SetFilterToEntity))]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> UISlotPicker_SetFilterToEntity_Transpiler(
             IEnumerable<CodeInstruction> instructions,
