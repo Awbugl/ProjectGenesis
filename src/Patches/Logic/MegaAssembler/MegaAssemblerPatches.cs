@@ -440,7 +440,7 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
         [HarmonyPostfix]
         public static void PlanetFactory_Import(ref PlanetFactory __instance)
         {
-            foreach (((int planetId, int entityId), SlotData[] datas) in _slotdata)
+            foreach (((int planetId, int entityId), SlotData[] datas) in Slotdata)
             {
                 if (planetId != __instance.planetId) continue;
 

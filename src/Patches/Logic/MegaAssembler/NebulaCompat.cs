@@ -8,15 +8,15 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
 {
     internal static partial class MegaAssemblerPatches
     {
-        private static ConcurrentDictionary<(int, int), SlotData[]> _slotdata = new ConcurrentDictionary<(int, int), SlotData[]>();
+        private static readonly ConcurrentDictionary<(int, int), SlotData[]> Slotdata = new ConcurrentDictionary<(int, int), SlotData[]>();
 
-        internal static void SyncSlots((int, int) id, SlotData[] slotDatas) => _slotdata[id] = slotDatas;
+        internal static void SyncSlots((int, int) id, SlotData[] slotDatas) => Slotdata[id] = slotDatas;
 
         internal static void SyncSlot((int, int) id, int slotId, SlotData slotData)
         {
-            lock (_slotdata)
+            lock (Slotdata)
             {
-                if (_slotdata.TryGetValue(id, out SlotData[] slotDatas))
+                if (Slotdata.TryGetValue(id, out SlotData[] slotDatas))
                 {
                     slotDatas[slotId] = slotData;
                 }
@@ -24,7 +24,7 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
                 {
                     slotDatas = new SlotData[12];
                     slotDatas[slotId] = slotData;
-                    _slotdata[id] = slotDatas;
+                    Slotdata[id] = slotDatas;
                 }
             }
         }
@@ -33,22 +33,22 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
         {
             (int planetId, int entityId) id = (planetId, entityId);
 
-            if (!_slotdata.ContainsKey(id) || _slotdata[id] == null) _slotdata[id] = new SlotData[12];
+            if (!Slotdata.ContainsKey(id) || Slotdata[id] == null) Slotdata[id] = new SlotData[12];
 
-            return _slotdata[id];
+            return Slotdata[id];
         }
 
         private static void SetEmpty(int planetId, int entityId)
         {
             (int planetId, int entityId) id = (planetId, entityId);
-            if (!_slotdata.ContainsKey(id)) return;
-            _slotdata[id] = new SlotData[12];
-            SyncSlotsData.Sync(planetId, entityId, _slotdata[id]);
+            if (!Slotdata.ContainsKey(id)) return;
+            Slotdata[id] = new SlotData[12];
+            SyncSlotsData.Sync(planetId, entityId, Slotdata[id]);
         }
 
         public static void ExportPlanetData(int planetId, BinaryWriter w)
         {
-            KeyValuePair<(int, int), SlotData[]>[] datas = _slotdata.Where(pair => pair.Key.Item1 == planetId).ToArray();
+            KeyValuePair<(int, int), SlotData[]>[] datas = Slotdata.Where(pair => pair.Key.Item1 == planetId).ToArray();
 
             w.Write(datas.Length);
             w.Write(planetId);
@@ -99,7 +99,7 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
                     }
                 }
 
-                _slotdata[(planetId, entityId)] = datas;
+                Slotdata[(planetId, entityId)] = datas;
             }
         }
     }

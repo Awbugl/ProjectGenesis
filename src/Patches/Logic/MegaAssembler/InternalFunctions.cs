@@ -1,5 +1,4 @@
-﻿using System.Collections.Concurrent;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 
 namespace ProjectGenesis.Patches.Logic.MegaAssembler
@@ -8,11 +7,11 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
     {
         internal static void Export(BinaryWriter w)
         {
-            lock (_slotdata)
+            lock (Slotdata)
             {
-                w.Write(_slotdata.Count);
+                w.Write(Slotdata.Count);
 
-                foreach (KeyValuePair<(int, int), SlotData[]> pair in _slotdata)
+                foreach (KeyValuePair<(int, int), SlotData[]> pair in Slotdata)
                 {
                     w.Write(pair.Key.Item1);
                     w.Write(pair.Key.Item2);
@@ -49,13 +48,13 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
                     };
                 }
 
-                _slotdata.TryAdd((planetId, entityId), datas);
+                Slotdata.TryAdd((planetId, entityId), datas);
             }
         }
 
         internal static void IntoOtherSave() => ReInitAll();
 
-        private static void ReInitAll() => _slotdata = new ConcurrentDictionary<(int, int), SlotData[]>();
+        private static void ReInitAll() => Slotdata.Clear();
 
         internal static bool ContainsRecipeTypeRevert(ERecipeType recipetype, ERecipeType filter) => ContainsRecipeType(filter, recipetype);
 

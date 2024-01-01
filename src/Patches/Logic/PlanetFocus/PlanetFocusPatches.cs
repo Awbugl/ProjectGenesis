@@ -11,7 +11,7 @@ namespace ProjectGenesis.Patches.Logic.PlanetFocus
     {
         internal const int FocusMaxCount = 2;
 
-        private static ConcurrentDictionary<int, int[]> _planetFocuses = new ConcurrentDictionary<int, int[]>();
+        private static readonly ConcurrentDictionary<int, int[]> PlanetFocuses = new ConcurrentDictionary<int, int[]>();
 
         internal static readonly Dictionary<int, string> FocusIds = new Dictionary<int, string>
         {
@@ -32,28 +32,28 @@ namespace ProjectGenesis.Patches.Logic.PlanetFocus
 
         internal static void SetPlanetFocus(int planetId, int index, int focusid)
         {
-            if (!_planetFocuses.ContainsKey(planetId)) _planetFocuses[planetId] = new int[FocusMaxCount];
-            _planetFocuses[planetId][index] = focusid;
+            if (!PlanetFocuses.ContainsKey(planetId)) PlanetFocuses[planetId] = new int[FocusMaxCount];
+            PlanetFocuses[planetId][index] = focusid;
             SyncPlanetFocusData.Sync(planetId, index, focusid);
         }
 
         internal static void SyncPlanetFocus(int planetId, int index, int focusid)
         {
-            if (!_planetFocuses.ContainsKey(planetId)) _planetFocuses[planetId] = new int[FocusMaxCount];
-            _planetFocuses[planetId][index] = focusid;
+            if (!PlanetFocuses.ContainsKey(planetId)) PlanetFocuses[planetId] = new int[FocusMaxCount];
+            PlanetFocuses[planetId][index] = focusid;
         }
 
         internal static int[] GetPlanetFocus(int planetId)
         {
-            if (!_planetFocuses.ContainsKey(planetId)) _planetFocuses[planetId] = new int[FocusMaxCount];
-            return _planetFocuses[planetId];
+            if (!PlanetFocuses.ContainsKey(planetId)) PlanetFocuses[planetId] = new int[FocusMaxCount];
+            return PlanetFocuses[planetId];
         }
 
         public static void ExportPlanetFocus(int planetId, BinaryWriter w)
         {
-            if (!_planetFocuses.ContainsKey(planetId)) _planetFocuses[planetId] = new int[FocusMaxCount];
+            if (!PlanetFocuses.ContainsKey(planetId)) PlanetFocuses[planetId] = new int[FocusMaxCount];
 
-            int[] datas = _planetFocuses[planetId];
+            int[] datas = PlanetFocuses[planetId];
 
             w.Write(datas.Length);
             w.Write(planetId);
@@ -71,7 +71,7 @@ namespace ProjectGenesis.Patches.Logic.PlanetFocus
                 arr[j] = r.ReadInt32();
             }
 
-            _planetFocuses[planetId] = arr;
+            PlanetFocuses[planetId] = arr;
         }
     }
 }

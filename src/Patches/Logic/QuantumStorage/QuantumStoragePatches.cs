@@ -98,10 +98,10 @@ namespace ProjectGenesis.Patches.Logic
             if (size != QuantumStorageSize) return;
             int storageId = __result.id;
 
-            __instance.storagePool[storageId] = _component;
-            __result = _component;
+            __instance.storagePool[storageId] = Component;
+            __result = Component;
 
-            _quantumStorageIds.TryAddOrInsert(__instance.planet.id, storageId);
+            QuantumStorageIds.TryAddOrInsert(__instance.planet.id, storageId);
             SyncNewQuantumStorageData.Sync(__instance.planet.id, storageId);
         }
 
@@ -116,7 +116,7 @@ namespace ProjectGenesis.Patches.Logic
 
             if (storageComponent.size != QuantumStorageSize) return true;
 
-            _quantumStorageIds.TryRemove(__instance.planet.id, id);
+            QuantumStorageIds.TryRemove(__instance.planet.id, id);
 
             __instance.storagePool[id] = new StorageComponent(30);
             __instance.storagePool[id].SetEmpty();

@@ -9,29 +9,31 @@ namespace ProjectGenesis.Patches.Logic
     {
         private const int QuantumStorageSize = 90;
 
-        private static StorageComponent _component;
+        private static readonly StorageComponent Component;
 
-        private static ConcurrentDictionary<int, List<int>> _quantumStorageIds;
+        private static readonly ConcurrentDictionary<int, List<int>> QuantumStorageIds;
 
         static QuantumStoragePatches()
         {
-            ReInitAll();
+            QuantumStorageIds = new ConcurrentDictionary<int, List<int>>();
+            Component = new StorageComponent(QuantumStorageSize);
+            Component.CutNext();
         }
 
         internal static void SyncNewQuantumStorage(int planetId, int storageid)
         {
-            _quantumStorageIds.TryAddOrInsert(planetId, storageid);
+            QuantumStorageIds.TryAddOrInsert(planetId, storageid);
             PlanetData planet = GameMain.galaxy.PlanetById(planetId);
             FactoryStorage factoryStorage = GameMain.data.GetOrCreateFactory(planet).factoryStorage;
-            factoryStorage.storagePool[storageid] = _component;
+            factoryStorage.storagePool[storageid] = Component;
         }
 
-        internal static void SyncRemoveQuantumStorage(int planetId, int storageid) => _quantumStorageIds.TryRemove(planetId, storageid);
+        internal static void SyncRemoveQuantumStorage(int planetId, int storageid) => QuantumStorageIds.TryRemove(planetId, storageid);
 
         internal static void ExportPlanetQuantumStorage(int planetId, BinaryWriter w)
         {
-            if (!_quantumStorageIds.ContainsKey(planetId)) _quantumStorageIds[planetId] = new List<int>();
-            List<int> datas = _quantumStorageIds[planetId];
+            if (!QuantumStorageIds.ContainsKey(planetId)) QuantumStorageIds[planetId] = new List<int>();
+            List<int> datas = QuantumStorageIds[planetId];
             w.Write(datas.Count);
             w.Write(planetId);
             foreach (int id in datas) w.Write(id);
@@ -48,23 +50,23 @@ namespace ProjectGenesis.Patches.Logic
                 arr[j] = r.ReadInt32();
             }
 
-            _quantumStorageIds[planetId] = new List<int>(arr);
+            QuantumStorageIds[planetId] = new List<int>(arr);
         }
 
         public static bool Import_PatchMethod(FactoryStorage storage, int index)
         {
-            bool b = _quantumStorageIds.Contains(storage.planet.id, index);
-            if (b) storage.storagePool[index] = _component;
+            bool b = QuantumStorageIds.Contains(storage.planet.id, index);
+            if (b) storage.storagePool[index] = Component;
             return b;
         }
 
         internal static void Export(BinaryWriter w)
         {
-            lock (_quantumStorageIds)
+            lock (QuantumStorageIds)
             {
-                w.Write(_quantumStorageIds.Count);
+                w.Write(QuantumStorageIds.Count);
 
-                foreach (KeyValuePair<int, List<int>> pair in _quantumStorageIds)
+                foreach (KeyValuePair<int, List<int>> pair in QuantumStorageIds)
                 {
                     w.Write(pair.Key);
                     w.Write(pair.Value.Count);
@@ -72,9 +74,9 @@ namespace ProjectGenesis.Patches.Logic
                 }
             }
 
-            lock (_component)
+            lock (Component)
             {
-                _component.Export(w);
+                Component.Export(w);
             }
         }
 
@@ -96,10 +98,10 @@ namespace ProjectGenesis.Patches.Logic
                         datas.Add(r.ReadInt32());
                     }
 
-                    _quantumStorageIds.TryAdd(key, datas);
+                    QuantumStorageIds.TryAdd(key, datas);
                 }
 
-                _component.Import(r);
+                Component.Import(r);
             }
             catch (EndOfStreamException)
             {
@@ -111,9 +113,9 @@ namespace ProjectGenesis.Patches.Logic
 
         private static void ReInitAll()
         {
-            _quantumStorageIds = new ConcurrentDictionary<int, List<int>>();
-            _component = new StorageComponent(QuantumStorageSize);
-            _component.CutNext();
+            QuantumStorageIds.Clear();
+            Component.SetEmpty();
+            Component.CutNext();
         }
     }
 }
