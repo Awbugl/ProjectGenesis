@@ -99,7 +99,7 @@ namespace ProjectGenesis.Compatibility
         public static IEnumerable<CodeInstruction> SetPlanetTheme_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
             CodeMatcher matcher = new CodeMatcher(instructions).MatchForward(
-                false, new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(PlanetData), "type")), new CodeMatch(OpCodes.Ldc_I4_5));
+                false, new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(PlanetData), nameof(PlanetData.type))), new CodeMatch(OpCodes.Ldc_I4_5));
             matcher.Advance(-1);
             matcher.SetAndAdvance(OpCodes.Nop, null);
             matcher.SetAndAdvance(OpCodes.Nop, null);
@@ -331,15 +331,16 @@ namespace ProjectGenesis.Compatibility
             var matcher = new CodeMatcher(instructions);
 
             matcher.MatchForward(false, new CodeMatch(OpCodes.Ldstr, "实际采集速度"))
-                   .MatchForward(true, new CodeMatch(OpCodes.Nop), new CodeMatch(OpCodes.Br))
-                   .SetInstruction(new CodeInstruction(OpCodes.Nop));
+                   .MatchForward(true, new CodeMatch(OpCodes.Nop), new CodeMatch(OpCodes.Br)).SetInstruction(new CodeInstruction(OpCodes.Nop));
 
-            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(StationComponent), "collectionPerTick")));
+            matcher.MatchForward(
+                false, new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(StationComponent), nameof(StationComponent.collectionPerTick))));
 
             CodeInstruction stationComponent = matcher.Advance(-1).Instruction;
 
             matcher.Advance(-1).InsertAndAdvance(new CodeInstruction(stationComponent), new CodeInstruction(OpCodes.Ldarg_0),
-                                                 new CodeInstruction(OpCodes.Ldfld, AccessTools.Field(typeof(UIPlanetDetail), "_planet")),
+                                                 new CodeInstruction(
+                                                     OpCodes.Ldfld, AccessTools.Field(typeof(UIPlanetDetail), nameof(UIPlanetDetail._planet))),
                                                  new CodeInstruction(
                                                      OpCodes.Call,
                                                      AccessTools.Method(typeof(PlanetGasPatches), nameof(PlanetGasPatches.GetGasCollectionPerTick))));

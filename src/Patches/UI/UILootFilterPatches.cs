@@ -8,6 +8,7 @@ using UnityEngine;
 using Object = UnityEngine.Object;
 
 // ReSharper disable InconsistentNaming
+// ReSharper disable LoopCanBePartlyConvertedToQuery
 
 namespace ProjectGenesis.Patches.UI
 {
@@ -15,7 +16,7 @@ namespace ProjectGenesis.Patches.UI
     {
         private static List<UITabButton> _tabs;
 
-        private static readonly FieldInfo currentTypeField = AccessTools.Field(typeof(UILootFilter), "currentType");
+        private static readonly FieldInfo currentTypeField = AccessTools.Field(typeof(UILootFilter), nameof(UILootFilter.currentType));
 
         [HarmonyPatch(typeof(UILootFilter), nameof(UILootFilter._OnCreate))]
         [HarmonyPostfix]
@@ -23,21 +24,23 @@ namespace ProjectGenesis.Patches.UI
         {
             TabData[] allTabs = TabSystem.GetAllTabs();
             _tabs = new List<UITabButton>();
+            int index = 1;
+
             foreach (TabData tabData in allTabs)
             {
-                if (tabData != null)
-                {
-                    GameObject gameObject = Object.Instantiate(TabSystem.GetTabPrefab(), __instance.filterTrans, false);
-                    ((RectTransform)gameObject.transform).anchoredPosition = new Vector2((tabData.tabIndex - 1) * 70 - 54, -72f);
-                    var component = gameObject.GetComponent<UITabButton>();
-                    var newIcon = Resources.Load<Sprite>(tabData.tabIconPath);
-                    component.Init(newIcon, tabData.tabName, tabData.tabIndex - 1,
-                                   i => AccessTools.Method(typeof(UILootFilter), "OnTypeButtonClick").Invoke(__instance, new object[] { i }));
-                    _tabs.Add(component);
-                }
+                if (tabData == null) continue;
+
+                index = tabData.tabIndex - 1;
+                GameObject gameObject = Object.Instantiate(TabSystem.GetTabPrefab(), __instance.filterTrans, false);
+
+                ((RectTransform)gameObject.transform).anchoredPosition = new Vector2(index * 70 - 54, -72f);
+                var component = gameObject.GetComponent<UITabButton>();
+                var newIcon = Resources.Load<Sprite>(tabData.tabIconPath);
+                component.Init(newIcon, tabData.tabName, index, __instance.OnTypeButtonClick);
+                _tabs.Add(component);
             }
 
-            __instance.typeButton2.transform.localPosition = new Vector3(296, -40, 0);
+            __instance.typeButton2.transform.localPosition = new Vector3((index + 1) * 70 - 54, -40, 0);
         }
 
         [HarmonyPatch(typeof(UILootFilter), nameof(UILootFilter.OnTypeButtonClick))]

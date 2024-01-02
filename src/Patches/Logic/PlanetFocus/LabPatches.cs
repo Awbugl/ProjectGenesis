@@ -38,7 +38,8 @@ namespace ProjectGenesis.Patches.Logic.PlanetFocus
                                  new CodeMatch(OpCodes.Conv_R4));
 
             matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0),
-                                                new CodeInstruction(OpCodes.Ldfld, AccessTools.Field(typeof(UILabWindow), "factory")));
+                                                new CodeInstruction(
+                                                    OpCodes.Ldfld, AccessTools.Field(typeof(UILabWindow), nameof(UILabWindow.factory))));
 
             matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(PlanetFocusPatches), nameof(LabTechSpeed))));
 

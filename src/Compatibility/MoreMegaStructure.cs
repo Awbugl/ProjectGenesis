@@ -35,12 +35,10 @@ namespace ProjectGenesis.Compatibility
             if (pluginInfo == null) return;
 
             var harmonyMethod
-                = new HarmonyMethod(typeof(MoreMegaStructure), nameof(LDBToolOnPostAddDataAction))
-                {
-                    after = new[] { LDBToolPlugin.MODGUID }
-                };
+                = new HarmonyMethod(typeof(MoreMegaStructure), nameof(LDBToolOnPostAddDataAction)) { after = new[] { LDBToolPlugin.MODGUID } };
 
-            new Harmony("org.LoShin.GenesisBook.Compatibility.MoreMegaStructure").Patch(AccessTools.Method(typeof(VFPreload), "InvokeOnLoadWorkEnded"), null, harmonyMethod);
+            new Harmony("org.LoShin.GenesisBook.Compatibility.MoreMegaStructure").Patch(
+                AccessTools.Method(typeof(VFPreload), nameof(VFPreload.InvokeOnLoadWorkEnded)), null, harmonyMethod);
         }
 
         public static void LDBToolOnPostAddDataAction()
@@ -97,7 +95,7 @@ namespace ProjectGenesis.Compatibility
                 if (itemProto.ID == 9500)
                 {
                     itemProto.recipes = null;
-                    AccessTools.Method(typeof(ItemProto), "FindRecipes").Invoke(itemProto, null);
+                    itemProto.FindRecipes();
                     itemProto.isRaw = true;
                 }
             }

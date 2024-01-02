@@ -11,8 +11,9 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
 {
     internal static partial class MegaAssemblerPatches
     {
-        private static readonly FieldInfo UIBeltBuildTip_FilterItems_Field = AccessTools.Field(typeof(UIBeltBuildTip), "filterItems"),
-                                          UISlotPicker_FilterItems_Field = AccessTools.Field(typeof(UISlotPicker), "filterItems"),
+        private static readonly FieldInfo UIBeltBuildTip_FilterItems_Field
+                                              = AccessTools.Field(typeof(UIBeltBuildTip), nameof(UIBeltBuildTip.filterItems)),
+                                          UISlotPicker_FilterItems_Field = AccessTools.Field(typeof(UISlotPicker), nameof(UISlotPicker.filterItems)),
                                           UIBeltBuildTip_SelectedIndex_Field
                                               = AccessTools.Field(typeof(UIBeltBuildTip), nameof(UIBeltBuildTip.selectedIndex)),
                                           UISlotPicker_SelectedIndex_Field

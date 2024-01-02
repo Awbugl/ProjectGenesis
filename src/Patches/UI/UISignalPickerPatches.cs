@@ -15,7 +15,7 @@ namespace ProjectGenesis.Patches.UI
     {
         private static List<UITabButton> _tabs;
 
-        private static readonly FieldInfo currentTypeField = AccessTools.Field(typeof(UISignalPicker), "currentType");
+        private static readonly FieldInfo currentTypeField = AccessTools.Field(typeof(UISignalPicker), nameof(UISignalPicker.currentType));
 
         [HarmonyPatch(typeof(UISignalPicker), nameof(UISignalPicker._OnCreate))]
         [HarmonyPostfix]
@@ -25,16 +25,14 @@ namespace ProjectGenesis.Patches.UI
             _tabs = new List<UITabButton>();
             foreach (TabData tabData in allTabs)
             {
-                if (tabData != null)
-                {
-                    GameObject gameObject = Object.Instantiate(TabSystem.GetTabPrefab(), __instance.pickerTrans, false);
-                    ((RectTransform)gameObject.transform).anchoredPosition = new Vector2((tabData.tabIndex + 4) * 70 - 54, -75f);
-                    var component = gameObject.GetComponent<UITabButton>();
-                    var newIcon = Resources.Load<Sprite>(tabData.tabIconPath);
-                    component.Init(newIcon, tabData.tabName, tabData.tabIndex + 5,
-                                   i => AccessTools.Method(typeof(UISignalPicker), "OnTypeButtonClick").Invoke(__instance, new object[] { i }));
-                    _tabs.Add(component);
-                }
+                if (tabData == null) continue;
+
+                GameObject gameObject = Object.Instantiate(TabSystem.GetTabPrefab(), __instance.pickerTrans, false);
+                ((RectTransform)gameObject.transform).anchoredPosition = new Vector2((tabData.tabIndex + 4) * 70 - 54, -75f);
+                var component = gameObject.GetComponent<UITabButton>();
+                var newIcon = Resources.Load<Sprite>(tabData.tabIconPath);
+                component.Init(newIcon, tabData.tabName, tabData.tabIndex + 5, __instance.OnTypeButtonClick);
+                _tabs.Add(component);
             }
 
             Transform typeButton6Transform = __instance.typeButton6.transform;
@@ -91,7 +89,7 @@ namespace ProjectGenesis.Patches.UI
                 yield return ci;
             }
         }
-        
+
         [HarmonyPatch(typeof(UIShowSignalTipExtension), nameof(UIShowSignalTipExtension.OnUpdate))]
         [HarmonyTranspiler]
         [HarmonyPriority(Priority.Last)]

@@ -9,7 +9,8 @@ namespace ProjectGenesis.Patches.Logic
 {
     public static class PlanetAlgorithmPatches
     {
-        private static readonly FieldInfo PlanetAlgorithm_planet_FieldInfo = AccessTools.Field(typeof(PlanetAlgorithm), "planet");
+        private static readonly FieldInfo PlanetAlgorithm_planet_FieldInfo
+            = AccessTools.Field(typeof(PlanetAlgorithm), nameof(PlanetAlgorithm.planet));
 
         [HarmonyPatch(typeof(PlanetAlgorithm), nameof(PlanetAlgorithm.GenerateVeins))]
         [HarmonyTranspiler]

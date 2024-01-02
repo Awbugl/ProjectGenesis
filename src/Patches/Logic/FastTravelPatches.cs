@@ -17,7 +17,8 @@ namespace ProjectGenesis.Patches.Logic
 
             var matcher = new CodeMatcher(instructions);
 
-            matcher.MatchForward(true, new CodeMatch(OpCodes.Call, AccessTools.PropertyGetter(typeof(GameMain), "sandboxToolsEnabled")));
+            matcher.MatchForward(
+                true, new CodeMatch(OpCodes.Call, AccessTools.PropertyGetter(typeof(GameMain), nameof(GameMain.sandboxToolsEnabled))));
             matcher.Advance(1)
                    .InsertAndAdvance(new CodeInstruction(OpCodes.Call,
                                                          AccessTools.Method(typeof(FastTravelPatches), nameof(IsFastTravelTechUnlocked))));
@@ -33,7 +34,8 @@ namespace ProjectGenesis.Patches.Logic
 
             var matcher = new CodeMatcher(instructions);
 
-            matcher.MatchForward(false, new CodeMatch(OpCodes.Call, AccessTools.PropertyGetter(typeof(GameMain), "sandboxToolsEnabled")));
+            matcher.MatchForward(
+                false, new CodeMatch(OpCodes.Call, AccessTools.PropertyGetter(typeof(GameMain), nameof(GameMain.sandboxToolsEnabled))));
 
             matcher.Advance(1)
                    .InsertAndAdvance(new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(FastTravelPatches), nameof(IsFastTravelEnabled))));

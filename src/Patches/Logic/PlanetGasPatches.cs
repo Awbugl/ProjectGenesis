@@ -11,18 +11,21 @@ namespace ProjectGenesis.Patches.Logic
 {
     public static class PlanetGasPatches
     {
-        private static readonly FieldInfo StationComponent_IsCollector_Field = AccessTools.Field(typeof(StationComponent), "isCollector"),
-                                          PlanetData_GasItems_Field = AccessTools.Field(typeof(PlanetData), "gasItems"),
-                                          StationComponent_isStellar_Field = AccessTools.Field(typeof(StationComponent), "isStellar"),
-                                          PrefabDesc_isStellarStation_Field = AccessTools.Field(typeof(PrefabDesc), "isStellarStation"),
-                                          BuildTool_planet_Field = AccessTools.Field(typeof(BuildTool), "planet");
+        private static readonly FieldInfo StationComponent_IsCollector_Field
+                                              = AccessTools.Field(typeof(StationComponent), nameof(StationComponent.isCollector)),
+                                          PlanetData_GasItems_Field = AccessTools.Field(typeof(PlanetData), nameof(PlanetData.gasItems)),
+                                          StationComponent_isStellar_Field
+                                              = AccessTools.Field(typeof(StationComponent), nameof(StationComponent.isStellar)),
+                                          PrefabDesc_isStellarStation_Field
+                                              = AccessTools.Field(typeof(PrefabDesc), nameof(PrefabDesc.isStellarStation)),
+                                          BuildTool_planet_Field = AccessTools.Field(typeof(BuildTool), nameof(BuildTool.planet));
 
         [HarmonyPatch(typeof(UIPlanetDetail), nameof(UIPlanetDetail.OnPlanetDataSet))]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> UIPlanetDetail_OnPlanetDataSet_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
             CodeMatcher matcher = new CodeMatcher(instructions).MatchForward(
-                true, new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(PlanetData), "type")), new CodeMatch(OpCodes.Ldc_I4_5),
+                true, new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(PlanetData), nameof(PlanetData.type))), new CodeMatch(OpCodes.Ldc_I4_5),
                 new CodeMatch(OpCodes.Beq));
 
             object label = matcher.Operand;
@@ -42,7 +45,7 @@ namespace ProjectGenesis.Patches.Logic
         public static IEnumerable<CodeInstruction> PlanetGen_SetPlanetTheme_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
             CodeMatcher matcher = new CodeMatcher(instructions).MatchForward(
-                false, new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(PlanetData), "type")), new CodeMatch(OpCodes.Ldc_I4_5));
+                false, new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(PlanetData), nameof(PlanetData.type))), new CodeMatch(OpCodes.Ldc_I4_5));
             matcher.Advance(-1);
             matcher.SetAndAdvance(OpCodes.Nop, null);
             matcher.SetAndAdvance(OpCodes.Nop, null);
@@ -70,14 +73,14 @@ namespace ProjectGenesis.Patches.Logic
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> OnPlanetDataSet_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
-            CodeMatcher matcher
-                = new CodeMatcher(instructions).MatchForward(
-                    false, new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(StationComponent), "collectionPerTick")));
+            CodeMatcher matcher = new CodeMatcher(instructions).MatchForward(
+                false, new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(StationComponent), nameof(StationComponent.collectionPerTick))));
 
             CodeInstruction stationComponent = matcher.Advance(-1).Instruction;
 
             matcher.Advance(-1).InsertAndAdvance(new CodeInstruction(stationComponent), new CodeInstruction(OpCodes.Ldarg_0),
-                                                 new CodeInstruction(OpCodes.Ldfld, AccessTools.Field(typeof(UIPlanetDetail), "_planet")),
+                                                 new CodeInstruction(
+                                                     OpCodes.Ldfld, AccessTools.Field(typeof(UIPlanetDetail), nameof(UIPlanetDetail._planet))),
                                                  new CodeInstruction(OpCodes.Call,
                                                                      AccessTools.Method(typeof(PlanetGasPatches), nameof(GetGasCollectionPerTick))));
 
@@ -90,10 +93,11 @@ namespace ProjectGenesis.Patches.Logic
         {
             var matcher = new CodeMatcher(instructions);
 
-            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(PlanetData), "gasTotalHeat")));
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(PlanetData), nameof(PlanetData.gasTotalHeat))));
             CodeInstruction planet = matcher.Advance(-1).Instruction;
 
-            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(StationComponent), "collectionPerTick")));
+            matcher.MatchForward(
+                false, new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(StationComponent), nameof(StationComponent.collectionPerTick))));
             CodeInstruction stationComponent = matcher.Advance(-1).Instruction;
 
             matcher.Advance(-1).InsertAndAdvance(new CodeInstruction(stationComponent), new CodeInstruction(planet),
@@ -120,7 +124,7 @@ namespace ProjectGenesis.Patches.Logic
                                                                                                              nameof(BuildTool.planet))),
                                                                              new CodeMatch(OpCodes.Ldfld, PlanetData_GasItems_Field));
 
-            matcher.SetOperandAndAdvance(AccessTools.Field(typeof(PlanetData), "type"));
+            matcher.SetOperandAndAdvance(AccessTools.Field(typeof(PlanetData), nameof(PlanetData.type)));
             matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldc_I4_5));
             matcher.SetOpcodeAndAdvance(matcher.Opcode == OpCodes.Brfalse_S ? OpCodes.Bne_Un_S : OpCodes.Bne_Un);
 
@@ -142,13 +146,15 @@ namespace ProjectGenesis.Patches.Logic
 
             CodeMatcher matcher = new CodeMatcher(instructions).MatchForward(true, new CodeMatch(OpCodes.Ldarg_0),
                                                                              new CodeMatch(OpCodes.Ldfld,
-                                                                                           AccessTools.Field(typeof(PlayerController), "gameData")),
+                                                                                           AccessTools.Field(
+                                                                                               typeof(PlayerController),
+                                                                                               nameof(PlayerController.gameData))),
                                                                              new CodeMatch(OpCodes.Callvirt,
                                                                                            AccessTools.PropertyGetter(typeof(GameData),
                                                                                                                       "localPlanet")),
                                                                              new CodeMatch(OpCodes.Ldfld, PlanetData_GasItems_Field));
 
-            matcher.SetOperandAndAdvance(AccessTools.Field(typeof(PlanetData), "type"));
+            matcher.SetOperandAndAdvance(AccessTools.Field(typeof(PlanetData), nameof(PlanetData.type)));
 
             object label = matcher.Operand;
             bool isS = matcher.Opcode == OpCodes.Brfalse_S;
@@ -172,8 +178,9 @@ namespace ProjectGenesis.Patches.Logic
         {
             var matcher = new CodeMatcher(instructions);
 
-            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(BuildPreview), "desc")),
-                                 new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(PrefabDesc), "isCollectStation")),
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldloc_S),
+                                 new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(BuildPreview), nameof(BuildPreview.desc))),
+                                 new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(PrefabDesc), nameof(PrefabDesc.isCollectStation))),
                                  new CodeMatch(OpCodes.Brfalse), new CodeMatch(OpCodes.Ldarg_0), new CodeMatch(OpCodes.Ldfld, BuildTool_planet_Field),
                                  new CodeMatch(OpCodes.Brfalse));
 
@@ -295,7 +302,8 @@ namespace ProjectGenesis.Patches.Logic
             object label = matcher.Advance(1).Operand;
 
             matcher.Advance(7).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0),
-                                                new CodeInstruction(OpCodes.Ldfld, AccessTools.Field(typeof(PlanetTransport), "planet")),
+                                                new CodeInstruction(
+                                                    OpCodes.Ldfld, AccessTools.Field(typeof(PlanetTransport), nameof(PlanetTransport.planet))),
                                                 new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(PlanetGasPatches), nameof(IsGas))),
                                                 new CodeInstruction(OpCodes.Brfalse, label));
 
@@ -311,7 +319,8 @@ namespace ProjectGenesis.Patches.Logic
         {
             var matcher = new CodeMatcher(instructions);
 
-            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(StationComponent), "isStellar")));
+            matcher.MatchForward(
+                false, new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(StationComponent), nameof(StationComponent.isStellar))));
 
             CodeInstruction comp = matcher.Advance(-1).Instruction;
             object label = matcher.Advance(2).Operand;
