@@ -1,3 +1,12 @@
+- v2.9.7
+  + 适配版本v0.10.28.21247
+
+  + Adaptation of version v0.10.28.21247
+
+
+<details>
+  <summary>点击展开日志 | Click to view all </summary>
+
 - v2.9.6
   + 修复与 `GalacticScale` mod的兼容问题
   + 调整了`高频激光塔 MK.I`的伤害和激光特效
@@ -7,9 +16,6 @@
   + Adjusted the damage and effect of the `Laser Tower MK.I`
   + Adjust some text
 
-
-<details>
-  <summary>点击展开日志 | Click to view all </summary>
 
 - v2.9.5
   + 适配版本v0.10.28.21172

@@ -321,12 +321,12 @@ namespace ProjectGenesis.Utils
                 proto.Desc = Desc;
                 proto.Conclusion = Conclusion;
                 proto.IsHiddenTech = IsHiddenTech;
-                proto.PreItem = PreItem;
+                proto.PreItem = PreItem ?? Array.Empty<int>();
                 proto.Published = Published;
                 proto.IconPath = IconPath;
                 proto.IsLabTech = IsLabTech;
-                proto.PreTechs = PreTechs;
-                proto.PreTechsImplicit = PreTechsImplicit;
+                proto.PreTechs = PreTechs ?? Array.Empty<int>();
+                proto.PreTechsImplicit = PreTechsImplicit ?? Array.Empty<int>();
                 proto.PreTechsMax = PreTechsMax;
                 proto.Items = Items ?? Array.Empty<int>();
                 proto.ItemPoints = ItemPoints ?? Array.Empty<int>();
@@ -334,15 +334,15 @@ namespace ProjectGenesis.Utils
                 proto.AddItemCounts = AddItemCounts ?? Array.Empty<int>();
                 proto.Position = new Vector2(Position[0], Position[1]);
                 proto.HashNeeded = HashNeeded;
-                proto.UnlockRecipes = UnlockRecipes;
-                proto.UnlockFunctions = UnlockFunctions;
-                proto.UnlockValues = UnlockValues;
+                proto.UnlockRecipes = UnlockRecipes ?? Array.Empty<int>();
+                proto.UnlockFunctions = UnlockFunctions ?? Array.Empty<int>();
+                proto.UnlockValues = UnlockValues ?? Array.Empty<double>();
                 proto.Level = Level;
                 proto.MaxLevel = MaxLevel;
                 proto.LevelCoef1 = LevelCoef1;
                 proto.LevelCoef2 = LevelCoef2;
-                proto.PropertyOverrideItems = PropertyOverrideItems;
-                proto.PropertyItemCounts = PropertyItemCounts;
+                proto.PropertyOverrideItems = PropertyOverrideItems ?? Array.Empty<int>();
+                proto.PropertyItemCounts = PropertyItemCounts ?? Array.Empty<int>();
 
                 return proto;
             }
