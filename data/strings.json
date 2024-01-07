@@ -216,8 +216,8 @@
   },
   {
     "Name": "物质分解设施介绍前字",
-    "ZHCN": "在选择<color=\"#FD965ECC\">物质回收</color>配方后，物质分解设施可将输入到其中的所有物品按数量比例转换为沙土，并在达到一定数量后静默返还到机甲背包中。",
-    "ENUS": "After selecting <color=\"#FD965ECC\">Matter recovery</color> recipe, the Recycling Factory converts all items entered into it into Sand in proportion to their quantity, and silently returns them to package after a certain amount has been reached. "
+    "ZHCN": "在选择<color=\"#FD965ECC\">物质回收</color>配方后，物质分解设施可将输入到其中的所有物品按数量比例转换为沙土，并在达到一定数量后静默返还到机甲背包中。\n若背包未满，输入的建筑物品可返还75%的制造原料到背包中。",
+    "ENUS": "After selecting <color=\"#FD965ECC\">Matter recovery</color> recipe, the Recycling Factory converts all items entered into it into Sand in proportion to their quantity, and silently returns them to package after a certain amount has been reached.\nIncoming construction items return 75% of their own manufacturing materials to the package (if the package is not full)."
   },
   {
     "Name": "钨矿脉",
