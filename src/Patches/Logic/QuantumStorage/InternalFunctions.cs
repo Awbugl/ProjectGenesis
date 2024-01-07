@@ -9,15 +9,15 @@ namespace ProjectGenesis.Patches.Logic
     {
         private const int QuantumStorageSize = 90;
 
-        private static readonly StorageComponent Component;
+        private static StorageComponent _component;
 
         private static readonly ConcurrentDictionary<int, List<int>> QuantumStorageIds;
 
         static QuantumStoragePatches()
         {
             QuantumStorageIds = new ConcurrentDictionary<int, List<int>>();
-            Component = new StorageComponent(QuantumStorageSize);
-            Component.CutNext();
+            _component = new StorageComponent(QuantumStorageSize);
+            _component.CutNext();
         }
 
         internal static void SyncNewQuantumStorage(int planetId, int storageid)
@@ -25,7 +25,7 @@ namespace ProjectGenesis.Patches.Logic
             QuantumStorageIds.TryAddOrInsert(planetId, storageid);
             PlanetData planet = GameMain.galaxy.PlanetById(planetId);
             FactoryStorage factoryStorage = GameMain.data.GetOrCreateFactory(planet).factoryStorage;
-            factoryStorage.storagePool[storageid] = Component;
+            factoryStorage.storagePool[storageid] = _component;
         }
 
         internal static void SyncRemoveQuantumStorage(int planetId, int storageid) => QuantumStorageIds.TryRemove(planetId, storageid);
@@ -56,7 +56,7 @@ namespace ProjectGenesis.Patches.Logic
         public static bool Import_PatchMethod(FactoryStorage storage, int index)
         {
             bool b = QuantumStorageIds.Contains(storage.planet.id, index);
-            if (b) storage.storagePool[index] = Component;
+            if (b) storage.storagePool[index] = _component;
             return b;
         }
 
@@ -74,9 +74,9 @@ namespace ProjectGenesis.Patches.Logic
                 }
             }
 
-            lock (Component)
+            lock (_component)
             {
-                Component.Export(w);
+                _component.Export(w);
             }
         }
 
@@ -101,7 +101,7 @@ namespace ProjectGenesis.Patches.Logic
                     QuantumStorageIds.TryAdd(key, datas);
                 }
 
-                Component.Import(r);
+                _component.Import(r);
             }
             catch (EndOfStreamException)
             {
@@ -114,8 +114,8 @@ namespace ProjectGenesis.Patches.Logic
         private static void ReInitAll()
         {
             QuantumStorageIds.Clear();
-            Component.SetEmpty();
-            Component.CutNext();
+            _component = new StorageComponent(QuantumStorageSize);
+            _component.CutNext();
         }
     }
 }

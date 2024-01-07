@@ -111,8 +111,9 @@ namespace ProjectGenesis.Patches.UI
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> UILootFilter_OnBoxMouseDown_currentTypeField_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
-            CodeMatcher matcher = new CodeMatcher(instructions).MatchForward(true, new CodeMatch(OpCodes.Ldarg_0),
-                                                                             new CodeMatch(OpCodes.Ldfld, currentTypeField));
+            var matcher = new CodeMatcher(instructions);
+
+            matcher.MatchForward(true, new CodeMatch(OpCodes.Ldarg_0), new CodeMatch(OpCodes.Ldfld, currentTypeField));
 
             matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldc_I4_1)).SetOpcodeAndAdvance(OpCodes.Beq_S);
 
@@ -125,8 +126,9 @@ namespace ProjectGenesis.Patches.UI
         public static IEnumerable<CodeInstruction> UILootFilter_SetMaterialProps_currentTypeField_Transpiler(
             IEnumerable<CodeInstruction> instructions)
         {
-            CodeMatcher matcher = new CodeMatcher(instructions).MatchForward(true, new CodeMatch(OpCodes.Ldarg_0),
-                                                                             new CodeMatch(OpCodes.Ldfld, currentTypeField));
+            var matcher = new CodeMatcher(instructions);
+
+            matcher.MatchForward(true, new CodeMatch(OpCodes.Ldarg_0), new CodeMatch(OpCodes.Ldfld, currentTypeField));
 
             matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldc_I4_1)).SetOpcodeAndAdvance(OpCodes.Bne_Un_S);
 
@@ -137,8 +139,9 @@ namespace ProjectGenesis.Patches.UI
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> UILootFilter_RefreshIcons_currentTypeField_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
-            CodeMatcher matcher = new CodeMatcher(instructions).MatchForward(true, new CodeMatch(OpCodes.Ldarg_0),
-                                                                             new CodeMatch(OpCodes.Ldfld, currentTypeField));
+            var matcher = new CodeMatcher(instructions);
+
+            matcher.MatchForward(true, new CodeMatch(OpCodes.Ldarg_0), new CodeMatch(OpCodes.Ldfld, currentTypeField));
 
             matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldc_I4_1)).SetOpcodeAndAdvance(OpCodes.Bne_Un_S);
 
@@ -153,8 +156,9 @@ namespace ProjectGenesis.Patches.UI
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> UILootFilter_RefreshWindow_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
-            CodeMatcher matcher
-                = new CodeMatcher(instructions).MatchForward(false, new CodeMatch(OpCodes.Ldc_R4, 692f), new CodeMatch(OpCodes.Ldc_R4, 536f));
+            var matcher = new CodeMatcher(instructions);
+
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldc_R4, 692f), new CodeMatch(OpCodes.Ldc_R4, 536f));
 
             matcher.SetOperandAndAdvance(830f).SetOperandAndAdvance(500f);
 
@@ -176,7 +180,9 @@ namespace ProjectGenesis.Patches.UI
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> UILootFilter_SetMaterialProps_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
-            CodeMatcher matcher = new CodeMatcher(instructions).MatchForward(false, new CodeMatch(OpCodes.Ldc_I4_8));
+            var matcher = new CodeMatcher(instructions);
+
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldc_I4_8));
             matcher.SetOpcodeAndAdvance(OpCodes.Ldc_I4_7);
 
             matcher.MatchForward(false, new CodeMatch(OpCodes.Ldc_R4, 14f));

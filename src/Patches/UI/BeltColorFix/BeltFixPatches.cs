@@ -18,9 +18,10 @@ namespace ProjectGenesis.Patches.UI.BeltColorFix
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> AddColors(IEnumerable<CodeInstruction> instructions)
         {
-            CodeMatcher matcher = new CodeMatcher(instructions).MatchForward(false, new CodeMatch(OpCodes.Ldloc_1),
-                                                                             new CodeMatch(OpCodes.Ldfld, BeltComponent_Speed_Field),
-                                                                             new CodeMatch(OpCodes.Ldc_I4_1));
+            var matcher = new CodeMatcher(instructions);
+
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldloc_1), new CodeMatch(OpCodes.Ldfld, BeltComponent_Speed_Field),
+                                 new CodeMatch(OpCodes.Ldc_I4_1));
 
             CodeMatcher matcher2 = matcher.Clone();
             matcher2.MatchForward(true, new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Stloc_S));
@@ -44,7 +45,9 @@ namespace ProjectGenesis.Patches.UI.BeltColorFix
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> BuildTool_BlueprintCopy_UpdatePreviewModels_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
-            CodeMatcher matcher = new CodeMatcher(instructions).MatchForward(false, new CodeMatch(OpCodes.Ldfld, PrefabDesc_beltSpeed_Field));
+            var matcher = new CodeMatcher(instructions);
+
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldfld, PrefabDesc_beltSpeed_Field));
 
             matcher.Advance(1).InsertAndAdvance(
                 new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(BeltFixPatches), nameof(BeltSpeed_Patch))));
@@ -56,7 +59,9 @@ namespace ProjectGenesis.Patches.UI.BeltColorFix
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> CargoTraffic_SetBeltSelected_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
-            CodeMatcher matcher = new CodeMatcher(instructions).MatchForward(false, new CodeMatch(OpCodes.Ldfld, BeltComponent_Speed_Field));
+            var matcher = new CodeMatcher(instructions);
+
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldfld, BeltComponent_Speed_Field));
 
             matcher.Advance(1).InsertAndAdvance(
                 new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(BeltFixPatches), nameof(BeltSpeed_Patch))));
@@ -71,7 +76,9 @@ namespace ProjectGenesis.Patches.UI.BeltColorFix
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> BuildTool_Path_UpdateGizmos_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
-            CodeMatcher matcher = new CodeMatcher(instructions).MatchForward(false, new CodeMatch(OpCodes.Ldfld, PrefabDesc_beltSpeed_Field));
+            var matcher = new CodeMatcher(instructions);
+
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldfld, PrefabDesc_beltSpeed_Field));
 
             matcher.Advance(1).InsertAndAdvance(
                 new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(BeltFixPatches), nameof(BeltSpeed_Patch))));

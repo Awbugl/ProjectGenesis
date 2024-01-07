@@ -16,11 +16,10 @@ namespace ProjectGenesis.Patches.Logic
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> PlanetAlgorithm1_GenerateVeins_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
-            CodeMatcher matcher = new CodeMatcher(instructions).MatchForward(true, new CodeMatch(OpCodes.Ldarg_0),
-                                                                             new CodeMatch(OpCodes.Ldfld, PlanetAlgorithm_planet_FieldInfo),
-                                                                             new CodeMatch(OpCodes.Ldfld,
-                                                                                           AccessTools.Field(typeof(PlanetData),
-                                                                                                             nameof(PlanetData.waterItemId))));
+            var matcher = new CodeMatcher(instructions);
+
+            matcher.MatchForward(true, new CodeMatch(OpCodes.Ldarg_0), new CodeMatch(OpCodes.Ldfld, PlanetAlgorithm_planet_FieldInfo),
+                                 new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(PlanetData), nameof(PlanetData.waterItemId))));
 
             object label = matcher.Advance(1).Operand;
 

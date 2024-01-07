@@ -14,8 +14,10 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> UIRecipePicker_RefreshIcons(IEnumerable<CodeInstruction> instructions)
         {
-            CodeMatcher matcher = new CodeMatcher(instructions).MatchForward(
-                true, new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(RecipeProto), nameof(RecipeProto.Type))), new CodeMatch(OpCodes.Bne_Un));
+            var matcher = new CodeMatcher(instructions);
+
+            matcher.MatchForward(true, new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(RecipeProto), nameof(RecipeProto.Type))),
+                                 new CodeMatch(OpCodes.Bne_Un));
 
             matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(MegaAssemblerPatches), nameof(ContainsRecipeType))));
 

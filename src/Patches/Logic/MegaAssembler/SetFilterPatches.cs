@@ -45,13 +45,13 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
             IEnumerable<CodeInstruction> instructions,
             ILGenerator generator)
         {
-            CodeMatcher matcher = new CodeMatcher(instructions, generator).MatchForward(true, new CodeMatch(OpCodes.Ldloc_0),
-                                                                                        new CodeMatch(OpCodes.Ldfld, PlanetFactory_EntityPool_Field),
-                                                                                        new CodeMatch(OpCodes.Ldarg_1), new CodeMatch(OpCodes.Ldelem),
-                                                                                        new CodeMatch(OpCodes.Stloc_3));
+            var matcher = new CodeMatcher(instructions, generator);
+
+            matcher.MatchForward(true, new CodeMatch(OpCodes.Ldloc_0), new CodeMatch(OpCodes.Ldfld, PlanetFactory_EntityPool_Field),
+                                 new CodeMatch(OpCodes.Ldarg_1), new CodeMatch(OpCodes.Ldelem), new CodeMatch(OpCodes.Stloc_3));
 
 
-            matcher.Advance(1).CreateLabelAt(matcher.Pos, out Label label);
+            matcher.Advance(1).CreateLabel(out Label label);
 
             matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_3), new CodeInstruction(OpCodes.Ldfld, EntityData_AssemblerId_Field),
                                      new CodeInstruction(OpCodes.Ldc_I4_0), new CodeInstruction(OpCodes.Ble, label),
@@ -70,12 +70,12 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
             IEnumerable<CodeInstruction> instructions,
             ILGenerator generator)
         {
-            CodeMatcher matcher = new CodeMatcher(instructions, generator).MatchForward(true, new CodeMatch(OpCodes.Ldloc_0),
-                                                                                        new CodeMatch(OpCodes.Ldfld, PlanetFactory_EntityPool_Field),
-                                                                                        new CodeMatch(OpCodes.Ldarg_1), new CodeMatch(OpCodes.Ldelem),
-                                                                                        new CodeMatch(OpCodes.Stloc_1));
+            var matcher = new CodeMatcher(instructions, generator);
 
-            matcher.Advance(1).CreateLabelAt(matcher.Pos, out Label label);
+            matcher.MatchForward(true, new CodeMatch(OpCodes.Ldloc_0), new CodeMatch(OpCodes.Ldfld, PlanetFactory_EntityPool_Field),
+                                 new CodeMatch(OpCodes.Ldarg_1), new CodeMatch(OpCodes.Ldelem), new CodeMatch(OpCodes.Stloc_1));
+
+            matcher.Advance(1).CreateLabel(out Label label);
 
             matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_1), new CodeInstruction(OpCodes.Ldfld, EntityData_AssemblerId_Field),
                                      new CodeInstruction(OpCodes.Ldc_I4_0), new CodeInstruction(OpCodes.Ble, label),
@@ -126,15 +126,13 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
             IEnumerable<CodeInstruction> instructions,
             ILGenerator generator)
         {
-            CodeMatcher matcher = new CodeMatcher(instructions, generator).MatchForward(true, new CodeMatch(OpCodes.Ldloc_0),
-                                                                                        new CodeMatch(OpCodes.Ldfld, PlanetFactory_EntityPool_Field),
-                                                                                        new CodeMatch(OpCodes.Ldarg_0),
-                                                                                        new CodeMatch(OpCodes.Ldfld,
-                                                                                                      UIBeltBuildTip_OutputEntityId_Field),
-                                                                                        new CodeMatch(OpCodes.Ldelem),
-                                                                                        new CodeMatch(OpCodes.Stloc_1));
+            var matcher = new CodeMatcher(instructions, generator);
 
-            matcher.Advance(1).CreateLabelAt(matcher.Pos, out Label label);
+            matcher.MatchForward(true, new CodeMatch(OpCodes.Ldloc_0), new CodeMatch(OpCodes.Ldfld, PlanetFactory_EntityPool_Field),
+                                 new CodeMatch(OpCodes.Ldarg_0), new CodeMatch(OpCodes.Ldfld, UIBeltBuildTip_OutputEntityId_Field),
+                                 new CodeMatch(OpCodes.Ldelem), new CodeMatch(OpCodes.Stloc_1));
+
+            matcher.Advance(1).CreateLabel(out Label label);
 
             matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_1), new CodeInstruction(OpCodes.Ldfld, EntityData_AssemblerId_Field),
                                      new CodeInstruction(OpCodes.Ldc_I4_0), new CodeInstruction(OpCodes.Ble, label),
@@ -153,15 +151,13 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
             IEnumerable<CodeInstruction> instructions,
             ILGenerator generator)
         {
-            CodeMatcher matcher = new CodeMatcher(instructions, generator).MatchForward(true, new CodeMatch(OpCodes.Ldloc_0),
-                                                                                        new CodeMatch(OpCodes.Ldfld, PlanetFactory_EntityPool_Field),
-                                                                                        new CodeMatch(OpCodes.Ldarg_0),
-                                                                                        new CodeMatch(OpCodes.Ldfld,
-                                                                                                      UISlotPicker_OutputEntityId_Field),
-                                                                                        new CodeMatch(OpCodes.Ldelem),
-                                                                                        new CodeMatch(OpCodes.Stloc_1));
+            var matcher = new CodeMatcher(instructions, generator);
 
-            matcher.Advance(1).CreateLabelAt(matcher.Pos, out Label label);
+            matcher.MatchForward(true, new CodeMatch(OpCodes.Ldloc_0), new CodeMatch(OpCodes.Ldfld, PlanetFactory_EntityPool_Field),
+                                 new CodeMatch(OpCodes.Ldarg_0), new CodeMatch(OpCodes.Ldfld, UISlotPicker_OutputEntityId_Field),
+                                 new CodeMatch(OpCodes.Ldelem), new CodeMatch(OpCodes.Stloc_1));
+
+            matcher.Advance(1).CreateLabel(out Label label);
 
             matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_1), new CodeInstruction(OpCodes.Ldfld, EntityData_AssemblerId_Field),
                                      new CodeInstruction(OpCodes.Ldc_I4_0), new CodeInstruction(OpCodes.Ble, label),

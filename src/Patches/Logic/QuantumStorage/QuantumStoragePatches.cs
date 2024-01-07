@@ -98,8 +98,8 @@ namespace ProjectGenesis.Patches.Logic
             if (size != QuantumStorageSize) return;
             int storageId = __result.id;
 
-            __instance.storagePool[storageId] = Component;
-            __result = Component;
+            __instance.storagePool[storageId] = _component;
+            __result = _component;
 
             QuantumStorageIds.TryAddOrInsert(__instance.planet.id, storageId);
             SyncNewQuantumStorageData.Sync(__instance.planet.id, storageId);

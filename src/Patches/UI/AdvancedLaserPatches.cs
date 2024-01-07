@@ -62,11 +62,11 @@ namespace ProjectGenesis.Patches.UI
             matcher.MatchForward(true, new CodeMatch(OpCodes.Ldarg_1),
                                  new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(SkillSystem), nameof(SkillSystem.turretLaserContinuous))));
 
-            matcher.Advance(1).CreateLabelAt(matcher.Pos, out Label label1);
+            matcher.Advance(1).CreateLabel(out Label label1);
 
             matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Br, label1));
             matcher.Insert(new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(AdvancedLaserPatches), nameof(Patch_Result_Method))));
-            matcher.CreateLabelAt(matcher.Pos, out Label label2);
+            matcher.CreateLabel(out Label label2);
             matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0), new CodeInstruction(OpCodes.Ldarg_0),
                                                 new CodeInstruction(OpCodes.Ldfld, TurretComponent_projectileId_Field),
                                                 new CodeInstruction(
@@ -93,11 +93,11 @@ namespace ProjectGenesis.Patches.UI
                                  new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(PlanetFactory), nameof(PlanetFactory.skillSystem))),
                                  new CodeMatch(OpCodes.Ldfld));
 
-            matcher.Advance(1).CreateLabelAt(matcher.Pos, out Label label1);
+            matcher.Advance(1).CreateLabel(out Label label1);
 
             matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Br, label1));
             matcher.Insert(new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(AdvancedLaserPatches), nameof(Patch_Result_Method))));
-            matcher.CreateLabelAt(matcher.Pos, out Label label2);
+            matcher.CreateLabel(out Label label2);
 
             matcher.Advance(-3).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0),
                                                  new CodeInstruction(

@@ -20,24 +20,24 @@ namespace ProjectGenesis.Patches.Logic.PlanetFocus
             if (ContainsFocus(__instance.groundSystem.factory.planetId, 6531)) power_threat_factor *= 0.8f;
         }
 
-        [HarmonyPatch(typeof(EnemyDFGroundSystem), "replicateSpeed", MethodType.Getter)]
+        [HarmonyPatch(typeof(EnemyDFGroundSystem), nameof(EnemyDFGroundSystem.replicateSpeed), MethodType.Getter)]
         [HarmonyPostfix]
         public static void EnemyDFGroundSystem_replicateSpeed_Postfix(EnemyDFGroundSystem __instance, ref double __result)
         {
             if (ContainsFocus(__instance.factory.planetId, 6533)) __result *= 0.8f;
         }
 
-        [HarmonyPatch(typeof(EnemyDFGroundSystem), "buildSpeed", MethodType.Getter)]
+        [HarmonyPatch(typeof(EnemyDFGroundSystem), nameof(EnemyDFGroundSystem.buildSpeed), MethodType.Getter)]
         [HarmonyPostfix]
         public static void EnemyDFGroundSystem_buildSpeed_Postfix(EnemyDFGroundSystem __instance, ref double __result)
         {
             if (ContainsFocus(__instance.factory.planetId, 6534)) __result *= 0.8f;
         }
 
-        [HarmonyPatch(typeof(SkillSystem), "AddGroundEnemyHatred",
+        [HarmonyPatch(typeof(SkillSystem), nameof(SkillSystem.AddGroundEnemyHatred),
                       new Type[] { typeof(DFGBaseComponent), typeof(EnemyData), typeof(ETargetType), typeof(int) },
                       new ArgumentType[] { ArgumentType.Normal, ArgumentType.Ref, ArgumentType.Normal, ArgumentType.Normal })]
-        [HarmonyPatch(typeof(SkillSystem), "AddGroundEnemyHatred",
+        [HarmonyPatch(typeof(SkillSystem), nameof(SkillSystem.AddGroundEnemyHatred),
                       new Type[] { typeof(DFGBaseComponent), typeof(EnemyData), typeof(ETargetType), typeof(int), typeof(int) },
                       new ArgumentType[] { ArgumentType.Normal, ArgumentType.Ref, ArgumentType.Normal, ArgumentType.Normal, ArgumentType.Normal })]
         [HarmonyTranspiler]

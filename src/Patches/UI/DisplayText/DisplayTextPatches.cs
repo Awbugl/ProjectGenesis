@@ -10,7 +10,7 @@ namespace ProjectGenesis.Patches.UI.DisplayText
     internal static class DisplayTextPatches
     {
         [HarmonyPostfix]
-        [HarmonyPatch(typeof(RecipeProto), "madeFromString", MethodType.Getter)]
+        [HarmonyPatch(typeof(RecipeProto), nameof(RecipeProto.madeFromString), MethodType.Getter)]
         public static void RecipeProto_madeFromString(RecipeProto __instance, ref string __result)
         {
             var type = (Utils_ERecipeType)__instance.Type;
@@ -56,7 +56,7 @@ namespace ProjectGenesis.Patches.UI.DisplayText
         }
 
         [HarmonyPostfix]
-        [HarmonyPatch(typeof(ItemProto), "fuelTypeString", MethodType.Getter)]
+        [HarmonyPatch(typeof(ItemProto), nameof(ItemProto.fuelTypeString), MethodType.Getter)]
         public static void ItemProto_fuelTypeString(ItemProto __instance, ref string __result)
         {
             int type = __instance.FuelType;
@@ -74,7 +74,7 @@ namespace ProjectGenesis.Patches.UI.DisplayText
         }
 
         [HarmonyPostfix]
-        [HarmonyPatch(typeof(ItemProto), "typeString", MethodType.Getter)]
+        [HarmonyPatch(typeof(ItemProto), nameof(ItemProto.typeString), MethodType.Getter)]
         public static void ItemProto_typeString(ItemProto __instance, ref string __result)
         {
             if (__instance.Type != EItemType.Production) return;

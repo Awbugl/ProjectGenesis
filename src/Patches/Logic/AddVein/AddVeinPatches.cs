@@ -188,7 +188,7 @@ namespace ProjectGenesis.Patches.Logic.AddVein
             return new Vector2(v.x * Mathf.Cos(delta) - v.y * Mathf.Sin(delta), v.x * Mathf.Sin(delta) + v.y * Mathf.Cos(delta));
         }
 
-        [HarmonyPatch(typeof(PlanetData), "GenBirthPoints", typeof(PlanetRawData), typeof(int))]
+        [HarmonyPatch(typeof(PlanetData), nameof(PlanetData.GenBirthPoints), typeof(PlanetRawData), typeof(int))]
         [HarmonyPostfix]
         public static void PlanetData_GenBirthPoints_Postfix(PlanetData __instance, PlanetRawData rawData, int _birthSeed)
         {

@@ -135,6 +135,7 @@
         <Compile Include="src\Patches\Logic\TankComponentPatches.cs"/>
         <Compile Include="src\Patches\Logic\ThermalPowerGenPatches.cs"/>
         <Compile Include="src\Patches\Logic\VFPreloadPatches.cs"/>
+        <Compile Include="src\Patches\UI\FuelRodPatches.cs" />
         <Compile Include="src\Patches\UI\BeltColorFix\BeltFixPatches.cs"/>
         <Compile Include="src\Patches\UI\ChemicalRecipeFcolPatches.cs"/>
         <Compile Include="src\Patches\UI\DisplayText\DisplayNamePatches.cs"/>

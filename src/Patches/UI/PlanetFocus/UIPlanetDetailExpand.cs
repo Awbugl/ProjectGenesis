@@ -10,8 +10,8 @@ namespace ProjectGenesis.Patches.UI.PlanetFocus
     {
         private static UIButton _planetFocusBtn;
 
-        [HarmonyPostfix]
         [HarmonyPatch(typeof(UIGame), nameof(UIGame._OnInit))]
+        [HarmonyPostfix]
         public static void Init(UIGame __instance)
         {
             if (_planetFocusBtn) return;
@@ -23,8 +23,8 @@ namespace ProjectGenesis.Patches.UI.PlanetFocus
             _planetFocusBtn.onClick += _ => ProjectGenesis.PlanetFocusWindow.OpenWindow();
         }
 
-        [HarmonyPostfix]
         [HarmonyPatch(typeof(UIPlanetDetail), nameof(UIPlanetDetail.OnPlanetDataSet))]
+        [HarmonyPostfix]
         public static void OnPlanetDataSet_Postfix(UIPlanetDetail __instance)
         {
             if (__instance.planet == null)

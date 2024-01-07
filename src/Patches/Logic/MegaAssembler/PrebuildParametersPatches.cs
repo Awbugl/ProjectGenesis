@@ -22,8 +22,9 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
         public static IEnumerable<CodeInstruction> BuildingParameters_ApplyPrebuildParametersToEntity_Transpiler(
             IEnumerable<CodeInstruction> instructions)
         {
-            CodeMatcher matcher
-                = new CodeMatcher(instructions).MatchForward(false, new CodeMatch(OpCodes.Ldfld, PrefabDesc_assemblerRecipeType_Field));
+            var matcher = new CodeMatcher(instructions);
+
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldfld, PrefabDesc_assemblerRecipeType_Field));
 
             matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Call, MegaAssemblerPatches_ContainsRecipeTypeRevert_Method));
 
@@ -94,8 +95,9 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> BuildingParameters_CopyFromFactoryObject_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
-            CodeMatcher matcher
-                = new CodeMatcher(instructions).MatchForward(false, new CodeMatch(OpCodes.Ldfld, PrefabDesc_assemblerRecipeType_Field));
+            var matcher = new CodeMatcher(instructions);
+
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldfld, PrefabDesc_assemblerRecipeType_Field));
 
 
             matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Call, MegaAssemblerPatches_ContainsRecipeTypeRevert_Method));
@@ -149,8 +151,9 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> BuildingParameters_PasteToFactoryObject_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
-            CodeMatcher matcher
-                = new CodeMatcher(instructions).MatchForward(false, new CodeMatch(OpCodes.Ldfld, PrefabDesc_assemblerRecipeType_Field));
+            var matcher = new CodeMatcher(instructions);
+
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldfld, PrefabDesc_assemblerRecipeType_Field));
 
             matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Call, MegaAssemblerPatches_ContainsRecipeTypeRevert_Method));
 
@@ -175,8 +178,9 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> BuildingParameters_CanPasteToFactoryObject_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
-            CodeMatcher matcher
-                = new CodeMatcher(instructions).MatchForward(false, new CodeMatch(OpCodes.Ldfld, PrefabDesc_assemblerRecipeType_Field));
+            var matcher = new CodeMatcher(instructions);
+
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldfld, PrefabDesc_assemblerRecipeType_Field));
 
             matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Call, MegaAssemblerPatches_ContainsRecipeTypeRevert_Method));
 

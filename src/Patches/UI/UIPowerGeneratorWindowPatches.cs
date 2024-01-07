@@ -14,9 +14,9 @@ namespace ProjectGenesis.Patches.UI
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> SetTargetCargoBytes_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
-            CodeMatcher matcher = new CodeMatcher(instructions).End();
+            var matcher = new CodeMatcher(instructions);
 
-            matcher.MatchBack(false, new CodeMatch(OpCodes.Ldarg_0), new CodeMatch(OpCodes.Call), new CodeMatch(OpCodes.Ret));
+            matcher.End().MatchBack(false, new CodeMatch(OpCodes.Ldarg_0), new CodeMatch(OpCodes.Call), new CodeMatch(OpCodes.Ret));
             matcher.Advance(1).SetOperandAndAdvance(AccessTools.Method(typeof(UIPowerGeneratorWindowPatches), nameof(OnUpdate_Patch)));
 
             return matcher.InstructionEnumeration();

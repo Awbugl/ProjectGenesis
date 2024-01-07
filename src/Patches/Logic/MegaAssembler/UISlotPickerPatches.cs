@@ -15,8 +15,9 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> BuildTool_Path_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
-            CodeMatcher matcher = new CodeMatcher(instructions).MatchForward(false, new CodeMatch(OpCodes.Ldloc_S),
-                                                                             new CodeMatch(OpCodes.Ldfld, IsStationField));
+            var matcher = new CodeMatcher(instructions);
+
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldfld, IsStationField));
 
             CodeInstruction instruction = matcher.Instruction;
 
@@ -30,9 +31,10 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> UISlotPicker_Determine_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
-            CodeMatcher matcher = new CodeMatcher(instructions).MatchForward(false, new CodeMatch(OpCodes.Ldfld, EntityData_StationId_Field),
-                                                                             new CodeMatch(OpCodes.Stloc_S), new CodeMatch(OpCodes.Ldloc_S),
-                                                                             new CodeMatch(OpCodes.Ldc_I4_0), new CodeMatch(OpCodes.Ble));
+            var matcher = new CodeMatcher(instructions);
+
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldfld, EntityData_StationId_Field), new CodeMatch(OpCodes.Stloc_S),
+                                 new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldc_I4_0), new CodeMatch(OpCodes.Ble));
 
             List<CodeInstruction> ins = matcher.InstructionsWithOffsets(-5, -1);
 

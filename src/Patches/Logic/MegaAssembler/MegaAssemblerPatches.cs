@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 using System.Reflection.Emit;
 using HarmonyLib;
@@ -29,17 +30,15 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
                                            MegaAssembler_AssemblerComponent_UpdateNeeds_Patch_Method
                                                = AccessTools.Method(typeof(MegaAssemblerPatches), nameof(AssemblerComponent_UpdateNeeds_Patch));
 
-        [HarmonyPatch(typeof(FactorySystem), "GameTick", typeof(long), typeof(bool))]
-        [HarmonyPatch(typeof(FactorySystem), "GameTick", typeof(long), typeof(bool), typeof(int), typeof(int), typeof(int))]
+        [HarmonyPatch(typeof(FactorySystem), nameof(FactorySystem.GameTick), typeof(long), typeof(bool))]
+        [HarmonyPatch(typeof(FactorySystem), nameof(FactorySystem.GameTick), typeof(long), typeof(bool), typeof(int), typeof(int), typeof(int))]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> FactorySystem_GameTick_Transpiler(IEnumerable<CodeInstruction> instructions, ILGenerator generator)
         {
-            CodeMatcher matcher = new CodeMatcher(instructions, generator).MatchForward(false, new CodeMatch(OpCodes.Ldloc_S),
-                                                                                        new CodeMatch(OpCodes.Ldloc_S),
-                                                                                        new CodeMatch(OpCodes.Ldloc_1),
-                                                                                        new CodeMatch(OpCodes.Ldloc_2),
-                                                                                        new CodeMatch(OpCodes.Call,
-                                                                                                      AssemblerComponent_InternalUpdate_Method));
+            var matcher = new CodeMatcher(instructions, generator);
+
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldloc_1),
+                                 new CodeMatch(OpCodes.Ldloc_2), new CodeMatch(OpCodes.Call, AssemblerComponent_InternalUpdate_Method));
 
             object local1 = matcher.Operand;
             object power1 = matcher.Advance(1).Operand;
@@ -70,20 +69,17 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
             return matcher.InstructionEnumeration();
         }
 
-        [HarmonyPatch(typeof(FactorySystem), "GameTick", typeof(long), typeof(bool), typeof(int), typeof(int), typeof(int))]
+        [HarmonyPatch(typeof(FactorySystem), nameof(FactorySystem.GameTick), typeof(long), typeof(bool), typeof(int), typeof(int), typeof(int))]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> FactorySystem_GameTick_Transpiler_2(
             IEnumerable<CodeInstruction> instructions,
             ILGenerator generator)
         {
-            CodeMatcher matcher = new CodeMatcher(instructions, generator).MatchForward(false, new CodeMatch(OpCodes.Ldarg_0),
-                                                                                        new CodeMatch(OpCodes.Ldfld), new CodeMatch(OpCodes.Ldloc_S),
-                                                                                        new CodeMatch(OpCodes.Ldelema),
-                                                                                        new CodeMatch(OpCodes.Ldloc_S),
-                                                                                        new CodeMatch(OpCodes.Ldloc_1),
-                                                                                        new CodeMatch(OpCodes.Ldloc_2),
-                                                                                        new CodeMatch(OpCodes.Call,
-                                                                                                      AssemblerComponent_InternalUpdate_Method));
+            var matcher = new CodeMatcher(instructions, generator);
+
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldarg_0), new CodeMatch(OpCodes.Ldfld), new CodeMatch(OpCodes.Ldloc_S),
+                                 new CodeMatch(OpCodes.Ldelema), new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldloc_1),
+                                 new CodeMatch(OpCodes.Ldloc_2), new CodeMatch(OpCodes.Call, AssemblerComponent_InternalUpdate_Method));
 
             object index = matcher.Advance(2).Operand;
             object power = matcher.Advance(2).Operand;
@@ -243,14 +239,47 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
                     }
                     else
                     {
-                        int[] consumeRegister = GameMain.statistics.production.factoryStatPool[factory.index].consumeRegister;
+                        FactoryProductionStat factoryProductionStat = GameMain.statistics.production.factoryStatPool[factory.index];
+                        int[] productRegister = factoryProductionStat.productRegister;
+                        int[] consumeRegister = factoryProductionStat.consumeRegister;
 
                         lock (consumeRegister)
                         {
                             consumeRegister[itemId] += stack;
                         }
 
-                        sandCount += (int)(stack * 40 * power);
+                        ItemProto itemProto = LDB.items.Select(itemId);
+
+                        int stack1 = (int)(stack * 40 * power);
+
+                        if (itemProto.CanBuild)
+                        {
+                            RecipeProto recipe = itemProto.recipes.FirstOrDefault();
+
+                            if (recipe != null)
+                            {
+                                for (int i = 0; i < recipe.Items.Length; i++)
+                                {
+                                    int recipeItem = recipe.Items[i];
+                                    float recipeItemCount = recipe.ItemCounts[i] * stack * 0.75f;
+
+                                    int count = recipeItemCount < 1 ? 1 : (int)recipeItemCount;
+                                    TryAddItemToPackage(recipeItem, ref count, productRegister);
+
+                                    if (count > 0)
+                                    {
+                                        count *= 40;
+                                        sandCount += count;
+                                        productRegister[ProtoID.I沙土] += count;
+                                    }
+                                }
+
+                                continue;
+                            }
+                        }
+
+                        sandCount += stack1;
+                        productRegister[ProtoID.I沙土] += stack1;
                     }
                 }
                 else if (slotdata[index].dir != IODir.Output)
@@ -259,6 +288,25 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
                     slotdata[index].counter = 0;
                 }
             }
+        }
+
+        private static void TryAddItemToPackage(int itemId, ref int count, int[] productRegister)
+        {
+            Player player = GameMain.data.mainPlayer;
+
+            if (itemId <= 0 || count <= 0) return;
+            int package = player.package.AddItemStacked(itemId, count, 0, out _);
+            int count1 = count - package;
+
+            if (count1 > 0 && player.deliveryPackage.unlocked)
+            {
+                int count2 = player.deliveryPackage.AddItem(itemId, count1, 0, out _);
+                count1 -= count2;
+            }
+
+            productRegister[itemId] += count - count1;
+
+            count = count1;
         }
 
         private static void UpdateInputSlots(

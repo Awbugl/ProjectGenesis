@@ -20,7 +20,7 @@ namespace ProjectGenesis.Patches.Logic.AddVein
             return true;
         }
 
-        [HarmonyPatch(typeof(VFPreload), "SaveMaterials", typeof(Material[]))]
+        [HarmonyPatch(typeof(VFPreload), nameof(VFPreload.SaveMaterials), typeof(Material[]))]
         [HarmonyPriority(Priority.VeryHigh)]
         [HarmonyPrefix]
         public static bool VFPreload_SaveMaterials_Prefix(Material[] mats)
@@ -36,7 +36,7 @@ namespace ProjectGenesis.Patches.Logic.AddVein
             return true;
         }
 
-        [HarmonyPatch(typeof(VFPreload), "SaveMaterials", typeof(Material[][]))]
+        [HarmonyPatch(typeof(VFPreload), nameof(VFPreload.SaveMaterials), typeof(Material[][]))]
         [HarmonyPriority(Priority.VeryHigh)]
         [HarmonyPrefix]
         public static bool VFPreload_SaveMaterials_Prefix(Material[][] mats)

@@ -55,8 +55,9 @@ namespace ProjectGenesis.Compatibility
 
         public static IEnumerable<CodeInstruction> RefreshDynamicProperties_Postfix_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
-            CodeMatcher matcher
-                = new CodeMatcher(instructions).MatchForward(true, new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldc_I4_S, (sbyte)15));
+            var matcher = new CodeMatcher(instructions);
+
+            matcher.MatchForward(true, new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldc_I4_S, (sbyte)15));
 
             matcher.SetOperandAndAdvance(AddVeinPatches.VeinTypeCount);
 

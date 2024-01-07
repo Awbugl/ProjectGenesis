@@ -58,9 +58,10 @@ namespace ProjectGenesis.Patches.UI
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> UISignalPicker_OnUpdate_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
-            CodeMatcher matcher = new CodeMatcher(instructions).MatchForward(true, new CodeMatch(OpCodes.Ldarg_0),
-                                                                             new CodeMatch(OpCodes.Ldfld, currentTypeField),
-                                                                             new CodeMatch(OpCodes.Ldc_I4_2));
+            var matcher = new CodeMatcher(instructions);
+
+            matcher.MatchForward(true, new CodeMatch(OpCodes.Ldarg_0), new CodeMatch(OpCodes.Ldfld, currentTypeField),
+                                 new CodeMatch(OpCodes.Ldc_I4_2));
 
             object labal = matcher.Advance(1).Operand;
 
