@@ -39,20 +39,20 @@
     <ItemGroup>
         <Reference Include="System"/>
         <Reference Include="System.Core"/>
+        <Reference Include="Assembly-CSharp">
+            <HintPath>lib\Assembly-CSharp-publicized.dll</HintPath>
+        </Reference>
+        <Reference Include="GalacticScale">
+            <HintPath>lib\GalacticScale-publicized.dll</HintPath>
+        </Reference>
+        <Reference Include="Newtonsoft.Json">
+            <HintPath>lib\Newtonsoft.Json.dll</HintPath>
+        </Reference>
         <Reference Include="mscorlib">
             <HintPath>$(DSPAssemblyPath)mscorlib.dll</HintPath>
         </Reference>
         <Reference Include="netstandard">
             <HintPath>$(DSPAssemblyPath)netstandard.dll</HintPath>
-        </Reference>
-        <Reference Include="Assembly-CSharp">
-            <HintPath>lib\Assembly-CSharp-publicized.dll</HintPath>
-        </Reference>
-        <Reference Include="Newtonsoft.Json">
-            <HintPath>lib\Newtonsoft.Json.dll</HintPath>
-        </Reference>
-        <Reference Include="GalacticScale">
-            <HintPath>lib\GalacticScale-publicized.dll</HintPath>
         </Reference>
         <Reference Include="System.Diagnostics.StackTrace">
             <HintPath>$(DSPAssemblyPath)System.Diagnostics.StackTrace.dll</HintPath>
@@ -84,7 +84,7 @@
         <Reference Include="UnityEngine.UIModule">
             <HintPath>$(DSPAssemblyPath)UnityEngine.UIModule.dll</HintPath>
         </Reference>
-    </ItemGroup>  
+    </ItemGroup>
     <ItemGroup>
         <PackageReference Include="BepInEx.Core" Version="5.4.17"/>
         <PackageReference Include="DysonSphereProgram.Modding.CommonAPI" Version="1.6.2"/>
@@ -98,7 +98,7 @@
         <None Include="assets\*"/>
         <None Include="lib\*"/>
         <None Include="*.md"/>
-        <None Include="*.props"/>
+        <None Include="DefaultPath.props"/>
         <None Include="nuget.config"/>
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
