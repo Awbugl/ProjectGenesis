@@ -15,9 +15,7 @@ namespace ProjectGenesis.Compatibility
 
         internal static void Awake()
         {
-            Chainloader.PluginInfos.TryGetValue(GUID, out PluginInfo pluginInfo);
-
-            if (pluginInfo == null) return;
+            if (!Chainloader.PluginInfos.TryGetValue(GUID, out PluginInfo pluginInfo)) return;
 
             Assembly assembly = pluginInfo.Instance.GetType().Assembly;
             new Harmony("org.LoShin.GenesisBook.Compatibility.Bottleneck").Patch(

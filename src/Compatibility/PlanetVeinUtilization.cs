@@ -17,9 +17,7 @@ namespace ProjectGenesis.Compatibility
 
         internal static void Awake()
         {
-            Chainloader.PluginInfos.TryGetValue(GUID, out PluginInfo pluginInfo);
-
-            if (pluginInfo == null) return;
+            if (!Chainloader.PluginInfos.TryGetValue(GUID, out PluginInfo pluginInfo)) return;
 
             Assembly assembly = pluginInfo.Instance.GetType().Assembly;
             Type type = assembly.GetType("PlanetVeinUtilization.PlanetVeinUtilization");

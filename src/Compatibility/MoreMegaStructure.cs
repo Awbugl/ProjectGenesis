@@ -1,5 +1,4 @@
 ﻿using System;
-using BepInEx;
 using BepInEx.Bootstrap;
 using HarmonyLib;
 using ProjectGenesis.Utils;
@@ -30,15 +29,11 @@ namespace ProjectGenesis.Compatibility
 
         internal static void Awake()
         {
-            Chainloader.PluginInfos.TryGetValue(GUID, out PluginInfo pluginInfo);
-
-            if (pluginInfo == null) return;
-
-            var harmonyMethod
-                = new HarmonyMethod(typeof(MoreMegaStructure), nameof(LDBToolOnPostAddDataAction)) { after = new[] { LDBToolPlugin.MODGUID } };
+            if (!Chainloader.PluginInfos.TryGetValue(GUID, out _)) return;
 
             new Harmony("org.LoShin.GenesisBook.Compatibility.MoreMegaStructure").Patch(
-                AccessTools.Method(typeof(VFPreload), nameof(VFPreload.InvokeOnLoadWorkEnded)), null, harmonyMethod);
+                AccessTools.Method(typeof(VFPreload), nameof(VFPreload.InvokeOnLoadWorkEnded)), null,
+                new HarmonyMethod(typeof(MoreMegaStructure), nameof(LDBToolOnPostAddDataAction)) { after = new[] { LDBToolPlugin.MODGUID } });
         }
 
         public static void LDBToolOnPostAddDataAction()
