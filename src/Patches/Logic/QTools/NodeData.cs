@@ -59,7 +59,7 @@ namespace ProjectGenesis.Patches.Logic.QTools
             }
         }
 
-        internal void UpdateNeeds() => DataSet.RefreshNeeds();
+        internal void RefreshNeeds() => DataSet.RefreshNeeds();
 
         public void RemoveNeed() => DataSet.RemoveNeed(this);
     }

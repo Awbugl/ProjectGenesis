@@ -59,7 +59,7 @@ namespace ProjectGenesis.Patches.UI.QTools
             else
             {
                 _data.Options.AsRaw = false;
-                _data.UpdateNeeds();
+                _data.RefreshNeeds();
             }
         }
 

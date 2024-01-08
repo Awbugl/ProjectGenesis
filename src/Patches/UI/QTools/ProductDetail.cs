@@ -179,6 +179,7 @@ namespace ProjectGenesis.Patches.UI.QTools
 
             factoryButton.tips.tipTitle = obj.proto.name;
             RefreshFactoryCount();
+            RefreshNeeds();
         }
 
         public void OnProliferatorChange(int obj)
@@ -186,13 +187,13 @@ namespace ProjectGenesis.Patches.UI.QTools
             proliferatorText.text = currentProliferatorComboBox.comboBox.m_Input.text;
             _data.Options.Strategy = currentProliferatorComboBox.Strategy;
             RefreshFactoryCount();
-            UpdateNeeds();
+            RefreshNeeds();
         }
 
         private void OnItemButtonRightClick(int obj)
         {
             _data.Options.AsRaw = true;
-            UpdateNeeds();
+            RefreshNeeds();
         }
 
         private void OnRecipeButtonRightClick(int obj)
@@ -200,7 +201,7 @@ namespace ProjectGenesis.Patches.UI.QTools
             if (string.IsNullOrWhiteSpace(_data.Item.miningFrom)) return;
 
             _data.Options.AsRaw = true;
-            UpdateNeeds();
+            RefreshNeeds();
         }
 
         public void OnRecipeButtonClick()
@@ -212,7 +213,7 @@ namespace ProjectGenesis.Patches.UI.QTools
             UIRoot.instance.uiGame.recipePicker.transform.SetAsLastSibling();
         }
 
-        private void UpdateNeeds() => _data.UpdateNeeds();
+        private void RefreshNeeds() => _data.RefreshNeeds();
 
         private void RefreshFactoryCount()
         {
@@ -229,7 +230,7 @@ namespace ProjectGenesis.Patches.UI.QTools
 
             _data.CheckFactory();
             RefreshFactoryCount();
-            UpdateNeeds();
+            RefreshNeeds();
         }
 
         private bool Filter(RecipeProto recipeProto) => _data.Item.recipes.Contains(recipeProto);
