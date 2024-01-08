@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" InitialTargets="PublicizeAssembly">
     <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')"/>
     <Import Project="DefaultPath.props"/>
     <PropertyGroup>
@@ -198,6 +198,7 @@
         <Content Include="assets\icon.png"/>
         <Content Include="assets\texpack"/>
         <Content Include="lib\Assembly-CSharp-publicized.dll"/>
+        <Content Include="lib\BepInEx.AssemblyPublicizer.Cli.exe" />
         <Content Include="lib\GalacticScale-publicized.dll"/>
         <Content Include="lib\Newtonsoft.Json.dll"/>
         <Content Include="DefaultPath.props"/>
@@ -215,18 +216,24 @@
         <None Include="nuget.config"/>
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
+    <PropertyGroup>
+        <DumpedAssembliesPath>$(BepinExPath)DumpedAssemblies\DSPGAME\Assembly-CSharp.dll</DumpedAssembliesPath>
+    </PropertyGroup>
+    <Target Name="PublicizeAssembly" Condition="Exists($(DumpedAssembliesPath))">
+        <Exec Command="$(SolutionDir)lib\BepInEx.AssemblyPublicizer.Cli.exe $(DumpedAssembliesPath) --output $(SolutionDir)lib\Assembly-CSharp-publicized.dll"/>
+    </Target>
     <Target Name="AfterBuild">
         <MakeDir Directories="$(ReleasePath)"/>
         <MakeDir Directories="$(ReleasePath)plugins/"/>
         <Copy SourceFiles="$(TargetPath)" DestinationFiles="$(BepinExPath)plugins\$(DebugModDir)\$(TargetName).dll"/>
-        <Copy SourceFiles="$(SolutionDir)\assets\texpack" DestinationFiles="$(BepinExPath)plugins\$(DebugModDir)\texpack"/>
-        <Copy SourceFiles="$(SolutionDir)\assets\genesis-models" DestinationFiles="$(BepinExPath)plugins\$(DebugModDir)\genesis-models"/>
+        <Copy SourceFiles="$(SolutionDir)assets\texpack" DestinationFiles="$(BepinExPath)plugins\$(DebugModDir)\texpack"/>
+        <Copy SourceFiles="$(SolutionDir)assets\genesis-models" DestinationFiles="$(BepinExPath)plugins\$(DebugModDir)\genesis-models"/>
         <Copy SourceFiles="$(TargetPath)" DestinationFiles="$(ReleasePath)plugins\$(TargetName).dll"/>
         <Copy SourceFiles="README.md" DestinationFiles="$(ReleasePath)README.md"/>
         <Copy SourceFiles="CHANGELOG.md" DestinationFiles="$(ReleasePath)CHANGELOG.md"/>
-        <Copy SourceFiles="$(SolutionDir)\assets\icon.png" DestinationFiles="$(ReleasePath)icon.png"/>
-        <Copy SourceFiles="$(SolutionDir)\assets\texpack" DestinationFiles="$(ReleasePath)plugins\texpack"/>
-        <Copy SourceFiles="$(SolutionDir)\assets\genesis-models" DestinationFiles="$(ReleasePath)plugins\genesis-models"/>
-        <Copy SourceFiles="$(SolutionDir)\lib\Newtonsoft.Json.dll" DestinationFiles="$(ReleasePath)plugins\Newtonsoft.Json.dll"/>
+        <Copy SourceFiles="$(SolutionDir)assets\icon.png" DestinationFiles="$(ReleasePath)icon.png"/>
+        <Copy SourceFiles="$(SolutionDir)assets\texpack" DestinationFiles="$(ReleasePath)plugins\texpack"/>
+        <Copy SourceFiles="$(SolutionDir)assets\genesis-models" DestinationFiles="$(ReleasePath)plugins\genesis-models"/>
+        <Copy SourceFiles="$(SolutionDir)lib\Newtonsoft.Json.dll" DestinationFiles="$(ReleasePath)plugins\Newtonsoft.Json.dll"/>
     </Target>
 </Project>
