@@ -2907,7 +2907,7 @@
   },
   {
     "ID": 110,
-    "Name": "反物质能量炉",
+    "Name": "人造恒星MK2",
     "Description": "",
     "IconPath": "",
     "Type": 10,
@@ -3614,7 +3614,7 @@
   {
     "ID": 135,
     "Name": "核子爆破单元",
-    "Description": "R核子爆破单元",
+    "Description": "",
     "IconPath": "",
     "Type": 9,
     "GridIndex": 5403,
@@ -3772,7 +3772,7 @@
   {
     "ID": 141,
     "Name": "微型核弹组",
-    "Description": "R微型核弹组",
+    "Description": "",
     "IconPath": "",
     "Type": 9,
     "GridIndex": 5503,
@@ -4341,7 +4341,7 @@
   },
   {
     "ID": 406,
-    "Name": "高纯铀块",
+    "Name": "含铀核燃料",
     "Description": "",
     "IconPath": "",
     "Type": 11,
@@ -4365,7 +4365,7 @@
   },
   {
     "ID": 407,
-    "Name": "高纯钚块",
+    "Name": "含钚核燃料",
     "Description": "",
     "IconPath": "",
     "Type": 11,
@@ -5293,7 +5293,7 @@
   },
   {
     "ID": 539,
-    "Name": "稳定矩阵",
+    "Name": "通量矩阵",
     "Description": "",
     "IconPath": "",
     "Type": 9,
@@ -5319,7 +5319,7 @@
   },
   {
     "ID": 540,
-    "Name": "虚空矩阵",
+    "Name": "空间矩阵",
     "Description": "",
     "IconPath": "",
     "Type": 9,
@@ -5453,7 +5453,7 @@
   },
   {
     "ID": 569,
-    "Name": "湿件主机",
+    "Name": "光学计算机",
     "Description": "",
     "IconPath": "",
     "Type": 10,
@@ -5969,7 +5969,7 @@
   },
   {
     "ID": 754,
-    "Name": "生物基板",
+    "Name": "光学基板",
     "Description": "",
     "IconPath": "",
     "Type": 9,
@@ -6125,7 +6125,7 @@
   },
   {
     "ID": 776,
-    "Name": "钨复合金属",
+    "Name": "钨合金",
     "Description": "",
     "IconPath": "",
     "Type": 1,
@@ -6154,7 +6154,7 @@
   {
     "ID": 781,
     "Name": "钢芯弹箱",
-    "Description": "R钢芯弹箱",
+    "Description": "",
     "IconPath": "",
     "Type": 4,
     "GridIndex": 5302,
@@ -6180,7 +6180,7 @@
   {
     "ID": 782,
     "Name": "钨芯弹箱",
-    "Description": "R钨芯弹箱",
+    "Description": "",
     "IconPath": "",
     "Type": 4,
     "GridIndex": 5304,
@@ -6206,7 +6206,7 @@
   {
     "ID": 783,
     "Name": "三元弹箱",
-    "Description": "R三元弹箱",
+    "Description": "",
     "IconPath": "",
     "Type": 4,
     "GridIndex": 5305,
@@ -6232,7 +6232,7 @@
   {
     "ID": 785,
     "Name": "反物质湮灭单元",
-    "Description": "R反物质湮灭单元",
+    "Description": "",
     "IconPath": "",
     "Type": 10,
     "GridIndex": 5404,
@@ -6262,7 +6262,7 @@
   {
     "ID": 787,
     "Name": "反物质炮弹",
-    "Description": "R反物质炮弹",
+    "Description": "",
     "IconPath": "",
     "Type": 10,
     "GridIndex": 5504,
@@ -6290,7 +6290,7 @@
   {
     "ID": 789,
     "Name": "反物质导弹组",
-    "Description": "R反物质导弹组",
+    "Description": "",
     "IconPath": "",
     "Type": 10,
     "GridIndex": 5604,
@@ -6318,7 +6318,7 @@
   {
     "ID": 790,
     "Name": "湮灭弹药箱",
-    "Description": "R湮灭弹药箱",
+    "Description": "",
     "IconPath": "",
     "Type": 10,
     "GridIndex": 5306,
@@ -6375,8 +6375,8 @@
   },
   {
     "ID": 792,
-    "Name": "激光塔MK2",
-    "Description": "激光塔MK2",
+    "Name": "高频激光塔MK2",
+    "Description": "",
     "IconPath": "",
     "Type": 9,
     "GridIndex": 5203,
@@ -6403,7 +6403,7 @@
   },
   {
     "ID": 793,
-    "Name": "先进生物电路",
+    "Name": "光学处理器",
     "Description": "",
     "IconPath": "",
     "Type": 10,
@@ -6431,7 +6431,7 @@
   },
   {
     "ID": 794,
-    "Name": "生物神经纤维",
+    "Name": "光学信息传输纤维",
     "Description": "",
     "IconPath": "",
     "Type": 10,
@@ -6457,7 +6457,7 @@
   },
   {
     "ID": 795,
-    "Name": "超级纳米电脑",
+    "Name": "量子计算主机",
     "Description": "",
     "IconPath": "",
     "Type": 10,
