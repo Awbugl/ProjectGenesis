@@ -233,7 +233,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 2311,
+    "GridIndex": 2312,
     "Time": 120,
     "Input": [
       6501,
@@ -339,7 +339,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 2309,
+    "GridIndex": 2310,
     "Time": 240,
     "Input": [
       6501,
@@ -369,7 +369,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 2310,
+    "GridIndex": 2311,
     "Time": 120,
     "Input": [
       6501,
@@ -1283,7 +1283,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 2307,
+    "GridIndex": 2308,
     "Time": 240,
     "Input": [
       6501,
@@ -1867,7 +1867,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 10,
-    "GridIndex": 2314,
+    "GridIndex": 2315,
     "Time": 360,
     "Input": [
       6502,
@@ -2035,7 +2035,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 9,
-    "GridIndex": 2313,
+    "GridIndex": 2314,
     "Time": 360,
     "Input": [
       6502,
@@ -2169,7 +2169,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 10,
-    "GridIndex": 2315,
+    "GridIndex": 2316,
     "Time": 900,
     "Input": [
       6503,
@@ -2279,7 +2279,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 2304,
+    "GridIndex": 2305,
     "Time": 120,
     "Input": [
       1101,
@@ -2409,7 +2409,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 2305,
+    "GridIndex": 2306,
     "Time": 240,
     "Input": [
       1101,
@@ -3417,7 +3417,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 10,
-    "GridIndex": 5207,
+    "GridIndex": 5208,
     "Time": 600,
     "Input": [
       6502,
@@ -3479,7 +3479,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 0,
+    "GridIndex": 5212,
     "Time": 300,
     "Input": [
       1104,
@@ -3488,10 +3488,10 @@
       1303
     ],
     "InCounts": [
-      10,
-      10,
-      10,
-      2
+      12,
+      9,
+      6,
+      3
     ],
     "Output": [
       3006
@@ -3509,7 +3509,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 5209,
+    "GridIndex": 5210,
     "Time": 360,
     "Input": [
       2202,
@@ -3537,7 +3537,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 10,
-    "GridIndex": 5210,
+    "GridIndex": 5211,
     "Time": 600,
     "Input": [
       6502,
@@ -4095,7 +4095,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 5208,
+    "GridIndex": 5209,
     "Time": 360,
     "Input": [
       6501,
@@ -4125,7 +4125,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 10,
-    "GridIndex": 2312,
+    "GridIndex": 2313,
     "Time": 240,
     "Input": [
       2901,
@@ -4237,6 +4237,120 @@
     ],
     "Explicit": false,
     "Handcraft": false,
+    "NonProductive": false
+  },
+  {
+    "ID": 157,
+    "Name": "地面电浆炮",
+    "Description": "",
+    "IconPath": "",
+    "Type": 4,
+    "GridIndex": 5207,
+    "Time": 480,
+    "Input": [
+      1103,
+      1205,
+      1401,
+      1303
+    ],
+    "InCounts": [
+      15,
+      5,
+      5,
+      5
+    ],
+    "Output": [
+      3010
+    ],
+    "OutCounts": [
+      1
+    ],
+    "Explicit": false,
+    "Handcraft": true,
+    "NonProductive": false
+  },
+  {
+    "ID": 158,
+    "Name": "电磁干扰胶囊",
+    "Description": "",
+    "IconPath": "",
+    "Type": 4,
+    "GridIndex": 1613,
+    "Time": 120,
+    "Input": [
+      1204,
+      1401,
+      1120
+    ],
+    "InCounts": [
+      1,
+      1,
+      3
+    ],
+    "Output": [
+      1612
+    ],
+    "OutCounts": [
+      1
+    ],
+    "Explicit": false,
+    "Handcraft": true,
+    "NonProductive": false
+  },
+  {
+    "ID": 159,
+    "Name": "电磁压制胶囊",
+    "Description": "",
+    "IconPath": "",
+    "Type": 4,
+    "GridIndex": 1713,
+    "Time": 480,
+    "Input": [
+      1612,
+      1205,
+      1119
+    ],
+    "InCounts": [
+      2,
+      1,
+      2
+    ],
+    "Output": [
+      1613
+    ],
+    "OutCounts": [
+      2
+    ],
+    "Explicit": false,
+    "Handcraft": true,
+    "NonProductive": false
+  },
+  {
+    "ID": 160,
+    "Name": "集装分拣器",
+    "Description": "",
+    "IconPath": "",
+    "Type": 4,
+    "GridIndex": 2304,
+    "Time": 60,
+    "Input": [
+      2013,
+      1205,
+      1303
+    ],
+    "InCounts": [
+      2,
+      1,
+      1
+    ],
+    "Output": [
+      2014
+    ],
+    "OutCounts": [
+      1
+    ],
+    "Explicit": false,
+    "Handcraft": true,
     "NonProductive": false
   },
   {
@@ -4667,7 +4781,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 10,
-    "GridIndex": 2308,
+    "GridIndex": 2309,
     "Time": 600,
     "Input": [
       6503,
@@ -5099,7 +5213,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 10,
-    "GridIndex": 2306,
+    "GridIndex": 2307,
     "Time": 2400,
     "Input": [
       6271,

@@ -3981,6 +3981,51 @@
     "PropertyItemCounts": []
   },
   {
+    "ID": 1810,
+    "Name": "T干扰塔",
+    "IconPath": "Icons/Tech/1810",
+    "Desc": "干扰塔描述",
+    "Conclusion": "干扰塔结果",
+    "IsHiddenTech": false,
+    "PreItem": [],
+    "Position": [
+      25.0,
+      -51.0
+    ],
+    "PreTechs": [
+      1806
+    ],
+    "PreTechsImplicit": [
+      1302
+    ],
+    "Items": [
+      6001,
+      6002
+    ],
+    "ItemPoints": [
+      10,
+      20
+    ],
+    "HashNeeded": 144000,
+    "UnlockRecipes": [
+      130,
+      158
+    ],
+    "UnlockFunctions": [],
+    "UnlockValues": [],
+    "Published": true,
+    "Level": 0,
+    "MaxLevel": 0,
+    "LevelCoef1": 0,
+    "LevelCoef2": 0,
+    "IsLabTech": true,
+    "PreTechsMax": false,
+    "AddItems": [],
+    "AddItemCounts": [],
+    "PropertyOverrideItems": [],
+    "PropertyItemCounts": []
+  },
+  {
     "ID": 1811,
     "Name": "T磁化电浆炮",
     "IconPath": "Icons/Tech/1811",
@@ -4013,7 +4058,8 @@
     "HashNeeded": 300000,
     "UnlockRecipes": [
       128,
-      142
+      142,
+      157
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -4573,6 +4619,50 @@
     "HashNeeded": 288000,
     "UnlockRecipes": [
       151
+    ],
+    "UnlockFunctions": [],
+    "UnlockValues": [],
+    "Published": true,
+    "Level": 0,
+    "MaxLevel": 0,
+    "LevelCoef1": 0,
+    "LevelCoef2": 0,
+    "IsLabTech": true,
+    "PreTechsMax": false,
+    "AddItems": [],
+    "AddItemCounts": [],
+    "PropertyOverrideItems": [],
+    "PropertyItemCounts": []
+  },
+  {
+    "ID": 1824,
+    "Name": "T电磁胶囊II",
+    "IconPath": "Icons/Tech/1824",
+    "Desc": "电磁胶囊II描述",
+    "Conclusion": "电磁胶囊II结果",
+    "IsHiddenTech": false,
+    "PreItem": [],
+    "Position": [
+      41.0,
+      -51.0
+    ],
+    "PreTechs": [
+      1810
+    ],
+    "PreTechsImplicit": [],
+    "Items": [
+      6001,
+      6002,
+      6003
+    ],
+    "ItemPoints": [
+      10,
+      10,
+      10
+    ],
+    "HashNeeded": 216000,
+    "UnlockRecipes": [
+      159
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -5706,7 +5796,9 @@
       5
     ],
     "HashNeeded": 576000,
-    "UnlockRecipes": [],
+    "UnlockRecipes": [
+      160
+    ],
     "UnlockFunctions": [],
     "UnlockValues": [],
     "Published": true,

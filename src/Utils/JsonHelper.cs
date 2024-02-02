@@ -129,7 +129,7 @@ namespace ProjectGenesis.Utils
                     Productive = i.Productive,
                     MechaMaterialID = i.MechaMaterialID,
                     AmmoType = (int)i.AmmoType,
-                    BombType = i.BombType,
+                    BombType = (int)i.BombType,
                     CraftType = i.CraftType,
                     DropRate = i.DropRate,
                     EnemyDropLevel = i.EnemyDropLevel,
@@ -175,7 +175,7 @@ namespace ProjectGenesis.Utils
                 proto.PreTechOverride = PreTechOverride;
                 proto.Productive = Productive;
                 proto.AmmoType = (EAmmoType)AmmoType;
-                proto.BombType = BombType;
+                proto.BombType = (EBombType)BombType;
                 proto.CraftType = CraftType;
                 proto.DropRate = DropRate;
                 proto.EnemyDropLevel = EnemyDropLevel;
