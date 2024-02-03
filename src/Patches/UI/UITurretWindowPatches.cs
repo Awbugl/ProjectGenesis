@@ -60,15 +60,15 @@ namespace ProjectGenesis.Patches.UI
 
             if (local1.id != __instance.turretId) return;
 
-            if (__instance.isLaser || local1.itemCount != 0 || local1.bulletCount != 0)
+            int[] turretNeed = ItemProto.turretNeeds[(int)local1.type];
+
+            if (__instance.isLaser || turretNeed.Length == 0 || local1.itemCount != 0 || local1.bulletCount != 0)
             {
                 handFillAmmoIcon3.gameObject.SetActive(false);
                 handFillAmmoIcon4.gameObject.SetActive(false);
                 handFillAmmoIcon5.gameObject.SetActive(false);
                 return;
             }
-
-            int[] turretNeed = ItemProto.turretNeeds[(int)local1.type];
 
             int tipsItemId = turretNeed[3];
             ItemProto itemProto3 = LDB.items.Select(tipsItemId);
@@ -86,7 +86,7 @@ namespace ProjectGenesis.Patches.UI
 
             tipsItemId = turretNeed[4];
             ItemProto itemProto4 = LDB.items.Select(tipsItemId);
-            
+
             if (itemProto4 == null)
             {
                 handFillAmmoIcon4.gameObject.SetActive(false);
@@ -100,7 +100,7 @@ namespace ProjectGenesis.Patches.UI
 
             tipsItemId = turretNeed[5];
             ItemProto itemProto5 = LDB.items.Select(tipsItemId);
-            
+
             if (itemProto5 == null)
             {
                 handFillAmmoIcon5.gameObject.SetActive(false);
