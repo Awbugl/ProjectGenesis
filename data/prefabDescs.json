@@ -382,5 +382,13 @@
     "turretAddEnemyHatredCoef": 0.01,
     "turretAddEnemyThreatBase": 2,
     "turretAddEnemyThreatCoef": 0.002
+  },
+  {
+    "ModelID": 517,
+    "AmmoBlastRadius1": 19
+  },
+  {
+    "ModelID": 488,
+    "AmmoBlastRadius1": 17
   }
 ]

@@ -2261,8 +2261,8 @@
   },
   {
     "Name": "I钢芯弹箱",
-    "ZHCN": "在纯铜子弹的工艺上进行改进的钢芯弹药，其拥有一层铜质被甲，拥有更加良好的穿透性能。一个弹箱包含20发子弹。",
-    "ENUS": "Steel-core ammunition that improves on the process of pure copper bullets by having a layer of copper armor for even better penetration. One case contains 20 rounds."
+    "ZHCN": "在纯铜子弹的工艺上进行改进的钢芯弹药，其拥有一层铜质被甲，拥有更加良好的穿透性能。一个弹箱包含30发子弹。",
+    "ENUS": "Steel-core ammunition that improves on the process of pure copper bullets by having a layer of copper armor for even better penetration. One case contains 30 rounds."
   },
   {
     "Name": "钨芯弹箱",
@@ -2271,8 +2271,8 @@
   },
   {
     "Name": "I钨芯弹箱",
-    "ZHCN": "使用钨作为弹头材料的进阶全金属被甲弹，沉重的钨芯弹头与硬质金属被甲能够有效穿透黑雾的防御装甲，造成可观的伤害。一个弹箱包含20发子弹。",
-    "ENUS": "An advanced full metal armor round that uses tungsten as the warhead material, the heavy tungsten core warhead and hard metal armor can effectively penetrate the Black Mist's defensive armor and deal considerable damage. One case contains 20 rounds."
+    "ZHCN": "使用钨作为弹头材料的进阶全金属被甲弹，沉重的钨芯弹头与硬质金属被甲能够有效穿透黑雾的防御装甲，造成可观的伤害。一个弹箱包含30发子弹。",
+    "ENUS": "An advanced full metal armor round that uses tungsten as the warhead material, the heavy tungsten core warhead and hard metal armor can effectively penetrate the Black Mist's defensive armor and deal considerable damage. One case contains 30 rounds."
   },
   {
     "Name": "三元弹箱",
@@ -2281,8 +2281,8 @@
   },
   {
     "Name": "I三元弹箱",
-    "ZHCN": "使用三元精金制作的弹药，这种强互作用力材料曾用于建造深空探测器“水滴”，其强度足以做出“锐角转弯”这种超级机动而不解体。得益于其坚固性，这种弹头有着无与伦比的穿透力。一个弹箱包含20发子弹。",
-    "ENUS": "Ammunition made of Ternary Adamantium, a strong interaction material used in the construction of the deep space probe \"Water Drop\", strong enough to perform super maneuvers such as the \"Sharp Angle Turn\" without disintegrating. Thanks to its robustness, the warhead has unrivaled penetration power. One case contains 20 rounds."
+    "ZHCN": "使用三元精金制作的弹药，这种强互作用力材料曾用于建造深空探测器“水滴”，其强度足以做出“锐角转弯”这种超级机动而不解体。得益于其坚固性，这种弹头有着无与伦比的穿透力。一个弹箱包含30发子弹。",
+    "ENUS": "Ammunition made of Ternary Adamantium, a strong interaction material used in the construction of the deep space probe \"Water Drop\", strong enough to perform super maneuvers such as the \"Sharp Angle Turn\" without disintegrating. Thanks to its robustness, the warhead has unrivaled penetration power. One case contains 30 rounds."
   },
   {
     "Name": "核子爆破单元",
@@ -2351,8 +2351,8 @@
   },
   {
     "Name": "I湮灭弹药箱",
-    "ZHCN": "托马斯·维德兵工厂生产的超级弹药。一个弹箱包含20发子弹。",
-    "ENUS": "Superb ammunition produced by Thomas Vedder Arsenal. One cartridge box contains 20 rounds."
+    "ZHCN": "托马斯·维德兵工厂生产的超级弹药。一个弹箱包含30发子弹。",
+    "ENUS": "Superb ammunition produced by Thomas Vedder Arsenal. One cartridge box contains 30 rounds."
   },
   {
     "Name": "T钛化弹箱",

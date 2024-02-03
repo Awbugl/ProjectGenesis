@@ -3482,16 +3482,16 @@
     "GridIndex": 5212,
     "Time": 300,
     "Input": [
-      1104,
+      6501,
+      1103,
       1401,
-      1112,
-      1303
+      1302
     ],
     "InCounts": [
-      12,
-      9,
-      6,
-      3
+      2,
+      8,
+      8,
+      2
     ],
     "Output": [
       3006
@@ -3803,7 +3803,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 9,
-    "GridIndex": 5701,
+    "GridIndex": 5703,
     "Time": 120,
     "Input": [
       1123,
@@ -3831,7 +3831,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 10,
-    "GridIndex": 5702,
+    "GridIndex": 5704,
     "Time": 360,
     "Input": [
       1120,
@@ -4244,20 +4244,22 @@
     "Name": "地面电浆炮",
     "Description": "",
     "IconPath": "",
-    "Type": 4,
+    "Type": 9,
     "GridIndex": 5207,
-    "Time": 480,
+    "Time": 600,
     "Input": [
-      1103,
+      6502,
+      1107,
+      1119,
       1205,
-      1401,
-      1303
+      1401
     ],
     "InCounts": [
-      15,
-      5,
-      5,
-      5
+      4,
+      10,
+      8,
+      4,
+      8
     ],
     "Output": [
       3010
@@ -4266,7 +4268,7 @@
       1
     ],
     "Explicit": false,
-    "Handcraft": true,
+    "Handcraft": false,
     "NonProductive": false
   },
   {
@@ -4275,17 +4277,17 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 1613,
+    "GridIndex": 5701,
     "Time": 120,
     "Input": [
       1204,
       1401,
-      1120
+      1301
     ],
     "InCounts": [
       1,
       1,
-      3
+      1
     ],
     "Output": [
       1612
@@ -4302,9 +4304,9 @@
     "Name": "电磁压制胶囊",
     "Description": "",
     "IconPath": "",
-    "Type": 4,
-    "GridIndex": 1713,
-    "Time": 480,
+    "Type": 9,
+    "GridIndex": 5702,
+    "Time": 240,
     "Input": [
       1612,
       1205,
@@ -4312,7 +4314,7 @@
     ],
     "InCounts": [
       2,
-      1,
+      2,
       2
     ],
     "Output": [
@@ -4322,7 +4324,7 @@
       2
     ],
     "Explicit": false,
-    "Handcraft": true,
+    "Handcraft": false,
     "NonProductive": false
   },
   {
@@ -4335,12 +4337,10 @@
     "Time": 60,
     "Input": [
       2013,
-      1205,
       1303
     ],
     "InCounts": [
       2,
-      1,
       1
     ],
     "Output": [
