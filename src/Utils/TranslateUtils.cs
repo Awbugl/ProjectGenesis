@@ -19,14 +19,20 @@ namespace ProjectGenesis.Utils
 
             int num = PlayerPrefs.GetInt("language", 0);
 
-            if (num <= 2)
-                num = Application.systemLanguage == SystemLanguage.Chinese ||
-                      Application.systemLanguage == SystemLanguage.ChineseSimplified ||
-                      Application.systemLanguage == SystemLanguage.ChineseTraditional
-                    ? 2052
-                    : 1033;
+            if (num > 2)
+            {
+                IsSystemZHCN = num == 2052;
+                return;
+            }
 
-            IsSystemZHCN = num == 2052;
+            switch (Application.systemLanguage)
+            {
+                case SystemLanguage.Chinese:
+                case SystemLanguage.ChineseSimplified:
+                case SystemLanguage.ChineseTraditional:
+                    IsSystemZHCN = true;
+                    break;
+            }
         }
 
         internal static void RegisterStrings()
