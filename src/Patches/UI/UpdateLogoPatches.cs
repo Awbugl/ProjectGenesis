@@ -34,7 +34,7 @@ namespace ProjectGenesis.Patches.UI
                 iconstr = "Assets/texpack/黑雾中文图标";
 
                 DateTime dateTime = DateTime.Now;
-                if (dateTime > new DateTime(2024, 2, 9) && dateTime < new DateTime(2024, 2, 11)) iconstr = "Assets/texpack/创世Logo新春贺岁版";
+                if (dateTime > new DateTime(2024, 2, 9) && dateTime < new DateTime(2024, 2, 25)) iconstr = "Assets/texpack/创世Logo新春贺岁版";
             }
             else
             {
