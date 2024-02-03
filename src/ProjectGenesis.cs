@@ -52,7 +52,7 @@ namespace ProjectGenesis
     {
         public const string MODGUID = "org.LoShin.GenesisBook";
         public const string MODNAME = "GenesisBook";
-        public const string VERSION = "2.9.8";
+        public const string VERSION = "2.9.9";
         public const string DEBUGVERSION = "";
 
         public static bool LoadCompleted;
@@ -74,7 +74,6 @@ namespace ProjectGenesis
 
         public void Awake()
         {
-            
 #region Logger
 
             logger = Logger;
@@ -170,7 +169,7 @@ namespace ProjectGenesis
 
             LoadCompleted = true;
         }
-        
+
         private void Update()
         {
             if (VFInput.inputing) return;
@@ -246,7 +245,6 @@ namespace ProjectGenesis
             ProtoPreload();
 
             ModifyEnemyHpUpgrade();
-            SetSkillSystem();
             SetMinerMk2Color();
             SetChemicalRecipeFcol();
             SetEffectEmitterProto();
@@ -258,11 +256,14 @@ namespace ProjectGenesis
             ItemProto.InitFluids();
             ItemProto.InitTurrets();
             ItemProto.InitEnemyDropTables();
+            ItemProto.InitConstructableItems();
             ItemProto.InitItemIds();
             ItemProto.InitItemIndices();
             ItemProto.InitMechaMaterials();
             ItemProto.InitFighterIndices();
             ModelProto.InitMaxModelIndex();
+            ModelProto.InitModelIndices();
+            ModelProto.InitModelOrders();
             RecipeProto.InitFractionatorNeeds();
             RaycastLogic.LoadStatic();
 
@@ -279,6 +280,12 @@ namespace ProjectGenesis
 
             UIBuildMenu.staticLoaded = false;
             UIBuildMenu.StaticLoad();
+
+            SpaceSector.PrefabDescByModelIndex = null;
+            SpaceSector.InitPrefabDescArray();
+
+            PlanetFactory.PrefabDescByModelIndex = null;
+            PlanetFactory.InitPrefabDescArray();
 
             ref MechaMaterialSetting material = ref Configs.builtin.mechaArmorMaterials[21];
             material.itemId = ProtoID.I钨块;

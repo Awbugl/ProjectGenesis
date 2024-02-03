@@ -119,41 +119,5 @@ namespace ProjectGenesis.Utils
                 techProto.PreTechsImplicit = Array.Empty<int>();
             }
         }
-
-        internal static void SetSkillSystem()
-        {
-            ModelProto[] dataArray = LDB.models.dataArray;
-
-            foreach (ModelProto model in dataArray)
-            {
-                int id = model.ID;
-
-                PrefabDesc desc = model.prefabDesc;
-
-                SkillSystem.HpMaxByModelIndex[id] = model.HpMax;
-
-                SkillSystem.HpUpgradeByModelIndex[id] = model.HpUpgrade;
-
-                SkillSystem.HpRecoverByModelIndex[id] = model.HpRecover;
-
-                SkillSystem.RoughRadiusByModelIndex[id] = desc.roughRadius;
-
-                SkillSystem.RoughHeightByModelIndex[id] = desc.roughHeight;
-
-                SkillSystem.RoughWidthByModelIndex[id] = desc.roughWidth;
-
-                SkillSystem.BarHeightByModelIndex[id] = desc.barHeight;
-
-                SkillSystem.BarWidthByModelIndex[id] = desc.barWidth;
-
-                SkillSystem.ColliderComplexityByModelIndex[id] = desc.colliderComplexity;
-
-                SkillSystem.EnemySandCountByModelIndex[id] = desc.enemySandCount;
-
-                SpaceSector.PrefabDescByModelIndex[id] = desc;
-
-                PlanetFactory.PrefabDescByModelIndex[id] = desc;
-            }
-        }
     }
 }

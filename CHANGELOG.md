@@ -1,3 +1,13 @@
+- v2.9.9
+  + 适配版本v0.10.29.21904
+
+  + Adaptation of version v0.10.29.21904
+
+
+<details>
+  <summary>点击展开日志 | Click to view all </summary>
+
+
 - v2.9.8
   + 发电厂在燃尽燃料棒后会返回空燃料棒
   + 为`物质回收`配方添加新特性：若背包未满，输入的建筑物品可返还自身的75%制造原料到背包中
@@ -5,9 +15,6 @@
   + Power Plants return empty fuel rods when rods are burned out
   + Add new feature to `Matter Recovery` recipes: incoming construction items return 75% of their own manufacturing materials to the package (if the package is not full)
 
-
-<details>
-  <summary>点击展开日志 | Click to view all </summary>
 
 - v2.9.7
   + 适配版本v0.10.28.21247

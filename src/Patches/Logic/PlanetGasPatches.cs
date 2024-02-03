@@ -153,7 +153,7 @@ namespace ProjectGenesis.Patches.Logic
 
             matcher.MatchForward(true, new CodeMatch(OpCodes.Ldarg_0),
                                  new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(PlayerController), nameof(PlayerController.gameData))),
-                                 new CodeMatch(OpCodes.Callvirt, AccessTools.PropertyGetter(typeof(GameData), "localPlanet")),
+                                 new CodeMatch(OpCodes.Callvirt, AccessTools.PropertyGetter(typeof(GameData), nameof(GameData.localPlanet))),
                                  new CodeMatch(OpCodes.Ldfld, PlanetData_GasItems_Field));
 
             matcher.SetOperandAndAdvance(AccessTools.Field(typeof(PlanetData), nameof(PlanetData.type)));
@@ -197,7 +197,7 @@ namespace ProjectGenesis.Patches.Logic
             matcher.SetAndAdvance(OpCodes.Nop, null);
             matcher.SetAndAdvance(OpCodes.Nop, null);
 
-            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldc_I4_S, (sbyte)37));
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldc_I4_S, (sbyte)EBuildCondition.NotEnoughEnergyToWorkCollection));
             matcher.Advance(-2).SetOpcodeAndAdvance(matcher.Opcode == OpCodes.Bgt_Un_S ? OpCodes.Br_S : OpCodes.Br);
 
             matcher.Advance(-3);
@@ -249,7 +249,7 @@ namespace ProjectGenesis.Patches.Logic
                    .InsertAndAdvance(new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(PlanetGasPatches), nameof(SetPreBuildDistance))));
 
             // unlock BuildInEquator 
-            matcher.MatchBack(false, new CodeMatch(OpCodes.Ldc_I4_S, (sbyte)36));
+            matcher.MatchBack(false, new CodeMatch(OpCodes.Ldc_I4_S, (sbyte)EBuildCondition.BuildInEquator));
 
             object label = matcher.Advance(-2).Operand;
 

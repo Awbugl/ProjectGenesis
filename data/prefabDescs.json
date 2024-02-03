@@ -220,17 +220,21 @@
     "assemblerRecipeType": 19
   },
   {
-    "ModelID": 501,
+    "ModelID": 491,
+    "AmmoBlastRadius1": 19
+  },
+  {
+    "ModelID": 801,
     "fluidStorageCount": 1000000
   },
   {
-    "ModelID": 502,
+    "ModelID": 802,
     "assemblerRecipeType": 11,
     "idleEnergyPerTick": 400,
     "workEnergyPerTick": 12000
   },
   {
-    "ModelID": 503,
+    "ModelID": 803,
     "isAssembler": true,
     "isStation": false,
     "assemblerRecipeType": 18,
@@ -243,7 +247,7 @@
     "stationMaxDroneCount": 0
   },
   {
-    "ModelID": 504,
+    "ModelID": 804,
     "isAssembler": true,
     "isStation": false,
     "assemblerRecipeType": 19,
@@ -256,7 +260,7 @@
     "stationMaxDroneCount": 0
   },
   {
-    "ModelID": 505,
+    "ModelID": 805,
     "isAssembler": true,
     "isStation": false,
     "assemblerRecipeType": 17,
@@ -269,7 +273,7 @@
     "stationMaxDroneCount": 0
   },
   {
-    "ModelID": 506,
+    "ModelID": 806,
     "isAssembler": true,
     "isStation": false,
     "assemblerRecipeType": 10,
@@ -282,13 +286,13 @@
     "stationMaxDroneCount": 0
   },
   {
-    "ModelID": 507,
+    "ModelID": 807,
     "genEnergyPerTick": 120000000,
     "useFuelPerTick": 120000000,
     "fuelMask": 4
   },
   {
-    "ModelID": 508,
+    "ModelID": 808,
     "isFractionator": false,
     "assemblerRecipeType": 0,
     "idleEnergyPerTick": 50000,
@@ -307,13 +311,13 @@
     ]
   },
   {
-    "ModelID": 509,
+    "ModelID": 809,
     "isAccumulator": false,
     "isPowerGen": true,
     "genEnergyPerTick": 50000
   },
   {
-    "ModelID": 510,
+    "ModelID": 810,
     "isAssembler": true,
     "isStation": false,
     "assemblerRecipeType": 14,
@@ -326,7 +330,7 @@
     "stationMaxDroneCount": 0
   },
   {
-    "ModelID": 511,
+    "ModelID": 811,
     "isAssembler": true,
     "isStation": false,
     "assemblerRecipeType": 5,
@@ -339,7 +343,7 @@
     "stationMaxDroneCount": 0
   },
   {
-    "ModelID": 512,
+    "ModelID": 812,
     "isCollectStation": true,
     "isPowerConsumer": false,
     "workEnergyPerTick": 0,
@@ -347,18 +351,18 @@
     "stationCollectSpeed": 4
   },
   {
-    "ModelID": 513,
+    "ModelID": 813,
     "AmmoBlastRadius1": 20
   },
   {
-    "ModelID": 514,
+    "ModelID": 814,
     "storageCol": 10,
     "storageRow": 9,
     "isStorage": true,
     "multiLevel": false
   },
   {
-    "ModelID": 515,
+    "ModelID": 815,
     "turretRoundInterval": 800000,
     "turretMinAttackRange": 25,
     "turretMaxAttackRange": 75,
@@ -372,7 +376,7 @@
     "turretAddEnemyThreatCoef": 0.002
   },
   {
-    "ModelID": 516,
+    "ModelID": 816,
     "turretDamageScale": 4,
     "idleEnergyPerTick": 600,
     "workEnergyPerTick": 150000,
@@ -384,11 +388,11 @@
     "turretAddEnemyThreatCoef": 0.002
   },
   {
-    "ModelID": 517,
-    "AmmoBlastRadius1": 19
+    "ModelID": 817,
+    "AmmoBlastRadius1": 17
   },
   {
-    "ModelID": 488,
+    "ModelID": 818,
     "AmmoBlastRadius1": 17
   }
 ]
