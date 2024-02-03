@@ -102,7 +102,7 @@ namespace ProjectGenesis.Utils
                            M量子储物仓 = 514,
                            M聚爆加农炮MK2 = 515,
                            M高频激光塔MK2 = 516,
-                           M反物质单元 = 517;
+                           M核子单元 = 517;
 
         internal const int T戴森球计划 = 1,
                            T电磁学 = 1001,
