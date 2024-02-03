@@ -32,6 +32,7 @@ or open a issue via [github](https://github.com/Awbugl/ProjectGenesis).
 + [WaterElectrolysis](https://dsp.thunderstore.io/package/jinxOAO/WaterElectrolysis/)
 + [GigaStationsUpdated](https://dsp.thunderstore.io/package/kremnev8/GigaStationsUpdated/)
 + [ReBuffer](https://dsp.thunderstore.io/package/Eirshy/ReBuffer/)
++ [PlanetMiner](https://dsp.thunderstore.io/package/blacksnipebiu/PlanetMiner/)
 
 ## 安装方法
 
