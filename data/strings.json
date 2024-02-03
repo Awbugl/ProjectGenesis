@@ -1815,11 +1815,6 @@
     "ENUS": "The <color=\"#FD965ECC\">Traffic Monitor</color> is built on the conveyor belt to monitor the real-time cargo flow rate at the corresponding location. Conditions can be set to trigger an alarm. Some people use it to play music."
   },
   {
-    "Name": "高效物流系统描述",
-    "ZHCN": "将<color=\"#FD965ECC\">自动集装机</color>搭建在传送带上，可以自动将传送带上两个货物集装成一个货物，极大程度上提高了传送带的运载能力。",
-    "ENUS": "After setting up the <color=\"#FD965ECC\">Automatic Piler</color> on the conveyor belt, it can automatically integrate two consecutive cargos into one, which greatly improves the carrying capacity of the conveyor belt."
-  },
-  {
     "Name": "I裂变能源发电站",
     "ZHCN": "新一代的一体化快中子反应堆使用金属铀钚燃料、液态钠冷却池、废料电解精炼处理以及高度自动化技术，产生大量的电力的同时不需要考虑废料的处理。",
     "ENUS": "The new generation of integrated fast reactors uses uranium-plutonium metal fuel, liquid sodium cooling pools, electrolytic refining of waste, and highly automated technology to generate large amounts of power without regard to waste disposal."
@@ -1913,11 +1908,6 @@
     "Name": "改良物流系统结果",
     "ZHCN": "你解锁了速度更快的传送带与分拣器，以及监测物流系统工作状态的流速监测器。",
     "ENUS": "You have unlocked a conveyor belt with a larger carrying capacity, a sorter with faster speed. Traffic Monitor is built on the conveyor belt to monitor the real-time cargo flow rate at the corresponding location. Conditions can be set to trigger an alarm."
-  },
-  {
-    "Name": "高效物流系统结果",
-    "ZHCN": "你解锁了速度最快的的传送带、分拣器，和提高物流系统效率的自动集装机。",
-    "ENUS": "You have unlocked a conveyor belt with a largest carrying capacity, a sorter with fastest sorting speed, and the Automatic Piler. it could be built on the conveyor belt. When the power supply is sufficient, it can automatically integrate two consecutive cargos into one, which greatly improves the carrying capacity of the conveyor belt."
   },
   {
     "Name": "I铁矿",
