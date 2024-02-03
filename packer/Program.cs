@@ -51,6 +51,6 @@ namespace ProjectGenesis.Packer
         public string Description { get; set; } = "构建真实宇宙，撰写创世之书。Construct Real Universe. Then leave a GenesisBook. An overhaul mod.";
 
         [JsonProperty("dependencies")]
-        public string[] Dependencies { get; set; } = new[] { "CommonAPI-CommonAPI-1.6.1", "nebula-NebulaMultiplayerModApi-1.3.1" };
+        public string[] Dependencies { get; set; } = new[] { "CommonAPI-CommonAPI-1.6.4", "nebula-NebulaMultiplayerModApi-1.3.1" };
     }
 }
