@@ -27,12 +27,20 @@ namespace ProjectGenesis.Patches.UI
             GameObject mainLogo = GameObject.Find("UI Root/Overlay Canvas/Main Menu/dsp-logo");
             GameObject escLogo = GameObject.Find("UI Root/Overlay Canvas/In Game/Esc Menu/logo");
 
-            string iconstr = Localization.isZHCN ? "Assets/texpack/黑雾中文图标" : "Assets/texpack/黑雾英文图标";
-            if(DateTime.Now.ToShortDateString().ToString()== "2/9/2024" || DateTime.Now.ToShortDateString().ToString()== "2/10/2024")
+            string iconstr;
+
+            if (Localization.isZHCN)
             {
-                iconstr = "Assets/texpack/创世Logo新春贺岁版";
+                iconstr = "Assets/texpack/黑雾中文图标";
+
+                DateTime dateTime = DateTime.Now;
+                if (dateTime > new DateTime(2024, 2, 9) && dateTime < new DateTime(2024, 2, 11)) iconstr = "Assets/texpack/创世Logo新春贺岁版";
             }
-            //Console.WriteLine(DateTime.Now.ToShortDateString().ToString());
+            else
+            {
+                iconstr = "Assets/texpack/黑雾英文图标";
+            }
+
             Texture2D texture = Resources.Load<Sprite>(iconstr).texture;
             mainLogo.GetComponent<RawImage>().texture = texture;
             escLogo.GetComponent<RawImage>().texture = texture;
