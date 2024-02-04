@@ -1,50 +1,40 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Reflection;
 using System.Reflection.Emit;
 using HarmonyLib;
+
+// ReSharper disable InconsistentNaming
 
 namespace ProjectGenesis.Patches.Logic
 {
     public static class ModelLoadingPatches
     {
-        // model id migration
-        private static readonly Func<int, int> Action = modelIndex =>
+        private static readonly Func<short, short> ModelIdMigrationAction = modelIndex =>
         {
             if (modelIndex > 500 && modelIndex < 520) modelIndex += 300;
+
             return modelIndex;
         };
 
-        [HarmonyPatch(typeof(PlanetModelingManager), nameof(PlanetModelingManager.LoadingPlanetFactoryMain))]
+        [HarmonyPatch(typeof(PrebuildData), nameof(PrebuildData.Import))]
         [HarmonyTranspiler]
-        public static IEnumerable<CodeInstruction> LoadingPlanetFactoryMain_Transpiler(IEnumerable<CodeInstruction> instructions)
+        public static IEnumerable<CodeInstruction> PrebuildData_Import_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
-            // prebuild part
             var matcher = new CodeMatcher(instructions);
-            matcher.MatchForward(true, new CodeMatch(OpCodes.Ldelema, typeof(PrebuildData)),
-                                 new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(PrebuildData), nameof(PrebuildData.modelIndex))));
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Stfld, AccessTools.Field(typeof(PrebuildData), nameof(PrebuildData.modelIndex))));
 
-            matcher.Advance(1).InsertAndAdvance(Transpilers.EmitDelegate(Action));
-
-            // entity part
-            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldloc_S),
-                                 new CodeMatch(OpCodes.Ldelema, typeof(EntityData)), new CodeMatch(OpCodes.Ldc_I4_0),
-                                 new CodeMatch(OpCodes.Stfld, AccessTools.Field(typeof(EntityData), nameof(EntityData.audioId))),
-                                 new CodeMatch(OpCodes.Ldloc_0), new CodeMatch(OpCodes.Ldloc_S),
-                                 new CodeMatch(OpCodes.Callvirt,
-                                               AccessTools.Method(typeof(PlanetFactory), nameof(PlanetFactory.CreateEntityDisplayComponents))));
-
-            CodeInstruction entityPool = matcher.Instruction;
-            CodeInstruction entityId = matcher.Advance(1).Instruction;
-            CodeInstruction ldelema = matcher.Advance(1).Instruction;
-
-            FieldInfo modelIndexFieldInfo = AccessTools.Field(typeof(EntityData), nameof(EntityData.modelIndex));
-            matcher.Advance(3).InsertAndAdvance(new CodeInstruction(entityPool), new CodeInstruction(entityId), new CodeInstruction(ldelema),
-                                                new CodeInstruction(entityPool), new CodeInstruction(entityId), new CodeInstruction(ldelema),
-                                                new CodeInstruction(OpCodes.Ldfld, modelIndexFieldInfo), Transpilers.EmitDelegate(Action),
-                                                new CodeInstruction(OpCodes.Stfld, modelIndexFieldInfo));
+            matcher.InsertAndAdvance(Transpilers.EmitDelegate(ModelIdMigrationAction));
 
             return matcher.InstructionEnumeration();
+        }
+
+        [HarmonyPatch(typeof(EntityData), nameof(EntityData.Import))]
+        [HarmonyPostfix]
+        public static void EntityData_Import(ref EntityData __instance)
+        {
+            ref short modelIndex = ref __instance.modelIndex;
+
+            if (modelIndex > 500 && modelIndex < 520) modelIndex += 300;
         }
 
         [HarmonyPatch(typeof(BlueprintBuilding), nameof(BlueprintBuilding.Import))]
@@ -52,10 +42,10 @@ namespace ProjectGenesis.Patches.Logic
         public static IEnumerable<CodeInstruction> BlueprintBuilding_Import_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
             var matcher = new CodeMatcher(instructions);
-            matcher.MatchForward(false, new CodeMatch(OpCodes.Callvirt),
-                                 new CodeMatch(OpCodes.Stfld, AccessTools.Field(typeof(BlueprintBuilding), nameof(BlueprintBuilding.modelIndex))));
+            matcher.MatchForward(
+                false, new CodeMatch(OpCodes.Stfld, AccessTools.Field(typeof(BlueprintBuilding), nameof(BlueprintBuilding.modelIndex))));
 
-            matcher.Advance(1).InsertAndAdvance(Transpilers.EmitDelegate(Action));
+            matcher.InsertAndAdvance(Transpilers.EmitDelegate(ModelIdMigrationAction));
 
             return matcher.InstructionEnumeration();
         }
