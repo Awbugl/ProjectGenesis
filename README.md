@@ -71,6 +71,7 @@ or open a issue via [github](https://github.com/Awbugl/ProjectGenesis).
 - 行星协调中心：十数种不同的额外增益效果，可以在全球范围内提供增益。
 - 巨型建筑：使用传送带输入输出物料的超级生产设备，30倍速度。
 - 新的失落科技：使用量子存储技术在异星快速部署，或者进行虫洞航行瞬间抵达银河彼端。
+- 内置量化工具：默认快捷键为`~`键，可进行简单的产线量化计算。
 
 ## 致谢
 
@@ -121,6 +122,7 @@ Unzip folder `plugins` into `Dyson Sphere Program/BepInEx/plugins/GenesisBook/`.
 - Planetary Coordination Centers: dozens of different extra gain effects that can provide gains on a global scale.
 - Mega Buildings: super production facilities that use conveyor belts to input and output materials with 30x speed.
 - New Lost Technology: use quantum storage technology for rapid deployment on alien planets, or make wormhole voyages to reach the other side of the galaxy instantly.
+- Built-in Calculator: the default shortcut key is the `~` key for simple line requirement calculations.
 
 ## Credits
 
