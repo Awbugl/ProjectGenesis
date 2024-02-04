@@ -52,7 +52,7 @@ namespace ProjectGenesis
     {
         public const string MODGUID = "org.LoShin.GenesisBook";
         public const string MODNAME = "GenesisBook";
-        public const string VERSION = "2.9.9";
+        public const string VERSION = "2.9.10";
         public const string DEBUGVERSION = "";
 
         public static bool LoadCompleted;

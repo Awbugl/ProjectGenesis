@@ -1,11 +1,17 @@
-- v2.9.9
-  + 适配版本v0.10.29.21904
+- v2.9.10
+  + 修复模型ID迁移导致的存档兼容问题
 
-  + Adaptation of version v0.10.29.21904
+  + Fix save compatibility issue caused by model ID migration in v2.9.9
 
 
 <details>
   <summary>点击展开日志 | Click to view all </summary>
+
+
+- v2.9.9
+  + 适配版本v0.10.29.21904
+
+  + Adaptation of version v0.10.29.21904
 
 
 - v2.9.8
