@@ -1,6 +1,7 @@
 ﻿using HarmonyLib;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 // ReSharper disable InconsistentNaming
 
@@ -27,6 +28,11 @@ namespace ProjectGenesis.Patches.UI
             GameObject escLogo = GameObject.Find("UI Root/Overlay Canvas/In Game/Esc Menu/logo");
 
             string iconstr = Localization.isZHCN ? "Assets/texpack/黑雾中文图标" : "Assets/texpack/黑雾英文图标";
+            if(DateTime.Now.ToShortDateString().ToString()== "2/9/2024" || DateTime.Now.ToShortDateString().ToString()== "2/10/2024")
+            {
+                iconstr = "Assets/texpack/创世Logo新春贺岁版";
+            }
+            //Console.WriteLine(DateTime.Now.ToShortDateString().ToString());
             Texture2D texture = Resources.Load<Sprite>(iconstr).texture;
             mainLogo.GetComponent<RawImage>().texture = texture;
             escLogo.GetComponent<RawImage>().texture = texture;
