@@ -1,7 +1,6 @@
 using System;
 using HarmonyLib;
 using UnityEngine;
-using ERecipeType_1 = ERecipeType;
 
 // ReSharper disable InconsistentNaming
 

@@ -1,11 +1,17 @@
-- v2.9.10
-  + 修复模型ID迁移导致的存档兼容问题
+- v2.9.11
+  + 适配NebulaMultiplayerModApi版本2.0.0
 
-  + Fix save compatibility issue caused by model ID migration in v2.9.9
+  + Adaptation of NebulaMultiplayerModApi-2.0.0
 
 
 <details>
   <summary>点击展开日志 | Click to view all </summary>
+
+
+- v2.9.10
+  + 修复模型ID迁移导致的存档兼容问题
+
+  + Fix save compatibility issue caused by model ID migration in v2.9.9
 
 
 - v2.9.9

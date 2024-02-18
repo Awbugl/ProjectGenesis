@@ -10,7 +10,7 @@ namespace ProjectGenesis.Patches.UI
 {
     public static class ChemicalRecipeFcolPatches
     {
-        private static readonly Dictionary<int, int> RecipeIdPos = new Dictionary<int, int>()
+        private static readonly Dictionary<int, int> RecipeIdPos = new Dictionary<int, int>
         {
             { ProtoID.R二氧化碳, 431 },
             { ProtoID.R催化重整, 432 },

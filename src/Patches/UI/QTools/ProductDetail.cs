@@ -7,7 +7,6 @@ using ProjectGenesis.Patches.UI.Utils;
 using ProjectGenesis.Utils;
 using UnityEngine;
 using UnityEngine.UI;
-using ERecipeType_1 = ERecipeType;
 using ProjectGenesis_Utils_ERecipeType = ProjectGenesis.Utils.ERecipeType;
 using Utils_ERecipeType = ProjectGenesis.Utils.ERecipeType;
 

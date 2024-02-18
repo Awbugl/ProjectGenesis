@@ -1,7 +1,7 @@
-﻿using HarmonyLib;
+﻿using System;
+using HarmonyLib;
 using UnityEngine;
 using UnityEngine.UI;
-using System;
 
 // ReSharper disable InconsistentNaming
 

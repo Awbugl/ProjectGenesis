@@ -5,7 +5,6 @@ using HarmonyLib;
 using UnityEngine;
 using xiaoye97;
 using static ProjectGenesis.Utils.JsonHelper;
-using ERecipeType_1 = ERecipeType;
 
 // ReSharper disable RemoveRedundantBraces
 
@@ -16,9 +15,10 @@ namespace ProjectGenesis.Utils
         internal static void ImportJson(int[] tableID)
         {
             ref Dictionary<int, IconToolNew.IconDesc> itemIconDescs
-                = ref AccessTools.StaticFieldRefAccess<Dictionary<int, IconToolNew.IconDesc>>(typeof(ProtoRegistry), "itemIconDescs");
+                = ref AccessTools.StaticFieldRefAccess<Dictionary<int, IconToolNew.IconDesc>>(typeof(ProtoRegistry),
+                    "itemIconDescs");
 
-#region TechProto
+            #region TechProto
 
             foreach (TechProtoJson techjson in TechProtos())
             {
@@ -32,9 +32,9 @@ namespace ProjectGenesis.Utils
                 }
             }
 
-#endregion
+            #endregion
 
-#region Mod ItemProto
+            #region Mod ItemProto
 
             foreach (ItemProtoJson itemjson in ItemModProtos())
             {
@@ -43,21 +43,22 @@ namespace ProjectGenesis.Utils
                 LDBTool.PreAddProto(itemjson.ToProto());
             }
 
-#endregion
+            #endregion
 
-#region Vanilla ItemProto
+            #region Vanilla ItemProto
 
             foreach (ItemProtoJson itemjson in ItemVanillaProtos())
             {
                 itemjson.GridIndex = GetTableID(itemjson.GridIndex);
                 ItemProto proto = LDB.items.Select(itemjson.ID);
-                if (proto.IconPath != itemjson.IconPath) itemIconDescs.Add(itemjson.ID, IconDescUtils.GetIconDesc(itemjson.ID));
+                if (proto.IconPath != itemjson.IconPath)
+                    itemIconDescs.Add(itemjson.ID, IconDescUtils.GetIconDesc(itemjson.ID));
                 itemjson.ToProto(proto);
             }
 
-#endregion
+            #endregion
 
-#region RecipeProto
+            #region RecipeProto
 
             foreach (RecipeProtoJson recipeJson in RecipeProtos())
             {
@@ -73,9 +74,9 @@ namespace ProjectGenesis.Utils
                 }
             }
 
-#endregion
+            #endregion
 
-#region TutorialProto
+            #region TutorialProto
 
             TutorialProtoJson[] tutorialProtos = TutorialProtos();
 
@@ -84,7 +85,7 @@ namespace ProjectGenesis.Utils
                 LDBTool.PreAddProto(json.ToProto());
             }
 
-#endregion
+            #endregion
 
             int GetTableID(int gridIndex)
             {

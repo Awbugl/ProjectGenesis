@@ -4,7 +4,6 @@ using System.Reflection;
 using System.Reflection.Emit;
 using HarmonyLib;
 using ProjectGenesis.Utils;
-using ERecipeType_1 = ERecipeType;
 
 // ReSharper disable InconsistentNaming
 

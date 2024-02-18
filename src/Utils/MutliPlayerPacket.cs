@@ -1,6 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 using NebulaAPI;
+using NebulaAPI.Interfaces;
+using NebulaAPI.Networking;
+using NebulaAPI.Packets;
 using ProjectGenesis.Patches.Logic;
 using ProjectGenesis.Patches.Logic.MegaAssembler;
 using ProjectGenesis.Patches.Logic.PlanetFocus;
@@ -299,8 +302,7 @@ namespace ProjectGenesis.Utils
         public static void ProcessBytesLater(int planetId)
         {
             if (!NebulaModAPI.IsMultiplayerActive || NebulaModAPI.MultiplayerSession.LocalPlayer.IsHost) return;
-            if (!PendingData.TryGetValue(planetId, out byte[] bytes)) return;
-            PendingData.Remove(planetId);
+            if (!PendingData.Remove(planetId, out byte[] bytes)) return;
 
             using (IReaderProvider p = NebulaModAPI.GetBinaryReader(bytes))
             {

@@ -11,6 +11,7 @@ using CommonAPI.Systems.ModLocalization;
 using crecheng.DSPModSave;
 using HarmonyLib;
 using NebulaAPI;
+using NebulaAPI.Interfaces;
 using ProjectGenesis.Compatibility;
 using ProjectGenesis.Patches.Logic;
 using ProjectGenesis.Patches.Logic.AddVein;
@@ -22,7 +23,6 @@ using ProjectGenesis.Patches.UI.QTools;
 using ProjectGenesis.Utils;
 using UnityEngine;
 using xiaoye97;
-using ERecipeType_1 = ERecipeType;
 using static ProjectGenesis.Utils.JsonDataUtils;
 using static ProjectGenesis.Utils.CopyModelUtils;
 using static ProjectGenesis.Utils.TranslateUtils;
@@ -52,7 +52,7 @@ namespace ProjectGenesis
     {
         public const string MODGUID = "org.LoShin.GenesisBook";
         public const string MODNAME = "GenesisBook";
-        public const string VERSION = "2.9.10";
+        public const string VERSION = "2.9.11";
         public const string DEBUGVERSION = "";
 
         public static bool LoadCompleted;
