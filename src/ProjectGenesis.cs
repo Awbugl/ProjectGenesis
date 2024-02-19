@@ -13,10 +13,10 @@ using HarmonyLib;
 using NebulaAPI;
 using NebulaAPI.Interfaces;
 using ProjectGenesis.Compatibility;
-using ProjectGenesis.Patches.Logic;
 using ProjectGenesis.Patches.Logic.AddVein;
 using ProjectGenesis.Patches.Logic.MegaAssembler;
 using ProjectGenesis.Patches.Logic.PlanetFocus;
+using ProjectGenesis.Patches.Logic.QuantumStorage;
 using ProjectGenesis.Patches.UI;
 using ProjectGenesis.Patches.UI.PlanetFocus;
 using ProjectGenesis.Patches.UI.QTools;
@@ -66,7 +66,9 @@ namespace ProjectGenesis
 
         internal static string ModPath;
 
-        internal static ConfigEntry<bool> EnableLDBToolCacheEntry, EnableHideTechModeEntry, DisableMessageBoxEntry;
+        internal static ConfigEntry<bool> EnableLDBToolCacheEntry,
+                                          EnableHideTechModeEntry,
+                                          DisableMessageBoxEntry;
 
         internal static ConfigEntry<KeyboardShortcut> QToolsHotkey;
 
@@ -74,7 +76,7 @@ namespace ProjectGenesis
 
         public void Awake()
         {
-#region Logger
+        #region Logger
 
             logger = Logger;
             logger.Log(LogLevel.Info, "GenesisBook Awake");
@@ -82,20 +84,21 @@ namespace ProjectGenesis
             if (DSPBattle.Installed)
             {
                 logger.Log(LogLevel.Error, "They Come From Void is installed, which is incompatible with GenesisBook. Load Cancelled.");
+
                 return;
             }
 
-#endregion Logger
+        #endregion Logger
 
-#region Configs
+        #region Configs
 
             configFile = Config;
 
             EnableLDBToolCacheEntry = Config.Bind("config", "UseLDBToolCache", false,
-                                                  "Enable LDBTool Cache, which allows you use config to fix some compatibility issues.\n启用LDBTool缓存，允许使用配置文件修复部分兼容性问题");
+                "Enable LDBTool Cache, which allows you use config to fix some compatibility issues.\n启用LDBTool缓存，允许使用配置文件修复部分兼容性问题");
 
             EnableHideTechModeEntry = Config.Bind("config", "HideTechMode", true,
-                                                  "Enable Tech Exploration Mode, which will hide locked techs in tech tree.\n启用科技探索模式，启用后将隐藏未解锁的科技");
+                "Enable Tech Exploration Mode, which will hide locked techs in tech tree.\n启用科技探索模式，启用后将隐藏未解锁的科技");
 
             DisableMessageBoxEntry = Config.Bind("config", "DiableMessageBox", false, "Don't show message when GenesisBook is loaded.\n禁用首次加载时的提示信息");
 
@@ -103,9 +106,9 @@ namespace ProjectGenesis
 
             Config.Save();
 
-#endregion Configs
+        #endregion Configs
 
-#region ResourceData
+        #region ResourceData
 
             var executingAssembly = Assembly.GetExecutingAssembly();
 
@@ -119,26 +122,23 @@ namespace ProjectGenesis
             resources_models.LoadAssetBundle("genesis-models");
             ProtoRegistry.AddResource(resources_models);
 
-            var stoneVeinShader = resources_models.bundle.LoadAsset<Shader>("Assets/genesis-models/shaders/PBR Standard Vein Stone COLOR.shader");
+            Shader stoneVeinShader = resources_models.bundle.LoadAsset<Shader>("Assets/genesis-models/shaders/PBR Standard Vein Stone COLOR.shader");
             SwapShaderPatches.AddSwapShaderMapping("VF Shaders/Forward/PBR Standard Vein Stone", stoneVeinShader);
 
-            var metalVeinShader = resources_models.bundle.LoadAsset<Shader>("Assets/genesis-models/shaders/PBR Standard Vein Metal COLOR.shader");
+            Shader metalVeinShader = resources_models.bundle.LoadAsset<Shader>("Assets/genesis-models/shaders/PBR Standard Vein Metal COLOR.shader");
             SwapShaderPatches.AddSwapShaderMapping("VF Shaders/Forward/PBR Standard Vein Metal", metalVeinShader);
 
-#endregion ResourceData
+        #endregion ResourceData
 
-#region NebulaModAPI
+        #region NebulaModAPI
 
             NebulaModAPI.RegisterPackets(executingAssembly);
 
-            NebulaModAPI.OnPlanetLoadRequest += planetId =>
-            {
-                NebulaModAPI.MultiplayerSession.Network.SendPacket(new GenesisBookPlanetLoadRequest(planetId));
-            };
+            NebulaModAPI.OnPlanetLoadRequest += planetId => { NebulaModAPI.MultiplayerSession.Network.SendPacket(new GenesisBookPlanetLoadRequest(planetId)); };
 
             NebulaModAPI.OnPlanetLoadFinished += GenesisBookPlanetDataProcessor.ProcessBytesLater;
 
-#endregion NebulaModAPI
+        #endregion NebulaModAPI
 
             Harmony = new Harmony(MODGUID);
 
@@ -153,12 +153,9 @@ namespace ProjectGenesis
 
             TableID = new int[]
             {
-                TabSystem.RegisterTab("org.LoShin.GenesisBook:org.LoShin.GenesisBookTab1",
-                                      new TabData("精炼页面".TranslateFromJsonSpecial(), "Assets/texpack/矿物处理")),
-                TabSystem.RegisterTab("org.LoShin.GenesisBook:org.LoShin.GenesisBookTab2",
-                                      new TabData("化工页面".TranslateFromJsonSpecial(), "Assets/texpack/化工科技")),
-                TabSystem.RegisterTab("org.LoShin.GenesisBook:org.LoShin.GenesisBookTab3",
-                                      new TabData("防御页面".TranslateFromJsonSpecial(), "Assets/texpack/防御"))
+                TabSystem.RegisterTab("org.LoShin.GenesisBook:org.LoShin.GenesisBookTab1", new TabData("精炼页面".TranslateFromJsonSpecial(), "Assets/texpack/矿物处理")),
+                TabSystem.RegisterTab("org.LoShin.GenesisBook:org.LoShin.GenesisBookTab2", new TabData("化工页面".TranslateFromJsonSpecial(), "Assets/texpack/化工科技")),
+                TabSystem.RegisterTab("org.LoShin.GenesisBook:org.LoShin.GenesisBookTab3", new TabData("防御页面".TranslateFromJsonSpecial(), "Assets/texpack/防御")),
             };
 
             RegisterStrings();
@@ -173,6 +170,7 @@ namespace ProjectGenesis
         private void Update()
         {
             if (VFInput.inputing) return;
+
             if (QToolsWindow) QToolsWindow._OnUpdate();
         }
 
@@ -218,9 +216,9 @@ namespace ProjectGenesis
         {
             //飞行舱拆除
             VegeProto vegeProto = LDB.veges.Select(9999);
-            vegeProto.MiningItem = new[] { ProtoID.I四氢双环戊二烯燃料棒, ProtoID.I铁块, ProtoID.I铜块 };
-            vegeProto.MiningCount = new[] { 3, 80, 80 };
-            vegeProto.MiningChance = new float[] { 1, 1, 1 };
+            vegeProto.MiningItem = new[] { ProtoID.I四氢双环戊二烯燃料棒, ProtoID.I铁块, ProtoID.I铜块, };
+            vegeProto.MiningCount = new[] { 3, 80, 80, };
+            vegeProto.MiningChance = new float[] { 1, 1, 1, };
             vegeProto.Preload();
 
             LDB.items.OnAfterDeserialize();
@@ -298,6 +296,7 @@ namespace ProjectGenesis
         private static void ProtoPreload()
         {
             foreach (MilestoneProto milestone in LDB.milestones.dataArray) milestone.Preload();
+
             foreach (JournalPatternProto journalPattern in LDB.journalPatterns.dataArray) journalPattern.Preload();
 
             foreach (VeinProto proto in LDB.veins.dataArray)
@@ -308,17 +307,14 @@ namespace ProjectGenesis
 
             foreach (TechProto proto in LDB.techs.dataArray) proto.Preload();
 
-            for (int i = 0; i < LDB.items.dataArray.Length; ++i)
+            for (var i = 0; i < LDB.items.dataArray.Length; ++i)
             {
                 LDB.items.dataArray[i].recipes = null;
                 LDB.items.dataArray[i].rawMats = null;
                 LDB.items.dataArray[i].Preload(i);
             }
 
-            for (int i = 0; i < LDB.recipes.dataArray.Length; ++i)
-            {
-                LDB.recipes.dataArray[i].Preload(i);
-            }
+            for (var i = 0; i < LDB.recipes.dataArray.Length; ++i) LDB.recipes.dataArray[i].Preload(i);
 
             foreach (TechProto proto in LDB.techs.dataArray)
             {

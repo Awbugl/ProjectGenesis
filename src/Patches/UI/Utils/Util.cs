@@ -14,31 +14,24 @@ namespace ProjectGenesis.Patches.UI.Utils
         private static readonly UIAssemblerWindow UIGameAssemblerWindow = UIRoot.instance.uiGame.assemblerWindow;
         private static readonly UIButton CategoryButton = UIRoot.instance.uiGame.functionPanel.buildMenu.categoryButtons[1];
 
-        internal static RectTransform NormalizeRectWithTopLeft(
-            Component cmp,
-            float left,
-            float top,
-            Transform parent = null)
+        internal static RectTransform NormalizeRectWithTopLeft(Component cmp, float left, float top, Transform parent = null)
         {
             var rect = (RectTransform)cmp.transform;
+
             if (parent != null) rect.SetParent(parent, false);
 
             rect.anchorMax = new Vector2(0f, 1f);
             rect.anchorMin = new Vector2(0f, 1f);
             rect.pivot = new Vector2(0f, 1f);
             rect.anchoredPosition3D = new Vector3(left, -top, 0f);
+
             return rect;
         }
 
-        public static void NormalizeRectWithMargin(
-            Component cmp,
-            float top,
-            float left,
-            float bottom,
-            float right,
-            Transform parent = null)
+        public static void NormalizeRectWithMargin(Component cmp, float top, float left, float bottom, float right, Transform parent = null)
         {
             var rect = (RectTransform)cmp.transform;
+
             if (parent != null) rect.SetParent(parent, false);
 
             rect.anchoredPosition3D = Vector3.zero;
@@ -60,6 +53,7 @@ namespace ProjectGenesis.Patches.UI.Utils
             txt.alignment = anchor;
             //txt_.supportRichText = false;
             txt.fontSize = fontSize;
+
             return txt;
         }
 
@@ -69,6 +63,7 @@ namespace ProjectGenesis.Patches.UI.Utils
             Object.Destroy(txt.gameObject.GetComponent<Localizer>());
             txt.gameObject.name = "txt_" + label;
             txt.text = label;
+
             return txt;
         }
 
@@ -80,6 +75,7 @@ namespace ProjectGenesis.Patches.UI.Utils
             txt.text = label;
             txt.color = new Color(1f, 1f, 1f, 0.5f);
             ((RectTransform)txt.transform).sizeDelta = new Vector2(txt.preferredWidth + 40f, 30f);
+
             return txt;
         }
 
@@ -87,13 +83,15 @@ namespace ProjectGenesis.Patches.UI.Utils
         {
             UIButton btn = Object.Instantiate(OrbitAddButton);
             btn.gameObject.name = "btn_" + label;
+
             if (btn.transitions.Length >= 1) btn.transitions[0].target.color = new Color(0.2392f, 0.6f, 0.9f, 0.078f);
 
-            var btnText = btn.transform.Find("Text").GetComponent<Text>();
+            Text btnText = btn.transform.Find("Text").GetComponent<Text>();
             btnText.text = label;
             btnText.fontSize = 17;
             Object.Destroy(btn.transform.Find("Text").GetComponent<Localizer>());
             var btnRect = (RectTransform)btn.transform;
+
             if (width == 0f || height == 0f)
                 btnRect.sizeDelta = new Vector2(btnText.preferredWidth + 14f, 24f); //22
             else
@@ -106,32 +104,28 @@ namespace ProjectGenesis.Patches.UI.Utils
         {
             UIButton btn = Object.Instantiate(CategoryButton);
             btn.gameObject.name = "btn_" + (text ?? "");
+
             if (btn.transitions.Length >= 1) btn.transitions[0].target.color = new Color(0.2392f, 0.6f, 0.9f, 0.078f);
 
-            var btnText = btn.GetComponentInChildren<Text>();
-            var btnImage = btn.GetComponentInChildren<Image>();
+            Text btnText = btn.GetComponentInChildren<Text>();
+            Image btnImage = btn.GetComponentInChildren<Image>();
 
             btnText.text = text;
             btnText.fontSize = 17;
             btnImage.sprite = img;
+
             return btn;
         }
 
-        internal static void CreateSignalIcon(
-            string tipTitle,
-            string tipText,
-            out UIButton iconButton,
-            out Image iconImage)
+        internal static void CreateSignalIcon(string tipTitle, string tipText, out UIButton iconButton, out Image iconImage)
         {
             GameObject go = Object.Instantiate(TransformGameObject);
 
             go.name = "signal-button";
             go.SetActive(true);
             var rect = (RectTransform)go.transform;
-            for (int i = rect.childCount - 1; i >= 0; --i)
-            {
-                Object.Destroy(rect.GetChild(i).gameObject);
-            }
+
+            for (int i = rect.childCount - 1; i >= 0; --i) Object.Destroy(rect.GetChild(i).gameObject);
 
             iconButton = rect.GetComponent<UIButton>();
             iconButton.tips.tipTitle = tipTitle.TranslateFromJson();
@@ -143,24 +137,27 @@ namespace ProjectGenesis.Patches.UI.Utils
         public static UIButton MakeIconButtonB(Sprite sprite, float size = 60)
         {
             GameObject go = Object.Instantiate(UIRoot.instance.uiGame.researchQueue.pauseButton.gameObject);
-            var btn = go.GetComponent<UIButton>();
+            UIButton btn = go.GetComponent<UIButton>();
             var rect = (RectTransform)go.transform;
             //rect.sizeDelta = new Vector2(size, size);
             float scale = size / 60;
             rect.localScale = new Vector3(scale, scale, scale);
-            var img = go.transform.Find("icon")?.GetComponent<Image>();
+            Image img = go.transform.Find("icon")?.GetComponent<Image>();
+
             if (img != null) img.sprite = sprite;
 
             btn.tips.tipText = "";
             btn.tips.tipTitle = "";
             btn.tips.delay = 0.7f;
+
             return btn;
         }
 
         internal static void RemovePersistentCalls(GameObject go)
         {
-            var oldbutton = go.GetComponent<Button>();
-            var btn = go.GetComponent<UIButton>();
+            Button oldbutton = go.GetComponent<Button>();
+            UIButton btn = go.GetComponent<UIButton>();
+
             if (btn != null && oldbutton != null)
             {
                 Object.DestroyImmediate(oldbutton);
@@ -174,26 +171,26 @@ namespace ProjectGenesis.Patches.UI.Utils
             GameObject go = Object.Instantiate(src);
 
             RemovePersistentCalls(go);
-            var btn = go.GetComponent<UIButton>();
+            UIButton btn = go.GetComponent<UIButton>();
             var rect = (RectTransform)go.transform;
-            for (int i = rect.childCount - 1; i >= 0; --i)
-            {
-                Object.Destroy(rect.GetChild(i).gameObject);
-            }
+
+            for (int i = rect.childCount - 1; i >= 0; --i) Object.Destroy(rect.GetChild(i).gameObject);
 
             rect.DetachChildren();
 
             if (size > 0) rect.sizeDelta = new Vector2(size, size);
+
             //float scale = size / rect.sizeDelta.y; //y=30
             //rect.localScale = new Vector3(scale, scale, scale);
-            var img = go.GetComponent<Image>();
+            Image img = go.GetComponent<Image>();
+
             if (img != null) img.sprite = sprite;
 
             btn.tips.tipText = "";
             btn.tips.tipTitle = "";
             btn.tips.delay = 0.6f;
 
-            if (btn.transitions != null && btn.transitions.Length > 0) btn.transitions = new UIButton.Transition[] { btn.transitions[0] };
+            if (btn.transitions != null && btn.transitions.Length > 0) btn.transitions = new UIButton.Transition[] { btn.transitions[0], };
 
             return btn;
         }
@@ -202,10 +199,10 @@ namespace ProjectGenesis.Patches.UI.Utils
         {
             UIAssemblerWindow assemblerWindow = UIRoot.instance.uiGame.assemblerWindow;
             GameObject go = Object.Instantiate(assemblerWindow.copyButton.gameObject);
-            var btn = go.GetComponent<UIButton>();
+            UIButton btn = go.GetComponent<UIButton>();
             Transform child = go.transform.Find("Text");
             Object.DestroyImmediate(child.GetComponent<Localizer>());
-            var txt = child.GetComponent<Text>();
+            Text txt = child.GetComponent<Text>();
             txt.text = label;
             btn.tips.tipText = "";
             btn.tips.tipTitle = "";
@@ -213,6 +210,7 @@ namespace ProjectGenesis.Patches.UI.Utils
             if (width > 0 || height > 0)
             {
                 var rect = (RectTransform)go.transform;
+
                 if (width == 0) width = rect.sizeDelta.x;
 
                 if (height == 0) height = rect.sizeDelta.y;
@@ -230,6 +228,7 @@ namespace ProjectGenesis.Patches.UI.Utils
             UIDESwarmPanel swarmPanel = UIRoot.instance.uiGame.dysonEditor.controlPanel.hierarchy.swarmPanel;
             UIButton src = swarmPanel.orbitButtons[0];
             UIButton btn = Object.Instantiate(src);
+
             if (btn.transitions.Length >= 2)
             {
                 btn.transitions[0].normalColor = new Color(0.1f, 0.1f, 0.1f, 0.68f);
@@ -238,7 +237,7 @@ namespace ProjectGenesis.Patches.UI.Utils
                 btn.transitions[1].highlightColorOverride = new Color(0.2f, 0.1f, 0.1f, 0.9f);
             }
 
-            var btnText = btn.transform.Find("Text").GetComponent<Text>();
+            Text btnText = btn.transform.Find("Text").GetComponent<Text>();
             btnText.text = label;
             btnText.fontSize = 14;
 

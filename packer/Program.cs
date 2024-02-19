@@ -16,13 +16,12 @@ namespace ProjectGenesis.Packer
             string releasePath = Path.Combine(SolutionPath, "release");
 
             foreach (string path in Directory.GetFiles(releasePath, "*.zip"))
-            {
-                if (File.Exists(path)) File.Delete(path);
-            }
+                if (File.Exists(path))
+                    File.Delete(path);
 
             File.WriteAllText(Path.Combine(releasePath, "manifest.json"), JsonConvert.SerializeObject(new ManifestObject(), Formatting.Indented));
 
-            string zipName = $"GenesisBook-v{ProjectGenesis.VERSION}{ProjectGenesis.DEBUGVERSION}.zip";
+            var zipName = $"GenesisBook-v{ProjectGenesis.VERSION}{ProjectGenesis.DEBUGVERSION}.zip";
 
             string archive = Path.Combine(SolutionPath, zipName);
 
@@ -38,19 +37,14 @@ namespace ProjectGenesis.Packer
 
     public class ManifestObject
     {
-        [JsonProperty("name")]
-        public string Name { get; set; } = "GenesisBook";
+        [JsonProperty("name")] public string Name { get; set; } = "GenesisBook";
 
-        [JsonProperty("version_number")]
-        public string VersionNumber { get; set; } = ProjectGenesis.VERSION;
+        [JsonProperty("version_number")] public string VersionNumber { get; set; } = ProjectGenesis.VERSION;
 
-        [JsonProperty("website_url")]
-        public string WebsiteURL { get; set; } = "https://github.com/Awbugl/ProjectGenesis";
+        [JsonProperty("website_url")] public string WebsiteURL { get; set; } = "https://github.com/Awbugl/ProjectGenesis";
 
-        [JsonProperty("description")]
-        public string Description { get; set; } = "构建真实宇宙，撰写创世之书。Construct Real Universe. Then leave a GenesisBook. An overhaul mod.";
+        [JsonProperty("description")] public string Description { get; set; } = "构建真实宇宙，撰写创世之书。Construct Real Universe. Then leave a GenesisBook. An overhaul mod.";
 
-        [JsonProperty("dependencies")]
-        public string[] Dependencies { get; set; } = { "CommonAPI-CommonAPI-1.6.4", "nebula-NebulaMultiplayerModApi-2.0.0" };
+        [JsonProperty("dependencies")] public string[] Dependencies { get; set; } = { "CommonAPI-CommonAPI-1.6.4", "nebula-NebulaMultiplayerModApi-2.0.0", };
     }
 }

@@ -16,14 +16,12 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
         private static readonly FieldInfo EntityData_StationId_Field = AccessTools.Field(typeof(EntityData), nameof(EntityData.stationId)),
                                           EntityData_AssemblerId_Field = AccessTools.Field(typeof(EntityData), nameof(EntityData.assemblerId)),
                                           PlanetFactory_EntityPool_Field = AccessTools.Field(typeof(PlanetFactory), nameof(PlanetFactory.entityPool)),
-                                          FactorySystem_AssemblerPool_Field
-                                              = AccessTools.Field(typeof(FactorySystem), nameof(FactorySystem.assemblerPool));
+                                          FactorySystem_AssemblerPool_Field = AccessTools.Field(typeof(FactorySystem), nameof(FactorySystem.assemblerPool));
 
         private static readonly MethodInfo AssemblerComponent_InternalUpdate_Method
                                                = AccessTools.Method(typeof(AssemblerComponent), nameof(AssemblerComponent.InternalUpdate)),
-                                           MegaAssembler_AssemblerComponent_InternalUpdate_Patch_Method
-                                               = AccessTools.Method(typeof(MegaAssemblerPatches),
-                                                                    nameof(GameTick_AssemblerComponent_InternalUpdate_Patch));
+                                           MegaAssembler_AssemblerComponent_InternalUpdate_Patch_Method = AccessTools.Method(typeof(MegaAssemblerPatches),
+                                               nameof(GameTick_AssemblerComponent_InternalUpdate_Patch));
 
         [HarmonyPatch(typeof(FactorySystem), nameof(FactorySystem.GameTick), typeof(long), typeof(bool))]
         [HarmonyPatch(typeof(FactorySystem), nameof(FactorySystem.GameTick), typeof(long), typeof(bool), typeof(int), typeof(int), typeof(int))]
@@ -32,21 +30,20 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
         {
             var matcher = new CodeMatcher(instructions, generator);
 
-            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldloc_1),
-                                 new CodeMatch(OpCodes.Ldloc_2), new CodeMatch(OpCodes.Call, AssemblerComponent_InternalUpdate_Method));
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldloc_1), new CodeMatch(OpCodes.Ldloc_2),
+                new CodeMatch(OpCodes.Call, AssemblerComponent_InternalUpdate_Method));
 
             object local1 = matcher.Operand;
             object power1 = matcher.Advance(1).Operand;
 
             matcher.CreateLabelAt(matcher.Pos + 4, out Label label1);
 
-            matcher.Advance(-1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldc_I4_0), new CodeInstruction(OpCodes.Ldloc_S, local1),
-                                                 new CodeInstruction(OpCodes.Ldarg_0), new CodeInstruction(OpCodes.Ldloc_S, power1),
-                                                 new CodeInstruction(OpCodes.Call, MegaAssembler_AssemblerComponent_InternalUpdate_Patch_Method),
-                                                 new CodeInstruction(OpCodes.Brfalse_S, label1), new CodeInstruction(OpCodes.Pop));
+            matcher.Advance(-1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldc_I4_0), new CodeInstruction(OpCodes.Ldloc_S, local1), new CodeInstruction(OpCodes.Ldarg_0),
+                new CodeInstruction(OpCodes.Ldloc_S, power1), new CodeInstruction(OpCodes.Call, MegaAssembler_AssemblerComponent_InternalUpdate_Patch_Method),
+                new CodeInstruction(OpCodes.Brfalse_S, label1), new CodeInstruction(OpCodes.Pop));
 
             matcher.Advance(5).MatchForward(false, new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldloc_1),
-                                            new CodeMatch(OpCodes.Ldloc_2), new CodeMatch(OpCodes.Call, AssemblerComponent_InternalUpdate_Method));
+                new CodeMatch(OpCodes.Ldloc_2), new CodeMatch(OpCodes.Call, AssemblerComponent_InternalUpdate_Method));
 
             if (matcher.IsValid)
             {
@@ -56,9 +53,9 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
                 matcher.CreateLabelAt(matcher.Pos + 4, out Label label2);
 
                 matcher.Advance(-1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldc_I4_0), new CodeInstruction(OpCodes.Ldloc_S, local2),
-                                                     new CodeInstruction(OpCodes.Ldarg_0), new CodeInstruction(OpCodes.Ldloc_S, power2),
-                                                     new CodeInstruction(OpCodes.Call, MegaAssembler_AssemblerComponent_InternalUpdate_Patch_Method),
-                                                     new CodeInstruction(OpCodes.Brfalse_S, label2), new CodeInstruction(OpCodes.Pop));
+                    new CodeInstruction(OpCodes.Ldarg_0), new CodeInstruction(OpCodes.Ldloc_S, power2),
+                    new CodeInstruction(OpCodes.Call, MegaAssembler_AssemblerComponent_InternalUpdate_Patch_Method), new CodeInstruction(OpCodes.Brfalse_S, label2),
+                    new CodeInstruction(OpCodes.Pop));
             }
 
             return matcher.InstructionEnumeration();
@@ -66,15 +63,13 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
 
         [HarmonyPatch(typeof(FactorySystem), nameof(FactorySystem.GameTick), typeof(long), typeof(bool), typeof(int), typeof(int), typeof(int))]
         [HarmonyTranspiler]
-        public static IEnumerable<CodeInstruction> FactorySystem_GameTick_Transpiler_2(
-            IEnumerable<CodeInstruction> instructions,
-            ILGenerator generator)
+        public static IEnumerable<CodeInstruction> FactorySystem_GameTick_Transpiler_2(IEnumerable<CodeInstruction> instructions, ILGenerator generator)
         {
             var matcher = new CodeMatcher(instructions, generator);
 
-            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldarg_0), new CodeMatch(OpCodes.Ldfld), new CodeMatch(OpCodes.Ldloc_S),
-                                 new CodeMatch(OpCodes.Ldelema), new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldloc_1),
-                                 new CodeMatch(OpCodes.Ldloc_2), new CodeMatch(OpCodes.Call, AssemblerComponent_InternalUpdate_Method));
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldarg_0), new CodeMatch(OpCodes.Ldfld), new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldelema),
+                new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldloc_1), new CodeMatch(OpCodes.Ldloc_2),
+                new CodeMatch(OpCodes.Call, AssemblerComponent_InternalUpdate_Method));
 
             object index = matcher.Advance(2).Operand;
             object power = matcher.Advance(2).Operand;
@@ -82,20 +77,15 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
             matcher.CreateLabelAt(matcher.Pos + 4, out Label label);
 
             matcher.Advance(-4).InsertAndAdvance(new CodeInstruction(OpCodes.Ldc_I4_0), new CodeInstruction(OpCodes.Ldarg_0),
-                                                 new CodeInstruction(OpCodes.Ldfld, FactorySystem_AssemblerPool_Field),
-                                                 new CodeInstruction(OpCodes.Ldloc_S, index),
-                                                 new CodeInstruction(OpCodes.Ldelema, typeof(AssemblerComponent)),
-                                                 new CodeInstruction(OpCodes.Ldarg_0), new CodeInstruction(OpCodes.Ldloc_S, power),
-                                                 new CodeInstruction(OpCodes.Call, MegaAssembler_AssemblerComponent_InternalUpdate_Patch_Method),
-                                                 new CodeInstruction(OpCodes.Brfalse_S, label), new CodeInstruction(OpCodes.Pop));
+                new CodeInstruction(OpCodes.Ldfld, FactorySystem_AssemblerPool_Field), new CodeInstruction(OpCodes.Ldloc_S, index),
+                new CodeInstruction(OpCodes.Ldelema, typeof(AssemblerComponent)), new CodeInstruction(OpCodes.Ldarg_0), new CodeInstruction(OpCodes.Ldloc_S, power),
+                new CodeInstruction(OpCodes.Call, MegaAssembler_AssemblerComponent_InternalUpdate_Patch_Method), new CodeInstruction(OpCodes.Brfalse_S, label),
+                new CodeInstruction(OpCodes.Pop));
 
             return matcher.InstructionEnumeration();
         }
 
-        public static bool GameTick_AssemblerComponent_InternalUpdate_Patch(
-            ref AssemblerComponent __instance,
-            FactorySystem factorySystem,
-            float power)
+        public static bool GameTick_AssemblerComponent_InternalUpdate_Patch(ref AssemblerComponent __instance, FactorySystem factorySystem, float power)
         {
             PlanetFactory factory = factorySystem.factory;
 
@@ -130,32 +120,30 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
             }
 
             if (factory.entityPool[__instance.entityId].protoId == ProtoID.I负熵熔炉 && __instance.replicating)
-                __instance.extraTime += (int)(power * __instance.extraSpeed) +
-                                        (int)(power * __instance.speedOverride * __instance.extraTimeSpend / __instance.timeSpend);
+                __instance.extraTime += (int)(power * __instance.extraSpeed) + (int)(power * __instance.speedOverride * __instance.extraTimeSpend / __instance.timeSpend);
 
             return b;
         }
 
-        private static void UpdateOutputSlots(
-            ref AssemblerComponent __instance,
-            CargoTraffic traffic,
-            SlotData[] slotdata,
-            SignData[] signPool,
-            int maxPilerCount)
+        private static void UpdateOutputSlots(ref AssemblerComponent __instance, CargoTraffic traffic, SlotData[] slotdata, SignData[] signPool, int maxPilerCount)
         {
-            for (int index1 = 0; index1 < slotdata.Length; ++index1)
+            for (var index1 = 0; index1 < slotdata.Length; ++index1)
             {
                 ref SlotData slotData = ref slotdata[index1];
+
                 if (slotData.dir == IODir.Output)
                 {
                     int beltId = slotData.beltId;
+
                     if (beltId <= 0) continue;
+
                     BeltComponent beltComponent = traffic.beltPool[beltId];
                     CargoPath cargoPath = traffic.GetCargoPath(beltComponent.segPathId);
+
                     if (cargoPath == null) continue;
 
                     int index2 = slotData.storageIdx - 1;
-                    int itemId = 0;
+                    var itemId = 0;
 
                     if (index2 >= 0)
                     {
@@ -163,23 +151,28 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
                         {
                             itemId = __instance.products[index2];
                             int produced = __instance.produced[index2];
+
                             if (itemId > 0 && produced > 0)
                             {
                                 int num2 = produced < maxPilerCount ? produced : maxPilerCount;
+
                                 if (cargoPath.TryInsertItemAtHeadAndFillBlank(itemId, (byte)num2, 0)) __instance.produced[index2] -= num2;
                             }
                         }
                         else
                         {
                             int index3 = index2 - __instance.products.Length;
+
                             if (index3 < __instance.requires.Length)
                             {
                                 itemId = __instance.requires[index3];
                                 int served = __instance.served[index3];
+
                                 if (itemId > 0 && served > 0)
                                 {
                                     int num2 = served < maxPilerCount ? served : maxPilerCount;
-                                    int inc = (int)((double)__instance.incServed[index3] * num2 / __instance.served[index3]);
+                                    var inc = (int)((double)__instance.incServed[index3] * num2 / __instance.served[index3]);
+
                                     if (cargoPath.TryInsertItemAtHeadAndFillBlank(itemId, (byte)num2, (byte)inc))
                                     {
                                         __instance.incServed[index3] -= inc;
@@ -190,12 +183,11 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
                         }
                     }
 
-                    if (itemId > 0)
-                    {
-                        int entityId = beltComponent.entityId;
-                        signPool[entityId].iconType = 1U;
-                        signPool[entityId].iconId0 = (uint)itemId;
-                    }
+                    if (itemId <= 0) continue;
+
+                    int entityId = beltComponent.entityId;
+                    signPool[entityId].iconType = 1U;
+                    signPool[entityId].iconId0 = (uint)itemId;
                 }
                 else if (slotData.dir != IODir.Input)
                 {
@@ -205,21 +197,19 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
             }
         }
 
-        private static void UpdateTrashInputSlots(
-            ref AssemblerComponent __instance,
-            float power,
-            PlanetFactory factory,
-            CargoTraffic traffic,
-            SlotData[] slotdata)
+        private static void UpdateTrashInputSlots(ref AssemblerComponent __instance, float power, PlanetFactory factory, CargoTraffic traffic, SlotData[] slotdata)
         {
-            for (int index = 0; index < slotdata.Length; ++index)
+            for (var index = 0; index < slotdata.Length; ++index)
             {
                 if (slotdata[index].dir == IODir.Input)
                 {
                     int beltId = slotdata[index].beltId;
+
                     if (beltId <= 0) continue;
+
                     BeltComponent beltComponent = traffic.beltPool[beltId];
                     CargoPath cargoPath = traffic.GetCargoPath(beltComponent.segPathId);
+
                     if (cargoPath == null) continue;
 
                     int itemId = traffic.TryPickItemAtRear(beltId, 0, null, out byte stack, out _);
@@ -229,23 +219,18 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
                     ref int sandCount = ref __instance.produced[0];
 
                     if (itemId == ProtoID.I沙土)
-                    {
                         sandCount += stack;
-                    }
                     else
                     {
                         FactoryProductionStat factoryProductionStat = GameMain.statistics.production.factoryStatPool[factory.index];
                         int[] productRegister = factoryProductionStat.productRegister;
                         int[] consumeRegister = factoryProductionStat.consumeRegister;
 
-                        lock (consumeRegister)
-                        {
-                            consumeRegister[itemId] += stack;
-                        }
+                        lock (consumeRegister) consumeRegister[itemId] += stack;
 
                         ItemProto itemProto = LDB.items.Select(itemId);
 
-                        int stack1 = (int)(stack * 40 * power);
+                        var stack1 = (int)(stack * 40 * power);
 
                         if (itemProto.CanBuild)
                         {
@@ -253,7 +238,7 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
 
                             if (recipe != null)
                             {
-                                for (int i = 0; i < recipe.Items.Length; i++)
+                                for (var i = 0; i < recipe.Items.Length; i++)
                                 {
                                     int recipeItem = recipe.Items[i];
                                     float recipeItemCount = recipe.ItemCounts[i] * stack * 0.75f;
@@ -261,12 +246,11 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
                                     int count = recipeItemCount < 1 ? 1 : (int)recipeItemCount;
                                     TryAddItemToPackage(recipeItem, ref count, productRegister);
 
-                                    if (count > 0)
-                                    {
-                                        count *= 40;
-                                        sandCount += count;
-                                        productRegister[ProtoID.I沙土] += count;
-                                    }
+                                    if (count <= 0) continue;
+
+                                    count *= 40;
+                                    sandCount += count;
+                                    productRegister[ProtoID.I沙土] += count;
                                 }
 
                                 continue;
@@ -290,6 +274,7 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
             Player player = GameMain.data.mainPlayer;
 
             if (itemId <= 0 || count <= 0) return;
+
             int package = player.package.AddItemStacked(itemId, count, 0, out _);
             int count1 = count - package;
 
@@ -304,20 +289,19 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
             count = count1;
         }
 
-        private static void UpdateInputSlots(
-            ref AssemblerComponent __instance,
-            CargoTraffic traffic,
-            SlotData[] slotdata,
-            SignData[] signPool)
+        private static void UpdateInputSlots(ref AssemblerComponent __instance, CargoTraffic traffic, SlotData[] slotdata, SignData[] signPool)
         {
-            for (int index = 0; index < slotdata.Length; ++index)
+            for (var index = 0; index < slotdata.Length; ++index)
             {
                 if (slotdata[index].dir == IODir.Input)
                 {
                     int beltId = slotdata[index].beltId;
+
                     if (beltId <= 0) continue;
+
                     BeltComponent beltComponent = traffic.beltPool[beltId];
                     CargoPath cargoPath = traffic.GetCargoPath(beltComponent.segPathId);
+
                     if (cargoPath == null) continue;
 
                     int itemId = cargoPath.TryPickItemAtRear(__instance.needs, out int needIdx, out byte stack, out byte inc);
@@ -329,7 +313,7 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
                         slotdata[index].storageIdx = __instance.products.Length + needIdx + 1;
                     }
 
-                    for (int i = 0; i < __instance.products.Length; i++)
+                    for (var i = 0; i < __instance.products.Length; i++)
                     {
                         if (__instance.produced[i] >= 50) continue;
 
@@ -339,16 +323,16 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
                         {
                             __instance.produced[i] += stack;
                             slotdata[index].storageIdx = i + 1;
+
                             break;
                         }
                     }
 
-                    if (itemId > 0)
-                    {
-                        int entityId = beltComponent.entityId;
-                        signPool[entityId].iconType = 1U;
-                        signPool[entityId].iconId0 = (uint)itemId;
-                    }
+                    if (itemId <= 0) continue;
+
+                    int entityId = beltComponent.entityId;
+                    signPool[entityId].iconType = 1U;
+                    signPool[entityId].iconId0 = (uint)itemId;
                 }
                 else if (slotdata[index].dir != IODir.Output)
                 {
@@ -360,22 +344,22 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
 
         [HarmonyPostfix]
         [HarmonyPatch(typeof(PlanetFactory), nameof(PlanetFactory.ApplyInsertTarget))]
-        public static void PlanetFactory_ApplyInsertTarget(
-            ref PlanetFactory __instance,
-            int entityId,
-            int insertTarget,
-            int slotId,
-            int offset)
+        public static void PlanetFactory_ApplyInsertTarget(ref PlanetFactory __instance, int entityId, int insertTarget, int slotId, int offset)
         {
             if (entityId == 0) return;
+
             int assemblerId = __instance.entityPool[entityId].assemblerId;
+
             if (assemblerId <= 0) return;
 
             AssemblerComponent assembler = __instance.factorySystem.assemblerPool[assemblerId];
+
             if (assembler.id != assemblerId || assembler.speed < TrashSpeed) return;
 
             int beltId = __instance.entityPool[insertTarget].beltId;
+
             if (beltId <= 0) return;
+
             SlotData[] slotdata = GetSlots(__instance.planetId, entityId);
             slotdata[slotId].dir = IODir.Output;
             slotdata[slotId].beltId = beltId;
@@ -385,22 +369,22 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
 
         [HarmonyPostfix]
         [HarmonyPatch(typeof(PlanetFactory), nameof(PlanetFactory.ApplyPickTarget))]
-        public static void PlanetFactory_ApplyPickTarget(
-            ref PlanetFactory __instance,
-            int entityId,
-            int pickTarget,
-            int slotId,
-            int offset)
+        public static void PlanetFactory_ApplyPickTarget(ref PlanetFactory __instance, int entityId, int pickTarget, int slotId, int offset)
         {
             if (entityId == 0) return;
+
             int assemblerId = __instance.entityPool[entityId].assemblerId;
+
             if (assemblerId <= 0) return;
 
             AssemblerComponent assembler = __instance.factorySystem.assemblerPool[assemblerId];
+
             if (assembler.id != assemblerId || assembler.speed < TrashSpeed) return;
 
             int beltId = __instance.entityPool[pickTarget].beltId;
+
             if (beltId <= 0) return;
+
             SlotData[] slotdata = GetSlots(__instance.planetId, entityId);
             slotdata[slotId].dir = IODir.Input;
             slotdata[slotId].beltId = beltId;
@@ -411,21 +395,21 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
 
         [HarmonyPostfix]
         [HarmonyPatch(typeof(PlanetFactory), nameof(PlanetFactory.ApplyEntityDisconnection))]
-        public static void PlanetFactory_ApplyEntityDisconnection(
-            ref PlanetFactory __instance,
-            int otherEntityId,
-            int removingEntityId,
-            int otherSlotId,
+        public static void PlanetFactory_ApplyEntityDisconnection(ref PlanetFactory __instance, int otherEntityId, int removingEntityId, int otherSlotId,
             int removingSlotId)
         {
             if (otherEntityId == 0) return;
+
             int assemblerId = __instance.entityPool[otherEntityId].assemblerId;
+
             if (assemblerId <= 0) return;
 
             AssemblerComponent assembler = __instance.factorySystem.assemblerPool[assemblerId];
+
             if (assembler.id != assemblerId || assembler.speed < TrashSpeed) return;
 
             int beltId = __instance.entityPool[removingEntityId].beltId;
+
             if (beltId <= 0) return;
 
             SlotData[] slotdata = GetSlots(__instance.planetId, otherEntityId);
@@ -465,7 +449,7 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
             {
                 if (planetId != __instance.planetId) continue;
 
-                for (int i = 0; i < datas.Length; i++)
+                for (var i = 0; i < datas.Length; i++)
                 {
                     __instance.ReadObjectConn(entityId, i, out _, out int otherObjId, out _);
 

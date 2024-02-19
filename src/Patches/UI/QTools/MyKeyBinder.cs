@@ -13,8 +13,8 @@ namespace ProjectGenesis.Patches.UI.QTools
     {
         private static readonly KeyCode[] ModKeys =
         {
-            KeyCode.RightShift, KeyCode.LeftShift, KeyCode.RightControl, KeyCode.LeftControl, KeyCode.RightAlt, KeyCode.LeftAlt,
-            KeyCode.LeftCommand, KeyCode.LeftApple, KeyCode.LeftWindows, KeyCode.RightCommand, KeyCode.RightApple, KeyCode.RightWindows
+            KeyCode.RightShift, KeyCode.LeftShift, KeyCode.RightControl, KeyCode.LeftControl, KeyCode.RightAlt, KeyCode.LeftAlt, KeyCode.LeftCommand, KeyCode.LeftApple,
+            KeyCode.LeftWindows, KeyCode.RightCommand, KeyCode.RightApple, KeyCode.RightWindows,
         };
 
         public Text functionText;
@@ -46,6 +46,7 @@ namespace ProjectGenesis.Patches.UI.QTools
             if (!setTheKeyToggle.isOn && inputUIButton.highlighted) setTheKeyToggle.isOn = true;
 
             if (!setTheKeyToggle.isOn) return;
+
             if (!inputUIButton._isPointerEnter && Input.GetKeyDown(KeyCode.Mouse0))
             {
                 inputUIButton.highlighted = false;
@@ -60,27 +61,23 @@ namespace ProjectGenesis.Patches.UI.QTools
             else
             {
                 waitingText.gameObject.SetActive(true);
+
                 if (!TrySetValue()) return;
+
                 setTheKeyToggle.isOn = false;
                 inputUIButton.highlighted = false;
                 Reset();
             }
         }
 
-        internal static RectTransform CreateKeyBinder(
-            float x,
-            float y,
-            RectTransform parent,
-            ConfigEntry<KeyboardShortcut> config,
-            string label = "",
-            int fontSize = 18)
+        internal static RectTransform CreateKeyBinder(float x, float y, RectTransform parent, ConfigEntry<KeyboardShortcut> config, string label = "", int fontSize = 18)
         {
             UIOptionWindow optionWindow = UIRoot.instance.optionWindow;
             UIKeyEntry uikeyEntry = Instantiate(optionWindow.entryPrefab);
             GameObject go;
             (go = uikeyEntry.gameObject).SetActive(true);
             go.name = "my-keybinder";
-            var kb = go.AddComponent<MyKeyBinder>();
+            MyKeyBinder kb = go.AddComponent<MyKeyBinder>();
             kb._config = config;
 
             kb.functionText = uikeyEntry.functionText;
@@ -116,6 +113,7 @@ namespace ProjectGenesis.Patches.UI.QTools
             config.SettingChanged += (obj, args) => { kb.SettingChanged(); };
             kb.inputUIButton.onClick += kb.OnInputUIButtonClick;
             kb.setDefaultUIButton.onClick += kb.OnSetDefaultKeyClick;
+
             return go.transform as RectTransform;
         }
 
@@ -124,25 +122,30 @@ namespace ProjectGenesis.Patches.UI.QTools
             if (Input.GetKey(KeyCode.Escape))
             {
                 VFInput.UseEscape();
+
                 return true;
             }
 
             if (Input.GetKey(KeyCode.Mouse0) || Input.GetKey(KeyCode.Mouse1)) return true;
 
             bool anyKey = GetInputKeys();
+
             if (anyKey || _lastKey == KeyCode.None) return false;
+
             string k = GetPressedKey();
+
             if (string.IsNullOrEmpty(k)) return false;
 
             _lastKey = KeyCode.None;
 
             _config.Value = KeyboardShortcut.Deserialize(k);
+
             return true;
         }
 
         private string GetPressedKey()
         {
-            string key = _lastKey.ToString();
+            var key = _lastKey.ToString();
 
             if (string.IsNullOrEmpty(key)) return null;
 
@@ -159,7 +162,9 @@ namespace ProjectGenesis.Patches.UI.QTools
             foreach (KeyCode item in Enum.GetValues(typeof(KeyCode)))
             {
                 if (item == KeyCode.None || ModKeys.Contains(item) || !Input.GetKey(item)) continue;
+
                 _lastKey = item;
+
                 return true;
             }
 
@@ -171,6 +176,7 @@ namespace ProjectGenesis.Patches.UI.QTools
             inputUIButton.highlighted = true;
 
             if (!_nextNotOn) return;
+
             _nextNotOn = false;
             inputUIButton.highlighted = false;
             setTheKeyToggle.isOn = false;

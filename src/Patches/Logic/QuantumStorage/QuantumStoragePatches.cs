@@ -7,18 +7,16 @@ using ProjectGenesis.Utils;
 
 // ReSharper disable InconsistentNaming
 
-namespace ProjectGenesis.Patches.Logic
+namespace ProjectGenesis.Patches.Logic.QuantumStorage
 {
     public static partial class QuantumStoragePatches
     {
         private static readonly Mutex QuantumStorageMutex = new Mutex(-1);
 
-        [HarmonyPatch(typeof(StorageComponent), nameof(StorageComponent.TakeTailItems),
-                      new Type[] { typeof(int), typeof(int), typeof(int), typeof(bool) },
-                      new ArgumentType[] { ArgumentType.Ref, ArgumentType.Ref, ArgumentType.Out, ArgumentType.Normal })]
-        [HarmonyPatch(typeof(StorageComponent), nameof(StorageComponent.TakeTailItems),
-                      new Type[] { typeof(int), typeof(int), typeof(int[]), typeof(int), typeof(bool) },
-                      new ArgumentType[] { ArgumentType.Ref, ArgumentType.Ref, ArgumentType.Normal, ArgumentType.Out, ArgumentType.Normal })]
+        [HarmonyPatch(typeof(StorageComponent), nameof(StorageComponent.TakeTailItems), new Type[] { typeof(int), typeof(int), typeof(int), typeof(bool), },
+            new ArgumentType[] { ArgumentType.Ref, ArgumentType.Ref, ArgumentType.Out, ArgumentType.Normal, })]
+        [HarmonyPatch(typeof(StorageComponent), nameof(StorageComponent.TakeTailItems), new Type[] { typeof(int), typeof(int), typeof(int[]), typeof(int), typeof(bool), },
+            new ArgumentType[] { ArgumentType.Ref, ArgumentType.Ref, ArgumentType.Normal, ArgumentType.Out, ArgumentType.Normal, })]
         [HarmonyPatch(typeof(StorageComponent), nameof(StorageComponent.TakeTailItemsFiltered))]
         [HarmonyPriority(Priority.VeryHigh)]
         [HarmonyPrefix]
@@ -27,12 +25,10 @@ namespace ProjectGenesis.Patches.Logic
             if (__instance.size == QuantumStorageSize) Monitor.Enter(QuantumStorageMutex);
         }
 
-        [HarmonyPatch(typeof(StorageComponent), nameof(StorageComponent.TakeTailItems),
-                      new Type[] { typeof(int), typeof(int), typeof(int), typeof(bool) },
-                      new ArgumentType[] { ArgumentType.Ref, ArgumentType.Ref, ArgumentType.Out, ArgumentType.Normal })]
-        [HarmonyPatch(typeof(StorageComponent), nameof(StorageComponent.TakeTailItems),
-                      new Type[] { typeof(int), typeof(int), typeof(int[]), typeof(int), typeof(bool) },
-                      new ArgumentType[] { ArgumentType.Ref, ArgumentType.Ref, ArgumentType.Normal, ArgumentType.Out, ArgumentType.Normal })]
+        [HarmonyPatch(typeof(StorageComponent), nameof(StorageComponent.TakeTailItems), new Type[] { typeof(int), typeof(int), typeof(int), typeof(bool), },
+            new ArgumentType[] { ArgumentType.Ref, ArgumentType.Ref, ArgumentType.Out, ArgumentType.Normal, })]
+        [HarmonyPatch(typeof(StorageComponent), nameof(StorageComponent.TakeTailItems), new Type[] { typeof(int), typeof(int), typeof(int[]), typeof(int), typeof(bool), },
+            new ArgumentType[] { ArgumentType.Ref, ArgumentType.Ref, ArgumentType.Normal, ArgumentType.Out, ArgumentType.Normal, })]
         [HarmonyPatch(typeof(StorageComponent), nameof(StorageComponent.TakeTailItemsFiltered))]
         [HarmonyPostfix]
         public static void StorageComponent_TakeTailItems_Postfix(StorageComponent __instance)
@@ -52,17 +48,14 @@ namespace ProjectGenesis.Patches.Logic
             CodeInstruction ins = matcher.InstructionAt(-1);
 
             matcher.Advance(2).InsertAndAdvance(new CodeInstruction(ins),
-                                                new CodeInstruction(OpCodes.Call,
-                                                                    AccessTools.Method(typeof(QuantumStoragePatches),
-                                                                                       nameof(FactoryStorage_GameTick_PatchMethod))));
+                new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(QuantumStoragePatches), nameof(FactoryStorage_GameTick_PatchMethod))));
 
             matcher.SetOpcodeAndAdvance(OpCodes.Brfalse);
 
             return matcher.InstructionEnumeration();
         }
 
-        public static bool FactoryStorage_GameTick_PatchMethod(int id, int index, StorageComponent component)
-            => id == index || component.size == QuantumStorageSize;
+        public static bool FactoryStorage_GameTick_PatchMethod(int id, int index, StorageComponent component) => id == index || component.size == QuantumStorageSize;
 
         [HarmonyPatch(typeof(BuildTool_Addon), nameof(BuildTool_Addon.UpdateRaycast))]
         [HarmonyPatch(typeof(BuildTool_Addon), nameof(BuildTool_Addon.DeterminePreviews))]
@@ -73,9 +66,7 @@ namespace ProjectGenesis.Patches.Logic
 
             matcher.MatchForward(true, new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(PrefabDesc), nameof(PrefabDesc.isStorage))));
 
-            matcher.SetInstructionAndAdvance(new CodeInstruction(OpCodes.Call,
-                                                                 AccessTools.Method(typeof(QuantumStoragePatches),
-                                                                                    nameof(BuildTool_Addon_PatchMethod))));
+            matcher.SetInstructionAndAdvance(new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(QuantumStoragePatches), nameof(BuildTool_Addon_PatchMethod))));
 
             return matcher.InstructionEnumeration();
         }
@@ -89,13 +80,10 @@ namespace ProjectGenesis.Patches.Logic
 
         [HarmonyPatch(typeof(FactoryStorage), nameof(FactoryStorage.NewStorageComponent))]
         [HarmonyPostfix]
-        public static void FactoryStorage_NewStorageComponent(
-            FactoryStorage __instance,
-            int entityId,
-            int size,
-            ref StorageComponent __result)
+        public static void FactoryStorage_NewStorageComponent(FactoryStorage __instance, int entityId, int size, ref StorageComponent __result)
         {
             if (size != QuantumStorageSize) return;
+
             int storageId = __result.id;
 
             __instance.storagePool[storageId] = _component;
@@ -123,6 +111,7 @@ namespace ProjectGenesis.Patches.Logic
             __instance.storageRecycle[__instance.storageRecycleCursor++] = id;
 
             SyncRemoveQuantumStorageData.Sync(__instance.planet.id, id);
+
             return false;
         }
 
@@ -131,6 +120,7 @@ namespace ProjectGenesis.Patches.Logic
         public static void FactoryStorage_TryTakeBackItems_Storage(FactoryStorage __instance, int storageId, ref bool __result)
         {
             StorageComponent package = __instance.GetStorageComponent(storageId);
+
             if (package == null || package.size == QuantumStorageSize) __result = true;
         }
 
@@ -146,22 +136,18 @@ namespace ProjectGenesis.Patches.Logic
             var matcher = new CodeMatcher(instructions);
 
             matcher.MatchForward(true, new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(PlanetFactory), nameof(PlanetFactory.entityMutexs))),
-                                 new CodeMatch(inst => inst.IsLdloc()),
-                                 new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(StorageComponent), nameof(StorageComponent.entityId))),
-                                 new CodeMatch(OpCodes.Ldelem_Ref));
+                new CodeMatch(inst => inst.IsLdloc()), new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(StorageComponent), nameof(StorageComponent.entityId))),
+                new CodeMatch(OpCodes.Ldelem_Ref));
 
             CodeInstruction ins = matcher.InstructionAt(-2);
 
             matcher.Advance(1).InsertAndAdvance(new CodeInstruction(ins),
-                                                new CodeInstruction(OpCodes.Call,
-                                                                    AccessTools.Method(typeof(QuantumStoragePatches),
-                                                                                       nameof(PlanetFactory_Mutexs_PatchMethod))));
+                new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(QuantumStoragePatches), nameof(PlanetFactory_Mutexs_PatchMethod))));
 
             return matcher.InstructionEnumeration();
         }
 
-        public static Mutex PlanetFactory_Mutexs_PatchMethod(Mutex mutex, StorageComponent component)
-            => component.size != QuantumStorageSize ? mutex : QuantumStorageMutex;
+        public static Mutex PlanetFactory_Mutexs_PatchMethod(Mutex mutex, StorageComponent component) => component.size != QuantumStorageSize ? mutex : QuantumStorageMutex;
 
         [HarmonyPatch(typeof(UIStorageWindow), nameof(UIStorageWindow._OnUpdate))]
         [HarmonyPatch(typeof(UIStorageWindow), nameof(UIStorageWindow.OnStorageIdChange))]
@@ -176,16 +162,13 @@ namespace ProjectGenesis.Patches.Logic
             var matcher = new CodeMatcher(instructions);
 
             matcher.MatchForward(true, new CodeMatch(OpCodes.Ldloc_0),
-                                 new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(StorageComponent), nameof(StorageComponent.id))),
-                                 new CodeMatch(OpCodes.Ldarg_0),
-                                 new CodeMatch(OpCodes.Call, AccessTools.PropertyGetter(typeof(UIStorageWindow), nameof(UIStorageWindow.storageId))));
+                new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(StorageComponent), nameof(StorageComponent.id))), new CodeMatch(OpCodes.Ldarg_0),
+                new CodeMatch(OpCodes.Call, AccessTools.PropertyGetter(typeof(UIStorageWindow), nameof(UIStorageWindow.storageId))));
 
             object label = matcher.Advance(1).Operand;
 
             matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_0),
-                                                new CodeInstruction(OpCodes.Call,
-                                                                    AccessTools.Method(typeof(QuantumStoragePatches), nameof(PatchMethod))),
-                                                new CodeInstruction(OpCodes.Brtrue_S, label));
+                new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(QuantumStoragePatches), nameof(PatchMethod))), new CodeInstruction(OpCodes.Brtrue_S, label));
 
             return matcher.InstructionEnumeration();
         }
@@ -194,9 +177,7 @@ namespace ProjectGenesis.Patches.Logic
 
         [HarmonyPatch(typeof(UIStorageWindow), nameof(UIStorageWindow.OnStorageIdChange))]
         [HarmonyTranspiler]
-        public static IEnumerable<CodeInstruction> UIStorageWindow_OnStorageIdChange_Transpiler(
-            IEnumerable<CodeInstruction> instructions,
-            ILGenerator ilGenerator)
+        public static IEnumerable<CodeInstruction> UIStorageWindow_OnStorageIdChange_Transpiler(IEnumerable<CodeInstruction> instructions, ILGenerator ilGenerator)
         {
             var matcher = new CodeMatcher(instructions, ilGenerator);
 
@@ -206,9 +187,8 @@ namespace ProjectGenesis.Patches.Logic
             matcher.CreateLabelAt(matcher.Pos + 1, out Label label);
 
             matcher.Advance(-6).InsertAndAdvance(new CodeInstruction(OpCodes.Ldc_I4, ProtoID.I量子储物仓), new CodeInstruction(OpCodes.Ldloc_0),
-                                                 new CodeInstruction(OpCodes.Call,
-                                                                     AccessTools.Method(typeof(QuantumStoragePatches), nameof(PatchMethod))),
-                                                 new CodeInstruction(OpCodes.Brtrue_S, label), new CodeInstruction(OpCodes.Pop));
+                new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(QuantumStoragePatches), nameof(PatchMethod))), new CodeInstruction(OpCodes.Brtrue_S, label),
+                new CodeInstruction(OpCodes.Pop));
 
             return matcher.InstructionEnumeration();
         }
@@ -224,9 +204,8 @@ namespace ProjectGenesis.Patches.Logic
             object label = matcher.InstructionAt(2).operand;
 
             matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0), new CodeInstruction(OpCodes.Ldloc_1),
-                                                new CodeInstruction(OpCodes.Call,
-                                                                    AccessTools.Method(typeof(QuantumStoragePatches), nameof(Import_PatchMethod))),
-                                                new CodeInstruction(OpCodes.Brtrue, label));
+                new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(QuantumStoragePatches), nameof(Import_PatchMethod))),
+                new CodeInstruction(OpCodes.Brtrue, label));
 
             return matcher.InstructionEnumeration();
         }

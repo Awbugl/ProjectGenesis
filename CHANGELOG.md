@@ -3,10 +3,8 @@
 
   + Adaptation of NebulaMultiplayerModApi-2.0.0
 
-
 <details>
   <summary>点击展开日志 | Click to view all </summary>
-
 
 - v2.9.10
   + 修复模型ID迁移导致的存档兼容问题
@@ -25,7 +23,8 @@
   + 为`物质回收`配方添加新特性：若背包未满，输入的建筑物品可返还自身的75%制造原料到背包中
 
   + Power Plants return empty fuel rods when rods are burned out
-  + Add new feature to `Matter Recovery` recipes: incoming construction items return 75% of their own manufacturing materials to the package (if the package is not full)
+  + Add new feature to `Matter Recovery` recipes: incoming construction items return 75% of their own manufacturing
+    materials to the package (if the package is not full)
 
 
 - v2.9.7

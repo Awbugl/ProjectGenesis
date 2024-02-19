@@ -42,8 +42,7 @@ namespace ProjectGenesis.Patches.Logic
         public static IEnumerable<CodeInstruction> BlueprintBuilding_Import_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
             var matcher = new CodeMatcher(instructions);
-            matcher.MatchForward(
-                false, new CodeMatch(OpCodes.Stfld, AccessTools.Field(typeof(BlueprintBuilding), nameof(BlueprintBuilding.modelIndex))));
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Stfld, AccessTools.Field(typeof(BlueprintBuilding), nameof(BlueprintBuilding.modelIndex))));
 
             matcher.InsertAndAdvance(Transpilers.EmitDelegate(ModelIdMigrationAction));
 

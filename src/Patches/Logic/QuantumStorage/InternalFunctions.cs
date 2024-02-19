@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using ProjectGenesis.Utils;
 
-namespace ProjectGenesis.Patches.Logic
+namespace ProjectGenesis.Patches.Logic.QuantumStorage
 {
     public static partial class QuantumStoragePatches
     {
@@ -33,9 +33,11 @@ namespace ProjectGenesis.Patches.Logic
         internal static void ExportPlanetQuantumStorage(int planetId, BinaryWriter w)
         {
             if (!QuantumStorageIds.ContainsKey(planetId)) QuantumStorageIds[planetId] = new List<int>();
+
             List<int> datas = QuantumStorageIds[planetId];
             w.Write(datas.Count);
             w.Write(planetId);
+
             foreach (int id in datas) w.Write(id);
         }
 
@@ -44,11 +46,9 @@ namespace ProjectGenesis.Patches.Logic
             int count = r.ReadInt32();
             int planetId = r.ReadInt32();
 
-            int[] arr = new int[count];
-            for (int j = 0; j < count; j++)
-            {
-                arr[j] = r.ReadInt32();
-            }
+            var arr = new int[count];
+
+            for (var j = 0; j < count; j++) arr[j] = r.ReadInt32();
 
             QuantumStorageIds[planetId] = new List<int>(arr);
         }
@@ -56,7 +56,9 @@ namespace ProjectGenesis.Patches.Logic
         public static bool Import_PatchMethod(FactoryStorage storage, int index)
         {
             bool b = QuantumStorageIds.Contains(storage.planet.id, index);
+
             if (b) storage.storagePool[index] = _component;
+
             return b;
         }
 
@@ -70,14 +72,12 @@ namespace ProjectGenesis.Patches.Logic
                 {
                     w.Write(pair.Key);
                     w.Write(pair.Value.Count);
+
                     foreach (int t in pair.Value) w.Write(t);
                 }
             }
 
-            lock (_component)
-            {
-                _component.Export(w);
-            }
+            lock (_component) _component.Export(w);
         }
 
         internal static void Import(BinaryReader r)
@@ -88,15 +88,13 @@ namespace ProjectGenesis.Patches.Logic
             {
                 int storagecount = r.ReadInt32();
 
-                for (int j = 0; j < storagecount; j++)
+                for (var j = 0; j < storagecount; j++)
                 {
                     int key = r.ReadInt32();
                     int length = r.ReadInt32();
                     var datas = new List<int>();
-                    for (int i = 0; i < length; i++)
-                    {
-                        datas.Add(r.ReadInt32());
-                    }
+
+                    for (var i = 0; i < length; i++) datas.Add(r.ReadInt32());
 
                     QuantumStorageIds.TryAdd(key, datas);
                 }

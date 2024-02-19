@@ -21,8 +21,7 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
 
             CodeInstruction instruction = matcher.Instruction;
 
-            matcher.Advance(2).InsertAndAdvance(new CodeInstruction(instruction), new CodeInstruction(OpCodes.Ldfld, IsAssemblerField),
-                                                new CodeInstruction(OpCodes.Or));
+            matcher.Advance(2).InsertAndAdvance(new CodeInstruction(instruction), new CodeInstruction(OpCodes.Ldfld, IsAssemblerField), new CodeInstruction(OpCodes.Or));
 
             return matcher.InstructionEnumeration();
         }
@@ -33,13 +32,14 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
         {
             var matcher = new CodeMatcher(instructions);
 
-            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldfld, EntityData_StationId_Field), new CodeMatch(OpCodes.Stloc_S),
-                                 new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldc_I4_0), new CodeMatch(OpCodes.Ble));
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldfld, EntityData_StationId_Field), new CodeMatch(OpCodes.Stloc_S), new CodeMatch(OpCodes.Ldloc_S),
+                new CodeMatch(OpCodes.Ldc_I4_0), new CodeMatch(OpCodes.Ble));
 
             List<CodeInstruction> ins = matcher.InstructionsWithOffsets(-5, -1);
 
             matcher.Advance(1).InsertAndAdvance(ins).InsertAndAdvance(new CodeInstruction(OpCodes.Ldfld, EntityData_AssemblerId_Field))
                    .InsertAndAdvance(new CodeInstruction(OpCodes.Or));
+
             return matcher.InstructionEnumeration();
         }
     }

@@ -22,9 +22,8 @@ namespace ProjectGenesis.Patches.UI
             object dataArray3 = matcher.Advance(-1).Operand;
 
             matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_S, dataArray3), new CodeInstruction(OpCodes.Ldloc_S, index_V_23),
-                                     new CodeInstruction(OpCodes.Ldelem_Ref),
-                                     new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(IconSetPatches), nameof(IconSet_Create_Patch))),
-                                     new CodeInstruction(OpCodes.Brtrue_S, label));
+                new CodeInstruction(OpCodes.Ldelem_Ref), new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(IconSetPatches), nameof(IconSet_Create_Patch))),
+                new CodeInstruction(OpCodes.Brtrue_S, label));
 
             return matcher.InstructionEnumeration();
         }

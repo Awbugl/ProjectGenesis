@@ -53,8 +53,10 @@ or open a issue via [github](https://github.com/Awbugl/ProjectGenesis).
 
 在安装完成前置MOD后，下载本MOD、解压后，进行以下操作：
 
-将 `patchers` 文件夹中的所有文件移动到 `Dyson Sphere Program/BepInEx/patchers/GenesisBook/` (可能需要手动创建`GenesisBook`文件夹)<br/>
-将 `plugins` 文件夹中的所有文件移动到 `Dyson Sphere Program/BepInEx/plugins/GenesisBook/` (可能需要手动创建`GenesisBook`文件夹)<br/>
+将 `patchers` 文件夹中的所有文件移动到 `Dyson Sphere Program/BepInEx/patchers/GenesisBook/` (
+可能需要手动创建`GenesisBook`文件夹)<br/>
+将 `plugins` 文件夹中的所有文件移动到 `Dyson Sphere Program/BepInEx/plugins/GenesisBook/` (可能需要手动创建`GenesisBook`
+文件夹)<br/>
 
 ## 介绍
 
@@ -104,24 +106,33 @@ Install NebulaMultiplayerModApi from [here](https://dsp.thunderstore.io/package/
 
 Then download this mod manully and:
 
-Unzip folder `patchers` into `Dyson Sphere Program/BepInEx/patchers/GenesisBook/` (Create folder named `GenesisBook`)<br/>
-Unzip folder `plugins` into `Dyson Sphere Program/BepInEx/plugins/GenesisBook/`. (Create folder named `GenesisBook`)<br/>
+Unzip folder `patchers` into `Dyson Sphere Program/BepInEx/patchers/GenesisBook/` (Create folder
+named `GenesisBook`)<br/>
+Unzip folder `plugins` into `Dyson Sphere Program/BepInEx/plugins/GenesisBook/`. (Create folder
+named `GenesisBook`)<br/>
 
 ## Intro
 
 ### Modified
 
 - The real tech "tree": a completely reworked and more organized tech tree, which is now much more structured.
-- New chemical formulas: extract organic substances such as tar or benzene from crude oil, plus you can now synthesize hydrochloric and nitric acid.
-- New recipe types: use polymer chemistry to create complex organics, make high precision assembly lines to produce high tech equipment.
-- Additional Atmospheres: You can now build "Atmospheric Harvesting Stations" on the surface of most planets and extract atmospheric components such as Nitrogen and Oxygen.
+- New chemical formulas: extract organic substances such as tar or benzene from crude oil, plus you can now synthesize
+  hydrochloric and nitric acid.
+- New recipe types: use polymer chemistry to create complex organics, make high precision assembly lines to produce high
+  tech equipment.
+- Additional Atmospheres: You can now build "Atmospheric Harvesting Stations" on the surface of most planets and extract
+  atmospheric components such as Nitrogen and Oxygen.
 - Note: Thermal power plants can now only be used on planets with oxygenated atmospheres.
-- New Mineral Distribution: Adjusted the amount of minerals produced on different planets, note: this will make the mod incompatible with the original archive!
-- New mineral types: mine tungsten ore to smelt superalloys, or harvest radioactive minerals to make nuclear fuel rods, and crystalline sulfur.
-- Nearly 90% of the recipes reworked: a completely different process experience from the original, don't worry, it'll feel new to you.
+- New Mineral Distribution: Adjusted the amount of minerals produced on different planets, note: this will make the mod
+  incompatible with the original archive!
+- New mineral types: mine tungsten ore to smelt superalloys, or harvest radioactive minerals to make nuclear fuel rods,
+  and crystalline sulfur.
+- Nearly 90% of the recipes reworked: a completely different process experience from the original, don't worry, it'll
+  feel new to you.
 - Planetary Coordination Centers: dozens of different extra gain effects that can provide gains on a global scale.
 - Mega Buildings: super production facilities that use conveyor belts to input and output materials with 30x speed.
-- New Lost Technology: use quantum storage technology for rapid deployment on alien planets, or make wormhole voyages to reach the other side of the galaxy instantly.
+- New Lost Technology: use quantum storage technology for rapid deployment on alien planets, or make wormhole voyages to
+  reach the other side of the galaxy instantly.
 - Built-in Calculator: the default shortcut key is the `~` key for simple line requirement calculations.
 
 ## Credits

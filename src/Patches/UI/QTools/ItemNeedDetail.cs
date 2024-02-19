@@ -15,14 +15,10 @@ namespace ProjectGenesis.Patches.UI.QTools
         private bool _isNeed;
         private RectTransform _rect;
 
-        internal static ItemNeedDetail CreateItemNeedDetail(
-            float x,
-            float y,
-            RectTransform parent,
-            bool needButton = true)
+        internal static ItemNeedDetail CreateItemNeedDetail(float x, float y, RectTransform parent, bool needButton = true)
         {
             GameObject src = Instantiate(Configs.builtin.uiItemTipPrefab.recipeEntry.transform.GetChild(1).gameObject);
-            var cb = src.AddComponent<ItemNeedDetail>();
+            ItemNeedDetail cb = src.AddComponent<ItemNeedDetail>();
 
             cb._rect = Util.NormalizeRectWithTopLeft(cb, x, y, parent);
             src.name = "my-ItemCounter";
@@ -53,9 +49,7 @@ namespace ProjectGenesis.Patches.UI.QTools
         private void OnButtonClick()
         {
             if (_isNeed)
-            {
                 _data.RemoveNeed();
-            }
             else
             {
                 _data.Options.AsRaw = false;

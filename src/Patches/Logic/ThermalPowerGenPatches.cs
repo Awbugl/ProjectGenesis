@@ -8,7 +8,7 @@ namespace ProjectGenesis.Patches.Logic
 {
     public static class ThermalPowerGenPatches
     {
-        private static readonly int[] FuelRods = { ProtoID.I氢燃料棒, ProtoID.I煤油燃料棒, ProtoID.I四氢双环戊二烯燃料棒 };
+        private static readonly int[] FuelRods = { ProtoID.I氢燃料棒, ProtoID.I煤油燃料棒, ProtoID.I四氢双环戊二烯燃料棒, };
 
         [HarmonyPatch(typeof(PlanetFactory), nameof(PlanetFactory.EntityFastFillIn))]
         [HarmonyPatch(typeof(PlanetFactory), nameof(PlanetFactory.InsertInto))]
@@ -17,11 +17,10 @@ namespace ProjectGenesis.Patches.Logic
         {
             var matcher = new CodeMatcher(instructions);
 
-            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldsfld, AccessTools.Field(typeof(ItemProto), nameof(ItemProto.fuelNeeds))),
-                                 new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldelema),
-                                 new CodeMatch(OpCodes.Ldfld,
-                                               AccessTools.Field(typeof(PowerGeneratorComponent), nameof(PowerGeneratorComponent.fuelMask))),
-                                 new CodeMatch(OpCodes.Ldelem_Ref));
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldsfld, AccessTools.Field(typeof(ItemProto), nameof(ItemProto.fuelNeeds))), new CodeMatch(OpCodes.Ldloc_S),
+                new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldelema),
+                new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(PowerGeneratorComponent), nameof(PowerGeneratorComponent.fuelMask))),
+                new CodeMatch(OpCodes.Ldelem_Ref));
 
             matcher.SetAndAdvance(OpCodes.Nop, null);
 
@@ -47,11 +46,9 @@ namespace ProjectGenesis.Patches.Logic
         {
             var matcher = new CodeMatcher(instructions);
 
-            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldsfld, AccessTools.Field(typeof(ItemProto), nameof(ItemProto.fuelNeeds))),
-                                 new CodeMatch(OpCodes.Ldloc_0),
-                                 new CodeMatch(OpCodes.Ldfld,
-                                               AccessTools.Field(typeof(PowerGeneratorComponent), nameof(PowerGeneratorComponent.fuelMask))),
-                                 new CodeMatch(OpCodes.Ldelem_Ref));
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldsfld, AccessTools.Field(typeof(ItemProto), nameof(ItemProto.fuelNeeds))), new CodeMatch(OpCodes.Ldloc_0),
+                new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(PowerGeneratorComponent), nameof(PowerGeneratorComponent.fuelMask))),
+                new CodeMatch(OpCodes.Ldelem_Ref));
 
             matcher.SetAndAdvance(OpCodes.Nop, null);
             matcher.SetAndAdvance(OpCodes.Nop, null);
@@ -82,6 +79,7 @@ namespace ProjectGenesis.Patches.Logic
                 if (ItemProto.fuelNeeds[1].Contains(playerInhandItemId))
                 {
                     UIRealtimeTip.Popup("需要氧气".TranslateFromJson());
+
                     return null;
                 }
             }

@@ -16,7 +16,9 @@ namespace ProjectGenesis.Patches.Logic.AddVein
         public static bool VFPreload_SaveMaterial_Prefix(Material mat)
         {
             if (mat == null) return false;
+
             ReplaceShaderIfAvailable(mat);
+
             return true;
         }
 
@@ -30,6 +32,7 @@ namespace ProjectGenesis.Patches.Logic.AddVein
             foreach (Material mat in mats)
             {
                 if (mat == null) continue;
+
                 ReplaceShaderIfAvailable(mat);
             }
 
@@ -46,9 +49,11 @@ namespace ProjectGenesis.Patches.Logic.AddVein
             foreach (Material[] matarray in mats)
             {
                 if (matarray == null) continue;
+
                 foreach (Material mat in matarray)
                 {
                     if (mat == null) continue;
+
                     ReplaceShaderIfAvailable(mat);
                 }
             }
@@ -56,12 +61,12 @@ namespace ProjectGenesis.Patches.Logic.AddVein
             return true;
         }
 
-        internal static void AddSwapShaderMapping(string oriShaderName, Shader replacementShader)
-            => ReplaceShaderMap.Add(oriShaderName, replacementShader);
+        internal static void AddSwapShaderMapping(string oriShaderName, Shader replacementShader) => ReplaceShaderMap.Add(oriShaderName, replacementShader);
 
         private static void ReplaceShaderIfAvailable(Material mat)
         {
             string oriShaderName = mat.shader.name;
+
             if (ReplaceShaderMap.TryGetValue(oriShaderName, out Shader replacementShader)) mat.shader = replacementShader;
         }
     }

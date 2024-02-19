@@ -11,16 +11,14 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
 {
     internal static partial class MegaAssemblerPatches
     {
-        private static readonly FieldInfo PrefabDesc_assemblerRecipeType_Field
-            = AccessTools.Field(typeof(PrefabDesc), nameof(PrefabDesc.assemblerRecipeType));
+        private static readonly FieldInfo PrefabDesc_assemblerRecipeType_Field = AccessTools.Field(typeof(PrefabDesc), nameof(PrefabDesc.assemblerRecipeType));
 
         private static readonly MethodInfo MegaAssemblerPatches_ContainsRecipeTypeRevert_Method
             = AccessTools.Method(typeof(MegaAssemblerPatches), nameof(ContainsRecipeTypeRevert));
 
         [HarmonyPatch(typeof(BuildingParameters), nameof(BuildingParameters.ApplyPrebuildParametersToEntity))]
         [HarmonyTranspiler]
-        public static IEnumerable<CodeInstruction> BuildingParameters_ApplyPrebuildParametersToEntity_Transpiler(
-            IEnumerable<CodeInstruction> instructions)
+        public static IEnumerable<CodeInstruction> BuildingParameters_ApplyPrebuildParametersToEntity_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
             var matcher = new CodeMatcher(instructions);
 
@@ -30,15 +28,11 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
 
             matcher.SetOpcodeAndAdvance(OpCodes.Brfalse);
 
-            matcher.MatchForward(
-                false, new CodeMatch(OpCodes.Stfld, AccessTools.Field(typeof(AssemblerComponent), nameof(AssemblerComponent.forceAccMode))));
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Stfld, AccessTools.Field(typeof(AssemblerComponent), nameof(AssemblerComponent.forceAccMode))));
 
-            matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0), new CodeInstruction(OpCodes.Ldarg_3),
-                                                new CodeInstruction(OpCodes.Ldarg, 4),
-                                                new CodeInstruction(OpCodes.Call,
-                                                                    AccessTools.Method(typeof(MegaAssemblerPatches),
-                                                                                       nameof(
-                                                                                           BuildingParameters_ApplyPrebuildParametersToEntity_Patch_Method))));
+            matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0), new CodeInstruction(OpCodes.Ldarg_3), new CodeInstruction(OpCodes.Ldarg, 4),
+                new CodeInstruction(OpCodes.Call,
+                    AccessTools.Method(typeof(MegaAssemblerPatches), nameof(BuildingParameters_ApplyPrebuildParametersToEntity_Patch_Method))));
 
             return matcher.InstructionEnumeration();
         }
@@ -49,7 +43,8 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
 
             SlotData[] slots = GetSlots(factory.planetId, entityId);
             const int num4 = 192;
-            for (int index = 0; index < slots.Length; ++index)
+
+            for (var index = 0; index < slots.Length; ++index)
             {
                 slots[index].dir = (IODir)parameters[num4 + index * 4];
                 slots[index].storageIdx = parameters[num4 + index * 4 + 1];
@@ -80,12 +75,14 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
             if (__instance.parameters.Length >= 2048)
             {
                 if (_parameters == null || _parameters.Length < 2048) Array.Resize(ref _parameters, 2048);
+
                 Array.Copy(__instance.parameters, _parameters, 2048);
                 _paramCount = _parameters.Length;
             }
             else
             {
                 _paramCount = __instance.parameters.Length;
+
                 if (_parameters == null || _parameters.Length < _paramCount) Array.Resize(ref _parameters, _paramCount);
             }
         }
@@ -109,11 +106,7 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
 
         [HarmonyPatch(typeof(BuildingParameters), nameof(BuildingParameters.CopyFromFactoryObject))]
         [HarmonyPostfix]
-        public static void BuildingParameters_CopyFromFactoryObject(
-            ref BuildingParameters __instance,
-            int objectId,
-            PlanetFactory factory,
-            bool copyInserters)
+        public static void BuildingParameters_CopyFromFactoryObject(ref BuildingParameters __instance, int objectId, PlanetFactory factory, bool copyInserters)
         {
             if (__instance.type != BuildingType.Assembler) return;
 
@@ -122,9 +115,11 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
                 if (factory.entityPool.Length <= objectId || factory.entityPool[objectId].id != objectId) return;
 
                 int assemblerId = factory.entityPool[objectId].assemblerId;
+
                 if (assemblerId <= 0 || factory.factorySystem.assemblerPool.Length <= assemblerId) return;
 
                 AssemblerComponent assembler = factory.factorySystem.assemblerPool[assemblerId];
+
                 if (assembler.id != assemblerId || assembler.speed < TrashSpeed) return;
 
                 if (__instance.parameters == null || __instance.parameters.Length < 2048) Array.Resize(ref __instance.parameters, 2048);
@@ -137,7 +132,7 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
 
                 SlotData[] slots = GetSlots(factory.planetId, objectId);
 
-                for (int index = 0; index < slots.Length; ++index)
+                for (var index = 0; index < slots.Length; ++index)
                 {
                     __instance.parameters[num2 + index * 4] = (int)slots[index].dir;
                     __instance.parameters[num2 + index * 4 + 1] = slots[index].storageIdx;

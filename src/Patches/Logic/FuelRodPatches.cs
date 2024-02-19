@@ -19,8 +19,7 @@ namespace ProjectGenesis.Patches.Logic
 
 
             matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0),
-                                                new CodeInstruction(
-                                                    OpCodes.Call, AccessTools.Method(typeof(FuelRodPatches), nameof(GenerateEnergy_Patch))));
+                new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(FuelRodPatches), nameof(GenerateEnergy_Patch))));
 
             return matcher.InstructionEnumeration();
         }
@@ -44,8 +43,7 @@ namespace ProjectGenesis.Patches.Logic
             matcher.MatchForward(true, new CodeMatch(OpCodes.Ldarg_2));
 
             matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0), new CodeInstruction(OpCodes.Ldarg_2),
-                                     new CodeInstruction(
-                                         OpCodes.Call, AccessTools.Method(typeof(FuelRodPatches), nameof(GenEnergyByFuel_Patch_Method))));
+                new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(FuelRodPatches), nameof(GenEnergyByFuel_Patch_Method))));
 
             return matcher.InstructionEnumeration();
         }
@@ -55,12 +53,13 @@ namespace ProjectGenesis.Patches.Logic
             int count = GetEmptyRodCount(component.fuelId);
 
             if (count == 0) return;
+
             component.productCount += count;
             component.catalystIncPoint += component.fuelIncLevel;
 
             if (component.productCount > 30)
             {
-                int instanceProductCount = (int)component.productCount;
+                var instanceProductCount = (int)component.productCount;
                 component.split_inc(ref instanceProductCount, ref component.catalystIncPoint, instanceProductCount - 30);
                 component.productCount = instanceProductCount;
             }
@@ -71,13 +70,14 @@ namespace ProjectGenesis.Patches.Logic
                 if (factoryProductionStat.consumeRegister != consumeRegister) continue;
 
                 factoryProductionStat.productRegister[ProtoID.I空燃料棒] += count;
+
                 return;
             }
         }
 
         private static int GetEmptyRodCount(int itemId)
         {
-            int count = 0;
+            var count = 0;
 
             switch (itemId)
             {
@@ -90,18 +90,22 @@ namespace ProjectGenesis.Patches.Logic
                 case ProtoID.I氦三燃料棒:
                 case ProtoID.I反物质燃料棒:
                     count = 1;
+
                     break;
 
                 case ProtoID.I氘氦混合聚变燃料棒:
                     count = 2;
+
                     break;
 
                 case ProtoID.IMOX燃料棒:
                     count = 3;
+
                     break;
 
                 case ProtoID.I奇异燃料棒:
                     count = 4;
+
                     break;
             }
 
@@ -110,15 +114,12 @@ namespace ProjectGenesis.Patches.Logic
 
         [HarmonyPatch(typeof(UIInserterBuildTip), nameof(UIInserterBuildTip.SetOutputEntity))]
         [HarmonyTranspiler]
-        public static IEnumerable<CodeInstruction> UIInserterBuildTip_SetOutputEntity_Transpiler(
-            IEnumerable<CodeInstruction> instructions,
-            ILGenerator generator)
+        public static IEnumerable<CodeInstruction> UIInserterBuildTip_SetOutputEntity_Transpiler(IEnumerable<CodeInstruction> instructions, ILGenerator generator)
         {
             var matcher = new CodeMatcher(instructions, generator);
 
-            matcher.MatchForward(true, new CodeMatch(OpCodes.Ldloc_3),
-                                 new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(EntityData), nameof(EntityData.beltId))),
-                                 new CodeMatch(OpCodes.Ldc_I4_0));
+            matcher.MatchForward(true, new CodeMatch(OpCodes.Ldloc_3), new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(EntityData), nameof(EntityData.beltId))),
+                new CodeMatch(OpCodes.Ldc_I4_0));
 
             object label = matcher.Advance(1).Operand;
 
@@ -126,12 +127,9 @@ namespace ProjectGenesis.Patches.Logic
 
             matcher.Advance(-1).SetInstructionAndAdvance(new CodeInstruction(OpCodes.Bgt, label2));
 
-            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0), 
-                                     new CodeInstruction(OpCodes.Ldloc_0),
-                                     new CodeInstruction(OpCodes.Ldloc_3),
-                                     new CodeInstruction(
-                                         OpCodes.Call, AccessTools.Method(typeof(FuelRodPatches), nameof(SetOutputEntity_Patch_Method))),
-                                     new CodeInstruction(OpCodes.Br, label));
+            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0), new CodeInstruction(OpCodes.Ldloc_0), new CodeInstruction(OpCodes.Ldloc_3),
+                new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(FuelRodPatches), nameof(SetOutputEntity_Patch_Method))),
+                new CodeInstruction(OpCodes.Br, label));
 
             return matcher.InstructionEnumeration();
         }
@@ -139,6 +137,7 @@ namespace ProjectGenesis.Patches.Logic
         public static void SetOutputEntity_Patch_Method(UIInserterBuildTip buildTip, PlanetFactory factory, EntityData entityData)
         {
             int entityDataPowerGenId = entityData.powerGenId;
+
             if (entityDataPowerGenId > 0)
             {
                 PowerGeneratorComponent component = factory.powerSystem.genPool[entityDataPowerGenId];
@@ -153,14 +152,7 @@ namespace ProjectGenesis.Patches.Logic
 
         [HarmonyPatch(typeof(PlanetFactory), nameof(PlanetFactory.PickFrom))]
         [HarmonyPostfix]
-        public static void PlanetFactory_PickFrom_Postfix(
-            PlanetFactory __instance,
-            int entityId,
-            int offset,
-            int filter,
-            int[] needs,
-            ref byte stack,
-            ref byte inc,
+        public static void PlanetFactory_PickFrom_Postfix(PlanetFactory __instance, int entityId, int offset, int filter, int[] needs, ref byte stack, ref byte inc,
             ref int __result)
         {
             if (__result != 0) return;
@@ -186,13 +178,7 @@ namespace ProjectGenesis.Patches.Logic
 
         [HarmonyPatch(typeof(PlanetFactory), nameof(PlanetFactory.InsertInto))]
         [HarmonyPostfix]
-        public static void PlanetFactory_InsertInto_Postfix(
-            PlanetFactory __instance,
-            int entityId,
-            int itemId,
-            ref byte itemCount,
-            ref byte itemInc,
-            ref byte remainInc,
+        public static void PlanetFactory_InsertInto_Postfix(PlanetFactory __instance, int entityId, int itemId, ref byte itemCount, ref byte itemInc, ref byte remainInc,
             ref int __result)
         {
             if (__result != 0 || itemId != ProtoID.I空燃料棒) return;
@@ -200,10 +186,12 @@ namespace ProjectGenesis.Patches.Logic
             EntityData entityData = __instance.entityPool[entityId];
 
             int powerGenId = entityData.powerGenId;
+
             if (powerGenId == 0) return;
 
             PowerGeneratorComponent[] genPool = __instance.powerSystem.genPool;
             ref PowerGeneratorComponent component = ref genPool[powerGenId];
+
             if (component.fuelMask == 0) return;
 
             Mutex obj = __instance.entityMutexs[entityId];
@@ -212,14 +200,14 @@ namespace ProjectGenesis.Patches.Logic
             {
                 component.productCount += itemCount;
                 component.catalystIncPoint += itemInc;
-                
+
                 if (component.productCount > 30)
                 {
-                    int instanceProductCount = (int)component.productCount;
+                    var instanceProductCount = (int)component.productCount;
                     component.split_inc(ref instanceProductCount, ref component.catalystIncPoint, instanceProductCount - 30);
                     component.productCount = instanceProductCount;
                 }
-                
+
                 remainInc = 0;
                 __result = itemCount;
             }
@@ -227,17 +215,14 @@ namespace ProjectGenesis.Patches.Logic
 
         [HarmonyPatch(typeof(PowerGeneratorComponent), nameof(PowerGeneratorComponent.PickFuelFrom))]
         [HarmonyPostfix]
-        public static void PowerGeneratorComponent_PickFuelFrom_Postfix(
-            ref PowerGeneratorComponent __instance,
-            int filter,
-            ref int inc,
-            ref int __result)
+        public static void PowerGeneratorComponent_PickFuelFrom_Postfix(ref PowerGeneratorComponent __instance, int filter, ref int inc, ref int __result)
         {
             if (__result != 0) return;
 
             if (filter != ProtoID.I空燃料棒 && filter != 0) return;
 
-            int instanceProductCount = (int)__instance.productCount;
+            var instanceProductCount = (int)__instance.productCount;
+
             if (instanceProductCount <= 0) return;
 
             __result = ProtoID.I空燃料棒;

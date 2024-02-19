@@ -87,7 +87,7 @@ namespace ProjectGenesis.Patches.UI.QTools
                 [Utils_ERecipeType.Chemical] = MyComboBox.MyComboBox.CreateComboBox<ItemComboBox>(30, 245, _tabs[0]),
                 [Utils_ERecipeType.高分子化工] = MyComboBox.MyComboBox.CreateComboBox<ItemComboBox>(430, 245, _tabs[0]),
                 [Utils_ERecipeType.Particle] = MyComboBox.MyComboBox.CreateComboBox<ItemComboBox>(30, 290, _tabs[0]),
-                [Utils_ERecipeType.Research] = MyComboBox.MyComboBox.CreateComboBox<ItemComboBox>(430, 290, _tabs[0])
+                [Utils_ERecipeType.Research] = MyComboBox.MyComboBox.CreateComboBox<ItemComboBox>(430, 290, _tabs[0]),
             };
 
             _proliferatorComboBox = MyComboBox.MyComboBox.CreateComboBox<ProliferatorComboBox>(30, 380, _tabs[0], "默认增产策略");
@@ -119,7 +119,7 @@ namespace ProjectGenesis.Patches.UI.QTools
             _factoryLabelText = Util.CreateLabelText(_labelTextPrefeb, "工厂：".TranslateFromJson());
             Util.NormalizeRectWithTopLeft(_factoryLabelText, 20, 460, _rightContent);
 
-            GameObject inputObj = GameObject.Find("UI Root/Overlay Canvas/In Game/Planet & Star Details/planet-detail-ui/name-input");
+            var inputObj = GameObject.Find("UI Root/Overlay Canvas/In Game/Planet & Star Details/planet-detail-ui/name-input");
             GameObject go = Instantiate(inputObj, _rightContent);
             go.name = "input";
             Util.NormalizeRectWithTopLeft(go.transform, 60, 20);
@@ -184,7 +184,7 @@ namespace ProjectGenesis.Patches.UI.QTools
         {
             _productDetailPool.RecycleAll();
 
-            int y = 20;
+            var y = 20;
 
             foreach (NodeData t in _data.Datas.Values)
             {
@@ -339,7 +339,8 @@ namespace ProjectGenesis.Patches.UI.QTools
         public void SetTabIndex(int index, bool immediate)
         {
             if ((_tabIndex != index) | immediate)
-                for (int index1 = 0; index1 < _tabButtons.Length; ++index1)
+            {
+                for (var index1 = 0; index1 < _tabButtons.Length; ++index1)
                 {
                     if (index1 == index)
                     {
@@ -354,11 +355,10 @@ namespace ProjectGenesis.Patches.UI.QTools
                         _tabTweeners[index1].gameObject.SetActive(false);
                     }
                 }
+            }
 
             if (immediate)
-            {
                 _tabSlider.rectTransform.anchoredPosition = new Vector2(160 * index, _tabSlider.rectTransform.anchoredPosition.y);
-            }
             else if (_tabIndex == index)
             {
                 Vector2 anchoredPosition = _tabSlider.rectTransform.anchoredPosition;
@@ -368,8 +368,8 @@ namespace ProjectGenesis.Patches.UI.QTools
             _tabIndex = index;
         }
 
-        private void CreateLabelText(string s, float left, float top)
-            => Util.NormalizeRectWithTopLeft(Util.CreateLabelText(_labelTextPrefeb, s.TranslateFromJson()), left, top);
+        private void CreateLabelText(string s, float left, float top) =>
+            Util.NormalizeRectWithTopLeft(Util.CreateLabelText(_labelTextPrefeb, s.TranslateFromJson()), left, top);
 
         public override void _OnUpdate()
         {
@@ -403,13 +403,16 @@ namespace ProjectGenesis.Patches.UI.QTools
         {
             _Close();
             isOpening = false;
+
             if (GameMain.mainPlayer.fastTravelling) return;
+
             GameMain.isFullscreenPaused = false;
         }
 
         public void OnPauseButtonClick(int obj)
         {
             if (GameMain.mainPlayer.fastTravelling) return;
+
             GameMain.isFullscreenPaused = !GameMain.isFullscreenPaused;
         }
 
@@ -421,7 +424,7 @@ namespace ProjectGenesis.Patches.UI.QTools
             go.name = "ui-qtools";
             go.SetActive(false);
             Destroy(go.GetComponent<UIOptionWindow>());
-            var win = go.AddComponent<UIQToolsWindow>();
+            UIQToolsWindow win = go.AddComponent<UIQToolsWindow>();
 
             UITechTree uiGameTechTree = UIRoot.instance.uiGame.techTree;
             UIButton pauseButton = uiGameTechTree.pauseButton;
@@ -444,33 +447,30 @@ namespace ProjectGenesis.Patches.UI.QTools
 
             Transform goTransform = go.transform;
 
-            for (int i = 0; i < goTransform.childCount; i++)
+            for (var i = 0; i < goTransform.childCount; i++)
             {
                 Transform child = goTransform.GetChild(i);
 
                 if (child.name == "title-text")
                 {
                     DestroyImmediate(child.GetComponent<Localizer>());
-                    var component = child.GetComponent<Text>();
+                    Text component = child.GetComponent<Text>();
                     component.text = "量化计算器".TranslateFromJson();
                     Util.NormalizeRectWithTopLeft(component, 80, 10);
                 }
 
                 if (child.name == "tab-line")
                 {
-                    for (int j = 3; j < child.childCount; j++)
-                    {
-                        Destroy(child.GetChild(j).gameObject);
-                    }
+                    for (var j = 3; j < child.childCount; j++) Destroy(child.GetChild(j).gameObject);
 
-                    for (int j = 1; j < 3; j++)
+                    for (var j = 1; j < 3; j++)
                     {
                         Transform transform = child.GetChild(j);
                         DestroyImmediate(transform.GetComponentInChildren<Localizer>());
-                        var labelText = transform.GetComponentInChildren<Text>();
+                        Text labelText = transform.GetComponentInChildren<Text>();
                         labelText.text = (j == 1 ? "设置" : "量化").TranslateFromJson();
                         win._tabTexts[j - 1] = labelText;
-                        var btn = transform.GetComponent<UIButton>();
+                        UIButton btn = transform.GetComponent<UIButton>();
                         win._tabButtons[j - 1] = btn;
                     }
 
@@ -484,17 +484,14 @@ namespace ProjectGenesis.Patches.UI.QTools
                     win._tabTweeners[0] = transform.GetComponent<Tweener>();
                     win._tabs[0] = transform.GetComponent<RectTransform>();
 
-                    for (int k = 0; k < transform.childCount; k++)
-                    {
-                        Destroy(transform.GetChild(k).gameObject);
-                    }
+                    for (var k = 0; k < transform.childCount; k++) Destroy(transform.GetChild(k).gameObject);
 
                     transform = child.GetChild(3);
 
                     win._tabTweeners[1] = transform.GetComponent<Tweener>();
                     win._tabs[1] = transform.GetComponent<RectTransform>();
 
-                    for (int k = 0; k < transform.childCount; k++)
+                    for (var k = 0; k < transform.childCount; k++)
                     {
                         Transform t = transform.GetChild(k);
 
@@ -505,10 +502,7 @@ namespace ProjectGenesis.Patches.UI.QTools
                             win._labelTextPrefeb = t.GetChild(0).gameObject;
                             Destroy(win._labelTextPrefeb.GetComponent<Localizer>());
 
-                            for (int j = 1; j < t.childCount; j++)
-                            {
-                                Destroy(t.GetChild(j).gameObject);
-                            }
+                            for (var j = 1; j < t.childCount; j++) Destroy(t.GetChild(j).gameObject);
                         }
 
                         if (t.name == "list")
@@ -520,10 +514,7 @@ namespace ProjectGenesis.Patches.UI.QTools
                             Transform content = t.GetChild(0).GetChild(0).GetChild(0);
                             win._listContent = content.GetComponent<RectTransform>();
 
-                            for (int j = 0; j < content.childCount; j++)
-                            {
-                                Destroy(content.GetChild(j).gameObject);
-                            }
+                            for (var j = 0; j < content.childCount; j++) Destroy(content.GetChild(j).gameObject);
                         }
                     }
 

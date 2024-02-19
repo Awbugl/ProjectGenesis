@@ -10,11 +10,7 @@ namespace ProjectGenesis.Patches.Logic
     {
         [HarmonyPatch(typeof(UIAbnormalityTip), nameof(UIAbnormalityTip._OnInit))]
         [HarmonyPostfix]
-        public static void UIAbnormalityTip_OnInit(
-            UIAbnormalityTip __instance,
-            ref bool ___isWarned,
-            ref bool ___willClose,
-            ref float ___closeDelayTime)
+        public static void UIAbnormalityTip_OnInit(UIAbnormalityTip __instance, ref bool ___isWarned, ref bool ___willClose, ref float ___closeDelayTime)
         {
             ___isWarned = true;
             ___willClose = true;

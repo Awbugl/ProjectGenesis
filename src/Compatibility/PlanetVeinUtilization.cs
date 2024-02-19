@@ -26,10 +26,10 @@ namespace ProjectGenesis.Compatibility
             var harmony = new Harmony("org.LoShin.GenesisBook.Compatibility.PlanetVeinUtilization");
 
             harmony.Patch(AccessTools.Method(type, "UIPlanetDetail_RefreshDynamicProperties_Postfix"), null, null,
-                          new HarmonyMethod(typeof(PlanetVeinUtilization), nameof(RefreshDynamicProperties_Postfix_Transpiler)));
+                new HarmonyMethod(typeof(PlanetVeinUtilization), nameof(RefreshDynamicProperties_Postfix_Transpiler)));
 
             harmony.Patch(AccessTools.Method(type, "UIStarDetail_RefreshDynamicProperties_Postfix"), null, null,
-                          new HarmonyMethod(typeof(PlanetVeinUtilization), nameof(RefreshDynamicProperties_Postfix_Transpiler)));
+                new HarmonyMethod(typeof(PlanetVeinUtilization), nameof(RefreshDynamicProperties_Postfix_Transpiler)));
 
             ref Array local1 = ref AccessTools.StaticFieldRefAccess<Array>(type, "planetVeinCount");
             ref Array local2 = ref AccessTools.StaticFieldRefAccess<Array>(type, "starVeinCount");
@@ -38,17 +38,11 @@ namespace ProjectGenesis.Compatibility
 
             local1 = Array.CreateInstance(veinTypeInfoType, veinTypeCount);
 
-            for (int i = 0; i < veinTypeCount; i++)
-            {
-                local1.SetValue(Activator.CreateInstance(veinTypeInfoType, null), i);
-            }
+            for (var i = 0; i < veinTypeCount; i++) local1.SetValue(Activator.CreateInstance(veinTypeInfoType, null), i);
 
             local2 = Array.CreateInstance(veinTypeInfoType, veinTypeCount);
 
-            for (int i = 0; i < veinTypeCount; i++)
-            {
-                local2.SetValue(Activator.CreateInstance(veinTypeInfoType, null), i);
-            }
+            for (var i = 0; i < veinTypeCount; i++) local2.SetValue(Activator.CreateInstance(veinTypeInfoType, null), i);
         }
 
         public static IEnumerable<CodeInstruction> RefreshDynamicProperties_Postfix_Transpiler(IEnumerable<CodeInstruction> instructions)

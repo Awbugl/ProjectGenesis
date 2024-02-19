@@ -4,9 +4,9 @@ using NebulaAPI;
 using NebulaAPI.Interfaces;
 using NebulaAPI.Networking;
 using NebulaAPI.Packets;
-using ProjectGenesis.Patches.Logic;
 using ProjectGenesis.Patches.Logic.MegaAssembler;
 using ProjectGenesis.Patches.Logic.PlanetFocus;
+using ProjectGenesis.Patches.Logic.QuantumStorage;
 
 // ReSharper disable MemberCanBeInternal
 // ReSharper disable MemberCanBePrivate.Global
@@ -22,12 +22,14 @@ namespace ProjectGenesis.Utils
         {
             PlanetId = planetId;
             EntityId = entityId;
+
             using (IWriterProvider p = NebulaModAPI.GetBinaryWriter())
             {
                 BinaryWriter w = p.BinaryWriter;
 
                 w.Write(data.Length);
-                for (int i = 0; i < data.Length; i++)
+
+                for (var i = 0; i < data.Length; i++)
                 {
                     w.Write((int)data[i].dir);
                     w.Write(data[i].beltId);
@@ -45,8 +47,7 @@ namespace ProjectGenesis.Utils
 
         internal static void Sync(int planetId, int entityId, SlotData[] slotsData)
         {
-            if (NebulaModAPI.IsMultiplayerActive)
-                NebulaModAPI.MultiplayerSession.Network.SendPacket(new SyncSlotsData(planetId, entityId, slotsData));
+            if (NebulaModAPI.IsMultiplayerActive) NebulaModAPI.MultiplayerSession.Network.SendPacket(new SyncSlotsData(planetId, entityId, slotsData));
         }
 
         internal static void OnReceive(int planetId, int entityId, byte[] data)
@@ -58,11 +59,12 @@ namespace ProjectGenesis.Utils
             {
                 int length = r.ReadInt32();
                 slotsData = new SlotData[length];
-                for (int i = 0; i < length; i++)
+
+                for (var i = 0; i < length; i++)
                 {
                     slotsData[i] = new SlotData
                     {
-                        dir = (IODir)r.ReadInt32(), beltId = r.ReadInt32(), storageIdx = r.ReadInt32(), counter = r.ReadInt32()
+                        dir = (IODir)r.ReadInt32(), beltId = r.ReadInt32(), storageIdx = r.ReadInt32(), counter = r.ReadInt32(),
                     };
                 }
 
@@ -76,19 +78,14 @@ namespace ProjectGenesis.Utils
     [RegisterPacketProcessor]
     public class SyncSlotsDataProcessor : BasePacketProcessor<SyncSlotsData>
     {
-        public override void ProcessPacket(SyncSlotsData packet, INebulaConnection conn)
-            => SyncSlotsData.OnReceive(packet.PlanetId, packet.EntityId, packet.SlotsData);
+        public override void ProcessPacket(SyncSlotsData packet, INebulaConnection conn) => SyncSlotsData.OnReceive(packet.PlanetId, packet.EntityId, packet.SlotsData);
     }
 
     public class SyncSlotData
     {
         public SyncSlotData() { }
 
-        public SyncSlotData(
-            int planetId,
-            int slotId,
-            int entityId,
-            SlotData data)
+        public SyncSlotData(int planetId, int slotId, int entityId, SlotData data)
         {
             PlanetId = planetId;
             SlotId = slotId;
@@ -113,28 +110,22 @@ namespace ProjectGenesis.Utils
 
         public byte[] SlotData { get; set; }
 
-        internal static void Sync(
-            int planetId,
-            int slotId,
-            int entityId,
-            SlotData slotData)
+        internal static void Sync(int planetId, int slotId, int entityId, SlotData slotData)
         {
-            if (NebulaModAPI.IsMultiplayerActive)
-                NebulaModAPI.MultiplayerSession.Network.SendPacket(new SyncSlotData(planetId, slotId, entityId, slotData));
+            if (NebulaModAPI.IsMultiplayerActive) NebulaModAPI.MultiplayerSession.Network.SendPacket(new SyncSlotData(planetId, slotId, entityId, slotData));
         }
 
-        internal static void OnReceive(
-            int planetId,
-            int slotId,
-            int entityId,
-            byte[] data)
+        internal static void OnReceive(int planetId, int slotId, int entityId, byte[] data)
         {
             SlotData slotData;
 
             using (IReaderProvider p = NebulaModAPI.GetBinaryReader(data))
             using (BinaryReader r = p.BinaryReader)
             {
-                slotData = new SlotData { dir = (IODir)r.ReadInt32(), beltId = r.ReadInt32(), storageIdx = r.ReadInt32(), counter = r.ReadInt32() };
+                slotData = new SlotData
+                {
+                    dir = (IODir)r.ReadInt32(), beltId = r.ReadInt32(), storageIdx = r.ReadInt32(), counter = r.ReadInt32(),
+                };
 
 
                 p.BinaryReader.Close();
@@ -147,8 +138,8 @@ namespace ProjectGenesis.Utils
     [RegisterPacketProcessor]
     public class SyncSlotDataProcessor : BasePacketProcessor<SyncSlotData>
     {
-        public override void ProcessPacket(SyncSlotData packet, INebulaConnection conn)
-            => SyncSlotData.OnReceive(packet.PlanetId, packet.SlotId, packet.EntityId, packet.SlotData);
+        public override void ProcessPacket(SyncSlotData packet, INebulaConnection conn) =>
+            SyncSlotData.OnReceive(packet.PlanetId, packet.SlotId, packet.EntityId, packet.SlotData);
     }
 
     public class SyncPlanetFocusData
@@ -168,8 +159,7 @@ namespace ProjectGenesis.Utils
 
         internal static void Sync(int planetId, int index, int focusId)
         {
-            if (NebulaModAPI.IsMultiplayerActive)
-                NebulaModAPI.MultiplayerSession.Network.SendPacket(new SyncPlanetFocusData(planetId, index, focusId));
+            if (NebulaModAPI.IsMultiplayerActive) NebulaModAPI.MultiplayerSession.Network.SendPacket(new SyncPlanetFocusData(planetId, index, focusId));
         }
 
         internal static void OnReceive(int planetId, int index, int focusId) => PlanetFocusPatches.SyncPlanetFocus(planetId, index, focusId);
@@ -178,8 +168,8 @@ namespace ProjectGenesis.Utils
     [RegisterPacketProcessor]
     public class SyncPlanetFocusDataProcessor : BasePacketProcessor<SyncPlanetFocusData>
     {
-        public override void ProcessPacket(SyncPlanetFocusData packet, INebulaConnection conn)
-            => SyncPlanetFocusData.OnReceive(packet.PlanetId, packet.Index, packet.FocusId);
+        public override void ProcessPacket(SyncPlanetFocusData packet, INebulaConnection conn) =>
+            SyncPlanetFocusData.OnReceive(packet.PlanetId, packet.Index, packet.FocusId);
     }
 
     public class SyncNewQuantumStorageData
@@ -197,8 +187,7 @@ namespace ProjectGenesis.Utils
 
         internal static void Sync(int planetId, int storageId)
         {
-            if (NebulaModAPI.IsMultiplayerActive)
-                NebulaModAPI.MultiplayerSession.Network.SendPacket(new SyncNewQuantumStorageData(planetId, storageId));
+            if (NebulaModAPI.IsMultiplayerActive) NebulaModAPI.MultiplayerSession.Network.SendPacket(new SyncNewQuantumStorageData(planetId, storageId));
         }
 
         internal static void OnReceive(int planetId, int storageId) => QuantumStoragePatches.SyncNewQuantumStorage(planetId, storageId);
@@ -207,8 +196,8 @@ namespace ProjectGenesis.Utils
     [RegisterPacketProcessor]
     public class SyncNewQuantumStorageDataProcessor : BasePacketProcessor<SyncNewQuantumStorageData>
     {
-        public override void ProcessPacket(SyncNewQuantumStorageData packet, INebulaConnection conn)
-            => SyncNewQuantumStorageData.OnReceive(packet.PlanetId, packet.StorageId);
+        public override void ProcessPacket(SyncNewQuantumStorageData packet, INebulaConnection conn) =>
+            SyncNewQuantumStorageData.OnReceive(packet.PlanetId, packet.StorageId);
     }
 
     public class SyncRemoveQuantumStorageData
@@ -226,8 +215,7 @@ namespace ProjectGenesis.Utils
 
         internal static void Sync(int planetId, int storageId)
         {
-            if (NebulaModAPI.IsMultiplayerActive)
-                NebulaModAPI.MultiplayerSession.Network.SendPacket(new SyncRemoveQuantumStorageData(planetId, storageId));
+            if (NebulaModAPI.IsMultiplayerActive) NebulaModAPI.MultiplayerSession.Network.SendPacket(new SyncRemoveQuantumStorageData(planetId, storageId));
         }
 
         internal static void OnReceive(int planetId, int storageId) => QuantumStoragePatches.SyncRemoveQuantumStorage(planetId, storageId);
@@ -236,18 +224,15 @@ namespace ProjectGenesis.Utils
     [RegisterPacketProcessor]
     public class SyncRemoveQuantumStorageDataProcessor : BasePacketProcessor<SyncRemoveQuantumStorageData>
     {
-        public override void ProcessPacket(SyncRemoveQuantumStorageData packet, INebulaConnection conn)
-            => SyncRemoveQuantumStorageData.OnReceive(packet.PlanetId, packet.StorageId);
+        public override void ProcessPacket(SyncRemoveQuantumStorageData packet, INebulaConnection conn) =>
+            SyncRemoveQuantumStorageData.OnReceive(packet.PlanetId, packet.StorageId);
     }
 
     public class GenesisBookPlanetLoadRequest
     {
         public GenesisBookPlanetLoadRequest() { }
 
-        public GenesisBookPlanetLoadRequest(int planetId)
-        {
-            PlanetId = planetId;
-        }
+        public GenesisBookPlanetLoadRequest(int planetId) => PlanetId = planetId;
 
         public int PlanetId { get; set; }
     }
@@ -302,6 +287,7 @@ namespace ProjectGenesis.Utils
         public static void ProcessBytesLater(int planetId)
         {
             if (!NebulaModAPI.IsMultiplayerActive || NebulaModAPI.MultiplayerSession.LocalPlayer.IsHost) return;
+
             if (!PendingData.Remove(planetId, out byte[] bytes)) return;
 
             using (IReaderProvider p = NebulaModAPI.GetBinaryReader(bytes))

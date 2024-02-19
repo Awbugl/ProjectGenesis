@@ -20,8 +20,7 @@ namespace ProjectGenesis.Patches.UI.BeltColorFix
         {
             var matcher = new CodeMatcher(instructions);
 
-            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldloc_1), new CodeMatch(OpCodes.Ldfld, BeltComponent_Speed_Field),
-                                 new CodeMatch(OpCodes.Ldc_I4_1));
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldloc_1), new CodeMatch(OpCodes.Ldfld, BeltComponent_Speed_Field), new CodeMatch(OpCodes.Ldc_I4_1));
 
             CodeMatcher matcher2 = matcher.Clone();
             matcher2.MatchForward(true, new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Stloc_S));
@@ -30,13 +29,14 @@ namespace ProjectGenesis.Patches.UI.BeltColorFix
             matcher2.Advance(1);
             object label = matcher2.Operand;
 
-            matcher.Advance(2).InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_S, arg)).SetInstruction(
-                Transpilers.EmitDelegate<Func<int, int, int>>((speed, other) =>
-                {
-                    if (speed == 10) return other + 8;
-                    if (speed == 5) return other + 4;
-                    return other;
-                })).Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Stloc_S, arg)).SetInstruction(new CodeInstruction(OpCodes.Br, label));
+            matcher.Advance(2).InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_S, arg)).SetInstruction(Transpilers.EmitDelegate<Func<int, int, int>>((speed, other) =>
+            {
+                if (speed == 10) return other + 8;
+
+                if (speed == 5) return other + 4;
+
+                return other;
+            })).Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Stloc_S, arg)).SetInstruction(new CodeInstruction(OpCodes.Br, label));
 
             return matcher.InstructionEnumeration();
         }
@@ -49,8 +49,7 @@ namespace ProjectGenesis.Patches.UI.BeltColorFix
 
             matcher.MatchForward(false, new CodeMatch(OpCodes.Ldfld, PrefabDesc_beltSpeed_Field));
 
-            matcher.Advance(1).InsertAndAdvance(
-                new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(BeltFixPatches), nameof(BeltSpeed_Patch))));
+            matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(BeltFixPatches), nameof(BeltSpeed_Patch))));
 
             return matcher.InstructionEnumeration();
         }
@@ -63,8 +62,7 @@ namespace ProjectGenesis.Patches.UI.BeltColorFix
 
             matcher.MatchForward(false, new CodeMatch(OpCodes.Ldfld, BeltComponent_Speed_Field));
 
-            matcher.Advance(1).InsertAndAdvance(
-                new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(BeltFixPatches), nameof(BeltSpeed_Patch))));
+            matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(BeltFixPatches), nameof(BeltSpeed_Patch))));
 
 
             return matcher.InstructionEnumeration();
@@ -80,13 +78,11 @@ namespace ProjectGenesis.Patches.UI.BeltColorFix
 
             matcher.MatchForward(false, new CodeMatch(OpCodes.Ldfld, PrefabDesc_beltSpeed_Field));
 
-            matcher.Advance(1).InsertAndAdvance(
-                new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(BeltFixPatches), nameof(BeltSpeed_Patch))));
+            matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(BeltFixPatches), nameof(BeltSpeed_Patch))));
 
             matcher.MatchForward(false, new CodeMatch(OpCodes.Ldfld, PrefabDesc_beltSpeed_Field));
 
-            matcher.Advance(1).InsertAndAdvance(
-                new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(BeltFixPatches), nameof(BeltSpeed_Patch))));
+            matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(BeltFixPatches), nameof(BeltSpeed_Patch))));
 
             return matcher.InstructionEnumeration();
         }
@@ -95,17 +91,13 @@ namespace ProjectGenesis.Patches.UI.BeltColorFix
         {
             switch (beltSpeed)
             {
-                case 10:
-                    return 5;
+                case 10: return 5;
 
-                case 5:
-                    return 2;
+                case 5: return 2;
 
-                case 3:
-                    return 1;
+                case 3: return 1;
 
-                default:
-                    return beltSpeed;
+                default: return beltSpeed;
             }
         }
     }

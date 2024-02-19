@@ -11,6 +11,7 @@ namespace ProjectGenesis.Patches.UI.QTools
         public static void Init(UIRoot __instance)
         {
             if (ProjectGenesis.QToolsWindow) return;
+
             ProjectGenesis.QToolsWindow = UIQToolsWindow.CreateWindow();
         }
     }

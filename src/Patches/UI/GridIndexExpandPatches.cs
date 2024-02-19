@@ -30,10 +30,7 @@ namespace ProjectGenesis.Patches.UI
 
             Array.Resize(ref __instance.queueNumTexts, 17);
 
-            for (int index = 14; index < 17; ++index)
-            {
-                __instance.CreateQueueText(index);
-            }
+            for (var index = 14; index < 17; ++index) __instance.CreateQueueText(index);
         }
 
         [HarmonyPatch(typeof(UIGame), nameof(UIGame._OnInit))]
@@ -54,8 +51,8 @@ namespace ProjectGenesis.Patches.UI
         [HarmonyPatch(typeof(UILootFilter), nameof(UILootFilter._OnCreate))]
         [HarmonyPostfix]
         [HarmonyPriority(Priority.Last)]
-        public static void UIRecipePicker_OnOpen_Postfix(ManualBehaviour __instance)
-            => __instance.transform.Find("content").GetComponent<RectTransform>().sizeDelta = new Vector2(782, 322);
+        public static void UIRecipePicker_OnOpen_Postfix(ManualBehaviour __instance) =>
+            __instance.transform.Find("content").GetComponent<RectTransform>().sizeDelta = new Vector2(782, 322);
 
         [HarmonyPatch(typeof(UIReplicatorWindow), nameof(UIReplicatorWindow.TestMouseRecipeIndex))]
         [HarmonyPatch(typeof(UIReplicatorWindow), nameof(UIReplicatorWindow.SetSelectedRecipeIndex))]
@@ -77,8 +74,9 @@ namespace ProjectGenesis.Patches.UI
             foreach (CodeInstruction ci in instructions)
             {
                 if (ci.opcode == OpCodes.Ldc_I4_S)
-                    if ((sbyte)ci.operand == 14)
-                        ci.operand = (sbyte)17;
+                {
+                    if ((sbyte)ci.operand == 14) ci.operand = (sbyte)17;
+                }
 
                 if (ci.opcode == OpCodes.Ldc_I4_8) ci.opcode = OpCodes.Ldc_I4_7;
 
@@ -115,8 +113,10 @@ namespace ProjectGenesis.Patches.UI
             {
                 if (ci.opcode == OpCodes.Ldc_R4)
                 {
-                    float operand = (float)ci.operand;
+                    var operand = (float)ci.operand;
+
                     if (operand is 14f) ci.operand = 17f;
+
                     if (operand is 8f) ci.operand = 7f;
                 }
 
@@ -132,6 +132,7 @@ namespace ProjectGenesis.Patches.UI
             var matcher = new CodeMatcher(instructions);
             matcher.MatchForward(false, new CodeMatch(OpCodes.Ldc_R4, -300f));
             matcher.SetOperandAndAdvance(-600f);
+
             return matcher.InstructionEnumeration();
         }
     }

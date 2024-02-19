@@ -13,7 +13,7 @@ namespace ProjectGenesis.Patches.Logic.PlanetFocus
             var matcher = new CodeMatcher(instructions);
 
             matcher.MatchForward(true, new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(GameHistoryData), nameof(GameHistoryData.techSpeed))),
-                                 new CodeMatch(OpCodes.Conv_R4));
+                new CodeMatch(OpCodes.Conv_R4));
 
             matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0));
             matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(PlanetFocusPatches), nameof(LabResearchMode))));
@@ -24,6 +24,7 @@ namespace ProjectGenesis.Patches.Logic.PlanetFocus
         public static float LabResearchMode(float techSpeed, FactorySystem factorySystem)
         {
             bool exist = ContainsFocus(factorySystem.factory.planetId, 6523);
+
             return exist ? techSpeed * 1.1f : techSpeed;
         }
 
@@ -35,11 +36,10 @@ namespace ProjectGenesis.Patches.Logic.PlanetFocus
 
 
             matcher.MatchForward(true, new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(GameHistoryData), nameof(GameHistoryData.techSpeed))),
-                                 new CodeMatch(OpCodes.Conv_R4));
+                new CodeMatch(OpCodes.Conv_R4));
 
             matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0),
-                                                new CodeInstruction(
-                                                    OpCodes.Ldfld, AccessTools.Field(typeof(UILabWindow), nameof(UILabWindow.factory))));
+                new CodeInstruction(OpCodes.Ldfld, AccessTools.Field(typeof(UILabWindow), nameof(UILabWindow.factory))));
 
             matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(PlanetFocusPatches), nameof(LabTechSpeed))));
 
@@ -50,6 +50,7 @@ namespace ProjectGenesis.Patches.Logic.PlanetFocus
         public static double LabTechSpeed(double techSpeed, PlanetFactory factory)
         {
             bool exist = ContainsFocus(factory.planetId, 6523);
+
             return exist ? techSpeed * 1.1 : techSpeed;
         }
     }

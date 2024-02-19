@@ -14,6 +14,7 @@ namespace ProjectGenesis.Patches.UI
             int tankId = __instance.tankId;
 
             TankComponent tankComponent = __instance.storage.tankPool[tankId];
+
             if (tankComponent.id != tankId) return;
 
             int fluidId = tankComponent.fluidId;

@@ -41,6 +41,7 @@ namespace ProjectGenesis.Utils
             PrefabDesc desc = oriModel.prefabDesc;
 
             var newMats = new List<Material>();
+
             foreach (Material[] lodMats in desc.lodMaterials)
             {
                 if (lodMats == null) continue;
@@ -48,6 +49,7 @@ namespace ProjectGenesis.Utils
                 foreach (Material mat in lodMats)
                 {
                     if (mat == null) continue;
+
                     var newMaterial = new Material(mat);
                     newMaterial.SetColor("_Color", new Color32(60, 179, 113, 255));
                     newMats.Add(newMaterial);
@@ -66,9 +68,7 @@ namespace ProjectGenesis.Utils
 
             newMats.Add(collectEffectMat);
 
-            ModelProto registerModel = ProtoRegistry.RegisterModel(ProtoID.M大气采集器,
-                                                                   "Assets/genesis-models/entities/prefabs/atmospheric-collect-station",
-                                                                   newMats.ToArray());
+            ModelProto registerModel = ProtoRegistry.RegisterModel(ProtoID.M大气采集器, "Assets/genesis-models/entities/prefabs/atmospheric-collect-station", newMats.ToArray());
 
             registerModel.HpMax = 300000;
             registerModel.RuinId = 384;
@@ -95,13 +95,16 @@ namespace ProjectGenesis.Utils
             {
                 if (lodMaterial == null) continue;
 
-                for (int j = 0; j < lodMaterial.Length; j++)
+                for (var j = 0; j < lodMaterial.Length; j++)
                 {
                     ref Material material = ref lodMaterial[j];
 
                     if (material == null) continue;
+
                     material = new Material(material);
+
                     if (!color.HasValue) continue;
+
                     material.SetColor("_Color", color.Value);
                 }
             }
@@ -127,8 +130,8 @@ namespace ProjectGenesis.Utils
             LDBTool.PreAddProto(model);
         }
 
-        private static ModelProto Copy(this ModelProto proto)
-            => new ModelProto
+        private static ModelProto Copy(this ModelProto proto) =>
+            new ModelProto
             {
                 ObjectType = proto.ObjectType,
                 RuinType = proto.RuinType,
@@ -143,7 +146,7 @@ namespace ProjectGenesis.Utils
                 _colliderPath = proto._colliderPath,
                 _ruinPath = proto._ruinPath,
                 _wreckagePath = proto._wreckagePath,
-                _ruinOriginModelIndex = proto._ruinOriginModelIndex
+                _ruinOriginModelIndex = proto._ruinOriginModelIndex,
             };
 
         internal static void ModelPostFix()
@@ -157,7 +160,7 @@ namespace ProjectGenesis.Utils
             prefabDescLODMaterial[2].SetColor("_TintColor", new Color(0.2715f, 1.7394f, 0.1930f));
 
             prefabDesc = LDB.models.Select(ProtoID.M人造恒星MK2).prefabDesc;
-            var texture = Resources.Load<Texture>("Assets/texpack/人造恒星MK2材质");
+            Texture texture = Resources.Load<Texture>("Assets/texpack/人造恒星MK2材质");
             prefabDescLODMaterial = ref prefabDesc.lodMaterials[0];
             prefabDescLODMaterial[0].SetTexture("_EmissionTex", texture);
             prefabDescLODMaterial[1].SetColor("_TintColor", new Color(0.1804f, 0.4953f, 1.3584f));  //亮部
@@ -167,7 +170,7 @@ namespace ProjectGenesis.Utils
 
         internal static void ItemPostFix()
         {
-            LDB.items.Select(ProtoID.I水).recipes = new List<RecipeProto> { LDB.recipes.Select(ProtoID.R海水淡化) };
+            LDB.items.Select(ProtoID.I水).recipes = new List<RecipeProto> { LDB.recipes.Select(ProtoID.R海水淡化), };
             LDB.items.Select(ProtoID.I氢).isRaw = true;
         }
 

@@ -2,29 +2,20 @@
 using System.Linq;
 using Mono.Cecil;
 
-namespace ProjectGenesis
+namespace ProjectGenesis.Preloader
 {
     public static class Preloader
     {
-        public static IEnumerable<string> TargetDLLs { get; } = new[] { "Assembly-CSharp.dll" };
+        public static IEnumerable<string> TargetDLLs { get; } = new[] { "Assembly-CSharp.dll", };
 
-        private static TypeDefinition GetTypeByName(this AssemblyDefinition assembly, string name)
-            => assembly.MainModule.Types.FirstOrDefault(t => t.FullName == name);
+        private static TypeDefinition GetTypeByName(this AssemblyDefinition assembly, string name) => assembly.MainModule.Types.FirstOrDefault(t => t.FullName == name);
 
         private static FieldDefinition GetFieldByName(this TypeDefinition type, string name) => type.Fields.FirstOrDefault(t => t.Name == name);
 
-        private static void AddEnumField(
-            this TypeDefinition type,
-            string name,
-            object constant,
-            FieldAttributes fieldAttributes)
-            => type.Fields.Add(new FieldDefinition(name, fieldAttributes, type) { Constant = constant });
+        private static void AddEnumField(this TypeDefinition type, string name, object constant, FieldAttributes fieldAttributes) =>
+            type.Fields.Add(new FieldDefinition(name, fieldAttributes, type) { Constant = constant, });
 
-        private static void AddTypeField(
-            this AssemblyDefinition assembly,
-            string typeName,
-            string oriFieldName,
-            string newFieldName)
+        private static void AddTypeField(this AssemblyDefinition assembly, string typeName, string oriFieldName, string newFieldName)
         {
             TypeDefinition type = assembly.GetTypeByName(typeName);
             FieldDefinition oriField = type.GetFieldByName(oriFieldName);
@@ -35,6 +26,7 @@ namespace ProjectGenesis
         {
             TypeDefinition veinType = assembly.GetTypeByName("EVeinType");
             FieldDefinition max = veinType.Fields.FirstOrDefault(i => i.HasDefault && (byte)i.Constant == 15);
+
             if (max != null) veinType.Fields.Remove(max);
 
             FieldAttributes fieldAttributes = FieldAttributes.Static | FieldAttributes.Literal | FieldAttributes.Public | FieldAttributes.HasDefault;

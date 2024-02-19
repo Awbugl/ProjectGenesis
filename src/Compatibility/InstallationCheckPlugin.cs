@@ -42,7 +42,7 @@ namespace ProjectGenesis.Compatibility
             PreloaderInstalled = birthResourcePoint2 != null;
 
             new Harmony(MODGUID).Patch(AccessTools.Method(typeof(VFPreload), nameof(VFPreload.InvokeOnLoadWorkEnded)), null,
-                                       new HarmonyMethod(typeof(InstallationCheckPlugin), nameof(OnMainMenuOpen)) { priority = Priority.Last });
+                new HarmonyMethod(typeof(InstallationCheckPlugin), nameof(OnMainMenuOpen)) { priority = Priority.Last, });
 
             AwakeCompatibilityPatchers();
         }
@@ -57,10 +57,7 @@ namespace ProjectGenesis.Compatibility
             PlanetwideMining.Awake();
             FastTravelEnabler.Awake();
 
-            try
-            {
-                GalacticScale.Awake();
-            }
+            try { GalacticScale.Awake(); }
             catch (FileNotFoundException)
             {
                 // ignore
@@ -70,6 +67,7 @@ namespace ProjectGenesis.Compatibility
         public static void OnMainMenuOpen()
         {
             if (_shown) return;
+
             _shown = true;
 
             string msg = null;
@@ -84,8 +82,8 @@ namespace ProjectGenesis.Compatibility
 
             if (string.IsNullOrEmpty(msg)) return;
 
-            UIMessageBox.Show("GenesisBookLoadTitle".TranslateFromJson(), msg.TranslateFromJson(), "确定".TranslateFromJson(),
-                              "跳转交流群".TranslateFromJson(), "跳转日志".TranslateFromJson(), UIMessageBox.INFO, null, OpenBrowser, OpenLog);
+            UIMessageBox.Show("GenesisBookLoadTitle".TranslateFromJson(), msg.TranslateFromJson(), "确定".TranslateFromJson(), "跳转交流群".TranslateFromJson(),
+                "跳转日志".TranslateFromJson(), UIMessageBox.INFO, null, OpenBrowser, OpenLog);
         }
 
         public static void OpenBrowser() => Application.OpenURL("创世之书链接".TranslateFromJson());

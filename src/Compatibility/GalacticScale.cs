@@ -47,49 +47,39 @@ namespace ProjectGenesis.Compatibility
             var harmony = new Harmony("org.LoShin.GenesisBook.Compatibility.GalacticScale");
 
             harmony.Patch(AccessTools.Method(assembly.GetType("GalacticScale.GS2"), "SetPlanetTheme"), null,
-                          new HarmonyMethod(typeof(GalacticScale), nameof(SetPlanetTheme_Postfix)),
-                          new HarmonyMethod(typeof(GalacticScale), nameof(SetPlanetTheme_Transpiler)));
+                new HarmonyMethod(typeof(GalacticScale), nameof(SetPlanetTheme_Postfix)), new HarmonyMethod(typeof(GalacticScale), nameof(SetPlanetTheme_Transpiler)));
 
             harmony.Patch(AccessTools.Method(assembly.GetType("GalacticScale.GSTheme"), "ToProto"), null,
-                          new HarmonyMethod(typeof(GalacticScale), nameof(GSTheme_ToProto_Postfix)));
+                new HarmonyMethod(typeof(GalacticScale), nameof(GSTheme_ToProto_Postfix)));
 
             Type VeinAlgorithms = assembly.GetType("GalacticScale.VeinAlgorithms");
 
-            harmony.Patch(AccessTools.Method(VeinAlgorithms, "DisableVeins"), null, null,
-                          new HarmonyMethod(typeof(GalacticScale), nameof(DisableVeins_Transpiler)));
+            harmony.Patch(AccessTools.Method(VeinAlgorithms, "DisableVeins"), null, null, new HarmonyMethod(typeof(GalacticScale), nameof(DisableVeins_Transpiler)));
 
-            harmony.Patch(AccessTools.Method(VeinAlgorithms, "DistributeVeinTypes"),
-                          new HarmonyMethod(typeof(GalacticScale), nameof(DistributeVeinTypes_Prefix)));
+            harmony.Patch(AccessTools.Method(VeinAlgorithms, "DistributeVeinTypes"), new HarmonyMethod(typeof(GalacticScale), nameof(DistributeVeinTypes_Prefix)));
 
-            harmony.Patch(AccessTools.Method(VeinAlgorithms, "GenBirthPoints"), null,
-                          new HarmonyMethod(typeof(GalacticScale), nameof(GenBirthPoints_Postfix)));
+            harmony.Patch(AccessTools.Method(VeinAlgorithms, "GenBirthPoints"), null, new HarmonyMethod(typeof(GalacticScale), nameof(GenBirthPoints_Postfix)));
 
-            harmony.Patch(AccessTools.Method(VeinAlgorithms, "CalculateVectorsGS2"), null,
-                          new HarmonyMethod(typeof(GalacticScale), nameof(CalculateVectorsGS2_Postfix)));
+            harmony.Patch(AccessTools.Method(VeinAlgorithms, "CalculateVectorsGS2"), null, new HarmonyMethod(typeof(GalacticScale), nameof(CalculateVectorsGS2_Postfix)));
 
-            harmony.Patch(AccessTools.Method(VeinAlgorithms, "InitBirthVeinVectors"),
-                          new HarmonyMethod(typeof(GalacticScale), nameof(InitBirthVeinVectors_Postfix)));
+            harmony.Patch(AccessTools.Method(VeinAlgorithms, "InitBirthVeinVectors"), new HarmonyMethod(typeof(GalacticScale), nameof(InitBirthVeinVectors_Postfix)));
 
             harmony.Patch(AccessTools.PropertyGetter(assembly.GetType("GalacticScale.GS2MainSettings"), "VeinTips"), null, null,
-                          new HarmonyMethod(typeof(GalacticScale), nameof(GS2MainSettings_VeinTips_Getter_Transpiler)));
+                new HarmonyMethod(typeof(GalacticScale), nameof(GS2MainSettings_VeinTips_Getter_Transpiler)));
 
             MethodInfo OnPlanetDataSet7Prefix = AccessTools.Method(assembly.GetType("GalacticScale.PatchOnUIPlanetDetail"), "OnPlanetDataSet7Prefix");
 
             harmony.Patch(OnPlanetDataSet7Prefix, null, null, new HarmonyMethod(typeof(GalacticScale), nameof(OnPlanetDataSet_Transpiler)));
 
-            harmony.Patch(OnPlanetDataSet7Prefix, null, null,
-                          new HarmonyMethod(typeof(PlanetGasPatches), nameof(PlanetGasPatches.OnDataSet_ChangeWaterId_Transpiler)));
+            harmony.Patch(OnPlanetDataSet7Prefix, null, null, new HarmonyMethod(typeof(PlanetGasPatches), nameof(PlanetGasPatches.OnDataSet_ChangeWaterId_Transpiler)));
 
-            harmony.Patch(OnPlanetDataSet7Prefix, null, null,
-                          new HarmonyMethod(typeof(GalacticScale), nameof(OnPlanetDataSet_ChangeVeinData_Transpiler)));
+            harmony.Patch(OnPlanetDataSet7Prefix, null, null, new HarmonyMethod(typeof(GalacticScale), nameof(OnPlanetDataSet_ChangeVeinData_Transpiler)));
 
             MethodInfo OnStarDataSet2 = AccessTools.Method(assembly.GetType("GalacticScale.PatchOnUIStarDetail"), "OnStarDataSet2");
 
-            harmony.Patch(OnStarDataSet2, null, null,
-                          new HarmonyMethod(typeof(PlanetGasPatches), nameof(PlanetGasPatches.OnDataSet_ChangeWaterId_Transpiler)));
+            harmony.Patch(OnStarDataSet2, null, null, new HarmonyMethod(typeof(PlanetGasPatches), nameof(PlanetGasPatches.OnDataSet_ChangeWaterId_Transpiler)));
 
-            harmony.Patch(OnStarDataSet2, null, null,
-                          new HarmonyMethod(typeof(PlanetGasPatches), nameof(PlanetGasPatches.PlanetGen_SetPlanetTheme_Transpiler)));
+            harmony.Patch(OnStarDataSet2, null, null, new HarmonyMethod(typeof(PlanetGasPatches), nameof(PlanetGasPatches.PlanetGen_SetPlanetTheme_Transpiler)));
 
             harmony.Patch(OnStarDataSet2, null, null, new HarmonyMethod(typeof(PlanetGasPatches), nameof(PlanetGasPatches.OnStarDataSet_Transpiler)));
 
@@ -100,8 +90,7 @@ namespace ProjectGenesis.Compatibility
         {
             var matcher = new CodeMatcher(instructions);
 
-            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(PlanetData), nameof(PlanetData.type))),
-                                 new CodeMatch(OpCodes.Ldc_I4_5));
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(PlanetData), nameof(PlanetData.type))), new CodeMatch(OpCodes.Ldc_I4_5));
             matcher.Advance(-1);
             matcher.SetAndAdvance(OpCodes.Nop, null);
             matcher.SetAndAdvance(OpCodes.Nop, null);
@@ -113,6 +102,7 @@ namespace ProjectGenesis.Compatibility
             matcher.SetAndAdvance(OpCodes.Nop, null);
             matcher.SetAndAdvance(OpCodes.Nop, null);
             matcher.SetAndAdvance(OpCodes.Nop, null);
+
             return matcher.InstructionEnumeration();
         }
 
@@ -124,13 +114,15 @@ namespace ProjectGenesis.Compatibility
             var vt2 = GSVeinType.Generate(EVeinType.Fireice, 1, 1, 0.6f, 0.6f, 6, 6, false);
             var vt3 = GSVeinType.Generate((EVeinType)18, 10, 10, 0.3f, 0.3f, 5, 5, false);
 
-            List<EVeinType> eveinTypeList = gsPlanet.veinSettings.VeinTypes.Select(veinType => veinType.type).ToList();
+            var eveinTypeList = gsPlanet.veinSettings.VeinTypes.Select(veinType => veinType.type).ToList();
 
             if (!eveinTypeList.Contains((EVeinType)16)) gsPlanet.veinSettings.VeinTypes.Add(vt1);
+
             if (!eveinTypeList.Contains(EVeinType.Fireice)) gsPlanet.veinSettings.VeinTypes.Add(vt2);
+
             if (!eveinTypeList.Contains((EVeinType)18)) gsPlanet.veinSettings.VeinTypes.Add(vt3);
 
-            for (int index = 0; index < gsPlanet.veinSettings.VeinTypes.Count; index++)
+            for (var index = 0; index < gsPlanet.veinSettings.VeinTypes.Count; index++)
             {
                 GSVeinType veinType = gsPlanet.veinSettings.VeinTypes[index];
 
@@ -138,14 +130,17 @@ namespace ProjectGenesis.Compatibility
                 {
                     case (EVeinType)16:
                         gsPlanet.veinSettings.VeinTypes[index] = vt1;
+
                         break;
 
                     case EVeinType.Fireice:
                         gsPlanet.veinSettings.VeinTypes[index] = vt2;
+
                         break;
 
                     case (EVeinType)18:
                         gsPlanet.veinSettings.VeinTypes[index] = vt3;
+
                         break;
                 }
             }
@@ -154,14 +149,16 @@ namespace ProjectGenesis.Compatibility
         public static void CalculateVectorsGS2_Postfix(GSPlanet gsPlanet, List<GSVeinDescriptor> __result)
         {
             if (gsPlanet.planetData.id == GSSettings.BirthPlanetId)
+            {
                 __result.Add(new GSVeinDescriptor
                 {
                     count = 6,
                     position = gsPlanet.planetData.birthResourcePoint2,
                     rare = false,
                     type = (EVeinType)15,
-                    richness = 0.1f
+                    richness = 0.1f,
                 });
+            }
         }
 
         public static void GenBirthPoints_Postfix(GSPlanet gsPlanet)
@@ -169,14 +166,15 @@ namespace ProjectGenesis.Compatibility
             VeinAlgorithms.random = new GS2.Random(GSSettings.Seed);
             PlanetData planetData = gsPlanet.planetData;
             double num1 = 85.0 / planetData.orbitalPeriod + planetData.orbitPhase / 360.0;
-            int num2 = (int)(num1 + 0.1);
+            var num2 = (int)(num1 + 0.1);
             double num3 = (num1 - num2) * (2.0 * Math.PI);
             double num4 = 85.0 / planetData.rotationPeriod + planetData.rotationPhase / 360.0;
-            int num5 = (int)(num4 + 0.1);
+            var num5 = (int)(num4 + 0.1);
             double angle = (num4 - num5) * 360.0;
             var v = new Vector3((float)Math.Cos(num3) * planetData.orbitRadius, 0.0f, (float)Math.Sin(num3) * planetData.orbitRadius);
             Vector3 position = Maths.QRotate(planetData.runtimeOrbitRotation, v);
             Pose pose;
+
             if (planetData.orbitAroundPlanet != null)
             {
                 pose = planetData.orbitAroundPlanet.PredictPose(85.0);
@@ -188,11 +186,12 @@ namespace ProjectGenesis.Compatibility
             pose = new Pose(position, planetData.runtimeSystemRotation * Quaternion.AngleAxis((float)angle, Vector3.down));
             Vector3 vector3_1 = Maths.QInvRotateLF(pose.rotation, planetData.star.uPosition - (VectorLF3)pose.position * 40000.0);
             vector3_1.Normalize();
-            Vector3 vector3_2 = Vector3.Cross(vector3_1, Vector3.up);
+            var vector3_2 = Vector3.Cross(vector3_1, Vector3.up);
             Vector3 normalized1 = vector3_2.normalized;
             vector3_2 = Vector3.Cross(normalized1, vector3_1);
             Vector3 normalized2 = vector3_2.normalized;
-            int num6 = 0;
+            var num6 = 0;
+
             while (num6++ < 256)
             {
                 float num7 = (float)(VeinAlgorithms.random.NextDouble() * 2.0 - 1.0) * 0.5f;
@@ -204,12 +203,13 @@ namespace ProjectGenesis.Compatibility
                 normalized1 = vector3_2.normalized;
                 vector3_2 = Vector3.Cross(normalized1, vector3_3);
                 normalized2 = vector3_2.normalized;
-                bool flag = false;
-                for (int index = 0; index < 10; ++index)
+                var flag = false;
+
+                for (var index = 0; index < 10; ++index)
                 {
-                    Vector2 vector2_1 = new Vector2((float)(VeinAlgorithms.random.NextDouble() * 2.0 - 1.0),
-                                                    (float)(VeinAlgorithms.random.NextDouble() * 2.0 - 1.0)).normalized *
-                                        0.1f;
+                    Vector2 vector2_1 = new Vector2((float)(VeinAlgorithms.random.NextDouble() * 2.0 - 1.0), (float)(VeinAlgorithms.random.NextDouble() * 2.0 - 1.0))
+                                           .normalized
+                                      * 0.1f;
                     Vector2 vector2_2 = AddVeinPatches.Rotate(vector2_1, 120);
                     float num9 = (float)(VeinAlgorithms.random.NextDouble() * 2.0 - 1.0) * 0.006f;
                     float num10 = (float)(VeinAlgorithms.random.NextDouble() * 2.0 - 1.0) * 0.006f;
@@ -230,9 +230,10 @@ namespace ProjectGenesis.Compatibility
                     planetData.birthResourcePoint1 = normalized4.normalized;
                     planetData.birthResourcePoint2 = normalized5.normalized;
                     float num11 = planetData.realRadius + 0.2f;
-                    if (planetData.data.QueryHeight(vector3_3) > (double)num11 &&
-                        planetData.data.QueryHeight(normalized3) > (double)num11 &&
-                        planetData.data.QueryHeight(normalized4) > (double)num11)
+
+                    if (planetData.data.QueryHeight(vector3_3) > (double)num11
+                     && planetData.data.QueryHeight(normalized3) > (double)num11
+                     && planetData.data.QueryHeight(normalized4) > (double)num11)
                     {
                         Vector3 vpos1 = normalized3 + normalized1 * 0.03f;
                         Vector3 vpos2 = normalized3 - normalized1 * 0.03f;
@@ -246,20 +247,22 @@ namespace ProjectGenesis.Compatibility
                         Vector3 vpos10 = normalized5 - normalized1 * 0.03f;
                         Vector3 vpos11 = normalized5 + normalized2 * 0.03f;
                         Vector3 vpos12 = normalized5 - normalized2 * 0.03f;
-                        if (planetData.data.QueryHeight(vpos1) > (double)num11 &&
-                            planetData.data.QueryHeight(vpos2) > (double)num11 &&
-                            planetData.data.QueryHeight(vpos3) > (double)num11 &&
-                            planetData.data.QueryHeight(vpos4) > (double)num11 &&
-                            planetData.data.QueryHeight(vpos5) > (double)num11 &&
-                            planetData.data.QueryHeight(vpos6) > (double)num11 &&
-                            planetData.data.QueryHeight(vpos7) > (double)num11 &&
-                            planetData.data.QueryHeight(vpos8) > (double)num11 &&
-                            planetData.data.QueryHeight(vpos9) > (double)num11 &&
-                            planetData.data.QueryHeight(vpos10) > (double)num11 &&
-                            planetData.data.QueryHeight(vpos11) > (double)num11 &&
-                            planetData.data.QueryHeight(vpos12) > (double)num11)
+
+                        if (planetData.data.QueryHeight(vpos1) > (double)num11
+                         && planetData.data.QueryHeight(vpos2) > (double)num11
+                         && planetData.data.QueryHeight(vpos3) > (double)num11
+                         && planetData.data.QueryHeight(vpos4) > (double)num11
+                         && planetData.data.QueryHeight(vpos5) > (double)num11
+                         && planetData.data.QueryHeight(vpos6) > (double)num11
+                         && planetData.data.QueryHeight(vpos7) > (double)num11
+                         && planetData.data.QueryHeight(vpos8) > (double)num11
+                         && planetData.data.QueryHeight(vpos9) > (double)num11
+                         && planetData.data.QueryHeight(vpos10) > (double)num11
+                         && planetData.data.QueryHeight(vpos11) > (double)num11
+                         && planetData.data.QueryHeight(vpos12) > (double)num11)
                         {
                             flag = true;
+
                             break;
                         }
                     }
@@ -292,10 +295,12 @@ namespace ProjectGenesis.Compatibility
             {
                 case "SaltLake":
                     __result.oceanMat = LDB.themes.Select(8).oceanMat;
+
                     break;
 
                 case "Gobi":
                     __result.oceanMat = LDB.themes.Select(22).oceanMat;
+
                     break;
             }
         }
@@ -332,20 +337,16 @@ namespace ProjectGenesis.Compatibility
         {
             var matcher = new CodeMatcher(instructions);
 
-            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldstr, "实际采集速度"))
-                   .MatchForward(true, new CodeMatch(OpCodes.Nop), new CodeMatch(OpCodes.Br)).SetInstruction(new CodeInstruction(OpCodes.Nop));
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldstr, "实际采集速度")).MatchForward(true, new CodeMatch(OpCodes.Nop), new CodeMatch(OpCodes.Br))
+                   .SetInstruction(new CodeInstruction(OpCodes.Nop));
 
-            matcher.MatchForward(
-                false, new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(StationComponent), nameof(StationComponent.collectionPerTick))));
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(StationComponent), nameof(StationComponent.collectionPerTick))));
 
             CodeInstruction stationComponent = matcher.Advance(-1).Instruction;
 
             matcher.Advance(-1).InsertAndAdvance(new CodeInstruction(stationComponent), new CodeInstruction(OpCodes.Ldarg_0),
-                                                 new CodeInstruction(
-                                                     OpCodes.Ldfld, AccessTools.Field(typeof(UIPlanetDetail), nameof(UIPlanetDetail._planet))),
-                                                 new CodeInstruction(
-                                                     OpCodes.Call,
-                                                     AccessTools.Method(typeof(PlanetGasPatches), nameof(PlanetGasPatches.GetGasCollectionPerTick))));
+                new CodeInstruction(OpCodes.Ldfld, AccessTools.Field(typeof(UIPlanetDetail), nameof(UIPlanetDetail._planet))),
+                new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(PlanetGasPatches), nameof(PlanetGasPatches.GetGasCollectionPerTick))));
 
             return matcher.InstructionEnumeration();
         }
@@ -360,9 +361,8 @@ namespace ProjectGenesis.Compatibility
             object jump = matcher.Advance(5).Operand;
             object endlabel = matcher.Advance(2).Labels.First();
 
-            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_S, index), new CodeInstruction(OpCodes.Ldc_I4, 15),
-                                     new CodeInstruction(OpCodes.Beq, endlabel), new CodeInstruction(OpCodes.Ldc_I4, 14),
-                                     new CodeInstruction(OpCodes.Stloc_S, index), new CodeInstruction(OpCodes.Br, jump));
+            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_S, index), new CodeInstruction(OpCodes.Ldc_I4, 15), new CodeInstruction(OpCodes.Beq, endlabel),
+                new CodeInstruction(OpCodes.Ldc_I4, 14), new CodeInstruction(OpCodes.Stloc_S, index), new CodeInstruction(OpCodes.Br, jump));
 
             matcher.MatchForward(false, new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldc_I4_S, (sbyte)15), new CodeMatch(OpCodes.Clt));
 
@@ -371,7 +371,7 @@ namespace ProjectGenesis.Compatibility
             object addLabel = matcher.Clone().MatchBack(false, new CodeMatch(OpCodes.Brfalse)).Operand;
 
             matcher.Advance(2).InsertAndAdvance(new CodeInstruction(OpCodes.Beq, addLabel), new CodeInstruction(OpCodes.Ldloc_S, index),
-                                                new CodeInstruction(OpCodes.Ldc_I4_S, AddVeinPatches.VeinTypeCount));
+                new CodeInstruction(OpCodes.Ldc_I4_S, AddVeinPatches.VeinTypeCount));
 
             return matcher.InstructionEnumeration();
         }
@@ -384,29 +384,21 @@ namespace ProjectGenesis.Compatibility
 
             matcher.Advance(1)
                    .SetInstructionAndAdvance(new CodeInstruction(OpCodes.Call,
-                                                                 AccessTools.Method(typeof(AddVeinPatches),
-                                                                                    nameof(AddVeinPatches
-                                                                                              .OnStarDataSet_ChangeVeinData_HighlightPatches))))
-                   .SetOpcodeAndAdvance(OpCodes.Nop);
+                        AccessTools.Method(typeof(AddVeinPatches), nameof(AddVeinPatches.OnStarDataSet_ChangeVeinData_HighlightPatches)))).SetOpcodeAndAdvance(OpCodes.Nop);
 
             matcher.MatchForward(false, new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldc_I4_7), new CodeMatch(OpCodes.Clt));
 
             matcher.Advance(1)
                    .SetInstructionAndAdvance(new CodeInstruction(OpCodes.Call,
-                                                                 AccessTools.Method(typeof(AddVeinPatches),
-                                                                                    nameof(AddVeinPatches
-                                                                                              .OnStarDataSet_ChangeVeinData_HighlightPatches))))
-                   .SetOpcodeAndAdvance(OpCodes.Nop);
+                        AccessTools.Method(typeof(AddVeinPatches), nameof(AddVeinPatches.OnStarDataSet_ChangeVeinData_HighlightPatches)))).SetOpcodeAndAdvance(OpCodes.Nop);
 
             matcher.MatchForward(false, new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldc_I4_S, (sbyte)15), new CodeMatch(OpCodes.Clt));
 
             object index = matcher.Operand;
 
             matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_S, index),
-                                     new CodeInstruction(OpCodes.Call,
-                                                         AccessTools.Method(typeof(AddVeinPatches),
-                                                                            nameof(AddVeinPatches.OnStarDataSet_ChangeVeinData_IndexPatches))),
-                                     new CodeInstruction(OpCodes.Stloc_S, index));
+                new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(AddVeinPatches), nameof(AddVeinPatches.OnStarDataSet_ChangeVeinData_IndexPatches))),
+                new CodeInstruction(OpCodes.Stloc_S, index));
 
             matcher.Advance(1).SetOperandAndAdvance(AddVeinPatches.VeinTypeCount);
 
@@ -419,9 +411,7 @@ namespace ProjectGenesis.Compatibility
         internal static void ModifyTheme(ref GSTheme theme)
         {
             if (theme.PlanetType == EPlanetType.Gas)
-            {
                 GasGiantModify(ref theme);
-            }
             else
             {
                 ModifyGasItems(ref theme);
@@ -434,6 +424,7 @@ namespace ProjectGenesis.Compatibility
                     case 8:
                         theme.WaterItemId = ProtoID.I水;
                         theme.Distribute = EThemeDistribute.Interstellar;
+
                         break;
 
                     case 12:
@@ -447,11 +438,13 @@ namespace ProjectGenesis.Compatibility
                         RemoveVein(ref theme, 2);
                         RemoveVein(ref theme, 3);
                         RemoveVein(ref theme, 14);
+
                         break;
 
                     case 13:
                         RemoveVein(ref theme, 0);
                         RemoveVein(ref theme, 14);
+
                         break;
 
                     case 17:
@@ -464,11 +457,13 @@ namespace ProjectGenesis.Compatibility
                         RemoveVein(ref theme, 0);
                         RemoveVein(ref theme, 3);
                         RemoveVein(ref theme, 14);
+
                         break;
 
                     case 19:
                     case 25:
                         theme.Distribute = EThemeDistribute.Default;
+
                         break;
                 }
             }
@@ -480,13 +475,13 @@ namespace ProjectGenesis.Compatibility
 
             if (theme.GasItems[0] == ProtoID.I可燃冰 && theme.GasItems[1] == ProtoID.I氢)
             {
-                theme.GasItems = new[] { ProtoID.I可燃冰, ProtoID.I氢, ProtoID.I氨 };
-                theme.GasSpeeds = new float[] { theme.GasSpeeds[0], theme.GasSpeeds[1], theme.GasSpeeds[1] * 0.7f };
+                theme.GasItems = new[] { ProtoID.I可燃冰, ProtoID.I氢, ProtoID.I氨, };
+                theme.GasSpeeds = new float[] { theme.GasSpeeds[0], theme.GasSpeeds[1], theme.GasSpeeds[1] * 0.7f, };
             }
             else if (theme.GasItems[0] == ProtoID.I氢 && theme.GasItems[1] == ProtoID.I重氢)
             {
-                theme.GasItems = new[] { ProtoID.I氢, ProtoID.I重氢, ProtoID.I氦 };
-                theme.GasSpeeds = new float[] { theme.GasSpeeds[0], theme.GasSpeeds[1], theme.GasSpeeds[1] * 0.5f };
+                theme.GasItems = new[] { ProtoID.I氢, ProtoID.I重氢, ProtoID.I氦, };
+                theme.GasSpeeds = new float[] { theme.GasSpeeds[0], theme.GasSpeeds[1], theme.GasSpeeds[1] * 0.5f, };
             }
         }
 
@@ -501,9 +496,7 @@ namespace ProjectGenesis.Compatibility
             theme.VeinOpacity[14] = (theme.VeinOpacity[0] + theme.VeinOpacity[1]) / 2;
 
             if (!theme.GasItems.Contains(ProtoID.I氧))
-            {
                 RemoveVein(ref theme, 5);
-            }
             else
             {
                 theme.VeinSpot[5] += 1;
@@ -540,21 +533,23 @@ namespace ProjectGenesis.Compatibility
                 switch (theme.PlanetType)
                 {
                     case EPlanetType.Ocean:
-                        theme.GasItems = new[] { ProtoID.I氮, ProtoID.I氧 };
+                        theme.GasItems = new[] { ProtoID.I氮, ProtoID.I氧, };
                         theme.GasSpeeds = GasSpeedsTwoItems();
+
                         break;
 
                     default:
-                        theme.GasItems = new[] { ProtoID.I二氧化碳 };
+                        theme.GasItems = new[] { ProtoID.I二氧化碳, };
                         theme.GasSpeeds = GasSpeedsOneItem();
+
                         break;
                 }
             }
 
-            float[] GasSpeedsTwoItems()
-                => new float[] { (float)(themeWind * (0.65f + rand.NextDouble() * 0.1f)), (float)(themeWind * (0.16f + rand.NextDouble() * 0.04f)) };
+            float[] GasSpeedsTwoItems() =>
+                new float[] { (float)(themeWind * (0.65f + rand.NextDouble() * 0.1f)), (float)(themeWind * (0.16f + rand.NextDouble() * 0.04f)), };
 
-            float[] GasSpeedsOneItem() => new float[] { (float)(themeWind * (0.65f + rand.NextDouble() * 0.1f)) };
+            float[] GasSpeedsOneItem() => new float[] { (float)(themeWind * (0.65f + rand.NextDouble() * 0.1f)), };
         }
 
         private static void RemoveVein(ref GSTheme theme, int id)

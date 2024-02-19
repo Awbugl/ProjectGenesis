@@ -22,13 +22,13 @@ namespace ProjectGenesis.Patches.UI
         {
             if (_usedFuelObj) return;
 
-            GameObject gameObject = GameObject.Find("UI Root/Overlay Canvas/In Game/Windows/Power Generator Window/produce-2/fuel");
+            var gameObject = GameObject.Find("UI Root/Overlay Canvas/In Game/Windows/Power Generator Window/produce-2/fuel");
 
-            _usedFuelObj = new GameObject { name = "usedFuel" };
+            _usedFuelObj = new GameObject { name = "usedFuel", };
             _usedFuelObj.transform.SetParent(gameObject.transform.parent, false);
 
-            var image = _usedFuelObj.AddComponent<Image>();
-            var component = gameObject.GetComponent<Image>();
+            Image image = _usedFuelObj.AddComponent<Image>();
+            Image component = gameObject.GetComponent<Image>();
             image.sprite = component.sprite;
             image.color = component.color;
 
@@ -71,7 +71,8 @@ namespace ProjectGenesis.Patches.UI
 
             if (powerGeneratorComponent.fuelMask != 0)
             {
-                int productCount = (int)powerGeneratorComponent.productCount;
+                var productCount = (int)powerGeneratorComponent.productCount;
+
                 if (productCount > 0) __instance.storage.Add(ProtoID.I空燃料棒, productCount, powerGeneratorComponent.catalystIncPoint / productCount);
             }
         }
@@ -83,6 +84,7 @@ namespace ProjectGenesis.Patches.UI
             if (__instance.generatorId == 0 || __instance.factory == null) return;
 
             PowerGeneratorComponent powerGeneratorComponent = __instance.powerSystem.genPool[__instance.generatorId];
+
             if (powerGeneratorComponent.id != __instance.generatorId) return;
 
             _usedFuelObj.SetActive(powerGeneratorComponent.fuelMask != 0);
@@ -95,14 +97,21 @@ namespace ProjectGenesis.Patches.UI
             if (!_usedFuelObj.activeSelf) return;
 
             if (__instance == null) return;
+
             if (__instance.generatorId == 0 || __instance.factory == null) return;
+
             PowerGeneratorComponent powerGeneratorComponent = __instance.powerSystem.genPool[__instance.generatorId];
+
             if (powerGeneratorComponent.id != __instance.generatorId) return;
+
             ItemProto generatorProto = LDB.items.Select(__instance.factory.entityPool[powerGeneratorComponent.entityId].protoId);
+
             if (generatorProto == null) return;
+
             PowerNetwork powerNetwork = __instance.powerSystem.netPool[powerGeneratorComponent.networkId];
             __instance.powerNetworkDesc.powerNetwork = powerNetwork;
             Assert.NotNull(powerNetwork);
+
             if (powerNetwork == null) return;
 
             if (powerGeneratorComponent.fuelMask != 0)
@@ -133,6 +142,7 @@ namespace ProjectGenesis.Patches.UI
             if (window.generatorId == 0 || window.factory == null || window.player == null) return;
 
             ref PowerGeneratorComponent component = ref window.powerSystem.genPool[window.generatorId];
+
             if (component.id != window.generatorId) return;
 
             if (window.player.inhandItemId > 0 && window.player.inhandItemCount == 0)
@@ -141,15 +151,16 @@ namespace ProjectGenesis.Patches.UI
                 window.player.SetHandItems(0, 0);
             }
             else if (window.player.inhandItemId > 0 && window.player.inhandItemCount > 0)
-            {
                 UIRealtimeTip.Popup("不能手动放入物品".Translate());
-            }
             else
             {
                 int productId = ProtoID.I空燃料棒;
-                int productCount = (int)component.productCount;
+                var productCount = (int)component.productCount;
+
                 if (window.player.inhandItemId != 0 || window.player.inhandItemCount != 0 || productCount == 0) return;
+
                 component.productCount -= productCount;
+
                 if (VFInput.shift || VFInput.control)
                 {
                     int package = window.player.TryAddItemToPackage(productId, productCount, 0, false);

@@ -23,14 +23,15 @@ namespace ProjectGenesis.Patches.UI
         {
             TabData[] allTabs = TabSystem.GetAllTabs();
             _tabs = new List<UITabButton>();
+
             foreach (TabData tabData in allTabs)
             {
                 if (tabData == null) continue;
 
                 GameObject gameObject = Object.Instantiate(TabSystem.GetTabPrefab(), __instance.pickerTrans, false);
                 ((RectTransform)gameObject.transform).anchoredPosition = new Vector2((tabData.tabIndex + 4) * 70 - 54, -75f);
-                var component = gameObject.GetComponent<UITabButton>();
-                var newIcon = Resources.Load<Sprite>(tabData.tabIconPath);
+                UITabButton component = gameObject.GetComponent<UITabButton>();
+                Sprite newIcon = Resources.Load<Sprite>(tabData.tabIconPath);
                 component.Init(newIcon, tabData.tabName, tabData.tabIndex + 5, __instance.OnTypeButtonClick);
                 _tabs.Add(component);
             }
@@ -51,8 +52,7 @@ namespace ProjectGenesis.Patches.UI
         [HarmonyPatch(typeof(UIShowSignalTipExtension), nameof(UIShowSignalTipExtension.OnUpdate))]
         [HarmonyPriority(Priority.VeryHigh)]
         [HarmonyPrefix]
-        public static bool UIShowSignalTipExtension_OnUpdate(UISignalPicker picker)
-            => picker.hoveredIndex >= 0 && picker.hoveredIndex < picker.signalArray.Length;
+        public static bool UIShowSignalTipExtension_OnUpdate(UISignalPicker picker) => picker.hoveredIndex >= 0 && picker.hoveredIndex < picker.signalArray.Length;
 
         [HarmonyPatch(typeof(UISignalPicker), nameof(UISignalPicker._OnUpdate))]
         [HarmonyTranspiler]
@@ -60,13 +60,12 @@ namespace ProjectGenesis.Patches.UI
         {
             var matcher = new CodeMatcher(instructions);
 
-            matcher.MatchForward(true, new CodeMatch(OpCodes.Ldarg_0), new CodeMatch(OpCodes.Ldfld, currentTypeField),
-                                 new CodeMatch(OpCodes.Ldc_I4_2));
+            matcher.MatchForward(true, new CodeMatch(OpCodes.Ldarg_0), new CodeMatch(OpCodes.Ldfld, currentTypeField), new CodeMatch(OpCodes.Ldc_I4_2));
 
             object labal = matcher.Advance(1).Operand;
 
             matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0), new CodeInstruction(OpCodes.Ldfld, currentTypeField),
-                                                new CodeInstruction(OpCodes.Ldc_I4_8), new CodeInstruction(OpCodes.Bge, labal));
+                new CodeInstruction(OpCodes.Ldc_I4_8), new CodeInstruction(OpCodes.Bge, labal));
 
             return matcher.InstructionEnumeration();
         }
@@ -82,8 +81,10 @@ namespace ProjectGenesis.Patches.UI
             {
                 if (ci.opcode == OpCodes.Ldc_I4_S)
                 {
-                    sbyte operand = (sbyte)ci.operand;
+                    var operand = (sbyte)ci.operand;
+
                     if (operand == 14) ci.operand = (sbyte)17;
+
                     if (operand == 10) ci.operand = (sbyte)7;
                 }
 
@@ -113,8 +114,10 @@ namespace ProjectGenesis.Patches.UI
             {
                 if (ci.opcode == OpCodes.Ldc_R4)
                 {
-                    float operand = (float)ci.operand;
+                    var operand = (float)ci.operand;
+
                     if (operand is 14f) ci.operand = 17f;
+
                     if (operand is 10f) ci.operand = 7f;
                 }
 
@@ -124,28 +127,28 @@ namespace ProjectGenesis.Patches.UI
 
         [HarmonyPatch(typeof(UISignalPicker), nameof(UISignalPicker.RefreshIcons))]
         [HarmonyPostfix]
-        public static void RefreshIcons(
-            UISignalPicker __instance,
-            ref int ___currentType,
-            ref uint[] ___indexArray,
-            ref int[] ___signalArray)
+        public static void RefreshIcons(UISignalPicker __instance, ref int ___currentType, ref uint[] ___indexArray, ref int[] ___signalArray)
         {
             if (___currentType > 7)
             {
                 IconSet iconSet = GameMain.iconSet;
                 ItemProto[] dataArray = LDB.items.dataArray;
+
                 foreach (ItemProto t in dataArray)
                 {
                     if (t.GridIndex >= 1101)
                     {
                         int num4 = t.GridIndex / 1000;
+
                         if (num4 == ___currentType - 5)
                         {
                             int num5 = (t.GridIndex - num4 * 1000) / 100 - 1;
                             int num6 = t.GridIndex % 100 - 1;
+
                             if (num5 >= 0 && num6 >= 0 && num5 < 7 && num6 < 17)
                             {
                                 int index5 = num5 * 17 + num6;
+
                                 if (index5 >= 0 && index5 < ___indexArray.Length)
                                 {
                                     int index6 = SignalProtoSet.SignalId(ESignalType.Item, t.ID);

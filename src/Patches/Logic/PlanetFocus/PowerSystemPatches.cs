@@ -13,24 +13,18 @@ namespace ProjectGenesis.Patches.Logic.PlanetFocus
             var matcher = new CodeMatcher(instructions);
 
             // wind
-            matcher.MatchForward(
-                false,
-                new CodeMatch(OpCodes.Call, AccessTools.Method(typeof(PowerGeneratorComponent), nameof(PowerGeneratorComponent.EnergyCap_Wind))));
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Call, AccessTools.Method(typeof(PowerGeneratorComponent), nameof(PowerGeneratorComponent.EnergyCap_Wind))));
             matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0));
             matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(PlanetFocusPatches), nameof(EnergyCap_Wind))));
 
             //pv
-            matcher.MatchForward(
-                false,
-                new CodeMatch(OpCodes.Call, AccessTools.Method(typeof(PowerGeneratorComponent), nameof(PowerGeneratorComponent.EnergyCap_PV))));
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Call, AccessTools.Method(typeof(PowerGeneratorComponent), nameof(PowerGeneratorComponent.EnergyCap_PV))));
             matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0));
             matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(PlanetFocusPatches), nameof(EnergyCap_PV))));
 
             //fuel
-            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldarg_0), new CodeMatch(OpCodes.Ldfld), new CodeMatch(OpCodes.Ldloc_S),
-                                 new CodeMatch(OpCodes.Ldelema),
-                                 new CodeMatch(OpCodes.Call,
-                                               AccessTools.Method(typeof(PowerGeneratorComponent), nameof(PowerGeneratorComponent.EnergyCap_Fuel))));
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldarg_0), new CodeMatch(OpCodes.Ldfld), new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldelema),
+                new CodeMatch(OpCodes.Call, AccessTools.Method(typeof(PowerGeneratorComponent), nameof(PowerGeneratorComponent.EnergyCap_Fuel))));
 
             List<CodeInstruction> ins = matcher.InstructionsWithOffsets(0, 3);
 
@@ -44,12 +38,14 @@ namespace ProjectGenesis.Patches.Logic.PlanetFocus
         public static long EnergyCap_Wind(long power, PowerSystem powerSystem)
         {
             bool exist = ContainsFocus(powerSystem.factory.planetId, 6525);
+
             return exist ? (long)(power * 1.2) : power;
         }
 
         public static long EnergyCap_PV(long power, PowerSystem powerSystem)
         {
             bool exist = ContainsFocus(powerSystem.factory.planetId, 6526);
+
             return exist ? (long)(power * 1.2) : power;
         }
 
@@ -63,23 +59,26 @@ namespace ProjectGenesis.Patches.Logic.PlanetFocus
                 case 1:
                     focusid = 6524;
                     extra = 1.2;
+
                     break;
 
                 case 2:
                     focusid = 6529;
                     extra = 1.2;
+
                     break;
 
                 case 16:
                     focusid = 6527;
                     extra = 1.1;
+
                     break;
 
-                default:
-                    return power;
+                default: return power;
             }
 
             bool exist = ContainsFocus(powerSystem.factory.planetId, focusid);
+
             return exist ? (long)(power * extra) : power;
         }
 
@@ -90,20 +89,16 @@ namespace ProjectGenesis.Patches.Logic.PlanetFocus
             var matcher = new CodeMatcher(instructions);
 
             matcher.MatchForward(false, new CodeMatch(OpCodes.Ldloc_0),
-                                 new CodeMatch(OpCodes.Ldfld,
-                                               AccessTools.Field(typeof(PowerGeneratorComponent),
-                                                                 nameof(PowerGeneratorComponent.capacityCurrentTick))));
+                new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(PowerGeneratorComponent), nameof(PowerGeneratorComponent.capacityCurrentTick))));
 
             CodeInstruction comp = matcher.Instruction;
 
             matcher.Advance(2).InsertAndAdvance(comp);
 
             matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0),
-                                     new CodeInstruction(OpCodes.Ldfld,
-                                                         AccessTools.Field(typeof(UIPowerGeneratorWindow), nameof(UIPowerGeneratorWindow.factory))));
+                new CodeInstruction(OpCodes.Ldfld, AccessTools.Field(typeof(UIPowerGeneratorWindow), nameof(UIPowerGeneratorWindow.factory))));
 
-            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Call,
-                                                         AccessTools.Method(typeof(PlanetFocusPatches), nameof(UIPowerGeneratorWindow_OnUpdate))));
+            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(PlanetFocusPatches), nameof(UIPowerGeneratorWindow_OnUpdate))));
 
             return matcher.InstructionEnumeration();
         }
@@ -130,24 +125,27 @@ namespace ProjectGenesis.Patches.Logic.PlanetFocus
                     case 1:
                         focusid = 6524;
                         extra = 1.2;
+
                         break;
 
                     case 2:
                         focusid = 6529;
                         extra = 1.2;
+
                         break;
 
                     case 16:
                         focusid = 6527;
                         extra = 1.1;
+
                         break;
 
-                    default:
-                        return power;
+                    default: return power;
                 }
             }
 
             bool exist = ContainsFocus(factory.planetId, focusid);
+
             return exist ? (long)(power * extra) : power;
         }
     }

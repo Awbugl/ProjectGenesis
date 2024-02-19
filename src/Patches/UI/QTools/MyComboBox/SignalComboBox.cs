@@ -7,17 +7,13 @@ namespace ProjectGenesis.Patches.UI.QTools.MyComboBox
     {
         protected List<int> Items;
 
-        public void Init(
-            List<int> items,
-            List<string> overrideString,
-            int itemIndex,
-            int defaultSprite = 509)
+        public void Init(List<int> items, List<string> overrideString, int itemIndex, int defaultSprite = 509)
         {
             Items = items;
 
             var list = new List<string>(items.Count);
 
-            for (int i = 0; i < items.Count; i++)
+            for (var i = 0; i < items.Count; i++)
             {
                 string s = overrideString[i];
 

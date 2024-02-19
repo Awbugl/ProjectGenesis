@@ -13,6 +13,7 @@ namespace ProjectGenesis.Patches.Logic
         public static bool VFPreload_IsSplashSolid(ref bool __result)
         {
             __result = true;
+
             return false;
         }
     }

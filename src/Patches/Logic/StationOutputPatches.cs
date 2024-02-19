@@ -14,7 +14,7 @@ namespace ProjectGenesis.Patches.Logic
             var matcher = new CodeMatcher(instructions);
 
             matcher.MatchForward(false, new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldc_I4_1),
-                                 new CodeMatch(OpCodes.Stfld, AccessTools.Field(typeof(SlotData), nameof(SlotData.counter))));
+                new CodeMatch(OpCodes.Stfld, AccessTools.Field(typeof(SlotData), nameof(SlotData.counter))));
 
             matcher.SetInstructionAndAdvance(new CodeInstruction(OpCodes.Nop)).SetInstructionAndAdvance(new CodeInstruction(OpCodes.Nop))
                    .SetInstructionAndAdvance(new CodeInstruction(OpCodes.Nop));

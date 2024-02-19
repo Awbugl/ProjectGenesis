@@ -10,38 +10,27 @@ namespace ProjectGenesis.Patches.UI
 {
     public static class UIOptionWindowPatches
     {
-        private static UIToggle LDBToolCacheToggle, HideTechModeToggle, DisableMessageToggle;
+        private static UIToggle LDBToolCacheToggle,
+                                HideTechModeToggle,
+                                DisableMessageToggle;
 
         private static void Init()
         {
-            GameObject queryObj
-                = GameObject.Find(
-                    "UI Root/Overlay Canvas/Top Windows/Option Window/details/content-3/list/scroll-view/viewport/content/demolish-query");
+            var queryObj = GameObject.Find("UI Root/Overlay Canvas/Top Windows/Option Window/details/content-3/list/scroll-view/viewport/content/demolish-query");
 
-            Transform pageParent = GameObject.Find("UI Root/Overlay Canvas/Top Windows/Option Window/details/content-5/advisor-tips").transform
-                                             .parent;
+            Transform pageParent = GameObject.Find("UI Root/Overlay Canvas/Top Windows/Option Window/details/content-5/advisor-tips").transform.parent;
 
-            CreateSettingObject(queryObj, pageParent, "gb-ldbtc-setting", "UseLDBToolCache".TranslateFromJson(),
-                                "UseLDBToolCacheAdditionalText".TranslateFromJson(), new Vector2(30, -220), EnableLDBToolCacheEntry.Value,
-                                out LDBToolCacheToggle);
+            CreateSettingObject(queryObj, pageParent, "gb-ldbtc-setting", "UseLDBToolCache".TranslateFromJson(), "UseLDBToolCacheAdditionalText".TranslateFromJson(),
+                new Vector2(30, -220), EnableLDBToolCacheEntry.Value, out LDBToolCacheToggle);
 
-            CreateSettingObject(queryObj, pageParent, "gb-htc-setting", "EnableHideTechMode".TranslateFromJson(),
-                                "EnableHideTechModeAdditionalText".TranslateFromJson(), new Vector2(30, -260), EnableHideTechModeEntry.Value,
-                                out HideTechModeToggle);
+            CreateSettingObject(queryObj, pageParent, "gb-htc-setting", "EnableHideTechMode".TranslateFromJson(), "EnableHideTechModeAdditionalText".TranslateFromJson(),
+                new Vector2(30, -260), EnableHideTechModeEntry.Value, out HideTechModeToggle);
 
-            CreateSettingObject(queryObj, pageParent, "gb-smb-setting", "DisableMessageBox".TranslateFromJson(),
-                                "DisableMessageBoxAdditionalText".TranslateFromJson(), new Vector2(30, -300), DisableMessageBoxEntry.Value,
-                                out DisableMessageToggle);
+            CreateSettingObject(queryObj, pageParent, "gb-smb-setting", "DisableMessageBox".TranslateFromJson(), "DisableMessageBoxAdditionalText".TranslateFromJson(),
+                new Vector2(30, -300), DisableMessageBoxEntry.Value, out DisableMessageToggle);
         }
 
-        private static void CreateSettingObject(
-            GameObject oriObj,
-            Transform parent,
-            string name,
-            string text,
-            string additionalText,
-            Vector2 position,
-            bool defaultValue,
+        private static void CreateSettingObject(GameObject oriObj, Transform parent, string name, string text, string additionalText, Vector2 position, bool defaultValue,
             out UIToggle toggle)
         {
             GameObject settingObj = Object.Instantiate(oriObj, parent);
@@ -87,7 +76,6 @@ namespace ProjectGenesis.Patches.UI
 
         [HarmonyPatch(typeof(UIOptionWindow), nameof(UIOptionWindow.OnApplyClick))]
         [HarmonyPostfix]
-        public static void UIOptionWindow_OnApplyClick_Postfix()
-            => SetConfig(LDBToolCacheToggle.isOn, HideTechModeToggle.isOn, DisableMessageToggle.isOn);
+        public static void UIOptionWindow_OnApplyClick_Postfix() => SetConfig(LDBToolCacheToggle.isOn, HideTechModeToggle.isOn, DisableMessageToggle.isOn);
     }
 }

@@ -27,12 +27,13 @@ namespace ProjectGenesis.Patches.Logic.PlanetFocus
             { 6531, "电力威胁增长 -20%" },
             { 6532, "太空威胁增长 -20%" },
             { 6533, "部队建造速度 -20%" },
-            { 6534, "基地扩张速度 -20%" }
+            { 6534, "基地扩张速度 -20%" },
         };
 
         internal static void SetPlanetFocus(int planetId, int index, int focusid)
         {
             if (!PlanetFocuses.ContainsKey(planetId)) PlanetFocuses[planetId] = new int[FocusMaxCount];
+
             PlanetFocuses[planetId][index] = focusid;
             SyncPlanetFocusData.Sync(planetId, index, focusid);
         }
@@ -40,12 +41,14 @@ namespace ProjectGenesis.Patches.Logic.PlanetFocus
         internal static void SyncPlanetFocus(int planetId, int index, int focusid)
         {
             if (!PlanetFocuses.ContainsKey(planetId)) PlanetFocuses[planetId] = new int[FocusMaxCount];
+
             PlanetFocuses[planetId][index] = focusid;
         }
 
         internal static int[] GetPlanetFocus(int planetId)
         {
             if (!PlanetFocuses.ContainsKey(planetId)) PlanetFocuses[planetId] = new int[FocusMaxCount];
+
             return PlanetFocuses[planetId];
         }
 
@@ -57,6 +60,7 @@ namespace ProjectGenesis.Patches.Logic.PlanetFocus
 
             w.Write(datas.Length);
             w.Write(planetId);
+
             foreach (int id in datas) w.Write(id);
         }
 
@@ -65,11 +69,9 @@ namespace ProjectGenesis.Patches.Logic.PlanetFocus
             int count = r.ReadInt32();
             int planetId = r.ReadInt32();
 
-            int[] arr = new int[count];
-            for (int j = 0; j < count; j++)
-            {
-                arr[j] = r.ReadInt32();
-            }
+            var arr = new int[count];
+
+            for (var j = 0; j < count; j++) arr[j] = r.ReadInt32();
 
             PlanetFocuses[planetId] = arr;
         }

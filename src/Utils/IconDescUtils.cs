@@ -93,13 +93,12 @@ namespace ProjectGenesis.Utils
 
             { 6278, new MartixIconDesc(new Color(1f, 0.4117f, 0.3137f, 0.1961f), new Color(1f, 0.2706f, 0f, 0f)) },
             { 6279, new MartixIconDesc(new Color(1f, 0.7530f, 0.7961f, 0.1961f), new Color(0.7804f, 0.0824f, 0.5216f, 0f)) },
-            
             { 7610, new WhiteIconDesc() }, // 核子单元
             { 7611, new WhiteIconDesc() }, // 反物质单元
-            
+
             { 7706, new GlassIconDesc(new Color32(91, 91, 91, 255)) }, // 钨玻璃
 
-            { 6280, new DefaultIconDesc(new Color(0.5020f, 0.5020f, 0.5020f, 0.1961f), Color.clear) }
+            { 6280, new DefaultIconDesc(new Color(0.5020f, 0.5020f, 0.5020f, 0.1961f), Color.clear) },
         };
 
         private static readonly IconToolNew.IconDesc Default = new IconToolNew.IconDesc
@@ -112,11 +111,10 @@ namespace ProjectGenesis.Utils
             metallic = 0.8f,
             smoothness = 0.5f,
             solidAlpha = 1f,
-            iconAlpha = 1f
+            iconAlpha = 1f,
         };
 
-        internal static IconToolNew.IconDesc GetIconDesc(int itemid)
-            => IconDescs.TryGetValue(itemid, out ModIconDesc value) ? value.ToIconDesc() : Default;
+        internal static IconToolNew.IconDesc GetIconDesc(int itemid) => IconDescs.TryGetValue(itemid, out ModIconDesc value) ? value.ToIconDesc() : Default;
 
         internal static IconToolNew.IconDesc ExportIconDesc(int itemId)
         {
@@ -125,17 +123,17 @@ namespace ProjectGenesis.Utils
             var iconDesc = new IconToolNew.IconDesc();
 
             uint num1 = iconSet.itemIconIndex[itemId];
+
             if (num1 <= 0) return iconDesc;
 
             FieldInfo[] fields = typeof(IconToolNew.IconDesc).GetFields(BindingFlags.Instance | BindingFlags.Public);
 
             uint index = 0;
+
             foreach (FieldInfo fieldInfo in fields)
             {
                 if (fieldInfo.FieldType == typeof(float))
-                {
                     fieldInfo.SetValue(iconDesc, iconSet.itemDescArr[(int)num1 * 40 + (int)index++]);
-                }
                 else if (fieldInfo.FieldType == typeof(Color))
                 {
                     float r = iconSet.itemDescArr[(int)num1 * 40 + (int)index++];
@@ -157,10 +155,7 @@ namespace ProjectGenesis.Utils
         {
             internal Color Color;
 
-            protected ModIconDesc(Color color)
-            {
-                Color = color;
-            }
+            protected ModIconDesc(Color color) => Color = color;
 
             internal abstract IconToolNew.IconDesc ToIconDesc();
         }
@@ -169,8 +164,8 @@ namespace ProjectGenesis.Utils
         {
             public FluidIconDesc(Color color) : base(color) { }
 
-            internal override IconToolNew.IconDesc ToIconDesc()
-                => new IconToolNew.IconDesc
+            internal override IconToolNew.IconDesc ToIconDesc() =>
+                new IconToolNew.IconDesc
                 {
                     faceColor = Color,
                     sideColor = Color,
@@ -182,7 +177,7 @@ namespace ProjectGenesis.Utils
                     smoothness = 0.302f,
                     liquidity = 1f,
                     solidAlpha = 0f,
-                    iconAlpha = 1f
+                    iconAlpha = 1f,
                 };
         }
 
@@ -190,8 +185,8 @@ namespace ProjectGenesis.Utils
         {
             internal NoIconFluidIconDesc(Color color) : base(color) { }
 
-            internal override IconToolNew.IconDesc ToIconDesc()
-                => new IconToolNew.IconDesc
+            internal override IconToolNew.IconDesc ToIconDesc() =>
+                new IconToolNew.IconDesc
                 {
                     faceColor = Color,
                     sideColor = Color,
@@ -203,7 +198,7 @@ namespace ProjectGenesis.Utils
                     liquidity = 1f,
                     smoothness = 0.302f,
                     solidAlpha = 0f,
-                    iconAlpha = 0f
+                    iconAlpha = 0f,
                 };
         }
 
@@ -211,8 +206,8 @@ namespace ProjectGenesis.Utils
         {
             public OreIconDesc(Color color) : base(color) { }
 
-            internal override IconToolNew.IconDesc ToIconDesc()
-                => new IconToolNew.IconDesc
+            internal override IconToolNew.IconDesc ToIconDesc() =>
+                new IconToolNew.IconDesc
                 {
                     faceColor = Color,
                     sideColor = Color,
@@ -223,7 +218,7 @@ namespace ProjectGenesis.Utils
                     metallic = 0.8f,
                     smoothness = 0.5f,
                     solidAlpha = 1f,
-                    iconAlpha = 1f
+                    iconAlpha = 1f,
                 };
         }
 
@@ -231,8 +226,8 @@ namespace ProjectGenesis.Utils
         {
             public NoIconMetalIconDesc(Color color) : base(color) { }
 
-            internal override IconToolNew.IconDesc ToIconDesc()
-                => new IconToolNew.IconDesc
+            internal override IconToolNew.IconDesc ToIconDesc() =>
+                new IconToolNew.IconDesc
                 {
                     faceColor = Color,
                     sideColor = Color,
@@ -242,7 +237,7 @@ namespace ProjectGenesis.Utils
                     metallic = 1f,
                     smoothness = 0.6f,
                     solidAlpha = 1f,
-                    iconAlpha = 0f
+                    iconAlpha = 0f,
                 };
         }
 
@@ -250,8 +245,8 @@ namespace ProjectGenesis.Utils
         {
             public FullIconDesc(Color color) : base(color) { }
 
-            internal override IconToolNew.IconDesc ToIconDesc()
-                => new IconToolNew.IconDesc
+            internal override IconToolNew.IconDesc ToIconDesc() =>
+                new IconToolNew.IconDesc
                 {
                     faceColor = Color,
                     sideColor = Color,
@@ -261,7 +256,7 @@ namespace ProjectGenesis.Utils
                     metallic = 0f,
                     smoothness = 0.5f,
                     solidAlpha = 1f,
-                    iconAlpha = 1f
+                    iconAlpha = 1f,
                 };
         }
 
@@ -269,8 +264,8 @@ namespace ProjectGenesis.Utils
         {
             public ComponentIconDesc(Color color) : base(color) { }
 
-            internal override IconToolNew.IconDesc ToIconDesc()
-                => new IconToolNew.IconDesc
+            internal override IconToolNew.IconDesc ToIconDesc() =>
+                new IconToolNew.IconDesc
                 {
                     faceColor = Color.white,
                     sideColor = Color,
@@ -280,7 +275,7 @@ namespace ProjectGenesis.Utils
                     metallic = 0.8f,
                     smoothness = 0.5f,
                     solidAlpha = 1f,
-                    iconAlpha = 1f
+                    iconAlpha = 1f,
                 };
         }
 
@@ -288,8 +283,8 @@ namespace ProjectGenesis.Utils
         {
             public GlassIconDesc(Color color) : base(color) { }
 
-            internal override IconToolNew.IconDesc ToIconDesc()
-                => new IconToolNew.IconDesc
+            internal override IconToolNew.IconDesc ToIconDesc() =>
+                new IconToolNew.IconDesc
                 {
                     faceColor = Color,
                     sideColor = Color,
@@ -300,7 +295,7 @@ namespace ProjectGenesis.Utils
                     metallic = 1f,
                     smoothness = 0.5f,
                     solidAlpha = 0.8f,
-                    iconAlpha = 0f
+                    iconAlpha = 0f,
                 };
         }
 
@@ -308,8 +303,8 @@ namespace ProjectGenesis.Utils
         {
             public RodIconDesc(Color color) : base(color) { }
 
-            internal override IconToolNew.IconDesc ToIconDesc()
-                => new IconToolNew.IconDesc
+            internal override IconToolNew.IconDesc ToIconDesc() =>
+                new IconToolNew.IconDesc
                 {
                     faceColor = Color,
                     sideColor = Color,
@@ -320,7 +315,7 @@ namespace ProjectGenesis.Utils
                     metallic = 1f,
                     smoothness = 0.5f,
                     solidAlpha = 0.6f,
-                    iconAlpha = 1f
+                    iconAlpha = 1f,
                 };
         }
 
@@ -328,8 +323,8 @@ namespace ProjectGenesis.Utils
         {
             public WhiteIconDesc() : base(Color.white) { }
 
-            internal override IconToolNew.IconDesc ToIconDesc()
-                => new IconToolNew.IconDesc
+            internal override IconToolNew.IconDesc ToIconDesc() =>
+                new IconToolNew.IconDesc
                 {
                     faceColor = Color,
                     sideColor = Color,
@@ -339,7 +334,7 @@ namespace ProjectGenesis.Utils
                     metallic = 0.8f,
                     smoothness = 0.5f,
                     solidAlpha = 1f,
-                    iconAlpha = 1f
+                    iconAlpha = 1f,
                 };
         }
 
@@ -347,13 +342,10 @@ namespace ProjectGenesis.Utils
         {
             private readonly Color _emission;
 
-            public MartixIconDesc(Color color, Color emission) : base(color)
-            {
-                _emission = emission;
-            }
+            public MartixIconDesc(Color color, Color emission) : base(color) => _emission = emission;
 
-            internal override IconToolNew.IconDesc ToIconDesc()
-                => new IconToolNew.IconDesc
+            internal override IconToolNew.IconDesc ToIconDesc() =>
+                new IconToolNew.IconDesc
                 {
                     faceColor = Color,
                     sideColor = Color,
@@ -363,7 +355,7 @@ namespace ProjectGenesis.Utils
                     metallic = 0f,
                     smoothness = 0f,
                     solidAlpha = 0.5f,
-                    iconAlpha = 0.0f
+                    iconAlpha = 0.0f,
                 };
         }
 
@@ -371,13 +363,10 @@ namespace ProjectGenesis.Utils
         {
             private readonly Color _emission;
 
-            public DefaultIconDesc(Color color, Color emission) : base(color)
-            {
-                _emission = emission;
-            }
+            public DefaultIconDesc(Color color, Color emission) : base(color) => _emission = emission;
 
-            internal override IconToolNew.IconDesc ToIconDesc()
-                => new IconToolNew.IconDesc
+            internal override IconToolNew.IconDesc ToIconDesc() =>
+                new IconToolNew.IconDesc
                 {
                     faceColor = Color,
                     sideColor = Color,
@@ -387,7 +376,7 @@ namespace ProjectGenesis.Utils
                     metallic = 0.8f,
                     smoothness = 0.5f,
                     solidAlpha = 1f,
-                    iconAlpha = 1f
+                    iconAlpha = 1f,
                 };
         }
     }

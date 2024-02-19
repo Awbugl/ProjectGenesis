@@ -10,52 +10,43 @@ namespace ProjectGenesis.Patches.Logic
 {
     public static class ChangeStackingLogicPatches
     {
-        private static readonly FieldInfo AssemblerComponent_RecipeType_FieldInfo
-            = AccessTools.Field(typeof(AssemblerComponent), nameof(AssemblerComponent.recipeType));
+        private static readonly FieldInfo AssemblerComponent_RecipeType_FieldInfo = AccessTools.Field(typeof(AssemblerComponent), nameof(AssemblerComponent.recipeType));
 
         [HarmonyPatch(typeof(AssemblerComponent), nameof(AssemblerComponent.InternalUpdate))]
         [HarmonyTranspiler]
-        public static IEnumerable<CodeInstruction> AssemblerComponent_InternalUpdate_Transpiler(
-            IEnumerable<CodeInstruction> instructions,
-            ILGenerator generator)
+        public static IEnumerable<CodeInstruction> AssemblerComponent_InternalUpdate_Transpiler(IEnumerable<CodeInstruction> instructions, ILGenerator generator)
         {
             var matcher = new CodeMatcher(instructions, generator);
 
             // chemical
             matcher.MatchForward(false, new CodeMatch(OpCodes.Ldarg_0), new CodeMatch(OpCodes.Ldfld, AssemblerComponent_RecipeType_FieldInfo),
-                                 new CodeMatch(OpCodes.Ldc_I4_2));
+                new CodeMatch(OpCodes.Ldc_I4_2));
 
             object label = matcher.Advance(-1).Operand;
             matcher.Advance(1);
 
             matcher.Advance(4).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0), new CodeInstruction(OpCodes.Ldarg_2),
-                                                new CodeInstruction(OpCodes.Call,
-                                                                    AccessTools.Method(typeof(ChangeStackingLogicPatches),
-                                                                                       nameof(AssemblerComponent_InsertMethod_Chemical))),
-                                                new CodeInstruction(OpCodes.Brtrue_S, label));
+                new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(ChangeStackingLogicPatches), nameof(AssemblerComponent_InsertMethod_Chemical))),
+                new CodeInstruction(OpCodes.Brtrue_S, label));
 
             // refine
             matcher.Start().MatchForward(false, new CodeMatch(OpCodes.Ldarg_0), new CodeMatch(OpCodes.Ldfld, AssemblerComponent_RecipeType_FieldInfo),
-                                         new CodeMatch(OpCodes.Ldc_I4_3));
+                new CodeMatch(OpCodes.Ldc_I4_3));
 
             matcher.Advance(4).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0), new CodeInstruction(OpCodes.Ldarg_2),
-                                                new CodeInstruction(OpCodes.Call,
-                                                                    AccessTools.Method(typeof(ChangeStackingLogicPatches),
-                                                                                       nameof(AssemblerComponent_InsertMethod_Refine))),
-                                                new CodeInstruction(OpCodes.Brtrue_S, label));
+                new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(ChangeStackingLogicPatches), nameof(AssemblerComponent_InsertMethod_Refine))),
+                new CodeInstruction(OpCodes.Brtrue_S, label));
 
             // assemble
             matcher.MatchForward(false, new CodeMatch(OpCodes.Ldarg_0), new CodeMatch(OpCodes.Ldfld, AssemblerComponent_RecipeType_FieldInfo),
-                                 new CodeMatch(OpCodes.Ldc_I4_4));
+                new CodeMatch(OpCodes.Ldc_I4_4));
             matcher.Advance(4);
 
             // other recipe
             matcher.Advance(6).MatchForward(false, new CodeMatch(OpCodes.Ldc_I4_0), new CodeMatch(OpCodes.Stloc_S));
             matcher.Advance(2).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0), new CodeInstruction(OpCodes.Ldarg_2),
-                                                new CodeInstruction(OpCodes.Call,
-                                                                    AccessTools.Method(typeof(ChangeStackingLogicPatches),
-                                                                                       nameof(AssemblerComponent_InsertMethod_Other))),
-                                                new CodeInstruction(OpCodes.Brtrue_S, label));
+                new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(ChangeStackingLogicPatches), nameof(AssemblerComponent_InsertMethod_Other))),
+                new CodeInstruction(OpCodes.Brtrue_S, label));
 
 
             return matcher.InstructionEnumeration();
@@ -65,12 +56,13 @@ namespace ProjectGenesis.Patches.Logic
         {
             if (component.products.Length < 2) return false;
 
-            bool b = false;
+            var b = false;
 
             switch (component.recipeId)
             {
                 case ProtoID.R等离子精炼:
                     b = true;
+
                     break;
             }
 
@@ -81,7 +73,7 @@ namespace ProjectGenesis.Patches.Logic
         {
             if (component.products.Length < 2) return false;
 
-            bool b = false;
+            var b = false;
 
             switch (component.recipeId)
             {
@@ -90,6 +82,7 @@ namespace ProjectGenesis.Patches.Logic
                 case ProtoID.R高效石墨烯:
                 case ProtoID.R水电解:
                     b = true;
+
                     break;
             }
 
@@ -100,12 +93,13 @@ namespace ProjectGenesis.Patches.Logic
         {
             if (component.products.Length < 2) return false;
 
-            bool b = false;
+            var b = false;
 
             switch (component.recipeId)
             {
                 case ProtoID.R放射性矿物处理:
                     b = true;
+
                     break;
             }
 
@@ -114,18 +108,18 @@ namespace ProjectGenesis.Patches.Logic
 
         private static bool CalcMaxProduct(ref AssemblerComponent component, int[] productRegister, int maxproduct)
         {
-            int counter = 0;
+            var counter = 0;
 
             int productsLength = component.products.Length;
 
-            for (int index = 0; index < productsLength; ++index)
+            for (var index = 0; index < productsLength; ++index)
             {
                 if (component.produced[index] > component.productCounts[index] * maxproduct) ++counter;
             }
 
             if (counter == productsLength) return false;
 
-            for (int index = 0; index < productsLength; ++index)
+            for (var index = 0; index < productsLength; ++index)
             {
                 int productCount = component.productCounts[index];
                 int componentProductCount = productCount * maxproduct;
@@ -136,10 +130,7 @@ namespace ProjectGenesis.Patches.Logic
                 {
                     intPtr = componentProductCount;
 
-                    lock (productRegister)
-                    {
-                        productRegister[component.products[index]] -= productCount;
-                    }
+                    lock (productRegister) productRegister[component.products[index]] -= productCount;
                 }
             }
 

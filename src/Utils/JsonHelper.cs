@@ -35,13 +35,11 @@ namespace ProjectGenesis.Utils
 
         internal static PrefabDescJson[] PrefabDescs() => GetJsonContent<PrefabDescJson>("prefabDescs");
 
-        internal static T[] GetJsonContent<T>(string json)
-            => JsonConvert.DeserializeObject<T[]>(
-                new StreamReader(Assembly.GetManifestResourceStream($"ProjectGenesis.data.{json}.json")).ReadToEnd());
+        internal static T[] GetJsonContent<T>(string json) =>
+            JsonConvert.DeserializeObject<T[]>(new StreamReader(Assembly.GetManifestResourceStream($"ProjectGenesis.data.{json}.json")).ReadToEnd());
 
-        internal static string SerializeObject(object obj)
-            => JsonConvert.SerializeObject(obj, Formatting.Indented,
-                                           new JsonSerializerSettings { ReferenceLoopHandling = ReferenceLoopHandling.Ignore });
+        internal static string SerializeObject(object obj) =>
+            JsonConvert.SerializeObject(obj, Formatting.Indented, new JsonSerializerSettings { ReferenceLoopHandling = ReferenceLoopHandling.Ignore, });
 
         internal static void ExportAsJson(string path)
         {
@@ -94,8 +92,8 @@ namespace ProjectGenesis.Utils
             public int EnemyDropMask { get; set; }
             public float EnemyDropMaskRatio { get; set; }
 
-            public static ItemProtoJson FromProto(ItemProto i)
-                => new ItemProtoJson
+            public static ItemProtoJson FromProto(ItemProto i) =>
+                new ItemProtoJson
                 {
                     ID = i.ID,
                     Name = i.Name,
@@ -133,7 +131,7 @@ namespace ProjectGenesis.Utils
                     CraftType = i.CraftType,
                     DropRate = i.DropRate,
                     EnemyDropLevel = i.EnemyDropLevel,
-                    EnemyDropRange = new[] { i.EnemyDropRange.x, i.EnemyDropRange.y },
+                    EnemyDropRange = new[] { i.EnemyDropRange.x, i.EnemyDropRange.y, },
                     EnemyDropCount = i.EnemyDropCount,
                     EnemyDropMask = i.EnemyDropMask,
                     EnemyDropMaskRatio = i.EnemyDropMaskRatio,
@@ -206,8 +204,8 @@ namespace ProjectGenesis.Utils
             public bool Handcraft { get; set; }
             public bool NonProductive { get; set; }
 
-            public static RecipeProtoJson FromProto(RecipeProto i)
-                => new RecipeProtoJson
+            public static RecipeProtoJson FromProto(RecipeProto i) =>
+                new RecipeProtoJson
                 {
                     ID = i.ID,
                     Explicit = i.Explicit,
@@ -222,7 +220,7 @@ namespace ProjectGenesis.Utils
                     Description = i.Description,
                     GridIndex = i.GridIndex,
                     IconPath = i.IconPath,
-                    NonProductive = i.NonProductive
+                    NonProductive = i.NonProductive,
                 };
 
             public RecipeProto ToProto() => ToProto(new RecipeProto());
@@ -280,8 +278,8 @@ namespace ProjectGenesis.Utils
             public int[] PropertyOverrideItems { get; set; }
             public int[] PropertyItemCounts { get; set; }
 
-            public static TechProtoJson FromProto(TechProto i)
-                => new TechProtoJson
+            public static TechProtoJson FromProto(TechProto i) =>
+                new TechProtoJson
                 {
                     ID = i.ID,
                     Name = i.Name,
@@ -307,9 +305,9 @@ namespace ProjectGenesis.Utils
                     UnlockValues = i.UnlockValues,
                     AddItems = i.AddItems,
                     AddItemCounts = i.AddItemCounts,
-                    Position = new[] { i.Position.x, i.Position.y },
+                    Position = new[] { i.Position.x, i.Position.y, },
                     PropertyOverrideItems = i.PropertyOverrideItems,
-                    PropertyItemCounts = i.PropertyItemCounts
+                    PropertyItemCounts = i.PropertyItemCounts,
                 };
 
             public TechProto ToProto() => ToProto(new TechProto());
@@ -365,14 +363,14 @@ namespace ProjectGenesis.Utils
             public string DeterminatorName { get; set; }
             public long[] DeterminatorParams { get; set; }
 
-            public TutorialProto ToProto()
-                => new TutorialProto
+            public TutorialProto ToProto() =>
+                new TutorialProto
                 {
                     ID = ID,
                     Name = Name,
                     PreText = PreText,
                     DeterminatorName = DeterminatorName,
-                    DeterminatorParams = DeterminatorParams
+                    DeterminatorParams = DeterminatorParams,
                 };
         }
 
@@ -441,8 +439,8 @@ namespace ProjectGenesis.Utils
             public int[] waterTypes { get; set; } = null;
             public float? turretMinAttackRange { get; set; } = null;
 
-            public static PrefabDescJson FromPrefabDesc(PrefabDesc i, int itemID, int modelID)
-                => new PrefabDescJson
+            public static PrefabDescJson FromPrefabDesc(PrefabDesc i, int itemID, int modelID) =>
+                new PrefabDescJson
                 {
                     ItemID = itemID,
                     ModelID = modelID,
@@ -504,69 +502,127 @@ namespace ProjectGenesis.Utils
                     allowBuildInWater = i.allowBuildInWater,
                     needBuildInWaterTech = i.needBuildInWaterTech,
                     waterTypes = i.waterTypes,
-                    turretMinAttackRange = i.turretMinAttackRange
+                    turretMinAttackRange = i.turretMinAttackRange,
                 };
 
             public void ToPrefabDesc(PrefabDesc desc)
             {
                 if (isAccumulator != null) desc.isAccumulator = isAccumulator.Value;
+
                 if (isAssembler != null) desc.isAssembler = isAssembler.Value;
+
                 if (isFractionator != null) desc.isFractionator = isFractionator.Value;
+
                 if (isPowerGen != null) desc.isPowerGen = isPowerGen.Value;
+
                 if (isStation != null) desc.isStation = isStation.Value;
+
                 if (isStellarStation != null) desc.isStellarStation = isStellarStation.Value;
+
                 if (isCollectStation != null) desc.isCollectStation = isCollectStation.Value;
+
                 if (isPowerConsumer != null) desc.isPowerConsumer = isPowerConsumer.Value;
+
                 if (assemblerSpeed != null) desc.assemblerSpeed = assemblerSpeed.Value;
+
                 if (assemblerRecipeType != null) desc.assemblerRecipeType = (ERecipeType_1)assemblerRecipeType.Value;
+
                 if (workEnergyPerTick != null) desc.workEnergyPerTick = workEnergyPerTick.Value;
+
                 if (idleEnergyPerTick != null) desc.idleEnergyPerTick = idleEnergyPerTick.Value;
+
                 if (minerPeriod != null) desc.minerPeriod = minerPeriod.Value;
+
                 if (ejectorChargeFrame != null) desc.ejectorChargeFrame = ejectorChargeFrame.Value;
+
                 if (ejectorColdFrame != null) desc.ejectorColdFrame = ejectorColdFrame.Value;
+
                 if (siloChargeFrame != null) desc.siloChargeFrame = siloChargeFrame.Value;
+
                 if (siloColdFrame != null) desc.siloColdFrame = siloColdFrame.Value;
+
                 if (powerConnectDistance != null) desc.powerConnectDistance = powerConnectDistance.Value;
+
                 if (powerCoverRadius != null) desc.powerCoverRadius = powerCoverRadius.Value;
+
                 if (genEnergyPerTick != null) desc.genEnergyPerTick = genEnergyPerTick.Value;
+
                 if (useFuelPerTick != null) desc.useFuelPerTick = useFuelPerTick.Value;
+
                 if (beltSpeed != null) desc.beltSpeed = beltSpeed.Value;
+
                 if (inserterSTT != null) desc.inserterSTT = inserterSTT.Value;
+
                 if (fluidStorageCount != null) desc.fluidStorageCount = fluidStorageCount.Value;
+
                 if (fuelMask != null) desc.fuelMask = fuelMask.Value;
+
                 if (minerType != null) desc.minerType = (EMinerType)minerType.Value;
+
                 if (minimapType != null) desc.minimapType = minimapType.Value;
+
                 if (maxAcuEnergy != null) desc.maxAcuEnergy = maxAcuEnergy.Value;
+
                 if (maxExcEnergy != null) desc.maxExcEnergy = maxExcEnergy.Value;
+
                 if (inputEnergyPerTick != null) desc.inputEnergyPerTick = inputEnergyPerTick.Value;
+
                 if (outputEnergyPerTick != null) desc.outputEnergyPerTick = outputEnergyPerTick.Value;
+
                 if (exchangeEnergyPerTick != null) desc.exchangeEnergyPerTick = exchangeEnergyPerTick.Value;
+
                 if (stationCollectSpeed != null) desc.stationCollectSpeed = stationCollectSpeed.Value;
+
                 if (stationMaxEnergyAcc != null) desc.stationMaxEnergyAcc = stationMaxEnergyAcc.Value;
+
                 if (stationMaxItemCount != null) desc.stationMaxItemCount = stationMaxItemCount.Value;
+
                 if (stationMaxItemKinds != null) desc.stationMaxItemKinds = stationMaxItemKinds.Value;
+
                 if (stationMaxShipCount != null) desc.stationMaxShipCount = stationMaxShipCount.Value;
+
                 if (stationMaxDroneCount != null) desc.stationMaxDroneCount = stationMaxDroneCount.Value;
+
                 if (AmmoBlastRadius1 != null) desc.AmmoBlastRadius1 = AmmoBlastRadius1.Value;
+
                 if (turretMuzzleInterval != null) desc.turretMuzzleInterval = turretMuzzleInterval.Value;
+
                 if (turretRoundInterval != null) desc.turretRoundInterval = turretRoundInterval.Value;
+
                 if (turretMaxAttackRange != null) desc.turretMaxAttackRange = turretMaxAttackRange.Value;
+
                 if (turretDamageScale != null) desc.turretDamageScale = turretDamageScale.Value;
+
                 if (turretSpaceAttackRange != null) desc.turretSpaceAttackRange = turretSpaceAttackRange.Value;
+
                 if (turretAddEnemyExppBase != null) desc.turretAddEnemyExppBase = turretAddEnemyExppBase.Value;
+
                 if (turretAddEnemyExppCoef != null) desc.turretAddEnemyExppCoef = turretAddEnemyExppCoef.Value;
+
                 if (turretAddEnemyHatredBase != null) desc.turretAddEnemyHatredBase = turretAddEnemyHatredBase.Value;
+
                 if (turretAddEnemyHatredCoef != null) desc.turretAddEnemyHatredCoef = turretAddEnemyHatredCoef.Value;
+
                 if (turretAddEnemyThreatBase != null) desc.turretAddEnemyThreatBase = turretAddEnemyThreatBase.Value;
+
                 if (turretAddEnemyThreatCoef != null) desc.turretAddEnemyThreatCoef = turretAddEnemyThreatCoef.Value;
+
                 if (enemyGenMatter != null) desc.enemyGenMatter = enemyGenMatter.Value;
+
                 if (multiLevel != null) desc.multiLevel = multiLevel.Value;
+
                 if (storageCol != null) desc.storageCol = storageCol.Value;
+
                 if (storageRow != null) desc.storageRow = storageRow.Value;
+
                 if (isStorage != null) desc.isStorage = isStorage.Value;
+
                 if (allowBuildInWater != null) desc.allowBuildInWater = allowBuildInWater.Value;
+
                 if (needBuildInWaterTech != null) desc.needBuildInWaterTech = needBuildInWaterTech.Value;
+
                 if (waterTypes != null) desc.waterTypes = waterTypes;
+
                 if (turretMinAttackRange != null) desc.turretMinAttackRange = turretMinAttackRange.Value;
             }
         }

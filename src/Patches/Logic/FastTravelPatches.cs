@@ -17,11 +17,8 @@ namespace ProjectGenesis.Patches.Logic
 
             var matcher = new CodeMatcher(instructions);
 
-            matcher.MatchForward(
-                true, new CodeMatch(OpCodes.Call, AccessTools.PropertyGetter(typeof(GameMain), nameof(GameMain.sandboxToolsEnabled))));
-            matcher.Advance(1)
-                   .InsertAndAdvance(new CodeInstruction(OpCodes.Call,
-                                                         AccessTools.Method(typeof(FastTravelPatches), nameof(IsFastTravelTechUnlocked))));
+            matcher.MatchForward(true, new CodeMatch(OpCodes.Call, AccessTools.PropertyGetter(typeof(GameMain), nameof(GameMain.sandboxToolsEnabled))));
+            matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(FastTravelPatches), nameof(IsFastTravelTechUnlocked))));
 
             return matcher.InstructionEnumeration();
         }
@@ -34,11 +31,9 @@ namespace ProjectGenesis.Patches.Logic
 
             var matcher = new CodeMatcher(instructions);
 
-            matcher.MatchForward(
-                false, new CodeMatch(OpCodes.Call, AccessTools.PropertyGetter(typeof(GameMain), nameof(GameMain.sandboxToolsEnabled))));
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Call, AccessTools.PropertyGetter(typeof(GameMain), nameof(GameMain.sandboxToolsEnabled))));
 
-            matcher.Advance(1)
-                   .InsertAndAdvance(new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(FastTravelPatches), nameof(IsFastTravelEnabled))));
+            matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(FastTravelPatches), nameof(IsFastTravelEnabled))));
 
             return matcher.InstructionEnumeration();
         }
@@ -52,6 +47,7 @@ namespace ProjectGenesis.Patches.Logic
             if (!GameMain.history.TechUnlocked(ProtoID.T虫洞航行))
             {
                 UIRealtimeTip.Popup("未解锁虫洞航行".TranslateFromJson());
+
                 return false;
             }
 
@@ -59,19 +55,21 @@ namespace ProjectGenesis.Patches.Logic
 
             Mecha mecha = player.mecha;
 
-            long energyWant = 12000000000;
+            var energyWant = 12000000000;
 
             mecha.QueryEnergy(energyWant, out double energyGet, out _);
 
             if (energyGet < energyWant)
             {
                 UIRealtimeTip.Popup("虫洞能量不足".TranslateFromJson());
+
                 return false;
             }
 
             if (!UseNegentropySingularity(player))
             {
                 UIRealtimeTip.Popup("负熵奇点不足".TranslateFromJson());
+
                 return false;
             }
 
@@ -84,7 +82,7 @@ namespace ProjectGenesis.Patches.Logic
         private static bool UseNegentropySingularity(Player player)
         {
             int itemId = ProtoID.I负熵奇点;
-            int itemCount = 1;
+            var itemCount = 1;
 
             player.TakeItemFromPlayer(ref itemId, ref itemCount, out _, true, null);
 

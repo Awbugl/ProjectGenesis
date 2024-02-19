@@ -10,7 +10,7 @@ namespace ProjectGenesis.Patches.UI
     // A patch to support multi (>=3) productions.
     internal static class MultiProductionPatches
     {
-#region UIReplicatorWindow
+    #region UIReplicatorWindow
 
         // Patch replicator window
         private static readonly List<Image> ReplicatorImages = new List<Image>();
@@ -21,9 +21,11 @@ namespace ProjectGenesis.Patches.UI
         public static void UIReplicatorWindow_OnSelectedRecipeChange(UIReplicatorWindow __instance)
         {
             RecipeProto selectedRecipe = UIRoot.instance.uiGame.replicator.selectedRecipe;
+
             if (selectedRecipe == null) return;
 
             int results = selectedRecipe.Results.Length;
+
             if (results <= 2)
             {
                 ReplicatorImages.ForEach(image => image.gameObject.SetActive(false));
@@ -37,13 +39,15 @@ namespace ProjectGenesis.Patches.UI
             }
 
             if (ReplicatorImages.Count < results - 2)
+            {
                 for (int x = ReplicatorImages.Count; x < results - 2; ++x)
                 {
                     ReplicatorImages.Add(Object.Instantiate(__instance.treeMainIcon1, __instance.treeMainIcon1.transform.parent));
                     ReplicatorTexts.Add(Object.Instantiate(__instance.treeMainCountText1, __instance.treeMainCountText1.transform.parent));
                 }
+            }
 
-            for (int i = 0; i < ReplicatorImages.Count; ++i)
+            for (var i = 0; i < ReplicatorImages.Count; ++i)
             {
                 Image image = ReplicatorImages[i];
                 Text text = ReplicatorTexts[i];
@@ -52,6 +56,7 @@ namespace ProjectGenesis.Patches.UI
                 {
                     image.gameObject.SetActive(false);
                     text.gameObject.SetActive(false);
+
                     continue;
                 }
 
@@ -61,7 +66,7 @@ namespace ProjectGenesis.Patches.UI
                 ItemProto itemProto = LDB.items.Select(selectedRecipe.Results[i + 2]);
                 int num = selectedRecipe.ResultCounts[i + 2];
 
-                var button = image.gameObject.GetComponent<UIButton>();
+                UIButton button = image.gameObject.GetComponent<UIButton>();
                 button.tips.itemId = itemProto?.ID ?? 0;
                 button.tips.type = UIButton.ItemTipType.IgnoreIncPoint;
                 image.sprite = itemProto?.iconSprite;
@@ -80,8 +85,7 @@ namespace ProjectGenesis.Patches.UI
 
             __instance.treeMainCountText0.gameObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(-32 * (results - 1) - 24, -11f);
 
-            __instance.treeMainCountText1.gameObject.GetComponent<RectTransform>().anchoredPosition
-                = new Vector2(-32 * (results - 1) + 64 * 1 - 24, -11f);
+            __instance.treeMainCountText1.gameObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(-32 * (results - 1) + 64 * 1 - 24, -11f);
 
 
             List<UIButton> treeUpList = UIRoot.instance.uiGame.replicator.treeUpList;
@@ -89,9 +93,9 @@ namespace ProjectGenesis.Patches.UI
             foreach (UIButton treeUp in treeUpList) treeUp.gameObject.SetActive(false);
         }
 
-#endregion
+    #endregion
 
-#region UIAssemblerWindow
+    #region UIAssemblerWindow
 
         // Patch assembler window
         private static readonly List<Image> AssemblerProductProgress = new List<Image>();
@@ -104,26 +108,31 @@ namespace ProjectGenesis.Patches.UI
         public static void UIAssemblerWindow_OnUpdate(UIAssemblerWindow __instance)
         {
             if (__instance.assemblerId == 0 || __instance.factory == null) return;
+
             AssemblerComponent assembler = __instance.factorySystem.assemblerPool[__instance.assemblerId];
+
             if (assembler.id != __instance.assemblerId) return;
+
             if (assembler.recipeId == 0) return;
 
             int results = assembler.products.Length;
+
             if (results <= 2)
             {
                 AssemblerProductProgress.ForEach(image => image.gameObject.SetActive(false));
                 AssemblerExtraProductProgress.ForEach(image => image.gameObject.SetActive(false));
                 AssemblerProductIcon.ForEach(image => image.gameObject.SetActive(false));
                 AssemblerProductCountText.ForEach(text => text.gameObject.SetActive(false));
+
                 return;
             }
 
             if (AssemblerProductProgress.Count < results - 2)
+            {
                 for (int x = AssemblerProductProgress.Count; x < results - 2; ++x)
                 {
                     AssemblerProductProgress.Add(Object.Instantiate(__instance.productProgress1, __instance.productProgress1.transform.parent));
-                    AssemblerExtraProductProgress.Add(Object.Instantiate(__instance.extraProductProgress1,
-                                                                         __instance.extraProductProgress1.transform.parent));
+                    AssemblerExtraProductProgress.Add(Object.Instantiate(__instance.extraProductProgress1, __instance.extraProductProgress1.transform.parent));
                     AssemblerProductCountText.Add(Object.Instantiate(__instance.productCountText1, __instance.productCountText1.transform.parent));
 
                     Image icon = Object.Instantiate(__instance.productIcon1, __instance.productIcon1.transform.parent);
@@ -135,14 +144,14 @@ namespace ProjectGenesis.Patches.UI
                         if (instance.assemblerId == 0 || instance.factory == null) return;
 
                         AssemblerComponent assemblerComponent = instance.factorySystem.assemblerPool[instance.assemblerId];
-                        if (assemblerComponent.id != instance.assemblerId ||
-                            assemblerComponent.recipeId == 0 ||
-                            assemblerComponent.products.Length < index + 1 ||
-                            assemblerComponent.produced[index] <= 0)
+
+                        if (assemblerComponent.id != instance.assemblerId
+                         || assemblerComponent.recipeId == 0
+                         || assemblerComponent.products.Length < index + 1
+                         || assemblerComponent.produced[index] <= 0)
                             return;
 
-                        int num = instance.player.TryAddItemToPackage(assemblerComponent.products[index], assemblerComponent.produced[index], 0,
-                                                                      false);
+                        int num = instance.player.TryAddItemToPackage(assemblerComponent.products[index], assemblerComponent.produced[index], 0, false);
                         assemblerComponent.produced[index] = 0;
 
                         if (num > 0) UIItemup.Up(assemblerComponent.products[index], num);
@@ -150,8 +159,9 @@ namespace ProjectGenesis.Patches.UI
 
                     AssemblerProductIcon.Add(icon);
                 }
+            }
 
-            for (int i = 0; i < AssemblerProductProgress.Count; ++i)
+            for (var i = 0; i < AssemblerProductProgress.Count; ++i)
             {
                 Image productProgress = AssemblerProductProgress[i];
                 Image extraProductProgress = AssemblerExtraProductProgress[i];
@@ -164,6 +174,7 @@ namespace ProjectGenesis.Patches.UI
                     extraProductProgress.gameObject.SetActive(false);
                     productIcon.gameObject.SetActive(false);
                     productCountText.gameObject.SetActive(false);
+
                     continue;
                 }
 
@@ -172,7 +183,7 @@ namespace ProjectGenesis.Patches.UI
 
                 productIcon.sprite = itemProto?.iconSprite;
 
-                var button = productIcon.gameObject.GetComponent<UIButton>();
+                UIButton button = productIcon.gameObject.GetComponent<UIButton>();
                 button.tips.itemId = assembler.products[index];
                 button.tips.itemInc = 0;
                 button.tips.itemCount = 0;
@@ -205,6 +216,6 @@ namespace ProjectGenesis.Patches.UI
             __instance.servingGroup.anchoredPosition = new Vector2(64 * results + 96, __instance.servingGroup.anchoredPosition.y);
         }
 
-#endregion
+    #endregion
     }
 }

@@ -27,7 +27,9 @@ namespace ProjectGenesis.Patches.UI
             window.group0.gameObject.SetActive(true);
             window.group1.gameObject.SetActive(false);
             window.group2.gameObject.SetActive(false);
+
             if (!window.powerNetworkDesc.active) window.powerNetworkDesc._Open();
+
             window.group4_gammainfo.gameObject.SetActive(false);
             window.group5_product.gameObject.SetActive(false);
             window.group6_elec.gameObject.SetActive(true);

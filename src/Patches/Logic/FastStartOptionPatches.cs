@@ -15,11 +15,10 @@ namespace ProjectGenesis.Patches.Logic
 
         private static void Init()
         {
-            GameObject gameObject = GameObject.Find("UI Root/Overlay Canvas/Galaxy Select/setting-group");
-            GameObject fastStartObj = Object.Instantiate(GameObject.Find("UI Root/Overlay Canvas/Galaxy Select/setting-group/sandbox-mode/"),
-                                                         gameObject.transform, false);
+            var gameObject = GameObject.Find("UI Root/Overlay Canvas/Galaxy Select/setting-group");
+            GameObject fastStartObj = Object.Instantiate(GameObject.Find("UI Root/Overlay Canvas/Galaxy Select/setting-group/sandbox-mode/"), gameObject.transform, false);
 
-            for (int i = 5; i < gameObject.transform.childCount; i++)
+            for (var i = 5; i < gameObject.transform.childCount; i++)
             {
                 Transform transform = gameObject.transform.GetChild(i);
                 Transform transform1 = transform.transform;
@@ -32,7 +31,7 @@ namespace ProjectGenesis.Patches.Logic
             fastStartObj.name = "fast-start-mode";
             fastStartObj.transform.localPosition = new Vector3(0, -244, 0);
             Object.DestroyImmediate(fastStartObj.GetComponent<Localizer>());
-            var button = fastStartObj.GetComponentInChildren<UIButton>();
+            UIButton button = fastStartObj.GetComponentInChildren<UIButton>();
             button.tips.tipTitle = "快速开局".TranslateFromJson();
             button.tips.tipText = "快速开局描述".TranslateFromJson();
             fastStartObj.GetComponent<Text>().text = "快速开局".TranslateFromJson();
@@ -68,8 +67,7 @@ namespace ProjectGenesis.Patches.Logic
 
             foreach (TechProto proto in LDB.techs.dataArray)
             {
-                if (!GameMain.data.history.TechUnlocked(proto.ID) && proto.Items.All(e => e < 6003 && e != 5201))
-                    GameMain.data.history.UnlockTechUnlimited(proto.ID, true);
+                if (!GameMain.data.history.TechUnlocked(proto.ID) && proto.Items.All(e => e < 6003 && e != 5201)) GameMain.data.history.UnlockTechUnlimited(proto.ID, true);
             }
 
             AddItemToPackage(1131, 2000); // 地基
@@ -109,9 +107,9 @@ namespace ProjectGenesis.Patches.Logic
             AddItemToPackage(2101, 50);   // 小箱子
             AddItemToPackage(2102, 50);   // 大箱子
             AddItemToPackage(2206, 50);   // 电池
-            AddItemToPackage(3007, 5);   // 分析基站
-            AddItemToPackage(3009, 5);   // 信号塔
-            
+            AddItemToPackage(3007, 5);    // 分析基站
+            AddItemToPackage(3009, 5);    // 信号塔
+
             TakeItemFromPlayer(1601, 10);
             TakeItemFromPlayer(1401, 10);
             TakeItemFromPlayer(2001, 20);

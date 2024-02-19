@@ -33,15 +33,16 @@ namespace ProjectGenesis.Patches.UI.QTools
 
         private NodeData _data;
 
-        private ProliferatorComboBox _proliferatorComboBoxNormal, _proliferatorComboBoxNonProductive;
+        private ProliferatorComboBox _proliferatorComboBoxNormal,
+                                     _proliferatorComboBoxNonProductive;
 
         private RectTransform _rect;
 
         internal static ProductDetail CreateProductDetail(float x, float y, RectTransform parent)
         {
-            var go = new GameObject { name = "my-combobox" };
+            var go = new GameObject { name = "my-combobox", };
             go.AddComponent<RectTransform>();
-            var cb = go.AddComponent<ProductDetail>();
+            ProductDetail cb = go.AddComponent<ProductDetail>();
             cb._rect = Util.NormalizeRectWithTopLeft(cb, x, y, parent);
             go.name = "my-combobox";
 
@@ -142,7 +143,9 @@ namespace ProjectGenesis.Patches.UI.QTools
             if (buttonShow)
             {
                 var sb = new StringBuilder();
+
                 if (muitiRecipes) sb.AppendLine("左键点击：更换配方".TranslateFromJson());
+
                 if (canMining) sb.AppendLine("右键点击：将其设置为原材料".TranslateFromJson());
 
                 recipeImgButton.tips.tipTitle = (muitiRecipes ? canMining ? "可采集多配方物品" : "可调整配方" : "可采集物品").TranslateFromJson();

@@ -50,7 +50,7 @@ namespace ProjectGenesis.Patches.UI.PlanetFocus
             nameText = CreateText("", 16);
             NormalizeRectWithTopLeft(nameText.transform, 0f, 20f, _tab1);
 
-            for (int i = 0; i < FocusMaxCount; ++i)
+            for (var i = 0; i < FocusMaxCount; ++i)
             {
                 CreateSignalIcon("选择星球倾向", "选择星球倾向描述", out UIButton iconBtn, out Image iconImage);
                 _iconBtns[i] = iconBtn;
@@ -85,19 +85,22 @@ namespace ProjectGenesis.Patches.UI.PlanetFocus
         {
             _currentFocusIds = GetPlanetFocus(planetId);
 
-            for (int i = 0; i < FocusMaxCount; ++i)
+            for (var i = 0; i < FocusMaxCount; ++i)
             {
                 int currentFocusId = _currentFocusIds[i];
+
                 if (currentFocusId == 0)
                 {
                     _iconImgs[i].sprite = _tagNotSelectedSprite;
                     _iconTexts[i].text = "";
+
                     continue;
                 }
 
                 ItemProto proto = LDB.items.Select(currentFocusId);
                 _iconTexts[i].text = FocusIds[currentFocusId].TranslateFromJson();
                 Sprite sprite = proto.iconSprite;
+
                 if (sprite != null) _iconImgs[i].sprite = sprite;
             }
         }
@@ -106,8 +109,7 @@ namespace ProjectGenesis.Patches.UI.PlanetFocus
         {
             UIRoot.instance.uiGame.itemPicker.currentType = ProjectGenesis.TableID[0];
             UIItemPickerExtension.Popup(new Vector2(-300f, 250f), j => OnPickReturn(j, id), true,
-                                        itemProto => FocusIds.ContainsKey(itemProto.ID) &&
-                                                     GameMain.data.history.TechUnlocked(itemProto.PreTechOverride));
+                itemProto => FocusIds.ContainsKey(itemProto.ID) && GameMain.data.history.TechUnlocked(itemProto.PreTechOverride));
         }
 
         private void OnIconBtnRightClick(int id)
@@ -132,6 +134,7 @@ namespace ProjectGenesis.Patches.UI.PlanetFocus
                 if (t == currentFocusId)
                 {
                     UIRealtimeTip.Popup("不能重复选择".TranslateFromJson());
+
                     return;
                 }
             }
@@ -140,6 +143,7 @@ namespace ProjectGenesis.Patches.UI.PlanetFocus
             SetPlanetFocus(CurPlanetId, id, currentFocusId);
             _iconTexts[id].text = FocusIds[currentFocusId].TranslateFromJson();
             Sprite sprite = proto.iconSprite;
+
             if (sprite != null) _iconImgs[id].sprite = sprite;
         }
     }

@@ -17,32 +17,34 @@ namespace ProjectGenesis.Patches.UI.Utils
             go.SetActive(false);
             Object.Destroy(go.GetComponent<UITankWindow>());
             ManualBehaviour win = go.AddComponent<T>();
+
             //shadow 
-            for (int i = 0; i < go.transform.childCount; i++)
+            for (var i = 0; i < go.transform.childCount; i++)
             {
                 GameObject child = go.transform.GetChild(i).gameObject;
+
                 if (child.name == "panel-bg")
                 {
-                    var btn = child.GetComponentInChildren<Button>();
+                    Button btn = child.GetComponentInChildren<Button>();
+
                     //close-btn
                     if (btn != null) btn.onClick.AddListener(win._Close);
                 }
-                else if (child.name != "shadow" && child.name != "panel-bg")
-                {
-                    Object.Destroy(child);
-                }
+                else if (child.name != "shadow" && child.name != "panel-bg") Object.Destroy(child);
             }
 
             SetTitle(win, title);
 
             win._Create();
             win._Init(win.data);
+
             return (T)win;
         }
 
         private static void SetTitle(ManualBehaviour win, string title)
         {
             Text txt = GetTitleText(win);
+
             if (txt) txt.text = title;
         }
 

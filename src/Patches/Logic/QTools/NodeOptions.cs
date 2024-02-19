@@ -12,12 +12,7 @@ namespace ProjectGenesis.Patches.Logic.QTools
 
         private EProliferatorStrategy _strategy;
 
-        internal NodeOptions(
-            ItemProto item,
-            ItemProto factory,
-            RecipeProto recipe,
-            EProliferatorStrategy strategy,
-            bool asRaw)
+        internal NodeOptions(ItemProto item, ItemProto factory, RecipeProto recipe, EProliferatorStrategy strategy, bool asRaw)
         {
             Item = item;
             _factory = factory;

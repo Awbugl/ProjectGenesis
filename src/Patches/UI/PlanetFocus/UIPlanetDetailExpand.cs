@@ -30,6 +30,7 @@ namespace ProjectGenesis.Patches.UI.PlanetFocus
             if (__instance.planet == null)
             {
                 ProjectGenesis.PlanetFocusWindow._Close();
+
                 return;
             }
 

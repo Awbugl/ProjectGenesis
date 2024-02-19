@@ -25,7 +25,7 @@ namespace ProjectGenesis.Patches.UI
             { ProtoID.R聚苯硫醚, 441 },
             { ProtoID.R聚酰亚胺, 442 },
             { ProtoID.R钨矿筛选, 443 },
-            { ProtoID.R海水淡化, 444 }
+            { ProtoID.R海水淡化, 444 },
         };
 
         [HarmonyPatch(typeof(FactorySystem), nameof(FactorySystem.GameTick), typeof(long), typeof(bool))]
@@ -35,20 +35,16 @@ namespace ProjectGenesis.Patches.UI
         {
             var matcher = new CodeMatcher(instructions);
 
-            matcher.MatchForward(
-                false, new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(AssemblerComponent), nameof(AssemblerComponent.recipeType))));
-
-            matcher.Advance(1).SetInstructionAndAdvance(
-                        new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(ChemicalRecipeFcolPatches), nameof(ChemicalRecipeTypePatch))))
-                   .SetOpcodeAndAdvance(OpCodes.Brfalse_S);
-            
-            matcher.MatchForward(
-                false, new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(AssemblerComponent), nameof(AssemblerComponent.recipeId))),
-                new CodeMatch(OpCodes.Conv_R4), new CodeMatch(OpCodes.Stfld, AccessTools.Field(typeof(AnimData), nameof(AnimData.working_length))));
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(AssemblerComponent), nameof(AssemblerComponent.recipeType))));
 
             matcher.Advance(1)
-                   .InsertAndAdvance(
-                        new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(ChemicalRecipeFcolPatches), nameof(ChemicalRecipeFcolPatch))));
+                   .SetInstructionAndAdvance(new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(ChemicalRecipeFcolPatches), nameof(ChemicalRecipeTypePatch))))
+                   .SetOpcodeAndAdvance(OpCodes.Brfalse_S);
+
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(AssemblerComponent), nameof(AssemblerComponent.recipeId))),
+                new CodeMatch(OpCodes.Conv_R4), new CodeMatch(OpCodes.Stfld, AccessTools.Field(typeof(AnimData), nameof(AnimData.working_length))));
+
+            matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(ChemicalRecipeFcolPatches), nameof(ChemicalRecipeFcolPatch))));
 
             return matcher.InstructionEnumeration();
         }
@@ -59,7 +55,7 @@ namespace ProjectGenesis.Patches.UI
 
         internal static void SetChemicalRecipeFcol()
         {
-            var texture = Resources.Load<Texture>("Assets/texpack/chemical-plant-recipe-fcol");
+            Texture texture = Resources.Load<Texture>("Assets/texpack/chemical-plant-recipe-fcol");
             int fluidTex = Shader.PropertyToID("_FluidTex");
 
             ref PrefabDesc prefabDesc = ref LDB.models.Select(64).prefabDesc;

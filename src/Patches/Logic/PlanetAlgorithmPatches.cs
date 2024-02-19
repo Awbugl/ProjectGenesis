@@ -9,8 +9,7 @@ namespace ProjectGenesis.Patches.Logic
 {
     public static class PlanetAlgorithmPatches
     {
-        private static readonly FieldInfo PlanetAlgorithm_planet_FieldInfo
-            = AccessTools.Field(typeof(PlanetAlgorithm), nameof(PlanetAlgorithm.planet));
+        private static readonly FieldInfo PlanetAlgorithm_planet_FieldInfo = AccessTools.Field(typeof(PlanetAlgorithm), nameof(PlanetAlgorithm.planet));
 
         [HarmonyPatch(typeof(PlanetAlgorithm), nameof(PlanetAlgorithm.GenerateVeins))]
         [HarmonyTranspiler]
@@ -19,14 +18,13 @@ namespace ProjectGenesis.Patches.Logic
             var matcher = new CodeMatcher(instructions);
 
             matcher.MatchForward(true, new CodeMatch(OpCodes.Ldarg_0), new CodeMatch(OpCodes.Ldfld, PlanetAlgorithm_planet_FieldInfo),
-                                 new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(PlanetData), nameof(PlanetData.waterItemId))));
+                new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(PlanetData), nameof(PlanetData.waterItemId))));
 
             object label = matcher.Advance(1).Operand;
 
-            matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0),
-                                                new CodeInstruction(OpCodes.Ldfld, PlanetAlgorithm_planet_FieldInfo),
-                                                new CodeInstruction(OpCodes.Ldfld, AccessTools.Field(typeof(PlanetData), nameof(PlanetData.theme))),
-                                                new CodeInstruction(OpCodes.Ldc_I4_1), new CodeInstruction(OpCodes.Beq_S, label));
+            matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0), new CodeInstruction(OpCodes.Ldfld, PlanetAlgorithm_planet_FieldInfo),
+                new CodeInstruction(OpCodes.Ldfld, AccessTools.Field(typeof(PlanetData), nameof(PlanetData.theme))), new CodeInstruction(OpCodes.Ldc_I4_1),
+                new CodeInstruction(OpCodes.Beq_S, label));
 
             return matcher.InstructionEnumeration();
         }

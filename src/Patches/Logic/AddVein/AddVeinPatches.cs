@@ -36,26 +36,17 @@ namespace ProjectGenesis.Patches.Logic.AddVein
             new Color(0.538f, 0.538f, 0.538f), // Aluminum
             new Color(0.685f, 0.792f, 0.000f), // Radioactive
             new Color(0.113f, 0.130f, 0.140f), // Tungsten
-            new Color(0.965f, 0.867f, 0.352f)  // Sulfur
+            new Color(0.965f, 0.867f, 0.352f), // Sulfur
         };
 
         internal static void ModifyVeinData()
         {
             AddVeinProtos(NewVein(15, "铝矿脉", "I铝矿", "Assets/texpack/铝矿脉", ProtoID.I铝矿, 25, 1, 60),
-                          NewVein(16, "放射性矿脉", "I放射性矿物", "Assets/texpack/放射晶体矿脉_新新", ProtoID.I放射性矿物, 35, 2, 90),
-                          NewVein(17, "钨矿脉", "I钨矿", "Assets/texpack/钨矿脉", ProtoID.I钨矿, 34, 1, 120),
-                          NewVein(18, "硫矿脉", "I硫矿", "Assets/texpack/硫矿脉_新", ProtoID.I硫矿, 36, 1, 90));
+                NewVein(16, "放射性矿脉", "I放射性矿物", "Assets/texpack/放射晶体矿脉_新新", ProtoID.I放射性矿物, 35, 2, 90),
+                NewVein(17, "钨矿脉", "I钨矿", "Assets/texpack/钨矿脉", ProtoID.I钨矿, 34, 1, 120), NewVein(18, "硫矿脉", "I硫矿", "Assets/texpack/硫矿脉_新", ProtoID.I硫矿, 36, 1, 90));
 
-            VeinProto NewVein(
-                int id,
-                string name,
-                string description,
-                string iconPath,
-                int miningItem,
-                int miningEffect,
-                int modelIndex,
-                int miningTime)
-                => new VeinProto
+            VeinProto NewVein(int id, string name, string description, string iconPath, int miningItem, int miningEffect, int modelIndex, int miningTime) =>
+                new VeinProto
                 {
                     ID = id,
                     Name = name,
@@ -69,7 +60,7 @@ namespace ProjectGenesis.Patches.Logic.AddVein
                     MinerBaseModelIndex = 58,
                     MinerCircleModelIndex = 59,
                     MiningAudio = 122,
-                    ModelCount = 1
+                    ModelCount = 1,
                 };
         }
 
@@ -81,17 +72,14 @@ namespace ProjectGenesis.Patches.Logic.AddVein
 
             Array.Resize(ref veins.dataArray, dataArrayLength + protos.Length);
 
-            for (int index = 0; index < protos.Length; ++index)
-            {
-                veins.dataArray[dataArrayLength + index] = protos[index];
-            }
+            for (var index = 0; index < protos.Length; ++index) veins.dataArray[dataArrayLength + index] = protos[index];
 
             veins.OnAfterDeserialize();
         }
 
         internal static void SetMinerMk2Color()
         {
-            var texture = Resources.Load<Texture>("Assets/texpack/矿机渲染索引");
+            Texture texture = Resources.Load<Texture>("Assets/texpack/矿机渲染索引");
             int veinColorTex = Shader.PropertyToID("_VeinColorTex");
 
             ref PrefabDesc prefabDesc = ref LDB.models.Select(256).prefabDesc;
@@ -114,13 +102,11 @@ namespace ProjectGenesis.Patches.Logic.AddVein
         {
             var matcher = new CodeMatcher(instructions);
 
-            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldloc_0),
-                                 new CodeMatch(OpCodes.Call, AccessTools.PropertyGetter(typeof(LDB), nameof(LDB.veins))),
-                                 new CodeMatch(OpCodes.Ldfld), new CodeMatch(OpCodes.Ldlen));
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldloc_0), new CodeMatch(OpCodes.Call, AccessTools.PropertyGetter(typeof(LDB), nameof(LDB.veins))),
+                new CodeMatch(OpCodes.Ldfld), new CodeMatch(OpCodes.Ldlen));
 
-            matcher.Advance(1).SetInstructionAndAdvance(new CodeInstruction(OpCodes.Ldc_I4_S, (sbyte)14))
-                   .SetInstructionAndAdvance(new CodeInstruction(OpCodes.Nop)).SetInstructionAndAdvance(new CodeInstruction(OpCodes.Nop))
-                   .SetInstructionAndAdvance(new CodeInstruction(OpCodes.Nop));
+            matcher.Advance(1).SetInstructionAndAdvance(new CodeInstruction(OpCodes.Ldc_I4_S, (sbyte)14)).SetInstructionAndAdvance(new CodeInstruction(OpCodes.Nop))
+                   .SetInstructionAndAdvance(new CodeInstruction(OpCodes.Nop)).SetInstructionAndAdvance(new CodeInstruction(OpCodes.Nop));
 
             return matcher.InstructionEnumeration();
         }
@@ -153,19 +139,17 @@ namespace ProjectGenesis.Patches.Logic.AddVein
         [HarmonyPatch(typeof(PlanetAlgorithm12), nameof(PlanetAlgorithm12.GenerateVeins))]
         [HarmonyPatch(typeof(PlanetAlgorithm13), nameof(PlanetAlgorithm13.GenerateVeins))]
         [HarmonyTranspiler]
-        public static IEnumerable<CodeInstruction> PlanetAlgorithm_InitnalVeins_Transpiler(
-            IEnumerable<CodeInstruction> instructions,
-            MethodBase original)
+        public static IEnumerable<CodeInstruction> PlanetAlgorithm_InitnalVeins_Transpiler(IEnumerable<CodeInstruction> instructions, MethodBase original)
         {
             var matcher = new CodeMatcher(instructions);
 
             Type type = original.DeclaringType;
 
             matcher.MatchForward(false, new CodeMatch(OpCodes.Ldarg_0), new CodeMatch(OpCodes.Ldc_I4_2),
-                                 new CodeMatch(OpCodes.Stfld, AccessTools.Field(type, "veinVectorCount")));
+                new CodeMatch(OpCodes.Stfld, AccessTools.Field(type, "veinVectorCount")));
 
             matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0),
-                                     new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(AddVeinPatches), nameof(InitBirthVeinVectors))));
+                new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(AddVeinPatches), nameof(InitBirthVeinVectors))));
 
             matcher.Advance(1).SetOpcodeAndAdvance(OpCodes.Ldc_I4_3);
 
@@ -185,6 +169,7 @@ namespace ProjectGenesis.Patches.Logic.AddVein
         internal static Vector2 Rotate(Vector2 v, float angle)
         {
             float delta = angle * Mathf.PI / 180;
+
             return new Vector2(v.x * Mathf.Cos(delta) - v.y * Mathf.Sin(delta), v.x * Mathf.Sin(delta) + v.y * Mathf.Cos(delta));
         }
 
@@ -198,8 +183,9 @@ namespace ProjectGenesis.Patches.Logic.AddVein
             vector3_1.Normalize();
             Vector3 normalized1 = Vector3.Cross(vector3_1, Vector3.up).normalized;
             Vector3 normalized2 = Vector3.Cross(normalized1, vector3_1).normalized;
-            int num1 = 0;
+            var num1 = 0;
             int num2;
+
             for (num2 = 256; num1 < num2; ++num1)
             {
                 float num3 = (float)(dotNet35Random.NextDouble() * 2.0 - 1.0) * 0.5f;
@@ -207,16 +193,15 @@ namespace ProjectGenesis.Patches.Logic.AddVein
                 Vector3 vector3_2 = vector3_1 + num3 * normalized1 + num4 * normalized2;
                 vector3_2.Normalize();
                 __instance.birthPoint = vector3_2 * (float)(__instance.realRadius + 0.20000000298023224 + 1.4500000476837158);
-                Vector3 vector3_3 = Vector3.Cross(vector3_2, Vector3.up);
+                var vector3_3 = Vector3.Cross(vector3_2, Vector3.up);
                 normalized1 = vector3_3.normalized;
                 vector3_3 = Vector3.Cross(normalized1, vector3_2);
                 normalized2 = vector3_3.normalized;
-                bool flag = false;
-                for (int index = 0; index < 10; ++index)
+                var flag = false;
+
+                for (var index = 0; index < 10; ++index)
                 {
-                    Vector2 vector2_1
-                        = new Vector2((float)(dotNet35Random.NextDouble() * 2.0 - 1.0), (float)(dotNet35Random.NextDouble() * 2.0 - 1.0)).normalized *
-                          0.1f;
+                    Vector2 vector2_1 = new Vector2((float)(dotNet35Random.NextDouble() * 2.0 - 1.0), (float)(dotNet35Random.NextDouble() * 2.0 - 1.0)).normalized * 0.1f;
                     Vector2 vector2_2 = Rotate(vector2_1, 120);
                     float num5 = (float)(dotNet35Random.NextDouble() * 2.0 - 1.0) * 0.006f;
                     float num6 = (float)(dotNet35Random.NextDouble() * 2.0 - 1.0) * 0.006f;
@@ -238,10 +223,11 @@ namespace ProjectGenesis.Patches.Logic.AddVein
                     __instance.birthResourcePoint2 = normalized5.normalized;
 
                     float num7 = __instance.realRadius + 0.2f;
-                    if (rawData.QueryHeight(vector3_2) > num7 &&
-                        rawData.QueryHeight(normalized3) > num7 &&
-                        rawData.QueryHeight(normalized4) > num7 &&
-                        rawData.QueryHeight(normalized5) > num7)
+
+                    if (rawData.QueryHeight(vector3_2) > num7
+                     && rawData.QueryHeight(normalized3) > num7
+                     && rawData.QueryHeight(normalized4) > num7
+                     && rawData.QueryHeight(normalized5) > num7)
                     {
                         Vector3 vpos1 = normalized3 + normalized1 * 0.03f;
                         Vector3 vpos2 = normalized3 - normalized1 * 0.03f;
@@ -255,20 +241,22 @@ namespace ProjectGenesis.Patches.Logic.AddVein
                         Vector3 vpos10 = normalized5 - normalized1 * 0.03f;
                         Vector3 vpos11 = normalized5 + normalized2 * 0.03f;
                         Vector3 vpos12 = normalized5 - normalized2 * 0.03f;
-                        if (rawData.QueryHeight(vpos1) > num7 &&
-                            rawData.QueryHeight(vpos2) > num7 &&
-                            rawData.QueryHeight(vpos3) > num7 &&
-                            rawData.QueryHeight(vpos4) > num7 &&
-                            rawData.QueryHeight(vpos5) > num7 &&
-                            rawData.QueryHeight(vpos6) > num7 &&
-                            rawData.QueryHeight(vpos7) > num7 &&
-                            rawData.QueryHeight(vpos8) > num7 &&
-                            rawData.QueryHeight(vpos9) > num7 &&
-                            rawData.QueryHeight(vpos10) > num7 &&
-                            rawData.QueryHeight(vpos11) > num7 &&
-                            rawData.QueryHeight(vpos12) > num7)
+
+                        if (rawData.QueryHeight(vpos1) > num7
+                         && rawData.QueryHeight(vpos2) > num7
+                         && rawData.QueryHeight(vpos3) > num7
+                         && rawData.QueryHeight(vpos4) > num7
+                         && rawData.QueryHeight(vpos5) > num7
+                         && rawData.QueryHeight(vpos6) > num7
+                         && rawData.QueryHeight(vpos7) > num7
+                         && rawData.QueryHeight(vpos8) > num7
+                         && rawData.QueryHeight(vpos9) > num7
+                         && rawData.QueryHeight(vpos10) > num7
+                         && rawData.QueryHeight(vpos11) > num7
+                         && rawData.QueryHeight(vpos12) > num7)
                         {
                             flag = true;
+
                             break;
                         }
                     }
@@ -278,6 +266,7 @@ namespace ProjectGenesis.Patches.Logic.AddVein
             }
 
             if (num1 < num2) return;
+
             __instance.birthPoint = new Vector3(0.0f, __instance.realRadius + 5f, 0.0f);
         }
     }

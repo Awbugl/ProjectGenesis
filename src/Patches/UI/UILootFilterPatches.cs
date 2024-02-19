@@ -24,7 +24,7 @@ namespace ProjectGenesis.Patches.UI
         {
             TabData[] allTabs = TabSystem.GetAllTabs();
             _tabs = new List<UITabButton>();
-            int index = 1;
+            var index = 1;
 
             foreach (TabData tabData in allTabs)
             {
@@ -34,8 +34,8 @@ namespace ProjectGenesis.Patches.UI
                 GameObject gameObject = Object.Instantiate(TabSystem.GetTabPrefab(), __instance.filterTrans, false);
 
                 ((RectTransform)gameObject.transform).anchoredPosition = new Vector2(index * 70 - 54, -72f);
-                var component = gameObject.GetComponent<UITabButton>();
-                var newIcon = Resources.Load<Sprite>(tabData.tabIconPath);
+                UITabButton component = gameObject.GetComponent<UITabButton>();
+                Sprite newIcon = Resources.Load<Sprite>(tabData.tabIconPath);
                 component.Init(newIcon, tabData.tabName, index, __instance.OnTypeButtonClick);
                 _tabs.Add(component);
             }
@@ -123,8 +123,7 @@ namespace ProjectGenesis.Patches.UI
         [HarmonyPatch(typeof(UILootFilter), nameof(UILootFilter.TestMouseIndex))]
         [HarmonyPatch(typeof(UILootFilter), nameof(UILootFilter.SetMaterialProps))]
         [HarmonyTranspiler]
-        public static IEnumerable<CodeInstruction> UILootFilter_SetMaterialProps_currentTypeField_Transpiler(
-            IEnumerable<CodeInstruction> instructions)
+        public static IEnumerable<CodeInstruction> UILootFilter_SetMaterialProps_currentTypeField_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
             var matcher = new CodeMatcher(instructions);
 

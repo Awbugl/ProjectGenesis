@@ -13,6 +13,7 @@ namespace ProjectGenesis.Patches.Logic.AddVein
         private static ParticleSystem NewParticleSystem()
         {
             EffectEmitterProto effectEmitterProto = LDB.effectEmitters.Select(21);
+
             return Object.Instantiate(Resources.Load<ParticleSystem>(effectEmitterProto.PrefabPath));
         }
 
@@ -41,14 +42,11 @@ namespace ProjectGenesis.Patches.Logic.AddVein
 
             int dataArrayLength = effectEmitters.dataArray.Length;
 
-            EffectEmitterProto[] proto = protos.Select(p => new EffectEmitterProto { ID = p.Key, Name = "vein-break-" + p.Key }).ToArray();
+            EffectEmitterProto[] proto = protos.Select(p => new EffectEmitterProto { ID = p.Key, Name = "vein-break-" + p.Key, }).ToArray();
 
             Array.Resize(ref effectEmitters.dataArray, dataArrayLength + proto.Length);
 
-            for (int index = 0; index < proto.Length; ++index)
-            {
-                effectEmitters.dataArray[dataArrayLength + index] = proto[index];
-            }
+            for (var index = 0; index < proto.Length; ++index) effectEmitters.dataArray[dataArrayLength + index] = proto[index];
 
             effectEmitters.OnAfterDeserialize();
         }

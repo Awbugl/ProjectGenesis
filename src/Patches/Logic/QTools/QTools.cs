@@ -9,8 +9,8 @@ namespace ProjectGenesis.Patches.Logic.QTools
         internal static readonly ItemProto ProliferatorProto = LDB.items.Select(ProtoID.I增产剂);
         private static ConcurrentDictionary<Utils.ERecipeType, List<ItemProto>> _recipeTypeFactoryMap;
 
-        internal static ConcurrentDictionary<Utils.ERecipeType, List<ItemProto>> RecipeTypeFactoryMap
-            => _recipeTypeFactoryMap ?? (_recipeTypeFactoryMap = GetFactoryDict());
+        internal static ConcurrentDictionary<Utils.ERecipeType, List<ItemProto>> RecipeTypeFactoryMap =>
+            _recipeTypeFactoryMap ?? (_recipeTypeFactoryMap = GetFactoryDict());
 
         private static ConcurrentDictionary<Utils.ERecipeType, List<ItemProto>> GetFactoryDict()
         {
@@ -30,6 +30,7 @@ namespace ProjectGenesis.Patches.Logic.QTools
                 }
 
                 var filter = (Utils.ERecipeType)protoPrefabDesc.assemblerRecipeType;
+
                 if (filter == Utils.ERecipeType.None) continue;
 
                 switch (filter)
@@ -39,6 +40,7 @@ namespace ProjectGenesis.Patches.Logic.QTools
                         dict.TryAddOrInsert(Utils.ERecipeType.Chemical, proto);
                         dict.TryAddOrInsert(Utils.ERecipeType.Refine, proto);
                         dict.TryAddOrInsert(Utils.ERecipeType.高分子化工, proto);
+
                         continue;
                     }
 
@@ -46,6 +48,7 @@ namespace ProjectGenesis.Patches.Logic.QTools
                     {
                         dict.TryAddOrInsert(Utils.ERecipeType.Smelt, proto);
                         dict.TryAddOrInsert(Utils.ERecipeType.矿物处理, proto);
+
                         continue;
                     }
 
@@ -54,6 +57,7 @@ namespace ProjectGenesis.Patches.Logic.QTools
                         dict.TryAddOrInsert(Utils.ERecipeType.Assemble, proto);
                         dict.TryAddOrInsert(Utils.ERecipeType.标准制造, proto);
                         dict.TryAddOrInsert(Utils.ERecipeType.高精度加工, proto);
+
                         continue;
                     }
 
@@ -61,12 +65,14 @@ namespace ProjectGenesis.Patches.Logic.QTools
                     {
                         dict.TryAddOrInsert(Utils.ERecipeType.Assemble, proto);
                         dict.TryAddOrInsert(Utils.ERecipeType.标准制造, proto);
+
                         continue;
                     }
 
                     default:
                     {
                         dict.TryAddOrInsert(filter, proto);
+
                         continue;
                     }
                 }
@@ -80,6 +86,6 @@ namespace ProjectGenesis.Patches.Logic.QTools
     {
         Nonuse,
         ExtraProducts,
-        ProductionSpeedup
+        ProductionSpeedup,
     }
 }

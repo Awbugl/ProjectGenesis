@@ -35,11 +35,11 @@ namespace ProjectGenesis.Patches.Logic.PlanetFocus
         }
 
         [HarmonyPatch(typeof(SkillSystem), nameof(SkillSystem.AddGroundEnemyHatred),
-                      new Type[] { typeof(DFGBaseComponent), typeof(EnemyData), typeof(ETargetType), typeof(int) },
-                      new ArgumentType[] { ArgumentType.Normal, ArgumentType.Ref, ArgumentType.Normal, ArgumentType.Normal })]
+            new Type[] { typeof(DFGBaseComponent), typeof(EnemyData), typeof(ETargetType), typeof(int), },
+            new ArgumentType[] { ArgumentType.Normal, ArgumentType.Ref, ArgumentType.Normal, ArgumentType.Normal, })]
         [HarmonyPatch(typeof(SkillSystem), nameof(SkillSystem.AddGroundEnemyHatred),
-                      new Type[] { typeof(DFGBaseComponent), typeof(EnemyData), typeof(ETargetType), typeof(int), typeof(int) },
-                      new ArgumentType[] { ArgumentType.Normal, ArgumentType.Ref, ArgumentType.Normal, ArgumentType.Normal, ArgumentType.Normal })]
+            new Type[] { typeof(DFGBaseComponent), typeof(EnemyData), typeof(ETargetType), typeof(int), typeof(int), },
+            new ArgumentType[] { ArgumentType.Normal, ArgumentType.Ref, ArgumentType.Normal, ArgumentType.Normal, ArgumentType.Normal, })]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> SkillSystem_AddGroundEnemyHatred_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
@@ -50,7 +50,7 @@ namespace ProjectGenesis.Patches.Logic.PlanetFocus
             matcher.MatchForward(false, new CodeMatch(OpCodes.Conv_I4), new CodeMatch(OpCodes.Add), new CodeMatch(OpCodes.Stind_I4));
 
             matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_1),
-                                     new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(PlanetFocusPatches), nameof(threatshr_Method))));
+                new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(PlanetFocusPatches), nameof(threatshr_Method))));
 
             return matcher.InstructionEnumeration();
         }
@@ -58,6 +58,7 @@ namespace ProjectGenesis.Patches.Logic.PlanetFocus
         public static double threatshr_Method(double value, DFGBaseComponent component)
         {
             if (ContainsFocus(component.groundSystem.factory.planetId, 6532)) value *= 0.8f;
+
             return value;
         }
     }

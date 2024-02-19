@@ -17,9 +17,7 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
             lock (Slotdata)
             {
                 if (Slotdata.TryGetValue(id, out SlotData[] slotDatas))
-                {
                     slotDatas[slotId] = slotData;
-                }
                 else
                 {
                     slotDatas = new SlotData[12];
@@ -41,7 +39,9 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
         private static void SetEmpty(int planetId, int entityId)
         {
             (int planetId, int entityId) id = (planetId, entityId);
+
             if (!Slotdata.ContainsKey(id)) return;
+
             Slotdata[id] = new SlotData[12];
             SyncSlotsData.Sync(planetId, entityId, Slotdata[id]);
         }
@@ -52,11 +52,13 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
 
             w.Write(datas.Length);
             w.Write(planetId);
+
             foreach (KeyValuePair<(int, int), SlotData[]> pair in datas)
             {
                 w.Write(pair.Key.Item2);
                 w.Write(pair.Value.Length);
-                for (int i = 0; i < pair.Value.Length; i++)
+
+                for (var i = 0; i < pair.Value.Length; i++)
                 {
                     w.Write((int)pair.Value[i].dir);
                     w.Write(pair.Value[i].beltId);
@@ -72,16 +74,17 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
             int planetId = r.ReadInt32();
             PlanetFactory factory = GameMain.galaxy.PlanetById(planetId)?.factory;
 
-            for (int j = 0; j < count; j++)
+            for (var j = 0; j < count; j++)
             {
                 int entityId = r.ReadInt32();
                 int length = r.ReadInt32();
                 var datas = new SlotData[length];
-                for (int i = 0; i < length; i++)
+
+                for (var i = 0; i < length; i++)
                 {
                     datas[i] = new SlotData
                     {
-                        dir = (IODir)r.ReadInt32(), beltId = r.ReadInt32(), storageIdx = r.ReadInt32(), counter = r.ReadInt32()
+                        dir = (IODir)r.ReadInt32(), beltId = r.ReadInt32(), storageIdx = r.ReadInt32(), counter = r.ReadInt32(),
                     };
 
                     if (factory == null) continue;

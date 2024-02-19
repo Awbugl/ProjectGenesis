@@ -17,6 +17,7 @@ namespace ProjectGenesis.Patches.UI
         public static void FactoryModel_InitCollectorMaterial(FactoryModel __instance)
         {
             ObjectRenderer objectRenderer = __instance.gpuiManager.GetObjectRenderer(ProtoID.M大气采集器);
+
             if (objectRenderer != null) atmosphericCollectStationMaterial = objectRenderer.lodBatches[0].materials[2];
         }
 
@@ -25,6 +26,7 @@ namespace ProjectGenesis.Patches.UI
         public static void FactoryModel_SetCollectorEffectColor(FactoryModel __instance)
         {
             if (!(atmosphericCollectStationMaterial != null)) return;
+
             atmosphericCollectStationMaterial.SetColor("_TintColor", __instance.collectorEffectColor);
         }
     }

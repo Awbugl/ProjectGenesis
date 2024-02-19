@@ -8,7 +8,8 @@ namespace ProjectGenesis.Utils
 {
     internal static class TranslateUtils
     {
-        private static readonly Dictionary<string, StringProtoJson> StringProtoJsons, StringModProtoJsons;
+        private static readonly Dictionary<string, StringProtoJson> StringProtoJsons,
+                                                                    StringModProtoJsons;
 
         private static readonly bool IsSystemZHCN;
 
@@ -22,6 +23,7 @@ namespace ProjectGenesis.Utils
             if (num > 2)
             {
                 IsSystemZHCN = num == 2052;
+
                 return;
             }
 
@@ -31,6 +33,7 @@ namespace ProjectGenesis.Utils
                 case SystemLanguage.ChineseSimplified:
                 case SystemLanguage.ChineseTraditional:
                     IsSystemZHCN = true;
+
                     break;
             }
         }
@@ -44,8 +47,7 @@ namespace ProjectGenesis.Utils
         {
             if (string.IsNullOrWhiteSpace(s)) return "";
 
-            if (!StringModProtoJsons.TryGetValue(s, out StringProtoJson stringProtoJson) && !StringProtoJsons.TryGetValue(s, out stringProtoJson))
-                return s;
+            if (!StringModProtoJsons.TryGetValue(s, out StringProtoJson stringProtoJson) && !StringProtoJsons.TryGetValue(s, out stringProtoJson)) return s;
 
             return IsSystemZHCN ? stringProtoJson.ZHCN : stringProtoJson.ENUS;
         }
@@ -54,8 +56,7 @@ namespace ProjectGenesis.Utils
         {
             if (string.IsNullOrWhiteSpace(s)) return "";
 
-            if (!StringModProtoJsons.TryGetValue(s, out StringProtoJson stringProtoJson) && !StringProtoJsons.TryGetValue(s, out stringProtoJson))
-                return s;
+            if (!StringModProtoJsons.TryGetValue(s, out StringProtoJson stringProtoJson) && !StringProtoJsons.TryGetValue(s, out stringProtoJson)) return s;
 
             return Localization.isZHCN ? stringProtoJson.ZHCN : stringProtoJson.ENUS;
         }
