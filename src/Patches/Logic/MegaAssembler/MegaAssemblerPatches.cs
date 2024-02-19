@@ -17,17 +17,13 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
                                           EntityData_AssemblerId_Field = AccessTools.Field(typeof(EntityData), nameof(EntityData.assemblerId)),
                                           PlanetFactory_EntityPool_Field = AccessTools.Field(typeof(PlanetFactory), nameof(PlanetFactory.entityPool)),
                                           FactorySystem_AssemblerPool_Field
-                                              = AccessTools.Field(typeof(FactorySystem), nameof(FactorySystem.assemblerPool)),
-                                          AssemblerComponent_Speed_Field
-                                              = AccessTools.Field(typeof(AssemblerComponent), nameof(AssemblerComponent.speed));
+                                              = AccessTools.Field(typeof(FactorySystem), nameof(FactorySystem.assemblerPool));
 
         private static readonly MethodInfo AssemblerComponent_InternalUpdate_Method
                                                = AccessTools.Method(typeof(AssemblerComponent), nameof(AssemblerComponent.InternalUpdate)),
                                            MegaAssembler_AssemblerComponent_InternalUpdate_Patch_Method
                                                = AccessTools.Method(typeof(MegaAssemblerPatches),
-                                                                    nameof(GameTick_AssemblerComponent_InternalUpdate_Patch)),
-                                           MegaAssembler_AssemblerComponent_UpdateNeeds_Patch_Method
-                                               = AccessTools.Method(typeof(MegaAssemblerPatches), nameof(AssemblerComponent_UpdateNeeds_Patch));
+                                                                    nameof(GameTick_AssemblerComponent_InternalUpdate_Patch));
 
         [HarmonyPatch(typeof(FactorySystem), nameof(FactorySystem.GameTick), typeof(long), typeof(bool))]
         [HarmonyPatch(typeof(FactorySystem), nameof(FactorySystem.GameTick), typeof(long), typeof(bool), typeof(int), typeof(int), typeof(int))]
@@ -453,28 +449,6 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
                 if (entityData.id != 0 && entityData.assemblerId != 0) SetEmpty(__instance.planetId, id);
             }
         }
-
-        [HarmonyPatch(typeof(AssemblerComponent), nameof(AssemblerComponent.UpdateNeeds))]
-        [HarmonyTranspiler]
-        public static IEnumerable<CodeInstruction> AssemblerComponent_UpdateNeeds_Transpiler(IEnumerable<CodeInstruction> instructions)
-        {
-            var matcher = new CodeMatcher(instructions);
-
-            while (true)
-            {
-                matcher.MatchForward(false, new CodeMatch(OpCodes.Ldc_I4_3), new CodeMatch(OpCodes.Mul));
-
-                if (matcher.IsInvalid) break;
-
-                matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0));
-                matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldfld, AssemblerComponent_Speed_Field));
-                matcher.SetInstruction(new CodeInstruction(OpCodes.Call, MegaAssembler_AssemblerComponent_UpdateNeeds_Patch_Method));
-            }
-
-            return matcher.InstructionEnumeration();
-        }
-
-        public static sbyte AssemblerComponent_UpdateNeeds_Patch(int speed) => speed > TrashSpeed ? (sbyte)10 : (sbyte)3;
 
         [HarmonyPostfix]
         [HarmonyPatch(typeof(FactorySystem), nameof(FactorySystem.NewAssemblerComponent))]
