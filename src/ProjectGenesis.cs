@@ -52,7 +52,7 @@ namespace ProjectGenesis
     {
         public const string MODGUID = "org.LoShin.GenesisBook";
         public const string MODNAME = "GenesisBook";
-        public const string VERSION = "2.9.11";
+        public const string VERSION = "2.9.12";
         public const string DEBUGVERSION = "";
 
         public static bool LoadCompleted;
@@ -80,13 +80,6 @@ namespace ProjectGenesis
 
             logger = Logger;
             logger.Log(LogLevel.Info, "GenesisBook Awake");
-
-            if (DSPBattle.Installed)
-            {
-                logger.Log(LogLevel.Error, "They Come From Void is installed, which is incompatible with GenesisBook. Load Cancelled.");
-
-                return;
-            }
 
         #endregion Logger
 

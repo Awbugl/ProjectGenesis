@@ -24,7 +24,6 @@ or open a issue via [github](https://github.com/Awbugl/ProjectGenesis).
 
 ## 已知不兼容的MOD | Incompatible mods (Known)
 
-+ [TheyComeFromVoid](https://dsp.thunderstore.io/package/ckcz123/TheyComeFromVoid/)
 + [RecycleableFuelRods](https://dsp.thunderstore.io/package/jinxOAO/RecycleableFuelRods/)
 + [Blackbox](https://dsp.thunderstore.io/package/Raptor/Blackbox/)
 + [BetterMachines](https://dsp.thunderstore.io/package/kremnev8/BetterMachines/)
@@ -32,6 +31,7 @@ or open a issue via [github](https://github.com/Awbugl/ProjectGenesis).
 + [WaterElectrolysis](https://dsp.thunderstore.io/package/jinxOAO/WaterElectrolysis/)
 + [GigaStationsUpdated](https://dsp.thunderstore.io/package/kremnev8/GigaStationsUpdated/)
 + [ReBuffer](https://dsp.thunderstore.io/package/Eirshy/ReBuffer/)
++ [LazyOutposting](https://dsp.thunderstore.io/package/Eirshy/LazyOutposting/)
 + [PlanetMiner](https://dsp.thunderstore.io/package/blacksnipebiu/PlanetMiner/)
 
 ## 安装方法

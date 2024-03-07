@@ -1,10 +1,16 @@
-- v2.9.11
-  + 适配NebulaMultiplayerModApi版本2.0.0
+- v2.9.12
+  + 调整与`深空来敌 v3.0.0`、`更多巨构 v1.3.7` mod的兼容性
 
-  + Adaptation of NebulaMultiplayerModApi-2.0.0
+  + Adjust compatibility with `TheyComeFromVoid v3.0.0`, `MoreMegaStructures v1.3.7` mod
 
 <details>
   <summary>点击展开日志 | Click to view all </summary>
+
+- v2.9.11
+  + 适配NebulaMultiplayerModApi版本2.0.0
+
++ Adaptation of NebulaMultiplayerModApi-2.0.0
+
 
 - v2.9.10
   + 修复模型ID迁移导致的存档兼容问题

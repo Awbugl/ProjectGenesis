@@ -17,7 +17,6 @@ namespace ProjectGenesis.Compatibility
     ///     special thanks for https://github.com/kremnev8/DSP-Mods/blob/master/Mods/BlueprintTweaks/InstallationChecker.cs
     /// </summary>
     [BepInPlugin(MODGUID, MODNAME, ProjectGenesis.VERSION)]
-    [BepInDependency(DSPBattle.GUID, BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency(BlueprintTweaks.GUID, BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency(Bottleneck.GUID, BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency(MoreMegaStructure.GUID, BepInDependency.DependencyFlags.SoftDependency)]
@@ -51,7 +50,6 @@ namespace ProjectGenesis.Compatibility
         {
             MoreMegaStructure.Awake();
             PlanetVeinUtilization.Awake();
-            DSPBattle.Awake();
             BlueprintTweaks.Awake();
             Bottleneck.Awake();
             PlanetwideMining.Awake();
@@ -73,8 +71,6 @@ namespace ProjectGenesis.Compatibility
             string msg = null;
 
             if (!ProjectGenesis.DisableMessageBoxEntry.Value) msg = "GenesisBookLoadMessage";
-
-            if (DSPBattle.Installed) msg = "DSPBattleInstalled";
 
             if (!ProjectGenesis.LoadCompleted) msg = "ProjectGenesisNotLoaded";
 

@@ -15,13 +15,8 @@ namespace ProjectGenesis.Compatibility
 
         private static readonly int[] AddedRecipes =
         {
-            330, 331, 332, 333, 334, 335, 336, 337, 338, 339, 340, 341, 342, 343, 344, 345, 346, 347, 348, 349, 350, 351, 363, 364, 375, 376, 377, 378, 379, 380, 381,
-            552, 553, 554, 555, 556, 557, 558, 559, 560, 561, 562,
-        };
-
-        private static readonly int[] AddedItems =
-        {
-            9480, 9481, 9482, 9483, 9484, 9485, 9486, 9487, 9488, 9489, 9490, 9491, 9492, 9500, 9493, 9494, 9495, 9496, 9497, 9498, 9499, 9501, 9502, 9512,
+            330, 331, 332, 333, 334, 335, 336, 337, 338, 339, 340, 341, 342, 343, 344, 345, 346, 347, 348, 349, 350, 351, 363, 364, 365, 366, 367, 368, 369, 370, 371,
+            372, 373, 375, 376, 377, 378, 379, 380, 381, 552, 553, 554, 555, 556, 557, 558, 559, 560, 561, 562,
         };
 
         private static bool _finished;
@@ -45,15 +40,21 @@ namespace ProjectGenesis.Compatibility
                 if (recipeProto == null) continue;
 
                 recipeProto.Type = (ERecipeType)10;
-                recipeProto.name = recipeProto.Name.Translate();
-                recipeProto.description = recipeProto.Description.Translate();
 
-                if (recipeProto.ID == 350)
+                switch (recipeProto.ID)
                 {
-                    recipeProto.Type = (ERecipeType)21;
-                    recipeProto.Items = Array.Empty<int>();
-                    recipeProto.ItemCounts = Array.Empty<int>();
-                    recipeProto.Handcraft = false;
+                    case 350:
+                        recipeProto.Type = (ERecipeType)21;
+                        recipeProto.Items = Array.Empty<int>();
+                        recipeProto.ItemCounts = Array.Empty<int>();
+                        recipeProto.Handcraft = false;
+
+                        continue;
+
+                    case 366:
+                        recipeProto.Items = new[] { 5203, 6271, 7707, 1124, 1118, };
+
+                        continue;
                 }
 
                 if (recipeProto.Results.Length > 0)
@@ -68,11 +69,6 @@ namespace ProjectGenesis.Compatibility
 
                             continue;
 
-                        case ProtoID.I人造恒星:
-                            recipeProto.ItemCounts[0] = 30;
-
-                            continue;
-
                         case 9487:
                             recipeProto.ItemCounts[0] = 2;
                             recipeProto.ItemCounts[1] = 1;
@@ -83,22 +79,10 @@ namespace ProjectGenesis.Compatibility
                 }
             }
 
-            foreach (int itemID in AddedItems)
-            {
-                ItemProto itemProto = LDB.items.Select(itemID);
-
-                if (itemProto == null) continue;
-
-                itemProto.name = itemProto.Name.Translate();
-                itemProto.description = itemProto.Description.Translate();
-
-                if (itemProto.ID == 9500)
-                {
-                    itemProto.recipes = null;
-                    itemProto.FindRecipes();
-                    itemProto.isRaw = true;
-                }
-            }
+            ItemProto itemProto = LDB.items.Select(9500);
+            itemProto.recipes = null;
+            itemProto.FindRecipes();
+            itemProto.isRaw = true;
 
             _finished = true;
         }

@@ -10,11 +10,6 @@
     "ENUS": "From GenesisBook mod"
   },
   {
-    "Name": "DSPBattleInstalled",
-    "ZHCN": "⚠ 检测到您已安装深空来敌mod，与创世之书存在冲突，因此已取消加载创世之书mod。",
-    "ENUS": "⚠ We have detected that you have installed the They Come From Void mod, which is incompatible with GenesisBook, and have unloaded the GenesisBook mod."
-  },
-  {
     "Name": "PreloaderNotInstalled",
     "ZHCN": "⚠ 未检测到创世之书patch补丁！请检查您是否正确安装了创世之书mod。",
     "ENUS": "⚠ GenesisBook Preloader patch has not been detected, please check your installation, make sure you followed installation instructions correctly."
