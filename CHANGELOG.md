@@ -9,10 +9,6 @@
   + Re-added recipe stacking logic configuration item
   + Downgraded the base energy output of Geothermal Power Station built on Core Driller (300% -> 200%)
 
-- v2.9.12
-  + 调整与`深空来敌 v3.0.0`、`更多巨构 v1.3.7` mod的兼容性
-
-  + Adjust compatibility with `TheyComeFromVoid v3.0.0`, `MoreMegaStructures v1.3.7` mod
 
 <details>
   <summary>点击展开日志 | Click to view all </summary>
