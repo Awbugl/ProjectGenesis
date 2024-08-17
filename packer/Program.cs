@@ -9,7 +9,7 @@ namespace ProjectGenesis.Packer
 {
     internal static class Program
     {
-        private const string SolutionPath = @"..\..\..\";
+        private const string SolutionPath = @"D:\Git\ProjectGenesis";
 
         internal static void Main()
         {
