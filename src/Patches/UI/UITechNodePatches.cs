@@ -12,21 +12,18 @@ namespace ProjectGenesis.Patches.UI
         [HarmonyPostfix]
         public static void UITechNode_UpdateLayoutDynamic(UITechNode __instance, bool forceUpdate = false, bool forceReset = false)
         {
-            float num4 = Mathf.Max(__instance.unlockText.preferredWidth - 40f + __instance.unlockTextTrans.anchoredPosition.x,
-                             Math.Min(__instance.techProto.unlockRecipeArray.Length, 3) * 46)
-                       + __instance.baseWidth;
+            float num4 = Mathf.Clamp(
+                Mathf.Max(__instance.unlockText.preferredWidth - 40f + __instance.unlockTextTrans.anchoredPosition.x,
+                    Math.Min(__instance.techProto.unlockRecipeArray.Length, 3) * 46)
+              + __instance.baseWidth, __instance.minWidth, __instance.maxWidth);
 
-            if (num4 < __instance.minWidth) num4 = __instance.minWidth;
+            float x = __instance.focusState < 1f
+                ? Mathf.Lerp(__instance.minWidth, num4, __instance.focusState)
+                : Mathf.Lerp(num4, __instance.maxWidth, __instance.focusState - 1f);
 
-            if (num4 > __instance.maxWidth) num4 = __instance.maxWidth;
+            __instance.panelRect.sizeDelta = new Vector2(x, __instance.panelRect.sizeDelta.y);
 
-            if (__instance.focusState < 1f)
-                __instance.panelRect.sizeDelta = new Vector2(Mathf.Lerp(__instance.minWidth, num4, __instance.focusState), __instance.panelRect.sizeDelta.y);
-            else
-                __instance.panelRect.sizeDelta = new Vector2(Mathf.Lerp(num4, __instance.maxWidth, __instance.focusState - 1f), __instance.panelRect.sizeDelta.y);
-
-            __instance.titleText.rectTransform.sizeDelta
-                = new Vector2(__instance.panelRect.sizeDelta.x - (GameMain.history.TechState(__instance.techProto.ID).curLevel > 0 ? 65 : 25), 24f);
+            __instance.titleText.rectTransform.sizeDelta = new Vector2(x - (GameMain.history.TechState(__instance.techProto.ID).curLevel > 0 ? 65 : 25), 24f);
         }
     }
 }
