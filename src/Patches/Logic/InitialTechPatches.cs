@@ -86,7 +86,7 @@ namespace ProjectGenesis.Patches.Logic
         [HarmonyPostfix]
         public static void UITechTree_OnQueueUpdate_Postfix(UITechTree __instance)
         {
-            if (!ProjectGenesis.EnableHideTechModeEntry.Value) { return; }
+            if (!ProjectGenesis.HideTechModeEntry.Value) { return; }
 
             RefreshNode(__instance);
         }
@@ -95,7 +95,7 @@ namespace ProjectGenesis.Patches.Logic
         [HarmonyPostfix]
         public static void UITechTree_OnPageChanged_Postfix(UITechTree __instance)
         {
-            if (!ProjectGenesis.EnableHideTechModeEntry.Value) { return; }
+            if (!ProjectGenesis.HideTechModeEntry.Value) { return; }
 
             if (__instance.page != 0) { return; }
 

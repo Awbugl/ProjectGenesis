@@ -8,7 +8,7 @@ using ProjectGenesis.Utils;
 
 namespace ProjectGenesis.Patches.Logic
 {
-    public static class EnableProductOverflowPatches
+    public static class ProductOverflowPatches
     {
         private static readonly FieldInfo AssemblerComponent_RecipeType_FieldInfo = AccessTools.Field(typeof(AssemblerComponent), nameof(AssemblerComponent.recipeType));
 
@@ -26,7 +26,7 @@ namespace ProjectGenesis.Patches.Logic
             matcher.Advance(1);
 
             matcher.Advance(4).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0), new CodeInstruction(OpCodes.Ldarg_2),
-                new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(EnableProductOverflowPatches), nameof(AssemblerComponent_InsertMethod_Chemical))),
+                new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(ProductOverflowPatches), nameof(AssemblerComponent_InsertMethod_Chemical))),
                 new CodeInstruction(OpCodes.Brtrue_S, label));
 
             // refine
@@ -34,7 +34,7 @@ namespace ProjectGenesis.Patches.Logic
                 new CodeMatch(OpCodes.Ldc_I4_3));
 
             matcher.Advance(4).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0), new CodeInstruction(OpCodes.Ldarg_2),
-                new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(EnableProductOverflowPatches), nameof(AssemblerComponent_InsertMethod_Refine))),
+                new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(ProductOverflowPatches), nameof(AssemblerComponent_InsertMethod_Refine))),
                 new CodeInstruction(OpCodes.Brtrue_S, label));
 
             // assemble
@@ -45,7 +45,7 @@ namespace ProjectGenesis.Patches.Logic
             // other recipe
             matcher.Advance(6).MatchForward(false, new CodeMatch(OpCodes.Ldc_I4_0), new CodeMatch(OpCodes.Stloc_S));
             matcher.Advance(2).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0), new CodeInstruction(OpCodes.Ldarg_2),
-                new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(EnableProductOverflowPatches), nameof(AssemblerComponent_InsertMethod_Other))),
+                new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(ProductOverflowPatches), nameof(AssemblerComponent_InsertMethod_Other))),
                 new CodeInstruction(OpCodes.Brtrue_S, label));
 
             return matcher.InstructionEnumeration();
@@ -55,7 +55,7 @@ namespace ProjectGenesis.Patches.Logic
         {
             if (component.products.Length < 2) return false;
 
-            switch (ProjectGenesis.EnableProductOverflowEntry.Value)
+            switch (ProjectGenesis.ProductOverflowEntry.Value)
             {
                 case 0:
                     var b = false;
@@ -82,7 +82,7 @@ namespace ProjectGenesis.Patches.Logic
         {
             if (component.products.Length < 2) return false;
 
-            switch (ProjectGenesis.EnableProductOverflowEntry.Value)
+            switch (ProjectGenesis.ProductOverflowEntry.Value)
             {
                 case 0:
                     var b = false;
@@ -112,7 +112,7 @@ namespace ProjectGenesis.Patches.Logic
         {
             if (component.products.Length < 2) return false;
 
-            switch (ProjectGenesis.EnableProductOverflowEntry.Value)
+            switch (ProjectGenesis.ProductOverflowEntry.Value)
             {
                 case 0:
                     var b = false;

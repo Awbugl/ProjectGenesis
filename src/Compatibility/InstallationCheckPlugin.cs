@@ -70,7 +70,7 @@ namespace ProjectGenesis.Compatibility
 
             string msg = null;
 
-            if (!ProjectGenesis.DisableMessageBoxEntry.Value) msg = "GenesisBookLoadMessage";
+            if (ProjectGenesis.ShowMessageBoxEntry.Value) msg = "GenesisBookLoadMessage";
 
             if (!ProjectGenesis.LoadCompleted) msg = "ProjectGenesisNotLoaded";
 

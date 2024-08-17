@@ -210,7 +210,7 @@
     "ENUS": "Multiple recipes | Mineable item"
   },
   {
-    "Name": "EnableProductOverflow",
+    "Name": "ProductOverflow",
     "ZHCN": "配方堆积逻辑",
     "ENUS": "Recipe Stacking logic"
   },
@@ -220,17 +220,17 @@
     "ENUS": "Use LDBTool cache"
   },
   {
-    "Name": "EnableHideTechMode",
+    "Name": "HideTechMode",
     "ZHCN": "启用科技探索模式",
     "ENUS": "Enable tech exploration mode"
   },
   {
-    "Name": "DisableMessageBox",
-    "ZHCN": "禁用创世之书加载弹窗",
-    "ENUS": "Disable messagebox when loaded"
+    "Name": "ShowMessageBox",
+    "ZHCN": "显示创世之书加载弹窗",
+    "ENUS": "Show messagebox when loaded"
   },
   {
-    "Name": "EnableProductOverflowAdditionalText",
+    "Name": "ProductOverflowAdditionalText",
     "ZHCN": "（选择是否将配方停止生产的条件由单产物堆积改为所有产物均堆积）",
     "ENUS": "(Whether to change the condition for stopping production of some recipes from single product pile up to all product pile up)"
   },
@@ -240,14 +240,14 @@
     "ENUS": "(Allow manually modify the conflicting MOD item ID in the configuration file, but the startup speed is slowed down, need to restart the game to take effect)"
   },
   {
-    "Name": "EnableHideTechModeAdditionalText",
+    "Name": "HideTechModeAdditionalText",
     "ZHCN": "（隐藏未解锁的科技）",
     "ENUS": "(Hide unlock technology)"
   },
   {
-    "Name": "DisableMessageBoxAdditionalText",
+    "Name": "ShowMessageBoxAdditionalText",
     "ZHCN": "（在MOD加载完成后禁用弹窗显示创世之书的额外信息）",
-    "ENUS": "(Disable additional information about GenesisBook in a messagebox after mod loaded)"
+    "ENUS": "(Show messagebox about additional information after GenesisBook mod loaded)"
   },
   {
     "Name": "默认设置",

@@ -66,11 +66,11 @@ namespace ProjectGenesis
 
         internal static string ModPath;
 
-        internal static ConfigEntry<bool> EnableLDBToolCacheEntry,
-            EnableHideTechModeEntry,
-            DisableMessageBoxEntry;
+        internal static ConfigEntry<bool> LDBToolCacheEntry,
+            HideTechModeEntry,
+            ShowMessageBoxEntry;
 
-        internal static ConfigEntry<int> EnableProductOverflowEntry;
+        internal static ConfigEntry<int> ProductOverflowEntry;
 
         internal static ConfigEntry<KeyboardShortcut> QToolsHotkey;
 
@@ -89,15 +89,15 @@ namespace ProjectGenesis
 
             configFile = Config;
 
-            EnableLDBToolCacheEntry = Config.Bind("config", "UseLDBToolCache", false,
+            LDBToolCacheEntry = Config.Bind("config", "UseLDBToolCache", false,
                 "Enable LDBTool Cache, which allows you use config to fix some compatibility issues.\n启用LDBTool缓存，允许使用配置文件修复部分兼容性问题");
 
-            EnableHideTechModeEntry = Config.Bind("config", "HideTechMode", true,
+            HideTechModeEntry = Config.Bind("config", "HideTechMode", true,
                 "Enable Tech Exploration Mode, which will hide locked techs in tech tree.\n启用科技探索模式，启用后将隐藏未解锁的科技");
 
-            DisableMessageBoxEntry = Config.Bind("config", "DisableMessageBox", false, "Don't show message when GenesisBook is loaded.\n禁用首次加载时的提示信息");
+            ShowMessageBoxEntry = Config.Bind("config", "ShowMessageBox", true, "Don't show message when GenesisBook is loaded.\n禁用首次加载时的提示信息");
 
-            EnableProductOverflowEntry = Config.Bind("config", "EnableProductOverflow", 0,
+            ProductOverflowEntry = Config.Bind("config", "ProductOverflow", 0,
                 "Changing the condition for stopping production of some recipes from single product pile up to all product pile up.\n将部分配方停止生产的条件由单产物堆积改为所有产物均堆积");
 
             QToolsHotkey = Config.Bind("config", "QToolsHotkey", KeyboardShortcut.Deserialize("BackQuote"), "Shortcut to open QTools window");
@@ -322,12 +322,12 @@ namespace ProjectGenesis
             }
         }
 
-        internal static void SetConfig(bool currentLDBToolCache, bool currentHideTechMode, bool currentDisableMessageBox, int currentEnableProductOverflow)
+        internal static void SetConfig(bool currentLDBToolCache, bool currentHideTechMode, bool currentShowMessageBox, int currentProductOverflow)
         {
-            EnableLDBToolCacheEntry.Value = currentLDBToolCache;
-            EnableHideTechModeEntry.Value = currentHideTechMode;
-            DisableMessageBoxEntry.Value = currentDisableMessageBox;
-            EnableProductOverflowEntry.Value = currentEnableProductOverflow;
+            LDBToolCacheEntry.Value = currentLDBToolCache;
+            HideTechModeEntry.Value = currentHideTechMode;
+            ShowMessageBoxEntry.Value = currentShowMessageBox;
+            ProductOverflowEntry.Value = currentProductOverflow;
             logger.LogInfo("SettingChanged");
             configFile.Save();
         }

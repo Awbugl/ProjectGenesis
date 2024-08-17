@@ -12,7 +12,7 @@ namespace ProjectGenesis.Patches.Logic
         [HarmonyPatch(typeof(LDBTool), "Bind")]
         [HarmonyPriority(Priority.VeryHigh)]
         [HarmonyPrefix]
-        public static bool LDBTool_Bind() => ProjectGenesis.EnableLDBToolCacheEntry.Value;
+        public static bool LDBTool_Bind() => ProjectGenesis.LDBToolCacheEntry.Value;
 
         [HarmonyPatch(typeof(VFPreload), nameof(VFPreload.InvokeOnLoadWorkEnded))]
         [HarmonyAfter(LDBToolPlugin.MODGUID)]
@@ -21,7 +21,7 @@ namespace ProjectGenesis.Patches.Logic
         {
             if (_finished) return;
 
-            if (!ProjectGenesis.EnableLDBToolCacheEntry.Value) return;
+            if (!ProjectGenesis.LDBToolCacheEntry.Value) return;
 
             try
             {

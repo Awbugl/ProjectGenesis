@@ -13,9 +13,9 @@ namespace ProjectGenesis.Patches.UI
     {
         private static UIToggle LDBToolCacheToggle,
             HideTechModeToggle,
-            DisableMessageToggle;
+            ShowMessageToggle;
 
-        private static UIComboBox EnableProductOverflowComboBox;
+        private static UIComboBox ProductOverflowComboBox;
 
         private static void Init()
         {
@@ -26,18 +26,18 @@ namespace ProjectGenesis.Patches.UI
             Transform pageParent = languageObj.transform.parent;
 
             CreateSettingObject(queryObj, pageParent, "gb-ldbtc-setting", "UseLDBToolCache".TranslateFromJson(), "UseLDBToolCacheAdditionalText".TranslateFromJson(),
-                new Vector2(30, -220), EnableLDBToolCacheEntry.Value, out LDBToolCacheToggle);
+                new Vector2(30, -220), LDBToolCacheEntry.Value, out LDBToolCacheToggle);
 
-            CreateSettingObject(queryObj, pageParent, "gb-htc-setting", "EnableHideTechMode".TranslateFromJson(), "EnableHideTechModeAdditionalText".TranslateFromJson(),
-                new Vector2(30, -260), EnableHideTechModeEntry.Value, out HideTechModeToggle);
+            CreateSettingObject(queryObj, pageParent, "gb-htc-setting", "HideTechMode".TranslateFromJson(), "HideTechModeAdditionalText".TranslateFromJson(),
+                new Vector2(30, -260), HideTechModeEntry.Value, out HideTechModeToggle);
 
-            CreateSettingObject(queryObj, pageParent, "gb-smb-setting", "DisableMessageBox".TranslateFromJson(), "DisableMessageBoxAdditionalText".TranslateFromJson(),
-                new Vector2(30, -300), DisableMessageBoxEntry.Value, out DisableMessageToggle);
+            CreateSettingObject(queryObj, pageParent, "gb-smb-setting", "ShowMessageBox".TranslateFromJson(), "ShowMessageBoxAdditionalText".TranslateFromJson(),
+                new Vector2(30, -300), ShowMessageBoxEntry.Value, out ShowMessageToggle);
 
-            CreateSettingObject(languageObj, pageParent, "gb-csl-setting", "EnableProductOverflow".TranslateFromJson(),
-                "EnableProductOverflowAdditionalText".TranslateFromJson(),
+            CreateSettingObject(languageObj, pageParent, "gb-csl-setting", "ProductOverflow".TranslateFromJson(),
+                "ProductOverflowAdditionalText".TranslateFromJson(),
                 new List<string> { "默认设置".TranslateFromJson(), "启用全部".TranslateFromJson(), "禁用全部".TranslateFromJson() },
-                new Vector2(30, -340), EnableProductOverflowEntry.Value, out EnableProductOverflowComboBox);
+                new Vector2(30, -340), ProductOverflowEntry.Value, out ProductOverflowComboBox);
         }
 
         private static void CreateSettingObject(GameObject oriObj, Transform parent, string name, string text, string additionalText, Vector2 position, bool defaultValue,
@@ -83,7 +83,7 @@ namespace ProjectGenesis.Patches.UI
             ((RectTransform)comboBox.transform).sizeDelta = new Vector2(400, 30);
 
             Transform transform = settingObj.transform.GetChild(0);
-            comboBox.transform.localPosition = new Vector3(680, 0, 0);
+            transform.localPosition = new Vector3(680, 0, 0);
             Object.DestroyImmediate(transform.GetComponent<Localizer>());
             Text component = transform.GetComponent<Text>();
             component.text = additionalText;
@@ -109,15 +109,15 @@ namespace ProjectGenesis.Patches.UI
 
         private static void Reset()
         {
-            LDBToolCacheToggle.isOn = EnableLDBToolCacheEntry.Value;
-            HideTechModeToggle.isOn = EnableHideTechModeEntry.Value;
-            DisableMessageToggle.isOn = DisableMessageBoxEntry.Value;
-            EnableProductOverflowComboBox.itemIndex = EnableProductOverflowEntry.Value;
+            LDBToolCacheToggle.isOn = LDBToolCacheEntry.Value;
+            HideTechModeToggle.isOn = HideTechModeEntry.Value;
+            ShowMessageToggle.isOn = ShowMessageBoxEntry.Value;
+            ProductOverflowComboBox.itemIndex = ProductOverflowEntry.Value;
         }
 
         [HarmonyPatch(typeof(UIOptionWindow), nameof(UIOptionWindow.OnApplyClick))]
         [HarmonyPostfix]
         public static void UIOptionWindow_OnApplyClick_Postfix() =>
-            SetConfig(LDBToolCacheToggle.isOn, HideTechModeToggle.isOn, DisableMessageToggle.isOn, EnableProductOverflowComboBox.itemIndex);
+            SetConfig(LDBToolCacheToggle.isOn, HideTechModeToggle.isOn, ShowMessageToggle.isOn, ProductOverflowComboBox.itemIndex);
     }
 }
