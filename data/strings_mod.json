@@ -211,8 +211,8 @@
   },
   {
     "Name": "ChangeStackingLogic",
-    "ZHCN": "修改化工配方的堆积逻辑",
-    "ENUS": "Change chemical stacking logic"
+    "ZHCN": "修改部分化工配方的堆积逻辑",
+    "ENUS": "Change some chemical recipes' stacking logic"
   },
   {
     "Name": "UseLDBToolCache",
@@ -236,8 +236,8 @@
   },
   {
     "Name": "ChangeStackingLogicAdditionalText",
-    "ZHCN": "（将化工相关的配方停止生产的判定由单产物堆积改为所有产物均堆积）",
-    "ENUS": "(the decision to stop production has been changed from single product stacking to all products are stacked)"
+    "ZHCN": "（将部分化工配方停止生产的条件由单产物堆积改为所有产物均堆积，立即生效）",
+    "ENUS": "(Changing the condition for stopping production of some chemical recipes from single product pile up to all product pile up, effect immediately)"
   },
   {
     "Name": "UseLDBToolCacheAdditionalText",

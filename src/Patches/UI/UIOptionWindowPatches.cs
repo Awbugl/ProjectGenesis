@@ -12,7 +12,8 @@ namespace ProjectGenesis.Patches.UI
     {
         private static UIToggle LDBToolCacheToggle,
                                 HideTechModeToggle,
-                                DisableMessageToggle;
+                                DisableMessageToggle,
+                                ChangeStackingLogicToggle;
 
         private static void Init()
         {
@@ -28,6 +29,9 @@ namespace ProjectGenesis.Patches.UI
 
             CreateSettingObject(queryObj, pageParent, "gb-smb-setting", "DisableMessageBox".TranslateFromJson(), "DisableMessageBoxAdditionalText".TranslateFromJson(),
                 new Vector2(30, -300), DisableMessageBoxEntry.Value, out DisableMessageToggle);
+
+            CreateSettingObject(queryObj, pageParent, "gb-csl-setting", "ChangeStackingLogic".TranslateFromJson(), "ChangeStackingLogicAdditionalText".TranslateFromJson(),
+                new Vector2(30, -340), ChangeStackingLogicEntry.Value, out ChangeStackingLogicToggle);
         }
 
         private static void CreateSettingObject(GameObject oriObj, Transform parent, string name, string text, string additionalText, Vector2 position, bool defaultValue,
@@ -72,10 +76,11 @@ namespace ProjectGenesis.Patches.UI
             LDBToolCacheToggle.isOn = EnableLDBToolCacheEntry.Value;
             HideTechModeToggle.isOn = EnableHideTechModeEntry.Value;
             DisableMessageToggle.isOn = DisableMessageBoxEntry.Value;
+            ChangeStackingLogicToggle.isOn = ChangeStackingLogicEntry.Value;
         }
 
         [HarmonyPatch(typeof(UIOptionWindow), nameof(UIOptionWindow.OnApplyClick))]
         [HarmonyPostfix]
-        public static void UIOptionWindow_OnApplyClick_Postfix() => SetConfig(LDBToolCacheToggle.isOn, HideTechModeToggle.isOn, DisableMessageToggle.isOn);
+        public static void UIOptionWindow_OnApplyClick_Postfix() => SetConfig(LDBToolCacheToggle.isOn, HideTechModeToggle.isOn, DisableMessageToggle.isOn, ChangeStackingLogicToggle.isOn);
     }
 }

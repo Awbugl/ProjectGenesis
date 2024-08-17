@@ -52,8 +52,8 @@ namespace ProjectGenesis
     {
         public const string MODGUID = "org.LoShin.GenesisBook";
         public const string MODNAME = "GenesisBook";
-        public const string VERSION = "2.9.12";
-        public const string DEBUGVERSION = "";
+        public const string VERSION = "2.9.13";
+        public const string DEBUGVERSION = "preview";
 
         public static bool LoadCompleted;
 
@@ -68,7 +68,8 @@ namespace ProjectGenesis
 
         internal static ConfigEntry<bool> EnableLDBToolCacheEntry,
                                           EnableHideTechModeEntry,
-                                          DisableMessageBoxEntry;
+                                          DisableMessageBoxEntry,
+                                          ChangeStackingLogicEntry;
 
         internal static ConfigEntry<KeyboardShortcut> QToolsHotkey;
 
@@ -94,6 +95,8 @@ namespace ProjectGenesis
                 "Enable Tech Exploration Mode, which will hide locked techs in tech tree.\n启用科技探索模式，启用后将隐藏未解锁的科技");
 
             DisableMessageBoxEntry = Config.Bind("config", "DiableMessageBox", false, "Don't show message when GenesisBook is loaded.\n禁用首次加载时的提示信息");
+
+            ChangeStackingLogicEntry = Config.Bind("config", "ChangeStackingLogic", true, "Changing the condition for stopping production of some chemical recipes from single product pile up to all product pile up.\n将部分化工配方停止生产的条件由单产物堆积改为所有产物均堆积");
 
             QToolsHotkey = Config.Bind("config", "QToolsHotkey", KeyboardShortcut.Deserialize("BackQuote"), "Shortcut to open QTools window");
 
@@ -317,11 +320,12 @@ namespace ProjectGenesis
             }
         }
 
-        internal static void SetConfig(bool currentLDBToolCache, bool currentHideTechMode, bool currentDisableMessageBox)
+        internal static void SetConfig(bool currentLDBToolCache, bool currentHideTechMode, bool currentDisableMessageBox, bool currentEnableProductOverflow)
         {
             EnableLDBToolCacheEntry.Value = currentLDBToolCache;
             EnableHideTechModeEntry.Value = currentHideTechMode;
             DisableMessageBoxEntry.Value = currentDisableMessageBox;
+            ChangeStackingLogicEntry.Value = currentEnableProductOverflow;
             logger.LogInfo("SettingChanged");
             configFile.Save();
         }

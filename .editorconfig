@@ -1,0 +1,52 @@
+
+[*]
+
+# Microsoft .NET properties
+csharp_indent_braces = false
+csharp_new_line_before_open_brace = all
+csharp_preferred_modifier_order = public, private, protected, internal, file, new, static, abstract, virtual, sealed, readonly, override, extern, unsafe, volatile, async, required:suggestion
+csharp_style_var_elsewhere = false:suggestion
+csharp_style_var_for_built_in_types = false:suggestion
+csharp_style_var_when_type_is_apparent = true:suggestion
+dotnet_sort_system_directives_first = true
+dotnet_style_require_accessibility_modifiers = for_non_interface_members:suggestion
+
+# ReSharper properties
+resharper_align_multiline_calls_chain = true
+resharper_blank_lines_after_block_statements = 1
+resharper_blank_lines_after_control_transfer_statements = 1
+resharper_blank_lines_around_auto_property = 1
+resharper_blank_lines_around_field = 1
+resharper_blank_lines_around_property = 1
+resharper_blank_lines_before_case = 1
+resharper_blank_lines_before_control_transfer_statements = 1
+resharper_braces_for_for = required_for_multiline
+resharper_braces_for_foreach = not_required
+resharper_braces_for_ifelse = not_required
+resharper_braces_for_lock = required_for_multiline
+resharper_braces_for_using = not_required
+resharper_braces_for_while = not_required
+resharper_constructor_or_destructor_body = expression_body
+resharper_csharp_blank_lines_around_single_line_invocable = 1
+resharper_csharp_empty_block_style = together_same_line
+resharper_csharp_int_align_comments = true
+resharper_csharp_max_line_length = 172
+resharper_csharp_outdent_dots = true
+resharper_csharp_wrap_multiple_declaration_style = chop_always
+resharper_for_built_in_types = use_var_when_evident
+resharper_indent_preprocessor_region = outdent
+resharper_int_align_nested_ternary = true
+resharper_local_function_body = expression_body
+resharper_max_array_initializer_elements_on_line = 2
+resharper_max_initializer_elements_on_line = 2
+resharper_new_line_before_while = true
+resharper_outdent_binary_ops = true
+resharper_place_accessorholder_attribute_on_same_line = true
+resharper_place_expr_accessor_on_single_line = true
+resharper_place_expr_property_on_single_line = true
+resharper_place_simple_case_statement_on_same_line = true
+resharper_place_simple_embedded_block_on_same_line = true
+resharper_place_simple_embedded_statement_on_same_line = if_owner_is_single_line
+resharper_place_simple_initializer_on_single_line = false
+resharper_remove_blank_lines_near_braces_in_code = true
+resharper_space_before_trailing_comment = true
