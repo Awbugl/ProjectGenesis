@@ -12,10 +12,10 @@ namespace ProjectGenesis.Patches.Logic
     public static class PlanetGasPatches
     {
         private static readonly FieldInfo StationComponent_IsCollector_Field = AccessTools.Field(typeof(StationComponent), nameof(StationComponent.isCollector)),
-                                          PlanetData_GasItems_Field = AccessTools.Field(typeof(PlanetData), nameof(PlanetData.gasItems)),
-                                          StationComponent_isStellar_Field = AccessTools.Field(typeof(StationComponent), nameof(StationComponent.isStellar)),
-                                          PrefabDesc_isStellarStation_Field = AccessTools.Field(typeof(PrefabDesc), nameof(PrefabDesc.isStellarStation)),
-                                          BuildTool_planet_Field = AccessTools.Field(typeof(BuildTool), nameof(BuildTool.planet));
+            PlanetData_GasItems_Field = AccessTools.Field(typeof(PlanetData), nameof(PlanetData.gasItems)),
+            StationComponent_isStellar_Field = AccessTools.Field(typeof(StationComponent), nameof(StationComponent.isStellar)),
+            PrefabDesc_isStellarStation_Field = AccessTools.Field(typeof(PrefabDesc), nameof(PrefabDesc.isStellarStation)),
+            BuildTool_planet_Field = AccessTools.Field(typeof(BuildTool), nameof(BuildTool.planet));
 
         [HarmonyPatch(typeof(UIPlanetDetail), nameof(UIPlanetDetail.OnPlanetDataSet))]
         [HarmonyTranspiler]
@@ -186,7 +186,8 @@ namespace ProjectGenesis.Patches.Logic
             matcher.SetAndAdvance(OpCodes.Nop, null);
             matcher.SetAndAdvance(OpCodes.Nop, null);
 
-            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldc_I4_S, (sbyte)EBuildCondition.NotEnoughEnergyToWorkCollection));
+            matcher.MatchForward(false,
+                new CodeMatch(OpCodes.Ldc_I4_S, (sbyte)EBuildCondition.NotEnoughEnergyToWorkCollection));
             matcher.Advance(-2).SetOpcodeAndAdvance(matcher.Opcode == OpCodes.Bgt_Un_S ? OpCodes.Br_S : OpCodes.Br);
 
             matcher.Advance(-3);
@@ -330,9 +331,9 @@ namespace ProjectGenesis.Patches.Logic
         [HarmonyPostfix]
         public static void StationComponent_UpdateCollection_Postfix(StationComponent __instance)
         {
-            for (var i = 0; i < __instance.collectionIds.Length; i++)
+            lock (__instance.storage)
             {
-                lock (__instance.storage)
+                for (var i = 0; i < __instance.collectionIds.Length; i++)
                 {
                     if (__instance.storage[i].count < __instance.storage[i].max)
                     {

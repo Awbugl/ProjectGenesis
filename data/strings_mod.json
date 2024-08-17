@@ -210,9 +210,9 @@
     "ENUS": "Multiple recipes | Mineable item"
   },
   {
-    "Name": "ChangeStackingLogic",
-    "ZHCN": "修改部分化工配方的堆积逻辑",
-    "ENUS": "Change some chemical recipes' stacking logic"
+    "Name": "EnableProductOverflow",
+    "ZHCN": "配方堆积逻辑",
+    "ENUS": "Recipe Stacking logic"
   },
   {
     "Name": "UseLDBToolCache",
@@ -225,40 +225,45 @@
     "ENUS": "Enable tech exploration mode"
   },
   {
-    "Name": "DisableChemOxygenCollect",
-    "ZHCN": "禁用化工厂自动富集氧气功能",
-    "ENUS": "Disable chemical plants enrich oxygen function"
-  },
-  {
     "Name": "DisableMessageBox",
     "ZHCN": "禁用创世之书加载弹窗",
     "ENUS": "Disable messagebox when loaded"
   },
   {
-    "Name": "ChangeStackingLogicAdditionalText",
-    "ZHCN": "（将部分化工配方停止生产的条件由单产物堆积改为所有产物均堆积，立即生效）",
-    "ENUS": "(Changing the condition for stopping production of some chemical recipes from single product pile up to all product pile up, effect immediately)"
+    "Name": "EnableProductOverflowAdditionalText",
+    "ZHCN": "（选择是否将配方停止生产的条件由单产物堆积改为所有产物均堆积）",
+    "ENUS": "(Whether to change the condition for stopping production of some recipes from single product pile up to all product pile up)"
   },
   {
     "Name": "UseLDBToolCacheAdditionalText",
     "ZHCN": "（可在配置文件中手动修改冲突的MOD物品ID，但启动速度减慢，需要重启游戏才可生效）",
-    "ENUS": "(You can manually modify the conflicting MOD item ID in the configuration file, but the startup speed is slowed down, need to restart the game to take effect)"
+    "ENUS": "(Allow manually modify the conflicting MOD item ID in the configuration file, but the startup speed is slowed down, need to restart the game to take effect)"
   },
   {
     "Name": "EnableHideTechModeAdditionalText",
-    "ZHCN": "（隐藏未解锁的科技，需要重启游戏才可生效）",
-    "ENUS": "(Hide the unlocked technology, need to restart the game to take effect)"
-  },
-  {
-    "Name": "DisableChemOxygenCollectText",
-    "ZHCN": "（禁用化工厂在有氧大气下自动富集氧气并作为原料利用的功能）",
-    "ENUS": "(Disable function of chemical plants that could automatically enrich oxygen and utilize as a source in an aerobic atmosphere)"
+    "ZHCN": "（隐藏未解锁的科技）",
+    "ENUS": "(Hide unlock technology)"
   },
   {
     "Name": "DisableMessageBoxAdditionalText",
     "ZHCN": "（在MOD加载完成后禁用弹窗显示创世之书的额外信息）",
-    "ENUS": "(Disable additional information about GenesisBook in a messagebox after the mod is loaded)"
+    "ENUS": "(Disable additional information about GenesisBook in a messagebox after mod loaded)"
   },
+  {
+    "Name": "默认设置",
+    "ZHCN": "仅对部分配方启用（已在配方介绍中注明）",
+    "ENUS": "Enabled for some recipes only (noted in recipe introduction)"
+  },
+  {
+    "Name": "禁用全部",
+    "ZHCN": "完全禁用此项功能",
+    "ENUS": "Disable this feature completely"
+  },
+  {
+    "Name": "启用全部",
+    "ZHCN": "对所有配方启用",
+    "ENUS": "Enabled for all recipes"
+  },  
   {
     "Name": "星球基地",
     "ZHCN": "行星协调中心",

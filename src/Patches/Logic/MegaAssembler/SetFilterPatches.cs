@@ -12,16 +12,16 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
     internal static partial class MegaAssemblerPatches
     {
         private static readonly FieldInfo UIBeltBuildTip_FilterItems_Field = AccessTools.Field(typeof(UIBeltBuildTip), nameof(UIBeltBuildTip.filterItems)),
-                                          UISlotPicker_FilterItems_Field = AccessTools.Field(typeof(UISlotPicker), nameof(UISlotPicker.filterItems)),
-                                          UIBeltBuildTip_SelectedIndex_Field = AccessTools.Field(typeof(UIBeltBuildTip), nameof(UIBeltBuildTip.selectedIndex)),
-                                          UISlotPicker_SelectedIndex_Field = AccessTools.Field(typeof(UISlotPicker), nameof(UISlotPicker.selectedIndex)),
-                                          UIBeltBuildTip_OutputEntityId_Field = AccessTools.Field(typeof(UIBeltBuildTip), nameof(UIBeltBuildTip.outputEntityId)),
-                                          UISlotPicker_OutputEntityId_Field = AccessTools.Field(typeof(UISlotPicker), nameof(UISlotPicker.outputEntityId)),
-                                          UIBeltBuildTip_OutputSlotId_Field = AccessTools.Field(typeof(UIBeltBuildTip), nameof(UIBeltBuildTip.outputSlotId)),
-                                          UISlotPicker_OutputSlotId_Field = AccessTools.Field(typeof(UISlotPicker), nameof(UISlotPicker.outputSlotId));
+            UISlotPicker_FilterItems_Field = AccessTools.Field(typeof(UISlotPicker), nameof(UISlotPicker.filterItems)),
+            UIBeltBuildTip_SelectedIndex_Field = AccessTools.Field(typeof(UIBeltBuildTip), nameof(UIBeltBuildTip.selectedIndex)),
+            UISlotPicker_SelectedIndex_Field = AccessTools.Field(typeof(UISlotPicker), nameof(UISlotPicker.selectedIndex)),
+            UIBeltBuildTip_OutputEntityId_Field = AccessTools.Field(typeof(UIBeltBuildTip), nameof(UIBeltBuildTip.outputEntityId)),
+            UISlotPicker_OutputEntityId_Field = AccessTools.Field(typeof(UISlotPicker), nameof(UISlotPicker.outputEntityId)),
+            UIBeltBuildTip_OutputSlotId_Field = AccessTools.Field(typeof(UIBeltBuildTip), nameof(UIBeltBuildTip.outputSlotId)),
+            UISlotPicker_OutputSlotId_Field = AccessTools.Field(typeof(UISlotPicker), nameof(UISlotPicker.outputSlotId));
 
         private static readonly MethodInfo MegaAssembler_SetOutputEntity_Patch_Method = AccessTools.Method(typeof(MegaAssemblerPatches), nameof(SetOutputEntity_Patch)),
-                                           MegaAssembler_SetFilterToEntity_Patch_Method = AccessTools.Method(typeof(MegaAssemblerPatches), nameof(SetFilterToEntity_Patch));
+            MegaAssembler_SetFilterToEntity_Patch_Method = AccessTools.Method(typeof(MegaAssemblerPatches), nameof(SetFilterToEntity_Patch));
 
         // prevent a packet flood when the filter on a belt connecting.
         // special thanks for https://github.com/hubastard/nebula/tree/master/NebulaPatcher/Patches/Transpilers/UIBeltBuildTip_Transpiler.cs
@@ -38,7 +38,6 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
 
             matcher.MatchForward(true, new CodeMatch(OpCodes.Ldloc_0), new CodeMatch(OpCodes.Ldfld, PlanetFactory_EntityPool_Field), new CodeMatch(OpCodes.Ldarg_1),
                 new CodeMatch(OpCodes.Ldelem), new CodeMatch(OpCodes.Stloc_3));
-
 
             matcher.Advance(1).CreateLabel(out Label label);
 

@@ -3513,8 +3513,12 @@
     "UnlockRecipes": [
       103
     ],
-    "UnlockFunctions": [],
-    "UnlockValues": [],
+    "UnlockFunctions": [
+      42
+    ],
+    "UnlockValues": [
+      1.0
+    ],
     "Published": true,
     "Level": 0,
     "MaxLevel": 0,

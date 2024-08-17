@@ -53,7 +53,7 @@ namespace ProjectGenesis
         public const string MODGUID = "org.LoShin.GenesisBook";
         public const string MODNAME = "GenesisBook";
         public const string VERSION = "2.9.13";
-        public const string DEBUGVERSION = "preview";
+        public const string DEBUGVERSION = "";
 
         public static bool LoadCompleted;
 
@@ -67,9 +67,10 @@ namespace ProjectGenesis
         internal static string ModPath;
 
         internal static ConfigEntry<bool> EnableLDBToolCacheEntry,
-                                          EnableHideTechModeEntry,
-                                          DisableMessageBoxEntry,
-                                          ChangeStackingLogicEntry;
+            EnableHideTechModeEntry,
+            DisableMessageBoxEntry;
+
+        internal static ConfigEntry<int> EnableProductOverflowEntry;
 
         internal static ConfigEntry<KeyboardShortcut> QToolsHotkey;
 
@@ -94,9 +95,10 @@ namespace ProjectGenesis
             EnableHideTechModeEntry = Config.Bind("config", "HideTechMode", true,
                 "Enable Tech Exploration Mode, which will hide locked techs in tech tree.\n启用科技探索模式，启用后将隐藏未解锁的科技");
 
-            DisableMessageBoxEntry = Config.Bind("config", "DiableMessageBox", false, "Don't show message when GenesisBook is loaded.\n禁用首次加载时的提示信息");
+            DisableMessageBoxEntry = Config.Bind("config", "DisableMessageBox", false, "Don't show message when GenesisBook is loaded.\n禁用首次加载时的提示信息");
 
-            ChangeStackingLogicEntry = Config.Bind("config", "ChangeStackingLogic", true, "Changing the condition for stopping production of some chemical recipes from single product pile up to all product pile up.\n将部分化工配方停止生产的条件由单产物堆积改为所有产物均堆积");
+            EnableProductOverflowEntry = Config.Bind("config", "EnableProductOverflow", 0,
+                "Changing the condition for stopping production of some recipes from single product pile up to all product pile up.\n将部分配方停止生产的条件由单产物堆积改为所有产物均堆积");
 
             QToolsHotkey = Config.Bind("config", "QToolsHotkey", KeyboardShortcut.Deserialize("BackQuote"), "Shortcut to open QTools window");
 
@@ -149,9 +151,9 @@ namespace ProjectGenesis
 
             TableID = new int[]
             {
-                TabSystem.RegisterTab("org.LoShin.GenesisBook:org.LoShin.GenesisBookTab1", new TabData("精炼页面".TranslateFromJsonSpecial(), "Assets/texpack/矿物处理")),
-                TabSystem.RegisterTab("org.LoShin.GenesisBook:org.LoShin.GenesisBookTab2", new TabData("化工页面".TranslateFromJsonSpecial(), "Assets/texpack/化工科技")),
-                TabSystem.RegisterTab("org.LoShin.GenesisBook:org.LoShin.GenesisBookTab3", new TabData("防御页面".TranslateFromJsonSpecial(), "Assets/texpack/防御")),
+                TabSystem.RegisterTab($"{MODGUID}:{MODGUID}Tab1", new TabData("精炼页面".TranslateFromJsonSpecial(), "Assets/texpack/矿物处理")),
+                TabSystem.RegisterTab($"{MODGUID}:{MODGUID}Tab2", new TabData("化工页面".TranslateFromJsonSpecial(), "Assets/texpack/化工科技")),
+                TabSystem.RegisterTab($"{MODGUID}:{MODGUID}Tab3", new TabData("防御页面".TranslateFromJsonSpecial(), "Assets/texpack/防御")),
             };
 
             RegisterStrings();
@@ -320,12 +322,12 @@ namespace ProjectGenesis
             }
         }
 
-        internal static void SetConfig(bool currentLDBToolCache, bool currentHideTechMode, bool currentDisableMessageBox, bool currentEnableProductOverflow)
+        internal static void SetConfig(bool currentLDBToolCache, bool currentHideTechMode, bool currentDisableMessageBox, int currentEnableProductOverflow)
         {
             EnableLDBToolCacheEntry.Value = currentLDBToolCache;
             EnableHideTechModeEntry.Value = currentHideTechMode;
             DisableMessageBoxEntry.Value = currentDisableMessageBox;
-            ChangeStackingLogicEntry.Value = currentEnableProductOverflow;
+            EnableProductOverflowEntry.Value = currentEnableProductOverflow;
             logger.LogInfo("SettingChanged");
             configFile.Save();
         }

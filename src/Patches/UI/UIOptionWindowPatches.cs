@@ -1,4 +1,5 @@
-﻿using HarmonyLib;
+﻿using System.Collections.Generic;
+using HarmonyLib;
 using ProjectGenesis.Utils;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,15 +12,18 @@ namespace ProjectGenesis.Patches.UI
     public static class UIOptionWindowPatches
     {
         private static UIToggle LDBToolCacheToggle,
-                                HideTechModeToggle,
-                                DisableMessageToggle,
-                                ChangeStackingLogicToggle;
+            HideTechModeToggle,
+            DisableMessageToggle;
+
+        private static UIComboBox EnableProductOverflowComboBox;
 
         private static void Init()
         {
             var queryObj = GameObject.Find("UI Root/Overlay Canvas/Top Windows/Option Window/details/content-3/list/scroll-view/viewport/content/demolish-query");
 
-            Transform pageParent = GameObject.Find("UI Root/Overlay Canvas/Top Windows/Option Window/details/content-5/advisor-tips").transform.parent;
+            var languageObj = GameObject.Find("UI Root/Overlay Canvas/Top Windows/Option Window/details/content-5/language");
+
+            Transform pageParent = languageObj.transform.parent;
 
             CreateSettingObject(queryObj, pageParent, "gb-ldbtc-setting", "UseLDBToolCache".TranslateFromJson(), "UseLDBToolCacheAdditionalText".TranslateFromJson(),
                 new Vector2(30, -220), EnableLDBToolCacheEntry.Value, out LDBToolCacheToggle);
@@ -30,8 +34,10 @@ namespace ProjectGenesis.Patches.UI
             CreateSettingObject(queryObj, pageParent, "gb-smb-setting", "DisableMessageBox".TranslateFromJson(), "DisableMessageBoxAdditionalText".TranslateFromJson(),
                 new Vector2(30, -300), DisableMessageBoxEntry.Value, out DisableMessageToggle);
 
-            CreateSettingObject(queryObj, pageParent, "gb-csl-setting", "ChangeStackingLogic".TranslateFromJson(), "ChangeStackingLogicAdditionalText".TranslateFromJson(),
-                new Vector2(30, -340), ChangeStackingLogicEntry.Value, out ChangeStackingLogicToggle);
+            CreateSettingObject(languageObj, pageParent, "gb-csl-setting", "EnableProductOverflow".TranslateFromJson(),
+                "EnableProductOverflowAdditionalText".TranslateFromJson(),
+                new List<string> { "默认设置".TranslateFromJson(), "启用全部".TranslateFromJson(), "禁用全部".TranslateFromJson() },
+                new Vector2(30, -340), EnableProductOverflowEntry.Value, out EnableProductOverflowComboBox);
         }
 
         private static void CreateSettingObject(GameObject oriObj, Transform parent, string name, string text, string additionalText, Vector2 position, bool defaultValue,
@@ -50,9 +56,39 @@ namespace ProjectGenesis.Patches.UI
             toggle.isOn = defaultValue;
             toggle.toggle.onValueChanged.RemoveAllListeners();
 
-            Transform additonalText = settingObj.transform.GetChild(1);
-            Object.DestroyImmediate(additonalText.GetComponent<Localizer>());
-            additonalText.GetComponent<Text>().text = additionalText;
+            Transform transform = settingObj.transform.GetChild(1);
+            Object.DestroyImmediate(transform.GetComponent<Localizer>());
+            transform.GetComponent<Text>().text = additionalText;
+        }
+
+        private static void CreateSettingObject(GameObject oriObj, Transform parent, string name, string text, string additionalText, List<string> values, Vector2 position,
+            int index,
+            out UIComboBox comboBox)
+        {
+            GameObject settingObj = Object.Instantiate(oriObj, parent);
+
+            settingObj.name = name;
+            Object.DestroyImmediate(settingObj.GetComponent<Localizer>());
+            settingObj.GetComponent<Text>().text = text;
+
+            var settingObjTransform = (RectTransform)settingObj.transform;
+            settingObjTransform.anchoredPosition = position;
+
+            comboBox = settingObj.GetComponentInChildren<UIComboBox>();
+            comboBox.Items = values;
+            comboBox.ItemButtons = new List<Button>();
+            comboBox.UpdateItems();
+            comboBox.onItemIndexChange.RemoveAllListeners();
+            comboBox.itemIndex = index;
+            ((RectTransform)comboBox.transform).sizeDelta = new Vector2(400, 30);
+
+            Transform transform = settingObj.transform.GetChild(0);
+            comboBox.transform.localPosition = new Vector3(680, 0, 0);
+            Object.DestroyImmediate(transform.GetComponent<Localizer>());
+            Text component = transform.GetComponent<Text>();
+            component.text = additionalText;
+            component.fontSize = 16;
+            component.color = new Color(1, 1, 1, 0.7843f);
         }
 
         [HarmonyPatch(typeof(UIOptionWindow), nameof(UIOptionWindow._OnOpen))]
@@ -76,11 +112,12 @@ namespace ProjectGenesis.Patches.UI
             LDBToolCacheToggle.isOn = EnableLDBToolCacheEntry.Value;
             HideTechModeToggle.isOn = EnableHideTechModeEntry.Value;
             DisableMessageToggle.isOn = DisableMessageBoxEntry.Value;
-            ChangeStackingLogicToggle.isOn = ChangeStackingLogicEntry.Value;
+            EnableProductOverflowComboBox.itemIndex = EnableProductOverflowEntry.Value;
         }
 
         [HarmonyPatch(typeof(UIOptionWindow), nameof(UIOptionWindow.OnApplyClick))]
         [HarmonyPostfix]
-        public static void UIOptionWindow_OnApplyClick_Postfix() => SetConfig(LDBToolCacheToggle.isOn, HideTechModeToggle.isOn, DisableMessageToggle.isOn, ChangeStackingLogicToggle.isOn);
+        public static void UIOptionWindow_OnApplyClick_Postfix() =>
+            SetConfig(LDBToolCacheToggle.isOn, HideTechModeToggle.isOn, DisableMessageToggle.isOn, EnableProductOverflowComboBox.itemIndex);
     }
 }
