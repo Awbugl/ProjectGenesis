@@ -16,34 +16,36 @@ namespace ProjectGenesis.Patches.UI
             ShowMessageToggle;
 
         private static UIComboBox ProductOverflowComboBox;
+        private static GameObject QueryObj;
+        private static GameObject TipLevelObj;
 
         private static void Init()
         {
-            var queryObj = GameObject.Find("UI Root/Overlay Canvas/Top Windows/Option Window/details/content-3/list/scroll-view/viewport/content/demolish-query");
+            QueryObj = GameObject.Find("UI Root/Overlay Canvas/Top Windows/Option Window/details/content-3/list/scroll-view/viewport/content/demolish-query");
 
-            var languageObj = GameObject.Find("UI Root/Overlay Canvas/Top Windows/Option Window/details/content-5/language");
+            TipLevelObj = GameObject.Find("UI Root/Overlay Canvas/Top Windows/Option Window/details/content-5/tiplevel");
 
-            Transform pageParent = languageObj.transform.parent;
+            Transform pageParent = TipLevelObj.transform.parent;
 
-            CreateSettingObject(queryObj, pageParent, "gb-ldbtc-setting", "UseLDBToolCache".TranslateFromJson(), "UseLDBToolCacheAdditionalText".TranslateFromJson(),
+            CreateSettingObject(pageParent, "gb-ldbtc-setting", "UseLDBToolCache".TranslateFromJson(), "UseLDBToolCacheAdditionalText".TranslateFromJson(),
                 new Vector2(30, -220), LDBToolCacheEntry.Value, out LDBToolCacheToggle);
 
-            CreateSettingObject(queryObj, pageParent, "gb-htc-setting", "HideTechMode".TranslateFromJson(), "HideTechModeAdditionalText".TranslateFromJson(),
+            CreateSettingObject(pageParent, "gb-htc-setting", "HideTechMode".TranslateFromJson(), "HideTechModeAdditionalText".TranslateFromJson(),
                 new Vector2(30, -260), HideTechModeEntry.Value, out HideTechModeToggle);
 
-            CreateSettingObject(queryObj, pageParent, "gb-smb-setting", "ShowMessageBox".TranslateFromJson(), "ShowMessageBoxAdditionalText".TranslateFromJson(),
+            CreateSettingObject(pageParent, "gb-smb-setting", "ShowMessageBox".TranslateFromJson(), "ShowMessageBoxAdditionalText".TranslateFromJson(),
                 new Vector2(30, -300), ShowMessageBoxEntry.Value, out ShowMessageToggle);
 
-            CreateSettingObject(languageObj, pageParent, "gb-csl-setting", "ProductOverflow".TranslateFromJson(),
+            CreateSettingObject(pageParent, "gb-csl-setting", "ProductOverflow".TranslateFromJson(),
                 "ProductOverflowAdditionalText".TranslateFromJson(),
                 new List<string> { "默认设置".TranslateFromJson(), "启用全部".TranslateFromJson(), "禁用全部".TranslateFromJson() },
                 new Vector2(30, -340), ProductOverflowEntry.Value, out ProductOverflowComboBox);
         }
 
-        private static void CreateSettingObject(GameObject oriObj, Transform parent, string name, string text, string additionalText, Vector2 position, bool defaultValue,
+        private static void CreateSettingObject(Transform parent, string name, string text, string additionalText, Vector2 position, bool defaultValue,
             out UIToggle toggle)
         {
-            GameObject settingObj = Object.Instantiate(oriObj, parent);
+            GameObject settingObj = Object.Instantiate(QueryObj, parent);
 
             settingObj.name = name;
             Object.DestroyImmediate(settingObj.GetComponent<Localizer>());
@@ -61,11 +63,11 @@ namespace ProjectGenesis.Patches.UI
             transform.GetComponent<Text>().text = additionalText;
         }
 
-        private static void CreateSettingObject(GameObject oriObj, Transform parent, string name, string text, string additionalText, List<string> values, Vector2 position,
+        private static void CreateSettingObject(Transform parent, string name, string text, string additionalText, List<string> values, Vector2 position,
             int index,
             out UIComboBox comboBox)
         {
-            GameObject settingObj = Object.Instantiate(oriObj, parent);
+            GameObject settingObj = Object.Instantiate(TipLevelObj, parent);
 
             settingObj.name = name;
             Object.DestroyImmediate(settingObj.GetComponent<Localizer>());
@@ -82,13 +84,16 @@ namespace ProjectGenesis.Patches.UI
             comboBox.itemIndex = index;
             ((RectTransform)comboBox.transform).sizeDelta = new Vector2(400, 30);
 
-            Transform transform = settingObj.transform.GetChild(0);
-            transform.localPosition = new Vector3(680, 0, 0);
-            Object.DestroyImmediate(transform.GetComponent<Localizer>());
-            Text component = transform.GetComponent<Text>();
-            component.text = additionalText;
-            component.fontSize = 16;
-            component.color = new Color(1, 1, 1, 0.7843f);
+            if (string.IsNullOrEmpty(additionalText)) return;
+
+            GameObject gameObject = Object.Instantiate(QueryObj.transform.GetChild(1).gameObject, 
+                settingObjTransform);
+            
+            Object.DestroyImmediate(gameObject.GetComponent<Localizer>());
+            gameObject.GetComponent<Text>().text = additionalText;
+            
+            var gameObjectTransform = (RectTransform)gameObject.transform;
+            gameObjectTransform.anchoredPosition = new Vector2(680, 0);
         }
 
         [HarmonyPatch(typeof(UIOptionWindow), nameof(UIOptionWindow._OnOpen))]

@@ -1,3 +1,14 @@
+- v2.9.13
+  + 适配版本v0.10.30.23292
+  + 集装改良科技升级研究完毕后，调整集装分拣器速度为240物品/秒 （感谢萌泪酱的工作）
+  + 重新添加配方堆积逻辑配置项
+  + 下调建造在地核钻井上的地热发电站的基础产出 (300% -> 200%)
+
+  + Adaptation of version v0.10.30.23292
+  + Adjusted the speed of the Pile Sorter to 240/s after the research of the Pile Sorter Upgrade was completed (thanks to MengleiFudge for the work)
+  + Re-added recipe stacking logic configuration item
+  + Downgraded the base energy output of Geothermal Power Station built on Core Driller (300% -> 200%)
+
 - v2.9.12
   + 调整与`深空来敌 v3.0.0`、`更多巨构 v1.3.7` mod的兼容性
 
@@ -5,6 +16,13 @@
 
 <details>
   <summary>点击展开日志 | Click to view all </summary>
+
+
+- v2.9.12
+  + 调整与`深空来敌 v3.0.0`、`更多巨构 v1.3.7` mod的兼容性
+
+  + Adjust compatibility with `TheyComeFromVoid v3.0.0`, `MoreMegaStructures v1.3.7` mod
+
 
 - v2.9.11
   + 适配NebulaMultiplayerModApi版本2.0.0
