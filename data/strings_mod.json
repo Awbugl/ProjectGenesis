@@ -468,5 +468,10 @@
     "Name": "需要氧气",
     "ZHCN": "在无氧大气层中只能使用燃料棒发电",
     "ENUS": "Can only use fuel rods to generate power in anoxic atmosphere"
+  },
+  {
+    "Name": "选择量子频道",
+    "ZHCN": "选择量子频道",
+    "ENUS": "Select Channel"
   }
 ]

@@ -52,8 +52,8 @@ namespace ProjectGenesis
     {
         public const string MODGUID = "org.LoShin.GenesisBook";
         public const string MODNAME = "GenesisBook";
-        public const string VERSION = "2.9.14";
-        public const string DEBUGVERSION = "";
+        public const string VERSION = "2.10.0";
+        public const string DEBUGVERSION = "-alpha1";
 
         public static bool LoadCompleted;
 
@@ -78,14 +78,14 @@ namespace ProjectGenesis
 
         public void Awake()
         {
-        #region Logger
+            #region Logger
 
             logger = Logger;
             logger.Log(LogLevel.Info, "GenesisBook Awake");
 
-        #endregion Logger
+            #endregion Logger
 
-        #region Configs
+            #region Configs
 
             configFile = Config;
 
@@ -95,18 +95,20 @@ namespace ProjectGenesis
             HideTechModeEntry = Config.Bind("config", "HideTechMode", true,
                 "Enable Tech Exploration Mode, which will hide locked techs in tech tree.\n启用科技探索模式，启用后将隐藏未解锁的科技");
 
-            ShowMessageBoxEntry = Config.Bind("config", "ShowMessageBox", true, "Don't show message when GenesisBook is loaded.\n禁用首次加载时的提示信息");
+            ShowMessageBoxEntry = Config.Bind("config", "ShowMessageBox", true,
+                "Don't show message when GenesisBook is loaded.\n禁用首次加载时的提示信息");
 
             ProductOverflowEntry = Config.Bind("config", "ProductOverflow", 0,
                 "Changing the condition for stopping production of some recipes from single product pile up to all product pile up.\n将部分配方停止生产的条件由单产物堆积改为所有产物均堆积");
 
-            QToolsHotkey = Config.Bind("config", "QToolsHotkey", KeyboardShortcut.Deserialize("BackQuote"), "Shortcut to open QTools window");
+            QToolsHotkey = Config.Bind("config", "QToolsHotkey", KeyboardShortcut.Deserialize("BackQuote"),
+                "Shortcut to open QTools window");
 
             Config.Save();
 
-        #endregion Configs
+            #endregion Configs
 
-        #region ResourceData
+            #region ResourceData
 
             var executingAssembly = Assembly.GetExecutingAssembly();
 
@@ -120,23 +122,30 @@ namespace ProjectGenesis
             resources_models.LoadAssetBundle("genesis-models");
             ProtoRegistry.AddResource(resources_models);
 
-            Shader stoneVeinShader = resources_models.bundle.LoadAsset<Shader>("Assets/genesis-models/shaders/PBR Standard Vein Stone COLOR.shader");
+            Shader stoneVeinShader =
+                resources_models.bundle.LoadAsset<Shader>(
+                    "Assets/genesis-models/shaders/PBR Standard Vein Stone COLOR.shader");
             SwapShaderPatches.AddSwapShaderMapping("VF Shaders/Forward/PBR Standard Vein Stone", stoneVeinShader);
 
-            Shader metalVeinShader = resources_models.bundle.LoadAsset<Shader>("Assets/genesis-models/shaders/PBR Standard Vein Metal COLOR.shader");
+            Shader metalVeinShader =
+                resources_models.bundle.LoadAsset<Shader>(
+                    "Assets/genesis-models/shaders/PBR Standard Vein Metal COLOR.shader");
             SwapShaderPatches.AddSwapShaderMapping("VF Shaders/Forward/PBR Standard Vein Metal", metalVeinShader);
 
-        #endregion ResourceData
+            #endregion ResourceData
 
-        #region NebulaModAPI
+            #region NebulaModAPI
 
             NebulaModAPI.RegisterPackets(executingAssembly);
 
-            NebulaModAPI.OnPlanetLoadRequest += planetId => { NebulaModAPI.MultiplayerSession.Network.SendPacket(new GenesisBookPlanetLoadRequest(planetId)); };
+            NebulaModAPI.OnPlanetLoadRequest += planetId =>
+            {
+                NebulaModAPI.MultiplayerSession.Network.SendPacket(new GenesisBookPlanetLoadRequest(planetId));
+            };
 
             NebulaModAPI.OnPlanetLoadFinished += GenesisBookPlanetDataProcessor.ProcessBytesLater;
 
-        #endregion NebulaModAPI
+            #endregion NebulaModAPI
 
             Harmony = new Harmony(MODGUID);
 
@@ -151,9 +160,12 @@ namespace ProjectGenesis
 
             TableID = new int[]
             {
-                TabSystem.RegisterTab($"{MODGUID}:{MODGUID}Tab1", new TabData("精炼页面".TranslateFromJsonSpecial(), "Assets/texpack/矿物处理")),
-                TabSystem.RegisterTab($"{MODGUID}:{MODGUID}Tab2", new TabData("化工页面".TranslateFromJsonSpecial(), "Assets/texpack/化工科技")),
-                TabSystem.RegisterTab($"{MODGUID}:{MODGUID}Tab3", new TabData("防御页面".TranslateFromJsonSpecial(), "Assets/texpack/防御")),
+                TabSystem.RegisterTab($"{MODGUID}:{MODGUID}Tab1",
+                    new TabData("精炼页面".TranslateFromJsonSpecial(), "Assets/texpack/矿物处理")),
+                TabSystem.RegisterTab($"{MODGUID}:{MODGUID}Tab2",
+                    new TabData("化工页面".TranslateFromJsonSpecial(), "Assets/texpack/化工科技")),
+                TabSystem.RegisterTab($"{MODGUID}:{MODGUID}Tab3",
+                    new TabData("防御页面".TranslateFromJsonSpecial(), "Assets/texpack/防御")),
             };
 
             RegisterStrings();
@@ -174,6 +186,7 @@ namespace ProjectGenesis
 
         public void Export(BinaryWriter w)
         {
+            w.Write(VersionNumber());
             MegaAssemblerPatches.Export(w);
             PlanetFocusPatches.Export(w);
             QuantumStoragePatches.Export(w);
@@ -182,6 +195,7 @@ namespace ProjectGenesis
 
         public void Import(BinaryReader r)
         {
+            var version = r.ReadInt32();
             MegaAssemblerPatches.Import(r);
             PlanetFocusPatches.Import(r);
             QuantumStoragePatches.Import(r);
@@ -322,7 +336,8 @@ namespace ProjectGenesis
             }
         }
 
-        internal static void SetConfig(bool currentLDBToolCache, bool currentHideTechMode, bool currentShowMessageBox, int currentProductOverflow)
+        internal static void SetConfig(bool currentLDBToolCache, bool currentHideTechMode, bool currentShowMessageBox,
+            int currentProductOverflow)
         {
             LDBToolCacheEntry.Value = currentLDBToolCache;
             HideTechModeEntry.Value = currentHideTechMode;
@@ -333,5 +348,12 @@ namespace ProjectGenesis
         }
 
         internal static void LogInfo(object data) => logger.LogInfo(data);
+
+        internal static int VersionNumber()
+        {
+            var version = new Version();
+            version.FromFullString(VERSION);
+            return version.sig;
+        }
     }
 }
