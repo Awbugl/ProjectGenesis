@@ -120,7 +120,7 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
 
                 AssemblerComponent assembler = factory.factorySystem.assemblerPool[assemblerId];
 
-                if (assembler.id != assemblerId || assembler.speed < TrashSpeed) return;
+                if (assembler.id != assemblerId || assembler.speed < MegaAssemblerSpeed) return;
 
                 if (__instance.parameters == null || __instance.parameters.Length < 2048) Array.Resize(ref __instance.parameters, 2048);
 

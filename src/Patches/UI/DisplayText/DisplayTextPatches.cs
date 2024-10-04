@@ -74,12 +74,14 @@ namespace ProjectGenesis.Patches.UI.DisplayText
             {
                 case 2:
                     __result = "裂变能".TranslateFromJson();
-
                     break;
 
                 case 16:
                     __result = "聚变能".TranslateFromJson();
-
+                    break;
+                
+                case 31:
+                    __result = "黑雾能".TranslateFromJson();
                     break;
             }
         }

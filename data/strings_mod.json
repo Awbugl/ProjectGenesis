@@ -415,6 +415,11 @@
     "ENUS": "Fusion Energy"
   },
   {
+    "Name": "黑雾能",
+    "ZHCN": "自由能",
+    "ENUS": "Free Energy"
+  },
+  {
     "Name": "质能转换",
     "ZHCN": "质能转换",
     "ENUS": "Mass-Energy Conversion"

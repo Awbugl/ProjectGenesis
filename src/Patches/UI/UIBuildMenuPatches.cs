@@ -145,13 +145,18 @@ namespace ProjectGenesis.Patches.UI
             {
                 if (ci.opcode == OpCodes.Ldc_R4)
                 {
-                    var operand = (float)ci.operand;
-
-                    if (operand is 780f) ci.operand = 830f;
-
-                    if (operand is 810f) ci.operand = 860f;
-
-                    if (operand is 820f) ci.operand = 870f;
+                    switch ((float)ci.operand)
+                    {
+                        case 780f:
+                            ci.operand = 830f;
+                            break;
+                        case 810f:
+                            ci.operand = 860f;
+                            break;
+                        case 820f:
+                            ci.operand = 870f;
+                            break;
+                    }
                 }
 
                 yield return ci;

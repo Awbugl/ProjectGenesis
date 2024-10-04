@@ -6288,7 +6288,10 @@
     "MiningFrom": "",
     "ProduceFrom": "",
     "Grade": 1,
-    "Upgrades": [],
+    "Upgrades": [
+      2303,
+      2318
+    ],
     "IsEntity": true,
     "CanBuild": true,
     "BuildInGas": false,
@@ -6339,8 +6342,11 @@
     "SubID": 0,
     "MiningFrom": "",
     "ProduceFrom": "",
-    "Grade": 2,
-    "Upgrades": [],
+    "Grade": 1,
+    "Upgrades": [
+      2304,
+      2318
+    ],
     "IsEntity": true,
     "CanBuild": true,
     "BuildInGas": false,
@@ -6391,8 +6397,11 @@
     "SubID": 0,
     "MiningFrom": "",
     "ProduceFrom": "",
-    "Grade": 3,
-    "Upgrades": [],
+    "Grade": 1,
+    "Upgrades": [
+      2305,
+      2318
+    ],
     "IsEntity": true,
     "CanBuild": true,
     "BuildInGas": false,
@@ -7072,7 +7081,7 @@
     "SubID": 0,
     "MiningFrom": "",
     "ProduceFrom": "",
-    "Grade": 4,
+    "Grade": 2,
     "Upgrades": [],
     "IsEntity": true,
     "CanBuild": true,
@@ -7125,11 +7134,7 @@
     "MiningFrom": "",
     "ProduceFrom": "",
     "Grade": 3,
-    "Upgrades": [
-      2302,
-      2315,
-      2319
-    ],
+    "Upgrades": [],
     "IsEntity": true,
     "CanBuild": true,
     "BuildInGas": false,
@@ -8500,7 +8505,7 @@
       0,
       40
     ],
-    "FuelType": 1,
+    "FuelType": 31,
     "HeatValue": 3600000,
     "ReactorInc": 0.2,
     "IsFluid": false,

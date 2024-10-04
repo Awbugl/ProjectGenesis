@@ -209,7 +209,7 @@
   },
   {
     "ModelID": 456,
-    "assemblerSpeed": 40000,
+    "assemblerSpeed": 80000,
     "assemblerRecipeType": 12
   },
   {
@@ -323,7 +323,7 @@
     "assemblerRecipeType": 14,
     "idleEnergyPerTick": 500000,
     "workEnergyPerTick": 500000,
-    "assemblerSpeed": 60000,
+    "assemblerSpeed": 300000,
     "stationMaxEnergyAcc": 0,
     "stationMaxItemCount": 0,
     "stationMaxItemKinds": 0,

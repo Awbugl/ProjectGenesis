@@ -11,7 +11,7 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
 {
     internal static partial class MegaAssemblerPatches
     {
-        private const int TrashSpeed = 60000;
+        private const int MegaAssemblerSpeed = 300000;
 
         private static readonly FieldInfo EntityData_StationId_Field = AccessTools.Field(typeof(EntityData), nameof(EntityData.stationId)),
                                           EntityData_AssemblerId_Field = AccessTools.Field(typeof(EntityData), nameof(EntityData.assemblerId)),
@@ -92,7 +92,7 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
             bool b = power >= 0.1f;
 
             // MegaBuildings
-            if (__instance.speed >= TrashSpeed)
+            if (__instance.speed >= MegaAssemblerSpeed)
             {
                 SlotData[] slotdata = GetSlots(factory.planetId, __instance.entityId);
                 CargoTraffic cargoTraffic = factory.cargoTraffic;
@@ -354,7 +354,7 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
 
             AssemblerComponent assembler = __instance.factorySystem.assemblerPool[assemblerId];
 
-            if (assembler.id != assemblerId || assembler.speed < TrashSpeed) return;
+            if (assembler.id != assemblerId || assembler.speed < MegaAssemblerSpeed) return;
 
             int beltId = __instance.entityPool[insertTarget].beltId;
 
@@ -379,7 +379,7 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
 
             AssemblerComponent assembler = __instance.factorySystem.assemblerPool[assemblerId];
 
-            if (assembler.id != assemblerId || assembler.speed < TrashSpeed) return;
+            if (assembler.id != assemblerId || assembler.speed < MegaAssemblerSpeed) return;
 
             int beltId = __instance.entityPool[pickTarget].beltId;
 
@@ -406,7 +406,7 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
 
             AssemblerComponent assembler = __instance.factorySystem.assemblerPool[assemblerId];
 
-            if (assembler.id != assemblerId || assembler.speed < TrashSpeed) return;
+            if (assembler.id != assemblerId || assembler.speed < MegaAssemblerSpeed) return;
 
             int beltId = __instance.entityPool[removingEntityId].beltId;
 
@@ -438,7 +438,7 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
         [HarmonyPatch(typeof(FactorySystem), nameof(FactorySystem.NewAssemblerComponent))]
         public static void FactorySystem_NewAssemblerComponent(ref FactorySystem __instance, int entityId, int speed)
         {
-            if (speed >= TrashSpeed) __instance.factory.entityPool[entityId].stationId = 0;
+            if (speed >= MegaAssemblerSpeed) __instance.factory.entityPool[entityId].stationId = 0;
         }
 
         [HarmonyPatch(typeof(PlanetFactory), nameof(PlanetFactory.Import))]

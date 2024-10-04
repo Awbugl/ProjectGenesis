@@ -74,26 +74,24 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
         {
             AssemblerComponent assemblerComponent = factory.factorySystem.assemblerPool[entityData.assemblerId];
 
-            if (assemblerComponent.speed >= TrashSpeed)
+            if (assemblerComponent.speed < MegaAssemblerSpeed) return -1;
+            
+            if (assemblerComponent.recipeId > 0)
             {
-                if (assemblerComponent.recipeId > 0)
-                {
-                    filterItems.AddRange(assemblerComponent.products);
-                    filterItems.AddRange(assemblerComponent.requires);
-                }
-                else
-                    filterItems.AddRange(Enumerable.Repeat(0, 6));
-
-                entityData.stationId = 0;
-
-                if (slot >= 0 && slot < 12) return GetSlots(factory.planetId, entityId)[slot].storageIdx;
-
-                Assert.CannotBeReached();
-
-                return -1;
+                filterItems.AddRange(assemblerComponent.products);
+                filterItems.AddRange(assemblerComponent.requires);
             }
+            else
+                filterItems.AddRange(Enumerable.Repeat(0, 6));
+
+            entityData.stationId = 0;
+
+            if (slot >= 0 && slot < 12) return GetSlots(factory.planetId, entityId)[slot].storageIdx;
+
+            Assert.CannotBeReached();
 
             return -1;
+
         }
 
         [HarmonyPatch(typeof(UIBeltBuildTip), nameof(UIBeltBuildTip.SetFilterToEntity))]
@@ -140,7 +138,7 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
         {
             AssemblerComponent assemblerComponent = factory.factorySystem.assemblerPool[entityData.assemblerId];
 
-            if (assemblerComponent.speed < TrashSpeed) return;
+            if (assemblerComponent.speed < MegaAssemblerSpeed) return;
 
             SlotData[] slotDatas = GetSlots(factory.planetId, outputEntityId);
             slotDatas[outputSlotId].storageIdx = selectedIndex;

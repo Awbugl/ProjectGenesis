@@ -902,8 +902,11 @@
     "SubID": 0,
     "MiningFrom": "",
     "ProduceFrom": "",
-    "Grade": 0,
-    "Upgrades": [],
+    "Grade": 1,
+    "Upgrades": [
+      6230,
+      2319
+    ],
     "IsEntity": true,
     "CanBuild": true,
     "BuildInGas": false,
