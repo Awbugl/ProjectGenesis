@@ -2576,8 +2576,8 @@
   },
   {
     "ID": 1202,
-    "Name": "铜线圈",
-    "Description": "I铜线圈",
+    "Name": "磁线圈",
+    "Description": "I磁线圈",
     "IconPath": "Icons/ItemRecipe/magnetism-wire",
     "GridIndex": 1302,
     "StackSize": 100,

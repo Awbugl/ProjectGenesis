@@ -325,11 +325,6 @@
     "ENUS": "Tungsten ore"
   },
   {
-    "Name": "铜线圈",
-    "ZHCN": "铜线圈",
-    "ENUS": "Copper Coil"
-  },
-  {
     "Name": "混凝土",
     "ZHCN": "混凝土",
     "ENUS": "Concrete"
@@ -1948,11 +1943,6 @@
     "Name": "I钨矿",
     "ZHCN": "稀有矿物。钨作为化学性质稳定的重金属通常埋藏于行星深处，但在特殊的地质构造条件下，深层岩浆热液的硅铝或碳酸盐建造作用可作用于表层岩体，使星球的表面出现成规模的钨矿。",
     "ENUS": "A rare mineral. As a chemically stable heavy metal, tungsten is usually buried deep in the planet, but under special geological and tectonic conditions, the silica-aluminum or carbonate building action of deep magmatic hydrothermal fluids can act on the surface rocks and cause tungsten ores to appear on the planet's surface."
-  },
-  {
-    "Name": "I铜线圈",
-    "ZHCN": "最基本的电磁元件，非常实用。",
-    "ENUS": "The most basic electromagnetic components, very practical."
   },
   {
     "Name": "I焦油",
