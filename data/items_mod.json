@@ -1024,12 +1024,12 @@
     "DropRate": 0.0,
     "EnemyDropLevel": 4,
     "EnemyDropRange": [
-      0.964,
-      0.003
+      0.193,
+      0.002
     ],
-    "EnemyDropCount": 0.8,
+    "EnemyDropCount": 0.5,
     "EnemyDropMask": 2147483647,
-    "EnemyDropMaskRatio": 0.0
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 6235,
@@ -1273,15 +1273,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0.0,
-    "EnemyDropLevel": 7,
+    "DropRate": 0,
+    "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0.987,
-      0.002
+      0,
+      0
     ],
-    "EnemyDropCount": 0.7,
-    "EnemyDropMask": 2147483647,
-    "EnemyDropMaskRatio": 0.0
+    "EnemyDropCount": 0,
+    "EnemyDropMask": 0,
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 6245,
@@ -2181,12 +2181,12 @@
     "DropRate": 0.0,
     "EnemyDropLevel": 8,
     "EnemyDropRange": [
-      0.998,
-      0.002
+      0.196,
+      0.001
     ],
-    "EnemyDropCount": 0.25,
+    "EnemyDropCount": 0.3,
     "EnemyDropMask": 2147483647,
-    "EnemyDropMaskRatio": 0.0
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 6273,
@@ -5287,12 +5287,12 @@
     "DropRate": 0.0,
     "EnemyDropLevel": 6,
     "EnemyDropRange": [
-      0.98,
-      0.004
+      0.195,
+      0.001
     ],
-    "EnemyDropCount": 0.7,
+    "EnemyDropCount": 0.4,
     "EnemyDropMask": 2147483647,
-    "EnemyDropMaskRatio": 0.0
+    "EnemyDropMaskRatio": 0
   },
   {
     "ID": 7708,
