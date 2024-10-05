@@ -1,3 +1,17 @@
+- v2.10.0-alpha2
+  + 调整了`戈壁`和`黑石岩滩`星球上的`放射性矿脉`生成参数
+  + 调整了所有矩阵的制造需求（影响存档）
+  + 从击杀地面黑雾后的掉落物清单中移除了所有燃料棒
+
+  + Adjusted the generation parameters for 'radioactive veins' on the planets 'Gobi' and 'Blackstone'.
+  + Adjusted the manufacturing requirements for all matrices (affects save).
+  + Removed all rods from the drop list after killing ground dark fog.
+
+
+<details>
+  <summary>点击展开日志 | Click to view all </summary>
+
+
 - v2.10.0-alpha1 量子秘域 | Quantum Enclaves
   + 修复了传送带两端颜色不正确的问题（感谢starfi5h的工作）
   + 修复了在`高频激光塔`攻击时升降级导致的存档损坏问题（影响存档）
@@ -15,9 +29,6 @@
   + Adjusted the capacity of the Quantum Storage to 80 (affects save)
   + (Experimental feature, may cause performance issues) Added channel functionality to the Quantum Storage, items are not shared between different channels (affects save)
 
-
-<details>
-  <summary>点击展开日志 | Click to view all </summary>
 
 - v2.9.13
   + 适配版本v0.10.30.23292
