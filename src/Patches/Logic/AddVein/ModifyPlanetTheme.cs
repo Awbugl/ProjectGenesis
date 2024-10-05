@@ -60,8 +60,9 @@ namespace ProjectGenesis.Patches.Logic.AddVein
                 })
             },
             {
-                12, new AddVeinData(new[] { 17, }, new[]
+                12, new AddVeinData(new[] { 16, 17, }, new[]
                 {
+                    1.0f, 1.0f, 0.7f, 0.7f, //
                     0.2f, 0.6f, 0.3f, 0.8f, //
                 })
             },
@@ -81,7 +82,7 @@ namespace ProjectGenesis.Patches.Logic.AddVein
             {
                 17, new AddVeinData(new[] { 16, }, new[]
                 {
-                    0.2f, 0.6f, 0.2f, 0.8f, //
+                    1.0f, 1.0f, 0.7f, 0.7f, //
                 })
             },
             {
