@@ -75,32 +75,6 @@ namespace ProjectGenesis.Patches.UI
             if (__result > 6) __result = 6;
         }
         
-        [HarmonyPatch(typeof(LabComponent), nameof(LabComponent.InternalUpdateResearch))]
-        [HarmonyTranspiler]
-        public static IEnumerable<CodeInstruction> LabComponent_InternalUpdateResearch_Transpiler(
-            IEnumerable<CodeInstruction> instructions)
-        {
-        //IL_012f: ldarg.0      // this
-        //IL_0130: ldc.i4.1
-        //IL_0131: stfld        bool LabComponent::replicating
-            var matcher = new CodeMatcher(instructions);
-
-            matcher.MatchForward(false,
-                
-                new CodeMatch(OpCodes.Ldarg_0),
-                
-                new CodeMatch(OpCodes.Ldc_I4_1),
-                
-                new CodeMatch(OpCodes.Stfld,
-                    AccessTools.Field(typeof(LabComponent), nameof(LabComponent.replicating))));
-
-            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Call,
-                AccessTools.Method(typeof(UILabWindowPatches), nameof(Patch_Method))));
-
-            return matcher.InstructionEnumeration();
-        }
-        
-
         [HarmonyPatch(typeof(LabComponent), nameof(LabComponent.SetFunction))]
         [HarmonyPatch(typeof(LabMatrixEffect), nameof(LabMatrixEffect.Update))]
         [HarmonyPatch(typeof(FactorySystem), nameof(FactorySystem.GameTickLabResearchMode))]
