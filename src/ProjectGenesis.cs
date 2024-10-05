@@ -282,7 +282,18 @@ namespace ProjectGenesis
             turretNeed[2] = ProtoID.I超合金弹箱;
 
             ItemProto.stationCollectorId = ProtoID.I轨道采集器;
-            LabComponent.matrixIds = new[] { 6001, 6002, 6003, 6004, 6005, 6006, 6278, 6279, 6280 };
+            LabComponent.matrixIds = new[]
+            {
+                ProtoID.I电磁矩阵,
+                ProtoID.I能量矩阵,
+                ProtoID.I结构矩阵,
+                ProtoID.I信息矩阵,
+                ProtoID.I引力矩阵,
+                ProtoID.I宇宙矩阵,
+                ProtoID.I通量矩阵,
+                ProtoID.I空间矩阵,
+                ProtoID.I宇宙矩阵粗坯,
+            };
 
             ItemPostFix();
 
