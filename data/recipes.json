@@ -208,12 +208,14 @@
     "IconPath": "",
     "Type": 15,
     "GridIndex": 1701,
-    "Time": 180,
+    "Time": 360,
     "Input": [
       1202,
-      1301
+      1301,
+      1110
     ],
     "InCounts": [
+      1,
       1,
       1
     ],
@@ -221,7 +223,7 @@
       6001
     ],
     "OutCounts": [
-      1
+      2
     ],
     "Explicit": false,
     "Handcraft": true,
@@ -450,12 +452,14 @@
     "IconPath": "",
     "Type": 15,
     "GridIndex": 1702,
-    "Time": 180,
+    "Time": 360,
     "Input": [
       1109,
-      1120
+      7006,
+      1401
     ],
     "InCounts": [
+      1,
       1,
       1
     ],
@@ -463,7 +467,7 @@
       6002
     ],
     "OutCounts": [
-      1
+      2
     ],
     "Explicit": false,
     "Handcraft": true,
@@ -688,12 +692,14 @@
     "IconPath": "",
     "Type": 15,
     "GridIndex": 1703,
-    "Time": 180,
+    "Time": 360,
     "Input": [
       1118,
-      6204
+      6204,
+      1112
     ],
     "InCounts": [
+      1,
       1,
       1
     ],
@@ -701,7 +707,7 @@
       6003
     ],
     "OutCounts": [
-      1
+      2
     ],
     "Explicit": false,
     "Handcraft": true,
@@ -1446,12 +1452,14 @@
     "IconPath": "",
     "Type": 15,
     "GridIndex": 1704,
-    "Time": 180,
+    "Time": 360,
     "Input": [
       1303,
-      1402
+      1402,
+      7708
     ],
     "InCounts": [
+      1,
       1,
       1
     ],
@@ -1459,7 +1467,7 @@
       6004
     ],
     "OutCounts": [
-      1
+      2
     ],
     "Explicit": false,
     "Handcraft": true,
@@ -1982,12 +1990,14 @@
     "IconPath": "",
     "Type": 15,
     "GridIndex": 1706,
-    "Time": 180,
+    "Time": 360,
     "Input": [
       6280,
+      1120,
       1122
     ],
     "InCounts": [
+      2,
       1,
       1
     ],
@@ -1995,7 +2005,7 @@
       6006
     ],
     "OutCounts": [
-      1
+      2
     ],
     "Explicit": false,
     "Handcraft": false,
@@ -2702,12 +2712,14 @@
     "IconPath": "",
     "Type": 15,
     "GridIndex": 1705,
-    "Time": 180,
+    "Time": 360,
     "Input": [
       1209,
-      1305
+      1305,
+      7709
     ],
     "InCounts": [
+      1,
       1,
       1
     ],
@@ -2715,7 +2727,7 @@
       6005
     ],
     "OutCounts": [
-      1
+      2
     ],
     "Explicit": false,
     "Handcraft": true,
@@ -5412,20 +5424,22 @@
     "IconPath": "",
     "Type": 9,
     "GridIndex": 1707,
-    "Time": 180,
+    "Time": 360,
     "Input": [
       6001,
-      6002
+      6002,
+      1302
     ],
     "InCounts": [
-      1,
+      2,
+      2,
       1
     ],
     "Output": [
       6278
     ],
     "OutCounts": [
-      1
+      2
     ],
     "Explicit": false,
     "Handcraft": false,
@@ -5438,20 +5452,22 @@
     "IconPath": "",
     "Type": 9,
     "GridIndex": 1708,
-    "Time": 180,
+    "Time": 360,
     "Input": [
       6003,
-      6004
+      6004,
+      1206
     ],
     "InCounts": [
-      1,
+      2,
+      2,
       1
     ],
     "Output": [
       6279
     ],
     "OutCounts": [
-      1
+      2
     ],
     "Explicit": false,
     "Handcraft": false,
