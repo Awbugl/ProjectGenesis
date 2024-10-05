@@ -49,14 +49,18 @@ namespace ProjectGenesis.Patches.UI
                 }
             }
 
-            for (var i = 0; i < __instance.itemButtons.Length; i++)
+            SetPosition(__instance);
+            SwapPosition(__instance, 4, 5);
+        }
+
+        private static void SetPosition(UILabWindow window)
+        {
+            for (var i = 0; i < window.itemButtons.Length; i++)
             {
-                __instance.itemButtons[i].gameObject.GetComponent<RectTransform>().anchoredPosition =
+                window.itemButtons[i].gameObject.GetComponent<RectTransform>().anchoredPosition =
                     // ReSharper disable once PossibleLossOfFraction
                     new Vector2((i % 3 - 1) * 105, (i / 3) * -105 + 105);
             }
-
-            SwapPosition(__instance, 4, 5);
         }
 
         private static void SwapPosition(UILabWindow window, int pos1, int pos2)
@@ -74,7 +78,70 @@ namespace ProjectGenesis.Patches.UI
         {
             if (__result > 6) __result = 6;
         }
-        
+
+        [HarmonyPatch(typeof(UILabWindow), nameof(UILabWindow._OnUpdate))]
+        [HarmonyPostfix]
+        public static void UILabWindow_OnUpdate_Postfix(UILabWindow __instance)
+        {
+            LabComponent lab = __instance.factorySystem.labPool[__instance.labId];
+            if (lab.id != __instance.labId)
+            {
+                __instance._Close();
+                return;
+            }
+
+            if (lab.matrixMode)
+            {
+                for (int index = 0; index < __instance.itemButtons.Length; ++index)
+                {
+                    var enabled = __instance.itemIcons[index].enabled;
+                    var button = __instance.itemButtons[index];
+                    if (enabled)
+                    {
+                        var rectTransform = button.gameObject.GetComponent<RectTransform>();
+                        var x = rectTransform.anchoredPosition.x;
+                        rectTransform.anchoredPosition = new Vector2(x, 0);
+                    }
+
+                    button.gameObject.SetActive(enabled);
+                }
+            }
+            else
+            {
+                for (var i = 0; i < __instance.itemButtons.Length; i++)
+                {
+                    var button = __instance.itemButtons[i];
+                    button.gameObject.SetActive(true);
+                    button.gameObject.GetComponent<RectTransform>().anchoredPosition =
+                        // ReSharper disable once PossibleLossOfFraction
+                        new Vector2((i % 3 - 1) * 105, (i / 3) * -105 + 105);
+                }
+                
+                SwapPosition(__instance, 4, 5);
+            }
+        }
+
+        [HarmonyPatch(typeof(UILabWindow), nameof(UILabWindow._OnUpdate))]
+        [HarmonyTranspiler]
+        public static IEnumerable<CodeInstruction> UILabWindow_OnUpdate_Transpiler(
+            IEnumerable<CodeInstruction> instructions)
+        {
+            var matcher = new CodeMatcher(instructions);
+
+            matcher.MatchForward(true,
+                new CodeMatch(OpCodes.Ldloc_0),
+                new CodeMatch(OpCodes.Ldfld,
+                    AccessTools.Field(typeof(LabComponent), nameof(LabComponent.timeSpend))));
+
+            matcher.Advance(1).InsertAndAdvance(
+                new CodeInstruction(OpCodes.Ldloc_0),
+                new CodeInstruction(OpCodes.Call,
+                    AccessTools.Method(typeof(UILabWindowPatches), nameof(UILabWindow_OnUpdate_Patch_Method))));
+
+            return matcher.InstructionEnumeration();
+        }
+
+
         [HarmonyPatch(typeof(LabComponent), nameof(LabComponent.SetFunction))]
         [HarmonyPatch(typeof(LabMatrixEffect), nameof(LabMatrixEffect.Update))]
         [HarmonyPatch(typeof(FactorySystem), nameof(FactorySystem.GameTickLabResearchMode))]
@@ -89,7 +156,7 @@ namespace ProjectGenesis.Patches.UI
                     AccessTools.Field(typeof(LabComponent), nameof(LabComponent.matrixIds))));
 
             matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Call,
-                AccessTools.Method(typeof(UILabWindowPatches), nameof(Patch_Method))));
+                AccessTools.Method(typeof(UILabWindowPatches), nameof(LabComponent_SetFunction_Patch_Method))));
 
             return matcher.InstructionEnumeration();
         }
@@ -100,17 +167,6 @@ namespace ProjectGenesis.Patches.UI
             IEnumerable<CodeInstruction> instructions, ILGenerator ilGenerator)
         {
             var matcher = new CodeMatcher(instructions, ilGenerator);
-
-            /*
-                  IL_0147: br.s         IL_0154
-                  IL_0149: ldloc.s      num2
-                  IL_014b: ldc.i4.5
-                  IL_014c: bne.un.s     IL_0154
-                  IL_014e: ldc.i4.s     32 // 0x20
-                  IL_0150: stloc.s      index1
-                  IL_0152: br.s         IL_0167
-                  IL_0154: ldloc.s      index2
-             */
 
             matcher.MatchForward(false,
                 new CodeMatch(OpCodes.Ldc_I4_5),
@@ -134,14 +190,20 @@ namespace ProjectGenesis.Patches.UI
 
             matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_S, index1),
                 new CodeInstruction(OpCodes.Call,
-                    AccessTools.Method(typeof(UILabWindowPatches), nameof(Patch_Method2))),
+                    AccessTools.Method(typeof(UILabWindowPatches),
+                        nameof(FactorySystem_GameTickLabResearchMode_Patch_Method))),
                 new CodeInstruction(OpCodes.Stloc_S, index1),
                 new CodeInstruction(OpCodes.Br_S, brlabel));
 
             return matcher.InstructionEnumeration();
         }
 
-        public static int Patch_Method(int itemId)
+        public static int UILabWindow_OnUpdate_Patch_Method(int timeSpend, LabComponent component)
+        {
+            return timeSpend / component.productCounts[0];
+        }
+
+        public static int LabComponent_SetFunction_Patch_Method(int itemId)
         {
             switch (itemId)
             {
@@ -152,7 +214,7 @@ namespace ProjectGenesis.Patches.UI
             }
         }
 
-        public static int Patch_Method2(int num2, int index1)
+        public static int FactorySystem_GameTickLabResearchMode_Patch_Method(int num2, int index1)
         {
             switch (num2)
             {
