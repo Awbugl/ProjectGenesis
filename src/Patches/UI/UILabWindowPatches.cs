@@ -19,7 +19,6 @@ namespace ProjectGenesis.Patches.UI
 
             const int len = 9;
 
-            Array.Resize(ref __instance.centerObjs, len);
             Array.Resize(ref __instance.itemButtons, len);
             Array.Resize(ref __instance.itemIcons, len);
             Array.Resize(ref __instance.itemPercents, len);
@@ -34,7 +33,6 @@ namespace ProjectGenesis.Patches.UI
                 var newButton = Object.Instantiate(itemButtonsGameObject,
                     itemButtonsGameObject.transform.parent);
 
-                __instance.centerObjs[i] = newButton;
                 __instance.itemButtons[i] = newButton.GetComponent<UIButton>();
                 __instance.itemIcons[i] = newButton.transform.Find("icon").GetComponent<Image>();
                 __instance.itemPercents[i] = newButton.transform.Find("fg").GetComponent<Image>();
