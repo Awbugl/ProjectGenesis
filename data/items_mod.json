@@ -2678,7 +2678,7 @@
       3,
       40
     ],
-    "FuelType": 1,
+    "FuelType": 31,
     "HeatValue": 1,
     "ReactorInc": 0.0,
     "IsFluid": false,
@@ -2727,7 +2727,7 @@
       3,
       40
     ],
-    "FuelType": 1,
+    "FuelType": 31,
     "HeatValue": 1,
     "ReactorInc": 0.0,
     "IsFluid": false,
@@ -2776,7 +2776,7 @@
       3,
       40
     ],
-    "FuelType": 1,
+    "FuelType": 31,
     "HeatValue": 1,
     "ReactorInc": 0.0,
     "IsFluid": false,
@@ -2872,7 +2872,7 @@
       3,
       40
     ],
-    "FuelType": 1,
+    "FuelType": 31,
     "HeatValue": 1,
     "ReactorInc": 0.0,
     "IsFluid": false,
@@ -2921,7 +2921,7 @@
       3,
       40
     ],
-    "FuelType": 1,
+    "FuelType": 31,
     "HeatValue": 1,
     "ReactorInc": 0.0,
     "IsFluid": false,
@@ -2970,7 +2970,7 @@
       3,
       40
     ],
-    "FuelType": 1,
+    "FuelType": 31,
     "HeatValue": 1,
     "ReactorInc": 0.0,
     "IsFluid": false,
@@ -3019,7 +3019,7 @@
       3,
       40
     ],
-    "FuelType": 1,
+    "FuelType": 31,
     "HeatValue": 1,
     "ReactorInc": 0.0,
     "IsFluid": false,
@@ -3068,7 +3068,7 @@
       3,
       40
     ],
-    "FuelType": 1,
+    "FuelType": 31,
     "HeatValue": 1,
     "ReactorInc": 0.0,
     "IsFluid": false,
@@ -3117,7 +3117,7 @@
       3,
       40
     ],
-    "FuelType": 1,
+    "FuelType": 31,
     "HeatValue": 1,
     "ReactorInc": 0.0,
     "IsFluid": false,
@@ -3166,7 +3166,7 @@
       3,
       40
     ],
-    "FuelType": 1,
+    "FuelType": 31,
     "HeatValue": 1,
     "ReactorInc": 0.0,
     "IsFluid": false,
@@ -3215,7 +3215,7 @@
       3,
       40
     ],
-    "FuelType": 1,
+    "FuelType": 31,
     "HeatValue": 1,
     "ReactorInc": 0.0,
     "IsFluid": false,
@@ -3264,7 +3264,7 @@
       3,
       40
     ],
-    "FuelType": 1,
+    "FuelType": 31,
     "HeatValue": 1,
     "ReactorInc": 0.0,
     "IsFluid": false,
@@ -3313,7 +3313,7 @@
       3,
       40
     ],
-    "FuelType": 1,
+    "FuelType": 31,
     "HeatValue": 1,
     "ReactorInc": 0.0,
     "IsFluid": false,
@@ -3362,7 +3362,7 @@
       3,
       40
     ],
-    "FuelType": 1,
+    "FuelType": 31,
     "HeatValue": 1,
     "ReactorInc": 0.0,
     "IsFluid": false,
