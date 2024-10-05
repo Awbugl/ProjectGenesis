@@ -14,10 +14,11 @@ namespace ProjectGenesis.Patches.UI
         [HarmonyPostfix]
         public static void UILabWindow_OnCreate_Postfix(UILabWindow __instance)
         {
-            __instance.GetComponent<RectTransform>().sizeDelta = new Vector2(620, 620);
+            __instance.GetComponent<RectTransform>().sizeDelta = new Vector2(640, 520);
+            __instance.transform.Find("matrix-group/lines").gameObject.SetActive(false);
 
             const int len = 9;
-            
+
             Array.Resize(ref __instance.centerObjs, len);
             Array.Resize(ref __instance.itemButtons, len);
             Array.Resize(ref __instance.itemIcons, len);
@@ -45,7 +46,15 @@ namespace ProjectGenesis.Patches.UI
                     var transform = newButton.transform.Find("icon");
                     __instance.itemIncs[i * 3 + j] = transform.GetChild(j).GetComponent<Image>();
                 }
-            }LabRenderer
+
+                newButton.GetComponent<RectTransform>().anchoredPosition =
+                    new Vector2((i - 7) * 103, -180);
+            }
+        }
+
+        private static void SwapPosition(GameObject centerObj1, GameObject centerObj2)
+        {
+            
         }
 
         [HarmonyPatch(typeof(LabComponent), nameof(LabComponent.InternalUpdateAssemble))]
