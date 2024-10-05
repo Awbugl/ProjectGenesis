@@ -5422,7 +5422,7 @@
     "Name": "通量矩阵",
     "Description": "",
     "IconPath": "",
-    "Type": 9,
+    "Type": 15,
     "GridIndex": 1707,
     "Time": 360,
     "Input": [
@@ -5442,15 +5442,15 @@
       2
     ],
     "Explicit": false,
-    "Handcraft": false,
-    "NonProductive": true
+    "Handcraft": true,
+    "NonProductive": false
   },
   {
     "ID": 540,
     "Name": "空间矩阵",
     "Description": "",
     "IconPath": "",
-    "Type": 9,
+    "Type": 15,
     "GridIndex": 1708,
     "Time": 360,
     "Input": [
@@ -5470,8 +5470,8 @@
       2
     ],
     "Explicit": false,
-    "Handcraft": false,
-    "NonProductive": true
+    "Handcraft": true,
+    "NonProductive": false
   },
   {
     "ID": 541,
@@ -5534,7 +5534,7 @@
     "Name": "宇宙矩阵粗坯",
     "Description": "",
     "IconPath": "",
-    "Type": 9,
+    "Type": 15,
     "GridIndex": 1709,
     "Time": 180,
     "Input": [
@@ -5554,8 +5554,8 @@
       1
     ],
     "Explicit": false,
-    "Handcraft": false,
-    "NonProductive": true
+    "Handcraft": true,
+    "NonProductive": false
   },
   {
     "ID": 550,

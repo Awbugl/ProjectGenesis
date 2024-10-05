@@ -2,7 +2,7 @@
 using System.Linq;
 using Mono.Cecil;
 
-namespace ProjectGenesis.Preloader
+namespace ProjectGenesis
 {
     public static class Preloader
     {

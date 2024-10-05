@@ -255,9 +255,9 @@
     "ENUS": "Planet Atmosphere"
   },
   {
-    "Name": "虫洞航行文字描述",
-    "ZHCN": "在空间曲面上开辟一个一次性虫洞，实现超远程折跃。",
-    "ENUS": "Open a one-time wormhole on the space surface to achieve ultra-long-range leap."
+    "Name": "量子折跃文字描述",
+    "ZHCN": "使用大量的能量激活负熵奇点，短暂进入虚数空间以实现超远程折跃。",
+    "ENUS": "Use a large amount of energy to activate a negative entropy singularity and briefly enter void space for a hyper-remote folding leap."
   },
   {
     "Name": "巨型建筑工程学文字描述",
@@ -1400,12 +1400,12 @@
     "ENUS": "Incremental Production"
   },
   {
-    "Name": "T虫洞航行",
+    "Name": "T量子折跃",
     "ZHCN": "量子折跃",
     "ENUS": "Quantum Navigation"
   },
   {
-    "Name": "T虫洞航行描述",
+    "Name": "T量子折跃描述",
     "ZHCN": "消耗1个<color=\"#FD965ECC\">负熵奇点</color>和 12GJ 能量短暂进入虚数空间，并将机甲传送至<color=\"#FD965ECC\">星图模式</color>下选择的任意星球，但请小心星轨间的干扰。\r\n<color=\"#FD965ECC\">警告：</color>该科技的相关技术已被COSMO技术伦理委员会禁用，<color=\"#FD965ECC\">请手动研究。</color>",
     "ENUS": "Consumes 1 <color=\"#FD965ECC\">Negentropy Singularity</color> and 12GJ mecha energy to open up a rift to imaginary space and teleport the mecha to any planet selected in <color=\"#FD965ECC\">Star Map Mode</color>, but be careful of the interference between the orbits.\r\n<color=\"#FD965ECC\">Warning:</color> This technology has been prohibited by the COSMO Technology Ethics Committee. <color=\"#FD965ECC\">Please initiate such research manually.</color>"
   },

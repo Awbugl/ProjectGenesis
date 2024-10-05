@@ -1247,10 +1247,10 @@
   },
   {
     "ID": 1152,
-    "Name": "T虫洞航行",
+    "Name": "T量子折跃",
     "IconPath": "Assets/texpack/虫洞航行",
-    "Desc": "T虫洞航行描述",
-    "Conclusion": "T虫洞航行描述",
+    "Desc": "T量子折跃描述",
+    "Conclusion": "T量子折跃描述",
     "IsHiddenTech": true,
     "PreItem": [
       5204,

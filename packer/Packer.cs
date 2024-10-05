@@ -1,13 +1,12 @@
 ﻿using System.Diagnostics;
 using System.IO;
 using System.IO.Compression;
+using System.Linq;
 using Newtonsoft.Json;
 
-// ReSharper disable LoopCanBePartlyConvertedToQuery
-
-namespace ProjectGenesis.Packer
+namespace ProjectGenesis
 {
-    internal static class Program
+    internal static class Packer
     {
         private const string SolutionPath = @"D:\Git\ProjectGenesis";
 
@@ -15,9 +14,8 @@ namespace ProjectGenesis.Packer
         {
             string releasePath = Path.Combine(SolutionPath, "release");
 
-            foreach (string path in Directory.GetFiles(releasePath, "*.zip"))
-                if (File.Exists(path))
-                    File.Delete(path);
+            foreach (var path in Directory.GetFiles(releasePath, "*.zip").Where(File.Exists))
+                File.Delete(path);
 
             File.WriteAllText(Path.Combine(releasePath, "manifest.json"), JsonConvert.SerializeObject(new ManifestObject(), Formatting.Indented));
 
@@ -34,7 +32,7 @@ namespace ProjectGenesis.Packer
             Process.Start("explorer", releasePath);
         }
     }
-
+    
     public class ManifestObject
     {
         [JsonProperty("name")] public string Name { get; set; } = "GenesisBook";
