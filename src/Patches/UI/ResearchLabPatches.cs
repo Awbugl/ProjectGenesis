@@ -234,10 +234,11 @@ namespace ProjectGenesis.Patches.UI
             matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Call,
                 AccessTools.Method(typeof(ResearchLabPatches), nameof(ChangeMatrixIds))));
 
-            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldc_I4_6),
-                new CodeMatch(OpCodes.Bge));
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldc_I4_6));
 
-            matcher.SetInstructionAndAdvance(new CodeInstruction(OpCodes.Ldc_I4_S, (sbyte)9));
+            matcher.SetInstructionAndAdvance(new CodeInstruction(
+                OpCodes.Ldsfld, AccessTools.Field(typeof(LabComponent), nameof(LabComponent.matrixIds))));
+            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldlen));
 
             return matcher.InstructionEnumeration();
         }
@@ -247,23 +248,19 @@ namespace ProjectGenesis.Patches.UI
         [HarmonyPriority(Priority.First)]
         public static bool LabComponent_UpdateNeedsResearch_Prefix(ref LabComponent __instance)
         {
+            var tech = LDB.techs.Select(__instance.techId);
+
             const int num = 36000;
 
             int needIndex = 0;
 
-            for (int i = 0; i < __instance.matrixServed.Length; i++)
+            foreach (var need in tech.Items)
             {
-                if (__instance.matrixServed[i] < num)
-                {
-                    __instance.needs[needIndex++] = LabComponent.matrixIds[i];
-                }
-            }
+                var itemIndex = Array.IndexOf(LabComponent.matrixIds, need);
 
-            if (needIndex < 6)
-            {
-                for (int i = needIndex; i < 6; i++)
+                if (itemIndex > 0 && __instance.matrixServed[itemIndex] < num)
                 {
-                    __instance.needs[i] = 0;
+                    __instance.needs[needIndex++] = need;
                 }
             }
 
@@ -367,10 +364,10 @@ namespace ProjectGenesis.Patches.UI
             {
                 if (labComponent.matrixServed[i] >= 3600 && labPool[labComponent.nextLabId].matrixServed[i] < 3600)
                 {
-                    int num = labComponent.split_inc(ref labComponent.matrixServed[0],
-                        ref labComponent.matrixIncServed[0], 3600);
-                    labPool[labComponent.nextLabId].matrixIncServed[0] += num;
-                    labPool[labComponent.nextLabId].matrixServed[0] += 3600;
+                    int num = labComponent.split_inc(ref labComponent.matrixServed[i],
+                        ref labComponent.matrixIncServed[i], 3600);
+                    labPool[labComponent.nextLabId].matrixIncServed[i] += num;
+                    labPool[labComponent.nextLabId].matrixServed[i] += 3600;
                 }
             }
         }
