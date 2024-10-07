@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Reflection.Emit;
-using CommonAPI;
 using HarmonyLib;
 using ProjectGenesis.Utils;
 using UnityEngine;
@@ -193,6 +192,82 @@ namespace ProjectGenesis.Patches.UI
             return matcher.InstructionEnumeration();
         }
 
+        [HarmonyPatch(typeof(LabComponent), nameof(LabComponent.InternalUpdateResearch))]
+        [HarmonyTranspiler]
+        public static IEnumerable<CodeInstruction> LabComponent_InternalUpdateResearch_Transpiler(
+            IEnumerable<CodeInstruction> instructions, ILGenerator ilGenerator)
+        {
+            var matcher = new CodeMatcher(instructions, ilGenerator);
+
+            matcher.MatchForward(false,
+                new CodeMatch(OpCodes.Ldarg_0),
+                new CodeMatch(OpCodes.Ldfld,
+                    AccessTools.Field(typeof(LabComponent), nameof(LabComponent.matrixPoints))));
+
+            matcher.CreateLabel(out var label);
+
+            matcher.InsertAndAdvance(
+                new CodeInstruction(OpCodes.Ldarg_0),
+                new CodeInstruction(OpCodes.Ldloc_0),
+                new CodeInstruction(OpCodes.Call,
+                    AccessTools.Method(typeof(ResearchLabPatches),
+                        nameof(LabComponent_InternalUpdateResearch_Patch_Method))),
+                new CodeInstruction(OpCodes.Brtrue, label),
+                new CodeInstruction(OpCodes.Ldc_I4_0),
+                new CodeInstruction(OpCodes.Ret)
+            );
+
+            return matcher.InstructionEnumeration();
+        }
+
+
+        [HarmonyPatch(typeof(LabComponent), nameof(LabComponent.UpdateNeedsResearch))]
+        [HarmonyPrefix]
+        [HarmonyPriority(Priority.First)]
+        public static bool LabComponent_UpdateNeedsResearch_Prefix(ref LabComponent component)
+        {
+            const int num = 36000;
+
+            int needIndex = 0;
+
+            for (int i = 0; i < component.matrixServed.Length; i++)
+            {
+                if (component.matrixServed[i] < num)
+                {
+                    component.needs[needIndex++] = LabComponent.matrixIds[i];
+                }
+            }
+
+            if (needIndex < 6)
+            {
+                for (int i = needIndex; i < 6; i++)
+                {
+                    component.needs[i] = 0;
+                }
+            }
+
+            return false;
+        }
+
+        public static int LabComponent_InternalUpdateResearch_Patch_Method(ref LabComponent labComponent, int num1)
+        {
+            for (int i = 6; i < 8; i++)
+            {
+                if (labComponent.matrixPoints[i] <= 0) continue;
+                int point = labComponent.matrixServed[i] / labComponent.matrixPoints[i];
+
+                if (point >= num1) continue;
+
+                num1 = point;
+                if (num1 != 0) continue;
+
+                labComponent.replicating = false;
+                return 0;
+            }
+
+            return num1;
+        }
+
         public static int UILabWindow_OnUpdate_Patch_Method(int timeSpend, LabComponent component)
         {
             return timeSpend / component.productCounts[0];
@@ -225,6 +300,58 @@ namespace ProjectGenesis.Patches.UI
             }
 
             return index1;
+        }
+
+        [HarmonyPatch(typeof(LabComponent), nameof(LabComponent.UpdateOutputToNext))]
+        [HarmonyTranspiler]
+        public static IEnumerable<CodeInstruction> LabComponent_UpdateOutputToNext_Transpiler(
+            IEnumerable<CodeInstruction> instructions)
+        {
+            var matcher = new CodeMatcher(instructions);
+
+            matcher.MatchForward(true,
+                new CodeMatch(OpCodes.Ldarg_0),
+                new CodeMatch(OpCodes.Ldfld,
+                    AccessTools.Field(typeof(LabComponent), nameof(LabComponent.needs))),
+                new CodeMatch(OpCodes.Ldc_I4_5),
+                new CodeMatch(OpCodes.Ldelem_I4)
+            );
+
+            var leaveLabel = matcher.Advance(1).Operand;
+
+            matcher.Start().MatchForward(false,
+                new CodeMatch(OpCodes.Ldarg_0),
+                new CodeMatch(OpCodes.Ldfld,
+                    AccessTools.Field(typeof(LabComponent), nameof(LabComponent.needs))),
+                new CodeMatch(OpCodes.Ldc_I4_0),
+                new CodeMatch(OpCodes.Ldelem_I4)
+            );
+
+            matcher.InsertAndAdvance(
+                new CodeInstruction(OpCodes.Ldarg_0),
+                new CodeInstruction(OpCodes.Ldarg_1),
+                new CodeInstruction(OpCodes.Call,
+                    AccessTools.Method(typeof(ResearchLabPatches),
+                        nameof(LabComponent_UpdateOutputToNext_Patch_Method))),
+                new CodeInstruction(OpCodes.Br, leaveLabel)
+            );
+
+            return matcher.InstructionEnumeration();
+        }
+
+        public static void LabComponent_UpdateOutputToNext_Patch_Method(ref LabComponent labComponent,
+            LabComponent[] labPool)
+        {
+            for (int i = 0; i < LabComponent.matrixIds.Length; i++)
+            {
+                if (labComponent.matrixServed[i] >= 3600 && labPool[labComponent.nextLabId].matrixServed[i] < 3600)
+                {
+                    int num = labComponent.split_inc(ref labComponent.matrixServed[0],
+                        ref labComponent.matrixIncServed[0], 3600);
+                    labPool[labComponent.nextLabId].matrixIncServed[0] += num;
+                    labPool[labComponent.nextLabId].matrixServed[0] += 3600;
+                }
+            }
         }
     }
 }
