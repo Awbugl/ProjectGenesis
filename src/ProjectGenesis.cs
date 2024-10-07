@@ -53,7 +53,7 @@ namespace ProjectGenesis
         public const string MODGUID = "org.LoShin.GenesisBook";
         public const string MODNAME = "GenesisBook";
         public const string VERSION = "2.10.0";
-        public const string DEBUGVERSION = "-alpha2";
+        public const string DEBUGVERSION = "-alpha3";
 
         public static bool LoadCompleted;
 
@@ -233,6 +233,19 @@ namespace ProjectGenesis
             vegeProto.MiningChance = new float[] { 1, 1, 1, };
             vegeProto.Preload();
 
+            LabComponent.matrixIds = new[]
+            {
+                ProtoID.I电磁矩阵,
+                ProtoID.I能量矩阵,
+                ProtoID.I结构矩阵,
+                ProtoID.I信息矩阵,
+                ProtoID.I引力矩阵,
+                ProtoID.I宇宙矩阵,
+                ProtoID.I通量矩阵,
+                ProtoID.I空间矩阵,
+                ProtoID.I宇宙矩阵粗坯,
+            };
+
             LDB.items.OnAfterDeserialize();
             LDB.recipes.OnAfterDeserialize();
             LDB.techs.OnAfterDeserialize();
@@ -282,18 +295,6 @@ namespace ProjectGenesis
             turretNeed[2] = ProtoID.I超合金弹箱;
 
             ItemProto.stationCollectorId = ProtoID.I轨道采集器;
-            LabComponent.matrixIds = new[]
-            {
-                ProtoID.I电磁矩阵,
-                ProtoID.I能量矩阵,
-                ProtoID.I结构矩阵,
-                ProtoID.I信息矩阵,
-                ProtoID.I引力矩阵,
-                ProtoID.I宇宙矩阵,
-                ProtoID.I通量矩阵,
-                ProtoID.I空间矩阵,
-                ProtoID.I宇宙矩阵粗坯,
-            };
 
             ItemPostFix();
 

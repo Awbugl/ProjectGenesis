@@ -285,9 +285,11 @@
     ],
     "PreTechsImplicit": [],
     "Items": [
-      6278
+      6001,
+      6002
     ],
     "ItemPoints": [
+      20,
       20
     ],
     "HashNeeded": 72000,
@@ -2450,7 +2452,7 @@
     "Items": [
       6280
     ],
-    "ItemPoints": [      
+    "ItemPoints": [
       10
     ],
     "HashNeeded": 720000,
@@ -2536,7 +2538,7 @@
     "Items": [
       6278
     ],
-    "ItemPoints": [     
+    "ItemPoints": [
       20
     ],
     "HashNeeded": 108000,
@@ -5344,11 +5346,9 @@
     ],
     "PreTechsImplicit": [],
     "Items": [
-      6001,
-      6002
+      6278
     ],
     "ItemPoints": [
-      20,
       20
     ],
     "HashNeeded": 72000,
