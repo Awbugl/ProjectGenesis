@@ -250,6 +250,12 @@ namespace ProjectGenesis.Patches.UI
         {
             var tech = LDB.techs.Select(__instance.techId);
 
+            if (tech?.Items == null)
+            {
+                Array.Fill(__instance.needs, 0);
+                return false;
+            }
+
             const int num = 36000;
 
             int needIndex = 0;
