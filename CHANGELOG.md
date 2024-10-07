@@ -1,3 +1,13 @@
+- v2.10.0-alpha3 (Experimental 0.3.10003)
+  + 调整了大多数科研的需求
+
+  + Adjusted the research requirements for most technologies.
+
+
+<details>
+  <summary>点击展开日志 | Click to view all </summary>
+
+
 - v2.10.0-alpha2 (Experimental 0.3.10002)
   + 调整了`戈壁`和`黑石岩滩`星球上的`放射性矿脉`生成参数
   + 调整了所有矩阵的制造需求（影响存档）
@@ -6,10 +16,6 @@
   + Adjusted the generation parameters for 'radioactive veins' on the planets 'Gobi' and 'Blackstone'.
   + Adjusted the manufacturing requirements for all matrices (affects save).
   + Removed all rods from the drop list after killing ground dark fog.
-
-
-<details>
-  <summary>点击展开日志 | Click to view all </summary>
 
 
 - v2.10.0-alpha1 量子秘域 | Quantum Enclaves
