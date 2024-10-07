@@ -1,11 +1,17 @@
-- v2.10.0-alpha3 (Experimental 0.3.10003)
-  + 调整了大多数科研的需求
+- v2.10.0-alpha4 (Experimental 0.3.10004)
+  + 修复了矩阵研究站不将电磁矩阵视为矩阵的bug
 
-  + Adjusted the research requirements for most technologies.
+  + Fixed a bug that the Matrix Lab was not treating electromagnetic matrix as a matrix
 
 
 <details>
   <summary>点击展开日志 | Click to view all </summary>
+
+
+- v2.10.0-alpha3 (Experimental 0.3.10003)
+  + 调整了大多数科研的需求
+
+  + Adjusted the research requirements for most technologies.
 
 
 - v2.10.0-alpha2 (Experimental 0.3.10002)

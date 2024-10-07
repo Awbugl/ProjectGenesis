@@ -18,7 +18,7 @@ namespace ProjectGenesis.Patches.UI
         [HarmonyPostfix]
         public static void UILabWindow_OnCreate_Postfix(UILabWindow __instance)
         {
-            __instance.GetComponent<RectTransform>().sizeDelta = new Vector2(640, 420);
+            __instance.GetComponent<RectTransform>().sizeDelta = new Vector2(640, 430);
             __instance.transform.Find("matrix-group/lines").gameObject.SetActive(false);
 
             const int len = 9;
@@ -257,15 +257,13 @@ namespace ProjectGenesis.Patches.UI
                 return false;
             }
 
-            const int num = 36000;
-
             int needIndex = 0;
 
             foreach (var need in tech.Items)
             {
                 var itemIndex = Array.IndexOf(LabComponent.matrixIds, need);
 
-                if (itemIndex > 0 && __instance.matrixServed[itemIndex] < num)
+                if (itemIndex >= 0 && __instance.matrixServed[itemIndex] < 36000)
                 {
                     __instance.needs[needIndex++] = need;
                 }
