@@ -12,7 +12,7 @@ using Object = UnityEngine.Object;
 
 namespace ProjectGenesis.Patches.UI
 {
-    public static class UILabWindowPatches
+    public static class ResearchLabPatches
     {
         [HarmonyPatch(typeof(UILabWindow), nameof(UILabWindow._OnCreate))]
         [HarmonyPostfix]
@@ -137,7 +137,7 @@ namespace ProjectGenesis.Patches.UI
             matcher.Advance(1).InsertAndAdvance(
                 new CodeInstruction(OpCodes.Ldloc_0),
                 new CodeInstruction(OpCodes.Call,
-                    AccessTools.Method(typeof(UILabWindowPatches), nameof(UILabWindow_OnUpdate_Patch_Method))));
+                    AccessTools.Method(typeof(ResearchLabPatches), nameof(UILabWindow_OnUpdate_Patch_Method))));
 
             return matcher.InstructionEnumeration();
         }
@@ -157,7 +157,7 @@ namespace ProjectGenesis.Patches.UI
                     AccessTools.Field(typeof(LabComponent), nameof(LabComponent.matrixIds))));
 
             matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Call,
-                AccessTools.Method(typeof(UILabWindowPatches), nameof(ChangeMatrixIds))));
+                AccessTools.Method(typeof(ResearchLabPatches), nameof(ChangeMatrixIds))));
 
             return matcher.InstructionEnumeration();
         }
@@ -185,7 +185,7 @@ namespace ProjectGenesis.Patches.UI
 
             matcher.Advance(5).InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_S, index1),
                 new CodeInstruction(OpCodes.Call,
-                    AccessTools.Method(typeof(UILabWindowPatches),
+                    AccessTools.Method(typeof(ResearchLabPatches),
                         nameof(FactorySystem_GameTickLabResearchMode_Patch_Method))),
                 new CodeInstruction(OpCodes.Stloc_S, index1),
                 new CodeInstruction(OpCodes.Br_S, brlabel));
