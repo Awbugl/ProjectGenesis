@@ -152,8 +152,8 @@ namespace ProjectGenesis.Patches.UI
             var matcher = new CodeMatcher(instructions);
 
             matcher.MatchForward(false,
-                new CodeMatch(OpCodes.Ldsfld,
-                    AccessTools.Field(typeof(LabComponent), nameof(LabComponent.matrixIds))));
+                new CodeMatch(OpCodes.Ldsfld, AccessTools.Field(typeof(LabComponent), nameof(LabComponent.matrixIds))),
+                new CodeMatch(OpCodes.Ldc_I4_0));
 
             matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Call,
                 AccessTools.Method(typeof(ResearchLabPatches), nameof(ChangeMatrixIds))));
@@ -212,6 +212,8 @@ namespace ProjectGenesis.Patches.UI
                 new CodeInstruction(OpCodes.Call,
                     AccessTools.Method(typeof(ResearchLabPatches),
                         nameof(LabComponent_InternalUpdateResearch_Patch_Method))),
+                new CodeInstruction(OpCodes.Dup),
+                new CodeInstruction(OpCodes.Stloc_0),
                 new CodeInstruction(OpCodes.Brtrue, label),
                 new CodeInstruction(OpCodes.Ldc_I4_0),
                 new CodeInstruction(OpCodes.Ret)
@@ -220,21 +222,40 @@ namespace ProjectGenesis.Patches.UI
             return matcher.InstructionEnumeration();
         }
 
+        [HarmonyPatch(typeof(PlanetFactory), nameof(PlanetFactory.InsertInto))]
+        [HarmonyTranspiler]
+        public static IEnumerable<CodeInstruction> PlanetFactory_InsertInto_Transpiler(
+            IEnumerable<CodeInstruction> instructions)
+        {
+            var matcher = new CodeMatcher(instructions);
+
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldc_I4, 6001));
+
+            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Call,
+                AccessTools.Method(typeof(ResearchLabPatches), nameof(ChangeMatrixIds))));
+
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldc_I4_6),
+                new CodeMatch(OpCodes.Bge));
+
+            matcher.SetInstructionAndAdvance(new CodeInstruction(OpCodes.Ldc_I4_S, (sbyte)9));
+
+            return matcher.InstructionEnumeration();
+        }
 
         [HarmonyPatch(typeof(LabComponent), nameof(LabComponent.UpdateNeedsResearch))]
         [HarmonyPrefix]
         [HarmonyPriority(Priority.First)]
-        public static bool LabComponent_UpdateNeedsResearch_Prefix(ref LabComponent component)
+        public static bool LabComponent_UpdateNeedsResearch_Prefix(ref LabComponent __instance)
         {
             const int num = 36000;
 
             int needIndex = 0;
 
-            for (int i = 0; i < component.matrixServed.Length; i++)
+            for (int i = 0; i < __instance.matrixServed.Length; i++)
             {
-                if (component.matrixServed[i] < num)
+                if (__instance.matrixServed[i] < num)
                 {
-                    component.needs[needIndex++] = LabComponent.matrixIds[i];
+                    __instance.needs[needIndex++] = LabComponent.matrixIds[i];
                 }
             }
 
@@ -242,7 +263,7 @@ namespace ProjectGenesis.Patches.UI
             {
                 for (int i = needIndex; i < 6; i++)
                 {
-                    component.needs[i] = 0;
+                    __instance.needs[i] = 0;
                 }
             }
 
