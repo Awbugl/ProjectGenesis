@@ -264,6 +264,11 @@ namespace ProjectGenesis.Patches.UI
                 }
             }
 
+            for (int i = needIndex; i < __instance.needs.Length; i++)
+            {
+                __instance.needs[i] = 0;
+            }
+
             return false;
         }
 
@@ -362,7 +367,7 @@ namespace ProjectGenesis.Patches.UI
         {
             for (int i = 0; i < LabComponent.matrixIds.Length; i++)
             {
-                if (labComponent.matrixServed[i] >= 3600 && labPool[labComponent.nextLabId].matrixServed[i] < 3600)
+                if (labComponent.matrixServed[i] >= 3600 && labPool[labComponent.nextLabId].matrixServed[i] < 36000)
                 {
                     int num = labComponent.split_inc(ref labComponent.matrixServed[i],
                         ref labComponent.matrixIncServed[i], 3600);
