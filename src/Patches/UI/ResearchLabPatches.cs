@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection.Emit;
 using HarmonyLib;
 using ProjectGenesis.Utils;
@@ -379,6 +380,71 @@ namespace ProjectGenesis.Patches.UI
                         ref labComponent.matrixIncServed[i], 3600);
                     labPool[labComponent.nextLabId].matrixIncServed[i] += num;
                     labPool[labComponent.nextLabId].matrixServed[i] += 3600;
+                }
+            }
+        }
+
+        [HarmonyPatch(typeof(TechProto), nameof(TechProto.GenPropertyOverrideItems))]
+        [HarmonyPostfix]
+        public static void TechProto_GenPropertyOverrideItems_Postfix(TechProto proto)
+        {
+            if (proto.PropertyOverrideItemArray?.Length > 0) return;
+
+            if (!proto.Items.Any(i => Array.IndexOf(LabComponent.matrixIds, i) > 5)) return;
+
+            var dict = new Dictionary<int, int>();
+
+            var hashNeeded = proto.GetHashNeeded(proto.Level);
+
+            int index;
+
+            for (index = 0; index < proto.Items.Length; index++)
+            {
+                var item = proto.Items[index];
+                int num = (int)(hashNeeded * proto.ItemPoints[index]) / 3600;
+
+                switch (item)
+                {
+                    case ProtoID.I通量矩阵:
+                        AddCount(ProtoID.I电磁矩阵, num);
+                        AddCount(ProtoID.I能量矩阵, num);
+                        break;
+
+                    case ProtoID.I空间矩阵:
+                        AddCount(ProtoID.I结构矩阵, num);
+                        AddCount(ProtoID.I信息矩阵, num);
+                        break;
+
+                    case ProtoID.I宇宙矩阵粗坯:
+                        AddCount(ProtoID.I电磁矩阵, num);
+                        AddCount(ProtoID.I能量矩阵, num);
+                        AddCount(ProtoID.I结构矩阵, num);
+                        AddCount(ProtoID.I信息矩阵, num);
+                        AddCount(ProtoID.I引力矩阵, num);
+                        break;
+
+                    default:
+                        AddCount(item, num);
+                        break;
+                }
+            }
+
+            proto.PropertyOverrideItemArray = new IDCNT[dict.Count];
+
+            index = 0;
+
+            foreach (var (item, count) in dict)
+            {
+                proto.PropertyOverrideItemArray[index++] = new IDCNT(item, count);
+            }
+
+            return;
+
+            void AddCount(int itemId, int count)
+            {
+                if (!dict.TryAdd(itemId, count))
+                {
+                    dict[itemId] += count;
                 }
             }
         }
