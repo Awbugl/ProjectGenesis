@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Reflection.Emit;
+using CommonAPI;
 using HarmonyLib;
 using ProjectGenesis.Utils;
 using UnityEngine;
@@ -116,7 +117,7 @@ namespace ProjectGenesis.Patches.UI
                         // ReSharper disable once PossibleLossOfFraction
                         new Vector2((i % 3 - 1) * 105, (i / 3) * -105 + 105);
                 }
-                
+
                 SwapPosition(__instance, 4, 5);
             }
         }
@@ -156,7 +157,7 @@ namespace ProjectGenesis.Patches.UI
                     AccessTools.Field(typeof(LabComponent), nameof(LabComponent.matrixIds))));
 
             matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Call,
-                AccessTools.Method(typeof(UILabWindowPatches), nameof(LabComponent_SetFunction_Patch_Method))));
+                AccessTools.Method(typeof(UILabWindowPatches), nameof(ChangeMatrixIds))));
 
             return matcher.InstructionEnumeration();
         }
@@ -175,20 +176,14 @@ namespace ProjectGenesis.Patches.UI
                 new CodeMatch(OpCodes.Stloc_S));
 
             var num2 = matcher.Advance(-1).Operand;
-
-            var brlabel = matcher.Advance(-1).Operand;
-
-            matcher.CreateLabel(out var label);
-
-            matcher.Operand = label;
-
-            var index1 = matcher.Advance(5).Operand;
+            var brlabel = matcher.Advance(2).Operand;
+            var index1 = matcher.Advance(2).Operand;
 
             matcher.Advance(2).InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_S, num2));
+            matcher.CreateLabelAt(matcher.Pos - 1, out var label);
+            matcher.Advance(-5).Operand = label;
 
-            matcher.AddLabelsAt(matcher.Pos - 1, new[] { label });
-
-            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_S, index1),
+            matcher.Advance(5).InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_S, index1),
                 new CodeInstruction(OpCodes.Call,
                     AccessTools.Method(typeof(UILabWindowPatches),
                         nameof(FactorySystem_GameTickLabResearchMode_Patch_Method))),
@@ -203,7 +198,7 @@ namespace ProjectGenesis.Patches.UI
             return timeSpend / component.productCounts[0];
         }
 
-        public static int LabComponent_SetFunction_Patch_Method(int itemId)
+        public static int ChangeMatrixIds(int itemId)
         {
             switch (itemId)
             {
