@@ -1,11 +1,21 @@
-- v2.10.0-alpha4 (Experimental 0.3.10004)
-  + 修复了矩阵研究站不将电磁矩阵视为矩阵的bug
+- v2.10.0-alpha5 (Experimental 0.3.10005)
+  + 修复了矩阵研究站的bug
+  + 简化了初始出生点的地形判断
+  + 添加新配方`有机晶体活化`
 
-  + Fixed a bug that the Matrix Lab was not treating electromagnetic matrix as a matrix
+  + Fixed a bug about the Matrix Lab
+  + Simplified initial spawn point terrain detection
+  + Added new recipe `Organic Crystal Activation`
 
 
 <details>
   <summary>点击展开日志 | Click to view all </summary>
+
+
+- v2.10.0-alpha4 (Experimental 0.3.10004)
+  + 修复了矩阵研究站不将电磁矩阵视为矩阵的bug
+
+  + Fixed a bug that the Matrix Lab was not treating electromagnetic matrix as a matrix
 
 
 - v2.10.0-alpha3 (Experimental 0.3.10003)
