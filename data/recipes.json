@@ -5564,7 +5564,7 @@
     "IconPath": "Assets/texpack/高效黑塑料",
     "Type": 16,
     "GridIndex": 4105,
-    "Time": 240,
+    "Time": 360,
     "Input": [
       1117,
       6222,
@@ -5573,7 +5573,7 @@
     "InCounts": [
       2,
       2,
-      2
+      4
     ],
     "Output": [
       7709
