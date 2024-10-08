@@ -279,7 +279,7 @@ namespace ProjectGenesis.Patches.UI
 
         public static int LabComponent_InternalUpdateResearch_Patch_Method(ref LabComponent labComponent, int num1)
         {
-            for (int i = 6; i < 8; i++)
+            for (int i = 6; i < LabComponent.matrixIds.Length; i++)
             {
                 if (labComponent.matrixPoints[i] <= 0) continue;
                 int point = labComponent.matrixServed[i] / labComponent.matrixPoints[i];
