@@ -726,28 +726,28 @@
   },
   {
     "Name": "I通量矩阵",
-    "ZHCN": "由两种矩阵组成的复合矩阵，可作为合成宇宙矩阵的原料之一。",
-    "ENUS": "It is a composite matrix composed of two matrixes, which can be used as one of the raw materials for synthesizing the universe matrix roughcast."
+    "ZHCN": "整合了电磁矩阵与能量矩阵的复合矩阵。凭借其电磁矩阵部分，通量矩阵可以在特定区域内生成或调节电磁波；而能量矩阵则使其能够储存与分配各种形式的能量，是在能源管理和电磁效应控制方面极为有效的解决方案。",
+    "ENUS": "It is a composite matrix that integrates the electromagnetic matrix and the energy matrix. With its electromagnetic component, the Flux Matrix can generate or modulate electromagnetic waves within specific areas; the energy matrix allows it to store and distribute various forms of energy. It is an extremely effective solution for energy management and control of electromagnetic effects."
   },
   {
-    "Name": "空间矩阵",
-    "ZHCN": "空间矩阵",
-    "ENUS": "Space Matrix"
+    "Name": "领域矩阵",
+    "ZHCN": "领域矩阵",
+    "ENUS": "Domain Matrix"
   },
   {
-    "Name": "I空间矩阵",
-    "ZHCN": "由两种矩阵组成的复合矩阵，可作为合成宇宙矩阵的原料之一。",
-    "ENUS": "It is a composite matrix composed of two matrixes, which can be used as one of the raw materials for synthesizing the universe matrix roughcast."
+    "Name": "I领域矩阵",
+    "ZHCN": "整合了结构矩阵与信息矩阵的复合矩阵。它利用结构矩阵改变物体的物理结构，实现物质的重构与强化；同时，信息矩阵使其能够处理和传输数据，确保信息的高效流动与管理。因其在物质形态和信息处理上的双重掌控能力，被称为“领域矩阵”。",
+    "ENUS": "It is a composite matrix that integrates the structural matrix and the information matrix. It uses the structural matrix to alter the physical structure of objects, achieving reconfiguration and reinforcement of materials; at the same time, the information matrix enables it to process and transmit data, ensuring efficient flow and management of information. Due to its dual control capabilities in material form and information processing, it is known as the \"Domain Matrix.\""
   },
   {
-    "Name": "宇宙矩阵粗坯",
-    "ZHCN": "宇宙矩阵粗坯",
-    "ENUS": "Universe Matrix Roughcast"
+    "Name": "奇点矩阵",
+    "ZHCN": "奇点矩阵",
+    "ENUS": "Singularity Matrix"
   },
   {
-    "Name": "I宇宙矩阵粗坯",
-    "ZHCN": "由五种矩阵组成的复合矩阵，使用反物质充能后可转换为宇宙矩阵。",
-    "ENUS": "It is a composite matrix, which can be converted to universe matrix after charging with antimatter."
+    "Name": "I奇点矩阵",
+    "ZHCN": "集成电磁、能量、结构、信息与引力五种基础源代码的复合矩阵，也是一款能够在多个层面影响现实的多功能工具。当被反物质激活时，将协同作用转化为宇宙矩阵。",
+    "ENUS": "It is a composite matrix, and also a multifunctional tool capable of influencing reality on multiple levels. When charged with antimatter, the Singularity Matrix can transform into a Universe Matrix"
   },
   {
     "Name": "I湮灭约束球",
@@ -1135,14 +1135,24 @@
     "ENUS": "Using nitrogen and hydrogen as raw materials to synthesize ammonia."
   },
   {
-    "Name": "活性纤维重组",
-    "ZHCN": "活性纤维重组",
-    "ENUS": "Active Biological Fiber Reassemble"
+    "Name": "有机晶体重组",
+    "ZHCN": "有机晶体重组",
+    "ENUS": "Organic Crystal Reassemble"
   },
   {
-    "Name": "R活性纤维重组",
+    "Name": "R有机晶体重组",
     "ZHCN": "使用亚原子操控技术，可以有效地将有机晶体的组分分解并将组装成聚酰亚胺。",
     "ENUS": "Using subatomic manipulation technology, it can effectively decompose the components of organic crystal and assemble them into polyimide."
+  },
+  {
+    "Name": "有机晶体活化",
+    "ZHCN": "有机晶体活化",
+    "ENUS": "Organic Crystal Activation"
+  },
+  {
+    "Name": "R有机晶体活化",
+    "ZHCN": "在能量碎片的作用下，维持在特定激发态的放射性矿物释放的粒子能有效活化有机晶体，促使其组分断裂与重组，有效提高了亚原子操控的转化效率。",
+    "ENUS": "Under the effect of energy fragments, particles released from radioactive minerals maintained in a specific excited state effectively activate the organic crystals, promoting the breaking and reassembly of their components, thereby significantly enhancing the efficiency of subatomic manipulation."
   },
   {
     "Name": "煤炭干馏",

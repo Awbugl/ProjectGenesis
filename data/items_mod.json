@@ -2334,8 +2334,8 @@
   },
   {
     "ID": 6279,
-    "Name": "空间矩阵",
-    "Description": "I空间矩阵",
+    "Name": "领域矩阵",
+    "Description": "I领域矩阵",
     "IconPath": "Assets/texpack/虚空矩阵",
     "GridIndex": 1706,
     "StackSize": 200,
@@ -2382,8 +2382,8 @@
   },
   {
     "ID": 6280,
-    "Name": "宇宙矩阵粗坯",
-    "Description": "I宇宙矩阵粗坯",
+    "Name": "奇点矩阵",
+    "Description": "I奇点矩阵",
     "IconPath": "Assets/texpack/生宇宙矩阵",
     "GridIndex": 1708,
     "StackSize": 200,

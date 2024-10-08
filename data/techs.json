@@ -5457,7 +5457,8 @@
     "HashNeeded": 144000,
     "UnlockRecipes": [
       772,
-      550
+      550,
+      549
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
