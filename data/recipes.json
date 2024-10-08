@@ -277,7 +277,7 @@
       1111
     ],
     "OutCounts": [
-      2
+      1
     ],
     "Explicit": false,
     "Handcraft": true,
@@ -296,7 +296,7 @@
       1202
     ],
     "InCounts": [
-      2,
+      1,
       2
     ],
     "Output": [
@@ -1802,7 +1802,7 @@
       1301
     ],
     "InCounts": [
-      2,
+      1,
       1
     ],
     "Output": [
@@ -5564,7 +5564,7 @@
     "IconPath": "Assets/texpack/高效黑塑料",
     "Type": 16,
     "GridIndex": 4105,
-    "Time": 360,
+    "Time": 240,
     "Input": [
       1117,
       6222,
