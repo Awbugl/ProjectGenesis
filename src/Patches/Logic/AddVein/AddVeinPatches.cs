@@ -184,9 +184,9 @@ namespace ProjectGenesis.Patches.Logic.AddVein
             Vector3 normalized1 = Vector3.Cross(vector3_1, Vector3.up).normalized;
             Vector3 normalized2 = Vector3.Cross(normalized1, vector3_1).normalized;
             var num1 = 0;
-            int num2;
+            const int num2 = 256;
 
-            for (num2 = 256; num1 < num2; ++num1)
+            for (; num1 < num2; ++num1)
             {
                 float num3 = (float)(dotNet35Random.NextDouble() * 2.0 - 1.0) * 0.5f;
                 float num4 = (float)(dotNet35Random.NextDouble() * 2.0 - 1.0) * 0.5f;
@@ -222,12 +222,12 @@ namespace ProjectGenesis.Patches.Logic.AddVein
                     __instance.birthResourcePoint1 = normalized4.normalized;
                     __instance.birthResourcePoint2 = normalized5.normalized;
 
-                    float num7 = __instance.realRadius + 0.2f;
+                    float realRadius = __instance.realRadius;
 
-                    if (rawData.QueryHeight(vector3_2) > num7
-                     && rawData.QueryHeight(normalized3) > num7
-                     && rawData.QueryHeight(normalized4) > num7
-                     && rawData.QueryHeight(normalized5) > num7)
+                    if (rawData.QueryHeight(vector3_2) > realRadius
+                     && rawData.QueryHeight(normalized3) > realRadius
+                     && rawData.QueryHeight(normalized4) > realRadius
+                     && rawData.QueryHeight(normalized5) > realRadius)
                     {
                         Vector3 vpos1 = normalized3 + normalized1 * 0.03f;
                         Vector3 vpos2 = normalized3 - normalized1 * 0.03f;
@@ -242,18 +242,18 @@ namespace ProjectGenesis.Patches.Logic.AddVein
                         Vector3 vpos11 = normalized5 + normalized2 * 0.03f;
                         Vector3 vpos12 = normalized5 - normalized2 * 0.03f;
 
-                        if (rawData.QueryHeight(vpos1) > num7
-                         && rawData.QueryHeight(vpos2) > num7
-                         && rawData.QueryHeight(vpos3) > num7
-                         && rawData.QueryHeight(vpos4) > num7
-                         && rawData.QueryHeight(vpos5) > num7
-                         && rawData.QueryHeight(vpos6) > num7
-                         && rawData.QueryHeight(vpos7) > num7
-                         && rawData.QueryHeight(vpos8) > num7
-                         && rawData.QueryHeight(vpos9) > num7
-                         && rawData.QueryHeight(vpos10) > num7
-                         && rawData.QueryHeight(vpos11) > num7
-                         && rawData.QueryHeight(vpos12) > num7)
+                        if (rawData.QueryHeight(vpos1) > realRadius
+                         && rawData.QueryHeight(vpos2) > realRadius
+                         && rawData.QueryHeight(vpos3) > realRadius
+                         && rawData.QueryHeight(vpos4) > realRadius
+                         && rawData.QueryHeight(vpos5) > realRadius
+                         && rawData.QueryHeight(vpos6) > realRadius
+                         && rawData.QueryHeight(vpos7) > realRadius
+                         && rawData.QueryHeight(vpos8) > realRadius
+                         && rawData.QueryHeight(vpos9) > realRadius
+                         && rawData.QueryHeight(vpos10) > realRadius
+                         && rawData.QueryHeight(vpos11) > realRadius
+                         && rawData.QueryHeight(vpos12) > realRadius)
                         {
                             flag = true;
 
@@ -266,8 +266,6 @@ namespace ProjectGenesis.Patches.Logic.AddVein
             }
 
             if (num1 < num2) return;
-
-            __instance.birthPoint = new Vector3(0.0f, __instance.realRadius + 5f, 0.0f);
         }
     }
 }

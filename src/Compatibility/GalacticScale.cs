@@ -229,7 +229,7 @@ namespace ProjectGenesis.Compatibility
                     planetData.birthResourcePoint0 = normalized3.normalized;
                     planetData.birthResourcePoint1 = normalized4.normalized;
                     planetData.birthResourcePoint2 = normalized5.normalized;
-                    float num11 = planetData.realRadius + 0.2f;
+                    float num11 = planetData.realRadius;
 
                     if (planetData.data.QueryHeight(vector3_3) > (double)num11
                      && planetData.data.QueryHeight(normalized3) > (double)num11
