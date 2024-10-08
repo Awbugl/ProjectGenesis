@@ -93,7 +93,7 @@ namespace ProjectGenesis.Utils
 
             { 6278, new MartixIconDesc(new Color(1f, 0.4117f, 0.3137f, 0.1961f), new Color(1f, 0.2706f, 0f, 0f)) },
             { 6279, new MartixIconDesc(new Color(1f, 0.7530f, 0.7961f, 0.1961f), new Color(0.7804f, 0.0824f, 0.5216f, 0f)) },
-            { 6280, new MartixIconDesc(new Color(0.5020f, 0.5020f, 0.5020f, 0.1961f), new Color(0.2020f, 0.2020f, 0.2020f, 0f)) },
+            { 6280, new MartixIconDesc(new Color(0.4020f, 0.4020f, 0.4020f, 0.1961f), new Color(0.3f, 0.3f, 0.3f, 0f)) },
 
             { 7610, new WhiteIconDesc() }, // 核子单元
             { 7611, new WhiteIconDesc() }, // 反物质单元
