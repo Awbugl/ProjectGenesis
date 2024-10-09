@@ -306,8 +306,8 @@ namespace ProjectGenesis.Patches.UI
             switch (itemId)
             {
                 case ProtoID.I通量矩阵: return 6007;
-                case ProtoID.I空间矩阵: return 6008;
-                case ProtoID.I宇宙矩阵粗坯: return 6009;
+                case ProtoID.I领域矩阵: return 6008;
+                case ProtoID.I奇点矩阵: return 6009;
                 default: return itemId;
             }
         }
@@ -319,10 +319,10 @@ namespace ProjectGenesis.Patches.UI
                 case 6: //ProtoID.I通量矩阵:
                     index1 |= 3;
                     break;
-                case 7: //ProtoID.I空间矩阵:
+                case 7: //ProtoID.I领域矩阵:
                     index1 |= 12;
                     break;
-                case 8: //ProtoID.I宇宙矩阵粗坯:
+                case 8: //ProtoID.I奇点矩阵:
                     index1 |= 31;
                     break;
             }
@@ -408,12 +408,12 @@ namespace ProjectGenesis.Patches.UI
                         AddCount(ProtoID.I能量矩阵, num);
                         break;
 
-                    case ProtoID.I空间矩阵:
+                    case ProtoID.I领域矩阵:
                         AddCount(ProtoID.I结构矩阵, num);
                         AddCount(ProtoID.I信息矩阵, num);
                         break;
 
-                    case ProtoID.I宇宙矩阵粗坯:
+                    case ProtoID.I奇点矩阵:
                         AddCount(ProtoID.I电磁矩阵, num);
                         AddCount(ProtoID.I能量矩阵, num);
                         AddCount(ProtoID.I结构矩阵, num);

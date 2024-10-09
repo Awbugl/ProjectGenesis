@@ -242,8 +242,8 @@ namespace ProjectGenesis
                 ProtoID.I引力矩阵,
                 ProtoID.I宇宙矩阵,
                 ProtoID.I通量矩阵,
-                ProtoID.I空间矩阵,
-                ProtoID.I宇宙矩阵粗坯,
+                ProtoID.I领域矩阵,
+                ProtoID.I奇点矩阵,
             };
 
             LDB.items.OnAfterDeserialize();
