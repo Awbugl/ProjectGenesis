@@ -45,6 +45,7 @@ namespace ProjectGenesis.Patches.Logic.AddVein
                 NewVein(16, "放射性矿脉", "I放射性矿物", "Assets/texpack/放射晶体矿脉_新新", ProtoID.I放射性矿物, 35, 2, 90),
                 NewVein(17, "钨矿脉", "I钨矿", "Assets/texpack/钨矿脉", ProtoID.I钨矿, 34, 1, 120),
                 NewVein(18, "硫矿脉", "I硫矿", "Assets/texpack/硫矿脉_新", ProtoID.I硫矿, 36, 1, 90));
+            return;
 
             VeinProto NewVein(int id, string name, string description, string iconPath, int miningItem, int miningEffect, int modelIndex, int miningTime) =>
                 new VeinProto

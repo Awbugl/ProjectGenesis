@@ -13,25 +13,25 @@ namespace ProjectGenesis.Patches.Logic.AddVein
     {
         internal static readonly Dictionary<int, int[]> PlanetGasData = new Dictionary<int, int[]>
         {
-            { 1, new[] { ProtoID.I氮, ProtoID.I氧, } },
-            { 6, new[] { ProtoID.I二氧化碳, } },
-            { 7, new[] { ProtoID.I氮, } },
-            { 8, new[] { ProtoID.I氮, ProtoID.I氧, } },
-            { 9, new[] { ProtoID.I二氧化碳, ProtoID.I氮, } },
-            { 10, new[] { ProtoID.I氮, } },
-            { 12, new[] { ProtoID.I二氧化碳, } },
-            { 13, new[] { ProtoID.I二氧化碳, } },
-            { 14, new[] { ProtoID.I氮, ProtoID.I氧, } },
-            { 15, new[] { ProtoID.I氮, ProtoID.I氧, } },
-            { 16, new[] { ProtoID.I氮, ProtoID.I氧, } },
-            { 17, new[] { ProtoID.I氮, } },
-            { 18, new[] { ProtoID.I氮, ProtoID.I氧, } },
-            { 19, new[] { ProtoID.I氮, } },
-            { 20, new[] { ProtoID.I氮, } },
-            { 22, new[] { ProtoID.I氮, ProtoID.I氧, } },
-            { 23, new[] { ProtoID.I二氧化碳, } },
-            { 24, new[] { ProtoID.I氮, } },
-            { 25, new[] { ProtoID.I氮, ProtoID.I氧, } },
+            { 1, new[] { ProtoID.I氮, ProtoID.I氧, } }, // 地中海
+            { 6, new[] { ProtoID.I二氧化碳, } }, // 干旱荒漠
+            { 7, new[] { ProtoID.I氮, ProtoID.I二氧化硫, } }, // 灰烬冻土
+            { 8, new[] { ProtoID.I氮, ProtoID.I氧, } }, // 海洋丛林
+            { 9, new[] { ProtoID.I二氧化碳, ProtoID.I二氧化硫, } }, // 熔岩
+            { 10, new[] { ProtoID.I氮, } }, // 冰原冻土
+            { 12, new[] { ProtoID.I二氧化碳, } }, // 戈壁
+            { 13, new[] { ProtoID.I二氧化碳, ProtoID.I二氧化硫, } }, // 火山灰
+            { 14, new[] { ProtoID.I氮, ProtoID.I氧, } }, // 红石
+            { 15, new[] { ProtoID.I氮, ProtoID.I氧, } }, // 草原
+            { 16, new[] { ProtoID.I氮, ProtoID.I氧, } }, // 水世界
+            { 17, new[] { ProtoID.I氮, } }, // 黑石盐滩
+            { 18, new[] { ProtoID.I氮, ProtoID.I氧, } }, // 樱林海
+            { 19, new[] { ProtoID.I氮, } }, // 飓风石林
+            { 20, new[] { ProtoID.I氮, } }, // 猩红冰湖
+            { 22, new[] { ProtoID.I氮, ProtoID.I氧, } }, // 热带草原
+            { 23, new[] { ProtoID.I二氧化碳, } }, // 橙晶荒漠
+            { 24, new[] { ProtoID.I氮, } }, // 极寒冻土
+            { 25, new[] { ProtoID.I氮, ProtoID.I氧, } }, // 潘多拉沼泽
         };
 
         internal static readonly Dictionary<int, AddVeinData> PlanetAddRareVeinData = new Dictionary<int, AddVeinData>
@@ -48,7 +48,14 @@ namespace ProjectGenesis.Patches.Logic.AddVein
                 6, new AddVeinData(new[] { 16, 18, }, new[]
                 {
                     0.2f, 0.7f, 0.2f, 0.8f, //
-                    1.0f, 1.0f, 0.3f, 0.5f, //
+                    1.0f, 1.0f, 0.6f, 0.5f, //
+                })
+            },
+            {
+                7, new AddVeinData(new[] { 16, 18, }, new[]
+                {
+                    0.2f, 0.7f, 0.2f, 0.8f, //
+                    1.0f, 1.0f, 0.6f, 0.5f, //
                 })
             },
             {
@@ -56,7 +63,7 @@ namespace ProjectGenesis.Patches.Logic.AddVein
                 {
                     0.2f, 0.5f, 0.3f, 0.7f, //
                     0.2f, 0.6f, 0.3f, 0.8f, //
-                    0.6f, 0.8f, 0.4f, 0.8f, //
+                    0.6f, 0.8f, 0.5f, 0.8f, //
                 })
             },
             {
@@ -70,13 +77,13 @@ namespace ProjectGenesis.Patches.Logic.AddVein
                 13, new AddVeinData(new[] { 17, 18, }, new[]
                 {
                     0.2f, 0.6f, 0.3f, 0.8f, //
-                    1.0f, 1.0f, 0.4f, 0.8f, //
+                    1.0f, 1.0f, 0.5f, 0.8f, //
                 })
             },
             {
                 16, new AddVeinData(new[] { 18, }, new[]
                 {
-                    0.2f, 0.6f, 0.2f, 0.3f, //
+                    0.2f, 0.9f, 0.9f, 0.7f, //
                 })
             },
             {
@@ -86,9 +93,22 @@ namespace ProjectGenesis.Patches.Logic.AddVein
                 })
             },
             {
-                23, new AddVeinData(new[] { 17, }, new[]
+                19, new AddVeinData(new[] { 18, }, new[]
+                {
+                    0.2f, 0.8f, 0.6f, 0.4f, //
+                })
+            },
+            {
+                20, new AddVeinData(new[] { 18, }, new[]
+                {
+                    0.2f, 0.7f, 0.5f, 0.6f, //
+                })
+            },
+            {
+                23, new AddVeinData(new[] { 17, 18 }, new[]
                 {
                     0.2f, 0.6f, 0.5f, 0.8f, //
+                    1.0f, 1.0f, 0.7f, 0.8f, 
                 })
             },
         };
