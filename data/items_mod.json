@@ -197,7 +197,7 @@
     "Name": "二氧化硫",
     "Description": "I二氧化硫",
     "IconPath": "Assets/texpack/二氧化硫",
-    "GridIndex": 4302,
+    "GridIndex": 4401,
     "StackSize": 20,
     "Type": 1,
     "PreTechOverride": 0,

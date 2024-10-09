@@ -1155,6 +1155,26 @@
     "ENUS": "Under the effect of energy fragments, particles released from radioactive minerals maintained in a specific excited state effectively activate the organic crystals, promoting the breaking and reassembly of their components, thereby significantly enhancing the efficiency of subatomic manipulation."
   },
   {
+    "Name": "能量物质化",
+    "ZHCN": "能量物质化",
+    "ENUS": "Energy Materialization"
+  },
+  {
+    "Name": "R能量物质化",
+    "ZHCN": "通过对黑雾残骸的大量逆向研究，我们终于可以一窥能量物质化的大门。",
+    "ENUS": "Through the reverse engineering of the remnants of the Dark Fog, we have finally gained insight into the process of energy materialization."
+  },
+  {
+    "Name": "二氧化硫还原",
+    "ZHCN": "二氧化硫还原",
+    "ENUS": "Sulfur Dioxide Reduction"
+  },
+  {
+    "Name": "R二氧化硫还原",
+    "ZHCN": "通过对黑雾残骸的大量逆向研究，我们终于可以一窥能量物质化的大门。",
+    "ENUS": "Using carbon to reduce sulfur dioxide can yield powdered elemental sulfur."
+  },   
+  {
     "Name": "煤炭干馏",
     "ZHCN": "煤炭干馏",
     "ENUS": "Coal Dry Distillation"

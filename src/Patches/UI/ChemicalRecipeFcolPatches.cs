@@ -15,7 +15,7 @@ namespace ProjectGenesis.Patches.UI
             { ProtoID.R二氧化碳, 431 },
             { ProtoID.R催化重整, 432 },
             { ProtoID.R四氢双环戊二烯, 433 },
-            { ProtoID.R活性纤维重组, 434 },
+            { ProtoID.R有机晶体重组, 434 },
             { ProtoID.R水电解, 435 },
             { ProtoID.R盐水电解, 436 },
             { ProtoID.R合成氨, 437 },
@@ -26,6 +26,11 @@ namespace ProjectGenesis.Patches.UI
             { ProtoID.R聚酰亚胺, 442 },
             { ProtoID.R钨矿筛选, 443 },
             { ProtoID.R海水淡化, 444 },
+            { ProtoID.R有机晶体活化, 445 },
+            { ProtoID.R二氧化硫还原, 446 },
+            { ProtoID.R硅石筛选, 447 },
+            { ProtoID.R氦原子提取, 448 },
+            { ProtoID.R增产剂, 449 },
         };
 
         [HarmonyPatch(typeof(FactorySystem), nameof(FactorySystem.GameTick), typeof(long), typeof(bool))]
