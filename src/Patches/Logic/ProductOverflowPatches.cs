@@ -93,6 +93,7 @@ namespace ProjectGenesis.Patches.Logic
                         case ProtoID.R海水淡化:
                         case ProtoID.R高效石墨烯:
                         case ProtoID.R水电解:
+                        case ProtoID.R二氧化硫还原:
                             b = true;
 
                             break;

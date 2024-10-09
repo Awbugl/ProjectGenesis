@@ -1,3 +1,21 @@
+v2.10.0-alpha6 (Experimental 0.3.10007)
+  + 添加物品`二氧化硫`及相关配方
+  + 调整了部分星球的大气环境（影响存档）
+  + 调整了配方`增产剂`的原料需求（影响存档）
+  + 调整了`硫矿`的生成范围和数量
+  + 调整了黑雾制造台`物质重组工厂`的可制造配方类型
+
+  * Added item `Sulfur Dioxide` and related recipes.
+  + Adjusted the atmospheric environments of certain planets (affects save)
+  + Modified the material requirements for the accelerator recipe (affects save)
+  + Adjusted the spawn range and quantity of `Sulfur Ore`.
+  + Modified the types of recipes that can be manufactured at the Re-composing Assembler.
+
+
+<details>
+  <summary>点击展开日志 | Click to view all </summary>
+
+
 - v2.10.0-alpha5 (Experimental 0.3.10006)
   + 修复了矩阵研究站的bug
   + 简化了初始出生点的地形判断
@@ -6,10 +24,6 @@
   + Fixed a bug about the Matrix Lab
   + Simplified initial spawn point terrain detection
   + Added new recipe `Organic Crystal Activation`
-
-
-<details>
-  <summary>点击展开日志 | Click to view all </summary>
 
 
 - v2.10.0-alpha4 (Experimental 0.3.10004)

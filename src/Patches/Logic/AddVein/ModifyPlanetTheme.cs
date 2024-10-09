@@ -26,7 +26,7 @@ namespace ProjectGenesis.Patches.Logic.AddVein
             { 16, new[] { ProtoID.I氮, ProtoID.I氧, } }, // 水世界
             { 17, new[] { ProtoID.I氮, } }, // 黑石盐滩
             { 18, new[] { ProtoID.I氮, ProtoID.I氧, } }, // 樱林海
-            { 19, new[] { ProtoID.I氮, } }, // 飓风石林
+            { 19, new[] { ProtoID.I二氧化硫, } }, // 飓风石林
             { 20, new[] { ProtoID.I氮, } }, // 猩红冰湖
             { 22, new[] { ProtoID.I氮, ProtoID.I氧, } }, // 热带草原
             { 23, new[] { ProtoID.I二氧化碳, } }, // 橙晶荒漠
@@ -59,6 +59,12 @@ namespace ProjectGenesis.Patches.Logic.AddVein
                 })
             },
             {
+                8, new AddVeinData(new[] { 18, }, new[]
+                {
+                    0.2f, 0.8f, 0.6f, 0.9f, //
+                })
+            },
+            {
                 9, new AddVeinData(new[] { 16, 17, 18, }, new[]
                 {
                     0.2f, 0.5f, 0.3f, 0.7f, //
@@ -81,27 +87,39 @@ namespace ProjectGenesis.Patches.Logic.AddVein
                 })
             },
             {
+                14, new AddVeinData(new[] { 18, }, new[]
+                {
+                    0.2f, 0.8f, 0.6f, 0.9f, //
+                })
+            },
+            {
+                15, new AddVeinData(new[] { 18, }, new[]
+                {
+                    0.2f, 0.8f, 0.6f, 0.9f, //
+                })
+            },
+            {
                 16, new AddVeinData(new[] { 18, }, new[]
                 {
-                    0.2f, 0.9f, 0.9f, 0.7f, //
+                    0.2f, 0.9f, 0.9f, 0.9f, //
                 })
             },
             {
                 17, new AddVeinData(new[] { 16, }, new[]
                 {
-                    1.0f, 1.0f, 0.7f, 0.7f, //
+                    1.0f, 1.0f, 0.7f, 0.9f, //
                 })
             },
             {
                 19, new AddVeinData(new[] { 18, }, new[]
                 {
-                    0.2f, 0.8f, 0.6f, 0.4f, //
+                    1.0f, 1.0f, 1.0f, 1.0f, //
                 })
             },
             {
                 20, new AddVeinData(new[] { 18, }, new[]
                 {
-                    0.2f, 0.7f, 0.5f, 0.6f, //
+                    0.2f, 0.7f, 0.5f, 0.9f, //
                 })
             },
             {
@@ -254,10 +272,18 @@ namespace ProjectGenesis.Patches.Logic.AddVein
                 }
             }
 
+            return;
+
             float[] GasSpeedsTwoItems() =>
+                rand.NextDouble() > 0.6 ? GasSpeedsTwoItemsEqual() : GasSpeedsTwoItemsNotEqual();
+
+            float[] GasSpeedsTwoItemsNotEqual() =>
                 new float[] { (float)(themeWind * (0.65f + rand.NextDouble() * 0.1f)), (float)(themeWind * (0.16f + rand.NextDouble() * 0.04f)), };
 
-            float[] GasSpeedsOneItem() => new float[] { (float)(themeWind * (0.65f + rand.NextDouble() * 0.1f)), };
+            float[] GasSpeedsTwoItemsEqual() =>
+                new float[] { (float)(themeWind * (0.4f + rand.NextDouble() * 0.1f)), (float)(themeWind * (0.4f + rand.NextDouble() * 0.1f)), };
+            
+            float[] GasSpeedsOneItem() => new float[] { (float)(themeWind * (0.75f + rand.NextDouble() * 0.1f)), };
         }
 
         private static void RemoveVein(ThemeProto theme, int id)

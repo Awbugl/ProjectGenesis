@@ -4172,13 +4172,13 @@
     "GridIndex": 2404,
     "Time": 240,
     "Input": [
-      2305,
+      6503,
       5203,
       5206,
       1305
     ],
     "InCounts": [
-      1,
+      8,
       10,
       30,
       2
@@ -5563,9 +5563,9 @@
     "ID": 547,
     "Name": "能量物质化",
     "Description": "R能量物质化",
-    "IconPath": "Assets/texpack/能量物质化",
+    "IconPath": "Assets/texpack/能量碎片制作",
     "Type": 5,
-    "GridIndex": 1315,
+    "GridIndex": 1314,
     "Time": 180,
     "Input": [
       1208

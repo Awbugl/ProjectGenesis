@@ -54,9 +54,14 @@ namespace ProjectGenesis.Patches.Logic.QTools
 
                     case Utils.ERecipeType.所有制造:
                     {
+                        dict.TryAddOrInsert(Utils.ERecipeType.Chemical, proto);
+                        dict.TryAddOrInsert(Utils.ERecipeType.Refine, proto);
                         dict.TryAddOrInsert(Utils.ERecipeType.Assemble, proto);
+                        dict.TryAddOrInsert(Utils.ERecipeType.Particle, proto);
                         dict.TryAddOrInsert(Utils.ERecipeType.标准制造, proto);
                         dict.TryAddOrInsert(Utils.ERecipeType.高精度加工, proto);
+                        dict.TryAddOrInsert(Utils.ERecipeType.Research, proto);
+                        dict.TryAddOrInsert(Utils.ERecipeType.高分子化工, proto);
 
                         continue;
                     }
