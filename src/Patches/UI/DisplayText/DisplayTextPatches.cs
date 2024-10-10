@@ -79,7 +79,7 @@ namespace ProjectGenesis.Patches.UI.DisplayText
                 case 16:
                     __result = "聚变能".TranslateFromJson();
                     break;
-                
+
                 case 31:
                     __result = "黑雾能".TranslateFromJson();
                     break;
@@ -180,13 +180,15 @@ namespace ProjectGenesis.Patches.UI.DisplayText
                     return;
 
                 case 18:
-                    if (__instance.prefabDesc.isCollectStation && __instance.ID == ProtoID.I大气采集器) __result = "行星大气".TranslateFromJson();
+                    if (__instance.prefabDesc.isCollectStation && __instance.ID == ProtoID.I大气采集器)
+                        __result = "行星大气".TranslateFromJson();
 
                     return;
 
                 case 19:
                     if (__instance.prefabDesc.minerType == EMinerType.Oil)
-                        __result = (600000.0 / __instance.prefabDesc.minerPeriod * GameMain.history.miningSpeedScale).ToString("0.##") + "x";
+                        __result = (600000.0 / __instance.prefabDesc.minerPeriod * GameMain.history.miningSpeedScale)
+                            .ToString("0.##") + "x";
 
                     return;
             }
@@ -217,11 +219,17 @@ namespace ProjectGenesis.Patches.UI.DisplayText
                     __result = "黑雾协调中心文字描述".TranslateFromJson();
 
                     break;
+
+                case ProtoID.T护盾载波调制:
+                    __result = "T护盾载波调制文字描述".TranslateFromJson();
+
+                    break;
             }
         }
 
         [HarmonyPostfix]
         [HarmonyPatch(typeof(ItemProto), nameof(ItemProto.FindRecipes))]
-        public static void ItemProto_FindRecipes(ItemProto __instance) => __instance.isRaw = __instance.recipes.Count == 0;
+        public static void ItemProto_FindRecipes(ItemProto __instance) =>
+            __instance.isRaw = __instance.recipes.Count == 0;
     }
 }

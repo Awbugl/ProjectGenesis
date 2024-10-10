@@ -13,6 +13,7 @@ using HarmonyLib;
 using NebulaAPI;
 using NebulaAPI.Interfaces;
 using ProjectGenesis.Compatibility;
+using ProjectGenesis.Patches.Logic;
 using ProjectGenesis.Patches.Logic.AddVein;
 using ProjectGenesis.Patches.Logic.MegaAssembler;
 using ProjectGenesis.Patches.Logic.PlanetFocus;
@@ -191,6 +192,7 @@ namespace ProjectGenesis
             PlanetFocusPatches.Export(w);
             QuantumStoragePatches.Export(w);
             AdvancedLaserPatches.Export(w);
+            GlobalPowerSupplyPatches.Export(w);
         }
 
         public void Import(BinaryReader r)
@@ -200,6 +202,7 @@ namespace ProjectGenesis
             PlanetFocusPatches.Import(r);
             QuantumStoragePatches.Import(r);
             AdvancedLaserPatches.Import(r);
+            GlobalPowerSupplyPatches.Import(r);
         }
 
         public void IntoOtherSave()
@@ -208,6 +211,7 @@ namespace ProjectGenesis
             PlanetFocusPatches.IntoOtherSave();
             QuantumStoragePatches.IntoOtherSave();
             AdvancedLaserPatches.IntoOtherSave();
+            GlobalPowerSupplyPatches.IntoOtherSave();
         }
 
         public string Version => VERSION;

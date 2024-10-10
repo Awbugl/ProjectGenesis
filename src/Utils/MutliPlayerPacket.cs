@@ -4,6 +4,7 @@ using NebulaAPI;
 using NebulaAPI.Interfaces;
 using NebulaAPI.Networking;
 using NebulaAPI.Packets;
+using ProjectGenesis.Patches.Logic;
 using ProjectGenesis.Patches.Logic.MegaAssembler;
 using ProjectGenesis.Patches.Logic.PlanetFocus;
 using ProjectGenesis.Patches.Logic.QuantumStorage;
@@ -255,7 +256,7 @@ namespace ProjectGenesis.Utils
         public override void ProcessPacket(SyncRemoveQuantumStorageData packet, INebulaConnection conn) =>
             SyncRemoveQuantumStorageData.OnReceive(packet.PlanetId, packet.StorageId, packet.OrbitId);
     }
-    
+
     public class SyncQuantumStorageOrbitChangeData
     {
         public SyncQuantumStorageOrbitChangeData()
@@ -289,6 +290,69 @@ namespace ProjectGenesis.Utils
     {
         public override void ProcessPacket(SyncQuantumStorageOrbitChangeData packet, INebulaConnection conn) =>
             SyncQuantumStorageOrbitChangeData.OnReceive(packet.PlanetId, packet.StorageId, packet.OrbitId);
+    }
+
+    public class SyncGlobalPowerSupplyNodeIdData
+    {
+        public SyncGlobalPowerSupplyNodeIdData()
+        {
+        }
+
+        public SyncGlobalPowerSupplyNodeIdData(int planetId, int nodeId)
+        {
+            PlanetId = planetId;
+            NodeId = nodeId;
+        }
+
+        public int PlanetId { get; set; }
+        public int NodeId { get; set; }
+
+        internal static void Sync(int planetId, int nodeId)
+        {
+            if (NebulaModAPI.IsMultiplayerActive)
+                NebulaModAPI.MultiplayerSession.Network.SendPacket(
+                    new SyncGlobalPowerSupplyNodeIdData(planetId, nodeId));
+        }
+
+        internal static void OnReceive(int planetId, int nodeId) =>
+            GlobalPowerSupplyPatches.SyncGlobalPowerSupplyNodeId(planetId, nodeId);
+    }
+
+    [RegisterPacketProcessor]
+    public class SyncGlobalPowerSupplyNodeIdDataProcessor : BasePacketProcessor<SyncGlobalPowerSupplyNodeIdData>
+    {
+        public override void ProcessPacket(SyncGlobalPowerSupplyNodeIdData packet, INebulaConnection conn) =>
+            SyncGlobalPowerSupplyNodeIdData.OnReceive(packet.PlanetId, packet.NodeId);
+    }
+
+    public class SyncSyncGlobalPowerSupplyRemoveData
+    {
+        public SyncSyncGlobalPowerSupplyRemoveData()
+        {
+        }
+
+        public SyncSyncGlobalPowerSupplyRemoveData(int planetId)
+        {
+            PlanetId = planetId;
+        }
+
+        public int PlanetId { get; set; }
+
+        internal static void Sync(int planetId)
+        {
+            if (NebulaModAPI.IsMultiplayerActive)
+                NebulaModAPI.MultiplayerSession.Network.SendPacket(new SyncSyncGlobalPowerSupplyRemoveData(planetId));
+        }
+
+        internal static void OnReceive(int planetId) =>
+            GlobalPowerSupplyPatches.SyncGlobalPowerSupplyRemoved(planetId);
+    }
+
+    [RegisterPacketProcessor]
+    public class SyncSyncGlobalPowerSupplyRemoveDataProcessor : BasePacketProcessor<SyncSyncGlobalPowerSupplyRemoveData>
+    {
+        public override void ProcessPacket(SyncSyncGlobalPowerSupplyRemoveData packet, INebulaConnection conn) =>
+            SyncSyncGlobalPowerSupplyRemoveData.OnReceive(packet.PlanetId);
     }
 
     public class GenesisBookPlanetLoadRequest

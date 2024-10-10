@@ -2545,6 +2545,21 @@
     "ENUS": "Unlocking new features for the Planetary Coordination Center"
   },
   {
+    "Name": "T护盾载波调制",
+    "ZHCN": "护盾载波调制",
+    "ENUS": "Shield Carrier Modulation"
+  },
+  {
+    "Name": "T护盾载波调制描述",
+    "ZHCN": "重新调整无线输电的频谱，使其可以在行星护盾上产生稳定的驻波模式，即可借助于完全覆盖的行星护盾进行无线输电。",
+    "ENUS": "By readjusting the spectrum of wireless power transmission, stable standing wave patterns can be produced on the planetary shield, thereby enabling wireless power transmission through a fully covered planetary shield."
+  },
+  {
+    "Name": "T护盾载波调制文字描述",
+    "ZHCN": "完全覆盖的行星护盾可作为行星电网",
+    "ENUS": "Fully covered planetary shield can serve as a planetary power grid"
+  },
+  {
     "Name": "聚爆加农炮",
     "ZHCN": "聚爆加农炮 MK.I",
     "ENUS": "Implosion Cannon MK.I"
