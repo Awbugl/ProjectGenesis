@@ -113,7 +113,7 @@ namespace ProjectGenesis.Patches.Logic.AddVein
             {
                 19, new AddVeinData(new[] { 18, }, new[]
                 {
-                    1.0f, 1.0f, 1.0f, 1.0f, //
+                    1.0f, 1.0f, 0.7f, 0.9f, //
                 })
             },
             {
