@@ -1275,8 +1275,8 @@
       6279
     ],
     "ItemPoints": [
-      20,
-      30
+      10,
+      15
     ],
     "HashNeeded": 576000,
     "UnlockRecipes": [
@@ -5039,9 +5039,9 @@
     ],
     "ItemPoints": [
       10,
-      12
+      15
     ],
-    "HashNeeded": 432000,
+    "HashNeeded": 288000,
     "UnlockRecipes": [
       107,
       106
@@ -5084,7 +5084,7 @@
       10,
       12
     ],
-    "HashNeeded": 720000,
+    "HashNeeded": 360000,
     "UnlockRecipes": [
       41,
       625,
