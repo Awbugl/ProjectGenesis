@@ -1275,10 +1275,10 @@
       6279
     ],
     "ItemPoints": [
-      40,
-      80
+      20,
+      30
     ],
-    "HashNeeded": 288000,
+    "HashNeeded": 576000,
     "UnlockRecipes": [
       43,
       115
@@ -4689,7 +4689,7 @@
     "ItemPoints": [
       120
     ],
-    "HashNeeded": 18000,
+    "HashNeeded": 90000,
     "UnlockRecipes": [
       154
     ],
@@ -5033,11 +5033,13 @@
     "PreTechsImplicit": [
       1104
     ],
-    "Items": [
-      6280
+    "Items": [  
+      6278,
+      6279
     ],
     "ItemPoints": [
-      10
+      10,
+      12
     ],
     "HashNeeded": 432000,
     "UnlockRecipes": [
@@ -5075,10 +5077,12 @@
     ],
     "PreTechsImplicit": [],
     "Items": [
-      6280
+      6278,
+      6279
     ],
     "ItemPoints": [
-      10
+      10,
+      12
     ],
     "HashNeeded": 720000,
     "UnlockRecipes": [
@@ -5650,30 +5654,28 @@
   {
     "ID": 1937,
     "Name": "T护盾载波调制",
-    "IconPath": "Assets/texpack/行星协调中心",
+    "IconPath": "Assets/texpack/护盾载波调制",
     "Desc": "T护盾载波调制描述",
     "Conclusion": "T护盾载波调制描述",
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      13.0,
-      21.0
+      33.0,
+      -3.0
     ],
     "PreTechs": [
-      1415
+      1712
     ],
     "PreTechsImplicit": [
-      1702
+      1809
     ],
     "Items": [
-      6001,
-      6002
+      6280
     ],
     "ItemPoints": [
-      20,
       10
     ],
-    "HashNeeded": 72000,
+    "HashNeeded": 720000,
     "UnlockRecipes": [],
     "UnlockFunctions": [],
     "UnlockValues": [],
