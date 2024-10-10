@@ -146,8 +146,8 @@
   },
   {
     "Name": "飓风石林介绍",
-    "ZHCN": "　　飓风石林星球的地表上散布着碎石，拥有一个主要成分为氮气的稀薄大气。\r\n　　由于稀薄的大气层有利于与深空工业空间站对接，这类星球曾一度作为星际工业中心的标准选址。",
-    "ENUS": "The surface of a Cyclonius planet is scattered with the rocks under a thin atmosphere composed mainly of nitrogen gas.\r\nBecause the thin atmosphere facilitates docking with deep space industrial space stations, such planets were once used as standard sites for interstellar industrial centers."
+    "ZHCN": "　　飓风石林星球的地表上散布着碎石，拥有一个主要成分为二氧化硫的稠密大气。\r\n　　这类行星拥有活跃的板块构造结构，地震和火山活动频繁。此外，大气中的高浓度亚硫酸雾导致的频繁“酸雨”奇景，也曾是外星旅游爱好者论坛中的一大热门。",
+    "ENUS": "The surface of a Cyclonius planet is scattered with the rocks under a thin atmosphere composed mainly of sulfur dioxide.\r\nSuch planets possess active tectonic structures with frequent earthquakes and volcanic activities. Additionally, the frequent 'acid rain' phenomenon caused by high concentrations of sulfate aerosols in the atmosphere has also been a popular topic on forums for extraterrestrial travel enthusiasts."
   },
   {
     "Name": "里程碑名称29",
@@ -1171,9 +1171,9 @@
   },
   {
     "Name": "R二氧化硫还原",
-    "ZHCN": "通过对黑雾残骸的大量逆向研究，我们终于可以一窥能量物质化的大门。",
-    "ENUS": "Using carbon to reduce sulfur dioxide can yield powdered elemental sulfur."
-  },   
+    "ZHCN": "使用石墨对二氧化硫进行还原，可得到粉末状的硫单质。\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作。</color>",
+    "ENUS": "Using carbon to reduce sulfur dioxide can yield powdered elemental sulfur.\n<color=\"#FD965ECC\">Will not stop working until all products are accumulated.</color>"
+  },
   {
     "Name": "煤炭干馏",
     "ZHCN": "煤炭干馏",
@@ -2140,6 +2140,16 @@
     "ENUS": "Colorless and odorless gas, widely distributed."
   },
   {
+    "Name": "二氧化硫",
+    "ZHCN": "二氧化硫",
+    "ENUS": "Sulfur Dioxide"
+  },
+  {
+    "Name": "I二氧化硫",
+    "ZHCN": "具有强烈的刺激性气味的无色气体。",
+    "ENUS": "Colorless gas with a strong, pungent odor."
+  },
+  {
     "Name": "氮",
     "ZHCN": "氮",
     "ENUS": "Nitrogen"
@@ -2533,6 +2543,21 @@
     "Name": "黑雾协调中心文字描述",
     "ZHCN": "为行星协调中心解锁新的功能",
     "ENUS": "Unlocking new features for the Planetary Coordination Center"
+  },
+  {
+    "Name": "T护盾载波调制",
+    "ZHCN": "护盾载波调制",
+    "ENUS": "Shield Carrier Modulation"
+  },
+  {
+    "Name": "T护盾载波调制描述",
+    "ZHCN": "重新调整无线输电的频谱，使其可以在行星护盾上产生稳定的驻波模式，即可借助于完全覆盖的行星护盾进行无线输电。",
+    "ENUS": "By readjusting the spectrum of wireless power transmission, stable standing wave patterns can be produced on the planetary shield, thereby enabling wireless power transmission through a fully covered planetary shield."
+  },
+  {
+    "Name": "T护盾载波调制文字描述",
+    "ZHCN": "完全覆盖的行星护盾可作为行星电网",
+    "ENUS": "Fully covered planetary shield can serve as a planetary power grid"
   },
   {
     "Name": "聚爆加农炮",

@@ -49,6 +49,7 @@ namespace ProjectGenesis.Patches.UI
             }
 
             SetButtonPosition(__instance.blueprintButton);
+            return;
 
             void SetButtonPosition(UIButton button)
             {

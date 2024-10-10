@@ -196,7 +196,7 @@
     "ID": 6205,
     "Name": "二氧化硫",
     "Description": "I二氧化硫",
-    "IconPath": "Assets/texpack/二氧化硫",
+    "IconPath": "Assets/texpack/硫化氢",
     "GridIndex": 4401,
     "StackSize": 20,
     "Type": 1,

@@ -209,6 +209,8 @@
   },
   {
     "ModelID": 456,
+    "idleEnergyPerTick": 8000,
+    "workEnergyPerTick": 240000,
     "assemblerSpeed": 80000,
     "assemblerRecipeType": 12
   },

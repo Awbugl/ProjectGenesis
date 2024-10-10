@@ -546,6 +546,8 @@ namespace ProjectGenesis.Compatibility
                 }
             }
 
+            return;
+
             float[] GasSpeedsTwoItems() =>
                 new float[] { (float)(themeWind * (0.65f + rand.NextDouble() * 0.1f)), (float)(themeWind * (0.16f + rand.NextDouble() * 0.04f)), };
 
