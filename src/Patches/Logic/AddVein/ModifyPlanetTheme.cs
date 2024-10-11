@@ -163,7 +163,6 @@ namespace ProjectGenesis.Patches.Logic.AddVein
                         RemoveVein(theme, 0);
                         RemoveVein(theme, 1);
                         RemoveVein(theme, 2);
-                        RemoveVein(theme, 3);
                         RemoveVein(theme, 14);
 
                         break;
@@ -181,7 +180,6 @@ namespace ProjectGenesis.Patches.Logic.AddVein
                         theme.Algos = new[] { 3, };
                         theme.oceanMat = LDB.themes.Select(8).oceanMat;
                         RemoveVein(theme, 0);
-                        RemoveVein(theme, 3);
                         RemoveVein(theme, 14);
 
                         break;
