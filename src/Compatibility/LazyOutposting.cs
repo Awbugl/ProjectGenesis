@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Reflection.Emit;
 using BepInEx;
 using BepInEx.Bootstrap;
 using HarmonyLib;
-using ProjectGenesis.Patches.Logic.AddVein;
 
 namespace ProjectGenesis.Compatibility
 {
