@@ -5,7 +5,6 @@ using HarmonyLib;
 using ProjectGenesis.Utils;
 
 // ReSharper disable InconsistentNaming
-// ReSharper disable once RedundantAssignment
 
 namespace ProjectGenesis.Compatibility
 {
