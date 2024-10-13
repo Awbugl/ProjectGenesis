@@ -15,6 +15,8 @@ namespace ProjectGenesis.Compatibility
     {
         internal const string GUID = "testpostpleaseignore.dsp.planet_vein_utilization";
 
+        private static readonly Harmony HarmonyPatch = new Harmony("ProjectGenesis.Compatibility." + GUID);
+
         internal static void Awake()
         {
             if (!Chainloader.PluginInfos.TryGetValue(GUID, out PluginInfo pluginInfo)) return;
@@ -23,12 +25,10 @@ namespace ProjectGenesis.Compatibility
             Type type = assembly.GetType("PlanetVeinUtilization.PlanetVeinUtilization");
             Type veinTypeInfoType = type.GetNestedType("VeinTypeInfo");
 
-            var harmony = new Harmony("org.LoShin.GenesisBook.Compatibility.PlanetVeinUtilization");
-
-            harmony.Patch(AccessTools.Method(type, "UIPlanetDetail_RefreshDynamicProperties_Postfix"), null, null,
+            HarmonyPatch.Patch(AccessTools.Method(type, "UIPlanetDetail_RefreshDynamicProperties_Postfix"), null, null,
                 new HarmonyMethod(typeof(PlanetVeinUtilization), nameof(RefreshDynamicProperties_Postfix_Transpiler)));
 
-            harmony.Patch(AccessTools.Method(type, "UIStarDetail_RefreshDynamicProperties_Postfix"), null, null,
+            HarmonyPatch.Patch(AccessTools.Method(type, "UIStarDetail_RefreshDynamicProperties_Postfix"), null, null,
                 new HarmonyMethod(typeof(PlanetVeinUtilization), nameof(RefreshDynamicProperties_Postfix_Transpiler)));
 
             ref Array local1 = ref AccessTools.StaticFieldRefAccess<Array>(type, "planetVeinCount");
