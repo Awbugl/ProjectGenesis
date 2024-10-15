@@ -463,8 +463,7 @@ namespace ProjectGenesis.Compatibility
                 GasGiantModify(ref theme);
             else
             {
-                ModifyGasItems(ref theme);
-                ModifyVeins(ref theme);
+                ModifyThemeData(ref theme);
 
                 if (theme.WaterItemId == ProtoID.I水) theme.WaterItemId = ProtoID.I海水;
 
@@ -534,48 +533,25 @@ namespace ProjectGenesis.Compatibility
             }
         }
 
-        private static void ModifyVeins(ref GSTheme theme)
+        private static void ModifyThemeData(ref GSTheme theme)
         {
-            Array.Resize(ref theme.VeinSpot, 15);
-            Array.Resize(ref theme.VeinCount, 15);
-            Array.Resize(ref theme.VeinOpacity, 15);
-
-            theme.VeinSpot[14] = (theme.VeinSpot[0] + theme.VeinSpot[1]) / 2;
-            theme.VeinCount[14] = (theme.VeinCount[0] + theme.VeinCount[1]) / 2;
-            theme.VeinOpacity[14] = (theme.VeinOpacity[0] + theme.VeinOpacity[1]) / 2;
-
-            if (!theme.GasItems.Contains(ProtoID.I氧))
-                RemoveVein(ref theme, 5);
-            else
-            {
-                theme.VeinSpot[5] += 1;
-                theme.VeinCount[5] *= 1.1f;
-            }
-
-            if (PlanetAddRareVeinData.TryGetValue(theme.LDBThemeId, out AddVeinData value))
-            {
-                theme.RareVeins = theme.RareVeins.Concat(value.RareVeins).ToArray();
-                theme.RareSettings = theme.RareSettings.Concat(value.RareSettings).ToArray();
-            }
-        }
-
-        private static void ModifyGasItems(ref GSTheme theme)
-        {
-            var rand = new DotNet35Random();
-
             float themeWind = theme.Wind;
 
-            if (theme.LDBThemeId == 12) themeWind = 1;
+            if (ThemeDatas.TryGetValue(theme.LDBThemeId, out var value))
+            {
+                if (themeWind == 0)
+                {
+                    theme.GasItems = Array.Empty<int>();
+                    theme.GasSpeeds = Array.Empty<float>();
+                }
+                else
+                {
+                    theme.GasItems = value.GasItems;
+                    theme.GasSpeeds = value.GasSpeedFactors.Select(factor => themeWind * factor).ToArray();
+                }
 
-            if (themeWind == 0)
-            {
-                theme.GasItems = Array.Empty<int>();
-                theme.GasSpeeds = Array.Empty<float>();
-            }
-            else if (PlanetGasData.TryGetValue(theme.LDBThemeId, out int[] value))
-            {
-                theme.GasItems = value;
-                theme.GasSpeeds = theme.GasItems.Length == 1 ? GasSpeedsOneItem() : GasSpeedsTwoItems();
+                theme.RareVeins = theme.RareVeins.Concat(value.RareVeins).ToArray();
+                theme.RareSettings = theme.RareSettings.Concat(value.RareSettings).ToArray();
             }
             else if (theme.GasItems == null || theme.GasItems.Length == 0)
             {
@@ -583,28 +559,39 @@ namespace ProjectGenesis.Compatibility
                 {
                     case EPlanetType.Ocean:
                         theme.GasItems = new[] { ProtoID.I氮, ProtoID.I氧, };
-                        theme.GasSpeeds = GasSpeedsTwoItems();
+                        theme.GasSpeeds = new float[]
+                        {
+                            themeWind * 0.7f,
+                            themeWind * 0.18f,
+                        };
 
                         break;
 
                     default:
                         theme.GasItems = new[] { ProtoID.I二氧化碳, };
-                        theme.GasSpeeds = GasSpeedsOneItem();
+                        theme.GasSpeeds = new float[] { themeWind * 0.8f, };
 
                         break;
                 }
             }
 
-            return;
+            Array.Resize(ref theme.VeinSpot, 15);
+            Array.Resize(ref theme.VeinCount, 15);
+            Array.Resize(ref theme.VeinOpacity, 15);
 
-            float[] GasSpeedsTwoItems() =>
-                new float[]
-                {
-                    (float)(themeWind * (0.65f + rand.NextDouble() * 0.1f)),
-                    (float)(themeWind * (0.16f + rand.NextDouble() * 0.04f)),
-                };
+            // Aluminum
+            theme.VeinSpot[14] = (theme.VeinSpot[0] + theme.VeinSpot[1]) / 2;
+            theme.VeinCount[14] = (theme.VeinCount[0] + theme.VeinCount[1]) / 2;
+            theme.VeinOpacity[14] = (theme.VeinOpacity[0] + theme.VeinOpacity[1]) / 2;
 
-            float[] GasSpeedsOneItem() => new float[] { (float)(themeWind * (0.65f + rand.NextDouble() * 0.1f)), };
+            // Coal
+            if (!theme.GasItems.Contains(ProtoID.I氧))
+                RemoveVein(ref theme, 5);
+            else
+            {
+                theme.VeinSpot[5] += 1;
+                theme.VeinCount[5] *= 1.1f;
+            }
         }
 
         private static void RemoveVein(ref GSTheme theme, int id)
