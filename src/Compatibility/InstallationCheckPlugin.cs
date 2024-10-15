@@ -27,22 +27,25 @@ namespace ProjectGenesis.Compatibility
     [BepInDependency(LazyOutposting.GUID, BepInDependency.DependencyFlags.SoftDependency)]
     public class InstallationCheckPlugin : BaseUnityPlugin
     {
-        public const string MODGUID = "org.LoShin.GenesisBook.InstallationCheck";
+        public const string MODGUID = "!!!GenesisBook.InstallationCheck";
         public const string MODNAME = "GenesisBook.InstallationCheck";
 
-        private static bool _shown;
-
-        private static bool PreloaderInstalled;
+        private static bool MessageShown, PreloaderInstalled, BepinExVersionMatch;
 
         public void Awake()
         {
             BepInEx.Logging.Logger.Listeners.Add(new HarmonyLogListener());
 
-            FieldInfo birthResourcePoint2 = AccessTools.DeclaredField(typeof(PlanetData), nameof(PlanetData.birthResourcePoint2));
+            BepinExVersionMatch = typeof(Paths).Assembly.GetName().Version == new System.Version(5, 4, 17);
+
+            FieldInfo birthResourcePoint2 =
+                AccessTools.DeclaredField(typeof(PlanetData), nameof(PlanetData.birthResourcePoint2));
             PreloaderInstalled = birthResourcePoint2 != null;
 
-            new Harmony(MODGUID).Patch(AccessTools.Method(typeof(VFPreload), nameof(VFPreload.InvokeOnLoadWorkEnded)), null,
-                new HarmonyMethod(typeof(InstallationCheckPlugin), nameof(OnMainMenuOpen)) { priority = Priority.Last, });
+            new Harmony(MODGUID).Patch(AccessTools.Method(typeof(VFPreload), nameof(VFPreload.InvokeOnLoadWorkEnded)),
+                null,
+                new HarmonyMethod(typeof(InstallationCheckPlugin), nameof(OnMainMenuOpen))
+                    { priority = Priority.Last, });
 
             AwakeCompatibilityPatchers();
         }
@@ -69,9 +72,9 @@ namespace ProjectGenesis.Compatibility
 
         public static void OnMainMenuOpen()
         {
-            if (_shown) return;
+            if (MessageShown) return;
 
-            _shown = true;
+            MessageShown = true;
 
             string msg = null;
 
@@ -81,9 +84,12 @@ namespace ProjectGenesis.Compatibility
 
             if (!PreloaderInstalled) msg = "PreloaderNotInstalled";
 
+            if (!BepinExVersionMatch) msg = "BepinExVersionNotMatch";
+
             if (string.IsNullOrEmpty(msg)) return;
 
-            UIMessageBox.Show("GenesisBookLoadTitle".TranslateFromJson(), msg.TranslateFromJson(), "确定".TranslateFromJson(), "跳转交流群".TranslateFromJson(),
+            UIMessageBox.Show("GenesisBookLoadTitle".TranslateFromJson(), msg.TranslateFromJson(),
+                "确定".TranslateFromJson(), "跳转交流群".TranslateFromJson(),
                 "跳转日志".TranslateFromJson(), UIMessageBox.INFO, null, OpenBrowser, OpenLog);
         }
 
