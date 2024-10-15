@@ -1,4 +1,20 @@
-v2.10.0-beta1 (Experimental 0.3.10101)
+- v2.10.0-beta2 (Experimental 0.3.10201)
+  + 为`黑石岩滩`和`戈壁`星球重新添加硅矿（仅影响此版本之后的存档）
+  + 调整了初级传送带的速度，从18/秒改为12/秒（仅影响此版本之后的存档，已建成的初级传送带可能会出现颜色渲染错误）  + 添加BepinEx版本不匹配警告
+  + 调整了部分星球的大气产出速度（仅影响此版本之后的存档）
+  + 调整了太阳帆的制造需求（仅影响此版本之后的存档，已建成的工厂产出不受影响）
+
+  + Re-added silicon ore to the `Blackstone` and `Gobi` planets (affects only save files after this version).
+  + Adjusted the speed of the basic conveyor belt from 18/s to 12/s (affects only save files after this version; there may be color rendering errors with already built basic conveyor belts).
+  + Added a warning for BepinEx version mismatches.
+  + Adjusted the atmospheric production rate of some planets (affects only save files after this version).
+  + Adjusted the manufacturing requirements for solar sails (affects only save files after this version; production from already built factories is not affected).
+
+<details>
+  <summary>点击展开日志 | Click to view all </summary>
+
+
+- v2.10.0-beta1 (Experimental 0.3.10101)
   + 添加科技`护盾载波调制`
   + 调整了部分科技的研究需求
   + 调整了黑雾研究站的制造配方需求
@@ -6,9 +22,6 @@ v2.10.0-beta1 (Experimental 0.3.10101)
   + Added technology `Shield Carrier Modulation`
   + Adjusted research requirements for some technologies
   + Adjusted recipe requirements for the Dark Fog Research Station
-
-<details>
-  <summary>点击展开日志 | Click to view all </summary>
 
 
 - v2.10.0-alpha6 (Experimental 0.3.10007)
