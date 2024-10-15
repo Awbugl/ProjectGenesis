@@ -228,5 +228,21 @@ namespace ProjectGenesis.Patches.Logic.AddVein
                 )
             },
         };
+
+        public struct ThemeData
+        {
+            public readonly int[] GasItems;
+            public readonly float[] GasSpeedFactors;
+            public readonly int[] RareVeins;
+            public readonly float[] RareSettings;
+
+            public ThemeData(int[] gasItems, float[] gasSpeedFactors, int[] rareVeins, float[] rareSettings)
+            {
+                GasItems = gasItems;
+                GasSpeedFactors = gasSpeedFactors;
+                RareVeins = rareVeins;
+                RareSettings = rareSettings;
+            }
+        }
     }
 }

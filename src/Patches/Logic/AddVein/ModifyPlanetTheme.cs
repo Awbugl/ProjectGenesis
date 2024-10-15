@@ -44,7 +44,6 @@ namespace ProjectGenesis.Patches.Logic.AddVein
                     case 13:
                         RemoveVein(theme, 0);
                         RemoveVein(theme, 14);
-
                         break;
 
                     case 17:
@@ -55,12 +54,6 @@ namespace ProjectGenesis.Patches.Logic.AddVein
                         theme.oceanMat = LDB.themes.Select(8).oceanMat;
                         RemoveVein(theme, 0);
                         RemoveVein(theme, 14);
-
-                        break;
-
-                    case 19:
-                    case 25:
-                        theme.Distribute = EThemeDistribute.Default;
 
                         break;
                 }
@@ -149,22 +142,6 @@ namespace ProjectGenesis.Patches.Logic.AddVein
             theme.VeinSpot[id] = 0;
             theme.VeinCount[id] = 0f;
             theme.VeinOpacity[id] = 0f;
-        }
-
-        public struct ThemeData
-        {
-            public readonly int[] GasItems;
-            public readonly float[] GasSpeedFactors;
-            public readonly int[] RareVeins;
-            public readonly float[] RareSettings;
-
-            public ThemeData(int[] gasItems, float[] gasSpeedFactors, int[] rareVeins, float[] rareSettings)
-            {
-                GasItems = gasItems;
-                GasSpeedFactors = gasSpeedFactors;
-                RareVeins = rareVeins;
-                RareSettings = rareSettings;
-            }
         }
     }
 }
