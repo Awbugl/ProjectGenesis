@@ -24,6 +24,7 @@ namespace ProjectGenesis.Compatibility
     [BepInDependency(PlanetwideMining.GUID, BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency(PlanetVeinUtilization.GUID, BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency(FastTravelEnabler.GUID, BepInDependency.DependencyFlags.SoftDependency)]
+    [BepInDependency(LazyOutposting.GUID, BepInDependency.DependencyFlags.SoftDependency)]
     public class InstallationCheckPlugin : BaseUnityPlugin
     {
         public const string MODGUID = "org.LoShin.GenesisBook.InstallationCheck";
@@ -54,6 +55,7 @@ namespace ProjectGenesis.Compatibility
             Bottleneck.Awake();
             PlanetwideMining.Awake();
             FastTravelEnabler.Awake();
+            LazyOutposting.Awake();
 
             try
             {
