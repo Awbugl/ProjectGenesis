@@ -159,7 +159,8 @@
   },
   {
     "ModelID": 117,
-    "stationCollectSpeed": 18
+    "stationCollectSpeed": 12,
+    "workEnergyPerTick": 0
   },
   {
     "ModelID": 118,

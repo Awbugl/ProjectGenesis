@@ -50,16 +50,15 @@ namespace ProjectGenesis.Patches.Logic.PlanetFocus
 
         private static void ReInitAll() => PlanetFocuses.Clear();
 
-        private static bool ContainsFocus(int planetId, int focusid)
+        private static bool ContainsFocus(int planetId, int focusId)
         {
-            if (PlanetFocuses.TryGetValue(planetId, out int[] focuses))
-                // ReSharper disable once LoopCanBeConvertedToQuery
-                // ReSharper disable once ForCanBeConvertedToForeach
+            if (!PlanetFocuses.TryGetValue(planetId, out int[] focuses)) return false;
+            
+            // ReSharper disable once LoopCanBeConvertedToQuery
+            // ReSharper disable once ForCanBeConvertedToForeach
+            for (var index = 0; index < focuses.Length; ++index)
             {
-                for (var index = 0; index < focuses.Length; ++index)
-                {
-                    if (focuses[index] == focusid) return true;
-                }
+                if (focuses[index] == focusId) return true;
             }
 
             return false;

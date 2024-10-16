@@ -2130,6 +2130,11 @@
     "ENUS": "A large self-sustaining facility that can enrich and collect atmospheric components."
   },
   {
+    "Name": "I轨道采集器",
+    "ZHCN": "用来采集气态行星上的资源，使用同位素温差发电来维持在轨道上工作所需的能量。",
+    "ENUS": "It is used to collect resources from gas giants. It use radioisotope thermoelectric generator to power the collector to work in orbit."
+  },  
+  {
     "Name": "二氧化碳",
     "ZHCN": "二氧化碳",
     "ENUS": "Carbon Dioxide"

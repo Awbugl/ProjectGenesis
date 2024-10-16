@@ -65,7 +65,7 @@ namespace ProjectGenesis.Patches.Logic.AddVein
                     new[] { 16, 17, 18, },
                     new[]
                     {
-                        0.0f, 0.5f, 0.3f, 0.7f, //
+                        0.0f, 1.0f, 0.3f, 0.7f, //
                         0.0f, 0.6f, 0.3f, 0.8f, //
                         0.0f, 0.8f, 0.5f, 0.8f, //
                     })
@@ -144,7 +144,7 @@ namespace ProjectGenesis.Patches.Logic.AddVein
                     new[] { 18, },
                     new[]
                     {
-                        0.0f, 0.9f, 0.9f, 0.9f, //
+                        0.0f, 1.0f, 0.9f, 0.9f, //
                     })
             },
             {

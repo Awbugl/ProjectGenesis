@@ -2959,11 +2959,13 @@
     "Time": 1800,
     "Input": [
       2104,
-      1205
+      1205,
+      6221
     ],
     "InCounts": [
       1,
-      20
+      20,
+      10
     ],
     "Output": [
       2105
@@ -2972,7 +2974,7 @@
       1
     ],
     "Explicit": false,
-    "Handcraft": true,
+    "Handcraft": false,
     "NonProductive": false
   },
   {
