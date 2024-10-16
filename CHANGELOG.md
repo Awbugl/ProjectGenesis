@@ -1,3 +1,20 @@
+- v2.10.0-beta3 (Experimental 0.3.10301)
+  + 调整了制造复合矩阵时的工作颜色（感谢karki的工作）
+  + 调整了`奇点矩阵`的图标
+  + 修复了BepinEx版本不匹配的提示
+  + 轨道采集器不再消耗采集物品发电
+  + 调整了轨道采集器的配方需求（仅影响此版本之后的存档）
+
+  + Adjusted working colors when making composite matrices (thanks to karki's work)
+  + Adjusted `singularity matrix` icon
+  + Fixed BepinEx version mismatch hints
+  + Orbital collector no longer consumes collected items
+  + Adjusted recipe requirements for Orbital collector (only affects archives after this version)
+
+<details>
+  <summary>点击展开日志 | Click to view all </summary>
+
+
 - v2.10.0-beta2 (Experimental 0.3.10201)
   + 为`黑石岩滩`和`戈壁`星球重新添加硅矿（仅影响此版本之后的存档）
   + 调整了初级传送带的速度，从18/秒改为12/秒（仅影响此版本之后的存档，已建成的初级传送带可能会出现颜色渲染错误）
@@ -10,9 +27,6 @@
   + Added a warning for BepinEx version mismatches.
   + Adjusted the atmospheric production rate of some planets (affects only save files after this version).
   + Adjusted the manufacturing requirements for solar sails (affects only save files after this version; production from already built factories is not affected).
-
-<details>
-  <summary>点击展开日志 | Click to view all </summary>
 
 
 - v2.10.0-beta1 (Experimental 0.3.10101)
