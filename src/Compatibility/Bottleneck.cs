@@ -5,7 +5,6 @@ using HarmonyLib;
 using ProjectGenesis.Utils;
 
 // ReSharper disable InconsistentNaming
-// ReSharper disable once RedundantAssignment
 
 namespace ProjectGenesis.Compatibility
 {
@@ -13,12 +12,14 @@ namespace ProjectGenesis.Compatibility
     {
         internal const string GUID = "Bottleneck";
 
+        private static readonly Harmony HarmonyPatch = new Harmony("ProjectGenesis.Compatibility." + GUID);
+
         internal static void Awake()
         {
             if (!Chainloader.PluginInfos.TryGetValue(GUID, out PluginInfo pluginInfo)) return;
 
             Assembly assembly = pluginInfo.Instance.GetType().Assembly;
-            new Harmony("org.LoShin.GenesisBook.Compatibility.Bottleneck").Patch(
+            HarmonyPatch.Patch(
                 AccessTools.Method(assembly.GetType("Bottleneck.Stats.ResearchTechHelper"), "GetMaxIncIndex"),
                 new HarmonyMethod(typeof(Bottleneck), nameof(GetMaxIncIndex_Prefix)));
         }

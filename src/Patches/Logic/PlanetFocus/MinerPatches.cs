@@ -70,6 +70,20 @@ namespace ProjectGenesis.Patches.Logic.PlanetFocus
                 __instance.speedText.text = $"{3600.0 * ((double)__instance.station.collectionPerTick[__instance.index] * collectSpeedRate):0.00}/min";
             }
         }
+        
+        [HarmonyPatch(typeof(UIControlPanelStationStorage), nameof(UIControlPanelStationStorage.RefreshValues))]
+        [HarmonyPostfix]
+        public static void UIControlPanelStationStorage_RefreshValues_Postfix(UIControlPanelStationStorage __instance)
+        {
+            if (__instance.station.isCollector && __instance.factory.planet.type != EPlanetType.Gas)
+            {
+                float collectSpeedRate = GameMain.history.miningSpeedScale * __instance.station.collectSpeed;
+
+                if (ContainsFocus(__instance.station.planetId, 6528)) collectSpeedRate *= 1.25f;
+
+                __instance.speedText.text = $"{3600.0 * ((double)__instance.station.collectionPerTick[__instance.index] * collectSpeedRate):0.00}/min";
+            }
+        }
 
         [HarmonyPatch(typeof(UIVeinCollectorPanel), nameof(UIVeinCollectorPanel._OnUpdate))]
         [HarmonyTranspiler]

@@ -68,7 +68,8 @@ namespace ProjectGenesis.Utils
 
             newMats.Add(collectEffectMat);
 
-            ModelProto registerModel = ProtoRegistry.RegisterModel(ProtoID.M大气采集器, "Assets/genesis-models/entities/prefabs/atmospheric-collect-station", newMats.ToArray());
+            ModelProto registerModel = ProtoRegistry.RegisterModel(ProtoID.M大气采集器,
+                "Assets/genesis-models/entities/prefabs/atmospheric-collect-station", newMats.ToArray());
 
             registerModel.HpMax = 300000;
             registerModel.RuinId = 384;
@@ -85,11 +86,13 @@ namespace ProjectGenesis.Utils
 
             PrefabDesc desc = oriModel.prefabDesc;
             GameObject prefab = desc.prefab ? desc.prefab : Resources.Load<GameObject>(oriModel.PrefabPath);
-            GameObject colliderPrefab = desc.colliderPrefab ? desc.colliderPrefab : Resources.Load<GameObject>(oriModel._colliderPath);
+            GameObject colliderPrefab = desc.colliderPrefab
+                ? desc.colliderPrefab
+                : Resources.Load<GameObject>(oriModel._colliderPath);
 
             ref PrefabDesc modelPrefabDesc = ref model.prefabDesc;
             modelPrefabDesc = prefab == null ? PrefabDesc.none :
-                colliderPrefab == null       ? new PrefabDesc(id, prefab) : new PrefabDesc(id, prefab, colliderPrefab);
+                colliderPrefab == null ? new PrefabDesc(id, prefab) : new PrefabDesc(id, prefab, colliderPrefab);
 
             foreach (Material[] lodMaterial in modelPrefabDesc.lodMaterials)
             {
@@ -163,9 +166,36 @@ namespace ProjectGenesis.Utils
             Texture texture = Resources.Load<Texture>("Assets/texpack/人造恒星MK2材质");
             prefabDescLODMaterial = ref prefabDesc.lodMaterials[0];
             prefabDescLODMaterial[0].SetTexture("_EmissionTex", texture);
-            prefabDescLODMaterial[1].SetColor("_TintColor", new Color(0.1804f, 0.4953f, 1.3584f));  //亮部
-            prefabDescLODMaterial[1].SetColor("_TintColor1", new Color(0.1294f, 0.3130f, 1.1508f)); //暗部
-            prefabDescLODMaterial[1].SetColor("_RimColor", new Color(0.4157f, 0.6784f, 1.0000f));   //边缘特效
+            prefabDescLODMaterial[1].SetColor("_TintColor", new Color(0.1804f, 0.4953f, 1.3584f)); // 亮部
+            prefabDescLODMaterial[1].SetColor("_TintColor1", new Color(0.1294f, 0.3130f, 1.1508f)); // 暗部
+            prefabDescLODMaterial[1].SetColor("_RimColor", new Color(0.4157f, 0.6784f, 1.0000f)); // 边缘特效
+
+            prefabDesc = LDB.models.Select(ProtoID.M矩阵研究站).prefabDesc;
+            prefabDescLODMaterial = ref prefabDesc.lodMaterials[0];
+            ModifyLabColor(prefabDescLODMaterial[0]);
+            ModifyLabColor(prefabDescLODMaterial[2]);
+            prefabDescLODMaterial = ref prefabDesc.lodMaterials[1];
+            ModifyLabColor(prefabDescLODMaterial[0]);
+            ModifyLabColor(prefabDescLODMaterial[2]); 
+            prefabDescLODMaterial = ref prefabDesc.lodMaterials[2];
+            ModifyLabColor(prefabDescLODMaterial[0]);
+        
+            prefabDesc = LDB.models.Select(ProtoID.M自演化研究站).prefabDesc;
+            prefabDescLODMaterial = ref prefabDesc.lodMaterials[0];
+            ModifyLabColor(prefabDescLODMaterial[0]);
+            ModifyLabColor(prefabDescLODMaterial[2]);
+            prefabDescLODMaterial = ref prefabDesc.lodMaterials[1];
+            ModifyLabColor(prefabDescLODMaterial[0]);
+            ModifyLabColor(prefabDescLODMaterial[2]); 
+            prefabDescLODMaterial = ref prefabDesc.lodMaterials[2];
+            ModifyLabColor(prefabDescLODMaterial[0]);
+        }
+
+        private static void ModifyLabColor(Material material)
+        {
+            material.SetColor("_LabColor7", new Color(1f, 0.4510f, 0.0039f));
+            material.SetColor("_LabColor8", new Color(1f, 0.0431f, 0.5843f));
+            material.SetColor("_LabColor9", new Color(0.4020f, 0.4020f, 0.4020f));
         }
 
         internal static void ItemPostFix()

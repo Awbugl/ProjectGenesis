@@ -56,7 +56,7 @@ namespace ProjectGenesis.Patches.UI
 
         private static bool ChemicalRecipeTypePatch(int recipeType) => recipeType == (int)ERecipeType.Chemical || recipeType == 16;
 
-        private static int ChemicalRecipeFcolPatch(int recipeId) => RecipeIdPos.TryGetValue(recipeId, out int pos) ? pos : recipeId;
+        private static int ChemicalRecipeFcolPatch(int recipeId) => RecipeIdPos.GetValueOrDefault(recipeId, recipeId);
 
         internal static void SetChemicalRecipeFcol()
         {

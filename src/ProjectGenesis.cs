@@ -54,7 +54,7 @@ namespace ProjectGenesis
         public const string MODGUID = "org.LoShin.GenesisBook";
         public const string MODNAME = "GenesisBook";
         public const string VERSION = "2.10.0";
-        public const string DEBUGVERSION = "-alpha6";
+        public const string DEBUGVERSION = "-beta2";
 
         public static bool LoadCompleted;
 
@@ -132,6 +132,12 @@ namespace ProjectGenesis
                 resources_models.bundle.LoadAsset<Shader>(
                     "Assets/genesis-models/shaders/PBR Standard Vein Metal COLOR.shader");
             SwapShaderPatches.AddSwapShaderMapping("VF Shaders/Forward/PBR Standard Vein Metal", metalVeinShader);
+
+            Shader labToggleShader =
+                resources_models.bundle.LoadAsset<Shader>(
+                    "Assets/genesis-models/shaders/PBR Standard Vertex Toggle Lab REPLACE.shader");
+            SwapShaderPatches.AddSwapShaderMapping("VF Shaders/Forward/PBR Standard Vertex Toggle Lab",
+                labToggleShader);
 
             #endregion ResourceData
 
@@ -248,6 +254,20 @@ namespace ProjectGenesis
                 ProtoID.I通量矩阵,
                 ProtoID.I领域矩阵,
                 ProtoID.I奇点矩阵,
+            };
+
+            LabComponent.matrixShaderStates = new[]
+            {
+                0.0f,
+                11111.2f,
+                22222.2f,
+                33333.2f,
+                44444.2f,
+                55555.2f,
+                66666.2f,
+                77777.2f,
+                88888.2f,
+                99999.2f,
             };
 
             LDB.items.OnAfterDeserialize();

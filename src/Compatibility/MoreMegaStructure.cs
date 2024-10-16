@@ -13,6 +13,8 @@ namespace ProjectGenesis.Compatibility
     {
         internal const string GUID = "Gnimaerd.DSP.plugin.MoreMegaStructure";
 
+        private static readonly Harmony HarmonyPatch = new Harmony("ProjectGenesis.Compatibility." + GUID);
+
         private static readonly int[] AddedRecipes =
         {
             330, 331, 332, 333, 334, 335, 336, 337, 338, 339, 340, 341, 342, 343, 344, 345, 346, 347, 348, 349, 350, 351, 363, 364, 365, 366, 367, 368, 369, 370, 371,
@@ -25,7 +27,7 @@ namespace ProjectGenesis.Compatibility
         {
             if (!Chainloader.PluginInfos.TryGetValue(GUID, out _)) return;
 
-            new Harmony("org.LoShin.GenesisBook.Compatibility.MoreMegaStructure").Patch(AccessTools.Method(typeof(VFPreload), nameof(VFPreload.InvokeOnLoadWorkEnded)),
+            HarmonyPatch.Patch(AccessTools.Method(typeof(VFPreload), nameof(VFPreload.InvokeOnLoadWorkEnded)),
                 null, new HarmonyMethod(typeof(MoreMegaStructure), nameof(LDBToolOnPostAddDataAction)) { after = new[] { LDBToolPlugin.MODGUID, }, });
         }
 

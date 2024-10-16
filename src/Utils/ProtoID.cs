@@ -90,6 +90,7 @@ namespace ProjectGenesis.Utils
                            R海水淡化 = 801;
 
         internal const int M星际物流运输站 = 50,
+                           M矩阵研究站 = 70,
                            M射线接收站 = 73,
                            M负熵熔炉 = 457,
                            M行星基地 = 292,
@@ -104,6 +105,7 @@ namespace ProjectGenesis.Utils
                            M游骑兵 = 301,
                            M守卫者 = 302,
                            M高频激光塔 = 373,
+                           M自演化研究站 = 455,
                            M量子储液罐 = 801,
                            M矿物处理厂 = 802,
                            M天穹装配厂 = 803,

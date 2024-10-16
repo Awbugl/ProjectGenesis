@@ -23,24 +23,28 @@ namespace ProjectGenesis.Patches.Logic
         {
             var planetId = __instance.planet.id;
 
-            if (__instance.gameData.history.TechUnlocked(ProtoID.T护盾载波调制) && __instance.isSpherical)
+            if (!__instance.gameData.history.TechUnlocked(ProtoID.T护盾载波调制)) return;
+
+            if (__instance.isSpherical)
             {
+                if (NodeIds.ContainsKey(planetId)) return;
+
                 var nodeId = NewNodeComponent(__instance.factory.powerSystem, 400, GlobalPowerCoverRadius);
 
                 NodeIds.TryAddOrInsert(planetId, nodeId);
 
                 SyncGlobalPowerSupplyNodeIdData.Sync(planetId, nodeId);
             }
-            else
+            else if (NodeIds.TryGetValue(planetId, out var list))
             {
                 SyncSyncGlobalPowerSupplyRemoveData.Sync(planetId);
-
-                if (!NodeIds.TryRemove(planetId, out var list)) return;
 
                 foreach (var nodeId in list)
                 {
                     __instance.factory.powerSystem.RemoveNodeComponent(nodeId);
                 }
+
+                NodeIds.Remove(planetId, out _);
             }
         }
 

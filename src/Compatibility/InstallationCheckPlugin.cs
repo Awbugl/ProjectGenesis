@@ -28,20 +28,25 @@ namespace ProjectGenesis.Compatibility
     {
         public const string MODGUID = "org.LoShin.GenesisBook.InstallationCheck";
         public const string MODNAME = "GenesisBook.InstallationCheck";
-
-        private static bool _shown;
-
-        private static bool PreloaderInstalled;
+        public const string PreferBepinExVersion = "5.4.17";
+        private static bool MessageShown, PreloaderInstalled, BepinExVersionMatch;
 
         public void Awake()
         {
             BepInEx.Logging.Logger.Listeners.Add(new HarmonyLogListener());
 
-            FieldInfo birthResourcePoint2 = AccessTools.DeclaredField(typeof(PlanetData), nameof(PlanetData.birthResourcePoint2));
+            var currentVersion = typeof(Paths).Assembly.GetName().Version.ToString(3);
+          
+            BepinExVersionMatch = currentVersion == PreferBepinExVersion;
+
+            FieldInfo birthResourcePoint2 =
+                AccessTools.DeclaredField(typeof(PlanetData), nameof(PlanetData.birthResourcePoint2));
             PreloaderInstalled = birthResourcePoint2 != null;
 
-            new Harmony(MODGUID).Patch(AccessTools.Method(typeof(VFPreload), nameof(VFPreload.InvokeOnLoadWorkEnded)), null,
-                new HarmonyMethod(typeof(InstallationCheckPlugin), nameof(OnMainMenuOpen)) { priority = Priority.Last, });
+            new Harmony(MODGUID).Patch(AccessTools.Method(typeof(VFPreload), nameof(VFPreload.InvokeOnLoadWorkEnded)),
+                null,
+                new HarmonyMethod(typeof(InstallationCheckPlugin), nameof(OnMainMenuOpen))
+                    { priority = Priority.Last, });
 
             AwakeCompatibilityPatchers();
         }
@@ -55,7 +60,10 @@ namespace ProjectGenesis.Compatibility
             PlanetwideMining.Awake();
             FastTravelEnabler.Awake();
 
-            try { GalacticScale.Awake(); }
+            try
+            {
+                GalacticScale.Awake();
+            }
             catch (FileNotFoundException)
             {
                 // ignore
@@ -64,9 +72,9 @@ namespace ProjectGenesis.Compatibility
 
         public static void OnMainMenuOpen()
         {
-            if (_shown) return;
+            if (MessageShown) return;
 
-            _shown = true;
+            MessageShown = true;
 
             string msg = null;
 
@@ -74,11 +82,14 @@ namespace ProjectGenesis.Compatibility
 
             if (!ProjectGenesis.LoadCompleted) msg = "ProjectGenesisNotLoaded";
 
+            if (!BepinExVersionMatch) msg = "BepinExVersionNotMatch";
+
             if (!PreloaderInstalled) msg = "PreloaderNotInstalled";
 
             if (string.IsNullOrEmpty(msg)) return;
 
-            UIMessageBox.Show("GenesisBookLoadTitle".TranslateFromJson(), msg.TranslateFromJson(), "确定".TranslateFromJson(), "跳转交流群".TranslateFromJson(),
+            UIMessageBox.Show("GenesisBookLoadTitle".TranslateFromJson(), msg.TranslateFromJson(),
+                "确定".TranslateFromJson(), "跳转交流群".TranslateFromJson(),
                 "跳转日志".TranslateFromJson(), UIMessageBox.INFO, null, OpenBrowser, OpenLog);
         }
 
