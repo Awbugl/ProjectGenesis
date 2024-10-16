@@ -73,13 +73,6 @@ namespace ProjectGenesis.Patches.UI
                 (rectTransform2.anchoredPosition, rectTransform1.anchoredPosition);
         }
 
-        [HarmonyPatch(typeof(LabComponent), nameof(LabComponent.InternalUpdateAssemble))]
-        [HarmonyPostfix]
-        public static void LabComponent_InternalUpdateAssemble_Postfix(ref LabComponent __instance, ref uint __result)
-        {
-            if (__result > 6) __result = 6;
-        }
-
         [HarmonyPatch(typeof(UILabWindow), nameof(UILabWindow._OnUpdate))]
         [HarmonyPostfix]
         public static void UILabWindow_OnUpdate_Postfix(UILabWindow __instance)
@@ -142,9 +135,8 @@ namespace ProjectGenesis.Patches.UI
             return matcher.InstructionEnumeration();
         }
 
-
         [HarmonyPatch(typeof(LabComponent), nameof(LabComponent.SetFunction))]
-        [HarmonyPatch(typeof(LabMatrixEffect), nameof(LabMatrixEffect.Update))]
+        [HarmonyPatch(typeof(LabComponent), nameof(LabComponent.InternalUpdateAssemble))]
         [HarmonyPatch(typeof(FactorySystem), nameof(FactorySystem.GameTickLabResearchMode))]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> LabComponent_SetFunction_Transpiler(
@@ -158,6 +150,30 @@ namespace ProjectGenesis.Patches.UI
 
             matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Call,
                 AccessTools.Method(typeof(ResearchLabPatches), nameof(ChangeMatrixIds))));
+
+            return matcher.InstructionEnumeration();
+        }
+
+        [HarmonyPatch(typeof(LabMatrixEffect), nameof(LabMatrixEffect.Update))]
+        [HarmonyTranspiler]
+        public static IEnumerable<CodeInstruction> LabMatrixEffect_Update_Transpiler(
+            IEnumerable<CodeInstruction> instructions)
+        {
+            var matcher = new CodeMatcher(instructions);
+
+            matcher.MatchForward(false,
+                new CodeMatch(OpCodes.Ldloc_S),
+                new CodeMatch(OpCodes.Brfalse),
+                new CodeMatch(OpCodes.Ldc_I4_0));
+
+            var label = matcher.Advance(1).Operand;
+
+            matcher.Advance(1).InsertAndAdvance(
+                new CodeInstruction(OpCodes.Ldarg_0),
+                new CodeInstruction(OpCodes.Ldloc_3),
+                new CodeInstruction(OpCodes.Call,
+                    AccessTools.Method(typeof(ResearchLabPatches), nameof(LabMatrixEffect_Patch_Method))),
+                new CodeInstruction(OpCodes.Br_S, label));
 
             return matcher.InstructionEnumeration();
         }
@@ -294,6 +310,37 @@ namespace ProjectGenesis.Patches.UI
             }
 
             return num1;
+        }
+
+        public static void LabMatrixEffect_Patch_Method(LabMatrixEffect labMatrixEffect, TechProto techProto)
+        {
+            foreach (var item in techProto.Items)
+            {
+                switch (item)
+                {
+                    case ProtoID.I通量矩阵:
+                        labMatrixEffect.techMatUse[0] = true;
+                        labMatrixEffect.techMatUse[1] = true;
+                        break;
+
+                    case ProtoID.I领域矩阵:
+                        labMatrixEffect.techMatUse[2] = true;
+                        labMatrixEffect.techMatUse[3] = true;
+                        break;
+
+                    case ProtoID.I奇点矩阵:
+                        labMatrixEffect.techMatUse[0] = true;
+                        labMatrixEffect.techMatUse[1] = true;
+                        labMatrixEffect.techMatUse[2] = true;
+                        labMatrixEffect.techMatUse[3] = true;
+                        labMatrixEffect.techMatUse[4] = true;
+                        break;
+
+                    default:
+                        labMatrixEffect.techMatUse[item - LabComponent.matrixIds[0]] = true;
+                        break;
+                }
+            }
         }
 
         public static int UILabWindow_OnUpdate_Patch_Method(int timeSpend, LabComponent component)

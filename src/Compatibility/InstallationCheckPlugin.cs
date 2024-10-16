@@ -28,14 +28,16 @@ namespace ProjectGenesis.Compatibility
     {
         public const string MODGUID = "org.LoShin.GenesisBook.InstallationCheck";
         public const string MODNAME = "GenesisBook.InstallationCheck";
-
+        public const string PreferBepinExVersion = "5.4.17";
         private static bool MessageShown, PreloaderInstalled, BepinExVersionMatch;
 
         public void Awake()
         {
             BepInEx.Logging.Logger.Listeners.Add(new HarmonyLogListener());
 
-            BepinExVersionMatch = typeof(Paths).Assembly.GetName().Version == new System.Version(5, 4, 17);
+            var currentVersion = typeof(Paths).Assembly.GetName().Version.ToString(3);
+          
+            BepinExVersionMatch = currentVersion == PreferBepinExVersion;
 
             FieldInfo birthResourcePoint2 =
                 AccessTools.DeclaredField(typeof(PlanetData), nameof(PlanetData.birthResourcePoint2));
@@ -80,9 +82,9 @@ namespace ProjectGenesis.Compatibility
 
             if (!ProjectGenesis.LoadCompleted) msg = "ProjectGenesisNotLoaded";
 
-            if (!PreloaderInstalled) msg = "PreloaderNotInstalled";
-
             if (!BepinExVersionMatch) msg = "BepinExVersionNotMatch";
+
+            if (!PreloaderInstalled) msg = "PreloaderNotInstalled";
 
             if (string.IsNullOrEmpty(msg)) return;
 
