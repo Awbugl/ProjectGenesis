@@ -1,5 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
+using System.Reflection.Emit;
+using BepInEx;
 using BepInEx.Bootstrap;
 using HarmonyLib;
 using xiaoye97;
@@ -12,25 +15,28 @@ namespace ProjectGenesis.Compatibility
 
         private static readonly Harmony HarmonyPatch = new Harmony("ProjectGenesis.Compatibility." + GUID);
 
-        private static bool _finished;
-
         internal static void Awake()
         {
-            if (!Chainloader.PluginInfos.TryGetValue(GUID, out _)) return;
+            if (!Chainloader.PluginInfos.TryGetValue(GUID, out PluginInfo pluginInfo)) return;
 
-            MoveConflictRecipes();
+            Assembly assembly = pluginInfo.Instance.GetType().Assembly;
 
-            HarmonyPatch.Patch(AccessTools.Method(typeof(VFPreload), nameof(VFPreload.InvokeOnLoadWorkEnded)),
-                null,
-                new HarmonyMethod(typeof(MoreMegaStructure), nameof(LDBToolOnPostAddDataAction))
-                    { before = new[] { ProjectGenesis.MODGUID, }, });
-        }
+            var type = assembly.GetType("GigaStations.GigaStationsPlugin");
 
-        private static void MoveConflictRecipes()
-        {
+            HarmonyPatch.Patch(AccessTools.Method(type,
+                    "AddGigaCollector"), null, null,
+                new HarmonyMethod(typeof(GigaStationsUpdated), nameof(AddGigaCollector_Transpiler)));
+
+
             ref List<List<Proto>> preToAdd =
                 ref AccessTools.StaticFieldRefAccess<List<List<Proto>>>(typeof(LDBTool), "PreToAdd");
 
+            MoveConflictRecipes(ref preToAdd);
+            MoveBuildIndex(ref preToAdd);
+        }
+
+        private static void MoveConflictRecipes(ref List<List<Proto>> preToAdd)
+        {
             int index = ProtoIndex.GetIndex(typeof(RecipeProto));
 
             foreach (var proto in preToAdd[index].Cast<RecipeProto>().Where(proto => proto != null))
@@ -55,15 +61,48 @@ namespace ProjectGenesis.Compatibility
             }
         }
 
-        public static void LDBToolOnPostAddDataAction()
+        private static void MoveBuildIndex(ref List<List<Proto>> preToAdd)
         {
-            if (_finished) return;
+            int index = ProtoIndex.GetIndex(typeof(ItemProto));
 
-            LDB.items.Select(2110).BuildIndex = 607;
-            LDB.items.Select(2111).BuildIndex = 608;
-            LDB.items.Select(2112).BuildIndex = 609;
-            
-            _finished = true;
+            foreach (var proto in preToAdd[index].Cast<ItemProto>().Where(proto => proto != null))
+            {
+                switch (proto.ID)
+                {
+                    case 2110:
+                        proto.BuildIndex = 1207;
+                        break;
+
+                    case 2111:
+                        proto.BuildIndex = 1208;
+                        break;
+
+                    case 2112:
+                        proto.BuildIndex = 1209;
+                        proto.DescFields = new[] { 18, 32, 1, 40 };
+                        break;
+                }
+            }
+        }
+
+        public static IEnumerable<CodeInstruction> AddGigaCollector_Transpiler(
+            IEnumerable<CodeInstruction> instructions)
+        {
+            var matcher = new CodeMatcher(instructions);
+
+            matcher.MatchForward(false,
+                new CodeMatch(OpCodes.Stfld,
+                    AccessTools.Field(typeof(PrefabDesc), nameof(PrefabDesc.workEnergyPerTick))));
+
+            matcher.SetAndAdvance(OpCodes.Call,
+                AccessTools.Method(typeof(GigaStationsUpdated), nameof(SetWorkEnergyPerTick)));
+
+            return matcher.InstructionEnumeration();
+        }
+
+        public static void SetWorkEnergyPerTick(PrefabDesc desc, long workEnergyPerTick)
+        {
+            desc.workEnergyPerTick = 0;
         }
     }
 }

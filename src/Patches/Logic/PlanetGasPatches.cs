@@ -287,8 +287,7 @@ namespace ProjectGenesis.Patches.Logic
             return matcher.InstructionEnumeration();
         }
 
-        public static bool IsSuit(PlanetData planet, BuildPreview preview) =>
-            preview.item.ID == (planet.type == EPlanetType.Gas ? ProtoID.I轨道采集器 : ProtoID.I大气采集器);
+        public static bool IsSuit(PlanetData planet, BuildPreview preview) => planet.type == EPlanetType.Gas ^ preview.item.ID == ProtoID.I大气采集器;
 
         public static float GetDistance(PlanetData planet) => planet.type == EPlanetType.Gas ? 14297f : 3845f;
 
