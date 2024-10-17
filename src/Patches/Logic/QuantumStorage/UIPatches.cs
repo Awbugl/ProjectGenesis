@@ -17,6 +17,8 @@ namespace ProjectGenesis.Patches.Logic.QuantumStorage
         [HarmonyPostfix]
         public static void Init()
         {
+            if (orbitPicker) return;
+
             orbitPicker = Object.Instantiate(UIRoot.instance.uiGame.ejectorWindow.orbitPicker,
                 UIRoot.instance.uiGame.storageWindow.transform);
 
@@ -72,17 +74,14 @@ namespace ProjectGenesis.Patches.Logic.QuantumStorage
 
             StorageComponent component = __instance.factoryStorage.storagePool[__instance.storageId];
 
-            if (component.size == QuantumStorageSize)
+            var isQuantumStorage = component.size == QuantumStorageSize;
+
+            __instance.bansSlider.transform.parent.gameObject.SetActive(!isQuantumStorage);
+            orbitPicker.gameObject.SetActive(isQuantumStorage);
+
+            if (isQuantumStorage)
             {
-                __instance.bansSlider.transform.parent.gameObject.SetActive(false);
-                orbitPicker.gameObject.SetActive(true);
-                var orbitId = QueryOrbitId(__instance.factory.planetId, __instance.storageId);
-                orbitPicker.SetOrbitId(orbitId);
-            }
-            else
-            {
-                __instance.bansSlider.transform.parent.gameObject.SetActive(true);
-                orbitPicker.gameObject.SetActive(false);
+                orbitPicker.SetOrbitId(QueryOrbitId(__instance.factory.planetId, __instance.storageId));
             }
         }
     }

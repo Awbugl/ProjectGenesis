@@ -214,7 +214,6 @@ namespace ProjectGenesis.Patches.Logic.QuantumStorage
         {
             var matcher = new CodeMatcher(instructions, ilGenerator);
 
-
             matcher.MatchForward(false,
                 new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(EntityData), nameof(EntityData.protoId))));
 
