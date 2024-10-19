@@ -1,6 +1,7 @@
 ﻿using System.IO;
 using System.Reflection;
 using BepInEx;
+using BepInEx.Logging;
 using HarmonyLib;
 using ProjectGenesis.Patches.UI;
 using ProjectGenesis.Utils;
@@ -25,19 +26,24 @@ namespace ProjectGenesis.Compatibility
     [BepInDependency(PlanetVeinUtilization.GUID, BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency(FastTravelEnabler.GUID, BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency(GigaStationsUpdated.GUID, BepInDependency.DependencyFlags.SoftDependency)]
+    [BepInDependency(LazyOutposting.GUID, BepInDependency.DependencyFlags.SoftDependency)]
     public class InstallationCheckPlugin : BaseUnityPlugin
     {
         public const string MODGUID = "org.LoShin.GenesisBook.InstallationCheck";
         public const string MODNAME = "GenesisBook.InstallationCheck";
         public const string PreferBepinExVersion = "5.4.17";
         private static bool MessageShown, PreloaderInstalled, BepinExVersionMatch;
+        
+        internal static ManualLogSource logger;
 
         public void Awake()
         {
+            logger = Logger;
+            
             BepInEx.Logging.Logger.Listeners.Add(new HarmonyLogListener());
 
             var currentVersion = typeof(Paths).Assembly.GetName().Version.ToString(3);
-          
+
             BepinExVersionMatch = currentVersion == PreferBepinExVersion;
 
             FieldInfo birthResourcePoint2 =
@@ -61,6 +67,7 @@ namespace ProjectGenesis.Compatibility
             PlanetwideMining.Awake();
             FastTravelEnabler.Awake();
             GigaStationsUpdated.Awake();
+            LazyOutposting.Awake();
 
             try
             {

@@ -21,15 +21,16 @@ namespace ProjectGenesis.Patches.Logic
         [HarmonyPostfix]
         public static void PlanetATField_GameTick_Postfix(PlanetATField __instance)
         {
-            var planetId = __instance.planet.id;
-
             if (!__instance.gameData.history.TechUnlocked(ProtoID.T护盾载波调制)) return;
 
+            var planetId = __instance.planet.id;
+            var factoryPowerSystem = __instance.factory.powerSystem;
+            
             if (__instance.isSpherical)
             {
                 if (NodeIds.ContainsKey(planetId)) return;
 
-                var nodeId = NewNodeComponent(__instance.factory.powerSystem, 400, GlobalPowerCoverRadius);
+                var nodeId = NewNodeComponent(factoryPowerSystem, 400, GlobalPowerCoverRadius);
 
                 NodeIds.TryAddOrInsert(planetId, nodeId);
 
@@ -39,9 +40,13 @@ namespace ProjectGenesis.Patches.Logic
             {
                 SyncSyncGlobalPowerSupplyRemoveData.Sync(planetId);
 
+                // ReSharper disable once ForeachCanBePartlyConvertedToQueryUsingAnotherGetEnumerator
                 foreach (var nodeId in list)
                 {
-                    __instance.factory.powerSystem.RemoveNodeComponent(nodeId);
+                   if (factoryPowerSystem.nodePool[nodeId].powerPoint == Vector3.zero)
+                   {
+                       factoryPowerSystem.RemoveNodeComponent(nodeId);
+                   }
                 }
 
                 NodeIds.Remove(planetId, out _);
@@ -84,7 +89,7 @@ namespace ProjectGenesis.Patches.Logic
             powerSystem.nodePool[nodeId].entityId = 0;
             powerSystem.nodePool[nodeId].connectDistance = conn;
             powerSystem.nodePool[nodeId].coverRadius = cover;
-            powerSystem.nodePool[nodeId].powerPoint = new Vector3();
+            powerSystem.nodePool[nodeId].powerPoint = Vector3.zero;
             powerSystem.nodePool[nodeId].isCharger = false;
             powerSystem.nodePool[nodeId].workEnergyPerTick = 0;
             powerSystem.nodePool[nodeId].idleEnergyPerTick = 0;

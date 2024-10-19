@@ -1,6 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using Mono.Cecil;
+using FieldAttributes = Mono.Cecil.FieldAttributes;
+
+[assembly:AssemblyVersion(ProjectGenesis.ProjectGenesis.VERSION)]
 
 namespace ProjectGenesis
 {

@@ -2718,7 +2718,7 @@
     "IconPath": "Assets/texpack/创世之书",
     "GridIndex": 0,
     "StackSize": 1,
-    "Type": 2,
+    "Type": 7,
     "PreTechOverride": 1,
     "DescFields": [
       2,
@@ -2726,7 +2726,7 @@
       40
     ],
     "FuelType": 31,
-    "HeatValue": 1,
+    "HeatValue": 1000,
     "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
@@ -2767,7 +2767,7 @@
     "IconPath": "Assets/texpack/虚空之书",
     "GridIndex": 0,
     "StackSize": 1,
-    "Type": 2,
+    "Type": 7,
     "PreTechOverride": 1,
     "DescFields": [
       2,
@@ -2775,7 +2775,7 @@
       40
     ],
     "FuelType": 31,
-    "HeatValue": 1,
+    "HeatValue": 1000,
     "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
@@ -2816,7 +2816,7 @@
     "IconPath": "Assets/texpack/起源之书",
     "GridIndex": 0,
     "StackSize": 1,
-    "Type": 2,
+    "Type": 7,
     "PreTechOverride": 1,
     "DescFields": [
       2,
@@ -2824,7 +2824,7 @@
       40
     ],
     "FuelType": 31,
-    "HeatValue": 1,
+    "HeatValue": 1000,
     "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
@@ -2912,7 +2912,7 @@
     "IconPath": "Assets/texpack/日志01",
     "GridIndex": 0,
     "StackSize": 1,
-    "Type": 2,
+    "Type": 7,
     "PreTechOverride": 1,
     "DescFields": [
       2,
@@ -2920,7 +2920,7 @@
       40
     ],
     "FuelType": 31,
-    "HeatValue": 1,
+    "HeatValue": 1000,
     "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
@@ -2961,7 +2961,7 @@
     "IconPath": "Assets/texpack/日志02",
     "GridIndex": 0,
     "StackSize": 1,
-    "Type": 2,
+    "Type": 7,
     "PreTechOverride": 1,
     "DescFields": [
       2,
@@ -2969,7 +2969,7 @@
       40
     ],
     "FuelType": 31,
-    "HeatValue": 1,
+    "HeatValue": 1000,
     "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
@@ -3010,7 +3010,7 @@
     "IconPath": "Assets/texpack/日志03",
     "GridIndex": 0,
     "StackSize": 1,
-    "Type": 2,
+    "Type": 7,
     "PreTechOverride": 1,
     "DescFields": [
       2,
@@ -3018,7 +3018,7 @@
       40
     ],
     "FuelType": 31,
-    "HeatValue": 1,
+    "HeatValue": 1000,
     "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
@@ -3059,7 +3059,7 @@
     "IconPath": "Assets/texpack/日志04",
     "GridIndex": 0,
     "StackSize": 1,
-    "Type": 2,
+    "Type": 7,
     "PreTechOverride": 1,
     "DescFields": [
       2,
@@ -3067,7 +3067,7 @@
       40
     ],
     "FuelType": 31,
-    "HeatValue": 1,
+    "HeatValue": 1000,
     "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
@@ -3108,7 +3108,7 @@
     "IconPath": "Assets/texpack/日志05",
     "GridIndex": 0,
     "StackSize": 1,
-    "Type": 2,
+    "Type": 7,
     "PreTechOverride": 1,
     "DescFields": [
       2,
@@ -3116,7 +3116,7 @@
       40
     ],
     "FuelType": 31,
-    "HeatValue": 1,
+    "HeatValue": 1000,
     "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
@@ -3157,7 +3157,7 @@
     "IconPath": "Assets/texpack/日志06",
     "GridIndex": 0,
     "StackSize": 1,
-    "Type": 2,
+    "Type": 7,
     "PreTechOverride": 1,
     "DescFields": [
       2,
@@ -3165,7 +3165,7 @@
       40
     ],
     "FuelType": 31,
-    "HeatValue": 1,
+    "HeatValue": 1000,
     "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
@@ -3206,7 +3206,7 @@
     "IconPath": "Assets/texpack/日志07",
     "GridIndex": 0,
     "StackSize": 1,
-    "Type": 2,
+    "Type": 7,
     "PreTechOverride": 1,
     "DescFields": [
       2,
@@ -3214,7 +3214,7 @@
       40
     ],
     "FuelType": 31,
-    "HeatValue": 1,
+    "HeatValue": 1000,
     "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
@@ -3255,7 +3255,7 @@
     "IconPath": "Assets/texpack/日志08",
     "GridIndex": 0,
     "StackSize": 1,
-    "Type": 2,
+    "Type": 7,
     "PreTechOverride": 1,
     "DescFields": [
       2,
@@ -3263,7 +3263,7 @@
       40
     ],
     "FuelType": 31,
-    "HeatValue": 1,
+    "HeatValue": 1000,
     "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
@@ -3304,7 +3304,7 @@
     "IconPath": "Assets/texpack/日志09",
     "GridIndex": 0,
     "StackSize": 1,
-    "Type": 2,
+    "Type": 7,
     "PreTechOverride": 1,
     "DescFields": [
       2,
@@ -3312,7 +3312,7 @@
       40
     ],
     "FuelType": 31,
-    "HeatValue": 1,
+    "HeatValue": 1000,
     "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
@@ -3353,7 +3353,7 @@
     "IconPath": "Assets/texpack/日志10",
     "GridIndex": 0,
     "StackSize": 1,
-    "Type": 2,
+    "Type": 7,
     "PreTechOverride": 1,
     "DescFields": [
       2,
@@ -3361,7 +3361,7 @@
       40
     ],
     "FuelType": 31,
-    "HeatValue": 1,
+    "HeatValue": 1000,
     "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
@@ -3402,7 +3402,7 @@
     "IconPath": "Assets/texpack/日志11",
     "GridIndex": 0,
     "StackSize": 1,
-    "Type": 2,
+    "Type": 7,
     "PreTechOverride": 1,
     "DescFields": [
       2,
@@ -3410,7 +3410,7 @@
       40
     ],
     "FuelType": 31,
-    "HeatValue": 1,
+    "HeatValue": 1000,
     "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,

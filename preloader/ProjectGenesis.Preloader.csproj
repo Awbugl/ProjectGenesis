@@ -11,7 +11,7 @@
         <AppDesignerFolder>Properties</AppDesignerFolder>
         <RootNamespace>ProjectGenesis.Preloader</RootNamespace>
         <AssemblyName>ProjectGenesis.Preloader</AssemblyName>
-        <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+        <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
         <FileAlignment>512</FileAlignment>
         <SignAssembly>true</SignAssembly>
     </PropertyGroup>
@@ -45,6 +45,12 @@
     </ItemGroup>
     <ItemGroup>
         <PackageReference Include="Mono.Cecil" Version="0.11.5"/>
+    </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\ProjectGenesis.csproj">
+            <Project>{eff66744-faf7-461e-b86e-7130e64e16df}</Project>
+            <Name>ProjectGenesis</Name>
+        </ProjectReference>
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
     <Target Name="AfterBuild">

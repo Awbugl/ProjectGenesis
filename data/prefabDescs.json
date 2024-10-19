@@ -173,7 +173,7 @@
   },
   {
     "ModelID": 255,
-    "genEnergyPerTick": 800000
+    "genEnergyPerTick": 400000
   },
   {
     "ModelID": 256,

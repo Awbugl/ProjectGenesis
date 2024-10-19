@@ -335,19 +335,14 @@
     "ENUS": "A material that has existed since ancient times and can be used to build large structures."
   },
   {
+    "Name": "I火力发电厂",
+    "ZHCN": "在含氧大气中利用可燃物（例如煤）作为燃料产生电能的设施（在无氧环境中只能使用燃料棒），输出的能量与所消耗燃料发热量有一定的转化率。",
+    "ENUS": "A facility that generates electrical energy using combustible materials (such as coal) as fuel in an oxygen-containing atmosphere (in an oxygen-free environment, only fuel rods can be used)."
+  },
+  {
     "Name": "焦油",
     "ZHCN": "焦油",
     "ENUS": "Tar"
-  },
-  {
-    "Name": "剧毒有机液体",
-    "ZHCN": "剧毒液体",
-    "ENUS": "Toxic Liquid"
-  },
-  {
-    "Name": "I剧毒有机液体",
-    "ZHCN": "由多种化合物组成的剧毒液体，很难有效利用。",
-    "ENUS": "Toxic liquid consisting of many compounds."
   },
   {
     "Name": "聚丙烯",
