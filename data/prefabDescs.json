@@ -26,7 +26,13 @@
   {
     "ModelID": 44,
     "powerConnectDistance": 40.5,
-    "powerCoverRadius": 20.5
+    "powerCoverRadius": 20.5,
+    "allowBuildInWater": true,
+    "needBuildInWaterTech": false,
+    "waterTypes": [
+      1000,
+      7018
+    ]
   },
   {
     "ModelID": 45,
@@ -96,7 +102,13 @@
   },
   {
     "ModelID": 61,
-    "minerPeriod": 300000
+    "minerPeriod": 300000,
+    "allowBuildInWater": true,
+    "needBuildInWaterTech": false,
+    "waterTypes": [
+      1000,
+      7018
+    ]
   },
   {
     "ModelID": 62,
@@ -177,7 +189,13 @@
   },
   {
     "ModelID": 256,
-    "minerPeriod": 300000
+    "minerPeriod": 300000,
+    "allowBuildInWater": true,
+    "needBuildInWaterTech": true,
+    "waterTypes": [
+      1000,
+      7018
+    ]
   },
   {
     "ModelID": 292,

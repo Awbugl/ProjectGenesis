@@ -47,7 +47,8 @@ namespace ProjectGenesis.Patches.Logic.AddVein
                 NewVein(18, "硫矿脉", "I硫矿", "Assets/texpack/硫矿脉_新", ProtoID.I硫矿, 36, 1, 90));
             return;
 
-            VeinProto NewVein(int id, string name, string description, string iconPath, int miningItem, int miningEffect, int modelIndex, int miningTime) =>
+            VeinProto NewVein(int id, string name, string description, string iconPath, int miningItem,
+                int miningEffect, int modelIndex, int miningTime) =>
                 new VeinProto
                 {
                     ID = id,
@@ -74,7 +75,8 @@ namespace ProjectGenesis.Patches.Logic.AddVein
 
             Array.Resize(ref veins.dataArray, dataArrayLength + protos.Length);
 
-            for (var index = 0; index < protos.Length; ++index) veins.dataArray[dataArrayLength + index] = protos[index];
+            for (var index = 0; index < protos.Length; ++index)
+                veins.dataArray[dataArrayLength + index] = protos[index];
 
             veins.OnAfterDeserialize();
         }
@@ -100,15 +102,19 @@ namespace ProjectGenesis.Patches.Logic.AddVein
 
         [HarmonyPatch(typeof(UISandboxMenu), nameof(UISandboxMenu.StaticLoad))]
         [HarmonyTranspiler]
-        public static IEnumerable<CodeInstruction> UISandboxMenu_StaticLoad_Transpiler(IEnumerable<CodeInstruction> instructions)
+        public static IEnumerable<CodeInstruction> UISandboxMenu_StaticLoad_Transpiler(
+            IEnumerable<CodeInstruction> instructions)
         {
             var matcher = new CodeMatcher(instructions);
 
-            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldloc_0), new CodeMatch(OpCodes.Call, AccessTools.PropertyGetter(typeof(LDB), nameof(LDB.veins))),
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldloc_0),
+                new CodeMatch(OpCodes.Call, AccessTools.PropertyGetter(typeof(LDB), nameof(LDB.veins))),
                 new CodeMatch(OpCodes.Ldfld), new CodeMatch(OpCodes.Ldlen));
 
-            matcher.Advance(1).SetInstructionAndAdvance(new CodeInstruction(OpCodes.Ldc_I4_S, (sbyte)14)).SetInstructionAndAdvance(new CodeInstruction(OpCodes.Nop))
-                   .SetInstructionAndAdvance(new CodeInstruction(OpCodes.Nop)).SetInstructionAndAdvance(new CodeInstruction(OpCodes.Nop));
+            matcher.Advance(1).SetInstructionAndAdvance(new CodeInstruction(OpCodes.Ldc_I4_S, (sbyte)14))
+                .SetInstructionAndAdvance(new CodeInstruction(OpCodes.Nop))
+                .SetInstructionAndAdvance(new CodeInstruction(OpCodes.Nop))
+                .SetInstructionAndAdvance(new CodeInstruction(OpCodes.Nop));
 
             return matcher.InstructionEnumeration();
         }
@@ -127,7 +133,8 @@ namespace ProjectGenesis.Patches.Logic.AddVein
         [HarmonyPatch(typeof(PlanetAlgorithm12), nameof(PlanetAlgorithm12.GenerateVeins))]
         [HarmonyPatch(typeof(PlanetAlgorithm13), nameof(PlanetAlgorithm13.GenerateVeins))]
         [HarmonyTranspiler]
-        public static IEnumerable<CodeInstruction> PlanetAlgorithm_GenerateVeins_Transpiler(IEnumerable<CodeInstruction> instructions)
+        public static IEnumerable<CodeInstruction> PlanetAlgorithm_GenerateVeins_ResizeVeinList_Transpiler(
+            IEnumerable<CodeInstruction> instructions)
         {
             var matcher = new CodeMatcher(instructions);
             matcher.MatchForward(false, new CodeMatch(OpCodes.Ldc_I4_S, (sbyte)15));
@@ -141,7 +148,36 @@ namespace ProjectGenesis.Patches.Logic.AddVein
         [HarmonyPatch(typeof(PlanetAlgorithm12), nameof(PlanetAlgorithm12.GenerateVeins))]
         [HarmonyPatch(typeof(PlanetAlgorithm13), nameof(PlanetAlgorithm13.GenerateVeins))]
         [HarmonyTranspiler]
-        public static IEnumerable<CodeInstruction> PlanetAlgorithm_InitnalVeins_Transpiler(IEnumerable<CodeInstruction> instructions, MethodBase original)
+        public static IEnumerable<CodeInstruction> PlanetAlgorithm_GenerateVeins_RemoveHeightLimit_Transpiler(
+            IEnumerable<CodeInstruction> instructions)
+        {
+            var matcher = new CodeMatcher(instructions);
+            matcher.MatchForward(true,
+                new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(PlanetData), nameof(PlanetData.radius))),
+                new CodeMatch { opcodes = new List<OpCode> { OpCodes.Blt, OpCodes.Blt_S } });
+
+            var matcher2 = matcher.Clone();
+            matcher2.MatchForward(false, new CodeMatch(OpCodes.Ldc_I4_0), new CodeMatch(OpCodes.Stloc_S));
+            var label = matcher2.Labels[0];
+
+            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Pop));
+            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Pop));
+            matcher.SetAndAdvance(OpCodes.Br, label);
+
+            matcher.MatchForward(false,
+                new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(PlanetData), nameof(PlanetData.waterItemId))));
+            matcher.Advance(1).SetOpcodeAndAdvance(OpCodes.Br);
+
+            return matcher.InstructionEnumeration();
+        }
+
+        [HarmonyPatch(typeof(PlanetAlgorithm), nameof(PlanetAlgorithm.GenerateVeins))]
+        [HarmonyPatch(typeof(PlanetAlgorithm11), nameof(PlanetAlgorithm11.GenerateVeins))]
+        [HarmonyPatch(typeof(PlanetAlgorithm12), nameof(PlanetAlgorithm12.GenerateVeins))]
+        [HarmonyPatch(typeof(PlanetAlgorithm13), nameof(PlanetAlgorithm13.GenerateVeins))]
+        [HarmonyTranspiler]
+        public static IEnumerable<CodeInstruction> PlanetAlgorithm_InitnalVeins_Transpiler(
+            IEnumerable<CodeInstruction> instructions, MethodBase original)
         {
             var matcher = new CodeMatcher(instructions);
 
@@ -151,7 +187,8 @@ namespace ProjectGenesis.Patches.Logic.AddVein
                 new CodeMatch(OpCodes.Stfld, AccessTools.Field(type, "veinVectorCount")));
 
             matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0),
-                new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(AddVeinPatches), nameof(InitBirthVeinVectors))));
+                new CodeInstruction(OpCodes.Call,
+                    AccessTools.Method(typeof(AddVeinPatches), nameof(InitBirthVeinVectors))));
 
             matcher.Advance(1).SetOpcodeAndAdvance(OpCodes.Ldc_I4_3);
 
@@ -172,16 +209,19 @@ namespace ProjectGenesis.Patches.Logic.AddVein
         {
             float delta = angle * Mathf.PI / 180;
 
-            return new Vector2(v.x * Mathf.Cos(delta) - v.y * Mathf.Sin(delta), v.x * Mathf.Sin(delta) + v.y * Mathf.Cos(delta));
+            return new Vector2(v.x * Mathf.Cos(delta) - v.y * Mathf.Sin(delta),
+                v.x * Mathf.Sin(delta) + v.y * Mathf.Cos(delta));
         }
 
         [HarmonyPatch(typeof(PlanetData), nameof(PlanetData.GenBirthPoints), typeof(PlanetRawData), typeof(int))]
         [HarmonyPostfix]
-        public static void PlanetData_GenBirthPoints_Postfix(PlanetData __instance, PlanetRawData rawData, int _birthSeed)
+        public static void PlanetData_GenBirthPoints_Postfix(PlanetData __instance, PlanetRawData rawData,
+            int _birthSeed)
         {
             var dotNet35Random = new DotNet35Random(_birthSeed);
             Pose pose = __instance.PredictPose(85.0);
-            Vector3 vector3_1 = Maths.QInvRotateLF(pose.rotation, __instance.star.uPosition - (VectorLF3)pose.position * 40000.0);
+            Vector3 vector3_1 = Maths.QInvRotateLF(pose.rotation,
+                __instance.star.uPosition - (VectorLF3)pose.position * 40000.0);
             vector3_1.Normalize();
             Vector3 normalized1 = Vector3.Cross(vector3_1, Vector3.up).normalized;
             Vector3 normalized2 = Vector3.Cross(normalized1, vector3_1).normalized;
@@ -194,7 +234,8 @@ namespace ProjectGenesis.Patches.Logic.AddVein
                 float num4 = (float)(dotNet35Random.NextDouble() * 2.0 - 1.0) * 0.5f;
                 Vector3 vector3_2 = vector3_1 + num3 * normalized1 + num4 * normalized2;
                 vector3_2.Normalize();
-                __instance.birthPoint = vector3_2 * (float)(__instance.realRadius + 0.20000000298023224 + 1.4500000476837158);
+                __instance.birthPoint =
+                    vector3_2 * (float)(__instance.realRadius + 0.20000000298023224 + 1.4500000476837158);
                 var vector3_3 = Vector3.Cross(vector3_2, Vector3.up);
                 normalized1 = vector3_3.normalized;
                 vector3_3 = Vector3.Cross(normalized1, vector3_2);
@@ -203,7 +244,8 @@ namespace ProjectGenesis.Patches.Logic.AddVein
 
                 for (var index = 0; index < 10; ++index)
                 {
-                    Vector2 vector2_1 = new Vector2((float)(dotNet35Random.NextDouble() * 2.0 - 1.0), (float)(dotNet35Random.NextDouble() * 2.0 - 1.0)).normalized * 0.1f;
+                    Vector2 vector2_1 = new Vector2((float)(dotNet35Random.NextDouble() * 2.0 - 1.0),
+                        (float)(dotNet35Random.NextDouble() * 2.0 - 1.0)).normalized * 0.1f;
                     Vector2 vector2_2 = Rotate(vector2_1, 120);
                     float num5 = (float)(dotNet35Random.NextDouble() * 2.0 - 1.0) * 0.006f;
                     float num6 = (float)(dotNet35Random.NextDouble() * 2.0 - 1.0) * 0.006f;
@@ -227,9 +269,9 @@ namespace ProjectGenesis.Patches.Logic.AddVein
                     float realRadius = __instance.realRadius;
 
                     if (rawData.QueryHeight(vector3_2) > realRadius
-                     && rawData.QueryHeight(normalized3) > realRadius
-                     && rawData.QueryHeight(normalized4) > realRadius
-                     && rawData.QueryHeight(normalized5) > realRadius)
+                        && rawData.QueryHeight(normalized3) > realRadius
+                        && rawData.QueryHeight(normalized4) > realRadius
+                        && rawData.QueryHeight(normalized5) > realRadius)
                     {
                         Vector3 vpos1 = normalized3 + normalized1 * 0.03f;
                         Vector3 vpos2 = normalized3 - normalized1 * 0.03f;
@@ -245,17 +287,17 @@ namespace ProjectGenesis.Patches.Logic.AddVein
                         Vector3 vpos12 = normalized5 - normalized2 * 0.03f;
 
                         if (rawData.QueryHeight(vpos1) > realRadius
-                         && rawData.QueryHeight(vpos2) > realRadius
-                         && rawData.QueryHeight(vpos3) > realRadius
-                         && rawData.QueryHeight(vpos4) > realRadius
-                         && rawData.QueryHeight(vpos5) > realRadius
-                         && rawData.QueryHeight(vpos6) > realRadius
-                         && rawData.QueryHeight(vpos7) > realRadius
-                         && rawData.QueryHeight(vpos8) > realRadius
-                         && rawData.QueryHeight(vpos9) > realRadius
-                         && rawData.QueryHeight(vpos10) > realRadius
-                         && rawData.QueryHeight(vpos11) > realRadius
-                         && rawData.QueryHeight(vpos12) > realRadius)
+                            && rawData.QueryHeight(vpos2) > realRadius
+                            && rawData.QueryHeight(vpos3) > realRadius
+                            && rawData.QueryHeight(vpos4) > realRadius
+                            && rawData.QueryHeight(vpos5) > realRadius
+                            && rawData.QueryHeight(vpos6) > realRadius
+                            && rawData.QueryHeight(vpos7) > realRadius
+                            && rawData.QueryHeight(vpos8) > realRadius
+                            && rawData.QueryHeight(vpos9) > realRadius
+                            && rawData.QueryHeight(vpos10) > realRadius
+                            && rawData.QueryHeight(vpos11) > realRadius
+                            && rawData.QueryHeight(vpos12) > realRadius)
                         {
                             flag = true;
 

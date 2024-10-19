@@ -1,3 +1,29 @@
+- v2.10.0-beta4 (Experimental 0.3.10401)
+  + 新增与`GigaStationsUpdated`的兼容补丁
+  + 新增与`LazyOutposting`的兼容补丁
+  + 下调了`地热发电站`的发电基础值
+  + 调整了`电磁矩阵`的制造需求
+  + 调整了`批量建造-等级1`的研究需求
+  + 移除了`批量建造`的元数据要求
+  + 允许`电力感应塔`、`原油萃取站`在水上建造
+  + 移除了矿物生成时的高度判定，现在矿物可生成在水下
+  + 修复了打开普通储物仓时出现量子储物仓UI的bug
+
+  + Added compatibility patch for `GigaStationsUpdated`.
+  + Added compatibility patch for `LazyOutposting`.
+  + Adjusted the base power output value of the `Geothermal Power Plant`.
+  + Adjusted the manufacturing requirements for the `Magnetic Matrix`.
+  + Adjusted the research requirements for `Batch Construction - Level 1`.
+  + Removed the metadata requirement for `Batch Construction`.
+  + Allowed `Power Tower` and `Oil Extraction Station` to be built on water.
+  + Removed the height restriction for mineral generation; now minerals can generate underwater.
+  + Fixed the bug where the Quantum Storage UI appeared when opening a regular storage.
+
+
+<details>
+  <summary>点击展开日志 | Click to view all </summary>
+
+
 - v2.10.0-beta3 (Experimental 0.3.10301)
   + 调整了制造复合矩阵时的工作颜色（感谢karki的工作）
   + 调整了`奇点矩阵`的图标
@@ -10,9 +36,6 @@
   + Fixed BepinEx version mismatch hints
   + Orbital collector no longer consumes collected items
   + Adjusted recipe requirements for Orbital collector (only affects archives after this version)
-
-<details>
-  <summary>点击展开日志 | Click to view all </summary>
 
 
 - v2.10.0-beta2 (Experimental 0.3.10201)
