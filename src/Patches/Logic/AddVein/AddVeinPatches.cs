@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 using System.Reflection.Emit;
 using HarmonyLib;
@@ -14,7 +15,7 @@ namespace ProjectGenesis.Patches.Logic.AddVein
 {
     public static partial class AddVeinPatches
     {
-        internal static readonly sbyte VeinTypeCount = 19;
+        internal const sbyte VeinTypeCount = 19;
 
         private static readonly Color32[] VeinColors =
         {
@@ -158,7 +159,7 @@ namespace ProjectGenesis.Patches.Logic.AddVein
 
             var matcher2 = matcher.Clone();
             matcher2.MatchForward(false, new CodeMatch(OpCodes.Ldc_I4_0), new CodeMatch(OpCodes.Stloc_S));
-            var label = matcher2.Labels[0];
+            var label = matcher2.Labels.First();
 
             matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Pop));
             matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Pop));
@@ -176,7 +177,7 @@ namespace ProjectGenesis.Patches.Logic.AddVein
         [HarmonyPatch(typeof(PlanetAlgorithm12), nameof(PlanetAlgorithm12.GenerateVeins))]
         [HarmonyPatch(typeof(PlanetAlgorithm13), nameof(PlanetAlgorithm13.GenerateVeins))]
         [HarmonyTranspiler]
-        public static IEnumerable<CodeInstruction> PlanetAlgorithm_InitnalVeins_Transpiler(
+        public static IEnumerable<CodeInstruction> PlanetAlgorithm_InitialVeins_Transpiler(
             IEnumerable<CodeInstruction> instructions, MethodBase original)
         {
             var matcher = new CodeMatcher(instructions);
