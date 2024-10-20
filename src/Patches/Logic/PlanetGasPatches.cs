@@ -88,15 +88,9 @@ namespace ProjectGenesis.Patches.Logic
             matcher.MatchForward(false,
                 new CodeMatch(OpCodes.Ldfld,
                     AccessTools.Field(typeof(StationComponent), nameof(StationComponent.collectionPerTick))));
-
-            CodeInstruction stationComponent = matcher.Advance(-1).Instruction;
-
-            matcher.Advance(-1).InsertAndAdvance(new CodeInstruction(stationComponent),
-                new CodeInstruction(OpCodes.Ldarg_0),
-                new CodeInstruction(OpCodes.Ldfld,
-                    AccessTools.Field(typeof(UIPlanetDetail), nameof(UIPlanetDetail._planet))),
-                new CodeInstruction(OpCodes.Call,
-                    AccessTools.Method(typeof(PlanetGasPatches), nameof(GetGasCollectionPerTick))));
+            
+            matcher.Advance(-2).InsertAndAdvance(new CodeInstruction(OpCodes.Call,
+                    AccessTools.Method(typeof(PlanetGasPatches), nameof(GetMiningSpeedScale))));
 
             return matcher.InstructionEnumeration();
         }
@@ -106,28 +100,19 @@ namespace ProjectGenesis.Patches.Logic
         public static IEnumerable<CodeInstruction> OnStarDataSet_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
             var matcher = new CodeMatcher(instructions);
-            
-            matcher.MatchForward(false,
-                new CodeMatch(OpCodes.Ldfld, 
-                    AccessTools.Field(typeof(PlanetData), nameof(PlanetData.gasTotalHeat))));
-            CodeInstruction planet = matcher.Advance(-1).Instruction;
-
+           
             matcher.MatchForward(false,
                 new CodeMatch(OpCodes.Ldfld,
                     AccessTools.Field(typeof(StationComponent), nameof(StationComponent.collectionPerTick))));
-            CodeInstruction stationComponent = matcher.Advance(-1).Instruction;
-
-            matcher.Advance(-1).InsertAndAdvance(
-                new CodeInstruction(stationComponent),
-                new CodeInstruction(planet),
+          
+            matcher.Advance(-2).InsertAndAdvance(
                 new CodeInstruction(OpCodes.Call,
-                    AccessTools.Method(typeof(PlanetGasPatches), nameof(GetGasCollectionPerTick))));
+                    AccessTools.Method(typeof(PlanetGasPatches), nameof(GetMiningSpeedScale))));
 
             return matcher.InstructionEnumeration();
         }
 
-        public static double GetGasCollectionPerTick(double original, StationComponent stationComponent,
-            PlanetData planet) => GameMain.history.miningSpeedScale * stationComponent.collectSpeed;
+        public static double GetMiningSpeedScale(double original) => GameMain.history.miningSpeedScale;
 
         [HarmonyPatch(typeof(BuildTool_BlueprintCopy), nameof(BuildTool_BlueprintCopy.DetermineActive))]
         [HarmonyPatch(typeof(BuildTool_BlueprintPaste), nameof(BuildTool_BlueprintPaste.DetermineActive))]
@@ -302,7 +287,7 @@ namespace ProjectGenesis.Patches.Logic
         public static void PlanetTransport_NewStationComponent_Postfix(PlanetTransport __instance, PrefabDesc _desc,
             StationComponent __result)
         {
-            if (__instance.planet.type != EPlanetType.Gas && __result.isCollector)
+            if (__result.isCollector && __instance.planet.type != EPlanetType.Gas)
             {
                 for (var index = 0; index < Math.Min(__result.collectionIds.Length, _desc.stationMaxItemKinds); ++index)
                     __result.storage[index].localLogic = ELogisticStorage.Supply;
@@ -370,7 +355,9 @@ namespace ProjectGenesis.Patches.Logic
             {
                 for (var i = 0; i < __instance.collectionIds.Length; i++)
                 {
-                    if (__instance.storage[i].count < __instance.storage[i].max)
+                    var stationStore = __instance.storage[i];
+                    
+                    if (stationStore.count < stationStore.max)
                     {
                         __instance.energy = 1;
 

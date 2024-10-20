@@ -18,20 +18,25 @@ namespace ProjectGenesis.Patches.Logic.PlanetFocus
 
         [HarmonyPatch(typeof(UIMinerWindow), nameof(UIMinerWindow._OnUpdate))]
         [HarmonyTranspiler]
-        public static IEnumerable<CodeInstruction> UIMinerWindow_OnUpdate_Transpiler(IEnumerable<CodeInstruction> instructions)
+        public static IEnumerable<CodeInstruction> UIMinerWindow_OnUpdate_Transpiler(
+            IEnumerable<CodeInstruction> instructions)
         {
             var matcher = new CodeMatcher(instructions);
 
             while (true)
             {
-                matcher.MatchForward(false, new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(GameHistoryData), nameof(GameHistoryData.miningSpeedScale))));
+                matcher.MatchForward(false,
+                    new CodeMatch(OpCodes.Ldfld,
+                        AccessTools.Field(typeof(GameHistoryData), nameof(GameHistoryData.miningSpeedScale))));
 
                 if (matcher.IsInvalid) break;
 
                 matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0),
-                    new CodeInstruction(OpCodes.Ldfld, AccessTools.Field(typeof(UIMinerWindow), nameof(UIMinerWindow.factory))));
+                    new CodeInstruction(OpCodes.Ldfld,
+                        AccessTools.Field(typeof(UIMinerWindow), nameof(UIMinerWindow.factory))));
 
-                matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(PlanetFocusPatches), nameof(MiningSpeedScale))));
+                matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Call,
+                    AccessTools.Method(typeof(PlanetFocusPatches), nameof(MiningSpeedScale))));
             }
 
             return matcher.InstructionEnumeration();
@@ -47,60 +52,69 @@ namespace ProjectGenesis.Patches.Logic.PlanetFocus
         [HarmonyPatch(typeof(StationComponent), nameof(StationComponent.UpdateCollection))]
         [HarmonyPriority(Priority.VeryHigh)]
         [HarmonyPrefix]
-        public static void StationComponent_UpdateCollection_Prefix(StationComponent __instance, PlanetFactory factory, ref float collectSpeedRate, int[] productRegister)
+        public static void StationComponent_UpdateCollection_Prefix(StationComponent __instance, PlanetFactory factory,
+            ref float collectSpeedRate, int[] productRegister)
         {
-            if (factory.planet.type != EPlanetType.Gas)
-            {
-                collectSpeedRate = GameMain.history.miningSpeedScale * __instance.collectSpeed;
+            collectSpeedRate = GameMain.history.miningSpeedScale;
 
-                if (ContainsFocus(factory.planetId, 6528)) collectSpeedRate *= 1.25f;
-            }
+            if (ContainsFocus(factory.planetId, 6528)) collectSpeedRate *= 1.25f;
         }
 
         [HarmonyPatch(typeof(UIStationStorage), nameof(UIStationStorage.RefreshValues))]
         [HarmonyPostfix]
         public static void UIStationStorage_RefreshValues_Postfix(UIStationStorage __instance)
         {
-            if (__instance.station.isCollector && GameMain.localPlanet.type != EPlanetType.Gas)
+            if (!__instance.station.isCollector) return;
+
+            float miningSpeedScale = GameMain.history.miningSpeedScale;
+
+            if (GameMain.localPlanet.type != EPlanetType.Gas && ContainsFocus(__instance.station.planetId, 6528))
             {
-                float collectSpeedRate = GameMain.history.miningSpeedScale * __instance.station.collectSpeed;
-
-                if (ContainsFocus(__instance.station.planetId, 6528)) collectSpeedRate *= 1.25f;
-
-                __instance.speedText.text = $"{3600.0 * ((double)__instance.station.collectionPerTick[__instance.index] * collectSpeedRate):0.00}/min";
+                miningSpeedScale *= 1.25f;
             }
+
+            __instance.speedText.text =
+                $"{3600.0 * ((double)__instance.station.collectionPerTick[__instance.index] * miningSpeedScale):0.00}/min";
         }
-        
+
         [HarmonyPatch(typeof(UIControlPanelStationStorage), nameof(UIControlPanelStationStorage.RefreshValues))]
         [HarmonyPostfix]
         public static void UIControlPanelStationStorage_RefreshValues_Postfix(UIControlPanelStationStorage __instance)
         {
-            if (__instance.station.isCollector && __instance.factory.planet.type != EPlanetType.Gas)
+            if (!__instance.station.isCollector) return;
+
+            float miningSpeedScale = GameMain.history.miningSpeedScale;
+
+            if (__instance.factory.planet.type != EPlanetType.Gas && ContainsFocus(__instance.station.planetId, 6528))
             {
-                float collectSpeedRate = GameMain.history.miningSpeedScale * __instance.station.collectSpeed;
-
-                if (ContainsFocus(__instance.station.planetId, 6528)) collectSpeedRate *= 1.25f;
-
-                __instance.speedText.text = $"{3600.0 * ((double)__instance.station.collectionPerTick[__instance.index] * collectSpeedRate):0.00}/min";
+                miningSpeedScale *= 1.25f;
             }
+
+            __instance.speedText.text =
+                $"{3600.0 * ((double)__instance.station.collectionPerTick[__instance.index] * miningSpeedScale):0.00}/min";
         }
 
         [HarmonyPatch(typeof(UIVeinCollectorPanel), nameof(UIVeinCollectorPanel._OnUpdate))]
         [HarmonyTranspiler]
-        public static IEnumerable<CodeInstruction> UIVeinCollectorPanel_OnUpdate_Transpiler(IEnumerable<CodeInstruction> instructions)
+        public static IEnumerable<CodeInstruction> UIVeinCollectorPanel_OnUpdate_Transpiler(
+            IEnumerable<CodeInstruction> instructions)
         {
             var matcher = new CodeMatcher(instructions);
 
             while (true)
             {
-                matcher.MatchForward(false, new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(GameHistoryData), nameof(GameHistoryData.miningSpeedScale))));
+                matcher.MatchForward(false,
+                    new CodeMatch(OpCodes.Ldfld,
+                        AccessTools.Field(typeof(GameHistoryData), nameof(GameHistoryData.miningSpeedScale))));
 
                 if (matcher.IsInvalid) break;
 
                 matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0),
-                    new CodeInstruction(OpCodes.Ldfld, AccessTools.Field(typeof(UIVeinCollectorPanel), nameof(UIVeinCollectorPanel.factory))));
+                    new CodeInstruction(OpCodes.Ldfld,
+                        AccessTools.Field(typeof(UIVeinCollectorPanel), nameof(UIVeinCollectorPanel.factory))));
 
-                matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(PlanetFocusPatches), nameof(MiningSpeedScale))));
+                matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Call,
+                    AccessTools.Method(typeof(PlanetFocusPatches), nameof(MiningSpeedScale))));
             }
 
             return matcher.InstructionEnumeration();

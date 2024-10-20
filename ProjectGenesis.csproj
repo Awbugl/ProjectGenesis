@@ -87,7 +87,7 @@
     </ItemGroup>
     <ItemGroup>
         <PackageReference Include="BepInEx.Core" Version="5.4.17"/>
-        <PackageReference Include="DysonSphereProgram.Modding.CommonAPI" Version="1.6.4"/>
+        <PackageReference Include="DysonSphereProgram.Modding.CommonAPI" Version="1.6.5" />
         <PackageReference Include="DysonSphereProgram.Modding.DSPModSave" Version="1.2.0"/>
         <PackageReference Include="DysonSphereProgram.Modding.LDBTool" Version="3.0.0"/>
         <PackageReference Include="DysonSphereProgram.Modding.NebulaMultiplayerModApi" Version="2.0.0"/>

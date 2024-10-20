@@ -372,14 +372,8 @@ namespace ProjectGenesis.Compatibility
                 new CodeMatch(OpCodes.Ldfld,
                     AccessTools.Field(typeof(StationComponent), nameof(StationComponent.collectionPerTick))));
 
-            CodeInstruction stationComponent = matcher.Advance(-1).Instruction;
-
-            matcher.Advance(-1).InsertAndAdvance(new CodeInstruction(stationComponent),
-                new CodeInstruction(OpCodes.Ldarg_0),
-                new CodeInstruction(OpCodes.Ldfld,
-                    AccessTools.Field(typeof(UIPlanetDetail), nameof(UIPlanetDetail._planet))),
-                new CodeInstruction(OpCodes.Call,
-                    AccessTools.Method(typeof(PlanetGasPatches), nameof(PlanetGasPatches.GetGasCollectionPerTick))));
+            matcher.Advance(-2).InsertAndAdvance(new CodeInstruction(OpCodes.Call,
+                    AccessTools.Method(typeof(PlanetGasPatches), nameof(PlanetGasPatches.GetMiningSpeedScale))));
 
             return matcher.InstructionEnumeration();
         }

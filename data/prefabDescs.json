@@ -171,7 +171,7 @@
   },
   {
     "ModelID": 117,
-    "stationCollectSpeed": 12,
+    "stationCollectSpeed": 10,
     "workEnergyPerTick": 0
   },
   {
@@ -369,7 +369,7 @@
     "isPowerConsumer": false,
     "workEnergyPerTick": 0,
     "stationMaxDroneCount": 0,
-    "stationCollectSpeed": 4
+    "stationCollectSpeed": 10
   },
   {
     "ModelID": 813,
