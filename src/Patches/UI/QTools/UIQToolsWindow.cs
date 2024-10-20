@@ -339,7 +339,6 @@ namespace ProjectGenesis.Patches.UI.QTools
         public void SetTabIndex(int index, bool immediate)
         {
             if ((_tabIndex != index) | immediate)
-            {
                 for (var index1 = 0; index1 < _tabButtons.Length; ++index1)
                 {
                     if (index1 == index)
@@ -355,14 +354,16 @@ namespace ProjectGenesis.Patches.UI.QTools
                         _tabTweeners[index1].gameObject.SetActive(false);
                     }
                 }
-            }
 
             if (immediate)
+            {
                 _tabSlider.rectTransform.anchoredPosition = new Vector2(160 * index, _tabSlider.rectTransform.anchoredPosition.y);
+            }
             else if (_tabIndex == index)
             {
                 Vector2 anchoredPosition = _tabSlider.rectTransform.anchoredPosition;
-                _tabSlider.rectTransform.anchoredPosition = Vector2.Lerp(anchoredPosition, new Vector2(160 * index, anchoredPosition.y), 0.2f);
+                _tabSlider.rectTransform.anchoredPosition =
+                    Vector2.Lerp(anchoredPosition, new Vector2(160 * index, anchoredPosition.y), 0.2f);
             }
 
             _tabIndex = index;

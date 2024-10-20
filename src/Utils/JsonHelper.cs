@@ -36,10 +36,12 @@ namespace ProjectGenesis.Utils
         internal static PrefabDescJson[] PrefabDescs() => GetJsonContent<PrefabDescJson>("prefabDescs");
 
         internal static T[] GetJsonContent<T>(string json) =>
-            JsonConvert.DeserializeObject<T[]>(new StreamReader(Assembly.GetManifestResourceStream($"ProjectGenesis.data.{json}.json")).ReadToEnd());
+            JsonConvert.DeserializeObject<T[]>(new StreamReader(Assembly.GetManifestResourceStream($"ProjectGenesis.data.{json}.json"))
+               .ReadToEnd());
 
         internal static string SerializeObject(object obj) =>
-            JsonConvert.SerializeObject(obj, Formatting.Indented, new JsonSerializerSettings { ReferenceLoopHandling = ReferenceLoopHandling.Ignore, });
+            JsonConvert.SerializeObject(obj, Formatting.Indented,
+                new JsonSerializerSettings { ReferenceLoopHandling = ReferenceLoopHandling.Ignore, });
 
         internal static void ExportAsJson(string path)
         {

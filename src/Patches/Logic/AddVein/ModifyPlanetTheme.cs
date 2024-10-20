@@ -13,8 +13,7 @@ namespace ProjectGenesis.Patches.Logic.AddVein
 
         private static void ModifyThemeVanilla(ThemeProto theme)
         {
-            if (theme.PlanetType == EPlanetType.Gas)
-                GasGiantModify(theme);
+            if (theme.PlanetType == EPlanetType.Gas) { GasGiantModify(theme); }
             else
             {
                 ModifyThemeData(theme);
@@ -80,7 +79,7 @@ namespace ProjectGenesis.Patches.Logic.AddVein
         {
             float themeWind = theme.Wind;
 
-            if (ThemeDatas.TryGetValue(theme.ID, out var value))
+            if (ThemeDatas.TryGetValue(theme.ID, out ThemeData value))
             {
                 if (themeWind == 0)
                 {
@@ -102,11 +101,7 @@ namespace ProjectGenesis.Patches.Logic.AddVein
                 {
                     case EPlanetType.Ocean:
                         theme.GasItems = new[] { ProtoID.I氮, ProtoID.I氧, };
-                        theme.GasSpeeds = new float[]
-                        {
-                            themeWind * 0.7f,
-                            themeWind * 0.18f,
-                        };
+                        theme.GasSpeeds = new float[] { themeWind * 0.7f, themeWind * 0.18f, };
 
                         break;
 
@@ -128,8 +123,7 @@ namespace ProjectGenesis.Patches.Logic.AddVein
             theme.VeinOpacity[14] = (theme.VeinOpacity[0] + theme.VeinOpacity[1]) / 2;
 
             // Coal
-            if (!theme.GasItems.Contains(ProtoID.I氧))
-                RemoveVein(theme, 5);
+            if (!theme.GasItems.Contains(ProtoID.I氧)) { RemoveVein(theme, 5); }
             else
             {
                 theme.VeinSpot[5] += 1;

@@ -28,7 +28,8 @@ namespace ProjectGenesis.Patches.UI.PlanetFocus
 
         private RectTransform _tab1;
 
-        internal static UIPlanetFocusWindow CreateWindow() => CreateWindow<UIPlanetFocusWindow>("UIPlanetFocusWindow", "星球基地".TranslateFromJson());
+        internal static UIPlanetFocusWindow CreateWindow() =>
+            CreateWindow<UIPlanetFocusWindow>("UIPlanetFocusWindow", "星球基地".TranslateFromJson());
 
         public void OpenWindow() => MyWindowCtl.OpenWindow(this);
 

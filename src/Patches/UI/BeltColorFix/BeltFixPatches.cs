@@ -9,11 +9,9 @@ namespace ProjectGenesis.Patches.UI.BeltColorFix
 {
     public static class BeltFixPatches
     {
-        private static readonly FieldInfo BeltComponent_Speed_Field =
-            AccessTools.Field(typeof(BeltComponent), nameof(BeltComponent.speed));
+        private static readonly FieldInfo BeltComponent_Speed_Field = AccessTools.Field(typeof(BeltComponent), nameof(BeltComponent.speed));
 
-        private static readonly FieldInfo PrefabDesc_beltSpeed_Field =
-            AccessTools.Field(typeof(PrefabDesc), nameof(PrefabDesc.beltSpeed));
+        private static readonly FieldInfo PrefabDesc_beltSpeed_Field = AccessTools.Field(typeof(PrefabDesc), nameof(PrefabDesc.beltSpeed));
 
         [HarmonyPatch(typeof(ConnGizmoRenderer), nameof(ConnGizmoRenderer.Update))]
         [HarmonyTranspiler]
@@ -32,8 +30,7 @@ namespace ProjectGenesis.Patches.UI.BeltColorFix
 
         [HarmonyPatch(typeof(CargoTraffic), nameof(CargoTraffic.SetBeltSelected))]
         [HarmonyTranspiler]
-        public static IEnumerable<CodeInstruction> CargoTraffic_SetBeltSelected_Transpiler(
-            IEnumerable<CodeInstruction> instructions)
+        public static IEnumerable<CodeInstruction> CargoTraffic_SetBeltSelected_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
             var matcher = new CodeMatcher(instructions);
 
@@ -50,8 +47,7 @@ namespace ProjectGenesis.Patches.UI.BeltColorFix
         [HarmonyPatch(typeof(BuildTool_BlueprintCopy), nameof(BuildTool_BlueprintCopy.UpdatePreviewModels))]
         [HarmonyPatch(typeof(BuildTool_Path), nameof(BuildTool_Path.UpdateGizmos))]
         [HarmonyTranspiler]
-        public static IEnumerable<CodeInstruction> BuildTool_Path_UpdateGizmos_Transpiler(
-            IEnumerable<CodeInstruction> instructions)
+        public static IEnumerable<CodeInstruction> BuildTool_Path_UpdateGizmos_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
             var matcher = new CodeMatcher(instructions);
 
@@ -70,8 +66,7 @@ namespace ProjectGenesis.Patches.UI.BeltColorFix
 
         [HarmonyPatch(typeof(CargoTraffic), nameof(CargoTraffic.AlterBeltRenderer))]
         [HarmonyTranspiler]
-        public static IEnumerable<CodeInstruction> CargoTraffic_AlterBeltRenderer_Transpiler(
-            IEnumerable<CodeInstruction> instructions)
+        public static IEnumerable<CodeInstruction> CargoTraffic_AlterBeltRenderer_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
             var matcher = new CodeMatcher(instructions);
 
@@ -92,10 +87,7 @@ namespace ProjectGenesis.Patches.UI.BeltColorFix
         [HarmonyPatch(typeof(PathRenderingBatch), nameof(PathRenderingBatch.AddNode))]
         [HarmonyPatch(typeof(PathRenderingBatch), nameof(PathRenderingBatch.AddNodeNoRefresh))]
         [HarmonyPrefix]
-        public static void PathRenderingBatch_AddNode_Prefix(ref int speed)
-        {
-            speed = BeltSpeed_Patch(speed);
-        }
+        public static void PathRenderingBatch_AddNode_Prefix(ref int speed) => speed = BeltSpeed_Patch(speed);
 
         public static int BeltSpeed_Patch(int beltSpeed)
         {

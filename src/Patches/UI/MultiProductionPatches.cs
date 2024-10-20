@@ -39,13 +39,11 @@ namespace ProjectGenesis.Patches.UI
             }
 
             if (ReplicatorImages.Count < results - 2)
-            {
                 for (int x = ReplicatorImages.Count; x < results - 2; ++x)
                 {
                     ReplicatorImages.Add(Object.Instantiate(__instance.treeMainIcon1, __instance.treeMainIcon1.transform.parent));
                     ReplicatorTexts.Add(Object.Instantiate(__instance.treeMainCountText1, __instance.treeMainCountText1.transform.parent));
                 }
-            }
 
             for (var i = 0; i < ReplicatorImages.Count; ++i)
             {
@@ -81,11 +79,14 @@ namespace ProjectGenesis.Patches.UI
 
             __instance.treeMainIcon0.gameObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(-32 * (results - 1), 0f);
 
-            __instance.treeMainIcon1.gameObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(-32 * (results - 1) + 64 * 1, 0f);
+            __instance.treeMainIcon1.gameObject.GetComponent<RectTransform>().anchoredPosition =
+                new Vector2(-32 * (results - 1) + 64 * 1, 0f);
 
-            __instance.treeMainCountText0.gameObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(-32 * (results - 1) - 24, -11f);
+            __instance.treeMainCountText0.gameObject.GetComponent<RectTransform>().anchoredPosition =
+                new Vector2(-32 * (results - 1) - 24, -11f);
 
-            __instance.treeMainCountText1.gameObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(-32 * (results - 1) + 64 * 1 - 24, -11f);
+            __instance.treeMainCountText1.gameObject.GetComponent<RectTransform>().anchoredPosition =
+                new Vector2(-32 * (results - 1) + 64 * 1 - 24, -11f);
 
 
             List<UIButton> treeUpList = UIRoot.instance.uiGame.replicator.treeUpList;
@@ -128,12 +129,14 @@ namespace ProjectGenesis.Patches.UI
             }
 
             if (AssemblerProductProgress.Count < results - 2)
-            {
                 for (int x = AssemblerProductProgress.Count; x < results - 2; ++x)
                 {
-                    AssemblerProductProgress.Add(Object.Instantiate(__instance.productProgress1, __instance.productProgress1.transform.parent));
-                    AssemblerExtraProductProgress.Add(Object.Instantiate(__instance.extraProductProgress1, __instance.extraProductProgress1.transform.parent));
-                    AssemblerProductCountText.Add(Object.Instantiate(__instance.productCountText1, __instance.productCountText1.transform.parent));
+                    AssemblerProductProgress.Add(Object.Instantiate(__instance.productProgress1,
+                        __instance.productProgress1.transform.parent));
+                    AssemblerExtraProductProgress.Add(Object.Instantiate(__instance.extraProductProgress1,
+                        __instance.extraProductProgress1.transform.parent));
+                    AssemblerProductCountText.Add(Object.Instantiate(__instance.productCountText1,
+                        __instance.productCountText1.transform.parent));
 
                     Image icon = Object.Instantiate(__instance.productIcon1, __instance.productIcon1.transform.parent);
                     UIAssemblerWindow instance = __instance;
@@ -145,13 +148,13 @@ namespace ProjectGenesis.Patches.UI
 
                         AssemblerComponent assemblerComponent = instance.factorySystem.assemblerPool[instance.assemblerId];
 
-                        if (assemblerComponent.id != instance.assemblerId
-                         || assemblerComponent.recipeId == 0
-                         || assemblerComponent.products.Length < index + 1
-                         || assemblerComponent.produced[index] <= 0)
+                        if (assemblerComponent.id != instance.assemblerId || assemblerComponent.recipeId == 0
+                                                                          || assemblerComponent.products.Length < index + 1
+                                                                          || assemblerComponent.produced[index] <= 0)
                             return;
 
-                        int num = instance.player.TryAddItemToPackage(assemblerComponent.products[index], assemblerComponent.produced[index], 0, false);
+                        int num = instance.player.TryAddItemToPackage(assemblerComponent.products[index],
+                            assemblerComponent.produced[index], 0, false);
                         assemblerComponent.produced[index] = 0;
 
                         if (num > 0) UIItemup.Up(assemblerComponent.products[index], num);
@@ -159,7 +162,6 @@ namespace ProjectGenesis.Patches.UI
 
                     AssemblerProductIcon.Add(icon);
                 }
-            }
 
             for (var i = 0; i < AssemblerProductProgress.Count; ++i)
             {
@@ -197,13 +199,16 @@ namespace ProjectGenesis.Patches.UI
                 extraProductProgress.fillAmount = __instance.extraProductProgress1.fillAmount;
 
                 Vector2 vector = __instance.productProgress1.gameObject.GetComponent<RectTransform>().anchoredPosition;
-                productProgress.gameObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(vector.x + 64 * (index - 1), vector.y);
+                productProgress.gameObject.GetComponent<RectTransform>().anchoredPosition =
+                    new Vector2(vector.x + 64 * (index - 1), vector.y);
                 vector = __instance.extraProductProgress1.gameObject.GetComponent<RectTransform>().anchoredPosition;
-                extraProductProgress.gameObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(vector.x + 64 * (index - 1), vector.y);
+                extraProductProgress.gameObject.GetComponent<RectTransform>().anchoredPosition =
+                    new Vector2(vector.x + 64 * (index - 1), vector.y);
                 vector = __instance.productIcon1.gameObject.GetComponent<RectTransform>().anchoredPosition;
                 productIcon.gameObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(vector.x + 64 * (index - 1), vector.y);
                 vector = __instance.productCountText1.gameObject.GetComponent<RectTransform>().anchoredPosition;
-                productCountText.gameObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(vector.x + 64 * (index - 1), vector.y);
+                productCountText.gameObject.GetComponent<RectTransform>().anchoredPosition =
+                    new Vector2(vector.x + 64 * (index - 1), vector.y);
 
                 productProgress.gameObject.SetActive(true);
                 extraProductProgress.gameObject.SetActive(true);

@@ -11,14 +11,16 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
 {
     internal static partial class MegaAssemblerPatches
     {
-        private static readonly FieldInfo PrefabDesc_assemblerRecipeType_Field = AccessTools.Field(typeof(PrefabDesc), nameof(PrefabDesc.assemblerRecipeType));
+        private static readonly FieldInfo PrefabDesc_assemblerRecipeType_Field =
+            AccessTools.Field(typeof(PrefabDesc), nameof(PrefabDesc.assemblerRecipeType));
 
-        private static readonly MethodInfo MegaAssemblerPatches_ContainsRecipeTypeRevert_Method
-            = AccessTools.Method(typeof(MegaAssemblerPatches), nameof(ContainsRecipeTypeRevert));
+        private static readonly MethodInfo MegaAssemblerPatches_ContainsRecipeTypeRevert_Method =
+            AccessTools.Method(typeof(MegaAssemblerPatches), nameof(ContainsRecipeTypeRevert));
 
         [HarmonyPatch(typeof(BuildingParameters), nameof(BuildingParameters.ApplyPrebuildParametersToEntity))]
         [HarmonyTranspiler]
-        public static IEnumerable<CodeInstruction> BuildingParameters_ApplyPrebuildParametersToEntity_Transpiler(IEnumerable<CodeInstruction> instructions)
+        public static IEnumerable<CodeInstruction> BuildingParameters_ApplyPrebuildParametersToEntity_Transpiler(
+            IEnumerable<CodeInstruction> instructions)
         {
             var matcher = new CodeMatcher(instructions);
 
@@ -28,16 +30,20 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
 
             matcher.SetOpcodeAndAdvance(OpCodes.Brfalse);
 
-            matcher.MatchForward(false, new CodeMatch(OpCodes.Stfld, AccessTools.Field(typeof(AssemblerComponent), nameof(AssemblerComponent.forceAccMode))));
+            matcher.MatchForward(false,
+                new CodeMatch(OpCodes.Stfld, AccessTools.Field(typeof(AssemblerComponent), nameof(AssemblerComponent.forceAccMode))));
 
-            matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0), new CodeInstruction(OpCodes.Ldarg_3), new CodeInstruction(OpCodes.Ldarg, 4),
+            matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0), new CodeInstruction(OpCodes.Ldarg_3),
+                new CodeInstruction(OpCodes.Ldarg, 4),
                 new CodeInstruction(OpCodes.Call,
-                    AccessTools.Method(typeof(MegaAssemblerPatches), nameof(BuildingParameters_ApplyPrebuildParametersToEntity_Patch_Method))));
+                    AccessTools.Method(typeof(MegaAssemblerPatches),
+                        nameof(BuildingParameters_ApplyPrebuildParametersToEntity_Patch_Method))));
 
             return matcher.InstructionEnumeration();
         }
 
-        public static void BuildingParameters_ApplyPrebuildParametersToEntity_Patch_Method(int entityId, int[] parameters, PlanetFactory factory)
+        public static void BuildingParameters_ApplyPrebuildParametersToEntity_Patch_Method(int entityId, int[] parameters,
+            PlanetFactory factory)
         {
             if (parameters == null || parameters.Length < 2048) return;
 
@@ -90,7 +96,8 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
         [HarmonyPatch(typeof(BuildingParameters), nameof(BuildingParameters.CopyFromFactoryObject))]
         [HarmonyPatch(typeof(BuildingParameters), nameof(BuildingParameters.CopyFromBuildPreview))]
         [HarmonyTranspiler]
-        public static IEnumerable<CodeInstruction> BuildingParameters_CopyFromFactoryObject_Transpiler(IEnumerable<CodeInstruction> instructions)
+        public static IEnumerable<CodeInstruction> BuildingParameters_CopyFromFactoryObject_Transpiler(
+            IEnumerable<CodeInstruction> instructions)
         {
             var matcher = new CodeMatcher(instructions);
 
@@ -106,7 +113,8 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
 
         [HarmonyPatch(typeof(BuildingParameters), nameof(BuildingParameters.CopyFromFactoryObject))]
         [HarmonyPostfix]
-        public static void BuildingParameters_CopyFromFactoryObject(ref BuildingParameters __instance, int objectId, PlanetFactory factory, bool copyInserters)
+        public static void BuildingParameters_CopyFromFactoryObject(ref BuildingParameters __instance, int objectId, PlanetFactory factory,
+            bool copyInserters)
         {
             if (__instance.type != BuildingType.Assembler) return;
 
@@ -144,7 +152,8 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
 
         [HarmonyPatch(typeof(BuildingParameters), nameof(BuildingParameters.PasteToFactoryObject))]
         [HarmonyTranspiler]
-        public static IEnumerable<CodeInstruction> BuildingParameters_PasteToFactoryObject_Transpiler(IEnumerable<CodeInstruction> instructions)
+        public static IEnumerable<CodeInstruction> BuildingParameters_PasteToFactoryObject_Transpiler(
+            IEnumerable<CodeInstruction> instructions)
         {
             var matcher = new CodeMatcher(instructions);
 
@@ -171,7 +180,8 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
 
         [HarmonyPatch(typeof(BuildingParameters), nameof(BuildingParameters.CanPasteToFactoryObject))]
         [HarmonyTranspiler]
-        public static IEnumerable<CodeInstruction> BuildingParameters_CanPasteToFactoryObject_Transpiler(IEnumerable<CodeInstruction> instructions)
+        public static IEnumerable<CodeInstruction> BuildingParameters_CanPasteToFactoryObject_Transpiler(
+            IEnumerable<CodeInstruction> instructions)
         {
             var matcher = new CodeMatcher(instructions);
 

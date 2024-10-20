@@ -48,9 +48,8 @@ namespace ProjectGenesis.Patches.Logic.QTools
 
             // ReSharper disable once LoopCanBePartlyConvertedToQuery
             foreach (NodeData node in Byproducts.Values.ToArray())
-            {
-                if (ReuseByProducts(node, AsRaws)) ReuseByProducts(node, Raws);
-            }
+                if (ReuseByProducts(node, AsRaws))
+                    ReuseByProducts(node, Raws);
 
             if (_totalProliferatedItemCount > 0) MergeRaws(ItemRaw(QTools.ProliferatorProto, ProliferatorCount));
 
@@ -66,7 +65,8 @@ namespace ProjectGenesis.Patches.Logic.QTools
             {
                 NodeOptions nodeOptions = node.Options;
 
-                if (!nodeOptions.AsRaw && nodeOptions.Factory != null) MergeFactories(ItemRaw(nodeOptions.Factory, Mathf.Ceil(nodeOptions.FactoryCount)));
+                if (!nodeOptions.AsRaw && nodeOptions.Factory != null)
+                    MergeFactories(ItemRaw(nodeOptions.Factory, Mathf.Ceil(nodeOptions.FactoryCount)));
             }
         }
 
@@ -127,7 +127,6 @@ namespace ProjectGenesis.Patches.Logic.QTools
             int resultsLength = recipe.Results.Length;
 
             if (resultsLength > 1)
-            {
                 for (var index = 0; index < resultsLength; index++)
                 {
                     if (idx != index)
@@ -137,7 +136,6 @@ namespace ProjectGenesis.Patches.Logic.QTools
                         MergeByproducts(ItemRaw(proto, count));
                     }
                 }
-            }
 
             int itemsLength = recipe.Items.Length;
 
@@ -239,7 +237,10 @@ namespace ProjectGenesis.Patches.Logic.QTools
         {
             var data = new NodeData
             {
-                DataSet = this, Item = proto, ItemCount = count, Options = option,
+                DataSet = this,
+                Item = proto,
+                ItemCount = count,
+                Options = option,
             };
 
             return data;
@@ -249,7 +250,10 @@ namespace ProjectGenesis.Patches.Logic.QTools
         {
             var data = new NodeData
             {
-                DataSet = this, Item = proto, ItemCount = count, Options = new NodeOptions(proto, null, null, EProliferatorStrategy.Nonuse, true),
+                DataSet = this,
+                Item = proto,
+                ItemCount = count,
+                Options = new NodeOptions(proto, null, null, EProliferatorStrategy.Nonuse, true),
             };
 
             data.Options.OnOptionsChange += OnOptionsChange;
@@ -261,7 +265,10 @@ namespace ProjectGenesis.Patches.Logic.QTools
         {
             var data = new NodeData
             {
-                DataSet = this, Item = proto, ItemCount = count, Options = option,
+                DataSet = this,
+                Item = proto,
+                ItemCount = count,
+                Options = option,
             };
 
             data.RefreshFactoryCount();
@@ -277,7 +284,10 @@ namespace ProjectGenesis.Patches.Logic.QTools
 
             var data = new NodeData
             {
-                DataSet = this, Item = proto, ItemCount = count, Options = new NodeOptions(proto, factory, recipe, strategy, asRaw),
+                DataSet = this,
+                Item = proto,
+                ItemCount = count,
+                Options = new NodeOptions(proto, factory, recipe, strategy, asRaw),
             };
 
             data.RefreshFactoryCount();

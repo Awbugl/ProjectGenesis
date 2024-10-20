@@ -33,8 +33,7 @@ namespace ProjectGenesis.Patches.UI.QTools
 
         private NodeData _data;
 
-        private ProliferatorComboBox _proliferatorComboBoxNormal,
-                                     _proliferatorComboBoxNonProductive;
+        private ProliferatorComboBox _proliferatorComboBoxNormal, _proliferatorComboBoxNonProductive;
 
         private RectTransform _rect;
 

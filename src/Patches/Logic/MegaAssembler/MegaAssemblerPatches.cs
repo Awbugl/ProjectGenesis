@@ -14,36 +14,44 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
         private const int MegaAssemblerSpeed = 300000;
 
         private static readonly FieldInfo EntityData_StationId_Field = AccessTools.Field(typeof(EntityData), nameof(EntityData.stationId)),
-                                          EntityData_AssemblerId_Field = AccessTools.Field(typeof(EntityData), nameof(EntityData.assemblerId)),
-                                          PlanetFactory_EntityPool_Field = AccessTools.Field(typeof(PlanetFactory), nameof(PlanetFactory.entityPool)),
-                                          FactorySystem_AssemblerPool_Field = AccessTools.Field(typeof(FactorySystem), nameof(FactorySystem.assemblerPool));
+                                          EntityData_AssemblerId_Field =
+                                              AccessTools.Field(typeof(EntityData), nameof(EntityData.assemblerId)),
+                                          PlanetFactory_EntityPool_Field =
+                                              AccessTools.Field(typeof(PlanetFactory), nameof(PlanetFactory.entityPool)),
+                                          FactorySystem_AssemblerPool_Field = AccessTools.Field(typeof(FactorySystem),
+                                              nameof(FactorySystem.assemblerPool));
 
-        private static readonly MethodInfo AssemblerComponent_InternalUpdate_Method
-                                               = AccessTools.Method(typeof(AssemblerComponent), nameof(AssemblerComponent.InternalUpdate)),
-                                           MegaAssembler_AssemblerComponent_InternalUpdate_Patch_Method = AccessTools.Method(typeof(MegaAssemblerPatches),
-                                               nameof(GameTick_AssemblerComponent_InternalUpdate_Patch));
+        private static readonly MethodInfo AssemblerComponent_InternalUpdate_Method =
+                                               AccessTools.Method(typeof(AssemblerComponent), nameof(AssemblerComponent.InternalUpdate)),
+                                           MegaAssembler_AssemblerComponent_InternalUpdate_Patch_Method =
+                                               AccessTools.Method(typeof(MegaAssemblerPatches),
+                                                   nameof(GameTick_AssemblerComponent_InternalUpdate_Patch));
 
         [HarmonyPatch(typeof(FactorySystem), nameof(FactorySystem.GameTick), typeof(long), typeof(bool))]
-        [HarmonyPatch(typeof(FactorySystem), nameof(FactorySystem.GameTick), typeof(long), typeof(bool), typeof(int), typeof(int), typeof(int))]
+        [HarmonyPatch(typeof(FactorySystem), nameof(FactorySystem.GameTick), typeof(long), typeof(bool), typeof(int), typeof(int),
+            typeof(int))]
         [HarmonyTranspiler]
-        public static IEnumerable<CodeInstruction> FactorySystem_GameTick_Transpiler(IEnumerable<CodeInstruction> instructions, ILGenerator generator)
+        public static IEnumerable<CodeInstruction> FactorySystem_GameTick_Transpiler(IEnumerable<CodeInstruction> instructions,
+            ILGenerator generator)
         {
             var matcher = new CodeMatcher(instructions, generator);
 
-            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldloc_1), new CodeMatch(OpCodes.Ldloc_2),
-                new CodeMatch(OpCodes.Call, AssemblerComponent_InternalUpdate_Method));
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldloc_1),
+                new CodeMatch(OpCodes.Ldloc_2), new CodeMatch(OpCodes.Call, AssemblerComponent_InternalUpdate_Method));
 
             object local1 = matcher.Operand;
             object power1 = matcher.Advance(1).Operand;
 
             matcher.CreateLabelAt(matcher.Pos + 4, out Label label1);
 
-            matcher.Advance(-1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldc_I4_0), new CodeInstruction(OpCodes.Ldloc_S, local1), new CodeInstruction(OpCodes.Ldarg_0),
-                new CodeInstruction(OpCodes.Ldloc_S, power1), new CodeInstruction(OpCodes.Call, MegaAssembler_AssemblerComponent_InternalUpdate_Patch_Method),
+            matcher.Advance(-1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldc_I4_0), new CodeInstruction(OpCodes.Ldloc_S, local1),
+                new CodeInstruction(OpCodes.Ldarg_0), new CodeInstruction(OpCodes.Ldloc_S, power1),
+                new CodeInstruction(OpCodes.Call, MegaAssembler_AssemblerComponent_InternalUpdate_Patch_Method),
                 new CodeInstruction(OpCodes.Brfalse_S, label1), new CodeInstruction(OpCodes.Pop));
 
-            matcher.Advance(5).MatchForward(false, new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldloc_1),
-                new CodeMatch(OpCodes.Ldloc_2), new CodeMatch(OpCodes.Call, AssemblerComponent_InternalUpdate_Method));
+            matcher.Advance(5).MatchForward(false, new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldloc_S),
+                new CodeMatch(OpCodes.Ldloc_1), new CodeMatch(OpCodes.Ldloc_2),
+                new CodeMatch(OpCodes.Call, AssemblerComponent_InternalUpdate_Method));
 
             if (matcher.IsValid)
             {
@@ -54,22 +62,24 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
 
                 matcher.Advance(-1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldc_I4_0), new CodeInstruction(OpCodes.Ldloc_S, local2),
                     new CodeInstruction(OpCodes.Ldarg_0), new CodeInstruction(OpCodes.Ldloc_S, power2),
-                    new CodeInstruction(OpCodes.Call, MegaAssembler_AssemblerComponent_InternalUpdate_Patch_Method), new CodeInstruction(OpCodes.Brfalse_S, label2),
-                    new CodeInstruction(OpCodes.Pop));
+                    new CodeInstruction(OpCodes.Call, MegaAssembler_AssemblerComponent_InternalUpdate_Patch_Method),
+                    new CodeInstruction(OpCodes.Brfalse_S, label2), new CodeInstruction(OpCodes.Pop));
             }
 
             return matcher.InstructionEnumeration();
         }
 
-        [HarmonyPatch(typeof(FactorySystem), nameof(FactorySystem.GameTick), typeof(long), typeof(bool), typeof(int), typeof(int), typeof(int))]
+        [HarmonyPatch(typeof(FactorySystem), nameof(FactorySystem.GameTick), typeof(long), typeof(bool), typeof(int), typeof(int),
+            typeof(int))]
         [HarmonyTranspiler]
-        public static IEnumerable<CodeInstruction> FactorySystem_GameTick_Transpiler_2(IEnumerable<CodeInstruction> instructions, ILGenerator generator)
+        public static IEnumerable<CodeInstruction> FactorySystem_GameTick_Transpiler_2(IEnumerable<CodeInstruction> instructions,
+            ILGenerator generator)
         {
             var matcher = new CodeMatcher(instructions, generator);
 
-            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldarg_0), new CodeMatch(OpCodes.Ldfld), new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldelema),
-                new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldloc_1), new CodeMatch(OpCodes.Ldloc_2),
-                new CodeMatch(OpCodes.Call, AssemblerComponent_InternalUpdate_Method));
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldarg_0), new CodeMatch(OpCodes.Ldfld), new CodeMatch(OpCodes.Ldloc_S),
+                new CodeMatch(OpCodes.Ldelema), new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldloc_1),
+                new CodeMatch(OpCodes.Ldloc_2), new CodeMatch(OpCodes.Call, AssemblerComponent_InternalUpdate_Method));
 
             object index = matcher.Advance(2).Operand;
             object power = matcher.Advance(2).Operand;
@@ -78,14 +88,16 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
 
             matcher.Advance(-4).InsertAndAdvance(new CodeInstruction(OpCodes.Ldc_I4_0), new CodeInstruction(OpCodes.Ldarg_0),
                 new CodeInstruction(OpCodes.Ldfld, FactorySystem_AssemblerPool_Field), new CodeInstruction(OpCodes.Ldloc_S, index),
-                new CodeInstruction(OpCodes.Ldelema, typeof(AssemblerComponent)), new CodeInstruction(OpCodes.Ldarg_0), new CodeInstruction(OpCodes.Ldloc_S, power),
-                new CodeInstruction(OpCodes.Call, MegaAssembler_AssemblerComponent_InternalUpdate_Patch_Method), new CodeInstruction(OpCodes.Brfalse_S, label),
-                new CodeInstruction(OpCodes.Pop));
+                new CodeInstruction(OpCodes.Ldelema, typeof(AssemblerComponent)), new CodeInstruction(OpCodes.Ldarg_0),
+                new CodeInstruction(OpCodes.Ldloc_S, power),
+                new CodeInstruction(OpCodes.Call, MegaAssembler_AssemblerComponent_InternalUpdate_Patch_Method),
+                new CodeInstruction(OpCodes.Brfalse_S, label), new CodeInstruction(OpCodes.Pop));
 
             return matcher.InstructionEnumeration();
         }
 
-        public static bool GameTick_AssemblerComponent_InternalUpdate_Patch(ref AssemblerComponent __instance, FactorySystem factorySystem, float power)
+        public static bool GameTick_AssemblerComponent_InternalUpdate_Patch(ref AssemblerComponent __instance, FactorySystem factorySystem,
+            float power)
         {
             PlanetFactory factory = factorySystem.factory;
 
@@ -120,12 +132,14 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
             }
 
             if (factory.entityPool[__instance.entityId].protoId == ProtoID.I负熵熔炉 && __instance.replicating)
-                __instance.extraTime += (int)(power * __instance.extraSpeed) + (int)(power * __instance.speedOverride * __instance.extraTimeSpend / __instance.timeSpend);
+                __instance.extraTime += (int)(power * __instance.extraSpeed)
+                                      + (int)(power * __instance.speedOverride * __instance.extraTimeSpend / __instance.timeSpend);
 
             return b;
         }
 
-        private static void UpdateOutputSlots(ref AssemblerComponent __instance, CargoTraffic traffic, SlotData[] slotdata, SignData[] signPool, int maxPilerCount)
+        private static void UpdateOutputSlots(ref AssemblerComponent __instance, CargoTraffic traffic, SlotData[] slotdata,
+            SignData[] signPool, int maxPilerCount)
         {
             for (var index1 = 0; index1 < slotdata.Length; ++index1)
             {
@@ -197,7 +211,8 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
             }
         }
 
-        private static void UpdateTrashInputSlots(ref AssemblerComponent __instance, float power, PlanetFactory factory, CargoTraffic traffic, SlotData[] slotdata)
+        private static void UpdateTrashInputSlots(ref AssemblerComponent __instance, float power, PlanetFactory factory,
+            CargoTraffic traffic, SlotData[] slotdata)
         {
             for (var index = 0; index < slotdata.Length; ++index)
             {
@@ -218,8 +233,7 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
 
                     ref int sandCount = ref __instance.produced[0];
 
-                    if (itemId == ProtoID.I沙土)
-                        sandCount += stack;
+                    if (itemId == ProtoID.I沙土) { sandCount += stack; }
                     else
                     {
                         FactoryProductionStat factoryProductionStat = GameMain.statistics.production.factoryStatPool[factory.index];
@@ -289,7 +303,8 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
             count = count1;
         }
 
-        private static void UpdateInputSlots(ref AssemblerComponent __instance, CargoTraffic traffic, SlotData[] slotdata, SignData[] signPool)
+        private static void UpdateInputSlots(ref AssemblerComponent __instance, CargoTraffic traffic, SlotData[] slotdata,
+            SignData[] signPool)
         {
             for (var index = 0; index < slotdata.Length; ++index)
             {
@@ -344,7 +359,8 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
 
         [HarmonyPostfix]
         [HarmonyPatch(typeof(PlanetFactory), nameof(PlanetFactory.ApplyInsertTarget))]
-        public static void PlanetFactory_ApplyInsertTarget(ref PlanetFactory __instance, int entityId, int insertTarget, int slotId, int offset)
+        public static void PlanetFactory_ApplyInsertTarget(ref PlanetFactory __instance, int entityId, int insertTarget, int slotId,
+            int offset)
         {
             if (entityId == 0) return;
 
@@ -395,8 +411,8 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
 
         [HarmonyPostfix]
         [HarmonyPatch(typeof(PlanetFactory), nameof(PlanetFactory.ApplyEntityDisconnection))]
-        public static void PlanetFactory_ApplyEntityDisconnection(ref PlanetFactory __instance, int otherEntityId, int removingEntityId, int otherSlotId,
-            int removingSlotId)
+        public static void PlanetFactory_ApplyEntityDisconnection(ref PlanetFactory __instance, int otherEntityId, int removingEntityId,
+            int otherSlotId, int removingSlotId)
         {
             if (otherEntityId == 0) return;
 

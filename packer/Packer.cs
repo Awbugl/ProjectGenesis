@@ -14,10 +14,10 @@ namespace ProjectGenesis
         {
             string releasePath = Path.Combine(SolutionPath, "release");
 
-            foreach (var path in Directory.GetFiles(releasePath, "*.zip").Where(File.Exists))
-                File.Delete(path);
+            foreach (string path in Directory.GetFiles(releasePath, "*.zip").Where(File.Exists)) File.Delete(path);
 
-            File.WriteAllText(Path.Combine(releasePath, "manifest.json"), JsonConvert.SerializeObject(new ManifestObject(), Formatting.Indented));
+            File.WriteAllText(Path.Combine(releasePath, "manifest.json"),
+                JsonConvert.SerializeObject(new ManifestObject(), Formatting.Indented));
 
             var zipName = $"GenesisBook-v{ProjectGenesis.VERSION}{ProjectGenesis.DEBUGVERSION}.zip";
 
@@ -32,7 +32,7 @@ namespace ProjectGenesis
             Process.Start("explorer", releasePath);
         }
     }
-    
+
     public class ManifestObject
     {
         [JsonProperty("name")] public string Name { get; set; } = "GenesisBook";
@@ -41,8 +41,10 @@ namespace ProjectGenesis
 
         [JsonProperty("website_url")] public string WebsiteURL { get; set; } = "https://github.com/Awbugl/ProjectGenesis";
 
-        [JsonProperty("description")] public string Description { get; set; } = "构建真实宇宙，撰写创世之书。Construct Real Universe. Then leave a GenesisBook. An overhaul mod.";
+        [JsonProperty("description")]
+        public string Description { get; set; } = "构建真实宇宙，撰写创世之书。Construct Real Universe. Then leave a GenesisBook. An overhaul mod.";
 
-        [JsonProperty("dependencies")] public string[] Dependencies { get; set; } = { "CommonAPI-CommonAPI-1.6.5", "nebula-NebulaMultiplayerModApi-2.0.0", };
+        [JsonProperty("dependencies")]
+        public string[] Dependencies { get; set; } = { "CommonAPI-CommonAPI-1.6.5", "nebula-NebulaMultiplayerModApi-2.0.0", };
     }
 }

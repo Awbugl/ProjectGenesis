@@ -8,30 +8,28 @@ namespace ProjectGenesis.Patches.Logic
 {
     public static class ThermalPowerGenPatches
     {
-        private static readonly int[] FuelRods = { ProtoID.I氢燃料棒, ProtoID.I煤油燃料棒, ProtoID.I四氢双环戊二烯燃料棒, ProtoID.I能量碎片 };
+        private static readonly int[] FuelRods =
+        {
+            ProtoID.I氢燃料棒, ProtoID.I煤油燃料棒, ProtoID.I四氢双环戊二烯燃料棒, ProtoID.I能量碎片,
+        };
 
         [HarmonyPatch(typeof(PlanetFactory), nameof(PlanetFactory.EntityFastFillIn))]
         [HarmonyPatch(typeof(PlanetFactory), nameof(PlanetFactory.InsertInto))]
         [HarmonyTranspiler]
-        public static IEnumerable<CodeInstruction> PlanetFactory_InsertInto_Transpiler(
-            IEnumerable<CodeInstruction> instructions)
+        public static IEnumerable<CodeInstruction> PlanetFactory_InsertInto_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
             var matcher = new CodeMatcher(instructions);
 
-            matcher.MatchForward(false,
-                new CodeMatch(OpCodes.Ldsfld, AccessTools.Field(typeof(ItemProto), nameof(ItemProto.fuelNeeds))),
-                new CodeMatch(OpCodes.Ldloc_S),
-                new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldelema),
-                new CodeMatch(OpCodes.Ldfld,
-                    AccessTools.Field(typeof(PowerGeneratorComponent), nameof(PowerGeneratorComponent.fuelMask))),
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldsfld, AccessTools.Field(typeof(ItemProto), nameof(ItemProto.fuelNeeds))),
+                new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldelema),
+                new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(PowerGeneratorComponent), nameof(PowerGeneratorComponent.fuelMask))),
                 new CodeMatch(OpCodes.Ldelem_Ref));
 
             matcher.SetAndAdvance(OpCodes.Nop, null);
 
             matcher.Advance(3).SetAndAdvance(OpCodes.Ldarg_0, null);
 
-            matcher.SetAndAdvance(OpCodes.Call,
-                AccessTools.Method(typeof(ThermalPowerGenPatches), nameof(ThermalPowerGen_InsertMethod)));
+            matcher.SetAndAdvance(OpCodes.Call, AccessTools.Method(typeof(ThermalPowerGenPatches), nameof(ThermalPowerGen_InsertMethod)));
 
             return matcher.InstructionEnumeration();
         }
@@ -51,18 +49,15 @@ namespace ProjectGenesis.Patches.Logic
         {
             var matcher = new CodeMatcher(instructions);
 
-            matcher.MatchForward(false,
-                new CodeMatch(OpCodes.Ldsfld, AccessTools.Field(typeof(ItemProto), nameof(ItemProto.fuelNeeds))),
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldsfld, AccessTools.Field(typeof(ItemProto), nameof(ItemProto.fuelNeeds))),
                 new CodeMatch(OpCodes.Ldloc_0),
-                new CodeMatch(OpCodes.Ldfld,
-                    AccessTools.Field(typeof(PowerGeneratorComponent), nameof(PowerGeneratorComponent.fuelMask))),
+                new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(PowerGeneratorComponent), nameof(PowerGeneratorComponent.fuelMask))),
                 new CodeMatch(OpCodes.Ldelem_Ref));
 
             matcher.SetAndAdvance(OpCodes.Nop, null);
             matcher.SetAndAdvance(OpCodes.Nop, null);
             matcher.SetAndAdvance(OpCodes.Ldarg_0, null);
-            matcher.SetAndAdvance(OpCodes.Call,
-                AccessTools.Method(typeof(ThermalPowerGenPatches), nameof(UIPowerGenerator_InsertMethod)));
+            matcher.SetAndAdvance(OpCodes.Call, AccessTools.Method(typeof(ThermalPowerGenPatches), nameof(UIPowerGenerator_InsertMethod)));
 
             return matcher.InstructionEnumeration();
         }

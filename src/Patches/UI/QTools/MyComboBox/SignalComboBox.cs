@@ -23,6 +23,7 @@ namespace ProjectGenesis.Patches.UI.QTools.MyComboBox
             base.Init(list, itemIndex, defaultSprite);
         }
 
-        public override void OnItemIndexChange() => iconImg.sprite = LDB.signals.IconSprite(Items != null ? Items[selectIndex] : DefaultSprite);
+        public override void OnItemIndexChange() =>
+            iconImg.sprite = LDB.signals.IconSprite(Items != null ? Items[selectIndex] : DefaultSprite);
     }
 }

@@ -33,27 +33,24 @@ namespace ProjectGenesis.Compatibility
         public const string MODNAME = "GenesisBook.InstallationCheck";
         public const string PreferBepinExVersion = "5.4.17";
         private static bool MessageShown, PreloaderInstalled, BepinExVersionMatch;
-        
+
         internal static ManualLogSource logger;
 
         public void Awake()
         {
             logger = Logger;
-            
+
             BepInEx.Logging.Logger.Listeners.Add(new HarmonyLogListener());
 
             var currentVersion = typeof(Paths).Assembly.GetName().Version.ToString(3);
 
             BepinExVersionMatch = currentVersion == PreferBepinExVersion;
 
-            FieldInfo birthResourcePoint2 =
-                AccessTools.DeclaredField(typeof(PlanetData), nameof(PlanetData.birthResourcePoint2));
+            FieldInfo birthResourcePoint2 = AccessTools.DeclaredField(typeof(PlanetData), nameof(PlanetData.birthResourcePoint2));
             PreloaderInstalled = birthResourcePoint2 != null;
 
-            new Harmony(MODGUID).Patch(AccessTools.Method(typeof(VFPreload), nameof(VFPreload.InvokeOnLoadWorkEnded)),
-                null,
-                new HarmonyMethod(typeof(InstallationCheckPlugin), nameof(OnMainMenuOpen))
-                    { priority = Priority.Last, });
+            new Harmony(MODGUID).Patch(AccessTools.Method(typeof(VFPreload), nameof(VFPreload.InvokeOnLoadWorkEnded)), null,
+                new HarmonyMethod(typeof(InstallationCheckPlugin), nameof(OnMainMenuOpen)) { priority = Priority.Last, });
 
             AwakeCompatibilityPatchers();
         }
@@ -69,10 +66,7 @@ namespace ProjectGenesis.Compatibility
             GigaStationsUpdated.Awake();
             LazyOutposting.Awake();
 
-            try
-            {
-                GalacticScale.Awake();
-            }
+            try { GalacticScale.Awake(); }
             catch (FileNotFoundException)
             {
                 // ignore
@@ -97,9 +91,8 @@ namespace ProjectGenesis.Compatibility
 
             if (string.IsNullOrEmpty(msg)) return;
 
-            UIMessageBox.Show("GenesisBookLoadTitle".TranslateFromJson(), msg.TranslateFromJson(),
-                "确定".TranslateFromJson(), "跳转交流群".TranslateFromJson(),
-                "跳转日志".TranslateFromJson(), UIMessageBox.INFO, null, OpenBrowser, OpenLog);
+            UIMessageBox.Show("GenesisBookLoadTitle".TranslateFromJson(), msg.TranslateFromJson(), "确定".TranslateFromJson(),
+                "跳转交流群".TranslateFromJson(), "跳转日志".TranslateFromJson(), UIMessageBox.INFO, null, OpenBrowser, OpenLog);
         }
 
         public static void OpenBrowser() => Application.OpenURL("创世之书链接".TranslateFromJson());

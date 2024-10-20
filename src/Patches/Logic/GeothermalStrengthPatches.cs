@@ -13,7 +13,7 @@ namespace ProjectGenesis.Patches.Logic
             var matcher = new CodeMatcher(instructions);
 
             matcher.MatchForward(false, new CodeMatch(OpCodes.Ldc_R4, 3f));
-            
+
             matcher.SetOperandAndAdvance(2f);
 
             return matcher.InstructionEnumeration();

@@ -10,42 +10,47 @@ namespace ProjectGenesis.Patches.Logic
 {
     public static class ProductOverflowPatches
     {
-        private static readonly FieldInfo AssemblerComponent_RecipeType_FieldInfo = AccessTools.Field(typeof(AssemblerComponent), nameof(AssemblerComponent.recipeType));
+        private static readonly FieldInfo AssemblerComponent_RecipeType_FieldInfo =
+            AccessTools.Field(typeof(AssemblerComponent), nameof(AssemblerComponent.recipeType));
 
         [HarmonyPatch(typeof(AssemblerComponent), nameof(AssemblerComponent.InternalUpdate))]
         [HarmonyTranspiler]
-        public static IEnumerable<CodeInstruction> AssemblerComponent_InternalUpdate_Transpiler(IEnumerable<CodeInstruction> instructions, ILGenerator generator)
+        public static IEnumerable<CodeInstruction> AssemblerComponent_InternalUpdate_Transpiler(IEnumerable<CodeInstruction> instructions,
+            ILGenerator generator)
         {
             var matcher = new CodeMatcher(instructions, generator);
 
             // chemical
-            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldarg_0), new CodeMatch(OpCodes.Ldfld, AssemblerComponent_RecipeType_FieldInfo),
-                new CodeMatch(OpCodes.Ldc_I4_2));
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldarg_0),
+                new CodeMatch(OpCodes.Ldfld, AssemblerComponent_RecipeType_FieldInfo), new CodeMatch(OpCodes.Ldc_I4_2));
 
             object label = matcher.Advance(-1).Operand;
             matcher.Advance(1);
 
             matcher.Advance(4).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0), new CodeInstruction(OpCodes.Ldarg_2),
-                new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(ProductOverflowPatches), nameof(AssemblerComponent_InsertMethod_Chemical))),
+                new CodeInstruction(OpCodes.Call,
+                    AccessTools.Method(typeof(ProductOverflowPatches), nameof(AssemblerComponent_InsertMethod_Chemical))),
                 new CodeInstruction(OpCodes.Brtrue_S, label));
 
             // refine
-            matcher.Start().MatchForward(false, new CodeMatch(OpCodes.Ldarg_0), new CodeMatch(OpCodes.Ldfld, AssemblerComponent_RecipeType_FieldInfo),
-                new CodeMatch(OpCodes.Ldc_I4_3));
+            matcher.Start().MatchForward(false, new CodeMatch(OpCodes.Ldarg_0),
+                new CodeMatch(OpCodes.Ldfld, AssemblerComponent_RecipeType_FieldInfo), new CodeMatch(OpCodes.Ldc_I4_3));
 
             matcher.Advance(4).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0), new CodeInstruction(OpCodes.Ldarg_2),
-                new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(ProductOverflowPatches), nameof(AssemblerComponent_InsertMethod_Refine))),
+                new CodeInstruction(OpCodes.Call,
+                    AccessTools.Method(typeof(ProductOverflowPatches), nameof(AssemblerComponent_InsertMethod_Refine))),
                 new CodeInstruction(OpCodes.Brtrue_S, label));
 
             // assemble
-            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldarg_0), new CodeMatch(OpCodes.Ldfld, AssemblerComponent_RecipeType_FieldInfo),
-                new CodeMatch(OpCodes.Ldc_I4_4));
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldarg_0),
+                new CodeMatch(OpCodes.Ldfld, AssemblerComponent_RecipeType_FieldInfo), new CodeMatch(OpCodes.Ldc_I4_4));
             matcher.Advance(4);
 
             // other recipe
             matcher.Advance(6).MatchForward(false, new CodeMatch(OpCodes.Ldc_I4_0), new CodeMatch(OpCodes.Stloc_S));
             matcher.Advance(2).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0), new CodeInstruction(OpCodes.Ldarg_2),
-                new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(ProductOverflowPatches), nameof(AssemblerComponent_InsertMethod_Other))),
+                new CodeInstruction(OpCodes.Call,
+                    AccessTools.Method(typeof(ProductOverflowPatches), nameof(AssemblerComponent_InsertMethod_Other))),
                 new CodeInstruction(OpCodes.Brtrue_S, label));
 
             return matcher.InstructionEnumeration();
@@ -70,11 +75,9 @@ namespace ProjectGenesis.Patches.Logic
 
                     return b && CalcMaxProduct(ref component, productRegister, 19);
 
-                case 1:
-                    return CalcMaxProduct(ref component, productRegister, 19);
+                case 1: return CalcMaxProduct(ref component, productRegister, 19);
 
-                default:
-                    return false;
+                default: return false;
             }
         }
 
@@ -101,11 +104,9 @@ namespace ProjectGenesis.Patches.Logic
 
                     return b && CalcMaxProduct(ref component, productRegister, 19);
 
-                case 1:
-                    return CalcMaxProduct(ref component, productRegister, 19);
+                case 1: return CalcMaxProduct(ref component, productRegister, 19);
 
-                default:
-                    return false;
+                default: return false;
             }
         }
 
@@ -128,11 +129,9 @@ namespace ProjectGenesis.Patches.Logic
 
                     return b && CalcMaxProduct(ref component, productRegister, 19);
 
-                case 1:
-                    return CalcMaxProduct(ref component, productRegister, 19);
+                case 1: return CalcMaxProduct(ref component, productRegister, 19);
 
-                default:
-                    return false;
+                default: return false;
             }
         }
 

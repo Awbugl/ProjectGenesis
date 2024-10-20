@@ -27,8 +27,7 @@ namespace ProjectGenesis.Compatibility
             var typeDwarfMission = typeDwarvenContract.GetNestedType("DwarfMission", BindingFlags.NonPublic | BindingFlags.Instance);
             var typeEGear = typeDwarfMission.GetNestedType("EGear", BindingFlags.NonPublic | BindingFlags.Instance);
 
-            HarmonyPatch.Patch(AccessTools.Constructor(typeDwarfMission,
-                    new[] { typeEGear }), null, null,
+            HarmonyPatch.Patch(AccessTools.Constructor(typeDwarfMission, new[] { typeEGear, }), null, null,
                 new HarmonyMethod(typeof(LazyOutposting), nameof(DwarfMission_Constructor_Transpiler)));
 
             HarmonyPatch.CreateReversePatcher(AccessTools.Method(typeDwarvenContract, "SetUp"),
@@ -37,18 +36,17 @@ namespace ProjectGenesis.Compatibility
             SetUp_ReversePatch();
         }
 
-        public static IEnumerable<CodeInstruction> DwarfMission_Constructor_Transpiler(
-            IEnumerable<CodeInstruction> instructions)
+        public static IEnumerable<CodeInstruction> DwarfMission_Constructor_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
             var matcher = new CodeMatcher(instructions);
-            
+
             matcher.MatchForward(false, new CodeMatch(OpCodes.Stloc_2));
             matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Call,
                 AccessTools.Method(typeof(LazyOutposting), nameof(Patch_Method_validTargets))));
 
             return matcher.InstructionEnumeration();
         }
-        
+
         public static List<EVeinType> Patch_Method_validTargets(List<EVeinType> validTargets)
         {
             validTargets.Add(EVeinType.Aluminum);
@@ -62,10 +60,7 @@ namespace ProjectGenesis.Compatibility
             {
                 var matcher = new CodeMatcher(instructions);
 
-                matcher.MatchForward(false,
-                    new CodeMatch(OpCodes.Call),
-                    new CodeMatch(OpCodes.Ldtoken)
-                );
+                matcher.MatchForward(false, new CodeMatch(OpCodes.Call), new CodeMatch(OpCodes.Ldtoken));
 
                 matcher.RemoveInstructions(matcher.Remaining - 1);
 

@@ -30,12 +30,11 @@ namespace ProjectGenesis.Patches.UI
             Array.Resize(ref __instance.itemCountTexts, len);
             Array.Resize(ref __instance.itemIncs, len * 3);
 
-            var itemButtonsGameObject = __instance.itemButtons[0].gameObject;
+            GameObject itemButtonsGameObject = __instance.itemButtons[0].gameObject;
 
-            for (int i = 6; i < len; i++)
+            for (var i = 6; i < len; i++)
             {
-                var newButton = Object.Instantiate(itemButtonsGameObject,
-                    itemButtonsGameObject.transform.parent);
+                GameObject newButton = Object.Instantiate(itemButtonsGameObject, itemButtonsGameObject.transform.parent);
 
                 __instance.itemButtons[i] = newButton.GetComponent<UIButton>();
                 __instance.itemIcons[i] = newButton.transform.Find("icon").GetComponent<Image>();
@@ -43,9 +42,9 @@ namespace ProjectGenesis.Patches.UI
                 __instance.itemLocks[i] = newButton.transform.Find("locked").GetComponent<Image>();
                 __instance.itemCountTexts[i] = newButton.transform.Find("cnt-text").GetComponent<Text>();
 
-                for (int j = 0; j < 3; j++)
+                for (var j = 0; j < 3; j++)
                 {
-                    var transform = newButton.transform.Find("icon");
+                    Transform transform = newButton.transform.Find("icon");
                     __instance.itemIncs[i * 3 + j] = transform.GetChild(j).GetComponent<Image>();
                 }
             }
@@ -59,15 +58,16 @@ namespace ProjectGenesis.Patches.UI
             for (var i = 0; i < window.itemButtons.Length; i++)
             {
                 window.itemButtons[i].gameObject.GetComponent<RectTransform>().anchoredPosition =
+
                     // ReSharper disable once PossibleLossOfFraction
-                    new Vector2((i % 3 - 1) * 105, (i / 3) * -105 + 105);
+                    new Vector2((i % 3 - 1) * 105, i / 3 * -105 + 105);
             }
         }
 
         private static void SwapPosition(UILabWindow window, int pos1, int pos2)
         {
-            var rectTransform1 = window.itemButtons[pos1].gameObject.GetComponent<RectTransform>();
-            var rectTransform2 = window.itemButtons[pos2].gameObject.GetComponent<RectTransform>();
+            RectTransform rectTransform1 = window.itemButtons[pos1].gameObject.GetComponent<RectTransform>();
+            RectTransform rectTransform2 = window.itemButtons[pos2].gameObject.GetComponent<RectTransform>();
 
             (rectTransform1.anchoredPosition, rectTransform2.anchoredPosition) =
                 (rectTransform2.anchoredPosition, rectTransform1.anchoredPosition);
@@ -86,14 +86,14 @@ namespace ProjectGenesis.Patches.UI
 
             if (lab.matrixMode)
             {
-                for (int index = 0; index < __instance.itemButtons.Length; ++index)
+                for (var index = 0; index < __instance.itemButtons.Length; ++index)
                 {
-                    var enabled = __instance.itemIcons[index].enabled;
-                    var button = __instance.itemButtons[index];
+                    bool enabled = __instance.itemIcons[index].enabled;
+                    UIButton button = __instance.itemButtons[index];
                     if (enabled)
                     {
-                        var rectTransform = button.gameObject.GetComponent<RectTransform>();
-                        var x = rectTransform.anchoredPosition.x;
+                        RectTransform rectTransform = button.gameObject.GetComponent<RectTransform>();
+                        float x = rectTransform.anchoredPosition.x;
                         rectTransform.anchoredPosition = new Vector2(x, 0);
                     }
 
@@ -104,11 +104,12 @@ namespace ProjectGenesis.Patches.UI
             {
                 for (var i = 0; i < __instance.itemButtons.Length; i++)
                 {
-                    var button = __instance.itemButtons[i];
+                    UIButton button = __instance.itemButtons[i];
                     button.gameObject.SetActive(true);
                     button.gameObject.GetComponent<RectTransform>().anchoredPosition =
+
                         // ReSharper disable once PossibleLossOfFraction
-                        new Vector2((i % 3 - 1) * 105, (i / 3) * -105 + 105);
+                        new Vector2((i % 3 - 1) * 105, i / 3 * -105 + 105);
                 }
 
                 SwapPosition(__instance, 4, 5);
@@ -117,18 +118,14 @@ namespace ProjectGenesis.Patches.UI
 
         [HarmonyPatch(typeof(UILabWindow), nameof(UILabWindow._OnUpdate))]
         [HarmonyTranspiler]
-        public static IEnumerable<CodeInstruction> UILabWindow_OnUpdate_Transpiler(
-            IEnumerable<CodeInstruction> instructions)
+        public static IEnumerable<CodeInstruction> UILabWindow_OnUpdate_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
             var matcher = new CodeMatcher(instructions);
 
-            matcher.MatchForward(true,
-                new CodeMatch(OpCodes.Ldloc_0),
-                new CodeMatch(OpCodes.Ldfld,
-                    AccessTools.Field(typeof(LabComponent), nameof(LabComponent.timeSpend))));
+            matcher.MatchForward(true, new CodeMatch(OpCodes.Ldloc_0),
+                new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(LabComponent), nameof(LabComponent.timeSpend))));
 
-            matcher.Advance(1).InsertAndAdvance(
-                new CodeInstruction(OpCodes.Ldloc_0),
+            matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_0),
                 new CodeInstruction(OpCodes.Call,
                     AccessTools.Method(typeof(ResearchLabPatches), nameof(UILabWindow_OnUpdate_Patch_Method))));
 
@@ -139,8 +136,7 @@ namespace ProjectGenesis.Patches.UI
         [HarmonyPatch(typeof(LabComponent), nameof(LabComponent.InternalUpdateAssemble))]
         [HarmonyPatch(typeof(FactorySystem), nameof(FactorySystem.GameTickLabResearchMode))]
         [HarmonyTranspiler]
-        public static IEnumerable<CodeInstruction> LabComponent_SetFunction_Transpiler(
-            IEnumerable<CodeInstruction> instructions)
+        public static IEnumerable<CodeInstruction> LabComponent_SetFunction_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
             var matcher = new CodeMatcher(instructions);
 
@@ -156,23 +152,16 @@ namespace ProjectGenesis.Patches.UI
 
         [HarmonyPatch(typeof(LabMatrixEffect), nameof(LabMatrixEffect.Update))]
         [HarmonyTranspiler]
-        public static IEnumerable<CodeInstruction> LabMatrixEffect_Update_Transpiler(
-            IEnumerable<CodeInstruction> instructions)
+        public static IEnumerable<CodeInstruction> LabMatrixEffect_Update_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
             var matcher = new CodeMatcher(instructions);
 
-            matcher.MatchForward(false,
-                new CodeMatch(OpCodes.Ldloc_S),
-                new CodeMatch(OpCodes.Brfalse),
-                new CodeMatch(OpCodes.Ldc_I4_0));
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Brfalse), new CodeMatch(OpCodes.Ldc_I4_0));
 
-            var label = matcher.Advance(1).Operand;
+            object label = matcher.Advance(1).Operand;
 
-            matcher.Advance(1).InsertAndAdvance(
-                new CodeInstruction(OpCodes.Ldarg_0),
-                new CodeInstruction(OpCodes.Ldloc_3),
-                new CodeInstruction(OpCodes.Call,
-                    AccessTools.Method(typeof(ResearchLabPatches), nameof(LabMatrixEffect_Patch_Method))),
+            matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0), new CodeInstruction(OpCodes.Ldloc_3),
+                new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(ResearchLabPatches), nameof(LabMatrixEffect_Patch_Method))),
                 new CodeInstruction(OpCodes.Br_S, label));
 
             return matcher.InstructionEnumeration();
@@ -185,64 +174,49 @@ namespace ProjectGenesis.Patches.UI
         {
             var matcher = new CodeMatcher(instructions, ilGenerator);
 
-            matcher.MatchForward(false,
-                new CodeMatch(OpCodes.Ldc_I4_5),
-                new CodeMatch(),
-                new CodeMatch(OpCodes.Ldc_I4_S, (sbyte)32),
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldc_I4_5), new CodeMatch(), new CodeMatch(OpCodes.Ldc_I4_S, (sbyte)32),
                 new CodeMatch(OpCodes.Stloc_S));
 
-            var num2 = matcher.Advance(-1).Operand;
-            var brlabel = matcher.Advance(2).Operand;
-            var index1 = matcher.Advance(2).Operand;
+            object num2 = matcher.Advance(-1).Operand;
+            object brlabel = matcher.Advance(2).Operand;
+            object index1 = matcher.Advance(2).Operand;
 
             matcher.Advance(2).InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_S, num2));
-            matcher.CreateLabelAt(matcher.Pos - 1, out var label);
+            matcher.CreateLabelAt(matcher.Pos - 1, out Label label);
             matcher.Advance(-5).Operand = label;
 
             matcher.Advance(5).InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_S, index1),
                 new CodeInstruction(OpCodes.Call,
-                    AccessTools.Method(typeof(ResearchLabPatches),
-                        nameof(FactorySystem_GameTickLabResearchMode_Patch_Method))),
-                new CodeInstruction(OpCodes.Stloc_S, index1),
-                new CodeInstruction(OpCodes.Br_S, brlabel));
+                    AccessTools.Method(typeof(ResearchLabPatches), nameof(FactorySystem_GameTickLabResearchMode_Patch_Method))),
+                new CodeInstruction(OpCodes.Stloc_S, index1), new CodeInstruction(OpCodes.Br_S, brlabel));
 
             return matcher.InstructionEnumeration();
         }
 
         [HarmonyPatch(typeof(LabComponent), nameof(LabComponent.InternalUpdateResearch))]
         [HarmonyTranspiler]
-        public static IEnumerable<CodeInstruction> LabComponent_InternalUpdateResearch_Transpiler(
-            IEnumerable<CodeInstruction> instructions, ILGenerator ilGenerator)
+        public static IEnumerable<CodeInstruction> LabComponent_InternalUpdateResearch_Transpiler(IEnumerable<CodeInstruction> instructions,
+            ILGenerator ilGenerator)
         {
             var matcher = new CodeMatcher(instructions, ilGenerator);
 
-            matcher.MatchForward(false,
-                new CodeMatch(OpCodes.Ldarg_0),
-                new CodeMatch(OpCodes.Ldfld,
-                    AccessTools.Field(typeof(LabComponent), nameof(LabComponent.matrixPoints))));
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldarg_0),
+                new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(LabComponent), nameof(LabComponent.matrixPoints))));
 
-            matcher.CreateLabel(out var label);
+            matcher.CreateLabel(out Label label);
 
-            matcher.InsertAndAdvance(
-                new CodeInstruction(OpCodes.Ldarg_0),
-                new CodeInstruction(OpCodes.Ldloc_0),
+            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0), new CodeInstruction(OpCodes.Ldloc_0),
                 new CodeInstruction(OpCodes.Call,
-                    AccessTools.Method(typeof(ResearchLabPatches),
-                        nameof(LabComponent_InternalUpdateResearch_Patch_Method))),
-                new CodeInstruction(OpCodes.Dup),
-                new CodeInstruction(OpCodes.Stloc_0),
-                new CodeInstruction(OpCodes.Brtrue, label),
-                new CodeInstruction(OpCodes.Ldc_I4_0),
-                new CodeInstruction(OpCodes.Ret)
-            );
+                    AccessTools.Method(typeof(ResearchLabPatches), nameof(LabComponent_InternalUpdateResearch_Patch_Method))),
+                new CodeInstruction(OpCodes.Dup), new CodeInstruction(OpCodes.Stloc_0), new CodeInstruction(OpCodes.Brtrue, label),
+                new CodeInstruction(OpCodes.Ldc_I4_0), new CodeInstruction(OpCodes.Ret));
 
             return matcher.InstructionEnumeration();
         }
 
         [HarmonyPatch(typeof(PlanetFactory), nameof(PlanetFactory.InsertInto))]
         [HarmonyTranspiler]
-        public static IEnumerable<CodeInstruction> PlanetFactory_InsertInto_Transpiler(
-            IEnumerable<CodeInstruction> instructions)
+        public static IEnumerable<CodeInstruction> PlanetFactory_InsertInto_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
             var matcher = new CodeMatcher(instructions);
 
@@ -253,8 +227,8 @@ namespace ProjectGenesis.Patches.UI
 
             matcher.MatchForward(false, new CodeMatch(OpCodes.Ldc_I4_6));
 
-            matcher.SetInstructionAndAdvance(new CodeInstruction(
-                OpCodes.Ldsfld, AccessTools.Field(typeof(LabComponent), nameof(LabComponent.matrixIds))));
+            matcher.SetInstructionAndAdvance(new CodeInstruction(OpCodes.Ldsfld,
+                AccessTools.Field(typeof(LabComponent), nameof(LabComponent.matrixIds))));
             matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldlen));
 
             return matcher.InstructionEnumeration();
@@ -265,7 +239,7 @@ namespace ProjectGenesis.Patches.UI
         [HarmonyPriority(Priority.First)]
         public static bool LabComponent_UpdateNeedsResearch_Prefix(ref LabComponent __instance)
         {
-            var tech = LDB.techs.Select(__instance.techId);
+            TechProto tech = LDB.techs.Select(__instance.techId);
 
             if (tech?.Items == null)
             {
@@ -273,31 +247,26 @@ namespace ProjectGenesis.Patches.UI
                 return false;
             }
 
-            int needIndex = 0;
+            var needIndex = 0;
 
-            foreach (var need in tech.Items)
+            foreach (int need in tech.Items)
             {
-                var itemIndex = Array.IndexOf(LabComponent.matrixIds, need);
+                int itemIndex = Array.IndexOf(LabComponent.matrixIds, need);
 
-                if (itemIndex >= 0 && __instance.matrixServed[itemIndex] < 36000)
-                {
-                    __instance.needs[needIndex++] = need;
-                }
+                if (itemIndex >= 0 && __instance.matrixServed[itemIndex] < 36000) __instance.needs[needIndex++] = need;
             }
 
-            for (int i = needIndex; i < __instance.needs.Length; i++)
-            {
-                __instance.needs[i] = 0;
-            }
+            for (int i = needIndex; i < __instance.needs.Length; i++) __instance.needs[i] = 0;
 
             return false;
         }
 
         public static int LabComponent_InternalUpdateResearch_Patch_Method(ref LabComponent labComponent, int num1)
         {
-            for (int i = 6; i < LabComponent.matrixIds.Length; i++)
+            for (var i = 6; i < LabComponent.matrixIds.Length; i++)
             {
                 if (labComponent.matrixPoints[i] <= 0) continue;
+
                 int point = labComponent.matrixServed[i] / labComponent.matrixPoints[i];
 
                 if (point >= num1) continue;
@@ -314,7 +283,7 @@ namespace ProjectGenesis.Patches.UI
 
         public static void LabMatrixEffect_Patch_Method(LabMatrixEffect labMatrixEffect, TechProto techProto)
         {
-            foreach (var item in techProto.Items)
+            foreach (int item in techProto.Items)
             {
                 switch (item)
                 {
@@ -343,10 +312,8 @@ namespace ProjectGenesis.Patches.UI
             }
         }
 
-        public static int UILabWindow_OnUpdate_Patch_Method(int timeSpend, LabComponent component)
-        {
-            return timeSpend / component.productCounts[0];
-        }
+        public static int UILabWindow_OnUpdate_Patch_Method(int timeSpend, LabComponent component) =>
+            timeSpend / component.productCounts[0];
 
         public static int ChangeMatrixIds(int itemId)
         {
@@ -366,9 +333,11 @@ namespace ProjectGenesis.Patches.UI
                 case 6: //ProtoID.I通量矩阵:
                     index1 |= 3;
                     break;
+
                 case 7: //ProtoID.I领域矩阵:
                     index1 |= 12;
                     break;
+
                 case 8: //ProtoID.I奇点矩阵:
                     index1 |= 31;
                     break;
@@ -379,50 +348,35 @@ namespace ProjectGenesis.Patches.UI
 
         [HarmonyPatch(typeof(LabComponent), nameof(LabComponent.UpdateOutputToNext))]
         [HarmonyTranspiler]
-        public static IEnumerable<CodeInstruction> LabComponent_UpdateOutputToNext_Transpiler(
-            IEnumerable<CodeInstruction> instructions)
+        public static IEnumerable<CodeInstruction> LabComponent_UpdateOutputToNext_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
             var matcher = new CodeMatcher(instructions);
 
-            matcher.MatchForward(true,
-                new CodeMatch(OpCodes.Ldarg_0),
-                new CodeMatch(OpCodes.Ldfld,
-                    AccessTools.Field(typeof(LabComponent), nameof(LabComponent.needs))),
-                new CodeMatch(OpCodes.Ldc_I4_5),
-                new CodeMatch(OpCodes.Ldelem_I4)
-            );
+            matcher.MatchForward(true, new CodeMatch(OpCodes.Ldarg_0),
+                new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(LabComponent), nameof(LabComponent.needs))),
+                new CodeMatch(OpCodes.Ldc_I4_5), new CodeMatch(OpCodes.Ldelem_I4));
 
-            var leaveLabel = matcher.Advance(1).Operand;
+            object leaveLabel = matcher.Advance(1).Operand;
 
-            matcher.Start().MatchForward(false,
-                new CodeMatch(OpCodes.Ldarg_0),
-                new CodeMatch(OpCodes.Ldfld,
-                    AccessTools.Field(typeof(LabComponent), nameof(LabComponent.needs))),
-                new CodeMatch(OpCodes.Ldc_I4_0),
-                new CodeMatch(OpCodes.Ldelem_I4)
-            );
+            matcher.Start().MatchForward(false, new CodeMatch(OpCodes.Ldarg_0),
+                new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(LabComponent), nameof(LabComponent.needs))),
+                new CodeMatch(OpCodes.Ldc_I4_0), new CodeMatch(OpCodes.Ldelem_I4));
 
-            matcher.InsertAndAdvance(
-                new CodeInstruction(OpCodes.Ldarg_0),
-                new CodeInstruction(OpCodes.Ldarg_1),
+            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0), new CodeInstruction(OpCodes.Ldarg_1),
                 new CodeInstruction(OpCodes.Call,
-                    AccessTools.Method(typeof(ResearchLabPatches),
-                        nameof(LabComponent_UpdateOutputToNext_Patch_Method))),
-                new CodeInstruction(OpCodes.Br, leaveLabel)
-            );
+                    AccessTools.Method(typeof(ResearchLabPatches), nameof(LabComponent_UpdateOutputToNext_Patch_Method))),
+                new CodeInstruction(OpCodes.Br, leaveLabel));
 
             return matcher.InstructionEnumeration();
         }
 
-        public static void LabComponent_UpdateOutputToNext_Patch_Method(ref LabComponent labComponent,
-            LabComponent[] labPool)
+        public static void LabComponent_UpdateOutputToNext_Patch_Method(ref LabComponent labComponent, LabComponent[] labPool)
         {
-            for (int i = 0; i < LabComponent.matrixIds.Length; i++)
+            for (var i = 0; i < LabComponent.matrixIds.Length; i++)
             {
                 if (labComponent.matrixServed[i] >= 3600 && labPool[labComponent.nextLabId].matrixServed[i] < 36000)
                 {
-                    int num = labComponent.split_inc(ref labComponent.matrixServed[i],
-                        ref labComponent.matrixIncServed[i], 3600);
+                    int num = labComponent.split_inc(ref labComponent.matrixServed[i], ref labComponent.matrixIncServed[i], 3600);
                     labPool[labComponent.nextLabId].matrixIncServed[i] += num;
                     labPool[labComponent.nextLabId].matrixServed[i] += 3600;
                 }
@@ -439,13 +393,13 @@ namespace ProjectGenesis.Patches.UI
 
             var dict = new Dictionary<int, int>();
 
-            var hashNeeded = proto.GetHashNeeded(proto.Level);
+            long hashNeeded = proto.GetHashNeeded(proto.Level);
 
             int index;
 
             for (index = 0; index < proto.Items.Length; index++)
             {
-                var item = proto.Items[index];
+                int item = proto.Items[index];
                 int num = (int)(hashNeeded * proto.ItemPoints[index]) / 3600;
 
                 switch (item)
@@ -478,19 +432,13 @@ namespace ProjectGenesis.Patches.UI
 
             index = 0;
 
-            foreach (var (item, count) in dict)
-            {
-                proto.PropertyOverrideItemArray[index++] = new IDCNT(item, count);
-            }
+            foreach (var (item, count) in dict) proto.PropertyOverrideItemArray[index++] = new IDCNT(item, count);
 
             return;
 
             void AddCount(int itemId, int count)
             {
-                if (!dict.TryAdd(itemId, count))
-                {
-                    dict[itemId] += count;
-                }
+                if (!dict.TryAdd(itemId, count)) dict[itemId] += count;
             }
         }
     }

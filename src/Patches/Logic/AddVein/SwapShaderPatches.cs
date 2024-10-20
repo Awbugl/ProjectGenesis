@@ -61,7 +61,8 @@ namespace ProjectGenesis.Patches.Logic.AddVein
             return true;
         }
 
-        internal static void AddSwapShaderMapping(string oriShaderName, Shader replacementShader) => ReplaceShaderMap.Add(oriShaderName, replacementShader);
+        internal static void AddSwapShaderMapping(string oriShaderName, Shader replacementShader) =>
+            ReplaceShaderMap.Add(oriShaderName, replacementShader);
 
         private static void ReplaceShaderIfAvailable(Material mat)
         {

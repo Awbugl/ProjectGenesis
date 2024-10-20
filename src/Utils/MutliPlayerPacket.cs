@@ -17,9 +17,7 @@ namespace ProjectGenesis.Utils
 {
     public class SyncSlotsData
     {
-        public SyncSlotsData()
-        {
-        }
+        public SyncSlotsData() {}
 
         public SyncSlotsData(int planetId, int entityId, SlotData[] data)
         {
@@ -68,7 +66,9 @@ namespace ProjectGenesis.Utils
                 {
                     slotsData[i] = new SlotData
                     {
-                        dir = (IODir)r.ReadInt32(), beltId = r.ReadInt32(), storageIdx = r.ReadInt32(),
+                        dir = (IODir)r.ReadInt32(),
+                        beltId = r.ReadInt32(),
+                        storageIdx = r.ReadInt32(),
                         counter = r.ReadInt32(),
                     };
                 }
@@ -89,9 +89,7 @@ namespace ProjectGenesis.Utils
 
     public class SyncSlotData
     {
-        public SyncSlotData()
-        {
-        }
+        public SyncSlotData() {}
 
         public SyncSlotData(int planetId, int slotId, int entityId, SlotData data)
         {
@@ -121,8 +119,7 @@ namespace ProjectGenesis.Utils
         internal static void Sync(int planetId, int slotId, int entityId, SlotData slotData)
         {
             if (NebulaModAPI.IsMultiplayerActive)
-                NebulaModAPI.MultiplayerSession.Network.SendPacket(new SyncSlotData(planetId, slotId, entityId,
-                    slotData));
+                NebulaModAPI.MultiplayerSession.Network.SendPacket(new SyncSlotData(planetId, slotId, entityId, slotData));
         }
 
         internal static void OnReceive(int planetId, int slotId, int entityId, byte[] data)
@@ -134,7 +131,9 @@ namespace ProjectGenesis.Utils
             {
                 slotData = new SlotData
                 {
-                    dir = (IODir)r.ReadInt32(), beltId = r.ReadInt32(), storageIdx = r.ReadInt32(),
+                    dir = (IODir)r.ReadInt32(),
+                    beltId = r.ReadInt32(),
+                    storageIdx = r.ReadInt32(),
                     counter = r.ReadInt32(),
                 };
 
@@ -155,9 +154,7 @@ namespace ProjectGenesis.Utils
 
     public class SyncPlanetFocusData
     {
-        public SyncPlanetFocusData()
-        {
-        }
+        public SyncPlanetFocusData() {}
 
         public SyncPlanetFocusData(int planetId, int index, int focusId)
         {
@@ -189,9 +186,7 @@ namespace ProjectGenesis.Utils
 
     public class SyncNewQuantumStorageData
     {
-        public SyncNewQuantumStorageData()
-        {
-        }
+        public SyncNewQuantumStorageData() {}
 
         public SyncNewQuantumStorageData(int planetId, int storageId, int orbitId)
         {
@@ -207,8 +202,7 @@ namespace ProjectGenesis.Utils
         internal static void Sync(int planetId, int storageId, int orbitId)
         {
             if (NebulaModAPI.IsMultiplayerActive)
-                NebulaModAPI.MultiplayerSession.Network.SendPacket(
-                    new SyncNewQuantumStorageData(planetId, storageId, orbitId));
+                NebulaModAPI.MultiplayerSession.Network.SendPacket(new SyncNewQuantumStorageData(planetId, storageId, orbitId));
         }
 
         internal static void OnReceive(int planetId, int storageId, int orbitId) =>
@@ -224,9 +218,7 @@ namespace ProjectGenesis.Utils
 
     public class SyncRemoveQuantumStorageData
     {
-        public SyncRemoveQuantumStorageData()
-        {
-        }
+        public SyncRemoveQuantumStorageData() {}
 
         public SyncRemoveQuantumStorageData(int planetId, int storageId, int orbitId)
         {
@@ -242,8 +234,7 @@ namespace ProjectGenesis.Utils
         internal static void Sync(int planetId, int storageId, int orbitId)
         {
             if (NebulaModAPI.IsMultiplayerActive)
-                NebulaModAPI.MultiplayerSession.Network.SendPacket(
-                    new SyncRemoveQuantumStorageData(planetId, storageId, orbitId));
+                NebulaModAPI.MultiplayerSession.Network.SendPacket(new SyncRemoveQuantumStorageData(planetId, storageId, orbitId));
         }
 
         internal static void OnReceive(int planetId, int storageId, int orbitId) =>
@@ -259,9 +250,7 @@ namespace ProjectGenesis.Utils
 
     public class SyncQuantumStorageOrbitChangeData
     {
-        public SyncQuantumStorageOrbitChangeData()
-        {
-        }
+        public SyncQuantumStorageOrbitChangeData() {}
 
         public SyncQuantumStorageOrbitChangeData(int planetId, int storageId, int orbitId)
         {
@@ -277,8 +266,7 @@ namespace ProjectGenesis.Utils
         internal static void Sync(int planetId, int storageId, int orbitId)
         {
             if (NebulaModAPI.IsMultiplayerActive)
-                NebulaModAPI.MultiplayerSession.Network.SendPacket(
-                    new SyncQuantumStorageOrbitChangeData(planetId, storageId, orbitId));
+                NebulaModAPI.MultiplayerSession.Network.SendPacket(new SyncQuantumStorageOrbitChangeData(planetId, storageId, orbitId));
         }
 
         internal static void OnReceive(int planetId, int storageId, int orbitId) =>
@@ -294,9 +282,7 @@ namespace ProjectGenesis.Utils
 
     public class SyncGlobalPowerSupplyNodeIdData
     {
-        public SyncGlobalPowerSupplyNodeIdData()
-        {
-        }
+        public SyncGlobalPowerSupplyNodeIdData() {}
 
         public SyncGlobalPowerSupplyNodeIdData(int planetId, int nodeId)
         {
@@ -310,12 +296,10 @@ namespace ProjectGenesis.Utils
         internal static void Sync(int planetId, int nodeId)
         {
             if (NebulaModAPI.IsMultiplayerActive)
-                NebulaModAPI.MultiplayerSession.Network.SendPacket(
-                    new SyncGlobalPowerSupplyNodeIdData(planetId, nodeId));
+                NebulaModAPI.MultiplayerSession.Network.SendPacket(new SyncGlobalPowerSupplyNodeIdData(planetId, nodeId));
         }
 
-        internal static void OnReceive(int planetId, int nodeId) =>
-            GlobalPowerSupplyPatches.SyncGlobalPowerSupplyNodeId(planetId, nodeId);
+        internal static void OnReceive(int planetId, int nodeId) => GlobalPowerSupplyPatches.SyncGlobalPowerSupplyNodeId(planetId, nodeId);
     }
 
     [RegisterPacketProcessor]
@@ -327,14 +311,9 @@ namespace ProjectGenesis.Utils
 
     public class SyncSyncGlobalPowerSupplyRemoveData
     {
-        public SyncSyncGlobalPowerSupplyRemoveData()
-        {
-        }
+        public SyncSyncGlobalPowerSupplyRemoveData() {}
 
-        public SyncSyncGlobalPowerSupplyRemoveData(int planetId)
-        {
-            PlanetId = planetId;
-        }
+        public SyncSyncGlobalPowerSupplyRemoveData(int planetId) => PlanetId = planetId;
 
         public int PlanetId { get; set; }
 
@@ -344,8 +323,7 @@ namespace ProjectGenesis.Utils
                 NebulaModAPI.MultiplayerSession.Network.SendPacket(new SyncSyncGlobalPowerSupplyRemoveData(planetId));
         }
 
-        internal static void OnReceive(int planetId) =>
-            GlobalPowerSupplyPatches.SyncGlobalPowerSupplyRemoved(planetId);
+        internal static void OnReceive(int planetId) => GlobalPowerSupplyPatches.SyncGlobalPowerSupplyRemoved(planetId);
     }
 
     [RegisterPacketProcessor]
@@ -357,9 +335,7 @@ namespace ProjectGenesis.Utils
 
     public class GenesisBookPlanetLoadRequest
     {
-        public GenesisBookPlanetLoadRequest()
-        {
-        }
+        public GenesisBookPlanetLoadRequest() {}
 
         public GenesisBookPlanetLoadRequest(int planetId) => PlanetId = planetId;
 
@@ -389,9 +365,7 @@ namespace ProjectGenesis.Utils
 
     public class GenesisBookPlanetData
     {
-        public GenesisBookPlanetData()
-        {
-        }
+        public GenesisBookPlanetData() {}
 
         public GenesisBookPlanetData(int id, byte[] data)
         {

@@ -14,8 +14,8 @@ namespace ProjectGenesis.Patches.UI
         {
             float num4 = Mathf.Clamp(
                 Mathf.Max(__instance.unlockText.preferredWidth - 40f + __instance.unlockTextTrans.anchoredPosition.x,
-                    Math.Min(__instance.techProto.unlockRecipeArray.Length, 3) * 46)
-              + __instance.baseWidth, __instance.minWidth, __instance.maxWidth);
+                    Math.Min(__instance.techProto.unlockRecipeArray.Length, 3) * 46) + __instance.baseWidth, __instance.minWidth,
+                __instance.maxWidth);
 
             float x = __instance.focusState < 1f
                 ? Mathf.Lerp(__instance.minWidth, num4, __instance.focusState)
@@ -23,7 +23,8 @@ namespace ProjectGenesis.Patches.UI
 
             __instance.panelRect.sizeDelta = new Vector2(x, __instance.panelRect.sizeDelta.y);
 
-            __instance.titleText.rectTransform.sizeDelta = new Vector2(x - (GameMain.history.TechState(__instance.techProto.ID).curLevel > 0 ? 65 : 25), 24f);
+            __instance.titleText.rectTransform.sizeDelta =
+                new Vector2(x - (GameMain.history.TechState(__instance.techProto.ID).curLevel > 0 ? 65 : 25), 24f);
         }
     }
 }

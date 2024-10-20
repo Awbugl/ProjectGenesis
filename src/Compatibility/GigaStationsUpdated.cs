@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Reflection.Emit;
@@ -21,15 +22,13 @@ namespace ProjectGenesis.Compatibility
 
             Assembly assembly = pluginInfo.Instance.GetType().Assembly;
 
-            var type = assembly.GetType("GigaStations.GigaStationsPlugin");
+            Type type = assembly.GetType("GigaStations.GigaStationsPlugin");
 
-            HarmonyPatch.Patch(AccessTools.Method(type,
-                    "AddGigaCollector"), null, null,
+            HarmonyPatch.Patch(AccessTools.Method(type, "AddGigaCollector"), null, null,
                 new HarmonyMethod(typeof(GigaStationsUpdated), nameof(AddGigaCollector_Transpiler)));
 
 
-            ref List<List<Proto>> preToAdd =
-                ref AccessTools.StaticFieldRefAccess<List<List<Proto>>>(typeof(LDBTool), "PreToAdd");
+            ref List<List<Proto>> preToAdd = ref AccessTools.StaticFieldRefAccess<List<List<Proto>>>(typeof(LDBTool), "PreToAdd");
 
             MoveConflictRecipes(ref preToAdd);
             MoveBuildIndex(ref preToAdd);
@@ -39,7 +38,7 @@ namespace ProjectGenesis.Compatibility
         {
             int index = ProtoIndex.GetIndex(typeof(RecipeProto));
 
-            foreach (var proto in preToAdd[index].Cast<RecipeProto>().Where(proto => proto != null))
+            foreach (RecipeProto proto in preToAdd[index].Cast<RecipeProto>().Where(proto => proto != null))
             {
                 switch (proto.ID)
                 {
@@ -65,7 +64,7 @@ namespace ProjectGenesis.Compatibility
         {
             int index = ProtoIndex.GetIndex(typeof(ItemProto));
 
-            foreach (var proto in preToAdd[index].Cast<ItemProto>().Where(proto => proto != null))
+            foreach (ItemProto proto in preToAdd[index].Cast<ItemProto>().Where(proto => proto != null))
             {
                 switch (proto.ID)
                 {
@@ -79,30 +78,27 @@ namespace ProjectGenesis.Compatibility
 
                     case 2112:
                         proto.BuildIndex = 1209;
-                        proto.DescFields = new[] { 18, 32, 1, 40 };
+                        proto.DescFields = new[]
+                        {
+                            18, 32, 1, 40,
+                        };
                         break;
                 }
             }
         }
 
-        public static IEnumerable<CodeInstruction> AddGigaCollector_Transpiler(
-            IEnumerable<CodeInstruction> instructions)
+        public static IEnumerable<CodeInstruction> AddGigaCollector_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
             var matcher = new CodeMatcher(instructions);
 
             matcher.MatchForward(false,
-                new CodeMatch(OpCodes.Stfld,
-                    AccessTools.Field(typeof(PrefabDesc), nameof(PrefabDesc.workEnergyPerTick))));
+                new CodeMatch(OpCodes.Stfld, AccessTools.Field(typeof(PrefabDesc), nameof(PrefabDesc.workEnergyPerTick))));
 
-            matcher.SetAndAdvance(OpCodes.Call,
-                AccessTools.Method(typeof(GigaStationsUpdated), nameof(SetWorkEnergyPerTick)));
+            matcher.SetAndAdvance(OpCodes.Call, AccessTools.Method(typeof(GigaStationsUpdated), nameof(SetWorkEnergyPerTick)));
 
             return matcher.InstructionEnumeration();
         }
 
-        public static void SetWorkEnergyPerTick(PrefabDesc desc, long workEnergyPerTick)
-        {
-            desc.workEnergyPerTick = 0;
-        }
+        public static void SetWorkEnergyPerTick(PrefabDesc desc, long workEnergyPerTick) => desc.workEnergyPerTick = 0;
     }
 }

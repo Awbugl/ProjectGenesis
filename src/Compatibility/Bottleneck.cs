@@ -19,8 +19,7 @@ namespace ProjectGenesis.Compatibility
             if (!Chainloader.PluginInfos.TryGetValue(GUID, out PluginInfo pluginInfo)) return;
 
             Assembly assembly = pluginInfo.Instance.GetType().Assembly;
-            HarmonyPatch.Patch(
-                AccessTools.Method(assembly.GetType("Bottleneck.Stats.ResearchTechHelper"), "GetMaxIncIndex"),
+            HarmonyPatch.Patch(AccessTools.Method(assembly.GetType("Bottleneck.Stats.ResearchTechHelper"), "GetMaxIncIndex"),
                 new HarmonyMethod(typeof(Bottleneck), nameof(GetMaxIncIndex_Prefix)));
         }
 

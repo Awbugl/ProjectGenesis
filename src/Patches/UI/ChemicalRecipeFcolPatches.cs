@@ -34,22 +34,28 @@ namespace ProjectGenesis.Patches.UI
         };
 
         [HarmonyPatch(typeof(FactorySystem), nameof(FactorySystem.GameTick), typeof(long), typeof(bool))]
-        [HarmonyPatch(typeof(FactorySystem), nameof(FactorySystem.GameTick), typeof(long), typeof(bool), typeof(int), typeof(int), typeof(int))]
+        [HarmonyPatch(typeof(FactorySystem), nameof(FactorySystem.GameTick), typeof(long), typeof(bool), typeof(int), typeof(int),
+            typeof(int))]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> FactorySystem_GameTick_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
             var matcher = new CodeMatcher(instructions);
 
-            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(AssemblerComponent), nameof(AssemblerComponent.recipeType))));
+            matcher.MatchForward(false,
+                new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(AssemblerComponent), nameof(AssemblerComponent.recipeType))));
 
             matcher.Advance(1)
-                   .SetInstructionAndAdvance(new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(ChemicalRecipeFcolPatches), nameof(ChemicalRecipeTypePatch))))
-                   .SetOpcodeAndAdvance(OpCodes.Brfalse_S);
+               .SetInstructionAndAdvance(new CodeInstruction(OpCodes.Call,
+                    AccessTools.Method(typeof(ChemicalRecipeFcolPatches), nameof(ChemicalRecipeTypePatch))))
+               .SetOpcodeAndAdvance(OpCodes.Brfalse_S);
 
-            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(AssemblerComponent), nameof(AssemblerComponent.recipeId))),
-                new CodeMatch(OpCodes.Conv_R4), new CodeMatch(OpCodes.Stfld, AccessTools.Field(typeof(AnimData), nameof(AnimData.working_length))));
+            matcher.MatchForward(false,
+                new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(AssemblerComponent), nameof(AssemblerComponent.recipeId))),
+                new CodeMatch(OpCodes.Conv_R4),
+                new CodeMatch(OpCodes.Stfld, AccessTools.Field(typeof(AnimData), nameof(AnimData.working_length))));
 
-            matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(ChemicalRecipeFcolPatches), nameof(ChemicalRecipeFcolPatch))));
+            matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Call,
+                AccessTools.Method(typeof(ChemicalRecipeFcolPatches), nameof(ChemicalRecipeFcolPatch))));
 
             return matcher.InstructionEnumeration();
         }

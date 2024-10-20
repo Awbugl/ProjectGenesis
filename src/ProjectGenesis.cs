@@ -67,9 +67,7 @@ namespace ProjectGenesis
 
         internal static string ModPath;
 
-        internal static ConfigEntry<bool> LDBToolCacheEntry,
-            HideTechModeEntry,
-            ShowMessageBoxEntry;
+        internal static ConfigEntry<bool> LDBToolCacheEntry, HideTechModeEntry, ShowMessageBoxEntry;
 
         internal static ConfigEntry<int> ProductOverflowEntry;
 
@@ -79,14 +77,14 @@ namespace ProjectGenesis
 
         public void Awake()
         {
-            #region Logger
+        #region Logger
 
             logger = Logger;
             logger.Log(LogLevel.Info, "GenesisBook Awake");
 
-            #endregion Logger
+        #endregion Logger
 
-            #region Configs
+        #region Configs
 
             configFile = Config;
 
@@ -107,9 +105,9 @@ namespace ProjectGenesis
 
             Config.Save();
 
-            #endregion Configs
+        #endregion Configs
 
-            #region ResourceData
+        #region ResourceData
 
             var executingAssembly = Assembly.GetExecutingAssembly();
 
@@ -124,24 +122,20 @@ namespace ProjectGenesis
             ProtoRegistry.AddResource(resources_models);
 
             Shader stoneVeinShader =
-                resources_models.bundle.LoadAsset<Shader>(
-                    "Assets/genesis-models/shaders/PBR Standard Vein Stone COLOR.shader");
+                resources_models.bundle.LoadAsset<Shader>("Assets/genesis-models/shaders/PBR Standard Vein Stone COLOR.shader");
             SwapShaderPatches.AddSwapShaderMapping("VF Shaders/Forward/PBR Standard Vein Stone", stoneVeinShader);
 
             Shader metalVeinShader =
-                resources_models.bundle.LoadAsset<Shader>(
-                    "Assets/genesis-models/shaders/PBR Standard Vein Metal COLOR.shader");
+                resources_models.bundle.LoadAsset<Shader>("Assets/genesis-models/shaders/PBR Standard Vein Metal COLOR.shader");
             SwapShaderPatches.AddSwapShaderMapping("VF Shaders/Forward/PBR Standard Vein Metal", metalVeinShader);
 
             Shader labToggleShader =
-                resources_models.bundle.LoadAsset<Shader>(
-                    "Assets/genesis-models/shaders/PBR Standard Vertex Toggle Lab REPLACE.shader");
-            SwapShaderPatches.AddSwapShaderMapping("VF Shaders/Forward/PBR Standard Vertex Toggle Lab",
-                labToggleShader);
+                resources_models.bundle.LoadAsset<Shader>("Assets/genesis-models/shaders/PBR Standard Vertex Toggle Lab REPLACE.shader");
+            SwapShaderPatches.AddSwapShaderMapping("VF Shaders/Forward/PBR Standard Vertex Toggle Lab", labToggleShader);
 
-            #endregion ResourceData
+        #endregion ResourceData
 
-            #region NebulaModAPI
+        #region NebulaModAPI
 
             NebulaModAPI.RegisterPackets(executingAssembly);
 
@@ -152,7 +146,7 @@ namespace ProjectGenesis
 
             NebulaModAPI.OnPlanetLoadFinished += GenesisBookPlanetDataProcessor.ProcessBytesLater;
 
-            #endregion NebulaModAPI
+        #endregion NebulaModAPI
 
             Harmony = new Harmony(MODGUID);
 
@@ -171,8 +165,7 @@ namespace ProjectGenesis
                     new TabData("精炼页面".TranslateFromJsonSpecial(), "Assets/texpack/矿物处理")),
                 TabSystem.RegisterTab($"{MODGUID}:{MODGUID}Tab2",
                     new TabData("化工页面".TranslateFromJsonSpecial(), "Assets/texpack/化工科技")),
-                TabSystem.RegisterTab($"{MODGUID}:{MODGUID}Tab3",
-                    new TabData("防御页面".TranslateFromJsonSpecial(), "Assets/texpack/防御")),
+                TabSystem.RegisterTab($"{MODGUID}:{MODGUID}Tab3", new TabData("防御页面".TranslateFromJsonSpecial(), "Assets/texpack/防御")),
             };
 
             RegisterStrings();
@@ -203,7 +196,7 @@ namespace ProjectGenesis
 
         public void Import(BinaryReader r)
         {
-            var version = r.ReadInt32();
+            int version = r.ReadInt32();
             MegaAssemblerPatches.Import(r);
             PlanetFocusPatches.Import(r);
             QuantumStoragePatches.Import(r);
@@ -245,29 +238,16 @@ namespace ProjectGenesis
 
             LabComponent.matrixIds = new[]
             {
-                ProtoID.I电磁矩阵,
-                ProtoID.I能量矩阵,
-                ProtoID.I结构矩阵,
-                ProtoID.I信息矩阵,
-                ProtoID.I引力矩阵,
-                ProtoID.I宇宙矩阵,
-                ProtoID.I通量矩阵,
-                ProtoID.I领域矩阵,
+                ProtoID.I电磁矩阵, ProtoID.I能量矩阵, ProtoID.I结构矩阵, ProtoID.I信息矩阵,
+                ProtoID.I引力矩阵, ProtoID.I宇宙矩阵, ProtoID.I通量矩阵, ProtoID.I领域矩阵,
                 ProtoID.I奇点矩阵,
             };
 
             LabComponent.matrixShaderStates = new[]
             {
-                0.0f,
-                11111.2f,
-                22222.2f,
-                33333.2f,
-                44444.2f,
-                55555.2f,
-                66666.2f,
-                77777.2f,
-                88888.2f,
-                99999.2f,
+                0.0f, 11111.2f, 22222.2f, 33333.2f,
+                44444.2f, 55555.2f, 66666.2f, 77777.2f,
+                88888.2f, 99999.2f,
             };
 
             LDB.items.OnAfterDeserialize();

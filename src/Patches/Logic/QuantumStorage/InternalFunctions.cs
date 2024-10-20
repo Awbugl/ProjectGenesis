@@ -32,7 +32,7 @@ namespace ProjectGenesis.Patches.Logic.QuantumStorage
 
             for (var index = 0; index < _components.Length; index++)
             {
-                ref var component = ref _components[index];
+                ref StorageComponent component = ref _components[index];
                 component = new StorageComponent(QuantumStorageSize);
                 component.CutNext();
             }
@@ -40,9 +40,11 @@ namespace ProjectGenesis.Patches.Logic.QuantumStorage
 
         private static void QuantumStorageOrbitChange(int planetId, int storageId, int orbitId)
         {
-            if (!QuantumStorageIds.TryGetValue(planetId, out var datas)) return;
-            var index = datas.FindIndex(i => i.StorageId == storageId);
+            if (!QuantumStorageIds.TryGetValue(planetId, out List<QuantumStorageData> datas)) return;
+
+            int index = datas.FindIndex(i => i.StorageId == storageId);
             if (index < 0) return;
+
             datas[index] = new QuantumStorageData(storageId, orbitId);
 
             PlanetData planet = GameMain.galaxy.PlanetById(planetId);
@@ -58,15 +60,11 @@ namespace ProjectGenesis.Patches.Logic.QuantumStorage
             factoryStorage.storagePool[storageId] = _components[orbitId - 1];
         }
 
-        internal static void SyncRemoveQuantumStorage(int planetId, int storageId, int orbitId)
-        {
+        internal static void SyncRemoveQuantumStorage(int planetId, int storageId, int orbitId) =>
             QuantumStorageIds.TryRemove(planetId, new QuantumStorageData(storageId, orbitId));
-        }
 
-        internal static void SyncQuantumStorageOrbitChange(int planetId, int storageId, int orbitId)
-        {
+        internal static void SyncQuantumStorageOrbitChange(int planetId, int storageId, int orbitId) =>
             QuantumStorageOrbitChange(planetId, storageId, orbitId);
-        }
 
         internal static void ExportPlanetQuantumStorage(int planetId, BinaryWriter w)
         {
@@ -90,18 +88,16 @@ namespace ProjectGenesis.Patches.Logic.QuantumStorage
 
             var arr = new QuantumStorageData[count];
 
-            for (var j = 0; j < count; j++)
-            {
-                arr[j] = new QuantumStorageData(r.ReadInt32(), r.ReadInt32());
-            }
+            for (var j = 0; j < count; j++) arr[j] = new QuantumStorageData(r.ReadInt32(), r.ReadInt32());
 
             QuantumStorageIds[planetId] = new List<QuantumStorageData>(arr);
         }
 
         public static bool Import_PatchMethod(FactoryStorage storage, int storageId)
         {
-            var orbitId = QueryOrbitId(storage.planet.id, storageId);
+            int orbitId = QueryOrbitId(storage.planet.id, storageId);
             if (orbitId < 0) return false;
+
             storage.storagePool[storageId] = _components[orbitId - 1];
 
             return true;
@@ -109,9 +105,9 @@ namespace ProjectGenesis.Patches.Logic.QuantumStorage
 
         private static int QueryOrbitId(int planetId, int storageId)
         {
-            if (!QuantumStorageIds.TryGetValue(planetId, out var datas)) return -1;
+            if (!QuantumStorageIds.TryGetValue(planetId, out List<QuantumStorageData> datas)) return -1;
 
-            var index = datas.FindIndex(i => i.StorageId == storageId);
+            int index = datas.FindIndex(i => i.StorageId == storageId);
 
             if (index < 0) return -1;
 
@@ -138,12 +134,8 @@ namespace ProjectGenesis.Patches.Logic.QuantumStorage
             }
 
             lock (_components)
-            {
-                foreach (var storageComponent in _components)
-                {
+                foreach (StorageComponent storageComponent in _components)
                     storageComponent.Export(w);
-                }
-            }
         }
 
         internal static void Import(BinaryReader r)
@@ -160,18 +152,12 @@ namespace ProjectGenesis.Patches.Logic.QuantumStorage
                     int length = r.ReadInt32();
                     var datas = new List<QuantumStorageData>();
 
-                    for (var i = 0; i < length; i++)
-                    {
-                        datas.Add(new QuantumStorageData(r.ReadInt32(), r.ReadInt32()));
-                    }
+                    for (var i = 0; i < length; i++) datas.Add(new QuantumStorageData(r.ReadInt32(), r.ReadInt32()));
 
                     QuantumStorageIds.TryAdd(key, datas);
                 }
 
-                foreach (var storageComponent in _components)
-                {
-                    storageComponent.Import(r);
-                }
+                foreach (StorageComponent storageComponent in _components) storageComponent.Import(r);
             }
             catch (EndOfStreamException)
             {
@@ -189,7 +175,7 @@ namespace ProjectGenesis.Patches.Logic.QuantumStorage
 
             for (var index = 0; index < _components.Length; index++)
             {
-                ref var component = ref _components[index];
+                ref StorageComponent component = ref _components[index];
                 component = new StorageComponent(QuantumStorageSize);
                 component.CutNext();
             }

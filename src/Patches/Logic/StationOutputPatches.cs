@@ -17,7 +17,7 @@ namespace ProjectGenesis.Patches.Logic
                 new CodeMatch(OpCodes.Stfld, AccessTools.Field(typeof(SlotData), nameof(SlotData.counter))));
 
             matcher.SetInstructionAndAdvance(new CodeInstruction(OpCodes.Nop)).SetInstructionAndAdvance(new CodeInstruction(OpCodes.Nop))
-                   .SetInstructionAndAdvance(new CodeInstruction(OpCodes.Nop));
+               .SetInstructionAndAdvance(new CodeInstruction(OpCodes.Nop));
 
             return matcher.InstructionEnumeration();
         }

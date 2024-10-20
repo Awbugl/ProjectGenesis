@@ -36,7 +36,8 @@ namespace ProjectGenesis.Patches.Logic
 
         [HarmonyPatch(typeof(PowerGeneratorComponent), nameof(PowerGeneratorComponent.GenEnergyByFuel))]
         [HarmonyTranspiler]
-        public static IEnumerable<CodeInstruction> PowerGeneratorComponent_GenEnergyByFuel_Transpiler(IEnumerable<CodeInstruction> instructions)
+        public static IEnumerable<CodeInstruction> PowerGeneratorComponent_GenEnergyByFuel_Transpiler(
+            IEnumerable<CodeInstruction> instructions)
         {
             var matcher = new CodeMatcher(instructions);
 
@@ -114,11 +115,13 @@ namespace ProjectGenesis.Patches.Logic
 
         [HarmonyPatch(typeof(UIInserterBuildTip), nameof(UIInserterBuildTip.SetOutputEntity))]
         [HarmonyTranspiler]
-        public static IEnumerable<CodeInstruction> UIInserterBuildTip_SetOutputEntity_Transpiler(IEnumerable<CodeInstruction> instructions, ILGenerator generator)
+        public static IEnumerable<CodeInstruction> UIInserterBuildTip_SetOutputEntity_Transpiler(IEnumerable<CodeInstruction> instructions,
+            ILGenerator generator)
         {
             var matcher = new CodeMatcher(instructions, generator);
 
-            matcher.MatchForward(true, new CodeMatch(OpCodes.Ldloc_3), new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(EntityData), nameof(EntityData.beltId))),
+            matcher.MatchForward(true, new CodeMatch(OpCodes.Ldloc_3),
+                new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(EntityData), nameof(EntityData.beltId))),
                 new CodeMatch(OpCodes.Ldc_I4_0));
 
             object label = matcher.Advance(1).Operand;
@@ -127,7 +130,8 @@ namespace ProjectGenesis.Patches.Logic
 
             matcher.Advance(-1).SetInstructionAndAdvance(new CodeInstruction(OpCodes.Bgt, label2));
 
-            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0), new CodeInstruction(OpCodes.Ldloc_0), new CodeInstruction(OpCodes.Ldloc_3),
+            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0), new CodeInstruction(OpCodes.Ldloc_0),
+                new CodeInstruction(OpCodes.Ldloc_3),
                 new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(FuelRodPatches), nameof(SetOutputEntity_Patch_Method))),
                 new CodeInstruction(OpCodes.Br, label));
 
@@ -152,8 +156,8 @@ namespace ProjectGenesis.Patches.Logic
 
         [HarmonyPatch(typeof(PlanetFactory), nameof(PlanetFactory.PickFrom))]
         [HarmonyPostfix]
-        public static void PlanetFactory_PickFrom_Postfix(PlanetFactory __instance, int entityId, int offset, int filter, int[] needs, ref byte stack, ref byte inc,
-            ref int __result)
+        public static void PlanetFactory_PickFrom_Postfix(PlanetFactory __instance, int entityId, int offset, int filter, int[] needs,
+            ref byte stack, ref byte inc, ref int __result)
         {
             if (__result != 0) return;
 
@@ -178,8 +182,8 @@ namespace ProjectGenesis.Patches.Logic
 
         [HarmonyPatch(typeof(PlanetFactory), nameof(PlanetFactory.InsertInto))]
         [HarmonyPostfix]
-        public static void PlanetFactory_InsertInto_Postfix(PlanetFactory __instance, int entityId, int itemId, ref byte itemCount, ref byte itemInc, ref byte remainInc,
-            ref int __result)
+        public static void PlanetFactory_InsertInto_Postfix(PlanetFactory __instance, int entityId, int itemId, ref byte itemCount,
+            ref byte itemInc, ref byte remainInc, ref int __result)
         {
             if (__result != 0 || itemId != ProtoID.I空燃料棒) return;
 
@@ -215,7 +219,8 @@ namespace ProjectGenesis.Patches.Logic
 
         [HarmonyPatch(typeof(PowerGeneratorComponent), nameof(PowerGeneratorComponent.PickFuelFrom))]
         [HarmonyPostfix]
-        public static void PowerGeneratorComponent_PickFuelFrom_Postfix(ref PowerGeneratorComponent __instance, int filter, ref int inc, ref int __result)
+        public static void PowerGeneratorComponent_PickFuelFrom_Postfix(ref PowerGeneratorComponent __instance, int filter, ref int inc,
+            ref int __result)
         {
             if (__result != 0) return;
 

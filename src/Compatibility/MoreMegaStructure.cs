@@ -17,8 +17,19 @@ namespace ProjectGenesis.Compatibility
 
         private static readonly int[] AddedRecipes =
         {
-            330, 331, 332, 333, 334, 335, 336, 337, 338, 339, 340, 341, 342, 343, 344, 345, 346, 347, 348, 349, 350, 351, 363, 364, 365, 366, 367, 368, 369, 370, 371,
-            372, 373, 375, 376, 377, 378, 379, 380, 381, 552, 553, 554, 555, 556, 557, 558, 559, 560, 561, 562,
+            330, 331, 332, 333,
+            334, 335, 336, 337,
+            338, 339, 340, 341,
+            342, 343, 344, 345,
+            346, 347, 348, 349,
+            350, 351, 363, 364,
+            365, 366, 367, 368,
+            369, 370, 371, 372,
+            373, 375, 376, 377,
+            378, 379, 380, 381,
+            552, 553, 554, 555,
+            556, 557, 558, 559,
+            560, 561, 562,
         };
 
         private static bool _finished;
@@ -27,8 +38,11 @@ namespace ProjectGenesis.Compatibility
         {
             if (!Chainloader.PluginInfos.TryGetValue(GUID, out _)) return;
 
-            HarmonyPatch.Patch(AccessTools.Method(typeof(VFPreload), nameof(VFPreload.InvokeOnLoadWorkEnded)),
-                null, new HarmonyMethod(typeof(MoreMegaStructure), nameof(LDBToolOnPostAddDataAction)) { after = new[] { LDBToolPlugin.MODGUID, }, });
+            HarmonyPatch.Patch(AccessTools.Method(typeof(VFPreload), nameof(VFPreload.InvokeOnLoadWorkEnded)), null,
+                new HarmonyMethod(typeof(MoreMegaStructure), nameof(LDBToolOnPostAddDataAction))
+                {
+                    after = new[] { LDBToolPlugin.MODGUID, },
+                });
         }
 
         public static void LDBToolOnPostAddDataAction()
@@ -54,7 +68,11 @@ namespace ProjectGenesis.Compatibility
                         continue;
 
                     case 366:
-                        recipeProto.Items = new[] { 5203, 6271, 7707, 1124, 1118, };
+                        recipeProto.Items = new[]
+                        {
+                            5203, 6271, 7707, 1124,
+                            1118,
+                        };
 
                         continue;
                 }
