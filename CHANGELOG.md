@@ -1,3 +1,13 @@
+- v2.10.0-beta4.1 (Experimental 0.3.10411)
+  + 修复了`大气采集站`、`轨道采集器`收集速度和行星大气采集速度不匹配的问题
+
+  + Fixed the issue where the collection speeds of the Atmospheric Collection Station and the Orbital Collector did not match the speed of planetary atmospheric collection.
+
+
+<details>
+  <summary>点击展开日志 | Click to view all </summary>
+
+
 - v2.10.0-beta4 (Experimental 0.3.10401)
   + 新增与`GigaStationsUpdated`的兼容补丁
   + 新增与`LazyOutposting`的兼容补丁
@@ -18,10 +28,6 @@
   + Allowed `Power Tower` and `Oil Extraction Station` to be built on water.
   + Removed the height restriction for mineral generation; now minerals can generate underwater.
   + Fixed the bug where the Quantum Storage UI appeared when opening a regular storage.
-
-
-<details>
-  <summary>点击展开日志 | Click to view all </summary>
 
 
 - v2.10.0-beta3 (Experimental 0.3.10301)
