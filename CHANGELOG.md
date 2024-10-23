@@ -1,11 +1,106 @@
-- v2.10.0-beta4.1 (Experimental 0.3.10411)
+- v3.0.0 天机工程 | Enigmatic Martix 【不兼容2.x.x旧版本存档】
+  + 调整了配方`硅石筛选`的原料输入比例
+  + 恢复配方`有机晶体（原始）`
+  + 调整了配方`钢材`的制造时间
+  + 降低了所有发电科技的研究速度
+  + 调整了飞行舱拆除所获得的资源
   + 修复了`大气采集站`、`轨道采集器`收集速度和行星大气采集速度不匹配的问题
+  + 新增与`GigaStationsUpdated`的兼容补丁
+  + 新增与`LazyOutposting`的兼容补丁
+  + 下调了`地热发电站`的发电基础值
+  + 调整了`批量建造-等级1`的研究需求
+  + 移除了`批量建造`的元数据要求
+  + 允许`电力感应塔`、`原油萃取站`在水上建造
+  + 移除了矿物生成时的高度判定，现在矿物可生成在水下
+  + 轨道采集器不再消耗采集物品发电
+  + 调整了轨道采集器的配方需求
+  + 为`黑石岩滩`和`戈壁`星球重新添加硅矿
+  + 添加BepinEx版本不匹配提示
+  + 调整了太阳帆的制造需求
+  + 添加科技`护盾载波调制`
+  + 调整了部分科技的研究需求
+  + 调整了黑雾研究站的制造配方需求
+  + 添加物品`二氧化硫`及相关配方
+  + 调整了部分星球的大气环境
+  + 调整了配方`增产剂`的原料需求
+  + 调整了`硫矿`的生成范围和数量
+  + 调整了黑雾制造台`物质重组工厂`的可制造配方类型
+  + 简化了初始出生点的地形判断
+  + 添加新配方`有机晶体活化`
+  + 调整了大多数科研的需求
+  + 调整了`戈壁`和`黑石岩滩`星球上的`放射性矿脉`生成参数
+  + 调整了所有矩阵的制造需求
+  + 从击杀地面黑雾后的掉落物清单中移除了所有燃料棒
+  + 修复了传送带两端颜色不正确的问题（感谢starfi5h的工作）
+  + 修复了在`高频激光塔`攻击时升降级导致的存档损坏问题
+  + 调整了黑雾掉落物`能量碎片`的燃料类型
+  + 调整了黑雾制造台`物质重组工厂`的制造速度为8x
+  + 调整了黑雾熔炉和制造台的升降级路线
+  + 调整了`量子储物箱`的容量为80
+  + 为`量子储物箱`添加频道功能，不同频道间的物品不共享
 
+  + Adjusted ingredient input ratio for recipe `Silica Screening`.
+  + Restored recipe `Organic Crystals (Primitive)`
+  + Adjusted manufacturing time for recipe `Steel`.
+  + Reduced research speed for all power generation technologies.
+  + Adjusted the resources gained from the dismantling of flight pods.
   + Fixed the issue where the collection speeds of the Atmospheric Collection Station and the Orbital Collector did not match the speed of planetary atmospheric collection.
+  + Added compatibility patch for `GigaStationsUpdated`.
+  + Added compatibility patch for `LazyOutposting`.
+  + Adjusted the base power output value of the `Geothermal Power Plant`.
+  + Adjusted the research requirements for `Batch Construction - Level 1`.
+  + Removed the metadata requirement for `Batch Construction`.
+  + Allowed `Power Tower` and `Oil Extraction Station` to be built on water.
+  + Removed the height restriction for mineral generation; now minerals can generate underwater.
+  + Orbital collector no longer consumes collected items
+  + Adjusted recipe requirements for Orbital collector
+  + Re-added silicon ore to the `Blackstone` and `Gobi` planets
+  + Adjusted the manufacturing requirements for solar sails
+  + Added technology `Shield Carrier Modulation`
+  + Adjusted research requirements for some technologies
+  + Adjusted recipe requirements for the Dark Fog Research Station
+  + Added item `Sulfur Dioxide` and related recipes.
+  + Adjusted the atmospheric environments of certain planets (affects save)
+  + Modified the material requirements for the accelerator recipe (affects save)
+  + Adjusted the spawn range and quantity of `Sulfur Ore`.
+  + Modified the types of recipes that can be manufactured at the Re-composing Assembler.
+  + Simplified initial spawn point terrain detection
+  + Added new recipe `Organic Crystal Activation`
+  + Adjusted the research requirements for most technologies.
+  + Adjusted the generation parameters for `radioactive veins` on the planets `Gobi` and `Blackstone`.
+  + Adjusted the manufacturing requirements for all matrices (affects save).
+  + Removed all rods from the drop list after killing ground dark fog.
+  + Fixed the issue with incorrect colors at both ends of the conveyor belts (Thanks to starfi5h's work)
+  + Fixed the save file corruption caused by leveling up or down during attacks by the High-Frequency Laser Tower (affects save)
+  + Adjusted the fuel type of the Energy Shard, a drop from the Dark Fog
+  + Set the production speed of Re-composing Assembler to 8x
+  + Adjusted the upgrade paths for the Dark Fog Furnace and Re-composing Assembler
+  + Adjusted the capacity of the Quantum Storage to 80
+  + Added channel functionality to the Quantum Storage, items are not shared between different channels (affects save)
 
 
 <details>
   <summary>点击展开日志 | Click to view all </summary>
+
+
+- v2.10.0-beta4.2 (Experimental 0.3.10420)
+  + 调整了配方`硅石筛选`的原料输入比例
+  + 恢复配方`有机晶体（原始）`
+  + 调整了配方`钢材`的制造时间
+  + 降低了所有发电科技的研究速度
+  + 调整了飞行舱拆除所获得的资源
+
+  + Adjusted ingredient input ratio for recipe `Silica Screening`.
+  + Restored recipe `Organic Crystals (Primitive)`
+  + Adjusted manufacturing time for recipe `Steel`.
+  + Reduced research speed for all power generation technologies.
+  + Adjusted the resources gained from the dismantling of flight pods.
+
+
+- v2.10.0-beta4.1 (Experimental 0.3.10411)
+  + 修复了`大气采集站`、`轨道采集器`收集速度和行星大气采集速度不匹配的问题
+
+  + Fixed the issue where the collection speeds of the Atmospheric Collection Station and the Orbital Collector did not match the speed of planetary atmospheric collection.
 
 
 - v2.10.0-beta4 (Experimental 0.3.10401)
@@ -75,7 +170,7 @@
   + 调整了`硫矿`的生成范围和数量
   + 调整了黑雾制造台`物质重组工厂`的可制造配方类型
 
-  * Added item `Sulfur Dioxide` and related recipes.
+  + Added item `Sulfur Dioxide` and related recipes.
   + Adjusted the atmospheric environments of certain planets (affects save)
   + Modified the material requirements for the accelerator recipe (affects save)
   + Adjusted the spawn range and quantity of `Sulfur Ore`.
@@ -1168,14 +1263,14 @@
 - v2.1.0
   + 修复物流运输界面部分建筑、物品位置冲突的问题
   + 添加新配方：氯苯水解：氯苯 + 水 -> 苯酚 + 氢氯酸
-  + 调整配方：石油裂化现在产出**1**氯苯(而不是**3**)
-  + 调整配方：有机液体离心现在产出1**硫酸**(而不是**硝酸**)
+  + 调整配方：石油裂化现在产出`1`氯苯(而不是`3`)
+  + 调整配方：有机液体离心现在产出1`硫酸`(而不是`硝酸`)
   + 特性：戈壁星球添加硝酸海洋；海洋丛林海洋修改为盐水海洋
 
   + Fixed the problem of conflicting locations of some buildings and items in the Station UI
   + Added new recipe: chlorobenzene hydrolysis: chlorobenzene + water -> phenol + hydrochloric acid
-  + Adjusted recipe: oil cracking now produces **1** chlorobenzene (instead of **3**)
-  + Adjusted recipe: organic liquid centrifugation now yields 1 **sulfuric acid** (instead of **nitric acid**)
+  + Adjusted recipe: oil cracking now produces `1` chlorobenzene (instead of `3`)
+  + Adjusted recipe: organic liquid centrifugation now yields 1 `sulfuric acid` (instead of `nitric acid`)
   + Characteristics: Gobi planet added nitric acid ocean; Ocean Jungle modified to salt water ocean
 
 </details>
