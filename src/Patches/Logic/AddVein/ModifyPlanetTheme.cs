@@ -35,7 +35,6 @@ namespace ProjectGenesis.Patches.Logic.AddVein
                         theme.oceanMat = LDB.themes.Select(22).oceanMat;
                         RemoveVein(theme, 0);
                         RemoveVein(theme, 1);
-                        RemoveVein(theme, 2);
                         RemoveVein(theme, 14);
 
                         break;
