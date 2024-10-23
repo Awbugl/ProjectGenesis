@@ -42,7 +42,7 @@ namespace ProjectGenesis
         [JsonProperty("website_url")] public string WebsiteURL { get; set; } = "https://github.com/Awbugl/ProjectGenesis";
 
         [JsonProperty("description")]
-        public string Description { get; set; } = "构建真实宇宙，撰写创世之书。Construct Real Universe. Then leave a GenesisBook. An overhaul mod.";
+        public string Description { get; set; } = "构建真实宇宙，撰写创世之书。新矿物，新材料，新配方，新科技，新机制。Construct Real Universe. Then leave a GenesisBook. New vein, new material, new recipe, new technology, new structure.";
 
         [JsonProperty("dependencies")]
         public string[] Dependencies { get; set; } = { "CommonAPI-CommonAPI-1.6.5", "nebula-NebulaMultiplayerModApi-2.0.0", };
