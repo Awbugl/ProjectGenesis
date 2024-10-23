@@ -98,7 +98,7 @@ namespace ProjectGenesis.Utils
         internal static void ModifyUpgradeTech()
         {
             TechProto tech = LDB.techs.Select(ProtoID.T批量建造1);
-            tech.ItemPoints = new[] { 3, };
+            tech.HashNeeded = 1200;
 
             for (int i = ProtoID.T宇宙探索1; i <= ProtoID.T宇宙探索4; i++)
             {

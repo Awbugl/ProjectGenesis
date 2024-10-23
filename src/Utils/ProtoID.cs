@@ -38,6 +38,7 @@ namespace ProjectGenesis.Utils
                            I奇点矩阵 = 6280,
                            I钨矿 = 6201,
                            I铝矿 = 6202,
+                           I铝块 = 6203,
                            I二氧化硫 = 6205,
                            I二氧化碳 = 6206,
                            I硫矿 = 6207,

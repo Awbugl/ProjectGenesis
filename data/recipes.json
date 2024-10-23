@@ -878,20 +878,20 @@
     "IconPath": "",
     "Type": 2,
     "GridIndex": 1616,
-    "Time": 60,
+    "Time": 180,
     "Input": [
       1005,
       7020
     ],
     "InCounts": [
-      5,
-      2
+      10,
+      1
     ],
     "Output": [
       1003
     ],
     "OutCounts": [
-      1
+      2
     ],
     "Explicit": true,
     "Handcraft": false,
@@ -1662,7 +1662,7 @@
     "IconPath": "",
     "Type": 1,
     "GridIndex": 1201,
-    "Time": 120,
+    "Time": 180,
     "Input": [
       1101
     ],
@@ -5558,6 +5558,34 @@
       1
     ],
     "Explicit": false,
+    "Handcraft": true,
+    "NonProductive": false
+  },
+  {
+    "ID": 546,
+    "Name": "有机晶体",
+    "Description": "R有机晶体（原始）",
+    "IconPath": "Icons/ItemRecipe/crystal-rubber-lv0",
+    "Type": 2,
+    "GridIndex": 1217,
+    "Time": 360,
+    "Input": [
+      1030,
+      1031,
+      1000
+    ],
+    "InCounts": [
+      20,
+      30,
+      10
+    ],
+    "Output": [
+      1117
+    ],
+    "OutCounts": [
+      1
+    ],
+    "Explicit": true,
     "Handcraft": true,
     "NonProductive": false
   },

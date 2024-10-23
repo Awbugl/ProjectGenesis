@@ -589,7 +589,8 @@
     "HashNeeded": 72000,
     "UnlockRecipes": [
       23,
-      771
+      771,
+      546
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -1099,9 +1100,9 @@
       6280
     ],
     "ItemPoints": [
-      10
+      5
     ],
-    "HashNeeded": 1440000,
+    "HashNeeded": 2880000,
     "UnlockRecipes": [
       110,
       44
@@ -1275,10 +1276,10 @@
       6279
     ],
     "ItemPoints": [
-      10,
-      15
+      6,
+      9
     ],
-    "HashNeeded": 576000,
+    "HashNeeded": 960000,
     "UnlockRecipes": [
       43,
       115
@@ -1922,9 +1923,9 @@
       6001
     ],
     "ItemPoints": [
-      20
+      10
     ],
-    "HashNeeded": 5400,
+    "HashNeeded": 10800,
     "UnlockRecipes": [
       64
     ],
@@ -2097,10 +2098,10 @@
       6002
     ],
     "ItemPoints": [
-      5,
-      20
+      3,
+      12
     ],
-    "HashNeeded": 180000,
+    "HashNeeded": 300000,
     "UnlockRecipes": [
       113
     ],
@@ -2182,9 +2183,9 @@
       6001
     ],
     "ItemPoints": [
-      40
+      20
     ],
-    "HashNeeded": 18000,
+    "HashNeeded": 36000,
     "UnlockRecipes": [
       67
     ],
@@ -2623,10 +2624,10 @@
       6002
     ],
     "ItemPoints": [
-      10,
-      10
+      5,
+      5
     ],
-    "HashNeeded": 144000,
+    "HashNeeded": 288000,
     "UnlockRecipes": [
       118
     ],
