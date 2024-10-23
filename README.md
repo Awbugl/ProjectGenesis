@@ -1,4 +1,5 @@
-![img.png](https://assets.awbugl.top/dsp-genesisbook/icon.png)
+![img.png](
+https://assets.awbugl.top/dsp-genesisbook/icon.png)
 
 构建真实宇宙，撰写创世之书。
 
@@ -6,9 +7,10 @@ Construct Real Universe. Then leave a GenesisBook.
 
 ## MOD内容速览 | A glimpse
 
-![img.png](https://assets.awbugl.top/dsp-genesisbook/7.jpg)
-![img.png](https://assets.awbugl.top/dsp-genesisbook/8.jpg)
-![img.png](https://assets.awbugl.top/dsp-genesisbook/3.jpg)
+![img.png](https://assets.awbugl.top/dsp-genesisbook/12.jpg)
+![img.png](https://assets.awbugl.top/dsp-genesisbook/13.jpg)
+![img.png](https://assets.awbugl.top/dsp-genesisbook/11.jpg)
+![img.png](https://assets.awbugl.top/dsp-genesisbook/14.jpg)
 ![img.png](https://assets.awbugl.top/dsp-genesisbook/6.jpg)
 
 ## 意见和反馈 | Feedback and suggestions
