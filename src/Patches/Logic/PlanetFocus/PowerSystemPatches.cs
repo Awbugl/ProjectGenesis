@@ -60,25 +60,25 @@ namespace ProjectGenesis.Patches.Logic.PlanetFocus
 
         public static long EnergyCap_Fuel(long power, ref PowerGeneratorComponent component, PowerSystem powerSystem)
         {
-            int focusid;
+            int focusId;
             double extra;
 
             switch (component.fuelMask)
             {
                 case 1:
-                    focusid = 6524;
+                    focusId = 6524;
                     extra = 1.2;
 
                     break;
 
                 case 2:
-                    focusid = 6529;
+                    focusId = 6529;
                     extra = 1.2;
 
                     break;
 
                 case 16:
-                    focusid = 6527;
+                    focusId = 6527;
                     extra = 1.1;
 
                     break;
@@ -86,7 +86,7 @@ namespace ProjectGenesis.Patches.Logic.PlanetFocus
                 default: return power;
             }
 
-            bool exist = ContainsFocus(powerSystem.factory.planetId, focusid);
+            bool exist = ContainsFocus(powerSystem.factory.planetId, focusId);
 
             return exist ? (long)(power * extra) : power;
         }
@@ -117,17 +117,17 @@ namespace ProjectGenesis.Patches.Logic.PlanetFocus
 
         public static long UIPowerGeneratorWindow_OnUpdate(long power, PowerGeneratorComponent component, PlanetFactory factory)
         {
-            int focusid;
+            int focusId;
             double extra;
 
             if (component.wind)
             {
-                focusid = 6525;
+                focusId = 6525;
                 extra = 1.2;
             }
             else if (component.photovoltaic)
             {
-                focusid = 6526;
+                focusId = 6526;
                 extra = 1.2;
             }
             else
@@ -135,19 +135,19 @@ namespace ProjectGenesis.Patches.Logic.PlanetFocus
                 switch (component.fuelMask)
                 {
                     case 1:
-                        focusid = 6524;
+                        focusId = 6524;
                         extra = 1.2;
 
                         break;
 
                     case 2:
-                        focusid = 6529;
+                        focusId = 6529;
                         extra = 1.2;
 
                         break;
 
                     case 16:
-                        focusid = 6527;
+                        focusId = 6527;
                         extra = 1.1;
 
                         break;
@@ -156,7 +156,7 @@ namespace ProjectGenesis.Patches.Logic.PlanetFocus
                 }
             }
 
-            bool exist = ContainsFocus(factory.planetId, focusid);
+            bool exist = ContainsFocus(factory.planetId, focusId);
 
             return exist ? (long)(power * extra) : power;
         }
