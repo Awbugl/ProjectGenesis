@@ -81,8 +81,8 @@
   },
   {
     "ModelID": 56,
-    "genEnergyPerTick": 10000000,
-    "useFuelPerTick": 10000000,
+    "genEnergyPerTick": 5000000,
+    "useFuelPerTick": 5000000,
     "fuelMask": 16
   },
   {
@@ -176,8 +176,8 @@
   },
   {
     "ModelID": 118,
-    "genEnergyPerTick": 2500000,
-    "useFuelPerTick": 2500000
+    "genEnergyPerTick": 1000000,
+    "useFuelPerTick": 1000000
   },
   {
     "ModelID": 194,
@@ -308,8 +308,8 @@
   },
   {
     "ModelID": 807,
-    "genEnergyPerTick": 120000000,
-    "useFuelPerTick": 120000000,
+    "genEnergyPerTick": 25000000,
+    "useFuelPerTick": 25000000,
     "fuelMask": 4
   },
   {

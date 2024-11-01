@@ -159,6 +159,11 @@ namespace ProjectGenesis.Patches.UI.DisplayText
 
                     switch (__instance.prefabDesc.fuelMask)
                     {
+                        case 1:
+                            __result = "化学".Translate();
+
+                            return;
+                        
                         case 2:
                             __result = "裂变能".TranslateFromJson();
 

@@ -180,6 +180,11 @@
     "ENUS": "You activated your first Artificial Star. It rotates so gracefully yet burns so intensely, this spectacle surely means that you've truly harnessed the stars and can stably transport this energy to all corners of the universe."
   },
   {
+    "Name": "机甲功率提升",
+    "ZHCN": "发电功率提升",
+    "ENUS": "Power Generation Boost"
+  },
+  {
     "Name": "星球大气介绍标题",
     "ZHCN": "星球大气类型介绍",
     "ENUS": "Planetary Atmosphere Introduction"
@@ -335,9 +340,14 @@
     "ENUS": "A material that has existed since ancient times and can be used to build large structures."
   },
   {
+    "Name": "火力发电厂",
+    "ZHCN": "燃料电池发电厂",
+    "ENUS": "Fuel Cell Power Plant"
+  },
+  {
     "Name": "I火力发电厂",
-    "ZHCN": "在含氧大气中利用可燃物（例如煤）作为燃料产生电能的设施（在无氧环境中只能使用燃料棒），输出的能量与所消耗燃料发热量有一定的转化率。",
-    "ENUS": "A facility that generates electrical energy using combustible materials (such as coal) as fuel in an oxygen-containing atmosphere (in an oxygen-free environment, only fuel rods can be used)."
+    "ZHCN": "使用燃料（例如煤）和氧气作为原料，通过电化学反应把燃料的化学能转换成电能（因此，在无氧环境中只能使用燃料棒），输出的能量与所消耗燃料发热量有一定的转化率。",
+    "ENUS": "A facility that converting the chemical energy of a fuel into electrical energy through an electrochemical reaction using a fuel (e.g., coal) and oxygen as raw materials. (In an oxygen-free environment, only fuel rods can be used)."
   },
   {
     "Name": "焦油",
@@ -1408,6 +1418,16 @@
     "Name": "T人造恒星MK2结果",
     "ZHCN": "掌控质能转换技术，可以将反物质转化为能量。",
     "ENUS": "You have mastered the technology of mass-energy conversion, and can now convert antimatter into energy."
+  },
+  {
+    "Name": "T火力发电",
+    "ZHCN": "燃料电池发电",
+    "ENUS": "Fuel Cell Power"
+  },
+  {
+    "Name": "火力发电结果",
+    "ZHCN": "你现在可以使用燃料电池发电厂了，它是一种需要消耗可燃物产生电能的发电设施，有能量转化率。",
+    "ENUS": "The Fuel Cell Power Plant is now available, a power generation facility that partially converts the heat energy of combustible fuels to electricity."
   },
   {
     "Name": "T粒子对撞机",

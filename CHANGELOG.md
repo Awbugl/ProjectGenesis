@@ -1,3 +1,15 @@
+- v3.0.1
+  + 燃料的`机甲功率提升`属性调整为`发电功率提升`，可作用于发电站
+  + 下调了大多数需要燃料的发电设施的基础发电功率
+
+  + `Fuel chamber gen.` attribute changed to `Power Generation Boost` and effects power plants.
+  + Downgraded the base power of most fuel-requiring power generation facilities.
+
+
+<details>
+  <summary>点击展开日志 | Click to view all </summary>
+
+
 - v3.0.0 天机工程 | Enigmatic Martix 【不兼容2.x.x旧版本存档】
   + 调整了配方`硅石筛选`的原料输入比例
   + 恢复配方`有机晶体（原始）`
@@ -77,10 +89,6 @@
   + Adjusted the upgrade paths for the Dark Fog Furnace and Re-composing Assembler
   + Adjusted the capacity of the Quantum Storage to 80
   + Added channel functionality to the Quantum Storage, items are not shared between different channels (affects save)
-
-
-<details>
-  <summary>点击展开日志 | Click to view all </summary>
 
 
 - v2.10.0-beta4.2 (Experimental 0.3.10420)
