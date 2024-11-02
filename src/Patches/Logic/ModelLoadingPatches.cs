@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection.Emit;
 using HarmonyLib;
 
@@ -11,8 +12,8 @@ namespace ProjectGenesis.Patches.Logic
     {
         private static readonly Func<short, short> ModelIdMigrationAction = modelIndex =>
         {
-            if (modelIndex > 500 && modelIndex < 520) modelIndex += 300;
-
+            // if (modelIndex > 500 && modelIndex < 520) modelIndex += 300;
+            // v3.0 don't need merge old modelIds
             return modelIndex;
         };
 
@@ -33,9 +34,7 @@ namespace ProjectGenesis.Patches.Logic
         [HarmonyPostfix]
         public static void EntityData_Import(ref EntityData __instance)
         {
-            ref short modelIndex = ref __instance.modelIndex;
-
-            if (modelIndex > 500 && modelIndex < 520) modelIndex += 300;
+            __instance.modelIndex = ModelIdMigrationAction(__instance.modelIndex);
         }
 
         [HarmonyPatch(typeof(BlueprintBuilding), nameof(BlueprintBuilding.Import))]
@@ -82,6 +81,13 @@ namespace ProjectGenesis.Patches.Logic
             while (matcher.IsValid);
 
             return matcher.InstructionEnumeration();
+        }
+        
+        [HarmonyPatch(typeof(ModelProto), nameof(ModelProto.InitMaxModelIndex))]
+        [HarmonyPostfix]
+        public static void InitMaxModelIndex()
+        {
+            ModelProto.maxModelIndex = LDB.models.dataArray.Max(model => model?.ID).GetValueOrDefault();
         }
     }
 }

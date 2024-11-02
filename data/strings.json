@@ -335,6 +335,11 @@
     "ENUS": "Concrete"
   },
   {
+    "Name": "只能放入燃料棒",
+    "ZHCN": "只能放入燃料棒",
+    "ENUS": "Fuel Rods only"
+  },
+  {
     "Name": "I混凝土",
     "ZHCN": "远古时期就存在的建筑材料，可以用于建造大型建筑。",
     "ENUS": "A material that has existed since ancient times and can be used to build large structures."

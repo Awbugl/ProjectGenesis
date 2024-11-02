@@ -58,7 +58,8 @@
     ],
     "HashNeeded": 1200,
     "UnlockRecipes": [
-      8
+      8,
+      13
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -71,10 +72,12 @@
     "PreTechsMax": false,
     "AddItems": [
       2201,
+      2202,
       6508
     ],
     "AddItemCounts": [
-      2,
+      3,
+      3,
       1
     ],
     "PropertyOverrideItems": [
@@ -159,8 +162,7 @@
     ],
     "HashNeeded": 9000,
     "UnlockRecipes": [
-      12,
-      13
+      12
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -5736,7 +5738,7 @@
       2301
     ],
     "AddItemCounts": [
-      4
+      5
     ],
     "PropertyOverrideItems": [
       6001

@@ -277,7 +277,7 @@
       1111
     ],
     "OutCounts": [
-      1
+      2
     ],
     "Explicit": false,
     "Handcraft": true,
@@ -1318,12 +1318,12 @@
     "IconPath": "",
     "Type": 1,
     "GridIndex": 1501,
-    "Time": 120,
+    "Time": 60,
     "Input": [
       1005
     ],
     "InCounts": [
-      2
+      1
     ],
     "Output": [
       1110
@@ -2844,18 +2844,18 @@
     "IconPath": "",
     "Type": 2,
     "GridIndex": 1213,
-    "Time": 120,
+    "Time": 60,
     "Input": [
       1014
     ],
     "InCounts": [
-      1
+      2
     ],
     "Output": [
       6234
     ],
     "OutCounts": [
-      2
+      1
     ],
     "Explicit": true,
     "Handcraft": false,

@@ -157,7 +157,9 @@
   },
   {
     "ModelID": 71,
-    "powerConnectDistance": 90.5
+    "powerConnectDistance": 90.5,
+    "powerCoverRadius": 10.5,
+    "workEnergyPerTick": 160000
   },
   {
     "ModelID": 72,
@@ -214,9 +216,14 @@
     "assemblerSpeed": 40000
   },
   {
+    "ModelID": 403,
+    "powerCoverRadius": 18.5,
+    "workEnergyPerTick": 320000
+  },
+  {
     "ModelID": 407,
     "turretMaxAttackRange": 75,
-    "turretSpaceAttackRange": 8200
+    "turretSpaceAttackRange": 40000
   },
   {
     "ModelID": 408,
@@ -373,7 +380,9 @@
   },
   {
     "ModelID": 813,
-    "AmmoBlastRadius1": 20
+    "AmmoBlastRadius1": 20,
+    "AmmoMoveAcc": 60,
+    "AmmoTurnAcc": 60
   },
   {
     "ModelID": 814,

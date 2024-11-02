@@ -420,6 +420,8 @@ namespace ProjectGenesis.Utils
             public int? stationMaxDroneCount { get; set; } = null;
             public int? stationMaxShipCount { get; set; } = null;
             public float? AmmoBlastRadius1 { get; set; } = null;
+            public float? AmmoMoveAcc { get; set; } = null;
+            public float? AmmoTurnAcc { get; set; } = null;
             public int? turretMuzzleInterval { get; set; } = null;
             public int? turretRoundInterval { get; set; } = null;
             public float? turretMaxAttackRange { get; set; } = null;
@@ -485,6 +487,8 @@ namespace ProjectGenesis.Utils
                     stationMaxShipCount = i.stationMaxShipCount,
                     stationMaxDroneCount = i.stationMaxDroneCount,
                     AmmoBlastRadius1 = i.AmmoBlastRadius1,
+                    AmmoMoveAcc = i.AmmoMoveAcc,
+                    AmmoTurnAcc = i.AmmoTurnAcc,
                     turretMuzzleInterval = i.turretMuzzleInterval,
                     turretRoundInterval = i.turretRoundInterval,
                     turretMaxAttackRange = i.turretMaxAttackRange,
@@ -586,6 +590,10 @@ namespace ProjectGenesis.Utils
                 if (stationMaxDroneCount != null) desc.stationMaxDroneCount = stationMaxDroneCount.Value;
 
                 if (AmmoBlastRadius1 != null) desc.AmmoBlastRadius1 = AmmoBlastRadius1.Value;
+
+                if (AmmoMoveAcc != null) desc.AmmoMoveAcc = AmmoMoveAcc.Value;
+
+                if (AmmoTurnAcc != null) desc.AmmoTurnAcc = AmmoTurnAcc.Value;
 
                 if (turretMuzzleInterval != null) desc.turretMuzzleInterval = turretMuzzleInterval.Value;
 

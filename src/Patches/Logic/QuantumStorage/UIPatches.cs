@@ -42,7 +42,7 @@ namespace ProjectGenesis.Patches.Logic.QuantumStorage
                 transform.GetComponent<Button>().interactable = true;
             }
 
-            Array.Resize(ref orbitPicker.orbitButtons, 10);
+            Array.Resize(ref orbitPicker.orbitButtons, 11);
 
             orbitPicker.UnregInnerEvents();
             orbitPicker.RegInnerEvents();

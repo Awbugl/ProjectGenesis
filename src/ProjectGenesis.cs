@@ -53,7 +53,7 @@ namespace ProjectGenesis
     {
         public const string MODGUID = "org.LoShin.GenesisBook";
         public const string MODNAME = "GenesisBook";
-        public const string VERSION = "3.0.1";
+        public const string VERSION = "3.0.2";
         public const string DEBUGVERSION = "";
 
         public static bool LoadCompleted;
@@ -148,11 +148,7 @@ namespace ProjectGenesis
 
             foreach (Type type in executingAssembly.GetTypes())
             {
-                if (type.Namespace == null) continue;
-
-                if (!type.Namespace.StartsWith("ProjectGenesis.Patches", StringComparison.Ordinal)) continue;
-
-                Harmony.PatchAll(type);
+                if (type.Namespace?.StartsWith("ProjectGenesis.Patches", StringComparison.Ordinal) == true) { Harmony.PatchAll(type); }
             }
 
             TableID = new int[]
@@ -161,8 +157,7 @@ namespace ProjectGenesis
                     new TabData("精炼页面".TranslateFromJsonSpecial(), "Assets/texpack/矿物处理")),
                 TabSystem.RegisterTab($"{MODGUID}:{MODGUID}Tab2",
                     new TabData("化工页面".TranslateFromJsonSpecial(), "Assets/texpack/化工科技")),
-                TabSystem.RegisterTab($"{MODGUID}:{MODGUID}Tab3",
-                    new TabData("防御页面".TranslateFromJsonSpecial(), "Assets/texpack/防御")),
+                TabSystem.RegisterTab($"{MODGUID}:{MODGUID}Tab3", new TabData("防御页面".TranslateFromJsonSpecial(), "Assets/texpack/防御")),
             };
 
             RegisterStrings();
@@ -229,7 +224,7 @@ namespace ProjectGenesis
             //飞行舱拆除
             VegeProto vegeProto = LDB.veges.Select(9999);
             vegeProto.MiningItem = new[] { ProtoID.I四氢双环戊二烯燃料棒, ProtoID.I铁块, ProtoID.I铜块, ProtoID.I铝块 };
-            vegeProto.MiningCount = new[] { 3, 100, 100, 100 };
+            vegeProto.MiningCount = new[] { 10, 100, 100, 100 };
             vegeProto.MiningChance = new float[] { 1, 1, 1, 1 };
             vegeProto.Preload();
 

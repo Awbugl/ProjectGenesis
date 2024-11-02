@@ -1,13 +1,33 @@
+- v3.0.2
+  + 修复了反物质导弹的速度不正确的问题
+  + 修复了量子储物箱频道按钮无法正确触发的问题
+  + 调整了导弹的对空射程为1AU，并取消了跨星球支援的多卫星限制
+  + 调整了机甲燃料舱为只能接受燃料棒、蓄电器及燃料类型为自由能的物品
+  + 调整了部分物品的热值和功率提升数值
+  + 调整了初始科技赠送的物品
+  + 调整了配方`棱镜`、`玻璃`、`氦原子提取`
+  + 调整了`无线输电塔`和`信号塔`的充电覆盖范围
+
+  + Fixed incorrect speed for antimatter missiles.
+  + Fixed an issue where the Quantum Locker channel button was not triggering correctly.
+  + Adjusted range of missiles to 1 AU and removed the multi-satellite limit for cross-planet support
+  + Adjusted Mecha Fuel Pods to only accept Fuel Rods, Accumulators, and Free Energy fuel type items.
+  + Adjusted the calorific value and power boost value of some items.
+  + Adjusted the initial tech bonus items.
+  + Adjusted `Prism` and `Glass` recipes.
+  + Adjusted the charging coverage of `Radio Transmission Tower` and `Signal Tower`.
+
+
+<details>
+  <summary>点击展开日志 | Click to view all </summary>
+
+
 - v3.0.1
   + 燃料的`机甲功率提升`属性调整为`发电功率提升`，可作用于发电站
   + 下调了大多数需要燃料的发电设施的基础发电功率
 
   + `Fuel chamber gen.` attribute changed to `Power Generation Boost` and effects power plants.
   + Downgraded the base power of most fuel-requiring power generation facilities.
-
-
-<details>
-  <summary>点击展开日志 | Click to view all </summary>
 
 
 - v3.0.0 天机工程 | Enigmatic Martix 【不兼容2.x.x旧版本存档】
