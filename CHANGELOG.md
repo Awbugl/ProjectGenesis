@@ -1,3 +1,17 @@
+- v3.0.3
+  + 调整了能量碎片的堆叠数量
+  + 调整了部分文案
+  + 调整了部分教程
+
+  + Adjusted the number of energy shards stacked
+  + Adjusted some text
+  + Adjusted some tutorials
+
+
+<details>
+  <summary>点击展开日志 | Click to view all </summary>
+
+
 - v3.0.2
   + 修复了反物质导弹的速度不正确的问题
   + 修复了量子储物箱频道按钮无法正确触发的问题
@@ -16,10 +30,6 @@
   + Adjusted the initial tech bonus items.
   + Adjusted `Prism` and `Glass` recipes.
   + Adjusted the charging coverage of `Radio Transmission Tower` and `Signal Tower`.
-
-
-<details>
-  <summary>点击展开日志 | Click to view all </summary>
 
 
 - v3.0.1
