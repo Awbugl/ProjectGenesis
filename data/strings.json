@@ -6,8 +6,8 @@
   },
   {
     "Name": "I电力节约",
-    "ZHCN": "协调中心将倾向于控制电力传输损耗。",
-    "ENUS": "Coordination Center will tend to control power transmission loss."
+    "ZHCN": "采用智能控制系统，实时监控能源消耗、自动调节设备的运行状态，减少不必要的能耗。\n<color=\"#FD965ECC\">工厂电力需求 -10%</color>",
+    "ENUS": "By using intelligent control systems, real-time monitoring of energy consumption and automatic adjustment of equipment operating status can reduce unnecessary energy usage.\n<color=\"#FD965ECC\">Assembler Power Consumption -10%</color>"
   },
   {
     "Name": "上传扩容",
@@ -16,8 +16,8 @@
   },
   {
     "Name": "I上传扩容",
-    "ZHCN": "协调中心将倾向于提高主脑连接的带宽与稳定性。",
-    "ENUS": "Coordination Center will tend to increase the bandwidth and stability of the connection to the home."
+    "ZHCN": "通过提高上行带宽、更换高效传输协议、压缩数据并行上传，确保高效的数据传输。\n<color=\"#FD965ECC\">研究上传速度 +10%</color>",
+    "ENUS": "By increasing the upload bandwidth, switching to efficient transfer protocols, compressing data, and uploading in parallel, efficient data transmission can be ensured.\n<color=\"#FD965ECC\">Research Speed +10%</color>"
   },
   {
     "Name": "燃料回收",
@@ -26,8 +26,8 @@
   },
   {
     "Name": "I燃料回收",
-    "ZHCN": "协调中心将倾向于优化火力发电厂的热回收流程。",
-    "ENUS": "Coordination Center will tend to optimize the thermal recovery process of the power plant."
+    "ZHCN": "优化电堆设计、改进控制策略、集成热电联产系统等措施的综合应用，可以有效提高燃料电池发电厂的效率。\n<color=\"#FD965ECC\">燃料电池效率 +20%</color>",
+    "ENUS": "The comprehensive application of measures such as optimizing stack design, improving control strategies, and integrating combined heat and power systems can effectively enhance the efficiency of fuel cell power plants.\n<color=\"#FD965ECC\">Fuel Cell Efficiency +20%</color>"
   },
   {
     "Name": "风力扩容",
@@ -36,8 +36,8 @@
   },
   {
     "Name": "I风力扩容",
-    "ZHCN": "协调中心将倾向于优化风力涡轮机的气动力学设计。",
-    "ENUS": "Coordination Center will tend to optimize the aerodynamic design of the wind turbine."
+    "ZHCN": "通过风力涡轮机与中央控制系统之间的数据交换实现对多台风力涡轮机的协调控制，优化整个风电场的能量输出。\n<color=\"#FD965ECC\">风力发电效率 +20%</color>",
+    "ENUS": "By enabling data exchange between wind turbines and the central control system, coordinated control of multiple wind turbines can be achieved, optimizing the energy output of the entire wind farm.\n<color=\"#FD965ECC\">Wind Turbine Efficiency +20%</color>"
   },
   {
     "Name": "光伏扩容",
@@ -46,8 +46,8 @@
   },
   {
     "Name": "I光伏扩容",
-    "ZHCN": "协调中心将倾向于提高太阳能板的光子利用率。",
-    "ENUS": "Coordination Center will tend to increase the photon utilization rate of the solar panel."
+    "ZHCN": "通过监测环境和气象条件，实现太阳能板的智能化管理和调度，从而提高能源利用效率。\n<color=\"#FD965ECC\">光伏发电效率 +20%</color>",
+    "ENUS": "By monitoring environmental and weather conditions, intelligent management and scheduling of solar panels can be achieved, thereby improving the efficiency of energy utilization.\n<color=\"#FD965ECC\">Solar Panel Efficiency +20%</color>"
   },
   {
     "Name": "热聚增效",
@@ -56,8 +56,8 @@
   },
   {
     "Name": "I热聚增效",
-    "ZHCN": "协调中心将倾向于缩小人造恒星的聚变约束立场范围。",
-    "ENUS": "Coordination Center will tend to reduce the fusion confinement range of the artificial star."
+    "ZHCN": "通过改善磁场设计、增加磁场强度、研发新的等离子体稳定技术，减少等离子体的湍动和逃逸，从而提高能量密度和维持时间。\n<color=\"#FD965ECC\">聚变发电效率 +10%</color>",
+    "ENUS": "By improving the magnetic field design, increasing the magnetic field strength, and developing new plasma stabilization techniques, the turbulence and escape of the plasma can be reduced, thereby enhancing the energy density and confinement time.\n<color=\"#FD965ECC\">Artificial Star Efficiency +10%</color>"
   },
   {
     "Name": "资源采掘",
@@ -66,8 +66,8 @@
   },
   {
     "Name": "I资源采掘",
-    "ZHCN": "协调中心将倾向于回收再利用低品质矿物。",
-    "ENUS": "Coordination Center will tend to recycle low-quality minerals."
+    "ZHCN": "通过自动化控制系统高效回收资源，如尾矿再利用、废水处理和循环利用，减少资源浪费，提高资源利用率。\n<color=\"#FD965ECC\">矿物采集速度 +25%</color>",
+    "ENUS": "By using automated control systems to efficiently recycle resources, such as tailings reuse, wastewater treatment, and recycling, resource waste can be reduced and resource utilization rates can be improved.\n<color=\"#FD965ECC\">Mining Speed +25%</color>"
   },
   {
     "Name": "裂变增效",
@@ -76,8 +76,8 @@
   },
   {
     "Name": "I裂变增效",
-    "ZHCN": "协调中心将倾向于提高裂变发电站的燃料回收效率。",
-    "ENUS": "Coordination Center will tend to increase the fuel recycling efficiency of the Fission Power Station."
+    "ZHCN": "通过燃料再处理技术，回收未完全反应的铀和钚，减少核废料的产生，提高燃料利用率。\n<color=\"#FD965ECC\">裂变发电效率 +20%</color>",
+    "ENUS": "By using fuel reprocessing technology, unreacted uranium and plutonium can be recovered, reducing the production of nuclear waste and improving fuel utilization.\n<color=\"#FD965ECC\">Fission Efficiency +20%</color>"
   },
   {
     "Name": "先进推进",
@@ -86,8 +86,8 @@
   },
   {
     "Name": "I先进推进",
-    "ZHCN": "协调中心将倾向于提高运输机的速度。",
-    "ENUS": "Coordination Center will tend to increase the speed of drones."
+    "ZHCN": "使用空气动力学优化、发动机升级、先进自动驾驶算法等多种方法，实现更精确的飞行控制，提高运输机的速度和整体性能。\n<color=\"#FD965ECC\">配送物流速度 +25%</color>",
+    "ENUS": "By using methods such as aerodynamic optimization, engine upgrades, and advanced autopilot algorithms, more precise flight control can be achieved, improving the speed and overall performance of the transport aircraft.\n<color=\"#FD965ECC\">Drone Speed +25%</color>"
   },
   {
     "Name": "特征向量模拟",
@@ -96,8 +96,8 @@
   },
   {
     "Name": "I特征向量模拟",
-    "ZHCN": "根据机械能量计划的相关信息，模拟信号。降低由于电力因素导致的地面黑雾巢穴威胁度增长。",
-    "ENUS": "Analog signals based on information about the Mechanical Energy Program. Reduce the increase in threat level of dark fog ground nests due to factory power factors."
+    "ZHCN": "根据机械能量计划的相关信息，模拟信号。降低由于电力因素导致的地面黑雾巢穴威胁度增长。\n<color=\"#FD965ECC\">电力威胁增长 -20%</color>",
+    "ENUS": "Analog signals based on information about the Mechanical Energy Program. Reduce the increase in threat level of dark fog ground nests due to factory power factors.\n<color=\"#FD965ECC\">Power related threat growth -20%</color>"
   },
   {
     "Name": "中继信号干扰",
@@ -106,8 +106,8 @@
   },
   {
     "Name": "I中继信号干扰",
-    "ZHCN": "干扰中继站与太空黑雾巢穴间的信号链路。降低由于地面战斗因素导致的太空黑雾巢穴威胁度增长。",
-    "ENUS": "Interferes with signaling links between relay stations and black fog nests in space. Reduce the increase in the threat level of dark fog space nests due to ground combats."
+    "ZHCN": "干扰中继站与太空黑雾巢穴间的信号链路。降低由于地面战斗因素导致的太空黑雾巢穴威胁度增长。\n<color=\"#FD965ECC\">太空威胁增长 -20%</color>",
+    "ENUS": "Interferes with signaling links between relay stations and black fog nests in space. Reduce the increase in the threat level of dark fog space nests due to ground combats.\n<color=\"#FD965ECC\">Space threat growth -20%</color>"
   },
   {
     "Name": "神经元重编程",
@@ -116,8 +116,8 @@
   },
   {
     "Name": "I神经元重编程",
-    "ZHCN": "利用现有黑雾残骸，重编程神经元后可干扰黑雾系统的运转模式。降低地面黑雾巢穴部队建造速度。",
-    "ENUS": "Utilizes existing Black Mist debris, reprogramming neurons can interfere with the Black Mist system's mode of operation. Reduce the units replicate speed of dark fog ground nests."
+    "ZHCN": "利用现有黑雾残骸，重编程神经元后可干扰黑雾系统的运转模式。降低地面黑雾巢穴部队建造速度。\n<color=\"#FD965ECC\">部队建造速度 -20%</color>",
+    "ENUS": "Utilizes existing Black Mist debris, reprogramming neurons can interfere with the Black Mist system's mode of operation. Reduce the units replicate speed of dark fog ground nests.\n<color=\"#FD965ECC\">Unit replicate Speed -20%</color>"
   },
   {
     "Name": "异常代码分析",
@@ -126,8 +126,8 @@
   },
   {
     "Name": "I异常代码分析",
-    "ZHCN": "逆向分析残骸中的黑雾代码，并尝试利用机械能量计划的相关数据链路。降低地面黑雾巢穴基地扩张速度。",
-    "ENUS": "Reverse analyze the Black Mist code in the wreckage and attempt to utilize the data link associated with the Mechanical Energy Program. Reduce the build speed of dark fog ground nests."
+    "ZHCN": "逆向分析残骸中的黑雾代码，并尝试利用机械能量计划的相关数据链路。降低地面黑雾巢穴基地扩张速度。\n<color=\"#FD965ECC\">基地扩张速度 -20%</color>",
+    "ENUS": "Reverse analyze the Black Mist code in the wreckage and attempt to utilize the data link associated with the Mechanical Energy Program. Reduce the build speed of dark fog ground nests.\n<color=\"#FD965ECC\">Base build Speed -20%</color>"
   },
   {
     "Name": "海洋丛林介绍",
@@ -185,14 +185,14 @@
     "ENUS": "Power Generation Boost"
   },
   {
-    "Name": "星球大气介绍标题",
-    "ZHCN": "星球大气类型介绍",
-    "ENUS": "Planetary Atmosphere Introduction"
+    "Name": "创世之书介绍标题",
+    "ZHCN": "创世之书MOD简介",
+    "ENUS": "Genesis Book MOD Introduction"
   },
   {
-    "Name": "星球大气介绍前字",
-    "ZHCN": "除部分无大气环境的星球外，现在各类星球各有其独特的大气成分。\n大气采集站是类似于轨道采集器的采集设施，可部署在星球上并采集星球大气层的成分供给生产线使用，大气采集站与物流站之间无建造距离限制。\n火力发电厂输入的原料种类现受到星球大气类型的限制。除三种化学能燃料棒外，其他燃料不能在无氧大气环境下发电。",
-    "ENUS": "Except for some planets with no atmosphere, all types of planets now have their own unique atmospheric composition.\nAtmospheric Collect Stations are facilities that can be deployed at a planet and harvest components of the planet's atmosphere for use in production lines. No distance constraints between Atmospheric Collect Station and the Logistics Station.\nThe type of feedstock input to thermal power plants is now limited by the type of planetary atmosphere.\nAll but three chemical energy fuel rods cannot generate electricity in an anoxic atmosphere."
+    "Name": "创世之书介绍前字",
+    "ZHCN": "星球调整：\n    四种新矿物，硫、铝、钨、放射矿，矿物现在可在水下生成；\n    为绝大多数类地行星添加了大气类型，并可使用大气采集站进行资源采集；\n    新增海水海洋、盐酸海洋、硝酸海洋；\n    行星协调中心，可自由选择多种协调增益您的工厂。\n\n产线调整：\n    新矿物相关的材料及配方；\n    化工配方扩展，三种不同性能的塑料用于不同生产需求；\n    矿物处理科技，允许将矿物预处理以提高产出或用于燃料电池；\n    添加多种燃料棒，为伊卡洛斯的星际扩张保驾护航；\n    建筑配方需求调整，将常用需求整合为机械组件，提高产线效率；\n    产物溢出机制，允许副产物溢出保证生产连续性（可在设置中调整）。\n\n建筑调整：\n    制造台拆分为三种不同精度的制造类型，不可通用；\n    对自动化生产属性进行提升，如供电范围、传送带、分拣器速度、制造台速度等；\n    大气采集站、轨道采集器不再消耗电力，允许油井、大矿机在水上建造；\n    发电功率调整，功率 = 建筑基础功率 * 燃料加成；\n    燃料电池发电厂仅能在含氧大气环境下运行（燃料棒除外）；添加裂变电站、同位素温差发电机；\n    黑雾建筑调整，黑雾制造台允许制造绝大多数配方，黑雾熔炉则可翻倍产出物品；\n    巨型建筑：使用传送带传输原料和产物的制造中心，效率远超普通设备；\n    物质分解设施，可将物品转换为沙土，亦可拆解建筑为制造材料。\n\n科技调整：\n    科技探索模式，隐藏暂不可研发的科技（可在设置中调整）；\n    添加多种复合矩阵及对应科研需求；\n    建造量子箱瞬间跨越星系输送物品；消耗负熵奇点进行远程折跃；使用全球护盾能源广播。\n\n武器调整：\n    生产钨钢弹头、核子导弹；\n    建造紫外激光塔、电磁加农炮；\n    使用反物质跃迁导弹跨星支援。\n\n其他调整：\n    机甲燃料仓只能使用燃料棒进行供电；\n    快速开局模式，让每一次冒险都能迅速展开；\n    自带的量化计算器，辅助构建产线。",
+    "ENUS": "Planet tweaks:\n    Four new minerals, Sulfur, Aluminum, Tungsten, and Radiolite, minerals can now be generated underwater;\n    Added atmosphere types to the vast majority of Earth-like planets, and the ability to use Atmospheric Harvesting Stations for resource harvesting;\n    New seawater oceans, hydrochloric acid oceans, and nitric acid oceans;\n    Planetary Coordination Center, with the freedom to choose from a wide range of coordinated gains for your factories.\nProduction tweaks:\n    New mineral-related materials and recipes;\n    Chemical recipe expansion, three different plastics with different properties for different production needs;\n    Mineral Processing Technology, allowing minerals to be pre-treated for increased output or for use in fuel cells;\n    Addition of multiple fuel rods for Icarus' interstellar expansion;\n    Construction recipe requirement adjustments, consolidating common requirements into mechanical components to increase production line efficiency;\n    Production overflow mechanic, allowing byproduct overflow to ensure production continuity (adjustable in settings).\nBuilding tweaks:\n    Manufacturing table split into three different precision manufacturing types, which are not generalizable;\n    Enhancements to automated production attributes such as power supply range, conveyor belts, sorter speed, and manufacturing table speed;\n    Atmospheric collection stations and orbital collectors no longer consume power, allowing oil wells and large mining machines to be built over water;\n    Power generation power adjusted so that power = building base power * fuel bonus;\n    Fuel cell power plants can only operate in oxygenated atmospheres (except fuel rods); fission power stations, isotope temperature difference generators added;\n    Black Mist building tweak; Black Mist Fabrication Stations allow for the creation of most recipes, while Black Mist Furnaces double the output of items;\n    Mega Buildings: manufacturing centers that use conveyor belts to transfer raw materials and products far more efficiently than normal facilities;\n    Material Decomposition Facility, which converts items into sand and earth, and can also dismantle buildings for manufacturing materials.\nTechnology tweaks:\n    Technology Exploration Mode to hide technologies that cannot be developed at the moment (can be adjusted in Settings);\n    Add multiple composite matrices and corresponding research requirements;\n    Construct Quantum Boxes to instantly transport items across galaxies; consume Negentropic Singularity to perform Remote Folding; use Global Shield Energy to broadcast.\nWeapon tweaks:\n    Produce tungsten warheads, nuclear missiles;\n    Construction of UV laser towers, electromagnetic cannons;\n    Use antimatter leaping missiles for transplanetary support.\nOther tweaks:\n    Mech fuel silos can only be powered using fuel rods;\n    Quick start mode to get every adventure underway quickly;\n    A self-contained quantization calculator to aid in building production lines."
   },
   {
     "Name": "巨型建筑介绍标题",
@@ -201,8 +201,8 @@
   },
   {
     "Name": "巨型建筑介绍前字",
-    "ZHCN": "巨型建筑是一类具有高集成度的生产设施。虽然它们看起来与物流站很相似，但并不能装载物流运输机。\n一个巨型建筑可将原料或产物通过传送带输出到下一个巨型建筑，从而高效利用占地。",
-    "ENUS": "Mega buildings are a class of production facilities with a high degree of integration. Although they look similar to a logistics station, they do not carry a logistics transporter. \nOne mega building can export raw materials or products to the next mega building via a conveyor belt, thus making efficient use of space."
+    "ZHCN": "巨型建筑是一类具有高集成度的生产设施。虽然它们看起来与物流站很相似，但并不能装载物流运输机。\n\n一个巨型建筑可将原料或产物通过传送带输出到下一个巨型建筑，从而高效利用占地。",
+    "ENUS": "Mega buildings are a class of production facilities with a high degree of integration. Although they look similar to a logistics station, they do not carry a logistics transporter. \n\nOne mega building can export raw materials or products to the next mega building via a conveyor belt, thus making efficient use of space."
   },
   {
     "Name": "行星协调中心介绍标题",
@@ -211,8 +211,8 @@
   },
   {
     "Name": "行星协调中心介绍前字",
-    "ZHCN": "一个行星协调中心可为星球工厂提供多种增益，可在行星视图中切换增益以适应不同发展阶段的需求。",
-    "ENUS": "A Planetary Coordination Center can provide multiple gains for a planetary factory, with the ability to switch gains in the planet view to accommodate different stages of development."
+    "ZHCN": "一个行星协调中心可为星球工厂提供多种增益，可在行星视图中（默认快捷键为M键）切换增益以适应不同发展阶段的需求。",
+    "ENUS": "A Planetary Coordination Center can provide multiple gains for a planetary factory, with the ability to switch gains in the planet view (Default shortcut is M key) to accommodate different stages of development."
   },
   {
     "Name": "物质分解设施介绍标题",
@@ -224,6 +224,16 @@
     "ZHCN": "在选择<color=\"#FD965ECC\">物质回收</color>配方后，物质分解设施可将输入到其中的所有物品按数量比例转换为沙土，并在达到一定数量后静默返还到机甲背包中。\n若背包未满，输入的建筑物品可返还75%的制造原料到背包中。",
     "ENUS": "After selecting <color=\"#FD965ECC\">Matter recovery</color> recipe, the Recycling Factory converts all items entered into it into Sand in proportion to their quantity, and silently returns them to package after a certain amount has been reached.\nIncoming construction items return 75% of their own manufacturing materials to the package (if the package is not full)."
   },
+  {
+    "Name": "制造类型调整介绍标题",
+    "ZHCN": "制造类型调整",
+    "ENUS": "Manufacturing Type Adjustment"
+  },
+  {
+    "Name": "制造类型调整介绍前字",
+    "ZHCN": "经过特化调整制造台的可以满足不同制造精度的需求，但除黑雾制造台外，不同制造台不能通用。",
+    "ENUS": "After specialization to adjust the assembler's can meet the needs of different precision, but except for the dark fog assembler, different assembler can not be used universally."
+  }, 
   {
     "Name": "钨矿脉",
     "ZHCN": "钨矿脉",
@@ -671,8 +681,8 @@
   },
   {
     "Name": "人造恒星MK2",
-    "ZHCN": "人造恒星 MK.II",
-    "ENUS": "Artificial Star MK.II"
+    "ZHCN": "“湛曦”O型人造恒星",
+    "ENUS": "Artificial Photonix"
   },
   {
     "Name": "反物质约束单元",
@@ -761,7 +771,7 @@
   },
   {
     "Name": "I湮灭约束球",
-    "ZHCN": "将湮灭反应约束在球内，从而获得稳定可控的能量输出，是人造恒星 MK.II的关键部件。",
+    "ZHCN": "将湮灭反应约束在球内，从而获得稳定可控的能量输出，是O型人造恒星的关键部件。",
     "ENUS": "It is a crucial component of antimatter energy reactor to confine the annihilation reaction within the sphere to obtain stable and controllable energy output."
   },
   {
@@ -1386,8 +1396,8 @@
   },
   {
     "Name": "R物质回收",
-    "ZHCN": "将物质分解成沙土。",
-    "ENUS": "Breaks down the matter into soil pile."
+    "ZHCN": "将物质分解成沙土；或拆解建筑，返还75%的制造原料到背包。",
+    "ENUS": "Breaks down the matter into soil pile; Incoming buildable items return 75% of materials to the package (if the package is not full)."
   },
   {
     "Name": "T地热开采",
@@ -2586,13 +2596,13 @@
   },
   {
     "Name": "聚爆加农炮",
-    "ZHCN": "聚爆加农炮 MK.I",
-    "ENUS": "Implosion Cannon MK.I"
+    "ZHCN": "聚爆加农炮",
+    "ENUS": "Implosion Cannon"
   },
   {
     "Name": "聚爆加农炮MK2",
-    "ZHCN": "聚爆加农炮 MK.II",
-    "ENUS": "Implosion Cannon MK.II"
+    "ZHCN": "电磁加农炮",
+    "ENUS": "Electromagnetic Cannon"
   },
   {
     "Name": "I聚爆加农炮MK2",
@@ -2601,13 +2611,13 @@
   },
   {
     "Name": "高频激光塔",
-    "ZHCN": "高频激光塔 MK.I",
-    "ENUS": "Laser Tower MK.I"
+    "ZHCN": "高频激光塔",
+    "ENUS": "Blue Laser Tower"
   },
   {
     "Name": "高频激光塔MK2",
-    "ZHCN": "高频激光塔 MK.II",
-    "ENUS": "Laser Tower MK.II"
+    "ZHCN": "紫外激光塔",
+    "ENUS": "UV Laser Tower"
   },
   {
     "Name": "I高频激光塔MK2",
@@ -2631,8 +2641,8 @@
   },
   {
     "Name": "人造恒星",
-    "ZHCN": "人造恒星 MK.I",
-    "ENUS": "Artificial Star MK.I"
+    "ZHCN": "“朱曦”K型人造恒星",
+    "ENUS": "Artificial Star"
   },
   {
     "Name": "T虚数空间存储",

@@ -1,8 +1,8 @@
 ﻿[
   {
     "ID": 31,
-    "Name": "星球大气介绍标题",
-    "PreText": "星球大气介绍前字",
+    "Name": "创世之书介绍标题",
+    "PreText": "创世之书介绍前字",
     "DeterminatorName": "TOR_GameSecond",
     "DeterminatorParams": [
       4
@@ -12,20 +12,22 @@
     "ID": 32,
     "Name": "物质分解设施介绍标题",
     "PreText": "物质分解设施介绍前字",
-    "DeterminatorName": "TOR_TechUnlocked",
+    "DeterminatorName": "TOR_OnBuild",
     "DeterminatorParams": [
-      1831,
-      7
+      6264
     ]
   },
   {
     "ID": 33,
     "Name": "巨型建筑介绍标题",
     "PreText": "巨型建筑介绍前字",
-    "DeterminatorName": "TOR_TechUnlocked",
+    "DeterminatorName": "TOR_OnBuild",
     "DeterminatorParams": [
-      1834,
-      7
+      6257,
+      6258,
+      6259,
+      6260,
+      6265
     ]
   },
   {
@@ -34,8 +36,17 @@
     "PreText": "行星协调中心介绍前字",
     "DeterminatorName": "TOR_TechUnlocked",
     "DeterminatorParams": [
-      1836,
+      1936,
       7
+    ]
+  },
+  {
+    "ID": 35,
+    "Name": "制造类型调整介绍标题",
+    "PreText": "制造类型调整介绍前字",
+    "DeterminatorName": "TOR_OnBuild",
+    "DeterminatorParams": [
+      2304
     ]
   }
 ]

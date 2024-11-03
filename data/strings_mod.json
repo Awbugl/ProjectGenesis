@@ -306,8 +306,8 @@
   },
   {
     "Name": "火力发电效率 +20%",
-    "ZHCN": "火力发电效率 +20%",
-    "ENUS": "Thermal Power Plant Efficiency +20%"
+    "ZHCN": "燃料电池效率 +20%",
+    "ENUS": "Fuel Cell Efficiency +20%"
   },
   {
     "Name": "风力发电效率 +20%",

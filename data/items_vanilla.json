@@ -8495,7 +8495,7 @@
     "Description": "I能量碎片",
     "IconPath": "Icons/ItemRecipe/energy-fragment",
     "GridIndex": 5706,
-    "StackSize": 100,
+    "StackSize": 1000,
     "Type": 10,
     "PreTechOverride": 0,
     "DescFields": [
