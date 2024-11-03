@@ -3,7 +3,7 @@
   + 调整了部分文案
   + 调整了部分教程
 
-  + Adjusted the number of energy shards stacked
+  + Adjusted the number of energy fragment stacked
   + Adjusted some text
   + Adjusted some tutorials
 
