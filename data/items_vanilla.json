@@ -1480,7 +1480,7 @@
       40
     ],
     "FuelType": 1,
-    "HeatValue": 9000000,
+    "HeatValue": 6000000,
     "ReactorInc": -0.1,
     "IsFluid": true,
     "Productive": true,
@@ -4372,7 +4372,7 @@
     "Name": "氢燃料棒",
     "Description": "I氢燃料棒",
     "IconPath": "Icons/ItemRecipe/hydrogen-energy-fuel",
-    "GridIndex": 3701,
+    "GridIndex": 3702,
     "StackSize": 30,
     "Type": 4,
     "PreTechOverride": 0,
@@ -4384,7 +4384,7 @@
       40
     ],
     "FuelType": 1,
-    "HeatValue": 60000000,
+    "HeatValue": 90000000,
     "ReactorInc": 1.0,
     "IsFluid": false,
     "Productive": true,

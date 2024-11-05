@@ -479,7 +479,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 3701,
+    "GridIndex": 3702,
     "Time": 600,
     "Input": [
       6509,
@@ -488,8 +488,8 @@
     ],
     "InCounts": [
       1,
-      20,
-      10
+      30,
+      15
     ],
     "Output": [
       1801
@@ -5119,7 +5119,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 3702,
+    "GridIndex": 3701,
     "Time": 600,
     "Input": [
       6509,
@@ -5128,8 +5128,8 @@
     ],
     "InCounts": [
       1,
-      10,
-      10
+      5,
+      5
     ],
     "Output": [
       6217

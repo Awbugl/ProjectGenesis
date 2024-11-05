@@ -410,6 +410,11 @@
     "ENUS": "The mecha does not have enough Negentropy Singularity to Quantum Navigation"
   },
   {
+    "Name": "化学能",
+    "ZHCN": "化学能",
+    "ENUS": "Chemical Energy"
+  },
+  {
     "Name": "裂变能",
     "ZHCN": "裂变能",
     "ENUS": "Fission Energy"

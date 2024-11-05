@@ -2,10 +2,14 @@
   + 调整了能量碎片的堆叠数量
   + 调整了部分文案
   + 调整了部分教程
+  + 调整了部分科技的研究需求
+  + 调整了化学能燃料棒的热值
 
-  + Adjusted the number of energy fragment stacked
+  + Adjusted the stack count of Energy Fragment
   + Adjusted some text
   + Adjusted some tutorials
+  + Adjusted research requirements for some technologies
+  + Adjusted heat value of chemical fuel rods
 
 
 <details>

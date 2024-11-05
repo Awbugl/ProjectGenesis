@@ -406,8 +406,8 @@
   },
   {
     "Name": "I四氢双环戊二烯燃料棒",
-    "ZHCN": "专为高性能航天器设计的特殊燃料。高能量密度和卓越的稳定性，使其成为航天推进系统的理想选择。",
-    "ENUS": "Specialized fuel designed for high performance spacecraft. Highly efficient energy density and excellent stability make it ideal for aerospace propulsion systems."
+    "ZHCN": "专为初级航天器设计的推进燃料，具有高能量密度和卓越的稳定性。",
+    "ENUS": "Propulsion fuel designed for primary spacecraft with high energy density and excellent stability."
   },
   {
     "Name": "煤油燃料棒",
@@ -416,8 +416,8 @@
   },
   {
     "Name": "I煤油燃料棒",
-    "ZHCN": "高度浓缩并经过特殊处理的焦油作为燃料电池的燃料，能够在各种设备中提供廉价而稳定的能量输出。",
-    "ENUS": "Highly concentrated and specially treated tar as fuel for fuel cells can provide inexpensive and stable energy output in a variety of devices."
+    "ZHCN": "经过特殊处理的焦油可作为燃料电池的燃料，从而提供廉价而稳定的能量输出。",
+    "ENUS": "Specially treated tar can be used as fuel for fuel cells, thus providing cheap and stable energy output."
   },
   {
     "Name": "同位素温差发电机",
@@ -1775,14 +1775,9 @@
     "ENUS": "As production lines continue to expand, the need for more integrated production facilities becomes increasingly urgent."
   },
   {
-    "Name": "T化学能燃料棒",
-    "ZHCN": "化学能燃料棒",
-    "ENUS": "Chemical Fuel Rod"
-  },
-  {
     "Name": "T化学能燃料棒描述",
-    "ZHCN": "利用化学反应为生产线和机甲供能。",
-    "ENUS": "Using chemical reactions to power factories and mechs."
+    "ZHCN": "利用新合成的特殊燃料，四氢双环戊二烯，为生产线和机甲供能。",
+    "ENUS": "Using a newly synthesized special fuel JP-10, to power factories and mecha."
   },
   {
     "Name": "T先进化工",
