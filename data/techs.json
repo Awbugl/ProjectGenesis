@@ -1147,7 +1147,7 @@
       6280
     ],
     "ItemPoints": [
-      16
+      18
     ],
     "HashNeeded": 600000,
     "UnlockRecipes": [
@@ -1255,7 +1255,7 @@
   },
   {
     "ID": 1153,
-    "Name": "人造恒星",
+    "Name": "T人造恒星",
     "IconPath": "Icons/Tech/1144",
     "Desc": "人造恒星描述",
     "Conclusion": "人造恒星结果",
@@ -1611,7 +1611,7 @@
     ],
     "ItemPoints": [
       10,
-      1
+      5
     ],
     "HashNeeded": 360000,
     "UnlockRecipes": [
@@ -1692,10 +1692,12 @@
     ],
     "PreTechsImplicit": [],
     "Items": [
-      6278
+      6278,
+      6003
     ],
     "ItemPoints": [
-      10
+      10,
+      6
     ],
     "HashNeeded": 360000,
     "UnlockRecipes": [
@@ -5269,7 +5271,7 @@
       6280
     ],
     "ItemPoints": [
-      10
+      20
     ],
     "HashNeeded": 576000,
     "UnlockRecipes": [
@@ -5315,7 +5317,7 @@
       6280
     ],
     "ItemPoints": [
-      10
+      20
     ],
     "HashNeeded": 576000,
     "UnlockRecipes": [
@@ -5594,7 +5596,7 @@
       6280
     ],
     "ItemPoints": [
-      10
+      5
     ],
     "HashNeeded": 576000,
     "UnlockRecipes": [],

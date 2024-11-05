@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using CommonAPI.Systems;
 using HarmonyLib;
 using UnityEngine;
@@ -93,20 +94,6 @@ namespace ProjectGenesis.Utils
             PrefabDesc megaPumper = LDB.models.Select(ProtoID.M大抽水机).prefabDesc;
             megaPumper.waterPoints = new[] { Vector3.zero, };
             megaPumper.portPoses = new[] { megaPumper.portPoses[0], };
-        }
-
-        internal static void ModifyUpgradeTech()
-        {
-            TechProto tech = LDB.techs.Select(ProtoID.T批量建造1);
-            tech.HashNeeded = 1200;
-
-            for (int i = ProtoID.T宇宙探索1; i <= ProtoID.T宇宙探索4; i++)
-            {
-                TechProto techProto = LDB.techs.Select(i);
-                techProto.Items = new[] { 6001, };
-                techProto.ItemPoints = new[] { techProto.ItemPoints[0], };
-                techProto.PreTechsImplicit = Array.Empty<int>();
-            }
         }
     }
 }

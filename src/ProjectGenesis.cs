@@ -2,14 +2,16 @@ using System;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using HarmonyLib;
+using UnityEngine;
 using BepInEx;
 using BepInEx.Configuration;
 using BepInEx.Logging;
 using CommonAPI;
 using CommonAPI.Systems;
 using CommonAPI.Systems.ModLocalization;
+using xiaoye97;
 using crecheng.DSPModSave;
-using HarmonyLib;
 using NebulaAPI;
 using NebulaAPI.Interfaces;
 using ProjectGenesis.Compatibility;
@@ -22,11 +24,10 @@ using ProjectGenesis.Patches.UI;
 using ProjectGenesis.Patches.UI.PlanetFocus;
 using ProjectGenesis.Patches.UI.QTools;
 using ProjectGenesis.Utils;
-using UnityEngine;
-using xiaoye97;
 using static ProjectGenesis.Utils.JsonDataUtils;
 using static ProjectGenesis.Utils.CopyModelUtils;
 using static ProjectGenesis.Utils.TranslateUtils;
+using static ProjectGenesis.Utils.ModifyUpgradeTech;
 using static ProjectGenesis.Patches.Logic.AddVein.AddVeinPatches;
 using static ProjectGenesis.Patches.Logic.AddVein.ModifyPlanetTheme;
 using static ProjectGenesis.Patches.UI.ChemicalRecipeFcolPatches;
@@ -216,7 +217,7 @@ namespace ProjectGenesis
             AddCopiedModelProto();
             AddEffectEmitterProto();
             ImportJson(TableID);
-            ModifyUpgradeTech();
+            ModifyUpgradeTeches();
         }
 
         private void PostAddDataAction()
