@@ -299,7 +299,7 @@ namespace ProjectGenesis.Patches.UI
                         labMatrixEffect.techMatUse[1] = true;
                         break;
 
-                    case ProtoID.I领域矩阵:
+                    case ProtoID.I张量矩阵:
                         labMatrixEffect.techMatUse[2] = true;
                         labMatrixEffect.techMatUse[3] = true;
                         break;
@@ -327,7 +327,7 @@ namespace ProjectGenesis.Patches.UI
             switch (itemId)
             {
                 case ProtoID.I通量矩阵: return 6007;
-                case ProtoID.I领域矩阵: return 6008;
+                case ProtoID.I张量矩阵: return 6008;
                 case ProtoID.I奇点矩阵: return 6009;
                 default: return itemId;
             }
@@ -341,7 +341,7 @@ namespace ProjectGenesis.Patches.UI
                     index1 |= 3;
                     break;
 
-                case 7: //ProtoID.I领域矩阵:
+                case 7: //ProtoID.I张量矩阵:
                     index1 |= 12;
                     break;
 
@@ -416,7 +416,7 @@ namespace ProjectGenesis.Patches.UI
                         AddCount(ProtoID.I能量矩阵, num);
                         break;
 
-                    case ProtoID.I领域矩阵:
+                    case ProtoID.I张量矩阵:
                         AddCount(ProtoID.I结构矩阵, num);
                         AddCount(ProtoID.I信息矩阵, num);
                         break;

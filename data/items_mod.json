@@ -2394,8 +2394,8 @@
   },
   {
     "ID": 6279,
-    "Name": "领域矩阵",
-    "Description": "I领域矩阵",
+    "Name": "张量矩阵",
+    "Description": "I张量矩阵",
     "IconPath": "Assets/texpack/虚空矩阵",
     "GridIndex": 1706,
     "StackSize": 200,

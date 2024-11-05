@@ -395,19 +395,19 @@
     "ENUS": "Unlocks additional techs and provides additional items at the beginning"
   },
   {
-    "Name": "未解锁虫洞航行",
-    "ZHCN": "你还没有解锁虫洞航行技术",
-    "ENUS": "You have not unlocked wormhole navigation technology"
+    "Name": "未解锁量子折跃",
+    "ZHCN": "你还没有解锁量子折跃技术",
+    "ENUS": "You have not unlocked Quantum Navigation technology"
   },
   {
-    "Name": "虫洞能量不足",
-    "ZHCN": "机甲能量不足，无法开启虫洞",
-    "ENUS": "The mecha does not have enough energy to open the wormhole"
+    "Name": "折跃能量不足",
+    "ZHCN": "机甲能量不足，无法折跃",
+    "ENUS": "The mecha does not have enough energy to Quantum Navigation"
   },
   {
     "Name": "负熵奇点不足",
-    "ZHCN": "机甲背包负熵奇点数量不足，无法开启虫洞",
-    "ENUS": "The mecha does not have enough Negentropy Singularity to open the wormhole"
+    "ZHCN": "机甲背包负熵奇点数量不足，无法折跃",
+    "ENUS": "The mecha does not have enough Negentropy Singularity to Quantum Navigation"
   },
   {
     "Name": "裂变能",

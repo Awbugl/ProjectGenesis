@@ -571,7 +571,7 @@
     "Name": "T高分子化工",
     "IconPath": "Icons/Tech/1121",
     "Desc": "T高分子化工描述",
-    "Conclusion": "高分子化工结果",
+    "Conclusion": "T高分子化工描述",
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
@@ -5444,7 +5444,7 @@
     "Name": "T先进化工",
     "IconPath": "Icons/Tech/1122",
     "Desc": "T先进化工描述",
-    "Conclusion": "先进化工结果",
+    "Conclusion": "T先进化工描述",
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [

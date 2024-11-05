@@ -231,7 +231,7 @@ namespace ProjectGenesis
             LabComponent.matrixIds = new[]
             {
                 ProtoID.I电磁矩阵, ProtoID.I能量矩阵, ProtoID.I结构矩阵, ProtoID.I信息矩阵,
-                ProtoID.I引力矩阵, ProtoID.I宇宙矩阵, ProtoID.I通量矩阵, ProtoID.I领域矩阵,
+                ProtoID.I引力矩阵, ProtoID.I宇宙矩阵, ProtoID.I通量矩阵, ProtoID.I张量矩阵,
                 ProtoID.I奇点矩阵,
             };
 

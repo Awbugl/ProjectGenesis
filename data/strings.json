@@ -231,8 +231,8 @@
   },
   {
     "Name": "制造类型调整介绍前字",
-    "ZHCN": "经过特化调整制造台的可以满足不同制造精度的需求，但除黑雾制造台外，不同制造台不能通用。",
-    "ENUS": "After specialization to adjust the assembler's can meet the needs of different precision, but except for the dark fog assembler, different assembler can not be used universally."
+    "ZHCN": "经过特化调整的制造台可以满足不同制造精度的需求，但除黑雾制造台外，不同制造台不能通用。",
+    "ENUS": "After specialization, the assemblers can meet the needs of different precision, but except for the dark fog assembler, different assembler can not be used universally."
   }, 
   {
     "Name": "钨矿脉",
@@ -376,8 +376,8 @@
   },
   {
     "Name": "I聚丙烯",
-    "ZHCN": "初级化工产品，广泛应用于各种行业。",
-    "ENUS": "Basic chemical material, widely used."
+    "ZHCN": "一种热塑性塑料，由丙烯单体聚合而成，具有良好的机械性能、化学稳定性和较低的合成成本。",
+    "ENUS": "A thermoplastic, polymerized from propylene monomers, with good mechanical properties, chemical stability and low synthetic costs."
   },
   {
     "Name": "增产剂",
@@ -406,18 +406,18 @@
   },
   {
     "Name": "I四氢双环戊二烯燃料棒",
-    "ZHCN": "将四氢双环戊二烯封装在燃料棒中，提高利用率和燃烧效率。",
-    "ENUS": "Encapsulation of JP-10 in fuel rods, to improve utilization and combustion efficiency."
+    "ZHCN": "专为高性能航天器设计的特殊燃料。高能量密度和卓越的稳定性，使其成为航天推进系统的理想选择。",
+    "ENUS": "Specialized fuel designed for high performance spacecraft. Highly efficient energy density and excellent stability make it ideal for aerospace propulsion systems."
   },
   {
     "Name": "煤油燃料棒",
-    "ZHCN": "煤油燃料棒",
-    "ENUS": "Kerosene Fuel Rod"
+    "ZHCN": "焦油燃料棒",
+    "ENUS": "Tar Fuel Rod"
   },
   {
     "Name": "I煤油燃料棒",
-    "ZHCN": "随着精炼技术的发展，将石油分馏后得到的高品质煤油封装在燃料棒中，提高利用率和燃烧效率。",
-    "ENUS": "With the development of refining technology, high-quality kerosene obtained from petroleum fractionation is encapsulated in fuel rods to improve utilization and combustion efficiency."
+    "ZHCN": "高度浓缩并经过特殊处理的焦油作为燃料电池的燃料，能够在各种设备中提供廉价而稳定的能量输出。",
+    "ENUS": "Highly concentrated and specially treated tar as fuel for fuel cells can provide inexpensive and stable energy output in a variety of devices."
   },
   {
     "Name": "同位素温差发电机",
@@ -433,16 +433,6 @@
     "Name": "放射性矿物",
     "ZHCN": "放射性矿物",
     "ENUS": "Radioactive ore"
-  },
-  {
-    "Name": "发光铀碎块",
-    "ZHCN": "发光铀碎块",
-    "ENUS": "Luminous Uranium Fragments"
-  },
-  {
-    "Name": "晶质钚碎块",
-    "ZHCN": "晶质钚碎块",
-    "ENUS": "Crystalline Plutonium Fragments"
   },
   {
     "Name": "铀矿",
@@ -482,7 +472,7 @@
   {
     "Name": "I矿物处理厂",
     "ZHCN": "用于将大块的矿石粉碎成较小的颗粒或粉末，可以提高矿石的利用率，并为后续的矿石冶炼过程提供更好的条件，从而提高产能。",
-    "ENUS": "Mineral processor, used to smash ores."
+    "ENUS": "It is used to pulverize large ores into smaller particles or powders, which can improve the utilization rate of the ores and provide better conditions for the subsequent ore smelting process, thus increasing the production capacity."
   },
   {
     "Name": "氦",
@@ -501,8 +491,8 @@
   },
   {
     "Name": "I钚燃料棒",
-    "ZHCN": "将钚燃料封装在燃料棒中，提高利用率和输出功率。",
-    "ENUS": "Encapsulation of plutonium fuel in fuel rods to improve utilization and output power."
+    "ZHCN": "利用经过精密加工和封装的含钚核燃料，能够在有限的空间内提供稳定且强大的能量输出。",
+    "ENUS": "Utilizing precision-machined and encapsulated high-purity plutonium, it is capable of providing a stable and powerful energy output in a limited space."
   },
   {
     "Name": "铀燃料棒",
@@ -511,8 +501,8 @@
   },
   {
     "Name": "I铀燃料棒",
-    "ZHCN": "将铀燃料封装在燃料棒中，提高利用率和输出功率。",
-    "ENUS": "Encapsulation of uranium fuel in fuel rods to improve utilization and output power."
+    "ZHCN": "利用经过精密加工和封装的含铀核燃料，能够在有限的空间内提供稳定且强大的能量输出。",
+    "ENUS": "Utilizing precision-machined and encapsulated high-purity uranium, it is capable of providing a stable and powerful energy output in a limited space."
   },
   {
     "Name": "MOX燃料棒",
@@ -521,13 +511,13 @@
   },
   {
     "Name": "IMOX燃料棒",
-    "ZHCN": "一种铀和钚的混合燃料，可以最大化利用铀和钚的能量。",
-    "ENUS": "A mixed fuel of uranium and plutonium, which can maximize the energy of them."
+    "ZHCN": "一种使用铀和钚的混合氧化物的燃料棒，能够更有效地利用核燃料，减少放射性废物产生。",
+    "ENUS": "A fuel rod that uses mixed oxides of uranium and plutonium, which enables more efficient use of nuclear fuel and reduces the generation of radioactive waste."
   },
   {
     "Name": "I氢燃料棒",
-    "ZHCN": "将气态氢冷凝为液态从而制成液氢燃料棒，获得更高的燃烧效率。使用液氢燃料棒作为机甲的燃料，可以明显提升机甲的燃烧室功率。",
-    "ENUS": "Hydrogen can be liquefied to make fuel rods for higher combustion efficiency. These higher energy Fuel Rods can greatly increase the mecha's fuel power generation."
+    "ZHCN": "将气态氢冷凝为液态，精密封装成液氢燃料棒，是一种高效且可再生的清洁能源。",
+    "ENUS": "Gaseous hydrogen is condensed to liquid form and precision encapsulated into liquid hydrogen fuel rods, an efficient and renewable source of clean energy."
   },
   {
     "Name": "I氘核燃料棒",
@@ -546,8 +536,8 @@
   },
   {
     "Name": "I氦三燃料棒",
-    "ZHCN": "将氦三燃料封装在燃料棒中，提高利用率和输出功率。",
-    "ENUS": "Encapsulation of helium-3 fuel in fuel rods to improve utilization and output power."
+    "ZHCN": "氦三聚变反应不会产生中子，因此是理想的新一代清洁能源。",
+    "ENUS": "Helium-3 fusion reactions do not produce neutrons and are therefore ideal for a new generation of clean energy."
   },
   {
     "Name": "氘氦混合聚变燃料棒",
@@ -556,8 +546,8 @@
   },
   {
     "Name": "I氘氦混合聚变燃料棒",
-    "ZHCN": "你掌握着恒星的能量。",
-    "ENUS": "You hold the energy of the stars."
+    "ZHCN": "氘氦混合燃料棒的能量密度极高，能够提供巨大的能量输出。",
+    "ENUS": "Deuterium-helium hybrid fuel rods have an extremely high energy density and are capable of delivering huge energy output."
   },
   {
     "Name": "石粉",
@@ -746,18 +736,18 @@
   },
   {
     "Name": "I通量矩阵",
-    "ZHCN": "整合了电磁矩阵与能量矩阵的复合矩阵。凭借其电磁矩阵部分，通量矩阵可以在特定区域内生成或调节电磁波；而能量矩阵则使其能够储存与分配各种形式的能量，是在能源管理和电磁效应控制方面极为有效的解决方案。",
-    "ENUS": "It is a composite matrix that integrates the electromagnetic matrix and the energy matrix. With its electromagnetic component, the Flux Matrix can generate or modulate electromagnetic waves within specific areas; the energy matrix allows it to store and distribute various forms of energy. It is an extremely effective solution for energy management and control of electromagnetic effects."
+    "ZHCN": "整合了电磁矩阵与能量矩阵的复合矩阵。可以生成或调节电磁波，储存与分配能量。",
+    "ENUS": "A composite matrix that integrates the electromagnetic matrix with the energy matrix. It can generates or modulates electromagnetic waves and stores and distributes energy."
   },
   {
-    "Name": "领域矩阵",
-    "ZHCN": "领域矩阵",
-    "ENUS": "Domain Matrix"
+    "Name": "张量矩阵",
+    "ZHCN": "张量矩阵",
+    "ENUS": "Tensor Matrix"
   },
   {
-    "Name": "I领域矩阵",
-    "ZHCN": "整合了结构矩阵与信息矩阵的复合矩阵。它利用结构矩阵改变物体的物理结构，实现物质的重构与强化；同时，信息矩阵使其能够处理和传输数据，确保信息的高效流动与管理。因其在物质形态和信息处理上的双重掌控能力，被称为“领域矩阵”。",
-    "ENUS": "It is a composite matrix that integrates the structural matrix and the information matrix. It uses the structural matrix to alter the physical structure of objects, achieving reconfiguration and reinforcement of materials; at the same time, the information matrix enables it to process and transmit data, ensuring efficient flow and management of information. Due to its dual control capabilities in material form and information processing, it is known as the \"Domain Matrix.\""
+    "Name": "I张量矩阵",
+    "ZHCN": "整合了结构矩阵与信息矩阵的复合矩阵。可以调整物体的微观结构，广播和修改信息。",
+    "ENUS": "A composite matrix that integrates the structural matrix and the information matrix. It can adjust the microstructure of objects, broadcast and modify information."
   },
   {
     "Name": "奇点矩阵",
@@ -766,8 +756,8 @@
   },
   {
     "Name": "I奇点矩阵",
-    "ZHCN": "集成电磁、能量、结构、信息与引力五种基础源代码的复合矩阵，也是一款能够在多个层面影响现实的多功能工具。当被反物质激活时，将协同作用转化为宇宙矩阵。",
-    "ENUS": "It is a composite matrix, and also a multifunctional tool capable of influencing reality on multiple levels. When charged with antimatter, the Singularity Matrix can transform into a Universe Matrix"
+    "ZHCN": "集成电磁、能量、结构、信息与引力五种基础源代码的复合矩阵。当被反物质激活时，将协同转化为宇宙矩阵。",
+    "ENUS": "A composite matrix, and also a multifunctional tool capable of influencing reality on multiple levels. When charged with antimatter, the Singularity Matrix can transform into a Universe Matrix"
   },
   {
     "Name": "I湮灭约束球",
@@ -781,7 +771,7 @@
   },
   {
     "Name": "I基础机械组件",
-    "ZHCN": "一个通用组件包，机械工程中常用的元件，用于构建各种机械装置和系统，用途广泛。",
+    "ZHCN": "一个通用组件包，包括机械工程中常用的元件，用于构建各种机械装置和系统，用途广泛。",
     "ENUS": "A general-purpose kit of components commonly used in mechanical engineering to build a wide variety of mechanical devices and systems for a wide range of uses."
   },
   {
@@ -791,8 +781,8 @@
   },
   {
     "Name": "I先进机械组件",
-    "ZHCN": "一个通用组件包，机械工程中常用的元件，用于构建各种机械装置和系统，用途广泛。",
-    "ENUS": "A general-purpose kit of components commonly used in mechanical engineering to build a wide variety of mechanical devices and systems for a wide range of uses."
+    "ZHCN": "一套精心设计的高级机械元件集合，适用于需要更高精度和性能的机械结构与自动化系统。",
+    "ENUS": "A well-designed collection of advanced mechanical components for mechanical structures and automation systems that require greater precision and performance."
   },
   {
     "Name": "尖端机械组件",
@@ -801,8 +791,8 @@
   },
   {
     "Name": "I尖端机械组件",
-    "ZHCN": "一个通用组件包，机械工程中常用的元件，用于构建各种机械装置和系统，用途广泛。",
-    "ENUS": "A general-purpose kit of components commonly used in mechanical engineering to build a wide variety of mechanical devices and systems for a wide range of uses."
+    "ZHCN": "代表了当前机械工程技术最高成就的一系列组件，每个组件都经过严格的质量测试，确保在极端条件下的稳定表现。拥有尖端机械组件，意味着掌握了开启未来科技大门的钥匙。",
+    "ENUS": "A range of components that represent the highest achievements in current mechanical engineering technology, each of which has been subjected to rigorous quality testing to ensure stable performance under extreme conditions. Owning cutting-edge mechanical components means holding the key to unlocking the future of technology."
   },
   {
     "Name": "超级机械组件",
@@ -811,8 +801,8 @@
   },
   {
     "Name": "I超级机械组件",
-    "ZHCN": "这是...什么？\n（To be announced）",
-    "ENUS": "What's this... (To be announced)"
+    "ZHCN": "尚未完成的蓝图，代表着机械工程领域的巅峰。",
+    "ENUS": "The unfinished blueprints represent the pinnacle of the mechanical engineering field."
   },
   {
     "Name": "创世之书",
@@ -851,7 +841,7 @@
   },
   {
     "Name": "I空燃料棒",
-    "ZHCN": "一个空的燃料棒，可以用来装载多种燃料。需要时可加装额外的氧化剂存储仓。",
+    "ZHCN": "一个空的燃料棒，可用于装载多种燃料，需要时可加装额外的氧化剂存储仓。",
     "ENUS": "An empty fuel rod, can be filled with various fuels. Extra oxidizer storage can be added when needed."
   },
   {
@@ -1411,8 +1401,8 @@
   },
   {
     "Name": "T高分子化工描述",
-    "ZHCN": "现在可以合成更多种类的化工原料。",
-    "ENUS": "A wider variety of chemicals can now be synthesized."
+    "ZHCN": "高分子化工的发展不仅促进了新材料的不断涌现，还允许我们制造有机晶体。",
+    "ENUS": "The development of polymer chemistry has not only facilitated the emergence of new materials, but has also allowed us to make organic crystals."
   },
   {
     "Name": "T强相互作用力材料",
@@ -1576,8 +1566,8 @@
   },
   {
     "Name": "T尖端机械组件描述",
-    "ZHCN": "通过大规模应用量子芯片和金属钨，太空发射有关设备的可靠性被大大提高。或许我们可以用这玩意造一台巨型粒子对撞机？",
-    "ENUS": "Through the large-scale application of quantum chips and metal tungsten, the reliability of space launch-related equipment is greatly improved, so perhaps we can use this stuff to build a giant particle collider?"
+    "ZHCN": "通过大规模应用量子芯片和金属钨，太空发射有关设备的可靠性被大大提高。",
+    "ENUS": "Through the large-scale application of quantum chips and metal tungsten, the reliability of space launch-related equipment is greatly improved."
   },
   {
     "Name": "T钨强化金属",
@@ -1586,8 +1576,8 @@
   },
   {
     "Name": "T钨强化金属描述",
-    "ZHCN": "使用纳米尺度的金属钨生产的钨基金属复合材料，具有极高的强度和韧性。或许可以用来生产对于材料强度需求较高的设备。",
-    "ENUS": "Tungsten-based metal composites produced using nanoscale tungsten metal have extremely high strength and toughness. Perhaps they can be used to produce devices that require high material strength."
+    "ZHCN": "使用纳米尺度的金属钨生产的钨基金属复合材料，具有极高的强度和韧性，可用来生产对于材料强度需求较高的设备。",
+    "ENUS": "Tungsten-based metal composites produced using nanoscale tungsten metal have extremely high strength and toughness, can be used to produce devices that require high material strength."
   },
   {
     "Name": "T虚拟技术革新",
@@ -1801,8 +1791,8 @@
   },
   {
     "Name": "T先进化工描述",
-    "ZHCN": "现在可以合成更多种类的化工原料。",
-    "ENUS": "A wider variety of chemicals can now be synthesized."
+    "ZHCN": "开发具有特殊性能的新型高分子材料，对生产线的扩张与升级有着重要意义。",
+    "ENUS": "The development of new polymer materials with special properties is of great significance for the expansion and upgrading of production lines."
   },
   {
     "Name": "T焦油精炼",
@@ -1811,8 +1801,8 @@
   },
   {
     "Name": "T焦油精炼描述",
-    "ZHCN": "精炼焦油可以得到数种重要的化工原料。",
-    "ENUS": "Refining tar can yield several important chemicals."
+    "ZHCN": "精炼焦油可以得到重要的化工原料。",
+    "ENUS": "Refining tar can yield important raw chemical materials."
   },
   {
     "Name": "T行星协调中心",
@@ -1907,7 +1897,7 @@
   {
     "Name": "I高精度装配线",
     "ZHCN": "一台用于生产精密仪器的机器，当然，不包括它自己。",
-    "ENUS": "Used to produce precision instruments, oh of course not have itself."
+    "ENUS": "Used to produce precision instruments, of course not have itself."
   },
   {
     "Name": "T标准制造单元描述",
@@ -1926,18 +1916,8 @@
   },
   {
     "Name": "钛矿冶炼结果",
-    "ZHCN": "你掌握了钛矿冶炼技术，现在可以将开采利用钛矿和钨矿了。",
+    "ZHCN": "你掌握了钛矿冶炼技术，现在可以开采利用钛矿和钨矿了。",
     "ENUS": "You have mastered the Titanium Ore Smelting Techniques, Titanium and Tungsten can now be mined and utilized."
-  },
-  {
-    "Name": "高分子化工结果",
-    "ZHCN": "你解锁了高分子化工技术，现在可以合成更多种类的化工原料。",
-    "ENUS": "You have unlocked Polymer Chemical Technology. A wider variety of chemicals can now be synthesized."
-  },
-  {
-    "Name": "先进化工结果",
-    "ZHCN": "你解锁了先进化工技术，现在可以合成更多种类的化工原料。",
-    "ENUS": "You have unlocked Advanced Chemical Technology. A wider variety of chemicals can now be synthesized."
   },
   {
     "Name": "卡西米尔晶体结果",
@@ -2522,7 +2502,7 @@
   {
     "Name": "湮灭弹箱描述",
     "ZHCN": "发现关键物品……\n发现缺失的数据库条目，申请连接主脑……\n隐藏数据库条目解锁……\n新的蓝图档案已录入……",
-    "ENUS": "Key items found ......\nMissing database entries found, request connection to mastermind ......\nHidden database entries unlocked ......\nNew blueprint files entered ......"
+    "ENUS": "Key items found ...\nMissing database entries found, request connection to mastermind ......\nHidden database entries unlocked ......\nNew blueprint files entered ......"
   },
   {
     "Name": "湮灭弹箱结果",

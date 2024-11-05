@@ -214,7 +214,7 @@ namespace ProjectGenesis.Patches.UI.DisplayText
 
                     break;
 
-                case ProtoID.T虫洞航行:
+                case ProtoID.T量子折跃:
                     __result = "量子折跃文字描述".TranslateFromJson();
 
                     break;
