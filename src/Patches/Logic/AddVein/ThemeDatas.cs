@@ -51,7 +51,7 @@ namespace ProjectGenesis.Patches.Logic.AddVein
             },
             {
                 10, // 冰原冻土
-                new ThemeData(new[] { ProtoID.I氮, ProtoID.I氧, }, new[] { 0.7f, 0.05f, }, new[] { 16, 17, }, new[]
+                new ThemeData(new[] { ProtoID.I氮, ProtoID.I二氧化碳, }, new[] { 0.7f, 0.3f, }, new[] { 16, 17, }, new[]
                 {
                     0.0f, 1.0f, 0.7f, 0.7f, //
                     0.0f, 0.6f, 0.3f, 0.8f, //

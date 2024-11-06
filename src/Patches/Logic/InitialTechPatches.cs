@@ -23,6 +23,7 @@ namespace ProjectGenesis.Patches.Logic
                                           BonusTechs = new List<int>
                                           {
                                               ProtoID.T电磁学,
+                                              ProtoID.T流体储存封装,
                                               ProtoID.T基础机械组件,
                                               ProtoID.T武器系统,
                                               ProtoID.T电磁驱动,

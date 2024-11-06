@@ -1,3 +1,19 @@
+- v3.0.4
+  + 调整了配方`齿轮`、`电磁矩阵`、`基础机械组件`、`煤炭干馏`的需求；`合成氨`、`硫酸`的速度
+  + 调整了矿物生成时的分布
+  + 调整了`冰原冻土`的大气环境
+  + 调整了部分科技的研究需求、前置科技和位置
+
+  + Adjusted requirements for recipes `Gears`, `Electromagnetic Matrix`, `Basic Mechanical Components`, `Coal Distillation`; speeds for recipes `Synthesizing Ammonia`, `Sulfuric Acid`
+  + Adjusted distribution of minerals as generated
+  + Adjusted atmospheric conditions for `Ice Tundra`
+  + Adjusted research requirements, pre-requisite technologies and locations for some technologies.
+
+
+<details>
+  <summary>点击展开日志 | Click to view all </summary>
+
+
 - v3.0.3
   + 调整了能量碎片的堆叠数量
   + 调整了部分文案
@@ -10,10 +26,6 @@
   + Adjusted some tutorials
   + Adjusted research requirements for some technologies
   + Adjusted heat value of chemical fuel rods
-
-
-<details>
-  <summary>点击展开日志 | Click to view all </summary>
 
 
 - v3.0.2

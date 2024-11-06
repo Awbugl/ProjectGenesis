@@ -106,7 +106,7 @@
     "GridIndex": 1301,
     "Time": 60,
     "Input": [
-      1101
+      6203
     ],
     "InCounts": [
       1
@@ -212,7 +212,7 @@
     "Input": [
       1202,
       1301,
-      6203
+      1201
     ],
     "InCounts": [
       1,
@@ -614,7 +614,7 @@
     "IconPath": "",
     "Type": 2,
     "GridIndex": 4704,
-    "Time": 60,
+    "Time": 120,
     "Input": [
       6277,
       1000,
@@ -5786,7 +5786,7 @@
     "GridIndex": 1401,
     "Time": 120,
     "Input": [
-      6203,
+      1101,
       1201,
       1301
     ],
@@ -5980,14 +5980,14 @@
       1120
     ],
     "InCounts": [
-      3,
-      9
+      1,
+      3
     ],
     "Output": [
       7002
     ],
     "OutCounts": [
-      3
+      1
     ],
     "Explicit": true,
     "Handcraft": false,
@@ -6000,12 +6000,12 @@
     "IconPath": "Assets/texpack/焦油循环",
     "Type": 3,
     "GridIndex": 4203,
-    "Time": 60,
+    "Time": 180,
     "Input": [
       1006
     ],
     "InCounts": [
-      4
+      6
     ],
     "Output": [
       1114
