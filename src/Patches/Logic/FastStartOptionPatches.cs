@@ -1,5 +1,4 @@
-﻿using System.Linq;
-using HarmonyLib;
+﻿using HarmonyLib;
 using ProjectGenesis.Utils;
 using UnityEngine;
 using UnityEngine.UI;
@@ -69,8 +68,7 @@ namespace ProjectGenesis.Patches.Logic
 
             foreach (TechProto proto in LDB.techs.dataArray)
             {
-                if (!GameMain.data.history.TechUnlocked(proto.ID) && proto.Items.All(e =>
-                    (e < ProtoID.I结构矩阵 || e == ProtoID.I通量矩阵) && e != ProtoID.I黑雾矩阵))
+                if (!GameMain.data.history.TechUnlocked(proto.ID) && NeedFastUnlock(proto.Items))
                     GameMain.data.history.UnlockTechUnlimited(proto.ID, true);
             }
 
@@ -123,6 +121,26 @@ namespace ProjectGenesis.Patches.Logic
             TakeItemFromPlayer(2106, 1);
 
             GameMain.data.mainPlayer.package.Sort();
+        }
+
+        private static bool NeedFastUnlock(int[] items)
+        {
+            foreach (int item in items)
+            {
+                switch (item)
+                {
+                    case ProtoID.I结构矩阵:
+                    case ProtoID.I信息矩阵:
+                    case ProtoID.I张量矩阵:
+                    case ProtoID.I引力矩阵:
+                    case ProtoID.I奇点矩阵:
+                    case ProtoID.I宇宙矩阵:
+                    case ProtoID.I黑雾矩阵:
+                        return false;
+                }
+            }
+
+            return true;
         }
 
         private static void AddItemToPackage(int itemId, int count) =>

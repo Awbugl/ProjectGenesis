@@ -1,3 +1,15 @@
+- v3.0.5
+  + 移除了物品`齿轮`，调整了相关配方
+  + 调整了部分科技的研究需求、前置科技
+
+  + Removed item `Gears` and adjusted related recipes
+  + Adjusted research requirements and pre-requisite technologies for some technologies.
+
+
+<details>
+  <summary>点击展开日志 | Click to view all </summary>
+
+
 - v3.0.4
   + 调整了配方`齿轮`、`电磁矩阵`、`基础机械组件`、`煤炭干馏`的需求；`合成氨`、`硫酸`的速度
   + 调整了矿物生成时的分布
@@ -8,10 +20,6 @@
   + Adjusted distribution of minerals as generated
   + Adjusted atmospheric conditions for `Ice Tundra`
   + Adjusted research requirements, pre-requisite technologies and locations for some technologies.
-
-
-<details>
-  <summary>点击展开日志 | Click to view all </summary>
 
 
 - v3.0.3
