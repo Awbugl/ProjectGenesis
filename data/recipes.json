@@ -99,26 +99,30 @@
   },
   {
     "ID": 5,
-    "Name": "齿轮",
+    "Name": "湮灭弹药箱",
     "Description": "",
     "IconPath": "",
-    "Type": 4,
-    "GridIndex": 1301,
-    "Time": 60,
+    "Type": 10,
+    "GridIndex": 5306,
+    "Time": 360,
     "Input": [
-      6203
+      7609,
+      7611,
+      5205
     ],
     "InCounts": [
+      1,
+      1,
       1
     ],
     "Output": [
-      1201
+      7616
     ],
     "OutCounts": [
       1
     ],
     "Explicit": false,
-    "Handcraft": true,
+    "Handcraft": false,
     "NonProductive": false
   },
   {
@@ -212,7 +216,7 @@
     "Input": [
       1202,
       1301,
-      1201
+      6203
     ],
     "InCounts": [
       1,
@@ -5787,7 +5791,7 @@
     "Time": 120,
     "Input": [
       1101,
-      1201,
+      6203,
       1301
     ],
     "InCounts": [
@@ -6549,34 +6553,6 @@
     ],
     "Output": [
       7615
-    ],
-    "OutCounts": [
-      1
-    ],
-    "Explicit": false,
-    "Handcraft": false,
-    "NonProductive": false
-  },
-  {
-    "ID": 790,
-    "Name": "湮灭弹药箱",
-    "Description": "",
-    "IconPath": "",
-    "Type": 10,
-    "GridIndex": 5306,
-    "Time": 360,
-    "Input": [
-      7609,
-      7611,
-      5205
-    ],
-    "InCounts": [
-      1,
-      1,
-      1
-    ],
-    "Output": [
-      7616
     ],
     "OutCounts": [
       1
