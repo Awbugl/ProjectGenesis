@@ -12,8 +12,8 @@ namespace ProjectGenesis.Patches.Logic
     {
         private static readonly Func<short, short> ModelIdMigrationAction = modelIndex =>
         {
-            // if (modelIndex > 500 && modelIndex < 520) modelIndex += 300;
-            // v3.0 don't need merge old modelIds
+            if (modelIndex > 500 && modelIndex < 520) modelIndex += 300;
+
             return modelIndex;
         };
 
@@ -82,7 +82,7 @@ namespace ProjectGenesis.Patches.Logic
 
             return matcher.InstructionEnumeration();
         }
-        
+
         [HarmonyPatch(typeof(ModelProto), nameof(ModelProto.InitMaxModelIndex))]
         [HarmonyPostfix]
         public static void InitMaxModelIndex()

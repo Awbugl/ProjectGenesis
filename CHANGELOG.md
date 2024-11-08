@@ -1,5 +1,5 @@
-- v3.0.5
-  + 移除了物品`齿轮`，调整了相关配方
+- v3.0.6
+  + 移除了黑雾掉落中的`齿轮`
   + 调整了部分科技的研究需求、前置科技
 
   + Removed item `Gears` and adjusted related recipes
@@ -8,6 +8,14 @@
 
 <details>
   <summary>点击展开日志 | Click to view all </summary>
+
+
+- v3.0.5
+  + 移除了物品`齿轮`，调整了相关配方
+  + 调整了部分科技的研究需求、前置科技
+
+  + Removed item `Gears` and adjusted related recipes
+  + Adjusted research requirements and pre-requisite technologies for some technologies.
 
 
 - v3.0.4

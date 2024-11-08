@@ -487,9 +487,7 @@
     "PreTechs": [
       1900
     ],
-    "PreTechsImplicit": [
-      1002
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6203
     ],
@@ -535,7 +533,9 @@
     "PreTechs": [
       1120
     ],
-    "PreTechsImplicit": [],
+    "PreTechsImplicit": [
+      1932
+    ],
     "Items": [
       6001
     ],
@@ -579,9 +579,11 @@
     ],
     "PreTechsImplicit": [],
     "Items": [
-      6278
+      6001,
+      6002
     ],
     "ItemPoints": [
+      20,
       20
     ],
     "HashNeeded": 72000,
@@ -1475,9 +1477,11 @@
       1122
     ],
     "Items": [
-      6278
+      6001,
+      6002
     ],
     "ItemPoints": [
+      20,
       20
     ],
     "HashNeeded": 144000,
@@ -2622,11 +2626,9 @@
     ],
     "PreTechsImplicit": [],
     "Items": [
-      6001,
-      6002
+      6278
     ],
     "ItemPoints": [
-      5,
       5
     ],
     "HashNeeded": 288000,
@@ -4297,7 +4299,8 @@
       1801
     ],
     "PreTechsImplicit": [
-      1101
+      1101,
+      1805
     ],
     "Items": [
       6001
@@ -4348,11 +4351,9 @@
       1502
     ],
     "Items": [
-      6001,
-      6002
+      6278
     ],
     "ItemPoints": [
-      10,
       10
     ],
     "HashNeeded": 144000,
@@ -5545,7 +5546,8 @@
       1941
     ],
     "PreTechsImplicit": [
-      1120
+      1120,
+      1002
     ],
     "Items": [
       6001

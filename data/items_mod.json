@@ -185,8 +185,8 @@
     "DropRate": 0.0,
     "EnemyDropLevel": 1,
     "EnemyDropRange": [
-      0.959,
-      0.005
+      0.1,
+      0.007
     ],
     "EnemyDropCount": 1.4,
     "EnemyDropMask": 2147483647,
