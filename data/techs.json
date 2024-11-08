@@ -171,7 +171,7 @@
     "MaxLevel": 0,
     "LevelCoef1": 0,
     "LevelCoef2": 0,
-    "IsLabTech": true,
+    "IsLabTech": false,
     "PreTechsMax": false,
     "AddItems": [
       1401
@@ -507,7 +507,7 @@
     "MaxLevel": 0,
     "LevelCoef1": 0,
     "LevelCoef2": 0,
-    "IsLabTech": true,
+    "IsLabTech": false,
     "PreTechsMax": false,
     "AddItems": [
       2106

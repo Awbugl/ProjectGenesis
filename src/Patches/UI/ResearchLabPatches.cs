@@ -116,13 +116,6 @@ namespace ProjectGenesis.Patches.UI
             }
         }
 
-        [HarmonyPatch(typeof(LabComponent), nameof(LabComponent.InternalUpdateAssemble))]
-        [HarmonyPostfix]
-        public static void LabComponent_InternalUpdateAssemble_Postfix(ref LabComponent __instance, ref uint __result)
-        {
-            if (__result > 6) __result = 6;
-        }
-
         [HarmonyPatch(typeof(UILabWindow), nameof(UILabWindow._OnUpdate))]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> UILabWindow_OnUpdate_Transpiler(IEnumerable<CodeInstruction> instructions)

@@ -114,12 +114,14 @@
         <Copy SourceFiles="$(TargetPath)" DestinationFiles="$(BepinExPath)plugins\$(DebugModDir)\$(TargetName).dll"/>
         <Copy SourceFiles="$(SolutionDir)assets\texpack" DestinationFiles="$(BepinExPath)plugins\$(DebugModDir)\texpack"/>
         <Copy SourceFiles="$(SolutionDir)assets\genesis-models" DestinationFiles="$(BepinExPath)plugins\$(DebugModDir)\genesis-models"/>
+        <Copy SourceFiles="$(SolutionDir)assets\genesis-models-lab" DestinationFiles="$(BepinExPath)plugins\$(DebugModDir)\genesis-models-lab"/>
         <Copy SourceFiles="$(TargetPath)" DestinationFiles="$(ReleasePath)plugins\$(TargetName).dll"/>
         <Copy SourceFiles="README.md" DestinationFiles="$(ReleasePath)README.md"/>
         <Copy SourceFiles="CHANGELOG.md" DestinationFiles="$(ReleasePath)CHANGELOG.md"/>
         <Copy SourceFiles="$(SolutionDir)assets\icon.png" DestinationFiles="$(ReleasePath)icon.png"/>
         <Copy SourceFiles="$(SolutionDir)assets\texpack" DestinationFiles="$(ReleasePath)plugins\texpack"/>
         <Copy SourceFiles="$(SolutionDir)assets\genesis-models" DestinationFiles="$(ReleasePath)plugins\genesis-models"/>
+        <Copy SourceFiles="$(SolutionDir)assets\genesis-models-lab" DestinationFiles="$(ReleasePath)plugins\genesis-models-lab"/>
         <Copy SourceFiles="$(SolutionDir)lib\Newtonsoft.Json.dll" DestinationFiles="$(ReleasePath)plugins\Newtonsoft.Json.dll"/>
     </Target>
 </Project>

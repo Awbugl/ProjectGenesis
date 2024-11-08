@@ -54,7 +54,7 @@ namespace ProjectGenesis
     {
         public const string MODGUID = "org.LoShin.GenesisBook";
         public const string MODNAME = "GenesisBook";
-        public const string VERSION = "3.0.6";
+        public const string VERSION = "3.0.7";
         public const string DEBUGVERSION = "";
 
         public static bool LoadCompleted;
@@ -122,6 +122,10 @@ namespace ProjectGenesis
             resources_models.LoadAssetBundle("genesis-models");
             ProtoRegistry.AddResource(resources_models);
 
+            var resources_lab = new ResourceData("org.LoShin.GenesisBook", "genesis-models-lab", ModPath);
+            resources_lab.LoadAssetBundle("genesis-models-lab");
+            ProtoRegistry.AddResource(resources_lab);
+
             Shader stoneVeinShader =
                 resources_models.bundle.LoadAsset<Shader>("Assets/genesis-models/shaders/PBR Standard Vein Stone COLOR.shader");
             SwapShaderPatches.AddSwapShaderMapping("VF Shaders/Forward/PBR Standard Vein Stone", stoneVeinShader);
@@ -129,6 +133,10 @@ namespace ProjectGenesis
             Shader metalVeinShader =
                 resources_models.bundle.LoadAsset<Shader>("Assets/genesis-models/shaders/PBR Standard Vein Metal COLOR.shader");
             SwapShaderPatches.AddSwapShaderMapping("VF Shaders/Forward/PBR Standard Vein Metal", metalVeinShader);
+
+            Shader labToggleShader =
+                resources_lab.bundle.LoadAsset<Shader>("Assets/genesis-models/shaders/PBR Standard Vertex Toggle Lab REPLACE.shader");
+            SwapShaderPatches.AddSwapShaderMapping("VF Shaders/Forward/PBR Standard Vertex Toggle Lab", labToggleShader);
 
         #endregion ResourceData
 
