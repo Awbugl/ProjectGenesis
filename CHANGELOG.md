@@ -2,8 +2,8 @@
   + 移除了黑雾掉落中的`齿轮`
   + 调整了部分科技的研究需求、前置科技
 
-  + Removed item `Gears` and adjusted related recipes
-  + Adjusted research requirements and pre-requisite technologies for some technologies.
+  + Removed the `gear` from the dark fog drop list
+  + Adjusted research requirements and pre-requisite technologies for some technologies
 
 
 <details>
@@ -14,7 +14,7 @@
   + 移除了物品`齿轮`，调整了相关配方
   + 调整了部分科技的研究需求、前置科技
 
-  + Removed item `Gears` and adjusted related recipes
+  + Removed item `gear` and adjusted related recipes
   + Adjusted research requirements and pre-requisite technologies for some technologies.
 
 
