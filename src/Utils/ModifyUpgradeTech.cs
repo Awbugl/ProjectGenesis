@@ -23,6 +23,14 @@ namespace ProjectGenesis.Utils
             TechProto tech = LDB.techs.Select(ProtoID.T批量建造1);
             tech.HashNeeded = 1200;
 
+            tech = LDB.techs.Select(ProtoID.T能量回路4);
+            tech.Items = Items4;
+            tech.ItemPoints = Enumerable.Repeat(12, 4).ToArray();
+
+            tech = LDB.techs.Select(ProtoID.T驱动引擎4);
+            tech.Items = Items4;
+            tech.ItemPoints = Enumerable.Repeat(10, 4).ToArray();
+
             tech = LDB.techs.Select(ProtoID.T驱动引擎5);
             tech.Items = Items5;
             tech.ItemPoints = Enumerable.Repeat(10, 5).ToArray();

@@ -57,7 +57,6 @@ namespace ProjectGenesis.Patches.UI
 
         [HarmonyPatch(typeof(UILootFilter), nameof(UILootFilter._OnUpdate))]
         [HarmonyPatch(typeof(UILootFilter), nameof(UILootFilter.RepositionGridText))]
-        [HarmonyPatch(typeof(UILootFilter), nameof(UILootFilter.RefreshIcons))]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
         {
@@ -75,11 +74,29 @@ namespace ProjectGenesis.Patches.UI
 
             return matcher.InstructionEnumeration();
         }
+        
+        [HarmonyPatch(typeof(UILootFilter), nameof(UILootFilter.RefreshIcons))]
+        [HarmonyTranspiler]
+        public static IEnumerable<CodeInstruction> RefreshIcons_Transpiler(IEnumerable<CodeInstruction> instructions)
+        {
+            var matcher = new CodeMatcher(instructions);
+
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldc_I4_S, (sbyte)14));
+            matcher.SetOperandAndAdvance((sbyte)17);
+            
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldc_I4_S, (sbyte)14));
+            matcher.SetOperandAndAdvance((sbyte)17); 
+            
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldc_I4_S, (sbyte)14));
+            matcher.SetOperandAndAdvance((sbyte)17);
+            
+            return matcher.InstructionEnumeration();
+        }
 
         [HarmonyPatch(typeof(UILootFilter), nameof(UILootFilter.TestMouseIndex))]
         [HarmonyTranspiler]
         [HarmonyPriority(Priority.Last)]
-        public static IEnumerable<CodeInstruction> RefreshIcons_Transpiler(IEnumerable<CodeInstruction> instructions)
+        public static IEnumerable<CodeInstruction> TestMouseIndex_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
             var matcher = new CodeMatcher(instructions);
 
@@ -183,7 +200,6 @@ namespace ProjectGenesis.Patches.UI
         public static IEnumerable<CodeInstruction> UILootFilter_SetMaterialProps_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
             var matcher = new CodeMatcher(instructions);
-
             matcher.MatchForward(false, new CodeMatch(OpCodes.Ldc_I4_8));
             matcher.SetOpcodeAndAdvance(OpCodes.Ldc_I4_7);
 

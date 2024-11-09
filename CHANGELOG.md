@@ -1,13 +1,22 @@
+- v3.0.8
+  + 调整了部分科技的研究需求、前置科技
+  + 复合矩阵不再可被增产
+  + 修复了物品拾取UI的错位问题
+
+  + Adjusted research requirements and pre-requisite technologies for some technologies
+  + Composite Matrix production can no longer be increased by proliferator
+  + Fixed misalignment of item pickup UI
+
+<details>
+  <summary>点击展开日志 | Click to view all </summary>
+
+
 - v3.0.7
   + 调整了制造复合矩阵时的工作颜色（感谢karki）
   + 修复了研究非矩阵科技时的可能出现的报错问题
 
   + Adjusted working colors when making composite matrices (thanks karki)
   + Fixed a bug that could occur when researching non-matrix technologies
-
-
-<details>
-  <summary>点击展开日志 | Click to view all </summary>
 
 
 - v3.0.6
