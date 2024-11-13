@@ -27,6 +27,7 @@ namespace ProjectGenesis.Compatibility
     [BepInDependency(FastTravelEnabler.GUID, BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency(GigaStationsUpdated.GUID, BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency(LazyOutposting.GUID, BepInDependency.DependencyFlags.SoftDependency)]
+    [BepInDependency(WeaponPlus.GUID, BepInDependency.DependencyFlags.SoftDependency)]
     public class InstallationCheckPlugin : BaseUnityPlugin
     {
         public const string MODGUID = "org.LoShin.GenesisBook.InstallationCheck";
@@ -65,6 +66,7 @@ namespace ProjectGenesis.Compatibility
             FastTravelEnabler.Awake();
             GigaStationsUpdated.Awake();
             LazyOutposting.Awake();
+            WeaponPlus.Awake();
 
             try { GalacticScale.Awake(); }
             catch (FileNotFoundException)

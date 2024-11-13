@@ -398,6 +398,8 @@ namespace ProjectGenesis.Utils
             public int? ejectorColdFrame { get; set; } = null;
             public int? siloChargeFrame { get; set; } = null;
             public int? siloColdFrame { get; set; } = null;
+            public int? labAssembleSpeed { get; set; } = null;
+            public float? labResearchSpeed { get; set; } = null;
             public float? powerConnectDistance { get; set; } = null;
             public float? powerCoverRadius { get; set; } = null;
             public long? genEnergyPerTick { get; set; } = null;
@@ -465,6 +467,8 @@ namespace ProjectGenesis.Utils
                     ejectorColdFrame = i.ejectorColdFrame,
                     siloChargeFrame = i.siloChargeFrame,
                     siloColdFrame = i.siloColdFrame,
+                    labAssembleSpeed = i.labAssembleSpeed,
+                    labResearchSpeed = i.labResearchSpeed,
                     powerConnectDistance = i.powerConnectDistance,
                     powerCoverRadius = i.powerCoverRadius,
                     genEnergyPerTick = i.genEnergyPerTick,
@@ -546,6 +550,10 @@ namespace ProjectGenesis.Utils
                 if (siloChargeFrame != null) desc.siloChargeFrame = siloChargeFrame.Value;
 
                 if (siloColdFrame != null) desc.siloColdFrame = siloColdFrame.Value;
+
+                if (labAssembleSpeed != null) desc.labAssembleSpeed = labAssembleSpeed.Value;
+
+                if (labResearchSpeed != null) desc.labResearchSpeed = labResearchSpeed.Value;
 
                 if (powerConnectDistance != null) desc.powerConnectDistance = powerConnectDistance.Value;
 

@@ -1,3 +1,30 @@
+- v3.0.9
+  + 调整开局赠送`无线输电塔`的科技为`高效电浆控制`
+  + 提高了两种研究站的制造速度和上传速度
+  + 提高了`批量建造`科技解锁的蓝图建筑数量
+  + 提高了快速开局模式的可使用物品数量
+  + 提高了`物质重组工厂`的制造成本和时间
+  + 添加了量化计算器游戏内提示
+  + 添加了`WeaponPlus`mod兼容补丁
+  + 修复了`湮灭弹箱`配方开局解锁的问题
+  + 量化计算器的默认建筑不再使用`物质重组工厂`
+
+  + Adjusted the technology of the `Wireless Transmission Tower` given at the start to `Efficient Plasma Control`.
+  + Increased the manufacturing and uploading speeds of two types of research labs.
+  + Increased the number of blueprint buildings unlocked by the `Batch Build` technology.
+  + Increased the number of items that can be used in Quick Start mode.
+  + Increased the manufacturing cost and time of the Recombination Factory.
+  + Added in-game hints for Calculator
+  + Added `WeaponPlus` mod compatibility patch.
+  + Fixed an issue with the unlocking of the `Obliteration Crates` recipe at the beginning of the game.
+  + Fixed an issue with the unlocking of the recipe for the Annihilation Crates. 
+  + The default building for the Calculator no longer uses the Recombination Factory.
+
+
+<details>
+  <summary>点击展开日志 | Click to view all </summary>
+
+
 - v3.0.8
   + 调整了部分科技的研究需求、前置科技
   + 复合矩阵不再可被增产
@@ -6,9 +33,6 @@
   + Adjusted research requirements and pre-requisite technologies for some technologies
   + Composite Matrix production can no longer be increased by proliferator
   + Fixed misalignment of item pickup UI
-
-<details>
-  <summary>点击展开日志 | Click to view all </summary>
 
 
 - v3.0.7

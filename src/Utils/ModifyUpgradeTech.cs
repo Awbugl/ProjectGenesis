@@ -22,6 +22,13 @@ namespace ProjectGenesis.Utils
         {
             TechProto tech = LDB.techs.Select(ProtoID.T批量建造1);
             tech.HashNeeded = 1200;
+            tech.UnlockValues = new[] { 450.0, };
+
+            tech = LDB.techs.Select(ProtoID.T批量建造2);
+            tech.UnlockValues = new[] { 900.0, };
+
+            tech = LDB.techs.Select(ProtoID.T批量建造3);
+            tech.UnlockValues = new[] { 1800.0, };
 
             tech = LDB.techs.Select(ProtoID.T能量回路4);
             tech.Items = Items4;

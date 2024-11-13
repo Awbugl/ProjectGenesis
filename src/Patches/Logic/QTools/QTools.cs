@@ -54,15 +54,7 @@ namespace ProjectGenesis.Patches.Logic.QTools
 
                     case Utils.ERecipeType.所有制造:
                     {
-                        dict.TryAddOrInsert(Utils.ERecipeType.Chemical, proto);
-                        dict.TryAddOrInsert(Utils.ERecipeType.Refine, proto);
-                        dict.TryAddOrInsert(Utils.ERecipeType.Assemble, proto);
-                        dict.TryAddOrInsert(Utils.ERecipeType.Particle, proto);
-                        dict.TryAddOrInsert(Utils.ERecipeType.标准制造, proto);
-                        dict.TryAddOrInsert(Utils.ERecipeType.高精度加工, proto);
-                        dict.TryAddOrInsert(Utils.ERecipeType.Research, proto);
-                        dict.TryAddOrInsert(Utils.ERecipeType.高分子化工, proto);
-
+                        // process later manually
                         continue;
                     }
 
@@ -82,6 +74,17 @@ namespace ProjectGenesis.Patches.Logic.QTools
                     }
                 }
             }
+
+            ItemProto itemProto = LDB.items.Select(ProtoID.I物质重组工厂);
+
+            dict.TryAddOrInsert(Utils.ERecipeType.Chemical, itemProto);
+            dict.TryAddOrInsert(Utils.ERecipeType.Refine, itemProto);
+            dict.TryAddOrInsert(Utils.ERecipeType.Assemble, itemProto);
+            dict.TryAddOrInsert(Utils.ERecipeType.Particle, itemProto);
+            dict.TryAddOrInsert(Utils.ERecipeType.标准制造, itemProto);
+            dict.TryAddOrInsert(Utils.ERecipeType.高精度加工, itemProto);
+            dict.TryAddOrInsert(Utils.ERecipeType.Research, itemProto);
+            dict.TryAddOrInsert(Utils.ERecipeType.高分子化工, itemProto);
 
             return dict;
         }

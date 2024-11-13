@@ -71,11 +71,9 @@
     "PreTechsMax": false,
     "AddItems": [
       2201,
-      2202,
       6508
     ],
     "AddItemCounts": [
-      3,
       3,
       1
     ],
@@ -174,10 +172,12 @@
     "IsLabTech": false,
     "PreTechsMax": false,
     "AddItems": [
-      1401
+      1401,
+      2202
     ],
     "AddItemCounts": [
-      10
+      10,
+      3
     ],
     "PropertyOverrideItems": [],
     "PropertyItemCounts": []

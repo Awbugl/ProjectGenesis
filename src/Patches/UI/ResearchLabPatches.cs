@@ -129,6 +129,14 @@ namespace ProjectGenesis.Patches.UI
                 new CodeInstruction(OpCodes.Call,
                     AccessTools.Method(typeof(ResearchLabPatches), nameof(UILabWindow_OnUpdate_Patch_Method))));
 
+            matcher.MatchForward(false,
+                new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(GameHistoryData), nameof(GameHistoryData.techSpeed))));
+
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Stloc_S));
+
+            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0),
+                new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(ResearchLabPatches), nameof(UISetResearchSpeed))));
+
             return matcher.InstructionEnumeration();
         }
 
@@ -148,6 +156,44 @@ namespace ProjectGenesis.Patches.UI
                 AccessTools.Method(typeof(ResearchLabPatches), nameof(ChangeMatrixIds))));
 
             return matcher.InstructionEnumeration();
+        }
+
+        [HarmonyPatch(typeof(FactorySystem), nameof(FactorySystem.GameTickLabResearchMode))]
+        [HarmonyTranspiler]
+        public static IEnumerable<CodeInstruction> FactorySystem_GameTickLabResearchMode_SetResearchSpeed(
+            IEnumerable<CodeInstruction> instructions)
+        {
+            var matcher = new CodeMatcher(instructions);
+
+            matcher.MatchForward(false,
+                new CodeMatch(new CodeInstruction(OpCodes.Call,
+                    AccessTools.Method(typeof(LabComponent), nameof(LabComponent.InternalUpdateResearch)))));
+
+            var techSpeed = matcher.Advance(-6).Operand;
+
+            var local = matcher.Advance(-2).Operand;
+
+            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0), new CodeInstruction(OpCodes.Ldloc_S, local),
+                new CodeInstruction(OpCodes.Ldloc_S, techSpeed),
+                new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(ResearchLabPatches), nameof(SetResearchSpeed))),
+                new CodeInstruction(OpCodes.Stloc_S, techSpeed));
+
+            return matcher.InstructionEnumeration();
+        }
+
+        public static float UISetResearchSpeed(float techSpeed, UILabWindow window)
+        {
+            LabComponent lab = window.factorySystem.labPool[window.labId];
+            short modelIndex = window.factory.entityPool[lab.entityId].modelIndex;
+            var labResearchSpeed = PlanetFactory.PrefabDescByModelIndex[modelIndex].labResearchSpeed;
+            return techSpeed * labResearchSpeed;
+        }
+
+        public static float SetResearchSpeed(FactorySystem system, ref LabComponent component, float techSpeed)
+        {
+            short modelIndex = system.factory.entityPool[component.entityId].modelIndex;
+            var labResearchSpeed = PlanetFactory.PrefabDescByModelIndex[modelIndex].labResearchSpeed;
+            return techSpeed * labResearchSpeed;
         }
 
         [HarmonyPatch(typeof(LabMatrixEffect), nameof(LabMatrixEffect.Update))]

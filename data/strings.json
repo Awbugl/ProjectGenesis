@@ -233,7 +233,17 @@
     "Name": "制造类型调整介绍前字",
     "ZHCN": "经过特化调整的制造台可以满足不同制造精度的需求，但除黑雾制造台外，不同制造台不能通用。",
     "ENUS": "After specialization, the assemblers can meet the needs of different precision, but except for the dark fog assembler, different assembler can not be used universally."
-  }, 
+  },
+  {
+    "Name": "量化计算器介绍标题",
+    "ZHCN": "量化计算器",
+    "ENUS": "Calculator"
+  },
+  {
+    "Name": "量化计算器介绍前字",
+    "ZHCN": "创世之书MOD自带量化计算器，默认为 <color=\"#FD965ECC\">~</color> 键，可在量化计算器的设置UI中修改。",
+    "ENUS": "GenesisBook mod comes with a calculator, which defaults to the <color=\"#FD965ECC\">~</color> key, which can be changed in the settings in calculator ui."
+  },
   {
     "Name": "钨矿脉",
     "ZHCN": "钨矿脉",

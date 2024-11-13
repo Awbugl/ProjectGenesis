@@ -156,6 +156,10 @@
     "assemblerSpeed": 40000
   },
   {
+    "ModelID": 70,
+    "labAssembleSpeed": 40000
+  },
+  {
     "ModelID": 71,
     "powerConnectDistance": 90.5,
     "powerCoverRadius": 10.5,
@@ -232,6 +236,11 @@
   {
     "ModelID": 434,
     "AmmoBlastRadius1": 15
+  },
+  {
+    "ModelID": 455,
+    "labAssembleSpeed": 120000,
+    "labResearchSpeed": 3
   },
   {
     "ModelID": 456,

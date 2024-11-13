@@ -4146,7 +4146,7 @@
     "IconPath": "",
     "Type": 10,
     "GridIndex": 2313,
-    "Time": 240,
+    "Time": 1800,
     "Input": [
       6503,
       5202,
@@ -4176,7 +4176,7 @@
     "IconPath": "",
     "Type": 10,
     "GridIndex": 2404,
-    "Time": 240,
+    "Time": 1800,
     "Input": [
       6503,
       5203,
@@ -4185,9 +4185,9 @@
     ],
     "InCounts": [
       8,
-      10,
       30,
-      2
+      30,
+      6
     ],
     "Output": [
       2318
