@@ -14,6 +14,8 @@ namespace ProjectGenesis.Patches.Logic
     {
         private const int GlobalPowerCoverRadius = 1000;
 
+        private static readonly Vector3 Pos = new Vector3(0.0f, 0.0f, 0.01f);
+
         private static readonly ConcurrentDictionary<int, List<int>> NodeIds = new ConcurrentDictionary<int, List<int>>();
 
         [HarmonyPatch(typeof(PlanetATField), nameof(PlanetATField.GameTick))]
@@ -41,7 +43,7 @@ namespace ProjectGenesis.Patches.Logic
 
                 // ReSharper disable once ForeachCanBePartlyConvertedToQueryUsingAnotherGetEnumerator
                 foreach (int nodeId in list)
-                    if (factoryPowerSystem.nodePool[nodeId].powerPoint == Vector3.zero)
+                    if (factoryPowerSystem.nodePool[nodeId].powerPoint == Pos)
                         factoryPowerSystem.RemoveNodeComponent(nodeId);
 
                 NodeIds.Remove(planetId, out _);
@@ -74,7 +76,7 @@ namespace ProjectGenesis.Patches.Logic
             powerSystem.nodePool[nodeId].entityId = 0;
             powerSystem.nodePool[nodeId].connectDistance = conn;
             powerSystem.nodePool[nodeId].coverRadius = cover;
-            powerSystem.nodePool[nodeId].powerPoint = Vector3.zero;
+            powerSystem.nodePool[nodeId].powerPoint = Pos;
             powerSystem.nodePool[nodeId].isCharger = false;
             powerSystem.nodePool[nodeId].workEnergyPerTick = 0;
             powerSystem.nodePool[nodeId].idleEnergyPerTick = 0;
@@ -117,6 +119,13 @@ namespace ProjectGenesis.Patches.Logic
         [HarmonyPrefix]
         public static bool PowerSystem_line_arragement_for_node_Prefix(PowerSystem __instance, Node node) =>
             __instance.planet.factory.powerSystem.nodePool[node.id].coverRadius < GlobalPowerCoverRadius;
+
+        [HarmonyPatch(typeof(PowerNodeComponent), nameof(PowerNodeComponent.Import))]
+        [HarmonyPostfix]
+        public static void PowerNodeComponent_Import_Postfix(PowerNodeComponent __instance)
+        {
+            if (__instance.powerPoint == Vector3.zero) __instance.powerPoint = Pos;
+        }
 
         internal static void Export(BinaryWriter w)
         {

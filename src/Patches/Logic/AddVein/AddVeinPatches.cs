@@ -151,8 +151,11 @@ namespace ProjectGenesis.Patches.Logic.AddVein
             IEnumerable<CodeInstruction> instructions)
         {
             var matcher = new CodeMatcher(instructions);
-            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldc_R4, 0.75f));
-            matcher.SetOperandAndAdvance(0.4f);
+
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldc_I4_7));
+
+            matcher.SetInstructionAndAdvance(new CodeInstruction(OpCodes.Nop)).SetInstructionAndAdvance(new CodeInstruction(OpCodes.Nop))
+               .SetOpcodeAndAdvance(OpCodes.Br_S);
 
             return matcher.InstructionEnumeration();
         }
@@ -208,19 +211,23 @@ namespace ProjectGenesis.Patches.Logic.AddVein
             matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0),
                 new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(AddVeinPatches), nameof(InitBirthVeinVectors))));
 
-            matcher.Advance(1).SetOpcodeAndAdvance(OpCodes.Ldc_I4_3);
+            matcher.Advance(1).SetOpcodeAndAdvance(OpCodes.Ldc_I4_5);
 
             matcher.MatchForward(true, new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldc_I4_2));
 
-            matcher.SetOpcodeAndAdvance(OpCodes.Ldc_I4_3);
+            matcher.SetOpcodeAndAdvance(OpCodes.Ldc_I4_0);
 
             return matcher.InstructionEnumeration();
         }
 
         public static void InitBirthVeinVectors(PlanetAlgorithm algorithm)
         {
-            algorithm.veinVectorTypes[2] = (EVeinType)15;
+            algorithm.veinVectorTypes[2] = EVeinType.Aluminum;
             algorithm.veinVectors[2] = algorithm.planet.birthResourcePoint2;
+            algorithm.veinVectorTypes[3] = EVeinType.Coal;
+            algorithm.veinVectors[3] = algorithm.planet.birthResourcePoint3;
+            algorithm.veinVectorTypes[4] = EVeinType.Stone;
+            algorithm.veinVectors[4] = algorithm.planet.birthResourcePoint4;
         }
 
         internal static Vector2 Rotate(Vector2 v, float angle)
@@ -236,92 +243,85 @@ namespace ProjectGenesis.Patches.Logic.AddVein
         {
             var dotNet35Random = new DotNet35Random(_birthSeed);
             Pose pose = __instance.PredictPose(85.0);
-            Vector3 vector3_1 = Maths.QInvRotateLF(pose.rotation, __instance.star.uPosition - (VectorLF3)pose.position * 40000.0);
-            vector3_1.Normalize();
-            Vector3 normalized1 = Vector3.Cross(vector3_1, Vector3.up).normalized;
-            Vector3 normalized2 = Vector3.Cross(normalized1, vector3_1).normalized;
+            Vector3 vector3 = Maths.QInvRotateLF(pose.rotation, __instance.star.uPosition - (VectorLF3)pose.position * 40000.0);
+            vector3.Normalize();
+            Vector3 x_direction = Vector3.Cross(vector3, Vector3.up).normalized;
+            Vector3 y_direction = Vector3.Cross(x_direction, vector3).normalized;
             var num1 = 0;
-            const int num2 = 256;
+            const int num2 = 512;
 
             for (; num1 < num2; ++num1)
             {
                 float num3 = (float)(dotNet35Random.NextDouble() * 2.0 - 1.0) * 0.5f;
                 float num4 = (float)(dotNet35Random.NextDouble() * 2.0 - 1.0) * 0.5f;
-                Vector3 vector3_2 = vector3_1 + num3 * normalized1 + num4 * normalized2;
-                vector3_2.Normalize();
-                __instance.birthPoint = vector3_2 * (float)(__instance.realRadius + 0.20000000298023224 + 1.4500000476837158);
-                var vector3_3 = Vector3.Cross(vector3_2, Vector3.up);
-                normalized1 = vector3_3.normalized;
-                vector3_3 = Vector3.Cross(normalized1, vector3_2);
-                normalized2 = vector3_3.normalized;
-                var flag = false;
+                Vector3 random = vector3 + num3 * x_direction + num4 * y_direction;
+                random.Normalize();
+                __instance.birthPoint = random * (float)(__instance.realRadius + 0.20000000298023224 + 1.4500000476837158);
+                var tmpVector3 = Vector3.Cross(random, Vector3.up);
+                x_direction = tmpVector3.normalized;
+                tmpVector3 = Vector3.Cross(x_direction, random);
+                y_direction = tmpVector3.normalized;
 
                 for (var index = 0; index < 10; ++index)
                 {
-                    Vector2 vector2_1 = new Vector2((float)(dotNet35Random.NextDouble() * 2.0 - 1.0),
+                    Vector2 rotate_0 = new Vector2((float)(dotNet35Random.NextDouble() * 2.0 - 1.0),
                         (float)(dotNet35Random.NextDouble() * 2.0 - 1.0)).normalized * 0.1f;
-                    Vector2 vector2_2 = Rotate(vector2_1, 120);
-                    float num5 = (float)(dotNet35Random.NextDouble() * 2.0 - 1.0) * 0.006f;
-                    float num6 = (float)(dotNet35Random.NextDouble() * 2.0 - 1.0) * 0.006f;
-                    vector2_2.x += num5;
-                    vector2_2.y += num6;
-                    Vector2 vector2_3 = Rotate(vector2_1, 240);
-                    float num51 = (float)(dotNet35Random.NextDouble() * 2.0 - 1.0) * 0.006f;
-                    float num61 = (float)(dotNet35Random.NextDouble() * 2.0 - 1.0) * 0.006f;
-                    vector2_3.x += num51;
-                    vector2_3.y += num61;
-                    vector3_3 = vector3_2 + vector2_1.x * normalized1 + vector2_1.y * normalized2;
-                    Vector3 normalized3 = vector3_3.normalized;
-                    vector3_3 = vector3_2 + vector2_2.x * normalized1 + vector2_2.y * normalized2;
-                    Vector3 normalized4 = vector3_3.normalized;
-                    vector3_3 = vector3_2 + vector2_3.x * normalized1 + vector2_3.y * normalized2;
-                    Vector3 normalized5 = vector3_3.normalized;
-                    __instance.birthResourcePoint0 = normalized3.normalized;
-                    __instance.birthResourcePoint1 = normalized4.normalized;
-                    __instance.birthResourcePoint2 = normalized5.normalized;
+                    Vector2 rotate_1 = Rotate(rotate_0, 120);
+                    Modify(dotNet35Random, ref rotate_1);
+                    Vector2 rotate_2 = Rotate(rotate_0, 240);
+                    Modify(dotNet35Random, ref rotate_2);
+                    Vector2 rotate_3 = Rotate(rotate_0, 60);
+                    Modify(dotNet35Random, ref rotate_3);
 
-                    float realRadius = __instance.realRadius;
+                    tmpVector3 = random + rotate_0.x * x_direction + rotate_0.y * y_direction;
+                    __instance.birthResourcePoint0 = tmpVector3.normalized;
 
-                    if (rawData.QueryHeight(vector3_2) > realRadius && rawData.QueryHeight(normalized3) > realRadius
-                                                                    && rawData.QueryHeight(normalized4) > realRadius
-                                                                    && rawData.QueryHeight(normalized5) > realRadius)
-                    {
-                        Vector3 vpos1 = normalized3 + normalized1 * 0.03f;
-                        Vector3 vpos2 = normalized3 - normalized1 * 0.03f;
-                        Vector3 vpos3 = normalized3 + normalized2 * 0.03f;
-                        Vector3 vpos4 = normalized3 - normalized2 * 0.03f;
-                        Vector3 vpos5 = normalized4 + normalized1 * 0.03f;
-                        Vector3 vpos6 = normalized4 - normalized1 * 0.03f;
-                        Vector3 vpos7 = normalized4 + normalized2 * 0.03f;
-                        Vector3 vpos8 = normalized4 - normalized2 * 0.03f;
-                        Vector3 vpos9 = normalized5 + normalized1 * 0.03f;
-                        Vector3 vpos10 = normalized5 - normalized1 * 0.03f;
-                        Vector3 vpos11 = normalized5 + normalized2 * 0.03f;
-                        Vector3 vpos12 = normalized5 - normalized2 * 0.03f;
+                    tmpVector3 = random + rotate_1.x * x_direction + rotate_1.y * y_direction;
+                    __instance.birthResourcePoint1 = tmpVector3.normalized;
 
-                        if (rawData.QueryHeight(vpos1) > realRadius && rawData.QueryHeight(vpos2) > realRadius
-                                                                    && rawData.QueryHeight(vpos3) > realRadius
-                                                                    && rawData.QueryHeight(vpos4) > realRadius
-                                                                    && rawData.QueryHeight(vpos5) > realRadius
-                                                                    && rawData.QueryHeight(vpos6) > realRadius
-                                                                    && rawData.QueryHeight(vpos7) > realRadius
-                                                                    && rawData.QueryHeight(vpos8) > realRadius
-                                                                    && rawData.QueryHeight(vpos9) > realRadius
-                                                                    && rawData.QueryHeight(vpos10) > realRadius
-                                                                    && rawData.QueryHeight(vpos11) > realRadius
-                                                                    && rawData.QueryHeight(vpos12) > realRadius)
-                        {
-                            flag = true;
+                    tmpVector3 = random + rotate_2.x * x_direction + rotate_2.y * y_direction;
+                    __instance.birthResourcePoint2 = tmpVector3.normalized;
 
-                            break;
-                        }
-                    }
+                    tmpVector3 = random + rotate_0.x * -2 * x_direction + rotate_0.y * -2 * y_direction;
+                    __instance.birthResourcePoint3 = tmpVector3.normalized;
+
+                    tmpVector3 = random + rotate_3.x * 2 * x_direction + rotate_3.y * 2 * y_direction;
+                    __instance.birthResourcePoint4 = tmpVector3.normalized;
+
+                    if (QueryHeightsNear(rawData, x_direction, y_direction, __instance.realRadius, random, __instance.birthResourcePoint0,
+                        __instance.birthResourcePoint1, __instance.birthResourcePoint2, __instance.birthResourcePoint3,
+                        __instance.birthResourcePoint4))
+                        return;
                 }
+            }
+        }
 
-                if (flag) break;
+        private static void Modify(DotNet35Random dotNet35Random, ref Vector2 vector)
+        {
+            vector.x += (float)(dotNet35Random.NextDouble() * 2.0 - 1.0) * 0.006f;
+            vector.y += (float)(dotNet35Random.NextDouble() * 2.0 - 1.0) * 0.006f;
+        }
+
+        private static bool QueryHeights(PlanetRawData rawData, float radius, params Vector3[] points)
+        {
+            return points.All(point => rawData.QueryHeight(point) > radius);
+        }
+
+        private static bool QueryHeightsNear(PlanetRawData rawData, Vector3 x_vector, Vector3 y_vector, float radius,
+            params Vector3[] points)
+        {
+            // ReSharper disable once LoopCanBeConvertedToQuery
+            foreach (Vector3 point in points)
+            {
+                Vector3 pos1 = point + x_vector * 0.03f;
+                Vector3 pos2 = point - x_vector * 0.03f;
+                Vector3 pos3 = point + y_vector * 0.03f;
+                Vector3 pos4 = point - y_vector * 0.03f;
+
+                if (!QueryHeights(rawData, radius, point, pos1, pos2, pos3, pos4)) return false;
             }
 
-            if (num1 < num2) return;
+            return true;
         }
     }
 }

@@ -1,3 +1,14 @@
+- v3.0.10
+  + 调整了星球矿脉分布，增加了出生点的矿物类型和数量（仅对新存档生效）
+  + 调整了部分物品的位置
+
+  + Adjusted the distribution of planet veins, increasing the type and number of minerals at birth points (only for new save)
+  + Adjusted the grid position of some items
+
+
+<details>
+  <summary>点击展开日志 | Click to view all </summary>
+
 - v3.0.9
   + 调整开局赠送`无线输电塔`的科技为`高效电浆控制`
   + 提高了两种研究站的制造速度和上传速度
@@ -17,13 +28,8 @@
   + Added in-game hints for Calculator
   + Added `WeaponPlus` mod compatibility patch.
   + Fixed an issue with the unlocking of the `Obliteration Crates` recipe at the beginning of the game.
-  + Fixed an issue with the unlocking of the recipe for the Annihilation Crates. 
+  + Fixed an issue with the unlocking of the recipe for the Annihilation Crates.
   + The default building for the Calculator no longer uses the Recombination Factory.
-
-
-<details>
-  <summary>点击展开日志 | Click to view all </summary>
-
 
 - v3.0.8
   + 调整了部分科技的研究需求、前置科技

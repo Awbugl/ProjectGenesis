@@ -118,6 +118,24 @@ namespace ProjectGenesis.Patches.Logic.QTools
                 return;
             }
 
+            if (Byproducts.TryGetValue(node.Item, out NodeData t))
+            {
+                if (t.ItemCount >= node.ItemCount)
+                {
+                    t.ItemCount -= node.ItemCount;
+
+                    if (t.ItemCount < 1e-6) Byproducts.Remove(t.Item);
+
+                    return;
+                }
+
+                node.ItemCount -= t.ItemCount;
+
+                Byproducts.Remove(t.Item);
+
+                if (node.ItemCount < 1e-6) return;
+            }
+
             MergeData(node);
 
             RecipeProto recipe = node.Options.Recipe;

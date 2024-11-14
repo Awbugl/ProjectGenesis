@@ -511,7 +511,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 9,
-    "GridIndex": 1211,
+    "GridIndex": 1210,
     "Time": 120,
     "Input": [
       1103,
@@ -537,7 +537,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 9,
-    "GridIndex": 1212,
+    "GridIndex": 1211,
     "Time": 240,
     "Input": [
       1405,
@@ -2797,7 +2797,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 5101,
+    "GridIndex": 1209,
     "Time": 120,
     "Input": [
       6203,
@@ -3965,7 +3965,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 5102,
+    "GridIndex": 5101,
     "Time": 120,
     "Input": [
       1101,
@@ -3995,7 +3995,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 9,
-    "GridIndex": 5103,
+    "GridIndex": 5102,
     "Time": 240,
     "Input": [
       5101,
@@ -4025,7 +4025,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 9,
-    "GridIndex": 5104,
+    "GridIndex": 5103,
     "Time": 240,
     "Input": [
       5101,
@@ -4055,7 +4055,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 10,
-    "GridIndex": 5105,
+    "GridIndex": 5104,
     "Time": 360,
     "Input": [
       1107,
@@ -4085,7 +4085,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 10,
-    "GridIndex": 5106,
+    "GridIndex": 5105,
     "Time": 720,
     "Input": [
       7707,
@@ -4973,7 +4973,7 @@
     "Description": "R物质回收",
     "IconPath": "Assets/texpack/沙土回收_新",
     "Type": 14,
-    "GridIndex": 1210,
+    "GridIndex": 1208,
     "Time": 6000,
     "Input": [],
     "InCounts": [],
