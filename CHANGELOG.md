@@ -1,3 +1,13 @@
+- v3.0.11
+  + 修复了v3.0.9的上传速度调整导致的研究站工作不正常的问题
+
+  + Fixed issue that research lab work improperly due to upload speed adjustments in v3.0.9
+
+
+<details>
+  <summary>点击展开日志 | Click to view all </summary>
+
+
 - v3.0.10
   + 调整了星球矿脉分布，增加了出生点的矿物类型和数量（仅对新存档生效）
   + 调整了部分物品的位置
@@ -5,9 +15,6 @@
   + Adjusted the distribution of planet veins, increasing the type and number of minerals at birth points (only for new save)
   + Adjusted the grid position of some items
 
-
-<details>
-  <summary>点击展开日志 | Click to view all </summary>
 
 - v3.0.9
   + 调整开局赠送`无线输电塔`的科技为`高效电浆控制`
