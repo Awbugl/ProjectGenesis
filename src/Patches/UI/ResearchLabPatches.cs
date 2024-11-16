@@ -249,9 +249,15 @@ namespace ProjectGenesis.Patches.UI
             matcher.MatchForward(false, new CodeMatch(OpCodes.Ldarg_0),
                 new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(LabComponent), nameof(LabComponent.matrixPoints))));
 
-            matcher.CreateLabel(out Label label);
+            CodeMatcher matcher2 = matcher.Clone();
 
-            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0), new CodeInstruction(OpCodes.Ldloc_0),
+            matcher2.MatchForward(false, new CodeMatch(OpCodes.Ldarg_0),
+                new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(LabComponent), nameof(LabComponent.matrixPoints))),
+                new CodeMatch(OpCodes.Ldc_I4_5));
+
+            var label = matcher2.Advance(5).Operand;
+
+            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0),
                 new CodeInstruction(OpCodes.Call,
                     AccessTools.Method(typeof(ResearchLabPatches), nameof(LabComponent_InternalUpdateResearch_Patch_Method))),
                 new CodeInstruction(OpCodes.Dup), new CodeInstruction(OpCodes.Stloc_0), new CodeInstruction(OpCodes.Brtrue, label),
@@ -307,24 +313,27 @@ namespace ProjectGenesis.Patches.UI
             return false;
         }
 
-        public static int LabComponent_InternalUpdateResearch_Patch_Method(ref LabComponent labComponent, int num1)
+        public static int LabComponent_InternalUpdateResearch_Patch_Method(ref LabComponent labComponent)
         {
-            for (var i = 6; i < LabComponent.matrixIds.Length; i++)
+            int speed = (int)(GameMain.history.techSpeed + 2.0);
+
+            for (var i = 0; i < LabComponent.matrixIds.Length; i++)
             {
                 if (labComponent.matrixPoints[i] <= 0) continue;
 
                 int point = labComponent.matrixServed[i] / labComponent.matrixPoints[i];
 
-                if (point >= num1) continue;
+                if (point >= speed) continue;
 
-                num1 = point;
-                if (num1 != 0) continue;
+                speed = point;
+
+                if (speed != 0) continue;
 
                 labComponent.replicating = false;
                 return 0;
             }
 
-            return num1;
+            return speed;
         }
 
         public static void LabMatrixEffect_Patch_Method(LabMatrixEffect labMatrixEffect, TechProto techProto)
