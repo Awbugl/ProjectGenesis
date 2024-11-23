@@ -740,22 +740,22 @@
     "ENUS": "Gravity Matrix"
   },
   {
-    "Name": "通量矩阵",
-    "ZHCN": "通量矩阵",
-    "ENUS": "Flux Matrix"
-  },
-  {
-    "Name": "I通量矩阵",
-    "ZHCN": "整合了电磁矩阵与能量矩阵的复合矩阵。可以生成或调节电磁波，储存与分配能量。",
-    "ENUS": "A composite matrix that integrates the electromagnetic matrix with the energy matrix. It can generates or modulates electromagnetic waves and stores and distributes energy."
-  },
-  {
-    "Name": "张量矩阵",
+    "Name": "玻色矩阵",
     "ZHCN": "玻色矩阵",
     "ENUS": "Boson Matrix"
   },
   {
-    "Name": "I张量矩阵",
+    "Name": "I玻色矩阵",
+    "ZHCN": "整合了电磁矩阵与能量矩阵的复合矩阵。可以生成或调节电磁波，储存与分配能量。",
+    "ENUS": "A composite matrix that integrates the electromagnetic matrix with the energy matrix. It can generates or modulates electromagnetic waves and stores and distributes energy."
+  },
+  {
+    "Name": "耗散矩阵",
+    "ZHCN": "耗散矩阵",
+    "ENUS": "Dissipative Matrix"
+  },
+  {
+    "Name": "I耗散矩阵",
     "ZHCN": "整合了结构矩阵与信息矩阵的复合矩阵。可以调整物体的微观结构，广播和修改信息。",
     "ENUS": "A composite matrix that integrates the structural matrix and the information matrix. It can adjust the microstructure of objects, broadcast and modify information."
   },

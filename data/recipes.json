@@ -5054,7 +5054,7 @@
     "IconPath": "Assets/texpack/氯苯循环",
     "Type": 2,
     "GridIndex": 4303,
-    "Time": 120,
+    "Time": 240,
     "Input": [
       7009
     ],
@@ -5439,7 +5439,7 @@
   },
   {
     "ID": 539,
-    "Name": "通量矩阵",
+    "Name": "玻色矩阵",
     "Description": "",
     "IconPath": "",
     "Type": 15,
@@ -5467,7 +5467,7 @@
   },
   {
     "ID": 540,
-    "Name": "张量矩阵",
+    "Name": "耗散矩阵",
     "Description": "",
     "IconPath": "",
     "Type": 15,
@@ -6021,7 +6021,7 @@
       1006
     ],
     "InCounts": [
-      6
+      4
     ],
     "Output": [
       1114

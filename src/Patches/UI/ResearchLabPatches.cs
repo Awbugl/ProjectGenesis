@@ -342,12 +342,12 @@ namespace ProjectGenesis.Patches
             {
                 switch (item)
                 {
-                    case ProtoID.I通量矩阵:
+                    case ProtoID.I玻色矩阵:
                         labMatrixEffect.techMatUse[0] = true;
                         labMatrixEffect.techMatUse[1] = true;
                         break;
 
-                    case ProtoID.I张量矩阵:
+                    case ProtoID.I耗散矩阵:
                         labMatrixEffect.techMatUse[2] = true;
                         labMatrixEffect.techMatUse[3] = true;
                         break;
@@ -374,8 +374,8 @@ namespace ProjectGenesis.Patches
         {
             switch (itemId)
             {
-                case ProtoID.I通量矩阵: return 6007;
-                case ProtoID.I张量矩阵: return 6008;
+                case ProtoID.I玻色矩阵: return 6007;
+                case ProtoID.I耗散矩阵: return 6008;
                 case ProtoID.I奇点矩阵: return 6009;
                 default: return itemId;
             }
@@ -385,11 +385,11 @@ namespace ProjectGenesis.Patches
         {
             switch (num2)
             {
-                case 6: //ProtoID.I通量矩阵:
+                case 6: //ProtoID.I玻色矩阵:
                     index1 |= 3;
                     break;
 
-                case 7: //ProtoID.I张量矩阵:
+                case 7: //ProtoID.I耗散矩阵:
                     index1 |= 12;
                     break;
 
@@ -461,12 +461,12 @@ namespace ProjectGenesis.Patches
 
                 switch (item)
                 {
-                    case ProtoID.I通量矩阵:
+                    case ProtoID.I玻色矩阵:
                         AddCount(ProtoID.I电磁矩阵, num);
                         AddCount(ProtoID.I能量矩阵, num);
                         break;
 
-                    case ProtoID.I张量矩阵:
+                    case ProtoID.I耗散矩阵:
                         AddCount(ProtoID.I结构矩阵, num);
                         AddCount(ProtoID.I信息矩阵, num);
                         break;
