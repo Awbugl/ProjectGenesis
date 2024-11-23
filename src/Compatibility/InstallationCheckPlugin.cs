@@ -3,7 +3,7 @@ using System.Reflection;
 using BepInEx;
 using BepInEx.Logging;
 using HarmonyLib;
-using ProjectGenesis.Patches.UI;
+using ProjectGenesis.Patches;
 using ProjectGenesis.Utils;
 using UnityEngine;
 

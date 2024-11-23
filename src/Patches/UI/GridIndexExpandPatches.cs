@@ -11,7 +11,7 @@ using UnityEngine;
 // ReSharper disable once CommentTypo
 // ReSharper disable PossibleInvalidCastExceptionInForeachLoop
 
-namespace ProjectGenesis.Patches.UI
+namespace ProjectGenesis.Patches
 {
     /// <summary>
     ///     special thanks for https://github.com/appuns/DSPMoreRecipes/blob/main/DSPMoreRecipes.cs

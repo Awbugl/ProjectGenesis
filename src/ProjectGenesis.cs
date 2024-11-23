@@ -15,22 +15,15 @@ using crecheng.DSPModSave;
 using NebulaAPI;
 using NebulaAPI.Interfaces;
 using ProjectGenesis.Compatibility;
-using ProjectGenesis.Patches.Logic;
-using ProjectGenesis.Patches.Logic.AddVein;
-using ProjectGenesis.Patches.Logic.MegaAssembler;
-using ProjectGenesis.Patches.Logic.PlanetFocus;
-using ProjectGenesis.Patches.Logic.QuantumStorage;
-using ProjectGenesis.Patches.UI;
-using ProjectGenesis.Patches.UI.PlanetFocus;
-using ProjectGenesis.Patches.UI.QTools;
+using ProjectGenesis.Patches;
 using ProjectGenesis.Utils;
 using static ProjectGenesis.Utils.JsonDataUtils;
 using static ProjectGenesis.Utils.CopyModelUtils;
 using static ProjectGenesis.Utils.TranslateUtils;
 using static ProjectGenesis.Utils.ModifyUpgradeTech;
-using static ProjectGenesis.Patches.Logic.AddVein.AddVeinPatches;
-using static ProjectGenesis.Patches.Logic.AddVein.ModifyPlanetTheme;
-using static ProjectGenesis.Patches.UI.ChemicalRecipeFcolPatches;
+using static ProjectGenesis.Patches.AddVeinPatches;
+using static ProjectGenesis.Patches.ModifyPlanetTheme;
+using static ProjectGenesis.Patches.ChemicalRecipeFcolPatches;
 
 // ReSharper disable UnusedVariable
 // ReSharper disable UnusedMember.Local
@@ -95,8 +88,7 @@ namespace ProjectGenesis
             HideTechModeEntry = Config.Bind("config", "HideTechMode", true,
                 "Enable Tech Exploration Mode, which will hide locked techs in tech tree.\n启用科技探索模式，启用后将隐藏未解锁的科技");
 
-            ShowMessageBoxEntry = Config.Bind("config", "ShowMessageBox", true,
-                "Show message when GenesisBook is loaded.\n首次加载时的提示信息");
+            ShowMessageBoxEntry = Config.Bind("config", "ShowMessageBox", true, "Show message when GenesisBook is loaded.\n首次加载时的提示信息");
 
             ProductOverflowEntry = Config.Bind("config", "ProductOverflow", 0,
                 "Changing the condition for stopping production of some recipes from single product pile up to all product pile up.\n将部分配方停止生产的条件由单产物堆积改为所有产物均堆积");
@@ -157,7 +149,7 @@ namespace ProjectGenesis
 
             foreach (Type type in executingAssembly.GetTypes())
             {
-                if (type.Namespace?.StartsWith("ProjectGenesis.Patches", StringComparison.Ordinal) == true) { Harmony.PatchAll(type); }
+                if (type.Namespace?.StartsWith("ProjectGenesis.Patches", StringComparison.Ordinal) == true) Harmony.PatchAll(type);
             }
 
             TableID = new int[]

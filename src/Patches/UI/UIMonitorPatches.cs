@@ -4,7 +4,7 @@ using HarmonyLib;
 
 // ReSharper disable InconsistentNaming
 
-namespace ProjectGenesis.Patches.UI
+namespace ProjectGenesis.Patches
 {
     public static class UIMonitorPatches
     {

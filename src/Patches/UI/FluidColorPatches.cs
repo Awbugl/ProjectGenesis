@@ -3,7 +3,7 @@ using ProjectGenesis.Utils;
 
 // ReSharper disable InconsistentNaming
 
-namespace ProjectGenesis.Patches.UI
+namespace ProjectGenesis.Patches
 {
     internal static class FluidColorPatches
     {

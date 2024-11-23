@@ -6,11 +6,10 @@ using System.Reflection.Emit;
 using BepInEx.Bootstrap;
 using GalacticScale;
 using HarmonyLib;
-using ProjectGenesis.Patches.Logic;
-using ProjectGenesis.Patches.Logic.AddVein;
+using ProjectGenesis.Patches;
 using ProjectGenesis.Utils;
 using UnityEngine;
-using static ProjectGenesis.Patches.Logic.AddVein.ModifyPlanetTheme;
+using static ProjectGenesis.Patches.ModifyPlanetTheme;
 using PluginInfo = BepInEx.PluginInfo;
 
 // ReSharper disable InconsistentNaming

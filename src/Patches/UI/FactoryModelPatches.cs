@@ -6,7 +6,7 @@ using UnityEngine;
 // ReSharper disable LoopCanBeConvertedToQuery
 // ReSharper disable Unity.PreferAddressByIdToGraphicsParams
 
-namespace ProjectGenesis.Patches.UI
+namespace ProjectGenesis.Patches
 {
     public static class FactoryModelPatches
     {

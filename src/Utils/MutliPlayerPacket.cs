@@ -4,10 +4,7 @@ using NebulaAPI;
 using NebulaAPI.Interfaces;
 using NebulaAPI.Networking;
 using NebulaAPI.Packets;
-using ProjectGenesis.Patches.Logic;
-using ProjectGenesis.Patches.Logic.MegaAssembler;
-using ProjectGenesis.Patches.Logic.PlanetFocus;
-using ProjectGenesis.Patches.Logic.QuantumStorage;
+using ProjectGenesis.Patches;
 
 // ReSharper disable MemberCanBeInternal
 // ReSharper disable MemberCanBePrivate.Global

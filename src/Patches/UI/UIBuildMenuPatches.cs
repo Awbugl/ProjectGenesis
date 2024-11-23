@@ -2,7 +2,6 @@
 using System.Reflection;
 using System.Reflection.Emit;
 using HarmonyLib;
-using ProjectGenesis.Patches.UI.Utils;
 using ProjectGenesis.Utils;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,7 +9,7 @@ using UnityEngine.UI;
 // ReSharper disable InconsistentNaming
 // ReSharper disable Unity.UnknownResource
 
-namespace ProjectGenesis.Patches.UI
+namespace ProjectGenesis.Patches
 {
     public static class UIBuildMenuPatches
     {
