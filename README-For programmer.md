@@ -15,7 +15,7 @@ Construct Real Universe. Then leave a GenesisBook.
 If you have any problems, please contact us in [our Discord server](https://discord.gg/QwMEeaRZZR),
 or open a issue via [github](https://github.com/Awbugl/ProjectGenesis).
 
-## 如何开始 | How to start
+## 如何开始
 
 1. 在开始之前，请务必确认您对以下内容以及它们的用法都有一定了解：
 
@@ -32,6 +32,7 @@ or open a issue via [github](https://github.com/Awbugl/ProjectGenesis).
 5. 通过R2启动一次游戏（需要启用创世之书），将会自动生成`BepInEx\DumpedAssemblies\DSPGAME\Assembly-CSharp.dll`。
 6. 重新打开本项目，会自动在项目内生成`lib\Assembly-CSharp-publicized.dll`。至此，准备工作已经完成。现在项目不应有任何报错。
 
+## How to start
 
 1. Before you begin, make sure you have some understanding of the following and how they are used:
 
