@@ -2361,7 +2361,7 @@
     "HeatValue": 0,
     "ReactorInc": 0.0,
     "IsFluid": false,
-    "Productive": true,
+    "Productive": false,
     "SubID": 0,
     "MiningFrom": "",
     "ProduceFrom": "",
@@ -2409,7 +2409,7 @@
     "HeatValue": 0,
     "ReactorInc": 0.0,
     "IsFluid": false,
-    "Productive": true,
+    "Productive": false,
     "SubID": 0,
     "MiningFrom": "",
     "ProduceFrom": "",
@@ -5583,13 +5583,13 @@
     "BombType": 0,
     "CraftType": 0,
     "DropRate": 0.0,
-    "EnemyDropLevel": 8,
+    "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0.999,
-      0.001
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0.1,
-    "EnemyDropMask": 2147483647,
+    "EnemyDropCount": 0.0,
+    "EnemyDropMask": 0,
     "EnemyDropMaskRatio": 0.0
   },
   {

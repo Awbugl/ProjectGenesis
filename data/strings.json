@@ -371,7 +371,7 @@
   },
   {
     "Name": "I火力发电厂",
-    "ZHCN": "使用燃料（例如煤）和氧气作为原料，通过电化学反应把燃料的化学能转换成电能（因此，在无氧环境中只能使用燃料棒），输出的能量与所消耗燃料发热量有一定的转化率。",
+    "ZHCN": "使用燃料（例如煤）和氧气作为原料，通过电化学反应把燃料的化学能转换成电能（因此，在无氧环境中只能使用燃料棒）。",
     "ENUS": "A facility that converting the chemical energy of a fuel into electrical energy through an electrochemical reaction using a fuel (e.g., coal) and oxygen as raw materials. (In an oxygen-free environment, only fuel rods can be used)."
   },
   {
@@ -751,8 +751,8 @@
   },
   {
     "Name": "张量矩阵",
-    "ZHCN": "张量矩阵",
-    "ENUS": "Tensor Matrix"
+    "ZHCN": "玻色矩阵",
+    "ENUS": "Boson Matrix"
   },
   {
     "Name": "I张量矩阵",
@@ -1141,8 +1141,8 @@
   },
   {
     "Name": "R羰基合成",
-    "ZHCN": "二氧化碳和氢在催化剂的作用下可高效合成丙烯，是碳中和进程的重要一步。",
-    "ENUS": "Carbon dioxide and hydrogen can efficiently synthesize propylene in the presence of a catalyst, an important step in the carbon-neutral process."
+    "ZHCN": "二氧化碳和水在催化剂的作用下可高效合成丙烯，是碳中和进程的重要一步。\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作。</color>",
+    "ENUS": "Carbon dioxide and water can efficiently synthesize propylene in the presence of a catalyst, an important step in the carbon-neutral process.\n<color=\"#FD965ECC\">Will not stop working until all products are accumulated.</color>"
   },
   {
     "Name": "合成氨",
@@ -1996,8 +1996,8 @@
   },
   {
     "Name": "I放射性矿物",
-    "ZHCN": "超重元素由类质同象作用部分取代了成岩矿物的金属离子，形成的具有放射性的岩石，可从中分离出多种具有工业价值的超重元素化合物。",
-    "ENUS": "Superheavy elements are radioactive rocks formed by the partial replacement of metal ions in rock-forming minerals by homogeneous isomorphism, from which a variety of superheavy element compounds of industrial value can be isolated."
+    "ZHCN": "超重元素由类质同象作用部分取代了成岩矿物的金属离子，形成的具有放射性的岩石，可从中分离出多种具有工业价值的超重元素化合物。但些许迹象也暗示着部分矿脉有受核废料污染而产生核素迁移的可能性。",
+    "ENUS": "Superheavy elements are radioactive rocks formed by the partial replacement of metal ions in rock-forming minerals by homogeneous isomorphism, from which a variety of superheavy element compounds of industrial value can be isolated. However, there are some indications that some of the veins have the potential for nuclide migration due to nuclear waste contamination."
   },
   {
     "Name": "I铀矿",
@@ -2088,6 +2088,16 @@
     "Name": "I氦三",
     "ZHCN": "稳定的氦同位素，它与重氢发生的聚变反应即是恒星的秘密。",
     "ENUS": "A stable isotope of helium, whose fusion reaction with heavy hydrogen is the secret of the star."
+  },
+  {
+    "Name": "氦核转化",
+    "ZHCN": "氦核转化",
+    "ENUS": "Helium Conversion"
+  },
+  {
+    "Name": "R氦核转化",
+    "ZHCN": "使用高能质子撞击氦核，生成氦三和中子。",
+    "ENUS": "Using high-energy protons to collide with helium-4, produces helium-3."
   },
   {
     "Name": "I反物质约束单元",

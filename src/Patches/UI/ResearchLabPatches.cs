@@ -429,11 +429,13 @@ namespace ProjectGenesis.Patches.UI
         {
             for (var i = 0; i < LabComponent.matrixIds.Length; i++)
             {
-                if (labComponent.matrixServed[i] >= 3600 && labPool[labComponent.nextLabId].matrixServed[i] < 36000)
+                ref LabComponent next = ref labPool[labComponent.nextLabId];
+
+                if (labComponent.matrixServed[i] >= 3600 && next.matrixServed[i] < 36000)
                 {
                     int num = labComponent.split_inc(ref labComponent.matrixServed[i], ref labComponent.matrixIncServed[i], 3600);
-                    labPool[labComponent.nextLabId].matrixIncServed[i] += num;
-                    labPool[labComponent.nextLabId].matrixServed[i] += 3600;
+                    next.matrixIncServed[i] += num;
+                    next.matrixServed[i] += 3600;
                 }
             }
         }

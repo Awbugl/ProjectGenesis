@@ -23,6 +23,9 @@ namespace ProjectGenesis.Patches.Logic
         [HarmonyPatch(typeof(AbnormalityLogic), nameof(AbnormalityLogic.InitDeterminators))]
         [HarmonyPatch(typeof(MilkyWayWebClient), nameof(MilkyWayWebClient.SendUploadLoginRequest))]
         [HarmonyPatch(typeof(MilkyWayWebClient), nameof(MilkyWayWebClient.SendUploadRecordRequest))]
+        [HarmonyPatch(typeof(AchievementSystem), nameof(AchievementSystem.SyncAchievementsToPlatform))]
+        [HarmonyPatch(typeof(AchievementSystem), nameof(AchievementSystem.UnlockPlatformAchievement))]
+        [HarmonyPatch(typeof(AchievementSystem), nameof(AchievementSystem.SetPlatformAchievementProgress))]
         [HarmonyPatch(typeof(STEAMX), nameof(STEAMX.UploadScoreToLeaderboard))]
         [HarmonyPrefix]
         [HarmonyPriority(Priority.VeryHigh)]
@@ -35,5 +38,8 @@ namespace ProjectGenesis.Patches.Logic
         {
             if (__instance.determinators == null) __instance.determinators = new Dictionary<int, AbnormalityDeterminator>();
         }
+        
+        
+        
     }
 }

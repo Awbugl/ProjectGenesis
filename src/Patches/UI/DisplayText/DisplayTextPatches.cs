@@ -140,6 +140,20 @@ namespace ProjectGenesis.Patches.UI.DisplayText
             }
         }
 
+        [HarmonyPatch(typeof(ItemProto), nameof(ItemProto.GetPropName))]
+        [HarmonyPostfix]
+        public static void GetPropNamePatch(ItemProto __instance, int index, ref string __result)
+        {
+            if (index >= __instance.DescFields.Length) return;
+
+            switch (__instance.DescFields[index])
+            {
+                case 58:
+                    if (__instance.ID == ProtoID.I导弹防御塔) __result = "跨星支援范围".TranslateFromJson();
+                    return;
+            }
+        }
+
         [HarmonyPatch(typeof(ItemProto), nameof(ItemProto.GetPropValue))]
         [HarmonyPostfix]
         public static void GetPropValuePatch(ItemProto __instance, int index, ref string __result)
@@ -171,19 +185,20 @@ namespace ProjectGenesis.Patches.UI.DisplayText
                     }
 
                     if (__instance.ModelIndex == ProtoID.M同位素温差发电机) __result = "裂变能".TranslateFromJson();
-
                     return;
 
                 case 18:
                     if (__instance.prefabDesc.isCollectStation && __instance.ID == ProtoID.I大气采集器) __result = "行星大气".TranslateFromJson();
-
                     return;
 
                 case 19:
                     if (__instance.prefabDesc.minerType == EMinerType.Oil)
                         __result = (600000.0 / __instance.prefabDesc.minerPeriod * GameMain.history.miningSpeedScale).ToString("0.##")
                                  + "x";
-
+                    return;
+                
+                case 58:
+                    if (__instance.ID == ProtoID.I导弹防御塔) __result = "1 AU";
                     return;
             }
         }
@@ -196,27 +211,22 @@ namespace ProjectGenesis.Patches.UI.DisplayText
             {
                 case ProtoID.T巨型建筑工程学:
                     __result = "巨型建筑工程学文字描述".TranslateFromJson();
-
                     break;
 
                 case ProtoID.T行星协调中心:
                     __result = "行星协调中心文字描述".TranslateFromJson();
-
                     break;
 
                 case ProtoID.T量子折跃:
                     __result = "量子折跃文字描述".TranslateFromJson();
-
                     break;
 
                 case ProtoID.T黑雾协调中心:
                     __result = "黑雾协调中心文字描述".TranslateFromJson();
-
                     break;
 
                 case ProtoID.T护盾载波调制:
                     __result = "T护盾载波调制文字描述".TranslateFromJson();
-
                     break;
             }
         }

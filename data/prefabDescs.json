@@ -72,7 +72,7 @@
   },
   {
     "ModelID": 54,
-    "genEnergyPerTick": 200000,
+    "genEnergyPerTick": 250000,
     "useFuelPerTick": 250000
   },
   {
@@ -118,7 +118,7 @@
   },
   {
     "ModelID": 63,
-    "assemblerSpeed": 40000
+    "assemblerSpeed": 20000
   },
   {
     "ModelID": 64,
@@ -157,7 +157,7 @@
   },
   {
     "ModelID": 70,
-    "labAssembleSpeed": 40000
+    "labAssembleSpeed": 20000
   },
   {
     "ModelID": 71,
@@ -167,8 +167,12 @@
   },
   {
     "ModelID": 72,
-    "ejectorChargeFrame": 80,
-    "ejectorColdFrame": 40
+    "ejectorChargeFrame": 40,
+    "ejectorColdFrame": 20
+  },
+  {
+    "ModelID": 73,
+    "genEnergyPerTick": 1000000
   },
   {
     "ModelID": 74,
@@ -209,7 +213,7 @@
   },
   {
     "ModelID": 373,
-    "turretDamageScale": 3,
+    "turretDamageScale": 1,
     "turretMaxAttackRange": 25
   },
   {
@@ -239,8 +243,8 @@
   },
   {
     "ModelID": 455,
-    "labAssembleSpeed": 120000,
-    "labResearchSpeed": 3
+    "labAssembleSpeed": 40000,
+    "labResearchSpeed": 4
   },
   {
     "ModelID": 456,
