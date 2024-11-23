@@ -15,7 +15,7 @@ namespace ProjectGenesis.Patches.UI
             { ProtoID.R二氧化碳, 431 },
             { ProtoID.R催化重整, 432 },
             { ProtoID.R四氢双环戊二烯, 433 },
-            { ProtoID.R活性纤维重组, 434 },
+            { ProtoID.R有机晶体重组, 434 },
             { ProtoID.R水电解, 435 },
             { ProtoID.R盐水电解, 436 },
             { ProtoID.R合成氨, 437 },
@@ -26,32 +26,43 @@ namespace ProjectGenesis.Patches.UI
             { ProtoID.R聚酰亚胺, 442 },
             { ProtoID.R钨矿筛选, 443 },
             { ProtoID.R海水淡化, 444 },
+            { ProtoID.R有机晶体活化, 445 },
+            { ProtoID.R二氧化硫还原, 446 },
+            { ProtoID.R增产剂, 447 },
+            { ProtoID.R氦原子提取, 448 },
+            { ProtoID.R硅石筛选, 449 },
         };
 
         [HarmonyPatch(typeof(FactorySystem), nameof(FactorySystem.GameTick), typeof(long), typeof(bool))]
-        [HarmonyPatch(typeof(FactorySystem), nameof(FactorySystem.GameTick), typeof(long), typeof(bool), typeof(int), typeof(int), typeof(int))]
+        [HarmonyPatch(typeof(FactorySystem), nameof(FactorySystem.GameTick), typeof(long), typeof(bool), typeof(int), typeof(int),
+            typeof(int))]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> FactorySystem_GameTick_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
             var matcher = new CodeMatcher(instructions);
 
-            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(AssemblerComponent), nameof(AssemblerComponent.recipeType))));
+            matcher.MatchForward(false,
+                new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(AssemblerComponent), nameof(AssemblerComponent.recipeType))));
 
             matcher.Advance(1)
-                   .SetInstructionAndAdvance(new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(ChemicalRecipeFcolPatches), nameof(ChemicalRecipeTypePatch))))
-                   .SetOpcodeAndAdvance(OpCodes.Brfalse_S);
+               .SetInstructionAndAdvance(new CodeInstruction(OpCodes.Call,
+                    AccessTools.Method(typeof(ChemicalRecipeFcolPatches), nameof(ChemicalRecipeTypePatch))))
+               .SetOpcodeAndAdvance(OpCodes.Brfalse_S);
 
-            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(AssemblerComponent), nameof(AssemblerComponent.recipeId))),
-                new CodeMatch(OpCodes.Conv_R4), new CodeMatch(OpCodes.Stfld, AccessTools.Field(typeof(AnimData), nameof(AnimData.working_length))));
+            matcher.MatchForward(false,
+                new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(AssemblerComponent), nameof(AssemblerComponent.recipeId))),
+                new CodeMatch(OpCodes.Conv_R4),
+                new CodeMatch(OpCodes.Stfld, AccessTools.Field(typeof(AnimData), nameof(AnimData.working_length))));
 
-            matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(ChemicalRecipeFcolPatches), nameof(ChemicalRecipeFcolPatch))));
+            matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Call,
+                AccessTools.Method(typeof(ChemicalRecipeFcolPatches), nameof(ChemicalRecipeFcolPatch))));
 
             return matcher.InstructionEnumeration();
         }
 
         private static bool ChemicalRecipeTypePatch(int recipeType) => recipeType == (int)ERecipeType.Chemical || recipeType == 16;
 
-        private static int ChemicalRecipeFcolPatch(int recipeId) => RecipeIdPos.TryGetValue(recipeId, out int pos) ? pos : recipeId;
+        private static int ChemicalRecipeFcolPatch(int recipeId) => RecipeIdPos.GetValueOrDefault(recipeId, recipeId);
 
         internal static void SetChemicalRecipeFcol()
         {

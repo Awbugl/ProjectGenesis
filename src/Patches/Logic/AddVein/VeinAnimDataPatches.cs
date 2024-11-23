@@ -9,14 +9,16 @@ namespace ProjectGenesis.Patches.Logic.AddVein
     {
         [HarmonyPatch(typeof(PlanetModelingManager), nameof(PlanetModelingManager.LoadingPlanetFactoryMain))]
         [HarmonyTranspiler]
-        public static IEnumerable<CodeInstruction> PlanetModelingManager_LoadingPlanetFactoryMain_Transpiler(IEnumerable<CodeInstruction> instructions)
+        public static IEnumerable<CodeInstruction> PlanetModelingManager_LoadingPlanetFactoryMain_Transpiler(
+            IEnumerable<CodeInstruction> instructions)
         {
             var matcher = new CodeMatcher(instructions);
 
             matcher.MatchForward(false, new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(VeinData), nameof(VeinData.type))),
                 new CodeMatch(OpCodes.Stfld, AccessTools.Field(typeof(AnimData), nameof(AnimData.state))));
 
-            matcher.SetInstructionAndAdvance(new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(AddVeinPatches), nameof(RefVeinDataToAnimDataState))));
+            matcher.SetInstructionAndAdvance(new CodeInstruction(OpCodes.Call,
+                AccessTools.Method(typeof(AddVeinPatches), nameof(RefVeinDataToAnimDataState))));
 
             return matcher.InstructionEnumeration();
         }
@@ -30,7 +32,8 @@ namespace ProjectGenesis.Patches.Logic.AddVein
             matcher.MatchForward(false, new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(VeinData), nameof(VeinData.type))),
                 new CodeMatch(OpCodes.Stfld, AccessTools.Field(typeof(AnimData), nameof(AnimData.state))));
 
-            matcher.SetInstructionAndAdvance(new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(AddVeinPatches), nameof(VeinDataToAnimDataState))));
+            matcher.SetInstructionAndAdvance(new CodeInstruction(OpCodes.Call,
+                AccessTools.Method(typeof(AddVeinPatches), nameof(VeinDataToAnimDataState))));
 
             return matcher.InstructionEnumeration();
         }

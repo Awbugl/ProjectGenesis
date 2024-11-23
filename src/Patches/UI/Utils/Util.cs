@@ -9,7 +9,9 @@ namespace ProjectGenesis.Patches.UI.Utils
     /// </summary>
     internal static class Util
     {
-        private static readonly UIButton OrbitAddButton = UIRoot.instance.uiGame.dysonEditor.controlPanel.hierarchy.swarmPanel.orbitAddButton;
+        private static readonly UIButton OrbitAddButton =
+            UIRoot.instance.uiGame.dysonEditor.controlPanel.hierarchy.swarmPanel.orbitAddButton;
+
         private static readonly GameObject TransformGameObject = UIRoot.instance.uiGame.beltWindow.iconTagButton.transform.gameObject;
         private static readonly UIAssemblerWindow UIGameAssemblerWindow = UIRoot.instance.uiGame.assemblerWindow;
         private static readonly UIButton CategoryButton = UIRoot.instance.uiGame.functionPanel.buildMenu.categoryButtons[1];
@@ -51,6 +53,7 @@ namespace ProjectGenesis.Patches.UI.Utils
             txt.text = label;
             txt.color = new Color(1f, 1f, 1f, 0.4f);
             txt.alignment = anchor;
+
             //txt_.supportRichText = false;
             txt.fontSize = fontSize;
 
@@ -139,6 +142,7 @@ namespace ProjectGenesis.Patches.UI.Utils
             GameObject go = Object.Instantiate(UIRoot.instance.uiGame.researchQueue.pauseButton.gameObject);
             UIButton btn = go.GetComponent<UIButton>();
             var rect = (RectTransform)go.transform;
+
             //rect.sizeDelta = new Vector2(size, size);
             float scale = size / 60;
             rect.localScale = new Vector3(scale, scale, scale);

@@ -14,10 +14,16 @@ namespace ProjectGenesis.Patches.Logic
 {
     public static class InitialTechPatches
     {
-        private static readonly List<int> InitialTechs = new List<int> { ProtoID.T戴森球计划, ProtoID.T科学理论, ProtoID.T工业化生产, },
+        private static readonly List<int> InitialTechs = new List<int>
+                                          {
+                                              ProtoID.T戴森球计划,
+                                              ProtoID.T科学理论,
+                                              ProtoID.T工业化生产,
+                                          },
                                           BonusTechs = new List<int>
                                           {
                                               ProtoID.T电磁学,
+                                              ProtoID.T流体储存封装,
                                               ProtoID.T基础机械组件,
                                               ProtoID.T武器系统,
                                               ProtoID.T电磁驱动,
@@ -29,6 +35,8 @@ namespace ProjectGenesis.Patches.Logic
         public static void SetForNewGame(GameData __instance)
         {
             if (DSPGame.IsMenuDemo) { return; }
+
+            __instance.history.recipeUnlocked.Remove(5);
 
             foreach (int tech in InitialTechs.Concat(BonusTechs))
             {
@@ -73,7 +81,8 @@ namespace ProjectGenesis.Patches.Logic
         public static IEnumerable<CodeInstruction> UITechNode_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
             var matcher = new CodeMatcher(instructions);
-            matcher.MatchForward(true, new CodeMatch(OpCodes.Ldarg_0), new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(UITechNode), nameof(UITechNode.techProto))),
+            matcher.MatchForward(true, new CodeMatch(OpCodes.Ldarg_0),
+                new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(UITechNode), nameof(UITechNode.techProto))),
                 new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(Proto), nameof(Proto.ID))), new CodeMatch(OpCodes.Ldc_I4_1));
 
             matcher.SetInstructionAndAdvance(Transpilers.EmitDelegate<Func<int, bool>>(id => InitialTechs.Contains(id)));
@@ -86,7 +95,7 @@ namespace ProjectGenesis.Patches.Logic
         [HarmonyPostfix]
         public static void UITechTree_OnQueueUpdate_Postfix(UITechTree __instance)
         {
-            if (!ProjectGenesis.EnableHideTechModeEntry.Value) { return; }
+            if (!ProjectGenesis.HideTechModeEntry.Value) { return; }
 
             RefreshNode(__instance);
         }
@@ -95,7 +104,7 @@ namespace ProjectGenesis.Patches.Logic
         [HarmonyPostfix]
         public static void UITechTree_OnPageChanged_Postfix(UITechTree __instance)
         {
-            if (!ProjectGenesis.EnableHideTechModeEntry.Value) { return; }
+            if (!ProjectGenesis.HideTechModeEntry.Value) { return; }
 
             if (__instance.page != 0) { return; }
 
@@ -116,5 +125,18 @@ namespace ProjectGenesis.Patches.Logic
                 if (node.techProto.postTechArray.Length > 0) { node.connGroup.gameObject.SetActive(techUnlocked); }
             }
         }
+
+        [HarmonyPatch(typeof(UITechNode), nameof(UITechNode.HasPrerequisite))]
+        [HarmonyPatch(typeof(UITechNode), nameof(UITechNode.DeterminePrerequisiteSuffice))]
+        [HarmonyPrefix]
+        public static bool UITechNode_Prerequisite_Prefix(ref bool __result)
+        {
+            __result = false;
+            return false;
+        }
+
+        [HarmonyPatch(typeof(UITechNode), nameof(UITechNode.SetTechPrerequisite))]
+        [HarmonyPrefix]
+        public static bool UITechNode_Prerequisite_Prefix() => false;
     }
 }

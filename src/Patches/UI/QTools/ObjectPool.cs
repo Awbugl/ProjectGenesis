@@ -18,8 +18,7 @@ namespace ProjectGenesis.Patches.UI.QTools
         {
             T component;
 
-            if (_curReuseIndex < _pointer.Count)
-                component = _pointer[_curReuseIndex];
+            if (_curReuseIndex < _pointer.Count) { component = _pointer[_curReuseIndex]; }
             else
             {
                 component = _ctor();

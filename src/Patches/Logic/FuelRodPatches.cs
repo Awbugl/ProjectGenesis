@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Reflection.Emit;
 using HarmonyLib;
 using ProjectGenesis.Utils;
@@ -9,6 +10,21 @@ namespace ProjectGenesis.Patches.Logic
 {
     public static class FuelRodPatches
     {
+        private static readonly int[] FuelCells =
+        {
+            ProtoID.I氢燃料棒, ProtoID.I煤油燃料棒, ProtoID.I四氢双环戊二烯燃料棒, //
+            ProtoID.I能量碎片,
+        };
+
+        private static readonly int[] FuelRods =
+        {
+            ProtoID.I氢燃料棒, ProtoID.I煤油燃料棒, ProtoID.I四氢双环戊二烯燃料棒, //
+            ProtoID.I铀燃料棒, ProtoID.I钚燃料棒, ProtoID.IMOX燃料棒,      //
+            ProtoID.I氘核燃料棒, ProtoID.I氦三燃料棒, ProtoID.I氘氦混合聚变燃料棒, //
+            ProtoID.I反物质燃料棒, ProtoID.I奇异燃料棒,                    //
+            ProtoID.I满蓄电器,
+        };
+
         [HarmonyPatch(typeof(Mecha), nameof(Mecha.GenerateEnergy))]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> SetTargetCargoBytes_Transpiler(IEnumerable<CodeInstruction> instructions)
@@ -36,7 +52,8 @@ namespace ProjectGenesis.Patches.Logic
 
         [HarmonyPatch(typeof(PowerGeneratorComponent), nameof(PowerGeneratorComponent.GenEnergyByFuel))]
         [HarmonyTranspiler]
-        public static IEnumerable<CodeInstruction> PowerGeneratorComponent_GenEnergyByFuel_Transpiler(IEnumerable<CodeInstruction> instructions)
+        public static IEnumerable<CodeInstruction> PowerGeneratorComponent_GenEnergyByFuel_Transpiler(
+            IEnumerable<CodeInstruction> instructions)
         {
             var matcher = new CodeMatcher(instructions);
 
@@ -114,11 +131,13 @@ namespace ProjectGenesis.Patches.Logic
 
         [HarmonyPatch(typeof(UIInserterBuildTip), nameof(UIInserterBuildTip.SetOutputEntity))]
         [HarmonyTranspiler]
-        public static IEnumerable<CodeInstruction> UIInserterBuildTip_SetOutputEntity_Transpiler(IEnumerable<CodeInstruction> instructions, ILGenerator generator)
+        public static IEnumerable<CodeInstruction> UIInserterBuildTip_SetOutputEntity_Transpiler(IEnumerable<CodeInstruction> instructions,
+            ILGenerator generator)
         {
             var matcher = new CodeMatcher(instructions, generator);
 
-            matcher.MatchForward(true, new CodeMatch(OpCodes.Ldloc_3), new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(EntityData), nameof(EntityData.beltId))),
+            matcher.MatchForward(true, new CodeMatch(OpCodes.Ldloc_3),
+                new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(EntityData), nameof(EntityData.beltId))),
                 new CodeMatch(OpCodes.Ldc_I4_0));
 
             object label = matcher.Advance(1).Operand;
@@ -127,7 +146,8 @@ namespace ProjectGenesis.Patches.Logic
 
             matcher.Advance(-1).SetInstructionAndAdvance(new CodeInstruction(OpCodes.Bgt, label2));
 
-            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0), new CodeInstruction(OpCodes.Ldloc_0), new CodeInstruction(OpCodes.Ldloc_3),
+            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0), new CodeInstruction(OpCodes.Ldloc_0),
+                new CodeInstruction(OpCodes.Ldloc_3),
                 new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(FuelRodPatches), nameof(SetOutputEntity_Patch_Method))),
                 new CodeInstruction(OpCodes.Br, label));
 
@@ -152,8 +172,8 @@ namespace ProjectGenesis.Patches.Logic
 
         [HarmonyPatch(typeof(PlanetFactory), nameof(PlanetFactory.PickFrom))]
         [HarmonyPostfix]
-        public static void PlanetFactory_PickFrom_Postfix(PlanetFactory __instance, int entityId, int offset, int filter, int[] needs, ref byte stack, ref byte inc,
-            ref int __result)
+        public static void PlanetFactory_PickFrom_Postfix(PlanetFactory __instance, int entityId, int offset, int filter, int[] needs,
+            ref byte stack, ref byte inc, ref int __result)
         {
             if (__result != 0) return;
 
@@ -178,8 +198,8 @@ namespace ProjectGenesis.Patches.Logic
 
         [HarmonyPatch(typeof(PlanetFactory), nameof(PlanetFactory.InsertInto))]
         [HarmonyPostfix]
-        public static void PlanetFactory_InsertInto_Postfix(PlanetFactory __instance, int entityId, int itemId, ref byte itemCount, ref byte itemInc, ref byte remainInc,
-            ref int __result)
+        public static void PlanetFactory_InsertInto_Postfix(PlanetFactory __instance, int entityId, int itemId, ref byte itemCount,
+            ref byte itemInc, ref byte remainInc, ref int __result)
         {
             if (__result != 0 || itemId != ProtoID.I空燃料棒) return;
 
@@ -215,7 +235,8 @@ namespace ProjectGenesis.Patches.Logic
 
         [HarmonyPatch(typeof(PowerGeneratorComponent), nameof(PowerGeneratorComponent.PickFuelFrom))]
         [HarmonyPostfix]
-        public static void PowerGeneratorComponent_PickFuelFrom_Postfix(ref PowerGeneratorComponent __instance, int filter, ref int inc, ref int __result)
+        public static void PowerGeneratorComponent_PickFuelFrom_Postfix(ref PowerGeneratorComponent __instance, int filter, ref int inc,
+            ref int __result)
         {
             if (__result != 0) return;
 
@@ -228,6 +249,148 @@ namespace ProjectGenesis.Patches.Logic
             __result = ProtoID.I空燃料棒;
             inc = __instance.split_inc(ref instanceProductCount, ref __instance.catalystIncPoint, 1);
             __instance.productCount = instanceProductCount;
+        }
+
+        [HarmonyPatch(typeof(UIStorageGrid), nameof(UIStorageGrid.GetOtherStorageGrid), typeof(int))]
+        [HarmonyTranspiler]
+        public static IEnumerable<CodeInstruction> UIStorageGrid_GetOtherStorageGrid_Transpiler(IEnumerable<CodeInstruction> instructions,
+            ILGenerator generator)
+        {
+            var matcher = new CodeMatcher(instructions, generator);
+
+            matcher.MatchForward(true, new CodeMatch(OpCodes.Ldloc_2),
+                new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(ItemProto), nameof(ItemProto.HeatValue))),
+                new CodeMatch(OpCodes.Ldc_I4_0), new CodeMatch(OpCodes.Conv_I8));
+
+            object label = matcher.Advance(1).Operand;
+
+            matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_2),
+                new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(FuelRodPatches), nameof(IsFuelRod))),
+                new CodeInstruction(OpCodes.Brfalse_S, label));
+
+            return matcher.InstructionEnumeration();
+        }
+
+        [HarmonyPatch(typeof(StorageComponent), nameof(StorageComponent.LoadStatic))]
+        [HarmonyTranspiler]
+        public static IEnumerable<CodeInstruction> StorageComponent_LoadStatic_Transpiler(IEnumerable<CodeInstruction> instructions,
+            ILGenerator generator)
+        {
+            var matcher = new CodeMatcher(instructions, generator);
+
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(ItemProto), nameof(ItemProto.HeatValue))));
+
+            matcher.SetAndAdvance(OpCodes.Call, AccessTools.Method(typeof(FuelRodPatches), nameof(IsFuelRod)))
+               .InsertAndAdvance(new CodeInstruction(OpCodes.Conv_I8));
+
+            return matcher.InstructionEnumeration();
+        }
+
+        public static bool IsFuelRod(ItemProto proto)
+        {
+            return FuelRods.Contains(proto.ID) || proto.FuelType == 31;
+        }
+
+        [HarmonyPatch(typeof(UIStorageGrid), nameof(UIStorageGrid.HandPut))]
+        [HarmonyTranspiler]
+        public static IEnumerable<CodeInstruction> UIStorageGrid_HandPut_Transpiler(IEnumerable<CodeInstruction> instructions,
+            ILGenerator generator)
+        {
+            var matcher = new CodeMatcher(instructions, generator);
+
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldstr, "只能放入燃料"),
+                new CodeMatch(OpCodes.Call, AccessTools.Method(typeof(Localization), nameof(Localization.Translate))));
+
+            matcher.SetAndAdvance(OpCodes.Ldstr, "只能放入燃料棒").SetAndAdvance(OpCodes.Call,
+                AccessTools.Method(typeof(TranslateUtils), nameof(TranslateUtils.TranslateFromJson)));
+
+            matcher.Advance(1);
+
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldstr, "只能放入燃料"),
+                new CodeMatch(OpCodes.Call, AccessTools.Method(typeof(Localization), nameof(Localization.Translate))));
+
+            matcher.SetAndAdvance(OpCodes.Ldstr, "只能放入燃料棒").SetAndAdvance(OpCodes.Call,
+                AccessTools.Method(typeof(TranslateUtils), nameof(TranslateUtils.TranslateFromJson)));
+
+            return matcher.InstructionEnumeration();
+        }
+
+        [HarmonyPatch(typeof(PlanetFactory), nameof(PlanetFactory.EntityFastFillIn))]
+        [HarmonyPatch(typeof(PlanetFactory), nameof(PlanetFactory.InsertInto))]
+        [HarmonyTranspiler]
+        public static IEnumerable<CodeInstruction> PlanetFactory_InsertInto_Transpiler(IEnumerable<CodeInstruction> instructions)
+        {
+            var matcher = new CodeMatcher(instructions);
+
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldsfld, AccessTools.Field(typeof(ItemProto), nameof(ItemProto.fuelNeeds))),
+                new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldelema),
+                new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(PowerGeneratorComponent), nameof(PowerGeneratorComponent.fuelMask))),
+                new CodeMatch(OpCodes.Ldelem_Ref));
+
+            matcher.SetAndAdvance(OpCodes.Nop, null);
+
+            matcher.Advance(3).SetAndAdvance(OpCodes.Ldarg_0, null);
+
+            matcher.SetAndAdvance(OpCodes.Call, AccessTools.Method(typeof(FuelRodPatches), nameof(ThermalPowerGen_InsertMethod)));
+
+            return matcher.InstructionEnumeration();
+        }
+
+        public static int[] ThermalPowerGen_InsertMethod(ref PowerGeneratorComponent component, PlanetFactory factory)
+        {
+            short componentFuelMask = component.fuelMask;
+
+            if (componentFuelMask != 1) return ItemProto.fuelNeeds[componentFuelMask];
+
+            return factory.planet.gasItems.Contains(ProtoID.I氧) ? ItemProto.fuelNeeds[1] : FuelCells;
+        }
+
+        [HarmonyPatch(typeof(UIPowerGeneratorWindow), nameof(UIPowerGeneratorWindow.OnFuelButtonClick))]
+        [HarmonyTranspiler]
+        public static IEnumerable<CodeInstruction> OnSpawnTranspiler(IEnumerable<CodeInstruction> instructions)
+        {
+            var matcher = new CodeMatcher(instructions);
+
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldsfld, AccessTools.Field(typeof(ItemProto), nameof(ItemProto.fuelNeeds))),
+                new CodeMatch(OpCodes.Ldloc_0),
+                new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(PowerGeneratorComponent), nameof(PowerGeneratorComponent.fuelMask))),
+                new CodeMatch(OpCodes.Ldelem_Ref));
+
+            matcher.SetAndAdvance(OpCodes.Nop, null);
+            matcher.SetAndAdvance(OpCodes.Nop, null);
+            matcher.SetAndAdvance(OpCodes.Ldarg_0, null);
+            matcher.SetAndAdvance(OpCodes.Call, AccessTools.Method(typeof(FuelRodPatches), nameof(UIPowerGenerator_InsertMethod)));
+
+            return matcher.InstructionEnumeration();
+        }
+
+        public static int[] UIPowerGenerator_InsertMethod(UIPowerGeneratorWindow window)
+        {
+            PowerGeneratorComponent component = window.powerSystem.genPool[window.generatorId];
+
+            short componentFuelMask = component.fuelMask;
+
+            if (componentFuelMask != 1) return ItemProto.fuelNeeds[componentFuelMask];
+
+            if (window.factory.planet.gasItems.Contains(ProtoID.I氧)) return ItemProto.fuelNeeds[1];
+
+            int playerInhandItemId = window.player.inhandItemId;
+
+            if (playerInhandItemId > 0 && window.player.inhandItemCount > 0)
+            {
+                if (playerInhandItemId == 1000) return null;
+
+                if (FuelCells.Contains(playerInhandItemId)) return FuelCells;
+
+                if (ItemProto.fuelNeeds[1].Contains(playerInhandItemId))
+                {
+                    UIRealtimeTip.Popup("需要氧气".TranslateFromJson());
+
+                    return null;
+                }
+            }
+
+            return FuelCells;
         }
     }
 }

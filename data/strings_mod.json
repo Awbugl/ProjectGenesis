@@ -25,6 +25,11 @@
     "ENUS": "If the GenesisBook icon appears in the main menu, the modified tech tree appears and there is no error message, it means GenesisBook is successfully loaded. \nPlease note that this mode modifies a lot of content, and you cannot upload the data the galaxy. \nIf have any issues or ideas about the mod, please join our community on Discord."
   },
   {
+    "Name": "BepinExVersionNotMatch",
+    "ZHCN": "⚠ BepinEx版本不为5.4.17！这会导致许多不可预知的Bug。",
+    "ENUS": "⚠ BepinEx version is not 5.4.17! This leads to many unpredictable bugs."
+  },
+  {
     "Name": "巨构类",
     "ZHCN": "巨型建筑 (-)",
     "ENUS": "MegaBuilding (-)"
@@ -210,9 +215,9 @@
     "ENUS": "Multiple recipes | Mineable item"
   },
   {
-    "Name": "ChangeStackingLogic",
-    "ZHCN": "修改化工配方的堆积逻辑",
-    "ENUS": "Change chemical stacking logic"
+    "Name": "ProductOverflow",
+    "ZHCN": "配方堆积逻辑",
+    "ENUS": "Recipe Stacking logic"
   },
   {
     "Name": "UseLDBToolCache",
@@ -220,44 +225,49 @@
     "ENUS": "Use LDBTool cache"
   },
   {
-    "Name": "EnableHideTechMode",
+    "Name": "HideTechMode",
     "ZHCN": "启用科技探索模式",
     "ENUS": "Enable tech exploration mode"
   },
   {
-    "Name": "DisableChemOxygenCollect",
-    "ZHCN": "禁用化工厂自动富集氧气功能",
-    "ENUS": "Disable chemical plants enrich oxygen function"
+    "Name": "ShowMessageBox",
+    "ZHCN": "显示创世之书加载弹窗",
+    "ENUS": "Show messagebox when loaded"
   },
   {
-    "Name": "DisableMessageBox",
-    "ZHCN": "禁用创世之书加载弹窗",
-    "ENUS": "Disable messagebox when loaded"
-  },
-  {
-    "Name": "ChangeStackingLogicAdditionalText",
-    "ZHCN": "（将化工相关的配方停止生产的判定由单产物堆积改为所有产物均堆积）",
-    "ENUS": "(the decision to stop production has been changed from single product stacking to all products are stacked)"
+    "Name": "ProductOverflowAdditionalText",
+    "ZHCN": "（选择是否将配方停止生产的条件由单产物堆积改为所有产物均堆积）",
+    "ENUS": "(Whether to change the condition for stopping production of some recipes from single product pile up to all product pile up)"
   },
   {
     "Name": "UseLDBToolCacheAdditionalText",
     "ZHCN": "（可在配置文件中手动修改冲突的MOD物品ID，但启动速度减慢，需要重启游戏才可生效）",
-    "ENUS": "(You can manually modify the conflicting MOD item ID in the configuration file, but the startup speed is slowed down, need to restart the game to take effect)"
+    "ENUS": "(Allow manually modify the conflicting MOD item ID in the configuration file, but the startup speed is slowed down, need to restart the game to take effect)"
   },
   {
-    "Name": "EnableHideTechModeAdditionalText",
-    "ZHCN": "（隐藏未解锁的科技，需要重启游戏才可生效）",
-    "ENUS": "(Hide the unlocked technology, need to restart the game to take effect)"
+    "Name": "HideTechModeAdditionalText",
+    "ZHCN": "（隐藏未解锁的科技）",
+    "ENUS": "(Hide unlock technology)"
   },
   {
-    "Name": "DisableChemOxygenCollectText",
-    "ZHCN": "（禁用化工厂在有氧大气下自动富集氧气并作为原料利用的功能）",
-    "ENUS": "(Disable function of chemical plants that could automatically enrich oxygen and utilize as a source in an aerobic atmosphere)"
-  },
-  {
-    "Name": "DisableMessageBoxAdditionalText",
+    "Name": "ShowMessageBoxAdditionalText",
     "ZHCN": "（在MOD加载完成后禁用弹窗显示创世之书的额外信息）",
-    "ENUS": "(Disable additional information about GenesisBook in a messagebox after the mod is loaded)"
+    "ENUS": "(Show messagebox about additional information after GenesisBook mod loaded)"
+  },
+  {
+    "Name": "默认设置",
+    "ZHCN": "仅对部分配方启用（已在配方介绍中注明）",
+    "ENUS": "Enabled for some recipes only (noted in recipe introduction)"
+  },
+  {
+    "Name": "禁用全部",
+    "ZHCN": "完全禁用此项功能",
+    "ENUS": "Disable this feature completely"
+  },
+  {
+    "Name": "启用全部",
+    "ZHCN": "对所有配方启用",
+    "ENUS": "Enabled for all recipes"
   },
   {
     "Name": "星球基地",
@@ -296,8 +306,8 @@
   },
   {
     "Name": "火力发电效率 +20%",
-    "ZHCN": "火力发电效率 +20%",
-    "ENUS": "Thermal Power Plant Efficiency +20%"
+    "ZHCN": "燃料电池效率 +20%",
+    "ENUS": "Fuel Cell Efficiency +20%"
   },
   {
     "Name": "风力发电效率 +20%",
@@ -385,19 +395,24 @@
     "ENUS": "Unlocks additional techs and provides additional items at the beginning"
   },
   {
-    "Name": "未解锁虫洞航行",
-    "ZHCN": "你还没有解锁虫洞航行技术",
-    "ENUS": "You have not unlocked wormhole navigation technology"
+    "Name": "未解锁量子折跃",
+    "ZHCN": "你还没有解锁量子折跃技术",
+    "ENUS": "You have not unlocked Quantum Navigation technology"
   },
   {
-    "Name": "虫洞能量不足",
-    "ZHCN": "机甲能量不足，无法开启虫洞",
-    "ENUS": "The mecha does not have enough energy to open the wormhole"
+    "Name": "折跃能量不足",
+    "ZHCN": "机甲能量不足，无法折跃",
+    "ENUS": "The mecha does not have enough energy to Quantum Navigation"
   },
   {
     "Name": "负熵奇点不足",
-    "ZHCN": "机甲背包负熵奇点数量不足，无法开启虫洞",
-    "ENUS": "The mecha does not have enough Negentropy Singularity to open the wormhole"
+    "ZHCN": "机甲背包负熵奇点数量不足，无法折跃",
+    "ENUS": "The mecha does not have enough Negentropy Singularity to Quantum Navigation"
+  },
+  {
+    "Name": "化学能",
+    "ZHCN": "化学能",
+    "ENUS": "Chemical Energy"
   },
   {
     "Name": "裂变能",
@@ -408,6 +423,11 @@
     "Name": "聚变能",
     "ZHCN": "聚变能",
     "ENUS": "Fusion Energy"
+  },
+  {
+    "Name": "黑雾能",
+    "ZHCN": "自由能",
+    "ENUS": "Free Energy"
   },
   {
     "Name": "质能转换",
@@ -445,11 +465,6 @@
     "ENUS": "Multi Smelter"
   },
   {
-    "Name": "精密制造",
-    "ZHCN": "精密制造",
-    "ENUS": "Accurate Manufacturing"
-  },
-  {
     "Name": "复合化工",
     "ZHCN": "复合化工",
     "ENUS": "Multi Chemical"
@@ -458,5 +473,10 @@
     "Name": "需要氧气",
     "ZHCN": "在无氧大气层中只能使用燃料棒发电",
     "ENUS": "Can only use fuel rods to generate power in anoxic atmosphere"
+  },
+  {
+    "Name": "选择量子频道",
+    "ZHCN": "选择量子频道",
+    "ENUS": "Select Channel"
   }
 ]

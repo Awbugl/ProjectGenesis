@@ -20,6 +20,7 @@ namespace ProjectGenesis.Utils
             { 7006, new NoIconFluidIconDesc(new Color32(218, 56, 70, 255)) },   // 苯
             { 7009, new NoIconFluidIconDesc(new Color32(167, 255, 39, 255)) },  // 丙烯
             { 6206, new NoIconFluidIconDesc(new Color32(191, 227, 255, 255)) }, // CO2
+            { 6205, new NoIconFluidIconDesc(new Color32(255, 128, 52, 255)) },  // SO2
             { 6212, new NoIconFluidIconDesc(new Color32(188, 182, 5, 255)) },   // JP10
             { 7014, new NoIconFluidIconDesc(new Color32(104, 187, 154, 255)) }, // HCl
             { 7015, new NoIconFluidIconDesc(new Color32(42, 97, 32, 255)) },    // FeCl3
@@ -93,12 +94,11 @@ namespace ProjectGenesis.Utils
 
             { 6278, new MartixIconDesc(new Color(1f, 0.4117f, 0.3137f, 0.1961f), new Color(1f, 0.2706f, 0f, 0f)) },
             { 6279, new MartixIconDesc(new Color(1f, 0.7530f, 0.7961f, 0.1961f), new Color(0.7804f, 0.0824f, 0.5216f, 0f)) },
+            { 6280, new MartixIconDesc(new Color(0.4020f, 0.4020f, 0.4020f, 0.1961f), new Color(0.3f, 0.3f, 0.3f, 0f)) },
             { 7610, new WhiteIconDesc() }, // 核子单元
             { 7611, new WhiteIconDesc() }, // 反物质单元
 
             { 7706, new GlassIconDesc(new Color32(91, 91, 91, 255)) }, // 钨玻璃
-
-            { 6280, new DefaultIconDesc(new Color(0.5020f, 0.5020f, 0.5020f, 0.1961f), Color.clear) },
         };
 
         private static readonly IconToolNew.IconDesc Default = new IconToolNew.IconDesc
@@ -114,7 +114,8 @@ namespace ProjectGenesis.Utils
             iconAlpha = 1f,
         };
 
-        internal static IconToolNew.IconDesc GetIconDesc(int itemid) => IconDescs.TryGetValue(itemid, out ModIconDesc value) ? value.ToIconDesc() : Default;
+        internal static IconToolNew.IconDesc GetIconDesc(int itemid) =>
+            IconDescs.TryGetValue(itemid, out ModIconDesc value) ? value.ToIconDesc() : Default;
 
         internal static IconToolNew.IconDesc ExportIconDesc(int itemId)
         {
@@ -133,7 +134,9 @@ namespace ProjectGenesis.Utils
             foreach (FieldInfo fieldInfo in fields)
             {
                 if (fieldInfo.FieldType == typeof(float))
+                {
                     fieldInfo.SetValue(iconDesc, iconSet.itemDescArr[(int)num1 * 40 + (int)index++]);
+                }
                 else if (fieldInfo.FieldType == typeof(Color))
                 {
                     float r = iconSet.itemDescArr[(int)num1 * 40 + (int)index++];
@@ -162,7 +165,7 @@ namespace ProjectGenesis.Utils
 
         internal class FluidIconDesc : ModIconDesc
         {
-            public FluidIconDesc(Color color) : base(color) { }
+            public FluidIconDesc(Color color) : base(color) {}
 
             internal override IconToolNew.IconDesc ToIconDesc() =>
                 new IconToolNew.IconDesc
@@ -183,7 +186,7 @@ namespace ProjectGenesis.Utils
 
         internal class NoIconFluidIconDesc : ModIconDesc
         {
-            internal NoIconFluidIconDesc(Color color) : base(color) { }
+            internal NoIconFluidIconDesc(Color color) : base(color) {}
 
             internal override IconToolNew.IconDesc ToIconDesc() =>
                 new IconToolNew.IconDesc
@@ -204,7 +207,7 @@ namespace ProjectGenesis.Utils
 
         internal class OreIconDesc : ModIconDesc
         {
-            public OreIconDesc(Color color) : base(color) { }
+            public OreIconDesc(Color color) : base(color) {}
 
             internal override IconToolNew.IconDesc ToIconDesc() =>
                 new IconToolNew.IconDesc
@@ -224,7 +227,7 @@ namespace ProjectGenesis.Utils
 
         internal class NoIconMetalIconDesc : ModIconDesc
         {
-            public NoIconMetalIconDesc(Color color) : base(color) { }
+            public NoIconMetalIconDesc(Color color) : base(color) {}
 
             internal override IconToolNew.IconDesc ToIconDesc() =>
                 new IconToolNew.IconDesc
@@ -243,7 +246,7 @@ namespace ProjectGenesis.Utils
 
         internal class FullIconDesc : ModIconDesc
         {
-            public FullIconDesc(Color color) : base(color) { }
+            public FullIconDesc(Color color) : base(color) {}
 
             internal override IconToolNew.IconDesc ToIconDesc() =>
                 new IconToolNew.IconDesc
@@ -262,7 +265,7 @@ namespace ProjectGenesis.Utils
 
         internal class ComponentIconDesc : ModIconDesc
         {
-            public ComponentIconDesc(Color color) : base(color) { }
+            public ComponentIconDesc(Color color) : base(color) {}
 
             internal override IconToolNew.IconDesc ToIconDesc() =>
                 new IconToolNew.IconDesc
@@ -281,7 +284,7 @@ namespace ProjectGenesis.Utils
 
         internal class GlassIconDesc : ModIconDesc
         {
-            public GlassIconDesc(Color color) : base(color) { }
+            public GlassIconDesc(Color color) : base(color) {}
 
             internal override IconToolNew.IconDesc ToIconDesc() =>
                 new IconToolNew.IconDesc
@@ -301,7 +304,7 @@ namespace ProjectGenesis.Utils
 
         internal class RodIconDesc : ModIconDesc
         {
-            public RodIconDesc(Color color) : base(color) { }
+            public RodIconDesc(Color color) : base(color) {}
 
             internal override IconToolNew.IconDesc ToIconDesc() =>
                 new IconToolNew.IconDesc
@@ -321,7 +324,7 @@ namespace ProjectGenesis.Utils
 
         internal class WhiteIconDesc : ModIconDesc
         {
-            public WhiteIconDesc() : base(Color.white) { }
+            public WhiteIconDesc() : base(Color.white) {}
 
             internal override IconToolNew.IconDesc ToIconDesc() =>
                 new IconToolNew.IconDesc

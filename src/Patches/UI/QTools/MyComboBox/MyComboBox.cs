@@ -18,7 +18,8 @@ namespace ProjectGenesis.Patches.UI.QTools.MyComboBox
 
         public event Action<int> OnIndexChange;
 
-        internal static T CreateComboBox<T>(float x, float y, RectTransform parent, string label = "", int fontSize = 18) where T : MyComboBox
+        internal static T CreateComboBox<T>(float x, float y, RectTransform parent, string label = "", int fontSize = 18)
+            where T : MyComboBox
         {
             UIComboBox src = UIRoot.instance.optionWindow.msaaComp;
             GameObject go = Instantiate(src.transform.parent.gameObject);

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection.Emit;
 using HarmonyLib;
 
@@ -21,7 +22,8 @@ namespace ProjectGenesis.Patches.Logic
         public static IEnumerable<CodeInstruction> PrebuildData_Import_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
             var matcher = new CodeMatcher(instructions);
-            matcher.MatchForward(false, new CodeMatch(OpCodes.Stfld, AccessTools.Field(typeof(PrebuildData), nameof(PrebuildData.modelIndex))));
+            matcher.MatchForward(false,
+                new CodeMatch(OpCodes.Stfld, AccessTools.Field(typeof(PrebuildData), nameof(PrebuildData.modelIndex))));
 
             matcher.InsertAndAdvance(Transpilers.EmitDelegate(ModelIdMigrationAction));
 
@@ -32,9 +34,7 @@ namespace ProjectGenesis.Patches.Logic
         [HarmonyPostfix]
         public static void EntityData_Import(ref EntityData __instance)
         {
-            ref short modelIndex = ref __instance.modelIndex;
-
-            if (modelIndex > 500 && modelIndex < 520) modelIndex += 300;
+            __instance.modelIndex = ModelIdMigrationAction(__instance.modelIndex);
         }
 
         [HarmonyPatch(typeof(BlueprintBuilding), nameof(BlueprintBuilding.Import))]
@@ -42,7 +42,8 @@ namespace ProjectGenesis.Patches.Logic
         public static IEnumerable<CodeInstruction> BlueprintBuilding_Import_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
             var matcher = new CodeMatcher(instructions);
-            matcher.MatchForward(false, new CodeMatch(OpCodes.Stfld, AccessTools.Field(typeof(BlueprintBuilding), nameof(BlueprintBuilding.modelIndex))));
+            matcher.MatchForward(false,
+                new CodeMatch(OpCodes.Stfld, AccessTools.Field(typeof(BlueprintBuilding), nameof(BlueprintBuilding.modelIndex))));
 
             matcher.InsertAndAdvance(Transpilers.EmitDelegate(ModelIdMigrationAction));
 
@@ -80,6 +81,13 @@ namespace ProjectGenesis.Patches.Logic
             while (matcher.IsValid);
 
             return matcher.InstructionEnumeration();
+        }
+
+        [HarmonyPatch(typeof(ModelProto), nameof(ModelProto.InitMaxModelIndex))]
+        [HarmonyPostfix]
+        public static void InitMaxModelIndex()
+        {
+            ModelProto.maxModelIndex = LDB.models.dataArray.Max(model => model?.ID).GetValueOrDefault();
         }
     }
 }

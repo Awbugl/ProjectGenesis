@@ -57,7 +57,6 @@ namespace ProjectGenesis.Patches.UI
 
         [HarmonyPatch(typeof(UILootFilter), nameof(UILootFilter._OnUpdate))]
         [HarmonyPatch(typeof(UILootFilter), nameof(UILootFilter.RepositionGridText))]
-        [HarmonyPatch(typeof(UILootFilter), nameof(UILootFilter.RefreshIcons))]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
         {
@@ -66,42 +65,60 @@ namespace ProjectGenesis.Patches.UI
             matcher.MatchForward(false, new CodeMatch(OpCodes.Ldc_I4_S, (sbyte)14));
 
             matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0))
-                   .SetInstructionAndAdvance(Transpilers.EmitDelegate<Func<UILootFilter, int>>(filter => filter.currentType == 1 ? 14 : 17));
+               .SetInstructionAndAdvance(Transpilers.EmitDelegate<Func<UILootFilter, int>>(filter => filter.currentType == 1 ? 14 : 17));
 
             matcher.MatchForward(false, new CodeMatch(OpCodes.Ldc_I4_S, (sbyte)14));
 
             matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0))
-                   .SetInstructionAndAdvance(Transpilers.EmitDelegate<Func<UILootFilter, int>>(filter => filter.currentType == 1 ? 14 : 17));
+               .SetInstructionAndAdvance(Transpilers.EmitDelegate<Func<UILootFilter, int>>(filter => filter.currentType == 1 ? 14 : 17));
 
+            return matcher.InstructionEnumeration();
+        }
+        
+        [HarmonyPatch(typeof(UILootFilter), nameof(UILootFilter.RefreshIcons))]
+        [HarmonyTranspiler]
+        public static IEnumerable<CodeInstruction> RefreshIcons_Transpiler(IEnumerable<CodeInstruction> instructions)
+        {
+            var matcher = new CodeMatcher(instructions);
+
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldc_I4_S, (sbyte)14));
+            matcher.SetOperandAndAdvance((sbyte)17);
+            
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldc_I4_S, (sbyte)14));
+            matcher.SetOperandAndAdvance((sbyte)17); 
+            
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldc_I4_S, (sbyte)14));
+            matcher.SetOperandAndAdvance((sbyte)17);
+            
             return matcher.InstructionEnumeration();
         }
 
         [HarmonyPatch(typeof(UILootFilter), nameof(UILootFilter.TestMouseIndex))]
         [HarmonyTranspiler]
         [HarmonyPriority(Priority.Last)]
-        public static IEnumerable<CodeInstruction> RefreshIcons_Transpiler(IEnumerable<CodeInstruction> instructions)
+        public static IEnumerable<CodeInstruction> TestMouseIndex_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
             var matcher = new CodeMatcher(instructions);
 
             matcher.MatchForward(false, new CodeMatch(OpCodes.Ldc_I4_S, (sbyte)14));
 
             matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0))
-                   .SetInstructionAndAdvance(Transpilers.EmitDelegate<Func<UILootFilter, int>>(filter => filter.currentType == 1 ? 14 : 17));
+               .SetInstructionAndAdvance(Transpilers.EmitDelegate<Func<UILootFilter, int>>(filter => filter.currentType == 1 ? 14 : 17));
 
             matcher.MatchForward(false, new CodeMatch(OpCodes.Ldc_I4_S, (sbyte)14));
 
             matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0))
-                   .SetInstructionAndAdvance(Transpilers.EmitDelegate<Func<UILootFilter, int>>(filter => filter.currentType == 1 ? 14 : 17));
+               .SetInstructionAndAdvance(Transpilers.EmitDelegate<Func<UILootFilter, int>>(filter => filter.currentType == 1 ? 14 : 17));
 
             matcher.MatchForward(false, new CodeMatch(OpCodes.Ldc_I4_S, (sbyte)14));
 
             matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0))
-                   .SetInstructionAndAdvance(Transpilers.EmitDelegate<Func<UILootFilter, int>>(filter => filter.currentType == 1 ? 14 : 17));
+               .SetInstructionAndAdvance(Transpilers.EmitDelegate<Func<UILootFilter, int>>(filter => filter.currentType == 1 ? 14 : 17));
 
             matcher.MatchForward(false, new CodeMatch(OpCodes.Ldc_I4_S, (sbyte)14));
 
             matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0))
-                   .SetInstructionAndAdvance(Transpilers.EmitDelegate<Func<UILootFilter, int>>(filter => filter.currentType == 1 ? 14 : 17));
+               .SetInstructionAndAdvance(Transpilers.EmitDelegate<Func<UILootFilter, int>>(filter => filter.currentType == 1 ? 14 : 17));
 
             return matcher.InstructionEnumeration();
         }
@@ -109,7 +126,8 @@ namespace ProjectGenesis.Patches.UI
         [HarmonyPatch(typeof(UILootFilter), nameof(UILootFilter.OnBoxMouseDown))]
         [HarmonyPatch(typeof(UILootFilter), nameof(UILootFilter.RefreshWindow))]
         [HarmonyTranspiler]
-        public static IEnumerable<CodeInstruction> UILootFilter_OnBoxMouseDown_currentTypeField_Transpiler(IEnumerable<CodeInstruction> instructions)
+        public static IEnumerable<CodeInstruction> UILootFilter_OnBoxMouseDown_currentTypeField_Transpiler(
+            IEnumerable<CodeInstruction> instructions)
         {
             var matcher = new CodeMatcher(instructions);
 
@@ -123,7 +141,8 @@ namespace ProjectGenesis.Patches.UI
         [HarmonyPatch(typeof(UILootFilter), nameof(UILootFilter.TestMouseIndex))]
         [HarmonyPatch(typeof(UILootFilter), nameof(UILootFilter.SetMaterialProps))]
         [HarmonyTranspiler]
-        public static IEnumerable<CodeInstruction> UILootFilter_SetMaterialProps_currentTypeField_Transpiler(IEnumerable<CodeInstruction> instructions)
+        public static IEnumerable<CodeInstruction> UILootFilter_SetMaterialProps_currentTypeField_Transpiler(
+            IEnumerable<CodeInstruction> instructions)
         {
             var matcher = new CodeMatcher(instructions);
 
@@ -136,7 +155,8 @@ namespace ProjectGenesis.Patches.UI
 
         [HarmonyPatch(typeof(UILootFilter), nameof(UILootFilter.RefreshIcons))]
         [HarmonyTranspiler]
-        public static IEnumerable<CodeInstruction> UILootFilter_RefreshIcons_currentTypeField_Transpiler(IEnumerable<CodeInstruction> instructions)
+        public static IEnumerable<CodeInstruction> UILootFilter_RefreshIcons_currentTypeField_Transpiler(
+            IEnumerable<CodeInstruction> instructions)
         {
             var matcher = new CodeMatcher(instructions);
 
@@ -180,14 +200,14 @@ namespace ProjectGenesis.Patches.UI
         public static IEnumerable<CodeInstruction> UILootFilter_SetMaterialProps_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
             var matcher = new CodeMatcher(instructions);
-
             matcher.MatchForward(false, new CodeMatch(OpCodes.Ldc_I4_8));
             matcher.SetOpcodeAndAdvance(OpCodes.Ldc_I4_7);
 
             matcher.MatchForward(false, new CodeMatch(OpCodes.Ldc_R4, 14f));
 
             matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0))
-                   .SetInstructionAndAdvance(Transpilers.EmitDelegate<Func<UILootFilter, float>>(filter => filter.currentType == 1 ? 14f : 17f));
+               .SetInstructionAndAdvance(
+                    Transpilers.EmitDelegate<Func<UILootFilter, float>>(filter => filter.currentType == 1 ? 14f : 17f));
 
             return matcher.InstructionEnumeration();
         }

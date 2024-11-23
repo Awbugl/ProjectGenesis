@@ -1,13 +1,12 @@
 ﻿using System.Diagnostics;
 using System.IO;
 using System.IO.Compression;
+using System.Linq;
 using Newtonsoft.Json;
 
-// ReSharper disable LoopCanBePartlyConvertedToQuery
-
-namespace ProjectGenesis.Packer
+namespace ProjectGenesis
 {
-    internal static class Program
+    internal static class Packer
     {
         private const string SolutionPath = @"D:\Git\ProjectGenesis";
 
@@ -15,11 +14,10 @@ namespace ProjectGenesis.Packer
         {
             string releasePath = Path.Combine(SolutionPath, "release");
 
-            foreach (string path in Directory.GetFiles(releasePath, "*.zip"))
-                if (File.Exists(path))
-                    File.Delete(path);
+            foreach (string path in Directory.GetFiles(releasePath, "*.zip").Where(File.Exists)) File.Delete(path);
 
-            File.WriteAllText(Path.Combine(releasePath, "manifest.json"), JsonConvert.SerializeObject(new ManifestObject(), Formatting.Indented));
+            File.WriteAllText(Path.Combine(releasePath, "manifest.json"),
+                JsonConvert.SerializeObject(new ManifestObject(), Formatting.Indented));
 
             var zipName = $"GenesisBook-v{ProjectGenesis.VERSION}{ProjectGenesis.DEBUGVERSION}.zip";
 
@@ -43,8 +41,10 @@ namespace ProjectGenesis.Packer
 
         [JsonProperty("website_url")] public string WebsiteURL { get; set; } = "https://github.com/Awbugl/ProjectGenesis";
 
-        [JsonProperty("description")] public string Description { get; set; } = "构建真实宇宙，撰写创世之书。Construct Real Universe. Then leave a GenesisBook. An overhaul mod.";
+        [JsonProperty("description")]
+        public string Description { get; set; } = "构建真实宇宙，撰写创世之书。新矿物，新材料，新配方，新科技，新机制。Construct Real Universe. Then leave a GenesisBook. New vein, new material, new recipe, new technology, new structure.";
 
-        [JsonProperty("dependencies")] public string[] Dependencies { get; set; } = { "CommonAPI-CommonAPI-1.6.5", "nebula-NebulaMultiplayerModApi-2.0.0", };
+        [JsonProperty("dependencies")]
+        public string[] Dependencies { get; set; } = { "CommonAPI-CommonAPI-1.6.5", "nebula-NebulaMultiplayerModApi-2.0.0", };
     }
 }

@@ -74,9 +74,8 @@ namespace ProjectGenesis.Patches.UI
             foreach (CodeInstruction ci in instructions)
             {
                 if (ci.opcode == OpCodes.Ldc_I4_S)
-                {
-                    if ((sbyte)ci.operand == 14) ci.operand = (sbyte)17;
-                }
+                    if ((sbyte)ci.operand == 14)
+                        ci.operand = (sbyte)17;
 
                 if (ci.opcode == OpCodes.Ldc_I4_8) ci.opcode = OpCodes.Ldc_I4_7;
 
@@ -127,7 +126,8 @@ namespace ProjectGenesis.Patches.UI
         [HarmonyPatch(typeof(UIStationStorage), nameof(UIStationStorage.OnSelectItemButtonClick))]
         [HarmonyTranspiler]
         [HarmonyPriority(Priority.Last)]
-        public static IEnumerable<CodeInstruction> UIStationStorage_OnSelectItemButtonClick_Transpiler(IEnumerable<CodeInstruction> instructions)
+        public static IEnumerable<CodeInstruction> UIStationStorage_OnSelectItemButtonClick_Transpiler(
+            IEnumerable<CodeInstruction> instructions)
         {
             var matcher = new CodeMatcher(instructions);
             matcher.MatchForward(false, new CodeMatch(OpCodes.Ldc_R4, -300f));

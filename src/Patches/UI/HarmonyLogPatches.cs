@@ -12,10 +12,11 @@ namespace ProjectGenesis.Patches.UI
         {
             var s = eventArgs.Data.ToString();
 
-            if ((eventArgs.Source.SourceName == "HarmonyX" || s.Contains("InvalidProgramException")) && eventArgs.Level == LogLevel.Error) LogData.Enqueue(s);
+            if ((eventArgs.Source.SourceName == "HarmonyX" || s.Contains("InvalidProgramException")) && eventArgs.Level == LogLevel.Error)
+                LogData.Enqueue(s);
         }
 
-        public void Dispose() { }
+        public void Dispose() {}
     }
 
     public static class HarmonyLogPatches
@@ -28,7 +29,8 @@ namespace ProjectGenesis.Patches.UI
         {
             if (_finished) return;
 
-            while (HarmonyLogListener.LogData.Count > 0) UIFatalErrorTip.instance.ShowError("Harmony throws an error when patching!", HarmonyLogListener.LogData.Dequeue());
+            while (HarmonyLogListener.LogData.Count > 0)
+                UIFatalErrorTip.instance.ShowError("Harmony throws an error when patching!", HarmonyLogListener.LogData.Dequeue());
 
             _finished = true;
         }

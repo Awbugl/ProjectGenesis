@@ -16,8 +16,9 @@ namespace ProjectGenesis.Compatibility
 
             Assembly assembly = pluginInfo.Instance.GetType().Assembly;
 
-            ref List<EVeinType> resourceTypes
-                = ref AccessTools.StaticFieldRefAccess<List<EVeinType>>(assembly.GetType("PlanetwideMining.PlanetwideMining"), "ResourceTypes");
+            ref List<EVeinType> resourceTypes =
+                ref AccessTools.StaticFieldRefAccess<List<EVeinType>>(assembly.GetType("PlanetwideMining.PlanetwideMining"),
+                    "ResourceTypes");
 
             resourceTypes.Add((EVeinType)15);
             resourceTypes.Add((EVeinType)16);
