@@ -26,10 +26,11 @@ or open a issue via [github](https://github.com/Awbugl/ProjectGenesis).
 * [LDBTool](https://thunderstore.io/c/dyson-sphere-program/p/xiaoye97/LDBTool/)，向戴森球计划添加物品、配方、科技等
 * [CommonAPI](https://thunderstore.io/c/dyson-sphere-program/p/CommonAPI/CommonAPI/)，向戴森球计划添加物品、配方、科技等
 
-2. 打开本项目，修改DefaultPath.props中的BepinExPath和DSPAssemblyPath，使其与您的实际路径一致，然后关闭/卸载项目。
-3. 在R2中打开与上一步一致的Profile，在ConfigEditor中搜索BepInEx.cfg，修改Preloader-DumpAssemblies为true。
-4. 通过R2启动一次游戏（需要启用创世之书），将会自动生成BepInEx\DumpedAssemblies\DSPGAME\Assembly-CSharp.dll。
-5. 重新打开本项目，会自动在项目内生成lib\Assembly-CSharp-publicized.dll。至此，准备工作已经完成。
+2. 在本项目下输入如下指令：`git update-index --assume-unchanged DefaultPath.props`，以屏蔽您本地的路径改动。
+3. 打开本项目，修改`DefaultPath.props`中的BepinExPath和DSPAssemblyPath，使其与您的实际路径一致，然后关闭/卸载项目。
+4. 在R2中打开与上一步一致的Profile，在ConfigEditor中搜索`BepInEx.cfg`，修改Preloader-DumpAssemblies为true。
+5. 通过R2启动一次游戏（需要启用创世之书），将会自动生成`BepInEx\DumpedAssemblies\DSPGAME\Assembly-CSharp.dll`。
+6. 重新打开本项目，会自动在项目内生成`lib\Assembly-CSharp-publicized.dll`。至此，准备工作已经完成。现在项目不应有任何报错。
 
 
 1. Before you begin, make sure you have some understanding of the following and how they are used:
@@ -43,11 +44,12 @@ or open a issue via [github](https://github.com/Awbugl/ProjectGenesis).
 * [CommonAPI](https://thunderstore.io/c/dyson-sphere-program/p/CommonAPI/CommonAPI/), Add items, recipes, technologies,
   etc. to the Dyson Sphere Program.
 
-2. Open this project, modify the BepinExPath and DSPAssemblyPath in DefaultPath.props to match your actual paths, then
+2. Enter the following command under this project: `git update-index --assume-unchanged DefaultPath.props` to mask your local path changes.
+3. Open this project, modify the BepinExPath and DSPAssemblyPath in `DefaultPath.props` to match your actual paths, then
    close/uninstall the project.
-3. Open a Profile in R2 that matches the previous step, search for BepInEx.cfg in the ConfigEditor, and change
+4. Open a Profile in R2 that matches the previous step, search for `BepInEx.cfg` in the ConfigEditor, and change
    Preloader-DumpAssemblies to true.
-4. Launch the game once through R2 (need to enable Genesis Book), it will automatically generate
-   BepInEx\DumpedAssemblies\DSPGAME\Assembly-CSharp.dll.
-5. Re-open the project, it will automatically generate lib\Assembly-CSharp-publicized.dll in the project. So, the
-   preparation work has been completed.
+5. Launch the game once through R2 (need to enable Genesis Book), it will automatically generate
+   `BepInEx\DumpedAssemblies\DSPGAME\Assembly-CSharp.dll`.
+6. Re-open the project, it will automatically generate `lib\Assembly-CSharp-publicized.dll` in the project. So, the
+   preparation work has been completed. The project should not report any errors now.
