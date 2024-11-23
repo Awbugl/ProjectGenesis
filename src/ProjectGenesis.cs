@@ -301,6 +301,7 @@ namespace ProjectGenesis
             turretNeed[2] = ProtoID.I超合金弹箱;
 
             ItemProto.stationCollectorId = ProtoID.I轨道采集器;
+            ItemProto.kFuelAutoReplenishIds = FuelRodPatches.FuelRods;
 
             ItemPostFix();
 
