@@ -100,13 +100,14 @@
         <None Include="*.md"/>
         <None Include="DefaultPath.props"/>
         <None Include="nuget.config"/>
+        <Content Include=".gitignore" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
     <PropertyGroup>
         <DumpedAssembliesPath>$(BepinExPath)DumpedAssemblies\DSPGAME\Assembly-CSharp.dll</DumpedAssembliesPath>
     </PropertyGroup>
     <Target Name="PublicizeAssembly" Condition="Exists($(DumpedAssembliesPath))">
-        <Exec Command="$(SolutionDir)lib\BepInEx.AssemblyPublicizer.Cli.exe $(DumpedAssembliesPath) --output $(SolutionDir)lib\Assembly-CSharp-publicized.dll"/>
+        <Exec Command="&#034;$(SolutionDir)lib\BepInEx.AssemblyPublicizer.Cli.exe&#034; &#034;$(DumpedAssembliesPath)&#034; --output &#034;$(SolutionDir)lib\Assembly-CSharp-publicized.dll&#034;"/>
     </Target>
     <Target Name="AfterBuild">
         <MakeDir Directories="$(ReleasePath)"/>
