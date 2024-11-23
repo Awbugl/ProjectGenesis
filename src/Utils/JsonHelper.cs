@@ -436,6 +436,9 @@ namespace ProjectGenesis.Utils
             public int? turretAddEnemyThreatBase { get; set; } = null;
             public float? turretAddEnemyThreatCoef { get; set; } = null;
             public int? enemyGenMatter { get; set; } = null;
+            public int? enemySpMax { get; set; } = null;
+            public int? unitAttackDamage0 { get; set; } = null;
+            public int? unitAttackDamageInc0 { get; set; } = null;
             public bool? multiLevel { get; set; } = null;
             public int? storageCol { get; set; } = null;
             public int? storageRow { get; set; } = null;
@@ -505,6 +508,9 @@ namespace ProjectGenesis.Utils
                     turretAddEnemyThreatBase = i.turretAddEnemyThreatBase,
                     turretAddEnemyThreatCoef = i.turretAddEnemyThreatCoef,
                     enemyGenMatter = i.enemyGenMatter,
+                    enemySpMax = i.enemySpMax,
+                    unitAttackDamage0 = i.unitAttackDamage0,
+                    unitAttackDamageInc0 = i.unitAttackDamageInc0,
                     multiLevel = i.multiLevel,
                     storageCol = i.storageCol,
                     storageRow = i.storageRow,
@@ -626,6 +632,12 @@ namespace ProjectGenesis.Utils
                 if (turretAddEnemyThreatCoef != null) desc.turretAddEnemyThreatCoef = turretAddEnemyThreatCoef.Value;
 
                 if (enemyGenMatter != null) desc.enemyGenMatter = enemyGenMatter.Value;
+
+                if (enemySpMax != null) desc.enemySpMax = enemySpMax.Value;
+
+                if (unitAttackDamage0 != null) desc.unitAttackDamage0 = unitAttackDamage0.Value;
+
+                if (unitAttackDamageInc0 != null) desc.unitAttackDamageInc0 = unitAttackDamageInc0.Value;
 
                 if (multiLevel != null) desc.multiLevel = multiLevel.Value;
 

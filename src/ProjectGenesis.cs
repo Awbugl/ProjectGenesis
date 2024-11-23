@@ -24,6 +24,7 @@ using static ProjectGenesis.Utils.ModifyUpgradeTech;
 using static ProjectGenesis.Patches.AddVeinPatches;
 using static ProjectGenesis.Patches.ModifyPlanetTheme;
 using static ProjectGenesis.Patches.ChemicalRecipeFcolPatches;
+using static ProjectGenesis.Compatibility.InstallationCheckPlugin;
 
 // ReSharper disable UnusedVariable
 // ReSharper disable UnusedMember.Local
@@ -43,7 +44,7 @@ namespace ProjectGenesis
     [BepInDependency(InstallationCheckPlugin.MODGUID, BepInDependency.DependencyFlags.SoftDependency)]
     [CommonAPISubmoduleDependency(nameof(ProtoRegistry), nameof(TabSystem), nameof(LocalizationModule))]
     [ModSaveSettings(LoadOrder = LoadOrder.Preload)]
-    public class ProjectGenesis : BaseUnityPlugin, IModCanSave, IMultiplayerMod
+    public class ProjectGenesis : BaseUnityPlugin, IModCanSave, IMultiplayerModWithSettings
     {
         public const string MODGUID = "org.LoShin.GenesisBook";
         public const string MODNAME = "GenesisBook";
@@ -74,6 +75,13 @@ namespace ProjectGenesis
         #region Logger
 
             logger = Logger;
+
+            if (!PreloaderInstalled || !BepinExVersionMatch)
+            {
+                logger.Log(LogLevel.Error, "GenesisBook Preloader Load Failed");
+                return;
+            }
+
             logger.Log(LogLevel.Info, "GenesisBook Awake");
 
         #endregion Logger
@@ -158,7 +166,8 @@ namespace ProjectGenesis
                     new TabData("精炼页面".TranslateFromJsonSpecial(), "Assets/texpack/矿物处理")),
                 TabSystem.RegisterTab($"{MODGUID}:{MODGUID}Tab2",
                     new TabData("化工页面".TranslateFromJsonSpecial(), "Assets/texpack/化工科技")),
-                TabSystem.RegisterTab($"{MODGUID}:{MODGUID}Tab3", new TabData("防御页面".TranslateFromJsonSpecial(), "Assets/texpack/防御")),
+                TabSystem.RegisterTab($"{MODGUID}:{MODGUID}Tab3", 
+                    new TabData("防御页面".TranslateFromJsonSpecial(), "Assets/texpack/防御")),
             };
 
             RegisterStrings();

@@ -26,15 +26,33 @@ namespace ProjectGenesis.Patches
         {
             var matcher = new CodeMatcher(instructions);
 
+            // energyGenPerSail * 8
             matcher.MatchForward(false,
                 new CodeMatch(OpCodes.Stfld, AccessTools.Field(typeof(DysonSphere), nameof(DysonSphere.energyGenPerSail))));
 
-            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldc_I8, (long)8), new CodeInstruction(OpCodes.Mul));
+            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldc_I4_8), new CodeInstruction(OpCodes.Conv_I8),
+                new CodeInstruction(OpCodes.Mul));
 
+            // energyGenPerNode * 2
+            matcher.MatchForward(false,
+                new CodeMatch(OpCodes.Stfld, AccessTools.Field(typeof(DysonSphere), nameof(DysonSphere.energyGenPerNode))));
+
+            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldc_I4_2), new CodeInstruction(OpCodes.Conv_I8),
+                new CodeInstruction(OpCodes.Mul));
+
+            // energyGenPerFrame * 2
+            matcher.MatchForward(false,
+                new CodeMatch(OpCodes.Stfld, AccessTools.Field(typeof(DysonSphere), nameof(DysonSphere.energyGenPerFrame))));
+
+            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldc_I4_2), new CodeInstruction(OpCodes.Conv_I8),
+                new CodeInstruction(OpCodes.Mul));
+
+            // energyGenPerShell * 8
             matcher.MatchForward(false,
                 new CodeMatch(OpCodes.Stfld, AccessTools.Field(typeof(DysonSphere), nameof(DysonSphere.energyGenPerShell))));
 
-            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldc_I8, (long)8), new CodeInstruction(OpCodes.Mul));
+            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldc_I4_8), new CodeInstruction(OpCodes.Conv_I8),
+                new CodeInstruction(OpCodes.Mul));
 
             return matcher.InstructionEnumeration();
         }

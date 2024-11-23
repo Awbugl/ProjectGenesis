@@ -72,8 +72,8 @@
   },
   {
     "ModelID": 54,
-    "genEnergyPerTick": 250000,
-    "useFuelPerTick": 250000
+    "genEnergyPerTick": 200000,
+    "useFuelPerTick": 200000
   },
   {
     "ModelID": 55,
@@ -210,6 +210,33 @@
   {
     "ModelID": 292,
     "enemyGenMatter": 360
+  },
+  {
+    "ModelID": 293,
+    "enemySpMax": 1200
+  },
+  {
+    "ModelID": 294,
+    "enemySpMax": 1500
+  },
+  {
+    "ModelID": 295,
+    "enemySpMax": 1500
+  },
+  {
+    "ModelID": 300,
+    "unitAttackDamage0": 3750,
+    "unitAttackDamageInc0": 625
+  },
+  {
+    "ModelID": 301,
+    "unitAttackDamage0": 2700,
+    "unitAttackDamageInc0": 300
+  },
+  {
+    "ModelID": 302,
+    "unitAttackDamage0": 8000,
+    "unitAttackDamageInc0": 1000
   },
   {
     "ModelID": 373,

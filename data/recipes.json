@@ -1878,7 +1878,7 @@
     "Name": "电磁轨道弹射器",
     "Description": "",
     "IconPath": "",
-    "Type": 10,
+    "Type": 9,
     "GridIndex": 2315,
     "Time": 360,
     "Input": [
@@ -1906,7 +1906,7 @@
     "Name": "射线接收站",
     "Description": "",
     "IconPath": "",
-    "Type": 10,
+    "Type": 9,
     "GridIndex": 2110,
     "Time": 360,
     "Input": [
@@ -5062,10 +5062,12 @@
       2
     ],
     "Output": [
-      7006
+      7006,
+      1120
     ],
     "OutCounts": [
-      1
+      1,
+      6
     ],
     "Explicit": true,
     "Handcraft": false,

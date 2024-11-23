@@ -1271,8 +1271,8 @@
   },
   {
     "Name": "R催化重整",
-    "ZHCN": "经过漫长的重整工序，可以将丙烯合成为苯。效率较低，却是历史上推动化石燃料资源封存的重要技术。",
-    "ENUS": "After a lengthy reforming process, propylene can be synthesized into benzene. Less efficient, but an important technology that has historically driven the sequestration of fossil fuel resources."
+    "ZHCN": "经过漫长的重整工序，可以将丙烯合成为苯。效率较低，却是历史上推动化石燃料资源封存的重要技术。\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作。</color>",
+    "ENUS": "After a lengthy reforming process, propylene can be synthesized into benzene. Less efficient, but an important technology that has historically driven the sequestration of fossil fuel resources.\n<color=\"#FD965ECC\">Will not stop working until all products are accumulated.</color>"
   },
   {
     "Name": "氨氧化",

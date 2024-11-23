@@ -58,6 +58,27 @@ namespace ProjectGenesis.Patches
             return matcher.InstructionEnumeration();
         }
 
+        [HarmonyPatch(typeof(PlanetGen), nameof(PlanetGen.SetPlanetTheme))]
+        [HarmonyTranspiler]
+        public static IEnumerable<CodeInstruction> PlanetGen_SetPlanetTheme_RemoveOcean(IEnumerable<CodeInstruction> instructions)
+        {
+            var matcher = new CodeMatcher(instructions);
+
+            matcher.End().MatchBack(false, new CodeMatch(OpCodes.Ldloc_S),
+                new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(ThemeProto), nameof(ThemeProto.PlanetType))),
+                new CodeMatch(OpCodes.Ldc_I4_3));
+
+            var themeProto = matcher.Operand;
+
+            var label = matcher.Advance(3).Operand;
+
+            matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_S, themeProto),
+                new CodeInstruction(OpCodes.Ldfld, AccessTools.Field(typeof(ThemeProto), nameof(ThemeProto.WaterItemId))),
+                new CodeInstruction(OpCodes.Ldc_I4_0), new CodeInstruction(OpCodes.Bne_Un_S, label));
+
+            return matcher.InstructionEnumeration();
+        }
+
         [HarmonyPatch(typeof(UIPlanetDetail), nameof(UIPlanetDetail.OnPlanetDataSet))]
         [HarmonyPatch(typeof(UIStarDetail), nameof(UIStarDetail.OnStarDataSet))]
         [HarmonyTranspiler]

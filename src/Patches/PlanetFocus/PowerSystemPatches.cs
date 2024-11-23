@@ -28,6 +28,14 @@ namespace ProjectGenesis.Patches
             matcher.InsertAndAdvance(
                 new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(PlanetFocusPatches), nameof(EnergyCap_PV))));
 
+            matcher.MatchForward(false,
+                new CodeMatch(OpCodes.Ldfld,
+                    AccessTools.Field(typeof(PowerGeneratorComponent), nameof(PowerGeneratorComponent.capacityCurrentTick))));
+
+            matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0));
+            matcher.InsertAndAdvance(
+                new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(PlanetFocusPatches), nameof(EnergyCap_PV))));
+
             //fuel
             matcher.MatchForward(false, new CodeMatch(OpCodes.Ldarg_0), new CodeMatch(OpCodes.Ldfld), new CodeMatch(OpCodes.Ldloc_S),
                 new CodeMatch(OpCodes.Ldelema),

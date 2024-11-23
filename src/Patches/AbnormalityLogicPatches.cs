@@ -38,8 +38,5 @@ namespace ProjectGenesis.Patches
         {
             if (__instance.determinators == null) __instance.determinators = new Dictionary<int, AbnormalityDeterminator>();
         }
-        
-        
-        
     }
 }

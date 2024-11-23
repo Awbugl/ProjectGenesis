@@ -97,6 +97,7 @@ namespace ProjectGenesis.Patches
                         case ProtoID.R高效石墨烯:
                         case ProtoID.R水电解:
                         case ProtoID.R羰基合成:
+                        case ProtoID.R催化重整:
                         case ProtoID.R二氧化硫还原:
                             b = true;
 

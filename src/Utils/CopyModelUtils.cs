@@ -212,14 +212,13 @@ namespace ProjectGenesis.Utils
                 model.HpRecover *= 2;
             }
 
-            ModelProto modelProto = LDB.models.Select(ProtoID.M强袭者);
-            modelProto.HpUpgrade = 1000;
-
-            modelProto = LDB.models.Select(ProtoID.M游骑兵);
-            modelProto.HpUpgrade = 800;
-
-            modelProto = LDB.models.Select(ProtoID.M守卫者);
-            modelProto.HpUpgrade = 800;
+            for (int i = ProtoID.M强袭者; i <= ProtoID.M守卫者; i++)
+            {
+                ModelProto model = LDB.models.Select(i);
+                model.HpMax *= 5;
+                model.HpUpgrade *= 5;
+                model.HpRecover *= 5;
+            }
         }
     }
 }

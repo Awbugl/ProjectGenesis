@@ -2,6 +2,7 @@
 using System.Reflection;
 using BepInEx;
 using BepInEx.Logging;
+using BepInEx.Bootstrap;
 using HarmonyLib;
 using ProjectGenesis.Patches;
 using ProjectGenesis.Utils;
@@ -33,7 +34,8 @@ namespace ProjectGenesis.Compatibility
         public const string MODGUID = "org.LoShin.GenesisBook.InstallationCheck";
         public const string MODNAME = "GenesisBook.InstallationCheck";
         public const string PreferBepinExVersion = "5.4.17";
-        private static bool MessageShown, PreloaderInstalled, BepinExVersionMatch;
+        private static bool MessageShown;
+        internal static bool PreloaderInstalled, BepinExVersionMatch;
 
         internal static ManualLogSource logger;
 
@@ -68,11 +70,7 @@ namespace ProjectGenesis.Compatibility
             LazyOutposting.Awake();
             WeaponPlus.Awake();
 
-            try { GalacticScale.Awake(); }
-            catch (FileNotFoundException)
-            {
-                // ignore
-            }
+            if (Chainloader.PluginInfos.ContainsKey(GalacticScale.GUID)) GalacticScale.Awake();
         }
 
         public static void OnMainMenuOpen()
