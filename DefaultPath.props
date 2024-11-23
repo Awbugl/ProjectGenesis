@@ -2,11 +2,11 @@
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup Label="DefaultPath">
         <!-- BepinExPath for debug output -->
-        <BepinExPath>C:\Users\MLJ\AppData\Roaming\r2modmanPlus-local\DysonSphereProgram\profiles\Default\BepInEx\</BepinExPath>
+        <BepinExPath>C:\Users\littl\AppData\Roaming\r2modmanPlus-local\DysonSphereProgram\profiles\Default\BepInEx\</BepinExPath>
         <!-- DebugModDir for debug output -->
         <DebugModDir>HiddenCirno-GenesisBook</DebugModDir>
         <!-- DSPAssemblyPath for import unity dll -->
-        <DSPAssemblyPath>D:\Steam\steamapps\common\Dyson Sphere Program\DSPGAME_Data\Managed\</DSPAssemblyPath>
+        <DSPAssemblyPath>D:\SteamLibrary\steamapps\common\Dyson Sphere Program\DSPGAME_Data\Managed\</DSPAssemblyPath>
         <!-- ReleasePath for release -->
         <ReleasePath>$(SolutionDir)release\</ReleasePath>
     </PropertyGroup>
