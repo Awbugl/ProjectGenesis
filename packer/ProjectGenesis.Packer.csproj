@@ -50,9 +50,13 @@
         </Reference>
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="Program.cs"/>
+        <Compile Include="Packer.cs"/>
     </ItemGroup>
     <ItemGroup>
+        <ProjectReference Include="..\preloader\ProjectGenesis.Preloader.csproj">
+            <Project>{e07968b0-4405-43ed-9f89-bcae7390eeaf}</Project>
+            <Name>ProjectGenesis.Preloader</Name>
+        </ProjectReference>
         <ProjectReference Include="..\ProjectGenesis.csproj">
             <Project>{eff66744-faf7-461e-b86e-7130e64e16df}</Project>
             <Name>ProjectGenesis</Name>

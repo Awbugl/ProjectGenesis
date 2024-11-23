@@ -19,10 +19,12 @@ namespace ProjectGenesis.Patches.Logic.AddVein
             object jump = matcher.Advance(2).Operand;
             object endlabel = matcher.Advance(1).Labels.First();
 
-            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_S, index), new CodeInstruction(OpCodes.Ldc_I4, 15), new CodeInstruction(OpCodes.Beq, endlabel),
-                new CodeInstruction(OpCodes.Ldc_I4, 14), new CodeInstruction(OpCodes.Stloc_S, index), new CodeInstruction(OpCodes.Br, jump));
+            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_S, index), new CodeInstruction(OpCodes.Ldc_I4, 15),
+                new CodeInstruction(OpCodes.Beq, endlabel), new CodeInstruction(OpCodes.Ldc_I4, 14),
+                new CodeInstruction(OpCodes.Stloc_S, index), new CodeInstruction(OpCodes.Br, jump));
 
-            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldc_I4_S, (sbyte)15), new CodeMatch(OpCodes.Blt));
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldc_I4_S, (sbyte)15),
+                new CodeMatch(OpCodes.Blt));
 
             index = matcher.Operand;
 
@@ -42,22 +44,24 @@ namespace ProjectGenesis.Patches.Logic.AddVein
 
             matcher.MatchForward(false, new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldc_I4_7), new CodeMatch(OpCodes.Bge));
 
-            matcher.Advance(1)
-                   .SetInstructionAndAdvance(new CodeInstruction(OpCodes.Call,
-                        AccessTools.Method(typeof(AddVeinPatches), nameof(OnStarDataSet_ChangeVeinData_HighlightPatches)))).SetOpcodeAndAdvance(OpCodes.Brfalse);
+            matcher.Advance(1).SetInstructionAndAdvance(new CodeInstruction(OpCodes.Call,
+                    AccessTools.Method(typeof(AddVeinPatches), nameof(OnStarDataSet_ChangeVeinData_HighlightPatches))))
+               .SetOpcodeAndAdvance(OpCodes.Brfalse);
 
             matcher.MatchForward(false, new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldc_I4_7), new CodeMatch(OpCodes.Clt));
 
-            matcher.Advance(1)
-                   .SetInstructionAndAdvance(new CodeInstruction(OpCodes.Call,
-                        AccessTools.Method(typeof(AddVeinPatches), nameof(OnStarDataSet_ChangeVeinData_HighlightPatches)))).SetOpcodeAndAdvance(OpCodes.Nop);
+            matcher.Advance(1).SetInstructionAndAdvance(new CodeInstruction(OpCodes.Call,
+                    AccessTools.Method(typeof(AddVeinPatches), nameof(OnStarDataSet_ChangeVeinData_HighlightPatches))))
+               .SetOpcodeAndAdvance(OpCodes.Nop);
 
-            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldc_I4_S, (sbyte)15), new CodeMatch(OpCodes.Blt));
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldc_I4_S, (sbyte)15),
+                new CodeMatch(OpCodes.Blt));
 
             object index = matcher.Operand;
 
             matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_S, index),
-                new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(AddVeinPatches), nameof(OnStarDataSet_ChangeVeinData_IndexPatches))),
+                new CodeInstruction(OpCodes.Call,
+                    AccessTools.Method(typeof(AddVeinPatches), nameof(OnStarDataSet_ChangeVeinData_IndexPatches))),
                 new CodeInstruction(OpCodes.Stloc_S, index));
 
             matcher.Advance(1).SetOperandAndAdvance(VeinTypeCount);
@@ -81,7 +85,8 @@ namespace ProjectGenesis.Patches.Logic.AddVein
         [HarmonyPatch(typeof(UIPlanetDetail), nameof(UIPlanetDetail.RefreshDynamicProperties))]
         [HarmonyPatch(typeof(UIStarDetail), nameof(UIStarDetail.RefreshDynamicProperties))]
         [HarmonyTranspiler]
-        public static IEnumerable<CodeInstruction> RefreshDynamicProperties_ChangeVeinData_Transpiler(IEnumerable<CodeInstruction> instructions)
+        public static IEnumerable<CodeInstruction> RefreshDynamicProperties_ChangeVeinData_Transpiler(
+            IEnumerable<CodeInstruction> instructions)
         {
             var matcher = new CodeMatcher(instructions);
             matcher.MatchForward(false, new CodeMatch(OpCodes.Ldstr, "未知珍奇信号"));
@@ -96,8 +101,8 @@ namespace ProjectGenesis.Patches.Logic.AddVein
 
             jmp = matcher.Advance(11).Operand;
 
-            matcher.Advance(-3).InsertAndAdvance(new CodeInstruction(entry), new CodeInstruction(refId), new CodeInstruction(OpCodes.Ldc_I4, 15),
-                new CodeInstruction(OpCodes.Beq, jmp));
+            matcher.Advance(-3).InsertAndAdvance(new CodeInstruction(entry), new CodeInstruction(refId),
+                new CodeInstruction(OpCodes.Ldc_I4, 15), new CodeInstruction(OpCodes.Beq, jmp));
 
             return matcher.InstructionEnumeration();
         }

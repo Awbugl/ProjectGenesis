@@ -17,6 +17,7 @@
     "ItemPoints": [],
     "HashNeeded": 1,
     "UnlockRecipes": [
+      11,
       25
     ],
     "UnlockFunctions": [],
@@ -73,7 +74,7 @@
       6508
     ],
     "AddItemCounts": [
-      2,
+      3,
       1
     ],
     "PropertyOverrideItems": [
@@ -151,14 +152,13 @@
     ],
     "PreTechsImplicit": [],
     "Items": [
-      6001
+      6203
     ],
     "ItemPoints": [
       20
     ],
-    "HashNeeded": 9000,
+    "HashNeeded": 1800,
     "UnlockRecipes": [
-      11,
       12,
       13
     ],
@@ -169,13 +169,15 @@
     "MaxLevel": 0,
     "LevelCoef1": 0,
     "LevelCoef2": 0,
-    "IsLabTech": true,
+    "IsLabTech": false,
     "PreTechsMax": false,
     "AddItems": [
-      1401
+      1401,
+      2202
     ],
     "AddItemCounts": [
-      10
+      10,
+      3
     ],
     "PropertyOverrideItems": [],
     "PropertyItemCounts": []
@@ -231,11 +233,10 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      21.0,
+      25.0,
       -39.0
     ],
     "PreTechs": [
-      1102,
       1915
     ],
     "PreTechsImplicit": [],
@@ -244,10 +245,10 @@
       6002
     ],
     "ItemPoints": [
-      20,
-      20
+      10,
+      10
     ],
-    "HashNeeded": 72000,
+    "HashNeeded": 144000,
     "UnlockRecipes": [
       58,
       501
@@ -275,12 +276,10 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      21.0,
+      25.0,
       -35.0
     ],
     "PreTechs": [
-      1122,
-      1102,
       1915
     ],
     "PreTechsImplicit": [],
@@ -289,14 +288,13 @@
       6002
     ],
     "ItemPoints": [
-      20,
-      20
+      10,
+      10
     ],
     "HashNeeded": 72000,
     "UnlockRecipes": [
       720,
-      509,
-      512
+      509
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -332,9 +330,9 @@
       6001
     ],
     "ItemPoints": [
-      20
+      10
     ],
-    "HashNeeded": 36000,
+    "HashNeeded": 72000,
     "UnlockRecipes": [
       18,
       539
@@ -363,7 +361,7 @@
     "PreItem": null,
     "Position": [
       13.0,
-      -39.0
+      -31.0
     ],
     "PreTechs": [
       1120
@@ -373,9 +371,9 @@
       6002
     ],
     "ItemPoints": [
-      20
+      10
     ],
-    "HashNeeded": 72000,
+    "HashNeeded": 144000,
     "UnlockRecipes": [
       19,
       419
@@ -414,9 +412,9 @@
       6002
     ],
     "ItemPoints": [
-      20
+      10
     ],
-    "HashNeeded": 180000,
+    "HashNeeded": 360000,
     "UnlockRecipes": [
       20
     ],
@@ -454,9 +452,9 @@
       6002
     ],
     "ItemPoints": [
-      20
+      10
     ],
-    "HashNeeded": 288000,
+    "HashNeeded": 576000,
     "UnlockRecipes": [
       21
     ],
@@ -489,16 +487,14 @@
     "PreTechs": [
       1900
     ],
-    "PreTechsImplicit": [
-      1002
-    ],
+    "PreTechsImplicit": [],
     "Items": [
-      6001
+      6203
     ],
     "ItemPoints": [
       20
     ],
-    "HashNeeded": 9000,
+    "HashNeeded": 1800,
     "UnlockRecipes": [
       114,
       49,
@@ -511,7 +507,7 @@
     "MaxLevel": 0,
     "LevelCoef1": 0,
     "LevelCoef2": 0,
-    "IsLabTech": true,
+    "IsLabTech": false,
     "PreTechsMax": false,
     "AddItems": [
       2106
@@ -532,12 +528,14 @@
     "PreItem": null,
     "Position": [
       13.0,
-      -31.0
+      -39.0
     ],
     "PreTechs": [
       1120
     ],
-    "PreTechsImplicit": [],
+    "PreTechsImplicit": [
+      1932
+    ],
     "Items": [
       6001
     ],
@@ -569,12 +567,12 @@
     "Name": "T高分子化工",
     "IconPath": "Icons/Tech/1121",
     "Desc": "T高分子化工描述",
-    "Conclusion": "高分子化工结果",
+    "Conclusion": "T高分子化工描述",
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
       17.0,
-      -31.0
+      -39.0
     ],
     "PreTechs": [
       1121
@@ -585,13 +583,14 @@
       6002
     ],
     "ItemPoints": [
-      20,
-      20
+      10,
+      10
     ],
-    "HashNeeded": 72000,
+    "HashNeeded": 144000,
     "UnlockRecipes": [
       23,
-      771
+      771,
+      546
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -626,14 +625,12 @@
       1122
     ],
     "Items": [
-      6001,
-      6002
+      6278
     ],
     "ItemPoints": [
-      20,
-      20
+      10
     ],
-    "HashNeeded": 108000,
+    "HashNeeded": 216000,
     "UnlockRecipes": [
       714,
       709
@@ -669,14 +666,12 @@
     ],
     "PreTechsImplicit": [],
     "Items": [
-      6001,
-      6002
+      6278
     ],
     "ItemPoints": [
-      12,
-      12
+      10
     ],
-    "HashNeeded": 240000,
+    "HashNeeded": 288000,
     "UnlockRecipes": [
       27
     ],
@@ -707,7 +702,7 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      25.0,
+      21.0,
       -27.0
     ],
     "PreTechs": [
@@ -715,16 +710,14 @@
     ],
     "PreTechsImplicit": [],
     "Items": [
-      6001,
-      6002,
+      6278,
       6003
     ],
     "ItemPoints": [
-      12,
-      12,
-      12
+      10,
+      10
     ],
-    "HashNeeded": 240000,
+    "HashNeeded": 288000,
     "UnlockRecipes": [
       28,
       29
@@ -760,14 +753,12 @@
     ],
     "PreTechsImplicit": [],
     "Items": [
-      6002,
-      6003
+      6278
     ],
     "ItemPoints": [
-      12,
-      6
+      10
     ],
-    "HashNeeded": 240000,
+    "HashNeeded": 288000,
     "UnlockRecipes": [
       30
     ],
@@ -808,10 +799,10 @@
       6002
     ],
     "ItemPoints": [
-      20,
-      20
+      10,
+      10
     ],
-    "HashNeeded": 72000,
+    "HashNeeded": 144000,
     "UnlockRecipes": [
       31,
       32
@@ -840,19 +831,17 @@
     "PreItem": null,
     "Position": [
       17.0,
-      -27.0
+      -31.0
     ],
     "PreTechs": [
       1131
     ],
     "PreTechsImplicit": [],
     "Items": [
-      6002,
-      6003
+      6278
     ],
     "ItemPoints": [
-      16,
-      4
+      16
     ],
     "HashNeeded": 135000,
     "UnlockRecipes": [
@@ -892,16 +881,12 @@
       1132
     ],
     "Items": [
-      6001,
-      6002,
-      6003
+      6278
     ],
     "ItemPoints": [
-      16,
-      16,
-      4
+      10
     ],
-    "HashNeeded": 180000,
+    "HashNeeded": 288000,
     "UnlockRecipes": [
       36,
       62
@@ -939,17 +924,9 @@
       1142
     ],
     "Items": [
-      6001,
-      6002,
-      6003,
-      6004,
-      6005
+      6280
     ],
     "ItemPoints": [
-      10,
-      10,
-      10,
-      10,
       10
     ],
     "HashNeeded": 720000,
@@ -979,7 +956,7 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      29.0,
+      25.0,
       -27.0
     ],
     "PreTechs": [
@@ -987,16 +964,14 @@
     ],
     "PreTechsImplicit": [],
     "Items": [
-      6001,
-      6002,
+      6278,
       6003
     ],
     "ItemPoints": [
-      12,
-      12,
-      6
+      10,
+      5
     ],
-    "HashNeeded": 360000,
+    "HashNeeded": 432000,
     "UnlockRecipes": [
       38
     ],
@@ -1031,16 +1006,14 @@
     ],
     "PreTechsImplicit": [],
     "Items": [
-      6001,
-      6002,
+      6278,
       6003
     ],
     "ItemPoints": [
-      12,
-      12,
-      12
+      10,
+      10
     ],
-    "HashNeeded": 240000,
+    "HashNeeded": 288000,
     "UnlockRecipes": [
       39,
       40
@@ -1068,7 +1041,7 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      25.0,
+      21.0,
       -31.0
     ],
     "PreTechs": [
@@ -1078,14 +1051,14 @@
       1142
     ],
     "Items": [
-      6001,
-      6002,
-      6003
+      6278,
+      6003,
+      6004
     ],
     "ItemPoints": [
       12,
       12,
-      12
+      9
     ],
     "HashNeeded": 300000,
     "UnlockRecipes": [
@@ -1122,20 +1095,12 @@
     ],
     "PreTechsImplicit": [],
     "Items": [
-      6001,
-      6002,
-      6003,
-      6004,
-      6005
+      6280
     ],
     "ItemPoints": [
-      10,
-      10,
-      10,
-      10,
-      10
+      5
     ],
-    "HashNeeded": 1440000,
+    "HashNeeded": 2880000,
     "UnlockRecipes": [
       110,
       44
@@ -1175,14 +1140,12 @@
     ],
     "PreTechsImplicit": [],
     "Items": [
-      6002,
-      6005
+      6280
     ],
     "ItemPoints": [
-      24,
-      12
+      10
     ],
-    "HashNeeded": 600000,
+    "HashNeeded": 1080000,
     "UnlockRecipes": [
       42
     ],
@@ -1210,23 +1173,23 @@
     "PreItem": null,
     "Position": [
       25.0,
-      29.0
+      21.0
     ],
     "PreTechs": [
-      1943
+      1202
     ],
-    "PreTechsImplicit": [],
+    "PreTechsImplicit": [
+      1929
+    ],
     "Items": [
-      6001,
-      6002,
+      6278,
       6003
     ],
     "ItemPoints": [
-      8,
-      12,
-      4
+      10,
+      5
     ],
-    "HashNeeded": 720000,
+    "HashNeeded": 648000,
     "UnlockRecipes": [
       109,
       108
@@ -1247,10 +1210,10 @@
   },
   {
     "ID": 1152,
-    "Name": "T虫洞航行",
+    "Name": "T量子折跃",
     "IconPath": "Assets/texpack/虫洞航行",
-    "Desc": "T虫洞航行描述",
-    "Conclusion": "T虫洞航行描述",
+    "Desc": "T量子折跃描述",
+    "Conclusion": "T量子折跃描述",
     "IsHiddenTech": true,
     "PreItem": [
       5204,
@@ -1290,7 +1253,7 @@
   },
   {
     "ID": 1153,
-    "Name": "人造恒星",
+    "Name": "T人造恒星",
     "IconPath": "Icons/Tech/1144",
     "Desc": "人造恒星描述",
     "Conclusion": "人造恒星结果",
@@ -1305,18 +1268,14 @@
     ],
     "PreTechsImplicit": [],
     "Items": [
-      6001,
-      6002,
-      6003,
-      6004
+      6278,
+      6279
     ],
     "ItemPoints": [
-      40,
-      40,
-      80,
-      40
+      6,
+      9
     ],
-    "HashNeeded": 288000,
+    "HashNeeded": 960000,
     "UnlockRecipes": [
       43,
       115
@@ -1359,7 +1318,7 @@
     ],
     "Items": [
       1301,
-      1201
+      6203
     ],
     "ItemPoints": [
       20,
@@ -1415,10 +1374,10 @@
       6002
     ],
     "ItemPoints": [
-      20,
-      20
+      10,
+      10
     ],
-    "HashNeeded": 72000,
+    "HashNeeded": 144000,
     "UnlockRecipes": [
       46
     ],
@@ -1462,16 +1421,12 @@
       1602
     ],
     "Items": [
-      6001,
-      6002,
-      6003
+      6278
     ],
     "ItemPoints": [
-      40,
-      40,
-      40
+      10
     ],
-    "HashNeeded": 72000,
+    "HashNeeded": 288000,
     "UnlockRecipes": [
       47
     ],
@@ -1516,12 +1471,14 @@
       1122
     ],
     "Items": [
-      6001
+      6001,
+      6002
     ],
     "ItemPoints": [
-      20
+      10,
+      10
     ],
-    "HashNeeded": 144000,
+    "HashNeeded": 288000,
     "UnlockRecipes": [
       51,
       751
@@ -1555,14 +1512,14 @@
     "PreTechs": [
       1302
     ],
-    "PreTechsImplicit": [],
+    "PreTechsImplicit": [
+      1141
+    ],
     "Items": [
-      6001,
-      6002,
+      6278,
       6003
     ],
     "ItemPoints": [
-      10,
       10,
       10
     ],
@@ -1604,18 +1561,10 @@
       1943
     ],
     "Items": [
-      6001,
-      6002,
-      6003,
-      6004,
-      6005
+      6280
     ],
     "ItemPoints": [
-      10,
-      10,
-      10,
-      10,
-      6
+      10
     ],
     "HashNeeded": 360000,
     "UnlockRecipes": [
@@ -1657,14 +1606,10 @@
       1302
     ],
     "Items": [
-      6001,
-      6002,
-      6003
+      6278
     ],
     "ItemPoints": [
-      10,
-      10,
-      1
+      10
     ],
     "HashNeeded": 360000,
     "UnlockRecipes": [
@@ -1705,10 +1650,12 @@
       1002
     ],
     "Items": [
-      6001
+      6001,
+      6002
     ],
     "ItemPoints": [
-      20
+      20,
+      10
     ],
     "HashNeeded": 36000,
     "UnlockRecipes": [
@@ -1745,14 +1692,14 @@
     ],
     "PreTechsImplicit": [],
     "Items": [
-      6001,
-      6002
+      6278,
+      6003
     ],
     "ItemPoints": [
       10,
-      10
+      6
     ],
-    "HashNeeded": 288000,
+    "HashNeeded": 360000,
     "UnlockRecipes": [
       55,
       540
@@ -1880,14 +1827,12 @@
     ],
     "PreTechsImplicit": [],
     "Items": [
-      6001,
-      6002
+      6278
     ],
     "ItemPoints": [
-      20,
-      20
+      10
     ],
-    "HashNeeded": 90000,
+    "HashNeeded": 180000,
     "UnlockRecipes": [
       60,
       61,
@@ -1927,9 +1872,9 @@
       6001
     ],
     "ItemPoints": [
-      20
+      10
     ],
-    "HashNeeded": 21600,
+    "HashNeeded": 43200,
     "UnlockRecipes": [
       63,
       26,
@@ -1976,9 +1921,9 @@
       6001
     ],
     "ItemPoints": [
-      20
+      10
     ],
-    "HashNeeded": 5400,
+    "HashNeeded": 10800,
     "UnlockRecipes": [
       64
     ],
@@ -2022,10 +1967,10 @@
       6002
     ],
     "ItemPoints": [
-      20,
-      20
+      10,
+      10
     ],
-    "HashNeeded": 36000,
+    "HashNeeded": 72000,
     "UnlockRecipes": [
       65,
       774,
@@ -2067,14 +2012,12 @@
       1413
     ],
     "Items": [
-      6001,
-      6002
+      6278
     ],
     "ItemPoints": [
-      20,
-      20
+      10
     ],
-    "HashNeeded": 144000,
+    "HashNeeded": 288000,
     "UnlockRecipes": [
       66
     ],
@@ -2114,7 +2057,7 @@
     "ItemPoints": [
       20
     ],
-    "HashNeeded": 72000,
+    "HashNeeded": 1800,
     "UnlockRecipes": [],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -2147,14 +2090,12 @@
     ],
     "PreTechsImplicit": [],
     "Items": [
-      6001,
-      6002
+      6278
     ],
     "ItemPoints": [
-      5,
-      20
+      5
     ],
-    "HashNeeded": 180000,
+    "HashNeeded": 720000,
     "UnlockRecipes": [
       113
     ],
@@ -2191,12 +2132,10 @@
       1141
     ],
     "Items": [
-      6001,
-      6002,
+      6278,
       6003
     ],
     "ItemPoints": [
-      10,
       10,
       10
     ],
@@ -2238,9 +2177,9 @@
       6001
     ],
     "ItemPoints": [
-      40
+      10
     ],
-    "HashNeeded": 18000,
+    "HashNeeded": 72000,
     "UnlockRecipes": [
       67
     ],
@@ -2281,14 +2220,12 @@
       1501
     ],
     "Items": [
-      6001,
-      6002
+      6278
     ],
     "ItemPoints": [
-      20,
-      20
+      10
     ],
-    "HashNeeded": 36000,
+    "HashNeeded": 72000,
     "UnlockRecipes": [
       68,
       69
@@ -2324,12 +2261,10 @@
     ],
     "PreTechsImplicit": [],
     "Items": [
-      6001,
-      6002,
+      6278,
       6003
     ],
     "ItemPoints": [
-      10,
       10,
       10
     ],
@@ -2373,16 +2308,14 @@
     ],
     "PreTechsImplicit": [],
     "Items": [
-      6001,
-      6002,
+      6278,
       6003,
       6004
     ],
     "ItemPoints": [
       10,
       10,
-      10,
-      10
+      5
     ],
     "HashNeeded": 576000,
     "UnlockRecipes": [
@@ -2423,15 +2356,13 @@
     ],
     "PreTechsImplicit": [],
     "Items": [
-      6001,
-      6002,
-      6003,
+      6278,
+      6279,
       6005
     ],
     "ItemPoints": [
       20,
-      20,
-      20,
+      10,
       20
     ],
     "HashNeeded": 360000,
@@ -2471,23 +2402,20 @@
     ],
     "PreTechsImplicit": [],
     "Items": [
-      6001,
-      6002,
-      6003,
-      6004,
+      6278,
+      6279,
       6005
     ],
     "ItemPoints": [
       20,
-      20,
-      5,
       5,
       10
     ],
     "HashNeeded": 540000,
     "UnlockRecipes": [
       74,
-      541
+      541,
+      547
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -2520,23 +2448,14 @@
     ],
     "PreTechsImplicit": [],
     "Items": [
-      6001,
-      6002,
-      6003,
-      6004,
-      6005
+      6280
     ],
     "ItemPoints": [
-      10,
-      10,
-      10,
-      10,
       10
     ],
     "HashNeeded": 720000,
     "UnlockRecipes": [
-      75,
-      544
+      75
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -2615,14 +2534,12 @@
     ],
     "PreTechsImplicit": [],
     "Items": [
-      6001,
-      6002
+      6278
     ],
     "ItemPoints": [
-      20,
-      20
+      10
     ],
-    "HashNeeded": 108000,
+    "HashNeeded": 216000,
     "UnlockRecipes": [
       76
     ],
@@ -2657,16 +2574,12 @@
     ],
     "PreTechsImplicit": [],
     "Items": [
-      6001,
-      6002,
-      6003
+      6278
     ],
     "ItemPoints": [
-      20,
-      20,
-      2
+      10
     ],
-    "HashNeeded": 216000,
+    "HashNeeded": 432000,
     "UnlockRecipes": [
       77
     ],
@@ -2701,14 +2614,12 @@
     ],
     "PreTechsImplicit": [],
     "Items": [
-      6001,
-      6002
+      6278
     ],
     "ItemPoints": [
-      10,
-      10
+      5
     ],
-    "HashNeeded": 144000,
+    "HashNeeded": 288000,
     "UnlockRecipes": [
       118
     ],
@@ -2743,20 +2654,26 @@
     ],
     "PreTechsImplicit": [],
     "Items": [
-      6001,
-      6003
+      6278,
+      6003,
+      6004
     ],
     "ItemPoints": [
       12,
-      2
+      12,
+      4
     ],
     "HashNeeded": 360000,
     "UnlockRecipes": [
       80,
       81
     ],
-    "UnlockFunctions": [],
-    "UnlockValues": [],
+    "UnlockFunctions": [
+      37
+    ],
+    "UnlockValues": [
+      2316
+    ],
     "Published": true,
     "Level": 0,
     "MaxLevel": 0,
@@ -2786,15 +2703,11 @@
     ],
     "PreTechsImplicit": [],
     "Items": [
-      6001,
-      6002,
-      6003,
-      6004,
+      6278,
+      6279,
       6005
     ],
     "ItemPoints": [
-      10,
-      10,
       10,
       10,
       5
@@ -2839,17 +2752,9 @@
     ],
     "PreTechsImplicit": [],
     "Items": [
-      6001,
-      6002,
-      6003,
-      6004,
-      6005
+      6280
     ],
     "ItemPoints": [
-      20,
-      20,
-      20,
-      20,
       20
     ],
     "HashNeeded": 180000,
@@ -2892,7 +2797,7 @@
     ],
     "Items": [
       1301,
-      1201
+      6203
     ],
     "ItemPoints": [
       20,
@@ -2950,9 +2855,9 @@
       6001
     ],
     "ItemPoints": [
-      20
+      10
     ],
-    "HashNeeded": 18000,
+    "HashNeeded": 36000,
     "UnlockRecipes": [
       89,
       88,
@@ -2989,7 +2894,7 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      29.0,
+      25.0,
       33.0
     ],
     "PreTechs": [
@@ -3089,19 +2994,15 @@
     ],
     "PreTechsImplicit": [],
     "Items": [
-      6001,
-      6002,
-      6003
+      6278
     ],
     "ItemPoints": [
-      20,
-      20,
-      5
+      10
     ],
-    "HashNeeded": 216000,
+    "HashNeeded": 432000,
     "UnlockRecipes": [
-      96,
-      95
+      95,
+      96
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -3140,12 +3041,10 @@
     ],
     "PreTechsImplicit": [],
     "Items": [
-      6001,
-      6002,
+      6278,
       6003
     ],
     "ItemPoints": [
-      10,
       10,
       10
     ],
@@ -3222,7 +3121,7 @@
     "PreItem": null,
     "Position": [
       25.0,
-      33.0
+      29.0
     ],
     "PreTechs": [
       1602
@@ -3234,7 +3133,7 @@
     ],
     "ItemPoints": [
       20,
-      5
+      10
     ],
     "HashNeeded": 72000,
     "UnlockRecipes": [
@@ -3279,9 +3178,9 @@
       1202
     ],
     "ItemPoints": [
-      15
+      20
     ],
-    "HashNeeded": 2400,
+    "HashNeeded": 1800,
     "UnlockRecipes": [
       97,
       7
@@ -3359,7 +3258,7 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      21.0,
+      17.0,
       -27.0
     ],
     "PreTechs": [
@@ -3404,7 +3303,7 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      29.0,
+      25.0,
       -31.0
     ],
     "PreTechs": [
@@ -3412,16 +3311,16 @@
     ],
     "PreTechsImplicit": [],
     "Items": [
-      6001,
-      6002,
-      6003
+      6278,
+      6003,
+      6004
     ],
     "ItemPoints": [
-      16,
-      16,
-      16
+      10,
+      10,
+      10
     ],
-    "HashNeeded": 360000,
+    "HashNeeded": 576000,
     "UnlockRecipes": [
       101,
       78
@@ -3457,18 +3356,17 @@
     ],
     "PreTechsImplicit": [],
     "Items": [
-      6001,
-      6002,
-      6003
+      6278,
+      6279
     ],
     "ItemPoints": [
-      10,
       10,
       10
     ],
     "HashNeeded": 576000,
     "UnlockRecipes": [
       102,
+      544,
       79
     ],
     "UnlockFunctions": [],
@@ -3513,8 +3411,12 @@
     "UnlockRecipes": [
       103
     ],
-    "UnlockFunctions": [],
-    "UnlockValues": [],
+    "UnlockFunctions": [
+      42
+    ],
+    "UnlockValues": [
+      1.0
+    ],
     "Published": true,
     "Level": 0,
     "MaxLevel": 0,
@@ -3547,14 +3449,14 @@
       1711
     ],
     "Items": [
-      6001,
-      6002,
-      6003
+      6278,
+      6003,
+      6004
     ],
     "ItemPoints": [
-      20,
-      20,
-      10
+      10,
+      5,
+      5
     ],
     "HashNeeded": 720000,
     "UnlockRecipes": [
@@ -3646,9 +3548,9 @@
       6001
     ],
     "ItemPoints": [
-      5
+      10
     ],
-    "HashNeeded": 43200,
+    "HashNeeded": 21600,
     "UnlockRecipes": [
       133
     ],
@@ -3729,12 +3631,10 @@
       1919
     ],
     "Items": [
-      6001,
-      6002,
+      6278,
       6003
     ],
     "ItemPoints": [
-      10,
       10,
       5
     ],
@@ -3911,10 +3811,10 @@
       6002
     ],
     "ItemPoints": [
-      20,
-      20
+      10,
+      10
     ],
-    "HashNeeded": 72000,
+    "HashNeeded": 144000,
     "UnlockRecipes": [
       131
     ],
@@ -3951,16 +3851,12 @@
       1703
     ],
     "Items": [
-      6001,
-      6002,
-      6003
+      6278
     ],
     "ItemPoints": [
-      6,
-      6,
-      6
+      10
     ],
-    "HashNeeded": 180000,
+    "HashNeeded": 288000,
     "UnlockRecipes": [
       132,
       792
@@ -4043,15 +3939,13 @@
       1126
     ],
     "Items": [
-      6001,
-      6002,
+      6278,
       6003,
       6004
     ],
     "ItemPoints": [
       12,
-      12,
-      12,
+      9,
       6
     ],
     "HashNeeded": 300000,
@@ -4096,9 +3990,9 @@
       6001
     ],
     "ItemPoints": [
-      12
+      10
     ],
-    "HashNeeded": 90000,
+    "HashNeeded": 108000,
     "UnlockRecipes": [
       781
     ],
@@ -4135,12 +4029,10 @@
       1414
     ],
     "Items": [
-      6001,
-      6002
+      6278
     ],
     "ItemPoints": [
-      10,
-      5
+      10
     ],
     "HashNeeded": 216000,
     "UnlockRecipes": [
@@ -4223,16 +4115,12 @@
       1113
     ],
     "Items": [
-      6001,
-      6002,
-      6003
+      6278
     ],
     "ItemPoints": [
-      12,
-      12,
-      3
+      10
     ],
-    "HashNeeded": 240000,
+    "HashNeeded": 288000,
     "UnlockRecipes": [
       145
     ],
@@ -4268,12 +4156,10 @@
     ],
     "PreTechsImplicit": [],
     "Items": [
-      6001,
-      6002,
+      6278,
       6003
     ],
     "ItemPoints": [
-      10,
       10,
       5
     ],
@@ -4316,9 +4202,9 @@
       1143
     ],
     "Items": [
-      6001,
-      6002,
-      6003
+      6278,
+      6003,
+      6004
     ],
     "ItemPoints": [
       10,
@@ -4362,20 +4248,12 @@
       1145
     ],
     "Items": [
-      6001,
-      6002,
-      6003,
-      6004,
-      6005
+      6280
     ],
     "ItemPoints": [
-      20,
-      20,
-      20,
-      20,
-      20
+      10
     ],
-    "HashNeeded": 540000,
+    "HashNeeded": 1080000,
     "UnlockRecipes": [
       143
     ],
@@ -4409,7 +4287,8 @@
       1801
     ],
     "PreTechsImplicit": [
-      1101
+      1101,
+      1805
     ],
     "Items": [
       6001
@@ -4460,11 +4339,9 @@
       1502
     ],
     "Items": [
-      6001,
-      6002
+      6278
     ],
     "ItemPoints": [
-      10,
       10
     ],
     "HashNeeded": 144000,
@@ -4504,16 +4381,12 @@
       1703
     ],
     "Items": [
-      6001,
-      6002,
-      6003
+      6278
     ],
     "ItemPoints": [
-      10,
-      10,
       10
     ],
-    "HashNeeded": 180000,
+    "HashNeeded": 288000,
     "UnlockRecipes": [
       149
     ],
@@ -4550,16 +4423,14 @@
       1809
     ],
     "Items": [
-      6001,
-      6002,
+      6278,
       6003,
       6004
     ],
     "ItemPoints": [
       10,
       10,
-      10,
-      10
+      5
     ],
     "HashNeeded": 216000,
     "UnlockRecipes": [
@@ -4602,17 +4473,9 @@
     ],
     "PreTechsImplicit": [],
     "Items": [
-      6001,
-      6002,
-      6003,
-      6004,
-      6005
+      6280
     ],
     "ItemPoints": [
-      10,
-      10,
-      10,
-      10,
       10
     ],
     "HashNeeded": 288000,
@@ -4650,12 +4513,10 @@
     ],
     "PreTechsImplicit": [],
     "Items": [
-      6001,
-      6002,
+      6278,
       6003
     ],
     "ItemPoints": [
-      10,
       10,
       10
     ],
@@ -4700,9 +4561,9 @@
       6001
     ],
     "ItemPoints": [
-      4
+      10
     ],
-    "HashNeeded": 72000,
+    "HashNeeded": 36000,
     "UnlockRecipes": [
       152
     ],
@@ -4818,7 +4679,7 @@
     "ItemPoints": [
       120
     ],
-    "HashNeeded": 18000,
+    "HashNeeded": 90000,
     "UnlockRecipes": [
       154
     ],
@@ -4943,16 +4804,14 @@
     ],
     "PreTechsImplicit": [],
     "Items": [
-      6001,
-      6002,
+      6278,
       6003
     ],
     "ItemPoints": [
-      20,
-      20,
-      20
+      10,
+      10
     ],
-    "HashNeeded": 144000,
+    "HashNeeded": 576000,
     "UnlockRecipes": [
       775
     ],
@@ -4979,15 +4838,13 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      17.0,
-      -39.0
+      21.0,
+      -35.0
     ],
     "PreTechs": [
-      1101
-    ],
-    "PreTechsImplicit": [
       1102
     ],
+    "PreTechsImplicit": [],
     "Items": [
       6001
     ],
@@ -5037,10 +4894,10 @@
       6002
     ],
     "ItemPoints": [
-      20,
-      20
+      10,
+      10
     ],
-    "HashNeeded": 72000,
+    "HashNeeded": 144000,
     "UnlockRecipes": [
       401,
       406,
@@ -5077,14 +4934,12 @@
     ],
     "PreTechsImplicit": [],
     "Items": [
-      6001,
-      6002
+      6278
     ],
     "ItemPoints": [
-      20,
-      20
+      10
     ],
-    "HashNeeded": 72000,
+    "HashNeeded": 144000,
     "UnlockRecipes": [
       408,
       409
@@ -5120,16 +4975,14 @@
     ],
     "PreTechsImplicit": [],
     "Items": [
-      6001,
-      6002,
+      6278,
       6003
     ],
     "ItemPoints": [
-      20,
-      20,
-      20
+      10,
+      10
     ],
-    "HashNeeded": 72000,
+    "HashNeeded": 144000,
     "UnlockRecipes": [
       410,
       752
@@ -5167,20 +5020,16 @@
       1104
     ],
     "Items": [
-      6001,
-      6002,
+      6278,
       6003,
-      6004,
-      6005
+      6004
     ],
     "ItemPoints": [
       10,
-      10,
-      10,
-      10,
-      10
+      15,
+      5
     ],
-    "HashNeeded": 180000,
+    "HashNeeded": 288000,
     "UnlockRecipes": [
       107,
       106
@@ -5216,20 +5065,16 @@
     ],
     "PreTechsImplicit": [],
     "Items": [
-      6001,
-      6002,
+      6278,
       6003,
-      6004,
-      6005
+      6004
     ],
     "ItemPoints": [
       10,
-      10,
-      10,
-      10,
-      10
+      18,
+      6
     ],
-    "HashNeeded": 288000,
+    "HashNeeded": 360000,
     "UnlockRecipes": [
       41,
       625,
@@ -5268,18 +5113,10 @@
       1201
     ],
     "Items": [
-      6001,
-      6002,
-      6003,
-      6004,
-      6005
+      6280
     ],
     "ItemPoints": [
-      10,
-      10,
-      10,
-      10,
-      5
+      10
     ],
     "HashNeeded": 576000,
     "UnlockRecipes": [
@@ -5322,18 +5159,10 @@
       1401
     ],
     "Items": [
-      6001,
-      6002,
-      6003,
-      6004,
-      6005
+      6280
     ],
     "ItemPoints": [
-      10,
-      10,
-      10,
-      10,
-      5
+      10
     ],
     "HashNeeded": 576000,
     "UnlockRecipes": [
@@ -5376,18 +5205,10 @@
       1305
     ],
     "Items": [
-      6001,
-      6002,
-      6003,
-      6004,
-      6005
+      6280
     ],
     "ItemPoints": [
-      10,
-      10,
-      10,
-      10,
-      5
+      10
     ],
     "HashNeeded": 576000,
     "UnlockRecipes": [
@@ -5430,20 +5251,12 @@
       1203
     ],
     "Items": [
-      6001,
-      6002,
-      6003,
-      6004,
-      6005
+      6280
     ],
     "ItemPoints": [
-      10,
-      10,
-      10,
-      10,
-      5
+      10
     ],
-    "HashNeeded": 576000,
+    "HashNeeded": 1152000,
     "UnlockRecipes": [
       422
     ],
@@ -5484,20 +5297,12 @@
       1142
     ],
     "Items": [
-      6001,
-      6002,
-      6003,
-      6004,
-      6005
+      6280
     ],
     "ItemPoints": [
-      10,
-      10,
-      10,
-      10,
-      5
+      10
     ],
-    "HashNeeded": 576000,
+    "HashNeeded": 1152000,
     "UnlockRecipes": [
       417
     ],
@@ -5521,14 +5326,14 @@
   },
   {
     "ID": 1928,
-    "Name": "T化学能燃料棒",
+    "Name": "四氢双环戊二烯燃料棒",
     "IconPath": "Assets/texpack/燃料棒科技",
     "Desc": "T化学能燃料棒描述",
     "Conclusion": "T化学能燃料棒描述",
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      25.0,
+      29.0,
       -35.0
     ],
     "PreTechs": [
@@ -5545,6 +5350,7 @@
     ],
     "HashNeeded": 72000,
     "UnlockRecipes": [
+      512,
       515
     ],
     "UnlockFunctions": [],
@@ -5581,9 +5387,9 @@
       6001
     ],
     "ItemPoints": [
-      20
+      10
     ],
-    "HashNeeded": 72000,
+    "HashNeeded": 144000,
     "UnlockRecipes": [
       523,
       415,
@@ -5602,7 +5408,8 @@
       412,
       413,
       420,
-      421
+      421,
+      548
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -5623,12 +5430,12 @@
     "Name": "T先进化工",
     "IconPath": "Icons/Tech/1122",
     "Desc": "T先进化工描述",
-    "Conclusion": "先进化工结果",
+    "Conclusion": "T先进化工描述",
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
       21.0,
-      -31.0
+      -39.0
     ],
     "PreTechs": [
       1122
@@ -5637,19 +5444,20 @@
       1305
     ],
     "Items": [
-      6001,
-      6002,
-      6003
+      6278,
+      6003,
+      6004
     ],
     "ItemPoints": [
       20,
-      20,
+      10,
       5
     ],
     "HashNeeded": 144000,
     "UnlockRecipes": [
       772,
-      550
+      550,
+      549
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -5682,18 +5490,10 @@
     ],
     "PreTechsImplicit": [],
     "Items": [
-      6001,
-      6002,
-      6003,
-      6004,
-      6005
+      6280
     ],
     "ItemPoints": [
-      10,
-      10,
-      10,
-      10,
-      5
+      10
     ],
     "HashNeeded": 576000,
     "UnlockRecipes": [
@@ -5734,13 +5534,14 @@
       1941
     ],
     "PreTechsImplicit": [
-      1120
+      1120,
+      1002
     ],
     "Items": [
       6001
     ],
     "ItemPoints": [
-      20
+      10
     ],
     "HashNeeded": 18000,
     "UnlockRecipes": [
@@ -5781,20 +5582,12 @@
       1507
     ],
     "Items": [
-      6001,
-      6002,
-      6003,
-      6004,
-      6005
+      6280
     ],
     "ItemPoints": [
-      10,
-      10,
-      10,
-      10,
-      5
+      10
     ],
-    "HashNeeded": 576000,
+    "HashNeeded": 288000,
     "UnlockRecipes": [],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -5853,6 +5646,46 @@
     "PropertyItemCounts": []
   },
   {
+    "ID": 1937,
+    "Name": "T护盾载波调制",
+    "IconPath": "Assets/texpack/护盾载波调制",
+    "Desc": "T护盾载波调制描述",
+    "Conclusion": "T护盾载波调制描述",
+    "IsHiddenTech": false,
+    "PreItem": null,
+    "Position": [
+      33.0,
+      -3.0
+    ],
+    "PreTechs": [
+      1712
+    ],
+    "PreTechsImplicit": [
+      1809
+    ],
+    "Items": [
+      6280
+    ],
+    "ItemPoints": [
+      10
+    ],
+    "HashNeeded": 720000,
+    "UnlockRecipes": [],
+    "UnlockFunctions": [],
+    "UnlockValues": [],
+    "Published": true,
+    "Level": 0,
+    "MaxLevel": 0,
+    "LevelCoef1": 0,
+    "LevelCoef2": 0,
+    "IsLabTech": true,
+    "PreTechsMax": false,
+    "AddItems": [],
+    "AddItemCounts": [],
+    "PropertyOverrideItems": [],
+    "PropertyItemCounts": []
+  },
+  {
     "ID": 1941,
     "Name": "T基础机械组件",
     "IconPath": "Assets/texpack/基础组件",
@@ -5892,7 +5725,7 @@
       2301
     ],
     "AddItemCounts": [
-      4
+      5
     ],
     "PropertyOverrideItems": [
       6001
@@ -5925,10 +5758,10 @@
       6002
     ],
     "ItemPoints": [
-      40,
-      40
+      10,
+      10
     ],
-    "HashNeeded": 36000,
+    "HashNeeded": 144000,
     "UnlockRecipes": [
       642
     ],
@@ -5965,16 +5798,14 @@
       1303
     ],
     "Items": [
-      6001,
-      6002,
+      6278,
       6003
     ],
     "ItemPoints": [
-      40,
-      40,
-      20
+      10,
+      5
     ],
-    "HashNeeded": 72000,
+    "HashNeeded": 288000,
     "UnlockRecipes": [
       643
     ],
@@ -6009,16 +5840,14 @@
     ],
     "PreTechsImplicit": [],
     "Items": [
-      6001,
-      6002,
+      6278,
       6003
     ],
     "ItemPoints": [
-      20,
-      20,
-      20
+      10,
+      10
     ],
-    "HashNeeded": 144000,
+    "HashNeeded": 288000,
     "UnlockRecipes": [
       776
     ],
@@ -6053,18 +5882,14 @@
     ],
     "PreTechsImplicit": [],
     "Items": [
-      6001,
-      6002,
-      6003,
-      6004
+      6278,
+      6279
     ],
     "ItemPoints": [
-      20,
-      20,
-      20,
-      20
+      10,
+      10
     ],
-    "HashNeeded": 288000,
+    "HashNeeded": 576000,
     "UnlockRecipes": [
       754,
       793,
@@ -6111,18 +5936,14 @@
     ],
     "PreTechsImplicit": [],
     "Items": [
-      6001,
-      6002,
-      6003,
-      6004
+      6278,
+      6279
     ],
     "ItemPoints": [
-      20,
-      20,
-      20,
-      20
+      10,
+      10
     ],
-    "HashNeeded": 288000,
+    "HashNeeded": 576000,
     "UnlockRecipes": [
       794
     ],
@@ -6168,18 +5989,16 @@
     ],
     "PreTechsImplicit": [],
     "Items": [
-      6001,
-      6002,
+      6278,
       6003,
       6004
     ],
     "ItemPoints": [
-      20,
-      20,
-      20,
+      10,
+      10,
       20
     ],
-    "HashNeeded": 288000,
+    "HashNeeded": 576000,
     "UnlockRecipes": [
       795
     ],
@@ -6219,15 +6038,11 @@
     ],
     "PreTechsImplicit": [],
     "Items": [
-      6001,
-      6002,
-      6003,
-      6004,
+      6278,
+      6279,
       6005
     ],
     "ItemPoints": [
-      20,
-      20,
       20,
       40,
       5
@@ -6279,17 +6094,9 @@
       1145
     ],
     "Items": [
-      6001,
-      6002,
-      6003,
-      6004,
-      6005
+      6280
     ],
     "ItemPoints": [
-      10,
-      10,
-      10,
-      10,
       10
     ],
     "HashNeeded": 720000,
@@ -6330,17 +6137,9 @@
       1134
     ],
     "Items": [
-      6001,
-      6002,
-      6003,
-      6004,
-      6005
+      6280
     ],
     "ItemPoints": [
-      10,
-      10,
-      10,
-      10,
       10
     ],
     "HashNeeded": 1080000,
@@ -6380,16 +6179,14 @@
       1944
     ],
     "Items": [
-      6001,
-      6002,
+      6278,
       6003
     ],
     "ItemPoints": [
-      16,
-      16,
-      16
+      10,
+      10
     ],
-    "HashNeeded": 180000,
+    "HashNeeded": 288000,
     "UnlockRecipes": [
       782
     ],
@@ -6426,17 +6223,9 @@
       1134
     ],
     "Items": [
-      6001,
-      6002,
-      6003,
-      6004,
-      6005
+      6280
     ],
     "ItemPoints": [
-      10,
-      10,
-      10,
-      10,
       10
     ],
     "HashNeeded": 720000,
@@ -6482,22 +6271,14 @@
       1952
     ],
     "Items": [
-      6001,
-      6002,
-      6003,
-      6004,
-      6005
+      6280
     ],
     "ItemPoints": [
-      10,
-      10,
-      10,
-      10,
       10
     ],
     "HashNeeded": 720000,
     "UnlockRecipes": [
-      790
+      5
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -6533,17 +6314,9 @@
       1704
     ],
     "Items": [
-      6001,
-      6002,
-      6003,
-      6004,
-      6005
+      6280
     ],
     "ItemPoints": [
-      10,
-      10,
-      10,
-      10,
       10
     ],
     "HashNeeded": 1080000,
@@ -6659,7 +6432,7 @@
     "IsHiddenTech": false,
     "PreItem": [],
     "Position": [
-      33.0,
+      29.0,
       33.0
     ],
     "PreTechs": [
@@ -6670,16 +6443,12 @@
       1302
     ],
     "Items": [
-      6001,
-      6002,
-      6003
+      6278
     ],
     "ItemPoints": [
-      6,
-      6,
-      6
+      10
     ],
-    "HashNeeded": 180000,
+    "HashNeeded": 108000,
     "UnlockRecipes": [
       120,
       160

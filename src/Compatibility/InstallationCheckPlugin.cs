@@ -1,6 +1,7 @@
 ﻿using System.IO;
 using System.Reflection;
 using BepInEx;
+using BepInEx.Logging;
 using HarmonyLib;
 using ProjectGenesis.Patches.UI;
 using ProjectGenesis.Utils;
@@ -24,18 +25,27 @@ namespace ProjectGenesis.Compatibility
     [BepInDependency(PlanetwideMining.GUID, BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency(PlanetVeinUtilization.GUID, BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency(FastTravelEnabler.GUID, BepInDependency.DependencyFlags.SoftDependency)]
+    [BepInDependency(GigaStationsUpdated.GUID, BepInDependency.DependencyFlags.SoftDependency)]
+    [BepInDependency(LazyOutposting.GUID, BepInDependency.DependencyFlags.SoftDependency)]
+    [BepInDependency(WeaponPlus.GUID, BepInDependency.DependencyFlags.SoftDependency)]
     public class InstallationCheckPlugin : BaseUnityPlugin
     {
         public const string MODGUID = "org.LoShin.GenesisBook.InstallationCheck";
         public const string MODNAME = "GenesisBook.InstallationCheck";
+        public const string PreferBepinExVersion = "5.4.17";
+        private static bool MessageShown, PreloaderInstalled, BepinExVersionMatch;
 
-        private static bool _shown;
-
-        private static bool PreloaderInstalled;
+        internal static ManualLogSource logger;
 
         public void Awake()
         {
+            logger = Logger;
+
             BepInEx.Logging.Logger.Listeners.Add(new HarmonyLogListener());
+
+            var currentVersion = typeof(Paths).Assembly.GetName().Version.ToString(3);
+
+            BepinExVersionMatch = currentVersion == PreferBepinExVersion;
 
             FieldInfo birthResourcePoint2 = AccessTools.DeclaredField(typeof(PlanetData), nameof(PlanetData.birthResourcePoint2));
             PreloaderInstalled = birthResourcePoint2 != null;
@@ -54,6 +64,9 @@ namespace ProjectGenesis.Compatibility
             Bottleneck.Awake();
             PlanetwideMining.Awake();
             FastTravelEnabler.Awake();
+            GigaStationsUpdated.Awake();
+            LazyOutposting.Awake();
+            WeaponPlus.Awake();
 
             try { GalacticScale.Awake(); }
             catch (FileNotFoundException)
@@ -64,22 +77,24 @@ namespace ProjectGenesis.Compatibility
 
         public static void OnMainMenuOpen()
         {
-            if (_shown) return;
+            if (MessageShown) return;
 
-            _shown = true;
+            MessageShown = true;
 
             string msg = null;
 
-            if (!ProjectGenesis.DisableMessageBoxEntry.Value) msg = "GenesisBookLoadMessage";
+            if (ProjectGenesis.ShowMessageBoxEntry.Value) msg = "GenesisBookLoadMessage";
 
             if (!ProjectGenesis.LoadCompleted) msg = "ProjectGenesisNotLoaded";
+
+            if (!BepinExVersionMatch) msg = "BepinExVersionNotMatch";
 
             if (!PreloaderInstalled) msg = "PreloaderNotInstalled";
 
             if (string.IsNullOrEmpty(msg)) return;
 
-            UIMessageBox.Show("GenesisBookLoadTitle".TranslateFromJson(), msg.TranslateFromJson(), "确定".TranslateFromJson(), "跳转交流群".TranslateFromJson(),
-                "跳转日志".TranslateFromJson(), UIMessageBox.INFO, null, OpenBrowser, OpenLog);
+            UIMessageBox.Show("GenesisBookLoadTitle".TranslateFromJson(), msg.TranslateFromJson(), "确定".TranslateFromJson(),
+                "跳转交流群".TranslateFromJson(), "跳转日志".TranslateFromJson(), UIMessageBox.INFO, null, OpenBrowser, OpenLog);
         }
 
         public static void OpenBrowser() => Application.OpenURL("创世之书链接".TranslateFromJson());

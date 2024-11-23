@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using CommonAPI.Systems;
 using NGPT;
 using ProjectGenesis.Patches.Logic.QTools;
@@ -33,7 +34,7 @@ namespace ProjectGenesis.Patches.UI.QTools
         private Text _factoryLabelText;
         private ObjectPool<ItemNeedDetail> _itemCounterPool;
 
-        private GameObject _labelTextPrefeb;
+        private GameObject _labelTextPrefab;
         private RectTransform _list;
         private RectTransform _listContent;
 
@@ -93,30 +94,30 @@ namespace ProjectGenesis.Patches.UI.QTools
             _proliferatorComboBox = MyComboBox.MyComboBox.CreateComboBox<ProliferatorComboBox>(30, 380, _tabs[0], "默认增产策略");
 
             _clearOptionsButton = Util.MakeHiliteTextButton("清空设置".TranslateFromJson(), 80, 24);
-            Util.NormalizeRectWithTopLeft(_clearOptionsButton, 1635, 2, _labelTextPrefeb.transform);
+            Util.NormalizeRectWithTopLeft(_clearOptionsButton, 1635, 2, _labelTextPrefab.transform);
 
             CreateLabelText("工厂", 255, 0);
             CreateLabelText("配方选取", 415, 0);
             CreateLabelText("增产策略", 850, 0);
 
-            _labelTextPrefeb.GetComponent<Text>().text = "物品".TranslateFromJson();
-            Util.NormalizeRectWithTopLeft(_labelTextPrefeb.transform, -5, 0);
+            _labelTextPrefab.GetComponent<Text>().text = "物品".TranslateFromJson();
+            Util.NormalizeRectWithTopLeft(_labelTextPrefab.transform, -5, 0);
 
-            Util.NormalizeRectWithTopLeft(Util.CreateLabelText(_labelTextPrefeb, "添加需求：".TranslateFromJson()), 20, 19, _rightContent);
+            Util.NormalizeRectWithTopLeft(Util.CreateLabelText(_labelTextPrefab, "添加需求：".TranslateFromJson()), 20, 19, _rightContent);
 
-            _needLabelText = Util.CreateLabelText(_labelTextPrefeb, "需求：".TranslateFromJson());
+            _needLabelText = Util.CreateLabelText(_labelTextPrefab, "需求：".TranslateFromJson());
             Util.NormalizeRectWithTopLeft(_needLabelText, 20, 60, _rightContent);
 
-            _asRawsLabelText = Util.CreateLabelText(_labelTextPrefeb, "额外输入：".TranslateFromJson());
+            _asRawsLabelText = Util.CreateLabelText(_labelTextPrefab, "额外输入：".TranslateFromJson());
             Util.NormalizeRectWithTopLeft(_asRawsLabelText, 20, 160, _rightContent);
 
-            _rawsLabelText = Util.CreateLabelText(_labelTextPrefeb, "原料需求：".TranslateFromJson());
+            _rawsLabelText = Util.CreateLabelText(_labelTextPrefab, "原料需求：".TranslateFromJson());
             Util.NormalizeRectWithTopLeft(_rawsLabelText, 20, 260, _rightContent);
 
-            _byproductsLabelText = Util.CreateLabelText(_labelTextPrefeb, "副产物：".TranslateFromJson());
+            _byproductsLabelText = Util.CreateLabelText(_labelTextPrefab, "副产物：".TranslateFromJson());
             Util.NormalizeRectWithTopLeft(_byproductsLabelText, 20, 360, _rightContent);
 
-            _factoryLabelText = Util.CreateLabelText(_labelTextPrefeb, "工厂：".TranslateFromJson());
+            _factoryLabelText = Util.CreateLabelText(_labelTextPrefab, "工厂：".TranslateFromJson());
             Util.NormalizeRectWithTopLeft(_factoryLabelText, 20, 460, _rightContent);
 
             var inputObj = GameObject.Find("UI Root/Overlay Canvas/In Game/Planet & Star Details/planet-detail-ui/name-input");
@@ -339,7 +340,6 @@ namespace ProjectGenesis.Patches.UI.QTools
         public void SetTabIndex(int index, bool immediate)
         {
             if ((_tabIndex != index) | immediate)
-            {
                 for (var index1 = 0; index1 < _tabButtons.Length; ++index1)
                 {
                     if (index1 == index)
@@ -355,21 +355,23 @@ namespace ProjectGenesis.Patches.UI.QTools
                         _tabTweeners[index1].gameObject.SetActive(false);
                     }
                 }
-            }
 
             if (immediate)
+            {
                 _tabSlider.rectTransform.anchoredPosition = new Vector2(160 * index, _tabSlider.rectTransform.anchoredPosition.y);
+            }
             else if (_tabIndex == index)
             {
                 Vector2 anchoredPosition = _tabSlider.rectTransform.anchoredPosition;
-                _tabSlider.rectTransform.anchoredPosition = Vector2.Lerp(anchoredPosition, new Vector2(160 * index, anchoredPosition.y), 0.2f);
+                _tabSlider.rectTransform.anchoredPosition =
+                    Vector2.Lerp(anchoredPosition, new Vector2(160 * index, anchoredPosition.y), 0.2f);
             }
 
             _tabIndex = index;
         }
 
         private void CreateLabelText(string s, float left, float top) =>
-            Util.NormalizeRectWithTopLeft(Util.CreateLabelText(_labelTextPrefeb, s.TranslateFromJson()), left, top);
+            Util.NormalizeRectWithTopLeft(Util.CreateLabelText(_labelTextPrefab, s.TranslateFromJson()), left, top);
 
         public override void _OnUpdate()
         {
@@ -499,8 +501,8 @@ namespace ProjectGenesis.Patches.UI.QTools
 
                         if (t.name == "title")
                         {
-                            win._labelTextPrefeb = t.GetChild(0).gameObject;
-                            Destroy(win._labelTextPrefeb.GetComponent<Localizer>());
+                            win._labelTextPrefab = t.GetChild(0).gameObject;
+                            Destroy(win._labelTextPrefab.GetComponent<Localizer>());
 
                             for (var j = 1; j < t.childCount; j++) Destroy(t.GetChild(j).gameObject);
                         }

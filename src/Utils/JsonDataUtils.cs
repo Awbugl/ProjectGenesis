@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using CommonAPI.Systems;
 using HarmonyLib;
 using UnityEngine;
@@ -14,8 +15,8 @@ namespace ProjectGenesis.Utils
     {
         internal static void ImportJson(int[] tableID)
         {
-            ref Dictionary<int, IconToolNew.IconDesc> itemIconDescs
-                = ref AccessTools.StaticFieldRefAccess<Dictionary<int, IconToolNew.IconDesc>>(typeof(ProtoRegistry), "itemIconDescs");
+            ref Dictionary<int, IconToolNew.IconDesc> itemIconDescs =
+                ref AccessTools.StaticFieldRefAccess<Dictionary<int, IconToolNew.IconDesc>>(typeof(ProtoRegistry), "itemIconDescs");
 
         #region TechProto
 
@@ -90,20 +91,9 @@ namespace ProjectGenesis.Utils
 
             foreach (PrefabDescJson json in prefabDescs) { json.ToPrefabDesc(LDB.models.Select(json.ModelID).prefabDesc); }
 
-            PrefabDesc megapumper = LDB.models.Select(ProtoID.M大抽水机).prefabDesc;
-            megapumper.waterPoints = new[] { Vector3.zero, };
-            megapumper.portPoses = new[] { megapumper.portPoses[0], };
-        }
-
-        internal static void ModifyUpgradeTech()
-        {
-            for (int i = ProtoID.T宇宙探索1; i <= ProtoID.T宇宙探索4; i++)
-            {
-                TechProto techProto = LDB.techs.Select(i);
-                techProto.Items = new[] { 6001, };
-                techProto.ItemPoints = new[] { techProto.ItemPoints[0], };
-                techProto.PreTechsImplicit = Array.Empty<int>();
-            }
+            PrefabDesc megaPumper = LDB.models.Select(ProtoID.M大抽水机).prefabDesc;
+            megaPumper.waterPoints = new[] { Vector3.zero, };
+            megaPumper.portPoses = new[] { megaPumper.portPoses[0], };
         }
     }
 }

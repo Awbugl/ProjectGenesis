@@ -45,7 +45,10 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
                 {
                     datas[i] = new SlotData
                     {
-                        dir = (IODir)r.ReadInt32(), beltId = r.ReadInt32(), storageIdx = r.ReadInt32(), counter = r.ReadInt32(),
+                        dir = (IODir)r.ReadInt32(),
+                        beltId = r.ReadInt32(),
+                        storageIdx = r.ReadInt32(),
+                        counter = r.ReadInt32(),
                     };
                 }
 
@@ -65,13 +68,17 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
 
             switch ((Utils.ERecipeType)filter)
             {
-                case Utils.ERecipeType.所有化工: return type == Utils.ERecipeType.Chemical || type == Utils.ERecipeType.Refine || type == Utils.ERecipeType.高分子化工;
+                case Utils.ERecipeType.所有化工:
+                    return type == Utils.ERecipeType.Chemical || type == Utils.ERecipeType.Refine || type == Utils.ERecipeType.高分子化工;
 
                 case Utils.ERecipeType.所有熔炉: return type == Utils.ERecipeType.Smelt || type == Utils.ERecipeType.矿物处理;
 
                 case Utils.ERecipeType.复合制造: return type == Utils.ERecipeType.Assemble || type == Utils.ERecipeType.标准制造;
 
-                case Utils.ERecipeType.所有制造: return type == Utils.ERecipeType.Assemble || type == Utils.ERecipeType.标准制造 || type == Utils.ERecipeType.高精度加工;
+                case Utils.ERecipeType.所有制造:
+                    return type == Utils.ERecipeType.Chemical || type == Utils.ERecipeType.Refine || type == Utils.ERecipeType.Assemble
+                        || type == Utils.ERecipeType.Particle || type == Utils.ERecipeType.标准制造 || type == Utils.ERecipeType.高精度加工
+                        || type == Utils.ERecipeType.Research || type == Utils.ERecipeType.高分子化工;
 
                 default: return filter == recipetype;
             }

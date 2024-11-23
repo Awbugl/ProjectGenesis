@@ -15,9 +15,11 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
         {
             var matcher = new CodeMatcher(instructions);
 
-            matcher.MatchForward(true, new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(RecipeProto), nameof(RecipeProto.Type))), new CodeMatch(OpCodes.Bne_Un));
+            matcher.MatchForward(true, new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(RecipeProto), nameof(RecipeProto.Type))),
+                new CodeMatch(OpCodes.Bne_Un));
 
-            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(MegaAssemblerPatches), nameof(ContainsRecipeType))));
+            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Call,
+                AccessTools.Method(typeof(MegaAssemblerPatches), nameof(ContainsRecipeType))));
 
             matcher.SetOpcodeAndAdvance(OpCodes.Brfalse);
 

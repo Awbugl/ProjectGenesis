@@ -52,7 +52,8 @@ namespace ProjectGenesis.Patches.UI
         [HarmonyPatch(typeof(UIShowSignalTipExtension), nameof(UIShowSignalTipExtension.OnUpdate))]
         [HarmonyPriority(Priority.VeryHigh)]
         [HarmonyPrefix]
-        public static bool UIShowSignalTipExtension_OnUpdate(UISignalPicker picker) => picker.hoveredIndex >= 0 && picker.hoveredIndex < picker.signalArray.Length;
+        public static bool UIShowSignalTipExtension_OnUpdate(UISignalPicker picker) =>
+            picker.hoveredIndex >= 0 && picker.hoveredIndex < picker.signalArray.Length;
 
         [HarmonyPatch(typeof(UISignalPicker), nameof(UISignalPicker._OnUpdate))]
         [HarmonyTranspiler]
@@ -60,7 +61,8 @@ namespace ProjectGenesis.Patches.UI
         {
             var matcher = new CodeMatcher(instructions);
 
-            matcher.MatchForward(true, new CodeMatch(OpCodes.Ldarg_0), new CodeMatch(OpCodes.Ldfld, currentTypeField), new CodeMatch(OpCodes.Ldc_I4_2));
+            matcher.MatchForward(true, new CodeMatch(OpCodes.Ldarg_0), new CodeMatch(OpCodes.Ldfld, currentTypeField),
+                new CodeMatch(OpCodes.Ldc_I4_2));
 
             object labal = matcher.Advance(1).Operand;
 
@@ -127,38 +129,34 @@ namespace ProjectGenesis.Patches.UI
 
         [HarmonyPatch(typeof(UISignalPicker), nameof(UISignalPicker.RefreshIcons))]
         [HarmonyPostfix]
-        public static void RefreshIcons(UISignalPicker __instance, ref int ___currentType, ref uint[] ___indexArray, ref int[] ___signalArray)
+        public static void RefreshIcons(UISignalPicker __instance, ref int ___currentType, ref uint[] ___indexArray,
+            ref int[] ___signalArray)
         {
-            if (___currentType > 7)
+            if (___currentType <= 7) return;
+
+            IconSet iconSet = GameMain.iconSet;
+            ItemProto[] dataArray = LDB.items.dataArray;
+
+            foreach (ItemProto t in dataArray)
             {
-                IconSet iconSet = GameMain.iconSet;
-                ItemProto[] dataArray = LDB.items.dataArray;
+                if (t.GridIndex < 1101) continue;
 
-                foreach (ItemProto t in dataArray)
-                {
-                    if (t.GridIndex >= 1101)
-                    {
-                        int num4 = t.GridIndex / 1000;
+                int num4 = t.GridIndex / 1000;
 
-                        if (num4 == ___currentType - 5)
-                        {
-                            int num5 = (t.GridIndex - num4 * 1000) / 100 - 1;
-                            int num6 = t.GridIndex % 100 - 1;
+                if (num4 != ___currentType - 5) continue;
 
-                            if (num5 >= 0 && num6 >= 0 && num5 < 7 && num6 < 17)
-                            {
-                                int index5 = num5 * 17 + num6;
+                int num5 = (t.GridIndex - num4 * 1000) / 100 - 1;
+                int num6 = t.GridIndex % 100 - 1;
 
-                                if (index5 >= 0 && index5 < ___indexArray.Length)
-                                {
-                                    int index6 = SignalProtoSet.SignalId(ESignalType.Item, t.ID);
-                                    ___indexArray[index5] = iconSet.signalIconIndex[index6];
-                                    ___signalArray[index5] = index6;
-                                }
-                            }
-                        }
-                    }
-                }
+                if (num5 < 0 || num6 < 0 || num5 >= 7 || num6 >= 17) continue;
+
+                int index5 = num5 * 17 + num6;
+
+                if (index5 < 0 || index5 >= ___indexArray.Length) continue;
+
+                int index6 = SignalProtoSet.SignalId(ESignalType.Item, t.ID);
+                ___indexArray[index5] = iconSet.signalIconIndex[index6];
+                ___signalArray[index5] = index6;
             }
         }
     }

@@ -13,7 +13,8 @@ namespace ProjectGenesis.Patches.UI.QTools
     {
         private static readonly KeyCode[] ModKeys =
         {
-            KeyCode.RightShift, KeyCode.LeftShift, KeyCode.RightControl, KeyCode.LeftControl, KeyCode.RightAlt, KeyCode.LeftAlt, KeyCode.LeftCommand, KeyCode.LeftApple,
+            KeyCode.RightShift, KeyCode.LeftShift, KeyCode.RightControl, KeyCode.LeftControl,
+            KeyCode.RightAlt, KeyCode.LeftAlt, KeyCode.LeftCommand, KeyCode.LeftApple,
             KeyCode.LeftWindows, KeyCode.RightCommand, KeyCode.RightApple, KeyCode.RightWindows,
         };
 
@@ -70,7 +71,8 @@ namespace ProjectGenesis.Patches.UI.QTools
             }
         }
 
-        internal static RectTransform CreateKeyBinder(float x, float y, RectTransform parent, ConfigEntry<KeyboardShortcut> config, string label = "", int fontSize = 18)
+        internal static RectTransform CreateKeyBinder(float x, float y, RectTransform parent, ConfigEntry<KeyboardShortcut> config,
+            string label = "", int fontSize = 18)
         {
             UIOptionWindow optionWindow = UIRoot.instance.optionWindow;
             UIKeyEntry uikeyEntry = Instantiate(optionWindow.entryPrefab);

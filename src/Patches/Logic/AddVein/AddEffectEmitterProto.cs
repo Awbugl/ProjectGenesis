@@ -42,7 +42,10 @@ namespace ProjectGenesis.Patches.Logic.AddVein
 
             int dataArrayLength = effectEmitters.dataArray.Length;
 
-            EffectEmitterProto[] proto = protos.Select(p => new EffectEmitterProto { ID = p.Key, Name = "vein-break-" + p.Key, }).ToArray();
+            EffectEmitterProto[] proto = protos.Select(p => new EffectEmitterProto
+            {
+                ID = p.Key, Name = "vein-break-" + p.Key,
+            }).ToArray();
 
             Array.Resize(ref effectEmitters.dataArray, dataArrayLength + proto.Length);
 

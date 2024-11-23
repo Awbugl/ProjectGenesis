@@ -392,6 +392,10 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
-
 .idea/
+
+# Default paths
+DefaultPath.props
+
+# publicized DSP assembly
 lib/Assembly-CSharp-publicized.dll

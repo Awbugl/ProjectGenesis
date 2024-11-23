@@ -14,7 +14,8 @@ namespace ProjectGenesis.Patches.UI
 {
     public static class UIBuildMenuPatches
     {
-        private static readonly FieldInfo UIBuildMenu_currentCategory_Field = AccessTools.Field(typeof(UIBuildMenu), nameof(UIBuildMenu.currentCategory));
+        private static readonly FieldInfo UIBuildMenu_currentCategory_Field =
+            AccessTools.Field(typeof(UIBuildMenu), nameof(UIBuildMenu.currentCategory));
 
         [HarmonyPatch(typeof(UIBuildMenu), nameof(UIBuildMenu._OnCreate))]
         [HarmonyPostfix]
@@ -44,11 +45,11 @@ namespace ProjectGenesis.Patches.UI
 
             // ReSharper disable once LoopCanBePartlyConvertedToQuery
             foreach (UIButton button in __instance.categoryButtons)
-            {
-                if (button != null) SetButtonPosition(button);
-            }
+                if (button != null)
+                    SetButtonPosition(button);
 
             SetButtonPosition(__instance.blueprintButton);
+            return;
 
             void SetButtonPosition(UIButton button)
             {
@@ -72,20 +73,24 @@ namespace ProjectGenesis.Patches.UI
 
             matcher.MatchForward(false, new CodeMatch(OpCodes.Ldc_I4_S, (sbyte)49));
 
-            matcher.Advance(5).InsertAndAdvance(new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(UIBuildMenuPatches), nameof(OnUpdate_KeyCode_Patch))));
+            matcher.Advance(5).InsertAndAdvance(new CodeInstruction(OpCodes.Call,
+                AccessTools.Method(typeof(UIBuildMenuPatches), nameof(OnUpdate_KeyCode_Patch))));
 
             matcher.MatchForward(true, new CodeMatch(OpCodes.Ldloc_2), new CodeMatch(OpCodes.Ldc_I4_S, (sbyte)9));
 
-            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(UIBuildMenuPatches), nameof(OnUpdate_For_Patch))),
+            matcher.InsertAndAdvance(
+                new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(UIBuildMenuPatches), nameof(OnUpdate_For_Patch))),
                 new CodeInstruction(OpCodes.Stloc_2), new CodeInstruction(OpCodes.Ldloc_2));
 
-            matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(UIBuildMenuPatches), nameof(OnUpdate_Patch))));
+            matcher.Advance(1)
+               .InsertAndAdvance(new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(UIBuildMenuPatches), nameof(OnUpdate_Patch))));
             matcher.SetOpcodeAndAdvance(OpCodes.Brtrue);
 
 
             matcher.MatchForward(true, new CodeMatch(OpCodes.Ldarg_0), new CodeMatch(OpCodes.Ldfld, UIBuildMenu_currentCategory_Field),
                 new CodeMatch(OpCodes.Ldc_I4_S, (sbyte)9));
-            matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(UIBuildMenuPatches), nameof(OnUpdate_Patch))));
+            matcher.Advance(1)
+               .InsertAndAdvance(new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(UIBuildMenuPatches), nameof(OnUpdate_Patch))));
             matcher.SetOpcodeAndAdvance(OpCodes.Brfalse);
 
             return matcher.InstructionEnumeration();
@@ -98,12 +103,14 @@ namespace ProjectGenesis.Patches.UI
             var matcher = new CodeMatcher(instructions);
 
             matcher.MatchForward(true, new CodeMatch(OpCodes.Ldarg_1), new CodeMatch(OpCodes.Ldc_I4_S, (sbyte)9));
-            matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(UIBuildMenuPatches), nameof(OnUpdate_Patch))));
+            matcher.Advance(1)
+               .InsertAndAdvance(new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(UIBuildMenuPatches), nameof(OnUpdate_Patch))));
             matcher.SetOpcodeAndAdvance(OpCodes.Brfalse);
 
             matcher.MatchForward(true, new CodeMatch(OpCodes.Ldarg_0), new CodeMatch(OpCodes.Ldfld, UIBuildMenu_currentCategory_Field),
                 new CodeMatch(OpCodes.Ldc_I4_S, (sbyte)9));
-            matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(UIBuildMenuPatches), nameof(OnUpdate_Patch))));
+            matcher.Advance(1)
+               .InsertAndAdvance(new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(UIBuildMenuPatches), nameof(OnUpdate_Patch))));
             matcher.SetOpcodeAndAdvance(OpCodes.Brfalse);
 
             return matcher.InstructionEnumeration();
@@ -111,13 +118,15 @@ namespace ProjectGenesis.Patches.UI
 
         [HarmonyPatch(typeof(UIBuildMenu), nameof(UIBuildMenu.DoPlayerPackageChange))]
         [HarmonyTranspiler]
-        public static IEnumerable<CodeInstruction> UIFunctionPanel_DoPlayerPackageChange_Transpiler(IEnumerable<CodeInstruction> instructions)
+        public static IEnumerable<CodeInstruction> UIFunctionPanel_DoPlayerPackageChange_Transpiler(
+            IEnumerable<CodeInstruction> instructions)
         {
             var matcher = new CodeMatcher(instructions);
 
             matcher.MatchForward(true, new CodeMatch(OpCodes.Ldarg_0), new CodeMatch(OpCodes.Ldfld, UIBuildMenu_currentCategory_Field),
                 new CodeMatch(OpCodes.Ldc_I4_S, (sbyte)9));
-            matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(UIBuildMenuPatches), nameof(OnUpdate_Patch))));
+            matcher.Advance(1)
+               .InsertAndAdvance(new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(UIBuildMenuPatches), nameof(OnUpdate_Patch))));
             matcher.SetOpcodeAndAdvance(OpCodes.Brfalse);
 
             return matcher.InstructionEnumeration();
@@ -129,9 +138,10 @@ namespace ProjectGenesis.Patches.UI
         {
             var matcher = new CodeMatcher(instructions);
 
-            matcher.MatchForward(true, new CodeMatch(OpCodes.Ldarg_0), new CodeMatch(OpCodes.Ldfld), new CodeMatch(OpCodes.Ldfld, UIBuildMenu_currentCategory_Field),
-                new CodeMatch(OpCodes.Ldc_I4_S, (sbyte)9));
-            matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(UIBuildMenuPatches), nameof(OnUpdate_Patch))));
+            matcher.MatchForward(true, new CodeMatch(OpCodes.Ldarg_0), new CodeMatch(OpCodes.Ldfld),
+                new CodeMatch(OpCodes.Ldfld, UIBuildMenu_currentCategory_Field), new CodeMatch(OpCodes.Ldc_I4_S, (sbyte)9));
+            matcher.Advance(1)
+               .InsertAndAdvance(new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(UIBuildMenuPatches), nameof(OnUpdate_Patch))));
             matcher.SetOpcodeAndAdvance(OpCodes.Brfalse);
 
             return matcher.InstructionEnumeration();
@@ -144,15 +154,20 @@ namespace ProjectGenesis.Patches.UI
             foreach (CodeInstruction ci in instructions)
             {
                 if (ci.opcode == OpCodes.Ldc_R4)
-                {
-                    var operand = (float)ci.operand;
+                    switch ((float)ci.operand)
+                    {
+                        case 780f:
+                            ci.operand = 830f;
+                            break;
 
-                    if (operand is 780f) ci.operand = 830f;
+                        case 810f:
+                            ci.operand = 860f;
+                            break;
 
-                    if (operand is 810f) ci.operand = 860f;
-
-                    if (operand is 820f) ci.operand = 870f;
-                }
+                        case 820f:
+                            ci.operand = 870f;
+                            break;
+                    }
 
                 yield return ci;
             }

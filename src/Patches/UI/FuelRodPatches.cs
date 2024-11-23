@@ -73,7 +73,8 @@ namespace ProjectGenesis.Patches.UI
             {
                 var productCount = (int)powerGeneratorComponent.productCount;
 
-                if (productCount > 0) __instance.storage.Add(ProtoID.I空燃料棒, productCount, powerGeneratorComponent.catalystIncPoint / productCount);
+                if (productCount > 0)
+                    __instance.storage.Add(ProtoID.I空燃料棒, productCount, powerGeneratorComponent.catalystIncPoint / productCount);
             }
         }
 
@@ -150,8 +151,7 @@ namespace ProjectGenesis.Patches.UI
                 UIRealtimeTip.Popup("不能手动放入物品".Translate());
                 window.player.SetHandItems(0, 0);
             }
-            else if (window.player.inhandItemId > 0 && window.player.inhandItemCount > 0)
-                UIRealtimeTip.Popup("不能手动放入物品".Translate());
+            else if (window.player.inhandItemId > 0 && window.player.inhandItemCount > 0) { UIRealtimeTip.Popup("不能手动放入物品".Translate()); }
             else
             {
                 int productId = ProtoID.I空燃料棒;

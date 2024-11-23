@@ -12,11 +12,13 @@ namespace ProjectGenesis.Patches.Logic.PlanetFocus
         {
             var matcher = new CodeMatcher(instructions);
 
-            matcher.MatchForward(true, new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(GameHistoryData), nameof(GameHistoryData.techSpeed))),
+            matcher.MatchForward(true,
+                new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(GameHistoryData), nameof(GameHistoryData.techSpeed))),
                 new CodeMatch(OpCodes.Conv_R4));
 
             matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0));
-            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(PlanetFocusPatches), nameof(LabResearchMode))));
+            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Call,
+                AccessTools.Method(typeof(PlanetFocusPatches), nameof(LabResearchMode))));
 
             return matcher.InstructionEnumeration();
         }
@@ -35,13 +37,15 @@ namespace ProjectGenesis.Patches.Logic.PlanetFocus
             var matcher = new CodeMatcher(instructions);
 
 
-            matcher.MatchForward(true, new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(GameHistoryData), nameof(GameHistoryData.techSpeed))),
+            matcher.MatchForward(true,
+                new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(GameHistoryData), nameof(GameHistoryData.techSpeed))),
                 new CodeMatch(OpCodes.Conv_R4));
 
             matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0),
                 new CodeInstruction(OpCodes.Ldfld, AccessTools.Field(typeof(UILabWindow), nameof(UILabWindow.factory))));
 
-            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(PlanetFocusPatches), nameof(LabTechSpeed))));
+            matcher.InsertAndAdvance(
+                new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(PlanetFocusPatches), nameof(LabTechSpeed))));
 
 
             return matcher.InstructionEnumeration();

@@ -30,19 +30,19 @@ namespace ProjectGenesis.Patches.Logic.PlanetFocus
             { 6534, "基地扩张速度 -20%" },
         };
 
-        internal static void SetPlanetFocus(int planetId, int index, int focusid)
+        internal static void SetPlanetFocus(int planetId, int index, int focusId)
         {
             if (!PlanetFocuses.ContainsKey(planetId)) PlanetFocuses[planetId] = new int[FocusMaxCount];
 
-            PlanetFocuses[planetId][index] = focusid;
-            SyncPlanetFocusData.Sync(planetId, index, focusid);
+            PlanetFocuses[planetId][index] = focusId;
+            SyncPlanetFocusData.Sync(planetId, index, focusId);
         }
 
-        internal static void SyncPlanetFocus(int planetId, int index, int focusid)
+        internal static void SyncPlanetFocus(int planetId, int index, int focusId)
         {
             if (!PlanetFocuses.ContainsKey(planetId)) PlanetFocuses[planetId] = new int[FocusMaxCount];
 
-            PlanetFocuses[planetId][index] = focusid;
+            PlanetFocuses[planetId][index] = focusId;
         }
 
         internal static int[] GetPlanetFocus(int planetId)

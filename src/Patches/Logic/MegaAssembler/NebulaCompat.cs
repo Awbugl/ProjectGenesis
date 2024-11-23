@@ -16,8 +16,7 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
         {
             lock (Slotdata)
             {
-                if (Slotdata.TryGetValue(id, out SlotData[] slotDatas))
-                    slotDatas[slotId] = slotData;
+                if (Slotdata.TryGetValue(id, out SlotData[] slotDatas)) { slotDatas[slotId] = slotData; }
                 else
                 {
                     slotDatas = new SlotData[12];
@@ -84,7 +83,10 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
                 {
                     datas[i] = new SlotData
                     {
-                        dir = (IODir)r.ReadInt32(), beltId = r.ReadInt32(), storageIdx = r.ReadInt32(), counter = r.ReadInt32(),
+                        dir = (IODir)r.ReadInt32(),
+                        beltId = r.ReadInt32(),
+                        storageIdx = r.ReadInt32(),
+                        counter = r.ReadInt32(),
                     };
 
                     if (factory == null) continue;

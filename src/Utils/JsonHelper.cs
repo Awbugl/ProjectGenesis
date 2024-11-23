@@ -36,10 +36,12 @@ namespace ProjectGenesis.Utils
         internal static PrefabDescJson[] PrefabDescs() => GetJsonContent<PrefabDescJson>("prefabDescs");
 
         internal static T[] GetJsonContent<T>(string json) =>
-            JsonConvert.DeserializeObject<T[]>(new StreamReader(Assembly.GetManifestResourceStream($"ProjectGenesis.data.{json}.json")).ReadToEnd());
+            JsonConvert.DeserializeObject<T[]>(new StreamReader(Assembly.GetManifestResourceStream($"ProjectGenesis.data.{json}.json"))
+               .ReadToEnd());
 
         internal static string SerializeObject(object obj) =>
-            JsonConvert.SerializeObject(obj, Formatting.Indented, new JsonSerializerSettings { ReferenceLoopHandling = ReferenceLoopHandling.Ignore, });
+            JsonConvert.SerializeObject(obj, Formatting.Indented,
+                new JsonSerializerSettings { ReferenceLoopHandling = ReferenceLoopHandling.Ignore, });
 
         internal static void ExportAsJson(string path)
         {
@@ -396,6 +398,8 @@ namespace ProjectGenesis.Utils
             public int? ejectorColdFrame { get; set; } = null;
             public int? siloChargeFrame { get; set; } = null;
             public int? siloColdFrame { get; set; } = null;
+            public int? labAssembleSpeed { get; set; } = null;
+            public float? labResearchSpeed { get; set; } = null;
             public float? powerConnectDistance { get; set; } = null;
             public float? powerCoverRadius { get; set; } = null;
             public long? genEnergyPerTick { get; set; } = null;
@@ -418,6 +422,8 @@ namespace ProjectGenesis.Utils
             public int? stationMaxDroneCount { get; set; } = null;
             public int? stationMaxShipCount { get; set; } = null;
             public float? AmmoBlastRadius1 { get; set; } = null;
+            public float? AmmoMoveAcc { get; set; } = null;
+            public float? AmmoTurnAcc { get; set; } = null;
             public int? turretMuzzleInterval { get; set; } = null;
             public int? turretRoundInterval { get; set; } = null;
             public float? turretMaxAttackRange { get; set; } = null;
@@ -461,6 +467,8 @@ namespace ProjectGenesis.Utils
                     ejectorColdFrame = i.ejectorColdFrame,
                     siloChargeFrame = i.siloChargeFrame,
                     siloColdFrame = i.siloColdFrame,
+                    labAssembleSpeed = i.labAssembleSpeed,
+                    labResearchSpeed = i.labResearchSpeed,
                     powerConnectDistance = i.powerConnectDistance,
                     powerCoverRadius = i.powerCoverRadius,
                     genEnergyPerTick = i.genEnergyPerTick,
@@ -483,6 +491,8 @@ namespace ProjectGenesis.Utils
                     stationMaxShipCount = i.stationMaxShipCount,
                     stationMaxDroneCount = i.stationMaxDroneCount,
                     AmmoBlastRadius1 = i.AmmoBlastRadius1,
+                    AmmoMoveAcc = i.AmmoMoveAcc,
+                    AmmoTurnAcc = i.AmmoTurnAcc,
                     turretMuzzleInterval = i.turretMuzzleInterval,
                     turretRoundInterval = i.turretRoundInterval,
                     turretMaxAttackRange = i.turretMaxAttackRange,
@@ -541,6 +551,10 @@ namespace ProjectGenesis.Utils
 
                 if (siloColdFrame != null) desc.siloColdFrame = siloColdFrame.Value;
 
+                if (labAssembleSpeed != null) desc.labAssembleSpeed = labAssembleSpeed.Value;
+
+                if (labResearchSpeed != null) desc.labResearchSpeed = labResearchSpeed.Value;
+
                 if (powerConnectDistance != null) desc.powerConnectDistance = powerConnectDistance.Value;
 
                 if (powerCoverRadius != null) desc.powerCoverRadius = powerCoverRadius.Value;
@@ -584,6 +598,10 @@ namespace ProjectGenesis.Utils
                 if (stationMaxDroneCount != null) desc.stationMaxDroneCount = stationMaxDroneCount.Value;
 
                 if (AmmoBlastRadius1 != null) desc.AmmoBlastRadius1 = AmmoBlastRadius1.Value;
+
+                if (AmmoMoveAcc != null) desc.AmmoMoveAcc = AmmoMoveAcc.Value;
+
+                if (AmmoTurnAcc != null) desc.AmmoTurnAcc = AmmoTurnAcc.Value;
 
                 if (turretMuzzleInterval != null) desc.turretMuzzleInterval = turretMuzzleInterval.Value;
 

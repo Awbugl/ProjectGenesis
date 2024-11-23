@@ -48,8 +48,7 @@ namespace ProjectGenesis.Patches.UI.QTools
 
         private void OnButtonClick()
         {
-            if (_isNeed)
-                _data.RemoveNeed();
+            if (_isNeed) { _data.RemoveNeed(); }
             else
             {
                 _data.Options.AsRaw = false;

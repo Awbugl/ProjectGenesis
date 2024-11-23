@@ -30,7 +30,7 @@ namespace ProjectGenesis.Patches.UI.Utils
                     //close-btn
                     if (btn != null) btn.onClick.AddListener(win._Close);
                 }
-                else if (child.name != "shadow" && child.name != "panel-bg") Object.Destroy(child);
+                else if (child.name != "shadow" && child.name != "panel-bg") { Object.Destroy(child); }
             }
 
             SetTitle(win, title);
@@ -48,7 +48,8 @@ namespace ProjectGenesis.Patches.UI.Utils
             if (txt) txt.text = title;
         }
 
-        public static Text GetTitleText(ManualBehaviour win) => win.gameObject.transform.Find("panel-bg/title-text")?.gameObject.GetComponent<Text>();
+        public static Text GetTitleText(ManualBehaviour win) =>
+            win.gameObject.transform.Find("panel-bg/title-text")?.gameObject.GetComponent<Text>();
 
         public static RectTransform GetRectTransform(ManualBehaviour win) => win.GetComponent<RectTransform>();
 

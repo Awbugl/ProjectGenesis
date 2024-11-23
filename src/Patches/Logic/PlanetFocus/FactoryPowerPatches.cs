@@ -15,12 +15,15 @@ namespace ProjectGenesis.Patches.Logic.PlanetFocus
         public static IEnumerable<CodeInstruction> FactorySystem_GameTickBeforePower_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
             var matcher = new CodeMatcher(instructions);
-            matcher.MatchForward(false, new CodeMatch(OpCodes.Call, AccessTools.Method(typeof(AssemblerComponent), nameof(AssemblerComponent.SetPCState))));
+            matcher.MatchForward(false,
+                new CodeMatch(OpCodes.Call, AccessTools.Method(typeof(AssemblerComponent), nameof(AssemblerComponent.SetPCState))));
             matcher.MatchBack(false, new CodeMatch(OpCodes.Ldarg_0), new CodeMatch(OpCodes.Ldfld));
             matcher.InsertAndAdvance(matcher.InstructionsWithOffsets(0, 4));
             matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0));
-            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldfld, AccessTools.Field(typeof(FactorySystem), nameof(FactorySystem.factory))));
-            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(PlanetFocusPatches), nameof(GetWorkEnergyPerTick))));
+            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldfld,
+                AccessTools.Field(typeof(FactorySystem), nameof(FactorySystem.factory))));
+            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Call,
+                AccessTools.Method(typeof(PlanetFocusPatches), nameof(GetWorkEnergyPerTick))));
 
             return matcher.InstructionEnumeration();
         }

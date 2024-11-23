@@ -1,4 +1,5 @@
-![img.png](https://assets.awbugl.top/dsp-genesisbook/icon.png)
+![img.png](
+https://assets.awbugl.top/dsp-genesisbook/icon.png)
 
 构建真实宇宙，撰写创世之书。
 
@@ -6,9 +7,10 @@ Construct Real Universe. Then leave a GenesisBook.
 
 ## MOD内容速览 | A glimpse
 
-![img.png](https://assets.awbugl.top/dsp-genesisbook/7.jpg)
-![img.png](https://assets.awbugl.top/dsp-genesisbook/8.jpg)
-![img.png](https://assets.awbugl.top/dsp-genesisbook/3.jpg)
+![img.png](https://assets.awbugl.top/dsp-genesisbook/12.jpg)
+![img.png](https://assets.awbugl.top/dsp-genesisbook/13.jpg)
+![img.png](https://assets.awbugl.top/dsp-genesisbook/11.jpg)
+![img.png](https://assets.awbugl.top/dsp-genesisbook/15.jpg)
 ![img.png](https://assets.awbugl.top/dsp-genesisbook/6.jpg)
 
 ## 意见和反馈 | Feedback and suggestions
@@ -29,10 +31,7 @@ or open a issue via [github](https://github.com/Awbugl/ProjectGenesis).
 + [BetterMachines](https://dsp.thunderstore.io/package/kremnev8/BetterMachines/)
 + [BeltSpeedEnhancement](https://dsp.thunderstore.io/package/Awbugl/BeltSpeedEnhancement/)
 + [WaterElectrolysis](https://dsp.thunderstore.io/package/jinxOAO/WaterElectrolysis/)
-+ [GigaStationsUpdated](https://dsp.thunderstore.io/package/kremnev8/GigaStationsUpdated/)
 + [ReBuffer](https://dsp.thunderstore.io/package/Eirshy/ReBuffer/)
-+ [LazyOutposting](https://dsp.thunderstore.io/package/Eirshy/LazyOutposting/)
-+ [PlanetMiner](https://dsp.thunderstore.io/package/blacksnipebiu/PlanetMiner/)
 
 ## 安装方法
 
@@ -72,7 +71,7 @@ or open a issue via [github](https://github.com/Awbugl/ProjectGenesis).
 - 接近90%的配方重做：与原版完全不同的流程体验，放心，这会让你感觉很新颖的。
 - 行星协调中心：十数种不同的额外增益效果，可以在全球范围内提供增益。
 - 巨型建筑：使用传送带输入输出物料的超级生产设备，30倍速度。
-- 新的失落科技：使用量子存储技术在异星快速部署，或者进行虫洞航行瞬间抵达银河彼端。
+- 新的失落科技：使用量子存储技术在异星快速部署，或者进行量子折跃瞬间抵达银河彼端。
 - 内置量化工具：默认快捷键为`~`键，可进行简单的产线量化计算。
 
 ## 致谢
