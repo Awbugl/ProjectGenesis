@@ -394,5 +394,4 @@ FodyWeavers.xsd
 *.sln.iml
 
 .idea/
-DefaultPath.props
 lib/Assembly-CSharp-publicized.dll
