@@ -1010,7 +1010,7 @@
     "IconPath": "",
     "Type": 10,
     "GridIndex": 2413,
-    "Time": 960,
+    "Time": 900,
     "Input": [
       6502,
       1107,
@@ -1120,7 +1120,7 @@
     "IconPath": "",
     "Type": 10,
     "GridIndex": 2111,
-    "Time": 1920,
+    "Time": 1800,
     "Input": [
       6502,
       1107,
@@ -2184,7 +2184,7 @@
     "IconPath": "",
     "Type": 10,
     "GridIndex": 2316,
-    "Time": 960,
+    "Time": 900,
     "Input": [
       6503,
       7707,
@@ -2214,7 +2214,7 @@
     "IconPath": "",
     "Type": 10,
     "GridIndex": 1713,
-    "Time": 960,
+    "Time": 900,
     "Input": [
       1502,
       1305,
@@ -2476,7 +2476,7 @@
     "IconPath": "",
     "Type": 9,
     "GridIndex": 2211,
-    "Time": 960,
+    "Time": 900,
     "Input": [
       6502,
       1107,
@@ -2530,7 +2530,7 @@
     "IconPath": "",
     "Type": 9,
     "GridIndex": 2212,
-    "Time": 1920,
+    "Time": 1800,
     "Input": [
       2103,
       1124,
@@ -2558,7 +2558,7 @@
     "IconPath": "",
     "Type": 9,
     "GridIndex": 1311,
-    "Time": 960,
+    "Time": 900,
     "Input": [
       6204,
       1406
@@ -2932,7 +2932,7 @@
     "IconPath": "",
     "Type": 10,
     "GridIndex": 2112,
-    "Time": 3840,
+    "Time": 3600,
     "Input": [
       6503,
       7707,
@@ -2962,7 +2962,7 @@
     "IconPath": "",
     "Type": 9,
     "GridIndex": 2213,
-    "Time": 1920,
+    "Time": 1800,
     "Input": [
       2104,
       1205,
@@ -3016,7 +3016,7 @@
     "IconPath": "",
     "Type": 9,
     "GridIndex": 2109,
-    "Time": 960,
+    "Time": 900,
     "Input": [
       6501,
       6204,
@@ -3188,7 +3188,7 @@
     "IconPath": "",
     "Type": 10,
     "GridIndex": 2412,
-    "Time": 960,
+    "Time": 900,
     "Input": [
       6503,
       7707,
@@ -4094,7 +4094,7 @@
     "IconPath": "",
     "Type": 10,
     "GridIndex": 5105,
-    "Time": 960,
+    "Time": 900,
     "Input": [
       7707,
       1406,
@@ -4812,7 +4812,7 @@
     "IconPath": "",
     "Type": 10,
     "GridIndex": 2309,
-    "Time": 960,
+    "Time": 900,
     "Input": [
       6503,
       7707,
@@ -4842,7 +4842,7 @@
     "IconPath": "",
     "Type": 9,
     "GridIndex": 2214,
-    "Time": 960,
+    "Time": 900,
     "Input": [
       6501,
       6204,
@@ -5190,7 +5190,7 @@
     "IconPath": "",
     "Type": 10,
     "GridIndex": 2208,
-    "Time": 960,
+    "Time": 900,
     "Input": [
       1107,
       1124,
@@ -5248,7 +5248,7 @@
     "IconPath": "",
     "Type": 10,
     "GridIndex": 2307,
-    "Time": 2400,
+    "Time": 3600,
     "Input": [
       6271,
       1016,
