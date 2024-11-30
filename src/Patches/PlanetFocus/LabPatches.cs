@@ -8,7 +8,7 @@ namespace ProjectGenesis.Patches
     {
         [HarmonyPatch(typeof(FactorySystem), nameof(FactorySystem.GameTickLabResearchMode))]
         [HarmonyTranspiler]
-        public static IEnumerable<CodeInstruction> EnergyCap_Wind_Transpiler(IEnumerable<CodeInstruction> instructions)
+        public static IEnumerable<CodeInstruction> FactorySystem_GameTickLabResearchMode_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
             var matcher = new CodeMatcher(instructions);
 

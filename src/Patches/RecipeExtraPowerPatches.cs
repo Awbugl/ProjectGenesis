@@ -8,13 +8,16 @@ namespace ProjectGenesis.Patches
 {
     public static class RecipeExtraPowerPatches
     {
-        // ReSharper disable once MemberCanBePrivate.Global
-        public static readonly Dictionary<int, int> RecipePowerRate = new Dictionary<int, int>
+        /// <summary>
+        /// 1 == 10kw
+        /// </summary>
+        public static readonly Dictionary<int, int> RecipePowerRate
+            = new Dictionary<int, int>
         {
-            { ProtoID.R水电解, 20000 },
-            { ProtoID.R二氧化硫还原, 10000 },
-            { ProtoID.R海水淡化, 10000 },
-            { ProtoID.R盐水电解, 10000 },
+            { ProtoID.R水电解, 2 }, 
+            { ProtoID.R二氧化硫还原, 1 },
+            { ProtoID.R海水淡化, 1 },
+            { ProtoID.R盐水电解, 1 },
         };
 
         [HarmonyPatch(typeof(AssemblerComponent), nameof(AssemblerComponent.SetPCState))]
