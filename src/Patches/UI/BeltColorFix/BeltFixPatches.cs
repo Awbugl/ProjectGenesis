@@ -43,7 +43,6 @@ namespace ProjectGenesis.Patches.UI.BeltColorFix
             return matcher.InstructionEnumeration();
         }
 
-        [HarmonyPatch(typeof(BuildTool_BlueprintPaste), nameof(BuildTool_BlueprintPaste.UpdatePreviewModels))]
         [HarmonyPatch(typeof(BuildTool_BlueprintCopy), nameof(BuildTool_BlueprintCopy.UpdatePreviewModels))]
         [HarmonyPatch(typeof(BuildTool_Path), nameof(BuildTool_Path.UpdateGizmos))]
         [HarmonyTranspiler]

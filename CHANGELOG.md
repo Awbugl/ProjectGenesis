@@ -1,11 +1,17 @@
-- v3.0.11
-  + 修复了v3.0.9的上传速度调整导致的研究站工作不正常的问题
+- v3.0.12
+  + 粗略适配版本V0.10.31.24646
 
-  + Fixed issue that research lab work improperly due to upload speed adjustments in v3.0.9
+  + Adaptation of version v0.10.31.24646
 
 
 <details>
   <summary>点击展开日志 | Click to view all </summary>
+
+
+- v3.0.11
+  + 修复了v3.0.9的上传速度调整导致的研究站工作不正常的问题
+
+  + Fixed issue that research lab work improperly due to upload speed adjustments in v3.0.9
 
 
 - v3.0.10
