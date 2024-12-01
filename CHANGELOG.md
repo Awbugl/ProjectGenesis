@@ -1,11 +1,17 @@
-- v3.0.12
-  + 粗略适配版本V0.10.31.24646
+- v3.0.13
+  + 修复了研究站工作不正常的问题
 
-  + Adaptation of version v0.10.31.24646
+  + Fixed issue that research lab work improperly
 
 
 <details>
   <summary>点击展开日志 | Click to view all </summary>
+
+
+- v3.0.12
+  + 粗略适配版本V0.10.31.24646
+
+  + Adaptation of version v0.10.31.24646
 
 
 - v3.0.11

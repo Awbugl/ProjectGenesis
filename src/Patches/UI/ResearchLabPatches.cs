@@ -438,7 +438,7 @@ namespace ProjectGenesis.Patches.UI
 
                 if (labComponent.matrixServed[i] >= 3600 && next.matrixServed[i] < 36000)
                 {
-                    int p = (labComponent.matrixServed[0] - 7200) / 3600 * 3600;
+                    int p = (labComponent.matrixServed[i] - 7200) / 3600 * 3600;
                     if (p > 36000) p = 36000;
                     int num = labComponent.split_inc(ref labComponent.matrixServed[i], ref labComponent.matrixIncServed[i], 3600);
                     next.matrixIncServed[i] += num;
