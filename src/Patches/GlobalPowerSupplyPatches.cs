@@ -8,7 +8,7 @@ using UnityEngine;
 
 // ReSharper disable InconsistentNaming
 
-namespace ProjectGenesis.Patches.Logic
+namespace ProjectGenesis.Patches
 {
     public static class GlobalPowerSupplyPatches
     {
