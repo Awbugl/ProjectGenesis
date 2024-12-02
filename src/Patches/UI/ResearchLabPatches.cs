@@ -429,7 +429,7 @@ namespace ProjectGenesis.Patches
             return matcher.InstructionEnumeration();
         }
 
-        public static void LabComponent_UpdateOutputToNext_Patch_Method(ref LabComponent labComponent, LabComponent[] labPool)
+        public static void LabComponent_UpdateOutputToNext_Patch_Method(LabComponent[] labPool, ref LabComponent labComponent)
         {
             ref LabComponent next = ref labPool[labComponent.nextLabId];
 
