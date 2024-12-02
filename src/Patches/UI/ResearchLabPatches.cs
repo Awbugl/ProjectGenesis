@@ -432,15 +432,15 @@ namespace ProjectGenesis.Patches.UI
 
         public static void LabComponent_UpdateOutputToNext_Patch_Method(LabComponent[] labPool, ref LabComponent labComponent)
         {
+            ref LabComponent next = ref labPool[labComponent.nextLabId];
+
             for (var i = 0; i < LabComponent.matrixIds.Length; i++)
             {
-                ref LabComponent next = ref labPool[labComponent.nextLabId];
-
-                if (labComponent.matrixServed[i] >= 3600 && next.matrixServed[i] < 36000)
+                if (labComponent.matrixServed[i] >= 7200 && next.matrixServed[i] < 36000)
                 {
                     int p = (labComponent.matrixServed[i] - 7200) / 3600 * 3600;
                     if (p > 36000) p = 36000;
-                    int num = labComponent.split_inc(ref labComponent.matrixServed[i], ref labComponent.matrixIncServed[i], 3600);
+                    int num = labComponent.split_inc(ref labComponent.matrixServed[i], ref labComponent.matrixIncServed[i], p);
                     next.matrixIncServed[i] += num;
                     next.matrixServed[i] += p;
                 }
