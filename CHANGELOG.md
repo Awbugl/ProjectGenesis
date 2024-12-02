@@ -1,11 +1,19 @@
-- v3.0.13
+- v3.0.14
   + 修复了研究站工作不正常的问题
+  + 修复了科技`护盾载波调制`的效果在游戏版本V0.10.31无法生效的问题
 
   + Fixed issue that research lab work improperly
+  + Fixed an issue where the effect of the technology `Shield Carrier Modulation` did not work in game version V0.10.31
 
 
 <details>
   <summary>点击展开日志 | Click to view all </summary>
+
+
+- v3.0.13
+  + 修复了研究站工作不正常的问题
+
+  + Fixed issue that research lab work improperly
 
 
 - v3.0.12
