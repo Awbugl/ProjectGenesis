@@ -5666,7 +5666,7 @@
     "IconPath": "Assets/texpack/高效黑塑料",
     "Type": 16,
     "GridIndex": 4105,
-    "Time": 240,
+    "Time": 360,
     "Input": [
       1117,
       6222,
@@ -5694,7 +5694,7 @@
     "IconPath": "Assets/texpack/有机晶体重组",
     "Type": 16,
     "GridIndex": 4104,
-    "Time": 480,
+    "Time": 720,
     "Input": [
       1117
     ],

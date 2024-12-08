@@ -34,8 +34,10 @@ namespace ProjectGenesis.Patches
             IEnumerable<CodeInstruction> instructions)
         {
             var matcher = new CodeMatcher(instructions);
-            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldc_I4_1));
+
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldc_I4_1), new CodeMatch(OpCodes.Stloc_3));
             matcher.SetOpcodeAndAdvance(OpCodes.Ldc_I4_3);
+
             matcher.MatchForward(false, new CodeMatch(OpCodes.Ldc_I4_1), new CodeMatch(OpCodes.Stloc_3));
             matcher.SetOpcodeAndAdvance(OpCodes.Ldc_I4_3);
 

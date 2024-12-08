@@ -89,7 +89,7 @@ namespace ProjectGenesis.Patches
 
             _proliferatorComboBox = MyComboBox.CreateComboBox<ProliferatorComboBox>(30, 380, _tabs[0], "默认增产策略");
 
-            _clearOptionsButton = Util.MakeHiliteTextButton("清空设置".TranslateFromJson(), 80, 24);
+            _clearOptionsButton = Util.MakeSmallTextButton("清空设置".TranslateFromJson(), 80, 24);
             Util.NormalizeRectWithTopLeft(_clearOptionsButton, 1635, 2, _labelTextPrefab.transform);
 
             CreateLabelText("工厂", 255, 0);
@@ -128,9 +128,9 @@ namespace ProjectGenesis.Patches
 
             Util.NormalizeRectWithTopLeft(_addItemCountInput, 120, 20, _rightContent);
 
-            _selectItemButton = Util.MakeHiliteTextButton("选择物品".TranslateFromJson(), 80, 24);
+            _selectItemButton = Util.MakeSmallTextButton("选择物品".TranslateFromJson(), 80, 24);
             Util.NormalizeRectWithTopLeft(_selectItemButton, 210, 22, _rightContent);
-            _clearNeedsButton = Util.MakeHiliteTextButton("清空需求".TranslateFromJson(), 80, 24);
+            _clearNeedsButton = Util.MakeSmallTextButton("清空需求".TranslateFromJson(), 80, 24);
             Util.NormalizeRectWithTopLeft(_clearNeedsButton, 300, 22, _rightContent);
         }
 
@@ -164,8 +164,18 @@ namespace ProjectGenesis.Patches
             foreach (KeyValuePair<Utils_ERecipeType, ItemComboBox> pair in _recipeMachines)
             {
                 List<ItemProto> recipeTypeFactory = RecipeTypeFactoryMap[pair.Key];
-                pair.Value.Init(pair.Key, recipeTypeFactory, 0);
-                _data.SetDefaultMachine(pair.Key, recipeTypeFactory[0]);
+
+                if (!DefaultMachine.TryGetValue(pair.Key, out ItemProto factory))
+                {
+                    pair.Value.Init(pair.Key, recipeTypeFactory, 0);
+                    SetDefaultMachine(pair.Key, recipeTypeFactory[0]);
+                }
+                else
+                {
+                    var index = recipeTypeFactory.IndexOf(factory);
+                    pair.Value.Init(pair.Key, recipeTypeFactory, index);
+                }
+
                 pair.Value.OnItemChange += DefaultMachinesChange;
             }
 
@@ -304,9 +314,9 @@ namespace ProjectGenesis.Patches
 
         private ItemNeedDetail GetItemNeedDetail() => ItemNeedDetail.CreateItemNeedDetail(0, 40, _rightContent);
 
-        private void OnProliferatorChange(int obj) => _data.SetDefaultStrategy(_proliferatorComboBox.Strategy);
+        private void OnProliferatorChange(int obj) => SetDefaultStrategy(_proliferatorComboBox.Strategy);
 
-        private void DefaultMachinesChange((Utils_ERecipeType type, ItemProto proto) obj) => _data.SetDefaultMachine(obj.type, obj.proto);
+        private void DefaultMachinesChange((Utils_ERecipeType type, ItemProto proto) obj) => SetDefaultMachine(obj.type, obj.proto);
 
         public void OnTabButtonClick(int idx) => SetTabIndex(idx, false);
 
@@ -319,7 +329,7 @@ namespace ProjectGenesis.Patches
             UIRoot.instance.uiGame.itemPicker.transform.SetAsLastSibling();
         }
 
-        public void OnClearOptionsButtonClick() => _data.ClearOptions();
+        public void OnClearOptionsButtonClick() => ClearOptions();
 
         public void OnClearNeedsButtonClick() => _data.ClearNeeds();
 

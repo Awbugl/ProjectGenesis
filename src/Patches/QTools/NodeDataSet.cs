@@ -3,27 +3,23 @@ using System.Collections.Generic;
 using System.Linq;
 using ProjectGenesis.Utils;
 using UnityEngine;
+using static ProjectGenesis.Patches.QTools;
 
 namespace ProjectGenesis.Patches
 {
     internal class NodeDataSet
     {
-        internal readonly Dictionary<ItemProto, NodeData> AsRaws = new Dictionary<ItemProto, NodeData>();     // AsRaws
+        internal readonly Dictionary<ItemProto, NodeData> AsRaws = new Dictionary<ItemProto, NodeData>(); // AsRaws
+
         internal readonly Dictionary<ItemProto, NodeData> Byproducts = new Dictionary<ItemProto, NodeData>(); // by product
 
-        internal readonly Dictionary<ItemProto, NodeOptions> CustomOptions = new Dictionary<ItemProto, NodeOptions>();
-
         internal readonly Dictionary<ItemProto, NodeData> Datas = new Dictionary<ItemProto, NodeData>(); // middle tier products 
-
-        internal readonly Dictionary<Utils.ERecipeType, ItemProto> DefaultMachine = new Dictionary<Utils.ERecipeType, ItemProto>();
 
         internal readonly Dictionary<ItemProto, NodeData> Factories = new Dictionary<ItemProto, NodeData>(); // middle tier products 
 
         internal readonly Dictionary<ItemProto, NodeData> Needs = new Dictionary<ItemProto, NodeData>(); // final product
 
         internal readonly Dictionary<ItemProto, NodeData> Raws = new Dictionary<ItemProto, NodeData>(); // ore
-
-        private EProliferatorStrategy _defaultStrategy = EProliferatorStrategy.Nonuse;
 
         private float _totalProliferatedItemCount;
 
@@ -206,12 +202,6 @@ namespace ProjectGenesis.Patches
             RefreshNeeds();
         }
 
-        public void ClearOptions() => CustomOptions.Clear();
-
-        internal void SetDefaultMachine(Utils.ERecipeType type, ItemProto proto) => DefaultMachine[type] = proto;
-
-        internal void SetDefaultStrategy(EProliferatorStrategy strategy) => _defaultStrategy = strategy;
-
         public void AddItemNeed(ItemProto proto, float count)
         {
             NodeData data = ItemNeed(proto, count);
@@ -296,7 +286,7 @@ namespace ProjectGenesis.Patches
 
         private NodeData ItemNeed(ItemProto proto, float count, ItemProto factory, RecipeProto recipe, bool asRaw = false)
         {
-            EProliferatorStrategy strategy = _defaultStrategy;
+            EProliferatorStrategy strategy = DefaultStrategy;
 
             if (strategy == EProliferatorStrategy.ExtraProducts && !recipe.productive) strategy = EProliferatorStrategy.Nonuse;
 

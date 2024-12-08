@@ -12,6 +12,12 @@ namespace ProjectGenesis.Utils
             if (dict.ContainsKey(key)) { dict[key].Add(value); }
             else { dict[key] = new List<TValue> { value, }; }
         }
+        
+        public static void TryAddOrInsertTop<TKey, TValue>(this ConcurrentDictionary<TKey, List<TValue>> dict, TKey key, TValue value)
+        {
+            if (dict.ContainsKey(key)) { dict[key].Insert(0,value); }
+            else { dict[key] = new List<TValue> { value, }; }
+        }
 
         public static void TryRemove<TKey, TValue>(this ConcurrentDictionary<TKey, List<TValue>> dict, TKey key, TValue value)
         {

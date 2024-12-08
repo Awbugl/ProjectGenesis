@@ -10,18 +10,23 @@ namespace ProjectGenesis.Patches
         private NodeData _data;
 
         private Image _image;
+        private UIButton _itemButton;
         private bool _isNeed;
         private RectTransform _rect;
 
         internal static ItemNeedDetail CreateItemNeedDetail(float x, float y, RectTransform parent, bool needButton = true)
         {
-            GameObject src = Instantiate(Configs.builtin.uiItemTipPrefab.recipeEntry.transform.GetChild(1).gameObject);
+            GameObject src =
+                Instantiate(UIRoot._instance.uiGame.stationWindow.storageUIPrefab.GetComponentInChildren<UIButton>().gameObject);
             ItemNeedDetail cb = src.AddComponent<ItemNeedDetail>();
 
             cb._rect = Util.NormalizeRectWithTopLeft(cb, x, y, parent);
             src.name = "my-ItemCounter";
+            src.transform.DetachChildren();
+
+            cb._itemButton = src.GetComponent<UIButton>();
             cb._image = src.GetComponent<Image>();
-            Destroy(src.GetComponentInChildren<Text>());
+            cb._image.rectTransform.sizeDelta = new Vector2(64, 64);
 
             Util.NormalizeRectWithTopLeft(Util.CreateText("\u2573", 18), 50, 11, cb._rect);
             cb._countText = Util.CreateText("", 18);
@@ -29,7 +34,7 @@ namespace ProjectGenesis.Patches
 
             if (needButton)
             {
-                cb._button = Util.MakeHiliteTextButton("\u2573", 20, 20);
+                cb._button = Util.MakeSmallTextButton("\u2573", 20, 20);
                 Util.NormalizeRectWithTopLeft(cb._button, 125, 10, cb._rect);
 
                 cb.Init();
@@ -62,6 +67,9 @@ namespace ProjectGenesis.Patches
             _data = data;
             _image.sprite = data.Item.iconSprite;
             _countText.text = data.ItemCount.ToString(format);
+
+            _itemButton.tips.itemId = data.Item.ID;
+            _itemButton.tips.type = UIButton.ItemTipType.IgnoreIncPoint;
         }
     }
 }

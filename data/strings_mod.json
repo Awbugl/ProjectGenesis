@@ -483,6 +483,10 @@
     "Name": "选择量子频道",
     "ZHCN": "选择量子频道",
     "ENUS": "Select Channel"
+  },
+  {
+    "Name": "磁流体发电",
+    "ZHCN": "磁流体发电",
+    "ENUS": "Magneto-hydrodynamic\nPower Generation"
   }
-  
 ]

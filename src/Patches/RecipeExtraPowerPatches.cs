@@ -15,9 +15,6 @@ namespace ProjectGenesis.Patches
             = new Dictionary<int, int>
         {
             { ProtoID.R水电解, 2 }, 
-            { ProtoID.R二氧化硫还原, 1 },
-            { ProtoID.R海水淡化, 1 },
-            { ProtoID.R盐水电解, 1 },
         };
 
         [HarmonyPatch(typeof(AssemblerComponent), nameof(AssemblerComponent.SetPCState))]
