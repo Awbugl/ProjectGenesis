@@ -89,49 +89,49 @@ namespace ProjectGenesis.Patches
 
             _proliferatorComboBox = MyComboBox.CreateComboBox<ProliferatorComboBox>(30, 380, _tabs[0], "默认增产策略");
 
-            _clearOptionsButton = Util.MakeSmallTextButton("清空设置".TranslateFromJson(), 80, 24);
-            Util.NormalizeRectWithTopLeft(_clearOptionsButton, 1635, 2, _labelTextPrefab.transform);
+            _clearOptionsButton = UIUtil.MakeSmallTextButton("清空设置".TranslateFromJson(), 80, 24);
+            UIUtil.NormalizeRectWithTopLeft(_clearOptionsButton, 1635, 2, _labelTextPrefab.transform);
 
             CreateLabelText("工厂", 255, 0);
             CreateLabelText("配方选取", 415, 0);
             CreateLabelText("增产策略", 850, 0);
 
             _labelTextPrefab.GetComponent<Text>().text = "物品".TranslateFromJson();
-            Util.NormalizeRectWithTopLeft(_labelTextPrefab.transform, -5, 0);
+            UIUtil.NormalizeRectWithTopLeft(_labelTextPrefab.transform, -5, 0);
 
-            Util.NormalizeRectWithTopLeft(Util.CreateLabelText(_labelTextPrefab, "添加需求：".TranslateFromJson()), 20, 19, _rightContent);
+            UIUtil.NormalizeRectWithTopLeft(UIUtil.CreateLabelText(_labelTextPrefab, "添加需求：".TranslateFromJson()), 20, 19, _rightContent);
 
-            _needLabelText = Util.CreateLabelText(_labelTextPrefab, "需求：".TranslateFromJson());
-            Util.NormalizeRectWithTopLeft(_needLabelText, 20, 60, _rightContent);
+            _needLabelText = UIUtil.CreateLabelText(_labelTextPrefab, "需求：".TranslateFromJson());
+            UIUtil.NormalizeRectWithTopLeft(_needLabelText, 20, 60, _rightContent);
 
-            _asRawsLabelText = Util.CreateLabelText(_labelTextPrefab, "额外输入：".TranslateFromJson());
-            Util.NormalizeRectWithTopLeft(_asRawsLabelText, 20, 160, _rightContent);
+            _asRawsLabelText = UIUtil.CreateLabelText(_labelTextPrefab, "额外输入：".TranslateFromJson());
+            UIUtil.NormalizeRectWithTopLeft(_asRawsLabelText, 20, 160, _rightContent);
 
-            _rawsLabelText = Util.CreateLabelText(_labelTextPrefab, "原料需求：".TranslateFromJson());
-            Util.NormalizeRectWithTopLeft(_rawsLabelText, 20, 260, _rightContent);
+            _rawsLabelText = UIUtil.CreateLabelText(_labelTextPrefab, "原料需求：".TranslateFromJson());
+            UIUtil.NormalizeRectWithTopLeft(_rawsLabelText, 20, 260, _rightContent);
 
-            _byproductsLabelText = Util.CreateLabelText(_labelTextPrefab, "副产物：".TranslateFromJson());
-            Util.NormalizeRectWithTopLeft(_byproductsLabelText, 20, 360, _rightContent);
+            _byproductsLabelText = UIUtil.CreateLabelText(_labelTextPrefab, "副产物：".TranslateFromJson());
+            UIUtil.NormalizeRectWithTopLeft(_byproductsLabelText, 20, 360, _rightContent);
 
-            _factoryLabelText = Util.CreateLabelText(_labelTextPrefab, "工厂：".TranslateFromJson());
-            Util.NormalizeRectWithTopLeft(_factoryLabelText, 20, 460, _rightContent);
+            _factoryLabelText = UIUtil.CreateLabelText(_labelTextPrefab, "工厂：".TranslateFromJson());
+            UIUtil.NormalizeRectWithTopLeft(_factoryLabelText, 20, 460, _rightContent);
 
             var inputObj = GameObject.Find("UI Root/Overlay Canvas/In Game/Planet & Star Details/planet-detail-ui/name-input");
             GameObject go = Instantiate(inputObj, _rightContent);
             go.name = "input";
-            Util.NormalizeRectWithTopLeft(go.transform, 60, 20);
+            UIUtil.NormalizeRectWithTopLeft(go.transform, 60, 20);
 
             _addItemCountInput = go.GetComponent<InputField>();
             _addItemCountInput.GetComponent<RectTransform>().sizeDelta = new Vector2(80, 28);
             _addItemCountInput.text = "60";
             _countText = _addItemCountInput.text;
 
-            Util.NormalizeRectWithTopLeft(_addItemCountInput, 120, 20, _rightContent);
+            UIUtil.NormalizeRectWithTopLeft(_addItemCountInput, 120, 20, _rightContent);
 
-            _selectItemButton = Util.MakeSmallTextButton("选择物品".TranslateFromJson(), 80, 24);
-            Util.NormalizeRectWithTopLeft(_selectItemButton, 210, 22, _rightContent);
-            _clearNeedsButton = Util.MakeSmallTextButton("清空需求".TranslateFromJson(), 80, 24);
-            Util.NormalizeRectWithTopLeft(_clearNeedsButton, 300, 22, _rightContent);
+            _selectItemButton = UIUtil.MakeSmallTextButton("选择物品".TranslateFromJson(), 80, 24);
+            UIUtil.NormalizeRectWithTopLeft(_selectItemButton, 210, 22, _rightContent);
+            _clearNeedsButton = UIUtil.MakeSmallTextButton("清空需求".TranslateFromJson(), 80, 24);
+            UIUtil.NormalizeRectWithTopLeft(_clearNeedsButton, 300, 22, _rightContent);
         }
 
         public override bool _OnInit()
@@ -201,7 +201,7 @@ namespace ProjectGenesis.Patches
                 y += 60;
             }
 
-            Util.NormalizeRectWithTopLeft(_needLabelText, 20, 60, _rightContent);
+            UIUtil.NormalizeRectWithTopLeft(_needLabelText, 20, 60, _rightContent);
 
             _needPool.RecycleAll();
 
@@ -223,7 +223,7 @@ namespace ProjectGenesis.Patches
                 counter.SetData(t, true);
             }
 
-            Util.NormalizeRectWithTopLeft(_asRawsLabelText, 20, y + 60, _rightContent);
+            UIUtil.NormalizeRectWithTopLeft(_asRawsLabelText, 20, y + 60, _rightContent);
 
             x = -180;
             y += 100;
@@ -245,7 +245,7 @@ namespace ProjectGenesis.Patches
 
             _itemCounterPool.RecycleAll();
 
-            Util.NormalizeRectWithTopLeft(_rawsLabelText, 20, y + 60, _rightContent);
+            UIUtil.NormalizeRectWithTopLeft(_rawsLabelText, 20, y + 60, _rightContent);
 
             x = -180;
             y += 100;
@@ -265,7 +265,7 @@ namespace ProjectGenesis.Patches
                 counter.SetData(t);
             }
 
-            Util.NormalizeRectWithTopLeft(_byproductsLabelText, 20, y + 60, _rightContent);
+            UIUtil.NormalizeRectWithTopLeft(_byproductsLabelText, 20, y + 60, _rightContent);
 
             x = -180;
             y += 100;
@@ -285,7 +285,7 @@ namespace ProjectGenesis.Patches
                 counter.SetData(t);
             }
 
-            Util.NormalizeRectWithTopLeft(_factoryLabelText, 20, y + 60, _rightContent);
+            UIUtil.NormalizeRectWithTopLeft(_factoryLabelText, 20, y + 60, _rightContent);
 
             x = -180;
             y += 100;
@@ -377,7 +377,7 @@ namespace ProjectGenesis.Patches
         }
 
         private void CreateLabelText(string s, float left, float top) =>
-            Util.NormalizeRectWithTopLeft(Util.CreateLabelText(_labelTextPrefab, s.TranslateFromJson()), left, top);
+            UIUtil.NormalizeRectWithTopLeft(UIUtil.CreateLabelText(_labelTextPrefab, s.TranslateFromJson()), left, top);
 
         public override void _OnUpdate()
         {
@@ -400,9 +400,9 @@ namespace ProjectGenesis.Patches
 
         public void OpenWindow()
         {
-            Util.OpenWindow(this);
+            UIUtil.OpenWindow(this);
             SetTabIndex(_data.IsEmpty() ? 0 : 1, false);
-            Util.NormalizeRectWithTopLeft(_rightInfo, _list.rect.width, 52);
+            UIUtil.NormalizeRectWithTopLeft(_rightInfo, _list.rect.width, 52);
             isOpening = true;
             GameMain.isFullscreenPaused = true;
         }
@@ -464,7 +464,7 @@ namespace ProjectGenesis.Patches
                     DestroyImmediate(child.GetComponent<Localizer>());
                     Text component = child.GetComponent<Text>();
                     component.text = "量化计算器".TranslateFromJson();
-                    Util.NormalizeRectWithTopLeft(component, 80, 10);
+                    UIUtil.NormalizeRectWithTopLeft(component, 80, 10);
                 }
 
                 if (child.name == "tab-line")
@@ -530,7 +530,7 @@ namespace ProjectGenesis.Patches
                     win._rightInfo.name = "rightInfoArea";
                     win._rightContent = win._rightInfo.GetChild(0).GetChild(0).GetChild(0).GetComponent<RectTransform>();
                     win._rightInfo.sizeDelta = new Vector2(400, 650);
-                    Util.NormalizeRectWithTopLeft(win._rightInfo, win._list.rect.x, 52, transform);
+                    UIUtil.NormalizeRectWithTopLeft(win._rightInfo, win._list.rect.x, 52, transform);
 
                     Destroy(child.GetChild(1).gameObject);
                     Destroy(child.GetChild(2).gameObject);

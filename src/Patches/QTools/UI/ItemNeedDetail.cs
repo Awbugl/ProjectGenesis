@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using HarmonyLib;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace ProjectGenesis.Patches
@@ -16,26 +17,26 @@ namespace ProjectGenesis.Patches
 
         internal static ItemNeedDetail CreateItemNeedDetail(float x, float y, RectTransform parent, bool needButton = true)
         {
-            GameObject src =
-                Instantiate(UIRoot._instance.uiGame.stationWindow.storageUIPrefab.GetComponentInChildren<UIButton>().gameObject);
+            var src = new GameObject { name = "my-ItemCounter", };
+            src.AddComponent<RectTransform>();
             ItemNeedDetail cb = src.AddComponent<ItemNeedDetail>();
+            cb._rect = UIUtil.NormalizeRectWithTopLeft(cb, x, y, parent);
 
-            cb._rect = Util.NormalizeRectWithTopLeft(cb, x, y, parent);
-            src.name = "my-ItemCounter";
-            src.transform.DetachChildren();
+            Destroy(src.GetComponentInChildren<Text>());
 
-            cb._itemButton = src.GetComponent<UIButton>();
-            cb._image = src.GetComponent<Image>();
-            cb._image.rectTransform.sizeDelta = new Vector2(64, 64);
+            UIUtil.CreateItemTipButton(out cb._itemButton, out cb._image);
+            UIUtil.NormalizeRectWithTopLeft(cb._itemButton, 0, 0, cb._rect);
+            UIUtil.NormalizeRectWithTopLeft(cb._image, 0, 0, cb._rect);
+            UIUtil.RemovePersistentCalls(cb._itemButton.gameObject);
 
-            Util.NormalizeRectWithTopLeft(Util.CreateText("\u2573", 18), 50, 11, cb._rect);
-            cb._countText = Util.CreateText("", 18);
-            Util.NormalizeRectWithTopLeft(cb._countText, 70, 10, cb._rect);
+            UIUtil.NormalizeRectWithTopLeft(UIUtil.CreateText("\u2573", 18), 50, 11, cb._rect);
+            cb._countText = UIUtil.CreateText("", 18);
+            UIUtil.NormalizeRectWithTopLeft(cb._countText, 70, 10, cb._rect);
 
             if (needButton)
             {
-                cb._button = Util.MakeSmallTextButton("\u2573", 20, 20);
-                Util.NormalizeRectWithTopLeft(cb._button, 125, 10, cb._rect);
+                cb._button = UIUtil.MakeSmallTextButton("\u2573", 20, 20);
+                UIUtil.NormalizeRectWithTopLeft(cb._button, 125, 10, cb._rect);
 
                 cb.Init();
             }
@@ -59,7 +60,7 @@ namespace ProjectGenesis.Patches
             }
         }
 
-        internal void SetPos(float x, float y) => _rect = Util.NormalizeRectWithTopLeft(this, x, y);
+        internal void SetPos(float x, float y) => _rect = UIUtil.NormalizeRectWithTopLeft(this, x, y);
 
         internal void SetData(NodeData data, bool isNeed = false, string format = "F2")
         {

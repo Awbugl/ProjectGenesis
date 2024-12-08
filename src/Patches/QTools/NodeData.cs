@@ -14,11 +14,7 @@ namespace ProjectGenesis.Patches
 
         internal void RefreshFactoryCount()
         {
-            PrefabDesc factoryPrefabDesc = Options.Factory.prefabDesc;
-
-            float assemblerSpeed = factoryPrefabDesc.assemblerSpeed;
-
-            if (factoryPrefabDesc.isLab) assemblerSpeed = factoryPrefabDesc.labAssembleSpeed;
+            float assemblerSpeed = FactorySpeed(Options.Factory);
 
             int idx = Array.IndexOf(Options.Recipe.Results, Item.ID);
 

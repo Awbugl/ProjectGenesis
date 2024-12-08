@@ -1,18 +1,27 @@
-﻿using ProjectGenesis.Utils;
+﻿using System;
+using System.Reflection;
+using HarmonyLib;
+using ProjectGenesis.Utils;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using Object = UnityEngine.Object;
 
 namespace ProjectGenesis.Patches
 {
     /// <summary>
     ///     special thanks to https://github.com/hetima/DSP_PlanetFinder/tree/main/PlanetFinder
     /// </summary>
-    internal static class Util
+    internal static class UIUtil
     {
         private static readonly UIButton OrbitAddButton =
             UIRoot.instance.uiGame.dysonEditor.controlPanel.hierarchy.swarmPanel.orbitAddButton;
 
-        private static readonly GameObject TransformGameObject = UIRoot.instance.uiGame.beltWindow.iconTagButton.transform.gameObject;
+        private static readonly GameObject IconTagButtonGameObject = UIRoot.instance.uiGame.beltWindow.iconTagButton.transform.gameObject;
+
+        private static readonly GameObject ItemButtonGameObject =
+            UIRoot._instance.uiGame.stationWindow.storageUIPrefab.itemButton.gameObject;
+
         private static readonly UIAssemblerWindow UIGameAssemblerWindow = UIRoot.instance.uiGame.assemblerWindow;
         private static readonly UIButton CategoryButton = UIRoot.instance.uiGame.functionPanel.buildMenu.categoryButtons[1];
 
@@ -173,7 +182,7 @@ namespace ProjectGenesis.Patches
 
         internal static void CreateSignalIcon(string tipTitle, string tipText, out UIButton iconButton, out Image iconImage)
         {
-            GameObject go = Object.Instantiate(TransformGameObject);
+            GameObject go = Object.Instantiate(IconTagButtonGameObject);
 
             go.name = "signal-button";
             go.SetActive(true);
@@ -181,10 +190,27 @@ namespace ProjectGenesis.Patches
 
             for (int i = rect.childCount - 1; i >= 0; --i) Object.Destroy(rect.GetChild(i).gameObject);
 
+            Object.DestroyImmediate(rect.GetComponent<EventTrigger>());
+
             iconButton = rect.GetComponent<UIButton>();
             iconButton.tips.tipTitle = tipTitle.TranslateFromJson();
             iconButton.tips.tipText = tipText.TranslateFromJson();
 
+            iconImage = rect.GetComponent<Image>();
+        }
+
+        internal static void CreateItemTipButton(out UIButton iconButton, out Image iconImage)
+        {
+            GameObject go = Object.Instantiate(ItemButtonGameObject);
+
+            go.name = "item-tip-button";
+            go.SetActive(true);
+            var rect = (RectTransform)go.transform;
+            rect.sizeDelta = new Vector2(40, 40);
+
+            for (int i = rect.childCount - 1; i >= 0; --i) Object.Destroy(rect.GetChild(i).gameObject);
+
+            iconButton = rect.GetComponent<UIButton>();
             iconImage = rect.GetComponent<Image>();
         }
 
@@ -259,6 +285,7 @@ namespace ProjectGenesis.Patches
             Object.DestroyImmediate(child.GetComponent<Localizer>());
             Text txt = child.GetComponent<Text>();
             txt.text = label;
+            txt.alignment = TextAnchor.MiddleCenter;
             btn.tips.tipText = "";
             btn.tips.tipTitle = "";
 

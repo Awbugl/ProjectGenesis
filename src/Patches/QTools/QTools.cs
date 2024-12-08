@@ -77,14 +77,23 @@ namespace ProjectGenesis.Patches
 
                     default:
                     {
-                        dict.TryAddOrInsertTop(filter, proto);
+                        dict.TryAddOrInsert(filter, proto);
 
                         continue;
                     }
                 }
             }
 
+            foreach ((Utils.ERecipeType _, List<ItemProto> value) in dict)
+                value.Sort((proto1, proto2) => (int)(FactorySpeed(proto1) - FactorySpeed(proto2)));
+
             return dict;
+        }
+
+        internal static float FactorySpeed(ItemProto proto)
+        {
+            PrefabDesc desc = proto.prefabDesc;
+            return desc.isLab ? desc.labAssembleSpeed : desc.assemblerSpeed;
         }
 
         internal static readonly Dictionary<ItemProto, NodeOptions> CustomOptions = new Dictionary<ItemProto, NodeOptions>();

@@ -9,7 +9,7 @@ namespace ProjectGenesis.Patches
     public static class RecipeExtraPowerPatches
     {
         /// <summary>
-        /// 1 == 10kw
+        /// 1 == 600kw
         /// </summary>
         public static readonly Dictionary<int, int> RecipePowerRate
             = new Dictionary<int, int>

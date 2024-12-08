@@ -26,7 +26,7 @@ namespace ProjectGenesis.Patches
 
             btn.transform.localPosition = new Vector3(-337, 1, 0);
 
-            Util.RemovePersistentCalls(btn.gameObject);
+            UIUtil.RemovePersistentCalls(btn.gameObject);
 
             btn.button.onClick.AddListener(OnCategoryButtonClick);
 

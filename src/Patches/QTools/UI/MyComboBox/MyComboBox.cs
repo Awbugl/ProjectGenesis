@@ -27,7 +27,7 @@ namespace ProjectGenesis.Patches
             T cb = go.AddComponent<T>();
             cb.selectIndex = 0;
 
-            RectTransform rect = Util.NormalizeRectWithTopLeft(cb, x, y, parent);
+            RectTransform rect = UIUtil.NormalizeRectWithTopLeft(cb, x, y, parent);
 
             cb.comboBox = go.GetComponentInChildren<UIComboBox>();
 
@@ -36,11 +36,11 @@ namespace ProjectGenesis.Patches
             cb.labelText.fontSize = fontSize;
             cb.SetLabelText(label);
 
-            Util.CreateSignalIcon("", "", out UIButton button, out Image iconImage);
+            UIUtil.CreateSignalIcon("", "", out UIButton button, out Image iconImage);
             cb.iconImg = iconImage;
             cb.button = button;
 
-            Util.NormalizeRectWithTopLeft(button, 170, -5, rect);
+            UIUtil.NormalizeRectWithTopLeft(button, 170, -5, rect);
 
             cb.button.button.onClick.RemoveAllListeners();
             cb.button.button.onClick.AddListener(cb.OnUIButtonClick);
