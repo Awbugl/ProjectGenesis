@@ -190,8 +190,6 @@ namespace ProjectGenesis.Patches
 
             for (int i = rect.childCount - 1; i >= 0; --i) Object.Destroy(rect.GetChild(i).gameObject);
 
-            Object.DestroyImmediate(rect.GetComponent<EventTrigger>());
-
             iconButton = rect.GetComponent<UIButton>();
             iconButton.tips.tipTitle = tipTitle.TranslateFromJson();
             iconButton.tips.tipText = tipText.TranslateFromJson();
@@ -207,6 +205,8 @@ namespace ProjectGenesis.Patches
             go.SetActive(true);
             var rect = (RectTransform)go.transform;
             rect.sizeDelta = new Vector2(40, 40);
+
+            Object.DestroyImmediate(rect.GetComponent<EventTrigger>());
 
             for (int i = rect.childCount - 1; i >= 0; --i) Object.Destroy(rect.GetChild(i).gameObject);
 

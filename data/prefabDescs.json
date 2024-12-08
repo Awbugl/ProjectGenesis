@@ -153,7 +153,8 @@
   },
   {
     "ModelID": 69,
-    "assemblerSpeed": 40000
+    "assemblerSpeed": 40000,
+    "workEnergyPerTick": 40000
   },
   {
     "ModelID": 70,
