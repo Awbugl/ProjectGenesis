@@ -15,7 +15,7 @@ namespace ProjectGenesis.Patches
 
             matcher.End().MatchBack(false, new CodeMatch(OpCodes.Ldc_R8, 0.85));
 
-            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldc_I4_S, (sbyte)10), new CodeInstruction(OpCodes.Mul));
+            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldc_R8, 10), new CodeInstruction(OpCodes.Mul));
 
             return matcher.InstructionEnumeration();
         }
