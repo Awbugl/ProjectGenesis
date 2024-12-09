@@ -193,6 +193,14 @@ namespace ProjectGenesis.Patches
 
             var y = 20;
 
+            foreach (NodeData t in _data.Needs.Values)
+            {
+                ProductDetail productDetail = _productDetailPool.Alloc();
+                productDetail.SetPos(y);
+                productDetail.SetData(t);
+                y += 60;
+            }
+
             foreach (NodeData t in _data.Datas.Values)
             {
                 ProductDetail productDetail = _productDetailPool.Alloc();

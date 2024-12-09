@@ -1,7 +1,38 @@
-- v3.1.0-alpha1 (Experimental 0.3.11010)
-  + 复制建造量子储物仓时不再将
+- v3.1.0-alpha0.1
+  + 调整了部分物品的位置
+  + 调整了地面黑雾的制造速度及数值
+  + 调整了部分配方（仅对新存档生效）
+  + 调整了戴森球对细胞点数的需求，提高太阳帆的发电量
+  + 调整了气态行星上的机甲采集效果
+  + 修复了协调中心效果`光伏扩容`无法正确生效的问题
+  + 修复了母星系可生成特殊海洋的问题
+  + 修复了燃烧室自动补充燃料的相关问题
+  + 增加了`地中海`星球的`放射性矿物`储量
+  + 优化了量化计算器的用户界面
+  + 复制建造量子储物仓时将复制频道信息
+  + 启用创世时不再解锁平台成就
+  + `电磁轨道弹射器`现在将使用集装科技加成
+  + 制造建筑将根据配方和制造速度额外耗电
+  + 量化计算器现在将在存档时保存自定义配置
 
-  +
+  + Adjusted the position of some items
+  + Adjusted the creation speed and value of the ground black mist
+  + Adjusted some recipes (only effective for new archives)
+  + Adjusted the Dyson Sphere's cell point requirement to increase the power generation of solar sails
+  + Tweaked mecha harvesting effects on gas planets
+  + Fixed Coordination Center effect `Photovoltaic Expansion` not working correctly
+  + Fixed issue where home system could generate special oceans
+  + Fixed an issue with the automatic refueling of combustion chambers.
+  + Increased the amount of radioactive minerals on the planet Mediterranean.
+  + Optimized the UI of the Quantization Calculator.
+  + Channel information will be copied when building a Quantum Storage Silo.
+  + Platform achievement no longer unlocked when Genesis is enabled
+  + `Electromagnetic Orbital Catapults` will now use the Collective Technology bonus
+  + Fabricated buildings will consume additional power based on recipe and fabrication rate
+  + Quantization Calculator will now save custom configurations on archive
+
+
+Translated with DeepL.com (free version)
 
 
 <details>

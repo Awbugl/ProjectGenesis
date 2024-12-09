@@ -47,7 +47,7 @@ namespace ProjectGenesis.Patches
                 if (ReuseByProducts(node, AsRaws))
                     ReuseByProducts(node, Raws);
 
-            if (_totalProliferatedItemCount > 0) MergeRaws(ItemRaw(QTools.ProliferatorProto, ProliferatorCount));
+            if (_totalProliferatedItemCount > 0) MergeRaws(NewItemRaw(ProliferatorProto, ProliferatorCount));
 
             OnNeedRefreshed?.Invoke();
         }
@@ -62,7 +62,7 @@ namespace ProjectGenesis.Patches
                 NodeOptions nodeOptions = node.Options;
 
                 if (!nodeOptions.AsRaw && nodeOptions.Factory != null)
-                    MergeFactories(ItemRaw(nodeOptions.Factory, Mathf.Ceil(nodeOptions.FactoryCount)));
+                    MergeFactories(NewItemRaw(nodeOptions.Factory, Mathf.Ceil(nodeOptions.FactoryCount)));
             }
         }
 
@@ -132,7 +132,10 @@ namespace ProjectGenesis.Patches
                 if (node.ItemCount < 1e-6) return;
             }
 
-            MergeData(node);
+            if (node.IsNeed)
+                node.RefreshFactoryCount();
+            else
+                MergeData(node);
 
             RecipeProto recipe = node.Options.Recipe;
 
@@ -147,7 +150,7 @@ namespace ProjectGenesis.Patches
                     {
                         ItemProto proto = LDB.items.Select(recipe.Results[index]);
                         float count = node.ItemCount * recipe.ResultCounts[index] / recipe.ResultCounts[idx];
-                        MergeByproducts(ItemRaw(proto, count));
+                        MergeByproducts(NewItemRaw(proto, count));
                     }
                 }
 
@@ -164,7 +167,7 @@ namespace ProjectGenesis.Patches
 
                 if (node.Options.Strategy != EProliferatorStrategy.Nonuse) _totalProliferatedItemCount += count;
 
-                NodeData nodeData = ItemNeed(proto, count);
+                NodeData nodeData = NewItemNeed(proto, count);
 
                 AddNodeChilds(nodeData);
             }
@@ -186,7 +189,7 @@ namespace ProjectGenesis.Patches
 
         private void MergeData(NodeData node) => MergeNode(Datas, node).RefreshFactoryCount();
 
-        private void MergeNeeds(NodeData node) => MergeNode(Needs, node);
+        private void MergeNeeds(NodeData node) => MergeNode(Needs, node).MarkAsNeed();
 
         private void MergeRaws(NodeData node) => MergeNode(Raws, node);
 
@@ -204,7 +207,7 @@ namespace ProjectGenesis.Patches
 
         public void AddItemNeed(ItemProto proto, float count)
         {
-            NodeData data = ItemNeed(proto, count);
+            NodeData data = NewItemNeed(proto, count);
             MergeNeeds(data);
             RefreshNeeds();
         }
@@ -215,13 +218,13 @@ namespace ProjectGenesis.Patches
             RefreshNeeds();
         }
 
-        private NodeData ItemNeed(ItemProto proto, float count)
+        private NodeData NewItemNeed(ItemProto proto, float count)
         {
             if (CustomOptions.TryGetValue(proto, out NodeOptions option))
             {
-                if (proto.isRaw || option.AsRaw) return ItemRaw(proto, count, option);
+                if (proto.isRaw || option.AsRaw) return ItemRawWithOption(proto, count, option);
 
-                NodeData data = ItemNeed(proto, count, option);
+                NodeData data = ItemNeedWithOption(proto, count, option);
                 data.RefreshFactoryCount();
 
                 return data;
@@ -230,18 +233,18 @@ namespace ProjectGenesis.Patches
             RecipeProto recipe = proto.recipes.FirstOrDefault();
             Utils.ERecipeType type = (Utils.ERecipeType?)recipe?.Type ?? Utils.ERecipeType.None;
 
-            if (type == Utils.ERecipeType.None) return ItemRaw(proto, count);
+            if (type == Utils.ERecipeType.None) return NewItemRaw(proto, count);
 
             if (!DefaultMachine.TryGetValue(type, out ItemProto factory))
             {
-                factory = QTools.RecipeTypeFactoryMap[type][0];
+                factory = RecipeTypeFactoryMap[type][0];
                 SetDefaultMachine(type, factory);
             }
 
             return ItemNeed(proto, count, factory, recipe, !string.IsNullOrWhiteSpace(proto.miningFrom));
         }
 
-        private NodeData ItemRaw(ItemProto proto, float count, NodeOptions option)
+        private NodeData ItemRawWithOption(ItemProto proto, float count, NodeOptions option)
         {
             var data = new NodeData
             {
@@ -254,7 +257,7 @@ namespace ProjectGenesis.Patches
             return data;
         }
 
-        private NodeData ItemRaw(ItemProto proto, float count)
+        private NodeData NewItemRaw(ItemProto proto, float count)
         {
             var data = new NodeData
             {
@@ -269,7 +272,7 @@ namespace ProjectGenesis.Patches
             return data;
         }
 
-        private NodeData ItemNeed(ItemProto proto, float count, NodeOptions option)
+        private NodeData ItemNeedWithOption(ItemProto proto, float count, NodeOptions option)
         {
             var data = new NodeData
             {

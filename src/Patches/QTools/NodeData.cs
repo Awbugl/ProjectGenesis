@@ -11,6 +11,7 @@ namespace ProjectGenesis.Patches
         internal ItemProto Item;
         internal float ItemCount;
         internal NodeOptions Options;
+        internal bool IsNeed;
 
         internal void RefreshFactoryCount()
         {
@@ -61,5 +62,7 @@ namespace ProjectGenesis.Patches
         internal void RefreshNeeds() => DataSet.RefreshNeeds();
 
         public void RemoveNeed() => DataSet.RemoveNeed(this);
+
+        public void MarkAsNeed() => IsNeed = true;
     }
 }

@@ -1,5 +1,4 @@
-﻿using HarmonyLib;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 namespace ProjectGenesis.Patches
