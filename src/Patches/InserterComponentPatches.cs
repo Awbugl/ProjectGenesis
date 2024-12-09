@@ -6,8 +6,8 @@ namespace ProjectGenesis.Patches
 {
     public static class InserterComponentPatches
     {
-        [HarmonyTranspiler]
         [HarmonyPatch(typeof(ItemProto), nameof(ItemProto.GetPropValue))]
+        [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> ItemProto_GetPropValue_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
             var matcher = new CodeMatcher(instructions);
@@ -17,8 +17,8 @@ namespace ProjectGenesis.Patches
             return matcher.InstructionEnumeration();
         }
 
-        [HarmonyTranspiler]
         [HarmonyPatch(typeof(UIInserterWindow), nameof(UIInserterWindow._OnUpdate))]
+        [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> UIInserterWindow__OnUpdate_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
             var matcher = new CodeMatcher(instructions);
@@ -28,8 +28,8 @@ namespace ProjectGenesis.Patches
             return matcher.InstructionEnumeration();
         }
 
-        [HarmonyTranspiler]
         [HarmonyPatch(typeof(InserterComponent), nameof(InserterComponent.InternalUpdate_Bidirectional))]
+        [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> InserterComponent_InternalUpdate_Bidirectional_Transpiler(
             IEnumerable<CodeInstruction> instructions)
         {

@@ -14,6 +14,23 @@ namespace ProjectGenesis.Patches
 
             matcher.MatchForward(false, new CodeMatch(OpCodes.Ldc_I4_2), new CodeMatch(OpCodes.Mul), new CodeMatch(OpCodes.Stloc_0));
 
+            // DysonFrame count /= 2
+            matcher.SetInstructionAndAdvance(new CodeInstruction(OpCodes.Nop)).SetInstructionAndAdvance(new CodeInstruction(OpCodes.Nop));
+
+            return matcher.InstructionEnumeration();
+        }
+
+        [HarmonyPatch(typeof(DysonShell), nameof(DysonShell.GenerateGeometry))]
+        [HarmonyPatch(typeof(DysonShell), nameof(DysonShell.Import))]
+        [HarmonyTranspiler]
+        public static IEnumerable<CodeInstruction> DysonShell_cpPerVertex_Transpiler(IEnumerable<CodeInstruction> instructions)
+        {
+            var matcher = new CodeMatcher(instructions);
+
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldc_I4_2), new CodeMatch(OpCodes.Mul),
+                new CodeMatch(OpCodes.Stfld, AccessTools.Field(typeof(DysonShell), nameof(DysonShell.cpPerVertex))));
+
+            // DysonShell count /= 8
             matcher.SetInstructionAndAdvance(new CodeInstruction(OpCodes.Ldc_I4_4))
                .SetInstructionAndAdvance(new CodeInstruction(OpCodes.Div));
 

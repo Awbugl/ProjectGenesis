@@ -158,7 +158,7 @@
   },
   {
     "ModelID": 70,
-    "labAssembleSpeed": 20000
+    "labAssembleSpeed": 40000
   },
   {
     "ModelID": 71,
@@ -214,15 +214,15 @@
   },
   {
     "ModelID": 293,
-    "enemySpMax": 1200
+    "enemySpMax": 720
   },
   {
     "ModelID": 294,
-    "enemySpMax": 1500
+    "enemySpMax": 900
   },
   {
     "ModelID": 295,
-    "enemySpMax": 1500
+    "enemySpMax": 900
   },
   {
     "ModelID": 300,
@@ -271,7 +271,7 @@
   },
   {
     "ModelID": 455,
-    "labAssembleSpeed": 40000,
+    "labAssembleSpeed": 80000,
     "labResearchSpeed": 4
   },
   {

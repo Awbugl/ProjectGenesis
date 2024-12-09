@@ -74,7 +74,7 @@ namespace ProjectGenesis.Patches
 
             matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_S, themeProto),
                 new CodeInstruction(OpCodes.Ldfld, AccessTools.Field(typeof(ThemeProto), nameof(ThemeProto.WaterItemId))),
-                new CodeInstruction(OpCodes.Ldc_I4_0), new CodeInstruction(OpCodes.Bne_Un_S, label));
+                new CodeInstruction(OpCodes.Ldc_I4_0), new CodeInstruction(OpCodes.Bgt_Un_S, label));
 
             return matcher.InstructionEnumeration();
         }

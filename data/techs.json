@@ -926,12 +926,14 @@
       1142
     ],
     "Items": [
-      6280
+      6278,
+      6279
     ],
     "ItemPoints": [
+      10,
       10
     ],
-    "HashNeeded": 720000,
+    "HashNeeded": 1440000,
     "UnlockRecipes": [
       57
     ],
