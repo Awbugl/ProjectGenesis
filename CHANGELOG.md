@@ -1,3 +1,17 @@
+- v3.1.0-alpha0.2
+  + 移除物品`混凝土`
+  + 调整了部分配方
+  + 增加快速移动后的30秒无敌效果
+
+  + Removed item `concrete`
+  + Adjusted some recipes
+  + Added 30 seconds of invincibility after fast movement
+
+
+<details>
+  <summary>点击展开日志 | Click to view all </summary>
+
+
 - v3.1.0-alpha0.1
   + 调整了部分物品的位置
   + 调整了地面黑雾的制造速度及数值
@@ -17,7 +31,7 @@
 
   + Adjusted the position of some items
   + Adjusted the creation speed and value of the ground black mist
-  + Adjusted some recipes (only effective for new archives)
+  + Adjusted some recipes
   + Adjusted the Dyson Sphere's cell point requirement to increase the power generation of solar sails
   + Tweaked mecha harvesting effects on gas planets
   + Fixed Coordination Center effect `Photovoltaic Expansion` not working correctly
@@ -30,13 +44,6 @@
   + `Electromagnetic Orbital Catapults` will now use the Collective Technology bonus
   + Fabricated buildings will consume additional power based on recipe and fabrication rate
   + Quantization Calculator will now save custom configurations on archive
-
-
-Translated with DeepL.com (free version)
-
-
-<details>
-  <summary>点击展开日志 | Click to view all </summary>
 
 
 - v3.0.11

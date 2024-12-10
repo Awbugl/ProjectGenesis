@@ -64,13 +64,25 @@ namespace ProjectGenesis.Patches
         {
             var matcher = new CodeMatcher(instructions);
 
-            matcher.End().MatchBack(false, new CodeMatch(OpCodes.Ldloc_S),
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldloc_S),
                 new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(ThemeProto), nameof(ThemeProto.PlanetType))),
                 new CodeMatch(OpCodes.Ldc_I4_3));
 
             var themeProto = matcher.Operand;
 
             var label = matcher.Advance(3).Operand;
+
+            matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_S, themeProto),
+                new CodeInstruction(OpCodes.Ldfld, AccessTools.Field(typeof(ThemeProto), nameof(ThemeProto.WaterItemId))),
+                new CodeInstruction(OpCodes.Ldc_I4_0), new CodeInstruction(OpCodes.Bgt_S, label));
+
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldloc_S),
+                new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(ThemeProto), nameof(ThemeProto.PlanetType))),
+                new CodeMatch(OpCodes.Ldc_I4_3));
+
+            themeProto = matcher.Operand;
+
+            label = matcher.Advance(3).Operand;
 
             matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_S, themeProto),
                 new CodeInstruction(OpCodes.Ldfld, AccessTools.Field(typeof(ThemeProto), nameof(ThemeProto.WaterItemId))),
