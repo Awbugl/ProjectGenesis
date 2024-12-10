@@ -15,8 +15,8 @@ namespace ProjectGenesis.Patches
         {
             { ProtoID.R水电解, 4 },
             { ProtoID.R羰基合成, 4 },
-            { ProtoID.R重氢, 8 },
-            { ProtoID.R三元精金, 16 },
+            { ProtoID.R重氢, 18 },
+            { ProtoID.R三元精金, 18 },
             { ProtoID.R光子物质化, 8 },
             { ProtoID.R奇异物质, 8 },
             { ProtoID.R氦核转化, 8 },
