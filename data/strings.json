@@ -1171,8 +1171,8 @@
   },
   {
     "Name": "R有机晶体活化",
-    "ZHCN": "在能量碎片的作用下，维持在特定激发态的放射性矿物释放的粒子能有效活化有机晶体，促使其组分断裂与重组，有效提高了亚原子操控的转化效率。",
-    "ENUS": "Under the effect of energy fragments, particles released from radioactive minerals maintained in a specific excited state effectively activate the organic crystals, promoting the breaking and reassembly of their components, thereby significantly enhancing the efficiency of subatomic manipulation."
+    "ZHCN": "能量碎片能有效活化有机晶体，促使其组分断裂与重组，有效提高了亚原子操控的转化速度。",
+    "ENUS": "Energy fragments can effectively activate organic crystals and induce fracture and reorganization of their components, effectively increasing the speed of conversion of subatomic manipulation."
   },
   {
     "Name": "能量物质化",
@@ -1195,14 +1195,14 @@
     "ENUS": "Using carbon to reduce sulfur dioxide can yield powdered elemental sulfur.\n<color=\"#FD965ECC\">Will not stop working until all products are accumulated.</color>"
   },
   {
-    "Name": "煤炭干馏",
-    "ZHCN": "煤炭干馏",
-    "ENUS": "Coal Dry Distillation"
+    "Name": "煤炭液化",
+    "ZHCN": "煤炭液化",
+    "ENUS": "Coal Liquefaction"
   },
   {
-    "Name": "R煤炭干馏",
-    "ZHCN": "煤炭在隔绝空气条件下高温处理后，可以得到一种重要的化工原料——焦油。",
-    "ENUS": "When coal is treated at high temperatures under air-insulated conditions, an important chemical raw material, tar, can be obtained."
+    "Name": "R煤炭液化",
+    "ZHCN": "煤炭在氢气和催化剂作用下，可以转变为一种重要的化工原料——焦油。",
+    "ENUS": "Coal, in the presence of hydrogen and a catalyst, can be transformed into an important chemical raw material, tar."
   },
   {
     "Name": "焦油分馏",
@@ -1991,8 +1991,8 @@
   },
   {
     "Name": "I焦油",
-    "ZHCN": "有刺激性气味的粘稠液体，密度较大，富含多种芳香族、杂环和支链化合物且便于提取，是一种重要的化工原料。可由煤炭干馏，或由石油分离获得。",
-    "ENUS": "Viscous liquid with irritating odor, high density, rich in many aromatic, heterocyclic and branched chain compounds and easy to extract, it is an important chemical raw material. It can be obtained by dry distillation of coal or separation of oil."
+    "ZHCN": "有刺激性气味的粘稠液体，密度较大，富含多种芳香族、杂环和支链化合物且便于提取，是一种重要的化工原料。",
+    "ENUS": "Viscous liquid with irritating odor, high density, rich in many aromatic, heterocyclic and branched chain compounds and easy to extract, it is an important chemical raw material."
   },
   {
     "Name": "I放射性矿物",

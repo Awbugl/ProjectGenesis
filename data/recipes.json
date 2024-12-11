@@ -4973,7 +4973,7 @@
     "ID": 501,
     "Name": "焦油裂化",
     "Description": "R焦油裂化",
-    "IconPath": "",
+    "IconPath": "Assets/texpack/精炼油-丙烯",
     "Type": 3,
     "GridIndex": 4205,
     "Time": 120,
@@ -5640,22 +5640,22 @@
     "IconPath": "Assets/texpack/高效黑塑料",
     "Type": 16,
     "GridIndex": 4105,
-    "Time": 240,
+    "Time": 60,
     "Input": [
       1117,
-      6222,
       5206
     ],
     "InCounts": [
-      2,
-      2,
+      8,
       4
     ],
     "Output": [
-      7709
+      7709,
+      1114
     ],
     "OutCounts": [
-      1
+      1,
+      2
     ],
     "Explicit": true,
     "Handcraft": false,
@@ -5985,17 +5985,19 @@
   },
   {
     "ID": 712,
-    "Name": "煤炭干馏",
-    "Description": "R煤炭干馏",
-    "IconPath": "Assets/texpack/焦油循环",
+    "Name": "煤炭液化",
+    "Description": "R煤炭液化",
+    "IconPath": "Icons/ItemRecipe/reforming-refine",
     "Type": 3,
     "GridIndex": 4203,
     "Time": 240,
     "Input": [
-      1006
+      1006,
+      1120
     ],
     "InCounts": [
-      4
+      3,
+      3
     ],
     "Output": [
       1114
@@ -6011,7 +6013,7 @@
     "ID": 713,
     "Name": "焦油分馏",
     "Description": "R焦油分馏",
-    "IconPath": "",
+    "IconPath": "Assets/texpack/精炼油-苯",
     "Type": 3,
     "GridIndex": 4204,
     "Time": 120,

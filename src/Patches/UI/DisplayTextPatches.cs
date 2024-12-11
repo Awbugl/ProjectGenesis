@@ -196,7 +196,7 @@ namespace ProjectGenesis.Patches
                         __result = (600000.0 / __instance.prefabDesc.minerPeriod * GameMain.history.miningSpeedScale).ToString("0.##")
                                  + "x";
                     return;
-                
+
                 case 58:
                     if (__instance.ID == ProtoID.I导弹防御塔) __result = "1 AU";
                     return;

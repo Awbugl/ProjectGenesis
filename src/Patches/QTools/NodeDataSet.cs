@@ -57,6 +57,15 @@ namespace ProjectGenesis.Patches
             Factories.Clear();
 
             // ReSharper disable once ForeachCanBePartlyConvertedToQueryUsingAnotherGetEnumerator
+            foreach (NodeData node in Needs.Values)
+            {
+                NodeOptions nodeOptions = node.Options;
+
+                if (!nodeOptions.AsRaw && nodeOptions.Factory != null)
+                    MergeFactories(NewItemRaw(nodeOptions.Factory, Mathf.Ceil(nodeOptions.FactoryCount)));
+            }
+
+            // ReSharper disable once ForeachCanBePartlyConvertedToQueryUsingAnotherGetEnumerator
             foreach (NodeData node in Datas.Values)
             {
                 NodeOptions nodeOptions = node.Options;

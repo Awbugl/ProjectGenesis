@@ -1,3 +1,13 @@
+- v3.1.0-alpha0.3
+  + 调整了部分配方
+
+  + Adjusted some recipes
+
+
+<details>
+  <summary>点击展开日志 | Click to view all </summary>
+
+
 - v3.1.0-alpha0.2
   + 移除物品`混凝土`
   + 调整了部分配方
@@ -6,10 +16,6 @@
   + Removed item `concrete`
   + Adjusted some recipes
   + Added 30 seconds of invincibility after fast movement
-
-
-<details>
-  <summary>点击展开日志 | Click to view all </summary>
 
 
 - v3.1.0-alpha0.1

@@ -1,8 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Reflection.Emit;
 using HarmonyLib;
+using ProjectGenesis.Compatibility;
 using ProjectGenesis.Utils;
 
 // ReSharper disable InconsistentNaming
@@ -244,9 +246,29 @@ namespace ProjectGenesis.Patches
 
                         ItemProto itemProto = LDB.items.Select(itemId);
 
-                        var stack1 = (int)(stack * 40 * power);
+                        if (MoreMegaStructure.Installed && MoreMegaStructure.FastAssembleItems.TryGetValue(itemId, out var recipeId))
+                        {
+                            RecipeProto recipe = LDB.recipes.Select(recipeId);
 
-                        if (itemProto.CanBuild)
+                            int count;
+
+                            if (recipe.Results.Length == 1) { count = stack * 3 * recipe.ItemCounts[0] / recipe.ResultCounts[0] / 4; }
+                            else
+                            {
+                                var idx = Array.IndexOf(recipe.Results, itemId);
+
+                                count = stack * 3 * recipe.ItemCounts[idx] / recipe.ResultCounts[idx] / recipe.Results.Length / 4;
+                            }
+
+                            TryAddItemToPackage(9500, ref count, productRegister);
+
+                            if (count <= 0) continue;
+
+                            count *= 400;
+                            sandCount += count;
+                            productRegister[ProtoID.I沙土] += count;
+                        }
+                        else if (itemProto.CanBuild)
                         {
                             RecipeProto recipe = itemProto.recipes.FirstOrDefault();
 
@@ -255,9 +277,8 @@ namespace ProjectGenesis.Patches
                                 for (var i = 0; i < recipe.Items.Length; i++)
                                 {
                                     int recipeItem = recipe.Items[i];
-                                    float recipeItemCount = recipe.ItemCounts[i] * stack * 0.75f;
+                                    int count = recipe.ItemCounts[i] * stack * 3 / 4;
 
-                                    int count = recipeItemCount < 1 ? 1 : (int)recipeItemCount;
                                     TryAddItemToPackage(recipeItem, ref count, productRegister);
 
                                     if (count <= 0) continue;
@@ -271,6 +292,7 @@ namespace ProjectGenesis.Patches
                             }
                         }
 
+                        var stack1 = (int)(stack * 40 * power);
                         sandCount += stack1;
                         productRegister[ProtoID.I沙土] += stack1;
                     }

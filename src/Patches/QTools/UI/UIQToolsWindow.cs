@@ -195,6 +195,8 @@ namespace ProjectGenesis.Patches
 
             foreach (NodeData t in _data.Needs.Values)
             {
+                if (t.Options.AsRaw || t.Item.isRaw) continue;
+
                 ProductDetail productDetail = _productDetailPool.Alloc();
                 productDetail.SetPos(y);
                 productDetail.SetData(t);

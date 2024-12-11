@@ -347,8 +347,8 @@
     "DescFields": [
       2,
       3,
-      1,
       31,
+      1,
       40
     ],
     "FuelType": 1,
@@ -546,9 +546,9 @@
     "PreTechOverride": 0,
     "DescFields": [
       53,
-      1,
       4,
       5,
+      1,
       40
     ],
     "FuelType": 0,
@@ -1393,8 +1393,8 @@
     "DescFields": [
       2,
       3,
-      1,
       31,
+      1,
       40
     ],
     "FuelType": 1,
@@ -1444,8 +1444,8 @@
     "DescFields": [
       2,
       3,
-      1,
       31,
+      1,
       40
     ],
     "FuelType": 1,
@@ -1543,8 +1543,8 @@
     "DescFields": [
       2,
       3,
-      1,
       31,
+      1,
       40
     ],
     "FuelType": 1,
@@ -1594,8 +1594,8 @@
     "DescFields": [
       2,
       3,
-      1,
       31,
+      1,
       40
     ],
     "FuelType": 1,
@@ -2208,12 +2208,12 @@
     "DescFields": [
       2,
       3,
-      1,
       31,
+      1,
       40
     ],
     "FuelType": 1,
-    "HeatValue": 4000000,
+    "HeatValue": 6000000,
     "ReactorInc": -0.4,
     "IsFluid": false,
     "Productive": true,
@@ -2451,8 +2451,8 @@
     "DescFields": [
       2,
       3,
-      1,
       31,
+      1,
       40
     ],
     "FuelType": 1,
@@ -4059,8 +4059,8 @@
     "DescFields": [
       2,
       3,
-      1,
       31,
+      1,
       40
     ],
     "FuelType": 1,
@@ -4070,7 +4070,7 @@
     "Productive": true,
     "SubID": 0,
     "MiningFrom": "",
-    "ProduceFrom": "",
+    "ProduceFrom": "原油精炼厂",
     "Grade": 0,
     "Upgrades": [],
     "IsEntity": false,
@@ -4110,8 +4110,8 @@
     "DescFields": [
       2,
       3,
-      1,
       31,
+      1,
       40
     ],
     "FuelType": 1,
@@ -4121,7 +4121,7 @@
     "Productive": true,
     "SubID": 0,
     "MiningFrom": "",
-    "ProduceFrom": "",
+    "ProduceFrom": "化工厂",
     "Grade": 0,
     "Upgrades": [],
     "IsEntity": false,
