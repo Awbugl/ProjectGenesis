@@ -49,7 +49,7 @@ namespace ProjectGenesis
         public const string MODGUID = "org.LoShin.GenesisBook";
         public const string MODNAME = "GenesisBook";
         public const string VERSION = "3.1.0";
-        public const string DEBUGVERSION = "-alpha1.0";
+        public const string DEBUGVERSION = "-alpha0.2";
 
         public static bool LoadCompleted;
 
@@ -194,6 +194,7 @@ namespace ProjectGenesis
             QuantumStoragePatches.Export(w);
             AdvancedLaserPatches.Export(w);
             GlobalPowerSupplyPatches.Export(w);
+            QTools.Export(w);
         }
 
         public void Import(BinaryReader r)
@@ -204,6 +205,7 @@ namespace ProjectGenesis
             QuantumStoragePatches.Import(r);
             AdvancedLaserPatches.Import(r);
             GlobalPowerSupplyPatches.Import(r);
+            QTools.Import(r);
         }
 
         public void IntoOtherSave()
@@ -213,6 +215,7 @@ namespace ProjectGenesis
             QuantumStoragePatches.IntoOtherSave();
             AdvancedLaserPatches.IntoOtherSave();
             GlobalPowerSupplyPatches.IntoOtherSave();
+            QTools.IntoOtherSave();
         }
 
         public string Version => VERSION;
@@ -290,6 +293,8 @@ namespace ProjectGenesis
             ItemProto.InitItemIndices();
             ItemProto.InitMechaMaterials();
             ItemProto.InitFighterIndices();
+            ItemProto.InitPowerFacilityIndices();
+            ItemProto.InitProductionMask();
             ModelProto.InitMaxModelIndex();
             ModelProto.InitModelIndices();
             ModelProto.InitModelOrders();

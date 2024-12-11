@@ -3,7 +3,7 @@ using ProjectGenesis.Utils;
 using UnityEngine;
 using UnityEngine.UI;
 using static ProjectGenesis.Patches.PlanetFocusPatches;
-using static ProjectGenesis.Patches.Util;
+using static ProjectGenesis.Patches.UIUtil;
 
 namespace ProjectGenesis.Patches
 {
@@ -29,7 +29,7 @@ namespace ProjectGenesis.Patches
         internal static UIPlanetFocusWindow CreateWindow() =>
             CreateWindow<UIPlanetFocusWindow>("UIPlanetFocusWindow", "星球基地".TranslateFromJson());
 
-        public void OpenWindow() => Util.OpenWindow(this);
+        public void OpenWindow() => UIUtil.OpenWindow(this);
 
         public override void _OnCreate()
         {
@@ -57,8 +57,8 @@ namespace ProjectGenesis.Patches
                 _iconTexts[i] = CreateText("", 16);
 
                 // works for 2x2
-                // Util.NormalizeRectWithTopLeft(iconBtn.transform, (i & 1) * 60, 60 + (i >> 1) * 60, _tab1);
-                // Util.NormalizeRectWithTopLeft(_iconTexts[i].transform, 150, 60 + i * 30, _tab1);
+                // UIUtil.NormalizeRectWithTopLeft(iconBtn.transform, (i & 1) * 60, 60 + (i >> 1) * 60, _tab1);
+                // UIUtil.NormalizeRectWithTopLeft(_iconTexts[i].transform, 150, 60 + i * 30, _tab1);
 
                 NormalizeRectWithTopLeft(iconBtn.transform, 0, 60 + i * 60, _tab1);
                 NormalizeRectWithTopLeft(_iconTexts[i].transform, 55, 72 + i * 60, _tab1);

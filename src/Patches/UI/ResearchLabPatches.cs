@@ -407,35 +407,41 @@ namespace ProjectGenesis.Patches
         {
             var matcher = new CodeMatcher(instructions);
 
-            matcher.MatchForward(true, new CodeMatch(OpCodes.Ldarg_0),
-                new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(LabComponent), nameof(LabComponent.needs))),
-                new CodeMatch(OpCodes.Ldc_I4_5), new CodeMatch(OpCodes.Ldelem_I4));
-
+            matcher.MatchForward(true, new CodeMatch(OpCodes.Ldc_I4, 6006));
             object leaveLabel = matcher.Advance(1).Operand;
 
-            matcher.Start().MatchForward(false, new CodeMatch(OpCodes.Ldarg_0),
+            matcher.Start().MatchForward(false,
+                new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(LabComponent), nameof(LabComponent.nextLabId))),
+                new CodeMatch(OpCodes.Ldelema),
                 new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(LabComponent), nameof(LabComponent.needs))),
                 new CodeMatch(OpCodes.Ldc_I4_0), new CodeMatch(OpCodes.Ldelem_I4));
 
-            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0), new CodeInstruction(OpCodes.Ldarg_1),
+            matcher.InsertAndAdvance(
                 new CodeInstruction(OpCodes.Call,
                     AccessTools.Method(typeof(ResearchLabPatches), nameof(LabComponent_UpdateOutputToNext_Patch_Method))),
                 new CodeInstruction(OpCodes.Br, leaveLabel));
 
+            matcher.SetInstructionAndAdvance(new CodeInstruction(OpCodes.Nop)).SetInstructionAndAdvance(new CodeInstruction(OpCodes.Nop))
+               .SetInstructionAndAdvance(new CodeInstruction(OpCodes.Nop)).SetInstructionAndAdvance(new CodeInstruction(OpCodes.Nop))
+               .SetInstructionAndAdvance(new CodeInstruction(OpCodes.Nop)).SetInstructionAndAdvance(new CodeInstruction(OpCodes.Nop))
+               .SetInstructionAndAdvance(new CodeInstruction(OpCodes.Nop));
+
             return matcher.InstructionEnumeration();
         }
 
-        public static void LabComponent_UpdateOutputToNext_Patch_Method(ref LabComponent labComponent, LabComponent[] labPool)
+        public static void LabComponent_UpdateOutputToNext_Patch_Method(LabComponent[] labPool, ref LabComponent labComponent)
         {
+            ref LabComponent next = ref labPool[labComponent.nextLabId];
+
             for (var i = 0; i < LabComponent.matrixIds.Length; i++)
             {
-                ref LabComponent next = ref labPool[labComponent.nextLabId];
-
-                if (labComponent.matrixServed[i] >= 3600 && next.matrixServed[i] < 36000)
+                if (labComponent.matrixServed[i] >= 7200 && next.matrixServed[i] < 36000)
                 {
-                    int num = labComponent.split_inc(ref labComponent.matrixServed[i], ref labComponent.matrixIncServed[i], 3600);
+                    int p = (labComponent.matrixServed[i] - 7200) / 3600 * 3600;
+                    if (p > 36000) p = 36000;
+                    int num = labComponent.split_inc(ref labComponent.matrixServed[i], ref labComponent.matrixIncServed[i], p);
                     next.matrixIncServed[i] += num;
-                    next.matrixServed[i] += 3600;
+                    next.matrixServed[i] += p;
                 }
             }
         }

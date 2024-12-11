@@ -57,6 +57,13 @@ namespace ProjectGenesis.Compatibility
 
                 recipeProto.Type = (ERecipeType)10;
 
+                for (var index = 0; index < recipeProto.Items.Length; index++)
+                {
+                    ref int item = ref recipeProto.Items[index];
+
+                    if (item == 1802) item = 6245;
+                }
+
                 switch (recipeProto.ID)
                 {
                     case 350:

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 
 namespace ProjectGenesis.Patches
 {
@@ -66,5 +67,25 @@ namespace ProjectGenesis.Patches
         }
 
         internal event Action<NodeOptions> OnOptionsChange;
+
+        public void Export(BinaryWriter w)
+        {
+            w.Write(Item.ID);
+            w.Write(_factory.ID);
+            w.Write(_recipe.ID);
+            w.Write((int)_strategy);
+            w.Write(_asRaw);
+        }
+
+        public static NodeOptions Import(BinaryReader r)
+        {
+            var itemId = r.ReadInt32();
+            var factoryId = r.ReadInt32();
+            var recipeId = r.ReadInt32();
+            var strategy = (EProliferatorStrategy)r.ReadInt32();
+            var asRaw = r.ReadBoolean();
+
+            return new NodeOptions(LDB.items.Select(itemId), LDB.items.Select(factoryId), LDB.recipes.Select(recipeId), strategy, asRaw);
+        }
     }
 }

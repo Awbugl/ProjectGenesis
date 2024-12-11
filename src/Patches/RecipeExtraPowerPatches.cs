@@ -8,13 +8,20 @@ namespace ProjectGenesis.Patches
 {
     public static class RecipeExtraPowerPatches
     {
-        // ReSharper disable once MemberCanBePrivate.Global
+        /// <summary>
+        /// 1 == 300kw
+        /// </summary>
         public static readonly Dictionary<int, int> RecipePowerRate = new Dictionary<int, int>
         {
-            { ProtoID.R水电解, 20000 },
-            { ProtoID.R二氧化硫还原, 10000 },
-            { ProtoID.R海水淡化, 10000 },
-            { ProtoID.R盐水电解, 10000 },
+            { ProtoID.R水电解, 4 },
+            { ProtoID.R羰基合成, 4 },
+            { ProtoID.R重氢, 18 },
+            { ProtoID.R三元精金, 18 },
+            { ProtoID.R光子物质化, 8 },
+            { ProtoID.R奇异物质, 8 },
+            { ProtoID.R氦核转化, 8 },
+            { ProtoID.R质能储存高效, 8 },
+            { ProtoID.R能量物质化, 8 },
         };
 
         [HarmonyPatch(typeof(AssemblerComponent), nameof(AssemblerComponent.SetPCState))]
@@ -23,10 +30,12 @@ namespace ProjectGenesis.Patches
         {
             if (!__instance.replicating) return;
 
-            if (!RecipePowerRate.TryGetValue(__instance.recipeId, out int num)) return;
-
             ref PowerConsumerComponent component = ref pcPool[__instance.pcId];
-            component.requiredEnergy = (component.workEnergyPerTick + __instance.speedOverride * num) * (1000 + __instance.extraPowerRatio) / 1000L;
+
+            int num = RecipePowerRate.GetValueOrDefault(__instance.recipeId, 1);
+
+            component.requiredEnergy = (component.workEnergyPerTick + __instance.speedOverride * num / 2)
+              * (1000 + __instance.extraPowerRatio) / 1000;
         }
     }
 }

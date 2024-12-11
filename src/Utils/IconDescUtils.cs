@@ -82,7 +82,6 @@ namespace ProjectGenesis.Utils
             { 7705, new NoIconMetalIconDesc(new Color32(43, 44, 48, 255)) },    // 钨块
             { 6227, new NoIconMetalIconDesc(new Color32(66, 222, 87, 255)) },   // 铀块
             { 6228, new NoIconMetalIconDesc(new Color32(239, 83, 90, 255)) },   // 钚块
-            { 6208, new NoIconMetalIconDesc(new Color32(93, 91, 83, 255)) },    // 混凝土
 
             { 6217, new RodIconDesc(new Color32(163, 145, 85, 255)) },  // 煤油棒
             { 6216, new RodIconDesc(new Color32(198, 207, 111, 255)) }, // JP10棒

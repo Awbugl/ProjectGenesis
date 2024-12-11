@@ -11,7 +11,7 @@ namespace ProjectGenesis.Patches
 {
     internal static partial class MegaAssemblerPatches
     {
-        private const int MegaAssemblerSpeed = 300000;
+        internal const int MegaAssemblerSpeed = 300000;
 
         private static readonly FieldInfo EntityData_StationId_Field = AccessTools.Field(typeof(EntityData), nameof(EntityData.stationId)),
                                           EntityData_AssemblerId_Field =

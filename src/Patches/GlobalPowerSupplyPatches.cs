@@ -72,17 +72,98 @@ namespace ProjectGenesis.Patches
                 if (nodeId == powerSystem.nodeCapacity) powerSystem.SetNodeCapacity(powerSystem.nodeCapacity * 2);
             }
 
-            powerSystem.nodePool[nodeId].id = nodeId;
-            powerSystem.nodePool[nodeId].entityId = 0;
-            powerSystem.nodePool[nodeId].connectDistance = conn;
-            powerSystem.nodePool[nodeId].coverRadius = cover;
-            powerSystem.nodePool[nodeId].powerPoint = Pos;
-            powerSystem.nodePool[nodeId].isCharger = false;
-            powerSystem.nodePool[nodeId].workEnergyPerTick = 0;
-            powerSystem.nodePool[nodeId].idleEnergyPerTick = 0;
-            powerSystem.OnNodeAdded(nodeId);
+            ref PowerNodeComponent powerNodeComponent = ref powerSystem.nodePool[nodeId];
+
+            powerNodeComponent.id = nodeId;
+            powerNodeComponent.entityId = 0;
+            powerNodeComponent.connectDistance = conn;
+            powerNodeComponent.coverRadius = cover;
+            powerNodeComponent.powerPoint = Pos;
+            powerNodeComponent.isCharger = false;
+            powerNodeComponent.workEnergyPerTick = 0;
+            powerNodeComponent.idleEnergyPerTick = 0;
+
+            OnNodeAdded(powerSystem, ref powerNodeComponent, nodeId);
+
             if (powerSystem.factory.planet.factoryLoaded) powerSystem.factory.planet.factoryModel.RefreshPowerNodes();
             return nodeId;
+        }
+
+        private static void OnNodeAdded(PowerSystem powerSystem, ref PowerNodeComponent powerNodeComponent, int nodeId)
+        {
+            Node node1 = new Node(nodeId)
+            {
+                connDistance2 = powerNodeComponent.connectDistance * powerNodeComponent.connectDistance,
+                coverRadius2 = powerNodeComponent.coverRadius * powerNodeComponent.coverRadius,
+            };
+
+            for (int index1 = 1; index1 < powerSystem.netCursor; ++index1)
+            {
+                PowerNetwork powerNetwork = powerSystem.netPool[index1];
+
+                if (powerNetwork == null || powerNetwork.id == 0) continue;
+
+                List<Node> nodes = powerNetwork.nodes;
+
+                foreach (Node n in nodes)
+                {
+                    powerSystem.list_sorted_add(node1.conns, n);
+                    powerSystem.list_sorted_add(n.conns, node1);
+                }
+            }
+
+            foreach (int consumer in powerSystem.netPool[0].consumers) powerSystem.list_sorted_add(node1.consumers, consumer);
+
+            foreach (int consumer in node1.consumers) powerSystem.netPool[0].consumers.Remove(consumer);
+
+            // ReSharper disable once ForeachCanBePartlyConvertedToQueryUsingAnotherGetEnumerator
+            foreach (Node conn in node1.conns)
+                foreach (int consumer in conn.consumers)
+                    powerSystem.list_sorted_add(node1.consumers, consumer);
+
+            int network = node1.conns.Count > 0 ? powerSystem.nodePool[node1.conns[0].id].networkId : 0;
+            if (network == 0) network = powerSystem.NewNetwork();
+
+            PowerNetwork powerNetwork1 = powerSystem.netPool[network];
+
+            powerSystem.list_sorted_add(powerNetwork1.nodes, node1);
+            powerSystem.nodePool[nodeId].networkId = network;
+            powerSystem.list_sorted_merge(powerNetwork1.consumers, node1.consumers);
+
+            foreach (int consumer in node1.consumers) powerSystem.consumerPool[consumer].networkId = network;
+
+            powerSystem._tmp_ints.Clear();
+
+            // ReSharper disable once ForeachCanBePartlyConvertedToQueryUsingAnotherGetEnumerator
+            foreach (Node t in node1.conns)
+            {
+                int networkId = powerSystem.nodePool[t.id].networkId;
+                Assert.Positive(networkId);
+                if (networkId > 0 && networkId != network) powerSystem.list_sorted_add(powerSystem._tmp_ints, networkId);
+            }
+
+            foreach (int tmpInt in powerSystem._tmp_ints)
+            {
+                PowerNetwork powerNetwork2 = powerSystem.netPool[tmpInt];
+                if (powerNetwork2 == null || powerNetwork2.id != tmpInt) { Assert.CannotBeReached(); }
+                else
+                {
+                    foreach (Node node2 in powerNetwork2.nodes) powerSystem.nodePool[node2.id].networkId = network;
+                    foreach (int consumer in powerNetwork2.consumers) powerSystem.consumerPool[consumer].networkId = network;
+                    foreach (int generator in powerNetwork2.generators) powerSystem.genPool[generator].networkId = network;
+                    foreach (int accumulator in powerNetwork2.accumulators) powerSystem.accPool[accumulator].networkId = network;
+                    foreach (int exchanger in powerNetwork2.exchangers) powerSystem.excPool[exchanger].networkId = network;
+                    powerSystem.list_sorted_merge(powerNetwork1.nodes, powerNetwork2.nodes);
+                    powerSystem.list_sorted_merge(powerNetwork1.consumers, powerNetwork2.consumers);
+                    powerSystem.list_sorted_merge(powerNetwork1.generators, powerNetwork2.generators);
+                    powerSystem.list_sorted_merge(powerNetwork1.accumulators, powerNetwork2.accumulators);
+                    powerSystem.list_sorted_merge(powerNetwork1.exchangers, powerNetwork2.exchangers);
+                }
+            }
+
+            foreach (int t in powerSystem._tmp_ints) powerSystem.RemoveNetwork(t);
+
+            powerSystem._tmp_ints.Clear();
         }
 
         [HarmonyPatch(typeof(UIPowerGizmo), nameof(UIPowerGizmo.DrawArea))]
@@ -90,29 +171,12 @@ namespace ProjectGenesis.Patches
         [HarmonyPrefix]
         public static bool UIPowerGizmo_Draw(ref UIPowerGizmo __instance, Vector3 center, float radius) => radius < GlobalPowerCoverRadius;
 
-        [HarmonyPatch(typeof(FactoryModel), nameof(FactoryModel.OnCameraPostRender))]
+        [HarmonyPatch(typeof(PowerSystemRenderer), nameof(PowerSystemRenderer.DrawDisks))]
+        [HarmonyPatch(typeof(PowerSystemRenderer), nameof(PowerSystemRenderer.DrawConnections))]
+        [HarmonyPatch(typeof(PowerSystemRenderer), nameof(PowerSystemRenderer.DrawArcs))]
         [HarmonyPrefix]
-        public static bool FactoryModel_OnCameraPostRender(FactoryModel __instance)
-        {
-            if (GameMain.isPaused || GameMain.inOtherScene || __instance.planet == null || !__instance.planet.factoryLoaded
-             || __instance.planet != GameMain.localPlanet)
-                return false;
-
-            // ReSharper disable once LoopCanBeConvertedToQuery
-            foreach (PowerNodeComponent powerNodeComponent in __instance.planet.factory.powerSystem.nodePool)
-            {
-                if (powerNodeComponent.coverRadius < GlobalPowerCoverRadius) continue;
-
-                if (PowerSystemRenderer.powerGraphOn || PowerSystemRenderer.forceConsumersOn || __instance.drawPowerConsumers)
-                    __instance.powerSystemRenderer.DrawConsumers();
-
-                if (!__instance.disableEntitySigns && EntitySignRenderer.entitySignOn) __instance.entitySignRenderer.Draw();
-
-                return false;
-            }
-
-            return true;
-        }
+        public static bool PowerSystemRenderer_Draw_PreFix(PowerSystemRenderer __instance) =>
+            !NodeIds.ContainsKey(__instance.powerSystem.planet.id);
 
         [HarmonyPatch(typeof(PowerSystem), nameof(PowerSystem.line_arragement_for_add_node))]
         [HarmonyPatch(typeof(PowerSystem), nameof(PowerSystem.line_arragement_for_remove_node))]

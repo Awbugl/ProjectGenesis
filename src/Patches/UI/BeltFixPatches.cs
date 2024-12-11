@@ -15,7 +15,7 @@ namespace ProjectGenesis.Patches
 
         [HarmonyPatch(typeof(ConnGizmoRenderer), nameof(ConnGizmoRenderer.Update))]
         [HarmonyTranspiler]
-        public static IEnumerable<CodeInstruction> BuildTool_BlueprintCopy_UpdatePreviewModels_Transpiler(
+        public static IEnumerable<CodeInstruction> ConnGizmoRenderer_Update_Transpiler(
             IEnumerable<CodeInstruction> instructions)
         {
             var matcher = new CodeMatcher(instructions);
@@ -43,7 +43,6 @@ namespace ProjectGenesis.Patches
             return matcher.InstructionEnumeration();
         }
 
-        [HarmonyPatch(typeof(BuildTool_BlueprintPaste), nameof(BuildTool_BlueprintPaste.UpdatePreviewModels))]
         [HarmonyPatch(typeof(BuildTool_BlueprintCopy), nameof(BuildTool_BlueprintCopy.UpdatePreviewModels))]
         [HarmonyPatch(typeof(BuildTool_Path), nameof(BuildTool_Path.UpdateGizmos))]
         [HarmonyTranspiler]

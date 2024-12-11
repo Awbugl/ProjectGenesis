@@ -105,7 +105,7 @@ namespace ProjectGenesis.Patches
             ((RectTransform)kb.setDefaultUIButton.transform).anchoredPosition = new Vector2(470f, 0f);
             ((RectTransform)kb.setNoneKeyUIButton.transform).anchoredPosition = new Vector2(570f, 0f);
 
-            RectTransform rect = Util.NormalizeRectWithTopLeft(kb, x, y, parent);
+            RectTransform rect = UIUtil.NormalizeRectWithTopLeft(kb, x, y, parent);
             kb.rectTrans = rect;
 
             Destroy(uikeyEntry);

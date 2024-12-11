@@ -30,6 +30,11 @@ namespace ProjectGenesis.Utils
             tech = LDB.techs.Select(ProtoID.T批量建造3);
             tech.UnlockValues = new[] { 1800.0, };
 
+            tech = LDB.techs.Select(ProtoID.T能量回路1);
+            tech.Items = new[] { 1109, };
+            tech.ItemPoints = new[] { 30, };
+            tech.HashNeeded = 21600;
+
             tech = LDB.techs.Select(ProtoID.T能量回路4);
             tech.Items = Items4;
             tech.ItemPoints = Enumerable.Repeat(12, 4).ToArray();

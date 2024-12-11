@@ -20,7 +20,6 @@ namespace ProjectGenesis.Compatibility
     /// </summary>
     [BepInPlugin(MODGUID, MODNAME, ProjectGenesis.VERSION)]
     [BepInDependency(BlueprintTweaks.GUID, BepInDependency.DependencyFlags.SoftDependency)]
-    [BepInDependency(Bottleneck.GUID, BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency(MoreMegaStructure.GUID, BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency(GalacticScale.GUID, BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency(PlanetwideMining.GUID, BepInDependency.DependencyFlags.SoftDependency)]
@@ -63,7 +62,6 @@ namespace ProjectGenesis.Compatibility
             MoreMegaStructure.Awake();
             PlanetVeinUtilization.Awake();
             BlueprintTweaks.Awake();
-            Bottleneck.Awake();
             PlanetwideMining.Awake();
             FastTravelEnabler.Awake();
             GigaStationsUpdated.Awake();

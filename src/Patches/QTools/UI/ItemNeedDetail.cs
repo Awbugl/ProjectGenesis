@@ -10,27 +10,32 @@ namespace ProjectGenesis.Patches
         private NodeData _data;
 
         private Image _image;
+        private UIButton _itemButton;
         private bool _isNeed;
         private RectTransform _rect;
 
         internal static ItemNeedDetail CreateItemNeedDetail(float x, float y, RectTransform parent, bool needButton = true)
         {
-            GameObject src = Instantiate(Configs.builtin.uiItemTipPrefab.recipeEntry.transform.GetChild(1).gameObject);
+            var src = new GameObject { name = "my-ItemCounter", };
+            src.AddComponent<RectTransform>();
             ItemNeedDetail cb = src.AddComponent<ItemNeedDetail>();
+            cb._rect = UIUtil.NormalizeRectWithTopLeft(cb, x, y, parent);
 
-            cb._rect = Util.NormalizeRectWithTopLeft(cb, x, y, parent);
-            src.name = "my-ItemCounter";
-            cb._image = src.GetComponent<Image>();
             Destroy(src.GetComponentInChildren<Text>());
 
-            Util.NormalizeRectWithTopLeft(Util.CreateText("\u2573", 18), 50, 11, cb._rect);
-            cb._countText = Util.CreateText("", 18);
-            Util.NormalizeRectWithTopLeft(cb._countText, 70, 10, cb._rect);
+            UIUtil.CreateItemTipButton(out cb._itemButton, out cb._image);
+            UIUtil.NormalizeRectWithTopLeft(cb._itemButton, 0, 0, cb._rect);
+            UIUtil.NormalizeRectWithTopLeft(cb._image, 0, 0, cb._rect);
+            UIUtil.RemovePersistentCalls(cb._itemButton.gameObject);
+
+            UIUtil.NormalizeRectWithTopLeft(UIUtil.CreateText("\u2573", 18), 50, 11, cb._rect);
+            cb._countText = UIUtil.CreateText("", 18);
+            UIUtil.NormalizeRectWithTopLeft(cb._countText, 70, 10, cb._rect);
 
             if (needButton)
             {
-                cb._button = Util.MakeHiliteTextButton("\u2573", 20, 20);
-                Util.NormalizeRectWithTopLeft(cb._button, 125, 10, cb._rect);
+                cb._button = UIUtil.MakeSmallTextButton("\u2573", 20, 20);
+                UIUtil.NormalizeRectWithTopLeft(cb._button, 125, 10, cb._rect);
 
                 cb.Init();
             }
@@ -54,7 +59,7 @@ namespace ProjectGenesis.Patches
             }
         }
 
-        internal void SetPos(float x, float y) => _rect = Util.NormalizeRectWithTopLeft(this, x, y);
+        internal void SetPos(float x, float y) => _rect = UIUtil.NormalizeRectWithTopLeft(this, x, y);
 
         internal void SetData(NodeData data, bool isNeed = false, string format = "F2")
         {
@@ -62,6 +67,9 @@ namespace ProjectGenesis.Patches
             _data = data;
             _image.sprite = data.Item.iconSprite;
             _countText.text = data.ItemCount.ToString(format);
+
+            _itemButton.tips.itemId = data.Item.ID;
+            _itemButton.tips.type = UIButton.ItemTipType.IgnoreIncPoint;
         }
     }
 }

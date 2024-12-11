@@ -16,114 +16,41 @@ namespace ProjectGenesis.Patches
             matcher.MatchForward(false,
                 new CodeMatch(OpCodes.Call,
                     AccessTools.Method(typeof(PowerGeneratorComponent), nameof(PowerGeneratorComponent.EnergyCap_Wind))));
-            matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0));
-            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Call,
-                AccessTools.Method(typeof(PlanetFocusPatches), nameof(EnergyCap_Wind))));
+
+            var comp = matcher.InstructionsWithOffsets(-5, -2);
+
+            matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0)).InsertAndAdvance(comp)
+               .InsertAndAdvance(new CodeInstruction(OpCodes.Call,
+                    AccessTools.Method(typeof(PlanetFocusPatches), nameof(EnergyCap_Patch))));
+
 
             //pv
             matcher.MatchForward(false,
                 new CodeMatch(OpCodes.Call,
                     AccessTools.Method(typeof(PowerGeneratorComponent), nameof(PowerGeneratorComponent.EnergyCap_PV))));
-            matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0));
-            matcher.InsertAndAdvance(
-                new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(PlanetFocusPatches), nameof(EnergyCap_PV))));
 
-            matcher.MatchForward(false,
-                new CodeMatch(OpCodes.Ldfld,
-                    AccessTools.Field(typeof(PowerGeneratorComponent), nameof(PowerGeneratorComponent.capacityCurrentTick))));
+            comp = matcher.InstructionsWithOffsets(-11, -8);
 
-            matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0));
-            matcher.InsertAndAdvance(
-                new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(PlanetFocusPatches), nameof(EnergyCap_PV))));
+            matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0)).InsertAndAdvance(comp)
+               .InsertAndAdvance(new CodeInstruction(OpCodes.Call,
+                    AccessTools.Method(typeof(PlanetFocusPatches), nameof(EnergyCap_Patch))));
+
 
             //fuel
-            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldarg_0), new CodeMatch(OpCodes.Ldfld), new CodeMatch(OpCodes.Ldloc_S),
-                new CodeMatch(OpCodes.Ldelema),
+            matcher.MatchForward(false,
                 new CodeMatch(OpCodes.Call,
                     AccessTools.Method(typeof(PowerGeneratorComponent), nameof(PowerGeneratorComponent.EnergyCap_Fuel))));
 
-            List<CodeInstruction> ins = matcher.InstructionsWithOffsets(0, 3);
+            comp = matcher.InstructionsWithOffsets(-4, -1);
 
-            matcher.Advance(5).InsertAndAdvance(ins);
-            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0));
-            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Call,
-                AccessTools.Method(typeof(PlanetFocusPatches), nameof(EnergyCap_Fuel))));
-
-            return matcher.InstructionEnumeration();
-        }
-
-        public static long EnergyCap_Wind(long power, PowerSystem powerSystem)
-        {
-            bool exist = ContainsFocus(powerSystem.factory.planetId, 6525);
-
-            return exist ? (long)(power * 1.2) : power;
-        }
-
-        public static long EnergyCap_PV(long power, PowerSystem powerSystem)
-        {
-            bool exist = ContainsFocus(powerSystem.factory.planetId, 6526);
-
-            return exist ? (long)(power * 1.2) : power;
-        }
-
-        public static long EnergyCap_Fuel(long power, ref PowerGeneratorComponent component, PowerSystem powerSystem)
-        {
-            int focusId;
-            double extra;
-
-            switch (component.fuelMask)
-            {
-                case 1:
-                    focusId = 6524;
-                    extra = 1.2;
-
-                    break;
-
-                case 2:
-                    focusId = 6529;
-                    extra = 1.2;
-
-                    break;
-
-                case 16:
-                    focusId = 6527;
-                    extra = 1.1;
-
-                    break;
-
-                default: return power;
-            }
-
-            bool exist = ContainsFocus(powerSystem.factory.planetId, focusId);
-
-            return exist ? (long)(power * extra) : power;
-        }
-
-        [HarmonyPatch(typeof(UIPowerGeneratorWindow), nameof(UIPowerGeneratorWindow._OnUpdate))]
-        [HarmonyTranspiler]
-        public static IEnumerable<CodeInstruction> UIPowerGeneratorWindow_OnUpdate_Transpiler(IEnumerable<CodeInstruction> instructions)
-        {
-            var matcher = new CodeMatcher(instructions);
-
-            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldloc_0),
-                new CodeMatch(OpCodes.Ldfld,
-                    AccessTools.Field(typeof(PowerGeneratorComponent), nameof(PowerGeneratorComponent.capacityCurrentTick))));
-
-            CodeInstruction comp = matcher.Instruction;
-
-            matcher.Advance(2).InsertAndAdvance(comp);
-
-            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0),
-                new CodeInstruction(OpCodes.Ldfld,
-                    AccessTools.Field(typeof(UIPowerGeneratorWindow), nameof(UIPowerGeneratorWindow.factory))));
-
-            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Call,
-                AccessTools.Method(typeof(PlanetFocusPatches), nameof(UIPowerGeneratorWindow_OnUpdate))));
+            matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0)).InsertAndAdvance(comp)
+               .InsertAndAdvance(new CodeInstruction(OpCodes.Call,
+                    AccessTools.Method(typeof(PlanetFocusPatches), nameof(EnergyCap_Patch))));
 
             return matcher.InstructionEnumeration();
         }
 
-        public static long UIPowerGeneratorWindow_OnUpdate(long power, PowerGeneratorComponent component, PlanetFactory factory)
+        public static long EnergyCap_Patch(long power, PowerSystem powerSystem, ref PowerGeneratorComponent component)
         {
             int focusId;
             double extra;
@@ -145,28 +72,29 @@ namespace ProjectGenesis.Patches
                     case 1:
                         focusId = 6524;
                         extra = 1.2;
-
                         break;
 
                     case 2:
                         focusId = 6529;
                         extra = 1.2;
-
                         break;
 
                     case 16:
                         focusId = 6527;
                         extra = 1.1;
-
                         break;
 
                     default: return power;
                 }
             }
 
-            bool exist = ContainsFocus(factory.planetId, focusId);
+            if (!ContainsFocus(powerSystem.factory.planetId, focusId)) return power;
 
-            return exist ? (long)(power * extra) : power;
+            var capacityCurrentTick = (long)(power * extra);
+
+            component.capacityCurrentTick = capacityCurrentTick;
+
+            return capacityCurrentTick;
         }
     }
 }

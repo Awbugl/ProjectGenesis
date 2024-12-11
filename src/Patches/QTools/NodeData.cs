@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using ProjectGenesis.Utils;
+using static ProjectGenesis.Patches.QTools;
 
 namespace ProjectGenesis.Patches
 {
@@ -10,14 +11,11 @@ namespace ProjectGenesis.Patches
         internal ItemProto Item;
         internal float ItemCount;
         internal NodeOptions Options;
+        internal bool IsNeed;
 
         internal void RefreshFactoryCount()
         {
-            PrefabDesc factoryPrefabDesc = Options.Factory.prefabDesc;
-
-            float assemblerSpeed = factoryPrefabDesc.assemblerSpeed;
-
-            if (factoryPrefabDesc.isLab) assemblerSpeed = factoryPrefabDesc.labAssembleSpeed;
+            float assemblerSpeed = FactorySpeed(Options.Factory);
 
             int idx = Array.IndexOf(Options.Recipe.Results, Item.ID);
 
@@ -44,14 +42,14 @@ namespace ProjectGenesis.Patches
         public void CheckFactory()
         {
             var type = (Utils.ERecipeType)Options.Recipe.Type;
-            List<ItemProto> recipeTypeFactory = QTools.RecipeTypeFactoryMap[type];
+            List<ItemProto> recipeTypeFactory = RecipeTypeFactoryMap[type];
 
             if (!recipeTypeFactory.Contains(Options.Factory))
             {
-                if (!DataSet.DefaultMachine.TryGetValue(type, out ItemProto factory))
+                if (!DefaultMachine.TryGetValue(type, out ItemProto factory))
                 {
-                    factory = QTools.RecipeTypeFactoryMap[type][0];
-                    DataSet.SetDefaultMachine(type, factory);
+                    factory = recipeTypeFactory[0];
+                    SetDefaultMachine(type, factory);
                 }
 
                 Options.Factory = factory;
@@ -64,5 +62,7 @@ namespace ProjectGenesis.Patches
         internal void RefreshNeeds() => DataSet.RefreshNeeds();
 
         public void RemoveNeed() => DataSet.RemoveNeed(this);
+
+        public void MarkAsNeed() => IsNeed = true;
     }
 }

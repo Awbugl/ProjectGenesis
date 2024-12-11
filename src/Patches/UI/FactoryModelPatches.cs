@@ -12,7 +12,7 @@ namespace ProjectGenesis.Patches
     {
         private static Material atmosphericCollectStationMaterial;
 
-        [HarmonyPatch(typeof(FactoryModel), nameof(FactoryModel.InitCollectorMaterial))]
+        [HarmonyPatch(typeof(FactoryModel), nameof(FactoryModel.InitMaterial))]
         [HarmonyPostfix]
         public static void FactoryModel_InitCollectorMaterial(FactoryModel __instance)
         {

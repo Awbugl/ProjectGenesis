@@ -39,18 +39,18 @@ namespace ProjectGenesis.Patches
             var go = new GameObject { name = "my-combobox", };
             go.AddComponent<RectTransform>();
             ProductDetail cb = go.AddComponent<ProductDetail>();
-            cb._rect = Util.NormalizeRectWithTopLeft(cb, x, y, parent);
+            cb._rect = UIUtil.NormalizeRectWithTopLeft(cb, x, y, parent);
             go.name = "my-combobox";
 
-            Util.CreateSignalIcon("", "右键点击：将其设置为原材料", out UIButton itemButton, out Image itemImage);
+            UIUtil.CreateSignalIcon("", "右键点击：将其设置为原材料", out UIButton itemButton, out Image itemImage);
             cb.itemImg = itemImage;
             cb.itemImgButton = itemButton;
-            Util.NormalizeRectWithTopLeft(itemButton, 20, 0, cb._rect);
+            UIUtil.NormalizeRectWithTopLeft(itemButton, 20, 0, cb._rect);
             cb.itemImgButton.onRightClick += cb.OnItemButtonRightClick;
 
-            Util.NormalizeRectWithTopLeft(Util.CreateText("\u2573", 18), 80, 11, cb._rect);
-            cb.itemCountText = Util.CreateText("", 18);
-            Util.NormalizeRectWithTopLeft(cb.itemCountText, 100, 10, cb._rect);
+            UIUtil.NormalizeRectWithTopLeft(UIUtil.CreateText("\u2573", 18), 80, 11, cb._rect);
+            cb.itemCountText = UIUtil.CreateText("", 18);
+            UIUtil.NormalizeRectWithTopLeft(cb.itemCountText, 100, 10, cb._rect);
 
             cb.factoryComboBox = MyComboBox.CreateComboBox<ItemComboBox>(100, 5, cb._rect);
             cb.factoryComboBox.comboBox.gameObject.SetActive(false);
@@ -58,20 +58,20 @@ namespace ProjectGenesis.Patches
             cb.factoryButton.tips.tipTitle = "";
             cb.factoryButton.tips.tipText = "左键点击：更换生产设备".TranslateFromJson();
 
-            Util.NormalizeRectWithTopLeft(Util.CreateText("\u2573", 18), 320, 11, cb._rect);
-            cb.factoryCountText = Util.CreateText("", 18);
-            Util.NormalizeRectWithTopLeft(cb.factoryCountText, 340, 10, cb._rect);
+            UIUtil.NormalizeRectWithTopLeft(UIUtil.CreateText("\u2573", 18), 320, 11, cb._rect);
+            cb.factoryCountText = UIUtil.CreateText("", 18);
+            UIUtil.NormalizeRectWithTopLeft(cb.factoryCountText, 340, 10, cb._rect);
 
-            Util.CreateSignalIcon("可调整配方", "左键点击：更换配方", out UIButton recipebutton, out Image recipeImage);
+            UIUtil.CreateSignalIcon("可调整配方", "左键点击：更换配方", out UIButton recipebutton, out Image recipeImage);
             recipeImage.sprite = LDB.signals.IconSprite(401);
             cb.recipeImgButton = recipebutton;
-            Util.NormalizeRectWithTopLeft(recipebutton, 440, 0, cb._rect);
+            UIUtil.NormalizeRectWithTopLeft(recipebutton, 440, 0, cb._rect);
             cb.recipeImgButton.button.onClick.RemoveAllListeners();
             cb.recipeImgButton.button.onClick.AddListener(cb.OnRecipeButtonClick);
             cb.recipeImgButton.onRightClick += cb.OnRecipeButtonRightClick;
 
             cb.recipeEntry = NewUIRecipeEntry(cb._rect);
-            Util.NormalizeRectWithTopLeft(cb.recipeEntry, 550, 0, cb._rect);
+            UIUtil.NormalizeRectWithTopLeft(cb.recipeEntry, 550, 0, cb._rect);
             cb.recipeEntry.gameObject.SetActive(true);
 
             cb._proliferatorComboBoxNormal = MyComboBox.CreateComboBox<ProliferatorComboBox>(700, 10, cb._rect);
@@ -82,15 +82,15 @@ namespace ProjectGenesis.Patches
             cb._proliferatorComboBoxNormal.comboBox.gameObject.SetActive(false);
             cb._proliferatorComboBoxNonProductive.comboBox.gameObject.SetActive(false);
 
-            cb.proliferatorText = Util.CreateText("", 18);
-            Util.NormalizeRectWithTopLeft(cb.proliferatorText, 925, 15, cb._rect);
+            cb.proliferatorText = UIUtil.CreateText("", 18);
+            UIUtil.NormalizeRectWithTopLeft(cb.proliferatorText, 925, 15, cb._rect);
 
             cb.Init();
 
             return cb;
         }
 
-        internal void SetPos(float y) => _rect = Util.NormalizeRectWithTopLeft(this, 0, y);
+        internal void SetPos(float y) => _rect = UIUtil.NormalizeRectWithTopLeft(this, 0, y);
 
         private static UIRecipeEntry NewUIRecipeEntry(Transform parent)
         {

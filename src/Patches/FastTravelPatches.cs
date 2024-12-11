@@ -80,6 +80,7 @@ namespace ProjectGenesis.Patches
 
             mecha.coreEnergy -= energyGet;
             mecha.MarkEnergyChange(9, -energyWant);
+            mecha.player.invincibleTicks = 1800;
 
             return true;
         }
