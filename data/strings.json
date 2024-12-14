@@ -1836,13 +1836,13 @@
   },
   {
     "Name": "X射线裂解描述",
-    "ZHCN": "在氢气的催化作用下，利用高能的X射线将焦油裂解成更多的氢，同时将生产过程中的副产品加工成高能石墨。",
-    "ENUS": "High-energy X-ray photocatalysis can crack tar into more hydrogen and process the byproducts into energetic graphite."
+    "ZHCN": "利用高能的X射线将焦油裂解成氢和高能石墨。",
+    "ENUS": "High-energy X-ray photocatalysis can crack tar into hydrogen and energetic graphite."
   },
   {
     "Name": "RX射线裂解",
-    "ZHCN": "在氢气的催化作用下，利用高能的X射线将焦油裂解，从而获得更多的氢以及副产品高能石墨。",
-    "ENUS": "Under the catalysis of hydrogen, X-rays can crack the tar into more hydrogen and a by-product, energetic graphite."
+    "ZHCN": "利用高能的X射线将焦油裂解，从而获得氢和高能石墨。",
+    "ENUS": "X-rays can crack the tar into hydrogen and energetic graphite."
   },
   {
     "Name": "高强度玻璃描述",

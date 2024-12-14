@@ -23,9 +23,9 @@ namespace ProjectGenesis.Patches
             { ProtoID.R放射性矿物处理, 8 },
             { ProtoID.R重氢, 18 },
             { ProtoID.R三元精金, 18 },
-            { ProtoID.R光子物质化, 8 },
-            { ProtoID.R奇异物质, 4 },
-            { ProtoID.R氦核转化, 8 },
+            { ProtoID.R光子物质化, 18 },
+            { ProtoID.R奇异物质, -8 },
+            { ProtoID.R氦核转化, 4 },
             { ProtoID.R质能储存高效, 8 },
             { ProtoID.R能量物质化, 8 },
         };
