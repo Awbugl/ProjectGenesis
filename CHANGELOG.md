@@ -1,11 +1,21 @@
-- v3.1.0-alpha0.3
-  + 调整了部分配方
+- v3.1.0-alpha1.0 (Experimental 0.3.11101)
+  + 调整了裂变燃料棒的热值
+  + 调整了部分科技的前置科技需求
+  + 调整了电磁胶囊类武器和干扰塔的数值
 
-  + Adjusted some recipes
+  + Adjusted the heat value of fission fuel rods
+  + Adjusted the pre-tech requirements for some technologies
+  + Adjusted the values of EM capsule weapons and jamming towers
 
 
 <details>
   <summary>点击展开日志 | Click to view all </summary>
+
+
+- v3.1.0-alpha0.3
+  + 调整了部分配方
+
+  + Adjusted some recipes
 
 
 - v3.1.0-alpha0.2

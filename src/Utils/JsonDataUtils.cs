@@ -20,56 +20,64 @@ namespace ProjectGenesis.Utils
 
         #region TechProto
 
-            foreach (TechProtoJson techjson in TechProtos())
+            foreach (TechProtoJson protoJson in TechProtos())
             {
-                if (LDB.techs.Exist(techjson.ID)) { techjson.ToProto(LDB.techs.Select(techjson.ID)); }
-                else { LDBTool.PreAddProto(techjson.ToProto()); }
+                if (LDB.techs.Exist(protoJson.ID)) { protoJson.ToProto(LDB.techs.Select(protoJson.ID)); }
+                else { LDBTool.PreAddProto(protoJson.ToProto()); }
             }
 
         #endregion
 
         #region Mod ItemProto
 
-            foreach (ItemProtoJson itemjson in ItemModProtos())
+            foreach (ItemProtoJson protoJson in ItemModProtos())
             {
-                itemjson.GridIndex = GetTableID(itemjson.GridIndex);
-                itemIconDescs.Add(itemjson.ID, IconDescUtils.GetIconDesc(itemjson.ID));
-                LDBTool.PreAddProto(itemjson.ToProto());
+                protoJson.GridIndex = GetTableID(protoJson.GridIndex);
+                itemIconDescs.Add(protoJson.ID, IconDescUtils.GetIconDesc(protoJson.ID));
+                LDBTool.PreAddProto(protoJson.ToProto());
             }
 
         #endregion
 
         #region Vanilla ItemProto
 
-            foreach (ItemProtoJson itemjson in ItemVanillaProtos())
+            foreach (ItemProtoJson protoJson in ItemVanillaProtos())
             {
-                itemjson.GridIndex = GetTableID(itemjson.GridIndex);
-                ItemProto proto = LDB.items.Select(itemjson.ID);
+                protoJson.GridIndex = GetTableID(protoJson.GridIndex);
+                ItemProto proto = LDB.items.Select(protoJson.ID);
 
-                if (proto.IconPath != itemjson.IconPath) { itemIconDescs.Add(itemjson.ID, IconDescUtils.GetIconDesc(itemjson.ID)); }
+                if (proto.IconPath != protoJson.IconPath) { itemIconDescs.Add(protoJson.ID, IconDescUtils.GetIconDesc(protoJson.ID)); }
 
-                itemjson.ToProto(proto);
+                protoJson.ToProto(proto);
             }
 
         #endregion
 
         #region RecipeProto
 
-            foreach (RecipeProtoJson recipeJson in RecipeProtos())
+            foreach (RecipeProtoJson protoJson in RecipeProtos())
             {
-                recipeJson.GridIndex = GetTableID(recipeJson.GridIndex);
+                protoJson.GridIndex = GetTableID(protoJson.GridIndex);
 
-                if (LDB.recipes.Exist(recipeJson.ID)) { recipeJson.ToProto(LDB.recipes.Select(recipeJson.ID)); }
-                else { LDBTool.PreAddProto(recipeJson.ToProto()); }
+                if (LDB.recipes.Exist(protoJson.ID)) { protoJson.ToProto(LDB.recipes.Select(protoJson.ID)); }
+                else { LDBTool.PreAddProto(protoJson.ToProto()); }
             }
 
         #endregion
 
         #region TutorialProto
 
-            TutorialProtoJson[] tutorialProtos = TutorialProtos();
+            foreach (TutorialProtoJson protoJson in TutorialProtos()) { LDBTool.PreAddProto(protoJson.ToProto()); }
 
-            foreach (TutorialProtoJson json in tutorialProtos) { LDBTool.PreAddProto(json.ToProto()); }
+        #endregion
+
+        #region GoalProto
+
+            foreach (GoalProtoJson protoJson in GoalProtos())
+            {
+                if (LDB.recipes.Exist(protoJson.ID)) { protoJson.ToProto(LDB.goals.Select(protoJson.ID)); }
+                else { LDBTool.PreAddProto(protoJson.ToProto()); }
+            }
 
         #endregion
 
