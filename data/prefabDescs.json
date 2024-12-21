@@ -266,6 +266,10 @@
     "turretSpaceAttackRange": 10500
   },
   {
+    "ModelID": 422,
+    "turretMaxAttackRange": 60
+  },
+  {
     "ModelID": 434,
     "AmmoBlastRadius1": 15
   },
