@@ -2,10 +2,12 @@
   + 调整了裂变燃料棒的热值
   + 调整了部分科技的前置科技需求
   + 调整了电磁胶囊类武器和干扰塔的数值
+  + 调整了部分指引信息
 
   + Adjusted the heat value of fission fuel rods
   + Adjusted the pre-tech requirements for some technologies
   + Adjusted the values of EM capsule weapons and jamming towers
+  + Adjusted some guideline information
 
 
 <details>
