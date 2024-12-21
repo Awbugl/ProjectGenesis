@@ -33,7 +33,7 @@ namespace ProjectGenesis.Utils
         internal static TutorialProtoJson[] TutorialProtos() => GetJsonContent<TutorialProtoJson>("tutorials");
 
         internal static GoalProtoJson[] GoalProtos() => GetJsonContent<GoalProtoJson>("goals");
-        
+
         internal static PrefabDescJson[] PrefabDescs() => GetJsonContent<PrefabDescJson>("prefabDescs");
 
         internal static T[] GetJsonContent<T>(string json) =>
@@ -513,6 +513,7 @@ namespace ProjectGenesis.Utils
             public int? storageCol { get; set; } = null;
             public int? storageRow { get; set; } = null;
             public bool? isStorage { get; set; } = null;
+            public int? subId { get; set; } = null;
             public bool? allowBuildInWater { get; set; } = null;
             public bool? needBuildInWaterTech { get; set; } = null;
             public int[] waterTypes { get; set; } = null;
@@ -585,6 +586,7 @@ namespace ProjectGenesis.Utils
                     storageCol = i.storageCol,
                     storageRow = i.storageRow,
                     isStorage = i.isStorage,
+                    subId = i.subId,
                     allowBuildInWater = i.allowBuildInWater,
                     needBuildInWaterTech = i.needBuildInWaterTech,
                     waterTypes = i.waterTypes,
@@ -716,6 +718,8 @@ namespace ProjectGenesis.Utils
                 if (storageRow != null) desc.storageRow = storageRow.Value;
 
                 if (isStorage != null) desc.isStorage = isStorage.Value;
+
+                if (subId != null) desc.subId = subId.Value;
 
                 if (allowBuildInWater != null) desc.allowBuildInWater = allowBuildInWater.Value;
 

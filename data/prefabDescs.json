@@ -362,6 +362,7 @@
     "ModelID": 807,
     "genEnergyPerTick": 25000000,
     "useFuelPerTick": 25000000,
+    "subId": 12,
     "fuelMask": 4
   },
   {

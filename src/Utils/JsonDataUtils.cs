@@ -1,6 +1,4 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using CommonAPI.Systems;
 using HarmonyLib;
 using UnityEngine;
@@ -75,7 +73,7 @@ namespace ProjectGenesis.Utils
 
             foreach (GoalProtoJson protoJson in GoalProtos())
             {
-                if (LDB.recipes.Exist(protoJson.ID)) { protoJson.ToProto(LDB.goals.Select(protoJson.ID)); }
+                if (LDB.goals.Exist(protoJson.ID)) { protoJson.ToProto(LDB.goals.Select(protoJson.ID)); }
                 else { LDBTool.PreAddProto(protoJson.ToProto()); }
             }
 

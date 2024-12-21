@@ -180,6 +180,31 @@
     "ENUS": "You activated your first Artificial Star. It rotates so gracefully yet burns so intensely, this spectacle surely means that you've truly harnessed the stars and can stably transport this energy to all corners of the universe."
   },
   {
+    "Name": "指引条目6",
+    "ZHCN": "采集10个铝矿",
+    "ENUS": "Gather 10 Aluminum Ores"
+  },
+  {
+    "Name": "指引条目11",
+    "ZHCN": "打开“科技树(T)”，开始研究科技[高效电浆控制]",
+    "ENUS": "Open \"Tech Tree(T)\", research [High-Efficiency Plasma Control]"
+  },
+  {
+    "Name": "指引条目14",
+    "ZHCN": "制造铝块",
+    "ENUS": "Replicate Aluminum Ingots"
+  },
+  {
+    "Name": "指引条目15",
+    "ZHCN": "解锁[高效电浆控制]",
+    "ENUS": "Unlock [High-Efficiency Plasma Control]"
+  },
+  {
+    "Name": "指引条目61",
+    "ZHCN": "解锁[物品增产]",
+    "ENUS": "Unlock [Incremental Production]"
+  },
+  {
     "Name": "机甲功率提升",
     "ZHCN": "发电功率提升",
     "ENUS": "Power Generation Boost"

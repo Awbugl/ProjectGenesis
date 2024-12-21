@@ -137,6 +137,7 @@ namespace ProjectGenesis.Utils
 
         internal const int T戴森球计划 = 1,
                            T电磁学 = 1001,
+                           T高效电浆控制 = 1101,
                            T流体储存封装 = 1120,
                            T物品增产 = 1151,
                            T量子折跃 = 1152,
