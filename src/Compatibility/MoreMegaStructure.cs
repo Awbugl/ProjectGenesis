@@ -16,7 +16,7 @@ namespace ProjectGenesis.Compatibility
 
         internal static bool Installed;
 
-        internal static Dictionary<int, int> FastAssembleItems = new Dictionary<int, int>();
+        internal static readonly Dictionary<int, int> FastAssembleItems = new Dictionary<int, int>();
 
         private static readonly Harmony HarmonyPatch = new Harmony("ProjectGenesis.Compatibility." + GUID);
 
@@ -57,11 +57,6 @@ namespace ProjectGenesis.Compatibility
         public static void LDBToolOnPostAddDataAction()
         {
             if (_finished) return;
-
-            ItemProto itemProto = LDB.items.Select(9500);
-            itemProto.recipes = null;
-            itemProto.FindRecipes();
-            itemProto.isRaw = true;
 
             foreach (int recipeID in AddedRecipes)
             {
@@ -130,6 +125,11 @@ namespace ProjectGenesis.Compatibility
                     foreach (int recipeProtoResult in recipeProto.Results)
                         FastAssembleItems.Add(recipeProtoResult, recipeProto.ID);
             }
+
+            ItemProto itemProto = LDB.items.Select(9500);
+            itemProto.recipes = null;
+            itemProto.FindRecipes();
+            itemProto.isRaw = true;
 
             _finished = true;
         }

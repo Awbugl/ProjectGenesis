@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Reflection;
 using System.Reflection.Emit;
 using HarmonyLib;
+using ProjectGenesis.Compatibility;
 using ProjectGenesis.Utils;
 
 // ReSharper disable InconsistentNaming
 
 namespace ProjectGenesis.Patches
 {
-    public static class PlanetGasPatches
+    public static class AtmosphericCollectPatches
     {
         private static readonly FieldInfo StationComponent_IsCollector_Field =
                                               AccessTools.Field(typeof(StationComponent), nameof(StationComponent.isCollector)),
@@ -20,131 +21,13 @@ namespace ProjectGenesis.Patches
                                               AccessTools.Field(typeof(PrefabDesc), nameof(PrefabDesc.isStellarStation)),
                                           BuildTool_planet_Field = AccessTools.Field(typeof(BuildTool), nameof(BuildTool.planet));
 
-        [HarmonyPatch(typeof(UIPlanetDetail), nameof(UIPlanetDetail.OnPlanetDataSet))]
-        [HarmonyTranspiler]
-        public static IEnumerable<CodeInstruction> UIPlanetDetail_OnPlanetDataSet_Transpiler(IEnumerable<CodeInstruction> instructions)
-        {
-            var matcher = new CodeMatcher(instructions);
-
-            matcher.MatchForward(true, new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(PlanetData), nameof(PlanetData.type))),
-                new CodeMatch(OpCodes.Ldc_I4_5), new CodeMatch(OpCodes.Beq));
-
-            object label = matcher.Operand;
-
-            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldstr, "实际采集速度"));
-
-            matcher.InstructionAt(-10).operand = label;
-
-            matcher.MatchForward(false, new CodeMatch(OpCodes.Br)).SetOperandAndAdvance(label);
-
-            return matcher.InstructionEnumeration();
-        }
-
-        [HarmonyPatch(typeof(UIStarDetail), nameof(UIStarDetail.OnStarDataSet))]
-        [HarmonyPatch(typeof(PlanetGen), nameof(PlanetGen.SetPlanetTheme))]
-        [HarmonyTranspiler]
-        public static IEnumerable<CodeInstruction> PlanetGen_SetPlanetTheme_Transpiler(IEnumerable<CodeInstruction> instructions)
-        {
-            var matcher = new CodeMatcher(instructions);
-
-            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(PlanetData), nameof(PlanetData.type))),
-                new CodeMatch(OpCodes.Ldc_I4_5));
-            matcher.Advance(-1);
-            matcher.SetAndAdvance(OpCodes.Nop, null);
-            matcher.SetAndAdvance(OpCodes.Nop, null);
-            matcher.SetAndAdvance(OpCodes.Nop, null);
-            matcher.SetAndAdvance(OpCodes.Nop, null);
-
-            return matcher.InstructionEnumeration();
-        }
-
-        [HarmonyPatch(typeof(PlanetGen), nameof(PlanetGen.SetPlanetTheme))]
-        [HarmonyTranspiler]
-        public static IEnumerable<CodeInstruction> PlanetGen_SetPlanetTheme_RemoveOcean(IEnumerable<CodeInstruction> instructions)
-        {
-            var matcher = new CodeMatcher(instructions);
-
-            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldloc_S),
-                new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(ThemeProto), nameof(ThemeProto.PlanetType))),
-                new CodeMatch(OpCodes.Ldc_I4_3));
-
-            var themeProto = matcher.Operand;
-
-            var label = matcher.Advance(3).Operand;
-
-            matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_S, themeProto),
-                new CodeInstruction(OpCodes.Ldfld, AccessTools.Field(typeof(ThemeProto), nameof(ThemeProto.WaterItemId))),
-                new CodeInstruction(OpCodes.Ldc_I4_0), new CodeInstruction(OpCodes.Bgt_S, label));
-
-            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldloc_S),
-                new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(ThemeProto), nameof(ThemeProto.PlanetType))),
-                new CodeMatch(OpCodes.Ldc_I4_3));
-
-            themeProto = matcher.Operand;
-
-            label = matcher.Advance(3).Operand;
-
-            matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_S, themeProto),
-                new CodeInstruction(OpCodes.Ldfld, AccessTools.Field(typeof(ThemeProto), nameof(ThemeProto.WaterItemId))),
-                new CodeInstruction(OpCodes.Ldc_I4_0), new CodeInstruction(OpCodes.Bgt_S, label));
-
-            return matcher.InstructionEnumeration();
-        }
-
-        [HarmonyPatch(typeof(UIPlanetDetail), nameof(UIPlanetDetail.OnPlanetDataSet))]
-        [HarmonyPatch(typeof(UIStarDetail), nameof(UIStarDetail.OnStarDataSet))]
-        [HarmonyTranspiler]
-        public static IEnumerable<CodeInstruction> OnDataSet_ChangeWaterId_Transpiler(IEnumerable<CodeInstruction> instructions)
-        {
-            var matcher = new CodeMatcher(instructions);
-            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldc_I4, ProtoID.I水));
-            matcher.SetOperandAndAdvance(ProtoID.I海水);
-
-            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldc_I4, ProtoID.I水));
-            matcher.SetOperandAndAdvance(ProtoID.I海水);
-
-            return matcher.InstructionEnumeration();
-        }
-
-        [HarmonyPatch(typeof(UIPlanetDetail), nameof(UIPlanetDetail.OnPlanetDataSet))]
-        [HarmonyTranspiler]
-        public static IEnumerable<CodeInstruction> OnPlanetDataSet_Transpiler(IEnumerable<CodeInstruction> instructions)
-        {
-            var matcher = new CodeMatcher(instructions);
-
-            matcher.MatchForward(false,
-                new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(StationComponent), nameof(StationComponent.collectionPerTick))));
-
-            matcher.Advance(-2).InsertAndAdvance(new CodeInstruction(OpCodes.Call,
-                AccessTools.Method(typeof(PlanetGasPatches), nameof(GetMiningSpeedScale))));
-
-            return matcher.InstructionEnumeration();
-        }
-
-        [HarmonyPatch(typeof(UIStarDetail), nameof(UIStarDetail.OnStarDataSet))]
-        [HarmonyTranspiler]
-        public static IEnumerable<CodeInstruction> OnStarDataSet_Transpiler(IEnumerable<CodeInstruction> instructions)
-        {
-            var matcher = new CodeMatcher(instructions);
-
-            matcher.MatchForward(false,
-                new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(StationComponent), nameof(StationComponent.collectionPerTick))));
-
-            matcher.Advance(-2).InsertAndAdvance(new CodeInstruction(OpCodes.Call,
-                AccessTools.Method(typeof(PlanetGasPatches), nameof(GetMiningSpeedScale))));
-
-            return matcher.InstructionEnumeration();
-        }
-
-        public static double GetMiningSpeedScale(double original) => GameMain.history.miningSpeedScale;
-
         [HarmonyPatch(typeof(BuildTool_BlueprintCopy), nameof(BuildTool_BlueprintCopy.DetermineActive))]
         [HarmonyPatch(typeof(BuildTool_BlueprintPaste), nameof(BuildTool_BlueprintPaste.DetermineActive))]
         [HarmonyPatch(typeof(BuildTool_BlueprintPaste), nameof(BuildTool_BlueprintPaste.CheckBuildConditionsPrestage))]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> BuildTool_Blueprint_DetermineActive_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
-            if (Compatibility.BlueprintTweaks.Installed) return instructions;
+            if (BlueprintTweaks.Installed) return instructions;
 
             var matcher = new CodeMatcher(instructions);
 
@@ -170,7 +53,7 @@ namespace ProjectGenesis.Patches
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> PlayerController_OpenBlueprintMode_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
-            if (Compatibility.BlueprintTweaks.Installed) return instructions;
+            if (BlueprintTweaks.Installed) return instructions;
 
             var matcher = new CodeMatcher(instructions);
 
@@ -214,7 +97,7 @@ namespace ProjectGenesis.Patches
 
             matcher.Advance(9);
             matcher.SetAndAdvance(OpCodes.Ldloc_S, preview);
-            matcher.SetAndAdvance(OpCodes.Call, AccessTools.Method(typeof(PlanetGasPatches), nameof(IsSuit)));
+            matcher.SetAndAdvance(OpCodes.Call, AccessTools.Method(typeof(AtmosphericCollectPatches), nameof(IsSuit)));
 
             matcher.SetAndAdvance(OpCodes.Nop, null);
             matcher.SetAndAdvance(OpCodes.Nop, null);
@@ -237,7 +120,7 @@ namespace ProjectGenesis.Patches
 
             matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Pop), new CodeInstruction(OpCodes.Ldarg_0),
                 new CodeInstruction(OpCodes.Ldfld, BuildTool_planet_Field),
-                new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(PlanetGasPatches), nameof(GetDistance))));
+                new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(AtmosphericCollectPatches), nameof(GetDistance))));
 
             matcher.MatchForward(false, new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldelem_Ref),
                 new CodeMatch(OpCodes.Ldfld, StationComponent_isStellar_Field));
@@ -254,14 +137,15 @@ namespace ProjectGenesis.Patches
             matcher.MatchForward(false, new CodeMatch(OpCodes.Stloc_S));
 
             matcher.InsertAndAdvance(ins).InsertAndAdvance(ins2).InsertAndAdvance(new CodeInstruction(OpCodes.Call,
-                AccessTools.Method(typeof(PlanetGasPatches), nameof(SetDistance))));
+                AccessTools.Method(typeof(AtmosphericCollectPatches), nameof(SetDistance))));
 
             matcher.MatchForward(false, new CodeMatch(OpCodes.Ldfld, PrefabDesc_isStellarStation_Field));
 
             // PrefabDesc desc = itemProto.desc;
             List<CodeInstruction> ins3 = matcher.InstructionsWithOffsets(-2, -1);
 
-            matcher.Advance(1).MatchForward(false, new CodeMatch(OpCodes.Ldfld, PrefabDesc_isStellarStation_Field));
+            matcher.Advance(1).MatchForward(false,
+                new CodeMatch(OpCodes.Ldfld, PrefabDesc_isStellarStation_Field));
 
             // PrefabDesc desc = buildPreview1.desc;
             List<CodeInstruction> ins4 = matcher.InstructionsWithOffsets(-2, -1);
@@ -270,7 +154,7 @@ namespace ProjectGenesis.Patches
             matcher.MatchForward(false, new CodeMatch(OpCodes.Stloc_S));
 
             matcher.InsertAndAdvance(ins3).InsertAndAdvance(ins4).InsertAndAdvance(new CodeInstruction(OpCodes.Call,
-                AccessTools.Method(typeof(PlanetGasPatches), nameof(SetPreBuildDistance))));
+                AccessTools.Method(typeof(AtmosphericCollectPatches), nameof(SetPreBuildDistance))));
 
             // unlock BuildInEquator 
             matcher.MatchBack(false, new CodeMatch(OpCodes.Ldc_I4_S, (sbyte)EBuildCondition.BuildInEquator));
@@ -284,6 +168,7 @@ namespace ProjectGenesis.Patches
 
             return matcher.InstructionEnumeration();
         }
+
 
         public static bool IsSuit(PlanetData planet, BuildPreview preview) =>
             (planet.type == EPlanetType.Gas) ^ (preview.item.ID == ProtoID.I大气采集器);
@@ -305,6 +190,7 @@ namespace ProjectGenesis.Patches
                 for (var index = 0; index < Math.Min(__result.collectionIds.Length, _desc.stationMaxItemKinds); ++index)
                     __result.storage[index].localLogic = ELogisticStorage.Supply;
         }
+
 
         [HarmonyPatch(typeof(PlanetGen), nameof(PlanetGen.SetPlanetTheme))]
         [HarmonyPostfix]

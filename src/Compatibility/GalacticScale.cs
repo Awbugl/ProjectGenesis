@@ -79,7 +79,7 @@ namespace ProjectGenesis.Compatibility
                 new HarmonyMethod(typeof(GalacticScale), nameof(OnPlanetDataSet_Transpiler)));
 
             HarmonyPatch.Patch(OnPlanetDataSet7Prefix, null, null,
-                new HarmonyMethod(typeof(PlanetGasPatches), nameof(PlanetGasPatches.OnDataSet_ChangeWaterId_Transpiler)));
+                new HarmonyMethod(typeof(UIDetailPatches), nameof(UIDetailPatches.OnDataSet_ChangeHighlightWaterId_Transpiler)));
 
             HarmonyPatch.Patch(OnPlanetDataSet7Prefix, null, null,
                 new HarmonyMethod(typeof(GalacticScale), nameof(OnPlanetDataSet_ChangeVeinData_Transpiler)));
@@ -87,13 +87,13 @@ namespace ProjectGenesis.Compatibility
             MethodInfo OnStarDataSet2 = AccessTools.Method(assembly.GetType("GalacticScale.PatchOnUIStarDetail"), "OnStarDataSet2");
 
             HarmonyPatch.Patch(OnStarDataSet2, null, null,
-                new HarmonyMethod(typeof(PlanetGasPatches), nameof(PlanetGasPatches.OnDataSet_ChangeWaterId_Transpiler)));
+                new HarmonyMethod(typeof(UIDetailPatches), nameof(UIDetailPatches.OnDataSet_ChangeHighlightWaterId_Transpiler)));
 
             HarmonyPatch.Patch(OnStarDataSet2, null, null,
-                new HarmonyMethod(typeof(PlanetGasPatches), nameof(PlanetGasPatches.PlanetGen_SetPlanetTheme_Transpiler)));
+                new HarmonyMethod(typeof(PlanetThemePatches), nameof(UIDetailPatches.UIStarDetail_OnStarDataSet_ActiveGasItems_Transpiler)));
 
             HarmonyPatch.Patch(OnStarDataSet2, null, null,
-                new HarmonyMethod(typeof(PlanetGasPatches), nameof(PlanetGasPatches.OnStarDataSet_Transpiler)));
+                new HarmonyMethod(typeof(UIDetailPatches), nameof(UIDetailPatches.UIPlanetDetail_OnPlanetDataSet_FixCollectorSpeed_Transpiler)));
 
             HarmonyPatch.Patch(OnStarDataSet2, null, null,
                 new HarmonyMethod(typeof(GalacticScale), nameof(OnStarDataSet_ChangeVeinData_Transpiler)));
@@ -353,7 +353,7 @@ namespace ProjectGenesis.Compatibility
                 new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(StationComponent), nameof(StationComponent.collectionPerTick))));
 
             matcher.Advance(-2).InsertAndAdvance(new CodeInstruction(OpCodes.Call,
-                AccessTools.Method(typeof(PlanetGasPatches), nameof(PlanetGasPatches.GetMiningSpeedScale))));
+                AccessTools.Method(typeof(UIDetailPatches), nameof(UIDetailPatches.GetMiningSpeedScale))));
 
             return matcher.InstructionEnumeration();
         }

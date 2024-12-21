@@ -11,7 +11,7 @@ namespace ProjectGenesis.Patches
         /// <summary>
         /// 1 == 300kw
         /// </summary>
-        public static readonly Dictionary<int, int> RecipePowerRate = new Dictionary<int, int>
+        private static readonly Dictionary<int, int> RecipePowerRate = new Dictionary<int, int>
         {
             { ProtoID.R水电解, 4 },
             { ProtoID.R盐水电解, 4 },
@@ -24,7 +24,7 @@ namespace ProjectGenesis.Patches
             { ProtoID.R重氢, 18 },
             { ProtoID.R三元精金, 18 },
             { ProtoID.R光子物质化, 18 },
-            { ProtoID.R奇异物质, -8 },
+            { ProtoID.R奇异物质, -4 },
             { ProtoID.R氦核转化, 4 },
             { ProtoID.R质能储存高效, 8 },
             { ProtoID.R能量物质化, 8 },
@@ -40,7 +40,7 @@ namespace ProjectGenesis.Patches
 
             int num = RecipePowerRate.GetValueOrDefault(__instance.recipeId, 1);
 
-            component.requiredEnergy = (component.workEnergyPerTick + __instance.speedOverride * num / 2)
+            component.requiredEnergy = (__instance.speedOverride * num / 2 + component.workEnergyPerTick)
               * (1000 + __instance.extraPowerRatio) / 1000;
         }
     }

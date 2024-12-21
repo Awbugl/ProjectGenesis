@@ -22,7 +22,8 @@
   + 调整了部分物品的位置
   + 调整了地面黑雾的制造速度及数值
   + 调整了部分配方（仅对新存档生效）
-  + 调整了戴森球对细胞点数的需求，提高太阳帆的发电量
+  + 调整了戴森球对细胞点数的需求，提高太阳帆及戴森壳的发电量
+  + 调整了戴森球对结构点数的需求，提高戴森球框架和节点的发电量
   + 调整了气态行星上的机甲采集效果
   + 修复了协调中心效果`光伏扩容`无法正确生效的问题
   + 修复了母星系可生成特殊海洋的问题
@@ -36,9 +37,10 @@
   + 量化计算器现在将在存档时保存自定义配置
 
   + Adjusted the position of some items
-  + Adjusted the creation speed and value of the ground black mist
+  + Adjusted the creation speed and value of the ground dark fog
   + Adjusted some recipes
-  + Adjusted the Dyson Sphere's cell point requirement to increase the power generation of solar sails
+  + Adjusted the Dyson Sphere's requirement for cell points and increase the power generation of solar sails and Dyson shells
+  + Adjusted the Dyson Sphere's requirement for structure points and increase the power generation of the Dyson Sphere's frames and nodes
   + Tweaked mecha harvesting effects on gas planets
   + Fixed Coordination Center effect `Photovoltaic Expansion` not working correctly
   + Fixed issue where home system could generate special oceans
