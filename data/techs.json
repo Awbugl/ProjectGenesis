@@ -44,7 +44,7 @@
     "PreItem": null,
     "Position": [
       9.0,
-      -19.0
+      -23.0
     ],
     "PreTechs": [
       1900
@@ -145,7 +145,7 @@
     "PreItem": null,
     "Position": [
       13.0,
-      -35.0
+      -39.0
     ],
     "PreTechs": [
       1120
@@ -192,7 +192,7 @@
     "PreItem": null,
     "Position": [
       17.0,
-      -35.0
+      -39.0
     ],
     "PreTechs": [
       1101
@@ -236,7 +236,7 @@
     "PreItem": null,
     "Position": [
       25.0,
-      -39.0
+      -43.0
     ],
     "PreTechs": [
       1915
@@ -279,7 +279,7 @@
     "PreItem": null,
     "Position": [
       25.0,
-      -35.0
+      -39.0
     ],
     "PreTechs": [
       1915
@@ -365,7 +365,7 @@
     "PreItem": null,
     "Position": [
       13.0,
-      -31.0
+      -35.0
     ],
     "PreTechs": [
       1120
@@ -383,7 +383,8 @@
     "HashNeeded": 144000,
     "UnlockRecipes": [
       19,
-      419
+      419,
+      717
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -408,11 +409,12 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      25.0,
-      -23.0
+      21.0,
+      -27.0
     ],
     "PreTechs": [
-      1702
+      1702,
+      1805
     ],
     "PreTechsImplicit": [
       1411
@@ -450,11 +452,12 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      33.0,
-      -23.0
+      25.0,
+      -27.0
     ],
     "PreTechs": [
-      1711
+      1711,
+      1113
     ],
     "PreTechsImplicit": [],
     "Items": [
@@ -491,7 +494,7 @@
     "PreItem": null,
     "Position": [
       9.0,
-      -31.0
+      -39.0
     ],
     "PreTechs": [
       1900
@@ -537,7 +540,7 @@
     "PreItem": null,
     "Position": [
       13.0,
-      -39.0
+      -43.0
     ],
     "PreTechs": [
       1120
@@ -581,7 +584,7 @@
     "PreItem": null,
     "Position": [
       17.0,
-      -39.0
+      -43.0
     ],
     "PreTechs": [
       1121
@@ -714,7 +717,7 @@
     "PreItem": null,
     "Position": [
       21.0,
-      -27.0
+      -31.0
     ],
     "PreTechs": [
       1703
@@ -797,10 +800,10 @@
     "PreItem": null,
     "Position": [
       13.0,
-      -27.0
+      -31.0
     ],
     "PreTechs": [
-      1120
+      1001
     ],
     "PreTechsImplicit": [
       1121
@@ -842,7 +845,7 @@
     "PreItem": null,
     "Position": [
       17.0,
-      -31.0
+      -35.0
     ],
     "PreTechs": [
       1131
@@ -970,7 +973,7 @@
     "PreItem": null,
     "Position": [
       25.0,
-      -27.0
+      -31.0
     ],
     "PreTechs": [
       1125
@@ -1061,7 +1064,7 @@
     "PreItem": null,
     "Position": [
       21.0,
-      -31.0
+      -35.0
     ],
     "PreTechs": [
       1703
@@ -1302,7 +1305,7 @@
       1949,
       1711,
       1203,
-      1922
+      1921
     ],
     "Items": [
       6278,
@@ -1654,7 +1657,7 @@
     "UnlockRecipes": [
       124,
       710,
-      717
+      107
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -2051,9 +2054,11 @@
       1413
     ],
     "Items": [
-      6278
+      6001,
+      6002
     ],
     "ItemPoints": [
+      10,
       10
     ],
     "HashNeeded": 288000,
@@ -2265,14 +2270,12 @@
       1501
     ],
     "Items": [
-      6001,
-      6002
+      6001
     ],
     "ItemPoints": [
-      10,
       10
     ],
-    "HashNeeded": 72000,
+    "HashNeeded": 36000,
     "UnlockRecipes": [
       68,
       69
@@ -2763,7 +2766,7 @@
     ],
     "PreTechsImplicit": [
       1521,
-      1922,
+      1921,
       1911,
       1949
     ],
@@ -2977,7 +2980,8 @@
     "HashNeeded": 108000,
     "UnlockRecipes": [
       92,
-      90
+      90,
+      120
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -3006,8 +3010,8 @@
       25.0
     ],
     "PreTechs": [
-      1936,
-      1941
+      1941,
+      1936
     ],
     "PreTechsImplicit": [
       1942,
@@ -3290,11 +3294,11 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      21.0,
+      17.0,
       -23.0
     ],
     "PreTechs": [
-      1805
+      1701
     ],
     "PreTechsImplicit": [
       1402
@@ -3335,7 +3339,7 @@
     "PreItem": null,
     "Position": [
       17.0,
-      -27.0
+      -31.0
     ],
     "PreTechs": [
       1131
@@ -3380,7 +3384,7 @@
     "PreItem": null,
     "Position": [
       25.0,
-      -31.0
+      -35.0
     ],
     "PreTechs": [
       1143
@@ -3468,11 +3472,11 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      29.0,
+      21.0,
       -23.0
     ],
     "PreTechs": [
-      1113
+      1702
     ],
     "PreTechsImplicit": [],
     "Items": [
@@ -3743,7 +3747,7 @@
     "PreItem": [],
     "Position": [
       17.0,
-      -23.0
+      -27.0
     ],
     "PreTechs": [
       1701
@@ -3832,11 +3836,11 @@
       37.0
     ],
     "PreTechs": [
-      1802,
-      1411
+      1802
     ],
     "PreTechsImplicit": [
-      1702
+      1702,
+      1411
     ],
     "Items": [
       6001,
@@ -3933,9 +3937,11 @@
       1942
     ],
     "Items": [
-      6278
+      6278,
+      6003
     ],
     "ItemPoints": [
+      10,
       10
     ],
     "HashNeeded": 288000,
@@ -4601,7 +4607,7 @@
     "IsHiddenTech": false,
     "PreItem": [],
     "Position": [
-      21.0,
+      17.0,
       61.0
     ],
     "PreTechs": [
@@ -4612,11 +4618,9 @@
       1126
     ],
     "Items": [
-      6278,
-      6003
+      6278
     ],
     "ItemPoints": [
-      10,
       10
     ],
     "HashNeeded": 216000,
@@ -4939,7 +4943,7 @@
     "PreItem": null,
     "Position": [
       21.0,
-      -35.0
+      -39.0
     ],
     "PreTechs": [
       1102
@@ -5107,52 +5111,6 @@
   },
   {
     "ID": 1921,
-    "Name": "T聚变燃料提取",
-    "IconPath": "Icons/Tech/1416",
-    "Desc": "T聚变燃料提取描述",
-    "Conclusion": "T聚变燃料提取描述",
-    "IsHiddenTech": false,
-    "PreItem": null,
-    "Position": [
-      25.0,
-      -15.0
-    ],
-    "PreTechs": [
-      1920
-    ],
-    "PreTechsImplicit": [
-      1104
-    ],
-    "Items": [
-      6278,
-      6003,
-      6004
-    ],
-    "ItemPoints": [
-      10,
-      15,
-      5
-    ],
-    "HashNeeded": 288000,
-    "UnlockRecipes": [
-      107
-    ],
-    "UnlockFunctions": [],
-    "UnlockValues": [],
-    "Published": true,
-    "Level": 0,
-    "MaxLevel": 0,
-    "LevelCoef1": 0,
-    "LevelCoef2": 0,
-    "IsLabTech": true,
-    "PreTechsMax": false,
-    "AddItems": [],
-    "AddItemCounts": [],
-    "PropertyOverrideItems": [],
-    "PropertyItemCounts": []
-  },
-  {
-    "ID": 1922,
     "Name": "T聚变能源燃料棒",
     "IconPath": "Icons/Tech/1416",
     "Desc": "T聚变能源燃料棒描述",
@@ -5164,7 +5122,7 @@
       -15.0
     ],
     "PreTechs": [
-      1921
+      1920
     ],
     "PreTechsImplicit": [],
     "Items": [
@@ -5443,7 +5401,7 @@
     "PreItem": null,
     "Position": [
       29.0,
-      -35.0
+      -39.0
     ],
     "PreTechs": [
       1104
@@ -5547,7 +5505,7 @@
     "PreItem": null,
     "Position": [
       21.0,
-      -39.0
+      -43.0
     ],
     "PreTechs": [
       1122
@@ -6552,7 +6510,6 @@
       1603
     ],
     "PreTechsImplicit": [
-      1711,
       1302
     ],
     "Items": [
@@ -6561,9 +6518,8 @@
     "ItemPoints": [
       10
     ],
-    "HashNeeded": 108000,
+    "HashNeeded": 288000,
     "UnlockRecipes": [
-      120,
       160
     ],
     "UnlockFunctions": [],

@@ -69,8 +69,8 @@ namespace ProjectGenesis.Patches
             }
             else if (theme.GasItems[0] == ProtoID.I氢 && theme.GasItems[1] == ProtoID.I重氢)
             {
-                theme.GasItems = new[] { ProtoID.I氢, ProtoID.I重氢, ProtoID.I氦, };
-                theme.GasSpeeds = new float[] { theme.GasSpeeds[0], theme.GasSpeeds[1], theme.GasSpeeds[1] * 0.5f, };
+                theme.GasItems = new[] { ProtoID.I氢, ProtoID.I氦, ProtoID.I重氢, };
+                theme.GasSpeeds = new float[] { theme.GasSpeeds[0], theme.GasSpeeds[1] * 2f, theme.GasSpeeds[1], };
             }
         }
 

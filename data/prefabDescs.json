@@ -226,22 +226,22 @@
   },
   {
     "ModelID": 300,
-    "unitAttackDamage0": 2250,
-    "unitAttackDamageInc0": 375
+    "unitAttackDamage0": 3750,
+    "unitAttackDamageInc0": 625
   },
   {
     "ModelID": 301,
-    "unitAttackDamage0": 1620,
-    "unitAttackDamageInc0": 180
+    "unitAttackDamage0": 2700,
+    "unitAttackDamageInc0": 300
   },
   {
     "ModelID": 302,
-    "unitAttackDamage0": 4800,
-    "unitAttackDamageInc0": 600
+    "unitAttackDamage0": 8000,
+    "unitAttackDamageInc0": 1000
   },
   {
     "ModelID": 373,
-    "turretDamageScale": 1,
+    "turretDamageScale": 2,
     "turretMaxAttackRange": 25
   },
   {

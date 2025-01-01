@@ -2846,20 +2846,20 @@
     "Name": "氦原子提取",
     "Description": "R氦原子提取",
     "IconPath": "",
-    "Type": 2,
+    "Type": 16,
     "GridIndex": 1213,
-    "Time": 120,
+    "Time": 240,
     "Input": [
       1014
     ],
     "InCounts": [
-      2
+      1
     ],
     "Output": [
       6234
     ],
     "OutCounts": [
-      1
+      2
     ],
     "Explicit": true,
     "Handcraft": false,
@@ -3218,8 +3218,8 @@
     "GridIndex": 2205,
     "Time": 240,
     "Input": [
-      6502,
-      1205
+      6501,
+      1204
     ],
     "InCounts": [
       2,
@@ -4194,10 +4194,10 @@
     ],
     "InCounts": [
       10,
-      40,
+      10,
       20,
-      60,
-      10
+      40,
+      5
     ],
     "Output": [
       2318
@@ -5861,7 +5861,7 @@
       1103
     ],
     "InCounts": [
-      4
+      2
     ],
     "Output": [
       6509

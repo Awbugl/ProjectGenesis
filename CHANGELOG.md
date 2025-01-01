@@ -1,3 +1,17 @@
+- v3.1.0-alpha1.1 (Experimental 0.3.11111)
+  + 调整了地面黑雾的制造速度
+  + 调整了部分科技
+  + 调整了部分配方
+
+  + Adjusted the creation speed of the ground dark fog
+  + Adjusted some technologies
+  + Adjusted some recipes
+
+
+<details>
+  <summary>点击展开日志 | Click to view all </summary>
+
+
 - v3.1.0-alpha1.0 (Experimental 0.3.11101)
   + 调整了裂变燃料棒的热值
   + 调整了部分科技的前置科技需求
@@ -8,10 +22,6 @@
   + Adjusted the pre-tech requirements for some technologies
   + Adjusted the values of EM capsule weapons and jamming towers
   + Adjusted some guideline information
-
-
-<details>
-  <summary>点击展开日志 | Click to view all </summary>
 
 
 - v3.1.0-alpha0.3

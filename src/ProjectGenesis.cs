@@ -76,9 +76,9 @@ namespace ProjectGenesis
 
             logger = Logger;
 
-            if (!PreloaderInstalled || !BepinExVersionMatch)
+            if (!BepinExVersionMatch)
             {
-                logger.Log(LogLevel.Error, "GenesisBook Preloader Load Failed");
+                logger.Log(LogLevel.Error, "GenesisBook BepinEx Version Check Failed");
                 return;
             }
 
