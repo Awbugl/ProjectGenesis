@@ -13,7 +13,7 @@ namespace ProjectGenesis
 
         private static readonly bool IsDebugBuild = true;
 
-        public const string ManifestDebugVersion = "0.3.11101";
+        public const string ManifestDebugVersion = "0.3.11111";
 
         internal static void Main()
         {
@@ -48,9 +48,7 @@ namespace ProjectGenesis
 
         [JsonProperty("website_url")] public string WebsiteURL { get; set; } = "https://github.com/Awbugl/ProjectGenesis";
 
-        [JsonProperty("description")]
-        public string Description { get; set; } =
-            "构建真实宇宙，撰写创世之书。新矿物，新材料，新配方，新科技，新机制。Construct Real Universe. Then leave a GenesisBook. New vein, new material, new recipe, new technology, new structure.";
+        [JsonProperty("description")] public string Description { get; set; }
 
         [JsonProperty("dependencies")]
         public string[] Dependencies { get; set; } = { "CommonAPI-CommonAPI-1.6.5", "nebula-NebulaMultiplayerModApi-2.0.0", };
@@ -59,7 +57,10 @@ namespace ProjectGenesis
         {
             return new ManifestObject
             {
-                Name = "GenesisBook_Experimental", VersionNumber = Packer.ManifestDebugVersion,
+                Name = "GenesisBook_Experimental",
+                VersionNumber = Packer.ManifestDebugVersion,
+                Description =
+                    "【测试版本】构建真实宇宙，撰写创世之书。新矿物，新材料，新配方，新科技，新机制。[Test Build]Construct Real Universe. Then leave a GenesisBook. New vein, new material, new recipe, new technology, new structure.",
             };
         }
 
@@ -67,7 +68,10 @@ namespace ProjectGenesis
         {
             return new ManifestObject
             {
-                Name = "GenesisBook", VersionNumber = ProjectGenesis.VERSION,
+                Name = "GenesisBook",
+                VersionNumber = ProjectGenesis.VERSION,
+                Description =
+                    "构建真实宇宙，撰写创世之书。新矿物，新材料，新配方，新科技，新机制。Construct Real Universe. Then leave a GenesisBook. New vein, new material, new recipe, new technology, new structure.",
             };
         }
     }
