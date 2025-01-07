@@ -3,7 +3,7 @@
   + 调整了各类弹箱的部分数值
   + 调整了`磁悬浮`科技
   + 调整了部分配方
-  + 调整了气态巨型的基础产出数值
+  + 调整了气态巨星的基础产出数值
 
   + Correctly adjusted the manufacturing speed of ground dark fog, and fixed the problem of abnormal data of ground dark fog
   + Adjusted some values of various types of bullet boxes
