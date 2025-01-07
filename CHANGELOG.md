@@ -1,3 +1,21 @@
+- v3.1.0-alpha2.0 (Experimental 0.3.11201)
+  + 正确调整了地面黑雾的制造速度，修复地面黑雾数据异常的问题
+  + 调整了各类弹箱的部分数值
+  + 调整了`磁悬浮`科技
+  + 调整了部分配方
+  + 调整了气态巨型的基础产出数值
+
+  + Correctly adjusted the manufacturing speed of ground dark fog, and fixed the problem of abnormal data of ground dark fog
+  + Adjusted some values of various types of bullet boxes
+  + Adjusted `Magnetic Levitation` technology
+  + Adjusted some recipes
+  + Adjusted the base output value of the Gas Giant
+
+
+<details>
+  <summary>点击展开日志 | Click to view all </summary>
+
+
 - v3.1.0-alpha1.1 (Experimental 0.3.11111)
   + 调整了地面黑雾的制造速度
   + 调整了部分科技
@@ -6,10 +24,6 @@
   + Adjusted the creation speed of the ground dark fog
   + Adjusted some technologies
   + Adjusted some recipes
-
-
-<details>
-  <summary>点击展开日志 | Click to view all </summary>
 
 
 - v3.1.0-alpha1.0 (Experimental 0.3.11101)

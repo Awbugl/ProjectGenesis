@@ -107,7 +107,7 @@ namespace ProjectGenesis.Patches
             AddItemToPackage(5102, 24);   // 精准无人机
             AddItemToPackage(1605, 100);  // 炮弹
             AddItemToPackage(1609, 100);  // 导弹
-            AddItemToPackage(7607, 100);  // 钢弹
+            AddItemToPackage(1603, 100);  // 钛弹
             AddItemToPackage(2020, 49);   // 分流
             AddItemToPackage(2101, 50);   // 小箱子
             AddItemToPackage(2102, 50);   // 大箱子

@@ -49,7 +49,7 @@ namespace ProjectGenesis
         public const string MODGUID = "org.LoShin.GenesisBook";
         public const string MODNAME = "GenesisBook";
         public const string VERSION = "3.1.0";
-        public const string DEBUGVERSION = "-alpha1.1";
+        public const string DEBUGVERSION = "-alpha2.0";
 
         public static bool LoadCompleted;
 
@@ -163,7 +163,7 @@ namespace ProjectGenesis
             TableID = new int[]
             {
                 TabSystem.RegisterTab($"{MODGUID}:{MODGUID}Tab1",
-                    new TabData("精炼页面".TranslateFromJsonSpecial(), "Assets/texpack/矿物处理")),
+                    new TabData("工艺页面".TranslateFromJsonSpecial(), "Assets/texpack/矿物处理")),
                 TabSystem.RegisterTab($"{MODGUID}:{MODGUID}Tab2",
                     new TabData("化工页面".TranslateFromJsonSpecial(), "Assets/texpack/化工科技")),
                 TabSystem.RegisterTab($"{MODGUID}:{MODGUID}Tab3", 

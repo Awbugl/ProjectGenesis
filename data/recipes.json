@@ -1021,7 +1021,7 @@
       10,
       20,
       20,
-      10
+      5
     ],
     "Output": [
       2310
@@ -2822,7 +2822,7 @@
     "IconPath": "",
     "Type": 5,
     "GridIndex": 1214,
-    "Time": 120,
+    "Time": 60,
     "Input": [
       6234,
       1120
@@ -2848,7 +2848,7 @@
     "IconPath": "",
     "Type": 16,
     "GridIndex": 1213,
-    "Time": 240,
+    "Time": 120,
     "Input": [
       1014
     ],

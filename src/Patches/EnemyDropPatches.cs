@@ -39,10 +39,18 @@ namespace ProjectGenesis.Patches
         }
 
         [HarmonyPatch(typeof(EnemyDFGroundSystem), nameof(EnemyDFGroundSystem.RandomDropItemOnce))]
-        [HarmonyPostfix]
-        public static void EnemyDFGroundSystem_RandomDropItemOnce_Postfix(ref int count)
+        [HarmonyTranspiler]
+        public static IEnumerable<CodeInstruction> EnemyDFGroundSystem_RandomDropItemOnce_Transpiler(
+            IEnumerable<CodeInstruction> instructions)
         {
-            count *= 3;
+            var matcher = new CodeMatcher(instructions);
+
+            // count * 3
+            matcher.MatchForward(true, new CodeMatch(OpCodes.Ldarg_3), new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldloc_S),
+                    new CodeMatch(OpCodes.Add), new CodeMatch(OpCodes.Conv_I4))
+               .InsertAndAdvance(new CodeInstruction(OpCodes.Ldc_R8, 3d), new CodeInstruction(OpCodes.Mul));
+
+            return matcher.InstructionEnumeration();
         }
     }
 }

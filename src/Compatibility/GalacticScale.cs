@@ -90,7 +90,7 @@ namespace ProjectGenesis.Compatibility
                 new HarmonyMethod(typeof(UIDetailPatches), nameof(UIDetailPatches.OnDataSet_ChangeHighlightWaterId_Transpiler)));
 
             HarmonyPatch.Patch(OnStarDataSet2, null, null,
-                new HarmonyMethod(typeof(PlanetThemePatches), nameof(UIDetailPatches.UIStarDetail_OnStarDataSet_ActiveGasItems_Transpiler)));
+                new HarmonyMethod(typeof(UIDetailPatches), nameof(UIDetailPatches.UIStarDetail_OnStarDataSet_ActiveGasItems_Transpiler)));
 
             HarmonyPatch.Patch(OnStarDataSet2, null, null,
                 new HarmonyMethod(typeof(UIDetailPatches), nameof(UIDetailPatches.UIPlanetDetail_OnPlanetDataSet_FixCollectorSpeed_Transpiler)));

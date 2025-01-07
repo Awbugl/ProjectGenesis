@@ -51,6 +51,7 @@ namespace ProjectGenesis.Utils
                            I放射性矿物 = 6222,
                            I量子储物仓 = 6231,
                            I氦 = 6234,
+                           I氦三 = 6235,
                            I钚燃料棒 = 6241,
                            I铀燃料棒 = 6242,
                            IMOX燃料棒 = 6243,

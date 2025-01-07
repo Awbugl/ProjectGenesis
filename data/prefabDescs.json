@@ -214,30 +214,30 @@
   },
   {
     "ModelID": 293,
-    "enemySpMax": 720
+    "enemySpMax": 1200
   },
   {
     "ModelID": 294,
-    "enemySpMax": 900
+    "enemySpMax": 1500
   },
   {
     "ModelID": 295,
-    "enemySpMax": 900
+    "enemySpMax": 1500
   },
   {
     "ModelID": 300,
-    "unitAttackDamage0": 3750,
-    "unitAttackDamageInc0": 625
+    "unitAttackDamage0": 2250,
+    "unitAttackDamageInc0": 375
   },
   {
     "ModelID": 301,
-    "unitAttackDamage0": 2700,
-    "unitAttackDamageInc0": 300
+    "unitAttackDamage0": 1620,
+    "unitAttackDamageInc0": 180
   },
   {
     "ModelID": 302,
-    "unitAttackDamage0": 8000,
-    "unitAttackDamageInc0": 1000
+    "unitAttackDamage0": 4800,
+    "unitAttackDamageInc0": 600
   },
   {
     "ModelID": 373,
