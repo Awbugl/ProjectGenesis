@@ -72,20 +72,20 @@ namespace ProjectGenesis.Patches
                 if (theme.GasSpeeds[1] < 0.1f)
                 {
                     theme.GasItems = new[] { ProtoID.I氢, ProtoID.I氦, ProtoID.I重氢, };
-                    float heliumGasSpeed = 0.2f - theme.GasSpeeds[1];
+                    float heliumGasSpeed = (float)Maths.Clamp(0.2f - theme.GasSpeeds[1], theme.GasSpeeds[1] + 0.02f, theme.GasSpeeds[0] - 0.01f);
                     theme.GasSpeeds = new float[] { theme.GasSpeeds[0] - heliumGasSpeed, heliumGasSpeed, theme.GasSpeeds[1], };
                 }
                 else if (theme.GasSpeeds[1] > 0.15f)
                 {
                     theme.GasItems = new[] { ProtoID.I氢, ProtoID.I重氢, ProtoID.I氦三, };
-                    float heliumGasSpeed = Math.Max(0.2f - theme.GasSpeeds[1], 0.01f);
+                    float heliumGasSpeed = (float)Maths.Clamp(0.2f - theme.GasSpeeds[1], 0.01f, theme.GasSpeeds[1] - 0.01f);
                     theme.GasSpeeds = new float[] { theme.GasSpeeds[0] - heliumGasSpeed, theme.GasSpeeds[1], heliumGasSpeed, };
                 }
                 else
                 {
                     // for mod compat
                     theme.GasItems = new[] { ProtoID.I氢, ProtoID.I氦, ProtoID.I重氢, };
-                    float heliumGasSpeed = Math.Max(0.3f - theme.GasSpeeds[1], theme.GasSpeeds[1] + 0.02f);
+                    float heliumGasSpeed = (float)Maths.Clamp(0.3f - theme.GasSpeeds[1], theme.GasSpeeds[1] + 0.02f, theme.GasSpeeds[0] - 0.01f);
                     theme.GasSpeeds = new float[] { theme.GasSpeeds[0] - heliumGasSpeed, heliumGasSpeed, theme.GasSpeeds[1], };
                 }
             }
