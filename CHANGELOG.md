@@ -1,3 +1,15 @@
+- v3.1.0-alpha2.1 (Experimental 0.3.11211)
+  + 添加配方`钠盐转化`
+  + 调整部分文案
+
+  + Add recipe `Sodium Salt Conversion`
+  + Adjust some text
+
+
+<details>
+  <summary>点击展开日志 | Click to view all </summary>
+
+
 - v3.1.0-alpha2.0 (Experimental 0.3.11201)
   + 正确调整了地面黑雾的制造速度，修复地面黑雾数据异常的问题
   + 调整了各类弹箱的部分数值
@@ -10,10 +22,6 @@
   + Adjusted `Magnetic Levitation` technology
   + Adjusted some recipes
   + Adjusted the base output value of the Gas Giant
-
-
-<details>
-  <summary>点击展开日志 | Click to view all </summary>
 
 
 - v3.1.0-alpha1.1 (Experimental 0.3.11111)

@@ -1150,6 +1150,16 @@
     "ENUS": "Electrolysis of salt water using ion exchange membranes, producing hydrochloric acid and sodium hydroxide.\n<color=\"#FD965ECC\">Will not stop working until all products are accumulated.</color>"
   },
   {
+    "Name": "钠盐转化",
+    "ZHCN": "钠盐转化",
+    "ENUS": "Sodium Salt Conversion"
+  },
+  {
+    "Name": "R钠盐转化",
+    "ZHCN": "盐酸与石粉中的钠离子盐反应，经复杂的提纯工序后可获得氯化钠。",
+    "ENUS": "Hydrochloric acid reacts with sodium salts in the stone powder, and after purification, sodium chloride is obtained."
+  },
+  {
     "Name": "海水淡化",
     "ZHCN": "海水淡化",
     "ENUS": "Seawater Desalination"
@@ -2617,8 +2627,8 @@
   },
   {
     "Name": "T护盾载波调制文字描述",
-    "ZHCN": "完全覆盖的行星护盾可作为行星电网",
-    "ENUS": "Fully covered planetary shield can serve as a planetary power grid"
+    "ZHCN": "完全填充的行星护盾可作为行星电网",
+    "ENUS": "Fully filled planetary shield can serve as a planetary power grid"
   },
   {
     "Name": "聚爆加农炮",

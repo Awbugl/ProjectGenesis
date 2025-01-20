@@ -5905,7 +5905,7 @@
     "Description": "R盐水电解",
     "IconPath": "",
     "Type": 2,
-    "GridIndex": 4502,
+    "GridIndex": 4503,
     "Time": 120,
     "Input": [
       1000,
@@ -5921,6 +5921,32 @@
     ],
     "OutCounts": [
       1,
+      1
+    ],
+    "Explicit": true,
+    "Handcraft": false,
+    "NonProductive": false
+  },
+  {
+    "ID": 704,
+    "Name": "钠盐转化",
+    "Description": "R钠盐转化",
+    "IconPath": "",
+    "Type": 2,
+    "GridIndex": 4501,
+    "Time": 60,
+    "Input": [
+      6251,
+      7014
+    ],
+    "InCounts": [
+      2,
+      1
+    ],
+    "Output": [
+      7101
+    ],
+    "OutCounts": [
       1
     ],
     "Explicit": true,
@@ -6693,7 +6719,7 @@
     "Description": "R海水淡化",
     "IconPath": "",
     "Type": 2,
-    "GridIndex": 4501,
+    "GridIndex": 4502,
     "Time": 120,
     "Input": [
       7018
