@@ -16,7 +16,7 @@ namespace ProjectGenesis.Patches
             matcher.MatchForward(true,
                 new CodeMatch(OpCodes.Callvirt, AccessTools.Method(typeof(DysonSwarm), nameof(DysonSwarm.AddBullet))));
 
-            matcher.Advance(-1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_S, (sbyte)5))
+            matcher.Advance(-1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_S, (sbyte)6))
                .SetInstructionAndAdvance(new CodeInstruction(OpCodes.Call,
                     AccessTools.Method(typeof(EjectorPatches), nameof(Ejector_PatchMethod))))
                .SetInstructionAndAdvance(new CodeInstruction(OpCodes.Nop));
@@ -40,9 +40,11 @@ namespace ProjectGenesis.Patches
 
             var count = stationPilerLevel > bulletCount ? bulletCount : stationPilerLevel;
 
-            for (int i = 0; i < count; i++) swarm.AddBullet(sailBullet, component.orbitId);
+            for (int i = 0; i < count; i++) swarm.AddBullet(sailBullet, component.runtimeOrbitId);
 
-            component.bulletInc -= component.bulletInc / bulletCount * count;
+            int bulletInc = component.bulletInc / bulletCount;
+            if (!component.incUsed) component.incUsed = bulletInc > 0;
+            component.bulletInc -= bulletInc * count;
             bulletCount -= count;
             if (bulletCount == 0) component.bulletInc = 0;
             lock (consumeRegister) consumeRegister[component.bulletId] += count;
