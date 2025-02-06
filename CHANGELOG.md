@@ -1,13 +1,19 @@
+- v3.1.0-alpha2.2 (Experimental 0.3.11221)
+  + 适配版本v0.10.32.25496
+
+  + Adaptation of version v0.10.32.25496
+
+
+<details>
+  <summary>点击展开日志 | Click to view all </summary>
+
+
 - v3.1.0-alpha2.1 (Experimental 0.3.11211)
   + 添加配方`钠盐转化`
   + 调整部分文案
 
   + Add recipe `Sodium Salt Conversion`
   + Adjust some text
-
-
-<details>
-  <summary>点击展开日志 | Click to view all </summary>
 
 
 - v3.1.0-alpha2.0 (Experimental 0.3.11201)
