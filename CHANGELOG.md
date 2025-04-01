@@ -1,11 +1,17 @@
-- v3.1.0-alpha2.2 (Experimental 0.3.11221)
-  + 适配版本v0.10.32.25496
+- v3.1.0-alpha2.3 (Experimental 0.3.11231)
+  + 适配版本v0.10.32.25779
 
-  + Adaptation of version v0.10.32.25496
+  + Adaptation of version v0.10.32.25779
 
 
 <details>
   <summary>点击展开日志 | Click to view all </summary>
+
+
+- v3.1.0-alpha2.2 (Experimental 0.3.11221)
+  + 适配版本v0.10.32.25496
+
+  + Adaptation of version v0.10.32.25496
 
 
 - v3.1.0-alpha2.1 (Experimental 0.3.11211)

@@ -6,7 +6,7 @@ namespace ProjectGenesis.Patches
 {
     public static class GeothermalStrengthPatches
     {
-        [HarmonyPatch(typeof(PowerSystem), nameof(PowerSystem.CalculateGeothermalStrenth))]
+        [HarmonyPatch(typeof(PowerSystem), nameof(PowerSystem.CalculateGeothermalStrength))]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> SetTargetCargoBytes_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
