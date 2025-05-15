@@ -48,14 +48,5 @@
     "DeterminatorParams": [
       2304
     ]
-  },
-  {
-    "ID": 36,
-    "Name": "量化计算器介绍标题",
-    "PreText": "量化计算器介绍前字",
-    "DeterminatorName": "TOR_GameSecond",
-    "DeterminatorParams": [
-      5
-    ]
   }
 ]

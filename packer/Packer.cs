@@ -11,9 +11,9 @@ namespace ProjectGenesis
     {
         private const string SolutionPath = @"D:\Git\ProjectGenesis";
 
-        private static readonly bool IsDebugBuild = true;
+        private static readonly bool IsDebugBuild = false;
 
-        public const string ManifestDebugVersion = "0.3.11231";
+        public const string ManifestDebugVersion = "";
 
         internal static void Main()
         {

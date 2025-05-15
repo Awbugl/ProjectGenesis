@@ -65,8 +65,6 @@ namespace ProjectGenesis
 
         internal static ConfigEntry<int> ProductOverflowEntry;
 
-        internal static ConfigEntry<KeyboardShortcut> QToolsHotkey;
-
         private Harmony Harmony;
 
         public void Awake()
@@ -99,9 +97,6 @@ namespace ProjectGenesis
 
             ProductOverflowEntry = Config.Bind("config", "ProductOverflow", 0,
                 "Changing the condition for stopping production of some recipes from single product pile up to all product pile up.\n将部分配方停止生产的条件由单产物堆积改为所有产物均堆积");
-
-            QToolsHotkey = Config.Bind("config", "QToolsHotkey", KeyboardShortcut.Deserialize("BackQuote"),
-                "Shortcut to open QTools window");
 
             Config.Save();
 
