@@ -49,14 +49,13 @@ namespace ProjectGenesis
         public const string MODGUID = "org.LoShin.GenesisBook";
         public const string MODNAME = "GenesisBook";
         public const string VERSION = "3.1.0";
-        public const string DEBUGVERSION = "-alpha2.3";
+        public const string DEBUGVERSION = "";
 
         public static bool LoadCompleted;
 
         internal static ManualLogSource logger;
         internal static ConfigFile configFile;
         internal static UIPlanetFocusWindow PlanetFocusWindow;
-        internal static UIQToolsWindow QToolsWindow;
 
         internal static int[] TableID;
 
@@ -179,13 +178,6 @@ namespace ProjectGenesis
             LoadCompleted = true;
         }
 
-        private void Update()
-        {
-            if (VFInput.inputing) return;
-
-            if (QToolsWindow) QToolsWindow._OnUpdate();
-        }
-
         public void Export(BinaryWriter w)
         {
             w.Write(VersionNumber());
@@ -194,7 +186,6 @@ namespace ProjectGenesis
             QuantumStoragePatches.Export(w);
             AdvancedLaserPatches.Export(w);
             GlobalPowerSupplyPatches.Export(w);
-            QTools.Export(w);
         }
 
         public void Import(BinaryReader r)
@@ -205,7 +196,6 @@ namespace ProjectGenesis
             QuantumStoragePatches.Import(r);
             AdvancedLaserPatches.Import(r);
             GlobalPowerSupplyPatches.Import(r);
-            QTools.Import(r);
         }
 
         public void IntoOtherSave()
@@ -215,7 +205,6 @@ namespace ProjectGenesis
             QuantumStoragePatches.IntoOtherSave();
             AdvancedLaserPatches.IntoOtherSave();
             GlobalPowerSupplyPatches.IntoOtherSave();
-            QTools.IntoOtherSave();
         }
 
         public string Version => VERSION;
