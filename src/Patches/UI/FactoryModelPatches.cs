@@ -6,13 +6,13 @@ using UnityEngine;
 // ReSharper disable LoopCanBeConvertedToQuery
 // ReSharper disable Unity.PreferAddressByIdToGraphicsParams
 
-namespace ProjectGenesis.Patches.UI
+namespace ProjectGenesis.Patches
 {
     public static class FactoryModelPatches
     {
         private static Material atmosphericCollectStationMaterial;
 
-        [HarmonyPatch(typeof(FactoryModel), nameof(FactoryModel.InitCollectorMaterial))]
+        [HarmonyPatch(typeof(FactoryModel), nameof(FactoryModel.InitMaterial))]
         [HarmonyPostfix]
         public static void FactoryModel_InitCollectorMaterial(FactoryModel __instance)
         {

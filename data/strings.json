@@ -180,6 +180,31 @@
     "ENUS": "You activated your first Artificial Star. It rotates so gracefully yet burns so intensely, this spectacle surely means that you've truly harnessed the stars and can stably transport this energy to all corners of the universe."
   },
   {
+    "Name": "指引条目6",
+    "ZHCN": "采集10个铝矿",
+    "ENUS": "Gather 10 Aluminum Ores"
+  },
+  {
+    "Name": "指引条目11",
+    "ZHCN": "打开“科技树(T)”，开始研究科技[高效电浆控制]",
+    "ENUS": "Open \"Tech Tree(T)\", research [High-Efficiency Plasma Control]"
+  },
+  {
+    "Name": "指引条目14",
+    "ZHCN": "制造铝块",
+    "ENUS": "Replicate Aluminum Ingots"
+  },
+  {
+    "Name": "指引条目15",
+    "ZHCN": "解锁[高效电浆控制]",
+    "ENUS": "Unlock [High-Efficiency Plasma Control]"
+  },
+  {
+    "Name": "指引条目61",
+    "ZHCN": "解锁[物品增产]",
+    "ENUS": "Unlock [Incremental Production]"
+  },
+  {
     "Name": "机甲功率提升",
     "ZHCN": "发电功率提升",
     "ENUS": "Power Generation Boost"
@@ -371,7 +396,7 @@
   },
   {
     "Name": "I火力发电厂",
-    "ZHCN": "使用燃料（例如煤）和氧气作为原料，通过电化学反应把燃料的化学能转换成电能（因此，在无氧环境中只能使用燃料棒），输出的能量与所消耗燃料发热量有一定的转化率。",
+    "ZHCN": "使用燃料（例如煤）和氧气作为原料，通过电化学反应把燃料的化学能转换成电能（因此，在无氧环境中只能使用燃料棒）。",
     "ENUS": "A facility that converting the chemical energy of a fuel into electrical energy through an electrochemical reaction using a fuel (e.g., coal) and oxygen as raw materials. (In an oxygen-free environment, only fuel rods can be used)."
   },
   {
@@ -740,22 +765,22 @@
     "ENUS": "Gravity Matrix"
   },
   {
-    "Name": "通量矩阵",
-    "ZHCN": "通量矩阵",
-    "ENUS": "Flux Matrix"
+    "Name": "玻色矩阵",
+    "ZHCN": "玻色矩阵",
+    "ENUS": "Boson Matrix"
   },
   {
-    "Name": "I通量矩阵",
+    "Name": "I玻色矩阵",
     "ZHCN": "整合了电磁矩阵与能量矩阵的复合矩阵。可以生成或调节电磁波，储存与分配能量。",
     "ENUS": "A composite matrix that integrates the electromagnetic matrix with the energy matrix. It can generates or modulates electromagnetic waves and stores and distributes energy."
   },
   {
-    "Name": "张量矩阵",
-    "ZHCN": "张量矩阵",
-    "ENUS": "Tensor Matrix"
+    "Name": "耗散矩阵",
+    "ZHCN": "耗散矩阵",
+    "ENUS": "Dissipative Matrix"
   },
   {
-    "Name": "I张量矩阵",
+    "Name": "I耗散矩阵",
     "ZHCN": "整合了结构矩阵与信息矩阵的复合矩阵。可以调整物体的微观结构，广播和修改信息。",
     "ENUS": "A composite matrix that integrates the structural matrix and the information matrix. It can adjust the microstructure of objects, broadcast and modify information."
   },
@@ -1125,6 +1150,16 @@
     "ENUS": "Electrolysis of salt water using ion exchange membranes, producing hydrochloric acid and sodium hydroxide.\n<color=\"#FD965ECC\">Will not stop working until all products are accumulated.</color>"
   },
   {
+    "Name": "钠盐转化",
+    "ZHCN": "钠盐转化",
+    "ENUS": "Sodium Salt Conversion"
+  },
+  {
+    "Name": "R钠盐转化",
+    "ZHCN": "盐酸与石粉中的钠离子盐反应，经复杂的提纯工序后可获得氯化钠。",
+    "ENUS": "Hydrochloric acid reacts with sodium salts in the stone powder, and after purification, sodium chloride is obtained."
+  },
+  {
     "Name": "海水淡化",
     "ZHCN": "海水淡化",
     "ENUS": "Seawater Desalination"
@@ -1141,8 +1176,8 @@
   },
   {
     "Name": "R羰基合成",
-    "ZHCN": "二氧化碳和氢在催化剂的作用下可高效合成丙烯，是碳中和进程的重要一步。",
-    "ENUS": "Carbon dioxide and hydrogen can efficiently synthesize propylene in the presence of a catalyst, an important step in the carbon-neutral process."
+    "ZHCN": "二氧化碳和水在催化剂的作用下可高效合成丙烯，是碳中和进程的重要一步。\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作。</color>",
+    "ENUS": "Carbon dioxide and water can efficiently synthesize propylene in the presence of a catalyst, an important step in the carbon-neutral process.\n<color=\"#FD965ECC\">Will not stop working until all products are accumulated.</color>"
   },
   {
     "Name": "合成氨",
@@ -1171,8 +1206,8 @@
   },
   {
     "Name": "R有机晶体活化",
-    "ZHCN": "在能量碎片的作用下，维持在特定激发态的放射性矿物释放的粒子能有效活化有机晶体，促使其组分断裂与重组，有效提高了亚原子操控的转化效率。",
-    "ENUS": "Under the effect of energy fragments, particles released from radioactive minerals maintained in a specific excited state effectively activate the organic crystals, promoting the breaking and reassembly of their components, thereby significantly enhancing the efficiency of subatomic manipulation."
+    "ZHCN": "能量碎片能有效活化有机晶体，促使其组分断裂与重组，有效提高了亚原子操控的转化速度。",
+    "ENUS": "Energy fragments can effectively activate organic crystals and induce fracture and reorganization of their components, effectively increasing the speed of conversion of subatomic manipulation."
   },
   {
     "Name": "能量物质化",
@@ -1195,14 +1230,14 @@
     "ENUS": "Using carbon to reduce sulfur dioxide can yield powdered elemental sulfur.\n<color=\"#FD965ECC\">Will not stop working until all products are accumulated.</color>"
   },
   {
-    "Name": "煤炭干馏",
-    "ZHCN": "煤炭干馏",
-    "ENUS": "Coal Dry Distillation"
+    "Name": "煤炭液化",
+    "ZHCN": "煤炭液化",
+    "ENUS": "Coal Liquefaction"
   },
   {
-    "Name": "R煤炭干馏",
-    "ZHCN": "煤炭在隔绝空气条件下高温处理后，可以得到一种重要的化工原料——焦油。",
-    "ENUS": "When coal is treated at high temperatures under air-insulated conditions, an important chemical raw material, tar, can be obtained."
+    "Name": "R煤炭液化",
+    "ZHCN": "煤炭在氢气和催化剂作用下，可以转变为一种重要的化工原料——焦油。",
+    "ENUS": "Coal, in the presence of hydrogen and a catalyst, can be transformed into an important chemical raw material, tar."
   },
   {
     "Name": "焦油分馏",
@@ -1271,8 +1306,8 @@
   },
   {
     "Name": "R催化重整",
-    "ZHCN": "经过漫长的重整工序，可以将丙烯合成为苯。效率较低，却是历史上推动化石燃料资源封存的重要技术。",
-    "ENUS": "After a lengthy reforming process, propylene can be synthesized into benzene. Less efficient, but an important technology that has historically driven the sequestration of fossil fuel resources."
+    "ZHCN": "经过漫长的重整工序，可以将丙烯合成为苯。效率较低，却是历史上推动化石燃料资源封存的重要技术。\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作。</color>",
+    "ENUS": "After a lengthy reforming process, propylene can be synthesized into benzene. Less efficient, but an important technology that has historically driven the sequestration of fossil fuel resources.\n<color=\"#FD965ECC\">Will not stop working until all products are accumulated.</color>"
   },
   {
     "Name": "氨氧化",
@@ -1836,13 +1871,13 @@
   },
   {
     "Name": "X射线裂解描述",
-    "ZHCN": "在氢气的催化作用下，利用高能的X射线将焦油裂解成更多的氢，同时将生产过程中的副产品加工成高能石墨。",
-    "ENUS": "High-energy X-ray photocatalysis can crack tar into more hydrogen and process the byproducts into energetic graphite."
+    "ZHCN": "利用高能的X射线将焦油裂解成氢和高能石墨。",
+    "ENUS": "High-energy X-ray photocatalysis can crack tar into hydrogen and energetic graphite."
   },
   {
     "Name": "RX射线裂解",
-    "ZHCN": "在氢气的催化作用下，利用高能的X射线将焦油裂解，从而获得更多的氢以及副产品高能石墨。",
-    "ENUS": "Under the catalysis of hydrogen, X-rays can crack the tar into more hydrogen and a by-product, energetic graphite."
+    "ZHCN": "利用高能的X射线将焦油裂解，从而获得氢和高能石墨。",
+    "ENUS": "X-rays can crack the tar into hydrogen and energetic graphite."
   },
   {
     "Name": "高强度玻璃描述",
@@ -1991,13 +2026,13 @@
   },
   {
     "Name": "I焦油",
-    "ZHCN": "有刺激性气味的粘稠液体，密度较大，富含多种芳香族、杂环和支链化合物且便于提取，是一种重要的化工原料。可由煤炭干馏，或由石油分离获得。",
-    "ENUS": "Viscous liquid with irritating odor, high density, rich in many aromatic, heterocyclic and branched chain compounds and easy to extract, it is an important chemical raw material. It can be obtained by dry distillation of coal or separation of oil."
+    "ZHCN": "有刺激性气味的粘稠液体，密度较大，富含多种芳香族、杂环和支链化合物且便于提取，是一种重要的化工原料。",
+    "ENUS": "Viscous liquid with irritating odor, high density, rich in many aromatic, heterocyclic and branched chain compounds and easy to extract, it is an important chemical raw material."
   },
   {
     "Name": "I放射性矿物",
-    "ZHCN": "超重元素由类质同象作用部分取代了成岩矿物的金属离子，形成的具有放射性的岩石，可从中分离出多种具有工业价值的超重元素化合物。",
-    "ENUS": "Superheavy elements are radioactive rocks formed by the partial replacement of metal ions in rock-forming minerals by homogeneous isomorphism, from which a variety of superheavy element compounds of industrial value can be isolated."
+    "ZHCN": "超重元素由类质同象作用部分取代了成岩矿物的金属离子，形成的具有放射性的岩石，可从中分离出多种具有工业价值的超重元素化合物。但些许迹象也暗示着部分矿脉有受核废料污染而产生核素迁移的可能性。",
+    "ENUS": "Superheavy elements are radioactive rocks formed by the partial replacement of metal ions in rock-forming minerals by homogeneous isomorphism, from which a variety of superheavy element compounds of industrial value can be isolated. However, there are some indications that some of the veins have the potential for nuclide migration due to nuclear waste contamination."
   },
   {
     "Name": "I铀矿",
@@ -2088,6 +2123,16 @@
     "Name": "I氦三",
     "ZHCN": "稳定的氦同位素，它与重氢发生的聚变反应即是恒星的秘密。",
     "ENUS": "A stable isotope of helium, whose fusion reaction with heavy hydrogen is the secret of the star."
+  },
+  {
+    "Name": "氦核转化",
+    "ZHCN": "氦核转化",
+    "ENUS": "Helium Conversion"
+  },
+  {
+    "Name": "R氦核转化",
+    "ZHCN": "使用高能质子撞击氦核，生成氦三和中子。",
+    "ENUS": "Using high-energy protons to collide with helium-4, produces helium-3."
   },
   {
     "Name": "I反物质约束单元",
@@ -2301,9 +2346,15 @@
   },
   {
     "Name": "I钢芯弹箱",
-    "ZHCN": "在纯铜子弹的工艺上进行改进的钢芯弹药，其拥有一层铜质被甲，拥有更加良好的穿透性能。一个弹箱包含30发子弹。",
-    "ENUS": "Steel-core ammunition that improves on the process of pure copper bullets by having a layer of copper armor for even better penetration. One case contains 30 rounds."
+    "ZHCN": "在纯铜子弹的工艺上进行改进的钢芯弹药，其拥有一层铜质被甲，拥有更加良好的穿透性能。一个弹箱包含60发子弹。",
+    "ENUS": "Steel-core ammunition that improves on the process of pure copper bullets by having a layer of copper armor for even better penetration. One case contains 60 rounds."
   },
+  {
+    "Name": "I超合金弹箱",
+    "ZHCN": "使用钛合金强化过的机枪弹箱。利用钛合金轻量化的特点对弹壳的形状和结构进行了改良，使其具有更高的初速和更稳定的飞行特性，威力也更强。一个弹箱包含120发子弹。",
+    "ENUS": "Magnum Ammo Boxs enhanced with titanium alloy. The shape and structure of their cases are modified based on a lightweight titanium alloy, resulting in a higher initial speed, stabler flight capability, and greater power. An ammo box contains 120 bullets."
+  },
+  
   {
     "Name": "钨芯弹箱",
     "ZHCN": "钨芯弹箱",
@@ -2311,8 +2362,8 @@
   },
   {
     "Name": "I钨芯弹箱",
-    "ZHCN": "使用钨作为弹头材料的进阶全金属被甲弹，沉重的钨芯弹头与硬质金属被甲能够有效穿透黑雾的防御装甲，造成可观的伤害。一个弹箱包含30发子弹。",
-    "ENUS": "An advanced full metal armor round that uses tungsten as the warhead material, the heavy tungsten core warhead and hard metal armor can effectively penetrate the Black Mist's defensive armor and deal considerable damage. One case contains 30 rounds."
+    "ZHCN": "使用钨作为弹头材料的进阶全金属被甲弹，沉重的钨芯弹头与硬质金属被甲能够有效穿透黑雾的防御装甲，造成可观的伤害。一个弹箱包含240发子弹。",
+    "ENUS": "An advanced full metal armor round that uses tungsten as the warhead material, the heavy tungsten core warhead and hard metal armor can effectively penetrate the Black Mist's defensive armor and deal considerable damage. One case contains 240 rounds."
   },
   {
     "Name": "三元弹箱",
@@ -2321,8 +2372,8 @@
   },
   {
     "Name": "I三元弹箱",
-    "ZHCN": "使用三元精金制作的弹药，这种强互作用力材料曾用于建造深空探测器“水滴”，其强度足以做出“锐角转弯”这种超级机动而不解体。得益于其坚固性，这种弹头有着无与伦比的穿透力。一个弹箱包含30发子弹。",
-    "ENUS": "Ammunition made of Ternary Adamantium, a strong interaction material used in the construction of the deep space probe \"Water Drop\", strong enough to perform super maneuvers such as the \"Sharp Angle Turn\" without disintegrating. Thanks to its robustness, the warhead has unrivaled penetration power. One case contains 30 rounds."
+    "ZHCN": "使用三元精金制作的弹药，这种强互作用力材料曾用于建造深空探测器“水滴”，其强度足以做出“锐角转弯”这种超级机动而不解体。得益于其坚固性，这种弹头有着无与伦比的穿透力。一个弹箱包含480发子弹。",
+    "ENUS": "Ammunition made of Ternary Adamantium, a strong interaction material used in the construction of the deep space probe \"Water Drop\", strong enough to perform super maneuvers such as the \"Sharp Angle Turn\" without disintegrating. Thanks to its robustness, the warhead has unrivaled penetration power. One case contains 480 rounds."
   },
   {
     "Name": "核子爆破单元",
@@ -2385,14 +2436,14 @@
     "ENUS": "The X-3 Gravedigger Heavy Leapfrog Missile, with an antimatter charge in the warhead and a built-in space warper as a propulsion system capable of locking onto a target at all times through successive short-range leaps. A missile group contains 24 missiles."
   },
   {
-    "Name": "湮灭弹药箱",
+    "Name": "湮灭弹箱",
     "ZHCN": "湮灭弹箱",
     "ENUS": "Annihilation Ammo Box"
   },
   {
-    "Name": "I湮灭弹药箱",
-    "ZHCN": "托马斯·维德兵工厂生产的超级弹药。一个弹箱包含30发子弹。",
-    "ENUS": "Superb ammunition produced by Thomas Vedder Arsenal. One cartridge box contains 30 rounds."
+    "Name": "I湮灭弹箱",
+    "ZHCN": "托马斯·维德兵工厂生产的超级弹药。一个弹箱包含960发子弹。",
+    "ENUS": "Superb ammunition produced by Thomas Vedder Arsenal. One cartridge box contains 960 rounds."
   },
   {
     "Name": "T钛化弹箱",
@@ -2576,8 +2627,8 @@
   },
   {
     "Name": "T护盾载波调制文字描述",
-    "ZHCN": "完全覆盖的行星护盾可作为行星电网",
-    "ENUS": "Fully covered planetary shield can serve as a planetary power grid"
+    "ZHCN": "完全填充的行星护盾可作为行星电网",
+    "ENUS": "Fully filled planetary shield can serve as a planetary power grid"
   },
   {
     "Name": "聚爆加农炮",

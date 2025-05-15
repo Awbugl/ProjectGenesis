@@ -104,7 +104,7 @@
     "IconPath": "",
     "Type": 10,
     "GridIndex": 5306,
-    "Time": 360,
+    "Time": 480,
     "Input": [
       7609,
       7611,
@@ -158,7 +158,7 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 2104,
-    "Time": 180,
+    "Time": 240,
     "Input": [
       6203,
       1101,
@@ -186,7 +186,7 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 2101,
-    "Time": 60,
+    "Time": 120,
     "Input": [
       1101,
       1202
@@ -212,7 +212,7 @@
     "IconPath": "",
     "Type": 15,
     "GridIndex": 1701,
-    "Time": 360,
+    "Time": 180,
     "Input": [
       1202,
       1301,
@@ -227,7 +227,7 @@
       6001
     ],
     "OutCounts": [
-      2
+      1
     ],
     "Explicit": false,
     "Handcraft": true,
@@ -320,7 +320,7 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 2102,
-    "Time": 180,
+    "Time": 240,
     "Input": [
       2201,
       1401
@@ -355,7 +355,7 @@
     ],
     "InCounts": [
       4,
-      12,
+      8,
       4,
       4
     ],
@@ -384,9 +384,9 @@
       1301
     ],
     "InCounts": [
+      2,
       4,
-      6,
-      4,
+      2,
       2
     ],
     "Output": [
@@ -414,8 +414,8 @@
       2
     ],
     "Output": [
-      1120,
-      1114
+      1114,
+      1120
     ],
     "OutCounts": [
       2,
@@ -456,7 +456,7 @@
     "IconPath": "",
     "Type": 15,
     "GridIndex": 1702,
-    "Time": 360,
+    "Time": 180,
     "Input": [
       1109,
       7006,
@@ -471,7 +471,7 @@
       6002
     ],
     "OutCounts": [
-      2
+      1
     ],
     "Explicit": false,
     "Handcraft": true,
@@ -670,7 +670,7 @@
     "IconPath": "",
     "Type": 1,
     "GridIndex": 1202,
-    "Time": 180,
+    "Time": 120,
     "Input": [
       1101,
       6203
@@ -696,7 +696,7 @@
     "IconPath": "",
     "Type": 15,
     "GridIndex": 1704,
-    "Time": 360,
+    "Time": 180,
     "Input": [
       1118,
       6204,
@@ -711,7 +711,7 @@
       6003
     ],
     "OutCounts": [
-      2
+      1
     ],
     "Explicit": false,
     "Handcraft": true,
@@ -780,7 +780,7 @@
     "IconPath": "",
     "Type": 9,
     "GridIndex": 1502,
-    "Time": 240,
+    "Time": 120,
     "Input": [
       1110,
       1106
@@ -882,7 +882,7 @@
     "IconPath": "",
     "Type": 2,
     "GridIndex": 1616,
-    "Time": 180,
+    "Time": 120,
     "Input": [
       1005,
       7020
@@ -984,7 +984,7 @@
     "IconPath": "",
     "Type": 10,
     "GridIndex": 1607,
-    "Time": 360,
+    "Time": 240,
     "Input": [
       1126,
       1119
@@ -1010,7 +1010,7 @@
     "IconPath": "",
     "Type": 10,
     "GridIndex": 2413,
-    "Time": 600,
+    "Time": 900,
     "Input": [
       6502,
       1107,
@@ -1068,7 +1068,7 @@
     "Input": [
       6509,
       1121,
-      7707
+      1107
     ],
     "InCounts": [
       1,
@@ -1092,7 +1092,7 @@
     "IconPath": "",
     "Type": 10,
     "GridIndex": 1614,
-    "Time": 720,
+    "Time": 480,
     "Input": [
       1125,
       1205,
@@ -1130,7 +1130,7 @@
     "InCounts": [
       20,
       20,
-      8,
+      10,
       1
     ],
     "Output": [
@@ -1236,7 +1236,7 @@
     "IconPath": "",
     "Type": 9,
     "GridIndex": 2403,
-    "Time": 360,
+    "Time": 480,
     "Input": [
       6502,
       1107,
@@ -1244,10 +1244,10 @@
       1303
     ],
     "InCounts": [
-      6,
-      10,
-      12,
-      6
+      4,
+      8,
+      8,
+      4
     ],
     "Output": [
       2305
@@ -1266,10 +1266,10 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 2411,
-    "Time": 180,
+    "Time": 240,
     "Input": [
       6501,
-      1101,
+      1202,
       1301
     ],
     "InCounts": [
@@ -1428,14 +1428,14 @@
     "Input": [
       6502,
       1107,
-      6208,
+      1108,
       2317,
       7805
     ],
     "InCounts": [
       60,
       180,
-      240,
+      180,
       6,
       4
     ],
@@ -1456,7 +1456,7 @@
     "IconPath": "",
     "Type": 15,
     "GridIndex": 1705,
-    "Time": 360,
+    "Time": 180,
     "Input": [
       1303,
       1402,
@@ -1471,7 +1471,7 @@
       6004
     ],
     "OutCounts": [
-      2
+      1
     ],
     "Explicit": false,
     "Handcraft": true,
@@ -1491,7 +1491,7 @@
       1202
     ],
     "InCounts": [
-      1,
+      2,
       2,
       2
     ],
@@ -1512,7 +1512,7 @@
     "IconPath": "",
     "Type": 5,
     "GridIndex": 1714,
-    "Time": 360,
+    "Time": 480,
     "Input": [
       6203,
       1106,
@@ -1544,12 +1544,10 @@
     "GridIndex": 4202,
     "Time": 120,
     "Input": [
-      1114,
-      1120
+      1114
     ],
     "InCounts": [
-      1,
-      2
+      1
     ],
     "Output": [
       1120,
@@ -1557,7 +1555,7 @@
     ],
     "OutCounts": [
       3,
-      1
+      3
     ],
     "Explicit": true,
     "Handcraft": false,
@@ -1666,7 +1664,7 @@
     "IconPath": "",
     "Type": 1,
     "GridIndex": 1201,
-    "Time": 180,
+    "Time": 120,
     "Input": [
       1101
     ],
@@ -1692,13 +1690,13 @@
     "GridIndex": 2105,
     "Time": 480,
     "Input": [
-      1103,
+      6501,
       1108,
       1203,
       1301
     ],
     "InCounts": [
-      10,
+      4,
       10,
       4,
       4
@@ -1744,7 +1742,7 @@
     "IconPath": "",
     "Type": 1,
     "GridIndex": 1203,
-    "Time": 180,
+    "Time": 120,
     "Input": [
       1103,
       1106,
@@ -1772,16 +1770,16 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 2106,
-    "Time": 180,
+    "Time": 240,
     "Input": [
       6203,
       1105,
       1301
     ],
     "InCounts": [
-      10,
-      10,
-      5
+      8,
+      8,
+      4
     ],
     "Output": [
       2205
@@ -1867,7 +1865,7 @@
       1501
     ],
     "OutCounts": [
-      8
+      1
     ],
     "Explicit": false,
     "Handcraft": false,
@@ -1878,20 +1876,18 @@
     "Name": "电磁轨道弹射器",
     "Description": "",
     "IconPath": "",
-    "Type": 10,
+    "Type": 9,
     "GridIndex": 2315,
-    "Time": 360,
+    "Time": 480,
     "Input": [
       6502,
       1107,
-      1205,
-      1305
+      1205
     ],
     "InCounts": [
-      20,
-      20,
-      20,
-      4
+      4,
+      10,
+      20
     ],
     "Output": [
       2311
@@ -1908,20 +1904,22 @@
     "Name": "射线接收站",
     "Description": "",
     "IconPath": "",
-    "Type": 10,
+    "Type": 9,
     "GridIndex": 2110,
-    "Time": 360,
+    "Time": 480,
     "Input": [
-      6503,
-      7707,
+      6502,
+      1107,
+      1113,
       1404,
-      7803
+      1205
     ],
     "InCounts": [
-      2,
-      10,
+      4,
       8,
-      2
+      8,
+      8,
+      20
     ],
     "Output": [
       2208
@@ -1994,14 +1992,14 @@
     "IconPath": "",
     "Type": 15,
     "GridIndex": 1709,
-    "Time": 360,
+    "Time": 180,
     "Input": [
       6280,
       1120,
       1122
     ],
     "InCounts": [
-      2,
+      1,
       1,
       1
     ],
@@ -2009,7 +2007,7 @@
       6006
     ],
     "OutCounts": [
-      2
+      1
     ],
     "Explicit": false,
     "Handcraft": false,
@@ -2050,10 +2048,10 @@
     "IconPath": "",
     "Type": 9,
     "GridIndex": 2314,
-    "Time": 360,
+    "Time": 480,
     "Input": [
       6502,
-      6208,
+      1107,
       1206,
       1303
     ],
@@ -2156,7 +2154,7 @@
     "IconPath": "",
     "Type": 9,
     "GridIndex": 1712,
-    "Time": 360,
+    "Time": 240,
     "Input": [
       1125,
       1303,
@@ -2218,12 +2216,12 @@
     "Input": [
       1502,
       1305,
-      1802
+      6245
     ],
     "InCounts": [
       4,
       2,
-      2
+      1
     ],
     "Output": [
       1503
@@ -2480,12 +2478,12 @@
     "Input": [
       6502,
       1107,
-      6208
+      1206
     ],
     "InCounts": [
-      5,
+      10,
       40,
-      20
+      10
     ],
     "Output": [
       2103
@@ -2504,7 +2502,7 @@
     "IconPath": "",
     "Type": 9,
     "GridIndex": 1310,
-    "Time": 600,
+    "Time": 480,
     "Input": [
       6203,
       1405
@@ -2564,7 +2562,7 @@
       1406
     ],
     "InCounts": [
-      8,
+      10,
       2
     ],
     "Output": [
@@ -2716,7 +2714,7 @@
     "IconPath": "",
     "Type": 15,
     "GridIndex": 1707,
-    "Time": 360,
+    "Time": 180,
     "Input": [
       1209,
       1305,
@@ -2731,7 +2729,7 @@
       6005
     ],
     "OutCounts": [
-      2
+      1
     ],
     "Explicit": false,
     "Handcraft": true,
@@ -2770,7 +2768,7 @@
     "IconPath": "",
     "Type": 5,
     "GridIndex": 1605,
-    "Time": 360,
+    "Time": 480,
     "Input": [
       1206,
       1101,
@@ -2819,17 +2817,19 @@
   },
   {
     "ID": 106,
-    "Name": "氦三",
-    "Description": "",
+    "Name": "氦核转化",
+    "Description": "R氦核转化",
     "IconPath": "",
     "Type": 5,
     "GridIndex": 1214,
-    "Time": 240,
+    "Time": 60,
     "Input": [
-      6234
+      6234,
+      1120
     ],
     "InCounts": [
-      4
+      1,
+      1
     ],
     "Output": [
       6235
@@ -2837,29 +2837,29 @@
     "OutCounts": [
       1
     ],
-    "Explicit": false,
+    "Explicit": true,
     "Handcraft": false,
-    "NonProductive": false
+    "NonProductive": true
   },
   {
     "ID": 107,
     "Name": "氦原子提取",
     "Description": "R氦原子提取",
     "IconPath": "",
-    "Type": 2,
+    "Type": 16,
     "GridIndex": 1213,
-    "Time": 60,
+    "Time": 120,
     "Input": [
       1014
     ],
     "InCounts": [
-      2
+      1
     ],
     "Output": [
       6234
     ],
     "OutCounts": [
-      1
+      2
     ],
     "Explicit": true,
     "Handcraft": false,
@@ -2903,7 +2903,7 @@
     "Time": 240,
     "Input": [
       6502,
-      6208,
+      1107,
       1119,
       1305
     ],
@@ -2940,7 +2940,7 @@
     "InCounts": [
       20,
       20,
-      8,
+      10,
       1
     ],
     "Output": [
@@ -2987,7 +2987,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 1207,
+    "GridIndex": 1206,
     "Time": 60,
     "Input": [
       1108,
@@ -3018,7 +3018,7 @@
     "Input": [
       6501,
       6204,
-      6208,
+      1108,
       1205,
       1303
     ],
@@ -3026,7 +3026,7 @@
       10,
       30,
       20,
-      16,
+      10,
       4
     ],
     "Output": [
@@ -3074,15 +3074,15 @@
     "IconPath": "",
     "Type": 10,
     "GridIndex": 1604,
-    "Time": 900,
+    "Time": 240,
     "Input": [
-      7707,
+      1107,
       1205,
-      1305
+      1303
     ],
     "InCounts": [
-      4,
-      4,
+      2,
+      2,
       1
     ],
     "Output": [
@@ -3156,7 +3156,7 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 2108,
-    "Time": 360,
+    "Time": 480,
     "Input": [
       1103,
       1107,
@@ -3186,16 +3186,16 @@
     "IconPath": "",
     "Type": 10,
     "GridIndex": 2412,
-    "Time": 600,
+    "Time": 900,
     "Input": [
       6503,
-      1107,
+      7707,
       7706,
       7803
     ],
     "InCounts": [
       20,
-      60,
+      40,
       20,
       10
     ],
@@ -3218,8 +3218,8 @@
     "GridIndex": 2205,
     "Time": 240,
     "Input": [
-      6502,
-      1205
+      6501,
+      1204
     ],
     "InCounts": [
       2,
@@ -3322,18 +3322,18 @@
     "IconPath": "",
     "Type": 9,
     "GridIndex": 2410,
-    "Time": 600,
+    "Time": 480,
     "Input": [
       6502,
-      1119,
       1107,
+      1119,
       1303
     ],
     "InCounts": [
       2,
       12,
       12,
-      6
+      4
     ],
     "Output": [
       2317
@@ -3384,7 +3384,7 @@
     "Input": [
       6501,
       1101,
-      1401
+      1404
     ],
     "InCounts": [
       2,
@@ -3408,7 +3408,7 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 5204,
-    "Time": 360,
+    "Time": 480,
     "Input": [
       6501,
       1103,
@@ -3419,7 +3419,7 @@
       2,
       8,
       4,
-      2
+      8
     ],
     "Output": [
       3003
@@ -3438,7 +3438,7 @@
     "IconPath": "",
     "Type": 10,
     "GridIndex": 5208,
-    "Time": 600,
+    "Time": 720,
     "Input": [
       6502,
       1107,
@@ -3448,10 +3448,10 @@
     ],
     "InCounts": [
       4,
-      10,
-      8,
-      8,
-      4
+      16,
+      16,
+      16,
+      8
     ],
     "Output": [
       3004
@@ -3470,7 +3470,7 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 5206,
-    "Time": 360,
+    "Time": 480,
     "Input": [
       6501,
       1103,
@@ -3500,7 +3500,7 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 5212,
-    "Time": 300,
+    "Time": 480,
     "Input": [
       6501,
       1103,
@@ -3530,14 +3530,16 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 5210,
-    "Time": 360,
+    "Time": 480,
     "Input": [
+      6501,
       2202,
       1103,
       1302
     ],
     "InCounts": [
       2,
+      1,
       12,
       2
     ],
@@ -3558,7 +3560,7 @@
     "IconPath": "",
     "Type": 10,
     "GridIndex": 5211,
-    "Time": 600,
+    "Time": 720,
     "Input": [
       6502,
       1107,
@@ -3567,8 +3569,8 @@
     ],
     "InCounts": [
       2,
+      8,
       12,
-      6,
       4
     ],
     "Output": [
@@ -3588,12 +3590,12 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 5401,
-    "Time": 180,
+    "Time": 240,
     "Input": [
       6256
     ],
     "InCounts": [
-      6
+      8
     ],
     "Output": [
       1128
@@ -3612,7 +3614,7 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 5402,
-    "Time": 180,
+    "Time": 240,
     "Input": [
       1128,
       6212
@@ -3638,7 +3640,7 @@
     "IconPath": "",
     "Type": 9,
     "GridIndex": 5403,
-    "Time": 180,
+    "Time": 240,
     "Input": [
       1129,
       6242,
@@ -3666,7 +3668,7 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 5301,
-    "Time": 60,
+    "Time": 120,
     "Input": [
       1104
     ],
@@ -3690,7 +3692,7 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 0,
-    "Time": 60,
+    "Time": 120,
     "Input": [
       1601,
       1106
@@ -3716,7 +3718,7 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 5303,
-    "Time": 60,
+    "Time": 120,
     "Input": [
       7607,
       1107
@@ -3742,7 +3744,7 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 5501,
-    "Time": 60,
+    "Time": 240,
     "Input": [
       1101,
       1128
@@ -3768,15 +3770,15 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 5502,
-    "Time": 120,
+    "Time": 240,
     "Input": [
       1604,
-      6203,
+      1106,
       1129
     ],
     "InCounts": [
       1,
-      2,
+      4,
       2
     ],
     "Output": [
@@ -3804,7 +3806,7 @@
     ],
     "InCounts": [
       1,
-      2,
+      4,
       2
     ],
     "Output": [
@@ -3824,7 +3826,7 @@
     "IconPath": "",
     "Type": 9,
     "GridIndex": 5703,
-    "Time": 120,
+    "Time": 240,
     "Input": [
       1123,
       1202,
@@ -3852,7 +3854,7 @@
     "IconPath": "",
     "Type": 10,
     "GridIndex": 5704,
-    "Time": 360,
+    "Time": 480,
     "Input": [
       1120,
       1122,
@@ -3880,7 +3882,7 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 5601,
-    "Time": 120,
+    "Time": 240,
     "Input": [
       6203,
       1128,
@@ -3910,15 +3912,17 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 5602,
-    "Time": 120,
+    "Time": 240,
     "Input": [
       1609,
       1129,
+      1302,
       1405
     ],
     "InCounts": [
       1,
       2,
+      1,
       1
     ],
     "Output": [
@@ -3938,15 +3942,17 @@
     "IconPath": "",
     "Type": 9,
     "GridIndex": 5603,
-    "Time": 120,
+    "Time": 240,
     "Input": [
       1610,
       7610,
+      1303,
       1127
     ],
     "InCounts": [
       1,
       2,
+      1,
       1
     ],
     "Output": [
@@ -3966,7 +3972,7 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 5101,
-    "Time": 120,
+    "Time": 240,
     "Input": [
       1101,
       1407,
@@ -4056,7 +4062,7 @@
     "IconPath": "",
     "Type": 10,
     "GridIndex": 5104,
-    "Time": 360,
+    "Time": 480,
     "Input": [
       1107,
       1405,
@@ -4086,7 +4092,7 @@
     "IconPath": "",
     "Type": 10,
     "GridIndex": 5105,
-    "Time": 720,
+    "Time": 900,
     "Input": [
       7707,
       1406,
@@ -4116,18 +4122,18 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 5209,
-    "Time": 360,
+    "Time": 480,
     "Input": [
       6501,
       6204,
-      1301,
+      1302,
       1407
     ],
     "InCounts": [
       4,
-      4,
-      4,
-      4
+      8,
+      8,
+      12
     ],
     "Output": [
       3009
@@ -4149,15 +4155,17 @@
     "Time": 1800,
     "Input": [
       6503,
+      6271,
       5202,
       5201,
       7803
     ],
     "InCounts": [
-      4,
+      10,
+      10,
       10,
       20,
-      2
+      5
     ],
     "Output": [
       2902
@@ -4179,15 +4187,17 @@
     "Time": 1800,
     "Input": [
       6503,
+      6271,
       5203,
       5206,
-      1305
+      7803
     ],
     "InCounts": [
-      8,
-      30,
-      30,
-      6
+      10,
+      10,
+      20,
+      40,
+      5
     ],
     "Output": [
       2318
@@ -4266,7 +4276,7 @@
     "IconPath": "",
     "Type": 9,
     "GridIndex": 5207,
-    "Time": 600,
+    "Time": 720,
     "Input": [
       6502,
       1107,
@@ -4298,7 +4308,7 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 5701,
-    "Time": 120,
+    "Time": 240,
     "Input": [
       1204,
       1401,
@@ -4326,7 +4336,7 @@
     "IconPath": "",
     "Type": 9,
     "GridIndex": 5702,
-    "Time": 240,
+    "Time": 480,
     "Input": [
       1612,
       1205,
@@ -4354,7 +4364,7 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 2304,
-    "Time": 60,
+    "Time": 120,
     "Input": [
       2013,
       1303
@@ -4387,7 +4397,7 @@
     ],
     "InCounts": [
       4,
-      4
+      2
     ],
     "Output": [
       6225,
@@ -4702,36 +4712,6 @@
     "NonProductive": false
   },
   {
-    "ID": 415,
-    "Name": "混凝土",
-    "Description": "",
-    "IconPath": "",
-    "Type": 4,
-    "GridIndex": 1206,
-    "Time": 120,
-    "Input": [
-      1103,
-      6251,
-      6256,
-      1000
-    ],
-    "InCounts": [
-      2,
-      4,
-      1,
-      2
-    ],
-    "Output": [
-      6208
-    ],
-    "OutCounts": [
-      2
-    ],
-    "Explicit": false,
-    "Handcraft": false,
-    "NonProductive": false
-  },
-  {
     "ID": 416,
     "Name": "天穹装配厂",
     "Description": "",
@@ -4742,14 +4722,14 @@
     "Input": [
       6502,
       1107,
-      6208,
+      1108,
       2304,
       7805
     ],
     "InCounts": [
       60,
       180,
-      240,
+      180,
       12,
       4
     ],
@@ -4774,14 +4754,14 @@
     "Input": [
       6503,
       7707,
-      6208,
+      1108,
       2310,
       7806
     ],
     "InCounts": [
       30,
       60,
-      360,
+      240,
       6,
       4
     ],
@@ -4802,16 +4782,16 @@
     "IconPath": "",
     "Type": 10,
     "GridIndex": 2309,
-    "Time": 600,
+    "Time": 900,
     "Input": [
       6503,
-      1107,
+      7707,
       7706,
       1305
     ],
     "InCounts": [
       10,
-      30,
+      20,
       10,
       10
     ],
@@ -4832,11 +4812,11 @@
     "IconPath": "",
     "Type": 9,
     "GridIndex": 2214,
-    "Time": 600,
+    "Time": 900,
     "Input": [
       6501,
       6204,
-      6208,
+      1108,
       1205
     ],
     "InCounts": [
@@ -4914,14 +4894,14 @@
     "Input": [
       6503,
       7707,
-      6208,
+      1108,
       2305,
       7806
     ],
     "InCounts": [
       30,
       60,
-      360,
+      240,
       12,
       4
     ],
@@ -4942,11 +4922,11 @@
     "IconPath": "",
     "Type": 10,
     "GridIndex": 2505,
-    "Time": 7200,
+    "Time": 10800,
     "Input": [
       6502,
       1107,
-      6208,
+      1108,
       5203,
       7805
     ],
@@ -4973,7 +4953,7 @@
     "Description": "R物质回收",
     "IconPath": "Assets/texpack/沙土回收_新",
     "Type": 14,
-    "GridIndex": 1208,
+    "GridIndex": 1207,
     "Time": 6000,
     "Input": [],
     "InCounts": [],
@@ -4991,7 +4971,7 @@
     "ID": 501,
     "Name": "焦油裂化",
     "Description": "R焦油裂化",
-    "IconPath": "",
+    "IconPath": "Assets/texpack/精炼油-丙烯",
     "Type": 3,
     "GridIndex": 4205,
     "Time": 120,
@@ -5018,7 +4998,7 @@
     "IconPath": "",
     "Type": 2,
     "GridIndex": 4301,
-    "Time": 60,
+    "Time": 120,
     "Input": [
       1109,
       7019
@@ -5044,7 +5024,7 @@
     "IconPath": "Assets/texpack/氯苯循环",
     "Type": 2,
     "GridIndex": 4303,
-    "Time": 180,
+    "Time": 240,
     "Input": [
       7009
     ],
@@ -5182,12 +5162,12 @@
     "Input": [
       1107,
       1124,
-      1305,
-      7706
+      7706,
+      1305
     ],
     "InCounts": [
-      16,
-      8,
+      20,
+      10,
       4,
       4
     ],
@@ -5208,14 +5188,16 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 2406,
-    "Time": 180,
+    "Time": 240,
     "Input": [
       6501,
-      1103
+      1103,
+      1401
     ],
     "InCounts": [
-      3,
-      6
+      2,
+      4,
+      2
     ],
     "Output": [
       6230
@@ -5234,18 +5216,20 @@
     "IconPath": "",
     "Type": 10,
     "GridIndex": 2307,
-    "Time": 2400,
+    "Time": 3600,
     "Input": [
+      6503,
       6271,
       1016,
       5204,
-      7805
+      7806
     ],
     "InCounts": [
-      60,
       20,
-      10,
-      2
+      60,
+      40,
+      80,
+      1
     ],
     "Output": [
       6231
@@ -5427,27 +5411,27 @@
   },
   {
     "ID": 539,
-    "Name": "通量矩阵",
+    "Name": "玻色矩阵",
     "Description": "",
     "IconPath": "",
     "Type": 15,
     "GridIndex": 1703,
-    "Time": 360,
+    "Time": 180,
     "Input": [
       6001,
       6002,
       1302
     ],
     "InCounts": [
-      2,
-      2,
+      1,
+      1,
       1
     ],
     "Output": [
       6278
     ],
     "OutCounts": [
-      2
+      1
     ],
     "Explicit": false,
     "Handcraft": true,
@@ -5455,27 +5439,27 @@
   },
   {
     "ID": 540,
-    "Name": "张量矩阵",
+    "Name": "耗散矩阵",
     "Description": "",
     "IconPath": "",
     "Type": 15,
     "GridIndex": 1706,
-    "Time": 360,
+    "Time": 180,
     "Input": [
       6003,
       6004,
       1206
     ],
     "InCounts": [
-      2,
-      2,
+      1,
+      1,
       1
     ],
     "Output": [
       6279
     ],
     "OutCounts": [
-      2
+      1
     ],
     "Explicit": false,
     "Handcraft": true,
@@ -5516,14 +5500,14 @@
     "Input": [
       6502,
       1107,
-      6208,
+      1108,
       2315,
       7805
     ],
     "InCounts": [
       60,
       180,
-      240,
+      180,
       6,
       4
     ],
@@ -5572,7 +5556,7 @@
     "IconPath": "Icons/ItemRecipe/crystal-rubber-lv0",
     "Type": 2,
     "GridIndex": 1217,
-    "Time": 360,
+    "Time": 480,
     "Input": [
       1030,
       1031,
@@ -5600,7 +5584,7 @@
     "IconPath": "Assets/texpack/能量碎片制作",
     "Type": 5,
     "GridIndex": 1314,
-    "Time": 180,
+    "Time": 120,
     "Input": [
       1208
     ],
@@ -5611,7 +5595,7 @@
       5206
     ],
     "OutCounts": [
-      4
+      8
     ],
     "Explicit": true,
     "Handcraft": false,
@@ -5652,22 +5636,22 @@
     "IconPath": "Assets/texpack/高效黑塑料",
     "Type": 16,
     "GridIndex": 4105,
-    "Time": 360,
+    "Time": 60,
     "Input": [
       1117,
-      6222,
       5206
     ],
     "InCounts": [
-      2,
-      2,
+      8,
       4
     ],
     "Output": [
-      7709
+      7709,
+      1114
     ],
     "OutCounts": [
-      1
+      1,
+      2
     ],
     "Explicit": true,
     "Handcraft": false,
@@ -5704,14 +5688,14 @@
     "IconPath": "",
     "Type": 10,
     "GridIndex": 1613,
-    "Time": 1800,
+    "Time": 1200,
     "Input": [
       7707,
       7804,
       7803
     ],
     "InCounts": [
-      25,
+      20,
       10,
       10
     ],
@@ -5844,7 +5828,7 @@
     "IconPath": "",
     "Type": 10,
     "GridIndex": 1403,
-    "Time": 360,
+    "Time": 480,
     "Input": [
       6502,
       7705,
@@ -5874,12 +5858,10 @@
     "GridIndex": 1306,
     "Time": 120,
     "Input": [
-      6203,
-      1110
+      1103
     ],
     "InCounts": [
-      1,
-      1
+      2
     ],
     "Output": [
       6509
@@ -5898,20 +5880,20 @@
     "IconPath": "Assets/texpack/电解水_新",
     "Type": 2,
     "GridIndex": 4706,
-    "Time": 60,
+    "Time": 240,
     "Input": [
       1000
     ],
     "InCounts": [
-      1
+      3
     ],
     "Output": [
       1120,
       7019
     ],
     "OutCounts": [
-      2,
-      1
+      6,
+      3
     ],
     "Explicit": true,
     "Handcraft": false,
@@ -5923,8 +5905,8 @@
     "Description": "R盐水电解",
     "IconPath": "",
     "Type": 2,
-    "GridIndex": 4502,
-    "Time": 60,
+    "GridIndex": 4503,
+    "Time": 120,
     "Input": [
       1000,
       7101
@@ -5946,13 +5928,39 @@
     "NonProductive": false
   },
   {
+    "ID": 704,
+    "Name": "钠盐转化",
+    "Description": "R钠盐转化",
+    "IconPath": "",
+    "Type": 2,
+    "GridIndex": 4501,
+    "Time": 120,
+    "Input": [
+      6251,
+      7014
+    ],
+    "InCounts": [
+      2,
+      1
+    ],
+    "Output": [
+      7101
+    ],
+    "OutCounts": [
+      1
+    ],
+    "Explicit": true,
+    "Handcraft": false,
+    "NonProductive": false
+  },
+  {
     "ID": 709,
     "Name": "钛晶石（高效）",
     "Description": "R钛晶石（高效）",
     "IconPath": "Assets/texpack/高效钛晶石",
     "Type": 4,
     "GridIndex": 1508,
-    "Time": 180,
+    "Time": 120,
     "Input": [
       1106,
       1117
@@ -5999,17 +6007,19 @@
   },
   {
     "ID": 712,
-    "Name": "煤炭干馏",
-    "Description": "R煤炭干馏",
-    "IconPath": "Assets/texpack/焦油循环",
+    "Name": "煤炭液化",
+    "Description": "R煤炭液化",
+    "IconPath": "Icons/ItemRecipe/reforming-refine",
     "Type": 3,
     "GridIndex": 4203,
-    "Time": 180,
+    "Time": 240,
     "Input": [
-      1006
+      1006,
+      1120
     ],
     "InCounts": [
-      6
+      3,
+      3
     ],
     "Output": [
       1114
@@ -6025,7 +6035,7 @@
     "ID": 713,
     "Name": "焦油分馏",
     "Description": "R焦油分馏",
-    "IconPath": "",
+    "IconPath": "Assets/texpack/精炼油-苯",
     "Type": 3,
     "GridIndex": 4204,
     "Time": 120,
@@ -6052,7 +6062,7 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 1408,
-    "Time": 180,
+    "Time": 120,
     "Input": [
       1106,
       7708
@@ -6078,7 +6088,7 @@
     "IconPath": "",
     "Type": 2,
     "GridIndex": 4504,
-    "Time": 180,
+    "Time": 240,
     "Input": [
       7014,
       1101,
@@ -6136,22 +6146,22 @@
     "IconPath": "Assets/texpack/丙烯循环",
     "Type": 2,
     "GridIndex": 4302,
-    "Time": 120,
+    "Time": 240,
     "Input": [
       6206,
-      1120
+      1000
     ],
     "InCounts": [
       3,
-      18
+      3
     ],
     "Output": [
       7009,
-      1000
+      7019
     ],
     "OutCounts": [
       1,
-      6
+      9
     ],
     "Explicit": true,
     "Handcraft": false,
@@ -6190,7 +6200,7 @@
     "IconPath": "",
     "Type": 9,
     "GridIndex": 2113,
-    "Time": 360,
+    "Time": 480,
     "Input": [
       1104,
       6203,
@@ -6300,7 +6310,7 @@
     "IconPath": "",
     "Type": 2,
     "GridIndex": 1515,
-    "Time": 180,
+    "Time": 240,
     "Input": [
       1004,
       7017
@@ -6376,7 +6386,7 @@
     "IconPath": "",
     "Type": 1,
     "GridIndex": 1204,
-    "Time": 180,
+    "Time": 120,
     "Input": [
       1107,
       7705,
@@ -6404,7 +6414,7 @@
     "IconPath": "",
     "Type": 4,
     "GridIndex": 5302,
-    "Time": 60,
+    "Time": 120,
     "Input": [
       1601,
       1103
@@ -6428,9 +6438,9 @@
     "Name": "钨芯弹箱",
     "Description": "",
     "IconPath": "",
-    "Type": 4,
+    "Type": 9,
     "GridIndex": 5304,
-    "Time": 60,
+    "Time": 120,
     "Input": [
       1603,
       7707
@@ -6454,9 +6464,9 @@
     "Name": "三元弹箱",
     "Description": "",
     "IconPath": "",
-    "Type": 4,
+    "Type": 9,
     "GridIndex": 5305,
-    "Time": 60,
+    "Time": 240,
     "Input": [
       7608,
       6271
@@ -6482,7 +6492,7 @@
     "IconPath": "",
     "Type": 10,
     "GridIndex": 5404,
-    "Time": 180,
+    "Time": 240,
     "Input": [
       7610,
       1122,
@@ -6512,7 +6522,7 @@
     "IconPath": "",
     "Type": 10,
     "GridIndex": 5504,
-    "Time": 480,
+    "Time": 240,
     "Input": [
       7612,
       6271,
@@ -6520,7 +6530,7 @@
     ],
     "InCounts": [
       1,
-      1,
+      4,
       2
     ],
     "Output": [
@@ -6540,15 +6550,17 @@
     "IconPath": "",
     "Type": 10,
     "GridIndex": 5604,
-    "Time": 120,
+    "Time": 240,
     "Input": [
       1611,
       7611,
+      1406,
       1210
     ],
     "InCounts": [
       1,
       2,
+      1,
       1
     ],
     "Output": [
@@ -6579,7 +6591,7 @@
       2,
       8,
       4,
-      2
+      8
     ],
     "Output": [
       7617
@@ -6598,7 +6610,7 @@
     "IconPath": "",
     "Type": 9,
     "GridIndex": 5203,
-    "Time": 480,
+    "Time": 720,
     "Input": [
       6502,
       1107,
@@ -6626,7 +6638,7 @@
     "IconPath": "",
     "Type": 10,
     "GridIndex": 1612,
-    "Time": 360,
+    "Time": 240,
     "Input": [
       7504,
       1106,
@@ -6680,14 +6692,14 @@
     "IconPath": "",
     "Type": 10,
     "GridIndex": 1610,
-    "Time": 1800,
+    "Time": 1200,
     "Input": [
       1107,
       1402,
       1305
     ],
     "InCounts": [
-      25,
+      20,
       10,
       10
     ],
@@ -6707,20 +6719,20 @@
     "Description": "R海水淡化",
     "IconPath": "",
     "Type": 2,
-    "GridIndex": 4501,
-    "Time": 180,
+    "GridIndex": 4502,
+    "Time": 120,
     "Input": [
       7018
     ],
     "InCounts": [
-      4
+      3
     ],
     "Output": [
       1000,
       7101
     ],
     "OutCounts": [
-      4,
+      3,
       1
     ],
     "Explicit": true,

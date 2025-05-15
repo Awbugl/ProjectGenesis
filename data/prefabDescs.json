@@ -73,7 +73,7 @@
   {
     "ModelID": 54,
     "genEnergyPerTick": 200000,
-    "useFuelPerTick": 250000
+    "useFuelPerTick": 200000
   },
   {
     "ModelID": 55,
@@ -118,7 +118,7 @@
   },
   {
     "ModelID": 63,
-    "assemblerSpeed": 40000
+    "assemblerSpeed": 20000
   },
   {
     "ModelID": 64,
@@ -153,7 +153,8 @@
   },
   {
     "ModelID": 69,
-    "assemblerSpeed": 40000
+    "assemblerSpeed": 40000,
+    "workEnergyPerTick": 40000
   },
   {
     "ModelID": 70,
@@ -167,8 +168,12 @@
   },
   {
     "ModelID": 72,
-    "ejectorChargeFrame": 80,
-    "ejectorColdFrame": 40
+    "ejectorChargeFrame": 40,
+    "ejectorColdFrame": 20
+  },
+  {
+    "ModelID": 73,
+    "genEnergyPerTick": 1000000
   },
   {
     "ModelID": 74,
@@ -208,8 +213,35 @@
     "enemyGenMatter": 360
   },
   {
+    "ModelID": 293,
+    "enemySpMax": 1200
+  },
+  {
+    "ModelID": 294,
+    "enemySpMax": 1500
+  },
+  {
+    "ModelID": 295,
+    "enemySpMax": 1500
+  },
+  {
+    "ModelID": 300,
+    "unitAttackDamage0": 2250,
+    "unitAttackDamageInc0": 375
+  },
+  {
+    "ModelID": 301,
+    "unitAttackDamage0": 1620,
+    "unitAttackDamageInc0": 180
+  },
+  {
+    "ModelID": 302,
+    "unitAttackDamage0": 4800,
+    "unitAttackDamageInc0": 600
+  },
+  {
     "ModelID": 373,
-    "turretDamageScale": 3,
+    "turretDamageScale": 2,
     "turretMaxAttackRange": 25
   },
   {
@@ -234,13 +266,17 @@
     "turretSpaceAttackRange": 10500
   },
   {
+    "ModelID": 422,
+    "turretMaxAttackRange": 60
+  },
+  {
     "ModelID": 434,
     "AmmoBlastRadius1": 15
   },
   {
     "ModelID": 455,
-    "labAssembleSpeed": 120000,
-    "labResearchSpeed": 3
+    "labAssembleSpeed": 80000,
+    "labResearchSpeed": 4
   },
   {
     "ModelID": 456,
@@ -326,6 +362,7 @@
     "ModelID": 807,
     "genEnergyPerTick": 25000000,
     "useFuelPerTick": 25000000,
+    "subId": 12,
     "fuelMask": 4
   },
   {

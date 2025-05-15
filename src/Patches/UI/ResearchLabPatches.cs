@@ -10,7 +10,7 @@ using Object = UnityEngine.Object;
 
 // ReSharper disable InconsistentNaming
 
-namespace ProjectGenesis.Patches.UI
+namespace ProjectGenesis.Patches
 {
     public static class ResearchLabPatches
     {
@@ -342,12 +342,12 @@ namespace ProjectGenesis.Patches.UI
             {
                 switch (item)
                 {
-                    case ProtoID.I通量矩阵:
+                    case ProtoID.I玻色矩阵:
                         labMatrixEffect.techMatUse[0] = true;
                         labMatrixEffect.techMatUse[1] = true;
                         break;
 
-                    case ProtoID.I张量矩阵:
+                    case ProtoID.I耗散矩阵:
                         labMatrixEffect.techMatUse[2] = true;
                         labMatrixEffect.techMatUse[3] = true;
                         break;
@@ -374,8 +374,8 @@ namespace ProjectGenesis.Patches.UI
         {
             switch (itemId)
             {
-                case ProtoID.I通量矩阵: return 6007;
-                case ProtoID.I张量矩阵: return 6008;
+                case ProtoID.I玻色矩阵: return 6007;
+                case ProtoID.I耗散矩阵: return 6008;
                 case ProtoID.I奇点矩阵: return 6009;
                 default: return itemId;
             }
@@ -385,11 +385,11 @@ namespace ProjectGenesis.Patches.UI
         {
             switch (num2)
             {
-                case 6: //ProtoID.I通量矩阵:
+                case 6: //ProtoID.I玻色矩阵:
                     index1 |= 3;
                     break;
 
-                case 7: //ProtoID.I张量矩阵:
+                case 7: //ProtoID.I耗散矩阵:
                     index1 |= 12;
                     break;
 
@@ -407,33 +407,41 @@ namespace ProjectGenesis.Patches.UI
         {
             var matcher = new CodeMatcher(instructions);
 
-            matcher.MatchForward(true, new CodeMatch(OpCodes.Ldarg_0),
-                new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(LabComponent), nameof(LabComponent.needs))),
-                new CodeMatch(OpCodes.Ldc_I4_5), new CodeMatch(OpCodes.Ldelem_I4));
-
+            matcher.MatchForward(true, new CodeMatch(OpCodes.Ldc_I4, 6006));
             object leaveLabel = matcher.Advance(1).Operand;
 
-            matcher.Start().MatchForward(false, new CodeMatch(OpCodes.Ldarg_0),
+            matcher.Start().MatchForward(false,
+                new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(LabComponent), nameof(LabComponent.nextLabId))),
+                new CodeMatch(OpCodes.Ldelema),
                 new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(LabComponent), nameof(LabComponent.needs))),
                 new CodeMatch(OpCodes.Ldc_I4_0), new CodeMatch(OpCodes.Ldelem_I4));
 
-            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0), new CodeInstruction(OpCodes.Ldarg_1),
+            matcher.InsertAndAdvance(
                 new CodeInstruction(OpCodes.Call,
                     AccessTools.Method(typeof(ResearchLabPatches), nameof(LabComponent_UpdateOutputToNext_Patch_Method))),
                 new CodeInstruction(OpCodes.Br, leaveLabel));
 
+            matcher.SetInstructionAndAdvance(new CodeInstruction(OpCodes.Nop)).SetInstructionAndAdvance(new CodeInstruction(OpCodes.Nop))
+               .SetInstructionAndAdvance(new CodeInstruction(OpCodes.Nop)).SetInstructionAndAdvance(new CodeInstruction(OpCodes.Nop))
+               .SetInstructionAndAdvance(new CodeInstruction(OpCodes.Nop)).SetInstructionAndAdvance(new CodeInstruction(OpCodes.Nop))
+               .SetInstructionAndAdvance(new CodeInstruction(OpCodes.Nop));
+
             return matcher.InstructionEnumeration();
         }
 
-        public static void LabComponent_UpdateOutputToNext_Patch_Method(ref LabComponent labComponent, LabComponent[] labPool)
+        public static void LabComponent_UpdateOutputToNext_Patch_Method(LabComponent[] labPool, ref LabComponent labComponent)
         {
+            ref LabComponent next = ref labPool[labComponent.nextLabId];
+
             for (var i = 0; i < LabComponent.matrixIds.Length; i++)
             {
-                if (labComponent.matrixServed[i] >= 3600 && labPool[labComponent.nextLabId].matrixServed[i] < 36000)
+                if (labComponent.matrixServed[i] >= 7200 && next.matrixServed[i] < 36000)
                 {
-                    int num = labComponent.split_inc(ref labComponent.matrixServed[i], ref labComponent.matrixIncServed[i], 3600);
-                    labPool[labComponent.nextLabId].matrixIncServed[i] += num;
-                    labPool[labComponent.nextLabId].matrixServed[i] += 3600;
+                    int p = (labComponent.matrixServed[i] - 7200) / 3600 * 3600;
+                    if (p > 36000) p = 36000;
+                    int num = labComponent.split_inc(ref labComponent.matrixServed[i], ref labComponent.matrixIncServed[i], p);
+                    next.matrixIncServed[i] += num;
+                    next.matrixServed[i] += p;
                 }
             }
         }
@@ -459,12 +467,12 @@ namespace ProjectGenesis.Patches.UI
 
                 switch (item)
                 {
-                    case ProtoID.I通量矩阵:
+                    case ProtoID.I玻色矩阵:
                         AddCount(ProtoID.I电磁矩阵, num);
                         AddCount(ProtoID.I能量矩阵, num);
                         break;
 
-                    case ProtoID.I张量矩阵:
+                    case ProtoID.I耗散矩阵:
                         AddCount(ProtoID.I结构矩阵, num);
                         AddCount(ProtoID.I信息矩阵, num);
                         break;

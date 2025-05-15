@@ -365,9 +365,9 @@
     "ENUS": "Interstellar Assembler (Mega Structure)"
   },
   {
-    "Name": "精炼页面",
-    "ZHCN": "精炼",
-    "ENUS": "Refining"
+    "Name": "工艺页面",
+    "ZHCN": "工艺",
+    "ENUS": "Craft"
   },
   {
     "Name": "化工页面",
@@ -470,6 +470,11 @@
     "ENUS": "Multi Chemical"
   },
   {
+    "Name": "跨星支援范围",
+    "ZHCN": "跨星支援范围",
+    "ENUS": "Range of Transplanetary Support"
+  },
+  {
     "Name": "需要氧气",
     "ZHCN": "在无氧大气层中只能使用燃料棒发电",
     "ENUS": "Can only use fuel rods to generate power in anoxic atmosphere"
@@ -478,5 +483,10 @@
     "Name": "选择量子频道",
     "ZHCN": "选择量子频道",
     "ENUS": "Select Channel"
+  },
+  {
+    "Name": "磁流体发电",
+    "ZHCN": "磁流体发电",
+    "ENUS": "Magneto-hydrodynamic\nPower Generation"
   }
 ]

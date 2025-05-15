@@ -6,7 +6,7 @@ using UnityEngine;
 
 // ReSharper disable Unity.UnknownResource
 
-namespace ProjectGenesis.Patches.UI
+namespace ProjectGenesis.Patches
 {
     public static class ChemicalRecipeFcolPatches
     {

@@ -46,6 +46,7 @@ namespace ProjectGenesis
             assembly.AddTypeField("PlanetData", "birthResourcePoint0", "birthResourcePoint2");
             assembly.AddTypeField("PlanetData", "birthResourcePoint0", "birthResourcePoint3");
             assembly.AddTypeField("PlanetData", "birthResourcePoint0", "birthResourcePoint4");
+
             assembly.AddTypeField("GameDesc", "isSandboxMode", "isFastStartMode");
         }
     }

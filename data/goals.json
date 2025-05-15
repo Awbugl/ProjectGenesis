@@ -1,0 +1,991 @@
+[
+  {
+    "ID": 1000,
+    "Name": "指引条目1",
+    "TooltipText": "基础操作",
+    "Level": 2,
+    "QueueJumpPriority": 1,
+    "ParentId": 0,
+    "NeedCombatMode": 0,
+    "DisplayParams": [],
+    "DeterminatorName": "GD_GroupBasicOperations",
+    "DeterminatorParams": [],
+    "IgnoreParamsLevel1": [
+      1100,
+      10
+    ],
+    "IgnoreParamsLevel2": [
+      5
+    ],
+    "PatchIgnoreParams": [],
+    "PatchCompleteParams": [],
+    "OnLoadIgnoreParams": [],
+    "EnterQueueIgnoreParams": [],
+    "Childs": [
+      1001,
+      1002,
+      1003
+    ]
+  },
+  {
+    "ID": 1001,
+    "Name": "指引条目2",
+    "TooltipText": "移动",
+    "Level": 2,
+    "QueueJumpPriority": 0,
+    "ParentId": 1000,
+    "NeedCombatMode": 0,
+    "DisplayParams": [],
+    "DeterminatorName": "GD_ControlorMove",
+    "DeterminatorParams": [
+      2
+    ],
+    "IgnoreParamsLevel1": [],
+    "IgnoreParamsLevel2": [],
+    "PatchIgnoreParams": [],
+    "PatchCompleteParams": [],
+    "OnLoadIgnoreParams": [],
+    "EnterQueueIgnoreParams": [],
+    "Childs": []
+  },
+  {
+    "ID": 1002,
+    "Name": "指引条目3",
+    "TooltipText": "旋转摄像机",
+    "Level": 2,
+    "QueueJumpPriority": 0,
+    "ParentId": 1000,
+    "NeedCombatMode": 0,
+    "DisplayParams": [],
+    "DeterminatorName": "GD_CameraRotate",
+    "DeterminatorParams": [
+      2,
+      45
+    ],
+    "IgnoreParamsLevel1": [],
+    "IgnoreParamsLevel2": [],
+    "PatchIgnoreParams": [],
+    "PatchCompleteParams": [],
+    "OnLoadIgnoreParams": [],
+    "EnterQueueIgnoreParams": [],
+    "Childs": []
+  },
+  {
+    "ID": 1003,
+    "Name": "指引条目4",
+    "TooltipText": "回收飞行仓",
+    "Level": 3,
+    "QueueJumpPriority": 0,
+    "ParentId": 1000,
+    "NeedCombatMode": 0,
+    "DisplayParams": [],
+    "DeterminatorName": "GD_SpaceCapsuleRecycled",
+    "DeterminatorParams": [
+      9999
+    ],
+    "IgnoreParamsLevel1": [],
+    "IgnoreParamsLevel2": [],
+    "PatchIgnoreParams": [],
+    "PatchCompleteParams": [],
+    "OnLoadIgnoreParams": [],
+    "EnterQueueIgnoreParams": [],
+    "Childs": []
+  },
+  {
+    "ID": 1100,
+    "Name": "指引条目5",
+    "TooltipText": "采集操作",
+    "Level": 2,
+    "QueueJumpPriority": 1,
+    "ParentId": 0,
+    "NeedCombatMode": 0,
+    "DisplayParams": [],
+    "DeterminatorName": "GD_GroupCollectionOperations",
+    "DeterminatorParams": [],
+    "IgnoreParamsLevel1": [
+      1200,
+      15
+    ],
+    "IgnoreParamsLevel2": [
+      10
+    ],
+    "PatchIgnoreParams": [],
+    "PatchCompleteParams": [],
+    "OnLoadIgnoreParams": [],
+    "EnterQueueIgnoreParams": [],
+    "Childs": [
+      1101,
+      1102,
+      1103,
+      1104
+    ]
+  },
+  {
+    "ID": 1101,
+    "Name": "指引条目6",
+    "TooltipText": "采集50个木头",
+    "Level": 3,
+    "QueueJumpPriority": 0,
+    "ParentId": 1100,
+    "NeedCombatMode": 0,
+    "DisplayParams": [],
+    "DeterminatorName": "GD_FeatureValueProgress",
+    "DeterminatorParams": [
+      30,
+      2156202,
+      10
+    ],
+    "IgnoreParamsLevel1": [],
+    "IgnoreParamsLevel2": [],
+    "PatchIgnoreParams": [],
+    "PatchCompleteParams": [],
+    "OnLoadIgnoreParams": [],
+    "EnterQueueIgnoreParams": [],
+    "Childs": []
+  },
+  {
+    "ID": 1102,
+    "Name": "指引条目7",
+    "TooltipText": "采集10个铁矿",
+    "Level": 2,
+    "QueueJumpPriority": 0,
+    "ParentId": 1100,
+    "NeedCombatMode": 0,
+    "DisplayParams": [],
+    "DeterminatorName": "GD_FeatureValueProgress",
+    "DeterminatorParams": [
+      30,
+      2201001,
+      10
+    ],
+    "IgnoreParamsLevel1": [],
+    "IgnoreParamsLevel2": [],
+    "PatchIgnoreParams": [],
+    "PatchCompleteParams": [],
+    "OnLoadIgnoreParams": [],
+    "EnterQueueIgnoreParams": [],
+    "Childs": []
+  },
+  {
+    "ID": 1103,
+    "Name": "指引条目8",
+    "TooltipText": "采集10个铜矿",
+    "Level": 2,
+    "QueueJumpPriority": 0,
+    "ParentId": 1100,
+    "NeedCombatMode": 0,
+    "DisplayParams": [],
+    "DeterminatorName": "GD_FeatureValueProgress",
+    "DeterminatorParams": [
+      30,
+      2201002,
+      10
+    ],
+    "IgnoreParamsLevel1": [],
+    "IgnoreParamsLevel2": [],
+    "PatchIgnoreParams": [],
+    "PatchCompleteParams": [],
+    "OnLoadIgnoreParams": [],
+    "EnterQueueIgnoreParams": [],
+    "Childs": []
+  },
+  {
+    "ID": 1104,
+    "Name": "指引条目9",
+    "TooltipText": "在“机体面板(C)”中补充燃料",
+    "Level": 3,
+    "QueueJumpPriority": 0,
+    "ParentId": 1100,
+    "NeedCombatMode": 0,
+    "DisplayParams": [],
+    "DeterminatorName": "GD_MechaFuelUsed",
+    "DeterminatorParams": [],
+    "IgnoreParamsLevel1": [],
+    "IgnoreParamsLevel2": [],
+    "PatchIgnoreParams": [],
+    "PatchCompleteParams": [],
+    "OnLoadIgnoreParams": [],
+    "EnterQueueIgnoreParams": [],
+    "Childs": []
+  },
+  {
+    "ID": 1200,
+    "Name": "指引条目10",
+    "TooltipText": "电磁学",
+    "Level": 2,
+    "QueueJumpPriority": 1,
+    "ParentId": 0,
+    "NeedCombatMode": 0,
+    "DisplayParams": [],
+    "DeterminatorName": "GD_GroupElectromagnetism",
+    "DeterminatorParams": [],
+    "IgnoreParamsLevel1": [
+      5,
+      6001
+    ],
+    "IgnoreParamsLevel2": [],
+    "PatchIgnoreParams": [],
+    "PatchCompleteParams": [],
+    "OnLoadIgnoreParams": [],
+    "EnterQueueIgnoreParams": [],
+    "Childs": [
+      1201,
+      1202,
+      1203,
+      1204
+    ]
+  },
+  {
+    "ID": 1201,
+    "Name": "指引条目11",
+    "TooltipText": "打开科技树(T)，开始研究【电磁学】",
+    "Level": 2,
+    "QueueJumpPriority": 0,
+    "ParentId": 1200,
+    "NeedCombatMode": 0,
+    "DisplayParams": [],
+    "DeterminatorName": "GD_TechInQueue",
+    "DeterminatorParams": [
+      1101
+    ],
+    "IgnoreParamsLevel1": [],
+    "IgnoreParamsLevel2": [],
+    "PatchIgnoreParams": [],
+    "PatchCompleteParams": [],
+    "OnLoadIgnoreParams": [],
+    "EnterQueueIgnoreParams": [],
+    "Childs": []
+  },
+  {
+    "ID": 1202,
+    "Name": "指引条目12",
+    "TooltipText": "打开合成器(F)",
+    "Level": 2,
+    "QueueJumpPriority": 0,
+    "ParentId": 1200,
+    "NeedCombatMode": 0,
+    "DisplayParams": [],
+    "DeterminatorName": "GD_FutureCheck",
+    "DeterminatorParams": [
+      2020001
+    ],
+    "IgnoreParamsLevel1": [],
+    "IgnoreParamsLevel2": [],
+    "PatchIgnoreParams": [],
+    "PatchCompleteParams": [],
+    "OnLoadIgnoreParams": [],
+    "EnterQueueIgnoreParams": [],
+    "Childs": []
+  },
+  {
+    "ID": 1203,
+    "Name": "指引条目14",
+    "TooltipText": "制造磁线圈",
+    "Level": 2,
+    "QueueJumpPriority": 0,
+    "ParentId": 1200,
+    "NeedCombatMode": 0,
+    "DisplayParams": [],
+    "DeterminatorName": "GD_MechaAndFactoryItemProduction",
+    "DeterminatorParams": [
+      6203,
+      1,
+      3,
+      1
+    ],
+    "IgnoreParamsLevel1": [],
+    "IgnoreParamsLevel2": [],
+    "PatchIgnoreParams": [],
+    "PatchCompleteParams": [],
+    "OnLoadIgnoreParams": [],
+    "EnterQueueIgnoreParams": [],
+    "Childs": []
+  },
+  {
+    "ID": 1204,
+    "Name": "指引条目15",
+    "TooltipText": "解锁【电磁学】",
+    "Level": 2,
+    "QueueJumpPriority": 0,
+    "ParentId": 1200,
+    "NeedCombatMode": 0,
+    "DisplayParams": [],
+    "DeterminatorName": "GD_UnlockTech",
+    "DeterminatorParams": [
+      1101
+    ],
+    "IgnoreParamsLevel1": [],
+    "IgnoreParamsLevel2": [],
+    "PatchIgnoreParams": [],
+    "PatchCompleteParams": [],
+    "OnLoadIgnoreParams": [],
+    "EnterQueueIgnoreParams": [],
+    "Childs": []
+  },
+  {
+    "ID": 1600,
+    "Name": "指引条目20",
+    "TooltipText": "武器",
+    "Level": 2,
+    "QueueJumpPriority": 1,
+    "ParentId": 0,
+    "NeedCombatMode": 1,
+    "DisplayParams": [
+      400.0,
+      10.0
+    ],
+    "DeterminatorName": "GD_GroupWeapon",
+    "DeterminatorParams": [],
+    "IgnoreParamsLevel1": [
+      1807
+    ],
+    "IgnoreParamsLevel2": [],
+    "PatchIgnoreParams": [
+      292,
+      1,
+      6
+    ],
+    "PatchCompleteParams": [],
+    "OnLoadIgnoreParams": [],
+    "EnterQueueIgnoreParams": [],
+    "Childs": [
+      1601,
+      1602,
+      1603,
+      1604,
+      1605
+    ]
+  },
+  {
+    "ID": 1601,
+    "Name": "指引条目21",
+    "TooltipText": "解锁武器系统",
+    "Level": 2,
+    "QueueJumpPriority": 0,
+    "ParentId": 1600,
+    "NeedCombatMode": 0,
+    "DisplayParams": [],
+    "DeterminatorName": "GD_UnlockTech",
+    "DeterminatorParams": [
+      1801
+    ],
+    "IgnoreParamsLevel1": [],
+    "IgnoreParamsLevel2": [],
+    "PatchIgnoreParams": [],
+    "PatchCompleteParams": [],
+    "OnLoadIgnoreParams": [],
+    "EnterQueueIgnoreParams": [],
+    "Childs": []
+  },
+  {
+    "ID": 1602,
+    "Name": "指引条目22",
+    "TooltipText": "向机甲补充弹药",
+    "Level": 3,
+    "QueueJumpPriority": 0,
+    "ParentId": 1600,
+    "NeedCombatMode": 0,
+    "DisplayParams": [],
+    "DeterminatorName": "GD_ReplenishMechaAmmo",
+    "DeterminatorParams": [],
+    "IgnoreParamsLevel1": [],
+    "IgnoreParamsLevel2": [],
+    "PatchIgnoreParams": [],
+    "PatchCompleteParams": [],
+    "OnLoadIgnoreParams": [],
+    "EnterQueueIgnoreParams": [],
+    "Childs": []
+  },
+  {
+    "ID": 1603,
+    "Name": "指引条目23",
+    "TooltipText": "制作子弹",
+    "Level": 3,
+    "QueueJumpPriority": 0,
+    "ParentId": 1600,
+    "NeedCombatMode": 0,
+    "DisplayParams": [],
+    "DeterminatorName": "GD_MechaAndFactoryItemProduction",
+    "DeterminatorParams": [
+      1601,
+      1,
+      3,
+      1
+    ],
+    "IgnoreParamsLevel1": [],
+    "IgnoreParamsLevel2": [],
+    "PatchIgnoreParams": [],
+    "PatchCompleteParams": [],
+    "OnLoadIgnoreParams": [],
+    "EnterQueueIgnoreParams": [],
+    "Childs": []
+  },
+  {
+    "ID": 1604,
+    "Name": "指引条目24",
+    "TooltipText": "制作机枪塔",
+    "Level": 3,
+    "QueueJumpPriority": 0,
+    "ParentId": 1600,
+    "NeedCombatMode": 0,
+    "DisplayParams": [],
+    "DeterminatorName": "GD_MechaAndFactoryItemProduction",
+    "DeterminatorParams": [
+      3001,
+      1,
+      3,
+      1
+    ],
+    "IgnoreParamsLevel1": [],
+    "IgnoreParamsLevel2": [],
+    "PatchIgnoreParams": [],
+    "PatchCompleteParams": [],
+    "OnLoadIgnoreParams": [],
+    "EnterQueueIgnoreParams": [],
+    "Childs": []
+  },
+  {
+    "ID": 1605,
+    "Name": "指引条目25",
+    "TooltipText": "建造机枪塔并补充弹药",
+    "Level": 2,
+    "QueueJumpPriority": 0,
+    "ParentId": 1600,
+    "NeedCombatMode": 0,
+    "DisplayParams": [],
+    "DeterminatorName": "GD_TurretAmmoCheck",
+    "DeterminatorParams": [],
+    "IgnoreParamsLevel1": [],
+    "IgnoreParamsLevel2": [],
+    "PatchIgnoreParams": [],
+    "PatchCompleteParams": [],
+    "OnLoadIgnoreParams": [],
+    "EnterQueueIgnoreParams": [],
+    "Childs": []
+  },
+  {
+    "ID": 1700,
+    "Name": "指引条目32",
+    "TooltipText": "原油处理",
+    "Level": 3,
+    "QueueJumpPriority": 1,
+    "ParentId": 0,
+    "NeedCombatMode": 0,
+    "DisplayParams": [
+      200.0,
+      15.0
+    ],
+    "DeterminatorName": "GD_GroupOilProcessing",
+    "DeterminatorParams": [],
+    "IgnoreParamsLevel1": [
+      6002,
+      200,
+      1,
+      6,
+      6002
+    ],
+    "IgnoreParamsLevel2": [
+      6002,
+      100,
+      1,
+      6
+    ],
+    "PatchIgnoreParams": [
+      6002,
+      200,
+      1,
+      6,
+      6002
+    ],
+    "PatchCompleteParams": [],
+    "OnLoadIgnoreParams": [],
+    "EnterQueueIgnoreParams": [],
+    "Childs": [
+      1701,
+      1702,
+      1703
+    ]
+  },
+  {
+    "ID": 1701,
+    "Name": "指引条目33",
+    "TooltipText": "解锁“钢材冶炼”",
+    "Level": 3,
+    "QueueJumpPriority": 0,
+    "ParentId": 1700,
+    "NeedCombatMode": 0,
+    "DisplayParams": [],
+    "DeterminatorName": "GD_UnlockTech",
+    "DeterminatorParams": [
+      1411
+    ],
+    "IgnoreParamsLevel1": [],
+    "IgnoreParamsLevel2": [],
+    "PatchIgnoreParams": [],
+    "PatchCompleteParams": [],
+    "OnLoadIgnoreParams": [],
+    "EnterQueueIgnoreParams": [],
+    "Childs": []
+  },
+  {
+    "ID": 1702,
+    "Name": "指引条目34",
+    "TooltipText": "解锁等离子萃取精炼",
+    "Level": 3,
+    "QueueJumpPriority": 0,
+    "ParentId": 1700,
+    "NeedCombatMode": 0,
+    "DisplayParams": [],
+    "DeterminatorName": "GD_UnlockTech",
+    "DeterminatorParams": [
+      1102
+    ],
+    "IgnoreParamsLevel1": [],
+    "IgnoreParamsLevel2": [],
+    "PatchIgnoreParams": [],
+    "PatchCompleteParams": [],
+    "OnLoadIgnoreParams": [],
+    "EnterQueueIgnoreParams": [],
+    "Childs": []
+  },
+  {
+    "ID": 1703,
+    "Name": "指引条目35",
+    "TooltipText": "使用储液罐储存任意流体",
+    "Level": 3,
+    "QueueJumpPriority": 0,
+    "ParentId": 1700,
+    "NeedCombatMode": 0,
+    "DisplayParams": [],
+    "DeterminatorName": "GD_TanksStorage",
+    "DeterminatorParams": [
+      1000,
+      1007,
+      1114,
+      1116,
+      1120,
+      1121,
+      6205,
+      6206,
+      6212,
+      6220,
+      6234,
+      6235,      
+      7002,
+      7006,
+      7009,
+      7014,
+      7015,
+      7017,
+      7018,
+      7019
+    ],
+    "IgnoreParamsLevel1": [],
+    "IgnoreParamsLevel2": [],
+    "PatchIgnoreParams": [],
+    "PatchCompleteParams": [],
+    "OnLoadIgnoreParams": [],
+    "EnterQueueIgnoreParams": [],
+    "Childs": []
+  },
+  {
+    "ID": 1900,
+    "Name": "指引条目40",
+    "TooltipText": "地基",
+    "Level": 3,
+    "QueueJumpPriority": 1,
+    "ParentId": 0,
+    "NeedCombatMode": 0,
+    "DisplayParams": [
+      20.0
+    ],
+    "DeterminatorName": "GD_GroupGroundFoundation",
+    "DeterminatorParams": [],
+    "IgnoreParamsLevel1": [
+      2200
+    ],
+    "IgnoreParamsLevel2": [],
+    "PatchIgnoreParams": [],
+    "PatchCompleteParams": [],
+    "OnLoadIgnoreParams": [],
+    "EnterQueueIgnoreParams": [],
+    "Childs": [
+      1901,
+      1902,
+      1903
+    ]
+  },
+  {
+    "ID": 1901,
+    "Name": "指引条目41",
+    "TooltipText": "解锁“移山填海工程”",
+    "Level": 3,
+    "QueueJumpPriority": 0,
+    "ParentId": 1900,
+    "NeedCombatMode": 0,
+    "DisplayParams": [],
+    "DeterminatorName": "GD_UnlockTech",
+    "DeterminatorParams": [
+      1415
+    ],
+    "IgnoreParamsLevel1": [],
+    "IgnoreParamsLevel2": [],
+    "PatchIgnoreParams": [],
+    "PatchCompleteParams": [],
+    "OnLoadIgnoreParams": [],
+    "EnterQueueIgnoreParams": [],
+    "Childs": []
+  },
+  {
+    "ID": 1902,
+    "Name": "指引条目42",
+    "TooltipText": "制作地基",
+    "Level": 3,
+    "QueueJumpPriority": 0,
+    "ParentId": 1900,
+    "NeedCombatMode": 0,
+    "DisplayParams": [],
+    "DeterminatorName": "GD_MechaAndFactoryItemProduction",
+    "DeterminatorParams": [
+      1131,
+      1,
+      3,
+      1
+    ],
+    "IgnoreParamsLevel1": [],
+    "IgnoreParamsLevel2": [],
+    "PatchIgnoreParams": [],
+    "PatchCompleteParams": [],
+    "OnLoadIgnoreParams": [],
+    "EnterQueueIgnoreParams": [],
+    "Childs": []
+  },
+  {
+    "ID": 1903,
+    "Name": "指引条目43",
+    "TooltipText": "使用地基",
+    "Level": 3,
+    "QueueJumpPriority": 0,
+    "ParentId": 1900,
+    "NeedCombatMode": 0,
+    "DisplayParams": [],
+    "DeterminatorName": "GD_BuildFundation",
+    "DeterminatorParams": [],
+    "IgnoreParamsLevel1": [],
+    "IgnoreParamsLevel2": [],
+    "PatchIgnoreParams": [],
+    "PatchCompleteParams": [],
+    "OnLoadIgnoreParams": [],
+    "EnterQueueIgnoreParams": [],
+    "Childs": []
+  },
+  {
+    "ID": 2000,
+    "Name": "指引条目44",
+    "TooltipText": "石头炼硅",
+    "Level": 3,
+    "QueueJumpPriority": 1,
+    "ParentId": 0,
+    "NeedCombatMode": 0,
+    "DisplayParams": [
+      5.0
+    ],
+    "DeterminatorName": "GD_GroupRefiningSiliconFromStone",
+    "DeterminatorParams": [],
+    "IgnoreParamsLevel1": [
+      1105,
+      100,
+      1,
+      4,
+      6003
+    ],
+    "IgnoreParamsLevel2": [
+      1105,
+      20,
+      1,
+      4
+    ],
+    "PatchIgnoreParams": [
+      2,
+      1105,
+      2,
+      1,
+      4
+    ],
+    "PatchCompleteParams": [],
+    "OnLoadIgnoreParams": [],
+    "EnterQueueIgnoreParams": [
+      2200
+    ],
+    "Childs": [
+      2001,
+      2002
+    ]
+  },
+  {
+    "ID": 2001,
+    "Name": "指引条目45",
+    "TooltipText": "使用石矿炼硅石",
+    "Level": 3,
+    "QueueJumpPriority": 0,
+    "ParentId": 2000,
+    "NeedCombatMode": 0,
+    "DisplayParams": [],
+    "DeterminatorName": "GD_MechaAndFactoryItemProduction",
+    "DeterminatorParams": [
+      1003,
+      1,
+      2,
+      0
+    ],
+    "IgnoreParamsLevel1": [],
+    "IgnoreParamsLevel2": [],
+    "PatchIgnoreParams": [],
+    "PatchCompleteParams": [],
+    "OnLoadIgnoreParams": [],
+    "EnterQueueIgnoreParams": [],
+    "Childs": []
+  },
+  {
+    "ID": 2002,
+    "Name": "指引条目46",
+    "TooltipText": "使用硅石炼硅块",
+    "Level": 3,
+    "QueueJumpPriority": 0,
+    "ParentId": 2000,
+    "NeedCombatMode": 0,
+    "DisplayParams": [],
+    "DeterminatorName": "GD_MechaAndFactoryItemProduction",
+    "DeterminatorParams": [
+      1105,
+      1,
+      2,
+      1
+    ],
+    "IgnoreParamsLevel1": [],
+    "IgnoreParamsLevel2": [],
+    "PatchIgnoreParams": [],
+    "PatchCompleteParams": [],
+    "OnLoadIgnoreParams": [],
+    "EnterQueueIgnoreParams": [],
+    "Childs": []
+  },
+  {
+    "ID": 2100,
+    "Name": "指引条目47",
+    "TooltipText": "能量矩阵",
+    "Level": 2,
+    "QueueJumpPriority": 2,
+    "ParentId": 0,
+    "NeedCombatMode": 0,
+    "DisplayParams": [
+      800.0,
+      40.0
+    ],
+    "DeterminatorName": "GD_GroupEnergyMatrix",
+    "DeterminatorParams": [],
+    "IgnoreParamsLevel1": [
+      6002
+    ],
+    "IgnoreParamsLevel2": [],
+    "PatchIgnoreParams": [
+      1111
+    ],
+    "PatchCompleteParams": [],
+    "OnLoadIgnoreParams": [],
+    "EnterQueueIgnoreParams": [],
+    "Childs": [
+      2101,
+      2102,
+      2103,
+      2104
+    ]
+  },
+  {
+    "ID": 2101,
+    "Name": "指引条目48",
+    "TooltipText": "解锁“冶炼提纯”",
+    "Level": 2,
+    "QueueJumpPriority": 0,
+    "ParentId": 2100,
+    "NeedCombatMode": 0,
+    "DisplayParams": [],
+    "DeterminatorName": "GD_UnlockTech",
+    "DeterminatorParams": [
+      1402
+    ],
+    "IgnoreParamsLevel1": [],
+    "IgnoreParamsLevel2": [],
+    "PatchIgnoreParams": [],
+    "PatchCompleteParams": [],
+    "OnLoadIgnoreParams": [],
+    "EnterQueueIgnoreParams": [],
+    "Childs": []
+  },
+  {
+    "ID": 2102,
+    "Name": "指引条目49",
+    "TooltipText": "使用熔炉冶炼高能石墨",
+    "Level": 3,
+    "QueueJumpPriority": 0,
+    "ParentId": 2100,
+    "NeedCombatMode": 0,
+    "DisplayParams": [],
+    "DeterminatorName": "GD_MechaAndFactoryItemProduction",
+    "DeterminatorParams": [
+      1109,
+      1,
+      2,
+      1
+    ],
+    "IgnoreParamsLevel1": [],
+    "IgnoreParamsLevel2": [],
+    "PatchIgnoreParams": [],
+    "PatchCompleteParams": [],
+    "OnLoadIgnoreParams": [],
+    "EnterQueueIgnoreParams": [],
+    "Childs": []
+  },
+  {
+    "ID": 2103,
+    "Name": "指引条目50",
+    "TooltipText": "解锁“能量矩阵”",
+    "Level": 2,
+    "QueueJumpPriority": 0,
+    "ParentId": 2100,
+    "NeedCombatMode": 0,
+    "DisplayParams": [],
+    "DeterminatorName": "GD_UnlockTech",
+    "DeterminatorParams": [
+      1111
+    ],
+    "IgnoreParamsLevel1": [],
+    "IgnoreParamsLevel2": [],
+    "PatchIgnoreParams": [],
+    "PatchCompleteParams": [],
+    "OnLoadIgnoreParams": [],
+    "EnterQueueIgnoreParams": [],
+    "Childs": []
+  },
+  {
+    "ID": 2104,
+    "Name": "指引条目51",
+    "TooltipText": "使用研究站制造能量矩阵",
+    "Level": 2,
+    "QueueJumpPriority": 0,
+    "ParentId": 2100,
+    "NeedCombatMode": 0,
+    "DisplayParams": [],
+    "DeterminatorName": "GD_MechaAndFactoryItemProduction",
+    "DeterminatorParams": [
+      6002,
+      1,
+      2,
+      1
+    ],
+    "IgnoreParamsLevel1": [],
+    "IgnoreParamsLevel2": [],
+    "PatchIgnoreParams": [],
+    "PatchCompleteParams": [],
+    "OnLoadIgnoreParams": [],
+    "EnterQueueIgnoreParams": [],
+    "Childs": []
+  },
+  {
+    "ID": 2950,
+    "Name": "指引条目63",
+    "TooltipText": "重氢分馏",
+    "Level": 3,
+    "QueueJumpPriority": 1,
+    "ParentId": 0,
+    "NeedCombatMode": 0,
+    "DisplayParams": [
+      10.0,
+      10.0,
+      1.0
+    ],
+    "DeterminatorName": "GD_GroupDeuteriumFractionation",
+    "DeterminatorParams": [],
+    "IgnoreParamsLevel1": [
+      1121,
+      200,
+      1,
+      4
+    ],
+    "IgnoreParamsLevel2": [
+      1121,
+      100,
+      1,
+      4
+    ],
+    "PatchIgnoreParams": [],
+    "PatchCompleteParams": [],
+    "OnLoadIgnoreParams": [],
+    "EnterQueueIgnoreParams": [],
+    "Childs": [
+      2951,
+      2952
+    ]
+  },
+  {
+    "ID": 2951,
+    "Name": "指引条目64",
+    "TooltipText": "解锁“重氢分馏”",
+    "Level": 3,
+    "QueueJumpPriority": 0,
+    "ParentId": 2950,
+    "NeedCombatMode": 0,
+    "DisplayParams": [],
+    "DeterminatorName": "GD_UnlockTech",
+    "DeterminatorParams": [
+      1134
+    ],
+    "IgnoreParamsLevel1": [],
+    "IgnoreParamsLevel2": [],
+    "PatchIgnoreParams": [],
+    "PatchCompleteParams": [],
+    "OnLoadIgnoreParams": [],
+    "EnterQueueIgnoreParams": [],
+    "Childs": []
+  },
+  {
+    "ID": 2952,
+    "Name": "指引条目65",
+    "TooltipText": "使用分馏塔制造重氢",
+    "Level": 3,
+    "QueueJumpPriority": 0,
+    "ParentId": 2950,
+    "NeedCombatMode": 0,
+    "DisplayParams": [],
+    "DeterminatorName": "GD_DeuteriumFractionationCheck",
+    "DeterminatorParams": [],
+    "IgnoreParamsLevel1": [],
+    "IgnoreParamsLevel2": [],
+    "PatchIgnoreParams": [],
+    "PatchCompleteParams": [],
+    "OnLoadIgnoreParams": [],
+    "EnterQueueIgnoreParams": [],
+    "Childs": []
+  },
+  {
+    "ID": 4003,
+    "Name": "指引条目120",
+    "TooltipText": "使用人造恒星发电",
+    "Level": 2,
+    "QueueJumpPriority": 0,
+    "ParentId": 4000,
+    "NeedCombatMode": 0,
+    "DisplayParams": [],
+    "DeterminatorName": "GD_GenCheck",
+    "DeterminatorParams": [
+      12
+    ],
+    "IgnoreParamsLevel1": [],
+    "IgnoreParamsLevel2": [],
+    "PatchIgnoreParams": [],
+    "PatchCompleteParams": [],
+    "OnLoadIgnoreParams": [],
+    "EnterQueueIgnoreParams": [],
+    "Childs": []
+  }
+]

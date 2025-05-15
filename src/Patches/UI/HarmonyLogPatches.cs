@@ -2,7 +2,7 @@
 using BepInEx.Logging;
 using HarmonyLib;
 
-namespace ProjectGenesis.Patches.UI
+namespace ProjectGenesis.Patches
 {
     internal class HarmonyLogListener : ILogListener
     {

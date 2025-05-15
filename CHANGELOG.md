@@ -1,11 +1,119 @@
-- v3.0.11
-  + 修复了v3.0.9的上传速度调整导致的研究站工作不正常的问题
+- v3.1.0-alpha2.3 (Experimental 0.3.11231)
+  + 适配版本v0.10.32.25779
 
-  + Fixed issue that research lab work improperly due to upload speed adjustments in v3.0.9
+  + Adaptation of version v0.10.32.25779
 
 
 <details>
   <summary>点击展开日志 | Click to view all </summary>
+
+
+- v3.1.0-alpha2.2 (Experimental 0.3.11221)
+  + 适配版本v0.10.32.25496
+
+  + Adaptation of version v0.10.32.25496
+
+
+- v3.1.0-alpha2.1 (Experimental 0.3.11211)
+  + 添加配方`钠盐转化`
+  + 调整部分文案
+
+  + Add recipe `Sodium Salt Conversion`
+  + Adjust some text
+
+
+- v3.1.0-alpha2.0 (Experimental 0.3.11201)
+  + 正确调整了地面黑雾的制造速度，修复地面黑雾数据异常的问题
+  + 调整了各类弹箱的部分数值
+  + 调整了`磁悬浮`科技
+  + 调整了部分配方
+  + 调整了气态巨星的基础产出数值
+
+  + Correctly adjusted the manufacturing speed of ground dark fog, and fixed the problem of abnormal data of ground dark fog
+  + Adjusted some values of various types of bullet boxes
+  + Adjusted `Magnetic Levitation` technology
+  + Adjusted some recipes
+  + Adjusted the base output value of the Gas Giant
+
+
+- v3.1.0-alpha1.1 (Experimental 0.3.11111)
+  + 调整了地面黑雾的制造速度
+  + 调整了部分科技
+  + 调整了部分配方
+
+  + Adjusted the creation speed of the ground dark fog
+  + Adjusted some technologies
+  + Adjusted some recipes
+
+
+- v3.1.0-alpha1.0 (Experimental 0.3.11101)
+  + 调整了裂变燃料棒的热值
+  + 调整了部分科技的前置科技需求
+  + 调整了电磁胶囊类武器和干扰塔的数值
+  + 调整了部分指引信息
+
+  + Adjusted the heat value of fission fuel rods
+  + Adjusted the pre-tech requirements for some technologies
+  + Adjusted the values of EM capsule weapons and jamming towers
+  + Adjusted some guideline information
+
+
+- v3.1.0-alpha0.3
+  + 调整了部分配方
+
+  + Adjusted some recipes
+
+
+- v3.1.0-alpha0.2
+  + 移除物品`混凝土`
+  + 调整了部分配方
+  + 增加快速移动后的30秒无敌效果
+
+  + Removed item `concrete`
+  + Adjusted some recipes
+  + Added 30 seconds of invincibility after fast movement
+
+
+- v3.1.0-alpha0.1
+  + 调整了部分物品的位置
+  + 调整了地面黑雾的制造速度及数值
+  + 调整了部分配方（仅对新存档生效）
+  + 调整了戴森球对细胞点数的需求，提高太阳帆及戴森壳的发电量
+  + 调整了戴森球对结构点数的需求，提高戴森球框架和节点的发电量
+  + 调整了气态行星上的机甲采集效果
+  + 修复了协调中心效果`光伏扩容`无法正确生效的问题
+  + 修复了母星系可生成特殊海洋的问题
+  + 修复了燃烧室自动补充燃料的相关问题
+  + 增加了`地中海`星球的`放射性矿物`储量
+  + 优化了量化计算器的用户界面
+  + 复制建造量子储物仓时将复制频道信息
+  + 启用创世时不再解锁平台成就
+  + `电磁轨道弹射器`现在将使用集装科技加成
+  + 制造建筑将根据配方和制造速度额外耗电
+  + 量化计算器现在将在存档时保存自定义配置
+
+  + Adjusted the position of some items
+  + Adjusted the creation speed and value of the ground dark fog
+  + Adjusted some recipes
+  + Adjusted the Dyson Sphere's requirement for cell points and increase the power generation of solar sails and Dyson shells
+  + Adjusted the Dyson Sphere's requirement for structure points and increase the power generation of the Dyson Sphere's frames and nodes
+  + Tweaked mecha harvesting effects on gas planets
+  + Fixed Coordination Center effect `Photovoltaic Expansion` not working correctly
+  + Fixed issue where home system could generate special oceans
+  + Fixed an issue with the automatic refueling of combustion chambers.
+  + Increased the amount of radioactive minerals on the planet Mediterranean.
+  + Optimized the UI of the Quantization Calculator.
+  + Channel information will be copied when building a Quantum Storage Silo.
+  + Platform achievement no longer unlocked when Genesis is enabled
+  + `Electromagnetic Orbital Catapults` will now use the Collective Technology bonus
+  + Fabricated buildings will consume additional power based on recipe and fabrication rate
+  + Quantization Calculator will now save custom configurations on archive
+
+
+- v3.0.11
+  + 修复了v3.0.9的上传速度调整导致的研究站工作不正常的问题
+
+  + Fixed issue that research lab work improperly due to upload speed adjustments in v3.0.9
 
 
 - v3.0.10

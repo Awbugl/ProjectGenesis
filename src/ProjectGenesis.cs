@@ -15,22 +15,16 @@ using crecheng.DSPModSave;
 using NebulaAPI;
 using NebulaAPI.Interfaces;
 using ProjectGenesis.Compatibility;
-using ProjectGenesis.Patches.Logic;
-using ProjectGenesis.Patches.Logic.AddVein;
-using ProjectGenesis.Patches.Logic.MegaAssembler;
-using ProjectGenesis.Patches.Logic.PlanetFocus;
-using ProjectGenesis.Patches.Logic.QuantumStorage;
-using ProjectGenesis.Patches.UI;
-using ProjectGenesis.Patches.UI.PlanetFocus;
-using ProjectGenesis.Patches.UI.QTools;
+using ProjectGenesis.Patches;
 using ProjectGenesis.Utils;
 using static ProjectGenesis.Utils.JsonDataUtils;
 using static ProjectGenesis.Utils.CopyModelUtils;
 using static ProjectGenesis.Utils.TranslateUtils;
 using static ProjectGenesis.Utils.ModifyUpgradeTech;
-using static ProjectGenesis.Patches.Logic.AddVein.AddVeinPatches;
-using static ProjectGenesis.Patches.Logic.AddVein.ModifyPlanetTheme;
-using static ProjectGenesis.Patches.UI.ChemicalRecipeFcolPatches;
+using static ProjectGenesis.Patches.AddVeinPatches;
+using static ProjectGenesis.Patches.ModifyPlanetTheme;
+using static ProjectGenesis.Patches.ChemicalRecipeFcolPatches;
+using static ProjectGenesis.Compatibility.InstallationCheckPlugin;
 
 // ReSharper disable UnusedVariable
 // ReSharper disable UnusedMember.Local
@@ -50,11 +44,11 @@ namespace ProjectGenesis
     [BepInDependency(InstallationCheckPlugin.MODGUID, BepInDependency.DependencyFlags.SoftDependency)]
     [CommonAPISubmoduleDependency(nameof(ProtoRegistry), nameof(TabSystem), nameof(LocalizationModule))]
     [ModSaveSettings(LoadOrder = LoadOrder.Preload)]
-    public class ProjectGenesis : BaseUnityPlugin, IModCanSave, IMultiplayerMod
+    public class ProjectGenesis : BaseUnityPlugin, IModCanSave, IMultiplayerModWithSettings
     {
         public const string MODGUID = "org.LoShin.GenesisBook";
         public const string MODNAME = "GenesisBook";
-        public const string VERSION = "3.0.11";
+        public const string VERSION = "3.1.0";
         public const string DEBUGVERSION = "";
 
         public static bool LoadCompleted;
@@ -62,7 +56,6 @@ namespace ProjectGenesis
         internal static ManualLogSource logger;
         internal static ConfigFile configFile;
         internal static UIPlanetFocusWindow PlanetFocusWindow;
-        internal static UIQToolsWindow QToolsWindow;
 
         internal static int[] TableID;
 
@@ -81,6 +74,13 @@ namespace ProjectGenesis
         #region Logger
 
             logger = Logger;
+
+            if (!BepinExVersionMatch)
+            {
+                logger.Log(LogLevel.Error, "GenesisBook BepinEx Version Check Failed");
+                return;
+            }
+
             logger.Log(LogLevel.Info, "GenesisBook Awake");
 
         #endregion Logger
@@ -95,8 +95,7 @@ namespace ProjectGenesis
             HideTechModeEntry = Config.Bind("config", "HideTechMode", true,
                 "Enable Tech Exploration Mode, which will hide locked techs in tech tree.\n启用科技探索模式，启用后将隐藏未解锁的科技");
 
-            ShowMessageBoxEntry = Config.Bind("config", "ShowMessageBox", true,
-                "Show message when GenesisBook is loaded.\n首次加载时的提示信息");
+            ShowMessageBoxEntry = Config.Bind("config", "ShowMessageBox", true, "Show message when GenesisBook is loaded.\n首次加载时的提示信息");
 
             ProductOverflowEntry = Config.Bind("config", "ProductOverflow", 0,
                 "Changing the condition for stopping production of some recipes from single product pile up to all product pile up.\n将部分配方停止生产的条件由单产物堆积改为所有产物均堆积");
@@ -157,16 +156,17 @@ namespace ProjectGenesis
 
             foreach (Type type in executingAssembly.GetTypes())
             {
-                if (type.Namespace?.StartsWith("ProjectGenesis.Patches", StringComparison.Ordinal) == true) { Harmony.PatchAll(type); }
+                if (type.Namespace?.StartsWith("ProjectGenesis.Patches", StringComparison.Ordinal) == true) Harmony.PatchAll(type);
             }
 
             TableID = new int[]
             {
                 TabSystem.RegisterTab($"{MODGUID}:{MODGUID}Tab1",
-                    new TabData("精炼页面".TranslateFromJsonSpecial(), "Assets/texpack/矿物处理")),
+                    new TabData("工艺页面".TranslateFromJsonSpecial(), "Assets/texpack/矿物处理")),
                 TabSystem.RegisterTab($"{MODGUID}:{MODGUID}Tab2",
                     new TabData("化工页面".TranslateFromJsonSpecial(), "Assets/texpack/化工科技")),
-                TabSystem.RegisterTab($"{MODGUID}:{MODGUID}Tab3", new TabData("防御页面".TranslateFromJsonSpecial(), "Assets/texpack/防御")),
+                TabSystem.RegisterTab($"{MODGUID}:{MODGUID}Tab3", 
+                    new TabData("防御页面".TranslateFromJsonSpecial(), "Assets/texpack/防御")),
             };
 
             RegisterStrings();
@@ -176,13 +176,6 @@ namespace ProjectGenesis
             LDBTool.PostAddDataAction += PostAddDataAction;
 
             LoadCompleted = true;
-        }
-
-        private void Update()
-        {
-            if (VFInput.inputing) return;
-
-            if (QToolsWindow) QToolsWindow._OnUpdate();
         }
 
         public void Export(BinaryWriter w)
@@ -240,7 +233,7 @@ namespace ProjectGenesis
             LabComponent.matrixIds = new[]
             {
                 ProtoID.I电磁矩阵, ProtoID.I能量矩阵, ProtoID.I结构矩阵, ProtoID.I信息矩阵,
-                ProtoID.I引力矩阵, ProtoID.I宇宙矩阵, ProtoID.I通量矩阵, ProtoID.I张量矩阵,
+                ProtoID.I引力矩阵, ProtoID.I宇宙矩阵, ProtoID.I玻色矩阵, ProtoID.I耗散矩阵,
                 ProtoID.I奇点矩阵,
             };
 
@@ -289,6 +282,8 @@ namespace ProjectGenesis
             ItemProto.InitItemIndices();
             ItemProto.InitMechaMaterials();
             ItemProto.InitFighterIndices();
+            ItemProto.InitPowerFacilityIndices();
+            ItemProto.InitProductionMask();
             ModelProto.InitMaxModelIndex();
             ModelProto.InitModelIndices();
             ModelProto.InitModelOrders();
@@ -300,6 +295,7 @@ namespace ProjectGenesis
             turretNeed[2] = ProtoID.I超合金弹箱;
 
             ItemProto.stationCollectorId = ProtoID.I轨道采集器;
+            ItemProto.kFuelAutoReplenishIds = FuelRodPatches.FuelRods;
 
             ItemPostFix();
 

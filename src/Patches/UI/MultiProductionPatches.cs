@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 // ReSharper disable InconsistentNaming
 
-namespace ProjectGenesis.Patches.UI
+namespace ProjectGenesis.Patches
 {
     // A patch to support multi (>=3) productions.
     internal static class MultiProductionPatches

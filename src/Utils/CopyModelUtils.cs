@@ -204,22 +204,13 @@ namespace ProjectGenesis.Utils
 
         internal static void ModifyEnemyHpUpgrade()
         {
-            for (int i = ProtoID.M行星基地; i <= ProtoID.M导轨; i++)
+            for (int i = ProtoID.M行星基地; i <= ProtoID.M守卫者; i++)
             {
                 ModelProto model = LDB.models.Select(i);
-                model.HpMax *= 2;
-                model.HpUpgrade *= 2;
-                model.HpRecover *= 2;
+                model.HpMax *= 3;
+                model.HpUpgrade *= 3;
+                model.HpRecover *= 3;
             }
-
-            ModelProto modelProto = LDB.models.Select(ProtoID.M强袭者);
-            modelProto.HpUpgrade = 1000;
-
-            modelProto = LDB.models.Select(ProtoID.M游骑兵);
-            modelProto.HpUpgrade = 800;
-
-            modelProto = LDB.models.Select(ProtoID.M守卫者);
-            modelProto.HpUpgrade = 800;
         }
     }
 }

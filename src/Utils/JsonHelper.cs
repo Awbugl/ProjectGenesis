@@ -4,7 +4,6 @@ using System.Linq;
 using System.Reflection;
 using Newtonsoft.Json;
 using UnityEngine;
-using ERecipeType_1 = ERecipeType;
 
 // ReSharper disable InconsistentNaming
 // ReSharper disable MemberCanBeInternal
@@ -33,6 +32,8 @@ namespace ProjectGenesis.Utils
 
         internal static TutorialProtoJson[] TutorialProtos() => GetJsonContent<TutorialProtoJson>("tutorials");
 
+        internal static GoalProtoJson[] GoalProtos() => GetJsonContent<GoalProtoJson>("goals");
+
         internal static PrefabDescJson[] PrefabDescs() => GetJsonContent<PrefabDescJson>("prefabDescs");
 
         internal static T[] GetJsonContent<T>(string json) =>
@@ -48,6 +49,7 @@ namespace ProjectGenesis.Utils
             File.WriteAllText($"{path}/techs.json", SerializeObject(LDB.techs.dataArray.Select(TechProtoJson.FromProto)));
             File.WriteAllText($"{path}/items.json", SerializeObject(LDB.items.dataArray.Select(ItemProtoJson.FromProto)));
             File.WriteAllText($"{path}/recipes.json", SerializeObject(LDB.recipes.dataArray.Select(RecipeProtoJson.FromProto)));
+            File.WriteAllText($"{path}/goals.json", SerializeObject(LDB.goals.dataArray.Select(GoalProtoJson.FromProto)));
         }
 
         [Serializable]
@@ -233,7 +235,7 @@ namespace ProjectGenesis.Utils
                 proto.Explicit = Explicit;
                 proto.Name = Name;
                 proto.Handcraft = Handcraft;
-                proto.Type = (ERecipeType_1)Type;
+                proto.Type = (global::ERecipeType)Type;
                 proto.TimeSpend = Time;
                 proto.Items = Input;
                 proto.ItemCounts = InCounts;
@@ -253,7 +255,6 @@ namespace ProjectGenesis.Utils
         {
             public int ID { get; set; }
             public string Name { get; set; }
-
             public string IconPath { get; set; }
             public string Desc { get; set; }
             public string Conclusion { get; set; }
@@ -349,6 +350,75 @@ namespace ProjectGenesis.Utils
         }
 
         [Serializable]
+        public class GoalProtoJson
+        {
+            public int ID { get; set; }
+            public string Name { get; set; }
+            public string TooltipText { get; set; }
+            public int Level { get; set; }
+            public int QueueJumpPriority { get; set; }
+            public int ParentId { get; set; }
+            public int NeedCombatMode { get; set; }
+            public double[] DisplayParams { get; set; }
+            public string DeterminatorName { get; set; }
+            public long[] DeterminatorParams { get; set; }
+            public long[] IgnoreParamsLevel1 { get; set; }
+            public long[] IgnoreParamsLevel2 { get; set; }
+            public long[] PatchIgnoreParams { get; set; }
+            public long[] PatchCompleteParams { get; set; }
+            public long[] OnLoadIgnoreParams { get; set; }
+            public long[] EnterQueueIgnoreParams { get; set; }
+            public int[] Childs { get; set; }
+
+            public static GoalProtoJson FromProto(GoalProto i) =>
+                new GoalProtoJson
+                {
+                    ID = i.ID,
+                    Name = i.Name,
+                    TooltipText = i.TooltipText,
+                    Level = (int)i.Level,
+                    QueueJumpPriority = i.QueueJumpPriority,
+                    ParentId = i.ParentId,
+                    NeedCombatMode = i.NeedCombatMode,
+                    DisplayParams = i.DisplayParams,
+                    DeterminatorName = i.DeterminatorName,
+                    DeterminatorParams = i.DeterminatorParams,
+                    IgnoreParamsLevel1 = i.IgnoreParamsLevel1,
+                    IgnoreParamsLevel2 = i.IgnoreParamsLevel2,
+                    PatchIgnoreParams = i.PatchIgnoreParams,
+                    PatchCompleteParams = i.PatchCompleteParams,
+                    OnLoadIgnoreParams = i.OnLoadIgnoreParams,
+                    EnterQueueIgnoreParams = i.EnterQueueIgnoreParams,
+                    Childs = i.Childs,
+                };
+
+            public GoalProto ToProto() => ToProto(new GoalProto());
+
+            public GoalProto ToProto(GoalProto proto)
+            {
+                proto.ID = ID;
+                proto.Name = Name;
+                proto.TooltipText = TooltipText;
+                proto.Level = (EGoalLevel)Level;
+                proto.QueueJumpPriority = QueueJumpPriority;
+                proto.ParentId = ParentId;
+                proto.NeedCombatMode = NeedCombatMode;
+                proto.DisplayParams = DisplayParams ?? Array.Empty<double>();
+                proto.DeterminatorName = DeterminatorName;
+                proto.DeterminatorParams = DeterminatorParams ?? Array.Empty<long>();
+                proto.IgnoreParamsLevel1 = IgnoreParamsLevel1 ?? Array.Empty<long>();
+                proto.IgnoreParamsLevel2 = IgnoreParamsLevel2 ?? Array.Empty<long>();
+                proto.PatchIgnoreParams = PatchIgnoreParams ?? Array.Empty<long>();
+                proto.PatchCompleteParams = PatchCompleteParams ?? Array.Empty<long>();
+                proto.OnLoadIgnoreParams = OnLoadIgnoreParams ?? Array.Empty<long>();
+                proto.EnterQueueIgnoreParams = EnterQueueIgnoreParams ?? Array.Empty<long>();
+                proto.Childs = Childs ?? Array.Empty<int>();
+
+                return proto;
+            }
+        }
+
+        [Serializable]
         public class StringProtoJson
         {
             public string Name { get; set; }
@@ -436,10 +506,14 @@ namespace ProjectGenesis.Utils
             public int? turretAddEnemyThreatBase { get; set; } = null;
             public float? turretAddEnemyThreatCoef { get; set; } = null;
             public int? enemyGenMatter { get; set; } = null;
+            public int? enemySpMax { get; set; } = null;
+            public int? unitAttackDamage0 { get; set; } = null;
+            public int? unitAttackDamageInc0 { get; set; } = null;
             public bool? multiLevel { get; set; } = null;
             public int? storageCol { get; set; } = null;
             public int? storageRow { get; set; } = null;
             public bool? isStorage { get; set; } = null;
+            public int? subId { get; set; } = null;
             public bool? allowBuildInWater { get; set; } = null;
             public bool? needBuildInWaterTech { get; set; } = null;
             public int[] waterTypes { get; set; } = null;
@@ -505,10 +579,14 @@ namespace ProjectGenesis.Utils
                     turretAddEnemyThreatBase = i.turretAddEnemyThreatBase,
                     turretAddEnemyThreatCoef = i.turretAddEnemyThreatCoef,
                     enemyGenMatter = i.enemyGenMatter,
+                    enemySpMax = i.enemySpMax,
+                    unitAttackDamage0 = i.unitAttackDamage0,
+                    unitAttackDamageInc0 = i.unitAttackDamageInc0,
                     multiLevel = i.multiLevel,
                     storageCol = i.storageCol,
                     storageRow = i.storageRow,
                     isStorage = i.isStorage,
+                    subId = i.subId,
                     allowBuildInWater = i.allowBuildInWater,
                     needBuildInWaterTech = i.needBuildInWaterTech,
                     waterTypes = i.waterTypes,
@@ -535,7 +613,7 @@ namespace ProjectGenesis.Utils
 
                 if (assemblerSpeed != null) desc.assemblerSpeed = assemblerSpeed.Value;
 
-                if (assemblerRecipeType != null) desc.assemblerRecipeType = (ERecipeType_1)assemblerRecipeType.Value;
+                if (assemblerRecipeType != null) desc.assemblerRecipeType = (global::ERecipeType)assemblerRecipeType.Value;
 
                 if (workEnergyPerTick != null) desc.workEnergyPerTick = workEnergyPerTick.Value;
 
@@ -627,6 +705,12 @@ namespace ProjectGenesis.Utils
 
                 if (enemyGenMatter != null) desc.enemyGenMatter = enemyGenMatter.Value;
 
+                if (enemySpMax != null) desc.enemySpMax = enemySpMax.Value;
+
+                if (unitAttackDamage0 != null) desc.unitAttackDamage0 = unitAttackDamage0.Value;
+
+                if (unitAttackDamageInc0 != null) desc.unitAttackDamageInc0 = unitAttackDamageInc0.Value;
+
                 if (multiLevel != null) desc.multiLevel = multiLevel.Value;
 
                 if (storageCol != null) desc.storageCol = storageCol.Value;
@@ -634,6 +718,8 @@ namespace ProjectGenesis.Utils
                 if (storageRow != null) desc.storageRow = storageRow.Value;
 
                 if (isStorage != null) desc.isStorage = isStorage.Value;
+
+                if (subId != null) desc.subId = subId.Value;
 
                 if (allowBuildInWater != null) desc.allowBuildInWater = allowBuildInWater.Value;
 

@@ -9,7 +9,7 @@ using UnityEngine;
 // ReSharper disable InconsistentNaming
 // ReSharper disable Unity.PreferAddressByIdToGraphicsParams
 
-namespace ProjectGenesis.Patches.UI
+namespace ProjectGenesis.Patches
 {
     public static class AdvancedLaserPatches
     {
