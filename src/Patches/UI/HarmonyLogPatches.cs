@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections.Concurrent;
 using BepInEx.Logging;
 using HarmonyLib;
 
@@ -6,7 +6,7 @@ namespace ProjectGenesis.Patches
 {
     internal class HarmonyLogListener : ILogListener
     {
-        internal static readonly Queue<string> LogData = new Queue<string>();
+        internal static readonly ConcurrentQueue<string> LogData = new ConcurrentQueue<string>();
 
         public void LogEvent(object sender, LogEventArgs eventArgs)
         {
@@ -30,7 +30,8 @@ namespace ProjectGenesis.Patches
             if (_finished) return;
 
             while (HarmonyLogListener.LogData.Count > 0)
-                UIFatalErrorTip.instance.ShowError("Harmony throws an error when patching!", HarmonyLogListener.LogData.Dequeue());
+                UIFatalErrorTip.instance.ShowError("Harmony throws an error when patching!",
+                    HarmonyLogListener.LogData.TryDequeue(out var logData) ? logData : null);
 
             _finished = true;
         }

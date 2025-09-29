@@ -64,7 +64,7 @@ namespace ProjectGenesis.Patches
             if (__instance.size == QuantumStorageSize) Monitor.Exit(QuantumStorageMutex);
         }
 
-        [HarmonyPatch(typeof(FactoryStorage), nameof(FactoryStorage.GameTick))]
+        [HarmonyPatch(typeof(FactoryStorage), nameof(FactoryStorage.GameTickStorage))]
         [HarmonyPatch(typeof(FactoryStorage), nameof(FactoryStorage.GetStorageComponent))]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> FactoryStorage_GameTick_Transpiler(IEnumerable<CodeInstruction> instructions)

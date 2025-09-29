@@ -34,8 +34,7 @@ namespace ProjectGenesis.Patches
         };
 
         [HarmonyPatch(typeof(FactorySystem), nameof(FactorySystem.GameTick), typeof(long), typeof(bool))]
-        [HarmonyPatch(typeof(FactorySystem), nameof(FactorySystem.GameTick), typeof(long), typeof(bool), typeof(int), typeof(int),
-            typeof(int))]
+        [HarmonyPatch(typeof(GameLogic), nameof(GameLogic._assembler_parallel))]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> FactorySystem_GameTick_Transpiler(IEnumerable<CodeInstruction> instructions)
         {

@@ -202,11 +202,14 @@ namespace ProjectGenesis.Patches
         {
             var matcher = new CodeMatcher(instructions);
 
-            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Brfalse), new CodeMatch(OpCodes.Ldc_I4_0));
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Brfalse), new CodeMatch(OpCodes.Ldc_I4_0),
+                new CodeMatch(), new CodeMatch(), new CodeMatch(OpCodes.Ldloc_S));
 
-            object label = matcher.Advance(1).Operand;
+            var label = matcher.Advance(1).Operand;
 
-            matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0), new CodeInstruction(OpCodes.Ldloc_3),
+            var tech = matcher.InstructionAt(4);
+
+            matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0), tech,
                 new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(ResearchLabPatches), nameof(LabMatrixEffect_Patch_Method))),
                 new CodeInstruction(OpCodes.Br_S, label));
 

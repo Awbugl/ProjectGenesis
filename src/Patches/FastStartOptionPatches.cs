@@ -14,9 +14,9 @@ namespace ProjectGenesis.Patches
 
         private static void Init()
         {
-            var gameObject = GameObject.Find("UI Root/Overlay Canvas/Galaxy Select/setting-group");
+            var gameObject = GameObject.Find("UI Root/Overlay Canvas/Galaxy Select/setting-group/stretch-transform/");
             GameObject fastStartObj =
-                Object.Instantiate(GameObject.Find("UI Root/Overlay Canvas/Galaxy Select/setting-group/sandbox-mode/"),
+                Object.Instantiate(GameObject.Find("UI Root/Overlay Canvas/Galaxy Select/setting-group/stretch-transform/sandbox-mode/"),
                     gameObject.transform, false);
 
             for (var i = 5; i < gameObject.transform.childCount; i++)
