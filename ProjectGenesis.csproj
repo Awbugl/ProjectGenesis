@@ -98,7 +98,8 @@
         <None Include="assets\*"/>
         <None Include="lib\*"/>
         <None Include="*.md"/>
-        <None Include="DefaultPath.props"/>
+        <None Include="DefaultPath.props" />
+        <None Include="DefaultPath.props.example" />
         <None Include="nuget.config"/>
         <Content Include=".gitignore" />
     </ItemGroup>
