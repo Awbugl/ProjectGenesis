@@ -1,11 +1,19 @@
-- v3.1.1
-  + 适配版本v0.10.33.26934
+- v3.1.2
+  + 修复激光塔拆除时报错
+  + 临时添加前置mod ModFixOne
 
-  + Adaptation of version v0.10.33.26934
+  + Fix the error that occurs when dismantling the laser tower
+  + Temporarily added as a pre-required mod `ModFixOne`
 
 
 <details>
   <summary>点击展开日志 | Click to view all </summary>
+
+
+- v3.1.1
+  + 适配版本v0.10.33.26934
+
+  + Adaptation of version v0.10.33.26934
 
 
 - v3.1.0 众源创新 | Crowdsourcing Innovation
