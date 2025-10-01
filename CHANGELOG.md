@@ -1,3 +1,13 @@
+- v3.1.1
+  + 适配版本v0.10.33.26934
+
+  + Adaptation of version v0.10.33.26934
+
+
+<details>
+  <summary>点击展开日志 | Click to view all </summary>
+
+
 - v3.1.0 众源创新 | Crowdsourcing Innovation
   + 调整了部分文案
   + 调整了各类弹箱的部分数值
@@ -51,10 +61,6 @@
   + `Electromagnetic Orbital Catapults` will now use the Collective Technology bonus
   + Fabricated buildings will consume additional power based on recipe and fabrication rate
   + Removed Quantization Calculator
-
-
-<details>
-  <summary>点击展开日志 | Click to view all </summary>
 
 
 - v3.0.15

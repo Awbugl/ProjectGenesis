@@ -30,7 +30,7 @@ namespace ProjectGenesis.Patches
             }
 
             fastStartObj.name = "fast-start-mode";
-            fastStartObj.transform.localPosition = new Vector3(0, -244, 0);
+            fastStartObj.transform.localPosition = new Vector3(0, -180, 0);
             Object.DestroyImmediate(fastStartObj.GetComponent<Localizer>());
             UIButton button = fastStartObj.GetComponentInChildren<UIButton>();
             button.tips.tipTitle = "快速开局".TranslateFromJson();

@@ -100,6 +100,13 @@ namespace ProjectGenesis.Patches
             prefabDescLODMaterial[3].SetTexture(veinColorTex, texture);
         }
 
+        [HarmonyPatch(typeof(VeinProto), nameof(VeinProto.Preload))]
+        [HarmonyPostfix]
+        public static void VeinProto_Preload_Postfix(VeinProto __instance)
+        {
+            if (__instance._iconSprite80px == null) __instance._iconSprite80px = __instance._iconSprite;
+        }
+
         [HarmonyPatch(typeof(UISandboxMenu), nameof(UISandboxMenu.StaticLoad))]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> UISandboxMenu_StaticLoad_Transpiler(IEnumerable<CodeInstruction> instructions)
