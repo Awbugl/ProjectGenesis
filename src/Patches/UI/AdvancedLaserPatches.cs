@@ -59,7 +59,7 @@ namespace ProjectGenesis.Patches
 
             matcher.Advance(1).SetAndAdvance(OpCodes.Ldarg_0, null);
             matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Call,
-                AccessTools.Method(typeof(AdvancedLaserPatches), nameof(GetLaserContinuousSkillSystem))));
+                AccessTools.Method(typeof(AdvancedLaserPatches), nameof(TurretComponent_StopContinuousSkill_Patch))));
 
             return matcher.InstructionEnumeration();
         }
@@ -78,7 +78,7 @@ namespace ProjectGenesis.Patches
 
             matcher.Advance(3).SetAndAdvance(OpCodes.Ldarg_1, null).SetAndAdvance(OpCodes.Ldarg_0, null);
             matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Call,
-                AccessTools.Method(typeof(AdvancedLaserPatches), nameof(GetLaserContinuousPlanetFactory))));
+                AccessTools.Method(typeof(AdvancedLaserPatches), nameof(GetLaserContinuous))));
 
             return matcher.InstructionEnumeration();
         }
@@ -86,15 +86,14 @@ namespace ProjectGenesis.Patches
         private static bool CheckAdvancedLaser(PlanetFactory factory, ref TurretComponent component) =>
             factory.entityPool[component.entityId].modelIndex == ProtoID.M高频激光塔MK2;
 
-        public static DataPoolRenderer<LocalLaserContinuous>
-            GetLaserContinuousPlanetFactory(PlanetFactory factory, ref TurretComponent component) =>
+        public static DataPoolRenderer<LocalLaserContinuous> GetLaserContinuous(PlanetFactory factory, ref TurretComponent component) =>
             CheckAdvancedLaser(factory, ref component) ? _turretAdvancedLaserContinuous : factory.skillSystem.turretLaserContinuous;
 
-        public static DataPoolRenderer<LocalLaserContinuous> GetLaserContinuousSkillSystem(SkillSystem skillSystem,
+        public static DataPoolRenderer<LocalLaserContinuous> TurretComponent_StopContinuousSkill_Patch(SkillSystem skillSystem,
             ref TurretComponent component)
         {
-            PlanetFactory factory = skillSystem.gameData.factories[component.target.astroId];
-            return GetLaserContinuousPlanetFactory(factory, ref component);
+            PlanetFactory factory = skillSystem.astroFactories[component.target.astroId];
+            return GetLaserContinuous(factory, ref component);
         }
 
         [HarmonyPatch(typeof(SkillSystem), nameof(SkillSystem.GameTick))]
