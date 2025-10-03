@@ -1,13 +1,23 @@
+- v3.1.3
+  + 修复激光塔拆除时报错
+  + 移除前置mod ModFixOne
+  + 调整黑雾进攻时的电力影响参数
+
+  + Fix the error that occurs when dismantling the laser tower
+  + remove pre-required mod `ModFixOne`
+  + Adjusted the power influence parameters during Dark Fog assault
+
+
+<details>
+  <summary>点击展开日志 | Click to view all </summary>
+
+
 - v3.1.2
   + 修复激光塔拆除时报错
   + 临时添加前置mod ModFixOne
 
   + Fix the error that occurs when dismantling the laser tower
   + Temporarily added as a pre-required mod `ModFixOne`
-
-
-<details>
-  <summary>点击展开日志 | Click to view all </summary>
 
 
 - v3.1.1
