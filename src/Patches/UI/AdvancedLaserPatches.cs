@@ -78,7 +78,6 @@ namespace ProjectGenesis.Patches
             ILGenerator generator)
         {
             var matcher = new CodeMatcher(instructions, generator);
-
             // this part does:
             // turretLaserContinuous = IsAdvancedLaser ? _turretAdvancedLaserContinuous : SkillSystem.turretLaserContinuous;
             /*
@@ -87,12 +86,12 @@ namespace ProjectGenesis.Patches
                  Call IsAdvancedLaser
                  Brtrue label2
                  ldarg.1      // factory
-                 ldfld        class SkillSystem PlanetFactory.killSystem
+                 ldfld        class SkillSystem PlanetFactory.skillSystem
                  stloc.s      skillSystem
                  ldloc.s      skillSystem
                  ldfld        class DataPoolRenderer`1<valuetype LocalLaserContinuous> SkillSystem.turretLaserContinuous
                  br label1
-                 Call Patch_Result_Method [label2]
+                 Call GetAdvancedLaserContinuous [label2]
                  stloc.s      turretLaserContinuous [label1]
             */
             matcher.MatchForward(true, new CodeMatch(OpCodes.Ldarg_1),
@@ -110,7 +109,7 @@ namespace ProjectGenesis.Patches
                 new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(AdvancedLaserPatches), nameof(IsAdvancedLaser))),
                 new CodeInstruction(OpCodes.Brtrue, label2), new CodeInstruction(OpCodes.Ldarg_1));
 
-            // change condition from projectileId>0 to projectileId!=0
+            // change condition from projectileId>0 to projectileId>0 (normal) || projectileId<0 (advanced)
             matcher.MatchForward(false, new CodeMatch(OpCodes.Ldarg_0), new CodeMatch(OpCodes.Ldfld, TurretComponent_projectileId_Field),
                 new CodeMatch(OpCodes.Brtrue), new CodeMatch(OpCodes.Ldloc_S));
 
@@ -125,7 +124,6 @@ namespace ProjectGenesis.Patches
                 new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(AdvancedLaserPatches), nameof(RewriteProjectileIdIfAdvanced))));
 
             // patch when get TurretComponent.ProjectileId back to -TurretComponent.ProjectileId if advanced 
-
             matcher.MatchForward(false, new CodeMatch(OpCodes.Ldarg_0), new CodeMatch(OpCodes.Ldfld, TurretComponent_projectileId_Field),
                 new CodeMatch(OpCodes.Ldelema), new CodeMatch(OpCodes.Dup));
 
