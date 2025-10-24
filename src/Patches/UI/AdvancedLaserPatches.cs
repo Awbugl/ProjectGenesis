@@ -13,7 +13,7 @@ namespace ProjectGenesis.Patches
 {
     public static class AdvancedLaserPatches
     {
-        private static readonly DataPoolRenderer<LocalLaserContinuous> _turretAdvancedLaserContinuous =
+        public static readonly DataPoolRenderer<LocalLaserContinuous> TurretAdvancedLaserContinuous =
             new DataPoolRenderer<LocalLaserContinuous>();
 
         private static RenderableObjectDesc _combatTurretAdvancedLaserContinuousDesc;
@@ -47,7 +47,7 @@ namespace ProjectGenesis.Patches
                 _combatTurretAdvancedLaserContinuousDesc.materials = new Material[] { material, };
             }
 
-            _turretAdvancedLaserContinuous.InitRenderer(_combatTurretAdvancedLaserContinuousDesc);
+            TurretAdvancedLaserContinuous.InitRenderer(_combatTurretAdvancedLaserContinuousDesc);
         }
 
         [HarmonyPatch(typeof(TurretComponent), nameof(TurretComponent.StopContinuousSkill))]
@@ -67,7 +67,15 @@ namespace ProjectGenesis.Patches
 
             matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0),
                 new CodeInstruction(OpCodes.Call,
-                    AccessTools.Method(typeof(AdvancedLaserPatches), nameof(StopContinuousSkill_Patch_Method))));
+                    AccessTools.Method(typeof(AdvancedLaserPatches), nameof(GetLaserContinuousByProjectileId))));
+
+            matcher.MatchForward(true, new CodeMatch(OpCodes.Ldarg_0), new CodeMatch(OpCodes.Ldfld, TurretComponent_projectileId_Field));
+            matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Call,
+                AccessTools.Method(typeof(AdvancedLaserPatches), nameof(Abs))));
+
+            matcher.MatchForward(true, new CodeMatch(OpCodes.Ldarg_0), new CodeMatch(OpCodes.Ldfld, TurretComponent_projectileId_Field));
+            matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Call,
+                AccessTools.Method(typeof(AdvancedLaserPatches), nameof(Abs))));
 
             return matcher.InstructionEnumeration();
         }
@@ -78,21 +86,22 @@ namespace ProjectGenesis.Patches
             ILGenerator generator)
         {
             var matcher = new CodeMatcher(instructions, generator);
+
             // this part does:
-            // turretLaserContinuous = IsAdvancedLaser ? _turretAdvancedLaserContinuous : SkillSystem.turretLaserContinuous;
+            // turretLaserContinuous = IsAdvancedLaser ? _turretAdvancedLaserContinuous : skillSystem.turretLaserContinuous;
             /*
-                 ldarg.1      // factory
-                 Ldarg_0
-                 Call IsAdvancedLaser
-                 Brtrue label2
-                 ldarg.1      // factory
-                 ldfld        class SkillSystem PlanetFactory.skillSystem
-                 stloc.s      skillSystem
-                 ldloc.s      skillSystem
-                 ldfld        class DataPoolRenderer`1<valuetype LocalLaserContinuous> SkillSystem.turretLaserContinuous
-                 br label1
-                 Call GetAdvancedLaserContinuous [label2]
-                 stloc.s      turretLaserContinuous [label1]
+                ldarg.1      // factory
+                ldfld        PlanetFactory.skillSystem
+                stloc.s      skillSystem
+                ldarg.1      // factory
+                Ldarg_0      // TurretComponent&
+                Call IsAdvancedLaser
+                Brtrue label2
+                ldloc.s      skillSystem
+                ldfld        SkillSystem.turretLaserContinuous
+                br label1
+                Call GetAdvancedLaserContinuous [label2]
+                stloc.s      turretLaserContinuous [label1]
             */
             matcher.MatchForward(true, new CodeMatch(OpCodes.Ldarg_1),
                 new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(PlanetFactory), nameof(PlanetFactory.skillSystem))),
@@ -101,20 +110,20 @@ namespace ProjectGenesis.Patches
             matcher.Advance(1).CreateLabel(out Label label1);
 
             matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Br, label1));
-            matcher.Insert(new CodeInstruction(OpCodes.Call,
-                AccessTools.Method(typeof(AdvancedLaserPatches), nameof(GetAdvancedLaserContinuous))));
+            matcher.Insert(new CodeInstruction(OpCodes.Ldsfld,
+                AccessTools.Method(typeof(AdvancedLaserPatches), nameof(TurretAdvancedLaserContinuous))));
             matcher.CreateLabel(out Label label2);
 
-            matcher.Advance(-5).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0),
+            matcher.Advance(-3).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_1), new CodeInstruction(OpCodes.Ldarg_0),
                 new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(AdvancedLaserPatches), nameof(IsAdvancedLaser))),
-                new CodeInstruction(OpCodes.Brtrue, label2), new CodeInstruction(OpCodes.Ldarg_1));
+                new CodeInstruction(OpCodes.Brtrue, label2));
 
             // change condition from projectileId>0 to projectileId>0 (normal) || projectileId<0 (advanced)
             matcher.MatchForward(false, new CodeMatch(OpCodes.Ldarg_0), new CodeMatch(OpCodes.Ldfld, TurretComponent_projectileId_Field),
                 new CodeMatch(OpCodes.Brtrue), new CodeMatch(OpCodes.Ldloc_S));
 
-            matcher.Advance(2).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_1), new CodeInstruction(OpCodes.Ldarg_0),
-                new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(AdvancedLaserPatches), nameof(DecideProjectileId))));
+            matcher.Advance(2).InsertAndAdvance(new CodeInstruction(OpCodes.Call,
+                AccessTools.Method(typeof(AdvancedLaserPatches), nameof(Abs))));
 
             // patch when shot if TurretComponent is advanced then set TurretComponent.ProjectileId = -TurretComponent.ProjectileId
             matcher.MatchForward(true, new CodeMatch(OpCodes.Ldarg_0), new CodeMatch(OpCodes.Ldfld, TurretComponent_projectileId_Field),
@@ -127,8 +136,8 @@ namespace ProjectGenesis.Patches
             matcher.MatchForward(false, new CodeMatch(OpCodes.Ldarg_0), new CodeMatch(OpCodes.Ldfld, TurretComponent_projectileId_Field),
                 new CodeMatch(OpCodes.Ldelema), new CodeMatch(OpCodes.Dup));
 
-            matcher.Advance(2).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_1), new CodeInstruction(OpCodes.Ldarg_0),
-                new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(AdvancedLaserPatches), nameof(DecideProjectileId))));
+            matcher.Advance(2).InsertAndAdvance(new CodeInstruction(OpCodes.Call,
+                AccessTools.Method(typeof(AdvancedLaserPatches), nameof(Abs))));
 
             return matcher.InstructionEnumeration();
         }
@@ -149,44 +158,35 @@ namespace ProjectGenesis.Patches
         private static bool IsAdvancedLaser(PlanetFactory factory, ref TurretComponent component) =>
             factory.entityPool[component.entityId].modelIndex == ProtoID.M高频激光塔MK2;
 
-        public static int DecideProjectileId(int index, PlanetFactory factory, ref TurretComponent component) =>
-            IsAdvancedLaser(factory, ref component) ? -index : index;
+        public static int Abs(int index) => index >= 0 ? index : -index;
 
         public static void RewriteProjectileIdIfAdvanced(PlanetFactory factory, ref TurretComponent component)
         {
             if (IsAdvancedLaser(factory, ref component)) component.projectileId = -component.projectileId;
         }
 
-        public static DataPoolRenderer<LocalLaserContinuous> StopContinuousSkill_Patch_Method(DataPoolRenderer<LocalLaserContinuous> ori,
-            ref TurretComponent component)
-        {
-            if (component.projectileId > 0) return ori;
-
-            component.projectileId = -component.projectileId;
-            return _turretAdvancedLaserContinuous;
-        }
-
-        public static DataPoolRenderer<LocalLaserContinuous> GetAdvancedLaserContinuous() => _turretAdvancedLaserContinuous;
+        public static DataPoolRenderer<LocalLaserContinuous> GetLaserContinuousByProjectileId(DataPoolRenderer<LocalLaserContinuous> ori,
+            ref TurretComponent component) =>
+            component.projectileId >= 0 ? ori : TurretAdvancedLaserContinuous;
 
         [HarmonyPatch(typeof(SkillSystem), nameof(SkillSystem.GameTick))]
         [HarmonyPostfix]
         public static void SkillSystem_GameTick(SkillSystem __instance)
         {
             PlanetFactory[] factories = __instance.gameData.factories;
-            int cursor = _turretAdvancedLaserContinuous.cursor;
-            LocalLaserContinuous[] buffer = _turretAdvancedLaserContinuous.buffer;
+            int cursor = TurretAdvancedLaserContinuous.cursor;
+            LocalLaserContinuous[] buffer = TurretAdvancedLaserContinuous.buffer;
 
             for (var id = 1; id < cursor; ++id)
             {
                 if (buffer[id].id != id) continue;
 
                 buffer[id].TickSkillLogic(__instance, factories);
-                if (buffer[id].fade == 0.0f) _turretAdvancedLaserContinuous.Remove(id);
+                if (buffer[id].fade == 0.0) TurretAdvancedLaserContinuous.Remove(id);
             }
 
-            if (_turretAdvancedLaserContinuous.count != 0 || _turretAdvancedLaserContinuous.capacity <= 256) return;
-
-            _turretAdvancedLaserContinuous.Flush();
+            if (TurretAdvancedLaserContinuous.count == 0 && TurretAdvancedLaserContinuous.capacity > 256)
+                TurretAdvancedLaserContinuous.Flush();
         }
 
         [HarmonyPatch(typeof(SkillSystem), nameof(SkillSystem.RendererDraw))]
@@ -195,14 +195,14 @@ namespace ProjectGenesis.Patches
         {
             if (__instance.gameData.localPlanet == null) return;
 
-            _turretAdvancedLaserContinuous.Render();
+            TurretAdvancedLaserContinuous.Render();
         }
 
         [HarmonyPatch(typeof(SkillSystem), nameof(SkillSystem.Free))]
         [HarmonyPostfix]
         public static void SkillSystem_Free()
         {
-            _turretAdvancedLaserContinuous?.FreeRenderer();
+            TurretAdvancedLaserContinuous?.FreeRenderer();
         }
 
         [HarmonyPatch(typeof(SkillSystem), nameof(SkillSystem.SetForNewGame))]
@@ -231,7 +231,7 @@ namespace ProjectGenesis.Patches
         {
             ReInitAll();
 
-            try { _turretAdvancedLaserContinuous.Import(r); }
+            try { TurretAdvancedLaserContinuous.Import(r); }
             catch (EndOfStreamException)
             {
                 // ignored
@@ -240,15 +240,15 @@ namespace ProjectGenesis.Patches
 
         internal static void Export(BinaryWriter w)
         {
-            lock (_turretAdvancedLaserContinuous)
+            lock (TurretAdvancedLaserContinuous)
             {
-                _turretAdvancedLaserContinuous.Flush();
-                _turretAdvancedLaserContinuous.Export(w);
+                TurretAdvancedLaserContinuous.Flush();
+                TurretAdvancedLaserContinuous.Export(w);
             }
         }
 
         internal static void IntoOtherSave() => ReInitAll();
 
-        private static void ReInitAll() => _turretAdvancedLaserContinuous.ResetPool();
+        private static void ReInitAll() => TurretAdvancedLaserContinuous.ResetPool();
     }
 }
