@@ -74,7 +74,7 @@ namespace ProjectGenesis.Patches
 
             return matcher.InstructionEnumeration();
         }
-        
+
         [HarmonyPatch(typeof(UILootFilter), nameof(UILootFilter.RefreshIcons))]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> RefreshIcons_Transpiler(IEnumerable<CodeInstruction> instructions)
@@ -83,13 +83,13 @@ namespace ProjectGenesis.Patches
 
             matcher.MatchForward(false, new CodeMatch(OpCodes.Ldc_I4_S, (sbyte)14));
             matcher.SetOperandAndAdvance((sbyte)17);
-            
-            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldc_I4_S, (sbyte)14));
-            matcher.SetOperandAndAdvance((sbyte)17); 
-            
+
             matcher.MatchForward(false, new CodeMatch(OpCodes.Ldc_I4_S, (sbyte)14));
             matcher.SetOperandAndAdvance((sbyte)17);
-            
+
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldc_I4_S, (sbyte)14));
+            matcher.SetOperandAndAdvance((sbyte)17);
+
             return matcher.InstructionEnumeration();
         }
 

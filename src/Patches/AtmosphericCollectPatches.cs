@@ -144,8 +144,7 @@ namespace ProjectGenesis.Patches
             // PrefabDesc desc = itemProto.desc;
             List<CodeInstruction> ins3 = matcher.InstructionsWithOffsets(-2, -1);
 
-            matcher.Advance(1).MatchForward(false,
-                new CodeMatch(OpCodes.Ldfld, PrefabDesc_isStellarStation_Field));
+            matcher.Advance(1).MatchForward(false, new CodeMatch(OpCodes.Ldfld, PrefabDesc_isStellarStation_Field));
 
             // PrefabDesc desc = buildPreview1.desc;
             List<CodeInstruction> ins4 = matcher.InstructionsWithOffsets(-2, -1);

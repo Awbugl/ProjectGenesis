@@ -309,10 +309,8 @@ namespace ProjectGenesis.Patches
             vector.y += (float)(dotNet35Random.NextDouble() * 2.0 - 1.0) * 0.006f;
         }
 
-        private static bool QueryHeights(PlanetRawData rawData, float radius, params Vector3[] points)
-        {
-            return points.All(point => rawData.QueryHeight(point) > radius);
-        }
+        private static bool QueryHeights(PlanetRawData rawData, float radius, params Vector3[] points) =>
+            points.All(point => rawData.QueryHeight(point) > radius);
 
         private static bool QueryHeightsNear(PlanetRawData rawData, Vector3 x_vector, Vector3 y_vector, float radius,
             params Vector3[] points)

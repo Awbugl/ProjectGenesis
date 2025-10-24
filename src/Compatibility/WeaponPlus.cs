@@ -29,9 +29,8 @@ namespace ProjectGenesis.Compatibility
         public static void AddDiyItem_Prefix(int[] inputIds)
         {
             for (var i = 0; i < inputIds.Length; i++)
-            {
-                if (inputIds[i] == 1201) inputIds[i] = ProtoID.I铝块;
-            }
+                if (inputIds[i] == 1201)
+                    inputIds[i] = ProtoID.I铝块;
         }
     }
 }

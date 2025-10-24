@@ -258,7 +258,7 @@ namespace ProjectGenesis.Patches
 
                         ItemProto itemProto = LDB.items.Select(itemId);
 
-                        if (MoreMegaStructure.Installed && MoreMegaStructure.FastAssembleItems.TryGetValue(itemId, out var recipeId))
+                        if (MoreMegaStructure.Installed && MoreMegaStructure.FastAssembleItems.TryGetValue(itemId, out int recipeId))
                         {
                             RecipeProto recipe = LDB.recipes.Select(recipeId);
 
@@ -267,7 +267,7 @@ namespace ProjectGenesis.Patches
                             if (recipe.Results.Length == 1) { count = stack * 3 * recipe.ItemCounts[0] / recipe.ResultCounts[0] / 4; }
                             else
                             {
-                                var idx = Array.IndexOf(recipe.Results, itemId);
+                                int idx = Array.IndexOf(recipe.Results, itemId);
 
                                 count = stack * 3 * recipe.ItemCounts[idx] / recipe.ResultCounts[idx] / recipe.Results.Length / 4;
                             }

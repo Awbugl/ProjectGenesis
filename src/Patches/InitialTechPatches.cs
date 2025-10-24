@@ -122,13 +122,10 @@ namespace ProjectGenesis.Patches
 
                 bool techUnlocked = history.TechUnlocked(techId);
                 bool active = techUnlocked;
-                if (tech.PreTechs.Length > 0) {
-                    active |= tech.PreTechs.Any(history.TechUnlocked);
-                } else if (tech.PreTechsImplicit.Length > 0) {
-                    active |= tech.PreTechsImplicit.Any(history.TechUnlocked);
-                } else {
-                    active = true;
-                }
+                if (tech.PreTechs.Length > 0) { active |= tech.PreTechs.Any(history.TechUnlocked); }
+                else if (tech.PreTechsImplicit.Length > 0) { active |= tech.PreTechsImplicit.Any(history.TechUnlocked); }
+                else { active = true; }
+
                 node.gameObject.SetActive(active);
 
                 if (node.techProto.postTechArray.Length > 0) { node.connGroup.gameObject.SetActive(techUnlocked); }

@@ -44,8 +44,9 @@ namespace ProjectGenesis.Patches
 
             // ReSharper disable once LoopCanBePartlyConvertedToQuery
             foreach (UIButton button in __instance.categoryButtons)
-                if (button != null)
-                    SetButtonPosition(button);
+            {
+                if (button != null) SetButtonPosition(button);
+            }
 
             SetButtonPosition(__instance.blueprintButton);
             return;

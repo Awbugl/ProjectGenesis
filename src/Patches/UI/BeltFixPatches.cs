@@ -15,8 +15,7 @@ namespace ProjectGenesis.Patches
 
         [HarmonyPatch(typeof(ConnGizmoRenderer), nameof(ConnGizmoRenderer.Update))]
         [HarmonyTranspiler]
-        public static IEnumerable<CodeInstruction> ConnGizmoRenderer_Update_Transpiler(
-            IEnumerable<CodeInstruction> instructions)
+        public static IEnumerable<CodeInstruction> ConnGizmoRenderer_Update_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
             var matcher = new CodeMatcher(instructions);
 

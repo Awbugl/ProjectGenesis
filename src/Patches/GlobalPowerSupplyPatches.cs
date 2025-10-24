@@ -43,8 +43,9 @@ namespace ProjectGenesis.Patches
 
                 // ReSharper disable once ForeachCanBePartlyConvertedToQueryUsingAnotherGetEnumerator
                 foreach (int nodeId in list)
-                    if (factoryPowerSystem.nodePool[nodeId].powerPoint == Pos)
-                        factoryPowerSystem.RemoveNodeComponent(nodeId);
+                {
+                    if (factoryPowerSystem.nodePool[nodeId].powerPoint == Pos) factoryPowerSystem.RemoveNodeComponent(nodeId);
+                }
 
                 NodeIds.Remove(planetId, out _);
             }
@@ -91,13 +92,13 @@ namespace ProjectGenesis.Patches
 
         private static void OnNodeAdded(PowerSystem powerSystem, ref PowerNodeComponent powerNodeComponent, int nodeId)
         {
-            Node node1 = new Node(nodeId)
+            var node1 = new Node(nodeId)
             {
                 connDistance2 = powerNodeComponent.connectDistance * powerNodeComponent.connectDistance,
                 coverRadius2 = powerNodeComponent.coverRadius * powerNodeComponent.coverRadius,
             };
 
-            for (int index1 = 1; index1 < powerSystem.netCursor; ++index1)
+            for (var index1 = 1; index1 < powerSystem.netCursor; ++index1)
             {
                 PowerNetwork powerNetwork = powerSystem.netPool[index1];
 
@@ -118,8 +119,9 @@ namespace ProjectGenesis.Patches
 
             // ReSharper disable once ForeachCanBePartlyConvertedToQueryUsingAnotherGetEnumerator
             foreach (Node conn in node1.conns)
-                foreach (int consumer in conn.consumers)
-                    powerSystem.list_sorted_add(node1.consumers, consumer);
+            {
+                foreach (int consumer in conn.consumers) powerSystem.list_sorted_add(node1.consumers, consumer);
+            }
 
             int network = node1.conns.Count > 0 ? powerSystem.nodePool[node1.conns[0].id].networkId : 0;
             if (network == 0) network = powerSystem.NewNetwork();

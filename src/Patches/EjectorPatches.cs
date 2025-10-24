@@ -21,7 +21,7 @@ namespace ProjectGenesis.Patches
                     AccessTools.Method(typeof(EjectorPatches), nameof(Ejector_PatchMethod))))
                .SetInstructionAndAdvance(new CodeInstruction(OpCodes.Nop));
 
-            var matcher2 = matcher.Clone();
+            CodeMatcher matcher2 = matcher.Clone();
 
             matcher2.MatchForward(false, new CodeMatch(OpCodes.Ldarg_0), new CodeMatch(OpCodes.Ldarg_0),
                 new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(EjectorComponent), nameof(EjectorComponent.coldSpend))),
@@ -38,9 +38,9 @@ namespace ProjectGenesis.Patches
             int stationPilerLevel = GameMain.history.stationPilerLevel;
             ref int bulletCount = ref component.bulletCount;
 
-            var count = stationPilerLevel > bulletCount ? bulletCount : stationPilerLevel;
+            int count = stationPilerLevel > bulletCount ? bulletCount : stationPilerLevel;
 
-            for (int i = 0; i < count; i++) swarm.AddBullet(sailBullet, component.runtimeOrbitId);
+            for (var i = 0; i < count; i++) swarm.AddBullet(sailBullet, component.runtimeOrbitId);
 
             int bulletInc = component.bulletInc / bulletCount;
             if (!component.incUsed) component.incUsed = bulletInc > 0;

@@ -286,10 +286,7 @@ namespace ProjectGenesis.Patches
             return matcher.InstructionEnumeration();
         }
 
-        public static bool IsFuelRod(ItemProto proto)
-        {
-            return FuelRods.Contains(proto.ID) || proto.FuelType == 31;
-        }
+        public static bool IsFuelRod(ItemProto proto) => FuelRods.Contains(proto.ID) || proto.FuelType == 31;
 
         [HarmonyPatch(typeof(UIStorageGrid), nameof(UIStorageGrid.HandPut))]
         [HarmonyTranspiler]

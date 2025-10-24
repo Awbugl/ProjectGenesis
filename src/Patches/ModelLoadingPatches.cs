@@ -32,10 +32,8 @@ namespace ProjectGenesis.Patches
 
         [HarmonyPatch(typeof(EntityData), nameof(EntityData.Import))]
         [HarmonyPostfix]
-        public static void EntityData_Import(ref EntityData __instance)
-        {
+        public static void EntityData_Import(ref EntityData __instance) =>
             __instance.modelIndex = ModelIdMigrationAction(__instance.modelIndex);
-        }
 
         [HarmonyPatch(typeof(BlueprintBuilding), nameof(BlueprintBuilding.Import))]
         [HarmonyTranspiler]
@@ -85,9 +83,7 @@ namespace ProjectGenesis.Patches
 
         [HarmonyPatch(typeof(ModelProto), nameof(ModelProto.InitMaxModelIndex))]
         [HarmonyPostfix]
-        public static void InitMaxModelIndex()
-        {
+        public static void InitMaxModelIndex() =>
             ModelProto.maxModelIndex = LDB.models.dataArray.Max(model => model?.ID).GetValueOrDefault();
-        }
     }
 }

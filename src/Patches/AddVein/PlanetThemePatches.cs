@@ -37,9 +37,9 @@ namespace ProjectGenesis.Patches
                 new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(ThemeProto), nameof(ThemeProto.PlanetType))),
                 new CodeMatch(OpCodes.Ldc_I4_3));
 
-            var themeProto = matcher.Operand;
+            object themeProto = matcher.Operand;
 
-            var label = matcher.Advance(3).Operand;
+            object label = matcher.Advance(3).Operand;
 
             matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_S, themeProto),
                 new CodeInstruction(OpCodes.Ldfld, AccessTools.Field(typeof(ThemeProto), nameof(ThemeProto.WaterItemId))),

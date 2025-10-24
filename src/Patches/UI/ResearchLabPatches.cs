@@ -169,9 +169,9 @@ namespace ProjectGenesis.Patches
                 new CodeMatch(new CodeInstruction(OpCodes.Call,
                     AccessTools.Method(typeof(LabComponent), nameof(LabComponent.InternalUpdateResearch)))));
 
-            var techSpeed = matcher.Advance(-6).Operand;
+            object techSpeed = matcher.Advance(-6).Operand;
 
-            var local = matcher.Advance(-2).Operand;
+            object local = matcher.Advance(-2).Operand;
 
             matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0), new CodeInstruction(OpCodes.Ldloc_S, local),
                 new CodeInstruction(OpCodes.Ldloc_S, techSpeed),
@@ -185,14 +185,14 @@ namespace ProjectGenesis.Patches
         {
             LabComponent lab = window.factorySystem.labPool[window.labId];
             short modelIndex = window.factory.entityPool[lab.entityId].modelIndex;
-            var labResearchSpeed = PlanetFactory.PrefabDescByModelIndex[modelIndex].labResearchSpeed;
+            float labResearchSpeed = PlanetFactory.PrefabDescByModelIndex[modelIndex].labResearchSpeed;
             return techSpeed * labResearchSpeed;
         }
 
         public static float SetResearchSpeed(FactorySystem system, ref LabComponent component, float techSpeed)
         {
             short modelIndex = system.factory.entityPool[component.entityId].modelIndex;
-            var labResearchSpeed = PlanetFactory.PrefabDescByModelIndex[modelIndex].labResearchSpeed;
+            float labResearchSpeed = PlanetFactory.PrefabDescByModelIndex[modelIndex].labResearchSpeed;
             return techSpeed * labResearchSpeed;
         }
 
@@ -205,9 +205,9 @@ namespace ProjectGenesis.Patches
             matcher.MatchForward(false, new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Brfalse), new CodeMatch(OpCodes.Ldc_I4_0),
                 new CodeMatch(), new CodeMatch(), new CodeMatch(OpCodes.Ldloc_S));
 
-            var label = matcher.Advance(1).Operand;
+            object label = matcher.Advance(1).Operand;
 
-            var tech = matcher.InstructionAt(4);
+            CodeInstruction tech = matcher.InstructionAt(4);
 
             matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0), tech,
                 new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(ResearchLabPatches), nameof(LabMatrixEffect_Patch_Method))),
@@ -258,7 +258,7 @@ namespace ProjectGenesis.Patches
                 new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(LabComponent), nameof(LabComponent.matrixPoints))),
                 new CodeMatch(OpCodes.Ldc_I4_5));
 
-            var label = matcher2.Advance(5).Operand;
+            object label = matcher2.Advance(5).Operand;
 
             matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0),
                 new CodeInstruction(OpCodes.Call,
@@ -318,7 +318,7 @@ namespace ProjectGenesis.Patches
 
         public static int LabComponent_InternalUpdateResearch_Patch_Method(ref LabComponent labComponent)
         {
-            int speed = (int)(GameMain.history.techSpeed + 2.0);
+            var speed = (int)(GameMain.history.techSpeed + 2.0);
 
             for (var i = 0; i < LabComponent.matrixIds.Length; i++)
             {

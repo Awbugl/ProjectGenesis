@@ -134,8 +134,9 @@ namespace ProjectGenesis.Patches
             }
 
             lock (_components)
-                foreach (StorageComponent storageComponent in _components)
-                    storageComponent.Export(w);
+            {
+                foreach (StorageComponent storageComponent in _components) storageComponent.Export(w);
+            }
         }
 
         internal static void Import(BinaryReader r)

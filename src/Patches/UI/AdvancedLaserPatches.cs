@@ -200,10 +200,7 @@ namespace ProjectGenesis.Patches
 
         [HarmonyPatch(typeof(SkillSystem), nameof(SkillSystem.Free))]
         [HarmonyPostfix]
-        public static void SkillSystem_Free()
-        {
-            TurretAdvancedLaserContinuous?.FreeRenderer();
-        }
+        public static void SkillSystem_Free() => TurretAdvancedLaserContinuous?.FreeRenderer();
 
         [HarmonyPatch(typeof(SkillSystem), nameof(SkillSystem.SetForNewGame))]
         [HarmonyPostfix]

@@ -17,12 +17,12 @@ namespace ProjectGenesis.Patches
                 new CodeMatch(OpCodes.Call,
                     AccessTools.Method(typeof(PowerGeneratorComponent), nameof(PowerGeneratorComponent.EnergyCap_Wind))));
 
-            var comp = matcher.InstructionAt(-2);
-            
+            CodeInstruction comp = matcher.InstructionAt(-2);
+
             matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0)).InsertAndAdvance(comp)
                .InsertAndAdvance(new CodeInstruction(OpCodes.Call,
                     AccessTools.Method(typeof(PlanetFocusPatches), nameof(EnergyCap_Patch))));
-            
+
             //pv
             matcher.MatchForward(false,
                 new CodeMatch(OpCodes.Call,

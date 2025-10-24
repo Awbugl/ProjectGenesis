@@ -30,8 +30,10 @@ namespace ProjectGenesis.Patches
             if (_finished) return;
 
             while (HarmonyLogListener.LogData.Count > 0)
+            {
                 UIFatalErrorTip.instance.ShowError("Harmony throws an error when patching!",
-                    HarmonyLogListener.LogData.TryDequeue(out var logData) ? logData : null);
+                    HarmonyLogListener.LogData.TryDequeue(out string logData) ? logData : null);
+            }
 
             _finished = true;
         }

@@ -59,7 +59,7 @@ namespace ProjectGenesis.Patches
 
             matcher.MatchForward(false, new CodeMatch(OpCodes.Ldflda, EvolveData_threatshr_Field));
 
-            matcher.MatchForward(false, new CodeMatch(OpCodes.Add), new CodeMatch(OpCodes.Conv_I4),  new CodeMatch(OpCodes.Call));
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Add), new CodeMatch(OpCodes.Conv_I4), new CodeMatch(OpCodes.Call));
 
             matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_1),
                 new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(PlanetFocusPatches), nameof(threatshr_Method))));
