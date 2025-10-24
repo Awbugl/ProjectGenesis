@@ -53,7 +53,7 @@ namespace ProjectGenesis
         [JsonProperty("dependencies")]
         public string[] Dependencies { get; set; } =
         {
-            "CommonAPI-CommonAPI-1.6.7", "nebula-NebulaMultiplayerModApi-2.0.0",
+            "CommonAPI-CommonAPI-1.6.7", "nebula-NebulaMultiplayerModApi-2.0.0", "starfi5h-DeliverySlotsTweaks-1.5.15",
         };
 
         internal static ManifestObject DebugObject()
