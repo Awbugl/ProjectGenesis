@@ -111,7 +111,7 @@ namespace ProjectGenesis.Patches
 
             matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Br, label1));
             matcher.Insert(new CodeInstruction(OpCodes.Ldsfld,
-                AccessTools.Method(typeof(AdvancedLaserPatches), nameof(TurretAdvancedLaserContinuous))));
+                AccessTools.Field(typeof(AdvancedLaserPatches), nameof(TurretAdvancedLaserContinuous))));
             matcher.CreateLabel(out Label label2);
 
             matcher.Advance(-3).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_1), new CodeInstruction(OpCodes.Ldarg_0),
