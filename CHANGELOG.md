@@ -1,3 +1,13 @@
+- v3.1.4
+  + 修复激光塔攻击时报错
+  + 前置mod添加 `AssemblerUI` `ErrorAnalyzer`
+
+  + Fix the error that occurs when the advanced laser tower targeting
+  + add pre-required mod `AssemblerUI` `ErrorAnalyzer`
+
+<details>
+  <summary>点击展开日志 | Click to view all </summary>
+
 - v3.1.3
   + 修复激光塔拆除时报错
   + 移除前置mod ModFixOne
@@ -6,10 +16,6 @@
   + Fix the error that occurs when dismantling the laser tower
   + remove pre-required mod `ModFixOne`
   + Adjusted the power influence parameters during Dark Fog assault
-
-
-<details>
-  <summary>点击展开日志 | Click to view all </summary>
 
 
 - v3.1.2
