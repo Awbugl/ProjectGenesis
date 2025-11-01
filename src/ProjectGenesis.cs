@@ -108,10 +108,6 @@ namespace ProjectGenesis
 
             ModPath = Path.GetDirectoryName(executingAssembly.Location);
 
-            var resources = new ResourceData("org.LoShin.GenesisBook", "texpack", ModPath);
-            resources.LoadAssetBundle("texpack");
-            ProtoRegistry.AddResource(resources);
-
             var resources_models = new ResourceData("org.LoShin.GenesisBook", "genesis-models", ModPath);
             resources_models.LoadAssetBundle("genesis-models");
             ProtoRegistry.AddResource(resources_models);
