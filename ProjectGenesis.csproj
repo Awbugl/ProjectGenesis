@@ -75,6 +75,9 @@
         <Reference Include="UnityEngine.ParticleSystemModule">
             <HintPath>$(DSPAssemblyPath)UnityEngine.ParticleSystemModule.dll</HintPath>
         </Reference>
+        <Reference Include="UnityEngine.ImageConversionModule">
+            <HintPath>$(DSPAssemblyPath)UnityEngine.ImageConversionModule.dll</HintPath>
+        </Reference>
         <Reference Include="UnityEngine.TextRenderingModule">
             <HintPath>$(DSPAssemblyPath)UnityEngine.TextRenderingModule.dll</HintPath>
         </Reference>
@@ -94,6 +97,8 @@
     </ItemGroup>
     <ItemGroup>
         <Compile Include="src\**\*.cs"/>
+        <EmbeddedResource Include="assets\sprite\*.png" />
+        <EmbeddedResource Include="assets\texture\*.png" />
         <EmbeddedResource Include="data\*.json"/>
         <None Include="assets\*"/>
         <None Include="lib\*"/>

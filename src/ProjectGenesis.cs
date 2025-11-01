@@ -333,9 +333,10 @@ namespace ProjectGenesis
 
             for (var i = 0; i < LDB.items.dataArray.Length; ++i)
             {
-                LDB.items.dataArray[i].recipes = null;
-                LDB.items.dataArray[i].rawMats = null;
-                LDB.items.dataArray[i].Preload(i);
+                ItemProto itemProto = LDB.items.dataArray[i];
+                itemProto.recipes = null;
+                itemProto.rawMats = null;
+                itemProto.Preload(i);
             }
 
             for (var i = 0; i < LDB.recipes.dataArray.Length; ++i) LDB.recipes.dataArray[i].Preload(i);

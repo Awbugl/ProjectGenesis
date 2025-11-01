@@ -161,7 +161,7 @@ namespace ProjectGenesis.Utils
             prefabDescLODMaterial[2].SetColor("_TintColor", new Color(0.2715f, 1.7394f, 0.1930f));
 
             prefabDesc = LDB.models.Select(ProtoID.M人造恒星MK2).prefabDesc;
-            Texture texture = Resources.Load<Texture>("Assets/texpack/人造恒星MK2材质");
+            Texture texture = TextureHelper.GetTexture("人造恒星MK2材质");
             prefabDescLODMaterial = ref prefabDesc.lodMaterials[0];
             prefabDescLODMaterial[0].SetTexture("_EmissionTex", texture);
             prefabDescLODMaterial[1].SetColor("_TintColor", new Color(0.1804f, 0.4953f, 1.3584f));  // 亮部

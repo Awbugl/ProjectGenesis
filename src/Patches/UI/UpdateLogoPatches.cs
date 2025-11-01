@@ -1,5 +1,6 @@
 ﻿using System;
 using HarmonyLib;
+using ProjectGenesis.Utils;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -31,15 +32,15 @@ namespace ProjectGenesis.Patches
 
             if (Localization.isZHCN)
             {
-                iconstr = "Assets/texpack/黑雾中文图标";
+                iconstr = "黑雾中文图标";
 
                 DateTime dateTime = DateTime.Now;
 
-                if (dateTime > new DateTime(2024, 2, 9) && dateTime < new DateTime(2024, 2, 25)) iconstr = "Assets/texpack/创世Logo新春贺岁版";
+                if (dateTime > new DateTime(2024, 2, 9) && dateTime < new DateTime(2024, 2, 25)) iconstr = "创世Logo新春贺岁版";
             }
-            else { iconstr = "Assets/texpack/黑雾英文图标"; }
+            else { iconstr = "黑雾英文图标"; }
 
-            Texture2D texture = Resources.Load<Sprite>(iconstr).texture;
+            Texture2D texture = TextureHelper.GetTexture(iconstr);
             mainLogo.GetComponent<RawImage>().texture = texture;
             escLogo.GetComponent<RawImage>().texture = texture;
             mainLogo.GetComponent<RectTransform>().sizeDelta = new Vector2(600f, 250f);

@@ -83,7 +83,7 @@ namespace ProjectGenesis.Patches
 
         internal static void SetMinerMk2Color()
         {
-            Texture texture = Resources.Load<Texture>("Assets/texpack/矿机渲染索引");
+            Texture texture = TextureHelper.GetTexture("矿机渲染索引");
             int veinColorTex = Shader.PropertyToID("_VeinColorTex");
 
             ref PrefabDesc prefabDesc = ref LDB.models.Select(256).prefabDesc;

@@ -65,7 +65,7 @@ namespace ProjectGenesis.Patches
 
         internal static void SetChemicalRecipeFcol()
         {
-            Texture texture = Resources.Load<Texture>("Assets/texpack/chemical-plant-recipe-fcol");
+            Texture texture = TextureHelper.GetTexture("chemical-plant-recipe-fcol");
             int fluidTex = Shader.PropertyToID("_FluidTex");
 
             ref PrefabDesc prefabDesc = ref LDB.models.Select(64).prefabDesc;
