@@ -216,7 +216,7 @@
   },
   {
     "Name": "创世之书介绍前字",
-    "ZHCN": "星球调整：\n    四种新矿物，硫、铝、钨、放射矿，矿物现在可在水下生成；\n    为绝大多数类地行星添加了大气类型，并可使用大气采集站进行资源采集；\n    新增海水海洋、盐酸海洋、硝酸海洋；\n    行星协调中心，可自由选择多种协调增益您的工厂。\n\n产线调整：\n    新矿物相关的材料及配方；\n    化工配方扩展，三种不同性能的塑料用于不同生产需求；\n    矿物处理科技，允许将矿物预处理以提高产出或用于燃料电池；\n    添加多种燃料棒，为伊卡洛斯的星际扩张保驾护航；\n    建筑配方需求调整，将常用需求整合为机械组件，提高产线效率；\n    产物溢出机制，允许副产物溢出保证生产连续性（可在设置中调整）。\n\n建筑调整：\n    制造台拆分为三种不同精度的制造类型，不可通用；\n    对自动化生产属性进行提升，如供电范围、传送带、分拣器速度、制造台速度等；\n    大气采集站、轨道采集器不再消耗电力，允许油井、大矿机在水上建造；\n    发电功率调整，功率 = 建筑基础功率 * 燃料加成；\n    燃料电池发电厂仅能在含氧大气环境下运行（燃料棒除外）；添加裂变电站、同位素温差发电机；\n    黑雾建筑调整，黑雾制造台允许制造绝大多数配方，黑雾熔炉则可翻倍产出物品；\n    巨型建筑：使用传送带传输原料和产物的制造中心，效率远超普通设备；\n    物质分解设施，可将物品转换为沙土，亦可拆解建筑为制造材料。\n\n科技调整：\n    科技探索模式，隐藏暂不可研发的科技（可在设置中调整）；\n    添加多种复合矩阵及对应科研需求；\n    建造量子箱瞬间跨越星系输送物品；消耗负熵奇点进行远程折跃；使用全球护盾能源广播。\n\n武器调整：\n    生产钨钢弹头、核子导弹；\n    建造紫外激光塔、电磁加农炮；\n    使用反物质跃迁导弹跨星支援。\n\n其他调整：\n    机甲燃料仓只能使用燃料棒进行供电；\n    快速开局模式，让每一次冒险都能迅速展开。",
+    "ZHCN": "星球调整：\n    四种新矿物，硫、铝、钨、放射矿，矿物现在可在水下生成；\n    为绝大多数类地行星添加了大气类型，并可使用大气采集站进行资源采集；\n    新增海水海洋、盐酸海洋、硝酸海洋；\n    行星协调中心，可自由选择多种协调增益您的工厂。\n\n产线调整：\n    新矿物相关的材料及配方；\n    化工配方扩展，三种不同性能的塑料用于不同生产需求；\n    矿物处理科技，允许将矿物预处理以提高产出或用于燃料电池；\n    添加多种燃料棒，为伊卡洛斯的星际扩张保驾护航；\n    建筑配方需求调整，将常用需求整合为机械组件，提高产线效率；\n    产物溢出机制，允许副产物溢出保证生产连续性（可在设置中调整）。\n\n建筑调整：\n    制造台拆分为三种不同精度的制造类型，不可通用；\n    对自动化生产属性进行提升，如供电范围、传送带、分拣器速度、制造台速度等；\n    大气采集站、轨道采集器不再消耗电力，允许油井、大矿机在水上建造；\n    发电功率调整，功率 = 建筑基础功率 * 燃料加成；\n    燃料电池发电厂仅能在含氧大气环境下运行（燃料棒除外）；添加裂变电站、同位素温差发电机；\n    黑雾建筑调整，黑雾制造台允许制造绝大多数配方，黑雾熔炉则可翻倍产出物品；\n    巨型建筑：使用传送带传输原料和产物的制造中心，效率远超普通设备；\n    物质分解设施，可将物品转换为沙土，亦可拆解建筑为制造材料。\n\n科技调整：\n    科技探索模式，隐藏暂不可研发的科技（可在设置中调整）；\n    添加多种复合矩阵及对应科研需求；\n    建造量子箱瞬间跨越星系输送物品；消耗负熵奇点进行远程折跃；使用全球护盾能源广播。\n\n武器调整：\n    生产钨钢弹头、核导弹；\n    建造紫外激光塔、电磁加农炮；\n    使用反物质跃迁导弹跨星支援。\n\n其他调整：\n    机甲燃料仓只能使用燃料棒进行供电；\n    快速开局模式，让每一次冒险都能迅速展开。",
     "ENUS": "Planet tweaks:\n    Four new minerals, Sulfur, Aluminum, Tungsten, and Radiolite, minerals can now be generated underwater;\n    Added atmosphere types to the vast majority of Earth-like planets, and the ability to use Atmospheric Harvesting Stations for resource harvesting;\n    New seawater oceans, hydrochloric acid oceans, and nitric acid oceans;\n    Planetary Coordination Center, with the freedom to choose from a wide range of coordinated gains for your factories.\nProduction tweaks:\n    New mineral-related materials and recipes;\n    Chemical recipe expansion, three different plastics with different properties for different production needs;\n    Mineral Processing Technology, allowing minerals to be pre-treated for increased output or for use in fuel cells;\n    Addition of multiple fuel rods for Icarus' interstellar expansion;\n    Construction recipe requirement adjustments, consolidating common requirements into mechanical components to increase production line efficiency;\n    Production overflow mechanic, allowing byproduct overflow to ensure production continuity (adjustable in settings).\nBuilding tweaks:\n    Manufacturing table split into three different precision manufacturing types, which are not generalizable;\n    Enhancements to automated production attributes such as power supply range, conveyor belts, sorter speed, and manufacturing table speed;\n    Atmospheric collection stations and orbital collectors no longer consume power, allowing oil wells and large mining machines to be built over water;\n    Power generation power adjusted so that power = building base power * fuel bonus;\n    Fuel cell power plants can only operate in oxygenated atmospheres (except fuel rods); fission power stations, isotope temperature difference generators added;\n    Dark Fog building tweak; Dark Fog Fabrication Stations allow for the creation of most recipes, while Dark Fog Furnaces double the output of items;\n    Mega Buildings: manufacturing centers that use conveyor belts to transfer raw materials and products far more efficiently than normal facilities;\n    Material Decomposition Facility, which converts items into sand and earth, and can also dismantle buildings for manufacturing materials.\nTechnology tweaks:\n    Technology Exploration Mode to hide technologies that cannot be developed at the moment (can be adjusted in Settings);\n    Add multiple composite matrices and corresponding research requirements;\n    Construct Quantum Boxes to instantly transport items across galaxies; consume Negentropic Singularity to perform Remote Folding; use Global Shield Energy to broadcast.\nWeapon tweaks:\n    Produce tungsten warheads, nuclear missiles;\n    Construction of UV laser towers, electromagnetic cannons;\n    Use antimatter leaping missiles for transplanetary support.\nOther tweaks:\n    Mech fuel silos can only be powered using fuel rods;\n    Quick start mode to get every adventure underway quickly."
   },
   {
@@ -435,12 +435,12 @@
     "ENUS": "Propulsion fuel designed for primary spacecraft with high energy density and excellent stability."
   },
   {
-    "Name": "煤油燃料棒",
+    "Name": "焦油燃料棒",
     "ZHCN": "焦油燃料棒",
     "ENUS": "Refined Oil Fuel Rod"
   },
   {
-    "Name": "I煤油燃料棒",
+    "Name": "I焦油燃料棒",
     "ZHCN": "经过特殊处理的焦油可作为燃料电池的燃料，从而提供廉价而稳定的能量输出。",
     "ENUS": "Specially treated oil can be used as fuel for fuel cells, thus providing cheap and stable energy output."
   },
@@ -565,12 +565,12 @@
     "ENUS": "Helium-3 fusion reactions do not produce neutrons and are therefore ideal for a new generation of clean energy."
   },
   {
-    "Name": "氘氦混合聚变燃料棒",
+    "Name": "氘氦混合燃料棒",
     "ZHCN": "氘氦混合燃料棒",
     "ENUS": "Deuterium helium fusion fuel rod"
   },
   {
-    "Name": "I氘氦混合聚变燃料棒",
+    "Name": "I氘氦混合燃料棒",
     "ZHCN": "氘氦混合燃料棒的能量密度极高，能够提供巨大的能量输出。",
     "ENUS": "Deuterium-helium hybrid fuel rods have an extremely high energy density and are capable of delivering huge energy output."
   },
@@ -665,37 +665,37 @@
     "ENUS": "A large factory that uses a cracking beam to process and melt raw ore. High power cracking beams can process minerals with extremely high efficiency, quickly crushing them and processing them into high-purity raw materials."
   },
   {
-    "Name": "巨型化学反应釜",
+    "Name": "埃克森美孚化工厂",
     "ZHCN": "埃克森美孚化工厂",
     "ENUS": "ExxonMobil Chemical Plant"
   },
   {
-    "Name": "I巨型化学反应釜",
+    "Name": "I埃克森美孚化工厂",
     "ZHCN": "一座巨型化工厂，包含数个万吨级反应釜、高效冷却塔以及大量的、数不胜数的密封运输管道。当你置身其中，仿佛进入一片管道森林。",
     "ENUS": "A giant chemical plant consisting of several tens of thousands of ton reactors, high-efficiency cooling towers, and numerous sealed transportation pipelines. When you are in it, it feels like entering a forest of pipes."
   },
   {
-    "Name": "精密结构组装厂",
+    "Name": "“工业先锋”精密加工中心",
     "ZHCN": "“工业先锋”精密加工中心",
     "ENUS": "\"Industrial Pioneers\" Precise Machining Center"
   },
   {
-    "Name": "I精密结构组装厂",
+    "Name": "I“工业先锋”精密加工中心",
     "ZHCN": "一座规模庞大的精密工厂，大量运输轨道将原材料运送到核心部位的精密装配中心进行集成化、高效化生产，能够大幅提升我们制造某些尖端设备的效率。",
     "ENUS": "A large-scale precision factory, with a large amount of transportation tracks, transports raw materials to the precision machining center in the core area for integrated and efficient production，greatly improve the efficiency of manufacturing certain cutting-edge equipment."
   },
   {
-    "Name": "巨型粒子对撞机",
+    "Name": "“苍穹”粒子加速器",
     "ZHCN": "“苍穹”粒子加速器",
     "ENUS": "\"Cosmic\" Particle Accelerator"
   },
   {
-    "Name": "I巨型粒子对撞机",
+    "Name": "I“苍穹”粒子加速器",
     "ZHCN": "“苍穹”粒子加速器由多个并行运行的环形加速器构成。由于高度集约化，曾用于临时大量制造反物质。",
     "ENUS": "The \"Cosmic\" particle accelerator consists of several ring gas pedals operating in parallel. Because of its high degree of intensification, it has been used for the temporary mass production of antimatter."
   },
   {
-    "Name": "人造恒星MK2",
+    "Name": "“湛曦”O型人造恒星",
     "ZHCN": "“湛曦”O型人造恒星",
     "ENUS": "Artificial Photonix"
   },
@@ -730,7 +730,7 @@
     "ENUS": "Photon Crystal"
   },
   {
-    "Name": "I人造恒星MK2",
+    "Name": "I“湛曦”O型人造恒星",
     "ZHCN": "“你只需要让正反质子束从两端静静的穿过磁场进入约束球就可以了，轻松愉快！”它简单的外形归功于理论的优雅，被人们称为“人造小太阳”。",
     "ENUS": "\"Just allow the positive and negative proton beams to pass silently through the magnetic field from both ends into the Constraint Sphere, nice and easy!\" It is simple but effective and is called the Artificial Sun."
   },
@@ -1060,12 +1060,12 @@
     "ENUS": "The combination of quantum chips and particle broadband creates a mega-computing cluster. Mature quantum computing technology is one of the conditions to measure the level of development of a civilization, and it is an important node in the mastermind's computation."
   },
   {
-    "Name": "光学计算机",
+    "Name": "“超越”X-1型光学主机",
     "ZHCN": "“超越”X-1型光学主机",
     "ENUS": "\"Beyond\" X-1 optical computer"
   },
   {
-    "Name": "I光学计算机",
+    "Name": "I“超越”X-1型光学主机",
     "ZHCN": "光学计算技术的最高结晶，使用光学处理器构建的大型计算机。光学芯片是它的大脑，高效信息链路构成了它的神经，这台设备庞大的计算力能够统筹一些非常复杂的工作过程。",
     "ENUS": "The zenith of optical computing technology, a mainframe computer built using an optical processor. With an optical chip as its brain and highly efficient information links forming its nerves, this device has enough computational power to orchestrate some very complex work processes."
   },
@@ -2170,12 +2170,12 @@
     "ENUS": "Using photon beam technology, quickly extract large amounts of liquid."
   },
   {
-    "Name": "大气收集设施",
+    "Name": "大气采集站",
     "ZHCN": "大气采集站",
     "ENUS": "Atmospheric Collect Station"
   },
   {
-    "Name": "I大气收集设施",
+    "Name": "I大气采集站",
     "ZHCN": "可以富集并收集大气成分的自维持大型设施。",
     "ENUS": "A large self-sustaining facility that can enrich and collect atmospheric components."
   },
@@ -2365,12 +2365,12 @@
     "ENUS": "Ammunition made of Ternary Adamantium, a strong interaction material used in the construction of the deep space probe \"Water Drop\", strong enough to perform super maneuvers such as the \"Sharp Angle Turn\" without disintegrating. Thanks to its robustness, the warhead has unrivaled penetration power. One case contains 480 rounds."
   },
   {
-    "Name": "核子爆破单元",
-    "ZHCN": "核子爆破单元",
+    "Name": "核能爆破单元",
+    "ZHCN": "核能爆破单元",
     "ENUS": "Nuclear Demolition Unit"
   },
   {
-    "Name": "I核子爆破单元",
+    "Name": "I核能爆破单元",
     "ZHCN": "在爆破单元的基础上引入链式反应，通过其产生的高温高压环境造成杀伤。不必担心，在连接引信之前，它非常安全。",
     "ENUS": "A chain reaction is introduced on top of the crystal blasting unit, causing killing through the high temperature and high pressure environment it creates. No need to worry, it is very safe until the fuse is attached."
   },
@@ -2395,12 +2395,12 @@
     "ENUS": "An efficient and reliable anti-personnel weapon, according to the mastermind's calculations, the contamination that may be caused by its use in the fight against the Dark Fog is among the acceptable costs. A shell group contains 12 shells."
   },
   {
-    "Name": "反物质炮弹",
+    "Name": "反物质炮弹组",
     "ZHCN": "反物质炮弹组",
     "ENUS": "Antimatter Shell Set"
   },
   {
-    "Name": "I反物质炮弹",
+    "Name": "I反物质炮弹组",
     "ZHCN": "使用反物质战斗部装药的炮弹，简单而有效的应用。一个炮弹组包含12发炮弹。",
     "ENUS": "Simple and effective application of artillery shells using antimatter combatant charges. One shell group contains 12 shells."
   },
@@ -2450,18 +2450,18 @@
     "ENUS": "Titanium Cases"
   },
   {
-    "Name": "T核子爆破单元",
+    "Name": "T核能爆破单元",
     "ZHCN": "核能爆破单元",
     "ENUS": "Nuclear Demolition Unit"
   },
   {
-    "Name": "核子爆破单元描述",
+    "Name": "核能爆破单元描述",
     "ZHCN": "使用放射性物质填装的进阶爆破单元，通过核裂变反应释放的高温高压以及剧烈辐射造成杀伤。",
     "ENUS": "An advanced demolition unit filled with radioactive material that kills through the high temperature and pressure released by the nuclear fission reaction and intense radiation."
   },
   {
-    "Name": "核子爆破单元结果",
-    "ZHCN": "你解锁了核子爆破单元，这种爆破单元使用放射性装药以追求更高的杀伤效果。",
+    "Name": "核能爆破单元结果",
+    "ZHCN": "你解锁了核能爆破单元，这种爆破单元使用放射性装药以追求更高的杀伤效果。",
     "ENUS": "You have unlocked the Nuclear Demolition Unit, which uses a radioactive charge in pursuit of higher lethality."
   },
   {
@@ -2486,7 +2486,7 @@
   },
   {
     "Name": "微型核弹组描述",
-    "ZHCN": "战斗部采用核子爆破单元的进阶炮弹，在核反应的作用下，其杀伤力要远超普通的化学能炮弹。",
+    "ZHCN": "战斗部采用核能爆破单元的进阶炮弹，在核反应的作用下，其杀伤力要远超普通的化学能炮弹。",
     "ENUS": "Advanced shells with nuclear demolition units in the combat section are far more lethal than ordinary chemical-energy shells under the effect of nuclear reaction."
   },
   {
@@ -2625,12 +2625,12 @@
     "ENUS": "Implosion Cannon"
   },
   {
-    "Name": "聚爆加农炮MK2",
+    "Name": "电磁加农炮",
     "ZHCN": "电磁加农炮",
     "ENUS": "Electromagnetic Cannon"
   },
   {
-    "Name": "I聚爆加农炮MK2",
+    "Name": "I电磁加农炮",
     "ZHCN": "改进的质量投射器能够有效增加这门巨炮的射程，而新的高强度结构材料则可以承受更大的冲击力以抵消质量投射技术带来的巨大后坐，避免对其结构本身造成破坏，即使如此，这门巨炮每次开火仍需要更长时间进行充能。",
     "ENUS": "The improved mass projector can effectively increase the range of this cannon, while the new high-strength structural material can withstand greater impact force to offset the huge recoil caused by mass projection technology, avoiding damage to its structure itself. Nevertheless, each firing of this cannon still requires longer charging time."
   },
@@ -2640,12 +2640,12 @@
     "ENUS": "Blue Laser Tower"
   },
   {
-    "Name": "高频激光塔MK2",
+    "Name": "紫外激光塔",
     "ZHCN": "紫外激光塔",
     "ENUS": "UV Laser Tower"
   },
   {
-    "Name": "I高频激光塔MK2",
+    "Name": "I紫外激光塔",
     "ZHCN": "使用粒子容器替代简陋的激光发生器，能承受更高的能量负载，攻击距离也得到了大幅度提升。",
     "ENUS": "The use of particle containers instead of rudimentary laser generators can withstand much higher energy loads, and as a result, attack ranges have been significantly increased."
   },

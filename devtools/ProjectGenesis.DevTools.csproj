@@ -51,7 +51,6 @@
         <Compile Include="JsonFileUtils.cs" />
         <Compile Include="Program.cs"/>
         <Compile Include="Properties\AssemblyInfo.cs"/>
-        <Compile Include="SpriteRenameTool.cs" />
     </ItemGroup>
     <ItemGroup>
       <ProjectReference Include="..\ProjectGenesis.csproj">

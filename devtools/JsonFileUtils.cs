@@ -34,6 +34,8 @@ namespace ProjectGenesis
 
         public static void SaveTechs(List<TechProtoJson> data) => Save(TechFile, data);
 
+        public static void SaveStrings(List<StringProtoJson> data) => Save(StringsFile, data);
+
         private static List<T> Load<T>(string path) => JsonConvert.DeserializeObject<List<T>>(File.ReadAllText(path));
 
         private static void Save<T>(string path, List<T> data) =>

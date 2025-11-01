@@ -3692,10 +3692,10 @@
   },
   {
     "ID": 1804,
-    "Name": "T核子爆破单元",
-    "IconPath": "Assets/texpack/T核子爆破单元",
-    "Desc": "核子爆破单元描述",
-    "Conclusion": "核子爆破单元结果",
+    "Name": "T核能爆破单元",
+    "IconPath": "Assets/texpack/T核能爆破单元",
+    "Desc": "核能爆破单元描述",
+    "Conclusion": "核能爆破单元结果",
     "IsHiddenTech": false,
     "PreItem": [],
     "Position": [
