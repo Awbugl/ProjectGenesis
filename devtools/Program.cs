@@ -1,5 +1,6 @@
 ﻿using static ProjectGenesis.GridMoveTool;
 using static ProjectGenesis.DropListTool;
+using static ProjectGenesis.SpriteRenameTool;
 
 namespace ProjectGenesis
 {
@@ -12,6 +13,7 @@ namespace ProjectGenesis
             // CheckTechUnlockRecipe();
             // CheckItemGrid();
             // CheckRecipeGrid(); 
+            SpriteRenameTool.Run();
         }
     }
 }

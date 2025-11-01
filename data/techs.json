@@ -8,8 +8,8 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      37.0,
-      1.0
+      37,
+      1
     ],
     "PreTechs": [],
     "PreTechsImplicit": [],
@@ -43,8 +43,8 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      9.0,
-      -23.0
+      9,
+      -23
     ],
     "PreTechs": [
       1900
@@ -93,8 +93,8 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      13.0,
-      1.0
+      13,
+      1
     ],
     "PreTechs": [
       1900
@@ -144,8 +144,8 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      13.0,
-      -39.0
+      13,
+      -39
     ],
     "PreTechs": [
       1120
@@ -191,8 +191,8 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      17.0,
-      -39.0
+      17,
+      -39
     ],
     "PreTechs": [
       1101
@@ -235,8 +235,8 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      25.0,
-      -43.0
+      25,
+      -43
     ],
     "PreTechs": [
       1915
@@ -272,14 +272,14 @@
   {
     "ID": 1104,
     "Name": "T先进有机合成技术",
-    "IconPath": "Assets/texpack/精炼科技",
+    "IconPath": "Assets/texpack/T先进有机合成技术",
     "Desc": "T先进有机合成技术描述",
     "Conclusion": "T先进有机合成技术描述",
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      25.0,
-      -39.0
+      25,
+      -39
     ],
     "PreTechs": [
       1915
@@ -321,8 +321,8 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      17.0,
-      1.0
+      17,
+      1
     ],
     "PreTechs": [
       1002
@@ -364,8 +364,8 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      13.0,
-      -35.0
+      13,
+      -35
     ],
     "PreTechs": [
       1120
@@ -409,8 +409,8 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      21.0,
-      -27.0
+      21,
+      -27
     ],
     "PreTechs": [
       1702,
@@ -452,8 +452,8 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      25.0,
-      -27.0
+      25,
+      -27
     ],
     "PreTechs": [
       1711,
@@ -493,8 +493,8 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      9.0,
-      -39.0
+      9,
+      -39
     ],
     "PreTechs": [
       1900
@@ -533,14 +533,14 @@
   {
     "ID": 1121,
     "Name": "T基础化工",
-    "IconPath": "Assets/texpack/化工科技",
+    "IconPath": "Assets/texpack/T基础化工",
     "Desc": "T基础化工描述",
     "Conclusion": "基础化工结果",
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      13.0,
-      -43.0
+      13,
+      -43
     ],
     "PreTechs": [
       1120
@@ -583,8 +583,8 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      17.0,
-      -43.0
+      17,
+      -43
     ],
     "PreTechs": [
       1121
@@ -629,8 +629,8 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      17.0,
-      -11.0
+      17,
+      -11
     ],
     "PreTechs": [
       1414
@@ -672,8 +672,8 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      21.0,
-      1.0
+      21,
+      1
     ],
     "PreTechs": [
       1111
@@ -716,8 +716,8 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      21.0,
-      -31.0
+      21,
+      -31
     ],
     "PreTechs": [
       1703
@@ -759,8 +759,8 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      21.0,
-      -7.0
+      21,
+      -7
     ],
     "PreTechs": [
       1413
@@ -799,8 +799,8 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      13.0,
-      -31.0
+      13,
+      -31
     ],
     "PreTechs": [
       1001
@@ -844,8 +844,8 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      17.0,
-      -35.0
+      17,
+      -35
     ],
     "PreTechs": [
       1131
@@ -885,8 +885,8 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      17.0,
-      5.0
+      17,
+      5
     ],
     "PreTechs": [
       1302
@@ -928,8 +928,8 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      29.0,
-      -11.0
+      29,
+      -11
     ],
     "PreTechs": [
       1521
@@ -972,8 +972,8 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      25.0,
-      -31.0
+      25,
+      -31
     ],
     "PreTechs": [
       1125
@@ -1016,8 +1016,8 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      25.0,
-      13.0
+      25,
+      13
     ],
     "PreTechs": [
       1202
@@ -1063,8 +1063,8 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      21.0,
-      -35.0
+      21,
+      -35
     ],
     "PreTechs": [
       1703
@@ -1109,8 +1109,8 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      33.0,
-      -19.0
+      33,
+      -19
     ],
     "PreTechs": [
       1153
@@ -1160,8 +1160,8 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      53.0,
-      1.0
+      53,
+      1
     ],
     "PreTechs": [
       1506
@@ -1203,8 +1203,8 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      25.0,
-      21.0
+      25,
+      21
     ],
     "PreTechs": [
       1202
@@ -1244,7 +1244,7 @@
   {
     "ID": 1152,
     "Name": "T量子折跃",
-    "IconPath": "Assets/texpack/虫洞航行",
+    "IconPath": "Assets/texpack/T量子折跃",
     "Desc": "T量子折跃描述",
     "Conclusion": "T量子折跃描述",
     "IsHiddenTech": true,
@@ -1253,8 +1253,8 @@
       5205
     ],
     "Position": [
-      49.0,
-      -19.0
+      49,
+      -19
     ],
     "PreTechs": [],
     "PreTechsImplicit": [
@@ -1293,8 +1293,8 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      29.0,
-      -19.0
+      29,
+      -19
     ],
     "PreTechs": [
       1416
@@ -1347,8 +1347,8 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      17.0,
-      17.0
+      17,
+      17
     ],
     "PreTechs": [
       1941
@@ -1399,8 +1399,8 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      21.0,
-      17.0
+      21,
+      17
     ],
     "PreTechs": [
       1201
@@ -1448,8 +1448,8 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      25.0,
-      17.0
+      25,
+      17
     ],
     "PreTechs": [
       1202
@@ -1501,8 +1501,8 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      13.0,
-      9.0
+      13,
+      9
     ],
     "PreTechs": [
       1311
@@ -1546,8 +1546,8 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      17.0,
-      9.0
+      17,
+      9
     ],
     "PreTechs": [
       1302
@@ -1591,8 +1591,8 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      29.0,
-      25.0
+      29,
+      25
     ],
     "PreTechs": [
       1606
@@ -1636,8 +1636,8 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      21.0,
-      13.0
+      21,
+      13
     ],
     "PreTechs": [
       1932
@@ -1682,8 +1682,8 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      9.0,
-      9.0
+      9,
+      9
     ],
     "PreTechs": [
       1900
@@ -1726,8 +1726,8 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      25.0,
-      1.0
+      25,
+      1
     ],
     "PreTechs": [
       1124
@@ -1769,8 +1769,8 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      17.0,
-      21.0
+      17,
+      21
     ],
     "PreTechs": [
       1941
@@ -1817,8 +1817,8 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      9.0,
-      -7.0
+      9,
+      -7
     ],
     "PreTechs": [
       1900
@@ -1861,8 +1861,8 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      17.0,
-      -3.0
+      17,
+      -3
     ],
     "PreTechs": [
       1929
@@ -1903,8 +1903,8 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      13.0,
-      -7.0
+      13,
+      -7
     ],
     "PreTechs": [
       1402
@@ -1949,8 +1949,8 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      13.0,
-      -19.0
+      13,
+      -19
     ],
     "PreTechs": [
       1001
@@ -1996,8 +1996,8 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      17.0,
-      -7.0
+      17,
+      -7
     ],
     "PreTechs": [
       1929,
@@ -2044,8 +2044,8 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      13.0,
-      -11.0
+      13,
+      -11
     ],
     "PreTechs": [
       1402
@@ -2088,8 +2088,8 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      9.0,
-      25.0
+      9,
+      25
     ],
     "PreTechs": [
       1900
@@ -2126,8 +2126,8 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      25.0,
-      -19.0
+      25,
+      -19
     ],
     "PreTechs": [
       1513
@@ -2170,8 +2170,8 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      21.0,
-      21.0
+      21,
+      21
     ],
     "PreTechs": [
       1401
@@ -2214,8 +2214,8 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      17.0,
-      -19.0
+      17,
+      -19
     ],
     "PreTechs": [
       1412
@@ -2260,8 +2260,8 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      41.0,
-      1.0
+      41,
+      1
     ],
     "PreTechs": [
       1
@@ -2303,8 +2303,8 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      45.0,
-      1.0
+      45,
+      1
     ],
     "PreTechs": [
       1502
@@ -2354,8 +2354,8 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      45.0,
-      -3.0
+      45,
+      -3
     ],
     "PreTechs": [
       1502
@@ -2403,8 +2403,8 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      49.0,
-      -3.0
+      49,
+      -3
     ],
     "PreTechs": [
       1504
@@ -2426,7 +2426,7 @@
       8
     ],
     "UnlockValues": [
-      1.0
+      1
     ],
     "Published": true,
     "Level": 0,
@@ -2449,8 +2449,8 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      49.0,
-      1.0
+      49,
+      1
     ],
     "PreTechs": [
       1503
@@ -2491,8 +2491,8 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      33.0,
-      1.0
+      33,
+      1
     ],
     "PreTechs": [
       1705
@@ -2531,8 +2531,8 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      57.0,
-      1.0
+      57,
+      1
     ],
     "PreTechs": [
       1145
@@ -2550,7 +2550,7 @@
       99
     ],
     "UnlockValues": [
-      1.0
+      1
     ],
     "Published": true,
     "Level": 0,
@@ -2577,8 +2577,8 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      21.0,
-      -3.0
+      21,
+      -3
     ],
     "PreTechs": [
       1403
@@ -2619,8 +2619,8 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      25.0,
-      -3.0
+      25,
+      -3
     ],
     "PreTechs": [
       1511
@@ -2661,8 +2661,8 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      21.0,
-      -19.0
+      21,
+      -19
     ],
     "PreTechs": [
       1501
@@ -2706,8 +2706,8 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      25.0,
-      -11.0
+      25,
+      -11
     ],
     "PreTechs": [
       1944
@@ -2758,8 +2758,8 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      45.0,
-      5.0
+      45,
+      5
     ],
     "PreTechs": [
       1502
@@ -2810,8 +2810,8 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      49.0,
-      5.0
+      49,
+      5
     ],
     "PreTechs": [
       1522
@@ -2829,7 +2829,7 @@
       26
     ],
     "UnlockValues": [
-      15.0
+      15
     ],
     "Published": true,
     "Level": 1,
@@ -2852,8 +2852,8 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      17.0,
-      33.0
+      17,
+      33
     ],
     "PreTechs": [
       1963
@@ -2908,8 +2908,8 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      21.0,
-      33.0
+      21,
+      33
     ],
     "PreTechs": [
       1601
@@ -2960,8 +2960,8 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      25.0,
-      33.0
+      25,
+      33
     ],
     "PreTechs": [
       1602
@@ -3006,8 +3006,8 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      17.0,
-      25.0
+      17,
+      25
     ],
     "PreTechs": [
       1941,
@@ -3056,8 +3056,8 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      21.0,
-      25.0
+      21,
+      25
     ],
     "PreTechs": [
       1942,
@@ -3107,8 +3107,8 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      25.0,
-      25.0
+      25,
+      25
     ],
     "PreTechs": [
       1605
@@ -3145,14 +3145,14 @@
   {
     "ID": 1963,
     "Name": "T物品仓储",
-    "IconPath": "Assets/texpack/物品仓储",
+    "IconPath": "Assets/texpack/T物品仓储",
     "Desc": "T物品仓储描述",
     "Conclusion": "T物品仓储结果",
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      13.0,
-      33.0
+      13,
+      33
     ],
     "PreTechs": [
       1415
@@ -3196,8 +3196,8 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      25.0,
-      29.0
+      25,
+      29
     ],
     "PreTechs": [
       1602
@@ -3222,7 +3222,7 @@
       32
     ],
     "UnlockValues": [
-      1.0
+      1
     ],
     "Published": true,
     "Level": 0,
@@ -3245,8 +3245,8 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      13.0,
-      -23.0
+      13,
+      -23
     ],
     "PreTechs": [
       1001
@@ -3294,8 +3294,8 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      17.0,
-      -23.0
+      17,
+      -23
     ],
     "PreTechs": [
       1701
@@ -3336,8 +3336,8 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      17.0,
-      -31.0
+      17,
+      -31
     ],
     "PreTechs": [
       1131
@@ -3381,8 +3381,8 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      25.0,
-      -35.0
+      25,
+      -35
     ],
     "PreTechs": [
       1143
@@ -3426,8 +3426,8 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      29.0,
-      1.0
+      29,
+      1
     ],
     "PreTechs": [
       1312
@@ -3470,8 +3470,8 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      21.0,
-      -23.0
+      21,
+      -23
     ],
     "PreTechs": [
       1702
@@ -3493,7 +3493,7 @@
       42
     ],
     "UnlockValues": [
-      1.0
+      1
     ],
     "Published": true,
     "Level": 0,
@@ -3516,8 +3516,8 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      29.0,
-      -3.0
+      29,
+      -3
     ],
     "PreTechs": [
       1512
@@ -3567,8 +3567,8 @@
     "IsHiddenTech": false,
     "PreItem": [],
     "Position": [
-      9.0,
-      49.0
+      9,
+      49
     ],
     "PreTechs": [
       1900
@@ -3613,8 +3613,8 @@
     "IsHiddenTech": false,
     "PreItem": [],
     "Position": [
-      13.0,
-      45.0
+      13,
+      45
     ],
     "PreTechs": [
       1801
@@ -3655,8 +3655,8 @@
     "IsHiddenTech": false,
     "PreItem": [],
     "Position": [
-      17.0,
-      45.0
+      17,
+      45
     ],
     "PreTechs": [
       1802
@@ -3693,14 +3693,14 @@
   {
     "ID": 1804,
     "Name": "T核子爆破单元",
-    "IconPath": "Assets/texpack/核子单元",
+    "IconPath": "Assets/texpack/T核子爆破单元",
     "Desc": "核子爆破单元描述",
     "Conclusion": "核子爆破单元结果",
     "IsHiddenTech": false,
     "PreItem": [],
     "Position": [
-      21.0,
-      45.0
+      21,
+      45
     ],
     "PreTechs": [
       1803
@@ -3744,8 +3744,8 @@
     "IsHiddenTech": false,
     "PreItem": [],
     "Position": [
-      17.0,
-      -27.0
+      17,
+      -27
     ],
     "PreTechs": [
       1701
@@ -3786,8 +3786,8 @@
     "IsHiddenTech": false,
     "PreItem": [],
     "Position": [
-      17.0,
-      41.0
+      17,
+      41
     ],
     "PreTechs": [
       1802
@@ -3830,8 +3830,8 @@
     "IsHiddenTech": false,
     "PreItem": [],
     "Position": [
-      17.0,
-      37.0
+      17,
+      37
     ],
     "PreTechs": [
       1802
@@ -3876,8 +3876,8 @@
     "IsHiddenTech": false,
     "PreItem": [],
     "Position": [
-      13.0,
-      37.0
+      13,
+      37
     ],
     "PreTechs": [
       1801
@@ -3922,8 +3922,8 @@
     "IsHiddenTech": false,
     "PreItem": [],
     "Position": [
-      17.0,
-      53.0
+      17,
+      53
     ],
     "PreTechs": [
       1960
@@ -3970,8 +3970,8 @@
     "IsHiddenTech": false,
     "PreItem": [],
     "Position": [
-      13.0,
-      61.0
+      13,
+      61
     ],
     "PreTechs": [
       1801
@@ -4017,8 +4017,8 @@
     "IsHiddenTech": false,
     "PreItem": [],
     "Position": [
-      21.0,
-      53.0
+      21,
+      53
     ],
     "PreTechs": [
       1809
@@ -4065,8 +4065,8 @@
     "IsHiddenTech": false,
     "PreItem": [],
     "Position": [
-      13.0,
-      49.0
+      13,
+      49
     ],
     "PreTechs": [
       1801
@@ -4107,8 +4107,8 @@
     "IsHiddenTech": false,
     "PreItem": [],
     "Position": [
-      17.0,
-      49.0
+      17,
+      49
     ],
     "PreTechs": [
       1812
@@ -4149,8 +4149,8 @@
     "IsHiddenTech": false,
     "PreItem": [],
     "Position": [
-      21.0,
-      37.0
+      21,
+      37
     ],
     "PreTechs": [
       1803,
@@ -4194,8 +4194,8 @@
     "IsHiddenTech": false,
     "PreItem": [],
     "Position": [
-      21.0,
-      41.0
+      21,
+      41
     ],
     "PreTechs": [
       1803,
@@ -4238,8 +4238,8 @@
     "IsHiddenTech": false,
     "PreItem": [],
     "Position": [
-      25.0,
-      37.0
+      25,
+      37
     ],
     "PreTechs": [
       1804,
@@ -4286,8 +4286,8 @@
     "IsHiddenTech": false,
     "PreItem": [],
     "Position": [
-      25.0,
-      41.0
+      25,
+      41
     ],
     "PreTechs": [
       1804,
@@ -4333,8 +4333,8 @@
     "IsHiddenTech": false,
     "PreItem": [],
     "Position": [
-      25.0,
-      53.0
+      25,
+      53
     ],
     "PreTechs": [
       1811
@@ -4375,8 +4375,8 @@
     "IsHiddenTech": false,
     "PreItem": [],
     "Position": [
-      13.0,
-      57.0
+      13,
+      57
     ],
     "PreTechs": [
       1801
@@ -4400,8 +4400,8 @@
       78
     ],
     "UnlockValues": [
-      1.0,
-      4.0
+      1,
+      4
     ],
     "Published": true,
     "Level": 0,
@@ -4424,8 +4424,8 @@
     "IsHiddenTech": false,
     "PreItem": [],
     "Position": [
-      17.0,
-      57.0
+      17,
+      57
     ],
     "PreTechs": [
       1819
@@ -4467,8 +4467,8 @@
     "IsHiddenTech": false,
     "PreItem": [],
     "Position": [
-      21.0,
-      57.0
+      21,
+      57
     ],
     "PreTechs": [
       1820
@@ -4510,8 +4510,8 @@
     "IsHiddenTech": false,
     "PreItem": [],
     "Position": [
-      25.0,
-      57.0
+      25,
+      57
     ],
     "PreTechs": [
       1821
@@ -4538,8 +4538,8 @@
       80
     ],
     "UnlockValues": [
-      1.0,
-      4.0
+      1,
+      4
     ],
     "Published": true,
     "Level": 0,
@@ -4562,8 +4562,8 @@
     "IsHiddenTech": false,
     "PreItem": [],
     "Position": [
-      29.0,
-      57.0
+      29,
+      57
     ],
     "PreTechs": [
       1822
@@ -4605,8 +4605,8 @@
     "IsHiddenTech": false,
     "PreItem": [],
     "Position": [
-      17.0,
-      61.0
+      17,
+      61
     ],
     "PreTechs": [
       1810
@@ -4648,8 +4648,8 @@
     "IsHiddenTech": false,
     "PreItem": [],
     "Position": [
-      13.0,
-      41.0
+      13,
+      41
     ],
     "PreTechs": [
       1801
@@ -4692,8 +4692,8 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      5.0,
-      1.0
+      5,
+      1
     ],
     "PreTechs": [],
     "PreTechsImplicit": [],
@@ -4726,8 +4726,8 @@
       5202
     ],
     "Position": [
-      45.0,
-      -15.0
+      45,
+      -15
     ],
     "PreTechs": [],
     "PreTechsImplicit": [
@@ -4768,8 +4768,8 @@
       5203
     ],
     "Position": [
-      45.0,
-      -11.0
+      45,
+      -11
     ],
     "PreTechs": [],
     "PreTechsImplicit": [
@@ -4812,8 +4812,8 @@
       5205
     ],
     "Position": [
-      49.0,
-      -11.0
+      49,
+      -11
     ],
     "PreTechs": [],
     "PreTechsImplicit": [
@@ -4857,8 +4857,8 @@
       5205
     ],
     "Position": [
-      45.0,
-      -19.0
+      45,
+      -19
     ],
     "PreTechs": [],
     "PreTechsImplicit": [
@@ -4892,14 +4892,14 @@
   {
     "ID": 1911,
     "Name": "T钨强化玻璃",
-    "IconPath": "Assets/texpack/玻璃科技",
+    "IconPath": "Assets/texpack/T钨强化玻璃",
     "Desc": "T钨强化玻璃描述",
     "Conclusion": "T钨强化玻璃描述",
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      25.0,
-      -7.0
+      25,
+      -7
     ],
     "PreTechs": [
       1126
@@ -4940,8 +4940,8 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      21.0,
-      -39.0
+      21,
+      -39
     ],
     "PreTechs": [
       1102
@@ -4984,8 +4984,8 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      13.0,
-      -15.0
+      13,
+      -15
     ],
     "PreTechs": [
       1402
@@ -5030,8 +5030,8 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      17.0,
-      -15.0
+      17,
+      -15
     ],
     "PreTechs": [
       1916
@@ -5071,8 +5071,8 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      21.0,
-      -15.0
+      21,
+      -15
     ],
     "PreTechs": [
       1919
@@ -5116,8 +5116,8 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      29.0,
-      -15.0
+      29,
+      -15
     ],
     "PreTechs": [
       1920
@@ -5162,8 +5162,8 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      49.0,
-      21.0
+      49,
+      21
     ],
     "PreTechs": [
       1924
@@ -5208,8 +5208,8 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      45.0,
-      21.0
+      45,
+      21
     ],
     "PreTechs": [
       1934
@@ -5256,8 +5256,8 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      45.0,
-      17.0
+      45,
+      17
     ],
     "PreTechs": [
       1934
@@ -5303,8 +5303,8 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      45.0,
-      13.0
+      45,
+      13
     ],
     "PreTechs": [
       1934
@@ -5352,8 +5352,8 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      49.0,
-      13.0
+      49,
+      13
     ],
     "PreTechs": [
       1926
@@ -5392,14 +5392,14 @@
   {
     "ID": 1928,
     "Name": "四氢双环戊二烯燃料棒",
-    "IconPath": "Assets/texpack/燃料棒科技",
+    "IconPath": "Assets/texpack/T四氢双环戊二烯燃料棒",
     "Desc": "T化学能燃料棒描述",
     "Conclusion": "T化学能燃料棒描述",
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      29.0,
-      -39.0
+      29,
+      -39
     ],
     "PreTechs": [
       1104
@@ -5435,14 +5435,14 @@
   {
     "ID": 1929,
     "Name": "T矿物处理",
-    "IconPath": "Assets/texpack/矿物处理",
+    "IconPath": "Assets/texpack/T矿物处理",
     "Desc": "T矿物处理描述",
     "Conclusion": "T矿物处理描述",
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      13.0,
-      -3.0
+      13,
+      -3
     ],
     "PreTechs": [
       1402
@@ -5503,8 +5503,8 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      21.0,
-      -43.0
+      21,
+      -43
     ],
     "PreTechs": [
       1122
@@ -5545,14 +5545,14 @@
   {
     "ID": 1931,
     "Name": "T物质分解设施",
-    "IconPath": "Assets/texpack/回收科技",
+    "IconPath": "Assets/texpack/T物质分解设施",
     "Desc": "T物质分解设施描述",
     "Conclusion": "T物质分解设施描述",
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      49.0,
-      17.0
+      49,
+      17
     ],
     "PreTechs": [
       1925
@@ -5590,14 +5590,14 @@
   {
     "ID": 1932,
     "Name": "化工厂",
-    "IconPath": "Assets/texpack/化工科技",
+    "IconPath": "Assets/texpack/T基础化工",
     "Desc": "基础化工描述",
     "Conclusion": "I化工厂",
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      17.0,
-      13.0
+      17,
+      13
     ],
     "PreTechs": [
       1941
@@ -5641,8 +5641,8 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      41.0,
-      17.0
+      41,
+      17
     ],
     "PreTechs": [
       1
@@ -5675,14 +5675,14 @@
   {
     "ID": 1936,
     "Name": "T行星协调中心",
-    "IconPath": "Assets/texpack/行星协调中心",
+    "IconPath": "Assets/texpack/T行星协调中心",
     "Desc": "T行星协调中心描述",
     "Conclusion": "T行星协调中心描述",
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      13.0,
-      25.0
+      13,
+      25
     ],
     "PreTechs": [
       1415
@@ -5717,14 +5717,14 @@
   {
     "ID": 1937,
     "Name": "T护盾载波调制",
-    "IconPath": "Assets/texpack/护盾载波调制",
+    "IconPath": "Assets/texpack/T护盾载波调制",
     "Desc": "T护盾载波调制描述",
     "Conclusion": "T护盾载波调制描述",
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      33.0,
-      -3.0
+      33,
+      -3
     ],
     "PreTechs": [
       1712
@@ -5757,14 +5757,14 @@
   {
     "ID": 1941,
     "Name": "T基础机械组件",
-    "IconPath": "Assets/texpack/基础组件",
+    "IconPath": "Assets/texpack/T基础机械组件",
     "Desc": "T基础机械组件描述",
     "Conclusion": "T基础机械组件描述",
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      13.0,
-      17.0
+      13,
+      17
     ],
     "PreTechs": [
       1415
@@ -5806,14 +5806,14 @@
   {
     "ID": 1942,
     "Name": "T先进机械组件",
-    "IconPath": "Assets/texpack/先进组件",
+    "IconPath": "Assets/texpack/T先进机械组件",
     "Desc": "T先进机械组件描述",
     "Conclusion": "T先进机械组件描述",
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      17.0,
-      29.0
+      17,
+      29
     ],
     "PreTechs": [
       1941
@@ -5851,14 +5851,14 @@
   {
     "ID": 1943,
     "Name": "T尖端机械组件",
-    "IconPath": "Assets/texpack/尖端组件",
+    "IconPath": "Assets/texpack/T尖端机械组件",
     "Desc": "T尖端机械组件描述",
     "Conclusion": "T尖端机械组件描述",
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      21.0,
-      29.0
+      21,
+      29
     ],
     "PreTechs": [
       1942
@@ -5895,14 +5895,14 @@
   {
     "ID": 1944,
     "Name": "T钨强化金属",
-    "IconPath": "Assets/texpack/钨钢",
+    "IconPath": "Assets/texpack/T钨强化金属",
     "Desc": "T钨强化金属描述",
     "Conclusion": "T钨强化金属描述",
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      21.0,
-      -11.0
+      21,
+      -11
     ],
     "PreTechs": [
       1123
@@ -5937,14 +5937,14 @@
   {
     "ID": 1947,
     "Name": "T虚拟技术革新",
-    "IconPath": "Assets/texpack/虚拟技术革新",
+    "IconPath": "Assets/texpack/T虚拟技术革新",
     "Desc": "T虚拟技术革新描述",
     "Conclusion": "T虚拟技术革新描述",
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      25.0,
-      9.0
+      25,
+      9
     ],
     "PreTechs": [
       1949
@@ -5993,14 +5993,14 @@
   {
     "ID": 1948,
     "Name": "T光学信息传输技术",
-    "IconPath": "Assets/texpack/生物神经",
+    "IconPath": "Assets/texpack/T光学信息传输技术",
     "Desc": "T光学信息传输技术描述",
     "Conclusion": "T光学信息传输技术描述",
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      25.0,
-      5.0
+      25,
+      5
     ],
     "PreTechs": [
       1133
@@ -6045,14 +6045,14 @@
   {
     "ID": 1949,
     "Name": "T超级量子计算机",
-    "IconPath": "Assets/texpack/主机科技",
+    "IconPath": "Assets/texpack/T超级量子计算机",
     "Desc": "T超级量子计算机描述",
     "Conclusion": "T超级量子计算机描述",
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      21.0,
-      9.0
+      21,
+      9
     ],
     "PreTechs": [
       1303,
@@ -6094,14 +6094,14 @@
   {
     "ID": 1950,
     "Name": "T光学计算机",
-    "IconPath": "Assets/texpack/主机科技",
+    "IconPath": "Assets/texpack/T超级量子计算机",
     "Desc": "T光学计算机描述",
     "Conclusion": "T光学计算机描述",
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      29.0,
-      9.0
+      29,
+      9
     ],
     "PreTechs": [
       1947,
@@ -6147,14 +6147,14 @@
   {
     "ID": 1952,
     "Name": "T反物质湮灭单元",
-    "IconPath": "Assets/texpack/反物质单元",
+    "IconPath": "Assets/texpack/T反物质湮灭单元",
     "Desc": "反物质湮灭单元描述",
     "Conclusion": "反物质湮灭单元结果",
     "IsHiddenTech": false,
     "PreItem": [],
     "Position": [
-      25.0,
-      45.0
+      25,
+      45
     ],
     "PreTechs": [
       1804
@@ -6195,8 +6195,8 @@
     "IsHiddenTech": false,
     "PreItem": [],
     "Position": [
-      29.0,
-      37.0
+      29,
+      37
     ],
     "PreTechs": [
       1952,
@@ -6238,8 +6238,8 @@
     "IsHiddenTech": false,
     "PreItem": [],
     "Position": [
-      21.0,
-      49.0
+      21,
+      49
     ],
     "PreTechs": [
       1813
@@ -6282,8 +6282,8 @@
     "IsHiddenTech": false,
     "PreItem": [],
     "Position": [
-      25.0,
-      49.0
+      25,
+      49
     ],
     "PreTechs": [
       1955
@@ -6330,8 +6330,8 @@
       5205
     ],
     "Position": [
-      29.0,
-      49.0
+      29,
+      49
     ],
     "PreTechs": [
       1956
@@ -6366,14 +6366,14 @@
   {
     "ID": 1959,
     "Name": "T反物质导弹组",
-    "IconPath": "Assets/texpack/反物质飞弹",
+    "IconPath": "Assets/texpack/T反物质导弹组",
     "Desc": "反物质导弹组描述",
     "Conclusion": "反物质导弹组结果",
     "IsHiddenTech": false,
     "PreItem": [],
     "Position": [
-      29.0,
-      41.0
+      29,
+      41
     ],
     "PreTechs": [
       1952,
@@ -6410,14 +6410,14 @@
   {
     "ID": 1960,
     "Name": "T黑雾协调中心",
-    "IconPath": "Assets/texpack/黑雾协调科技",
+    "IconPath": "Assets/texpack/T黑雾协调中心",
     "Desc": "黑雾协调中心描述",
     "Conclusion": "黑雾协调中心结果",
     "IsHiddenTech": false,
     "PreItem": [],
     "Position": [
-      13.0,
-      53.0
+      13,
+      53
     ],
     "PreTechs": [
       1801
@@ -6453,7 +6453,7 @@
   {
     "ID": 1962,
     "Name": "T虚数空间存储",
-    "IconPath": "Assets/texpack/量子无距传输",
+    "IconPath": "Assets/texpack/T虚数空间存储",
     "Desc": "虚数空间存储描述",
     "Conclusion": "虚数空间存储结果",
     "IsHiddenTech": true,
@@ -6462,8 +6462,8 @@
       5204
     ],
     "Position": [
-      49.0,
-      -15.0
+      49,
+      -15
     ],
     "PreTechs": [],
     "PreTechsImplicit": [
@@ -6502,8 +6502,8 @@
     "IsHiddenTech": false,
     "PreItem": [],
     "Position": [
-      29.0,
-      33.0
+      29,
+      33
     ],
     "PreTechs": [
       1603

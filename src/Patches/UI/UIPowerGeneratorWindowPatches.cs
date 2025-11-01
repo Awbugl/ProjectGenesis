@@ -38,7 +38,7 @@ namespace ProjectGenesis.Patches
             window.speedGroup.anchoredPosition = anchoredPosition;
             window.elecGroup.anchoredPosition = new Vector2(-80f, anchoredPosition.y);
             window.needInventory = false;
-            window.fuelIcon0.sprite = TextureHelper.GetSprite("原子能");
+            window.fuelIcon0.sprite = TextureHelper.GetSprite("O原子能");
             window.fuelText0.text = "裂变能".TranslateFromJson();
             window.fuelText0.color = window.powerColor0;
             window.fuelCircle0.fillAmount = 1f;

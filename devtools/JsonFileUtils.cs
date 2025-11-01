@@ -13,7 +13,8 @@ namespace ProjectGenesis
         private static readonly string RecipeFile = Path.Combine(BaseDir, "recipes.json"),
                                        ItemVanilla = Path.Combine(BaseDir, "items_vanilla.json"),
                                        ItemMod = Path.Combine(BaseDir, "items_mod.json"),
-                                       TechFile = Path.Combine(BaseDir, "techs.json");
+                                       TechFile = Path.Combine(BaseDir, "techs.json"),
+                                       StringsFile = Path.Combine(BaseDir, "strings.json");
 
         public static List<RecipeProtoJson> LoadRecipes() => Load<RecipeProtoJson>(RecipeFile);
 
@@ -23,11 +24,15 @@ namespace ProjectGenesis
 
         public static List<TechProtoJson> LoadTechs() => Load<TechProtoJson>(TechFile);
 
+        public static List<StringProtoJson> LoadStrings() => Load<StringProtoJson>(StringsFile);
+
         public static void SaveRecipes(List<RecipeProtoJson> data) => Save(RecipeFile, data);
 
         public static void SaveItemsVanilla(List<ItemProtoJson> data) => Save(ItemVanilla, data);
 
         public static void SaveItemsMod(List<ItemProtoJson> data) => Save(ItemMod, data);
+
+        public static void SaveTechs(List<TechProtoJson> data) => Save(TechFile, data);
 
         private static List<T> Load<T>(string path) => JsonConvert.DeserializeObject<List<T>>(File.ReadAllText(path));
 
