@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectGenesis.Preloader", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectGenesis.Packer", "packer/ProjectGenesis.Packer.csproj", "{F7D5FFDE-43BB-4EFB-B3FE-B0219922B0F2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectGenesis.DevTools", "devtools/ProjectGenesis.DevTools.csproj", "{E112CE56-08CD-4F17-94E8-C3866C40AECF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{F7D5FFDE-43BB-4EFB-B3FE-B0219922B0F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F7D5FFDE-43BB-4EFB-B3FE-B0219922B0F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F7D5FFDE-43BB-4EFB-B3FE-B0219922B0F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E112CE56-08CD-4F17-94E8-C3866C40AECF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E112CE56-08CD-4F17-94E8-C3866C40AECF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E112CE56-08CD-4F17-94E8-C3866C40AECF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E112CE56-08CD-4F17-94E8-C3866C40AECF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

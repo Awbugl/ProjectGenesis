@@ -2,8 +2,12 @@
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 using Newtonsoft.Json;
 using UnityEngine;
+
+[assembly: InternalsVisibleTo("ProjectGenesis.DevTools")]
+[assembly: InternalsVisibleTo("ProjectGenesis.Packer")]
 
 // ReSharper disable InconsistentNaming
 // ReSharper disable MemberCanBeInternal

@@ -93,7 +93,7 @@
         <PackageReference Include="DysonSphereProgram.Modding.CommonAPI" Version="1.6.5"/>
         <PackageReference Include="DysonSphereProgram.Modding.DSPModSave" Version="1.2.0"/>
         <PackageReference Include="DysonSphereProgram.Modding.LDBTool" Version="3.0.0"/>
-        <PackageReference Include="DysonSphereProgram.Modding.NebulaMultiplayerModApi" Version="2.0.0"/>
+        <PackageReference Include="DysonSphereProgram.Modding.NebulaMultiplayerModApi" Version="2.1.0" />
     </ItemGroup>
     <ItemGroup>
         <Compile Include="src\**\*.cs"/>
