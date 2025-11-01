@@ -17,7 +17,11 @@ namespace ProjectGenesis.Utils
 
             using (var stream = Assembly.GetManifestResourceStream($"ProjectGenesis.assets.{type}.{name}.png"))
             {
-                if (stream == null) return null;
+                if (stream == null)
+                {
+                    ProjectGenesis.LogInfo($"Could not find texture for {name}");
+                    return null;
+                }
 
                 using (var memoryStream = new MemoryStream())
                 {
@@ -38,7 +42,9 @@ namespace ProjectGenesis.Utils
         {
             if (!Cache.TryGetValue(name, out var texture)) texture = GetTexture(name, "sprite");
 
-            return Sprite.Create(texture, new Rect(0, 0, width ?? texture.width, height ?? texture.height), new Vector2(0.5f, 0.5f));
+            return texture == null
+                ? null
+                : Sprite.Create(texture, new Rect(0, 0, width ?? texture.width, height ?? texture.height), new Vector2(0.5f, 0.5f));
         }
     }
 }
