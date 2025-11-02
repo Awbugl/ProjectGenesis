@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Reflection.Emit;
 using HarmonyLib;
+using ProjectGenesis.Utils;
 
 // ReSharper disable InconsistentNaming
 
@@ -58,6 +59,23 @@ namespace ProjectGenesis.Patches
                 new CodeInstruction(OpCodes.Ldc_I4_0), new CodeInstruction(OpCodes.Bgt_S, label));
 
             return matcher.InstructionEnumeration();
+        }
+
+        [HarmonyPatch(typeof(PlanetAlgorithm), nameof(PlanetAlgorithm.CalcWaterPercent))]
+        [HarmonyPrefix]
+        public static void PlanetAlgorithm_RegenerateTerrain(PlanetAlgorithm __instance)
+        {
+            PlanetData planet = __instance.planet;
+
+            switch (planet.waterItemId)
+            {
+                case ProtoID.I盐酸:
+                case ProtoID.I甲烷:
+                    var planetAlgorithm3 = new PlanetAlgorithm3();
+                    planetAlgorithm3.Reset(planet.seed, planet);
+                    planetAlgorithm3.GenerateTerrain(planet.mod_x, planet.mod_y);
+                    break;
+            }
         }
     }
 }

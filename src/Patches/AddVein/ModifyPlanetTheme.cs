@@ -49,7 +49,6 @@ namespace ProjectGenesis.Patches
                         theme.WaterItemId = ProtoID.I盐酸;
                         theme.WaterHeight = -0.1f;
                         theme.Distribute = EThemeDistribute.Interstellar;
-                        theme.Algos = new[] { 3, };
                         theme.oceanMat = LDB.themes.Select(8).oceanMat;
                         RemoveVein(theme, 0);
                         RemoveVein(theme, 14);
@@ -60,7 +59,7 @@ namespace ProjectGenesis.Patches
                         theme.WaterItemId = ProtoID.I甲烷;
                         theme.WaterHeight = -0.1f;
                         theme.Distribute = EThemeDistribute.Interstellar;
-                        theme.oceanMat = LDB.themes.Select(22).oceanMat;
+                        theme.oceanMat = LDB.themes.Select(16).oceanMat;
 
                         break;
                 }
@@ -73,7 +72,7 @@ namespace ProjectGenesis.Patches
 
             if (theme.GasItems[0] == ProtoID.I可燃冰 && theme.GasItems[1] == ProtoID.I氢)
             {
-                theme.GasItems = new[] { ProtoID.I可燃冰, ProtoID.I氢, ProtoID.I氨, };
+                theme.GasItems = new[] { ProtoID.I甲烷, ProtoID.I氢, ProtoID.I氨, };
                 theme.GasSpeeds = new float[] { theme.GasSpeeds[0], theme.GasSpeeds[1], theme.GasSpeeds[1] * 0.7f, };
             }
             else if (theme.GasItems[0] == ProtoID.I氢 && theme.GasItems[1] == ProtoID.I重氢)
