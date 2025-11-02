@@ -380,11 +380,6 @@
     "ENUS": "Fuel Rods only"
   },
   {
-    "Name": "I混凝土",
-    "ZHCN": "远古时期就存在的建筑材料，可以用于建造大型建筑。",
-    "ENUS": "A material that has existed since ancient times and can be used to build large structures."
-  },
-  {
     "Name": "火力发电厂",
     "ZHCN": "燃料电池发电厂",
     "ENUS": "Fuel Cell Power Plant"
@@ -466,22 +461,12 @@
   },
   {
     "Name": "铀矿",
-    "ZHCN": "铀矿",
-    "ENUS": "Uranium Ore"
-  },
-  {
-    "Name": "钚矿",
-    "ZHCN": "钚矿",
-    "ENUS": "Plutonium Ore"
-  },
-  {
-    "Name": "含铀核燃料",
-    "ZHCN": "含铀核燃料",
+    "ZHCN": "铀燃料",
     "ENUS": "Uranium Fissile Fuel"
   },
   {
-    "Name": "含钚核燃料",
-    "ZHCN": "含钚核燃料",
+    "Name": "钚矿",
+    "ZHCN": "钚燃料",
     "ENUS": "Plutonium Fissile Fuel"
   },
   {
@@ -580,76 +565,6 @@
     "ENUS": "Deuterium-helium hybrid fuel rods have an extremely high energy density and are capable of delivering huge energy output."
   },
   {
-    "Name": "石粉",
-    "ZHCN": "石粉",
-    "ENUS": "Stone Dust"
-  },
-  {
-    "Name": "I石粉",
-    "ZHCN": "对石矿进行预先粉碎处理的产物，可明显提高熔炉的效率。",
-    "ENUS": "The product of pre-crushing of stone ore, which can significantly improve the efficiency of the furnace."
-  },
-  {
-    "Name": "铁矿粉",
-    "ZHCN": "铁矿粉",
-    "ENUS": "Iron Ore Dust"
-  },
-  {
-    "Name": "I铁矿粉",
-    "ZHCN": "对铁矿进行预先粉碎处理的产物，可明显提高熔炉的效率。",
-    "ENUS": "The product of pre-crushing of iron ore, which can significantly improve the efficiency of the furnace."
-  },
-  {
-    "Name": "铜矿粉",
-    "ZHCN": "铜矿粉",
-    "ENUS": "Copper Ore Dust"
-  },
-  {
-    "Name": "I铜矿粉",
-    "ZHCN": "对铜矿进行预先粉碎处理的产物，可明显提高熔炉的效率。",
-    "ENUS": "The product of pre-crushing of copper ore, which can significantly improve the efficiency of the furnace."
-  },
-  {
-    "Name": "硅矿粉",
-    "ZHCN": "硅矿粉",
-    "ENUS": "Silicon Ore Dust"
-  },
-  {
-    "Name": "I硅矿粉",
-    "ZHCN": "对硅矿进行预先粉碎处理的产物，可明显提高熔炉的效率。",
-    "ENUS": "The product of pre-crushing of silicon ore, which can significantly improve the efficiency of the furnace."
-  },
-  {
-    "Name": "钛矿粉",
-    "ZHCN": "钛矿粉",
-    "ENUS": "Titanium Ore Dust"
-  },
-  {
-    "Name": "I钛矿粉",
-    "ZHCN": "对钛矿进行预先粉碎处理的产物，可明显提高熔炉的效率。",
-    "ENUS": "The product of pre-crushing of titanium ore, which can significantly improve the efficiency of the furnace."
-  },
-  {
-    "Name": "钨矿粉",
-    "ZHCN": "钨矿粉",
-    "ENUS": "Tungsten Ore Dust"
-  },
-  {
-    "Name": "I钨矿粉",
-    "ZHCN": "对钨矿进行预先粉碎处理的产物，可明显提高熔炉的效率。",
-    "ENUS": "The product of pre-crushing of tungsten ore, which can significantly improve the efficiency of the furnace."
-  },
-  {
-    "Name": "煤矿粉",
-    "ZHCN": "煤矿粉",
-    "ENUS": "Coal Dust"
-  },
-  {
-    "Name": "I煤矿粉",
-    "ZHCN": "对煤矿进行预先粉碎处理的产物，可明显提高熔炉的效率。",
-    "ENUS": "The product of pre-crushing of coal ore, which can significantly improve the efficiency of the furnace."
-  },
-  {
     "Name": "天穹装配厂",
     "ZHCN": "天穹装配厂",
     "ENUS": "The Cosmic Assembler"
@@ -730,24 +645,9 @@
     "ENUS": "Ternary Adamantium"
   },
   {
-    "Name": "光子结晶",
-    "ZHCN": "光子结晶",
-    "ENUS": "Photon Crystal"
-  },
-  {
     "Name": "I“湛曦”O型人造恒星",
     "ZHCN": "“你只需要让正反质子束从两端静静的穿过磁场进入约束球就可以了，轻松愉快！”它简单的外形归功于理论的优雅，被人们称为“人造小太阳”。",
     "ENUS": "\"Just allow the positive and negative proton beams to pass silently through the magnetic field from both ends into the Constraint Sphere, nice and easy!\" It is simple but effective and is called the Artificial Sun."
-  },
-  {
-    "Name": "硫粉",
-    "ZHCN": "硫粉",
-    "ENUS": "Sulfur Dust"
-  },
-  {
-    "Name": "I硫粉",
-    "ZHCN": "从硫矿中提取还原得到的粉末状硫单质。",
-    "ENUS": "Powdered sulfur monomer extracted from sulfur ore."
   },
   {
     "Name": "结构矩阵",
@@ -1125,16 +1025,6 @@
     "ENUS": "Extract enriched helium from the lattice of grating stone."
   },
   {
-    "Name": "光子自增殖",
-    "ZHCN": "光子自增殖",
-    "ENUS": "Photon Self-replication"
-  },
-  {
-    "Name": "R光子自增殖",
-    "ZHCN": "利用光子结晶奇妙的特性，我们可以提供能量将光子激发为临界光子。",
-    "ENUS": "With the wonderful properties of photon crystallization, we can provide energy to excite photons to critical photons."
-  },
-  {
     "Name": "水电解",
     "ZHCN": "水电解",
     "ENUS": "Water Electrolysis"
@@ -1161,8 +1051,8 @@
   },
   {
     "Name": "R钠盐转化",
-    "ZHCN": "盐酸与石粉中的钠离子盐反应，经复杂的提纯工序后可获得氯化钠。",
-    "ENUS": "Hydrochloric acid reacts with sodium salts in the stone powder, and after purification, sodium chloride is obtained."
+    "ZHCN": "盐酸与石矿中的钠离子盐反应，经复杂的提纯工序后可获得氯化钠。",
+    "ENUS": "Hydrochloric acid reacts with sodium salts in the stone, and after purification, sodium chloride is obtained."
   },
   {
     "Name": "海水淡化",
@@ -1340,94 +1230,14 @@
     "ENUS": "Using optical substrate making it easy to produce processors in batch."
   },
   {
-    "Name": "放射性矿物处理",
-    "ZHCN": "放射性矿物处理",
+    "Name": "放射矿物精炼",
+    "ZHCN": "放射矿物精炼",
     "ENUS": "Radioactive Mineral Processing"
   },
   {
-    "Name": "R放射性矿物处理",
+    "Name": "R放射矿物精炼",
     "ZHCN": "利用氢氧化钠处理放射性矿物，将含有的放射性物质沉降分离。\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作。</color>",
     "ENUS": "Treatment of radioactive minerals with sodium hydroxide to precipitate and separate the contained radioactive ore.\n<color=\"#FD965ECC\">Will not stop working until all products are accumulated.</color>"
-  },
-  {
-    "Name": "铁矿精炼",
-    "ZHCN": "铁矿精炼",
-    "ENUS": "Iron Ore Refining"
-  },
-  {
-    "Name": "R铁矿精炼",
-    "ZHCN": "从原矿中分离的纯净粉可以实现效率更高的生产。",
-    "ENUS": "The pure powder separated from the raw ore allows for more efficient production."
-  },
-  {
-    "Name": "铜矿精炼",
-    "ZHCN": "铜矿精炼",
-    "ENUS": "Copper Ore Refining"
-  },
-  {
-    "Name": "R铜矿精炼",
-    "ZHCN": "从原矿中分离的纯净粉可以实现效率更高的生产。",
-    "ENUS": "The pure powder separated from the raw ore allows for more efficient production."
-  },
-  {
-    "Name": "硅矿精炼",
-    "ZHCN": "硅矿精炼",
-    "ENUS": "Silicon Ore Refining"
-  },
-  {
-    "Name": "R硅矿精炼",
-    "ZHCN": "从原矿中分离的纯净粉可以实现效率更高的生产。",
-    "ENUS": "The pure powder separated from the raw ore allows for more efficient production."
-  },
-  {
-    "Name": "铝矿精炼",
-    "ZHCN": "铝矿精炼",
-    "ENUS": "Aluminum Ore Refining"
-  },
-  {
-    "Name": "R铝矿精炼",
-    "ZHCN": "从原矿中分离的纯净粉可以实现效率更高的生产。",
-    "ENUS": "The pure powder separated from the raw ore allows for more efficient production."
-  },
-  {
-    "Name": "钛矿精炼",
-    "ZHCN": "钛矿精炼",
-    "ENUS": "Titanium Ore Refining"
-  },
-  {
-    "Name": "R钛矿精炼",
-    "ZHCN": "从原矿中分离的纯净粉可以实现效率更高的生产。",
-    "ENUS": "The pure powder separated from the raw ore allows for more efficient production."
-  },
-  {
-    "Name": "钨矿精炼",
-    "ZHCN": "钨矿精炼",
-    "ENUS": "Tungsten Ore Refining"
-  },
-  {
-    "Name": "R钨矿精炼",
-    "ZHCN": "从原矿中分离的纯净粉可以实现效率更高的生产。",
-    "ENUS": "The pure powder separated from the raw ore allows for more efficient production."
-  },
-  {
-    "Name": "石矿精炼",
-    "ZHCN": "石矿精炼",
-    "ENUS": "Stone Refining"
-  },
-  {
-    "Name": "R石矿精炼",
-    "ZHCN": "从原矿中分离的纯净粉可以实现效率更高的生产。",
-    "ENUS": "The pure powder separated from the raw ore allows for more efficient production."
-  },
-  {
-    "Name": "煤矿精炼",
-    "ZHCN": "煤矿精炼",
-    "ENUS": "Coal Refining"
-  },
-  {
-    "Name": "R煤矿精炼",
-    "ZHCN": "从原矿中分离的纯净粉可以实现效率更高的生产。",
-    "ENUS": "The pure powder separated from the raw ore allows for more efficient production."
   },
   {
     "Name": "物质回收",
@@ -2041,23 +1851,13 @@
   },
   {
     "Name": "I铀矿",
-    "ZHCN": "经提炼后，矿石中的铀浓度已经已经相当可观。",
-    "ENUS": "After refinements, the concentration of uranium in the ore is already considerable."
+    "ZHCN": "经提炼后，矿石中的铀浓度已经可以支撑链式反应。",
+    "ENUS": "After refinements, the concentration of uranium in the ore is already considerable, which can support the chain reaction."
   },
   {
     "Name": "I钚矿",
-    "ZHCN": "经提炼后，矿石中的钚浓度已经相当可观。",
-    "ENUS": "After refinements, the concentration of plutonium in the ore is already considerable."
-  },
-  {
-    "Name": "I含铀核燃料",
-    "ZHCN": "铀矿提炼产物，已经可以支撑链式反应。",
-    "ENUS": "The product of refining uranium ore, which can support the chain reaction."
-  },
-  {
-    "Name": "I含钚核燃料",
-    "ZHCN": "钚矿提炼产物，已经可以支撑链式反应。",
-    "ENUS": "The product of refining plutonium ore, which can support the chain reaction."
+    "ZHCN": "经提炼后，矿石中的钚浓度已经可以支撑链式反应。",
+    "ENUS": "After refinements, the concentration of plutonium in the ore is already considerable, which can support the chain reaction."
   },
   {
     "Name": "铝矿脉",
@@ -2110,16 +1910,6 @@
     "ENUS": "Basic raw material. Used to produce various aluminum components."
   },
   {
-    "Name": "铝矿粉",
-    "ZHCN": "铝矿粉",
-    "ENUS": "Aluminum Ore Dust"
-  },
-  {
-    "Name": "I铝矿粉",
-    "ZHCN": "对铝矿进行预先粉碎处理的产物，可明显提高熔炉的效率。",
-    "ENUS": "The product of pre-crushing of aluminum ore, which can significantly improve the efficiency of the furnace."
-  },
-  {
     "Name": "铝合金",
     "ZHCN": "铝合金",
     "ENUS": "Aluminum Alloy"
@@ -2158,11 +1948,6 @@
     "Name": "I氦闪约束器",
     "ZHCN": "以强大的磁场约束等离子体在其中环绕，坚固的材料甚至可以承受氦闪的冲击。",
     "ENUS": "With a strong magnetic field to bind the plasma around it, the robust material can even withstand the impact of a helium flash."
-  },
-  {
-    "Name": "I光子结晶",
-    "ZHCN": "利用庞大的能量将大量临界光子约束在一小块区域，使其具有部分晶体性质。",
-    "ENUS": "The massive energy is used to confine a large number of critical photons to a small region, giving them partially crystalline properties."
   },
   {
     "Name": "I三元精金",

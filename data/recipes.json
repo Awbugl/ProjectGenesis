@@ -103,7 +103,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 10,
-    "GridIndex": 5306,
+    "GridIndex": 4306,
     "Time": 480,
     "Input": [
       7609,
@@ -405,7 +405,7 @@
     "Description": "R等离子精炼",
     "IconPath": "Icons/ItemRecipe/plasma-refining",
     "Type": 3,
-    "GridIndex": 4201,
+    "GridIndex": 3201,
     "Time": 120,
     "Input": [
       1007
@@ -483,7 +483,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 3702,
+    "GridIndex": 1116,
     "Time": 600,
     "Input": [
       6509,
@@ -593,7 +593,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 2,
-    "GridIndex": 4101,
+    "GridIndex": 3101,
     "Time": 120,
     "Input": [
       7009
@@ -617,10 +617,10 @@
     "Description": "",
     "IconPath": "",
     "Type": 2,
-    "GridIndex": 4704,
+    "GridIndex": 3704,
     "Time": 120,
     "Input": [
-      6277,
+      6207,
       1000,
       7019
     ],
@@ -1063,7 +1063,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 10,
-    "GridIndex": 3707,
+    "GridIndex": 1315,
     "Time": 600,
     "Input": [
       6509,
@@ -1149,7 +1149,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 10,
-    "GridIndex": 3710,
+    "GridIndex": 1415,
     "Time": 600,
     "Input": [
       6509,
@@ -1541,7 +1541,7 @@
     "Description": "RX射线裂解",
     "IconPath": "Icons/ItemRecipe/X-ray",
     "Type": 3,
-    "GridIndex": 4202,
+    "GridIndex": 3202,
     "Time": 120,
     "Input": [
       1114
@@ -2871,11 +2871,11 @@
     "Description": "",
     "IconPath": "",
     "Type": 16,
-    "GridIndex": 4505,
+    "GridIndex": 3505,
     "Time": 120,
     "Input": [
       1124,
-      6277,
+      6207,
       7015
     ],
     "InCounts": [
@@ -3237,22 +3237,26 @@
   },
   {
     "ID": 121,
-    "Name": "铝矿粉",
+    "Name": "甲烷",
     "Description": "",
     "IconPath": "",
-    "Type": 11,
-    "GridIndex": 3403,
+    "Type": 2,
+    "GridIndex": 3305,
     "Time": 60,
     "Input": [
-      6202
+      6206,
+      1120
     ],
     "InCounts": [
-      1
+      1,
+      8
     ],
     "Output": [
-      6273
+      7008,
+      1000
     ],
     "OutCounts": [
+      1,
       2
     ],
     "Explicit": false,
@@ -3351,7 +3355,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 5201,
+    "GridIndex": 4201,
     "Time": 240,
     "Input": [
       6501,
@@ -3379,7 +3383,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 5202,
+    "GridIndex": 4202,
     "Time": 240,
     "Input": [
       6501,
@@ -3407,7 +3411,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 5204,
+    "GridIndex": 4204,
     "Time": 480,
     "Input": [
       6501,
@@ -3437,7 +3441,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 10,
-    "GridIndex": 5208,
+    "GridIndex": 4208,
     "Time": 720,
     "Input": [
       6502,
@@ -3469,7 +3473,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 5206,
+    "GridIndex": 4206,
     "Time": 480,
     "Input": [
       6501,
@@ -3499,7 +3503,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 5212,
+    "GridIndex": 4212,
     "Time": 480,
     "Input": [
       6501,
@@ -3529,7 +3533,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 5210,
+    "GridIndex": 4210,
     "Time": 480,
     "Input": [
       6501,
@@ -3559,7 +3563,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 10,
-    "GridIndex": 5211,
+    "GridIndex": 4211,
     "Time": 720,
     "Input": [
       6502,
@@ -3589,13 +3593,13 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 5401,
+    "GridIndex": 4401,
     "Time": 240,
     "Input": [
-      6256
+      1006
     ],
     "InCounts": [
-      8
+      4
     ],
     "Output": [
       1128
@@ -3613,7 +3617,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 5402,
+    "GridIndex": 4402,
     "Time": 240,
     "Input": [
       1128,
@@ -3639,7 +3643,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 9,
-    "GridIndex": 5403,
+    "GridIndex": 4403,
     "Time": 240,
     "Input": [
       1129,
@@ -3667,7 +3671,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 5301,
+    "GridIndex": 4301,
     "Time": 120,
     "Input": [
       1104
@@ -3717,7 +3721,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 5303,
+    "GridIndex": 4303,
     "Time": 120,
     "Input": [
       7607,
@@ -3743,7 +3747,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 5501,
+    "GridIndex": 4501,
     "Time": 240,
     "Input": [
       1101,
@@ -3769,7 +3773,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 5502,
+    "GridIndex": 4502,
     "Time": 240,
     "Input": [
       1604,
@@ -3797,7 +3801,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 9,
-    "GridIndex": 5503,
+    "GridIndex": 4503,
     "Time": 240,
     "Input": [
       1605,
@@ -3825,7 +3829,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 9,
-    "GridIndex": 5703,
+    "GridIndex": 4703,
     "Time": 240,
     "Input": [
       1123,
@@ -3853,7 +3857,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 10,
-    "GridIndex": 5704,
+    "GridIndex": 4704,
     "Time": 480,
     "Input": [
       1120,
@@ -3881,7 +3885,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 5601,
+    "GridIndex": 4601,
     "Time": 240,
     "Input": [
       6203,
@@ -3911,7 +3915,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 5602,
+    "GridIndex": 4602,
     "Time": 240,
     "Input": [
       1609,
@@ -3941,7 +3945,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 9,
-    "GridIndex": 5603,
+    "GridIndex": 4603,
     "Time": 240,
     "Input": [
       1610,
@@ -3971,7 +3975,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 5101,
+    "GridIndex": 4101,
     "Time": 240,
     "Input": [
       1101,
@@ -4001,7 +4005,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 9,
-    "GridIndex": 5102,
+    "GridIndex": 4102,
     "Time": 240,
     "Input": [
       5101,
@@ -4031,7 +4035,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 9,
-    "GridIndex": 5103,
+    "GridIndex": 4103,
     "Time": 240,
     "Input": [
       5101,
@@ -4061,7 +4065,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 10,
-    "GridIndex": 5104,
+    "GridIndex": 4104,
     "Time": 480,
     "Input": [
       1107,
@@ -4091,7 +4095,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 10,
-    "GridIndex": 5105,
+    "GridIndex": 4105,
     "Time": 900,
     "Input": [
       7707,
@@ -4121,7 +4125,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 5209,
+    "GridIndex": 4209,
     "Time": 480,
     "Input": [
       6501,
@@ -4247,7 +4251,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 10,
-    "GridIndex": 3711,
+    "GridIndex": 1416,
     "Time": 1800,
     "Input": [
       1803,
@@ -4275,7 +4279,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 9,
-    "GridIndex": 5207,
+    "GridIndex": 4207,
     "Time": 720,
     "Input": [
       6502,
@@ -4307,7 +4311,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 5701,
+    "GridIndex": 4701,
     "Time": 240,
     "Input": [
       1204,
@@ -4335,7 +4339,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 9,
-    "GridIndex": 5702,
+    "GridIndex": 4702,
     "Time": 480,
     "Input": [
       1612,
@@ -4385,11 +4389,11 @@
   },
   {
     "ID": 401,
-    "Name": "放射性矿物处理",
-    "Description": "R放射性矿物处理",
-    "IconPath": "",
-    "Type": 11,
-    "GridIndex": 3301,
+    "Name": "放射矿物精炼",
+    "Description": "R放射矿物精炼",
+    "IconPath": "Assets/texpack/R放射矿物精炼",
+    "Type": 2,
+    "GridIndex": 1212,
     "Time": 120,
     "Input": [
       6222,
@@ -4412,141 +4416,21 @@
     "NonProductive": false
   },
   {
-    "ID": 402,
-    "Name": "铝矿精炼",
-    "Description": "R铝矿精炼",
-    "IconPath": "",
-    "Type": 1,
-    "GridIndex": 3503,
-    "Time": 60,
-    "Input": [
-      6273
-    ],
-    "InCounts": [
-      1
-    ],
-    "Output": [
-      6203
-    ],
-    "OutCounts": [
-      1
-    ],
-    "Explicit": true,
-    "Handcraft": false,
-    "NonProductive": false
-  },
-  {
-    "ID": 404,
-    "Name": "钨矿精炼",
-    "Description": "R钨矿精炼",
-    "IconPath": "",
-    "Type": 1,
-    "GridIndex": 3506,
-    "Time": 60,
-    "Input": [
-      6281
-    ],
-    "InCounts": [
-      1
-    ],
-    "Output": [
-      7705
-    ],
-    "OutCounts": [
-      1
-    ],
-    "Explicit": true,
-    "Handcraft": false,
-    "NonProductive": false
-  },
-  {
-    "ID": 405,
-    "Name": "钨矿粉",
-    "Description": "",
-    "IconPath": "",
-    "Type": 11,
-    "GridIndex": 3406,
-    "Time": 60,
-    "Input": [
-      6201
-    ],
-    "InCounts": [
-      1
-    ],
-    "Output": [
-      6281
-    ],
-    "OutCounts": [
-      2
-    ],
-    "Explicit": false,
-    "Handcraft": false,
-    "NonProductive": false
-  },
-  {
-    "ID": 406,
-    "Name": "含铀核燃料",
-    "Description": "",
-    "IconPath": "",
-    "Type": 11,
-    "GridIndex": 3303,
-    "Time": 120,
-    "Input": [
-      6225
-    ],
-    "InCounts": [
-      2
-    ],
-    "Output": [
-      6227
-    ],
-    "OutCounts": [
-      1
-    ],
-    "Explicit": false,
-    "Handcraft": false,
-    "NonProductive": false
-  },
-  {
-    "ID": 407,
-    "Name": "含钚核燃料",
-    "Description": "",
-    "IconPath": "",
-    "Type": 11,
-    "GridIndex": 3304,
-    "Time": 120,
-    "Input": [
-      6226
-    ],
-    "InCounts": [
-      2
-    ],
-    "Output": [
-      6228
-    ],
-    "OutCounts": [
-      1
-    ],
-    "Explicit": false,
-    "Handcraft": false,
-    "NonProductive": false
-  },
-  {
     "ID": 408,
     "Name": "铀燃料棒",
     "Description": "",
     "IconPath": "",
     "Type": 9,
-    "GridIndex": 3704,
+    "GridIndex": 1215,
     "Time": 600,
     "Input": [
       6509,
-      6227,
+      6225,
       6204
     ],
     "InCounts": [
       1,
-      4,
+      8,
       2
     ],
     "Output": [
@@ -4565,16 +4449,16 @@
     "Description": "",
     "IconPath": "",
     "Type": 9,
-    "GridIndex": 3705,
+    "GridIndex": 1216,
     "Time": 600,
     "Input": [
       6509,
-      6228,
+      6226,
       6204
     ],
     "InCounts": [
       1,
-      4,
+      8,
       2
     ],
     "Output": [
@@ -4593,7 +4477,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 9,
-    "GridIndex": 3706,
+    "GridIndex": 1217,
     "Time": 600,
     "Input": [
       6241,
@@ -4612,102 +4496,6 @@
       1
     ],
     "Explicit": false,
-    "Handcraft": false,
-    "NonProductive": false
-  },
-  {
-    "ID": 411,
-    "Name": "铁矿精炼",
-    "Description": "R铁矿精炼",
-    "IconPath": "",
-    "Type": 1,
-    "GridIndex": 3501,
-    "Time": 60,
-    "Input": [
-      6252
-    ],
-    "InCounts": [
-      1
-    ],
-    "Output": [
-      1101
-    ],
-    "OutCounts": [
-      1
-    ],
-    "Explicit": true,
-    "Handcraft": false,
-    "NonProductive": false
-  },
-  {
-    "ID": 412,
-    "Name": "铜矿精炼",
-    "Description": "R铜矿精炼",
-    "IconPath": "",
-    "Type": 1,
-    "GridIndex": 3502,
-    "Time": 60,
-    "Input": [
-      6253
-    ],
-    "InCounts": [
-      1
-    ],
-    "Output": [
-      1104
-    ],
-    "OutCounts": [
-      1
-    ],
-    "Explicit": true,
-    "Handcraft": false,
-    "NonProductive": false
-  },
-  {
-    "ID": 413,
-    "Name": "硅矿精炼",
-    "Description": "R硅矿精炼",
-    "IconPath": "",
-    "Type": 1,
-    "GridIndex": 3504,
-    "Time": 60,
-    "Input": [
-      6254
-    ],
-    "InCounts": [
-      1
-    ],
-    "Output": [
-      1105
-    ],
-    "OutCounts": [
-      1
-    ],
-    "Explicit": true,
-    "Handcraft": false,
-    "NonProductive": false
-  },
-  {
-    "ID": 414,
-    "Name": "钛矿精炼",
-    "Description": "R钛矿精炼",
-    "IconPath": "",
-    "Type": 1,
-    "GridIndex": 3505,
-    "Time": 60,
-    "Input": [
-      6255
-    ],
-    "InCounts": [
-      1
-    ],
-    "Output": [
-      1106
-    ],
-    "OutCounts": [
-      1
-    ],
-    "Explicit": true,
     "Handcraft": false,
     "NonProductive": false
   },
@@ -4836,54 +4624,6 @@
     "NonProductive": false
   },
   {
-    "ID": 420,
-    "Name": "石矿精炼",
-    "Description": "R石矿精炼",
-    "IconPath": "",
-    "Type": 1,
-    "GridIndex": 3508,
-    "Time": 60,
-    "Input": [
-      6251
-    ],
-    "InCounts": [
-      1
-    ],
-    "Output": [
-      1110
-    ],
-    "OutCounts": [
-      1
-    ],
-    "Explicit": true,
-    "Handcraft": false,
-    "NonProductive": false
-  },
-  {
-    "ID": 421,
-    "Name": "煤矿精炼",
-    "Description": "R煤矿精炼",
-    "IconPath": "",
-    "Type": 1,
-    "GridIndex": 3507,
-    "Time": 60,
-    "Input": [
-      6256
-    ],
-    "InCounts": [
-      1
-    ],
-    "Output": [
-      1109
-    ],
-    "OutCounts": [
-      1
-    ],
-    "Explicit": true,
-    "Handcraft": false,
-    "NonProductive": false
-  },
-  {
     "ID": 422,
     "Name": "精密结构组装厂",
     "Description": "",
@@ -4973,7 +4713,7 @@
     "Description": "R焦油裂化",
     "IconPath": "Assets/texpack/R焦油裂化",
     "Type": 3,
-    "GridIndex": 4205,
+    "GridIndex": 3205,
     "Time": 120,
     "Input": [
       1114
@@ -4997,7 +4737,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 2,
-    "GridIndex": 4301,
+    "GridIndex": 3301,
     "Time": 120,
     "Input": [
       1109,
@@ -5023,7 +4763,7 @@
     "Description": "R催化重整",
     "IconPath": "Assets/texpack/R催化重整",
     "Type": 2,
-    "GridIndex": 4303,
+    "GridIndex": 3303,
     "Time": 240,
     "Input": [
       7009
@@ -5047,7 +4787,7 @@
     "Description": "R四氢双环戊二烯",
     "IconPath": "",
     "Type": 2,
-    "GridIndex": 4304,
+    "GridIndex": 3304,
     "Time": 480,
     "Input": [
       7009,
@@ -5075,7 +4815,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 3703,
+    "GridIndex": 1117,
     "Time": 600,
     "Input": [
       6509,
@@ -5103,7 +4843,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 3701,
+    "GridIndex": 1115,
     "Time": 600,
     "Input": [
       6509,
@@ -5233,174 +4973,6 @@
     ],
     "Output": [
       6231
-    ],
-    "OutCounts": [
-      1
-    ],
-    "Explicit": false,
-    "Handcraft": false,
-    "NonProductive": false
-  },
-  {
-    "ID": 531,
-    "Name": "铁矿粉",
-    "Description": "",
-    "IconPath": "",
-    "Type": 11,
-    "GridIndex": 3401,
-    "Time": 60,
-    "Input": [
-      1001
-    ],
-    "InCounts": [
-      1
-    ],
-    "Output": [
-      6252
-    ],
-    "OutCounts": [
-      2
-    ],
-    "Explicit": false,
-    "Handcraft": false,
-    "NonProductive": false
-  },
-  {
-    "ID": 532,
-    "Name": "铜矿粉",
-    "Description": "",
-    "IconPath": "",
-    "Type": 11,
-    "GridIndex": 3402,
-    "Time": 60,
-    "Input": [
-      1002
-    ],
-    "InCounts": [
-      1
-    ],
-    "Output": [
-      6253
-    ],
-    "OutCounts": [
-      2
-    ],
-    "Explicit": false,
-    "Handcraft": false,
-    "NonProductive": false
-  },
-  {
-    "ID": 533,
-    "Name": "硅矿粉",
-    "Description": "",
-    "IconPath": "",
-    "Type": 11,
-    "GridIndex": 3404,
-    "Time": 60,
-    "Input": [
-      1003
-    ],
-    "InCounts": [
-      1
-    ],
-    "Output": [
-      6254
-    ],
-    "OutCounts": [
-      2
-    ],
-    "Explicit": false,
-    "Handcraft": false,
-    "NonProductive": false
-  },
-  {
-    "ID": 534,
-    "Name": "钛矿粉",
-    "Description": "",
-    "IconPath": "",
-    "Type": 11,
-    "GridIndex": 3405,
-    "Time": 60,
-    "Input": [
-      1004
-    ],
-    "InCounts": [
-      1
-    ],
-    "Output": [
-      6255
-    ],
-    "OutCounts": [
-      2
-    ],
-    "Explicit": false,
-    "Handcraft": false,
-    "NonProductive": false
-  },
-  {
-    "ID": 535,
-    "Name": "石粉",
-    "Description": "",
-    "IconPath": "",
-    "Type": 11,
-    "GridIndex": 3408,
-    "Time": 60,
-    "Input": [
-      1005
-    ],
-    "InCounts": [
-      1
-    ],
-    "Output": [
-      6251
-    ],
-    "OutCounts": [
-      2
-    ],
-    "Explicit": false,
-    "Handcraft": false,
-    "NonProductive": false
-  },
-  {
-    "ID": 536,
-    "Name": "煤矿粉",
-    "Description": "",
-    "IconPath": "",
-    "Type": 11,
-    "GridIndex": 3407,
-    "Time": 60,
-    "Input": [
-      1006
-    ],
-    "InCounts": [
-      1
-    ],
-    "Output": [
-      6256
-    ],
-    "OutCounts": [
-      2
-    ],
-    "Explicit": false,
-    "Handcraft": false,
-    "NonProductive": false
-  },
-  {
-    "ID": 537,
-    "Name": "硫粉",
-    "Description": "",
-    "IconPath": "",
-    "Type": 11,
-    "GridIndex": 3409,
-    "Time": 60,
-    "Input": [
-      6207
-    ],
-    "InCounts": [
-      1
-    ],
-    "Output": [
-      6277
     ],
     "OutCounts": [
       1
@@ -5607,7 +5179,7 @@
     "Description": "R二氧化硫还原",
     "IconPath": "Assets/texpack/R二氧化硫还原",
     "Type": 2,
-    "GridIndex": 4401,
+    "GridIndex": 3401,
     "Time": 120,
     "Input": [
       6205,
@@ -5618,7 +5190,7 @@
       1
     ],
     "Output": [
-      6277,
+      6207,
       6206
     ],
     "OutCounts": [
@@ -5635,7 +5207,7 @@
     "Description": "R有机晶体活化",
     "IconPath": "Assets/texpack/R有机晶体活化",
     "Type": 16,
-    "GridIndex": 4105,
+    "GridIndex": 3105,
     "Time": 60,
     "Input": [
       1117,
@@ -5663,7 +5235,7 @@
     "Description": "R有机晶体重组",
     "IconPath": "Assets/texpack/R有机晶体重组",
     "Type": 16,
-    "GridIndex": 4104,
+    "GridIndex": 3104,
     "Time": 720,
     "Input": [
       1117
@@ -5715,7 +5287,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 10,
-    "GridIndex": 3709,
+    "GridIndex": 1317,
     "Time": 600,
     "Input": [
       1802,
@@ -5743,7 +5315,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 10,
-    "GridIndex": 3708,
+    "GridIndex": 1316,
     "Time": 600,
     "Input": [
       6509,
@@ -5879,7 +5451,7 @@
     "Description": "R水电解",
     "IconPath": "Assets/texpack/R水电解",
     "Type": 2,
-    "GridIndex": 4706,
+    "GridIndex": 3706,
     "Time": 240,
     "Input": [
       1000
@@ -5905,7 +5477,7 @@
     "Description": "R盐水电解",
     "IconPath": "",
     "Type": 2,
-    "GridIndex": 4503,
+    "GridIndex": 3503,
     "Time": 120,
     "Input": [
       1000,
@@ -5933,10 +5505,10 @@
     "Description": "R钠盐转化",
     "IconPath": "",
     "Type": 2,
-    "GridIndex": 4501,
+    "GridIndex": 3501,
     "Time": 120,
     "Input": [
-      6251,
+      1005,
       7014
     ],
     "InCounts": [
@@ -5985,7 +5557,7 @@
     "Description": "R合成氨",
     "IconPath": "",
     "Type": 16,
-    "GridIndex": 4701,
+    "GridIndex": 3701,
     "Time": 120,
     "Input": [
       6220,
@@ -6011,7 +5583,7 @@
     "Description": "R煤炭液化",
     "IconPath": "Icons/ItemRecipe/reforming-refine",
     "Type": 3,
-    "GridIndex": 4203,
+    "GridIndex": 3203,
     "Time": 240,
     "Input": [
       1006,
@@ -6037,7 +5609,7 @@
     "Description": "R焦油分馏",
     "IconPath": "Assets/texpack/R焦油分馏",
     "Type": 3,
-    "GridIndex": 4204,
+    "GridIndex": 3204,
     "Time": 120,
     "Input": [
       1114
@@ -6087,7 +5659,7 @@
     "Description": "R三氯化铁",
     "IconPath": "",
     "Type": 2,
-    "GridIndex": 4504,
+    "GridIndex": 3504,
     "Time": 240,
     "Input": [
       7014,
@@ -6117,7 +5689,7 @@
     "Description": "R氨氧化",
     "IconPath": "",
     "Type": 2,
-    "GridIndex": 4702,
+    "GridIndex": 3702,
     "Time": 120,
     "Input": [
       7002,
@@ -6145,7 +5717,7 @@
     "Description": "R羰基合成",
     "IconPath": "Assets/texpack/R羰基合成",
     "Type": 2,
-    "GridIndex": 4302,
+    "GridIndex": 3302,
     "Time": 240,
     "Input": [
       6206,
@@ -6255,11 +5827,11 @@
     "Description": "",
     "IconPath": "",
     "Type": 2,
-    "GridIndex": 4102,
+    "GridIndex": 3102,
     "Time": 120,
     "Input": [
       7006,
-      6277
+      6207
     ],
     "InCounts": [
       2,
@@ -6281,7 +5853,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 16,
-    "GridIndex": 4103,
+    "GridIndex": 3103,
     "Time": 120,
     "Input": [
       7006,
@@ -6413,7 +5985,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 4,
-    "GridIndex": 5302,
+    "GridIndex": 4302,
     "Time": 120,
     "Input": [
       1601,
@@ -6439,7 +6011,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 9,
-    "GridIndex": 5304,
+    "GridIndex": 4304,
     "Time": 120,
     "Input": [
       1603,
@@ -6465,7 +6037,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 9,
-    "GridIndex": 5305,
+    "GridIndex": 4305,
     "Time": 240,
     "Input": [
       7608,
@@ -6491,7 +6063,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 10,
-    "GridIndex": 5404,
+    "GridIndex": 4404,
     "Time": 240,
     "Input": [
       7610,
@@ -6521,7 +6093,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 10,
-    "GridIndex": 5504,
+    "GridIndex": 4504,
     "Time": 240,
     "Input": [
       7612,
@@ -6549,7 +6121,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 10,
-    "GridIndex": 5604,
+    "GridIndex": 4604,
     "Time": 240,
     "Input": [
       1611,
@@ -6579,7 +6151,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 9,
-    "GridIndex": 5205,
+    "GridIndex": 4205,
     "Time": 720,
     "Input": [
       6502,
@@ -6609,7 +6181,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 9,
-    "GridIndex": 5203,
+    "GridIndex": 4203,
     "Time": 720,
     "Input": [
       6502,
@@ -6719,7 +6291,7 @@
     "Description": "R海水淡化",
     "IconPath": "",
     "Type": 2,
-    "GridIndex": 4502,
+    "GridIndex": 3502,
     "Time": 120,
     "Input": [
       7018

@@ -69,20 +69,9 @@ namespace ProjectGenesis.Utils
             { 7608, new FullIconDesc(new Color32(81, 83, 90, 255)) },    // 钨子弹
             { 7609, new FullIconDesc(new Color32(221, 218, 255, 255)) }, // 三元子弹
             { 7616, new FullIconDesc(new Color32(187, 172, 252, 255)) }, // 反物质子弹
-            { 6252, new FullIconDesc(new Color32(160, 216, 255, 255)) }, // 铁粉
-            { 6253, new FullIconDesc(new Color32(237, 176, 150, 255)) }, // 铜粉
-            { 6273, new FullIconDesc(new Color32(218, 212, 195, 255)) }, // 铝粉
-            { 6254, new FullIconDesc(new Color32(153, 236, 182, 255)) }, // 硅粉
-            { 6255, new FullIconDesc(new Color32(232, 236, 255, 255)) }, // 钛粉
-            { 6281, new FullIconDesc(new Color32(32, 33, 36, 255)) },    // 钨粉
-            { 6256, new FullIconDesc(new Color32(56, 57, 62, 255)) },    // 煤粉
-            { 6251, new FullIconDesc(new Color32(181, 184, 198, 255)) }, // 石粉
-            { 6277, new FullIconDesc(new Color32(255, 255, 142, 255)) }, // 硫粉
 
             { 6203, new NoIconMetalIconDesc(new Color32(186, 176, 144, 255)) }, // 铝块
             { 7705, new NoIconMetalIconDesc(new Color32(43, 44, 48, 255)) },    // 钨块
-            { 6227, new NoIconMetalIconDesc(new Color32(66, 222, 87, 255)) },   // 铀块
-            { 6228, new NoIconMetalIconDesc(new Color32(239, 83, 90, 255)) },   // 钚块
 
             { 6217, new RodIconDesc(new Color32(163, 145, 85, 255)) },  // 煤油棒
             { 6216, new RodIconDesc(new Color32(198, 207, 111, 255)) }, // JP10棒
