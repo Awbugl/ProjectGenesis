@@ -285,6 +285,16 @@
     "ENUS": "Precise Assembler"
   },
   {
+    "Name": "标准冶炼",
+    "ZHCN": "高级冶炼",
+    "ENUS": "Advanced Smelter"
+  },
+  {
+    "Name": "高热冶炼",
+    "ZHCN": "超高温冶炼",
+    "ENUS": "High-Temperature Smelter"
+  },
+  {
     "Name": "复合制造",
     "ZHCN": "复合制造",
     "ENUS": "Multi Assembler"

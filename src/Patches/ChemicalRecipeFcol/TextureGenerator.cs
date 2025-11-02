@@ -19,7 +19,7 @@ namespace ProjectGenesis.Patches
             { ProtoID.R合成氨, 437 },
             { ProtoID.R三氯化铁, 438 },
             { ProtoID.R氨氧化, 439 },
-            { ProtoID.R羰基合成, 440 },
+            { ProtoID.R甲烷偶联, 440 },
             { ProtoID.R聚苯硫醚, 441 },
             { ProtoID.R聚酰亚胺, 442 },
             { ProtoID.R钨矿筛选, 443 },
@@ -29,6 +29,8 @@ namespace ProjectGenesis.Patches
             { ProtoID.R增产剂, 447 },
             { ProtoID.R氦原子提取, 448 },
             { ProtoID.R硅石筛选, 449 },
+            { ProtoID.R甲烷, 450 },
+            { ProtoID.R放射性矿物处理, 451 },
         };
 
         private static readonly Dictionary<int, Color32> ItemColors = new Dictionary<int, Color32>
@@ -80,7 +82,8 @@ namespace ProjectGenesis.Patches
         {
             ApplyColors(texture, column, GetItemColor(proto.Results[0]), new[]
             {
-                9, 6, 2, 1, 0,
+                9, 6, 2, 1,
+                0,
             });
 
             if (!InputIndexMap.TryGetValue(proto.Items.Length, out int[][] mappings)) return;
@@ -88,10 +91,10 @@ namespace ProjectGenesis.Patches
             for (int i = 0; i < mappings.Length; i++) ApplyColors(texture, column, GetItemColor(proto.Items[i]), mappings[i]);
         }
 
-        public static void GenerateRecipeTexture(string outputFilePath)
+        internal static void GenerateRecipeTexture(string outputFilePath)
         {
             int[] recipes = {};
-            
+
             int[] recipePos = recipes.Select(i => RecipeIdPos[i]).ToArray();
 
             Texture2D texture = TextureHelper.GetTexture("化工厂渲染索引");

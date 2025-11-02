@@ -7,8 +7,8 @@ namespace ProjectGenesis
     {
         internal static void Main(string[] args)
         {
-            // MoveRecipeGrid(5207, 5215, 5208);
-            // MoveItemGrid(5207, 5215, 5208);
+            // MoveRecipeGrid(3302, 3505, 3301);
+            // MoveItemGrid(3302, 3505, 3301);
             // CheckTechUnlockRecipe();
             // CheckItemGrid();
             // CheckRecipeGrid();

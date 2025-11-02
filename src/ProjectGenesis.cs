@@ -153,8 +153,7 @@ namespace ProjectGenesis
             {
                 TabSystem.RegisterTab($"{MODGUID}:{MODGUID}Tab2",
                     new TabData("化工页面".TranslateFromJsonSpecial(), "Assets/texpack/T基础化工")),
-                TabSystem.RegisterTab($"{MODGUID}:{MODGUID}Tab3", 
-                    new TabData("防御页面".TranslateFromJsonSpecial(), "Assets/texpack/O防御")),
+                TabSystem.RegisterTab($"{MODGUID}:{MODGUID}Tab3", new TabData("防御页面".TranslateFromJsonSpecial(), "Assets/texpack/O防御")),
             };
 
             RegisterStrings();

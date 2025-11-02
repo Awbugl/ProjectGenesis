@@ -78,7 +78,7 @@
     "Name": "石材",
     "Description": "",
     "IconPath": "",
-    "Type": 1,
+    "Type": 4,
     "GridIndex": 1205,
     "Time": 60,
     "Input": [
@@ -617,17 +617,17 @@
     "Description": "",
     "IconPath": "",
     "Type": 2,
-    "GridIndex": 3704,
+    "GridIndex": 3705,
     "Time": 120,
     "Input": [
-      6207,
+      6205,
       1000,
       7019
     ],
     "InCounts": [
       1,
       1,
-      3
+      1
     ],
     "Output": [
       1116
@@ -778,7 +778,7 @@
     "Name": "钛化玻璃",
     "Description": "",
     "IconPath": "",
-    "Type": 9,
+    "Type": 11,
     "GridIndex": 1502,
     "Time": 120,
     "Input": [
@@ -808,18 +808,16 @@
     "GridIndex": 1406,
     "Time": 120,
     "Input": [
-      1109,
-      1116
+      7008
     ],
     "InCounts": [
-      4,
-      1
+      4
     ],
     "Output": [
       1123
     ],
     "OutCounts": [
-      2
+      1
     ],
     "Explicit": false,
     "Handcraft": false,
@@ -958,7 +956,7 @@
     "Name": "晶格硅",
     "Description": "",
     "IconPath": "",
-    "Type": 1,
+    "Type": 11,
     "GridIndex": 1405,
     "Time": 120,
     "Input": [
@@ -1566,7 +1564,7 @@
     "Name": "高纯硅块",
     "Description": "",
     "IconPath": "",
-    "Type": 1,
+    "Type": 11,
     "GridIndex": 1104,
     "Time": 60,
     "Input": [
@@ -1590,7 +1588,7 @@
     "Name": "金刚石",
     "Description": "",
     "IconPath": "",
-    "Type": 1,
+    "Type": 11,
     "GridIndex": 1404,
     "Time": 120,
     "Input": [
@@ -1614,7 +1612,7 @@
     "Name": "金刚石（高效）",
     "Description": "R金刚石（高效）",
     "IconPath": "Icons/ItemRecipe/diamond-lv2",
-    "Type": 1,
+    "Type": 11,
     "GridIndex": 1504,
     "Time": 60,
     "Input": [
@@ -1638,7 +1636,7 @@
     "Name": "晶格硅（高效）",
     "Description": "R晶格硅（高效）",
     "IconPath": "Icons/ItemRecipe/silicium-high-purity-lv2",
-    "Type": 1,
+    "Type": 11,
     "GridIndex": 1505,
     "Time": 60,
     "Input": [
@@ -1716,7 +1714,7 @@
     "Name": "钛块",
     "Description": "",
     "IconPath": "",
-    "Type": 1,
+    "Type": 11,
     "GridIndex": 1105,
     "Time": 60,
     "Input": [
@@ -1740,7 +1738,7 @@
     "Name": "钛合金",
     "Description": "",
     "IconPath": "",
-    "Type": 1,
+    "Type": 11,
     "GridIndex": 1203,
     "Time": 120,
     "Input": [
@@ -2871,11 +2869,11 @@
     "Description": "",
     "IconPath": "",
     "Type": 16,
-    "GridIndex": 3505,
+    "GridIndex": 3504,
     "Time": 120,
     "Input": [
       1124,
-      6207,
+      6205,
       7015
     ],
     "InCounts": [
@@ -3241,7 +3239,7 @@
     "Description": "",
     "IconPath": "",
     "Type": 2,
-    "GridIndex": 3305,
+    "GridIndex": 3304,
     "Time": 60,
     "Input": [
       6206,
@@ -4732,38 +4730,12 @@
     "NonProductive": false
   },
   {
-    "ID": 506,
-    "Name": "二氧化碳",
-    "Description": "",
-    "IconPath": "",
-    "Type": 2,
-    "GridIndex": 3301,
-    "Time": 120,
-    "Input": [
-      1109,
-      7019
-    ],
-    "InCounts": [
-      1,
-      2
-    ],
-    "Output": [
-      6206
-    ],
-    "OutCounts": [
-      1
-    ],
-    "Explicit": false,
-    "Handcraft": false,
-    "NonProductive": false
-  },
-  {
     "ID": 509,
     "Name": "催化重整",
     "Description": "R催化重整",
     "IconPath": "Assets/texpack/R催化重整",
     "Type": 2,
-    "GridIndex": 3303,
+    "GridIndex": 3302,
     "Time": 240,
     "Input": [
       7009
@@ -4787,7 +4759,7 @@
     "Description": "R四氢双环戊二烯",
     "IconPath": "",
     "Type": 2,
-    "GridIndex": 3304,
+    "GridIndex": 3303,
     "Time": 480,
     "Input": [
       7009,
@@ -5175,29 +5147,27 @@
   },
   {
     "ID": 548,
-    "Name": "二氧化硫还原",
-    "Description": "R二氧化硫还原",
-    "IconPath": "Assets/texpack/R二氧化硫还原",
+    "Name": "二氧化硫",
+    "Description": "",
+    "IconPath": "",
     "Type": 2,
-    "GridIndex": 3401,
+    "GridIndex": 3704,
     "Time": 120,
     "Input": [
-      6205,
-      1109
+      6207,
+      7019
     ],
     "InCounts": [
       1,
-      1
+      2
     ],
     "Output": [
-      6207,
-      6206
+      6205
     ],
     "OutCounts": [
-      1,
       1
     ],
-    "Explicit": true,
+    "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
   },
@@ -5451,7 +5421,7 @@
     "Description": "R水电解",
     "IconPath": "Assets/texpack/R水电解",
     "Type": 2,
-    "GridIndex": 3706,
+    "GridIndex": 3707,
     "Time": 240,
     "Input": [
       1000
@@ -5477,7 +5447,7 @@
     "Description": "R盐水电解",
     "IconPath": "",
     "Type": 2,
-    "GridIndex": 3503,
+    "GridIndex": 3502,
     "Time": 120,
     "Input": [
       1000,
@@ -5505,7 +5475,7 @@
     "Description": "R钠盐转化",
     "IconPath": "",
     "Type": 2,
-    "GridIndex": 3501,
+    "GridIndex": 1313,
     "Time": 120,
     "Input": [
       1005,
@@ -5530,7 +5500,7 @@
     "Name": "钛晶石（高效）",
     "Description": "R钛晶石（高效）",
     "IconPath": "Assets/texpack/R钛晶石（高效）",
-    "Type": 4,
+    "Type": 11,
     "GridIndex": 1508,
     "Time": 120,
     "Input": [
@@ -5632,7 +5602,7 @@
     "Name": "钛晶石",
     "Description": "",
     "IconPath": "",
-    "Type": 4,
+    "Type": 11,
     "GridIndex": 1408,
     "Time": 120,
     "Input": [
@@ -5659,7 +5629,7 @@
     "Description": "R三氯化铁",
     "IconPath": "",
     "Type": 2,
-    "GridIndex": 3504,
+    "GridIndex": 3503,
     "Time": 240,
     "Input": [
       7014,
@@ -5713,15 +5683,15 @@
   },
   {
     "ID": 720,
-    "Name": "羰基合成",
-    "Description": "R羰基合成",
-    "IconPath": "Assets/texpack/R羰基合成",
+    "Name": "甲烷偶联",
+    "Description": "R甲烷偶联",
+    "IconPath": "Assets/texpack/R甲烷偶联",
     "Type": 2,
-    "GridIndex": 3302,
+    "GridIndex": 3301,
     "Time": 240,
     "Input": [
-      6206,
-      1000
+      7008,
+      7019
     ],
     "InCounts": [
       3,
@@ -5729,11 +5699,11 @@
     ],
     "Output": [
       7009,
-      7019
+      1000
     ],
     "OutCounts": [
       1,
-      9
+      3
     ],
     "Explicit": true,
     "Handcraft": false,
@@ -5906,7 +5876,7 @@
     "Name": "钨块",
     "Description": "",
     "IconPath": "",
-    "Type": 1,
+    "Type": 13,
     "GridIndex": 1106,
     "Time": 60,
     "Input": [
@@ -5930,7 +5900,7 @@
     "Name": "钨强化玻璃",
     "Description": "",
     "IconPath": "",
-    "Type": 9,
+    "Type": 13,
     "GridIndex": 1503,
     "Time": 120,
     "Input": [
@@ -5956,7 +5926,7 @@
     "Name": "钨合金",
     "Description": "",
     "IconPath": "",
-    "Type": 1,
+    "Type": 13,
     "GridIndex": 1204,
     "Time": 120,
     "Input": [
@@ -6291,7 +6261,7 @@
     "Description": "R海水淡化",
     "IconPath": "",
     "Type": 2,
-    "GridIndex": 3502,
+    "GridIndex": 3501,
     "Time": 120,
     "Input": [
       7018

@@ -96,9 +96,10 @@ namespace ProjectGenesis.Patches
                         case ProtoID.R海水淡化:
                         case ProtoID.R高效石墨烯:
                         case ProtoID.R水电解:
-                        case ProtoID.R羰基合成:
+                        case ProtoID.R甲烷偶联:
                         case ProtoID.R催化重整:
                         case ProtoID.R二氧化硫还原:
+                        case ProtoID.R放射性矿物处理:
                             b = true;
 
                             break;
@@ -119,16 +120,9 @@ namespace ProjectGenesis.Patches
             switch (ProjectGenesis.ProductOverflowEntry.Value)
             {
                 case 0:
-                    var b = false;
+                    const bool b = false;
 
-                    switch (component.recipeId)
-                    {
-                        case ProtoID.R放射性矿物处理:
-                            b = true;
-
-                            break;
-                    }
-
+                    // ReSharper disable once ConditionIsAlwaysTrueOrFalse
                     return b && CalcMaxProduct(ref component, productRegister, 19);
 
                 case 1: return CalcMaxProduct(ref component, productRegister, 19);

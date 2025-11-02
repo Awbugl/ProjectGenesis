@@ -23,6 +23,7 @@
       4,
       6,
       11,
+      17,
       25,
       50
     ],
@@ -566,7 +567,6 @@
       702,
       506,
       716,
-      34,
       704,
       121,
       548
@@ -600,9 +600,7 @@
     "PreTechs": [
       1121
     ],
-    "PreTechsImplicit": [
-      1929
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001,
       6002
@@ -770,13 +768,15 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      21,
+      13,
       -7
     ],
     "PreTechs": [
+      1411
+    ],
+    "PreTechsImplicit": [
       1413
     ],
-    "PreTechsImplicit": [],
     "Items": [
       6278
     ],
@@ -1214,14 +1214,13 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      25,
-      21
+      29,
+      17
     ],
     "PreTechs": [
-      1202
+      1203
     ],
     "PreTechsImplicit": [
-      1929,
       1303,
       1132
     ],
@@ -1828,26 +1827,26 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      9,
-      -7
+      13,
+      -15
     ],
     "PreTechs": [
-      1900
+      1411
     ],
-    "PreTechsImplicit": [
-      1401,
-      1002
-    ],
+    "PreTechsImplicit": [],
     "Items": [
-      6001
+      6001,
+      6002
     ],
     "ItemPoints": [
-      20
+      10,
+      10
     ],
-    "HashNeeded": 18000,
+    "HashNeeded": 144000,
     "UnlockRecipes": [
-      17,
-      59
+      34,
+      773,
+      401
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -1872,13 +1871,15 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      17,
+      13,
       -3
     ],
     "PreTechs": [
-      1929
+      1411
     ],
-    "PreTechsImplicit": [],
+    "PreTechsImplicit": [
+      1413
+    ],
     "Items": [
       6278
     ],
@@ -1914,13 +1915,16 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      13,
+      9,
       -7
     ],
     "PreTechs": [
-      1402
+      1900
     ],
-    "PreTechsImplicit": [],
+    "PreTechsImplicit": [
+      1401,
+      1002
+    ],
     "Items": [
       6001
     ],
@@ -2007,12 +2011,11 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      17,
-      -7
+      21,
+      21
     ],
     "PreTechs": [
-      1929,
-      1411
+      1401
     ],
     "PreTechsImplicit": [],
     "Items": [
@@ -2025,9 +2028,9 @@
     ],
     "HashNeeded": 72000,
     "UnlockRecipes": [
+      523,
       65,
-      773,
-      774
+      59
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -2056,7 +2059,7 @@
       -11
     ],
     "PreTechs": [
-      1402
+      1411
     ],
     "PreTechsImplicit": [
       1413
@@ -2178,11 +2181,11 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      21,
+      25,
       21
     ],
     "PreTechs": [
-      1401
+      1413
     ],
     "PreTechsImplicit": [
       1141
@@ -2197,7 +2200,8 @@
     ],
     "HashNeeded": 360000,
     "UnlockRecipes": [
-      116
+      116,
+      774
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -2585,7 +2589,7 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      21,
+      17,
       -3
     ],
     "PreTechs": [
@@ -2627,7 +2631,7 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      25,
+      21,
       -3
     ],
     "PreTechs": [
@@ -3024,7 +3028,6 @@
     "PreTechsImplicit": [
       1942,
       1113,
-      1929,
       1703,
       1414
     ],
@@ -3524,7 +3527,7 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      29,
+      25,
       -3
     ],
     "PreTechs": [
@@ -3627,9 +3630,7 @@
     "PreTechs": [
       1801
     ],
-    "PreTechsImplicit": [
-      1929
-    ],
+    "PreTechsImplicit": [],
     "Items": [
       6001
     ],
@@ -4906,13 +4907,15 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      25,
+      21,
       -7
     ],
     "PreTechs": [
       1126
     ],
-    "PreTechsImplicit": [],
+    "PreTechsImplicit": [
+      1417
+    ],
     "Items": [
       6278,
       6003
@@ -4984,50 +4987,6 @@
     "PropertyItemCounts": []
   },
   {
-    "ID": 1916,
-    "Name": "T放射性矿物提炼",
-    "IconPath": "Icons/Tech/1416",
-    "Desc": "T放射性矿物提炼描述",
-    "Conclusion": "T放射性矿物提炼描述",
-    "IsHiddenTech": false,
-    "PreItem": null,
-    "Position": [
-      13,
-      -15
-    ],
-    "PreTechs": [
-      1402
-    ],
-    "PreTechsImplicit": [
-      1929
-    ],
-    "Items": [
-      6001,
-      6002
-    ],
-    "ItemPoints": [
-      10,
-      10
-    ],
-    "HashNeeded": 144000,
-    "UnlockRecipes": [
-      401
-    ],
-    "UnlockFunctions": [],
-    "UnlockValues": [],
-    "Published": true,
-    "Level": 0,
-    "MaxLevel": 0,
-    "LevelCoef1": 0,
-    "LevelCoef2": 0,
-    "IsLabTech": true,
-    "PreTechsMax": false,
-    "AddItems": [],
-    "AddItemCounts": [],
-    "PropertyOverrideItems": [],
-    "PropertyItemCounts": []
-  },
-  {
     "ID": 1919,
     "Name": "T裂变能源燃料棒",
     "IconPath": "Icons/Tech/1416",
@@ -5040,7 +4999,7 @@
       -15
     ],
     "PreTechs": [
-      1916
+      1402
     ],
     "PreTechsImplicit": [],
     "Items": [
@@ -5439,50 +5398,6 @@
     "PropertyItemCounts": []
   },
   {
-    "ID": 1929,
-    "Name": "T矿物处理",
-    "IconPath": "Assets/texpack/T矿物处理",
-    "Desc": "T矿物处理描述",
-    "Conclusion": "T矿物处理描述",
-    "IsHiddenTech": false,
-    "PreItem": null,
-    "Position": [
-      13,
-      -3
-    ],
-    "PreTechs": [
-      1402
-    ],
-    "PreTechsImplicit": [
-      1411,
-      1932,
-      1201
-    ],
-    "Items": [
-      6001
-    ],
-    "ItemPoints": [
-      10
-    ],
-    "HashNeeded": 144000,
-    "UnlockRecipes": [
-      523
-    ],
-    "UnlockFunctions": [],
-    "UnlockValues": [],
-    "Published": true,
-    "Level": 0,
-    "MaxLevel": 0,
-    "LevelCoef1": 0,
-    "LevelCoef2": 0,
-    "IsLabTech": true,
-    "PreTechsMax": false,
-    "AddItems": [],
-    "AddItemCounts": [],
-    "PropertyOverrideItems": [],
-    "PropertyItemCounts": []
-  },
-  {
     "ID": 1930,
     "Name": "T先进化工",
     "IconPath": "Icons/Tech/1122",
@@ -5711,7 +5626,7 @@
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
-      33,
+      29,
       -3
     ],
     "PreTechs": [
@@ -5895,7 +5810,9 @@
     "PreTechs": [
       1123
     ],
-    "PreTechsImplicit": [],
+    "PreTechsImplicit": [
+      1417
+    ],
     "Items": [
       6278,
       6003

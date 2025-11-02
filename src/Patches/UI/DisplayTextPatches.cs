@@ -42,8 +42,13 @@ namespace ProjectGenesis.Patches
 
                     break;
 
-                case Utils_ERecipeType.矿物处理:
-                    __result = "矿物处理厂".TranslateFromJson();
+                case Utils_ERecipeType.标准冶炼:
+                    __result = "等离子熔炉".TranslateFromJson();
+
+                    break;
+
+                case Utils_ERecipeType.高热冶炼:
+                    __result = "位面熔炉".TranslateFromJson();
 
                     break;
 
@@ -110,8 +115,12 @@ namespace ProjectGenesis.Patches
                     __result = "高精度加工".TranslateFromJson();
                     return;
 
-                case Utils_ERecipeType.矿物处理:
-                    __result = "T矿物处理".TranslateFromJson();
+                case Utils_ERecipeType.标准冶炼:
+                    __result = "标准冶炼".TranslateFromJson();
+                    return;
+
+                case Utils_ERecipeType.高热冶炼:
+                    __result = "高热冶炼".TranslateFromJson();
                     return;
 
                 case Utils_ERecipeType.所有制造:

@@ -196,7 +196,8 @@
   },
   {
     "ModelID": 194,
-    "assemblerSpeed": 40000
+    "assemblerSpeed": 20000,
+    "assemblerRecipeType": 13
   },
   {
     "ModelID": 255,

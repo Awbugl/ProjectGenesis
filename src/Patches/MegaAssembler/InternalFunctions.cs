@@ -71,7 +71,7 @@ namespace ProjectGenesis.Patches
                 case Utils.ERecipeType.所有化工:
                     return type == Utils.ERecipeType.Chemical || type == Utils.ERecipeType.Refine || type == Utils.ERecipeType.高分子化工;
 
-                case Utils.ERecipeType.所有熔炉: return type == Utils.ERecipeType.Smelt || type == Utils.ERecipeType.矿物处理;
+                case Utils.ERecipeType.所有熔炉: return type == Utils.ERecipeType.Smelt || type == Utils.ERecipeType.标准冶炼 || type == Utils.ERecipeType.高热冶炼;
 
                 case Utils.ERecipeType.复合制造: return type == Utils.ERecipeType.Assemble || type == Utils.ERecipeType.标准制造;
 

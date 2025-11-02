@@ -16,7 +16,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": true,
     "Productive": true,
     "SubID": 0,
@@ -39,15 +39,15 @@
     "AmmoType": 0,
     "BombType": 1,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 1001,
@@ -64,7 +64,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -87,15 +87,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 1002,
@@ -112,7 +112,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -135,15 +135,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 1003,
@@ -161,7 +161,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -184,15 +184,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 1004,
@@ -209,7 +209,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -232,15 +232,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 1005,
@@ -257,7 +257,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -280,15 +280,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 1006,
@@ -308,7 +308,7 @@
     ],
     "FuelType": 1,
     "HeatValue": 2700000,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -331,15 +331,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 1007,
@@ -382,15 +382,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 1011,
@@ -433,15 +433,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 1012,
@@ -458,7 +458,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -481,15 +481,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 1013,
@@ -506,7 +506,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -529,15 +529,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 1014,
@@ -554,7 +554,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -577,7 +577,7 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 5,
     "EnemyDropRange": [
       0.006,
@@ -585,7 +585,7 @@
     ],
     "EnemyDropCount": 2.0,
     "EnemyDropMask": 2147483647,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 1015,
@@ -602,7 +602,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -625,15 +625,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 1016,
@@ -650,7 +650,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -673,7 +673,7 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 8,
     "EnemyDropRange": [
       0.012,
@@ -681,7 +681,7 @@
     ],
     "EnemyDropCount": 2.0,
     "EnemyDropMask": 2147483647,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 1030,
@@ -724,15 +724,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
+      0.0,
       0.003
     ],
     "EnemyDropCount": 4.0,
     "EnemyDropMask": 2097695762,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 1031,
@@ -775,7 +775,7 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
       0.003,
@@ -783,7 +783,7 @@
     ],
     "EnemyDropCount": 4.0,
     "EnemyDropMask": 2097695762,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 1099,
@@ -800,7 +800,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -823,15 +823,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 1101,
@@ -848,7 +848,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -871,7 +871,7 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
       0.016,
@@ -879,7 +879,7 @@
     ],
     "EnemyDropCount": 2.0,
     "EnemyDropMask": 2147483647,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 1102,
@@ -896,7 +896,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -919,15 +919,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 1103,
@@ -944,7 +944,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -967,7 +967,7 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 1,
     "EnemyDropRange": [
       0.0635,
@@ -975,7 +975,7 @@
     ],
     "EnemyDropCount": 1.6,
     "EnemyDropMask": 2147483647,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 1104,
@@ -992,7 +992,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -1015,7 +1015,7 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
       0.026,
@@ -1023,7 +1023,7 @@
     ],
     "EnemyDropCount": 2.4,
     "EnemyDropMask": 2147483647,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 1105,
@@ -1040,7 +1040,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -1063,7 +1063,7 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 1,
     "EnemyDropRange": [
       0.036,
@@ -1088,7 +1088,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -1111,7 +1111,7 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 1,
     "EnemyDropRange": [
       0.044,
@@ -1136,7 +1136,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -1159,7 +1159,7 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 4,
     "EnemyDropRange": [
       0.0705,
@@ -1184,7 +1184,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -1207,7 +1207,7 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
       0.052,
@@ -1215,7 +1215,7 @@
     ],
     "EnemyDropCount": 1.8,
     "EnemyDropMask": 2147483647,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 1109,
@@ -1258,7 +1258,7 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 1,
     "EnemyDropRange": [
       0.058,
@@ -1283,7 +1283,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -1306,7 +1306,7 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 1,
     "EnemyDropRange": [
       0.0755,
@@ -1314,7 +1314,7 @@
     ],
     "EnemyDropCount": 1.7,
     "EnemyDropMask": 2147483647,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 1111,
@@ -1331,7 +1331,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -1354,7 +1354,7 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 1,
     "EnemyDropRange": [
       0.0855,
@@ -1362,7 +1362,7 @@
     ],
     "EnemyDropCount": 1.4,
     "EnemyDropMask": 2147483647,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 1112,
@@ -1405,7 +1405,7 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 2,
     "EnemyDropRange": [
       0.091,
@@ -1413,7 +1413,7 @@
     ],
     "EnemyDropCount": 1.0,
     "EnemyDropMask": 2147483647,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 1113,
@@ -1430,7 +1430,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -1453,7 +1453,7 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 3,
     "EnemyDropRange": [
       0.095,
@@ -1476,6 +1476,7 @@
       2,
       3,
       31,
+      0,
       1,
       40
     ],
@@ -1504,15 +1505,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 1115,
@@ -1529,7 +1530,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -1552,7 +1553,7 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 2,
     "EnemyDropRange": [
       0.197,
@@ -1567,7 +1568,7 @@
     "Name": "硫酸",
     "Description": "I硫酸",
     "IconPath": "Icons/ItemRecipe/sulphuric-acid",
-    "GridIndex": 3704,
+    "GridIndex": 3705,
     "StackSize": 20,
     "Type": 2,
     "PreTechOverride": 0,
@@ -1578,7 +1579,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": true,
     "Productive": true,
     "SubID": 0,
@@ -1601,15 +1602,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 1117,
@@ -1653,15 +1654,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 1118,
@@ -1678,7 +1679,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -1701,7 +1702,7 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 3,
     "EnemyDropRange": [
       0.205,
@@ -1726,7 +1727,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -1749,7 +1750,7 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 4,
     "EnemyDropRange": [
       0.0815,
@@ -1801,7 +1802,7 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 3,
     "EnemyDropRange": [
       0.185,
@@ -1809,7 +1810,7 @@
     ],
     "EnemyDropCount": 1.5,
     "EnemyDropMask": 2147483647,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 1121,
@@ -1853,7 +1854,7 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 5,
     "EnemyDropRange": [
       0.189,
@@ -1861,7 +1862,7 @@
     ],
     "EnemyDropCount": 0.8,
     "EnemyDropMask": 2147483647,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 1122,
@@ -1879,7 +1880,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -1902,7 +1903,7 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 7,
     "EnemyDropRange": [
       0.191,
@@ -1910,7 +1911,7 @@
     ],
     "EnemyDropCount": 0.3,
     "EnemyDropMask": 2147483647,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 1123,
@@ -1953,7 +1954,7 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 3,
     "EnemyDropRange": [
       0.2,
@@ -2004,7 +2005,7 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 4,
     "EnemyDropRange": [
       0.203,
@@ -2012,7 +2013,7 @@
     ],
     "EnemyDropCount": 0.8,
     "EnemyDropMask": 2097798226,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 1125,
@@ -2029,7 +2030,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -2052,15 +2053,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 1126,
@@ -2077,7 +2078,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -2100,7 +2101,7 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 5,
     "EnemyDropRange": [
       0.208,
@@ -2108,7 +2109,7 @@
     ],
     "EnemyDropCount": 0.55,
     "EnemyDropMask": 2147483647,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 1127,
@@ -2125,7 +2126,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -2148,7 +2149,7 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 6,
     "EnemyDropRange": [
       0.1435,
@@ -2156,7 +2157,7 @@
     ],
     "EnemyDropCount": 0.4,
     "EnemyDropMask": 2147483647,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 1128,
@@ -2202,7 +2203,7 @@
     "AmmoType": 0,
     "BombType": 2,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 2,
     "EnemyDropRange": [
       0.211,
@@ -2256,7 +2257,7 @@
     "AmmoType": 0,
     "BombType": 2,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 4,
     "EnemyDropRange": [
       0.215,
@@ -2264,7 +2265,7 @@
     ],
     "EnemyDropCount": 0.7,
     "EnemyDropMask": 2147483647,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 1130,
@@ -2307,15 +2308,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 1131,
@@ -2332,7 +2333,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -2355,7 +2356,7 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 2,
     "EnemyDropRange": [
       0.2435,
@@ -2363,7 +2364,7 @@
     ],
     "EnemyDropCount": 2.0,
     "EnemyDropMask": 2147483647,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 1141,
@@ -2410,15 +2411,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 1142,
@@ -2465,22 +2466,22 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 1143,
     "Name": "增产剂",
     "Description": "I增产剂 Mk.I",
     "IconPath": "Icons/ItemRecipe/accelerator-3",
-    "GridIndex": 3505,
+    "GridIndex": 3504,
     "StackSize": 200,
     "Type": 2,
     "PreTechOverride": 0,
@@ -2494,7 +2495,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -2517,15 +2518,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 1201,
@@ -2542,7 +2543,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -2565,15 +2566,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 1202,
@@ -2590,7 +2591,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -2613,7 +2614,7 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 1,
     "EnemyDropRange": [
       0.116,
@@ -2621,7 +2622,7 @@
     ],
     "EnemyDropCount": 2.0,
     "EnemyDropMask": 2147483647,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 1203,
@@ -2638,7 +2639,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -2661,7 +2662,7 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 2,
     "EnemyDropRange": [
       0.123,
@@ -2669,7 +2670,7 @@
     ],
     "EnemyDropCount": 1.2,
     "EnemyDropMask": 2147483647,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 1204,
@@ -2686,7 +2687,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -2709,7 +2710,7 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 3,
     "EnemyDropRange": [
       0.129,
@@ -2717,7 +2718,7 @@
     ],
     "EnemyDropCount": 0.8,
     "EnemyDropMask": 2147483647,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 1205,
@@ -2734,7 +2735,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -2757,7 +2758,7 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 4,
     "EnemyDropRange": [
       0.1345,
@@ -2765,7 +2766,7 @@
     ],
     "EnemyDropCount": 0.5,
     "EnemyDropMask": 2147483647,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 1206,
@@ -2782,7 +2783,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -2805,7 +2806,7 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 5,
     "EnemyDropRange": [
       0.1395,
@@ -2813,7 +2814,7 @@
     ],
     "EnemyDropCount": 0.4,
     "EnemyDropMask": 2147483647,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 1208,
@@ -2831,7 +2832,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": false,
     "SubID": 0,
@@ -2854,15 +2855,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 1209,
@@ -2879,7 +2880,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -2902,7 +2903,7 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 7,
     "EnemyDropRange": [
       0.22,
@@ -2910,7 +2911,7 @@
     ],
     "EnemyDropCount": 0.4,
     "EnemyDropMask": 2147483647,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 1210,
@@ -2927,7 +2928,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -2950,7 +2951,7 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 7,
     "EnemyDropRange": [
       0.222,
@@ -2958,7 +2959,7 @@
     ],
     "EnemyDropCount": 0.3,
     "EnemyDropMask": 2147483647,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 1301,
@@ -2975,7 +2976,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -2998,7 +2999,7 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 1,
     "EnemyDropRange": [
       0.147,
@@ -3006,7 +3007,7 @@
     ],
     "EnemyDropCount": 2.0,
     "EnemyDropMask": 2147483647,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 1302,
@@ -3023,7 +3024,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -3046,7 +3047,7 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 2,
     "EnemyDropRange": [
       0.161,
@@ -3054,7 +3055,7 @@
     ],
     "EnemyDropCount": 1.0,
     "EnemyDropMask": 2147483647,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 1303,
@@ -3071,7 +3072,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -3094,7 +3095,7 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 3,
     "EnemyDropRange": [
       0.154,
@@ -3102,7 +3103,7 @@
     ],
     "EnemyDropCount": 0.75,
     "EnemyDropMask": 2147483647,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 1304,
@@ -3119,7 +3120,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -3142,7 +3143,7 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 6,
     "EnemyDropRange": [
       0.168,
@@ -3150,7 +3151,7 @@
     ],
     "EnemyDropCount": 0.4,
     "EnemyDropMask": 2147483647,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 1305,
@@ -3167,7 +3168,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -3190,7 +3191,7 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 7,
     "EnemyDropRange": [
       0.158,
@@ -3198,7 +3199,7 @@
     ],
     "EnemyDropCount": 0.25,
     "EnemyDropMask": 2147483647,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 1401,
@@ -3215,7 +3216,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -3238,7 +3239,7 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 2,
     "EnemyDropRange": [
       0.176,
@@ -3246,7 +3247,7 @@
     ],
     "EnemyDropCount": 1.3,
     "EnemyDropMask": 2147483647,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 1402,
@@ -3263,7 +3264,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -3286,7 +3287,7 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 5,
     "EnemyDropRange": [
       0.172,
@@ -3294,7 +3295,7 @@
     ],
     "EnemyDropCount": 0.25,
     "EnemyDropMask": 2147483647,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 1403,
@@ -3311,7 +3312,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -3334,7 +3335,7 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 7,
     "EnemyDropRange": [
       0.224,
@@ -3342,7 +3343,7 @@
     ],
     "EnemyDropCount": 0.3,
     "EnemyDropMask": 2147483647,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 1404,
@@ -3359,7 +3360,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -3382,7 +3383,7 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 3,
     "EnemyDropRange": [
       0.1805,
@@ -3390,7 +3391,7 @@
     ],
     "EnemyDropCount": 1.4,
     "EnemyDropMask": 2147483647,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 1405,
@@ -3407,7 +3408,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -3430,7 +3431,7 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 3,
     "EnemyDropRange": [
       0.2325,
@@ -3438,7 +3439,7 @@
     ],
     "EnemyDropCount": 0.6,
     "EnemyDropMask": 2147483647,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 1406,
@@ -3455,7 +3456,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -3478,7 +3479,7 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 5,
     "EnemyDropRange": [
       0.2385,
@@ -3486,7 +3487,7 @@
     ],
     "EnemyDropCount": 0.3,
     "EnemyDropMask": 2147483647,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 1407,
@@ -3503,7 +3504,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -3526,7 +3527,7 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 1,
     "EnemyDropRange": [
       0.2255,
@@ -3534,7 +3535,7 @@
     ],
     "EnemyDropCount": 1.0,
     "EnemyDropMask": 2147483647,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 1501,
@@ -3552,7 +3553,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -3575,15 +3576,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 1502,
@@ -3600,7 +3601,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -3623,15 +3624,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 1503,
@@ -3648,7 +3649,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": false,
     "SubID": 0,
@@ -3671,15 +3672,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 1601,
@@ -3700,7 +3701,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -3723,15 +3724,15 @@
     "AmmoType": 1,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 1602,
@@ -3752,7 +3753,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -3775,15 +3776,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 1603,
@@ -3804,7 +3805,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -3827,15 +3828,15 @@
     "AmmoType": 1,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 1604,
@@ -3857,7 +3858,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -3880,15 +3881,15 @@
     "AmmoType": 3,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 1605,
@@ -3910,7 +3911,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -3933,15 +3934,15 @@
     "AmmoType": 3,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 1606,
@@ -3963,7 +3964,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -3986,15 +3987,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 1607,
@@ -4016,7 +4017,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -4039,15 +4040,15 @@
     "AmmoType": 4,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 1608,
@@ -4069,7 +4070,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -4092,15 +4093,15 @@
     "AmmoType": 4,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 1609,
@@ -4122,7 +4123,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -4145,15 +4146,15 @@
     "AmmoType": 5,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 1610,
@@ -4175,7 +4176,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -4198,15 +4199,15 @@
     "AmmoType": 5,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 1611,
@@ -4228,7 +4229,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -4251,15 +4252,15 @@
     "AmmoType": 5,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 1612,
@@ -4281,7 +4282,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -4304,15 +4305,15 @@
     "AmmoType": 6,
     "BombType": 3,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 1613,
@@ -4334,7 +4335,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -4357,15 +4358,15 @@
     "AmmoType": 6,
     "BombType": 3,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 1801,
@@ -4408,15 +4409,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 1802,
@@ -4459,15 +4460,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 1803,
@@ -4510,15 +4511,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 1804,
@@ -4561,15 +4562,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 2001,
@@ -4588,7 +4589,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": false,
     "SubID": 1,
@@ -4615,15 +4616,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 2002,
@@ -4642,7 +4643,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": false,
     "SubID": 2,
@@ -4669,15 +4670,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 2003,
@@ -4696,7 +4697,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": false,
     "SubID": 3,
@@ -4723,15 +4724,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 2011,
@@ -4753,7 +4754,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": false,
     "SubID": 1,
@@ -4781,15 +4782,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 2012,
@@ -4811,7 +4812,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": false,
     "SubID": 2,
@@ -4839,15 +4840,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 2013,
@@ -4869,7 +4870,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": false,
     "SubID": 3,
@@ -4897,15 +4898,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 2014,
@@ -4928,7 +4929,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": false,
     "SubID": 4,
@@ -4956,15 +4957,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 2020,
@@ -4983,7 +4984,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": false,
     "SubID": 0,
@@ -5006,15 +5007,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 2030,
@@ -5034,7 +5035,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": false,
     "SubID": 0,
@@ -5057,15 +5058,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 2040,
@@ -5085,7 +5086,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": false,
     "SubID": 0,
@@ -5108,15 +5109,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 2101,
@@ -5135,7 +5136,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": false,
     "SubID": 1,
@@ -5161,12 +5162,12 @@
     "DropRate": 0.5,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 2102,
@@ -5185,7 +5186,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 2,
@@ -5211,12 +5212,12 @@
     "DropRate": 0.5,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 2103,
@@ -5238,7 +5239,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": false,
     "SubID": 0,
@@ -5264,12 +5265,12 @@
     "DropRate": 0.5,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 2104,
@@ -5291,7 +5292,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": false,
     "SubID": 0,
@@ -5317,12 +5318,12 @@
     "DropRate": 0.5,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 2105,
@@ -5342,7 +5343,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": false,
     "SubID": 0,
@@ -5365,15 +5366,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 2106,
@@ -5392,7 +5393,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": false,
     "SubID": 0,
@@ -5415,15 +5416,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 2107,
@@ -5445,7 +5446,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": false,
     "SubID": 0,
@@ -5468,15 +5469,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 2201,
@@ -5496,7 +5497,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": false,
     "SubID": 1,
@@ -5519,15 +5520,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 2202,
@@ -5549,7 +5550,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": false,
     "SubID": 2,
@@ -5572,15 +5573,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 2203,
@@ -5601,7 +5602,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": false,
     "SubID": 4,
@@ -5624,15 +5625,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 2204,
@@ -5652,7 +5653,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": false,
     "SubID": 5,
@@ -5675,15 +5676,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 2205,
@@ -5703,7 +5704,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": false,
     "SubID": 7,
@@ -5726,15 +5727,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 2206,
@@ -5755,7 +5756,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": false,
     "SubID": 8,
@@ -5778,15 +5779,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 2207,
@@ -5833,15 +5834,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 2208,
@@ -5861,7 +5862,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": false,
     "SubID": 9,
@@ -5884,15 +5885,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 2209,
@@ -5913,7 +5914,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": false,
     "SubID": 10,
@@ -5936,15 +5937,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 2210,
@@ -5964,7 +5965,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": false,
     "SubID": 11,
@@ -5987,15 +5988,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 2211,
@@ -6015,7 +6016,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": false,
     "SubID": 6,
@@ -6038,15 +6039,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 2212,
@@ -6067,7 +6068,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": false,
     "SubID": 3,
@@ -6090,15 +6091,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 2213,
@@ -6118,7 +6119,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": false,
     "SubID": 12,
@@ -6141,15 +6142,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 2301,
@@ -6171,7 +6172,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": false,
     "SubID": 1,
@@ -6194,15 +6195,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 2302,
@@ -6223,7 +6224,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": false,
     "SubID": 0,
@@ -6250,15 +6251,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 2303,
@@ -6279,7 +6280,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": false,
     "SubID": 0,
@@ -6305,15 +6306,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 2304,
@@ -6334,7 +6335,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": false,
     "SubID": 0,
@@ -6360,15 +6361,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 2305,
@@ -6389,7 +6390,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": false,
     "SubID": 0,
@@ -6415,15 +6416,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 2306,
@@ -6445,7 +6446,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": false,
     "SubID": 0,
@@ -6468,15 +6469,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 2307,
@@ -6498,7 +6499,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": false,
     "SubID": 0,
@@ -6521,15 +6522,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 2308,
@@ -6550,7 +6551,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": false,
     "SubID": 0,
@@ -6573,15 +6574,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 2309,
@@ -6602,7 +6603,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": false,
     "SubID": 0,
@@ -6625,15 +6626,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 2310,
@@ -6654,7 +6655,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": false,
     "SubID": 0,
@@ -6677,15 +6678,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 2311,
@@ -6706,7 +6707,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": false,
     "SubID": 0,
@@ -6729,15 +6730,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 2312,
@@ -6758,7 +6759,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": false,
     "SubID": 0,
@@ -6781,15 +6782,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 2313,
@@ -6809,7 +6810,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": false,
     "SubID": 0,
@@ -6832,15 +6833,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 2314,
@@ -6860,7 +6861,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": false,
     "SubID": 0,
@@ -6883,15 +6884,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 2315,
@@ -6912,7 +6913,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": false,
     "SubID": 0,
@@ -6932,22 +6933,22 @@
     "HpMax": 1500,
     "Ability": 0,
     "Potential": 0,
-    "BuildIndex": 502,
+    "BuildIndex": 503,
     "BuildMode": 1,
     "UnlockKey": 0,
     "MechaMaterialID": 0,
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 2316,
@@ -6969,7 +6970,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": false,
     "SubID": 2,
@@ -6992,15 +6993,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 2317,
@@ -7021,7 +7022,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": false,
     "SubID": 0,
@@ -7044,15 +7045,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 2318,
@@ -7073,7 +7074,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": false,
     "SubID": 0,
@@ -7096,15 +7097,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 2319,
@@ -7125,7 +7126,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": false,
     "SubID": 0,
@@ -7148,15 +7149,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 2901,
@@ -7178,7 +7179,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": false,
     "SubID": 0,
@@ -7204,15 +7205,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 2902,
@@ -7234,7 +7235,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": false,
     "SubID": 0,
@@ -7260,15 +7261,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 3001,
@@ -7293,7 +7294,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": false,
     "SubID": 0,
@@ -7316,15 +7317,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 3002,
@@ -7348,7 +7349,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": false,
     "SubID": 0,
@@ -7374,15 +7375,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 3003,
@@ -7407,7 +7408,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": false,
     "SubID": 0,
@@ -7433,15 +7434,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 3004,
@@ -7466,7 +7467,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": false,
     "SubID": 0,
@@ -7489,15 +7490,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 3005,
@@ -7523,7 +7524,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": false,
     "SubID": 0,
@@ -7546,15 +7547,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 3006,
@@ -7579,7 +7580,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": false,
     "SubID": 0,
@@ -7602,15 +7603,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 3007,
@@ -7632,7 +7633,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": false,
     "SubID": 0,
@@ -7655,15 +7656,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 3008,
@@ -7683,7 +7684,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": false,
     "SubID": 0,
@@ -7706,15 +7707,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 3009,
@@ -7735,7 +7736,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": false,
     "SubID": 0,
@@ -7761,12 +7762,12 @@
     "DropRate": 0.5,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 3010,
@@ -7791,7 +7792,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": false,
     "SubID": 0,
@@ -7814,15 +7815,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 5001,
@@ -7841,7 +7842,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": false,
     "SubID": 0,
@@ -7864,15 +7865,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 5002,
@@ -7890,7 +7891,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": false,
     "SubID": 0,
@@ -7913,15 +7914,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 5003,
@@ -7940,7 +7941,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": false,
     "SubID": 0,
@@ -7963,15 +7964,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 5101,
@@ -7994,7 +7995,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -8017,15 +8018,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 1,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 5102,
@@ -8048,7 +8049,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": false,
     "SubID": 0,
@@ -8071,15 +8072,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 1,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 5103,
@@ -8102,7 +8103,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": false,
     "SubID": 0,
@@ -8125,15 +8126,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 1,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 5111,
@@ -8156,7 +8157,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": false,
     "SubID": 0,
@@ -8179,15 +8180,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 3,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 5112,
@@ -8213,7 +8214,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": false,
     "SubID": 0,
@@ -8236,15 +8237,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 7,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 5201,
@@ -8261,7 +8262,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -8284,7 +8285,7 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 4,
     "EnemyDropRange": [
       0.2485,
@@ -8292,7 +8293,7 @@
     ],
     "EnemyDropCount": 2.5,
     "EnemyDropMask": 2147483647,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 5202,
@@ -8309,7 +8310,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -8332,7 +8333,7 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 6,
     "EnemyDropRange": [
       0.2585,
@@ -8340,7 +8341,7 @@
     ],
     "EnemyDropCount": 1.5,
     "EnemyDropMask": 2147483647,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 5203,
@@ -8357,7 +8358,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -8380,7 +8381,7 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 5,
     "EnemyDropRange": [
       0.2675,
@@ -8388,7 +8389,7 @@
     ],
     "EnemyDropCount": 1.5,
     "EnemyDropMask": 2147483647,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 5204,
@@ -8405,7 +8406,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -8428,7 +8429,7 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 7,
     "EnemyDropRange": [
       0.2755,
@@ -8436,7 +8437,7 @@
     ],
     "EnemyDropCount": 1.4,
     "EnemyDropMask": 2147483647,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 5205,
@@ -8453,7 +8454,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -8476,7 +8477,7 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 8,
     "EnemyDropRange": [
       0.2815,
@@ -8484,7 +8485,7 @@
     ],
     "EnemyDropCount": 1.5,
     "EnemyDropMask": 2147483647,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 5206,
@@ -8529,7 +8530,7 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 1,
     "EnemyDropRange": [
       0.288,
@@ -8537,7 +8538,7 @@
     ],
     "EnemyDropCount": 2.5,
     "EnemyDropMask": 2147483647,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 6001,
@@ -8554,7 +8555,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -8577,15 +8578,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 6002,
@@ -8602,7 +8603,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -8625,15 +8626,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 6003,
@@ -8650,7 +8651,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -8673,15 +8674,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 6004,
@@ -8698,7 +8699,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -8721,15 +8722,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 6005,
@@ -8746,7 +8747,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -8769,15 +8770,15 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   },
   {
     "ID": 6006,
@@ -8794,7 +8795,7 @@
     ],
     "FuelType": 0,
     "HeatValue": 0,
-    "ReactorInc": 0,
+    "ReactorInc": 0.0,
     "IsFluid": false,
     "Productive": true,
     "SubID": 0,
@@ -8817,14 +8818,14 @@
     "AmmoType": 0,
     "BombType": 0,
     "CraftType": 0,
-    "DropRate": 0,
+    "DropRate": 0.0,
     "EnemyDropLevel": 0,
     "EnemyDropRange": [
-      0,
-      0
+      0.0,
+      0.0
     ],
-    "EnemyDropCount": 0,
+    "EnemyDropCount": 0.0,
     "EnemyDropMask": 0,
-    "EnemyDropMaskRatio": 0
+    "EnemyDropMaskRatio": 0.0
   }
 ]

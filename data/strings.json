@@ -480,16 +480,6 @@
     "ENUS": "The scientific research results of applying quantum technology to liquid storage,this storage tank has a liquid capacity far greater than that of ordinary storage tanks."
   },
   {
-    "Name": "矿物处理厂",
-    "ZHCN": "矿物处理厂",
-    "ENUS": "Mineral Processor"
-  },
-  {
-    "Name": "I矿物处理厂",
-    "ZHCN": "用于将大块的矿石粉碎成较小的颗粒或粉末，可以提高矿石的利用率，并为后续的矿石冶炼过程提供更好的条件，从而提高产能。",
-    "ENUS": "It is used to pulverize large ores into smaller particles or powders, which can improve the utilization rate of the ores and provide better conditions for the subsequent ore smelting process, thus increasing the production capacity."
-  },
-  {
     "Name": "氦",
     "ZHCN": "氦",
     "ENUS": "Helium"
@@ -1065,14 +1055,14 @@
     "ENUS": "Remove salt from seawater using reverse osmosis membranes (will not stop working until all products are accumulated)."
   },
   {
-    "Name": "羰基合成",
-    "ZHCN": "羰基合成",
-    "ENUS": "Hydroformylation"
+    "Name": "甲烷偶联",
+    "ZHCN": "甲烷偶联",
+    "ENUS": "Oxidative Coupling of Methane (OCM)"
   },
   {
-    "Name": "R羰基合成",
-    "ZHCN": "二氧化碳和水在催化剂的作用下可高效合成丙烯，是碳中和进程的重要一步。\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作。</color>",
-    "ENUS": "Carbon dioxide and water can efficiently synthesize propylene in the presence of a catalyst, an important step in the carbon-neutral process.\n<color=\"#FD965ECC\">Will not stop working until all products are accumulated.</color>"
+    "Name": "R甲烷偶联",
+    "ZHCN": "通过甲烷氧化偶联反应合成丙烯，是碳中和进程的重要一步。\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作。</color>",
+    "ENUS": "Methane can efficiently be converted to propylene in the presence of a catalyst and oxygen, an important step in the carbon-neutral process.\n<color=\"#FD965ECC\">Will not stop working until all products are accumulated.</color>"
   },
   {
     "Name": "合成氨",
@@ -1753,6 +1743,16 @@
     "Name": "I高精度装配线",
     "ZHCN": "一台用于生产精密仪器的机器，当然，不包括它自己。",
     "ENUS": "Used to produce precision instruments, of course not have itself."
+  },
+  {
+    "Name": "等离子熔炉",
+    "ZHCN": "等离子熔炉",
+    "ENUS": "Plasma Furnace"
+  },
+  {
+    "Name": "I等离子熔炉",
+    "ZHCN": "利用高温等离子体技术冶炼矿石，提高冶炼温度和精确度，能够制造多种要求较高的材料。",
+    "ENUS": "Utilizes high-temperature plasma technology to smelt ores, increasing smelting temperature and precision, capable of producing a variety of high-demand materials."
   },
   {
     "Name": "T标准制造单元描述",
