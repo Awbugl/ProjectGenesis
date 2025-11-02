@@ -11,9 +11,9 @@ namespace ProjectGenesis
     {
         private const string SolutionPath = @"..\..\..";
 
-        private static readonly bool IsDebugBuild = false;
+        private static readonly bool IsDebugBuild = true;
 
-        public const string ManifestDebugVersion = "";
+        public const string ManifestDebugVersion = "0.3.20000";
 
         internal static void Main()
         {
@@ -25,7 +25,7 @@ namespace ProjectGenesis
 
             File.WriteAllText(Path.Combine(releasePath, "manifest.json"), JsonConvert.SerializeObject(manifestObject, Formatting.Indented));
 
-            var zipName = new StringBuilder(80).Append(manifestObject.Name).Append("-v").Append(ProjectGenesis.VERSION)
+            var zipName = new StringBuilder(80).Append(manifestObject.Name).Append("-v").Append(ProjectGenesis.VERSION).Append("-")
                .Append(IsDebugBuild ? ProjectGenesis.DEBUGVERSION : "").Append(".zip").ToString();
 
             string archive = Path.Combine(SolutionPath, zipName);

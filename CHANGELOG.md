@@ -1,3 +1,19 @@
+- v3.2.0-alpha1.0 (Experimental 0.3.20000)
+  + 资源加载逻辑重做，由ab包调整为读取png图片，便于修改
+  + 添加`甲烷海洋` `托林矿` `氯化钠矿`
+  + 移除`矿物处理`科技及相关配方
+  + 冶炼配方调整，由三种熔炉进行冶炼，配方不互通
+  + 调整上述内容相关配方及科技
+  + 修复`黑石岩滩`星球表面石头等资源生成不正常的问题
+
+  + Resource loading logic has been redone, changing from asset bundles to reading PNG images, which facilitates modifications.
+  + Added "Methane Ocean" "Tholin Vein" and "Sodium Chloride Vein".
+  + Removed the "Mineral Processing" technology and related recipes.
+  + Smelting recipes have been adjusted to be processed by three types of furnaces, with no recipe interconnectivity.
+  + Adjusted the relevant recipes and technologies mentioned above.
+  + Fixed the issue of abnormal generation of stones and other resources on the surface of the "Blackstone Beach" planet.
+
+
 - v3.1.4
   + 修复激光塔攻击时报错
   + 前置mod添加 `AssemblerUI` `ErrorAnalyzer`
