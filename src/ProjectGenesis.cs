@@ -314,7 +314,14 @@ namespace ProjectGenesis
             material.density = 19.35f;
             material.durability = 4.35f;
 
+            DevFunction();
+        }
+
+        private static void DevFunction()
+        {
             // JsonHelper.ExportAsJson(@"D:\Git\ProjectGenesis\data");
+
+            // GenerateRecipeTexture(@"D:\Git\ProjectGenesis\assets\texture\化工厂渲染索引-new.png");
         }
 
         private static void ProtoPreload()

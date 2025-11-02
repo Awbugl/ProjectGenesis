@@ -8,31 +8,8 @@ using UnityEngine;
 
 namespace ProjectGenesis.Patches
 {
-    public static class ChemicalRecipeFcolPatches
+    public static partial class ChemicalRecipeFcolPatches
     {
-        private static readonly Dictionary<int, int> RecipeIdPos = new Dictionary<int, int>
-        {
-            { ProtoID.R二氧化碳, 431 },
-            { ProtoID.R催化重整, 432 },
-            { ProtoID.R四氢双环戊二烯, 433 },
-            { ProtoID.R有机晶体重组, 434 },
-            { ProtoID.R水电解, 435 },
-            { ProtoID.R盐水电解, 436 },
-            { ProtoID.R合成氨, 437 },
-            { ProtoID.R三氯化铁, 438 },
-            { ProtoID.R氨氧化, 439 },
-            { ProtoID.R羰基合成, 440 },
-            { ProtoID.R聚苯硫醚, 441 },
-            { ProtoID.R聚酰亚胺, 442 },
-            { ProtoID.R钨矿筛选, 443 },
-            { ProtoID.R海水淡化, 444 },
-            { ProtoID.R有机晶体活化, 445 },
-            { ProtoID.R二氧化硫还原, 446 },
-            { ProtoID.R增产剂, 447 },
-            { ProtoID.R氦原子提取, 448 },
-            { ProtoID.R硅石筛选, 449 },
-        };
-
         [HarmonyPatch(typeof(FactorySystem), nameof(FactorySystem.GameTick), typeof(long), typeof(bool))]
         [HarmonyPatch(typeof(GameLogic), nameof(GameLogic._assembler_parallel))]
         [HarmonyTranspiler]
@@ -65,7 +42,7 @@ namespace ProjectGenesis.Patches
 
         internal static void SetChemicalRecipeFcol()
         {
-            Texture texture = TextureHelper.GetTexture("chemical-plant-recipe-fcol");
+            Texture texture = TextureHelper.GetTexture("化工厂渲染索引");
             int fluidTex = Shader.PropertyToID("_FluidTex");
 
             ref PrefabDesc prefabDesc = ref LDB.models.Select(64).prefabDesc;
