@@ -21,24 +21,6 @@ namespace ProjectGenesis.Utils
     {
         private static readonly Assembly Assembly = Assembly.GetExecutingAssembly();
 
-        internal static ItemProtoJson[] ItemModProtos() => GetJsonContent<ItemProtoJson>("items_mod");
-
-        internal static ItemProtoJson[] ItemVanillaProtos() => GetJsonContent<ItemProtoJson>("items_vanilla");
-
-        internal static RecipeProtoJson[] RecipeProtos() => GetJsonContent<RecipeProtoJson>("recipes");
-
-        internal static TechProtoJson[] TechProtos() => GetJsonContent<TechProtoJson>("techs");
-
-        internal static StringProtoJson[] StringProtos() => GetJsonContent<StringProtoJson>("strings");
-
-        internal static StringProtoJson[] StringModProtos() => GetJsonContent<StringProtoJson>("strings_mod");
-
-        internal static TutorialProtoJson[] TutorialProtos() => GetJsonContent<TutorialProtoJson>("tutorials");
-
-        internal static GoalProtoJson[] GoalProtos() => GetJsonContent<GoalProtoJson>("goals");
-
-        internal static PrefabDescJson[] PrefabDescs() => GetJsonContent<PrefabDescJson>("prefabDescs");
-
         internal static T[] GetJsonContent<T>(string json) =>
             JsonConvert.DeserializeObject<T[]>(new StreamReader(Assembly.GetManifestResourceStream($"ProjectGenesis.data.{json}.json"))
                .ReadToEnd());

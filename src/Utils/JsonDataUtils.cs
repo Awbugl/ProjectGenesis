@@ -18,7 +18,7 @@ namespace ProjectGenesis.Utils
 
         #region TechProto
 
-            foreach (TechProtoJson protoJson in TechProtos())
+            foreach (TechProtoJson protoJson in GetJsonContent<TechProtoJson>("techs"))
             {
                 if (LDB.techs.Exist(protoJson.ID)) { protoJson.ToProto(LDB.techs.Select(protoJson.ID)); }
                 else { LDBTool.PreAddProto(protoJson.ToProto()); }
@@ -28,7 +28,7 @@ namespace ProjectGenesis.Utils
 
         #region Mod ItemProto
 
-            foreach (ItemProtoJson protoJson in ItemModProtos())
+            foreach (ItemProtoJson protoJson in GetJsonContent<ItemProtoJson>("items_mod"))
             {
                 protoJson.GridIndex = GetTableID(protoJson.GridIndex);
                 itemIconDescs.Add(protoJson.ID, IconDescUtils.GetIconDesc(protoJson.ID));
@@ -39,7 +39,7 @@ namespace ProjectGenesis.Utils
 
         #region Vanilla ItemProto
 
-            foreach (ItemProtoJson protoJson in ItemVanillaProtos())
+            foreach (ItemProtoJson protoJson in GetJsonContent<ItemProtoJson>("items_vanilla"))
             {
                 protoJson.GridIndex = GetTableID(protoJson.GridIndex);
                 ItemProto proto = LDB.items.Select(protoJson.ID);
@@ -53,7 +53,7 @@ namespace ProjectGenesis.Utils
 
         #region RecipeProto
 
-            foreach (RecipeProtoJson protoJson in RecipeProtos())
+            foreach (RecipeProtoJson protoJson in GetJsonContent<RecipeProtoJson>("recipes"))
             {
                 protoJson.GridIndex = GetTableID(protoJson.GridIndex);
 
@@ -65,13 +65,13 @@ namespace ProjectGenesis.Utils
 
         #region TutorialProto
 
-            foreach (TutorialProtoJson protoJson in TutorialProtos()) { LDBTool.PreAddProto(protoJson.ToProto()); }
+            foreach (TutorialProtoJson protoJson in GetJsonContent<TutorialProtoJson>("tutorials")) { LDBTool.PreAddProto(protoJson.ToProto()); }
 
         #endregion
 
         #region GoalProto
 
-            foreach (GoalProtoJson protoJson in GoalProtos())
+            foreach (GoalProtoJson protoJson in GetJsonContent<GoalProtoJson>("goals"))
             {
                 if (LDB.goals.Exist(protoJson.ID)) { protoJson.ToProto(LDB.goals.Select(protoJson.ID)); }
                 else { LDBTool.PreAddProto(protoJson.ToProto()); }
@@ -93,7 +93,7 @@ namespace ProjectGenesis.Utils
 
         internal static void PrefabDescPostFix()
         {
-            PrefabDescJson[] prefabDescs = PrefabDescs();
+            PrefabDescJson[] prefabDescs = GetJsonContent<PrefabDescJson>("prefabDescs");
 
             foreach (PrefabDescJson json in prefabDescs) { json.ToPrefabDesc(LDB.models.Select(json.ModelID).prefabDesc); }
 

@@ -14,8 +14,8 @@ namespace ProjectGenesis.Utils
 
         static TranslateUtils()
         {
-            StringProtoJsons = StringProtos().ToDictionary(i => i.Name);
-            StringModProtoJsons = StringModProtos().ToDictionary(i => i.Name);
+            StringProtoJsons = GetJsonContent<StringProtoJson>("strings").ToDictionary(i => i.Name);
+            StringModProtoJsons = GetJsonContent<StringProtoJson>("strings_mod").ToDictionary(i => i.Name);
 
             int num = PlayerPrefs.GetInt("language", 0);
 
