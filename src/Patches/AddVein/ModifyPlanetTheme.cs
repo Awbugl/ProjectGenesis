@@ -42,6 +42,7 @@ namespace ProjectGenesis.Patches
                     case 13:
                         RemoveVein(theme, 0);
                         RemoveVein(theme, 14);
+
                         break;
 
                     case 17:
@@ -52,6 +53,14 @@ namespace ProjectGenesis.Patches
                         theme.oceanMat = LDB.themes.Select(8).oceanMat;
                         RemoveVein(theme, 0);
                         RemoveVein(theme, 14);
+
+                        break;
+                    
+                    case 24:
+                        theme.WaterItemId = ProtoID.I甲烷;
+                        theme.WaterHeight = -0.1f;
+                        theme.Distribute = EThemeDistribute.Interstellar;
+                        theme.oceanMat = LDB.themes.Select(22).oceanMat;
 
                         break;
                 }

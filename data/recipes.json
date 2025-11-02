@@ -5555,7 +5555,7 @@
     "Description": "R有机晶体（原始）",
     "IconPath": "Icons/ItemRecipe/crystal-rubber-lv0",
     "Type": 2,
-    "GridIndex": 1217,
+    "GridIndex": 1717,
     "Time": 480,
     "Input": [
       1030,

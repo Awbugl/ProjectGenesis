@@ -21,6 +21,8 @@ namespace ProjectGenesis.Patches
         {
             Map.Add(35, new Color(0.685f, 0.792f, 0.000f));
             Map.Add(36, new Color(0.965f, 0.867f, 0.352f));
+            Map.Add(37, new Color(0.941f, 0.941f, 0.941f));
+            Map.Add(38, new Color(0.745f, 0.231f, 0.110f));
 
             AddEffectEmitterProto(Map);
         }

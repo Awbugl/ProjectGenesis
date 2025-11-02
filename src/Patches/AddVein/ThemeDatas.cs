@@ -19,18 +19,20 @@ namespace ProjectGenesis.Patches
             },
             {
                 6, // 干旱荒漠
-                new ThemeData(new[] { ProtoID.I二氧化碳, }, new[] { 0.8f, }, new[] { 16, 18, }, new[]
+                new ThemeData(new[] { ProtoID.I二氧化碳, }, new[] { 0.8f, }, new[] { 16, 18, 19, }, new[]
                 {
                     0.0f, 0.7f, 0.2f, 0.8f, //
                     0.0f, 1.0f, 0.6f, 0.5f, //
+                    0.0f, 0.8f, 0.6f, 0.4f, //
                 })
             },
             {
                 7, // 灰烬冻土
-                new ThemeData(new[] { ProtoID.I氮, ProtoID.I二氧化硫, }, new[] { 0.5f, 0.5f, }, new[] { 16, 18, }, new[]
+                new ThemeData(new[] { ProtoID.I氮, ProtoID.I二氧化硫, }, new[] { 0.5f, 0.5f, }, new[] { 16, 18, 20, }, new[]
                 {
                     0.0f, 0.7f, 0.2f, 0.8f, //
                     0.0f, 1.0f, 0.6f, 0.5f, //
+                    0.0f, 0.4f, 0.5f, 0.4f, //
                 })
             },
             {
@@ -51,15 +53,19 @@ namespace ProjectGenesis.Patches
             },
             {
                 10, // 冰原冻土
-                new ThemeData(new[] { ProtoID.I氮, ProtoID.I二氧化碳, }, new[] { 0.7f, 0.3f, }, new[] { 16, 17, }, new[]
+                new ThemeData(new[] { ProtoID.I氮, ProtoID.I二氧化碳, }, new[] { 0.7f, 0.3f, }, new[] { 16, 17, 20, }, new[]
                 {
                     0.0f, 1.0f, 0.7f, 0.7f, //
                     0.0f, 0.6f, 0.3f, 0.8f, //
+                    0.0f, 0.4f, 0.6f, 0.4f, //
                 })
             },
             {
                 11, // 贫瘠荒漠
-                new ThemeData(Array.Empty<int>(), Array.Empty<float>(), Array.Empty<int>(), Array.Empty<float>())
+                new ThemeData(Array.Empty<int>(), Array.Empty<float>(),  new[] { 20, }, new[]
+                {
+                    0.0f, 0.6f, 0.6f, 0.7f, //
+                })
             },
             {
                 12, // 戈壁
@@ -100,8 +106,9 @@ namespace ProjectGenesis.Patches
             },
             {
                 17, // 黑石盐滩
-                new ThemeData(new[] { ProtoID.I氮, }, new[] { 1f, }, new[] { 16, }, new[]
+                new ThemeData(new[] { ProtoID.I氮, }, new[] { 1f, }, new[] { 16, 19, }, new[]
                 {
+                    0.0f, 1.0f, 0.7f, 0.9f, //
                     0.0f, 1.0f, 0.7f, 0.9f, //
                 })
             },
@@ -111,16 +118,18 @@ namespace ProjectGenesis.Patches
             },
             {
                 19, // 飓风石林
-                new ThemeData(new[] { ProtoID.I二氧化硫, }, new[] { 0.8f, }, new[] { 18, }, new[]
+                new ThemeData(new[] { ProtoID.I二氧化硫, }, new[] { 0.8f, }, new[] { 18, 19, }, new[]
                 {
                     0.0f, 1.0f, 1.0f, 0.7f, //
+                    0.0f, 0.4f, 0.7f, 0.4f, //
                 })
             },
             {
                 20, // 猩红冰湖
-                new ThemeData(new[] { ProtoID.I氮, }, new[] { 0.8f, }, new[] { 18, }, new[]
+                new ThemeData(new[] { ProtoID.I氮, }, new[] { 0.8f, }, new[] { 18, 20, }, new[]
                 {
                     0.0f, 0.7f, 0.5f, 0.9f, //
+                    0.0f, 1.0f, 0.7f, 0.9f, //
                 })
             },
             {
@@ -129,10 +138,11 @@ namespace ProjectGenesis.Patches
             },
             {
                 23, // 橙晶荒漠
-                new ThemeData(new[] { ProtoID.I二氧化碳, }, new[] { 0.8f, }, new[] { 17, 18, }, new[]
+                new ThemeData(new[] { ProtoID.I二氧化碳, }, new[] { 0.8f, }, new[] { 17, 18, 19, }, new[]
                 {
                     0.0f, 0.6f, 0.5f, 0.8f, //
-                    0.0f, 1.0f, 0.7f, 0.8f,
+                    0.0f, 1.0f, 0.7f, 0.8f, //
+                    0.0f, 0.5f, 0.4f, 0.6f, //
                 })
             },
             {

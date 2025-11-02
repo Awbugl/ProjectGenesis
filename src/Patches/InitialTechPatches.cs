@@ -36,7 +36,7 @@ namespace ProjectGenesis.Patches
         {
             if (DSPGame.IsMenuDemo) { return; }
 
-            __instance.history.recipeUnlocked.Remove(5);
+            __instance.history.recipeUnlocked.Clear();
 
             foreach (int tech in InitialTechs.Concat(BonusTechs))
             {

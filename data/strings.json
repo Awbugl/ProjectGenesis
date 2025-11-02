@@ -280,6 +280,11 @@
     "ENUS": "Nitric Acid Ocean"
   },
   {
+    "Name": "甲烷海洋",
+    "ZHCN": "甲烷海洋",
+    "ENUS": "Methane Ocean"
+  },
+  {
     "Name": "淡水海洋",
     "ZHCN": "淡水海洋",
     "ENUS": "Freshwater Ocean"
@@ -938,6 +943,16 @@
     "Name": "I硝酸",
     "ZHCN": "无色液体。由于光解而一般带有微黄色，有刺激性气味，强酸，常用于制造硝基化合物。",
     "ENUS": "Colorless liquid. Generally with a slight yellow, with a strong irritating odor, is a strong acid, often used to make nitro compounds."
+  },
+  {
+    "Name": "甲烷",
+    "ZHCN": "甲烷",
+    "ENUS": "Methane"
+  },
+  {
+    "Name": "I甲烷",
+    "ZHCN": "最简单的有机物，也是非常重要的碳基资源。",
+    "ENUS": "Methane (CH₄) is the simplest organic compound and also a very important carbon-based resource."
   },
   {
     "Name": "海水",
@@ -2063,6 +2078,16 @@
     "Name": "硫矿脉",
     "ZHCN": "硫矿脉",
     "ENUS": "Sulfur Veins"
+  },
+  {
+    "Name": "盐矿脉",
+    "ZHCN": "盐矿脉",
+    "ENUS": "Sodium chloride Veins"
+  },
+  {
+    "Name": "托林矿脉",
+    "ZHCN": "托林矿脉",
+    "ENUS": "Tholin Veins"
   },
   {
     "Name": "硫矿",

@@ -31,6 +31,7 @@
     "needBuildInWaterTech": false,
     "waterTypes": [
       1000,
+      7008,
       7018
     ]
   },
@@ -67,6 +68,7 @@
     "genEnergyPerTick": 12500,
     "waterTypes": [
       1000,
+      7008,
       7018
     ]
   },
@@ -95,6 +97,7 @@
     "waterTypes": [
       1000,
       1116,
+      7008,
       7014,
       7017,
       7018
@@ -107,6 +110,7 @@
     "needBuildInWaterTech": false,
     "waterTypes": [
       1000,
+      7008,
       7018
     ]
   },
@@ -205,6 +209,7 @@
     "needBuildInWaterTech": true,
     "waterTypes": [
       1000,
+      7008,
       7018
     ]
   },
@@ -379,6 +384,7 @@
     "waterTypes": [
       1000,
       1116,
+      7008,
       7014,
       7017,
       7018

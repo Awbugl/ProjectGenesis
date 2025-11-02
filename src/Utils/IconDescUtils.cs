@@ -18,6 +18,7 @@ namespace ProjectGenesis.Utils
             { 1114, new NoIconFluidIconDesc(new Color32(138, 83, 43, 255)) },   // Coal Oil
             { 7018, new NoIconFluidIconDesc(new Color32(97, 132, 186, 255)) },  // Ocean
             { 7006, new NoIconFluidIconDesc(new Color32(218, 56, 70, 255)) },   // 苯
+            { 7008, new NoIconFluidIconDesc(new Color32(24, 234, 244, 255)) },  // 甲烷
             { 7009, new NoIconFluidIconDesc(new Color32(167, 255, 39, 255)) },  // 丙烯
             { 6206, new NoIconFluidIconDesc(new Color32(191, 227, 255, 255)) }, // CO2
             { 6205, new NoIconFluidIconDesc(new Color32(255, 128, 52, 255)) },  // SO2

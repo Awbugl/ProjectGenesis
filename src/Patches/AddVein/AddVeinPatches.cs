@@ -15,7 +15,7 @@ namespace ProjectGenesis.Patches
 {
     public static partial class AddVeinPatches
     {
-        internal const sbyte VeinTypeCount = 19;
+        internal const sbyte VeinTypeCount = 21;
 
         private static readonly Color32[] VeinColors =
         {
@@ -38,6 +38,8 @@ namespace ProjectGenesis.Patches
             new Color(0.685f, 0.792f, 0.000f), // Radioactive
             new Color(0.113f, 0.130f, 0.140f), // Tungsten
             new Color(0.965f, 0.867f, 0.352f), // Sulfur
+            new Color(0.941f, 0.941f, 0.941f), // Sodium chloride
+            new Color(0.745f, 0.231f, 0.110f), // Tholin
         };
 
         internal static void ModifyVeinData()
@@ -45,7 +47,9 @@ namespace ProjectGenesis.Patches
             AddVeinProtos(NewVein(15, "铝矿脉", "I铝矿", "Assets/texpack/V铝矿脉", ProtoID.I铝矿, 25, 1, 60),
                 NewVein(16, "放射性矿脉", "I放射性矿物", "Assets/texpack/V放射晶体矿脉", ProtoID.I放射性矿物, 35, 2, 90),
                 NewVein(17, "钨矿脉", "I钨矿", "Assets/texpack/V钨矿脉", ProtoID.I钨矿, 34, 1, 120),
-                NewVein(18, "硫矿脉", "I硫矿", "Assets/texpack/V硫矿脉", ProtoID.I硫矿, 36, 1, 90));
+                NewVein(18, "硫矿脉", "I硫矿", "Assets/texpack/V硫矿脉", ProtoID.I硫矿, 36, 1, 90),
+                NewVein(19, "盐矿脉", "I氯化钠", "Assets/texpack/V盐矿脉", ProtoID.I氯化钠, 37, 2, 30),
+                NewVein(20, "托林矿脉", "I焦油", "Assets/texpack/V托林矿脉", ProtoID.I焦油, 38, 2, 90));
             return;
 
             VeinProto NewVein(int id, string name, string description, string iconPath, int miningItem, int miningEffect, int modelIndex,
@@ -83,7 +87,7 @@ namespace ProjectGenesis.Patches
 
         internal static void SetMinerMk2Color()
         {
-            Texture texture = TextureHelper.GetTexture("矿机渲染索引");
+            Texture texture = TextureHelper.GetTexture("大矿机渲染索引");
             int veinColorTex = Shader.PropertyToID("_VeinColorTex");
 
             ref PrefabDesc prefabDesc = ref LDB.models.Select(256).prefabDesc;
@@ -136,7 +140,7 @@ namespace ProjectGenesis.Patches
         {
             var matcher = new CodeMatcher(instructions);
             matcher.MatchForward(false, new CodeMatch(OpCodes.Ldc_I4_S, (sbyte)15));
-            matcher.SetOperandAndAdvance(19);
+            matcher.SetOperandAndAdvance(VeinTypeCount);
 
             return matcher.InstructionEnumeration();
         }
