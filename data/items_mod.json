@@ -203,7 +203,8 @@
     "PreTechOverride": 0,
     "DescFields": [
       0,
-      1
+      1,
+      40
     ],
     "FuelType": 1,
     "HeatValue": 2000000,
@@ -247,11 +248,11 @@
     "IconPath": "Assets/texpack/I二氧化碳",
     "GridIndex": 3301,
     "StackSize": 20,
-    "Type": 2,
+    "Type": 1,
     "PreTechOverride": 0,
     "DescFields": [
       0,
-      1
+      40
     ],
     "FuelType": 0,
     "HeatValue": 0,
@@ -273,7 +274,7 @@
     "Potential": 0,
     "BuildIndex": 0,
     "BuildMode": 0,
-    "UnlockKey": 0,
+    "UnlockKey": 6267,
     "MechaMaterialID": 0,
     "AmmoType": 0,
     "BombType": 0,
