@@ -261,6 +261,7 @@ namespace ProjectGenesis.Patches
             object label = matcher2.Advance(5).Operand;
 
             matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0),
+                new CodeInstruction(OpCodes.Ldarg_2),
                 new CodeInstruction(OpCodes.Call,
                     AccessTools.Method(typeof(ResearchLabPatches), nameof(LabComponent_InternalUpdateResearch_Patch_Method))),
                 new CodeInstruction(OpCodes.Dup), new CodeInstruction(OpCodes.Stloc_0), new CodeInstruction(OpCodes.Brtrue, label),
@@ -316,9 +317,9 @@ namespace ProjectGenesis.Patches
             return false;
         }
 
-        public static int LabComponent_InternalUpdateResearch_Patch_Method(ref LabComponent labComponent)
+        public static int LabComponent_InternalUpdateResearch_Patch_Method(ref LabComponent labComponent, float techSpeed)
         {
-            var speed = (int)(GameMain.history.techSpeed + 2.0);
+            var speed = (int)(techSpeed + 2.0);
 
             for (var i = 0; i < LabComponent.matrixIds.Length; i++)
             {
