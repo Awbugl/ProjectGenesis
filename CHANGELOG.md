@@ -1,3 +1,14 @@
+- v3.2.0-alpha1.1 (Experimental 0.3.20001)
+  + 修复了在物品选择界面无法选择`二氧化碳`的问题
+  + 修复了研究速度加成实际不生效的问题
+
+  + Fixed the bug that `Carbon Dioxide` may not be selected in the item selection UI
+  + Fixed the bug that research speed bonuses were not actually taking effect
+
+<details>
+  <summary>点击展开日志 | Click to view all </summary>
+
+
 - v3.2.0-alpha1.0 (Experimental 0.3.20000)
   + 资源加载逻辑重做，由ab包调整为读取png图片，便于修改
   + 添加`甲烷海洋` `托林矿` `氯化钠矿`
@@ -21,8 +32,6 @@
   + Fix the error that occurs when the advanced laser tower targeting
   + add pre-required mod `AssemblerUI` `ErrorAnalyzer`
 
-<details>
-  <summary>点击展开日志 | Click to view all </summary>
 
 - v3.1.3
   + 修复激光塔拆除时报错
