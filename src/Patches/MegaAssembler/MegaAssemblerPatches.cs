@@ -147,7 +147,7 @@ namespace ProjectGenesis.Patches
 
             if (factory.entityPool[__instance.entityId].protoId == ProtoID.I负熵熔炉 && __instance.replicating)
                 __instance.extraTime += (int)(power * __instance.extraSpeed)
-                                      + (int)(power * __instance.speedOverride * __instance.extraTimeSpend / __instance.timeSpend);
+                                      + (int)(power * __instance.speedOverride * __instance.extraTime / __instance.time);
 
             return b;
         }
@@ -175,9 +175,9 @@ namespace ProjectGenesis.Patches
 
                     if (index2 >= 0)
                     {
-                        if (index2 < __instance.products.Length)
+                        if (index2 < __instance.recipeExecuteData.products.Length)
                         {
-                            itemId = __instance.products[index2];
+                            itemId = __instance.recipeExecuteData.products[index2];
                             int produced = __instance.produced[index2];
 
                             if (itemId > 0 && produced > 0)
@@ -189,11 +189,11 @@ namespace ProjectGenesis.Patches
                         }
                         else
                         {
-                            int index3 = index2 - __instance.products.Length;
+                            int index3 = index2 - __instance.recipeExecuteData.products.Length;
 
-                            if (index3 < __instance.requires.Length)
+                            if (index3 < __instance.recipeExecuteData.requires.Length)
                             {
-                                itemId = __instance.requires[index3];
+                                itemId = __instance.recipeExecuteData.requires[index3];
                                 int served = __instance.served[index3];
 
                                 if (itemId > 0 && served > 0)
@@ -359,16 +359,16 @@ namespace ProjectGenesis.Patches
                     {
                         __instance.served[needIdx] += stack;
                         __instance.incServed[needIdx] += inc;
-                        slotdata[index].storageIdx = __instance.products.Length + needIdx + 1;
+                        slotdata[index].storageIdx = __instance.recipeExecuteData.products.Length + needIdx + 1;
                     }
 
-                    for (var i = 0; i < __instance.products.Length; i++)
+                    for (var i = 0; i < __instance.recipeExecuteData.products.Length; i++)
                     {
                         if (__instance.produced[i] >= 50) continue;
 
-                        itemId = traffic.TryPickItemAtRear(beltId, __instance.products[i], null, out stack, out _);
+                        itemId = traffic.TryPickItemAtRear(beltId, __instance.recipeExecuteData.products[i], null, out stack, out _);
 
-                        if (__instance.products[i] == itemId)
+                        if (__instance.recipeExecuteData.products[i] == itemId)
                         {
                             __instance.produced[i] += stack;
                             slotdata[index].storageIdx = i + 1;

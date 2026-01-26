@@ -34,7 +34,7 @@ namespace ProjectGenesis.Patches
                 new CodeMatch(OpCodes.Stfld, AccessTools.Field(typeof(AssemblerComponent), nameof(AssemblerComponent.forceAccMode))));
 
             matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0), new CodeInstruction(OpCodes.Ldarg_3),
-                new CodeInstruction(OpCodes.Ldarg, 4),
+                new CodeInstruction(OpCodes.Ldarg, 5),
                 new CodeInstruction(OpCodes.Call,
                     AccessTools.Method(typeof(MegaAssemblerPatches),
                         nameof(BuildingParameters_ApplyPrebuildParametersToEntity_Patch_Method))));

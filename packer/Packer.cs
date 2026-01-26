@@ -13,7 +13,7 @@ namespace ProjectGenesis
 
         private static readonly bool IsDebugBuild = true;
 
-        public const string ManifestDebugVersion = "0.3.20001";
+        public const string ManifestDebugVersion = "0.3.20002";
 
         internal static void Main()
         {
@@ -25,8 +25,8 @@ namespace ProjectGenesis
 
             File.WriteAllText(Path.Combine(releasePath, "manifest.json"), JsonConvert.SerializeObject(manifestObject, Formatting.Indented));
 
-            var zipName = new StringBuilder(80).Append(manifestObject.Name).Append("-v").Append(ProjectGenesis.VERSION).Append("-")
-               .Append(IsDebugBuild ? ProjectGenesis.DEBUGVERSION : "").Append(".zip").ToString();
+            var zipName = new StringBuilder(80).Append(manifestObject.Name).Append("-v").Append(ProjectGenesis.VERSION)
+               .Append(IsDebugBuild ? $"-{ProjectGenesis.DEBUGVERSION}" : "").Append(".zip").ToString();
 
             string archive = Path.Combine(SolutionPath, zipName);
 
@@ -54,7 +54,7 @@ namespace ProjectGenesis
         public string[] Dependencies { get; set; } =
         {
             "CommonAPI-CommonAPI-1.6.7", "nebula-NebulaMultiplayerModApi-2.1.0", "starfi5h-ErrorAnalyzer-1.3.3",
-            "Shad0wlife-AssemblerUI-2.3.0",
+            // "Shad0wlife-AssemblerUI-2.3.0",
         };
 
         internal static ManifestObject DebugObject()

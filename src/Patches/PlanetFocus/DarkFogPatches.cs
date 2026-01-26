@@ -35,22 +35,16 @@ namespace ProjectGenesis.Patches
         }
 
         [HarmonyPatch(typeof(SkillSystem), nameof(SkillSystem.AddGroundEnemyHatred),
-            new Type[]
-            {
+            new[] {
                 typeof(DFGBaseComponent), typeof(EnemyData), typeof(ETargetType), typeof(int),
-            }, new ArgumentType[]
-            {
+            }, new[] {
                 ArgumentType.Normal, ArgumentType.Ref, ArgumentType.Normal, ArgumentType.Normal,
             })]
         [HarmonyPatch(typeof(SkillSystem), nameof(SkillSystem.AddGroundEnemyHatred),
-            new Type[]
-            {
-                typeof(DFGBaseComponent), typeof(EnemyData), typeof(ETargetType), typeof(int),
-                typeof(int),
-            }, new ArgumentType[]
-            {
-                ArgumentType.Normal, ArgumentType.Ref, ArgumentType.Normal, ArgumentType.Normal,
-                ArgumentType.Normal,
+            new[] {
+                typeof(DFGBaseComponent), typeof(EnemyData), typeof(ETargetType), typeof(int), typeof(int),
+            }, new[] {
+                ArgumentType.Normal, ArgumentType.Ref, ArgumentType.Normal, ArgumentType.Normal, ArgumentType.Normal,
             })]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> SkillSystem_AddGroundEnemyHatred_Transpiler(IEnumerable<CodeInstruction> instructions)

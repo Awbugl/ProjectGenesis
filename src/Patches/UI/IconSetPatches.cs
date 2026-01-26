@@ -14,22 +14,27 @@ namespace ProjectGenesis.Patches
         {
             var matcher = new CodeMatcher(instructions);
 
+            // 找到 iconSprite != null 的检查位置
             matcher.MatchForward(false,
-                new CodeMatch(OpCodes.Callvirt, AccessTools.PropertyGetter(typeof(TechProto), nameof(TechProto.iconSprite))));
+                new CodeMatch(OpCodes.Call, AccessTools.Method(typeof(UnityEngine.Object), "op_Inequality")));
 
-            object label = matcher.InstructionAt(5).operand;
+            // 获取跳转标签 (IL_06ff)
+            object label = matcher.Advance(1).Operand;
+            
+            // 获取 techProto 局部变量
+            object techProtoLocal = matcher.Advance(-7).Operand;
 
-            object index_V_23 = matcher.Advance(-2).Operand;
-            object dataArray3 = matcher.Advance(-1).Operand;
+            // 移动到 brfalse IL_06ff 之后
+            matcher.Advance(8);
 
-            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_S, dataArray3), new CodeInstruction(OpCodes.Ldloc_S, index_V_23),
-                new CodeInstruction(OpCodes.Ldelem_Ref),
-                new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(IconSetPatches), nameof(IconSet_Create_Patch))),
-                new CodeInstruction(OpCodes.Brtrue_S, label));
+            // 插入 ID 检查: if (techProto.ID >= 2000) goto IL_06ff
+            matcher.Insert(
+                new CodeInstruction(OpCodes.Ldloc_S, techProtoLocal),
+                new CodeInstruction(OpCodes.Ldfld, AccessTools.Field(typeof(TechProto), nameof(TechProto.ID))),
+                new CodeInstruction(OpCodes.Ldc_I4, 2000),
+                new CodeInstruction(OpCodes.Bge, label));
 
             return matcher.InstructionEnumeration();
         }
-
-        public static bool IconSet_Create_Patch(TechProto proto) => proto.ID < 2000;
     }
 }

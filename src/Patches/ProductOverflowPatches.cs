@@ -58,7 +58,7 @@ namespace ProjectGenesis.Patches
 
         public static bool AssemblerComponent_InsertMethod_Refine(ref AssemblerComponent component, int[] productRegister)
         {
-            if (component.products.Length < 2) return false;
+            if (component.recipeExecuteData.products.Length < 2) return false;
 
             switch (ProjectGenesis.ProductOverflowEntry.Value)
             {
@@ -83,7 +83,7 @@ namespace ProjectGenesis.Patches
 
         public static bool AssemblerComponent_InsertMethod_Chemical(ref AssemblerComponent component, int[] productRegister)
         {
-            if (component.products.Length < 2) return false;
+            if (component.recipeExecuteData.products.Length < 2) return false;
 
             switch (ProjectGenesis.ProductOverflowEntry.Value)
             {
@@ -115,7 +115,7 @@ namespace ProjectGenesis.Patches
 
         public static bool AssemblerComponent_InsertMethod_Other(ref AssemblerComponent component, int[] productRegister)
         {
-            if (component.products.Length < 2) return false;
+            if (component.recipeExecuteData.products.Length < 2) return false;
 
             switch (ProjectGenesis.ProductOverflowEntry.Value)
             {
@@ -135,18 +135,18 @@ namespace ProjectGenesis.Patches
         {
             var counter = 0;
 
-            int productsLength = component.products.Length;
+            int productsLength = component.recipeExecuteData.products.Length;
 
             for (var index = 0; index < productsLength; ++index)
             {
-                if (component.produced[index] > component.productCounts[index] * maxproduct) ++counter;
+                if (component.produced[index] > component.recipeExecuteData.productCounts[index] * maxproduct) ++counter;
             }
 
             if (counter == productsLength) return false;
 
             for (var index = 0; index < productsLength; ++index)
             {
-                int productCount = component.productCounts[index];
+                int productCount = component.recipeExecuteData.productCounts[index];
                 int componentProductCount = productCount * maxproduct;
 
                 ref int intPtr = ref component.produced[index];
@@ -155,7 +155,7 @@ namespace ProjectGenesis.Patches
                 {
                     intPtr = componentProductCount;
 
-                    lock (productRegister) productRegister[component.products[index]] -= productCount;
+                    lock (productRegister) productRegister[component.recipeExecuteData.products[index]] -= productCount;
                 }
             }
 

@@ -116,7 +116,7 @@ namespace ProjectGenesis.Patches
 
             if (assembler.recipeId == 0) return;
 
-            int results = assembler.products.Length;
+            int results = assembler.recipeExecuteData.products.Length;
 
             if (results <= 2)
             {
@@ -149,15 +149,15 @@ namespace ProjectGenesis.Patches
                         AssemblerComponent assemblerComponent = instance.factorySystem.assemblerPool[instance.assemblerId];
 
                         if (assemblerComponent.id != instance.assemblerId || assemblerComponent.recipeId == 0
-                                                                          || assemblerComponent.products.Length < index + 1
+                                                                          || assemblerComponent.recipeExecuteData.products.Length < index + 1
                                                                           || assemblerComponent.produced[index] <= 0)
                             return;
 
-                        int num = instance.player.TryAddItemToPackage(assemblerComponent.products[index],
+                        int num = instance.player.TryAddItemToPackage(assemblerComponent.recipeExecuteData.products[index],
                             assemblerComponent.produced[index], 0, false);
                         assemblerComponent.produced[index] = 0;
 
-                        if (num > 0) UIItemup.Up(assemblerComponent.products[index], num);
+                        if (num > 0) UIItemup.Up(assemblerComponent.recipeExecuteData.products[index], num);
                     });
 
                     AssemblerProductIcon.Add(icon);
@@ -181,12 +181,12 @@ namespace ProjectGenesis.Patches
                 }
 
                 int index = i + 2;
-                ItemProto itemProto = LDB.items.Select(assembler.products[index]);
+                ItemProto itemProto = LDB.items.Select(assembler.recipeExecuteData.products[index]);
 
                 productIcon.sprite = itemProto?.iconSprite;
 
                 UIButton button = productIcon.gameObject.GetComponent<UIButton>();
-                button.tips.itemId = assembler.products[index];
+                button.tips.itemId = assembler.recipeExecuteData.products[index];
                 button.tips.itemInc = 0;
                 button.tips.itemCount = 0;
                 button.tips.type = UIButton.ItemTipType.Item;
