@@ -35,11 +35,12 @@ namespace ProjectGenesis.Patches
 
             for (var i = 1; i < orbitPickerTransform.childCount; i++) orbitPickerTransform.GetChild(i).gameObject.SetActive(false);
 
-            for (var i = 3; i < 13; i++)
+            // todo
+           // for (var i = 3; i < 13; i++)
             {
-                Transform transform = orbitPickerTransform.GetChild(i);
-                transform.gameObject.SetActive(true);
-                transform.GetComponent<Button>().interactable = true;
+             //   Transform transform = orbitPickerTransform.GetChild(i);
+              //  transform.gameObject.SetActive(true);
+              //  transform.GetComponent<Button>().interactable = true;
             }
 
             Array.Resize(ref orbitPicker.orbitButtons, 11);

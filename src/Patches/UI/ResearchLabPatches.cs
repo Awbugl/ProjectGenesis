@@ -19,7 +19,8 @@ namespace ProjectGenesis.Patches
         public static void UILabWindow_OnCreate_Postfix(UILabWindow __instance)
         {
             __instance.GetComponent<RectTransform>().sizeDelta = new Vector2(640, 430);
-            __instance.transform.Find("matrix-group/lines").gameObject.SetActive(false);
+            // todo
+          //  __instance.transform.Find("matrix-group/lines").gameObject.SetActive(false);
 
             const int len = 9;
 
@@ -140,8 +141,6 @@ namespace ProjectGenesis.Patches
             return matcher.InstructionEnumeration();
         }
 
-        // todo
-        [HarmonyPatch(typeof(LabComponent), nameof(LabComponent.SetFunction))]
         [HarmonyPatch(typeof(LabComponent), nameof(LabComponent.InternalUpdateAssemble))]
         [HarmonyPatch(typeof(FactorySystem), nameof(FactorySystem.GameTickLabResearchMode))]
         [HarmonyTranspiler]
@@ -250,16 +249,16 @@ namespace ProjectGenesis.Patches
         {
             var matcher = new CodeMatcher(instructions, ilGenerator);
 
-            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldarg_0),
+            matcher.MatchForward(false, 
                 new CodeMatch(OpCodes.Ldsfld, AccessTools.Field(typeof(LabComponent), nameof(LabComponent.matrixPoints))));
 
             CodeMatcher matcher2 = matcher.Clone();
 
-            matcher2.MatchForward(false, new CodeMatch(OpCodes.Ldarg_0),
+            matcher2.MatchForward(false, 
                 new CodeMatch(OpCodes.Ldsfld, AccessTools.Field(typeof(LabComponent), nameof(LabComponent.matrixPoints))),
                 new CodeMatch(OpCodes.Ldc_I4_5));
 
-            object label = matcher2.Advance(5).Operand;
+            object label = matcher2.Advance(4).Operand;
 
             matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0),
                 new CodeInstruction(OpCodes.Ldarg_2),

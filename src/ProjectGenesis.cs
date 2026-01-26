@@ -49,7 +49,7 @@ namespace ProjectGenesis
         public const string MODGUID = "org.LoShin.GenesisBook";
         public const string MODNAME = "GenesisBook";
         public const string VERSION = "3.2.0";
-        public const string DEBUGVERSION = "alpha1.1";
+        public const string DEBUGVERSION = "alpha1.2";
 
         public static bool LoadCompleted;
 
@@ -284,8 +284,9 @@ namespace ProjectGenesis
             ModelProto.InitModelIndices();
             ModelProto.InitModelOrders();
             RecipeProto.InitFractionatorNeeds();
+            SignalProtoSet.InitSignalKeyIdPairs();
             RaycastLogic.LoadStatic();
-
+            
             ref int[] turretNeed = ref ItemProto.turretNeeds[(int)EAmmoType.Bullet];
             turretNeed[1] = ProtoID.I钢芯弹箱;
             turretNeed[2] = ProtoID.I超合金弹箱;
