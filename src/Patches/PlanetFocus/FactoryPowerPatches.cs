@@ -9,26 +9,31 @@ namespace ProjectGenesis.Patches
     {
         private static readonly ConcurrentDictionary<short, long> ModelPowerCosts = new ConcurrentDictionary<short, long>();
 
-        [HarmonyPatch(typeof(FactorySystem), nameof(FactorySystem.GameTickBeforePower))]
-        [HarmonyPatch(typeof(FactorySystem), nameof(FactorySystem.ParallelGameTickBeforePower))]
+        [HarmonyPatch(typeof(FactorySystem), nameof(FactorySystem.GameTick))]
         [HarmonyTranspiler]
-        public static IEnumerable<CodeInstruction> FactorySystem_GameTickBeforePower_Transpiler(IEnumerable<CodeInstruction> instructions)
+        public static IEnumerable<CodeInstruction> FactorySystem_GameTick_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
             var matcher = new CodeMatcher(instructions);
+            
+            var setPcState = AccessTools.Method(typeof(AssemblerComponent), nameof(AssemblerComponent.SetPCState));
+            var factoryField = AccessTools.Field(typeof(FactorySystem), nameof(FactorySystem.factory));
+            var getWorkEnergyPerTick = AccessTools.Method(typeof(PlanetFocusPatches), nameof(GetWorkEnergyPerTick));
+            
             matcher.MatchForward(false,
-                new CodeMatch(OpCodes.Call, AccessTools.Method(typeof(AssemblerComponent), nameof(AssemblerComponent.SetPCState))));
-            matcher.MatchBack(false, new CodeMatch(OpCodes.Ldarg_0), new CodeMatch(OpCodes.Ldfld));
-            matcher.InsertAndAdvance(matcher.InstructionsWithOffsets(0, 4));
+                new CodeMatch(OpCodes.Ldloc_S),
+                new CodeMatch(OpCodes.Ldloc_S),
+                new CodeMatch(OpCodes.Call, setPcState));
+            
+            CodeInstruction local = matcher.InstructionAt(0);
+            matcher.InsertAndAdvance(new CodeInstruction(local.opcode, local.operand));
             matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0));
-            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldfld,
-                AccessTools.Field(typeof(FactorySystem), nameof(FactorySystem.factory))));
-            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Call,
-                AccessTools.Method(typeof(PlanetFocusPatches), nameof(GetWorkEnergyPerTick))));
-
+            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldfld, factoryField));
+            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Call, getWorkEnergyPerTick));
+        
             return matcher.InstructionEnumeration();
         }
 
-        public static void GetWorkEnergyPerTick(ref AssemblerComponent assembler, PowerConsumerComponent[] pcPool, PlanetFactory factory)
+        public static void GetWorkEnergyPerTick(ref AssemblerComponent assembler, PlanetFactory factory)
         {
             short modelIndex = factory.entityPool[assembler.entityId].modelIndex;
 
@@ -40,7 +45,7 @@ namespace ProjectGenesis.Patches
 
             if (ContainsFocus(factory.planetId, 6522)) workEnergyPerTick = (long)(workEnergyPerTick * 0.9f);
 
-            pcPool[assembler.pcId].workEnergyPerTick = workEnergyPerTick;
+            factory.powerSystem.consumerPool[assembler.pcId].workEnergyPerTick = workEnergyPerTick;
 
             return;
         }

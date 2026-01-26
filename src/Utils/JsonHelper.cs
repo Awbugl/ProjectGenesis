@@ -422,7 +422,7 @@ namespace ProjectGenesis.Utils
                 {
                     ID = ID,
                     Name = Name,
-                    PreText = PreText,
+                    // PreText = PreText, // todo
                     DeterminatorName = DeterminatorName,
                     DeterminatorParams = DeterminatorParams,
                 };

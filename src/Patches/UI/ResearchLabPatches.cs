@@ -123,7 +123,7 @@ namespace ProjectGenesis.Patches
             var matcher = new CodeMatcher(instructions);
 
             matcher.MatchForward(true, new CodeMatch(OpCodes.Ldloc_0),
-                new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(LabComponent), nameof(LabComponent.timeSpend))));
+                new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(LabComponent), nameof(LabComponent.time))));
 
             matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_0),
                 new CodeInstruction(OpCodes.Call,
@@ -140,6 +140,7 @@ namespace ProjectGenesis.Patches
             return matcher.InstructionEnumeration();
         }
 
+        // todo
         [HarmonyPatch(typeof(LabComponent), nameof(LabComponent.SetFunction))]
         [HarmonyPatch(typeof(LabComponent), nameof(LabComponent.InternalUpdateAssemble))]
         [HarmonyPatch(typeof(FactorySystem), nameof(FactorySystem.GameTickLabResearchMode))]
@@ -147,14 +148,14 @@ namespace ProjectGenesis.Patches
         public static IEnumerable<CodeInstruction> LabComponent_SetFunction_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
             var matcher = new CodeMatcher(instructions);
-
+        
             matcher.MatchForward(false,
                 new CodeMatch(OpCodes.Ldsfld, AccessTools.Field(typeof(LabComponent), nameof(LabComponent.matrixIds))),
                 new CodeMatch(OpCodes.Ldc_I4_0));
-
+        
             matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Call,
                 AccessTools.Method(typeof(ResearchLabPatches), nameof(ChangeMatrixIds))));
-
+        
             return matcher.InstructionEnumeration();
         }
 
@@ -250,12 +251,12 @@ namespace ProjectGenesis.Patches
             var matcher = new CodeMatcher(instructions, ilGenerator);
 
             matcher.MatchForward(false, new CodeMatch(OpCodes.Ldarg_0),
-                new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(LabComponent), nameof(LabComponent.matrixPoints))));
+                new CodeMatch(OpCodes.Ldsfld, AccessTools.Field(typeof(LabComponent), nameof(LabComponent.matrixPoints))));
 
             CodeMatcher matcher2 = matcher.Clone();
 
             matcher2.MatchForward(false, new CodeMatch(OpCodes.Ldarg_0),
-                new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(LabComponent), nameof(LabComponent.matrixPoints))),
+                new CodeMatch(OpCodes.Ldsfld, AccessTools.Field(typeof(LabComponent), nameof(LabComponent.matrixPoints))),
                 new CodeMatch(OpCodes.Ldc_I4_5));
 
             object label = matcher2.Advance(5).Operand;
@@ -270,7 +271,13 @@ namespace ProjectGenesis.Patches
             return matcher.InstructionEnumeration();
         }
 
-        [HarmonyPatch(typeof(PlanetFactory), nameof(PlanetFactory.InsertInto))]
+        [HarmonyPatch(typeof(PlanetFactory), nameof(PlanetFactory.InsertInto),
+            new[] {
+                typeof(int), typeof(int), typeof(int), typeof(byte), typeof(byte), typeof(byte),
+            }, new[] {
+                ArgumentType.Normal, ArgumentType.Normal, ArgumentType.Normal, ArgumentType.Normal, ArgumentType.Normal,
+                ArgumentType.Out,
+            })]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> PlanetFactory_InsertInto_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
@@ -323,9 +330,9 @@ namespace ProjectGenesis.Patches
 
             for (var i = 0; i < LabComponent.matrixIds.Length; i++)
             {
-                if (labComponent.matrixPoints[i] <= 0) continue;
+                if (LabComponent.matrixPoints[i] <= 0) continue;
 
-                int point = labComponent.matrixServed[i] / labComponent.matrixPoints[i];
+                int point = labComponent.matrixServed[i] / LabComponent.matrixPoints[i];
 
                 if (point >= speed) continue;
 
@@ -372,7 +379,7 @@ namespace ProjectGenesis.Patches
         }
 
         public static int UILabWindow_OnUpdate_Patch_Method(int timeSpend, LabComponent component) =>
-            timeSpend / component.productCounts[0];
+            timeSpend / component.recipeExecuteData.productCounts[0];
 
         public static int ChangeMatrixIds(int itemId)
         {
