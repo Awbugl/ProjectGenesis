@@ -23,24 +23,35 @@ namespace ProjectGenesis.Patches
                 UIRoot.instance.uiGame.storageWindow.transform);
 
             Transform orbitPickerTransform = orbitPicker.transform;
-            ((RectTransform)orbitPickerTransform).localPosition = new Vector3(90, -443, 0);
+            ((RectTransform)orbitPickerTransform).localPosition = new Vector3(90, -410, 0);
 
+            //orbitPicker
+            //child(0): title
+            //child(1): auto-orbit-label
+            //child(2): auto-orbit-switch[1]
+            //child(3): apply-planet-button[1]
+            //child(4): btn-group[22]
+            
             Transform titleTransform = orbitPickerTransform.GetChild(0).transform;
-            ((RectTransform)titleTransform).localPosition = new Vector3(-120, -33, 0);
+            ((RectTransform)titleTransform).localPosition = new Vector3(-120, -65, 0);
 
             Object.DestroyImmediate(titleTransform.GetComponent<Localizer>());
             Text component = titleTransform.GetComponent<Text>();
             component.fontSize = 16;
             component.text = "选择量子频道".TranslateFromJson();
 
-            for (var i = 1; i < orbitPickerTransform.childCount; i++) orbitPickerTransform.GetChild(i).gameObject.SetActive(false);
+            orbitPickerTransform.GetChild(1).gameObject.SetActive(false);
+            orbitPickerTransform.GetChild(2).gameObject.SetActive(false);
+            orbitPickerTransform.GetChild(3).gameObject.SetActive(false);
+            
+            var btn_group_Transform = orbitPickerTransform.GetChild(4);
 
-            // todo
-           // for (var i = 3; i < 13; i++)
+            for (var i = 0; i < btn_group_Transform.childCount; i++)
             {
-             //   Transform transform = orbitPickerTransform.GetChild(i);
-              //  transform.gameObject.SetActive(true);
-              //  transform.GetComponent<Button>().interactable = true;
+                // btn-group结构是：无、编辑轨道、20个轨道
+                // 量子箱只要10个频道，所以保留索引2到11
+                Transform transform = btn_group_Transform.GetChild(i);
+                transform.gameObject.SetActive(i >= 2 && i <= 11);
             }
 
             Array.Resize(ref orbitPicker.orbitButtons, 11);

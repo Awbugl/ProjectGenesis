@@ -226,6 +226,8 @@ namespace ProjectGenesis
             };
             vegeProto.Preload();
 
+            LabComponent.matrixPoints = new int[9];
+
             LabComponent.matrixIds = new[]
             {
                 ProtoID.I电磁矩阵, ProtoID.I能量矩阵, ProtoID.I结构矩阵, ProtoID.I信息矩阵,
@@ -283,6 +285,7 @@ namespace ProjectGenesis
             ModelProto.InitMaxModelIndex();
             ModelProto.InitModelIndices();
             ModelProto.InitModelOrders();
+            RecipeProto.InitRecipeItems();
             RecipeProto.InitFractionatorNeeds();
             SignalProtoSet.InitSignalKeyIdPairs();
             RaycastLogic.LoadStatic();

@@ -14,17 +14,27 @@ namespace ProjectGenesis.Patches
         private static UIToggle LDBToolCacheToggle, HideTechModeToggle, ShowMessageToggle;
 
         private static UIComboBox ProductOverflowComboBox;
+        /// <summary>
+        /// 包含左边字体（名称）、中间勾选框、右边字体（额外说明）
+        /// </summary>
         private static GameObject QueryObj;
-        private static GameObject TipLevelObj;
+        /// <summary>
+        /// 包含左边字体（名称）
+        /// </summary>
+        private static GameObject TipLevelTextObj;
+        /// <summary>
+        /// 包含中间下拉框、右边字体（额外说明）
+        /// </summary>
+        private static GameObject TipLevelComboboxAndTextObj;
 
         private static void Init()
         {
             QueryObj = GameObject.Find(
                 "UI Root/Overlay Canvas/Top Windows/Option Window/details/content-3/list/scroll-view/viewport/content/demolish-query");
-
-            TipLevelObj = GameObject.Find("UI Root/Overlay Canvas/Top Windows/Option Window/details/content-5/tiplevel");
-
-            Transform pageParent = TipLevelObj.transform.parent;
+            TipLevelTextObj = GameObject.Find("UI Root/Overlay Canvas/Top Windows/Option Window/details/content-5/labels/tiplevel");
+            TipLevelComboboxAndTextObj = GameObject.Find("UI Root/Overlay Canvas/Top Windows/Option Window/details/content-5/comps/ComboBox");
+            
+            Transform pageParent = TipLevelComboboxAndTextObj.transform.parent.parent;
 
             CreateSettingObject(pageParent, "gb-ldbtc-setting", "UseLDBToolCache".TranslateFromJson(),
                 "UseLDBToolCacheAdditionalText".TranslateFromJson(), new Vector2(30, -220), LDBToolCacheEntry.Value,
@@ -39,8 +49,7 @@ namespace ProjectGenesis.Patches
 
             CreateSettingObject(pageParent, "gb-csl-setting", "ProductOverflow".TranslateFromJson(),
                 "ProductOverflowAdditionalText".TranslateFromJson(),
-                new List<string>
-                {
+                new List<string> {
                     "默认设置".TranslateFromJson(),
                     "启用全部".TranslateFromJson(),
                     "禁用全部".TranslateFromJson(),
@@ -71,16 +80,20 @@ namespace ProjectGenesis.Patches
         private static void CreateSettingObject(Transform parent, string name, string text, string additionalText, List<string> values,
             Vector2 position, int index, out UIComboBox comboBox)
         {
-            GameObject settingObj = Object.Instantiate(TipLevelObj, parent);
+            GameObject textObj = Object.Instantiate(TipLevelTextObj, parent);
+            Object.DestroyImmediate(textObj.GetComponent<Localizer>());
+            textObj.GetComponent<Text>().text = text;
+            var textObjTransform = (RectTransform)textObj.transform;
+            textObjTransform.anchoredPosition = position;
 
-            settingObj.name = name;
-            Object.DestroyImmediate(settingObj.GetComponent<Localizer>());
-            settingObj.GetComponent<Text>().text = text;
+            GameObject comboBoxObj = Object.Instantiate(TipLevelComboboxAndTextObj, parent);
+            comboBoxObj.name = name;
+            Object.DestroyImmediate(comboBoxObj.GetComponent<Localizer>());
+            // comboBoxObj.transform.Find("Main Button/Text").GetComponent<Text>().text = text;
+            var comboBoxObjTransform = (RectTransform)comboBoxObj.transform;
+            comboBoxObjTransform.anchoredPosition = new Vector2(position.x + 310, position.y);
 
-            var settingObjTransform = (RectTransform)settingObj.transform;
-            settingObjTransform.anchoredPosition = position;
-
-            comboBox = settingObj.GetComponentInChildren<UIComboBox>();
+            comboBox = comboBoxObj.GetComponentInChildren<UIComboBox>();
             comboBox.Items = values;
             comboBox.ItemButtons = new List<Button>();
             comboBox.UpdateItems();
@@ -90,13 +103,13 @@ namespace ProjectGenesis.Patches
 
             if (string.IsNullOrEmpty(additionalText)) return;
 
-            GameObject gameObject = Object.Instantiate(QueryObj.transform.GetChild(1).gameObject, settingObjTransform);
+            GameObject gameObject = Object.Instantiate(QueryObj.transform.GetChild(1).gameObject, comboBoxObjTransform);
 
             Object.DestroyImmediate(gameObject.GetComponent<Localizer>());
             gameObject.GetComponent<Text>().text = additionalText;
 
             var gameObjectTransform = (RectTransform)gameObject.transform;
-            gameObjectTransform.anchoredPosition = new Vector2(680, 0);
+            gameObjectTransform.anchoredPosition = new Vector2(420, 0);
         }
 
         [HarmonyPatch(typeof(UIOptionWindow), nameof(UIOptionWindow._OnOpen))]
