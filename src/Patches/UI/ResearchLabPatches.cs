@@ -19,8 +19,7 @@ namespace ProjectGenesis.Patches
         public static void UILabWindow_OnCreate_Postfix(UILabWindow __instance)
         {
             __instance.GetComponent<RectTransform>().sizeDelta = new Vector2(640, 430);
-            // todo
-          //  __instance.transform.Find("matrix-group/lines").gameObject.SetActive(false);
+            __instance.transform.Find("matrix-group/matrix/lines").gameObject.SetActive(false);
 
             const int len = 9;
 
