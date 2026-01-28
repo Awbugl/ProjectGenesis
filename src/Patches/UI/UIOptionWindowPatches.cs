@@ -14,17 +14,27 @@ namespace ProjectGenesis.Patches
         private static UIToggle LDBToolCacheToggle, HideTechModeToggle, ShowMessageToggle;
 
         private static UIComboBox ProductOverflowComboBox;
+        /// <summary>
+        /// 包含左边字体（名称）、中间勾选框、右边字体（额外说明）
+        /// </summary>
         private static GameObject QueryObj;
-        private static GameObject TipLevelObj;
+        /// <summary>
+        /// 包含左边字体（名称）
+        /// </summary>
+        private static GameObject TipLevelTextObj;
+        /// <summary>
+        /// 包含中间下拉框、右边字体（额外说明）
+        /// </summary>
+        private static GameObject TipLevelComboboxAndTextObj;
 
         private static void Init()
         {
             QueryObj = GameObject.Find(
                 "UI Root/Overlay Canvas/Top Windows/Option Window/details/content-3/list/scroll-view/viewport/content/demolish-query");
-
-            TipLevelObj = GameObject.Find("UI Root/Overlay Canvas/Top Windows/Option Window/details/content-5/comps/ComboBox");
-
-            Transform pageParent = TipLevelObj.transform.parent.parent;
+            TipLevelTextObj = GameObject.Find("UI Root/Overlay Canvas/Top Windows/Option Window/details/content-5/labels/tiplevel");
+            TipLevelComboboxAndTextObj = GameObject.Find("UI Root/Overlay Canvas/Top Windows/Option Window/details/content-5/comps/ComboBox");
+            
+            Transform pageParent = TipLevelComboboxAndTextObj.transform.parent.parent;
 
             CreateSettingObject(pageParent, "gb-ldbtc-setting", "UseLDBToolCache".TranslateFromJson(),
                 "UseLDBToolCacheAdditionalText".TranslateFromJson(), new Vector2(30, -220), LDBToolCacheEntry.Value,
@@ -37,16 +47,13 @@ namespace ProjectGenesis.Patches
                 "ShowMessageBoxAdditionalText".TranslateFromJson(), new Vector2(30, -300), ShowMessageBoxEntry.Value,
                 out ShowMessageToggle);
 
-            //todo
-            // CreateSettingObject(pageParent, "gb-csl-setting", "ProductOverflow".TranslateFromJson(),
-            //     "ProductOverflowAdditionalText".TranslateFromJson(),
-            //     new List<string>
-            //     {
-            //         "默认设置".TranslateFromJson(),
-            //         "启用全部".TranslateFromJson(),
-            //         "禁用全部".TranslateFromJson(),
-            //     }, new Vector2(30, -340), ProductOverflowEntry.Value, out ProductOverflowComboBox);
-            ProductOverflowComboBox = TipLevelObj.AddComponent<UIComboBox>();
+            CreateSettingObject(pageParent, "gb-csl-setting", "ProductOverflow".TranslateFromJson(),
+                "ProductOverflowAdditionalText".TranslateFromJson(),
+                new List<string> {
+                    "默认设置".TranslateFromJson(),
+                    "启用全部".TranslateFromJson(),
+                    "禁用全部".TranslateFromJson(),
+                }, new Vector2(30, -340), ProductOverflowEntry.Value, out ProductOverflowComboBox);
         }
 
         private static void CreateSettingObject(Transform parent, string name, string text, string additionalText, Vector2 position,
@@ -70,36 +77,40 @@ namespace ProjectGenesis.Patches
             transform.GetComponent<Text>().text = additionalText;
         }
 
-        // private static void CreateSettingObject(Transform parent, string name, string text, string additionalText, List<string> values,
-        //     Vector2 position, int index, out UIComboBox comboBox)
-        // {
-        //     GameObject settingObj = Object.Instantiate(TipLevelObj, parent);
-        //
-        //     settingObj.name = name;
-        //     Object.DestroyImmediate(settingObj.GetComponent<Localizer>());
-        //     settingObj.transform.Find("MainButton/Text").GetComponent<Text>().text = text;
-        //
-        //     var settingObjTransform = (RectTransform)settingObj.transform;
-        //     settingObjTransform.anchoredPosition = position;
-        //
-        //     comboBox = settingObj.GetComponentInChildren<UIComboBox>();
-        //     comboBox.Items = values;
-        //     comboBox.ItemButtons = new List<Button>();
-        //     comboBox.UpdateItems();
-        //     comboBox.onItemIndexChange.RemoveAllListeners();
-        //     comboBox.itemIndex = index;
-        //     ((RectTransform)comboBox.transform).sizeDelta = new Vector2(400, 30);
-        //
-        //     if (string.IsNullOrEmpty(additionalText)) return;
-        //
-        //     GameObject gameObject = Object.Instantiate(QueryObj.transform.GetChild(1).gameObject, settingObjTransform);
-        //
-        //     Object.DestroyImmediate(gameObject.GetComponent<Localizer>());
-        //     gameObject.GetComponent<Text>().text = additionalText;
-        //
-        //     var gameObjectTransform = (RectTransform)gameObject.transform;
-        //     gameObjectTransform.anchoredPosition = new Vector2(680, 0);
-        // }
+        private static void CreateSettingObject(Transform parent, string name, string text, string additionalText, List<string> values,
+            Vector2 position, int index, out UIComboBox comboBox)
+        {
+            GameObject textObj = Object.Instantiate(TipLevelTextObj, parent);
+            Object.DestroyImmediate(textObj.GetComponent<Localizer>());
+            textObj.GetComponent<Text>().text = text;
+            var textObjTransform = (RectTransform)textObj.transform;
+            textObjTransform.anchoredPosition = position;
+
+            GameObject comboBoxObj = Object.Instantiate(TipLevelComboboxAndTextObj, parent);
+            comboBoxObj.name = name;
+            Object.DestroyImmediate(comboBoxObj.GetComponent<Localizer>());
+            // comboBoxObj.transform.Find("Main Button/Text").GetComponent<Text>().text = text;
+            var comboBoxObjTransform = (RectTransform)comboBoxObj.transform;
+            comboBoxObjTransform.anchoredPosition = new Vector2(position.x + 310, position.y);
+
+            comboBox = comboBoxObj.GetComponentInChildren<UIComboBox>();
+            comboBox.Items = values;
+            comboBox.ItemButtons = new List<Button>();
+            comboBox.UpdateItems();
+            comboBox.onItemIndexChange.RemoveAllListeners();
+            comboBox.itemIndex = index;
+            ((RectTransform)comboBox.transform).sizeDelta = new Vector2(400, 30);
+
+            if (string.IsNullOrEmpty(additionalText)) return;
+
+            GameObject gameObject = Object.Instantiate(QueryObj.transform.GetChild(1).gameObject, comboBoxObjTransform);
+
+            Object.DestroyImmediate(gameObject.GetComponent<Localizer>());
+            gameObject.GetComponent<Text>().text = additionalText;
+
+            var gameObjectTransform = (RectTransform)gameObject.transform;
+            gameObjectTransform.anchoredPosition = new Vector2(420, 0);
+        }
 
         [HarmonyPatch(typeof(UIOptionWindow), nameof(UIOptionWindow._OnOpen))]
         [HarmonyPostfix]
@@ -122,7 +133,7 @@ namespace ProjectGenesis.Patches
             LDBToolCacheToggle.isOn = LDBToolCacheEntry.Value;
             HideTechModeToggle.isOn = HideTechModeEntry.Value;
             ShowMessageToggle.isOn = ShowMessageBoxEntry.Value;
-            // ProductOverflowComboBox.itemIndex = ProductOverflowEntry.Value; // todo
+            ProductOverflowComboBox.itemIndex = ProductOverflowEntry.Value;
         }
 
         [HarmonyPatch(typeof(UIOptionWindow), nameof(UIOptionWindow.OnApplyClick))]
