@@ -13,6 +13,7 @@ namespace ProjectGenesis
         private static readonly string RecipeFile = Path.Combine(BaseDir, "recipes.json"),
                                        ItemVanilla = Path.Combine(BaseDir, "items_vanilla.json"),
                                        ItemMod = Path.Combine(BaseDir, "items_mod.json"),
+                                       ItemExport = Path.Combine(BaseDir, "items.json"),
                                        TechFile = Path.Combine(BaseDir, "techs.json"),
                                        StringsFile = Path.Combine(BaseDir, "strings.json");
 
@@ -21,6 +22,8 @@ namespace ProjectGenesis
         public static List<ItemProtoJson> LoadItemsVanilla() => Load<ItemProtoJson>(ItemVanilla);
 
         public static List<ItemProtoJson> LoadItemsMod() => Load<ItemProtoJson>(ItemMod);
+        
+        public static List<ItemProtoJson> LoadItemsExport() => Load<ItemProtoJson>(ItemExport);
 
         public static List<TechProtoJson> LoadTechs() => Load<TechProtoJson>(TechFile);
 
@@ -49,6 +52,7 @@ namespace ProjectGenesis
         public string Name { get; set; }
         public string Description { get; set; }
         public string IconPath { get; set; }
+        public string IconTag { get; set; }
         public int GridIndex { get; set; }
         public int StackSize { get; set; }
         public int Type { get; set; }
@@ -94,6 +98,7 @@ namespace ProjectGenesis
         public string Name { get; set; }
         public string Description { get; set; }
         public string IconPath { get; set; }
+        public string IconTag { get; set; }
         public int Type { get; set; }
         public int GridIndex { get; set; }
         public int Time { get; set; }
@@ -112,11 +117,12 @@ namespace ProjectGenesis
         public int ID { get; set; }
         public string Name { get; set; }
         public string IconPath { get; set; }
+        public string IconTag { get; set; }
         public string Desc { get; set; }
         public string Conclusion { get; set; }
         public bool IsHiddenTech { get; set; }
         public int[] PreItem { get; set; }
-        public float[] Position { get; set; }
+        public int[] Position { get; set; }
         public int[] PreTechs { get; set; }
         public int[] PreTechsImplicit { get; set; }
         public int[] Items { get; set; }
