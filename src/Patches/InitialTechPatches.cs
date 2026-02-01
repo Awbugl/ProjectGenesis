@@ -34,7 +34,7 @@ namespace ProjectGenesis.Patches
         [HarmonyPostfix]
         public static void SetForNewGame(GameData __instance)
         {
-            if (DSPGame.IsMenuDemo) { return; }
+            if (DSPGame.LoadDemoIndex > 0 || DSPGame.IsMenuDemo) { return; }
 
             __instance.history.recipeUnlocked.Remove(5);
 
@@ -50,7 +50,7 @@ namespace ProjectGenesis.Patches
         [HarmonyPostfix]
         public static void Import(GameData __instance)
         {
-            if (DSPGame.IsMenuDemo) { return; }
+            if (DSPGame.LoadDemoIndex > 0 || DSPGame.IsMenuDemo) { return; }
 
             foreach (int tech in InitialTechs.Concat(BonusTechs))
             {

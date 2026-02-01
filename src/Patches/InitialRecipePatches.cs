@@ -10,7 +10,7 @@ namespace ProjectGenesis.Patches
         [HarmonyPrefix]
         public static void SetRecipeForNewGame(GameData __instance)
         {
-            if (DSPGame.IsMenuDemo) return;
+            if (DSPGame.LoadDemoIndex > 0 || DSPGame.IsMenuDemo) return;
 
             RecipeProto.InitRecipeItems();
         }

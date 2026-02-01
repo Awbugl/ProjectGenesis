@@ -64,7 +64,7 @@ namespace ProjectGenesis.Patches
         [HarmonyPostfix]
         public static void SetForNewGame(GameData __instance)
         {
-            if (DSPGame.IsMenuDemo || !__instance.gameDesc.isFastStartMode) return;
+            if (DSPGame.LoadDemoIndex > 0 || DSPGame.IsMenuDemo || !__instance.gameDesc.isFastStartMode) return;
 
             foreach (TechProto proto in LDB.techs.dataArray)
             {
