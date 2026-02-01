@@ -94,6 +94,7 @@ namespace ProjectGenesis.Patches
                     {
                         case ProtoID.R盐水电解:
                         case ProtoID.R海水淡化:
+                        case ProtoID.R石墨烯:
                         case ProtoID.R高效石墨烯:
                         case ProtoID.R水电解:
                         case ProtoID.R甲烷偶联:

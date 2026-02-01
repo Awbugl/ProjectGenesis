@@ -802,7 +802,7 @@
   {
     "ID": 31,
     "Name": "石墨烯",
-    "Description": "",
+    "Description": "R石墨烯",
     "IconPath": "",
     "Type": 2,
     "GridIndex": 1406,
@@ -811,15 +811,17 @@
       7008
     ],
     "InCounts": [
-      4
+      2
     ],
     "Output": [
-      1123
+      1123,
+      1120
     ],
     "OutCounts": [
-      1
+      1,
+      8
     ],
-    "Explicit": false,
+    "Explicit": true,
     "Handcraft": false,
     "NonProductive": false
   },
