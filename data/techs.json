@@ -106,7 +106,9 @@
     "PreTechs": [
       1900
     ],
-    "PreTechsImplicit": [],
+    "PreTechsImplicit": [
+      1101
+    ],
     "Items": [
       1202,
       1301
