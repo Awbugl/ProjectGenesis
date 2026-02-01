@@ -32,7 +32,7 @@ namespace ProjectGenesis.Patches
                 {
                     0.0f, 0.7f, 0.2f, 0.8f, //
                     0.0f, 1.0f, 0.6f, 0.5f, //
-                    0.0f, 0.4f, 0.5f, 0.4f, //
+                    0.0f, 0.4f, 0.3f, 0.2f, //
                 })
             },
             {
@@ -57,14 +57,14 @@ namespace ProjectGenesis.Patches
                 {
                     0.0f, 1.0f, 0.7f, 0.7f, //
                     0.0f, 0.6f, 0.3f, 0.8f, //
-                    0.0f, 0.4f, 0.6f, 0.4f, //
+                    0.0f, 0.4f, 0.3f, 0.2f, //
                 })
             },
             {
                 11, // 贫瘠荒漠
                 new ThemeData(Array.Empty<int>(), Array.Empty<float>(),  new[] { 20, }, new[]
                 {
-                    0.0f, 0.6f, 0.6f, 0.7f, //
+                    0.0f, 0.6f, 0.3f, 0.3f, //
                 })
             },
             {
@@ -129,7 +129,7 @@ namespace ProjectGenesis.Patches
                 new ThemeData(new[] { ProtoID.I氮, }, new[] { 0.8f, }, new[] { 18, 20, }, new[]
                 {
                     0.0f, 0.7f, 0.5f, 0.9f, //
-                    0.0f, 1.0f, 0.7f, 0.9f, //
+                    0.0f, 1.0f, 0.5f, 0.3f, //
                 })
             },
             {

@@ -4386,6 +4386,36 @@
     "NonProductive": false
   },
   {
+    "ID": 161,
+    "Name": "激光灯塔",
+    "Description": "",
+    "IconPath": "",
+    "Type": 4,
+    "GridIndex": 2114,
+    "Time": 120,
+    "Input": [
+      1101,
+      1111,
+      1401,
+      1301
+    ],
+    "InCounts": [
+      3,
+      4,
+      2,
+      2
+    ],
+    "Output": [
+      2401
+    ],
+    "OutCounts": [
+      1
+    ],
+    "Explicit": false,
+    "Handcraft": true,
+    "NonProductive": false
+  },
+  {
     "ID": 401,
     "Name": "放射矿物精炼",
     "Description": "R放射矿物精炼",
