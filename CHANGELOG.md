@@ -1,13 +1,20 @@
+- v3.2.0-alpha1.4 (Experimental 0.3.20004)
+  + 适配版本v0.10.34.28281 （感谢萌泪酱）
+  + 调整了`甲烷`的热值及相关配方（影响存档）
+
+  + Adaptation of version v0.10.34.28281 (thanks to 萌泪酱's work)
+  + Adjusted heat values and recipes about "Methane" (affects save)
+
+<details>
+  <summary>点击展开日志 | Click to view all </summary>
+
+
 - v3.2.0-alpha1.1 (Experimental 0.3.20001)
   + 修复了在物品选择界面无法选择`二氧化碳`的问题
   + 修复了研究速度加成实际不生效的问题
 
   + Fixed the bug that `Carbon Dioxide` may not be selected in the item selection UI
   + Fixed the bug that research speed bonuses were not actually taking effect
-
-<details>
-  <summary>点击展开日志 | Click to view all </summary>
-
 
 - v3.2.0-alpha1.0 (Experimental 0.3.20000)
   + 资源加载逻辑重做，由ab包调整为读取png图片，便于修改

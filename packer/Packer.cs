@@ -13,7 +13,7 @@ namespace ProjectGenesis
 
         private static readonly bool IsDebugBuild = true;
 
-        public const string ManifestDebugVersion = "0.3.20002";
+        public const string ManifestDebugVersion = "0.3.20004";
 
         internal static void Main()
         {
@@ -54,7 +54,7 @@ namespace ProjectGenesis
         public string[] Dependencies { get; set; } =
         {
             "CommonAPI-CommonAPI-1.6.7", "nebula-NebulaMultiplayerModApi-2.1.0", "starfi5h-ErrorAnalyzer-1.3.3",
-            "starfi5h-ModFixerOne-2.1.0",// "Shad0wlife-AssemblerUI-2.3.0",
+            // "Shad0wlife-AssemblerUI-2.3.0",
         };
 
         internal static ManifestObject DebugObject()

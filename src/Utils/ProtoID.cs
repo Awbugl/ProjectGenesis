@@ -73,6 +73,7 @@ namespace ProjectGenesis.Utils
                            I钨块 = 7705;
 
         internal const int R等离子精炼 = 16,
+                           R石墨烯 = 31,
                            R高效石墨烯 = 32,
                            R硅石筛选 = 34,
                            R重氢 = 40,

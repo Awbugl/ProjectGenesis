@@ -1205,6 +1205,11 @@
     "ENUS": "Ammonia reacts with oxygen to produce nitric acid."
   },
   {
+    "Name": "R石墨烯",
+    "ZHCN": "高温裂解甲烷，制备高纯度石墨烯与氢气，实现碳资源高值化利用。\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作。</color>",
+    "ENUS": "High-temperature pyrolysis of methane to produce graphene and hydrogen, enabling high-value utilization of carbon resources.\n<color=\"#FD965ECC\">Will not stop working until all products are accumulated.</color>"
+  },
+  {
     "Name": "R石墨烯（高效）",
     "ZHCN": "找到可燃冰矿，制造石墨烯就会变得容易许多。\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作。</color>",
     "ENUS": "It will be a lot easier to produce graphene if you can find combustible ice minerals.\n<color=\"#FD965ECC\">Will not stop working until all products are accumulated.</color>"

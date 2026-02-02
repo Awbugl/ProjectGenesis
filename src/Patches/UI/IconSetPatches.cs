@@ -20,26 +20,37 @@ namespace ProjectGenesis.Patches
             // 定位跳转目标 (IL_05f8: brfalse      IL_06ff)
             // 注意这个能匹配到两个地方，需要的刚好是第一个地方
             matcher.MatchForward(false,
-                new CodeMatch(OpCodes.Callvirt, AccessTools.PropertyGetter(typeof(TechProto), nameof(TechProto.iconSprite)))
-            );
+                new CodeMatch(OpCodes.Callvirt, AccessTools.PropertyGetter(typeof(TechProto), nameof(TechProto.iconSprite))));
+
             // 抓取 brfalse 指向的 Label
             var targetLabel = matcher.Clone().Advance(5).Operand;
+
             // 拿到存储的 techProto 局部变量
             var techProtoLocal = matcher.Clone().Advance(-1).Operand;
+
             // 在IL_05f8之后插入：if (IsInvalidTech(techProto)) goto targetLabel;
-            matcher.Advance(6).InsertAndAdvance(
-                new CodeInstruction(OpCodes.Ldloc, techProtoLocal), // 将 techProto 压栈
+            matcher.Advance(6).InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc, techProtoLocal), // 将 techProto 压栈
                 new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(IconSetPatches), nameof(IsInvalidTech))), // 调用静态方法
                 new CodeInstruction(OpCodes.Brtrue, targetLabel) // 如果返回值为 true (ID > 2000)，则跳转
             );
 
             return matcher.InstructionEnumeration();
         }
-        
-        // 返回 true 表示需要跳转（即 ID > 2000）
+
+        // 返回 true 表示需要跳转
         public static bool IsInvalidTech(TechProto proto)
         {
             if (proto == null) return false;
+
+            if (proto.ID > 2100 && proto.ID < 2106) return false;
+
+            switch (proto.ID)
+            {
+                case 2904:
+                case 3508:
+                    return false;
+            }
+            
             return proto.ID > 2000;
         }
     }

@@ -41,6 +41,7 @@ namespace ProjectGenesis.Utils
             public string Name { get; set; }
             public string Description { get; set; }
             public string IconPath { get; set; }
+            public string IconTag { get; set; }
             public int GridIndex { get; set; }
             public int StackSize { get; set; }
             public int Type { get; set; }
@@ -85,6 +86,7 @@ namespace ProjectGenesis.Utils
                     Name = i.Name,
                     Description = i.Description,
                     IconPath = i.IconPath,
+                    IconTag = i.IconTag,
                     GridIndex = i.GridIndex,
                     StackSize = i.StackSize,
                     FuelType = i.FuelType,
@@ -131,6 +133,7 @@ namespace ProjectGenesis.Utils
                 proto.Name = Name;
                 proto.Description = Description;
                 proto.IconPath = IconPath;
+                proto.IconTag = IconTag;
                 proto.GridIndex = GridIndex;
                 proto.StackSize = StackSize;
                 proto.FuelType = FuelType;
@@ -179,6 +182,7 @@ namespace ProjectGenesis.Utils
             public string Name { get; set; }
             public string Description { get; set; }
             public string IconPath { get; set; }
+            public string IconTag { get; set; }
             public int Type { get; set; }
             public int GridIndex { get; set; }
             public int Time { get; set; }
@@ -206,6 +210,7 @@ namespace ProjectGenesis.Utils
                     Description = i.Description,
                     GridIndex = i.GridIndex,
                     IconPath = i.IconPath,
+                    IconTag = i.IconTag,
                     NonProductive = i.NonProductive,
                 };
 
@@ -226,6 +231,7 @@ namespace ProjectGenesis.Utils
                 proto.Description = Description;
                 proto.GridIndex = GridIndex;
                 proto.IconPath = IconPath;
+                proto.IconTag = IconTag;
                 proto.NonProductive = NonProductive;
 
                 return proto;
@@ -238,6 +244,7 @@ namespace ProjectGenesis.Utils
             public int ID { get; set; }
             public string Name { get; set; }
             public string IconPath { get; set; }
+            public string IconTag { get; set; }
             public string Desc { get; set; }
             public string Conclusion { get; set; }
             public bool IsHiddenTech { get; set; }
@@ -278,6 +285,7 @@ namespace ProjectGenesis.Utils
                     LevelCoef1 = i.LevelCoef1,
                     LevelCoef2 = i.LevelCoef2,
                     IconPath = i.IconPath,
+                    IconTag = i.IconTag,
                     IsLabTech = i.IsLabTech,
                     PreTechs = i.PreTechs,
                     PreTechsImplicit = i.PreTechsImplicit,
@@ -307,6 +315,7 @@ namespace ProjectGenesis.Utils
                 proto.PreItem = PreItem ?? Array.Empty<int>();
                 proto.Published = Published;
                 proto.IconPath = IconPath;
+                proto.IconTag = IconTag;
                 proto.IsLabTech = IsLabTech;
                 proto.PreTechs = PreTechs ?? Array.Empty<int>();
                 proto.PreTechsImplicit = PreTechsImplicit ?? Array.Empty<int>();

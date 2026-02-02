@@ -49,7 +49,7 @@ namespace ProjectGenesis
         public const string MODGUID = "org.LoShin.GenesisBook";
         public const string MODNAME = "GenesisBook";
         public const string VERSION = "3.2.0";
-        public const string DEBUGVERSION = "alpha1.2";
+        public const string DEBUGVERSION = "alpha1.4";
 
         public static bool LoadCompleted;
 
@@ -285,7 +285,6 @@ namespace ProjectGenesis
             ModelProto.InitMaxModelIndex();
             ModelProto.InitModelIndices();
             ModelProto.InitModelOrders();
-            RecipeProto.InitRecipeItems();
             RecipeProto.InitFractionatorNeeds();
             SignalProtoSet.InitSignalKeyIdPairs();
             RaycastLogic.LoadStatic();
