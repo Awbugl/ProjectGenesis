@@ -13,7 +13,7 @@ namespace ProjectGenesis
 
         private static readonly bool IsDebugBuild = true;
 
-        public const string ManifestDebugVersion = "0.3.20004";
+        public const string ManifestDebugVersion = "0.3.20005";
 
         internal static void Main()
         {

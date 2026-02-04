@@ -1,12 +1,22 @@
+- v3.2.0-alpha1.5 (Experimental 0.3.20005)
+  + 调整了`石墨烯（高效）`配方（影响存档）
+  + 修复了重新加载存档时配方数据混乱的bug
+  + 修复了研究站工作不正常的问题
+
+  + Adjusted `Graphene (advanced)` recipe (affects save)
+  + Fixed the issue of recipe data scrambled after loading saves
+  + Fixed issue that research lab work improperly
+
+<details>
+  <summary>点击展开日志 | Click to view all </summary>
+
+
 - v3.2.0-alpha1.4 (Experimental 0.3.20004)
   + 适配版本v0.10.34.28281 （感谢萌泪酱）
   + 调整了`甲烷`的热值及相关配方（影响存档）
 
   + Adaptation of version v0.10.34.28281 (thanks to 萌泪酱's work)
   + Adjusted heat values and recipes about "Methane" (affects save)
-
-<details>
-  <summary>点击展开日志 | Click to view all </summary>
 
 
 - v3.2.0-alpha1.1 (Experimental 0.3.20001)
@@ -15,6 +25,7 @@
 
   + Fixed the bug that `Carbon Dioxide` may not be selected in the item selection UI
   + Fixed the bug that research speed bonuses were not actually taking effect
+
 
 - v3.2.0-alpha1.0 (Experimental 0.3.20000)
   + 资源加载逻辑重做，由ab包调整为读取png图片，便于修改
