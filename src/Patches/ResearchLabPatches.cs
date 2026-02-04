@@ -141,12 +141,15 @@ namespace ProjectGenesis.Patches
         }
 
         [HarmonyPatch(typeof(LabComponent), nameof(LabComponent.InternalUpdateAssemble))]
-        [HarmonyPatch(typeof(FactorySystem), nameof(FactorySystem.GameTickLabResearchMode))]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> LabComponent_SetFunction_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
             var matcher = new CodeMatcher(instructions);
         
+            /*
+                return !this.replicating ? 0U : (uint) (products[0] - LabComponent.matrixIds[0] + 1);
+             */
+            
             matcher.MatchForward(false,
                 new CodeMatch(OpCodes.Ldsfld, AccessTools.Field(typeof(LabComponent), nameof(LabComponent.matrixIds))),
                 new CodeMatch(OpCodes.Ldc_I4_0));
@@ -156,6 +159,64 @@ namespace ProjectGenesis.Patches
         
             return matcher.InstructionEnumeration();
         }
+
+        [HarmonyPatch(typeof(FactorySystem), nameof(FactorySystem.GameTickLabResearchMode))]
+        [HarmonyTranspiler]
+        public static IEnumerable<CodeInstruction> FactorySystem_GameTickLabResearchMode_FixMatrixIds(IEnumerable<CodeInstruction> instructions)
+        {
+            var matcher = new CodeMatcher(instructions);
+        
+            /*
+                int matrixId = LabComponent.matrixIds[0];
+                TechProto techProto2 = LDB.techs.Select(num1);
+                if (techProto2 != null && techProto2.IsLabTech)
+                {
+                    for (int index3 = 0; index3 < techProto2.Items.Length; ++index3)
+                    {
+                      int index4 = techProto2.Items[index3] - matrixId;
+                      if (index4 >= 0 && index4 < local.Length)
+                        local[index4] = techProto2.ItemPoints[index3];
+                    }
+                }
+             */
+            
+            
+            /*
+                int matrixId = LabComponent.matrixIds[0];
+             
+                IL_01b4: ldsfld       int32[] LabComponent::matrixIds
+                IL_01b9: ldc.i4.0
+                IL_01ba: ldelem.i4
+                IL_01bb: stloc.s      matrixId
+             */
+            
+            matcher.MatchForward(true,
+                new CodeMatch(OpCodes.Ldsfld, AccessTools.Field(typeof(LabComponent), nameof(LabComponent.matrixIds))),
+                new CodeMatch(OpCodes.Ldc_I4_0), new CodeMatch(OpCodes.Ldelem_I4), new CodeMatch(OpCodes.Stloc_S));
+
+            var matrixId = matcher.Operand; // get local variable matrixId
+                 
+            /*             
+                int index4 = techProto2.Items[index3] - matrixId;
+             
+                IL_01dd: ldloc.s      techProto2
+                IL_01df: ldfld        int32[] TechProto::Items
+                IL_01e4: ldloc.s      index3
+                IL_01e6: ldelem.i4
+                IL_01e7: ldloc.s      matrixId
+                IL_01e9: sub
+                IL_01ea: stloc.s      index4
+             */
+            
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldloc_S, matrixId));
+            
+            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Call,
+                AccessTools.Method(typeof(ResearchLabPatches), nameof(ChangeMatrixIds))));
+
+            return matcher.InstructionEnumeration();
+        }
+
+
 
         [HarmonyPatch(typeof(FactorySystem), nameof(FactorySystem.GameTickLabResearchMode))]
         [HarmonyTranspiler]
@@ -222,6 +283,28 @@ namespace ProjectGenesis.Patches
         {
             var matcher = new CodeMatcher(instructions, ilGenerator);
 
+            /*
+                if (flag2)
+                {
+                  for (int index2 = 0; index2 < techProto1.Items.Length; ++index2)
+                  {
+                    int num2 = techProto1.Items[index2] - LabComponent.matrixIds[0];
+                    if (num2 >= 0 && num2 < 5)
+                      index1 |= 1 << num2;
+                    else if (num2 == 5)
+                    {
+                      index1 = 32;
+                      break;
+                    }
+                  }
+                }
+                if (index1 > 32)
+                  index1 = 32;
+                if (index1 < 0)
+                  index1 = 0;
+                float num3 = (float) LabComponent.techShaderStates[index1] + 0.2f;
+             */
+            
             matcher.MatchForward(false, new CodeMatch(OpCodes.Ldc_I4_5), new CodeMatch(), new CodeMatch(OpCodes.Ldc_I4_S, (sbyte)32),
                 new CodeMatch(OpCodes.Stloc_S));
 
@@ -235,7 +318,7 @@ namespace ProjectGenesis.Patches
 
             matcher.Advance(5).InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_S, index1),
                 new CodeInstruction(OpCodes.Call,
-                    AccessTools.Method(typeof(ResearchLabPatches), nameof(FactorySystem_GameTickLabResearchMode_Patch_Method))),
+                    AccessTools.Method(typeof(ResearchLabPatches), nameof(FactorySystem_GameTickLabResearchMode_FixTechShaderStates_Method))),
                 new CodeInstruction(OpCodes.Stloc_S, index1), new CodeInstruction(OpCodes.Br_S, brlabel));
 
             return matcher.InstructionEnumeration();
@@ -390,7 +473,7 @@ namespace ProjectGenesis.Patches
             }
         }
 
-        public static int FactorySystem_GameTickLabResearchMode_Patch_Method(int num2, int index1)
+        public static int FactorySystem_GameTickLabResearchMode_FixTechShaderStates_Method(int num2, int index1)
         {
             switch (num2)
             {
