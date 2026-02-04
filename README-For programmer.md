@@ -13,7 +13,7 @@ Construct Real Universe. Then leave a GenesisBook.
 - 群问题答案：戴森球计划
 
 If you have any problems, please contact us in [our Discord server](https://discord.gg/QwMEeaRZZR),
-or open a issue via [github](https://github.com/Awbugl/ProjectGenesis).
+or open an issue via [GitHub](https://github.com/Awbugl/ProjectGenesis).
 
 ## 如何开始
 
