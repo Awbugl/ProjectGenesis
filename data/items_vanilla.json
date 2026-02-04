@@ -6357,7 +6357,6 @@
     "Grade": 1,
     "Upgrades": [
       2302,
-      2315,
       2319
     ],
     "IsEntity": true,
@@ -7056,9 +7055,8 @@
     "SubID": 0,
     "MiningFrom": "",
     "ProduceFrom": "",
-    "Grade": 2,
+    "Grade": 1,
     "Upgrades": [
-      2302,
       2315,
       2319
     ],
@@ -7273,7 +7271,7 @@
     "SubID": 0,
     "MiningFrom": "",
     "ProduceFrom": "",
-    "Grade": 3,
+    "Grade": 2,
     "Upgrades": [],
     "IsEntity": true,
     "CanBuild": true,
