@@ -41,15 +41,5 @@ namespace ProjectGenesis.Patches
                 }
             }
         }
-
-        /// <summary>
-        /// Ignore CombatCutscene
-        /// </summary>
-        [HarmonyPatch(typeof(UIGoalSetting), nameof(UIGoalSetting.OnGoalButtonClick))]
-        [HarmonyPrefix]
-        public static void UIGoalSetting_OnGoalButtonClick()
-        {
-            UIGalaxySelect.isPlayCutScene = false;
-        }
     }
 }
