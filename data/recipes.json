@@ -864,18 +864,18 @@
     "IconTag": "rsmxgx",
     "Type": 2,
     "GridIndex": 1506,
-    "Time": 60,
+    "Time": 120,
     "Input": [
       1011
     ],
     "InCounts": [
-      2
+      1
     ],
     "Output": [
       1123
     ],
     "OutCounts": [
-      1
+      2
     ],
     "Explicit": true,
     "Handcraft": false,
@@ -889,12 +889,12 @@
     "IconTag": "",
     "Type": 2,
     "GridIndex": 1407,
-    "Time": 60,
+    "Time": 120,
     "Input": [
       1123
     ],
     "InCounts": [
-      2
+      4
     ],
     "Output": [
       1124
@@ -952,7 +952,7 @@
       1124
     ],
     "OutCounts": [
-      2
+      1
     ],
     "Explicit": true,
     "Handcraft": false,
