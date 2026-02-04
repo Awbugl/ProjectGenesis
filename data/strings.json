@@ -1211,8 +1211,8 @@
   },
   {
     "Name": "R石墨烯（高效）",
-    "ZHCN": "找到可燃冰矿，制造石墨烯就会变得容易许多。\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作。</color>",
-    "ENUS": "It will be a lot easier to produce graphene if you can find combustible ice minerals.\n<color=\"#FD965ECC\">Will not stop working until all products are accumulated.</color>"
+    "ZHCN": "找到可燃冰矿，制造石墨烯就会变得容易许多。",
+    "ENUS": "It will be a lot easier to produce graphene if you can find combustible ice minerals."
   },
   {
     "Name": "处理器（高效）",

@@ -74,7 +74,6 @@ namespace ProjectGenesis.Utils
 
         internal const int R等离子精炼 = 16,
                            R石墨烯 = 31,
-                           R高效石墨烯 = 32,
                            R硅石筛选 = 34,
                            R重氢 = 40,
                            R三元精金 = 57,
