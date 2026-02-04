@@ -8,38 +8,48 @@ namespace ProjectGenesis.Patches
 {
     public static class InitialRecipePatches
     {
-        private static Dictionary<int, RecipeExecuteData> _originRecipeExecuteData;
+        private static Dictionary<int, RecipeExecuteData> _originRecipeExecuteData, _modifiedRecipeExecuteData;
+        private static bool _originInitialized, _modifiedInitialized;
 
-        private static bool _initialized;
-
-        [HarmonyPatch(typeof(GameData), nameof(GameData.SetForNewGame))]
+        [HarmonyPatch(typeof(GameMain), nameof(GameMain.Start))]
         [HarmonyPrefix]
-        public static void SetRecipeForNewGame()
-        {
-            if (DSPGame.LoadDemoIndex > 0 || DSPGame.IsMenuDemo) return;
-
-            RecipeProto.InitRecipeItems();
-        }
-
-        [HarmonyPatch(typeof(GameSave), nameof(GameSave.LoadCurrentGameInResource))]
-        [HarmonyPrefix]
-        public static void LoadCurrentGameInResource()
+        public static void SetRecipeForGame()
         {
             if (DSPGame.LoadDemoIndex > 0 || DSPGame.IsMenuDemo)
             {
-                if (_initialized)
+                if (_originInitialized)
+                {
                     RecipeProto.recipeExecuteData = _originRecipeExecuteData;
+                }
                 else
-                    SaveOriginRecipeExecuteData();
+                {
+                    _originRecipeExecuteData = RecipeProto.recipeExecuteData ?? throw new ArgumentNullException();
+                    _originInitialized = true;
+                }
+            }
+            else
+            {
+                if (_modifiedInitialized)
+                {
+                    RecipeProto.recipeExecuteData = _modifiedRecipeExecuteData;
+                }
+                else
+                {
+                    RecipeProto.InitRecipeItems();
+                    _modifiedRecipeExecuteData = RecipeProto.recipeExecuteData;
+                    _modifiedInitialized = true;
+                }
             }
         }
 
-        private static void SaveOriginRecipeExecuteData()
+        /// <summary>
+        /// Ignore CombatCutscene
+        /// </summary>
+        [HarmonyPatch(typeof(UIGoalSetting), nameof(UIGoalSetting.OnGoalButtonClick))]
+        [HarmonyPrefix]
+        public static void UIGoalSetting_OnGoalButtonClick()
         {
-            if (_initialized) return;
-
-            _originRecipeExecuteData = RecipeProto.recipeExecuteData ?? throw new ArgumentNullException();
-            _initialized = true;
+            UIGalaxySelect.isPlayCutScene = false;
         }
     }
 }
