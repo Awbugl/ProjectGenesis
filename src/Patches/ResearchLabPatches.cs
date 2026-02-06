@@ -352,13 +352,8 @@ namespace ProjectGenesis.Patches
             return matcher.InstructionEnumeration();
         }
 
-        [HarmonyPatch(typeof(PlanetFactory), nameof(PlanetFactory.InsertInto),
-            new[] {
-                typeof(int), typeof(int), typeof(int), typeof(byte), typeof(byte), typeof(byte),
-            }, new[] {
-                ArgumentType.Normal, ArgumentType.Normal, ArgumentType.Normal, ArgumentType.Normal, ArgumentType.Normal,
-                ArgumentType.Out,
-            })]
+        [HarmonyPatch(typeof(PlanetFactory), nameof(PlanetFactory.InsertInto), new[] { typeof(int), typeof(int), typeof(int), typeof(byte), typeof(byte), typeof(byte), }, new[] { ArgumentType.Normal, ArgumentType.Normal, ArgumentType.Normal, ArgumentType.Normal, ArgumentType.Normal, ArgumentType.Out, })]
+        [HarmonyPatch(typeof(PlanetFactory), nameof(PlanetFactory.InsertInto), new[] { typeof(uint), typeof(int), typeof(int), typeof(byte), typeof(byte), typeof(byte), }, new[] { ArgumentType.Normal, ArgumentType.Normal, ArgumentType.Normal, ArgumentType.Normal, ArgumentType.Normal, ArgumentType.Out, })]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> PlanetFactory_InsertInto_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
