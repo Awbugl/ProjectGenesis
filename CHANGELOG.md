@@ -1,3 +1,16 @@
+- v3.2.0-alpha1.6 (Experimental 0.3.20006)
+  + 调整了`石墨烯（高效）`、`碳纳米管`、`碳纳米管（高效）`配方（影响存档）
+  + 修复了研究站工作不正常的问题
+  + 整合 `AssemblerUI` mod的制造台显示各产物产出/消耗速度的功能
+
+  + Adjusted `Graphene (advanced)` `Nanotube` `Nanotube (advanced)` recipe (affects save)
+  + Fixed issue that research lab work improperly
+  + Integrate the feature from `AssemblerUI` mod that displays production/consumption speed for each product in the assembler window
+
+<details>
+  <summary>点击展开日志 | Click to view all </summary>
+
+
 - v3.2.0-alpha1.5 (Experimental 0.3.20005)
   + 调整了`石墨烯（高效）`配方（影响存档）
   + 修复了重新加载存档时配方数据混乱的bug
@@ -6,9 +19,6 @@
   + Adjusted `Graphene (advanced)` recipe (affects save)
   + Fixed the issue of recipe data scrambled after loading saves
   + Fixed issue that research lab work improperly
-
-<details>
-  <summary>点击展开日志 | Click to view all </summary>
 
 
 - v3.2.0-alpha1.4 (Experimental 0.3.20004)
