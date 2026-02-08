@@ -29,10 +29,10 @@ namespace ProjectGenesis.Patches
                 if (tabData == null) continue;
 
                 GameObject gameObject = Object.Instantiate(TabSystem.GetTabPrefab(), __instance.pickerTrans, false);
-                ((RectTransform)gameObject.transform).anchoredPosition = new Vector2((tabData.tabIndex + 4) * 70 - 54, -75f);
+                ((RectTransform)gameObject.transform).anchoredPosition = new Vector2((tabData.tabIndex + 5) * 70 - 54, -75f);
                 UITabButton component = gameObject.GetComponent<UITabButton>();
                 Sprite newIcon = Resources.Load<Sprite>(tabData.tabIconPath);
-                component.Init(newIcon, tabData.tabName, tabData.tabIndex + 5, __instance.OnTypeButtonClick);
+                component.Init(newIcon, tabData.tabName, tabData.tabIndex + 6, __instance.OnTypeButtonClick);
                 _tabs.Add(component);
             }
 
