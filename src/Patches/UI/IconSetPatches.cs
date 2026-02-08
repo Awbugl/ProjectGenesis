@@ -48,6 +48,8 @@ namespace ProjectGenesis.Patches
             {
                 case 2904:
                 case 3508:
+                case 3509:
+                case 3510:
                     return false;
             }
             
