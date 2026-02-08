@@ -24,6 +24,8 @@ namespace ProjectGenesis.Compatibility
             resourceTypes.Add((EVeinType)16);
             resourceTypes.Add((EVeinType)17);
             resourceTypes.Add((EVeinType)18);
+            resourceTypes.Add((EVeinType)19);
+            resourceTypes.Add((EVeinType)20);
         }
     }
 }

@@ -39,11 +39,15 @@ namespace ProjectGenesis.Compatibility
             GSVeinType.saneVeinTypes["Radioactive"] = (EVeinType)16;
             GSVeinType.saneVeinTypes["Tungsten"] = (EVeinType)17;
             GSVeinType.saneVeinTypes["Sulfur"] = (EVeinType)18;
+            GSVeinType.saneVeinTypes["Salt"] = (EVeinType)19;
+            GSVeinType.saneVeinTypes["Tholin"] = (EVeinType)20;
 
             GSVeinType.insaneVeinTypes[(EVeinType)15] = "Aluminum";
             GSVeinType.insaneVeinTypes[(EVeinType)16] = "Radioactive";
             GSVeinType.insaneVeinTypes[(EVeinType)17] = "Tungsten";
             GSVeinType.insaneVeinTypes[(EVeinType)18] = "Sulfur";
+            GSVeinType.insaneVeinTypes[(EVeinType)19] = "Salt";
+            GSVeinType.insaneVeinTypes[(EVeinType)20] = "Tholin";
 
             HarmonyPatch.Patch(AccessTools.Method(assembly.GetType("GalacticScale.GS2"), "SetPlanetTheme"), null,
                 new HarmonyMethod(typeof(GalacticScale), nameof(SetPlanetTheme_Postfix)),
@@ -54,49 +58,60 @@ namespace ProjectGenesis.Compatibility
 
             Type VeinAlgorithms = assembly.GetType("GalacticScale.VeinAlgorithms");
 
-            HarmonyPatch.Patch(AccessTools.Method(VeinAlgorithms, "DisableVeins"), null, null,
-                new HarmonyMethod(typeof(GalacticScale), nameof(DisableVeins_Transpiler)));
+            if (VeinAlgorithms != null)
+            {
+                HarmonyPatch.Patch(AccessTools.Method(VeinAlgorithms, "DisableVeins"), null, null,
+                    new HarmonyMethod(typeof(GalacticScale), nameof(DisableVeins_Transpiler)));
 
-            HarmonyPatch.Patch(AccessTools.Method(VeinAlgorithms, "DistributeVeinTypes"),
-                new HarmonyMethod(typeof(GalacticScale), nameof(DistributeVeinTypes_Prefix)));
+                HarmonyPatch.Patch(AccessTools.Method(VeinAlgorithms, "DistributeVeinTypes"),
+                    new HarmonyMethod(typeof(GalacticScale), nameof(DistributeVeinTypes_Prefix)));
 
-            HarmonyPatch.Patch(AccessTools.Method(VeinAlgorithms, "GenBirthPoints"), null,
-                new HarmonyMethod(typeof(GalacticScale), nameof(GenBirthPoints_Postfix)));
+                HarmonyPatch.Patch(AccessTools.Method(VeinAlgorithms, "GenBirthPoints"), null,
+                    new HarmonyMethod(typeof(GalacticScale), nameof(GenBirthPoints_Postfix)));
 
-            HarmonyPatch.Patch(AccessTools.Method(VeinAlgorithms, "CalculateVectorsGS2"), null,
-                new HarmonyMethod(typeof(GalacticScale), nameof(CalculateVectorsGS2_Postfix)));
+                HarmonyPatch.Patch(AccessTools.Method(VeinAlgorithms, "CalculateVectorsGS2"), null,
+                    new HarmonyMethod(typeof(GalacticScale), nameof(CalculateVectorsGS2_Postfix)));
 
-            HarmonyPatch.Patch(AccessTools.Method(VeinAlgorithms, "InitBirthVeinVectors"),
-                new HarmonyMethod(typeof(GalacticScale), nameof(InitBirthVeinVectors_Postfix)));
+                HarmonyPatch.Patch(AccessTools.Method(VeinAlgorithms, "InitBirthVeinVectors"),
+                    new HarmonyMethod(typeof(GalacticScale), nameof(InitBirthVeinVectors_Postfix)));
 
-            HarmonyPatch.Patch(AccessTools.PropertyGetter(assembly.GetType("GalacticScale.GS2MainSettings"), "VeinTips"), null, null,
-                new HarmonyMethod(typeof(GalacticScale), nameof(GS2MainSettings_VeinTips_Getter_Transpiler)));
+                HarmonyPatch.Patch(AccessTools.PropertyGetter(assembly.GetType("GalacticScale.GS2MainSettings"), "VeinTips"), null, null,
+                    new HarmonyMethod(typeof(GalacticScale), nameof(GS2MainSettings_VeinTips_Getter_Transpiler)));
+            }
 
             MethodInfo OnPlanetDataSet7Prefix =
                 AccessTools.Method(assembly.GetType("GalacticScale.PatchOnUIPlanetDetail"), "OnPlanetDataSet7Prefix");
 
-            HarmonyPatch.Patch(OnPlanetDataSet7Prefix, null, null,
-                new HarmonyMethod(typeof(GalacticScale), nameof(OnPlanetDataSet_Transpiler)));
+            if (OnPlanetDataSet7Prefix != null)
+            {
+                HarmonyPatch.Patch(OnPlanetDataSet7Prefix, null, null,
+                    new HarmonyMethod(typeof(GalacticScale), nameof(OnPlanetDataSet_Transpiler)));
 
-            HarmonyPatch.Patch(OnPlanetDataSet7Prefix, null, null,
-                new HarmonyMethod(typeof(UIDetailPatches), nameof(UIDetailPatches.OnDataSet_ChangeHighlightWaterId_Transpiler)));
+                HarmonyPatch.Patch(OnPlanetDataSet7Prefix, null, null,
+                    new HarmonyMethod(typeof(UIDetailPatches), nameof(UIDetailPatches.OnDataSet_ChangeHighlightWaterId_Transpiler)));
 
-            HarmonyPatch.Patch(OnPlanetDataSet7Prefix, null, null,
-                new HarmonyMethod(typeof(GalacticScale), nameof(OnPlanetDataSet_ChangeVeinData_Transpiler)));
+                HarmonyPatch.Patch(OnPlanetDataSet7Prefix, null, null,
+                    new HarmonyMethod(typeof(GalacticScale), nameof(OnPlanetDataSet_ChangeVeinData_Transpiler)));
+            }
 
             MethodInfo OnStarDataSet2 = AccessTools.Method(assembly.GetType("GalacticScale.PatchOnUIStarDetail"), "OnStarDataSet2");
 
-            HarmonyPatch.Patch(OnStarDataSet2, null, null,
-                new HarmonyMethod(typeof(UIDetailPatches), nameof(UIDetailPatches.OnDataSet_ChangeHighlightWaterId_Transpiler)));
+            if (OnStarDataSet2 != null)
+            {
+                HarmonyPatch.Patch(OnStarDataSet2, null, null,
+                    new HarmonyMethod(typeof(UIDetailPatches), nameof(UIDetailPatches.OnDataSet_ChangeHighlightWaterId_Transpiler)));
 
-            HarmonyPatch.Patch(OnStarDataSet2, null, null,
-                new HarmonyMethod(typeof(UIDetailPatches), nameof(UIDetailPatches.UIStarDetail_OnStarDataSet_ActiveGasItems_Transpiler)));
+                HarmonyPatch.Patch(OnStarDataSet2, null, null,
+                    new HarmonyMethod(typeof(UIDetailPatches),
+                        nameof(UIDetailPatches.UIStarDetail_OnStarDataSet_ActiveGasItems_Transpiler)));
 
-            HarmonyPatch.Patch(OnStarDataSet2, null, null,
-                new HarmonyMethod(typeof(UIDetailPatches), nameof(UIDetailPatches.UIPlanetDetail_OnPlanetDataSet_FixCollectorSpeed_Transpiler)));
+                HarmonyPatch.Patch(OnStarDataSet2, null, null,
+                    new HarmonyMethod(typeof(UIDetailPatches),
+                        nameof(UIDetailPatches.UIPlanetDetail_OnPlanetDataSet_FixCollectorSpeed_Transpiler)));
 
-            HarmonyPatch.Patch(OnStarDataSet2, null, null,
-                new HarmonyMethod(typeof(GalacticScale), nameof(OnStarDataSet_ChangeVeinData_Transpiler)));
+                HarmonyPatch.Patch(OnStarDataSet2, null, null,
+                    new HarmonyMethod(typeof(GalacticScale), nameof(OnStarDataSet_ChangeVeinData_Transpiler)));
+            }
         }
 
         public static IEnumerable<CodeInstruction> SetPlanetTheme_Transpiler(IEnumerable<CodeInstruction> instructions)

@@ -42,6 +42,8 @@ namespace ProjectGenesis
             veinType.AddEnumField("Radioactive", 16, fieldAttributes);
             veinType.AddEnumField("Tungsten", 17, fieldAttributes);
             veinType.AddEnumField("Sulfur", 18, fieldAttributes);
+            veinType.AddEnumField("Salt", 19, fieldAttributes);
+            veinType.AddEnumField("Tholin", 20, fieldAttributes);
 
             assembly.AddTypeField("PlanetData", "birthResourcePoint0", "birthResourcePoint2");
             assembly.AddTypeField("PlanetData", "birthResourcePoint0", "birthResourcePoint3");
