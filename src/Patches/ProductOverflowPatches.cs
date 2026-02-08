@@ -135,18 +135,20 @@ namespace ProjectGenesis.Patches
         {
             var counter = 0;
 
-            int productsLength = component.recipeExecuteData.products.Length;
+            RecipeExecuteData executeData = component.recipeExecuteData;
+
+            int productsLength = executeData.products.Length;
 
             for (var index = 0; index < productsLength; ++index)
             {
-                if (component.produced[index] > component.recipeExecuteData.productCounts[index] * maxproduct) ++counter;
+                if (component.produced[index] > executeData.productCounts[index] * maxproduct) ++counter;
             }
 
             if (counter == productsLength) return false;
 
             for (var index = 0; index < productsLength; ++index)
             {
-                int productCount = component.recipeExecuteData.productCounts[index];
+                int productCount = executeData.productCounts[index];
                 int componentProductCount = productCount * maxproduct;
 
                 ref int intPtr = ref component.produced[index];
@@ -155,7 +157,7 @@ namespace ProjectGenesis.Patches
                 {
                     intPtr = componentProductCount;
 
-                    lock (productRegister) productRegister[component.recipeExecuteData.products[index]] -= productCount;
+                    lock (productRegister) productRegister[executeData.products[index]] -= productCount;
                 }
             }
 

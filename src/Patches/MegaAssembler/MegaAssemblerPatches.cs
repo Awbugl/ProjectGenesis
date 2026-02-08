@@ -179,9 +179,11 @@ namespace ProjectGenesis.Patches
 
                     if (index2 >= 0)
                     {
-                        if (index2 < __instance.recipeExecuteData.products.Length)
+                        RecipeExecuteData executeData = __instance.recipeExecuteData;
+
+                        if (index2 < executeData.products.Length)
                         {
-                            itemId = __instance.recipeExecuteData.products[index2];
+                            itemId = executeData.products[index2];
                             int produced = __instance.produced[index2];
 
                             if (itemId > 0 && produced > 0)
@@ -193,11 +195,11 @@ namespace ProjectGenesis.Patches
                         }
                         else
                         {
-                            int index3 = index2 - __instance.recipeExecuteData.products.Length;
+                            int index3 = index2 - executeData.products.Length;
 
-                            if (index3 < __instance.recipeExecuteData.requires.Length)
+                            if (index3 < executeData.requires.Length)
                             {
-                                itemId = __instance.recipeExecuteData.requires[index3];
+                                itemId = executeData.requires[index3];
                                 int served = __instance.served[index3];
 
                                 if (itemId > 0 && served > 0)
@@ -359,20 +361,22 @@ namespace ProjectGenesis.Patches
 
                     int itemId = cargoPath.TryPickItemAtRear(__instance.needs, out int needIdx, out byte stack, out byte inc);
 
+                    RecipeExecuteData executeData = __instance.recipeExecuteData;
+
                     if (needIdx >= 0 && itemId > 0 && __instance.needs[needIdx] == itemId)
                     {
                         __instance.served[needIdx] += stack;
                         __instance.incServed[needIdx] += inc;
-                        slotdata[index].storageIdx = __instance.recipeExecuteData.products.Length + needIdx + 1;
+                        slotdata[index].storageIdx = executeData.products.Length + needIdx + 1;
                     }
 
-                    for (var i = 0; i < __instance.recipeExecuteData.products.Length; i++)
+                    for (var i = 0; i < executeData.products.Length; i++)
                     {
                         if (__instance.produced[i] >= 50) continue;
 
-                        itemId = traffic.TryPickItemAtRear(beltId, __instance.recipeExecuteData.products[i], null, out stack, out _);
+                        itemId = traffic.TryPickItemAtRear(beltId, executeData.products[i], null, out stack, out _);
 
-                        if (__instance.recipeExecuteData.products[i] == itemId)
+                        if (executeData.products[i] == itemId)
                         {
                             __instance.produced[i] += stack;
                             slotdata[index].storageIdx = i + 1;

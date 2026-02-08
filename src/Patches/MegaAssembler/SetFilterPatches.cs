@@ -93,8 +93,9 @@ namespace ProjectGenesis.Patches
 
             if (assemblerComponent.recipeId > 0)
             {
-                filterItems.AddRange(assemblerComponent.recipeExecuteData.products);
-                filterItems.AddRange(assemblerComponent.recipeExecuteData.requires);
+                RecipeExecuteData executeData = assemblerComponent.recipeExecuteData;
+                filterItems.AddRange(executeData.products);
+                filterItems.AddRange(executeData.requires);
             }
             else { filterItems.AddRange(Enumerable.Repeat(0, 6)); }
 

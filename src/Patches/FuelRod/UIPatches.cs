@@ -171,13 +171,24 @@ namespace ProjectGenesis.Patches
             }
         }
 
-        [HarmonyPatch(typeof(PlanetFactory), nameof(PlanetFactory.PickFrom),
-            new[] {
-                typeof(int), typeof(int), typeof(int), typeof(int[]), typeof(byte), typeof(byte),
-            }, new[] {
-                ArgumentType.Normal, ArgumentType.Normal, ArgumentType.Normal, ArgumentType.Normal, ArgumentType.Out,
-                ArgumentType.Out,
-            })]
+        [HarmonyPatch(typeof(PlanetFactory), nameof(PlanetFactory.PickFrom), new[]
+        {
+            typeof(int), typeof(int), typeof(int), typeof(int[]),
+            typeof(byte), typeof(byte),
+        }, new[]
+        {
+            ArgumentType.Normal, ArgumentType.Normal, ArgumentType.Normal, ArgumentType.Normal,
+            ArgumentType.Out, ArgumentType.Out,
+        })]
+        [HarmonyPatch(typeof(PlanetFactory), nameof(PlanetFactory.PickFrom), new[]
+        {
+            typeof(uint), typeof(int), typeof(int), typeof(int[]),
+            typeof(byte), typeof(byte),
+        }, new[]
+        {
+            ArgumentType.Normal, ArgumentType.Normal, ArgumentType.Normal, ArgumentType.Normal,
+            ArgumentType.Out, ArgumentType.Out,
+        })]
         [HarmonyPostfix]
         public static void PlanetFactory_PickFrom_Postfix(PlanetFactory __instance, int entityId, int offset, int filter, int[] needs,
             ref byte stack, ref byte inc, ref int __result)
@@ -203,13 +214,24 @@ namespace ProjectGenesis.Patches
             }
         }
 
-        [HarmonyPatch(typeof(PlanetFactory), nameof(PlanetFactory.InsertInto),
-            new[] {
-                typeof(int), typeof(int), typeof(int), typeof(byte), typeof(byte), typeof(byte),
-            }, new[] {
-                ArgumentType.Normal, ArgumentType.Normal, ArgumentType.Normal, ArgumentType.Normal, ArgumentType.Normal,
-                ArgumentType.Out,
-            })]
+        [HarmonyPatch(typeof(PlanetFactory), nameof(PlanetFactory.InsertInto), new[]
+        {
+            typeof(int), typeof(int), typeof(int), typeof(byte),
+            typeof(byte), typeof(byte),
+        }, new[]
+        {
+            ArgumentType.Normal, ArgumentType.Normal, ArgumentType.Normal, ArgumentType.Normal,
+            ArgumentType.Normal, ArgumentType.Out,
+        })]
+        [HarmonyPatch(typeof(PlanetFactory), nameof(PlanetFactory.InsertInto), new[]
+        {
+            typeof(uint), typeof(int), typeof(int), typeof(byte),
+            typeof(byte), typeof(byte),
+        }, new[]
+        {
+            ArgumentType.Normal, ArgumentType.Normal, ArgumentType.Normal, ArgumentType.Normal,
+            ArgumentType.Normal, ArgumentType.Out,
+        })]
         [HarmonyPostfix]
         public static void PlanetFactory_InsertInto_Postfix(PlanetFactory __instance, int entityId, int itemId, ref byte itemCount,
             ref byte itemInc, ref byte remainInc, ref int __result)
@@ -246,12 +268,10 @@ namespace ProjectGenesis.Patches
             }
         }
 
+        [HarmonyPatch(typeof(PowerGeneratorComponent), nameof(PowerGeneratorComponent.PickFuelFrom), new[] { typeof(int), typeof(int), },
+            new[] { ArgumentType.Normal, ArgumentType.Out, })]
         [HarmonyPatch(typeof(PowerGeneratorComponent), nameof(PowerGeneratorComponent.PickFuelFrom),
-            new[] {
-                typeof(int), typeof(int),
-            }, new[] {
-                ArgumentType.Normal, ArgumentType.Out,
-            })]
+            new[] { typeof(int), typeof(int), typeof(int), }, new[] { ArgumentType.Normal, ArgumentType.Normal, ArgumentType.Out, })]
         [HarmonyPostfix]
         public static void PowerGeneratorComponent_PickFuelFrom_Postfix(ref PowerGeneratorComponent __instance, int filter, ref int inc,
             ref int __result)
@@ -331,13 +351,24 @@ namespace ProjectGenesis.Patches
         }
 
         [HarmonyPatch(typeof(PlanetFactory), nameof(PlanetFactory.EntityFastFillIn))]
-        [HarmonyPatch(typeof(PlanetFactory), nameof(PlanetFactory.InsertInto),
-            new[] {
-                typeof(int), typeof(int), typeof(int), typeof(byte), typeof(byte), typeof(byte),
-            }, new[] {
-                ArgumentType.Normal, ArgumentType.Normal, ArgumentType.Normal, ArgumentType.Normal, ArgumentType.Normal,
-                ArgumentType.Out,
-            })]
+        [HarmonyPatch(typeof(PlanetFactory), nameof(PlanetFactory.InsertInto), new[]
+        {
+            typeof(int), typeof(int), typeof(int), typeof(byte),
+            typeof(byte), typeof(byte),
+        }, new[]
+        {
+            ArgumentType.Normal, ArgumentType.Normal, ArgumentType.Normal, ArgumentType.Normal,
+            ArgumentType.Normal, ArgumentType.Out,
+        })]
+        [HarmonyPatch(typeof(PlanetFactory), nameof(PlanetFactory.InsertInto), new[]
+        {
+            typeof(uint), typeof(int), typeof(int), typeof(byte),
+            typeof(byte), typeof(byte),
+        }, new[]
+        {
+            ArgumentType.Normal, ArgumentType.Normal, ArgumentType.Normal, ArgumentType.Normal,
+            ArgumentType.Normal, ArgumentType.Out,
+        })]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> PlanetFactory_InsertInto_Transpiler(IEnumerable<CodeInstruction> instructions)
         {

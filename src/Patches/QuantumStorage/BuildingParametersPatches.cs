@@ -7,21 +7,21 @@ namespace ProjectGenesis.Patches
     public static partial class QuantumStoragePatches
     {
         [HarmonyPatch(typeof(BuildingParameters), nameof(BuildingParameters.ApplyPrebuildParametersToEntity))]
-        [HarmonyPostfix]
-        public static void BuildingParameters_ApplyPrebuildParametersToEntity_Postfix(int entityId, int[] parameters, PlanetFactory factory)
+        [HarmonyPrefix]
+        public static bool BuildingParameters_ApplyPrebuildParametersToEntity_Postfix(int entityId, int[] parameters, PlanetFactory factory)
         {
-            if (entityId > 0 && factory.entityPool[entityId].id == entityId)
-            {
-                int storageId = factory.entityPool[entityId].storageId;
-                if (storageId == 0) return;
+            if (entityId <= 0 || factory.entityPool[entityId].id != entityId) return false;
 
-                if (parameters != null && parameters.Length > 2)
-                {
-                    StorageComponent storageComponent = factory.factoryStorage.storagePool[storageId];
+            int storageId = factory.entityPool[entityId].storageId;
+            if (storageId == 0) return false;
 
-                    if (storageComponent.size == QuantumStorageSize) QuantumStorageOrbitChange(factory.planetId, storageId, parameters[2]);
-                }
-            }
+            if (parameters == null || parameters.Length <= 2) return false;
+
+            StorageComponent storageComponent = factory.factoryStorage.storagePool[storageId];
+            if (storageComponent.size != QuantumStorageSize) return true;
+
+            QuantumStorageOrbitChange(factory.planetId, storageId, parameters[2]);
+            return false;
         }
 
         [HarmonyPatch(typeof(BuildingParameters), nameof(BuildingParameters.FromParamsArray))]
@@ -65,21 +65,22 @@ namespace ProjectGenesis.Patches
         }
 
         [HarmonyPatch(typeof(BuildingParameters), nameof(BuildingParameters.PasteToFactoryObject))]
-        [HarmonyPostfix]
-        public static void BuildingParameters_PasteToFactoryObject_Postfix(ref BuildingParameters __instance, int objectId,
+        [HarmonyPrefix]
+        public static bool BuildingParameters_PasteToFactoryObject_Postfix(ref BuildingParameters __instance, int objectId,
             PlanetFactory factory)
         {
-            if (__instance.type != BuildingType.Storage) return;
+            if (__instance.type != BuildingType.Storage) return true;
 
-            if (objectId > 0 && factory.entityPool[objectId].id == objectId)
-            {
-                int storageId = factory.entityPool[objectId].storageId;
-                if (storageId == 0) return;
+            if (objectId <= 0 || factory.entityPool[objectId].id != objectId) return false;
 
-                StorageComponent storageComponent = factory.factoryStorage.storagePool[storageId];
+            int storageId = factory.entityPool[objectId].storageId;
+            if (storageId == 0) return false;
 
-                if (storageComponent.size == QuantumStorageSize) QuantumStorageOrbitChange(factory.planetId, storageId, __instance.mode2);
-            }
+            StorageComponent storageComponent = factory.factoryStorage.storagePool[storageId];
+            if (storageComponent.size != QuantumStorageSize) return true;
+
+            QuantumStorageOrbitChange(factory.planetId, storageId, __instance.mode2);
+            return false;
         }
     }
 }

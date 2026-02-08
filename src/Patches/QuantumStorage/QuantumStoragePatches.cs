@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Reflection.Emit;
 using System.Threading;
 using HarmonyLib;
@@ -14,16 +13,22 @@ namespace ProjectGenesis.Patches
         private static readonly Mutex QuantumStorageMutex = new Mutex(-1);
 
         [HarmonyPatch(typeof(StorageComponent), nameof(StorageComponent.TakeTailItems),
-            new[] {
+            new[]
+            {
                 typeof(int), typeof(int), typeof(int), typeof(bool),
-            }, new[] {
+            }, new[]
+            {
                 ArgumentType.Ref, ArgumentType.Ref, ArgumentType.Out, ArgumentType.Normal,
             })]
         [HarmonyPatch(typeof(StorageComponent), nameof(StorageComponent.TakeTailItems),
-            new[] {
-                typeof(int), typeof(int), typeof(int[]), typeof(int), typeof(bool),
-            }, new[] {
-                ArgumentType.Ref, ArgumentType.Ref, ArgumentType.Normal, ArgumentType.Out, ArgumentType.Normal,
+            new[]
+            {
+                typeof(int), typeof(int), typeof(int[]), typeof(int),
+                typeof(bool),
+            }, new[]
+            {
+                ArgumentType.Ref, ArgumentType.Ref, ArgumentType.Normal, ArgumentType.Out,
+                ArgumentType.Normal,
             })]
         [HarmonyPatch(typeof(StorageComponent), nameof(StorageComponent.TakeTailItemsFiltered))]
         [HarmonyPriority(Priority.VeryHigh)]
@@ -34,16 +39,22 @@ namespace ProjectGenesis.Patches
         }
 
         [HarmonyPatch(typeof(StorageComponent), nameof(StorageComponent.TakeTailItems),
-            new[] {
+            new[]
+            {
                 typeof(int), typeof(int), typeof(int), typeof(bool),
-            }, new[] {
+            }, new[]
+            {
                 ArgumentType.Ref, ArgumentType.Ref, ArgumentType.Out, ArgumentType.Normal,
             })]
         [HarmonyPatch(typeof(StorageComponent), nameof(StorageComponent.TakeTailItems),
-            new[] {
-                typeof(int), typeof(int), typeof(int[]), typeof(int), typeof(bool),
-            }, new[] {
-                ArgumentType.Ref, ArgumentType.Ref, ArgumentType.Normal, ArgumentType.Out, ArgumentType.Normal,
+            new[]
+            {
+                typeof(int), typeof(int), typeof(int[]), typeof(int),
+                typeof(bool),
+            }, new[]
+            {
+                ArgumentType.Ref, ArgumentType.Ref, ArgumentType.Normal, ArgumentType.Out,
+                ArgumentType.Normal,
             })]
         [HarmonyPatch(typeof(StorageComponent), nameof(StorageComponent.TakeTailItemsFiltered))]
         [HarmonyPostfix]
@@ -151,22 +162,44 @@ namespace ProjectGenesis.Patches
             if (package == null || package.size == QuantumStorageSize) __result = true;
         }
 
-        [HarmonyPatch(typeof(PlanetFactory), nameof(PlanetFactory.InsertInto),
-            new[] {
-                typeof(int), typeof(int), typeof(int), typeof(byte), typeof(byte), typeof(byte),
-            }, new[] {
-                ArgumentType.Normal, ArgumentType.Normal, ArgumentType.Normal, ArgumentType.Normal, ArgumentType.Normal,
-                ArgumentType.Out,
-            })]
+        [HarmonyPatch(typeof(PlanetFactory), nameof(PlanetFactory.InsertInto), new[]
+        {
+            typeof(int), typeof(int), typeof(int), typeof(byte),
+            typeof(byte), typeof(byte),
+        }, new[]
+        {
+            ArgumentType.Normal, ArgumentType.Normal, ArgumentType.Normal, ArgumentType.Normal,
+            ArgumentType.Normal, ArgumentType.Out,
+        })]
+        [HarmonyPatch(typeof(PlanetFactory), nameof(PlanetFactory.InsertInto), new[]
+        {
+            typeof(uint), typeof(int), typeof(int), typeof(byte),
+            typeof(byte), typeof(byte),
+        }, new[]
+        {
+            ArgumentType.Normal, ArgumentType.Normal, ArgumentType.Normal, ArgumentType.Normal,
+            ArgumentType.Normal, ArgumentType.Out,
+        })]
         [HarmonyPatch(typeof(PlanetFactory), nameof(PlanetFactory.InsertIntoStorage))]
         [HarmonyPatch(typeof(PlanetFactory), nameof(PlanetFactory.InsertCargoIntoStorage))]
-        [HarmonyPatch(typeof(PlanetFactory), nameof(PlanetFactory.PickFrom),
-            new[] {
-                typeof(int), typeof(int), typeof(int), typeof(int[]), typeof(byte), typeof(byte),
-            }, new[] {
-                ArgumentType.Normal, ArgumentType.Normal, ArgumentType.Normal, ArgumentType.Normal, ArgumentType.Out,
-                ArgumentType.Out,
-            })]
+        [HarmonyPatch(typeof(PlanetFactory), nameof(PlanetFactory.PickFrom), new[]
+        {
+            typeof(int), typeof(int), typeof(int), typeof(int[]),
+            typeof(byte), typeof(byte),
+        }, new[]
+        {
+            ArgumentType.Normal, ArgumentType.Normal, ArgumentType.Normal, ArgumentType.Normal,
+            ArgumentType.Out, ArgumentType.Out,
+        })]
+        [HarmonyPatch(typeof(PlanetFactory), nameof(PlanetFactory.PickFrom), new[]
+        {
+            typeof(uint), typeof(int), typeof(int), typeof(int[]),
+            typeof(byte), typeof(byte),
+        }, new[]
+        {
+            ArgumentType.Normal, ArgumentType.Normal, ArgumentType.Normal, ArgumentType.Normal,
+            ArgumentType.Out, ArgumentType.Out,
+        })]
         [HarmonyPatch(typeof(PlanetFactory), nameof(PlanetFactory.PickFromStorage))]
         [HarmonyPatch(typeof(PlanetFactory), nameof(PlanetFactory.PickFromStorageFiltered))]
         [HarmonyTranspiler]

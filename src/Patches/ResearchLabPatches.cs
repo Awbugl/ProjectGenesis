@@ -122,13 +122,6 @@ namespace ProjectGenesis.Patches
         {
             var matcher = new CodeMatcher(instructions);
 
-            matcher.MatchForward(true, new CodeMatch(OpCodes.Ldloc_0),
-                new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(LabComponent), nameof(LabComponent.time))));
-
-            matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_0),
-                new CodeInstruction(OpCodes.Call,
-                    AccessTools.Method(typeof(ResearchLabPatches), nameof(UILabWindow_OnUpdate_Patch_Method))));
-
             matcher.MatchForward(false,
                 new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(GameHistoryData), nameof(GameHistoryData.techSpeed))));
 
@@ -145,27 +138,28 @@ namespace ProjectGenesis.Patches
         public static IEnumerable<CodeInstruction> LabComponent_SetFunction_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
             var matcher = new CodeMatcher(instructions);
-        
+
             /*
                 return !this.replicating ? 0U : (uint) (products[0] - LabComponent.matrixIds[0] + 1);
              */
-            
+
             matcher.MatchForward(false,
                 new CodeMatch(OpCodes.Ldsfld, AccessTools.Field(typeof(LabComponent), nameof(LabComponent.matrixIds))),
                 new CodeMatch(OpCodes.Ldc_I4_0));
-        
+
             matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Call,
                 AccessTools.Method(typeof(ResearchLabPatches), nameof(ChangeMatrixIds))));
-        
+
             return matcher.InstructionEnumeration();
         }
 
         [HarmonyPatch(typeof(FactorySystem), nameof(FactorySystem.GameTickLabResearchMode))]
         [HarmonyTranspiler]
-        public static IEnumerable<CodeInstruction> FactorySystem_GameTickLabResearchMode_FixMatrixIds(IEnumerable<CodeInstruction> instructions)
+        public static IEnumerable<CodeInstruction> FactorySystem_GameTickLabResearchMode_FixMatrixIds(
+            IEnumerable<CodeInstruction> instructions)
         {
             var matcher = new CodeMatcher(instructions);
-        
+
             /*
                 int matrixId = LabComponent.matrixIds[0];
                 TechProto techProto2 = LDB.techs.Select(num1);
@@ -179,26 +173,26 @@ namespace ProjectGenesis.Patches
                     }
                 }
              */
-            
-            
+
+
             /*
                 int matrixId = LabComponent.matrixIds[0];
-             
+
                 IL_01b4: ldsfld       int32[] LabComponent::matrixIds
                 IL_01b9: ldc.i4.0
                 IL_01ba: ldelem.i4
                 IL_01bb: stloc.s      matrixId
              */
-            
+
             matcher.MatchForward(true,
                 new CodeMatch(OpCodes.Ldsfld, AccessTools.Field(typeof(LabComponent), nameof(LabComponent.matrixIds))),
                 new CodeMatch(OpCodes.Ldc_I4_0), new CodeMatch(OpCodes.Ldelem_I4), new CodeMatch(OpCodes.Stloc_S));
 
             var matrixId = matcher.Operand; // get local variable matrixId
-                 
-            /*             
+
+            /*
                 int index4 = techProto2.Items[index3] - matrixId;
-             
+
                 IL_01dd: ldloc.s      techProto2
                 IL_01df: ldfld        int32[] TechProto::Items
                 IL_01e4: ldloc.s      index3
@@ -207,15 +201,14 @@ namespace ProjectGenesis.Patches
                 IL_01e9: sub
                 IL_01ea: stloc.s      index4
              */
-            
+
             matcher.MatchForward(false, new CodeMatch(OpCodes.Ldloc_S, matrixId));
-            
+
             matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Call,
                 AccessTools.Method(typeof(ResearchLabPatches), nameof(ChangeMatrixIds))));
 
             return matcher.InstructionEnumeration();
         }
-
 
 
         [HarmonyPatch(typeof(FactorySystem), nameof(FactorySystem.GameTickLabResearchMode))]
@@ -304,7 +297,7 @@ namespace ProjectGenesis.Patches
                   index1 = 0;
                 float num3 = (float) LabComponent.techShaderStates[index1] + 0.2f;
              */
-            
+
             matcher.MatchForward(false, new CodeMatch(OpCodes.Ldc_I4_5), new CodeMatch(), new CodeMatch(OpCodes.Ldc_I4_S, (sbyte)32),
                 new CodeMatch(OpCodes.Stloc_S));
 
@@ -318,7 +311,8 @@ namespace ProjectGenesis.Patches
 
             matcher.Advance(5).InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_S, index1),
                 new CodeInstruction(OpCodes.Call,
-                    AccessTools.Method(typeof(ResearchLabPatches), nameof(FactorySystem_GameTickLabResearchMode_FixTechShaderStates_Method))),
+                    AccessTools.Method(typeof(ResearchLabPatches),
+                        nameof(FactorySystem_GameTickLabResearchMode_FixTechShaderStates_Method))),
                 new CodeInstruction(OpCodes.Stloc_S, index1), new CodeInstruction(OpCodes.Br_S, brlabel));
 
             return matcher.InstructionEnumeration();
@@ -331,19 +325,18 @@ namespace ProjectGenesis.Patches
         {
             var matcher = new CodeMatcher(instructions, ilGenerator);
 
-            matcher.MatchForward(false, 
+            matcher.MatchForward(false,
                 new CodeMatch(OpCodes.Ldsfld, AccessTools.Field(typeof(LabComponent), nameof(LabComponent.matrixPoints))));
 
             CodeMatcher matcher2 = matcher.Clone();
 
-            matcher2.MatchForward(false, 
+            matcher2.MatchForward(false,
                 new CodeMatch(OpCodes.Ldsfld, AccessTools.Field(typeof(LabComponent), nameof(LabComponent.matrixPoints))),
                 new CodeMatch(OpCodes.Ldc_I4_5));
 
             object label = matcher2.Advance(4).Operand;
 
-            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0),
-                new CodeInstruction(OpCodes.Ldarg_2),
+            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0), new CodeInstruction(OpCodes.Ldarg_2),
                 new CodeInstruction(OpCodes.Call,
                     AccessTools.Method(typeof(ResearchLabPatches), nameof(LabComponent_InternalUpdateResearch_Patch_Method))),
                 new CodeInstruction(OpCodes.Dup), new CodeInstruction(OpCodes.Stloc_0), new CodeInstruction(OpCodes.Brtrue, label),
@@ -352,8 +345,24 @@ namespace ProjectGenesis.Patches
             return matcher.InstructionEnumeration();
         }
 
-        [HarmonyPatch(typeof(PlanetFactory), nameof(PlanetFactory.InsertInto), new[] { typeof(int), typeof(int), typeof(int), typeof(byte), typeof(byte), typeof(byte), }, new[] { ArgumentType.Normal, ArgumentType.Normal, ArgumentType.Normal, ArgumentType.Normal, ArgumentType.Normal, ArgumentType.Out, })]
-        [HarmonyPatch(typeof(PlanetFactory), nameof(PlanetFactory.InsertInto), new[] { typeof(uint), typeof(int), typeof(int), typeof(byte), typeof(byte), typeof(byte), }, new[] { ArgumentType.Normal, ArgumentType.Normal, ArgumentType.Normal, ArgumentType.Normal, ArgumentType.Normal, ArgumentType.Out, })]
+        [HarmonyPatch(typeof(PlanetFactory), nameof(PlanetFactory.InsertInto), new[]
+        {
+            typeof(int), typeof(int), typeof(int), typeof(byte),
+            typeof(byte), typeof(byte),
+        }, new[]
+        {
+            ArgumentType.Normal, ArgumentType.Normal, ArgumentType.Normal, ArgumentType.Normal,
+            ArgumentType.Normal, ArgumentType.Out,
+        })]
+        [HarmonyPatch(typeof(PlanetFactory), nameof(PlanetFactory.InsertInto), new[]
+        {
+            typeof(uint), typeof(int), typeof(int), typeof(byte),
+            typeof(byte), typeof(byte),
+        }, new[]
+        {
+            ArgumentType.Normal, ArgumentType.Normal, ArgumentType.Normal, ArgumentType.Normal,
+            ArgumentType.Normal, ArgumentType.Out,
+        })]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> PlanetFactory_InsertInto_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
@@ -453,9 +462,6 @@ namespace ProjectGenesis.Patches
                 }
             }
         }
-
-        public static int UILabWindow_OnUpdate_Patch_Method(int timeSpend, LabComponent component) =>
-            timeSpend / component.recipeExecuteData.productCounts[0];
 
         public static int ChangeMatrixIds(int itemId)
         {
