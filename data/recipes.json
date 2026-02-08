@@ -505,12 +505,12 @@
     "GridIndex": 1116,
     "Time": 600,
     "Input": [
-      6509,
+      1103,
       1120,
       7019
     ],
     "InCounts": [
-      1,
+      2,
       30,
       15
     ],
@@ -1105,12 +1105,12 @@
     "GridIndex": 1315,
     "Time": 600,
     "Input": [
-      6509,
+      1107,
       1121,
-      1107
+      1115
     ],
     "InCounts": [
-      1,
+      2,
       20,
       2
     ],
@@ -1194,7 +1194,7 @@
     "GridIndex": 1415,
     "Time": 600,
     "Input": [
-      6509,
+      6271,
       1122,
       1120,
       1403
@@ -4615,12 +4615,12 @@
     "GridIndex": 1215,
     "Time": 600,
     "Input": [
-      6509,
+      6204,
       6225,
-      6204
+      1109
     ],
     "InCounts": [
-      1,
+      2,
       8,
       2
     ],
@@ -4644,12 +4644,12 @@
     "GridIndex": 1216,
     "Time": 600,
     "Input": [
-      6509,
+      6204,
       6226,
-      6204
+      1109
     ],
     "InCounts": [
-      1,
+      2,
       8,
       2
     ],
@@ -4996,12 +4996,12 @@
     "GridIndex": 1117,
     "Time": 600,
     "Input": [
-      6509,
+      1103,
       6212,
       7019
     ],
     "InCounts": [
-      1,
+      2,
       6,
       10
     ],
@@ -5025,12 +5025,12 @@
     "GridIndex": 1115,
     "Time": 600,
     "Input": [
-      6509,
+      1101,
       1114,
       7019
     ],
     "InCounts": [
-      1,
+      2,
       5,
       5
     ],
@@ -5512,12 +5512,12 @@
     "GridIndex": 1316,
     "Time": 600,
     "Input": [
-      6509,
+      1115,
       6235,
       6263
     ],
     "InCounts": [
-      1,
+      4,
       20,
       1
     ],
@@ -5616,31 +5616,6 @@
     ],
     "Explicit": false,
     "Handcraft": false,
-    "NonProductive": false
-  },
-  {
-    "ID": 644,
-    "Name": "空燃料棒",
-    "Description": "",
-    "IconPath": "",
-    "IconTag": "",
-    "Type": 4,
-    "GridIndex": 1306,
-    "Time": 120,
-    "Input": [
-      1103
-    ],
-    "InCounts": [
-      2
-    ],
-    "Output": [
-      6509
-    ],
-    "OutCounts": [
-      1
-    ],
-    "Explicit": false,
-    "Handcraft": true,
     "NonProductive": false
   },
   {

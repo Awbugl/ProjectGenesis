@@ -755,16 +755,6 @@
     "ENUS": "I am glad you can get to this step, pioneer.\nWelcome to the final stage, the end of the universe is within your reach."
   },
   {
-    "Name": "空燃料棒",
-    "ZHCN": "空燃料棒",
-    "ENUS": "Empty Fuel Rod"
-  },
-  {
-    "Name": "I空燃料棒",
-    "ZHCN": "一个空的燃料棒，可用于装载多种燃料，需要时可加装额外的氧化剂存储仓。",
-    "ENUS": "An empty fuel rod, can be filled with various fuels. Extra oxidizer storage can be added when needed."
-  },
-  {
     "Name": "氨",
     "ZHCN": "氨",
     "ENUS": "Ammonia"
