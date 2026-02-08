@@ -73,11 +73,7 @@ namespace ProjectGenesis
 
             logger = Logger;
 
-            if (!BepinExVersionMatch)
-            {
-                logger.Log(LogLevel.Error, "GenesisBook BepinEx Version Check Failed");
-                return;
-            }
+            if (!BepinExVersionMatch) logger.Log(LogLevel.Error, "BepinEx Version is not 5.4.17!");
 
             logger.Log(LogLevel.Info, "GenesisBook Awake");
 
