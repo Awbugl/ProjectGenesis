@@ -1,3 +1,24 @@
+- v3.2.0-alpha1.7 (Experimental 0.3.20007)
+  + 修复了BepinEx版本不正常时无法正常提示的问题
+  + 修复了图标选择UI不正常的问题
+  + 删除了制造台显示各产物产出/消耗速度的功能
+  + 修复了`负熵熔炉`双倍产出效果不生效的问题
+  + 修复量子箱的相关bug，并允许其垂直堆叠
+  + 调整了`高能石墨`的热值
+  + 删除了空燃料棒及相关功能（影响存档）
+
+  + Fixed BepinEx version mismatch hints not displaying properly when version is abnormal
+  + Fixed icon selection UI issues
+  + Removed function which displays production/consumption speed for each product in the assembler window
+  + Fixed `Negative Entropy Smelter` double output effect not working
+  + Fixed bugs related to Quantum Storage and allowed vertical stacking
+  + Adjusted the heat value of `Energetic Graphite`
+  + Removed empty fuel rods and related features (affects save files)
+
+<details>
+  <summary>点击展开日志 | Click to view all </summary>
+
+
 - v3.2.0-alpha1.6 (Experimental 0.3.20006)
   + 调整了`石墨烯（高效）`、`碳纳米管`、`碳纳米管（高效）`配方（影响存档）
   + 修复了研究站工作不正常的问题
@@ -6,9 +27,6 @@
   + Adjusted `Graphene (advanced)` `Nanotube` `Nanotube (advanced)` recipe (affects save)
   + Fixed issue that research lab work improperly
   + Integrate the feature from `AssemblerUI` mod that displays production/consumption speed for each product in the assembler window
-
-<details>
-  <summary>点击展开日志 | Click to view all </summary>
 
 
 - v3.2.0-alpha1.5 (Experimental 0.3.20005)
