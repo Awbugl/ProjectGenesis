@@ -442,7 +442,7 @@
     "storageCol": 10,
     "storageRow": 8,
     "isStorage": true,
-    "multiLevel": false
+    "multiLevel": true
   },
   {
     "ModelID": 815,

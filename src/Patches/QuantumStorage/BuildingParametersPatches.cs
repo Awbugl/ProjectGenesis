@@ -18,10 +18,10 @@ namespace ProjectGenesis.Patches
             if (parameters == null || parameters.Length <= 2) return false;
 
             StorageComponent storageComponent = factory.factoryStorage.storagePool[storageId];
-            if (storageComponent.size != QuantumStorageSize) return true;
 
-            QuantumStorageOrbitChange(factory.planetId, storageId, parameters[2]);
-            return false;
+            if (storageComponent.size == QuantumStorageSize) QuantumStorageOrbitChange(factory.planetId, storageId, parameters[2]);
+
+            return true;
         }
 
         [HarmonyPatch(typeof(BuildingParameters), nameof(BuildingParameters.FromParamsArray))]
@@ -77,10 +77,10 @@ namespace ProjectGenesis.Patches
             if (storageId == 0) return false;
 
             StorageComponent storageComponent = factory.factoryStorage.storagePool[storageId];
-            if (storageComponent.size != QuantumStorageSize) return true;
 
-            QuantumStorageOrbitChange(factory.planetId, storageId, __instance.mode2);
-            return false;
+            if (storageComponent.size == QuantumStorageSize) QuantumStorageOrbitChange(factory.planetId, storageId, __instance.mode2);
+
+            return true;
         }
     }
 }
