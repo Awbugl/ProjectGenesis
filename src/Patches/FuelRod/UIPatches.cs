@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Emit;
 using HarmonyLib;
@@ -33,7 +32,6 @@ namespace ProjectGenesis.Patches
             var matcher = new CodeMatcher(instructions);
 
             matcher.MatchForward(true, new CodeMatch(OpCodes.Ldc_I4_M1), new CodeMatch(OpCodes.Stloc_S));
-
 
             matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0),
                 new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(FuelRodPatches), nameof(GenerateEnergy_Patch))));
@@ -180,6 +178,17 @@ namespace ProjectGenesis.Patches
             ArgumentType.Normal, ArgumentType.Normal, ArgumentType.Normal, ArgumentType.Normal,
             ArgumentType.Out, ArgumentType.Out,
         })]
+        [HarmonyPostfix]
+        public static void PlanetFactory_PickFrom_Postfix(PlanetFactory __instance, int entityId, int offset, int filter, int[] needs,
+            ref byte stack, ref byte inc, ref int __result)
+        {
+            EntityData entityData = __instance.entityPool[entityId];
+            int powerGenId = entityData.powerGenId;
+            if (powerGenId == 0) return;
+
+            PlanetFactory_PickEmptyRod(__instance, powerGenId, offset, filter, ref inc, ref __result);
+        }
+
         [HarmonyPatch(typeof(PlanetFactory), nameof(PlanetFactory.PickFrom), new[]
         {
             typeof(uint), typeof(int), typeof(int), typeof(int[]),
@@ -190,81 +199,33 @@ namespace ProjectGenesis.Patches
             ArgumentType.Out, ArgumentType.Out,
         })]
         [HarmonyPostfix]
-        public static void PlanetFactory_PickFrom_Postfix(PlanetFactory __instance, int entityId, int offset, int filter, int[] needs,
-            ref byte stack, ref byte inc, ref int __result)
+        public static void PlanetFactory_PickFrom2_Postfix(PlanetFactory __instance, uint ioTargetTypedId, int offset, int filter,
+            int[] needs, ref byte stack, ref byte inc, ref int __result)
         {
-            if (__result != 0) return;
+            if ((EFactoryIOTargetType)((int)ioTargetTypedId & -16777216) != EFactoryIOTargetType.PowerGen) return;
 
-            if (filter != ProtoID.I空燃料棒 && filter != 0) return;
-
-            EntityData entityData = __instance.entityPool[entityId];
-            int powerGenId = entityData.powerGenId;
-
+            int powerGenId = (int)ioTargetTypedId & 16777215;
             if (powerGenId == 0) return;
 
-            PowerGeneratorComponent powerGeneratorComponent = __instance.powerSystem.genPool[offset];
-
-            if ((offset <= 0 || powerGeneratorComponent.id != offset) && filter == 0) return;
-
-            lock (__instance.entityMutexs[entityId])
-            {
-                int num = __instance.powerSystem.genPool[powerGenId].PickFuelFrom(filter, out int inc3);
-                inc = (byte)inc3;
-                __result = num;
-            }
+            PlanetFactory_PickEmptyRod(__instance, powerGenId, offset, filter, ref inc, ref __result);
         }
 
-        [HarmonyPatch(typeof(PlanetFactory), nameof(PlanetFactory.InsertInto), new[]
+        private static void PlanetFactory_PickEmptyRod(PlanetFactory factory, int powerGenId, int offset, int filter, ref byte inc,
+            ref int result)
         {
-            typeof(int), typeof(int), typeof(int), typeof(byte),
-            typeof(byte), typeof(byte),
-        }, new[]
-        {
-            ArgumentType.Normal, ArgumentType.Normal, ArgumentType.Normal, ArgumentType.Normal,
-            ArgumentType.Normal, ArgumentType.Out,
-        })]
-        [HarmonyPatch(typeof(PlanetFactory), nameof(PlanetFactory.InsertInto), new[]
-        {
-            typeof(uint), typeof(int), typeof(int), typeof(byte),
-            typeof(byte), typeof(byte),
-        }, new[]
-        {
-            ArgumentType.Normal, ArgumentType.Normal, ArgumentType.Normal, ArgumentType.Normal,
-            ArgumentType.Normal, ArgumentType.Out,
-        })]
-        [HarmonyPostfix]
-        public static void PlanetFactory_InsertInto_Postfix(PlanetFactory __instance, int entityId, int itemId, ref byte itemCount,
-            ref byte itemInc, ref byte remainInc, ref int __result)
-        {
-            if (__result != 0 || itemId != ProtoID.I空燃料棒) return;
+            if (result != 0) return;
+            if (filter != ProtoID.I空燃料棒 && filter != 0) return;
 
-            EntityData entityData = __instance.entityPool[entityId];
+            PowerGeneratorComponent offsetComponent = factory.powerSystem.genPool[offset];
+            PowerGeneratorComponent generatorComponent = factory.powerSystem.genPool[powerGenId];
 
-            int powerGenId = entityData.powerGenId;
+            if ((offset <= 0 || offsetComponent.id != offset) && filter == 0) return;
 
-            if (powerGenId == 0) return;
-
-            PowerGeneratorComponent[] genPool = __instance.powerSystem.genPool;
-            ref PowerGeneratorComponent component = ref genPool[powerGenId];
-
-            if (component.fuelMask == 0) return;
-
-            Mutex obj = __instance.entityMutexs[entityId];
-
-            lock (obj)
+            lock (factory.entityMutexs[generatorComponent.entityId])
             {
-                component.productCount += itemCount;
-                component.catalystIncPoint += itemInc;
-
-                if (component.productCount > 30)
-                {
-                    var instanceProductCount = (int)component.productCount;
-                    component.split_inc(ref instanceProductCount, ref component.catalystIncPoint, instanceProductCount - 30);
-                    component.productCount = instanceProductCount;
-                }
-
-                remainInc = 0;
-                __result = itemCount;
+                int num = generatorComponent.PickFuelFrom(filter, out int inc3);
+                inc = (byte)inc3;
+                result = num;
             }
         }
 
@@ -370,22 +331,131 @@ namespace ProjectGenesis.Patches
             ArgumentType.Normal, ArgumentType.Out,
         })]
         [HarmonyTranspiler]
-        public static IEnumerable<CodeInstruction> PlanetFactory_InsertInto_Transpiler(IEnumerable<CodeInstruction> instructions)
+        public static IEnumerable<CodeInstruction> PlanetFactory_OxygenMask_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
+            /*
+                int[] fuelNeed = ItemProto.fuelNeeds[(int) local5.fuelMask];
+
+                IL_07e6: ldsfld       int32[][] ItemProto::fuelNeeds
+
+                ... // powerGeneratorComponent
+
+                IL_07ed: ldfld        int16 PowerGeneratorComponent::fuelMask
+                IL_07f2: ldelem.ref
+                IL_07f3: stloc.s      // fuelNeed
+            */
+
             var matcher = new CodeMatcher(instructions);
 
-            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldsfld, AccessTools.Field(typeof(ItemProto), nameof(ItemProto.fuelNeeds))),
-                new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldelema),
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldsfld, AccessTools.Field(typeof(ItemProto), nameof(ItemProto.fuelNeeds))));
+            matcher.SetAndAdvance(OpCodes.Nop, null);
+
+            matcher.MatchForward(false,
                 new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(PowerGeneratorComponent), nameof(PowerGeneratorComponent.fuelMask))),
                 new CodeMatch(OpCodes.Ldelem_Ref));
 
-            matcher.SetAndAdvance(OpCodes.Nop, null);
-
-            matcher.Advance(3).SetAndAdvance(OpCodes.Ldarg_0, null);
-
+            matcher.SetAndAdvance(OpCodes.Ldarg_0, null);
             matcher.SetAndAdvance(OpCodes.Call, AccessTools.Method(typeof(FuelRodPatches), nameof(ThermalPowerGen_InsertMethod)));
 
             return matcher.InstructionEnumeration();
+        }
+
+        [HarmonyPatch(typeof(PlanetFactory), nameof(PlanetFactory.InsertInto), new[]
+        {
+            typeof(int), typeof(int), typeof(int), typeof(byte),
+            typeof(byte), typeof(byte),
+        }, new[]
+        {
+            ArgumentType.Normal, ArgumentType.Normal, ArgumentType.Normal, ArgumentType.Normal,
+            ArgumentType.Normal, ArgumentType.Out,
+        })]
+        [HarmonyPatch(typeof(PlanetFactory), nameof(PlanetFactory.InsertInto), new[]
+        {
+            typeof(uint), typeof(int), typeof(int), typeof(byte),
+            typeof(byte), typeof(byte),
+        }, new[]
+        {
+            ArgumentType.Normal, ArgumentType.Normal, ArgumentType.Normal, ArgumentType.Normal,
+            ArgumentType.Normal, ArgumentType.Out,
+        })]
+        [HarmonyTranspiler]
+        public static IEnumerable<CodeInstruction> PlanetFactory_InsertInto_Transpiler(IEnumerable<CodeInstruction> instructions)
+        {
+            /*
+                if (genPool[powerGenId].fuelId == (short) 0)
+
+                IL_07db: leave.s      IL_084b
+
+                ... //PowerGeneratorComponent
+
+                IL_075f: ldfld        int16 PowerGeneratorComponent::fuelId
+                IL_0764: brtrue.s     IL_07cb
+            */
+
+            var matcher = new CodeMatcher(instructions);
+            
+            // IL_075f
+            matcher.MatchForward(false,
+                new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(PowerGeneratorComponent), nameof(PowerGeneratorComponent.fuelId))),
+                CodeMatchUtils.BrTrue);
+
+            var fuelIdPos = matcher.Pos;
+
+            matcher.MatchBack(true, new CodeMatch(OpCodes.Stloc_S), CodeMatchUtils.Leave);
+
+            // stloc.s leave
+            var leaveInstructions = matcher.InstructionsWithOffsets(-1, 0);
+
+            // component label
+            var label = matcher.Advance(1).Labels.First();
+
+            var componentPos = matcher.Pos;
+
+            var componentInstructions = matcher.InstructionsInRange(componentPos, fuelIdPos - 1);
+
+            /*
+                arg list:
+                    uint ioTargetTypedId, 1
+                    int offset, 2
+                    int itemId, 3
+                    byte itemCount, 4
+                    byte itemInc, 5
+                    out byte remainInc 6
+            */
+
+            // insert before componentPos
+
+            // itemId == ProtoID.I空燃料棒 ? if not goto check if (genPool[powerGenId].fuelId == (short) 0)
+            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_3), new CodeInstruction(OpCodes.Ldc_I4, ProtoID.I空燃料棒),
+                new CodeInstruction(OpCodes.Bne_Un_S, label));
+
+            // else into empty rod logic
+            matcher.InsertAndAdvance(componentInstructions);
+
+            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_S, (sbyte)4), new CodeInstruction(OpCodes.Ldarg_S, (sbyte)5),
+                new CodeInstruction(OpCodes.Ldarg_S, (sbyte)6),
+                new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(FuelRodPatches), nameof(InsertEmptyRod))));
+
+            // return itemCount
+            matcher.InsertAndAdvance(leaveInstructions);
+            
+            return matcher.InstructionEnumeration();
+        }
+
+        public static int InsertEmptyRod(ref PowerGeneratorComponent component, byte itemCount, byte itemInc, ref byte remainInc)
+        {
+            component.productCount += itemCount;
+            component.catalystIncPoint += itemInc;
+
+            if (component.productCount > 30)
+            {
+                var instanceProductCount = (int)component.productCount;
+                component.split_inc(ref instanceProductCount, ref component.catalystIncPoint, instanceProductCount - 30);
+                component.productCount = instanceProductCount;
+            }
+
+            remainInc = 0;
+            return itemCount;
         }
 
         public static int[] ThermalPowerGen_InsertMethod(ref PowerGeneratorComponent component, PlanetFactory factory)
