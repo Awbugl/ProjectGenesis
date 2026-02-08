@@ -132,7 +132,7 @@ namespace ProjectGenesis.Patches
         public static void RefreshIcons(UISignalPicker __instance, ref int ___currentType, ref uint[] ___indexArray,
             ref int[] ___signalArray)
         {
-            if (___currentType <= 7) return;
+            if (___currentType <= 8) return;
 
             IconSet iconSet = GameMain.iconSet;
             ItemProto[] dataArray = LDB.items.dataArray;
@@ -143,7 +143,7 @@ namespace ProjectGenesis.Patches
 
                 int num4 = t.GridIndex / 1000;
 
-                if (num4 != ___currentType - 5) continue;
+                if (num4 != ___currentType - 6) continue;
 
                 int num5 = (t.GridIndex - num4 * 1000) / 100 - 1;
                 int num6 = t.GridIndex % 100 - 1;
