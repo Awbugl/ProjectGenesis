@@ -146,8 +146,12 @@ namespace ProjectGenesis.Patches
             }
 
             if (factory.entityPool[__instance.entityId].protoId == ProtoID.I负熵熔炉 && __instance.replicating)
+            {
+                RecipeExecuteData data = __instance.recipeExecuteData;
+
                 __instance.extraTime += (int)(power * __instance.extraSpeed)
-                                      + (int)(power * __instance.speedOverride * __instance.extraTime / __instance.time);
+                                      + (int)(power * __instance.speedOverride * data.extraTimeSpend / data.timeSpend);
+            }
 
             return b;
         }
