@@ -1,5 +1,8 @@
 ﻿using HarmonyLib;
 using ProjectGenesis.Utils;
+using UnityEngine;
+using UnityEngine.UI;
+using Object = UnityEngine.Object;
 
 // ReSharper disable InconsistentNaming
 
@@ -17,10 +20,24 @@ namespace ProjectGenesis.Patches
 
             ProjectGenesis.PlanetFocusWindow = UIPlanetFocusWindow.CreateWindow();
 
-            _planetFocusBtn = UIUtil.CreateButton("星球基地".TranslateFromJson());
-            UIUtil.NormalizeRectWithTopLeft(_planetFocusBtn, 5, -40, __instance.planetDetail.rectTrans);
-            _planetFocusBtn.onClick += _ => ProjectGenesis.PlanetFocusWindow.OpenWindow();
+            UIButton button = __instance.planetDetail.planetDescBtn;
+
+            _planetFocusBtn = Object.Instantiate(button, button.transform.parent);
+
+            _planetFocusBtn.transform.localPosition = new Vector3(-36, -160, 0);
+
+            UIUtil.RemovePersistentCalls(_planetFocusBtn.gameObject);
+
+            _planetFocusBtn.button.onClick.AddListener(PlanetFocusBtnOnClick);
+
+            Transform transform = _planetFocusBtn.transform.Find("text");
+
+            Text btnText = transform.GetComponent<Text>();
+            btnText.text = "星球基地".TranslateFromJson();
+            Object.Destroy(transform.GetComponent<Localizer>());
         }
+
+        private static void PlanetFocusBtnOnClick() => ProjectGenesis.PlanetFocusWindow.OpenWindow();
 
         [HarmonyPatch(typeof(UIPlanetDetail), nameof(UIPlanetDetail.OnPlanetDataSet))]
         [HarmonyPostfix]

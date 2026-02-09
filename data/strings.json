@@ -236,8 +236,8 @@
   },
   {
     "Name": "行星协调中心介绍前字",
-    "ZHCN": "一个行星协调中心可为星球工厂提供多种增益，可在行星视图中（默认快捷键为M键）切换增益以适应不同发展阶段的需求。",
-    "ENUS": "A Planetary Coordination Center can provide multiple gains for a planetary factory, with the ability to switch gains in the planet view (Default shortcut is M key) to accommodate different stages of development."
+    "ZHCN": "一个行星协调中心可为星球工厂提供多种增益，可在星图中（默认快捷键为V键）切换增益以适应不同发展阶段的需求。",
+    "ENUS": "A Planetary Coordination Center can provide multiple gains for a planetary factory, with the ability to switch gains in the starmap view (Default shortcut is V key) to accommodate different stages of development."
   },
   {
     "Name": "物质分解设施介绍标题",
@@ -1656,8 +1656,8 @@
   },
   {
     "Name": "行星协调中心文字描述",
-    "ZHCN": "打开行星视图可以对本星球的协调中心进行调整",
-    "ENUS": "Can open the planet view to adjust the coordination center"
+    "ZHCN": "在星图中（默认快捷键为V键）可以对本星球的进行增益",
+    "ENUS": "Can open the starmap view (Default shortcut is V key) to adjust the coordination center"
   },
   {
     "Name": "T物品仓储描述",
