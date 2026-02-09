@@ -2,7 +2,7 @@
   {
     "ID": 31,
     "Name": "创世之书介绍标题",
-    "PreText": "创世之书介绍前字",
+    "LayoutFileName": "genesisbook-tutorials-31",
     "DeterminatorName": "TOR_GameSecond",
     "DeterminatorParams": [
       4
@@ -11,7 +11,7 @@
   {
     "ID": 32,
     "Name": "物质分解设施介绍标题",
-    "PreText": "物质分解设施介绍前字",
+    "LayoutFileName": "genesisbook-tutorials-32",
     "DeterminatorName": "TOR_OnBuild",
     "DeterminatorParams": [
       6264
@@ -20,7 +20,7 @@
   {
     "ID": 33,
     "Name": "巨型建筑介绍标题",
-    "PreText": "巨型建筑介绍前字",
+    "LayoutFileName": "genesisbook-tutorials-33",
     "DeterminatorName": "TOR_OnBuild",
     "DeterminatorParams": [
       6257,
@@ -33,7 +33,7 @@
   {
     "ID": 34,
     "Name": "行星协调中心介绍标题",
-    "PreText": "行星协调中心介绍前字",
+    "LayoutFileName": "genesisbook-tutorials-34",
     "DeterminatorName": "TOR_TechUnlocked",
     "DeterminatorParams": [
       1936,
@@ -43,7 +43,7 @@
   {
     "ID": 35,
     "Name": "制造类型调整介绍标题",
-    "PreText": "制造类型调整介绍前字",
+    "LayoutFileName": "genesisbook-tutorials-35",
     "DeterminatorName": "TOR_OnBuild",
     "DeterminatorParams": [
       2304

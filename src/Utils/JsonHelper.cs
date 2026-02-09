@@ -422,8 +422,7 @@ namespace ProjectGenesis.Utils
         {
             public int ID { get; set; }
             public string Name { get; set; }
-            // todo
-           // public string LayoutFileName { get; set; }
+            public string LayoutFileName { get; set; }
             public string DeterminatorName { get; set; }
             public long[] DeterminatorParams { get; set; }
 
@@ -432,7 +431,7 @@ namespace ProjectGenesis.Utils
                 {
                     ID = ID,
                     Name = Name,
-                 //   LayoutFileName = LayoutFileName,
+                    LayoutFileName = LayoutFileName,
                     DeterminatorName = DeterminatorName,
                     DeterminatorParams = DeterminatorParams,
                 };
