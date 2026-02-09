@@ -8,12 +8,12 @@ namespace ProjectGenesis.Patches
     {
         [HarmonyPatch(typeof(BuildingParameters), nameof(BuildingParameters.ApplyPrebuildParametersToEntity))]
         [HarmonyPrefix]
-        public static bool BuildingParameters_ApplyPrebuildParametersToEntity_Postfix(int entityId, int[] parameters, PlanetFactory factory)
+        public static bool BuildingParameters_ApplyPrebuildParametersToEntity_Prefix(int entityId, int[] parameters, PlanetFactory factory)
         {
             if (entityId <= 0 || factory.entityPool[entityId].id != entityId) return false;
 
             int storageId = factory.entityPool[entityId].storageId;
-            if (storageId == 0) return false;
+            if (storageId == 0) return true;
 
             if (parameters == null || parameters.Length <= 2) return false;
 
@@ -66,7 +66,7 @@ namespace ProjectGenesis.Patches
 
         [HarmonyPatch(typeof(BuildingParameters), nameof(BuildingParameters.PasteToFactoryObject))]
         [HarmonyPrefix]
-        public static bool BuildingParameters_PasteToFactoryObject_Postfix(ref BuildingParameters __instance, int objectId,
+        public static bool BuildingParameters_PasteToFactoryObject_Prefix(ref BuildingParameters __instance, int objectId,
             PlanetFactory factory)
         {
             if (__instance.type != BuildingType.Storage) return true;
@@ -74,7 +74,7 @@ namespace ProjectGenesis.Patches
             if (objectId <= 0 || factory.entityPool[objectId].id != objectId) return false;
 
             int storageId = factory.entityPool[objectId].storageId;
-            if (storageId == 0) return false;
+            if (storageId == 0) return true;
 
             StorageComponent storageComponent = factory.factoryStorage.storagePool[storageId];
 
