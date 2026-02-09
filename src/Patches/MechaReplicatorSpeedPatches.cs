@@ -27,7 +27,7 @@ namespace ProjectGenesis.Patches
             matcher.MatchForward(true, new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(Mecha), nameof(Mecha.reactorItemId))),
                 new CodeMatch(OpCodes.Ldc_I4, 5206));
 
-            var label = matcher.Operand;
+            var label = matcher.InstructionAt(1).operand;
 
             matcher.SetAndAdvance(OpCodes.Call, AccessTools.Method(typeof(MechaReplicatorSpeedPatches), nameof(CheckReactorItemId)))
                .SetAndAdvance(OpCodes.Brfalse_S, label);
