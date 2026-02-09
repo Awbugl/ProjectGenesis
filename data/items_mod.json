@@ -2190,6 +2190,7 @@
     "DescFields": [
       2,
       3,
+      54,
       40
     ],
     "FuelType": 31,
@@ -2208,7 +2209,7 @@
     "ModelIndex": 0,
     "ModelCount": 0,
     "HpMax": 0,
-    "Ability": 0,
+    "Ability": 10000,
     "Potential": 0,
     "BuildIndex": 0,
     "BuildMode": 0,
@@ -2240,6 +2241,7 @@
     "DescFields": [
       2,
       3,
+      54,
       40
     ],
     "FuelType": 31,
@@ -2258,7 +2260,7 @@
     "ModelIndex": 0,
     "ModelCount": 0,
     "HpMax": 0,
-    "Ability": 0,
+    "Ability": 10000,
     "Potential": 0,
     "BuildIndex": 0,
     "BuildMode": 0,
@@ -2290,6 +2292,7 @@
     "DescFields": [
       2,
       3,
+      54,
       40
     ],
     "FuelType": 31,
@@ -2308,7 +2311,7 @@
     "ModelIndex": 0,
     "ModelCount": 0,
     "HpMax": 0,
-    "Ability": 0,
+    "Ability": 10000,
     "Potential": 0,
     "BuildIndex": 0,
     "BuildMode": 0,
@@ -2340,6 +2343,7 @@
     "DescFields": [
       2,
       3,
+      54,
       40
     ],
     "FuelType": 31,
@@ -2358,7 +2362,7 @@
     "ModelIndex": 0,
     "ModelCount": 0,
     "HpMax": 0,
-    "Ability": 0,
+    "Ability": 10000,
     "Potential": 0,
     "BuildIndex": 0,
     "BuildMode": 0,
@@ -2390,6 +2394,7 @@
     "DescFields": [
       2,
       3,
+      54,
       40
     ],
     "FuelType": 31,
@@ -2408,7 +2413,7 @@
     "ModelIndex": 0,
     "ModelCount": 0,
     "HpMax": 0,
-    "Ability": 0,
+    "Ability": 10000,
     "Potential": 0,
     "BuildIndex": 0,
     "BuildMode": 0,
@@ -2440,6 +2445,7 @@
     "DescFields": [
       2,
       3,
+      54,
       40
     ],
     "FuelType": 31,
@@ -2458,7 +2464,7 @@
     "ModelIndex": 0,
     "ModelCount": 0,
     "HpMax": 0,
-    "Ability": 0,
+    "Ability": 10000,
     "Potential": 0,
     "BuildIndex": 0,
     "BuildMode": 0,
@@ -2490,6 +2496,7 @@
     "DescFields": [
       2,
       3,
+      54,
       40
     ],
     "FuelType": 31,
@@ -2508,7 +2515,7 @@
     "ModelIndex": 0,
     "ModelCount": 0,
     "HpMax": 0,
-    "Ability": 0,
+    "Ability": 10000,
     "Potential": 0,
     "BuildIndex": 0,
     "BuildMode": 0,
@@ -2540,6 +2547,7 @@
     "DescFields": [
       2,
       3,
+      54,
       40
     ],
     "FuelType": 31,
@@ -2558,7 +2566,7 @@
     "ModelIndex": 0,
     "ModelCount": 0,
     "HpMax": 0,
-    "Ability": 0,
+    "Ability": 10000,
     "Potential": 0,
     "BuildIndex": 0,
     "BuildMode": 0,
@@ -2590,6 +2598,7 @@
     "DescFields": [
       2,
       3,
+      54,
       40
     ],
     "FuelType": 31,
@@ -2608,7 +2617,7 @@
     "ModelIndex": 0,
     "ModelCount": 0,
     "HpMax": 0,
-    "Ability": 0,
+    "Ability": 10000,
     "Potential": 0,
     "BuildIndex": 0,
     "BuildMode": 0,
@@ -2640,6 +2649,7 @@
     "DescFields": [
       2,
       3,
+      54,
       40
     ],
     "FuelType": 31,
@@ -2658,7 +2668,7 @@
     "ModelIndex": 0,
     "ModelCount": 0,
     "HpMax": 0,
-    "Ability": 0,
+    "Ability": 10000,
     "Potential": 0,
     "BuildIndex": 0,
     "BuildMode": 0,
@@ -2690,6 +2700,7 @@
     "DescFields": [
       2,
       3,
+      54,
       40
     ],
     "FuelType": 31,
@@ -2708,7 +2719,7 @@
     "ModelIndex": 0,
     "ModelCount": 0,
     "HpMax": 0,
-    "Ability": 0,
+    "Ability": 10000,
     "Potential": 0,
     "BuildIndex": 0,
     "BuildMode": 0,
@@ -2740,6 +2751,7 @@
     "DescFields": [
       2,
       3,
+      54,
       40
     ],
     "FuelType": 31,
@@ -2758,7 +2770,7 @@
     "ModelIndex": 0,
     "ModelCount": 0,
     "HpMax": 0,
-    "Ability": 0,
+    "Ability": 10000,
     "Potential": 0,
     "BuildIndex": 0,
     "BuildMode": 0,
@@ -2790,6 +2802,7 @@
     "DescFields": [
       2,
       3,
+      54,
       40
     ],
     "FuelType": 31,
@@ -2808,7 +2821,7 @@
     "ModelIndex": 0,
     "ModelCount": 0,
     "HpMax": 0,
-    "Ability": 0,
+    "Ability": 10000,
     "Potential": 0,
     "BuildIndex": 0,
     "BuildMode": 0,
@@ -2840,6 +2853,7 @@
     "DescFields": [
       2,
       3,
+      54,
       40
     ],
     "FuelType": 31,
@@ -2858,7 +2872,7 @@
     "ModelIndex": 0,
     "ModelCount": 0,
     "HpMax": 0,
-    "Ability": 0,
+    "Ability": 10000,
     "Potential": 0,
     "BuildIndex": 0,
     "BuildMode": 0,
