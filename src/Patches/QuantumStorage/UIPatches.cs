@@ -51,7 +51,10 @@ namespace ProjectGenesis.Patches
                 // btn-group结构是：无、编辑轨道、20个轨道
                 // 量子箱只要10个频道，所以保留索引2到11
                 Transform transform = btn_group_Transform.GetChild(i);
-                transform.gameObject.SetActive(i >= 2 && i <= 11);
+
+                bool value = i >= 2 && i <= 11;
+                if (value) transform.GetChild(1).gameObject.SetActive(false);
+                transform.gameObject.SetActive(value);
             }
 
             Array.Resize(ref orbitPicker.orbitButtons, 11);
