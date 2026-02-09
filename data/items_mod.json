@@ -4294,9 +4294,9 @@
   },
   {
     "ID": 7610,
-    "Name": "核子爆破单元",
-    "Description": "I核子爆破单元",
-    "IconPath": "Assets/texpack/I核子爆破单元",
+    "Name": "核能爆破单元",
+    "Description": "I核能爆破单元",
+    "IconPath": "Assets/texpack/I核能爆破单元",
     "IconTag": "hzbpdy",
     "GridIndex": 4403,
     "StackSize": 100,
