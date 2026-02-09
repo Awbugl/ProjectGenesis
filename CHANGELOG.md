@@ -1,3 +1,17 @@
+- v3.2.0-alpha1.8 (Experimental 0.3.20008)
+  + 修复了机甲继续返回空燃料棒的问题
+  + 修复了预建造参数错误导致的各类问题
+  + 调整了彩蛋的数值
+  + 调整了部分UI遗留问题
+
+  + Fixed mecha continuing to return empty fuel rods
+  + Fixed various issues caused by prebuilding parameter errors
+  + Adjusted easter egg values
+  + Adjusted some remaining UI issues
+
+<details>
+  <summary>点击展开日志 | Click to view all </summary>
+
 - v3.2.0-alpha1.7 (Experimental 0.3.20007)
   + 修复了BepinEx版本不正常时无法正常提示的问题
   + 修复了图标选择UI不正常的问题
@@ -14,9 +28,6 @@
   + Fixed bugs related to Quantum Storage and allowed vertical stacking
   + Adjusted the heat value of `Energetic Graphite`
   + Removed empty fuel rods and related features (affects save files)
-
-<details>
-  <summary>点击展开日志 | Click to view all </summary>
 
 
 - v3.2.0-alpha1.6 (Experimental 0.3.20006)
