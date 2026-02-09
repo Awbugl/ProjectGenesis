@@ -344,7 +344,9 @@
     "PreTechs": [
       1001
     ],
-    "PreTechsImplicit": [],
+    "PreTechsImplicit": [
+      1002
+    ],
     "Items": [
       6001
     ],
@@ -3753,7 +3755,9 @@
     "PreTechs": [
       1801
     ],
-    "PreTechsImplicit": [],
+    "PreTechsImplicit": [
+      1002
+    ],
     "Items": [
       6001
     ],
