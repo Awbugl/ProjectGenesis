@@ -2190,14 +2190,19 @@
     "ENUS": "One of the industrialized ways of applying controlled annihilation reaction, the original radioactive charge was replaced by positive and negative matter poles. \nTo activate it you only need three steps: press the buttons on both sides at the same time to deactivate the safety, pull the unit away to the sides into a ready-to-fire state, and then close it. Of course, we don't recommend that you do this; using an electronic fuse to activate it is much more reliable and won't harm you."
   },
   {
+    "Name": "I高爆炮弹组",
+    "ZHCN": "采用了先进的高能爆破单元技术，使得炮弹的爆炸威力得到了极大的增强。一个炮弹组包含15发炮弹。",
+    "ENUS": "Advanced high-energy Explosive Unit technology powerfully enhances shells. A Shell Set contains 15 shells."
+  },
+  {
     "Name": "微型核弹组",
     "ZHCN": "微型核弹组",
     "ENUS": "Mini-nukes Shell Set"
   },
   {
     "Name": "I微型核弹组",
-    "ZHCN": "一种高效可靠的杀伤性武器，根据主脑的计算，在对抗黑雾的过程中使用这种武器可能造成的污染属于可以接受的代价。一个炮弹组包含12发炮弹。",
-    "ENUS": "An efficient and reliable anti-personnel weapon, according to the mastermind's calculations, the contamination that may be caused by its use in the fight against the Dark Fog is among the acceptable costs. A shell group contains 12 shells."
+    "ZHCN": "一种高效可靠的杀伤性武器，根据主脑的计算，在对抗黑雾的过程中使用这种武器可能造成的污染属于可以接受的代价。一个炮弹组包含20发炮弹。",
+    "ENUS": "An efficient and reliable anti-personnel weapon, according to the mastermind's calculations, the contamination that may be caused by its use in the fight against the Dark Fog is among the acceptable costs. A shell group contains 20 shells."
   },
   {
     "Name": "反物质炮弹组",
@@ -2206,8 +2211,13 @@
   },
   {
     "Name": "I反物质炮弹组",
-    "ZHCN": "使用反物质战斗部装药的炮弹，简单而有效的应用。一个炮弹组包含12发炮弹。",
-    "ENUS": "Simple and effective application of artillery shells using antimatter combatant charges. One shell group contains 12 shells."
+    "ZHCN": "使用反物质战斗部装药的炮弹，简单而有效的应用。一个炮弹组包含30发炮弹。",
+    "ENUS": "Simple and effective application of artillery shells using antimatter combatant charges. One shell group contains 30 shells."
+  },
+  {
+    "Name": "I超音速导弹组",
+    "ZHCN": "推进器产生的动力使导弹的飞行速度得到了极大的提升，全新升级的战斗部和荷载配方提高了导弹的伤害。一个导弹组包含30枚导弹。",
+    "ENUS": "The thruster's dynamism massively accelerates the missile beyond the speed of sound and the upgraded warhead and payload recipe increases the damage. A Missile Set contains 30 missiles."
   },
   {
     "Name": "洲际导弹组",
@@ -2216,8 +2226,8 @@
   },
   {
     "Name": "I洲际导弹组",
-    "ZHCN": "在引力导弹的基础上加装了二级推进器，低效的战斗部被战术核弹头取代，离开大气层后能够继续做出机动反应精准追踪目标。一个导弹组包含24枚导弹。",
-    "ENUS": "Simple and effective application of artillery shells using antimatter combatant charges. One shell group contains 12 shells."
+    "ZHCN": "在超音速导弹的基础上加装了二级推进器，低效的战斗部被战术核弹头取代，离开大气层后能够继续做出机动反应精准追踪目标。一个导弹组包含40枚导弹。",
+    "ENUS": "Based on the supersonic missile, a secondary booster is added. The inefficient warhead is replaced with a tactical nuclear warhead. After exiting the atmosphere, it can continue to maneuver and precisely track targets. A Missile Set contains 40 missiles."
   },
   {
     "Name": "反物质导弹组",
@@ -2226,8 +2236,8 @@
   },
   {
     "Name": "I反物质导弹组",
-    "ZHCN": "X-3“掘墓人”重型跃迁飞弹，战斗部使用反物质装药，内置的空间翘曲器作为推进系统能够通过连续的短距离跃迁始终锁定目标。一个导弹组包含24枚导弹。",
-    "ENUS": "The X-3 Gravedigger Heavy Leapfrog Missile, with an antimatter charge in the warhead and a built-in space warper as a propulsion system capable of locking onto a target at all times through successive short-range leaps. A missile group contains 24 missiles."
+    "ZHCN": "X-3“掘墓人”重型跃迁飞弹，战斗部使用反物质装药，内置的空间翘曲器作为推进系统能够通过连续的短距离跃迁始终锁定目标。一个导弹组包含60枚导弹。",
+    "ENUS": "The X-3 Gravedigger Heavy Leapfrog Missile, with an antimatter charge in the warhead and a built-in space warper as a propulsion system capable of locking onto a target at all times through successive short-range leaps. A missile group contains 60 missiles."
   },
   {
     "Name": "湮灭弹箱",
