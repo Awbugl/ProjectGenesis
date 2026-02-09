@@ -2220,14 +2220,9 @@
     "ENUS": "The thruster's dynamism massively accelerates the missile beyond the speed of sound and the upgraded warhead and payload recipe increases the damage. A Missile Set contains 30 missiles."
   },
   {
-    "Name": "洲际导弹组",
-    "ZHCN": "核裂变导弹组",
-    "ENUS": "Nuclear Missile Set"
-  },
-  {
-    "Name": "I洲际导弹组",
-    "ZHCN": "在超音速导弹的基础上加装了二级推进器，低效的战斗部被战术核弹头取代，离开大气层后能够继续做出机动反应精准追踪目标。一个导弹组包含40枚导弹。",
-    "ENUS": "Based on the supersonic missile, a secondary booster is added. The inefficient warhead is replaced with a tactical nuclear warhead. After exiting the atmosphere, it can continue to maneuver and precisely track targets. A Missile Set contains 40 missiles."
+    "Name": "I引力导弹组",
+    "ZHCN": "利用奇异物质本身具有的引力负压特性，让周围空间发生翘曲，从而进一步提升导弹速度，使目标难以判断轨迹进行防御。引力负压对空间的扭曲从某种程度上放大了爆炸产生的伤害。一个导弹组包含40枚导弹。",
+    "ENUS": "aStrange Matter's negative gravitational pressure is used to warp the surrounding space, thus increasing missile speed. The warping space increases explosive damage. A Missile Set contains 40 missiles."
   },
   {
     "Name": "反物质导弹组",
