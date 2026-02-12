@@ -1,3 +1,17 @@
+- v3.2.0-alpha1.9 (Experimental 0.3.20009)
+  + 修复了创世之书相关教程无法正常显示的问题
+  + 调整了炮弹、导弹组的可用数值
+  + 固定母星系星球类型，调整地中海的稀有矿物至其他星球
+  + 调整了`聚苯硫醚`的配方
+
+  + Fixed an issue where tutorials related to the Genesis Book could not display properly
+  + Adjusted available values for shells and missile groups
+  + Fixed the home system planet types; moved rare minerals from the Mediterranean planet to other planets
+  + Adjusted the recipe for Polyphenylene Sulfide (PPS)
+
+<details>
+  <summary>点击展开日志 | Click to view all </summary>
+
 - v3.2.0-alpha1.8 (Experimental 0.3.20008)
   + 修复了机甲继续返回空燃料棒的问题
   + 修复了预建造参数错误导致的各类问题
@@ -9,8 +23,6 @@
   + Adjusted easter egg values
   + Adjusted some remaining UI issues
 
-<details>
-  <summary>点击展开日志 | Click to view all </summary>
 
 - v3.2.0-alpha1.7 (Experimental 0.3.20007)
   + 修复了BepinEx版本不正常时无法正常提示的问题
