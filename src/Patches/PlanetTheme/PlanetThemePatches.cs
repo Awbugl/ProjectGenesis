@@ -29,6 +29,36 @@ namespace ProjectGenesis.Patches
 
         [HarmonyPatch(typeof(PlanetGen), nameof(PlanetGen.SetPlanetTheme))]
         [HarmonyTranspiler]
+        public static IEnumerable<CodeInstruction> PlanetGen_SetPlanetTheme_FixBirthStarTheme_Transpiler(
+            IEnumerable<CodeInstruction> instructions)
+        {
+            var matcher = new CodeMatcher(instructions);
+
+            /*
+                IL_0027: ldarg.1      // themeIds
+                IL_0028: ldlen
+                IL_0029: conv.i4
+                IL_002a: stloc.1      // length1
+             */
+
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldarg_1), new CodeMatch(OpCodes.Ldlen), new CodeMatch(OpCodes.Conv_I4),
+                new CodeMatch(OpCodes.Stloc_1));
+
+            matcher.Advance(1);
+            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_1),
+                new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(PlanetThemePatches), nameof(FixBirthStarTheme))));
+
+            return matcher.InstructionEnumeration();
+        }
+
+        public static void FixBirthStarTheme(int[] themeIds)
+        {
+            if (themeIds.Length == 1) PlanetGen.tmp_theme.AddRange(themeIds);
+        }
+
+
+        [HarmonyPatch(typeof(PlanetGen), nameof(PlanetGen.SetPlanetTheme))]
+        [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> PlanetGen_SetPlanetTheme_RemoveOcean_Transpiler(
             IEnumerable<CodeInstruction> instructions)
         {

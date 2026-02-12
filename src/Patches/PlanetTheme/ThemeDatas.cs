@@ -10,18 +10,13 @@ namespace ProjectGenesis.Patches
         {
             {
                 1, // 地中海
-                new ThemeData(new[] { ProtoID.I氮, ProtoID.I氧, }, new[] { 0.7f, 0.3f, }, new[] { 8, 16, 18, }, new[]
-                {
-                    1.0f, 1.0f, 0.0f, 0.4f, //
-                    1.0f, 1.0f, 0.0f, 1.0f, //
-                    1.0f, 1.0f, 1.0f, 0.4f, //
-                })
+                new ThemeData(new[] { ProtoID.I氮, ProtoID.I氧, }, new[] { 0.7f, 0.3f, }, Array.Empty<int>(), Array.Empty<float>())
             },
             {
                 6, // 干旱荒漠
                 new ThemeData(new[] { ProtoID.I二氧化碳, }, new[] { 0.8f, }, new[] { 16, 18, 19, }, new[]
                 {
-                    0.0f, 0.7f, 0.2f, 0.8f, //
+                    1.0f, 0.7f, 0.0f, 1.0f, //
                     0.0f, 1.0f, 0.6f, 0.5f, //
                     0.0f, 0.8f, 0.6f, 0.4f, //
                 })
@@ -48,7 +43,7 @@ namespace ProjectGenesis.Patches
                 {
                     0.0f, 1.0f, 0.3f, 0.7f, //
                     0.0f, 0.6f, 0.3f, 0.8f, //
-                    0.0f, 0.8f, 0.5f, 0.8f, //
+                    1.0f, 0.8f, 0.5f, 0.8f, //
                 })
             },
             {
@@ -126,8 +121,9 @@ namespace ProjectGenesis.Patches
             },
             {
                 20, // 猩红冰湖
-                new ThemeData(new[] { ProtoID.I氮, }, new[] { 0.8f, }, new[] { 18, 20, }, new[]
+                new ThemeData(new[] { ProtoID.I氮, }, new[] { 0.8f, }, new[] { 8, 18, 20, }, new[]
                 {
+                    1.0f, 0.0f, 0.0f, 0.7f, //
                     0.0f, 0.7f, 0.5f, 0.9f, //
                     0.0f, 1.0f, 0.5f, 0.3f, //
                 })
