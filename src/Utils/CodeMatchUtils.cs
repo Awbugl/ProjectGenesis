@@ -59,6 +59,9 @@ namespace ProjectGenesis.Utils
         /// <summary>存储参数</summary>
         public static CodeMatch StArg => new CodeMatch(i => i.opcode == OpCodes.Starg || i.opcode == OpCodes.Starg_S);
 
+        /// <summary>加载局部变量</summary>
+        public static CodeMatch LdLoc => new CodeMatch(i => i.opcode == OpCodes.Ldloc || i.opcode == OpCodes.Ldloc_S);
+        
         /// <summary>加载局部变量地址</summary>
         public static CodeMatch LdLocA => new CodeMatch(i => i.opcode == OpCodes.Ldloca || i.opcode == OpCodes.Ldloca_S);
 
