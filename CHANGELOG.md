@@ -1,3 +1,33 @@
+- v3.2.0 维护协议 | Maintenance Protocols 【不兼容3.1.x旧版本存档、测试版存档】
+  + 适配版本v0.10.34.28455
+  + 添加了`甲烷海洋` `托林矿` `氯化钠矿`
+  + 调整了母星系星球类型，调整地中海的稀有矿物至其他星球
+  + 调整了冶炼配方，由三种熔炉进行冶炼，配方不互通
+  + 调整了炮弹、导弹组的可用数值
+  + 调整了`石墨烯（高效）`、`碳纳米管`、`碳纳米管（高效）` `聚苯硫醚`的配方
+  + 调整了`高能石墨`的热值
+  + 修复了`黑石岩滩`星球表面石头等资源生成不正常的问题
+  + 修复了BepinEx版本不正常时无法正常提示的问题
+  + 修复了量子箱的相关bug，并允许其垂直堆叠
+  + 移除了`矿物处理`科技及相关配方
+  + 移除了空燃料棒及相关功能
+
+  + Adaptation of version v0.10.34.28455
+  + Added "Methane Ocean" "Tholin Vein" and "Sodium Chloride Vein"
+  + Adjusted the home system planet types; moved rare minerals from the Mediterranean planet to other planets
+  + Adjusted Smelting recipes, ores and products are processed by three types of furnaces, with no recipe interconnectivity
+  + Adjusted available values for shells and missile groups
+  + Adjusted `Graphene (advanced)` `Nanotube` `Nanotube (advanced)` `Polyphenylene Sulfide` recipe
+  + Adjusted the heat value of `Energetic Graphite`
+  + Fixed the issue of abnormal generation of stones and other resources on the surface of the "Blackstone Beach" planet
+  + Fixed BepinEx version mismatch hints not displaying properly when version is abnormal
+  + Fixed bugs related to Quantum Storage and allowed vertical stacking
+  + Removed the "Mineral Processing" technology and related recipes
+  + Removed empty fuel rods and related features
+
+<details>
+  <summary>点击展开日志 | Click to view all </summary>
+
 - v3.2.0-alpha1.9 (Experimental 0.3.20009)
   + 修复了创世之书相关教程无法正常显示的问题
   + 调整了炮弹、导弹组的可用数值
@@ -9,8 +39,6 @@
   + Fixed the home system planet types; moved rare minerals from the Mediterranean planet to other planets
   + Adjusted the recipe for Polyphenylene Sulfide (PPS)
 
-<details>
-  <summary>点击展开日志 | Click to view all </summary>
 
 - v3.2.0-alpha1.8 (Experimental 0.3.20008)
   + 修复了机甲继续返回空燃料棒的问题
