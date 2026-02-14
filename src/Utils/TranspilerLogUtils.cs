@@ -38,14 +38,14 @@ namespace ProjectGenesis.Utils
             InstallationCheckPlugin.logger.LogInfo(sb.ToString());
         }
 
-        public static void ToILString(this MethodBase methodInfo)
+        public static void ToILString(this MethodBase methodBase)
         {
-            using (var methodDefinition = new DynamicMethodDefinition(methodInfo))
+            using (var methodDefinition = new DynamicMethodDefinition(methodBase))
             {
                 string invoke = (string)AccessTools
                    .Method("HarmonyLib.Internal.Util.MethodBodyLogExtensions:ToILDasmString", new[] { typeof(Mono.Cecil.Cil.MethodBody), })
                    .Invoke(null, new object[] { methodDefinition.Definition.Body, });
-                InstallationCheckPlugin.logger.LogInfo("Generated IL string for (" + methodInfo.FullDescription() + "):\n" + invoke);
+                InstallationCheckPlugin.logger.LogInfo("Generated IL string for (" + methodBase.FullDescription() + "):\n" + invoke);
             }
         }
     }
