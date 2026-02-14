@@ -59,11 +59,11 @@ namespace ProjectGenesis.Patches
 
             infoSeed = dotNet35Random2.Next();
             genSeed = dotNet35Random2.Next();
-            star.planets[0] = PlanetGen.CreatePlanet(galaxy, star, new int[] { 9, }, 0, 0, 2, 1, false, infoSeed, genSeed);
+            star.planets[0] = PlanetGen.CreatePlanet(galaxy, star, new int[] { 9, }, 0, 0, 1, 1, false, infoSeed, genSeed);
 
             infoSeed = dotNet35Random2.Next();
             genSeed = dotNet35Random2.Next();
-            star.planets[1] = PlanetGen.CreatePlanet(galaxy, star, new int[] { 21, }, 1, 0, 3, 2, true, infoSeed, genSeed);
+            star.planets[1] = PlanetGen.CreatePlanet(galaxy, star, new int[] { 21, }, 1, 0, 2, 2, true, infoSeed, genSeed);
 
             infoSeed = dotNet35Random2.Next();
             genSeed = dotNet35Random2.Next();
@@ -71,11 +71,11 @@ namespace ProjectGenesis.Patches
 
             infoSeed = dotNet35Random2.Next();
             genSeed = dotNet35Random2.Next();
-            star.planets[3] = PlanetGen.CreatePlanet(galaxy, star, new int[] { 6, }, 3, 0, 4, 3, false, infoSeed, genSeed);
+            star.planets[3] = PlanetGen.CreatePlanet(galaxy, star, new int[] { 7, }, 3, 2, 2, 2, false, infoSeed, genSeed);
 
             infoSeed = dotNet35Random2.Next();
             genSeed = dotNet35Random2.Next();
-            star.planets[4] = PlanetGen.CreatePlanet(galaxy, star, new int[] { 20, }, 4, 0, 5, 4, false, infoSeed, genSeed);
+            star.planets[4] = PlanetGen.CreatePlanet(galaxy, star, new int[] { 20, }, 4, 0, 3, 3, false, infoSeed, genSeed);
         }
     }
 }
