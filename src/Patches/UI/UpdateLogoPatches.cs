@@ -36,7 +36,7 @@ namespace ProjectGenesis.Patches
 
                 DateTime dateTime = DateTime.Now;
 
-                if (dateTime > new DateTime(2024, 2, 9) && dateTime < new DateTime(2024, 2, 25)) iconstr = "创世Logo新春贺岁版";
+                if (dateTime > new DateTime(2026, 2, 16) && dateTime < new DateTime(2026, 3, 3)) iconstr = "创世Logo新春贺岁版";
             }
             else { iconstr = "黑雾英文图标"; }
 
