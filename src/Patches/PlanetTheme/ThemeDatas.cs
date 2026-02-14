@@ -23,10 +23,11 @@ namespace ProjectGenesis.Patches
             },
             {
                 7, // 灰烬冻土
-                new ThemeData(new[] { ProtoID.I氮, ProtoID.I二氧化硫, }, new[] { 0.5f, 0.5f, }, new[] { 16, 18, 20, }, new[]
+                new ThemeData(new[] { ProtoID.I氮, ProtoID.I二氧化硫, }, new[] { 0.5f, 0.5f, }, new[] { 16, 18, 19, 20, }, new[]
                 {
                     1.0f, 0.7f, 0.0f, 1.0f, //
                     0.0f, 1.0f, 0.6f, 0.5f, //
+                    1.0f, 1.0f, 0.2f, 0.3f, //
                     0.0f, 0.4f, 0.3f, 0.2f, //
                 })
             },
@@ -125,7 +126,7 @@ namespace ProjectGenesis.Patches
                 {
                     1.0f, 0.0f, 0.0f, 0.7f, //
                     0.0f, 0.7f, 0.5f, 0.9f, //
-                    0.0f, 1.0f, 0.5f, 0.3f, //
+                    1.0f, 1.0f, 0.5f, 0.3f, //
                 })
             },
             {
