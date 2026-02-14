@@ -1661,13 +1661,13 @@
   },
   {
     "Name": "T物品仓储描述",
-    "ZHCN": "小型储物仓可以搭建在四向分流器上，而大型储物仓具有更大的储量。",
-    "ENUS": "Storage Mk.I can be built on Splitter.\nStorage Mk.II has twice the capacity."
+    "ZHCN": "\\cwc1-;可以搭建在四向分流器上，而\\cwc2-;具有更大的储量。",
+    "ENUS": "\\cwc1-; can be built on Splitter.\n\\cwc2-; has twice the capacity."
   },
   {
     "Name": "T物品仓储结果",
-    "ZHCN": "你解锁了储物仓，可以将采集到的矿物与生产中的中间产物存入其中。",
-    "ENUS": "Storage Mk.I can be built on Splitter.\nStorage Mk.II has twice the capacity."
+    "ZHCN": "你解锁了\\cwc1-;和\\cwc2-;，可以将采集到的矿物与生产中的中间产物存入其中。",
+    "ENUS": "\\cwc1-; can be built on Splitter.\n\\cwc2-; has twice the capacity."
   },
   {
     "Name": "X射线裂解描述",
@@ -1761,38 +1761,38 @@
   },
   {
     "Name": "钛矿冶炼描述",
-    "ZHCN": "采矿和冶炼技术的进步，使得矿物控制更加容易，现在可以开采利用钛矿和钨矿了。",
-    "ENUS": "The Advancements in mining and smelting technology have made ore control easier. Titanium and Tungsten can now be mined and utilized."
+    "ZHCN": "采矿和冶炼技术的进步，使得矿物控制更加容易，现在可以开采利用\\taik-;和\\tunk-;了。",
+    "ENUS": "The Advancements in mining and smelting technology have made ore control easier. \\taik-; and \\tunk-; can now be utilized."
   },
   {
     "Name": "钛矿冶炼结果",
-    "ZHCN": "你掌握了钛矿冶炼技术，现在可以开采利用钛矿和钨矿了。",
-    "ENUS": "You have mastered the Titanium Ore Smelting Techniques, Titanium and Tungsten can now be mined and utilized."
+    "ZHCN": "你掌握了钛矿冶炼技术，现在可以开采利用\\taik-;和\\tunk-;了。",
+    "ENUS": "You have mastered the Titanium Ore Smelting Techniques, \\taik-; and \\tunk-; can now be utilized."
   },
   {
     "Name": "卡西米尔晶体结果",
-    "ZHCN": "你解锁了卡西米尔晶体，它标志着我们正将尖端物理学应用于生产。",
-    "ENUS": "You have unlocked the Casimir Crystal. It signifies that we are applying cutting-edge physics to production."
+    "ZHCN": "你解锁了\\kxme-;，它标志着我们正将尖端物理学应用于生产。",
+    "ENUS": "You have unlocked \\kxme-;. It signifies that we are applying cutting-edge physics to production."
   },
   {
     "Name": "人造恒星结果",
-    "ZHCN": "你解锁了发电设施：人造恒星。我们在地上，重现恒星的权能。",
-    "ENUS": "You have unlocked the power generation facility, the Mini-sun. We are on earth, reproducing the power of the stars."
+    "ZHCN": "你解锁了发电设施：\\xty;。我们在地上，重现恒星的权能。",
+    "ENUS": "You have unlocked the power generation facility, \\xty;. We are on earth, reproducing the power of the stars."
   },
   {
     "Name": "基础制造工艺结果",
-    "ZHCN": "你解锁了基础制造单元，可以将铁块、铜块等原材料制造成更高级的产物。",
-    "ENUS": "You have unlocked the Basic Manufacturing Unit. It can make iron and copper ingots into more advanced products."
+    "ZHCN": "你解锁了\\zzt1-;，可以将铁块、铜块等原材料制造成更高级的产物。",
+    "ENUS": "You have unlocked \\zzt1-;. It can make iron and copper ingots into more advanced products."
   },
   {
     "Name": "基础物流系统结果",
-    "ZHCN": "你解锁了自动化物流的基础设施━━传送带、分拣器和四向分流器，你可以用它们来将货物自动运送到你想要的地方。",
-    "ENUS": "You have unlocked automated logistics, the Conveyor Belt, Sorter and Splitter. You can use them to automatically transport the ores gathered in the mining machine for smelting."
+    "ZHCN": "你解锁了自动化物流的基础设施━━\\csd1-;、\\fjq1-;和\\sxflq-;，你可以用它们来将货物自动运送到你想要的地方。",
+    "ENUS": "You have unlocked automated logistics, \\csd1-;, \\fjq1-; and \\sxflq-;. You can use them to automatically transport the ores gathered in the mining machine for smelting."
   },
   {
     "Name": "改良物流系统结果",
-    "ZHCN": "你解锁了速度更快的传送带与分拣器，以及监测物流系统工作状态的流速监测器。",
-    "ENUS": "You have unlocked a conveyor belt with a larger carrying capacity, a sorter with faster speed. Traffic Monitor is built on the conveyor belt to monitor the real-time cargo flow rate at the corresponding location. Conditions can be set to trigger an alarm."
+    "ZHCN": "你解锁了速度更快的\\csd2;与\\fjq2;，以及监测物流系统工作状态的\\lsq;。",
+    "ENUS": "You have unlocked \\csd2 with a larger carrying capacity, \\fjq2; with faster speed. \\lsq; is built on the conveyor belt to monitor the real-time cargo flow rate at the corresponding location. Conditions can be set to trigger an alarm."
   },
   {
     "Name": "I铁矿",
@@ -1826,8 +1826,8 @@
   },
   {
     "Name": "位面冶金结果",
-    "ZHCN": "你解锁了更高级的熔炉━━<color=\"#FD965ECC\">位面熔炉</color>，它的速度是电弧熔炉的2倍！ ",
-    "ENUS": "You have unlocked the more advanced smelter ━━ <color=\"#FD965ECC\">Plane Smelter</color>, which is twice as fast as an Arc Smelter!"
+    "ZHCN": "你解锁了更高级的熔炉━━<color=\"#FD965ECC\">\\rongl2-;</color>。 ",
+    "ENUS": "You have unlocked the more advanced smelter ━━ <color=\"#FD965ECC\">\\rongl2-;</color>."
   },
   {
     "Name": "I钨矿",
