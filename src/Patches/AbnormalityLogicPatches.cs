@@ -10,13 +10,12 @@ namespace ProjectGenesis.Patches
     {
         [HarmonyPatch(typeof(UIAbnormalityTip), nameof(UIAbnormalityTip._OnInit))]
         [HarmonyPostfix]
-        public static void UIAbnormalityTip_OnInit(UIAbnormalityTip __instance, ref bool ___isWarned, ref bool ___willClose,
-            ref float ___closeDelayTime)
+        public static void UIAbnormalityTip_OnInit(UIAbnormalityTip __instance)
         {
-            ___isWarned = true;
-            ___willClose = true;
+            __instance.isWarned = true;
+            __instance.willClose = true;
             __instance.mainTweener.Play1To0Continuing();
-            ___closeDelayTime = 3f;
+            __instance.closeDelayTime = 3f;
         }
 
         [HarmonyPatch(typeof(AbnormalityLogic), nameof(AbnormalityLogic.GameTick))]

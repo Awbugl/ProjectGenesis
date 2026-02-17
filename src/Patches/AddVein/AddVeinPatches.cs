@@ -123,10 +123,10 @@ namespace ProjectGenesis.Patches
 
         [HarmonyPatch(typeof(UISandboxMenu), nameof(UISandboxMenu.StaticLoad))]
         [HarmonyPostfix]
-        public static void UISandboxMenu_StaticLoad_Postfix(ref VeinProto[,] ___veinProtos)
+        public static void UISandboxMenu_StaticLoad_Postfix()
         {
-            ___veinProtos[1, 7] = LDB.veins.Select(15);
-            ___veinProtos[1, 8] = LDB.veins.Select(16);
+            UISandboxMenu.veinProtos[1, 7] = LDB.veins.Select(15);
+            UISandboxMenu.veinProtos[1, 8] = LDB.veins.Select(16);
         }
 
         [HarmonyPatch(typeof(PlanetAlgorithm), nameof(PlanetAlgorithm.GenerateVeins))]
