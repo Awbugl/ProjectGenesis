@@ -32,8 +32,6 @@ namespace ProjectGenesis.Patches
 
                 rectTransform.anchoredPosition = new Vector2(basePos.x + (tabData.tabIndex - 5) * 48, basePos.y);
 
-                UIUtil.RemovePersistentCalls(gameObject);
-
                 UIButton uiButton = gameObject.GetComponent<UIButton>();
 
                 uiButton.data = tabData.tabIndex + 6;
