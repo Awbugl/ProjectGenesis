@@ -200,6 +200,15 @@ namespace ProjectGenesis.Utils
         {
             LDB.items.Select(ProtoID.I水).recipes = new List<RecipeProto> { LDB.recipes.Select(ProtoID.R海水淡化), };
             LDB.items.Select(ProtoID.I氢).isRaw = true;
+            
+            foreach (ThemeProto t in LDB.themes.dataArray)
+            {
+                foreach (int gasItem in t.GasItems)
+                {
+                    ItemProto itemProto = LDB.items.Select(gasItem);
+                    if (itemProto != null) itemProto.productionMask |= 128;
+                }
+            }
         }
 
         internal static void ModifyEnemyHpUpgrade()
