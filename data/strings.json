@@ -76,8 +76,8 @@
   },
   {
     "Name": "I裂变增效",
-    "ZHCN": "通过燃料再处理技术，回收未完全反应的铀和钚，减少核废料的产生，提高燃料利用率。\n<color=\"#FD965ECC\">裂变发电效率 +20%</color>",
-    "ENUS": "By using fuel reprocessing technology, unreacted uranium and plutonium can be recovered, reducing the production of nuclear waste and improving fuel utilization.\n<color=\"#FD965ECC\">Fission Efficiency +20%</color>"
+    "ZHCN": "通过燃料再处理技术，回收未完全反应的铀和钍，减少核废料的产生，提高燃料利用率。\n<color=\"#FD965ECC\">裂变发电效率 +20%</color>",
+    "ENUS": "By using fuel reprocessing technology, unreacted uranium and thorium can be recovered, reducing the production of nuclear waste and improving fuel utilization.\n<color=\"#FD965ECC\">Fission Efficiency +20%</color>"
   },
   {
     "Name": "先进推进",
@@ -465,9 +465,9 @@
     "ENUS": "Uranium Fissile Fuel"
   },
   {
-    "Name": "钚矿",
-    "ZHCN": "钚燃料",
-    "ENUS": "Plutonium Fissile Fuel"
+    "Name": "钍矿",
+    "ZHCN": "钍燃料",
+    "ENUS": "Thorium Fissile Fuel"
   },
   {
     "Name": "量子储液罐",
@@ -490,14 +490,14 @@
     "ENUS": "Helium-3"
   },
   {
-    "Name": "钚燃料棒",
-    "ZHCN": "钚燃料棒",
-    "ENUS": "Plutonium Fuel Rod"
+    "Name": "钍燃料棒",
+    "ZHCN": "钍燃料棒",
+    "ENUS": "Thorium Fuel Rod"
   },
   {
-    "Name": "I钚燃料棒",
-    "ZHCN": "利用经过精密加工和封装的含钚核燃料，能够在有限的空间内提供稳定且强大的能量输出。",
-    "ENUS": "Utilizing precision-machined and encapsulated high-purity plutonium, it is capable of providing a stable and powerful energy output in a limited space."
+    "Name": "I钍燃料棒",
+    "ZHCN": "利用经过精密加工和封装的含钍核燃料，能够在有限的空间内提供稳定且强大的能量输出。",
+    "ENUS": "Utilizing precision-machined and encapsulated high-purity thorium, it is capable of providing a stable and powerful energy output in a limited space."
   },
   {
     "Name": "铀燃料棒",
@@ -516,8 +516,8 @@
   },
   {
     "Name": "IMOX燃料棒",
-    "ZHCN": "一种使用铀和钚的混合氧化物的燃料棒，能够更有效地利用核燃料，减少放射性废物产生。",
-    "ENUS": "A fuel rod that uses mixed oxides of uranium and plutonium, which enables more efficient use of nuclear fuel and reduces the generation of radioactive waste."
+    "ZHCN": "一种使用铀和钍的混合氧化物的燃料棒，能够更有效地利用核燃料，减少放射性废物产生。",
+    "ENUS": "A fuel rod that uses mixed oxides of uranium and thorium, which enables more efficient use of nuclear fuel and reduces the generation of radioactive waste."
   },
   {
     "Name": "I氢燃料棒",
@@ -1491,8 +1491,8 @@
   },
   {
     "Name": "T放射性矿物提炼描述",
-    "ZHCN": "使用大量氢氧化钠可以将放射性矿物中的极少量的铀和钚提炼出来，作为后续提纯的原料。",
-    "ENUS": "Using a large amount of sodium hydroxide can separate a small amount of plutonium ore and uranium ore in radioactive ore as raw materials for further separation."
+    "ZHCN": "使用大量氢氧化钠可以将放射性矿物中的极少量的铀和钍提炼出来，作为后续提纯的原料。",
+    "ENUS": "Using a large amount of sodium hydroxide can separate a small amount of thorium ore and uranium ore in radioactive ore as raw materials for further separation."
   },
   {
     "Name": "T同位素温差发电",
@@ -1701,18 +1701,18 @@
   },
   {
     "Name": "I裂变能源发电站",
-    "ZHCN": "新一代的一体化快中子反应堆使用金属铀钚燃料、液态钠冷却池、废料电解精炼处理以及高度自动化技术，产生大量的电力的同时不需要考虑废料的处理。",
-    "ENUS": "The new generation of integrated fast reactors uses uranium-plutonium metal fuel, liquid sodium cooling pools, electrolytic refining of waste, and highly automated technology to generate large amounts of power without regard to waste disposal."
+    "ZHCN": "新一代的一体化快中子反应堆使用金属铀钍燃料、液态钠冷却池、废料电解精炼处理以及高度自动化技术，产生大量的电力的同时不需要考虑废料的处理。",
+    "ENUS": "The new generation of integrated fast reactors uses uranium-thorium metal fuel, liquid sodium cooling pools, electrolytic refining of waste, and highly automated technology to generate large amounts of power without regard to waste disposal."
   },
   {
     "Name": "T裂变发电站描述",
-    "ZHCN": "金属铀钚燃料、液态钠冷却池、废料电解精炼处理以及高度自动化技术的综合应用，使一体化快中子反应堆产生大量的电力的同时不需要考虑废料的处理。",
-    "ENUS": "The new generation of integrated fast reactors uses uranium-plutonium metal fuel, liquid sodium cooling pools, electrolytic refining of waste, and highly automated technology to generate large amounts of power without regard to waste disposal."
+    "ZHCN": "金属铀钍燃料、液态钠冷却池、废料电解精炼处理以及高度自动化技术的综合应用，使一体化快中子反应堆产生大量的电力的同时不需要考虑废料的处理。",
+    "ENUS": "The new generation of integrated fast reactors uses uranium-thorium metal fuel, liquid sodium cooling pools, electrolytic refining of waste, and highly automated technology to generate large amounts of power without regard to waste disposal."
   },
   {
     "Name": "T裂变发电站结果",
-    "ZHCN": "金属铀钚燃料、液态钠冷却池、废料电解精炼处理以及高度自动化技术的综合应用，使一体化快中子反应堆产生大量的电力的同时不需要考虑废料的处理。",
-    "ENUS": "The new generation of integrated fast reactors uses uranium-plutonium metal fuel, liquid sodium cooling pools, electrolytic refining of waste, and highly automated technology to generate large amounts of power without regard to waste disposal."
+    "ZHCN": "金属铀钍燃料、液态钠冷却池、废料电解精炼处理以及高度自动化技术的综合应用，使一体化快中子反应堆产生大量的电力的同时不需要考虑废料的处理。",
+    "ENUS": "The new generation of integrated fast reactors uses uranium-thorium metal fuel, liquid sodium cooling pools, electrolytic refining of waste, and highly automated technology to generate large amounts of power without regard to waste disposal."
   },
   {
     "Name": "基础制造台",
@@ -1792,7 +1792,7 @@
   {
     "Name": "改良物流系统结果",
     "ZHCN": "你解锁了速度更快的\\csd2;与\\fjq2;，以及监测物流系统工作状态的\\lsq;。",
-    "ENUS": "You have unlocked \\csd2 with a larger carrying capacity, \\fjq2; with faster speed. \\lsq; is built on the conveyor belt to monitor the real-time cargo flow rate at the corresponding location. Conditions can be set to trigger an alarm."
+    "ENUS": "You have unlocked \\csd2; with a larger carrying capacity, \\fjq2; with faster speed. \\lsq; is built on the conveyor belt to monitor the real-time cargo flow rate at the corresponding location. Conditions can be set to trigger an alarm."
   },
   {
     "Name": "I铁矿",
@@ -1850,9 +1850,9 @@
     "ENUS": "After refinements, the concentration of uranium in the ore is already considerable, which can support the chain reaction."
   },
   {
-    "Name": "I钚矿",
-    "ZHCN": "经提炼后，矿石中的钚浓度已经可以支撑链式反应。",
-    "ENUS": "After refinements, the concentration of plutonium in the ore is already considerable, which can support the chain reaction."
+    "Name": "I钍矿",
+    "ZHCN": "经提炼后，矿石中的钍浓度已经可以支撑链式反应。",
+    "ENUS": "After refinements, the concentration of thorium in the ore is already considerable, which can support the chain reaction."
   },
   {
     "Name": "铝矿脉",
