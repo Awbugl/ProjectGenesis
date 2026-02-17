@@ -76,7 +76,7 @@ namespace ProjectGenesis.Utils
             { 6217, new RodIconDesc(new Color32(163, 145, 85, 255)) },  // 煤油棒
             { 6216, new RodIconDesc(new Color32(198, 207, 111, 255)) }, // JP10棒
             { 6242, new RodIconDesc(new Color32(33, 170, 87, 255)) },   // 铀棒
-            { 6241, new RodIconDesc(new Color32(204, 74, 78, 255)) },   // 钚棒
+            { 6241, new RodIconDesc(new Color32(204, 74, 78, 255)) },   // 钍棒
             { 6243, new RodIconDesc(new Color32(153, 157, 169, 255)) }, // MOX棒
             { 6244, new RodIconDesc(new Color32(245, 250, 105, 255)) }, // He3棒
             { 6245, new RodIconDesc(new Color32(147, 77, 255, 255)) },  // 混合棒
