@@ -72,6 +72,16 @@ namespace ProjectGenesis.Patches
                     GameMain.data.history.UnlockTechUnlimited(proto.ID, true);
             }
 
+            Player player = GameMain.data.mainPlayer;
+
+            TakeItemFromPlayer(1601, 10);
+            TakeItemFromPlayer(1401, 10);
+            TakeItemFromPlayer(2001, 20);
+            TakeItemFromPlayer(2011, 5);
+            TakeItemFromPlayer(2012, 5);
+            TakeItemFromPlayer(2030, 5);
+            TakeItemFromPlayer(2106, 1);
+
             AddItemToPackage(1131, 2000); // 地基
             AddItemToPackage(2003, 1200); // 三级带
             AddItemToPackage(2013, 200);  // 三级爪
@@ -115,15 +125,13 @@ namespace ProjectGenesis.Patches
             AddItemToPackage(3007, 5);    // 分析基站
             AddItemToPackage(3009, 5);    // 信号塔
 
-            TakeItemFromPlayer(1601, 10);
-            TakeItemFromPlayer(1401, 10);
-            TakeItemFromPlayer(2001, 20);
-            TakeItemFromPlayer(2011, 5);
-            TakeItemFromPlayer(2012, 5);
-            TakeItemFromPlayer(2030, 5);
-            TakeItemFromPlayer(2106, 1);
+            player.package.Sort();
 
-            GameMain.data.mainPlayer.package.Sort();
+            return;
+
+            void AddItemToPackage(int itemId, int count) => player.TryAddItemToPackage(itemId, count, 0, false);
+
+            void TakeItemFromPlayer(int itemId, int count) => player.package.TakeTailItems(ref itemId, ref count, out _);
         }
 
         private static bool NeedFastUnlock(int[] items)
@@ -145,11 +153,5 @@ namespace ProjectGenesis.Patches
 
             return true;
         }
-
-        private static void AddItemToPackage(int itemId, int count) =>
-            GameMain.data.mainPlayer.TryAddItemToPackage(itemId, count, 0, false);
-
-        private static void TakeItemFromPlayer(int itemId, int count) =>
-            GameMain.data.mainPlayer.package.TakeTailItems(ref itemId, ref count, out _);
     }
 }
