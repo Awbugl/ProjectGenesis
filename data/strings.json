@@ -1841,8 +1841,8 @@
   },
   {
     "Name": "I放射性矿物",
-    "ZHCN": "超重元素由类质同象作用部分取代了成岩矿物的金属离子，形成的具有放射性的岩石，可从中分离出多种具有工业价值的超重元素化合物。但些许迹象也暗示着部分矿脉有受核废料污染而产生核素迁移的可能性。",
-    "ENUS": "Superheavy elements are radioactive rocks formed by the partial replacement of metal ions in rock-forming minerals by homogeneous isomorphism, from which a variety of superheavy element compounds of industrial value can be isolated. However, there are some indications that some of the veins have the potential for nuclide migration due to nuclear waste contamination."
+    "ZHCN": "超重元素由类质同象作用部分取代了成岩矿物的金属离子，形成的具有放射性的岩石，可从中分离出多种具有工业价值的超重元素化合物。",
+    "ENUS": "Superheavy elements are radioactive rocks formed by the partial replacement of metal ions in rock-forming minerals by homogeneous isomorphism, from which a variety of superheavy element compounds of industrial value can be isolated."
   },
   {
     "Name": "I铀矿",
