@@ -17,6 +17,8 @@ namespace ProjectGenesis.Patches
                                           PlanetData_GasItems_Field = AccessTools.Field(typeof(PlanetData), nameof(PlanetData.gasItems)),
                                           StationComponent_isStellar_Field =
                                               AccessTools.Field(typeof(StationComponent), nameof(StationComponent.isStellar)),
+                                          StationComponent_collectionPerTick_Field =
+                                              AccessTools.Field(typeof(StationComponent), nameof(StationComponent.collectionPerTick)),
                                           PrefabDesc_isStellarStation_Field =
                                               AccessTools.Field(typeof(PrefabDesc), nameof(PrefabDesc.isStellarStation)),
                                           BuildTool_planet_Field = AccessTools.Field(typeof(BuildTool), nameof(BuildTool.planet));
@@ -242,6 +244,10 @@ namespace ProjectGenesis.Patches
             if (__instance.isCollector) __instance.warperMaxCount = 0;
         }
 
+        [HarmonyPatch(typeof(PlanetTransport), nameof(PlanetTransport.CalcCollectorsWorkCost))]
+        [HarmonyPrefix]
+        public static bool PlanetTransport_CalcCollectorsWorkCost_Prefix() => false;
+
         [HarmonyPatch(typeof(StationComponent), nameof(StationComponent.UpdateCollection))]
         [HarmonyPostfix]
         public static void StationComponent_UpdateCollection_Postfix(StationComponent __instance)
@@ -263,5 +269,44 @@ namespace ProjectGenesis.Patches
 
             __instance.energy = 0;
         }
+
+        [HarmonyPatch(typeof(UIReferenceSpeedTip), nameof(UIReferenceSpeedTip.AddEntryDataWithFactory))]
+        [HarmonyPatch(typeof(ProductionExtraInfoCalculator), nameof(ProductionExtraInfoCalculator.CalculateFactory))]
+        [HarmonyTranspiler]
+        public static IEnumerable<CodeInstruction> ProductionExtraInfoCalculator_CalculateFactory_Transpiler(
+            IEnumerable<CodeInstruction> instructions)
+        {
+            /*
+                IL_15e0: ldfld        float32[] StationComponent::collectionPerTick
+                IL_15e5: ldloc.s      index30
+                IL_15e7: ldelem.r4
+                IL_15e8: mul
+                IL_15e9: ldloc.s      num16
+                IL_15eb: mul
+                IL_15ec: stloc.s      refSpeed_V_140
+
+                IL_0f14: ldfld        float32[] StationComponent::collectionPerTick
+                IL_0f19: ldloc.s      index9
+                IL_0f1b: ldelem.r4
+                IL_0f1c: mul
+                IL_0f1d: ldloc.s      num18
+                IL_0f1f: mul
+                IL_0f20: stloc.s      num19
+
+            */
+
+            var matcher = new CodeMatcher(instructions);
+
+            matcher.MatchForward(true, new CodeMatch(OpCodes.Ldfld, StationComponent_collectionPerTick_Field),
+                new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldelem_R4), new CodeMatch(OpCodes.Mul));
+
+            matcher.Advance(1)
+               .InsertAndAdvance(new CodeInstruction(OpCodes.Call,
+                    AccessTools.Method(typeof(AtmosphericCollectPatches), nameof(FixStats))));
+
+            return matcher.InstructionEnumeration();
+        }
+
+        public static float FixStats(float num) => GameMain.history.miningSpeedScale * num;
     }
 }
