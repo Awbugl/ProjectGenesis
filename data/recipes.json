@@ -5649,7 +5649,7 @@
     "ID": 703,
     "Name": "盐水电解",
     "Description": "R盐水电解",
-    "IconPath": "",
+    "IconPath": "Assets/texpack/R盐水电解",
     "IconTag": "rysdj",
     "Type": 2,
     "GridIndex": 3502,
