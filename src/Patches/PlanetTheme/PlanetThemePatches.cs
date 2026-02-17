@@ -97,6 +97,8 @@ namespace ProjectGenesis.Patches
         {
             PlanetData planet = __instance.planet;
 
+            if (planet?.data == null) return;
+
             switch (planet.waterItemId)
             {
                 case ProtoID.I盐酸:
@@ -104,7 +106,7 @@ namespace ProjectGenesis.Patches
                     var planetAlgorithm3 = new PlanetAlgorithm3();
                     planetAlgorithm3.Reset(planet.seed, planet);
                     planetAlgorithm3.GenerateTerrain(planet.mod_x, planet.mod_y);
-                    break;
+                    return;
             }
         }
     }
