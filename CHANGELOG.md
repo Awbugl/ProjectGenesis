@@ -1,3 +1,17 @@
+- v3.2.1
+  + 降低了`电浆激发器`的制造成本
+  + 修复了快速开局模式下初始状态不正常的问题
+  + 修复了采集器的统计数据不正确的问题
+  + 修复了在图标选择界面无法选择部分配方的问题
+
+  + Reduced the manufacturing cost of Plasma Generator
+  + Fixed abnormal initial state in Quick Start mode
+  + Fixed incorrect statistics for collectors
+  + Fixed inability to select some recipes in the icon selection interface
+
+<details>
+  <summary>点击展开日志 | Click to view all </summary>
+
 - v3.2.0 维护协议 | Maintenance Protocols 【不兼容3.1.x旧版本存档、测试版存档】
   + 适配版本v0.10.34.28455
   + 添加了`甲烷海洋` `托林矿` `氯化钠矿`
@@ -25,8 +39,6 @@
   + Removed the "Mineral Processing" technology and related recipes
   + Removed empty fuel rods and related features
 
-<details>
-  <summary>点击展开日志 | Click to view all </summary>
 
 - v3.2.0-alpha1.9 (Experimental 0.3.20009)
   + 修复了创世之书相关教程无法正常显示的问题
