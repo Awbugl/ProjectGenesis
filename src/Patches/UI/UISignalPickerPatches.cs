@@ -29,17 +29,16 @@ namespace ProjectGenesis.Patches
                 if (tabData == null) continue;
 
                 GameObject gameObject = Object.Instantiate(TabSystem.GetTabPrefab(), __instance.pickerTrans, false);
-                ((RectTransform)gameObject.transform).anchoredPosition = new Vector2((tabData.tabIndex + 5) * 70 - 54, -75f);
+                ((RectTransform)gameObject.transform).anchoredPosition = new Vector2((tabData.tabIndex + 3) * 70 - 54, -75f);
                 UITabButton component = gameObject.GetComponent<UITabButton>();
                 Sprite newIcon = Resources.Load<Sprite>(tabData.tabIconPath);
                 component.Init(newIcon, tabData.tabName, tabData.tabIndex + 6, __instance.OnTypeButtonClick);
                 _tabs.Add(component);
             }
 
-            Transform typeButton6Transform = __instance.typeButton6.transform;
-            __instance.typeButton7.transform.localPosition = typeButton6Transform.localPosition;
-            typeButton6Transform.localPosition = __instance.typeButton5.transform.localPosition;
             __instance.typeButton5.gameObject.SetActive(false);
+            __instance.typeButton6.gameObject.SetActive(false);
+            __instance.typeButton7.gameObject.SetActive(false);
         }
 
         [HarmonyPatch(typeof(UISignalPicker), nameof(UISignalPicker.OnTypeButtonClick))]
@@ -64,10 +63,10 @@ namespace ProjectGenesis.Patches
             matcher.MatchForward(true, new CodeMatch(OpCodes.Ldarg_0), new CodeMatch(OpCodes.Ldfld, currentTypeField),
                 new CodeMatch(OpCodes.Ldc_I4_2));
 
-            object labal = matcher.Advance(1).Operand;
+            object label = matcher.Advance(1).Operand;
 
             matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0), new CodeInstruction(OpCodes.Ldfld, currentTypeField),
-                new CodeInstruction(OpCodes.Ldc_I4_8), new CodeInstruction(OpCodes.Bge, labal));
+                new CodeInstruction(OpCodes.Ldc_I4_8), new CodeInstruction(OpCodes.Bge, label));
 
             return matcher.InstructionEnumeration();
         }
@@ -129,10 +128,9 @@ namespace ProjectGenesis.Patches
 
         [HarmonyPatch(typeof(UISignalPicker), nameof(UISignalPicker.RefreshIcons))]
         [HarmonyPostfix]
-        public static void RefreshIcons(UISignalPicker __instance, ref int ___currentType, ref uint[] ___indexArray,
-            ref int[] ___signalArray)
+        public static void RefreshIcons(UISignalPicker __instance)
         {
-            if (___currentType <= 8) return;
+            if (__instance.currentType <= 8) return;
 
             IconSet iconSet = GameMain.iconSet;
             ItemProto[] dataArray = LDB.items.dataArray;
@@ -143,7 +141,7 @@ namespace ProjectGenesis.Patches
 
                 int num4 = t.GridIndex / 1000;
 
-                if (num4 != ___currentType - 6) continue;
+                if (num4 != __instance.currentType - 6) continue;
 
                 int num5 = (t.GridIndex - num4 * 1000) / 100 - 1;
                 int num6 = t.GridIndex % 100 - 1;
@@ -152,11 +150,11 @@ namespace ProjectGenesis.Patches
 
                 int index5 = num5 * 17 + num6;
 
-                if (index5 < 0 || index5 >= ___indexArray.Length) continue;
+                if (index5 < 0 || index5 >= __instance.indexArray.Length) continue;
 
                 int index6 = SignalProtoSet.SignalId(ESignalType.Item, t.ID);
-                ___indexArray[index5] = iconSet.signalIconIndex[index6];
-                ___signalArray[index5] = index6;
+                __instance.indexArray[index5] = iconSet.signalIconIndex[index6];
+                __instance.signalArray[index5] = index6;
             }
         }
     }

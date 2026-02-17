@@ -45,6 +45,15 @@ namespace ProjectGenesis.Patches
             __instance.lootFilter.filterTrans.sizeDelta = new Vector2(830, 476);
         }
 
+        [HarmonyPatch(typeof(UISignalTagPicker), nameof(UISignalTagPicker._OnCreate))]
+        [HarmonyPostfix]
+        [HarmonyPriority(Priority.Last)]
+        public static void UISignalTagPicker_OnCreate_Postfix(ManualBehaviour __instance)
+        {
+            ((RectTransform)__instance.transform).sizeDelta = new Vector2(512, 388);
+            __instance.transform.Find("content").GetComponent<RectTransform>().sizeDelta = new Vector2(442, 182);
+        }
+
         [HarmonyPatch(typeof(UIRecipePicker), nameof(UIRecipePicker._OnCreate))]
         [HarmonyPatch(typeof(UISignalPicker), nameof(UISignalPicker._OnCreate))]
         [HarmonyPatch(typeof(UIItemPicker), nameof(UIItemPicker._OnCreate))]
