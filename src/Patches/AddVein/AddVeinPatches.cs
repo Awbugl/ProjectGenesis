@@ -44,22 +44,23 @@ namespace ProjectGenesis.Patches
 
         internal static void ModifyVeinData()
         {
-            AddVeinProtos(NewVein(15, "铝矿脉", "I铝矿", "Assets/texpack/V铝矿脉", ProtoID.I铝矿, 25, 1, 60),
-                NewVein(16, "放射性矿脉", "I放射性矿物", "Assets/texpack/V放射晶体矿脉", ProtoID.I放射性矿物, 35, 2, 90),
-                NewVein(17, "钨矿脉", "I钨矿", "Assets/texpack/V钨矿脉", ProtoID.I钨矿, 34, 1, 120),
-                NewVein(18, "硫矿脉", "I硫矿", "Assets/texpack/V硫矿脉", ProtoID.I硫矿, 36, 1, 90),
-                NewVein(19, "盐矿脉", "I氯化钠", "Assets/texpack/V盐矿脉", ProtoID.I氯化钠, 37, 2, 30),
-                NewVein(20, "托林矿脉", "I焦油", "Assets/texpack/V托林矿脉", ProtoID.I焦油, 38, 2, 90));
+            AddVeinProtos(NewVein(15, "铝矿脉", "I铝矿", "Assets/texpack/V铝矿脉", "lvkm", ProtoID.I铝矿, 25, 1, 60),
+                NewVein(16, "放射性矿脉", "I放射性矿物", "Assets/texpack/V放射晶体矿脉", "fsxkm", ProtoID.I放射性矿物, 35, 2, 90),
+                NewVein(17, "钨矿脉", "I钨矿", "Assets/texpack/V钨矿脉", "wukm", ProtoID.I钨矿, 34, 1, 120),
+                NewVein(18, "硫矿脉", "I硫矿", "Assets/texpack/V硫矿脉", "liukm", ProtoID.I硫矿, 36, 1, 90),
+                NewVein(19, "盐矿脉", "I氯化钠", "Assets/texpack/V盐矿脉", "naclkm", ProtoID.I氯化钠, 37, 2, 30),
+                NewVein(20, "托林矿脉", "I焦油", "Assets/texpack/V托林矿脉", "tlkm", ProtoID.I焦油, 38, 2, 90));
             return;
 
-            VeinProto NewVein(int id, string name, string description, string iconPath, int miningItem, int miningEffect, int modelIndex,
-                int miningTime) =>
+            VeinProto NewVein(int id, string name, string description, string iconPath, string iconTag, int miningItem, int miningEffect,
+                int modelIndex, int miningTime) =>
                 new VeinProto
                 {
                     ID = id,
                     Name = name,
                     Description = description,
                     IconPath = iconPath,
+                    IconTag = iconTag,
                     MiningItem = miningItem,
                     MiningEffect = miningEffect,
                     ModelIndex = modelIndex,
