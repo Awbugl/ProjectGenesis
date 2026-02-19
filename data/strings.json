@@ -187,12 +187,12 @@
   {
     "Name": "指引条目9",
     "ZHCN": "使用 \\wxsdt-; 对机甲充电",
-    "ENUS": "Charge Mecha from \\wxsdt-;"
+    "ENUS": "Charge Mecha using \\wxsdt-;"
   },
   {
     "Name": "指引条目10",
-    "ZHCN": "高效电浆控制",
-    "ENUS": "High-Efficiency Plasma Control"
+    "ZHCN": "机甲充电",
+    "ENUS": "Charge Mecha"
   },
   {
     "Name": "指引条目11",
