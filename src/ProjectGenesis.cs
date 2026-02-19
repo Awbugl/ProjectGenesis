@@ -246,6 +246,7 @@ namespace ProjectGenesis
             LDB.journalPatterns.OnAfterDeserialize();
             LDB.themes.OnAfterDeserialize();
             LDB.veins.OnAfterDeserialize();
+            LDB.goals.OnAfterDeserialize();
 
             if (GameMain.instance != null)
             {

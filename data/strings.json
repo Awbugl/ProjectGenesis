@@ -181,28 +181,33 @@
   },
   {
     "Name": "指引条目6",
-    "ZHCN": "采集10个铝矿",
-    "ENUS": "Gather 10 Aluminum Ores"
+    "ZHCN": "采集10个 \\lvkua-;",
+    "ENUS": "Gather 10 \\lvkua-;"
+  },
+  {
+    "Name": "指引条目10",
+    "ZHCN": "高效电浆控制",
+    "ENUS": "High-Efficiency Plasma Control"
   },
   {
     "Name": "指引条目11",
-    "ZHCN": "打开“科技树(T)”，开始研究科技[高效电浆控制]",
-    "ENUS": "Open \"Tech Tree(T)\", research [High-Efficiency Plasma Control]"
+    "ZHCN": "打开“科技树($LKEY_39;)”，开始研究科技[\\gxdjkz-;]",
+    "ENUS": "Open \"Tech Tree($LKEY_39;)\" and start research \\gxdjkz-;"
   },
   {
     "Name": "指引条目14",
-    "ZHCN": "制造铝块",
-    "ENUS": "Replicate Aluminum Ingots"
+    "ZHCN": "制造10个 \\lvk-;",
+    "ENUS": "Replicate 10 \\lvk-;"
   },
   {
     "Name": "指引条目15",
-    "ZHCN": "解锁[高效电浆控制]",
-    "ENUS": "Unlock [High-Efficiency Plasma Control]"
+    "ZHCN": "解锁[\\gxdjkz-;]",
+    "ENUS": "Unlock [\\gxdjkz-;]"
   },
   {
     "Name": "指引条目61",
-    "ZHCN": "解锁[物品增产]",
-    "ENUS": "Unlock [Incremental Production]"
+    "ZHCN": "解锁[\\tzcj1-;]",
+    "ENUS": "Unlock [\\tzcj1-;]"
   },
   {
     "Name": "机甲功率提升",

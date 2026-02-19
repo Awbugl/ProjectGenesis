@@ -123,8 +123,8 @@
   {
     "ID": 1101,
     "Name": "指引条目6",
-    "TooltipText": "采集50个木头",
-    "Level": 3,
+    "TooltipText": "采集10个铝矿",
+    "Level": 2,
     "QueueJumpPriority": 0,
     "ParentId": 1100,
     "NeedCombatMode": 0,
@@ -132,7 +132,7 @@
     "DeterminatorName": "GD_FeatureValueProgress",
     "DeterminatorParams": [
       30,
-      2156202,
+      2206202,
       10
     ],
     "IgnoreParamsLevel1": [],
@@ -211,17 +211,16 @@
   {
     "ID": 1200,
     "Name": "指引条目10",
-    "TooltipText": "电磁学",
+    "TooltipText": "高效电浆控制",
     "Level": 2,
     "QueueJumpPriority": 1,
     "ParentId": 0,
     "NeedCombatMode": 0,
     "DisplayParams": [],
-    "DeterminatorName": "GD_GroupElectromagnetism",
+    "DeterminatorName": "GDGB_GroupPlasmaControl",
     "DeterminatorParams": [],
     "IgnoreParamsLevel1": [
-      5,
-      6001
+      5
     ],
     "IgnoreParamsLevel2": [],
     "PatchIgnoreParams": [],
@@ -238,7 +237,7 @@
   {
     "ID": 1201,
     "Name": "指引条目11",
-    "TooltipText": "打开科技树(T)，开始研究【电磁学】",
+    "TooltipText": "打开科技树(T)，开始研究【高效电浆控制】",
     "Level": 2,
     "QueueJumpPriority": 0,
     "ParentId": 1200,
@@ -304,7 +303,7 @@
   {
     "ID": 1204,
     "Name": "指引条目15",
-    "TooltipText": "解锁【电磁学】",
+    "TooltipText": "解锁【高效电浆控制】",
     "Level": 2,
     "QueueJumpPriority": 0,
     "ParentId": 1200,
