@@ -246,7 +246,6 @@ namespace ProjectGenesis
             LDB.journalPatterns.OnAfterDeserialize();
             LDB.themes.OnAfterDeserialize();
             LDB.veins.OnAfterDeserialize();
-            LDB.goals.OnAfterDeserialize();
 
             if (GameMain.instance != null)
             {
@@ -260,6 +259,7 @@ namespace ProjectGenesis
 
             ProtoPreload();
 
+            ApplyGoalsChild();
             ModifyEnemyHpUpgrade();
             SetMinerMk2Color();
             SetChemicalRecipeFcol();
@@ -285,7 +285,7 @@ namespace ProjectGenesis
             RecipeProto.InitFractionatorNeeds();
             SignalProtoSet.InitSignalKeyIdPairs();
             RaycastLogic.LoadStatic();
-            
+
             ref int[] turretNeed = ref ItemProto.turretNeeds[(int)EAmmoType.Bullet];
             turretNeed[1] = ProtoID.I钢芯弹箱;
             turretNeed[2] = ProtoID.I超合金弹箱;

@@ -185,6 +185,11 @@
     "ENUS": "Gather 10 \\lvkua-;"
   },
   {
+    "Name": "指引条目9",
+    "ZHCN": "使用 \\wxsdt-; 对机甲充电",
+    "ENUS": "Charge Mecha from \\wxsdt-;"
+  },
+  {
     "Name": "指引条目10",
     "ZHCN": "高效电浆控制",
     "ENUS": "High-Efficiency Plasma Control"
@@ -208,6 +213,16 @@
     "Name": "指引条目61",
     "ZHCN": "解锁[\\tzcj1-;]",
     "ENUS": "Unlock [\\tzcj1-;]"
+  },
+  {
+    "Name": "指引条目73",
+    "ZHCN": "使用\\zzt2-;制造\\taijs-;",
+    "ENUS": "Produce a \\taijs-; using a \"\\zzt2-;"
+  },
+  {
+    "Name": "指引条目GB01",
+    "ZHCN": "使用\\yycqz-;的\\rjyfl-;配方制造\\ben-;",
+    "ENUS": "Produce a \\ben-; using \\rjyfl-; recipe from \\yycqz-;"
   },
   {
     "Name": "机甲功率提升",
@@ -1798,6 +1813,11 @@
     "Name": "I人造恒星",
     "ZHCN": "由三个同心超导磁环构成的托卡马克装置，通过射频加热与中性束注入将氘氚等离子体加热至点火温度，实现自持聚变燃烧。",
     "ENUS": "Tokamak device composed of three concentric superconducting magnetic rings, heating deuterium-tritium plasma to ignition temperature through RF heating and neutral beam injection—achieving self-sustained fusion burn."
+  },
+  {
+    "Name": "位面熔炉",
+    "ZHCN": "位面熔炉",
+    "ENUS": "Plane Smelter"
   },
   {
     "Name": "I位面熔炉",

@@ -23,6 +23,7 @@ namespace ProjectGenesis.Utils
                            I氘核燃料棒 = 1802,
                            I反物质燃料棒 = 1803,
                            I奇异燃料棒 = 1804,
+                           I无线充电塔 = 2202,
                            I轨道采集器 = 2105,
                            I满蓄电器 = 2207,
                            I物质重组工厂 = 2318,
@@ -141,6 +142,7 @@ namespace ProjectGenesis.Utils
         internal const int T戴森球计划 = 1,
                            T电磁学 = 1001,
                            T高效电浆控制 = 1101,
+                           T等离子萃取精炼 = 1102,
                            T流体储存封装 = 1120,
                            T物品增产 = 1151,
                            T量子折跃 = 1152,
@@ -166,5 +168,9 @@ namespace ProjectGenesis.Utils
                            T垂直建造6 = 3706,
                            T宇宙探索1 = 4101,
                            T宇宙探索4 = 4104;
+
+        internal const int G蓝图 = 2140,
+                           G增产剂 = 2400,
+                           G扩建戴森球 = 4100;
     }
 }

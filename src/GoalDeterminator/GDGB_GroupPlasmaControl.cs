@@ -3,8 +3,6 @@
 // ReSharper disable MemberCanBePrivate.Global
 // ReSharper disable MemberCanBeInternal
 
-using ProjectGenesis.Utils;
-
 namespace ProjectGenesis.GoalDeterminator
 {
     public class GDGB_GroupPlasmaControl : GD_Group
@@ -40,7 +38,9 @@ namespace ProjectGenesis.GoalDeterminator
 
         public override bool OnDetermineComplete()
         {
-            if (!gameData.history.TechUnlocked(ProtoID.T高效电浆控制)) return false;
+            GoalData goalDataById = goalSystem.GetGoalDataById(1104);
+
+            if (goalDataById.stage != EGoalStage.Completed) return false;
 
             ForceComplete();
             return true;

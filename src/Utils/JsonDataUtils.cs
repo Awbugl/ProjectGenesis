@@ -65,7 +65,10 @@ namespace ProjectGenesis.Utils
 
         #region TutorialProto
 
-            foreach (TutorialProtoJson protoJson in GetJsonContent<TutorialProtoJson>("tutorials")) { LDBTool.PreAddProto(protoJson.ToProto()); }
+            foreach (TutorialProtoJson protoJson in GetJsonContent<TutorialProtoJson>("tutorials"))
+            {
+                LDBTool.PreAddProto(protoJson.ToProto());
+            }
 
         #endregion
 
@@ -98,6 +101,15 @@ namespace ProjectGenesis.Utils
             PrefabDesc megaPumper = LDB.models.Select(ProtoID.M大抽水机).prefabDesc;
             megaPumper.waterPoints = new[] { Vector3.zero, };
             megaPumper.portPoses = new[] { megaPumper.portPoses[0], };
+        }
+
+        internal static void ApplyGoalsChild()
+        {
+            // ReSharper disable once LoopCanBePartlyConvertedToQuery
+            foreach (GoalProtoJson protoJson in GetJsonContent<GoalProtoJson>("goals"))
+            {
+                if (LDB.goals.Exist(protoJson.ID)) { LDB.goals.Select(protoJson.ID).Childs = protoJson.Childs ?? new int[]{}; }
+            }
         }
     }
 }

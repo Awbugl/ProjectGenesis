@@ -7,9 +7,7 @@
     "QueueJumpPriority": 1,
     "ParentId": 0,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
     "DeterminatorName": "GD_GroupBasicOperations",
-    "DeterminatorParams": [],
     "IgnoreParamsLevel1": [
       1100,
       10
@@ -17,10 +15,6 @@
     "IgnoreParamsLevel2": [
       5
     ],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
     "Childs": [
       1001,
       1002,
@@ -35,18 +29,10 @@
     "QueueJumpPriority": 0,
     "ParentId": 1000,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
     "DeterminatorName": "GD_ControlorMove",
     "DeterminatorParams": [
       2
-    ],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    ]
   },
   {
     "ID": 1002,
@@ -56,19 +42,11 @@
     "QueueJumpPriority": 0,
     "ParentId": 1000,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
     "DeterminatorName": "GD_CameraRotate",
     "DeterminatorParams": [
       2,
       45
-    ],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    ]
   },
   {
     "ID": 1003,
@@ -78,18 +56,10 @@
     "QueueJumpPriority": 0,
     "ParentId": 1000,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
     "DeterminatorName": "GD_SpaceCapsuleRecycled",
     "DeterminatorParams": [
       9999
-    ],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    ]
   },
   {
     "ID": 1100,
@@ -99,9 +69,7 @@
     "QueueJumpPriority": 1,
     "ParentId": 0,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
     "DeterminatorName": "GD_GroupCollectionOperations",
-    "DeterminatorParams": [],
     "IgnoreParamsLevel1": [
       1200,
       15
@@ -109,15 +77,10 @@
     "IgnoreParamsLevel2": [
       10
     ],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
     "Childs": [
       1101,
       1102,
-      1103,
-      1104
+      1103
     ]
   },
   {
@@ -128,20 +91,12 @@
     "QueueJumpPriority": 0,
     "ParentId": 1100,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
     "DeterminatorName": "GD_FeatureValueProgress",
     "DeterminatorParams": [
       30,
       2206202,
       10
-    ],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    ]
   },
   {
     "ID": 1102,
@@ -151,20 +106,12 @@
     "QueueJumpPriority": 0,
     "ParentId": 1100,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
     "DeterminatorName": "GD_FeatureValueProgress",
     "DeterminatorParams": [
       30,
       2201001,
       10
-    ],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    ]
   },
   {
     "ID": 1103,
@@ -174,39 +121,22 @@
     "QueueJumpPriority": 0,
     "ParentId": 1100,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
     "DeterminatorName": "GD_FeatureValueProgress",
     "DeterminatorParams": [
       30,
       2201002,
       10
-    ],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    ]
   },
   {
     "ID": 1104,
     "Name": "指引条目9",
-    "TooltipText": "在“机体面板(C)”中补充燃料",
+    "TooltipText": "使用无线输电塔对机甲充电",
     "Level": 3,
     "QueueJumpPriority": 0,
-    "ParentId": 1100,
+    "ParentId": 1200,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
-    "DeterminatorName": "GD_MechaFuelUsed",
-    "DeterminatorParams": [],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    "DeterminatorName": "GDGB_MechaCharged"
   },
   {
     "ID": 1200,
@@ -216,22 +146,16 @@
     "QueueJumpPriority": 1,
     "ParentId": 0,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
     "DeterminatorName": "GDGB_GroupPlasmaControl",
-    "DeterminatorParams": [],
     "IgnoreParamsLevel1": [
       5
     ],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
     "Childs": [
       1201,
       1202,
       1203,
-      1204
+      1204,
+      1104
     ]
   },
   {
@@ -242,18 +166,10 @@
     "QueueJumpPriority": 0,
     "ParentId": 1200,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
     "DeterminatorName": "GD_TechInQueue",
     "DeterminatorParams": [
       1101
-    ],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    ]
   },
   {
     "ID": 1202,
@@ -263,42 +179,26 @@
     "QueueJumpPriority": 0,
     "ParentId": 1200,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
     "DeterminatorName": "GD_FutureCheck",
     "DeterminatorParams": [
       2020001
-    ],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    ]
   },
   {
     "ID": 1203,
     "Name": "指引条目14",
-    "TooltipText": "制造磁线圈",
+    "TooltipText": "制造铝块",
     "Level": 2,
     "QueueJumpPriority": 0,
     "ParentId": 1200,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
     "DeterminatorName": "GD_MechaAndFactoryItemProduction",
     "DeterminatorParams": [
       6203,
       1,
       3,
       1
-    ],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    ]
   },
   {
     "ID": 1204,
@@ -308,18 +208,10 @@
     "QueueJumpPriority": 0,
     "ParentId": 1200,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
     "DeterminatorName": "GD_UnlockTech",
     "DeterminatorParams": [
       1101
-    ],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    ]
   },
   {
     "ID": 1300,
@@ -333,27 +225,22 @@
       10.0
     ],
     "DeterminatorName": "GD_GroupAutomation",
-    "DeterminatorParams": [],
     "IgnoreParamsLevel1": [
       50
     ],
     "IgnoreParamsLevel2": [
       25
     ],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
     "Childs": [
       1301,
       1309,
       1302,
       1303,
-      1304,
-      1305,
       1306,
       1307,
-      1308
+      1308,
+      1304,
+      1305
     ]
   },
   {
@@ -364,7 +251,6 @@
     "QueueJumpPriority": 0,
     "ParentId": 1300,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
     "DeterminatorName": "GD_VeinCoveredByMiner",
     "DeterminatorParams": [
       1001,
@@ -381,14 +267,7 @@
       1015,
       1016,
       0
-    ],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    ]
   },
   {
     "ID": 1309,
@@ -398,16 +277,7 @@
     "QueueJumpPriority": 0,
     "ParentId": 1300,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
-    "DeterminatorName": "GD_MinerPowerOn",
-    "DeterminatorParams": [],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    "DeterminatorName": "GD_MinerPowerOn"
   },
   {
     "ID": 1302,
@@ -417,18 +287,10 @@
     "QueueJumpPriority": 0,
     "ParentId": 1300,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
     "DeterminatorName": "GD_UnlockTech",
     "DeterminatorParams": [
       1401
-    ],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    ]
   },
   {
     "ID": 1303,
@@ -438,21 +300,13 @@
     "QueueJumpPriority": 0,
     "ParentId": 1300,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
     "DeterminatorName": "GD_AssemblerItemProduction",
     "DeterminatorParams": [
       2,
       1,
       2,
       1
-    ],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    ]
   },
   {
     "ID": 1304,
@@ -462,18 +316,10 @@
     "QueueJumpPriority": 0,
     "ParentId": 1300,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
     "DeterminatorName": "GD_UnlockTech",
     "DeterminatorParams": [
       1201
-    ],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    ]
   },
   {
     "ID": 1305,
@@ -483,21 +329,13 @@
     "QueueJumpPriority": 0,
     "ParentId": 1300,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
     "DeterminatorName": "GD_AssemblerItemProduction",
     "DeterminatorParams": [
       1,
       1,
       2,
       1
-    ],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    ]
   },
   {
     "ID": 1306,
@@ -507,18 +345,10 @@
     "QueueJumpPriority": 0,
     "ParentId": 1300,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
     "DeterminatorName": "GD_UnlockTech",
     "DeterminatorParams": [
       1601
-    ],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    ]
   },
   {
     "ID": 1307,
@@ -528,16 +358,7 @@
     "QueueJumpPriority": 0,
     "ParentId": 1300,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
-    "DeterminatorName": "GD_BuildBelt",
-    "DeterminatorParams": [],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    "DeterminatorName": "GD_BuildBelt"
   },
   {
     "ID": 1308,
@@ -547,16 +368,7 @@
     "QueueJumpPriority": 0,
     "ParentId": 1300,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
-    "DeterminatorName": "GD_BuiltInserter",
-    "DeterminatorParams": [],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    "DeterminatorName": "GD_BuiltInserter"
   },
   {
     "ID": 1400,
@@ -571,7 +383,6 @@
       30.0
     ],
     "DeterminatorName": "GD_GroupElectromagneticMatrix",
-    "DeterminatorParams": [],
     "IgnoreParamsLevel1": [
       240,
       6002,
@@ -582,10 +393,6 @@
     "IgnoreParamsLevel2": [
       180
     ],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
     "Childs": [
       1401,
       1402
@@ -599,18 +406,10 @@
     "QueueJumpPriority": 0,
     "ParentId": 1400,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
     "DeterminatorName": "GD_UnlockTech",
     "DeterminatorParams": [
       1002
-    ],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    ]
   },
   {
     "ID": 1402,
@@ -620,21 +419,13 @@
     "QueueJumpPriority": 0,
     "ParentId": 1400,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
     "DeterminatorName": "GD_MechaAndFactoryItemProduction",
     "DeterminatorParams": [
       6001,
       1,
       2,
       1
-    ],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    ]
   },
   {
     "ID": 1600,
@@ -649,19 +440,14 @@
       10.0
     ],
     "DeterminatorName": "GD_GroupWeapon",
-    "DeterminatorParams": [],
     "IgnoreParamsLevel1": [
       1807
     ],
-    "IgnoreParamsLevel2": [],
     "PatchIgnoreParams": [
       292,
       1,
       6
     ],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
     "Childs": [
       1601,
       1602,
@@ -678,18 +464,10 @@
     "QueueJumpPriority": 0,
     "ParentId": 1600,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
     "DeterminatorName": "GD_UnlockTech",
     "DeterminatorParams": [
       1801
-    ],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    ]
   },
   {
     "ID": 1602,
@@ -699,16 +477,7 @@
     "QueueJumpPriority": 0,
     "ParentId": 1600,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
-    "DeterminatorName": "GD_ReplenishMechaAmmo",
-    "DeterminatorParams": [],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    "DeterminatorName": "GD_ReplenishMechaAmmo"
   },
   {
     "ID": 1603,
@@ -718,21 +487,13 @@
     "QueueJumpPriority": 0,
     "ParentId": 1600,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
     "DeterminatorName": "GD_MechaAndFactoryItemProduction",
     "DeterminatorParams": [
       1601,
       1,
       3,
       1
-    ],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    ]
   },
   {
     "ID": 1604,
@@ -742,21 +503,13 @@
     "QueueJumpPriority": 0,
     "ParentId": 1600,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
     "DeterminatorName": "GD_MechaAndFactoryItemProduction",
     "DeterminatorParams": [
       3001,
       1,
       3,
       1
-    ],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    ]
   },
   {
     "ID": 1605,
@@ -766,16 +519,7 @@
     "QueueJumpPriority": 0,
     "ParentId": 1600,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
-    "DeterminatorName": "GD_TurretAmmoCheck",
-    "DeterminatorParams": [],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    "DeterminatorName": "GD_TurretAmmoCheck"
   },
   {
     "ID": 1650,
@@ -789,7 +533,6 @@
       5.0
     ],
     "DeterminatorName": "GD_GroupUpgrade",
-    "DeterminatorParams": [],
     "IgnoreParamsLevel1": [
       6003,
       0,
@@ -802,10 +545,6 @@
       1,
       6
     ],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
     "Childs": [
       1651,
       1652,
@@ -820,18 +559,10 @@
     "QueueJumpPriority": 0,
     "ParentId": 1650,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
     "DeterminatorName": "GD_FutureCheck",
     "DeterminatorParams": [
       2020003
-    ],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    ]
   },
   {
     "ID": 1652,
@@ -841,18 +572,10 @@
     "QueueJumpPriority": 0,
     "ParentId": 1650,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
     "DeterminatorName": "GD_UnlockTech",
     "DeterminatorParams": [
       4101
-    ],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    ]
   },
   {
     "ID": 1653,
@@ -862,18 +585,10 @@
     "QueueJumpPriority": 0,
     "ParentId": 1650,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
     "DeterminatorName": "GD_UnlockTech",
     "DeterminatorParams": [
       2901
-    ],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    ]
   },
   {
     "ID": 1680,
@@ -887,7 +602,6 @@
       400.0
     ],
     "DeterminatorName": "GD_GroupLabEfficiency",
-    "DeterminatorParams": [],
     "IgnoreParamsLevel1": [
       420,
       6003,
@@ -898,10 +612,6 @@
     "IgnoreParamsLevel2": [
       300
     ],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
     "Childs": [
       1681,
       1682
@@ -915,16 +625,7 @@
     "QueueJumpPriority": 0,
     "ParentId": 1680,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
-    "DeterminatorName": "GD_LabSetResearchMode",
-    "DeterminatorParams": [],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    "DeterminatorName": "GD_LabSetResearchMode"
   },
   {
     "ID": 1682,
@@ -934,16 +635,7 @@
     "QueueJumpPriority": 0,
     "ParentId": 1680,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
-    "DeterminatorName": "GD_LabConnect",
-    "DeterminatorParams": [],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    "DeterminatorName": "GD_LabConnect"
   },
   {
     "ID": 1700,
@@ -958,7 +650,6 @@
       15.0
     ],
     "DeterminatorName": "GD_GroupOilProcessing",
-    "DeterminatorParams": [],
     "IgnoreParamsLevel1": [
       6002,
       200,
@@ -979,9 +670,6 @@
       6,
       6002
     ],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
     "Childs": [
       1701,
       1702,
@@ -996,18 +684,10 @@
     "QueueJumpPriority": 0,
     "ParentId": 1700,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
     "DeterminatorName": "GD_UnlockTech",
     "DeterminatorParams": [
       1411
-    ],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    ]
   },
   {
     "ID": 1702,
@@ -1017,18 +697,10 @@
     "QueueJumpPriority": 0,
     "ParentId": 1700,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
     "DeterminatorName": "GD_UnlockTech",
     "DeterminatorParams": [
       1102
-    ],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    ]
   },
   {
     "ID": 1703,
@@ -1038,7 +710,6 @@
     "QueueJumpPriority": 0,
     "ParentId": 1700,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
     "DeterminatorName": "GD_TanksStorage",
     "DeterminatorParams": [
       1000,
@@ -1061,14 +732,7 @@
       7017,
       7018,
       7019
-    ],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    ]
   },
   {
     "ID": 1900,
@@ -1082,17 +746,10 @@
       20.0
     ],
     "DeterminatorName": "GD_GroupGroundFoundation",
-    "DeterminatorParams": [],
     "IgnoreParamsLevel1": [
       2200
     ],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
     "Childs": [
-      1901,
       1902,
       1903
     ]
@@ -1103,20 +760,12 @@
     "TooltipText": "解锁“移山填海工程”",
     "Level": 3,
     "QueueJumpPriority": 0,
-    "ParentId": 1900,
+    "ParentId": -1,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
     "DeterminatorName": "GD_UnlockTech",
     "DeterminatorParams": [
       1415
-    ],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    ]
   },
   {
     "ID": 1902,
@@ -1126,21 +775,13 @@
     "QueueJumpPriority": 0,
     "ParentId": 1900,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
     "DeterminatorName": "GD_MechaAndFactoryItemProduction",
     "DeterminatorParams": [
       1131,
       1,
       3,
       1
-    ],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    ]
   },
   {
     "ID": 1903,
@@ -1150,16 +791,7 @@
     "QueueJumpPriority": 0,
     "ParentId": 1900,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
-    "DeterminatorName": "GD_BuildFundation",
-    "DeterminatorParams": [],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    "DeterminatorName": "GD_BuildFundation"
   },
   {
     "ID": 2000,
@@ -1167,13 +799,12 @@
     "TooltipText": "石头炼硅",
     "Level": 3,
     "QueueJumpPriority": 1,
-    "ParentId": 0,
+    "ParentId": -1,
     "NeedCombatMode": 0,
     "DisplayParams": [
       5.0
     ],
     "DeterminatorName": "GD_GroupRefiningSiliconFromStone",
-    "DeterminatorParams": [],
     "IgnoreParamsLevel1": [
       1105,
       100,
@@ -1194,8 +825,6 @@
       1,
       4
     ],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
     "EnterQueueIgnoreParams": [
       2200
     ],
@@ -1210,23 +839,15 @@
     "TooltipText": "使用石矿炼硅石",
     "Level": 3,
     "QueueJumpPriority": 0,
-    "ParentId": 2000,
+    "ParentId": -1,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
     "DeterminatorName": "GD_MechaAndFactoryItemProduction",
     "DeterminatorParams": [
       1003,
       1,
       2,
       0
-    ],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    ]
   },
   {
     "ID": 2002,
@@ -1234,23 +855,15 @@
     "TooltipText": "使用硅石炼硅块",
     "Level": 3,
     "QueueJumpPriority": 0,
-    "ParentId": 2000,
+    "ParentId": -1,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
     "DeterminatorName": "GD_MechaAndFactoryItemProduction",
     "DeterminatorParams": [
       1105,
       1,
       2,
       1
-    ],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    ]
   },
   {
     "ID": 2100,
@@ -1265,20 +878,16 @@
       40.0
     ],
     "DeterminatorName": "GD_GroupEnergyMatrix",
-    "DeterminatorParams": [],
     "IgnoreParamsLevel1": [
       6002
     ],
-    "IgnoreParamsLevel2": [],
     "PatchIgnoreParams": [
       1111
     ],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
     "Childs": [
       2101,
       2102,
+      2105,
       2103,
       2104
     ]
@@ -1291,18 +900,10 @@
     "QueueJumpPriority": 0,
     "ParentId": 2100,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
     "DeterminatorName": "GD_UnlockTech",
     "DeterminatorParams": [
       1402
-    ],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    ]
   },
   {
     "ID": 2102,
@@ -1312,21 +913,13 @@
     "QueueJumpPriority": 0,
     "ParentId": 2100,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
     "DeterminatorName": "GD_MechaAndFactoryItemProduction",
     "DeterminatorParams": [
       1109,
       1,
       2,
       1
-    ],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    ]
   },
   {
     "ID": 2103,
@@ -1336,18 +929,10 @@
     "QueueJumpPriority": 0,
     "ParentId": 2100,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
     "DeterminatorName": "GD_UnlockTech",
     "DeterminatorParams": [
       1111
-    ],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    ]
   },
   {
     "ID": 2104,
@@ -1357,21 +942,29 @@
     "QueueJumpPriority": 0,
     "ParentId": 2100,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
     "DeterminatorName": "GD_MechaAndFactoryItemProduction",
     "DeterminatorParams": [
       6002,
       1,
       2,
       1
-    ],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    ]
+  },
+  {
+    "ID": 2105,
+    "Name": "指引条目GB01",
+    "TooltipText": "使用精炼油制造苯",
+    "Level": 3,
+    "QueueJumpPriority": 0,
+    "ParentId": 2100,
+    "NeedCombatMode": 0,
+    "DeterminatorName": "GD_MechaAndFactoryItemProduction",
+    "DeterminatorParams": [
+      7006,
+      1,
+      2,
+      1
+    ]
   },
   {
     "ID": 2140,
@@ -1385,7 +978,6 @@
       30.0
     ],
     "DeterminatorName": "GD_GroupBlueprint",
-    "DeterminatorParams": [],
     "IgnoreParamsLevel1": [
       6004,
       0,
@@ -1393,7 +985,6 @@
       6,
       6004
     ],
-    "IgnoreParamsLevel2": [],
     "PatchIgnoreParams": [
       6004,
       0,
@@ -1401,9 +992,6 @@
       6,
       6004
     ],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
     "Childs": [
       2141,
       2142,
@@ -1418,18 +1006,10 @@
     "QueueJumpPriority": 0,
     "ParentId": 2140,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
     "DeterminatorName": "GD_UnlockTech",
     "DeterminatorParams": [
       2701
-    ],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    ]
   },
   {
     "ID": 2142,
@@ -1439,16 +1019,7 @@
     "QueueJumpPriority": 0,
     "ParentId": 2140,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
-    "DeterminatorName": "GD_CreateBlueprint",
-    "DeterminatorParams": [],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    "DeterminatorName": "GD_CreateBlueprint"
   },
   {
     "ID": 2143,
@@ -1458,16 +1029,7 @@
     "QueueJumpPriority": 0,
     "ParentId": 2140,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
-    "DeterminatorName": "GD_UseBlueprint",
-    "DeterminatorParams": [],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    "DeterminatorName": "GD_UseBlueprint"
   },
   {
     "ID": 2200,
@@ -1482,7 +1044,6 @@
       200.0
     ],
     "DeterminatorName": "GD_GroupExploreAlienPlanet",
-    "DeterminatorParams": [],
     "IgnoreParamsLevel1": [
       1312,
       6003,
@@ -1499,10 +1060,6 @@
       6,
       2
     ],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
     "Childs": [
       2201,
       2202,
@@ -1520,18 +1077,10 @@
     "QueueJumpPriority": 0,
     "ParentId": 2200,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
     "DeterminatorName": "GD_UnlockTech",
     "DeterminatorParams": [
       4102
-    ],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    ]
   },
   {
     "ID": 2202,
@@ -1541,18 +1090,10 @@
     "QueueJumpPriority": 0,
     "ParentId": 2200,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
     "DeterminatorName": "GD_UnlockTech",
     "DeterminatorParams": [
       2902
-    ],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    ]
   },
   {
     "ID": 2203,
@@ -1562,16 +1103,7 @@
     "QueueJumpPriority": 0,
     "ParentId": 2200,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
-    "DeterminatorName": "GD_LandNewPlanet",
-    "DeterminatorParams": [],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    "DeterminatorName": "GD_LandNewPlanet"
   },
   {
     "ID": 2204,
@@ -1581,19 +1113,11 @@
     "QueueJumpPriority": 0,
     "ParentId": 2200,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
     "DeterminatorName": "GD_VeinCoveredByMiner",
     "DeterminatorParams": [
       1004,
       1
-    ],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    ]
   },
   {
     "ID": 2205,
@@ -1603,19 +1127,11 @@
     "QueueJumpPriority": 0,
     "ParentId": 2200,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
     "DeterminatorName": "GD_VeinCoveredByMiner",
     "DeterminatorParams": [
       1003,
       1
-    ],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    ]
   },
   {
     "ID": 2206,
@@ -1625,21 +1141,13 @@
     "QueueJumpPriority": 0,
     "ParentId": 2200,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
     "DeterminatorName": "GD_MechaAndFactoryItemProduction",
     "DeterminatorParams": [
       1106,
       1,
       2,
       1
-    ],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    ]
   },
   {
     "ID": 2400,
@@ -1654,7 +1162,6 @@
       0.5
     ],
     "DeterminatorName": "GD_GroupProliferator",
-    "DeterminatorParams": [],
     "IgnoreParamsLevel1": [
       6004,
       0,
@@ -1662,11 +1169,6 @@
       4,
       6004
     ],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
     "Childs": [
       2401,
       2402
@@ -1680,18 +1182,10 @@
     "QueueJumpPriority": 0,
     "ParentId": 2400,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
     "DeterminatorName": "GD_UnlockTech",
     "DeterminatorParams": [
       1151
-    ],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    ]
   },
   {
     "ID": 2402,
@@ -1701,16 +1195,7 @@
     "QueueJumpPriority": 0,
     "ParentId": 2400,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
-    "DeterminatorName": "GD_ProliferatorIncEffect",
-    "DeterminatorParams": [],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    "DeterminatorName": "GD_ProliferatorIncEffect"
   },
   {
     "ID": 2600,
@@ -1724,18 +1209,12 @@
       60.0
     ],
     "DeterminatorName": "GD_GroupIntraplanetaryLogistics",
-    "DeterminatorParams": [],
     "IgnoreParamsLevel1": [
       2104,
       0,
       1,
       6
     ],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
     "Childs": [
       2601,
       2602,
@@ -1751,18 +1230,10 @@
     "QueueJumpPriority": 0,
     "ParentId": 2600,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
     "DeterminatorName": "GD_UnlockTech",
     "DeterminatorParams": [
       1604
-    ],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    ]
   },
   {
     "ID": 2602,
@@ -1772,21 +1243,13 @@
     "QueueJumpPriority": 0,
     "ParentId": 2600,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
     "DeterminatorName": "GD_MechaAndFactoryItemProduction",
     "DeterminatorParams": [
       2103,
       2,
       3,
       1
-    ],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    ]
   },
   {
     "ID": 2603,
@@ -1796,21 +1259,13 @@
     "QueueJumpPriority": 0,
     "ParentId": 2600,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
     "DeterminatorName": "GD_MechaAndFactoryItemProduction",
     "DeterminatorParams": [
       5001,
       1,
       3,
       1
-    ],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    ]
   },
   {
     "ID": 2604,
@@ -1820,16 +1275,7 @@
     "QueueJumpPriority": 0,
     "ParentId": 2600,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
-    "DeterminatorName": "GD_DroneDeliveryCheck",
-    "DeterminatorParams": [],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    "DeterminatorName": "GD_DroneDeliveryCheck"
   },
   {
     "ID": 2700,
@@ -1844,7 +1290,6 @@
       0.5
     ],
     "DeterminatorName": "GD_GroupStructureMatrix",
-    "DeterminatorParams": [],
     "IgnoreParamsLevel1": [
       6003,
       20,
@@ -1864,9 +1309,6 @@
       1,
       6
     ],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
     "Childs": [
       2701,
       2702,
@@ -1882,18 +1324,10 @@
     "QueueJumpPriority": 0,
     "ParentId": 2700,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
     "DeterminatorName": "GD_UnlockTech",
     "DeterminatorParams": [
       1124
-    ],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    ]
   },
   {
     "ID": 2702,
@@ -1903,21 +1337,13 @@
     "QueueJumpPriority": 0,
     "ParentId": 2700,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
     "DeterminatorName": "GD_MechaAndFactoryItemProduction",
     "DeterminatorParams": [
       1118,
       1,
       2,
       1
-    ],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    ]
   },
   {
     "ID": 2703,
@@ -1927,21 +1353,13 @@
     "QueueJumpPriority": 0,
     "ParentId": 2700,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
     "DeterminatorName": "GD_MechaAndFactoryItemProduction",
     "DeterminatorParams": [
       1112,
       1,
       2,
       1
-    ],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    ]
   },
   {
     "ID": 2704,
@@ -1951,21 +1369,13 @@
     "QueueJumpPriority": 0,
     "ParentId": 2700,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
     "DeterminatorName": "GD_MechaAndFactoryItemProduction",
     "DeterminatorParams": [
       6003,
       1,
       2,
       1
-    ],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    ]
   },
   {
     "ID": 2720,
@@ -1975,19 +1385,12 @@
     "QueueJumpPriority": 1,
     "ParentId": 0,
     "NeedCombatMode": 1,
-    "DisplayParams": [],
     "DeterminatorName": "GD_GroupDestroyPlanetaryBase",
-    "DeterminatorParams": [],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
     "PatchIgnoreParams": [
       292,
       1,
       6
     ],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
     "Childs": [
       2721
     ]
@@ -2000,16 +1403,7 @@
     "QueueJumpPriority": 0,
     "ParentId": 2720,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
-    "DeterminatorName": "GD_GroundBaseCheck",
-    "DeterminatorParams": [],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    "DeterminatorName": "GD_GroundBaseCheck"
   },
   {
     "ID": 2730,
@@ -2019,17 +1413,10 @@
     "QueueJumpPriority": 1,
     "ParentId": 0,
     "NeedCombatMode": 1,
-    "DisplayParams": [],
     "DeterminatorName": "GD_GroupPlanetaryShield",
-    "DeterminatorParams": [],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
     "PatchIgnoreParams": [
       1200000000000
     ],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
     "Childs": [
       2731
     ]
@@ -2042,16 +1429,7 @@
     "QueueJumpPriority": 0,
     "ParentId": 2730,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
-    "DeterminatorName": "GD_CheckPlanetaryShield",
-    "DeterminatorParams": [],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    "DeterminatorName": "GD_CheckPlanetaryShield"
   },
   {
     "ID": 2800,
@@ -2066,15 +1444,9 @@
       120.0
     ],
     "DeterminatorName": "GD_GroupInterstellarLogistics",
-    "DeterminatorParams": [],
     "IgnoreParamsLevel1": [
       1705
     ],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
     "Childs": [
       2801,
       2802,
@@ -2090,18 +1462,10 @@
     "QueueJumpPriority": 0,
     "ParentId": 2800,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
     "DeterminatorName": "GD_UnlockTech",
     "DeterminatorParams": [
       1605
-    ],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    ]
   },
   {
     "ID": 2802,
@@ -2111,21 +1475,13 @@
     "QueueJumpPriority": 0,
     "ParentId": 2800,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
     "DeterminatorName": "GD_MechaAndFactoryItemProduction",
     "DeterminatorParams": [
       2104,
       2,
       3,
       1
-    ],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    ]
   },
   {
     "ID": 2803,
@@ -2135,21 +1491,13 @@
     "QueueJumpPriority": 0,
     "ParentId": 2800,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
     "DeterminatorName": "GD_MechaAndFactoryItemProduction",
     "DeterminatorParams": [
       5002,
       1,
       3,
       1
-    ],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    ]
   },
   {
     "ID": 2804,
@@ -2159,16 +1507,7 @@
     "QueueJumpPriority": 0,
     "ParentId": 2800,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
-    "DeterminatorName": "GD_ShipDeliveryCheck",
-    "DeterminatorParams": [],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    "DeterminatorName": "GD_ShipDeliveryCheck"
   },
   {
     "ID": 2900,
@@ -2183,17 +1522,12 @@
       5.0
     ],
     "DeterminatorName": "GD_GroupDysonSwarm",
-    "DeterminatorParams": [],
     "IgnoreParamsLevel1": [
       500000000
     ],
     "IgnoreParamsLevel2": [
       200000000
     ],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
     "Childs": [
       2901,
       2902,
@@ -2209,18 +1543,10 @@
     "QueueJumpPriority": 0,
     "ParentId": 2900,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
     "DeterminatorName": "GD_UnlockTech",
     "DeterminatorParams": [
       1503
-    ],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    ]
   },
   {
     "ID": 2902,
@@ -2230,16 +1556,7 @@
     "QueueJumpPriority": 0,
     "ParentId": 2900,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
-    "DeterminatorName": "GD_SailOrbitCheck",
-    "DeterminatorParams": [],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    "DeterminatorName": "GD_SailOrbitCheck"
   },
   {
     "ID": 2903,
@@ -2249,7 +1566,6 @@
     "QueueJumpPriority": 0,
     "ParentId": 2900,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
     "DeterminatorName": "GD_ItemProduction",
     "DeterminatorParams": [
       11901,
@@ -2257,14 +1573,7 @@
       1,
       6,
       0
-    ],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    ]
   },
   {
     "ID": 2904,
@@ -2274,18 +1583,10 @@
     "QueueJumpPriority": 0,
     "ParentId": 2900,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
     "DeterminatorName": "GD_GenWarmupCheck",
     "DeterminatorParams": [
       1
-    ],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    ]
   },
   {
     "ID": 2950,
@@ -2293,7 +1594,7 @@
     "TooltipText": "重氢分馏",
     "Level": 3,
     "QueueJumpPriority": 1,
-    "ParentId": 0,
+    "ParentId": -1,
     "NeedCombatMode": 0,
     "DisplayParams": [
       10.0,
@@ -2301,7 +1602,6 @@
       1.0
     ],
     "DeterminatorName": "GD_GroupDeuteriumFractionation",
-    "DeterminatorParams": [],
     "IgnoreParamsLevel1": [
       1121,
       200,
@@ -2314,10 +1614,6 @@
       1,
       4
     ],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
     "Childs": [
       2951,
       2952
@@ -2329,20 +1625,12 @@
     "TooltipText": "解锁“重氢分馏”",
     "Level": 3,
     "QueueJumpPriority": 0,
-    "ParentId": 2950,
+    "ParentId": -1,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
     "DeterminatorName": "GD_UnlockTech",
     "DeterminatorParams": [
       1134
-    ],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    ]
   },
   {
     "ID": 2952,
@@ -2350,18 +1638,9 @@
     "TooltipText": "使用分馏塔制造重氢",
     "Level": 3,
     "QueueJumpPriority": 0,
-    "ParentId": 2950,
+    "ParentId": -1,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
-    "DeterminatorName": "GD_DeuteriumFractionationCheck",
-    "DeterminatorParams": [],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    "DeterminatorName": "GD_DeuteriumFractionationCheck"
   },
   {
     "ID": 3000,
@@ -2376,17 +1655,12 @@
       60.0
     ],
     "DeterminatorName": "GD_GroupGasGiantMining",
-    "DeterminatorParams": [],
     "IgnoreParamsLevel1": [
       6000
     ],
     "IgnoreParamsLevel2": [
       3000
     ],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
     "Childs": [
       3001,
       3002,
@@ -2401,18 +1675,10 @@
     "QueueJumpPriority": 0,
     "ParentId": 3000,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
     "DeterminatorName": "GD_UnlockTech",
     "DeterminatorParams": [
       1606
-    ],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    ]
   },
   {
     "ID": 3002,
@@ -2422,21 +1688,13 @@
     "QueueJumpPriority": 0,
     "ParentId": 3000,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
     "DeterminatorName": "GD_MechaAndFactoryItemProduction",
     "DeterminatorParams": [
       2105,
       1,
       3,
       1
-    ],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    ]
   },
   {
     "ID": 3003,
@@ -2446,16 +1704,7 @@
     "QueueJumpPriority": 0,
     "ParentId": 3000,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
-    "DeterminatorName": "GD_BuildOrbitalCollector",
-    "DeterminatorParams": [],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    "DeterminatorName": "GD_BuildOrbitalCollector"
   },
   {
     "ID": 3100,
@@ -2472,7 +1721,6 @@
       0.1
     ],
     "DeterminatorName": "GD_GroupMechaCruise",
-    "DeterminatorParams": [],
     "IgnoreParamsLevel1": [
       10,
       5,
@@ -2492,9 +1740,6 @@
       2,
       6
     ],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
     "Childs": [
       3101,
       3102,
@@ -2510,18 +1755,10 @@
     "QueueJumpPriority": 0,
     "ParentId": 3100,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
     "DeterminatorName": "GD_UnlockTech",
     "DeterminatorParams": [
       1704
-    ],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    ]
   },
   {
     "ID": 3102,
@@ -2531,18 +1768,10 @@
     "QueueJumpPriority": 0,
     "ParentId": 3100,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
     "DeterminatorName": "GD_UnlockTech",
     "DeterminatorParams": [
       2904
-    ],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    ]
   },
   {
     "ID": 3103,
@@ -2552,7 +1781,6 @@
     "QueueJumpPriority": 0,
     "ParentId": 3100,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
     "DeterminatorName": "GD_MechaAndFactoryItemProduction",
     "DeterminatorParams": [
       1210,
@@ -2560,18 +1788,12 @@
       3,
       1
     ],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
     "PatchCompleteParams": [
       1210,
       2,
       1,
       6
-    ],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    ]
   },
   {
     "ID": 3104,
@@ -2581,16 +1803,7 @@
     "QueueJumpPriority": 0,
     "ParentId": 3100,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
-    "DeterminatorName": "GD_StarTravelledCheck",
-    "DeterminatorParams": [],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    "DeterminatorName": "GD_StarTravelledCheck"
   },
   {
     "ID": 3200,
@@ -2604,13 +1817,6 @@
       2.0
     ],
     "DeterminatorName": "GD_GroupRareMining",
-    "DeterminatorParams": [],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
     "Childs": [
       3201
     ]
@@ -2623,7 +1829,6 @@
     "QueueJumpPriority": 0,
     "ParentId": 3200,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
     "DeterminatorName": "GD_VeinCoveredByMiner",
     "DeterminatorParams": [
       1011,
@@ -2634,14 +1839,7 @@
       1015,
       1016,
       1
-    ],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    ]
   },
   {
     "ID": 3300,
@@ -2656,20 +1854,15 @@
       5.0
     ],
     "DeterminatorName": "GD_GroupInformationMatrix",
-    "DeterminatorParams": [],
     "IgnoreParamsLevel1": [
       6004
     ],
-    "IgnoreParamsLevel2": [],
     "PatchIgnoreParams": [
       6004,
       0,
       1,
       6
     ],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
     "Childs": [
       3301,
       3302
@@ -2683,18 +1876,10 @@
     "QueueJumpPriority": 0,
     "ParentId": 3300,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
     "DeterminatorName": "GD_UnlockTech",
     "DeterminatorParams": [
       1312
-    ],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    ]
   },
   {
     "ID": 3302,
@@ -2704,21 +1889,13 @@
     "QueueJumpPriority": 0,
     "ParentId": 3300,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
     "DeterminatorName": "GD_MechaAndFactoryItemProduction",
     "DeterminatorParams": [
       6004,
       1,
       2,
       1
-    ],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    ]
   },
   {
     "ID": 3400,
@@ -2733,13 +1910,6 @@
       600.0
     ],
     "DeterminatorName": "GD_GroupDysonSpheres",
-    "DeterminatorParams": [],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
     "Childs": [
       3401,
       3402,
@@ -2755,18 +1925,10 @@
     "QueueJumpPriority": 0,
     "ParentId": 3400,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
     "DeterminatorName": "GD_UnlockTech",
     "DeterminatorParams": [
       1522
-    ],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    ]
   },
   {
     "ID": 3402,
@@ -2776,16 +1938,7 @@
     "QueueJumpPriority": 0,
     "ParentId": 3400,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
-    "DeterminatorName": "GD_DysonSphereLayerCheck",
-    "DeterminatorParams": [],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    "DeterminatorName": "GD_DysonSphereLayerCheck"
   },
   {
     "ID": 3403,
@@ -2795,16 +1948,7 @@
     "QueueJumpPriority": 0,
     "ParentId": 3400,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
-    "DeterminatorName": "GD_DysonSphereFrameCheck",
-    "DeterminatorParams": [],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    "DeterminatorName": "GD_DysonSphereFrameCheck"
   },
   {
     "ID": 3404,
@@ -2814,16 +1958,7 @@
     "QueueJumpPriority": 0,
     "ParentId": 3400,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
-    "DeterminatorName": "GD_DysonSphereFrameConstructedCheck",
-    "DeterminatorParams": [],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    "DeterminatorName": "GD_DysonSphereFrameConstructedCheck"
   },
   {
     "ID": 3500,
@@ -2837,15 +1972,9 @@
       40.0
     ],
     "DeterminatorName": "GD_GroupUniverseExploration",
-    "DeterminatorParams": [],
     "IgnoreParamsLevel1": [
       5
     ],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
     "Childs": [
       3501
     ]
@@ -2858,18 +1987,10 @@
     "QueueJumpPriority": 0,
     "ParentId": 3500,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
     "DeterminatorName": "GD_UnlockTech",
     "DeterminatorParams": [
       4103
-    ],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    ]
   },
   {
     "ID": 3600,
@@ -2884,17 +2005,12 @@
       10000.0
     ],
     "DeterminatorName": "GD_GroupSolarSailLife",
-    "DeterminatorParams": [],
     "IgnoreParamsLevel1": [
       6000
     ],
     "IgnoreParamsLevel2": [
       3000
     ],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
     "Childs": [
       3601
     ]
@@ -2907,18 +2023,10 @@
     "QueueJumpPriority": 0,
     "ParentId": 3600,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
     "DeterminatorName": "GD_UnlockTech",
     "DeterminatorParams": [
       3104
-    ],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    ]
   },
   {
     "ID": 3700,
@@ -2934,20 +2042,15 @@
       3000.0
     ],
     "DeterminatorName": "GD_GroupGravityMatrix",
-    "DeterminatorParams": [],
     "IgnoreParamsLevel1": [
       6005
     ],
-    "IgnoreParamsLevel2": [],
     "PatchIgnoreParams": [
       6005,
       0,
       1,
       6
     ],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
     "Childs": [
       3701,
       3702
@@ -2961,18 +2064,10 @@
     "QueueJumpPriority": 0,
     "ParentId": 3700,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
     "DeterminatorName": "GD_UnlockTech",
     "DeterminatorParams": [
       1705
-    ],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    ]
   },
   {
     "ID": 3702,
@@ -2982,21 +2077,13 @@
     "QueueJumpPriority": 0,
     "ParentId": 3700,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
     "DeterminatorName": "GD_MechaAndFactoryItemProduction",
     "DeterminatorParams": [
       6005,
       1,
       2,
       1
-    ],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    ]
   },
   {
     "ID": 3800,
@@ -3013,17 +2100,12 @@
       3000.0
     ],
     "DeterminatorName": "GD_GroupPlanetaryIonosphereUtilization",
-    "DeterminatorParams": [],
     "IgnoreParamsLevel1": [
       10
     ],
     "IgnoreParamsLevel2": [
       1
     ],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
     "Childs": [
       3801,
       3802,
@@ -3038,18 +2120,10 @@
     "QueueJumpPriority": 0,
     "ParentId": 3800,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
     "DeterminatorName": "GD_UnlockTech",
     "DeterminatorParams": [
       1505
-    ],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    ]
   },
   {
     "ID": 3802,
@@ -3059,16 +2133,7 @@
     "QueueJumpPriority": 0,
     "ParentId": 3800,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
-    "DeterminatorName": "GD_GenCatalyticCheck",
-    "DeterminatorParams": [],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    "DeterminatorName": "GD_GenCatalyticCheck"
   },
   {
     "ID": 3803,
@@ -3078,18 +2143,10 @@
     "QueueJumpPriority": 0,
     "ParentId": 3800,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
     "DeterminatorName": "GD_GenWarmupCheck",
     "DeterminatorParams": [
       8000
-    ],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    ]
   },
   {
     "ID": 3900,
@@ -3106,17 +2163,11 @@
       3000.0
     ],
     "DeterminatorName": "GD_GroupDysonShell",
-    "DeterminatorParams": [],
     "IgnoreParamsLevel1": [
       1523,
       6,
       100
     ],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
     "Childs": [
       3901,
       3902,
@@ -3131,18 +2182,10 @@
     "QueueJumpPriority": 0,
     "ParentId": 3900,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
     "DeterminatorName": "GD_UnlockTech",
     "DeterminatorParams": [
       1523
-    ],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    ]
   },
   {
     "ID": 3902,
@@ -3152,16 +2195,7 @@
     "QueueJumpPriority": 0,
     "ParentId": 3900,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
-    "DeterminatorName": "GD_DysonSphereShellCheck",
-    "DeterminatorParams": [],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    "DeterminatorName": "GD_DysonSphereShellCheck"
   },
   {
     "ID": 3903,
@@ -3171,18 +2205,10 @@
     "QueueJumpPriority": 0,
     "ParentId": 3900,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
     "DeterminatorName": "GD_FormingShell",
     "DeterminatorParams": [
       100
-    ],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    ]
   },
   {
     "ID": 3904,
@@ -3192,19 +2218,11 @@
     "QueueJumpPriority": 0,
     "ParentId": -1,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
     "DeterminatorName": "GD_TechUnlockWithDelay",
     "DeterminatorParams": [
       1523,
       1
-    ],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    ]
   },
   {
     "ID": 4000,
@@ -3219,13 +2237,6 @@
       8000.0
     ],
     "DeterminatorName": "GD_GroupArtificialStar",
-    "DeterminatorParams": [],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
     "Childs": [
       4001,
       4002,
@@ -3240,16 +2251,7 @@
     "QueueJumpPriority": 0,
     "ParentId": 4000,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
-    "DeterminatorName": "GD_CatalystGammaMode",
-    "DeterminatorParams": [],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    "DeterminatorName": "GD_CatalystGammaMode"
   },
   {
     "ID": 4002,
@@ -3259,21 +2261,13 @@
     "QueueJumpPriority": 0,
     "ParentId": 4000,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
     "DeterminatorName": "GD_MechaAndFactoryItemProduction",
     "DeterminatorParams": [
       1803,
       1,
       3,
       1
-    ],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    ]
   },
   {
     "ID": 4003,
@@ -3283,18 +2277,10 @@
     "QueueJumpPriority": 0,
     "ParentId": 4000,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
     "DeterminatorName": "GD_GenCheck",
     "DeterminatorParams": [
       12
-    ],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    ]
   },
   {
     "ID": 4100,
@@ -3308,13 +2294,6 @@
       120.0
     ],
     "DeterminatorName": "GD_GroupConstructLargeDysonSphere",
-    "DeterminatorParams": [],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
     "Childs": [
       4101
     ]
@@ -3327,18 +2306,10 @@
     "QueueJumpPriority": 0,
     "ParentId": 4100,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
     "DeterminatorName": "GD_DysonSpherePower",
     "DeterminatorParams": [
       5000000000
-    ],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    ]
   },
   {
     "ID": 4200,
@@ -3356,7 +2327,6 @@
       50000.0
     ],
     "DeterminatorName": "GD_GroupUniverseMatrix",
-    "DeterminatorParams": [],
     "IgnoreParamsLevel1": [
       6006,
       6006,
@@ -3364,16 +2334,12 @@
       1,
       6
     ],
-    "IgnoreParamsLevel2": [],
     "PatchIgnoreParams": [
       6006,
       0,
       1,
       6
     ],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
     "Childs": [
       4201,
       4202
@@ -3387,18 +2353,10 @@
     "QueueJumpPriority": 0,
     "ParentId": 4200,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
     "DeterminatorName": "GD_UnlockTech",
     "DeterminatorParams": [
       1507
-    ],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    ]
   },
   {
     "ID": 4202,
@@ -3408,21 +2366,13 @@
     "QueueJumpPriority": 0,
     "ParentId": 4200,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
     "DeterminatorName": "GD_MechaAndFactoryItemProduction",
     "DeterminatorParams": [
       6006,
       1,
       2,
       1
-    ],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    ]
   },
   {
     "ID": 4220,
@@ -3432,19 +2382,12 @@
     "QueueJumpPriority": 1,
     "ParentId": 0,
     "NeedCombatMode": 1,
-    "DisplayParams": [],
     "DeterminatorName": "GD_GroupDestroySpaceDarkFogHive",
-    "DeterminatorParams": [],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
     "PatchIgnoreParams": [
       273,
       1,
       6
     ],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
     "Childs": [
       4221,
       4222
@@ -3458,16 +2401,7 @@
     "QueueJumpPriority": 0,
     "ParentId": 4220,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
-    "DeterminatorName": "GD_CheckSpaceSquadron",
-    "DeterminatorParams": [],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    "DeterminatorName": "GD_CheckSpaceSquadron"
   },
   {
     "ID": 4222,
@@ -3477,16 +2411,7 @@
     "QueueJumpPriority": 0,
     "ParentId": 4220,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
-    "DeterminatorName": "GD_SpaceHiveCheck",
-    "DeterminatorParams": [],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    "DeterminatorName": "GD_SpaceHiveCheck"
   },
   {
     "ID": 4300,
@@ -3500,13 +2425,6 @@
       30.0
     ],
     "DeterminatorName": "GD_GroupFactoryScale",
-    "DeterminatorParams": [],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
     "Childs": [
       4301
     ]
@@ -3519,7 +2437,6 @@
     "QueueJumpPriority": 0,
     "ParentId": 4300,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
     "DeterminatorName": "GD_ItemProduction",
     "DeterminatorParams": [
       6006,
@@ -3527,14 +2444,7 @@
       1,
       1,
       0
-    ],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    ]
   },
   {
     "ID": 4400,
@@ -3548,13 +2458,6 @@
       30.0
     ],
     "DeterminatorName": "GD_GroupDysonSphereProgram",
-    "DeterminatorParams": [],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
     "Childs": [
       4401
     ]
@@ -3567,19 +2470,11 @@
     "QueueJumpPriority": 0,
     "ParentId": 4400,
     "NeedCombatMode": 0,
-    "DisplayParams": [],
     "DeterminatorName": "GD_DysonSphereCheckLuminosity",
     "DeterminatorParams": [
       2,
       100,
       300
-    ],
-    "IgnoreParamsLevel1": [],
-    "IgnoreParamsLevel2": [],
-    "PatchIgnoreParams": [],
-    "PatchCompleteParams": [],
-    "OnLoadIgnoreParams": [],
-    "EnterQueueIgnoreParams": [],
-    "Childs": []
+    ]
   }
 ]

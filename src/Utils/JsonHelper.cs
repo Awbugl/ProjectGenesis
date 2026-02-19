@@ -394,16 +394,16 @@ namespace ProjectGenesis.Utils
                 proto.QueueJumpPriority = QueueJumpPriority;
                 proto.ParentId = ParentId;
                 proto.NeedCombatMode = NeedCombatMode;
-                proto.DisplayParams = DisplayParams ?? Array.Empty<double>();
                 proto.DeterminatorName = DeterminatorName;
-                proto.DeterminatorParams = DeterminatorParams ?? Array.Empty<long>();
-                proto.IgnoreParamsLevel1 = IgnoreParamsLevel1 ?? Array.Empty<long>();
-                proto.IgnoreParamsLevel2 = IgnoreParamsLevel2 ?? Array.Empty<long>();
-                proto.PatchIgnoreParams = PatchIgnoreParams ?? Array.Empty<long>();
-                proto.PatchCompleteParams = PatchCompleteParams ?? Array.Empty<long>();
-                proto.OnLoadIgnoreParams = OnLoadIgnoreParams ?? Array.Empty<long>();
-                proto.EnterQueueIgnoreParams = EnterQueueIgnoreParams ?? Array.Empty<long>();
-                proto.Childs = Childs ?? Array.Empty<int>();
+
+                if (DisplayParams != null) proto.DisplayParams = DisplayParams;
+                if (DeterminatorParams != null) proto.DeterminatorParams = DeterminatorParams;
+                if (IgnoreParamsLevel1 != null) proto.IgnoreParamsLevel1 = IgnoreParamsLevel1;
+                if (IgnoreParamsLevel2 != null) proto.IgnoreParamsLevel2 = IgnoreParamsLevel2;
+                if (PatchIgnoreParams != null) proto.PatchIgnoreParams = PatchIgnoreParams;
+                if (PatchCompleteParams != null) proto.PatchCompleteParams = PatchCompleteParams;
+                if (OnLoadIgnoreParams != null) proto.OnLoadIgnoreParams = OnLoadIgnoreParams;
+                if (EnterQueueIgnoreParams != null) proto.EnterQueueIgnoreParams = EnterQueueIgnoreParams;
 
                 return proto;
             }
