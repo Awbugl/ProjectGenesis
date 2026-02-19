@@ -172,6 +172,7 @@ namespace ProjectGenesis.Patches
             switch (__instance.DescFields[index])
             {
                 case 4:
+                {
                     if (!__instance.prefabDesc.isPowerGen) return;
 
                     switch (__instance.prefabDesc.fuelMask)
@@ -195,23 +196,77 @@ namespace ProjectGenesis.Patches
 
                     if (__instance.ModelIndex == ProtoID.M同位素温差发电机) __result = "裂变能".TranslateFromJson();
                     return;
-
+                }
                 case 18:
+                {
                     if (__instance.prefabDesc.isCollectStation && __instance.ID == ProtoID.I大气采集器) __result = "行星大气".TranslateFromJson();
                     return;
-
+                }
                 case 19:
-                    if (__instance.prefabDesc.minerType == EMinerType.Oil)
-                        __result = (600000.0 / __instance.prefabDesc.minerPeriod * GameMain.history.miningSpeedScale).ToString("0.##")
-                                 + "x";
-                    return;
+                {
+                    float miningScale = GameMain.history.miningSpeedScale;
+                    var desc = __instance.prefabDesc;
+    
+                    switch (desc.minerType)
+                    {
+                        case EMinerType.Vein:
+                        {
+                            double baseSpeed = 60.0 / (desc.minerPeriod / 600000.0);
+                            __result = FormatWithBonus(baseSpeed, baseSpeed * miningScale - baseSpeed, "0.#", "每分每矿脉".Translate());
+                            return;
+                        }
 
+                        case EMinerType.Oil:
+                        {
+                            double baseSpeed = 600000.0 / desc.minerPeriod;
+                            __result = FormatWithBonus(baseSpeed, baseSpeed * miningScale - baseSpeed, "0.##", "x");
+                            return;
+                        }
+
+                        case EMinerType.Water:
+                        {
+                            double baseSpeed = 60.0 / (desc.minerPeriod / 600000.0);
+                            __result = FormatWithBonus(baseSpeed, baseSpeed * miningScale - baseSpeed, "0.#", "/min");
+                            return;
+                        }
+
+                        default: 
+                            __result = "-";
+                            return;
+                    }
+                }
+
+                case 32:
+                {
+                    float baseSpeed = __instance.prefabDesc.stationCollectSpeed;
+                    float bonus = baseSpeed * (GameMain.history.miningSpeedScale - 1f);
+                    __result = FormatWithBonus(baseSpeed, bonus, "0.0###", "x");
+                    return;
+                }
+                case 50:
+                {
+                    float baseDamage = (float)(100.0 * __instance.prefabDesc.turretDamageScale * 0.6f);
+                    float bonus = baseDamage * (GameMain.history.energyDamageScale - 1f);
+                    __result = FormatWithBonus(baseDamage, bonus, "0.0#", " hp");
+                    return;
+                }
                 case 58:
+                {
                     if (__instance.ID == ProtoID.I导弹防御塔) __result = "1 AU";
                     return;
+                }
             }
         }
 
+        private static string FormatWithBonus(double baseValue, double bonus, string format, string suffix)
+        {
+            string baseStr = baseValue.ToString(format);
+            if (bonus == 0.0) return baseStr + suffix;
+    
+            string bonusStr = bonus.ToString(format);
+            return $"{baseStr}<color=#61D8FFB8> + {bonusStr}</color>{suffix}";
+        }
+        
         [HarmonyPostfix]
         [HarmonyPatch(typeof(TechProto), nameof(TechProto.UnlockFunctionText))]
         public static void TechProto_UnlockFunctionText(TechProto __instance, ref string __result, StringBuilder sb)
