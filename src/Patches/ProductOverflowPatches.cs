@@ -98,7 +98,6 @@ namespace ProjectGenesis.Patches
                         case ProtoID.R水电解:
                         case ProtoID.R甲烷偶联:
                         case ProtoID.R催化重整:
-                        case ProtoID.R二氧化硫还原:
                         case ProtoID.R放射性矿物处理:
                             b = true;
 

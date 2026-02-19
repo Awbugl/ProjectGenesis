@@ -25,7 +25,6 @@ namespace ProjectGenesis.Patches
             { ProtoID.R铌矿筛选, 443 },
             { ProtoID.R海水淡化, 444 },
             { ProtoID.R有机晶体活化, 445 },
-            { ProtoID.R二氧化硫还原, 446 },
             { ProtoID.R增产剂, 447 },
             { ProtoID.R氦原子提取, 448 },
             { ProtoID.R硅石筛选, 449 },
