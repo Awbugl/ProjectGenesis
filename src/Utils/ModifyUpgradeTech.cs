@@ -56,8 +56,8 @@ namespace ProjectGenesis.Utils
             tech.ItemPoints = Enumerable.Repeat(6, 5).ToArray();
 
             tech = LDB.techs.Select(ProtoID.T集装分拣6);
-            tech.Items = Items5;
-            tech.ItemPoints = Enumerable.Repeat(6, 5).ToArray();
+            tech.Items = Items3;
+            tech.ItemPoints = Enumerable.Repeat(6, 3).ToArray();
 
             for (int i = ProtoID.T宇宙探索1; i <= ProtoID.T宇宙探索4; i++)
             {
