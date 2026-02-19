@@ -6066,8 +6066,8 @@
   },
   {
     "ID": 773,
-    "Name": "钨矿筛选",
-    "Description": "R钨矿筛选",
+    "Name": "铌矿筛选",
+    "Description": "R铌矿筛选",
     "IconPath": "",
     "IconTag": "rwksx",
     "Type": 2,
@@ -6093,7 +6093,7 @@
   },
   {
     "ID": 774,
-    "Name": "钨块",
+    "Name": "铌块",
     "Description": "",
     "IconPath": "",
     "IconTag": "",
@@ -6118,7 +6118,7 @@
   },
   {
     "ID": 775,
-    "Name": "钨强化玻璃",
+    "Name": "铌强化玻璃",
     "Description": "",
     "IconPath": "",
     "IconTag": "",
@@ -6145,7 +6145,7 @@
   },
   {
     "ID": 776,
-    "Name": "钨合金",
+    "Name": "铌合金",
     "Description": "",
     "IconPath": "",
     "IconTag": "",
@@ -6201,7 +6201,7 @@
   },
   {
     "ID": 782,
-    "Name": "钨芯弹箱",
+    "Name": "铌芯弹箱",
     "Description": "",
     "IconPath": "",
     "IconTag": "",

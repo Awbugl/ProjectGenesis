@@ -33,7 +33,7 @@ namespace ProjectGenesis.Utils
             { 6222, new OreIconDesc(new Color32(106, 175, 78, 255)) },  // Rads
             { 6225, new OreIconDesc(new Color32(130, 235, 139, 255)) }, // U
             { 6226, new OreIconDesc(new Color32(243, 98, 113, 255)) },  // Pu
-            { 6201, new OreIconDesc(new Color32(30, 29, 30, 255)) },    // Tungsten
+            { 6201, new OreIconDesc(new Color32(30, 29, 30, 255)) },    // Niobium
 
             { 7803, new ComponentIconDesc(new Color32(228, 153, 255, 255)) }, // 光学芯片
             { 7804, new ComponentIconDesc(new Color32(228, 153, 255, 255)) }, // 光学纤维
@@ -64,14 +64,14 @@ namespace ProjectGenesis.Utils
             { 7613, new FullIconDesc(new Color32(187, 172, 252, 255)) }, // 反物质炮弹
             { 7615, new FullIconDesc(new Color32(187, 172, 252, 255)) }, // 反物质导弹
             { 6204, new FullIconDesc(new Color32(161, 157, 152, 255)) }, // 铝合金
-            { 7707, new FullIconDesc(new Color32(51, 51, 57, 255)) },    // 钨钢
+            { 7707, new FullIconDesc(new Color32(51, 51, 57, 255)) },    // 铌钢
             { 6271, new FullIconDesc(new Color32(221, 218, 255, 255)) }, // 三元合金
-            { 7608, new FullIconDesc(new Color32(81, 83, 90, 255)) },    // 钨子弹
+            { 7608, new FullIconDesc(new Color32(81, 83, 90, 255)) },    // 铌子弹
             { 7609, new FullIconDesc(new Color32(221, 218, 255, 255)) }, // 三元子弹
             { 7616, new FullIconDesc(new Color32(187, 172, 252, 255)) }, // 反物质子弹
 
             { 6203, new NoIconMetalIconDesc(new Color32(186, 176, 144, 255)) }, // 铝块
-            { 7705, new NoIconMetalIconDesc(new Color32(43, 44, 48, 255)) },    // 钨块
+            { 7705, new NoIconMetalIconDesc(new Color32(43, 44, 48, 255)) },    // 铌块
 
             { 6217, new RodIconDesc(new Color32(163, 145, 85, 255)) },  // 煤油棒
             { 6216, new RodIconDesc(new Color32(198, 207, 111, 255)) }, // JP10棒
@@ -87,7 +87,7 @@ namespace ProjectGenesis.Utils
             { 7610, new WhiteIconDesc() }, // 核子单元
             { 7611, new WhiteIconDesc() }, // 反物质单元
 
-            { 7706, new GlassIconDesc(new Color32(91, 91, 91, 255)) }, // 钨玻璃
+            { 7706, new GlassIconDesc(new Color32(91, 91, 91, 255)) }, // 铌玻璃
         };
 
         private static readonly IconToolNew.IconDesc Default = new IconToolNew.IconDesc

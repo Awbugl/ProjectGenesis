@@ -37,14 +37,14 @@ namespace ProjectGenesis.Compatibility
 
             GSVeinType.saneVeinTypes["Aluminum"] = (EVeinType)15;
             GSVeinType.saneVeinTypes["Radioactive"] = (EVeinType)16;
-            GSVeinType.saneVeinTypes["Tungsten"] = (EVeinType)17;
+            GSVeinType.saneVeinTypes["Niobium"] = (EVeinType)17;
             GSVeinType.saneVeinTypes["Sulfur"] = (EVeinType)18;
             GSVeinType.saneVeinTypes["Salt"] = (EVeinType)19;
             GSVeinType.saneVeinTypes["Tholin"] = (EVeinType)20;
 
             GSVeinType.insaneVeinTypes[(EVeinType)15] = "Aluminum";
             GSVeinType.insaneVeinTypes[(EVeinType)16] = "Radioactive";
-            GSVeinType.insaneVeinTypes[(EVeinType)17] = "Tungsten";
+            GSVeinType.insaneVeinTypes[(EVeinType)17] = "Niobium";
             GSVeinType.insaneVeinTypes[(EVeinType)18] = "Sulfur";
             GSVeinType.insaneVeinTypes[(EVeinType)19] = "Salt";
             GSVeinType.insaneVeinTypes[(EVeinType)20] = "Tholin";

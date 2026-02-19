@@ -68,7 +68,7 @@ or open an issue via [GitHub](https://github.com/Awbugl/ProjectGenesis).
 - 额外的大气层：现在你可以在大部分星球表面建设“大气采集站”并抽取氮氧等大气成分。
 - 注意：火力发电厂现在只能在具有含氧大气层的星球上使用。
 - 新的矿物分布：调整了矿物在不同星球的生成量，注意：这会使Mod与原版存档互不兼容！
-- 全新的矿物类型：挖掘钨矿冶炼超级合金，或者采集放射性矿物制造核燃料棒，以及晶体硫。
+- 全新的矿物类型：挖掘铌矿冶炼超级合金，或者采集放射性矿物制造核燃料棒，以及晶体硫。
 - 接近90%的配方重做：与原版完全不同的流程体验，放心，这会让你感觉很新颖的。
 - 行星协调中心：十数种不同的额外增益效果，可以在全球范围内提供增益。
 - 巨型建筑：使用传送带输入输出物料的超级生产设备，30倍速度。
@@ -124,7 +124,7 @@ named `GenesisBook`)<br/>
 - Note: Thermal power plants can now only be used on planets with oxygenated atmospheres.
 - New Mineral Distribution: Adjusted the amount of minerals produced on different planets, note: this will make the mod
   incompatible with the original archive!
-- New mineral types: mine tungsten ore to smelt superalloys, or harvest radioactive minerals to make nuclear fuel rods,
+- New mineral types: mine niobium ore to smelt superalloys, or harvest radioactive minerals to make nuclear fuel rods,
   and crystalline sulfur.
 - Nearly 90% of the recipes reworked: a completely different process experience from the original, don't worry, it'll
   feel new to you.

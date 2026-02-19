@@ -22,7 +22,7 @@ namespace ProjectGenesis.Patches
             { ProtoID.R甲烷偶联, 440 },
             { ProtoID.R聚苯硫醚, 441 },
             { ProtoID.R聚酰亚胺, 442 },
-            { ProtoID.R钨矿筛选, 443 },
+            { ProtoID.R铌矿筛选, 443 },
             { ProtoID.R海水淡化, 444 },
             { ProtoID.R有机晶体活化, 445 },
             { ProtoID.R二氧化硫还原, 446 },

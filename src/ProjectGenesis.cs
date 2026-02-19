@@ -307,8 +307,8 @@ namespace ProjectGenesis
             PlanetFactory.InitPrefabDescArray();
 
             ref MechaMaterialSetting material = ref Configs.builtin.mechaArmorMaterials[21];
-            material.itemId = ProtoID.I钨块;
-            material.density = 19.35f;
+            material.itemId = ProtoID.I铌块;
+            material.density = 8.57f;
             material.durability = 4.35f;
 
             DevFunction();

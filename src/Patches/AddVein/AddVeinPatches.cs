@@ -36,7 +36,7 @@ namespace ProjectGenesis.Patches
             new Color(0.349f, 0.222f, 0.247f), // Mag
             new Color(0.538f, 0.538f, 0.538f), // Aluminum
             new Color(0.685f, 0.792f, 0.000f), // Radioactive
-            new Color(0.113f, 0.130f, 0.140f), // Tungsten
+            new Color(0.113f, 0.130f, 0.140f), // Niobium
             new Color(0.965f, 0.867f, 0.352f), // Sulfur
             new Color(0.941f, 0.941f, 0.941f), // Sodium chloride
             new Color(0.745f, 0.231f, 0.110f), // Tholin
@@ -46,7 +46,7 @@ namespace ProjectGenesis.Patches
         {
             AddVeinProtos(NewVein(15, "铝矿脉", "I铝矿", "Assets/texpack/V铝矿脉", "lvkm", ProtoID.I铝矿, 25, 1, 60),
                 NewVein(16, "放射性矿脉", "I放射性矿物", "Assets/texpack/V放射晶体矿脉", "fsxkm", ProtoID.I放射性矿物, 35, 2, 90),
-                NewVein(17, "钨矿脉", "I钨矿", "Assets/texpack/V钨矿脉", "wukm", ProtoID.I钨矿, 34, 1, 120),
+                NewVein(17, "铌矿脉", "I铌矿", "Assets/texpack/V铌矿脉", "wukm", ProtoID.I铌矿, 34, 1, 120),
                 NewVein(18, "硫矿脉", "I硫矿", "Assets/texpack/V硫矿脉", "liukm", ProtoID.I硫矿, 36, 1, 90),
                 NewVein(19, "盐矿脉", "I氯化钠", "Assets/texpack/V盐矿脉", "naclkm", ProtoID.I氯化钠, 37, 2, 30),
                 NewVein(20, "托林矿脉", "I焦油", "Assets/texpack/V托林矿脉", "tlkm", ProtoID.I焦油, 38, 2, 90));

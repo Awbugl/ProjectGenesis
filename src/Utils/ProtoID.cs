@@ -40,7 +40,7 @@ namespace ProjectGenesis.Utils
                            I玻色矩阵 = 6278,
                            I耗散矩阵 = 6279,
                            I奇点矩阵 = 6280,
-                           I钨矿 = 6201,
+                           I铌矿 = 6201,
                            I铝矿 = 6202,
                            I铝块 = 6203,
                            I二氧化硫 = 6205,
@@ -69,7 +69,7 @@ namespace ProjectGenesis.Utils
                            I氧 = 7019,
                            I氯化钠 = 7101,
                            I钢芯弹箱 = 7607,
-                           I钨块 = 7705;
+                           I铌块 = 7705;
 
         internal const int R等离子精炼 = 16,
                            R石墨烯 = 31,
@@ -100,7 +100,7 @@ namespace ProjectGenesis.Utils
                            R甲烷偶联 = 720,
                            R聚苯硫醚 = 771,
                            R聚酰亚胺 = 772,
-                           R钨矿筛选 = 773,
+                           R铌矿筛选 = 773,
                            R海水淡化 = 801;
 
         internal const int M星际物流运输站 = 50,

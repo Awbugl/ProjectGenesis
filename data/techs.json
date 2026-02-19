@@ -441,7 +441,7 @@
       1711
     ],
     "Items": [
-      6002
+      6001
     ],
     "ItemPoints": [
       10
@@ -5055,11 +5055,11 @@
   },
   {
     "ID": 1911,
-    "Name": "T钨强化玻璃",
-    "IconPath": "Assets/texpack/T钨强化玻璃",
+    "Name": "T铌强化玻璃",
+    "IconPath": "Assets/texpack/T铌强化玻璃",
     "IconTag": "twqhbl",
-    "Desc": "T钨强化玻璃描述",
-    "Conclusion": "T钨强化玻璃描述",
+    "Desc": "T铌强化玻璃描述",
+    "Conclusion": "T铌强化玻璃描述",
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
@@ -5972,11 +5972,11 @@
   },
   {
     "ID": 1944,
-    "Name": "T钨强化金属",
-    "IconPath": "Assets/texpack/T钨强化金属",
+    "Name": "T铌强化金属",
+    "IconPath": "Assets/texpack/T铌强化金属",
     "IconTag": "twhj",
-    "Desc": "T钨强化金属描述",
-    "Conclusion": "T钨强化金属描述",
+    "Desc": "T铌强化金属描述",
+    "Conclusion": "T铌强化金属描述",
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
@@ -6318,11 +6318,11 @@
   },
   {
     "ID": 1955,
-    "Name": "T钨芯弹箱",
+    "Name": "T铌芯弹箱",
     "IconPath": "Icons/Tech/1813",
     "IconTag": "twxdx",
-    "Desc": "钨芯弹箱描述",
-    "Conclusion": "钨芯弹箱结果",
+    "Desc": "铌芯弹箱描述",
+    "Conclusion": "铌芯弹箱结果",
     "IsHiddenTech": false,
     "PreItem": null,
     "Position": [
