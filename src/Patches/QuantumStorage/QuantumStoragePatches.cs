@@ -87,23 +87,6 @@ namespace ProjectGenesis.Patches
         public static bool FactoryStorage_GameTick_PatchMethod(int id, int index, StorageComponent component) =>
             id == index || component.size == QuantumStorageSize;
 
-        [HarmonyPatch(typeof(BuildTool_Addon), nameof(BuildTool_Addon.UpdateRaycast))]
-        [HarmonyPatch(typeof(BuildTool_Addon), nameof(BuildTool_Addon.DeterminePreviews))]
-        [HarmonyTranspiler]
-        public static IEnumerable<CodeInstruction> BuildTool_Addon_Transpiler(IEnumerable<CodeInstruction> instructions)
-        {
-            var matcher = new CodeMatcher(instructions);
-
-            matcher.MatchForward(true, new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(PrefabDesc), nameof(PrefabDesc.isStorage))));
-
-            matcher.SetInstructionAndAdvance(new CodeInstruction(OpCodes.Call,
-                AccessTools.Method(typeof(QuantumStoragePatches), nameof(BuildTool_Addon_PatchMethod))));
-
-            return matcher.InstructionEnumeration();
-        }
-
-        public static bool BuildTool_Addon_PatchMethod(PrefabDesc desc) => desc.isStorage && desc.storageRow != 9;
-
         [HarmonyPatch(typeof(StorageComponent), nameof(StorageComponent.SetEmpty))]
         [HarmonyPriority(Priority.VeryHigh)]
         [HarmonyPrefix]
@@ -202,6 +185,7 @@ namespace ProjectGenesis.Patches
         })]
         [HarmonyPatch(typeof(PlanetFactory), nameof(PlanetFactory.PickFromStorage))]
         [HarmonyPatch(typeof(PlanetFactory), nameof(PlanetFactory.PickFromStorageFiltered))]
+        [HarmonyPatch(typeof(PlanetFactory), nameof(PlanetFactory.PickFuelForPowerGenFrom))]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> PlanetFactory_Mutexs_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
@@ -286,6 +270,16 @@ namespace ProjectGenesis.Patches
                 new CodeInstruction(OpCodes.Brtrue, label));
 
             return matcher.InstructionEnumeration();
+        }
+
+        public static bool Import_PatchMethod(FactoryStorage storage, int storageId)
+        {
+            int orbitId = QueryOrbitId(storage.planet.id, storageId);
+            if (orbitId < 0) return false;
+
+            storage.storagePool[storageId] = _components[orbitId - 1];
+
+            return true;
         }
     }
 }

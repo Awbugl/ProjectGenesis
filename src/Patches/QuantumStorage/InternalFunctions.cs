@@ -93,16 +93,6 @@ namespace ProjectGenesis.Patches
             QuantumStorageIds[planetId] = new List<QuantumStorageData>(arr);
         }
 
-        public static bool Import_PatchMethod(FactoryStorage storage, int storageId)
-        {
-            int orbitId = QueryOrbitId(storage.planet.id, storageId);
-            if (orbitId < 0) return false;
-
-            storage.storagePool[storageId] = _components[orbitId - 1];
-
-            return true;
-        }
-
         private static int QueryOrbitId(int planetId, int storageId)
         {
             if (!QuantumStorageIds.TryGetValue(planetId, out List<QuantumStorageData> datas)) return -1;
