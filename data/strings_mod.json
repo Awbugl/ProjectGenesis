@@ -137,7 +137,7 @@
   {
     "Name": "工厂电力需求 -10%",
     "ZHCN": "工厂电力需求 -10%",
-    "ENUS": "Assembler Power Consumption -10%"
+    "ENUS": "Factory Power Demand -10%"
   },
   {
     "Name": "研究上传速度 +10%",
@@ -182,22 +182,22 @@
   {
     "Name": "电力威胁增长 -20%",
     "ZHCN": "电力威胁增长 -20%",
-    "ENUS": "Power related threat growth -20%"
+    "ENUS": "Power Related Threat Growth -20%"
   },
   {
     "Name": "太空威胁增长 -20%",
     "ZHCN": "太空威胁增长 -20%",
-    "ENUS": "Space threat growth -20%"
+    "ENUS": "Space Threat Growth -20%"
   },
   {
     "Name": "部队建造速度 -20%",
     "ZHCN": "部队建造速度 -20%",
-    "ENUS": "Unit replicate Speed -20%"
+    "ENUS": "Unit Replication Speed -20%"
   },
   {
     "Name": "基地扩张速度 -20%",
     "ZHCN": "基地扩张速度 -20%",
-    "ENUS": "Base build Speed -20%"
+    "ENUS": "Base Expansion Speed -20%"
   },
   {
     "Name": "星际组装厂（巨构）",

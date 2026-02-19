@@ -7,7 +7,7 @@
   {
     "Name": "I电力节约",
     "ZHCN": "采用智能控制系统，实时监控能源消耗、自动调节设备的运行状态，减少不必要的能耗。\n<color=\"#FD965ECC\">工厂电力需求 -10%</color>",
-    "ENUS": "By using intelligent control systems, real-time monitoring of energy consumption and automatic adjustment of equipment operating status can reduce unnecessary energy usage.\n<color=\"#FD965ECC\">Assembler Power Consumption -10%</color>"
+    "ENUS": "By using intelligent control systems, real-time monitoring of energy consumption and automatic adjustment of equipment operating status can reduce unnecessary energy usage.\n<color=\"#FD965ECC\">Factory Power Demand -10%</color>"
   },
   {
     "Name": "上传扩容",
@@ -66,8 +66,8 @@
   },
   {
     "Name": "I资源采掘",
-    "ZHCN": "通过自动化控制系统高效回收资源，如尾矿再利用、废水处理和循环利用，减少资源浪费，提高资源利用率。\n<color=\"#FD965ECC\">矿物采集速度 +25%</color>",
-    "ENUS": "By using automated control systems to efficiently recycle resources, such as tailings reuse, wastewater treatment, and recycling, resource waste can be reduced and resource utilization rates can be improved.\n<color=\"#FD965ECC\">Mining Speed +25%</color>"
+    "ZHCN": "优化采矿钻头结构，调整矿物分拣流程，全面提升矿物开采效率。\n<color=\"#FD965ECC\">矿物采集速度 +25%</color>",
+    "ENUS": "Optimize mining drill structures, streamline mineral sorting processes to comprehensively enhance mineral extraction efficiency.\n<color=\"#FD965ECC\">Mining Speed +25%</color>"
   },
   {
     "Name": "裂变增效",
@@ -97,7 +97,7 @@
   {
     "Name": "I特征向量模拟",
     "ZHCN": "根据机械能量计划的相关信息，模拟信号。降低由于电力因素导致的地面黑雾巢穴威胁度增长。\n<color=\"#FD965ECC\">电力威胁增长 -20%</color>",
-    "ENUS": "Analog signals based on information about the Mechanical Energy Program. Reduce the increase in threat level of Dark Fog ground nests due to factory power factors.\n<color=\"#FD965ECC\">Power related threat growth -20%</color>"
+    "ENUS": "Analog signals based on information about the Mechanical Energy Program. Reduce the increase in threat level of Dark Fog ground nests due to factory power factors.\n<color=\"#FD965ECC\">Power Related Threat Growth -20%</color>"
   },
   {
     "Name": "中继信号干扰",
@@ -107,7 +107,7 @@
   {
     "Name": "I中继信号干扰",
     "ZHCN": "干扰中继站与太空黑雾巢穴间的信号链路。降低由于地面战斗因素导致的太空黑雾巢穴威胁度增长。\n<color=\"#FD965ECC\">太空威胁增长 -20%</color>",
-    "ENUS": "Interferes with signaling links between relay stations and Dark Fog nests in space. Reduce the increase in the threat level of Dark Fog space nests due to ground combats.\n<color=\"#FD965ECC\">Space threat growth -20%</color>"
+    "ENUS": "Interferes with signaling links between relay stations and Dark Fog nests in space. Reduce the increase in the threat level of Dark Fog space nests due to ground combats.\n<color=\"#FD965ECC\">Space Threat Growth -20%</color>"
   },
   {
     "Name": "神经元重编程",
@@ -117,7 +117,7 @@
   {
     "Name": "I神经元重编程",
     "ZHCN": "利用现有黑雾残骸，重编程神经元后可干扰黑雾系统的运转模式。降低地面黑雾巢穴部队建造速度。\n<color=\"#FD965ECC\">部队建造速度 -20%</color>",
-    "ENUS": "Utilizes existing Dark Fog debris, reprogramming neurons can interfere with the Dark Fog system's mode of operation. Reduce the units replicate speed of Dark Fog ground nests.\n<color=\"#FD965ECC\">Unit replicate Speed -20%</color>"
+    "ENUS": "Utilizes existing Dark Fog debris, reprogramming neurons can interfere with the Dark Fog system's mode of operation. Reduce the unit replication speed of Dark Fog ground nests.\n<color=\"#FD965ECC\">Unit Replication Speed -20%</color>"
   },
   {
     "Name": "异常代码分析",
@@ -127,7 +127,7 @@
   {
     "Name": "I异常代码分析",
     "ZHCN": "逆向分析残骸中的黑雾代码，并尝试利用机械能量计划的相关数据链路。降低地面黑雾巢穴基地扩张速度。\n<color=\"#FD965ECC\">基地扩张速度 -20%</color>",
-    "ENUS": "Reverse analyze the Dark Fog code in the wreckage and attempt to utilize the data link associated with the Mechanical Energy Program. Reduce the build speed of Dark Fog ground nests.\n<color=\"#FD965ECC\">Base build Speed -20%</color>"
+    "ENUS": "Reverse analyze the Dark Fog code in the wreckage and attempt to utilize the data link associated with the Mechanical Energy Program. Reduce the expansion speed of Dark Fog ground nests.\n<color=\"#FD965ECC\">Base Expansion Speed -20%</color>"
   },
   {
     "Name": "海洋丛林介绍",
@@ -147,7 +147,7 @@
   {
     "Name": "飓风石林介绍",
     "ZHCN": "　　飓风石林星球的地表上散布着碎石，拥有一个主要成分为二氧化硫的稠密大气。\r\n　　这类行星拥有活跃的板块构造结构，地震和火山活动频繁。此外，大气中的高浓度亚硫酸雾导致的频繁“酸雨”奇景，也曾是外星旅游爱好者论坛中的一大热门。",
-    "ENUS": "The surface of a Cyclonius planet is scattered with the rocks under a thin atmosphere composed mainly of sulfur dioxide.\r\nSuch planets possess active tectonic structures with frequent earthquakes and volcanic activities. Additionally, the frequent 'acid rain' phenomenon caused by high concentrations of sulfate aerosols in the atmosphere has also been a popular topic on forums for extraterrestrial travel enthusiasts."
+    "ENUS": "The surface of a Cyclonius planet is scattered with rocks under a dense atmosphere composed mainly of sulfur dioxide.\r\nSuch planets possess active tectonic structures with frequent earthquakes and volcanic activities. Additionally, the frequent 'acid rain' phenomenon caused by high concentrations of sulfate aerosols in the atmosphere has also been a popular topic on forums for extraterrestrial travel enthusiasts."
   },
   {
     "Name": "里程碑名称29",
@@ -217,7 +217,7 @@
   {
     "Name": "创世之书介绍前字",
     "ZHCN": "星球调整：\n    四种新矿物，硫、铝、铌、放射矿，矿物现在可在水下生成；\n    为绝大多数类地行星添加了大气类型，并可使用大气采集站进行资源采集；\n    新增海水海洋、盐酸海洋、硝酸海洋；\n    行星协调中心，可自由选择多种协调增益您的工厂。\n\n产线调整：\n    新矿物相关的材料及配方；\n    化工配方扩展，三种不同性能的塑料用于不同生产需求；\n    矿物处理科技，允许将矿物预处理以提高产出或用于燃料电池；\n    添加多种燃料棒，为伊卡洛斯的星际扩张保驾护航；\n    建筑配方需求调整，将常用需求整合为机械组件，提高产线效率；\n    产物溢出机制，允许副产物溢出保证生产连续性（可在设置中调整）。\n\n建筑调整：\n    制造台拆分为三种不同精度的制造类型，不可通用；\n    对自动化生产属性进行提升，如供电范围、传送带、分拣器速度、制造台速度等；\n    大气采集站、轨道采集器不再消耗电力，允许油井、大矿机在水上建造；\n    发电功率调整，功率 = 建筑基础功率 * 燃料加成；\n    燃料电池发电厂仅能在含氧大气环境下运行（燃料棒除外）；添加裂变电站、同位素温差发电机；\n    黑雾建筑调整，黑雾制造台允许制造绝大多数配方，黑雾熔炉则可翻倍产出物品；\n    巨型建筑：使用传送带传输原料和产物的制造中心，效率远超普通设备；\n    物质分解设施，可将物品转换为沙土，亦可拆解建筑为制造材料。\n\n科技调整：\n    科技探索模式，隐藏暂不可研发的科技（可在设置中调整）；\n    添加多种复合矩阵及对应科研需求；\n    建造量子箱瞬间跨越星系输送物品；消耗负熵奇点进行远程折跃；使用全球护盾能源广播。\n\n武器调整：\n    生产铌钢弹头、核导弹；\n    建造紫外激光塔、电磁加农炮；\n    使用反物质跃迁导弹跨星支援。\n\n其他调整：\n    机甲燃料仓只能使用燃料棒进行供电；\n    快速开局模式，让每一次冒险都能迅速展开。",
-    "ENUS": "Planet tweaks:\n    Four new minerals, Sulfur, Aluminum, Niobium, and Radiolite, minerals can now be generated underwater;\n    Added atmosphere types to the vast majority of Earth-like planets, and the ability to use Atmospheric Harvesting Stations for resource harvesting;\n    New seawater oceans, hydrochloric acid oceans, and nitric acid oceans;\n    Planetary Coordination Center, with the freedom to choose from a wide range of coordinated gains for your factories.\nProduction tweaks:\n    New mineral-related materials and recipes;\n    Chemical recipe expansion, three different plastics with different properties for different production needs;\n    Mineral Processing Technology, allowing minerals to be pre-treated for increased output or for use in fuel cells;\n    Addition of multiple fuel rods for Icarus' interstellar expansion;\n    Construction recipe requirement adjustments, consolidating common requirements into mechanical components to increase production line efficiency;\n    Production overflow mechanic, allowing byproduct overflow to ensure production continuity (adjustable in settings).\nBuilding tweaks:\n    Manufacturing table split into three different precision manufacturing types, which are not generalizable;\n    Enhancements to automated production attributes such as power supply range, conveyor belts, sorter speed, and manufacturing table speed;\n    Atmospheric collection stations and orbital collectors no longer consume power, allowing oil wells and large mining machines to be built over water;\n    Power generation power adjusted so that power = building base power * fuel bonus;\n    Fuel cell power plants can only operate in oxygenated atmospheres (except fuel rods); fission power stations, isotope temperature difference generators added;\n    Dark Fog building tweak; Dark Fog Fabrication Stations allow for the creation of most recipes, while Dark Fog Furnaces double the output of items;\n    Mega Buildings: manufacturing centers that use conveyor belts to transfer raw materials and products far more efficiently than normal facilities;\n    Material Decomposition Facility, which converts items into sand and earth, and can also dismantle buildings for manufacturing materials.\nTechnology tweaks:\n    Technology Exploration Mode to hide technologies that cannot be developed at the moment (can be adjusted in Settings);\n    Add multiple composite matrices and corresponding research requirements;\n    Construct Quantum Boxes to instantly transport items across galaxies; consume Negentropic Singularity to perform Remote Folding; use Global Shield Energy to broadcast.\nWeapon tweaks:\n    Produce tungsten warheads, nuclear missiles;\n    Construction of UV laser towers, electromagnetic cannons;\n    Use antimatter leaping missiles for transplanetary support.\nOther tweaks:\n    Mech fuel silos can only be powered using fuel rods;\n    Quick start mode to get every adventure underway quickly."
+    "ENUS": "Planet tweaks:\n    Four new minerals, Sulfur, Aluminum, Niobium, and Radiolite, minerals can now be generated underwater;\n    Added atmosphere types to the vast majority of Earth-like planets, and the ability to use Atmospheric Harvesting Stations for resource harvesting;\n    New seawater oceans, hydrochloric acid oceans, and nitric acid oceans;\n    Planetary Coordination Center, with the freedom to choose from a wide range of coordinated gains for your factories.\nProduction tweaks:\n    New mineral-related materials and recipes;\n    Chemical recipe expansion, three different plastics with different properties for different production needs;\n    Mineral Processing Technology, allowing minerals to be pre-treated for increased output or for use in fuel cells;\n    Addition of multiple fuel rods for Icarus' interstellar expansion;\n    Construction recipe requirement adjustments, consolidating common requirements into mechanical components to increase production line efficiency;\n    Production overflow mechanic, allowing byproduct overflow to ensure production continuity (adjustable in settings).\nBuilding tweaks:\n    Manufacturing table split into three different precision manufacturing types, which are not generalizable;\n    Enhancements to automated production attributes such as power supply range, conveyor belts, sorter speed, and manufacturing table speed;\n    Atmospheric collection stations and orbital collectors no longer consume power, allowing oil wells and large mining machines to be built over water;\n    Power generation power adjusted so that power = building base power * fuel bonus;\n    Fuel cell power plants can only operate in oxygenated atmospheres (except fuel rods); fission power stations, isotope temperature difference generators added;\n    Dark Fog building tweak; Dark Fog Fabrication Stations allow for the creation of most recipes, while Dark Fog Furnaces double the output of items;\n    Mega Buildings: manufacturing centers that use conveyor belts to transfer raw materials and products far more efficiently than normal facilities;\n    Material Decomposition Facility, which converts items into sand and earth, and can also dismantle buildings for manufacturing materials.\nTechnology tweaks:\n    Technology Exploration Mode to hide technologies that cannot be developed at the moment (can be adjusted in Settings);\n    Add multiple composite matrices and corresponding research requirements;\n    Construct Quantum Boxes to instantly transport items across galaxies; consume Negentropic Singularity to perform Remote Folding; use Global Shield Energy to broadcast.\nWeapon tweaks:\n    Produce niobium warheads, nuclear missiles;\n    Construction of UV laser towers, electromagnetic cannons;\n    Use antimatter leaping missiles for transplanetary support.\nOther tweaks:\n    Mech fuel silos can only be powered using fuel rods;\n    Quick start mode to get every adventure underway quickly."
   },
   {
     "Name": "巨型建筑介绍标题",
@@ -386,8 +386,8 @@
   },
   {
     "Name": "I火力发电厂",
-    "ZHCN": "使用燃料（例如煤）和氧气作为原料，通过电化学反应把燃料的化学能转换成电能（因此，在无氧环境中只能使用燃料棒）。",
-    "ENUS": "A facility that converting the chemical energy of a fuel into electrical energy through an electrochemical reaction using a fuel (e.g., coal) and oxygen as raw materials. (In an oxygen-free environment, only fuel rods can be used)."
+    "ZHCN": "通过电催化氧化反应将燃料化学能转化为电能的装置，需持续输入燃料与氧气维持反应（在真空或无氧环境中，需改用自含氧化剂的燃料棒）。",
+    "ENUS": "A device that converts fuel chemical energy into electrical energy through electrocatalytic oxidation reactions, requiring continuous input of fuel and oxygen to maintain the reaction (in vacuum or oxygen-free environments, fuel rods with self-contained oxidizers must be used instead)."
   },
   {
     "Name": "焦油",
@@ -401,8 +401,8 @@
   },
   {
     "Name": "I聚丙烯",
-    "ZHCN": "一种热塑性塑料，由丙烯单体聚合而成，具有良好的机械性能、化学稳定性和较低的合成成本。",
-    "ENUS": "A thermoplastic, polymerized from propylene monomers, with good mechanical properties, chemical stability and low synthetic costs."
+    "ZHCN": "由丙烯单体经配位聚合反应制得的热塑性树脂，具有优异的机械强度、耐化学腐蚀特性及成本效益，是通用塑料中应用最广泛的品种之一。",
+    "ENUS": "A thermoplastic resin produced by coordination polymerization of propylene monomers, featuring excellent mechanical strength, chemical corrosion resistance, and cost-effectiveness—one of the most widely used varieties among general-purpose plastics."
   },
   {
     "Name": "增产剂",
@@ -416,13 +416,13 @@
   },
   {
     "Name": "I四氢双环戊二烯",
-    "ZHCN": "代表性饱和多环碳氢化合物，广泛应用于航空航天领域。",
-    "ENUS": "Representative saturated polycyclic hydrocarbons, widely used in aerospace applications."
+    "ZHCN": "一种高能量密度的饱和多环烃类化合物，化学性质稳定，不易挥发，是航空航天推进系统的优选燃料组分。",
+    "ENUS": "A high energy density saturated polycyclic hydrocarbon compound with stable chemical properties and low volatility—a preferred fuel component for aerospace propulsion systems."
   },
   {
     "Name": "R四氢双环戊二烯",
-    "ZHCN": "代表性饱和多环碳氢化合物，广泛应用于航空航天领域。",
-    "ENUS": "Representative saturated polycyclic hydrocarbons, widely used in aerospace applications."
+    "ZHCN": "以丙烯为原料，经氧化偶联与催化加氢反应制得的高密度饱和多环烃，是高性能航空航天燃料的重要组分。",
+    "ENUS": "High-density saturated polycyclic hydrocarbon produced from propylene through oxidative coupling and catalytic hydrogenation—an important component of high-performance aerospace fuel."
   },
   {
     "Name": "四氢双环戊二烯燃料棒",
@@ -431,8 +431,8 @@
   },
   {
     "Name": "I四氢双环戊二烯燃料棒",
-    "ZHCN": "专为初级航天器设计的推进燃料，具有高能量密度和卓越的稳定性。",
-    "ENUS": "Propulsion fuel designed for primary spacecraft with high energy density and excellent stability."
+    "ZHCN": "将JP-10燃料精密封装于标准燃料棒壳体中，专为早期星际航行器及行星着陆器设计，提供可靠的高比冲推进能源。",
+    "ENUS": "Precision encapsulation of JP-10 fuel in standard fuel rod casings, specifically designed for early interstellar spacecraft and planetary landers—providing reliable high specific impulse propulsion energy."
   },
   {
     "Name": "焦油燃料棒",
@@ -451,8 +451,8 @@
   },
   {
     "Name": "I同位素温差发电机",
-    "ZHCN": "将放射性同位素的衰变热利用塞贝克效应直接转换成电能的一种致密能源，抗干扰性强。",
-    "ENUS": "A dense energy source that converts the decay heat of radioisotopes directly into electricity using the Seebeck effect and is highly resistant to interference."
+    "ZHCN": "利用放射性同位素衰变释放的热能，通过热电偶阵列的塞贝克效应直接转换为电能的静态发电装置，无运动部件，可在极端环境下长期稳定运行。",
+    "ENUS": "A static power generation device that utilizes heat released by radioactive isotope decay, converting it directly into electricity through the Seebeck effect of thermocouple arrays—no moving parts, capable of long-term stable operation in extreme environments."
   },
   {
     "Name": "放射性矿物",
@@ -476,8 +476,8 @@
   },
   {
     "Name": "I量子储液罐",
-    "ZHCN": "将量子技术应用于液体存储上的科研成果，这种储罐有着远超普通储液罐的液体容量。",
-    "ENUS": "The scientific research results of applying quantum technology to liquid storage,this storage tank has a liquid capacity far greater than that of ordinary storage tanks."
+    "ZHCN": "应用量子隧穿效应与多维拓扑存储技术，在常规储罐体积内实现指数级扩容的液体存储装置，单罐容量可达传统储液罐的数个数量级。",
+    "ENUS": "Applying quantum tunneling effects and multi-dimensional topological storage technology, a liquid storage device achieving exponential capacity expansion within conventional tank volumes—single tank capacity can reach several orders of magnitude beyond traditional storage tanks."
   },
   {
     "Name": "氦",
@@ -496,8 +496,8 @@
   },
   {
     "Name": "I钍燃料棒",
-    "ZHCN": "利用经过精密加工和封装的含钍核燃料，能够在有限的空间内提供稳定且强大的能量输出。",
-    "ENUS": "Utilizing precision-machined and encapsulated high-purity thorium, it is capable of providing a stable and powerful energy output in a limited space."
+    "ZHCN": "采用钍基陶瓷燃料芯块，封装于合金包壳中，通过中子俘获转化为可裂变铀-233后释放能量，具有更高的燃耗深度与固有安全性。",
+    "ENUS": "Employing thorium-based ceramic fuel pellets encapsulated in alloy cladding, releasing energy after neutron capture conversion to fissile uranium-233—featuring higher burnup depth and inherent safety characteristics."
   },
   {
     "Name": "铀燃料棒",
@@ -506,8 +506,8 @@
   },
   {
     "Name": "I铀燃料棒",
-    "ZHCN": "利用经过精密加工和封装的含铀核燃料，能够在有限的空间内提供稳定且强大的能量输出。",
-    "ENUS": "Utilizing precision-machined and encapsulated high-purity uranium, it is capable of providing a stable and powerful energy output in a limited space."
+    "ZHCN": "采用精密加工技术将高纯度铀燃料封装于稳定合金外壳中，在有限空间内实现持续而强劲的链式反应能量输出。",
+    "ENUS": "Utilizing precision machining techniques to encapsulate high-purity uranium fuel within a stable alloy casing, achieving sustained and powerful chain reaction energy output in a limited space."
   },
   {
     "Name": "MOX燃料棒",
@@ -516,23 +516,23 @@
   },
   {
     "Name": "IMOX燃料棒",
-    "ZHCN": "一种使用铀和钍的混合氧化物的燃料棒，能够更有效地利用核燃料，减少放射性废物产生。",
-    "ENUS": "A fuel rod that uses mixed oxides of uranium and thorium, which enables more efficient use of nuclear fuel and reduces the generation of radioactive waste."
+    "ZHCN": "将铀与钍的氧化物精密配比并高温烧结成型，显著提升核燃料利用率，同时大幅减少长寿命放射性废物的生成量。",
+    "ENUS": "Precision blending and high-temperature sintering of uranium and thorium oxides significantly improves nuclear fuel utilization while substantially reducing the generation of long-lived radioactive waste."
   },
   {
     "Name": "I氢燃料棒",
-    "ZHCN": "将气态氢冷凝为液态，精密封装成液氢燃料棒，是一种高效且可再生的清洁能源。",
-    "ENUS": "Gaseous hydrogen is condensed to liquid form and precision encapsulated into liquid hydrogen fuel rods, an efficient and renewable source of clean energy."
+    "ZHCN": "通过多级压缩与低温冷凝工艺将气态氢转化为高密度液态，并封装于特制绝热容器中，是一种可循环再生的高效清洁能源载体。",
+    "ENUS": "Transforming gaseous hydrogen into high-density liquid form through multi-stage compression and cryogenic condensation processes, sealed within specially designed thermal insulation containers—a recyclable and efficient clean energy carrier."
   },
   {
     "Name": "I氘核燃料棒",
-    "ZHCN": "将重氢制成氘核燃料棒，获得更强大的能量，是小型聚变系统的燃料来源。",
-    "ENUS": "Make deuterium into deuteron fuel rods as a better source of energy. These fuel rods are often used in fusion systems."
+    "ZHCN": "将重氢同位素在极端高压下固化成型，能量密度远超化学燃料，是驱动紧凑型聚变反应堆的理想燃料来源。",
+    "ENUS": "Solidifying heavy hydrogen isotopes under extreme high pressure, achieving energy density far exceeding chemical fuels—an ideal fuel source for driving compact fusion reactors."
   },
   {
     "Name": "I反物质燃料棒",
-    "ZHCN": "将反物质制成更稳定的燃料棒，就可以更安全地利用其强大的能量。",
-    "ENUS": "Stabilize antimatter into fuel rods, so that it can be used safely and effectively."
+    "ZHCN": "利用强磁场约束技术将反物质稳定封存于真空腔体内，通过精确控制湮灭反应速率，将物质转化的纯粹能量安全释放。",
+    "ENUS": "Utilizing intense magnetic field confinement technology to stably seal antimatter within vacuum chambers, safely releasing the pure energy of matter conversion through precise control of annihilation reaction rates."
   },
   {
     "Name": "氦三燃料棒",
@@ -541,8 +541,8 @@
   },
   {
     "Name": "I氦三燃料棒",
-    "ZHCN": "氦三聚变反应不会产生中子，因此是理想的新一代清洁能源。",
-    "ENUS": "Helium-3 fusion reactions do not produce neutrons and are therefore ideal for a new generation of clean energy."
+    "ZHCN": "将氦三同位素在低温超流体状态下封装，其聚变反应不产生中子辐射，能量转换效率极高且环境友好，是星际航行的终极能源方案。",
+    "ENUS": "Encapsulating helium-3 isotopes in a low-temperature superfluid state; its fusion reaction produces no neutron radiation, offering extremely high energy conversion efficiency and environmental friendliness—the ultimate energy solution for interstellar navigation."
   },
   {
     "Name": "氘氦混合燃料棒",
@@ -551,8 +551,8 @@
   },
   {
     "Name": "I氘氦混合燃料棒",
-    "ZHCN": "氘氦混合燃料棒的能量密度极高，能够提供巨大的能量输出。",
-    "ENUS": "Deuterium-helium hybrid fuel rods have an extremely high energy density and are capable of delivering huge energy output."
+    "ZHCN": "优化氘与氦三的配比并采用分层封装结构，在降低聚变点火条件的同时最大化能量产出，为巨型设施提供澎湃动力。",
+    "ENUS": "Optimizing the ratio of deuterium to helium-3 with a layered encapsulation structure, minimizing fusion ignition requirements while maximizing energy output—providing surging power for mega-scale facilities."
   },
   {
     "Name": "天穹装配厂",
@@ -561,8 +561,8 @@
   },
   {
     "Name": "I天穹装配厂",
-    "ZHCN": "重新设计的高度集成化装配工厂，原料在传送带上被高速机械臂抓取并运输到加工中心进行处理、组装，然后转移至输出端。这座工厂能够以极高的效率生产大部分工业物品。",
-    "ENUS": "A redesigned highly integrated assembly factory where raw materials are grabbed by high-speed robotic arms on conveyor belts and transported to processing centers for processing, assembly, and then transferred to the output end. This factory is able to produce most industrial items with extremely high efficiency."
+    "ZHCN": "重新设计的高度模块化装配工厂，原料经智能传送带网络输送至分布式机械臂集群，在流水线上完成抓取、定位、组装与质检全流程。这座工厂能够以极高的效率生产绝大多数工业制成品。",
+    "ENUS": "A redesigned highly modular assembly factory where raw materials are transported via intelligent conveyor networks to distributed robotic arm clusters, completing the entire workflow of grasping, positioning, assembly, and quality inspection on the production line. This factory is capable of producing the vast majority of industrial finished goods with extremely high efficiency."
   },
   {
     "Name": "物质裂解塔",
@@ -571,8 +571,8 @@
   },
   {
     "Name": "I物质裂解塔",
-    "ZHCN": "使用裂解光束对原矿进行加工、熔炼的大型工厂，高功率裂解光束能够以极高的效率处理矿物，将其快速粉碎并处理成高纯度原材料。",
-    "ENUS": "A large factory that uses a cracking beam to process and melt raw ore. High power cracking beams can process minerals with extremely high efficiency, quickly crushing them and processing them into high-purity raw materials."
+    "ZHCN": "配备高能裂解光束发射阵列的大型冶炼设施，通过精确调节光束波长与功率密度，可在瞬间将原矿粉碎、熔融并分离提纯为高品位原材料，处理效率远超传统冶金工艺。",
+    "ENUS": "A large-scale smelting facility equipped with a high-energy cracking beam emission array. By precisely tuning beam wavelength and power density, it can instantly crush, melt, and separate raw ore into high-grade raw materials—far exceeding the efficiency of traditional metallurgical processes."
   },
   {
     "Name": "埃克森美孚化工厂",
@@ -581,8 +581,8 @@
   },
   {
     "Name": "I埃克森美孚化工厂",
-    "ZHCN": "一座巨型化工厂，包含数个万吨级反应釜、高效冷却塔以及大量的、数不胜数的密封运输管道。当你置身其中，仿佛进入一片管道森林。",
-    "ENUS": "A giant chemical plant consisting of several tens of thousands of ton reactors, high-efficiency cooling towers, and numerous sealed transportation pipelines. When you are in it, it feels like entering a forest of pipes."
+    "ZHCN": "一座超大规模一体化化工综合体，核心区域矗立着数座万吨级高压反应釜，周围环绕着密如森林的管道网络与高效换热塔群。置身其中，仿佛漫步于钢铁与蒸汽构成的工业丛林。",
+    "ENUS": "A mega-scale integrated chemical complex with several ten-thousand-ton high-pressure reactors at its core, surrounded by dense forest-like pipeline networks and high-efficiency heat exchange towers. Walking within feels like wandering through an industrial jungle of steel and steam."
   },
   {
     "Name": "“工业先锋”精密加工中心",
@@ -591,8 +591,8 @@
   },
   {
     "Name": "I“工业先锋”精密加工中心",
-    "ZHCN": "一座规模庞大的精密工厂，大量运输轨道将原材料运送到核心部位的精密装配中心进行集成化、高效化生产，能够大幅提升我们制造某些尖端设备的效率。",
-    "ENUS": "A large-scale precision factory, with a large amount of transportation tracks, transports raw materials to the precision machining center in the core area for integrated and efficient production，greatly improve the efficiency of manufacturing certain cutting-edge equipment."
+    "ZHCN": "一座规模宏大的高精度制造设施，多层立体物流轨道将原材料精准输送至中央集成加工单元，通过数控多轴联动与在线检测系统，实现复杂尖端设备的高效精密制造。",
+    "ENUS": "A large-scale high-precision manufacturing facility where multi-level three-dimensional logistics tracks accurately transport raw materials to central integrated machining units. Through CNC multi-axis linkage and in-line inspection systems, it achieves efficient and precise manufacturing of complex cutting-edge equipment."
   },
   {
     "Name": "“苍穹”粒子加速器",
@@ -601,8 +601,8 @@
   },
   {
     "Name": "I“苍穹”粒子加速器",
-    "ZHCN": "“苍穹”粒子加速器由多个并行运行的环形加速器构成。由于高度集约化，曾用于临时大量制造反物质。",
-    "ENUS": "The \"Cosmic\" particle accelerator consists of several ring gas pedals operating in parallel. Because of its high degree of intensification, it has been used for the temporary mass production of antimatter."
+    "ZHCN": "由多条超导环形轨道并行构成的粒子加速阵列，通过同步加速正反粒子束至相对论速度，可高效制备反物质，曾为早期星际舰队的能源系统提供关键燃料。",
+    "ENUS": "A particle acceleration array composed of multiple parallel superconducting ring tracks, synchronously accelerating matter-antimatter particle beams to relativistic velocities for efficient antimatter production—once providing critical fuel for early interstellar fleet energy systems."
   },
   {
     "Name": "“湛曦”O型人造恒星",
@@ -626,8 +626,8 @@
   },
   {
     "Name": "I物质分解设施",
-    "ZHCN": "将工业废弃物转换为沙土的巨型设施。有人会称这种做法为严重的资源浪费，而我们将其称为高效。",
-    "ENUS": "Mega Facility for converting industrial waste into Sand."
+    "ZHCN": "一座将工业副产物与废弃材料转化为基础沙土的重型处理设施。尽管有人质疑这种处理方式造成资源浪费，但在我们看来，这是维持生产线持续运转的高效解决方案。",
+    "ENUS": "A heavy-duty processing facility that converts industrial byproducts and waste materials into basic sand. While some question the resource waste of this processing method, we view it as an efficient solution for maintaining continuous production line operation."
   },
   {
     "Name": "三元精金",
@@ -636,8 +636,8 @@
   },
   {
     "Name": "I“湛曦”O型人造恒星",
-    "ZHCN": "“你只需要让正反质子束从两端静静的穿过磁场进入约束球就可以了，轻松愉快！”它简单的外形归功于理论的优雅，被人们称为“人造小太阳”。",
-    "ENUS": "\"Just allow the positive and negative proton beams to pass silently through the magnetic field from both ends into the Constraint Sphere, nice and easy!\" It is simple but effective and is called the Artificial Sun."
+    "ZHCN": "“你只需让正反质子束从两端缓缓穿过磁场，进入约束球即可，简单优雅！”其简洁的球形外观源于物理定律的内在美感，被工程师们亲切地称为“人造小太阳”。",
+    "ENUS": "\"Just let the proton and antiproton beams slowly pass through the magnetic field from both ends into the confinement sphere—simple and elegant!\" Its simple spherical appearance stems from the intrinsic beauty of physical laws, affectionately nicknamed the 'Artificial Little Sun' by engineers."
   },
   {
     "Name": "结构矩阵",
@@ -656,8 +656,8 @@
   },
   {
     "Name": "I玻色矩阵",
-    "ZHCN": "整合了电磁矩阵与能量矩阵的复合矩阵。可以生成或调节电磁波，储存与分配能量。",
-    "ENUS": "A composite matrix that integrates the electromagnetic matrix with the energy matrix. It can generates or modulates electromagnetic waves and stores and distributes energy."
+    "ZHCN": "融合电磁矩阵的波场调控能力与能量矩阵的储能特性，可生成高精度电磁波束并智能分配能量流，是构建复杂能量网络的核心组件。",
+    "ENUS": "Integrating the wave field modulation capabilities of electromagnetic matrices with the energy storage characteristics of energy matrices, capable of generating high-precision electromagnetic beams and intelligently distributing energy flows—a core component for constructing complex energy networks."
   },
   {
     "Name": "耗散矩阵",
@@ -666,8 +666,8 @@
   },
   {
     "Name": "I耗散矩阵",
-    "ZHCN": "整合了结构矩阵与信息矩阵的复合矩阵。可以调整物体的微观结构，广播和修改信息。",
-    "ENUS": "A composite matrix that integrates the structural matrix and the information matrix. It can adjust the microstructure of objects, broadcast and modify information."
+    "ZHCN": "结合结构矩阵的物质重组算法与信息矩阵的数据广播协议，可在微观层面重构材料晶格结构，同时实现信息的实时分发与同步更新。",
+    "ENUS": "Combining the material restructuring algorithms of structural matrices with the data broadcasting protocols of information matrices, capable of reconstructing material lattice structures at the microscopic level while enabling real-time distribution and synchronization of information."
   },
   {
     "Name": "奇点矩阵",
@@ -676,13 +676,13 @@
   },
   {
     "Name": "I奇点矩阵",
-    "ZHCN": "集成电磁、能量、结构、信息与引力五种基础源代码的复合矩阵。当被反物质激活时，将协同转化为宇宙矩阵。",
-    "ENUS": "A composite matrix, and also a multifunctional tool capable of influencing reality on multiple levels. When charged with antimatter, the Singularity Matrix can transform into a Universe Matrix"
+    "ZHCN": "集成五种基础源代码的终极计算核心，当注入反物质激活时，其内部结构发生相变，协同转化为能够重塑现实规则的宇宙矩阵。",
+    "ENUS": "The ultimate computing core integrating five fundamental source codes. When activated by antimatter injection, its internal structure undergoes phase transition, synergistically transforming into a Universe Matrix capable of reshaping the rules of reality."
   },
   {
     "Name": "I湮灭约束球",
-    "ZHCN": "将湮灭反应约束在球内，从而获得稳定可控的能量输出，是O型人造恒星的关键部件。",
-    "ENUS": "It is a crucial component of antimatter energy reactor to confine the annihilation reaction within the sphere to obtain stable and controllable energy output."
+    "ZHCN": "采用多层磁压复合约束技术，将正反物质湮灭反应稳定限制在球心微腔内，以可控速率释放巨量能量，是O型人造恒星实现持续供能的关键部件。",
+    "ENUS": "Employing multi-layer magnetic pressure composite confinement technology to stably limit matter-antimatter annihilation reactions within a micro-cavity at the sphere's core, releasing massive energy at a controlled rate—the critical component enabling sustained power generation in Type-O artificial stars."
   },
   {
     "Name": "基础机械组件",
@@ -691,8 +691,8 @@
   },
   {
     "Name": "I基础机械组件",
-    "ZHCN": "一个通用组件包，包括机械工程中常用的元件，用于构建各种机械装置和系统，用途广泛。",
-    "ENUS": "A general-purpose kit of components commonly used in mechanical engineering to build a wide variety of mechanical devices and systems for a wide range of uses."
+    "ZHCN": "包含齿轮、轴承、紧固件等标准化机械元件的基础套装，适用于各类通用机械装置的组装与维护，是工业体系的基石。",
+    "ENUS": "A basic kit containing standardized mechanical elements such as gears, bearings, and fasteners, suitable for assembly and maintenance of various general-purpose mechanical devices—the cornerstone of industrial systems."
   },
   {
     "Name": "先进机械组件",
@@ -701,8 +701,8 @@
   },
   {
     "Name": "I先进机械组件",
-    "ZHCN": "一套精心设计的高级机械元件集合，适用于需要更高精度和性能的机械结构与自动化系统。",
-    "ENUS": "A well-designed collection of advanced mechanical components for mechanical structures and automation systems that require greater precision and performance."
+    "ZHCN": "采用高强度合金与精密加工工艺制造的升级组件套件，具备更高的负载能力与耐久度，满足高精度自动化系统的严苛要求。",
+    "ENUS": "An upgraded component kit manufactured with high-strength alloys and precision machining processes, featuring higher load capacity and durability to meet the stringent demands of high-precision automation systems."
   },
   {
     "Name": "尖端机械组件",
@@ -711,8 +711,8 @@
   },
   {
     "Name": "I尖端机械组件",
-    "ZHCN": "代表了当前机械工程技术最高成就的一系列组件，每个组件都经过严格的质量测试，确保在极端条件下的稳定表现。拥有尖端机械组件，意味着掌握了开启未来科技大门的钥匙。",
-    "ENUS": "A range of components that represent the highest achievements in current mechanical engineering technology, each of which has been subjected to rigorous quality testing to ensure stable performance under extreme conditions. Owning cutting-edge mechanical components means holding the key to unlocking the future of technology."
+    "ZHCN": "代表当前机械工程巅峰成就的精密组件系列，每件都经过纳米级精度检测与极端环境测试，确保在深海、高空、强辐射等恶劣条件下的可靠运行。掌握它们，意味着掌握了通往未来科技的钥匙。",
+    "ENUS": "A series of precision components representing the pinnacle of current mechanical engineering achievements, each subjected to nanometer-scale accuracy inspection and extreme environment testing to ensure reliable operation under harsh conditions such as deep sea, high altitude, and intense radiation. Mastering them means holding the key to future technology."
   },
   {
     "Name": "超级机械组件",
@@ -721,8 +721,8 @@
   },
   {
     "Name": "I超级机械组件",
-    "ZHCN": "尚未完成的蓝图，代表着机械工程领域的巅峰。",
-    "ENUS": "The unfinished blueprints represent the pinnacle of the mechanical engineering field."
+    "ZHCN": "尚处于理论验证阶段的蓝图设计，融合了量子力学与宏观机械工程的极限构想，代表着机械科技尚未触及的终极边界。",
+    "ENUS": "Blueprint designs still in theoretical validation, fusing极限构想 of quantum mechanics and macro-scale mechanical engineering, representing the ultimate boundary of mechanical technology yet to be touched."
   },
   {
     "Name": "创世之书",
@@ -731,8 +731,8 @@
   },
   {
     "Name": "I起源之书",
-    "ZHCN": "如果你拿到这本书，那我猜你应该已经试着接受这个MOD了。欢迎来到第一阶段，开拓者。\n第一阶段需要做的并不是很多，也不会很难。希望我能在下一个阶段见到你。",
-    "ENUS": "If you get this book, I guess you should have tried to accept this MOD. Welcome to the first stage, pioneer.\nThere is not much to do in the first stage, and it will not be difficult.\nI hope to see you in the next stage."
+    "ZHCN": "如果你正在阅读这段文字，说明你已经准备好接受这个MOD带来的全新挑战了。欢迎来到第一阶段，开拓者。\n这一阶段的任务并不繁重，主要是熟悉新增的基础机制与资源。期待在下一阶段与你再见。",
+    "ENUS": "If you are reading this text, it means you are ready to accept the new challenges brought by this MOD. Welcome to the first stage, pioneer.\nThe tasks in this stage are not heavy, mainly focusing on familiarizing yourself with new basic mechanics and resources. Looking forward to seeing you in the next stage."
   },
   {
     "Name": "虚空之书",
@@ -741,8 +741,8 @@
   },
   {
     "Name": "I虚空之书",
-    "ZHCN": "我曾经无数次仰望星空，幻想银河彼端是否存在另一个文明。\n而现在，你已经踏出了远航星海的第一步。欢迎来到第二阶段，开拓者。\n在这个阶段，你需要铺设稳定的物流网络、推动材料技术不断进步，以及逐步发展信息技术。",
-    "ENUS": "I have looked up at the stars countless times, and have imagined whether there is another civilization at the other end of the Milky Way.\nAnd now, you have taken the first step of the voyage. Welcome to the second stage, pioneer.\nIn this stage, you need to lay a stable logistics network, promote material technology to continue to improve, and gradually develop information technology."
+    "ZHCN": "我曾无数次仰望星空，幻想银河彼岸是否存在着另一个文明。\n如今，你已经迈出了远航星海的第一步。欢迎来到第二阶段，开拓者。\n在这一阶段，你需要建立稳定的星际物流网络、推动材料科学持续突破，并逐步发展先进的信息技术基础设施。",
+    "ENUS": "I have gazed at the stars countless times, wondering if another civilization exists beyond the galaxy.\nNow, you have taken the first step into the vast ocean of stars. Welcome to the second stage, pioneer.\nIn this stage, you need to establish stable interstellar logistics networks, drive continuous breakthroughs in materials science, and gradually develop advanced information technology infrastructure."
   },
   {
     "Name": "起源之书",
@@ -751,8 +751,8 @@
   },
   {
     "Name": "I创世之书",
-    "ZHCN": "很高兴你能走到这一步，开拓者。\n欢迎来到最终阶段，宇宙的终点对你来说已经触手可及。",
-    "ENUS": "I am glad you can get to this step, pioneer.\nWelcome to the final stage, the end of the universe is within your reach."
+    "ZHCN": "恭喜你走到这一步，开拓者。\n欢迎来到最终阶段，宇宙的终极奥秘已向你敞开大门，星辰大海的尽头触手可及。",
+    "ENUS": "Congratulations on reaching this point, pioneer.\nWelcome to the final stage—the ultimate mysteries of the universe have opened their doors to you, and the end of the starry sea is within reach."
   },
   {
     "Name": "氨",
@@ -761,8 +761,8 @@
   },
   {
     "Name": "I氨",
-    "ZHCN": "无色、有强烈的刺激气味的气体。常以液态形式储存。",
-    "ENUS": "A colorless gas with a strong irritating odor. It is usually stored as a liquid."
+    "ZHCN": "无色气体，具有强烈的刺激性气味，常温下加压易液化，是重要的化工原料与制冷剂。",
+    "ENUS": "A colorless gas with a strong pungent odor, easily liquefied under pressure at room temperature—an important chemical raw material and refrigerant."
   },
   {
     "Name": "聚酰亚胺",
@@ -771,8 +771,8 @@
   },
   {
     "Name": "I聚酰亚胺",
-    "ZHCN": "聚酰亚胺是一种高性能有机高分子化合物，具有优异的高温稳定性、耐化学腐蚀性和电绝缘性能。",
-    "ENUS": "Polyimide is a high-performance organic polymer compound, exhibits excellent high-temperature stability, chemical resistance, and electrical insulation properties."
+    "ZHCN": "一种高性能芳香族聚合物，具有卓越的耐高温性能、化学惰性与电气绝缘特性，广泛应用于航空航天与微电子领域。",
+    "ENUS": "A high-performance aromatic polymer with exceptional high-temperature resistance, chemical inertness, and electrical insulation properties, widely used in aerospace and microelectronics fields."
   },
   {
     "Name": "苯",
@@ -781,8 +781,8 @@
   },
   {
     "Name": "I苯",
-    "ZHCN": "有特殊气味的油状液体，化学性质相对稳定。在聚合物中引入苯基团，可以提高其玻璃化温度及化学稳定性。",
-    "ENUS": "An oily liquid with a special odor and relatively stable chemical properties. The introduction of phenyl groups into the polymer can increase its glass transition temperature and chemical stability."
+    "ZHCN": "具有特殊芳香气味的无色油状液体，化学性质稳定，是合成聚合物的重要单体。在聚合物链中引入苯环结构，可显著提升材料的玻璃化转变温度与化学稳定性。",
+    "ENUS": "A colorless oily liquid with a distinctive aromatic odor, chemically stable—an important monomer for polymer synthesis. Introducing benzene ring structures into polymer chains significantly enhances the material's glass transition temperature and chemical stability."
   },
   {
     "Name": "丙烯",
@@ -791,8 +791,8 @@
   },
   {
     "Name": "I丙烯",
-    "ZHCN": "无色气体，有类似石油气的气味，是重要的有机化工原料。",
-    "ENUS": "Colorless gas with a similar odor to petroleum gas, an important organic chemical raw material."
+    "ZHCN": "无色可燃气体，略带石油醚气味，是石油化工的核心基础原料之一，主要用于合成聚丙烯等高分子材料。",
+    "ENUS": "A colorless flammable gas with a slight petroleum ether odor—one of the core petrochemical feedstocks, mainly used for synthesizing polypropylene and other polymer materials."
   },
   {
     "Name": "盐酸",
@@ -801,8 +801,8 @@
   },
   {
     "Name": "I盐酸",
-    "ZHCN": "无色透明的液体，有强烈的刺激性气味，工业用途广泛。",
-    "ENUS": "Colorless transparent liquid with a strong irritating odor, widely used in industry."
+    "ZHCN": "氯化氢水溶液，无色透明且具有强烈刺激性气味，是金属清洗、有机合成等工业领域的基础化学品。",
+    "ENUS": "An aqueous solution of hydrogen chloride, colorless and transparent with a strong pungent odor—a basic chemical in industrial fields such as metal cleaning and organic synthesis."
   },
   {
     "Name": "三氯化铁",
@@ -811,8 +811,8 @@
   },
   {
     "Name": "I三氯化铁",
-    "ZHCN": "常见的共价化合物，工业用途广泛。",
-    "ENUS": "A common covalent compound, widely used in industry."
+    "ZHCN": "黑褐色结晶固体，易溶于水并形成酸性溶液，在蚀刻、催化等工业领域应用广泛。",
+    "ENUS": "Dark brown crystalline solid, readily soluble in water to form acidic solutions—widely used in industrial fields such as etching and catalysis."
   },
   {
     "Name": "硝酸",
@@ -821,8 +821,8 @@
   },
   {
     "Name": "I硝酸",
-    "ZHCN": "无色液体。由于光解而一般带有微黄色，有刺激性气味，强酸，常用于制造硝基化合物。",
-    "ENUS": "Colorless liquid. Generally with a slight yellow, with a strong irritating odor, is a strong acid, often used to make nitro compounds."
+    "ZHCN": "无色至淡黄色发烟液体，具有强烈刺激性气味与强氧化性，见光易分解，是制造炸药、染料、肥料的关键原料。",
+    "ENUS": "Colorless to pale yellow fuming liquid with strong pungent odor and strong oxidizing properties, prone to decomposition under light—a key raw material for manufacturing explosives, dyes, and fertilizers."
   },
   {
     "Name": "甲烷",
@@ -831,8 +831,8 @@
   },
   {
     "Name": "I甲烷",
-    "ZHCN": "最简单的有机物，也是非常重要的碳基资源。",
-    "ENUS": "Methane (CH₄) is the simplest organic compound and also a very important carbon-based resource."
+    "ZHCN": "结构最简单的碳氢化合物，无色无味的气体，是天然气的主要成分，也是合成多种有机化学品的重要碳源。",
+    "ENUS": "The simplest hydrocarbon structure, a colorless and odorless gas—the main component of natural gas and an important carbon source for synthesizing various organic chemicals."
   },
   {
     "Name": "海水",
@@ -841,8 +841,8 @@
   },
   {
     "Name": "I海水",
-    "ZHCN": "大部分生态星球表面的水体，含有大量的钠盐，是一种无色透明的液体。",
-    "ENUS": "Most of the water on the surface of the ecological planet, containing a large number of sodium salts, is a colorless transparent liquid."
+    "ZHCN": "覆盖绝大多数宜居星球表面的咸水水体，富含溶解的氯化钠及其他矿物质，呈现无色透明的液态外观。",
+    "ENUS": "Saltwater covering the surface of most habitable planets, rich in dissolved sodium chloride and other minerals—appearing as a colorless transparent liquid."
   },
   {
     "Name": "氧",
@@ -851,8 +851,8 @@
   },
   {
     "Name": "I氧",
-    "ZHCN": "生命的必需品，同时也是强氧化剂。",
-    "ENUS": "The essential of life, but also a strong oxidant."
+    "ZHCN": "维持绝大多数碳基生命的关键元素，化学性质活泼，是强氧化反应的核心参与者与助燃剂。",
+    "ENUS": "A key element sustaining most carbon-based life, chemically active—a core participant in strong oxidation reactions and a combustion supporter."
   },
   {
     "Name": "氢氧化钠",
@@ -861,8 +861,8 @@
   },
   {
     "Name": "I氢氧化钠",
-    "ZHCN": "具有强腐蚀性的强碱，工业用途广泛。",
-    "ENUS": "A strong alkali with strong corrosive, widely used in industry."
+    "ZHCN": "白色片状或颗粒状固体，易潮解，具有强碱性及腐蚀性，是皂化、造纸、纺织等行业的核心化学品。",
+    "ENUS": "White flaky or granular solid, hygroscopic, with strong alkalinity and corrosiveness—a core chemical in industries such as saponification, papermaking, and textiles."
   },
   {
     "Name": "氯化钠",
@@ -871,8 +871,8 @@
   },
   {
     "Name": "I氯化钠",
-    "ZHCN": "无色立方结晶或细小结晶粉末，味咸。",
-    "ENUS": "Colorless cubic crystals or fine crystalline powder, salty taste."
+    "ZHCN": "无色立方晶体或白色细晶粉末，味咸，是生物体维持电解质平衡及工业氯碱工艺的基础物质。",
+    "ENUS": "Colorless cubic crystals or white fine crystalline powder with a salty taste—a fundamental substance for maintaining electrolyte balance in organisms and for industrial chlor-alkali processes."
   },
   {
     "Name": "塑料基板",
@@ -881,8 +881,8 @@
   },
   {
     "Name": "I塑料基板",
-    "ZHCN": "使用聚丙烯制造的基板，用于制造基础电路板。",
-    "ENUS": "The substrate made of polyethylene, used to make the basic circuit board."
+    "ZHCN": "以聚丙烯为基材注塑成型的电路板基底材料，具有良好的绝缘性与加工性，适用于制造基础电子线路。",
+    "ENUS": "Injection-molded circuit board substrate material based on polypropylene, with good insulation and processability—suitable for manufacturing basic electronic circuits."
   },
   {
     "Name": "光学基板",
@@ -891,8 +891,8 @@
   },
   {
     "Name": "I光学基板",
-    "ZHCN": "使用聚酰亚胺制造的基板，拥有专为光学计算技术设计的蚀刻结构。",
-    "ENUS": "Substrates made with polyimide have etched structures designed for optical computing technology."
+    "ZHCN": "采用聚酰亚胺为基底，表面蚀刻有微米级光学波导结构，专为光信号传输与光学计算设计的高性能载体。",
+    "ENUS": "Using polyimide as the substrate with micrometer-scale optical waveguide structures etched on the surface—a high-performance carrier specifically designed for optical signal transmission and optical computing."
   },
   {
     "Name": "流速监测器",
@@ -931,8 +931,8 @@
   },
   {
     "Name": "I光学处理器",
-    "ZHCN": "使用新一代光学技术制造的计算芯片，光子脉冲代替传统的电子讯号，能够显著降低工作时产生的积热，解决因过热产生的效能下降问题，有效提高计算效率。",
-    "ENUS": "Advanced computing unit with good biocompatibility."
+    "ZHCN": "基于光子集成技术制造的下一代计算核心，利用光脉冲替代电子信号进行逻辑运算，从根本上消除了电阻热损耗，解决了传统芯片的散热瓶颈，实现能效比的量级提升。",
+    "ENUS": "A next-generation computing core based on photonic integration technology, utilizing light pulses instead of electronic signals for logic operations—fundamentally eliminating resistive heat loss, solving the thermal bottleneck of traditional chips, and achieving order-of-magnitude improvements in energy efficiency."
   },
   {
     "Name": "光学信息传输纤维",
@@ -941,8 +941,8 @@
   },
   {
     "Name": "I光学信息传输纤维",
-    "ZHCN": "使用天然光栅石制造的类光纤信息传输介质，光栅石独特的晶体结构在重塑后能大幅度提高信息传输效率，通常用于构建光学主机的信息链路。",
-    "ENUS": "Fiber-like information transmission media made with natural lenticular stones, whose unique crystal structure can dramatically increase the efficiency of information transmission after remodeling, are often used to build information links to optical hosts."
+    "ZHCN": "以高纯度光栅石晶体拉制而成的类光纤传输介质，其独特的周期性晶格结构经重塑后可实现极低损耗的光信号传导，是构建光学计算主机的核心互联材料。",
+    "ENUS": "Fiber-like transmission medium drawn from high-purity grating stone crystals, whose unique periodic lattice structure after reshaping enables extremely low-loss optical signal conduction—the core interconnect material for constructing optical computing mainframes."
   },
   {
     "Name": "量子计算主机",
@@ -951,8 +951,8 @@
   },
   {
     "Name": "I量子计算主机",
-    "ZHCN": "量子芯片与粒子宽带结合制造出的超大型计算集群，成熟的量子计算技术是衡量一个文明发展水平的条件之一，在主脑的计算中，这是一个重要的分水岭。",
-    "ENUS": "The combination of quantum chips and particle broadband creates a mega-computing cluster. Mature quantum computing technology is one of the conditions to measure the level of development of a civilization, and it is an important node in the mastermind's computation."
+    "ZHCN": "由数千枚量子处理器通过超导互联网络集成而成的超大规模计算集群，成熟的量子纠错与相干控制技术是衡量文明等级的重要标志，在主脑的评估体系中，这是科技树的关键分水岭节点。",
+    "ENUS": "A mega-scale computing cluster integrating thousands of quantum processors through superconducting interconnect networks. Mature quantum error correction and coherence control technologies are important markers of civilization level—in the mastermind's evaluation system, this is a critical watershed node in the technology tree."
   },
   {
     "Name": "“超越”X-1型光学主机",
@@ -961,8 +961,8 @@
   },
   {
     "Name": "I“超越”X-1型光学主机",
-    "ZHCN": "光学计算技术的最高结晶，使用光学处理器构建的大型计算机。光学芯片是它的大脑，高效信息链路构成了它的神经，这台设备庞大的计算力能够统筹一些非常复杂的工作过程。",
-    "ENUS": "The zenith of optical computing technology, a mainframe computer built using an optical processor. With an optical chip as its brain and highly efficient information links forming its nerves, this device has enough computational power to orchestrate some very complex work processes."
+    "ZHCN": "光学计算技术的集大成之作，由数百万个光学处理器通过三维光互连网络构成的超级计算机。光子芯片构成其运算大脑，高速光链路形成其神经网络，这台设备的恐怖算力足以统筹规划整个星系的工业体系。",
+    "ENUS": "The culmination of optical computing technology, a supercomputer composed of millions of optical processors interconnected through a three-dimensional optical network. Photonic chips form its computing brain, high-speed optical links form its neural network—this device's terrifying computing power is sufficient to coordinate and plan the industrial system of an entire star system."
   },
   {
     "Name": "先进化学反应釜",
@@ -971,8 +971,8 @@
   },
   {
     "Name": "I先进化学反应釜",
-    "ZHCN": "相较于原始的化工厂，这台机器拥有更加高效的控制系统，更加稳定的压力容器，能够满足极端的化工生产条件需求。",
-    "ENUS": "Compared to the original chemical plant, this machine has a more efficient control system and a more stable pressure vessel to meet the demands of extreme chemical production conditions."
+    "ZHCN": "相较于传统化工厂，该设备配备了自适应温控系统与多级安全联锁机制，采用新型复合材料制造的压力容器可承受极端温度与压强，满足高危化工工艺的严苛生产条件。",
+    "ENUS": "Compared to traditional chemical plants, this equipment features adaptive temperature control systems and multi-level safety interlock mechanisms. Pressure vessels manufactured with new composite materials can withstand extreme temperatures and pressures, meeting the stringent production conditions of high-risk chemical processes."
   },
   {
     "Name": "T化学反应釜压力容器",
@@ -981,8 +981,8 @@
   },
   {
     "Name": "T化学反应釜压力容器描述",
-    "ZHCN": "使用新的材料改良化工厂的压力容器，结合更新换代的控制系统从而满足极端的化工生产条件需求。",
-    "ENUS": "Improvement of pressure vessels in chemical plants with new materials, combined with updated control systems to meet the demands of extreme chemical production conditions.</color>"
+    "ZHCN": "采用纳米晶合金与陶瓷基复合材料重构压力容器壁，配合分布式光纤传感与AI辅助压力调节系统，使反应釜能够在超临界状态下安全稳定运行。",
+    "ENUS": "Reconstructing pressure vessel walls with nanocrystalline alloys and ceramic matrix composites, combined with distributed fiber optic sensing and AI-assisted pressure regulation systems, enabling the reactor to operate safely and stably under supercritical conditions."
   },
   {
     "Name": "硅石筛选",
@@ -991,8 +991,8 @@
   },
   {
     "Name": "R硅石筛选",
-    "ZHCN": "利用化学性质不同，筛选出含硅量较高的硅石。",
-    "ENUS": "The silica with higher silica content is selected by using different chemical properties."
+    "ZHCN": "利用硅石与其他脉石矿物在酸碱性及密度上的差异，通过浮选与重选联合工艺，富集得到高品位的硅质原料。",
+    "ENUS": "Utilizing differences in acidity/alkalinity and density between silica and other gangue minerals, enriching high-grade siliceous raw materials through combined flotation and gravity separation processes."
   },
   {
     "Name": "氦原子提取",
@@ -1001,8 +1001,8 @@
   },
   {
     "Name": "R氦原子提取",
-    "ZHCN": "从光栅石的晶格中提取出富集的氦。",
-    "ENUS": "Extract enriched helium from the lattice of grating stone."
+    "ZHCN": "通过精密控制的低温分馏与膜分离技术，从光栅石复杂的晶体晶格中提取并富集氦同位素气体。",
+    "ENUS": "Extracting and enriching helium isotope gas from the complex crystal lattice of grating stone through precisely controlled low-temperature fractionation and membrane separation technologies."
   },
   {
     "Name": "水电解",
@@ -1011,8 +1011,8 @@
   },
   {
     "Name": "R水电解",
-    "ZHCN": "电解水，产生氢气和氧气。\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作。</color>",
-    "ENUS": "Electrolysis of water, producing hydrogen and oxygen.\n<color=\"#FD965ECC\">Will not stop working until all products are accumulated.</color>"
+    "ZHCN": "通过直流电将水电解为氢气与氧气，是获取清洁氢能源的基础工艺。\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作。</color>",
+    "ENUS": "Electrolysis of water into hydrogen and oxygen using direct current—the fundamental process for obtaining clean hydrogen energy.\n<color=\"#FD965ECC\">Will not stop working until all products are accumulated.</color>"
   },
   {
     "Name": "盐水电解",
@@ -1021,8 +1021,8 @@
   },
   {
     "Name": "R盐水电解",
-    "ZHCN": "使用离子交换膜电解氯化钠溶液，生产盐酸和氢氧化钠。\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作。</color>",
-    "ENUS": "Electrolysis of salt water using ion exchange membranes, producing hydrochloric acid and sodium hydroxide.\n<color=\"#FD965ECC\">Will not stop working until all products are accumulated.</color>"
+    "ZHCN": "采用离子交换膜电解技术处理氯化钠溶液，阳极产生的氯气与阴极产生的氢气经催化反应后溶于水形成盐酸，同时阴极区富集氢氧化钠溶液。\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作。</color>",
+    "ENUS": "Utilizing ion exchange membrane electrolysis to process sodium chloride solution—chlorine gas from the anode and hydrogen gas from the cathode undergo catalytic reaction and dissolve in water to form hydrochloric acid, while sodium hydroxide solution is enriched at the cathode.\n<color=\"#FD965ECC\">Will not stop working until all products are accumulated.</color>"
   },
   {
     "Name": "钠盐转化",
@@ -1031,8 +1031,8 @@
   },
   {
     "Name": "R钠盐转化",
-    "ZHCN": "盐酸与石矿中的钠离子盐反应，经复杂的提纯工序后可获得氯化钠。",
-    "ENUS": "Hydrochloric acid reacts with sodium salts in the stone, and after purification, sodium chloride is obtained."
+    "ZHCN": "利用盐酸与硅酸盐矿石中的钠离子发生离子交换反应，经结晶提纯后获得高纯度氯化钠晶体。",
+    "ENUS": "Utilizing ion exchange reactions between hydrochloric acid and sodium ions in silicate ores, obtaining high-purity sodium chloride crystals after crystallization and purification."
   },
   {
     "Name": "海水淡化",
@@ -1041,8 +1041,8 @@
   },
   {
     "Name": "R海水淡化",
-    "ZHCN": "利用反渗透膜将海水中的盐分去除。\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作。</color>",
-    "ENUS": "Remove salt from seawater using reverse osmosis membranes (will not stop working until all products are accumulated)."
+    "ZHCN": "采用半透膜分离技术，在压力驱动下使水分子选择性透过而截留盐分，实现海水向淡水的转化。\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作。</color>",
+    "ENUS": "Employing semi-permeable membrane separation technology, driving water molecules to selectively permeate while retaining salts under pressure—achieving the conversion of seawater to freshwater.\n<color=\"#FD965ECC\">Will not stop working until all products are accumulated.</color>"
   },
   {
     "Name": "甲烷偶联",
@@ -1051,8 +1051,8 @@
   },
   {
     "Name": "R甲烷偶联",
-    "ZHCN": "通过甲烷氧化偶联反应合成丙烯，是碳中和进程的重要一步。\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作。</color>",
-    "ENUS": "Methane can efficiently be converted to propylene in the presence of a catalyst and oxygen, an important step in the carbon-neutral process.\n<color=\"#FD965ECC\">Will not stop working until all products are accumulated.</color>"
+    "ZHCN": "在催化剂作用下使甲烷分子发生氧化偶联反应，碳-氢键断裂并重组为丙烯分子，是实现低碳烷烃高值化利用的关键路径。\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作。</color>",
+    "ENUS": "Catalytic oxidative coupling of methane molecules, breaking and reforming carbon-hydrogen bonds into propylene molecules—a key pathway for high-value utilization of low-carbon alkanes.\n<color=\"#FD965ECC\">Will not stop working until all products are accumulated.</color>"
   },
   {
     "Name": "合成氨",
@@ -1061,8 +1061,8 @@
   },
   {
     "Name": "R合成氨",
-    "ZHCN": "使用氮气和氢气作为原料，合成氨。",
-    "ENUS": "Using nitrogen and hydrogen as raw materials to synthesize ammonia."
+    "ZHCN": "在高温高压及铁基催化剂作用下，使氮气与氢气发生化合反应生成氨，是人工固氮技术的核心工艺。",
+    "ENUS": "Under high temperature, high pressure, and iron-based catalysis, nitrogen and hydrogen undergo combination reactions to form ammonia—the core process of artificial nitrogen fixation technology."
   },
   {
     "Name": "有机晶体重组",
@@ -1071,8 +1071,8 @@
   },
   {
     "Name": "R有机晶体重组",
-    "ZHCN": "使用亚原子操控技术，可以有效地将有机晶体的组分分解并将组装成聚酰亚胺。",
-    "ENUS": "Using subatomic manipulation technology, it can effectively decompose the components of organic crystal and assemble them into polyimide."
+    "ZHCN": "运用亚原子级精密操控技术，解构有机晶体的分子骨架并重组为聚酰亚胺的酰亚胺环结构，实现材料性质的定向转化。",
+    "ENUS": "Employing subatomic-level precision manipulation technology to deconstruct the molecular skeleton of organic crystals and reorganize them into the imide ring structure of polyimide—achieving directed transformation of material properties."
   },
   {
     "Name": "有机晶体活化",
@@ -1081,8 +1081,8 @@
   },
   {
     "Name": "R有机晶体活化",
-    "ZHCN": "能量碎片能有效活化有机晶体，促使其组分断裂与重组，有效提高了亚原子操控的转化速度。",
-    "ENUS": "Energy fragments can effectively activate organic crystals and induce fracture and reorganization of their components, effectively increasing the speed of conversion of subatomic manipulation."
+    "ZHCN": "引入高活性能量碎片作为引发剂，降低有机晶体分子键断裂的活化能垒，加速亚原子级重组反应的进程。",
+    "ENUS": "Introducing highly reactive energy fragments as initiators to lower the activation energy barrier for bond breaking in organic crystal molecules, accelerating the process of subatomic-level reorganization reactions."
   },
   {
     "Name": "能量物质化",
@@ -1091,18 +1091,8 @@
   },
   {
     "Name": "R能量物质化",
-    "ZHCN": "通过对黑雾残骸的大量逆向研究，我们终于可以一窥能量物质化的大门。",
-    "ENUS": "Through the reverse engineering of the remnants of the Dark Fog, we have finally gained insight into the process of energy materialization."
-  },
-  {
-    "Name": "二氧化硫还原",
-    "ZHCN": "二氧化硫还原",
-    "ENUS": "Sulfur Dioxide Reduction"
-  },
-  {
-    "Name": "R二氧化硫还原",
-    "ZHCN": "使用石墨对二氧化硫进行还原，可得到粉末状的硫单质。\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作。</color>",
-    "ENUS": "Using carbon to reduce sulfur dioxide can yield powdered elemental sulfur.\n<color=\"#FD965ECC\">Will not stop working until all products are accumulated.</color>"
+    "ZHCN": "基于对黑雾残骸的深度逆向工程研究，初步掌握将纯能量凝聚为宏观物质形态的转换机制，触及物质创造的本质。",
+    "ENUS": "Based on in-depth reverse engineering research of Dark Fog debris, preliminary mastery of the conversion mechanism condensing pure energy into macroscopic material forms—touching the essence of matter creation."
   },
   {
     "Name": "煤炭液化",
@@ -1111,8 +1101,8 @@
   },
   {
     "Name": "R煤炭液化",
-    "ZHCN": "煤炭在氢气和催化剂作用下，可以转变为一种重要的化工原料——焦油。",
-    "ENUS": "Coal, in the presence of hydrogen and a catalyst, can be transformed into an important chemical raw material, tar."
+    "ZHCN": "在氢气氛围与催化剂作用下，将煤炭的大分子结构加氢裂解为液态烃类混合物，即焦油，实现固态燃料的液态化转化。",
+    "ENUS": "Under hydrogen atmosphere and catalytic action, hydrogenating and cracking the macromolecular structure of coal into liquid hydrocarbon mixtures, namely tar—achieving liquid conversion of solid fuel."
   },
   {
     "Name": "焦油分馏",
@@ -1121,8 +1111,8 @@
   },
   {
     "Name": "R焦油分馏",
-    "ZHCN": "经过减压多次蒸馏，焦油中的芳香族化合物会富集在轻馏分和洗油馏分。经过后处理和纯化即可得到高质量的苯。",
-    "ENUS": "After several distillations under reduced pressure, the aromatic compounds in the tar are enriched in the light and wash fractions. High quality benzene can be obtained after post-treatment and purification."
+    "ZHCN": "在减压条件下进行多塔精馏分离，利用芳香烃各组分沸点差异，从轻馏分与洗油馏分中切割提取高纯度苯系物。",
+    "ENUS": "Multi-tower fractional distillation under reduced pressure conditions, utilizing boiling point differences of aromatic hydrocarbon components to extract high-purity benzene series from light and wash oil fractions."
   },
   {
     "Name": "焦油裂化",
@@ -1131,13 +1121,13 @@
   },
   {
     "Name": "R焦油裂化",
-    "ZHCN": "在等离子体的作用下，焦油组分发生碳链的断裂和重整，产生大量的低级不饱和烃。可通过对冷凝温度的控制稳定收集其中的丙烯。",
-    "ENUS": "In the presence of plasma, the tar fraction undergoes carbon chain breaking and reforming, producing a large number of lower unsaturated hydrocarbons. The propylene can be collected in a stabilized manner by controlling the condensation temperature."
+    "ZHCN": "在高温等离子体炬作用下，焦油长链烃发生自由基裂解与重组，生成短链烯烃，通过精确控温冷凝分离出丙烯产品。",
+    "ENUS": "Under high-temperature plasma torch action, long-chain hydrocarbons in tar undergo radical cracking and reorganization to generate short-chain olefins—propylene product separated through precise temperature-controlled condensation."
   },
   {
     "Name": "R三氯化铁",
-    "ZHCN": "向盐酸和铁的液相反应体系中加入氧化剂，可以稳定产出三氯化铁。",
-    "ENUS": "Addition of an oxidizing agent to the liquid-phase reaction system of hydrochloric acid and iron stabilizes the output of ferric chloride."
+    "ZHCN": "在盐酸-铁反应体系中引入氧化剂，将生成的亚铁离子氧化为铁离子，稳定产出三氯化铁溶液。",
+    "ENUS": "Introducing oxidants into the hydrochloric acid-iron reaction system to oxidize generated ferrous ions to ferric ions, stably producing ferric chloride solution."
   },
   {
     "Name": "铌矿筛选",
@@ -1146,8 +1136,8 @@
   },
   {
     "Name": "R铌矿筛选",
-    "ZHCN": "使用硝酸浸洗钛矿，从中分离含铌的伴生矿。",
-    "ENUS": "Separation of tungsten-bearing associated ore from titanium ore by nitric acid leaching."
+    "ZHCN": "采用硝酸浸出工艺处理钛铌共生矿，选择性溶解铌矿物而与钛矿物分离，后续经萃取提纯获得铌精矿。",
+    "ENUS": "Employing nitric acid leaching process to treat titanium-niobium paragenetic ores, selectively dissolving niobium minerals for separation from titanium minerals—subsequent extraction and purification yields niobium concentrate."
   },
   {
     "Name": "钛晶石（高效）",
@@ -1166,13 +1156,13 @@
   },
   {
     "Name": "R质能储存（高效）",
-    "ZHCN": "在只收集反物质的前提下，可以采用更激进的磁场结构加快反物质的产出速度。",
-    "ENUS": "If only collect antimatter, a more aggressive magnetic field structure to speed up the antimatter output."
+    "ZHCN": "采用非对称磁场阱设计，在仅收集反物质模式下可大幅提升产生速率，但会牺牲正物质产出。",
+    "ENUS": "Employing asymmetric magnetic field trap design, significantly increasing generation rate in antimatter-only collection mode, but sacrificing normal matter output."
   },
   {
     "Name": "R等离子精炼",
-    "ZHCN": "利用等离子体精炼原油，可以获得氢气和焦油。\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作。</color>",
-    "ENUS": "Hydrogen and tar can be obtained by refining crude oil with plasma.\n<color=\"#FD965ECC\">It will not stop working until all products are stacked.</color>"
+    "ZHCN": "利用高温等离子体流裂解原油大分子，轻组分气化后经冷凝分离得氢气，重组分富集为焦油。\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作。</color>",
+    "ENUS": "Utilizing high-temperature plasma flow to crack crude oil macromolecules—light components gasified and separated by condensation to obtain hydrogen, heavy components enriched as tar.\n<color=\"#FD965ECC\">Will not stop working until all products are accumulated.</color>"
   },
   {
     "Name": "催化重整",
@@ -1181,8 +1171,8 @@
   },
   {
     "Name": "R催化重整",
-    "ZHCN": "经过漫长的重整工序，可以将丙烯合成为苯。效率较低，却是历史上推动化石燃料资源封存的重要技术。\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作。</color>",
-    "ENUS": "After a lengthy reforming process, propylene can be synthesized into benzene. Less efficient, but an important technology that has historically driven the sequestration of fossil fuel resources.\n<color=\"#FD965ECC\">Will not stop working until all products are accumulated.</color>"
+    "ZHCN": "在铂铼双金属催化剂作用下，丙烯经历脱氢环化与芳构化反应转化为苯，虽效率受限但为化石能源清洁利用的经典工艺。\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作。</color>",
+    "ENUS": "Under platinum-rhenium bimetallic catalysis, propylene undergoes dehydrogenation cyclization and aromatization to convert to benzene—though efficiency-limited, a classic process for clean utilization of fossil energy.\n<color=\"#FD965ECC\">Will not stop working until all products are accumulated.</color>"
   },
   {
     "Name": "氨氧化",
@@ -1191,13 +1181,13 @@
   },
   {
     "Name": "R氨氧化",
-    "ZHCN": "氨气与氧气进行反应，经过一系列反应合成硝酸。",
-    "ENUS": "Ammonia reacts with oxygen to produce nitric acid."
+    "ZHCN": "在铂网催化剂表面，氨与氧气发生强放热氧化反应，经多步中间体转化最终生成硝酸，是工业制酸的基础路径。",
+    "ENUS": "On platinum mesh catalyst surface, ammonia undergoes strongly exothermic oxidation with oxygen, converting through multiple intermediate steps to ultimately generate nitric acid—the fundamental pathway for industrial acid production."
   },
   {
     "Name": "R石墨烯",
-    "ZHCN": "高温裂解甲烷，制备高纯度石墨烯与氢气，实现碳资源高值化利用。\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作。</color>",
-    "ENUS": "High-temperature pyrolysis of methane to produce graphene and hydrogen, enabling high-value utilization of carbon resources.\n<color=\"#FD965ECC\">Will not stop working until all products are accumulated.</color>"
+    "ZHCN": "在铜箔基底上进行化学气相沉积，甲烷高温裂解出的碳原子自组装为单层石墨烯，同时副产氢气。\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作。</color>",
+    "ENUS": "Chemical vapor deposition on copper foil substrate—carbon atoms from high-temperature methane cracking self-assemble into monolayer graphene, with hydrogen as byproduct.\n<color=\"#FD965ECC\">Will not stop working until all products are accumulated.</color>"
   },
   {
     "Name": "R石墨烯（高效）",
@@ -1211,8 +1201,8 @@
   },
   {
     "Name": "R处理器（高效）",
-    "ZHCN": "利用光学基板，可以高效生产处理器。",
-    "ENUS": "Using optical substrate making it easy to produce processors in batch."
+    "ZHCN": "以光学基板替代传统硅基板，利用光子集成技术实现处理器的高速并行制造。",
+    "ENUS": "Replacing traditional silicon substrates with optical substrates, utilizing photonic integration technology to achieve high-speed parallel manufacturing of processors."
   },
   {
     "Name": "放射矿物精炼",
@@ -1221,8 +1211,8 @@
   },
   {
     "Name": "R放射矿物精炼",
-    "ZHCN": "利用氢氧化钠处理放射性矿物，将含有的放射性物质沉降分离。\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作。</color>",
-    "ENUS": "Treatment of radioactive minerals with sodium hydroxide to precipitate and separate the contained radioactive ore.\n<color=\"#FD965ECC\">Will not stop working until all products are accumulated.</color>"
+    "ZHCN": "采用碱法浸出工艺，以氢氧化钠溶液溶解放射性矿物基质，使铀、钍元素以可溶性络合物形式进入溶液后沉淀富集。\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作。</color>",
+    "ENUS": "Employing alkaline leaching process, using sodium hydroxide solution to dissolve radioactive mineral matrix—uranium and thorium enter solution as soluble complexes and precipitate for enrichment.\n<color=\"#FD965ECC\">Will not stop working until all products are accumulated.</color>"
   },
   {
     "Name": "物质回收",
@@ -1231,8 +1221,8 @@
   },
   {
     "Name": "R物质回收",
-    "ZHCN": "将物质分解成沙土；或拆解建筑，返还75%的制造原料到背包。",
-    "ENUS": "Breaks down the matter into soil pile; Incoming buildable items return 75% of materials to the package (if the package is not full)."
+    "ZHCN": "通过高能粒子轰击将物质解构为基础沙土；或对建筑进行逆向工程拆解，回收75%的制造材料至机甲背包（需确保背包有足够空间）。",
+    "ENUS": "Deconstructing matter into basic soil through high-energy particle bombardment; or reverse-engineering dismantling of buildings to recover 75% of manufacturing materials to mecha backpack (ensure sufficient backpack space)."
   },
   {
     "Name": "T地热开采",
@@ -1241,13 +1231,13 @@
   },
   {
     "Name": "T基础化工描述",
-    "ZHCN": "没有化工的科学是停滞不前的。",
-    "ENUS": "Science without chemicals is stagnant."
+    "ZHCN": "化学工业是现代制造业的基石，没有化工技术的支撑，材料科学将停滞不前。",
+    "ENUS": "The chemical industry is the cornerstone of modern manufacturing—without the support of chemical technology, materials science would stagnate."
   },
   {
     "Name": "T高分子化工描述",
-    "ZHCN": "高分子化工的发展不仅促进了新材料的不断涌现，还允许我们制造有机晶体。",
-    "ENUS": "The development of polymer chemistry has not only facilitated the emergence of new materials, but has also allowed us to make organic crystals."
+    "ZHCN": "高分子化学的突破性进展催生了聚酰亚胺等高性能材料。",
+    "ENUS": "Breakthrough advances in polymer chemistry have spawned high-performance materials such as polyimide."
   },
   {
     "Name": "T强相互作用力材料",
@@ -1256,18 +1246,18 @@
   },
   {
     "Name": "T强相互作用力材料描述",
-    "ZHCN": "在特殊力场的作用下，可使强相互作用力溢出至宏观尺度。",
-    "ENUS": "With the action of a special force field, A material can formed by the spillover of strong interaction forces to the macroscopic scale."
+    "ZHCN": "通过特殊力场调控，将原子核间的强相互作用力溢出至宏观尺度，创造出密度与强度远超常规物质的奇异材料。",
+    "ENUS": "Through special force field modulation, causing strong interaction forces between atomic nuclei to spill over to macroscopic scales—creating exotic materials with density and strength far exceeding conventional matter."
   },
   {
     "Name": "T人造恒星MK2描述",
-    "ZHCN": "基于反物质约束技术的新一代人造恒星，直接利用质能转换过程进行发电。",
-    "ENUS": "A new generation of artificial stars based on antimatter confinement technology, directly utilizing the mass-energy conversion process for power generation."
+    "ZHCN": "基于磁阱约束反物质的新一代聚变装置，直接利用正反物质湮灭的质能转换过程释放能量，发电效率达到理论极限。",
+    "ENUS": "A new generation fusion device based on magnetic trap confinement of antimatter, directly utilizing the mass-energy conversion process of matter-antimatter annihilation to release energy—achieving theoretical limit power generation efficiency."
   },
   {
     "Name": "T人造恒星MK2结果",
-    "ZHCN": "掌控质能转换技术，可以将反物质转化为能量。",
-    "ENUS": "You have mastered the technology of mass-energy conversion, and can now convert antimatter into energy."
+    "ZHCN": "你已掌握质能转换的核心技术，能够将反物质直接转化为可用能源，标志着文明能源利用水平的飞跃。",
+    "ENUS": "You have mastered the core technology of mass-energy conversion, capable of directly transforming antimatter into usable energy—marking a leap in civilization's energy utilization level."
   },
   {
     "Name": "T火力发电",
@@ -1276,8 +1266,8 @@
   },
   {
     "Name": "火力发电结果",
-    "ZHCN": "你现在可以使用燃料电池发电厂了，它是一种需要消耗可燃物产生电能的发电设施，有能量转化率。",
-    "ENUS": "The Fuel Cell Power Plant is now available, a power generation facility that partially converts the heat energy of combustible fuels to electricity."
+    "ZHCN": "燃料电池发电厂现已可用，该设施通过电化学反应将燃料化学能转化为电能，需持续供应燃料，在无氧环境下可使用内置氧化剂的燃料棒。",
+    "ENUS": "The Fuel Cell Power Plant is now available—this facility converts fuel chemical energy into electrical energy through electrochemical reactions, requiring continuous supply of fuel and oxidizer; fuel rods with built-in oxidizers can be used in oxygen-free environments."
   },
   {
     "Name": "T粒子对撞机",
@@ -1301,8 +1291,8 @@
   },
   {
     "Name": "T量子折跃描述",
-    "ZHCN": "消耗1个<color=\"#FD965ECC\">负熵奇点</color>和 12GJ 能量短暂进入虚数空间，并将机甲传送至<color=\"#FD965ECC\">星图模式</color>下选择的任意星球，但请小心星轨间的干扰。\r\n<color=\"#FD965ECC\">警告：</color>该科技的相关技术已被COSMO技术伦理委员会禁用，<color=\"#FD965ECC\">请手动研究。</color>",
-    "ENUS": "Consumes 1 <color=\"#FD965ECC\">Negentropy Singularity</color> and 12GJ mecha energy to open up a rift to imaginary space and teleport the mecha to any planet selected in <color=\"#FD965ECC\">Star Map Mode</color>, but be careful of the interference between the orbits.\r\n<color=\"#FD965ECC\">Warning:</color> This technology has been prohibited by the COSMO Technology Ethics Committee. <color=\"#FD965ECC\">Please initiate such research manually.</color>"
+    "ZHCN": "消耗1个<color=\"#FD965ECC\">负熵奇点</color>与12GJ机甲能量，短暂开启通往虚数空间的通道，将机甲瞬时传送至<color=\"#FD965ECC\">星图模式</color>中选定的任意星球。注意规避星轨交汇处的引力扰动。\r\n<color=\"#FD965ECC\">警告：</color>该科技的相关技术已被COSMO技术伦理委员会禁用，<color=\"#FD965ECC\">请手动研究。</color>",
+    "ENUS": "Consumes 1 <color=\"#FD965ECC\">Negentropy Singularity</color> and 12GJ mecha energy to briefly open a channel to imaginary space, instantaneously teleporting the mecha to any planet selected in <color=\"#FD965ECC\">Star Map Mode</color>. Avoid gravitational disturbances at orbital intersections.\r\n<color=\"#FD965ECC\">Warning:</color> This technology has been prohibited by the COSMO Technology Ethics Committee. <color=\"#FD965ECC\">Please initiate such research manually.</color>"
   },
   {
     "Name": "人造恒星描述",
@@ -1318,16 +1308,6 @@
     "Name": "T高精度加工技术",
     "ZHCN": "高精度加工",
     "ENUS": "Precise Assembler"
-  },
-  {
-    "Name": "T矿物处理",
-    "ZHCN": "矿物处理",
-    "ENUS": "Mineral Pretreatment"
-  },
-  {
-    "Name": "T矿物处理描述",
-    "ZHCN": "进一步对矿石进行预先粉碎处理可明显提高熔炉的效率，并使矿物转化变得可能。",
-    "ENUS": "Further pre-crushing of the ore significantly improves the efficiency of the furnace and makes mineral transformation possible."
   },
   {
     "Name": "T裂变发电站",
@@ -1391,8 +1371,8 @@
   },
   {
     "Name": "T基础机械组件描述",
-    "ZHCN": "将简单的零件打包成机械组件，可以更高效的制造基础生产设备。毫无疑问，工业生产能够如此高效，无不依赖于模块化集成化的思路。",
-    "ENUS": "The packaging of simple parts into mechanical assemblies allows for more efficient manufacturing of basic production equipment."
+    "ZHCN": "将标准化零件集成为模块化机械组件，大幅提升基础制造设备的装配效率。工业化的精髓在于模块化与集成化的设计理念。",
+    "ENUS": "Integrating standardized parts into modular mechanical components greatly improves assembly efficiency of basic manufacturing equipment. The essence of industrialization lies in modular and integrated design concepts."
   },
   {
     "Name": "T先进机械组件",
@@ -1401,8 +1381,8 @@
   },
   {
     "Name": "T先进机械组件描述",
-    "ZHCN": "集成处理器和金属钛的应用，使得我们能够制造更坚固而且更精密的生产设备。",
-    "ENUS": "The use of integrated processors and metallic titanium has allowed us to build stronger and more sophisticated production equipment."
+    "ZHCN": "集成处理器芯片与钛合金材料的应用，使我们能够制造兼具结构强度与控制精度的先进生产设备。",
+    "ENUS": "The application of integrated processor chips and titanium alloy materials enables us to manufacture advanced production equipment combining structural strength with control precision."
   },
   {
     "Name": "T尖端机械组件",
@@ -1411,8 +1391,8 @@
   },
   {
     "Name": "T尖端机械组件描述",
-    "ZHCN": "通过大规模应用量子芯片和金属铌，太空发射有关设备的可靠性被大大提高。",
-    "ENUS": "Through the large-scale application of quantum chips and metal tungsten, the reliability of space launch-related equipment is greatly improved."
+    "ZHCN": "大规模应用量子计算芯片与铌基超导材料，显著提升了航天发射设备的可靠性与极端环境适应能力。",
+    "ENUS": "Large-scale application of quantum computing chips and niobium-based superconducting materials significantly improves the reliability and extreme environment adaptability of space launch equipment."
   },
   {
     "Name": "T铌强化金属",
@@ -1421,8 +1401,8 @@
   },
   {
     "Name": "T铌强化金属描述",
-    "ZHCN": "使用纳米尺度的金属铌生产的铌基金属复合材料，具有极高的强度和韧性，可用来生产对于材料强度需求较高的设备。",
-    "ENUS": "Niobium-based metal composites produced using nanoscale tungsten metal have extremely high strength and toughness, can be used to produce devices that require high material strength."
+    "ZHCN": "采用粉末冶金工艺将纳米级铌颗粒弥散分布于金属基体中，形成的铌合金具有优异的高温强度与抗蠕变性能，适用于极端工况下的结构件制造。",
+    "ENUS": "Using powder metallurgy to disperse nanometer-scale niobium particles in metal matrix—the resulting niobium alloy exhibits excellent high-temperature strength and creep resistance, suitable for structural component manufacturing under extreme operating conditions."
   },
   {
     "Name": "T虚拟技术革新",
@@ -1431,8 +1411,8 @@
   },
   {
     "Name": "T虚拟技术革新描述",
-    "ZHCN": "光学计算技术的问世标志着一场新的信息技术革命的开始，使用光脉冲信号代替传统电子讯号能够显著降低计算设备的发热量从而提高工作效率，而天然光栅石所制造的新型传输介质让从未有人敢设想的信息传输速度变成了现实。据悉，主脑所维持的家园世界就大量的使用了这种技术。",
-    "ENUS": "The introduction of optical computing technology marked the beginning of a new revolution in information technology. The use of light pulse signals instead of traditional electronic signals could significantly reduce the heat generated by computing equipment and thus increase work efficiency, while the new transmission medium made of natural lenticular stone made information transmission speeds that no one had ever dared to envision a reality. It is said that the home world maintained by the Mastermind makes extensive use of this technology."
+    "ZHCN": "光学计算技术的诞生标志着信息革命的又一次飞跃。以光脉冲替代电子信号，从根本上解决了集成电路的热耗散瓶颈；而基于天然光栅石的新型光波导介质，则将数据传输速率提升至前所未有的量级。据悉，主脑维持的家园世界已全面采用该技术架构。",
+    "ENUS": "The birth of optical computing technology marks another leap in the information revolution. Replacing electronic signals with light pulses fundamentally solves the thermal dissipation bottleneck of integrated circuits; while new optical waveguide media based on natural grating stones have elevated data transmission rates to unprecedented magnitudes. It is reported that the homeworld maintained by the Mastermind has fully adopted this technical architecture."
   },
   {
     "Name": "T光学信息传输技术",
@@ -1441,8 +1421,8 @@
   },
   {
     "Name": "T光学信息传输技术描述",
-    "ZHCN": "使用天然光栅石制造的类光纤信息传输介质，这种全新的介质让信息传输速度达到了一个全新的层次。",
-    "ENUS": "Using a fiber-like information transmission medium made from natural lenticular stone, this new medium takes information transmission speeds to a whole new level."
+    "ZHCN": "以天然光栅石晶体为芯材拉制的特种光纤，其独特的光子带隙结构可将光信号传输损耗降至极低水平，开启超高速信息时代。",
+    "ENUS": "Special optical fibers drawn from natural grating stone crystal cores—their unique photonic bandgap structures reduce optical signal transmission losses to extremely low levels, ushering in the era of ultra-high-speed information."
   },
   {
     "Name": "T超级量子计算机",
@@ -1451,8 +1431,8 @@
   },
   {
     "Name": "T超级量子计算机描述",
-    "ZHCN": "成熟的量子计算技术是衡量一个文明发展水平的条件之一，在主脑的计算中，这是一个重要的分水岭。",
-    "ENUS": "Mature quantum computing technology is one of the conditions that measures the level of development of a civilization, and in the case of mastermind computing, it is an important watershed."
+    "ZHCN": "成熟的量子纠错与相干保持技术，是衡量文明计算能力的关键指标。在主脑的评估体系中，这是科技树的重要分水岭节点。",
+    "ENUS": "Mature quantum error correction and coherence maintenance technologies are key indicators for measuring civilization's computing capabilities. In the Mastermind's evaluation system, this is an important watershed node in the technology tree."
   },
   {
     "Name": "T光学计算机",
@@ -1461,8 +1441,8 @@
   },
   {
     "Name": "T光学计算机描述",
-    "ZHCN": "使用新一代光学计算技术制造的先进计算机，拥有远超传统计算机的优异性能。",
-    "ENUS": "Advanced computers built with next-generation optical computing technology have superior performance far beyond that of conventional computers."
+    "ZHCN": "采用光子集成电路与全光互连技术构建的新一代计算系统，在运算速度与能效比上全面超越传统电子计算机。",
+    "ENUS": "A new generation computing system built with photonic integrated circuits and all-optical interconnection technology, comprehensively surpassing traditional electronic computers in computing speed and energy efficiency ratio."
   },
   {
     "Name": "T铌强化玻璃",
@@ -1471,8 +1451,8 @@
   },
   {
     "Name": "T铌强化玻璃描述",
-    "ZHCN": "这种掺杂了大量纳米铌颗粒的玻璃通体黝黑，但是有着极高的硬度，在极端环境下或许可以大展拳脚。",
-    "ENUS": "This glass, doped with a large number of tungsten nanoparticles, is dark, but has a very high hardness, and may be able to perform well in extreme environments."
+    "ZHCN": "在玻璃熔制过程中引入纳米氧化铌颗粒作为增强相，形成的深黑色复合材料具有极高的硬度与断裂韧性，在极端压力环境下表现优异。",
+    "ENUS": "Introducing nanometer niobium oxide particles as reinforcement phase during glass melting—the resulting deep black composite material exhibits extremely high hardness and fracture toughness, performing excellently in extreme pressure environments."
   },
   {
     "Name": "T先进有机合成技术",
@@ -1481,8 +1461,8 @@
   },
   {
     "Name": "T先进有机合成技术描述",
-    "ZHCN": "使用先进的合成技术，可以制造数种化学能燃料。",
-    "ENUS": "Using advanced organic synthesis technology, several chemical energy fuels can be manufactured."
+    "ZHCN": "掌握分子级别的有机合成路径设计，可定向制备高能化学推进剂与特种聚合物材料。",
+    "ENUS": "Mastering molecular-level organic synthesis pathway design, capable of定向制备 high-energy chemical propellants and specialty polymer materials."
   },
   {
     "Name": "T放射性矿物提炼",
@@ -1491,8 +1471,8 @@
   },
   {
     "Name": "T放射性矿物提炼描述",
-    "ZHCN": "使用大量氢氧化钠可以将放射性矿物中的极少量的铀和钍提炼出来，作为后续提纯的原料。",
-    "ENUS": "Using a large amount of sodium hydroxide can separate a small amount of thorium ore and uranium ore in radioactive ore as raw materials for further separation."
+    "ZHCN": "采用碱熔-浸出联合工艺，以大量氢氧化钠分解放射性矿物晶格，使微量铀、钍元素转化为可溶性盐类，经萃取分离与沉淀转化后直接制得裂变燃料。",
+    "ENUS": "Employing combined alkali fusion-leaching process, using large amounts of sodium hydroxide to decompose radioactive mineral lattice—converting trace uranium and thorium elements into soluble salts, directly producing fissile fuel through extraction separation and precipitation conversion."
   },
   {
     "Name": "T同位素温差发电",
@@ -1501,8 +1481,8 @@
   },
   {
     "Name": "T同位素温差发电描述",
-    "ZHCN": "MOX燃料棒可将裂变的能量最大程度释放，而利用塞贝克效应可将能量缓慢但持续地转换成电能。",
-    "ENUS": "MOX fuel rods maximize the release of fission energy, which can be slowly but continuously converted into electricity using the Seebeck effect."
+    "ZHCN": "MOX燃料棒在衰变过程中释放持续热能，通过热电偶阵列的塞贝克效应直接转换为电能，无需运动部件即可长期稳定运行。",
+    "ENUS": "MOX fuel rods release sustained thermal energy during decay, directly converted to electricity through the Seebeck effect of thermocouple arrays—capable of long-term stable operation without moving parts."
   },
   {
     "Name": "T裂变能源燃料棒",
@@ -1511,8 +1491,8 @@
   },
   {
     "Name": "T裂变能源燃料棒描述",
-    "ZHCN": "使用放射性同位素制作的裂变燃料。",
-    "ENUS": "Fission fuel made with radioisotopes."
+    "ZHCN": "采用铀或钍的氧化物经粉末冶金压制烧结成型，封装于合金包壳管中，可在裂变反应堆中实现可控链式反应并释放大量热能。",
+    "ENUS": "Uranium or thorium oxides pressed and sintered through powder metallurgy, encapsulated in alloy cladding tubes—capable of sustaining controlled chain reactions and releasing substantial thermal energy in fission reactors."
   },
   {
     "Name": "T聚变燃料提取",
@@ -1521,8 +1501,8 @@
   },
   {
     "Name": "T聚变燃料提取描述",
-    "ZHCN": "光栅石的特殊晶格结构使其可作为富集氦原子的理想载体，利用其富集的氦原子可以为制作聚变燃料找到一条捷径。",
-    "ENUS": "The special lattice structure of the grating stone makes it an ideal carrier for enriching helium atoms. The enriched helium atoms can be used to find a shortcut for making fusion fuel."
+    "ZHCN": "光栅石独特的层状晶格具有选择性吸附氦原子的特性，通过高温脱附工艺可高效富集氦同位素，为聚变燃料制备提供替代来源。",
+    "ENUS": "The unique layered lattice of grating stone exhibits selective adsorption of helium atoms—high-temperature desorption processes enable efficient enrichment of helium isotopes, providing an alternative source for fusion fuel preparation."
   },
   {
     "Name": "T聚变能源燃料棒",
@@ -1531,8 +1511,8 @@
   },
   {
     "Name": "T聚变能源燃料棒描述",
-    "ZHCN": "使用聚变同位素制作的聚变燃料棒。",
-    "ENUS": "Fusion fuel rod made with fusion isotopes."
+    "ZHCN": "以重氢或氦三氘混合物为燃料芯体，通过磁惯性约束实现热核聚变，是清洁高效的未来能源载体。",
+    "ENUS": "Using deuterium or helium-3-deuterium mixtures as fuel cores, achieving thermonuclear fusion through magneto-inertial confinement—a clean and efficient future energy carrier."
   },
   {
     "Name": "T天穹装配厂",
@@ -1541,8 +1521,8 @@
   },
   {
     "Name": "T天穹装配厂描述",
-    "ZHCN": "高度智能化的大型工厂，有着远超标准制造单元的效率。",
-    "ENUS": "A highly intelligent large-scale factory with efficiency far exceeding that of a Standard Assembler."
+    "ZHCN": "采用分布式智能控制架构与高速磁悬浮输送系统的大型集成制造设施，单位面积产出效率达到标准制造单元的数倍，可处理绝大多数工业产品的精密装配任务。",
+    "ENUS": "Large-scale integrated manufacturing facility employing distributed intelligent control architecture and high-speed magnetic levitation conveying systems—output efficiency per unit area reaches several times that of standard assemblers, capable of handling precision assembly tasks for the vast majority of industrial products."
   },
   {
     "Name": "T物质裂解塔",
@@ -1551,8 +1531,8 @@
   },
   {
     "Name": "T物质裂解塔描述",
-    "ZHCN": "使用聚变能源驱动的裂解炉，能够对矿物进行最高效率的利用。",
-    "ENUS": "Splitting furnaces powered by fusion energy enable the most efficient use of minerals."
+    "ZHCN": "以磁约束聚变装置为核心能源，配备多级感应等离子体炬的巨型冶炼设施，可将原矿一步还原为高纯度单质，矿物利用率接近理论极限。",
+    "ENUS": "Giant smelting facility with magnetically confined fusion device as core energy source, equipped with multi-stage induction plasma torches—capable of one-step reduction of raw ore to high-purity elements, with mineral utilization approaching theoretical limits."
   },
   {
     "Name": "T行星级化学反应釜",
@@ -1561,8 +1541,8 @@
   },
   {
     "Name": "T行星级化学反应釜描述",
-    "ZHCN": "一座史无前例的巨型化工厂。",
-    "ENUS": "An unprecedented mega chemical plant."
+    "ZHCN": "直径达数公里的超大型化工综合体，集成万级反应单元与全自动化物流网络，单厂产能即可满足整颗星球的化工原料需求。",
+    "ENUS": "Super-large chemical complex several kilometers in diameter, integrating ten-thousand-level reaction units with fully automated logistics networks—single-factory capacity sufficient to meet the chemical raw material needs of an entire planet."
   },
   {
     "Name": "T精密结构组装厂",
@@ -1571,8 +1551,8 @@
   },
   {
     "Name": "T精密结构组装厂描述",
-    "ZHCN": "精密装配线的未来。",
-    "ENUS": "Precise assembler's future."
+    "ZHCN": "配备纳米级定位精度机械臂与洁净室环境的超精密制造中心，可批量生产量子芯片、光学元件等尖端科技产品。",
+    "ENUS": "Ultra-precision manufacturing center equipped with nanometer-level positioning robotic arms and cleanroom environments—capable of mass-producing cutting-edge technology products such as quantum chips and optical components."
   },
   {
     "Name": "T物质分解设施",
@@ -1581,8 +1561,8 @@
   },
   {
     "Name": "T物质分解设施描述",
-    "ZHCN": "利用光子聚束技术将物质分解成粒子态并将其重组为<color=\"#FD965ECC\">沙土</color>，一举两得。\n[产出的沙土会直接加入背包中]",
-    "ENUS": "By using photon beam technology, the material is broken down into particle states and reconstituted into <color=\"#FD965ECC\">sand</color>."
+    "ZHCN": "利用高能光子束将物质解构至原子级别，再通过量子重组技术将其转化为标准沙土形态。该过程遵循质能守恒定律，是处理工业废弃物的终极方案。\n[产出的物品将直接存入机甲背包]",
+    "ENUS": "Utilizing high-energy photon beams to deconstruct matter to atomic level, then transforming it into standard sand form through quantum reorganization technology. This process follows mass-energy conservation laws—the ultimate solution for industrial waste treatment.\n[Produced items will be directly deposited into mecha backpack]"
   },
   {
     "Name": "T巨型粒子对撞机",
@@ -1591,8 +1571,8 @@
   },
   {
     "Name": "T巨型粒子对撞机描述",
-    "ZHCN": "大量并行运行的加速器将生产力提升到一个崭新的高度。",
-    "ENUS": "The large number of parallel running accelerators takes productivity to a whole new level."
+    "ZHCN": "由数百条超导环形轨道并行构成的粒子加速阵列，可持续产生反物质，将高能物理研究推向新的高度。",
+    "ENUS": "Particle acceleration array composed of hundreds of parallel superconducting ring tracks—capable of continuously generating antimatter, pushing high-energy physics research to new heights."
   },
   {
     "Name": "T化学",
@@ -1616,13 +1596,13 @@
   },
   {
     "Name": "T巨型建筑工程学描述",
-    "ZHCN": "随着生产线的不断扩张，对更高集成度的生产设施的需求愈发迫切。",
-    "ENUS": "As production lines continue to expand, the need for more integrated production facilities becomes increasingly urgent."
+    "ZHCN": "随着工业规模的指数级扩张，传统分布式生产模式面临占地与物流瓶颈。发展高度集成的巨型建筑技术，实现单位面积产出的革命性突破，已成为必然选择。",
+    "ENUS": "With exponential expansion of industrial scale, traditional distributed production models face land occupation and logistics bottlenecks. Developing highly integrated mega-building technology to achieve revolutionary breakthroughs in output per unit area has become an inevitable choice."
   },
   {
     "Name": "T化学能燃料棒描述",
-    "ZHCN": "利用新合成的特殊燃料，四氢双环戊二烯，为生产线和机甲供能。",
-    "ENUS": "Using a newly synthesized special fuel JP-10, to power factories and mecha."
+    "ZHCN": "以高密度四氢双环戊二烯（JP-10）为能量载体，通过催化重整反应释放化学能，为早期星际航行器与机甲提供可靠动力源。",
+    "ENUS": "Using high-density tetrahydrocyclopentadiene (JP-10) as energy carrier, releasing chemical energy through catalytic reforming reactions—providing reliable power sources for early interstellar spacecraft and mechas."
   },
   {
     "Name": "T先进化工",
@@ -1631,8 +1611,8 @@
   },
   {
     "Name": "T先进化工描述",
-    "ZHCN": "开发具有特殊性能的新型高分子材料，对生产线的扩张与升级有着重要意义。",
-    "ENUS": "The development of new polymer materials with special properties is of great significance for the expansion and upgrading of production lines."
+    "ZHCN": "开发具有特殊功能基团的新型高分子材料，为极端环境下的工业生产提供材料基础。",
+    "ENUS": "Developing novel polymer materials with special functional groups, providing material foundations for industrial production in extreme environments."
   },
   {
     "Name": "T焦油精炼",
@@ -1641,8 +1621,8 @@
   },
   {
     "Name": "T焦油精炼描述",
-    "ZHCN": "精炼焦油可以得到重要的化工原料。",
-    "ENUS": "Refining tar can yield important raw chemical materials."
+    "ZHCN": "通过分馏、萃取、加氢等单元操作，从复杂的多环芳烃混合物中分离提取苯、丙烯等基础化工原料，实现煤炭资源的高值化利用。",
+    "ENUS": "Through unit operations such as fractionation, extraction, and hydrogenation, separating and extracting basic chemical raw materials such as benzene and propylene from complex polycyclic aromatic hydrocarbon mixtures—achieving high-value utilization of coal resources."
   },
   {
     "Name": "T行星协调中心",
@@ -1651,68 +1631,68 @@
   },
   {
     "Name": "T行星协调中心描述",
-    "ZHCN": "随着星球生产线的不断扩大和算力的发展，部署一个协调中心可以更精确地控制星球工厂。",
-    "ENUS": "As the production lines on the planet are constantly expanding and the computing power is developing, deploying a coordination center can more accurately control the planet's factories."
+    "ZHCN": "部署于星球表面的巨型分布式计算与控制中心，通过实时采集全星球生产数据，运用人工智能算法动态优化资源配置，显著提升整体工业效率。",
+    "ENUS": "Giant distributed computing and control center deployed on planetary surface—collecting real-time global production data, utilizing artificial intelligence algorithms to dynamically optimize resource allocation, significantly improving overall industrial efficiency."
   },
   {
     "Name": "行星协调中心文字描述",
-    "ZHCN": "在星图中（默认快捷键为V键）可以对本星球的进行增益",
-    "ENUS": "Can open the starmap view (Default shortcut is V key) to adjust the coordination center"
+    "ZHCN": "在星图界面（默认快捷键V）可切换本星球的协调增益模式，以适应不同发展阶段的生产需求。",
+    "ENUS": "In the starmap interface (default shortcut V), you can switch the coordination gain mode of this planet to adapt to production needs at different development stages."
   },
   {
     "Name": "T物品仓储描述",
-    "ZHCN": "\\cwc1-;可以搭建在四向分流器上，而\\cwc2-;具有更大的储量。",
-    "ENUS": "\\cwc1-; can be built on Splitter.\n\\cwc2-; has twice the capacity."
+    "ZHCN": "\\cwc1-;可直接搭建于四向分流器上方，实现紧凑的立体仓储布局；\\cwc2-;则提供双倍于基础版本的存储容量，适合大规模原料储备。",
+    "ENUS": "\\cwc1-; can be built directly on top of Splitters for compact three-dimensional storage layouts; \\cwc2-; provides double the storage capacity of the basic version, suitable for large-scale raw material reserves."
   },
   {
     "Name": "T物品仓储结果",
-    "ZHCN": "你解锁了\\cwc1-;和\\cwc2-;，可以将采集到的矿物与生产中的中间产物存入其中。",
-    "ENUS": "\\cwc1-; can be built on Splitter.\n\\cwc2-; has twice the capacity."
+    "ZHCN": "你已解锁\\cwc1-;与\\cwc2-;，可将采集的矿物与中间产物集中存储，优化产线物流效率。",
+    "ENUS": "You have unlocked \\cwc1-; and \\cwc2-;, capable of centrally storing collected minerals and intermediate products, optimizing production line logistics efficiency."
   },
   {
     "Name": "X射线裂解描述",
-    "ZHCN": "利用高能的X射线将焦油裂解成氢和高能石墨。",
-    "ENUS": "High-energy X-ray photocatalysis can crack tar into hydrogen and energetic graphite."
+    "ZHCN": "利用同步辐射X射线的高能光子催化作用，打断焦油分子中的碳-氢键与碳-碳键，定向裂解为氢气与高结晶度石墨。",
+    "ENUS": "Utilizing high-energy photon catalysis of synchrotron radiation X-rays to break carbon-hydrogen and carbon-carbon bonds in tar molecules, directional cracking into hydrogen and high-crystallinity graphite."
   },
   {
     "Name": "RX射线裂解",
-    "ZHCN": "利用高能的X射线将焦油裂解，从而获得氢和高能石墨。",
-    "ENUS": "X-rays can crack the tar into hydrogen and energetic graphite."
+    "ZHCN": "在X射线辐照下，焦油发生光催化裂解反应，生成氢气与高能石墨两种高附加值产物。",
+    "ENUS": "Under X-ray irradiation, tar undergoes photocatalytic cracking reactions, generating two high value-added products: hydrogen and energetic graphite."
   },
   {
     "Name": "高强度玻璃描述",
-    "ZHCN": "在熔融态的玻璃中掺入一定比例的钛，制成的高强度玻璃，对更复杂、更激烈的工业生产十分实用。",
-    "ENUS": "Incorporating a specific proportion of titanium into molten glass can create high-strength Titanium Glass which is suitable for more complex industrial production."
+    "ZHCN": "在硅酸盐玻璃熔体中加入一定比例的钛作为晶核剂，经控制析晶形成微晶玻璃相，显著提升机械强度与耐热冲击性能。",
+    "ENUS": "Adding a certain proportion of titanium to silicate glass melt as a nucleating agent, forming glass-ceramic phases through controlled crystallization—significantly improving mechanical strength and thermal shock resistance."
   },
   {
     "Name": "奇异物质描述",
-    "ZHCN": "在氘聚变的强大能量作用下，将物质压缩到非常小的点，从而使原子核夸克发生改变，瞬间变成简并态的奇异物质。",
-    "ENUS": "Under the powerful energy of deuterium fusion, vapor is compressed to an extremely small size which causes the quark's of atomic nucleus to change and instantly degenerate into strange matter."
+    "ZHCN": "在氘聚变产生的极端高温高压条件下，物质被压缩至核密度级别，夸克物质突破禁闭态形成奇异夸克团。",
+    "ENUS": "Under extreme temperature and pressure conditions generated by deuterium fusion, matter is compressed to nuclear density levels—quark matter breaks through confinement states to form strange quark clusters."
   },
   {
     "Name": "基础物流系统描述",
-    "ZHCN": "利用<color=\"#FD965ECC\">传送带</color>及<color=\"#FD965ECC\">分拣器</color>将货物从一个地方运输到另一个地方，实现自动化生产。\n<color=\"#FD965ECC\">四向分流器</color>可以对货物进行分流或者均衡多条传送带，可使用TAB键切换它的三种样式。",
-    "ENUS": "Use the <color=\"#FD965ECC\">Conveyor belt</color> and <color=\"#FD965ECC\">Sorter</color> to transport cargo from one place to another to achieve automated production.\n<color=\"#FD965ECC\">Splitter</color> can diverge cargo or balance multiple conveyor belts, making the automated production lines more diverse.\nUse TAB key to switch styles."
+    "ZHCN": "利用<color=\"#FD965ECC\">传送带</color>构建物料输送主干网络，配合<color=\"#FD965ECC\">分拣器</color>实现精准投料，奠定自动化生产的基础。\n<color=\"#FD965ECC\">四向分流器</color>可实现物料的分配、合并与均衡，按TAB键切换三种工作模式。",
+    "ENUS": "Utilizing <color=\"#FD965ECC\">conveyor belts</color> to construct material transportation backbone networks, cooperating with <color=\"#FD965ECC\">sorters</color> to achieve precise feeding—laying the foundation for automated production.\n<color=\"#FD965ECC\">Splitters</color> can distribute, merge, and balance materials; press TAB to switch between three operating modes."
   },
   {
     "Name": "改良物流系统描述",
-    "ZHCN": "将<color=\"#FD965ECC\">流速监测器</color>搭建在传送带上，可以监控传送带上相应位置的实时流速，并且可以设置条件来触发警报。有人用来演奏音乐。",
-    "ENUS": "The <color=\"#FD965ECC\">Traffic Monitor</color> is built on the conveyor belt to monitor the real-time cargo flow rate at the corresponding location. Conditions can be set to trigger an alarm. Some people use it to play music."
+    "ZHCN": "将<color=\"#FD965ECC\">流速监测器</color>安装于传送带上方，可实时采集物流数据并设置阈值触发警报，部分工程师甚至用它构建逻辑电路演奏音乐。",
+    "ENUS": "Installing <color=\"#FD965ECC\">Traffic Monitors</color> above conveyor belts enables real-time logistics data acquisition with threshold-based alarm triggering—some engineers even use them to build logic circuits for playing music."
   },
   {
     "Name": "I裂变能源发电站",
-    "ZHCN": "新一代的一体化快中子反应堆使用金属铀钍燃料、液态钠冷却池、废料电解精炼处理以及高度自动化技术，产生大量的电力的同时不需要考虑废料的处理。",
-    "ENUS": "The new generation of integrated fast reactors uses uranium-thorium metal fuel, liquid sodium cooling pools, electrolytic refining of waste, and highly automated technology to generate large amounts of power without regard to waste disposal."
+    "ZHCN": "采用金属燃料快中子谱设计，以液态钠为冷却介质，集成在线电解精炼后处理系统，实现燃料闭式循环与废物最小化。",
+    "ENUS": "Employing metal-fueled fast neutron spectrum design with liquid sodium as coolant, integrated with online electrorefining reprocessing system—achieving closed fuel cycle and waste minimization."
   },
   {
     "Name": "T裂变发电站描述",
-    "ZHCN": "金属铀钍燃料、液态钠冷却池、废料电解精炼处理以及高度自动化技术的综合应用，使一体化快中子反应堆产生大量的电力的同时不需要考虑废料的处理。",
-    "ENUS": "The new generation of integrated fast reactors uses uranium-thorium metal fuel, liquid sodium cooling pools, electrolytic refining of waste, and highly automated technology to generate large amounts of power without regard to waste disposal."
+    "ZHCN": "金属燃料、液态钠冷却、干式贮存与高度自动化技术的综合应用，使快中子反应堆在输出大功率的同时实现燃料闭式循环，从根本上解决核废料处置难题。",
+    "ENUS": "Comprehensive application of metal fuel, liquid sodium cooling, dry storage, and high automation technology enables fast neutron reactors to output high power while achieving closed fuel cycles—fundamentally solving nuclear waste disposal challenges."
   },
   {
     "Name": "T裂变发电站结果",
-    "ZHCN": "金属铀钍燃料、液态钠冷却池、废料电解精炼处理以及高度自动化技术的综合应用，使一体化快中子反应堆产生大量的电力的同时不需要考虑废料的处理。",
-    "ENUS": "The new generation of integrated fast reactors uses uranium-thorium metal fuel, liquid sodium cooling pools, electrolytic refining of waste, and highly automated technology to generate large amounts of power without regard to waste disposal."
+    "ZHCN": "你已掌握第四代核能技术，裂变能源发电站现已可用。该技术路线兼具资源利用率高与固有安全性好的优势，是行星工业化进程的可靠能源基石。",
+    "ENUS": "You have mastered fourth-generation nuclear energy technology; the Fission Power Station is now available. This technical route combines high resource utilization efficiency with inherent safety advantages—a reliable energy cornerstone for planetary industrialization processes."
   },
   {
     "Name": "基础制造台",
@@ -1726,8 +1706,8 @@
   },
   {
     "Name": "I标准制造单元",
-    "ZHCN": "具有标准精度的工业母机。可以说，我们的制造水平向前迈进了一大步。",
-    "ENUS": "Industrial masters with standardized precision. It can be said that our manufacturing level has taken a big step forward."
+    "ZHCN": "采用模块化设计与标准化接口的通用制造设备，标志着工业生产从作坊式向规模化的关键跨越。",
+    "ENUS": "General-purpose manufacturing equipment adopting modular design and standardized interfaces—marking the key transition of industrial production from workshop-style to large-scale."
   },
   {
     "Name": "高精度装配线",
@@ -1736,8 +1716,8 @@
   },
   {
     "Name": "I高精度装配线",
-    "ZHCN": "一台用于生产精密仪器的机器，当然，不包括它自己。",
-    "ENUS": "Used to produce precision instruments, of course not have itself."
+    "ZHCN": "配备亚微米级定位系统的精密制造设备，可加工光学元件、量子芯片等对公差要求极高的零部件。",
+    "ENUS": "Precision manufacturing equipment equipped with sub-micron positioning systems, capable of processing optical components, quantum chips, and other parts with extremely tight tolerance requirements."
   },
   {
     "Name": "等离子熔炉",
@@ -1746,18 +1726,18 @@
   },
   {
     "Name": "I等离子熔炉",
-    "ZHCN": "利用高温等离子体技术冶炼矿石，提高冶炼温度和精确度，能够制造多种要求较高的材料。",
-    "ENUS": "Utilizes high-temperature plasma technology to smelt ores, increasing smelting temperature and precision, capable of producing a variety of high-demand materials."
+    "ZHCN": "利用感应耦合原理产生无极放电等离子体，适用于高熔点金属冶炼与超纯材料制备。",
+    "ENUS": "Utilizing inductive coupling principles to generate electrodeless discharge plasmas for high-melting-point metal smelting and ultra-pure material preparation."
   },
   {
     "Name": "T标准制造单元描述",
-    "ZHCN": "经过工业水平的进步，可以制造具有标准精度的工业母机。",
-    "ENUS": "Through industrial advancement, it is possible to manufacture industrial master machines with standardized precision."
+    "ZHCN": "工业化生产的核心装备，通过标准化机械结构与通用控制接口，实现多品种产品的柔性制造。",
+    "ENUS": "Core equipment for industrial production, achieving flexible manufacturing of multiple product varieties through standardized mechanical structures and universal control interfaces."
   },
   {
     "Name": "T高精度加工技术描述",
-    "ZHCN": "利用先进机械组件和处理器的算力，提升制造精度。",
-    "ENUS": "Leverage the arithmetic power of advanced mechanical components and processors to improve manufacturing accuracy."
+    "ZHCN": "集成高精度伺服系统与机器视觉反馈，将制造精度从毫米级提升至微米级，满足精密仪器与电子元器件的生产需求。",
+    "ENUS": "Integrating high-precision servo systems with machine vision feedback, elevating manufacturing precision from millimeter to micrometer levels—meeting production demands for precision instruments and electronic components."
   },
   {
     "Name": "钛矿冶炼描述",
@@ -1766,8 +1746,8 @@
   },
   {
     "Name": "钛矿冶炼结果",
-    "ZHCN": "你掌握了钛矿冶炼技术，现在可以开采利用\\taik-;和\\tunk-;了。",
-    "ENUS": "You have mastered the Titanium Ore Smelting Techniques, \\taik-; and \\tunk-; can now be utilized."
+    "ZHCN": "你已解锁\\taik-;与\\tunk-;的开采与冶炼技术。钛合金以其优异的比强度与耐腐蚀性，成为星际工业不可或缺的关键材料。",
+    "ENUS": "You have unlocked mining and smelting technologies for \\taik-; and \\tunk-;. Titanium alloys, with their excellent specific strength and corrosion resistance, have become indispensable key materials for interstellar industry."
   },
   {
     "Name": "卡西米尔晶体结果",
@@ -1781,18 +1761,18 @@
   },
   {
     "Name": "基础制造工艺结果",
-    "ZHCN": "你解锁了\\zzt1-;，可以将铁块、铜块等原材料制造成更高级的产物。",
-    "ENUS": "You have unlocked \\zzt1-;. It can make iron and copper ingots into more advanced products."
+    "ZHCN": "你已解锁\\zzt1-;，可将铁、铜等基础金属原料加工为电路板等工业组件，开启自动化生产的新篇章。",
+    "ENUS": "You have unlocked \\zzt1-;, capable of processing basic metal raw materials such as iron and copper into industrial components such as circuit boards—opening a new chapter in automated production."
   },
   {
     "Name": "基础物流系统结果",
-    "ZHCN": "你解锁了自动化物流的基础设施━━\\csd1-;、\\fjq1-;和\\sxflq-;，你可以用它们来将货物自动运送到你想要的地方。",
-    "ENUS": "You have unlocked automated logistics, \\csd1-;, \\fjq1-; and \\sxflq-;. You can use them to automatically transport the ores gathered in the mining machine for smelting."
+    "ZHCN": "你已解锁自动化物流基础设施：\\csd1-;、\\fjq1-;与\\sxflq-;。利用这些组件可构建从采矿到冶炼的全自动物料输送系统。",
+    "ENUS": "You have unlocked automated logistics infrastructure: \\csd1-;, \\fjq1-;, and \\sxflq-;. Utilizing these components enables construction of fully automatic material transportation systems from mining to smelting."
   },
   {
     "Name": "改良物流系统结果",
-    "ZHCN": "你解锁了速度更快的\\csd2;与\\fjq2;，以及监测物流系统工作状态的\\lsq;。",
-    "ENUS": "You have unlocked \\csd2; with a larger carrying capacity, \\fjq2; with faster speed. \\lsq; is built on the conveyor belt to monitor the real-time cargo flow rate at the corresponding location. Conditions can be set to trigger an alarm."
+    "ZHCN": "你已解锁高速\\csd2-;与\\fjq2-;，以及用于监控物流状态的\\lsq-;。更高效的物流网络是扩张工业规模的前提。",
+    "ENUS": "You have unlocked high-speed \\csd2-; and \\fjq2-;, as well as \\lsq-; for monitoring logistics status. More efficient logistics networks are prerequisites for expanding industrial scale."
   },
   {
     "Name": "I铁矿",
@@ -1806,53 +1786,53 @@
   },
   {
     "Name": "I大型储物仓",
-    "ZHCN": "是小型储物仓容量的两倍，但制作需要的材料也是两倍。",
-    "ENUS": "Has twice the capacity of a Storage Mk.I. Materials requires twice too."
+    "ZHCN": "采用空间桁架结构设计的立体仓储设施，提供双倍于基础版本的存储容量，适合作为区域物流枢纽。",
+    "ENUS": "Three-dimensional storage facility employing space truss structure design, providing double the storage capacity of the basic version."
   },
   {
     "Name": "I人造恒星",
-    "ZHCN": "其外围有三个使用高强度合金制造的环形结构，能够精准生成磁场约束其中的等离子体并模拟恒星反应进行发电。",
-    "ENUS": "It is surrounded by three rings made of high-strength alloys that precisely generate a magnetic field to confine the plasma therein and simulate stellar reactions for power generation."
+    "ZHCN": "由三个同心超导磁环构成的托卡马克装置，通过射频加热与中性束注入将氘氚等离子体加热至点火温度，实现自持聚变燃烧。",
+    "ENUS": "Tokamak device composed of three concentric superconducting magnetic rings, heating deuterium-tritium plasma to ignition temperature through RF heating and neutral beam injection—achieving self-sustained fusion burn."
   },
   {
     "Name": "I位面熔炉",
-    "ZHCN": "利用位面过滤器的自组织量子效应能产生热力学负温度流，能够极大地加速矿石熔炼或提纯的过程。",
-    "ENUS": "Using the Plane Filter produce a quantum effect of self-organizing and can generate a thermodynamic negative temperature flow, the process of ores smelting or purification can be greatly accelerated."
+    "ZHCN": "利用位面过滤器产生的拓扑量子场调控铌合金的熔融态，在微观层面抑制晶格缺陷形成，实现难熔金属的高纯度定向凝固与成分精确控制。",
+    "ENUS": "Utilizing topological quantum fields generated by plane filters to regulate niobium alloy melt states, suppressing lattice defect formation at microscopic levels—achieving high-purity directional solidification and precise composition control of refractory metals."
   },
   {
     "Name": "位面冶金描述",
-    "ZHCN": "研究发现，如果用波函数干扰技术对磁单极子的量子态进行过滤，能激发出热力学负温度流。利用这个原理，可以极大地加速矿石熔炼或提纯的过程。",
-    "ENUS": "Research shows that the Plane Filter produce a quantum effect of self-organizing and a thermodynamic negative temperature flow can be generated. Using this technology, the process of ores smelting or purification can be greatly accelerated."
+    "ZHCN": "研究发现，对位面过滤器产生的拓扑量子场施加特定波函数干扰，可在局部区域形成反常的热力学梯度。利用这一效应处理铌等难熔金属，能够突破传统冶金学的温度极限，实现超高熔点材料的精密成型。",
+    "ENUS": "Research indicates that applying specific wave function interference to topological quantum fields generated by plane filters can create anomalous thermodynamic gradients in localized regions. Utilizing this effect to process refractory metals such as niobium breaks through temperature limits of traditional metallurgy, enabling precision forming of ultra-high melting point materials."
   },
   {
     "Name": "位面冶金结果",
-    "ZHCN": "你解锁了更高级的熔炉━━<color=\"#FD965ECC\">\\rongl2-;</color>。 ",
-    "ENUS": "You have unlocked the more advanced smelter ━━ <color=\"#FD965ECC\">\\rongl2-;</color>."
+    "ZHCN": "你已解锁<color=\"#FD965ECC\">\\rongl2-;</color>。位面冶金技术专为铌基材料设计，是制备高性能超导合金与结构材料的关键装备。",
+    "ENUS": "You have unlocked <color=\"#FD965ECC\">\\rongl2-;</color>. Plane metallurgy technology is specifically designed for niobium-based materials—a key equipment for preparing high-performance superconducting alloys and structural materials."
   },
   {
     "Name": "I铌矿",
-    "ZHCN": "稀有矿物。铌作为化学性质稳定的重金属通常埋藏于行星深处，但在特殊的地质构造条件下，深层岩浆热液的硅铝或碳酸盐建造作用可作用于表层岩体，使星球的表面出现成规模的铌矿。",
-    "ENUS": "A rare mineral. As a chemically stable heavy metal, tungsten is usually buried deep in the planet, but under special geological and tectonic conditions, the silica-aluminum or carbonate building action of deep magmatic hydrothermal fluids can act on the surface rocks and cause tungsten ores to appear on the planet's surface."
+    "ZHCN": "稀有高熔点金属矿物。铌具有良好的抗腐蚀性与超导特性，通常富集于碱性岩与碳酸岩中，需经复杂冶金流程提取。",
+    "ENUS": "Rare high-melting-point metal mineral. Niobium possesses excellent corrosion resistance and superconducting properties, typically enriched in alkaline rocks and carbonatites—requiring complex metallurgical processes for extraction."
   },
   {
     "Name": "I焦油",
-    "ZHCN": "有刺激性气味的粘稠液体，密度较大，富含多种芳香族、杂环和支链化合物且便于提取，是一种重要的化工原料。",
-    "ENUS": "Viscous liquid with irritating odor, high density, rich in many aromatic, heterocyclic and branched chain compounds and easy to extract, it is an important chemical raw material."
+    "ZHCN": "煤炭干馏或裂解得到的黑色粘稠液体，富含多环芳烃、杂环化合物及酚类物质，是制备苯、丙烯等基础化工原料的重要来源。",
+    "ENUS": "Black viscous liquid obtained from coal dry distillation or cracking, rich in polycyclic aromatic hydrocarbons, heterocyclic compounds, and phenolic substances—an important source for preparing basic chemical raw materials such as benzene and propylene."
   },
   {
     "Name": "I放射性矿物",
-    "ZHCN": "超重元素由类质同象作用部分取代了成岩矿物的金属离子，形成的具有放射性的岩石，可从中分离出多种具有工业价值的超重元素化合物。",
-    "ENUS": "Superheavy elements are radioactive rocks formed by the partial replacement of metal ions in rock-forming minerals by homogeneous isomorphism, from which a variety of superheavy element compounds of industrial value can be isolated."
+    "ZHCN": "含有铀、钍等放射性元素的矿石，经选矿与浸出工艺可提取核燃料，同时伴生稀土等有价元素。",
+    "ENUS": "Ores containing radioactive elements such as uranium and thorium—nuclear fuels can be extracted through beneficiation and leaching processes, with associated valuable elements such as rare earths."
   },
   {
     "Name": "I铀燃料",
-    "ZHCN": "经提炼后，矿石中的铀浓度已经可以支撑链式反应。",
-    "ENUS": "After refinements, the concentration of uranium in the ore is already considerable, which can support the chain reaction."
+    "ZHCN": "经水冶提纯与转化处理，铀浓度已提升至可供核反应堆使用的水平，主要含易裂变同位素铀-235。",
+    "ENUS": "After hydrometallurgical purification and conversion treatment, uranium concentration has been raised to levels usable in nuclear reactors, mainly containing fissile isotope uranium-235."
   },
   {
     "Name": "I钍燃料",
-    "ZHCN": "经提炼后，矿石中的钍浓度已经可以支撑链式反应。",
-    "ENUS": "After refinements, the concentration of thorium in the ore is already considerable, which can support the chain reaction."
+    "ZHCN": "经碱法分解与溶剂萃取提纯获得的钍化合物，在反应堆中经中子辐照可转化为可裂变铀-233。",
+    "ENUS": "Thorium compounds obtained through alkaline decomposition and solvent extraction purification—can be converted to fissile uranium-233 under neutron irradiation in reactors."
   },
   {
     "Name": "铝矿脉",
@@ -1916,13 +1896,13 @@
   },
   {
     "Name": "I氦",
-    "ZHCN": "宇宙中丰度第二高的元素，“太阳的元素”。",
-    "ENUS": "The second most abundant element in the universe, \"the element of the sun\"."
+    "ZHCN": "宇宙中第二丰富的元素，由恒星核聚变产生，化学性质极不活泼，是重要的低温冷却剂与保护气体。",
+    "ENUS": "The second most abundant element in the universe, produced by stellar nuclear fusion—chemically inert, important cryogenic coolant and protective gas."
   },
   {
     "Name": "I氦三",
-    "ZHCN": "稳定的氦同位素，它与重氢发生的聚变反应即是恒星的秘密。",
-    "ENUS": "A stable isotope of helium, whose fusion reaction with heavy hydrogen is the secret of the star."
+    "ZHCN": "氦的稳定同位素。与氘发生的聚变反应不产生中子，是理想的清洁聚变燃料。",
+    "ENUS": "Stable isotope of helium. Fusion reactions with deuterium produce no neutrons—ideal clean fusion fuel."
   },
   {
     "Name": "氦核转化",
@@ -1931,38 +1911,38 @@
   },
   {
     "Name": "R氦核转化",
-    "ZHCN": "使用高能质子撞击氦核，生成氦三和中子。",
-    "ENUS": "Using high-energy protons to collide with helium-4, produces helium-3."
+    "ZHCN": "利用高能质子轰击氦-4原子核，通过(p,n)核反应将氦-4转化为氦-3并释放中子。",
+    "ENUS": "Utilizing high-energy proton bombardment of helium-4 nuclei, converting helium-4 to helium-3 through (p,n) nuclear reaction with neutron release."
   },
   {
     "Name": "I反物质约束单元",
-    "ZHCN": "可以约束一单位反物质的磁阱。",
-    "ENUS": "The magnetic trap that can confine one unit of antimatter."
+    "ZHCN": "采用Penning阱或Paul阱原理的电磁约束装置，利用静态电磁场将带电反粒子悬浮于高真空环境中，防止其与正物质湮灭。",
+    "ENUS": "Electromagnetic confinement device employing Penning trap or Paul trap principles, utilizing static electromagnetic fields to levitate charged antiparticles in high vacuum environments—preventing annihilation with normal matter."
   },
   {
     "Name": "I氦闪约束器",
-    "ZHCN": "以强大的磁场约束等离子体在其中环绕，坚固的材料甚至可以承受氦闪的冲击。",
-    "ENUS": "With a strong magnetic field to bind the plasma around it, the robust material can even withstand the impact of a helium flash."
+    "ZHCN": "以强磁场约束高温等离子体，其结构强度足以承受恒星内部氦闪级别的热压力与辐射冲击。",
+    "ENUS": "Confining high-temperature plasma with strong magnetic fields, with structural strength sufficient to withstand thermal pressure and radiation impacts at stellar internal helium flash levels."
   },
   {
     "Name": "I三元精金",
-    "ZHCN": "在特殊力场的作用下，使强相互作用力溢出至宏观尺度而形成的材料，是具象化的“坚固”概念。",
-    "ENUS": "A material formed by the spillover of strong interaction forces to the macroscopic scale under the action of a special force field - a figurative concept of \"solidity\"."
+    "ZHCN": "通过强相互作用力场将核子紧密束缚，形成宏观尺度的核物质态，其密度与硬度远超常规材料，是强作用力材料学的巅峰之作。",
+    "ENUS": "Closely binding nucleons through strong interaction force fields to form macroscopic nuclear matter states—with density and hardness far exceeding conventional materials, the pinnacle of strong force materials science."
   },
   {
     "Name": "I铌块",
-    "ZHCN": "冶炼铌矿获得。这种元素具有划时代的潜力。",
-    "ENUS": "Obtained by smelting tungsten ore. This element has epoch-making potential."
+    "ZHCN": "经铝热还原或电解精炼得到的金属铌，熔点高达2477°C，是超导合金与高温合金的关键添加元素。",
+    "ENUS": "Metallic niobium obtained through aluminothermic reduction or electrolytic refining, with melting point up to 2477°C—key additive element for superconducting alloys and high-temperature alloys."
   },
   {
     "Name": "I铌强化玻璃",
-    "ZHCN": "当反应剧烈到钛强化玻璃也很难承受时，就轮到它登场了。",
-    "ENUS": "When the reaction is so violent that even titanium-reinforced glass is difficult to withstand, it is its turn to make an appearance."
+    "ZHCN": "在硼硅酸盐玻璃基体中引入铌氧化物作为网络修饰体，提高玻璃的转变温度与化学稳定性，适用于极端反应条件。",
+    "ENUS": "Introducing niobium oxide as network modifier in borosilicate glass matrix, increasing glass transition temperature and chemical stability—suitable for extreme reaction conditions."
   },
   {
     "Name": "I铌合金",
-    "ZHCN": "加入铌的合金。在电磁力的领域中，它就是王者。",
-    "ENUS": "An alloy with tungsten added. In the field of electromagnetic force, it is the king."
+    "ZHCN": "铌与钛等元素形成的合金，具有优异的超导转变温度与抗腐蚀性能，是高场磁体的核心材料。",
+    "ENUS": "Alloys formed by niobium with titanium and other elements, with excellent superconducting transition temperatures and corrosion resistance—core materials for high-field magnets."
   },
   {
     "Name": "大抽水机",
@@ -1971,8 +1951,8 @@
   },
   {
     "Name": "I大抽水机",
-    "ZHCN": "利用光子聚束技术，快速汲取大量液体。",
-    "ENUS": "Using photon beam technology, quickly extract large amounts of liquid."
+    "ZHCN": "采用光子聚束技术产生定向光压，驱动液体沿特定路径高速流动，实现无机械接触的高效液体输送。",
+    "ENUS": "Utilizing photon beam technology to generate directional light pressure, driving liquids to flow at high speed along specific paths—achieving efficient liquid transport without mechanical contact."
   },
   {
     "Name": "大气采集站",
@@ -1986,8 +1966,8 @@
   },
   {
     "Name": "I轨道采集器",
-    "ZHCN": "用来采集气态行星上的资源，使用同位素温差发电来维持在轨道上工作所需的能量。",
-    "ENUS": "It is used to collect resources from gas giants. It use radioisotope thermoelectric generator to power the collector to work in orbit."
+    "ZHCN": "运行于气态巨行星轨道上的无人采集平台，利用同位素温差发电机提供能源，通过进气道捕获高层大气中的资源。",
+    "ENUS": "Unmanned collection platform operating in orbit around gas giants, utilizing radioisotope thermoelectric generators for power—capturing resources from upper atmospheres through inlets."
   },
   {
     "Name": "二氧化碳",
@@ -1996,8 +1976,8 @@
   },
   {
     "Name": "I二氧化碳",
-    "ZHCN": "无色无味的气体，分布广泛。",
-    "ENUS": "Colorless and odorless gas, widely distributed."
+    "ZHCN": "碳氧化的最终产物，温室效应的主要贡献者之一，也是化工合成的重要碳源。",
+    "ENUS": "The ultimate product of carbon oxidation, one of the main contributors to the greenhouse effect, and also an important carbon source for chemical synthesis."
   },
   {
     "Name": "二氧化硫",
@@ -2006,8 +1986,8 @@
   },
   {
     "Name": "I二氧化硫",
-    "ZHCN": "具有强烈的刺激性气味的无色气体。",
-    "ENUS": "Colorless gas with a strong, pungent odor."
+    "ZHCN": "硫燃烧或硫化物氧化的产物，是酸雨的前体物质，经催化氧化可进一步制备硫酸。",
+    "ENUS": "Product of sulfur combustion or sulfide oxidation, precursor to acid rain—can be further prepared into sulfuric acid through catalytic oxidation."
   },
   {
     "Name": "氮",
@@ -2016,8 +1996,8 @@
   },
   {
     "Name": "I氮",
-    "ZHCN": "无色无味的气体，分布广泛。",
-    "ENUS": "Colorless and odorless gas, widely distributed."
+    "ZHCN": "大气的主要成分，化学性质稳定，经固氮作用可转化为氨等含氮化合物，是生命与工业不可或缺的元素。",
+    "ENUS": "Main component of the atmosphere, chemically stable—can be converted to nitrogen-containing compounds such as ammonia through nitrogen fixation, an indispensable element for life and industry."
   },
   {
     "Name": "开发者日志01",
@@ -2131,8 +2111,8 @@
   },
   {
     "Name": "武器系统描述",
-    "ZHCN": "警告，本星区黑雾活跃指数反常上升……\n此变量超出预期，申请解锁武器保险……\n授权通过，安全协议解除……\n允许部署自卫火力……",
-    "ENUS": "Warning, Dark Fog activity index perversely rising...\nThis variable exceeds expectations, request to unlock weapons insurance...\nAuthorization passed, security protocols lifted...\nAllow deployment of self-defense Firepower..."
+    "ZHCN": "警告：本星区黑雾活跃指数异常攀升……\n该变量超出预期阈值，申请解除武器安全锁定……\n授权确认，安全协议已解除……\n自卫火力部署获准……",
+    "ENUS": "Warning: Dark Fog activity index in this sector is abnormally rising...\nThis variable exceeds expected threshold, requesting weapon safety lock release...\nAuthorization confirmed, safety protocols disengaged...\nSelf-defense firepower deployment approved..."
   },
   {
     "Name": "钢芯弹箱",
@@ -2141,23 +2121,23 @@
   },
   {
     "Name": "I钢芯弹箱",
-    "ZHCN": "在纯铜子弹的工艺上进行改进的钢芯弹药，其拥有一层铜质被甲，拥有更加良好的穿透性能。一个弹箱包含60发子弹。",
-    "ENUS": "Steel-core ammunition that improves on the process of pure copper bullets by having a layer of copper armor for even better penetration. One case contains 60 rounds."
+    "ZHCN": "采用钢芯铜被甲结构的穿甲弹药，钢制弹芯提供优异侵彻力，铜质被甲保证膛线适配性。单箱装填60发。",
+    "ENUS": "Armor-piercing ammunition with steel core and copper jacket structure—steel core provides excellent penetration, copper jacket ensures rifling compatibility. 60 rounds per box."
   },
   {
     "Name": "I超合金弹箱",
-    "ZHCN": "使用钛合金强化过的机枪弹箱。利用钛合金轻量化的特点对弹壳的形状和结构进行了改良，使其具有更高的初速和更稳定的飞行特性，威力也更强。一个弹箱包含120发子弹。",
-    "ENUS": "Magnum Ammo Boxs enhanced with titanium alloy. The shape and structure of their cases are modified based on a lightweight titanium alloy, resulting in a higher initial speed, stabler flight capability, and greater power. An ammo box contains 120 bullets."
+    "ZHCN": "以钛铝合金替代传统黄铜弹壳，显著降低弹体质量并提升初速；优化弹体气动外形，改善远距离弹道稳定性。单箱装填120发。",
+    "ENUS": "Titanium-aluminum alloy replaces traditional brass cartridge cases, significantly reducing projectile mass and increasing muzzle velocity; optimized aerodynamic profile improves long-range ballistic stability. 120 rounds per box."
   },
   {
     "Name": "铌芯弹箱",
-    "ZHCN": "铌芯弹箱",
-    "ENUS": "Niobium Ammo Box"
+    "ZHCN": "铌合金弹箱",
+    "ENUS": "Niobium Alloy Ammo Box"
   },
   {
     "Name": "I铌芯弹箱",
-    "ZHCN": "使用铌作为弹头材料的进阶全金属被甲弹，沉重的铌芯弹头与硬质金属被甲能够有效穿透黑雾的防御装甲，造成可观的伤害。一个弹箱包含240发子弹。",
-    "ENUS": "An advanced full metal armor round that uses tungsten as the warhead material, the heavy tungsten core warhead and hard metal armor can effectively penetrate the Dark Fog's defensive armor and deal considerable damage. One case contains 240 rounds."
+    "ZHCN": "采用铌钨合金弹芯与贫铀被甲的次口径穿甲弹，利用铌的高熔点与钨的高密度特性，在侵彻过程中保持弹体结构稳定，有效贯穿黑雾单位的重型复合装甲。单箱装填240发。",
+    "ENUS": "Sub-caliber armor-piercing round with niobium-tungsten alloy core and depleted uranium jacket—utilizing niobium's high melting point and tungsten's high density to maintain penetrator structural stability during penetration, effective against heavy composite armor of Dark Fog units. 240 rounds per box."
   },
   {
     "Name": "三元弹箱",
@@ -2166,8 +2146,8 @@
   },
   {
     "Name": "I三元弹箱",
-    "ZHCN": "使用三元精金制作的弹药，这种强互作用力材料曾用于建造深空探测器“水滴”，其强度足以做出“锐角转弯”这种超级机动而不解体。得益于其坚固性，这种弹头有着无与伦比的穿透力。一个弹箱包含480发子弹。",
-    "ENUS": "Ammunition made of Ternary Adamantium, a strong interaction material used in the construction of the deep space probe \"Water Drop\", strong enough to perform super maneuvers such as the \"Sharp Angle Turn\" without disintegrating. Thanks to its robustness, the warhead has unrivaled penetration power. One case contains 480 rounds."
+    "ZHCN": "以强相互作用力材料（SIM）制造的弹芯，通过强核力锁定原子核间距，实现理论上的最大材料密度与硬度。该材料曾用于建造深空探测器“水滴”，其物理强度足以承受极端机动过载。单箱装填480发。",
+    "ENUS": "Projectile core manufactured from Strong Interaction Material (SIM), locking nuclear spacing through strong nuclear force—achieving theoretical maximum material density and hardness. This material was used to construct the deep-space probe \"Water Drop,\" with physical strength sufficient to withstand extreme maneuvering overloads. 480 rounds per box."
   },
   {
     "Name": "核能爆破单元",
@@ -2176,8 +2156,8 @@
   },
   {
     "Name": "I核能爆破单元",
-    "ZHCN": "在爆破单元的基础上引入链式反应，通过其产生的高温高压环境造成杀伤。不必担心，在连接引信之前，它非常安全。",
-    "ENUS": "A chain reaction is introduced on top of the crystal blasting unit, causing killing through the high temperature and high pressure environment it creates. No need to worry, it is very safe until the fuse is attached."
+    "ZHCN": "以低当量核裂变装置替代常规化学装药，通过链式反应瞬间释放巨量热能与冲击波。采用多点起爆与钝感设计，未接入引信控制电路前处于亚临界安全状态。",
+    "ENUS": "Low-yield nuclear fission device replaces conventional chemical charge, instantly releasing massive thermal energy and shock waves through chain reactions. Employing multi-point initiation and insensitive design, remains subcritical and safe before connection to fuze control circuits."
   },
   {
     "Name": "反物质湮灭单元",
@@ -2191,8 +2171,8 @@
   },
   {
     "Name": "I高爆炮弹组",
-    "ZHCN": "采用了先进的高能爆破单元技术，使得炮弹的爆炸威力得到了极大的增强。一个炮弹组包含15发炮弹。",
-    "ENUS": "Advanced high-energy Explosive Unit technology powerfully enhances shells. A Shell Set contains 15 shells."
+    "ZHCN": "采用含能材料增强型战斗部，通过优化装药长径比与起爆序列，显著提升爆炸冲击波超压与破片初速。每组15发。",
+    "ENUS": "Energetic material-enhanced warhead, optimizing charge length-to-diameter ratio and detonation sequence to significantly increase blast overpressure and fragment initial velocity. 15 shells per set."
   },
   {
     "Name": "微型核弹组",
@@ -2201,8 +2181,8 @@
   },
   {
     "Name": "I微型核弹组",
-    "ZHCN": "一种高效可靠的杀伤性武器，根据主脑的计算，在对抗黑雾的过程中使用这种武器可能造成的污染属于可以接受的代价。一个炮弹组包含20发炮弹。",
-    "ENUS": "An efficient and reliable anti-personnel weapon, according to the mastermind's calculations, the contamination that may be caused by its use in the fight against the Dark Fog is among the acceptable costs. A shell group contains 20 shells."
+    "ZHCN": "将战术核弹头小型化至炮弹尺度，采用增强辐射设计降低剩余放射性，确保对黑雾目标杀伤效能的同时控制附带污染。每组20发。\n注：经主脑评估，对抗黑雾作战中使用该武器的辐射风险属于可接受范畴。",
+    "ENUS": "Miniaturized tactical nuclear warhead to artillery shell scale, employing enhanced radiation design to reduce residual radioactivity—ensuring kill effectiveness against Dark Fog targets while controlling collateral contamination. 20 shells per set.\nNote: Mastermind assessment indicates radiation risks from use against Dark Fog are within acceptable parameters."
   },
   {
     "Name": "反物质炮弹组",
@@ -2211,18 +2191,18 @@
   },
   {
     "Name": "I反物质炮弹组",
-    "ZHCN": "使用反物质战斗部装药的炮弹，简单而有效的应用。一个炮弹组包含30发炮弹。",
-    "ENUS": "Simple and effective application of artillery shells using antimatter combatant charges. One shell group contains 30 shells."
+    "ZHCN": "以磁约束反物质腔作为战斗部的重型炮弹，通过精确控制湮灭反应释放方位能量，实现定向杀伤效果。每组30发。",
+    "ENUS": "Heavy artillery shell with magnetically confined antimatter chamber as warhead—achieving directional kill effects through precise control of annihilation reaction energy release. 30 shells per set."
   },
   {
     "Name": "I超音速导弹组",
-    "ZHCN": "推进器产生的动力使导弹的飞行速度得到了极大的提升，全新升级的战斗部和荷载配方提高了导弹的伤害。一个导弹组包含30枚导弹。",
-    "ENUS": "The thruster's dynamism massively accelerates the missile beyond the speed of sound and the upgraded warhead and payload recipe increases the damage. A Missile Set contains 30 missiles."
+    "ZHCN": "采用冲压发动机与固体火箭助推的复合动力，中段飞行速度可达3-4马赫；战斗部采用成型装药与预制破片复合设计，提升对多类型目标的毁伤效能。每组30枚。",
+    "ENUS": "Combined cycle propulsion with ramjet and solid rocket booster, mid-course flight speed reaching 3-4 Mach; warhead employs shaped charge and preformed fragment composite design, enhancing damage effectiveness against multiple target types. 30 missiles per set."
   },
   {
     "Name": "I引力导弹组",
-    "ZHCN": "利用奇异物质本身具有的引力负压特性，让周围空间发生翘曲，从而进一步提升导弹速度，使目标难以判断轨迹进行防御。引力负压对空间的扭曲从某种程度上放大了爆炸产生的伤害。一个导弹组包含40枚导弹。",
-    "ENUS": "aStrange Matter's negative gravitational pressure is used to warp the surrounding space, thus increasing missile speed. The warping space increases explosive damage. A Missile Set contains 40 missiles."
+    "ZHCN": "战斗部嵌入奇异物质核心，利用其产生的负压引力场扭曲局部时空结构，既作为推进辅助实现弹道不可预测性，又通过时空曲率放大爆炸效应。每组40枚。",
+    "ENUS": "Warhead embedded with strange matter core, utilizing its negative pressure gravitational field to distort local spacetime structure—serving both as propulsion assistance for unpredictable trajectories and amplifying blast effects through spacetime curvature. 40 missiles per set."
   },
   {
     "Name": "反物质导弹组",
@@ -2231,8 +2211,8 @@
   },
   {
     "Name": "I反物质导弹组",
-    "ZHCN": "X-3“掘墓人”重型跃迁飞弹，战斗部使用反物质装药，内置的空间翘曲器作为推进系统能够通过连续的短距离跃迁始终锁定目标。一个导弹组包含60枚导弹。",
-    "ENUS": "The X-3 Gravedigger Heavy Leapfrog Missile, with an antimatter charge in the warhead and a built-in space warper as a propulsion system capable of locking onto a target at all times through successive short-range leaps. A missile group contains 60 missiles."
+    "ZHCN": "代号X-3“掘墓人”的重型跃迁打击平台，主战斗部为磁约束反物质腔，推进系统采用短程跃迁引擎实现超光速机动与末端突防。每组60枚。",
+    "ENUS": "Designation X-3 \"Gravedigger\" heavy leap strike platform—primary warhead is magnetically confined antimatter chamber, propulsion system employs short-range leap engines for superluminal maneuvering and terminal penetration. 60 missiles per set."
   },
   {
     "Name": "湮灭弹箱",
@@ -2241,8 +2221,8 @@
   },
   {
     "Name": "I湮灭弹箱",
-    "ZHCN": "托马斯·维德兵工厂生产的超级弹药。一个弹箱包含960发子弹。",
-    "ENUS": "Superb ammunition produced by Thomas Vedder Arsenal. One cartridge box contains 960 rounds."
+    "ZHCN": "托马斯·维德兵工厂遗留的实验性弹药，采用未知工艺将强相互作用力材料与反物质约束技术结合，其技术原理已超出当前科学理解范畴。单箱装填960发。",
+    "ENUS": "Experimental ammunition legacy of Thomas Wade Arsenal, employing unknown processes combining strong interaction material with antimatter confinement technology—technical principles exceed current scientific understanding. 960 rounds per box."
   },
   {
     "Name": "T钛化弹箱",
@@ -2251,8 +2231,8 @@
   },
   {
     "Name": "钛化弹箱描述",
-    "ZHCN": "使用钢芯铜被甲替代纯铜弹头，实现更好的穿透效果。",
-    "ENUS": "Use of steel-core copper armor instead of pure copper warheads to achieve better penetration."
+    "ZHCN": "以钢质弹芯替代纯铜弹头，通过密度与硬度的提升增强对装甲目标的侵彻能力，铜被甲保持枪管寿命。",
+    "ENUS": "Steel core replaces pure copper warhead, enhancing armor penetration through increased density and hardness, while copper jacket maintains barrel life."
   },
   {
     "Name": "T超合金弹箱",
@@ -2266,13 +2246,13 @@
   },
   {
     "Name": "核能爆破单元描述",
-    "ZHCN": "使用放射性物质填装的进阶爆破单元，通过核裂变反应释放的高温高压以及剧烈辐射造成杀伤。",
-    "ENUS": "An advanced demolition unit filled with radioactive material that kills through the high temperature and pressure released by the nuclear fission reaction and intense radiation."
+    "ZHCN": "以裂变反应替代化学能释放的爆破装置，通过中子反射层与压缩透镜设计实现临界质量内的可控链式反应，产生高温、高压与瞬时辐射三重杀伤效应。",
+    "ENUS": "Demolition device replacing chemical energy release with fission reactions—achieving controlled chain reactions within critical mass through neutron reflector and compression lens design, producing triple kill effects of high temperature, high pressure, and prompt radiation."
   },
   {
     "Name": "核能爆破单元结果",
-    "ZHCN": "你解锁了核能爆破单元，这种爆破单元使用放射性装药以追求更高的杀伤效果。",
-    "ENUS": "You have unlocked the Nuclear Demolition Unit, which uses a radioactive charge in pursuit of higher lethality."
+    "ZHCN": "你已解锁核能爆破单元，该装置采用放射性装药实现裂变能量释放，标志着化学能武器向核能武器的代际跨越。",
+    "ENUS": "You have unlocked the Nuclear Demolition Unit—this device employs radioactive charge to achieve fission energy release, marking the generational leap from chemical to nuclear weapons."
   },
   {
     "Name": "T反物质湮灭单元",
@@ -2281,13 +2261,13 @@
   },
   {
     "Name": "反物质湮灭单元描述",
-    "ZHCN": "自卫火力序列中最先进的战斗单元，其中装填有正反物质两极，激发后会通过湮灭反应释放出巨大的能量。",
-    "ENUS": "The most advanced combat unit in the self-defense fire sequence, which is loaded with both positive and negative matter poles that, when excited, release tremendous energy through an annihilation reaction."
+    "ZHCN": "序列中最先进的质能转换武器，采用磁阱约束正反物质对，通过精确控制湮灭反应参数实现定向能量释放，理论能量密度达化学能的十亿倍。",
+    "ENUS": "The most advanced mass-energy conversion weapon in the sequence—employing magnetic traps to confine matter-antimatter pairs, achieving directional energy release through precise control of annihilation reaction parameters, with theoretical energy density ten billion times that of chemical energy."
   },
   {
     "Name": "反物质湮灭单元结果",
-    "ZHCN": "你解锁了反物质湮灭单元，这是自卫火力序列中最先进的战斗单元。",
-    "ENUS": "You unlock the Antimatter Annihilation Unit, the most advanced combat unit in the Self-Defense fire sequence."
+    "ZHCN": "你已解锁反物质湮灭单元，这是自卫火力序列中技术层级最高的战斗单元，代表质能武器的理论极限。",
+    "ENUS": "You have unlocked the Antimatter Annihilation Unit—the highest technical tier combat unit in the self-defense fire sequence, representing the theoretical limit of mass-energy weapons."
   },
   {
     "Name": "T微型核弹组",
@@ -2296,13 +2276,13 @@
   },
   {
     "Name": "微型核弹组描述",
-    "ZHCN": "战斗部采用核能爆破单元的进阶炮弹，在核反应的作用下，其杀伤力要远超普通的化学能炮弹。",
-    "ENUS": "Advanced shells with nuclear demolition units in the combat section are far more lethal than ordinary chemical-energy shells under the effect of nuclear reaction."
+    "ZHCN": "将低当量核装置集成至炮弹战斗部，采用中子源预点火与助爆设计确保可靠起爆，其杀伤机理涵盖冲击波、热辐射与瞬时核辐射。",
+    "ENUS": "Low-yield nuclear device integrated into artillery warhead, employing neutron source pre-ignition and boosting design to ensure reliable detonation—kill mechanisms encompass shock wave, thermal radiation, and prompt nuclear radiation."
   },
   {
     "Name": "微型核弹组结果",
-    "ZHCN": "你解锁了微型核弹，这种大威力炮弹会造成严重的辐射污染，相比于面对黑雾，这是可以接受的代价。",
-    "ENUS": "You unlock the mini-nuke, a high-powered projectile that causes severe radiation contamination, which is an acceptable price to pay compared to facing the Dark Fog."
+    "ZHCN": "你已解锁微型核弹，该武器将造成区域性辐射污染，但在黑雾威胁面前，这是必要的代价。",
+    "ENUS": "You have unlocked mini-nukes—this weapon will cause regional radiation contamination, but in the face of Dark Fog threat, this is a necessary price."
   },
   {
     "Name": "T反物质炮弹",
@@ -2311,28 +2291,28 @@
   },
   {
     "Name": "反物质炮弹描述",
-    "ZHCN": "使用湮灭单元填装的超重型炮弹，依靠湮灭反应释放的巨大能量造成杀伤。",
-    "ENUS": "A super-powerful projectile filled with an annihilation unit that relies on the massive energy released by the annihilation reaction to inflict a kill."
+    "ZHCN": "以磁约束反物质腔替代常规装药的超重型炮弹，通过控制湮灭反应的几何构型实现定向能释放，对目标造成热-机械耦合毁伤。",
+    "ENUS": "Super-heavy artillery shell replacing conventional charge with magnetically confined antimatter chamber—achieving directed energy release through controlling annihilation reaction geometry, causing thermal-mechanical coupled damage to targets."
   },
   {
     "Name": "反物质炮弹结果",
-    "ZHCN": "你解锁了反物质炮弹，这是一种原始但可靠的质能武器。",
-    "ENUS": "You unlock the Antimatter Unit, a primitive but reliable mass energy weapon."
+    "ZHCN": "你已解锁反物质炮弹，这是将正反物质湮灭反应武器化的原始但可靠方案，标志着质能转换技术的军事应用。",
+    "ENUS": "You have unlocked antimatter artillery shells—a primitive but reliable scheme weaponizing matter-antimatter annihilation reactions, marking the military application of mass-energy conversion technology."
   },
   {
     "Name": "T铌芯弹箱",
-    "ZHCN": "超重型穿甲弹",
-    "ENUS": "Super-heavy Armor Piercing Shell"
+    "ZHCN": "高密度穿甲弹",
+    "ENUS": "High Density Armor Piercing"
   },
   {
     "Name": "铌芯弹箱描述",
-    "ZHCN": "使用铌制作的超重型穿甲弹，能够穿透某些较为坚硬的护甲。",
-    "ENUS": "Superheavy armor-piercing rounds made with tungsten, capable of penetrating some of the tougher armor."
+    "ZHCN": "采用铌钨复合合金作为侵彻体材料，结合两种难熔金属的优异性能，实现对重型装甲的高效贯穿。",
+    "ENUS": "Employing niobium-tungsten composite alloy as penetrator material, combining excellent properties of both refractory metals to achieve efficient penetration of heavy armor."
   },
   {
     "Name": "铌芯弹箱结果",
-    "ZHCN": "你解锁了铌芯弹箱，这是一种高强度的穿甲弹，能够有效对黑雾造成打击。",
-    "ENUS": "You have unlocked the Niobium Core Cartridge, a high-strength armor-piercing round that is effective against the Dark Fog."
+    "ZHCN": "你已解锁铌合金弹箱，该弹药采用难熔金属复合设计，是应对黑雾重型单位的有效手段。",
+    "ENUS": "You have unlocked niobium alloy ammunition—this round employs refractory metal composite design, an effective means against heavy Dark Fog units."
   },
   {
     "Name": "T三元弹箱",
@@ -2341,13 +2321,13 @@
   },
   {
     "Name": "三元弹箱描述",
-    "ZHCN": "使用三元精金制作的超重型穿甲弹，这是自卫火力序列中最顶级的穿甲弹。",
-    "ENUS": "Superheavy armor-piercing rounds made with Ternary Adamantium, capable of penetrating some of the tougher armor."
+    "ZHCN": "以强相互作用力材料（SIM）制造的次口径穿甲弹，通过强核力锁定实现理论极限密度，侵彻过程中不发生塑性变形，是序列中穿甲能力的巅峰。",
+    "ENUS": "Sub-caliber armor-piercing round manufactured from Strong Interaction Material (SIM)—achieving theoretical limit density through strong nuclear force locking, no plastic deformation during penetration, the pinnacle of armor-piercing capability in the sequence."
   },
   {
     "Name": "三元弹箱结果",
-    "ZHCN": "你解锁了三元弹箱，这是自卫火力序列中最顶级的穿甲弹。",
-    "ENUS": "You have unlocked the Ternary Adamantium Cartridge, a high-strength armor-piercing round that is effective against the Dark Fog."
+    "ZHCN": "你已解锁三元弹箱，这是自卫火力序列中技术层级最高的穿甲弹药，代表材料科学与武器工程的极限结合。",
+    "ENUS": "You have unlocked ternary adamantium ammunition—the highest technical tier armor-piercing round in the self-defense fire sequence, representing the ultimate combination of materials science and weapons engineering."
   },
   {
     "Name": "T湮灭弹箱",
@@ -2356,13 +2336,13 @@
   },
   {
     "Name": "湮灭弹箱描述",
-    "ZHCN": "发现关键物品……\n发现缺失的数据库条目，申请连接主脑……\n隐藏数据库条目解锁……\n新的蓝图档案已录入……",
-    "ENUS": "Key items found ...\nMissing database entries found, request connection to mastermind ......\nHidden database entries unlocked ......\nNew blueprint files entered ......"
+    "ZHCN": "检测到关键物品……\n发现缺失数据库条目，申请主脑连接……\n隐藏数据库条目已解锁……\n新蓝图档案已录入……",
+    "ENUS": "Key item detected...\nMissing database entry found, requesting mastermind connection...\nHidden database entry unlocked...\nNew blueprint file entered..."
   },
   {
     "Name": "湮灭弹箱结果",
-    "ZHCN": "你解锁了湮灭弹箱，这种弹药在历史上涉及到一场灾难，相关条目因此被封存。",
-    "ENUS": "You have unlocked the Annihilation Chest, a munition that was historically involved in a catastrophe and the related entry was sealed as a result."
+    "ZHCN": "你已解锁湮灭弹箱。历史记录显示该技术曾引发灾难性事故，相关条目已被主脑封存，请谨慎使用。",
+    "ENUS": "You have unlocked the Annihilation Ammo Box. Historical records indicate this technology caused catastrophic incidents—related entries have been sealed by the mastermind, use with extreme caution."
   },
   {
     "Name": "T洲际导弹组",
@@ -2371,13 +2351,13 @@
   },
   {
     "Name": "洲际导弹组描述",
-    "ZHCN": "在引力导弹的基础上进一步改装的洲际导弹，其二级推进器能够在脱离大气层后继续提供动力。",
-    "ENUS": "Tactical nuclear missiles are intercontinental missiles further modified from gravitational missiles with secondary thrusters capable of continuing to provide power after exiting the atmosphere."
+    "ZHCN": "基于引力导弹发展的洲际打击平台，采用三级固体火箭与末段机动再入飞行器，可携带核或常规战斗部实施全球快速打击。",
+    "ENUS": "Intercontinental strike platform developed from gravitational missiles—employing three-stage solid rocket and terminal maneuvering reentry vehicle, capable of carrying nuclear or conventional warheads for global rapid strike."
   },
   {
     "Name": "洲际导弹组结果",
-    "ZHCN": "你解锁了洲际导弹组，这种导弹安装了战术核弹头，能够进行高效杀伤。",
-    "ENUS": "You have unlocked the Intercontinental Missile Group, a missile fitted with a tactical nuclear warhead capable of efficient killing."
+    "ZHCN": "你已解锁洲际导弹组，该武器系统配备战术核弹头，具备跨洲际精确打击能力。",
+    "ENUS": "You have unlocked the intercontinental missile group—this weapon system is equipped with tactical nuclear warheads, possessing transcontinental precision strike capability."
   },
   {
     "Name": "T反物质导弹组",
@@ -2386,13 +2366,13 @@
   },
   {
     "Name": "反物质导弹组描述",
-    "ZHCN": "装有湮灭单元的超级导弹，其推进系统被内置的空间翘曲器取代，使其能够进行短距跃迁。",
-    "ENUS": "Super missiles fitted with annihilation units have their propulsion system replaced by a built-in space warper, allowing them to make short leaps."
+    "ZHCN": "以反物质湮灭战斗部与短程跃迁推进系统集成的战略打击平台，可无视传统防御体系实施跨星系精确打击，是序列中的终极导弹系统。",
+    "ENUS": "Strategic strike platform integrating antimatter annihilation warhead with short-range leap propulsion system—capable of cross-system precision strike ignoring traditional defense systems, the ultimate missile system in the sequence."
   },
   {
     "Name": "反物质导弹组结果",
-    "ZHCN": "你解锁了反物质导弹组，这是自卫火力序列中最顶级的导弹组。",
-    "ENUS": "You unlock the Antimatter Missile Group, the top missile group in the self-defense fire sequence."
+    "ZHCN": "你已解锁反物质导弹组，这是自卫火力序列中技术层级最高的导弹系统，代表星际战争武器的巅峰。",
+    "ENUS": "You have unlocked the antimatter missile group—the highest technical tier missile system in the self-defense fire sequence, representing the pinnacle of interstellar warfare weapons."
   },
   {
     "Name": "T黑雾协调中心",
@@ -2401,18 +2381,18 @@
   },
   {
     "Name": "黑雾协调中心描述",
-    "ZHCN": "正在将日志上传至COSMO……\n辅助策略单元运行中……\n授权代码验证通过，隐藏数据库已解锁……\n数据同步至行星协调中心……",
-    "ENUS": "Logs are being uploaded to COSMO ......\nAuxiliary Policy Unit is running ......\nAuthorization Code Verification Passed, Hidden Database Unlocked ......\nData Synchronization to Planetary Coordination Center ......"
+    "ZHCN": "日志上传至COSMO中……\n辅助策略单元运行中……\n授权代码验证通过，隐藏数据库已解锁……\n数据同步至行星协调中心……",
+    "ENUS": "Uploading logs to COSMO...\nAuxiliary strategy unit operating...\nAuthorization code verified, hidden database unlocked...\nData synchronizing to Planetary Coordination Center..."
   },
   {
     "Name": "黑雾协调中心结果",
-    "ZHCN": "通过对数据库中黑雾资料的分析、处理，可以为行星协调中心建立新的行为模型。利用这个模型能够对黑雾行为进行一定的预测及干扰。",
-    "ENUS": "By analyzing and processing the information of Dark Fog in the database, it is possible to create a new behavioral model for the Planetary Coordination Center. Using this model it is possible to make certain predictions and interferences with the behavior of the Dark Fog."
+    "ZHCN": "通过对黑雾残骸样本的深度分析，已建立黑雾行为预测模型。该模型可识别黑雾集群的运动模式与攻击意图，为行星防御提供战术预警。",
+    "ENUS": "Through deep analysis of Dark Fog debris samples, a Dark Fog behavior prediction model has been established. This model can identify Dark Fog swarm movement patterns and attack intentions, providing tactical early warning for planetary defense."
   },
   {
     "Name": "黑雾协调中心文字描述",
-    "ZHCN": "为行星协调中心解锁新的功能",
-    "ENUS": "Unlocking new features for the Planetary Coordination Center"
+    "ZHCN": "为行星协调中心解锁黑雾行为干扰功能",
+    "ENUS": "Unlocking Dark Fog behavior interference functions for Planetary Coordination Center"
   },
   {
     "Name": "T护盾载波调制",
@@ -2421,13 +2401,13 @@
   },
   {
     "Name": "T护盾载波调制描述",
-    "ZHCN": "重新调整无线输电的频谱，使其可以在行星护盾上产生稳定的驻波模式，即可借助于完全覆盖的行星护盾进行无线输电。",
-    "ENUS": "By readjusting the spectrum of wireless power transmission, stable standing wave patterns can be produced on the planetary shield, thereby enabling wireless power transmission through a fully covered planetary shield."
+    "ZHCN": "通过重构无线输电的载波频率与相位参数，在行星护盾表面激励起稳定的电磁驻波模式，使全覆盖的行星护盾本身成为巨大的无线能量传输网络。",
+    "ENUS": "By reconstructing carrier frequency and phase parameters of wireless power transmission, exciting stable electromagnetic standing wave patterns on planetary shield surfaces—making the fully covered planetary shield itself a massive wireless energy transmission network."
   },
   {
     "Name": "T护盾载波调制文字描述",
-    "ZHCN": "完全填充的行星护盾可作为行星电网",
-    "ENUS": "Fully filled planetary shield can serve as a planetary power grid"
+    "ZHCN": "填充度100%的行星护盾可作为全球性无线电网使用",
+    "ENUS": "Fully filled planetary shield can serve as global wireless power grid"
   },
   {
     "Name": "聚爆加农炮",
@@ -2441,8 +2421,8 @@
   },
   {
     "Name": "I电磁加农炮",
-    "ZHCN": "改进的质量投射器能够有效增加这门巨炮的射程，而新的高强度结构材料则可以承受更大的冲击力以抵消质量投射技术带来的巨大后坐，避免对其结构本身造成破坏，即使如此，这门巨炮每次开火仍需要更长时间进行充能。",
-    "ENUS": "The improved mass projector can effectively increase the range of this cannon, while the new high-strength structural material can withstand greater impact force to offset the huge recoil caused by mass projection technology, avoiding damage to its structure itself. Nevertheless, each firing of this cannon still requires longer charging time."
+    "ZHCN": "采用改进型磁轨加速结构与新型高强度复合材料身管，在提升弹丸初速与射程的同时，通过优化后坐力传导路径降低对炮架的结构冲击。由于能量需求增加，射击间隔相应延长。",
+    "ENUS": "Employing improved railgun acceleration structure and new high-strength composite barrel—while increasing projectile muzzle velocity and range, optimizing recoil force transmission paths to reduce structural impact on gun carriage. Due to increased energy requirements, firing intervals are correspondingly extended."
   },
   {
     "Name": "高频激光塔",
@@ -2456,8 +2436,8 @@
   },
   {
     "Name": "I紫外激光塔",
-    "ZHCN": "使用粒子容器替代简陋的激光发生器，能承受更高的能量负载，攻击距离也得到了大幅度提升。",
-    "ENUS": "The use of particle containers instead of rudimentary laser generators can withstand much higher energy loads, and as a result, attack ranges have been significantly increased."
+    "ZHCN": "以粒子容器替代传统气体激光介质，显著提升能量负载能力与光束质量；采用非线性光学晶体实现频率上转换，输出波长进入深紫外波段，大气传输损耗大幅降低。",
+    "ENUS": "Replacing traditional gas laser media with particle containers, significantly improving energy load capacity and beam quality; employing nonlinear optical crystals for frequency up-conversion, output wavelength entering deep ultraviolet band, greatly reducing atmospheric transmission losses."
   },
   {
     "Name": "熔炉 Mk.III",
@@ -2506,8 +2486,8 @@
   },
   {
     "Name": "I熔炉 Mk.III",
-    "ZHCN": "在不断输入能量后，熔炉内部被激发的负熵奇点可以稳定地输出负熵，利用核心素的稳定性，可以进一步约束处于激发态的负熵奇点，引导其击穿物质界限。我们能够借此从虚数空间中解构粒子信息，并将其转换为实在的物质。\n负熵熔炉能够将配方<color=\"#FD965ECC\">翻倍产出</color>，你只需要输入一份原料，就能得到两份成品。",
-    "ENUS": "With the constant input of energy, the excited negentropic singularity inside the furnace can stabilize the output of negentropy, and by using the stability of the core elements, the negentropic singularity in the excited state can be further constrained and guided to penetrate the boundaries of matter. We are able to use this to deconstruct particle information from imaginary number space and convert it into additional real matter. The \n Negentropic Furnace is able to <color=\"#FD965ECC\">double the output of the recipe</color>, you only need to input one ingredient to get two finished products."
+    "ZHCN": "通过持续能量输入激发负熵奇点，使其稳定输出负熵流；利用核心素的拓扑稳定性约束激发态奇点，引导其击穿物质界限。借此可从虚数空间解构粒子信息并重构为实物质。\n负熵熔炉可实现配方<color=\"#FD965ECC\">产出翻倍</color>——输入单份原料即可获得双份成品。",
+    "ENUS": "Through sustained energy input to excite the negentropic singularity, stabilizing negentropy flow output; utilizing topological stability of core elements to constrain excited singularity, guiding it to penetrate matter boundaries. Thereby deconstructing particle information from imaginary space and reconstructing as real matter.\nNegentropy Smelter achieves <color=\"#FD965ECC\">doubled recipe output</color>—input single portion of raw materials to obtain double finished products."
   },
   {
     "Name": "I星际物流运输站",
