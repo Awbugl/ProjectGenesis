@@ -2135,6 +2135,11 @@
     "ENUS": "Warning: Dark Fog activity index in this sector is abnormally rising...\nThis variable exceeds expected threshold, requesting weapon safety lock release...\nAuthorization confirmed, safety protocols disengaged...\nSelf-defense firepower deployment approved..."
   },
   {
+    "Name": "I机枪弹箱",
+    "ZHCN": "以铜块为原料制造的机枪弹药，造价低廉。铜单质在空气动力学中展现出的自润滑性能够在射击过程中保持形状，减少变形和分裂的风险。单箱装填30发。",
+    "ENUS": "Magnum ammo crafted from copper ingots at low cost. Copper is self-lubricating, so it can maintain its shape and still reduce the risks of deformation and fracturing when shooting. 30 rounds per box."
+  },
+  {
     "Name": "钢芯弹箱",
     "ZHCN": "钢芯弹箱",
     "ENUS": "Steel Ammo Box"
@@ -2190,6 +2195,11 @@
     "ENUS": "One of the industrialized ways of applying controlled annihilation reaction, the original radioactive charge was replaced by positive and negative matter poles. \nTo activate it you only need three steps: press the buttons on both sides at the same time to deactivate the safety, pull the unit away to the sides into a ready-to-fire state, and then close it. Of course, we don't recommend that you do this; using an electronic fuse to activate it is much more reliable and won't harm you."
   },
   {
+    "Name": "I炮弹组",
+    "ZHCN": "基础的炮弹，内部装备有高效的燃烧单元。一旦被投射到目标位置，会迅速引爆，造成动能伤害和一定范围的爆破伤害。每组12发。",
+    "ENUS": "Basic shells contain efficient Combustible Units. Once shot to a target position, they will explode immediately and inflict Kinetic and Explosive Damage in the area. 12 shells per set."
+  },
+  {
     "Name": "I高爆炮弹组",
     "ZHCN": "采用含能材料增强型战斗部，通过优化装药长径比与起爆序列，显著提升爆炸冲击波超压与破片初速。每组15发。",
     "ENUS": "Energetic material-enhanced warhead, optimizing charge length-to-diameter ratio and detonation sequence to significantly increase blast overpressure and fragment initial velocity. 15 shells per set."
@@ -2213,6 +2223,11 @@
     "Name": "I反物质炮弹组",
     "ZHCN": "以磁约束反物质腔作为战斗部的重型炮弹，通过精确控制湮灭反应释放方位能量，实现定向杀伤效果。每组30发。",
     "ENUS": "Heavy artillery shell with magnetically confined antimatter chamber as warhead—achieving directional kill effects through precise control of annihilation reaction energy release. 30 shells per set."
+  },
+  {
+    "Name": "I导弹组",
+    "ZHCN": "头部装备有目标识别系统，能够在飞行过程中实时调整打击轨迹，确保命中目标。每组24枚。",
+    "ENUS": "The target identification system on the head can adjust its attack trajectory in real time during flight to hit targets. 24 missiles per set."
   },
   {
     "Name": "I超音速导弹组",
