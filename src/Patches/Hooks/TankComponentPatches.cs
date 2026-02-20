@@ -63,6 +63,8 @@ namespace ProjectGenesis.Patches
 
                 // tankComponent.fluidInc *= currentOutputStack;
                 matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_S, localIndex), new CodeInstruction(OpCodes.Mul));
+
+                matcher.Advance(3);
             }
 
             matcher.Start();
@@ -75,6 +77,8 @@ namespace ProjectGenesis.Patches
                 if (matcher.IsInvalid) break;
 
                 matcher.SetAndAdvance(OpCodes.Ldloc_S, localIndex);
+
+                matcher.Advance(1);
             }
 
             return matcher.InstructionEnumeration();
