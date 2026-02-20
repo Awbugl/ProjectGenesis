@@ -46,6 +46,7 @@ namespace ProjectGenesis.Patches
 
             switch (proto.ID)
             {
+                case 2701:
                 case 2904:
                 case 3508:
                 case 3509:

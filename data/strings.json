@@ -1761,13 +1761,13 @@
   },
   {
     "Name": "钛矿冶炼描述",
-    "ZHCN": "采矿和冶炼技术的进步，使得矿物控制更加容易，现在可以开采利用\\taik-;和\\tunk-;了。",
-    "ENUS": "The Advancements in mining and smelting technology have made ore control easier. \\taik-; and \\tunk-; can now be utilized."
+    "ZHCN": "采矿和冶炼技术的进步，使得矿物控制更加容易，现在可以开采利用\\taik-;和\\niku-;了。",
+    "ENUS": "The Advancements in mining and smelting technology have made ore control easier. \\taik-; and \\niku-; can now be utilized."
   },
   {
     "Name": "钛矿冶炼结果",
-    "ZHCN": "你已解锁\\taik-;与\\tunk-;的开采与冶炼技术。钛合金以其优异的比强度与耐腐蚀性，成为星际工业不可或缺的关键材料。",
-    "ENUS": "You have unlocked mining and smelting technologies for \\taik-; and \\tunk-;. Titanium alloys, with their excellent specific strength and corrosion resistance, have become indispensable key materials for interstellar industry."
+    "ZHCN": "你已解锁\\taik-;与\\niku-;的开采与冶炼技术。钛合金以其优异的比强度与耐腐蚀性，成为星际工业不可或缺的关键材料。",
+    "ENUS": "You have unlocked mining and smelting technologies for \\taik-; and \\niku-;. Titanium alloys, with their excellent specific strength and corrosion resistance, have become indispensable key materials for interstellar industry."
   },
   {
     "Name": "卡西米尔晶体结果",
@@ -1776,8 +1776,8 @@
   },
   {
     "Name": "人造恒星结果",
-    "ZHCN": "你解锁了发电设施：\\xty;。我们在地上，重现恒星的权能。",
-    "ENUS": "You have unlocked the power generation facility, \\xty;. We are on earth, reproducing the power of the stars."
+    "ZHCN": "你解锁了发电设施：\\xty-;。我们在地上，重现恒星的权能。",
+    "ENUS": "You have unlocked the power generation facility, \\xty-;. We are on earth, reproducing the power of the stars."
   },
   {
     "Name": "基础制造工艺结果",
