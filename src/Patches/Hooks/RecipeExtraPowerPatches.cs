@@ -33,12 +33,15 @@ namespace ProjectGenesis.Patches
 
         [HarmonyPatch(typeof(AssemblerComponent), nameof(AssemblerComponent.SetPCState))]
         [HarmonyPrefix]
-        public static bool AssemblerComponent_SetPCState_Prefix(AssemblerComponent __instance, PowerConsumerComponent[] pcPool)
+        public static bool AssemblerComponent_SetPCState_Prefix(ref AssemblerComponent __instance, PowerConsumerComponent[] pcPool)
         {
             ref PowerConsumerComponent component = ref pcPool[__instance.pcId];
 
+            int num = RecipePowerRate.GetValueOrDefault(__instance.recipeId, 1);
+            if (num == 1 || !__instance.replicating) return true;
+
             component.requiredEnergy = __instance.replicating
-                ? component.workEnergyPerTick * (1000 + __instance.extraPowerRatio) / 1000
+                ? (__instance.speedOverride * num / 2 + component.workEnergyPerTick) * (1000 + __instance.extraPowerRatio) / 1000
                 : component.idleEnergyPerTick;
 
             return false;
@@ -60,7 +63,7 @@ namespace ProjectGenesis.Patches
 
             StringBuilderUtility.WriteKMGPower(_sb, 7, extraPowerW);
 
-            __instance.stateText.text = $"[+{_sb.ToString().Trim()}]" + __instance.stateText.text;
+            __instance.stateText.text = $"[+{_sb.ToString().Trim()} ]" + __instance.stateText.text;
         }
     }
 }

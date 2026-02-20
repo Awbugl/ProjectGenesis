@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Reflection.Emit;
 using HarmonyLib;
 using ProjectGenesis.Compatibility;
 using ProjectGenesis.Utils;
@@ -18,142 +16,36 @@ namespace ProjectGenesis.Patches
         private static readonly FieldInfo EntityData_StationId_Field = AccessTools.Field(typeof(EntityData), nameof(EntityData.stationId)),
                                           EntityData_AssemblerId_Field =
                                               AccessTools.Field(typeof(EntityData), nameof(EntityData.assemblerId)),
-                                          FactorySystem_factory_Field =
-                                              AccessTools.Field(typeof(FactorySystem), nameof(FactorySystem.factory)),
                                           PlanetFactory_EntityPool_Field =
                                               AccessTools.Field(typeof(PlanetFactory), nameof(PlanetFactory.entityPool));
 
-        private static readonly MethodInfo AssemblerComponent_InternalUpdate_Method =
-                                               AccessTools.Method(typeof(AssemblerComponent), nameof(AssemblerComponent.InternalUpdate)),
-                                           MegaAssembler_AssemblerComponent_InternalUpdate_Patch_Method =
-                                               AccessTools.Method(typeof(MegaAssemblerPatches),
-                                                   nameof(GameTick_AssemblerComponent_InternalUpdate_Patch));
-
-        [HarmonyPatch(typeof(FactorySystem), nameof(FactorySystem.GameTick), typeof(long), typeof(bool))]
-        [HarmonyTranspiler]
-        public static IEnumerable<CodeInstruction> FactorySystem_GameTick_Transpiler(IEnumerable<CodeInstruction> instructions,
-            ILGenerator generator)
-        {
-            var matcher = new CodeMatcher(instructions, generator);
-
-            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldloc_1),
-                new CodeMatch(OpCodes.Ldloc_2), new CodeMatch(OpCodes.Call, AssemblerComponent_InternalUpdate_Method));
-
-            object local1 = matcher.Operand;
-            object power1 = matcher.Advance(1).Operand;
-
-            matcher.CreateLabelAt(matcher.Pos + 4, out Label label1);
-
-            matcher.Advance(-1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldc_I4_0), new CodeInstruction(OpCodes.Ldloc_S, local1),
-                new CodeInstruction(OpCodes.Ldarg_0), new CodeInstruction(OpCodes.Ldfld, FactorySystem_factory_Field),
-                new CodeInstruction(OpCodes.Ldloc_S, power1),
-                new CodeInstruction(OpCodes.Call, MegaAssembler_AssemblerComponent_InternalUpdate_Patch_Method),
-                new CodeInstruction(OpCodes.Brfalse_S, label1), new CodeInstruction(OpCodes.Pop));
-
-            matcher.Advance(5).MatchForward(false, new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldloc_S),
-                new CodeMatch(OpCodes.Ldloc_1), new CodeMatch(OpCodes.Ldloc_2),
-                new CodeMatch(OpCodes.Call, AssemblerComponent_InternalUpdate_Method));
-
-
-            object local2 = matcher.Operand;
-            object power2 = matcher.Advance(1).Operand;
-
-            matcher.CreateLabelAt(matcher.Pos + 4, out Label label2);
-
-            matcher.Advance(-1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldc_I4_0), new CodeInstruction(OpCodes.Ldloc_S, local2),
-                new CodeInstruction(OpCodes.Ldarg_0), new CodeInstruction(OpCodes.Ldfld, FactorySystem_factory_Field),
-                new CodeInstruction(OpCodes.Ldloc_S, power2),
-                new CodeInstruction(OpCodes.Call, MegaAssembler_AssemblerComponent_InternalUpdate_Patch_Method),
-                new CodeInstruction(OpCodes.Brfalse_S, label2), new CodeInstruction(OpCodes.Pop));
-
-            return matcher.InstructionEnumeration();
-        }
-
-        [HarmonyPatch(typeof(GameLogic), nameof(GameLogic._assembler_parallel))]
-        [HarmonyTranspiler]
-        public static IEnumerable<CodeInstruction> GameLogic_assembler_parallel_Transpiler(IEnumerable<CodeInstruction> instructions,
-            ILGenerator generator)
-        {
-            var matcher = new CodeMatcher(instructions, generator);
-
-            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldloc_S),
-                new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(PlanetFactory), nameof(PlanetFactory.entityAnimPool))));
-
-            object factory = matcher.Operand;
-
-            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldloc_S),
-                new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Call, AssemblerComponent_InternalUpdate_Method));
-
-            object local1 = matcher.Operand;
-            object power1 = matcher.Advance(1).Operand;
-
-            matcher.CreateLabelAt(matcher.Pos + 4, out Label label1);
-
-            matcher.Advance(-1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldc_I4_0), new CodeInstruction(OpCodes.Ldloc_S, local1),
-                new CodeInstruction(OpCodes.Ldloc_S, factory), new CodeInstruction(OpCodes.Ldloc_S, power1),
-                new CodeInstruction(OpCodes.Call, MegaAssembler_AssemblerComponent_InternalUpdate_Patch_Method),
-                new CodeInstruction(OpCodes.Brfalse_S, label1), new CodeInstruction(OpCodes.Pop));
-
-            matcher.Advance(5).MatchForward(false, new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldloc_S),
-                new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldloc_S),
-                new CodeMatch(OpCodes.Call, AssemblerComponent_InternalUpdate_Method));
-
-            object local2 = matcher.Operand;
-            object power2 = matcher.Advance(1).Operand;
-
-            matcher.CreateLabelAt(matcher.Pos + 4, out Label label2);
-
-            matcher.Advance(-1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldc_I4_0), new CodeInstruction(OpCodes.Ldloc_S, local2),
-                new CodeInstruction(OpCodes.Ldloc_S, factory), new CodeInstruction(OpCodes.Ldloc_S, power2),
-                new CodeInstruction(OpCodes.Call, MegaAssembler_AssemblerComponent_InternalUpdate_Patch_Method),
-                new CodeInstruction(OpCodes.Brfalse_S, label2), new CodeInstruction(OpCodes.Pop));
-
-
-            return matcher.InstructionEnumeration();
-        }
-
-        public static bool GameTick_AssemblerComponent_InternalUpdate_Patch(ref AssemblerComponent __instance, PlanetFactory factory,
+        public static void GameTick_AssemblerComponent_InternalUpdate_Patch(PlanetFactory factory, ref AssemblerComponent component,
             float power)
         {
-            bool b = power >= 0.1f;
+            if (component.speed < MegaAssemblerSpeed) return;
 
-            // MegaBuildings
-            if (__instance.speed >= MegaAssemblerSpeed)
+            SlotData[] slotdata = GetSlots(factory.planetId, component.entityId);
+            CargoTraffic cargoTraffic = factory.cargoTraffic;
+            SignData[] entitySignPool = factory.entitySignPool;
+
+            if (component.recipeId == ProtoID.R物质分解)
             {
-                SlotData[] slotdata = GetSlots(factory.planetId, __instance.entityId);
-                CargoTraffic cargoTraffic = factory.cargoTraffic;
-                SignData[] entitySignPool = factory.entitySignPool;
+                if (power < 0.1f) return;
 
-                int stationPilerLevel = GameMain.history.stationPilerLevel;
+                UpdateTrashInputSlots(ref component, power, factory, cargoTraffic, slotdata);
 
-                if (__instance.recipeId != ProtoID.R物质分解)
-                {
-                    UpdateOutputSlots(ref __instance, cargoTraffic, slotdata, entitySignPool, stationPilerLevel);
-                    UpdateInputSlots(ref __instance, cargoTraffic, slotdata, entitySignPool);
-                }
-                else if (b)
-                {
-                    UpdateTrashInputSlots(ref __instance, power, factory, cargoTraffic, slotdata);
+                int sandCount = component.produced[0];
 
-                    int sandCount = __instance.produced[0];
+                if (sandCount < 800 || GameMain.mainPlayer == null) return;
 
-                    if (sandCount >= 800 && GameMain.mainPlayer != null)
-                    {
-                        GameMain.mainPlayer.sandCount += sandCount;
-                        __instance.produced[0] = 0;
-                    }
-                }
+                GameMain.mainPlayer.sandCount += sandCount;
+                component.produced[0] = 0;
             }
-
-            if (factory.entityPool[__instance.entityId].protoId == ProtoID.I负熵熔炉 && __instance.replicating)
+            else
             {
-                RecipeExecuteData data = __instance.recipeExecuteData;
-
-                __instance.extraTime += (int)(power * __instance.extraSpeed)
-                                      + (int)(power * __instance.speedOverride * data.extraTimeSpend / data.timeSpend);
+                UpdateOutputSlots(ref component, cargoTraffic, slotdata, entitySignPool, GameMain.history.stationPilerLevel);
+                UpdateInputSlots(ref component, cargoTraffic, slotdata, entitySignPool);
             }
-
-            return b;
         }
 
         private static void UpdateOutputSlots(ref AssemblerComponent __instance, CargoTraffic traffic, SlotData[] slotdata,

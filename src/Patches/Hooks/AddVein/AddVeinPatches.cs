@@ -17,7 +17,7 @@ namespace ProjectGenesis.Patches
     {
         internal const sbyte VeinTypeCount = 21;
 
-        private static readonly Color32[] VeinColors =
+        internal static readonly Color32[] VeinColors =
         {
             new Color(0.538f, 0.538f, 0.538f), // Default
             new Color(0.288f, 0.587f, 0.858f), // Iron
@@ -175,13 +175,7 @@ namespace ProjectGenesis.Patches
         {
             var matcher = new CodeMatcher(instructions);
             matcher.MatchForward(true, new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(PlanetData), nameof(PlanetData.radius))),
-                new CodeMatch
-                {
-                    opcodes = new List<OpCode>
-                    {
-                        OpCodes.Blt, OpCodes.Blt_S,
-                    },
-                });
+                CodeMatchUtils.Blt);
 
             CodeMatcher matcher2 = matcher.Clone();
             matcher2.MatchForward(false, new CodeMatch(OpCodes.Ldc_I4_0), new CodeMatch(OpCodes.Stloc_S));

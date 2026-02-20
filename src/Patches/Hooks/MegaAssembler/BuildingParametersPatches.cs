@@ -118,36 +118,35 @@ namespace ProjectGenesis.Patches
         {
             if (__instance.type != BuildingType.Assembler) return;
 
-            if (objectId > 0)
+            if (objectId <= 0) return;
+
+            if (factory.entityPool.Length <= objectId || factory.entityPool[objectId].id != objectId) return;
+
+            int assemblerId = factory.entityPool[objectId].assemblerId;
+
+            if (assemblerId <= 0 || factory.factorySystem.assemblerPool.Length <= assemblerId) return;
+
+            AssemblerComponent assembler = factory.factorySystem.assemblerPool[assemblerId];
+
+            if (assembler.id != assemblerId || assembler.speed < MegaAssemblerSpeed) return;
+
+            if (__instance.parameters == null || __instance.parameters.Length < 2048) Array.Resize(ref __instance.parameters, 2048);
+
+            __instance.parameters[0] = assembler.forceAccMode ? 1 : 0;
+            __instance.recipeId = assembler.recipeId;
+            __instance.recipeType = assembler.recipeType;
+
+            const int num2 = 192;
+
+            SlotData[] slots = GetSlots(factory.planetId, objectId);
+
+            for (var index = 0; index < slots.Length; ++index)
             {
-                if (factory.entityPool.Length <= objectId || factory.entityPool[objectId].id != objectId) return;
-
-                int assemblerId = factory.entityPool[objectId].assemblerId;
-
-                if (assemblerId <= 0 || factory.factorySystem.assemblerPool.Length <= assemblerId) return;
-
-                AssemblerComponent assembler = factory.factorySystem.assemblerPool[assemblerId];
-
-                if (assembler.id != assemblerId || assembler.speed < MegaAssemblerSpeed) return;
-
-                if (__instance.parameters == null || __instance.parameters.Length < 2048) Array.Resize(ref __instance.parameters, 2048);
-
-                __instance.parameters[0] = assembler.forceAccMode ? 1 : 0;
-                __instance.recipeId = assembler.recipeId;
-                __instance.recipeType = assembler.recipeType;
-
-                const int num2 = 192;
-
-                SlotData[] slots = GetSlots(factory.planetId, objectId);
-
-                for (var index = 0; index < slots.Length; ++index)
-                {
-                    __instance.parameters[num2 + index * 4] = (int)slots[index].dir;
-                    __instance.parameters[num2 + index * 4 + 1] = slots[index].storageIdx;
-                }
-
-                SyncSlotsData.Sync(factory.planetId, objectId, slots);
+                __instance.parameters[num2 + index * 4] = (int)slots[index].dir;
+                __instance.parameters[num2 + index * 4 + 1] = slots[index].storageIdx;
             }
+
+            SyncSlotsData.Sync(factory.planetId, objectId, slots);
         }
 
         [HarmonyPatch(typeof(BuildingParameters), nameof(BuildingParameters.PasteToFactoryObject))]

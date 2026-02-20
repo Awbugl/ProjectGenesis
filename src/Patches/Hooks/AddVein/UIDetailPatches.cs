@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using System.Reflection.Emit;
 using HarmonyLib;
 
@@ -13,15 +12,29 @@ namespace ProjectGenesis.Patches
         {
             var matcher = new CodeMatcher(instructions);
 
+            /*
+                // [214 42 - 214 50]
+                IL_0655: ldloc.s      index2
+                IL_0657: ldc.i4.1
+                IL_0658: add
+                IL_0659: stloc.s      index2
+
+                // [214 30 - 214 40]
+                IL_065b: ldloc.s      index2
+                IL_065d: ldc.i4.6
+                IL_065e: blt          IL_05c2
+             */
+
             matcher.MatchForward(false, new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldc_I4_6), new CodeMatch(OpCodes.Blt));
 
             object index = matcher.Operand;
-            object jump = matcher.Advance(2).Operand;
-            object endlabel = matcher.Advance(1).Labels.First();
+            object jump = matcher.InstructionAt(2).operand;
 
-            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_S, index), new CodeInstruction(OpCodes.Ldc_I4, 15),
-                new CodeInstruction(OpCodes.Beq, endlabel), new CodeInstruction(OpCodes.Ldc_I4, 14),
-                new CodeInstruction(OpCodes.Stloc_S, index), new CodeInstruction(OpCodes.Br, jump));
+            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_S, index),
+                new CodeInstruction(OpCodes.Call,
+                    AccessTools.Method(typeof(AddVeinPatches), nameof(OnPlanetDataSet_ChangeVeinData_IndexPatches))),
+                new CodeInstruction(OpCodes.Stloc_S, index), new CodeInstruction(OpCodes.Ldloc_S, index),
+                new CodeInstruction(OpCodes.Ldc_I4_S, (sbyte)14), new CodeInstruction(OpCodes.Beq, jump));
 
             matcher.MatchForward(false, new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldc_I4_S, (sbyte)15),
                 new CodeMatch(OpCodes.Blt));
@@ -73,13 +86,23 @@ namespace ProjectGenesis.Patches
 
         public static int OnStarDataSet_ChangeVeinData_IndexPatches(int index)
         {
-            if (index == 7) return 15;
+            switch (index)
+            {
+                case 3: return 15;
+                case 16: return 3;
+                case 15: return 16;
+                default: return index;
+            }
+        }
 
-            if (index == 16) return 7;
-
-            if (index == 15) return 16;
-
-            return index;
+        public static int OnPlanetDataSet_ChangeVeinData_IndexPatches(int index)
+        {
+            switch (index)
+            {
+                case 2: return 14;
+                case 15: return 2;
+                default: return index;
+            }
         }
 
         [HarmonyPatch(typeof(UIPlanetDetail), nameof(UIPlanetDetail.RefreshDynamicProperties))]
