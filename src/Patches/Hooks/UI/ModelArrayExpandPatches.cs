@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Emit;
 using HarmonyLib;
@@ -8,46 +7,11 @@ using HarmonyLib;
 
 namespace ProjectGenesis.Patches
 {
-    public static class ModelLoadingPatches
+    /// <summary>
+    /// 将ModelArray长度扩展到1024
+    /// </summary>
+    public static class ModelArrayExpandPatches
     {
-        private static readonly Func<short, short> ModelIdMigrationAction = modelIndex =>
-        {
-            if (modelIndex > 500 && modelIndex < 520) modelIndex += 300;
-
-            return modelIndex;
-        };
-
-        [HarmonyPatch(typeof(PrebuildData), nameof(PrebuildData.Import))]
-        [HarmonyTranspiler]
-        public static IEnumerable<CodeInstruction> PrebuildData_Import_Transpiler(IEnumerable<CodeInstruction> instructions)
-        {
-            var matcher = new CodeMatcher(instructions);
-            matcher.MatchForward(false,
-                new CodeMatch(OpCodes.Stfld, AccessTools.Field(typeof(PrebuildData), nameof(PrebuildData.modelIndex))));
-
-            matcher.InsertAndAdvance(Transpilers.EmitDelegate(ModelIdMigrationAction));
-
-            return matcher.InstructionEnumeration();
-        }
-
-        [HarmonyPatch(typeof(EntityData), nameof(EntityData.Import))]
-        [HarmonyPostfix]
-        public static void EntityData_Import(ref EntityData __instance) =>
-            __instance.modelIndex = ModelIdMigrationAction(__instance.modelIndex);
-
-        [HarmonyPatch(typeof(BlueprintBuilding), nameof(BlueprintBuilding.Import))]
-        [HarmonyTranspiler]
-        public static IEnumerable<CodeInstruction> BlueprintBuilding_Import_Transpiler(IEnumerable<CodeInstruction> instructions)
-        {
-            var matcher = new CodeMatcher(instructions);
-            matcher.MatchForward(false,
-                new CodeMatch(OpCodes.Stfld, AccessTools.Field(typeof(BlueprintBuilding), nameof(BlueprintBuilding.modelIndex))));
-
-            matcher.InsertAndAdvance(Transpilers.EmitDelegate(ModelIdMigrationAction));
-
-            return matcher.InstructionEnumeration();
-        }
-
         [HarmonyPatch(typeof(SpaceSector), nameof(SpaceSector.InitPrefabDescArray))]
         [HarmonyPatch(typeof(PlanetFactory), nameof(PlanetFactory.InitPrefabDescArray))]
         [HarmonyPatch(typeof(ModelProtoSet), nameof(ModelProtoSet.OnAfterDeserialize))]

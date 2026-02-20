@@ -5,7 +5,10 @@ using ProjectGenesis.Utils;
 
 namespace ProjectGenesis.Patches
 {
-    internal static class FluidColorPatches
+    /// <summary>
+    /// 修复储液罐界面渲染颜色
+    /// </summary>
+    internal static class TankFluidColorPatches
     {
         [HarmonyPatch(typeof(UITankWindow), nameof(UITankWindow._OnUpdate))]
         [HarmonyPostfix]

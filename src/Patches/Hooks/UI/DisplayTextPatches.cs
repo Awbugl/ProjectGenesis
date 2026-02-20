@@ -7,6 +7,9 @@ using Utils_ERecipeType = ProjectGenesis.Utils.ERecipeType;
 
 namespace ProjectGenesis.Patches
 {
+    /// <summary>
+    /// 调整各类显示问题
+    /// </summary>
     internal static class DisplayTextPatches
     {
         [HarmonyPostfix]
@@ -48,7 +51,7 @@ namespace ProjectGenesis.Patches
                     break;
 
                 case Utils_ERecipeType.高热冶炼:
-                    __result = "位面熔炉".TranslateFromJson();
+                    __result = "位面熔炉".Translate();
 
                     break;
 

@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace ProjectGenesis.Patches
 {
-    public static class ResourcesPatches
+    public static class TextureResourcesPatches
     {
         [HarmonyPatch(typeof(Resources), nameof(Resources.Load), typeof(string), typeof(Type))]
         [HarmonyBefore(CommonAPI.CommonAPIPlugin.GUID)]

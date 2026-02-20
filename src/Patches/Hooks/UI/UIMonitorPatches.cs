@@ -6,6 +6,9 @@ using HarmonyLib;
 
 namespace ProjectGenesis.Patches
 {
+    /// <summary>
+    /// 流速监测器适配传送带速度
+    /// </summary>
     public static class UIMonitorPatches
     {
         [HarmonyPatch(typeof(UIMonitorWindow), nameof(UIMonitorWindow._OnInit))]

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Reflection.Emit;
 using HarmonyLib;
 
@@ -33,6 +34,10 @@ namespace ProjectGenesis.Patches
             // DysonShell count /= 8
             matcher.SetInstructionAndAdvance(new CodeInstruction(OpCodes.Ldc_I4_4))
                .SetInstructionAndAdvance(new CodeInstruction(OpCodes.Div));
+
+            // force >= 1
+            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldc_I4_1),
+                new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(Math), nameof(Math.Max), new[] { typeof(int), typeof(int), })));
 
             return matcher.InstructionEnumeration();
         }

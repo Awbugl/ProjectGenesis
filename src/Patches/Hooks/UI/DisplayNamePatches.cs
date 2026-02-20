@@ -8,6 +8,8 @@ using ProjectGenesis.Utils;
 namespace ProjectGenesis.Patches
 {
     /// <summary>
+    /// 在游戏右上角显示MOD版本
+    /// 
     ///     special thanks for
     ///     https://github.com/hubastard/nebula/tree/master/NebulaPatcher/Patches/Transpilers/UIVersionText_Transpiler.cs
     /// </summary>

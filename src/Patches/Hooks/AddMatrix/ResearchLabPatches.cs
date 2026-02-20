@@ -174,7 +174,6 @@ namespace ProjectGenesis.Patches
                 }
              */
 
-
             /*
                 int matrixId = LabComponent.matrixIds[0];
 
@@ -209,7 +208,6 @@ namespace ProjectGenesis.Patches
 
             return matcher.InstructionEnumeration();
         }
-
 
         [HarmonyPatch(typeof(FactorySystem), nameof(FactorySystem.GameTickLabResearchMode))]
         [HarmonyTranspiler]

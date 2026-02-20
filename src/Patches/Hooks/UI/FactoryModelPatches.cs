@@ -8,6 +8,9 @@ using UnityEngine;
 
 namespace ProjectGenesis.Patches
 {
+    /// <summary>
+    /// 调整大气采集器渲染颜色
+    /// </summary>
     public static class FactoryModelPatches
     {
         private static Material atmosphericCollectStationMaterial;

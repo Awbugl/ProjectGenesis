@@ -7,7 +7,7 @@ using HarmonyLib;
 
 namespace ProjectGenesis.Patches
 {
-    public static class AssemblerComponent_InternalUpdate
+    public static class AssemblerComponent_InternalUpdate_PrePatch
     {
         [HarmonyPatch(typeof(FactorySystem), nameof(FactorySystem.GameTick))]
         [HarmonyPatch(typeof(GameLogic), nameof(GameLogic._assembler_parallel))]
@@ -69,8 +69,8 @@ namespace ProjectGenesis.Patches
 
                 matcher.InsertAndAdvance(new CodeInstruction(local1), new CodeInstruction(power1),
                     new CodeInstruction(OpCodes.Call,
-                        AccessTools.Method(typeof(AssemblerComponent_InternalUpdate),
-                            nameof(GameTick_AssemblerComponent_InternalUpdate_PrePatch))));
+                        AccessTools.Method(typeof(AssemblerComponent_InternalUpdate_PrePatch),
+                            nameof(AssemblerComponent_InternalUpdate_PrePatch_Method))));
 
                 matcher.Advance(5);
             }
@@ -78,7 +78,8 @@ namespace ProjectGenesis.Patches
             return matcher.InstructionEnumeration();
         }
 
-        public static void GameTick_AssemblerComponent_InternalUpdate_PrePatch(PlanetFactory factory, ref AssemblerComponent component,
+        // run before AssemblerComponent_InternalUpdate per tick
+        public static void AssemblerComponent_InternalUpdate_PrePatch_Method(PlanetFactory factory, ref AssemblerComponent component,
             float power)
         {
             MegaAssemblerPatches.GameTick_AssemblerComponent_InternalUpdate_Patch(factory, ref component, power);

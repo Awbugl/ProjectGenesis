@@ -8,6 +8,9 @@ using UnityEngine;
 
 namespace ProjectGenesis.Patches
 {
+    /// <summary>
+    /// 同位素发电机图标及发电类型
+    /// </summary>
     public static class UIPowerGeneratorWindowPatches
     {
         [HarmonyPatch(typeof(UIPowerGeneratorWindow), nameof(UIPowerGeneratorWindow._OnUpdate))]

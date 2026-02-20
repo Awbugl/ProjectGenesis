@@ -7,6 +7,9 @@ using HarmonyLib;
 
 namespace ProjectGenesis.Patches
 {
+    /// <summary>
+    /// 修复由于传送带速度调整导致的渲染问题
+    /// </summary>
     public static class BeltFixPatches
     {
         private static readonly FieldInfo BeltComponent_Speed_Field = AccessTools.Field(typeof(BeltComponent), nameof(BeltComponent.speed));
