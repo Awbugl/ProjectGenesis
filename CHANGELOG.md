@@ -1,3 +1,19 @@
+- v3.2.2
+  + 修复了量子储物箱直连发电设施时报错的问题
+  + 调整了氦三的堆叠数量
+  + 调整了部分文案
+  + 调整了部分图标
+  + 调整了部分指引
+
+  + Fixed a bug related to Quantum Storage
+  + Adjusted the stack count of Helium-3
+  + Adjusted some text
+  + Adjusted some icons
+  + Adjusted some goals
+
+<details>
+  <summary>点击展开日志 | Click to view all </summary>
+
 - v3.2.1
   + 降低了`电浆激发器`的制造成本
   + 修复了快速开局模式下初始状态不正常的问题
@@ -9,8 +25,6 @@
   + Fixed incorrect statistics for collectors
   + Fixed inability to select some recipes in the icon selection interface
 
-<details>
-  <summary>点击展开日志 | Click to view all </summary>
 
 - v3.2.0 维护协议 | Maintenance Protocols 【不兼容3.1.x旧版本存档、测试版存档】
   + 适配版本v0.10.34.28455
