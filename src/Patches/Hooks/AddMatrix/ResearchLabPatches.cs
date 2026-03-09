@@ -216,18 +216,28 @@ namespace ProjectGenesis.Patches
         {
             var matcher = new CodeMatcher(instructions);
 
+            /*
+                IL_02f0: ldloc.s      local_V_30
+                IL_02f2: ldloc.s      power
+                IL_02f4: ldloc.s      techSpeed
+                IL_02f6: ldloc.s      consumeRegister
+                IL_02f8: ldloca.s     ts
+                IL_02fa: ldloca.s     techHashedThisFrame
+                IL_02fc: ldloca.s     matrixPointUploaded
+                IL_02fe: ldloca.s     hashRegister
+                IL_0300: call         instance unsigned int32 LabComponent::InternalUpdateResearch(float32, float32, int32[], valuetype TechState&, int32&, int64&, int64&)
+                IL_0305: stloc.s      _state
+             */
+            
             matcher.MatchForward(false,
                 new CodeMatch(new CodeInstruction(OpCodes.Call,
                     AccessTools.Method(typeof(LabComponent), nameof(LabComponent.InternalUpdateResearch)))));
 
-            object techSpeed = matcher.Advance(-6).Operand;
-
-            object local = matcher.Advance(-2).Operand;
-
-            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0), new CodeInstruction(OpCodes.Ldloc_S, local),
-                new CodeInstruction(OpCodes.Ldloc_S, techSpeed),
-                new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(ResearchLabPatches), nameof(SetResearchSpeed))),
-                new CodeInstruction(OpCodes.Stloc_S, techSpeed));
+            object local = matcher.Advance(-8).Operand;
+            
+            // change techSpeed
+            matcher.Advance(3).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0), new CodeInstruction(OpCodes.Ldloc_S, local),
+                new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(ResearchLabPatches), nameof(SetResearchSpeed))));
 
             return matcher.InstructionEnumeration();
         }
@@ -240,7 +250,7 @@ namespace ProjectGenesis.Patches
             return techSpeed * labResearchSpeed;
         }
 
-        public static float SetResearchSpeed(FactorySystem system, ref LabComponent component, float techSpeed)
+        public static float SetResearchSpeed(float techSpeed, FactorySystem system, ref LabComponent component)
         {
             short modelIndex = system.factory.entityPool[component.entityId].modelIndex;
             float labResearchSpeed = PlanetFactory.PrefabDescByModelIndex[modelIndex].labResearchSpeed;
