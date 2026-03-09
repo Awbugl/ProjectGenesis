@@ -1,3 +1,18 @@
+- v3.2.3
+  + 修复了储液罐输出异常的问题
+  + 调整了护盾填充度的显示方案
+  + 调整了抽水站的基础速度
+  + 溢出机制细化，部分配方溢出判断调整为仅对某个产物进行溢出判断
+
+  + Fixed an issue with abnormal fluid tank output
+  + Adjusted the shield fill level display scheme
+  + Modified the base speed of the water pumping station
+  + Refined the overflow mechanism; overflow checks for certain recipes now apply only to specific products
+
+<details>
+  <summary>点击展开日志 | Click to view all </summary>
+
+
 - v3.2.2
   + 修复了量子储物箱直连发电设施时报错的问题
   + 调整了氦三的堆叠数量
@@ -11,8 +26,6 @@
   + Adjusted some icons
   + Adjusted some goals
 
-<details>
-  <summary>点击展开日志 | Click to view all </summary>
 
 - v3.2.1
   + 降低了`电浆激发器`的制造成本
