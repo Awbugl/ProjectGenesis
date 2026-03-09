@@ -44,11 +44,16 @@ namespace ProjectGenesis
         private static void AddEnumField(this TypeDefinition type, string name, object constant, FieldAttributes fieldAttributes) =>
             type.Fields.Add(new FieldDefinition(name, fieldAttributes, type) { Constant = constant, });
 
-        private static void AddTypeField(this AssemblyDefinition assembly, string typeName, string oriFieldName, string newFieldName)
+        private static void AddTypeField(this AssemblyDefinition assembly, string typeName, string oriFieldName, string newFieldName,
+            bool notSerialized = false)
         {
             TypeDefinition type = assembly.GetTypeByName(typeName);
             FieldDefinition oriField = type.GetFieldByName(oriFieldName);
-            type.Fields.Add(new FieldDefinition(newFieldName, oriField.Attributes, oriField.FieldType));
+            var fieldDefinition = new FieldDefinition(newFieldName, oriField.Attributes, oriField.FieldType);
+
+            if (notSerialized) fieldDefinition.Attributes |= FieldAttributes.NotSerialized;
+
+            type.Fields.Add(fieldDefinition);
         }
 
         public static void Patch(AssemblyDefinition assembly)
@@ -73,6 +78,9 @@ namespace ProjectGenesis
             assembly.AddTypeField("PlanetData", "birthResourcePoint0", "birthResourcePoint4");
 
             assembly.AddTypeField("GameDesc", "isSandboxMode", "isFastStartMode");
+
+            assembly.AddTypeField("RecipeProto", "TimeSpend", "PowerFactor", true);
+            assembly.AddTypeField("RecipeProto", "TimeSpend", "Overflow", true);
         }
     }
 }

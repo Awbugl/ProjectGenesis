@@ -245,6 +245,21 @@
     "ENUS": "The mecha does not have enough Negentropy Singularity to Quantum Navigation"
   },
   {
+    "Name": "配方额外耗电提示",
+    "ZHCN": "配方额外耗电：",
+    "ENUS": "Additional power consumption: "
+  },
+  {
+    "Name": "此配方允许所有产物溢出运行",
+    "ZHCN": "在所有产物均堆积前不会停止工作。",
+    "ENUS": "Will not stop working until all products are accumulated."
+  },
+  {
+    "Name": "此配方允许x位产物溢出运行",
+    "ZHCN": "此配方的第{0}个产物不会堆积。",
+    "ENUS": "This recipe allows product(s) {0} to overflow."
+  },
+  {
     "Name": "化学能",
     "ZHCN": "化学能",
     "ENUS": "Chemical Energy"

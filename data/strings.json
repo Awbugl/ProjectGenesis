@@ -1031,8 +1031,8 @@
   },
   {
     "Name": "R水电解",
-    "ZHCN": "通过直流电将水电解为氢气与氧气，是获取清洁氢能源的基础工艺。\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作。</color>",
-    "ENUS": "Electrolysis of water into hydrogen and oxygen using direct current—the fundamental process for obtaining clean hydrogen energy.\n<color=\"#FD965ECC\">Will not stop working until all products are accumulated.</color>"
+    "ZHCN": "通过直流电将水电解为氢气与氧气，是获取清洁氢能源的基础工艺。",
+    "ENUS": "Electrolysis of water into hydrogen and oxygen using direct current—the fundamental process for obtaining clean hydrogen energy."
   },
   {
     "Name": "盐水电解",
@@ -1041,8 +1041,8 @@
   },
   {
     "Name": "R盐水电解",
-    "ZHCN": "采用离子交换膜电解技术处理氯化钠溶液，阳极产生的氯气与阴极产生的氢气经催化反应后溶于水形成盐酸，同时阴极区富集氢氧化钠溶液。\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作。</color>",
-    "ENUS": "Utilizing ion exchange membrane electrolysis to process sodium chloride solution—chlorine gas from the anode and hydrogen gas from the cathode undergo catalytic reaction and dissolve in water to form hydrochloric acid, while sodium hydroxide solution is enriched at the cathode.\n<color=\"#FD965ECC\">Will not stop working until all products are accumulated.</color>"
+    "ZHCN": "采用离子交换膜电解技术处理氯化钠溶液，阳极产生的氯气与阴极产生的氢气经催化反应后溶于水形成盐酸，同时阴极区富集氢氧化钠溶液。",
+    "ENUS": "Utilizing ion exchange membrane electrolysis to process sodium chloride solution—chlorine gas from the anode and hydrogen gas from the cathode undergo catalytic reaction and dissolve in water to form hydrochloric acid, while sodium hydroxide solution is enriched at the cathode."
   },
   {
     "Name": "钠盐转化",
@@ -1061,8 +1061,8 @@
   },
   {
     "Name": "R海水淡化",
-    "ZHCN": "采用半透膜分离技术，在压力驱动下使水分子选择性透过而截留盐分，实现海水向淡水的转化。\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作。</color>",
-    "ENUS": "Employing semi-permeable membrane separation technology, driving water molecules to selectively permeate while retaining salts under pressure—achieving the conversion of seawater to freshwater.\n<color=\"#FD965ECC\">Will not stop working until all products are accumulated.</color>"
+    "ZHCN": "采用半透膜分离技术，在压力驱动下使水分子选择性透过而截留盐分，实现海水向淡水的转化。",
+    "ENUS": "Employing semi-permeable membrane separation technology, driving water molecules to selectively permeate while retaining salts under pressure—achieving the conversion of seawater to freshwater."
   },
   {
     "Name": "甲烷偶联",
@@ -1071,8 +1071,8 @@
   },
   {
     "Name": "R甲烷偶联",
-    "ZHCN": "在催化剂作用下使甲烷分子发生氧化偶联反应，碳-氢键断裂并重组为丙烯分子，是实现低碳烷烃高值化利用的关键路径。\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作。</color>",
-    "ENUS": "Catalytic oxidative coupling of methane molecules, breaking and reforming carbon-hydrogen bonds into propylene molecules—a key pathway for high-value utilization of low-carbon alkanes.\n<color=\"#FD965ECC\">Will not stop working until all products are accumulated.</color>"
+    "ZHCN": "在催化剂作用下使甲烷分子发生氧化偶联反应，碳-氢键断裂并重组为丙烯分子，是实现低碳烷烃高值化利用的关键路径。",
+    "ENUS": "Catalytic oxidative coupling of methane molecules, breaking and reforming carbon-hydrogen bonds into propylene molecules—a key pathway for high-value utilization of low-carbon alkanes."
   },
   {
     "Name": "合成氨",
@@ -1181,8 +1181,8 @@
   },
   {
     "Name": "R等离子精炼",
-    "ZHCN": "利用高温等离子体流裂解原油大分子，轻组分气化后经冷凝分离得氢气，重组分富集为焦油。\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作。</color>",
-    "ENUS": "Utilizing high-temperature plasma flow to crack crude oil macromolecules—light components gasified and separated by condensation to obtain hydrogen, heavy components enriched as tar.\n<color=\"#FD965ECC\">Will not stop working until all products are accumulated.</color>"
+    "ZHCN": "利用高温等离子体流裂解原油大分子，轻组分气化后经冷凝分离得氢气，重组分富集为焦油。",
+    "ENUS": "Utilizing high-temperature plasma flow to crack crude oil macromolecules—light components gasified and separated by condensation to obtain hydrogen, heavy components enriched as tar."
   },
   {
     "Name": "催化重整",
@@ -1191,8 +1191,8 @@
   },
   {
     "Name": "R催化重整",
-    "ZHCN": "在铂铼双金属催化剂作用下，丙烯经历脱氢环化与芳构化反应转化为苯，虽效率受限但为化石能源清洁利用的经典工艺。\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作。</color>",
-    "ENUS": "Under platinum-rhenium bimetallic catalysis, propylene undergoes dehydrogenation cyclization and aromatization to convert to benzene—though efficiency-limited, a classic process for clean utilization of fossil energy.\n<color=\"#FD965ECC\">Will not stop working until all products are accumulated.</color>"
+    "ZHCN": "在铂铼双金属催化剂作用下，丙烯经历脱氢环化与芳构化反应转化为苯，虽效率受限但为化石能源清洁利用的经典工艺。",
+    "ENUS": "Under platinum-rhenium bimetallic catalysis, propylene undergoes dehydrogenation cyclization and aromatization to convert to benzene—though efficiency-limited, a classic process for clean utilization of fossil energy."
   },
   {
     "Name": "氨氧化",
@@ -1206,8 +1206,8 @@
   },
   {
     "Name": "R石墨烯",
-    "ZHCN": "在铜箔基底上进行化学气相沉积，甲烷高温裂解出的碳原子自组装为单层石墨烯，同时副产氢气。\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作。</color>",
-    "ENUS": "Chemical vapor deposition on copper foil substrate—carbon atoms from high-temperature methane cracking self-assemble into monolayer graphene, with hydrogen as byproduct.\n<color=\"#FD965ECC\">Will not stop working until all products are accumulated.</color>"
+    "ZHCN": "在铜箔基底上进行化学气相沉积，甲烷高温裂解出的碳原子自组装为单层石墨烯，同时副产氢气。",
+    "ENUS": "Chemical vapor deposition on copper foil substrate—carbon atoms from high-temperature methane cracking self-assemble into monolayer graphene, with hydrogen as byproduct."
   },
   {
     "Name": "R石墨烯（高效）",
@@ -1231,8 +1231,8 @@
   },
   {
     "Name": "R放射矿物精炼",
-    "ZHCN": "采用碱法浸出工艺，以氢氧化钠溶液溶解放射性矿物基质，使铀、钍元素以可溶性络合物形式进入溶液后沉淀富集。\n<color=\"#FD965ECC\">在所有产物均堆积前不会停止工作。</color>",
-    "ENUS": "Employing alkaline leaching process, using sodium hydroxide solution to dissolve radioactive mineral matrix—uranium and thorium enter solution as soluble complexes and precipitate for enrichment.\n<color=\"#FD965ECC\">Will not stop working until all products are accumulated.</color>"
+    "ZHCN": "采用碱法浸出工艺，以氢氧化钠溶液溶解放射性矿物基质，使铀、钍元素以可溶性络合物形式进入溶液后沉淀富集。",
+    "ENUS": "Employing alkaline leaching process, using sodium hydroxide solution to dissolve radioactive mineral matrix—uranium and thorium enter solution as soluble complexes and precipitate for enrichment."
   },
   {
     "Name": "物质回收",

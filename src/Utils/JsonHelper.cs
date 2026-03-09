@@ -186,6 +186,8 @@ namespace ProjectGenesis.Utils
             public int Type { get; set; }
             public int GridIndex { get; set; }
             public int Time { get; set; }
+            public EOverflowFlag Overflow { get; set; }
+            public int PowerFactor { get; set; }
             public int[] Input { get; set; }
             public int[] InCounts { get; set; }
             public int[] Output { get; set; }
@@ -203,6 +205,8 @@ namespace ProjectGenesis.Utils
                     Handcraft = i.Handcraft,
                     Type = (int)i.Type,
                     Time = i.TimeSpend,
+                    Overflow = (EOverflowFlag)i.Overflow,
+                    PowerFactor = i.PowerFactor,
                     Input = i.Items ?? Array.Empty<int>(),
                     InCounts = i.ItemCounts ?? Array.Empty<int>(),
                     Output = i.Results ?? Array.Empty<int>(),
@@ -224,6 +228,8 @@ namespace ProjectGenesis.Utils
                 proto.Handcraft = Handcraft;
                 proto.Type = (global::ERecipeType)Type;
                 proto.TimeSpend = Time;
+                proto.Overflow = (int)Overflow;
+                proto.PowerFactor = PowerFactor;
                 proto.Items = Input;
                 proto.ItemCounts = InCounts;
                 proto.Results = Output ?? Array.Empty<int>();

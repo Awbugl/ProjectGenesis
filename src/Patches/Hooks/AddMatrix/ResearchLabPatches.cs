@@ -228,13 +228,13 @@ namespace ProjectGenesis.Patches
                 IL_0300: call         instance unsigned int32 LabComponent::InternalUpdateResearch(float32, float32, int32[], valuetype TechState&, int32&, int64&, int64&)
                 IL_0305: stloc.s      _state
              */
-            
+
             matcher.MatchForward(false,
                 new CodeMatch(new CodeInstruction(OpCodes.Call,
                     AccessTools.Method(typeof(LabComponent), nameof(LabComponent.InternalUpdateResearch)))));
 
             object local = matcher.Advance(-8).Operand;
-            
+
             // change techSpeed
             matcher.Advance(3).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0), new CodeInstruction(OpCodes.Ldloc_S, local),
                 new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(ResearchLabPatches), nameof(SetResearchSpeed))));

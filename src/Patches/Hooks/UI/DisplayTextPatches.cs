@@ -1,4 +1,6 @@
-﻿using System.Text;
+﻿using System.Collections.Generic;
+using System.Reflection.Emit;
+using System.Text;
 using HarmonyLib;
 using ProjectGenesis.Utils;
 using Utils_ERecipeType = ProjectGenesis.Utils.ERecipeType;
@@ -200,16 +202,18 @@ namespace ProjectGenesis.Patches
                     if (__instance.ModelIndex == ProtoID.M同位素温差发电机) __result = "裂变能".TranslateFromJson();
                     return;
                 }
+
                 case 18:
                 {
                     if (__instance.prefabDesc.isCollectStation && __instance.ID == ProtoID.I大气采集器) __result = "行星大气".TranslateFromJson();
                     return;
                 }
+
                 case 19:
                 {
                     float miningScale = GameMain.history.miningSpeedScale;
                     var desc = __instance.prefabDesc;
-    
+
                     switch (desc.minerType)
                     {
                         case EMinerType.Vein:
@@ -233,7 +237,7 @@ namespace ProjectGenesis.Patches
                             return;
                         }
 
-                        default: 
+                        default:
                             __result = "-";
                             return;
                     }
@@ -246,6 +250,7 @@ namespace ProjectGenesis.Patches
                     __result = FormatWithBonus(baseSpeed, bonus, "0.0###", "x");
                     return;
                 }
+
                 case 50:
                 {
                     float baseDamage = (float)(100.0 * __instance.prefabDesc.turretDamageScale * 0.6f);
@@ -253,6 +258,7 @@ namespace ProjectGenesis.Patches
                     __result = FormatWithBonus(baseDamage, bonus, "0.0#", " hp");
                     return;
                 }
+
                 case 58:
                 {
                     if (__instance.ID == ProtoID.I导弹防御塔) __result = "1 AU";
@@ -265,11 +271,11 @@ namespace ProjectGenesis.Patches
         {
             string baseStr = baseValue.ToString(format);
             if (bonus == 0.0) return baseStr + suffix;
-    
+
             string bonusStr = bonus.ToString(format);
             return $"{baseStr}<color=#61D8FFB8> + {bonusStr}</color>{suffix}";
         }
-        
+
         [HarmonyPostfix]
         [HarmonyPatch(typeof(TechProto), nameof(TechProto.UnlockFunctionText))]
         public static void TechProto_UnlockFunctionText(TechProto __instance, ref string __result, StringBuilder sb)
@@ -301,5 +307,64 @@ namespace ProjectGenesis.Patches
         [HarmonyPostfix]
         [HarmonyPatch(typeof(ItemProto), nameof(ItemProto.FindRecipes))]
         public static void ItemProto_FindRecipes(ItemProto __instance) => __instance.isRaw = __instance.recipes.Count == 0;
+
+
+        [HarmonyPatch(typeof(UIItemTip), nameof(UIItemTip.SetTip))]
+        [HarmonyTranspiler]
+        public static IEnumerable<CodeInstruction> UIItemTip_SetTip_Transpiler(IEnumerable<CodeInstruction> instructions)
+        {
+            CodeMatcher matcher = new CodeMatcher(instructions);
+
+            matcher.MatchForward(false,
+                new CodeMatch(OpCodes.Callvirt, AccessTools.PropertyGetter(typeof(RecipeProto), nameof(RecipeProto.description))));
+
+            matcher.SetAndAdvance(OpCodes.Call, AccessTools.Method(typeof(DisplayTextPatches), nameof(RecipeProto_description)));
+
+            return matcher.InstructionEnumeration();
+        }
+
+
+        public static string RecipeProto_description(RecipeProto proto)
+        {
+            var result = proto.description;
+
+            var overflow = (EOverflowFlag)proto.Overflow;
+
+            const string colorStart = "<color=\"#FD965ECC\">";
+            const string colorEnd = "</color>";
+
+            string finalText = "";
+
+            if ((overflow & EOverflowFlag.All) == EOverflowFlag.All) { finalText = "此配方允许所有产物溢出运行".TranslateFromJson(); }
+            else
+            {
+                List<int> activeIndices = new List<int>();
+
+                var productFlags = new[]
+                {
+                    EOverflowFlag.FirstProduct, EOverflowFlag.SecondProduct, EOverflowFlag.ThirdProduct, EOverflowFlag.FourthProduct,
+                    EOverflowFlag.FifthProduct,
+                };
+
+                for (int i = 0; i < productFlags.Length; i++)
+                    if ((overflow & productFlags[i]) == productFlags[i])
+                        activeIndices.Add(i + 1);
+
+                if (activeIndices.Count > 0)
+                {
+                    string separator = Localization.isZHCN ? "、" : ", ";
+                    string numbersStr = string.Join(separator, activeIndices);
+
+                    string templateText = "此配方允许x位产物溢出运行".TranslateFromJson();
+                    finalText = string.Format(templateText, numbersStr);
+                }
+            }
+
+            if (!string.IsNullOrEmpty(finalText)) { result += $"\n{colorStart}{finalText}{colorEnd}"; }
+
+            if (proto.PowerFactor > 1) { result += $"\n{colorStart}{"配方额外耗电提示".TranslateFromJson()} {proto.PowerFactor * 100}%{colorEnd}"; }
+
+            return result;
+        }
     }
 }
