@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Reflection.Emit;
 using HarmonyLib;
+using ProjectGenesis.Utils;
 
 namespace ProjectGenesis.Patches
 {
@@ -74,36 +75,40 @@ namespace ProjectGenesis.Patches
                  */
 
                 matcher.MatchForward(false, new CodeMatch(OpCodes.Ldarg_0),
-                    new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(TankComponent), nameof(TankComponent.fluidCount))),
-                    new CodeMatch(OpCodes.Div));
+                    new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(TankComponent), nameof(TankComponent.fluidInc))),
+                    CodeMatchUtils.BrFalse);
 
                 if (matcher.IsInvalid) break;
 
+                // calc currentOutputStack
                 matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0),
-                    new CodeInstruction(OpCodes.Call,
-                        AccessTools.Method(typeof(TankComponentPatches), nameof(TankComponent_GameTick_Insert_Method))),
+                    new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(TankComponentPatches), nameof(CalcCurrentOutputStack))),
                     new CodeInstruction(OpCodes.Stloc_S, localIndex));
+
+                matcher.MatchForward(false, new CodeMatch(OpCodes.Ldarg_0),
+                    new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(TankComponent), nameof(TankComponent.fluidCount))),
+                    new CodeMatch(OpCodes.Div));
 
                 // tankComponent.fluidInc * currentOutputStack;
                 matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_S, localIndex), new CodeInstruction(OpCodes.Mul));
 
-                // stack = (byte) currentOutputStack;
                 matcher.MatchForward(true, new CodeMatch(OpCodes.Ldarg_0),
                     new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(TankComponent), nameof(TankComponent.fluidId))),
                     new CodeMatch(OpCodes.Ldc_I4_1));
 
-                matcher.SetAndAdvance(OpCodes.Ldloc_S, localIndex).InsertAndAdvance(new CodeInstruction(OpCodes.Conv_U1));
+                // stack = currentOutputStack;
+                matcher.SetAndAdvance(OpCodes.Ldloc_S, localIndex);
 
-                // this.fluidCount -= currentOutputStack;
                 matcher.MatchForward(false, new CodeMatch(OpCodes.Ldc_I4_1), new CodeMatch(OpCodes.Sub));
 
+                // this.fluidCount -= currentOutputStack;
                 matcher.SetAndAdvance(OpCodes.Ldloc_S, localIndex);
             }
 
             return matcher.InstructionEnumeration();
         }
 
-        public static int TankComponent_GameTick_Insert_Method(ref TankComponent component)
+        public static int CalcCurrentOutputStack(ref TankComponent component)
         {
             int componentFluidCount = component.fluidCount;
             int historyStationPilerLevel = GameMain.history.stationPilerLevel;
