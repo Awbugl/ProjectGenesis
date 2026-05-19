@@ -5910,7 +5910,7 @@
     "Description": "I蓄电器（满）",
     "IconPath": "Icons/ItemRecipe/accumulator-full",
     "IconTag": "mxdq",
-    "GridIndex": 2114,
+    "GridIndex": 2115,
     "StackSize": 50,
     "Type": 5,
     "PreTechOverride": 1511,
