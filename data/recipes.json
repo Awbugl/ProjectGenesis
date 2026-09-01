@@ -6326,5 +6326,36 @@
     "Handcraft": false,
     "NonProductive": false,
     "Overflow": 2
+  },
+  {
+    "ID": 903,
+    "Name": "熔盐堆",
+    "Description": "熔盐堆",
+    "IconPath": "",
+    "IconTag": "",
+    "Type": 9,
+    "GridIndex": 4201,
+    "Time": 480,
+    "Input": [
+      6502,
+      1107,
+      1205,
+      1304
+    ],
+    "InCounts": [
+      4,
+      16,
+      10,
+      4
+    ],
+    "Output": [
+      6268
+    ],
+    "OutCounts": [
+      1
+    ],
+    "Explicit": false,
+    "Handcraft": false,
+    "NonProductive": false
   }
 ]

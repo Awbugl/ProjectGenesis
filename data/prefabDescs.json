@@ -477,5 +477,12 @@
   {
     "ModelID": 818,
     "AmmoBlastRadius1": 17
+  },
+  {
+    "ModelID": 819,
+    "isPowerGen": true,
+    "fuelMask": 32,
+    "genEnergyPerTick": 1000000,
+    "useFuelPerTick": 1000000
   }
 ]

@@ -2528,5 +2528,10 @@
     "Name": "甲烷裂解",
     "ZHCN": "甲烷裂解",
     "ENUS": "Methane Pyrolysis"
+  },
+  {
+    "Name": "熔盐堆",
+    "ZHCN": "熔盐堆",
+    "ENUS": "Molten Salt Reactor"
   }
 ]

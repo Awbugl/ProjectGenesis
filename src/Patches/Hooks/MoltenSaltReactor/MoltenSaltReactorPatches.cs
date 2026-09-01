@@ -1,0 +1,265 @@
+using System.Collections.Generic;
+using System.Reflection.Emit;
+using HarmonyLib;
+using ProjectGenesis.Utils;
+
+// ReSharper disable InconsistentNaming
+
+namespace ProjectGenesis.Patches
+{
+    /// <summary>
+    /// 熔盐堆：燃烧钍燃料、产出铀燃料的发电建筑。
+    /// 思路：发电组件每消耗 1 个钍燃料，就往 productCount 里累计 1 个铀燃料；
+    /// 分拣器/无人机通过燃料取出路径（PickFuelFrom / PickFrom）把铀燃料带走。
+    /// 本实现是旧版"燃料棒回收（消耗燃料棒产出空燃料棒）"patch 针对当前游戏版本的适配，
+    /// 旧实现因游戏更新（UIPowerGeneratorWindow / UIInserterBuildTip 改动）被移除。
+    /// </summary>
+    public static class MoltenSaltReactorPatches
+    {
+        /// <summary>产物缓存上限（与原版射线接收站光子缓存上限一致）</summary>
+        private const int MaxProductCount = 20;
+
+        /// <summary>
+        /// 熔盐堆燃料掩码（钍燃料专用 FuelType=32）。
+        /// 注意：ItemProto.fuelNeeds 数组长度为 64，且按位掩码匹配（i & FuelType），
+        /// 可用的单个位只有 1/2/4/8/16/32，64 会越界，故用 32。
+        /// </summary>
+        internal const short MoltenSaltFuelMask = 32;
+
+        /// <summary>
+        /// 燃料消耗钩子：每消耗 1 个钍燃料，累计 1 个铀燃料产物。
+        /// 插入点位于 GenEnergyByFuel 中 consumeRegister[fuelId]++（IL_0154~IL_0164）之后：
+        /// 此时"本次消耗了一个燃料"的记账刚好完成，且 component.fuelId 仍指向被消耗的燃料（尚未清零）。
+        /// </summary>
+        [HarmonyPatch(typeof(PowerGeneratorComponent), nameof(PowerGeneratorComponent.GenEnergyByFuel))]
+        [HarmonyTranspiler]
+        public static IEnumerable<CodeInstruction> GenEnergyByFuel_Transpiler(IEnumerable<CodeInstruction> instructions)
+        {
+            /*
+                目标 IL（Assembly-CSharp.dll / PowerGeneratorComponent.GenEnergyByFuel）：
+
+                    IL_0145: ldarg.0
+                    IL_0146: ldarg.0
+                    IL_0147: ldfld       int16 PowerGeneratorComponent::fuelCount
+                    IL_014c: ldc.i4.1
+                    IL_014d: sub
+                    IL_014e: conv.i2
+                    IL_014f: stfld       int16 PowerGeneratorComponent::fuelCount   // fuelCount--
+
+                    IL_0154: ldarg.2
+                    IL_0155: ldarg.0
+                    IL_0156: ldfld       int16 PowerGeneratorComponent::fuelId
+                    IL_015b: ldelema     [netstandard]System.Int32
+                    IL_0160: dup
+                    IL_0161: ldind.i4
+                    IL_0162: ldc.i4.1
+                    IL_0163: add
+                    IL_0164: stind.i4                                             // consumeRegister[fuelId]++
+             */
+            CodeMatcher matcher = new CodeMatcher(instructions);
+
+            // 匹配 consumeRegister[fuelId]++ 的完整序列，防止误伤其它指令
+            matcher.MatchForward(false,
+                new CodeMatch(OpCodes.Stfld, AccessTools.Field(typeof(PowerGeneratorComponent), nameof(PowerGeneratorComponent.fuelCount))),
+                new CodeMatch(OpCodes.Ldarg_2),
+                new CodeMatch(OpCodes.Ldarg_0),
+                new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(PowerGeneratorComponent), nameof(PowerGeneratorComponent.fuelId))),
+                new CodeMatch(OpCodes.Ldelema, typeof(int)),
+                new CodeMatch(OpCodes.Dup),
+                new CodeMatch(OpCodes.Ldind_I4),
+                new CodeMatch(OpCodes.Ldc_I4_1),
+                new CodeMatch(OpCodes.Add),
+                new CodeMatch(OpCodes.Stind_I4));
+
+            // 在 stind.i4 之后插入对 MoltenSaltGenEnergyByFuel 的调用：
+            //   ldarg.0                                  // this（ref PowerGeneratorComponent）
+            //   ldarg.2                                  // int[] consumeRegister
+            //   call      MoltenSaltGenEnergyByFuel(ref, int[])
+            matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0),
+                new CodeInstruction(OpCodes.Ldarg_2),
+                new CodeInstruction(OpCodes.Call,
+                    AccessTools.Method(typeof(MoltenSaltReactorPatches), nameof(GenEnergyByFuel_Patch))));
+
+            return matcher.InstructionEnumeration();
+        }
+
+        /// <summary>每消耗 1 个钍燃料累计 1 个铀燃料，并计入生产统计</summary>
+        public static void GenEnergyByFuel_Patch(ref PowerGeneratorComponent component, int[] consumeRegister)
+        {
+            // 只处理熔盐堆的专用燃料
+            if (component.fuelId != ProtoID.I钍燃料) return;
+
+            component.productCount += 1;
+
+            // 与缓存上限对齐
+            if (component.productCount > MaxProductCount) component.productCount = MaxProductCount;
+
+            // 生产统计：找到当前工厂对应的统计项，计入铀燃料产量
+            // ReSharper disable once LoopCanBePartlyConvertedToQuery
+            foreach (FactoryProductionStat stat in GameMain.data.statistics.production.factoryStatPool)
+            {
+                if (stat.consumeRegister != consumeRegister) continue;
+
+                stat.productRegister[ProtoID.I铀燃料] += 1;
+
+                return;
+            }
+        }
+
+        /// <summary>
+        /// 燃料取出钩子（两个重载都挂）：原版燃料取出失败时，尝试取出产物铀燃料。
+        /// </summary>
+        [HarmonyPatch(typeof(PowerGeneratorComponent), nameof(PowerGeneratorComponent.PickFuelFrom),
+            new[] { typeof(int), typeof(int), }, new[] { ArgumentType.Normal, ArgumentType.Out, })]
+        [HarmonyPatch(typeof(PowerGeneratorComponent), nameof(PowerGeneratorComponent.PickFuelFrom),
+            new[] { typeof(int), typeof(int), typeof(int), }, new[] { ArgumentType.Normal, ArgumentType.Normal, ArgumentType.Out, })]
+        [HarmonyPostfix]
+        public static void PickFuelFrom_Postfix(ref PowerGeneratorComponent __instance, int filter, ref int inc, ref int __result)
+        {
+            // 原版已成功取出燃料（或该发电机没有产物）则不动
+            if (__result != 0) return;
+
+            if (__instance.fuelMask != MoltenSaltFuelMask) return;
+
+            if (filter != ProtoID.I铀燃料 && filter != 0) return;
+
+            var count = (int)__instance.productCount;
+
+            if (count <= 0) return;
+
+            __instance.productCount = count - 1;
+            inc = 0;
+            __result = ProtoID.I铀燃料;
+        }
+
+        /// <summary>
+        /// 分拣器/物流取出钩子（entityId 重载）：目标实体是熔盐堆发电机时，原版取不到东西则取产物。
+        /// </summary>
+        [HarmonyPatch(typeof(PlanetFactory), nameof(PlanetFactory.PickFrom),
+            new[]
+            {
+                typeof(int), typeof(int), typeof(int), typeof(int[]),
+                typeof(byte), typeof(byte),
+            },
+            new[]
+            {
+                ArgumentType.Normal, ArgumentType.Normal, ArgumentType.Normal, ArgumentType.Normal,
+                ArgumentType.Out, ArgumentType.Out,
+            })]
+        [HarmonyPostfix]
+        public static void PickFrom_Postfix(PlanetFactory __instance, int entityId, int offset, int filter, ref byte inc,
+            ref int __result)
+        {
+            if (__result != 0) return;
+
+            EntityData entityData = __instance.entityPool[entityId];
+
+            if (entityData.powerGenId == 0) return;
+
+            PickProduct(__instance, entityData.powerGenId, offset, filter, ref inc, ref __result);
+        }
+
+        /// <summary>
+        /// 分拣器/物流取出钩子（typedId 重载，分拣器走的是这个）：目标实体是熔盐堆发电机时取产物。
+        /// </summary>
+        [HarmonyPatch(typeof(PlanetFactory), nameof(PlanetFactory.PickFrom),
+            new[]
+            {
+                typeof(uint), typeof(int), typeof(int), typeof(int[]),
+                typeof(byte), typeof(byte),
+            },
+            new[]
+            {
+                ArgumentType.Normal, ArgumentType.Normal, ArgumentType.Normal, ArgumentType.Normal,
+                ArgumentType.Out, ArgumentType.Out,
+            })]
+        [HarmonyPostfix]
+        public static void PickFrom_TypedId_Postfix(PlanetFactory __instance, uint ioTargetTypedId, int offset, int filter,
+            ref byte inc, ref int __result)
+        {
+            // 只处理 PowerGen 目标
+            if ((EFactoryIOTargetType)(ioTargetTypedId & (uint)EFactoryIOTargetType.TypeMask) != EFactoryIOTargetType.PowerGen) return;
+
+            int powerGenId = (int)(ioTargetTypedId & (uint)EFactoryIOTargetType.IdMask);
+
+            if (powerGenId == 0) return;
+
+            PickProduct(__instance, powerGenId, offset, filter, ref inc, ref __result);
+        }
+
+        private static void PickProduct(PlanetFactory factory, int powerGenId, int offset, int filter, ref byte inc, ref int result)
+        {
+            if (result != 0) return;
+
+            // 只处理熔盐堆，且只响应铀燃料（或未筛选取全部）
+            if (filter != ProtoID.I铀燃料 && filter != 0) return;
+
+            ref PowerGeneratorComponent component = ref factory.powerSystem.genPool[powerGenId];
+
+            if (component.id != powerGenId || component.fuelMask != MoltenSaltFuelMask) return;
+
+            // 发电机→发电机的燃料转运场景：无明确筛选时不拦截，避免抢燃料
+            if (filter == 0 && offset > 0 && factory.powerSystem.genPool[offset].id == offset) return;
+
+            lock (factory.entityMutexs[component.entityId])
+            {
+                var count = (int)component.productCount;
+
+                if (count <= 0) return;
+
+                component.productCount = count - 1;
+                inc = 0;
+                result = ProtoID.I铀燃料;
+            }
+        }
+
+        /// <summary>
+        /// 分拣器放置提示：目标实体是熔盐堆时，把铀燃料加入可选筛选，方便玩家指定"只取铀"。
+        /// </summary>
+        [HarmonyPatch(typeof(UIBeltBuildTip), nameof(UIBeltBuildTip.SetOutputEntity))]
+        [HarmonyPostfix]
+        public static void UIBeltBuildTip_SetOutputEntity_Postfix(UIBeltBuildTip __instance, int entityId)
+        {
+            if (entityId <= 0) return;
+
+            PlanetFactory factory = GameMain.mainPlayer?.factory;
+
+            if (factory == null) return;
+
+            EntityData entityData = factory.entityPool[entityId];
+
+            if (entityData.powerGenId <= 0) return;
+
+            PowerGeneratorComponent component = factory.powerSystem.genPool[entityData.powerGenId];
+
+            if (component.id != entityData.powerGenId || component.fuelMask != MoltenSaltFuelMask) return;
+
+            // filterItems 是私有字段，用 Traverse 追加
+            List<int> filterItems = Traverse.Create(__instance).Field("filterItems").GetValue<List<int>>();
+
+            if (filterItems != null && !filterItems.Contains(ProtoID.I铀燃料)) filterItems.Add(ProtoID.I铀燃料);
+        }
+
+        /// <summary>
+        /// 实体信息面板：熔盐堆的产物（铀燃料）数量展示。
+        /// </summary>
+        [HarmonyPatch(typeof(EntityBriefInfo), nameof(EntityBriefInfo.SetBriefInfo))]
+        [HarmonyPostfix]
+        public static void SetBriefInfo_Postfix(EntityBriefInfo __instance, PlanetFactory _factory, int _entityId)
+        {
+            if (_factory == null || _entityId <= 0) return;
+
+            EntityData entityData = _factory.entityPool[_entityId];
+
+            if (entityData.id == 0 || entityData.powerGenId == 0) return;
+
+            PowerGeneratorComponent component = _factory.powerSystem.genPool[entityData.powerGenId];
+
+            if (component.id != entityData.powerGenId || component.fuelMask != MoltenSaltFuelMask) return;
+
+            var productCount = (int)component.productCount;
+
+            if (productCount > 0) __instance.storage.Add(ProtoID.I铀燃料, productCount, 0);
+        }
+    }
+}

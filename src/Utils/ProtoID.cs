@@ -56,6 +56,7 @@ namespace ProjectGenesis.Utils
                            I氦 = 6234,
                            I钍燃料棒 = 6241,
                            I铀燃料棒 = 6242,
+                           I熔盐堆 = 6268,
                            I氘氦混合聚变燃料棒 = 6245,
                            I巨型精密组装厂 = 6260,
                            I巨型对撞机 = 6265,
@@ -88,6 +89,7 @@ namespace ProjectGenesis.Utils
                            R聚酰亚胺 = 772,
                            R铌矿筛选 = 773,
                            R海水淡化 = 801,
+                           R熔盐堆 = 903,
                            R萤石提炼 = 900,
                            R萤石制氢氟酸 = 901,
                            R甲烷裂解 = 902;
@@ -126,7 +128,8 @@ namespace ProjectGenesis.Utils
                            M聚爆加农炮MK2 = 815,
                            M高频激光塔MK2 = 816,
                            M核子单元 = 817,
-                           M反物质炮弹 = 818;
+                           M反物质炮弹 = 818,
+                           M熔盐堆 = 819;
 
         internal const int T戴森球计划 = 1,
                            T电磁学 = 1001,

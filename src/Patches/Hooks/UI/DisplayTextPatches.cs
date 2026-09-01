@@ -97,6 +97,11 @@ namespace ProjectGenesis.Patches
                 case 31:
                     __result = "黑雾能".TranslateFromJson();
                     return;
+
+                case 32:
+                    // 熔盐堆专用燃料（钍燃料）
+                    __result = "裂变能".TranslateFromJson();
+                    return;
             }
         }
 
@@ -196,6 +201,11 @@ namespace ProjectGenesis.Patches
 
                         case 16:
                             __result = "聚变能".TranslateFromJson();
+                            return;
+
+                        case 32:
+                            // 熔盐堆专用燃料（钍燃料）
+                            __result = "裂变能".TranslateFromJson();
                             return;
                     }
 
