@@ -2533,5 +2533,20 @@
     "Name": "熔盐堆",
     "ZHCN": "熔盐堆",
     "ENUS": "Molten Salt Reactor"
+  },
+  {
+    "Name": "I氢氟酸",
+    "ZHCN": "氟化氢的水溶液，强腐蚀性。用于蚀刻玻璃与矿物精炼。",
+    "ENUS": "Aqueous solution of hydrogen fluoride, highly corrosive. Used for glass etching and mineral refining."
+  },
+  {
+    "Name": "I萤石",
+    "ZHCN": "半透明的荧光矿石，是提取氟的重要原料。",
+    "ENUS": "Translucent fluorescent ore, an important source of fluorine."
+  },
+  {
+    "Name": "I熔盐堆",
+    "ZHCN": "以熔盐为冷却剂的裂变反应堆，燃烧钍燃料发电并回收铀燃料。",
+    "ENUS": "Molten salt cooled fission reactor. Burns thorium fuel to generate power and recovers uranium fuel."
   }
 ]

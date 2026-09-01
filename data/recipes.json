@@ -2902,14 +2902,10 @@
     "Time": 120,
     "Input": [
       1124,
-      1124,
-      6205,
       6205,
       7014
     ],
     "InCounts": [
-      2,
-      2,
       2,
       2,
       1
@@ -4514,18 +4510,10 @@
     "Time": 120,
     "Input": [
       6222,
-      6222,
-      6222,
-      6222,
-      7014,
       7014
     ],
     "InCounts": [
       4,
-      4,
-      4,
-      4,
-      2,
       2
     ],
     "Output": [
@@ -5708,11 +5696,9 @@
     "Time": 120,
     "Input": [
       7709,
-      7709,
       7014
     ],
     "InCounts": [
-      2,
       2,
       1
     ],
@@ -6223,8 +6209,6 @@
       3
     ],
     "Output": [
-      1000,
-      1000,
       1000
     ],
     "OutCounts": [
@@ -6242,7 +6226,7 @@
     "IconPath": "",
     "IconTag": "",
     "Type": 1,
-    "GridIndex": 1601,
+    "GridIndex": 1700,
     "Time": 60,
     "Input": [
       7101
@@ -6251,7 +6235,6 @@
       1
     ],
     "Output": [
-      1111,
       1111
     ],
     "OutCounts": [
@@ -6268,7 +6251,7 @@
     "IconPath": "",
     "IconTag": "",
     "Type": 2,
-    "GridIndex": 3504,
+    "GridIndex": 3500,
     "Time": 120,
     "Input": [
       7101,
@@ -6304,7 +6287,7 @@
     "IconPath": "",
     "IconTag": "",
     "Type": 2,
-    "GridIndex": 3505,
+    "GridIndex": 3502,
     "Time": 120,
     "Input": [
       7008
@@ -6314,11 +6297,9 @@
     ],
     "Output": [
       1109,
-      1120,
       1120
     ],
     "OutCounts": [
-      1,
       1,
       2
     ],
@@ -6334,7 +6315,7 @@
     "IconPath": "",
     "IconTag": "",
     "Type": 9,
-    "GridIndex": 4201,
+    "GridIndex": 4200,
     "Time": 480,
     "Input": [
       6502,
