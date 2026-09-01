@@ -93,12 +93,11 @@
   },
   {
     "ModelID": 60,
-    "minerPeriod": 300000,
+    "minerPeriod": 5000,
     "waterTypes": [
       1000,
       1116,
       7008,
-      7014,
       7017,
       7018
     ]
@@ -377,7 +376,7 @@
     "assemblerRecipeType": 0,
     "idleEnergyPerTick": 50000,
     "workEnergyPerTick": 500000,
-    "minerPeriod": 30000,
+    "minerPeriod": 500,
     "minerType": 1,
     "minimapType": 2,
     "allowBuildInWater": true,
@@ -386,7 +385,6 @@
       1000,
       1116,
       7008,
-      7014,
       7017,
       7018
     ]
