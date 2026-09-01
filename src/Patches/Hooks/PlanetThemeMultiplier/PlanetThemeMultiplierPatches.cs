@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Reflection.Emit;
 using HarmonyLib;
@@ -126,6 +127,38 @@ namespace ProjectGenesis.Patches
         /// <summary>是否有机类配方</summary>
         internal static bool IsOrganicRecipe(int recipeId) => OrganicRecipes.Contains(recipeId);
 
+        // ==================== 主题副产物（大气采集站附带产出） ====================
+
+        /// <summary>
+        /// 主题副产物表（主题 ID → 副产物物品 ID + 附带比例 主:副）：
+        /// 大气采集站每采集 ratio 单位主产物，附带产出 1 单位主题特色物品。
+        /// </summary>
+        private static readonly Dictionary<int, int[]> ThemeByproducts = new Dictionary<int, int[]>
+        {
+            { 9, new[] { 1112, 10 } },   // 熔岩：金刚石（碳尘高压结晶）
+            { 10, new[] { 1113, 10 } },  // 冰原冻土：晶格硅（低温硅晶）
+            { 16, new[] { 1121, 10 } },  // 水世界：重氢（海水提氘）
+            { 17, new[] { 1108, 12 } },  // 黑石盐滩：石材（盐岩结晶）
+            { 23, new[] { 1105, 10 } },  // 橙晶荒漠：高纯硅块（沙尘硅）
+            { 25, new[] { 1117, 8 } },   // 潘多拉沼泽：有机晶体（孢子富集）
+        };
+
+        /// <summary>获取行星主题副产物（无副产物返回 false）</summary>
+        internal static bool TryGetByproduct(PlanetData planet, out int itemId, out int ratio)
+        {
+            itemId = 0;
+            ratio = 0;
+
+            if (planet == null || planet.theme <= 0) return false;
+
+            if (!ThemeByproducts.TryGetValue(planet.theme, out int[] data)) return false;
+
+            itemId = data[0];
+            ratio = data[1];
+
+            return true;
+        }
+
         // ==================== 工厂速度挂钩（注入统一 InternalUpdate pre-patch） ====================
 
         /// <summary>是否冶炼类配方（Type 1/11/13/19）</summary>
@@ -229,6 +262,83 @@ namespace ProjectGenesis.Patches
             float m = GetMultiplier(powerSystem.factory.planet, MultiplierType.ThermalPower);
 
             return m <= 0f ? 0L : (long)(power * m);
+        }
+
+        // ==================== 主题副产物槽（大气采集站） ====================
+
+        /// <summary>
+        /// 大气采集站副产物槽：在 station 的 collectionIds/storage 尾部追加副产物槽，
+        /// 采集速度 0（由附带逻辑按比例填充），物流无人机可正常取走。
+        /// </summary>
+        [HarmonyPatch(typeof(PlanetTransport), nameof(PlanetTransport.NewStationComponent))]
+        [HarmonyPostfix]
+        public static void NewStationComponent_Postfix(ref StationComponent __result, PrefabDesc _desc, PlanetFactory factory)
+        {
+            if (!_desc.isCollectStation) return;
+
+            if (!TryGetByproduct(factory.planet, out int itemId, out int ratio)) return;
+
+            int oldLen = __result.collectionIds.Length;
+
+            // 扩展 collectionIds / collectionPerTick（副产槽速度为 0，由附带逻辑填充）
+            Array.Resize(ref __result.collectionIds, oldLen + 1);
+            __result.collectionIds[oldLen] = itemId;
+            Array.Resize(ref __result.collectionPerTick, oldLen + 1);
+            __result.collectionPerTick[oldLen] = 0f;
+
+            // storage 扩展（Init 已按旧长度建槽，富余则复用空闲槽）
+            if (__result.storage.Length <= oldLen)
+            {
+                Array.Resize(ref __result.storage, oldLen + 1);
+                Array.Resize(ref __result.priorityLocks, oldLen + 1);
+            }
+
+            __result.storage[oldLen].itemId = itemId;
+            __result.storage[oldLen].count = 0;
+            __result.storage[oldLen].inc = 0;
+            __result.storage[oldLen].remoteLogic = ELogisticStorage.Supply;
+            __result.storage[oldLen].max = __result.storage[0].max;
+            __result.storage[oldLen].keepMode = 0;
+            __result.storage[oldLen].keepIncRatio = 0f;
+        }
+
+        /// <summary>
+        /// 附带产出：主产物每采集 ratio 单位，向副产物槽填充 1 单位主题特色物品。
+        /// </summary>
+        public static void ByproductFill(StationComponent station, PlanetFactory factory, int itemId, int amount, int[] productRegister)
+        {
+            if (amount <= 0) return;
+
+            if (!TryGetByproduct(factory.planet, out int byproductId, out int ratio)) return;
+
+            // 定位副产槽
+            int index = -1;
+
+            for (int i = 0; i < station.collectionIds.Length; i++)
+            {
+                if (station.collectionIds[i] == byproductId)
+                {
+                    index = i;
+                    break;
+                }
+            }
+
+            if (index < 0 || index >= station.storage.Length) return;
+
+            int add = amount / ratio;
+
+            if (add <= 0) return;
+
+            lock (station.storage)
+            {
+                station.storage[index].count += add;
+
+                if (productRegister != null)
+                    lock (productRegister)
+                    {
+                        productRegister[byproductId] += add;
+                    }
+            }
         }
     }
 }

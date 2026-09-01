@@ -387,6 +387,26 @@ namespace ProjectGenesis.Patches
                     AccessTools.Method(typeof(PlanetAtmospherePatches), nameof(ConsumeGas),
                         new[] { typeof(PlanetFactory), typeof(int), typeof(int) })));
 
+            // 再插入主题副产物填充（按比例附带产出）：
+            //   ldarg.0                                    // StationComponent
+            //   ldarg.1                                    // PlanetFactory
+            //   ...storage[i].itemId 重新取...
+            //   ldloc.3                                    // num
+            //   ldarg.3                                    // int[] productRegister
+            //   call      ByproductFill(StationComponent, PlanetFactory, int, int, int[])
+            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0),
+                new CodeInstruction(OpCodes.Ldarg_1),
+                new CodeInstruction(OpCodes.Ldarg_0),
+                new CodeInstruction(OpCodes.Ldfld, AccessTools.Field(typeof(StationComponent), nameof(StationComponent.storage))),
+                new CodeInstruction(OpCodes.Ldloc_0),
+                new CodeInstruction(OpCodes.Ldelema, typeof(StationStore)),
+                new CodeInstruction(OpCodes.Ldfld, AccessTools.Field(typeof(StationStore), nameof(StationStore.itemId))),
+                new CodeInstruction(OpCodes.Ldloc_3),
+                new CodeInstruction(OpCodes.Ldarg_3),
+                new CodeInstruction(OpCodes.Call,
+                    AccessTools.Method(typeof(PlanetThemeMultiplierPatches), nameof(PlanetThemeMultiplierPatches.ByproductFill),
+                        new[] { typeof(StationComponent), typeof(PlanetFactory), typeof(int), typeof(int), typeof(int[]) })));
+
             return matcher.InstructionEnumeration();
         }
 
