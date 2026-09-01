@@ -118,35 +118,35 @@
     "ModelID": 62,
     "idleEnergyPerTick": 400,
     "workEnergyPerTick": 12000,
-    "assemblerSpeed": 20000
+    "assemblerSpeed": 10000
   },
   {
     "ModelID": 63,
-    "assemblerSpeed": 20000
+    "assemblerSpeed": 10000
   },
   {
     "ModelID": 64,
-    "assemblerSpeed": 40000
+    "assemblerSpeed": 10000
   },
   {
     "ModelID": 65,
     "idleEnergyPerTick": 400,
     "workEnergyPerTick": 9000,
-    "assemblerSpeed": 20000
+    "assemblerSpeed": 10000
   },
   {
     "ModelID": 66,
     "assemblerRecipeType": 9,
     "idleEnergyPerTick": 600,
     "workEnergyPerTick": 18000,
-    "assemblerSpeed": 20000
+    "assemblerSpeed": 10000
   },
   {
     "ModelID": 67,
     "assemblerRecipeType": 10,
     "idleEnergyPerTick": 800,
     "workEnergyPerTick": 36000,
-    "assemblerSpeed": 20000
+    "assemblerSpeed": 10000
   },
   {
     "ModelID": 68,
@@ -157,7 +157,7 @@
   },
   {
     "ModelID": 69,
-    "assemblerSpeed": 40000,
+    "assemblerSpeed": 10000,
     "workEnergyPerTick": 40000
   },
   {
@@ -196,7 +196,7 @@
   },
   {
     "ModelID": 194,
-    "assemblerSpeed": 20000,
+    "assemblerSpeed": 10000,
     "assemblerRecipeType": 13
   },
   {
@@ -255,7 +255,7 @@
     "assemblerRecipeType": 16,
     "idleEnergyPerTick": 800,
     "workEnergyPerTick": 24000,
-    "assemblerSpeed": 40000
+    "assemblerSpeed": 10000
   },
   {
     "ModelID": 403,
@@ -288,14 +288,14 @@
     "ModelID": 456,
     "idleEnergyPerTick": 8000,
     "workEnergyPerTick": 240000,
-    "assemblerSpeed": 80000,
+    "assemblerSpeed": 10000,
     "assemblerRecipeType": 12
   },
   {
     "ModelID": 457,
     "idleEnergyPerTick": 8000,
     "workEnergyPerTick": 240000,
-    "assemblerSpeed": 40000,
+    "assemblerSpeed": 10000,
     "assemblerRecipeType": 19
   },
   {
