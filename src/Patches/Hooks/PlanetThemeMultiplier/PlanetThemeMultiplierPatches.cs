@@ -205,6 +205,18 @@ namespace ProjectGenesis.Patches
             if (IsOrganicRecipe(component.recipeId)) factor *= GetMultiplier(planet, MultiplierType.OrganicSpeed);
 
             component.speed = (int)(baseSpeed * factor);
+
+            // 增产效力：主题倍率 >1 时提高输入增产剂累计（等效增产剂更耐用、效力更高）
+            float incPower = GetMultiplier(planet, MultiplierType.IncPower);
+
+            if (incPower > 1f && component.incServed != null)
+            {
+                for (int i = 0; i < component.incServed.Length; i++)
+                {
+                    if (component.incServed[i] > 0)
+                        component.incServed[i] = (int)Math.Min(component.incServed[i] * incPower, int.MaxValue);
+                }
+            }
         }
 
         // ==================== 火电/风电挂钩（与 PlanetFocus.EnergyCap_Transpiler 同位置） ====================
