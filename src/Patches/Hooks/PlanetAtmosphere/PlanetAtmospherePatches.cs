@@ -369,15 +369,32 @@ namespace ProjectGenesis.Patches
 
         // ==================== 排污（燃料燃烧 → 大气池注入） ====================
 
-        /// <summary>每烧 1 个燃料向大气池注入的水量</summary>
-        internal const float WaterPerFuel = 2f;
+        /// <summary>
+        /// 燃料 → 排放物映射（按燃料成分区分）：
+        /// 碳基燃料燃烧排 CO₂，氢基燃料燃烧排水，核能/反物质燃料清洁无排放。
+        /// </summary>
+        private static readonly Dictionary<int, int[]> FuelEmissions = new Dictionary<int, int[]>
+        {
+            { 1006, new[] { ProtoID.I二氧化碳, 1 } },      // 煤
+            { 1109, new[] { ProtoID.I二氧化碳, 1 } },  // 高能石墨
+            { ProtoID.I焦油, new[] { ProtoID.I二氧化碳, 1 } },      // 焦油
+            { 1128, new[] { ProtoID.I二氧化碳, 2 } },  // 燃烧单元
+            { 1130, new[] { ProtoID.I二氧化碳, 6 } }, // 晶石爆破单元
+            { ProtoID.I煤油燃料棒, new[] { ProtoID.I二氧化碳, 3 } }, // 煤油燃料棒
+            { ProtoID.I氢, new[] { ProtoID.I水, 1 } },              // 氢
+            { ProtoID.I重氢, new[] { ProtoID.I水, 2 } },            // 重氢
+            { ProtoID.I氢燃料棒, new[] { ProtoID.I水, 30 } },       // 氢燃料棒
+            { ProtoID.I氘核燃料棒, new[] { ProtoID.I水, 60 } },     // 氘核燃料棒
+            { ProtoID.I氘氦混合聚变燃料棒, new[] { ProtoID.I水, 90 } }, // 氘氦混合燃料棒
+            // 反物质燃料棒/奇异燃料棒/蓄电器/钍燃料 等：无排放（清洁能源）
+        };
 
-        /// <summary>每烧 1 个燃料向大气池注入的氢量</summary>
-        internal const float HydrogenPerFuel = 1f;
+        /// <summary>排污总倍率（设置项可调）</summary>
+        internal static float EmissionScale = 1f;
 
         /// <summary>
-        /// 排污钩子：燃料发电机每消耗 1 个燃料，向所在星球大气池注入 水、氢
-        /// （"默认仅排水、氢"，数值可调；积累的大气成分可被大气采集站采集，即成分影响产出）。
+        /// 排污钩子：燃料发电机每消耗 1 个燃料，按燃料类型向所在星球大气池注入对应排放物
+        /// （碳基→CO₂、氢基→水、核能清洁），积累的大气成分可被大气采集站采集（成分影响产出）。
         /// 插入点与熔盐堆相同（consumeRegister[fuelId]++ 之后），两个 transpiler 互不干扰。
         /// </summary>
         [HarmonyPatch(typeof(PowerGeneratorComponent), nameof(PowerGeneratorComponent.GenEnergyByFuel))]
@@ -429,10 +446,15 @@ namespace ProjectGenesis.Patches
             return matcher.InstructionEnumeration();
         }
 
-        /// <summary>燃料燃烧排放：向所在星球大气池注入 水、氢</summary>
+        /// <summary>燃料燃烧排放：按燃料类型向所在星球大气池注入对应排放物</summary>
         public static void GenEnergyByFuel_Emission(ref PowerGeneratorComponent component, int[] consumeRegister)
         {
             if (component.fuelId <= 0) return;
+
+            // 按燃料查排放映射（清洁燃料/未收录燃料无排放）
+            if (!FuelEmissions.TryGetValue(component.fuelId, out int[] emission)) return;
+
+            if (EmissionScale <= 0f) return;
 
             // 通过消耗寄存器定位所在工厂（统计池索引与 GameData.factories 一致）
             PlanetFactory factory = null;
@@ -449,11 +471,11 @@ namespace ProjectGenesis.Patches
 
             if (factory == null) return;
 
-            int waterIndex = Array.IndexOf(GasItemIds, ProtoID.I水);
-            int hydrogenIndex = Array.IndexOf(GasItemIds, ProtoID.I氢);
+            int gasIndex = Array.IndexOf(GasItemIds, emission[0]);
 
-            ModifyGas(factory.planetId, waterIndex, (int)WaterPerFuel);
-            ModifyGas(factory.planetId, hydrogenIndex, (int)HydrogenPerFuel);
+            if (gasIndex < 0) return;
+
+            ModifyGas(factory.planetId, gasIndex, (int)(emission[1] * EmissionScale));
         }
     }
 }
