@@ -3,6 +3,7 @@ using System.Reflection.Emit;
 using HarmonyLib;
 using ProjectGenesis.Utils;
 using UnityEngine;
+using Utils_ERecipeType = ProjectGenesis.Utils.ERecipeType;
 
 // ReSharper disable InconsistentNaming
 // ReSharper disable MemberCanBeInternal
@@ -124,6 +125,54 @@ namespace ProjectGenesis.Patches
 
         /// <summary>是否有机类配方</summary>
         internal static bool IsOrganicRecipe(int recipeId) => OrganicRecipes.Contains(recipeId);
+
+        // ==================== 工厂速度挂钩（注入统一 InternalUpdate pre-patch） ====================
+
+        /// <summary>是否冶炼类配方（Type 1/11/13/19）</summary>
+        private static bool IsSmeltType(ERecipeType type) =>
+            type == ERecipeType.Smelt || (int)type == (int)Utils_ERecipeType.标准冶炼 ||
+            (int)type == (int)Utils_ERecipeType.高热冶炼 || (int)type == (int)Utils_ERecipeType.所有熔炉;
+
+        /// <summary>是否化工类配方（Type 2/16/17）</summary>
+        private static bool IsChemicalType(ERecipeType type) =>
+            type == ERecipeType.Chemical || (int)type == (int)Utils_ERecipeType.高分子化工 ||
+            (int)type == (int)Utils_ERecipeType.所有化工;
+
+        /// <summary>
+        /// 主题速度挂钩：每 tick 在 InternalUpdate 前按行星主题重算 component.speed（幂等）。
+        /// 速度 = prefabDesc 基础速度 × 温度因子（冶炼/化工）× 有机因子（生物行星有机配方）。
+        /// 巨构（speed ≥ 300000）不受行星主题影响。
+        /// </summary>
+        public static void GameTick_AssemblerComponent_InternalUpdate_Patch(PlanetFactory factory, ref AssemblerComponent component,
+            float power)
+        {
+            // 巨构保留自身速度，不受主题影响
+            if (component.speed >= MegaAssemblerPatches.MegaAssemblerSpeed) return;
+
+            if (power < 0.1f) return;
+
+            PlanetData planet = factory.planet;
+
+            if (planet == null) return;
+
+            // 基础速度（从 prefabDesc 重算，保证幂等不叠加）
+            ItemProto itemProto = LDB.items.Select(factory.entityPool[component.entityId].protoId);
+
+            if (itemProto?.prefabDesc == null) return;
+
+            int baseSpeed = itemProto.prefabDesc.assemblerSpeed;
+
+            float factor = 1f;
+
+            // 温度因子：高温利于冶炼、低温利于化工
+            if (IsSmeltType(component.recipeType)) factor *= GetTemperatureSpeedFactor(planet, true);
+            else if (IsChemicalType(component.recipeType)) factor *= GetTemperatureSpeedFactor(planet, false);
+
+            // 有机因子：生物行星的有机类配方加成
+            if (IsOrganicRecipe(component.recipeId)) factor *= GetMultiplier(planet, MultiplierType.OrganicSpeed);
+
+            component.speed = (int)(baseSpeed * factor);
+        }
 
         // ==================== 火电/风电挂钩（与 PlanetFocus.EnergyCap_Transpiler 同位置） ====================
 

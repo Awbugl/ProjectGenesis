@@ -84,6 +84,7 @@ namespace ProjectGenesis.Patches
         {
             MegaAssemblerPatches.GameTick_AssemblerComponent_InternalUpdate_Patch(factory, ref component, power);
             NegentropySmelterPatches.GameTick_AssemblerComponent_InternalUpdate_Patch(factory, ref component, power);
+            PlanetThemeMultiplierPatches.GameTick_AssemblerComponent_InternalUpdate_Patch(factory, ref component, power);
             PlanetFocusPatches.GetWorkEnergyPerTick(factory, ref component);
         }
     }
