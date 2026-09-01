@@ -353,6 +353,7 @@ namespace ProjectGenesis.Utils
                 MegaAssemblerPatches.ExportPlanetData(packet.PlanetId, p.BinaryWriter);
                 PlanetFocusPatches.ExportPlanetFocus(packet.PlanetId, p.BinaryWriter);
                 QuantumStoragePatches.ExportPlanetQuantumStorage(packet.PlanetId, p.BinaryWriter);
+                PlanetAtmospherePatches.ExportPlanetData(packet.PlanetId, p.BinaryWriter);
                 data = p.CloseAndGetBytes();
             }
 
@@ -397,6 +398,7 @@ namespace ProjectGenesis.Utils
                 MegaAssemblerPatches.ImportPlanetData(p.BinaryReader);
                 PlanetFocusPatches.ImportPlanetFocus(p.BinaryReader);
                 QuantumStoragePatches.ImportPlanetQuantumStorage(p.BinaryReader);
+                PlanetAtmospherePatches.ImportPlanetData(p.BinaryReader);
             }
         }
     }

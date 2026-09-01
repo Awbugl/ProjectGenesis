@@ -169,6 +169,7 @@ namespace ProjectGenesis
             QuantumStoragePatches.Export(w);
             AdvancedLaserPatches.Export(w);
             GlobalPowerSupplyPatches.Export(w);
+            PlanetAtmospherePatches.Export(w);
         }
 
         public void Import(BinaryReader r)
@@ -179,6 +180,7 @@ namespace ProjectGenesis
             QuantumStoragePatches.Import(r);
             AdvancedLaserPatches.Import(r);
             GlobalPowerSupplyPatches.Import(r);
+            PlanetAtmospherePatches.Import(r);
         }
 
         public void IntoOtherSave()
