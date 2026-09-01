@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection.Emit;
 using HarmonyLib;
 using ProjectGenesis.Utils;
 using UnityEngine;
@@ -172,6 +173,80 @@ namespace ProjectGenesis.Patches
 
             PlanetWaterAmounts[planetId] = water;
             PlanetGasAmounts[planetId] = gas;
+        }
+
+        // ==================== 抽水机（海洋消耗） ====================
+
+        /// <summary>
+        /// 抽水机速度挂钩：采集速度 ∝ 海洋池剩余比例（照原油"越采越慢"），
+        /// 低于停产底线则 speed=0（不再累积时间，自然停产）。
+        /// 直接改写 MinerComponent.speed 字段，比 transpiler 改动时间累积逻辑更稳。
+        /// </summary>
+        [HarmonyPatch(typeof(MinerComponent), nameof(MinerComponent.InternalUpdate))]
+        [HarmonyPrefix]
+        public static void MinerComponent_InternalUpdate_Prefix(ref MinerComponent __instance, PlanetFactory factory)
+        {
+            // 只处理抽水机（EMinerType.Water）
+            if (__instance.type != EMinerType.Water) return;
+
+            PlanetData planet = factory.planet;
+
+            float pool = GetWaterPool(planet);
+            float initial = GetInitialWater(planet);
+            float ratio = GetPoolRatio(planet, pool, initial);
+
+            // 停产底线：低于初始 5% 时停产
+            if (ratio <= FloorRatio) ratio = 0f;
+
+            __instance.speed = (int)(10000f * ratio);
+        }
+
+        /// <summary>
+        /// 抽水机产出扣池钩子：在 Water 分支 productCount += num14（IL_071a）之后扣海洋池。
+        /// 匹配 waterItemId 写入 productId 后第一个 stfld productCount，即抽水机产水记账处。
+        /// </summary>
+        [HarmonyPatch(typeof(MinerComponent), nameof(MinerComponent.InternalUpdate))]
+        [HarmonyTranspiler]
+        public static IEnumerable<CodeInstruction> MinerComponent_InternalUpdate_Transpiler(
+            IEnumerable<CodeInstruction> instructions)
+        {
+            /*
+                目标 IL（Assembly-CSharp.dll / MinerComponent.InternalUpdate Water 分支）：
+
+                    IL_06f6: ldarg.0
+                    IL_06f7: ldarg.1
+                    IL_06f8: callvirt     PlanetData PlanetFactory::get_planet()
+                    IL_06fd: ldfld        int32 PlanetData::waterItemId
+                    IL_0702: stfld        int32 MinerComponent::productId      // productId = planet.waterItemId
+
+                    IL_0710: ldarg.0
+                    IL_0711: ldarg.0
+                    IL_0712: ldfld        int32 MinerComponent::productCount
+                    IL_0717: ldloc.s      23                                    // num14 = time / period
+                    IL_0719: add
+                    IL_071a: stfld        int32 MinerComponent::productCount   // productCount += num14
+             */
+            CodeMatcher matcher = new CodeMatcher(instructions);
+
+            // 定位抽水机分支：planet.waterItemId -> productId
+            matcher.MatchForward(false,
+                new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(PlanetData), nameof(PlanetData.waterItemId))),
+                new CodeMatch(OpCodes.Stfld, AccessTools.Field(typeof(MinerComponent), nameof(MinerComponent.productId))));
+
+            // 其后第一个 productCount 写入点 = productCount += num14
+            matcher.MatchForward(true,
+                new CodeMatch(OpCodes.Stfld, AccessTools.Field(typeof(MinerComponent), nameof(MinerComponent.productCount))));
+
+            // 在 stfld productCount 之后插入：
+            //   ldarg.1                              // PlanetFactory factory
+            //   ldloc.s  23                          // num14（本次产水量）
+            //   call      ConsumeWater(int planetId, int amount)
+            matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_1),
+                new CodeInstruction(OpCodes.Ldloc_S, (byte)23),
+                new CodeInstruction(OpCodes.Call,
+                    AccessTools.Method(typeof(PlanetAtmospherePatches), nameof(ConsumeWater), new[] { typeof(int), typeof(int) })));
+
+            return matcher.InstructionEnumeration();
         }
     }
 }
