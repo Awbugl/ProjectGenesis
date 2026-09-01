@@ -203,6 +203,14 @@ namespace ProjectGenesis.Patches
             int planetId = r.ReadInt32();
             float water = r.ReadSingle();
             int gasCount = r.ReadInt32();
+
+            // 长度校验：与当前气体定义不一致则丢弃（进入游戏后按主题重新初始化）
+            if (gasCount != GasItemIds.Length)
+            {
+                for (int i = 0; i < gasCount; i++) r.ReadSingle();
+                return;
+            }
+
             var gas = new float[gasCount];
 
             for (int i = 0; i < gasCount; i++) gas[i] = r.ReadSingle();

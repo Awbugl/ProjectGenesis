@@ -440,19 +440,9 @@
     "ENUS": "A high energy density saturated polycyclic hydrocarbon compound with stable chemical properties and low volatility—a preferred fuel component for aerospace propulsion systems."
   },
   {
-    "Name": "R四氢双环戊二烯",
-    "ZHCN": "以丙烯为原料，经氧化偶联与催化加氢反应制得的高密度饱和多环烃，是高性能航空航天燃料的重要组分。",
-    "ENUS": "High-density saturated polycyclic hydrocarbon produced from propylene through oxidative coupling and catalytic hydrogenation—an important component of high-performance aerospace fuel."
-  },
-  {
     "Name": "四氢双环戊二烯燃料棒",
     "ZHCN": "四氢双环戊二烯燃料棒",
     "ENUS": "JP-10 Fuel Rod"
-  },
-  {
-    "Name": "I四氢双环戊二烯燃料棒",
-    "ZHCN": "将JP-10燃料精密封装于标准燃料棒壳体中，专为早期星际航行器及行星着陆器设计，提供可靠的高比冲推进能源。",
-    "ENUS": "Precision encapsulation of JP-10 fuel in standard fuel rod casings, specifically designed for early interstellar spacecraft and planetary landers—providing reliable high specific impulse propulsion energy."
   },
   {
     "Name": "焦油燃料棒",
@@ -815,11 +805,6 @@
     "ENUS": "An aqueous solution of hydrogen chloride, colorless and transparent with a strong pungent odor—a basic chemical in industrial fields such as metal cleaning and organic synthesis."
   },
   {
-    "Name": "I三氯化铁",
-    "ZHCN": "黑褐色结晶固体，易溶于水并形成酸性溶液，在蚀刻、催化等工业领域应用广泛。",
-    "ENUS": "Dark brown crystalline solid, readily soluble in water to form acidic solutions—widely used in industrial fields such as etching and catalysis."
-  },
-  {
     "Name": "硝酸",
     "ZHCN": "硝酸",
     "ENUS": "Nitric Acid"
@@ -858,11 +843,6 @@
     "Name": "I氧",
     "ZHCN": "维持绝大多数碳基生命的关键元素，化学性质活泼，是强氧化反应的核心参与者与助燃剂。",
     "ENUS": "A key element sustaining most carbon-based life, chemically active—a core participant in strong oxidation reactions and a combustion supporter."
-  },
-  {
-    "Name": "I氢氧化钠",
-    "ZHCN": "白色片状或颗粒状固体，易潮解，具有强碱性及腐蚀性，是皂化、造纸、纺织等行业的核心化学品。",
-    "ENUS": "White flaky or granular solid, hygroscopic, with strong alkalinity and corrosiveness—a core chemical in industries such as saponification, papermaking, and textiles."
   },
   {
     "Name": "I氯化钠",
@@ -1015,19 +995,9 @@
     "ENUS": "Salt Water Electrolysis"
   },
   {
-    "Name": "R盐水电解",
-    "ZHCN": "采用离子交换膜电解技术处理氯化钠溶液，阳极产生的氯气与阴极产生的氢气经催化反应后溶于水形成盐酸，同时阴极区富集氢氧化钠溶液。",
-    "ENUS": "Utilizing ion exchange membrane electrolysis to process sodium chloride solution—chlorine gas from the anode and hydrogen gas from the cathode undergo catalytic reaction and dissolve in water to form hydrochloric acid, while sodium hydroxide solution is enriched at the cathode."
-  },
-  {
     "Name": "钠盐转化",
     "ZHCN": "钠盐转化",
     "ENUS": "Sodium Salt Conversion"
-  },
-  {
-    "Name": "R钠盐转化",
-    "ZHCN": "利用盐酸与硅酸盐矿石中的钠离子发生离子交换反应，经结晶提纯后获得高纯度氯化钠晶体。",
-    "ENUS": "Utilizing ion exchange reactions between hydrochloric acid and sodium ions in silicate ores, obtaining high-purity sodium chloride crystals after crystallization and purification."
   },
   {
     "Name": "海水淡化",
@@ -1120,11 +1090,6 @@
     "ENUS": "Under high-temperature plasma torch action, long-chain hydrocarbons in tar undergo radical cracking and reorganization to generate short-chain olefins—propylene product separated through precise temperature-controlled condensation."
   },
   {
-    "Name": "R三氯化铁",
-    "ZHCN": "在盐酸-铁反应体系中引入氧化剂，将生成的亚铁离子氧化为铁离子，稳定产出三氯化铁溶液。",
-    "ENUS": "Introducing oxidants into the hydrochloric acid-iron reaction system to oxidize generated ferrous ions to ferric ions, stably producing ferric chloride solution."
-  },
-  {
     "Name": "铌矿筛选",
     "ZHCN": "铌矿筛选",
     "ENUS": "Niobium Ore Screening"
@@ -1148,11 +1113,6 @@
     "Name": "质能储存（高效）",
     "ZHCN": "质能储存（高效）",
     "ENUS": "Mass-energy Storage (advanced)"
-  },
-  {
-    "Name": "R质能储存（高效）",
-    "ZHCN": "采用非对称磁场阱设计，在仅收集反物质模式下可大幅提升产生速率，但会牺牲正物质产出。",
-    "ENUS": "Employing asymmetric magnetic field trap design, significantly increasing generation rate in antimatter-only collection mode, but sacrificing normal matter output."
   },
   {
     "Name": "R等离子精炼",
@@ -1895,19 +1855,9 @@
     "ENUS": "The second most abundant element in the universe, produced by stellar nuclear fusion—chemically inert, important cryogenic coolant and protective gas."
   },
   {
-    "Name": "I氦三",
-    "ZHCN": "氦的稳定同位素。与氘发生的聚变反应不产生中子，是理想的清洁聚变燃料。",
-    "ENUS": "Stable isotope of helium. Fusion reactions with deuterium produce no neutrons—ideal clean fusion fuel."
-  },
-  {
     "Name": "氦核转化",
     "ZHCN": "氦核转化",
     "ENUS": "Helium Conversion"
-  },
-  {
-    "Name": "R氦核转化",
-    "ZHCN": "利用高能质子轰击氦-4原子核，通过(p,n)核反应将氦-4转化为氦-3并释放中子。",
-    "ENUS": "Utilizing high-energy proton bombardment of helium-4 nuclei, converting helium-4 to helium-3 through (p,n) nuclear reaction with neutron release."
   },
   {
     "Name": "I反物质约束单元",
@@ -2548,5 +2498,10 @@
     "Name": "I熔盐堆",
     "ZHCN": "以熔盐为冷却剂的裂变反应堆，燃烧钍燃料发电并回收铀燃料。",
     "ENUS": "Molten salt cooled fission reactor. Burns thorium fuel to generate power and recovers uranium fuel."
+  },
+  {
+    "Name": "I萤石矿脉",
+    "ZHCN": "富含萤石矿的矿脉，半透明的荧光晶体在阳光下闪闪发光。",
+    "ENUS": "Veins rich in fluorite ore, translucent fluorescent crystals glimmering in the sunlight."
   }
 ]
