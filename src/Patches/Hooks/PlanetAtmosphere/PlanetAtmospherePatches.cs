@@ -369,24 +369,57 @@ namespace ProjectGenesis.Patches
 
         // ==================== 排污（燃料燃烧 → 大气池注入） ====================
 
+        /// <summary>排放量换算：每 3MJ 热值排 1 单位（至少 1）</summary>
+        private const int HeatPerEmission = 3000000;
+
         /// <summary>
-        /// 燃料 → 排放物映射（按燃料成分区分）：
-        /// 碳基燃料燃烧排 CO₂，氢基燃料燃烧排水，核能/反物质燃料清洁无排放。
+        /// 燃料 → 排放物气体映射（覆盖全部 FuelType>0 燃料）：
+        /// 碳基 → CO₂、氢基 → 水、硫 → SO₂、氦聚变 → 氦；
+        /// 未收录的核能/质能/蓄电器/黑雾燃料为清洁无排放。
+        /// 排放量按热值自动换算：max(1, HeatValue / 3MJ)。
         /// </summary>
-        private static readonly Dictionary<int, int[]> FuelEmissions = new Dictionary<int, int[]>
+        private static readonly Dictionary<int, int> FuelEmissionGas = new Dictionary<int, int>
         {
-            { 1006, new[] { ProtoID.I二氧化碳, 1 } },      // 煤
-            { 1109, new[] { ProtoID.I二氧化碳, 1 } },  // 高能石墨
-            { ProtoID.I焦油, new[] { ProtoID.I二氧化碳, 1 } },      // 焦油
-            { 1128, new[] { ProtoID.I二氧化碳, 2 } },  // 燃烧单元
-            { 1130, new[] { ProtoID.I二氧化碳, 6 } }, // 晶石爆破单元
-            { ProtoID.I煤油燃料棒, new[] { ProtoID.I二氧化碳, 3 } }, // 煤油燃料棒
-            { ProtoID.I氢, new[] { ProtoID.I水, 1 } },              // 氢
-            { ProtoID.I重氢, new[] { ProtoID.I水, 2 } },            // 重氢
-            { ProtoID.I氢燃料棒, new[] { ProtoID.I水, 30 } },       // 氢燃料棒
-            { ProtoID.I氘核燃料棒, new[] { ProtoID.I水, 60 } },     // 氘核燃料棒
-            { ProtoID.I氘氦混合聚变燃料棒, new[] { ProtoID.I水, 90 } }, // 氘氦混合燃料棒
-            // 反物质燃料棒/奇异燃料棒/蓄电器/钍燃料 等：无排放（清洁能源）
+            // 碳基燃料 → CO₂
+            { 1006, ProtoID.I二氧化碳 },      // 煤矿
+            { 1007, ProtoID.I二氧化碳 },      // 原油
+            { 1011, ProtoID.I二氧化碳 },      // 可燃冰
+            { 1030, ProtoID.I二氧化碳 },      // 木材
+            { 1031, ProtoID.I二氧化碳 },      // 植物燃料
+            { 1109, ProtoID.I二氧化碳 },      // 高能石墨
+            { 1112, ProtoID.I二氧化碳 },      // 金刚石
+            { 1114, ProtoID.I二氧化碳 },      // 焦油
+            { 1117, ProtoID.I二氧化碳 },      // 有机晶体
+            { 1123, ProtoID.I二氧化碳 },      // 石墨烯
+            { 1124, ProtoID.I二氧化碳 },      // 碳纳米管
+            { 1128, ProtoID.I二氧化碳 },      // 燃烧单元
+            { 1129, ProtoID.I二氧化碳 },      // 爆破单元
+            { 1130, ProtoID.I二氧化碳 },      // 晶石爆破单元
+            { 1141, ProtoID.I二氧化碳 },      // 增产剂 Mk.I
+            { 1142, ProtoID.I二氧化碳 },      // 增产剂 Mk.II
+            { 6212, ProtoID.I二氧化碳 },      // 四氢双环戊二烯
+            { 6216, ProtoID.I二氧化碳 },      // 四氢双环戊二烯燃料棒
+            { 6217, ProtoID.I二氧化碳 },      // 煤油燃料棒
+            { 7006, ProtoID.I二氧化碳 },      // 苯
+            { 7008, ProtoID.I二氧化碳 },      // 甲烷
+            { 7009, ProtoID.I二氧化碳 },      // 丙烯
+
+            // 氢基燃料 → 水
+            { 1120, ProtoID.I水 },            // 氢
+            { 1121, ProtoID.I水 },            // 重氢
+            { 1801, ProtoID.I水 },            // 氢燃料棒
+            { 1802, ProtoID.I水 },            // 氘核燃料棒
+            { 6245, ProtoID.I水 },            // 氘氦混合燃料棒
+            { 7002, ProtoID.I水 },            // 氨（NH₃ 燃烧 → N₂ + H₂O）
+
+            // 硫基燃料 → SO₂
+            { 6205, ProtoID.I二氧化硫 },      // 二氧化硫
+
+            // 氦聚变 → 氦
+            { 6244, ProtoID.I氦 },            // 氦三燃料棒
+
+            // 清洁无排放：钍/铀/MOX 棒、反物质棒、金色棒、核能/湮灭单元、
+            // 蓄电器、能量碎片、创世之书/日志（黑雾能量）、钍燃料（熔盐堆）
         };
 
         /// <summary>排污总倍率（设置项可调）</summary>
@@ -394,7 +427,8 @@ namespace ProjectGenesis.Patches
 
         /// <summary>
         /// 排污钩子：燃料发电机每消耗 1 个燃料，按燃料类型向所在星球大气池注入对应排放物
-        /// （碳基→CO₂、氢基→水、核能清洁），积累的大气成分可被大气采集站采集（成分影响产出）。
+        /// （碳基→CO₂、氢基→水、硫→SO₂、氦聚变→氦；核能清洁），量按热值换算，
+        /// 积累的大气成分可被大气采集站采集（成分影响产出）。
         /// 插入点与熔盐堆相同（consumeRegister[fuelId]++ 之后），两个 transpiler 互不干扰。
         /// </summary>
         [HarmonyPatch(typeof(PowerGeneratorComponent), nameof(PowerGeneratorComponent.GenEnergyByFuel))]
@@ -446,13 +480,13 @@ namespace ProjectGenesis.Patches
             return matcher.InstructionEnumeration();
         }
 
-        /// <summary>燃料燃烧排放：按燃料类型向所在星球大气池注入对应排放物</summary>
+        /// <summary>燃料燃烧排放：按燃料类型向所在星球大气池注入对应排放物，量按热值换算</summary>
         public static void GenEnergyByFuel_Emission(ref PowerGeneratorComponent component, int[] consumeRegister)
         {
             if (component.fuelId <= 0) return;
 
             // 按燃料查排放映射（清洁燃料/未收录燃料无排放）
-            if (!FuelEmissions.TryGetValue(component.fuelId, out int[] emission)) return;
+            if (!FuelEmissionGas.TryGetValue(component.fuelId, out int gasItemId)) return;
 
             if (EmissionScale <= 0f) return;
 
@@ -471,11 +505,20 @@ namespace ProjectGenesis.Patches
 
             if (factory == null) return;
 
-            int gasIndex = Array.IndexOf(GasItemIds, emission[0]);
+            int gasIndex = Array.IndexOf(GasItemIds, gasItemId);
 
             if (gasIndex < 0) return;
 
-            ModifyGas(factory.planetId, gasIndex, (int)(emission[1] * EmissionScale));
+            // 排放量 = max(1, 热值 / 3MJ) × 倍率
+            ItemProto fuel = LDB.items.Select(component.fuelId);
+
+            if (fuel == null) return;
+
+            int amount = Math.Max(1, (int)(fuel.HeatValue / (float)HeatPerEmission * EmissionScale));
+
+            if (amount <= 0) return;
+
+            ModifyGas(factory.planetId, gasIndex, amount);
         }
     }
 }
