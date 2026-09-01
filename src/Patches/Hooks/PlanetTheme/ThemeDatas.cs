@@ -40,7 +40,7 @@ namespace ProjectGenesis.Patches
             },
             {
                 9, // 熔岩
-                new ThemeData(new[] { ProtoID.I二氧化硫, ProtoID.I二氧化碳, 1112, }, new[] { 0.7f, 0.2f, 0.08f, }, new[] { 16, 17, 18, }, new[]
+                new ThemeData(new[] { ProtoID.I二氧化硫, ProtoID.I二氧化碳, }, new[] { 0.7f, 0.2f, }, new[] { 16, 17, 18, }, new[]
                 {
                     0.0f, 1.0f, 0.3f, 0.7f, //
                     0.0f, 0.6f, 0.3f, 0.8f, //
@@ -49,7 +49,7 @@ namespace ProjectGenesis.Patches
             },
             {
                 10, // 冰原冻土
-                new ThemeData(new[] { ProtoID.I氮, ProtoID.I二氧化碳, 1113, }, new[] { 0.7f, 0.3f, 0.08f, }, new[] { 16, 17, 20, }, new[]
+                new ThemeData(new[] { ProtoID.I氮, ProtoID.I二氧化碳, }, new[] { 0.7f, 0.3f, }, new[] { 16, 17, 20, }, new[]
                 {
                     0.0f, 1.0f, 0.7f, 0.7f, //
                     0.0f, 0.6f, 0.3f, 0.8f, //
