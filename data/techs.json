@@ -450,8 +450,7 @@
     "HashNeeded": 144000,
     "UnlockRecipes": [
       19,
-      419,
-      717
+      419
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],
@@ -2579,7 +2578,6 @@
     "HashNeeded": 540000,
     "UnlockRecipes": [
       74,
-      541,
       547
     ],
     "UnlockFunctions": [],
@@ -5213,7 +5211,6 @@
     ],
     "HashNeeded": 144000,
     "UnlockRecipes": [
-      410,
       752
     ],
     "UnlockFunctions": [],
@@ -5518,50 +5515,6 @@
     "PropertyItemCounts": []
   },
   {
-    "ID": 1928,
-    "Name": "四氢双环戊二烯燃料棒",
-    "IconPath": "Assets/texpack/T四氢双环戊二烯燃料棒",
-    "IconTag": "tjpllb",
-    "Desc": "T化学能燃料棒描述",
-    "Conclusion": "T化学能燃料棒描述",
-    "IsHiddenTech": false,
-    "PreItem": null,
-    "Position": [
-      29,
-      -39
-    ],
-    "PreTechs": [
-      1104
-    ],
-    "PreTechsImplicit": [],
-    "Items": [
-      6001,
-      6002
-    ],
-    "ItemPoints": [
-      20,
-      20
-    ],
-    "HashNeeded": 72000,
-    "UnlockRecipes": [
-      512,
-      515
-    ],
-    "UnlockFunctions": [],
-    "UnlockValues": [],
-    "Published": true,
-    "Level": 0,
-    "MaxLevel": 0,
-    "LevelCoef1": 0,
-    "LevelCoef2": 0,
-    "IsLabTech": true,
-    "PreTechsMax": false,
-    "AddItems": [],
-    "AddItemCounts": [],
-    "PropertyOverrideItems": [],
-    "PropertyItemCounts": []
-  },
-  {
     "ID": 1930,
     "Name": "T先进化工",
     "IconPath": "Icons/Tech/1122",
@@ -5594,7 +5547,8 @@
     "UnlockRecipes": [
       772,
       550,
-      549
+      549,
+      717
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],

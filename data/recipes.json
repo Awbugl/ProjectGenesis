@@ -699,7 +699,7 @@
     "GridIndex": 1202,
     "Time": 120,
     "Input": [
-      1101,
+      1104,
       6203
     ],
     "InCounts": [
@@ -831,34 +831,6 @@
     "NonProductive": false
   },
   {
-    "ID": 31,
-    "Name": "石墨烯",
-    "Description": "R石墨烯",
-    "IconPath": "",
-    "IconTag": "rsmx",
-    "Type": 2,
-    "GridIndex": 1406,
-    "Time": 120,
-    "Input": [
-      7008
-    ],
-    "InCounts": [
-      2
-    ],
-    "Output": [
-      1123,
-      1120
-    ],
-    "OutCounts": [
-      1,
-      8
-    ],
-    "Explicit": true,
-    "Handcraft": false,
-    "Overflow": 2,
-    "NonProductive": false
-  },
-  {
     "ID": 32,
     "Name": "石墨烯（高效）",
     "Description": "R石墨烯（高效）",
@@ -866,7 +838,7 @@
     "IconTag": "rsmxgx",
     "Type": 2,
     "GridIndex": 1506,
-    "Time": 120,
+    "Time": 60,
     "Input": [
       1011
     ],
@@ -893,10 +865,12 @@
     "GridIndex": 1407,
     "Time": 120,
     "Input": [
-      1123
+      1123,
+      1106
     ],
     "InCounts": [
-      4
+      2,
+      1
     ],
     "Output": [
       1124
@@ -952,7 +926,7 @@
       1124
     ],
     "OutCounts": [
-      1
+      2
     ],
     "Explicit": true,
     "Handcraft": false,
@@ -1055,7 +1029,7 @@
       1305
     ],
     "InCounts": [
-      10,
+      5,
       20,
       20,
       5
@@ -1170,7 +1144,7 @@
       7805
     ],
     "InCounts": [
-      20,
+      10,
       20,
       10,
       1
@@ -1227,11 +1201,11 @@
     "Time": 120,
     "Input": [
       6501,
-      2011,
-      1301
+      1109,
+      2011
     ],
     "InCounts": [
-      2,
+      1,
       2,
       2
     ],
@@ -1256,11 +1230,11 @@
     "Time": 240,
     "Input": [
       6501,
-      2012,
-      1123
+      1112,
+      2012
     ],
     "InCounts": [
-      4,
+      2,
       4,
       4
     ],
@@ -1285,13 +1259,11 @@
     "Time": 480,
     "Input": [
       6502,
-      1107,
-      2013,
-      1303
+      1402,
+      2013
     ],
     "InCounts": [
-      4,
-      8,
+      2,
       8,
       4
     ],
@@ -1349,8 +1321,8 @@
       1203
     ],
     "InCounts": [
+      1,
       2,
-      4,
       2
     ],
     "Output": [
@@ -1486,7 +1458,7 @@
       7805
     ],
     "InCounts": [
-      60,
+      30,
       180,
       180,
       6,
@@ -1546,7 +1518,7 @@
       1202
     ],
     "InCounts": [
-      2,
+      1,
       2,
       2
     ],
@@ -1760,8 +1732,8 @@
       1301
     ],
     "InCounts": [
-      4,
-      10,
+      2,
+      8,
       4,
       4
     ],
@@ -1956,7 +1928,7 @@
       1205
     ],
     "InCounts": [
-      4,
+      2,
       10,
       20
     ],
@@ -1987,7 +1959,7 @@
       1205
     ],
     "InCounts": [
-      4,
+      2,
       8,
       8,
       8,
@@ -2134,7 +2106,7 @@
       1303
     ],
     "InCounts": [
-      4,
+      2,
       16,
       2,
       4
@@ -2273,7 +2245,7 @@
       7805
     ],
     "InCounts": [
-      20,
+      10,
       40,
       20,
       2
@@ -2575,7 +2547,7 @@
       1206
     ],
     "InCounts": [
-      10,
+      5,
       40,
       10
     ],
@@ -2968,7 +2940,7 @@
       1305
     ],
     "InCounts": [
-      2,
+      1,
       4,
       4,
       2
@@ -2999,7 +2971,7 @@
       7806
     ],
     "InCounts": [
-      20,
+      10,
       20,
       10,
       1
@@ -3169,14 +3141,14 @@
     "IconTag": "",
     "Type": 9,
     "GridIndex": 2407,
-    "Time": 240,
+    "Time": 480,
     "Input": [
       6502,
       1107,
       1304
     ],
     "InCounts": [
-      4,
+      2,
       8,
       4
     ],
@@ -3264,7 +3236,7 @@
       7803
     ],
     "InCounts": [
-      20,
+      10,
       40,
       20,
       10
@@ -3321,7 +3293,7 @@
     ],
     "InCounts": [
       1,
-      8
+      4
     ],
     "Output": [
       7008,
@@ -3409,7 +3381,7 @@
       1303
     ],
     "InCounts": [
-      2,
+      1,
       12,
       12,
       4
@@ -3530,7 +3502,7 @@
       1401
     ],
     "InCounts": [
-      4,
+      2,
       16,
       16,
       16,
@@ -3655,7 +3627,7 @@
       1206
     ],
     "InCounts": [
-      2,
+      1,
       8,
       12,
       4
@@ -3680,16 +3652,16 @@
     "GridIndex": 4401,
     "Time": 240,
     "Input": [
-      1006
+      1114
     ],
     "InCounts": [
-      4
+      3
     ],
     "Output": [
       1128
     ],
     "OutCounts": [
-      1
+      2
     ],
     "Explicit": false,
     "Handcraft": true,
@@ -3706,11 +3678,13 @@
     "Time": 240,
     "Input": [
       1128,
-      6212
+      6203,
+      1101
     ],
     "InCounts": [
       1,
-      1
+      2,
+      2
     ],
     "Output": [
       1129
@@ -3768,33 +3742,6 @@
     ],
     "Output": [
       1601
-    ],
-    "OutCounts": [
-      1
-    ],
-    "Explicit": false,
-    "Handcraft": true,
-    "NonProductive": false
-  },
-  {
-    "ID": 137,
-    "Name": "钛化弹箱",
-    "Description": "",
-    "IconPath": "",
-    "IconTag": "",
-    "Type": 4,
-    "GridIndex": 0,
-    "Time": 120,
-    "Input": [
-      1601,
-      1106
-    ],
-    "InCounts": [
-      1,
-      1
-    ],
-    "Output": [
-      1602
     ],
     "OutCounts": [
       1
@@ -4296,7 +4243,7 @@
       7803
     ],
     "InCounts": [
-      10,
+      5,
       10,
       10,
       20,
@@ -4329,7 +4276,7 @@
       7803
     ],
     "InCounts": [
-      10,
+      5,
       10,
       20,
       40,
@@ -4362,7 +4309,7 @@
       7803
     ],
     "InCounts": [
-      10,
+      5,
       40,
       20,
       10,
@@ -4424,7 +4371,7 @@
       1401
     ],
     "InCounts": [
-      2,
+      1,
       4,
       4,
       2,
@@ -4477,22 +4424,22 @@
     "IconTag": "",
     "Type": 9,
     "GridIndex": 4702,
-    "Time": 480,
+    "Time": 240,
     "Input": [
       1612,
       1205,
       1119
     ],
     "InCounts": [
-      2,
-      2,
-      2
+      1,
+      1,
+      1
     ],
     "Output": [
       1613
     ],
     "OutCounts": [
-      2
+      1
     ],
     "Explicit": false,
     "Handcraft": false,
@@ -4654,35 +4601,6 @@
     "NonProductive": false
   },
   {
-    "ID": 410,
-    "Name": "MOX燃料棒",
-    "Description": "",
-    "IconPath": "",
-    "IconTag": "",
-    "Type": 9,
-    "GridIndex": 1217,
-    "Time": 600,
-    "Input": [
-      6241,
-      6242,
-      1205
-    ],
-    "InCounts": [
-      1,
-      2,
-      2
-    ],
-    "Output": [
-      6243
-    ],
-    "OutCounts": [
-      1
-    ],
-    "Explicit": false,
-    "Handcraft": false,
-    "NonProductive": false
-  },
-  {
     "ID": 416,
     "Name": "天穹装配厂",
     "Description": "",
@@ -4699,7 +4617,7 @@
       7805
     ],
     "InCounts": [
-      60,
+      30,
       180,
       180,
       12,
@@ -4732,7 +4650,7 @@
       7806
     ],
     "InCounts": [
-      30,
+      15,
       60,
       240,
       6,
@@ -4764,7 +4682,7 @@
       1305
     ],
     "InCounts": [
-      10,
+      5,
       20,
       10,
       10
@@ -4827,7 +4745,7 @@
       7806
     ],
     "InCounts": [
-      30,
+      15,
       60,
       240,
       12,
@@ -4860,7 +4778,7 @@
       7805
     ],
     "InCounts": [
-      20,
+      10,
       60,
       120,
       30,
@@ -4945,65 +4863,6 @@
     ],
     "Explicit": true,
     "Handcraft": false,
-    "NonProductive": false
-  },
-  {
-    "ID": 512,
-    "Name": "四氢双环戊二烯",
-    "Description": "R四氢双环戊二烯",
-    "IconPath": "",
-    "IconTag": "rjpshi",
-    "Type": 2,
-    "GridIndex": 3303,
-    "Time": 480,
-    "Input": [
-      7009,
-      7019
-    ],
-    "InCounts": [
-      10,
-      6
-    ],
-    "Output": [
-      6212,
-      1000
-    ],
-    "OutCounts": [
-      3,
-      6
-    ],
-    "Explicit": true,
-    "Handcraft": false,
-    "Overflow": 2,
-    "NonProductive": false
-  },
-  {
-    "ID": 515,
-    "Name": "四氢双环戊二烯燃料棒",
-    "Description": "",
-    "IconPath": "",
-    "IconTag": "",
-    "Type": 4,
-    "GridIndex": 1117,
-    "Time": 600,
-    "Input": [
-      1103,
-      6212,
-      7019
-    ],
-    "InCounts": [
-      2,
-      6,
-      10
-    ],
-    "Output": [
-      6216
-    ],
-    "OutCounts": [
-      1
-    ],
-    "Explicit": false,
-    "Handcraft": true,
     "NonProductive": false
   },
   {
@@ -5110,7 +4969,7 @@
     "InCounts": [
       2,
       4,
-      2
+      4
     ],
     "Output": [
       6230
@@ -5139,7 +4998,7 @@
       7806
     ],
     "InCounts": [
-      20,
+      10,
       60,
       40,
       80,
@@ -5214,32 +5073,6 @@
     "NonProductive": true
   },
   {
-    "ID": 541,
-    "Name": "质能储存（高效）",
-    "Description": "R质能储存（高效）",
-    "IconPath": "Assets/texpack/R质能储存（高效）",
-    "IconTag": "rfwzgx",
-    "Type": 5,
-    "GridIndex": 1514,
-    "Time": 60,
-    "Input": [
-      1208
-    ],
-    "InCounts": [
-      2
-    ],
-    "Output": [
-      1122
-    ],
-    "OutCounts": [
-      2
-    ],
-    "Explicit": true,
-    "Handcraft": false,
-    "PowerFactor": 18,
-    "NonProductive": true
-  },
-  {
     "ID": 542,
     "Name": "物质裂解塔",
     "Description": "",
@@ -5256,7 +5089,7 @@
       7805
     ],
     "InCounts": [
-      60,
+      30,
       180,
       180,
       6,
@@ -5478,13 +5311,13 @@
     "Time": 600,
     "Input": [
       1802,
-      6244,
-      7707
+      6234,
+      6263
     ],
     "InCounts": [
       1,
-      1,
-      2
+      20,
+      1
     ],
     "Output": [
       6245
@@ -5511,9 +5344,9 @@
       1301
     ],
     "InCounts": [
-      2,
-      2,
-      1
+      4,
+      4,
+      2
     ],
     "Output": [
       6501
@@ -5541,8 +5374,8 @@
     ],
     "InCounts": [
       1,
-      2,
-      1
+      4,
+      2
     ],
     "Output": [
       6502
@@ -5570,8 +5403,8 @@
     ],
     "InCounts": [
       1,
-      2,
-      1
+      4,
+      2
     ],
     "Output": [
       6503
@@ -5596,7 +5429,7 @@
       1000
     ],
     "InCounts": [
-      3
+      6
     ],
     "Output": [
       1120,
@@ -5660,7 +5493,7 @@
       7002
     ],
     "OutCounts": [
-      1
+      2
     ],
     "Explicit": true,
     "Handcraft": false,
@@ -5754,14 +5587,14 @@
     "IconTag": "rayh",
     "Type": 2,
     "GridIndex": 3702,
-    "Time": 120,
+    "Time": 60,
     "Input": [
       7002,
       7019
     ],
     "InCounts": [
       1,
-      4
+      2
     ],
     "Output": [
       7017,
@@ -5791,7 +5624,7 @@
     ],
     "InCounts": [
       3,
-      3
+      2
     ],
     "Output": [
       7009,
@@ -6011,11 +5844,11 @@
     "GridIndex": 1503,
     "Time": 120,
     "Input": [
-      1110,
+      1119,
       7705
     ],
     "InCounts": [
-      2,
+      1,
       1
     ],
     "Output": [
@@ -6245,7 +6078,7 @@
       1205
     ],
     "InCounts": [
-      2,
+      1,
       8,
       4,
       8
@@ -6275,7 +6108,7 @@
       1206
     ],
     "InCounts": [
-      2,
+      1,
       4,
       2
     ],
