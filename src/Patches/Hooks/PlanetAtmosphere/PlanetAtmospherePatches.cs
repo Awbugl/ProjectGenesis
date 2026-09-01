@@ -201,6 +201,21 @@ namespace ProjectGenesis.Patches
 
             PlanetData planet = factory.planet;
 
+            // 地形 check：地基填海/改造地面后，抽水机下方不再有水面 → 停产
+            // （QueryHeight 返回地形高度，低于水位 waterHeight 才算水下）
+            PlanetRawData rawData = planet.data;
+
+            if (rawData != null)
+            {
+                Vector3 pos = factory.entityPool[__instance.entityId].pos;
+
+                if (rawData.QueryHeight(pos) >= planet.waterHeight)
+                {
+                    __instance.speed = 0;
+                    return;
+                }
+            }
+
             float pool = GetWaterPool(planet);
             float initial = GetInitialWater(planet);
             float ratio = GetPoolRatio(planet, pool, initial);
