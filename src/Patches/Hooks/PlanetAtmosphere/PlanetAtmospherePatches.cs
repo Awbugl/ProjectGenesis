@@ -104,6 +104,16 @@ namespace ProjectGenesis.Patches
             value[gasIndex] = Math.Max(0f, value[gasIndex] + amount);
         }
 
+        /// <summary>按物品 ID 扣大气池（大气采集站产出路径）</summary>
+        internal static void ConsumeGas(PlanetFactory factory, int itemId, int amount)
+        {
+            int index = Array.IndexOf(GasItemIds, itemId);
+
+            if (index < 0) return;
+
+            ModifyGas(factory.planetId, index, amount);
+        }
+
         /// <summary>当前池/初始池 的剩余比例（0-1），池未初始化视为 1</summary>
         internal static float GetPoolRatio(PlanetData planet, float current, float initial)
         {
@@ -245,6 +255,114 @@ namespace ProjectGenesis.Patches
                 new CodeInstruction(OpCodes.Ldloc_S, (byte)23),
                 new CodeInstruction(OpCodes.Call,
                     AccessTools.Method(typeof(PlanetAtmospherePatches), nameof(ConsumeWater), new[] { typeof(int), typeof(int) })));
+
+            return matcher.InstructionEnumeration();
+        }
+
+        // ==================== 大气采集站（大气消耗） ====================
+
+        /// <summary>各站点原始采集速度（第一次调用时保存，避免多次缩放叠加）</summary>
+        private static readonly Dictionary<int, float[]> OriginalCollectionPerTick = new Dictionary<int, float[]>();
+
+        /// <summary>
+        /// 大气采集站速度挂钩：采集速度 ∝ 大气池剩余比例（与抽水机同模式），
+        /// 低于停产底线则速度为 0；不在池化气体列表中的产物不采集。
+        /// 基于原始速度重算（幂等），不直接改字段以免缩放叠加。
+        /// </summary>
+        [HarmonyPatch(typeof(StationComponent), nameof(StationComponent.UpdateCollection))]
+        [HarmonyPrefix]
+        public static void StationComponent_UpdateCollection_Prefix(ref StationComponent __instance, PlanetFactory factory)
+        {
+            if (__instance.collectionPerTick == null) return;
+
+            if (!__instance.isCollector) return;
+
+            // 首次调用保存原始速度
+            if (!OriginalCollectionPerTick.TryGetValue(__instance.id, out float[] original))
+            {
+                original = (float[])__instance.collectionPerTick.Clone();
+                OriginalCollectionPerTick[__instance.id] = original;
+            }
+
+            PlanetData planet = factory.planet;
+            float[] gasPool = GetGasPool(planet);
+            float[] initialGas = GetInitialGas(planet);
+
+            for (int i = 0; i < __instance.collectionIds.Length && i < original.Length; i++)
+            {
+                int index = Array.IndexOf(GasItemIds, __instance.collectionIds[i]);
+
+                if (index < 0)
+                {
+                    __instance.collectionPerTick[i] = 0f;
+                    continue;
+                }
+
+                float ratio = GetPoolRatio(planet, gasPool[index], initialGas[index]);
+
+                // 停产底线
+                if (ratio <= FloorRatio) ratio = 0f;
+
+                __instance.collectionPerTick[i] = original[i] * ratio;
+            }
+        }
+
+        /// <summary>
+        /// 大气采集站产出扣池钩子：在 productRegister[itemId] += num（IL_00b4）之后扣大气池。
+        /// </summary>
+        [HarmonyPatch(typeof(StationComponent), nameof(StationComponent.UpdateCollection))]
+        [HarmonyTranspiler]
+        public static IEnumerable<CodeInstruction> StationComponent_UpdateCollection_Transpiler(
+            IEnumerable<CodeInstruction> instructions)
+        {
+            /*
+                目标 IL（Assembly-CSharp.dll / StationComponent.UpdateCollection）：
+
+                    IL_0099: ldarg.3                              // int[] productRegister
+                    IL_009a: ldarg.0
+                    IL_009b: ldfld       StationStore[] StationComponent::'storage'
+                    IL_00a0: ldloc.0                              // i
+                    IL_00a1: ldelema     StationStore
+                    IL_00a6: ldfld       int32 StationStore::itemId
+                    IL_00ab: ldelema     [netstandard]System.Int32
+                    IL_00b0: dup
+                    IL_00b1: ldind.i4
+                    IL_00b2: ldloc.3                              // num（本次采集量）
+                    IL_00b3: add
+                    IL_00b4: stind.i4                             // productRegister[itemId] += num
+             */
+            CodeMatcher matcher = new CodeMatcher(instructions);
+
+            // 定位 productRegister[itemId] += num（该序列在方法内唯一）
+            matcher.MatchForward(false,
+                new CodeMatch(OpCodes.Ldarg_3),
+                new CodeMatch(OpCodes.Ldarg_0),
+                new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(StationComponent), nameof(StationComponent.storage))),
+                new CodeMatch(OpCodes.Ldloc_0),
+                new CodeMatch(OpCodes.Ldelema, typeof(StationStore)),
+                new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(StationStore), nameof(StationStore.itemId))),
+                new CodeMatch(OpCodes.Ldelema, typeof(int)),
+                new CodeMatch(OpCodes.Dup),
+                new CodeMatch(OpCodes.Ldind_I4),
+                new CodeMatch(OpCodes.Ldloc_3),
+                new CodeMatch(OpCodes.Add),
+                new CodeMatch(OpCodes.Stind_I4));
+
+            // 在 stind.i4 之后插入：
+            //   ldarg.1                                    // PlanetFactory factory
+            //   ldarg.0; ldfld storage; ldloc.0; ldelema StationStore; ldfld itemId   // 重新取产物 ID
+            //   ldloc.3                                    // num
+            //   call      ConsumeGas(PlanetFactory, int, int)
+            matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_1),
+                new CodeInstruction(OpCodes.Ldarg_0),
+                new CodeInstruction(OpCodes.Ldfld, AccessTools.Field(typeof(StationComponent), nameof(StationComponent.storage))),
+                new CodeInstruction(OpCodes.Ldloc_0),
+                new CodeInstruction(OpCodes.Ldelema, typeof(StationStore)),
+                new CodeInstruction(OpCodes.Ldfld, AccessTools.Field(typeof(StationStore), nameof(StationStore.itemId))),
+                new CodeInstruction(OpCodes.Ldloc_3),
+                new CodeInstruction(OpCodes.Call,
+                    AccessTools.Method(typeof(PlanetAtmospherePatches), nameof(ConsumeGas),
+                        new[] { typeof(PlanetFactory), typeof(int), typeof(int) })));
 
             return matcher.InstructionEnumeration();
         }
