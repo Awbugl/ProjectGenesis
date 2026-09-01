@@ -207,6 +207,7 @@ namespace ProjectGenesis.Patches
             component.speed = (int)(baseSpeed * factor);
 
             // 增产效力：主题倍率 >1 时提高输入增产剂累计（等效增产剂更耐用、效力更高）
+            // 设上限 255 防止每 tick 乘算的指数膨胀（长期趋向满级增产，符合"更耐用"设计）
             float incPower = GetMultiplier(planet, MultiplierType.IncPower);
 
             if (incPower > 1f && component.incServed != null)
@@ -214,7 +215,7 @@ namespace ProjectGenesis.Patches
                 for (int i = 0; i < component.incServed.Length; i++)
                 {
                     if (component.incServed[i] > 0)
-                        component.incServed[i] = (int)Math.Min(component.incServed[i] * incPower, int.MaxValue);
+                        component.incServed[i] = Math.Min((int)(component.incServed[i] * incPower), 255);
                 }
             }
         }
@@ -292,11 +293,13 @@ namespace ProjectGenesis.Patches
 
             int oldLen = __result.collectionIds.Length;
 
-            // 扩展 collectionIds / collectionPerTick（副产槽速度为 0，由附带逻辑填充）
+            // 扩展 collectionIds / collectionPerTick / currentCollections（副产槽速度为 0，由附带逻辑填充）
             Array.Resize(ref __result.collectionIds, oldLen + 1);
             __result.collectionIds[oldLen] = itemId;
             Array.Resize(ref __result.collectionPerTick, oldLen + 1);
             __result.collectionPerTick[oldLen] = 0f;
+            Array.Resize(ref __result.currentCollections, oldLen + 1);
+            __result.currentCollections[oldLen] = 0f;
 
             // storage 扩展（Init 已按旧长度建槽，富余则复用空闲槽）
             if (__result.storage.Length <= oldLen)

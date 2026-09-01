@@ -87,11 +87,11 @@ namespace ProjectGenesis.Patches
         }
 
         /// <summary>消耗海洋池</summary>
-        internal static void ConsumeWater(int planetId, int amount)
+        internal static void ConsumeWater(PlanetFactory factory, int amount)
         {
-            if (!PlanetWaterAmounts.TryGetValue(planetId, out float value)) return;
+            if (!PlanetWaterAmounts.TryGetValue(factory.planetId, out float value)) return;
 
-            PlanetWaterAmounts[planetId] = Math.Max(0f, value - amount);
+            PlanetWaterAmounts[factory.planetId] = Math.Max(0f, value - amount);
         }
 
         /// <summary>消耗/注入大气池（amount 为正扣池，为负注池）</summary>
@@ -111,7 +111,8 @@ namespace ProjectGenesis.Patches
 
             if (index < 0) return;
 
-            ModifyGas(factory.planetId, index, amount);
+            // ModifyGas 的 amount 为正表示注入，扣池需传负
+            ModifyGas(factory.planetId, index, -amount);
         }
 
         /// <summary>当前池/初始池 的剩余比例（0-1），池未初始化视为 1</summary>
@@ -144,19 +145,36 @@ namespace ProjectGenesis.Patches
             PlanetWaterAmounts.Clear();
             PlanetGasAmounts.Clear();
 
-            int count = r.ReadInt32();
-
-            for (int i = 0; i < count; i++)
+            try
             {
-                int planetId = r.ReadInt32();
-                float water = r.ReadSingle();
-                int gasCount = r.ReadInt32();
-                var gas = new float[gasCount];
+                int count = r.ReadInt32();
 
-                for (int j = 0; j < gasCount; j++) gas[j] = r.ReadSingle();
+                for (int i = 0; i < count; i++)
+                {
+                    int planetId = r.ReadInt32();
+                    float water = r.ReadSingle();
+                    int gasCount = r.ReadInt32();
 
-                PlanetWaterAmounts[planetId] = water;
-                PlanetGasAmounts[planetId] = gas;
+                    // 旧档容错：气体数组长度与当前定义不一致时丢弃，进入游戏后按主题重新初始化
+                    if (gasCount != GasItemIds.Length)
+                    {
+                        for (int j = 0; j < gasCount; j++) r.ReadSingle();
+                        continue;
+                    }
+
+                    var gas = new float[gasCount];
+
+                    for (int j = 0; j < gasCount; j++) gas[j] = r.ReadSingle();
+
+                    PlanetWaterAmounts[planetId] = water;
+                    PlanetGasAmounts[planetId] = gas;
+                }
+            }
+            catch (EndOfStreamException)
+            {
+                // 旧版存档没有大气池数据段：清空数据，进入游戏后按主题重新初始化
+                PlanetWaterAmounts.Clear();
+                PlanetGasAmounts.Clear();
             }
         }
 
@@ -269,19 +287,20 @@ namespace ProjectGenesis.Patches
             // 在 stfld productCount 之后插入：
             //   ldarg.1                              // PlanetFactory factory
             //   ldloc.s  23                          // num14（本次产水量）
-            //   call      ConsumeWater(int planetId, int amount)
+            //   call      ConsumeWater(PlanetFactory, int)
             matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_1),
                 new CodeInstruction(OpCodes.Ldloc_S, (byte)23),
                 new CodeInstruction(OpCodes.Call,
-                    AccessTools.Method(typeof(PlanetAtmospherePatches), nameof(ConsumeWater), new[] { typeof(int), typeof(int) })));
+                    AccessTools.Method(typeof(PlanetAtmospherePatches), nameof(ConsumeWater),
+                        new[] { typeof(PlanetFactory), typeof(int) })));
 
             return matcher.InstructionEnumeration();
         }
 
         // ==================== 大气采集站（大气消耗） ====================
 
-        /// <summary>各站点原始采集速度（第一次调用时保存，避免多次缩放叠加）</summary>
-        private static readonly Dictionary<int, float[]> OriginalCollectionPerTick = new Dictionary<int, float[]>();
+        /// <summary>各站点原始采集速度（键 = 星球ID_站ID，避免跨行星串数据；首次调用时保存，避免多次缩放叠加）</summary>
+        private static readonly Dictionary<string, float[]> OriginalCollectionPerTick = new Dictionary<string, float[]>();
 
         /// <summary>
         /// 大气采集站速度挂钩：采集速度 ∝ 大气池剩余比例（与抽水机同模式），
@@ -296,11 +315,13 @@ namespace ProjectGenesis.Patches
 
             if (!__instance.isCollector) return;
 
+            string key = factory.planetId + "_" + __instance.id;
+
             // 首次调用保存原始速度
-            if (!OriginalCollectionPerTick.TryGetValue(__instance.id, out float[] original))
+            if (!OriginalCollectionPerTick.TryGetValue(key, out float[] original))
             {
                 original = (float[])__instance.collectionPerTick.Clone();
-                OriginalCollectionPerTick[__instance.id] = original;
+                OriginalCollectionPerTick[key] = original;
             }
 
             PlanetData planet = factory.planet;
