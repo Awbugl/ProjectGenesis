@@ -12,12 +12,9 @@ namespace ProjectGenesis.Patches
         {
             { ProtoID.R二氧化碳, 431 },
             { ProtoID.R催化重整, 432 },
-            { ProtoID.R四氢双环戊二烯, 433 },
             { ProtoID.R有机晶体重组, 434 },
             { ProtoID.R水电解, 435 },
-            { ProtoID.R盐水电解, 436 },
             { ProtoID.R合成氨, 437 },
-            { ProtoID.R三氯化铁, 438 },
             { ProtoID.R氨氧化, 439 },
             { ProtoID.R甲烷偶联, 440 },
             { ProtoID.R聚苯硫醚, 441 },
@@ -35,9 +32,8 @@ namespace ProjectGenesis.Patches
         private static readonly Dictionary<int, Color32> ItemColors = new Dictionary<int, Color32>
         {
             { 1117, new Color32(153, 163, 87, 255) },
-            { 7101, new Color32(244, 244, 244, 255) },
+            { 7101, new Color32(146, 219, 130, 255) }, // 萤石
             { 1114, new Color32(244, 244, 244, 255) },
-            { 7020, new Color32(58, 97, 164, 255) },
             { 1014, new Color32(229, 153, 255, 255) },
             { 1124, new Color32(121, 110, 114, 255) },
             { 1123, new Color32(150, 161, 174, 255) },

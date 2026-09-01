@@ -472,12 +472,11 @@ namespace ProjectGenesis.Compatibility
                         break;
 
                     case 17:
-                        theme.WaterItemId = ProtoID.I盐酸;
+                        // 黑石盐滩：海洋 盐酸 → 无
+                        theme.WaterItemId = 0;
                         theme.WaterHeight = -0.1f;
                         theme.Distribute = EThemeDistribute.Interstellar;
                         theme.Algo = 3;
-                        Themes.OceanicJungle.InitMaterials();
-                        theme.oceanMat = Themes.OceanicJungle.oceanMat;
                         RemoveVein(ref theme, 0);
                         RemoveVein(ref theme, 3);
                         RemoveVein(ref theme, 14);

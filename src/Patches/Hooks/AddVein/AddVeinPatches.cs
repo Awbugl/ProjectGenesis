@@ -48,7 +48,7 @@ namespace ProjectGenesis.Patches
                 NewVein(16, "放射性矿脉", "I放射性矿物", "Assets/texpack/V放射晶体矿脉", "fsxkm", ProtoID.I放射性矿物, 35, 2, 90),
                 NewVein(17, "铌矿脉", "I铌矿", "Assets/texpack/V铌矿脉", "wukm", ProtoID.I铌矿, 34, 1, 120),
                 NewVein(18, "硫矿脉", "I硫矿", "Assets/texpack/V硫矿脉", "liukm", ProtoID.I硫矿, 36, 1, 90),
-                NewVein(19, "盐矿脉", "I氯化钠", "Assets/texpack/V盐矿脉", "naclkm", ProtoID.I氯化钠, 37, 2, 30),
+                NewVein(19, "萤石矿脉", "I萤石", "Assets/texpack/V盐矿脉", "naclkm", ProtoID.I萤石, 37, 2, 30),
                 NewVein(20, "托林矿脉", "I焦油", "Assets/texpack/V托林矿脉", "tlkm", ProtoID.I焦油, 38, 2, 90));
             return;
 

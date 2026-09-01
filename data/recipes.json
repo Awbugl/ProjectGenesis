@@ -914,16 +914,14 @@
     "Description": "R硅石筛选",
     "IconPath": "",
     "IconTag": "rgssx",
-    "Type": 2,
+    "Type": 11,
     "GridIndex": 1616,
     "Time": 120,
     "Input": [
-      1005,
-      7020
+      1005
     ],
     "InCounts": [
-      10,
-      1
+      5
     ],
     "Output": [
       1003
@@ -2897,34 +2895,6 @@
     "NonProductive": false
   },
   {
-    "ID": 106,
-    "Name": "氦核转化",
-    "Description": "R氦核转化",
-    "IconPath": "",
-    "IconTag": "rhhzh",
-    "Type": 5,
-    "GridIndex": 1214,
-    "Time": 60,
-    "Input": [
-      6234,
-      1120
-    ],
-    "InCounts": [
-      1,
-      1
-    ],
-    "Output": [
-      6235
-    ],
-    "OutCounts": [
-      1
-    ],
-    "Explicit": true,
-    "Handcraft": false,
-    "PowerFactor": 4,
-    "NonProductive": true
-  },
-  {
     "ID": 107,
     "Name": "氦原子提取",
     "Description": "R氦原子提取",
@@ -2960,10 +2930,14 @@
     "Time": 120,
     "Input": [
       1124,
+      1124,
       6205,
-      7015
+      6205,
+      7014
     ],
     "InCounts": [
+      2,
+      2,
       2,
       2,
       1
@@ -4593,10 +4567,18 @@
     "Time": 120,
     "Input": [
       6222,
-      7020
+      6222,
+      6222,
+      6222,
+      7014,
+      7014
     ],
     "InCounts": [
       4,
+      4,
+      4,
+      4,
+      2,
       2
     ],
     "Output": [
@@ -5515,35 +5497,6 @@
     "NonProductive": false
   },
   {
-    "ID": 625,
-    "Name": "氦三燃料棒",
-    "Description": "",
-    "IconPath": "",
-    "IconTag": "",
-    "Type": 10,
-    "GridIndex": 1316,
-    "Time": 600,
-    "Input": [
-      6263,
-      6235,
-      1115
-    ],
-    "InCounts": [
-      2,
-      20,
-      2
-    ],
-    "Output": [
-      6244
-    ],
-    "OutCounts": [
-      1
-    ],
-    "Explicit": false,
-    "Handcraft": false,
-    "NonProductive": false
-  },
-  {
     "ID": 641,
     "Name": "基础机械组件",
     "Description": "",
@@ -5657,64 +5610,6 @@
     "Handcraft": false,
     "Overflow": 32,
     "PowerFactor": 4,
-    "NonProductive": false
-  },
-  {
-    "ID": 703,
-    "Name": "盐水电解",
-    "Description": "R盐水电解",
-    "IconPath": "Assets/texpack/R盐水电解",
-    "IconTag": "rysdj",
-    "Type": 2,
-    "GridIndex": 3502,
-    "Time": 120,
-    "Input": [
-      1000,
-      7101
-    ],
-    "InCounts": [
-      1,
-      1
-    ],
-    "Output": [
-      7014,
-      7020
-    ],
-    "OutCounts": [
-      1,
-      1
-    ],
-    "Explicit": true,
-    "Handcraft": false,
-    "Overflow": 32,
-    "PowerFactor": 4,
-    "NonProductive": false
-  },
-  {
-    "ID": 704,
-    "Name": "钠盐转化",
-    "Description": "R钠盐转化",
-    "IconPath": "",
-    "IconTag": "rnyzh",
-    "Type": 2,
-    "GridIndex": 1313,
-    "Time": 120,
-    "Input": [
-      1005,
-      7014
-    ],
-    "InCounts": [
-      2,
-      1
-    ],
-    "Output": [
-      7101
-    ],
-    "OutCounts": [
-      1
-    ],
-    "Explicit": true,
-    "Handcraft": false,
     "NonProductive": false
   },
   {
@@ -5852,38 +5747,6 @@
     "NonProductive": false
   },
   {
-    "ID": 716,
-    "Name": "三氯化铁",
-    "Description": "R三氯化铁",
-    "IconPath": "",
-    "IconTag": "rslht",
-    "Type": 2,
-    "GridIndex": 3503,
-    "Time": 240,
-    "Input": [
-      7014,
-      1101,
-      7019
-    ],
-    "InCounts": [
-      6,
-      2,
-      3
-    ],
-    "Output": [
-      7015,
-      1000
-    ],
-    "OutCounts": [
-      2,
-      3
-    ],
-    "Explicit": true,
-    "Handcraft": false,
-    "Overflow": 2,
-    "NonProductive": false
-  },
-  {
     "ID": 717,
     "Name": "氨氧化",
     "Description": "R氨氧化",
@@ -6012,9 +5875,11 @@
     "Time": 120,
     "Input": [
       7709,
-      7015
+      7709,
+      7014
     ],
     "InCounts": [
+      2,
       2,
       1
     ],
@@ -6526,15 +6391,107 @@
     ],
     "Output": [
       1000,
-      7101
+      1000,
+      1000
     ],
     "OutCounts": [
-      3,
-      1
+      3
     ],
     "Explicit": true,
     "Handcraft": true,
     "Overflow": 32,
     "NonProductive": false
+  },
+  {
+    "ID": 900,
+    "Name": "萤石提炼",
+    "Description": "萤石提炼",
+    "IconPath": "",
+    "IconTag": "",
+    "Type": 1,
+    "GridIndex": 1601,
+    "Time": 60,
+    "Input": [
+      7101
+    ],
+    "InCounts": [
+      1
+    ],
+    "Output": [
+      1111,
+      1111
+    ],
+    "OutCounts": [
+      2
+    ],
+    "Explicit": false,
+    "Handcraft": false,
+    "NonProductive": false
+  },
+  {
+    "ID": 901,
+    "Name": "萤石制氢氟酸",
+    "Description": "萤石制氢氟酸",
+    "IconPath": "",
+    "IconTag": "",
+    "Type": 2,
+    "GridIndex": 3504,
+    "Time": 120,
+    "Input": [
+      7101,
+      7101,
+      1116,
+      1116
+    ],
+    "InCounts": [
+      2,
+      2,
+      2,
+      2
+    ],
+    "Output": [
+      7014,
+      7014,
+      1005
+    ],
+    "OutCounts": [
+      2,
+      2,
+      1
+    ],
+    "Explicit": false,
+    "Handcraft": false,
+    "NonProductive": false,
+    "Overflow": 2
+  },
+  {
+    "ID": 902,
+    "Name": "甲烷裂解",
+    "Description": "甲烷裂解",
+    "IconPath": "",
+    "IconTag": "",
+    "Type": 2,
+    "GridIndex": 3505,
+    "Time": 120,
+    "Input": [
+      7008
+    ],
+    "InCounts": [
+      1
+    ],
+    "Output": [
+      1109,
+      1120,
+      1120
+    ],
+    "OutCounts": [
+      1,
+      1,
+      2
+    ],
+    "Explicit": false,
+    "Handcraft": false,
+    "NonProductive": false,
+    "Overflow": 2
   }
 ]

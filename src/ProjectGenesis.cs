@@ -210,15 +210,15 @@ namespace ProjectGenesis
             VegeProto vegeProto = LDB.veges.Select(9999);
             vegeProto.MiningItem = new[]
             {
-                ProtoID.I四氢双环戊二烯燃料棒, ProtoID.I铁块, ProtoID.I铜块, ProtoID.I铝块,
+                ProtoID.I铁块, ProtoID.I铜块, ProtoID.I铝块,
             };
             vegeProto.MiningCount = new[]
             {
-                10, 100, 100, 100,
+                100, 100, 100,
             };
             vegeProto.MiningChance = new float[]
             {
-                1, 1, 1, 1,
+                1, 1, 1,
             };
             vegeProto.Preload();
 

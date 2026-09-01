@@ -505,11 +505,6 @@
     "ENUS": "Helium"
   },
   {
-    "Name": "氦三",
-    "ZHCN": "氦三",
-    "ENUS": "Helium-3"
-  },
-  {
     "Name": "钍燃料棒",
     "ZHCN": "钍燃料棒",
     "ENUS": "Thorium Fuel Rod"
@@ -815,19 +810,9 @@
     "ENUS": "A colorless flammable gas with a slight petroleum ether odor—one of the core petrochemical feedstocks, mainly used for synthesizing polypropylene and other polymer materials."
   },
   {
-    "Name": "盐酸",
-    "ZHCN": "盐酸",
-    "ENUS": "Hydrochloric Acid"
-  },
-  {
     "Name": "I盐酸",
     "ZHCN": "氯化氢水溶液，无色透明且具有强烈刺激性气味，是金属清洗、有机合成等工业领域的基础化学品。",
     "ENUS": "An aqueous solution of hydrogen chloride, colorless and transparent with a strong pungent odor—a basic chemical in industrial fields such as metal cleaning and organic synthesis."
-  },
-  {
-    "Name": "三氯化铁",
-    "ZHCN": "三氯化铁",
-    "ENUS": "Ferric Trichloride"
   },
   {
     "Name": "I三氯化铁",
@@ -875,19 +860,9 @@
     "ENUS": "A key element sustaining most carbon-based life, chemically active—a core participant in strong oxidation reactions and a combustion supporter."
   },
   {
-    "Name": "氢氧化钠",
-    "ZHCN": "氢氧化钠",
-    "ENUS": "Sodium Hydroxide"
-  },
-  {
     "Name": "I氢氧化钠",
     "ZHCN": "白色片状或颗粒状固体，易潮解，具有强碱性及腐蚀性，是皂化、造纸、纺织等行业的核心化学品。",
     "ENUS": "White flaky or granular solid, hygroscopic, with strong alkalinity and corrosiveness—a core chemical in industries such as saponification, papermaking, and textiles."
-  },
-  {
-    "Name": "氯化钠",
-    "ZHCN": "氯化钠",
-    "ENUS": "Sodium Chloride"
   },
   {
     "Name": "I氯化钠",
@@ -2528,5 +2503,30 @@
     "Name": "I星际物流运输站",
     "ZHCN": "巨大的太空电梯，实现了行星之间更便捷的物资运输，可以将星球工厂连结成一个庞大的工业帝国。\n<color=\"#FD965ECC\">“于上天入地之处，取寰宇无穷之物。”</color>",
     "ENUS": "Giant space elevators make it easier to transport materials between planets. They can connect planet factories to a massive industrial empire.\n<color=\"#FD965ECC\">\"From heaven to the earth, take infinite things in the worlds.\"</color>"
+  },
+  {
+    "Name": "氢氟酸",
+    "ZHCN": "氢氟酸",
+    "ENUS": "Hydrofluoric Acid"
+  },
+  {
+    "Name": "萤石",
+    "ZHCN": "萤石",
+    "ENUS": "Fluorite"
+  },
+  {
+    "Name": "萤石提炼",
+    "ZHCN": "萤石提炼",
+    "ENUS": "Fluorite Polishing"
+  },
+  {
+    "Name": "萤石制氢氟酸",
+    "ZHCN": "萤石制氢氟酸",
+    "ENUS": "Fluorite to Hydrofluoric Acid"
+  },
+  {
+    "Name": "甲烷裂解",
+    "ZHCN": "甲烷裂解",
+    "ENUS": "Methane Pyrolysis"
   }
 ]

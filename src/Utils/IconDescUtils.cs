@@ -13,7 +13,6 @@ namespace ProjectGenesis.Utils
             { 7019, new FluidIconDesc(new Color32(129, 199, 241, 255)) }, // O2
             { 6220, new FluidIconDesc(new Color32(137, 242, 178, 255)) }, // N2
             { 6234, new FluidIconDesc(new Color32(244, 255, 183, 255)) }, // He4
-            { 6235, new FluidIconDesc(new Color32(210, 222, 142, 255)) }, // He3
 
             { 1114, new NoIconFluidIconDesc(new Color32(138, 83, 43, 255)) },   // Coal Oil
             { 7018, new NoIconFluidIconDesc(new Color32(97, 132, 186, 255)) },  // Ocean
@@ -23,8 +22,7 @@ namespace ProjectGenesis.Utils
             { 6206, new NoIconFluidIconDesc(new Color32(191, 227, 255, 255)) }, // CO2
             { 6205, new NoIconFluidIconDesc(new Color32(255, 128, 52, 255)) },  // SO2
             { 6212, new NoIconFluidIconDesc(new Color32(188, 182, 5, 255)) },   // JP10
-            { 7014, new NoIconFluidIconDesc(new Color32(104, 187, 154, 255)) }, // HCl
-            { 7015, new NoIconFluidIconDesc(new Color32(42, 97, 32, 255)) },    // FeCl3
+            { 7014, new NoIconFluidIconDesc(new Color32(104, 187, 154, 255)) }, // 氢氟酸（原盐酸）
             { 7002, new NoIconFluidIconDesc(new Color32(195, 198, 234, 255)) }, // NH3
             { 7017, new NoIconFluidIconDesc(new Color32(157, 56, 157, 255)) },  // HNO3
 

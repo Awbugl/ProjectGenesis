@@ -46,10 +46,10 @@ namespace ProjectGenesis.Patches
                         break;
 
                     case 17:
-                        theme.WaterItemId = ProtoID.I盐酸;
+                        // 黑石盐滩：海洋 盐酸 → 无
+                        theme.WaterItemId = 0;
                         theme.WaterHeight = -0.1f;
                         theme.Distribute = EThemeDistribute.Interstellar;
-                        theme.oceanMat = LDB.themes.Select(8).oceanMat;
                         RemoveVein(theme, 0);
                         RemoveVein(theme, 14);
 
@@ -86,7 +86,8 @@ namespace ProjectGenesis.Patches
                 }
                 else if (theme.GasSpeeds[1] > 0.15f)
                 {
-                    theme.GasItems = new[] { ProtoID.I氢, ProtoID.I重氢, ProtoID.I氦三, };
+                    // 氦三已删除，高速气巨第三产物改为 氦
+                    theme.GasItems = new[] { ProtoID.I氢, ProtoID.I重氢, ProtoID.I氦, };
                     var heliumGasSpeed = (float)Maths.Clamp(0.2f - theme.GasSpeeds[1], 0.01f, theme.GasSpeeds[1] - 0.01f);
                     theme.GasSpeeds = new float[] { theme.GasSpeeds[0] - heliumGasSpeed, theme.GasSpeeds[1], heliumGasSpeed, };
                 }
