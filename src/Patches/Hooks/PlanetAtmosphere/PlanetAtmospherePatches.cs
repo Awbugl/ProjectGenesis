@@ -223,7 +223,11 @@ namespace ProjectGenesis.Patches
             // 停产底线：低于初始 5% 时停产
             if (ratio <= FloorRatio) ratio = 0f;
 
-            __instance.speed = (int)(10000f * ratio);
+            // 行星主题加成：抽水速度 × 主题倍率（海洋行星快、熔岩行星慢）
+            float themeMultiplier = PlanetThemeMultiplierPatches.GetMultiplier(planet,
+                PlanetThemeMultiplierPatches.MultiplierType.PumpSpeed);
+
+            __instance.speed = (int)(10000f * ratio * themeMultiplier);
         }
 
         /// <summary>
@@ -318,7 +322,11 @@ namespace ProjectGenesis.Patches
                 // 停产底线
                 if (ratio <= FloorRatio) ratio = 0f;
 
-                __instance.collectionPerTick[i] = original[i] * ratio;
+                // 行星主题加成：大气采集速度 × 主题倍率（飓风石林快、熔岩慢）
+                float themeMultiplier = PlanetThemeMultiplierPatches.GetMultiplier(planet,
+                    PlanetThemeMultiplierPatches.MultiplierType.CollectSpeed);
+
+                __instance.collectionPerTick[i] = original[i] * ratio * themeMultiplier;
             }
         }
 
