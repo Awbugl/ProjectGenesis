@@ -366,5 +366,94 @@ namespace ProjectGenesis.Patches
 
             return matcher.InstructionEnumeration();
         }
+
+        // ==================== 排污（燃料燃烧 → 大气池注入） ====================
+
+        /// <summary>每烧 1 个燃料向大气池注入的水量</summary>
+        internal const float WaterPerFuel = 2f;
+
+        /// <summary>每烧 1 个燃料向大气池注入的氢量</summary>
+        internal const float HydrogenPerFuel = 1f;
+
+        /// <summary>
+        /// 排污钩子：燃料发电机每消耗 1 个燃料，向所在星球大气池注入 水、氢
+        /// （"默认仅排水、氢"，数值可调；积累的大气成分可被大气采集站采集，即成分影响产出）。
+        /// 插入点与熔盐堆相同（consumeRegister[fuelId]++ 之后），两个 transpiler 互不干扰。
+        /// </summary>
+        [HarmonyPatch(typeof(PowerGeneratorComponent), nameof(PowerGeneratorComponent.GenEnergyByFuel))]
+        [HarmonyTranspiler]
+        public static IEnumerable<CodeInstruction> GenEnergyByFuel_Emission_Transpiler(IEnumerable<CodeInstruction> instructions)
+        {
+            /*
+                目标 IL（Assembly-CSharp.dll / PowerGeneratorComponent.GenEnergyByFuel）：
+
+                    IL_0145: ldarg.0
+                    IL_0146: ldarg.0
+                    IL_0147: ldfld       int16 PowerGeneratorComponent::fuelCount
+                    IL_014c: ldc.i4.1
+                    IL_014d: sub
+                    IL_014e: conv.i2
+                    IL_014f: stfld       int16 PowerGeneratorComponent::fuelCount   // fuelCount--
+
+                    IL_0154: ldarg.2
+                    IL_0155: ldarg.0
+                    IL_0156: ldfld       int16 PowerGeneratorComponent::fuelId
+                    IL_015b: ldelema     [netstandard]System.Int32
+                    IL_0160: dup
+                    IL_0161: ldind.i4
+                    IL_0162: ldc.i4.1
+                    IL_0163: add
+                    IL_0164: stind.i4                                             // consumeRegister[fuelId]++
+             */
+            CodeMatcher matcher = new CodeMatcher(instructions);
+
+            // 匹配 consumeRegister[fuelId]++ 的完整序列（与熔盐堆相同锚点）
+            matcher.MatchForward(false,
+                new CodeMatch(OpCodes.Stfld, AccessTools.Field(typeof(PowerGeneratorComponent), nameof(PowerGeneratorComponent.fuelCount))),
+                new CodeMatch(OpCodes.Ldarg_2),
+                new CodeMatch(OpCodes.Ldarg_0),
+                new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(PowerGeneratorComponent), nameof(PowerGeneratorComponent.fuelId))),
+                new CodeMatch(OpCodes.Ldelema, typeof(int)),
+                new CodeMatch(OpCodes.Dup),
+                new CodeMatch(OpCodes.Ldind_I4),
+                new CodeMatch(OpCodes.Ldc_I4_1),
+                new CodeMatch(OpCodes.Add),
+                new CodeMatch(OpCodes.Stind_I4));
+
+            // 在 stind.i4 之后插入对 GenEnergyByFuel_Emission 的调用
+            matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0),
+                new CodeInstruction(OpCodes.Ldarg_2),
+                new CodeInstruction(OpCodes.Call,
+                    AccessTools.Method(typeof(PlanetAtmospherePatches), nameof(GenEnergyByFuel_Emission))));
+
+            return matcher.InstructionEnumeration();
+        }
+
+        /// <summary>燃料燃烧排放：向所在星球大气池注入 水、氢</summary>
+        public static void GenEnergyByFuel_Emission(ref PowerGeneratorComponent component, int[] consumeRegister)
+        {
+            if (component.fuelId <= 0) return;
+
+            // 通过消耗寄存器定位所在工厂（统计池索引与 GameData.factories 一致）
+            PlanetFactory factory = null;
+
+            FactoryProductionStat[] stats = GameMain.data.statistics.production.factoryStatPool;
+
+            for (int i = 0; i < stats.Length; i++)
+            {
+                if (stats[i] == null || stats[i].consumeRegister != consumeRegister) continue;
+
+                factory = GameMain.data.factories[i];
+                break;
+            }
+
+            if (factory == null) return;
+
+            int waterIndex = Array.IndexOf(GasItemIds, ProtoID.I水);
+            int hydrogenIndex = Array.IndexOf(GasItemIds, ProtoID.I氢);
+
+            ModifyGas(factory.planetId, waterIndex, (int)WaterPerFuel);
+            ModifyGas(factory.planetId, hydrogenIndex, (int)HydrogenPerFuel);
+        }
     }
 }
