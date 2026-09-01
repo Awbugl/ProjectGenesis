@@ -422,8 +422,6 @@ namespace ProjectGenesis.Patches
             // 蓄电器、能量碎片、创世之书/日志（黑雾能量）、钍燃料（熔盐堆）
         };
 
-        /// <summary>排污总倍率（设置项可调）</summary>
-        internal static float EmissionScale = 1f;
 
         /// <summary>
         /// 排污钩子：燃料发电机每消耗 1 个燃料，按燃料类型向所在星球大气池注入对应排放物
@@ -488,7 +486,9 @@ namespace ProjectGenesis.Patches
             // 按燃料查排放映射（清洁燃料/未收录燃料无排放）
             if (!FuelEmissionGas.TryGetValue(component.fuelId, out int gasItemId)) return;
 
-            if (EmissionScale <= 0f) return;
+            float emissionScale = ProjectGenesis.EmissionScaleEntry?.Value ?? 1f;
+
+            if (emissionScale <= 0f) return;
 
             // 通过消耗寄存器定位所在工厂（统计池索引与 GameData.factories 一致）
             PlanetFactory factory = null;
@@ -514,7 +514,7 @@ namespace ProjectGenesis.Patches
 
             if (fuel == null) return;
 
-            int amount = Math.Max(1, (int)(fuel.HeatValue / (float)HeatPerEmission * EmissionScale));
+            int amount = Math.Max(1, (int)(fuel.HeatValue / (float)HeatPerEmission * emissionScale));
 
             if (amount <= 0) return;
 

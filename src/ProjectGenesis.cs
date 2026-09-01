@@ -65,6 +65,8 @@ namespace ProjectGenesis
 
         internal static ConfigEntry<int> ProductOverflowEntry;
 
+        internal static ConfigEntry<float> EmissionScaleEntry;
+
         private Harmony Harmony;
 
         public void Awake()
@@ -93,6 +95,9 @@ namespace ProjectGenesis
 
             ProductOverflowEntry = Config.Bind("config", "ProductOverflow", 0,
                 "Changing the condition for stopping production of some recipes from single product pile up to all product pile up.\n将部分配方停止生产的条件由单产物堆积改为所有产物均堆积");
+
+            EmissionScaleEntry = Config.Bind("config", "EmissionScale", 1f,
+                "Multiplier of emission injected into planet atmosphere pool when burning fuel (0 to disable).\n排污倍率：燃料燃烧注入大气池的排放物倍率（0 为关闭排污）");
 
             Config.Save();
 
