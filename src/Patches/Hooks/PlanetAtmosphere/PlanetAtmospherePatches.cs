@@ -125,6 +125,14 @@ namespace ProjectGenesis.Patches
 
         // ==================== 存档（全局） ====================
 
+        /// <summary>切换存档时清空行星池数据，避免泄漏到新档</summary>
+        internal static void IntoOtherSave()
+        {
+            PlanetWaterAmounts.Clear();
+            PlanetGasAmounts.Clear();
+            OriginalCollectionPerTick.Clear();
+        }
+
         internal static void Export(BinaryWriter w)
         {
             w.Write(PlanetWaterAmounts.Count);
