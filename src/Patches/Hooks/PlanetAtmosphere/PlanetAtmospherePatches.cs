@@ -311,11 +311,8 @@ namespace ProjectGenesis.Patches
             {
                 int index = Array.IndexOf(GasItemIds, __instance.collectionIds[i]);
 
-                if (index < 0)
-                {
-                    __instance.collectionPerTick[i] = 0f;
-                    continue;
-                }
+                // 非池化成分（主题特色副产物等）：不参与池化，保持原始采集速度
+                if (index < 0) continue;
 
                 float ratio = GetPoolRatio(planet, gasPool[index], initialGas[index]);
 
