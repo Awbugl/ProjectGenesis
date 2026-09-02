@@ -101,7 +101,6 @@ namespace ProjectGenesis.Patches
 
             switch (planet.waterItemId)
             {
-                case ProtoID.I氢氟酸:
                 case ProtoID.I甲烷:
                     var planetAlgorithm3 = new PlanetAlgorithm3();
                     planetAlgorithm3.Reset(planet.seed, planet);

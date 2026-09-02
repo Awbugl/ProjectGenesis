@@ -45,16 +45,6 @@ namespace ProjectGenesis.Patches
 
                         break;
 
-                    case 17:
-                        // 黑石盐滩：海洋 盐酸 → 无
-                        theme.WaterItemId = 0;
-                        theme.WaterHeight = -0.1f;
-                        theme.Distribute = EThemeDistribute.Interstellar;
-                        RemoveVein(theme, 0);
-                        RemoveVein(theme, 14);
-
-                        break;
-                    
                     case 24:
                         theme.WaterItemId = ProtoID.I甲烷;
                         theme.WaterHeight = -0.1f;
