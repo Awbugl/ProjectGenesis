@@ -205,5 +205,47 @@ namespace ProjectGenesis.Patches
 
             if (productCount > 0) __instance.storage.Add(ProtoID.I铀燃料, productCount, 0);
         }
+
+        /// <summary>
+        /// 熔盐堆发电窗口产物显示：原版产品按钮由 productId 驱动，但燃料燃烧要求 productId==0
+        /// （PowerSystem.GameTick 中 productId>0 的发电机不烧燃料），因此窗口内直接覆盖产物显示：
+        /// fuelMask==32（熔盐堆）时，把产品按钮/图标/计数设置为铀燃料与当前 productCount。
+        /// 仅窗口打开（_OnUpdate）时执行，非 tick 高频，无性能负担；纯 C# postfix 无 IL 风险。
+        /// </summary>
+        [HarmonyPatch(typeof(UIPowerGeneratorWindow), nameof(UIPowerGeneratorWindow._OnUpdate))]
+        [HarmonyPostfix]
+        public static void UIPowerGeneratorWindow_OnUpdate_Postfix(UIPowerGeneratorWindow __instance)
+        {
+            if (__instance.generatorId <= 0 || __instance.factory == null || __instance.powerSystem == null) return;
+
+            ref PowerGeneratorComponent component = ref __instance.powerSystem.genPool[__instance.generatorId];
+
+            if (component.id != __instance.generatorId || component.fuelMask != MoltenSaltFuelMask) return;
+
+            ItemProto uranium = LDB.items.Select(ProtoID.I铀燃料);
+
+            if (uranium == null) return;
+
+            __instance.productUIButton.tips.itemId = uranium.ID;
+            __instance.productUIButton.tips.itemCount = (int)component.productCount;
+            __instance.productUIButton.tips.itemInc = 0;
+            __instance.productUIButton.tips.type = UIButton.ItemTipType.Item;
+            __instance.productIcon.sprite = uranium.iconSprite;
+            __instance.productIcon.enabled = true;
+
+            int count = (int)component.productCount;
+
+            __instance.productCountText.text = count.ToString();
+
+            if (count >= 20)
+            {
+                __instance.productSpeedText.text = "产物堆积".Translate();
+                __instance.productSpeedText.color = __instance.powerColor2;
+            }
+            else
+            {
+                __instance.productSpeedText.text = "";
+            }
+        }
     }
 }
