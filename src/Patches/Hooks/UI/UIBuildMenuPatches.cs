@@ -49,35 +49,6 @@ namespace ProjectGenesis.Patches
             }
 
             SetButtonPosition(__instance.blueprintButton);
-
-            // 补全 childButtons 空槽（克隆首个有效按钮为占位）：
-            // _OnUpdate 的 childButtons[l] 无空值保护，mod 建筑填充新槽后
-            // 若该槽无按钮（childButtons[l]==null）会 NullReferenceException（每帧）
-            UIButton[] childButtons = __instance.childButtons;
-
-            if (childButtons != null)
-            {
-                UIButton firstButton = null;
-
-                for (int i = 0; i < childButtons.Length; i++)
-                {
-                    if (childButtons[i] == null) continue;
-
-                    firstButton = childButtons[i];
-                    break;
-                }
-
-                if (firstButton != null)
-                {
-                    for (int i = 0; i < childButtons.Length; i++)
-                    {
-                        if (childButtons[i] != null) continue;
-
-                        childButtons[i] = Object.Instantiate(firstButton, firstButton.transform.parent);
-                    }
-                }
-            }
-
             return;
 
             void SetButtonPosition(UIButton button)
