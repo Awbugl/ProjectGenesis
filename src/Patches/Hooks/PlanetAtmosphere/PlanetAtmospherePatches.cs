@@ -505,7 +505,7 @@ namespace ProjectGenesis.Patches
 
         /// <summary>燃料燃烧排放：按燃料类型向所在星球大气池注入对应排放物，量按热值换算。
         /// 由统一发电钩子（Transpliers/PowerGeneratorComponent_GameTick）调用，不再单独挂 transpiler。</summary>
-        internal static void OnFuelBurned(ref PowerGeneratorComponent component, int[] consumeRegister)
+        internal static void OnFuelBurned(ref PowerGeneratorComponent component, int[] consumeRegister, PowerSystem powerSystem)
         {
             if (component.curFuelId <= 0) return;
 
@@ -516,18 +516,16 @@ namespace ProjectGenesis.Patches
 
             if (emissionScale <= 0f) return;
 
-            // 通过消耗寄存器定位所在工厂（统计池索引与 GameData.factories 一致）
-            PlanetFactory factory = null;
+            // 事件制：与熔盐堆产出一致，只有"烧尽 1 个燃料包"的 tick 才排放一次
+            //（否则每 tick 排 = 大气池飙升；0.10.34 反编译：仅换燃料 tick 才 consumeRegister[fuelId]++）
+            if (consumeRegister[component.curFuelId] <= 0) return;
 
-            FactoryProductionStat[] stats = GameMain.data.statistics.production.factoryStatPool;
+            // 定位所在工厂：与原版统计一致（PowerSystem.GameTick 1548-1552：factoryStatPool[factory.index]）
+            FactoryProductionStat stat = GameMain.statistics.production.factoryStatPool[powerSystem.factory.index];
 
-            for (int i = 0; i < stats.Length; i++)
-            {
-                if (stats[i] == null || stats[i].consumeRegister != consumeRegister) continue;
+            if (stat == null) return;
 
-                factory = GameMain.data.factories[i];
-                break;
-            }
+            PlanetFactory factory = GameMain.data.factories[powerSystem.factory.index];
 
             if (factory == null) return;
 

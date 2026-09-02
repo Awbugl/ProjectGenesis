@@ -28,26 +28,25 @@ namespace ProjectGenesis.Patches
 
         /// <summary>每消耗 1 个钍燃料累计 1 个铀燃料，并计入生产统计（缓存满时铀丢弃，不计统计避免漂移）。
         /// 由统一发电钩子（Transpliers/PowerGeneratorComponent_GameTick）调用，不再单独挂 transpiler。</summary>
-        internal static void OnFuelBurned(ref PowerGeneratorComponent component, int[] consumeRegister)
+        internal static void OnFuelBurned(ref PowerGeneratorComponent component, int[] consumeRegister, PowerSystem powerSystem)
         {
-            // 只处理熔盐堆的专用燃料（curFuelId 是本次被消耗的燃料）
-            if (component.curFuelId != ProtoID.I钍燃料) return;
+            // 对齐旧版"燃料棒回收"产出 patch（6a42028^ UIPatches.cs GenEnergyByFuel_Patch_Method）的事件语义：
+            // 每"烧尽 1 个燃料包"的那一 tick 产一次（旧版插点位于换燃料分支=consumeRegister 首次加载处）。
+            // 本实现走统一发电钩子（每 tick 调用一次），以"本 tick 有燃料消耗记账"（0.10.34 反编译 342-345 行
+            // 只有换燃料 tick 才 consumeRegister[fuelId]++）作为同一事件判定。
+            // 统计直取原版同构（PowerSystem.GameTick 1548-1551 行）：factoryStatPool[factory.index]。
+            // 注意：旧版的 split_inc/catalystIncPoint 是伽马催化产物专用，燃耗式产物（铀燃料）不需要——不保留。
+            if (consumeRegister[ProtoID.I钍燃料] <= 0) return;
 
             // 产物缓存已满：本次铀丢弃，不累计也不计统计（避免统计漂移）
             if (component.productCount >= MaxProductCount) return;
 
             component.productCount += 1;
 
-            // 生产统计：找到当前工厂对应的统计项，计入铀燃料产量
-            // ReSharper disable once LoopCanBePartlyConvertedToQuery
-            foreach (FactoryProductionStat stat in GameMain.data.statistics.production.factoryStatPool)
-            {
-                if (stat.consumeRegister != consumeRegister) continue;
+            // 生产统计：
+            FactoryProductionStat stat = GameMain.statistics.production.factoryStatPool[powerSystem.factory.index];
 
-                stat.productRegister[ProtoID.I铀燃料] += 1;
-
-                return;
-            }
+            if (stat != null) stat.productRegister[ProtoID.I铀燃料] += 1;
         }
 
         /// <summary>

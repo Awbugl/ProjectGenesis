@@ -31,9 +31,10 @@ namespace ProjectGenesis.Utils
             CopyModelProto(373, ProtoID.M高频激光塔MK2, new Color(0.5765f, 0.4392f, 0.8588f));
             CopyModelProto(490, ProtoID.M核子单元);
             CopyModelProto(488, ProtoID.M反物质炮弹);
-            // 熔盐堆临时使用 119（分馏塔）作为源模型（与 大抽水机 相同源），
-            // 排查 118（裂变站）作为源时虚影缺失的问题
-            CopyModelProto(119, ProtoID.M熔盐堆, Color.HSVToRGB(0.0833f, 0.30f, 0.95f));
+            // 熔盐堆源模型：118（裂变能源发电站）——3.3 设计文档规则（复制裂变站模型并染色）。
+            // 注意：不能用 808（mod 自建大抽水机模型）作为源——
+            // LDBTool.PreAddProto 只是排队，PreAdd 阶段 Select(808) 时 808 尚未挂载 → 空引用崩溃。
+            CopyModelProto(118, ProtoID.M熔盐堆, Color.HSVToRGB(0.0833f, 0.30f, 0.95f));
 
             AddAtmosphericCollectStation();
         }
