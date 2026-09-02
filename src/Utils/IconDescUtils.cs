@@ -27,6 +27,7 @@ namespace ProjectGenesis.Utils
             { 7017, new NoIconFluidIconDesc(new Color32(157, 56, 157, 255)) },  // HNO3
 
             { 6202, new OreIconDesc(new Color32(210, 184, 147, 255)) }, // Al
+            { 7101, new OreIconDesc(new Color32(146, 219, 130, 255)) }, // 萤石（与 TextureGenerator 化工厂渲染色一致）
             { 6207, new OreIconDesc(new Color32(230, 239, 137, 255)) }, // S
             { 6222, new OreIconDesc(new Color32(106, 175, 78, 255)) },  // Rads
             { 6225, new OreIconDesc(new Color32(130, 235, 139, 255)) }, // U
@@ -40,6 +41,7 @@ namespace ProjectGenesis.Utils
             { 6263, new ComponentIconDesc(new Color32(150, 173, 240, 255)) }, // 氦闪约束器
             { 6267, new ComponentIconDesc(new Color32(147, 244, 241, 255)) }, // 大气采集站
             { 6221, new ComponentIconDesc(new Color32(122, 227, 130, 255)) }, // 同位素发电机
+            { 6268, new ComponentIconDesc(new Color32(129, 242, 166, 255)) }, // 熔盐堆（与模型染色 HSV(0.0833,0.30,0.95) 相近的薄荷绿）
             { 6261, new ComponentIconDesc(new Color32(41, 221, 255, 255)) },  // 人造恒星MK2
             { 6229, new ComponentIconDesc(new Color32(164, 218, 255, 255)) }, // 量子缸
             { 6231, new ComponentIconDesc(new Color32(213, 82, 255, 255)) },  // 量子箱

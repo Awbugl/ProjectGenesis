@@ -1,4 +1,4 @@
-[
+﻿[
   {
     "Name": "电力节约",
     "ZHCN": "电力节约",
@@ -430,21 +430,6 @@
     "ENUS": "Proliferator"
   },
   {
-    "Name": "四氢双环戊二烯",
-    "ZHCN": "四氢双环戊二烯（JP-10）",
-    "ENUS": "Tetrahydrocyclopentadiene(JP-10)"
-  },
-  {
-    "Name": "I四氢双环戊二烯",
-    "ZHCN": "一种高能量密度的饱和多环烃类化合物，化学性质稳定，不易挥发，是航空航天推进系统的优选燃料组分。",
-    "ENUS": "A high energy density saturated polycyclic hydrocarbon compound with stable chemical properties and low volatility—a preferred fuel component for aerospace propulsion systems."
-  },
-  {
-    "Name": "四氢双环戊二烯燃料棒",
-    "ZHCN": "四氢双环戊二烯燃料棒",
-    "ENUS": "JP-10 Fuel Rod"
-  },
-  {
     "Name": "焦油燃料棒",
     "ZHCN": "焦油燃料棒",
     "ENUS": "Refined Oil Fuel Rod"
@@ -556,7 +541,7 @@
   },
   {
     "Name": "I氘氦混合燃料棒",
-    "ZHCN": "优化氘与氦三的配比并采用分层封装结构，在降低聚变点火条件的同时最大化能量产出，为巨型设施提供澎湃动力。",
+    "ZHCN": "优化氘与氦的配比并采用分层封装结构，在降低聚变点火条件的同时最大化能量产出，为巨型设施提供澎湃动力。",
     "ENUS": "Optimizing the ratio of deuterium to helium-3 with a layered encapsulation structure, minimizing fusion ignition requirements while maximizing energy output—providing surging power for mega-scale facilities."
   },
   {
@@ -800,11 +785,6 @@
     "ENUS": "A colorless flammable gas with a slight petroleum ether odor—one of the core petrochemical feedstocks, mainly used for synthesizing polypropylene and other polymer materials."
   },
   {
-    "Name": "I盐酸",
-    "ZHCN": "氯化氢水溶液，无色透明且具有强烈刺激性气味，是金属清洗、有机合成等工业领域的基础化学品。",
-    "ENUS": "An aqueous solution of hydrogen chloride, colorless and transparent with a strong pungent odor—a basic chemical in industrial fields such as metal cleaning and organic synthesis."
-  },
-  {
     "Name": "硝酸",
     "ZHCN": "硝酸",
     "ENUS": "Nitric Acid"
@@ -843,11 +823,6 @@
     "Name": "I氧",
     "ZHCN": "维持绝大多数碳基生命的关键元素，化学性质活泼，是强氧化反应的核心参与者与助燃剂。",
     "ENUS": "A key element sustaining most carbon-based life, chemically active—a core participant in strong oxidation reactions and a combustion supporter."
-  },
-  {
-    "Name": "I氯化钠",
-    "ZHCN": "无色立方晶体或白色细晶粉末，味咸，是生物体维持电解质平衡及工业氯碱工艺的基础物质。",
-    "ENUS": "Colorless cubic crystals or white fine crystalline powder with a salty taste—a fundamental substance for maintaining electrolyte balance in organisms and for industrial chlor-alkali processes."
   },
   {
     "Name": "塑料基板",
@@ -1166,7 +1141,7 @@
   },
   {
     "Name": "R放射矿物精炼",
-    "ZHCN": "采用碱法浸出工艺，以氢氧化钠溶液溶解放射性矿物基质，使铀、钍元素以可溶性络合物形式进入溶液后沉淀富集。",
+    "ZHCN": "采用酸法浸出工艺，以氢氟酸溶液溶解放射性矿物基质，使铀、钍元素以可溶性络合物形式进入溶液后沉淀富集。",
     "ENUS": "Employing alkaline leaching process, using sodium hydroxide solution to dissolve radioactive mineral matrix—uranium and thorium enter solution as soluble complexes and precipitate for enrichment."
   },
   {
@@ -1426,7 +1401,7 @@
   },
   {
     "Name": "T放射性矿物提炼描述",
-    "ZHCN": "采用碱熔-浸出联合工艺，以大量氢氧化钠分解放射性矿物晶格，使微量铀、钍元素转化为可溶性盐类，经萃取分离与沉淀转化后直接制得裂变燃料。",
+    "ZHCN": "采用酸浸-离子交换联合工艺，以大量氢氟酸溶解放射性矿物晶格，使微量铀、钍元素转化为可溶性盐类，经萃取分离与沉淀转化后直接制得裂变燃料。",
     "ENUS": "Employing combined alkali fusion-leaching process, using large amounts of sodium hydroxide to decompose radioactive mineral lattice—converting trace uranium and thorium elements into soluble salts, directly producing fissile fuel through extraction separation and precipitation conversion."
   },
   {
@@ -1466,7 +1441,7 @@
   },
   {
     "Name": "T聚变能源燃料棒描述",
-    "ZHCN": "以重氢或氦三氘混合物为燃料芯体，通过磁惯性约束实现热核聚变，是清洁高效的未来能源载体。",
+    "ZHCN": "以重氢或氦氘混合物为燃料芯体，通过磁惯性约束实现热核聚变，是清洁高效的未来能源载体。",
     "ENUS": "Using deuterium or helium-3-deuterium mixtures as fuel cores, achieving thermonuclear fusion through magneto-inertial confinement—a clean and efficient future energy carrier."
   },
   {
@@ -2503,5 +2478,10 @@
     "Name": "I萤石矿脉",
     "ZHCN": "富含萤石矿的矿脉，半透明的荧光晶体在阳光下闪闪发光。",
     "ENUS": "Veins rich in fluorite ore, translucent fluorescent crystals glimmering in the sunlight."
+  },
+  {
+    "Name": "棱镜（高效）",
+    "ZHCN": "棱镜（高效）",
+    "ENUS": "Prism (Efficient)"
   }
 ]
