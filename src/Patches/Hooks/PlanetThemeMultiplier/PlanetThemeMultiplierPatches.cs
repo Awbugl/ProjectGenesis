@@ -228,11 +228,11 @@ namespace ProjectGenesis.Patches
         /// </summary>
         [HarmonyPatch(typeof(PlanetTransport), nameof(PlanetTransport.NewStationComponent))]
         [HarmonyPostfix]
-        public static void NewStationComponent_Postfix(ref StationComponent __result, PrefabDesc _desc, PlanetFactory factory)
+        public static void NewStationComponent_Postfix(PlanetTransport __instance, ref StationComponent __result, PrefabDesc _desc)
         {
             if (!_desc.isCollectStation) return;
 
-            if (!TryGetByproduct(factory.planet, out int itemId, out int ratio)) return;
+            if (!TryGetByproduct(__instance.planet, out int itemId, out int ratio)) return;
 
             int oldLen = __result.collectionIds.Length;
 
