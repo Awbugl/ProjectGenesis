@@ -83,16 +83,16 @@ namespace ProjectGenesis.Patches
             return matcher.InstructionEnumeration();
         }
 
-        /// <summary>每消耗 1 个钍燃料累计 1 个铀燃料，并计入生产统计</summary>
+        /// <summary>每消耗 1 个钍燃料累计 1 个铀燃料，并计入生产统计（缓存满时铀丢弃，不计统计避免漂移）</summary>
         public static void GenEnergyByFuel_Patch(ref PowerGeneratorComponent component, int[] consumeRegister)
         {
             // 只处理熔盐堆的专用燃料
             if (component.fuelId != ProtoID.I钍燃料) return;
 
-            component.productCount += 1;
+            // 产物缓存已满：本次铀丢弃，不累计也不计统计（避免统计漂移）
+            if (component.productCount >= MaxProductCount) return;
 
-            // 与缓存上限对齐
-            if (component.productCount > MaxProductCount) component.productCount = MaxProductCount;
+            component.productCount += 1;
 
             // 生产统计：找到当前工厂对应的统计项，计入铀燃料产量
             // ReSharper disable once LoopCanBePartlyConvertedToQuery
