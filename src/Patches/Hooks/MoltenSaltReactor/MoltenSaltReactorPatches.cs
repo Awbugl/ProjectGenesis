@@ -26,68 +26,12 @@ namespace ProjectGenesis.Patches
         /// </summary>
         internal const short MoltenSaltFuelMask = 32;
 
-        /// <summary>
-        /// 燃料消耗钩子：每消耗 1 个钍燃料，累计 1 个铀燃料产物。
-        /// 插入点位于 GenEnergyByFuel 中 consumeRegister[fuelId]++（IL_0154~IL_0164）之后：
-        /// 此时"本次消耗了一个燃料"的记账刚好完成，且 component.fuelId 仍指向被消耗的燃料（尚未清零）。
-        /// </summary>
-        [HarmonyPatch(typeof(PowerGeneratorComponent), nameof(PowerGeneratorComponent.GenEnergyByFuel))]
-        [HarmonyTranspiler]
-        public static IEnumerable<CodeInstruction> GenEnergyByFuel_Transpiler(IEnumerable<CodeInstruction> instructions)
+        /// <summary>每消耗 1 个钍燃料累计 1 个铀燃料，并计入生产统计（缓存满时铀丢弃，不计统计避免漂移）。
+        /// 由统一发电钩子（Transpliers/PowerGeneratorComponent_GameTick）调用，不再单独挂 transpiler。</summary>
+        internal static void OnFuelBurned(ref PowerGeneratorComponent component, int[] consumeRegister)
         {
-            /*
-                目标 IL（Assembly-CSharp.dll / PowerGeneratorComponent.GenEnergyByFuel）：
-
-                    IL_0145: ldarg.0
-                    IL_0146: ldarg.0
-                    IL_0147: ldfld       int16 PowerGeneratorComponent::fuelCount
-                    IL_014c: ldc.i4.1
-                    IL_014d: sub
-                    IL_014e: conv.i2
-                    IL_014f: stfld       int16 PowerGeneratorComponent::fuelCount   // fuelCount--
-
-                    IL_0154: ldarg.2
-                    IL_0155: ldarg.0
-                    IL_0156: ldfld       int16 PowerGeneratorComponent::fuelId
-                    IL_015b: ldelema     [netstandard]System.Int32
-                    IL_0160: dup
-                    IL_0161: ldind.i4
-                    IL_0162: ldc.i4.1
-                    IL_0163: add
-                    IL_0164: stind.i4                                             // consumeRegister[fuelId]++
-             */
-            CodeMatcher matcher = new CodeMatcher(instructions);
-
-            // 匹配 consumeRegister[fuelId]++ 的完整序列，防止误伤其它指令
-            matcher.MatchForward(false,
-                new CodeMatch(OpCodes.Stfld, AccessTools.Field(typeof(PowerGeneratorComponent), nameof(PowerGeneratorComponent.fuelCount))),
-                new CodeMatch(OpCodes.Ldarg_2),
-                new CodeMatch(OpCodes.Ldarg_0),
-                new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(PowerGeneratorComponent), nameof(PowerGeneratorComponent.fuelId))),
-                new CodeMatch(OpCodes.Ldelema, typeof(int)),
-                new CodeMatch(OpCodes.Dup),
-                new CodeMatch(OpCodes.Ldind_I4),
-                new CodeMatch(OpCodes.Ldc_I4_1),
-                new CodeMatch(OpCodes.Add),
-                new CodeMatch(OpCodes.Stind_I4));
-
-            // 在 stind.i4 之后插入对 MoltenSaltGenEnergyByFuel 的调用：
-            //   ldarg.0                                  // this（ref PowerGeneratorComponent）
-            //   ldarg.2                                  // int[] consumeRegister
-            //   call      MoltenSaltGenEnergyByFuel(ref, int[])
-            matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0),
-                new CodeInstruction(OpCodes.Ldarg_2),
-                new CodeInstruction(OpCodes.Call,
-                    AccessTools.Method(typeof(MoltenSaltReactorPatches), nameof(GenEnergyByFuel_Patch))));
-
-            return matcher.InstructionEnumeration();
-        }
-
-        /// <summary>每消耗 1 个钍燃料累计 1 个铀燃料，并计入生产统计（缓存满时铀丢弃，不计统计避免漂移）</summary>
-        public static void GenEnergyByFuel_Patch(ref PowerGeneratorComponent component, int[] consumeRegister)
-        {
-            // 只处理熔盐堆的专用燃料
-            if (component.fuelId != ProtoID.I钍燃料) return;
+            // 只处理熔盐堆的专用燃料（curFuelId 是本次被消耗的燃料）
+            if (component.curFuelId != ProtoID.I钍燃料) return;
 
             // 产物缓存已满：本次铀丢弃，不累计也不计统计（避免统计漂移）
             if (component.productCount >= MaxProductCount) return;

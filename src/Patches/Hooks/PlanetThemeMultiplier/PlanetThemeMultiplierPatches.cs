@@ -220,63 +220,6 @@ namespace ProjectGenesis.Patches
             }
         }
 
-        // ==================== 火电/风电挂钩（与 PlanetFocus.EnergyCap_Transpiler 同位置） ====================
-
-        /// <summary>
-        /// 发电容量挂钩：风电 × 主题风电倍率、火电 × 主题火电倍率。
-        /// 与 PlanetFocus 的 EnergyCap_Transpiler 挂同一方法，链式执行互不干扰。
-        /// </summary>
-        [HarmonyPatch(typeof(PowerSystem), nameof(PowerSystem.GameTick))]
-        [HarmonyTranspiler]
-        public static IEnumerable<CodeInstruction> PowerSystem_GameTick_ThemeTranspiler(IEnumerable<CodeInstruction> instructions)
-        {
-            CodeMatcher matcher = new CodeMatcher(instructions);
-
-            // 风电：EnergyCap_Wind 调用后插入 ThemeEnergyCap_Wind(power, powerSystem, ref component)
-            matcher.MatchForward(false,
-                new CodeMatch(OpCodes.Call,
-                    AccessTools.Method(typeof(PowerGeneratorComponent), nameof(PowerGeneratorComponent.EnergyCap_Wind))));
-
-            CodeInstruction comp = matcher.InstructionAt(-2);
-
-            matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0)).InsertAndAdvance(comp)
-               .InsertAndAdvance(new CodeInstruction(OpCodes.Call,
-                    AccessTools.Method(typeof(PlanetThemeMultiplierPatches), nameof(ThemeEnergyCap_Wind))));
-
-            // 火电：EnergyCap_Fuel 调用后插入 ThemeEnergyCap_Fuel(power, powerSystem, ref component)
-            matcher.MatchForward(false,
-                new CodeMatch(OpCodes.Call,
-                    AccessTools.Method(typeof(PowerGeneratorComponent), nameof(PowerGeneratorComponent.EnergyCap_Fuel))));
-
-            comp = matcher.InstructionAt(-1);
-
-            matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0)).InsertAndAdvance(comp)
-               .InsertAndAdvance(new CodeInstruction(OpCodes.Call,
-                    AccessTools.Method(typeof(PlanetThemeMultiplierPatches), nameof(ThemeEnergyCap_Fuel))));
-
-            return matcher.InstructionEnumeration();
-        }
-
-        /// <summary>风电容量 × 主题倍率</summary>
-        public static long ThemeEnergyCap_Wind(long power, PowerSystem powerSystem, ref PowerGeneratorComponent component)
-        {
-            if (!component.wind) return power;
-
-            float m = GetMultiplier(powerSystem.factory.planet, MultiplierType.WindPower);
-
-            return m <= 0f ? 0L : (long)(power * m);
-        }
-
-        /// <summary>火电容量 × 主题倍率（仅燃料掩码 1 的火电）</summary>
-        public static long ThemeEnergyCap_Fuel(long power, PowerSystem powerSystem, ref PowerGeneratorComponent component)
-        {
-            if (component.fuelMask != 1) return power;
-
-            float m = GetMultiplier(powerSystem.factory.planet, MultiplierType.ThermalPower);
-
-            return m <= 0f ? 0L : (long)(power * m);
-        }
-
         // ==================== 主题副产物槽（大气采集站） ====================
 
         /// <summary>

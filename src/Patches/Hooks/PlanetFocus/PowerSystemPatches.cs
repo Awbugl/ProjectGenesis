@@ -86,6 +86,21 @@ namespace ProjectGenesis.Patches
                 }
             }
 
+            // 行星主题倍率（先于焦点增益，无焦点行星同样生效）：风电 × WindPower、火电（fuelMask==1）× ThermalPower
+            float themeMultiplier;
+            if (component.wind)
+            {
+                themeMultiplier = PlanetThemeMultiplierPatches.GetMultiplier(powerSystem.factory.planet,
+                    PlanetThemeMultiplierPatches.MultiplierType.WindPower);
+                power = themeMultiplier <= 0f ? 0L : (long)(power * themeMultiplier);
+            }
+            else if (component.fuelMask == 1)
+            {
+                themeMultiplier = PlanetThemeMultiplierPatches.GetMultiplier(powerSystem.factory.planet,
+                    PlanetThemeMultiplierPatches.MultiplierType.ThermalPower);
+                power = themeMultiplier <= 0f ? 0L : (long)(power * themeMultiplier);
+            }
+
             if (!ContainsFocus(powerSystem.factory.planetId, focusId)) return power;
 
             var capacityCurrentTick = (long)(power * extra);
