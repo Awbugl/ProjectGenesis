@@ -1349,7 +1349,7 @@
     "Description": "I棱镜",
     "IconPath": "Icons/ItemRecipe/prism",
     "IconTag": "lj",
-    "GridIndex": 1304,
+    "GridIndex": 1414,
     "StackSize": 100,
     "Type": 2,
     "PreTechOverride": 0,
