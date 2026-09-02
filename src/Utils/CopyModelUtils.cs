@@ -31,7 +31,9 @@ namespace ProjectGenesis.Utils
             CopyModelProto(373, ProtoID.M高频激光塔MK2, new Color(0.5765f, 0.4392f, 0.8588f));
             CopyModelProto(490, ProtoID.M核子单元);
             CopyModelProto(488, ProtoID.M反物质炮弹);
-            CopyModelProto(118, ProtoID.M熔盐堆, Color.HSVToRGB(0.0833f, 0.30f, 0.95f));
+            // 熔盐堆临时使用 119（分馏塔）作为源模型（与 大抽水机 相同源），
+            // 排查 118（裂变站）作为源时虚影缺失的问题
+            CopyModelProto(119, ProtoID.M熔盐堆, Color.HSVToRGB(0.0833f, 0.30f, 0.95f));
 
             AddAtmosphericCollectStation();
         }
