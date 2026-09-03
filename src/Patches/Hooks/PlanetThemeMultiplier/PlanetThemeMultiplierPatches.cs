@@ -102,30 +102,22 @@ namespace ProjectGenesis.Patches
             return multipliers[(int)type];
         }
 
-        /// <summary>取行星温度（主题温度 + 行星偏移）</summary>
-        internal static float GetTemperature(PlanetData planet)
-        {
-            if (planet == null || planet.theme <= 0) return 0f;
-
-            ThemeProto theme = LDB.themes.Select(planet.theme);
-
-            return theme == null ? 0f : theme.Temperature + planet.temperatureBias;
-        }
+        /// <summary>是否有机类配方</summary>
+        internal static bool IsOrganicRecipe(int recipeId) => OrganicRecipes.Contains(recipeId);
 
         /// <summary>
-        /// 温度速度因子：高温利于冶炼（熔炼热自足）、低温利于化工（放热反应易散热）。
-        /// 基准 0°C 为 1，每 ±50°C 变化 ±25%（clamp 0.5~1.5）。
+        /// 行星类型温度机制（数据=EPlanetType 枚举）：高温利于冶炼、低温利于化工（互补）。
+        /// 倍率为基本分数 ±1/4（±25%），速度保持整数比例。
         /// </summary>
         internal static float GetTemperatureSpeedFactor(PlanetData planet, bool smelt)
         {
-            float t = GetTemperature(planet);
-            float factor = smelt ? 1f + t / 200f : 1f - t / 200f;
+            const float step = 0.25f; // 1/4
 
-            return Mathf.Clamp(factor, 0.5f, 1.5f);
+            if (planet.type == EPlanetType.Vocano) return smelt ? 1f + step : 1f - step;
+            if (planet.type == EPlanetType.Ice) return smelt ? 1f - step : 1f + step;
+
+            return 1f;
         }
-
-        /// <summary>是否有机类配方</summary>
-        internal static bool IsOrganicRecipe(int recipeId) => OrganicRecipes.Contains(recipeId);
 
         // ==================== 主题副产物（大气采集站附带产出） ====================
 
@@ -173,7 +165,7 @@ namespace ProjectGenesis.Patches
 
         /// <summary>
         /// 主题速度挂钩：每 tick 在 InternalUpdate 前按行星主题重算 component.speed（幂等）。
-        /// 速度 = prefabDesc 基础速度 × 温度因子（冶炼/化工）× 有机因子（生物行星有机配方）。
+        /// 速度 = prefabDesc 基础速度 × 温度因子（EPlanetType：高温利于冶炼、低温利于化工）× 有机因子（生物行星有机配方）。
         /// 巨构（speed ≥ 300000）不受行星主题影响。
         /// </summary>
         public static void GameTick_AssemblerComponent_InternalUpdate_Patch(PlanetFactory factory, ref AssemblerComponent component,
@@ -197,17 +189,16 @@ namespace ProjectGenesis.Patches
 
             float factor = 1f;
 
-            // 温度因子：高温利于冶炼、低温利于化工
+            // 温度因子：高温利于冶炼、低温利于化工（数据=EPlanetType 枚举分类）
             if (IsSmeltType(component.recipeType)) factor *= GetTemperatureSpeedFactor(planet, true);
             else if (IsChemicalType(component.recipeType)) factor *= GetTemperatureSpeedFactor(planet, false);
 
-            // 有机因子：生物行星的有机类配方加成
+            // 有机因子：生物行星的有机类配方加成（文档六维；倍率皆为基本分数，速度保持整数比例）
             if (IsOrganicRecipe(component.recipeId)) factor *= GetMultiplier(planet, MultiplierType.OrganicSpeed);
 
-            component.speed = (int)(baseSpeed * factor);
-
             // 增产效力：主题倍率 >1 时提高输入增产剂累计（等效增产剂更耐用、效力更高）
-            // 设上限 255 防止每 tick 乘算的指数膨胀（长期趋向满级增产，符合"更耐用"设计）
+            // 设上限 255 防止每 tick 乘算的指数膨胀（长期趋向满级增产，符合"更耐用"设计）。
+            // 独立六维，不受速度因子早退影响。
             float incPower = GetMultiplier(planet, MultiplierType.IncPower);
 
             if (incPower > 1f && component.incServed != null)
@@ -218,6 +209,11 @@ namespace ProjectGenesis.Patches
                         component.incServed[i] = Math.Min((int)(component.incServed[i] * incPower), 255);
                 }
             }
+
+            // 无速度加成（factor==1）：不改速度，显示取引擎原值（杜绝浮点残差）
+            if (factor == 1f) return;
+
+            component.speed = Mathf.RoundToInt(baseSpeed * factor);
         }
 
         // ==================== 主题副产物槽（大气采集站） ====================
