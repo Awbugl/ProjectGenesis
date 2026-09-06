@@ -74,6 +74,14 @@ or open an issue via [GitHub](https://github.com/Awbugl/ProjectGenesis).
 - 巨型建筑：使用传送带输入输出物料的超级生产设备，30倍速度。
 - 新的失落科技：使用量子存储技术在异星快速部署，或者进行量子折跃瞬间抵达银河彼端。
 
+## 许可与资产归属 | License & Asset Ownership
+
+本项目代码与游戏数据遵循 **GNU GPLv3 (GPL-3.0-only)** 许可，详见 [LICENSE](LICENSE)。
+美术资产（图标/模型/纹理）的授权与其中引用的游戏官方素材的归属，详见 [assets/LICENSE.assets](assets/LICENSE.assets)。
+
+This project's code and game data are licensed under GPL-3.0 — see LICENSE.
+Creative assets and any game-owned material referenced therein are governed by `assets/LICENSE.assets`.
+
 ## 致谢
 
 - 特别感谢ckcz对本项目做出的贡献以及1.0版本的开发支持.
