@@ -396,4 +396,5 @@ FodyWeavers.xsd
 
 # publicized DSP assembly
 lib/Assembly-CSharp-publicized.dll
+lib/GalacticScale-publicized.dll
 DefaultPath.props
