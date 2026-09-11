@@ -125,6 +125,8 @@
         <Copy SourceFiles="$(TargetPath)" DestinationFiles="$(ReleasePath)plugins\$(TargetName).dll"/>
         <Copy SourceFiles="README.md" DestinationFiles="$(ReleasePath)README.md"/>
         <Copy SourceFiles="CHANGELOG.md" DestinationFiles="$(ReleasePath)CHANGELOG.md"/>
+        <Copy SourceFiles="$(SolutionDir)LICENSE" DestinationFiles="$(ReleasePath)LICENSE"/>
+        <Copy SourceFiles="$(SolutionDir)THIRD-PARTY-NOTICES.md" DestinationFiles="$(ReleasePath)THIRD-PARTY-NOTICES.md"/>
         <Copy SourceFiles="$(SolutionDir)assets\icon.png" DestinationFiles="$(ReleasePath)icon.png"/>
         <Copy SourceFiles="$(SolutionDir)assets\genesis-models" DestinationFiles="$(ReleasePath)plugins\genesis-models"/>
         <Copy SourceFiles="$(SolutionDir)assets\genesis-models-lab" DestinationFiles="$(ReleasePath)plugins\genesis-models-lab"/>

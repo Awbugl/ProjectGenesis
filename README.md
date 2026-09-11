@@ -78,9 +78,11 @@ or open an issue via [GitHub](https://github.com/Awbugl/ProjectGenesis).
 
 本项目代码与游戏数据遵循 **GNU GPLv3 (GPL-3.0-only)** 许可，详见 [LICENSE](LICENSE)。
 美术资产（图标/模型/纹理）的授权与其中引用的游戏官方素材的归属，详见 [assets/LICENSE.assets](assets/LICENSE.assets)。
+第三方组件的许可与版权声明详见 [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md)。
 
 This project's code and game data are licensed under GPL-3.0 — see LICENSE.
 Creative assets and any game-owned material referenced therein are governed by `assets/LICENSE.assets`.
+Third-party component licenses and notices are listed in `THIRD-PARTY-NOTICES.md`.
 
 ## 致谢
 
