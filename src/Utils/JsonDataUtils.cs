@@ -63,6 +63,16 @@ namespace ProjectGenesis.Utils
 
         #endregion
 
+        #region New vanilla protos
+
+            // 0.10.35: the dark fog graviton lens sits next to the graviton lens in vanilla, where GenesisBook has other protos,
+            // move it below the dark fog items
+            if (LDB.items.Exist(ProtoID.I黑雾引力透镜)) { LDB.items.Select(ProtoID.I黑雾引力透镜).GridIndex = GetTableID(4717); }
+
+            if (LDB.recipes.Exist(ProtoID.R黑雾引力透镜)) { LDB.recipes.Select(ProtoID.R黑雾引力透镜).GridIndex = GetTableID(4717); }
+
+        #endregion
+
         #region TutorialProto
 
             foreach (TutorialProtoJson protoJson in GetJsonContent<TutorialProtoJson>("tutorials"))

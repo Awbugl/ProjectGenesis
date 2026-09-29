@@ -3,6 +3,7 @@
   + 原油改为按原版规则生成（陆地原油，外加原版新增的少量水下原油），其他矿物仍可生成在水下
   + 拾取筛选：适配原版新增的`建筑`分类，调整了创世之书页签与掉落按钮的位置
   + 射线接收站：适配原版新的透镜机制，保留透镜消耗加快的调整
+  + 原版新增的`黑雾引力透镜`：物品与配方移到黑雾物品一列，不再与创世之书的格子重叠
   + 修复了开始新游戏、读取存档时原版在切换场景瞬间的报错
   + 设置界面的`全部恢复默认`按钮现在也会刷新创世之书的设置项
 
@@ -10,6 +11,7 @@
   + Oil veins now follow the vanilla rules (land oil plus the few new vanilla underwater oil veins); other minerals can still generate underwater
   + Loot filter: adapted to the new vanilla `Building` category, moved the GenesisBook tabs and the drop button
   + Ray receiver: adapted to the new vanilla lens mechanics, the faster lens consumption is kept
+  + The new vanilla dark fog graviton lens: moved its item and recipe to the dark fog item column, no longer overlapping GenesisBook slots
   + Fixed a vanilla error at the moment of switching scenes when starting a new game or loading a save
   + The `Revert all` button of the settings window now also refreshes the GenesisBook settings
 
