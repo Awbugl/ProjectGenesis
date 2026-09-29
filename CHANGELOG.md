@@ -1,13 +1,13 @@
 - 未发布 | Unreleased
   + 适配游戏版本v0.10.35.29088，修复了无法加载的问题
-  + 矿物仍可生成在水下，原版新增的水下原油不再额外叠加生成
+  + 原油改为按原版规则生成（陆地原油，外加原版新增的少量水下原油），其他矿物仍可生成在水下
   + 拾取筛选：适配原版新增的`建筑`分类，调整了创世之书页签与掉落按钮的位置
   + 射线接收站：适配原版新的透镜机制，保留透镜消耗加快的调整
   + 修复了开始新游戏、读取存档时原版在切换场景瞬间的报错
   + 设置界面的`全部恢复默认`按钮现在也会刷新创世之书的设置项
 
   + Adapted to game version v0.10.35.29088, fixed the mod failing to load
-  + Minerals can still generate underwater; the new vanilla underwater oil veins are no longer added on top
+  + Oil veins now follow the vanilla rules (land oil plus the few new vanilla underwater oil veins); other minerals can still generate underwater
   + Loot filter: adapted to the new vanilla `Building` category, moved the GenesisBook tabs and the drop button
   + Ray receiver: adapted to the new vanilla lens mechanics, the faster lens consumption is kept
   + Fixed a vanilla error at the moment of switching scenes when starting a new game or loading a save

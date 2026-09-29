@@ -185,7 +185,6 @@ namespace ProjectGenesis.Patches
             // float height = data.QueryHeight(pos);
             // if (<height checks>) continue;   (0.10.35 reworked them for underwater oil, subclasses add their own ones)
             // bool tooClose = false;
-            // jump from the height store straight to "tooClose = false", skipping every height check
             matcher.MatchForward(true,
                 new CodeMatch(OpCodes.Callvirt, AccessTools.Method(typeof(PlanetRawData), nameof(PlanetRawData.QueryHeight))),
                 new CodeMatch(ci => ci.IsStloc()));
@@ -194,24 +193,29 @@ namespace ProjectGenesis.Patches
             matcher2.MatchForward(false, new CodeMatch(OpCodes.Ldc_I4_0), new CodeMatch(OpCodes.Stloc_S));
             Label label = matcher2.Labels.First();
 
-            matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Br, label));
-            int pos = matcher.Pos;
-
-            // 0.10.35+: if (eVeinType == EVeinType.Oil && height <= planet.radius - 1f) { underwaterOilCount--; veinCount++; }
-            // underwater oil is not limited any more, so do not add extra veins for it (keeps the vein count and the RNG sequence)
-            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(PlanetData), nameof(PlanetData.radius))),
+            // 0.10.35+, base algorithm only: vanilla underwater oil, at most kUnderwaterOilPercentage extra oil veins
+            // if (eVeinType == EVeinType.Oil && height <= planet.radius - 1f) { underwaterOilCount--; veinCount++; }
+            matcher2.MatchForward(false, new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(PlanetData), nameof(PlanetData.radius))),
                 new CodeMatch(OpCodes.Ldc_R4, 1f), CodeMatchUtils.Sub, CodeMatchUtils.BgtUn, new CodeMatch(OpCodes.Ldloc_S),
                 new CodeMatch(OpCodes.Ldc_I4_1), CodeMatchUtils.Sub, new CodeMatch(OpCodes.Stloc_S), new CodeMatch(OpCodes.Ldloc_S),
                 new CodeMatch(OpCodes.Ldc_I4_1), CodeMatchUtils.Add, new CodeMatch(OpCodes.Stloc_S));
 
-            if (matcher.IsValid)
+            matcher.Advance(1);
+
+            if (matcher2.IsValid)
             {
-                matcher.Advance(4);
-                for (var i = 0; i < 8; i++) matcher.SetAndAdvance(OpCodes.Nop, null);
+                // oil keeps the vanilla height checks (so the vanilla underwater oil rules apply), other veins skip them:
+                // if (eVeinType != EVeinType.Oil) goto tooClose = false;
+                CodeInstruction ldVeinType = matcher.Clone()
+                   .MatchForward(false, CodeMatchUtils.LdLoc, new CodeMatch(OpCodes.Ldc_I4_7), CodeMatchUtils.BneUn).Instruction;
+
+                matcher.InsertAndAdvance(new CodeInstruction(ldVeinType.opcode, ldVeinType.operand), new CodeInstruction(OpCodes.Ldc_I4_7),
+                    new CodeInstruction(OpCodes.Bne_Un, label));
             }
             else
             {
-                matcher.Start().Advance(pos);
+                // jump from the height store straight to "tooClose = false", skipping every height check
+                matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Br, label));
             }
 
             // if (planet.waterItemId == 0 || height >= planet.radius ...) data.AddVeinData(vein);  ->  always add
