@@ -19,15 +19,9 @@ namespace ProjectGenesis.Patches
                 new CodeMatch(OpCodes.Ldc_I4_1), new CodeMatch(OpCodes.Sub));
 
             // catalystPoint cost * 10
+            // since 0.10.35 the proliferator level is settled per catalyst item (catalystCount / catalystInc),
+            // so consuming the items 10 times faster also consumes their proliferator points 10 times faster
             matcher.Advance(1).SetAndAdvance(OpCodes.Ldc_I4_S, (sbyte)10);
-
-            matcher.MatchForward(false,
-                new CodeMatch(OpCodes.Ldfld,
-                    AccessTools.Field(typeof(PowerGeneratorComponent), nameof(PowerGeneratorComponent.catalystIncPoint))),
-                new CodeMatch(OpCodes.Ldloc_2), new CodeMatch(OpCodes.Sub));
-
-            // catalystIncPoint cost * 10
-            matcher.Advance(2).InsertAndAdvance(new CodeInstruction(OpCodes.Ldc_I4_S, (sbyte)10), new CodeInstruction(OpCodes.Mul));
 
             return matcher.InstructionEnumeration();
         }

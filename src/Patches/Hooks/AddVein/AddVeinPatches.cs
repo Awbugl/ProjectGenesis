@@ -140,7 +140,10 @@ namespace ProjectGenesis.Patches
             IEnumerable<CodeInstruction> instructions)
         {
             var matcher = new CodeMatcher(instructions);
-            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldc_I4_S, (sbyte)15));
+
+            // for (int type = 1; type < 15; type++)
+            // match with the branch: since 0.10.35 "veinCount * 15 / 100" (underwater oil percentage) comes first
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldc_I4_S, (sbyte)15), CodeMatchUtils.Bge);
             matcher.SetOperandAndAdvance(VeinTypeCount);
 
             return matcher.InstructionEnumeration();
@@ -157,7 +160,11 @@ namespace ProjectGenesis.Patches
         {
             var matcher = new CodeMatcher(instructions);
 
-            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldc_I4_7));
+            // if (eVeinType != EVeinType.Oil) pos += birthPoint;
+            // match the whole statement: since 0.10.35 an earlier "if (eVeinType == EVeinType.Oil)" exists (underwater oil)
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldc_I4_7), CodeMatchUtils.Beq,
+                new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldloc_S),
+                new CodeMatch(OpCodes.Call, AccessTools.Method(typeof(Vector3), "op_Addition")));
 
             matcher.SetInstructionAndAdvance(new CodeInstruction(OpCodes.Nop)).SetInstructionAndAdvance(new CodeInstruction(OpCodes.Nop))
                .SetOpcodeAndAdvance(OpCodes.Br_S);
@@ -174,20 +181,45 @@ namespace ProjectGenesis.Patches
             IEnumerable<CodeInstruction> instructions)
         {
             var matcher = new CodeMatcher(instructions);
-            matcher.MatchForward(true, new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(PlanetData), nameof(PlanetData.radius))),
-                CodeMatchUtils.Blt);
+
+            // float height = data.QueryHeight(pos);
+            // if (<height checks>) continue;   (0.10.35 reworked them for underwater oil, subclasses add their own ones)
+            // bool tooClose = false;
+            // jump from the height store straight to "tooClose = false", skipping every height check
+            matcher.MatchForward(true,
+                new CodeMatch(OpCodes.Callvirt, AccessTools.Method(typeof(PlanetRawData), nameof(PlanetRawData.QueryHeight))),
+                new CodeMatch(ci => ci.IsStloc()));
 
             CodeMatcher matcher2 = matcher.Clone();
             matcher2.MatchForward(false, new CodeMatch(OpCodes.Ldc_I4_0), new CodeMatch(OpCodes.Stloc_S));
             Label label = matcher2.Labels.First();
 
-            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Pop));
-            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Pop));
-            matcher.SetAndAdvance(OpCodes.Br, label);
+            matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Br, label));
+            int pos = matcher.Pos;
 
-            matcher.MatchForward(false,
-                new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(PlanetData), nameof(PlanetData.waterItemId))));
-            matcher.Advance(1).SetOpcodeAndAdvance(OpCodes.Br);
+            // 0.10.35+: if (eVeinType == EVeinType.Oil && height <= planet.radius - 1f) { underwaterOilCount--; veinCount++; }
+            // underwater oil is not limited any more, so do not add extra veins for it (keeps the vein count and the RNG sequence)
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(PlanetData), nameof(PlanetData.radius))),
+                new CodeMatch(OpCodes.Ldc_R4, 1f), CodeMatchUtils.Sub, CodeMatchUtils.BgtUn, new CodeMatch(OpCodes.Ldloc_S),
+                new CodeMatch(OpCodes.Ldc_I4_1), CodeMatchUtils.Sub, new CodeMatch(OpCodes.Stloc_S), new CodeMatch(OpCodes.Ldloc_S),
+                new CodeMatch(OpCodes.Ldc_I4_1), CodeMatchUtils.Add, new CodeMatch(OpCodes.Stloc_S));
+
+            if (matcher.IsValid)
+            {
+                matcher.Advance(4);
+                for (var i = 0; i < 8; i++) matcher.SetAndAdvance(OpCodes.Nop, null);
+            }
+            else
+            {
+                matcher.Start().Advance(pos);
+            }
+
+            // if (planet.waterItemId == 0 || height >= planet.radius ...) data.AddVeinData(vein);  ->  always add
+            matcher.MatchForward(true,
+                new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(PlanetData), nameof(PlanetData.waterItemId))),
+                CodeMatchUtils.BrFalse);
+            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Pop));
+            matcher.SetOpcodeAndAdvance(OpCodes.Br);
 
             return matcher.InstructionEnumeration();
         }
