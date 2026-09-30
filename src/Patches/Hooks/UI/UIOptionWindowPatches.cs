@@ -125,7 +125,8 @@ namespace ProjectGenesis.Patches
         [HarmonyPostfix]
         public static void UIOptionWindow_OnRevertButtonClick_Postfix(int idx)
         {
-            if (idx == 4) Reset();
+            // 4: misc page, -1: revert all (0.10.35+)
+            if (idx == 4 || idx == -1) Reset();
         }
 
         private static void Reset()

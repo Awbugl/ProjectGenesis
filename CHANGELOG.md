@@ -1,3 +1,14 @@
+- v3.2.4
+  + 适配版本v0.10.35.29088，修复了无法加载的问题
+  + 兼容原版新增的水下原油
+  + 拾取筛选：适配原版新增的`建筑`分类
+  + 射线接收站：适配新的透镜机制
+
+  + Adaptation of version v0.10.35.29088, fixed the mod failing to load
+  + Compatible with the new vanilla underwater oil
+  + Loot filter: adapted to the new vanilla `Building` category
+  + Ray receiver: adapted to the new lens mechanics
+
 - v3.2.3
   + 修复了储液罐输出异常的问题
   + 调整了护盾填充度的显示方案
