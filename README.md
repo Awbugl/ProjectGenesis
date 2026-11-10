@@ -62,17 +62,19 @@ or open an issue via [GitHub](https://github.com/Awbugl/ProjectGenesis).
 
 ### 特色
 
-- 真正的科技“树”：完全重做的、更加条理分明的科技树，现在它的结构更加合理了。
-- 新的化工配方：从原油中提取焦油或者苯等有机物，另外你现在可以合成盐酸和硝酸了。
-- 新的配方类型：使用高分子化工制造复杂有机物，制作高精度装配线生产高科技设备。
-- 额外的大气层：现在你可以在大部分星球表面建设“大气采集站”并抽取氮氧等大气成分。
-- 注意：火力发电厂现在只能在具有含氧大气层的星球上使用。
-- 新的矿物分布：调整了矿物在不同星球的生成量，注意：这会使Mod与原版存档互不兼容！
-- 全新的矿物类型：挖掘铌矿冶炼超级合金，或者采集放射性矿物制造核燃料棒，以及晶体硫。
-- 接近90%的配方重做：与原版完全不同的流程体验，放心，这会让你感觉很新颖的。
-- 行星协调中心：十数种不同的额外增益效果，可以在全球范围内提供增益。
-- 巨型建筑：使用传送带输入输出物料的超级生产设备，30倍速度。
-- 新的失落科技：使用量子存储技术在异星快速部署，或者进行量子折跃瞬间抵达银河彼端。
+- 真正的科技“树”：完全重做、条理分明。
+- 新的化工配方：从原油提取焦油、苯等有机物，合成硝酸；开采萤石制取氢氟酸。
+- 新的配方类型：高分子化工与高精度装配线。
+- 行星主题：不同星球有不同产能与温度影响，部分主题副产大气资源。
+- 有限大气与海洋：会耗尽，也会被燃烧排放补回；低于 5% 停产。
+- 熔盐堆：燃烧钍燃料，副产铀燃料。
+- 火力发电厂只能在含氧大气星球使用。
+- 新的矿物分布：不同星球矿量不同，与原版存档不兼容。
+- 新的矿物：铌矿、放射性矿物、萤石。
+- 接近 90% 配方重做。
+- 行星协调中心：全球范围额外增益。
+- 巨型建筑：30 倍速度的传送带式生产设备。
+- 失落科技：量子存储与量子折跃。
 
 ## 许可与资产归属 | License & Asset Ownership
 
@@ -124,24 +126,19 @@ named `GenesisBook`)<br/>
 
 ### Modified
 
-- The real tech "tree": a completely reworked and more organized tech tree, which is now much more structured.
-- New chemical formulas: extract organic substances such as tar or benzene from crude oil, plus you can now synthesize
-  hydrochloric and nitric acid.
-- New recipe types: use polymer chemistry to create complex organics, make high precision assembly lines to produce high
-  tech equipment.
-- Additional Atmospheres: You can now build "Atmospheric Harvesting Stations" on the surface of most planets and extract
-  atmospheric components such as Nitrogen and Oxygen.
-- Note: Thermal power plants can now only be used on planets with oxygenated atmospheres.
-- New Mineral Distribution: Adjusted the amount of minerals produced on different planets, note: this will make the mod
-  incompatible with the original archive!
-- New mineral types: mine niobium ore to smelt superalloys, or harvest radioactive minerals to make nuclear fuel rods,
-  and crystalline sulfur.
-- Nearly 90% of the recipes reworked: a completely different process experience from the original, don't worry, it'll
-  feel new to you.
-- Planetary Coordination Centers: dozens of different extra gain effects that can provide gains on a global scale.
-- Mega Buildings: super production facilities that use conveyor belts to input and output materials with 30x speed.
-- New Lost Technology: use quantum storage technology for rapid deployment on alien planets, or make wormhole voyages to
-  reach the other side of the galaxy instantly.
+- A real tech "tree": fully reworked and well organized.
+- New chemical recipes: tar and benzene from crude oil, nitric acid, and hydrofluoric acid from fluorite.
+- New recipe types: polymer chemistry and high-precision assembly.
+- Planetary themes: different planets have different output and temperature effects; some grant atmospheric byproducts.
+- Finite atmosphere and ocean: they deplete and are replenished by combustion emissions; production stops below 5%.
+- Molten Salt Reactor: burns thorium fuel and produces uranium fuel.
+- Thermal power plants only work on planets with oxygenated atmospheres.
+- New mineral distribution: different planets have different amounts; incompatible with vanilla saves.
+- New minerals: niobium, radioactive minerals, and fluorite.
+- Nearly 90% of recipes reworked.
+- Planetary Coordination Centers: global bonuses.
+- Mega Buildings: 30x conveyor-fed production.
+- Lost technology: quantum storage and quantum warp.
 
 ## Credits
 
