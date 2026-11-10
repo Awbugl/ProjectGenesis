@@ -430,14 +430,14 @@
     "ENUS": "Proliferator"
   },
   {
-    "Name": "焦油燃料棒",
-    "ZHCN": "焦油燃料棒",
-    "ENUS": "Refined Oil Fuel Rod"
+    "Name": "煤油燃料棒",
+    "ZHCN": "煤油燃料棒",
+    "ENUS": "Kerosene Fuel Rod"
   },
   {
-    "Name": "I焦油燃料棒",
-    "ZHCN": "经过特殊处理的焦油可作为燃料电池的燃料，从而提供廉价而稳定的能量输出。",
-    "ENUS": "Specially treated oil can be used as fuel for fuel cells, thus providing cheap and stable energy output."
+    "Name": "I煤油燃料棒",
+    "ZHCN": "经加氢精制得到的煤油可作为燃料电池燃料，提供稳定而廉价的能量输出。",
+    "ENUS": "Hydrotreated kerosene can be used as fuel-cell fuel, providing stable and cheap energy output."
   },
   {
     "Name": "同位素温差发电机",
@@ -500,16 +500,6 @@
     "ENUS": "Utilizing precision machining techniques to encapsulate high-purity uranium fuel within a stable alloy casing, achieving sustained and powerful chain reaction energy output in a limited space."
   },
   {
-    "Name": "MOX燃料棒",
-    "ZHCN": "MOX燃料棒",
-    "ENUS": "MOX Fuel Rod"
-  },
-  {
-    "Name": "IMOX燃料棒",
-    "ZHCN": "将铀与钍的氧化物精密配比并高温烧结成型，显著提升核燃料利用率，同时大幅减少长寿命放射性废物的生成量。",
-    "ENUS": "Precision blending and high-temperature sintering of uranium and thorium oxides significantly improves nuclear fuel utilization while substantially reducing the generation of long-lived radioactive waste."
-  },
-  {
     "Name": "I氢燃料棒",
     "ZHCN": "通过多级压缩与低温冷凝工艺将气态氢转化为高密度液态，并封装于特制绝热容器中，是一种可循环再生的高效清洁能源载体。",
     "ENUS": "Transforming gaseous hydrogen into high-density liquid form through multi-stage compression and cryogenic condensation processes, sealed within specially designed thermal insulation containers—a recyclable and efficient clean energy carrier."
@@ -523,16 +513,6 @@
     "Name": "I反物质燃料棒",
     "ZHCN": "利用强磁场约束技术将反物质稳定封存于真空腔体内，通过精确控制湮灭反应速率，将物质转化的纯粹能量安全释放。",
     "ENUS": "Utilizing intense magnetic field confinement technology to stably seal antimatter within vacuum chambers, safely releasing the pure energy of matter conversion through precise control of annihilation reaction rates."
-  },
-  {
-    "Name": "氦三燃料棒",
-    "ZHCN": "氦三燃料棒",
-    "ENUS": "Helium-3 Fuel Rod"
-  },
-  {
-    "Name": "I氦三燃料棒",
-    "ZHCN": "将氦三同位素在低温超流体状态下封装，其聚变反应不产生中子辐射，能量转换效率极高且环境友好，是星际航行的终极能源方案。",
-    "ENUS": "Encapsulating helium-3 isotopes in a low-temperature superfluid state; its fusion reaction produces no neutron radiation, offering extremely high energy conversion efficiency and environmental friendliness—the ultimate energy solution for interstellar navigation."
   },
   {
     "Name": "氘氦混合燃料棒",
