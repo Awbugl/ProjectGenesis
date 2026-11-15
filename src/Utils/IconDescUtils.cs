@@ -21,7 +21,6 @@ namespace ProjectGenesis.Utils
             { 7009, new NoIconFluidIconDesc(new Color32(167, 255, 39, 255)) },  // 丙烯
             { 6206, new NoIconFluidIconDesc(new Color32(191, 227, 255, 255)) }, // CO2
             { 6205, new NoIconFluidIconDesc(new Color32(255, 128, 52, 255)) },  // SO2
-            { 6212, new NoIconFluidIconDesc(new Color32(188, 182, 5, 255)) },   // JP10
             { 7014, new NoIconFluidIconDesc(new Color32(104, 187, 154, 255)) }, // 氢氟酸（原盐酸）
             { 7002, new NoIconFluidIconDesc(new Color32(195, 198, 234, 255)) }, // NH3
             { 7017, new NoIconFluidIconDesc(new Color32(157, 56, 157, 255)) },  // HNO3
@@ -74,11 +73,8 @@ namespace ProjectGenesis.Utils
             { 7705, new NoIconMetalIconDesc(new Color32(43, 44, 48, 255)) },    // 铌块
 
             { 6217, new RodIconDesc(new Color32(163, 145, 85, 255)) },  // 煤油棒
-            { 6216, new RodIconDesc(new Color32(198, 207, 111, 255)) }, // JP10棒
             { 6242, new RodIconDesc(new Color32(33, 170, 87, 255)) },   // 铀棒
             { 6241, new RodIconDesc(new Color32(204, 74, 78, 255)) },   // 钍棒
-            { 6243, new RodIconDesc(new Color32(153, 157, 169, 255)) }, // MOX棒
-            { 6244, new RodIconDesc(new Color32(245, 250, 105, 255)) }, // He3棒
             { 6245, new RodIconDesc(new Color32(147, 77, 255, 255)) },  // 混合棒
 
             { 6278, new MartixIconDesc(new Color(1f, 0.4117f, 0.3137f, 0.1961f), new Color(1f, 0.2706f, 0f, 0f)) },

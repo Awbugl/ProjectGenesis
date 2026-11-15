@@ -457,8 +457,6 @@ namespace ProjectGenesis.Patches
             { 1130, ProtoID.I二氧化碳 },      // 晶石爆破单元
             { 1141, ProtoID.I二氧化碳 },      // 增产剂 Mk.I
             { 1142, ProtoID.I二氧化碳 },      // 增产剂 Mk.II
-            { 6212, ProtoID.I二氧化碳 },      // 四氢双环戊二烯
-            { 6216, ProtoID.I二氧化碳 },      // 四氢双环戊二烯燃料棒
             { 6217, ProtoID.I二氧化碳 },      // 煤油燃料棒
             { 7006, ProtoID.I二氧化碳 },      // 苯
             { 7008, ProtoID.I二氧化碳 },      // 甲烷
@@ -475,10 +473,7 @@ namespace ProjectGenesis.Patches
             // 硫基燃料 → SO₂
             { 6205, ProtoID.I二氧化硫 },      // 二氧化硫
 
-            // 氦聚变 → 氦
-            { 6244, ProtoID.I氦 },            // 氦三燃料棒
-
-            // 清洁无排放：钍/铀/MOX 棒、反物质棒、金色棒、核能/湮灭单元、
+            // 清洁无排放：钍/铀 棒、反物质棒、金色棒、核能/湮灭单元、
             // 蓄电器、能量碎片、创世之书/日志（黑雾能量）、钍燃料（熔盐堆）
         };
 

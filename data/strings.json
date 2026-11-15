@@ -141,8 +141,8 @@
   },
   {
     "Name": "黑石岩滩介绍",
-    "ZHCN": "　　黑石盐滩星球上拥有以氮气为主要成分的大气层，地表上覆盖着细腻的沙砾和盐花。\r\n　　由于原料丰富，黑石盐滩星球曾作为主要的氯碱工业基地，目前地表上零星存在的盐酸湖泊就是它昔日辉煌的证明。",
-    "ENUS": "Halitum planets have an atmosphere dominated by nitrogen and a surface covered by fine sand and salt.\r\nDue to the abundance of raw materials, it served as a major chlor-alkali industrial base, and the hydrochloric acid lakes that now exist sporadically on the surface are a testament to its former glory."
+    "ZHCN": "　　黑石盐滩星球上拥有以氮气为主要成分的大气层，地表上覆盖着细腻的沙砾和盐花。",
+    "ENUS": "Halitum planets have an atmosphere dominated by nitrogen and a surface covered by fine sand and salt."
   },
   {
     "Name": "飓风石林介绍",
@@ -236,8 +236,8 @@
   },
   {
     "Name": "创世之书介绍前字",
-    "ZHCN": "星球调整：\n    四种新矿物，硫、铝、铌、放射矿，矿物现在可在水下生成；\n    为绝大多数类地行星添加了大气类型，并可使用大气采集站进行资源采集；\n    新增海水海洋、盐酸海洋、硝酸海洋；\n    行星协调中心，可自由选择多种协调增益您的工厂。\n\n产线调整：\n    新矿物相关的材料及配方；\n    化工配方扩展，三种不同性能的塑料用于不同生产需求；\n    矿物处理科技，允许将矿物预处理以提高产出或用于燃料电池；\n    添加多种燃料棒，为伊卡洛斯的星际扩张保驾护航；\n    建筑配方需求调整，将常用需求整合为机械组件，提高产线效率；\n    产物溢出机制，允许副产物溢出保证生产连续性（可在设置中调整）。\n\n建筑调整：\n    制造台拆分为三种不同精度的制造类型，不可通用；\n    对自动化生产属性进行提升，如供电范围、传送带、分拣器速度、制造台速度等；\n    大气采集站、轨道采集器不再消耗电力，允许油井、大矿机在水上建造；\n    发电功率调整，功率 = 建筑基础功率 * 燃料加成；\n    燃料电池发电厂仅能在含氧大气环境下运行（燃料棒除外）；添加裂变电站、同位素温差发电机；\n    黑雾建筑调整，黑雾制造台允许制造绝大多数配方，黑雾熔炉则可翻倍产出物品；\n    巨型建筑：使用传送带传输原料和产物的制造中心，效率远超普通设备；\n    物质分解设施，可将物品转换为沙土，亦可拆解建筑为制造材料。\n\n科技调整：\n    科技探索模式，隐藏暂不可研发的科技（可在设置中调整）；\n    添加多种复合矩阵及对应科研需求；\n    建造量子箱瞬间跨越星系输送物品；消耗负熵奇点进行远程折跃；使用全球护盾能源广播。\n\n武器调整：\n    生产铌钢弹头、核导弹；\n    建造紫外激光塔、电磁加农炮；\n    使用反物质跃迁导弹跨星支援。\n\n其他调整：\n    机甲燃料仓只能使用燃料棒进行供电；\n    快速开局模式，让每一次冒险都能迅速展开。",
-    "ENUS": "Planet tweaks:\n    Four new minerals, Sulfur, Aluminum, Niobium, and Radiolite, minerals can now be generated underwater;\n    Added atmosphere types to the vast majority of Earth-like planets, and the ability to use Atmospheric Harvesting Stations for resource harvesting;\n    New seawater oceans, hydrochloric acid oceans, and nitric acid oceans;\n    Planetary Coordination Center, with the freedom to choose from a wide range of coordinated gains for your factories.\nProduction tweaks:\n    New mineral-related materials and recipes;\n    Chemical recipe expansion, three different plastics with different properties for different production needs;\n    Mineral Processing Technology, allowing minerals to be pre-treated for increased output or for use in fuel cells;\n    Addition of multiple fuel rods for Icarus' interstellar expansion;\n    Construction recipe requirement adjustments, consolidating common requirements into mechanical components to increase production line efficiency;\n    Production overflow mechanic, allowing byproduct overflow to ensure production continuity (adjustable in settings).\nBuilding tweaks:\n    Manufacturing table split into three different precision manufacturing types, which are not generalizable;\n    Enhancements to automated production attributes such as power supply range, conveyor belts, sorter speed, and manufacturing table speed;\n    Atmospheric collection stations and orbital collectors no longer consume power, allowing oil wells and large mining machines to be built over water;\n    Power generation power adjusted so that power = building base power * fuel bonus;\n    Fuel cell power plants can only operate in oxygenated atmospheres (except fuel rods); fission power stations, isotope temperature difference generators added;\n    Dark Fog building tweak; Dark Fog Fabrication Stations allow for the creation of most recipes, while Dark Fog Furnaces double the output of items;\n    Mega Buildings: manufacturing centers that use conveyor belts to transfer raw materials and products far more efficiently than normal facilities;\n    Material Decomposition Facility, which converts items into sand and earth, and can also dismantle buildings for manufacturing materials.\nTechnology tweaks:\n    Technology Exploration Mode to hide technologies that cannot be developed at the moment (can be adjusted in Settings);\n    Add multiple composite matrices and corresponding research requirements;\n    Construct Quantum Boxes to instantly transport items across galaxies; consume Negentropic Singularity to perform Remote Folding; use Global Shield Energy to broadcast.\nWeapon tweaks:\n    Produce niobium warheads, nuclear missiles;\n    Construction of UV laser towers, electromagnetic cannons;\n    Use antimatter leaping missiles for transplanetary support.\nOther tweaks:\n    Mech fuel silos can only be powered using fuel rods;\n    Quick start mode to get every adventure underway quickly."
+    "ZHCN": "星球调整：\n    四种新矿物，硫、铝、铌、放射矿，矿物现在可在水下生成；\n    为绝大多数类地行星添加了大气类型，并可使用大气采集站进行资源采集；\n    新增海水海洋、硝酸海洋；\n    行星协调中心，可自由选择多种协调增益您的工厂。\n\n产线调整：\n    新矿物相关的材料及配方；\n    化工配方扩展，三种不同性能的塑料用于不同生产需求；\n    矿物处理科技，允许将矿物预处理以提高产出或用于燃料电池；\n    添加多种燃料棒，为伊卡洛斯的星际扩张保驾护航；\n    建筑配方需求调整，将常用需求整合为机械组件，提高产线效率；\n    产物溢出机制，允许副产物溢出保证生产连续性（可在设置中调整）。\n\n建筑调整：\n    制造台拆分为三种不同精度的制造类型，不可通用；\n    对自动化生产属性进行提升，如供电范围、传送带、分拣器速度、制造台速度等；\n    大气采集站、轨道采集器不再消耗电力，允许油井、大矿机在水上建造；\n    发电功率调整，功率 = 建筑基础功率 * 燃料加成；\n    燃料电池发电厂仅能在含氧大气环境下运行（燃料棒除外）；添加裂变电站、同位素温差发电机；\n    黑雾建筑调整，黑雾制造台允许制造绝大多数配方，黑雾熔炉则可翻倍产出物品；\n    巨型建筑：使用传送带传输原料和产物的制造中心，效率远超普通设备；\n    物质分解设施，可将物品转换为沙土，亦可拆解建筑为制造材料。\n\n科技调整：\n    科技探索模式，隐藏暂不可研发的科技（可在设置中调整）；\n    添加多种复合矩阵及对应科研需求；\n    建造量子箱瞬间跨越星系输送物品；消耗负熵奇点进行远程折跃；使用全球护盾能源广播。\n\n武器调整：\n    生产铌钢弹头、核导弹；\n    建造紫外激光塔、电磁加农炮；\n    使用反物质跃迁导弹跨星支援。\n\n其他调整：\n    机甲燃料仓只能使用燃料棒进行供电；\n    快速开局模式，让每一次冒险都能迅速展开。",
+    "ENUS": "Planet tweaks:\n    Four new minerals, Sulfur, Aluminum, Niobium, and Radiolite, minerals can now be generated underwater;\n    Added atmosphere types to the vast majority of Earth-like planets, and the ability to use Atmospheric Harvesting Stations for resource harvesting;\n    New seawater oceans and nitric acid oceans;\n    Planetary Coordination Center, with the freedom to choose from a wide range of coordinated gains for your factories.\nProduction tweaks:\n    New mineral-related materials and recipes;\n    Chemical recipe expansion, three different plastics with different properties for different production needs;\n    Mineral Processing Technology, allowing minerals to be pre-treated for increased output or for use in fuel cells;\n    Addition of multiple fuel rods for Icarus' interstellar expansion;\n    Construction recipe requirement adjustments, consolidating common requirements into mechanical components to increase production line efficiency;\n    Production overflow mechanic, allowing byproduct overflow to ensure production continuity (adjustable in settings).\nBuilding tweaks:\n    Manufacturing table split into three different precision manufacturing types, which are not generalizable;\n    Enhancements to automated production attributes such as power supply range, conveyor belts, sorter speed, and manufacturing table speed;\n    Atmospheric collection stations and orbital collectors no longer consume power, allowing oil wells and large mining machines to be built over water;\n    Power generation power adjusted so that power = building base power * fuel bonus;\n    Fuel cell power plants can only operate in oxygenated atmospheres (except fuel rods); fission power stations, isotope temperature difference generators added;\n    Dark Fog building tweak; Dark Fog Fabrication Stations allow for the creation of most recipes, while Dark Fog Furnaces double the output of items;\n    Mega Buildings: manufacturing centers that use conveyor belts to transfer raw materials and products far more efficiently than normal facilities;\n    Material Decomposition Facility, which converts items into sand and earth, and can also dismantle buildings for manufacturing materials.\nTechnology tweaks:\n    Technology Exploration Mode to hide technologies that cannot be developed at the moment (can be adjusted in Settings);\n    Add multiple composite matrices and corresponding research requirements;\n    Construct Quantum Boxes to instantly transport items across galaxies; consume Negentropic Singularity to perform Remote Folding; use Global Shield Energy to broadcast.\nWeapon tweaks:\n    Produce niobium warheads, nuclear missiles;\n    Construction of UV laser towers, electromagnetic cannons;\n    Use antimatter leaping missiles for transplanetary support.\nOther tweaks:\n    Mech fuel silos can only be powered using fuel rods;\n    Quick start mode to get every adventure underway quickly."
   },
   {
     "Name": "巨型建筑介绍标题",
@@ -318,11 +318,6 @@
     "Name": "放射性矿脉",
     "ZHCN": "放射性矿脉",
     "ENUS": "Radioactive Veins"
-  },
-  {
-    "Name": "盐酸海洋",
-    "ZHCN": "盐酸海洋",
-    "ENUS": "Hydrochloric Acid Ocean"
   },
   {
     "Name": "硝酸海洋",
@@ -975,16 +970,6 @@
     "ENUS": "Electrolysis of water into hydrogen and oxygen using direct current—the fundamental process for obtaining clean hydrogen energy."
   },
   {
-    "Name": "盐水电解",
-    "ZHCN": "盐水电解",
-    "ENUS": "Salt Water Electrolysis"
-  },
-  {
-    "Name": "钠盐转化",
-    "ZHCN": "钠盐转化",
-    "ENUS": "Sodium Salt Conversion"
-  },
-  {
     "Name": "海水淡化",
     "ZHCN": "海水淡化",
     "ENUS": "Seawater Desalination"
@@ -1421,8 +1406,8 @@
   },
   {
     "Name": "T同位素温差发电描述",
-    "ZHCN": "MOX燃料棒在衰变过程中释放持续热能，通过热电偶阵列的塞贝克效应直接转换为电能，无需运动部件即可长期稳定运行。",
-    "ENUS": "MOX fuel rods release sustained thermal energy during decay, directly converted to electricity through the Seebeck effect of thermocouple arrays—capable of long-term stable operation without moving parts."
+    "ZHCN": "钍燃料棒在衰变过程中释放持续热能，通过热电偶阵列的塞贝克效应直接转换为电能，无需运动部件即可长期稳定运行。",
+    "ENUS": "Thorium fuel rods release sustained thermal energy during decay, directly converted to electricity through the Seebeck effect of thermocouple arrays—capable of long-term stable operation without moving parts."
   },
   {
     "Name": "T裂变能源燃料棒",
@@ -1538,11 +1523,6 @@
     "Name": "T巨型建筑工程学描述",
     "ZHCN": "随着工业规模的指数级扩张，传统分布式生产模式面临占地与物流瓶颈。发展高度集成的巨型建筑技术，实现单位面积产出的革命性突破，已成为必然选择。",
     "ENUS": "With exponential expansion of industrial scale, traditional distributed production models face land occupation and logistics bottlenecks. Developing highly integrated mega-building technology to achieve revolutionary breakthroughs in output per unit area has become an inevitable choice."
-  },
-  {
-    "Name": "T化学能燃料棒描述",
-    "ZHCN": "以高密度四氢双环戊二烯（JP-10）为能量载体，通过催化重整反应释放化学能，为早期星际航行器与机甲提供可靠动力源。",
-    "ENUS": "Using high-density tetrahydrocyclopentadiene (JP-10) as energy carrier, releasing chemical energy through catalytic reforming reactions—providing reliable power sources for early interstellar spacecraft and mechas."
   },
   {
     "Name": "T先进化工",
@@ -1838,11 +1818,6 @@
     "Name": "I氦",
     "ZHCN": "宇宙中第二丰富的元素，由恒星核聚变产生，化学性质极不活泼，是重要的低温冷却剂与保护气体。",
     "ENUS": "The second most abundant element in the universe, produced by stellar nuclear fusion—chemically inert, important cryogenic coolant and protective gas."
-  },
-  {
-    "Name": "氦核转化",
-    "ZHCN": "氦核转化",
-    "ENUS": "Helium Conversion"
   },
   {
     "Name": "I反物质约束单元",
@@ -2170,16 +2145,6 @@
     "ENUS": "Experimental ammunition legacy of Thomas Wade Arsenal, employing unknown processes combining strong interaction material with antimatter confinement technology—technical principles exceed current scientific understanding. 960 rounds per box."
   },
   {
-    "Name": "T钛化弹箱",
-    "ZHCN": "钢芯穿甲弹",
-    "ENUS": "Steel Piercing Shell"
-  },
-  {
-    "Name": "钛化弹箱描述",
-    "ZHCN": "以钢质弹芯替代纯铜弹头，通过密度与硬度的提升增强对装甲目标的侵彻能力，铜被甲保持枪管寿命。",
-    "ENUS": "Steel core replaces pure copper warhead, enhancing armor penetration through increased density and hardness, while copper jacket maintains barrel life."
-  },
-  {
     "Name": "T超合金弹箱",
     "ZHCN": "钛金强化弹壳",
     "ENUS": "Titanium Cases"
@@ -2493,5 +2458,15 @@
     "Name": "棱镜（高效）",
     "ZHCN": "棱镜（高效）",
     "ENUS": "Prism (Efficient)"
+  },
+  {
+    "Name": "T钛化弹箱",
+    "ZHCN": "钢芯穿甲弹",
+    "ENUS": "Steel Piercing Shell"
+  },
+  {
+    "Name": "钛化弹箱描述",
+    "ZHCN": "以钢质弹芯替代纯铜弹头，通过密度与硬度的提升增强对装甲目标的侵彻能力，铜被甲保持枪管寿命。",
+    "ENUS": "Steel core replaces pure copper warhead, enhancing armor penetration through increased density and hardness, while copper jacket maintains barrel life."
   }
 ]
