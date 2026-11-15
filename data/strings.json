@@ -2463,5 +2463,35 @@
     "Name": "钛化弹箱描述",
     "ZHCN": "以钢质弹芯替代纯铜弹头，通过密度与硬度的提升增强对装甲目标的侵彻能力，铜被甲保持枪管寿命。",
     "ENUS": "Steel core replaces pure copper warhead, enhancing armor penetration through increased density and hardness, while copper jacket maintains barrel life."
+  },
+  {
+    "Name": "盐酸海洋",
+    "ZHCN": "盐酸海洋",
+    "ENUS": "Hydrochloric Acid Ocean"
+  },
+  {
+    "Name": "盐水电解",
+    "ZHCN": "盐水电解",
+    "ENUS": "Salt Water Electrolysis"
+  },
+  {
+    "Name": "钠盐转化",
+    "ZHCN": "钠盐转化",
+    "ENUS": "Sodium Salt Conversion"
+  },
+  {
+    "Name": "R石墨烯",
+    "ZHCN": "在铜箔基底上进行化学气相沉积，甲烷高温裂解出的碳原子自组装为单层石墨烯，同时副产氢气。",
+    "ENUS": "Chemical vapor deposition on copper foil substrate—carbon atoms from high-temperature methane cracking self-assemble into monolayer graphene, with hydrogen as byproduct."
+  },
+  {
+    "Name": "T化学能燃料棒描述",
+    "ZHCN": "以高密度四氢双环戊二烯（JP-10）为能量载体，通过催化重整反应释放化学能，为早期星际航行器与机甲提供可靠动力源。",
+    "ENUS": "Using high-density tetrahydrocyclopentadiene (JP-10) as energy carrier, releasing chemical energy through catalytic reforming reactions—providing reliable power sources for early interstellar spacecraft and mechas."
+  },
+  {
+    "Name": "氦核转化",
+    "ZHCN": "氦核转化",
+    "ENUS": "Helium Conversion"
   }
 ]
