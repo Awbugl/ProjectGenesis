@@ -33,9 +33,8 @@ namespace ProjectGenesis.Patches
         /// <summary>主题排他配方：配方 ID → 可用主题 ID（其他星球停摆）</summary>
         private static readonly Dictionary<int, int[]> ExclusiveRecipeThemes = new Dictionary<int, int[]>
         {
-            { 904, new[] { 9, 13 } }, // 高温钢材：熔岩/火山灰
-            { 905, new[] { 16 } },    // 海水提氘：水世界
-            { 906, new[] { 25 } },    // 增产剂（生物）：潘多拉沼泽
+            { 905, new[] { 16 } }, // 海水提氘：水世界
+            { 906, new[] { 25 } }, // 有机晶体（光合）：潘多拉沼泽
         };
 
         /// <summary>

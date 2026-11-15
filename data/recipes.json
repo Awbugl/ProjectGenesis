@@ -6334,31 +6334,6 @@
     "NonProductive": true
   },
   {
-    "ID": 904,
-    "Name": "高温钢材",
-    "Description": "R高温钢材",
-    "IconPath": "",
-    "IconTag": "",
-    "Type": 13,
-    "GridIndex": 1516,
-    "Time": 180,
-    "Input": [
-      1101
-    ],
-    "InCounts": [
-      3
-    ],
-    "Output": [
-      1103
-    ],
-    "OutCounts": [
-      2
-    ],
-    "Explicit": false,
-    "Handcraft": false,
-    "NonProductive": false
-  },
-  {
     "ID": 905,
     "Name": "海水提氘",
     "Description": "R海水提氘",

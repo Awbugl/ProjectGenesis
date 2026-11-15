@@ -2490,11 +2490,6 @@
     "ENUS": "Veins rich in fluorite ore, translucent fluorescent crystals glimmering in the sunlight."
   },
   {
-    "Name": "R高温钢材",
-    "ZHCN": "在熔岩或火山灰星球的高热条件下直接冶炼，每 3 个铁块产出 2 个钢材，省铁；仅此类星球可用。",
-    "ENUS": "Smelted under the extreme heat of Lava or Volcanic Ash planets: 3 Iron Ingots yield 2 Steel, saving iron. Only available on those planet types."
-  },
-  {
     "Name": "R海水提氘",
     "ZHCN": "仅水世界星球可用：从海水中提取重氢，每 4 个海水产出 1 个重氢。",
     "ENUS": "Available only on Water World planets: extracts Deuterium from seawater, 4 Seawater yield 1 Deuterium."
