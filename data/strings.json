@@ -2493,5 +2493,10 @@
     "Name": "氦核转化",
     "ZHCN": "氦核转化",
     "ENUS": "Helium Conversion"
+  },
+  {
+    "Name": "钛化弹箱结果",
+    "ZHCN": "你已解锁钢芯弹箱的制造技术。",
+    "ENUS": "You have unlocked the manufacturing of steel-core ammo boxes."
   }
 ]
