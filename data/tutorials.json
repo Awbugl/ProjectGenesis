@@ -48,5 +48,32 @@
     "DeterminatorParams": [
       2304
     ]
+  },
+  {
+    "ID": 36,
+    "Name": "行星主题介绍标题",
+    "LayoutFileName": "genesisbook-tutorials-36",
+    "DeterminatorName": "TOR_GameSecond",
+    "DeterminatorParams": [
+      60
+    ]
+  },
+  {
+    "ID": 37,
+    "Name": "大气与海洋介绍标题",
+    "LayoutFileName": "genesisbook-tutorials-37",
+    "DeterminatorName": "TOR_OnBuild",
+    "DeterminatorParams": [
+      6267
+    ]
+  },
+  {
+    "ID": 38,
+    "Name": "熔盐堆介绍标题",
+    "LayoutFileName": "genesisbook-tutorials-38",
+    "DeterminatorName": "TOR_OnBuild",
+    "DeterminatorParams": [
+      6268
+    ]
   }
 ]

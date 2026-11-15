@@ -280,6 +280,36 @@
     "ENUS": "After specialization, the assemblers can meet the needs of different precision, but except for the Dark Fog assembler, different assembler can not be used universally."
   },
   {
+    "Name": "行星主题介绍标题",
+    "ZHCN": "行星主题",
+    "ENUS": "Planetary Themes"
+  },
+  {
+    "Name": "行星主题介绍前字",
+    "ZHCN": "行星主题决定这颗星的产能：抽水、采集、火电、风电、有机化工、增产各有倍率。熔岩冶炼快 25%、化工慢 25%，冰原相反。",
+    "ENUS": "A planet's theme sets its production rates: water pumping, harvesting, thermal power, wind power, organic chemistry and proliferator efficiency each have their own multiplier. Lava smelts 25% faster but runs chemistry 25% slower; Ice is the reverse."
+  },
+  {
+    "Name": "大气与海洋介绍标题",
+    "ZHCN": "大气与海洋",
+    "ENUS": "Atmosphere and Ocean"
+  },
+  {
+    "Name": "大气与海洋介绍前字",
+    "ZHCN": "抽水站和大气采集站会消耗星球储量，低于 5% 时停产；火电等燃烧排放会补回一部分。",
+    "ENUS": "Pumping stations and atmospheric collectors drain the planet's reserves and stop below 5%; combustion emissions from thermal power restore part of them."
+  },
+  {
+    "Name": "熔盐堆介绍标题",
+    "ZHCN": "熔盐堆",
+    "ENUS": "Molten Salt Reactor"
+  },
+  {
+    "Name": "熔盐堆介绍前字",
+    "ZHCN": "熔盐堆只烧钍燃料，每消耗 1 个钍燃料产出 1 个铀燃料；缓存满时产出的铀会被丢弃。",
+    "ENUS": "The Molten Salt Reactor only burns Thorium Fuel, producing 1 Uranium Fuel per Thorium Fuel; when its buffer is full, the produced Uranium Fuel is discarded."
+  },
+  {
     "Name": "铌矿脉",
     "ZHCN": "铌矿脉",
     "ENUS": "Niobium Veins"
