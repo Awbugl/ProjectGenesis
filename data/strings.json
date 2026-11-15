@@ -286,8 +286,8 @@
   },
   {
     "Name": "行星主题介绍前字",
-    "ZHCN": "行星主题决定这颗星的产能：抽水、采集、火电、风电、有机化工、增产各有倍率。熔岩冶炼快 25%、化工慢 25%，冰原相反。",
-    "ENUS": "A planet's theme sets its production rates: water pumping, harvesting, thermal power, wind power, organic chemistry and proliferator efficiency each have their own multiplier. Lava smelts 25% faster but runs chemistry 25% slower; Ice is the reverse."
+    "ZHCN": "行星主题决定这颗星的能源与资源：抽水、大气采集、火电、风电各有倍率，形成选址取舍。",
+    "ENUS": "A planet's theme shapes its energy and resources: water pumping, atmosphere harvesting, thermal power and wind power each have their own multiplier, creating trade-offs for site selection."
   },
   {
     "Name": "大气与海洋介绍标题",
