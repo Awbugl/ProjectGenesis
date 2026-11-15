@@ -2501,8 +2501,8 @@
   },
   {
     "Name": "R增产剂（生物）",
-    "ZHCN": "仅潘多拉沼泽星球可用：以有机晶体与植物燃料直接合成增产剂。",
-    "ENUS": "Available only on Pandora Swamp planets: synthesize Proliferator directly from Organic Crystal and Plant Fuel."
+    "ZHCN": "仅潘多拉沼泽星球可用：以水、二氧化碳、氮合成增产剂，原料全部可再生。",
+    "ENUS": "Available only on Pandora Swamp planets: synthesizes Proliferator from water, carbon dioxide and nitrogen — fully renewable."
   },
   {
     "Name": "棱镜（高效）",
