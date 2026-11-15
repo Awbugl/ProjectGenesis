@@ -1110,11 +1110,6 @@
     "ENUS": "On platinum mesh catalyst surface, ammonia undergoes strongly exothermic oxidation with oxygen, converting through multiple intermediate steps to ultimately generate nitric acid—the fundamental pathway for industrial acid production."
   },
   {
-    "Name": "R石墨烯",
-    "ZHCN": "在铜箔基底上进行化学气相沉积，甲烷高温裂解出的碳原子自组装为单层石墨烯，同时副产氢气。",
-    "ENUS": "Chemical vapor deposition on copper foil substrate—carbon atoms from high-temperature methane cracking self-assemble into monolayer graphene, with hydrogen as byproduct."
-  },
-  {
     "Name": "R石墨烯（高效）",
     "ZHCN": "找到可燃冰矿，制造石墨烯就会变得容易许多。",
     "ENUS": "It will be a lot easier to produce graphene if you can find combustible ice minerals."
