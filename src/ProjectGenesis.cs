@@ -196,6 +196,7 @@ namespace ProjectGenesis
             AdvancedLaserPatches.IntoOtherSave();
             GlobalPowerSupplyPatches.IntoOtherSave();
             PlanetAtmospherePatches.IntoOtherSave();
+            PlanetThemeMultiplierPatches.IntoOtherSave();
         }
 
         public string Version => VERSION;

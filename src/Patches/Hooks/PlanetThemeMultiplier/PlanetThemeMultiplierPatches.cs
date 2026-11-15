@@ -44,6 +44,11 @@ namespace ProjectGenesis.Patches
             772,  // 聚酰亚胺
         };
 
+        /// <summary>每个组件的 incServed 上次值，用于只在增加时应用增产效力</summary>
+        private static readonly Dictionary<int, int[]> IncServedLast = new Dictionary<int, int[]>();
+
+        internal static void IntoOtherSave() => IncServedLast.Clear();
+
         /// <summary>
         /// 主题倍率表（主题 ID → 六维倍率：抽水/大气采集/火电/风电/有机化工/增产效力）。
         /// 每个主题有突出专长与明显短板，形成选址取舍。
@@ -163,6 +168,31 @@ namespace ProjectGenesis.Patches
             type == ERecipeType.Chemical || (int)type == (int)Utils_ERecipeType.高分子化工 ||
             (int)type == (int)Utils_ERecipeType.所有化工;
 
+        /// <summary>增产效力：incServed 比上次增加时才乘一次，上限 255。</summary>
+        private static void ApplyIncPower(ref AssemblerComponent component, float incPower)
+        {
+            int entityId = component.entityId;
+
+            if (!IncServedLast.TryGetValue(entityId, out int[] last) || last.Length != component.incServed.Length)
+            {
+                last = new int[component.incServed.Length];
+                IncServedLast[entityId] = last;
+            }
+
+            for (int i = 0; i < component.incServed.Length; i++)
+            {
+                int current = component.incServed[i];
+
+                if (current > last[i] && current > 0)
+                {
+                    current = Math.Min((int)(current * incPower), 255);
+                    component.incServed[i] = current;
+                }
+
+                last[i] = current;
+            }
+        }
+
         /// <summary>
         /// 主题速度挂钩：每 tick 在 InternalUpdate 前按行星主题重算 component.speed（幂等）。
         /// 速度 = prefabDesc 基础速度 × 温度因子（EPlanetType：高温利于冶炼、低温利于化工）× 有机因子（生物行星有机配方）。
@@ -196,19 +226,11 @@ namespace ProjectGenesis.Patches
             // 有机因子：生物行星的有机类配方加成（文档六维；倍率皆为基本分数，速度保持整数比例）
             if (IsOrganicRecipe(component.recipeId)) factor *= GetMultiplier(planet, MultiplierType.OrganicSpeed);
 
-            // 增产效力：主题倍率 >1 时提高输入增产剂累计（等效增产剂更耐用、效力更高）
-            // 设上限 255 防止每 tick 乘算的指数膨胀（长期趋向满级增产，符合"更耐用"设计）。
+            // 增产效力：只在 incServed 增加时（新加入/补充增产剂）乘一次，避免每 tick 复利。
             // 独立六维，不受速度因子早退影响。
             float incPower = GetMultiplier(planet, MultiplierType.IncPower);
 
-            if (incPower > 1f && component.incServed != null)
-            {
-                for (int i = 0; i < component.incServed.Length; i++)
-                {
-                    if (component.incServed[i] > 0)
-                        component.incServed[i] = Math.Min((int)(component.incServed[i] * incPower), 255);
-                }
-            }
+            if (incPower > 1f && component.incServed != null) ApplyIncPower(ref component, incPower);
 
             // 无速度加成（factor==1）：不改速度，显示取引擎原值（杜绝浮点残差）
             if (factor == 1f) return;
