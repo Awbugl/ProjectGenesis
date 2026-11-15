@@ -6382,5 +6382,32 @@
     "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
+  },
+  {
+    "ID": 906,
+    "Name": "增产剂（生物）",
+    "Description": "R增产剂（生物）",
+    "IconPath": "",
+    "IconTag": "",
+    "Type": 16,
+    "GridIndex": 1518,
+    "Time": 120,
+    "Input": [
+      1117,
+      1031
+    ],
+    "InCounts": [
+      1,
+      2
+    ],
+    "Output": [
+      1143
+    ],
+    "OutCounts": [
+      1
+    ],
+    "Explicit": false,
+    "Handcraft": false,
+    "NonProductive": false
   }
 ]

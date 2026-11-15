@@ -35,6 +35,7 @@ namespace ProjectGenesis.Patches
         {
             { 904, new[] { 9, 13 } }, // 高温钢材：熔岩/火山灰
             { 905, new[] { 16 } },    // 海水提氘：水世界
+            { 906, new[] { 25 } },    // 增产剂（生物）：潘多拉沼泽
         };
 
         /// <summary>

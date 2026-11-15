@@ -2500,6 +2500,11 @@
     "ENUS": "Available only on Water World planets: extracts Deuterium from seawater, 4 Seawater yield 1 Deuterium."
   },
   {
+    "Name": "R增产剂（生物）",
+    "ZHCN": "仅潘多拉沼泽星球可用：以有机晶体与植物燃料直接合成增产剂。",
+    "ENUS": "Available only on Pandora Swamp planets: synthesize Proliferator directly from Organic Crystal and Plant Fuel."
+  },
+  {
     "Name": "棱镜（高效）",
     "ZHCN": "棱镜（高效）",
     "ENUS": "Prism (Efficient)"
