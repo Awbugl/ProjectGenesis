@@ -1,3 +1,20 @@
+- v3.3.0 行星时代 | Planetary Era
+  + 行星主题：20 个主题配置六维倍率（抽水 / 采集 / 火电 / 风电 / 有机 / 增产）；熔岩与冰原的温度对冶炼/化工 ±25%；6 个主题附带大气采集副产物。
+  + 有限大气与海洋：每颗行星有有限储量；采集消耗、燃烧排放注回；低于 5% 停产。
+  + 熔盐堆：燃烧钍燃料，副产铀燃料。
+  + 化工调整：移除氯碱 / 盐酸 / 食盐 / 烧碱与四氢 / JP-10 链；新增萤石 / 氢氟酸链。
+  + 配方、物品位置与命名体系对齐。
+  + 修复：3.3 引导崩溃、熔盐堆建造与产物、发电钩子、切档泄漏。
+  + 许可：代码 GPL-3.0（含 §7 附加条款）；美术资产保留权利。
+
+  + Planetary themes: 20 themes with six multipliers (water pumping / atmospheric collection / thermal power / wind power / organic chemistry / proliferator efficiency); Lava and Ice planets apply ±25% temperature modifiers to smelting/chemistry; 6 themes grant atmospheric byproducts.
+  + Finite atmosphere and ocean: each planet has limited reserves; harvesting drains them, combustion emissions feed them back; production stops below 5%.
+  + Molten Salt Reactor: burns thorium fuel and produces uranium fuel.
+  + Chemistry changes: removed the chlor-alkali / hydrochloric acid / salt / caustic soda and JP-10 chains; added fluorite / hydrofluoric acid.
+  + Recipe, item position and naming alignment.
+  + Fixes: 3.3 startup crash, Molten Salt Reactor construction/output, power hooks, save-switch leaks.
+  + License: code under GPL-3.0 (with §7 additional terms); art assets all rights reserved.
+
 - v3.2.3
   + 修复了储液罐输出异常的问题
   + 调整了护盾填充度的显示方案
