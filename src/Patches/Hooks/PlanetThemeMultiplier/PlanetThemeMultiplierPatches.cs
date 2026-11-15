@@ -30,12 +30,6 @@ namespace ProjectGenesis.Patches
             IncPower,      // 增产剂效力
         }
 
-        /// <summary>主题排他配方：配方 ID → 可用主题 ID（其他星球停摆）</summary>
-        private static readonly Dictionary<int, int[]> ExclusiveRecipeThemes = new Dictionary<int, int[]>
-        {
-            { 905, new[] { 16 } }, // 海水提氘：水世界
-        };
-
         /// <summary>
         /// 主题倍率表（主题 ID → 六维倍率：抽水/大气采集/火电/风电/有机化工/增产效力）。
         /// 每个主题有突出专长与明显短板，形成选址取舍。
@@ -93,23 +87,5 @@ namespace ProjectGenesis.Patches
 
             return multipliers[(int)type];
         }
-
-        // ==================== 主题排他配方门禁（注入统一 InternalUpdate pre-patch） ====================
-
-        /// <summary>
-        /// 工厂速度不再随主题变化（战略版设计：工厂全宇宙统一，主题只影响环境/资源/排他工艺）。
-        /// 此处只做主题排他配方门禁。
-        /// </summary>
-        public static void GameTick_AssemblerComponent_InternalUpdate_Patch(PlanetFactory factory, ref AssemblerComponent component,
-            float power)
-        {
-            if (ExclusiveRecipeThemes.TryGetValue(component.recipeId, out int[] themes) &&
-                (factory.planet == null || Array.IndexOf(themes, factory.planet.theme) < 0))
-            {
-                component.speed = 0;
-                return;
-            }
-        }
-
     }
 }
