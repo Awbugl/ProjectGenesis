@@ -6357,34 +6357,5 @@
     "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
-  },
-  {
-    "ID": 906,
-    "Name": "有机晶体（光合）",
-    "Description": "R有机晶体（光合）",
-    "IconPath": "",
-    "IconTag": "",
-    "Type": 16,
-    "GridIndex": 1518,
-    "Time": 120,
-    "Input": [
-      1000,
-      6206,
-      6220
-    ],
-    "InCounts": [
-      4,
-      2,
-      2
-    ],
-    "Output": [
-      1117
-    ],
-    "OutCounts": [
-      1
-    ],
-    "Explicit": false,
-    "Handcraft": false,
-    "NonProductive": false
   }
 ]

@@ -34,7 +34,6 @@ namespace ProjectGenesis.Patches
         private static readonly Dictionary<int, int[]> ExclusiveRecipeThemes = new Dictionary<int, int[]>
         {
             { 905, new[] { 16 } }, // 海水提氘：水世界
-            { 906, new[] { 25 } }, // 有机晶体（光合）：潘多拉沼泽
         };
 
         /// <summary>
