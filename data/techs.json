@@ -5647,7 +5647,8 @@
     "HashNeeded": 18000,
     "UnlockRecipes": [
       22,
-      801
+      801,
+      905
     ],
     "UnlockFunctions": [],
     "UnlockValues": [],

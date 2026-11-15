@@ -6357,5 +6357,30 @@
     "Explicit": false,
     "Handcraft": false,
     "NonProductive": false
+  },
+  {
+    "ID": 905,
+    "Name": "海水提氘",
+    "Description": "R海水提氘",
+    "IconPath": "",
+    "IconTag": "",
+    "Type": 2,
+    "GridIndex": 1517,
+    "Time": 120,
+    "Input": [
+      7018
+    ],
+    "InCounts": [
+      4
+    ],
+    "Output": [
+      1121
+    ],
+    "OutCounts": [
+      1
+    ],
+    "Explicit": false,
+    "Handcraft": false,
+    "NonProductive": false
   }
 ]

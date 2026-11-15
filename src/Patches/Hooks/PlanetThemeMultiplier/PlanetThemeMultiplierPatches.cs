@@ -30,10 +30,12 @@ namespace ProjectGenesis.Patches
             IncPower,      // 增产剂效力
         }
 
-        /// <summary>主题排他配方：高温钢材（熔岩/火山灰专属）</summary>
-        private const int HighTempSteelRecipe = 904;
-
-        private static readonly int[] LavaThemes = { 9, 13 };
+        /// <summary>主题排他配方：配方 ID → 可用主题 ID（其他星球停摆）</summary>
+        private static readonly Dictionary<int, int[]> ExclusiveRecipeThemes = new Dictionary<int, int[]>
+        {
+            { 904, new[] { 9, 13 } }, // 高温钢材：熔岩/火山灰
+            { 905, new[] { 16 } },    // 海水提氘：水世界
+        };
 
         /// <summary>
         /// 主题倍率表（主题 ID → 六维倍率：抽水/大气采集/火电/风电/有机化工/增产效力）。
@@ -134,7 +136,8 @@ namespace ProjectGenesis.Patches
         public static void GameTick_AssemblerComponent_InternalUpdate_Patch(PlanetFactory factory, ref AssemblerComponent component,
             float power)
         {
-            if (component.recipeId == HighTempSteelRecipe && (factory.planet == null || Array.IndexOf(LavaThemes, factory.planet.theme) < 0))
+            if (ExclusiveRecipeThemes.TryGetValue(component.recipeId, out int[] themes) &&
+                (factory.planet == null || Array.IndexOf(themes, factory.planet.theme) < 0))
             {
                 component.speed = 0;
                 return;

@@ -2495,6 +2495,11 @@
     "ENUS": "Smelted under the extreme heat of Lava or Volcanic Ash planets: 3 Iron Ingots yield 2 Steel, saving iron. Only available on those planet types."
   },
   {
+    "Name": "R海水提氘",
+    "ZHCN": "仅水世界星球可用：从海水中提取重氢，每 4 个海水产出 1 个重氢。",
+    "ENUS": "Available only on Water World planets: extracts Deuterium from seawater, 4 Seawater yield 1 Deuterium."
+  },
+  {
     "Name": "棱镜（高效）",
     "ZHCN": "棱镜（高效）",
     "ENUS": "Prism (Efficient)"
