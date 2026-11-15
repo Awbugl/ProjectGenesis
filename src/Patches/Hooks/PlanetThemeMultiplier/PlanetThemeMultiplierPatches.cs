@@ -30,25 +30,6 @@ namespace ProjectGenesis.Patches
             IncPower,      // 增产剂效力
         }
 
-        /// <summary>有机类配方（生物行星特色加成对象）</summary>
-        private static readonly HashSet<int> OrganicRecipes = new HashSet<int>
-        {
-            108,  // 增产剂
-            509,  // 催化重整（苯）
-            546,  // 有机晶体
-            549,  // 有机晶体活化（聚酰亚胺）
-            550,  // 有机晶体重组
-            714,  // 钛晶石
-            709,  // 钛晶石（高效）
-            771,  // 聚苯硫醚
-            772,  // 聚酰亚胺
-        };
-
-        /// <summary>每个组件的 incServed 上次值，用于只在增加时应用增产效力</summary>
-        private static readonly Dictionary<int, int[]> IncServedLast = new Dictionary<int, int[]>();
-
-        internal static void IntoOtherSave() => IncServedLast.Clear();
-
         /// <summary>主题排他配方：高温钢材（熔岩/火山灰专属）</summary>
         private const int HighTempSteelRecipe = 904;
 
@@ -112,23 +93,6 @@ namespace ProjectGenesis.Patches
             return multipliers[(int)type];
         }
 
-        /// <summary>是否有机类配方</summary>
-        internal static bool IsOrganicRecipe(int recipeId) => OrganicRecipes.Contains(recipeId);
-
-        /// <summary>
-        /// 行星类型温度机制（数据=EPlanetType 枚举）：高温利于冶炼、低温利于化工（互补）。
-        /// 倍率为基本分数 ±1/4（±25%），速度保持整数比例。
-        /// </summary>
-        internal static float GetTemperatureSpeedFactor(PlanetData planet, bool smelt)
-        {
-            const float step = 0.25f; // 1/4
-
-            if (planet.type == EPlanetType.Vocano) return smelt ? 1f + step : 1f - step;
-            if (planet.type == EPlanetType.Ice) return smelt ? 1f - step : 1f + step;
-
-            return 1f;
-        }
-
         // ==================== 主题副产物（大气采集站附带产出） ====================
 
         /// <summary>
@@ -161,93 +125,20 @@ namespace ProjectGenesis.Patches
             return true;
         }
 
-        // ==================== 工厂速度挂钩（注入统一 InternalUpdate pre-patch） ====================
-
-        /// <summary>是否冶炼类配方（Type 1/11/13/19）</summary>
-        private static bool IsSmeltType(ERecipeType type) =>
-            type == ERecipeType.Smelt || (int)type == (int)Utils_ERecipeType.标准冶炼 ||
-            (int)type == (int)Utils_ERecipeType.高热冶炼 || (int)type == (int)Utils_ERecipeType.所有熔炉;
-
-        /// <summary>是否化工类配方（Type 2/16/17）</summary>
-        private static bool IsChemicalType(ERecipeType type) =>
-            type == ERecipeType.Chemical || (int)type == (int)Utils_ERecipeType.高分子化工 ||
-            (int)type == (int)Utils_ERecipeType.所有化工;
-
-        /// <summary>增产效力：incServed 比上次增加时才乘一次，上限 255。</summary>
-        private static void ApplyIncPower(ref AssemblerComponent component, float incPower)
-        {
-            int entityId = component.entityId;
-
-            if (!IncServedLast.TryGetValue(entityId, out int[] last) || last.Length != component.incServed.Length)
-            {
-                last = new int[component.incServed.Length];
-                IncServedLast[entityId] = last;
-            }
-
-            for (int i = 0; i < component.incServed.Length; i++)
-            {
-                int current = component.incServed[i];
-
-                if (current > last[i] && current > 0)
-                {
-                    current = Math.Min((int)(current * incPower), 255);
-                    component.incServed[i] = current;
-                }
-
-                last[i] = current;
-            }
-        }
+        // ==================== 主题排他配方门禁（注入统一 InternalUpdate pre-patch） ====================
 
         /// <summary>
-        /// 主题速度挂钩：每 tick 在 InternalUpdate 前按行星主题重算 component.speed（幂等）。
-        /// 速度 = prefabDesc 基础速度 × 温度因子（EPlanetType：高温利于冶炼、低温利于化工）× 有机因子（生物行星有机配方）。
-        /// 巨构（speed ≥ 300000）不受行星主题影响。
+        /// 工厂速度不再随主题变化（战略版设计：工厂全宇宙统一，主题只影响环境/资源/排他工艺）。
+        /// 此处只做主题排他配方门禁。
         /// </summary>
         public static void GameTick_AssemblerComponent_InternalUpdate_Patch(PlanetFactory factory, ref AssemblerComponent component,
             float power)
         {
-            // 主题排他：高温钢材只在熔岩(9)/火山灰(13)可生产，其他星球停摆
             if (component.recipeId == HighTempSteelRecipe && (factory.planet == null || Array.IndexOf(LavaThemes, factory.planet.theme) < 0))
             {
                 component.speed = 0;
                 return;
             }
-
-            // 巨构保留自身速度，不受主题影响
-            if (component.speed >= MegaAssemblerPatches.MegaAssemblerSpeed) return;
-
-            if (power < 0.1f) return;
-
-            PlanetData planet = factory.planet;
-
-            if (planet == null) return;
-
-            // 基础速度（从 prefabDesc 重算，保证幂等不叠加）
-            ItemProto itemProto = LDB.items.Select(factory.entityPool[component.entityId].protoId);
-
-            if (itemProto?.prefabDesc == null) return;
-
-            int baseSpeed = itemProto.prefabDesc.assemblerSpeed;
-
-            float factor = 1f;
-
-            // 温度因子：高温利于冶炼、低温利于化工（数据=EPlanetType 枚举分类）
-            if (IsSmeltType(component.recipeType)) factor *= GetTemperatureSpeedFactor(planet, true);
-            else if (IsChemicalType(component.recipeType)) factor *= GetTemperatureSpeedFactor(planet, false);
-
-            // 有机因子：生物行星的有机类配方加成（文档六维；倍率皆为基本分数，速度保持整数比例）
-            if (IsOrganicRecipe(component.recipeId)) factor *= GetMultiplier(planet, MultiplierType.OrganicSpeed);
-
-            // 增产效力：只在 incServed 增加时（新加入/补充增产剂）乘一次，避免每 tick 复利。
-            // 独立六维，不受速度因子早退影响。
-            float incPower = GetMultiplier(planet, MultiplierType.IncPower);
-
-            if (incPower > 1f && component.incServed != null) ApplyIncPower(ref component, incPower);
-
-            // 无速度加成（factor==1）：不改速度，显示取引擎原值（杜绝浮点残差）
-            if (factor == 1f) return;
-
-            component.speed = Mathf.RoundToInt(baseSpeed * factor);
         }
 
         // ==================== 主题副产物槽（大气采集站） ====================
