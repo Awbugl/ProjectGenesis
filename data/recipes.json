@@ -6385,8 +6385,8 @@
   },
   {
     "ID": 906,
-    "Name": "增产剂（生物）",
-    "Description": "R增产剂（生物）",
+    "Name": "有机晶体（光合）",
+    "Description": "R有机晶体（光合）",
     "IconPath": "",
     "IconTag": "",
     "Type": 16,
@@ -6403,7 +6403,7 @@
       2
     ],
     "Output": [
-      1143
+      1117
     ],
     "OutCounts": [
       1

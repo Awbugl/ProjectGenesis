@@ -2500,9 +2500,9 @@
     "ENUS": "Available only on Water World planets: extracts Deuterium from seawater, 4 Seawater yield 1 Deuterium."
   },
   {
-    "Name": "R增产剂（生物）",
-    "ZHCN": "仅潘多拉沼泽星球可用：以水、二氧化碳、氮合成增产剂，原料全部可再生。",
-    "ENUS": "Available only on Pandora Swamp planets: synthesizes Proliferator from water, carbon dioxide and nitrogen — fully renewable."
+    "Name": "R有机晶体（光合）",
+    "ZHCN": "仅潘多拉沼泽星球可用：以水、二氧化碳、氮光合合成有机晶体，原料全部可再生。",
+    "ENUS": "Available only on Pandora Swamp planets: synthesizes Organic Crystal from water, carbon dioxide and nitrogen — fully renewable."
   },
   {
     "Name": "棱镜（高效）",
