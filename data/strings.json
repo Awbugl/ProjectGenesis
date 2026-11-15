@@ -2490,6 +2490,11 @@
     "ENUS": "Veins rich in fluorite ore, translucent fluorescent crystals glimmering in the sunlight."
   },
   {
+    "Name": "R高温钢材",
+    "ZHCN": "在熔岩或火山灰星球的高热条件下直接冶炼，每 3 个铁块产出 2 个钢材，省铁；仅此类星球可用。",
+    "ENUS": "Smelted under the extreme heat of Lava or Volcanic Ash planets: 3 Iron Ingots yield 2 Steel, saving iron. Only available on those planet types."
+  },
+  {
     "Name": "棱镜（高效）",
     "ZHCN": "棱镜（高效）",
     "ENUS": "Prism (Efficient)"

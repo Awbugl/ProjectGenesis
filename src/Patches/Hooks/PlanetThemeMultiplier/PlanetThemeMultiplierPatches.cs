@@ -49,6 +49,11 @@ namespace ProjectGenesis.Patches
 
         internal static void IntoOtherSave() => IncServedLast.Clear();
 
+        /// <summary>主题排他配方：高温钢材（熔岩/火山灰专属）</summary>
+        private const int HighTempSteelRecipe = 904;
+
+        private static readonly int[] LavaThemes = { 9, 13 };
+
         /// <summary>
         /// 主题倍率表（主题 ID → 六维倍率：抽水/大气采集/火电/风电/有机化工/增产效力）。
         /// 每个主题有突出专长与明显短板，形成选址取舍。
@@ -201,6 +206,13 @@ namespace ProjectGenesis.Patches
         public static void GameTick_AssemblerComponent_InternalUpdate_Patch(PlanetFactory factory, ref AssemblerComponent component,
             float power)
         {
+            // 主题排他：高温钢材只在熔岩(9)/火山灰(13)可生产，其他星球停摆
+            if (component.recipeId == HighTempSteelRecipe && (factory.planet == null || Array.IndexOf(LavaThemes, factory.planet.theme) < 0))
+            {
+                component.speed = 0;
+                return;
+            }
+
             // 巨构保留自身速度，不受主题影响
             if (component.speed >= MegaAssemblerPatches.MegaAssemblerSpeed) return;
 

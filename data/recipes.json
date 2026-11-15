@@ -6332,5 +6332,30 @@
     "Handcraft": false,
     "PowerFactor": 18,
     "NonProductive": true
+  },
+  {
+    "ID": 904,
+    "Name": "高温钢材",
+    "Description": "R高温钢材",
+    "IconPath": "",
+    "IconTag": "",
+    "Type": 13,
+    "GridIndex": 1516,
+    "Time": 180,
+    "Input": [
+      1101
+    ],
+    "InCounts": [
+      3
+    ],
+    "Output": [
+      1103
+    ],
+    "OutCounts": [
+      2
+    ],
+    "Explicit": false,
+    "Handcraft": false,
+    "NonProductive": false
   }
 ]
